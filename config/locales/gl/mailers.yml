@@ -18,16 +18,22 @@ gl:
     reply:
       hi: Ola
       new_reply_by_html: Hai unha nova resposta de <b>%{commenter}</b> ao tu comentario en
+      subject: Alguén respondeu ao teu comentario
+      title: Nova resposta ao teu comentario
     unfeasible_spending_proposal:
+      hi: "Estimado usuario,"
       new_html: "Para todos eles, convidámoste a redactar unha <strong>nova proposta</strong> que se axuste ás condicións deste proceso. Podes facelo a través desta ligazón: %{url}."
       new_href: "novo proxecto de investimento"
       sincerely: "Un cordial saúdo"
+      sorry: "Sentimos as molestias ocasionadas e volvémosche dar as grazas pola túa inestimable participación."
+      subject: "A túa proposta de investimento '%{code}' foi marcada como inviable"
     proposal_notification_digest:
       info: "A seguir amosámosche as novas notificacións que publicaron os autores das propostas que estás apoiando en %{org_name}."
       title: "Notificacións de propostas en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
       unsubscribe: "Se non desexas recibir notificacións sobre as propostas, visita %{account} e desmarca 'Recibir un resumo coas notificacións de propostas'."
+      unsubscribe_account: A miña conta
     direct_message_for_receiver:
       subject: "Recibiches unha nova mensaxe privada"
       reply: Responder a %{sender}
