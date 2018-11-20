@@ -588,6 +588,7 @@ en:
         title: Administrators
         name: Name
         email: Email
+        id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
         add: Add
