@@ -20,11 +20,26 @@ gl:
       success: "Identificado correctamente vía %{kind}."
     passwords:
       no_token: "Non podes acceder a esta páxina se non é a través dunha ligazón para restabelecer o contrasinal. Se accediches dende a ligazón para restabelecer o contrasinal, asegúrate de que a URL estea completa."
+      send_instructions: "Nun intre recibirás un correo electrónico con instrucións sobre como restabelecer o teu contrasinal."
+      send_paranoid_instructions: "Se o teu correo electrónico existe na nosa base de datos, recibirás unha ligazón para restablecer o contrasinal nun intre."
+      updated: "O teu contrasinal cambiou correctamente. Fuches identificado correctamente."
+      updated_not_active: "O teu contrasinal cambiouse correctamente."
     registrations:
       destroyed: "Ata pronto! A súa conta foi desactivada. Agardamos poder velo de novo."
       signed_up: "Benvido! Fuches autenticado correctamente"
+      signed_up_but_inactive: "Rexistrácheste correctamente, pero non puideches iniciar sesión porque a túa conta non foi activada."
+      signed_up_but_locked: "Rexistrácheste correctamente, pero non puideches iniciar sesión porque a túa conta está bloqueada."
+      signed_up_but_unconfirmed: "Envióuseche unha mensaxe cunha ligazón de confirmación. Por favor, abre a ligazón para activar a túa conta."
+      update_needs_confirmation: "Actualizaches a túa conta correctamente, non obstante necesitamos verificar a túa nova conta de correo. Por favor, revisa o teu correo electrónico e visita a ligazón para finalizar a confirmación do teu novo enderezo de correo."
+      updated: "Actualizaches a túa conta correctamente."
     sessions:
+      signed_in: "Iniciaches sesión correctamente."
+      signed_out: "Pechaches a sesión correctamente."
       already_signed_out: "Pechaches a sesión correctamente."
+    unlocks:
+      send_instructions: "Nun intre recibirás unha mensaxe de correo con instrucións sobre como desbloquear a túa conta."
+      send_paranoid_instructions: "Se a túa conta existe, recibirás unha mensaxe de correo nun intre con instrucións sobre como desbloquear a túa conta."
+      unlocked: "A túa conta foi desbloqueada. Por favor, inicia sesión para continuar."
   errors:
     messages:
       already_confirmed: "xa se confirmou a túa conta. Se queres, podes iniciar sesión."
