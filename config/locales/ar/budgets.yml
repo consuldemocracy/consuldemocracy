@@ -54,6 +54,7 @@ ar:
       section_footer:
         title: ساعد في ميزانيات المشاركة
         description: مع ميزانيات المشاركة يقرر المواطنين اي المشاريع متجهة الى حزء من الميزانية.
+      milestones: الأهداف المرحلية
     investments:
       form:
         tag_category_label: "فئات"
@@ -149,6 +150,7 @@ ar:
       heading: "نتائج الميزانيات المشاركة"
       heading_selection_title: "جسب المنطقة"
       spending_proposal: عنوان الاقتراح
+      ballot_lines_count: أصوات
       hide_discarded_link: اخفاء المهملة
       show_all_link: اظهار الكل
       price: السعر
@@ -160,8 +162,12 @@ ar:
       unfeasible_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مجدية
       not_selected_investment_proyects: قائمة بالمشاريع الاستثمارية الغير محددة للاقرتاح
     executions:
+      link: "الأهداف المرحلية"
+      page_title: "%{budget} - الأهداف المرحلية"
+      heading_selection_title: "جسب المنطقة"
       filters:
         label: "حالة المشروع الحالية"
+        all: "الكل (%{count})"
     phases:
       errors:
         dates_range_invalid: "تاريخ البدأ لا يمكن ان يكون مساو او يتجاوز تاريخ الانتهاء"
