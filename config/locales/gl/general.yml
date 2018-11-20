@@ -239,12 +239,25 @@ gl:
     info_sign_up: "Rexístrate con:"
     or_fill: "Ou cubre o formulario seguinte:"
   proposals:
+    create:
+      form:
+        submit_button: Crear proposta
     edit:
+      editing: Editar proposta
       form:
         submit_button: Gardar os cambios
+      show_link: Ver proposta
     retire_form:
+      title: Eliminar proposta
+      warning: "Se eliminas a proposta, poderá seguir recibindo apoios, pero deixará de ser visíbel na lista principal, e aparecerá unha mensaxe para todos os usuarios avisándoos de que o autor considera que esta proposta non debe seguir recollendo apoios"
+      retired_reason_label: Razón pola que se elimina a proposta
+      retired_reason_blank: Selecciona unha opción
+      retired_explanation_label: Explicación
+      retired_explanation_placeholder: Explica brevemente por que consideras que esta proposta non debe recoller máis apoios
       submit_button: Retirar a proposta
     retire_options:
+      duplicated: Duplicadas
+      started: En execución
       unfeasible: Inviable
     form:
       geozone: Ámbito de actuación
