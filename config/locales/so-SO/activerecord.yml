@@ -220,3 +220,20 @@ so:
           attributes:
             segment_recipient:
               invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
+        map_location:
+          attributes:
+            map:
+              invalid: Goobta khariidadu ma bannaan karto. Saar calaamad ama dooro sanduuqa sanduuqa haddii aan loo baahnayn geolocalization
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dukumenti mahan tiro koob"
+              has_voted: "Isticmaalkii hore ayaa u codeeyay"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: waa inay ahaataa mid joogto ah ama ka dib taariikhda bilowga
+            debate_end_date:
+              invalid_date_range: waa inay ahaataa mid joogto ah ama ka dib taariikhda tartanka doodda
+            allegations_end_date:
+              invalid_date_range: waa inuu jiraa ama ka dib marka eedeymaha la bilaabo taariikhda
