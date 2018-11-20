@@ -227,9 +227,13 @@ gl:
       officing: Presidencias de mesa
       help: Axuda
       my_account_link: A miña conta
+      my_activity_link: A miña actividade
+      open: aberto
+      open_gov: Goberno aberto
       proposals: Propostas
       poll_questions: Votacións
       budgets: Orzamentos participativos
+      spending_proposals: Propostas de investimento
       notification_item:
         new_notifications:
           one: Tes %{count} notificacións novas
@@ -247,6 +251,8 @@ gl:
       title: Como podo comentar este documento?
   notifications:
     index:
+      empty_notifications: Non tes notificacións novas.
+      mark_all_as_read: Marcar todas como lidas
       read: Lido
       title: Notificacións
       unread: Non lido
@@ -266,9 +272,13 @@ gl:
       notifiable_hidden: Este elemento xa non está dispoñible.
   map:
     title: "Zonas"
+    proposal_for_district: "Crea unha proposta para a túa zona"
     select_district: Ámbito de actuación
+    start_proposal: Crea unha proposta
   omniauth:
     facebook:
+      sign_in: Entra con Facebook
+      sign_up: Rexístrate con Facebook
       name: Facebook
     finish_signup:
       username_warning: "Debido a que cambiamos a forma na que nos conectamos con redes sociais, é posible que o teu nome de usuario apareza como 'xa en uso'. Se é o teu caso, por favor elixe un nome de usuario distinto."
@@ -681,6 +691,7 @@ gl:
       retired: "Proposta retirada"
       see: "Ver proposta"
   votes:
+    anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} ou %{signup} para poder votar.
     disagree: Non estou de acordo
     organizations: As organizacións non poden votar
