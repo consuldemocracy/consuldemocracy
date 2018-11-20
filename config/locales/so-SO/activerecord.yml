@@ -237,3 +237,16 @@ so:
               invalid_date_range: waa inay ahaataa mid joogto ah ama ka dib taariikhda tartanka doodda
             allegations_end_date:
               invalid_date_range: waa inuu jiraa ama ka dib marka eedeymaha la bilaabo taariikhda
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Ma xaqiijin Tirakoobka'
+              already_voted: 'Hore uso jediyey qorshahan'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "waa inuu ahaado waraaqo, lambaro, _ iyo -"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Kama doodi kartid qiimaha'
