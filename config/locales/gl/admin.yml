@@ -538,6 +538,7 @@ gl:
       hidden_users: Usuarios agochados
       administrators: Administradores
       managers: Xestores
+      moderators: Moderadores
       messaging_users: Mensaxes aos usuarios
       newsletters: Boletíns informativos
       admin_notifications: Notificacións
@@ -549,8 +550,11 @@ gl:
       poll_booths: Localización das urnas
       poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar quendas
+      officials: Cargos
+      organizations: Organizacións
       settings: Configuración global
       spending_proposals: Propostas de investimento
+      stats: Estatísticas
       signature_sheets: Follas de sinaturas
       site_customization:
         homepage: Páxina principal
@@ -714,6 +718,7 @@ gl:
         group: "Grupo"
         no_group: "Sen grupo"
       valuator:
+        add: Engadir aos avaliadores
         delete: Borrar
       search:
         title: 'Avaliadores: busca de usuarios'
@@ -972,13 +977,28 @@ gl:
         shifts: "Xestionar quendas"
         edit: "Editar urna"
     officials:
+      edit:
+        destroy: Eliminar condición de 'Cargo público'
+        title: 'Cargos públicos: editar usuario'
+      flash:
+        official_destroyed: 'Datos gardados: o usuario xa non é cargo público'
+        official_updated: Datos do cargo público gardado
       index:
         title: Cargos
         no_officials: Non hai ningún cargo público.
         name: Nome
         official_position: Cargo público
         official_level: Nivel
+      level_0: Non é cargo público
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
       search:
+        edit_official: Editar cargo público
+        make_official: Converter en cargo público
+        title: 'Cargos públicos: busca de usuarios'
         no_results: Non se atopou ningún cargo público.
     organizations:
       index:
@@ -986,6 +1006,8 @@ gl:
         filters:
           all: Todas
           pending: Pendente
+          rejected: Rexeitada
+          verified: Verificada
         hidden_count_html:
           one: Hai ademais <strong>unha organización</strong> sen usuario ou co usuario bloqueado.
           other: Hai ademais <strong>%{count} organizacións</strong> sen usuario ou co usuario bloqueado.
@@ -995,12 +1017,16 @@ gl:
         responsible_name: Responsable
         status: Estado
         no_organizations: Non hai organizacións.
+        reject: Rexeitar
         rejected: Rexeitada
         search: Buscar
+        search_placeholder: Nome, correo electrónico ou teléfono
         title: Organización
         verified: Verificada
+        verify: Verificar
         pending: Pendente
       search:
+        title: Buscar organizacións
         no_results: Non se atoparon organizacións.
     proposals:
       index:
@@ -1021,6 +1047,8 @@ gl:
         title: Notificacións agochadas
         no_hidden_proposals: Non hai notificacións agochadas.
     settings:
+      flash:
+        updated: Valor actualizado
       index:
         banners: Estilos de anuncio
         banner_imgs: Imaxes do anuncio
@@ -1028,6 +1056,12 @@ gl:
         no_banners_styles: Non hai estilo de anuncio
         title: Configuración global
         update_setting: Actualizar
+        feature_flags: Funcionalidades
+        features:
+          enabled: "Funcionalidade activada"
+          disabled: "Funcionalidade desactivada"
+          enable: "Activar"
+          disable: "Desactivar"
         map:
           title: Configuración do mapa
           help: Aquí podes personalizar o xeito en que os e as usuarias ven o mapa. Arrastra o marcador ou preme en calquera parte do mapa, axusta o zoom e preme o botón 'Actualizar'.
