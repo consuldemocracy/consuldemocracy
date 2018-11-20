@@ -61,7 +61,7 @@ ar:
       empty: لا يمكن أن يكون فارغا
   helpers:
     select:
-      prompt: الرجاء الإختيار
+      prompt: الرجاء تحديد
     submit:
       create: إنشاء %{model}
       submit: حفظ %{model}
