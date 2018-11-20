@@ -738,7 +738,7 @@ id:
       search:
         title: Cari organisasi
         no_results: Tidak ada organisasi yang ditemukan.
-    proposals:
+    hidden_proposals:
       index:
         filters:
           with_confirmed_hide: Dikonfirmasi

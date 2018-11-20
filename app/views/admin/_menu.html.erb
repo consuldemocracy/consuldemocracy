@@ -144,8 +144,8 @@
       </a>
       <ul <%= "class=is-active" if menu_moderated_content? %>>
         <% if feature?(:proposals) %>
-          <li <%= "class=is-active" if controller_name == "proposals" && controller.class.parent != Admin::Legislation %>>
-            <%= link_to t("admin.menu.hidden_proposals"), admin_proposals_path %>
+          <li <%= "class=is-active" if controller_name == "hidden_proposals" %>>
+            <%= link_to t("admin.menu.hidden_proposals"), admin_hidden_proposals_path %>
           </li>
         <% end %>
 
