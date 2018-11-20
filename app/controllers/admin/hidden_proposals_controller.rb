@@ -1,4 +1,4 @@
-class Admin::ProposalsController < Admin::BaseController
+class Admin::HiddenProposalsController < Admin::BaseController
   include FeatureFlags
 
   has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index

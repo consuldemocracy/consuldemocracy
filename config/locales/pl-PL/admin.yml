@@ -1014,7 +1014,7 @@ pl:
       search:
         title: Szukaj organizacji
         no_results: Nie znaleziono organizacji.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtr
         filters:

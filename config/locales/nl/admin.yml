@@ -1010,7 +1010,7 @@ nl:
       search:
         title: Zoek Organisaties
         no_results: Geen organisaties gevonden.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filter
         filters:

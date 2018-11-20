@@ -1008,7 +1008,7 @@ sv:
       search:
         title: Sök organisationer
         no_results: Inga organisationer.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtrera
         filters:

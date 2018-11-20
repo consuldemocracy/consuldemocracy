@@ -29,7 +29,7 @@ namespace :admin do
     end
   end
 
-  resources :proposals, only: :index do
+  resources :hidden_proposals, only: :index do
     member do
       put :restore
       put :confirm_hide

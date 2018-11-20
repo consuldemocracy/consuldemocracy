@@ -228,7 +228,7 @@ he:
         verify: Verify
       search:
         title: Search Organisations
-    proposals:
+    hidden_proposals:
       index:
         filter: Filter
         filters:

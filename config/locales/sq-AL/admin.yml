@@ -1013,7 +1013,7 @@ sq:
       search:
         title: Kërko Organizatat
         no_results: Asnjë organizatë nuk u gjet.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtër
         filters:
