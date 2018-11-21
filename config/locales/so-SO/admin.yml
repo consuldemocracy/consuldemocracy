@@ -146,6 +146,7 @@ so:
         administrator_filter_all: Dhamaan Mamulayasha
         valuator_filter_all: Dhamaan qimeeyayasha
         tags_filter_all: Dhamaan Taagyada
+        advanced_filters: Sifeyaysha Sare
         placeholder: Mashariic raadin
         sort_by:
           placeholder: Kala saar
@@ -192,7 +193,10 @@ so:
           visible_to_valuators: Muuji qiimeeyayaasha
           author_username: Magaca qoragu isticmaalo
           incompatible: Aan la isku hallayn karin
+        cannot_calculate_winners: Miisaaniyaddu waa inay ku sii jirtaa marxaladda "Mashruucyada Codsiga", "Dib u Eegista Codadka" ama "Miisaaniyadda Dhameystiran" si loo xisaabiyo mashaariicda guusha
+        see_results: "Arag Natijada"
       show:
+        assigned_admin: Mamulaha lamagcaabay
         documents: "Dukumentiyo"
         no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
