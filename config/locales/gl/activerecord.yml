@@ -1,6 +1,9 @@
 gl:
   activerecord:
     models:
+      activity:
+        one: "actividade"
+        other: "actividades"
       budget:
         one: "Orzamento participativo"
         other: "Orzamentos participativos"
