@@ -161,6 +161,7 @@ gl:
         units:
           billion: Billón
           million: Millón
+          quadrillion: mil billóns
           thousand: Mil
           trillion: Trillón
       format:
