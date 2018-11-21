@@ -107,6 +107,10 @@ so:
       new:
         title: Misaniyada cusub ee kaqaybqaadashada
       form:
+        group: Mgaca Kooxada
+        no_groups: Kooxo weli lama abuurin. Isticmaal kasta wuxuu awoodi doonaa inuu u codeeyo hal koox oo kaliya hal koox.
+        add_group: Kudar koox cusub
+        create_group: Saame koox cusub
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
