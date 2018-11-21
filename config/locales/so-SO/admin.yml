@@ -197,6 +197,16 @@ so:
         see_results: "Arag Natijada"
       show:
         assigned_admin: Mamulaha lamagcaabay
+        assigned_valuators: Qimeyayasha lo xilsaray
+        classification: Qeybinta
+        edit: Isbedel
+        edit_classification: Beddelida qeexitaanka
+        by: An kadanbayn
+        sent: Diray
+        group: Koox
+        heading: Madaxa
+        dossier: Koob
+        edit_dossier: Tafatiraha Warqadaha
         documents: "Dukumentiyo"
         no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
