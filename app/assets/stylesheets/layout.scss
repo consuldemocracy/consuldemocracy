@@ -363,19 +363,34 @@ a {
 
   .tabs-title {
     font-size: $base-font-size;
-    margin-bottom: 0;
+    margin-right: $line-height;
   }
 
   .tabs-title > a {
     color: $text-medium;
-    margin-bottom: rem-calc(-1);
-    margin-right: $line-height;
+    position: relative;
+
+    &:hover {
+      background: none;
+      color: $brand;
+      text-decoration: none;
+    }
 
     &[aria-selected='true'],
     &.is-active {
+      border-bottom: 0;
       color: $brand;
-      border-bottom: 2px solid $brand;
       font-weight: bold;
+
+      &::after {
+        background: $brand;
+        border-bottom: 2px solid $brand;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
   }
 

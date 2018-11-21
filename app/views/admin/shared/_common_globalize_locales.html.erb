@@ -1,10 +1,11 @@
 <% I18n.available_locales.each do |locale| %>
-  <%= link_to t("admin.translations.remove_language"), "#",
-              id: "js_delete_#{locale}",
-              style: display_translation_style(resource, locale),
-              class: 'float-right delete js-delete-language',
-              data: { locale: locale } %>
-
+  <div class="text-right">
+    <%= link_to t("admin.translations.remove_language"), "#",
+                id: "js_delete_#{locale}",
+                style: display_translation_style(resource, locale),
+                class: 'delete js-delete-language',
+                data: { locale: locale } %>
+  </div>
 <% end %>
 
 <ul class="tabs" data-tabs id="globalize_locale">
