@@ -182,13 +182,17 @@
           </div>
         <% end %>
 
-        <%= render partial: 'shared/social_share', locals: {
+        <%= render 'shared/social_share',
           share_title: t("budgets.investments.show.share"),
           title: investment.title,
           image_url: image_absolute_url(investment.image, :thumb),
           url: budget_investment_url(investment.budget, investment),
-          description: investment.title
-        } %>
+          description: t("budgets.investments.share.message",
+                          title: investment.title,
+                          org: setting['org_name']),
+          mobile: t("budgets.investments.share.message_mobile",
+                     title: investment.title,
+                     handle: setting['twitter_handle']) %>
 
         <% if current_user %>
           <div class="sidebar-divider"></div>
