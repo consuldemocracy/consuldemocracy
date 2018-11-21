@@ -207,11 +207,32 @@ so:
         heading: Madaxa
         dossier: Koob
         edit_dossier: Tafatiraha Warqadaha
+        tags: Tagyada
+        user_tags: Isamalaha taaga
+        undefined: Aan la garanayn
+        milestone: Marayan/ Yool
+        new_milestone: Sameynta hiigsiga/guleeysiga
+        compatibility:
+          title: U Hogaansanan
+          "true": Aan la isku hallayn karin
+          "false": Waafaqsan
+        selection:
+          title: Xulasho
+          "true": Ladoortay
+          "false": An la dooran
+        winner:
+          title: Guleyste
+          "true": "Haa"
+          "false": "Maya"
+        image: "Sawiir"
+        see_image: "Muuji sawir"
+        no_image: "Sawir la an"
         documents: "Dukumentiyo"
         no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
       edit:
         classification: Qeybinta
+        compatibility: U Hogaansanan
         mark_as_incompatible: U calaamadee sida aan ula dhaqmi Karin
         selection: Xulasho
         mark_as_selected: Calamadee sida loodortay
