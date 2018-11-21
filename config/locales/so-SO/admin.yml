@@ -111,6 +111,12 @@ so:
         no_groups: Kooxo weli lama abuurin. Isticmaal kasta wuxuu awoodi doonaa inuu u codeeyo hal koox oo kaliya hal koox.
         add_group: Kudar koox cusub
         create_group: Saame koox cusub
+        edit_group: Wax ka bedel kooxda
+        submit: Bad baadi kooxda
+        heading: Magaca Ciwaanka
+        add_heading: Kudar ciwaan
+        amount: Tirada
+        population: "Dadweynaha(Ikhyaar)"
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
