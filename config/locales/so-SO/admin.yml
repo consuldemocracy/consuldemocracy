@@ -117,6 +117,8 @@ so:
         add_heading: Kudar ciwaan
         amount: Tirada
         population: "Dadweynaha(Ikhyaar)"
+        population_help_text: "Xogtan waxaa loo isticmaalaa si gaar ah si loo xisaabiyo ka qaybgalka tirakoobyada"
+        save_heading: Bad baadi ciwaanka
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
