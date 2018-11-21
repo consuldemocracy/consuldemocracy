@@ -67,9 +67,21 @@ so:
           on_proposals: Sojeedino
           on_users: Isticmaalayaal
           on_system_emails: Emaylka nidaamka
-        title: Waxqabadka dhex dhexaadiyaha
+        title: Waxqabadka Xeer ilaliyaha
         type: Noca
+        no_activity: Majiraan wax qabad xeer ilaliyayasha.
     budgets:
+      index:
+        title: Misaaniyadaha kaqayb qadashada
+        new_link: Samee misaaniyad cusub
+        filter: Sifeeyee
+        filters:
+          open: Furan
+          finished: Dhamaday
+        budget_investments: Mareynta Mashariicda
+        table_name: Magac
+        table_phase: Weeji
+        table_investments: Maalgashiyo
       form:
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
