@@ -7,9 +7,9 @@ zh-TW:
         other: "預算"
       budget/investment:
         other: "投資"
-      budget/investment/milestone:
+      milestone:
         other: "里程碑"
-      budget/investment/status:
+      milestone/status:
         other: "投資狀態"
       comment:
         other: "評論"
@@ -93,12 +93,12 @@ zh-TW:
         organization_name: "如果您以集體/組織的名義，或代表多人提出建議，請寫下其名稱"
         image: "建議說明性圖像"
         image_title: "圖像標題"
-      budget/investment/milestone:
+      milestone:
         status_id: "當前投資狀況 (可選擇填寫)"
         title: "標題"
         description: "說明 (如果已經指定了狀態, 則可選擇填寫)"
         publication_date: "出版日期"
-      budget/investment/status:
+      milestone/status:
         name: "名字"
         description: "說明 (可選擇填寫)"
       budget/heading:
