@@ -98,6 +98,14 @@ so:
         dates: Tariikhaha
         enabled: Karti leh
         actions: Tilaabooyin
+        edit_phase: Wax ka bedelka marxaladda
+        active: Firfircoon
+        blank_dates: Tarikhuhu wa bananyihiin
+      destroy:
+        success_notice: Misaaniyada sii guul ah ayaa loo tirtiray
+        unable_notice: Ma jebin kartid miisaaniyad maalgelinta la xidhiidha
+      new:
+        title: Misaniyada cusub ee kaqaybqaadashada
       form:
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
