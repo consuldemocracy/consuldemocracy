@@ -123,6 +123,7 @@ so:
         table_heading: Madaxa
         table_amount: Tirada
         table_population: Dadkaweyne
+        population_info: "Miisaaniyadda Meelaynta dadweynaha ayaa loo adeegsadaa ujeedooyinka Istatistikada dhammaadka Miisaaniyadda si ay u muujiyaan mid walba oo ka wakiil ah aag leh dadweynaha boqolkiiba inta codbixinta. Booska waa mid ikhtiyaari ah si aad uga bixi kartid madhan haddii uusan dalban."
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
@@ -178,6 +179,7 @@ so:
         selected: "Ladoortay"
         select: "Dorasho"
       show:
+        documents: "Dukumentiyo"
         no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
       edit:
