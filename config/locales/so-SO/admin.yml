@@ -82,6 +82,22 @@ so:
         table_name: Magac
         table_phase: Weeji
         table_investments: Maalgashiyo
+        table_edit_groups: Madaxyada Kooxaha
+        table_edit_budget: Isbedel
+        edit_groups: Wax ka bedel Madaxyada Kooxaha
+        edit_budget: Wax ka bedel Misaaniyada
+        no_budgets: "Majiran misaaniyado furaan."
+      create:
+        notice: Sameynta Misaaniyada cusub ee ka qaybqadashada waa lugu guleystay!
+      update:
+        notice: Miisaaniyadda ka qaybqaadashada ayaa si guul leh lo cusbooneysiiyey
+      edit:
+        title: Wax kabedel misaniyada ka qaybqadashada
+        delete: Tirir misaniyada
+        phase: Weeji
+        dates: Tariikhaha
+        enabled: Karti leh
+        actions: Tilaabooyin
       form:
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
