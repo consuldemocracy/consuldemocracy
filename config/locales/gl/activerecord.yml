@@ -16,12 +16,21 @@ gl:
       budget/investment/status:
         one: "Estado do investimento"
         other: "Estado dos investimentos"
+      comment:
+        one: "Comentario"
+        other: "Comentarios"
       debate:
         one: "Debate"
         other: "Debates"
+      tag:
+        one: "Etiqueta"
+        other: "Etiquetas"
       user:
         one: "Usuario"
         other: "Usuarios/as"
+      moderator:
+        one: "Moderador"
+        other: "Moderadores"
       administrator:
         one: "Administrador"
         other: "Administradores"
