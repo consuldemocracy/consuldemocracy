@@ -24,6 +24,7 @@ gl:
     votes_for_proposal_success_description: "Cando unha proposta acada este número de apoios, xa non poderá recibir máis apoios e considerase como aceptada"
     months_to_archive_proposals: "Meses para arquivar as propostas"
     months_to_archive_proposals_description: "Despois deste número de meses, as Propostas serán arquivadas e non poderán recibir apoios"
+    email_domain_for_officials: "Dominio de correo electrónico para cargos públicos"
     email_domain_for_officials_description: "Os usuarios rexistrados con este dominio non terán que verificar as súas contas"
     per_page_code_head: "Código para incluír en cada páxina (<head>)"
     per_page_code_head_description: "Este código aparecerá dentro da etiqueta <head>. Pode usarse para inserir scripts personalizados, analíticas,..."
