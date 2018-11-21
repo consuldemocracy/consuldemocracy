@@ -281,6 +281,7 @@ gl:
       sign_up: Rexístrate con Facebook
       name: Facebook
     finish_signup:
+      title: "Detalles adicionais"
       username_warning: "Debido a que cambiamos a forma na que nos conectamos con redes sociais, é posible que o teu nome de usuario apareza como 'xa en uso'. Se é o teu caso, por favor elixe un nome de usuario distinto."
     google_oauth2:
       sign_in: Entra con Google
@@ -550,12 +551,22 @@ gl:
       date_1: 'Últimas 24 horas'
       date_2: 'Última semana'
       date_3: 'Último mes'
+      date_4: 'Último ano'
+      date_5: 'Personalizada'
+      from: 'Dende'
+      general: 'Co texto'
+      general_placeholder: 'Escribe o texto'
       search: 'Filtrar'
+      title: 'Busca avanzada'
+      to: 'Ata'
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
     check: Seleccionar
     check_all: Todo
+    check_none: Ningún
+    collective: Colectivo
+    flag: Denunciar como inapropiado
     follow: "Seguir"
     following: "Seguindo"
     follow_entity: "Seguir %{entity}"
@@ -571,9 +582,16 @@ gl:
         destroy:
           notice_html: "Deixaches de seguir esta proposta cidadá! </br> Xa non recibirás máis notificacións relacionadas coa proposta."
     hide: Agochar
+    print:
+      print_button: Imprimir esta información
     search: Buscar
+    show: Amosar
     suggest:
       debate:
+        found:
+          one: "Existe un debate co termo '%{query}', podes participar nel en vez de abrir un novo."
+          other: "Existen varios debates co termo '%{query}', podes participar nalgún en vez de abrir un novo."
+        message: "Estás vendo %{limit} de %{count} debates que conteñen o termo '%{query}'"
         see_all: "Ver todos"
       budget_investment:
         found:
@@ -582,12 +600,19 @@ gl:
         message: "Estás a ver %{limit} de %{count} propostas de investimento que conteñen o termo '%{query}'"
         see_all: "Ver todas"
       proposal:
+        found:
+          one: "Existe unha proposta co termo '%{query}', podes participar nela en vez de abrir unha nova"
+          other: "Existen varias propostas co termo '%{query}', podes participar nalgunha en vez de abrir unha nova"
+        message: "Estás vendo %{limit} de %{count} propostas que conteñen o termo '%{query}'"
         see_all: "Ver todas"
     tags_cloud:
+      tags: Tendencias
       districts: "Zonas"
       districts_list: "Relación de zonas"
       categories: "Categorías"
+    target_blank_html: " (ábrese nunha nova xanela)"
     you_are_in: "Estás en"
+    unflag: Desfacer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
     outline:
       budget: Orzamentos participativos
@@ -607,30 +632,47 @@ gl:
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
   social:
+    blog: "%{org} Blog"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
     whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
+      association_name_label: 'Se fas propostas no nome dunha asociación ou colectivo engade o nome aquí'
       association_name: 'Nome da asociación'
       description: Descrición
       external_url: Ligazón á documentación adicional
       geozone: Ámbito de actuación
       submit_buttons:
+        create: Crear
         new: Crear
+      title: Título da proposta de gasto
     index:
       title: Orzamentos participativos
       unfeasible: Propostas de investimento non viables
       by_geozone: "Propostas de investimento con zona: %{geozone}"
       search_form:
         button: Buscar
+        placeholder: Proxectos de investimento...
         title: Buscar
+      search_results:
+        one: " conteñen o termo '%{search_term}'"
+        other: " conteñen os termos '%{search_term}'"
       sidebar:
         geozones: Ámbitos de actuación
         feasibility: Viabilidade
         unfeasible: Non viables
+      start_spending_proposal: Crea un proxecto de investimento
     new:
+      more_info: Como funcionan os orzamentos participativos?
       recommendation_one: É obrigatorio que a proposta faga referencia a unha actuación orzamentable.
+      recommendation_three: Intenta detallar o máximo posible a proposta de investimento, para que o equipo de revisión teña as menos dúbidas posibles.
+      recommendation_two: Calquera proposta ou comentario que implique accións ilegais será eliminado.
+      recommendations_title: Cómo crear unha proposta de gasto
+      start_new: Crear unha proposta de gasto
     show:
       author_deleted: Usuario eliminado
       code: 'Código da proposta:'
@@ -647,11 +689,20 @@ gl:
         other: "%{count} apoios"
   stats:
     index:
+      visits: Visitas
       debates: Debates
       proposals: Propostas
       comments: Comentarios
+      proposal_votes: Votos en propostas
+      debate_votes: Votos en debates
+      comment_votes: Votos en comentarios
+      votes: Votos totais
       verified_users: Usuarios con contas verificadas
       unverified_users: Usuarios con contas sen verificar
+  unauthorized:
+    default: Non tes permiso para acceder a esta páxina.
+    manage:
+      all: "Non tes permiso para realizar a acción '%{action}' sobre %{subject}."
   users:
     direct_messages:
       new:
@@ -668,6 +719,9 @@ gl:
       show:
         receiver: A mensaxe enviouse a %{receiver}
     show:
+      deleted: Eliminado
+      deleted_debate: Este debate foi eliminado
+      deleted_proposal: Esta proposta foi eliminada
       deleted_budget_investment: Este proxecto de investimento foi borrado
       proposals: Propostas
       debates: Debates
@@ -675,12 +729,22 @@ gl:
       comments: Comentarios
       actions: Accións
       filters:
+        comments:
+          one: 1 comentario
+          other: "%{count} comentarios"
+        debates:
+          one: 1 debate
+          other: "%{count} debates"
+        proposals:
+          one: 1 proposta
+          other: "%{count} propostas"
         budget_investments:
           one: 1 investimento
           other: "%{count} investimentos"
         follows:
           one: Seguindo a 1
           other: "Seguindo a %{count}"
+      no_activity: Usuario sen actividade pública
       no_private_messages: "Esta persoa usuaria non acepta mensaxes privadas."
       private_activity: Esta persoa usuaria decidiu manter en privado a súa listaxe de actividades.
       send_private_message: "Enviar unha mensaxe privada"
@@ -691,6 +755,7 @@ gl:
       retired: "Proposta retirada"
       see: "Ver proposta"
   votes:
+    agree: Estou de acordo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} ou %{signup} para poder votar.
     disagree: Non estou de acordo
