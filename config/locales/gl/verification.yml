@@ -20,12 +20,19 @@ gl:
       create:
         flash:
           offices: Oficina de Atención á Cidadanía
+          success_html: Grazas pola solicitude do teu <b>código de máxima seguridade (só válido para as votacións finais)</b>. Nuns días enviarémolo ao enderezo que figura nos nosos ficheiros. Recorda que, se o desexas, podes recoller o teu código en calquera das nosas %{offices}.
+      edit:
+        see_all: Ver propostas
+        title: Carta solicitada
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
+        explanation: 'Para participar nas votacións finais podes:'
         go_to_index: Ver propostas
         office: Verificar a túa conta de xeito presencial en calquera %{office}
         offices: Oficina de Atención á Cidadanía
+        send_letter: Solicitar unha carta co código
+        title: Parabéns!
     residence:
       new:
         date_of_birth: Data de nacemento
