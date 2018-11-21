@@ -10,10 +10,10 @@ sq:
       budget/investment:
         one: "Investim"
         other: "Investim"
-      budget/investment/milestone:
+      milestone:
         one: "moment historik"
         other: "milestone"
-      budget/investment/status:
+      milestone/status:
         one: "Statusi investimeve"
         other: "Statusi investimeve"
       comment:
@@ -128,12 +128,12 @@ sq:
         organization_name: "Nëse propozoni në emër të një kolektivi / organizate, ose në emër të më shumë njerëzve, shkruani emrin e tij"
         image: "Imazhi përshkrues i propozimit"
         image_title: "Titulli i imazhit"
-      budget/investment/milestone:
+      milestone:
         status_id: "Statusi aktual i investimit (opsional)"
         title: "Titull"
         description: "Përshkrimi (opsional nëse ka status të caktuar)"
         publication_date: "Data e publikimit"
-      budget/investment/status:
+      milestone/status:
         name: "Emri"
         description: "Përshkrimi (opsional)"
       budget/heading:

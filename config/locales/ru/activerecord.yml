@@ -22,12 +22,12 @@ ru:
         organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
-      budget/investment/milestone:
+      milestone:
         status_id: "Текущий инвестиционный статус (опционально)"
         title: "Название"
         description: "Описание (опционально, если присвоен статус)"
         publication_date: "Дата публикации"
-      budget/investment/status:
+      milestone/status:
         name: "Имя"
         description: "Описание (опционально)"
       budget/heading:

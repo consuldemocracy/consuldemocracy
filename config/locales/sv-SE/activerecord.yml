@@ -10,10 +10,10 @@ sv:
       budget/investment:
         one: "Budgetförslag"
         other: "Budgetförslag"
-      budget/investment/milestone:
+      milestone:
         one: "milstolpe"
         other: "milstolpar"
-      budget/investment/status:
+      milestone/status:
         one: "Budgetförslagets status"
         other: "Budgetförslagens status"
       comment:
@@ -128,12 +128,12 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
-      budget/investment/milestone:
+      milestone:
         status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
         title: "Titel"
         description: "Beskrivning (frivilligt fält om projektets status har ställts in)"
         publication_date: "Publiceringsdatum"
-      budget/investment/status:
+      milestone/status:
         name: "Namn"
         description: "Beskrivning (frivilligt fält)"
       budget/heading:

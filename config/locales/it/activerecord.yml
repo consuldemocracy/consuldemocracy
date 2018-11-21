@@ -10,10 +10,10 @@ it:
       budget/investment:
         one: "Investimento"
         other: "Investimenti"
-      budget/investment/milestone:
+      milestone:
         one: "traguardo"
         other: "traguardi"
-      budget/investment/status:
+      milestone/status:
         one: "Status dell’investimento"
         other: "Status dell’investimento"
       comment:
@@ -128,12 +128,12 @@ it:
         organization_name: "Se presenti una proposta a nome di un collettivo o di un’organizzazione, ovvero per conto di più persone, indicane il nome"
         image: "Immagine descrittiva della proposta"
         image_title: "Titolo dell’immagine"
-      budget/investment/milestone:
+      milestone:
         status_id: "Stato attuale dell’investimento (facoltativo)"
         title: "Titolo"
         description: "Descrizione (facoltativa se c’è gia uno stato assegnato)"
         publication_date: "Data di pubblicazione"
-      budget/investment/status:
+      milestone/status:
         name: "Nome"
         description: "Descrizione (facoltativa)"
       budget/heading:

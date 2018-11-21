@@ -10,7 +10,7 @@ ca:
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
-      budget/investment/milestone:
+      milestone:
         one: "fita"
         other: "fites"
       comment:

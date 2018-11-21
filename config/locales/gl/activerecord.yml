@@ -10,10 +10,10 @@ gl:
       budget/investment:
         one: "Investimento"
         other: "Investimentos"
-      budget/investment/milestone:
+      milestone:
         one: "fito"
         other: "fitos"
-      budget/investment/status:
+      milestone/status:
         one: "Estado do investimento"
         other: "Estado dos investimentos"
       comment:
@@ -131,12 +131,12 @@ gl:
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
         image_title: "Título da imaxe"
-      budget/investment/milestone:
+      milestone:
         status_id: "Estado do investimento actual (opcional)"
         title: "Título"
         description: "Descrición (opcional se hai unha condición asignada)"
         publication_date: "Data de publicación"
-      budget/investment/status:
+      milestone/status:
         name: "Nome"
         description: "Descrición (opcional)"
       budget/heading:

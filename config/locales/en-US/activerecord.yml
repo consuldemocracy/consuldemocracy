@@ -1,10 +1,10 @@
 en-US:
   activerecord:
     models:
-      budget/investment/milestone:
+      milestone:
         one: "Meilenstein"
         other: "Meilensteine"
-      budget/investment/status:
+      milestone/status:
         one: "Investitionsstatus, Anlagenstatus"
         other: "Investitionsstatus, Anlagenstatus"
       comment:
