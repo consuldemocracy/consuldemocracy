@@ -14,7 +14,7 @@
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <% @administrators.each do |administrator| %>
-        <tr>
+        <tr id="<%= dom_id(administrator)%>">
           <td class="text-center">
             <%= administrator.id %>
           </td>
