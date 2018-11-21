@@ -266,3 +266,8 @@ so:
         description: Sharaxaad
       edit:
         title: Wax ka bedel yolka
+      create:
+        notice: Guuleysi cusub ayaa abuuray guul!
+    statuses:
+      index:
+        delete: Titiriid
