@@ -139,7 +139,7 @@ namespace :admin do
       resources :results, only: :index
     end
 
-    resources :officers do
+    resources :officers, only: [:index, :new, :create, :destroy] do
       get :search, on: :collection
     end
 
