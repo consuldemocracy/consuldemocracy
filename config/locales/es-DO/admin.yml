@@ -711,7 +711,7 @@ es-DO:
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtro
         filters:

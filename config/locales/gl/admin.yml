@@ -1028,7 +1028,7 @@ gl:
       search:
         title: Buscar organizacións
         no_results: Non se atoparon organizacións.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtro
         filters:

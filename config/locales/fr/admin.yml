@@ -1006,7 +1006,7 @@ fr:
       search:
         title: Rechercher une organisation
         no_results: Aucune organisation trouvée.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtrer
         filters:

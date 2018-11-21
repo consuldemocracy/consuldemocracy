@@ -1007,7 +1007,7 @@ zh-CN:
       search:
         title: 搜索组织
         no_results: 未找到任何组织。
-    proposals:
+    hidden_proposals:
       index:
         filter: 过滤器
         filters:
