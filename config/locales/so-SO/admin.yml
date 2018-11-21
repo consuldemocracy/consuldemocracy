@@ -119,6 +119,10 @@ so:
         population: "Dadweynaha(Ikhyaar)"
         population_help_text: "Xogtan waxaa loo isticmaalaa si gaar ah si loo xisaabiyo ka qaybgalka tirakoobyada"
         save_heading: Bad baadi ciwaanka
+        no_heading: Kooxdani ma lahan wax madax-bannaan.
+        table_heading: Madaxa
+        table_amount: Tirada
+        table_population: Dadkaweyne
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
