@@ -178,6 +178,20 @@ so:
           undecided: "An go aasan"
         selected: "Ladoortay"
         select: "Dorasho"
+        list:
+          id: Aqoonsi
+          title: Ciwaan
+          supports: Tageerayaal
+          admin: Mamulaha
+          valuator: Qimeeye
+          valuation_group: Kooxda qiimaynta
+          geozone: Baxada Hawlgalka
+          feasibility: Suurta galnimada
+          valuation_finished: Qim. Wadha.( Qimeynti dhamatay).
+          selected: Ladoortay
+          visible_to_valuators: Muuji qiimeeyayaasha
+          author_username: Magaca qoragu isticmaalo
+          incompatible: Aan la isku hallayn karin
       show:
         documents: "Dukumentiyo"
         no_documents: "Dukumenti La an"
