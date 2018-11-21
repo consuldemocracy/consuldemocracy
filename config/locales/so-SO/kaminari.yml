@@ -3,3 +3,12 @@ so:
     page_entries_info:
       entry:
         zero: Gelitaanada
+      more_pages:
+        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Waxaad ku jirtaa bogga
+      first: Ugu horeeynti
+      last: Ugu danbeynti
+      next: Xiga
+      previous: Hore
