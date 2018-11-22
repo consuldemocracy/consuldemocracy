@@ -336,3 +336,24 @@ so:
       processes:
         process:
           status: Xaladda
+          creation_date: Tarikh Abuurid
+          status_open: Furan
+          status_closed: Xiraan
+          status_planned: Qorsheysaan
+        subnav:
+          info: Maclumaad
+          draft_texts: Qoritaan/ Qabya Qorid
+          questions: Dood
+          proposals: Sojeedino
+      proposals:
+        index:
+          title: Ciwaan
+          back: Labasho
+          id: Aqoonsi
+          supports: Tageerayaal
+          select: Dorasho
+          selected: Ladoortay
+        form:
+          custom_categories: Qaybaha
+          custom_categories_description: Qaybaha dadka isticmaala waxay dooran karaan sameynta soojeedinta.
+          custom_categories_placeholder: Gali ereyada aad jeclaan lahayd inaad isticmaashid, kala tagto byaan (,) iyo inta u dhaxaysa xigasho ("")
