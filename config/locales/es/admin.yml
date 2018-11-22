@@ -420,6 +420,7 @@ es:
           draft_versions: Redacción
           questions: Debate
           proposals: Propuestas
+          milestones: Seguimiento
       proposals:
         index:
           title: Título
@@ -517,6 +518,9 @@ es:
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Eliminar
+      milestones:
+        index:
+          title: Seguimiento
     managers:
       index:
         title: Gestores

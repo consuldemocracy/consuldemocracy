@@ -12,6 +12,10 @@ feature 'Admin legislation processes' do
                   "edit_admin_legislation_process_path",
                   %w[title summary description additional_info]
 
+  it_behaves_like "admin_milestoneable",
+                  :legislation_process,
+                  "admin_legislation_process_milestones_path"
+
   context "Feature flag" do
 
     scenario 'Disabled with a feature flag' do
@@ -140,6 +144,23 @@ feature 'Admin legislation processes' do
 
       visit admin_legislation_process_proposals_path(process)
       expect(page).to have_field("Categories", with: "bicycles, recycling")
+    end
+
+    scenario "Edit milestones summary", :js do
+      visit admin_legislation_process_milestones_path(process)
+
+      within(".translatable-fields[data-locale='en']") do
+        fill_in_ckeditor find("textarea", visible: false)[:id],
+                         with: "There is still a long journey ahead of us"
+      end
+
+      click_button "Update Process"
+
+      expect(page).to have_current_path admin_legislation_process_milestones_path(process)
+
+      visit milestones_legislation_process_path(process)
+
+      expect(page).to have_content "There is still a long journey ahead of us"
     end
   end
 end
