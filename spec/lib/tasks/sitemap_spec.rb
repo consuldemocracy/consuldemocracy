@@ -29,7 +29,6 @@ feature 'rake sitemap:create' do
     expect(sitemap).to include(faq_path)
     expect(sitemap).to include(help_path)
     expect(sitemap).to include(how_to_use_path)
-    expect(sitemap).to include(page_path(id: 'general_terms'))
 
     # Dynamic URLs
     expect(sitemap).to include(polls_path)

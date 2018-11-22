@@ -10,11 +10,6 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = ["general_terms"]
-  pages.each do |page|
-    add page_path(id: page)
-  end
-
   add help_path
   add how_to_use_path
   add faq_path
