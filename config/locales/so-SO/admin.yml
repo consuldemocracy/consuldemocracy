@@ -303,3 +303,36 @@ so:
         hidden_proposal: Soojedin qarsoon
         title: Falooyin Qarsoon
         no_hidden_comments: Majiraan Falooyin qarsoon.
+    dashboard:
+      index:
+        back: Dib ugu labo ilaa %{org}
+        title: Mamul
+        description: Kuso dhowow gudiga Mamulka %{org}.
+    debates:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Doodo qarsoodi ah
+        no_hidden_debates: Majiraan Doodo qarsoon.
+    hidden_users:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Isticmaalayasha Qarsoon
+        user: Istimale
+        no_hidden_users: Majiraan Isticmalayaal Qarsoon.
+      show:
+        email: 'Email:'
+        hidden_at: 'Qarsoon ag:'
+        registered_at: 'Kadiwaan gashan ag:'
+        title: Wax qabadka Isticmalaha%{user}
+    legislation:
+      processes:
+        process:
+          status: Xaladda
