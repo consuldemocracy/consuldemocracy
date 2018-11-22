@@ -268,6 +268,19 @@ so:
         title: Wax ka bedel yolka
       create:
         notice: Guuleysi cusub ayaa abuuray guul!
+      update:
+        notice: Waxa siguula loo cusboneysiyey Higsiga
+      delete:
+        notice: Siguula ayaa loo tirtiray higsigaa
     statuses:
       index:
+        title: Herarka maalgelinta
+        empty_statuses: Weli ma jiraan xaalado maalgashi oo la sameyey
+        new_status: Same xalad cusus oo malgashi
+        table_name: Magac
+        table_description: Sharaxaad
+        table_actions: Tilaabooyin
         delete: Titiriid
+        edit: Tafatirid
+      edit:
+        title: Tafatir xaalada maalgashiga
