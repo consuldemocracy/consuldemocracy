@@ -16,6 +16,19 @@ ar:
         title: "مشاكل فنية؟"
     privacy:
       title: سياسة الخصوصية
+      subtitle: معلومات بخصوص خصوصية البيانات
+      info_items:
+        - 
+        - 
+        - 
+        - 
+          subitems:
+            - 
+              field: 'اسم الملف:'
+              description: اسم الملف
+            - 
+              field: 'الهدف من الملف:'
+            - 
     accessibility:
       description: |-
         يشير مفهوم (سهولة التصفح) إلى إمكانية الوصول إلى شبكة الإنترنت ومحتوياتها من قبل جميع الناس، بغض النظر عن الإعاقة (المادية أو الفكرية أو الفنية) التي قد تحدث، أو من تلك التي تحدث في السياق (التكنولوجي أو البيئي).
@@ -27,18 +40,30 @@ ar:
         - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
         - إذا كان المستخدم لديه مشاكل في التنقل ومن الصعب عليه استخدام الفأرة، فهناك بدائل في لوحة المفاتيح ستساعده في عملية التصفح.
       keyboard_shortcuts:
+        title: اختصارات لوحة المفاتيح
         navigation_table:
+          caption: اختصارات لوحة المفاتيح لتصفح القائمة
+          key_header: مفتاح
+          page_header: الصفحة
           rows:
             - 
+              key_column: 0
+              page_column: الصفحة الرئيسية
             - 
+              key_column: 1
+              page_column: الحوارات
             - 
+              key_column: 2
+              page_column: إقتراحات
             - 
               key_column: 3
               page_column: الأصوات
             - 
               key_column: 4
+              page_column: الميزانية التشاركية
             - 
               key_column: 5
+              page_column: العمليات التشريعية
         browser_table:
           browser_header: مستعرض
           key_header: تركيبة المفاتيح
@@ -62,9 +87,11 @@ ar:
         title: حجم النص
         browser_settings_table:
           browser_header: مستعرض
+          action_header: إجراءات واجب اتخاذها
           rows:
             - 
               browser_column: إكسبلورر
+              action_column: عرض > حجم النص
             - 
               browser_column: فايرفوكس
               action_column: عرض > الحجم
@@ -93,4 +120,10 @@ ar:
       conditions: شروط الاستخدام
       privacy: سياسة الخصوصية
     verify:
+      code: الكود الذي وصل في الرسالة
       email: البريد الإلكتروني
+      info: 'للتحقق من حسابك ادخل بيانات الدخول الخاصة بك:'
+      info_code: 'الرجاء إدخال الكود التي وصل إلى بريدك الالكتروني:'
+      password: كلمة المرور
+      submit: التحقق من حسابي
+      title: التحقق من حسابك
