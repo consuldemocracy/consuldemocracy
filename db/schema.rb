@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181109111037) do
+ActiveRecord::Schema.define(version: 20181121123512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -630,6 +630,7 @@ ActiveRecord::Schema.define(version: 20181109111037) do
     t.text     "summary"
     t.text     "description"
     t.text     "additional_info"
+    t.text     "milestones_summary"
   end
 
   add_index "legislation_process_translations", ["legislation_process_id"], name: "index_199e5fed0aca73302243f6a1fca885ce10cdbb55", using: :btree

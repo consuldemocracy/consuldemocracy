@@ -4,6 +4,12 @@
 
 <%= render "key_dates", process: @process, phase: @phase %>
 
+<div class="row">
+  <div class="small-12 column">
+    <%= WYSIWYGSanitizer.new.sanitize(@process.milestones_summary) %>
+  </div>
+</div>
+
 <div class="tab-milestones">
   <%= render "milestones/milestones_content", milestoneable: @process %>
 </div>

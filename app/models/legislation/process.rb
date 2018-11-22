@@ -10,10 +10,11 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
 
-  translates :title,           touch: true
-  translates :summary,         touch: true
-  translates :description,     touch: true
-  translates :additional_info, touch: true
+  translates :title,              touch: true
+  translates :summary,            touch: true
+  translates :description,        touch: true
+  translates :additional_info,    touch: true
+  translates :milestones_summary, touch: true
   include Globalizable
 
   PHASES_AND_PUBLICATIONS = %i(draft_phase debate_phase allegations_phase proposals_phase draft_publication result_publication).freeze
