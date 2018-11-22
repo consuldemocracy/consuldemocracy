@@ -32,6 +32,8 @@ ar:
       - السبت
     formats:
       default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
       - يناير
@@ -123,7 +125,12 @@ ar:
         units:
           gb: غيغا بايت
           kb: كيلو بايت
+          mb: ميغابايت
           tb: تيرابايت
   support:
     array:
       two_words_connector: " و "
+  time:
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+    pm: مساء
