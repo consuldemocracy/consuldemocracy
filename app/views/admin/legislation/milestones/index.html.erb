@@ -8,4 +8,5 @@
 <h2><%= @process.title %></h2>
 
 <%= render "admin/legislation/processes/subnav", process: @process, active: "milestones" %>
+<%= render "summary_form", process: @process %>
 <%= render "admin/milestones/milestones", milestoneable: @process %>
