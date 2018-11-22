@@ -284,3 +284,22 @@ so:
         edit: Tafatirid
       edit:
         title: Tafatir xaalada maalgashiga
+      update:
+        notice: Siguula u cusboneysinta Xalada Malgashiga
+      new:
+        title: Same xalad malgashi
+      create:
+        notice: Siguula ayaa lo Sameyey Xalada Malgashiga
+      delete:
+        notice: Siguula ayaa lo tiritiray Xalada Malgashiga
+    comments:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        hidden_debate: Dood qarsoodi ah
+        hidden_proposal: Soojedin qarsoon
+        title: Falooyin Qarsoon
+        no_hidden_comments: Majiraan Falooyin qarsoon.
