@@ -2,11 +2,13 @@ ar:
   moderation:
     comments:
       index:
+        block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
         filter: فرز
         filters:
           all: الكل
           pending_flag_review: معلق
+          with_ignored_flag: شوهد
         headers:
           comment: التعليق
         hide_comments: إخفاء التعليقات
