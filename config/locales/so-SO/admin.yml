@@ -367,3 +367,10 @@ so:
           notice: Qabayo Qoralki Si guula ayaa loo tir tiray
         edit:
           back: Labasho
+          submit_button: Badbaadi beddelka
+          warning: Waad Tafatirtay qoraalka, ha ilaawin inaad gujiso badbadinta si joogto ah u keydiso isbeddelada.
+        errors:
+          form:
+            error: Khalad
+        form:
+          launch_text_editor: Biaabida Taratiridaa Qoraalka
