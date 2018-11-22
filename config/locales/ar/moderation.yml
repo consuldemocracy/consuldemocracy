@@ -11,22 +11,44 @@ ar:
           with_ignored_flag: شوهد
         headers:
           comment: التعليق
+          moderate: المشرف
         hide_comments: إخفاء التعليقات
+        ignore_flags: شوهد
         order: طلب
         orders:
+          flags: العلامة مطلوبة
           newest: الأحدث
         title: التعليقات
+    dashboard:
+      index:
+        title: الإشراف
     debates:
       index:
+        block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
         filter: فرز
         filters:
           all: الكل
           pending_flag_review: معلق
+          with_ignored_flag: شوهد
+        headers:
+          debate: الحوارات
+          moderate: المشرف
+        hide_debates: حوارات مخفية
+        ignore_flags: شوهد
+        order: طلب
         orders:
           created_at: الأحدث
+          flags: العلامة مطلوبة
+        title: الحوارات
+    header:
+      title: الإشراف
     menu:
       flagged_comments: التعليقات
+      flagged_debates: الحوارات
+      flagged_investments: استثمارات الميزانية
+      proposals: مقترحات
+      proposal_notifications: اقتراح الإشعارات
       users: حظر المستخدمين
     proposals:
       index:
@@ -35,10 +57,31 @@ ar:
         filter: فرز
         filters:
           all: الكل
+          pending_flag_review: بانتظار المراجعة
+          with_ignored_flag: شوهد
+        headers:
+          moderate: المشرف
+          proposal: اقتراح
+        hide_proposals: الإقتراحات المخفية
+        ignore_flags: شوهد
         order: ترتيب حسب
+        orders:
+          created_at: الأحدث
+          flags: العلامة مطلوبة
+        title: مقترحات
     budget_investments:
       index:
+        block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
+        filter: إنتقاء \ فلترة
+        filters:
+          all: الكل
+          pending_flag_review: معلق
+          with_ignored_flag: شوهد
+        headers:
+          moderate: المشرف
+          budget_investment: ميزانية الاستثمار
+        hide_budget_investments: إخفاء استثمارات الميزانية
         ignore_flags: شوهد
         order: ترتيب حسب
         orders:
