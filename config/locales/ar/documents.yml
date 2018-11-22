@@ -7,7 +7,7 @@ ar:
       title_placeholder: اضف عنوان وصفي للمستند
       attachment_label: اختر وثيقة
       delete_button: ازالة مستند
-      cancel_button: اللاغي
+      cancel_button: إلغاء
       note: "يمكنك تحميل بحد اقصى قدره%{max_documents_allowed} وثائق لانواع المحتوى التالية: %{accepted_content_types}، يصل الى %{max_file_size} ميغابايت لكل ملف."
       add_new_document: اضافة مستند جديد
     actions:

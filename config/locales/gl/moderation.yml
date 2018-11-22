@@ -7,7 +7,7 @@ gl:
         filter: Filtro
         filters:
           all: Todo
-          pending_flag_review: Pendentes
+          pending_flag_review: Pendente
           with_ignored_flag: Marcado como revisado
         headers:
           comment: Comentario
@@ -16,12 +16,12 @@ gl:
         ignore_flags: Marcar como revisado
         order: Orde
         orders:
-          flags: Máis denunciados
+          flags: Máis denunciadas
           newest: Máis novos
         title: Comentarios
     dashboard:
       index:
-        title: Moderar
+        title: Moderación
     debates:
       index:
         block_authors: Bloquear autores
