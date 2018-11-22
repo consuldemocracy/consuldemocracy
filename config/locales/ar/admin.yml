@@ -117,6 +117,8 @@ ar:
       index:
         back: العودة إلى %{org}
     hidden_users:
+      index:
+        no_hidden_users: لا يوجد أي مستخدمين مخفيين.
       show:
         email: 'ايمايل:'
         registered_at: 'تم الحفظ في:'
