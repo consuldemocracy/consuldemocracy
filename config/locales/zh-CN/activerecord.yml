@@ -7,9 +7,9 @@ zh-CN:
         other: "预算"
       budget/investment:
         other: "投资"
-      budget/investment/milestone:
+      milestone:
         other: "里程碑"
-      budget/investment/status:
+      milestone/status:
         other: "投资状态"
       comment:
         other: "意见"
@@ -93,12 +93,12 @@ zh-CN:
         organization_name: "如果你是以集体/组织的名义或者代表更多的人提出建议，写下它的名字。"
         image: "建议说明性图像"
         image_title: "图像标题"
-      budget/investment/milestone:
+      milestone:
         status_id: "当前投资状况（可选）"
         title: "标题"
         description: "说明（如果指定了状态，则可选）"
         publication_date: "出版日期"
-      budget/investment/status:
+      milestone/status:
         name: "名字"
         description: "说明（可选）"
       budget/heading:
