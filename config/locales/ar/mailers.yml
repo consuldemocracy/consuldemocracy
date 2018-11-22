@@ -14,6 +14,7 @@ ar:
       title: أكد حسابك باستخدام الرابط التالي
     reply:
       hi: مرحبا
+      new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
     budget_investment_created:
