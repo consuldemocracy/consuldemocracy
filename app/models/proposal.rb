@@ -21,6 +21,7 @@ class Proposal < ActiveRecord::Base
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
   include Relationable
+  include Milestoneable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
