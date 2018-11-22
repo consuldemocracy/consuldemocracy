@@ -357,3 +357,13 @@ so:
           custom_categories: Qaybaha
           custom_categories_description: Qaybaha dadka isticmaala waxay dooran karaan sameynta soojeedinta.
           custom_categories_placeholder: Gali ereyada aad jeclaan lahayd inaad isticmaashid, kala tagto byaan (,) iyo inta u dhaxaysa xigasho ("")
+      draft_versions:
+        create:
+          error: Qorshe lama abuuri karo
+        update:
+          notice: 'Qabya Qoral ayaa la cusbooneysiiyay. <a href="%{link}"> guji si aad u boqato</a>'
+          error: Qabayo Qoraal lama cusbooneysiin karo
+        destroy:
+          notice: Qabayo Qoralki Si guula ayaa loo tir tiray
+        edit:
+          back: Labasho
