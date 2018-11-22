@@ -374,3 +374,5 @@ so:
             error: Khalad
         form:
           launch_text_editor: Biaabida Taratiridaa Qoraalka
+          close_text_editor: Tafatirida Qoralka hoose
+          use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
