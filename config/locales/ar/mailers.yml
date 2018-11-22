@@ -2,10 +2,12 @@ ar:
   mailers:
     no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
     comment:
+      hi: مرحبا
       title: تعليق جديد
     config:
       manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
     email_verification:
+      click_here_to_verify: هذا الرابط
       instructions_html: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
       thanks: شكرا جزيلا.
       title: أكد حسابك باستخدام الرابط التالي
