@@ -433,6 +433,8 @@ so:
           launch_text_editor: Biaabida Taratiridaa Qoraalka
           close_text_editor: Tafatirida Qoralka hoose
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
+          hints:
+            final_version: Qaabkan waxaa la daabici doonaa sida Natiijada ugu dambeysa ee hawshan. Faallooyinka looma ogola qaybtan.
       questions:
         new:
           submit_button: Saame Sual
