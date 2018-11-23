@@ -345,7 +345,8 @@ so:
     legislation:
       processes:
         create:
-          notice: 'Habka lo qabto siguula ayaa losameyey. <a href="%{link}"> guji si aad u boqato</a>'
+          notice: 'Geedi socod siguula ayaa losameyey. <a href="%{link}"> guji si aad u boqato</a>'
+          error: Geedi socodka lama Sameyn karo
         process:
           status: Xaladda
           creation_date: Tarikh Abuurid
