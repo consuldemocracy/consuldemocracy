@@ -365,7 +365,33 @@ so:
           proposals_phase: Wajiga soo jeedinada
           start: Biloow
           end: Dhamad
+          use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
+          title_placeholder: Ciwaanka geedi socodka
+          summary_placeholder: Soo koobista kooban ee sharaxaadda
+          description_placeholder: Ku dar sharaxaad ku saabsan hannaanka
+          additional_info_placeholder: Ku dar xog dheeriya oo ad u aragto iney faido ledahay
+        index:
+          create: New process
+          delete: Titiriid
+          title: Nidaamka Sharciga
+          filters:
+            open: Furan
+            next: Xiga
+            past: Hore
+            all: Dhamaan
+        new:
+          back: Labasho
+          title: Abuur nidaam sharci oo wada shaqeyned
+          submit_button: Saame Nidam
+        proposals:
+          select_order: Kala saar
+          orders:
+            id: Aqoonsi
+            title: Ciwaan
+            supports: Tageerayaal
         process:
+          title: Geedisocoodka
+          comments: Faalo
           status: Xaladda
           creation_date: Tarikh Abuurid
           status_open: Furan
@@ -407,3 +433,18 @@ so:
           launch_text_editor: Biaabida Taratiridaa Qoraalka
           close_text_editor: Tafatirida Qoralka hoose
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
+      questions:
+        new:
+          submit_button: Saame Sual
+        table:
+          title: Ciwaan
+          question_options: Doorashooyinka su'aasha
+          answers_count: Jawabo tirin
+          comments_count: Tirinta falooyinka
+        question_option_fields:
+          remove_option: Kaas Ikhyariga
+    managers:
+      index:
+        title: Mamule
+        name: Magac
+        email: Email
