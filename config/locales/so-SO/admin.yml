@@ -448,3 +448,19 @@ so:
         title: Mamule
         name: Magac
         email: Email
+        no_managers: Majiraan Mamulayaal.
+      manager:
+        add: Kudar
+        delete: Titiriid
+      search:
+        title: 'Mamulayasha isticmaala raadinta'
+    menu:
+      activity: Waxqabadka Xeer ilaliyaha
+      admin: Mamulka Warqada qiimo
+      banner: Mamulka xayiraada
+      poll_questions: Sualo
+      proposals_topics: Ciwaanka sojedinada
+      budgets: Misaaniyadaha kaqayb qadashada
+      geozones: MamulDusha sare
+      hidden_comments: Falooyin Qarsoon
+      hidden_debates: Doodo qarsoodi ah
