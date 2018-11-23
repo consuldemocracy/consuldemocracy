@@ -347,6 +347,24 @@ so:
         create:
           notice: 'Geedi socod siguula ayaa losameyey. <a href="%{link}"> guji si aad u boqato</a>'
           error: Geedi socodka lama Sameyn karo
+        update:
+          error: Habraaca lama cusbooneysiin karo
+        destroy:
+          notice: Habraca Si guula ayaa loo tir tiray
+        edit:
+          back: Labasho
+          submit_button: Badbaadi beddelka
+        errors:
+          form:
+            error: Khalad
+        form:
+          enabled: Karti leh
+          process: Geedisocoodka
+          debate_phase: Wajiga doodda
+          allegations_phase: Heerarka faallooyinka
+          proposals_phase: Wajiga soo jeedinada
+          start: Biloow
+          end: Dhamad
         process:
           status: Xaladda
           creation_date: Tarikh Abuurid
