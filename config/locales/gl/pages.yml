@@ -4,7 +4,6 @@ gl:
       title: Termos e condicións de uso
       subtitle: AVISO LEGAL DAS CONDICIÓNS DE USO, PRIVACIDADE E PROTECCIÓN DOS DATOS DE CARÁCTER PERSOAL DO PORTAL DE GOBERNO ABERTO
       description: Páxina de información sobre as condicións de uso, privacidade e protección de datos de carácter persoal.
-    general_terms: Termos e condicións
     help:
       title: "%{org} é unha plataforma de participación cidadá"
       guide: "Esta guía explica para que serven e como funcionan cada unha das seccións de %{org}."
@@ -59,7 +58,11 @@ gl:
         how_to_use: "Emprega %{org_name} no teu concello"
       how_to_use:
         text: |-
-          Emprégao no teu concello ou axúdanos a melloralo, é software libre. Este portal de goberno aberto emprega a [aplicación CONSUL app] (https://github.com/consul/consul 'consul github') que é software libre con [licenzaAGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), o que significa que calquera pode usar libremente o código, copialo, velo en detalle, modificalo e redistribuílo ao mundo coas notificacións que quixer (mantendo o que outros poidan facer á súa vez o mesmo). Porque xulgamos que a cultura é mellor e máis rica cando se libera. Se sabes programar, podes ver o código e axudáresnos a melloralo en [CONSUL app](https://github.com/consul/consul 'consul github').
+          Emprégao no teu concello ou axúdanos a melloralo, é software libre. 
+          
+          Este portal de goberno aberto emprega a [aplicación CONSUL] (https://github.com/consul/consul 'consul github') que é software libre con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), o que significa que calquera pode usar libremente o código, copialo, velo en detalle, modificalo e redistribuílo ao mundo coas modificacións que quixer (mantendo o que outros poidan facer á súa vez o mesmo). Porque xulgamos que a cultura é mellor e máis rica cando se libera.
+          
+          Se sabes programar, podes ver o código e axudáresnos a melloralo en [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Emprégao no teu concello
     privacy:
@@ -83,10 +86,6 @@ gl:
             - 
               field: 'Organismo responsable do ficheiro:'
               description: ORGANISMO RESPONSABLE DO FICHEIRO
-        - 
-          text: O interesado poderá exercer os dereitos de acceso, rectificación, cancelación e oposición ante o órgano responsable indicado, todo iso informado de conformidade co artigo 5 da Lei Orgánica 15/1999, de 13 de decembro, de protección de datos de carácter persoal.
-        - 
-          text: Como principio xeral, este sitio web non comparte nin divulga a información obtida, agás cando sexa autorizada polo usuario, ou a información fose requirida pola autoridade xudicial, fiscal, policía xudicial, ou calquera dos casos regulados no Artigo 11 da Lei Orgánica 15/1999, do 13 de decembro, de protección de datos de carácter persoal.
     accessibility:
       title: Accesibilidade
       description: |-
@@ -94,7 +93,7 @@ gl:
         
         Cando os sitios web son deseñados coa accesibilidade en mente, todos os usuarios poden acceder ao contido en condicións iguais, por exemplo:
       examples:
-        - Proporcionando un texto alternativo ás imaxes, os usuarios invidentes ou con problemas de visión, poden utilizar lectores especiais para acceder á información.
+        - Engadindo un texto alternativo ás imaxes, as persoas con dificultades visuais poden facer uso de lectores especiais para acceder á información.
         - Cando os vídeos inclúen subtítulos, os usuarios con problemas auditivos poden entendelos perfectamente.
         - Se os contidos se redactan nunha linguaxe sinxela e descritiva, os usuarios con problemas de aprendizaxe teñen máis facilidades para comprendelos.
         - Se o usuario ten problemas de mobilidade e de uso co rato, pode usar as axudas na navegación a través do teclado.
@@ -175,10 +174,10 @@ gl:
               description_column: Aumenta o tamaño de letra
             - 
               shortcut_column: CTRL e - (CMD e - en MAC)
-              description_column: Reduce o tamaño de letra
+              description_column: Reduce o tamaño do texto
       compatibility:
         title: Compatibilidade cos estándares e o deseño visual
-        description_html: 'Todas as páxinas deste sitio web cumpren coa <strong> Guía de Accesibilidade </strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> pertencente ao W3C.'
+        description_html: 'Todas as páxinas deste sitio web cumpren coa <strong>Guía de Accesibilidade</strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title="Web Accessibility Initiative" lang="en"> WAI </abbr> pertencente ao W3C.'
     titles:
       accessibility: Accesibilidade
       conditions: Condicións de uso
