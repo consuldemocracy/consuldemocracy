@@ -441,6 +441,24 @@ so:
           title_placeholder: Qor ciwaanka Qabyada ah
           changelog_placeholder: Ku dar Isbedelada muhimka ah ee kayiid werintii hore
           body_placeholder: Hoos ku qor qoraalka qaya qoralka ah
+        index:
+          title: Weerinta qabya qoralka
+          create: Saame Weerin
+          delete: Titiriid
+          preview: Hor udhaac
+        new:
+          back: Labasho
+          title: Saame weerin cusub
+          submit_button: Saame Weerin
+        statuses:
+          draft: Qabyo Qorid
+          published: Sobandhigaay
+        table:
+          title: Ciwaan
+          created_at: Abuuray
+          comments: Faalo
+          final_version: Koobiga kama dabeysta ah
+          status: Xaladda
       questions:
         new:
           submit_button: Saame Sual
