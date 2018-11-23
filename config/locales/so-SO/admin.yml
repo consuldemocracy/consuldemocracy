@@ -460,7 +460,32 @@ so:
           final_version: Koobiga kama dabeysta ah
           status: Xaladda
       questions:
+        create:
+          error: Sual an la abuuri karin
+        update:
+          error: Sual an la cusboneysiin karin
+        destroy:
+          notice: Suasha Si guula ayaa loo tir tiray
+        edit:
+          back: Labasho
+          submit_button: Badbaadi beddelka
+        errors:
+          form:
+            error: Khalad
+        form:
+          add_option: Ku dar ikhyaari
+          title: Sual
+          title_placeholder: Ku dar sual
+          value_placeholder: Ku dar jawaab celin
+          question_options: "Su'aalaha suurtagalka ah (ikhtiyaari ah, marka ay jawaab celin furan)"
+        index:
+          back: Labasho
+          title: Su'aalaha la xiriira habkan
+          create: Saame Sual
+          delete: Titiriid
         new:
+          back: Labasho
+          title: Saame sual cusub
           submit_button: Saame Sual
         table:
           title: Ciwaan
@@ -504,3 +529,7 @@ so:
       emails_download: Emaylada Sodejinta
       valuators: Qimeeyayal
       poll_officers: Sarakisha gobaha coddaynta
+    administrators:
+      administrator:
+        add: Kudar
+        delete: Titiriid
