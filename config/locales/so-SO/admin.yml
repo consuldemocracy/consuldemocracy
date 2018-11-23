@@ -241,6 +241,7 @@ so:
         submit_button: Cusboneysiin
         user_tags: Cusbooneysii qoraalka isticmaalaha ee loo yaqaan
         tags: Tagyada
+        tags_placeholder: "Qoor Tagyada ad rabto inaad kasocdo qooska (,)"
         undefined: Aan la garanayn
         user_groups: "Kooxo"
       search_unfeasible: Raadinta aan macquul ahayn
@@ -332,8 +333,19 @@ so:
         hidden_at: 'Qarsoon ag:'
         registered_at: 'Kadiwaan gashan ag:'
         title: Wax qabadka Isticmalaha%{user}
+    hidden_budget_investments:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Misaniyadaha Malashiyada qarsoon
+        no_hidden_budget_investments: Majiraan Malgashi Qarsoon
     legislation:
       processes:
+        create:
+          notice: 'Habka lo qabto siguula ayaa losameyey. <a href="%{link}"> guji si aad u boqato</a>'
         process:
           status: Xaladda
           creation_date: Tarikh Abuurid
