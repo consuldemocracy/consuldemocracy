@@ -61,7 +61,7 @@ GEM
       activerecord (>= 3.2.0)
     arel (6.0.4)
     ast (2.4.0)
-    autoprefixer-rails (9.1.4)
+    autoprefixer-rails (8.2.0)
       execjs
     aws-sdk (2.3.22)
       aws-sdk-resources (= 2.3.22)
@@ -584,4 +584,4 @@ DEPENDENCIES
   whenever (~> 0.10.0)
 
 BUNDLED WITH
-   1.16.2
+   1.17.1
