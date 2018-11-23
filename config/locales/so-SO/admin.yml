@@ -435,6 +435,12 @@ so:
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
           hints:
             final_version: Qaabkan waxaa la daabici doonaa sida Natiijada ugu dambeysa ee hawshan. Faallooyinka looma ogola qaybtan.
+            status:
+              draft: Mamul aha baad u arki kartaa Hordhaca cid kale ma arki karto
+              published: Muqal ahaan qof kasta
+          title_placeholder: Qor ciwaanka Qabyada ah
+          changelog_placeholder: Ku dar Isbedelada muhimka ah ee kayiid werintii hore
+          body_placeholder: Hoos ku qor qoraalka qaya qoralka ah
       questions:
         new:
           submit_button: Saame Sual
