@@ -961,3 +961,34 @@ so:
             top_links: Xidhidhka sare
             footer: Calaamad
             subnavigation_left: Iskuduwaha Guud ee bidixda
+            subnavigation_right: Iskuduwaha Guud saxada
+      images:
+        index:
+          title: Sawirada Cadada
+          update: Cusboneysiin
+          delete: Titiriid
+          image: Sawiir
+        update:
+          notice: Sawiirka ayaa si guula lo cusboneysiyey
+          error: Sawirka lama cusboneysiin karo
+        destroy:
+          notice: Sawirka si gula ayaa loo tirtiraay
+          error: Sawirka lama tirtirkaro
+      pages:
+        create:
+          notice: Boga si guula ayaa lo sameyey
+          error: Boga lama sameyn karo
+        update:
+          notice: Booga si guula ayaa loosameyey
+          error: Booga lama cusboneysiin karo
+        destroy:
+          notice: Boga siguula ayaa loo tir tiray
+        edit:
+          title: Tafatiir%{page_title}
+        errors:
+          form:
+            error: Khalad
+        form:
+          options: Fursadaha
+        index:
+          create: Saame boog cusub
