@@ -23,7 +23,7 @@ so:
         filters:
           all: Dhamaan
           with_active: Firfircoon
-          with_inactive: Anfirfirconeeyn
+          with_inactive: An firfirconeeyn
         preview: Hor udhaac
       banner:
         title: Ciwaan
@@ -993,3 +993,17 @@ so:
         index:
           create: Saame boog cusub
           delete: Tirtiir booga
+          title: Bogaga gaara
+          see_page: Arag boga
+        new:
+          title: Sameyso bog cusub
+        page:
+          created_at: Saame
+          status: Status
+          updated_at: La casriyeeyay
+          status_draft: Qabyo Qorid
+          status_published: Sobandhigaay
+          title: Ciwaan
+          slug: Laqabso
+    homepage:
+      title: Bogga
