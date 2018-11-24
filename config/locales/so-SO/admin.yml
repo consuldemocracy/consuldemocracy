@@ -622,3 +622,18 @@ so:
         preview_guide: "Tani waa sida ay isticmaalayaashu u arki doonaan ogeysiinta:"
         sent_guide: "Tani waa sida ay isticmaalayaashu u arkaan ogeysiinta:"
         send_alert: Ma hubtaa inaad rabto inaad u dirto ogaysiiskan%{n} Isticmalayasha?
+    system_emails:
+      preview_pending:
+        action: Hordhac la suagayo
+        pending_to_be_sent: Tani waa maadada la sugayo in la diro
+        moderate_pending: Ogaysiis dhexdhexaad ah ayaa diraya
+        send_pending: U dir waqtiga la sugayo
+        send_pending_notification: Ogeysiisyada la sugayo ayaa lo diray si guul leh
+      proposal_notification_digest:
+        title: Soojeedinta khafiifinta ogaysiisyada
+    poll_officers:
+      officer:
+        delete: Tirtir booska
+        name: Magac
+        email: Email
+        entry_name: sarkaal
