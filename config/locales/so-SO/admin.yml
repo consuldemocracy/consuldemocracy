@@ -839,8 +839,63 @@ so:
       proposal_search:
         button: Raadin
         placeholder: Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha
+      spending_proposal_search:
+        button: Raadin
+        placeholder: Raadinta soo-jeedinta kharash-celinta ee cinwaanka ama sharaxaadda
+      user_search:
+        button: Raadin
+        placeholder: Raadi isticmaal adoo magacaaga ama email
+      search_results: "Raadi natiijada"
+      no_search_results: "Natijooyin lama helin."
+      actions: Tilaabooyin
+      title: Ciwaan
+      description: Sharaxaad
+      image: Sawiir
+      show_image: Muuji sawir
+      moderated_content: "Fiiri mawduucyada dhexdhexaadiyeyaashu, oo ku hubso haddii dhexdhexaadinta si sax ah loo qabtay."
+      view: Aragtida
+      proposal: Sojeedin
+      author: Qoraa
+      content: Mawduuc
+      created_at: Abuuray
     spending_proposals:
+      index:
+        geozone_filter_all: Dhammaan soonaha
+        administrator_filter_all: Dhamaan Mamulayasha
+        valuator_filter_all: Dhamaan qimeeyayasha
+        tags_filter_all: Dhamaan Taagyada
+        filters:
+          valuation_open: Furan
+          without_admin: Anlahayn maamul
+          managed: Mamulay
+          valuating: Qimeeyni kusocoto
+          valuation_finished: Qimeeyn ayaa dhamatay
+          all: Dhamaan
+        title: Mashaariicda maalgalinta ee miisaaniyadda ka qaybqaadashada
+        assigned_admin: Mamulaha lamagcaabay
+        no_admin_assigned: Mamule lama magcabin
+        no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
+        summary_link: "Sookobida Mashaariicda Malelinta"
+        valuator_summary_link: "Soo kobida qimeeynta"
+        feasibility:
+          feasible: "Suurto gal %{price}"
+          not_feasible: "Aan suurtoobi karin"
+          undefined: "Aan la garanayn"
       show:
+        assigned_admin: Mamulaha lamagcaabay
+        assigned_valuators: Qimeyayasha lo xilsaray
+        back: Labasho
+        classification: Qeybinta
+        heading: "Mashariicda malgashiga%{id}"
+        edit: Isbedel
+        edit_classification: Beddelida qeexitaanka
+        association_name: Urur
+        by: An kadanbayn
+        sent: Diray
+        geozone: Baxaad
+        dossier: Koob
+        edit_dossier: Tafatiraha Warqadaha
+        tags: Tagyada
         undefined: Aan la garanayn
       edit:
         classification: Qeybinta
@@ -965,8 +1020,15 @@ so:
         add_tag: Kudar soojedin mowduuc cusub
         title: Moduucyo sojeedin
         topic: Mawduuc
+        help: "Marka uu isticmaalo soojeedin, mowduucyada soo socda ayaa lagu soo jeedinayaa inay yihiin calaamadaha caadiga ah."
+      name:
+        placeholder: Kudar magaca mowduuca
     users:
       columns:
+        name: Magac
+        email: Email
+        document_number: Lambarka dukumeentiga
+        roles: Dorarka
         verification_level: Heerka saxda ah
       index:
         title: Istimale
