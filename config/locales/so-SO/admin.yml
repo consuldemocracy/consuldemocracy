@@ -686,3 +686,29 @@ so:
           assign_status: Astaayn
           assigned: Lo Astaayn
           unassigned: An loo astayn
+        actions:
+          assign: Labadaba u dhig
+          unassign: An Labadaba u dhig
+    poll_booth_assignments:
+      alert:
+        shifts: "Waxaa jira isbeddel la xidhiidha labadaas. Haddii aad ka saarto labadaba, beddelka ayaa sidoo kale la tirtirayaa. Sii wad?"
+      flash:
+        destroy: "Labadaba laguma magacaabin"
+        create: "Labadaba loo xilsaaray"
+        error_destroy: "Qalad ayaa ka dhacday markii ay ka saareen meeleynta labadaba"
+    questions:
+      index:
+        table_question: "Sual"
+      edit:
+        title: "Tafatiir Suasha"
+      new:
+        title: "Same Sual"
+        poll_label: "Dorasho"
+      answers:
+        images:
+          add_image: "Sawiir kudar"
+          save_image: "Bad baadi Sawir"
+      show:
+        proposal: Sojeedinta asalka ah
+        author: Qoraa
+        question: Sual
