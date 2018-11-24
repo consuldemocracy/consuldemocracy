@@ -945,6 +945,13 @@ so:
         users_who_have_sent_message: Isticmalaysha diraay farimaha gaarka ah
       proposal_notifications:
         title: Ogaysiis soo jedin
+        total: Wadarta guud
+        proposals_with_notifications: Soo jeedimaha ogeysiisyada
+      polls:
+        title: Xogta dorshadda
+        all: Doorashooyinka
+        web_participants: Websadka ka qaybgalayasha
+        total_participants: Wadarta kaqayb galayasha
     users:
       columns:
         verification_level: Heerka saxda ah
