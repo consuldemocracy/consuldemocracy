@@ -756,6 +756,34 @@ so:
         destroy: "Labadaba laguma magacaabin"
         create: "Labadaba loo xilsaaray"
         error_destroy: "Qalad ayaa ka dhacday markii ay ka saareen meeleynta labadaba"
+        error_create: "Qalad ayaa ka dhacday markii loo dhiibay labadaba si ay u codeyaan"
+      show:
+        location: "Goobta"
+        officers: "Sarakiisha"
+        officers_list: "Liiska Sarkaalka labadaba"
+        no_officers: "Ma jiraan sarkaal xafiiskan"
+        recounts: "Dib u Xisaabin"
+        recounts_list: "Liiska dib u soo celinta"
+        results: "Natiijoyin"
+        date: "Tariikh"
+        count_final: "Soo-celinta ugu dambeysa (sarkaal)"
+        count_by_system: "Codadka oo tomaatiga ah"
+        total_system: Wadarta codadka (otomatiga ah)
+      index:
+        booths_title: "Liiska kabaha"
+        no_booths: "Ma jiraan labadaba loo qoondeeyay ra'yiururintan."
+        table_name: "Magac"
+        table_location: "Goobta"
+    polls:
+      index:
+        title: "Liisaska rayi ururinta firfircoon"
+        no_polls: "Ma jiraan wax doorasho ah oo soo socda."
+        create: "Saame dorshada"
+        name: "Magac"
+        dates: "Tariikhaha"
+        geozone_restricted: "Xayiraadda degmooyinka"
+      new:
+        title: "Dorashada Cusub"
     questions:
       index:
         table_question: "Sual"
