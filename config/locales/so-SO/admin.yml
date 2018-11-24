@@ -926,3 +926,9 @@ so:
     verifications:
       index:
         phone_not_given: Telefoon aan la siin
+        sms_code_not_confirmed: Ma xaqiijin lambarka sms koodka
+        title: Caddaynta aan dhammeystirnayn
+    site_customization:
+      content_blocks:
+        information: Maclumaad kusaabsan mowduuca joojinta
+        about: Waxaad abuuri kartaa xayeysiin HTML ah oo la geliyo madaxa ama boggaaga Qunsulka.
