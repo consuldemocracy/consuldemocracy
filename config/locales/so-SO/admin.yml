@@ -824,3 +824,11 @@ so:
       setting_actions: Tilaabooyin
       setting_name: Dejinta
       setting_status: Xaladda
+      setting_value: Qimaha
+      no_description: "Sharaxaad la'aan"
+    shared:
+      booths_search:
+        button: Radiin
+        placeholder: Raadi labada magacba
+      poll_officers_search:
+        button: Raadin
