@@ -851,3 +851,22 @@ so:
         undefined: Aan la garanayn
       summary:
         title: Soo koob mashariicda malgashiga
+        title_proposals_with_supports: Sookobida Mashariicda Malgelinta oo leh tageerooyin
+        geozone_name: Baxaad
+        finished_and_feasible_count: Dhammeeyeen oo macquul ah
+        finished_and_unfeasible_count: Dhammeeyey oo aan macquul ahayn
+        finished_count: Dhamaday
+        in_evaluation_count: Laqimeeynayo
+        total_count: Wadarta guud
+        cost_for_geozone: Kharashaad
+    geozones:
+      index:
+        title: Dusha sare
+        create: Abuur dusha sare
+        edit: Isbedel
+        delete: Titiriid
+      geozone:
+        name: Magac
+        external_code: Koodhaka dibada
+        census_code: Koodka tirakoobka
+        coordinates: Iskuduwaha
