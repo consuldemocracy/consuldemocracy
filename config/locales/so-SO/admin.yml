@@ -590,3 +590,35 @@ so:
     admin_notifications:
       create_success: Ogeysinta si guula ayaa loo abuuray
       update_success: Ogeysinta si guula ayaa loo cusboneysiyey
+      send_success: Ogeysinta si guula ayaa loo diray
+      delete_success: Ogeysinta si guula ayaa loo loo tirtiraay
+      index:
+        section_title: Ogaysiisyo
+        new_notification: Ogaysiin cusub
+        title: Ciwaan
+        segment_recipient: Sooqataha
+        sent: Diray
+        actions: Tilaabooyin
+        draft: Qabyo Qorid
+        edit: Isbedel
+        delete: Titiriid
+        preview: Hor udhaac
+        view: Aragtida
+        empty_notifications: Ma jiraan wax wargelin ah oo muujinaya
+      new:
+        section_title: Ogaysiin cusub
+        submit_button: Samee Ogaysiin
+      edit:
+        section_title: Tafatiir Ogaysiin
+        submit_button: Cusboneysii Ogaysiin
+      show:
+        section_title: Horudhaca ogeysiinta
+        send: Diir Ogaysiin
+        sent_at: La soo diray
+        title: Ciwaan
+        body: Qoraal
+        link: Isku xirka
+        segment_recipient: Sooqataha
+        preview_guide: "Tani waa sida ay isticmaalayaashu u arki doonaan ogeysiinta:"
+        sent_guide: "Tani waa sida ay isticmaalayaashu u arkaan ogeysiinta:"
+        send_alert: Ma hubtaa inaad rabto inaad u dirto ogaysiiskan%{n} Isticmalayasha?
