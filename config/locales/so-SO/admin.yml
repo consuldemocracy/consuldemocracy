@@ -952,6 +952,19 @@ so:
         all: Doorashooyinka
         web_participants: Websadka ka qaybgalayasha
         total_participants: Wadarta kaqayb galayasha
+        poll_questions: "Su'aalo laga helo sanduuqa%{poll}"
+        table:
+          poll_name: Dorasho
+          question_name: Sual
+          origin_web: Websadka ka qaybgalayasha
+          origin_total: Wadarta kaqayb galayasha
+    tags:
+      create: Abuur moowduuc
+      destroy: Burburi moowduuca
+      index:
+        add_tag: Kudar soojedin mowduuc cusub
+        title: Moduucyo sojeedin
+        topic: Mawduuc
     users:
       columns:
         verification_level: Heerka saxda ah
