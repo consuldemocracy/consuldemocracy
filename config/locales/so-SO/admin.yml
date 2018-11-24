@@ -940,4 +940,24 @@ so:
           error: Maduuca joojinta lama sameeyn karo
         update:
           notice: Waduca joojinta ayaa si gula lo cusboneysiyey
-          error: Xayiraadda Macluumaadka lama cusbooneysiin karin
+          error: Sakad Macluumaadka lama cusbooneysiin karin
+        destroy:
+          notice: Mowduuca sakaada ayaa si gula loo tir tiraay
+        edit:
+          title: Tafatirid mowduuca sakaad
+        errors:
+          form:
+            error: Khalad
+        index:
+          create: Saamynta mowduca cusub ee xayiraada
+          delete: Masax sakada
+          title: Xudduudaha tusmada
+        new:
+          title: Saamynta mowduca cusub ee xayiraada
+        content_block:
+          body: Jirka
+          name: Magac
+          names:
+            top_links: Xidhidhka sare
+            footer: Calaamad
+            subnavigation_left: Iskuduwaha Guud ee bidixda
