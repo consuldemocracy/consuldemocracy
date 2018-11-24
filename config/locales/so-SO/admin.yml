@@ -914,6 +914,37 @@ so:
     stats:
       show:
         stats_title: Xogta
+        summary:
+          comment_votes: Falooyinka codadka
+          comments: Faalo
+          debate_votes: Codeynta doodda
+          debates: Doodo
+          proposal_votes: Sojeedinta codaynta
+          proposals: Sojeedino
+          budgets: Misaaniyada furan
+          budget_investments: Mashariicda malgashiga
+          spending_proposals: Soo-jeedinta Kharashka
+          unverified_users: Isticmalayaasha an la aqonsaneyn
+          user_level_three: Isticmalayasha heerka sadexaad
+          user_level_two: Isticmalayasha heerka labaad
+          users: Wadarta isticmalayasha
+          verified_users: Isticmalayaasha la aqonsan yahay
+          verified_users_who_didnt_vote_proposals: Isticmaalayaasha la xaqiijiyay ee aan codka bixin
+          visits: Boqashooyinka
+          votes: Wadarka codadka
+        spending_proposals_title: Soo-jeedinta Kharashka
+        budgets_title: Misaaniyada kaqayb qadashada
+        visits_title: Boqashooyinka
+        direct_messages: Fariimo toosa
+        proposal_notifications: Ogaysiis soo jedin
+        incomplete_verifications: Caddaynta aan dhammeystirnayn
+        polls: Doorashooyinka
+      direct_messages:
+        title: Fariimo toosa
+        total: Wadarta guud
+        users_who_have_sent_message: Isticmalaysha diraay farimaha gaarka ah
+      proposal_notifications:
+        title: Ogaysiis soo jedin
     users:
       columns:
         verification_level: Heerka saxda ah
@@ -1028,3 +1059,11 @@ so:
         submit_header: Abuur madax
         card_title: Kaar cusub
         submit_card: Kar saame
+      edit:
+        header_title: Tafatiir madaxa
+        submit_header: Bad badi madaxa
+        card_title: Tafatiir madaxa
+        submit_card: Bad baadi karka
+    translations:
+      remove_language: Kaasar luuqada
+      add_language: Kudar luuqad
