@@ -795,3 +795,15 @@ so:
           all: Dhamaan
           with_confirmed_hide: Xaqiijiyey
           without_confirmed_hide: Joojin
+        title: Ogaysiisaka Qarsodiga ah
+        no_hidden_proposals: Majiraan Ogaysiisyo Qarsoon.
+    settings:
+      flash:
+        updated: Cusboneysii Qimaha
+      index:
+        banners: Calan ama Maro wax lugu qoro
+        banner_imgs: Sawirka Boodhka wax lugu qoro
+        no_banners_images: Majiro Sawirka Boodhka wax lugu qoro
+        no_banners_styles: Majiro Calan ama Maro wax lugu qoro/ bodh
+        title: Dejinta Qaybinta
+        update_setting: Cusboneysiin
