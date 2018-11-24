@@ -902,3 +902,27 @@ so:
         created_at: Abuuray
         author: Qoraa
         documents: Dukumentiyo
+        document_count: "Lamabarka Dukumeentiyada:"
+        verified:
+          one: "Waxa jira %{count} saxiixya ah oo saxa"
+          other: "Waxa jira %{count} tiro saxiixya ah oo saxa"
+        unverified:
+          one: "Waxa jira %{count} tiro saxix ah o an sax ahayn"
+          other: "Waxa jira %{count} tiro saxix ah o an sax ahayn"
+        unverified_error: (Majiro tiro koob la xaqijiyey)
+        loading: "Waxaa weli jira saxiixyo lagu caddeeyey Tirakoobka, fadlan bogga ku soo cesho daqiiqado yar"
+    stats:
+      show:
+        stats_title: Xogta
+    users:
+      columns:
+        verification_level: Heerka saxda ah
+      index:
+        title: Istimale
+        no_users: Majiraan isticmaalayaal.
+      search:
+        placeholder: Raadi isticmalaha Email ahaa, magac ama dukumeenti lambar
+        search: Raadin
+    verifications:
+      index:
+        phone_not_given: Telefoon aan la siin
