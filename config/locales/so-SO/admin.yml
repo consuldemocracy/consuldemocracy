@@ -784,8 +784,36 @@ so:
         geozone_restricted: "Xayiraadda degmooyinka"
       new:
         title: "Dorashada Cusub"
+        show_results_and_stats: "Muuji natijooyinka iyo xoogta"
+        show_results: "Tuus natiijada"
+        show_stats: "Muuji Xoogta"
+        results_and_stats_reminder: "Calaamadaynta sanduuqyadan saxda ah natiijooyinka iyo / ama tirooyinka ra'yiga ee ra'yiururintan ayaa si guud loo heli karaa iyada oo isticmaal kasta oo iyaga arki doona."
+        submit_button: "Saame dorshada"
+      edit:
+        title: "Tafatiir dorashada"
+        submit_button: "Cusboneysii dorshada"
+      show:
+        questions_tab: Sualo
+        booths_tab: Labadaba
+        officers_tab: Sarakiisha
+        recounts_tab: Dib u Xisaabinaya
+        results_tab: Natiijoyin
+        no_questions: "Ma jiraan wax su'aalo ah oo loo xilsaaray ra'yiururintan."
+        questions_title: "Liiska sualaha"
+        table_title: "Ciwaan"
+      flash:
+        question_added: "Su'aasha lagu darey ra'yiururintan"
+        error_on_question_added: "Su'aashu laguma dari karin ra'yiururintan"
     questions:
       index:
+        title: "Sualo"
+        create: "Saame Sual"
+        no_questions: "Majiraan Suaalo."
+        filter_poll: Falanqee sorashada
+        select_poll: Xuulo doorshada
+        questions_tab: "Sualo"
+        successful_proposals_tab: "Soojedin guleysatay"
+        create_question: "Saame Sual"
         table_question: "Sual"
       edit:
         title: "Tafatiir Suasha"
@@ -858,6 +886,7 @@ so:
         results: Natiijoyin
     organizations:
       index:
+        rejected: Diiday
         search: Raadin
         search_placeholder: Magaca Emailka ama talafoon lambarka
         title: Ururo
