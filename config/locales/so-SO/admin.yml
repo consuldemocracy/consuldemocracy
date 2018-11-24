@@ -870,3 +870,35 @@ so:
         external_code: Koodhaka dibada
         census_code: Koodka tirakoobka
         coordinates: Iskuduwaha
+      errors:
+        form:
+          error:
+            one: "khaladka ayaa hortaagan in galkaan ka badbaado"
+            other: 'khaladka ayaa hortaagan in galkaan ka badbaado'
+      edit:
+        form:
+          submit_button: Badbaadi beddelka
+        editing: Hagaajinta dusha sare
+        back: Dib ulaabo
+      new:
+        back: Dib ulaabo
+        creating: Saame Degmo
+      delete:
+        success: Dusha sare si gula ayaa lo tirtiraay
+        error: Goobtaas lama tirtiri karo maadama ay jiraan waxyaabo ku xiran
+    signature_sheets:
+      author: Qoraa
+      created_at: Tarikh Abuurid
+      name: Magac
+      no_signature_sheets: "Majiraan Waraha saxiixa"
+      index:
+        title: Warqadaha Saxixyada
+        new: Warqadaha Cusub ee Saxixyada
+      new:
+        title: Warqadaha Cusub ee Saxixyada
+        document_numbers_note: "Qoor Lamaradaa oo ay ka socanyihiin qooyska(,)"
+        submit: Saame Warqada saxiixa
+      show:
+        created_at: Abuuray
+        author: Qoraa
+        documents: Dukumentiyo
