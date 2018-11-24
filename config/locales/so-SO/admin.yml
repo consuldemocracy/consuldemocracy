@@ -759,3 +759,39 @@ so:
       index:
         title: "Natiijoyin"
         no_results: "Majiraan wax natiijooyina"
+      result:
+        table_whites: "Wadarta Warqadaha codbixinta ee banan"
+        table_nulls: "Warqadaha aan sharci ahayn"
+        table_total: "Wadarta Warqadaha dorashada"
+        table_answer: Jawaab
+        table_votes: Codaad
+      results_by_booth:
+        booth: Labadaba
+        results: Natiijoyin
+    organizations:
+      index:
+        search: Raadin
+        search_placeholder: Magaca Emailka ama talafoon lambarka
+        title: Ururo
+        verified: Hubin
+        verify: Xaqiijin
+        pending: Joojin
+      search:
+        title: Raadinta Ururada
+        no_results: Wax Urura lama helin.
+    proposals:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Soojedino qarsoon
+        no_hidden_proposals: Majiraan soojedino qarsoon.
+    proposal_notifications:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
