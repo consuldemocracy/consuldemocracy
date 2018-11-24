@@ -664,3 +664,11 @@ so:
         officer: "Sarkaalka"
         remove_shift: "Kasaar"
         search_officer_button: Raadin
+        search_officer_placeholder: Sarkaal Raadin
+        search_officer_text: Raadi sarkaal si aad ugu qorto wareeg cusub
+        select_date: "Malin doran"
+        no_voting_days: "Malinta codayntu dhamatay"
+        select_task: "Hawl dooro"
+        table_shift: "Wareeg"
+        table_email: "Email"
+        table_name: "Magac"
