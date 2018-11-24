@@ -680,3 +680,9 @@ so:
       recount_scrutiny: Dib u tirin iyo Barintaan
     booth_assignments:
       manage_assignments: Mareeynta shaqooyinka
+      manage:
+        assignments_list: "Shaqooyinka logu tala galay dorshada\"%{poll}\","
+        status:
+          assign_status: Astaayn
+          assigned: Lo Astaayn
+          unassigned: An loo astayn
