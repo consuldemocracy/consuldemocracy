@@ -696,7 +696,61 @@ so:
     emails_download:
       index:
         title: Emaylada Sodejinta
+        download_segment: Lasoodeg Ciwaanka emialka
+        download_segment_help_text: Kala soo bixi qaabka CSV
+        download_emails_button: Lasoo deeg liiska Emaylada
+    valuators:
+      index:
+        title: Qimeeyayal
+        name: Magac
+        email: Email
+        description: Sharaxaad
+        no_description: Sharaxaad la'aan
+        no_valuators: Mjiraan Qimeyayaal.
+        valuator_groups: "Kooxdaha Qimeeynta"
+        group: "Koox"
+        no_group: "Kooxi majirto"
+      valuator:
+        add: Kudaar qimeyayasha
+        delete: Titiriid
+      search:
+        title: 'Raadi isticmalka qimeyayasha'
+      summary:
+        title: Qimeeyn ta kooban mal gelinta mashariicda
+        valuator_name: Qimeeye
+        finished_and_feasible_count: Dhammeeyeen oo macquul ah
+        finished_and_unfeasible_count: Dhammeeyey oo aan macquul ahayn
+        finished_count: Dhamaday
+        in_evaluation_count: Laqimeeynayo
+        total_count: Wadarta guud
+        cost: Kharashaad
+      form:
+        edit_title: "Qiimeeyayaasha: Tafatiraha qiimeeyaha"
+        update: "Cusboneysi Qimeeyaha"
+        updated: "Siguula ayaa loo cusboneysiyey"
+      show:
+        description: "Sharaxaad"
+        email: "Email"
+        group: "Koox"
+        no_description: "Bilaa sharaxaad"
+        no_group: "Bilaa koox"
+    valuator_groups:
+      index:
+        title: "Bilaa Kooxdaha Qimeeynta"
+        new: "Samee koox qimeyayaal ah"
+        name: "Magac"
+        members: "Xubno"
+        no_groups: "Majiraan Koxo qimeyayal ah"
+      show:
+        title: "Koox qimeyayaal ah %{group}"
+        no_valuators: "Ma jiraan qiimeeyaal loo qoondeeyey kooxdan"
+      form:
+        name: "Mgaca Kooxada"
+        new: "Samee koox qimeyayaal ah"
+        edit: "Bad baadi kooxda qimeeynta"
     poll_officers:
+      index:
+        title: Sarakisha gobaha coddaynta
       officer:
         add: Kudar
         delete: Tirtir booska
