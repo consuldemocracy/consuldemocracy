@@ -832,3 +832,22 @@ so:
         placeholder: Raadi labada magacba
       poll_officers_search:
         button: Raadin
+        placeholder: Raadinta dorashada sarakiisha
+      poll_questions_search:
+        button: Raadin
+        placeholder: Radinta Sualaha Dorashada
+      proposal_search:
+        button: Raadin
+        placeholder: Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha
+    spending_proposals:
+      show:
+        undefined: Aan la garanayn
+      edit:
+        classification: Qeybinta
+        assigned_valuators: Qimeeyayal
+        submit_button: Cusboneysiin
+        tags: Tagyada
+        tags_placeholder: "Qoor Tagyada ad rabto inaad kasocdo qooska (,)"
+        undefined: Aan la garanayn
+      summary:
+        title: Soo koob mashariicda malgashiga
