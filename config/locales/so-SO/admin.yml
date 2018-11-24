@@ -637,3 +637,30 @@ so:
         name: Magac
         email: Email
         entry_name: sarkaal
+      search:
+        email_placeholder: Radi isticmalaha Email ahaan
+        search: Raadin
+        user_not_found: Iisticamalaha lama hayo
+    poll_officer_assignments:
+      index:
+        officers_title: "Liska sarakiisha"
+        no_officers: "Ma jiraan sarkaal loo xilsaaray ra'yiururintan."
+        table_name: "Magac"
+        table_email: "Email"
+      by_officer:
+        date: "Tariikh"
+        assignments: "Isku-dubbaridka Boorarka ayaa isbeddel ku sameeya ra'yiga"
+        no_assignments: "Isticmaalkani wuxuu leeyahay isbeddel ku yimaada codkan."
+    poll_shifts:
+      new:
+        add_shift: "Ku dar wakhti"
+        shift: "Astaayn"
+        shifts: "Ku-meelaynta Ku-wareejinta meeshan"
+        date: "Tariikh"
+        task: "Hawl"
+        edit_shifts: Isbedel ku samee
+        new_shift: "Isbedel cusub"
+        no_shifts: "Xaruntani wax isbeddel ah ma laha"
+        officer: "Sarkaalka"
+        remove_shift: "Kasaar"
+        search_officer_button: Raadin
