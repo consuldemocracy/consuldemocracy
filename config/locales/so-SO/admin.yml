@@ -712,3 +712,50 @@ so:
         proposal: Sojeedinta asalka ah
         author: Qoraa
         question: Sual
+        edit_question: Tafatiir Suasha
+        valid_answers: Jawaab Sax ah
+        add_answer: Kudar Jawaab
+        video_url: Fidyoowga dibada
+        answers:
+          title: Jawaab
+          description: Sharaxaad
+          videos: Fiidyoowyo
+          video_list: Liska Fiidyoowga
+          images: Sawiiro
+          images_list: Liska Sawirada
+          documents: Dukumentiyo
+          documents_list: Liska Dukumentiyada
+          document_title: Ciwaan
+          document_actions: Tilaabooyin
+    answers:
+      new:
+        title: Jawaab cusub
+      show:
+        title: Ciwaan
+        description: Sharaxaad
+        images: Sawiiro
+        images_list: Liska Sawirada
+        edit: Tafatiir Suasha
+      edit:
+        title: Tafatiir Suasha
+      videos:
+        index:
+          title: Fiidyoowyo
+          add_video: Ku dar fidyoow
+          video_title: Ciwaan
+          video_url: Fidyoowga dibada
+        new:
+          title: Fidyoow cusub
+        edit:
+          title: Tafatiir fidyoowga
+    recounts:
+      index:
+        title: "Dib u Xisaabin"
+        no_recounts: "Majiraan wax dib loo tirin karo"
+        table_booth_name: "Labadaba"
+        table_total_recount: "Wadarta tirinta (sarkaal)"
+        table_system_count: "Codadka oo tomaatiga ah"
+    results:
+      index:
+        title: "Natiijoyin"
+        no_results: "Majiraan wax natiijooyina"
