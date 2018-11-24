@@ -587,7 +587,51 @@ so:
         add: Kudar
         delete: Titiriid
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
+      search:
+        title: "Mamulayasha: isticmalayasha radinaya"
+    moderators:
+      index:
+        title: Dhexdhexadiyayal
+        name: Magac
+        email: Email
+        no_moderators: Majiraan dhex dhexadiyayal.
+      moderator:
+        add: Kudar
+        delete: Titiriid
+      search:
+        title: 'Dhexdhexadiyasha radinaya isticmalyaal'
+    segment_recipient:
+      all_users: Dhamaan isticamalayasha
+      administrators: Mamulayal
+      proposal_authors: Soo jeedinta qorayaasha
+      investment_authors: Qorayaasha maalgashiga miisaaniyadda hadda
+      feasible_and_undecided_investment_authors: "Qorayaasha maalgelinta qaar ka mid ah miisaaniyadda hadda jirta ee aan u hoggaansanayn: [qiimeynta dhameeyeen oo aan dhicin]"
+      selected_investment_authors: Qorayaasha maalgashiga la doortay ee miisaaniyadda hadda jira
+      winner_investment_authors: Qorayaasha maalgashiga ku guuleysta miisaaniyadda hadda
+      not_supported_on_current_budget: Isticmaalayaasha aan taageerin maalgelinta miisaaniyada hadda
+      invalid_recipients_segment: "Qaybaha adeegsadaha ee isticmaaluhu waa mid aan sharci ahayn"
     newsletters:
+      create_success: Wargeeyska sii guul ah ayaa loo abuuray
+      update_success: Wargeeyska si guula ayaa loo cusboneysiyey
+      send_success: Wargeeyska si guul ah ayaa loo diray
+      delete_success: Wargeeyska si guul ah ayaa loo tir tiraay
+      index:
+        title: Wargeesyo
+        new_newsletter: Wargeeys cusub
+        subject: Mawduuc
+        segment_recipient: Sooqataha
+        sent: Diray
+        actions: Tilaabooyin
+        draft: Qabyo Qorid
+        edit: Isbedel
+        delete: Titiriid
+        preview: Hor udhaac
+        empty_newsletters: Ma jiraan wargeysyo si aad u muujiso
+      new:
+        title: Wargeeys cusub
+        from: Cinwaanka E-mailka oo u muuqda inuu u dirayo warside
+      edit:
+        title: Tafatirida wargeyska
       show:
         title: Horudhaca Wargeyska
         send: Diriid
@@ -647,6 +691,7 @@ so:
         title: Soojeedinta khafiifinta ogaysiisyada
     poll_officers:
       officer:
+        add: Kudar
         delete: Tirtir booska
         name: Magac
         email: Email
@@ -663,6 +708,7 @@ so:
         table_email: "Email"
       by_officer:
         date: "Tariikh"
+        booth: "Labadaba"
         assignments: "Isku-dubbaridka Boorarka ayaa isbeddel ku sameeya ra'yiga"
         no_assignments: "Isticmaalkani wuxuu leeyahay isbeddel ku yimaada codkan."
     poll_shifts:
