@@ -562,7 +562,31 @@ so:
       title_settings: Settings
       title_site_customization: Macluumaadka bogga
       title_booths: Goobaha codeynta
+      legislation: Xeerarka wada shaqeynta
+      users: Isticmaalayaal
     administrators:
+      index:
+        title: Mamulayal
+        name: Magac
+        email: Email
+        no_administrators: Ma jiraan maamulayaal.
       administrator:
         add: Kudar
         delete: Titiriid
+    newsletters:
+      show:
+        title: Horudhaca Wargeyska
+        send: Diriid
+        affected_users: (%{n} Isticmalayasha sameyey
+        sent_emails:
+          one: 1 email diray
+          other: "%{count} emaiylo diray"
+        sent_at: La soo diray
+        subject: Mawduuc
+        segment_recipient: Sooqataha
+        from: Cinwaanka E-mailka oo u muuqda inuu u dirayo warside
+        body: Macluumadka Emailka
+        body_help_text: Tani waa sida ay isticmaalayaashu u arki doonaan emailka
+    admin_notifications:
+      create_success: Ogeysinta si guula ayaa loo abuuray
+      update_success: Ogeysinta si guula ayaa loo cusboneysiyey
