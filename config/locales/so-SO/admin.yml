@@ -807,3 +807,20 @@ so:
         no_banners_styles: Majiro Calan ama Maro wax lugu qoro/ bodh
         title: Dejinta Qaybinta
         update_setting: Cusboneysiin
+        feature_flags: Soobandhigiidyo / Muqaalo
+        features:
+          enabled: "Muujin karo"
+          disabled: "Aan Muujin karin"
+          enable: "Karti leh"
+          disable: "Hawl gaab ah"
+        map:
+          title: Qaybinta Khariirada
+          help: Halkan waxaad ku habeyn kartaa qaabka khariidada loo soo bandhigo dadka isticmaala. Tijaabi calaamade khariidadda ama guji meel kasta oo ka mida khariidada, waxaad dhigataa mujin iyo guji badhan "Cusboneysii".
+          flash:
+            update: Qaabinta qaabka dib u cusbooneysiinta Khariirada.
+          form:
+            submit: Cusboneysiin
+      setting: Soobandhigiid / Muqaal
+      setting_actions: Tilaabooyin
+      setting_name: Dejinta
+      setting_status: Xaladda
