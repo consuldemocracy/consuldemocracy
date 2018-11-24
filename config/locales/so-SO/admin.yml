@@ -1007,3 +1007,24 @@ so:
           slug: Laqabso
     homepage:
       title: Bogga
+      description: Modhale-ka firfircoon ayaa ka muuqda bogga si isku mid ah halkaan.
+      header_title: Madaxa
+      no_header: Majiraan wax madaxa.
+      create_header: Abuur madax
+      cards_title: Kararka
+      create_card: Kar saame
+      no_cards: Majiraan karar.
+      cards:
+        title: Ciwaan
+        description: Sharaxaad
+        link_text: Qoraalka Xirirka
+        link_url: Isku xirka URL
+      feeds:
+        proposals: Sojeedino
+        debates: Doodo
+        processes: Geedi socodka
+      new:
+        header_title: Madax cusub
+        submit_header: Abuur madax
+        card_title: Kaar cusub
+        submit_card: Kar saame
