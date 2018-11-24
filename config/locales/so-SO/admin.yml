@@ -672,3 +672,11 @@ so:
         table_shift: "Wareeg"
         table_email: "Email"
         table_name: "Magac"
+      flash:
+        create: "Isbedelka ayaa lagu daray"
+        destroy: "Wareegga ayaa laga saaray"
+        date_missing: "Taariikh waa in la soo xushaa"
+      vote_collection: Ururi Codadka
+      recount_scrutiny: Dib u tirin iyo Barintaan
+    booth_assignments:
+      manage_assignments: Mareeynta shaqooyinka
