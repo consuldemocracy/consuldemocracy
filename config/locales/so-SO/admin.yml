@@ -537,6 +537,31 @@ so:
       settings: Dejinta Aduunka
       spending_proposals: Bixinta soo jeedinta
       stats: Tirakoob
+      signature_sheets: Warqada Saxixyada
+      site_customization:
+        homepage: Bogga
+        pages: Bog gaara
+        images: Sawirada Cadada
+        content_blocks: Noocyada gaarka ah ee gaarka ah
+        information_texts: Qoraallada macluumaadka gaarka ah
+        information_texts_menu:
+          debates: "Doodo"
+          community: "Bulsho"
+          proposals: "Sojeedino"
+          polls: "Doorashooyinka"
+          layouts: "Khariirad"
+          mailers: "Emailo"
+          management: "Maraynta"
+          welcome: "Sodhowow"
+        buttons:
+          save: "Badbaado"
+      title_moderated_content: Mawduuc dhexdhexaad ah
+      title_budgets: Misaniyaado
+      title_polls: Doorashooyinka
+      title_profiles: Aqoosi
+      title_settings: Settings
+      title_site_customization: Macluumaadka bogga
+      title_booths: Goobaha codeynta
     administrators:
       administrator:
         add: Kudar
