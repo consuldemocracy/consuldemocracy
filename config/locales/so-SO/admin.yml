@@ -125,6 +125,7 @@ so:
         table_population: Dadkaweyne
         population_info: "Miisaaniyadda Meelaynta dadweynaha ayaa loo adeegsadaa ujeedooyinka Istatistikada dhammaadka Miisaaniyadda si ay u muujiyaan mid walba oo ka wakiil ah aag leh dadweynaha boqolkiiba inta codbixinta. Booska waa mid ikhtiyaari ah si aad uga bixi kartid madhan haddii uusan dalban."
         max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
+        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
         calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
@@ -165,6 +166,8 @@ so:
           unfeasible: An surtgak ahayn
           min_total_supports: Tageerayasha ugu yar
           winners: Guleystayasha
+          one_filter_html: "Seferaha hadda la isticmaalo\n<b>%{filter}</b>"
+          two_filters_html: "Seferaha hadda la isticmaalo<b>%{filter}%{advanced_filters}</em>"
         buttons:
           filter: Sifeeyee
         download_current_selection: "Laso deg dorashada had"
@@ -175,6 +178,7 @@ so:
         no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
         no_valuation_groups: Majiraan koox qimeyayala o loo qondeyey
         feasibility:
+          feasible: "Waa suurtogal%{price}"
           unfeasible: "An surtgak ahayn"
           undecided: "An go aasan"
         selected: "Ladoortay"
@@ -199,6 +203,7 @@ so:
         assigned_admin: Mamulaha lamagcaabay
         assigned_valuators: Qimeyayasha lo xilsaray
         classification: Qeybinta
+        info: "%{budget_name}-koox:%{group_name}-mashruca malgelinta%{id}"
         edit: Isbedel
         edit_classification: Beddelida qeexitaanka
         by: An kadanbayn
@@ -228,6 +233,7 @@ so:
         see_image: "Muuji sawir"
         no_image: "Sawir la an"
         documents: "Dukumentiyo"
+        see_documents: "Arag dukumeentiyada%{count}"
         no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
       edit:
@@ -348,6 +354,7 @@ so:
           notice: 'Geedi socod siguula ayaa losameyey. <a href="%{link}"> guji si aad u boqato</a>'
           error: Geedi socodka lama Sameyn karo
         update:
+          notice: 'Geedi socod siguula ayaa losameyey. <a href="%{link}"> guji si aad u boqato</a>'
           error: Habraaca lama cusbooneysiin karo
         destroy:
           notice: Habraca Si guula ayaa loo tir tiray
@@ -416,6 +423,7 @@ so:
           custom_categories_placeholder: Gali ereyada aad jeclaan lahayd inaad isticmaashid, kala tagto byaan (,) iyo inta u dhaxaysa xigasho ("")
       draft_versions:
         create:
+          notice: 'Qabyo qorida waxa losameyey si gula. <a href="%{link}">juug si ad u booqato</a>'
           error: Qorshe lama abuuri karo
         update:
           notice: 'Qabya Qoral ayaa la cusbooneysiiyay. <a href="%{link}"> guji si aad u boqato</a>'
@@ -430,6 +438,7 @@ so:
           form:
             error: Khalad
         form:
+          title_html: 'Tafa tirida<span class="strong">%{draft_version_title}</span>katimid geedi socodka<span class="strong">%{process_title}</span>'
           launch_text_editor: Biaabida Taratiridaa Qoraalka
           close_text_editor: Tafatirida Qoralka hoose
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
@@ -461,13 +470,16 @@ so:
           status: Xaladda
       questions:
         create:
+          notice: 'Suasha si guula ayaa lo sameyey. <a href="%{link}">Click to visit</a>'
           error: Sual an la abuuri karin
         update:
+          notice: 'Suasha si guula ayaa lo cusboneysiyey. <a href="%{link}">Click to visit</a>'
           error: Sual an la cusboneysiin karin
         destroy:
           notice: Suasha Si guula ayaa loo tir tiray
         edit:
           back: Labasho
+          title: "Tafatiir\"%{question_title}"
           submit_button: Badbaadi beddelka
         errors:
           form:
@@ -531,6 +543,7 @@ so:
       poll_officers: Sarakisha gobaha coddaynta
       polls: Doorashooyinka
       poll_booths: Goobta xayawaanka
+      poll_booth_assignments: Labada waajibaadba
       poll_shifts: Maaree isbeddelka
       officials: Saraakiisha
       organizations: Ururo
@@ -573,6 +586,7 @@ so:
       administrator:
         add: Kudar
         delete: Titiriid
+        restricted_removal: "Sorry, you can't remove yourself from the administrators"
     newsletters:
       show:
         title: Horudhaca Wargeyska
