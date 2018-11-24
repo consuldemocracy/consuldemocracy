@@ -814,6 +814,7 @@ so:
         questions_tab: "Sualo"
         successful_proposals_tab: "Soojedin guleysatay"
         create_question: "Saame Sual"
+        table_proposal: "Sojeedin"
         table_question: "Sual"
       edit:
         title: "Tafatiir Suasha"
@@ -884,8 +885,61 @@ so:
       results_by_booth:
         booth: Labadaba
         results: Natiijoyin
+        see_results: Arag Natijada
+        title: "Natiijada labadaba"
+    booths:
+      index:
+        title: "Liiska kabaha firfircoon"
+        no_booths: "Ma jiraan goobo firfircoon oo ku saabsan rayi kasta oo soo socota."
+        add_booth: "Labadaba ku dar"
+        name: "Magac"
+        location: "Goobta"
+        no_location: "Maya Goobta"
+      new:
+        title: "Qol cusub"
+        name: "Magac"
+        location: "Goobta"
+        submit_button: "Abuur labadaba"
+      edit:
+        title: "Tafatiir labadaba"
+        submit_button: "Dib u cusbooneysii kabaha"
+      show:
+        location: "Goobta"
+      booth:
+        shifts: "Maaree isbeddelka"
+        edit: "Tafatiir labadaba"
+    officials:
+      edit:
+        destroy: Ka saar 'Aqoonsiga'
+        title: 'Tafatiir Sarakiisha isticmaalsha'
+      flash:
+        official_destroyed: 'Faahfaahinta la keydiyay: istimalka aha mid rasmi ah'
+        official_updated: Faahfaahinta rasmiga ah lakeydiyey
+      index:
+        title: Saraakiisha
+        no_officials: Ma jiraan saraakiil.
+        name: Magac
+        official_position: Goob rasmi ah
+        official_level: Heer
+      level_0: Maaha rasmi
+      level_1: Heerka 1
+      level_2: Heerka 2
+      level_3: Heerka 3
+      level_4: Heerka 4
+      level_5: Heerka 5
+      search:
+        edit_official: Tafatirida rasmiga ah
+        make_official: Sameyso rasmi ah
+        title: 'Meelaha rasmiga ah: Raadinta qofka'
+        no_results: Meelo rasmi ah oo aan la helin.
     organizations:
       index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending: Joojin
+          rejected: Diiday
+          verified: Hubin
         rejected: Diiday
         search: Raadin
         search_placeholder: Magaca Emailka ama talafoon lambarka
