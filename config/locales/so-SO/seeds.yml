@@ -1,1 +1,26 @@
 so:
+  seeds:
+    settings:
+      official_level_1_name: Goob rasmi ah1
+      official_level_2_name: Goob rasmi ah2
+      official_level_3_name: Goob rasmi ah3
+      official_level_4_name: Goob rasmi ah4
+      official_level_5_name: Goob rasmi ah5
+    geozones:
+      north_district: Degmada waqooyi
+      west_district: Degmada galbeedka
+      east_district: Degamada bariga
+      central_district: Degmada bartamaha
+    organizations:
+      human_rights: Xaquuqaha bin adamka
+      neighborhood_association: Isku taga xafadaha
+    categories:
+      associations: Ururo
+      culture: Dhaqan
+      sports: Ciyaraha
+      social_rights: Xuquqada Bulshada
+      economy: Dhaqalaha
+      employment: Shaqada
+      equity: Sinanta
+      sustainability: Sii jiritaanka
+      participation: Kaqaybgalka
