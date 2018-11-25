@@ -1,1 +1,16 @@
 so:
+  valuation:
+    header:
+      title: Qimeyn
+    menu:
+      title: Qimeyn
+      budgets: Misaaniyadaha kaqayb qadashada
+      spending_proposals: Bixinta soo jeedinta
+    budgets:
+      index:
+        title: Misaaniyadaha kaqayb qadashada
+        filters:
+          current: Furan
+          finished: Dhamaday
+        table_name: Magac
+        table_phase: Weeji
