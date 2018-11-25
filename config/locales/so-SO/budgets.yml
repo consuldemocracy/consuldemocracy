@@ -112,6 +112,20 @@ so:
         code_html: 'Koodka mashruuca malgashiga<strong>%{code}</strong>'
         location_html: 'Goobta<strong>%{location}</strong>'
         organization_name_html: 'Lagu soo bandhigay: <strong>%{name}</strong>'
+        share: Lawadag
+        title: Mashruuca Malgelinta
+        supports: Tageerayaal
+        votes: Codaad
+        price: Qime
+        comments_tab: Faalo
+        milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
+        no_milestones: An lahayn yool qeexaan
+        milestone_publication_date: "Labahiyey%{publication_date}"
+        milestone_status_changed: Xaaladda maal-gashiga ayaa loo badalay
+        author: Qoraa
+        project_unfeasible_html: 'Mashruucan maalgashiga <strong> ayaa loo calaamadeeyay sida aan suurtagal ahayn </ strong> oo uma tagi doono wajiga ballanka.'
+        project_selected_html: 'Mashruucan maalgashiga <strong> ayaa loo xushay </ strong> muddada ballanka.'
+        project_winner: 'Ku guuleysiga mashruuca maalgashiga'
     results:
       incompatibles: Isfaham la'aan
       investment_proyects: Liska dhaman mashariicda Malgelinta
@@ -119,3 +133,15 @@ so:
       not_selected_investment_proyects: Liiska dhammaan mashaariicda maalgashiga ee aan loo dooran mudnaanta
     executions:
       link: "Dhib meel loga baxo oo an lahayn dhibato wayn"
+      page_title: "%{budget}- Dhib meel loga baxo an lahayn dhibaato wayn"
+      heading: "Miisaaniyadda ka qaybqaadashada"
+      heading_selection_title: "Degmo ahaan"
+      no_winner_investments: "Mana jiraan maalgalin ku guuleysta gobolkan"
+      filters:
+        label: "Mashruca hada gobolka kasocda"
+        all: "Dhaman%{count}"
+    phases:
+      errors:
+        dates_range_invalid: "Taariikhda bilowga ma noqon karto mid siman ama ka dambeysa taariikhda dhammaadka"
+        prev_phase_dates_invalid: "Taariikhda bilawga waa inay ahaataa mid ka dambeysa taariikhda bilawga ah ee marxaladda hore ee hore loo sameeyay %{phase_name}"
+        next_phase_dates_invalid: "Taariikhda dhammaadku waa inay ahaataa mid ka horreysa taariikhda dhammaadka marxaladda xiga ee xiga %{phase_name}"
