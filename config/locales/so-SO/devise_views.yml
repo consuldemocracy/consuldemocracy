@@ -1,1 +1,6 @@
 so:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Dib usoo dir tilmamaha
