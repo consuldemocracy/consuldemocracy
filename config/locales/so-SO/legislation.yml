@@ -74,3 +74,9 @@ so:
         section_footer:
           title: Caawinaad ku sabsan nidaamka sharciaga ah
           description: Ka qaybqaataan doodaha iyo geedi socodka ka hor inta ansaxin sharciga ama ficilka degmada. Fikraddaada waxaa fiirin doona Golaha Magaalada.
+      phase_not_open:
+        not_open: Marxaladani weli ma furna
+      phase_empty:
+        empty: Weli waxba lama shaaciin
+      process:
+        see_latest_comments: Arag Faloyinka ugu danbeyey
