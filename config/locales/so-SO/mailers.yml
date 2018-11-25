@@ -34,3 +34,6 @@ so:
       comment: Faalada soo jeedinta
       unsubscribe: "Haddii aadan rabin inaad hesho ogeysiis soo jeedin, booqo%{account} oo aanad 'helin soo koobidda ogeysiinta soo jeedinta'."
       unsubscribe_account: Xisaabteyda
+    direct_message_for_receiver:
+      subject: "Waxaad heshay farriin cusub oo gaar ah"
+      reply: Jawaab u diir%{sender}
