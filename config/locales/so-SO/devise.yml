@@ -30,3 +30,23 @@ so:
     omniauth_callbacks:
       failure: "Maquul hayn in laydiin ogolada sida%{kind} sabab%{reason}."
       success: "Siguul ah ayaa loo aqoonsaday sida%{kind}."
+    passwords:
+      no_token: "Ma heli kartid boggan marka laga reebo isku-xirka sirta ee sirta. Haddii aad ku heshay xiriirka lambarka sirta ah, fadlan hubi in URL dhamaystiran yahay."
+      send_instructions: "Dhowr daqiiqo, waxaad heli doontaa email ah oo leh tilmaamo ku saabsan dib u dejinta eraygaaga sirta ah."
+      send_paranoid_instructions: "Haddii cinwaanka emailkaaga uu ku jiro xogta nada, dhowr daqiiqo waxaad heli doontaa link ah si ay u isticmaalaan si ay u dejiyaan lambar sireedkaga."
+      updated: "Furaha sirtaada waa la bedelay. Aqoonsi ayaa ku guulaystay."
+      updated_not_active: "Lambar sireedkaga si guul ah ayaa loo bedelay."
+    registrations:
+      destroyed: "Nabadgelyo! Koontadaada waa la joojiyay. Waxaan rajeyneynaa inaan mar dhow kuu aragno."
+      signed_up: "So dhowow wa lugu xaqijiyey."
+      signed_up_but_inactive: "Diiwaangelintaadu way guulaysatay, laakiin laguma saxeexi karo sababtoo ah koontadaada lama hawlgalin."
+      signed_up_but_locked: "Diiwaangelintaadu way guulaysatay, laakiin laguma saxeexi karo sababtoo ah koontadaadu waa la xiray."
+      signed_up_but_unconfirmed: "Waxaa laguu diray farriin ay ku jirto xiriir xaqiijin ah. Fadlan riix linkkan si aad udhaqaajiso koontadaada."
+      update_needs_confirmation: "Koontadaada si guul leh ayaa loo cusbooneysiiyey; Si kastaba ha ahaatee, waxaan u baahanahay inaan xaqiijino cinwaankaaga cusub ee emailka. Fadlan calaamadee emailkaaga oo riix bogga si aad u buuxiso xaqiijinta cinwaanka emailkaaga cusub."
+      updated: "Koontadaada si guul leh ayey u cusbooneysiisay."
+    sessions:
+      signed_in: "Waxaa laguu saxeexay si guul leh."
+      signed_out: "Siguul ah ayaad u saxeexay."
+      already_signed_out: "Siguul ah ayaad u saxeexay."
+    unlocks:
+      send_instructions: "Dhowr daqiiqo, waxaad heli doontaa email ah oo leh tilmaamo lagu furayo xisaabtaada."
