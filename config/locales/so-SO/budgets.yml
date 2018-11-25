@@ -92,3 +92,5 @@ so:
           change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
           check_ballot_link: "huubi codkayga"
           zero: Uma adan codayn wax msharuuc malgashi ah o koox ah.
+          verified_only: "In la abuuro maalgalin cusub oo maaliyadeed%{verify}."
+          verify_account: "hubi xisaabtaada"
