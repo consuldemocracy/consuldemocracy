@@ -62,6 +62,14 @@ so:
       create_proposal: Abuur soo jeedin
       print_proposals: Dabac soojedinta
       support_proposals: Tageer so jedinta
+      create_spending_proposal: Samee qorshaha kharashad
+      print_spending_proposals: Dabaac so jedinada Kharashaadka
+      support_spending_proposals: Tageer Soojeedinada Kharashadka
+      create_budget_investment: Saame misaaniyad malgashelin
+      print_budget_investments: Dabac misaniyada malgashiyada
+      support_budget_investments: Tageer misaniyada malgashiyada
+      users: Maaraynta isticmaalayasha
+      user_invites: Soo dir casuumada
     users:
       erased_notice: Akoonka isticmaalaha laga tirtiray.
       erased_by_manager: "Waxa tir tiraay mamulaha:%{manager}"
