@@ -4,3 +4,29 @@ so:
       new:
         email_label: Email
         submit: Dib usoo dir tilmamaha
+        title: Dib uso diir hubinta tilmamaha
+      show:
+        instructions_html: Xaqiijinta koontada emailka %{email}
+        new_password_confirmation_label: Ku celi lambarka sirta
+        new_password_label: Furaha cusub ee erayga
+        please_set_password: Fadlan dooro lambar sireedka cusub (waxay kuu ogolaaneysaa inaad ku soo gasho emailka kor ku xusan)
+        submit: Xaqiijin
+        title: Xaqiiji Akoonkayga
+    mailer:
+      confirmation_instructions:
+        confirm_link: Xaqiiji Akoonkayga
+        text: 'Waxaad xaqiijin kartaa koontadaada emailka kuxiran ee soo socda:'
+        title: Sodhowow
+        welcome: Sodhowow
+      reset_password_instructions:
+        change_link: Bedel lambar siredkaga cusub
+        hello: Haloow
+        ignore_text: Haddii aadan codsan isbeddel sir ah, waad iska indha tiri kartaa emailkan.
+        info_text: Furaha sirta ah lama beddeli doono ilaa aad ka heleyso xiriirka oo aad saxdo.
+        text: 'Waxaan helnay codsi aan ku badalno eraygaaga sirta ah. Waxaad ku samayn kartaa sidan:'
+        title: Furahaga bedel
+      unlock_instructions:
+        hello: Haloow
+        info_text: Koontadaada waa la xanimay sababtoo ah tirooyin xad dhaaf ah oo isku-day ah oo isku-day ah.
+        instructions_text: 'Fadlan riix linkagan this si aad u furto xisaabtaada:'
+        title: Akoonkaga waa la xiray
