@@ -1,1 +1,21 @@
 so:
+  devise:
+    password_expired:
+      expire_password: "Furaha wa dhacay"
+      change_required: "Furahaga waa mid dhacay"
+      change_password: "Furahaga bedel"
+      new_password: "Fure cusub"
+      updated: "Furahaga sirta ah si guul ah ayaa lo cusboneysiyey"
+    confirmations:
+      confirmed: "Your account has been confirmed."
+      send_instructions: "Dhowr daqiiqadood waxaad heli doontaa email ah oo leh tilmaamo ku saabsan sida dib loogu bilaabo eraygaaga sirta ah."
+      send_paranoid_instructions: "Haddii cinwaanka emailkaaga uu ku jiro xogtanada, dhowr daqiiqo waxaad heli doontaa email ah oo leh tilmaamo ku saabsan sida dib loogu bilaabo eraygaaga sirta ah."
+    failure:
+      already_authenticated: "Adigu horey ayaad saxiixday."
+      inactive: "Koontadaadu weli wali ma shaqayn."
+      invalid: "An la isticmaali karin%{authentication_keys} ama fure firta ah."
+      locked: "Akoonkaga waa la xiray."
+      last_attempt: "Waxaad haysataa hal isku day dheeraad ah ka hor inta aan xisaabtaada la xirin."
+      not_found_in_database: "An la isticmaali karin%{authentication_keys} ama fure firta ah."
+      timeout: "Kulankaaga ayaa dhacay. Fadlan mar kale saxiix si aad u sii wadato."
+      unauthenticated: "Waa inaad saxiixdaa ama isdiiwaangalisaa si aad u sii waddo."
