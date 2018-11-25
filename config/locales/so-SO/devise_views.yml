@@ -30,3 +30,37 @@ so:
         info_text: Koontadaada waa la xanimay sababtoo ah tirooyin xad dhaaf ah oo isku-day ah oo isku-day ah.
         instructions_text: 'Fadlan riix linkagan this si aad u furto xisaabtaada:'
         title: Akoonkaga waa la xiray
+        unlock_link: Furo sixaabtada
+    menu:
+      login_items:
+        login: Geliid
+        logout: Kabixiid
+        signup: Isdiwaan geli
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Magaca ururka
+          password_confirmation_label: Hubi lambar siredka
+          password_label: Furaha sirta ah
+          phone_number_label: Talafoon lambar
+          responsible_name_label: Magaca buuxa ee qofka mas'uulka ka ah wadajirka
+          responsible_name_note: Tani waxay noqon kartaa qofka matala ururka / ururka ee magaciisu soo bandhigay
+          submit: Isdiwaan geli
+          title: Diiwaangelin sida urur ama wadajir
+        success:
+          back_to_index: 'Waan fahmay: kunoqo boga wayn'
+          instructions_1_html: "<strong> Waxaan si dhakhso ah kuu la soo xiriiri doonaa </ strong> si aan u xaqiijino in aad xaqiiqda ku sameysid wakiilkan."
+          instructions_2_html: Inkastoo aad <strong> emailka dib u eegis </ strong>, waxaan kuu soo dirnay link <strong> si aan u xaqiijino koontadaada </ strong>.
+          instructions_3_html: Markii la xaqiijiyo, waxaad bilaabi kartaa inaad kaqaybqaadato sidii koox aan la aqoonsaneyn.
+          thank_you_html: Waad ku mahadsantahay inaad iska diiwaangeliso guud ahaan bogga internetka. Hadda waa <strong> xaqiijinta sugitaanka </ strong>.
+          title: Diiwaangelinta urur / wadajir
+    passwords:
+      edit:
+        change_submit: Bedel lambar siredkaga cusub
+        password_confirmation_label: Hubi Lambar siredka cusub
+        password_label: Fure cusub
+        title: Furahaga bedel
+      new:
+        email_label: Email
+        send_submit: Diir tilmamaha
