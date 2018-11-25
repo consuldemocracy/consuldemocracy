@@ -1,1 +1,31 @@
 so:
+  moderation:
+    comments:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending_flag_review: Joojin
+          with_ignored_flag: Ku alaamadeysan sida loo arko
+        headers:
+          comment: Faalo
+          moderate: Dhexdhadiye
+        hide_comments: Qari Falooyinka
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbo
+        orders:
+          flags: Inta badan calanka
+          newest: Ugu cusub
+        title: Faalo
+    dashboard:
+      index:
+        title: Dhexdhexaadinta
+    debates:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
