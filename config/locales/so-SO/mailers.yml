@@ -37,3 +37,7 @@ so:
     direct_message_for_receiver:
       subject: "Waxaad heshay farriin cusub oo gaar ah"
       reply: Jawaab u diir%{sender}
+      unsubscribe: "Haddii aadan rabin inaad hesho fariin toos ah, booqo%{account} oo aanad 'Helin emails wixii ku saabsan fariimaha tooska'."
+      unsubscribe_account: Xisaabteyda
+    direct_message_for_sender:
+      subject: "Waxaad soo dirtay farriin cusub oo gaar ah"
