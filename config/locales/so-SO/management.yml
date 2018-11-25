@@ -73,6 +73,25 @@ so:
       select_user: Dooro isticmalaha
     permissions:
       create_proposals: Abuur soo jeedino
+      debates: Ka qaybqaado doodaha
+      support_proposals: Tageer so jedinta
+      vote_proposals: Soo jeedinada cod bixinta
+    print:
+      proposals_info: 'Abuuro codsigaaga http: //url.consul'
+      proposals_title: 'Sojeedino:'
+      spending_proposals_info: 'Ka qaybgal http: //url.consul'
+      budget_investments_info: 'Ka qaybgal http: //url.consul'
+    print_info: Daabac xogtan
+    proposals:
+      alert:
+        unverified_user: Isticmaalaha lama hubin
+      create_proposal: Abuur soo jeedin
+      print:
+        print_button: Dabac
+      index:
+        title: Tageer so jedinta
+    budgets:
+      create_new_investment: Saame misaaniyad malgashelin
     users:
       erased_notice: Akoonka isticmaalaha laga tirtiray.
       erased_by_manager: "Waxa tir tiraay mamulaha:%{manager}"
