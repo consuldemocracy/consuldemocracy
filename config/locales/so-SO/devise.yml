@@ -50,3 +50,16 @@ so:
       already_signed_out: "Siguul ah ayaad u saxeexay."
     unlocks:
       send_instructions: "Dhowr daqiiqo, waxaad heli doontaa email ah oo leh tilmaamo lagu furayo xisaabtaada."
+      send_paranoid_instructions: "Haddii aad leedahay xisaab, dhowr daqiiqadood waxaad heli doontaa email ah oo leh tilmaamo lagu furayo xisaabtaada."
+      unlocked: "Koontadaada ayaa la furay. Fadlan gal si aad u sii wadato."
+  errors:
+    messages:
+      already_confirmed: "Horeyba waa laguu xaqiijiyey; fadlan iskuday inaad saxiixdo."
+      confirmation_period_expired: "Waxaad ubaahan tahay in lagu xaqiijiyo gudaha boqolkiiba %{period} fadlan samee codsi ku celin."
+      expired: "wuu dhacay; fadlan samee codsi ku celin."
+      not_found: "lama helin."
+      not_locked: "lama xirin."
+      not_saved:
+        one: "1 qalad ayaa ka hortagey tan%{resource} in laga badbaadiyo. Fadlan calaamadee beeraha calaamadeeyay si aad u ogaatid sida loo saxo:"
+        other: "%{count} qalad ayaa ka hortagey tan%{resource} in laga badbaadiyo. Fadlan calaamadee beeraha calaamadeeyay si aad u ogaatid sida loo saxo:"
+      equal_to_current_password: "waa inuu kaduwayahy lamabar siredka hada."
