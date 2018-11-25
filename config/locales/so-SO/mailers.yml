@@ -41,3 +41,14 @@ so:
       unsubscribe_account: Xisaabteyda
     direct_message_for_sender:
       subject: "Waxaad soo dirtay farriin cusub oo gaar ah"
+      title_html: "Waxaad fariin gaar ah u dirtay <strong>% %{receiver}</strong> oo leh mawduuc:"
+    user_invite:
+      ignore: "Haddii aadan codsanin martiqaadkan ha walwalin, waad iska indha tiri kartaa emailkan."
+      text: "Waad ku mahadsantahay codsigaaga inaad ku biirto %{org}! marbaad waxaad bilaabi kartaa inaad kaqaybqaadato, kaliya buuxi foomka hoose:"
+      thanks: "Ad baad u mahadsantahay."
+      title: "Kuso dhowow%{org}"
+      button: Diiwaangelinta buuxda
+      subject: "Martiqaadka%{org_name}"
+    budget_investment_created:
+      subject: "Waad ku mahadsan tahay abuurista maalgalin!"
+      title: "Waad ku mahadsan tahay abuurista maalgalin!"
