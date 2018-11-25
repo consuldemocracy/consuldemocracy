@@ -99,3 +99,22 @@ so:
           edit: Isbedel
           email_label: Email
           leave_blank: Katag bannaanka haddii aadan rabin inaad wax ka beddesho
+          need_current: Waxaan u baahannahay furahaaga sirta ah si aan u xaqiijino isbedelka
+          password_confirmation_label: Hubi Lambar siredka cusub
+          password_label: Fure cusub
+          update_submit: Cusboneysiin
+          waiting_for: 'Sugitaanka xaqiijinta:'
+        new:
+          cancel: Joojiso galitaanka
+          email_label: Email
+          organization_signup: Miyaad mataleysaa urur ama wadajir? %{signup_link}
+          organization_signup_link: Halkaan iska qor
+          password_confirmation_label: Hubi lambar siredka
+          password_label: Furaha sirta ah
+          redeemable_code: Koodhka xaqiijinta ee laga helay email ahaan (ikhtiyaar)
+          submit: Isdiwaan geli
+          terms: Markaad isdiiwaangeliso aqbasho%{terms}
+          terms_link: shuruudaha iyo xaaladaha isticmaalka
+          terms_title: Adiga oo isdiiwaangelinaya waxaad aqbashay shuruudaha iyo shuruudaha isticmaalka
+          title: Isdiwaan geli
+          username_is_available: Magaca isticmalaha laheli karo
