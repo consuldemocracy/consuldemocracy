@@ -70,6 +70,9 @@ so:
       support_budget_investments: Tageer misaniyada malgashiyada
       users: Maaraynta isticmaalayasha
       user_invites: Soo dir casuumada
+      select_user: Dooro isticmalaha
+    permissions:
+      create_proposals: Abuur soo jeedino
     users:
       erased_notice: Akoonka isticmaalaha laga tirtiray.
       erased_by_manager: "Waxa tir tiraay mamulaha:%{manager}"
