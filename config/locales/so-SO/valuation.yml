@@ -39,3 +39,38 @@ so:
       show:
         back: Labasho
         title: Mashruuca Malgelinta
+        info: Maclumadka qoraga
+        by: Soodiray
+        sent: La soo diray
+        heading: Madaxa
+        dossier: Koob
+        edit_dossier: Tafatiraha Warqadaha
+        price: Qime
+        price_first_year: Kharashka sanadka koowaad
+        currency: "€"
+        feasibility: Suurta galnimada
+        feasible: Surtagal
+        unfeasible: An surtgak ahayn
+        undefined: Aan la garanayn
+        valuation_finished: Qimeeyn ayaa dhamatay
+        duration: Xadida wakhtiga
+        responsibles: Masuuliyaaha
+        assigned_admin: Mamul u astayn
+        assigned_valuators: Qimeyayasha lo xilsaray
+      edit:
+        dossier: Koob
+        price_html: "Qimaha%{currency}"
+        price_first_year_html: "Kharashadka sanadka kowaad%{currency}<small>ikhtiyaari ah, xog aan dadweynaha ahayn</small>"
+        price_explanation_html: Faahfaahinta qiimaha
+        feasibility: Suurta galnimada
+        feasible: Surtagal
+        unfeasible: Aan suurtoobi karin
+        undefined_feasible: Joojin
+        feasible_explanation_html: Sharaxaadda faahfaahinta
+        valuation_finished: Qimeeyn ayaa dhamatay
+        valuation_finished_alert: "Mahubta inaad rabto inaad warbixintaan kadhigtiid mid dhamaystiran Haddii aad samayso, mar dambe dib looma beddeli karo."
+        not_feasible_alert: "Email ayaa isla markiiba loo diri doonaa qoraaga mashruuca iyadoo la soo gudbin doono warbixinta suurtagalnimada."
+        duration_html: Xadida wakhtiga
+        save: Badbaadi beddelka
+      notice:
+        valuate: "Kobiga lacusboneysiyey"
