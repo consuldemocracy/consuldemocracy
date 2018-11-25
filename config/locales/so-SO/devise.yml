@@ -19,3 +19,14 @@ so:
       not_found_in_database: "An la isticmaali karin%{authentication_keys} ama fure firta ah."
       timeout: "Kulankaaga ayaa dhacay. Fadlan mar kale saxiix si aad u sii wadato."
       unauthenticated: "Waa inaad saxiixdaa ama isdiiwaangalisaa si aad u sii waddo."
+      unconfirmed: "Si aad u sii wado, fadlan guji xiriirka xaqiijinta ee aan kuugu soo dirnay email ahaan"
+    mailer:
+      confirmation_instructions:
+        subject: "Tilmaamaha xaqiijinta"
+      reset_password_instructions:
+        subject: "Tilmaan ku saabsan dib u habeynta eraygaaga sirta ah"
+      unlock_instructions:
+        subject: "Tilmaamaha furitaanka"
+    omniauth_callbacks:
+      failure: "Maquul hayn in laydiin ogolada sida%{kind} sabab%{reason}."
+      success: "Siguul ah ayaa loo aqoonsaday sida%{kind}."
