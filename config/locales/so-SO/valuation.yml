@@ -14,3 +14,28 @@ so:
           finished: Dhamaday
         table_name: Magac
         table_phase: Weeji
+        table_assigned_investments_valuation_open: Mashaariicda maalgashiga ee loo qoondeeyey qiimeyn furan
+        table_actions: Tilaabooyin
+        evaluate: Qiime
+    budget_investments:
+      index:
+        headings_filter_all: Dhamaan Ciwaanada
+        filters:
+          valuation_open: Furan
+          valuating: Qimeeyni kusocoto
+          valuation_finished: Qimeeyn ayaa dhamatay
+        assigned_to: "Loo magacaabo%{valuator}"
+        title: Mashariicda malgashiga
+        edit: Tafatiraha Warqadaha
+        valuators_assigned:
+          one: '%{count} Qimeyayasha lo qoondeyey'
+          other: "%{count} Qimeyayasha lo qoondeyey"
+        no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
+        table_id: Aqoonsi
+        table_title: Ciwaan
+        table_heading_name: Magaca Ciwaanka
+        table_actions: Tilaabooyin
+        no_investments: "Majiraan Mashariic malgashi."
+      show:
+        back: Labasho
+        title: Mashruuca Malgelinta
