@@ -53,3 +53,8 @@ so:
       sidebar:
         recommendations_title: Talooyin si loo abuuro mowduuc
         recommendation_one: Ha qorin mawduuca mawduuca ama jumlada oo dhan xarfaha waaweyn. Internetka oo loo tixgelinayo in la qaylinayo. Oo ciduna ma jeclaan doonto inuu qayliyo.
+        recommendation_two: Mawduuc kasta oo faallo ah ama faallooyin ah oo la xidhiidha tallaabo sharci darro ah ayaa la tirtirayaa, sidoo kale kuwa doonaya inay khalkhal galiyaan meelaha maadada, wax walba oo kale waa la oggol yahay.
+        recommendation_three: Ku raaxee meeshan, codadka buuxiya, waa waliba.
+  topics:
+    show:
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
