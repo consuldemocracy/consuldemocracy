@@ -109,3 +109,17 @@ so:
         title: Nidaamka sharciyeed ee wadajirka ah
       participation:
         phase_not_open: Wejigan ma furan yahay
+        organizations: Ururada looma oggola inay ka qaybqaataan doodda
+        signin: Geliid
+        signup: Saxiixid
+        unauthenticated: Waa inaad%{signin}%{signup} inaad ka qayb qaadato.
+        verified_only: Kaliya isticmaalayaasha ayaa xaqiijin kara,%{verify_account}.
+        verify_account: hubi xisaabtaada
+        debate_phase_not_open: Marxaladda dooddu way dhammaatay, jawaabahana lama aqbalo
+    shared:
+      share: Lawadag
+      share_comment: Faallada ku jirta%{version_name} ka socota qabyo-socodka%{process_name}
+    proposals:
+      form:
+        tags_label: "Qaybaha"
+      not_verified: "Soo jeedinta cod bixinta%{verify_account}."
