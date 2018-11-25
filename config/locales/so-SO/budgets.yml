@@ -73,3 +73,22 @@ so:
         title: Misaaniyada kaqayb qadashada
         unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
         unfeasible_text: "Maalgashadaan waa in ay la kulmaan dhowr shuruudood (sharci, caqli-galin, masuul ka tahay magaalada, ma ahan in ka badan xadadka miisaaniyadda) si loo caddeeyo oo loo gaarsiiyo heerka ugu dambeeya ee codeynta. Dhammaan maalgashiyada ma buuxinayaan shuruudahaan waxaa loo calaamadeeyay mid aan la aqbalin oo lagu daabaco liiska soo socda, iyo warbixinteeda ah in la hayo."
+        by_heading: "Baxaada mashruuca malgashiga%{heading}"
+        search_form:
+          button: Raadin
+          placeholder: Raadi mashriicda malgelinta...
+          title: Raadin
+        search_results_html:
+          one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+          other: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        sidebar:
+          my_ballot: Codkayga
+          voted_html:
+            one: "<strong>waxad u codeysay halsojeedin o wadta kharashaad%{amount_spent}"
+            other: "<strong>waxad u codeysay%{count} halsojeedin o wadta kharashaad%{amount_spent}</strong>"
+          voted_info: Waxaad%{link} gaari kartaa ilaa wakhti xaddidan. Looma baahna inaad isticmaasho dhammaan lacagaha la heli karo.
+          voted_info_link: bedelka codadkaga
+          different_heading_assigned_html: "Waxaad ku leedahay codad firfircoon dhinaca kale%{heading_link}"
+          change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
+          check_ballot_link: "huubi codkayga"
+          zero: Uma adan codayn wax msharuuc malgashi ah o koox ah.
