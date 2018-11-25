@@ -42,3 +42,18 @@ so:
     index:
       title: Misaaniyadaha kaqayb qadashada
       empty_budgets: Majiiraan misaniyado.
+      section_header:
+        icon_alt: Misaniyadaha ka qaybgalka icon
+        title: Misaaniyadaha kaqayb qadashada
+        help: Kacawinta Misaniyadaha ka qayb qadshada
+        all_phases: Fiiri dhammaan wejiyada
+      all_phases: Misaniyada Qaybaha malgelinnada
+      map: Miisaaniyadda maaliyadeed ee 'soo jeedinta juquraafi ahaan
+      investment_proyects: Liska dhaman mashariicda Malgelinta
+      unfeasible_investment_proyects: Liiska dhammaanba mashaariicda maalgashiga suurtagalka ah
+      not_selected_investment_proyects: Liiska dhammaan mashaariicda maalgashiga ee aan loo dooran mudnaanta
+      finished_budgets: Dhameystiray Misaniyada ka qayb qadashada
+      see_results: Arag Natijada
+      section_footer:
+        title: Kacawinta Misaniyadaha ka qayb qadshada
+        description: Iyadoo miisaaniyadaha ka qaybqaadanaya muwaadiniinta ayaa go'aan ka gaara mashaariicda ay ku jiraan qayb ka mid ah miisaaniyadda.
