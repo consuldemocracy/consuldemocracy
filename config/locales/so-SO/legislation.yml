@@ -40,3 +40,36 @@ so:
         select_draft_version: Doro Qabya qoral
         select_version_submit: eegid
         updated_at: cusboneysiyey%{date}
+        see_changes: fiiri isbedel kooban
+        see_comments: Eeg dhamaan faallooyinka
+        text_toc: Shaxada mowduuca
+        text_body: Qoraal
+        text_comments: Faalo
+    processes:
+      header:
+        additional_info: Xog dheraad ah
+        description: Sharaxaad
+        more_info: Macluumaad dheeri ah iyo macne
+      proposals:
+        empty_proposals: Majiraan waxa soo jedina ah
+        filters:
+          random: Isbedel
+          winners: Ladoortay
+      debate:
+        empty_questions: Wax sual ah miyeysan jirin
+        participate: Kaqayb qadashada dooda
+      index:
+        filter: Sifeeyee
+        filters:
+          open: Gedisocodka furaan
+          next: Xiga
+          past: Hore
+        no_open_processes: Miyeysan geedi socodku furneyn
+        no_next_processes: Ma jiraan habab loo qorsheeyay
+        no_past_processes: Miyeysan geedi socodku hore
+        section_header:
+          icon_alt: Nidaamka Sharciga icon
+          title: Nidaamka Sharciga
+          help: Caawinaad ku sabsan nidaamka sharciaga ah
+        section_footer:
+          title: Caawinaad ku sabsan nidaamka sharciaga ah
