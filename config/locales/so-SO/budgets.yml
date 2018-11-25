@@ -161,6 +161,16 @@ so:
     results:
       link: Natiijoyin
       page_title: "%{budget} natiijooyinka"
+      heading: "Misanayadda kaqayb qadashada natijooyinka"
+      heading_selection_title: "Degmo ahaan"
+      spending_proposal: Ciwaanka soo jedinta
+      ballot_lines_count: Codaad
+      hide_discarded_link: Qari Haraga
+      show_all_link: Muji dhamaan
+      price: Qime
+      amount_available: Misaniyada lahelikaro
+      accepted: "Soojedinta kharashaadka la ogoladay: "
+      discarded: "Soo jeedinta kharashka la tuuray: "
       incompatibles: Isfaham la'aan
       investment_proyects: Liska dhaman mashariicda Malgelinta
       unfeasible_investment_proyects: Liiska dhammaan mashaariicda maal-gashiga ee suurtogalka ah
