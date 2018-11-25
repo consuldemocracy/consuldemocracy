@@ -39,6 +39,7 @@ so:
           budgets: Misaaniyada kaqayb qadashada
           help_page: Bogga Caawinta
         background_color: Midaabka hore
+        font_color: Kalarka baaldiga kanisada laga isticmaalo
       edit:
         editing: Bedel baneer
         form:
@@ -645,6 +646,7 @@ so:
         from: Cinwaanka E-mailka oo u muuqda inuu u dirayo warside
         body: Macluumadka Emailka
         body_help_text: Tani waa sida ay isticmaalayaashu u arki doonaan emailka
+        send_alert: Ma hubtaa inaad rabto inaad wargeyskan u dirto%{n} dadka isticmaala?
     admin_notifications:
       create_success: Ogeysinta si guula ayaa loo abuuray
       update_success: Ogeysinta si guula ayaa loo cusboneysiyey
@@ -672,6 +674,7 @@ so:
       show:
         section_title: Horudhaca ogeysiinta
         send: Diir Ogaysiin
+        will_get_notified: (%{n} isticmaalaysha ayaa la ogeysiin doonaa)
         got_notified: '%{n} isticmaalayaasha ayaa la ogeysiiyey)'
         sent_at: La soo diray
         title: Ciwaan
