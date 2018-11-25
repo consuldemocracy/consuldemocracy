@@ -1,1 +1,6 @@
 so:
+  management:
+    account:
+      menu:
+        reset_password_email: Sifaan erayga sirta ah e-mail
+        reset_password_manually: Furaha sirta ah dib u so celin qaab macmaal ah
