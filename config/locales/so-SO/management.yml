@@ -51,3 +51,24 @@ so:
       already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
       choose_options: 'Fadlan dooro mid ka mid ah xulashooyinka soo socda:'
       document_found_in_census: Dukumeentigan waxaa laga heley tirakoobka, laakiin ma leh xisaab biil ah oo la xidhiidha.
+      document_mismatch: 'Emaylkani waxaa iska leh qof isticmaala horey u lahaa id xiriir la leh:%{document_number}%{document_type}'
+      email_placeholder: U qor emaylka qofkan loo isticmaalo inuu abuuro akoonkiisa
+      email_sent_instructions: Si buuxda loo xaqiijiyo isticmaalaha, waxaa lagama maarmaan ah in isticmaalaha uu isku xiro link oo aanu u dirnay cinwaanka emailka kor ku xusan. Talaabadaan waxaa loo baahan yahay si loo xaqiijiyo in cinwaanka isaga ka tirsan yahay.
+      if_existing_account: Haddii uu qofku horayba u isticmaalay xisaab beri ah,
+      if_no_existing_account: Hadii qof kani aanu weli koonto sameysaan
+      introduce_email: 'Fadlan isbar Email istmalaha ackoonka:'
+      send_email: Soodir Emaylka xaqiijinta
+    menu:
+      create_proposal: Abuur soo jeedin
+      print_proposals: Dabac soojedinta
+      support_proposals: Tageer so jedinta
+    users:
+      erased_notice: Akoonka isticmaalaha laga tirtiray.
+      erased_by_manager: "Waxa tir tiraay mamulaha:%{manager}"
+      erase_account_link: Tirtiir isticmalaha
+      erase_account_confirm: Ma hubtaa inaad rabto inaad tirtirto koontada? Ficilkan lama tirtiri karo
+      erase_warning: Ficilkan lama tirtiri karo. Fadlan hubso inaad rabto inaad tirtirto koontadan.
+      erase_submit: Tirtir xisaabta
+    user_invites:
+      new:
+        label: Emailo
