@@ -1,1 +1,18 @@
 so:
+  community:
+    sidebar:
+      title: Bulsho
+      description:
+        proposal: Ka-qayb-galka bulshada isticmaalaha ee soo jeedintaas.
+        investment: Ka qaybqaado bulshada isticmaala maalgashadaan.
+      button_to_access: Helitaanka bulshada
+    show:
+      title:
+        proposal: Soojedinta Bulshada
+        investment: Misaniyada Malgashiga bulshada
+      description:
+        proposal: Ka qaybgal bulshada dhexdeeda soo jeedinta. Bulsho firfircoon waxay gacan ka geysan kartaa hagaajinta waxyaabaha soo jeedinta iyo kordhinta faafinta si ay u helaan taageero dheeraad ah.
+        investment: Ka qaybqaado bulshada ka tirsan maalgashiga miisaaniyadda. Bulsho firfircoon waxay gacan ka geysan kartaa hagaajinta miisaaniyadda maaliyadeed iyo kor u qaadida faafinta si ay u hesho taageero dheeraad ah.
+      create_first_community_topic:
+        first_theme_not_logged_in: Wax arin ah looma helin, ka qaybqaado abuurida koowaad.
+        first_theme: Saame Mowducii ugu horeyey ee bulshada
