@@ -1,1 +1,7 @@
 so:
+  budgets:
+    ballots:
+      show:
+        title: Warqadda codbixintaada
+        amount_spent: Qadarka la kharashadka
+        remaining: "Weli waad heysataa <span>%{amount}</span> si aad u maal gasho."
