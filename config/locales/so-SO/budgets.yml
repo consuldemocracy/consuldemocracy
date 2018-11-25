@@ -57,3 +57,19 @@ so:
       section_footer:
         title: Kacawinta Misaniyadaha ka qayb qadshada
         description: Iyadoo miisaaniyadaha ka qaybqaadanaya muwaadiniinta ayaa go'aan ka gaara mashaariicda ay ku jiraan qayb ka mid ah miisaaniyadda.
+      milestones: Dhib meel loga baxo oo an lahayn dhibato wayn
+    investments:
+      form:
+        tag_category_label: "Qaybaha"
+        tags_instructions: "Tag soojeedintaan. Waxaad kala dooran kartaa qaybaha la soo jeediyey ama ku dar adiga keligaa"
+        tags_label: Tagyada
+        tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
+        map_location: "Goobta Khariirada"
+        map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
+        map_remove_marker: "Ka saar sumadaha khariidada"
+        location: "Maclumaadka dheeriga ah ee goobta"
+        map_skip_checkbox: "Malgashigana meel latabn karo anigu ama anigu waxba kama ogi."
+      index:
+        title: Misaaniyada kaqayb qadashada
+        unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
+        unfeasible_text: "Maalgashadaan waa in ay la kulmaan dhowr shuruudood (sharci, caqli-galin, masuul ka tahay magaalada, ma ahan in ka badan xadadka miisaaniyadda) si loo caddeeyo oo loo gaarsiiyo heerka ugu dambeeya ee codeynta. Dhammaan maalgashiyada ma buuxinayaan shuruudahaan waxaa loo calaamadeeyay mid aan la aqbalin oo lagu daabaco liiska soo socda, iyo warbixinteeda ah in la hayo."
