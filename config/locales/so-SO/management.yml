@@ -72,3 +72,9 @@ so:
     user_invites:
       new:
         label: Emailo
+        info: "Geli Lamaradaa oo ay ka socanyihiin qooyska(', ')"
+        submit: Soo dir casuumada
+        title: Soo dir casuumada
+      create:
+        success_html: "<strong>%{count} martiqaadyada\n</strong>waa ladiray."
+        title: Soo dir casuumada
