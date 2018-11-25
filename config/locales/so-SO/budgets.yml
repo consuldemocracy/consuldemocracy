@@ -21,3 +21,24 @@ so:
         no_ballots_allowed: Xulashada wajiga waa la xidhay
         different_heading_assigned_html: "Horay ayaad u doortay madax kale%{heading_link}"
         change_ballot: bedelka codadka
+    groups:
+      show:
+        title: Xuulo dorasho
+        unfeasible_title: Malgashiyo an macqul ahayn
+        unfeasible: Arrag Malgashiyada an macqulka ahayn
+        unselected_title: Maalgashiyada lama doorto wajiga ballanka
+        unselected: Eeg maalgashiyada aan loo dooran muddada gaaban
+    phase:
+      drafting: Qabayo qoralka uma muuqanaya dadweynaha
+      informing: Maclumaad
+      accepting: Aqbaliada Mashruuca
+      reviewing: Dib u eegida mashruuca
+      selecting: Masharucyoo xulanaya
+      valuating: Mashruucyo qimeeynayaa
+      publishing_prices: Bahinta qimaha mashariicda
+      balloting: Mashariicda cod bixinta
+      reviewing_ballots: Dib u eegida codeynta
+      finished: Miisaniyada ladhameyey
+    index:
+      title: Misaaniyadaha kaqayb qadashada
+      empty_budgets: Majiiraan misaniyado.
