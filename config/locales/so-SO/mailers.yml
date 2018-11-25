@@ -52,3 +52,12 @@ so:
     budget_investment_created:
       subject: "Waad ku mahadsan tahay abuurista maalgalin!"
       title: "Waad ku mahadsan tahay abuurista maalgalin!"
+      intro_html: "Haaye<strong>%{author}</strong>"
+      text_html: "Waad ku mahadsantahay abuurista maalgashigaga<strong>%{investment}</strong>miisaaniyadda ka qaybqaadashada<strong>%{budget}</strong>."
+      follow_html: "Waanu kuu sheegi doonnaa sida geedi socodku u socdo, oo aad sidoo kale raaci karto <strong>%{link}</strong>."
+      follow_link: "Misaaniyadaha kaqayb qadashada"
+      sincerely: "Si dacada ah"
+      share: "Mashruucaga lawadaag"
+    budget_investment_unfeasible:
+      hi: "Isticmalaha qaliga"
+      new_html: "Waxyaalahan oo dhan, waxaan kugu martiqaadeynaa in aad faahfaahinayso maalgashiga <strong>cusub </strong> ee xoojiya xaaladaha geeddi-socodkan. Waxaad samayn kartaa sidan ka dib isku-xirkan:%{url}."
