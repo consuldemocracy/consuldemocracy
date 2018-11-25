@@ -4,3 +4,41 @@ so:
       menu:
         reset_password_email: Sifaan erayga sirta ah e-mail
         reset_password_manually: Furaha sirta ah dib u so celin qaab macmaal ah
+      alert:
+        unverified_user: Qofka la xaqiijiyay weli lama soo galin
+      show:
+        title: Koontada isticmaalaha
+      edit:
+        title: 'Isticmaal koontada isticmaalaha: Sifar erayga'
+        back: Labasho
+        password:
+          password: Furaha sirta ah
+          send_email: Ku soo dir email kumbuyuutar
+          reset_email_send: Email ayaa si sax ah loo diraa.
+          reseted: Fure siredka ayaa si guul ah loo celiyey
+          random: Abuuraa ereyga rasmiga ah
+          save: Bad badi lamabar sireedka
+          print: Dabac lambar sireedka
+          print_help: Waxaad awoodi doontaa inaad daabacdo lambarka sirta marka la kaydinayo.
+    account_info:
+      change_user: Bedelo isticmalaha
+      document_number_label: 'Lambarka dukumeentiga:'
+      document_type_label: 'Qaybaha dukumentiga:'
+      email_label: 'Email:'
+      identified_label: 'Waxaa loo aqoonsaday sida:'
+      username_label: 'Magaca Isticmaalaha:'
+    check: Hubi dukumentiga
+    dashboard:
+      index:
+        title: Maraynta
+        info: Halkan waxaad maamuli kartaa dadka isticmaala dhammaan ficillada ku qoran liiska bidixda.
+    document_number: Lambarka dukumeentiga
+    document_type_label: Qaybaha dukumentiga
+    document_verifications:
+      already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
+      has_no_account_html: Si aad u abuurto koonto, u gudub%{link} oo guji bastaha 'Diiwaangel' <b> qaybta sare ee shaashadda.
+      link: Qunsul
+      in_census_has_following_permissions: 'Isticmaalahan ayaa ka qaybgeli kara website-kan leh ogolaanshaha soo socda:'
+      not_in_census: Dukumeentigan lama diiwaan geliyo.
+      not_in_census_info: 'Muwaadiniinta aan ku jirin Tirakoobka waxay ka qaybqaadan karaan bogga internetka iyagoo leh ogolaanshaha soo socda:'
+      please_check_account_data: Fadlan hubi in xogta kor ku xusan ay sax yihiin.
