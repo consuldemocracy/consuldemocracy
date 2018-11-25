@@ -27,3 +27,10 @@ so:
       sincerely: "Si dacada ah"
       sorry: "Waan ka xumahay dhibaatada iyo mar walbana waxaan kuugu mahadnaqaynaa kaqeybqaadashada aadka u qiimo badan."
       subject: "Mashruuca maalgalinta%{code} ayaa loo calaamadeeyay mid aan macquul ahayn"
+    proposal_notification_digest:
+      info: "Halkan waxaa ku qoran ogaysiis cusub oo lagu daabacay qorayaasha soo jeedimaha aad ku taageertay%{org_name}."
+      title: "Ogeysiisyada soo jeedinta ee%{org_name}"
+      share: Lawadaag soo jeeedinta
+      comment: Faalada soo jeedinta
+      unsubscribe: "Haddii aadan rabin inaad hesho ogeysiis soo jeedin, booqo%{account} oo aanad 'helin soo koobidda ogeysiinta soo jeedinta'."
+      unsubscribe_account: Xisaabteyda
