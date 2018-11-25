@@ -118,3 +118,12 @@ so:
           terms_title: Adiga oo isdiiwaangelinaya waxaad aqbashay shuruudaha iyo shuruudaha isticmaalka
           title: Isdiwaan geli
           username_is_available: Magaca isticmalaha laheli karo
+          username_is_not_available: Magaca hore loo isticmalay
+          username_label: Magaca Isticmaalaha
+          username_note: Magaca ka buuqada bostada kugu xigta
+        success:
+          back_to_index: 'Waan fahmay: kunoqo boga wayn'
+          instructions_1_html: Fadlan <b> Eeg emailkaaga </ b> - waxaan kuu soo dirnay link <b> link si loo xaqiijiyo koontadaada </ b>.
+          instructions_2_html: Marka la xaqiijiyo, waxaad bilaabi kartaa ka qaybqaadashada.
+          thank_you_html: Waad ku mahadsantahay diiwaangelinta boggaga internetka. Hadda waa inaad <b> xaqiijisaa cinwaanka emailkaaga </ b>.
+          title: Xaqiiji cinwaanka emailkaaga
