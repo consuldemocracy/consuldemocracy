@@ -68,3 +68,12 @@ so:
     budget_investment_selected:
       subject: "Mashruucaga malgashiga '%{code} waa xushay"
       hi: "Isticmalaha qaliga"
+      share: "Ka bilow inaad hesho codadka, mashruuca maalgalintaada la wadaago shabakadaha bulshada. Share waa lagama maarmaan in la sameeyo xaqiiqda."
+      share_button: "Lawadag mashruucaga malgelinta"
+      thanks: "Ad ayad ugu mahadsan tahay mar labad ka qaybqadashad."
+      sincerely: "Si dacad ah"
+    budget_investment_unselected:
+      subject: "Mashruucaga malgashiga '%{code} lama xushay"
+      hi: "Isticmalaha qaliga"
+      thanks: "Ad ayad ugu mahadsan tahay mar labad ka qaybqadashad."
+      sincerely: "Si dacad ah"
