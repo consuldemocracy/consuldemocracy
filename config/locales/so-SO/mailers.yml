@@ -10,3 +10,20 @@ so:
       manage_email_subscriptions: Si aad u joojiso helitaanka emailladahaan waxay bedeshaa goobahaaga
     email_verification:
       click_here_to_verify: xidhiidhkan
+      instructions_2_html: E-maylkan ayaa xaqiijin doona koontadaada <b> %{document_type}%{document_number} </b>. Haddii aysan kuwaan ku jirin, fadlan ha guji xiriirka hore oo iska dheji emailkan.
+      instructions_html: Si aad u buuxiso xaqiijinta koontadaada akoonkaaga waa inaad gujisaa%{verification_link}.
+      subject: Xaqiiji emailka
+      thanks: Ad iyo Ad baad u mahadsantahay.
+      title: Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda
+    reply:
+      hi: Haye
+      new_reply_by_html: Waxaa jira jawaab cusub oo ka socota <b>%{commenter}</b> si aad faallo uga bixiso
+      subject: Qof ayaa kajawaabay faladadii
+      title: Jawaabta cusub ee faalladaada
+    unfeasible_spending_proposal:
+      hi: "Isticmalaha qaliga"
+      new_html: "Waxyaalahan oo dhan, waxaan kugu martiqaadeynaa inaad soo bandhigto soo jeedin <strong>soo jeedin cusub <strong> oo hagaajinaya xaaladaha geedi socodkan. Waxaad samayn kartaa sidan ka dib isku-xirkan:%{url}."
+      new_href: "mashruuc cusub o malgelin"
+      sincerely: "Si dacada ah"
+      sorry: "Waan ka xumahay dhibaatada iyo mar walbana waxaan kuugu mahadnaqaynaa kaqeybqaadashada aadka u qiimo badan."
+      subject: "Mashruuca maalgalinta%{code} ayaa loo calaamadeeyay mid aan macquul ahayn"
