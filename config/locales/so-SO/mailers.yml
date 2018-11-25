@@ -61,3 +61,10 @@ so:
     budget_investment_unfeasible:
       hi: "Isticmalaha qaliga"
       new_html: "Waxyaalahan oo dhan, waxaan kugu martiqaadeynaa in aad faahfaahinayso maalgashiga <strong>cusub </strong> ee xoojiya xaaladaha geeddi-socodkan. Waxaad samayn kartaa sidan ka dib isku-xirkan:%{url}."
+      new_href: "mashruuc cusub o malgelin"
+      sincerely: "Si dacada ah"
+      sorry: "Waan ka xumahay dhibaatada iyo mar walbana waxaan kuugu mahadnaqaynaa kaqeybqaadashada aadka u qiimo badan."
+      subject: "Mashruuca maalgalinta%{code} ayaa loo calaamadeeyay mid aan macquul ahayn"
+    budget_investment_selected:
+      subject: "Mashruucaga malgashiga '%{code} waa xushay"
+      hi: "Isticmalaha qaliga"
