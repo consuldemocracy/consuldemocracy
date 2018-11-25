@@ -1,1 +1,9 @@
 so:
+  legislation:
+    annotations:
+      comments:
+        see_all: Eegida dhaaman
+        see_complete: Fiiri dhamaystiran
+        comments_count:
+          one: "%{count} Falo"
+          other: "%{count} Falooyin"
