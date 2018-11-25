@@ -64,3 +64,7 @@ so:
       new:
         email_label: Email
         send_submit: Diir tilmamaha
+        title: Ilaaway lambar sireedka?
+    sessions:
+      new:
+        login_label: Email ama magaca isticmalaha
