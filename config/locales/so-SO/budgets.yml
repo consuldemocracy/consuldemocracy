@@ -5,3 +5,13 @@ so:
         title: Warqadda codbixintaada
         amount_spent: Qadarka la kharashadka
         remaining: "Weli waad heysataa <span>%{amount}</span> si aad u maal gasho."
+        no_balloted_group_yet: "Uma adan codeynin kooxdan wali, cod bixin!"
+        remove: Kassar codka
+        voted_html:
+          one: "Waxaad adigu u codsatay <span> one </ span> maalgashiga."
+          other: "Waxaad adigu u codsatay <span> %{count}</ span> maalgashiga."
+        voted_info_html: "Waad beddeli kartaa codkaaga wakhti kasta illaa inta laga gaarayo wejigan. • Looma baahna in la isticmaalo lacagta oo dhan."
+        zero: Uma codeynin wax mashruuc maalgashi.
+      reasons_for_not_balloting:
+        not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
+        not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara maalgashiga; %{verify_account}.
