@@ -7,3 +7,36 @@ so:
         comments_count:
           one: "%{count} Falo"
           other: "%{count} Falooyin"
+        replies_count:
+          one: "%{count} j Jawab celin"
+          other: "%{count} j Jawabo celin"
+        cancel: Jooji
+        publish_comment: Dabaac falada
+      form:
+        phase_not_open: Wejigan ma furan yahay
+        login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+        signin: Geliid
+        signup: Is diwan gelid
+      index:
+        title: Faalo
+        comments_about: Faaloyin ku sabsan
+        see_in_context: Fiiri macnaha guud
+        comments_count:
+          one: "%{count} Falo"
+          other: "%{count} Falooyin"
+      show:
+        title: Faalo
+      version_chooser:
+        seeing_version: Ballan-qaadka loogu talagalay
+        see_text: Arag qoralka qabyada ah
+    draft_versions:
+      changes:
+        title: Isbedel
+        seeing_changelog_version: Koobida isbedelka dib u eegida
+        see_text: Arag qoralka qabyada ah
+      show:
+        loading_comments: Faallooyinka dejinta
+        seeing_version: Waxaad aragtaa qaabka qabyo-qoraalka
+        select_draft_version: Doro Qabya qoral
+        select_version_submit: eegid
+        updated_at: cusboneysiyey%{date}
