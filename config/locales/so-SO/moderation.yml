@@ -29,3 +29,31 @@ so:
         filter: Sifeeyee
         filters:
           all: Dhamaan
+          pending_flag_review: Joojin
+          with_ignored_flag: Ku alaamadeysan sida loo arko
+        headers:
+          debate: Dood
+          moderate: Dhexdhadiye
+        hide_debates: Qari dodaha
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbo
+        orders:
+          created_at: Ugu cusub
+          flags: Inta badan calanka
+        title: Doodo
+    header:
+      title: Dhexdhexaadinta
+    menu:
+      flagged_comments: Faalo
+      flagged_debates: Doodo
+      flagged_investments: Misaniyada malgashiyada
+      proposals: Sojeedino
+      proposal_notifications: Ogaysiis soo jedinada
+      users: Isticmalaysha la xayiray
+    proposals:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
