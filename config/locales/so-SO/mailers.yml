@@ -1,1 +1,12 @@
 so:
+  mailers:
+    no_reply: "Farriintan waxaa loo direy cinwaanka emailka ah ee aan aqbalin jawaab-celinta."
+    comment:
+      hi: Haye
+      new_comment_by_html: Waxa jira faalo cusub<b>%{commenter}</b>
+      subject: Qof ayaa ka falooday%{commentable}
+      title: Faalo cusub
+    config:
+      manage_email_subscriptions: Si aad u joojiso helitaanka emailladahaan waxay bedeshaa goobahaaga
+    email_verification:
+      click_here_to_verify: xidhiidhkan
