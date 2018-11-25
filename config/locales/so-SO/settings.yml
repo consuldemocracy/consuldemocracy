@@ -1,1 +1,18 @@
 so:
+  settings:
+    comments_body_max_length: "Faalooyinka dhererka miisaanka"
+    comments_body_max_length_description: "Tirada jilayasha"
+    official_level_1_name: "Heerka 1 sarkaal dowladeed"
+    official_level_1_name_description: "Tag kaas oo ka muuqan doona dadka isticmaala calaamadda sida heerka Heerka 1 ah"
+    official_level_2_name: "Heerka 2 sarkaal dowladeed"
+    official_level_2_name_description: "Tag kaas oo ka muuqan doona dadka isticmaala calaamadda sida heerka Heerka 2 ah"
+    official_level_3_name: "Heerka 3sarkaal dowladeed"
+    official_level_3_name_description: "Tag kaas oo ka muuqan doona dadka isticmaala calaamadda sida heerka Heerka 3 ah"
+    official_level_4_name: "Heerka 4sarkaal dowladeed"
+    official_level_4_name_description: "Tag kaas oo ka muuqan doona dadka isticmaala calaamadda sida heerka Heerka 4 ah"
+    official_level_5_name: "Heerka 5sarkaal dowladeed"
+    official_level_5_name_description: "Tag kaas oo ka muuqan doona dadka isticmaala calaamadda sida heerka Heerka 5 ah"
+    max_ratio_anon_votes_on_debates: "Saameynta ugu badan ee codka qarsoodiga ah ee doodda"
+    max_ratio_anon_votes_on_debates_description: "Codka qarsoodiga ah waxaa ku jira isticmaalayaasha diiwaangashan oo leh xisaab aan la aqoonsan"
+    max_votes_for_proposal_edit: "Tirada codadka laga yaabo in aan soo jeedin karin in la sii wado"
+    max_votes_for_proposal_edit_description: "Laga soo bilaabo nambarkan taageerooyinka qoraaga soo jeedinta soo-jeedin kari weydo"
