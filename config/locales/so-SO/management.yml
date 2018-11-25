@@ -42,3 +42,12 @@ so:
       not_in_census: Dukumeentigan lama diiwaan geliyo.
       not_in_census_info: 'Muwaadiniinta aan ku jirin Tirakoobka waxay ka qaybqaadan karaan bogga internetka iyagoo leh ogolaanshaha soo socda:'
       please_check_account_data: Fadlan hubi in xogta kor ku xusan ay sax yihiin.
+      title: Maaraynta isticmaalaha
+      under_age: "Ma haysatid da'da loo baahan yahay si loo xaqiijiyo koontadaada."
+      verify: Xaqiijin
+    email_label: Email
+    date_of_birth: Tarikhda Dhalashada
+    email_verifications:
+      already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
+      choose_options: 'Fadlan dooro mid ka mid ah xulashooyinka soo socda:'
+      document_found_in_census: Dukumeentigan waxaa laga heley tirakoobka, laakiin ma leh xisaab biil ah oo la xidhiidha.
