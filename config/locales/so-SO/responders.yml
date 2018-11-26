@@ -33,3 +33,7 @@ so:
       destroy:
         spending_proposal: "Soo jeedinta qarashka ayaa si guul leh loo tirtiray."
         budget_investment: "Mashruuca maalgelinta si guul leh ayaa loo tirtiray."
+        error: "An la tir tiri karin"
+        topic: "Mawduucii waa la tirtiray si guul leh."
+        poll_question_answer_video: "Kajawaab Fidyoowga sida gusha ah loo tir tiray."
+        valuator_group: "Kooxda qimwynta ayaa si guul ah tirtiray"
