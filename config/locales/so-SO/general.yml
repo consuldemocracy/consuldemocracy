@@ -217,3 +217,99 @@ so:
       collaborative_legislation: Nidaamka Sharciga
       debates: Doodo
       external_link_blog: Blog
+      locale: 'Luqad:'
+      logo: Logada qunsuliyada
+      management: Maraynta
+      moderation: Dhexdhexaadinta
+      valuation: Qimeyn
+      officing: Saraakiisha codeynta
+      help: Caawin
+      my_account_link: Xisaabteyda
+      my_activity_link: Hawlgalkayga
+      open: fur
+      open_gov: Dawlad furan
+      proposals: Sojeedino
+      poll_questions: Codeynta
+      budgets: Misaaniyada kaqayb qadashada
+      spending_proposals: Soo-jeedinta Kharashka
+      notification_item:
+        new_notifications:
+          one: Waxaad heysataa ogeysiis cusub
+          other: Waxaad heysataa%{count} ogeysiis cusub
+        notifications: Ogaysiis
+        no_notifications: "Ma haysatid wargelin cusub"
+    admin:
+      watch_form_message: 'Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?'
+  legacy_legislation:
+    help:
+      alt: Dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
+      text: Si aad uga faalloodto dukumiinti waa inaad%{sign_in} ama%{sign_up}. Ka dibna dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
+      text_sign_in: galaan
+      text_sign_up: saxiixid ilaa
+      title: Sidee ayaan faallo uga bixin karaa qoraalkan?
+  notifications:
+    index:
+      empty_notifications: Ma haysatid wargelin cusub,.
+      mark_all_as_read: Calaamadee dhammaantood sida akhriska ah
+      read: Akhri
+      title: Ogaysiis
+      unread: An akhrin
+    notification:
+      action:
+        comments_on:
+          one: Qof ayaa faallo ka bixiyay
+          other: Waxa jira %{count} faallo ka bixiyay
+        proposal_notification:
+          one: Waxaa jira hal wargalin oo cusub
+          other: Waxaa jira %{count} wargalin oo cusub
+        replies_to:
+          one: Qof ayaa ku jawaabay faalladaada
+          other: Waxaa jira%{count}] jawaabo cusub faladada
+      mark_as_read: Ku calaamadee sida akhriska
+      mark_as_unread: U calaamadee sida aanad akhrisay
+      notifiable_hidden: Khayraadkan lama heli karo mar dambe.
+  map:
+    title: "Degmooyinka"
+    proposal_for_district: "Billow qorshe degmadaada"
+    select_district: Baxada Hawlgalka
+    start_proposal: Abuur soo jeedin
+  omniauth:
+    facebook:
+      sign_in: Gali Facebook
+      sign_up: Kabax Facebook
+      name: Faysbuug
+    finish_signup:
+      title: "Faahfaahin dheeraad ah"
+      username_warning: "Sababtoo ah isbedelka habka aan ula macaamili karno shabakadaha bulshada, waxaa suurtagal ah in magacaaga magaciisu hadda uu u muuqdo 'horeyba loo isticmaalo'. Haddii ay taasi tahay kiiskaaga, fadlan dooro magac kale oo magacaaga ah."
+    google_oauth2:
+      sign_in: Ku soo gal Google
+      sign_up: Ku soo gal Google
+      name: Google
+    twitter:
+      sign_in: Ku soo gal tuwiter
+      sign_up: Iska diwangeli tuwitaar
+      name: Tuwiitar
+    info_sign_in: "Ku saxiix:"
+    info_sign_up: "Isku qor:"
+    or_fill: "Ama buuxi foomka soo socda:"
+  proposals:
+    create:
+      form:
+        submit_button: Abuur soo jeedin
+    edit:
+      editing: Tafatiir soojedinta
+      form:
+        submit_button: Badbaadi beddelka
+      show_link: Soo jeedinta aragtida
+    retire_form:
+      title: Soo jeedinta hawlgabka
+      warning: "Haddii aad ka fariisato hindise-gelinta, weli waa ay aqbali doontaa taageerada, laakiin waa laga saari doonaa liiska ugu weyn oo farriin ayaa loo arki doonaa dhammaan dadka isticmaala oo sheegaya in qoruhu uu tixgelinayo hindisaha aan la taageereynin mar dambe"
+      retired_reason_label: Sababta loo joojiyo soo jeedinta
+      retired_reason_blank: Dooro ikhtiyaar
+      retired_explanation_label: Sharaxaad
+      retired_explanation_placeholder: Si kooban u sharax sababta aad u maleyneyso in hindisahan aan la siin karin taageerooyin dheeraad ah
+      submit_button: Soo jeedinta hawlgabka
+    retire_options:
+      duplicated: La duubay
+      started: Horeyba waa socotaa
+      unfeasible: An surtgak ahayn
