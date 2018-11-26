@@ -337,7 +337,6 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen deelnemers
         user: Deelnemer
-        no_hidden_users: Er zijn geen verborgen deelnemers.
       show:
         email: 'E-mail:'
         hidden_at: 'Verborgen op:'
@@ -383,7 +382,6 @@ nl:
         index:
           create: Nieuw plan
           delete: Verwijder
-          title: Plannen
           filters:
             open: Open
             next: Volgende
@@ -968,7 +966,6 @@ nl:
       index:
         title: Beambten
         no_officials: Er zijn geen officials.
-        name: Naam
         official_position: Official positie
         official_level: Niveau
       level_0: Geen beambte
@@ -1352,11 +1349,9 @@ nl:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
       header_title: Koptekst
-      no_header: Er is geen header.
       create_header: Koptekst maken
       cards_title: Kaarten
       create_card: Kaart aanmaken
-      no_cards: Er zijn geen tegels.
       cards:
         title: Titel
         description: Beschrijving
