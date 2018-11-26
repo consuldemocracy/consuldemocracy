@@ -132,3 +132,25 @@ so:
       section_footer:
         title: Ka caawi doodda
         description: Bilow dood ku saabsan inaad la wadaagto ra'yiga dadka kale mowduucyada aad ka walaacsan tahay.
+        help_text_1: "Mawduucyada doodaha muwaadiniinta waxaa loogu talagalay qof kasta oo soo bandhigi kara arrimaha walaaca iyo kuwa doonaya in ay la wadaagaan ra'yiga dadka kale."
+        help_text_2: 'Si aad dood u furatid waxaad u baahan tahay inaad saxiixdo% %{org} Isticmaalayaasha ayaa sidoo kale faallo ka bixin kara doodaha furan oo ay ku qiimeeyaan iyaga oo leh "Anigu waafaqsanahay" ama "Waan diidanaa" badhkood kasta oo iyaga ka mid ah.'
+    new:
+      form:
+        submit_button: Biloow dooda
+      info: Haddii aad rabto inaad soo jeediso, tani waa qayb qaldan, gali%{info_link}.
+      info_link: samee soo jeedino cusub
+      more_info: Maclumaad dheraad ah
+      recommendation_four: Ku raaxee meeshan iyo codadka buuxiya. Adigaa iska leh.
+      recommendation_one: Ha u isticmaalin farwaweyn tartanka doodda ama jumlado dhan. Internetka, tan waxaa loo tixgeliyaa qaylo. Ma jiro qof jecel in lagu qayliyo.
+      recommendation_three: Dhaleeceyn aan naxariis lahayn ayaa aad loo soo dhaweynayaa. Tani waa meel loogu talagalay soo-jeedinta. Laakiin waxaannu kugula talinaynaa inaad xajisid xarrago iyo sirdoon. Dunidu waa meel wanaagsan oo leh waxyaalahaas oo kale.
+      recommendation_two: Dood-kasta ama faallo kasta oo soo jeedinaysa tallaabo sharci ah ayaa la tirtiri doonaa, iyo sidoo kale kuwa doonaya inay khalkhal galiyaan goobaha doodda. Wax kasta oo kale waa la oggol yahay.
+      recommendations_title: Talooyin ku saabsan abuurista dood
+      start_new: Biloow dooda
+    show:
+      author_deleted: Isticmalaha la tirtiray
+      comments:
+        zero: Falooyin majiraan
+        one: hal faalo
+        other: "hal faalo%{count} Talooyin ku saabsan abuurista dood"
+      comments_title: Faalo
+      edit_debate_link: Isbedel
