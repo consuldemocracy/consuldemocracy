@@ -5,7 +5,7 @@ ast:
         one: "actividá"
         other: "actividaes"
       budget/investment:
-        one: "Proyectu de inversión"
+        one: "Proyectu d'inversión"
         other: "Proyectos d'inversión"
       budget/investment/milestone:
         one: "finxu"
@@ -22,57 +22,26 @@ ast:
       user:
         one: "Usuariu"
         other: "Usuarios"
-      moderator:
-        one: "Moderador"
-        other: "Moderadores"
       administrator:
         one: "Alministrador"
         other: "Alministradores"
       vote:
         one: "Votu"
         other: "Votos"
-      organization:
-        one: "Organización"
-        other: "Organizaciones"
-      poll/booth:
-        one: "urna"
-        other: "urnes"
-      poll/officer:
-        one: "presidente de mesa"
-        other: "presidentes de mesa"
-      proposal:
-        one: "Propuesta ciudadana"
-        other: "Propuestes ciudadanes"
       site_customization/page:
         one: Páxina
         other: Páxines
       site_customization/image:
         one: Imaxe
         other: Imaxes
-      site_customization/content_block:
-        one: Bloque
-        other: Bloques
-      legislation/process:
-        one: "Procesu"
-        other: "Procesos"
-      legislation/draft_versions:
-        one: "Versión borrador"
-        other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Entruga"
         other: "Entruges"
       legislation/question_options:
         one: "Opción de respuesta zarrada"
         other: "Opciones de respuesta zarrada"
-      legislation/answers:
-        one: "Respuesta"
-        other: "Respuestes"
     attributes:
       budget:
-        name: "Nombre"
         description_accepting: "Descripción mientres la fase d'Aceptación"
         description_reviewing: "Descripción mientres la fase de revisión interna"
         description_selecting: "Descripción mientres la fase de sofitos"
@@ -80,19 +49,13 @@ ast:
         description_balloting: "Descripción mientres la fase de votación"
         description_reviewing_ballots: "Descripción mientres la fase de revisión de votos"
         description_finished: "Descripción cuando'l presupuestu remató / Resultancies"
-        phase: "Fase"
-        currency_symbol: "Divisa"
       budget/investment:
-        heading_id: "Partida presupuestaria"
         title: "Títulu"
-        description: "Descripción"
         external_url: "Enllaz a documentación adicional"
         administrator_id: "Alministrador"
       comment:
         user: "Usuariu"
       debate:
-        author: "Autor"
-        description: "Opinión"
         terms_of_service: "Términos de serviciu"
       proposal:
         question: "Entruga"
@@ -137,7 +100,6 @@ ast:
         end_date: Fecha de fin del procesu
         debate_start_date: Fecha d'entamu del alderique
         debate_end_date: Fecha de fin del alderique
-        draft_publication_date: Fecha de publicación del borrador
         allegations_start_date: Fecha d'entamu d'allegamientos
         allegations_end_date: Fecha de fin d'allegamientos
         result_publication_date: Fecha de publicación del resultancia final
@@ -145,11 +107,8 @@ ast:
         title: Títulu de la versión
         body: Testu
         changelog: Cambeos
-        final_version: Versión final
       legislation/question:
         question_options: Respuestes
-      legislation/question_option:
-        value: Valor
     errors:
       models:
         user:
