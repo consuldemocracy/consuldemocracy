@@ -23,3 +23,32 @@ so:
           success_html: Waad ku mahadsan tahay codsigaaga<b> ugu badnaan codsigaaga (kaliya oo looga baahan yahay codadka kama dambaysta ah) </b>. Maalmo gudahood waxaan u direynaa cinwaanka ku jira xogta aan ku hayno faylka. Fadlan xusuusnow, haddii aad doorbidayso, waxaad ka qaadi kartaa lambarkaaga mid ka mid ah%{offices}.
       edit:
         see_all: Fiiri soo jeedimaha
+        title: Warqada codsi ah
+      errors:
+        incorrect_code: Xaqiijinta xaqiijinta khalad
+      new:
+        explanation: 'Ka qeyb qaadashada cod bixinta ugu dambeeya waxaad:'
+        go_to_index: Fiiri soo jeedimaha
+        office: Xaqiiji wixii%{office}
+        offices: Xafiisyada Taageerada Muwaadiniinta
+        send_letter: Warqad kood wadata iso diir
+        title: Hanbalayoyin!
+        user_permission_info: Akoonkaga waad karta...
+      update:
+        flash:
+          success: Koodka waa sax. Koontadaada hadda waa la xaqiijiyay
+    redirect_notices:
+      already_verified: Koontadaada waa la xaqiijiyay
+      email_already_sent: Waxaan horey u soo dirnay email ah oo leh xiriirinta xaqiijinta. Haddii aadan heli karin emailka, waxaad codsan kartaa dib-u-celin halkan
+    residence:
+      alert:
+        unconfirmed_residency: Wali ma xaqiijin degenaanshahaaga
+      create:
+        flash:
+          success: Deganaanshaha waa la xaqiijiyay
+      new:
+        accept_terms_text: Waan aqbalay%{terms_url} tirooyinka tirakoobka
+        accept_terms_text_title: Waxaan aqbalayaa shuruudaha iyo xaaladaha helitaanka tirakoobka
+        date_of_birth: Tarikhda Dhalashada
+        document_number: Lambarka dukumeentiga
+        document_number_help_title: Caawin
