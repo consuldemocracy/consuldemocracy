@@ -164,7 +164,9 @@ ar:
     executions:
       link: "الأهداف المرحلية"
       page_title: "%{budget} - الأهداف المرحلية"
+      heading: "معالم الميزانية التشاركية"
       heading_selection_title: "جسب المنطقة"
+      no_winner_investments: "لا يوجد استثمارات فائزة"
       filters:
         label: "حالة المشروع الحالية"
         all: "الكل (%{count})"
