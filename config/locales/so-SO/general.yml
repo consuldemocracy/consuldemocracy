@@ -313,3 +313,57 @@ so:
       duplicated: La duubay
       started: Horeyba waa socotaa
       unfeasible: An surtgak ahayn
+      done: La sameeyo
+      other: Midkale
+    form:
+      geozone: Baxada Hawlgalka
+      proposal_external_url: Isku xirka dukumentiyada dheeraadka ah
+      proposal_question: Suasha so jedinta
+      proposal_question_example_html: "Waa in lagu soo koobaa hal su'aal oo jawaabta Haa ama Maya"
+      proposal_responsible_name: Magaca buuxa ee qofka soo gudbinaya soo jeedinta
+      proposal_responsible_name_note: "(shakhsi ahaan ama matalaad wadajir ah; lama soo bandhigi doono si cad)"
+      proposal_summary: Sokoobida sojedinta
+      proposal_summary_note: "(ugu badnaan 200 jibbaar)"
+      proposal_text: Qorlka sojedinta
+      proposal_title: Ciwaanka soo jedinta
+      proposal_video_url: Xiriirinta fiidiyowga dibadda
+      proposal_video_url_note: Waxaad ku dari kartaa link to YouTube ama Vimeo
+      tag_category_label: "Qaybaha"
+      tags_instructions: "Tag soojeedintaan. Waxaad kala dooran kartaa qaybaha la soo jeediyey ama ku dar adiga keligaa"
+      tags_label: Tagyada
+      tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
+      map_location: "Goobta Khariirada"
+      map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
+      map_remove_marker: "Ka saar sumadaha khariidada"
+      map_skip_checkbox: "Soo jeedintaas ma laha meel la taaban karo ama aanan ogeyn."
+    index:
+      featured_proposals: Soobandhigiid/ Muqaal
+      filter_topic:
+        one: " mawduuc%{topic}"
+        other: " mawduuc%{topic}"
+      orders:
+        confidence_score: ugu sareeya
+        created_at: ugu cusub
+        hot_score: ugu firfircoon
+        most_commented: inta badan faaliyey
+        relevance: kuhabon
+        archival_date: diiwaangeliyeY
+        recommendations: talloyin
+      recommendations:
+        without_results: Ma jiraan qorshooyin la xiriira danahaaga
+        without_interests: Raac sojedinada si aan kuu siino talooyin
+        disable: "Talooyinka la soo jeediyay ayaa joojin doona muujinta haddii aad iyaga dafiri karto. Waxaad mar labaad awood u yeelan kartaa bogga 'My account'"
+        actions:
+          success: "Talooyinka loogu talagalay soo jeedinta hadda way naafo tahay koontadan"
+          error: "Qalad ayaa dhacay. Fadlan u gudub bogga 'akoonkayga' si gacan looga gooyo talooyinka Sojeedinta"
+      retired_proposals: Soo jeedinta hawlgabka
+      retired_proposals_link: "Soo-jeedinta ay ka fariisteen qoraaga"
+      retired_links:
+        all: Dhamaan
+        duplicated: La duubay
+        started: Hoos u dhac
+        unfeasible: An surtgak ahayn
+        done: La sameeyo
+        other: Midkale
+      search_form:
+        button: Raadin
