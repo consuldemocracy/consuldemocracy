@@ -756,3 +756,72 @@ so:
       see: "Fiiri soo jeedinta"
   votes:
     agree: Wan aqbalay
+    anonymous: Codad qarsoodi ah oo badan si ay u qirto codka%{verify_account}.
+    comment_unauthenticated: Waa inaad%{signin} ama%{signup} codka.
+    disagree: Ma aqbalin
+    organizations: Ururada loma fasixin iney codeyaan
+    signin: Geliid
+    signup: Is diwan gelid
+    supports: Tageerayaal
+    unauthenticated: Waa inad igu %{signin} ama%{signup} si wada.
+    verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
+    verify_account: hubi xisaabtaada
+    spending_proposals:
+      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
+      not_verified: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
+      organization: Ururada loma fasixin iney codeyaan
+      unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
+      not_voting_allowed: Heerka codbixinta waa la xiray
+    budget_investments:
+      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
+      not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara Mashariicdamaalgashiga; %{verify_account}.
+      organization: Ururada loma fasixin iney codeyaan
+      unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
+      not_voting_allowed: Heerka codbixinta waa la xiray
+      different_heading_assigned:
+        one: "Waxaad taageeri kartaa oo kaliya mashaariicda maalgashiga%{count} kala duwan"
+        other: "Waxaad taageeri kartaa oo kaliya mashaariicda maalgashiga%{count} kala duwanada"
+  welcome:
+    feed:
+      most_active:
+        debates: "Inta badan doodaha firfircoon"
+        proposals: "Talooyinka ugu firfircoon"
+        processes: "Gedisocodka furaan"
+      see_all_debates: Arag dhaman doodaha
+      see_all_proposals: Arag dhaman sojedimaha
+      see_all_processes: Arag dhaman gedis socodyada
+      process_label: Geedisocoodka
+      see_process: Arag gedi socodka
+    cards:
+      title: Soobandhigiid/ Muqaal
+    recommended:
+      title: Talooyinka laga yaabo inaad daneyseysid
+      help: "Talooyinkaan waxaa ka soo baxa tixraacyada doodaha iyo soo jeedimaha aad soo socotid."
+      debates:
+        title: Doodaha lagu taliyay
+        btn_text_link: Dhaman Doodaha lagu taliyay
+      proposals:
+        title: Sojeedimaha lagu taliyey
+        btn_text_link: Dhaman Sojeedimaha lagu taliyey
+      budget_investments:
+        title: Malgashiyada lugu taliyey
+      slide: "Arag%{title}"
+    verification:
+      i_dont_have_an_account: Ma haysto xisaab
+      i_have_an_account: Hore ayaan haystay xisaab
+      question: Ma horey ayaad xisaab ugu leedahay%{org_name}?
+      title: Cadeynta xisaabta
+    welcome:
+      go_to_index: Eeg soojeedinta iyo doodaha
+      title: Kaqayb gal
+      user_permission_debates: Kaqayb qadashada dooda
+      user_permission_info: Akoonkaga waad karta...
+      user_permission_proposal: Samee soo jeedino cusub
+      user_permission_support_proposal: Tageer so jedinada*
+      user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
+      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
+      user_permission_verify_my_account: Hubi xisaabtayda
+      user_permission_votes: Kayb galka codaynta ugu danbaysa
+  invisible_captcha:
+    sentence_for_humans: "Haddii aad tahay aadane, iska indha tirtan arimahan"
+    timestamp_error_message: "Waan ka xumahay, taas oo ahayd mid deg deg ah! Fadlan soo gudbi."
