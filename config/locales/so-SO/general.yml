@@ -612,3 +612,92 @@ so:
       categories: "Qaybaha"
     target_blank_html: " (iskuxir furan daaqad cusub)"
     you_are_in: "Waad joogtaa"
+    unflag: Foolxumo
+    unfollow_entity: "Lama socdaan\n%{entity}"
+    outline:
+      budget: Misaaniyada kaqayb qadashada
+      searcher: Raadiye
+    go_to_page: "Tag bogga "
+    share: Lawadag
+    orbit:
+      previous_slide: Horey udheer
+      next_slide: Islaydhka xiga
+    documentation: Dukumentiyo dheeraad ah
+    view_mode:
+      title: Qaabka muuqaalka
+      cards: Kararka
+      list: Liska
+    recommended_index:
+      title: Talloyin
+      see_more: Eeg talooyin dheeraad ah
+      hide: Qari talooyinka
+  social:
+    blog: "%{org} bloga"
+    facebook: "%{org} faysbuug"
+    twitter: "%{org} tuwiitar"
+    youtube: "%{org} yotuyuub"
+    whatsapp: Wat isaaab
+    telegram: "%{org} telegaraam"
+    instagram: "%{org} istigraam"
+  spending_proposals:
+    form:
+      association_name_label: 'Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan'
+      association_name: 'Magaca ururka'
+      description: Sharaxaad
+      external_url: Isku xirka dukumentiyada dheeraadka ah
+      geozone: Baxada Hawlgalka
+      submit_buttons:
+        create: Abuur
+        new: Abuur
+      title: Soo jeedinta hindisaha
+    index:
+      title: Misaaniyada kaqayb qadashada
+      unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
+      by_geozone: "Baxaada mashruuca malgashiga%{geozone}"
+      search_form:
+        button: Raadin
+        placeholder: Mashariicda malgashiga...
+        title: Raadin
+      search_results:
+        one: " oo ku jira ereyga %{search_term}"
+        other: " oo ku jira ereyga %{search_term}"
+      sidebar:
+        geozones: Baxada Hawlgalka
+        feasibility: Suurta galnimada
+        unfeasible: An surtgak ahayn
+      start_spending_proposal: Abaabul mashruuc maalgashi
+    new:
+      more_info: Sidee ayay miisaaniyad-dejinta uga qaybqaadataa?
+      recommendation_one: Waa khasab in hindise-soo-jeedinta ay tixraac ku tahay tallaabada miisaaniyadda.
+      recommendation_three: Isku day inaad tagto faahfaahinta markaad sharaxdo soo jeedintaada kharashka si markaa kooxda dib u eegista ay fahmaan qodobadaada.
+      recommendation_two: Soo jeedinta ama faallooyinka soo jeedinaya tallaabo sharci ah ayaa lagu tirtiri doonaa.
+      recommendations_title: Sida loo abuuro soo jeedinta kharashka
+      start_new: Samee qorshaha kharashad
+    show:
+      author_deleted: Isticmalaha la tirtiray
+      code: 'Talo soo jeedin:'
+      share: Lawadag
+    wrong_price_format: Tirooyinka keliya e isku dhafka ah
+    spending_proposal:
+      spending_proposal: Mashruuca Malgelinta
+      already_supported: Waxaad hore u taageertay kan. La wadaag!
+      support: Tageero
+      support_title: Tageer Mashruucaan
+      supports:
+        zero: Tageero la an
+        one: 1tageere
+        other: "%{count} tageereyal"
+  stats:
+    index:
+      visits: Boqashooyinka
+      debates: Doodo
+      proposals: Sojeedino
+      comments: Faalo
+      proposal_votes: Codbixin ku saabsan soo jeedinta
+      debate_votes: Codadka doodda
+      comment_votes: Falloyinka codbixinta
+      votes: Wadarka codadka
+      verified_users: Isticmalayaasha la aqonsan yahay
+      unverified_users: Isticmalayaasha an la aqonsaneyn
+  unauthorized:
+    default: Uma haysid fasax aad ku heli kartid boggan.
