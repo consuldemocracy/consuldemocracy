@@ -4,7 +4,6 @@ es:
       title: Condiciones de uso
       subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
       description: Página de información sobre las condiciones de uso, privacidad y protección de datos personales.
-    general_terms: Términos y Condiciones
     help:
       title: "%{org} es una plataforma de participación ciudadana"
       guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."

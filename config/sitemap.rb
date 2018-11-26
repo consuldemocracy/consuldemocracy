@@ -10,11 +10,6 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = ["general_terms"]
-  pages.each do |page|
-    add page_path(id: page)
-  end
-
   add debates_path, priority: 0.7, changefreq: "daily"
   Debate.find_each do |debate|
     add debate_path(debate), lastmod: debate.updated_at
