@@ -99,3 +99,45 @@ so:
         - Haddii isticmaalaha uu leeyahay dhibaatooyinka dhaqdhaqaaq oo ay adagtahay in la isticmaalo mooska, wax ka bedelka kaalmada kaybaoorka ecaawinta xagga socdaalka.
       keyboard_shortcuts:
         title: Batoonada kokoban
+        navigation_table:
+          description: Si aad u marin karto shabakaddan si aad uhogasho ah, kooxo ah furaha dhakhso ah ee loo adeegsado ayaa la qorsheeyay kuwaas oo soo ururiya qaybaha ugu muhiimsan ee danta guud ee ay ku habboontahay goobta.
+          caption: Maababka gaaban ee loogu talagalay menu navigation
+          key_header: Fuure
+          page_header: Boga
+          rows:
+            - 
+              key_column: 0
+              page_column: Guriga
+            - 
+              key_column: 1
+              page_column: Doodo
+            - 
+              key_column: 2
+              page_column: Sojeedino
+            - 
+              key_column: 3
+              page_column: Codaad
+            - 
+              key_column: 4
+              page_column: Misaaniyadaha kaqayb qadashada
+            - 
+              key_column: 5
+              page_column: Nidaamka sharci dejinta
+        browser_table:
+          description: 'Iyada oo ku xidhan nidaamka hirgelinta iyo daaqada loo isticmaalo, isku-dhafka muhiimka ah wuxuu noqon doonaa sidan soo socota:'
+          caption: Isku-geynta muhiimka ah waxay ku xiran tahay nidaamka hawlgalka iyo shabakadda
+          browser_header: Barowsar
+          key_header: Wadajirta muhiimka ah
+          rows:
+            - 
+              browser_column: Sahamiso
+              key_column: ALT + gaaban kadibna geli
+            - 
+              browser_column: Dab-demiska
+              key_column: ALT + CAPS + gaaban
+            - 
+              browser_column: Chrome
+              key_column: ALT + gaaban (CTRL + ALT + gaaban MAC)
+            - 
+              browser_column: Safari
+            - 
