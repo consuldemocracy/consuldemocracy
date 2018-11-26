@@ -418,6 +418,10 @@ sq:
         index:
           title: Titull
           back: Pas
+          id: Id
+          supports: Suporti
+          select: Zgjidh
+          selected: I zgjedhur
         form:
           custom_categories: Kategoritë
           custom_categories_description: Kategoritë që përdoruesit mund të zgjedhin duke krijuar propozimin.
@@ -637,6 +641,9 @@ sq:
         title: Parapamje e buletinit
         send: Dërgo
         affected_users: (%{n} përdoruesit e prekur)
+        sent_emails:
+          one: 1 email dërguar
+          other: "%{count} emaile të dërguara"
         sent_at: Dërguar në
         subject: Subjekt
         segment_recipient: Marrësit
@@ -979,6 +986,7 @@ sq:
       index:
         title: Zyrtarët
         no_officials: Nuk ka zyrtarë.
+        name: Emri
         official_position: Pozicioni zyrtar
         official_level: Nivel
       level_0: Jo zyrtare
