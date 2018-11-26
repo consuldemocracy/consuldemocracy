@@ -56,3 +56,40 @@ so:
         zero: Looma baahna codad
     form:
       comment_as_admin: Faallada sida admin
+      comment_as_moderator: Falada xer ilaliyaha
+      leave_comment: Ka tag faallooyinkaaga
+    orders:
+      most_voted: Inta badan cod bixinta
+      newest: Cuseybka ugu horeyey
+      oldest: Ugu deda wayn ugu horynti
+      most_commented: Inta badan faallooyin ah
+    select_order: Kala saar
+    show:
+      return_to_commentable: 'Ku noqo '
+  comments_helper:
+    comment_button: Dabaac falada
+    comment_link: Faalo
+    comments_title: Faalo
+    reply_button: Soo daabac jawaabta
+    reply_link: Jawab
+  debates:
+    create:
+      form:
+        submit_button: Biloow dooda
+    debate:
+      comments:
+        zero: Falooyin majiraan
+        one: 1 faalo
+        other: "%{count} falooyinka"
+      votes:
+        zero: Looma baahna codad
+        one: 1 cod
+        other: "%{count} codad"
+    edit:
+      editing: Beddel dood
+      form:
+        submit_button: Badbaadi beddelka
+      show_link: Aragtida doodda
+    form:
+      debate_text: Qoraalka hore ee doodda
+      debate_title: Ciwaanka dooda
