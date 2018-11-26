@@ -4,68 +4,16 @@ es:
       title: Condiciones de uso
       subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
       description: Página de información sobre las condiciones de uso, privacidad y protección de datos personales.
-    general_terms: Términos y Condiciones
     help:
-      title: "%{org} es una plataforma de participación ciudadana"
-      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
       menu:
-        debates: "Debates"
-        proposals: "Propuestas"
-        budgets: "Presupuestos participativos"
         polls: "Votaciones"
-        other: "Otra información de interés"
         processes: "Procesos legislativos"
-      debates:
-        title: "Debates"
-        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
-        link: "debates ciudadanos"
-        feature_html: "Puedes abrir debates, comentarlos y valorarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
-        feature_link: "registrarte en %{org}"
-        image_alt: "Botones para valorar los debates"
-        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
-        title: "Propuestas"
-        description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
-        link: "propuestas ciudadanas"
-        image_alt: "Botón para apoyar una propuesta"
         figcaption_html: 'Botón para "Apoyar" una propuesta.'
-      budgets:
-        title: "Presupuestos participativos"
-        description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
-        link: "presupuestos participativos"
-        image_alt: "Diferentes fases de un presupuesto participativo"
-        figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
-      polls:
-        title: "Votaciones"
-        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento propone un tema para que la gente decida sobre él."
-        link: "votaciones ciudadanas"
-        feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
-        feature_1_link: "registrarte en %{org_name}"
       processes:
         title: "Procesos legislativos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
         link: "procesos legislativos"
-      faq:
-        title: "¿Problemas técnicos?"
-        description: "Lee las preguntas frecuentes y resuelve tus dudas."
-        button: "Ver preguntas frecuentes"
-        page:
-          title: "Preguntas Frecuentes"
-          description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
-      other:
-        title: "Otra información de interés"
-        how_to_use: "Utiliza %{org_name} en tu municipio"
-      how_to_use:
-        text: |-
-          Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
-          
-          Este Portal de Gobierno Abierto usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
-          
-          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
-      titles:
-        how_to_use: Utilízalo en tu municipio
     privacy:
       title: Política de privacidad
       subtitle: AVISO DE PROTECCIÓN DE DATOS
@@ -87,10 +35,6 @@ es:
             - 
               field: 'Órgano responsable:'
               description: ÓRGANO RESPONSABLE
-        - 
-          text: El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
-        - 
-          text: Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
     accessibility:
       title: Accesibilidad
       description: |-
@@ -98,7 +42,7 @@ es:
         
         Cuando los sitios web están diseñados pensando en la accesibilidad, todos los usuarios pueden acceder en condiciones de igualdad a los contenidos, por ejemplo:
       examples:
-        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
         - Cuando los vídeos disponen de subtítulos, los usuarios con dificultades auditivas pueden entenderlos plenamente.
         - Si los contenidos están escritos en un lenguaje sencillo e ilustrados, los usuarios con problemas de aprendizaje están en mejores condiciones de entenderlos.
         - Si el usuario tiene problemas de movilidad y le cuesta usar el ratón, las alternativas con el teclado le ayudan en la navegación.
@@ -179,18 +123,13 @@ es:
               description_column: para aumentar el tamaño del texto
             - 
               shortcut_column: CTRL y - (CMD y - en MAC)
-              description_column: para reducir el tamaño del texto
       compatibility:
         title: Compatibilidad con estándares y diseño visual
-        description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      help: "¿Qué es %{org}? - Participación ciudadana"
-      privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta
-      email: Email
       info: 'Para verificar tu cuenta introduce los datos con los que te registraste:'
       info_code: 'Ahora introduce el código que has recibido en tu carta:'
       password: Contraseña
