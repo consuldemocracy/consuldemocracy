@@ -2,3 +2,19 @@ so:
   pages:
     conditions:
       title: Shuruudaha iyo xaaladaha isticmaalka
+      subtitle: OGEYSIISKA SHARCIGA EE AAD SHARCI AHAYN ISTICMAALKA, ISTICMAALKA IYO DADKA DIIWAANGELINTA SHIRKADDA SHIRKADDA PORTAL
+      description: Bogga macluumaadka ee ku saabsan shuruudaha isticmaalka, asturnaanta iyo ilaalinta macluumaadka shakhsiyeed.
+    help:
+      title: "%{org} waa barnaamij loogu talagalay ka qaybgalka muwaadiniinta"
+      guide: "Hagahani wuxuu sharaxayaa mid kasta oo ka mid ah qaybaha%{org} ee loogu talagalay iyo sida ay u shaqeeyaan."
+      menu:
+        debates: "Doodo"
+        proposals: "Sojeedino"
+        budgets: "Misaaniyadaha kaqayb qadashada"
+        polls: "Doorashooyinka"
+        other: "Macluumaadka kale ee xiisaha"
+        processes: "Geedi socodka"
+      debates:
+        title: "Doodo"
+        description: "Qeybta %{link} waxaad soo bandhigi kartaa oo kula wadaagi kartaa ra'yigaaga dadka kale arrimaha khuseeya ee aad la xiriirto magaalada. Sidoo kale waa meel lagu abuuro fikrado ayadoo loo marayo qaybaha kale ee%{org} oo keenaya talaabooyin la taaban karo oo ka soo baxay Golaha Magaalada."
+        link: "doodo Muwadinanta"
