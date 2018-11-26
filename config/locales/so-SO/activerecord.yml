@@ -10,9 +10,15 @@ so:
       manager:
         one: "Mamule"
         other: "Mamule"
+      poll/booth:
+        one: "labadaba"
+        other: "labadodaba"
       site_customization/page:
         one: Bog gaara
         other: Bog gaara
+      site_customization/content_block:
+        one: Xayiraaddaha gaarka ah ee gaarka ah
+        other: Xayiraaddaha gaarka ah ee gaarka ah
     attributes:
       budget:
         name: "Magac"
