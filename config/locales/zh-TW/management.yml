@@ -77,7 +77,6 @@ zh-TW:
       support_proposals: 支持建議
       vote_proposals: 投票建議
     print:
-      proposals_info: 在http://url.consul 上創建您的建議
       proposals_title: '建議：'
       spending_proposals_info: 在 http://url.consul 上參與
       budget_investments_info: 在 http://url.consul 上參與
