@@ -93,3 +93,42 @@ so:
     form:
       debate_text: Qoraalka hore ee doodda
       debate_title: Ciwaanka dooda
+      tags_instructions: Taaga dooda.
+      tags_label: Mawduucyada
+      tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
+    index:
+      featured_debates: Soobandhigiid/ Muqaal
+      filter_topic:
+        one: " mawduuc '%{topic}"
+        other: " mawduuc '%{topic}"
+      orders:
+        confidence_score: ugu sareeya
+        created_at: ugu cusub
+        hot_score: ugu firfircoon
+        most_commented: inta badan faaliyey
+        relevance: kuhabon
+        recommendations: talloyin
+      recommendations:
+        without_results: Ma jiraan doodo la xiriira danahaaga
+        without_interests: Raac sojedinada si aan kuu siino talooyin
+        disable: "Doodaha talooyinka ayaa joojin doona muujinta haddii aad iyaga dafiri karto. Waxaad mar labaad awood u yeelan kartaa bogga 'My account'"
+        actions:
+          success: "Talooyinka doodda ayaa hadda naafo u ah koontadan"
+          error: "Qalad ayaa dhacay. Fadlan u gudub bogga 'akoonkayga' si gacan looga gooyo talooyinka doodaha"
+      search_form:
+        button: Raadin
+        placeholder: Doodaha raadinta...
+        title: Raadin
+      search_results_html:
+        one: " raadinta Dugsi ee ku jira ereyga <strong>%{search_term}</strong>"
+        other: " raadinta Dugsi ee ku jira ereyga <strong>%{search_term}</strong>"
+      select_order: Dalbaday
+      start_debate: Biloow dooda
+      title: Doodo
+      section_header:
+        icon_alt: Doodaha icon
+        title: Doodo
+        help: Ka caawi doodda
+      section_footer:
+        title: Ka caawi doodda
+        description: Bilow dood ku saabsan inaad la wadaagto ra'yiga dadka kale mowduucyada aad ka walaacsan tahay.
