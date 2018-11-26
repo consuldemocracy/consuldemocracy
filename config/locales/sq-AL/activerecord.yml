@@ -76,6 +76,9 @@ sq:
       legislation/process:
         one: "Proçes"
         other: "Proçes"
+      legislation/proposal:
+        one: "Propozime"
+        other: "Propozimet"
       legislation/draft_versions:
         one: "Version drafti"
         other: "Version drafti"
@@ -245,6 +248,8 @@ sq:
         final_version: Versioni final
       legislation/draft_version/translation:
         title: Titulli i versionit
+        body: Tekst
+        changelog: Ndryshimet
       legislation/question:
         title: Titull
         question_options: Opsionet
@@ -261,6 +266,9 @@ sq:
       poll/question/answer:
         title: Përgjigjet
         description: Përshkrimi
+      poll/question/answer/translation:
+        title: Përgjigjet
+        description: Përshkrimi
       poll/question/answer/video:
         title: Titull
         url: Video e jashtme
@@ -269,12 +277,25 @@ sq:
         subject: Subjekt
         from: Nga
         body: Përmbajtja e postës elektronike
+      admin_notification:
+        segment_recipient: Marrësit
+        title: Titull
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Titull
+        body: Tekst
       widget/card:
         label: Etiketa (opsionale)
         title: Titull
         description: Përshkrimi
         link_text: Linku tekstit
         link_url: Linku URL
+      widget/card/translation:
+        label: Etiketa (opsionale)
+        title: Titull
+        description: Përshkrimi
+        link_text: Linku tekstit
       widget/feed:
         limit: Numri i artikujve
     errors:
