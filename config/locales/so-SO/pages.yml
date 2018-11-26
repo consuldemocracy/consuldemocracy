@@ -162,6 +162,7 @@ so:
               action_column: Goobaha (icon)> Options> Advanced> tusmada wabsatydka> Cabirka Qorlka
             - 
               browser_column: Safari
+              action_column: Eeg> Ku Dhawaaqa / Soo dhawee
             - 
               browser_column: Faan muusik
               action_column: Muuqaal> cabbir
@@ -185,3 +186,8 @@ so:
     verify:
       code: Waraq Kodh ah oo ad heshay
       email: Email
+      info: 'Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:'
+      info_code: 'Hadda ku baro kodhka aad heshay warqad:'
+      password: Furaha sirta ah
+      submit: Hubi xisaabtayda
+      title: Hubi xisaabtaada
