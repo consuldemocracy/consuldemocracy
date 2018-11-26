@@ -163,7 +163,6 @@ nl:
       heading: "Resultaten burgerbegrotingen"
       heading_selection_title: "Per gebied"
       spending_proposal: Titel voorstel
-      ballot_lines_count: Aantal keer geselecteerd
       hide_discarded_link: Verberg verworpen voorstellen
       show_all_link: Toon alle
       price: Prijs
