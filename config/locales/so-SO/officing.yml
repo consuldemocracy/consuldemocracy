@@ -1,1 +1,15 @@
 so:
+  officing:
+    header:
+      title: Codeynta
+    dashboard:
+      index:
+        title: Liisanka codka
+        info: Halkan waxaad ku ansixin kartaa dukumiintiga isticmaalaha iyo kaydinta natiijooyinka codbixinta
+        no_shifts: Adigu ma haysid wax isbeddel ah maanta.
+    menu:
+      voters: Ansixinta dukumentiga
+      total_recounts: Wadarta dib u tirintanada natijooyinka
+    polls:
+      final:
+        title: Doorashooyinka diyaar u ah dhammaystirka ugu dambeeya
