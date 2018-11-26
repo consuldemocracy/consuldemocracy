@@ -828,3 +828,27 @@ so:
   related_content:
     title: "Mawduuca laxiriray"
     add: "Ku dar tusmada laxiriray"
+    label: "Isku xir xirka waxyaabaha la xiriira"
+    placeholder: "%{url}"
+    help: "Wadku darikara isku xirirka %{models} gudaha%{org}."
+    submit: "Kudar"
+    error: "Isku xirnaanshaha ma laha. Xusuusnow inaad ku bilowdo%{url}."
+    error_itself: "Isku xirnaanshaha ma laha. Kuma sharixi kartid waxyaabaha ku jira."
+    success: "Waxaad ku dartay wax cusub oo la xiriira"
+    is_related: "Miyay la socotaa mawduuc?"
+    score_positive: "Haa"
+    score_negative: "Maya"
+    content_title:
+      proposal: "Sojeedin"
+      debate: "Dood"
+      budget_investment: "Misaniyada malgashiga"
+  admin/widget:
+    header:
+      title: Mamul
+  annotator:
+    help:
+      alt: Dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
+      text: Si aad uga faalloodto dukumiinti waa inaad%{sign_in} ama%{sign_up}. Ka dibna dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
+      text_sign_in: galaan
+      text_sign_up: iska diwan gelin
+      title: Sidee ayaan faallo uga bixin karaa qoraalkan?
