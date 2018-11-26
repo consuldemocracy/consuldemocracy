@@ -1,1 +1,22 @@
 so:
+  verification:
+    alert:
+      lock: Waxaad gaadhay tirada ugu badan ee isku dayga. Fadlan isku day markale dambe.
+    back: Ku noqo xisaabtayda
+    email:
+      create:
+        alert:
+          failure: Dhibaato ayaa ku dhacday in email loo diro koontadaada
+        flash:
+          success: 'Waxaan soo dirnay email caddaynta xisaabtaada:%{email}'
+      show:
+        alert:
+          failure: Xaqiijinta xaqiijinta khalad
+        flash:
+          success: Aad tahay qof la xaqiijiyay
+    letter:
+      alert:
+        unconfirmed_code: Wali ma aadan soo gelin koodhka xaqiijinta
+      create:
+        flash:
+          offices: Xafiisyada Taageerada Muwaadiniinta
