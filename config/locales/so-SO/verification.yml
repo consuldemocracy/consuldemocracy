@@ -99,3 +99,13 @@ so:
     user_permission_info: Hubinta macluumaadkaaga waad awoodi doontaa inaad...
     user_permission_proposal: Samee soo jeedino cusub
     user_permission_support_proposal: Tageer so jedinada*
+    user_permission_votes: Kayb galka codaynta ugu danbaysa*
+    verified_user:
+      form:
+        submit_button: Diiir Kodhka
+      show:
+        email_title: Emailo
+        explanation: Hadda waxaanu haynaa faahfaahinta soo socota Diiwaanka; fadlan dooro habka aad u diri lahayd lambarkaaga xaqiijinta.
+        phone_title: Lambarada telefoonka
+        title: Maclumaad laheli karo
+        use_another_phone: Isticmaal telefoon kale
