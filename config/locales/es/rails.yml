@@ -48,6 +48,10 @@ es:
       - octubre
       - noviembre
       - diciembre
+    order:
+      - :year
+      - :month
+      - :day
   datetime:
     distance_in_words:
       about_x_hours:
