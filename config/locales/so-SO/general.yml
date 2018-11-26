@@ -471,3 +471,55 @@ so:
       geozone_restricted: "Degmooyinka"
       geozone_info: "Ka-qayb-galka dadka tirakoobka: "
       already_answer: "Waxaad horay uga qaybqaadatay cod-bixintan"
+      not_logged_in: "Wa inaad gasha ama iska qorta is aad uga qayb gasho"
+      unverified: "Waa inaad hubisaa akonkaga si aad uga qayb qaadato"
+      cant_answer: "Doorashadan laguma heli karo galkaaga"
+      section_header:
+        icon_alt: Astaanta codeynta
+        title: Codeynta
+        help: Ka caawi doorashada
+      section_footer:
+        title: Ka caawi doorashada
+        description: Muwaadiniinta codbixinta waa farsamo ka qaybqaadasho leh oo muwaadiniinta leh xuquuqda codbixinta ay samayn karaan go'aano toos ah
+      no_polls: "Ma jiraan wax codad furan."
+    show:
+      already_voted_in_booth: "Waxaad horeyba uga qaybgashay wadiiqo jireed. Mar labaad kama qaybqaadan kartid."
+      already_voted_in_web: "Waxaad horay uga qaybqaadatay codeyntan. Haddii aad mar labaad codkaaga dhiibato, waa lagu qori doonaa."
+      back: Dib u laabasho
+      cant_answer_not_logged_in: "Waa inaad%{signin}%{signup} inaad ka qayb qaadato."
+      comments_tab: Faalo
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+      signin: Geliid
+      signup: Saxiixid
+      cant_answer_verify_html: "Waa inaad%%%{verify_link} xaqiijiso xiriirka si aad uga jawaabtid."
+      verify_link: "hubi xisaabtaada"
+      cant_answer_incoming: "Doorashadan ayaan wali bilaabin."
+      cant_answer_expired: "Ra'yiururintan ayaa dhammaatay."
+      cant_answer_wrong_geozone: "Su'aashani ma ahan mid laga heli karo degaankaaga."
+      more_info_title: "Maclumaad dheraad ah"
+      documents: Dukumentiyo
+      zoom_plus: Ballaarin sawir
+      read_more: "Akhriso wax dheeraad ah oo ku saabsan%{answer}"
+      read_less: "Akhri wax yar oo ku saabsan%{answer}"
+      videos: "Fiidiyowga dibadda"
+      info_menu: "Maclumad"
+      stats_menu: "Participation statisticsTirakoobka ka qaybqaadashada"
+      results_menu: "Natiijooyinka ra'yiga"
+      stats:
+        title: "Macluumaadka ka qaybqaadashada"
+        total_participation: "Ka qaybgalka wadarta"
+        total_votes: "Wadarta tirada codadka la siiyay"
+        votes: "Codadka"
+        web: "WEB"
+        booth: "Laba"
+        total: "Wadar"
+        valid: "Ansax ah"
+        white: "Codadka cad"
+        null_votes: "An la isticmali karin/ an shaqeyneyn"
+      results:
+        title: "Sualo"
+        most_voted_answer: "Ita badan jawabah codayey: "
+  poll_questions:
+    create_question: "Saame sual"
+    show:
+      vote_answer: "Cod%{answer}"
