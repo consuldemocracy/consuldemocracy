@@ -715,3 +715,44 @@ so:
         verify_account: hubi xisaabtaada
         authenticate: Waa inad igu %{signin} ama%{signup} si wada.
         signin: gelid
+        signup: iska diwan gelin
+      show:
+        receiver: Fariin diir%{receiver}
+    show:
+      deleted: Titiray
+      deleted_debate: Doodan wala tirtiray
+      deleted_proposal: Soo jeedintan ayaa la tirtiray
+      deleted_budget_investment: Mashruucan maalgashiga ayaa la tirtiray
+      proposals: Sojeedino
+      debates: Doodo
+      budget_investments: Misaniyada malgashiyada
+      comments: Faalo
+      actions: Tilaabooyin
+      filters:
+        comments:
+          one: 1fallada
+          other: "%{count} falloyin"
+        debates:
+          one: 1 dood
+          other: "%{count} doodo"
+        proposals:
+          one: 1 Soo jeedin
+          other: "%{count} sojeedin"
+        budget_investments:
+          one: 1 Malgeelin
+          other: "%{count} Malgashiyo"
+        follows:
+          one: 1 Ka dib
+          other: "%{count} Ka dib"
+      no_activity: Isticmaaluhu ma laha wax firfircoon dadweyne
+      no_private_messages: "Isticmaalkani ma aqbalayo fariimo gaar ah."
+      private_activity: Isticmaalkani waxa uu go'aansaday in uu hayo liiska hawlaha gaarka ah.
+      send_private_message: "U dir fariin gaar ah"
+      delete_alert: "Ma hubtaa inaad rabto inaad tirtirto mashruuca maalgalinta? Ficilkan lama tirtiri karo"
+    proposals:
+      send_notification: "Diir Ogaysiin"
+      retire: "Hawl gab"
+      retired: "Soo jeedinta hawlgabka"
+      see: "Fiiri soo jeedinta"
+  votes:
+    agree: Wan aqbalay
