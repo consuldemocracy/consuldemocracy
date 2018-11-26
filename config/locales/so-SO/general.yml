@@ -195,3 +195,25 @@ so:
     application:
       chrome: Google Chrome
       firefox: Dab-demiska
+      ie: Waxaanu ogaanay inaad adigu internetka kula socoto. Wixii khibrad dheeraad ah, waxaan ku talineynaa isticmaalka% %{firefox} ama%{chrome}.
+      ie_title: Websaydaan laguma soo koobi karo barta internetka
+    footer:
+      accessibility: Helitaanka
+      conditions: Shuruudaha iyo xaaladaha isticmaalka
+      consul: Codsiga Qunsulka
+      consul_url: https://github.com/consul/qonsul
+      contact_us: Booqashada gargaar farsamo
+      copyright: Qonsul%{year}
+      description: Qeybtaani waxay isticmaashaa%{consul} kaas oo ah%{open_source}.
+      open_source: ilo Softiweer oo furan
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Go'aanso sida loo qaabeeyo magaalada aad rabto inaad ku noolaato.
+      participation_title: Kaqaybgalka
+      privacy: Qaanuunka Arrimaha Khaaska ah
+    header:
+      administration_menu: Mamul
+      administration: Mamul
+      available_locales: Luqadaha diyarka ah
+      collaborative_legislation: Nidaamka Sharciga
+      debates: Doodo
+      external_link_blog: Blog
