@@ -56,3 +56,44 @@ so:
       other:
         title: "Macluumaadka kale ee xiisaha"
         how_to_use: "Isticmaal %{org_name} Magaladada"
+      how_to_use:
+        text: |-
+          Isticmaal dawladdaada degaankaaga ama naga caawi si aan u hagaajino, waa barnaamij bilaash ah.
+          
+          Mashruucan Dawlada furan wuxuu adeegsanayaa [app CONSUL app] (https://github.com/consul/consul 'qunsulka github') oo ah barnaamijka bilaashka ah, [liisanka AGPLv3] (http://www.gnu.org/licenses/ 'agpl-3.0.html' AGPLv3 gnu '), taas macnaheedu waa erayada fudud oo qof walba u isticmaali karo koodka si xor ah, nuqulkiisa, si faahfaahsan u fiiri, u beddelo oo dib ugu cusbooneysiiyo aduunka adoo isbedelaya (u oggolow dadka kale inay sameeyaan isku mid). Sababtoo ah waxaan u maleyneynaa in dhaqanku uu ka fiican yahay oo uu fiicnaan doono marka la sii daayo.
+          
+          Haddii aad tahay barnaamij, waxaad arki kartaa koodka oo naga caawiya inaanu ku horumarino [app CONSUL app] (https://github.com/consul/consul 'qunsulka github').
+      titles:
+        how_to_use: U adeegso dawladaada hoose
+    privacy:
+      title: Qaanuunka Arrimaha Khaaska ah
+      subtitle: Macluumaadka ku saabsan macluumaadka asturnaanta
+      info_items:
+        - 
+          text: Marin-hawleedka iyada oo la adeegsanayo macluumaadka laga heli karo Mashruuca Furan ee Open.
+        - 
+          text: Si aad u isticmaasho adeegyadda ku jira Diiwaanka Dawladda ee furan, isticmaaluhu waa inuu diiwaan-geliyaa oo horay u bixiyaa xog shakhsi ah sida ku xusan macluumaadka gaarka ah ee ku jira nooc kasta oo diiwaangelin ah.
+        - 
+          text: 'Xogta la bixiyay waxaa lagu dari doonaa oo ay ka baaraandegi doontaa Golaha Magaalada iyada oo la raacayo sharaxaadda faylka soo socda:'
+        - 
+          subitems:
+            - 
+              field: 'Magaca faylka:'
+              description: Faylka Magaciisa
+            - 
+              field: 'Ujeedka faylka:'
+              description: Maareynta geedi socodka ka qaybqaadashada si loo xakameeyo aqoonta dadka ka qayb galaya iyaga oo keliya tirinta tirooyinka iyo tirakoobka natiijooyinka ka soo baxay habka ka qaybgalka muwaadiniinta.
+            - 
+              field: 'Hay''ad masuul ka ah feylka:'
+              description: Hay'ad u xil saaran faylka
+    accessibility:
+      title: Helitaanka
+      description: |-
+        Helitaanka websaydhka waxaa loola jeedaa suurtogalnimada helitaanka shabakadda iyo waxyaabaha ay ka kooban yihiin dhammaan dadka, iyada oo aan loo eegin naafonimada (jirka, garasho iyo farsamo) oo laga yaabo inay ka soo baxaan ama ka soo baxaan kuwa ka soo jeeda adeegsiga (farsamada ama deegaanka).
+        
+        Marka bogagga internetka loogu talagalay helitaanka maskaxda, dhammaan isticmaalayaasha waxay ku heli karaan naqshado ku siman xaalado siman, tusaale ahaan:
+      examples:
+        - Bixinta qoraalka kale ee sawirrada, indhoolayaasha indhoolayaasha ah ama indhoolayaasha ah waxay isticmaali karaan akhristayaasha gaarka ah si ay u helaan macluumaadka.
+        - Marka fiidiyadu leeyihiin Ciwan hosaad dadka isticmaala dhibaatooyinka maqalka waxay si buuxda u fahmi karaan iyaga.
+        - Haddii ay ku qoran yihiin luqad sahlan oo la muujiyey, dadka isticmaala dhibaatooyinka barashada ayaa si fiican u fahmi kara.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
