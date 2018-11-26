@@ -66,6 +66,36 @@ so:
       less_than_x_minutes:
         one: wax ka yar hal daqiiqo
         other: wax ka yar %{count} daqiiqo
+      less_than_x_seconds:
+        one: wax kayar hal ilbirisi
+        other: wax kayar %{count} ilbirisiyo
+      over_x_years:
+        one: in ka badan 1 sano
+        other: in ka badan %{count} sanado
+      x_days:
+        one: Hal malin
+        other: "%{count} Hal malin"
+      x_minutes:
+        one: 1 minid
+        other: "%{count} minidyo"
+      x_months:
+        one: 1bil
+        other: "%{count} bilo"
+      x_years:
+        one: 1 saano
+        other: "%{count} saano"
+      x_seconds:
+        one: 1 Ilbiriqsi
+        other: "%{count} Ilbiriqsiyo"
+    prompts:
+      day: Malin
+      hour: Sacad
+      minute: Daqiiqad
+      month: Bil
+      second: Ilbiriqsiyo
+      year: Sanad
+  errors:
+    format: "%{attribute}%{message}"
   number:
     human:
       format:
