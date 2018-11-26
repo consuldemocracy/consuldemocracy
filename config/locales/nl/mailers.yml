@@ -22,7 +22,6 @@ nl:
       title: Nieuwe reactie op je reactie
     unfeasible_spending_proposal:
       hi: "Beste deelnemer,"
-      new_html: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
       sincerely: "Oprecht"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
@@ -32,16 +31,11 @@ nl:
       title: "Voorstelmeldingen in %{org_name}"
       share: Deel voorstellen
       comment: Reageren op het voorstel
-      unsubscribe: "Als u geen kennisgeving van voorstellen wilt ontvangen, gaat u naar %{account} en verwijdert u het vinkje bij 'Een samenvatting van de kennisgevingsvoorstellen ontvangen'."
       unsubscribe_account: Mijn account
     direct_message_for_receiver:
       subject: "U hebt een nieuw prive-bericht ontvangen"
       reply: Antwoord op %{sender}
-      unsubscribe: "Als u geen directe boodschappen wilt ontvangen, kijk dan eens bij %{account} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
       unsubscribe_account: Mijn account
-    direct_message_for_sender:
-      subject: "U heeft een nieuw prive bericht verstuurd"
-      title_html: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
       ignore: "Als u deze uitnodiging niet hebt geaccepteerd maak je geen zorgen, u kunt deze e-mail dan negeren."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
@@ -60,7 +54,6 @@ nl:
       share: "Deel uw project"
     budget_investment_unfeasible:
       hi: "Beste gebruiker,"
-      new_html: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
       sincerely: "Hoogachtend"
       sorry: "Sorry voor het ongemak en nogmaals hartelijk dank voor uw waardevolle deelname."
