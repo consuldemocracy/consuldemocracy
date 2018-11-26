@@ -20,3 +20,6 @@ so:
       create:
         flash:
           offices: Xafiisyada Taageerada Muwaadiniinta
+          success_html: Waad ku mahadsan tahay codsigaaga<b> ugu badnaan codsigaaga (kaliya oo looga baahan yahay codadka kama dambaysta ah) </b>. Maalmo gudahood waxaan u direynaa cinwaanka ku jira xogta aan ku hayno faylka. Fadlan xusuusnow, haddii aad doorbidayso, waxaad ka qaadi kartaa lambarkaaga mid ka mid ah%{offices}.
+      edit:
+        see_all: Fiiri soo jeedimaha
