@@ -7,7 +7,6 @@ pt-BR:
       title_placeholder: Adicionar um título descritivo para o documento
       attachment_label: Escolher documento
       delete_button: Excluir documento
-      cancel_button: Cancelar
       note: "Você pode carregar até um máximo de %{max_documents_allowed} documentos dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB por arquivo."
       add_new_document: Adicionar novo documento
     actions:
