@@ -23,7 +23,6 @@ it:
         error_wrong_booth: "Seggio sbagliato. Risultati NON salvati."
       new:
         title: "%{poll} - Aggiungi risultati"
-        not_allowed: "Sei autorizzato ad aggiungere risultati per questa votazione"
         booth: "Seggio"
         date: "Data"
         select_booth: "Seleziona seggio"
