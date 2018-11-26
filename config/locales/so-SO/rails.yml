@@ -174,3 +174,24 @@ so:
           byte:
             one: Byte
             other: Byte
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", iyo "
+      two_words_connector: " iyo "
+      words_connector: ", "
+  time:
+    am: ahay
+    formats:
+      datetime: "%Y-%m-%d%H:%M:%S"
+      default: "%a%d%b%Y%H:%M:%S"
+      long: "%B%d%Y%H:%M"
+      short: "%d%b%H:%M"
+      api: "%Y-%m-%d%H"
+    pm: pm
