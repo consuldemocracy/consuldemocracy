@@ -30,10 +30,4 @@ class Admin::Poll::OfficersController < Admin::Poll::BaseController
     redirect_to admin_officers_path
   end
 
-  def show
-  end
-
-  def edit
-  end
-
 end
