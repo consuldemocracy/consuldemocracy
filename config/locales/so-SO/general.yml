@@ -701,3 +701,17 @@ so:
       unverified_users: Isticmalayaasha an la aqonsaneyn
   unauthorized:
     default: Uma haysid fasax aad ku heli kartid boggan.
+    manage:
+      all: "Ma haysato fasax inaad ku dhaqaaqdo ficil %{action} oo ku saabsan%{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Fariin
+        direct_messages_bloqued: "Isticmaalahan ayaa go'aansaday inaanu helin farriimo toos ah"
+        submit_button: Fariin dir
+        title: Fariin gara diir%{receiver}
+        title_label: Ciwaan
+        verified_only: Diir fariin khasa%{verify_account}
+        verify_account: hubi xisaabtaada
+        authenticate: Waa inad igu %{signin} ama%{signup} si wada.
+        signin: gelid
