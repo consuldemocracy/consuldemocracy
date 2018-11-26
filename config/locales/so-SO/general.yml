@@ -523,3 +523,92 @@ so:
     create_question: "Saame sual"
     show:
       vote_answer: "Cod%{answer}"
+      voted: "Wad codeysay%{answer}"
+      voted_token: "Waxaad ku qori kartaa liiska codbixinta, si aad u hubiso codkaaga natiijooyinka kama dambaysta ah:"
+  proposal_notifications:
+    new:
+      title: "Farri dir"
+      title_label: "Ciwaan"
+      body_label: "Fariin"
+      submit_button: "Fariin dir"
+      info_about_receivers_html: "Fariintan waxaa loo diri doonaa <strong>%{count} dadka </strong> waxaana lagu arki doonaa%{proposal_page}.<br> - Xawaaruhu si dhakhso ah uma dirin, dadka isticmaala waxay helayaan wakhti gaaban email ah oo leh dhammaan ogeysiinta soo jeedinta."
+      proposal_page: "bogga soo jeedinta"
+    show:
+      back: "Ku noqo hawlahayga"
+  shared:
+    edit: 'Isbedel'
+    save: 'Badbaado'
+    delete: Titiriid
+    "yes": "Haa"
+    "no": "Maya"
+    search_results: "Raadi natiijada"
+    advanced_search:
+      author_type: 'Qeybta qoraaga'
+      author_type_blank: 'Xuulo qaybta'
+      date: 'Taariikhda'
+      date_placeholder: 'M/B/S'
+      date_range_blank: 'Dooro taariikh'
+      date_1: '24saac ee ugu dabyey'
+      date_2: 'Isbuucii hore'
+      date_3: 'Bishi hore'
+      date_4: 'Snadkii hore'
+      date_5: 'La isku habeeyey'
+      from: 'Ka'
+      general: 'Qoraalka'
+      general_placeholder: 'Qor Qoraal'
+      search: 'Sifeeyee'
+      title: 'Raadinta sare'
+      to: 'Ku'
+    author_info:
+      author_deleted: Isticmalaha la tirtiray
+    back: Dib ulaabo
+    check: Dorasho
+    check_all: Dhamaan
+    check_none: Midna
+    collective: Wadijir
+    flag: Calamee sida aan habboonayn
+    follow: "Raac"
+    following: "Kuxiga"
+    follow_entity: "Raac%{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Hadda waxaad raacdaa mashruucan maalgashiga! </br> Waan kuu sheegi doonaa isbeddellada markay dhacaan si aad uhesho."
+        destroy:
+          notice_html: "Waxaad joojisay ka dib mashruucan maalgashiga! </br>Mar dambe ma heli doontid ogeysiisyada la xiriira mashruucan."
+      proposal:
+        create:
+          notice_html: "Hadda waxaad raacaysaa qorshaha muwaadiniinta! </br> Waan kuu sheegi doonaa isbeddellada markay dhacaan si aad uhesho."
+        destroy:
+          notice_html: "Waxaad joojisay ka dib sojeedinta muwadinta! </br>Mar dambe ma heli doontid ogeysiisyada la xiriira mashruucan."
+    hide: Qarin
+    print:
+      print_button: Daabac xogtan
+    search: Raadin
+    show: Muuji/ Tusiid
+    suggest:
+      debate:
+        found:
+          one: "Waxaa jira dood ku saabsan ereyga%{query} waxaad ka qayb qaadan kartaa halkii laga furi lahaa mid cusub."
+          other: "Waxaa jira dood ku saabsan ereyga%{query} waxaad ka qayb qaadan kartaa halkii laga furi lahaa mid cusub."
+        message: "Waxaad arki doontaa%{limit}%{count} doodad ku jirta ereyga %{query}"
+        see_all: "Eegida dhaaman"
+      budget_investment:
+        found:
+          one: "Waxaa jira maalgelin ereyga%{query} waad ka qaybgeli kartaa halkii laga furi lahaa mid cusub."
+          other: "Waxaa jira maalgelin ereyga%{query} waad ka qaybgeli kartaa halkii laga furi lahaa mid cusub."
+        message: "Waxaad arkeysaa%{limit} %{count} maalgelin oo ku jirta ereyga %{query}"
+        see_all: "Eegida dhaaman"
+      proposal:
+        found:
+          one: "Waxaa jira soo jeedin ku saabsan ereyga %{query} waxaad ku darsan kartaa halkii aad abuuri lahayd mid cusub"
+          other: "Waxaa jira soo jeedin ku saabsan ereyga %{query} waxaad ku darsan kartaa halkii aad abuuri lahayd mid cusub"
+        message: "Waxaad arkaysaa%{limit}%{count} soo-jeedin oo ku jira ereyga '%{query}"
+        see_all: "Eegida dhaaman"
+    tags_cloud:
+      tags: Kicin
+      districts: "Degmooyinka"
+      districts_list: "Liiska Degmoyinka"
+      categories: "Qaybaha"
+    target_blank_html: " (iskuxir furan daaqad cusub)"
+    you_are_in: "Waad joogtaa"
