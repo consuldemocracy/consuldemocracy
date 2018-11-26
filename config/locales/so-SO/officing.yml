@@ -60,3 +60,8 @@ so:
         not_to_vote: Qofku wuxuu go'aansaday inuusan cod bixin waqtigan
       show:
         can_vote: Codayn kara
+        error_already_voted: Horeyba uga qaybqaatay doorashadan
+        submit: Xaqiiji cod bixinta
+        success: "Codbixinta la soo bandhigay!"
+      can_vote:
+        submit_disable_with: "Sug, codeyn xaqiijin..."
