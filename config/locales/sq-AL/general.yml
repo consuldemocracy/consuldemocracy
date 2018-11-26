@@ -116,7 +116,7 @@ sq:
         disable: "Debatet e rekomandimeve do të ndalojnë të tregojnë nëse i shkarkoni ato. Mund t'i aktivizosh përsëri në faqen 'Llogaria ime'"
         actions:
           success: "Rekomandimet për debatet tani janë të caktivizuar për këtë llogari"
-          error: "Ka ndodhur një gabim. Shkoni tek faqja \"Llogaria juaj\" për të çaktivizuar manualisht rekomandimet për debatet"
+          error: "Ka ndodhur një gabim. Shkoni tek faqja \"Llogaria ime\" për të çaktivizuar manualisht rekomandimet për debatet"
       search_form:
         button: Kërko
         placeholder: Kërko debate...
@@ -357,7 +357,7 @@ sq:
         disable: "Propozimet e rekomandimeve do të ndalojnë të tregojnë nëse i shkarkoni ato. Mund t'i aktivizosh përsëri në faqen 'Llogaria ime'"
         actions:
           success: "Rekomandimet për propozimet tani janë caktivizuar për këtë llogari"
-          error: "Nje gabim ka ndodhur. Ju lutemi të shkoni te faqja \"Llogaria juaj\" për të çaktivizuar manualisht rekomandimet për propozimet"
+          error: "Nje gabim ka ndodhur. Ju lutemi të shkoni te faqja \"Llogaria ime\" për të çaktivizuar manualisht rekomandimet për propozimet"
       retired_proposals: Propozimet e vecuara
       retired_proposals_link: "Propozimet e vecuara nga autori"
       retired_links:
@@ -442,7 +442,7 @@ sq:
       retired: Propozimet e vecuara nga autori
       share: Shpërndaj
       send_notification: Dërgo njoftimin
-      no_notifications: "Ky propozim ka  njoftime."
+      no_notifications: "Ky propozim nuk ka njoftime."
       embed_video_title: "Video në %{proposal}"
       title_external_url: "Dokumentacion shtesë"
       title_video_url: "Video e jashtme"
@@ -450,6 +450,9 @@ sq:
     update:
       form:
         submit_button: Ruaj ndryshimet
+    share:
+      message: "Kam përkrahur propozimin %{summary} në%{org}. Nëse jeni të interesuar, përkrahu gjithashtu!"
+      message_mobile: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
   polls:
     all: "Të gjithë"
     no_dates: "Asnjë datë e caktuar"
@@ -832,7 +835,7 @@ sq:
     error: "Lidhja nuk është e vlefshme. Mos harroni të filloni me %{url}."
     error_itself: "Lidhja nuk është e vlefshme. Ju nuk mund të krijoni një lidhje me veten."
     success: "Ju keni shtuar një përmbajtje të re të ngjashme"
-    is_related: "¿A është përmbajtja e afërt?"
+    is_related: "A është përmbajtja e afërt?"
     score_positive: "Po"
     score_negative: "Jo"
     content_title:
