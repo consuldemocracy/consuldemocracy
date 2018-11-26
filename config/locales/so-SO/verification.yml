@@ -78,3 +78,24 @@ so:
         resend_sms_text: Ma helin qoraal uu la socodo koodhkaaga xaqiijinta?
         submit_button: Diriid
         title: Xaqiijinta koodhka amniga
+      new:
+        phone: Geli lamabarkaTalefoonkaga si ad u hesho koodhka
+        phone_format_html: "<strong>Tusaale: 612345678 or+34612345678</em></strong><strong>"
+        phone_note: Waxaanu isticmaalnaa oo kaliya telefoonkaaga si aan kuu soo dirno kodhka, marnaba kula soo xiriiri.
+        phone_placeholder: "Tusaale: 6123445678 ama +34612345678"
+        submit_button: Diriid
+        title: Xaqiijinta koodhka diir
+      update:
+        error: Kodhka xaqiijinta ee an saxda ahayn
+        flash:
+          level_three:
+            success: Koodka waa sax. Koontadaada hadda waa la xaqiijiyay
+          level_two:
+            success: Kodh saxa ah
+    step_1: Degaan
+    step_2: Koodhka Saxda ah
+    step_3: Cadeeynti ugu danbaysay
+    user_permission_debates: Kaqayb qadashada dooda
+    user_permission_info: Hubinta macluumaadkaaga waad awoodi doontaa inaad...
+    user_permission_proposal: Samee soo jeedino cusub
+    user_permission_support_proposal: Tageer so jedinada*
