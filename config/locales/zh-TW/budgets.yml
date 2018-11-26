@@ -158,7 +158,6 @@ zh-TW:
       heading: "參與性預算結果"
       heading_selection_title: "按地區"
       spending_proposal: 建議標題
-      ballot_lines_count: 被選的次數
       hide_discarded_link: 隱藏廢棄的
       show_all_link: 顯示所有
       price: 價格
