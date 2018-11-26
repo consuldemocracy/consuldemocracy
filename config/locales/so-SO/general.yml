@@ -13,3 +13,46 @@ so:
       phone_number_label: Talafoon lambar
       public_activity_label: Wakiilka hay'adda / wadajirka Liiska ku saabsan waxqabadka dadweynaha
       public_interests_label: Xaji sumadaha waxyaabaha aan raacayo dadweynaha
+      public_interests_my_title_list: Tagyada oo ka mid ah qodobada aad raacdo
+      public_interests_user_title_list: Da'da walxahan ee istimalka soo socota
+      save_changes_submit: Badbaadi beddelka
+      subscription_to_website_newsletter_label: Helitaanka bogga internetka ee macluumaadka khuseeya
+      email_on_direct_message_label: Helaan emayl ku saabsan fariimaha tooska ah
+      email_digest_label: Soo hel warbixinta kooban ee soo jeedinta soo jeedinta
+      official_position_badge_label: Muuji calaamadda booska rasmiga ah
+      recommendations: Talloyin
+      show_debates_recommendations: Muuji talooyinka dodaha
+      show_proposals_recommendations: Muuji talooyinka soo jeedinta
+      title: Xisaabteyda
+      user_permission_debates: Kaqayb qadashada dooda
+      user_permission_info: Akoonkaga waad karta...
+      user_permission_proposal: Samee soo jeedino cusub
+      user_permission_support_proposal: Tageer so jedinta
+      user_permission_title: Kaqaybgalka
+      user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
+      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
+      user_permission_votes: Kayb galka codaynta ugu danbaysa
+      username_label: Magaca Isticmaalaha
+      verified_account: Xisaabi la xaqiijiyay
+      verify_my_account: Hubi xisaabtayda
+  application:
+    close: Xir
+    menu: Muujinta
+  comments:
+    comments_closed: Faallooyinka waa la xidhay
+    verified_only: Si aad uga qayb gasho%{verify_account}
+    verify_account: hubi xisaabtaada
+    comment:
+      admin: Mamulaha
+      author: Qoraa
+      deleted: Faalladan ayaa la tirtiray
+      moderator: Dhexdhexaad ah
+      responses:
+        zero: Jawaab ma jirto
+        one: 1 jawaab
+        other: "%{count} jawaabaha"
+      user_deleted: Isticmalaha la tirtiray
+      votes:
+        zero: Looma baahna codad
+    form:
+      comment_as_admin: Faallada sida admin
