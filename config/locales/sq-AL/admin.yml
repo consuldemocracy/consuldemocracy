@@ -87,6 +87,7 @@ sq:
         table_edit_budget: Ndrysho
         edit_groups: Ndrysho grupet e titujve
         edit_budget: Ndrysho buxhetin
+        no_budgets: "Nuk ka buxhet të hapur."
       create:
         notice: Buxheti i ri pjesëmarrës u krijua me sukses!
       update:
@@ -337,7 +338,7 @@ sq:
           without_confirmed_hide: Në pritje
         title: Përdoruesit e fshehur
         user: Përdorues
-        no_hidden_users: Nuk ka përdorues të fshehura.
+        no_hidden_users: Nuk ka përdorues të fshehur.
       show:
         email: 'Email:'
         hidden_at: 'Fshehur në:'
@@ -384,7 +385,7 @@ sq:
         index:
           create: Proces i ri
           delete: Fshi
-          title: Proceset legjislative
+          title: Proceset e legjislacionit
           filters:
             open: Hapur
             next: Tjetër
@@ -394,6 +395,12 @@ sq:
           back: Pas
           title: Krijo një proces të ri bashkëpunues të legjislacionit
           submit_button: Krijo procesin
+        proposals:
+          select_order: Ndaj sipas
+          orders:
+            id: Id
+            title: Titull
+            supports: Suporti
         process:
           title: Proçes
           comments: Komente
@@ -409,6 +416,7 @@ sq:
           proposals: Propozime
       proposals:
         index:
+          title: Titull
           back: Pas
         form:
           custom_categories: Kategoritë
@@ -971,7 +979,6 @@ sq:
       index:
         title: Zyrtarët
         no_officials: Nuk ka zyrtarë.
-        name: Emër
         official_position: Pozicioni zyrtar
         official_level: Nivel
       level_0: Jo zyrtare
@@ -1355,11 +1362,9 @@ sq:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
       header_title: Header
-      no_header: Nuk ka header.
       create_header: Krijo header
       cards_title: Kartat
       create_card: Krijo kartë
-      no_cards: Nuk ka karta.
       cards:
         title: Titull
         description: Përshkrimi
