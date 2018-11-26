@@ -140,4 +140,48 @@ so:
               key_column: ALT + gaaban (CTRL + ALT + gaaban MAC)
             - 
               browser_column: Safari
+              key_column: ALT + gaaban (CMD + gaaban MAC)
             - 
+              browser_column: Faan muusik
+              key_column: CAPS + ESC + gaaban
+      textsize:
+        title: Cabirka qoraalka
+        browser_settings_table:
+          description: Naqshadda la heli karo ee shabakadani waxay u oggolaaneysaa isticmaalaha in uu doorto cabbirka qoraalka ku habboon. Tallaabadan waxaa lagu fulin karaa siyaabo kala duwan iyadoo ku xiran barta shabakadda.
+          browser_header: Barowsar
+          action_header: Tilabada laqadayo
+          rows:
+            - 
+              browser_column: Sahamiso
+              action_column: View> cabbirka qoraalka
+            - 
+              browser_column: Dab-demiska
+              action_column: Arag> cabbir
+            - 
+              browser_column: Chrome
+              action_column: Goobaha (icon)> Options> Advanced> tusmada wabsatydka> Cabirka Qorlka
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Faan muusik
+              action_column: Muuqaal> cabbir
+        browser_shortcuts_table:
+          description: 'Hab kale oo wax looga beddelo qiyaasta qoraalka waa in la isticmaalo gaabnaanta gaaban ee lagu qeexay daalacayaasha, gaar ahaan isugeynta muhiimka ah:'
+          rows:
+            - 
+              shortcut_column: CTRL iyo + (CMD iyo + MAC)
+              description_column: Kordhi cabbirka qoraalka
+            - 
+              shortcut_column: CTRL iyo - (CMD iyo - MAC)
+              description_column: Hoos u dhig/ yare cabbirka qoraalka
+      compatibility:
+        title: U hoggaansanaanta jaangooyooyinka iyo qaabka muuqaalka
+        description_html: 'Dhammaan boggaga shabakadani waxay raacayaan "Tilmaamaha Habboonaanta" </ strong> ama Mabaadi''da Guud ee Habboonaanta La Isticmaali karo oo ay aasaaseen Kooxda Shaqada <abbr title = "Websaytka ''Accessibility Initiative'' lang =" en "> WAI </ abbr> W3C.'
+    titles:
+      accessibility: Helitaanka
+      conditions: Shuruudaha isticmaalka
+      help: "Wamaxy %{org}- kaqayb galka muwadinka"
+      privacy: Qaanuunka Arrimaha Khaaska ah
+    verify:
+      code: Waraq Kodh ah oo ad heshay
+      email: Email
