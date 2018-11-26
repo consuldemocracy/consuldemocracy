@@ -585,6 +585,7 @@ es:
     administrators:
       index:
         title: Administradores
+        id: ID de Administrador
         name: Nombre
         email: Email
         no_administrators: No hay administradores.
