@@ -96,6 +96,30 @@ so:
       year: Sanad
   errors:
     format: "%{attribute}%{message}"
+    messages:
+      accepted: waa in la aqbala
+      blank: ma noqon karto mid madhan
+      present: waa inu bananda
+      confirmation: maciyaarin%{attribute}
+      empty: mamarnan karo
+      equal_to: waa inay la mid noqotaa%{count}
+      even: waa inay noqotaa xitaa
+      exclusion: waa la keydiyay
+      greater_than: waa inuu ka weynaadaa%{count}
+      greater_than_or_equal_to: waa inuu ka weynaadaa ama la mid yahay%{count}
+      inclusion: laguma darin liiska
+      invalid: waa mid aan sharci ahayn
+      less_than: waa inuu ka yaryahay%{count}
+      less_than_or_equal_to: waa inuu ka yaryahay ama la mid yahay%{count}
+      model_invalid: "Xaqiijinta ayaa ku fashilantay%{errors}"
+      not_a_number: mahan tiro
+      not_an_integer: waa inuu noqdaa mid dareen leh
+      odd: waa inay ahaato mid shaki leh
+      required: waa inuu jiraa
+      taken: horay ayaa loo qaaday
+      too_long:
+        one: waa mid aad u dheer (ugu badnaan waa 1 qof)
+        other: waa mid aad u dheer%{count} (ugu badnaan waa qof)
   number:
     human:
       format:
