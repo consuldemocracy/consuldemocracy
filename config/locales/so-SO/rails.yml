@@ -31,22 +31,41 @@ so:
       - Malinta Jimcaha
       - Malinta Sabtiida
     formats:
+      default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%d%d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Janaayo
+      - Fabaraayo
+      - Marso
+      - Abril
+      - Maay
+      - Juun
+      - Luliyo
+      - Agoosto
+      - Sabteembar
+      - Oktobar
+      - Nofeembar
+      - Desenbar
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: ilaa 1 saax
+        other: ilaa %{count} sacado
+      about_x_months:
+        one: ilaa 1 biil
+        other: ilaa %{count} bilo
+      about_x_years:
+        one: ilaa halsano
+        other: ilaa %{count} sanado
+      almost_x_years:
+        one: kudhowaad%{count} sanado
+        other: kudhowaad%{count} sanado
+      half_a_minute: mis miniid
+      less_than_x_minutes:
+        one: wax ka yar hal daqiiqo
+        other: wax ka yar %{count} daqiiqo
   number:
     human:
       format:
