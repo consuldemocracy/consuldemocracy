@@ -26,6 +26,7 @@ so:
         not_allowed: "Laguuma ogola inaad ku darto natiijooyinka ra'yiururintan"
         booth: "Labadaba"
         date: "Tariikh"
+        select_booth: "Dooro labadaba"
         ballots_white: "Wadarta Warqadaha codbixinta ee banan"
         ballots_null: "Warqadaha aan sharci ahayn"
         ballots_total: "Wadarta Warqadaha dorashada"
