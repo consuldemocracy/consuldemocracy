@@ -335,7 +335,6 @@ zh-TW:
           without_confirmed_hide: 有待
         title: 隱藏的用戶
         user: 用戶
-        no_hidden_users: 沒有隱藏的用戶。
       show:
         email: '電郵:'
         hidden_at: '隱藏於:'
@@ -382,7 +381,6 @@ zh-TW:
         index:
           create: 新進程
           delete: 刪除
-          title: 立法進程
           filters:
             open: 打開
             next: 下一個
@@ -969,7 +967,6 @@ zh-TW:
       index:
         title: 官員
         no_officials: 沒有官員
-        name: 名稱
         official_position: 正式職位
         official_level: 級別
       level_0: 不是官員
@@ -1349,11 +1346,9 @@ zh-TW:
       title: 主頁
       description: 活動模組以與此處相同的順序在主頁中顯示。
       header_title: 標題
-      no_header: 沒有頁首。
       create_header: 創建頁首
       cards_title: 卡
       create_card: 創建卡
-      no_cards: 沒有卡。
       cards:
         title: 標題
         description: 描述
