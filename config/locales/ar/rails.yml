@@ -131,6 +131,7 @@ ar:
     array:
       two_words_connector: " و "
   time:
+    am: صباحاً
     formats:
       datetime: "%Y-%m-%d %H:%M:%S"
     pm: مساء
