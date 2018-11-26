@@ -154,3 +154,13 @@ so:
         other: "hal faalo%{count} Talooyin ku saabsan abuurista dood"
       comments_title: Faalo
       edit_debate_link: Isbedel
+      flag: Dooddani waxaa loo calaamadiyay iyada oo aan ku habboonayn dad badan oo isticmaala.
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+      share: Lawadag
+      author: Qoraa
+    update:
+      form:
+        submit_button: Badbaadi beddelka
+  errors:
+    messages:
+      user_not_found: Iisticamalaha lama hayo
