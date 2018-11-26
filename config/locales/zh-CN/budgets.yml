@@ -158,7 +158,6 @@ zh-CN:
       heading: "参与性预算结果"
       heading_selection_title: "按区域"
       spending_proposal: 提议标题
-      ballot_lines_count: 被选的次数
       hide_discarded_link: 隐藏放弃的
       show_all_link: 显示所有
       price: 价格
