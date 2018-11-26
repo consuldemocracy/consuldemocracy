@@ -50,10 +50,7 @@ de:
           title: Als Organisation oder Kollektiv registrieren
         success:
           back_to_index: Verstanden, zurück zur Startseite
-          instructions_1_html: "<b>Wir werden Sie bald kontaktieren,</b> um zu bestätigen, dass Sie tatsächlich das Kollektiv repräsentieren."
-          instructions_2_html: Während Ihre <b>E-Mail überprüft wird</b>, haben wir Ihnen einen <b>Link zum bestätigen Ihres Benutzerkontos</b> geschickt.
           instructions_3_html: Nach der Bestätigung können Sie anfangen, sich als ein ungeprüftes Kollektiv zu beteiligen.
-          thank_you_html: Vielen Dank für die Registrierung Ihres Kollektivs auf der Webseite. Sie müssen jetzt <b>verifiziert</b> werden.
           title: Eine Organisation oder Kollektiv registrieren
     passwords:
       edit:
@@ -126,4 +123,3 @@ de:
           instructions_1_html: Bitte <b>überprüfen Sie Ihren E-Maileingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Benutzerkontos</b> geschickt.
           instructions_2_html: Nach der Bestätigung können Sie mit der Teilnahme beginnen.
           thank_you_html: Danke für Ihre Registrierung für diese Website. Sie müssen nun <b>Ihre E-Mail-Adresse bestätigen</b>.
-          title: Ihre E-Mail-Adresse ändern
