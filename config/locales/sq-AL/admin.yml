@@ -1,7 +1,7 @@
 sq:
   admin:
     header:
-      title: Administrator
+      title: Administrim
     actions:
       actions: Veprimet
       confirm: A je i sigurt?
@@ -1366,13 +1366,16 @@ sq:
           status_draft: Drafti
           status_published: Publikuar
           title: Titull
+          slug: Slug
     homepage:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
       header_title: Header
+      no_header: Nuk ka header.
       create_header: Krijo header
       cards_title: Kartat
       create_card: Krijo kartë
+      no_cards: Nuk ka karta.
       cards:
         title: Titull
         description: Përshkrimi
