@@ -1,1 +1,10 @@
 so:
+  account:
+    show:
+      change_credentials_link: Bedesho aqoonsigayga
+      email_on_comment_label: Iigu soo sheegaan email ahaan marka qof uu ku faahfaahiyo soo jeedimaha ama doodaha
+      email_on_comment_reply_label: Ii wargali email ahaan marka qof uu jawaabo ku yiraahdo
+      erase_account_link: Ka tiri akoonka
+      finish_verification: Xaqiijin dhamaystiran
+      notifications: Ogaysiisyo
+      organization_name_label: Magacaga ururka
