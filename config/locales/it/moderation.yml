@@ -10,7 +10,6 @@ it:
           pending_flag_review: In sospeso
           with_ignored_flag: Contrassegna come già visto
         headers:
-          comment: Commento
           moderate: Modera
         hide_comments: Nascondi commenti
         ignore_flags: Contrassegna come già visto
