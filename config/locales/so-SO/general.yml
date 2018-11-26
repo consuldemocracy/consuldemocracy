@@ -54,6 +54,8 @@ so:
       user_deleted: Isticmalaha la tirtiray
       votes:
         zero: Looma baahna codad
+        one: 1 Cod 
+        other: "%{count} codadka"
     form:
       comment_as_admin: Faallada sida admin
       comment_as_moderator: Falada xer ilaliyaha
@@ -367,3 +369,37 @@ so:
         other: Midkale
       search_form:
         button: Raadin
+        placeholder: Soo jeedinta raadinta...
+        title: Raadin
+      search_results_html:
+        one: " oo ku jira ereyga <strong>%{search_term}</strong>"
+        other: " oo ku jira ereyga <strong>%{search_term}</strong>"
+      select_order: Dalbaday
+      select_order_long: 'Waxaad daawaneysaa soo jeedinada sida:'
+      start_proposal: Abuur soo jeedin
+      title: Sojeedino
+      top: Usbuuca ugu sarreeya
+      top_link_proposals: Soo jeedinta ugu taageerada badan ee qaybta
+      section_header:
+        icon_alt: Icon soo jedinada
+        title: Sojeedino
+        help: Ka caawi qorshayaasha
+      section_footer:
+        title: Ka caawi qorshayaasha
+        description: Soo jeedinta muwaadiniintu waa fursad ay deriska iyo ururrada ururadu si toos ah u go'aansadaan si toos ah sida ay rabaan magaaladooda, ka dib markay helaan taageero ku filan oo ay u gudbiyaan codbixinta muwaadiniinta,.
+    new:
+      form:
+        submit_button: Abuur soo jeedin
+      more_info: Sidee muwaadin u soo jeedin kartaa shaqada?
+      recommendation_one: Ha u isticmaalin farwaweyn tartanka sojeedinta ama jumlado dhan. Internetka, tan waxaa loo tixgeliyaa qaylo. Ma jiro qof jecel in lagu qayliyo.
+      recommendation_three: Ku raaxee meeshan iyo codadka buuxiya. Adigaa iska leh.
+      recommendation_two: Soojedin-kasta ama faallo kasta oo soo jeedinaysa tallaabo sharci ah ayaa la tirtiri doonaa, iyo sidoo kale kuwa doonaya inay khalkhal galiyaan goobaha doodda. Wax kasta oo kale waa la oggol yahay.
+      recommendations_title: Talooyin ku saabsan abuurista sojeedinta
+      start_new: Samee soo jeedin cusub
+    notice:
+      retired: Soo jeedinta hawlgabnimada
+    proposal:
+      created: "Waxaad abuurtay qorshe!"
+      share:
+        guide: "Hadda waxaad la wadaagi kartaa si dadka ay u bilaabi karaan taageerada."
+        edit: "Ka hor inta aan la wadaagin waxaad awoodi doontaa inaad bedesho qoraalka sida aad jeceshahay."
