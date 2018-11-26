@@ -825,3 +825,6 @@ so:
   invisible_captcha:
     sentence_for_humans: "Haddii aad tahay aadane, iska indha tirtan arimahan"
     timestamp_error_message: "Waan ka xumahay, taas oo ahayd mid deg deg ah! Fadlan soo gudbi."
+  related_content:
+    title: "Mawduuca laxiriray"
+    add: "Ku dar tusmada laxiriray"
