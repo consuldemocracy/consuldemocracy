@@ -467,3 +467,7 @@ so:
       participate_button: "Ka qaybqaado doorashadan"
       participate_button_incoming: "Maclumaad dheraad ah"
       participate_button_expired: "Dorshada dhamadaty"
+      no_geozone_restricted: "Dhaman magaloyinka"
+      geozone_restricted: "Degmooyinka"
+      geozone_info: "Ka-qayb-galka dadka tirakoobka: "
+      already_answer: "Waxaad horay uga qaybqaadatay cod-bixintan"
