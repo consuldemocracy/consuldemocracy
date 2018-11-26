@@ -424,3 +424,46 @@ so:
       supports_necessary: "%{number} taageerada loo baahan yahay"
       total_percent: 100%
       archived: "Soo jeedintaas waa la diiwaangeliyey oo ma soo qaadan karo taageerooyinka."
+      successful: "Hindisahani wuxuu gaadhay taageerooyinka loo baahan yahay."
+    show:
+      author_deleted: Isticmalaha la tirtiray
+      code: 'Talo soo jeedin:'
+      comments:
+        zero: Falooyin majiraan
+        one: 1 faalo
+        other: "%{count} faaloyin"
+      comments_tab: Faalo
+      edit_proposal_link: Isbedel
+      flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+      notifications_tab: Ogaysiis
+      retired_warning: "Qoruhu wuxuu tixgelinayaa hindisahaan in aysan helin taageero dheeraad ah."
+      retired_warning_link_to_explanation: Akhri sharraxa kahor intaadan codeynin.
+      retired: Soo-jeedinta ay ka fariisteen qoraaga
+      share: Lawadag
+      send_notification: Diir Ogaysiin
+      no_notifications: "Soo jeedintaasi ma leh ogeysiisyo."
+      embed_video_title: "Fidyowga%{proposal}"
+      title_external_url: "Dukumentiyo dheeraad ah"
+      title_video_url: "Fidyoowga dibada"
+      author: Qoraa
+    update:
+      form:
+        submit_button: Badbaadi beddelka
+    share:
+      message: "Waxaan taageeray hindisaha%{summary} ee%{org} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
+      message_mobile: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
+  polls:
+    all: "Dhamaan"
+    no_dates: "tirada taariikhda la magacaabay"
+    dates: "Kadimid%{open_at} ila%{closed_at}"
+    final_date: "Soo-celinta ugu dambeysa / Natiijooyinka"
+    index:
+      filters:
+        current: "Furan"
+        incoming: "Soo socda"
+        expired: "Dhacy"
+      title: "Doorashooyinka"
+      participate_button: "Ka qaybqaado doorashadan"
+      participate_button_incoming: "Maclumaad dheraad ah"
+      participate_button_expired: "Dorshada dhamadaty"
