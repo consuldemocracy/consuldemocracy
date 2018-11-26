@@ -23,7 +23,6 @@ sv:
         error_wrong_booth: "Fel röststation. Resultatet sparades INTE."
       new:
         title: "%{poll} - Lägg till resultat"
-        not_allowed: "Du kan lägga till resultat för den här omröstning"
         booth: "Röststation"
         date: "Datum"
         select_booth: "Välj röststation"
