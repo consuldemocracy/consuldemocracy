@@ -9,7 +9,6 @@ ast:
           pending_flag_review: Pindios
         headers:
           comment: Comentariu
-        title: Comentarios
     debates:
       index:
         headers:
@@ -17,11 +16,6 @@ ast:
         title: Alderiques
     menu:
       proposals: Propuestes
-    proposals:
-      index:
-        headers:
-          proposal: Propuesta
     users:
       index:
         hidden: Bloquiáu
-        search: Buscar
