@@ -162,7 +162,6 @@ val:
       heading: "Resultats pressupostos participatius"
       heading_selection_title: "Àmbit d'actuació"
       spending_proposal: Títol
-      ballot_lines_count: Vots
       hide_discarded_link: Oculta descartades
       show_all_link: Mostrar totes
       price: Cost
