@@ -8,6 +8,9 @@
   <td class="text-right">
     <%= heading.population %>
   </td>
+  <td class="text-right">
+    <%= heading.allow_custom_content ? t("true_value") : t("false_value") %>
+  </td>
   <td>
     <%= link_to t("admin.actions.edit"),
             edit_admin_budget_budget_group_budget_heading_path(budget_id: group.budget.id, budget_group_id: group.id, id: heading.id),

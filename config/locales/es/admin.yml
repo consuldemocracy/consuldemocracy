@@ -1,4 +1,6 @@
 es:
+  true_value: 'Si'
+  false_value: 'No'
   admin:
     header:
       title: Administración
@@ -134,6 +136,7 @@ es:
         max_supportable_headings: "Máximo número de partidas en que un usuario puede apoyar"
         max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
         current_of_max_headings: "%{current} de %{max}"
+        allow_content_block: Permite bloque de contenidos
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -604,6 +607,8 @@ es:
           welcome: "Bienvenido/a"
         buttons:
           save: "Guardar cambios"
+          content_block:
+            update: "Actualizar Bloque"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
