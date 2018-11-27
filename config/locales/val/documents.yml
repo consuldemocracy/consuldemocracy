@@ -7,7 +7,6 @@ val:
       title_placeholder: Afegeix un títol descriptiu al document
       attachment_label: Selecciona un document
       delete_button: Eliminar document
-      cancel_button: Cancel·lar
       note: "Pots pujar fins un màxim de %{max_documents_allowed} documents en els formats: %{accepted_content_types}, y de fins %{max_file_size} MB per arxiu."
       add_new_document: Afegeix un nou document
     actions:
