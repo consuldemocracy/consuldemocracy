@@ -1,1 +1,129 @@
 so:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Dib usoo dir tilmamaha
+        title: Dib uso diir hubinta tilmamaha
+      show:
+        instructions_html: Xaqiijinta koontada emailka %{email}
+        new_password_confirmation_label: Ku celi lambarka sirta
+        new_password_label: Furaha cusub ee erayga
+        please_set_password: Fadlan dooro lambar sireedka cusub (waxay kuu ogolaaneysaa inaad ku soo gasho emailka kor ku xusan)
+        submit: Xaqiijin
+        title: Xaqiiji Akoonkayga
+    mailer:
+      confirmation_instructions:
+        confirm_link: Xaqiiji Akoonkayga
+        text: 'Waxaad xaqiijin kartaa koontadaada emailka kuxiran ee soo socda:'
+        title: Sodhowow
+        welcome: Sodhowow
+      reset_password_instructions:
+        change_link: Bedel lambar siredkaga cusub
+        hello: Haloow
+        ignore_text: Haddii aadan codsan isbeddel sir ah, waad iska indha tiri kartaa emailkan.
+        info_text: Furaha sirta ah lama beddeli doono ilaa aad ka heleyso xiriirka oo aad saxdo.
+        text: 'Waxaan helnay codsi aan ku badalno eraygaaga sirta ah. Waxaad ku samayn kartaa sidan:'
+        title: Furahaga bedel
+      unlock_instructions:
+        hello: Haloow
+        info_text: Koontadaada waa la xanimay sababtoo ah tirooyin xad dhaaf ah oo isku-day ah oo isku-day ah.
+        instructions_text: 'Fadlan riix linkagan this si aad u furto xisaabtaada:'
+        title: Akoonkaga waa la xiray
+        unlock_link: Furo sixaabtada
+    menu:
+      login_items:
+        login: Geliid
+        logout: Kabixiid
+        signup: Isdiwaan geli
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Magaca ururka
+          password_confirmation_label: Hubi lambar siredka
+          password_label: Furaha sirta ah
+          phone_number_label: Talafoon lambar
+          responsible_name_label: Magaca buuxa ee qofka mas'uulka ka ah wadajirka
+          responsible_name_note: Tani waxay noqon kartaa qofka matala ururka / ururka ee magaciisu soo bandhigay
+          submit: Isdiwaan geli
+          title: Diiwaangelin sida urur ama wadajir
+        success:
+          back_to_index: 'Waan fahmay: kunoqo boga wayn'
+          instructions_1_html: "<strong> Waxaan si dhakhso ah kuu la soo xiriiri doonaa </ strong> si aan u xaqiijino in aad xaqiiqda ku sameysid wakiilkan."
+          instructions_2_html: Inkastoo aad <strong> emailka dib u eegis </ strong>, waxaan kuu soo dirnay link <strong> si aan u xaqiijino koontadaada </ strong>.
+          instructions_3_html: Markii la xaqiijiyo, waxaad bilaabi kartaa inaad kaqaybqaadato sidii koox aan la aqoonsaneyn.
+          thank_you_html: Waad ku mahadsantahay inaad iska diiwaangeliso guud ahaan bogga internetka. Hadda waa <strong> xaqiijinta sugitaanka </ strong>.
+          title: Diiwaangelinta urur / wadajir
+    passwords:
+      edit:
+        change_submit: Bedel lambar siredkaga cusub
+        password_confirmation_label: Hubi Lambar siredka cusub
+        password_label: Fure cusub
+        title: Furahaga bedel
+      new:
+        email_label: Email
+        send_submit: Diir tilmamaha
+        title: Ilaaway lambar sireedka?
+    sessions:
+      new:
+        login_label: Email ama magaca isticmalaha
+        password_label: Furaha sirta ah
+        remember_me: Ixasuusi
+        submit: Geli
+        title: Geliid
+    shared:
+      links:
+        login: Geli
+        new_confirmation: Ma helin tilmaamo si aad udhaqaajiso xisaabtaada?
+        new_password: Ma ilowday eraygaaga sirta ah?
+        new_unlock: Ma helin tilmaamo xadhig ah?
+        signin_with_provider: Ku saxiix %{provider}
+        signup: Malaha akoon%{signup_link}
+        signup_link: Saxiixid
+    unlocks:
+      new:
+        email_label: Email
+        submit: Dib u soo dir tilmaamaha furitaanka
+        title: Dib u soo dir tilmaamaha furitaanka
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Sabab
+          info: Ficilkan lama tirtiri karo. Fadlan hubso in tani ay tahay waxa aad rabto.
+          info_reason: Haddii aad rabto, naga tag sabab (ikhtiyaar)
+          submit: Ka tiri akoonka
+          title: Ka tiri akoonkayga
+        edit:
+          current_password_label: Magaca Sirta ah hada
+          edit: Isbedel
+          email_label: Email
+          leave_blank: Katag bannaanka haddii aadan rabin inaad wax ka beddesho
+          need_current: Waxaan u baahannahay furahaaga sirta ah si aan u xaqiijino isbedelka
+          password_confirmation_label: Hubi Lambar siredka cusub
+          password_label: Fure cusub
+          update_submit: Cusboneysiin
+          waiting_for: 'Sugitaanka xaqiijinta:'
+        new:
+          cancel: Joojiso galitaanka
+          email_label: Email
+          organization_signup: Miyaad mataleysaa urur ama wadajir? %{signup_link}
+          organization_signup_link: Halkaan iska qor
+          password_confirmation_label: Hubi lambar siredka
+          password_label: Furaha sirta ah
+          redeemable_code: Koodhka xaqiijinta ee laga helay email ahaan (ikhtiyaar)
+          submit: Isdiwaan geli
+          terms: Markaad isdiiwaangeliso aqbasho%{terms}
+          terms_link: shuruudaha iyo xaaladaha isticmaalka
+          terms_title: Adiga oo isdiiwaangelinaya waxaad aqbashay shuruudaha iyo shuruudaha isticmaalka
+          title: Isdiwaan geli
+          username_is_available: Magaca isticmalaha laheli karo
+          username_is_not_available: Magaca hore loo isticmalay
+          username_label: Magaca Isticmaalaha
+          username_note: Magaca ka buuqada bostada kugu xigta
+        success:
+          back_to_index: 'Waan fahmay: kunoqo boga wayn'
+          instructions_1_html: Fadlan <b> Eeg emailkaaga </ b> - waxaan kuu soo dirnay link <b> link si loo xaqiijiyo koontadaada </ b>.
+          instructions_2_html: Marka la xaqiijiyo, waxaad bilaabi kartaa ka qaybqaadashada.
+          thank_you_html: Waad ku mahadsantahay diiwaangelinta boggaga internetka. Hadda waa inaad <b> xaqiijisaa cinwaanka emailkaaga </ b>.
+          title: Xaqiiji cinwaanka emailkaaga
