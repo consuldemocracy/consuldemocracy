@@ -455,6 +455,18 @@ header {
     float: left;
     height: $line-height * 1.5;
     margin-left: $line-height / 2;
+    position: relative;
+
+    &::after {
+      color: #808080;
+      content: '\61';
+      font-family: "icons" !important;
+      font-size: $small-font-size;
+      pointer-events: none;
+      position: absolute;
+      right: 2px;
+      top: 9px;
+    }
   }
 
   .external-links {
@@ -946,15 +958,11 @@ footer {
 
   label {
     color: #fff;
-    font-size: $small-font-size;
+    font-size: $tiny-font-size;
     font-weight: normal;
   }
 
   select {
-    background-image: image-url('language_select.png');
-    background-origin: border-box;
-    background-position: right;
-    background-size: 24px 24px;
 
     option {
       background: #fff;
@@ -965,14 +973,16 @@ footer {
   }
 
   .locale-switcher {
-    background-color: transparent;
+    background: #1a1a1a;
     border: 0;
+    border-radius: rem-calc(4);
     color: #fff;
     font-size: $small-font-size;
+    height: $line-height;
     margin-bottom: 0;
+    margin-top: $line-height / 4;
     outline: none;
-    padding-left: rem-calc(3);
-    padding-right: $line-height;
+    padding: 0 $line-height / 4;
     width: auto;
 
     &:focus {
