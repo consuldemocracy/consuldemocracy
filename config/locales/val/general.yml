@@ -111,12 +111,10 @@ val:
         relevance: més rellevants
         recommendations: recomanacions
       recommendations:
-        without_results: No existeixen debats relacionats amb els teus interessos
         without_interests: Segueix propostes per a que pugam donarte recomanacions
         disable: "Les recomanacions sobre debats deixaran de mostrar-se si les descartes. Pots tornar-les a activar a la pàgina \"El meu compte\""
         actions:
           success: "Les recomanacions per a debats estàn desabilitades per a aquest compte"
-          error: "S'ha produït un error. Aneu a la pàgina \"El meu compte\" per desactivar manualment les recomanacions per als debats"
       search_form:
         button: Cercar
         placeholder: Cercar debats...
@@ -204,7 +202,6 @@ val:
       conditions: Termes i condicions d'us
       consul: Aplicació CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per a assistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
@@ -356,7 +353,6 @@ val:
         disable: "Les recomanacions sobre propostes deixaran de mostrar-se si les descartes. Pots tornar-les a activar a la pàgina \"El meu compte\""
         actions:
           success: "Les recomanacions per a propostes estan desabilitades per a aquest compte"
-          error: "S'ha produït un error. Aneu a la pàgina \"El meu compte\" per desactivar manualment les recomanacions per a propostes"
       retired_proposals: Propostes retirades
       retired_proposals_link: "Propostes retirades per els seus autors"
       retired_links:
@@ -439,7 +435,6 @@ val:
       retired: Proposta retirada per l'autor
       share: Compartir
       send_notification: Enviar notificació
-      no_notifications: "Esta proposta no te notificacions."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentació adicional"
       title_video_url: "Vídeo extern"
@@ -521,7 +516,6 @@ val:
       title_label: "Títol"
       body_label: "Missatge"
       submit_button: "Enviar missatge"
-      info_about_receivers_html: "Este missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.<br>El missatge no s'enviarà inmediatament, els usuaris rebran periòdicament un correu electrònic amb totes les notificacions de propostes."
       proposal_page: "la pàgina de la proposta"
     show:
       back: "Tornar a la meua activitat"
@@ -825,7 +819,6 @@ val:
     error: "Enllaç no vàlid. Recorda iniciar amb %{url}."
     error_itself: "Enllaç no vàlid. No es pot relacionar un contingut amb ell mateix."
     success: "Has afegit nou contingut relacionat"
-    is_related: "Es contingut relacionat?"
     score_positive: "Sí"
     score_negative: "No"
     content_title:
