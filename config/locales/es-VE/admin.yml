@@ -266,7 +266,6 @@ es-VE:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
       show:
         email: 'Correo electrónico:'
         hidden_at: 'Bloqueado:'
@@ -303,7 +302,6 @@ es-VE:
         index:
           create: Nuevo proceso
           delete: Borrar
-          title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
             next: Próximamente
@@ -731,7 +729,6 @@ es-VE:
       index:
         title: Cargos Públicos
         no_officials: No hay cargos públicos.
-        name: Nombre
         official_position: Cargo público
         official_level: Nivel
       level_0: No es cargo público
