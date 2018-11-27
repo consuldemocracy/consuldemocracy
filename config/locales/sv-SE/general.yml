@@ -111,12 +111,10 @@ sv:
         relevance: relevans
         recommendations: rekommendationer
       recommendations:
-        without_results: Det finns inga debatter som rör dina intressen
         without_interests: Följ förslag så vi kan ge dig rekommendationer
         disable: "Rekommenderade debatter kommer sluta visas om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
         actions:
           success: "Rekommenderade debatter har inaktiverats för kontot"
-          error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade debatter"
       search_form:
         button: Sök
         placeholder: Sök debatter...
@@ -204,7 +202,6 @@ sv:
       conditions: Användarvillkor
       consul: CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: För teknisk support gå till
       copyright: CONSUL, %{year}
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod
@@ -357,7 +354,6 @@ sv:
         disable: "Rekommenderade förslag kommer sluta visas om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
         actions:
           success: "Rekommenderade förslag har inaktiverats för kontot"
-          error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade förslag"
       retired_proposals: Förslag som dragits tillbaka
       retired_proposals_link: "Förslag som dragits tillbaka av förslagslämnaren"
       retired_links:
@@ -442,7 +438,6 @@ sv:
       retired: Förslag som dragits tillbaka av förslagslämnaren
       share: Dela
       send_notification: Skicka avisering
-      no_notifications: "Förslaget har inte några aviseringar."
       embed_video_title: "Video om %{proposal}"
       title_external_url: "Ytterligare dokumentation"
       title_video_url: "Extern video"
@@ -525,7 +520,6 @@ sv:
       title_label: "Titel"
       body_label: "Meddelande"
       submit_button: "Skicka meddelande"
-      info_about_receivers_html: "Det här meddelandet kommer att skickas till <strong>%{count} personer</strong> och visas på %{proposal_page}.<br> Meddelanden skickas inte på en gång, utan som regelbundna e-postmeddelanden med aviseringar om förslagen."
       proposal_page: "förslagets sida"
     show:
       back: "Gå tillbaka till min aktivitet"
@@ -829,7 +823,6 @@ sv:
     error: "Länken är ogiltig. Kom ihåg att börja med %{url}."
     error_itself: "Länken är inte giltig. Du kan inte länka till det egna inlägget."
     success: "Du har lagt till nytt relaterat innehåll"
-    is_related: "Är det här relaterat innehåll?"
     score_positive: "Ja"
     score_negative: "Nej"
     content_title:
