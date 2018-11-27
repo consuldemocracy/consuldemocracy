@@ -17,6 +17,7 @@ module Budgets
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
+    before_action :load_content_blocks, only: :index
 
     skip_authorization_check only: :json_data
 
@@ -147,6 +148,10 @@ module Budgets
 
       def load_categories
         @categories = ActsAsTaggableOn::Tag.category.order(:name)
+      end
+
+      def load_content_blocks
+        @heading_content_blocks = @heading.content_blocks.where(locale: I18n.locale) if @heading
       end
 
       def tag_cloud

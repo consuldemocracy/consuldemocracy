@@ -21,8 +21,12 @@
   </p>
 <% end %>
 
+<% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
+  <%= render 'budgets/investments/content_blocks' %>
+<% end %>
 <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
 <%= render 'budgets/investments/categories' %>
+
 
 <% if @heading && can?(:show, @ballot) %>
 

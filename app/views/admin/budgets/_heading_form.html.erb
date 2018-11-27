@@ -35,5 +35,11 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.check_box :allow_custom_content, label: t('admin.budgets.form.allow_content_block') %>
+    </div>
+  </div>
+
   <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
 <% end %>

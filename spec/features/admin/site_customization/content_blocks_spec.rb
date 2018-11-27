@@ -9,10 +9,13 @@ feature "Admin custom content blocks" do
 
   scenario "Index" do
     block = create(:site_customization_content_block)
+    heading_block = create(:heading_content_block)
     visit admin_site_customization_content_blocks_path
 
     expect(page).to have_content(block.name)
     expect(page).to have_content(block.body)
+    expect(page).to have_content(heading_block.heading.name)
+    expect(page).to have_content(heading_block.body)
   end
 
   context "Create" do

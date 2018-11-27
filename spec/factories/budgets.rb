@@ -209,4 +209,10 @@ FactoryBot.define do
   factory :valuator_group, class: ValuatorGroup do
     sequence(:name) { |n| "Valuator Group #{n}" }
   end
+
+  factory :heading_content_block, class: 'Budget::ContentBlock' do
+    association :heading, factory: :budget_heading
+    locale 'en'
+    body 'Some heading contents'
+  end
 end

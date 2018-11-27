@@ -33,7 +33,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   private
 
     def budget_heading_params
-      params.require(:budget_heading).permit(:name, :price, :population)
+      params.require(:budget_heading).permit(:name, :price, :population, :allow_custom_content)
     end
 
 end
