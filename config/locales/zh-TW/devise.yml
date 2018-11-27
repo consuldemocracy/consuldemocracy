@@ -28,7 +28,6 @@ zh-TW:
       unlock_instructions:
         subject: "解鎖的說明"
     omniauth_callbacks:
-      failure: "無法將您授權為%{kind}，因為 \"%{reason}\"。"
       success: "成功識別為 %{kind}。"
     passwords:
       no_token: "除非通過重置密碼鏈接，否則無法訪問此頁面。 如果您已通過重置密碼鏈接來訪問，請檢查URL是否完整。"
