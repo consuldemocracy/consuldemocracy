@@ -337,7 +337,6 @@ sv:
           without_confirmed_hide: Väntande
         title: Dolda användare
         user: Användare
-        no_hidden_users: Det finns inga dolda kommentarer.
       show:
         email: 'E-post:'
         hidden_at: 'Dold:'
@@ -383,7 +382,6 @@ sv:
         index:
           create: Ny process
           delete: Ta bort
-          title: Dialoger
           filters:
             open: Pågående
             next: Kommande
@@ -966,7 +964,6 @@ sv:
       index:
         title: Representanter för staden
         no_officials: Det finns inga representanter för staden.
-        name: Namn
         official_position: Titel
         official_level: Nivå
       level_0: Ej representant för staden
@@ -1339,11 +1336,9 @@ sv:
       title: Startsida
       description: De aktiva modulerna visas på startsidan i samma ordning som här.
       header_title: Sidhuvud
-      no_header: Det finns inget sidhuvud.
       create_header: Skapa sidhuvud
       cards_title: Kort
       create_card: Skapa kort
-      no_cards: Det finns inga kort.
       cards:
         title: Titel
         description: Beskrivning
