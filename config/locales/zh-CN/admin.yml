@@ -335,7 +335,6 @@ zh-CN:
           without_confirmed_hide: 有待
         title: 隐藏的用户
         user: 用户
-        no_hidden_users: 没有隐藏的用户。
       show:
         email: '电子邮件：'
         hidden_at: '隐藏于：'
@@ -381,7 +380,6 @@ zh-CN:
         index:
           create: 新进程
           delete: 删除
-          title: 立法进程
           filters:
             open: 打开
             next: 下一个
@@ -966,7 +964,6 @@ zh-CN:
       index:
         title: 官员
         no_officials: 没有官员。
-        name: 名称
         official_position: 正式职位
         official_level: 级别
       level_0: 非官员
@@ -1346,11 +1343,9 @@ zh-CN:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
       header_title: 页眉
-      no_header: 没有页眉。
       create_header: 创建页眉
       cards_title: 卡
       create_card: 创建卡
-      no_cards: 没有卡。
       cards:
         title: 标题
         description: 描述
