@@ -23,7 +23,6 @@ de:
         error_wrong_booth: "Falsche Wahlkabine. Ergebnisse wurden NICHT gespeichert."
       new:
         title: "%{poll} - Ergebnisse hinzufügen"
-        not_allowed: "Sie sind berechtigt, Ergebnisse für diese Umfrage hinzufügen"
         booth: "Wahlkabine"
         date: "Datum"
         select_booth: "Wahlkabine auswählen"
