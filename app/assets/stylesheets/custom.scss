@@ -616,13 +616,6 @@ table {
   }
 }
 
-form {
-
-  &.locale-form select {
-    background-position: rem-calc(48);
-  }
-}
-
 .orbit-bullets button {
   background-color: #ccc;
   height: $line-height / 2;
