@@ -76,6 +76,9 @@ sq:
       legislation/process:
         one: "Proçes"
         other: "Proçes"
+      legislation/proposal:
+        one: "Propozime"
+        other: "Propozimet"
       legislation/draft_versions:
         one: "Version drafti"
         other: "Version drafti"
@@ -182,11 +185,17 @@ sq:
         geozone_restricted: "E kufizuar nga gjeozoni"
         summary: "Përmbledhje"
         description: "Përshkrimi"
+      poll/translation:
+        name: "Emri"
+        summary: "Përmbledhje"
+        description: "Përshkrimi"
       poll/question:
         title: "Pyetje"
         summary: "Përmbledhje"
         description: "Përshkrimi"
         external_url: "Lidhje me dokumentacionin shtesë"
+      poll/question/translation:
+        title: "Pyetje"
       signature_sheet:
         signable_type: "Lloji i nënshkrimit"
         signable_id: "Identifikimi i nënshkrimit"
@@ -202,6 +211,10 @@ sq:
         more_info_flag: Trego në faqen ndihmëse
         print_content_flag: Butoni për shtypjen e përmbajtjes
         locale: Gjuha
+      site_customization/page/translation:
+        title: Titull
+        subtitle: Nëntitull
+        content: Përmbajtje
       site_customization/image:
         name: Emri
         image: Imazh
@@ -222,12 +235,21 @@ sq:
         allegations_start_date: Data e fillimit të akuzave
         allegations_end_date: Data e përfundimit të akuzave
         result_publication_date: Data e publikimit të rezultatit përfundimtar
+      legislation/process/translation:
+        title: Titulli i procesit
+        summary: Përmbledhje
+        description: Përshkrimi
+        additional_info: Informacion shtesë
       legislation/draft_version:
         title: Titulli i versionit
         body: Tekst
         changelog: Ndryshimet
         status: Statusi
         final_version: Versioni final
+      legislation/draft_version/translation:
+        title: Titulli i versionit
+        body: Tekst
+        changelog: Ndryshimet
       legislation/question:
         title: Titull
         question_options: Opsionet
@@ -244,6 +266,9 @@ sq:
       poll/question/answer:
         title: Përgjigjet
         description: Përshkrimi
+      poll/question/answer/translation:
+        title: Përgjigjet
+        description: Përshkrimi
       poll/question/answer/video:
         title: Titull
         url: Video e jashtme
@@ -252,12 +277,25 @@ sq:
         subject: Subjekt
         from: Nga
         body: Përmbajtja e postës elektronike
+      admin_notification:
+        segment_recipient: Marrësit
+        title: Titull
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Titull
+        body: Tekst
       widget/card:
         label: Etiketa (opsionale)
         title: Titull
         description: Përshkrimi
         link_text: Linku tekstit
         link_url: Linku URL
+      widget/card/translation:
+        label: Etiketa (opsionale)
+        title: Titull
+        description: Përshkrimi
+        link_text: Linku tekstit
       widget/feed:
         limit: Numri i artikujve
     errors:
