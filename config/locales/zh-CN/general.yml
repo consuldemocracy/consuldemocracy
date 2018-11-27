@@ -106,12 +106,10 @@ zh-CN:
         relevance: 相关性
         recommendations: 推荐
       recommendations:
-        without_results: 没有跟您兴趣相关的辩论
         without_interests: 请跟随提议，以便我们可以给您推荐
         disable: "如果您取消它们，辩论推荐将停止显示。您可以在‘我的帐户’页面再次启用它们"
         actions:
           success: "此账户的辩论推荐现已禁用"
-          error: "出现错误。请回到‘您的账户’页面，手动禁用辩论推荐"
       search_form:
         button: 搜索
         placeholder: 搜索辩论...
@@ -197,7 +195,6 @@ zh-CN:
       conditions: 使用条款及条件
       consul: CONSUL应用程序
       consul_url: https://github.com/consul/consul
-      contact_us: 进入技术支援
       copyright: CONSUL, %{year}
       description: 此门户网站使用%{consul}，其是%{open_source}。
       open_source: 开源软件
@@ -345,7 +342,6 @@ zh-CN:
         disable: "如果您取消它们，提议推荐将停止显示。您可以在‘我的账户’页面再次启用它们"
         actions:
           success: "此账户的提议推荐现已禁用"
-          error: "出现错误。请回到‘您的帐号’页面，手动禁用提议推荐"
       retired_proposals: 撤回的提议
       retired_proposals_link: "被作者撤回的提议"
       retired_links:
@@ -425,7 +421,6 @@ zh-CN:
       retired: 被作者撤回的提议
       share: 共用
       send_notification: 发送通知
-      no_notifications: "此提议没有任何通知。"
       embed_video_title: "%{proposal} 的视频"
       title_external_url: "附加文档"
       title_video_url: "外部视频"
@@ -511,7 +506,6 @@ zh-CN:
       title_label: "标题"
       body_label: "信息"
       submit_button: "发送信息"
-      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong> ，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
       proposal_page: "提议页面"
     show:
       back: "返回我的活动"
@@ -804,7 +798,6 @@ zh-CN:
     error: "链接无效。请记住以%{url} 开头。"
     error_itself: "链接无效。您无法把内容关联到它自身。"
     success: "您添加了新的相关的内容"
-    is_related: "它是相关的内容吗？"
     score_positive: "是"
     score_negative: "不是"
     content_title:
