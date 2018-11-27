@@ -7,7 +7,6 @@ de:
       title_placeholder: Fügen Sie einen beschreibender Titel für die Unterlage hinzu
       attachment_label: Auswählen Sie die Unterlage
       delete_button: Entfernen Sie die Unterlage
-      cancel_button: Abbrechen
       note: "Sie können bis zu eine Maximum %{max_documents_allowed} der Unterlagen im folgenden Inhalttypen hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB pro Datei."
       add_new_document: Fügen Sie die neue Unterlage hinzu
     actions:
