@@ -1,6 +1,7 @@
 fr:
   pages:
-    general_terms: Conditions générales
+    conditions:
+      title: Conditions d'utilisation
     help:
       title: "%{org} est une plate-forme pour la participation citoyenne"
       guide: "Ce guide détaille chacune des sections de la %{org} et comment elles fonctionnent."
@@ -53,15 +54,91 @@ fr:
       other:
         title: "Autre information utile"
         how_to_use: "Utiliser %{org_name} dans votre ville"
-      how_to_use:
-        text: |-
-          Utilisez-le pour votre administration locale ou aidez-nous à l'améliorer, il s'agit d'un logiciel libre.
-          
-          Ce Portail Gouvernement Ouvert est basé sur l'application [CONSUL](https://github.com/consul/consul 'consul github'), un logiciel libre publié sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui signifie que n'importe qui peut utiliser le code librement, le copier, le parcourir, le modifier et le redistribuer (pour permettre à d'autres d'en faire autant). Parce que nous croyons en une culture qui s'enrichit et se renforce quand elle est ouverte à tous.
-          
-          Si vous êtes un développeur, vous pouvez accéder au code et nous aider à l'améliorer à [CONSUL](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Utilisez-le pour votre administration locale
+    privacy:
+      title: Politique de confidentialité
+      info_items:
+        - 
+        - 
+        - 
+        - 
+          subitems:
+            - 
+              field: 'Nom du fichier :'
+              description: NOM DU FICHIER
+            - 
+            - 
+    accessibility:
+      title: Accessibilité
+      keyboard_shortcuts:
+        title: Raccourcis clavier
+        navigation_table:
+          key_header: Touche
+          page_header: Page
+          rows:
+            - 
+              key_column: 0
+              page_column: Accueil
+            - 
+              key_column: 1
+              page_column: Débats
+            - 
+              key_column: 2
+              page_column: Propositions
+            - 
+              key_column: 3
+            - 
+              key_column: 4
+              page_column: Budgets participatifs
+            - 
+              key_column: 5
+        browser_table:
+          caption: Combinaison de touches selon le système d’exploitation et le navigateur
+          browser_header: Navigateur
+          key_header: Combinaison de touches
+          rows:
+            - 
+              browser_column: IE
+              key_column: ALT + raccourci puis Entrée
+            - 
+              browser_column: Firefox
+              key_column: ALT + MAJ + raccourci
+            - 
+              browser_column: Chrome
+              key_column: ALT + raccourci (CTRL + ALT + raccourci pour Mac)
+            - 
+              browser_column: Safari
+              key_column: ALT + raccourci (CMD + raccourci sur Mac)
+            - 
+              browser_column: Opera
+              key_column: MAJ + ESC + raccourci
+      textsize:
+        title: Taille du texte
+        browser_settings_table:
+          browser_header: Navigateur
+          action_header: Action à réaliser
+          rows:
+            - 
+              browser_column: IE
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+        browser_shortcuts_table:
+          description: 'Une autre manière de modifier la taille du texte est d''utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :'
+          rows:
+            - 
+              shortcut_column: CTRL et + (CMD et + sur Mac)
+            - 
+              shortcut_column: CTRL et - (CMD et - sur Mac)
+              description_column: Diminue la taille du texte
+      compatibility:
+        title: Compatibilité avec les normes et la conception visuelle
     titles:
       accessibility: Accessibilité
       conditions: Conditions d'utilisations
