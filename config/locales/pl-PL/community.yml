@@ -16,7 +16,6 @@ pl:
       create_first_community_topic:
         first_theme_not_logged_in: Brak dostępnych spraw, uczestnicz tworząc pierwszą.
         first_theme: Utwórz pierwszy temat społeczności
-        sub_first_theme: "Aby utworzyć motyw, musisz %{sign_in} lub %{sign_up}."
         sign_in: "zaloguj się"
         sign_up: "zarejestruj się"
       tab:
