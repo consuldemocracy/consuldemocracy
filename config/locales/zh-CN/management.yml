@@ -77,7 +77,6 @@ zh-CN:
       support_proposals: 支持提议
       vote_proposals: 投票提议
     print:
-      proposals_info: 在http://url.consul上创建您的提议
       proposals_title: '提议：'
       spending_proposals_info: 在http://url.consul上参与
       budget_investments_info: 在http://url.consul上参与
