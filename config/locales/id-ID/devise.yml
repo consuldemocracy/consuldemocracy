@@ -28,7 +28,6 @@ id:
       unlock_instructions:
         subject: "Membuka kunci petunjuk"
     omniauth_callbacks:
-      failure: "Sudah tidak mungkin mengotorisasi anda sebagai %{kind} karena “%{reason}”."
       success: "Berhasil diidentifikasi sebagai %{kind}."
     passwords:
       no_token: "Anda tidak dapat mengakses halaman ini kecuali melalui tautan setel ulang kata sandi. Jika anda telah diakses melalui tautan setel ulang sandi, periksa bahwa URL sudah selesai."
