@@ -4,7 +4,6 @@ it:
       title: Termini e condizioni d'uso
       subtitle: AVVISO LEGALE SULLE CONDIZIONI D'USO, PRIVACY E PROTEZIONE DEI DATI PERSONALI DEL PORTALE GOVERNO APERTO
       description: Pagina di informazioni sulle condizioni di utilizzo, privacy e protezione dei dati personali.
-    general_terms: Termini e condizioni d'uso
     help:
       title: "%{org} è una piattaforma di partecipazione cittadina"
       guide: "Questa guida spiega a cosa serve e come funziona ciascuna sezione di %{org}."
@@ -57,13 +56,6 @@ it:
       other:
         title: "Altre informazioni di interesse"
         how_to_use: "Usa %{org_name} nella tua città"
-      how_to_use:
-        text: |-
-          Usalo nella tua amministrazione locale o aiutaci a migliorarlo, è un software gratuito.
-          
-          Questo Portale per l’Amministrazione Aperta usa la [app CONSUL](https://github.com/consul/consul 'consul github') che è un software gratuito, con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), il che significa in parole povere che chiunque può utilizzare il codice liberamente, copiarlo, esaminarlo nei particolari, modificarlo e ridistribuirlo nel mondo con le modifiche che desidera (consentendo ad altri di fare lo stesso). Perché crediamo che la cultura sia migliore e più ricca quando è libera.
-          
-          Se sei un programmatore, puoi vedere il codice e aiutarci a migliorarlo sulla [app CONSUL](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Usalo nella tua amministrazione locale
     privacy:
@@ -87,10 +79,6 @@ it:
             - 
               field: 'Ente responsabile del documento:'
               description: ENTE RESPONSABILE DEL DOCUMENTO
-        - 
-          text: L'interessato potrà esercitare i diritti di accesso, rettifica, cancellazione e opposizione, innanzi all'organismo responsabile indicato, secondo quanto previsto dall'articolo 5 della legge organica 15/1999, del 13 dicembre, sulla protezione dei Dati di Carattere Personale.
-        - 
-          text: Come principio generale, questo sito non condivide o divulga le informazioni raccolte, a meno che non venga a ciò autorizzato dall’utente o le informazioni siano richieste dall'Autorità Giudiziaria, compreso l’ufficio del Pubblico Ministero, o dalla polizia giudiziaria, ovvero in qualsiasi altro caso regolamentato dall'articolo 11 della legge organica 15/1999, del 13 dicembre, sulla Protezione dei Dati Personali.
     accessibility:
       title: Accessibilità
       description: |-
@@ -98,7 +86,7 @@ it:
         
         Quando i siti web sono progettati con un occhio all'accessibilità, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
       examples:
-        - Fornendo un testo alternativo alle immagini, gli utenti ciechi o ipovedenti possono utilizzare lettori speciali per accedere alle informazioni.
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
         - Quando i video hanno i sottotitoli, gli utenti con disabilità uditive possono comprenderli appieno.
         - Se i contenuti sono scritti in un linguaggio semplice e descrittivo, gli utenti con problemi di apprendimento sono in grado di comprenderli meglio.
         - Se l'utente ha problemi di mobilità ed è difficile utilizzare il mouse, le alternative con la tastiera aiutano nella navigazione.
