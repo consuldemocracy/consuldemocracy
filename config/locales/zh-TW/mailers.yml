@@ -22,7 +22,6 @@ zh-TW:
       title: 對您的評論的新回覆
     unfeasible_spending_proposal:
       hi: "親愛的用戶，"
-      new_html: "僅此，我們邀請您詳細說明一個<strong>新建議</strong>，以符合此進程的條件。 您可以按照以下鏈接執行此操作：%{url}。"
       new_href: "新投資項目"
       sincerely: "真誠的"
       sorry: "很抱歉給您帶來不便，我們再次感謝您的寶貴參與。"
@@ -32,16 +31,11 @@ zh-TW:
       title: "在%{org_name} 中的建議通知"
       share: 分享建議
       comment: 評論建議
-      unsubscribe: "如果您不想收到建議通知，請訪問%{account} 並取消選中“接收建議通知的摘要”。"
       unsubscribe_account: 我的帳戶
     direct_message_for_receiver:
       subject: "您收到了一條新的私人消息"
       reply: 回覆%{sender}
-      unsubscribe: "如果您不想接收直接消息，請訪問%{account} 並取消選中“接收有關直接消息的電郵”。"
       unsubscribe_account: 我的帳戶
-    direct_message_for_sender:
-      subject: "您發送了一條新的私人消息"
-      title_html: "您已使用以下內容向<strong>%{receiver}</strong>發送新的私人消息："
     user_invite:
       ignore: "如果您還沒有請求此邀請，請不用擔心，您可以忽略此電郵。"
       text: "感謝您申請加入%{org}！ 在幾秒鐘後，您便可以開始參與，只需填寫下面的表格："
@@ -60,7 +54,6 @@ zh-TW:
       share: "分享您的項目"
     budget_investment_unfeasible:
       hi: "親愛的用戶，"
-      new_html: "謹此，我們邀請您詳細說明一個<strong>新投資</strong>，以符合此進程的條件。 您可以按照以下鏈接：%{url} 執行此操作。"
       new_href: "新投資項目"
       sincerely: "真誠的"
       sorry: "很抱歉給您帶來不便，我們再次感謝您的寶貴參與。"
