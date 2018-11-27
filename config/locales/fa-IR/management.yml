@@ -70,7 +70,6 @@ fa:
       support_proposals: '* پشتیبانی از طرح های پیشنهادی'
       vote_proposals: پیشنهادات رای دهی
     print:
-      proposals_info: ایجاد پیشنهاد  در http://url.consul
       proposals_title: 'طرح های پیشنهادی:'
       spending_proposals_info: شرکت درhttp://url.consul
       budget_investments_info: شرکت درhttp://url.consul
