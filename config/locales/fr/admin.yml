@@ -336,7 +336,6 @@ fr:
           without_confirmed_hide: En attente
         title: Utilisateurs masqués
         user: Utilisateur
-        no_hidden_users: Il n’y a aucun utilisateur masqué.
       show:
         email: 'Email :'
         hidden_at: 'Masqué le :'
@@ -382,7 +381,6 @@ fr:
         index:
           create: Nouveau processus
           delete: Supprimer
-          title: Processus législatifs
           filters:
             open: Ouvert
             next: Suivant
@@ -655,6 +653,7 @@ fr:
         section_title: Nouvelle notification
       edit:
         section_title: Editer la notification
+        submit_button: Editer la notification
       show:
         section_title: Aperçu de la notification
         send: Envoyer la notification
@@ -964,7 +963,6 @@ fr:
       index:
         title: Fonctionnaires
         no_officials: Il n’y a aucun fonctionnaire.
-        name: Nom
         official_position: Position officielle
         official_level: Niveau
       level_0: Non officiel
@@ -1297,6 +1295,11 @@ fr:
         content_block:
           body: Contenu
           name: Nom
+          names:
+            top_links: Liens du haut
+            footer: Pied de page
+            subnavigation_left: Navigation principale gauche
+            subnavigation_right: Navigation principale droite
       images:
         index:
           title: Images personnalisées
@@ -1339,15 +1342,14 @@ fr:
           status_draft: Brouillon
           status_published: Publié
           title: Titre
+          slug: Slug
     homepage:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
       header_title: Entête
-      no_header: Il n'y a pas d'entête.
       create_header: Créer un entête
       cards_title: Encarts
       create_card: Créer un encart
-      no_cards: Il n'y a pas d'encarts.
       cards:
         title: Titre
         description: Description
@@ -1367,3 +1369,6 @@ fr:
         submit_header: Sauvegarder l'entête
         card_title: Modifier l'encart
         submit_card: Sauvegarder l'encart
+    translations:
+      remove_language: Retirer la langue
+      add_language: Ajouter une langue
