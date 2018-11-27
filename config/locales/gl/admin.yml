@@ -7,8 +7,8 @@ gl:
       confirm: Queres continuar?
       confirm_hide: Confirmar moderación
       hide: Agochar
-      hide_author: Bloquear o autor
-      restore: Volver mostrar
+      hide_author: Agochar o autor
+      restore: Restaurar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar
@@ -56,7 +56,7 @@ gl:
         action: Acción
         actions:
           block: Bloqueado
-          hide: Ocultado
+          hide: Agochado
           restore: Restaurado
         by: Moderado por
         content: Contido
@@ -68,7 +68,7 @@ gl:
           on_proposals: Propostas
           on_users: Usuarios
           on_system_emails: Correos electrónicos do sistema
-        title: Actividade dos moderadores
+        title: Actividade de moderador
         type: Tipo
         no_activity: Non hai actividade dos moderadores.
     budgets:
@@ -311,8 +311,8 @@ gl:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendentes
-        hidden_debate: Debate oculto
-        hidden_proposal: Proposta oculta
+        hidden_debate: Debate agochado
+        hidden_proposal: Proposta agochada
         title: Comentarios agochados
         no_hidden_comments: Non hai comentarios agochados.
     dashboard:
@@ -338,7 +338,7 @@ gl:
           without_confirmed_hide: Pendentes
         title: Usuarios agochados
         user: Usuario
-        no_hidden_users: No hay usarios bloqueados.
+        no_hidden_users: Non hai usuarios agochados.
       show:
         email: 'Enderezo electrónico:'
         hidden_at: 'Bloqueado:'
@@ -385,7 +385,7 @@ gl:
         index:
           create: Novo proceso
           delete: Borrar
-          title: Proceso de lexislación colaborativa
+          title: Procesos lexislativos
           filters:
             open: Abertos
             next: Proximamente
@@ -550,7 +550,7 @@ gl:
       poll_booths: Localización das urnas
       poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar quendas
-      officials: Cargos públicos
+      officials: Cargos
       organizations: Organizacións
       settings: Configuración global
       spending_proposals: Propostas de investimento
@@ -718,7 +718,7 @@ gl:
         group: "Grupo"
         no_group: "Sen grupo"
       valuator:
-        add: Engadir como avaliador
+        add: Engadir aos avaliadores
         delete: Borrar
       search:
         title: 'Avaliadores: busca de usuarios'
@@ -982,7 +982,7 @@ gl:
         title: 'Cargos públicos: editar usuario'
       flash:
         official_destroyed: 'Datos gardados: o usuario xa non é cargo público'
-        official_updated: Datos do cargo público gardados
+        official_updated: Datos do cargo público gardado
       index:
         title: Cargos
         no_officials: Non hai ningún cargo público.
@@ -1006,8 +1006,8 @@ gl:
         filters:
           all: Todas
           pending: Pendente
-          rejected: Rexeitadas
-          verified: Verificadas
+          rejected: Rexeitada
+          verified: Verificada
         hidden_count_html:
           one: Hai ademais <strong>unha organización</strong> sen usuario ou co usuario bloqueado.
           other: Hai ademais <strong>%{count} organizacións</strong> sen usuario ou co usuario bloqueado.
@@ -1371,7 +1371,7 @@ gl:
       title: Páxina principal
       description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
       header_title: Cabeceira
-      no_header: Non hai cabeceira.
+      no_header: Non hai cabeceiras.
       create_header: Crear cabeceira
       cards_title: Tarxetas
       create_card: Crear tarxeta

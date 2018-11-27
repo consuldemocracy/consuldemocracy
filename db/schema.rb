@@ -649,13 +649,18 @@ ActiveRecord::Schema.define(version: 20181109111037) do
     t.date     "proposals_phase_end_date"
     t.boolean  "proposals_phase_enabled"
     t.text     "proposals_description"
+    t.date     "draft_start_date"
+    t.date     "draft_end_date"
+    t.boolean  "draft_phase_enabled",        default: false
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
   add_index "legislation_processes", ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date", using: :btree
   add_index "legislation_processes", ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date", using: :btree
   add_index "legislation_processes", ["debate_start_date"], name: "index_legislation_processes_on_debate_start_date", using: :btree
+  add_index "legislation_processes", ["draft_end_date"], name: "index_legislation_processes_on_draft_end_date", using: :btree
   add_index "legislation_processes", ["draft_publication_date"], name: "index_legislation_processes_on_draft_publication_date", using: :btree
+  add_index "legislation_processes", ["draft_start_date"], name: "index_legislation_processes_on_draft_start_date", using: :btree
   add_index "legislation_processes", ["end_date"], name: "index_legislation_processes_on_end_date", using: :btree
   add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
   add_index "legislation_processes", ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree

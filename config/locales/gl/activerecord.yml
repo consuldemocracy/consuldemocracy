@@ -23,8 +23,8 @@ gl:
         one: "Debate"
         other: "Debates"
       tag:
-        one: "Tema"
-        other: "Temas"
+        one: "Etiqueta"
+        other: "Etiquetas"
       user:
         one: "Usuario"
         other: "Usuarios/as"
@@ -176,7 +176,7 @@ gl:
         association_name: "Nome da asociación"
         description: "Descrición"
         external_url: "Ligazón á documentación adicional"
-        geozone_id: "Ámbito de actuación"
+        geozone_id: "Ámbitos de actuación"
         title: "Título"
       poll:
         name: "Nome"
@@ -307,7 +307,7 @@ gl:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
+              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
         direct_message:
           attributes:
             max_per_day:

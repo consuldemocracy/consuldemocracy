@@ -373,6 +373,8 @@ es:
           enabled: Habilitado
           process: Proceso
           debate_phase: Fase previa
+          draft_phase: Fase de borrador
+          draft_phase_description: Si esta fase está activa, el proceso no aparecerá en la página de procesos. Permite previsualizar el proceso y crear contenido antes del inicio.
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
           start: Inicio
@@ -585,6 +587,7 @@ es:
     administrators:
       index:
         title: Administradores
+        id: ID de Administrador
         name: Nombre
         email: Email
         no_administrators: No hay administradores.
