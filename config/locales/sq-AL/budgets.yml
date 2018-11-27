@@ -105,6 +105,9 @@ sq:
           random: "\ni rastësishëm\n"
           confidence_score: më të vlerësuarat
           price: nga çmimi
+      share:
+        message: "Kam krijuar projektin e investimeve%{title} në %{org}. Krijoni një projekt investimi edhe ju!"
+        message_mobile: "Kam krijuar projektin e investimeve%{title} në %{handle}. Krijoni një projekt investimi edhe ju!"
       show:
         author_deleted: Përdoruesi u fshi
         price_explanation: Shpjegimi i çmimit
