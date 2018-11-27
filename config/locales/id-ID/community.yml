@@ -16,7 +16,6 @@ id:
       create_first_community_topic:
         first_theme_not_logged_in: Tidak ada masalah, ikut menciptakan yang pertama.
         first_theme: Buat topik komunitas pertama
-        sub_first_theme: "Untuk membuat tema Anda harus %{sign_in} o %{sign_up}."
         sign_in: "masuk"
         sign_up: "keluar"
       tab:
