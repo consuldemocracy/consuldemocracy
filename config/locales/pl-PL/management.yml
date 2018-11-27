@@ -77,7 +77,6 @@ pl:
       support_proposals: Popieraj wnioski
       vote_proposals: Oceń wnioski
     print:
-      proposals_info: Utwórz Twój wniosek na http://url.consul
       proposals_title: 'Wnioski:'
       spending_proposals_info: Weź udział w http://url.consul
       budget_investments_info: Weź udział w http://url.consul
