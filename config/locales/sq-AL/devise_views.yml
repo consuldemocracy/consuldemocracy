@@ -50,10 +50,10 @@ sq:
           title: Regjistrohuni si një organizatë ose kolektiv
         success:
           back_to_index: E kuptoj; kthehu në faqen kryesore
-          instructions_1_html: "<b> Do t'ju kontaktojmë së shpejti</b> për të verifikuar që ju në fakt e përfaqësoni këtë kolektiv."
-          instructions_2_html: Ndërsa <b> emaili juaj është rishikuar </b>, ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj</b>.
+          instructions_1_html: "<strong> Do t'ju kontaktojmë së shpejti</strong> për të verifikuar që ju në fakt e përfaqësoni këtë kolektiv."
+          instructions_2_html: Ndërsa <strong> emaili juaj është rishikuar </strong>, ne ju kemi dërguar një <strong> lidhje për të konfirmuar llogarinë tuaj</strong>.
           instructions_3_html: Sapo të konfirmohet, mund të filloni të merrni pjesë si kolektiv i paverifikuar.
-          thank_you_html: Faleminderit që regjistruat kolektivin tuaj në faqen e internetit. Tani është <b> në pritje të verifikimit</b>.
+          thank_you_html: Faleminderit që regjistruat kolektivin tuaj në faqen e internetit. Tani është <strong>në pritje të verifikimit</strong>.
           title: Regjistrimi i organizatës / kolektivit
     passwords:
       edit:
@@ -126,4 +126,4 @@ sq:
           instructions_1_html: Ju lutem <b> Kontrrolloni emaili tuaj </b>- ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj </b>.
           instructions_2_html: Sapo të konfirmohet, mund të filloni përdorimin.
           thank_you_html: Faleminderit për regjistrimin në faqen e internetit. Ju duhet tani <b> të konfirmoni adresën e emailit </b>.
-          title: Modifiko email-in tënd
+          title: Konfirmoni adresen tuaj te e-mailit
