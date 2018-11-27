@@ -111,12 +111,10 @@ nl:
         relevance: relevantie
         recommendations: aanbevelingen
       recommendations:
-        without_results: Er zijn geen discussies die aansluiten bij jouw interesses
         without_interests: Volg voorstellen zodat we je aanbevelingen kunnen geven
         disable: "Aanbevelingen voor discussies worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
         actions:
           success: "Aanbevelingen voor debatten zijn nu uitgeschakeld voor dit account"
-          error: "Er is een fout opgetreden. Ga naar de pagina 'Uw account' om aanbevelingen voor debatten handmatig uit te schakelen"
       search_form:
         button: Zoek
         placeholder: Zoek in discussies...
@@ -204,7 +202,6 @@ nl:
       conditions: Gebruiksvoorwaarden
       consul: Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Voor tech support klik
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
       open_source: open-source software
@@ -357,7 +354,6 @@ nl:
         disable: "Aanbevelingen van voorstellen worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
         actions:
           success: "Aanbevelingen voor voorstellen zijn nu uitgeschakeld voor dit account"
-          error: "Er is een fout opgetreden. Ga naar de pagina 'Uw account' om aanbevelingen voor voorstellen handmatig uit te schakelen"
       retired_proposals: Teruggetrokken voorstellen
       retired_proposals_link: "Teruggetrokken voorstellen"
       retired_links:
@@ -442,7 +438,6 @@ nl:
       retired: Voorstel teruggetrokken door de auteur
       share: Deel
       send_notification: Verzend notificatie
-      no_notifications: "Dit voorstel heeft geen meldingen."
       embed_video_title: "Video voor %{proposal}"
       title_external_url: "Aanvullende documentatie"
       title_video_url: "Video"
@@ -525,7 +520,6 @@ nl:
       title_label: "Titel"
       body_label: "Bericht"
       submit_button: "Stuur bericht"
-      info_about_receivers_html: "Dit bericht zal worden gestuurd aan <strong>%{count} mensen</strong> en zal zichtbaar zijn in de pagina van het voorstel.<br> Berichten worden niet onmiddelijk gestuurd; mensen ontvangen periodiek een email met berichten over voorstellen."
       proposal_page: "Pagina van het voorstel"
     show:
       back: "Ga terug naar mijn bijdragen"
@@ -829,7 +823,6 @@ nl:
     error: "Link niet geldig. Begin met %{url}."
     error_itself: "De link is niet geldig. Je kunt niet relateren aan dezelfde inhoud."
     success: "Je hebt nieuwe gerelateerde inhoud toegevoegd"
-    is_related: "Is het gerelateerde inhoud?"
     score_positive: "Ja"
     score_negative: "Nee"
     content_title:
