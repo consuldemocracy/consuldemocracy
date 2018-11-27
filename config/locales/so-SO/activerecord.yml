@@ -10,9 +10,15 @@ so:
       manager:
         one: "Mamule"
         other: "Mamule"
+      poll/booth:
+        one: "labadaba"
+        other: "labadodaba"
       site_customization/page:
         one: Bog gaara
         other: Bog gaara
+      site_customization/content_block:
+        one: Xayiraaddaha gaarka ah ee gaarka ah
+        other: Xayiraaddaha gaarka ah ee gaarka ah
     attributes:
       budget:
         name: "Magac"
@@ -208,10 +214,19 @@ so:
           attributes:
             email:
               password_already_set: "Isticmaalkan horeba wuxuu leeyahay password"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagyada waa inay ahaadaan wax ka yar ama la mid ah%{count}"
         direct_message:
           attributes:
             max_per_day:
               invalid: "Waxad gaadhay fariimaha ugu badan ee gaarka looleyahay malinlaha ah"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Image Width waa inuu ahaado ugu yaraan%{required_min_width}"
+              min_image_height: "Sawirka dhererka waa inuu ahaado ugu yaraan%{required_min_height}px"
         newsletter:
           attributes:
             segment_recipient:
@@ -237,6 +252,18 @@ so:
               invalid_date_range: waa inay ahaataa mid joogto ah ama ka dib taariikhda tartanka doodda
             allegations_end_date:
               invalid_date_range: waa inuu jiraa ama ka dib marka eedeymaha la bilaabo taariikhda
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagyada waa inay ahaadaan wax ka yar ama la mid ah%{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagyada waa inay ahaadaan wax ka yar ama la mid ah%{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Waa inaad sugto ugu yaraan%{interval} maalmood ee u dhexeeya ogeysiinta"
         signature:
           attributes:
             document_number:
@@ -246,7 +273,17 @@ so:
           attributes:
             slug:
               slug_format: "waa inuu ahaado waraaqo, lambaro, _ iyo -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Wareegtu waa inay ahaataa%{required_width} px"
+              image_height: "Dhererka wa inuu ahado%{required_height}px"
         comment:
           attributes:
             valuation:
               cannot_comment_valuation: 'Kama doodi kartid qiimaha'
+      messages:
+        record_invalid: "Xaqiijinta ayaa ku fashilantay%{errors}"
+        restrict_dependent_destroy:
+          has_one: "Ma tirtiri karaan diiwaanka sababta oo ah ku tiirsane%{record} jirtanada"
+          has_many: "Ma tirtiri karaan diiwaanka sababta oo ah ku tiirsane%{record} jirtanka"
