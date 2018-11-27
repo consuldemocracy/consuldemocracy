@@ -77,7 +77,6 @@ nl:
       support_proposals: Steun voorstellen
       vote_proposals: Stem voorstellen
     print:
-      proposals_info: Maak je eigen voorstel op http://url.consul
       proposals_title: 'Voorstellen:'
       spending_proposals_info: Neem deel op http://url.consul
       budget_investments_info: Neem deel op http://url.consul
