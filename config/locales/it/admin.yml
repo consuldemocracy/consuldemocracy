@@ -336,7 +336,6 @@ it:
           without_confirmed_hide: In sospeso
         title: Utenti nascosti
         user: Utente
-        no_hidden_users: Non ci sono utenti nascosti.
       show:
         email: 'Email:'
         hidden_at: 'Nascosto:'
@@ -382,7 +381,6 @@ it:
         index:
           create: Nuovo procedimento
           delete: Elimina
-          title: Procedimenti legislativi
           filters:
             open: Aperti
             next: Successivo
@@ -967,7 +965,6 @@ it:
       index:
         title: Funzionari
         no_officials: Non ci sono funzionari.
-        name: Nome
         official_position: Incarico da funzionario
         official_level: Livello
       level_0: Non funzionario
@@ -1346,11 +1343,9 @@ it:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
       header_title: Intestazione
-      no_header: Non c'è alcuna intestazione.
       create_header: Crea intestazione
       cards_title: Schede
       create_card: Crea scheda
-      no_cards: Non c’è alcuna scheda.
       cards:
         title: Titolo
         description: Descrizione
