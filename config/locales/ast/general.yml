@@ -20,28 +20,15 @@ ast:
       user_permission_verify_info: "* Namás usuarios empadronaos."
       user_permission_votes: Participar nes votaciones finales
       verified_account: Cuenta verificada
-  debates:
-    index:
-      featured_debates: Destacar
   errors:
     messages:
       user_not_found: Usuariu non atopáu
   layouts:
     header:
       administration: Alministración
-      spending_proposals: Propuestas de inversión
   poll_questions:
     create_question: "Crear entruga"
   shared:
-    delete: Borrar
-    search_results: "Resultados de la búsqueda"
-    back: Volver
     check: Escoyer
     hide: Despintar
     show: Amosar
-  stats:
-    index:
-      visits: Visitas
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sin verificar
