@@ -1,7 +1,7 @@
 sq:
   admin:
     header:
-      title: Administrator
+      title: Administrim
     actions:
       actions: Veprimet
       confirm: A je i sigurt?
@@ -87,6 +87,7 @@ sq:
         table_edit_budget: Ndrysho
         edit_groups: Ndrysho grupet e titujve
         edit_budget: Ndrysho buxhetin
+        no_budgets: "Nuk ka buxhet të hapur."
       create:
         notice: Buxheti i ri pjesëmarrës u krijua me sukses!
       update:
@@ -337,7 +338,7 @@ sq:
           without_confirmed_hide: Në pritje
         title: Përdoruesit e fshehur
         user: Përdorues
-        no_hidden_users: Nuk ka përdorues të fshehura.
+        no_hidden_users: Nuk ka përdorues të fshehur.
       show:
         email: 'Email:'
         hidden_at: 'Fshehur në:'
@@ -384,7 +385,7 @@ sq:
         index:
           create: Proces i ri
           delete: Fshi
-          title: Proceset legjislative
+          title: Proceset e legjislacionit
           filters:
             open: Hapur
             next: Tjetër
@@ -394,6 +395,12 @@ sq:
           back: Pas
           title: Krijo një proces të ri bashkëpunues të legjislacionit
           submit_button: Krijo procesin
+        proposals:
+          select_order: Ndaj sipas
+          orders:
+            id: Id
+            title: Titull
+            supports: Suporti
         process:
           title: Proçes
           comments: Komente
@@ -409,7 +416,12 @@ sq:
           proposals: Propozime
       proposals:
         index:
+          title: Titull
           back: Pas
+          id: Id
+          supports: Suporti
+          select: Zgjidh
+          selected: I zgjedhur
         form:
           custom_categories: Kategoritë
           custom_categories_description: Kategoritë që përdoruesit mund të zgjedhin duke krijuar propozimin.
@@ -629,6 +641,9 @@ sq:
         title: Parapamje e buletinit
         send: Dërgo
         affected_users: (%{n} përdoruesit e prekur)
+        sent_emails:
+          one: 1 email dërguar
+          other: "%{count} emaile të dërguara"
         sent_at: Dërguar në
         subject: Subjekt
         segment_recipient: Marrësit
@@ -971,7 +986,7 @@ sq:
       index:
         title: Zyrtarët
         no_officials: Nuk ka zyrtarë.
-        name: Emër
+        name: Emri
         official_position: Pozicioni zyrtar
         official_level: Nivel
       level_0: Jo zyrtare
@@ -1351,6 +1366,7 @@ sq:
           status_draft: Drafti
           status_published: Publikuar
           title: Titull
+          slug: Slug
     homepage:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
