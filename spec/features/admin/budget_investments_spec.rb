@@ -1079,6 +1079,7 @@ feature 'Admin budget investments' do
         click_link('Selected')
       end
 
+      click_button('Filter')
       expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content('There is 1 investment')
 
@@ -1088,6 +1089,20 @@ feature 'Admin budget investments' do
         expect(page).to have_link('Select')
         expect(page).not_to have_link('Selected')
       end
+    end
+
+    scenario "Pagination after unselecting an investment", :js do
+      create_list(:budget_investment, 30, budget: budget)
+
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#budget_investment_#{selected_bi.id}") do
+        click_link('Selected')
+      end
+
+      click_link('Next')
+
+      expect(page).to have_link('Previous')
     end
   end
 
