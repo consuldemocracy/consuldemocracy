@@ -310,7 +310,6 @@ es-AR:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
       show:
         email: 'Correo:'
         hidden_at: 'Bloqueado:'
@@ -347,7 +346,6 @@ es-AR:
         index:
           create: Nuevo proceso
           delete: Borrar
-          title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
             next: Próximamente
@@ -864,7 +862,6 @@ es-AR:
       index:
         title: Cargos Públicos
         no_officials: No hay cargos públicos.
-        name: Nombre
         official_position: Cargo público
         official_level: Nivel
       level_0: No es cargo público
@@ -1223,11 +1220,9 @@ es-AR:
       title: Página principal
       description: Los módulos activos aparecerán en la página principal en el mismo orden que aquí.
       header_title: Encabezado
-      no_header: No hay encabezado.
       create_header: Crear encabezado
       cards_title: Tarjetas
       create_card: Crear tarjeta
-      no_cards: No hay tarjetas.
       cards:
         title: Título
         description: Descripción
