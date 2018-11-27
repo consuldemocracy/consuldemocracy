@@ -19,9 +19,6 @@ es:
       comment:
         one: "Comentario"
         other: "Comentarios"
-      debate:
-        one: "Debate"
-        other: "Debates"
       tag:
         one: "Tema"
         other: "Temas"
@@ -100,12 +97,6 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
-      topic:
-        one: "Tema"
-        other: "Temas"
-      poll:
-        one: "Votación"
-        other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
         other: "Notificaciones de propuesta"
@@ -127,59 +118,34 @@ es:
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
-        location: "Ubicación (opcional)"
-        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
+        location: "Ubicación"
         image: "Imagen descriptiva del proyecto de gasto"
-        image_title: "Título de la imagen"
       budget/investment/milestone:
         status_id: "Estado actual del proyecto (opcional)"
-        title: "Título"
         description: "Descripción (opcional si hay un estado asignado)"
-        publication_date: "Fecha de publicación"
       budget/investment/status:
         name: "Nombre"
         description: "Descripción (opcional)"
-      budget/heading:
-        name: "Nombre de la partida"
-        price: "Cantidad"
-        population: "Población"
       comment:
-        body: "Comentario"
         user: "Usuario"
       debate:
         author: "Autor"
         description: "Opinión"
         terms_of_service: "Términos de servicio"
-        title: "Título"
       proposal:
-        author: "Autor"
-        title: "Título"
         question: "Pregunta"
-        description: "Descripción"
-        terms_of_service: "Términos de servicio"
       user:
-        login: "Email o nombre de usuario"
-        email: "Correo electrónico"
-        username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
-        password: "Contraseña"
-        current_password: "Contraseña actual"
-        phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel del cargo"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Nombre de organización"
         responsible_name: "Persona responsable del colectivo"
       spending_proposal:
         administrator_id: "Administrador"
         association_name: "Nombre de la asociación"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
-        title: "Título"
       poll:
-        name: "Nombre"
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
@@ -190,10 +156,7 @@ es:
         summary: "Resumen"
         description: "Descripción"
       poll/question:
-        title: "Pregunta"
         summary: "Resumen"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
       signature_sheet:
@@ -204,11 +167,8 @@ es:
         content: Contenido
         created_at: Creada
         subtitle: Subtítulo
-        slug: Slug
         status: Estado
-        title: Título
         updated_at: última actualización
-        more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
       site_customization/page/translation:
@@ -216,16 +176,13 @@ es:
         subtitle: Subtítulo
         content: Contenido
       site_customization/image:
-        name: Nombre
         image: Imagen
       site_customization/content_block:
-        name: Nombre
         locale: Idioma
         body: Contenido
       legislation/process:
         title: Título del proceso
         summary: Resumen
-        description: En qué consiste
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso
         end_date: Fecha de fin del proceso
@@ -244,21 +201,16 @@ es:
         title: Título de la version
         body: Texto
         changelog: Cambios
-        status: Estado
         final_version: Versión final
       legislation/draft_version/translation:
         title: Título de la versión
         body: Texto
         changelog: Cambios
       legislation/question:
-        title: Título
         question_options: Respuestas
       legislation/question_option:
         value: Valor
-      legislation/annotation:
-        text: Comentario
       document:
-        title: Título
         attachment: Archivo adjunto
       image:
         title: Título
@@ -325,10 +277,6 @@ es:
           attributes:
             segment_recipient:
               invalid: "El usuario del destinatario es inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
         poll/voter:
           attributes:
             document_number:
@@ -342,14 +290,6 @@ es:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
             allegations_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
-        proposal:
-          attributes:
-            tag_list:
-              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
-        budget/investment:
-          attributes:
-            tag_list:
-              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -368,12 +308,8 @@ es:
             image:
               image_width: "Debe tener %{required_width}px de ancho"
               image_height: "Debe tener %{required_height}px de alto"
-        comment:
-          attributes:
-            valuation:
-              cannot_comment_valuation: 'No puedes comentar una evaluación'
       messages:
-        record_invalid: "Error de validación: %{errors}"
+        record_invalid: "La validación falló: %{errors}"
         restrict_dependent_destroy:
-          has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
-          has_many: "No se puede eliminar el registro porque existe %{record} dependientes"
+          has_one: "No se puede eliminar el registro porque existe un %{record} dependiente"
+          has_many: "No se puede eliminar el registro porque existen %{record} dependientes"
