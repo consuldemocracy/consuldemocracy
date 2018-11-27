@@ -19,9 +19,6 @@ pt-BR:
           flags: Mais sinalizado
           newest: Mais recente
         title: Comentários
-    dashboard:
-      index:
-        title: Moderação
     debates:
       index:
         block_authors: Bloquear autores
@@ -64,7 +61,6 @@ pt-BR:
           proposal: Proposta
         hide_proposals: Ocultar propostas
         ignore_flags: Marcar como visto
-        order: Ordenar por
         orders:
           created_at: Mais recentes
           flags: Mais sinalizado
