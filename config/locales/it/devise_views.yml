@@ -50,10 +50,7 @@ it:
           title: Registrarsi come un'organizzazione o collettivo
         success:
           back_to_index: Ho capito; torna alla pagina principale
-          instructions_1_html: "<b>Ti contatteremo a breve</b> al fine di verificare che tu sia effettivamente il rappresentante di questo collettivo."
-          instructions_2_html: Mentre <b>verifichiamo la tua e-mail</b>, ti abbiamo inviato un <b>link per la verifica dell’account</b>.
           instructions_3_html: Una volta confermato, si potrà iniziare a partecipare come collettivo non verificato.
-          thank_you_html: Grazie per aver registrato il tuo collettivo su questo sito. Ora è <b>in attesa di verifica</b>.
           title: Registrazione dell'organizzazione / collettivo
     passwords:
       edit:
@@ -126,4 +123,3 @@ it:
           instructions_1_html: Si prega di <b>controllare l’e-mail</b> - abbiamo inviato <b>un link di per confermare l’account</b>.
           instructions_2_html: Una volta confermati, si può iniziare a partecipare.
           thank_you_html: Grazie per esserti registrato/a. Ora è necessario <b>confermare il tuo indirizzo e-mail</b>.
-          title: Modifica il tuo indirizzo email
