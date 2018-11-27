@@ -2523,7 +2523,7 @@ table {
     border-radius: rem-calc(5);
     display: block;
     margin: $line-height / 2 0;
-    padding: 0 $line-height / 2;
+    padding: $line-height / 2;
     position: relative;
 
     .icon-document {
