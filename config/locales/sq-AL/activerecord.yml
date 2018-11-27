@@ -231,6 +231,8 @@ sq:
         end_date: Data e përfundimit
         debate_start_date: Data e fillimit të debatit
         debate_end_date: Data e mbarimit të debatit
+        draft_start_date: Data e fillimit të draftit
+        draft_end_date: Data e mbarimit të draftit
         draft_publication_date: Data e publikimit të draftit
         allegations_start_date: Data e fillimit të akuzave
         allegations_end_date: Data e përfundimit të akuzave
@@ -340,6 +342,8 @@ sq:
               invalid_date_range: duhet të jetë në ose pas datës së fillimit
             debate_end_date:
               invalid_date_range: duhet të jetë në ose pas datës së fillimit të debatit
+            draft_end_date:
+              invalid_date_range: duhet të jetë në ose pas datës së fillimit të draftit
             allegations_end_date:
               invalid_date_range: duhet të jetë në ose pas datës së fillimit të pretendimeve
         proposal:
