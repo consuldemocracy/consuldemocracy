@@ -57,6 +57,7 @@ sq:
       section_footer:
         title: Ndihmoni me buxhetet pjesëmarrëse
         description: Me buxhetet pjesëmarrëse qytetarët vendosin se në cilat projekte janë të destinuara një pjesë e buxhetit.
+      milestones: Pikëarritje
     investments:
       form:
         tag_category_label: "Kategoritë"
@@ -163,7 +164,7 @@ sq:
       heading: "Rezultatet e buxhetit pjesëmarrjës"
       heading_selection_title: "Nga rrethi"
       spending_proposal: Titulli i Propozimit
-      ballot_lines_count: Kohë të zgjedhura
+      ballot_lines_count: Votat
       hide_discarded_link: Hiq të fshehurat
       show_all_link: Shfaqi të gjitha
       price: Çmim
@@ -174,6 +175,15 @@ sq:
       investment_proyects: Lista e të gjitha projekteve të investimeve 
       unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
       not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
+    executions:
+      link: "Pikëarritje"
+      page_title: "%{budget}- Pikëarritje"
+      heading: "Buxhetet pjesëmarrës i Pikës së arritjes"
+      heading_selection_title: "Nga rrethi"
+      no_winner_investments: "Asnjë investim fitues në këtë gjendje"
+      filters:
+        label: "Gjendja aktuale e projektit"
+        all: "Të gjitha (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data e fillimit nuk mund të jetë e barabartë ose më vonë se data e përfundimit"
