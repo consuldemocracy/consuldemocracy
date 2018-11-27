@@ -57,6 +57,7 @@ gl:
       section_footer:
         title: Axuda sobre os orzamentos participativos
         description: Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento municipal.
+      milestones: Fitos
     investments:
       form:
         tag_category_label: "Categorías"
@@ -174,6 +175,15 @@ gl:
       investment_proyects: Listaxe de todos os proxectos de investimento
       unfeasible_investment_proyects: Ver a relación de proxectos de investimento inviables
       not_selected_investment_proyects: Ver a listaxe de proxecto de investimento non seleccionadas para a votación final
+    executions:
+      link: "Fitos"
+      page_title: "%{budget} - Fitos"
+      heading: "Fitos dos orzamentos participativos"
+      heading_selection_title: "Por zona"
+      no_winner_investments: "Non hai investimentos gañadores neste estado"
+      filters:
+        label: "Estado actual do proxecto"
+        all: "Todo (%{count})"
     phases:
       errors:
         dates_range_invalid: "A data de comezo non pode ser igual ou superior á de remate"
