@@ -2,4 +2,3 @@ ast:
   pages:
     verify:
       email: Email
-      password: Contraseña
