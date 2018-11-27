@@ -373,6 +373,8 @@ sq:
           enabled: Aktivizuar
           process: Proçes
           debate_phase: Faza e debatit
+          draft_phase: Faza e draftit
+          draft_phase_description: Nëse kjo fazë është aktive, procesi nuk do të renditet në indeksin e proceseve. Lejoni të parashini procesin dhe të krijoni përmbajtjen para fillimit.
           allegations_phase: Faza e komenteve
           proposals_phase: Faza e propozimit
           start: Fillo
@@ -587,6 +589,7 @@ sq:
         title: Administrator
         name: Emri
         email: Email
+        id: Administrator ID
         no_administrators: Nuk ka administratorë.
       administrator:
         add: Shto
