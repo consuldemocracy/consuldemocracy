@@ -22,7 +22,7 @@ sq:
       title: Përgjigje e re tek komentit tuaj
     unfeasible_spending_proposal:
       hi: "I dashur përdorues,"
-      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong>propozim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje: %{url}"
+      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong>propozim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje: %{url}."
       new_href: "projekt i ri investimi"
       sincerely: "Sinqerisht"
       sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
@@ -60,7 +60,7 @@ sq:
       share: "Ndani projektin tuaj"
     budget_investment_unfeasible:
       hi: "I dashur përdorues,"
-      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong> investim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje:%{url}"
+      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong> investim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje:%{url}."
       new_href: "projekt i ri investimi"
       sincerely: "Sinqerisht"
       sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
