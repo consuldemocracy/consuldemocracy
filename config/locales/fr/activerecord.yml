@@ -182,6 +182,9 @@ fr:
         geozone_restricted: "Restreint selon la zone géographique"
         summary: "Résumé"
         description: "Description"
+      poll/translation:
+        name: "Nom"
+        summary: "Résumé"
       poll/question:
         title: "Question"
         summary: "Résumé"
