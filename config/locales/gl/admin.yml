@@ -587,6 +587,7 @@ gl:
         title: Administradores/as
         name: Nome
         email: O teu correo electrónico
+        id: ID do administrador
         no_administrators: Non hai ningún administrador.
       administrator:
         add: Engadir
