@@ -185,11 +185,14 @@ fr:
       poll/translation:
         name: "Nom"
         summary: "Résumé"
+        description: "Description"
       poll/question:
         title: "Question"
         summary: "Résumé"
         description: "Description"
         external_url: "Lien vers la documentation complémentaire"
+      poll/question/translation:
+        title: "Question"
       signature_sheet:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
@@ -205,6 +208,10 @@ fr:
         more_info_flag: Montrer dans la page Plus d'informations
         print_content_flag: Bouton impression du contenu
         locale: Langue
+      site_customization/page/translation:
+        title: Titre
+        subtitle: Sous-titre
+        content: Contenu
       site_customization/image:
         name: Nom
         image: Image
@@ -231,6 +238,9 @@ fr:
         changelog: Changements
         status: Statut
         final_version: Version finale
+      legislation/draft_version/translation:
+        body: Texte
+        changelog: Changements
       legislation/question:
         title: Titre
         question_options: Options
@@ -255,12 +265,25 @@ fr:
         subject: Objet
         from: De
         body: Contenu du courriel
+      admin_notification:
+        segment_recipient: Destinataires
+        title: Titre
+        link: Lien
+        body: Texte
+      admin_notification/translation:
+        title: Titre
+        body: Texte
       widget/card:
         label: Label (facultatif)
         title: Titre
         description: Description
         link_text: Texte du lien
         link_url: Url du lien
+      widget/card/translation:
+        label: Label (facultatif)
+        title: Titre
+        description: Description
+        link_text: Texte du lien
       widget/feed:
         limit: Nombre d’éléments
     errors:
