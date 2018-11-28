@@ -67,6 +67,7 @@ fr:
           on_debates: Discussions
           on_proposals: Propositions
           on_users: Utilisateurs
+          on_system_emails: Emails système
         title: Activité de modération
         type: Type
         no_activity: Il n’y a aucune activité de modérateurs.
@@ -336,6 +337,7 @@ fr:
           without_confirmed_hide: En attente
         title: Utilisateurs masqués
         user: Utilisateur
+        no_hidden_users: Il n’y a aucun utilisateur masqué.
       show:
         email: 'Email :'
         hidden_at: 'Masqué le :'
@@ -390,6 +392,12 @@ fr:
           back: Retour
           title: Créer un nouveau processus législatif collaboratif
           submit_button: Créer un processus
+        proposals:
+          select_order: Trier par
+          orders:
+            id: Id
+            title: Titre
+            supports: Soutiens
         process:
           title: Processus
           comments: Commentaires
@@ -405,7 +413,12 @@ fr:
           proposals: Propositions
       proposals:
         index:
+          title: Titre
           back: Retour
+          id: Id
+          supports: Soutiens
+          select: Sélectionner
+          selected: Sélectionné
         form:
           custom_categories: Catégories
           custom_categories_description: Catégories que les utilisateurs peuvent sélectionner créer une proposition.
@@ -526,6 +539,7 @@ fr:
       messaging_users: Messages aux utilisateurs
       newsletters: Bulletins d’information
       admin_notifications: Notifications
+      system_emails: Emails système
       emails_download: Téléchargement des courriels
       valuators: Évaluateurs
       poll_officers: Assesseurs
@@ -651,6 +665,7 @@ fr:
         empty_notifications: Aucune notification à afficher
       new:
         section_title: Nouvelle notification
+        submit_button: Créez la notification
       edit:
         section_title: Editer la notification
         submit_button: Editer la notification
@@ -672,9 +687,11 @@ fr:
         action: Aperçu en attente
         preview_of: Aperçu de %{name}
         pending_to_be_sent: Ceci est le contenu en attente d’être envoyé
+        moderate_pending: Modérer la notification envoyée
         send_pending: Envoi en attente
         send_pending_notification: Les notifications en attente ont été envoyées avec succès
       proposal_notification_digest:
+        title: Résumé des notifications des propositions
         description: Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails.
         preview_detail: Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent
     emails_download:
@@ -963,6 +980,7 @@ fr:
       index:
         title: Fonctionnaires
         no_officials: Il n’y a aucun fonctionnaire.
+        name: Nom
         official_position: Position officielle
         official_level: Niveau
       level_0: Non officiel
@@ -1347,9 +1365,11 @@ fr:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
       header_title: Entête
+      no_header: Il n'y a pas d'entête.
       create_header: Créer un entête
       cards_title: Encarts
       create_card: Créer un encart
+      no_cards: Il n'y a pas d'encarts.
       cards:
         title: Titre
         description: Description
