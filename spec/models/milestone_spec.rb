@@ -42,28 +42,6 @@ describe Milestone do
     end
   end
 
-  describe "#description_or_status_present?" do
-    let(:milestone) { build(:milestone) }
-
-    it "is not valid when status is removed and there's no description" do
-      milestone.update(description: nil)
-      expect(milestone.update(status_id: nil)).to be false
-    end
-
-    it "is not valid when description is removed and there's no status" do
-      milestone.update(status_id: nil)
-      expect(milestone.update(description: nil)).to be false
-    end
-
-    it "is valid when description is removed and there is a status" do
-      expect(milestone.update(description: nil)).to be true
-    end
-
-    it "is valid when status is removed and there is a description" do
-      expect(milestone.update(status_id: nil)).to be true
-    end
-  end
-
   describe ".published" do
     it "uses the application's time zone date", :with_different_time_zone do
       published_in_local_time_zone = create(:milestone,
