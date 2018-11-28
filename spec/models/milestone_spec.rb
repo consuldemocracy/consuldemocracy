@@ -40,11 +40,6 @@ describe Milestone do
       milestone.status_id = nil
       expect(milestone).to be_valid
     end
-
-    it "is valid without description if status is present" do
-      milestone.description = nil
-      expect(milestone).to be_valid
-    end
   end
 
   describe "#description_or_status_present?" do
