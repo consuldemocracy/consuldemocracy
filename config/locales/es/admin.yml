@@ -276,7 +276,7 @@ es:
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
       form:
-        admin_statuses: Gestionar estados de proyectos
+        admin_statuses: Gestionar estados
         no_statuses_defined: No hay estados definidos
       new:
         creating: Crear hito
