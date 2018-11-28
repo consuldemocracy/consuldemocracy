@@ -129,7 +129,7 @@ en:
         image: "Proposal descriptive image"
         image_title: "Image title"
       milestone:
-        status_id: "Current investment status (optional)"
+        status_id: "Current status (optional)"
         title: "Title"
         description: "Description (optional if there's an status assigned)"
         publication_date: "Publication date"
