@@ -8,17 +8,7 @@
   </div>
 <% end %>
 
-<ul class="tabs" data-tabs id="globalize_locale">
-  <% I18n.available_locales.each do |locale| %>
-    <li class="tabs-title">
-      <%= link_to name_for_locale(locale), "#",
-                  style: display_style.call(locale),
-                  class: "js-globalize-locale-link #{highlight_class(resource, locale)}",
-                  data: { locale: locale },
-                  remote: true %>
-    </li>
-  <% end %>
-</ul>
+<%= render "admin/shared/globalize_tabs", resource: resource, display_style: display_style %>
 
 <div class="small-12 medium-6">
   <%= select_tag :translation_locale,
