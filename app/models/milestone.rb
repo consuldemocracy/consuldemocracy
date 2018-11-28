@@ -13,7 +13,9 @@ class Milestone < ActiveRecord::Base
 
   validates :milestoneable, presence: true
   validates :publication_date, presence: true
-  validate :description_or_status_present?
+
+  before_validation :assign_milestone_to_translations
+  validates_translation :description, presence: true, unless: -> { status_id.present? }
 
   scope :order_by_publication_date, -> { order(publication_date: :asc, created_at: :asc) }
   scope :published,                 -> { where("publication_date <= ?", Date.current) }
@@ -23,9 +25,9 @@ class Milestone < ActiveRecord::Base
     80
   end
 
-  def description_or_status_present?
-    unless description.present? || status_id.present?
-      errors.add(:description)
+  private
+
+    def assign_milestone_to_translations
+      translations.each { |translation| translation.globalized_model = self }
     end
-  end
 end
