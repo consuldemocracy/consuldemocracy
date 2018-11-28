@@ -52,7 +52,6 @@ shared_examples "milestoneable" do |factory_name, path_name|
     end
 
     scenario "Show no_milestones text", :js do
-      create(:budget_investment)
       login_as(create(:user))
 
       visit path
