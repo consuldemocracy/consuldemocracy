@@ -3,6 +3,7 @@ ar:
     no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
     comment:
       hi: مرحبا
+      new_comment_by_html: هناك تعليق جديد من <b>%{commenter}</b>
       title: تعليق جديد
     config:
       manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
@@ -15,6 +16,9 @@ ar:
     reply:
       hi: مرحبا
       new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
+      title: اجابة جديدة على تعليقك
+    unfeasible_spending_proposal:
+      new_href: "مشروع استثماري جديد"
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
     budget_investment_created:
