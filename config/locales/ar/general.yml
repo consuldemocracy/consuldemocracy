@@ -71,7 +71,31 @@ ar:
         title: تعليمات حول التصويت
       no_polls: "جميع الاستبيانات منتهية."
     show:
+      already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
+      already_voted_in_web: "شاركت في هذا الاستبيان في السابق ، إذا شاركت الان ستيم الغاء المعلومات السابقة."
+      back: العودة إلى التصويت
+      cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
+      comments_tab: تعليقات
+      login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
+      signin: تسجيل الدخول
+      signup: انشاء حساب
+      cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
+      verify_link: "التحقق من حسابك"
+      cant_answer_incoming: "لم يبدأ هذا الاستبيان بعد."
+      cant_answer_expired: "انتهى هذا الاستبيان."
+      cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
+      more_info_title: "مزيد من المعلومات"
+      documents: مستندات
+      zoom_plus: توسيع صورة
+      read_more: "اقرأ المزيد حول %{answer}"
+      read_less: "اقرأ مختصر حول %{answer}"
+      videos: "فيديو خارجي"
       info_menu: "المعلومات"
+      stats_menu: "إحصائيات المشاركة"
+      results_menu: "نتائج استبيان"
+      stats:
+        title: "بيانات المشاركة"
+        total_participation: "مجموع المشاركات"
   shared:
     advanced_search:
       date_3: 'الشهر الماضي'
