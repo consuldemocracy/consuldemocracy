@@ -187,6 +187,12 @@ ar:
         no_results: لم يتم العثور على منظمات.
     shared:
       description: الوصف
+    stats:
+      polls:
+        table:
+          question_name: سؤال
+          origin_web: المشاركون عبر ويب
+          origin_total: مجموع المشاركين
     homepage:
       cards:
         title: العنوان
