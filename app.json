@@ -1,7 +1,0 @@
-{
-  "buildpacks": [
-    {
-      "url": "https://github.com/mcollina/heroku-buildpack-imagemagick.git"
-    }
-  ]
-}
