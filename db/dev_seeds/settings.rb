@@ -30,6 +30,7 @@ section "Creating Settings" do
 
   Setting.create(key: 'feature.debates', value: "true")
   Setting.create(key: 'feature.proposals', value: "true")
+  Setting.create(key: 'feature.featured_proposals', value: "true")
   Setting.create(key: 'feature.polls', value: "true")
   Setting.create(key: 'feature.spending_proposals', value: nil)
   Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: nil)
@@ -65,6 +66,8 @@ section "Creating Settings" do
   Setting.create(key: 'map_latitude', value: 40.41)
   Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
+  Setting.create(key: 'featured_proposals_number', value: 3)
+
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
 
   Setting['feature.homepage.widgets.feeds.proposals'] = true

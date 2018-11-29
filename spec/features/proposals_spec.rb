@@ -18,6 +18,8 @@ feature 'Proposals' do
 
     before do
       Setting['feature.allow_images'] = true
+      Setting['feature.featured_proposals'] = true
+      Setting['featured_proposals_number'] = 3
     end
 
     after do
@@ -92,6 +94,7 @@ feature 'Proposals' do
         click_link "Next", exact: false
       end
 
+      expect(page).to have_selector('#proposals .proposal-featured', count: 3)
       expect(page).to have_selector('#proposals .proposal', count: 2)
     end
 
