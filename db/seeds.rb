@@ -72,6 +72,7 @@ Setting["meta_keywords"] = nil
 # Feature flags
 Setting['feature.debates'] = true
 Setting['feature.proposals'] = true
+Setting['feature.featured_proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
@@ -114,6 +115,9 @@ Setting['mailer_from_address'] = 'noreply@consul.dev'
 # Verification settings
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
+
+# Featured proposals
+Setting['featured_proposals_number'] = 3
 
 # Proposal improvement url path ('/help/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
