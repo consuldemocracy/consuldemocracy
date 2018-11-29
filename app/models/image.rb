@@ -44,7 +44,7 @@ class Image < ActiveRecord::Base
     self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                         File.open(cached_attachment)
                       else
-                        URI.parse("http:" + cached_attachment)
+                        URI.parse(cached_attachment)
                       end
   end
 
