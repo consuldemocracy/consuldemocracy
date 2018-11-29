@@ -1,5 +1,8 @@
 ar:
   officing:
+    polls:
+      final:
+        title: الاستبيانات جاهزة لعملية العد النهائي
     results:
       new:
         date: "تاريخ"
@@ -9,5 +12,8 @@ ar:
         results: النتائج
         table_answer: الإجابة
     voters:
+      new:
+        title: استبيانات
+        table_status: حالة الاستبيانات
       show:
         submit: تأكيد التصويت
