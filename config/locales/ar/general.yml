@@ -65,6 +65,11 @@ ar:
       cant_answer: "هذا الاستبيان غير متوفر في منطقتك الجغرافية"
       section_header:
         icon_alt: رمز التصويت
+        title: التصويت
+        help: تعليمات حول التصويت
+      section_footer:
+        title: تعليمات حول التصويت
+      no_polls: "جميع الاستبيانات منتهية."
     show:
       info_menu: "المعلومات"
   shared:
