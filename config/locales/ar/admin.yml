@@ -152,7 +152,12 @@ ar:
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
     menu:
       hidden_comments: التعليقات المخفية
+      polls: الاستبيانات
       settings: الإعدادات العامة
+      site_customization:
+        information_texts_menu:
+          polls: "الاستبيانات"
+      title_polls: الاستبيانات
     moderators:
       index:
         title: المشرفون
@@ -166,6 +171,10 @@ ar:
       index:
         download_segment: تحميل عناوين البريد الإلكتروني
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+    polls:
+      index:
+        title: "قائمة الاستبيانات المفعلة"
+        no_polls: "لا يوجد استبيانات."
     questions:
       index:
         no_questions: "لا توجد هناك أسئلة."
@@ -188,7 +197,10 @@ ar:
     shared:
       description: الوصف
     stats:
+      show:
+        polls: الاستبيانات
       polls:
+        all: الاستبيانات
         table:
           question_name: سؤال
           origin_web: المشاركون عبر ويب
