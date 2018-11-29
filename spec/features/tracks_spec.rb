@@ -171,7 +171,9 @@ feature 'Tracking' do
 
       visit proposals_path
       click_link 'Best proposal'
-      find('.in-favor a').click
+      within("aside") do
+        find('.in-favor a').click
+      end
 
       expect(page).to have_css("span[data-track-event-category='Propuesta']", visible: false)
       expect(page).to have_css("span[data-track-event-action='Apoyar']", visible: false)
@@ -181,14 +183,18 @@ feature 'Tracking' do
 
       visit proposals_path
       click_link 'Medium proposal'
-      find('.in-favor a').click
+      within("aside") do
+        find('.in-favor a').click
+      end
 
       expect(page).to have_css("span[data-track-event-custom-value='2']", visible: false)
       expect(page).to have_css("span[data-track-event-dimension-value='2']", visible: false)
 
       visit proposals_path
       click_link 'Worst proposal'
-      find('.in-favor a').click
+      within("aside") do
+        find('.in-favor a').click
+      end
 
       expect(page).to have_css("span[data-track-event-custom-value='3']", visible: false)
       expect(page).to have_css("span[data-track-event-dimension-value='3']", visible: false)
