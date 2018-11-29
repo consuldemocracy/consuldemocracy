@@ -335,6 +335,19 @@ en:
           without_confirmed_hide: Pending
         title: Hidden debates
         no_hidden_debates: There is no hidden debates.
+    documents:
+      new:
+        title: "Upload a document"
+        file_field_text: "Choose document"
+        submit_button: "Upload"
+      index:
+        new_link: "Add new document"
+        no_documents: "There are no documents."
+      create:
+        success_notice: "Document uploaded succesfully"
+        unable_notice: "Invalid document"
+      destroy:
+        success_notice: "Document deleted succesfully"
     hidden_users:
       index:
         filter: Filter
@@ -569,6 +582,7 @@ en:
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
+        documents: Custom documents
         homepage: Homepage
         pages: Custom pages
         images: Custom images

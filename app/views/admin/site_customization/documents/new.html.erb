@@ -1,0 +1,9 @@
+<h2><%= t("admin.documents.new.title") %></h2>
+
+<%= form_for @document, 
+             url: admin_site_customization_documents_path, 
+             multipart: true do |f| %>
+  
+  <%= f.file_field 'attachment', { label: false } %>
+  <%= f.submit t("admin.documents.new.submit_button") %>
+<% end %>

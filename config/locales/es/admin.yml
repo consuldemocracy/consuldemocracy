@@ -335,6 +335,18 @@ es:
           without_confirmed_hide: Pendientes
         title: Debates ocultos
         no_hidden_debates: No hay debates ocultos.
+    documents:
+      new:
+        title: "Subir un documento"
+        submit_button: "Subir documento"
+      index:
+        new_link: "Subir un documento"
+        no_documents: "No hay documentos."
+      create:
+        success_notice: "Documento creado correctamente"
+        unable_notice: "Document inválido"
+      destroy:
+        success_notice: "Documento borrado correctamente"
     hidden_users:
       index:
         filter: Filtro
@@ -568,6 +580,7 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
+        documents: Documentos
         homepage: Homepage
         pages: Personalizar páginas
         images: Personalizar imágenes
