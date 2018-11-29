@@ -24,6 +24,10 @@ ar:
       login_items:
         login: تسجيل الدخول
         logout: تسجيل الخروج
+    passwords:
+      edit:
+        password_confirmation_label: تأكيد كلمة المرور الجديدة
+        password_label: كلمة مرور جديدة
     sessions:
       new:
         password_label: كلمة المرور
