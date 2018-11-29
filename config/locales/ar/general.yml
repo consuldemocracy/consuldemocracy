@@ -45,6 +45,26 @@ ar:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
   polls:
+    all: "الكل"
+    no_dates: "التاريخ غير محدد"
+    dates: "من %{open_at} إلى %{closed_at}"
+    final_date: "التنائج النهائية"
+    index:
+      filters:
+        current: "فتح"
+        incoming: "البريد الوارد"
+        expired: "منتهي الصلاحية"
+      title: "استطلاعات الرأي"
+      participate_button: "المشاركة في هذا التصويت \\ استطلاع الرأي"
+      participate_button_incoming: "مزيد من المعلومات"
+      participate_button_expired: "انتهى التصويت"
+      no_geozone_restricted: "جميع المدن"
+      already_answer: "انت مشارك في هذا الاستبيان سابقاً"
+      not_logged_in: "يجب تسجيل الدخول أو انشاء حساب جديد للمشاركة"
+      unverified: "يجب عليك التحقق من الحساب الخاص بك على المشاركة"
+      cant_answer: "هذا الاستبيان غير متوفر في منطقتك الجغرافية"
+      section_header:
+        icon_alt: رمز التصويت
     show:
       info_menu: "المعلومات"
   shared:
