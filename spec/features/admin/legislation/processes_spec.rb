@@ -149,6 +149,9 @@ feature 'Admin legislation processes' do
     scenario "Edit milestones summary", :js do
       visit admin_legislation_process_milestones_path(process)
 
+      expect(page).not_to have_link "Remove language"
+      expect(page).not_to have_field "translation_locale"
+
       within(".translatable-fields[data-locale='en']") do
         fill_in_ckeditor find("textarea", visible: false)[:id],
                          with: "There is still a long journey ahead of us"
