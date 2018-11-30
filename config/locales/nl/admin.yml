@@ -354,13 +354,13 @@ nl:
     legislation:
       processes:
         create:
-          notice: 'Proces aangamaakt. <a href="%{link}">Klik om te zien</a>'
-          error: Proces kon niet worden aangemaakt
+          notice: 'Plan aangamaakt. <a href="%{link}">Klik om te zien</a>'
+          error: Plan kon niet worden aangemaakt
         update:
-          notice: 'Proces opgeslagen. <a href="%{link}">Klik om te zien</a>'
+          notice: 'Plan opgeslagen. <a href="%{link}">Klik om te zien</a>'
           error: Proces kon niet worden opgeslagen
         destroy:
-          notice: Proces verwijderd
+          notice: Plan verwijderd
         edit:
           back: Terug
           submit_button: Sla op
@@ -1361,7 +1361,7 @@ nl:
       feeds:
         proposals: Voorstellen
         debates: Discussies
-        processes: Processen
+        processes: Plannen
       new:
         header_title: Nieuwe header
         submit_header: Koptekst maken
