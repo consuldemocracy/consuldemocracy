@@ -1,20 +1,20 @@
-<h2 class="inline-block">Documentos</h2>
+<h2 class="inline-block"><%= t("admin.documents.index.title") %></h2>
 
 <%= link_to t("admin.documents.index.new_link"),
             new_admin_site_customization_document_path,
             class: "button float-right" %>
 
-<h3><%= page_entries_info @documents %></h3>
-
 <% if @documents.any? %>
+  <h3><%= page_entries_info @documents %></h3>
+
   <table>
     <thead>
       <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Format</th>
-        <th scope="col">Size</th>
-        <th scope="col">Url</th>
-        <th scope="col">Actions</th>
+        <th scope="col"><%= t("admin.shared.title") %></th>
+        <th scope="col"><%= t("admin.documents.index.format") %></th>
+        <th scope="col"><%= t("admin.documents.index.size") %></th>
+        <th scope="col"><%= t("admin.documents.index.url") %></th>
+        <th scope="col"><%= t("admin.shared.actions") %></th>
       </tr>
     </thead>
     <tbody id="documents">
@@ -26,10 +26,10 @@
           <td><%= link_to document.title, document.attachment.url, target: :blank %></td>
           <td>
             <div class="small-12 medium-6 column">
-              <%= link_to "Destroy", 
-                          admin_site_customization_document_path(document), 
+              <%= link_to t("admin.shared.delete"),
+                          admin_site_customization_document_path(document),
                           method: :delete,
-                          data: { confirm: t('admin.actions.confirm') } %>
+                          data: { confirm: t("admin.actions.confirm") } %>
             </div>
           </td>
         </tr>
