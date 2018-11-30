@@ -774,10 +774,10 @@ nl:
       most_active:
         debates: "Meest actieve discussies"
         proposals: "Meest actieve voorstellen"
-        processes: "Open processen"
+        processes: "Open plannen"
       see_all_debates: Zie alle debatten
       see_all_proposals: Zie alle voorstellen
-      see_all_processes: Zie alle processen
+      see_all_processes: Zie alle plannen
       process_label: Proces
       see_process: Zie proces
     cards:
