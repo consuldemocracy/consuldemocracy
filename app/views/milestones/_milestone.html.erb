@@ -29,17 +29,24 @@
     </p>
 
     <% if milestone.documents.present? %>
-      <div class="document-link text-center">
-        <p>
-          <span class="icon-document"></span>&nbsp;
-          <strong><%= t("shared.documentation") %></strong>
-        </p>
-        <% milestone.documents.each do |document| %>
-          <%= link_to document.title,
-                  document.attachment.url,
-                  target: "_blank",
-                  rel: "nofollow" %><br>
-        <% end %>
+      <div class="documents">
+        <div class="document-link text-left small">
+          <p>
+            <strong><%= t("shared.documentation") %></strong>
+          </p>
+
+          <% milestone.documents.each do |document| %>
+              <%= link_to document.title,
+                      document.attachment.url,
+                      target: "_blank",
+                      rel: "nofollow" %><br>
+              <small>
+                <%= document.humanized_content_type %>&nbsp;|&nbsp;
+                <%= number_to_human_size(document.attachment_file_size, precision: 2) %>
+              </small>
+              <br>
+          <% end %>
+        </div>
       </div>
     <% end %>
 
