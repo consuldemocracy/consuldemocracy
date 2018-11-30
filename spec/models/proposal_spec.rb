@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Proposal do
   let(:proposal) { build(:proposal) }
 
+  it_behaves_like "globalizable", :proposal
+
   describe "Concerns" do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
