@@ -353,9 +353,9 @@ def expect_document_has_cached_attachment(index, extension)
 end
 
 def documentable_fill_new_valid_proposal
-  fill_in :proposal_title, with: "Proposal title #{rand(9999)}"
-  fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
+  fill_in "Proposal title", with: "Proposal title #{rand(9999)}"
+  fill_in "Proposal summary", with: "Proposal summary"
+  fill_in "Proposal question", with: "Proposal question?"
   check :proposal_terms_of_service
 end
 
