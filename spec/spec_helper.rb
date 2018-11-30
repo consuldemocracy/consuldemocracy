@@ -6,7 +6,7 @@ require 'knapsack_pro'
 
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
-Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }
+Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -19,6 +19,7 @@ RSpec.configure do |config|
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
   config.include(ActiveSupport::Testing::TimeHelpers)
+
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end
