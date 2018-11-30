@@ -10,7 +10,7 @@ nl:
       manage_email_subscriptions: Om deze mails niet meer te ontvangen moet u uw instellingen aanpassen
     email_verification:
       click_here_to_verify: Deze link
-      instructions_2_html: Deze e-mail verifieert uw account met <b>%{document_type} %{document_number}</ b>. Als deze niet van u zijn, klik dan niet op de vorige link en negeer deze e-mail.
+      instructions_2_html: Deze e-mail verifieert uw account met %{document_type} %{document_number}. Als deze email niet voor u bestemd is, klik dan niet op de link en negeer deze e-mail.
       instructions_html: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
       subject: Bevestig uw email
       thanks: Heel erg bedankt.
