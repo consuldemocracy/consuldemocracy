@@ -72,6 +72,7 @@ Setting["meta_keywords"] = nil
 # Feature flags
 Setting['feature.debates'] = true
 Setting['feature.proposals'] = true
+Setting['feature.featured_proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
@@ -122,6 +123,9 @@ Setting['mailer_from_address'] = 'noreply@consul.dev'
 Setting['verification_offices_url'] = 'http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD'
 Setting['min_age_to_participate'] = 16
 Setting['min_age_to_verify'] = 16
+
+# Featured proposals
+Setting['featured_proposals_number'] = 3
 
 # Proposal improvement url path ('/help/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
