@@ -14,8 +14,8 @@ class Admin::SiteCustomization::DocumentsController < Admin::SiteCustomization::
       notice = t("admin.documents.create.success_notice")
       redirect_to admin_site_customization_documents_path, notice: notice
     else
-      notice = t("admin.documents.create.unable_notice")
-      redirect_to new_admin_site_customization_document_path, notice: notice
+      flash.now[:error] = t("admin.documents.create.unable_notice")
+      render :new
     end
   end
 
