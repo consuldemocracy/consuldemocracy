@@ -382,6 +382,7 @@ nl:
         index:
           create: Nieuw plan
           delete: Verwijder
+          title: Plannen
           filters:
             open: Open
             next: Volgende
