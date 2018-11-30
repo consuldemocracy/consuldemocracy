@@ -50,7 +50,8 @@ module AdminHelper
   end
 
   def menu_customization?
-    ["pages", "banners", "information_texts"].include?(controller_name) || menu_homepage?
+    ["pages", "banners", "information_texts", "documents"].include?(controller_name) ||
+    menu_homepage?
   end
 
   def menu_homepage?
