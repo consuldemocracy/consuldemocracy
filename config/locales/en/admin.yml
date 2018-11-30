@@ -338,11 +338,15 @@ en:
     documents:
       new:
         title: "Upload a document"
-        file_field_text: "Choose document"
+        label_attachment: "Choose document"
         submit_button: "Upload"
       index:
         new_link: "Add new document"
         no_documents: "There are no documents."
+        title: "Documents"
+        format: "Format"
+        size: "Size"
+        url: "URL"
       create:
         success_notice: "Document uploaded succesfully"
         unable_notice: "Invalid document"
@@ -1170,6 +1174,7 @@ en:
       author: Author
       content: Content
       created_at: Created at
+      delete: Delete
     spending_proposals:
       index:
         geozone_filter_all: All zones

@@ -79,7 +79,7 @@ feature 'Documents' do
     visit admin_site_customization_documents_path
 
     within("#document_#{document.id}") do
-      accept_confirm { click_link "Destroy" }
+      accept_confirm { click_link "Delete" }
     end
 
     expect(page).to have_content "Document deleted succesfully"

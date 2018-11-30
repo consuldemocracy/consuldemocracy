@@ -338,13 +338,18 @@ es:
     documents:
       new:
         title: "Subir un documento"
+        label_attachment: "Selecciona un documento"
         submit_button: "Subir documento"
       index:
+        title: "Documentos"
         new_link: "Subir un documento"
         no_documents: "No hay documentos."
+        format: "Formato"
+        size: "Tamaño"
+        url: "URL"
       create:
         success_notice: "Documento creado correctamente"
-        unable_notice: "Document inválido"
+        unable_notice: "Documento inválido"
       destroy:
         success_notice: "Documento borrado correctamente"
     hidden_users:
@@ -1168,6 +1173,7 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
+      delete: Eliminar
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
