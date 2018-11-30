@@ -50,6 +50,8 @@
         <%= render "shared/banner" %>
       <% end %>
 
+      <!-- Hide fetured proposals for demo -->
+      <% if false %>
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
@@ -61,6 +63,7 @@
             <%= render "featured_proposal", proposal: featured_proposal %>
           <% end %>
         </div>
+      <% end %>
       <% end %>
 
       <div class="row">
@@ -114,7 +117,10 @@
         <% if params[:retired].blank? %>
           <%= render 'categories' %>
           <%= render "shared/tag_cloud", taggable: 'proposal' %>
-          <%= render 'geozones' %>
+          <!-- Hide map for demo -->
+          <% if false %>
+            <%= render 'geozones' %>
+          <% end %>
           <%= render 'popular' %>
         <% end %>
         <%= render 'retired' %>
