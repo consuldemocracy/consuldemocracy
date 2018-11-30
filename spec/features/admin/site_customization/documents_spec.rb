@@ -83,7 +83,7 @@ feature 'Documents' do
     end
 
     expect(page).to have_content "Document deleted succesfully"
-    expect(page).to_not have_content document.title
+    expect(page).not_to have_content document.title
   end
 
 end

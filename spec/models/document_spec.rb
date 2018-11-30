@@ -19,7 +19,7 @@ describe Document do
         expect(Document.admin).to include admin_document1
         expect(Document.admin).to include admin_document2
         expect(Document.admin).to include admin_document3
-        expect(Document.admin).to_not include user_document
+        expect(Document.admin).not_to include user_document
       end
 
     end
