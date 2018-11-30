@@ -13,7 +13,7 @@ nl:
         budgets: "Burgerbegrotingen"
         polls: "Peilingen"
         other: "Andere relevante informatie"
-        processes: "Processen"
+        processes: "Plannen"
       debates:
         title: "Discussies"
         description: "Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden."
@@ -41,9 +41,9 @@ nl:
         feature_1: "Om te participeren bij de peilingen moet je %{link} en je account verifiëren."
         feature_1_link: "registreren in %{org_name}"
       processes:
-        title: "Processen"
-        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid in eerdere discussies."
-        link: "processen"
+        title: "Plannen"
+        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies."
+        link: "plannen"
       faq:
         title: "Technische problemen?"
         description: "Vind de antwoorden op je vragen in de Veelgestelde vragen."
@@ -83,7 +83,7 @@ nl:
       title: Toegankelijkheid
       description: |-
         Toegankelijkheid van het web verwijst naar de mogelijkheid van toegang tot het web en de inhoud ervan door alle mensen, ongeacht de (fysieke, intellectuele of technische) handicaps of zaken die zich door de context in het gebruik voordoen (technologisch of omgeving).
-        
+
         Wanneer websites zijn ontworpen met toegankelijkheid in het achterhoofd, kunnen alle gebruikers toegang tot inhoud in gelijke omstandigheden krijgen, bijvoorbeeld:
       examples:
         - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
