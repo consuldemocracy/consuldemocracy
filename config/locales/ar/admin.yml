@@ -223,11 +223,15 @@ ar:
     proposal_notifications:
       index:
         title: الإشعارات المخفية
+        no_hidden_proposals: لايوجد إشعارات مخفية.
     shared:
       description: الوصف
     stats:
       show:
+        proposal_notifications: إشعارات المقترح
         polls: الاستبيانات
+      proposal_notifications:
+        title: إشعارات المقترح
       polls:
         all: الاستبيانات
         table:
