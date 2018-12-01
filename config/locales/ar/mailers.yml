@@ -27,6 +27,11 @@ ar:
       unsubscribe_account: حسابي
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
+      text: "شكراً لك لتقديم طلب للإنضمام إلى %{org} ، خلال ثواني ستكون قادر على المشاركة ، الرجاء ملاً النموذج التالي:"
+      thanks: "شكرا جزيلا."
+      title: "مرحباً في %{org}"
+      button: إكمال التسجيل
+      subject: "دعوة إلى %{org_name}"
     budget_investment_created:
       follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
     budget_investment_unfeasible:
