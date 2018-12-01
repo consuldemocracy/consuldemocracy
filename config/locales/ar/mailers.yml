@@ -18,6 +18,7 @@ ar:
       new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
       title: اجابة جديدة على تعليقك
     unfeasible_spending_proposal:
+      hi: "عزيزي المستخدم،"
       new_href: "مشروع استثماري جديد"
     proposal_notification_digest:
       share: مشاركة مقترح
