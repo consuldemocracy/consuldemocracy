@@ -67,6 +67,11 @@ ar:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
   proposals:
+    retire_options:
+      unfeasible: غير مجدي
+    index:
+      retired_links:
+        unfeasible: غير مجدي
     show:
       notifications_tab: إشعارات
       send_notification: إرسال إشعار
@@ -152,6 +157,10 @@ ar:
   spending_proposals:
     form:
       description: الوصف
+    index:
+      unfeasible: الاستثمارات الغير مجدية
+      sidebar:
+        unfeasible: غير مجدي
   stats:
     index:
       votes: مجموع الأصوات
@@ -162,6 +171,10 @@ ar:
       send_notification: "إرسال إشعار"
   votes:
     disagree: أنا لا أوافق
+    spending_proposals:
+      unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
+    budget_investments:
+      unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
   welcome:
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
