@@ -19,6 +19,10 @@ ar:
       title: اجابة جديدة على تعليقك
     unfeasible_spending_proposal:
       new_href: "مشروع استثماري جديد"
+    proposal_notification_digest:
+      share: مشاركة مقترح
+      comment: تعليق على مقترح
+      unsubscribe_account: حسابي
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
     budget_investment_created:
