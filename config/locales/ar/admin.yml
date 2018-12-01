@@ -181,8 +181,17 @@ ar:
       edit:
         section_title: تحرير الإشعار
         submit_button: تحديث الإشعار
+      show:
+        section_title: معاينة الإشعار
+        send: إرسال إشعار
+        preview_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
+        sent_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
+        send_alert: يرجى تاكيد إرسال الإشعار لـ%{n} مستخدم؟
     system_emails:
+      preview_pending:
+        send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
+        description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
       index:
@@ -211,6 +220,9 @@ ar:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
       search:
         no_results: لم يتم العثور على منظمات.
+    proposal_notifications:
+      index:
+        title: الإشعارات المخفية
     shared:
       description: الوصف
     stats:
