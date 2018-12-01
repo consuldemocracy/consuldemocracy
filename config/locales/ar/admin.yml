@@ -90,6 +90,9 @@ ar:
         title: مشاريع استثمارية
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
+        feasibility:
+          feasible: "مجدي (%{price})"
+          unfeasible: "غير مجدي"
       show:
         classification: تصنيف
       edit:
@@ -197,6 +200,10 @@ ar:
       index:
         download_segment: تحميل عناوين البريد الإلكتروني
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+    valuators:
+      summary:
+        finished_and_feasible_count: منتهي و مجدي
+        finished_and_unfeasible_count: منتهي و غير مجدي
     polls:
       index:
         title: "قائمة الاستبيانات المفعلة"
@@ -226,6 +233,14 @@ ar:
         no_hidden_proposals: لايوجد إشعارات مخفية.
     shared:
       description: الوصف
+    spending_proposals:
+      index:
+        feasibility:
+          feasible: "مجدي (%{price})"
+          not_feasible: "غير مجدي"
+      summary:
+        finished_and_feasible_count: منتهي و مجدي
+        finished_and_unfeasible_count: منتهي و غير مجدي
     stats:
       show:
         proposal_notifications: إشعارات المقترح
