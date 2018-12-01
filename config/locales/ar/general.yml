@@ -1,4 +1,9 @@
 ar:
+  account:
+    show:
+      notifications: إشعارات
+      email_digest_label: استلام ملخص عن إشعارات مقترح
+      user_permission_proposal: انشاء مقترحات جديدة
   comments:
     orders:
       newest: الأحدث أولاً
@@ -32,8 +37,11 @@ ar:
         button: بحث
         title: بحث
       select_order: ترتيب حسب
+    new:
+      info_link: انشاء مقترح جديدة
   form:
     policy: سياسة الخصوصية
+    proposal_notification: "إشعار"
   layouts:
     application:
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
@@ -41,6 +49,13 @@ ar:
       privacy: سياسة الخصوصية
     header:
       my_account_link: حسابي
+      notification_item:
+        notifications: إشعارات
+        no_notifications: "لا يوجد إشعارات جديدة"
+  notifications:
+    index:
+      empty_notifications: لا يوجد إشعارات جديدة.
+      title: إشعارات
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
