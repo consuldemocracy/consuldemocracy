@@ -1,5 +1,20 @@
 ar:
   valuation:
+    budget_investments:
+      edit:
+        undefined_feasible: تعليق \ إيقاف
     spending_proposals:
+      index:
+        geozone_filter_all: كل المناطق
+        filters:
+          valuation_open: فتح
+          valuating: تحت التقييم
+          valuation_finished: انتهى التقييم
+        title: مشاريع استثمارية للميزانية المشتركة
+        edit: تحرير
       show:
+        back: عودة
+        heading: مشروع استثماري
         responsibles: المسؤوليات
+      edit:
+        undefined_feasible: تعليق \ إيقاف
