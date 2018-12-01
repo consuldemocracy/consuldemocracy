@@ -168,6 +168,19 @@ ar:
         body: محتوى البريد الإلكتروني
     admin_notifications:
       create_success: تم إنشاء الإشعار بنجاح
+      update_success: تم تعديل الإشعار بنجاح
+      send_success: تم إرسال الإشعار بنجاح
+      delete_success: تم حذف الإشعار بنجاح
+      index:
+        section_title: إشعارات
+        new_notification: إشعار جديد
+        empty_notifications: لايوجد عناصر للعرض
+      new:
+        section_title: إشعار جديد
+        submit_button: إنشاء إشعار
+      edit:
+        section_title: تحرير الإشعار
+        submit_button: تحديث الإشعار
     system_emails:
       proposal_notification_digest:
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
