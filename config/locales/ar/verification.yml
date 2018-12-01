@@ -35,3 +35,11 @@ ar:
         submit_button: ارسال
     user_permission_debates: المشاركة بالحوارات
     user_permission_proposal: انشاء مقترحات جديدة
+    verified_user:
+      form:
+        submit_button: إرسال الرمز
+      show:
+        email_title: البريد الالكتروني
+        explanation: الرجاء اختيار طريقة إرسال رمز التأكيد.
+        phone_title: أرقام الهاتف
+        title: المعلومات المتاحة
