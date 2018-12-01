@@ -59,6 +59,8 @@ ar:
       read: مقروء
       title: إشعارات
       unread: غير مقروء
+    notification:
+      mark_as_read: الكل مقروءة
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
