@@ -12,6 +12,8 @@ ar:
       show:
         alert:
           failure: رمز التحقق غير صحيح
+        flash:
+          success: أنت مستخدم موثوق
     letter:
       alert:
         unconfirmed_code: لم تقم بادخال رمز التحقق
