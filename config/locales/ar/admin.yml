@@ -152,6 +152,8 @@ ar:
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
     menu:
       hidden_comments: التعليقات المخفية
+      hidden_proposal_notifications: إخفاء إشعارات اقتراح
+      admin_notifications: إشعارات
       polls: الاستبيانات
       settings: الإعدادات العامة
       site_customization:
@@ -164,6 +166,8 @@ ar:
     newsletters:
       show:
         body: محتوى البريد الإلكتروني
+    admin_notifications:
+      create_success: تم إنشاء الإشعار بنجاح
     system_emails:
       proposal_notification_digest:
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
