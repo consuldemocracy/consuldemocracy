@@ -33,3 +33,7 @@ ar:
       hi: "عزيزي المستخدم،"
       new_href: "مشروع استثماري جديد"
       subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
+    budget_investment_selected:
+      hi: "عزيزي المستخدم،"
+    budget_investment_unselected:
+      hi: "عزيزي المستخدم،"
