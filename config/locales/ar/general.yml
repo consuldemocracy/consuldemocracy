@@ -61,6 +61,8 @@ ar:
       unread: غير مقروء
     notification:
       mark_as_read: الكل مقروءة
+      mark_as_unread: الكل غير مقروءة
+      notifiable_hidden: هذ المصدر عم يعد متاح.
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
@@ -121,6 +123,13 @@ ar:
       stats:
         title: "بيانات المشاركة"
         total_participation: "مجموع المشاركات"
+  proposal_notifications:
+    new:
+      title: "إرسال رسالة"
+      title_label: "عنوان"
+      body_label: "رسالة"
+      submit_button: "إرسال رسالة"
+      proposal_page: "صفحة المقترح"
   shared:
     advanced_search:
       date_3: 'الشهر الماضي'
