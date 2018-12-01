@@ -30,6 +30,7 @@ ar:
         password_label: كلمة مرور جديدة
     sessions:
       new:
+        login_label: البريد الإلكتروني أو اسم المستخدم
         password_label: كلمة المرور
         remember_me: تذكرني
         submit: دخول
