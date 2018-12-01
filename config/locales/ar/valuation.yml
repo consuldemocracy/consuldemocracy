@@ -1,6 +1,8 @@
 ar:
   valuation:
     budget_investments:
+      show:
+        feasible: مجدي
       edit:
         undefined_feasible: تعليق \ إيقاف
     spending_proposals:
