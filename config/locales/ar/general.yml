@@ -130,6 +130,8 @@ ar:
       body_label: "رسالة"
       submit_button: "إرسال رسالة"
       proposal_page: "صفحة المقترح"
+    show:
+      back: "عودة"
   shared:
     advanced_search:
       date_3: 'الشهر الماضي'
