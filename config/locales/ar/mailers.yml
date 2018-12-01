@@ -20,6 +20,7 @@ ar:
     unfeasible_spending_proposal:
       hi: "عزيزي المستخدم،"
       new_href: "مشروع استثماري جديد"
+      subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
     proposal_notification_digest:
       share: مشاركة مقترح
       comment: تعليق على مقترح
@@ -31,3 +32,4 @@ ar:
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
       new_href: "مشروع استثماري جديد"
+      subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
