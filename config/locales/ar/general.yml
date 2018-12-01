@@ -59,6 +59,10 @@ ar:
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
+  proposals:
+    show:
+      notifications_tab: إشعارات
+      send_notification: إرسال إشعار
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
