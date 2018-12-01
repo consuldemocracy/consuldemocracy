@@ -17,6 +17,15 @@ ar:
         heading: مشروع استثماري
         info: معلومات المشارك
         association_name: جمعية
+        by: إُرسال بواسطة
+        sent: تم الإرسال بـ
+        geozone: نطاق
+        dossier: إضبارة
+        edit_dossier: تحرير إضبارة
+        price: السعر
+        price_first_year: التكلفة خلال السنة الأولى
+        currency: "€"
+        feasibility: الجدوى
         responsibles: المسؤوليات
       edit:
         undefined_feasible: تعليق \ إيقاف
