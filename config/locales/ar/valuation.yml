@@ -3,8 +3,13 @@ ar:
     budget_investments:
       show:
         feasible: مجدي
+        unfeasible: غير مجدي
       edit:
+        feasible: مجدي
+        unfeasible: غير مجدي
         undefined_feasible: تعليق \ إيقاف
+        feasible_explanation_html: تفسير مجدي \ ممكن
+        not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
     spending_proposals:
       index:
         geozone_filter_all: كل المناطق
@@ -28,6 +33,11 @@ ar:
         price_first_year: التكلفة خلال السنة الأولى
         currency: "€"
         feasibility: الجدوى
+        feasible: مجدي
+        not_feasible: غير مجدي
         responsibles: المسؤوليات
       edit:
+        feasible: مجدي
+        not_feasible: غير مجدي
         undefined_feasible: تعليق \ إيقاف
+        feasible_explanation_html: تفسير مجدي \ ممكن
