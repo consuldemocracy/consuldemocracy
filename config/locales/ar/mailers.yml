@@ -25,3 +25,4 @@ ar:
       follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
+      new_href: "مشروع استثماري جديد"
