@@ -55,7 +55,10 @@ ar:
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
+      mark_all_as_read: الكل مقروءة
+      read: مقروء
       title: إشعارات
+      unread: غير مقروء
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
@@ -63,6 +66,7 @@ ar:
     show:
       notifications_tab: إشعارات
       send_notification: إرسال إشعار
+      no_notifications: "هذا المقترح لا يحوي إشعارات."
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
@@ -141,6 +145,8 @@ ar:
   users:
     show:
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
+    proposals:
+      send_notification: "إرسال إشعار"
   votes:
     disagree: أنا لا أوافق
   welcome:
