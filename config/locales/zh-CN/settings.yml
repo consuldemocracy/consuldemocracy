@@ -120,3 +120,4 @@ zh-CN:
       public_stats: "公众统计数据"
       public_stats_description: "在管理面板中显示公众统计数据"
       help_page: "帮助页面"
+      help_page_description: "显示帮助菜单，其中包含一个页面，它含有每个已启用功能的资讯"
