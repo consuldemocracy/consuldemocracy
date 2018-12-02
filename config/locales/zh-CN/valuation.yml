@@ -1,1 +1,40 @@
 zh-CN:
+  valuation:
+    header:
+      title: 评估
+    menu:
+      title: 评估
+      budgets: 参与性预算
+      spending_proposals: 支持提议
+    budgets:
+      index:
+        title: 参与性预算
+        filters:
+          current: 开
+          finished: 已完成
+        table_name: 名称
+        table_phase: 阶段
+        table_assigned_investments_valuation_open: 投资项目被分配为评估开放
+        table_actions: 行动
+        evaluate: 评估
+    budget_investments:
+      index:
+        headings_filter_all: 所有标题
+        filters:
+          valuation_open: 开
+          valuating: 评估中
+          valuation_finished: 评估已完成
+        assigned_to: "已分配给%{valuator}"
+        title: 投资项目
+        edit: 编辑档案
+        valuators_assigned:
+          other: "已分配%{count}位评估员"
+        no_valuators_assigned: 未分配评估员
+        table_id: ID
+        table_title: 标题
+        table_heading_name: 标题名称
+        table_actions: 行动
+        no_investments: "没有投资项目。"
+      show:
+        back: 返回
+        title: 投资项目
