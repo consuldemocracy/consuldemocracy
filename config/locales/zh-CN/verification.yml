@@ -96,3 +96,16 @@ zh-CN:
     step_2: 确认代码
     step_3: 最终核实
     user_permission_debates: 参与辩论
+    user_permission_info: 在核实您的信息，您将可以...
+    user_permission_proposal: 创建新提议
+    user_permission_support_proposal: 支持提议*
+    user_permission_votes: 参与最终投票*
+    verified_user:
+      form:
+        submit_button: 发送代码
+      show:
+        email_title: 电子邮件
+        explanation: 我们目前在登记册中有以下信息；请选择要发送确认代码的方法
+        phone_title: 电话号码
+        title: 可用资讯
+        use_another_phone: 使用其他电话
