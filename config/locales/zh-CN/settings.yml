@@ -90,3 +90,15 @@ zh-CN:
       polls: "投票"
       polls_description: "公民投票是一种参与机制，有投票权的公民可以通过这种机制来做出直接决定"
       signature_sheets: "签名表"
+      signature_sheets_description: "它允许从管理面板里添加现场收集的签名到参与性预算的提议和投资项目中"
+      legislation: "立法"
+      legislation_description: "在参与进程中，公民有机会参与起草和修改影响城市的法规，并就计划实施的某些行动发表意见"
+      spending_proposals: "支出提议"
+      spending_proposals_description: "⚠️注意：此功能已被参与性预算取代，并将在新版本中消失"
+      spending_proposal_features:
+        voting_allowed: 投资项目投票－ 预选阶段
+        voting_allowed_description: "⚠️注意：此功能已被参与性预算取代，并将在新版本中消失"
+      user:
+        recommendations: "推荐"
+        recommendations_description: "根据以下项目的标签在主页面上显示用户推荐"
+        skip_verification: "跳过用户验证"
