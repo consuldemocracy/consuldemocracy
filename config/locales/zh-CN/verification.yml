@@ -1,1 +1,23 @@
 zh-CN:
+  verification:
+    alert:
+      lock: 您已达到最大的尝试次数。请稍后再试。
+    back: 返回我的账户
+    email:
+      create:
+        alert:
+          failure: 向您的账户发送电子邮件时出现问题
+        flash:
+          success: '我们已经发送确认电子邮件到您的账户：%{email}'
+      show:
+        alert:
+          failure: 验证码不正确
+        flash:
+          success: 您是已验证的用户
+    letter:
+      alert:
+        unconfirmed_code: 您还没有输入验证码
+      create:
+        flash:
+          offices: 公民支援办公室
+          success_html: 感谢您申请<b>最高安全代码（仅用于最终投票）</b>。几天后，我们会把它发送到我们数据存档中的地址。请记住，如果您愿意，可以到任何%{offices} 领取您的代码。
