@@ -102,3 +102,5 @@ zh-CN:
         recommendations: "推荐"
         recommendations_description: "根据以下项目的标签在主页面上显示用户推荐"
         skip_verification: "跳过用户验证"
+        skip_verification_description: "这将禁用用户验证，所有注册用户都将可以参与所有进程"
+        recommendations_on_debates: "关于辩论的推荐"
