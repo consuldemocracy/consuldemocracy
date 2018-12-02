@@ -104,3 +104,5 @@ zh-CN:
         skip_verification: "跳过用户验证"
         skip_verification_description: "这将禁用用户验证，所有注册用户都将可以参与所有进程"
         recommendations_on_debates: "关于辩论的推荐"
+        recommendations_on_debates_description: "根据所跟随的项目标签，在辩论页面上向用户显示用户推荐"
+        recommendations_on_proposals: "关于提议的推荐"
