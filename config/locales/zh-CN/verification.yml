@@ -21,3 +21,42 @@ zh-CN:
         flash:
           offices: 公民支援办公室
           success_html: 感谢您申请<b>最高安全代码（仅用于最终投票）</b>。几天后，我们会把它发送到我们数据存档中的地址。请记住，如果您愿意，可以到任何%{offices} 领取您的代码。
+      edit:
+        see_all: 查看提议
+        title: 要求的信
+      errors:
+        incorrect_code: 验证码不正确
+      new:
+        explanation: '要参与最终投票，您可以：'
+        go_to_index: 查看提议
+        office: 在任何%{office} 进行验证
+        offices: 公民支援办公室
+        send_letter: 请给我发送一封带有代码的信
+        title: 恭喜！
+        user_permission_info: 您可以用您的账户来...
+      update:
+        flash:
+          success: 代码正确。您的账户现已核实
+    redirect_notices:
+      already_verified: 您的账户已被核实
+      email_already_sent: 我们已经发送一封带有确认链接的电子邮件。如果您找不到此电子邮件，可以在此要求重新发送
+    residence:
+      alert:
+        unconfirmed_residency: 您还没有确认您的居住地
+      create:
+        flash:
+          success: 居住地已核实
+      new:
+        accept_terms_text: 我接受人口普查的%{terms_url}
+        accept_terms_text_title: 我接受访问人口普查的条款和条件
+        date_of_birth: 出生日期
+        document_number: 文档编号
+        document_number_help_title: 帮助
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居住证</strong>: X1234567P'
+        document_type:
+          passport: 护照
+          residence_card: 居住证
+          spanish_id: DNI
+        document_type_label: 文档类型
+        error_not_allowed_age: 您未到参与所需的年龄
+        error_not_allowed_postal_code: 为了被核实，您必须注册。
