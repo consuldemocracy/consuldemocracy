@@ -38,3 +38,48 @@ zh-CN:
       show:
         back: 返回
         title: 投资项目
+        info: 作者资讯
+        by: 发送人
+        sent: 发送于
+        heading: 标题
+        dossier: 档案
+        edit_dossier: 编辑档案
+        price: 价格
+        price_first_year: 第一年的成本
+        currency: "€"
+        feasibility: 可行性
+        feasible: 可行
+        unfeasible: 不可行
+        undefined: 未定义
+        valuation_finished: 评估已完成
+        duration: 时间范围
+        responsibles: 责任
+        assigned_admin: 已分配管理员
+        assigned_valuators: 已分配评估员
+      edit:
+        dossier: 档案
+        price_html: "价格 (%{currency})"
+        price_first_year_html: "第一年的成本 (%{currency}) <small>(可选, 数据不公开)</small>"
+        price_explanation_html: 价格说明
+        feasibility: 可行性
+        feasible: 可行
+        unfeasible: 不可行
+        undefined_feasible: 有待
+        feasible_explanation_html: 可行性说明
+        valuation_finished: 评估已完成
+        valuation_finished_alert: "您确定要把此报告标记为已完成吗？如果您这样做里，将无法再修改。"
+        not_feasible_alert: "立即发送电子邮件给项目的作者，并附有不可行的报告。"
+        duration_html: 时间范围
+        save: 保存更改
+      notice:
+        valuate: "档案已更新"
+      valuation_comments: 评估评论
+    spending_proposals:
+      edit:
+        feasible_explanation_html: 可行性说明
+        valuation_finished: 评估已完成
+        time_scope_html: 时间范围
+        internal_comments_html: 内部评论
+        save: 保存更改
+      notice:
+        valuate: "档案已更新"
