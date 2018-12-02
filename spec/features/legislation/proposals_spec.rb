@@ -20,7 +20,7 @@ feature 'Legislation Proposals' do
     end
   end
 
-  scenario 'Each user as a different and consistent random proposals order', :js do
+  scenario 'Each user has a different and consistent random proposals order', :js do
     create_list(:legislation_proposal, 10, process: process)
 
     in_browser(:one) do
