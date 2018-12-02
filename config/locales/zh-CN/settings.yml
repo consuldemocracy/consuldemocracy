@@ -24,3 +24,4 @@ zh-CN:
     votes_for_proposal_success_description: "当一个提议达到这个数目的支持时，它将不能再获得更多支持并被视为已成功"
     months_to_archive_proposals: "提议存档的月限"
     months_to_archive_proposals_description: "在这个数目的月限后，提议将被存档并将不能再获得更多支持"
+    email_domain_for_officials: "公众职员的电子邮件域名"
