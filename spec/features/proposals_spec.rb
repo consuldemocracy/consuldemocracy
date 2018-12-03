@@ -19,7 +19,9 @@ feature 'Proposals' do
     it_behaves_like "translatable",
                     "proposal",
                     "edit_proposal_path",
-                    %w[title description question summary retired_reason retired_explanation]
+                    %w[title question summary],
+                    { "description" => :ckeditor }
+
   end
 
   context 'Index' do
