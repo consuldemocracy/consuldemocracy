@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Debate do
   let(:debate) { build(:debate) }
 
+  it_behaves_like "globalizable", :debate
+
   describe "Concerns" do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
@@ -36,6 +38,7 @@ describe Debate do
   end
 
   describe "#description" do
+
     it "is not valid without a description" do
       debate.description = nil
       expect(debate).not_to be_valid
@@ -45,11 +48,6 @@ describe Debate do
       debate.description = "<script>alert('danger');</script>"
       debate.valid?
       expect(debate.description).to eq("alert('danger');")
-    end
-
-    it "is html_safe" do
-      debate.description = "<script>alert('danger');</script>"
-      expect(debate.description).to be_html_safe
     end
 
     it "is not valid when very short" do
