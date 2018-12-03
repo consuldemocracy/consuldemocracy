@@ -180,8 +180,9 @@ GEM
       activerecord (>= 4.2.0, < 4.3)
     globalize-accessors (0.2.1)
       globalize (~> 5.0, >= 5.0.0)
-    graphiql-rails (1.4.8)
-      rails
+    graphiql-rails (1.5.0)
+      railties
+      sprockets-rails
     graphql (1.7.8)
     groupdate (3.2.0)
       activesupport (>= 3)
@@ -524,7 +525,7 @@ DEPENDENCIES
   foundation_rails_helper (~> 2.0.0)
   globalize (~> 5.0.0)
   globalize-accessors (~> 0.2.1)
-  graphiql-rails (~> 1.4.1)
+  graphiql-rails (~> 1.5.0)
   graphql (~> 1.7.8)
   groupdate (~> 3.2.0)
   i18n-tasks (~> 0.9.25)
