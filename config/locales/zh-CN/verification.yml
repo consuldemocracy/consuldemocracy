@@ -42,7 +42,7 @@ zh-CN:
       email_already_sent: 我们已经发送一封带有确认链接的电子邮件。如果您找不到此电子邮件，可以在此要求重新发送
     residence:
       alert:
-        unconfirmed_residency: 您还没有确认您的居住地
+        unconfirmed_residency: 您尚未确认您的居住地
       create:
         flash:
           success: 居住地已核实
@@ -52,10 +52,10 @@ zh-CN:
         date_of_birth: 出生日期
         document_number: 文档编号
         document_number_help_title: 帮助
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居住证</strong>: X1234567P'
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P'
         document_type:
           passport: 护照
-          residence_card: 居住证
+          residence_card: 居留证
           spanish_id: DNI
         document_type_label: 文档类型
         error_not_allowed_age: 您未到参与所需的年龄
@@ -80,7 +80,7 @@ zh-CN:
         title: 安全代码确认
       new:
         phone: 输入您的手机号码来接收代码
-        phone_format_html: "<strong><em>(例如: 612345678 or +34612345678)</em></strong>"
+        phone_format_html: "<strong><em>(例如: 612345678 或者 +34612345678)</em></strong>"
         phone_note: 我们只使用您的手机向您发送代码，绝不与您联系。
         phone_placeholder: "例如：612345678 或者 +34612345678"
         submit_button: 发送
