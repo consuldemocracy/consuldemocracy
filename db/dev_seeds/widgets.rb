@@ -22,7 +22,7 @@ section "Creating header and cards for the homepage" do
     label_es: 'Bienvenido a',
 
     link_url: 'http://consulproject.org/',
-    header: TRUE,
+    header: true,
     image_attributes: create_image_attachment('header')
   )
 
@@ -40,7 +40,7 @@ section "Creating header and cards for the homepage" do
     label_es: 'Debates',
 
     link_url: 'https://youtu.be/zU_0UN4VajY',
-    header: FALSE,
+    header: false,
     image_attributes: create_image_attachment('debate')
   )
 
@@ -58,7 +58,7 @@ section "Creating header and cards for the homepage" do
     label_es: 'Propuestas ciudadanas',
 
     link_url: 'https://youtu.be/ZHqBpT4uCoM',
-    header: FALSE,
+    header: false,
     image_attributes: create_image_attachment('proposal')
   )
 
@@ -76,7 +76,7 @@ section "Creating header and cards for the homepage" do
     label_es: 'Presupuestos participativos',
 
     link_url: 'https://youtu.be/igQ8KGZdk9c',
-    header: FALSE,
+    header: false,
     image_attributes: create_image_attachment('budget')
   )
 end
