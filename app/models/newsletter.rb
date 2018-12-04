@@ -28,7 +28,7 @@ class Newsletter < ActiveRecord::Base
     run_at = first_batch_run_at
     list_of_recipient_emails_in_batches.each do |recipient_emails|
       recipient_emails.each do |recipient_email|
-        if valid_email?(recipient_email)
+        if valid_recipient?(recipient_email)
           Mailer.delay(run_at: run_at).newsletter(self, recipient_email)
           log_delivery(recipient_email)
         end
@@ -59,12 +59,26 @@ class Newsletter < ActiveRecord::Base
     errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
   end
 
+  def valid_recipient?(email)
+    valid_email?(email) && pending_delivery?(email)
+  end
+
   def valid_email?(email)
     email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
   end
 
-  def log_delivery(recipient_email)
-    user = User.where(email: recipient_email).first
+  def pending_delivery?(email)
+    user = find_user(email)
+    Activity.where(user: user, action: :email, actionable: self).blank?
+  end
+
+  def find_user(email)
+    User.where(email: email).first
+  end
+
+  def log_delivery(email)
+    user = find_user(email)
     Activity.log(user, :email, self)
   end
+
 end
