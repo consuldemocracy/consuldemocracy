@@ -8,13 +8,15 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   def index
     @current_filter ||= 'open'
-    @processes = ::Legislation::Process.send(@current_filter).published.not_in_draft.page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter).published
+                 .not_in_draft.page(params[:page])
   end
 
   def show
     draft_version = @process.draft_versions.published.last
+    allegations_phase = @process.allegations_phase
 
-    if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version.present?
+    if  allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to debate_legislation_process_path(@process)

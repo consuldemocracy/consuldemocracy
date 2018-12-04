@@ -32,55 +32,67 @@ RSpec.describe Legislation::Process::Phase, type: :model do
   describe "#started?" do
     it "checks debate phase" do
       # future
-      process.update_attributes(debate_start_date: Date.current + 2.days, debate_end_date: Date.current + 3.days)
+      process.update_attributes(debate_start_date: Date.current + 2.days,
+                                debate_end_date: Date.current + 3.days)
       expect(process.debate_phase.started?).to be false
 
       # started
-      process.update_attributes(debate_start_date: Date.current - 2.days, debate_end_date: Date.current + 1.day)
+      process.update_attributes(debate_start_date: Date.current - 2.days,
+                                debate_end_date: Date.current + 1.day)
       expect(process.debate_phase.started?).to be true
 
       # starts today
-      process.update_attributes(debate_start_date: Date.current, debate_end_date: Date.current + 1.day)
+      process.update_attributes(debate_start_date: Date.current,
+                                debate_end_date: Date.current + 1.day)
       expect(process.debate_phase.started?).to be true
 
       # past
-      process.update_attributes(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.day)
+      process.update_attributes(debate_start_date: Date.current - 2.days,
+                                debate_end_date: Date.current - 1.day)
       expect(process.debate_phase.started?).to be true
     end
 
     it "checks draft phase" do
       # future
-      process.update_attributes(draft_start_date: Date.current + 2.days, draft_end_date: Date.current + 3.days, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current + 2.days,
+                                draft_end_date: Date.current + 3.days, draft_phase_enabled: true)
       expect(process.draft_phase.started?).to be false
 
       # started
-      process.update_attributes(draft_start_date: Date.current - 2.days, draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current - 2.days,
+                                draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
       expect(process.draft_phase.started?).to be true
 
       # starts today
-      process.update_attributes(draft_start_date: Date.current, draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current,
+                                draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
       expect(process.draft_phase.started?).to be true
 
       # past
-      process.update_attributes(draft_start_date: Date.current - 2.days, draft_end_date: Date.current - 1.day, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current - 2.days,
+                                draft_end_date: Date.current - 1.day, draft_phase_enabled: true)
       expect(process.draft_phase.started?).to be true
     end
 
     it "checks allegations phase" do
       # future
-      process.update_attributes(allegations_start_date: Date.current + 2.days, allegations_end_date: Date.current + 3.days)
+      process.update_attributes(allegations_start_date: Date.current + 2.days,
+                                allegations_end_date: Date.current + 3.days)
       expect(process.allegations_phase.started?).to be false
 
       # started
-      process.update_attributes(allegations_start_date: Date.current - 2.days, allegations_end_date: Date.current + 1.day)
+      process.update_attributes(allegations_start_date: Date.current - 2.days,
+                                allegations_end_date: Date.current + 1.day)
       expect(process.allegations_phase.started?).to be true
 
       # starts today
-      process.update_attributes(allegations_start_date: Date.current, allegations_end_date: Date.current + 1.day)
+      process.update_attributes(allegations_start_date: Date.current,
+                                allegations_end_date: Date.current + 1.day)
       expect(process.allegations_phase.started?).to be true
 
       # past
-      process.update_attributes(allegations_start_date: Date.current - 2.days, allegations_end_date: Date.current - 1.day)
+      process.update_attributes(allegations_start_date: Date.current - 2.days,
+                                allegations_end_date: Date.current - 1.day)
       expect(process.allegations_phase.started?).to be true
     end
   end
@@ -88,56 +100,68 @@ RSpec.describe Legislation::Process::Phase, type: :model do
   describe "#open?" do
     it "checks debate phase" do
       # future
-      process.update_attributes(debate_start_date: Date.current + 2.days, debate_end_date: Date.current + 3.days)
+      process.update_attributes(debate_start_date: Date.current + 2.days,
+                                debate_end_date: Date.current + 3.days)
       expect(process.debate_phase.open?).to be false
 
       # started
-      process.update_attributes(debate_start_date: Date.current - 2.days, debate_end_date: Date.current + 1.day)
+      process.update_attributes(debate_start_date: Date.current - 2.days,
+                                debate_end_date: Date.current + 1.day)
       expect(process.debate_phase.open?).to be true
 
       # starts today
-      process.update_attributes(debate_start_date: Date.current, debate_end_date: Date.current + 1.day)
+      process.update_attributes(debate_start_date: Date.current,
+                                debate_end_date: Date.current + 1.day)
       expect(process.debate_phase.open?).to be true
 
       # past
-      process.update_attributes(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.day)
+      process.update_attributes(debate_start_date: Date.current - 2.days,
+                                debate_end_date: Date.current - 1.day)
       expect(process.debate_phase.open?).to be false
     end
 
     it "checks draft phase" do
       # future
-      process.update_attributes(draft_start_date: Date.current + 2.days, draft_end_date: Date.current + 3.days, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current + 2.days,
+                                draft_end_date: Date.current + 3.days, draft_phase_enabled: true)
       expect(process.draft_phase.open?).to be false
 
       # started
-      process.update_attributes(draft_start_date: Date.current - 2.days, draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current - 2.days,
+                                draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
       expect(process.draft_phase.open?).to be true
 
       # starts today
-      process.update_attributes(draft_start_date: Date.current, draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current,
+                                draft_end_date: Date.current + 1.day, draft_phase_enabled: true)
       expect(process.draft_phase.open?).to be true
 
       # past
-      process.update_attributes(draft_start_date: Date.current - 2.days, draft_end_date: Date.current - 1.day, draft_phase_enabled: true)
+      process.update_attributes(draft_start_date: Date.current - 2.days,
+                                draft_end_date: Date.current - 1.day, draft_phase_enabled: true)
       expect(process.draft_phase.open?).to be false
     end
 
     it "checks allegations phase" do
 
       # future
-      process.update_attributes(allegations_start_date: Date.current + 2.days, allegations_end_date: Date.current + 3.days)
+      process.update_attributes(allegations_start_date: Date.current + 2.days,
+                                allegations_end_date: Date.current + 3.days)
       expect(process.allegations_phase.open?).to be false
 
       # started
-      process.update_attributes(allegations_start_date: Date.current - 2.days, allegations_end_date: Date.current + 1.day)
+      process.update_attributes(allegations_start_date: Date.current - 2.days,
+                                allegations_end_date: Date.current + 1.day)
       expect(process.allegations_phase.open?).to be true
 
       # starts today
-      process.update_attributes(allegations_start_date: Date.current, allegations_end_date: Date.current + 1.day)
+      process.update_attributes(allegations_start_date: Date.current,
+                                allegations_end_date: Date.current + 1.day)
       expect(process.allegations_phase.open?).to be true
 
       # past
-      process.update_attributes(allegations_start_date: Date.current - 2.days, allegations_end_date: Date.current - 1.day)
+      process.update_attributes(allegations_start_date: Date.current - 2.days,
+                                allegations_end_date: Date.current - 1.day)
       expect(process.allegations_phase.open?).to be false
     end
   end
