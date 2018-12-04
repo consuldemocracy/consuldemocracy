@@ -45,9 +45,11 @@ describe Proposal do
 
   describe "#description" do
     it "is sanitized" do
-      proposal.description = "<script>alert('danger');</script>"
+      locale = I18n.available_locales.sample.to_s.parameterize
+      proposal.send "description_#{locale}=", "<script>alert('danger');</script>"
+
       proposal.valid?
-      expect(proposal.description).to eq("alert('danger');")
+      expect(proposal.send("description_#{locale}")).to eq("alert('danger');")
     end
 
     it "is not valid when very long" do
