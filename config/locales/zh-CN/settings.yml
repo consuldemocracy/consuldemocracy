@@ -63,7 +63,7 @@ zh-CN:
     meta_title: "网站标题 (SEO)"
     meta_title_description: "网站标题<title>，用于改善SEO"
     meta_description: "网站描述(SEO)"
-    meta_description_description: '网址描述<meta name="description">，用于改善SEO'
+    meta_description_description: '网站描述<meta name="description">，用于改善SEO'
     meta_keywords: "关键词 (SEO)"
     meta_keywords_description: '关键词<meta name="keywords">，用于改善SEO'
     min_age_to_participate: 参与需要的最低年龄
