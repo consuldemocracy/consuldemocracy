@@ -125,3 +125,5 @@ en:
       public_stats_description: "Display public stats in the Administration panel"
       help_page: "Help page"
       help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"
+      translation_interface: "Translation interface"
+      translation_interface_description: "Displays the manual translation interface that allows users to enter their content in all application available languages. This option only affects the FrontEnd application forms and independently will always be active in the administration panel."

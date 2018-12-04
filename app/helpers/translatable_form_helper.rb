@@ -1,4 +1,22 @@
 module TranslatableFormHelper
+
+  def translations_interface_enabled?
+    translations_backend_enabled? || translations_frontend_enabled?
+  end
+
+  def translations_backend_enabled?
+    controller.class.parents.include?(Admin) ||
+    controller.class.parents.include?(Management) ||
+    controller.class.parents.include?(Valuation)
+  end
+
+  def translations_frontend_enabled?
+    Setting['feature.translation_interface'].present? &&
+    !controller.class.parents.include?(Admin) &&
+    !controller.class.parents.include?(Management) &&
+    !controller.class.parents.include?(Valuation)
+  end
+
   def translatable_form_for(record, options = {})
     form_for(record, options.merge(builder: TranslatableFormBuilder)) do |f|
       yield(f)

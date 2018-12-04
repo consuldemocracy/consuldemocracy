@@ -2,7 +2,7 @@ class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
   include Translatable
-  
+
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index

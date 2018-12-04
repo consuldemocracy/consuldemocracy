@@ -125,3 +125,5 @@ es:
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de Ayuda"
       help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada"
+      translation_interface: "Interfaz de traducción"
+      translation_interface_description: "Muestra la interfaz de traducción manual permitiendo a los usuarios introducir sus contenidos en todos los idiomas disponibles de la aplicación so así lo desean. Esta opción sólo afecta al FrontEnd de la aplicación, en el panel de administración está activa siempre."
