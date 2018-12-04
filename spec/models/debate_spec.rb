@@ -45,9 +45,19 @@ describe Debate do
     end
 
     it "is sanitized" do
-      debate.description = "<script>alert('danger');</script>"
+      debate.description_en = "<script>alert('danger');</script>"
+
       debate.valid?
-      expect(debate.description).to eq("alert('danger');")
+
+      expect(debate.description_en).to eq("alert('danger');")
+    end
+
+    it "is html_safe" do
+      debate.description_en = "<script>alert('danger');</script>"
+
+      debate.valid?
+
+      expect(debate.description_en).to be_html_safe
     end
 
     it "is not valid when very short" do
