@@ -67,14 +67,14 @@ zh-CN:
         undefined_feasible: 有待
         feasible_explanation_html: 可行性说明
         valuation_finished: 评估已完成
-        valuation_finished_alert: "您确定要把此报告标记为已完成吗？如果您这样做里，将无法再修改。"
+        valuation_finished_alert: "您确定要把此报告标记为已完成吗？如果您这样做了，将无法再修改。"
         not_feasible_alert: "立即发送电子邮件给项目的作者，并附有不可行的报告。"
         duration_html: 时间范围
         save: 保存更改
       notice:
         valuate: "档案已更新"
-      valuation_comments: 评估评论
-      not_in_valuating_phase: 只有预算处于评估阶段，才可以对项目进行评估
+      valuation_comments: 评估的评论
+      not_in_valuating_phase: 只有预算处于评估阶段，才可以对投资进行评估
     spending_proposals:
       index:
         geozone_filter_all: 所有区域
