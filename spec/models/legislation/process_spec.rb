@@ -21,13 +21,15 @@ describe Legislation::Process do
     end
 
     it "is invalid if allegations_start_date is present but debate_end_date is not" do
-      process = build(:legislation_process, allegations_start_date: Date.current, allegations_end_date: "")
+      process = build(:legislation_process, allegations_start_date: Date.current,
+                                            allegations_end_date: "")
       expect(process).to be_invalid
       expect(process.errors.messages[:allegations_end_date]).to include("can't be blank")
     end
 
     it "is invalid if debate_end_date is present but allegations_start_date is not" do
-      process = build(:legislation_process, allegations_start_date: nil, allegations_end_date: Date.current)
+      process = build(:legislation_process, allegations_start_date: nil,
+                                            allegations_end_date: Date.current)
       expect(process).to be_invalid
       expect(process.errors.messages[:allegations_start_date]).to include("can't be blank")
     end
@@ -35,90 +37,107 @@ describe Legislation::Process do
 
   describe "date ranges validations" do
     it "is invalid if end_date is before start_date" do
-      process = build(:legislation_process, start_date: Date.current, end_date: Date.current - 1.day)
+      process = build(:legislation_process, start_date: Date.current,
+                                            end_date: Date.current - 1.day)
       expect(process).to be_invalid
       expect(process.errors.messages[:end_date]).to include("must be on or after the start date")
     end
 
     it "is valid if end_date is the same as start_date" do
-      process = build(:legislation_process, start_date: Date.current - 1.day, end_date: Date.current - 1.day)
+      process = build(:legislation_process, start_date: Date.current - 1.day,
+                                            end_date: Date.current - 1.day)
       expect(process).to be_valid
     end
 
     it "is valid if debate_end_date is the same as debate_start_date" do
-      process = build(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current - 1.day)
+      process = build(:legislation_process, debate_start_date: Date.current - 1.day,
+                                            debate_end_date: Date.current - 1.day)
       expect(process).to be_valid
     end
 
     it "is invalid if debate_end_date is before debate_start_date" do
-      process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: Date.current - 1.day)
+      process = build(:legislation_process, debate_start_date: Date.current,
+                                            debate_end_date: Date.current - 1.day)
       expect(process).to be_invalid
-      expect(process.errors.messages[:debate_end_date]).to include("must be on or after the debate start date")
+      expect(process.errors.messages[:debate_end_date])
+      .to include("must be on or after the debate start date")
     end
 
     it "is valid if draft_end_date is the same as draft_start_date" do
-      process = build(:legislation_process, draft_start_date: Date.current - 1.day, draft_end_date: Date.current - 1.day)
+      process = build(:legislation_process, draft_start_date: Date.current - 1.day,
+                                            draft_end_date: Date.current - 1.day)
       expect(process).to be_valid
     end
 
     it "is invalid if draft_end_date is before draft_start_date" do
-      process = build(:legislation_process, draft_start_date: Date.current, draft_end_date: Date.current - 1.day)
+      process = build(:legislation_process, draft_start_date: Date.current,
+                                            draft_end_date: Date.current - 1.day)
       expect(process).to be_invalid
-      expect(process.errors.messages[:draft_end_date]).to include("must be on or after the draft start date")
+      expect(process.errors.messages[:draft_end_date])
+      .to include("must be on or after the draft start date")
     end
 
     it "is invalid if allegations_end_date is before allegations_start_date" do
-      process = build(:legislation_process, allegations_start_date: Date.current, allegations_end_date: Date.current - 1.day)
+      process = build(:legislation_process, allegations_start_date: Date.current,
+                                            allegations_end_date: Date.current - 1.day)
       expect(process).to be_invalid
-      expect(process.errors.messages[:allegations_end_date]).to include("must be on or after the allegations start date")
+      expect(process.errors.messages[:allegations_end_date])
+      .to include("must be on or after the allegations start date")
     end
 
     it "is valid if allegations_end_date is the same as allegations_start_date" do
-      process = build(:legislation_process, allegations_start_date: Date.current - 1.day, allegations_end_date: Date.current - 1.day)
+      process = build(:legislation_process, allegations_start_date: Date.current - 1.day,
+                                              allegations_end_date: Date.current - 1.day)
       expect(process).to be_valid
     end
   end
 
   describe "filter scopes" do
-    before do
-      @process_1 = create(:legislation_process, start_date: Date.current - 2.days, end_date: Date.current + 1.day)
-      @process_2 = create(:legislation_process, start_date: Date.current + 1.day, end_date: Date.current + 3.days)
-      @process_3 = create(:legislation_process, start_date: Date.current - 4.days, end_date: Date.current - 3.days)
-      @process_4 = create(:legislation_process, draft_start_date: Date.current - 3.days, draft_end_date: Date.current - 2.days)
-      @process_5 = create(:legislation_process, draft_start_date: Date.current - 2.days, draft_end_date: Date.current + 2.days, draft_phase_enabled: false)
-      @process_6 = create(:legislation_process, draft_start_date: Date.current - 2.days, draft_end_date: Date.current + 2.days, draft_phase_enabled: true)
-    end
+    let!(:process_1) { create(:legislation_process, start_date: Date.current - 2.days,
+                                                   end_date: Date.current + 1.day) }
+    let!(:process_2) { create(:legislation_process, start_date: Date.current + 1.day,
+                                              end_date: Date.current + 3.days) }
+    let!(:process_3) { create(:legislation_process, start_date: Date.current - 4.days,
+                                              end_date: Date.current - 3.days) }
+    let!(:process_4) { create(:legislation_process, draft_start_date: Date.current - 3.days,
+                                              draft_end_date: Date.current - 2.days) }
+    let!(:process_5) { create(:legislation_process, draft_start_date: Date.current - 2.days,
+                                              draft_end_date: Date.current + 2.days,
+                                              draft_phase_enabled: false) }
+    let!(:process_6) { create(:legislation_process, draft_start_date: Date.current - 2.days,
+                                              draft_end_date: Date.current + 2.days,
+                                              draft_phase_enabled: true) }
 
     it "filters open" do
       open_processes = ::Legislation::Process.open
 
-      expect(open_processes).to include(@process_1)
-      expect(open_processes).not_to include(@process_2)
-      expect(open_processes).not_to include(@process_3)
+      expect(open_processes).to include(process_1)
+      expect(open_processes).not_to include(process_2)
+      expect(open_processes).not_to include(process_3)
     end
 
     it "filters draft phase" do
       draft_processes = ::Legislation::Process.not_in_draft
 
-      expect(draft_processes).to include(@process_4)
-      expect(draft_processes).to include(@process_5)
-      expect(draft_processes).not_to include(@process_6)
+      expect(draft_processes).to include(process_4)
+      expect(draft_processes).to include(process_5)
+      expect(draft_processes).not_to include(process_6)
     end
 
     it "filters next" do
       next_processes = ::Legislation::Process.next
 
-      expect(next_processes).to include(@process_2)
-      expect(next_processes).not_to include(@process_1)
-      expect(next_processes).not_to include(@process_3)
+      expect(next_processes).to include(process_2)
+      expect(next_processes).not_to include(process_1)
+      expect(next_processes).not_to include(process_3)
     end
 
     it "filters past" do
       past_processes = ::Legislation::Process.past
 
-      expect(past_processes).to include(@process_3)
-      expect(past_processes).not_to include(@process_2)
-      expect(past_processes).not_to include(@process_1)
+      expect(past_processes).to include(process_3)
+      expect(past_processes).not_to include(process_2)
+      expect(past_processes).not_to include(process_1)
     end
   end
 

@@ -17,14 +17,19 @@ class Legislation::Process < ActiveRecord::Base
   translates :milestones_summary, touch: true
   include Globalizable
 
-  PHASES_AND_PUBLICATIONS = %i(draft_phase debate_phase allegations_phase proposals_phase draft_publication result_publication).freeze
+  PHASES_AND_PUBLICATIONS = %i[draft_phase debate_phase allegations_phase proposals_phase
+                               draft_publication result_publication].freeze
 
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion',
-                                               foreign_key: 'legislation_process_id', dependent: :destroy
-  has_one :final_draft_version, -> { where final_version: true, status: 'published' }, class_name: 'Legislation::DraftVersion',
-                                                                                       foreign_key: 'legislation_process_id'
-  has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
-  has_many :proposals, -> { order(:id) }, class_name: 'Legislation::Proposal', foreign_key: 'legislation_process_id', dependent: :destroy
+                                               foreign_key: 'legislation_process_id',
+                                               dependent: :destroy
+  has_one :final_draft_version, -> { where final_version: true, status: 'published' },
+                                           class_name: 'Legislation::DraftVersion',
+                                           foreign_key: 'legislation_process_id'
+  has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question',
+                                          foreign_key: 'legislation_process_id', dependent: :destroy
+  has_many :proposals, -> { order(:id) }, class_name: 'Legislation::Proposal',
+                                          foreign_key: 'legislation_process_id', dependent: :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -38,12 +43,15 @@ class Legislation::Process < ActiveRecord::Base
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
   validate :valid_date_ranges
 
-  scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current).order('id DESC') }
+  scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current)
+                    .order('id DESC') }
   scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
   scope :published, -> { where(published: true) }
-  scope :not_in_draft, -> { where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and draft_end_date IS NOT NULL and (draft_start_date >= ? or draft_end_date <= ?))", Date.current, Date.current) }
+  scope :not_in_draft, -> { where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and
+                                   draft_end_date IS NOT NULL and (draft_start_date >= ? or
+                                   draft_end_date <= ?))", Date.current, Date.current) }
 
   def draft_phase
     Legislation::Process::Phase.new(draft_start_date, draft_end_date, draft_phase_enabled)
@@ -54,11 +62,13 @@ class Legislation::Process < ActiveRecord::Base
   end
 
   def allegations_phase
-    Legislation::Process::Phase.new(allegations_start_date, allegations_end_date, allegations_phase_enabled)
+    Legislation::Process::Phase.new(allegations_start_date,
+                                    allegations_end_date, allegations_phase_enabled)
   end
 
   def proposals_phase
-    Legislation::Process::Phase.new(proposals_phase_start_date, proposals_phase_end_date, proposals_phase_enabled)
+    Legislation::Process::Phase.new(proposals_phase_start_date,
+                                    proposals_phase_end_date, proposals_phase_enabled)
   end
 
   def draft_publication
@@ -92,10 +102,17 @@ class Legislation::Process < ActiveRecord::Base
   private
 
     def valid_date_ranges
-      errors.add(:end_date, :invalid_date_range) if end_date && start_date && end_date < start_date
-      errors.add(:debate_end_date, :invalid_date_range) if debate_end_date && debate_start_date && debate_end_date < debate_start_date
-      errors.add(:draft_end_date, :invalid_date_range) if draft_end_date && draft_start_date && draft_end_date < draft_start_date
-      if allegations_end_date && allegations_start_date && allegations_end_date < allegations_start_date
+      if end_date && start_date && end_date < start_date
+        errors.add(:end_date, :invalid_date_range)
+      end
+      if debate_end_date && debate_start_date && debate_end_date < debate_start_date
+        errors.add(:debate_end_date, :invalid_date_range)
+      end
+      if draft_end_date && draft_start_date && draft_end_date < draft_start_date
+        errors.add(:draft_end_date, :invalid_date_range)
+      end
+      if allegations_end_date && allegations_start_date &&
+         allegations_end_date < allegations_start_date
         errors.add(:allegations_end_date, :invalid_date_range)
       end
     end
