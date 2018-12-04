@@ -13,10 +13,10 @@ zh-CN:
         alert:
           failure: 验证码不正确
         flash:
-          success: 您是已验证的用户
+          success: 您是已核实的用户
     letter:
       alert:
-        unconfirmed_code: 您还没有输入验证码
+        unconfirmed_code: 您尚未输入确认代码
       create:
         flash:
           offices: 公民支援办公室
@@ -29,7 +29,7 @@ zh-CN:
       new:
         explanation: '要参与最终投票，您可以：'
         go_to_index: 查看提议
-        office: 在任何%{office} 进行验证
+        office: 在任何%{office} 进行核实
         offices: 公民支援办公室
         send_letter: 请给我发送一封带有代码的信
         title: 恭喜！
