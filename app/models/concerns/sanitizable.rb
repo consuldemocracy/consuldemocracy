@@ -15,7 +15,7 @@ module Sanitizable
     def sanitize_description
       if self.class.included_modules.include?(Globalizable) &&
          self.class.translated_attribute_names.include?(:description)
-        self.translations.each do |translation|
+        self.translations.reject(&:_destroy).each do |translation|
           Globalize.with_locale(translation.locale) do
             self.description = WYSIWYGSanitizer.new.sanitize(description)
           end
