@@ -10,12 +10,6 @@ ca:
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
-      budget/investment/milestone:
-        one: "fita"
-        other: "fites"
-      budget/investment/status:
-        one: "Estat de la proposta"
-        other: "Estats de les propostes"
       comment:
         one: "Comentari"
         other: "Comentaris"
