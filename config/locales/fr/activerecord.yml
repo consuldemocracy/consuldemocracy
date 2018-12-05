@@ -73,9 +73,6 @@ fr:
       legislation/draft_versions:
         one: "Ébauche"
         other: "Ébauches"
-      legislation/draft_texts:
-        one: "Brouillon"
-        other: "Brouillons"
       legislation/questions:
         one: "Question"
         other: "Questions"
