@@ -408,6 +408,7 @@ fr:
           status_planned: Planifié
         subnav:
           info: Information
+          draft_versions: Rédaction
           questions: Débat
           proposals: Propositions
       proposals:
