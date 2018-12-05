@@ -411,7 +411,6 @@ gl:
           status_planned: Planificado
         subnav:
           info: Información
-          draft_texts: Redacción
           questions: Debate
           proposals: Propostas
       proposals:
