@@ -802,7 +802,28 @@ feature 'Admin budget investments' do
       end
     end
 
-    pending "Do not display valuators of an assigned group"
+    scenario "Do not display valuators of an assigned group" do
+      budget_investment = create(:budget_investment)
+
+      health_group = create(:valuator_group, name: "Health")
+      user = create(:user, username: 'Valentina', email: 'v1@valuators.org')
+      create(:valuator, user: user, valuator_group: health_group)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit classification'
+
+      check "budget_investment_valuator_group_ids_#{health_group.id}"
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within('#assigned_valuator_groups') { expect(page).to have_content('Health') }
+      within('#assigned_valuators') do
+        expect(page).to have_content('Undefined')
+        expect(page).not_to have_content('Valentina (v1@valuators.org)')
+      end
+    end
 
     scenario "Adds existing valuation tags", :js do
       budget_investment1 = create(:budget_investment)
@@ -1079,6 +1100,7 @@ feature 'Admin budget investments' do
         click_link('Selected')
       end
 
+      click_button('Filter')
       expect(page).not_to have_content(selected_bi.title)
       expect(page).to have_content('There is 1 investment')
 
@@ -1088,6 +1110,20 @@ feature 'Admin budget investments' do
         expect(page).to have_link('Select')
         expect(page).not_to have_link('Selected')
       end
+    end
+
+    scenario "Pagination after unselecting an investment", :js do
+      create_list(:budget_investment, 30, budget: budget)
+
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#budget_investment_#{selected_bi.id}") do
+        click_link('Selected')
+      end
+
+      click_link('Next')
+
+      expect(page).to have_link('Previous')
     end
   end
 

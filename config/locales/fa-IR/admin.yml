@@ -863,7 +863,7 @@ fa:
       search:
         title: جستجو سازمان ها
         no_results: هیچ سازمان یافت نشد
-    proposals:
+    hidden_proposals:
       index:
         filter: فیلتر
         filters:

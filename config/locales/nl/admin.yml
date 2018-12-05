@@ -403,7 +403,7 @@ nl:
           status_planned: Gepland
         subnav:
           info: Informatie
-          draft_texts: Tekst
+          draft_versions: Tekst
           questions: Debat
           proposals: Voorstellen
       proposals:
@@ -1010,7 +1010,7 @@ nl:
       search:
         title: Zoek Organisaties
         no_results: Geen organisaties gevonden.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filter
         filters:

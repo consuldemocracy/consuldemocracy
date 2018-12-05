@@ -8,12 +8,12 @@
           { include_blank: @statuses.any? ? '' : t('admin.milestones.form.no_statuses_defined') },
           { disabled: @statuses.blank? } %>
     <%= link_to t('admin.milestones.form.admin_statuses'),
-                admin_budget_investment_statuses_path %>
+                admin_milestone_statuses_path %>
   </div>
 
   <%= f.translatable_fields do |translations_form| %>
     <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
-                               maxlength: Budget::Investment::Milestone.title_max_length %>
+                               maxlength: Milestone.title_max_length %>
 
     <%= translations_form.text_area :description,
                                     rows: 5,

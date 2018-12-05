@@ -404,7 +404,7 @@ sq:
           status_planned: Planifikuar
         subnav:
           info: Informacion
-          draft_texts: Hartimi
+          draft_versions: Hartimi
           questions: Debate
           proposals: Propozime
       proposals:
@@ -1013,7 +1013,7 @@ sq:
       search:
         title: Kërko Organizatat
         no_results: Asnjë organizatë nuk u gjet.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtër
         filters:

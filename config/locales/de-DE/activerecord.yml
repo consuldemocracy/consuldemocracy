@@ -10,10 +10,10 @@ de:
       budget/investment:
         one: "Ausgabenvorschlag"
         other: "Ausgabenvorschläge"
-      budget/investment/milestone:
+      milestone:
         one: "Meilenstein"
         other: "Meilensteine"
-      budget/investment/status:
+      milestone/status:
         one: "Status des Ausgabenvorschlags"
         other: "Status der Ausgabenvorschläge"
       comment:
@@ -131,12 +131,12 @@ de:
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
         image_title: "Bildtitel"
-      budget/investment/milestone:
+      milestone:
         status_id: "Derzeitiger Status des Ausgabenvorschlags (optional)"
         title: "Titel"
         description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
         publication_date: "Datum der Veröffentlichung"
-      budget/investment/status:
+      milestone/status:
         name: "Name"
         description: "Beschreibung (optional)"
       budget/heading:

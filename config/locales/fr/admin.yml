@@ -402,7 +402,7 @@ fr:
           status_planned: Planifié
         subnav:
           info: Information
-          draft_texts: Brouillon
+          draft_versions: Brouillon
           questions: Débat
           proposals: Propositions
       proposals:
@@ -1006,7 +1006,7 @@ fr:
       search:
         title: Rechercher une organisation
         no_results: Aucune organisation trouvée.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtrer
         filters:

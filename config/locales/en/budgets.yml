@@ -105,6 +105,9 @@ en:
           random: random
           confidence_score: highest rated
           price: by price
+      share:
+        message: "I created the investment project %{title} in %{org}. Create an investment project you too!"
+        message_mobile: "I created the investment project %{title} in %{handle}. Create an investment project you too!"
       show:
         author_deleted: User deleted
         price_explanation: Price explanation

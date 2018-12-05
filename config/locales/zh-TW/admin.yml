@@ -402,7 +402,7 @@ zh-TW:
           status_planned: 計劃
         subnav:
           info: 資訊
-          draft_texts: 起草
+          draft_versions: 起草
           questions: 辯論
           proposals: 建議
       proposals:
@@ -1010,7 +1010,7 @@ zh-TW:
       search:
         title: 搜尋組織
         no_results: 未找到任何組織。
-    proposals:
+    hidden_proposals:
       index:
         filter: 篩選器
         filters:

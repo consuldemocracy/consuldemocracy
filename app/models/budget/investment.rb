@@ -24,6 +24,7 @@ class Budget
     include Notifiable
     include Filterable
     include Flaggable
+    include Milestoneable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -39,8 +40,6 @@ class Budget
 
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
-
-    has_many :milestones
 
     validates :title, presence: true
     validates :author, presence: true

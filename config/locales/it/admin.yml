@@ -402,7 +402,7 @@ it:
           status_planned: Programmato
         subnav:
           info: Informazione
-          draft_texts: Redazione
+          draft_versions: Redazione
           questions: Dibattito
           proposals: Proposte
       proposals:
@@ -1009,7 +1009,7 @@ it:
       search:
         title: Cerca Organizzazioni
         no_results: Nessuna organizzazione trovata.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtra
         filters:

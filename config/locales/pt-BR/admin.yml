@@ -404,7 +404,7 @@ pt-BR:
           status_planned: Planejados
         subnav:
           info: Informação
-          draft_texts: Seleção
+          draft_versions: Seleção
           questions: Debate
           proposals: Propostas
       proposals:
@@ -1013,7 +1013,7 @@ pt-BR:
       search:
         title: Buscar Organizações
         no_results: Nenhuma organização encontrada.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtro
         filters:

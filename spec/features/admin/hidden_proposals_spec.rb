@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Admin proposals' do
+feature 'Admin hidden proposals' do
 
   background do
     admin = create(:administrator)
@@ -12,14 +12,14 @@ feature 'Admin proposals' do
     admin = create(:administrator)
     login_as(admin.user)
 
-    expect{ visit admin_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect{ visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
 
     Setting['feature.proposals'] = true
   end
 
   scenario 'List shows all relevant info' do
     proposal = create(:proposal, :hidden)
-    visit admin_proposals_path
+    visit admin_hidden_proposals_path
 
     expect(page).to have_content(proposal.title)
     expect(page).to have_content(proposal.summary)
@@ -31,7 +31,7 @@ feature 'Admin proposals' do
 
   scenario 'Restore' do
     proposal = create(:proposal, :hidden)
-    visit admin_proposals_path
+    visit admin_hidden_proposals_path
 
     click_link 'Restore'
 
@@ -43,7 +43,7 @@ feature 'Admin proposals' do
 
   scenario 'Confirm hide' do
     proposal = create(:proposal, :hidden)
-    visit admin_proposals_path
+    visit admin_hidden_proposals_path
 
     click_link 'Confirm moderation'
 
@@ -55,22 +55,22 @@ feature 'Admin proposals' do
   end
 
   scenario "Current filter is properly highlighted" do
-    visit admin_proposals_path
+    visit admin_hidden_proposals_path
     expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
-    visit admin_proposals_path(filter: 'Pending')
+    visit admin_hidden_proposals_path(filter: 'Pending')
     expect(page).not_to have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
-    visit admin_proposals_path(filter: 'all')
+    visit admin_hidden_proposals_path(filter: 'all')
     expect(page).to have_link('Pending')
     expect(page).not_to have_link('All')
     expect(page).to have_link('Confirmed')
 
-    visit admin_proposals_path(filter: 'with_confirmed_hide')
+    visit admin_hidden_proposals_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
     expect(page).to have_link('Pending')
     expect(page).not_to have_link('Confirmed')
@@ -80,15 +80,15 @@ feature 'Admin proposals' do
     create(:proposal, :hidden, title: "Unconfirmed proposal")
     create(:proposal, :hidden, :with_confirmed_hide, title: "Confirmed proposal")
 
-    visit admin_proposals_path(filter: 'pending')
+    visit admin_hidden_proposals_path(filter: 'pending')
     expect(page).to have_content('Unconfirmed proposal')
     expect(page).not_to have_content('Confirmed proposal')
 
-    visit admin_proposals_path(filter: 'all')
+    visit admin_hidden_proposals_path(filter: 'all')
     expect(page).to have_content('Unconfirmed proposal')
     expect(page).to have_content('Confirmed proposal')
 
-    visit admin_proposals_path(filter: 'with_confirmed_hide')
+    visit admin_hidden_proposals_path(filter: 'with_confirmed_hide')
     expect(page).not_to have_content('Unconfirmed proposal')
     expect(page).to have_content('Confirmed proposal')
   end
@@ -97,7 +97,7 @@ feature 'Admin proposals' do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:proposal, :hidden, :with_confirmed_hide) }
 
-    visit admin_proposals_path(filter: 'with_confirmed_hide', page: 2)
+    visit admin_hidden_proposals_path(filter: 'with_confirmed_hide', page: 2)
 
     click_on('Restore', match: :first, exact: true)
 

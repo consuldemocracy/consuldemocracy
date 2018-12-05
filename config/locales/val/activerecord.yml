@@ -10,10 +10,10 @@ val:
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
-      budget/investment/milestone:
+      milestone:
         one: "fita"
         other: "fites"
-      budget/investment/status:
+      milestone/status:
         one: "Estat de la proposta"
         other: "Estat de les propostes"
       comment:
@@ -131,12 +131,12 @@ val:
         organization_name: "Si estàs proposant en nom d'una associació o col·lectiu, escriu el seu nom"
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
-      budget/investment/milestone:
+      milestone:
         status_id: "Estat actual de la proposta (opcional)"
         title: "Títol"
         description: "Descripció (opcional si hi ha un estat asignat)"
         publication_date: "Data de publicació"
-      budget/investment/status:
+      milestone/status:
         name: "Nom"
         description: "Descripció (opcional)"
       budget/heading:
