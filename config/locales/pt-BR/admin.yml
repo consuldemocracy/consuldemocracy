@@ -1010,15 +1010,6 @@ pt-BR:
       search:
         title: Buscar Organizações
         no_results: Nenhuma organização encontrada.
-    proposals:
-      index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmado
-          without_confirmed_hide: Pendente
-        title: Propostas ocultas
-        no_hidden_proposals: Não há propostas ocultas.
     proposal_notifications:
       index:
         filter: Filtro
