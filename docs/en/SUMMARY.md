@@ -7,6 +7,7 @@
 * [Configure your fork](forks/configuration.md)
 * [Keep your fork updated](forks/update.md)
 * [Communication](forks/communication.md)
+* [Manual deployment to Heroku](getting_started/deploying-on-heroku.md)
 
 ### Installation
 * [Docker](getting_started/docker.md)
