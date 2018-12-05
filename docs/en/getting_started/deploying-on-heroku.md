@@ -2,16 +2,16 @@
 
 ## Manual deployment
 
-This tutorial assumes that you have already managed to clone Consul on your machine and gotten it to work.
+This tutorial assumes that you have already managed to clone CONSUL on your machine and gotten it to work.
 
-1. First, create a Heroku account if it isn't already done.
+1. First, create a [Heroku](https://www.heroku.com) account if it isn't already done.
 2. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and sign in using
 
    ```
    heroku login
    ```
 
-3. Go to your consul repository and instantiate the process
+3. Go to your CONSUL repository and instantiate the process
 
    ```
    cd consul
@@ -28,113 +28,142 @@ This tutorial assumes that you have already managed to clone Consul on your mach
    heroku addons:create heroku-postgresql
    ```
 
-   You should now have access to an empty Postgres database whose address was automatically saved as an environment variable named _DATABASE\_URL_. Consul will automatically connect to it when deployed.
+   You should now have access to an empty Postgres database whose address was automatically saved as an environment variable named _DATABASE\_URL_. CONSUL will automatically connect to it when deployed.
 
 5. Add a file name _heroku.yml_ at the root of your project and paste the following in it
 
-   ```
-   build:
-     languages:
-       - ruby
-     packages:
-       - imagemagick
-   run:
-     web: bundle exec rails server -e ${RAIL_ENV:-production}
-   ```
+    ```
+    build:
+      languages:
+        - ruby
+      packages:
+        - imagemagick
+    run:
+      web: bundle exec rails server -e ${RAILS_ENV:-production}
+    ```
 
 6. Now, generate a secret key and save it to an ENV variable named SECRET\_KEY\_BASE using
 
-       heroku config:set SECRET_KEY_BASE=`ruby -rsecurerandom -e "puts SecureRandom.hex(64)"`
+    ```
+    heroku config:set SECRET_KEY_BASE=`ruby -rsecurerandom -e "puts SecureRandom.hex(64)"
+    ```
 
-   You need to let the app know where the secret key is stored by adding a link to the ENV variable in _config/secrets.yml_
+    You need to let the app know where the secret key is stored by adding a link to the ENV variable in _config/secrets.yml_
 
-   ```
-   production:
+    ```
+    production:
       secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-   ```
+    ```
 
-   and commit this file in the repo by commenting out the corresponding line in the _.gitignore_.
+    and commit this file in the repo by commenting out the corresponding line in the _.gitignore_.
 
-   ```
-   #/config/secrets.yml
-   ```
+    ```
+    #/config/secrets.yml
+    ```
 
-   **Remember not to commit the file if you have any sensitive information in it!**
+    **Remember not to commit the file if you have any sensitive information in it!**
 
 7. You can now push your app using
 
-   ```
-   git push heroku master
-   ```
+    ```
+    git push heroku your-branch:master
+    ```
 
 8. It won't work straight away because the database doesn't contain the tables needed. To create them, run
 
-   ```
-   heroku run rake db:migrate
-   ```
-   
-   If you want to add the test data in the database, you can also run
-   
-   ```
-   heroku run rake db:dev_seed
-   ```
-   
+    ```
+    heroku run rake db:migrate
+    heroku run rake db:seed
+    ```
+
+    If you want to add the test data in the database, move `gem 'faker', '~> 1.8.7'` outside of `group :development` and run
+
+    ```
+    heroku config:set DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true
+    heroku config:set DATABASE_CLEANER_ALLOW_PRODUCTION=true
+    heroku run rake db:dev_seed
+    ```
+
 9. Your app should now be ready to use. You can open it with
 
-   ```
-   heroku open
-   ```
+    ```
+    heroku open
+    ```
 
-10. **Optional but recommended:** Install rails\_12factor and specify the Ruby version
+    You also can run the console on heroku using
 
-   As recommended by Heroku, you can add the gem rails\_12factor and specify the version of Ruby you want to use. You can do so by adding
+    ```
+    heroku console --app your-app-name
+    ```
 
-   ```
-   gem 'rails_12factor'
+10. Heroku doesn't allow to save images or documents in its servers, so it's necessary make this changes
 
-   ruby '2.3.2'
-   ```
+    On `app/models/image.rb:47` and `app/models/document.rb:39`
 
-   in the file _Gemfile\_custom_. Don't forget to run
+    Change  `URI.parse(cached_attachment)` to `URI.parse("http:" + cached_attachment)`
 
-   ```
-   bundle install
-   ```
+    Create a new file on `config/initializers/paperclip.rb` with the following content
 
-   to generate _Gemfile.lock_ before commiting and pushing to the server.
+    ```
+    Paperclip::UriAdapter.register
+    ```
 
-11. **Optional but recommended:** Use Puma as a web server
+    See [our S3 guide](en/getting_started/using-aws-s3-as-storage.md) for more details about configuring Paperclip with S3.
 
-   Heroku recommends to use Puma instead of the default web server to improve the responsiveness of your app on [a number of levels](http://blog.scoutapp.com/articles/2017/02/10/which-ruby-app-server-is-right-for-you). First, add the gem in your _Gemfile\_custom_ file:
+### Optional but recommended:
 
-   ```
-   gem 'puma'
-   ```
+**Install rails\_12factor and specify the Ruby version**
 
-   Then you need to create a new file named _puma.rb_ \(your _config_ folder is a good place to store it\). Here is a standard content for this file:
+As recommended by Heroku, you can add the gem rails\_12factor and specify the version of Ruby you want to use. You can do so by adding
 
-   ```
-   workers Integer(ENV['WEB_CONCURRENCY'] || 2)
-   threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
-   threads threads_count, threads_count
+```
+gem 'rails_12factor'
 
-   preload_app!
+ruby '2.3.2'
+```
 
-   rackup      DefaultRackup
-   port        ENV['PORT']     || 3000
-   environment ENV['RACK_ENV'] || 'production'
+in the file _Gemfile\_custom_. Don't forget to run
 
-   on_worker_boot do
-     # Worker specific setup for Rails 4.1+
-     # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
-     ActiveRecord::Base.establish_connection
-   end
-   ```
+```
+bundle install
+```
 
-   You can find an explanation for each of these settings in the [Heroku tutorial](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
+to generate _Gemfile.lock_ before commiting and pushing to the server.
 
-   The last part is to change the _web_ task to use Puma by changing it to this in your _heroku.yml_ file:
+### Optional but recommended:
 
-   ```
-   web: bundle exec puma -C config/puma.rb
-   ```
+**Use Puma as a web server**
+
+Heroku recommends to use Puma instead of the default web server to improve the responsiveness of your app on [a number of levels](http://blog.scoutapp.com/articles/2017/02/10/which-ruby-app-server-is-right-for-you). First, add the gem in your _Gemfile\_custom_ file:
+
+  ```
+  gem 'puma'
+  ```
+
+Then you need to create a new file named _puma.rb_ \(your _config_ folder is a good place to store it\). Here is a standard content for this file:
+
+  ```
+  workers Integer(ENV['WEB_CONCURRENCY'] || 1)
+  threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
+  threads threads_count, threads_count
+
+  preload_app!
+
+  rackup      DefaultRackup
+  port        ENV['PORT']     || 3000
+  environment ENV['RACK_ENV'] || 'production'
+
+  on_worker_boot do
+    # Worker specific setup for Rails 4.1+
+    # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
+    ActiveRecord::Base.establish_connection
+  end
+  ```
+
+You can find an explanation for each of these settings in the [Heroku tutorial](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
+
+The last part is to change the _web_ task to use Puma by changing it to this in your _heroku.yml_ file:
+
+  ```
+  web: bundle exec puma -C config/puma.rb
+  ```
