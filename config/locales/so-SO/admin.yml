@@ -1025,15 +1025,6 @@ so:
       search:
         title: Raadinta Ururada
         no_results: Wax Urura lama helin.
-    proposals:
-      index:
-        filter: Sifeeyee
-        filters:
-          all: Dhamaan
-          with_confirmed_hide: Xaqiijiyey
-          without_confirmed_hide: Joojin
-        title: Soojedino qarsoon
-        no_hidden_proposals: Majiraan soojedino qarsoon.
     proposal_notifications:
       index:
         filter: Sifeeyee
