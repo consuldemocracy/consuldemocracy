@@ -30,7 +30,7 @@ class Budget
     end
 
     def store_reclassified_votes(reason)
-      ballot_lines_for_investment.each do |line|
+      ballot_lines_for_investment.order(:id).each do |line|
         attrs = { user: line.ballot.user,
                   investment: self,
                   reason: reason }
