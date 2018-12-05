@@ -10,12 +10,6 @@ es:
       budget/investment:
         one: "Proyecto de gasto"
         other: "Proyectos de gasto"
-      budget/investment/milestone:
-        one: "hito"
-        other: "hitos"
-      budget/investment/status:
-        one: "Estado del proyecto"
-        other: "Estados del proyecto"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -120,12 +114,6 @@ es:
         administrator_id: "Administrador"
         location: "Ubicación"
         image: "Imagen descriptiva del proyecto de gasto"
-      budget/investment/milestone:
-        status_id: "Estado actual del proyecto (opcional)"
-        description: "Descripción (opcional si hay un estado asignado)"
-      budget/investment/status:
-        name: "Nombre"
-        description: "Descripción (opcional)"
       comment:
         user: "Usuario"
       debate:
