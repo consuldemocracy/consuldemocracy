@@ -23,7 +23,7 @@
       <% @budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>" class="budget">
           <td>
-            <%= budget.name %>
+            <%= link_to budget.name, admin_budget_path(budget) %>
           </td>
           <td class="small">
             <%= t("budgets.phase.#{budget.phase}") %>
@@ -34,7 +34,7 @@
                            class: "button hollow medium" %>
           </td>
           <td class="small">
-            <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_path(budget) %>
+            <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_groups_path(budget) %>
           </td>
           <td class="small">
             <%= link_to t("admin.budgets.index.edit_budget"), edit_admin_budget_path(budget) %>
