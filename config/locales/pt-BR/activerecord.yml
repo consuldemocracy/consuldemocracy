@@ -73,9 +73,6 @@ pt-BR:
       legislation/draft_versions:
         one: "Versão preliminar"
         other: "Versões preliminares"
-      legislation/draft_texts:
-        one: "Esboço"
-        other: "Esboços"
       legislation/questions:
         one: "Questão"
         other: "Questões"
