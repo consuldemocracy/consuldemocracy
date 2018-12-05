@@ -73,9 +73,6 @@ nl:
       legislation/draft_versions:
         one: "Concept versie"
         other: "Concept versies"
-      legislation/draft_texts:
-        one: "Concept"
-        other: "Concept"
       legislation/questions:
         one: "Vraag"
         other: "Vragen"
