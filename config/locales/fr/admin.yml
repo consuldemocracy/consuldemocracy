@@ -408,7 +408,6 @@ fr:
           status_planned: Planifié
         subnav:
           info: Information
-          draft_texts: Brouillon
           questions: Débat
           proposals: Propositions
       proposals:
