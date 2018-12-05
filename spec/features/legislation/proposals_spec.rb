@@ -20,48 +20,65 @@ feature 'Legislation Proposals' do
     end
   end
 
-  scenario 'Each user has a different and consistent random proposals order', :js do
-    create_list(:legislation_proposal, 10, process: process)
+  feature "Random pagination" do
+    before do
+      allow(Legislation::Proposal).to receive(:default_per_page).and_return(12)
 
-    in_browser(:one) do
+      create_list(
+        :legislation_proposal,
+        (Legislation::Proposal.default_per_page + 2),
+        process: process
+      )
+    end
+
+    scenario "Each user has a different and consistent random proposals order", :js do
+      in_browser(:one) do
+        login_as user
+        visit legislation_process_proposals_path(process)
+        @first_user_proposals_order = legislation_proposals_order
+      end
+
+      in_browser(:two) do
+        login_as user2
+        visit legislation_process_proposals_path(process)
+        @second_user_proposals_order = legislation_proposals_order
+      end
+
+      expect(@first_user_proposals_order).not_to eq(@second_user_proposals_order)
+
+      in_browser(:one) do
+        visit legislation_process_proposals_path(process)
+        expect(legislation_proposals_order).to eq(@first_user_proposals_order)
+      end
+
+      in_browser(:two) do
+        visit legislation_process_proposals_path(process)
+        expect(legislation_proposals_order).to eq(@second_user_proposals_order)
+      end
+    end
+
+    scenario "Random order maintained with pagination", :js do
       login_as user
       visit legislation_process_proposals_path(process)
-      @first_user_proposals_order = legislation_proposals_order
+      first_page_proposals_order = legislation_proposals_order
+
+      click_link "Next"
+
+      expect(page).to have_content "You're on page 2"
+      expect(first_page_proposals_order & legislation_proposals_order).to eq([])
+
+      click_link "Previous"
+
+      expect(page).to have_content "You're on page 1"
+      expect(legislation_proposals_order).to eq(first_page_proposals_order)
     end
 
-    in_browser(:two) do
-      login_as user2
-      visit legislation_process_proposals_path(process)
-      @second_user_proposals_order = legislation_proposals_order
+    scenario "Does not crash when the seed is not a number" do
+      login_as user
+      visit legislation_process_proposals_path(process, random_seed: "Spoof")
+
+      expect(page).to have_content "You're on page 1"
     end
-
-    expect(@first_user_proposals_order).not_to eq(@second_user_proposals_order)
-
-    in_browser(:one) do
-      visit legislation_process_proposals_path(process)
-      expect(legislation_proposals_order).to eq(@first_user_proposals_order)
-    end
-
-    in_browser(:two) do
-      visit legislation_process_proposals_path(process)
-      expect(legislation_proposals_order).to eq(@second_user_proposals_order)
-    end
-  end
-
-  scenario 'Random order maintained with pagination', :js do
-    create_list(:legislation_proposal, (Kaminari.config.default_per_page + 2), process: process)
-
-    login_as user
-    visit legislation_process_proposals_path(process)
-    first_page_proposals_order = legislation_proposals_order
-
-    click_link 'Next'
-    expect(page).to have_content "You're on page 2"
-
-    click_link 'Previous'
-    expect(page).to have_content "You're on page 1"
-
-    expect(legislation_proposals_order).to eq(first_page_proposals_order)
   end
 
   context 'Selected filter' do
