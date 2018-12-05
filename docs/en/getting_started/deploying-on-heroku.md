@@ -108,7 +108,7 @@ This tutorial assumes that you have already managed to clone CONSUL on your mach
     Paperclip::UriAdapter.register
     ```
 
-    See [our S3 guide](en/getting_started/using-aws-s3-as-storage.md) for more details about configuring Paperclip with S3.
+    See [our S3 guide](../getting_started/using-aws-s3-as-storage.md) for more details about configuring Paperclip with S3.
 
 ### Optional but recommended:
 
