@@ -404,7 +404,7 @@ pt-BR:
           status_planned: Planejados
         subnav:
           info: Informação
-          draft_texts: Seleção
+          draft_versions: Seleção
           questions: Debate
           proposals: Propostas
       proposals:

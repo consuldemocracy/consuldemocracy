@@ -413,7 +413,7 @@ en:
           status_planned: Planned
         subnav:
           info: Information
-          draft_texts: Drafting
+          draft_versions: Drafting
           questions: Debate
           proposals: Proposals
       proposals:
