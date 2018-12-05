@@ -10,12 +10,6 @@ es-MX:
       budget/investment:
         one: "Proyecto de inversión"
         other: "Proyectos de inversión"
-      budget/investment/milestone:
-        one: "hito"
-        other: "hitos"
-      budget/investment/status:
-        one: "Estado de inversión"
-        other: "Estados de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -128,13 +122,6 @@ es-MX:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
         image_title: "Título de la imagen"
-      budget/investment/milestone:
-        title: "Título"
-        description: "Descripción (opcional si cuenta con un estado asignado)"
-        publication_date: "Fecha de publicación"
-      budget/investment/status:
-        name: "Nombre"
-        description: "Descripción (opcional)"
       budget/heading:
         name: "Nombre de la partida"
         price: "Cantidad"
