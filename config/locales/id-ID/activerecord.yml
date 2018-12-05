@@ -41,8 +41,6 @@ id:
         other: "Proses"
       legislation/draft_versions:
         other: "Rancangan versi"
-      legislation/draft_texts:
-        other: "Konsep"
       legislation/questions:
         other: "Pertanyaan"
       legislation/question_options:
