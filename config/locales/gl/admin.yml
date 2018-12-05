@@ -1029,15 +1029,6 @@ gl:
       search:
         title: Buscar organizacións
         no_results: Non se atoparon organizacións.
-    proposals:
-      index:
-        filter: Filtro
-        filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendentes
-        title: Propostas agochadas
-        no_hidden_proposals: Non hai propostas agochadas.
     proposal_notifications:
       index:
         filter: Filtro
