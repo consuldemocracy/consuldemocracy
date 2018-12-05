@@ -76,9 +76,6 @@ de:
       legislation/draft_versions:
         one: "Entwurfsfassung"
         other: "Entwurfsfassungen"
-      legislation/draft_texts:
-        one: "Entwurf"
-        other: "Entwürfe"
       legislation/questions:
         one: "Frage"
         other: "Fragen"
