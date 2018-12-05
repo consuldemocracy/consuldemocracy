@@ -59,9 +59,9 @@ gl:
       how_to_use:
         text: |-
           Emprégao no teu concello ou axúdanos a melloralo, é software libre. 
-          
+
           Este portal de goberno aberto emprega a [aplicación CONSUL] (https://github.com/consul/consul 'consul github') que é software libre con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), o que significa que calquera pode usar libremente o código, copialo, velo en detalle, modificalo e redistribuílo ao mundo coas modificacións que quixer (mantendo o que outros poidan facer á súa vez o mesmo). Porque xulgamos que a cultura é mellor e máis rica cando se libera.
-          
+
           Se sabes programar, podes ver o código e axudáresnos a melloralo en [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Emprégao no teu concello
@@ -90,7 +90,7 @@ gl:
       title: Accesibilidade
       description: |-
         A accesibilidade web refírese á posibilidade de acceso a Internet e os seus contidos por parte de todas as persoas, independentemente das discapacidades (físicas, intelectuais ou técnicas) que poidan xurdir, ou das derivadas do contexto de uso (tecnolóxico ou ambiental). 
-        
+
         Cando os sitios web son deseñados coa accesibilidade en mente, todos os usuarios poden acceder ao contido en condicións iguais, por exemplo:
       examples:
         - Engadindo un texto alternativo ás imaxes, as persoas con dificultades visuais poden facer uso de lectores especiais para acceder á información.
