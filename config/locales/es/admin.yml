@@ -274,7 +274,6 @@ es:
           status_planned: Próximamente
         subnav:
           info: Información
-          draft_texts: Redacción
           proposals: Propuestas
       proposals:
         index:
