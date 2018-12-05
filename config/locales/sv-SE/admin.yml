@@ -401,7 +401,6 @@ sv:
           status_planned: Planerad
         subnav:
           info: Information
-          draft_texts: Utkast
           questions: Diskussion
           proposals: Förslag
       proposals:
