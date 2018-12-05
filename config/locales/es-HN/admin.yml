@@ -709,15 +709,6 @@ es-HN:
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
-    proposals:
-      index:
-        filter: Filtro
-        filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendientes
-        title: Propuestas ocultas
-        no_hidden_proposals: No hay propuestas ocultas.
     settings:
       flash:
         updated: Valor actualizado
