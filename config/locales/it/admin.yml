@@ -400,7 +400,6 @@ it:
           status_planned: Programmato
         subnav:
           info: Informazione
-          draft_texts: Redazione
           questions: Dibattito
           proposals: Proposte
       proposals:
