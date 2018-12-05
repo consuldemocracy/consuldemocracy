@@ -10,12 +10,6 @@ fr:
       budget/investment:
         one: "Projet d'investissement"
         other: "Projets d'investissement"
-      budget/investment/milestone:
-        one: "jalon"
-        other: "jalons"
-      budget/investment/status:
-        one: "Statut d’investissement"
-        other: "Statuts d’investissement"
       comment:
         one: "Commentaire"
         other: "Commentaires"
@@ -128,14 +122,6 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
-      budget/investment/milestone:
-        status_id: "Statut actuel de l'investissement (facultatif)"
-        title: "Titre"
-        description: "Description (facultative si un statut est affecté)"
-        publication_date: "Date de publication"
-      budget/investment/status:
-        name: "Nom"
-        description: "Description (facultative)"
       budget/heading:
         name: "Nom de la rubrique"
         price: "Coût"
