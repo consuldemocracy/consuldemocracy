@@ -1031,15 +1031,6 @@ sq:
       search:
         title: Kërko Organizatat
         no_results: Asnjë organizatë nuk u gjet.
-    proposals:
-      index:
-        filter: Filtër
-        filters:
-          all: Të gjithë
-          with_confirmed_hide: Konfirmuar
-          without_confirmed_hide: Në pritje
-        title: Propozime të fshehura
-        no_hidden_proposals: Nuk ka propozime të fshehura.
     proposal_notifications:
       index:
         filter: Filtër
