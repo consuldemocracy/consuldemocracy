@@ -3,7 +3,7 @@ namespace :globalize do
     [
       AdminNotification,
       Banner,
-      Budget::Investment::Milestone,
+      Milestone,
       I18nContent,
       Legislation::DraftVersion,
       Legislation::Process,

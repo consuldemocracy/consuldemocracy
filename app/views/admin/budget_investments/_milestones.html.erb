@@ -18,7 +18,7 @@
           <td class="text-center"><%= milestone.id %></td>
           <td>
             <%= link_to milestone.title,
-                        edit_admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget,
+                        edit_admin_budget_budget_investment_milestone_path(@investment.budget,
                                                                                              @investment,
                                                                                              milestone) %>
           </td>
@@ -46,7 +46,7 @@
           </td>
           <td class="small-2">
             <%= link_to t("admin.milestones.index.delete"),
-                        admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget,
+                        admin_budget_budget_investment_milestone_path(@investment.budget,
                                                                                         @investment,
                                                                                         milestone),
                         method: :delete,

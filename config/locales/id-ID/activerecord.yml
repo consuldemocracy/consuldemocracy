@@ -7,7 +7,7 @@ id:
         other: "Anggaran"
       budget/investment:
         other: "Investasi"
-      budget/investment/milestone:
+      milestone:
         other: "batu peringatan"
       comment:
         other: "Komentar"
@@ -81,7 +81,7 @@ id:
         organization_name: "Jika Anda usulkan dalam nama kolektif/organisasi, atau atas nama orang lain, menulis namanya"
         image: "Gambar deskriptif proposal"
         image_title: "Judul gambar"
-      budget/investment/milestone:
+      milestone:
         title: "Judul"
         publication_date: "Tanggal publikasi"
       budget/heading:
