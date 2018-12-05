@@ -76,9 +76,6 @@ sq:
       legislation/draft_versions:
         one: "Version drafti"
         other: "Version drafti"
-      legislation/draft_texts:
-        one: "Drafti"
-        other: "Drafti"
       legislation/questions:
         one: "Pyetje"
         other: "Pyetje"
