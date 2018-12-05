@@ -10,9 +10,6 @@ tr:
       budget/investment:
         one: "yatırım"
         other: "Yatırımlar"
-      budget/investment/milestone:
-        one: "kilometre taşı"
-        other: "kilometre taşları"
       comment:
         one: "Yorum"
         other: "Yorumlar"
