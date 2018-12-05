@@ -736,12 +736,6 @@ id:
       search:
         title: Cari organisasi
         no_results: Tidak ada organisasi yang ditemukan.
-    proposals:
-      index:
-        filters:
-          with_confirmed_hide: Dikonfirmasi
-        title: Proposal tersembunyi
-        no_hidden_proposals: Tidak ada tersembunyi proposal disana.
     settings:
       flash:
         updated: Nilai diperbarui
