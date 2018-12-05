@@ -969,15 +969,6 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
-    proposals:
-      index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmades
-          without_confirmed_hide: Pendents
-        title: Propostes ocultes
-        no_hidden_proposals: No hi ha propostes ocultes.
     proposal_notifications:
       index:
         filter: Filtrar
