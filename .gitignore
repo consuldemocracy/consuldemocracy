@@ -34,3 +34,6 @@
 public/sitemap.xml
 public/system/
 /public/ckeditor_assets/
+
+# VS Code
+.vscode
