@@ -83,7 +83,7 @@ zh-TW:
       title: 無障礙功能
       description: |-
         網絡無障礙功能是指所有人都可以訪問網絡及其內容，以克服可能出現的殘疾障礙 (物理，智力或技術)，還是來自使用環境 (技術或環境) 的障礙。
-        
+
         當網站設計時已考慮了無障礙功能，所有用戶都可以在相同條件下訪問內容，例如：
       examples:
         - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
