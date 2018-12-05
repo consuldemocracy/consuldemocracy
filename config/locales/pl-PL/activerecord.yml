@@ -86,11 +86,6 @@ pl:
         few: "Wersje robocze"
         many: "Wersji roboczych"
         other: "Wersji roboczych"
-      legislation/draft_texts:
-        one: "Projekt"
-        few: "Projekty"
-        many: "Projektów"
-        other: "Projektów"
       legislation/questions:
         one: "Pytanie"
         few: "Pytania"
