@@ -413,7 +413,6 @@ sq:
           status_planned: Planifikuar
         subnav:
           info: Informacion
-          draft_texts: Hartimi
           questions: Debate
           proposals: Propozime
       proposals:
