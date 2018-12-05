@@ -73,9 +73,6 @@ es-CL:
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
