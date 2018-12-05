@@ -1001,15 +1001,6 @@ de:
       search:
         title: Organisationen suchen
         no_results: Keine Organisationen gefunden.
-    proposals:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bestätigt
-          without_confirmed_hide: Ausstehend
-        title: Verborgene Vorschläge
-        no_hidden_proposals: Keine verborgenen Vorschläge vorhanden.
     proposal_notifications:
       index:
         filter: Filter
