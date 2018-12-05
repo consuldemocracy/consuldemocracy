@@ -1007,15 +1007,6 @@ zh-TW:
       search:
         title: 搜尋組織
         no_results: 未找到任何組織。
-    proposals:
-      index:
-        filter: 篩選器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已確認
-          without_confirmed_hide: 有待
-        title: 隱藏的建議
-        no_hidden_proposals: 沒有隱藏的建議。
     proposal_notifications:
       index:
         filter: 篩選器
