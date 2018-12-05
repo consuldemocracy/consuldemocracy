@@ -34,9 +34,6 @@ it:
       legislation/draft_versions:
         one: "Bozza"
         other: "Bozze"
-      legislation/draft_texts:
-        one: "Bozza"
-        other: "Bozze"
       legislation/questions:
         one: "Quesito"
         other: "Quesiti"
