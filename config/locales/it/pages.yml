@@ -83,7 +83,7 @@ it:
       title: Accessibilità
       description: |-
         L'accessibilità della rete si riferisce alla possibilità di accesso alla rete e ai suoi contenuti da parte di tutte le persone, indipendentemente dalle disabilità (fisiche, intellettuali o tecniche) che possano insorgere o da quelle che derivano dal contesto di utilizzo (tecnologico o ambientale).
-        
+
         Quando i siti web sono progettati con un occhio all'accessibilità, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
       examples:
         - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
