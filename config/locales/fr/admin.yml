@@ -1022,15 +1022,6 @@ fr:
       search:
         title: Rechercher une organisation
         no_results: Aucune organisation trouvée.
-    proposals:
-      index:
-        filter: Filtrer
-        filters:
-          all: Tous
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
-        title: Propositions masquées
-        no_hidden_proposals: Il n’y a aucune proposition masquée.
     proposal_notifications:
       index:
         filter: Filtrer
