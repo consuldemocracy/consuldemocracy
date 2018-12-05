@@ -176,5 +176,15 @@ ar:
     budget_investments:
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
   welcome:
+    feed:
+      most_active:
+        processes: "إجراءات مفتوحة"
+      see_all_debates: انظر جميع الحوارات
+      see_all_proposals: انظر جميع المقترحات
+      see_all_processes: انظر جميع المقترحات
+      process_label: إجرائية
+      see_process: انظر الإجرائية
+    cards:
+      title: مميز
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
