@@ -1006,15 +1006,6 @@ it:
       search:
         title: Cerca Organizzazioni
         no_results: Nessuna organizzazione trovata.
-    proposals:
-      index:
-        filter: Filtra
-        filters:
-          all: Tutti
-          with_confirmed_hide: Confermata
-          without_confirmed_hide: In sospeso
-        title: Proposte nascoste
-        no_hidden_proposals: Non ci sono proposte nascoste.
     proposal_notifications:
       index:
         filter: Filtra
