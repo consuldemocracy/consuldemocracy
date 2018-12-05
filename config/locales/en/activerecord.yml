@@ -76,6 +76,9 @@ en:
       site_customization/content_block:
         one: Custom content block
         other: Custom content blocks
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "Process"
         other: "Processes"
