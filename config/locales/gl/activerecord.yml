@@ -76,9 +76,6 @@ gl:
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versións borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
