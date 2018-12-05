@@ -73,9 +73,6 @@ sv:
       legislation/draft_versions:
         one: "Utkastversion"
         other: "Utkastversioner"
-      legislation/draft_texts:
-        one: "Utkast"
-        other: "Utkast"
       legislation/questions:
         one: "Fråga"
         other: "Frågor"
