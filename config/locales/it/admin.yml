@@ -1009,7 +1009,7 @@ it:
       search:
         title: Cerca Organizzazioni
         no_results: Nessuna organizzazione trovata.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtra
         filters:

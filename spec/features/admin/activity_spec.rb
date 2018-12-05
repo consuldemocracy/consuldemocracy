@@ -53,7 +53,7 @@ feature 'Admin activity' do
     scenario "Shows admin restores" do
       proposal = create(:proposal, :hidden)
 
-      visit admin_proposals_path
+      visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
         click_on "Restore"

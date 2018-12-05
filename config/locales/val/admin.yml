@@ -972,7 +972,7 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtre
         filters:
