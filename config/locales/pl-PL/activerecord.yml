@@ -6,16 +6,6 @@ pl:
         few: "Inwestycje"
         many: "Inwestycji"
         other: "Inwestycji"
-      budget/investment/milestone:
-        one: "kamień milowy"
-        few: "kamienie milowe"
-        many: "kamieni milowych"
-        other: "kamieni milowych"
-      budget/investment/status:
-        one: "Etap inwestycji"
-        few: "Etapy inwestycji"
-        many: "Etapów inwestycji"
-        other: "Etapów inwestycji"
       comment:
         one: "Komentarz"
         few: "Komentarze"
@@ -158,14 +148,6 @@ pl:
         organization_name: "Jeśli wnioskujesz w imieniu zespołu/organizacji, lub w imieniu większej liczby osób, wpisz ich nazwę"
         image: "Opisowy obraz wniosku"
         image_title: "Tytuł obrazu"
-      budget/investment/milestone:
-        status_id: "Bieżący stan inwestycji (opcjonalnie)"
-        title: "Tytuł"
-        description: "Opis (opcjonalnie, jeśli istnieje przydzielony stan)"
-        publication_date: "Data publikacji"
-      budget/investment/status:
-        name: "Nazwa"
-        description: "Opis (opcjonalnie)"
       budget/heading:
         name: "Nazwa nagłówka"
         price: "Koszt"
