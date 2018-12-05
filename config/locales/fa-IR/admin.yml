@@ -860,15 +860,6 @@ fa:
       search:
         title: جستجو سازمان ها
         no_results: هیچ سازمان یافت نشد
-    proposals:
-      index:
-        filter: فیلتر
-        filters:
-          all: همه
-          with_confirmed_hide: تایید
-          without_confirmed_hide: انتظار
-        title: طرح های پنهان
-        no_hidden_proposals: پیشنهادات مخفی وجود ندارد.
     settings:
       flash:
         updated: ارزش به روز شد
