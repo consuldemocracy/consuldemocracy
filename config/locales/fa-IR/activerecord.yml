@@ -10,9 +10,6 @@ fa:
       budget/investment:
         one: "سرمایه گذاری"
         other: "سرمایه گذاری ها"
-      budget/investment/milestone:
-        one: "نقطه عطف"
-        other: "نقاط عطف"
       comment:
         one: "توضیح"
         other: "توضیحات"
@@ -119,9 +116,6 @@ fa:
         organization_name: "اگر شما به نام یک گروه / سازمان، یا از طرف افراد بیشتری پیشنهاد می کنید، نام آنها را بنویسید."
         image: "تصویر طرح توصیفی"
         image_title: "عنوان تصویر"
-      budget/investment/milestone:
-        title: "عنوان"
-        publication_date: "تاریخ انتشار"
       budget/heading:
         name: "عنوان نام"
         price: "قیمت"
