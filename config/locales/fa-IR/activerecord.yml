@@ -70,9 +70,6 @@ fa:
       legislation/draft_versions:
         one: "نسخه پیش نویس"
         other: "نسخه های پیش نویس"
-      legislation/draft_texts:
-        one: " پیش نویس"
-        other: " پیش نویس ها"
       legislation/questions:
         one: "سوال"
         other: "سوالات"
