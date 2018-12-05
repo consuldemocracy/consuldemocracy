@@ -83,7 +83,7 @@ zh-CN:
       title: 无障碍功能
       description: |-
         网络无障碍功能指所有人都可以访问网络及其内容，以克服可能出现的残疾障碍（身体，智力或技术）或者是来自使用环境（技术或者环境）的障碍。
-        
+
         当网站在设计时已考虑到无障碍功能，所有用户都可以在同等条件下访问内容，例如：
       examples:
         - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
