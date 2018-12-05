@@ -1011,15 +1011,6 @@ pl:
       search:
         title: Szukaj organizacji
         no_results: Nie znaleziono organizacji.
-    proposals:
-      index:
-        filter: Filtr
-        filters:
-          all: Wszystko
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
-        title: Ukryte wnioski
-        no_hidden_proposals: Brak ukrytych wniosków.
     proposal_notifications:
       index:
         filter: Filtr
