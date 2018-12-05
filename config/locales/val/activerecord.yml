@@ -76,9 +76,6 @@ val:
       legislation/draft_versions:
         one: "Versió esborrany"
         other: "Versions esborrany"
-      legislation/draft_texts:
-        one: "Esborrany"
-        other: "Esborranys"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntes"
