@@ -4,12 +4,6 @@ it:
       budget:
         one: "Bilancio"
         other: "Bilanci"
-      budget/investment/milestone:
-        one: "traguardo"
-        other: "traguardi"
-      budget/investment/status:
-        one: "Status dell’investimento"
-        other: "Status dell’investimento"
       tag:
         one: "Etichetta"
         other: "Etichette"
@@ -81,14 +75,6 @@ it:
         organization_name: "Se presenti una proposta a nome di un collettivo o di un’organizzazione, ovvero per conto di più persone, indicane il nome"
         image: "Immagine descrittiva della proposta"
         image_title: "Titolo dell’immagine"
-      budget/investment/milestone:
-        status_id: "Stato attuale dell’investimento (facoltativo)"
-        title: "Titolo"
-        description: "Descrizione (facoltativa se c’è gia uno stato assegnato)"
-        publication_date: "Data di pubblicazione"
-      budget/investment/status:
-        name: "Nome"
-        description: "Descrizione (facoltativa)"
       budget/heading:
         name: "Intestazione"
         price: "Prezzo"
