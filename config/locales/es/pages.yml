@@ -39,7 +39,7 @@ es:
       title: Accesibilidad
       description: |-
         La accesibilidad web se refiere a la posibilidad de acceso a la web y a sus contenidos por todas las personas, independientemente de las discapacidades (físicas, intelectuales o técnicas) que puedan presentar o de las que se deriven del contexto de uso (tecnológicas o ambientales).
-        
+
         Cuando los sitios web están diseñados pensando en la accesibilidad, todos los usuarios pueden acceder en condiciones de igualdad a los contenidos, por ejemplo:
       examples:
         - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
