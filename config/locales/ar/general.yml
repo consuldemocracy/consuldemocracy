@@ -2,8 +2,13 @@ ar:
   account:
     show:
       notifications: إشعارات
+      public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       email_digest_label: استلام ملخص عن إشعارات مقترح
+      user_permission_debates: المشاركة بالحوارات
+      user_permission_info: من خلال حسابك يمكنك...
       user_permission_proposal: انشاء مقترحات جديدة
+      user_permission_support_proposal: دعم مقترحات
+      user_permission_title: المشاركة
   comments:
     orders:
       newest: الأحدث أولاً
