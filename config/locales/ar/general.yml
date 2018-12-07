@@ -203,6 +203,13 @@ ar:
       deleted_debate: تم حذف هذا الحوار
       deleted_proposal: تم حذف هذا المقترح
       deleted_budget_investment: تم حذف هذا المشروع الاستثماري
+      proposals: المقترحات
+      debates: الحوارات
+      budget_investments: استثمارات الميزانية
+      comments: التعليقات
+      actions: الإجراءات
+      no_activity: لا يوجد اجراءات للمستخدم
+      no_private_messages: "لا يمكن ارسال رسالة خاصة لهذا المسنخدم."
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
     proposals:
       send_notification: "إرسال إشعار"
