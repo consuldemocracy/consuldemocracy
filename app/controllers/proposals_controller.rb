@@ -197,7 +197,7 @@ class ProposalsController < ApplicationController
     def login_user!
       if current_user.present?
         @signed_in_before_voting = true
-      elsif newsletter_vote? && newsletter_user.present? && newsletter_user.level_two_or_three_verified?
+      elsif newsletter_vote? && newsletter_user&.can?(:newsletter_vote, Proposal)
         sign_in(:user, newsletter_user)
       end
     end

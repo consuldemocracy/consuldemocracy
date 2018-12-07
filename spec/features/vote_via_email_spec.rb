@@ -65,5 +65,14 @@ feature 'Vote via email' do
       expect(page.current_path).to eq("/users/sign_in")
     end
 
+    scenario "Underaged user" do
+      @manuela.update(newsletter_token: "123456", date_of_birth: 6.years.ago)
+
+      visit vote_proposal_path(@proposal, newsletter_token: "123456")
+
+      expect(page).to have_content "You must sign in or register to continue"
+      expect(page).to have_current_path "/users/sign_in"
+    end
+
   end
 end
