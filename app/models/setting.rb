@@ -121,5 +121,9 @@ class Setting < ApplicationRecord
         "youtube_handle": nil
       }
     end
+
+    def reset_defaults
+      defaults.each { |name, value| self[name] = value }
+    end
   end
 end
