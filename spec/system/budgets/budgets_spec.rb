@@ -319,6 +319,22 @@ describe "Budgets" do
         expect(page).to have_css(".map-icon", count: 1, visible: :all)
       end
     end
+
+    scenario "when the marker clustering feature is enabled the map shows clusters instead of markers" do
+      Setting["map.feature.marker_clustering"] = true
+      create_list(:budget_investment, 3, :selected, :with_map_location, heading: heading)
+
+      visit budgets_path
+
+      within ".map-location" do
+        expect(page).to have_css ".marker-cluster div span", text: "3"
+        expect(page).not_to have_css ".map-icon"
+
+        find(".marker-cluster").click
+
+        expect(page).to have_css ".map-icon", count: 3
+      end
+    end
   end
 
   context "Show" do
