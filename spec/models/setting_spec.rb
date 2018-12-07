@@ -117,4 +117,60 @@ describe Setting do
       expect(Setting.all).to eq all_settings
     end
   end
+
+  describe ".add_new_settings" do
+    context "default settings with strings" do
+      before do
+        allow(Setting).to receive(:defaults).and_return({ stub: "stub" })
+      end
+
+      it "creates the setting if it doesn't exist" do
+        expect(Setting.where(key: :stub)).to be_empty
+
+        Setting.add_new_settings
+
+        expect(Setting.where(key: :stub)).not_to be_empty
+        expect(Setting.find_by(key: :stub).value).to eq "stub"
+      end
+
+      it "doesn't modify custom values" do
+        Setting["stub"] = "custom"
+
+        Setting.add_new_settings
+
+        expect(Setting.find_by(key: :stub).value).to eq "custom"
+      end
+
+      it "doesn't modify custom nil values" do
+        Setting["stub"] = nil
+
+        Setting.add_new_settings
+
+        expect(Setting.find_by(key: :stub).value).to be_nil
+      end
+    end
+
+    context "nil default settings" do
+      before do
+        allow(Setting).to receive(:defaults).and_return({ stub: nil })
+      end
+
+      it "creates the setting if it doesn't exist" do
+        expect(Setting.where(key: :stub)).to be_empty
+
+        Setting.add_new_settings
+
+        expect(Setting.where(key: :stub)).not_to be_empty
+        expect(Setting.find_by(key: :stub).value).to be_nil
+      end
+
+      it "doesn't modify custom values" do
+        Setting["stub"] = "custom"
+
+        Setting.add_new_settings
+
+        expect(Setting.find_by(key: :stub).value).to eq "custom"
+      end
+    end
+  end
 end
