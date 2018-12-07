@@ -9,7 +9,13 @@ ar:
       user_permission_proposal: انشاء مقترحات جديدة
       user_permission_support_proposal: دعم مقترحات
       user_permission_title: المشاركة
+      user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
+      user_permission_verify_info: "* فقط للمستخدمين في التعداد."
+      user_permission_votes: المشاركة في التصويت النهائي
+      username_label: اسم المستخدم
   comments:
+    comment:
+      user_deleted: تم حذف المستخدم
     orders:
       newest: الأحدث أولاً
       most_commented: الأكثر تعليقات
@@ -44,9 +50,13 @@ ar:
       select_order: ترتيب حسب
     new:
       info_link: انشاء مقترح جديدة
+  errors:
+    messages:
+      user_not_found: المستخدم غير موجود
   form:
     policy: سياسة الخصوصية
     proposal_notification: "إشعار"
+    user: الحساب
   layouts:
     application:
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
@@ -71,6 +81,8 @@ ar:
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
+    finish_signup:
+      username_warning: "بسبب تغييرات في طريقة التفاعل مع الشبكات الاجتماعية، فمن الممكن أن يكون اسم المستخدم الخاص بك 'مستخدم من قبل '. إذا كان هذا هو الحالة ، الرجاء اختيار اسم مستخدم مختلف."
   proposals:
     retire_options:
       unfeasible: غير مجدي
@@ -169,8 +181,28 @@ ar:
   stats:
     index:
       votes: مجموع الأصوات
+      verified_users: مستخدمين تم التحقق منهم
+      unverified_users: مستخدمين غير متحقق منهم
   users:
+    direct_messages:
+      new:
+        body_label: رسالة
+        direct_messages_bloqued: "هذا المستخدم اختار عدم تلقي رسائل مباشرة"
+        submit_button: إرسال
+        title: إرسال رسالة خاصة إلى %{receiver}
+        title_label: العنوان
+        verified_only: لإرسال رسالة خاصة %{verify_account}
+        verify_account: تحقق من حسابك
+        authenticate: تحتاج الى %{signin} او %{signup} للمتابعة.
+        signin: تسجيل الدخول
+        signup: انشاء حساب
+      show:
+        receiver: تم إرسال رسالة إلى %{receiver}
     show:
+      deleted: محذوف
+      deleted_debate: تم حذف هذا الحوار
+      deleted_proposal: تم حذف هذا المقترح
+      deleted_budget_investment: تم حذف هذا المشروع الاستثماري
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
     proposals:
       send_notification: "إرسال إشعار"
