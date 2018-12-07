@@ -34,7 +34,10 @@ ar:
         resend_sms_link: اضغط هنا لاعادة الارسال
         submit_button: ارسال
     user_permission_debates: المشاركة بالحوارات
+    user_permission_info: التحقق من معلومات سيمنحك...
     user_permission_proposal: انشاء مقترحات جديدة
+    user_permission_support_proposal: دعم مقترحات *
+    user_permission_votes: المشاركة في التصويت النهائي *
     verified_user:
       form:
         submit_button: إرسال الرمز
@@ -43,3 +46,4 @@ ar:
         explanation: الرجاء اختيار طريقة إرسال رمز التأكيد.
         phone_title: أرقام الهاتف
         title: المعلومات المتاحة
+        use_another_phone: استخدام هاتف آخر
