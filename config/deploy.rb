@@ -45,6 +45,7 @@ namespace :deploy do
   #before :starting, "rvm1:install:ruby" # install Ruby and create gemset
   #before :starting, "install_bundler_gem" # install bundler gem
 
+  after "deploy:migrate", "add_new_settings"
   after :publishing, "deploy:restart"
   after :published, "delayed_job:restart"
   after :published, "refresh_sitemap"
@@ -63,6 +64,16 @@ task :refresh_sitemap do
     within release_path do
       with rails_env: fetch(:rails_env) do
         execute :rake, "sitemap:refresh:no_ping"
+      end
+    end
+  end
+end
+
+task :add_new_settings do
+  on roles(:app) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "settings:add_new_settings"
       end
     end
   end
