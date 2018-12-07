@@ -264,7 +264,7 @@ feature 'Legislation' do
     end
 
     context 'proposals phase' do
-      scenario 'not open' do
+      scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, :upcoming_proposals_phase)
 
         visit legislation_process_proposals_path(process)
