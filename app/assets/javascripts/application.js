@@ -72,6 +72,7 @@
 //= require tag_autocomplete
 //= require polls_admin
 //= require leaflet
+//= require leaflet.markercluster
 //= require map
 //= require polls
 //= require sortable

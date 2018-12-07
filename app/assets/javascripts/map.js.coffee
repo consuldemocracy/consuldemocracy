@@ -27,7 +27,8 @@ App.Map =
     removeMarkerSelector     = $(element).data('marker-remove-selector')
     addMarkerInvestments     = $(element).data('marker-investments-coordinates')
     editable                 = $(element).data('marker-editable')
-    marker                   = null;
+    marker                   = null
+    markers                  = L.markerClusterGroup()
     markerIcon               = L.divIcon(
                                   className: 'map-marker'
                                   iconSize:     [30, 30]
@@ -39,7 +40,8 @@ App.Map =
       marker  = L.marker(markerLatLng, { icon: markerIcon, draggable: editable })
       if editable
         marker.on 'dragend', updateFormfields
-      marker.addTo(map)
+      markers.addLayer(marker)
+      map.addLayer(markers)
       return marker
 
     removeMarker = (e) ->
