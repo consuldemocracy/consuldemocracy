@@ -7,114 +7,94 @@ if Administrator.count == 0 && !Rails.env.test?
   admin.create_administrator
 end
 
-# Names for the moderation console, as a hint for moderators
-# to know better how to assign users with official positions
-Setting["official_level_1_name"] = "Cargo oficial 1"
-Setting["official_level_2_name"] = "Cargo oficial 2"
-Setting["official_level_3_name"] = "Cargo oficial 3"
-Setting["official_level_4_name"] = "Cargo oficial 4"
-Setting["official_level_5_name"] = "Cargo oficial 5"
+default_settings = {
+  # Names for the moderation console, as a hint for moderators
+  # to know better how to assign users with official positions
+  "official_level_1_name": "Cargo oficial 1",
+  "official_level_2_name": "Cargo oficial 2",
+  "official_level_3_name": "Cargo oficial 3",
+  "official_level_4_name": "Cargo oficial 4",
+  "official_level_5_name": "Cargo oficial 5",
+  "max_ratio_anon_votes_on_debates": 50,
+  "max_votes_for_debate_edit": 1000,
+  "max_votes_for_proposal_edit": 1000,
+  "comments_body_max_length": 1000,
+  "proposal_code_prefix": "CONSUL",
+  "votes_for_proposal_success": 53726,
+  "months_to_archive_proposals": 12,
+  # Users with this email domain will automatically be marked as level 1 officials
+  # Emails under the domain's subdomains will also be included
+  "email_domain_for_officials": "",
+  # Code to be included at the top (inside <head>) of every page (useful for tracking)
+  "html.per_page_code_head": "",
+  # Code to be included at the top (inside <body>) of every page
+  "html.per_page_code_body": "",
+  "twitter_handle": nil,
+  "twitter_hashtag": nil,
+  "facebook_handle": nil,
+  "youtube_handle": nil,
+  "telegram_handle": nil,
+  "instagram_handle": nil,
+  "url": "http://example.com", # Public-facing URL of the app.
+  # CONSUL installation's organization name
+  "org_name": "CONSUL",
+  "meta_title": nil,
+  "meta_description": nil,
+  "meta_keywords": nil,
+  "process.debates": true,
+  "process.proposals": true,
+  "process.polls": true,
+  "process.budgets": true,
+  "process.legislation": true,
+  "feature.featured_proposals": nil,
+  "feature.twitter_login": true,
+  "feature.facebook_login": true,
+  "feature.google_login": true,
+  "feature.public_stats": true,
+  "feature.signature_sheets": true,
+  "feature.user.recommendations": true,
+  "feature.user.recommendations_on_debates": true,
+  "feature.user.recommendations_on_proposals": true,
+  "feature.user.skip_verification": "true",
+  "feature.community": true,
+  "feature.map": nil,
+  "feature.allow_images": true,
+  "feature.allow_attached_documents": true,
+  "feature.help_page": true,
+  "proposal_notification_minimum_interval_in_days": 3,
+  "direct_message_max_per_day": 3,
+  "mailer_from_name": "CONSUL",
+  "mailer_from_address": "noreply@consul.dev",
+  "min_age_to_participate": 16,
+  "featured_proposals_number": 3,
+  "map.latitude": 51.48,
+  "map.longitude": 0.0,
+  "map.zoom": 10,
+  "related_content_score_threshold": -0.3,
+  "homepage.widgets.feeds.proposals": true,
+  "homepage.widgets.feeds.debates": true,
+  "homepage.widgets.feeds.processes": true,
+  "hot_score_period_in_days": 31,
+  "proposals.successful_proposal_id": nil,
+  "proposals.poll_short_title": nil,
+  "proposals.poll_description": nil,
+  "proposals.poll_link": nil,
+  "proposals.email_short_title": nil,
+  "proposals.email_description": nil,
+  "proposals.poster_short_title": nil,
+  "proposals.poster_description": nil,
+  "dashboard.emails": nil
+}
 
-Setting["max_ratio_anon_votes_on_debates"] = 50
-
-Setting["max_votes_for_debate_edit"] = 1000
-
-Setting["max_votes_for_proposal_edit"] = 1000
-
-Setting["comments_body_max_length"] = 1000
-
-Setting["proposal_code_prefix"] = "CONSUL"
-
-Setting["votes_for_proposal_success"] = 53726
-
-Setting["months_to_archive_proposals"] = 12
-
-# Users with this email domain will automatically be marked as level 1 officials
-# Emails under the domain's subdomains will also be included
-Setting["email_domain_for_officials"] = ""
-
-# Code to be included at the top (inside <head>) of every page (useful for tracking)
-Setting["html.per_page_code_head"] = ""
-
-# Code to be included at the top (inside <body>) of every page
-Setting["html.per_page_code_body"] = ""
-
-Setting["twitter_handle"] = nil
-Setting["twitter_hashtag"] = nil
-Setting["facebook_handle"] = nil
-Setting["youtube_handle"] = nil
-Setting["telegram_handle"] = nil
-Setting["instagram_handle"] = nil
-
-Setting["url"] = "http://example.com" # Public-facing URL of the app.
-
-# CONSUL installation's organization name
-Setting["org_name"] = "CONSUL"
-
-Setting["meta_title"] = nil
-Setting["meta_description"] = nil
-Setting["meta_keywords"] = nil
-
-Setting["process.debates"] = true
-Setting["process.proposals"] = true
-Setting["process.polls"] = true
-Setting["process.budgets"] = true
-Setting["process.legislation"] = true
-
-Setting["feature.featured_proposals"] = nil
-Setting["feature.twitter_login"] = true
-Setting["feature.facebook_login"] = true
-Setting["feature.google_login"] = true
-Setting["feature.public_stats"] = true
-Setting["feature.signature_sheets"] = true
-Setting["feature.user.recommendations"] = true
-Setting["feature.user.recommendations_on_debates"] = true
-Setting["feature.user.recommendations_on_proposals"] = true
-Setting["feature.user.skip_verification"] = "true"
-Setting["feature.community"] = true
-Setting["feature.map"] = nil
-Setting["feature.allow_images"] = true
-Setting["feature.allow_attached_documents"] = true
-Setting["feature.help_page"] = true
-
-Setting["proposal_notification_minimum_interval_in_days"] = 3
-Setting["direct_message_max_per_day"] = 3
-
-Setting["mailer_from_name"] = "CONSUL"
-Setting["mailer_from_address"] = "noreply@consul.dev"
-
-Setting["min_age_to_participate"] = 16
-
-Setting["featured_proposals_number"] = 3
-
-Setting["map.latitude"] = 51.48
-Setting["map.longitude"] = 0.0
-Setting["map.zoom"] = 10
-
-Setting["related_content_score_threshold"] = -0.3
-
-Setting["homepage.widgets.feeds.proposals"] = true
-Setting["homepage.widgets.feeds.debates"] = true
-Setting["homepage.widgets.feeds.processes"] = true
-
-Setting["hot_score_period_in_days"] = 31
+default_settings.each do |name, value|
+  Setting[name] = value
+end
 
 WebSection.create(name: "homepage")
 WebSection.create(name: "debates")
 WebSection.create(name: "proposals")
 WebSection.create(name: "budgets")
 WebSection.create(name: "help_page")
-
-Setting["proposals.successful_proposal_id"] = nil
-Setting["proposals.poll_short_title"] = nil
-Setting["proposals.poll_description"] = nil
-Setting["proposals.poll_link"] = nil
-Setting["proposals.email_short_title"] = nil
-Setting["proposals.email_description"] = nil
-Setting["proposals.poster_short_title"] = nil
-Setting["proposals.poster_description"] = nil
-
-Setting["dashboard.emails"] = nil
 
 # Default custom pages
 load Rails.root.join("db", "pages.rb")
