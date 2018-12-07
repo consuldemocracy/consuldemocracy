@@ -168,6 +168,32 @@ feature 'Legislation' do
       end
     end
 
+    context 'homepage' do
+      scenario 'enabled' do
+        process = create(:legislation_process, homepage_enabled: true,
+                                               homepage: 'This is the process homepage',
+                                               debate_start_date: Date.current + 1.day,
+                                               debate_end_date: Date.current + 2.days)
+
+        visit legislation_process_path(process)
+
+        expect(page).to     have_content("This is the process homepage")
+        expect(page).to_not have_content("Participate in the debate")
+      end
+
+      scenario 'disabled', :with_frozen_time do
+        process = create(:legislation_process, homepage_enabled: false,
+                                               homepage: 'This is the process homepage',
+                                               debate_start_date: Date.current + 1.day,
+                                               debate_end_date: Date.current + 2.days)
+
+        visit legislation_process_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+        expect(page).to_not have_content("This is the process homepage")
+      end
+    end
+
     context 'debate phase' do
       scenario 'not open', :with_frozen_time do
         process = create(:legislation_process, debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
