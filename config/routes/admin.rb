@@ -209,6 +209,7 @@ namespace :admin do
       end
       resources :draft_versions
       resources :milestones
+      resource :homepage, only: [:edit, :update]
     end
   end
 
