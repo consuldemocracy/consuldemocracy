@@ -1,0 +1,47 @@
+<%= render "admin/shared/globalize_locales", resource: @process  %>
+
+<%= translatable_form_for [:admin, @process], url: url, html: {data: {watch_changes: true}} do |f| %>
+
+  <% if @process.errors.any? %>
+
+  <div id="error_explanation" data-alert class="callout alert" data-closable>
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <strong>
+      <%= @process.errors.count %>
+      <%= t("admin.legislation.processes.errors.form.error", count: @process.errors.count) %>
+    </strong>
+  </div>
+
+  <% end %>
+
+  <div class="small-12 column margin-top">
+    <%= f.check_box :homepage_enabled, checked: @process.homepage_enabled?, label: t("admin.legislation.processes.form.homepage_enabled") %>
+  </div>
+
+  <div class="ckeditor small-12 column">
+    <label><%= t("admin.legislation.processes.form.homepage") %></label>
+    <p class="help-text"><%= t("admin.legislation.processes.form.homepage_description") %></p>
+    <%= f.cktext_area :homepage,
+                      label: false,
+                      ckeditor: { language: I18n.locale, height: 500, toolbar: 'admin' } %>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 column end">
+      <%= translations_form.cktext_area :homepage,
+                                        ckeditor: { height: 500, toolbar: 'admin' },
+                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-3 column clear end">
+    <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
+  </div>
+<% end %>
