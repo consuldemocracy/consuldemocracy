@@ -15,25 +15,18 @@ Setting["official_level_3_name"] = "Cargo oficial 3"
 Setting["official_level_4_name"] = "Cargo oficial 4"
 Setting["official_level_5_name"] = "Cargo oficial 5"
 
-# Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
 
-# Max votes where a debate is still editable
 Setting["max_votes_for_debate_edit"] = 1000
 
-# Max votes where a proposal is still editable
 Setting["max_votes_for_proposal_edit"] = 1000
 
-# Max length for comments
 Setting["comments_body_max_length"] = 1000
 
-# Prefix for the Proposal codes
 Setting["proposal_code_prefix"] = "CONSUL"
 
-# Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
 
-# Months to archive proposals
 Setting["months_to_archive_proposals"] = 12
 
 # Users with this email domain will automatically be marked as level 1 officials
@@ -46,7 +39,6 @@ Setting["html.per_page_code_head"] = ""
 # Code to be included at the top (inside <body>) of every page
 Setting["html.per_page_code_body"] = ""
 
-# Social settings
 Setting["twitter_handle"] = nil
 Setting["twitter_hashtag"] = nil
 Setting["facebook_handle"] = nil
@@ -54,25 +46,21 @@ Setting["youtube_handle"] = nil
 Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
 
-# Public-facing URL of the app.
-Setting["url"] = "http://example.com"
+Setting["url"] = "http://example.com" # Public-facing URL of the app.
 
 # CONSUL installation's organization name
 Setting["org_name"] = "CONSUL"
 
-# Meta tags for SEO
 Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
-# Processes
 Setting["process.debates"] = true
 Setting["process.proposals"] = true
 Setting["process.polls"] = true
 Setting["process.budgets"] = true
 Setting["process.legislation"] = true
 
-# Feature flags
 Setting["feature.featured_proposals"] = nil
 Setting["feature.twitter_login"] = true
 Setting["feature.facebook_login"] = true
@@ -89,34 +77,26 @@ Setting["feature.allow_images"] = true
 Setting["feature.allow_attached_documents"] = true
 Setting["feature.help_page"] = true
 
-# Proposal notifications
 Setting["proposal_notification_minimum_interval_in_days"] = 3
 Setting["direct_message_max_per_day"] = 3
 
-# Email settings
 Setting["mailer_from_name"] = "CONSUL"
 Setting["mailer_from_address"] = "noreply@consul.dev"
 
-# Verification settings
 Setting["min_age_to_participate"] = 16
 
-# Featured proposals
 Setting["featured_proposals_number"] = 3
 
-# City map feature default configuration (Greenwich)
 Setting["map.latitude"] = 51.48
 Setting["map.longitude"] = 0.0
 Setting["map.zoom"] = 10
 
-# Related content
 Setting["related_content_score_threshold"] = -0.3
 
-# Homepage
 Setting["homepage.widgets.feeds.proposals"] = true
 Setting["homepage.widgets.feeds.debates"] = true
 Setting["homepage.widgets.feeds.processes"] = true
 
-# Votes hot_score configuration
 Setting["hot_score_period_in_days"] = 31
 
 WebSection.create(name: "homepage")
@@ -125,7 +105,6 @@ WebSection.create(name: "proposals")
 WebSection.create(name: "budgets")
 WebSection.create(name: "help_page")
 
-# Proposals
 Setting["proposals.successful_proposal_id"] = nil
 Setting["proposals.poll_short_title"] = nil
 Setting["proposals.poll_description"] = nil
@@ -135,7 +114,6 @@ Setting["proposals.email_description"] = nil
 Setting["proposals.poster_short_title"] = nil
 Setting["proposals.poster_description"] = nil
 
-# Dashboard
 Setting["dashboard.emails"] = nil
 
 # Default custom pages
