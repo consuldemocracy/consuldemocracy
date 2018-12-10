@@ -86,6 +86,7 @@ zh-CN:
         table_edit_budget: 编辑
         edit_groups: 编辑标题组
         edit_budget: 编辑预算
+        no_budgets: "没有开放的预算。"
       create:
         notice: 新的参与性预算创建成功！
       update:
@@ -335,6 +336,7 @@ zh-CN:
           without_confirmed_hide: 有待
         title: 隐藏的用户
         user: 用户
+        no_hidden_users: 没有隐藏的用户。
       show:
         email: '电子邮件：'
         hidden_at: '隐藏于：'
@@ -369,6 +371,7 @@ zh-CN:
           enabled: 已启用
           process: 进程
           debate_phase: 辩论阶段
+          draft_phase: 草案阶段
           proposals_phase: 提议阶段
           start: 开始
           end: 结束
