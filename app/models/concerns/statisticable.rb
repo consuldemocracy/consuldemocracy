@@ -15,8 +15,9 @@ module Statisticable
     private
 
       def calculate_percentage(fraction, total)
-        percent = fraction / total.to_f
-        percent.nan? ? 0.0 : (percent * 100).round(3)
+        return 0.0 if total.zero?
+
+        (fraction * 100.0 / total).round(3)
       end
   end
 
