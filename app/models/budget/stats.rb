@@ -188,11 +188,6 @@ class Budget::Stats
       calculate_percentage(participants, population)
     end
 
-    def calculate_percentage(fraction, total)
-      percent = fraction / total.to_f
-      percent.nan? ? 0.0 : (percent * 100).round(3)
-    end
-
     def supports(supportable)
       ActsAsVotable::Vote.where(votable_type: 'Budget::Investment', votable_id: supportable.investments.pluck(:id))
     end
