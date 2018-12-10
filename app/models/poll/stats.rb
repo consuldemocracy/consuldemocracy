@@ -3,14 +3,13 @@ class Poll::Stats
   include StatsHelper
   alias_method :poll, :resource
 
-  def generate
-    stats = %w[total_participants total_participants_web total_web_valid total_web_white total_web_null
-               total_participants_booth total_booth_valid total_booth_white total_booth_null
-               total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
-               total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage
-               null_percentage_web null_percentage_booth total_null_percentage total_participants_web_percentage
-               total_participants_booth_percentage]
-    stats.map { |stat_name| [stat_name.to_sym, send(stat_name)] }.to_h
+  def stats_methods
+    %w[total_participants total_participants_web total_web_valid total_web_white total_web_null
+       total_participants_booth total_booth_valid total_booth_white total_booth_null
+       total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
+       total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage
+       null_percentage_web null_percentage_booth total_null_percentage total_participants_web_percentage
+       total_participants_booth_percentage]
   end
 
   private

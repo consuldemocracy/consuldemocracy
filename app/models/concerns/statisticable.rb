@@ -7,5 +7,9 @@ module Statisticable
     def initialize(resource)
       @resource = resource
     end
+
+    def generate
+      stats_methods.map { |stat_name| [stat_name.to_sym, send(stat_name)] }.to_h
+    end
   end
 end
