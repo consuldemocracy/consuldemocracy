@@ -11,6 +11,13 @@ module Statisticable
     def generate
       self.class.stats_methods.map { |stat_name| [stat_name, send(stat_name)] }.to_h
     end
+
+    private
+
+      def calculate_percentage(fraction, total)
+        percent = fraction / total.to_f
+        percent.nan? ? 0.0 : (percent * 100).round(3)
+      end
   end
 
   class_methods do
