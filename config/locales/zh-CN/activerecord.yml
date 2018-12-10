@@ -8,9 +8,9 @@ zh-CN:
       budget/investment:
         other: "投资"
       milestone:
-        other: "里程碑"
+        other: "投资"
       milestone/status:
-        other: "里程碑状态"
+        other: "投资状态"
       comment:
         other: "意见"
       debate:
@@ -93,6 +93,14 @@ zh-CN:
         organization_name: "如果你是以集体/组织的名义或者代表更多的人提出建议，写下它的名字。"
         image: "建议说明性图像"
         image_title: "图像标题"
+      milestone:
+        status_id: "当前投资状况（可选）"
+        title: "标题"
+        description: "说明（如果指定了状态，则可选）"
+        publication_date: "发表日期"
+      milestone/status:
+        name: "名称"
+        description: "说明（可选）"
       budget/heading:
         name: "标题名称"
         price: "价格"
@@ -139,11 +147,17 @@ zh-CN:
         geozone_restricted: "受geozone（地理区域）限制"
         summary: "总结"
         description: "说明"
+      poll/translation:
+        name: "名称"
+        summary: "总结"
+        description: "说明"
       poll/question:
         title: "问题"
         summary: "总结"
         description: "说明"
         external_url: "链接到其他文档"
+      poll/question/translation:
+        title: "问题"
       signature_sheet:
         signable_type: "可签名类型"
         signable_id: "可签名ID"
@@ -159,6 +173,10 @@ zh-CN:
         more_info_flag: 在帮助页面中显示
         print_content_flag: 打印内容按钮
         locale: 语言
+      site_customization/page/translation:
+        title: 标题
+        subtitle: 副标题
+        content: 内容
       site_customization/image:
         name: 名字
         image: 图像
@@ -175,16 +193,27 @@ zh-CN:
         end_date: 结束日期
         debate_start_date: 辩论开始日期
         debate_end_date: 辩论结束日期
+        draft_start_date: 草稿开始日期
+        draft_end_date: 草稿结束日期
         draft_publication_date: 草稿发布日期
         allegations_start_date: 指控开始日期
         allegations_end_date: 指控结束日期
         result_publication_date: 最终结果发布日期
+      legislation/process/translation:
+        title: 进程标题
+        summary: 总结
+        description: 说明
+        additional_info: 更多信息
       legislation/draft_version:
         title: 版本标题
         body: 文本
         changelog: 变化
         status: 状态
         final_version: 最后版本
+      legislation/draft_version/translation:
+        title: 版本标题
+        body: 文本
+        changelog: 更改
       legislation/question:
         title: 标题
         question_options: 选项
@@ -201,6 +230,9 @@ zh-CN:
       poll/question/answer:
         title: 回答
         description: 说明
+      poll/question/answer/translation:
+        title: 回答
+        description: 说明
       poll/question/answer/video:
         title: 标题
         url: 外部视频
@@ -209,12 +241,25 @@ zh-CN:
         subject: 主题
         from: 从
         body: 电子邮件内容
+      admin_notification:
+        segment_recipient: 收件人
+        title: 标题
+        link: 链接
+        body: 文本
+      admin_notification/translation:
+        title: 标题
+        body: 文本
       widget/card:
         label: 标签（可选）
         title: 标题
         description: 说明
         link_text: 链接文本
         link_url: 链接URL
+      widget/card/translation:
+        label: 标签（可选）
+        title: 标题
+        description: 说明
+        link_text: 链接文本
       widget/feed:
         limit: 项目数
     errors:
@@ -259,6 +304,8 @@ zh-CN:
               invalid_date_range: 必须在开始日期或之后
             debate_end_date:
               invalid_date_range: 必须在辩论开始日期或之后
+            draft_end_date:
+              invalid_date_range: 必须在草稿开始日期或之后
             allegations_end_date:
               invalid_date_range: 必须在指控开始日期或之后
         proposal:
