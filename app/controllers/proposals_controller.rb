@@ -6,7 +6,7 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
-  before_action :login_user!, only: :newsletter_vote
+  before_action :login_user_with_newsletter_token!, only: :newsletter_vote
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
@@ -194,7 +194,7 @@ class ProposalsController < ApplicationController
       end
     end
 
-    def login_user!
+    def login_user_with_newsletter_token!
       if current_user.present?
         @signed_in_before_voting = true
       elsif newsletter_vote? && newsletter_user&.can?(:newsletter_vote, Proposal)
