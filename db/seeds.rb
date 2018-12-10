@@ -132,3 +132,8 @@ Setting['feature.homepage.widgets.feeds.proposals'] = true
 Setting['feature.homepage.widgets.feeds.debates'] = true
 Setting['feature.homepage.widgets.feeds.processes'] = true
 
+WebSection.create(name: 'homepage')
+WebSection.create(name: 'debates')
+WebSection.create(name: 'proposals')
+WebSection.create(name: 'budgets')
+WebSection.create(name: 'help_page')

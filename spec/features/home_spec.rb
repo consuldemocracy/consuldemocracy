@@ -143,4 +143,24 @@ feature "Home" do
       "/html/body/div[@class='wrapper ']/comment()[contains(.,'ie-callout')]"
     end
   end
+  
+  
+  scenario 'if there are cards, the "featured" title will render' do
+    card = create(:widget_card,
+      title: "Card text",
+      description: "Card description",
+      link_text: "Link text",
+      link_url: "consul.dev"
+    )
+    
+    visit root_path
+
+    expect(page).to have_css(".title", text: "Featured")
+  end
+  
+  scenario 'if there are no cards, the "featured" title will not render' do
+    visit root_path
+    
+    expect(page).not_to have_css(".title", text: "Featured")
+  end
 end
