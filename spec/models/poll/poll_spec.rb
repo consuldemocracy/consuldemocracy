@@ -175,6 +175,24 @@ describe Poll do
     end
   end
 
+  describe "#voted_by?" do
+    it "return false if the user has not voted for this poll" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      expect(poll.voted_by?(user)).to eq(false)
+    end
+
+    it "returns true if the user has voted for this poll" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      voter = create(:poll_voter, user: user, poll: poll)
+
+      expect(poll.voted_by?(user)).to eq(true)
+    end
+  end
+
   describe "#voted_in_booth?" do
 
     it "returns true if the user has already voted in booth" do
