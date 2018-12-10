@@ -20,7 +20,8 @@ feature 'Admin legislation processes' do
 
     scenario 'Disabled with a feature flag' do
       Setting['feature.legislation'] = nil
-      expect{ visit admin_legislation_processes_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect{ visit admin_legislation_processes_path }
+      .to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
   end
@@ -55,12 +56,22 @@ feature 'Admin legislation processes' do
       fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
       fill_in 'legislation_process[end_date]', with: (base_date + 5.days).strftime("%d/%m/%Y")
 
-      fill_in 'legislation_process[debate_start_date]', with: base_date.strftime("%d/%m/%Y")
-      fill_in 'legislation_process[debate_end_date]', with: (base_date + 2.days).strftime("%d/%m/%Y")
-      fill_in 'legislation_process[draft_publication_date]', with: (base_date + 3.days).strftime("%d/%m/%Y")
-      fill_in 'legislation_process[allegations_start_date]', with: (base_date + 3.days).strftime("%d/%m/%Y")
-      fill_in 'legislation_process[allegations_end_date]', with: (base_date + 5.days).strftime("%d/%m/%Y")
-      fill_in 'legislation_process[result_publication_date]', with: (base_date + 7.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[debate_start_date]',
+               with: base_date.strftime("%d/%m/%Y")
+      fill_in 'legislation_process[debate_end_date]',
+               with: (base_date + 2.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[draft_start_date]',
+               with: (base_date - 3.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[draft_end_date]',
+               with: (base_date - 1.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[draft_publication_date]',
+               with: (base_date + 3.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[allegations_start_date]',
+               with: (base_date + 3.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[allegations_end_date]',
+               with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[result_publication_date]',
+               with: (base_date + 7.days).strftime("%d/%m/%Y")
 
       click_button 'Create process'
 
@@ -77,6 +88,47 @@ feature 'Admin legislation processes' do
 
       expect(page).to have_content 'An example legislation process'
       expect(page).to have_content 'Summary of the process'
+      expect(page).not_to have_content 'Describing the process'
+    end
+
+    scenario 'Legislation process in draft phase' do
+      visit admin_root_path
+
+      within('#side_menu') do
+        click_link "Collaborative Legislation"
+      end
+
+      expect(page).not_to have_content 'An example legislation process'
+
+      click_link "New process"
+
+      fill_in 'Process Title', with: 'An example legislation process in draft phase'
+      fill_in 'Summary', with: 'Summary of the process'
+      fill_in 'Description', with: 'Describing the process'
+
+      base_date = Date.current - 2.days
+      fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
+      fill_in 'legislation_process[end_date]', with: (base_date + 5.days).strftime("%d/%m/%Y")
+
+      fill_in 'legislation_process[draft_start_date]', with: base_date.strftime("%d/%m/%Y")
+      fill_in 'legislation_process[draft_end_date]', with: (base_date + 3.days).strftime("%d/%m/%Y")
+      check 'legislation_process[draft_phase_enabled]'
+
+      click_button 'Create process'
+
+      expect(page).to have_content 'An example legislation process in draft phase'
+      expect(page).to have_content 'Process created successfully'
+
+      click_link 'Click to visit'
+
+      expect(page).to have_content 'An example legislation process in draft phase'
+      expect(page).not_to have_content 'Summary of the process'
+      expect(page).to have_content 'Describing the process'
+
+      visit legislation_processes_path
+
+      expect(page).not_to have_content 'An example legislation process in draft phase'
+      expect(page).not_to have_content 'Summary of the process'
       expect(page).not_to have_content 'Describing the process'
     end
   end
