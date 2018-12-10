@@ -4,7 +4,7 @@ class Poll::Stats
   alias_method :poll, :resource
 
   def stats_methods
-    %w[total_participants total_participants_web total_web_valid total_web_white total_web_null
+    %i[total_participants total_participants_web total_web_valid total_web_white total_web_null
        total_participants_booth total_booth_valid total_booth_white total_booth_null
        total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
        total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage

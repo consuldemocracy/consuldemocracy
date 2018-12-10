@@ -3,7 +3,7 @@ class Budget::Stats
   alias_method :budget, :resource
 
   def stats_methods
-    %w[total_participants total_participants_support_phase total_participants_vote_phase
+    %i[total_participants total_participants_support_phase total_participants_vote_phase
       total_budget_investments total_votes total_selected_investments
       total_unfeasible_investments total_male_participants total_female_participants
       total_supports total_unknown_gender_or_age age_groups male_percentage
