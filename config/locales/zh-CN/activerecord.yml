@@ -7,6 +7,10 @@ zh-CN:
         other: "预算"
       budget/investment:
         other: "投资"
+      milestone:
+        other: "里程碑"
+      milestone/status:
+        other: "里程碑状态"
       comment:
         other: "意见"
       debate:
@@ -47,6 +51,8 @@ zh-CN:
         other: 自定义内容模块
       legislation/process:
         other: "进程"
+      legislation/proposal:
+        other: "提议"
       legislation/draft_versions:
         other: "草稿版本"
       legislation/questions:
