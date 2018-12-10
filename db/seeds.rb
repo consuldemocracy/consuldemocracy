@@ -144,3 +144,5 @@ Setting['feature.homepage.widgets.feeds.proposals'] = true
 Setting['feature.homepage.widgets.feeds.debates'] = true
 Setting['feature.homepage.widgets.feeds.processes'] = true
 
+# Votes hot_score configuration
+Setting.create(key: 'hot_score_period_in_days', value: 31)
