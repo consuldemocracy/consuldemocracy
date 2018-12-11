@@ -1,6 +1,4 @@
 es:
-  true_value: 'Si'
-  false_value: 'No'
   admin:
     header:
       title: Administración
@@ -1084,6 +1082,8 @@ es:
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
+      true_value: "Sí"
+      false_value: "No"
       booths_search:
         button: Buscar
         placeholder: Buscar urna por nombre
