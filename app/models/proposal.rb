@@ -166,14 +166,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates the hot_score because there is a before_save
+    save # update cache when it has a new comment
   end
 
   def calculate_hot_score
-    self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               total_votes,
-                                               total_votes,
-                                               comments_count)
+    self.hot_score = ScoreCalculator.hot_score(self)
   end
 
   def calculate_confidence_score
