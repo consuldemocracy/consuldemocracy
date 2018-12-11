@@ -219,8 +219,6 @@ de:
         tags: Tags
         user_tags: Benutzer*innentags
         undefined: Undefiniert
-        milestone: Meilenstein
-        new_milestone: Neuen Meilenstein erstellen
         compatibility:
           title: Kompatibilität
           "true": Inkompatibel
