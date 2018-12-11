@@ -220,8 +220,6 @@ sq:
         tags: Etiketimet
         user_tags: Përdorues të etiketuar
         undefined: E padefinuar
-        milestone: Moment historik
-        new_milestone: Krijo momentet historik të ri
         compatibility:
           title: Pajtueshmëri
           "true": I papajtueshëm
