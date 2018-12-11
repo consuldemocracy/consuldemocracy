@@ -105,6 +105,9 @@ gl:
           random: aleatorias
           confidence_score: mellor valoradas
           price: por custo
+      share:
+        message: "Acabo de crear o proxecto de investimento %{title} en %{org}. Anímote a crear o teu proxecto de investimento!"
+        message_mobile: "Acabo de crear o proxecto de investimento %{title} en %{handle}. Anímote a crear o teu proxecto de investimento!"
       show:
         author_deleted: Usuaria borrada
         price_explanation: Informe de custo
