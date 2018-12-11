@@ -223,8 +223,6 @@ pl:
         tags: Tagi
         user_tags: Tagi użytkownika
         undefined: Niezdefiniowany
-        milestone: Wydarzenie
-        new_milestone: Utwórz wydarzenie
         compatibility:
           title: Zgodność
           "true": Niezgodne
