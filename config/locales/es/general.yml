@@ -106,7 +106,7 @@ es:
       orders:
         confidence_score: Mejor valorados
         created_at: Nuevos
-        hot_score: Más activos hoy
+        hot_score: Más activos
         most_commented: Más comentados
         relevance: Más relevantes
         recommendations: Recomendaciones
@@ -346,7 +346,7 @@ es:
       orders:
         confidence_score: Más apoyadas
         created_at: Nuevas
-        hot_score: Más activas hoy
+        hot_score: Más activas
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
