@@ -340,5 +340,5 @@ def update_button_text
 end
 
 def front_end_path_to_visit?(path)
-  !path[/admin|managment|valuation/].present?
+  path[/admin|managment|valuation/].blank?
 end
