@@ -60,8 +60,6 @@ ast:
           undecided: "Ensin decidir"
       show:
         info: "%{budget_name} - Grupu: %{group_name} - Propuesta d'inversión %{id}"
-        milestone: Siguimientu
-        new_milestone: Crear nuevu finxu
       edit:
         assigned_valuators: Evaluaores
         select_heading: Escoyer partida
