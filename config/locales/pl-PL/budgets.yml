@@ -114,9 +114,6 @@ pl:
         price: Koszt
         comments_tab: Komentarze
         milestones_tab: Kamienie milowe
-        no_milestones: Nie ma zdefiniowanych kamieni milowych
-        milestone_publication_date: "Opublikowane %{publication_date}"
-        milestone_status_changed: Zmieniono stan inwestycji na
         author: Autor
         project_unfeasible_html: 'Ten projekt inwestycyjny <strong>został oznaczony jako niewykonalny</strong> i nie przejdzie do fazy głosowania.'
         project_selected_html: 'Ten projekt inwestycyjny <strong>został wybrany</strong> do fazy głosowania.'
