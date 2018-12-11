@@ -219,8 +219,6 @@ sv:
         tags: Taggar
         user_tags: Användartaggar
         undefined: Odefinierat
-        milestone: Milstolpe
-        new_milestone: Skapa ny milstolpe
         compatibility:
           title: Kompatibilitet
           "true": Oförenlig
