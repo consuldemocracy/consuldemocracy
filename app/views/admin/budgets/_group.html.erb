@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th colspan="4" class="with-button">
+      <th colspan="5" class="with-button">
         <%= content_tag(:span, group.name, class:"group-toggle-#{group.id}", id:"group-name-#{group.id}") %>
 
         <%= content_tag(:span, (render 'admin/budgets/max_headings_label', current: group.max_votable_headings, max: group.headings.count, group: group if group.max_votable_headings), class:"small group-toggle-#{group.id}", id:"max-heading-label-#{group.id}") %>
@@ -17,6 +17,7 @@
       <th><%= t("admin.budgets.form.table_heading") %></th>
       <th class="text-right"><%= t("admin.budgets.form.table_amount") %></th>
       <th class="text-right"><%= t("admin.budgets.form.table_population") %></th>
+      <th class="text-right"><%= t("admin.budgets.form.table_allow_custom_contents") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </tr>
   <% end %>
@@ -26,7 +27,7 @@
 
     <% if headings.blank? %>
       <tr>
-        <td colspan="4">
+        <td colspan="5">
           <div class="callout primary">
             <%= t("admin.budgets.form.no_heading") %>
           </div>
@@ -35,7 +36,7 @@
     <% end %>
 
     <tr id="group-<%= group.id %>-new-heading-form" style="display:none">
-      <td colspan="4">
+      <td colspan="5">
         <%= render "admin/budgets/heading_form", group: group, budget: @budget, heading: Budget::Heading.new %>
       </td>
     </tr>

@@ -5,6 +5,7 @@ class Budget
     belongs_to :group
 
     has_many :investments
+    has_many :content_blocks
 
     validates :group_id, presence: true
     validates :name, presence: true, uniqueness: { if: :name_exists_in_budget_headings }
@@ -19,6 +20,7 @@ class Budget
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
     scope :order_by_group_name, -> { includes(:group).order('budget_groups.name', 'budget_headings.name') }
+    scope :allow_custom_content, -> { where(allow_custom_content: true).order(:name) }
 
     def name_scoped_by_group
       group.single_heading_group? ? name : "#{group.name}: #{name}"

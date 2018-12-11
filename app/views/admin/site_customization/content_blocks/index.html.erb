@@ -17,7 +17,7 @@
 
 <p class="margin-top"><%= t("admin.site_customization.content_blocks.footer_html") %></p>
 
-<% if @content_blocks.any? %>
+<% if @content_blocks.any? || @headings_content_blocks.any? %>
   <table class="cms-page-list">
     <thead>
       <tr>
@@ -38,10 +38,21 @@
         </td>
       </tr>
     <% end %>
+    <% @headings_content_blocks.each do |content_block| %>
+      <tr id="<%= dom_id(content_block) %>">
+        <td><%= link_to "#{content_block.heading.name} (#{content_block.locale})", admin_site_customization_edit_heading_content_block_path(content_block) %></td>
+        <td><%= content_block.body.html_safe %></td>
+        <td>
+          <%= link_to t("admin.site_customization.content_blocks.index.delete"),
+                        admin_site_customization_delete_heading_content_block_path(content_block.id),
+                        method: :delete, class: "button hollow alert" %>
+        </td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 <% else %>
   <div class="callout primary">
     <%= t("admin.site_customization.content_blocks.no_blocks") %>
-  </div>
+  </div-->
 <% end %>
