@@ -219,8 +219,6 @@ it:
         tags: Etichette
         user_tags: Etichette utente
         undefined: Non definito
-        milestone: Traguardo
-        new_milestone: Crea nuovo traguardo
         compatibility:
           title: Compatibilità
           "true": Incompatibile
