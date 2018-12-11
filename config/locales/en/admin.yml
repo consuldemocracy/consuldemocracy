@@ -1,6 +1,4 @@
 en:
-  true_value: 'Yes'
-  false_value: 'No'
   admin:
     header:
       title: Administration
@@ -1149,6 +1147,8 @@ en:
       setting_value: Value
       no_description: "No description"
     shared:
+      true_value: "Yes"
+      false_value: "No"
       booths_search:
         button: Search
         placeholder: Search booth by name
