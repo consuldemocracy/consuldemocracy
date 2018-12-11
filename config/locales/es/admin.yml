@@ -143,8 +143,6 @@ es:
         by: Autor
         sent: Fecha
         group: Grupo
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         compatibility:
           title: Compatibilidad
         selection:
