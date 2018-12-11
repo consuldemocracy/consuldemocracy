@@ -219,8 +219,6 @@ val:
         tags: Etiquetes
         user_tags: Etiquetes de l'usuari
         undefined: Sense definir
-        milestone: Seguiment
-        new_milestone: Crear nova fita
         compatibility:
           title: Compatibilitat
           "true": Incomptatible
