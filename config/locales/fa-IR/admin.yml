@@ -188,8 +188,6 @@ fa:
         tags: برچسب ها
         user_tags: برچسب های کاربر
         undefined: تعریف نشده
-        milestone: نقطه عطف
-        new_milestone: ایجاد نقطه عطف جدید
         compatibility:
           title: سازگاری
           "true": ناسازگار
