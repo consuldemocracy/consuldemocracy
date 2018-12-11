@@ -1121,13 +1121,13 @@ feature 'Budget Investments' do
   scenario "Show milestones", :js do
     user = create(:user)
     investment = create(:budget_investment)
-    create(:budget_investment_milestone, investment: investment,
-                                         description_en: "Last milestone with a link to https://consul.dev",
-                                         description_es: "Último hito con el link https://consul.dev",
-                                         publication_date: Date.tomorrow)
-    first_milestone = create(:budget_investment_milestone, investment: investment,
-                                                           description: "First milestone",
-                                                           publication_date: Date.yesterday)
+    create(:milestone, milestoneable: investment,
+                       description_en: "Last milestone with a link to https://consul.dev",
+                       description_es: "Último hito con el link https://consul.dev",
+                       publication_date: Date.tomorrow)
+    first_milestone = create(:milestone, milestoneable: investment,
+                                         description: "First milestone",
+                                         publication_date: Date.yesterday)
     image = create(:image, imageable: first_milestone)
     document = create(:document, documentable: first_milestone)
 
@@ -1455,10 +1455,10 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
 
       global_group   = create(:budget_group, budget: budget, name: 'Global Group')
-      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading')
+      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading', latitude: -43.145412, longitude: 12.009423)
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
-      new_york_heading    = create(:budget_heading, group: group, name: "New York")
+      new_york_heading    = create(:budget_heading, group: group, name: "New York", latitude: -43.223412, longitude: 12.009423)
 
       sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
       sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
@@ -1699,6 +1699,86 @@ feature 'Budget Investments' do
     end
 
     expect(Flag.flagged?(user, investment)).not_to be
+  end
+
+  context 'sidebar map' do
+    scenario "Display 6 investment's markers on sidebar map", :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+      investment5 = create(:budget_investment, heading: heading)
+      investment6 = create(:budget_investment, heading: heading)
+
+      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
+      create(:map_location, longitude: 40.1232, latitude: -3.635, investment: investment2)
+      create(:map_location, longitude: 40.1233, latitude: -3.634, investment: investment3)
+      create(:map_location, longitude: 40.1234, latitude: -3.633, investment: investment4)
+      create(:map_location, longitude: 40.1235, latitude: -3.632, investment: investment5)
+      create(:map_location, longitude: 40.1236, latitude: -3.631, investment: investment6)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 6, visible: false)
+      end
+    end
+
+    scenario "Display 2 investment's markers on sidebar map", :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+
+      create(:map_location, longitude: 40.1281, latitude: -3.656, investment: investment1)
+      create(:map_location, longitude: 40.1292, latitude: -3.665, investment: investment2)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 2, visible: false)
+      end
+    end
+
+    scenario "Display only investment's related to the current heading", :js do
+      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+      investment5 = create(:budget_investment, heading: heading_2)
+      investment6 = create(:budget_investment, heading: heading_2)
+
+      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
+      create(:map_location, longitude: 40.1232, latitude: -3.685, investment: investment2)
+      create(:map_location, longitude: 40.1233, latitude: -3.664, investment: investment3)
+      create(:map_location, longitude: 40.1234, latitude: -3.673, investment: investment4)
+      create(:map_location, longitude: 40.1235, latitude: -3.672, investment: investment5)
+      create(:map_location, longitude: 40.1236, latitude: -3.621, investment: investment6)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 4, visible: false)
+      end
+    end
+
+    scenario "Do not display investment's, since they're all related to other heading", :js do
+      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+
+      investment1 = create(:budget_investment, heading: heading_2)
+      investment2 = create(:budget_investment, heading: heading_2)
+      investment3 = create(:budget_investment, heading: heading_2)
+
+      create(:map_location, longitude: 40.1255, latitude: -3.644, investment: investment1)
+      create(:map_location, longitude: 40.1258, latitude: -3.637, investment: investment2)
+      create(:map_location, longitude: 40.1251, latitude: -3.649, investment: investment3)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 0, visible: false)
+      end
+    end
   end
 
 end

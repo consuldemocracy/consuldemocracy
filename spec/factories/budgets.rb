@@ -78,6 +78,8 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
+    latitude '-25.172741'
+    longitude '40.127241'
 
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
@@ -193,14 +195,14 @@ FactoryBot.define do
     reason "unfeasible"
   end
 
-  factory :budget_investment_status, class: 'Budget::Investment::Status' do
-    sequence(:name)        { |n| "Budget investment status #{n} name" }
-    sequence(:description) { |n| "Budget investment status #{n} description" }
+  factory :milestone_status, class: 'Milestone::Status' do
+    sequence(:name)        { |n| "Milestone status #{n} name" }
+    sequence(:description) { |n| "Milestone status #{n} description" }
   end
 
-  factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
-    association :investment, factory: :budget_investment
-    association :status, factory: :budget_investment_status
+  factory :milestone, class: 'Milestone' do
+    association :milestoneable, factory: :budget_investment
+    association :status, factory: :milestone_status
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
     publication_date     { Date.current }

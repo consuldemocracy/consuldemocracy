@@ -367,7 +367,7 @@ es-AR:
           status_planned: Próximamente
         subnav:
           info: Información
-          draft_texts: Redacción
+          draft_versions: Redacción
           questions: Debate
           proposals: Propuestas
       proposals:
@@ -906,7 +906,7 @@ es-AR:
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtro
         filters:

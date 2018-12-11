@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe Budget::Investment::Milestone do
+describe Milestone do
 
   describe "Validations" do
-    let(:milestone) { build(:budget_investment_milestone) }
+    let(:milestone) { build(:milestone) }
 
     it "is valid" do
       expect(milestone).to be_valid
@@ -25,8 +25,8 @@ describe Budget::Investment::Milestone do
       expect(milestone).to be_valid
     end
 
-    it "is not valid without an investment" do
-      milestone.investment_id = nil
+    it "is not valid without a milestoneable" do
+      milestone.milestoneable_id = nil
       expect(milestone).not_to be_valid
     end
 
@@ -48,7 +48,7 @@ describe Budget::Investment::Milestone do
   end
 
   describe "#description_or_status_present?" do
-    let(:milestone) { build(:budget_investment_milestone) }
+    let(:milestone) { build(:milestone) }
 
     it "is not valid when status is removed and there's no description" do
       milestone.update(description: nil)
@@ -71,14 +71,14 @@ describe Budget::Investment::Milestone do
 
   describe ".published" do
     it "uses the application's time zone date", :with_different_time_zone do
-      published_in_local_time_zone = create(:budget_investment_milestone,
+      published_in_local_time_zone = create(:milestone,
                                             publication_date: Date.today)
 
-      published_in_application_time_zone = create(:budget_investment_milestone,
+      published_in_application_time_zone = create(:milestone,
                                                   publication_date: Date.current)
 
-      expect(Budget::Investment::Milestone.published).to include(published_in_application_time_zone)
-      expect(Budget::Investment::Milestone.published).not_to include(published_in_local_time_zone)
+      expect(Milestone.published).to include(published_in_application_time_zone)
+      expect(Milestone.published).not_to include(published_in_local_time_zone)
     end
   end
 end

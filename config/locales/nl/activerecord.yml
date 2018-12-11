@@ -10,7 +10,7 @@ nl:
       budget/investment:
         one: "Investerning"
         other: "Investeringen"
-      budget/investment/milestone:
+      milestone:
         one: "mijlpaal"
         other: "mijlpalen"
       comment:
@@ -122,12 +122,12 @@ nl:
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding ter omschrijving van het voorstel"
         image_title: "Naam van de afbeelding"
-      budget/investment/milestone:
+      milestone:
         status_id: "Huidige investeringsstatus (optioneel)"
         title: "Titel"
         description: "Omschrijving"
         publication_date: "Publicatiedatum"
-      budget/investment/status:
+      milestone/status:
         name: "Naam"
         description: "Beschrijving (optioneel)"
       budget/heading:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181108142513) do
+ActiveRecord::Schema.define(version: 20181109111037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,6 +167,8 @@ ActiveRecord::Schema.define(version: 20181108142513) do
     t.integer "population"
     t.string  "slug"
     t.boolean "allow_custom_content",            default: false
+    t.text    "latitude"
+    t.text    "longitude"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
@@ -174,14 +176,11 @@ ActiveRecord::Schema.define(version: 20181108142513) do
   create_table "budget_investment_milestone_translations", force: :cascade do |t|
     t.integer  "budget_investment_milestone_id", null: false
     t.string   "locale",                         null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
-
-  add_index "budget_investment_milestone_translations", ["budget_investment_milestone_id"], name: "index_6770e7675fe296cf87aa0fd90492c141b5269e0b", using: :btree
-  add_index "budget_investment_milestone_translations", ["locale"], name: "index_budget_investment_milestone_translations_on_locale", using: :btree
 
   create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
@@ -791,6 +790,41 @@ ActiveRecord::Schema.define(version: 20181108142513) do
 
   add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
   add_index "map_locations", ["proposal_id"], name: "index_map_locations_on_proposal_id", using: :btree
+
+  create_table "milestone_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "hidden_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "milestone_statuses", ["hidden_at"], name: "index_milestone_statuses_on_hidden_at", using: :btree
+
+  create_table "milestone_translations", force: :cascade do |t|
+    t.integer  "milestone_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "milestone_translations", ["locale"], name: "index_milestone_translations_on_locale", using: :btree
+  add_index "milestone_translations", ["milestone_id"], name: "index_milestone_translations_on_milestone_id", using: :btree
+
+  create_table "milestones", force: :cascade do |t|
+    t.integer  "milestoneable_id"
+    t.string   "milestoneable_type"
+    t.string   "title",              limit: 80
+    t.text     "description"
+    t.datetime "publication_date"
+    t.integer  "status_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "milestones", ["status_id"], name: "index_milestones_on_status_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"

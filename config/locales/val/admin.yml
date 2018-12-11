@@ -401,7 +401,7 @@ val:
           status_planned: Pròximament
         subnav:
           info: Informació
-          draft_texts: Text
+          draft_versions: Text
           questions: Debat
           proposals: Propostes
       proposals:
@@ -972,7 +972,7 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtre
         filters:

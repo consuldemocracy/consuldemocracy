@@ -403,7 +403,7 @@ sv:
           status_planned: Planerad
         subnav:
           info: Information
-          draft_texts: Utkast
+          draft_versions: Utkast
           questions: Diskussion
           proposals: Förslag
       proposals:
@@ -1008,7 +1008,7 @@ sv:
       search:
         title: Sök organisationer
         no_results: Inga organisationer.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtrera
         filters:

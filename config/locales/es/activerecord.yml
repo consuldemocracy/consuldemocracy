@@ -10,12 +10,12 @@ es:
       budget/investment:
         one: "Proyecto de gasto"
         other: "Proyectos de gasto"
-      budget/investment/milestone:
+      milestone:
         one: "hito"
         other: "hitos"
-      budget/investment/status:
-        one: "Estado del proyecto"
-        other: "Estados del proyecto"
+      milestone/status:
+        one: "Estado de seguimiento"
+        other: "Estados de seguimiento"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -82,9 +82,6 @@ es:
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
@@ -131,12 +128,12 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
-      budget/investment/milestone:
+      milestone:
         status_id: "Estado actual del proyecto (opcional)"
         title: "Título"
         description: "Descripción (opcional si hay un estado asignado)"
         publication_date: "Fecha de publicación"
-      budget/investment/status:
+      milestone/status:
         name: "Nombre"
         description: "Descripción (opcional)"
       budget/heading:

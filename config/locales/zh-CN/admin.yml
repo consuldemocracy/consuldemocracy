@@ -401,7 +401,7 @@ zh-CN:
           status_planned: 计划
         subnav:
           info: 信息
-          draft_texts: 起草
+          draft_versions: 起草
           questions: 辩论
           proposals: 提议
       proposals:
@@ -1007,7 +1007,7 @@ zh-CN:
       search:
         title: 搜索组织
         no_results: 未找到任何组织。
-    proposals:
+    hidden_proposals:
       index:
         filter: 过滤器
         filters:

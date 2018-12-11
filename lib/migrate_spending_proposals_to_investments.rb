@@ -8,10 +8,10 @@ class MigrateSpendingProposalsToInvestments
 
     if sp.geozone_id.present?
       group   = budget.groups.find_or_create_by!(name: "Barrios")
-      heading = group.headings.find_or_create_by!(name: sp.geozone.name, price: 10000000)
+      heading = group.headings.find_or_create_by!(name: sp.geozone.name, price: 10000000, latitude: '40.416775', longitude: '-3.703790')
     else
       group   = budget.groups.find_or_create_by!(name: "Toda la ciudad")
-      heading = group.headings.find_or_create_by!(name: "Toda la ciudad", price: 10000000)
+      heading = group.headings.find_or_create_by!(name: "Toda la ciudad", price: 10000000, latitude: '40.416775', longitude: '-3.703790')
     end
 
     feasibility = case sp.feasible

@@ -411,7 +411,7 @@ gl:
           status_planned: Planificado
         subnav:
           info: Información
-          draft_texts: Redacción
+          draft_versions: Redacción
           questions: Debate
           proposals: Propostas
       proposals:
@@ -1028,7 +1028,7 @@ gl:
       search:
         title: Buscar organizacións
         no_results: Non se atoparon organizacións.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtro
         filters:

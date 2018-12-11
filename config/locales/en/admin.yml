@@ -135,6 +135,8 @@ en:
         max_votable_headings: "Maximum number of headings in which a user can vote"
         current_of_max_headings: "%{current} of %{max}"
         allow_content_block: Allow content block
+        latitude: Latitude
+        longitude: Longitude
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -290,24 +292,24 @@ en:
         notice: Milestone successfully deleted
     statuses:
       index:
-        title: Investment statuses
-        empty_statuses: There are no investment statuses created
-        new_status: Create new investment status
+        title: Milestone statuses
+        empty_statuses: There are no milestone statuses created
+        new_status: Create new milestone status
         table_name: Name
         table_description: Description
         table_actions: Actions
         delete: Delete
         edit: Edit
       edit:
-        title: Edit investment status
+        title: Edit milestone status
       update:
-        notice: Investment status updated successfully
+        notice: Milestone status updated successfully
       new:
-        title: Create investment status
+        title: Create milestone status
       create:
-        notice: Investment status created successfully
+        notice: Milestone status created successfully
       delete:
-        notice: Investment status deleted successfully
+        notice: Milestone status deleted successfully
     comments:
       index:
         filter: Filter
@@ -417,7 +419,7 @@ en:
           status_planned: Planned
         subnav:
           info: Information
-          draft_texts: Drafting
+          draft_versions: Drafting
           questions: Debate
           proposals: Proposals
       proposals:
@@ -1038,7 +1040,7 @@ en:
       search:
         title: Search Organisations
         no_results: No organizations found.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filter
         filters:
