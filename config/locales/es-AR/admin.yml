@@ -192,8 +192,6 @@ es-AR:
         tags: Etiquetas
         user_tags: Etiquetas del usuario
         undefined: Sin definir
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         compatibility:
           title: Compatibilidad
           "true": Incompatible
@@ -241,6 +239,8 @@ es-AR:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
       form:
         admin_statuses: Administrar estados de inversión
         no_statuses_defined: No hay estados de inversión definidos aún

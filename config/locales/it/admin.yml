@@ -219,8 +219,6 @@ it:
         tags: Etichette
         user_tags: Etichette utente
         undefined: Non definito
-        milestone: Traguardo
-        new_milestone: Crea nuovo traguardo
         compatibility:
           title: Compatibilità
           "true": Incompatibile
@@ -268,6 +266,8 @@ it:
         image: "Immagine"
         show_image: "Mostra immagine"
         documents: "Documenti"
+        milestone: Traguardo
+        new_milestone: Crea nuovo traguardo
       form:
         no_statuses_defined: Non ci sono ancora status d’investimento definiti
       new:

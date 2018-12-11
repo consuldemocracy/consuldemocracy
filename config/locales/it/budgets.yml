@@ -118,9 +118,6 @@ it:
         price: Costi
         comments_tab: Commenti
         milestones_tab: Traguardi
-        no_milestones: Non ci sono traguardi definiti
-        milestone_publication_date: "Pubblicato il %{publication_date}"
-        milestone_status_changed: Status dell’investimento cambiato in
         author: Autore
         project_unfeasible_html: 'Questo progetto di investimento <strong>è stato contrassegnato come irrealizzabile</strong> e non accederà alla fase di voto finale.'
         project_selected_html: 'Il progetto di investimento <strong>è stato selezionato</strong> per la fase di voto.'

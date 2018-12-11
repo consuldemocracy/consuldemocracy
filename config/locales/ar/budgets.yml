@@ -110,9 +110,6 @@ ar:
         price: سعر
         comments_tab: تعليقات
         milestones_tab: معالم
-        no_milestones: لا يوجد معالم محددة
-        milestone_publication_date: "تم نشرها %{publication_date}"
-        milestone_status_changed: تم تغيير حالة الستثمار الى
         author: كاتب
         project_unfeasible_html: 'مشروع الاستثمار هذا <strong> تم تعليمه كغير مجدي</strong> ولن يذهب الى مرحلة الاقتراع.'
         project_selected_html: 'مشروع الاستثمار هذا<strong>تم اختياره</strong>لمرحلة الاقتراع.'
