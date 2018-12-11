@@ -373,6 +373,8 @@ gl:
           enabled: Habilitado
           process: Proceso
           debate_phase: Fase previa
+          draft_phase: Fase de redacción
+          draft_phase_description: Se esta fase está activa, o proceso non se amosará no listado de procesos. Amosa unha vista previa do proceso e crea contido antes de que comece.
           allegations_phase: Fase de alegaciones
           proposals_phase: Fase de propostas
           start: Comezo
@@ -411,6 +413,7 @@ gl:
           status_planned: Planificado
         subnav:
           info: Información
+          draft_versions: Redacción
           questions: Debate
           proposals: Propostas
       proposals:
@@ -1028,6 +1031,15 @@ gl:
       search:
         title: Buscar organizacións
         no_results: Non se atoparon organizacións.
+    hidden_proposals:
+      index:
+        filter: Filtro
+        filters:
+          all: Todo
+          with_confirmed_hide: Confirmado
+          without_confirmed_hide: Pendente
+        title: Propostas agochadas
+        no_hidden_proposals: Non hai propostas agochadas.
     proposal_notifications:
       index:
         filter: Filtro
