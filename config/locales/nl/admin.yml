@@ -219,8 +219,6 @@ nl:
         tags: Labels
         user_tags: Deelnemerslabels
         undefined: Niet gedefinieerd
-        milestone: Mijlpaal
-        new_milestone: Nieuwe mijlpaal
         compatibility:
           title: Compatibiliteit
           "true": Niet compatibel
