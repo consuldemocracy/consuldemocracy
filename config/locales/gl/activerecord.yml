@@ -10,6 +10,12 @@ gl:
       budget/investment:
         one: "Investimento"
         other: "Investimentos"
+      milestone:
+        one: "fito"
+        other: "fitos"
+      milestone/status:
+        one: "Estado do Fito"
+        other: "Estados do Fito"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -122,6 +128,14 @@ gl:
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
         image_title: "Título da imaxe"
+      milestone:
+        status_id: "Estado do investimento actual (opcional)"
+        title: "Título"
+        description: "Descrición (opcional se hai un estado asignado)"
+        publication_date: "Data de publicación"
+      milestone/status:
+        name: "Nome"
+        description: "Descrición (opcional)"
       budget/heading:
         name: "Nome da partida"
         price: "Cantidade"
@@ -214,6 +228,8 @@ gl:
         end_date: Data de peche
         debate_start_date: Data en que comeza o debate
         debate_end_date: Data en que remata o debate
+        draft_start_date: Data en que comeza a redacción
+        draft_end_date: Data en que remata a redacción
         draft_publication_date: Data en que se publica o borrador
         allegations_start_date: Data en que comezan as alegacións
         allegations_end_date: Data en que rematan as alegacións
@@ -323,6 +339,8 @@ gl:
               invalid_date_range: ten que ser igual ou posterior á data de inicio
             debate_end_date:
               invalid_date_range: ten que ser igual ou posterior á data de comezo do debate
+            draft_end_date:
+              invalid_date_range: ten que ser igual ou posterior á data de comezo da redacción
             allegations_end_date:
               invalid_date_range: ten que ser igual ou posterior á data en que comezan ás alegacións
         proposal:
