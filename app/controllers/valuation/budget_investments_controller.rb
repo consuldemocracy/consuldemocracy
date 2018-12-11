@@ -31,7 +31,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     if valid_price_params? && @investment.update(valuation_params)
 
       if @investment.unfeasible_email_pending?
-        #@investment.send_unfeasible_email
+        @investment.send_unfeasible_email
       end
 
       Activity.log(current_user, :valuate, @investment)
