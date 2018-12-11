@@ -5,7 +5,7 @@ feature 'Tags' do
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:group)   { create(:budget_group, name: "Health", budget: budget) }
-  let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+  let!(:heading) { create(:budget_heading, name: "More hospitals", group: group, latitude: '40.416775', longitude: '-3.703790') }
   let!(:tag_medio_ambiente) { create(:tag, :category, name: 'Medio Ambiente') }
   let!(:tag_economia) { create(:tag, :category, name: 'Economía') }
   let(:admin) { create(:administrator).user }

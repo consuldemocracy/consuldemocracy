@@ -88,7 +88,7 @@
         </div>
 
         <% unless current_budget.informing? %>
-          <div id="map">
+          <div class="map">
             <h3><%= t("budgets.index.map") %></h3>
             <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
           </div>

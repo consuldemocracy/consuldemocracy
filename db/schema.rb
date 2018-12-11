@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181016204729) do
+ActiveRecord::Schema.define(version: 20181109111037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,6 +156,8 @@ ActiveRecord::Schema.define(version: 20181016204729) do
     t.integer "price",      limit: 8
     t.integer "population"
     t.string  "slug"
+    t.text    "latitude"
+    t.text    "longitude"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree

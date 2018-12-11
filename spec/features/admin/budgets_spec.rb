@@ -276,6 +276,8 @@ feature 'Admin budgets' do
         fill_in 'budget_heading_name', with: 'District 9 reconstruction'
         fill_in 'budget_heading_price', with: '6785'
         fill_in 'budget_heading_population', with: '100500'
+        fill_in 'budget_heading_latitude', with: '40.416775'
+        fill_in 'budget_heading_longitude', with: '-3.703790'
         click_button 'Save heading'
       end
 
