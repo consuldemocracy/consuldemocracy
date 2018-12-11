@@ -52,6 +52,8 @@ es:
     place_name_description: "Nombre de tu ciudad"
     related_content_score_threshold: "Umbral de puntuación de contenido relacionado"
     related_content_score_threshold_description: "Oculta el contenido que los usuarios marquen como no relacionado"
+    hot_score_period_in_days: "Periodo (días) usado para el filtro 'Más Activos'"
+    hot_score_period_in_days_description: "El filtro 'Más Activos' usado en diferentes secciones se basará en los votos de los últimos X días"
     map_latitude: "Latitud"
     map_latitude_description: "Latitud para mostrar la posición del mapa"
     map_longitude: "Longitud"
