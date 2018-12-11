@@ -219,8 +219,6 @@ pt-BR:
         tags: Marcações
         user_tags: Marcações do usuário
         undefined: Não definido
-        milestone: Marco
-        new_milestone: Criar marco
         compatibility:
           title: Compatibilidade
           "true": Incompatível
