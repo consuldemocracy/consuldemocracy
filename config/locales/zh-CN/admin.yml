@@ -218,8 +218,6 @@ zh-CN:
         tags: 标签
         user_tags: 用户标签
         undefined: 未定义
-        milestone: 里程碑
-        new_milestone: 创建新的里程碑
         compatibility:
           title: 兼容性
           "true": 不兼容
