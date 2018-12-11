@@ -219,8 +219,6 @@ fr:
         tags: Étiquettes
         user_tags: Tags de l’utilisateur
         undefined: Indéterminé
-        milestone: Jalon
-        new_milestone: Créer nouveau jalon
         compatibility:
           title: Compatibilité
           "true": Incompatibles
