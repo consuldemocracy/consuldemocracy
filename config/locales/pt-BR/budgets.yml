@@ -118,9 +118,6 @@ pt-BR:
         price: Preço
         comments_tab: Comentários
         milestones_tab: Marcos
-        no_milestones: Não possui marcos definidos
-        milestone_publication_date: "Publicado %{publication_date}"
-        milestone_status_changed: Status de investimento mudado para
         author: Autor
         project_unfeasible_html: 'Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação.'
         project_selected_html: 'Este projeto de investimento <strong>está selecionado</strong> para a fase de votação.'
