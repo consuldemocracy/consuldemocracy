@@ -181,8 +181,6 @@ es-VE:
         tags: Etiquetas
         user_tags: Etiquetas del usuario
         undefined: Sin definir
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         compatibility:
           title: Compatibilidad
           "true": Incompatible
