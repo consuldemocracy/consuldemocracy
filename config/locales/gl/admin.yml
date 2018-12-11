@@ -220,8 +220,6 @@ gl:
         tags: Etiquetas
         user_tags: Etiquetas do usuario
         undefined: Sen definir
-        milestone: Seguimento
-        new_milestone: Crear novo seguimento
         compatibility:
           title: Compatibilidade
           "true": Incompatible
