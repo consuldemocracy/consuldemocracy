@@ -122,9 +122,6 @@ so:
         price: Qime
         comments_tab: Faalo
         milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
-        no_milestones: An lahayn yool qeexaan
-        milestone_publication_date: "Labahiyey%{publication_date}"
-        milestone_status_changed: Xaaladda maal-gashiga ayaa loo badalay
         author: Qoraa
         project_unfeasible_html: 'Mashruucan maalgashiga <strong> ayaa loo calaamadeeyay sida aan suurtagal ahayn </ strong> oo uma tagi doono wajiga ballanka.'
         project_selected_html: 'Mashruucan maalgashiga <strong> ayaa loo xushay </ strong> muddada ballanka.'
