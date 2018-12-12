@@ -51,9 +51,13 @@ module Statisticable
          "55 - 59",
          "60 - 64",
          "65 - 69",
-         "70 - 140"].each do |group|
+         "70 - 74",
+         "75 - 79",
+         "80 - 84",
+         "85 - 89",
+         "90 - 140"].each do |group|
           start, finish = group.split(" - ")
-          group_name = (group == "70 - 140" ? "+ 70" : group)
+          group_name = (group == "90 - 140" ? "+ 90" : group)
           groups[group_name] = User.where(id: participants)
                                    .where("date_of_birth > ? AND date_of_birth < ?",
                                           finish.to_i.years.ago.beginning_of_year,
