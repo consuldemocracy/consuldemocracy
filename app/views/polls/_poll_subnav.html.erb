@@ -15,7 +15,7 @@
         <% if @poll.stats_enabled? %>
           <% if stats_menu? %>
             <li class="is-active">
-              <h2><%= t("polls.show.stats_menu") %></h2>
+              <%= t("polls.show.stats_menu") %>
             </li>
           <% else %>
             <li><%= link_to t("polls.show.stats_menu"), stats_poll_path(id: @poll.slug || @poll.id) %></li>
