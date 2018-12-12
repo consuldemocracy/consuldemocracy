@@ -536,6 +536,7 @@ en:
       admin: Admin menu
       banner: Manage banners
       poll_questions: Questions
+      proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
@@ -1040,6 +1041,13 @@ en:
       search:
         title: Search Organisations
         no_results: No organizations found.
+    proposals:
+      index:
+        title: Proposals
+        id: ID
+        author: Author
+        milestones: Milestones
+        no_proposals: There are no proposals.
     hidden_proposals:
       index:
         filter: Filter

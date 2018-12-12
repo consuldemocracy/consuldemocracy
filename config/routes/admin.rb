@@ -29,6 +29,10 @@ namespace :admin do
     end
   end
 
+  resources :proposals, only: [:index, :show] do
+    resources :milestones, controller: "proposal_milestones"
+  end
+
   resources :hidden_proposals, only: :index do
     member do
       put :restore
