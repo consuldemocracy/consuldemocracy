@@ -50,8 +50,8 @@ class Legislation::Process < ActiveRecord::Base
 
   scope :published, -> { where(published: true) }
   scope :not_in_draft, -> { where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and
-                                   draft_end_date IS NOT NULL and (draft_start_date >= ? or
-                                   draft_end_date <= ?))", Date.current, Date.current) }
+                                   draft_end_date IS NOT NULL and (draft_start_date > ? or
+                                   draft_end_date < ?))", Date.current, Date.current) }
 
   def draft_phase
     Legislation::Process::Phase.new(draft_start_date, draft_end_date, draft_phase_enabled)
