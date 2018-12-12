@@ -99,14 +99,6 @@ describe Legislation::Process do
                                               end_date: Date.current + 3.days) }
     let!(:process_3) { create(:legislation_process, start_date: Date.current - 4.days,
                                               end_date: Date.current - 3.days) }
-    let!(:process_4) { create(:legislation_process, draft_start_date: Date.current - 3.days,
-                                              draft_end_date: Date.current - 2.days) }
-    let!(:process_5) { create(:legislation_process, draft_start_date: Date.current - 2.days,
-                                              draft_end_date: Date.current + 2.days,
-                                              draft_phase_enabled: false) }
-    let!(:process_6) { create(:legislation_process, draft_start_date: Date.current - 2.days,
-                                              draft_end_date: Date.current + 2.days,
-                                              draft_phase_enabled: true) }
 
     it "filters open" do
       open_processes = ::Legislation::Process.open
@@ -117,11 +109,39 @@ describe Legislation::Process do
     end
 
     it "filters draft phase" do
-      draft_processes = ::Legislation::Process.not_in_draft
+      process_before_draft = create(
+        :legislation_process,
+        draft_start_date: Date.current - 3.days,
+        draft_end_date: Date.current - 2.days
+      )
 
-      expect(draft_processes).to include(process_4)
-      expect(draft_processes).to include(process_5)
-      expect(draft_processes).not_to include(process_6)
+      process_with_draft_disabled = create(
+        :legislation_process,
+        draft_start_date: Date.current - 2.days,
+        draft_end_date: Date.current + 2.days,
+        draft_phase_enabled: false
+      )
+
+      process_with_draft_enabled = create(
+        :legislation_process,
+        draft_start_date: Date.current - 2.days,
+        draft_end_date: Date.current + 2.days,
+        draft_phase_enabled: true
+      )
+
+      process_with_draft_only_today = create(
+        :legislation_process,
+        draft_start_date: Date.current,
+        draft_end_date: Date.current,
+        draft_phase_enabled: true
+      )
+
+      processes_not_in_draft = ::Legislation::Process.not_in_draft
+
+      expect(processes_not_in_draft).to include(process_before_draft)
+      expect(processes_not_in_draft).to include(process_with_draft_disabled)
+      expect(processes_not_in_draft).not_to include(process_with_draft_enabled)
+      expect(processes_not_in_draft).not_to include(process_with_draft_only_today)
     end
 
     it "filters next" do
