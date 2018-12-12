@@ -239,6 +239,7 @@ en:
         summary: Summary
         description: Description
         additional_info: Additional info
+        milestones_summary: Summary
       legislation/draft_version:
         title: Version title
         body: Text

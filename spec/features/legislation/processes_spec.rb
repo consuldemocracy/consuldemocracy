@@ -292,5 +292,40 @@ feature 'Legislation' do
 
       include_examples "not published permissions", :legislation_process_proposals_path
     end
+
+    context "Milestones" do
+      scenario "Without milestones" do
+        process = create(:legislation_process, :upcoming_proposals_phase)
+
+        visit legislation_process_path(process)
+
+        within(".legislation-process-list") do
+          expect(page).not_to have_css "li.milestones"
+        end
+      end
+
+      scenario "With milestones" do
+        process = create(:legislation_process, :upcoming_proposals_phase)
+        create(:milestone,
+               milestoneable:    process,
+               description:      "Something important happened",
+               publication_date: Date.new(2018, 3, 22)
+              )
+
+        visit legislation_process_path(process)
+
+        within(".legislation-process-list li.milestones") do
+          click_link "Following 22 Mar 2018"
+        end
+
+        within(".legislation-process-list .is-active") do
+          expect(page).to have_link "Following 22 Mar 2018"
+        end
+
+        within(".tab-milestones") do
+          expect(page).to have_content "Something important happened"
+        end
+      end
+    end
   end
 end

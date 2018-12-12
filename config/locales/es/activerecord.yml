@@ -239,6 +239,7 @@ es:
         summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
+        milestones_summary: Seguimiento del proceso
       legislation/draft_version:
         title: Título de la version
         body: Texto
