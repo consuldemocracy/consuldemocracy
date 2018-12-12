@@ -41,30 +41,30 @@ section "Creating Budgets" do
     city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
                                 price: 1000000,
                                 population: 1000000,
-                                latitude: '-40.123241',
-                                longitude: '25.123249')
+                                latitude: '40.416775',
+                                longitude: '-3.703790')
 
     districts_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.districts'))
     districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
                                      price: rand(5..10) * 100000,
                                      population: 350000,
-                                     latitude: '15.234521',
-                                     longitude: '-15.234234')
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
     districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
                                      price: rand(5..10) * 100000,
                                      population: 300000,
-                                     latitude: '14.125125',
-                                     longitude: '65.123124')
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
     districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
                                      price: rand(5..10) * 100000,
                                      population: 200000,
-                                     latitude: '23.234234',
-                                     longitude: '-47.134124')
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
     districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
                                      price: rand(5..10) * 100000,
                                      population: 150000,
-                                     latitude: '-26.133213',
-                                     longitude: '-10.123231')
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
   end
 end
 
