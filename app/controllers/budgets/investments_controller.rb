@@ -1,6 +1,5 @@
 module Budgets
   class InvestmentsController < ApplicationController
-    OSM_DISTRICT_LEVEL_ZOOM = 12
 
     include FeatureFlags
     include CommentableActions
@@ -180,10 +179,7 @@ module Budgets
       end
 
       def load_map
-        @map_location = MapLocation.new
-        @map_location.zoom = OSM_DISTRICT_LEVEL_ZOOM
-        @map_location.latitude = @heading.latitude.to_f
-        @map_location.longitude = @heading.longitude.to_f
+        @map_location = MapLocation.load_from_heading(@heading)
       end
 
   end

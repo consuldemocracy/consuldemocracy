@@ -89,6 +89,22 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Index should show a map if heading has coordinates defined', :js do
+    create(:budget_investment, heading: heading)
+    visit budget_investments_path(budget, heading_id: heading.id)
+    within("#sidebar") do
+      expect(page).to have_css(".map_location")
+    end
+
+    unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
+                               longitude: nil, latitude: nil)
+    create(:budget_investment, heading: unlocated_heading)
+    visit budget_investments_path(budget, heading_id: unlocated_heading.id)
+    within("#sidebar") do
+      expect(page).not_to have_css(".map_location")
+    end
+  end
+
   context("Search") do
 
     scenario 'Search by text' do
