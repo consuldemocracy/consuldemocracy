@@ -68,6 +68,18 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
           expect(page).to have_content 'New description milestone'
         end
       end
+
+      scenario "Show validation errors with no description nor status" do
+        visit path
+        click_link "Create new milestone"
+
+        fill_in "Date", with: Date.current
+        click_button "Create milestone"
+
+        within "#new_milestone" do
+          expect(page).to have_content "can't be blank", count: 1
+        end
+      end
     end
 
     context "Edit" do
