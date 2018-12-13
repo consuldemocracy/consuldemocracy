@@ -2,25 +2,61 @@ class Admin::BudgetGroupsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
   before_action :load_budget
+  before_action :load_group, except: [:index, :new, :create]
+
+  def index
+    @groups = @budget.groups.order(:id)
+  end
+
+  def new
+    @group = @budget.groups.new
+  end
+
+  def edit
+  end
 
   def create
-    @budget.groups.create(budget_group_params)
-    @groups = @budget.groups.includes(:headings)
+    @group = @budget.groups.new(budget_group_params)
+    if @group.save
+      redirect_to groups_index, notice: t("admin.budget_groups.create.notice")
+    else
+      render :new
+    end
   end
 
   def update
-    @group = @budget.groups.by_slug(params[:id]).first
-    @group.update(budget_group_params)
+    if @group.update(budget_group_params)
+      redirect_to groups_index, notice: t("admin.budget_groups.update.notice")
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @group.headings.any?
+      redirect_to groups_index, alert: t("admin.budget_groups.destroy.unable_notice")
+    else
+      @group.destroy
+      redirect_to groups_index, notice: t("admin.budget_groups.destroy.success_notice")
+    end
   end
 
   private
 
-    def budget_group_params
-      params.require(:budget_group).permit(:name, :max_votable_headings, :max_supportable_headings)
-    end
-
     def load_budget
       @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+    end
+
+    def load_group
+      @group = @budget.groups.find_by(slug: params[:id]) || @budget.groups.find_by(id: params[:id])
+    end
+
+    def groups_index
+      admin_budget_groups_path(@budget)
+    end
+
+    def budget_group_params
+      params.require(:budget_group).permit(:name, :max_votable_headings, :max_supportable_headings)
     end
 
 end
