@@ -20,13 +20,18 @@
     </div>
 
     <div class="small-12 medium-9 column" data-equalizer-watch>
-      <h2 id="participation_statistics"><%= t("stats.title") %></h2>
-      <h3 id="total_participants"><%= t("stats.total_participants") %></h3>
+      <section id="participation_statistics">
+        <h2><%= t("stats.title") %></h2>
 
-      <p class="margin-top uppercase">
-        <%= t("polls.show.stats.total_votes") %><br>
-        <span class="number"><%= @stats[:total_participants] %></span>
-      </p>
+        <section id="total_participants">
+          <h3><%= t("stats.total_participants") %></h3>
+
+          <p class="margin-top uppercase">
+            <%= t("polls.show.stats.total_votes") %><br>
+            <span class="number"><%= @stats[:total_participants] %></span>
+          </p>
+        </section>
+      </section>
 
       <table>
         <thead>
