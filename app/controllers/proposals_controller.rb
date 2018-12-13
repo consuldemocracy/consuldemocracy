@@ -6,7 +6,7 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
-  before_action :login_user!, only: :vote
+  before_action :login_user_with_newsletter_token!, only: :newsletter_vote
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
@@ -54,16 +54,16 @@ class ProposalsController < ApplicationController
 
   def vote
     @proposal.register_vote(current_user, 'yes')
-
-    if newsletter_vote?
-      sign_out(:user)
-      redirect_to @proposal, notice: t('proposals.notice.voted')
-    else
-      set_proposal_votes(@proposal)
-    end
-
+    set_proposal_votes(@proposal)
     load_rank
     log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, @proposal_rank)
+  end
+
+  def newsletter_vote
+    @proposal.register_vote(current_user, "yes")
+
+    sign_out(:user) unless @signed_in_before_voting
+    redirect_to @proposal, notice: t("proposals.notice.voted")
   end
 
   def retire
@@ -194,14 +194,16 @@ class ProposalsController < ApplicationController
       end
     end
 
-    def login_user!
-      if newsletter_vote? && newsletter_user.present? && newsletter_user.level_two_or_three_verified?
+    def login_user_with_newsletter_token!
+      if current_user.present?
+        @signed_in_before_voting = true
+      elsif newsletter_vote? && newsletter_user&.can?(:newsletter_vote, Proposal)
         sign_in(:user, newsletter_user)
       end
     end
 
     def newsletter_vote?
-      request.get? && params[:newsletter_token].present?
+      params[:newsletter_token].present?
     end
 
     def newsletter_user

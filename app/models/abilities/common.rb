@@ -81,6 +81,7 @@ module Abilities
 
         if user.old_enough_to_participate?
           can :vote, Proposal
+          can :newsletter_vote, Proposal
           can :vote_featured, Proposal
           can :vote, SpendingProposal
 
