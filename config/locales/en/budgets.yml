@@ -192,10 +192,8 @@ en:
         prev_phase_dates_invalid: "Start date must be later than the start date of the previous enabled phase (%{phase_name})"
         next_phase_dates_invalid: "End date must be earlier than the end date of the next enabled phase (%{phase_name})"
     stats:
-      title: Participation stats
       link: Stats
       page_title: "%{budget} - Participation stats"
-      total_participants: Total Participants
       total_budget_investments: Total Proposed Investments
       total_selected_investments: Proposals on final phase
       total_unfeasible_investments: Unfeasible proposals

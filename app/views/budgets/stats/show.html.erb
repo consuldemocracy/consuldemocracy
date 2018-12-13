@@ -15,7 +15,7 @@
         <div class="small-12 column">
           <%= back_link_to budgets_path %>
           <h2 class="margin-top">
-            <%= t("budgets.stats.title") %><br>
+            <%= t("stats.title") %><br>
             <span><%= @budget.name %></span>
           </h2>
         </div>
@@ -42,7 +42,7 @@
     <div class="row">
       <div class="small-12 medium-6 column">
         <div class="callout">
-          <span class="uppercase"><%= t("budgets.stats.total_participants") %></span>
+          <span class="uppercase"><%= t("stats.total_participants") %></span>
           <p id="total_participants" class="big-number-stat budget">
             <%= @stats[:total_participants] %>
           </p>

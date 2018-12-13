@@ -192,10 +192,8 @@ es:
         prev_phase_dates_invalid: "La fecha de inicio debe ser posterior a la fecha de inicio de la anterior fase habilitada (%{phase_name})"
         next_phase_dates_invalid: "La fecha de fin debe ser anterior a la fecha de fin de la siguiente fase habilitada (%{phase_name})"
     stats:
-      title: Estadísticas de participación
       link: Estadísticas
       page_title: "%{budget} - Estadísticas de participación"
-      total_participants: Total participantes
       total_budget_investments: Total propuestas enviadas
       total_selected_investments: Propuestas en la fase final
       total_unfeasible_investments: Propuestas inviables

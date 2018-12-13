@@ -9,10 +9,10 @@
     <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
       <ul class="menu">
         <li>
-          <%= link_to t("polls.show.stats.title"), "#participation_statistics" %>
+          <%= link_to t("stats.title"), "#participation_statistics" %>
           <ul>
             <li>
-              <%= link_to t("polls.show.stats.total_participation"), "#total_participation" %>
+              <%= link_to t("stats.total_participants"), "#total_participants" %>
             </li>
           </ul>
         </li>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="small-12 medium-9 column" data-equalizer-watch>
-      <h2 id="participation_statistics"><%= t("polls.show.stats.title") %></h2>
-      <h3 id="total_participation"><%= t("polls.show.stats.total_participation") %></h3>
+      <h2 id="participation_statistics"><%= t("stats.title") %></h2>
+      <h3 id="total_participants"><%= t("stats.total_participants") %></h3>
 
       <p class="margin-top uppercase">
         <%= t("polls.show.stats.total_votes") %><br>
