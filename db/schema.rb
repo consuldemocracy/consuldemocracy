@@ -719,7 +719,6 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.date     "draft_start_date"
     t.date     "draft_end_date"
     t.boolean  "draft_phase_enabled",        default: false
-    t.text     "homepage"
     t.boolean  "homepage_enabled",           default: false
   end
 
