@@ -276,8 +276,8 @@ en:
         milestone: Milestone
         new_milestone: Create new milestone
       form:
-        admin_statuses: Admin investment statuses
-        no_statuses_defined: There are no defined investment statuses yet
+        admin_statuses: Manage statuses
+        no_statuses_defined: There are no defined statuses yet
       new:
         creating: Create milestone
         date: Date

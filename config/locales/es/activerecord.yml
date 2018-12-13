@@ -129,7 +129,7 @@ es:
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
       milestone:
-        status_id: "Estado actual del proyecto (opcional)"
+        status_id: "Estado actual (opcional)"
         title: "Título"
         description: "Descripción (opcional si hay un estado asignado)"
         publication_date: "Fecha de publicación"
