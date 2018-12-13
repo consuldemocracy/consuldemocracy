@@ -3,11 +3,11 @@ class Budget::Stats
   alias_method :budget, :resource
 
   def self.stats_methods
-    %i[total_participants total_participants_support_phase total_participants_vote_phase
-      total_budget_investments total_votes total_selected_investments
-      total_unfeasible_investments total_male_participants total_female_participants
-      total_supports total_unknown_gender_or_age age_groups male_percentage
-      female_percentage headings total_participants_web total_participants_booths]
+    super +
+      %i[total_participants_support_phase total_participants_vote_phase
+         total_budget_investments total_votes total_selected_investments
+         total_unfeasible_investments total_supports headings
+         total_participants_web total_participants_booths]
   end
 
   private
@@ -48,52 +48,8 @@ class Budget::Stats
       budget.investments.unfeasible.count
     end
 
-    def total_male_participants
-      participants.where(gender: 'male').count
-    end
-
-    def total_female_participants
-      participants.where(gender: 'female').count
-    end
-
     def total_supports
       supports(budget).count
-    end
-
-    def total_unknown_gender_or_age
-      participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
-    end
-
-    def age_groups
-      groups = Hash.new(0)
-      ["16 - 19",
-       "20 - 24",
-       "25 - 29",
-       "30 - 34",
-       "35 - 39",
-       "40 - 44",
-       "45 - 49",
-       "50 - 54",
-       "55 - 59",
-       "60 - 64",
-       "65 - 69",
-       "70 - 140"].each do |group|
-        start, finish = group.split(" - ")
-        group_name = (group == "70 - 140" ? "+ 70" : group)
-        groups[group_name] = User.where(id: participants)
-                                 .where("date_of_birth > ? AND date_of_birth < ?",
-                                        finish.to_i.years.ago.beginning_of_year,
-                                        start.to_i.years.ago.end_of_year).count
-      end
-      groups
-    end
-
-    def male_percentage
-      total_male_participants / total_participants_with_gender.to_f * 100
-    end
-
-    def female_percentage
-      total_female_participants / total_participants_with_gender.to_f * 100
     end
 
     def participants
@@ -114,10 +70,6 @@ class Budget::Stats
 
     def poll_ballot_voters
       budget&.poll ? budget.poll.voters.pluck(:user_id) : []
-    end
-
-    def total_participants_with_gender
-      participants.where.not(gender: nil).distinct.count
     end
 
     def balloters_by_heading(heading_id)
@@ -186,11 +138,6 @@ class Budget::Stats
     def population_percent(population, participants)
       return 'N/A' unless population.to_f.positive?
       calculate_percentage(participants, population)
-    end
-
-    def calculate_percentage(fraction, total)
-      percent = fraction / total.to_f
-      percent.nan? ? 0.0 : (percent * 100).round(3)
     end
 
     def supports(supportable)

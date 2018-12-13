@@ -1,6 +1,5 @@
 class Poll::Stats
   include Statisticable
-  include StatsHelper
   alias_method :poll, :resource
 
   def self.stats_methods
