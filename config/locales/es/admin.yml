@@ -107,35 +107,56 @@ es:
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
         title: Nuevo presupuesto ciudadano
-      show:
-        groups:
-          one: 1 Grupo de partidas presupuestarias
-          other: "%{count} Grupos de partidas presupuestarias"
-      form:
-        group: Nombre del grupo
-        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
-        add_group: Añadir nuevo grupo
-        create_group: Crear grupo
-        edit_group: Editar grupo
-        submit: Guardar grupo
-        heading: Nombre de la partida
-        add_heading: Añadir partida
-        amount: Cantidad
-        population: "Población (opcional)"
-        population_help_text: "Este dato se utiliza exclusivamente para calcular las estadísticas de participación"
-        save_heading: Guardar partida
-        no_heading: Este grupo no tiene ninguna partida asignada.
-        table_heading: Partida
-        table_amount: Cantidad
-        table_population: Población
-        population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
-        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
-        current_of_max_headings: "%{current} de %{max}"
-        allow_content_block: Permite bloque de contenidos
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular propuestas ganadoras
+    budget_groups:
+      name: "Nombre"
+      headings_name: "Partidas"
+      headings_edit: "Editar Partidas"
+      headings_manage: "Gestionar partidas"
+      max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
+      no_groups: "No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      amount:
+        one: "Hay 1 grupo de partidas presupuestarias"
+        other: "Hay %{count} grupos de partidas presupuestarias"
+      create:
+        notice: "¡Grupo creado con éxito!"
+      update:
+        notice: "Grupo actualizado"
+      destroy:
+        success_notice: "Grupo eliminado correctamente"
+        unable_notice: "No se puede eliminar un grupo con partidas asociadas"
+      form:
+        create: "Crear nuevo grupo"
+        edit: "Editar grupo"
+        name: "Nombre del grupo"
+        submit: "Guardar grupo"
+    budget_headings:
+      name: "Nombre"
+      no_headings: "No hay partidas creadas todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      amount:
+        one: "Hay 1 partida presupuestarias"
+        other: "Hay %{count} partidas presupuestarias"
+      create:
+        notice: "¡Partida presupuestaria creada con éxito!"
+      update:
+        notice: "Partida presupuestaria actualizada"
+      destroy:
+        success_notice: "Partida presupuestaria eliminada correctamente"
+        unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
+      form:
+        name: "Nombre de la partida"
+        amount: "Cantidad"
+        population: "Población (opcional)"
+        population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
+        latitude: "Latitud"
+        longitude: "Longitud"
+        allow_content_block: "Permitir bloque de contenidos"
+        create: "Crear nueva partida"
+        edit: "Editar partida"
+        submit: "Guardar partida"
     budget_phases:
       edit:
         start_date: Fecha de Inicio
