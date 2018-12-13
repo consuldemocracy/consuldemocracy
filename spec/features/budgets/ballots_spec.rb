@@ -161,6 +161,34 @@ feature 'Ballots' do
         end
       end
 
+      scenario "the Map shoud be visible before and after", :js do
+        investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
+
+        visit budget_path(budget)
+        click_link "States"
+        click_link "New York"
+
+        within("#sidebar") do
+          expect(page).to have_content "OpenStreetMap"
+        end
+
+        add_to_ballot(investment)
+
+        within("#sidebar") do
+          expect(page).to have_content investment.title
+          expect(page).to have_content "OpenStreetMap"
+        end
+
+        within("#budget_investment_#{investment.id}") do
+          click_link "Remove vote"
+        end
+
+        within("#sidebar") do
+          expect(page).not_to have_content investment.title
+          expect(page).to have_content "OpenStreetMap"
+        end
+      end
+
     end
 
     #Break up or simplify with helpers

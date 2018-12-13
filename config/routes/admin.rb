@@ -57,8 +57,8 @@ namespace :admin do
       put :calculate_winners
     end
 
-    resources :budget_groups do
-      resources :budget_headings
+    resources :groups, except: [:show], controller: "budget_groups" do
+      resources :headings, except: [:show], controller: "budget_headings"
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do

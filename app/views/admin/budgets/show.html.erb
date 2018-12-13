@@ -2,6 +2,4 @@
 
 <h2><%= @budget.name %></h2>
 
-<div id="<%= dom_id @budget %>_groups">
-  <%= render "groups", groups: @budget.groups.order(:id) %>
-</div>
+<%= render "form" %>

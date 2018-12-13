@@ -107,38 +107,56 @@ en:
         unable_notice: You cannot destroy a Budget that has associated investments
       new:
         title: New participatory budget
-      show:
-        groups:
-          one: 1 Group of budget headings
-          other: "%{count} Groups of budget headings"
-      form:
-        group: Group name
-        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
-        add_group: Add new group
-        create_group: Create group
-        edit_group: Edit group
-        submit: Save group
-        heading: Heading name
-        add_heading: Add heading
-        amount: Amount
-        population: "Population (optional)"
-        population_help_text: "This data is used exclusively to calculate the participation statistics"
-        save_heading: Save heading
-        no_heading: This group has no assigned heading.
-        table_heading: Heading
-        table_amount: Amount
-        table_population: Population
-        table_allow_custom_contents: Custom content allowed
-        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
-        max_votable_headings: "Maximum number of headings in which a user can vote"
-        current_of_max_headings: "%{current} of %{max}"
-        allow_content_block: Allow content block
-        latitude: Latitude
-        longitude: Longitude
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
         recalculate: Recalculate Winner Investments
+    budget_groups:
+      name: "Name"
+      headings_name: "Headings"
+      headings_edit: "Edit Headings"
+      headings_manage: "Manage headings"
+      max_votable_headings: "Maximum number of headings in which a user can vote"
+      no_groups: "No groups created yet. Each user will be able to vote in only one heading per group."
+      amount:
+        one: "There is 1 group"
+        other: "There are %{count} groups"
+      create:
+        notice: "Group created successfully!"
+      update:
+        notice: "Group updated successfully"
+      destroy:
+        success_notice: "Group deleted successfully"
+        unable_notice: "You cannot destroy a Group that has associated headings"
+      form:
+        create: "Create new group"
+        edit: "Edit group"
+        name: "Group name"
+        submit: "Save group"
+    budget_headings:
+      name: "Name"
+      no_headings: "No headings created yet. Each user will be able to vote in only one heading per group."
+      amount:
+        one: "There is 1 heading"
+        other: "There are %{count} headings"
+      create:
+        notice: "Heading created successfully!"
+      update:
+        notice: "Heading updated successfully"
+      destroy:
+        success_notice: "Heading deleted successfully"
+        unable_notice: "You cannot destroy a Heading that has associated investments"
+      form:
+        name: "Heading name"
+        amount: "Amount"
+        population: "Population (optional)"
+        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
+        latitude: "Latitude"
+        longitude: "Longitude"
+        allow_content_block: "Allow content block"
+        create: "Create new heading"
+        edit: "Edit heading"
+        submit: "Save heading"
     budget_phases:
       edit:
         start_date: Start date
