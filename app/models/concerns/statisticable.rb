@@ -70,6 +70,12 @@ module Statisticable
   end
 
   class_methods do
+    def stats_methods
+      %i[total_participants total_male_participants
+         total_female_participants total_unknown_gender_or_age
+         male_percentage female_percentage age_groups]
+    end
+
     def stats_cache(*method_names)
       method_names.each do |method_name|
         alias_method :"raw_#{method_name}", method_name
