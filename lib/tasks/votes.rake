@@ -13,4 +13,15 @@ namespace :votes do
 
   end
 
+  desc "Resets hot_score to its new value"
+  task reset_hot_score: :environment do
+    models = [Debate, Proposal, Legislation::Proposal]
+
+    models.each do |model|
+      model.find_each do |resource|
+        resource.save
+        print "."
+      end
+    end
+  end
 end

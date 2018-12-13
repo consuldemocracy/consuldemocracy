@@ -136,6 +136,9 @@ Setting['feature.homepage.widgets.feeds.proposals'] = true
 Setting['feature.homepage.widgets.feeds.debates'] = true
 Setting['feature.homepage.widgets.feeds.processes'] = true
 
+# Votes hot_score configuration
+Setting['hot_score_period_in_days'] = 31
+
 WebSection.create(name: 'homepage')
 WebSection.create(name: 'debates')
 WebSection.create(name: 'proposals')
