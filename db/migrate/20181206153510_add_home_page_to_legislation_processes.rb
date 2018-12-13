@@ -1,6 +1,5 @@
 class AddHomePageToLegislationProcesses < ActiveRecord::Migration
   def change
-    add_column :legislation_processes, :homepage, :text
     add_column :legislation_processes, :homepage_enabled, :boolean, default: false
 
     reversible do |dir|
