@@ -7,6 +7,12 @@ describe Budget::Heading do
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
 
+  describe "::OSM_DISTRICT_LEVEL_ZOOM" do
+    it "should be defined" do
+      expect(Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM).to be 12
+    end
+  end
+
   describe "name" do
     before do
       create(:budget_heading, group: group, name: 'object name')
@@ -45,13 +51,6 @@ describe Budget::Heading do
   end
 
   describe "save latitude" do
-    it "Doesn't allow latitude == nil" do
-      expect(build(:budget_heading, group: group, name: 'Latitude is nil', population: 12412512, latitude: nil, longitude: '12.123412')).not_to be_valid
-    end
-
-    it "Doesn't allow latitude == ''" do
-      expect(build(:budget_heading, group: group, name: 'Latitude is an empty string', population: 12412512, latitude: '', longitude: '12.123412')).not_to be_valid
-    end
 
     it "Doesn't allow latitude < -90" do
       heading = create(:budget_heading, group: group, name: 'Latitude is < -90')
@@ -150,13 +149,6 @@ describe Budget::Heading do
 
 
   describe "save longitude" do
-    it "Doesn't allow longitude == nil" do
-      expect(build(:budget_heading, group: group, name: 'Longitude is nil', population: 12412512, latitude: '12.123412', longitude: nil)).not_to be_valid
-    end
-
-    it "Doesn't allow longitude == ''" do
-      expect(build(:budget_heading, group: group, name: 'Longitude is an empty string', population: 12412512, latitude: '12.127412', longitude: '')).not_to be_valid
-    end
 
     it "Doesn't allow longitude < -180" do
       heading = create(:budget_heading, group: group, name: 'Longitude is < -180')
