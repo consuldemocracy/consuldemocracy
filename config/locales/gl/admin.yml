@@ -1,4 +1,6 @@
 gl:
+  true_value: 'Si'
+  false_value: 'Non'
   admin:
     header:
       title: Administración
@@ -128,9 +130,13 @@ gl:
         table_heading: Partida
         table_amount: Cantidade
         table_population: Poboación
+        table_allow_custom_contents: Permite contido personalizado
         population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
         max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
         current_of_max_headings: "%{current} de %{max}"
+        allow_content_block: Permite bloque de contido
+        latitude: Latitude
+        longitude: Lonxitude
       winners:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
@@ -267,6 +273,8 @@ gl:
         image: "Imaxe"
         show_image: "Amosar imaxe"
         documents: "Documentos"
+        milestone: Fitos
+        new_milestone: Crear un novo fito
       form:
         admin_statuses: Administrar estados de investimento
         no_statuses_defined: Aínda non se definirion os estados dos investimentos
@@ -414,6 +422,7 @@ gl:
           draft_versions: Redacción
           questions: Debate
           proposals: Propostas
+          milestones: Seguindo
       proposals:
         index:
           title: Título
@@ -511,6 +520,9 @@ gl:
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Borrar opción
+      milestones:
+        index:
+          title: Seguindo
     managers:
       index:
         title: Xestores
@@ -527,6 +539,7 @@ gl:
       admin: Menú de administración
       banner: Xestionar anuncios
       poll_questions: Preguntas
+      proposals: Propostas
       proposals_topics: Temas das propostas
       budgets: Orzamentos participativos
       geozones: Xestionar zonas
@@ -573,6 +586,8 @@ gl:
           welcome: "Benvida"
         buttons:
           save: "Gardar"
+          content_block:
+            update: "Actualizar Bloque"
       title_moderated_content: Moderar contido
       title_budgets: Orzamentos
       title_polls: Votacións
@@ -1029,6 +1044,13 @@ gl:
       search:
         title: Buscar organizacións
         no_results: Non se atoparon organizacións.
+    proposals:
+      index:
+        title: Propostas
+        id: ID
+        author: Autor
+        milestones: Fitos
+        no_proposals: Non hai ningunha proposta.
     hidden_proposals:
       index:
         filter: Filtro
