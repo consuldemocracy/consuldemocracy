@@ -204,6 +204,7 @@ zh-CN:
         summary: 总结
         description: 说明
         additional_info: 更多信息
+        milestones_summary: 总结
       legislation/draft_version:
         title: 版本标题
         body: 文本
