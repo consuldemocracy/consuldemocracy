@@ -52,24 +52,24 @@ end
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
     (1..4).to_a.sample.times do
-      title = Faker::Lorem.sentence(3).truncate(60) + '?'
+      question_title = Faker::Lorem.sentence(3).truncate(60) + '?'
       question = Poll::Question.new(author: User.all.sample,
-                                    title: title,
+                                    title: question_title,
                                     poll: poll)
       I18n.available_locales.map do |locale|
         Globalize.with_locale(locale) do
-          question.title = "#{title} (#{locale})"
+          question.title = "#{question_title} (#{locale})"
         end
       end
       question.save!
-      Faker::Lorem.words((2..4).to_a.sample).each do |title|
+      Faker::Lorem.words((2..4).to_a.sample).each do |answer_title|
         description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
         answer = Poll::Question::Answer.new(question: question,
-                                            title: title.capitalize,
+                                            title: answer_title.capitalize,
                                             description: description)
         I18n.available_locales.map do |locale|
           Globalize.with_locale(locale) do
-            answer.title = "#{title} (#{locale})"
+            answer.title = "#{answer_title} (#{locale})"
             answer.description = "#{description} (#{locale})"
           end
         end
