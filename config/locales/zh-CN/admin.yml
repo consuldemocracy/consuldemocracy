@@ -395,6 +395,10 @@ zh-CN:
           submit_button: 创建进程
         proposals:
           select_order: 排序依据
+          orders:
+            id: Id
+            title: 标题
+            supports: 支持
         process:
           title: 进程
           comments: 评论
@@ -405,11 +409,17 @@ zh-CN:
           status_planned: 计划
         subnav:
           info: 信息
+          draft_versions: 起草
           questions: 辩论
           proposals: 提议
       proposals:
         index:
+          title: 标题
           back: 返回
+          id: Id
+          supports: 支持
+          select: 选择
+          selected: 已选择
         form:
           custom_categories: 类别
           custom_categories_description: 用户可以选择创建提议的类别。
@@ -575,6 +585,7 @@ zh-CN:
         title: 管理员
         name: 名字
         email: 电子邮件
+        id: 管理员 ID
         no_administrators: 没有管理员。
       administrator:
         add: 添加
@@ -629,6 +640,8 @@ zh-CN:
         title: 时事通讯预览
         send: 发送
         affected_users: (%{n} 个受影响的用户)
+        sent_emails:
+          other: "已发送%{count} 封电子邮件"
         sent_at: 发送于
         subject: 主题
         segment_recipient: 收件人
@@ -656,8 +669,10 @@ zh-CN:
         empty_notifications: 没有要显示的通知
       new:
         section_title: 新通知
+        submit_button: 创建通知
       edit:
         section_title: 编辑通知
+        submit_button: 更新通知
       show:
         section_title: 通知预览
         send: 发送通知
@@ -969,6 +984,7 @@ zh-CN:
       index:
         title: 官员
         no_officials: 没有官员。
+        name: 名称
         official_position: 正式职位
         official_level: 级别
       level_0: 非官员
@@ -1009,6 +1025,13 @@ zh-CN:
       search:
         title: 搜索组织
         no_results: 未找到任何组织。
+    hidden_proposals:
+      index:
+        filter: 过滤器
+        filters:
+          all: 所有
+          with_confirmed_hide: 已确认
+          without_confirmed_hide: 有待
     proposal_notifications:
       index:
         filter: 过滤器
