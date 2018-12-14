@@ -52,6 +52,8 @@ gl:
     place_name_description: "Nome da túa cidade"
     related_content_score_threshold: "Límite de puntuación de contido relacionados"
     related_content_score_threshold_description: "Agocha o contido que os usuarios marcan como non relacionado"
+    hot_score_period_in_days: "Período (en días) usado polo filtro 'máis activo'"
+    hot_score_period_in_days_description: "O filtro 'máis activo' úsase en diferentes seccións, e está baseado nos votos durante os últimos X días"
     map_latitude: "Latitude"
     map_latitude_description: "Latitude para amosar a posición do mapa"
     map_longitude: "Lonxitude"
