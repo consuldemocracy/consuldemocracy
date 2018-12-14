@@ -1042,6 +1042,10 @@ zh-CN:
         no_results: 未找到任何组织。
     proposals:
       index:
+        title: 提议
+        id: ID
+        author: 作者
+        milestones: 里程碑
         no_proposals: 没有提议。
     hidden_proposals:
       index:
@@ -1378,6 +1382,7 @@ zh-CN:
           status_draft: 起草
           status_published: 已发表
           title: 标题
+          slug: Slug
     homepage:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
@@ -1386,6 +1391,7 @@ zh-CN:
       create_header: 创建页眉
       cards_title: 卡
       create_card: 创建卡
+      no_cards: 没有卡片。
       cards:
         title: 标题
         description: 描述
