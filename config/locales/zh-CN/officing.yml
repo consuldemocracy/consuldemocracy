@@ -23,6 +23,7 @@ zh-CN:
         error_wrong_booth: "投票亭错误。结果未保存。"
       new:
         title: "%{poll}－ 添加结果"
+        not_allowed: "您未被允许为此投票添加结果"
         booth: "投票亭"
         date: "日期"
         select_booth: "选择投票亭"
