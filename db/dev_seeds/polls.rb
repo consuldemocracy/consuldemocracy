@@ -172,13 +172,23 @@ section "Creating Poll Recounts" do
       officer_assignment = poll.officer_assignments.first
       author = Poll::Officer.first.user
 
+      total_amount = white_amount = null_amount = 0
+
+      booth_assignment.voters.count.times do
+        case rand
+        when 0...0.1 then null_amount += 1
+        when 0.1...0.2 then white_amount += 1
+        else total_amount += 1
+        end
+      end
+
       Poll::Recount.create!(officer_assignment: officer_assignment,
                             booth_assignment: booth_assignment,
                             author: author,
                             date: poll.ends_at,
-                            white_amount: rand(0..10),
-                            null_amount: rand(0..10),
-                            total_amount: rand(100..9999),
+                            white_amount: white_amount,
+                            null_amount: null_amount,
+                            total_amount: total_amount,
                             origin: "booth")
     end
   end
