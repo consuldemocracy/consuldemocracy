@@ -1382,7 +1382,7 @@ zh-CN:
           status_draft: 起草
           status_published: 已发表
           title: 标题
-          slug: Slug（呆滞的）
+          slug: Slug
     homepage:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
