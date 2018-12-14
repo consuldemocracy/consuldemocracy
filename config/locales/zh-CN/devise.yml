@@ -28,6 +28,7 @@ zh-CN:
       unlock_instructions:
         subject: "解锁的说明"
     omniauth_callbacks:
+      failure: "因为\"%{reason}\"，还无法将您授权为%{kind}。"
       success: "成功标识为%{kind}。"
     passwords:
       no_token: "除非通过密码重设链接，否则无法访问此页面。如果您已通过密码重设链接来访问，请检查URL 是否完整。"
