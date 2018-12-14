@@ -94,7 +94,7 @@ zh-CN:
         image: "建议说明性图像"
         image_title: "图像标题"
       milestone:
-        status_id: "当前投资状况（可选）"
+        status_id: "当前状况（可选）"
         title: "标题"
         description: "说明（如果指定了状态，则可选）"
         publication_date: "发布日期"
@@ -175,7 +175,7 @@ zh-CN:
         locale: 语言
       site_customization/page/translation:
         title: 标题
-        subtitle: 字幕
+        subtitle: 副标题
         content: 内容
       site_customization/image:
         name: 名字
