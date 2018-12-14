@@ -434,6 +434,9 @@ zh-CN:
     update:
       form:
         submit_button: 保存更改
+    share:
+      message: "我支持%{org} 中的提议%{summary}。如果您感兴趣，也请支持它！"
+      message_mobile: "我支持%{handle} 中的提议%{summary}。如果您感兴趣，也请支持它！"
   polls:
     all: "所有"
     no_dates: "没指定日期"
@@ -512,6 +515,7 @@ zh-CN:
       title_label: "标题"
       body_label: "信息"
       submit_button: "发送信息"
+      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong>，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
       proposal_page: "提议页面"
     show:
       back: "返回我的活动"
@@ -804,6 +808,7 @@ zh-CN:
     error: "链接无效。请记住以%{url} 开头。"
     error_itself: "链接无效。您无法把内容关联到它自身。"
     success: "您添加了新的相关的内容"
+    is_related: "它是相关的内容吗？"
     score_positive: "是"
     score_negative: "不是"
     content_title:
