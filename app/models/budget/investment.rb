@@ -60,7 +60,7 @@ class Budget
     scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
 
     scope :sort_by_id, -> { order("id DESC") }
-    scope :sort_by_title, -> { order("title ASC") }
+    scope :sort_by_title, -> { with_translations(I18n.locale).order("budget_investment_translations.title ASC") }
     scope :sort_by_supports, -> { order("cached_votes_up DESC") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
@@ -118,7 +118,7 @@ class Budget
       results = Investment.by_budget(budget)
 
       results = results.where("cached_votes_up + physical_votes >= ?",
-                              params[:min_total_supports])                    if params[:min_total_supports].present?
+                              params[:min_total_supports])                 if params[:min_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
@@ -163,7 +163,7 @@ class Budget
       if title_or_id =~ /^[0-9]+$/
         results.where(id: title_or_id)
       else
-        results.where("title ILIKE ?", "%#{title_or_id}%")
+        results.with_translations(I18n.locale).where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%")
       end
     end
 
