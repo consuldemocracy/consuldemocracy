@@ -133,6 +133,8 @@ zh-CN:
         max_votable_headings: "用户可以投票的最大标题数"
         current_of_max_headings: "%{max} 之%{current}"
         allow_content_block: 允许内容模块
+        latitude: 纬度
+        longitude: 经度
       winners:
         calculate: 计算胜出者投资
         calculated: 计算胜出者中，可能需要一分钟时间。
@@ -269,6 +271,8 @@ zh-CN:
         image: "图像"
         show_image: "显示图像"
         documents: "文件"
+        milestone: 里程碑
+        new_milestone: 创建新的里程碑
       form:
         admin_statuses: 管理投资状态
         no_statuses_defined: 尚未有已定义的投资状态
@@ -416,6 +420,7 @@ zh-CN:
           draft_versions: 起草
           questions: 辩论
           proposals: 提议
+          milestones: 跟随着
       proposals:
         index:
           title: 标题
@@ -513,6 +518,9 @@ zh-CN:
           comments_count: 评论数
         question_option_fields:
           remove_option: 删除选项
+      milestones:
+        index:
+          title: 跟随着
     managers:
       index:
         title: 经理
@@ -529,6 +537,7 @@ zh-CN:
       admin: 管理菜单
       banner: 管理横幅
       poll_questions: 问题
+      proposals: 提议
       proposals_topics: 提议主题
       budgets: 参与性预算
       geozones: 管理地理区域
@@ -575,6 +584,8 @@ zh-CN:
           welcome: "欢迎"
         buttons:
           save: "保存"
+          content_block:
+            update: "更新模块"
       title_moderated_content: 已审核的内容
       title_budgets: 预算
       title_polls: 投票
