@@ -52,6 +52,7 @@ zh-CN:
     place_name_description: "您的城市名称"
     related_content_score_threshold: "相关内容评分阙值"
     related_content_score_threshold_description: "隐藏用户标记为不相关的内容"
+    hot_score_period_in_days: "通过’最活跃‘来筛选的使用期间（天）"
     map_latitude: "纬度"
     map_latitude_description: "显示地图位置的纬度"
     map_longitude: "经度"
