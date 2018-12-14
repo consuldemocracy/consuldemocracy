@@ -60,7 +60,7 @@ zh-CN:
       legislation/question_options:
         other: "问题选项"
       legislation/answers:
-        other: "答案"
+        other: "回答"
       documents:
         other: "文件"
       images:
@@ -175,7 +175,7 @@ zh-CN:
         locale: 语言
       site_customization/page/translation:
         title: 标题
-        subtitle: 副标题
+        subtitle: 字幕
         content: 内容
       site_customization/image:
         name: 名字
@@ -203,7 +203,7 @@ zh-CN:
         title: 进程标题
         summary: 总结
         description: 说明
-        additional_info: 更多信息
+        additional_info: 其他信息
         milestones_summary: 总结
       legislation/draft_version:
         title: 版本标题
