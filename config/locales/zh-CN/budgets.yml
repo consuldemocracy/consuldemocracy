@@ -56,6 +56,7 @@ zh-CN:
       section_footer:
         title: 参与性预算的帮助说明
         description: 通过参与性预算，公民决定哪些项目注定会是预算的一部分。
+      milestones: 里程碑
     investments:
       form:
         tag_category_label: "类别"
@@ -101,6 +102,9 @@ zh-CN:
           random: 随机
           confidence_score: 最高额定值
           price: 按价格
+      share:
+        message: "我在%{org} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
+        message_mobile: "我在%{handle} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
       show:
         author_deleted: 用户已删除
         price_explanation: 价格说明
@@ -155,6 +159,7 @@ zh-CN:
       heading: "参与性预算结果"
       heading_selection_title: "按区域"
       spending_proposal: 提议标题
+      ballot_lines_count: 投票
       hide_discarded_link: 隐藏放弃的
       show_all_link: 显示所有
       price: 价格
@@ -165,6 +170,15 @@ zh-CN:
       investment_proyects: 所有投资项目的列表
       unfeasible_investment_proyects: 所有不可行投资项目的列表
       not_selected_investment_proyects: 所有未被选入投票的投资项目的列表
+    executions:
+      link: "里程碑"
+      page_title: "%{budget}－里程碑"
+      heading: "参与性预算里程碑"
+      heading_selection_title: "按区域"
+      no_winner_investments: "这个州里没有胜出的投资"
+      filters:
+        label: "项目的当前状态"
+        all: "所有(%{count})"
     phases:
       errors:
         dates_range_invalid: "开始日期不能等于或晚于结束日期"
