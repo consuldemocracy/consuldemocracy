@@ -239,6 +239,7 @@ gl:
         summary: Resumo
         description: Descrición
         additional_info: Información adicional
+        milestones_summary: Resumo
       legislation/draft_version:
         title: Título da versión
         body: Texto
