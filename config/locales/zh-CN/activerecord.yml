@@ -8,13 +8,13 @@ zh-CN:
       budget/investment:
         other: "投资"
       milestone:
-        other: "投资"
+        other: "里程碑"
       milestone/status:
-        other: "投资状态"
+        other: "里程碑状态"
       comment:
-        other: "意见"
+        other: "评论"
       debate:
-        other: "讨论"
+        other: "辩论"
       tag:
         other: "标签"
       user:
@@ -97,7 +97,7 @@ zh-CN:
         status_id: "当前投资状况（可选）"
         title: "标题"
         description: "说明（如果指定了状态，则可选）"
-        publication_date: "发表日期"
+        publication_date: "发布日期"
       milestone/status:
         name: "名称"
         description: "说明（可选）"
