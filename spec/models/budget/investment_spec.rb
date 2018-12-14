@@ -6,6 +6,7 @@ describe Budget::Investment do
   describe "Concerns" do
     it_behaves_like "notifiable"
     it_behaves_like "globalizable", :budget_investment
+    it_behaves_like "acts as imageable", :budget_investment_image
   end
 
   it "is valid" do
@@ -33,8 +34,6 @@ describe Budget::Investment do
       expect(investment).not_to be_valid
     end
   end
-
-  it_behaves_like "acts as imageable", "budget_investment_image"
 
   it "sanitizes description" do
     investment.description_en = "<script>alert('danger');</script>"
