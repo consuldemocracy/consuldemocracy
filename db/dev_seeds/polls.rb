@@ -124,17 +124,21 @@ end
 section "Creating Poll Voters" do
 
   def vote_poll_on_booth(user, poll)
-    Poll::Voter.create(document_type: user.document_type,
+    officer = Poll::Officer.all.sample
+
+    Poll::Voter.create!(document_type: user.document_type,
                        document_number: user.document_number,
                        user: user,
                        poll: poll,
                        origin: 'booth',
-                       officer: Poll::Officer.all.sample)
+                       officer: officer,
+                       officer_assignment: officer.officer_assignments.sample,
+                       booth_assignment: poll.booth_assignments.sample)
   end
 
   def vote_poll_on_web(user, poll)
     randomly_answer_questions(poll, user)
-    Poll::Voter.create(document_type: user.document_type,
+    Poll::Voter.create!(document_type: user.document_type,
                        document_number: user.document_number,
                        user: user,
                        poll: poll,
