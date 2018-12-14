@@ -26,6 +26,10 @@ class Budget
     include Flaggable
     include Milestoneable
 
+    translates :title, touch: true
+    translates :description, touch: true
+    include Globalizable
+
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
     belongs_to :group
@@ -41,15 +45,13 @@ class Budget
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
 
-    validates :title, presence: true
+    validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
+    validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
+
     validates :author, presence: true
-    validates :description, presence: true
     validates :heading_id, presence: true
     validates :unfeasibility_explanation, presence: { if: :unfeasibility_explanation_required? }
     validates :price, presence: { if: :price_required? }
-
-    validates :title, length: { in: 4..Budget::Investment.title_max_length }
-    validates :description, length: { maximum: Budget::Investment.description_max_length }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
