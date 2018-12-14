@@ -1,4 +1,6 @@
 zh-CN:
+  true_value: '是'
+  false_value: '不是'
   admin:
     header:
       title: 管理
@@ -1025,6 +1027,9 @@ zh-CN:
       search:
         title: 搜索组织
         no_results: 未找到任何组织。
+    proposals:
+      index:
+        no_proposals: 没有提议。
     hidden_proposals:
       index:
         filter: 过滤器
@@ -1032,6 +1037,8 @@ zh-CN:
           all: 所有
           with_confirmed_hide: 已确认
           without_confirmed_hide: 有待
+        title: 隐藏的提议
+        no_hidden_proposals: 没有隐藏的提议。
     proposal_notifications:
       index:
         filter: 过滤器
@@ -1362,6 +1369,7 @@ zh-CN:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
       header_title: 页眉
+      no_header: 没有页眉。
       create_header: 创建页眉
       cards_title: 卡
       create_card: 创建卡
