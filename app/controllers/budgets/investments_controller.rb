@@ -5,6 +5,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include Translatable
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 
@@ -132,12 +133,12 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment)
-              .permit(:title, :description, :heading_id, :tag_list,
+        attributes = [:title, :description, :heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      map_location_attributes: [:latitude, :longitude, :zoom])
+                      map_location_attributes: [:latitude, :longitude, :zoom]]
+        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
       end
 
       def load_ballot

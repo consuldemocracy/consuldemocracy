@@ -1,4 +1,7 @@
-<%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
+<%= render "shared/globalize_locales", resource: @investment %>
+
+<%= translatable_form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
+
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
@@ -6,16 +9,26 @@
       <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>
-    </div>
-    <div id="js-suggest"></div>
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_field :title,
+              maxlength: SpendingProposal.title_max_length,
+              label: t("activerecord.attributes.budget/investment.title"),
+              data: { js_suggest_result: "js_suggest_result",
+                      js_suggest: "#js-suggest",
+                      js_url: suggest_budget_investments_path(@budget) }%>
+      </div>
+      <div id="js-suggest"></div>
+
+      <div class="ckeditor small-12 column">
+        <%= translations_form.cktext_area :description,
+              maxlength: SpendingProposal.description_max_length,
+              label: t("activerecord.attributes.budget/investment.description"),
+              ckeditor: { language: I18n.locale } %>
+      </div>
+    <% end %>
 
     <%= f.invisible_captcha :subtitle %>
-
-    <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
-    </div>
 
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
