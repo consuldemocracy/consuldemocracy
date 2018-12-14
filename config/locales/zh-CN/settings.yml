@@ -20,6 +20,8 @@ zh-CN:
     max_votes_for_debate_edit_description: "得到这个数量的投票，辩论的作者不能再编辑它"
     proposal_code_prefix: "提议代码的前缀"
     proposal_code_prefix_description: "此前缀将显示在提议的创建日期之前及其ID之中"
+    featured_proposals_number: "特色提议的数量"
+    featured_proposals_number_description: "如果特色提议功能处于活动状态，则将显示特色提议的数量"
     votes_for_proposal_success: "提议要获得通过所需要的投票数"
     votes_for_proposal_success_description: "当一个提议达到这个数目的支持时，它将不能再获得更多支持并被视为已成功"
     months_to_archive_proposals: "提议存档的月限"
