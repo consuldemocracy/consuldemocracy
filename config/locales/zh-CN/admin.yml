@@ -128,9 +128,11 @@ zh-CN:
         table_heading: 标题
         table_amount: 数量
         table_population: 人口
+        table_allow_custom_contents: 允许定制内容
         population_info: "预算标题人口字段用于统计目的，在预算结束后显示每个标题，代表一个地区与人口百分比投票率。此字段为可选，因此如果不适用，您可以将其留空。"
         max_votable_headings: "用户可以投票的最大标题数"
         current_of_max_headings: "%{max} 之%{current}"
+        allow_content_block: 允许内容模块
       winners:
         calculate: 计算胜出者投资
         calculated: 计算胜出者中，可能需要一分钟时间。
