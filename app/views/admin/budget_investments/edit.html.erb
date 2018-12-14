@@ -2,21 +2,32 @@
   <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
 
-<%= form_for @investment,
-             url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
+<%= render "shared/globalize_locales", resource: @investment %>
+
+<%= translatable_form_for @investment,
+                          url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
+
+  <%= render 'shared/errors', resource: @investment %>
 
   <% Budget::Investment.filter_params(params).each do |filter_name, filter_value| %>
    <%= hidden_field_tag filter_name, filter_value %>
   <% end %>
 
   <div class="row expanded">
-    <div class="small-12 column">
-      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
-    </div>
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_field :title,
+              maxlength: Budget::Investment.title_max_length,
+              label: t("activerecord.attributes.budget/investment.title") %>
+      </div>
 
-    <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
-    </div>
+      <div class="ckeditor small-12 column">
+        <%= translations_form.cktext_area :description,
+              maxlength: Budget::Investment.description_max_length,
+              label: t("activerecord.attributes.budget/investment.description"),
+              ckeditor: { language: I18n.locale } %>
+      </div>
+    <% end %>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
@@ -47,7 +58,6 @@
                        { include_blank: t("admin.budget_investments.edit.undefined") }) %>
       </div>
     </div>
-
 
     <div class="small-12 column">
       <%= f.label :valuation_tag_list, t("admin.budget_investments.edit.tags") %>
