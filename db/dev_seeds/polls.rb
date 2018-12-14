@@ -156,11 +156,11 @@ section "Creating Poll Voters" do
   end
 
   (Poll.expired + Poll.current + Poll.recounting).uniq.each do |poll|
-    level_two_verified_users = User.level_two_verified
+    verified_users = User.level_two_or_three_verified
     if poll.geozone_restricted?
-      level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids)
+      verified_users = verified_users.where(geozone_id: poll.geozone_ids)
     end
-    user_groups = level_two_verified_users.in_groups(2)
+    user_groups = verified_users.in_groups(2)
     user_groups.first.each { |user| vote_poll_on_booth(user, poll) }
     user_groups.second.compact.each { |user| vote_poll_on_web(user, poll) }
   end
