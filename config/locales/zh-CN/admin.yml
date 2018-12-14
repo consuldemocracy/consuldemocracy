@@ -378,7 +378,7 @@ zh-CN:
           process: 进程
           debate_phase: 辩论阶段
           draft_phase: 草案阶段
-          draft_phase_description: 如果此阶段有效，该进程将不会列在进程索引上。允许开始前预览进程并创建内容。
+          draft_phase_description: 如果此阶段处于活动状态，该进程将不会列在进程索引上。允许在开始前预览进程并创建内容。
           allegations_phase: 评论阶段
           proposals_phase: 提议阶段
           start: 开始
@@ -1382,7 +1382,7 @@ zh-CN:
           status_draft: 起草
           status_published: 已发表
           title: 标题
-          slug: Slug
+          slug: Slug（呆滞的）
     homepage:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
@@ -1391,7 +1391,7 @@ zh-CN:
       create_header: 创建页眉
       cards_title: 卡
       create_card: 创建卡
-      no_cards: 没有卡片。
+      no_cards: 没有卡。
       cards:
         title: 标题
         description: 描述
