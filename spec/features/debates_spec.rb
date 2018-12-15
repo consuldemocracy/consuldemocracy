@@ -59,7 +59,7 @@ feature 'Debates' do
     debates.each do |debate|
       within('#debates') do
         expect(page).to     have_link debate.title
-        expect(page).to_not have_content debate.description
+        expect(page).not_to have_content debate.description
       end
     end
 

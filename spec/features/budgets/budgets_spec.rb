@@ -404,8 +404,8 @@ feature 'Budgets' do
       expect(page).to have_css("#budget_heading_#{heading1.id}")
       expect(page).to have_css("#budget_heading_#{heading2.id}")
 
-      expect(page).to_not have_css("#budget_heading_#{heading3.id}")
-      expect(page).to_not have_css("#budget_heading_#{heading4.id}")
+      expect(page).not_to have_css("#budget_heading_#{heading3.id}")
+      expect(page).not_to have_css("#budget_heading_#{heading4.id}")
     end
 
     scenario "See results button is showed if the budget has finished for all users" do

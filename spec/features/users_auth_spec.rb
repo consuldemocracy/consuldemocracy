@@ -202,7 +202,7 @@ feature 'Users' do
         click_link 'Cancel login'
 
         visit '/'
-        expect_to_not_be_signed_in
+        expect_not_to_be_signed_in
       end
 
       scenario 'Sign in, user was already signed up with OAuth' do
