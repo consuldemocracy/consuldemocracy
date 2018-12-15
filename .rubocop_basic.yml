@@ -26,3 +26,6 @@ Layout/TrailingBlankLines:
 
 Layout/TrailingWhitespace:
   Enabled: true
+
+RSpec/NotToNot:
+  Enabled: true
