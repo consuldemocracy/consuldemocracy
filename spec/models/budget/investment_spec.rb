@@ -343,9 +343,9 @@ describe Budget::Investment do
 
       investments_by_budget = Budget::Investment.by_budget(budget1)
 
-       expect(investments_by_budget).to include investment1
-       expect(investments_by_budget).to include investment2
-       expect(investments_by_budget).not_to include investment3
+      expect(investments_by_budget).to include investment1
+      expect(investments_by_budget).to include investment2
+      expect(investments_by_budget).not_to include investment3
     end
   end
 
