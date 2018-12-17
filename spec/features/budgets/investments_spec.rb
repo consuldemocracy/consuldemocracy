@@ -1497,7 +1497,7 @@ feature 'Budget Investments' do
         expect(page).to have_content "€#{sp2.price}"
 
         expect(page).not_to have_content sp3.title
-        expect(page).not_to have_content "#{sp3.price}"
+        expect(page).not_to have_content "€#{sp3.price}"
       end
 
       within("#budget_group_#{group.id}") do
