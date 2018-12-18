@@ -106,30 +106,6 @@ sv:
         unable_notice: Du kan inte ta bort en budget som har budgetförslag
       new:
         title: Ny medborgarbudget
-      show:
-        groups:
-          one: 1 delbudget
-          other: "%{count} delbudgetar"
-      form:
-        group: Delbudget
-        no_groups: Inga delbudgetar har skapats. Användare kommer att kunna rösta på ett område inom varje delbudget.
-        add_group: Lägga till delbudget
-        create_group: Skapa delbudget
-        edit_group: Redigera delbudget
-        submit: Spara delbudget
-        heading: Område
-        add_heading: Lägga till område
-        amount: Antal
-        population: "Befolkning (frivilligt fält)"
-        population_help_text: "Den här informationen används uteslutande för statistik"
-        save_heading: Spara område
-        no_heading: Delbudgeten har inga områden.
-        table_heading: Område
-        table_amount: Antal
-        table_population: Befolkning
-        population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
-        max_votable_headings: "Högst antal områden som användare kan rösta inom"
-        current_of_max_headings: "%{current} av %{max}"
       winners:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
