@@ -35,7 +35,7 @@ nl:
       login_items:
         login: Log in
         logout: Log uit
-        signup: Registreer
+        signup: Registreren
     organizations:
       registrations:
         new:
