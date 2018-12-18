@@ -106,30 +106,6 @@ de:
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
       new:
         title: Neuer Bürgerhaushalt
-      show:
-        groups:
-          one: 1 Gruppe von Rubriken
-          other: "%{count} Gruppe von Rubriken"
-      form:
-        group: Name der Gruppe
-        no_groups: Bisher wurden noch keine Gruppen erstellt. Jede*r Benutzer*in darf in nur einer Rubrik per Gruppe abstimmen.
-        add_group: Neue Gruppe hinzufügen
-        create_group: Gruppe erstellen
-        edit_group: Gruppe bearbeiten
-        submit: Gruppe speichern
-        heading: Name der Rubrik
-        add_heading: Rubrik hinzufügen
-        amount: Summe
-        population: "Bevölkerung (optional)"
-        population_help_text: "Diese Daten dienen ausschließlich dazu, die Beteiligungsstatistiken zu berechnen"
-        save_heading: Rubrik speichern
-        no_heading: Diese Gruppe hat noch keine zugeordnete Rubrik.
-        table_heading: Rubrik
-        table_amount: Summe
-        table_population: Bevölkerung
-        population_info: "Das Feld 'Bevölkerung' in den Rubriken wird nur für statistische Zwecke verwendet, mit dem Ziel, den Prozentsatz der Stimmen in jeder Rubrik anzuzeigen, die ein Bevölkerungsgebiet darstellt. Dieses Feld ist optional; Sie können es daher leer lassen, wenn es nicht zutrifft."
-        max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
-        current_of_max_headings: "%{current} von %{max}"
       winners:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
