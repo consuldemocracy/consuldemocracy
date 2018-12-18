@@ -30,18 +30,6 @@ ast:
         notice: '¡Nueva campaña de presupuestos participativos creada con ésitu!'
       new:
         title: Nuevu presupuestu ciudadanu
-      show:
-        groups:
-          one: 1 Grupu de partíes presupuestaries
-          other: "%{count} Grupos de partíes presupuestaries"
-      form:
-        group: Nome del grupu
-        no_groups: Nun hai grupos creaos inda. Cada usuariu va poder votar nuna sola partida de cada grupu.
-        add_group: Añedir nuevu grupu
-        create_group: Crear grupu
-        add_heading: Añedir partida
-        amount: Cantidá
-        no_heading: Esti grupu nun tien nenguna partida asignada.
       winners:
         calculate: Calcular propuestes ganadores
         calculated: Calculando ganadoras, puede tardar un minutu.
