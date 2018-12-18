@@ -105,29 +105,6 @@ zh-TW:
         unable_notice: 您無法銷毀具有相關投資的預算
       new:
         title: 新的參與性預算
-      show:
-        groups:
-          other: "1組預算標題\n%{count} 組預算標題"
-      form:
-        group: 組名字
-        no_groups: 尚未創建任何小組。 每個用戶只能在每個組中的一個標題中投票。
-        add_group: 添加新組
-        create_group: 創建組
-        edit_group: 編輯組
-        submit: 儲存組
-        heading: 標題名稱
-        add_heading: 添加標題
-        amount: 數量
-        population: "人口 (可選擇填寫)"
-        population_help_text: "此數據僅用於計算參與統計資訊"
-        save_heading: 儲存標題
-        no_heading: 此組沒有指定的標題。
-        table_heading: 標題
-        table_amount: 數量
-        table_population: 人口
-        population_info: "預算標題 \"人口\" 欄位用於統計目的, 在預算結束時顯示每個標題, 代表一個地區與人口百分比投票率。該欄位是可選擇填寫的, 因此如果不適用, 您可以將其留空。"
-        max_votable_headings: "用戶可投票的最大標題數"
-        current_of_max_headings: "%{max} 之%{current}"
       winners:
         calculate: 計算勝出者投資
         calculated: 勝出者正在被計算中，可能需要一分鐘。
