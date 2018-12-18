@@ -107,26 +107,6 @@ so:
         unable_notice: Ma jebin kartid miisaaniyad maalgelinta la xidhiidha
       new:
         title: Misaniyada cusub ee kaqaybqaadashada
-      form:
-        group: Mgaca Kooxada
-        no_groups: Kooxo weli lama abuurin. Isticmaal kasta wuxuu awoodi doonaa inuu u codeeyo hal koox oo kaliya hal koox.
-        add_group: Kudar koox cusub
-        create_group: Saame koox cusub
-        edit_group: Wax ka bedel kooxda
-        submit: Bad baadi kooxda
-        heading: Magaca Ciwaanka
-        add_heading: Kudar ciwaan
-        amount: Tirada
-        population: "Dadweynaha(Ikhyaar)"
-        population_help_text: "Xogtan waxaa loo isticmaalaa si gaar ah si loo xisaabiyo ka qaybgalka tirakoobyada"
-        save_heading: Bad baadi ciwaanka
-        no_heading: Kooxdani ma lahan wax madax-bannaan.
-        table_heading: Madaxa
-        table_amount: Tirada
-        table_population: Dadkaweyne
-        population_info: "Miisaaniyadda Meelaynta dadweynaha ayaa loo adeegsadaa ujeedooyinka Istatistikada dhammaadka Miisaaniyadda si ay u muujiyaan mid walba oo ka wakiil ah aag leh dadweynaha boqolkiiba inta codbixinta. Booska waa mid ikhtiyaari ah si aad uga bixi kartid madhan haddii uusan dalban."
-        max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
-        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
         calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
