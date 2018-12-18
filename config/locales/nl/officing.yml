@@ -23,6 +23,7 @@ nl:
         error_wrong_booth: "Verkeerd stemhokje. Resultaten NIET opgeslagen."
       new:
         title: "%{poll} - Voeg resultaten toe"
+        not_allowed: "Je hebt onvoldoende rechten om resultaten aan deze poll toe te kennen"
         booth: "Stemhokje"
         date: "Datum"
         select_booth: "Selecteer stemhokje"
