@@ -88,13 +88,6 @@
             <p>
               <%= t("proposals.proposal.successful") %>
             </p>
-            <% if can? :create, Poll::Question %>
-              <p class="text-center">
-                <%= link_to t('poll_questions.create_question'),
-                            new_admin_question_path(proposal_id: @proposal.id),
-                            class: "button hollow expanded" %>
-              </p>
-            <% end %>
           <% elsif @proposal.archived? %>
             <div class="padding text-center">
               <p>
