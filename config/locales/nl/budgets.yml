@@ -57,6 +57,7 @@ nl:
       section_footer:
         title: Hulp bij burgerbegrotingen
         description: Met de participatieve budgetten beslissen de burgers aan welke projecten zij een deel van de begroting toekennen.
+      milestones: Mijlpalen
     investments:
       form:
         tag_category_label: "Categorieën"
