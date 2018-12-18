@@ -106,30 +106,6 @@ fr:
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
       new:
         title: Nouveau budget citoyen
-      show:
-        groups:
-          one: 1 groupe de rubriques budgétaires
-          other: "%{count} groupes de rubriques budgétaires"
-      form:
-        group: Nom du groupe
-        no_groups: Aucun groupe existant. Chaque utilisateur ne pourra voter que dans une rubrique par groupe.
-        add_group: Ajouter un nouveau groupe
-        create_group: Créer un groupe
-        edit_group: Modifier le groupe
-        submit: Sauvegarder le groupe
-        heading: Nom de la rubrique
-        add_heading: Ajouter une rubrique
-        amount: Montant
-        population: "Population"
-        population_help_text: "Ces données sont utilisées exclusivement pour calculer les statistiques de participation"
-        save_heading: Sauvegarder la rubrique
-        no_heading: Ce groupe n'a pas de rubrique assignée.
-        table_heading: Rubrique
-        table_amount: Montant
-        table_population: Population
-        population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
-        max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
-        current_of_max_headings: "%{current} sur %{max}"
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
