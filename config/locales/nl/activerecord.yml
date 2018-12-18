@@ -116,6 +116,8 @@ nl:
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding ter omschrijving van het voorstel"
         image_title: "Naam van de afbeelding"
+      milestone:
+        status_id: "Huidige status (optioneel)"
       budget/heading:
         name: "Kop"
         price: "Kosten"
@@ -162,11 +164,16 @@ nl:
         geozone_restricted: "Beperkt tot regio"
         summary: "Samenvatting"
         description: "Omschrijving"
+      poll/translation:
+        summary: "Samenvatting"
+        description: "Omschrijving"
       poll/question:
         title: "Vraag"
         summary: "Samenvatting"
         description: "Omschrijving"
         external_url: "Link naar aanvullende informatie"
+      poll/question/translation:
+        title: "Vraag"
       signature_sheet:
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
