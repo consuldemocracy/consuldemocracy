@@ -106,30 +106,6 @@ pt-BR:
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
       new:
         title: Novo orçamento participativo
-      show:
-        groups:
-          one: 1 Grupo de títulos orçamentais
-          other: "%{count} Grupos de títulos orçamentais"
-      form:
-        group: Nome do grupo
-        no_groups: Nenhum grupo criado ainda. Cada usuário poderá votar em apenas um título por grupo.
-        add_group: Adicionar novo grupo
-        create_group: Criar grupo
-        edit_group: Editar grupo
-        submit: Salvar grupo
-        heading: Nome do título
-        add_heading: Adicionar título
-        amount: Quantidade
-        population: "População (opcional)"
-        population_help_text: "Estes dados são utilizados exclusivamente para calcular as estatísticas de participação"
-        save_heading: Salvar título
-        no_heading: Este grupo não tem título atribuído.
-        table_heading: Título
-        table_amount: Quantidade
-        table_population: População
-        population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
-        max_votable_headings: "Número máximo de títulos em que um usuário pode votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
