@@ -28,6 +28,7 @@ nl:
       unlock_instructions:
         subject: "Instructies voor deblokkeren"
     omniauth_callbacks:
+      failure: "Autorisatie mislukt voor %{kind} met reden \"%{reason}\"."
       success: "Succesvol geautoriseerd als %{kind}."
     passwords:
       no_token: "Je hebt geen toegang tot deze pagina zonder je wachtwoord hersteld te hebben. Als je deze pagina bezoekt via een herstel-wachtwoord link, check dan of de URL compleet is."
