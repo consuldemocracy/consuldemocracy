@@ -105,6 +105,9 @@ nl:
           random: willekeurig
           confidence_score: best gescoord
           price: op bedrag
+      share:
+        message: "Ik heb investeringsvoorstel %{title} gemaakt in %{org}. Jij kunt ook een investeringsvoorstel doen!"
+        message_mobile: "Ik heb investeringsvoorstel %{title} gemaakt in %{handle}. Jij kunt ook een investeringsvoorstel doen!"
       show:
         author_deleted: Deelnemer verwijderd
         price_explanation: Uitleg bedrag
@@ -161,6 +164,7 @@ nl:
       heading: "Resultaten burgerbegrotingen"
       heading_selection_title: "Per gebied"
       spending_proposal: Titel voorstel
+      ballot_lines_count: Stemmen
       hide_discarded_link: Verberg verworpen voorstellen
       show_all_link: Toon alle
       price: Prijs
@@ -171,6 +175,15 @@ nl:
       investment_proyects: Lijst van alle begrotingsvoorstellen
       unfeasible_investment_proyects: Lijst van alle onhaalbare begrotingsvoorstellen
       not_selected_investment_proyects: Lijst van alle begrotingsvoorstellen niet geschikt voor stemming
+    executions:
+      link: "Mijlpalen"
+      page_title: "%{budget} - Mijlpalen"
+      heading: "Mijlpalen deelnemingsbudget"
+      heading_selection_title: "Per gebied"
+      no_winner_investments: "Geen geaccepteerde investeringen in deze status"
+      filters:
+        label: "Status van het project"
+        all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "Startdatum kan niet gelijk of later zijn dan de einddatum."
