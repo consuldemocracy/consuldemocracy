@@ -106,30 +106,6 @@ it:
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
       new:
         title: Nuovo bilancio partecipativo
-      show:
-        groups:
-          one: 1 Gruppo di voci di bilancio
-          other: "%{count} Gruppi di voci di bilancio"
-      form:
-        group: Nome del gruppo
-        no_groups: Non è ancora stato creato alcun gruppo. Ciascun utente potrà votare per un’unica voce in ciascun gruppo.
-        add_group: Aggiungi nuovo gruppo
-        create_group: Crea gruppo
-        edit_group: Modifica gruppo
-        submit: Salva gruppo
-        heading: Denominazione della voce di bilancio
-        add_heading: Aggiungi voce di bilancio
-        amount: Importo
-        population: "Popolazione (facoltativo)"
-        population_help_text: "Questo dato è utilizzato esclusivamente per elaborare le statistiche relative alla partecipazione"
-        save_heading: Salvare voce di bilancio
-        no_heading: Questo gruppo non ha voci di bilancio assegnate.
-        table_heading: Voce di bilancio
-        table_amount: Importo
-        table_population: Popolazione
-        population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
-        max_votable_headings: "Numero massimo di voci che un utente può votare"
-        current_of_max_headings: "%{current} di %{max}"
       winners:
         calculate: Calcola Investimenti Vincitori
         calculated: Stiamo calcolando i vincitori, il che potrebbe richiedere un minuto.
