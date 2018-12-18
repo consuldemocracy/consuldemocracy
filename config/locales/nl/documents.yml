@@ -7,6 +7,7 @@ nl:
       title_placeholder: Voeg een omschrijving toe voor het bestand
       attachment_label: Kies bestand
       delete_button: Verwijder bestand
+      cancel_button: Annuleren
       note: "Je kunt tot een maximum van %{max_documents_allowed} bestanden of andere typen inhoud uploaden: %{accepted_content_types}, tot maximum van %{max_file_size} MB per bestand."
       add_new_document: Nieuw bestand toevoegen
     actions:
