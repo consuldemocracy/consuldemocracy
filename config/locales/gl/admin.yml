@@ -1,6 +1,4 @@
 gl:
-  true_value: 'Si'
-  false_value: 'Non'
   admin:
     header:
       title: Administración
@@ -109,34 +107,6 @@ gl:
         unable_notice: Non se pode eliminiar un orzamento con proxectos asociados
       new:
         title: Novo orzamento cidadán
-      show:
-        groups:
-          one: 1 Grupo de partidas do orzamento
-          other: "%{count} Grupos de partidas dos orzamentos"
-      form:
-        group: Nome do grupo
-        no_groups: Non hai grupos creados aínda. Cada persoa usuaria poderá votar nunha soa partida de cada grupo.
-        add_group: Engadir un grupo novo
-        create_group: Crear un grupo
-        edit_group: Editar grupo
-        submit: Gardar grupo
-        heading: Nome da partida
-        add_heading: Engadir partida
-        amount: Cantidade
-        population: "Poboación (opcional)"
-        population_help_text: "Este dato utilízase exclusivamente para calcular as estatísticas de participación"
-        save_heading: Gardar partida
-        no_heading: Este grupo non ten ningunha partida asignada.
-        table_heading: Partida
-        table_amount: Cantidade
-        table_population: Poboación
-        table_allow_custom_contents: Permite contido personalizado
-        population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
-        max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
-        current_of_max_headings: "%{current} de %{max}"
-        allow_content_block: Permite bloque de contido
-        latitude: Latitude
-        longitude: Lonxitude
       winners:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
