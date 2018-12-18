@@ -78,8 +78,8 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
-    latitude '-25.172741'
-    longitude '40.127241'
+    latitude '40.416775'
+    longitude '-3.703790'
 
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]

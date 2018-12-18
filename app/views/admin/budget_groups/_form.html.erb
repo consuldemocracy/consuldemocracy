@@ -1,0 +1,18 @@
+<div class="small-12 medium-6">
+  <%= form_for [:admin, @budget, @group], url: path do |f| %>
+
+    <%= f.text_field :name,
+                      label: t("admin.budget_groups.form.name"),
+                      maxlength: 50,
+                      placeholder: t("admin.budget_groups.form.name") %>
+
+    <% if @group.persisted? %>
+        <%= f.select :max_votable_headings,
+                     (1..@group.headings.count),
+                     label: t("admin.budget_groups.max_votable_headings"),
+                     placeholder: t("admin.budget_groups.max_votable_headings") %>
+    <% end %>
+
+    <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button success" %>
+  <% end %>
+</div>

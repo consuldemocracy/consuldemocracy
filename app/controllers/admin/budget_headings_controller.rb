@@ -2,35 +2,64 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  def create
-    @budget = Budget.find(params[:budget_id])
-    @budget_group = @budget.groups.find(params[:budget_group_id])
-    @budget_group.headings.create(budget_heading_params)
-    @headings = @budget_group.headings
+  before_action :load_budget
+  before_action :load_group
+  before_action :load_heading, except: [:index, :new, :create]
+
+  def index
+    @headings = @group.headings.order(:id)
+  end
+
+  def new
+    @heading = @group.headings.new
   end
 
   def edit
-    @budget = Budget.find(params[:budget_id])
-    @budget_group = @budget.groups.find(params[:budget_group_id])
-    @heading = Budget::Heading.find(params[:id])
+  end
+
+  def create
+    @heading = @group.headings.new(budget_heading_params)
+    if @heading.save
+      redirect_to headings_index, notice: t('admin.budget_headings.create.notice')
+    else
+      render :new
+    end
   end
 
   def update
-    @budget = Budget.find(params[:budget_id])
-    @budget_group = @budget.groups.find(params[:budget_group_id])
-    @heading = Budget::Heading.find(params[:id])
-    @heading.assign_attributes(budget_heading_params)
-    render :edit unless @heading.save
+    if @heading.update(budget_heading_params)
+      redirect_to headings_index, notice: t('admin.budget_headings.update.notice')
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @heading = Budget::Heading.find(params[:id])
-    @heading.destroy
-    @budget = Budget.find(params[:budget_id])
-    redirect_to admin_budget_path(@budget)
+    if @heading.can_be_deleted?
+      @heading.destroy
+      redirect_to headings_index, notice: t('admin.budget_headings.destroy.success_notice')
+    else
+      redirect_to headings_index, alert: t('admin.budget_headings.destroy.unable_notice')
+    end
   end
 
   private
+
+    def load_budget
+      @budget = Budget.includes(:groups).find(params[:budget_id])
+    end
+
+    def load_group
+      @group = @budget.groups.find(params[:group_id])
+    end
+
+    def load_heading
+      @heading = @group.headings.find(params[:id])
+    end
+
+    def headings_index
+      admin_budget_group_headings_path(@budget, @group)
+    end
 
     def budget_heading_params
       params.require(:budget_heading).permit(:name, :price, :population, :allow_custom_content, :latitude, :longitude)

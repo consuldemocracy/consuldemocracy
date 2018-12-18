@@ -879,6 +879,13 @@ footer {
   }
 }
 
+.sidebar-map {
+
+  .map {
+    z-index: -1;
+  }
+}
+
 .sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
