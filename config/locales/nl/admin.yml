@@ -110,6 +110,29 @@ nl:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
         recalculate: Herbereken gewonnen investeringen
+    budget_groups:
+      amount:
+        one: "Er is 1 groep"
+        other: "Er zijn %{count} groepen"
+      create:
+        notice: "Groep aangemaakt!"
+      update:
+        notice: "Groep aangemaakt"
+      destroy:
+        success_notice: "Groep verwijderd"
+        unable_notice: "Je kunt een groep niet verwijderen wanneer er koppelingen zijn"
+      form:
+        create: "Nieuwe groep"
+        edit: "Groep wijzigen"
+        name: "Groepnaam"
+        submit: "Groep opslaan"
+    budget_headings:
+      name: "Naam"
+      form:
+        amount: "Bedrag"
+        population: "Bevolking (optioneel)"
+        latitude: "Breedte"
+        longitude: "Lengte"
     budget_phases:
       edit:
         start_date: Startdatum
@@ -366,6 +389,9 @@ nl:
           back: Terug
           title: Nieuw plan creëren
           submit_button: Nieuw plan
+        proposals:
+          orders:
+            title: Titel
         process:
           title: Plan
           comments: Commentaar
@@ -600,6 +626,9 @@ nl:
         title: Nieuwbrieven tonen
         send: Stuur
         affected_users: (betreft %{n} deelnemers)
+        sent_emails:
+          one: 1 email verzonden
+          other: "%{count} emails verzonden"
         sent_at: Verstuurd op
         subject: Onderwerp
         segment_recipient: Geadresseerden
@@ -627,6 +656,7 @@ nl:
         empty_notifications: Er zijn geen meldingen te tonen
       new:
         section_title: Nieuwe melding
+        submit_button: Notificatie aanmaken
       edit:
         section_title: Bericht bewerken
       show:
