@@ -208,7 +208,9 @@ namespace :admin do
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
 
   namespace :site_customization do
-    resources :pages, except: [:show]
+    resources :pages, except: [:show] do
+      resources :cards, only: [:index]
+    end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
     resources :information_texts, only: [:index] do
