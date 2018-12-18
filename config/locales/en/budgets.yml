@@ -127,6 +127,7 @@ en:
         project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
         project_winner: 'Winning investment project'
         project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
+        see_price_explanation: See price explanation
       wrong_price_format: Only integer numbers
       investment:
         add: Vote

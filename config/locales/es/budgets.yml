@@ -127,6 +127,7 @@ es:
         project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
         project_winner: 'Proyecto de gasto ganador'
         project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
+        see_price_explanation: Ver informe de coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
