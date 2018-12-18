@@ -10,6 +10,12 @@ nl:
       budget/investment:
         one: "Investerning"
         other: "Investeringen"
+      milestone:
+        one: "mijlpaal"
+        other: "mijlpalen"
+      milestone/status:
+        one: "Mijlpaalstatus"
+        other: "Mijlpaalstatussen"
       comment:
         one: "Reactie"
         other: "Reacties"
@@ -70,6 +76,9 @@ nl:
       legislation/process:
         one: "Proces"
         other: "Proces"
+      legislation/proposal:
+        one: "Voorstel"
+        other: "Voorstellen"
       legislation/draft_versions:
         one: "Concept versie"
         other: "Concept versies"
@@ -94,6 +103,9 @@ nl:
       poll:
         one: "Poll"
         other: "Polls"
+      proposal_notification:
+        one: "Voorstelnotificatie"
+        other: "Voorstelnotificaties"
     attributes:
       budget:
         name: "Naam"
@@ -118,6 +130,12 @@ nl:
         image_title: "Naam van de afbeelding"
       milestone:
         status_id: "Huidige status (optioneel)"
+        title: "Titel"
+        description: "Omschrijving (optioneel indien een status is toegewezen)"
+        publication_date: "Publicatiedatum"
+      milestone/status:
+        name: "Naam"
+        description: "Omschrijving (optioneel)"
       budget/heading:
         name: "Kop"
         price: "Kosten"
@@ -165,6 +183,7 @@ nl:
         summary: "Samenvatting"
         description: "Omschrijving"
       poll/translation:
+        name: "Naam"
         summary: "Samenvatting"
         description: "Omschrijving"
       poll/question:
@@ -189,6 +208,10 @@ nl:
         more_info_flag: Toon op de help pagina
         print_content_flag: Print inhoud
         locale: Taal
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Ondertitel
+        content: Inhoud
       site_customization/image:
         name: Naam
         image: Afbeelding
@@ -205,16 +228,26 @@ nl:
         end_date: Einddatum
         debate_start_date: Startdatum debat
         debate_end_date: Einddatum debat
+        draft_start_date: Begindatum concept
+        draft_end_date: Einddatum concept
         draft_publication_date: Publicatiedatum concept
         allegations_start_date: Startdatum bewijsvoering
         allegations_end_date: Einddatum bewijsvoering
         result_publication_date: Publicatiedatum eindresultaat
+      legislation/process/translation:
+        title: Procesnaam
+        summary: Samenvatting
+        description: Omschrijving
+        additional_info: Aanvullende informatie
+        milestones_summary: Samenvatting
       legislation/draft_version:
         title: Versie titel
         body: Tekst
         changelog: Wijzigingen
         status: Status
         final_version: Eindversie
+      legislation/draft_version/translation:
+        title: Versie
       legislation/question:
         title: Titel
         question_options: Opties
