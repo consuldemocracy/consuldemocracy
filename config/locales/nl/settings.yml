@@ -23,6 +23,7 @@ nl:
     votes_for_proposal_success: "Het aantal stemmen benodigd voor goedkeuring van het voorstel"
     votes_for_proposal_success_description: "Wanneer een voorstel dit aantal ondersteuningen bereikt, kan het niet langer meer ondersteuning ontvangen en wordt het als succesvol beschouwd"
     months_to_archive_proposals: "Maanden om voorstellen te archiveren"
+    months_to_archive_proposals_description: "Na dit aantal maanden worden de voorstellen gearchiveerd en worden ze inactief"
     email_domain_for_officials: "Email domein voor overheidsambtenaren"
     email_domain_for_officials_description: "Alle gebruikers die bij dit domein zijn geregistreerd, zullen hun account bij registratie laten verifiëren"
     per_page_code_head: "Code die ingevoegd wordt op elke pagina(<head>)"
