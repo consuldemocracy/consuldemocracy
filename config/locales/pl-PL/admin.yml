@@ -108,32 +108,6 @@ pl:
         unable_notice: Nie możesz zniszczyć budżetu, który wiąże powiązane inwestycje
       new:
         title: Nowy budżet partycypacyjny
-      show:
-        groups:
-          one: 1 Grupa nagłówków budżetowych
-          few: "%{count} Grupy nagłówków budżetu"
-          many: "%{count} Grupy nagłówków budżetu"
-          other: "%{count} Grupy nagłówków budżetu"
-      form:
-        group: Nazwa grupy
-        no_groups: Nie utworzono jeszcze żadnych grup. Każdy użytkownik będzie mógł głosować tylko w jednym nagłówku na grupę.
-        add_group: Dodaj nową grupę
-        create_group: Utwórz grupę
-        edit_group: Edytuj grupę
-        submit: Zapisz grupę
-        heading: Nazwa nagłówka
-        add_heading: Dodaj nagłówek
-        amount: Ilość
-        population: "Populacja (opcjonalnie)"
-        population_help_text: "Dane te są wykorzystywane wyłącznie do obliczania statystyk uczestnictwa"
-        save_heading: Zapisz nagłówek
-        no_heading: Ta grupa nie ma przypisanego nagłówka.
-        table_heading: Nagłówek
-        table_amount: Ilość
-        table_population: Populacja
-        population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
-        max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
-        current_of_max_headings: "%{current} z %{max}"
       winners:
         calculate: Oblicz Inwestycje Zwycięzców
         calculated: Liczenie zwycięzców może potrwać minutę.
