@@ -155,7 +155,7 @@ feature "BudgetPolls", :with_frozen_time do
       expect(page).to have_content poll.name
 
       within("#side_menu") do
-        expect(page).to_not have_content("Validate document")
+        expect(page).not_to have_content("Validate document")
       end
 
       within("#poll_#{poll.id}") do

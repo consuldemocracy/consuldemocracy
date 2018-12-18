@@ -79,7 +79,7 @@ feature 'Results' do
     scenario "Display links to finished budget results" do
       (Budget::Phase::PHASE_KINDS - ['finished']).each do |phase|
         budget = create(:budget, phase: phase)
-        expect(page).to_not have_css("#budget_#{budget.id}_results", text: "See results")
+        expect(page).not_to have_css("#budget_#{budget.id}_results", text: "See results")
       end
 
       finished_budget1 = create(:budget, phase: "finished")

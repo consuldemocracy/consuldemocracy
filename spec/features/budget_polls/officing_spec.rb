@@ -54,7 +54,7 @@ feature 'Budget Poll Officing' do
       login_as user
       visit officing_root_path
 
-      expect(page).to_not have_link("Decide Madrid Polling", href: "/officing")
+      expect(page).not_to have_link("Decide Madrid Polling", href: "/officing")
     end
 
     scenario "Polling officers header menu" do
@@ -64,7 +64,7 @@ feature 'Budget Poll Officing' do
       login_as user
       visit officing_root_path
 
-      expect(page).to_not have_link("Polling officers", href: "/officing")
+      expect(page).not_to have_link("Polling officers", href: "/officing")
     end
 
   end
