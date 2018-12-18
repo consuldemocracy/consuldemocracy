@@ -73,23 +73,6 @@ es:
         blank_dates: Sin fechas
       new:
         title: Nuevo presupuesto ciudadano
-      show:
-        groups:
-          one: 1 Grupo de partidas presupuestarias
-          other: "%{count} Grupos de partidas presupuestarias"
-      form:
-        group: Nombre del grupo
-        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
-        add_group: Añadir nuevo grupo
-        create_group: Crear grupo
-        edit_group: Editar grupo
-        submit: Guardar grupo
-        add_heading: Añadir partida
-        amount: Cantidad
-        save_heading: Guardar partida
-        no_heading: Este grupo no tiene ninguna partida asignada.
-        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
