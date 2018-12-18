@@ -106,30 +106,6 @@ nl:
         unable_notice: U kunt een begroting met voorstellen niet verwijderen
       new:
         title: Nieuw participatief budgetvoorstel
-      show:
-        groups:
-          one: 1 Groep budgetkoppen
-          other: "%{count} groepen budgetkoppen"
-      form:
-        group: Groepsnaam
-        no_groups: Nog geen groepen. Elke gebruiker kan maar binnen één kop per groep stemmen.
-        add_group: Nieuwe groep toevoegen
-        create_group: Nieuwe groep
-        edit_group: Bewerk groep
-        submit: Sla op
-        heading: Kop naam
-        add_heading: Voeg kop toe
-        amount: Bedrag
-        population: "Bevolking"
-        population_help_text: "Deze gegevens worden uitsluitend gebruikt om de participatiestatistieken te berekenen"
-        save_heading: Bewaar kop
-        no_heading: Deze groep is geen kop toegewezen.
-        table_heading: Kop
-        table_amount: Bedrag
-        table_population: Bevolking
-        population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
-        max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
-        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
