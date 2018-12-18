@@ -10,14 +10,22 @@
   <table class="fixed">
     <thead>
       <tr>
-        <th class="small-8"><%= t("admin.questions.index.table_question") %></th>
-        <th><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.questions.index.table_question") %></th>
+        <th><%= t("admin.questions.index.table_poll") %></th>
+        <th class="small-4"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
       <% @questions.each do |question| %>
         <tr id="<%= dom_id(question) %>">
           <td><%= link_to question.title, admin_question_path(question) %></td>
+          <td>
+            <% if question.poll.present? %>
+              <%= question.poll.name %>
+            <% else %>
+              <em><%= t("admin.questions.index.poll_not_assigned") %></em>
+            <% end %>
+          </td>
           <td>
             <div class="small-6 column">
               <%= link_to t("shared.edit"), edit_admin_question_path(question), class: "button hollow expanded" %>
