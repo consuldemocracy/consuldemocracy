@@ -56,6 +56,13 @@ nl:
       other:
         title: "Andere relevante informatie"
         how_to_use: "Gebruik %{org_name} in jouw gemeente"
+      how_to_use:
+        text: |-
+          Gebruik consul in je gemeente of help ons consul te verbeteren, dat kan met open source software.
+
+          Dit platform is gemaakt met [CONSUL](https://github.com/consul/consul 'consul github'). Consul is uitgegeven als open source software met de [AGPLv3 licentie](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), wat betekent dat iedereen vrij is om de code te gebruiken, te kopiëren, de broncode te bekijken en aan te passen en aanpassingen te delen. Wij geloven dat open source bijdraagt aan betere producten.
+
+          Als je programmeur bent kun je de broncode bekijken en ons helpen deze te verbeteren via [Github](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Gebruik het in je gemeente
     privacy:
@@ -86,7 +93,7 @@ nl:
 
         Wanneer websites zijn ontworpen met toegankelijkheid in het achterhoofd, kunnen alle gebruikers toegang tot inhoud in gelijke omstandigheden krijgen, bijvoorbeeld:
       examples:
-        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - Geef een alternatieve tekst op voor afbeeldingen zodat visueel gehandicapten de informatie uit de afbeelding kunnen benaderen.
         - Wanneer video's ondertitels hebben begrijpen deelnemers met gehoorproblemen deze ook.
         - Als de inhoud in een eenvoudige en geïllustreerde taal zijn geschreven, zijn deelnemers met leerproblemen beter in staat om hen te begrijpen.
         - Als de deelnemer beschikt over mobiliteitsproblemen en het is moeilijk om de muis te gebruiken, dan helpen de alternatieven met het toetsenbord bij navigatie.
@@ -167,6 +174,7 @@ nl:
               description_column: Vergroot de tekstgrootte
             - 
               shortcut_column: CTRL en - (CMD  en - bij MAC)
+              description_column: Tekst verkleinen
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
     titles:
