@@ -1,1 +1,7 @@
 nl:
+  milestones:
+    index:
+      no_milestones: Geen mijlpalen gedefiniëerd
+    show:
+      publication_date: "Gepubliceerd op %{publication_date}"
+      status_changed: Status gewijzigd in
