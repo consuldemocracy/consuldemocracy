@@ -103,7 +103,6 @@ id:
         relevance: relevansi
         recommendations: rekomendasi
       recommendations:
-        without_results: Tidak ada perdebatan yang berkaitan dengan kepentingan anda
         without_interests: Mengikuti proposal sehingga kami dapat memberikan anda sebagai rekomendasi
       search_form:
         button: Cari
@@ -190,7 +189,6 @@ id:
       conditions: Syarat dan ketentuan penggunaan
       consul: Konsul aplikasi
       consul_url: https://github.com/consul/consul
-      contact_us: Untuk bantuan teknis memasuki
       copyright: KONSUL, %{year}
       description: Portal ini menggunakan %{consul} Itulah %{open_source}.
       open_source: perangkat lunak open-source
@@ -393,7 +391,6 @@ id:
       retired: Proposal pensiun oleh penulis
       share: Berbagi
       send_notification: Kirim pemberitahuan
-      no_notifications: "Proposal ini memiliki pemberitahuan."
       embed_video_title: "Video pada %{proposal}"
       title_external_url: "Tautkan ke dokumentasi tambahan"
       title_video_url: "Video eksternal"
@@ -474,7 +471,6 @@ id:
       title_label: "Judul"
       body_label: "Pesan"
       submit_button: "Kirim pesan"
-      info_about_receivers_html: "Pesan ini akan dikirimkan ke <strong>%{count}</strong> dan itu akan terlihat dalam %{proposal_page}.<br> Pesan tidak dikirim segera, pengguna akan secara berkala menerima email dengan semua usulan pemberitahuan."
       proposal_page: "proposal halaman"
     show:
       back: "Kembali ke aktivitas saya"
@@ -741,7 +737,6 @@ id:
     error: "Link tidak valid. Ingat untuk memulai dengan %{url}."
     error_itself: "Link tidak valid. Anda tidak berhubungan dengan konten itu sendiri."
     success: "Anda menambahkan baru terkait konten"
-    is_related: "¿Apakah itu konten yang terkait?"
     score_positive: "Ya"
     score_negative: "Tidak"
     content_title:
