@@ -884,6 +884,7 @@ feature 'Budget Investments' do
 
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
+          expect(page).to have_link("See price explanation")
 
           if budget.finished?
             investment.update(winner: true)
@@ -902,6 +903,7 @@ feature 'Budget Investments' do
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
+          expect(page).not_to have_link("See price explanation")
 
           visit budget_investments_path(budget)
 
@@ -923,6 +925,7 @@ feature 'Budget Investments' do
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
+          expect(page).not_to have_link("See price explanation")
 
           visit budget_investments_path(budget)
 
