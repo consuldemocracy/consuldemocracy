@@ -66,18 +66,10 @@
            class="small-12 medium-3 column supports-container">
         <% if proposal.successful? %>
           <div class="padding text-center">
-
             <p>
               <%= t("proposals.proposal.successful") %>
             </p>
           </div>
-          <% if can? :create, Poll::Question %>
-            <p class="text-center">
-              <%= link_to t('poll_questions.create_question'),
-                          new_admin_question_path(proposal_id: proposal.id),
-                          class: "button hollow" %>
-            </p>
-          <% end %>
         <% elsif proposal.archived? %>
           <div class="padding text-center">
             <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>

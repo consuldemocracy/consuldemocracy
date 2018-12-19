@@ -28,12 +28,32 @@ feature "Admin proposals" do
     end
   end
 
-  scenario "Show" do
-    create(:proposal, title: "Create a chaotic future", summary: "Chaos isn't controlled")
+  context "Show" do
 
-    visit admin_proposals_path
-    click_link "Create a chaotic future"
+    scenario "View proposal" do
+      create(:proposal, title: "Create a chaotic future", summary: "Chaos isn't controlled")
 
-    expect(page).to have_content "Chaos isn't controlled"
+      visit admin_proposals_path
+      click_link "Create a chaotic future"
+
+      expect(page).to have_content "Chaos isn't controlled"
+      expect(page).not_to have_content "This proposal has reached the required supports"
+      expect(page).not_to have_link "Create question"
+    end
+
+    scenario "Successful proposals show create question button" do
+      successful_proposals = create_successful_proposals
+      admin = create(:administrator)
+
+      login_as(admin.user)
+
+      visit admin_proposals_path
+
+      successful_proposals.each do |proposal|
+        visit admin_proposal_path(proposal)
+        expect(page).to have_content "This proposal has reached the required supports"
+        expect(page).to have_link "Create question"
+      end
+    end
   end
 end
