@@ -2,6 +2,7 @@ class HumanRightsController < ApplicationController
   skip_authorization_check
 
   include CommentableActions
+  include RandomSeed
 
   before_action :set_random_seed,             only: :index
   before_action :parse_search_terms,          only: :index
@@ -71,21 +72,10 @@ class HumanRightsController < ApplicationController
   end
 
   def order_results
-    @proposals = @proposals.send("sort_by_#{@current_order}")
-  end
-
-  def set_random_seed
-    if params[:order] == 'random' || params[:order].blank?
-      session[:random_seed] ||= rand(99) / 100.0
-      seed = begin
-               Float(params[:random_seed])
-             rescue
-               0
-             end
-      seed = (-1..1).cover?(seed) ? seed : 1
-      Proposal.connection.execute "select setseed(#{seed})"
+    if @current_order == "random"
+      @proposals = @proposals.sort_by_random(session[:random_seed])
     else
-      session[:random_seed] = nil
+      @proposals = @proposals.send("sort_by_#{@current_order}")
     end
   end
 

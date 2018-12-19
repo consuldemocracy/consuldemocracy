@@ -1,4 +1,5 @@
 class ProbeOption < ActiveRecord::Base
+  include Randomizable
 
   belongs_to :probe
   belongs_to :debate

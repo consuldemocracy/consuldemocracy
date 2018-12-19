@@ -3,6 +3,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include RandomSeed
 
     PER_PAGE = 10
 
@@ -123,17 +124,6 @@ module Budgets
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
-      def set_random_seed
-        if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand
-          params[:random_seed] = seed
-          session[:random_seed] = params[:random_seed]
-        else
-          session[:random_seed] = nil
-          params[:random_seed] = nil
-        end
-      end
-
       def investment_params
         params.require(:budget_investment)
               .permit(:title, :description, :heading_id, :tag_list,
@@ -200,7 +190,7 @@ module Budgets
       def investments
         if @current_order == 'random'
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .send("sort_by_#{@current_order}", params[:random_seed])
+                             .sort_by_random(session[:random_seed])
         else
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .send("sort_by_#{@current_order}")
