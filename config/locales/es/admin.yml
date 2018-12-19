@@ -923,6 +923,8 @@ es:
         create_question: "Crear pregunta para votación"
         table_proposal: "Propuesta"
         table_question: "Pregunta"
+        table_poll: "Votación"
+        poll_not_assigned: "Votación no asignada"
       edit:
         title: "Editar pregunta ciudadana"
       new:
