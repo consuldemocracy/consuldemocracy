@@ -53,7 +53,6 @@ es-BO:
       support_proposals: Apoyar propuestas
       vote_proposals: Participar en las votaciones finales
     print:
-      proposals_info: Haz tu propuesta en http://url.consul
       proposals_title: 'Propuestas:'
       spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
