@@ -13,6 +13,9 @@ nl:
       milestone:
         one: "mijlpaal"
         other: "mijlpalen"
+      milestone/status:
+        one: "Mijlpaalstatus"
+        other: "Mijlpaalstatussen"
       comment:
         one: "Reactie"
         other: "Reacties"
@@ -73,12 +76,12 @@ nl:
       legislation/process:
         one: "Proces"
         other: "Proces"
+      legislation/proposal:
+        one: "Voorstel"
+        other: "Voorstellen"
       legislation/draft_versions:
         one: "Concept versie"
         other: "Concept versies"
-      legislation/draft_texts:
-        one: "Concept"
-        other: "Concept"
       legislation/questions:
         one: "Vraag"
         other: "Vragen"
@@ -100,6 +103,9 @@ nl:
       poll:
         one: "Poll"
         other: "Polls"
+      proposal_notification:
+        one: "Voorstelnotificatie"
+        other: "Voorstelnotificaties"
     attributes:
       budget:
         name: "Naam"
@@ -123,13 +129,13 @@ nl:
         image: "Afbeelding ter omschrijving van het voorstel"
         image_title: "Naam van de afbeelding"
       milestone:
-        status_id: "Huidige investeringsstatus (optioneel)"
+        status_id: "Huidige status (optioneel)"
         title: "Titel"
-        description: "Omschrijving"
+        description: "Omschrijving (optioneel indien een status is toegewezen)"
         publication_date: "Publicatiedatum"
       milestone/status:
         name: "Naam"
-        description: "Beschrijving (optioneel)"
+        description: "Omschrijving (optioneel)"
       budget/heading:
         name: "Kop"
         price: "Kosten"
@@ -176,11 +182,17 @@ nl:
         geozone_restricted: "Beperkt tot regio"
         summary: "Samenvatting"
         description: "Omschrijving"
+      poll/translation:
+        name: "Naam"
+        summary: "Samenvatting"
+        description: "Omschrijving"
       poll/question:
         title: "Vraag"
         summary: "Samenvatting"
         description: "Omschrijving"
         external_url: "Link naar aanvullende informatie"
+      poll/question/translation:
+        title: "Vraag"
       signature_sheet:
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
@@ -196,6 +208,10 @@ nl:
         more_info_flag: Toon op de help pagina
         print_content_flag: Print inhoud
         locale: Taal
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Ondertitel
+        content: Inhoud
       site_customization/image:
         name: Naam
         image: Afbeelding
@@ -212,16 +228,26 @@ nl:
         end_date: Einddatum
         debate_start_date: Startdatum debat
         debate_end_date: Einddatum debat
+        draft_start_date: Begindatum concept
+        draft_end_date: Einddatum concept
         draft_publication_date: Publicatiedatum concept
         allegations_start_date: Startdatum bewijsvoering
         allegations_end_date: Einddatum bewijsvoering
         result_publication_date: Publicatiedatum eindresultaat
+      legislation/process/translation:
+        title: Procesnaam
+        summary: Samenvatting
+        description: Omschrijving
+        additional_info: Aanvullende informatie
+        milestones_summary: Samenvatting
       legislation/draft_version:
         title: Versie titel
         body: Tekst
         changelog: Wijzigingen
         status: Status
         final_version: Eindversie
+      legislation/draft_version/translation:
+        title: Versie
       legislation/question:
         title: Titel
         question_options: Opties
