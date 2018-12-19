@@ -12,13 +12,21 @@ feature 'Admin poll questions' do
                   %w[title]
 
   scenario 'Index' do
-    question1 = create(:poll_question)
-    question2 = create(:poll_question)
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
+    question2 = create(:poll_question, poll: nil)
 
     visit admin_questions_path
 
-    expect(page).to have_content(question1.title)
-    expect(page).to have_content(question2.title)
+    within("#poll_question_#{question1.id}") do
+      expect(page).to have_content(question1.title)
+      expect(page).to have_content(poll.name)
+    end
+
+    within("#poll_question_#{question2.id}") do
+      expect(page).to have_content(question2.title)
+      expect(page).to have_content("Poll not assigned")
+    end
   end
 
   scenario 'Show' do
