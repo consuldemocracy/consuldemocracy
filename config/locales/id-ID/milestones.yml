@@ -1,6 +1,1 @@
 id:
-  milestones:
-    index:
-      no_milestones: Jangan telah ditetapkan tonggak
-    show:
-      publication_date: "Diterbitkan %{publication_date}"
