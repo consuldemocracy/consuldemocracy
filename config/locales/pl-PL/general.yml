@@ -117,12 +117,10 @@ pl:
         relevance: stosowność
         recommendations: rekomendacje
       recommendations:
-        without_results: Brak debat związanych z Twoimi zainteresowaniami
         without_interests: Śledź propozycje, abyśmy mogli przedstawić Ci rekomendacje
         disable: "Rekomendacje debat zostaną powstrzymane, jeśli je odrzucisz. Możesz je ponownie włączyć na stronie \"Moje konto\""
         actions:
           success: "Zalecenia dotyczące debat są teraz wyłączone dla tego konta"
-          error: "Wystąpił błąd. Przejdź na stronę \"Twoje konto\", aby ręcznie wyłączyć rekomendacje debat"
       search_form:
         button: Szukaj
         placeholder: Szukaj debat...
@@ -210,7 +208,6 @@ pl:
       conditions: Regulamin
       consul: Aplikacja CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Do centrów pomocy technicznej
       copyright: CONSUL, %{year}
       description: Ten portal używa %{consul}, który jest %{open_source}.
       open_source: oprogramowanie open-source
@@ -373,7 +370,6 @@ pl:
         disable: "Rekomendacje wniosków przestaną się wyświetlać, jeśli je odrzucisz. Możesz je ponownie włączyć na stronie \"Moje konto\""
         actions:
           success: "Rekomendacje wniosków są teraz wyłączone dla tego konta"
-          error: "Wystąpił błąd. Przejdź na stronę \"Twoje konto\", aby ręcznie wyłączyć rekomendacje wniosków"
       retired_proposals: Wnioski wycofane
       retired_proposals_link: "Wnioski wycofane przez autora"
       retired_links:
@@ -468,7 +464,6 @@ pl:
       retired: Wniosek wycofany przez autora
       share: Udostępnij
       send_notification: Wyślij powiadomienie
-      no_notifications: "Niniejszy wniosek ma żadnych powiadomień."
       embed_video_title: "Wideo na %{proposal}"
       title_external_url: "Dodatkowa dokumentacja"
       title_video_url: "Zewnętrzne video"
@@ -554,7 +549,6 @@ pl:
       title_label: "Tytuł"
       body_label: "Wiadomość"
       submit_button: "Wyślij wiadomość"
-      info_about_receivers_html: "Ta wiadomość zostanie wysłana do <strong>%{count} osób</strong> i będzie widoczna w %{proposal_page}.<br> Wiadomość nie zostanie wysłana natychmiast, użytkownicy będą otrzymywać okresowo e-mail ze wszystkimi powiadomieniami dotyczącymi propozycji."
       proposal_page: "strona wniosku"
     show:
       back: "Wróć do mojej aktywności"
@@ -875,7 +869,6 @@ pl:
     error: "Link jest nieprawidłowy. Pamiętaj, aby zacząć z %{url}."
     error_itself: "Link nie jest prawidłowy. Nie możesz powiązać treści z samą sobą."
     success: "Dodałeś nową powiązaną treść"
-    is_related: "Czy to treść powiązana?"
     score_positive: "Tak"
     score_negative: "Nie"
     content_title:
