@@ -10,12 +10,6 @@ sv:
       budget/investment:
         one: "Budgetförslag"
         other: "Budgetförslag"
-      milestone:
-        one: "milstolpe"
-        other: "milstolpar"
-      milestone/status:
-        one: "Budgetförslagets status"
-        other: "Budgetförslagens status"
       comment:
         one: "Kommentar"
         other: "Kommentarer"
@@ -79,9 +73,6 @@ sv:
       legislation/draft_versions:
         one: "Utkastversion"
         other: "Utkastversioner"
-      legislation/draft_texts:
-        one: "Utkast"
-        other: "Utkast"
       legislation/questions:
         one: "Fråga"
         other: "Frågor"
@@ -128,14 +119,6 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
-      milestone:
-        status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
-        title: "Titel"
-        description: "Beskrivning (frivilligt fält om projektets status har ställts in)"
-        publication_date: "Publiceringsdatum"
-      milestone/status:
-        name: "Namn"
-        description: "Beskrivning (frivilligt fält)"
       budget/heading:
         name: "Område"
         price: "Kostnad"
