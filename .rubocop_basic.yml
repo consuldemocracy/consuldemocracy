@@ -27,5 +27,8 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Lint/UselessAssignment:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
