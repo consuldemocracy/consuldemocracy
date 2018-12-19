@@ -23,7 +23,6 @@ pl:
         error_wrong_booth: "Zła kabina wyborcza. Wyniki NIE zapisane."
       new:
         title: "%{poll} - Dodaj wyniki"
-        not_allowed: "Możesz dodać wyniki dla tej ankiety"
         booth: "Kabina wyborcza"
         date: "Data"
         select_booth: "Wybierz kabinę wyborczą"
