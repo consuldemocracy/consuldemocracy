@@ -383,7 +383,6 @@ fa:
     error: "لینک معتبر نیست. به یاد داشته باشید برای شروع با %{url}."
     error_itself: "لینک معتبر نیست شما نمیتوانید محتوا را به خود اختصاص دهید"
     success: "مطالب مرتبط جدید اضافه شد"
-    is_related: "¿Is مربوط به محتوای?"
     score_positive: "بله"
     score_negative: "نه"
     content_title:
