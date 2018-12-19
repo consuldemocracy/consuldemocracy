@@ -28,10 +28,25 @@ ar:
       login_items:
         login: تسجيل الدخول
         logout: تسجيل الخروج
+    organizations:
+      registrations:
+        new:
+          email_label: البريد الإلكتروني
+          organization_name_label: اسم المنظمة
+          password_confirmation_label: تأكيد كلمة المرور
+          password_label: كلمة المرور
+          phone_number_label: رقم الهاتف
+          responsible_name_label: الاسم الكامل للشخص المسؤول
+          submit: سجل
+          title: التسجيل كمنظمة أو وحدة
     passwords:
       edit:
         password_confirmation_label: تأكيد كلمة المرور الجديدة
         password_label: كلمة مرور جديدة
+      new:
+        email_label: البريد الإلكتروني
+        send_submit: إعادة إرسال التعليمات
+        title: هل نسيت كلمة المرور؟
     sessions:
       new:
         login_label: البريد الإلكتروني أو اسم المستخدم
