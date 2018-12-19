@@ -1093,6 +1093,7 @@ form {
 
 .callout {
   font-size: $small-font-size;
+  overflow: hidden;
 
   a:not(.button) {
     font-weight: bold;
@@ -1131,6 +1132,10 @@ form {
 
   .close {
     text-decoration: none !important;
+  }
+
+  .button {
+    margin-bottom: 0;
   }
 }
 
