@@ -111,12 +111,10 @@ de:
         relevance: Relevanz
         recommendations: Empfehlungen
       recommendations:
-        without_results: Es gibt keine Debatten, die Ihren Interessen entsprechen
         without_interests: Vorschläge folgen, sodass wir Ihnen Empfehlungen geben können
         disable: "Debatten-Empfehlungen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
         actions:
           success: "Debatten-Empfehlungen sind jetzt für dieses Benutzerkonto deaktiviert"
-          error: "Ein Fehler ist aufgetreten. Bitte gehen Sie zur 'Ihr Benutzerkonto'-Seite um Debatten-Empfehlungen manuell abzuschalten"
       search_form:
         button: Suche
         placeholder: Suche Diskussionen...
@@ -204,7 +202,6 @@ de:
       conditions: Allgemeine Nutzungsbedingungen
       consul: CONSUL Anwendung
       consul_url: https://github.com/consul/consul
-      contact_us: Für technische Unterstützung geben Sie ein
       copyright: CONSUL, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
@@ -357,7 +354,6 @@ de:
         disable: "Antrags-Empfehlungen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
         actions:
           success: "Antrags-Empfehlungen sind jetzt für dieses Benutzerkonto deaktiviert"
-          error: "Ein Fehler ist aufgetreten. Bitte gehen Sie zur 'Ihr Benutzerkonto'-Seite um Antrags-Empfehlungen manuell abzuschalten"
       retired_proposals: Vorschläge im Ruhezustand
       retired_proposals_link: "Vorschläge vom Autor zurückgezogen"
       retired_links:
@@ -440,7 +436,6 @@ de:
       retired: Vorschlag vom Autor zurückgezogen
       share: Teilen
       send_notification: Benachrichtigung senden
-      no_notifications: "Dieser Vorschlag enthält keine Benachrichtigungen."
       embed_video_title: "Video über %{proposal}"
       title_external_url: "Zusätzliche Dokumentation"
       title_video_url: "Externes Video"
@@ -522,7 +517,6 @@ de:
       title_label: "Titel"
       body_label: "Nachricht"
       submit_button: "Nachricht senden"
-      info_about_receivers_html: "Diese Nachricht wird an <strong>%{count} BenutzerInnen </strong> geschickt und wird auf der %{proposal_page}.<br> angezeigt. Die Nachricht wird nicht sofort verschickt, sondern BenutzerInnen bekommen regelmäßig eine E-Mail mit allen Benachrichtigen zu den Vorschlägen."
       proposal_page: "die Vorschlagsseite"
     show:
       back: "Zurück zu meiner Aktivität"
@@ -826,7 +820,6 @@ de:
     error: "Ungültiger Link. Starten Sie mit %{url}."
     error_itself: "Ungültiger Link. Sie können einen Inhalt nicht auf sich selbst beziehen."
     success: "Sie haben einen neuen verwandten Inhalt hinzugefügt"
-    is_related: "Ist der Inhalt verknüpft?"
     score_positive: "Ja"
     score_negative: "Nein"
     content_title:
