@@ -106,30 +106,6 @@ es-CL:
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
       new:
         title: Nuevo presupuesto ciudadano
-      show:
-        groups:
-          one: 1 Grupo de partidas presupuestarias
-          other: "%{count} Grupos de partidas presupuestarias"
-      form:
-        group: Nombre del grupo
-        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
-        add_group: Añadir nuevo grupo
-        create_group: Crear grupo
-        edit_group: Editar grupo
-        submit: Guardar grupo
-        heading: Nombre de la partida
-        add_heading: Añadir partida
-        amount: Cantidad
-        population: "Población (opcional)"
-        population_help_text: "Este dato se utiliza exclusivamente para calcular las estadísticas de participación"
-        save_heading: Guardar partida
-        no_heading: Este grupo no tiene ninguna partida asignada.
-        table_heading: Partida
-        table_amount: Cantidad
-        table_population: Población
-        population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
-        max_votable_headings: "Máximo número de encabezados en que un usuario puede votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -242,8 +218,6 @@ es-CL:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
       new:
         creating: Crear hito
         date: Fecha
@@ -295,7 +269,6 @@ es-CL:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
         user: Usuario
-        no_hidden_users: No hay uusarios bloqueados.
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
@@ -341,7 +314,6 @@ es-CL:
         index:
           create: Nuevo proceso
           delete: Borrar
-          title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
             next: Próximamente
@@ -361,7 +333,6 @@ es-CL:
           status_planned: Próximamente
         subnav:
           info: Información
-          draft_versions: Redacción
           questions: Debate
           proposals: Propuestas
       proposals:
@@ -841,15 +812,6 @@ es-CL:
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
-    hidden_proposals:
-      index:
-        filter: Filtro
-        filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendientes
-        title: Propuestas ocultas
-        no_hidden_proposals: No hay propuestas ocultas.
     settings:
       flash:
         updated: Valor actualizado
