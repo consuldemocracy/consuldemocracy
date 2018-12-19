@@ -175,7 +175,7 @@ feature 'Legislation' do
         visit legislation_process_path(process)
 
         expect(page).to     have_content("This is the process homepage")
-        expect(page).to_not have_content("Participate in the debate")
+        expect(page).not_to have_content("Participate in the debate")
       end
 
       scenario 'disabled', :with_frozen_time do
@@ -187,7 +187,7 @@ feature 'Legislation' do
         visit legislation_process_path(process)
 
         expect(page).to have_content("This phase is not open yet")
-        expect(page).to_not have_content("This is the process homepage")
+        expect(page).not_to have_content("This is the process homepage")
       end
     end
 
