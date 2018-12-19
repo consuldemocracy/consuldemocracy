@@ -181,8 +181,6 @@ id:
         tags: Tag
         user_tags: Tag Pengguna
         undefined: Tidak terdefinisi
-        milestone: Batu peringatan
-        new_milestone: Membuat batu peringatan baru
         compatibility:
           title: Kecocokan
           "true": Tidak cocok
@@ -221,6 +219,8 @@ id:
         image: "Gambar"
         show_image: "Tampilkan gambar"
         documents: "Dokumen"
+        milestone: Batu peringatan
+        new_milestone: Membuat batu peringatan baru
       new:
         creating: Membuat batu peringatan
         date: Tanggal
@@ -738,7 +738,7 @@ id:
       search:
         title: Cari organisasi
         no_results: Tidak ada organisasi yang ditemukan.
-    proposals:
+    hidden_proposals:
       index:
         filters:
           with_confirmed_hide: Dikonfirmasi

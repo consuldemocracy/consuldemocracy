@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('pages.titles.privacy') %><% end %>
+<% provide :title do %><%= t("pages.titles.privacy") %><% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: page_url("privacy") %>
 <% end %>
@@ -6,12 +6,11 @@
 <div class="row margin-top">
 
   <div class="small-12 medium-9 column">
-
-    <h1><%= t(".title") %></h1>
-    <h2><%= t('.subtitle') %></h2>
+    <h1><%= t("pages.privacy.title") %></h1>
+    <h2><%= t("pages.privacy.subtitle") %></h2>
 
     <ol>
-      <% t('.info_items').each do |item| %>
+      <% t("pages.privacy.info_items").each do |item| %>
         <% if item.key? :text %>
           <li><%= item[:text] %></li>
         <% else %>
@@ -26,12 +25,9 @@
         <% end %>
       <% end %>
     </ol>
-
   </div>
 
   <div class="small-12 medium-3 column">
     <%= render '/shared/print' %>
   </div>
-
 </div>
-

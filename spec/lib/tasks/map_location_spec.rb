@@ -1,6 +1,4 @@
-require 'rake'
 require 'rails_helper'
-Rails.application.load_tasks
 
 describe 'rake map_locations:destroy' do
   before do

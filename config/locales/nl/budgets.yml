@@ -118,9 +118,6 @@ nl:
         price: Bedrag
         comments_tab: Reacties
         milestones_tab: Mijlpalen
-        no_milestones: Zonder gedefinieerde mijlpalen
-        milestone_publication_date: "Gepubliceerd %{publication_date}"
-        milestone_status_changed: Investeringsstatus gewijzigd in
         author: Auteur
         project_unfeasible_html: 'Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </ strong> en gaat niet naar de beslissingsfase.'
         project_selected_html: 'Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase.'

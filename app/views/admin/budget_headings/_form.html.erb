@@ -1,0 +1,40 @@
+<div class="small-12 medium-6">
+
+  <%= form_for [:admin, @budget, @group, @heading], url: path do |f| %>
+
+    <%= f.text_field :name,
+                     label: t("admin.budget_headings.form.name"),
+                     maxlength: 50,
+                     placeholder: t("admin.budget_headings.form.name") %>
+
+    <%= f.text_field :price,
+                      label: t("admin.budget_headings.form.amount"),
+                      maxlength: 8,
+                      placeholder: t("admin.budget_headings.form.amount") %>
+
+    <%= f.label :population, t("admin.budget_headings.form.population") %>
+    <p class="help-text" id="budgets-population-help-text">
+      <%= t("admin.budget_headings.form.population_info") %>
+    </p>
+    <%= f.text_field :population,
+                      label: false,
+                      maxlength: 8,
+                      placeholder: t("admin.budget_headings.form.population"),
+                      data: {toggle_focus: "population-info"},
+                      aria: {describedby: "budgets-population-help-text"} %>
+
+    <%= f.text_field :latitude,
+                      label: t("admin.budget_headings.form.latitude"),
+                      maxlength: 22,
+                      placeholder: "latitude" %>
+
+    <%= f.text_field :longitude,
+                      label: t("admin.budget_headings.form.longitude"),
+                      maxlength: 22,
+                      placeholder: "longitude" %>
+
+    <%= f.check_box :allow_custom_content, label: t("admin.budget_headings.form.allow_content_block") %>
+
+    <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
+  <% end %>
+</div>

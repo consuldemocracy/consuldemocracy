@@ -20,7 +20,7 @@ feature "Notifications" do
     expect(page).to have_css(".notification", count: 2)
     expect(page).to have_content(read1.notifiable_title)
     expect(page).to have_content(read2.notifiable_title)
-    expect(page).to_not have_content(unread.notifiable_title)
+    expect(page).not_to have_content(unread.notifiable_title)
   end
 
   scenario "View unread" do
@@ -34,7 +34,7 @@ feature "Notifications" do
     expect(page).to have_css(".notification", count: 2)
     expect(page).to have_content(unread1.notifiable_title)
     expect(page).to have_content(unread2.notifiable_title)
-    expect(page).to_not have_content(read.notifiable_title)
+    expect(page).not_to have_content(read.notifiable_title)
   end
 
   scenario "View single notification" do
@@ -65,7 +65,7 @@ feature "Notifications" do
 
     expect(page).to have_css(".notification", count: 1)
     expect(page).to have_content(notification2.notifiable_title)
-    expect(page).to_not have_content(notification1.notifiable_title)
+    expect(page).not_to have_content(notification1.notifiable_title)
   end
 
   scenario "Mark all as read" do
@@ -112,7 +112,7 @@ feature "Notifications" do
     first(".notification a").click
 
     within("#notifications") do
-      expect(page).to_not have_css(".icon-circle")
+      expect(page).not_to have_css(".icon-circle")
     end
   end
 
@@ -125,7 +125,7 @@ feature "Notifications" do
     logout
     visit root_path
 
-    expect(page).to_not have_css("#notifications")
+    expect(page).not_to have_css("#notifications")
   end
 
   scenario "Notification's notifiable model no longer includes Notifiable module" do

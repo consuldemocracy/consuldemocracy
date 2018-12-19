@@ -1,5 +1,6 @@
 module Budgets
   class InvestmentsController < ApplicationController
+
     include FeatureFlags
     include CommentableActions
     include FlagActions
@@ -17,6 +18,7 @@ module Budgets
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
+    before_action :load_content_blocks, only: :index
 
     skip_authorization_check only: :json_data
 
@@ -32,13 +34,17 @@ module Budgets
     respond_to :html, :js
 
     def index
-      if @budget.finished?
-        @investments = investments.winners.page(params[:page]).per(10).for_render
-      else
-        @investments = investments.page(params[:page]).per(10).for_render
-      end
+      all_investments = if @budget.finished?
+                          investments.winners
+                        else
+                          investments
+                        end
+
+      @investments = all_investments.page(params[:page]).per(10).for_render
 
       @investment_ids = @investments.pluck(:id)
+      @investments_map_coordinates =  MapLocation.where(investment_id: all_investments).map { |l| l.json_data }
+
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
     end
@@ -142,11 +148,16 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find(params[:heading_id])
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          load_map
         end
       end
 
       def load_categories
         @categories = ActsAsTaggableOn::Tag.category.order(:name)
+      end
+
+      def load_content_blocks
+        @heading_content_blocks = @heading.content_blocks.where(locale: I18n.locale) if @heading
       end
 
       def tag_cloud
@@ -165,6 +176,10 @@ module Budgets
           @investments.apply_filters_and_search(@budget, params, @current_filter)
                       .send("sort_by_#{@current_order}")
         end
+      end
+
+      def load_map
+        @map_location = MapLocation.load_from_heading(@heading)
       end
 
   end

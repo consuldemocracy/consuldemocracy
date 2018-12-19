@@ -8,14 +8,14 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Proyecto de inversión"
-        other: "Proyectos de inversión"
-      budget/investment/milestone:
+        one: "Proyecto de gasto"
+        other: "Proyectos de gasto"
+      milestone:
         one: "hito"
         other: "hitos"
-      budget/investment/status:
-        one: "Estado de proyecto"
-        other: "Estados de proyecto"
+      milestone/status:
+        one: "Estado de seguimiento"
+        other: "Estados de seguimiento"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -63,7 +63,7 @@ es:
         other: "Propuestas ciudadanas"
       spending_proposal:
         one: "Proyecto de inversión"
-        other: "Proyectos de inversión"
+        other: "Proyectos de gasto"
       site_customization/page:
         one: Página
         other: Páginas
@@ -82,9 +82,6 @@ es:
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
@@ -108,7 +105,7 @@ es:
         other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
-        other: "Notificaciones de propuestas"
+        other: "Notificaciones de propuesta"
     attributes:
       budget:
         name: "Nombre"
@@ -129,14 +126,14 @@ es:
         administrator_id: "Administrador"
         location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
-        image: "Imagen descriptiva de la propuesta de inversión"
+        image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
-      budget/investment/milestone:
-        status_id: "Estado actual del proyecto (opcional)"
+      milestone:
+        status_id: "Estado actual (opcional)"
         title: "Título"
-        description: "Descripción (opcional si se ha asignado un estado de proyecto)"
+        description: "Descripción (opcional si hay un estado asignado)"
         publication_date: "Fecha de publicación"
-      budget/investment/status:
+      milestone/status:
         name: "Nombre"
         description: "Descripción (opcional)"
       budget/heading:
@@ -198,7 +195,7 @@ es:
         title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
-        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
@@ -231,6 +228,8 @@ es:
         end_date: Fecha de fin del proceso
         debate_start_date: Fecha de inicio del debate
         debate_end_date: Fecha de fin del debate
+        draft_start_date: Fecha de inicio del borrador
+        draft_end_date: Fecha de fin del borrador
         draft_publication_date: Fecha de publicación del borrador
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
@@ -240,6 +239,7 @@ es:
         summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
+        milestones_summary: Seguimiento del proceso
       legislation/draft_version:
         title: Título de la version
         body: Texto
@@ -247,7 +247,7 @@ es:
         status: Estado
         final_version: Versión final
       legislation/draft_version/translation:
-        title: Título de la version
+        title: Título de la versión
         body: Texto
         changelog: Cambios
       legislation/question:
@@ -267,7 +267,7 @@ es:
         title: Respuesta
         description: Descripción
       poll/question/answer/translation:
-        title: Respuesta
+        title: Título
         description: Descripción
       poll/question/answer/video:
         title: Título
@@ -320,11 +320,11 @@ es:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "El usuario del destinatario es inválido"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "El usuario del destinatario es inválido"
         map_location:
           attributes:
             map:
@@ -340,6 +340,8 @@ es:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
             debate_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
+            draft_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
         proposal:

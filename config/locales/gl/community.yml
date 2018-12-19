@@ -16,13 +16,13 @@ gl:
       create_first_community_topic:
         first_theme_not_logged_in: Non hai ningún tempa dispoñible. Participa creando o primeiro.
         first_theme: Crea o primeiro tema da comunidade
-        sub_first_theme: "Para creares un tema debes %{sign_in} ou %{sign_up}."
+        sub_first_theme: "Para crear un tema debes %{sign_in} ou %{sign_up}."
         sign_in: "iniciar sesión"
         sign_up: "rexistrarte"
       tab:
         participants: Participantes
       sidebar:
-        participate: Comeza a participar
+        participate: Participa
         new_topic: Crea un tema
       topic:
         edit: Editar tema
@@ -57,4 +57,4 @@ gl:
         recommendation_three: Goza deste espazo e das voces que o enchen, pois tamén é teu.
   topics:
     show:
-      login_to_comment: Necesitas %{signin} ou %{signup} para comentar.
+      login_to_comment: Precisas %{signin} ou %{signup} para comentares.

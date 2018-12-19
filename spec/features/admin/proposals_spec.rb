@@ -1,108 +1,39 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin proposals' do
-
+feature "Admin proposals" do
   background do
-    admin = create(:administrator)
-    login_as(admin.user)
+    login_as create(:administrator).user
   end
 
-  scenario 'Disabled with a feature flag' do
-    Setting['feature.proposals'] = nil
-    admin = create(:administrator)
-    login_as(admin.user)
+  it_behaves_like "admin_milestoneable",
+                  :proposal,
+                  "admin_proposal_path"
 
-    expect{ visit admin_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+  context "Index" do
+    scenario "Search" do
+      create(:proposal, title: "Make Pluto a planet again")
+      create(:proposal, title: "Build a monument to honour CONSUL developers")
 
-    Setting['feature.proposals'] = true
+      visit admin_root_path
+      within("#side_menu") { click_link "Proposals" }
+
+      expect(page).to have_content "Make Pluto a planet again"
+      expect(page).to have_content "Build a monument"
+
+      fill_in "search", with: "Pluto"
+      click_button "Search"
+
+      expect(page).to have_content "Make Pluto a planet again"
+      expect(page).not_to have_content "Build a monument"
+    end
   end
 
-  scenario 'List shows all relevant info' do
-    proposal = create(:proposal, :hidden)
+  scenario "Show" do
+    create(:proposal, title: "Create a chaotic future", summary: "Chaos isn't controlled")
+
     visit admin_proposals_path
+    click_link "Create a chaotic future"
 
-    expect(page).to have_content(proposal.title)
-    expect(page).to have_content(proposal.summary)
-    expect(page).to have_content(proposal.description)
-    expect(page).to have_content(proposal.question)
-    expect(page).to have_content(proposal.external_url)
-    expect(page).to have_content(proposal.video_url)
+    expect(page).to have_content "Chaos isn't controlled"
   end
-
-  scenario 'Restore' do
-    proposal = create(:proposal, :hidden)
-    visit admin_proposals_path
-
-    click_link 'Restore'
-
-    expect(page).not_to have_content(proposal.title)
-
-    expect(proposal.reload).not_to be_hidden
-    expect(proposal).to be_ignored_flag
-  end
-
-  scenario 'Confirm hide' do
-    proposal = create(:proposal, :hidden)
-    visit admin_proposals_path
-
-    click_link 'Confirm moderation'
-
-    expect(page).not_to have_content(proposal.title)
-    click_link('Confirmed')
-    expect(page).to have_content(proposal.title)
-
-    expect(proposal.reload).to be_confirmed_hide
-  end
-
-  scenario "Current filter is properly highlighted" do
-    visit admin_proposals_path
-    expect(page).not_to have_link('Pending')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Confirmed')
-
-    visit admin_proposals_path(filter: 'Pending')
-    expect(page).not_to have_link('Pending')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Confirmed')
-
-    visit admin_proposals_path(filter: 'all')
-    expect(page).to have_link('Pending')
-    expect(page).not_to have_link('All')
-    expect(page).to have_link('Confirmed')
-
-    visit admin_proposals_path(filter: 'with_confirmed_hide')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Pending')
-    expect(page).not_to have_link('Confirmed')
-  end
-
-  scenario "Filtering proposals" do
-    create(:proposal, :hidden, title: "Unconfirmed proposal")
-    create(:proposal, :hidden, :with_confirmed_hide, title: "Confirmed proposal")
-
-    visit admin_proposals_path(filter: 'pending')
-    expect(page).to have_content('Unconfirmed proposal')
-    expect(page).not_to have_content('Confirmed proposal')
-
-    visit admin_proposals_path(filter: 'all')
-    expect(page).to have_content('Unconfirmed proposal')
-    expect(page).to have_content('Confirmed proposal')
-
-    visit admin_proposals_path(filter: 'with_confirmed_hide')
-    expect(page).not_to have_content('Unconfirmed proposal')
-    expect(page).to have_content('Confirmed proposal')
-  end
-
-  scenario "Action links remember the pagination setting and the filter" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 2).times { create(:proposal, :hidden, :with_confirmed_hide) }
-
-    visit admin_proposals_path(filter: 'with_confirmed_hide', page: 2)
-
-    click_on('Restore', match: :first, exact: true)
-
-    expect(current_url).to include('filter=with_confirmed_hide')
-    expect(current_url).to include('page=2')
-  end
-
 end

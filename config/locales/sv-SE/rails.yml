@@ -1,0 +1,197 @@
+sv:
+  date:
+    abbr_day_names:
+      - sön
+      - mån
+      - tis
+      - ons
+      - tors
+      - fre
+      - lör
+    abbr_month_names:
+      - 
+      - jan
+      - feb
+      - mars
+      - april
+      - maj
+      - juni
+      - juli
+      - aug
+      - sep
+      - okt
+      - nov
+      - dec
+    day_names:
+      - söndag
+      - måndag
+      - tisdag
+      - onsdag
+      - torsdag
+      - fredag
+      - lördag
+    formats:
+      default: "%Y-%m-%d"
+      long: "%d %B, %Y"
+      short: "%d %b"
+    month_names:
+      - 
+      - januari
+      - februari
+      - mars
+      - april
+      - maj
+      - juni
+      - juli
+      - augusti
+      - september
+      - oktober
+      - november
+      - december
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: ungefär en timme
+        other: ungefär %{count} timmar
+      about_x_months:
+        one: ungefär en månad
+        other: ungefär %{count} månader
+      about_x_years:
+        one: ungefär ett år
+        other: ungefär %{count} år
+      almost_x_years:
+        one: nästan ett år
+        other: nästan %{count} år
+      half_a_minute: en halv minut
+      less_than_x_minutes:
+        one: mindre än en minut
+        other: mindre än %{count} minuter
+      less_than_x_seconds:
+        one: mindre än en sekund
+        other: mindre än %{count} sekunder
+      over_x_years:
+        one: mer än ett år
+        other: mer än %{count} år
+      x_days:
+        one: en dag
+        other: "%{count} dagar"
+      x_minutes:
+        one: en minut
+        other: "%{count} minuter"
+      x_months:
+        one: en månad
+        other: "%{count} månader"
+      x_years:
+        one: ett år
+        other: "%{count} år"
+      x_seconds:
+        one: en sekund
+        other: "%{count} sekunder"
+    prompts:
+      day: dag
+      hour: timme
+      minute: minut
+      month: månad
+      second: sekunder
+      year: år
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: måste godkännas
+      blank: får inte lämnas tomt
+      present: måste lämnas tomt
+      confirmation: stämmer inte överens med %{attribute}
+      empty: får inte lämnas tomt
+      equal_to: måste vara lika med %{count}
+      even: måste vara ett jämnt tal
+      exclusion: är upptaget
+      greater_than: måste vara större än %{count}
+      greater_than_or_equal_to: måste vara större än eller lika med %{count}
+      inclusion: finns inte i listan
+      invalid: är ogiltigt
+      less_than: måste vara mindre än %{count}
+      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
+      model_invalid: "Felmeddelanden: %{errors}"
+      not_a_number: är inte ett nummer
+      not_an_integer: måste vara ett heltal
+      odd: måste vara ett udda tal
+      required: måste finnas
+      taken: används redan
+      too_long:
+        one: är för långt (får inte vara längre än 1 tecken)
+        other: är för långt (får inte vara längre än %{count} tecken)
+      too_short:
+        one: är för kort (får inte vara kortare än 1 tecken)
+        other: är för kort (får inte vara kortare än %{count} tecken)
+      wrong_length:
+        one: är fel längd (måste vara 1 tecken långt)
+        other: är fel längd (måste vara %{count} tecken långt)
+      other_than: får inte vara %{count}
+    template:
+      body: 'Det finns problem med följande fält:'
+      header:
+        one: ett fel hindrade den här %{model} att sparas
+        other: "%{count} fel hindrade den här %{model} att sparas"
+  helpers:
+    select:
+      prompt: Vänligen välj
+    submit:
+      create: Skapa %{model}
+      submit: Spara %{model}
+      update: Uppdatera %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "kr"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: miljard
+          million: miljon
+          quadrillion: triljon
+          thousand: tusen
+          trillion: biljon
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: byte
+            other: bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", och "
+      two_words_connector: " och "
+      words_connector: ", "
+  time:
+    am: på förmiddagen
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a %d %b %Y %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: på eftermiddagen

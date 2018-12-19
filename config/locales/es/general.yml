@@ -106,7 +106,7 @@ es:
       orders:
         confidence_score: Mejor valorados
         created_at: Nuevos
-        hot_score: Más activos hoy
+        hot_score: Más activos
         most_commented: Más comentados
         relevance: Más relevantes
         recommendations: Recomendaciones
@@ -180,7 +180,7 @@ es:
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
-    budget/investment: la propuesta de inversión
+    budget/investment: el proyecto de gasto
     budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: la respuesta
@@ -346,7 +346,7 @@ es:
       orders:
         confidence_score: Más apoyadas
         created_at: Nuevas
-        hot_score: Más activas hoy
+        hot_score: Más activas
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
@@ -437,6 +437,7 @@ es:
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
+      milestones_tab: Seguimiento
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
@@ -573,9 +574,9 @@ es:
     followable:
       budget_investment:
         create:
-          notice_html: "¡Ahora estás siguiendo este proyecto de inversión! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+          notice_html: "¡Ahora estás siguiendo este proyecto de gasto! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
         destroy:
-          notice_html: "¡Has dejado de seguir este proyecto de inverisión! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
+          notice_html: "¡Has dejado de seguir este proyecto de gasto! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
       proposal:
         create:
           notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
@@ -595,10 +596,10 @@ es:
         see_all: "Ver todos"
       budget_investment:
         found:
-          one: "Existe una propuesta de inversión con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
-          other: "Existen propuestas de inversión con el término '%{query}', puedes participar en ellas en vez de abrir una nueva."
-        message: "Estás viendo %{limit} de %{count} propuestas de inversión que contienen el término '%{query}'"
-        see_all: "Ver todas"
+          one: "Existe un proyecto de gasto con el término '%{query}', puedes participar en él en vez de crear uno nuevo."
+          other: "Existen proyectos de gasto de con el término '%{query}', puedes participar en ellos en vez de crear una nuevo."
+        message: "Estás viendo %{limit} de %{count} proyectos de gasto que contienen el término '%{query}'"
+        see_all: "Ver todos"
       proposal:
         found:
           one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
@@ -628,9 +629,9 @@ es:
       cards: Tarjetas
       list: Lista
     recommended_index:
-        title: Recomendaciones
-        see_more: Ver más recomendaciones
-        hide: Ocultar recomendaciones
+      title: Recomendaciones
+      see_more: Ver más recomendaciones
+      hide: Ocultar recomendaciones
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -722,7 +723,7 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Esta propuesta ha sido eliminada
-      deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       proposals: Propuestas
       debates: Debates
       budget_investments: Proyectos de presupuestos participativos
@@ -774,7 +775,7 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
@@ -841,7 +842,7 @@ es:
     content_title:
       proposal: "Propuesta"
       debate: "Debate"
-      budget_investment: "Propuesta de inversión"
+      budget_investment: "Proyecto de gasto"
   admin/widget:
     header:
       title: Administración
@@ -851,4 +852,4 @@ es:
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
+      title: '¿Cómo puedo comentar este documento?'

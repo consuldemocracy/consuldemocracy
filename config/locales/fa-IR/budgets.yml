@@ -1,0 +1,172 @@
+fa:
+  budgets:
+    ballots:
+      show:
+        title: ' رای شما'
+        amount_spent: مقدار صرف شده
+        remaining: "شما هنوز<span>%{amount}</span> برای سرمایه گذاری دارید"
+        no_balloted_group_yet: "شما هنوز به این گروه رای نداده اید، رأی دهید"
+        remove: حذف رای
+        voted_html:
+          one: "\nشما به <span> یک </ span> سرمایه گذاریرای داده اید."
+          other: "\nشما به <span> %{count} </ span> سرمایه گذاری هارای داده اید."
+        voted_info_html: "شما می توانید رای خود را در هر زمان تا پایان این مرحله تغییر دهید. <br> بدون نیاز به صرف تمام پول در دسترس."
+        zero: شما به پروژه سرمایه گذاری رای نداده اید
+      reasons_for_not_balloting:
+        not_logged_in: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
+        not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
+        organization: سازمان ها مجاز به رای دادن نیستند
+        not_selected: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
+        not_enough_money_html: "شما قبلا بودجه موجود را تعیین کرده اید. <br> <small> به یاد داشته باشید که می توانید هر%{change_ballot} را در هر زمان </small> تغییر دهید"
+        no_ballots_allowed: فازانتخاب  بسته است
+        different_heading_assigned_html: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
+        change_ballot: تغییر رای خود 
+    groups:
+      show:
+        title: یک گزینه را انتخاب کنید
+        unfeasible_title: سرمایه گذاری غیر قابل پیش بینی
+        unfeasible: سرمایه گذاری های غیرقابل پیش بینی را ببینید
+        unselected_title: سرمایه گذاری هایی برای مرحله رای گیری انتخاب نشده اند
+        unselected: دیدن سرمایه گذاری هایی که برای مرحله رای گیری انتخاب نشده اند
+    phase:
+      drafting: پیش نویس ( غیرقابل مشاهده برای عموم)
+      accepting: پذیرش پروژه
+      reviewing: بررسی پروژه ها
+      selecting: پذیرش پروژه
+      valuating: ارزیابی پروژه
+      publishing_prices: انتشار قیمت پروژه
+      finished: بودجه به پایان رسید
+    index:
+      title: بودجه مشارکتی
+      empty_budgets: هیچ بودجه ای وجود ندارد.
+      section_header:
+        icon_alt: نماد بودجه مشارکتی
+        title: بودجه مشارکتی
+        help: کمک در مورد بودجه مشارکتی
+        all_phases: دیدن تمام مراحل
+      all_phases: مراحل بودجه سرمایه گذاری
+      map: طرح های سرمایه گذاری بودجه جغرافیایی
+      investment_proyects: لیست تمام پروژه های سرمایه گذاری
+      unfeasible_investment_proyects: لیست پروژه های سرمایه گذاری غیرقابل پیش بینی
+      not_selected_investment_proyects: فهرست همه پروژه های سرمایه گذاری که برای رای گیری انتخاب نشده اند
+      finished_budgets: بودجه مشارکتی به پایان رسید
+      see_results: مشاهده نتایج
+      section_footer:
+        title: کمک در مورد بودجه مشارکتی
+    investments:
+      form:
+        tag_category_label: "دسته بندی ها\n"
+        tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
+        tags_label: برچسب ها
+        tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
+        map_location: "نقشه محل"
+        map_location_instructions: "نقشه محل حرکت و نشانگر محل."
+        map_remove_marker: "حذف  نشانگر نقشه"
+        location: "اطلاعات اضافی مکان"
+        map_skip_checkbox: "این سرمایه گذاری مکان خاصی ندارد و من از آن آگاه نیستم."
+      index:
+        title: بودجه مشارکتی
+        unfeasible: سرمایه گذاری غیر قابل پیش بینی
+        unfeasible_text: "سرمایه گذاری باید تعدادی از معیارهای (قانونی بودن، خاص بودن، مسئولیت شهر، از حد مجاز بودجۀ مجاز) برآورده کنند و به مرحله رای گیری نهایی برسند. همه سرمایه گذاری ها این معیارها را برآورده نمی کنند،و به عنوان گزارش غیرقابل اعتباری، غیر قابل قبول در لیست زیر منتشر شده اند."
+        by_heading: "پروژه های سرمایه گذاری با دامنه:%{heading}"
+        search_form:
+          button: جستجو
+          placeholder: جستجو پروژه های سرمایه گذاری ...
+          title: جستجو
+        search_results_html:
+          one: "حاوی اصطلاح<strong>%{search_term}</strong>"
+          other: "حاوی اصطلاح<strong>%{search_term}</strong>"
+        sidebar:
+          my_ballot: رای من
+          voted_html:
+            one: "<strong>شما یک پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
+            other: "<strong>شما %{count} پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
+          voted_info: شما می توانید%{link} در هر زمانی  این مرحله را پایان دهید . بدون نیاز به صرف تمام پول در دسترس.
+          voted_info_link: تغییر رای خود 
+          different_heading_assigned_html: "شما در ردیف دیگری آراء فعال دارید:%{heading_link}"
+          change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
+          check_ballot_link: "رای من را چک کن"
+          zero: شما به هیچ پروژه سرمایه گذاری در این گروه رأی نداده اید.
+          verified_only: "برای ایجاد یک سرمایه گذاری جدید بودجه%{verify}"
+          verify_account: "حساب کاربری خودراتایید کنید\n"
+          create: "ایجاد بودجه سرمایه گذاری \n"
+          not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
+          sign_in: "ورود به برنامه"
+          sign_up: "ثبت نام"
+          by_feasibility: "امکان پذیری\n"
+          feasible: پروژه های قابل اجرا
+          unfeasible: پروژه های غیرقابل اجرا
+        orders:
+          random: "تصادفی\n"
+          confidence_score: بالاترین امتیاز
+          price: با قیمت
+      show:
+        author_deleted: کاربر حذف شد
+        price_explanation: توضیح قیمت
+        unfeasibility_explanation: توضیح امکان سنجی 
+        code_html: 'کد پروژه سرمایه گذاری:<strong>%{code}</strong>'
+        location_html: "محل:\n%{location}</strong>"
+        organization_name_html: 'پیشنهاد از طرف:<strong>%{name}</strong>'
+        share: "اشتراک گذاری\n"
+        title: پروژه سرمایه گذاری
+        supports: پشتیبانی ها
+        votes: آرا
+        price: قیمت
+        comments_tab: توضیحات
+        milestones_tab: نقطه عطف
+        author: نویسنده
+        project_unfeasible_html: 'این پروژه سرمایه گذاری <strong> به عنوان غیرقابل توصیف مشخص شده است </ strong> و به مرحله رای گیری نرسیده است'
+        project_not_selected_html: 'این پروژه سرمایه گذاری <strong> انتخاب نشده است </ strong> برای مرحله رای گیری .'
+      wrong_price_format: فقط اعداد صحیح 
+      investment:
+        add: رای
+        already_added: شما قبلا این پروژه سرمایه گذاری را اضافه کرده اید
+        already_supported: شما قبلا این پروژه سرمایه گذاری را پشتیبانی کرده اید. به اشتراک بگذارید
+        support_title: پشتیبانی از این پروژه
+        confirm_group:
+          one: "شما فقط می توانید از سرمایه گذاری در%{count} منطقه حمایت کنید. اگر همچنان ادامه دهید، نمی توانید انتخابات منطقه خود را تغییر دهید. شما مطمئن هستید؟"
+          other: "شما فقط می توانید از سرمایه گذاری در%{count} منطقه حمایت کنید. اگر همچنان ادامه دهید، نمی توانید انتخابات منطقه خود را تغییر دهید. شما مطمئن هستید؟"
+        supports:
+          zero: بدون پشتیبانی 
+          one: 1 پشتیبانی
+          other: "%{count}پشتیبانی"
+        give_support: پشتیبانی
+      header:
+        check_ballot: رای من را چک کن
+        different_heading_assigned_html: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
+        change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
+        check_ballot_link: "رای من را چک کن"
+        price: "این عنوان یک بودجه دارد"
+    progress_bar:
+      assigned: "شما اختصاص داده اید:"
+      available: "بودجه موجود"
+    show:
+      group: گروه
+      phase: فاز واقعی
+      unfeasible_title: سرمایه گذاری غیر قابل پیش بینی
+      unfeasible: سرمایه گذاری های غیرقابل پیش بینی را ببینید
+      unselected_title: سرمایه گذاری هایی برای مرحله رای گیری انتخاب نشده اند
+      unselected: دیدن سرمایه گذاری هایی که برای مرحله رای گیری انتخاب نشده اند
+      see_results: مشاهده نتایج
+    results:
+      link: نتایج
+      page_title: "%{budget} - نتایج"
+      heading: "نتایج بودجه مشارکتی"
+      heading_selection_title: "توسط منطقه"
+      spending_proposal: عنوان پیشنهاد
+      ballot_lines_count: زمان انتخاب شده است
+      hide_discarded_link: پنهان کردن 
+      show_all_link: نمایش همه
+      price: قیمت
+      amount_available: بودجه موجود
+      accepted: "هزینه های طرح پذیرفته شده: "
+      discarded: "هزینه های طرح  شده: "
+      incompatibles: ناسازگار
+      investment_proyects: لیست تمام پروژه های سرمایه گذاری
+      unfeasible_investment_proyects: لیست پروژه های سرمایه گذاری غیرقابل پیش بینی
+      not_selected_investment_proyects: فهرست همه پروژه های سرمایه گذاری که برای رای گیری انتخاب نشده اند
+    phases:
+      errors:
+        dates_range_invalid: "تاریخ شروع نمی تواند برابر یا بعد از تاریخ پایان باشد"
+        prev_phase_dates_invalid: "تاریخ شروع باید بعد از تاریخ شروع فاز فعال قبلی باشد%{phase_name}"
+        next_phase_dates_invalid: "تاریخ پایان باید زودتر از تاریخ پایان مرحله فاز بعدی باشد%{phase_name}"

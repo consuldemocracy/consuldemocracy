@@ -1,6 +1,7 @@
 files:
   - source: /config/locales/en/**.yml
     translation: /config/locales/%locale%/%original_file_name%
+    update_option: update_without_changes
     languages_mapping:
       locale:
         ar: ar

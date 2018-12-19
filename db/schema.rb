@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180924071722) do
+ActiveRecord::Schema.define(version: 20181206153510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,16 @@ ActiveRecord::Schema.define(version: 20180924071722) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "budget_content_blocks", force: :cascade do |t|
+    t.integer  "heading_id"
+    t.text     "body"
+    t.string   "locale"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "budget_content_blocks", ["heading_id"], name: "index_budget_content_blocks_on_heading_id", using: :btree
+
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
     t.string  "name",                 limit: 50
@@ -152,10 +162,13 @@ ActiveRecord::Schema.define(version: 20180924071722) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",       limit: 50
-    t.integer "price",      limit: 8
+    t.string  "name",                 limit: 50
+    t.integer "price",                limit: 8
     t.integer "population"
     t.string  "slug"
+    t.boolean "allow_custom_content",            default: false
+    t.text    "latitude"
+    t.text    "longitude"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
@@ -580,7 +593,7 @@ ActiveRecord::Schema.define(version: 20180924071722) do
     t.string   "locale",                       null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.text     "title"
+    t.string   "title"
     t.text     "changelog"
     t.text     "body"
     t.text     "body_html"
@@ -617,6 +630,8 @@ ActiveRecord::Schema.define(version: 20180924071722) do
     t.text     "summary"
     t.text     "description"
     t.text     "additional_info"
+    t.text     "milestones_summary"
+    t.text     "homepage"
   end
 
   add_index "legislation_process_translations", ["legislation_process_id"], name: "index_199e5fed0aca73302243f6a1fca885ce10cdbb55", using: :btree
@@ -647,13 +662,19 @@ ActiveRecord::Schema.define(version: 20180924071722) do
     t.date     "proposals_phase_end_date"
     t.boolean  "proposals_phase_enabled"
     t.text     "proposals_description"
+    t.date     "draft_start_date"
+    t.date     "draft_end_date"
+    t.boolean  "draft_phase_enabled",        default: false
+    t.boolean  "homepage_enabled",           default: false
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
   add_index "legislation_processes", ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date", using: :btree
   add_index "legislation_processes", ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date", using: :btree
   add_index "legislation_processes", ["debate_start_date"], name: "index_legislation_processes_on_debate_start_date", using: :btree
+  add_index "legislation_processes", ["draft_end_date"], name: "index_legislation_processes_on_draft_end_date", using: :btree
   add_index "legislation_processes", ["draft_publication_date"], name: "index_legislation_processes_on_draft_publication_date", using: :btree
+  add_index "legislation_processes", ["draft_start_date"], name: "index_legislation_processes_on_draft_start_date", using: :btree
   add_index "legislation_processes", ["end_date"], name: "index_legislation_processes_on_end_date", using: :btree
   add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
   add_index "legislation_processes", ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree
@@ -775,6 +796,41 @@ ActiveRecord::Schema.define(version: 20180924071722) do
 
   add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
   add_index "map_locations", ["proposal_id"], name: "index_map_locations_on_proposal_id", using: :btree
+
+  create_table "milestone_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "hidden_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "milestone_statuses", ["hidden_at"], name: "index_milestone_statuses_on_hidden_at", using: :btree
+
+  create_table "milestone_translations", force: :cascade do |t|
+    t.integer  "milestone_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "milestone_translations", ["locale"], name: "index_milestone_translations_on_locale", using: :btree
+  add_index "milestone_translations", ["milestone_id"], name: "index_milestone_translations_on_milestone_id", using: :btree
+
+  create_table "milestones", force: :cascade do |t|
+    t.integer  "milestoneable_id"
+    t.string   "milestoneable_type"
+    t.string   "title",              limit: 80
+    t.text     "description"
+    t.datetime "publication_date"
+    t.integer  "status_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "milestones", ["status_id"], name: "index_milestones_on_status_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
@@ -1163,17 +1219,17 @@ ActiveRecord::Schema.define(version: 20180924071722) do
   add_index "site_customization_images", ["name"], name: "index_site_customization_images_on_name", unique: true, using: :btree
 
   create_table "site_customization_page_translations", force: :cascade do |t|
-      t.integer  "site_customization_page_id", null: false
-      t.string   "locale",                     null: false
-      t.datetime "created_at",                 null: false
-      t.datetime "updated_at",                 null: false
-      t.string   "title"
-      t.string   "subtitle"
-      t.text     "content"
-    end
+    t.integer  "site_customization_page_id", null: false
+    t.string   "locale",                     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "content"
+  end
 
-    add_index "site_customization_page_translations", ["locale"], name: "index_site_customization_page_translations_on_locale", using: :btree
-    add_index "site_customization_page_translations", ["site_customization_page_id"], name: "index_7fa0f9505738cb31a31f11fb2f4c4531fed7178b", using: :btree
+  add_index "site_customization_page_translations", ["locale"], name: "index_site_customization_page_translations_on_locale", using: :btree
+  add_index "site_customization_page_translations", ["site_customization_page_id"], name: "index_7fa0f9505738cb31a31f11fb2f4c4531fed7178b", using: :btree
 
   create_table "site_customization_pages", force: :cascade do |t|
     t.string   "slug",                                 null: false
@@ -1418,6 +1474,12 @@ ActiveRecord::Schema.define(version: 20180924071722) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "widget_card_translations", force: :cascade do |t|
     t.integer  "widget_card_id", null: false
     t.string   "locale",         null: false
@@ -1448,12 +1510,6 @@ ActiveRecord::Schema.define(version: 20180924071722) do
     t.integer  "limit",      default: 3
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "web_sections", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"

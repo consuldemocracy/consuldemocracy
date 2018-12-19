@@ -1,0 +1,36 @@
+<%= render "admin/shared/globalize_locales", resource: @milestone %>
+
+<%= translatable_form_for [:admin, *resource_hierarchy_for(@milestone)] do |f| %>
+
+  <div class="small-12 medium-6 margin-bottom">
+    <%= f.select :status_id,
+          @statuses.collect { |s| [s.name, s.id] },
+          { include_blank: @statuses.any? ? '' : t('admin.milestones.form.no_statuses_defined') },
+          { disabled: @statuses.blank? } %>
+    <%= link_to t('admin.milestones.form.admin_statuses'),
+                admin_milestone_statuses_path %>
+  </div>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
+                               maxlength: Milestone.title_max_length %>
+
+    <%= translations_form.text_area :description,
+                                    rows: 5,
+                                    label: t("admin.milestones.new.description") %>
+  <% end %>
+
+  <%= f.label :publication_date, t("admin.milestones.new.date") %>
+  <%= f.text_field :publication_date,
+                   value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,
+                   label: false,
+                   class: "js-calendar-full" %>
+
+  <%= render 'images/admin_image', imageable: @milestone, f: f %>
+
+  <div class="documents">
+    <%= render 'documents/nested_documents', documentable: @milestone, f: f %>
+  </div>
+
+  <%= f.submit nil, class: "button success" %>
+<% end %>

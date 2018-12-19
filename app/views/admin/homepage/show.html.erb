@@ -45,8 +45,6 @@
 <div class="small-12 medium-6 large-4 column end">
   <div class="callout">
     <h3 class="inline-block"><%= t("settings.#{@recommendations.key}") %></h3>
-    <div class="float-right">
-      <%= render "setting", setting: @recommendations %>
-    </div>
+    <%= render "setting", setting: @recommendations %>
   </div>
 </div>

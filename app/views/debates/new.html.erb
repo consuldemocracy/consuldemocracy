@@ -7,8 +7,11 @@
     <div data-alert class="callout primary">
       <%= t("debates.new.info",
       info_link: link_to(t("debates.new.info_link"), new_proposal_path )).html_safe %>
-      <%= link_to help_path, title: t('shared.target_blank_html'), target: "_blank" do %>
-        <strong><%= t("debates.new.more_info") %></strong>
+
+      <% if feature?(:help_page) %>
+        <%= link_to help_path, title: t("shared.target_blank_html"), target: "_blank" do %>
+          <strong><%= t("debates.new.more_info") %></strong>
+        <% end %>
       <% end %>
     </div>
     <%= render "form" %>

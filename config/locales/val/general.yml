@@ -434,6 +434,7 @@ val:
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       notifications_tab: Notificacions
+      milestones_tab: Seguiments
       retired_warning: "L'autor d'esta proposta considera que ja no ha de seguir recollint avals."
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
       retired: Proposta retirada per l'autor

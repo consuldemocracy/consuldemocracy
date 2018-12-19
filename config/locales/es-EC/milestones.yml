@@ -1,0 +1,6 @@
+es-EC:
+  milestones:
+    index:
+      no_milestones: No hay hitos definidos
+    show:
+      publication_date: "Publicado el %{publication_date}"

@@ -181,8 +181,6 @@ es-VE:
         tags: Etiquetas
         user_tags: Etiquetas del usuario
         undefined: Sin definir
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         compatibility:
           title: Compatibilidad
           "true": Incompatible
@@ -221,6 +219,8 @@ es-VE:
         image: "Imagen"
         show_image: "Mostrar imagen"
         documents: "Documentos"
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
       new:
         creating: Crear hito
         date: Fecha
@@ -773,7 +773,7 @@ es-VE:
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtro
         filters:
