@@ -141,6 +141,22 @@ gl:
         other: "Hai %{count} partidas"
       create:
         notice: "Partida creada correctamente!"
+      update:
+        notice: "Partida actualizada correctamente"
+      destroy:
+        success_notice: "Partida eliminada correctamente"
+        unable_notice: "Non se pode eliminar unha partida con proxectos asociados"
+      form:
+        name: "Nome da partida"
+        amount: "Cantidade"
+        population: "Poboación (opcional)"
+        population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
+        latitude: "Latitude"
+        longitude: "Lonxitude"
+        allow_content_block: "Permite bloque de contido"
+        create: "Crear nova partida"
+        edit: "Editar Partida"
+        submit: "Gardar partida"
     budget_phases:
       edit:
         start_date: Data de inicio
@@ -1099,6 +1115,8 @@ gl:
       setting_value: Valor
       no_description: "Sen descrición"
     shared:
+      true_value: "Si"
+      false_value: "Non"
       booths_search:
         button: Buscar
         placeholder: Buscar urna por nome
