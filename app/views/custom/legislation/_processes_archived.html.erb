@@ -1,11 +1,3 @@
-<!-- Parque Manzanares -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("processes.manzanares.title"), manzanares_path %></h3>
-  <p><%= t("processes.manzanares.description") %></p>
-  <%= link_to t("processes.shared.more_info"), manzanares_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("processes.manzanares.title") %>
-</div>
-
 <!-- Registro de lobbies -->
 <div class="panel margin-bottom">
   <h3><%= link_to t("processes.lobbies.title"), lobbies_path %></h3>
@@ -14,100 +6,12 @@
               title: t("pages.processes.index.more_info_title") + t("processes.lobbies.title") %>
 </div>
 
-<!-- Publicidad exterior -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_17_title"), publicity_path %></h3>
-  <p><%= t("pages.processes.index.process_17_description") %></p>
-  <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_17_title") %>
-</div>
-
-<!-- Villaverde -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_19_title"), villaverde_path %></h3>
-  <p><%= t("pages.processes.index.process_19_description") %></p>
-  <%= link_to t("pages.processes.index.process_19_button"), villaverde_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_19_title") %>
-</div>
-
-<!-- Vicálvaro -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_18_title"), vicalvaro_path %></h3>
-  <p><%= t("pages.processes.index.process_18_description") %></p>
-  <%= link_to t("pages.processes.index.process_18_button"), vicalvaro_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_18_title") %>
-</div>
-
-<!-- Rehabilitación edificios -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_16_title"), buildings_path %></h3>
-  <p><%= t("pages.processes.index.process_16_description") %></p>
-  <%= link_to t("pages.processes.index.process_16_button"), buildings_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_16_title") %>
-</div>
-
-<!-- Nueva Ordenanza Movilidad -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_15_title"), movilidad_path %></h3>
-  <p><%= t("pages.processes.index.process_15_description") %></p>
-  <%= link_to t("pages.processes.index.process_15_button"), movilidad_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_15_title") %>
-</div>
-
-<!-- Línea Madrid -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_14_title"), linea_madrid_path %></h3>
-  <p><%= t("pages.processes.index.process_14_description") %></p>
-  <%= link_to t("pages.processes.index.process_14_button"), linea_madrid_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_14_title") %>
-</div>
-
 <!-- Remodelación de Plaza España -->
 <div class="panel margin-bottom">
   <h3><%= link_to t("pages.processes.index.process_2_title"), plaza_path %></h3>
   <p><%= t("pages.processes.index.process_2_description_close") %></p>
   <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "button hollow",
               title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_2_title") %>
-</div>
-
-<!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
-<div id="air_quality_plan" class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_11_title"), air_quality_plan_path %></h3>
-  <p><%= t("pages.processes.index.process_11_description") %></p>
-  <%= link_to t("pages.processes.index.process_11_button"), air_quality_plan_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_11_title") %>
-</div>
-
-<!-- Nuevo barrio distrito Villa de Vallecas -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_13_title"), vallecas_path %></h3>
-  <p><%= t("pages.processes.index.process_13_description") %></p>
-  <%= link_to t("pages.processes.index.process_13_button"), vallecas_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_13_title") %>
-</div>
-
-<!-- Rotulación de vías -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_12_title"), label_streets_path %></h3>
-  <p><%= t("pages.processes.index.process_12_description") %></p>
-  <%= link_to t("pages.processes.index.process_12_button"), label_streets_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_12_title") %>
-</div>
-
-<!-- Licencias urbanísticas -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_8_title"), urbanistic_licenses_path %></h3>
-  <p><%= t("pages.processes.index.process_8_description") %></p>
-  <%= link_to t("pages.processes.index.process_8_button"), urbanistic_licenses_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_8_title") %>
-</div>
-
-<!-- Ordenanza subvenciones -->
-<div id="subvention-ordinance" class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_10_title"), subvention_ordinance_path %></h3>
-  <p><%= t("pages.processes.index.process_10_description") %></p>
-  <%= link_to t("pages.processes.index.process_10_button"), subvention_ordinance_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_10_title") %>
 </div>
 
 <!-- Alianza para el Gobierno abierto -->

@@ -40,19 +40,8 @@ SitemapGenerator::Sitemap.create do
 
   # old processes
   add processes_path
-  add urbanistic_licenses_path
   add open_government_path
   add open_government_doc_path
-  add subvention_ordinance_path
-  add air_quality_plan_path
-  add label_streets_path
-  add vallecas_path
-  add linea_madrid_path
-  add movilidad_path
-  add buildings_path
-  add publicity_path
-  add vicalvaro_path
-  add villaverde_path
   add service_letters_path
   add service_letters_1_path
   add service_letters_2_path
@@ -64,7 +53,6 @@ SitemapGenerator::Sitemap.create do
   add transparency_ordinance_draft_path
   add lobbies_path
   add lobbies_draft_path
-  add manzanares_path
 
   # landings
   add g1000_path
