@@ -96,6 +96,9 @@ ar:
           random: عشوائي
           confidence_score: اعلى تقييم
           price: حسب السعر
+      share:
+        message: "لقد أنشأت مشروع استثماري %{title} في %{org}. أنشىء مشروع الاستثماري أنت أيضاً!"
+        message_mobile: "لقد أنشأت مشروع استثماري %{title} في %{handle}. أنشىء مشروع الاستثماري أنت أيضاً!"
       show:
         author_deleted: حذف المستخدم
         price_explanation: توضيح الاسعار
@@ -161,7 +164,9 @@ ar:
     executions:
       link: "الأهداف المرحلية"
       page_title: "%{budget} - الأهداف المرحلية"
+      heading: "معالم الميزانية التشاركية"
       heading_selection_title: "جسب المنطقة"
+      no_winner_investments: "لا يوجد استثمارات فائزة"
       filters:
         label: "حالة المشروع الحالية"
         all: "الكل (%{count})"
