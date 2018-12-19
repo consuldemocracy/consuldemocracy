@@ -1,7 +1,7 @@
 sq:
   admin:
     header:
-      title: Administrator
+      title: Administrim
     actions:
       actions: Veprimet
       confirm: A je i sigurt?
@@ -87,6 +87,7 @@ sq:
         table_edit_budget: Ndrysho
         edit_groups: Ndrysho grupet e titujve
         edit_budget: Ndrysho buxhetin
+        no_budgets: "Nuk ka buxhet të hapur."
       create:
         notice: Buxheti i ri pjesëmarrës u krijua me sukses!
       update:
@@ -106,30 +107,6 @@ sq:
         unable_notice: Ju nuk mund të shkatërroni një Buxhet që ka investime të lidhura
       new:
         title: Buxheti i ri pjesëmarrës
-      show:
-        groups:
-          one: 1 Grup i titujve të buxhetit
-          other: "%{count} Grupe të titujve të buxhetit"
-      form:
-        group: Emri grupit
-        no_groups: Asnjë grup nuk është krijuar ende. Çdo përdorues do të jetë në gjendje të votojë në vetëm një titull për grup.
-        add_group: Shto grup të ri
-        create_group: Krijo Grup
-        edit_group: Ndrysho grupin
-        submit: Ruaj grupin
-        heading: Emri i titullit
-        add_heading: Vendos titullin
-        amount: Sasi
-        population: "Popullsia (opsionale)"
-        population_help_text: "Këto të dhëna përdoren ekskluzivisht për të llogaritur statistikat e pjesëmarrjes"
-        save_heading: Ruaj titullin
-        no_heading: Ky grup nuk ka titull të caktuar.
-        table_heading: Kreu
-        table_amount: Sasi
-        table_population: Popullsi
-        population_info: "Fusha e popullimit të Kreut të buxhetit përdoret për qëllime statistikore në fund të Buxhetit për të treguar për çdo Kre që përfaqëson një zonë me popullatë sa përqindje votuan. Fusha është opsionale kështu që ju mund ta lini atë bosh nëse nuk zbatohet."
-        max_votable_headings: "Numri maksimal i titujve në të cilat një përdorues mund të votojë"
-        current_of_max_headings: "%{current} të%{max}"
       winners:
         calculate: Llogaritni investimet e fituesit
         calculated: Fituesit duke u llogaritur, mund të marrë një minutë.
@@ -266,8 +243,6 @@ sq:
         image: "Imazh"
         show_image: "Trego imazhin"
         documents: "Dokumentet"
-        milestone: Moment historik
-        new_milestone: Krijo momentet historik të ri
       form:
         admin_statuses: Statusi i investimeve të administratorit
         no_statuses_defined: Ende nuk ka statuse të përcaktuara për investime
@@ -337,7 +312,7 @@ sq:
           without_confirmed_hide: Në pritje
         title: Përdoruesit e fshehur
         user: Përdorues
-        no_hidden_users: Nuk ka përdorues të fshehura.
+        no_hidden_users: Nuk ka përdorues të fshehur.
       show:
         email: 'Email:'
         hidden_at: 'Fshehur në:'
@@ -372,6 +347,8 @@ sq:
           enabled: Aktivizuar
           process: Proçes
           debate_phase: Faza e debatit
+          draft_phase: Faza e draftit
+          draft_phase_description: Nëse kjo fazë është aktive, procesi nuk do të renditet në indeksin e proceseve. Lejoni të parashini procesin dhe të krijoni përmbajtjen para fillimit.
           allegations_phase: Faza e komenteve
           proposals_phase: Faza e propozimit
           start: Fillo
@@ -384,7 +361,7 @@ sq:
         index:
           create: Proces i ri
           delete: Fshi
-          title: Proceset legjislative
+          title: Proceset e legjislacionit
           filters:
             open: Hapur
             next: Tjetër
@@ -394,6 +371,12 @@ sq:
           back: Pas
           title: Krijo një proces të ri bashkëpunues të legjislacionit
           submit_button: Krijo procesin
+        proposals:
+          select_order: Ndaj sipas
+          orders:
+            id: Id
+            title: Titull
+            supports: Suporti
         process:
           title: Proçes
           comments: Komente
@@ -404,12 +387,16 @@ sq:
           status_planned: Planifikuar
         subnav:
           info: Informacion
-          draft_versions: Hartimi
           questions: Debate
           proposals: Propozime
       proposals:
         index:
+          title: Titull
           back: Pas
+          id: Id
+          supports: Suporti
+          select: Zgjidh
+          selected: I zgjedhur
         form:
           custom_categories: Kategoritë
           custom_categories_description: Kategoritë që përdoruesit mund të zgjedhin duke krijuar propozimin.
@@ -575,6 +562,7 @@ sq:
         title: Administrator
         name: Emri
         email: Email
+        id: Administrator ID
         no_administrators: Nuk ka administratorë.
       administrator:
         add: Shto
@@ -629,6 +617,9 @@ sq:
         title: Parapamje e buletinit
         send: Dërgo
         affected_users: (%{n} përdoruesit e prekur)
+        sent_emails:
+          one: 1 email dërguar
+          other: "%{count} emaile të dërguara"
         sent_at: Dërguar në
         subject: Subjekt
         segment_recipient: Marrësit
@@ -971,7 +962,7 @@ sq:
       index:
         title: Zyrtarët
         no_officials: Nuk ka zyrtarë.
-        name: Emër
+        name: Emri
         official_position: Pozicioni zyrtar
         official_level: Nivel
       level_0: Jo zyrtare
@@ -1013,15 +1004,6 @@ sq:
       search:
         title: Kërko Organizatat
         no_results: Asnjë organizatë nuk u gjet.
-    hidden_proposals:
-      index:
-        filter: Filtër
-        filters:
-          all: Të gjithë
-          with_confirmed_hide: Konfirmuar
-          without_confirmed_hide: Në pritje
-        title: Propozime të fshehura
-        no_hidden_proposals: Nuk ka propozime të fshehura.
     proposal_notifications:
       index:
         filter: Filtër
@@ -1351,6 +1333,7 @@ sq:
           status_draft: Drafti
           status_published: Publikuar
           title: Titull
+          slug: Slug
     homepage:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
