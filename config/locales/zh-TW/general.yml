@@ -106,12 +106,10 @@ zh-TW:
         relevance: 具相關性
         recommendations: 推薦
       recommendations:
-        without_results: 沒有與您興趣相關的辯論
         without_interests: 跟蹤建議，以便我們為您提供推薦
         disable: "如果您摒棄辯論推薦，辯論推薦將停止顯示。 您可以在“我的帳戶”頁面中重新啟用它"
         actions:
           success: "此帳戶現已禁用辯論推薦"
-          error: "發生錯誤。 請回到“您的帳戶”頁面，手動停用辯論推薦"
       search_form:
         button: 搜尋
         placeholder: 搜尋辯論...
@@ -197,7 +195,6 @@ zh-TW:
       conditions: 使用條款及條件
       consul: CONSUL 應用程式
       consul_url: https://github.com/consul/consul
-      contact_us: 進入技術支援
       copyright: CONSUL, %{year}
       description: 此入口網頁使用%{consul}，即是%{open_source}。
       open_source: 開源軟件
@@ -345,7 +342,6 @@ zh-TW:
         disable: "如果您取消建議推薦，建議推薦將停止顯示。 您可以在“我的帳戶”頁面中重新啟用它"
         actions:
           success: "此帳戶現已禁用建議推薦"
-          error: "發生錯誤。 請回到“您的帳戶”頁面，手動停用建議推薦"
       retired_proposals: 已撤回建議
       retired_proposals_link: "建議已被作者撤回"
       retired_links:
@@ -425,7 +421,6 @@ zh-TW:
       retired: 建議已被作者撤回
       share: 分享
       send_notification: 發送通知
-      no_notifications: "此建議沒有任何通知。"
       embed_video_title: "%{proposal} 上的視頻"
       title_external_url: "額外的文檔"
       title_video_url: "外部視頻"
@@ -511,7 +506,6 @@ zh-TW:
       title_label: "標題"
       body_label: "消息"
       submit_button: "發送消息"
-      info_about_receivers_html: "此消息將發送給<strong>%{count} 個人</strong>，它將顯示在%{proposal_page} 中。<br>消息不會立即發送，用戶將定期收到包含所有建議通知的電子郵件。"
       proposal_page: "建議的頁面"
     show:
       back: "回到我的活動"
@@ -804,7 +798,6 @@ zh-TW:
     error: "鏈接無效。 請記住以%{url} 開頭。"
     error_itself: "鏈接無效。 您不能將內容與自身相關聯。"
     success: "您已添加了一個新的相關內容"
-    is_related: "是相關內容嗎？"
     score_positive: "是"
     score_negative: "否"
     content_title:
