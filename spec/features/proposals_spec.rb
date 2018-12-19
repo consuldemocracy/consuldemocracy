@@ -67,7 +67,7 @@ feature 'Proposals' do
       proposals.each do |proposal|
         within('#proposals') do
           expect(page).to     have_link proposal.title
-          expect(page).to_not have_content proposal.summary
+          expect(page).not_to have_content proposal.summary
         end
       end
 

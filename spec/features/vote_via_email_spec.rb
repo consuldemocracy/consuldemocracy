@@ -23,7 +23,7 @@ feature 'Vote via email' do
 
       within('.supports') do
         expect(page).to have_content "1 support"
-        expect(page).to_not have_selector ".in-favor a"
+        expect(page).not_to have_selector ".in-favor a"
       end
 
       expect_to_be_signed_in
@@ -38,10 +38,10 @@ feature 'Vote via email' do
 
       within('.supports') do
         expect(page).to have_content "1 support"
-        expect(page).to_not have_selector ".in-favor a"
+        expect(page).not_to have_selector ".in-favor a"
       end
 
-      expect_to_not_be_signed_in
+      expect_not_to_be_signed_in
     end
 
     scenario 'Verified user with invalid token' do

@@ -230,32 +230,32 @@ describe UserSegments do
       expect(described_class).to respond_to("new_york")
       expect(described_class).to respond_to("california")
       expect(described_class).to respond_to("mars")
-      expect(described_class).to_not respond_to("jupiter")
+      expect(described_class).not_to respond_to("jupiter")
     end
 
     it "includes geozones in available segments" do
       expect(described_class.segments).to include("new_york")
       expect(described_class.segments).to include("california")
       expect(described_class.segments).to include("mars")
-      expect(described_class.segments).to_not include("jupiter")
+      expect(described_class.segments).not_to include("jupiter")
     end
 
     it "does not include the generic city as a segment" do
-      expect(described_class.segments).to_not include("city")
+      expect(described_class.segments).not_to include("city")
     end
 
     it "returns users of a geozone" do
       expect(described_class.new_york).to include(user1)
       expect(described_class.new_york).to include(user2)
-      expect(described_class.new_york).to_not include(user3)
-      expect(described_class.new_york).to_not include(user4)
+      expect(described_class.new_york).not_to include(user3)
+      expect(described_class.new_york).not_to include(user4)
     end
 
     it "only returns active users of a geozone" do
       user2.update(erased_at: Time.current)
 
       expect(described_class.new_york).to include(user1)
-      expect(described_class.new_york).to_not include(user2)
+      expect(described_class.new_york).not_to include(user2)
     end
 
   end
