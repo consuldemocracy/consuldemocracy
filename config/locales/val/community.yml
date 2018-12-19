@@ -16,7 +16,6 @@ val:
       create_first_community_topic:
         first_theme_not_logged_in: Tema no disponible, participa creant el primer.
         first_theme: Crea el primer tema de la comunitat
-        sub_first_theme: "Per a crear un nou tema has de %{sign_in} o %{sign_up}."
         sign_in: "iniciar sessió"
         sign_up: "registrar-te"
       tab:
