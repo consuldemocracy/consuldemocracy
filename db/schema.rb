@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181121123512) do
+ActiveRecord::Schema.define(version: 20181206153510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -631,6 +631,7 @@ ActiveRecord::Schema.define(version: 20181121123512) do
     t.text     "description"
     t.text     "additional_info"
     t.text     "milestones_summary"
+    t.text     "homepage"
   end
 
   add_index "legislation_process_translations", ["legislation_process_id"], name: "index_199e5fed0aca73302243f6a1fca885ce10cdbb55", using: :btree
@@ -664,6 +665,7 @@ ActiveRecord::Schema.define(version: 20181121123512) do
     t.date     "draft_start_date"
     t.date     "draft_end_date"
     t.boolean  "draft_phase_enabled",        default: false
+    t.boolean  "homepage_enabled",           default: false
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
