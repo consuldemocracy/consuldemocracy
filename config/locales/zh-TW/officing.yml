@@ -23,7 +23,6 @@ zh-TW:
         error_wrong_booth: "錯誤的投票亭。 結果未被儲存。"
       new:
         title: "%{poll} - 添加结果"
-        not_allowed: "您可以為此投票添加結果"
         booth: "投票亭"
         date: "日期"
         select_booth: "選擇投票亭"
