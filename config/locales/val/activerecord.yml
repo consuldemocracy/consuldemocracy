@@ -10,12 +10,6 @@ val:
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
-      milestone:
-        one: "fita"
-        other: "fites"
-      milestone/status:
-        one: "Estat de la proposta"
-        other: "Estat de les propostes"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -82,9 +76,6 @@ val:
       legislation/draft_versions:
         one: "Versió esborrany"
         other: "Versions esborrany"
-      legislation/draft_texts:
-        one: "Esborrany"
-        other: "Esborranys"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntes"
@@ -131,14 +122,6 @@ val:
         organization_name: "Si estàs proposant en nom d'una associació o col·lectiu, escriu el seu nom"
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
-      milestone:
-        status_id: "Estat actual de la proposta (opcional)"
-        title: "Títol"
-        description: "Descripció (opcional si hi ha un estat asignat)"
-        publication_date: "Data de publicació"
-      milestone/status:
-        name: "Nom"
-        description: "Descripció (opcional)"
       budget/heading:
         name: "Nom de la partida"
         price: "Cost"
