@@ -23,7 +23,6 @@ pt-BR:
         error_wrong_booth: "Cabine incorreta. Resultados NÃO foram salvos."
       new:
         title: "%{poll} - Adicionar resultados"
-        not_allowed: "Você tem autorização para introduzir resultados"
         booth: "Urna"
         date: "Data"
         select_booth: "Selecione a urna"
