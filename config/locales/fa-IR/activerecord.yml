@@ -10,9 +10,6 @@ fa:
       budget/investment:
         one: "سرمایه گذاری"
         other: "سرمایه گذاری ها"
-      milestone:
-        one: "نقطه عطف"
-        other: "نقاط عطف"
       comment:
         one: "توضیح"
         other: "توضیحات"
@@ -73,9 +70,6 @@ fa:
       legislation/draft_versions:
         one: "نسخه پیش نویس"
         other: "نسخه های پیش نویس"
-      legislation/draft_texts:
-        one: " پیش نویس"
-        other: " پیش نویس ها"
       legislation/questions:
         one: "سوال"
         other: "سوالات"
@@ -119,9 +113,6 @@ fa:
         organization_name: "اگر شما به نام یک گروه / سازمان، یا از طرف افراد بیشتری پیشنهاد می کنید، نام آنها را بنویسید."
         image: "تصویر طرح توصیفی"
         image_title: "عنوان تصویر"
-      milestone:
-        title: "عنوان"
-        publication_date: "تاریخ انتشار"
       budget/heading:
         name: "عنوان نام"
         price: "قیمت"
