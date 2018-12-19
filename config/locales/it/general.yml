@@ -111,12 +111,10 @@ it:
         relevance: rilevanza
         recommendations: consigli
       recommendations:
-        without_results: Non ci sono dibattiti legati ai tuoi interessi
         without_interests: Segui le proposte così potremo darti maggiori consigli
         disable: "Le raccomandazioni per i dibattiti smetteranno di apparire se scegli di ignorarle. Puoi riattivarle dalla pagina “Il mio account”"
         actions:
           success: "Le raccomandazioni per i dibattiti risultano ora disabilitate per questo account"
-          error: "Si è verificato un errore. Si prega di andare alla pagina “Il mio account” per disabilitare manualmente le raccomandazioni per i dibattiti"
       search_form:
         button: Ricercare
         placeholder: Ricerca dibattiti...
@@ -204,7 +202,6 @@ it:
       conditions: Termini e condizioni d'uso
       consul: app CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per assistenza tecnica entra
       copyright: CONSOLE, %{year}
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source
@@ -357,7 +354,6 @@ it:
         disable: "Le raccomandazioni per le proposte smetteranno di apparire se scegli di ignorarle. Puoi riattivarle dalla pagina “Il mio account”"
         actions:
           success: "Le raccomandazioni per le proposte risultano ora disabilitate per questo account"
-          error: "Si è verificato un errore. Si prega di andare alla pagina “Il mio account” per disabilitare manualmente le raccomandazioni per le proposte"
       retired_proposals: Proposte ritirate
       retired_proposals_link: "Proposte ritirate dall'autore"
       retired_links:
@@ -442,7 +438,6 @@ it:
       retired: Proposta ritirata dall'autore
       share: Condividi
       send_notification: Invia notifica
-      no_notifications: "Questa proposta non ha notifiche."
       embed_video_title: "Video su %{proposal}"
       title_external_url: "Documentazione aggiuntiva"
       title_video_url: "Video esterno"
@@ -528,7 +523,6 @@ it:
       title_label: "Titolo"
       body_label: "Messaggio"
       submit_button: "Invia messaggio"
-      info_about_receivers_html: "Questo messaggio sarà inviato a <strong>%{count} persone</strong> e sarà visibile sulla %{proposal_page}.<br> I messaggi non vengono inviati immediatamente, gli utenti riceveranno periodicamente una email con tutte le notifiche di proposta."
       proposal_page: "pagina della proposta"
     show:
       back: "Torna alle mie attività"
@@ -832,7 +826,6 @@ it:
     error: "Link non valido. Ricordarsi di iniziare con %{url}."
     error_itself: "Link non valido. Non puoi correlate un contenuto a se stesso."
     success: "Hai aggiunto un nuovo contenuto correlato"
-    is_related: "È un contenuto correlato?"
     score_positive: "Sì"
     score_negative: "No"
     content_title:
