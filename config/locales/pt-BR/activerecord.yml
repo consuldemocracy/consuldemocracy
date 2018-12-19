@@ -10,12 +10,6 @@ pt-BR:
       budget/investment:
         one: "Investimento"
         other: "Investimentos"
-      milestone:
-        one: "Marco"
-        other: "Marcos"
-      milestone/status:
-        one: "Status de investimento"
-        other: "Status dos investimentos"
       comment:
         one: "Comentário"
         other: "Comentários"
@@ -79,9 +73,6 @@ pt-BR:
       legislation/draft_versions:
         one: "Versão preliminar"
         other: "Versões preliminares"
-      legislation/draft_texts:
-        one: "Esboço"
-        other: "Esboços"
       legislation/questions:
         one: "Questão"
         other: "Questões"
@@ -128,14 +119,6 @@ pt-BR:
         organization_name: "Se você está propondo em nome de um coletivo / organização, ou em nome de mais pessoas, escreva seu nome"
         image: "Imagem descritiva da proposta"
         image_title: "Título da imagem"
-      milestone:
-        status_id: "Status atual do investimento (opcional)"
-        title: "Título"
-        description: "Descrição (opcional, se houver uma condição atribuída)"
-        publication_date: "Data de publicação"
-      milestone/status:
-        name: "Nome"
-        description: "Descrição (opcional)"
       budget/heading:
         name: "Título"
         price: "Preço"
