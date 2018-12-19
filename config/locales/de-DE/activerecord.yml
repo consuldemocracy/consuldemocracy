@@ -1,0 +1,344 @@
+de:
+  activerecord:
+    models:
+      activity:
+        one: "Aktivität"
+        other: "Aktivitäten"
+      budget:
+        one: "Bürger*innenhaushalt"
+        other: "Bürger*innenhaushalte"
+      budget/investment:
+        one: "Ausgabenvorschlag"
+        other: "Ausgabenvorschläge"
+      milestone:
+        one: "Meilenstein"
+        other: "Meilensteine"
+      milestone/status:
+        one: "Status des Ausgabenvorschlags"
+        other: "Status der Ausgabenvorschläge"
+      comment:
+        one: "Kommentar"
+        other: "Kommentare"
+      debate:
+        one: "Diskussion"
+        other: "Diskussionen"
+      tag:
+        one: "Kennzeichen"
+        other: "Themen"
+      user:
+        one: "Benutzer*in"
+        other: "Benutzer*innen"
+      moderator:
+        one: "Moderator*in"
+        other: "Moderator*innen"
+      administrator:
+        one: "Administrator*in"
+        other: "Administrator*innen"
+      valuator:
+        one: "Begutachter*in"
+        other: "Begutachter*innen"
+      valuator_group:
+        one: "Begutachtungsgruppe"
+        other: "Begutachtungsgruppen"
+      manager:
+        one: "Manager*in"
+        other: "Manager*innen"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletter"
+      vote:
+        one: "Stimme"
+        other: "Stimmen"
+      organization:
+        one: "Organisation"
+        other: "Organisationen"
+      poll/booth:
+        one: "Wahlkabine"
+        other: "Wahlkabinen"
+      poll/officer:
+        one: "Wahlvorsteher*in"
+        other: "Wahlvorsteher*innen"
+      proposal:
+        one: "Bürgervorschlag"
+        other: "Bürgervorschläge"
+      spending_proposal:
+        one: "Ausgabenvorschlag"
+        other: "Ausgabenvorschläge"
+      site_customization/page:
+        one: Meine Seite
+        other: Meine Seiten
+      site_customization/image:
+        one: Bild
+        other: Bilder
+      site_customization/content_block:
+        one: Benutzerspezifischer Inhaltsdatenblock
+        other: Benutzerspezifische Inhaltsdatenblöcke
+      legislation/process:
+        one: "Verfahren"
+        other: "Beteiligungsverfahren"
+      legislation/proposal:
+        one: "Vorschlag"
+        other: "Vorschläge"
+      legislation/draft_versions:
+        one: "Entwurfsfassung"
+        other: "Entwurfsfassungen"
+      legislation/draft_texts:
+        one: "Entwurf"
+        other: "Entwürfe"
+      legislation/questions:
+        one: "Frage"
+        other: "Fragen"
+      legislation/question_options:
+        one: "Antwortmöglichkeit"
+        other: "Antwortmöglichkeiten"
+      legislation/answers:
+        one: "Antwort"
+        other: "Antworten"
+      documents:
+        one: "Dokument"
+        other: "Dokumente"
+      images:
+        one: "Bild"
+        other: "Bilder"
+      topic:
+        one: "Thema"
+        other: "Themen"
+      poll:
+        one: "Abstimmung"
+        other: "Abstimmungen"
+      proposal_notification:
+        one: "Benachrichtigung zu einem Vorschlag"
+        other: "Benachrichtigungen zu einem Vorschlag"
+    attributes:
+      budget:
+        name: "Name"
+        description_accepting: "Beschreibung während der Vorschlagsphase"
+        description_reviewing: "Beschreibung während der internen Überprüfungsphase"
+        description_selecting: "Beschreibung während der Auswahlphase"
+        description_valuating: "Beschreibung während der Begutachtungsphase"
+        description_balloting: "Beschreibung während der Abstimmungsphase"
+        description_reviewing_ballots: "Beschreibung während der Überprüfungsphase der Abstimmungen"
+        description_finished: "Beschreibung, wenn der Bürgerhaushalt beschlossen ist"
+        phase: "Phase"
+        currency_symbol: "Währung"
+      budget/investment:
+        heading_id: "Rubrik"
+        title: "Titel"
+        description: "Beschreibung"
+        external_url: "Link zu zusätzlicher Dokumentation"
+        administrator_id: "Administrator*in"
+        location: "Standort (optional)"
+        organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
+        image: "Beschreibendes Bild zum Ausgabenvorschlag"
+        image_title: "Bildtitel"
+      milestone:
+        status_id: "Derzeitiger Status des Ausgabenvorschlags (optional)"
+        title: "Titel"
+        description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
+        publication_date: "Datum der Veröffentlichung"
+      milestone/status:
+        name: "Name"
+        description: "Beschreibung (optional)"
+      budget/heading:
+        name: "Name der Rubrik"
+        price: "Kosten"
+        population: "Bevölkerung"
+      comment:
+        body: "Kommentar"
+        user: "Benutzer*in"
+      debate:
+        author: "Verfasser*in"
+        description: "Beitrag"
+        terms_of_service: "Nutzungsbedingungen"
+        title: "Titel"
+      proposal:
+        author: "Verfasser*in"
+        title: "Titel"
+        question: "Frage"
+        description: "Beschreibung"
+        terms_of_service: "Nutzungsbedingungen"
+      user:
+        login: "E-Mail oder Benutzer*innenname"
+        email: "E-Mail"
+        username: "Benutzer*innenname"
+        password_confirmation: "Bestätigen Sie das Passwort "
+        password: "Passwort"
+        current_password: "Aktuelles Passwort"
+        phone_number: "Telefonnummer"
+        official_position: "Beamter/Beamtin"
+        official_level: "Amtsebene"
+        redeemable_code: "Bestätigungscode per Post (optional)"
+      organization:
+        name: "Name der Organisation"
+        responsible_name: "Der/die* Gruppenverantwortliche"
+      spending_proposal:
+        administrator_id: "Administrator*in"
+        association_name: "Name des Vereins"
+        description: "Beschreibung"
+        external_url: "Link zu zusätzlicher Dokumentation"
+        geozone_id: "Tätigkeitsfeld"
+        title: "Titel"
+      poll:
+        name: "Name"
+        starts_at: "Anfangsdatum"
+        ends_at: "Einsendeschluss"
+        geozone_restricted: "Beschränkt auf Gebiete"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
+      poll/question:
+        title: "Frage"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
+        external_url: "Link zu zusätzlicher Dokumentation"
+      signature_sheet:
+        signable_type: "Unterschriftentyp"
+        signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
+        document_numbers: "Dokumentennummern"
+      site_customization/page:
+        content: Inhalt
+        created_at: Erstellt am
+        subtitle: Untertitel
+        slug: URL
+        status: Status
+        title: Titel
+        updated_at: Aktualisiert am
+        more_info_flag: Auf der Hilfeseite anzeigen
+        print_content_flag: Taste Inhalt drucken
+        locale: Sprache
+      site_customization/image:
+        name: Name
+        image: Bild
+      site_customization/content_block:
+        name: Name
+        locale: Sprache
+        body: Inhalt
+      legislation/process:
+        title: Titel des Verfahrens
+        summary: Zusammenfassung
+        description: Beschreibung
+        additional_info: Zusätzliche Information
+        start_date: Anfangsdatum
+        end_date: Enddatum des Verfahrens
+        debate_start_date: Anfangsdatum Diskussion
+        debate_end_date: Enddatum Diskussion
+        draft_publication_date: Veröffentlichungsdatum des Entwurfs
+        allegations_start_date: Anfangsdatum Überprüfung
+        allegations_end_date: Enddatum Überprüfung
+        result_publication_date: Veröffentlichungsdatum Endergebnis
+      legislation/draft_version:
+        title: Titel der Fassung
+        body: Text
+        changelog: Änderungen
+        status: Status
+        final_version: Endgültige Fassung
+      legislation/question:
+        title: Titel
+        question_options: Antworten
+      legislation/question_option:
+        value: Wert
+      legislation/annotation:
+        text: Kommentar
+      document:
+        title: Titel
+        attachment: Anhang
+      image:
+        title: Titel
+        attachment: Anhang
+      poll/question/answer:
+        title: Antwort
+        description: Beschreibung
+      poll/question/answer/video:
+        title: Titel
+        url: Externes Video
+      newsletter:
+        segment_recipient: Empfänger*innen
+        subject: Betreff
+        from: Von
+        body: Inhalt der E-Mail
+      widget/card:
+        label: Tag (optional)
+        title: Titel
+        description: Beschreibung
+        link_text: Linktext
+        link_url: URL des Links
+      widget/feed:
+        limit: Anzahl der Elemente
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Diese*r Benutzer*in hat bereits ein Passwort"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags müssen kleiner oder gleich %{count} sein"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Sie haben die maximale Anzahl an persönlichen Nachrichten pro Tag erreicht"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Die Bildbreite muss mindestens %{required_min_width}px betragen"
+              min_image_height: "Die Bildhöhe muss mindestens %{required_min_height}px betragen"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Das Benutzer*innensegment ist ungültig"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Das Empfänger*innensegment ist ungültig"
+        map_location:
+          attributes:
+            map:
+              invalid: Der Kartenstandort darf nicht leer sein. Platzieren Sie einen Marker oder aktivieren Sie das Kontrollkästchen, wenn eine Standorterkennung nicht möglich ist
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dieses Dokument scheint nicht im Melderegister auf"
+              has_voted: "Der/die Benutzer*in hat bereits abgestimmt"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum sein
+            debate_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Diskussion sein
+            allegations_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Überprüfung sein
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags müssen kleiner oder gleich %{count} sein"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags müssen kleiner oder gleich %{count} sein"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Sie müssen mindestens %{interval} Tage zwischen Benachrichtigungen warten"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Nicht durch das Melderegister überprüft'
+              already_voted: 'Hat bereits für diesen Vorschlag abgestimmt'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "muss Buchstaben, Ziffern, _ und - enthalten"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Die Breite muss %{required_width}px betragen"
+              image_height: "Die Höhe muss %{required_height}px betragen"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Eine Überprüfung kann nicht kommentiert werden'
+      messages:
+        record_invalid: "Validierung fehlgeschlagen: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
+          has_many: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"

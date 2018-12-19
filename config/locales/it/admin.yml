@@ -219,8 +219,6 @@ it:
         tags: Etichette
         user_tags: Etichette utente
         undefined: Non definito
-        milestone: Traguardo
-        new_milestone: Crea nuovo traguardo
         compatibility:
           title: Compatibilità
           "true": Incompatibile
@@ -268,6 +266,8 @@ it:
         image: "Immagine"
         show_image: "Mostra immagine"
         documents: "Documenti"
+        milestone: Traguardo
+        new_milestone: Crea nuovo traguardo
       form:
         no_statuses_defined: Non ci sono ancora status d’investimento definiti
       new:
@@ -402,7 +402,7 @@ it:
           status_planned: Programmato
         subnav:
           info: Informazione
-          draft_texts: Redazione
+          draft_versions: Redazione
           questions: Dibattito
           proposals: Proposte
       proposals:
@@ -556,7 +556,6 @@ it:
           layouts: "Impaginazione"
           mailers: "Email"
           management: "Gestione"
-          guides: "Guide"
           welcome: "Benvenuto"
         buttons:
           save: "Salva"
@@ -1010,7 +1009,7 @@ it:
       search:
         title: Cerca Organizzazioni
         no_results: Nessuna organizzazione trovata.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtra
         filters:

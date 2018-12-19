@@ -87,6 +87,7 @@ en:
         table_edit_budget: Edit
         edit_groups: Edit headings groups
         edit_budget: Edit budget
+        no_budgets: "There are no open budgets."
       create:
         notice: New participatory budget created successfully!
       update:
@@ -106,34 +107,56 @@ en:
         unable_notice: You cannot destroy a Budget that has associated investments
       new:
         title: New participatory budget
-      show:
-        groups:
-          one: 1 Group of budget headings
-          other: "%{count} Groups of budget headings"
-      form:
-        group: Group name
-        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
-        add_group: Add new group
-        create_group: Create group
-        edit_group: Edit group
-        submit: Save group
-        heading: Heading name
-        add_heading: Add heading
-        amount: Amount
-        population: "Population (optional)"
-        population_help_text: "This data is used exclusively to calculate the participation statistics"
-        save_heading: Save heading
-        no_heading: This group has no assigned heading.
-        table_heading: Heading
-        table_amount: Amount
-        table_population: Population
-        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
-        max_votable_headings: "Maximum number of headings in which a user can vote"
-        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
         recalculate: Recalculate Winner Investments
+    budget_groups:
+      name: "Name"
+      headings_name: "Headings"
+      headings_edit: "Edit Headings"
+      headings_manage: "Manage headings"
+      max_votable_headings: "Maximum number of headings in which a user can vote"
+      no_groups: "No groups created yet. Each user will be able to vote in only one heading per group."
+      amount:
+        one: "There is 1 group"
+        other: "There are %{count} groups"
+      create:
+        notice: "Group created successfully!"
+      update:
+        notice: "Group updated successfully"
+      destroy:
+        success_notice: "Group deleted successfully"
+        unable_notice: "You cannot destroy a Group that has associated headings"
+      form:
+        create: "Create new group"
+        edit: "Edit group"
+        name: "Group name"
+        submit: "Save group"
+    budget_headings:
+      name: "Name"
+      no_headings: "No headings created yet. Each user will be able to vote in only one heading per group."
+      amount:
+        one: "There is 1 heading"
+        other: "There are %{count} headings"
+      create:
+        notice: "Heading created successfully!"
+      update:
+        notice: "Heading updated successfully"
+      destroy:
+        success_notice: "Heading deleted successfully"
+        unable_notice: "You cannot destroy a Heading that has associated investments"
+      form:
+        name: "Heading name"
+        amount: "Amount"
+        population: "Population (optional)"
+        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
+        latitude: "Latitude"
+        longitude: "Longitude"
+        allow_content_block: "Allow content block"
+        create: "Create new heading"
+        edit: "Edit heading"
+        submit: "Save heading"
     budget_phases:
       edit:
         start_date: Start date
@@ -219,8 +242,6 @@ en:
         tags: Tags
         user_tags: User tags
         undefined: Undefined
-        milestone: Milestone
-        new_milestone: Create new milestone
         compatibility:
           title: Compatibility
           "true": Incompatible
@@ -268,9 +289,11 @@ en:
         image: "Image"
         show_image: "Show image"
         documents: "Documents"
+        milestone: Milestone
+        new_milestone: Create new milestone
       form:
-        admin_statuses: Admin investment statuses
-        no_statuses_defined: There are no defined investment statuses yet
+        admin_statuses: Manage statuses
+        no_statuses_defined: There are no defined statuses yet
       new:
         creating: Create milestone
         date: Date
@@ -285,24 +308,24 @@ en:
         notice: Milestone successfully deleted
     statuses:
       index:
-        title: Investment statuses
-        empty_statuses: There are no investment statuses created
-        new_status: Create new investment status
+        title: Milestone statuses
+        empty_statuses: There are no milestone statuses created
+        new_status: Create new milestone status
         table_name: Name
         table_description: Description
         table_actions: Actions
         delete: Delete
         edit: Edit
       edit:
-        title: Edit investment status
+        title: Edit milestone status
       update:
-        notice: Investment status updated successfully
+        notice: Milestone status updated successfully
       new:
-        title: Create investment status
+        title: Create milestone status
       create:
-        notice: Investment status created successfully
+        notice: Milestone status created successfully
       delete:
-        notice: Investment status deleted successfully
+        notice: Milestone status deleted successfully
     comments:
       index:
         filter: Filter
@@ -337,7 +360,7 @@ en:
           without_confirmed_hide: Pending
         title: Hidden users
         user: User
-        no_hidden_users: There is no hidden users.
+        no_hidden_users: There are no hidden users.
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
@@ -372,6 +395,8 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
+          draft_phase: Draft phase
+          draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
           allegations_phase: Comments phase
           proposals_phase: Proposals phase
           start: Start
@@ -381,10 +406,13 @@ en:
           summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
           additional_info_placeholder: Add an additional information you consider useful
+          homepage: Description
+          homepage_description: Here you can explain the content of the process
+          homepage_enabled: Homepage enabled
         index:
           create: New process
           delete: Delete
-          title: Legislation processess
+          title: Legislation processes
           filters:
             open: Open
             next: Next
@@ -410,9 +438,14 @@ en:
           status_planned: Planned
         subnav:
           info: Information
-          draft_texts: Drafting
+          homepage: Homepage
+          draft_versions: Drafting
           questions: Debate
           proposals: Proposals
+          milestones: Following
+      homepage:
+        edit:
+          title: Configure your process homepage
       proposals:
         index:
           title: Proposals
@@ -511,6 +544,9 @@ en:
           comments_count: Comments count
         question_option_fields:
           remove_option: Remove option
+      milestones:
+        index:
+          title: Following
     managers:
       index:
         title: Managers
@@ -527,6 +563,7 @@ en:
       admin: Admin menu
       banner: Manage banners
       poll_questions: Questions
+      proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
@@ -573,6 +610,8 @@ en:
           welcome: "Welcome"
         buttons:
           save: "Save"
+          content_block:
+            update: "Update Block"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
@@ -587,6 +626,7 @@ en:
         title: Administrators
         name: Name
         email: Email
+        id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
         add: Add
@@ -986,7 +1026,7 @@ en:
       index:
         title: Officials
         no_officials: There are no officials.
-        name: Nombre
+        name: Name
         official_position: Official position
         official_level: Level
       level_0: Not official
@@ -1029,6 +1069,13 @@ en:
         title: Search Organisations
         no_results: No organizations found.
     proposals:
+      index:
+        title: Proposals
+        id: ID
+        author: Author
+        milestones: Milestones
+        no_proposals: There are no proposals.
+    hidden_proposals:
       index:
         filter: Filter
         filters:
@@ -1076,6 +1123,8 @@ en:
       setting_value: Value
       no_description: "No description"
     shared:
+      true_value: "Yes"
+      false_value: "No"
       booths_search:
         button: Search
         placeholder: Search booth by name
@@ -1371,11 +1420,11 @@ en:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
       header_title: Header
-      no_header: There is no header.
+      no_header: There are no headers.
       create_header: Create header
       cards_title: Cards
       create_card: Create card
-      no_cards: There is no cards.
+      no_cards: There are no cards.
       cards:
         title: Title
         description: Description

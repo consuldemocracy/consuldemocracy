@@ -219,8 +219,6 @@ nl:
         tags: Labels
         user_tags: Deelnemerslabels
         undefined: Niet gedefinieerd
-        milestone: Mijlpaal
-        new_milestone: Nieuwe mijlpaal
         compatibility:
           title: Compatibiliteit
           "true": Niet compatibel
@@ -268,6 +266,8 @@ nl:
         image: "Afbeelding"
         show_image: "Toon afbeelding"
         documents: "Documenten"
+        milestone: Mijlpaal
+        new_milestone: Nieuwe mijlpaal
       form:
         admin_statuses: Beheerderstatussen
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
@@ -403,7 +403,7 @@ nl:
           status_planned: Gepland
         subnav:
           info: Informatie
-          draft_texts: Tekst
+          draft_versions: Tekst
           questions: Debat
           proposals: Voorstellen
       proposals:
@@ -557,7 +557,6 @@ nl:
           layouts: "Lay-outs"
           mailers: "Emails"
           management: "Beheer"
-          guides: "Leiden"
           welcome: "Welkom"
         buttons:
           save: "Opslaan"
@@ -1011,7 +1010,7 @@ nl:
       search:
         title: Zoek Organisaties
         no_results: Geen organisaties gevonden.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filter
         filters:

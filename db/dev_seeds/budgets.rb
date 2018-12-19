@@ -40,21 +40,31 @@ section "Creating Budgets" do
     city_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.all_city'))
     city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
                                 price: 1000000,
-                                population: 1000000)
+                                population: 1000000,
+                                latitude: '40.416775',
+                                longitude: '-3.703790')
 
     districts_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.districts'))
     districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
                                      price: rand(5..10) * 100000,
-                                     population: 350000)
+                                     population: 350000,
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
     districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
                                      price: rand(5..10) * 100000,
-                                     population: 300000)
+                                     population: 300000,
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
     districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
                                      price: rand(5..10) * 100000,
-                                     population: 200000)
+                                     population: 200000,
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
     districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
                                      price: rand(5..10) * 100000,
-                                     population: 150000)
+                                     population: 150000,
+                                     latitude: '40.416775',
+                                     longitude: '-3.703790')
   end
 end
 
@@ -137,24 +147,4 @@ section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
     Budget::Investment.all.sample.valuators << Valuator.first
   end
-end
-
-section "Creating investment milestones" do
-  Budget::Investment.find_each do |investment|
-    milestone = Budget::Investment::Milestone.new(investment_id: investment.id, publication_date: Date.tomorrow)
-    I18n.available_locales.map do |locale|
-      Globalize.with_locale(locale) do
-        milestone.description = "Description for locale #{locale}"
-        milestone.title = I18n.l(Time.current, format: :datetime)
-        milestone.save!
-      end
-    end
-  end
-end
-
-section "Creating default Investment Milestone Statuses" do
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
-  Budget::Investment::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
 end

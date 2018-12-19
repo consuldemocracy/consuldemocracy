@@ -3,6 +3,10 @@ require 'rails_helper'
 
 feature 'Proposals' do
 
+  it_behaves_like "milestoneable",
+                  :proposal,
+                  "proposal_path"
+
   scenario 'Disabled with a feature flag' do
     Setting['feature.proposals'] = nil
     expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -18,6 +22,8 @@ feature 'Proposals' do
 
     before do
       Setting['feature.allow_images'] = true
+      Setting['feature.featured_proposals'] = true
+      Setting['featured_proposals_number'] = 3
     end
 
     after do
@@ -61,7 +67,7 @@ feature 'Proposals' do
       proposals.each do |proposal|
         within('#proposals') do
           expect(page).to     have_link proposal.title
-          expect(page).to_not have_content proposal.summary
+          expect(page).not_to have_content proposal.summary
         end
       end
 
@@ -92,6 +98,7 @@ feature 'Proposals' do
         click_link "Next", exact: false
       end
 
+      expect(page).to have_selector('#proposals .proposal-featured', count: 3)
       expect(page).to have_selector('#proposals .proposal', count: 2)
     end
 

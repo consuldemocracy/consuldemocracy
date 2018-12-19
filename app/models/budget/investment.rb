@@ -24,6 +24,7 @@ class Budget
     include Notifiable
     include Filterable
     include Flaggable
+    include Milestoneable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -39,8 +40,6 @@ class Budget
 
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
-
-    has_many :milestones
 
     validates :title, presence: true
     validates :author, presence: true
@@ -341,6 +340,16 @@ class Budget
 
     def assigned_valuation_groups
       self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
+    def self.with_milestone_status_id(status_id)
+      joins(:milestones).includes(:milestones).select do |investment|
+        investment.milestone_status_id == status_id.to_i
+      end
+    end
+
+    def milestone_status_id
+      milestones.published.with_status.order_by_publication_date.last&.status_id
     end
 
     private

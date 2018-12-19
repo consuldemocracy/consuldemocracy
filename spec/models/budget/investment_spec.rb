@@ -328,7 +328,7 @@ describe Budget::Investment do
 
        expect(investments_by_budget).to include investment1
        expect(investments_by_budget).to include investment2
-       expect(investments_by_budget).to_not include investment3
+       expect(investments_by_budget).not_to include investment3
     end
   end
 
@@ -811,11 +811,11 @@ describe Budget::Investment do
 
       expect(another_investment.headings_voted_by_user(user1)).to include(new_york.id)
       expect(another_investment.headings_voted_by_user(user1)).to include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user1)).to_not include(another_heading.id)
+      expect(another_investment.headings_voted_by_user(user1)).not_to include(another_heading.id)
 
-      expect(another_investment.headings_voted_by_user(user2)).to_not include(new_york.id)
-      expect(another_investment.headings_voted_by_user(user2)).to_not include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user2)).to_not include(another_heading.id)
+      expect(another_investment.headings_voted_by_user(user2)).not_to include(new_york.id)
+      expect(another_investment.headings_voted_by_user(user2)).not_to include(san_franciso.id)
+      expect(another_investment.headings_voted_by_user(user2)).not_to include(another_heading.id)
     end
   end
 

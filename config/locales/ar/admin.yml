@@ -61,6 +61,7 @@ ar:
         filters:
           open: فتح
           finished: انتهى
+        budget_investments: إدارة المشاريع
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
@@ -149,3 +150,45 @@ ar:
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
+    menu:
+      hidden_comments: التعليقات المخفية
+      settings: الإعدادات العامة
+    moderators:
+      index:
+        title: المشرفون
+    newsletters:
+      show:
+        body: محتوى البريد الإلكتروني
+    system_emails:
+      proposal_notification_digest:
+        preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
+    emails_download:
+      index:
+        download_segment: تحميل عناوين البريد الإلكتروني
+        download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+    questions:
+      index:
+        no_questions: "لا توجد هناك أسئلة."
+      answers:
+        images:
+          save_image: "حفظ الصورة"
+      show:
+        add_answer: إضافة إجابة
+        answers:
+          images_list: قائمة الصور
+    answers:
+      videos:
+        edit:
+          title: تعديل الفيديو
+    organizations:
+      index:
+        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
+      search:
+        no_results: لم يتم العثور على منظمات.
+    shared:
+      description: الوصف
+    homepage:
+      cards:
+        title: العنوان
+    translations:
+      add_language: إضافة لغة

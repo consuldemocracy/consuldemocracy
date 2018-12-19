@@ -56,6 +56,14 @@ FactoryBot.define do
       result_publication_date { Date.current - 2.days }
     end
 
+    trait :in_draft_phase do
+      start_date { Date.current - 5.days }
+      end_date { Date.current + 5.days }
+      draft_start_date { Date.current - 2.days }
+      draft_end_date { Date.current + 2.days }
+      draft_phase_enabled true
+    end
+
     trait :in_debate_phase do
       start_date { Date.current - 5.days }
       end_date { Date.current + 5.days }

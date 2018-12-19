@@ -219,8 +219,6 @@ val:
         tags: Etiquetes
         user_tags: Etiquetes de l'usuari
         undefined: Sense definir
-        milestone: Seguiment
-        new_milestone: Crear nova fita
         compatibility:
           title: Compatibilitat
           "true": Incomptatible
@@ -401,7 +399,7 @@ val:
           status_planned: Pròximament
         subnav:
           info: Informació
-          draft_texts: Text
+          draft_versions: Text
           questions: Debat
           proposals: Propostes
       proposals:
@@ -551,7 +549,6 @@ val:
           layouts: "Disenys"
           mailers: "Correus electrònics"
           management: "Gestió"
-          guides: "Guies"
           welcome: "Benvingut/da"
         buttons:
           save: "Guardar"
@@ -973,7 +970,7 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
-    proposals:
+    hidden_proposals:
       index:
         filter: Filtre
         filters:
@@ -1047,6 +1044,8 @@ val:
       image: Imatge
       show_image: Mostrar imatge
       moderated_content: "Revisa el contigut moderat pels moderadors, i confirma si la moderació s'ha realitzat correctament."
+      milestone: Seguiment
+      new_milestone: Crear nova fita
       view: Vista
       proposal: Proposta
       author: Autor

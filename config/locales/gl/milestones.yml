@@ -1,0 +1,7 @@
+gl:
+  milestones:
+    index:
+      no_milestones: Non hai datos definidos
+    show:
+      publication_date: "Publicouse o %{publication_date}"
+      status_changed: O investimento mudou de estado a

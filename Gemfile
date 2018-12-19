@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.10'
+gem 'rails', '4.2.11'
 
 gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'ahoy_matey', '~> 1.6.0'
 gem 'ancestry', '~> 3.0.2'
-gem 'autoprefixer-rails', '~> 9.1.4'
+gem 'autoprefixer-rails', '~> 8.2.0'
 gem 'browser', '~> 2.5.3'
 gem 'cancancan', '~> 2.3.0'
 gem 'ckeditor', '~> 4.2.3'
@@ -49,7 +49,7 @@ gem 'social-share-button', '~> 1.1'
 gem 'sprockets', '~> 3.7.2'
 gem 'turbolinks', '~> 2.5.3'
 gem 'turnout', '~> 2.4.0'
-gem 'uglifier', '~> 4.1.2'
+gem 'uglifier', '~> 4.1.19'
 gem 'unicorn', '~> 5.4.1'
 gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
@@ -66,7 +66,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker', '~> 1.8.7'
   gem 'i18n-tasks', '~> 0.9.25'
-  gem 'knapsack_pro', '~> 0.53.0'
+  gem 'knapsack_pro', '~> 1.1.0'
   gem 'launchy', '~> 2.4.3'
   gem 'letter_opener_web', '~> 1.3.4'
   gem 'quiet_assets', '~> 1.1.0'
@@ -77,9 +77,9 @@ end
 group :test do
   gem 'capybara', '~> 2.17.0'
   gem 'coveralls', '~> 0.8.22', require: false
-  gem 'database_cleaner', '~> 1.6.1'
+  gem 'database_cleaner', '~> 1.7.0'
   gem 'email_spec', '~> 2.1.0'
-  gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-rails', '~> 3.8'
   gem 'selenium-webdriver', '~> 3.10'
 end
 

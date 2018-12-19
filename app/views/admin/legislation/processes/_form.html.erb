@@ -18,6 +18,34 @@
   <% end %>
 
   <div class="small-12 medium-4 column">
+    <label><%= t("admin.legislation.processes.form.draft_phase") %></label>
+    <p class="help-text"><%= t("admin.legislation.processes.form.draft_phase_description") %></p>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= f.text_field :draft_start_date,
+                      label: t("admin.legislation.processes.form.start"),
+                      value: format_date_for_calendar_form(@process.draft_start_date),
+                      class: "js-calendar-full",
+                      id: "draft_start_date" %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= f.text_field :draft_end_date,
+                      label: t("admin.legislation.processes.form.end"),
+                      value: format_date_for_calendar_form(@process.draft_end_date),
+                      class: "js-calendar-full",
+                      id: "draft_end_date" %>
+  </div>
+  <div class="small-12 medium-2 column margin-top">
+    <%= f.check_box :draft_phase_enabled, checked: @process.draft_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
+  <div class="small-12 medium-4 column">
     <label><%= t("admin.legislation.processes.form.process") %></label>
   </div>
 

@@ -15,7 +15,7 @@
           <% end %>
 
           <% if process.proposals_phase.enabled? %>
-            <li <%= 'class=is-active' if phase.to_sym == :proposals_phase %>>
+            <li <%= 'class=is-active' if phase.to_sym == :proposals %>>
               <%= link_to proposals_legislation_process_path(process) do %>
                 <h4><%= t('legislation.processes.shared.proposals_dates') %></h4>
                 <p><%= format_date(process.proposals_phase_start_date) %> - <%= format_date(process.proposals_phase_end_date) %></p>
@@ -46,6 +46,15 @@
               <%= link_to result_publication_legislation_process_path(process) do %>
                 <h4><%= t('legislation.processes.shared.result_publication_date') %></h4>
                 <p><%= format_date(process.result_publication_date) %></p>
+              <% end %>
+            </li>
+          <% end %>
+
+          <% if process.milestones.any? %>
+            <li class="milestones <%= "is-active" if phase == :milestones %>">
+              <%= link_to milestones_legislation_process_path(process) do %>
+                <h4><%= t("legislation.processes.shared.milestones_date") %></h4>
+                <p><%= format_date(process.milestones.order_by_publication_date.last.publication_date) %></p>
               <% end %>
             </li>
           <% end %>

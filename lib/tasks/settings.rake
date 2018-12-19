@@ -25,4 +25,15 @@ namespace :settings do
     Setting['feature.help_page'] = true
   end
 
+  desc "Enable Featured proposals"
+  task enable_featured_proposals: :environment do
+    Setting['feature.featured_proposals'] = true
+    Setting['featured_proposals_number'] = 3
+  end
+
+  desc "Create new period to calculate hot_score"
+  task create_hot_score_period_setting: :environment do
+    Setting['hot_score_period_in_days'] = 31
+  end
+
 end

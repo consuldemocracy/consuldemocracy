@@ -77,7 +77,7 @@ en:
       support_proposals: Support proposals
       vote_proposals: Vote proposals
     print:
-      proposals_info: Create yor proposal on http://url.consul
+      proposals_info: Create your proposal on http://url.consul
       proposals_title: 'Proposals:'
       spending_proposals_info: Participate at http://url.consul
       budget_investments_info: Participate at http://url.consul

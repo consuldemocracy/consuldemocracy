@@ -1,0 +1,341 @@
+sq:
+  activerecord:
+    models:
+      activity:
+        one: "aktivitet"
+        other: "aktivitet"
+      budget:
+        one: "Buxhet"
+        other: "Buxhet"
+      budget/investment:
+        one: "Investim"
+        other: "Investim"
+      milestone:
+        one: "moment historik"
+        other: "milestone"
+      milestone/status:
+        one: "Statusi investimeve"
+        other: "Statusi investimeve"
+      comment:
+        one: "Komente"
+        other: "Komente"
+      debate:
+        one: "Debate"
+        other: "Debate"
+      tag:
+        one: "Etiketë"
+        other: "Etiketë - Tag"
+      user:
+        one: "Përdorues"
+        other: "Përdorues"
+      moderator:
+        one: "Moderator"
+        other: "Moderator"
+      administrator:
+        one: "Administrator"
+        other: "Administrator"
+      valuator:
+        one: "Vlerësues"
+        other: "Vlerësues"
+      valuator_group:
+        one: "Grup vlerësuesish"
+        other: "Grup vlerësuesish"
+      manager:
+        one: "Manaxher"
+        other: "Manaxher"
+      newsletter:
+        one: "Buletin informativ"
+        other: "Buletin informativ"
+      vote:
+        one: "Votim"
+        other: "Votim"
+      organization:
+        one: "Organizim"
+        other: "Organizim"
+      poll/booth:
+        one: "kabinë"
+        other: "kabinë"
+      poll/officer:
+        one: "oficer"
+        other: "oficer"
+      proposal:
+        one: "Propozimi qytetar"
+        other: "Propozimi qytetar"
+      spending_proposal:
+        one: "Projekt investimi"
+        other: "Projekt investimi"
+      site_customization/page:
+        one: Faqe e personalizuar
+        other: Faqe e personalizuar
+      site_customization/image:
+        one: Imazhi personalizuar
+        other: Imazhe personalizuara
+      site_customization/content_block:
+        one: Personalizimi i bllokut të përmbatjes
+        other: Personalizimi i blloqeve të përmbatjeve
+      legislation/process:
+        one: "Proçes"
+        other: "Proçes"
+      legislation/draft_versions:
+        one: "Version drafti"
+        other: "Version drafti"
+      legislation/draft_texts:
+        one: "Drafti"
+        other: "Drafti"
+      legislation/questions:
+        one: "Pyetje"
+        other: "Pyetje"
+      legislation/question_options:
+        one: "Opsioni i pyetjeve"
+        other: "Opsioni i pyetjeve"
+      legislation/answers:
+        one: "Përgjigjet"
+        other: "Përgjigjet"
+      documents:
+        one: "Dokument"
+        other: "Dokument"
+      images:
+        one: "Imazh"
+        other: "Imazh"
+      topic:
+        one: "Temë"
+        other: "Temë"
+      poll:
+        one: "Sondazh"
+        other: "Sondazh"
+      proposal_notification:
+        one: "Notifikimi i propozimeve"
+        other: "Notifikimi i propozimeve"
+    attributes:
+      budget:
+        name: "Emri"
+        description_accepting: "Përshkrimi gjatë fazës së pranimit"
+        description_reviewing: "Përshkrimi gjatë fazës së shqyrtimit"
+        description_selecting: "Përshkrimi gjatë fazës së zgjedhjes"
+        description_valuating: "Përshkrimi gjatë fazës së vlerësimit"
+        description_balloting: "Përshkrimi gjatë fazës së votimit"
+        description_reviewing_ballots: "Përshkrimi gjatë shqyrtimit të fazës së votimit"
+        description_finished: "Përshkrimi kur buxheti përfundon"
+        phase: "Fazë"
+        currency_symbol: "Monedhë"
+      budget/investment:
+        heading_id: "Kreu"
+        title: "Titull"
+        description: "Përshkrimi"
+        external_url: "Lidhje me dokumentacionin shtesë"
+        administrator_id: "Administrator"
+        location: "Vendndodhja (opsionale)"
+        organization_name: "Nëse propozoni në emër të një kolektivi / organizate, ose në emër të më shumë njerëzve, shkruani emrin e tij"
+        image: "Imazhi përshkrues i propozimit"
+        image_title: "Titulli i imazhit"
+      milestone:
+        status_id: "Statusi aktual i investimit (opsional)"
+        title: "Titull"
+        description: "Përshkrimi (opsional nëse ka status të caktuar)"
+        publication_date: "Data e publikimit"
+      milestone/status:
+        name: "Emri"
+        description: "Përshkrimi (opsional)"
+      budget/heading:
+        name: "Emri i kreut"
+        price: "Çmim"
+        population: "Popullsia"
+      comment:
+        body: "Koment"
+        user: "Përdorues"
+      debate:
+        author: "Autor"
+        description: "Opinion"
+        terms_of_service: "Kushtet e shërbimit"
+        title: "Titull"
+      proposal:
+        author: "Autor"
+        title: "Titull"
+        question: "Pyetje"
+        description: "Përshkrimi"
+        terms_of_service: "Kushtet e shërbimit"
+      user:
+        login: "Email ose emer përdoruesi"
+        email: "Email"
+        username: "Emer përdoruesi"
+        password_confirmation: "Konfirmimi i fjalëkalimit"
+        password: "Fjalëkalim"
+        current_password: "Fjalëkalimi aktual"
+        phone_number: "Numri i telefonit"
+        official_position: "Pozicioni zyrtar"
+        official_level: "Niveli zyrtar"
+        redeemable_code: "Kodi i verifikimit është pranuar përmes postës elektronike"
+      organization:
+        name: "Emri i organizatës"
+        responsible_name: "Personi përgjegjës për grupin"
+      spending_proposal:
+        administrator_id: "Administrator"
+        association_name: "Emri i shoqatës"
+        description: "Përshkrimi"
+        external_url: "Lidhje me dokumentacionin shtesë"
+        geozone_id: "Fusha e veprimit"
+        title: "Titull"
+      poll:
+        name: "Emri"
+        starts_at: "Data e fillimit"
+        ends_at: "Data e mbylljes"
+        geozone_restricted: "E kufizuar nga gjeozoni"
+        summary: "Përmbledhje"
+        description: "Përshkrimi"
+      poll/question:
+        title: "Pyetje"
+        summary: "Përmbledhje"
+        description: "Përshkrimi"
+        external_url: "Lidhje me dokumentacionin shtesë"
+      signature_sheet:
+        signable_type: "Lloji i nënshkrimit"
+        signable_id: "Identifikimi i nënshkrimit"
+        document_numbers: "Numrat e dokumenteve"
+      site_customization/page:
+        content: Përmbajtje
+        created_at: Krijuar në
+        subtitle: Nëntitull
+        slug: Slug
+        status: Statusi
+        title: Titull
+        updated_at: Përditësuar në
+        more_info_flag: Trego në faqen ndihmëse
+        print_content_flag: Butoni për shtypjen e përmbajtjes
+        locale: Gjuha
+      site_customization/image:
+        name: Emri
+        image: Imazh
+      site_customization/content_block:
+        name: Emri
+        locale: vendndodhje
+        body: Trupi
+      legislation/process:
+        title: Titulli i procesit
+        summary: Përmbledhje
+        description: Përshkrimi
+        additional_info: Informacion shtesë
+        start_date: Data e fillimit
+        end_date: Data e përfundimit
+        debate_start_date: Data e fillimit të debatit
+        debate_end_date: Data e mbarimit të debatit
+        draft_publication_date: Data e publikimit të draftit
+        allegations_start_date: Data e fillimit të akuzave
+        allegations_end_date: Data e përfundimit të akuzave
+        result_publication_date: Data e publikimit të rezultatit përfundimtar
+      legislation/draft_version:
+        title: Titulli i versionit
+        body: Tekst
+        changelog: Ndryshimet
+        status: Statusi
+        final_version: Versioni final
+      legislation/question:
+        title: Titull
+        question_options: Opsionet
+      legislation/question_option:
+        value: Vlerë
+      legislation/annotation:
+        text: Koment
+      document:
+        title: Titull
+        attachment: Bashkëngjitur
+      image:
+        title: Titull
+        attachment: Bashkëngjitur
+      poll/question/answer:
+        title: Përgjigjet
+        description: Përshkrimi
+      poll/question/answer/video:
+        title: Titull
+        url: Video e jashtme
+      newsletter:
+        segment_recipient: Marrësit
+        subject: Subjekt
+        from: Nga
+        body: Përmbajtja e postës elektronike
+      widget/card:
+        label: Etiketa (opsionale)
+        title: Titull
+        description: Përshkrimi
+        link_text: Linku tekstit
+        link_url: Linku URL
+      widget/feed:
+        limit: Numri i artikujve
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Ky përdorues tashmë ka një fjalëkalim"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketat duhet të jenë më pak ose të barabartë me%{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ju keni arritur numrin maksimal të mesazheve private në ditë"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Gjerësia e imazhit duhet të jetë së paku%{required_min_width}px"
+              min_image_height: "Gjatësia e imazhit duhet të jetë së paku%{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Segmenti i marrësve të përdoruesve është i pavlefshëm"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Segmenti i marrësve të përdoruesve është i pavlefshëm"
+        map_location:
+          attributes:
+            map:
+              invalid: Vendndodhja e hartës nuk mund të jetë bosh. Vendosni një shënues ose përzgjidhni kutinë e kontrollit nëse nuk ka nevojë për gjeolokalizim
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dokumenti nuk është në regjistrim"
+              has_voted: "Përdoruesi ka votuar tashmë"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: duhet të jetë në ose pas datës së fillimit
+            debate_end_date:
+              invalid_date_range: duhet të jetë në ose pas datës së fillimit të debatit
+            allegations_end_date:
+              invalid_date_range: duhet të jetë në ose pas datës së fillimit të pretendimeve
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketat duhet të jenë më pak ose të barabartë me%{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketat duhet të jenë më pak ose të barabartë me%{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Ju duhet të prisni një minimum prej %{interval} ditë mes njoftimeve"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Nuk vërtetohet nga Regjistrimi'
+              already_voted: 'Ka votuar tashmë këtë propozim'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "duhet të jenë letra, numra, _ dhe -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Gjerësia duhet të jetë%{required_width}px"
+              image_height: "Lartësia duhet të jetë%{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Ju nuk mund të komentoni një vlerësim'
+      messages:
+        record_invalid: "Vlefshmëria dështoi:%{errors}"
+        restrict_dependent_destroy:
+          has_one: "Nuk mund të fshihet regjistrimi për shkak se ekziston një%{record} i varur"
+          has_many: "Nuk mund të fshihet regjistrimi për shkak se ekziston një%{record} i varur"

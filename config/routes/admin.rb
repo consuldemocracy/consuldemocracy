@@ -29,7 +29,11 @@ namespace :admin do
     end
   end
 
-  resources :proposals, only: :index do
+  resources :proposals, only: [:index, :show] do
+    resources :milestones, controller: "proposal_milestones"
+  end
+
+  resources :hidden_proposals, only: :index do
     member do
       put :restore
       put :confirm_hide
@@ -57,19 +61,19 @@ namespace :admin do
       put :calculate_winners
     end
 
-    resources :budget_groups do
-      resources :budget_headings
+    resources :groups, except: [:show], controller: "budget_groups" do
+      resources :headings, except: [:show], controller: "budget_headings"
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
-      resources :budget_investment_milestones
+      resources :milestones, controller: 'budget_investment_milestones'
       member { patch :toggle_selection }
     end
 
     resources :budget_phases, only: [:edit, :update]
   end
 
-  resources :budget_investment_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
+  resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
   resources :signature_sheets, only: [:index, :new, :create, :show]
 
@@ -133,7 +137,7 @@ namespace :admin do
       resources :results, only: :index
     end
 
-    resources :officers do
+    resources :officers, only: [:index, :new, :create, :destroy] do
       get :search, on: :collection
     end
 
@@ -198,6 +202,8 @@ namespace :admin do
         member { patch :toggle_selection }
       end
       resources :draft_versions
+      resources :milestones
+      resource :homepage, only: [:edit, :update]
     end
   end
 
@@ -213,6 +219,9 @@ namespace :admin do
     end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+    delete '/heading_content_blocks/:id', to: 'content_blocks#delete_heading_content_block', as: 'delete_heading_content_block'
+    get '/edit_heading_content_blocks/:id', to: 'content_blocks#edit_heading_content_block', as: 'edit_heading_content_block'
+    put '/update_heading_content_blocks/:id', to: 'content_blocks#update_heading_content_block', as: 'update_heading_content_block'
     resources :information_texts, only: [:index] do
       post :update, on: :collection
     end

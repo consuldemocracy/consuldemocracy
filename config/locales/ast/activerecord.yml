@@ -7,7 +7,7 @@ ast:
       budget/investment:
         one: "Proyectu de inversión"
         other: "Proyectos d'inversión"
-      budget/investment/milestone:
+      milestone:
         one: "finxu"
         other: "finxos"
       comment:

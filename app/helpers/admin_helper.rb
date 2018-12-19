@@ -9,11 +9,7 @@ module AdminHelper
   end
 
   def namespaced_root_path
-    if namespace == 'moderation/budgets'
-      "/moderation"
-    else
-      "/#{namespace}"
-    end
+    "/#{namespace}"
   end
 
   def namespaced_header_title
@@ -25,7 +21,12 @@ module AdminHelper
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users", "activity", "hidden_budget_investments"].include?(controller_name) && controller.class.parent != Admin::Legislation
+    moderated_sections.include?(controller_name) && controller.class.parent != Admin::Legislation
+  end
+
+  def moderated_sections
+    ["hidden_proposals", "debates", "comments", "hidden_users", "activity",
+     "hidden_budget_investments"]
   end
 
   def menu_budget?
@@ -88,14 +89,10 @@ module AdminHelper
     user_roles(user).join(", ")
   end
 
-  def display_budget_goup_form(group)
-    group.errors.messages.size > 0 ? "" : "display:none"
-  end
-
   private
 
     def namespace
-      controller.class.parent.name.downcase.gsub("::", "/")
+      controller.class.name.downcase.split("::").first
     end
 
 end

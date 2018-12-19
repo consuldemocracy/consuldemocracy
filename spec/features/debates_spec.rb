@@ -59,7 +59,7 @@ feature 'Debates' do
     debates.each do |debate|
       within('#debates') do
         expect(page).to     have_link debate.title
-        expect(page).to_not have_content debate.description
+        expect(page).not_to have_content debate.description
       end
     end
 
@@ -441,7 +441,7 @@ feature 'Debates' do
 
         click_link 'recommendations'
 
-        expect(page).to have_content 'There are not debates related to your interests'
+        expect(page).to have_content 'There are no debates related to your interests'
       end
 
       scenario 'should display text when user has no related interests' do
@@ -927,7 +927,7 @@ feature 'Debates' do
 
     scenario "Reorder by recommendations results maintaing search" do
       Setting['feature.user.recommendations'] = true
-      Setting['feature.user.recommendations_for_debates'] = true
+      Setting['feature.user.recommendations_on_debates'] = true
 
       user = create(:user, recommended_debates: true)
       login_as(user)
@@ -953,7 +953,7 @@ feature 'Debates' do
       end
 
       Setting['feature.user.recommendations'] = nil
-      Setting['feature.user.recommendations_for_debates'] = nil
+      Setting['feature.user.recommendations_on_debates'] = nil
     end
 
     scenario 'After a search do not show featured debates' do
