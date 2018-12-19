@@ -437,6 +437,7 @@ gl:
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
       login_to_comment: Debes %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
+      milestones_tab: Fitos
       retired_warning: "O autor desta proposta considera que xa non debe seguir recollendo apoios."
       retired_warning_link_to_explanation: Revisa a súa explicación antes de apoiala.
       retired: Proposta eliminada polo autor
