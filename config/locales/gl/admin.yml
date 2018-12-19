@@ -111,6 +111,36 @@ gl:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
         recalculate: Recalcular propostas gañadoras
+    budget_groups:
+      name: "Nome"
+      headings_name: "Partidas"
+      headings_edit: "Editar Partidas"
+      headings_manage: "Xestionar Partidas"
+      max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
+      no_groups: "Non hai grupos creados aínda. Cada usuario poderá votar nunha soa partida de cada grupo."
+      amount:
+        one: "Hai 1 grupo"
+        other: "Hai %{count} grupos"
+      create:
+        notice: "Grupo creado correctamente!"
+      update:
+        notice: "Grupo creado correctamente"
+      destroy:
+        success_notice: "Grupo eliminado correctamente"
+        unable_notice: "Non se pode eliminar un Grupo que ten partidas asociadas"
+      form:
+        create: "Crear novo grupo"
+        edit: "Editar grupo"
+        name: "Nome do grupo"
+        submit: "Gardar grupo"
+    budget_headings:
+      name: "Nome"
+      no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
+      amount:
+        one: "Hai 1 partida"
+        other: "Hai %{count} partidas"
+      create:
+        notice: "Partida creada correctamente!"
     budget_phases:
       edit:
         start_date: Data de inicio
