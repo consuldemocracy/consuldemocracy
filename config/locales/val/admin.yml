@@ -106,30 +106,6 @@ val:
         unable_notice: No pots eliminar un Pressupost amb propostes
       new:
         title: Nou pressupost ciutadà
-      show:
-        groups:
-          one: 1 Grup de partides pressupostàries
-          other: "%{count} Grups de partides pressupostàries"
-      form:
-        group: Nom del grup
-        no_groups: No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup.
-        add_group: Afegeix nou grup
-        create_group: Crea un grup
-        edit_group: Editar grup
-        submit: Guardar group
-        heading: Nom de la partida
-        add_heading: Afegir partida
-        amount: Quantitat
-        population: "Població (opcional)"
-        population_help_text: "Esta data s'usa excusivament per a calculs estadistics de participació"
-        save_heading: Guardar partida
-        no_heading: Aquest grup no té cap partida assignada.
-        table_heading: Partida
-        table_amount: Quantitat
-        table_population: Població
-        population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
-        max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
@@ -335,7 +311,6 @@ val:
           without_confirmed_hide: Pendents
         title: Usuaris bloquejats
         user: Usuari
-        no_hidden_users: No hi ha usuaris ocults.
       show:
         email: 'Correu electrònic:'
         hidden_at: 'Bloquejat:'
@@ -379,7 +354,6 @@ val:
         index:
           create: Nou procés
           delete: Eliminar
-          title: Processos de legislació col·laborativa
           filters:
             open: Oberts
             next: Pròximament
@@ -399,7 +373,6 @@ val:
           status_planned: Pròximament
         subnav:
           info: Informació
-          draft_versions: Text
           questions: Debat
           proposals: Propostes
       proposals:
@@ -928,7 +901,6 @@ val:
       index:
         title: Càrrecs públics
         no_officials: No hi ha carrecs públics.
-        name: Nom
         official_position: Càrrec públic
         official_level: Nivell
       level_0: No és càrrec públic
@@ -970,15 +942,6 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
-    hidden_proposals:
-      index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmades
-          without_confirmed_hide: Pendents
-        title: Propostes ocultes
-        no_hidden_proposals: No hi ha propostes ocultes.
     proposal_notifications:
       index:
         filter: Filtrar
@@ -1044,8 +1007,6 @@ val:
       image: Imatge
       show_image: Mostrar imatge
       moderated_content: "Revisa el contigut moderat pels moderadors, i confirma si la moderació s'ha realitzat correctament."
-      milestone: Seguiment
-      new_milestone: Crear nova fita
       view: Vista
       proposal: Proposta
       author: Autor
@@ -1309,11 +1270,9 @@ val:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
       header_title: Capçalera
-      no_header: No hi ha capçalera.
       create_header: Crear capçalera
       cards_title: Targetes
       create_card: Crear targeta
-      no_cards: No hi ha targetes.
       cards:
         title: Títol
         description: Descripció
