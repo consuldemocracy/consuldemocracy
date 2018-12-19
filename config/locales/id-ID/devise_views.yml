@@ -49,10 +49,7 @@ id:
           title: Mendaftar sebagai organisasi atau kolektif
         success:
           back_to_index: Saya mengerti; kembali ke halaman utama
-          instructions_1_html: "<b> Kami akan menghubungi anda segera</b> untuk memverifikasi bahwa Anda sebenarnya mewakili kolektif ini."
-          instructions_2_html: Sementara anda <b>email ditinjau</b>, kami telah mengirim anda <b>link untuk mengkonfirmasi akun anda</b>.
           instructions_3_html: Setelah dikonfirmasi, anda mungkin mulai berpartisipasi sebagai kolektif yang tidak terverifikasi.
-          thank_you_html: Terima kasih telah mendaftarkan kolektif Anda di situs web. Sekarang <b>verifikasi tertunda</b>.
           title: Pendaftaran organisasi / kolektif
     passwords:
       edit:
@@ -125,4 +122,3 @@ id:
           instructions_1_html: Silakan <b>periksa email anda</b> - kami telah mengirimi anda<b>tautan untuk mengkonfirmasi akun anda</b>.
           instructions_2_html: Setelah dikonfirmasi, anda bisa mulai berpartisipasi.
           thank_you_html: Terima kasih telah mendaftar untuk situs webnya. Anda sekarang harus<b>mengkonfirmasi alamat email anda</b>.
-          title: Modifikasi emai anda
