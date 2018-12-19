@@ -22,7 +22,6 @@ id:
         error_wrong_booth: "Salah booth. Hasil yang TIDAK diselamatkan."
       new:
         title: "%{poll} - Tambahkan hasil"
-        not_allowed: "Anda diperbolehkan untuk menambah hasil jajak pendapat ini"
         booth: "Booth"
         date: "Tanggal"
         select_booth: "Pilih booth"
