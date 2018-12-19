@@ -111,12 +111,10 @@ fr:
         relevance: Pertinence
         recommendations: recommandations
       recommendations:
-        without_results: Il n’y a pas de débats liés à vos centres d’intérêt
         without_interests: Suivez des propositions afin que nous puissions vous suggérer des recommandations
         disable: "Les recommandations de discussions cesseront d'apparaître si vous les rejetez. Vous pouvez les réactiver sur la page 'Mon compte'"
         actions:
           success: "Les recommandations de discussion sont maintenant désactivées pour ce compte"
-          error: "Une erreur est survenue. Veuillez vous rendre sur la page 'Votre compte' pour désactiver manuellement les recommandations de discussion"
       search_form:
         button: Rechercher
         placeholder: Rechercher des débats...
@@ -204,7 +202,6 @@ fr:
       conditions: Conditions d'utilisation
       consul: Application Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Pour l'assistance technique visitez la
       copyright: Consul, %{year}
       description: Ce portail utilise l' %{consul} qui est un %{open_source}.
       open_source: logiciel libre
@@ -357,7 +354,6 @@ fr:
         disable: "Les recommandations de propositions cesseront d'apparaître si vous les rejetez. Vous pouvez les réactiver sur la page 'Mon compte'"
         actions:
           success: "Les recommandations de propositions sont maintenant désactivées pour ce compte"
-          error: "Une erreur est survenue. Veuillez vous rendre sur la page 'Votre compte' pour désactiver manuellement les recommandations de proposition"
       retired_proposals: Propositions retirées
       retired_proposals_link: "Propositions retirées par l'auteur"
       retired_links:
@@ -442,7 +438,6 @@ fr:
       retired: Proposition retirée par l'auteur
       share: Partager
       send_notification: Envoyer une notification
-      no_notifications: "Cette proposition n'a pas de notification."
       embed_video_title: "Vidéo de %{proposal}"
       title_external_url: "Documentation supplémentaire"
       title_video_url: "Vidéo externe"
@@ -468,6 +463,7 @@ fr:
       geozone_restricted: "Quartiers"
       geozone_info: "Peuvent participer les personnes issues du recensement de : "
       already_answer: "Vous avez déjà participé à ce vote"
+      not_logged_in: "Vous devez vous connecter ou vous inscrire pour participer"
       section_header:
         icon_alt: Icône de vote
         title: Vote
@@ -525,7 +521,6 @@ fr:
       title_label: "Titre"
       body_label: "Message"
       submit_button: "Envoyer un message"
-      info_about_receivers_html: "Ce message sera envoyé à <strong>%{count} personnes</strong> et sera visible sur %{proposal_page}.<br> Les messages ne sont pas envoyés immédiatement, les utilisateurs reçoivent périodiquement un email avec les notifications issues de l'ensemble des propositions."
       proposal_page: "la page de la proposition"
     show:
       back: "Retour à mon activité"
@@ -829,7 +824,6 @@ fr:
     error: "Lien non valide. N'oubliez pas de commencer avec %{url}."
     error_itself: "Lien non valide. Vous ne pouvez pas lié un contenu à lui-même."
     success: "Vous avec ajouté un nouveau contenu lié"
-    is_related: "S'agit-il de contenu lié ?"
     score_positive: "Oui"
     score_negative: "Non"
     content_title:
