@@ -12,7 +12,7 @@ describe Notification do
 
     it "should not be valid without a user" do
       notification.user = nil
-      expect(notification).to_not be_valid
+      expect(notification).not_to be_valid
     end
 
   end

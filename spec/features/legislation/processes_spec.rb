@@ -156,7 +156,7 @@ feature 'Legislation' do
 
         visit legislation_process_path(process)
 
-        expect(page).to_not have_content("Additional information")
+        expect(page).not_to have_content("Additional information")
       end
 
       scenario "Shows another translation when the default locale isn't available" do
@@ -201,7 +201,7 @@ feature 'Legislation' do
         visit legislation_process_path(process)
 
         expect(page).to     have_content("This phase is not open yet")
-        expect(page).to_not have_content("Participate in the debate")
+        expect(page).not_to have_content("Participate in the debate")
       end
 
       scenario 'open without questions' do
@@ -209,8 +209,8 @@ feature 'Legislation' do
 
         visit legislation_process_path(process)
 
-        expect(page).to_not have_content("Participate in the debate")
-        expect(page).to_not have_content("This phase is not open yet")
+        expect(page).not_to have_content("Participate in the debate")
+        expect(page).not_to have_content("This phase is not open yet")
       end
 
       scenario 'open with questions' do
@@ -223,7 +223,7 @@ feature 'Legislation' do
         expect(page).to     have_content("Question 1")
         expect(page).to     have_content("Question 2")
         expect(page).to     have_content("Participate in the debate")
-        expect(page).to_not have_content("This phase is not open yet")
+        expect(page).not_to have_content("This phase is not open yet")
       end
 
       include_examples "not published permissions", :debate_legislation_process_path
