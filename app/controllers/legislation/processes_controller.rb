@@ -103,7 +103,12 @@ class Legislation::ProcessesController < Legislation::BaseController
     @proposals = @proposals.search(params[:search]) if params[:search].present?
 
     @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
-    @proposals = @proposals.send(@current_filter).page(params[:page])
+
+    if @current_filter == "random"
+      @proposals = @proposals.send(@current_filter, session[:random_seed]).page(params[:page])
+    else
+      @proposals = @proposals.send(@current_filter).page(params[:page])
+    end
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       legislation_proposal_votes(@proposals)
@@ -125,12 +130,9 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
 
     def set_random_seed
-      seed = (params[:random_seed] || session[:random_seed] || rand).to_f
-      seed = (-1..1).cover?(seed) ? seed : 1
+      seed = (params[:random_seed] || session[:random_seed] || rand(10_000_000)).to_i
 
       session[:random_seed] = seed
       params[:random_seed] = seed
-
-      ::Legislation::Proposal.connection.execute "select setseed(#{seed})"
     end
 end
