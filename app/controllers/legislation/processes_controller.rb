@@ -1,4 +1,6 @@
 class Legislation::ProcessesController < Legislation::BaseController
+  include RandomSeed
+
   has_filters %w[open past], only: :index
   has_filters %w[random winners], only: :proposals
 
@@ -127,12 +129,5 @@ class Legislation::ProcessesController < Legislation::BaseController
     def set_process
       return if member_method?
       @process = ::Legislation::Process.find(params[:process_id])
-    end
-
-    def set_random_seed
-      seed = (params[:random_seed] || session[:random_seed] || rand(10_000_000)).to_i
-
-      session[:random_seed] = seed
-      params[:random_seed] = seed
     end
 end

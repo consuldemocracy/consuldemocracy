@@ -17,6 +17,7 @@ class Legislation::Proposal < ActiveRecord::Base
   include Documentable
   include Notifiable
   include Imageable
+  include Randomizable
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
@@ -57,19 +58,7 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :selected,                 -> { where(selected: true) }
-  scope :random,                   -> (seed) { sort_by_random(seed) }
   scope :winners,                  -> { selected.sort_by_confidence_score }
-
-  def self.sort_by_random(seed)
-    ids = pluck(:id).shuffle(random: Random.new(seed))
-
-    return all if ids.empty?
-
-    ids_with_order = ids.map.with_index { |id, order| "(#{id}, #{order})" }.join(", ")
-
-    joins("LEFT JOIN (VALUES #{ids_with_order}) AS ids(id, ordering) ON #{table_name}.id = ids.id")
-      .order("ids.ordering")
-  end
 
   def to_param
     "#{id}-#{title}".parameterize
