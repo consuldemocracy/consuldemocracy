@@ -53,11 +53,12 @@ feature 'Admin poll questions' do
     expect(page).to have_content(title)
   end
 
-  scenario 'Create from successful proposal index' do
+  scenario 'Create from successful proposal' do
     poll = create(:poll, name: 'Proposals')
     proposal = create(:proposal, :successful)
 
-    visit proposals_path
+    visit admin_proposal_path(proposal)
+
     click_link "Create question"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
@@ -70,17 +71,6 @@ feature 'Admin poll questions' do
     expect(page).to have_content(proposal.title)
     expect(page).to have_link(proposal.title, href: proposal_path(proposal))
     expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
-  end
-
-  scenario "Create from successful proposal show" do
-    poll = create(:poll, name: 'Proposals')
-    proposal = create(:proposal, :successful)
-
-    visit proposal_path(proposal)
-    click_link "Create question"
-
-    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
-    expect(page).to have_field('Question', with: proposal.title)
   end
 
   scenario 'Update' do
