@@ -106,30 +106,6 @@ pt-BR:
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
       new:
         title: Novo orçamento participativo
-      show:
-        groups:
-          one: 1 Grupo de títulos orçamentais
-          other: "%{count} Grupos de títulos orçamentais"
-      form:
-        group: Nome do grupo
-        no_groups: Nenhum grupo criado ainda. Cada usuário poderá votar em apenas um título por grupo.
-        add_group: Adicionar novo grupo
-        create_group: Criar grupo
-        edit_group: Editar grupo
-        submit: Salvar grupo
-        heading: Nome do título
-        add_heading: Adicionar título
-        amount: Quantidade
-        population: "População (opcional)"
-        population_help_text: "Estes dados são utilizados exclusivamente para calcular as estatísticas de participação"
-        save_heading: Salvar título
-        no_heading: Este grupo não tem título atribuído.
-        table_heading: Título
-        table_amount: Quantidade
-        table_population: População
-        population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
-        max_votable_headings: "Número máximo de títulos em que um usuário pode votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
@@ -266,8 +242,6 @@ pt-BR:
         image: "Imagem"
         show_image: "Exibir imagem"
         documents: "Documentos"
-        milestone: Marco
-        new_milestone: Criar marco
       form:
         admin_statuses: Status dos investimentos para administrador
         no_statuses_defined: Ainda não há status de investimento definidos
@@ -337,7 +311,6 @@ pt-BR:
           without_confirmed_hide: Pendente
         title: Usuários ocultos
         user: Usuário
-        no_hidden_users: Não há usuários ocultos.
       show:
         email: 'Email:'
         hidden_at: 'Oculto em:'
@@ -384,7 +357,6 @@ pt-BR:
         index:
           create: Novo processo
           delete: Excluir
-          title: Processos legislativos
           filters:
             open: Abertos
             next: Próximo
@@ -404,7 +376,6 @@ pt-BR:
           status_planned: Planejados
         subnav:
           info: Informação
-          draft_versions: Seleção
           questions: Debate
           proposals: Propostas
       proposals:
@@ -971,7 +942,6 @@ pt-BR:
       index:
         title: Cargos públicos
         no_officials: Não há cargos públicos.
-        name: Nome
         official_position: Cargo público
         official_level: Nível
       level_0: Não é cargo público
@@ -1013,15 +983,6 @@ pt-BR:
       search:
         title: Buscar Organizações
         no_results: Nenhuma organização encontrada.
-    hidden_proposals:
-      index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmado
-          without_confirmed_hide: Pendente
-        title: Propostas ocultas
-        no_hidden_proposals: Não há propostas ocultas.
     proposal_notifications:
       index:
         filter: Filtro
@@ -1355,11 +1316,9 @@ pt-BR:
       title: Página inicial
       description: Os módulos ativos aparecem na página inical na mesma ordem que aqui.
       header_title: Cabeçalho
-      no_header: Não há cabeçalho.
       create_header: Criar cabeçalho
       cards_title: Cartões
       create_card: Criar cartão
-      no_cards: Não há cartões.
       cards:
         title: Título
         description: Descrição
