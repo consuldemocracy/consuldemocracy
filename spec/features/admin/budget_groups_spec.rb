@@ -20,7 +20,9 @@ feature "Admin budget groups" do
     end
 
     scenario "Disabled with a feature flag" do
-      expect { visit admin_budget_groups_path(budget) }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect do
+        visit admin_budget_groups_path(budget)
+      end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
   end
@@ -30,7 +32,8 @@ feature "Admin budget groups" do
     scenario "Displaying no groups for budget" do
       visit admin_budget_groups_path(budget)
 
-      expect(page).to have_content "No groups created yet. Each user will be able to vote in only one heading per group."
+      expect(page).to have_content "No groups created yet. "
+      expect(page).to have_content "Each user will be able to vote in only one heading per group."
     end
 
     scenario "Displaying groups" do
@@ -49,21 +52,21 @@ feature "Admin budget groups" do
         expect(page).to have_content(group1.name)
         expect(page).to have_content(group1.max_votable_headings)
         expect(page).to have_content(group1.headings.count)
-        expect(page).to have_link "Manage headings", href: admin_budget_group_headings_path(budget, group1)
+        expect(page).to have_link "Manage headings"
       end
 
       within "#budget_group_#{group2.id}" do
         expect(page).to have_content(group2.name)
         expect(page).to have_content(group2.max_votable_headings)
         expect(page).to have_content(group2.headings.count)
-        expect(page).to have_link "Manage headings", href: admin_budget_group_headings_path(budget, group2)
+        expect(page).to have_link "Manage headings"
       end
 
       within "#budget_group_#{group3.id}" do
         expect(page).to have_content(group3.name)
         expect(page).to have_content(group3.max_votable_headings)
         expect(page).to have_content(group3.headings.count)
-        expect(page).to have_link "Manage headings", href: admin_budget_group_headings_path(budget, group3)
+        expect(page).to have_link "Manage headings"
       end
     end
 

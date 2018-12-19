@@ -21,7 +21,9 @@ feature "Admin budget headings" do
     end
 
     scenario "Disabled with a feature flag" do
-      expect { visit admin_budget_group_headings_path(budget, group) }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect do
+        visit admin_budget_group_headings_path(budget, group)
+      end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
   end
@@ -31,7 +33,8 @@ feature "Admin budget headings" do
     scenario "Displaying no headings for group" do
       visit admin_budget_group_headings_path(budget, group)
 
-      expect(page).to have_content "No headings created yet. Each user will be able to vote in only one heading per group."
+      expect(page).to have_content "No headings created yet. "
+      expect(page).to have_content "Each user will be able to vote in only one heading per group."
     end
 
     scenario "Displaying headings" do
@@ -47,8 +50,8 @@ feature "Admin budget headings" do
         expect(page).to have_content "€1,000"
         expect(page).not_to have_content "10000"
         expect(page).to have_content "Yes"
-        expect(page).to have_link "Edit", href: edit_admin_budget_group_heading_path(budget, group, heading1)
-        expect(page).to have_link "Delete", href: admin_budget_group_heading_path(budget, group, heading1)
+        expect(page).to have_link "Edit"
+        expect(page).to have_link "Delete"
       end
 
       within "#budget_heading_#{heading2.id}" do
@@ -56,8 +59,8 @@ feature "Admin budget headings" do
         expect(page).to have_content "€2,000"
         expect(page).to have_content "10000"
         expect(page).to have_content "No"
-        expect(page).to have_link "Edit", href: edit_admin_budget_group_heading_path(budget, group, heading2)
-        expect(page).to have_link "Delete", href: admin_budget_group_heading_path(budget, group, heading2)
+        expect(page).to have_link "Edit"
+        expect(page).to have_link "Delete"
       end
 
       within "#budget_heading_#{heading3.id}" do
@@ -65,8 +68,8 @@ feature "Admin budget headings" do
         expect(page).to have_content "€3,000"
         expect(page).to have_content "10000"
         expect(page).to have_content "No"
-        expect(page).to have_link "Edit", href: edit_admin_budget_group_heading_path(budget, group, heading3)
-        expect(page).to have_link "Delete", href: admin_budget_group_heading_path(budget, group, heading3)
+        expect(page).to have_link "Edit"
+        expect(page).to have_link "Delete"
       end
     end
 

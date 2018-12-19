@@ -43,7 +43,9 @@ module Budgets
       @investments = all_investments.page(params[:page]).per(10).for_render
 
       @investment_ids = @investments.pluck(:id)
-      @investments_map_coordinates =  MapLocation.where(investment_id: all_investments).map { |l| l.json_data }
+      @investments_map_coordinates =  MapLocation.where(investment: all_investments).map do |loc|
+        loc.json_data
+      end
 
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
