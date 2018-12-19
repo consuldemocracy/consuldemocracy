@@ -10,12 +10,6 @@ es-CL:
       budget/investment:
         one: "Proyecto de inversión"
         other: "Proyectos de inversión"
-      milestone:
-        one: "hito"
-        other: "hitos"
-      milestone/status:
-        one: "Estado de la inversión"
-        other: "Estados de las inversiones"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -79,9 +73,6 @@ es-CL:
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
@@ -128,14 +119,6 @@ es-CL:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
         image_title: "Título de la imagen"
-      milestone:
-        status_id: "Estado actual de la inversión (opcional)"
-        title: "Título"
-        description: "Descripción (opcional si hay una condición asignada)"
-        publication_date: "Fecha de publicación"
-      milestone/status:
-        name: "Nombre"
-        description: "Descripción (opcional)"
       budget/heading:
         name: "Nombre de la partida"
         price: "Cantidad"
