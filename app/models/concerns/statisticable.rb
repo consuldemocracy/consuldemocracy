@@ -40,28 +40,27 @@ module Statisticable
 
       def age_groups
         groups = Hash.new(0)
-        ["16 - 19",
-         "20 - 24",
-         "25 - 29",
-         "30 - 34",
-         "35 - 39",
-         "40 - 44",
-         "45 - 49",
-         "50 - 54",
-         "55 - 59",
-         "60 - 64",
-         "65 - 69",
-         "70 - 74",
-         "75 - 79",
-         "80 - 84",
-         "85 - 89",
-         "90 - 140"].each do |group|
-          start, finish = group.split(" - ")
-          group_name = (group == "90 - 140" ? "+ 90" : group)
+        [[16, 19],
+         [20, 24],
+         [25, 29],
+         [30, 34],
+         [35, 39],
+         [40, 44],
+         [45, 49],
+         [50, 54],
+         [55, 59],
+         [60, 64],
+         [65, 69],
+         [70, 74],
+         [75, 79],
+         [80, 84],
+         [85, 89],
+         [90, 140]].each do |start, finish|
+          group_name = (finish == 140 ? "+ 90" : "#{start} - #{finish}")
           groups[group_name] = User.where(id: participants)
                                    .where("date_of_birth > ? AND date_of_birth < ?",
-                                          finish.to_i.years.ago.beginning_of_year,
-                                          start.to_i.years.ago.end_of_year).count
+                                          finish.years.ago.beginning_of_year,
+                                          start.years.ago.end_of_year).count
         end
         groups
       end
