@@ -30,4 +30,8 @@ module StatsHelper
     opt[:data][:graph] = admin_api_stats_path(budget_investments: true)
     content_tag :div, "", opt
   end
+
+  def number_to_stats_percentage(number, options = {})
+    number_to_percentage(number, { strip_insignificant_zeros: true, precision: 2 }.merge(options))
+  end
 end

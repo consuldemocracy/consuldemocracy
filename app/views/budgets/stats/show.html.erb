@@ -108,9 +108,7 @@
           <p id="female_percentage">
             <span class="label" style="background: #FF9E01"></span>
             &nbsp;<%= t("budgets.stats.total_female_participants").upcase %>
-            (<%= number_to_percentage(@stats[:female_percentage],
-                                      strip_insignificant_zeros: true,
-                                      precision: 2) %>)
+            (<%= number_to_stats_percentage(@stats[:female_percentage]) %>)
           </p>
           <p id="total_female_participants" class="big-number-stat">
             <%= @stats[:total_female_participants] %>
@@ -121,9 +119,7 @@
           <p id="male_percentage">
             <span class="label" style="background: #FF6600"></span>
             &nbsp;<%= t("budgets.stats.total_male_participants").upcase %>
-            (<%= number_to_percentage(@stats[:male_percentage],
-                                      strip_insignificant_zeros: true,
-                                      precision: 2) %>)
+            (<%= number_to_stats_percentage(@stats[:male_percentage]) %>)
           </p>
           <p id="total_male_participants" class="big-number-stat">
             <%= @stats[:total_male_participants] %>
@@ -154,17 +150,13 @@
                   <strong>
                     <%
                       percentage_age_count = all_ages_count == 0 ? 0 : (count / all_ages_count * 100)
-                      formatted_percentage_age_count = number_to_percentage(percentage_age_count,
-                                                                             strip_insignificant_zeros: true,
-                                                                             precision: 2)
+                      formatted_percentage_age_count = number_to_stats_percentage(percentage_age_count)
                     %>
                     <%= count %>
                    (<%= formatted_percentage_age_count %>)
                   </strong>
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="<%= percentage_age_count %>" aria-valuemax="100">
-                    <span class="progress-meter" style="width: <%= number_to_percentage(percentage_age_count*5,
-                                                                             strip_insignificant_zeros: true,
-                                                                             precision: 2, locale: :en) %>;"></span>
+                    <span class="progress-meter" style="width: <%= number_to_stats_percentage(percentage_age_count*5, locale: :en) %>;"></span>
                   </div>
                 </td>
               </tr>
@@ -217,15 +209,11 @@
                   </td>
                   <td id="percentage_participants_<%= phase %>_phase_heading_<%= heading.id %>"
                       class="border-left border-right text-center">
-                    <%= number_to_percentage(@stats[:headings][heading.id]["percentage_participants_#{phase}_phase".to_sym],
-                      strip_insignificant_zeros: true,
-                      precision: 2) %>
+                    <%= number_to_stats_percentage(@stats[:headings][heading.id]["percentage_participants_#{phase}_phase".to_sym]) %>
                   </td>
                   <td id="percentage_district_population_<%= phase %>_phase_heading_<%= heading.id %>"
                       class="text-center border-right">
-                    <%= number_to_percentage(@stats[:headings][heading.id]["percentage_district_population_#{phase}_phase".to_sym],
-                      strip_insignificant_zeros: true,
-                      precision: 2) %>
+                    <%= number_to_stats_percentage(@stats[:headings][heading.id]["percentage_district_population_#{phase}_phase".to_sym]) %>
                   </td>
                 <% end %>
               </tr>
