@@ -406,6 +406,9 @@ gl:
           summary_placeholder: Resumo corto da descrición
           description_placeholder: Engade unha descrición do proceso
           additional_info_placeholder: Engade unha información adicional que pode ser de interese
+          homepage: Descrición
+          homepage_description: Aquí podes explicar o contido do proceso
+          homepage_enabled: Páxina principal habilitada
         index:
           create: Novo proceso
           delete: Borrar
@@ -435,10 +438,14 @@ gl:
           status_planned: Planificado
         subnav:
           info: Información
+          homepage: Páxina principal
           draft_versions: Redacción
           questions: Debate
           proposals: Propostas
           milestones: Seguindo
+      homepage:
+        edit:
+          title: Configura a túa páxina principal
       proposals:
         index:
           title: Título
