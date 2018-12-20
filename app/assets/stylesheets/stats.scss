@@ -26,9 +26,58 @@
     border-bottom: 1px solid $border;
   }
 
+  section section {
+    clear: both;
+    margin-top: rem-calc(30);
+    margin-bottom: rem-calc(30);
+    overflow: hidden;
+  }
+
   h3 {
     font-size: rem-calc(20);
-    margin-bottom: 0;
-    margin-top: rem-calc(30);
+    margin-bottom: rem-calc(12);
+  }
+
+  .participants {
+    $background-width: 52px;
+
+    float: left;
+    margin-left: $background-width;
+    margin-right: rem-calc(22);
+    position: relative;
+
+    &::before {
+      // TODO: change image and move it to a non-custom folder
+      content: image-url("custom/polls/stats_man.png");
+      left: -$background-width;
+      position: absolute;
+    }
+
+    .number {
+      display: block;
+      font-size: rem-calc(60);
+      font-weight: bold;
+      line-height: rem-calc(60);
+    }
+
+    .info {
+      color: $dark-gray;
+      font-style: italic;
+    }
+
+    &.gender {
+
+      &.male {
+        &::before {
+          content: image-url("custom/polls/stats_man.png");
+        }
+      }
+
+      &.female {
+        &::before {
+          content: image-url("custom/polls/stats_woman.png");
+        }
+      }
+    }
   }
 }

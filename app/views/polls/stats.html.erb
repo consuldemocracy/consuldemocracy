@@ -14,6 +14,9 @@
             <li>
               <%= link_to t("stats.total_participants"), "#total_participants" %>
             </li>
+            <li>
+              <%= link_to t("stats.by_gender"), "#participants_by_gender" %>
+            </li>
           </ul>
         </li>
       </ul>
@@ -26,9 +29,29 @@
         <section id="total_participants">
           <h3><%= t("stats.total_participants") %></h3>
 
-          <p class="margin-top uppercase">
-            <%= t("polls.show.stats.total_votes") %><br>
+          <p class="participants">
             <span class="number"><%= @stats[:total_participants] %></span>
+            <span class="info"><%= t("polls.show.stats.total_votes") %><br></span>
+          </p>
+        </section>
+
+        <section id="participants_by_gender">
+          <h3><%= t("stats.by_gender") %></h3>
+
+          <p class="gender male participants">
+            <span class="number"><%= @stats[:total_male_participants] %></span>
+            <span class="info">
+              <%= I18n.t("stats.men_percentage",
+                         percentage: number_to_stats_percentage(@stats[:male_percentage])) %>
+            </span>
+          </p>
+
+          <p class="gender female participants">
+            <span class="number"><%= @stats[:total_female_participants] %></span>
+            <span class="info">
+              <%= I18n.t("stats.women_percentage",
+                         percentage: number_to_stats_percentage(@stats[:female_percentage])) %>
+            </span>
           </p>
         </section>
       </section>

@@ -2,3 +2,6 @@ en:
   stats:
     title: "Participation data"
     total_participants: "Participants"
+    by_gender: "Participants by gender"
+    men_percentage: "%{percentage} Men"
+    women_percentage: "%{percentage} Women"

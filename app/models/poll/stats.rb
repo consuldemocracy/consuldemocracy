@@ -3,15 +3,19 @@ class Poll::Stats
   alias_method :poll, :resource
 
   def self.stats_methods
-    %i[total_participants total_participants_web total_web_valid total_web_white total_web_null
-       total_participants_booth total_booth_valid total_booth_white total_booth_null
-       total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
-       total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage
-       null_percentage_web null_percentage_booth total_null_percentage total_participants_web_percentage
-       total_participants_booth_percentage]
+    super +
+      %i[total_participants_web total_web_valid total_web_white total_web_null
+         total_participants_booth total_booth_valid total_booth_white total_booth_null
+         total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
+         total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage
+         null_percentage_web null_percentage_booth total_null_percentage total_participants_web_percentage
+         total_participants_booth_percentage]
   end
 
   private
+    def participants
+      User.where(id: voters.pluck(:user_id))
+    end
 
     def total_participants
       total_participants_web + total_participants_booth
