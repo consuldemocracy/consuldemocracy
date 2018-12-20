@@ -127,6 +127,7 @@ gl:
         project_selected_html: 'Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación.'
         project_winner: 'Proxecto de investimento gañador'
         project_not_selected_html: 'O proxecto de inversión <strong>non foi seleccionado</strong> para a fase de votación.'
+        see_price_explanation: Ver xustificación do prezo
       wrong_price_format: Só pode incluír caracteres numéricos
       investment:
         add: Votar
