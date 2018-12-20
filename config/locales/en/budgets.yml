@@ -204,11 +204,8 @@ en:
       supports: Supports
       total_male_participants: Mens
       total_female_participants: Women
-      by_age: "Participants by age groups"
       age: Age
       total: Total
-      more_than: More than
-      years: years
       by_heading: "Participants by heading"
       heading: Heading
       investments_sent_html: "Investment proposals sent"

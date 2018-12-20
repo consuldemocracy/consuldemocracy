@@ -96,7 +96,7 @@
 
     <div class="row margin">
       <div class="small-12 column">
-        <h2 class="margin-bottom"><%= t("budgets.stats.by_gender") %></h2>
+        <h2 class="margin-bottom"><%= t("stats.by_gender") %></h2>
       </div>
 
       <div class="small-12 medium-6 column text-center">
@@ -130,7 +130,7 @@
 
     <div class="row margin">
       <div class="small-12 column">
-        <h2 class="margin-bottom"><%= t("budgets.stats.by_age") %></h2>
+        <h2 class="margin-bottom"><%= t("stats.by_age") %></h2>
 
         <table>
           <thead>
@@ -140,23 +140,13 @@
             </tr>
           </thead>
           <tbody>
-            <% all_ages_count = @stats[:age_groups].values.sum.to_f %>
-            <% @stats[:age_groups].each do |age_group, count| %>
-              <tr id="age_group_<%= age_group.gsub(" - ", "_to_").gsub("+ ", "up_to_") %>">
-                <td class="border-right">
-                  <%= age_group.gsub("+", t("budgets.stats.more_than")) + " " + t("budgets.stats.years") %>
-                </td>
-                <td class="border-left">
-                  <strong>
-                    <%
-                      percentage_age_count = all_ages_count == 0 ? 0 : (count / all_ages_count * 100)
-                      formatted_percentage_age_count = number_to_stats_percentage(percentage_age_count)
-                    %>
-                    <%= count %>
-                   (<%= formatted_percentage_age_count %>)
-                  </strong>
-                  <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="<%= percentage_age_count %>" aria-valuemax="100">
-                    <span class="progress-meter" style="width: <%= number_to_stats_percentage(percentage_age_count*5, locale: :en) %>;"></span>
+            <% @stats[:age_groups].values.each do |group| %>
+              <tr>
+                <td><%= group[:range] %></td>
+                <td>
+                  <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
+                  <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="<%= group[:percentage] %>" aria-valuemax="100">
+                    <span class="progress-meter" style="width: <%= number_to_stats_percentage(group[:percentage]*5, locale: :en) %>;"></span>
                   </div>
                 </td>
               </tr>

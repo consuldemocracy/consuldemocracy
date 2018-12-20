@@ -39,7 +39,6 @@ module Statisticable
       end
 
       def age_groups
-        groups = Hash.new(0)
         [[16, 19],
          [20, 24],
          [25, 29],
@@ -55,20 +54,34 @@ module Statisticable
          [75, 79],
          [80, 84],
          [85, 89],
-         [90, 140]].each do |start, finish|
-          group_name = (finish == 140 ? "+ 90" : "#{start} - #{finish}")
-          groups[group_name] = User.where(id: participants)
-                                   .where("date_of_birth > ? AND date_of_birth < ?",
-                                          finish.years.ago.beginning_of_year,
-                                          start.years.ago.end_of_year).count
+         [90, 300]].reduce({}) do |groups, (start, finish)|
+          users = User.where(id: participants)
+                      .where("date_of_birth > ? AND date_of_birth < ?",
+                             finish.years.ago.beginning_of_year,
+                             start.years.ago.end_of_year)
+
+          groups.tap do |age_groups|
+            age_groups["#{start} - #{finish}"] = {
+              range: range_description(start, finish),
+              count: users.count,
+              percentage: calculate_percentage(users.count, total_participants)
+            }
+          end
         end
-        groups
       end
 
       def calculate_percentage(fraction, total)
         return 0.0 if total.zero?
 
         (fraction * 100.0 / total).round(3)
+      end
+
+      def range_description(start, finish)
+        if finish > 200
+          I18n.t("stats.age_more_than", start: start)
+        else
+          I18n.t("stats.age_range", start: start, finish: finish)
+        end
       end
   end
 

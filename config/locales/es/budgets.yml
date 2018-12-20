@@ -205,10 +205,7 @@ es:
       total: Total
       total_male_participants: Hombres
       total_female_participants: Mujeres
-      by_age: "Participación por grupos de edad"
       age: Edad
-      more_than: Más de
-      years: años
       by_heading: "Participación por distritos"
       heading: Distrito
       investments_sent_html: "Propuestas<br>enviadas"
