@@ -17,6 +17,9 @@
             <li>
               <%= link_to t("stats.by_gender"), "#participants_by_gender" %>
             </li>
+            <li>
+              <%= link_to t("stats.by_age"), "#participants_by_age" %>
+            </li>
           </ul>
         </li>
       </ul>
@@ -53,6 +56,32 @@
                          percentage: number_to_stats_percentage(@stats[:female_percentage])) %>
             </span>
           </p>
+        </section>
+
+        <section id="participants_by_age">
+          <h3><%= t("stats.by_age") %></h3>
+
+          <table>
+            <thead>
+              <th><%= t("stats.age") %></th>
+              <th><%= t("stats.total") %></th>
+            </thead>
+
+            <tbody>
+              <% @stats[:age_groups].values.each do |group| %>
+                <tr>
+                  <td><%= group[:range] %></td>
+                  <td>
+                    <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
+
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuemin="0" aria-valuetext="<%= group[:percentage] %>" aria-valuemax="100">
+                      <span class="progress-meter" style="width: <%= number_to_stats_percentage(group[:percentage], locale: :en) %>;"></span>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </section>
       </section>
 
