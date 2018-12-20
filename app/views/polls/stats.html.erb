@@ -73,10 +73,7 @@
                   <td><%= group[:range] %></td>
                   <td>
                     <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
-
-                    <div class="progress" role="progressbar" tabindex="0" aria-valuemin="0" aria-valuetext="<%= group[:percentage] %>" aria-valuemax="100">
-                      <span class="progress-meter" style="width: <%= number_to_stats_percentage(group[:percentage], locale: :en) %>;"></span>
-                    </div>
+                    <meter min="0" max="100" value="<%= group[:percentage] %>"></meter>
                   </td>
                 </tr>
               <% end %>
