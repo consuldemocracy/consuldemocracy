@@ -12,6 +12,8 @@ ar:
         results: النتائج
         table_answer: الإجابة
     residence:
+      flash:
+        create: "وثيقة تم التحقق منها من خلال التعداد"
       new:
         error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
     voters:
