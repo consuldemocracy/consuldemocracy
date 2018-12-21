@@ -8,8 +8,9 @@ class Valuation::BudgetsController < Valuation::BaseController
     @budget = current_budget
     valuator = current_user.valuator
     if @budget.present? && valuator.present?
-      @assigned_investments_count = @budget.investments.accesible_by_valuator(valuator)
-                                           .valuation_open.count
+      @investments = @budget.investments
+                            .accesible_by_valuator(valuator)
+                            .valuation_open
     end
   end
 end
