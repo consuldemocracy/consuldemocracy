@@ -93,7 +93,9 @@
       </div>
 
       <div class="small-12 medium-3 clear">
-        <%= f.submit t("verification.residence.new.verify_residence"), class: "button success expanded" %>
+        <%= f.submit t("verification.residence.new.verify_residence"),
+                     id: "new_residence_submit",
+                     class: "button success expanded" %>
       </div>
     <% end %>
   </div>
