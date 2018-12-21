@@ -1213,12 +1213,12 @@ nl:
         spending_proposals_title: Budger voorstellen
         budgets_title: Burgerbegroting
         visits_title: Bezoeken
-        direct_messages: Directe berichten
+        direct_messages: Privéberichten
         proposal_notifications: Voorstel notificaties
         incomplete_verifications: Onvolledige verificaties
         polls: Peilingen
       direct_messages:
-        title: Directe berichten
+        title: Privéberichten
         total: Totaal
         users_who_have_sent_message: Gebruikers die privéberichten stuurden
       proposal_notifications:
