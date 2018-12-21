@@ -13,7 +13,7 @@ nl:
         voted_info_html: "Je kunt ten alle tijden je stem wijzigen, tot de sluiting van deze fase.br> Je hoeft niet het hele bedrag uit te geven."
         zero: Je hebt nog op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
-        not_logged_in: Je moet%{signin} of %{signup} om verder te gaan.
+        not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
         not_verified: Alleen geverifieerde gebruikers kunnen op voorstellen stemmen; %{verify_account}.
         organization: Organisaties kunnen niet stemmen.
         not_selected: Niet geselecteerde voorstellen kunnen niet worden gesteund.
@@ -96,7 +96,7 @@ nl:
           verify_account: "verifieer je account"
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
-          sign_in: "inloggen"
+          sign_in: "aanmelden"
           sign_up: "registreren"
           by_feasibility: Op haalbaarheid
           feasible: Haalbare voorstellen
