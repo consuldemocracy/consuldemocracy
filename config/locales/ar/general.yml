@@ -108,6 +108,7 @@ ar:
       participate_button_incoming: "مزيد من المعلومات"
       participate_button_expired: "انتهى التصويت"
       no_geozone_restricted: "جميع المدن"
+      geozone_info: "يمكن أن يشارك الناس في التعداد السكاني: "
       already_answer: "انت مشارك في هذا الاستبيان سابقاً"
       not_logged_in: "يجب تسجيل الدخول أو انشاء حساب جديد للمشاركة"
       unverified: "يجب عليك التحقق من الحساب الخاص بك على المشاركة"
