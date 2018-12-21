@@ -406,6 +406,9 @@ en:
           summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
           additional_info_placeholder: Add an additional information you consider useful
+          homepage: Description
+          homepage_description: Here you can explain the content of the process
+          homepage_enabled: Homepage enabled
         index:
           create: New process
           delete: Delete
@@ -435,10 +438,14 @@ en:
           status_planned: Planned
         subnav:
           info: Information
+          homepage: Homepage
           draft_versions: Drafting
           questions: Debate
           proposals: Proposals
           milestones: Following
+      homepage:
+        edit:
+          title: Configure your process homepage
       proposals:
         index:
           title: Proposals

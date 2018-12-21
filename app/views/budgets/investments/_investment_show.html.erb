@@ -80,7 +80,9 @@
         <% end %>
 
         <% if investment.should_show_price_explanation? %>
-          <h2><%= t('budgets.investments.show.price_explanation') %></h2>
+          <h2 id="price_explanation" data-magellan-target="price_explanation">
+            <%= t("budgets.investments.show.price_explanation") %>
+          </h2>
           <p><%= investment.price_explanation %></p>
         <% end %>
 
@@ -177,6 +179,12 @@
               <%= investment.formatted_price %>
             </p>
           </div>
+          <% if investment.should_show_price_explanation? %>
+            <div class="text-center" data-magellan>
+              <%= link_to t("budgets.investments.show.see_price_explanation"),
+                            "#price_explanation", class: "small" %>
+            </div>
+          <% end %>
         <% end %>
 
         <%= render 'shared/social_share',

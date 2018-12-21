@@ -16,7 +16,9 @@ class Legislation::ProcessesController < Legislation::BaseController
     draft_version = @process.draft_versions.published.last
     allegations_phase = @process.allegations_phase
 
-    if  allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
+    if @process.homepage_enabled? && @process.homepage.present?
+      render :show
+    elsif  allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to debate_legislation_process_path(@process)

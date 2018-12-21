@@ -67,7 +67,7 @@ feature 'Proposals' do
       proposals.each do |proposal|
         within('#proposals') do
           expect(page).to     have_link proposal.title
-          expect(page).to_not have_content proposal.summary
+          expect(page).not_to have_content proposal.summary
         end
       end
 
@@ -1789,8 +1789,11 @@ feature 'Successful proposals' do
     end
   end
 
-  scenario 'Successful proposals show create question button to admin users' do
+  scenario 'Successful proposals do not show create question button in index' do
     successful_proposals = create_successful_proposals
+    admin = create(:administrator)
+
+    login_as(admin.user)
 
     visit proposals_path
 
@@ -1799,17 +1802,20 @@ feature 'Successful proposals' do
         expect(page).not_to have_link "Create question"
       end
     end
+  end
 
-    login_as(create(:administrator).user)
+  scenario 'Successful proposals do not show create question button in show' do
+    successful_proposals = create_successful_proposals
+    admin = create(:administrator)
 
-    visit proposals_path
+    login_as(admin.user)
 
     successful_proposals.each do |proposal|
+      visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to have_link "Create question"
+        expect(page).not_to have_link "Create question"
       end
     end
-
   end
 
   context "Skip user verification" do
