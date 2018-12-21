@@ -2,7 +2,7 @@ nl:
   verification:
     alert:
       lock: Je hebt het maximale aantal inlogpogingen bereikt. Probeer het later opnieuw.
-    back: Ga terug naar mijn account
+    back: Terug naar mijn account
     email:
       create:
         alert:
