@@ -1,0 +1,29 @@
+default: &default
+  adapter: <%= ENV['DATABASE_ADAPTER'] %>
+  encoding: <%= ENV['DATABASE_ENCODING'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV['DATABASE_POOL'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+
+# The staging, preproduction and production dbs are only needed
+# for running rake assets:precompile locally before deploying
+staging:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+
+preproduction:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+
+production:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+
+test:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>

@@ -68,6 +68,13 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"
     config.autoload_paths << "#{Rails.root}/app/models/custom"
     config.paths['app/views'].unshift(Rails.root.join('app', 'views', 'custom'))
+
+    # We want to set up a custom logger which logs to STDOUT.
+    # Docker expects your application to log to STDOUT/STDERR and to be ran
+    # in the foreground.
+    config.log_level = :debug
+    config.log_tags  = [:subdomain, :uuid]
+    config.logger    = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
   end
 end
 

@@ -1,7 +1,15 @@
 # Use Ruby 2.3.6 as base image
 FROM ruby:2.3.6
 
+# Various environment variables that can be overruled
 ENV DEBIAN_FRONTEND noninteractive
+ENV DATABASE_ADAPTER postgresql
+ENV DATABASE_ENCODING unicode
+ENV DATABASE_HOST 127.0.0.1
+ENV DATABASE_POOL 5
+ENV DATABASE_USER postgres
+ENV DATABASE_PASSWORD postgres
+ENV SECRET_TOKEN 56792feef405a59b18ea7db57b4777e855103882b926413d4afdfb8c0ea8aa86ea6649da4e729c5f5ae324c0ab9338f789174cf48c544173bc18fdc3b14262e4
 
 # Install essential Linux packages
 RUN apt-get update -qq
@@ -29,11 +37,7 @@ WORKDIR $RAILS_ROOT
 # Use the Gemfiles as Docker cache markers. Always bundle before copying app src.
 # (the src likely changed and we don't want to invalidate Docker's cache too early)
 # http://ilikestuffblog.com/2014/01/06/how-to-skip-bundle-install-when-deploying-a-rails-app-to-docker/
-COPY Gemfile Gemfile
-
-COPY Gemfile.lock Gemfile.lock
-
-COPY Gemfile_custom Gemfile_custom
+COPY Gemfile* ./
 
 # Prevent bundler warnings; ensure that the bundler version executed is >= that which created Gemfile.lock
 RUN gem install bundler
@@ -42,18 +46,19 @@ RUN gem install bundler
 RUN bundle install --full-index
 
 # Install Chromium and ChromeDriver for E2E integration tests
-RUN apt-get update -qq && apt-get install -y chromium
-RUN wget -N http://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip
-RUN chmod +x chromedriver
-RUN mv -f chromedriver /usr/local/share/chromedriver
-RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+#RUN apt-get update -qq && apt-get install -y chromium
+#RUN wget -N http://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
+#RUN unzip chromedriver_linux64.zip
+#RUN chmod +x chromedriver
+#RUN mv -f chromedriver /usr/local/share/chromedriver
+#RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+#RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
 # Copy the Rails application into place
 COPY . .
-
+VOLUME $RAILS_ROOT/config
 # Define the script we want run once the container boots
 # Use the "exec" form of CMD so our script shuts down gracefully on SIGTERM (i.e. `docker stop`)
 # CMD [ "config/containers/app_cmd.sh" ]
+EXPOSE 3000
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
