@@ -35,6 +35,11 @@ feature 'Valuation budgets' do
       expect(page).to have_content(budget3.name)
     end
 
+    scenario "With no budgets" do
+      visit valuation_budgets_path
+
+      expect(page).to have_content "There are no budgets"
+    end
   end
 
 end
