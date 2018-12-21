@@ -241,6 +241,9 @@ ar:
       summary:
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
+    signature_sheets:
+      show:
+        unverified_error: (لم يتم التحقق من قبل التعداد)
     stats:
       show:
         proposal_notifications: إشعارات المقترح
