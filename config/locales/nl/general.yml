@@ -520,6 +520,7 @@ nl:
       title_label: "Titel"
       body_label: "Bericht"
       submit_button: "Stuur bericht"
+      info_about_receivers_html: "Dit bericht zal worden gestuurd aan <strong>%{count} mensen</strong> en zal zichtbaar zijn op %{proposal_page}. <br>Berichten worden niet direct verstuurd maar periodiek."
       proposal_page: "Pagina van het voorstel"
     show:
       back: "Terug naar mijn bijdragen"
