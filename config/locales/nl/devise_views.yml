@@ -49,7 +49,7 @@ nl:
           submit: Registreer
           title: Registreer als vereniging of organisatie
         success:
-          back_to_index: Ik begrijp het, ga terug naar de hoofdpagina
+          back_to_index: Ik begrijp het, terug naar de hoofdpagina
           instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
           title: Aanmelden van organisatie of collectief
     passwords:
