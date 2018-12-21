@@ -133,7 +133,7 @@ nl:
         title: Hulp bij discussies
         description: Start een discussie om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
         help_text_1: "Deze plek voor discussies is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die men belangrijk vindt in de gemeente."
-        help_text_2: '''Om een discussie te starten moet je inloggen op %{org}. Deelnemers kunnen ook reageren op bestaande discussies en deze beoordelen met de knoppen ''Eens'' of ''Oneens'' die bij elke discussie staan.'
+        help_text_2: '''Om een discussie te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande discussies en deze beoordelen met de knoppen ''Eens'' of ''Oneens'' die bij discussies staan.'
     new:
       form:
         submit_button: Start een discussie
@@ -243,7 +243,7 @@ nl:
     help:
       alt: Selecteer de tekst waarop u wilt reageren en druk op de knop met het potlood.
       text: Om te reageren moet je %{sign_in} of %{sign_up}. Selecteer daarna de tekst waarop u wilt reageren en druk op de knop met het potlood.
-      text_sign_in: inloggen
+      text_sign_in: aanmelden
       text_sign_up: registreren
       title: Hoe kan ik reageren op dit document?
   notifications:
@@ -274,21 +274,21 @@ nl:
     start_proposal: Maak een nieuw voorstel
   omniauth:
     facebook:
-      sign_in: Inloggen met Facebook
+      sign_in: Aanmelden via Facebook
       sign_up: Registreren met Facebook
       name: Facebook
     finish_signup:
       title: "Aanvullende details"
       username_warning: "Door een verandering in de manier waarop we met sociale netwerken communiceren, is het mogelijk dat je gebruikersnaam nu als 'al in gebruik' verschijnt. Kies dan een andere gebruikersnaam, aub."
     google_oauth2:
-      sign_in: Inloggen via Google
+      sign_in: Aanmelden via Google
       sign_up: Registreren via Google
       name: Google
     twitter:
       sign_in: Inloggen via Twitter
       sign_up: Registreren via Twitter
       name: Twitter
-    info_sign_in: "Inloggen met:"
+    info_sign_in: "Aanmelden met:"
     info_sign_up: "Registreren met:"
     or_fill: "of vul het volgende in:"
   proposals:
@@ -431,7 +431,7 @@ nl:
       comments_tab: Reacties
       edit_proposal_link: Wijzig
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
-      login_to_comment: Je moet%{signin} of %{signup} om een reactie te plaatsen.
+      login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
       notifications_tab: Notificaties
       retired_warning: "De auteur vind dat dit voorstel niet langer moet worden gesteund."
       retired_warning_link_to_explanation: Lees de uitleg voordat je stemt.
@@ -478,7 +478,7 @@ nl:
       cant_answer_not_logged_in: "Je moet %{signin} of %{signup} om deel te nemen."
       comments_tab: Reacties
       login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
-      signin: Inloggen
+      signin: Aanmelden
       signup: Registreren
       cant_answer_verify_html: "Je moet %{verify_link} om te kunnen antwoorden."
       verify_link: "je account verifieren"
@@ -702,7 +702,7 @@ nl:
         verified_only: Om een privebericht te sturen moet je %{verify_account}
         verify_account: je account verifieren
         authenticate: Je moet %{signin} of %{signup} om verder te gaan.
-        signin: inloggen
+        signin: aanmelden
         signup: registreren
       show:
         receiver: Bericht verstuurd naar %{receiver}
@@ -748,7 +748,7 @@ nl:
     comment_unauthenticated: Je moet %{signin} of %{signup} om te stemmen.
     disagree: Oneens
     organizations: Organisaties mogen niet stemmen
-    signin: Inloggen
+    signin: Aanmelden
     signup: Registreren
     supports: Steunbetuigingen
     unauthenticated: Je moet %{signin} of %{signup} om verder te gaan.
@@ -836,6 +836,6 @@ nl:
     help:
       alt: Selecteer de tekst waarop u wilt reageren en druk op de knop met het potlood.
       text: Om te reageren moet je %{sign_in} of %{sign_up}. Selecteer daarna de tekst waarop u wilt reageren en druk op de knop met het potlood.
-      text_sign_in: inloggen
+      text_sign_in: aanmelden
       text_sign_up: registreren
       title: Hoe kan ik reageren op dit document?
