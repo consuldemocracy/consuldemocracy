@@ -532,8 +532,8 @@ nl:
       valuators: beoordelaars
       poll_officers: Peiling beambten
       polls: Peilingen
-      poll_booths: Locatie stemhokje
-      poll_booth_assignments: Stemhokje toewijzingen
+      poll_booths: Stemlocatie
+      poll_booth_assignments: Stemlocatie toewijzingen
       poll_shifts: Beheer diensten
       officials: Beambten
       organizations: Organisaties
@@ -793,7 +793,7 @@ nl:
     booth_assignments:
       manage_assignments: Bewerk toewijzingen
       manage:
-        assignments_list: "Toewijzingen voor peiling '%{poll}'"
+        assignments_list: "Stemlocaties voor peiling '%{poll}'"
         status:
           assign_status: Toewijzing
           assigned: Toegewezen
@@ -810,7 +810,7 @@ nl:
         error_destroy: "Fout bij verwijderen toewijzing"
         error_create: "Fout bij toewijzing"
       show:
-        location: "Lokatie"
+        location: "Locatie"
         officers: "Beambten"
         officers_list: "Lijst van beambten voor dit stemhokje"
         no_officers: "Er zijn geen beambten voor dit stemhokje"
@@ -825,7 +825,7 @@ nl:
         booths_title: "Lijst stemhokjes"
         no_booths: "Er zijn geen stemhokjes toegewezen aan deze peiling"
         table_name: "Naam"
-        table_location: "Lokatie"
+        table_location: "Locatie"
     polls:
       index:
         title: "Lijst van peilingen"
@@ -945,18 +945,18 @@ nl:
         no_booths: "Er zijn geen stemhokjes."
         add_booth: "Voeg stemhokje toe"
         name: "Naam"
-        location: "Lokatie"
+        location: "Locatie"
         no_location: "Geen Locatie"
       new:
         title: "Nieuw stemhokje"
         name: "Naam"
-        location: "Lokatie"
+        location: "Locatie"
         submit_button: "Nieuw stemhokje"
       edit:
         title: "Bewerk stemhokje"
         submit_button: "Sla op"
       show:
-        location: "Lokatie"
+        location: "Locatie"
       booth:
         shifts: "Bewerk diensten"
         edit: "Bewerk stemhokje"
