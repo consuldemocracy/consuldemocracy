@@ -38,8 +38,8 @@ nl:
         one: "Beoordelaar"
         other: "Beoordelaars"
       valuator_group:
-        one: "Beoordelingsgroep"
-        other: "Beoordelingsgroepen"
+        one: "Evaluatiegroep"
+        other: "Evaluatiegroepen"
       manager:
         one: "Manager"
         other: "Managers"
@@ -53,8 +53,8 @@ nl:
         one: "Organisatie"
         other: "Organisaties"
       poll/booth:
-        one: "Stemhokje"
-        other: "Stemhokjes"
+        one: "stemlocatie"
+        other: "stemlocaties"
       poll/officer:
         one: "Lid"
         other: "Leden"
@@ -110,11 +110,11 @@ nl:
       budget:
         name: "Naam"
         description_accepting: "Omschrijving gedurende de Acceptatiefase"
-        description_reviewing: "Omschrijving gedurende de Beoordelingsfase"
+        description_reviewing: "Omschrijving gedurende de evaluatie"
         description_selecting: "Omschrijving gedurende de Selectiefase"
         description_valuating: "Omschrijving gedurende de Waarderingsfase"
         description_balloting: "Omschrijving gedurende de Stemfase"
-        description_reviewing_ballots: "Omschrijving gedurende de beoordeling van de Stemfase"
+        description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer de begroting is afgerond"
         phase: "Fase"
         currency_symbol: "Valuta"
@@ -162,8 +162,8 @@ nl:
         password: "Wachtwoord"
         current_password: "Huidig wachtwoord"
         phone_number: "Telefoonnummer"
-        official_position: "Officiele positie"
-        official_level: "Officieel niveau"
+        official_position: "Positie"
+        official_level: "Niveau"
         redeemable_code: "Verificatiecode ontvangen via email"
       organization:
         name: "Organisatienaam"
@@ -353,9 +353,9 @@ nl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Je kunt niet reageren op een beoordeling'
+              cannot_comment_valuation: 'Je kunt niet reageren op een evaluatie'
       messages:
-        record_invalid: "Beoordeling mislukt: %{errors}"
+        record_invalid: "Evaluatie mislukt: %{errors}"
         restrict_dependent_destroy:
           has_one: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
           has_many: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
