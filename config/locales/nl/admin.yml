@@ -67,7 +67,7 @@ nl:
           on_debates: Debatten
           on_proposals: Voorstellen
           on_users: Deelnemers
-          on_system_emails: E-mails van het systeem
+          on_system_emails: Systeemberichten
         title: Moderator activiteit
         type: Type
         no_activity: Er is geen moderator activiteit.
@@ -527,7 +527,7 @@ nl:
       messaging_users: Berichten naar gebruikers
       newsletters: Nieuwsbrieven
       admin_notifications: Meldingen
-      system_emails: E-mails van het systeem
+      system_emails: Systeemberichten
       emails_download: E-mails download
       valuators: beoordelaars
       poll_officers: Peiling beambten
@@ -602,11 +602,11 @@ nl:
       invalid_recipients_segment: "Gebruikerssegment deelnemers is ongeldig"
     newsletters:
       create_success: Nieuwbrief aangamaakt
-      update_success: Nieuwbrieven aangapast
-      send_success: Nieuwbrieven verzonden
-      delete_success: Nieuwbrieven verwijderd
+      update_success: Nieuwsbrief gewijzigd
+      send_success: Nieuwsbrief verzonden
+      delete_success: Nieuwsbrief verwijderd
       index:
-        title: Nieuwbrieven
+        title: Nieuwsbrieven
         new_newsletter: Nieuwe nieuwsbrief
         subject: Onderwerp
         segment_recipient: Geadresseerden
@@ -623,7 +623,7 @@ nl:
       edit:
         title: Bewerk nieuwsbrief
       show:
-        title: Nieuwbrieven tonen
+        title: Voorbeeld
         send: Stuur
         affected_users: (betreft %{n} deelnemers)
         sent_emails:
