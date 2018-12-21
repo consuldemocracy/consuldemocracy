@@ -7,6 +7,7 @@ ar:
         password:
           reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
     document_verifications:
+      not_in_census: لم يتم تسجيل هذا المستند.
       please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
     email_label: البريد الإلكتروني
     date_of_birth: تاريخ الميلاد
