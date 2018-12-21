@@ -313,7 +313,7 @@ nl:
         no_hidden_comments: Er is geen verborgen commentaar.
     dashboard:
       index:
-        back: Ga terug naar
+        back: Terug naar %{org}
         title: Beheer
         description: Welkom op de %{org} beheers pagina.
     debates:
