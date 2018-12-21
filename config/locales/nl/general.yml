@@ -19,7 +19,7 @@ nl:
       subscription_to_website_newsletter_label: Stuur me email met relevante informatie over de website
       email_on_direct_message_label: Stuur me email naar aanleiding van directe berichten
       email_digest_label: Stuur me een samenvatting van meldingen naar aanleiding van voorstellen
-      official_position_badge_label: Toon officiele positie badge
+      official_position_badge_label: Toon positiebadge
       recommendations: Aanbevelingen
       show_debates_recommendations: Laat discussie aanbevelingen zien
       show_proposals_recommendations: Laat aanbevelingen van de voorstellen zien
@@ -67,7 +67,7 @@ nl:
       most_commented: Meeste reacties
     select_order: Sorteer op
     show:
-      return_to_commentable: 'Ga terug naar'
+      return_to_commentable: 'Terug naar'
   comments_helper:
     comment_button: Plaats reactie
     comment_link: Reactie
@@ -220,7 +220,7 @@ nl:
       logo: CONSUL logo
       management: Management
       moderation: Moderatie
-      valuation: Beoordeling
+      valuation: Evaluatie
       officing: Stembureau
       help: Help
       my_account_link: Mijn account
@@ -472,7 +472,7 @@ nl:
         description: Burger opiniepeilingen zijn een participatieve mechanisme waarmee burgers met stemrecht direct beslissingen kunnen nemen
       no_polls: "Er zijn geen openstaande stemmingen."
     show:
-      already_voted_in_booth: "Je hebt al gestemd in een stemhokje. Je kunt niet meer deelnemen."
+      already_voted_in_booth: "Je hebt al gestemd op een stemlocatie. Je mag niet nog een keer stemmen."
       already_voted_in_web: "Je hebt al deelgenomen in deze stemronde. Als je nogmaals stemt, wordt je eerdere stemming overschreven."
       back: Terug naar stemmen
       cant_answer_not_logged_in: "Je moet %{signin} of %{signup} om deel te nemen."
@@ -500,7 +500,7 @@ nl:
         total_votes: "Totaal aantal stemmen"
         votes: "stemmen"
         web: "web"
-        booth: "Stemhokje"
+        booth: "Stemlocatie"
         total: "Totaal"
         valid: "Geldig"
         white: "Blanco stemmen"
@@ -522,7 +522,7 @@ nl:
       submit_button: "Stuur bericht"
       proposal_page: "Pagina van het voorstel"
     show:
-      back: "Ga terug naar mijn bijdragen"
+      back: "Terug naar mijn bijdragen"
   shared:
     edit: 'Wijzig'
     save: 'Sla op'
@@ -549,7 +549,7 @@ nl:
       to: 'Aan'
     author_info:
       author_deleted: Gebruiker verwijderd
-    back: Ga terug
+    back: Terug
     check: Selecteer
     check_all: Alle
     check_none: Geen
