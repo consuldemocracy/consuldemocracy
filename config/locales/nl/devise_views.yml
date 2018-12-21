@@ -102,7 +102,7 @@ nl:
           update_submit: Pas aan
           waiting_for: 'In afwachting van bevestiging:'
         new:
-          cancel: Annuleer inloggen
+          cancel: Aanmelden annuleren
           email_label: Email
           organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
           organization_signup_link: Hier aanmelden
