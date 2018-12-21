@@ -1,6 +1,8 @@
 files:
   - source: /config/locales/custom/es/**.yml
     translation: /config/locales/custom/%locale%/%original_file_name%
+    ignore:
+      - /config/locales/**/rails_date_order.yml
     languages_mapping:
       locale:
         en: en

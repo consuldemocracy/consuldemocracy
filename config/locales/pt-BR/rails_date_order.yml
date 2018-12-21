@@ -1,0 +1,6 @@
+pt-BR:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
