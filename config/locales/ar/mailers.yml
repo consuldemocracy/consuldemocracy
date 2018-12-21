@@ -27,6 +27,7 @@ ar:
       unsubscribe_account: حسابي
     direct_message_for_receiver:
       subject: "لقد تلقيت رسالة خاصة جديدة"
+      unsubscribe_account: حسابي
     direct_message_for_sender:
       subject: "لقد قمت بإرسال رسالة خاصة جديدة"
       title_html: "وقد أرسلت رسالة خاصة جديدة إلى <strong>%{receiver}</strong> مع المحتوى:"
@@ -38,12 +39,22 @@ ar:
       button: إكمال التسجيل
       subject: "دعوة إلى %{org_name}"
     budget_investment_created:
+      subject: "شكرا لك لانشاء استثمار!"
+      title: "شكرا لك لانشاء استثمار!"
+      intro_html: "مرحبا <strong>%{author}</strong>،"
+      text_html: "شكرا لك لإنشاء استثمارك <strong>%{investment}</strong> من اجل الميزانيات المشتركة <strong>%{budget}</strong>."
       follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
+      follow_link: "الميزانية التشاركية"
+      sincerely: "مع خالص التقدير،"
+      share: "شارك مشروعك"
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
       new_href: "مشروع استثماري جديد"
+      sincerely: "مع خالص التقدير،"
+      sorry: "عذراً للإزعاج وشكر على مشاركتكم."
       subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
     budget_investment_selected:
+      subject: "مشروعك %{code} تم اختياره"
       hi: "عزيزي المستخدم،"
     budget_investment_unselected:
       hi: "عزيزي المستخدم،"
