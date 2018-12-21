@@ -18,7 +18,7 @@ nl:
       last_attempt: "Je hebt nog 1 poging tot je account wordt geblokkeerd."
       not_found_in_database: "Ongeldig %{authentication_keys} of wachtwoord."
       timeout: "Je sessie is verlopen. Log alsjeblieft opnieuw in om verder te gaan."
-      unauthenticated: "Je moet inloggen of registreren om verder te gaan."
+      unauthenticated: "Je moet aanmelden of registreren om verder te gaan."
       unconfirmed: "Om verder te gaan, klik op de bevestigingslink die je via email hebt ontvangen."
     mailer:
       confirmation_instructions:
@@ -39,8 +39,8 @@ nl:
     registrations:
       destroyed: "Tot ziens! Uw account is geannuleerd. Wij hopen u snel weer te zien."
       signed_up: "U bent inschreven."
-      signed_up_but_inactive: "Je registratie is succesvol verlopen, maar je kunt nog niet inloggen totdat je jouw account hebt geactiveerd."
-      signed_up_but_locked: "Je registratie is succesvol verlopen, maar je kunt niet inloggen omdat je account is geblokkeerd."
+      signed_up_but_inactive: "Registratie is succesvol verlopen, je kunt aanmelden zodra je account is geactiveerd."
+      signed_up_but_locked: "Registratie is succesvol verlopen, maar je kunt niet aanmelden omdat het account is geblokkeerd."
       signed_up_but_unconfirmed: "Een emailbericht met een verificatielink is zojuist naar je verstuurd. Klik alsjeblieft op deze link om je account te activeren."
       update_needs_confirmation: "Je acount is succesvol bijgewerkt, maar je nieuwe emailadres moet nog wel geverifieerd worden. Check alsjeblieft je mail en klik op de link in de zojuist verstuurde email om je nieuwe emailadres te bevestigen."
       updated: "Je account is succesvol bijgewerkt."
@@ -51,7 +51,7 @@ nl:
     unlocks:
       send_instructions: "Binnen enkele minuten ontvang je een email met instructies hoe je jouw account kunt deblokkeren."
       send_paranoid_instructions: "ALs je een account hebt, ontvang je binnen enkele minuten een email met instructies hoe je jouw account kunt deblokkeren."
-      unlocked: "Je account is gedeblokkeerd. Log alsjeblieft in om verder te gaan."
+      unlocked: "Account is gedeblokkeerd. meld je aan om verder te gaan."
   errors:
     messages:
       already_confirmed: "Je bent al geverifieerd; log alsjeblieft in."
