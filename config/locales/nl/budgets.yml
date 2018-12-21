@@ -62,8 +62,8 @@ nl:
       form:
         tag_category_label: "Categorieën"
         tags_instructions: "Label dit voorstel. Je kunt je eigen categorie invoeren of kiezen uit voorgestelde categorieen."
-        tags_label: Labels
-        tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door komma's (',')"
+        tags_label: Termen
+        tags_placeholder: "Voer termen in die de kenmerken van de discussie aanduiden (Gebruik een komma als scheidingsteken)."
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan."
         map_remove_marker: "Locatie verwijderen"
