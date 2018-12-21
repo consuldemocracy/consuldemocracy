@@ -18,7 +18,7 @@
         <%= t("budgets.phase.#{@budget.phase}") %>
       </td>
       <td>
-        <%= @investments_with_valuation_open %>
+        <%= @investments.count %>
       </td>
       <td>
         <%= link_to t("valuation.budgets.index.evaluate"),
