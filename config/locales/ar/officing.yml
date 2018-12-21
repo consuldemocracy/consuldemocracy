@@ -11,6 +11,9 @@ ar:
         no_results: "لا توجد نتائج"
         results: النتائج
         table_answer: الإجابة
+    residence:
+      new:
+        error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
     voters:
       new:
         title: استبيانات
