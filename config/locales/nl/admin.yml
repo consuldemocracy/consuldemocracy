@@ -808,7 +808,7 @@ nl:
         destroy: "Stemhokje niet meer toegewezen"
         create: "Stemhokje toegewezen"
         error_destroy: "Fout bij verwijderen toewijzing"
-        error_create: "Fout bij toewijzing"
+        error_create: "Toewijzen van stemlocatie mislukt"
       show:
         location: "Locatie"
         officers: "Beambten"
