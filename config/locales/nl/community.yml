@@ -16,7 +16,7 @@ nl:
       create_first_community_topic:
         first_theme_not_logged_in: Er is nog niets geplaatst, wees de eerste die een onderwerp plaatst!
         first_theme: Creeer het eerste community onderwerp.
-        sign_in: "inloggen"
+        sign_in: "aanmelden"
         sign_up: "registreren"
       tab:
         participants: deelnemers
