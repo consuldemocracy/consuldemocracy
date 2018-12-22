@@ -106,7 +106,7 @@ nl:
       orders:
         confidence_score: hoogst beoordeeld
         created_at: nieuwste
-        hot_score: meest actieve
+        hot_score: actieve
         most_commented: met meeste reacties
         relevance: relevantie
         recommendations: aanbevelingen
@@ -343,7 +343,7 @@ nl:
       orders:
         confidence_score: Best beoordeeld
         created_at: Nieuwste
-        hot_score: Meest actieve
+        hot_score: actieve
         most_commented: Met meeste reacties
         relevance: Relevantie
         archival_date: Gearchiveerd
@@ -599,14 +599,14 @@ nl:
       districts: "Regio's"
       districts_list: "Lijst met regio's"
       categories: "Categorieen"
-    target_blank_html: " (link opent in een nieuw venster)"
+    target_blank_html: " (opent een nieuw venster)"
     you_are_in: "Je bent in"
     unflag: Hef markering op
     unfollow_entity: "Ontvolg %{entity}"
     outline:
       budget: Burgerbegroting
       searcher: Zoeker
-    go_to_page: "Ga naar de pagina van"
+    go_to_page: "Ga naar de pagina van "
     share: Deel
     orbit:
       previous_slide: Vorige slide
@@ -773,8 +773,8 @@ nl:
   welcome:
     feed:
       most_active:
-        debates: "Meest actieve discussies"
-        proposals: "Meest actieve voorstellen"
+        debates: "Discussies"
+        proposals: "Voorstellen"
         processes: "Open plannen"
       see_all_debates: Alle debatten
       see_all_proposals: Alle voorstellen
