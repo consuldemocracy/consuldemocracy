@@ -2,7 +2,7 @@ nl:
   pages:
     conditions:
       title: Gebruikersvoorwaarden
-      subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN PERSOONSGEGEVENS VAN DE OPEN OVERHEID PORTAL
+      subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
       description: Informatiepagina over de gebruiksvoorwaarden, privacy en bescherming van persoonsgegevens.
     help:
       title: "%{org} is een platform voor burgerparticipatie"
@@ -66,7 +66,7 @@ nl:
       titles:
         how_to_use: Gebruik het in je gemeente
     privacy:
-      title: Privacy Verklaring
+      title: Privacybeleid
       subtitle: INFORMATIE OVER GEGEVENSBESCHERMING
       info_items:
         - 
@@ -78,11 +78,11 @@ nl:
         - 
           subitems:
             - 
-              field: 'De naam van het bestand:'
+              field: 'Bestandsnaam:'
               description: NAAM VAN HET BESTAND
             - 
               field: 'Doel van het bestand:'
-              description: Het beheer van participatieve processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
+              description: Het beheer van participatie processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
             - 
               field: 'Instelling die belast is met het bestand:'
               description: INSTELLING DIE BELAST IS MET HET BESTAND
@@ -181,7 +181,7 @@ nl:
       accessibility: Toegankelijkheid
       conditions: Gebruikersvoorwaarden
       help: "Wat is %{org}? - Burgerparticipatie"
-      privacy: Privacy beleid
+      privacy: Privacybeleid
     verify:
       code: Code die je in je email ontvangt
       email: Email
