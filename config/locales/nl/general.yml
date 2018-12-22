@@ -2,8 +2,8 @@ nl:
   account:
     show:
       change_credentials_link: Pas mijn toegangsgegevens aan
-      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen of discussie reageert
-      email_on_comment_reply_label: Stuur me een email wanneer iemand op mijn reactie reageert
+      email_on_comment_label: Wanneer iemand reageert op mijn voorstellen of discussie
+      email_on_comment_reply_label: Wanneer iemand reageert op mijn reacties
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
       notifications: Notificaties
@@ -11,20 +11,20 @@ nl:
       organization_responsible_name_placeholder: Vertegenwoordiger van de organisatie/vereniging
       personal: Persoonlijke gegevens
       phone_number_label: Telefoonnummer
-      public_activity_label: Mijn activiteiten zijn publiekelijk zichtbaar
-      public_interests_label: De labels van de zaken die ik volg zijn publiekelijk zichtbaar
+      public_activity_label: Anderen mogen mijn activiteit zien
+      public_interests_label: Termen die ik volg zijn zichtbaar voor anderen
       public_interests_my_title_list: Labels van zaken die je volgt
-      public_interests_user_title_list: Labels van zaken die deze gebruiker volgt
+      public_interests_user_title_list: Termen die deze persoon volgt
       save_changes_submit: Bewaar wijzigingen
       subscription_to_website_newsletter_label: Stuur me email met relevante informatie over de website
       email_on_direct_message_label: Email ontvangen wanneer er privéberichten zijn
-      email_digest_label: Stuur me een samenvatting van meldingen naar aanleiding van voorstellen
+      email_digest_label: Stuur samenvattingen van berichten bij voorstellen
       official_position_badge_label: Toon positiebadge
       recommendations: Aanbevelingen
       show_debates_recommendations: Laat discussie aanbevelingen zien
       show_proposals_recommendations: Laat aanbevelingen van de voorstellen zien
       title: Mijn account
-      user_permission_debates: Neem deel aan discussies
+      user_permission_debates: Deelnemen aan discussies
       user_permission_info: Met je account kun je...
       user_permission_proposal: Nieuwe voorstellen indienen
       user_permission_support_proposal: Voorstellen steunen
