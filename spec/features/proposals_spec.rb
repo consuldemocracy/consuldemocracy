@@ -523,7 +523,7 @@ feature 'Proposals' do
       expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select 'Duplicated', from: 'proposal_retired_reason'
-      fill_in 'proposal_retired_explanation', with: 'There are three other better proposals with the same subject'
+      fill_in 'Explanation', with: 'There are three other better proposals with the same subject'
       click_button "Retire proposal"
 
       expect(page).to have_content "Proposal retired"
@@ -536,7 +536,7 @@ feature 'Proposals' do
       expect(page).to have_content 'There are three other better proposals with the same subject'
     end
 
-    scenario 'Fields are mandatory' do
+    scenario 'Fields are mandatory', :js do
       proposal = create(:proposal)
       login_as(proposal.author)
 
