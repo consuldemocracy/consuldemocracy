@@ -488,6 +488,17 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["proposal_id"], name: "index_dashboard_executed_actions_on_proposal_id", using: :btree
   end
 
+  create_table "debate_translations", force: :cascade do |t|
+    t.integer  "debate_id",   null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.text     "description"
+    t.index ["debate_id"], name: "index_debate_translations_on_debate_id", using: :btree
+    t.index ["locale"], name: "index_debate_translations_on_locale", using: :btree
+  end
+
   create_table "debates", force: :cascade do |t|
     t.string   "title",                        limit: 80
     t.text     "description"
