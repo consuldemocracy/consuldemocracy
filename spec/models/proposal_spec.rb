@@ -8,6 +8,7 @@ describe Proposal do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
     it_behaves_like "map validations"
+    it_behaves_like "globalizable", :proposal
   end
 
   it "is valid" do
@@ -44,8 +45,34 @@ describe Proposal do
   describe "#description" do
     it "is sanitized" do
       proposal.description = "<script>alert('danger');</script>"
+
       proposal.valid?
+
       expect(proposal.description).to eq("alert('danger');")
+    end
+
+    it "is sanitized using globalize accessors" do
+      proposal.description_en = "<script>alert('danger');</script>"
+
+      proposal.valid?
+
+      expect(proposal.description_en).to eq("alert('danger');")
+    end
+
+    it "is html_safe" do
+      proposal.description = "<script>alert('danger');</script>"
+
+      proposal.valid?
+
+      expect(proposal.description).to be_html_safe
+    end
+
+    it "is html_safe using globalize accessors" do
+      proposal.description_en = "<script>alert('danger');</script>"
+
+      proposal.valid?
+
+      expect(proposal.description_en).to be_html_safe
     end
 
     it "is not valid when very long" do
@@ -158,6 +185,57 @@ describe Proposal do
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
 
     Setting["proposal_code_prefix"] = "MAD"
+  end
+
+  describe "#retired_explanation" do
+    it "is valid when retire_form is not present and retired explanation is empty" do
+      proposal.retire_form = false
+      proposal.retired_explanation = nil
+      expect(proposal).to be_valid
+    end
+
+    it "is valid when retire_form is present and retired explanation is defined" do
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retire_form = true
+      proposal.retired_reason = "duplicated"
+      expect(proposal).to be_valid
+    end
+
+    it "is not valid when retire_form is present and retired explanation is empty" do
+      proposal.retired_explanation = nil
+      proposal.retire_form = true
+      proposal.retired_reason = "duplicated"
+      expect(proposal).not_to be_valid
+    end
+  end
+
+  describe "#retired_reason" do
+    it "is valid when retire_form is not present and retired reason is empty" do
+      proposal.retire_form = false
+      proposal.retired_reason = nil
+      expect(proposal).to be_valid
+    end
+
+    it "is valid when retire_form is present and retired reason is defined" do
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retire_form = true
+      proposal.retired_reason = "duplicated"
+      expect(proposal).to be_valid
+    end
+
+    it "is not valid when retire_form is present and defined retired reason is not included in retired reasons" do
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retire_form = true
+      proposal.retired_reason = "duplicate"
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid when retire_form is present and retired reason is empty" do
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retire_form = true
+      proposal.retired_reason = nil
+      expect(proposal).not_to be_valid
+    end
   end
 
   describe "#editable?" do

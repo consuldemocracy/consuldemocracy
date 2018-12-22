@@ -1115,6 +1115,21 @@ ActiveRecord::Schema.define(version: 20190122133850) do
     t.datetime "confirmed_hide_at"
   end
 
+  create_table "proposal_translations", force: :cascade do |t|
+    t.integer  "proposal_id",         null: false
+    t.string   "locale",              null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "question"
+    t.text     "summary"
+    t.text     "retired_explanation"
+  end
+
+  add_index "proposal_translations", ["locale"], name: "index_proposal_translations_on_locale", using: :btree
+  add_index "proposal_translations", ["proposal_id"], name: "index_proposal_translations_on_proposal_id", using: :btree
+
   create_table "proposals", force: :cascade do |t|
     t.string   "title",               limit: 80
     t.text     "description"

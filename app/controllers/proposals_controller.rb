@@ -53,7 +53,8 @@ class ProposalsController < ApplicationController
   end
 
   def retire
-    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.current))
+    @proposal.retire_form = true
+    if @proposal.update(retired_params.merge(retired_at: Time.current))
       redirect_to proposal_path(@proposal), notice: t('proposals.notice.retired')
     else
       render action: :retire_form
@@ -98,13 +99,8 @@ class ProposalsController < ApplicationController
     end
 
     def retired_params
-      params.require(:proposal).permit(:retired_reason, :retired_explanation)
-    end
-
-    def valid_retired_params?
-      @proposal.errors.add(:retired_reason, I18n.t('errors.messages.blank')) if params[:proposal][:retired_reason].blank?
-      @proposal.errors.add(:retired_explanation, I18n.t('errors.messages.blank')) if params[:proposal][:retired_explanation].blank?
-      @proposal.errors.empty?
+      attributes = [:retired_reason]
+      params.require(:proposal).permit(attributes, translation_params(Proposal))
     end
 
     def resource_model
@@ -156,5 +152,4 @@ class ProposalsController < ApplicationController
         @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
       end
     end
-
 end
