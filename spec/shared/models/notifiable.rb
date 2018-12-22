@@ -78,7 +78,8 @@ shared_examples "notifiable" do
       notification = create(:notification, notifiable: notifiable)
 
       if notifiable.respond_to?(:retired_at)
-        notifiable.update(retired_at: Time.current)
+        notifiable.update(retired_at: Time.current, retired_reason: "unfeasible",
+          retired_explanation: "Unfeasibility explanation ...")
         expect(notification.check_availability(notifiable)).to be(false)
       end
     end
