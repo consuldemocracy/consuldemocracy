@@ -5,6 +5,8 @@ describe Budget::Investment do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "globalizable", :budget_investment
+    it_behaves_like "acts as imageable", :budget_investment_image
   end
 
   it "is valid" do
@@ -33,12 +35,38 @@ describe Budget::Investment do
     end
   end
 
-  it_behaves_like "acts as imageable", "budget_investment_image"
+  describe "#description" do
+    it "is sanitized" do
+      investment.description = "<script>alert('danger');</script>"
 
-  it "sanitizes description" do
-    investment.description = "<script>alert('danger');</script>"
-    investment.valid?
-    expect(investment.description).to eq("alert('danger');")
+      investment.valid?
+
+      expect(investment.description).to eq("alert('danger');")
+    end
+
+    it "is sanitized using globalize accessors" do
+      investment.description_en = "<script>alert('danger');</script>"
+
+      investment.valid?
+
+      expect(investment.description_en).to eq("alert('danger');")
+    end
+
+    it "is html_safe" do
+      investment.description = "<script>alert('danger');</script>"
+
+      investment.valid?
+
+      expect(investment.description).to be_html_safe
+    end
+
+    it "is html_safe using globalize accessors" do
+      investment.description_en = "<script>alert('danger');</script>"
+
+      investment.valid?
+
+      expect(investment.description_en).to be_html_safe
+    end
   end
 
   it "set correct group and budget ids" do
@@ -523,6 +551,20 @@ describe Budget::Investment do
         unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
 
         expect(described_class.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
+      end
+    end
+
+    describe "sort_by_title" do
+      it "should take into consideration title fallbacks when there is no
+          translation for current locale" do
+        english_investment = create(:budget_investment, :selected, title: "English title")
+        spanish_investment = Globalize.with_locale(:es) do
+          I18n.with_locale(:es) do
+            create(:budget_investment, :selected, title: "Título en español")
+          end
+        end
+
+        expect(described_class.sort_by_title).to eq [english_investment, spanish_investment]
       end
     end
   end
