@@ -505,7 +505,7 @@ describe "Proposals" do
       expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select "Duplicated", from: "proposal_retired_reason"
-      fill_in "proposal_retired_explanation", with: "There are three other better proposals with the same subject"
+      fill_in "Explanation", with: "There are three other better proposals with the same subject"
       click_button "Retire proposal"
 
       expect(page).to have_content "Proposal retired"
@@ -518,7 +518,7 @@ describe "Proposals" do
       expect(page).to have_content "There are three other better proposals with the same subject"
     end
 
-    scenario "Fields are mandatory" do
+    scenario "Fields are mandatory", :js do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -534,7 +534,7 @@ describe "Proposals" do
       Setting["feature.featured_proposals"] = true
       create_featured_proposals
       not_retired = create(:proposal)
-      retired = create(:proposal, retired_at: Time.current)
+      retired = create(:proposal, :retired)
 
       visit proposals_path
 
@@ -548,7 +548,7 @@ describe "Proposals" do
     scenario "Index has a link to retired proposals list" do
       create_featured_proposals
       not_retired = create(:proposal)
-      retired = create(:proposal, retired_at: Time.current)
+      retired = create(:proposal, :retired)
 
       visit proposals_path
 
@@ -568,8 +568,8 @@ describe "Proposals" do
     end
 
     scenario "Retired proposals index has links to filter by retired_reason" do
-      unfeasible = create(:proposal, retired_at: Time.current, retired_reason: "unfeasible")
-      duplicated = create(:proposal, retired_at: Time.current, retired_reason: "duplicated")
+      unfeasible = create(:proposal, :retired, retired_reason: "unfeasible")
+      duplicated = create(:proposal, :retired, retired_reason: "duplicated")
 
       visit proposals_path(retired: "all")
 

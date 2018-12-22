@@ -62,6 +62,8 @@ FactoryBot.define do
 
     trait :retired do
       retired_at { Time.current }
+      retired_reason "unfeasible"
+      retired_explanation "Retired explanation"
     end
 
     trait :published do
