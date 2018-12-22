@@ -209,6 +209,18 @@ ActiveRecord::Schema.define(version: 20190122133850) do
 
   add_index "budget_investment_statuses", ["hidden_at"], name: "index_budget_investment_statuses_on_hidden_at", using: :btree
 
+  create_table "budget_investment_translations", force: :cascade do |t|
+    t.integer  "budget_investment_id", null: false
+    t.string   "locale",               null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "budget_investment_translations", ["budget_investment_id"], name: "index_budget_investment_translations_on_budget_investment_id", using: :btree
+  add_index "budget_investment_translations", ["locale"], name: "index_budget_investment_translations_on_locale", using: :btree
+
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
     t.integer  "administrator_id"
