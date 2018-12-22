@@ -59,8 +59,8 @@ nl:
         one: "Lid"
         other: "Leden"
       proposal:
-        one: "Inwonervoorstel"
-        other: "Inwonervoorstellen"
+        one: "Voorstel"
+        other: "Voorstellen"
       spending_proposal:
         one: "Begrotingsvoorstel"
         other: "Begrotingsvoorstellen"
