@@ -11,15 +11,20 @@ section "Creating header and cards for the homepage" do
   Widget::Card.create!(
     title_en: 'CONSUL',
     title_es: 'CONSUL',
+    title_nl: 'CONSUL',
 
     description_en: 'Free software for citizen participation.',
     description_es: 'Software libre para la participación ciudadana.',
+    description_nl: 'Open software voor participatie.',
 
     link_text_en: 'More information',
     link_text_es: 'Más información',
+    link_text_nl: 'Meer informatie',
 
     label_en: 'Welcome to',
     label_es: 'Bienvenido a',
+    label_nl: 'Welkom bij',
+
 
     link_url: 'http://consulproject.org/',
     header: true,
@@ -35,9 +40,11 @@ section "Creating header and cards for the homepage" do
 
     link_text_en: 'More about debates',
     link_text_es: 'Más sobre debates',
+    link_text_nl: 'Over discussies',
 
     label_en: 'Debates',
     label_es: 'Debates',
+    label_nl: 'Discussies',
 
     link_url: 'https://youtu.be/zU_0UN4VajY',
     header: false,

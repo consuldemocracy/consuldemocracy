@@ -1,10 +1,7 @@
 <footer>
   <div class="row">
     <div class="small-12 large-4 column">
-      <h1 class="logo">
-        <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-      </h1>
-
+      <%= t("layouts.header.open_gov") %>
       <p class="info">
         <%= t("layouts.footer.description",
           open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
@@ -16,7 +13,7 @@
 
     <div class="footer-sections small-12 large-8 column">
       <div class="small-12 medium-4 column">
-        <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
+        <%= t("layouts.footer.participation_title") %>
         <p><%= t("layouts.footer.participation_text") %></p>
       </div>
     </div>

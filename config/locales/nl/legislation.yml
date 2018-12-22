@@ -58,10 +58,10 @@ nl:
       index:
         filter: Filter
         filters:
-          open: Open processen
+          open: Actieve plannen
           next: Toekomstige
           past: Vorige
-        no_open_processes: Er zijn geen open processen
+        no_open_processes: Er zijn geen actieve plannen
         no_next_processes: Er zijn geen toekomstige plannen
         no_past_processes: Er zijn geen afgesloten plannen
         section_header:

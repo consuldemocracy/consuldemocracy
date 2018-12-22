@@ -198,10 +198,11 @@ nl:
       ie: U gebruikt Internet Explorer. We raden %{firefox} of %{chrome} aan voor de beste resultaten.
       ie_title: Deze site is niet geoptimaliseerd voor uw browser
     footer:
-      accessibility: Toegangkelijkheid
+      accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
       consul: Consul
       consul_url: https://github.com/consul/consul
+      contact_us: Neem voor technische ondersteuning contact op met de beheerder
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
       open_source: open-source software
@@ -605,7 +606,7 @@ nl:
     outline:
       budget: Burgerbegroting
       searcher: Zoeker
-    go_to_page: "Ga naar de pagina van"
+    go_to_page: "Ga naar de pagina van "
     share: Deel
     orbit:
       previous_slide: Vorige slide
@@ -772,14 +773,14 @@ nl:
   welcome:
     feed:
       most_active:
-        debates: "Meest actieve discussies"
-        proposals: "Meest actieve voorstellen"
-        processes: "Open processen"
-      see_all_debates: Zie alle debatten
-      see_all_proposals: Zie alle voorstellen
-      see_all_processes: Zie alle processen
-      process_label: Proces
-      see_process: Zie proces
+        debates: "Discussies"
+        proposals: "Voorstellen"
+        processes: "Plannen"
+      see_all_debates: Alle debatten
+      see_all_proposals: Alle voorstellen
+      see_all_processes: Alle plannen
+      process_label: Plan
+      see_process: Meer...
     cards:
       title: Uitgelicht
     recommended:

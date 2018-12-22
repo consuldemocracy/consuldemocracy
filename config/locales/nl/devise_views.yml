@@ -33,9 +33,9 @@ nl:
         unlock_link: Deblokkeer mijn account.
     menu:
       login_items:
-        login: Log in
-        logout: Log uit
-        signup: Registreer
+        login: Aanmelden
+        logout: Afmelden
+        signup: Registreren
     organizations:
       registrations:
         new:
