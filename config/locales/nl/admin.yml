@@ -219,6 +219,8 @@ nl:
         tags: Labels
         user_tags: Deelnemerslabels
         undefined: Niet gedefinieerd
+        milestone: Mijlpaal
+        new_milestone: Nieuwe mijlpaal
         compatibility:
           title: Compatibiliteit
           "true": Niet compatibel
@@ -266,8 +268,6 @@ nl:
         image: "Afbeelding"
         show_image: "Toon afbeelding"
         documents: "Documenten"
-        milestone: Mijlpaal
-        new_milestone: Nieuwe mijlpaal
       form:
         admin_statuses: Beheerderstatussen
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
@@ -337,7 +337,6 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen deelnemers
         user: Deelnemer
-        no_hidden_users: Er zijn geen verborgen deelnemers.
       show:
         email: 'E-mail:'
         hidden_at: 'Verborgen op:'
@@ -383,7 +382,6 @@ nl:
         index:
           create: Nieuw plan
           delete: Verwijder
-          title: Plannen
           filters:
             open: Open
             next: Volgende
@@ -403,7 +401,7 @@ nl:
           status_planned: Gepland
         subnav:
           info: Informatie
-          draft_versions: Tekst
+          draft_texts: Tekst
           questions: Debat
           proposals: Voorstellen
       proposals:
@@ -968,7 +966,6 @@ nl:
       index:
         title: Beambten
         no_officials: Er zijn geen officials.
-        name: Naam
         official_position: Official positie
         official_level: Niveau
       level_0: Geen beambte
@@ -1010,7 +1007,7 @@ nl:
       search:
         title: Zoek Organisaties
         no_results: Geen organisaties gevonden.
-    hidden_proposals:
+    proposals:
       index:
         filter: Filter
         filters:
@@ -1352,11 +1349,9 @@ nl:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
       header_title: Koptekst
-      no_header: Er is geen header.
       create_header: Koptekst maken
       cards_title: Kaarten
       create_card: Kaart aanmaken
-      no_cards: Er zijn geen tegels.
       cards:
         title: Titel
         description: Beschrijving
