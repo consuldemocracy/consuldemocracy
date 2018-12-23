@@ -1,6 +1,7 @@
 class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
+  include Translatable
 
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
@@ -36,8 +37,9 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+      attributes = [:external_url, :video_url, :responsible_name, :tag_list,
+                    :terms_of_service, :geozone_id]
+      params.require(:proposal).permit(attributes, translation_params(Proposal))
     end
 
     def resource_model
