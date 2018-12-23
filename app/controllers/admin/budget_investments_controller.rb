@@ -1,6 +1,7 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
+  include Translatable
 
   feature_flag :budgets
 
@@ -81,10 +82,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def budget_investment_params
-      params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
+      attributes = [:external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
-                    valuator_ids: [], valuator_group_ids: [])
+                    valuator_ids: [], valuator_group_ids: []]
+      params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 
     def load_budget
