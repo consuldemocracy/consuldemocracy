@@ -2,6 +2,7 @@ class DebatesController < ApplicationController
   include FeatureFlags
   include CommentableActions
   include FlagActions
+  include Translatable
 
   before_action :parse_tag_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
@@ -55,7 +56,8 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
+      attributes = [:tag_list, :terms_of_service]
+      params.require(:debate).permit(attributes, translation_params(Debate))
     end
 
     def resource_model
