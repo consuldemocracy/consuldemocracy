@@ -5,6 +5,14 @@ module TranslatableFormHelper
     end
   end
 
+  def translations_interface_enabled?
+    Setting['feature.translation_interface'].present? || backend_translations_enabled?
+  end
+
+  def backend_translations_enabled?
+    (controller.class.parents & [Admin, Management, Valuation]).any?
+  end
+
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
     attr_accessor :translations
 
