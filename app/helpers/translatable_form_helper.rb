@@ -18,10 +18,10 @@ module TranslatableFormHelper
 
     def translatable_fields(&block)
       @translations = {}
-      @object.globalize_locales.map do |locale|
+      visible_locales.map do |locale|
         @translations[locale] = translation_for(locale)
       end
-      @object.globalize_locales.map do |locale|
+      visible_locales.map do |locale|
         Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
       end.join.html_safe
     end
@@ -75,6 +75,12 @@ module TranslatableFormHelper
 
       def no_other_translations?(translation)
         (@object.translations - [translation]).reject(&:_destroy).empty?
+      end
+
+      def visible_locales
+        @object.globalize_locales.select do |locale|
+          locale == I18n.locale || @template.translations_interface_enabled?
+        end
       end
   end
 
