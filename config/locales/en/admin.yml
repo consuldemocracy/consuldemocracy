@@ -275,6 +275,8 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
         user_groups: "Groups"
+        title: "Title"
+        description: "Description"
       search_unfeasible: Search unfeasible
     milestones:
       index:

@@ -275,6 +275,8 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
         user_groups: "Grupos"
+        title: "Título"
+        description: "Descripción"
       search_unfeasible: Buscar inviables
     milestones:
       index:

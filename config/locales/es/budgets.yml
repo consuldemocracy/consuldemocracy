@@ -69,6 +69,8 @@ es:
         map_remove_marker: "Eliminar el marcador"
         location: "Información adicional de la ubicación"
         map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
+        title: "Título"
+        description: "Descripción"
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
