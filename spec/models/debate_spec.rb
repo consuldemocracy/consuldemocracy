@@ -9,6 +9,7 @@ describe Debate do
   describe "Concerns" do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
+    it_behaves_like "sanitizable"
   end
 
   it "is valid" do
@@ -38,42 +39,9 @@ describe Debate do
   end
 
   describe "#description" do
-
     it "is not valid without a description" do
       debate.description = nil
       expect(debate).not_to be_valid
-    end
-
-    it "is sanitized" do
-      debate.description = "<script>alert('danger');</script>"
-
-      debate.valid?
-
-      expect(debate.description).to eq("alert('danger');")
-    end
-
-    it "is sanitized using globalize accessors" do
-      debate.description_en = "<script>alert('danger');</script>"
-
-      debate.valid?
-
-      expect(debate.description_en).to eq("alert('danger');")
-    end
-
-    it "is html_safe" do
-      debate.description_en = "<script>alert('danger');</script>"
-
-      debate.valid?
-
-      expect(debate.description_en).to be_html_safe
-    end
-
-    it "is html_safe using globalize accessors" do
-      debate.description_en = "<script>alert('danger');</script>"
-
-      debate.valid?
-
-      expect(debate.description_en).to be_html_safe
     end
 
     it "is not valid when very short" do
@@ -88,12 +56,6 @@ describe Debate do
   end
 
   describe "#tag_list" do
-    it "sanitizes the tag list" do
-      debate.tag_list = "user_id=1"
-      debate.valid?
-      expect(debate.tag_list).to eq(['user_id1'])
-    end
-
     it "is not valid with a tag list of more than 6 elements" do
       debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
       expect(debate).not_to be_valid
