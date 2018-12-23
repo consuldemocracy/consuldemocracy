@@ -133,8 +133,8 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'A title for a debate'
-    fill_in 'debate_description', with: 'This is very important because...'
+    fill_in 'Debate title', with: 'A title for a debate'
+    fill_in 'Initial debate text', with: 'This is very important because...'
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -151,9 +151,9 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'I am a bot'
+    fill_in 'Debate title', with: 'I am a bot'
     fill_in 'debate_subtitle', with: 'This is a honeypot field'
-    fill_in 'debate_description', with: 'This is the description'
+    fill_in 'Initial debate text', with: 'This is the description'
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -170,8 +170,8 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'I am a bot'
-    fill_in 'debate_description', with: 'This is the description'
+    fill_in 'Debate title', with: 'I am a bot'
+    fill_in 'Initial debate text', with: 'This is the description'
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -195,8 +195,8 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'Testing an attack'
-    fill_in 'debate_description', with: '<p>This is <script>alert("an attack");</script></p>'
+    fill_in 'Debate title', with: 'Testing an attack'
+    fill_in 'Initial debate text', with: '<p>This is <script>alert("an attack");</script></p>'
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -213,8 +213,8 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'Testing auto link'
-    fill_in 'debate_description', with: '<p>This is a link www.example.org</p>'
+    fill_in 'Debate title', with: 'Testing auto link'
+    fill_in 'Initial debate text', with: '<p>This is a link www.example.org</p>'
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -230,8 +230,8 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'Testing auto link'
-    fill_in 'debate_description', with: js_injection_string
+    fill_in 'Debate title', with: 'Testing auto link'
+    fill_in 'Initial debate text', with: js_injection_string
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -282,8 +282,8 @@ feature 'Debates' do
     visit edit_debate_path(debate)
     expect(page).to have_current_path(edit_debate_path(debate))
 
-    fill_in 'debate_title', with: "End child poverty"
-    fill_in 'debate_description', with: "Let's do something to end child poverty"
+    fill_in 'Debate title', with: "End child poverty"
+    fill_in 'Initial debate text', with: "Let's do something to end child poverty"
 
     click_button "Save changes"
 
@@ -297,7 +297,7 @@ feature 'Debates' do
     login_as(debate.author)
 
     visit edit_debate_path(debate)
-    fill_in 'debate_title', with: ""
+    fill_in 'Debate title', with: ""
     click_button "Save changes"
 
     expect(page).to have_content error_message
@@ -1072,7 +1072,7 @@ feature 'Debates' do
       debate7 = create(:debate, title: "This has seven votes, and is not suggest", description: 'This is the seven', cached_votes_up: 7)
 
       visit new_debate_path
-      fill_in 'debate_title', with: 'debate'
+      fill_in 'Debate title', with: 'debate'
       check "debate_terms_of_service"
 
       within('div#js-suggest') do
@@ -1088,7 +1088,7 @@ feature 'Debates' do
       debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 
       visit new_debate_path
-      fill_in 'debate_title', with: 'proposal'
+      fill_in 'Debate title', with: 'proposal'
       check "debate_terms_of_service"
 
       within('div#js-suggest') do

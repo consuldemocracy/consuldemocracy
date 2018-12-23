@@ -353,15 +353,15 @@ def expect_document_has_cached_attachment(index, extension)
 end
 
 def documentable_fill_new_valid_proposal
-  fill_in :proposal_title, with: "Proposal title #{rand(9999)}"
-  fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
+  fill_in "Proposal title", with: "Proposal title #{rand(9999)}"
+  fill_in "Proposal summary", with: "Proposal summary"
+  fill_in "Proposal question", with: "Proposal question?"
   check :proposal_terms_of_service
 end
 
 def documentable_fill_new_valid_budget_investment
   page.select documentable.heading.name_scoped_by_group, from: :budget_investment_heading_id
-  fill_in :budget_investment_title, with: "Budget investment title"
-  fill_in_ckeditor "budget_investment_description", with: "Budget investment description"
+  fill_in "Title", with: "Budget investment title"
+  fill_in_ckeditor "Description", with: "Budget investment description"
   check :budget_investment_terms_of_service
 end
