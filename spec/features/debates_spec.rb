@@ -11,6 +11,11 @@ feature "Debates" do
   context "Concerns" do
     it_behaves_like "notifiable in-app", Debate
     it_behaves_like "relationable", Debate
+    it_behaves_like "translatable",
+                    "debate",
+                    "edit_debate_path",
+                    %w[title],
+                    { "description" => :ckeditor }
   end
 
   scenario "Index" do
