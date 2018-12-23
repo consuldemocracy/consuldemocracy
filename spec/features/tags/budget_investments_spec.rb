@@ -66,8 +66,8 @@ feature 'Tags' do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+    fill_in 'Title', with: 'Build a skyscraper'
+    fill_in 'Description', with: 'I want to live in a high tower over the clouds'
     check   'budget_investment_terms_of_service'
 
     fill_in 'budget_investment_tag_list', with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
@@ -85,8 +85,8 @@ feature 'Tags' do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    fill_in 'Title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'Description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
 
     find('.js-add-tag-link', text: tag_economia.name).click
@@ -110,8 +110,8 @@ feature 'Tags' do
     click_link "Create a budget investment"
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    fill_in 'Title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'Description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
 
     find('.js-add-tag-link', text: 'Education').click
@@ -135,8 +135,8 @@ feature 'Tags' do
     click_link "Create a budget investment"
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    fill_in 'Title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'Description', with: 'If I had a gym near my place I could go do Zumba'
     check 'budget_investment_terms_of_service'
 
     find('.js-add-tag-link', text: 'Education').click
@@ -156,8 +156,8 @@ feature 'Tags' do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+    fill_in 'Title', with: 'Build a skyscraper'
+    fill_in 'Description', with: 'I want to live in a high tower over the clouds'
     check   'budget_investment_terms_of_service'
 
     fill_in 'budget_investment_tag_list', with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -174,8 +174,8 @@ feature 'Tags' do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+    fill_in 'Title', with: 'Build a skyscraper'
+    fill_in 'Description', with: 'I want to live in a high tower over the clouds'
     check   'budget_investment_terms_of_service'
 
     fill_in 'budget_investment_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
