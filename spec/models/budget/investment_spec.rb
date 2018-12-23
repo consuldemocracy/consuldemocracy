@@ -5,6 +5,7 @@ describe Budget::Investment do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "sanitizable"
     it_behaves_like "globalizable", :budget_investment
     it_behaves_like "acts as imageable", :budget_investment_image
   end
@@ -32,40 +33,6 @@ describe Budget::Investment do
     it "is not valid when very long" do
       investment.title = "a" * 81
       expect(investment).not_to be_valid
-    end
-  end
-
-  describe "#description" do
-    it "is sanitized" do
-      investment.description = "<script>alert('danger');</script>"
-
-      investment.valid?
-
-      expect(investment.description).to eq("alert('danger');")
-    end
-
-    it "is sanitized using globalize accessors" do
-      investment.description_en = "<script>alert('danger');</script>"
-
-      investment.valid?
-
-      expect(investment.description_en).to eq("alert('danger');")
-    end
-
-    it "is html_safe" do
-      investment.description = "<script>alert('danger');</script>"
-
-      investment.valid?
-
-      expect(investment.description).to be_html_safe
-    end
-
-    it "is html_safe using globalize accessors" do
-      investment.description_en = "<script>alert('danger');</script>"
-
-      investment.valid?
-
-      expect(investment.description_en).to be_html_safe
     end
   end
 
