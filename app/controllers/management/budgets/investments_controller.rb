@@ -1,4 +1,5 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
+  include Translatable
 
   load_resource :budget
   load_resource :investment, through: :budget, class: 'Budget::Investment'
@@ -52,7 +53,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     end
 
     def investment_params
-      params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location)
+      attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location]
+      params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 
     def only_verified_users
