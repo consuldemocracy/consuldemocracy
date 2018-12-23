@@ -9,6 +9,7 @@ describe Proposal do
     it_behaves_like "notifiable"
     it_behaves_like "map validations"
     it_behaves_like "globalizable", :proposal
+    it_behaves_like "sanitizable"
   end
 
   it "is valid" do
@@ -43,38 +44,6 @@ describe Proposal do
   end
 
   describe "#description" do
-    it "is sanitized" do
-      proposal.description = "<script>alert('danger');</script>"
-
-      proposal.valid?
-
-      expect(proposal.description).to eq("alert('danger');")
-    end
-
-    it "is sanitized using globalize accessors" do
-      proposal.description_en = "<script>alert('danger');</script>"
-
-      proposal.valid?
-
-      expect(proposal.description_en).to eq("alert('danger');")
-    end
-
-    it "is html_safe" do
-      proposal.description = "<script>alert('danger');</script>"
-
-      proposal.valid?
-
-      expect(proposal.description).to be_html_safe
-    end
-
-    it "is html_safe using globalize accessors" do
-      proposal.description_en = "<script>alert('danger');</script>"
-
-      proposal.valid?
-
-      expect(proposal.description_en).to be_html_safe
-    end
-
     it "is not valid when very long" do
       proposal.description = "a" * 6001
       expect(proposal).not_to be_valid
@@ -157,12 +126,6 @@ describe Proposal do
   end
 
   describe "tag_list" do
-    it "sanitizes the tag list" do
-      proposal.tag_list = "user_id=1"
-      proposal.valid?
-      expect(proposal.tag_list).to eq(["user_id1"])
-    end
-
     it "is not valid with a tag list of more than 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
       expect(proposal).not_to be_valid
