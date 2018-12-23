@@ -8,6 +8,7 @@ module TextWithLinksHelper
 
   def safe_html_with_links(html)
     return if html.nil?
+    html = ActiveSupport::SafeBuffer.new(html) if html.is_a?(String)
     return html.html_safe unless html.html_safe?
     Rinku.auto_link(html, :all, 'target="_blank" rel="nofollow"').html_safe
   end
