@@ -25,11 +25,16 @@ feature 'Budget Investments' do
   context "Concerns" do
     it_behaves_like 'notifiable in-app', Budget::Investment
     it_behaves_like 'relationable', Budget::Investment
-    it_behaves_like "new_translatable",
-                    "budget_investment",
-                    "new_budget_investment_path",
-                    %w[title],
-                    { "description" => :ckeditor }
+    context "Translatable at front end" do
+      before do
+        Setting["feature.translation_interface"] = true
+      end
+      it_behaves_like "new_translatable",
+                      "budget_investment",
+                      "new_budget_investment_path",
+                      %w[title],
+                      { "description" => :ckeditor }
+    end
   end
 
   scenario 'Index' do
