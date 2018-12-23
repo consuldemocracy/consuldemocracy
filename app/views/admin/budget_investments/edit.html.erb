@@ -2,7 +2,7 @@
   <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
 
-<%= render "admin/shared/globalize_locales", resource: @investment %>
+<%= render "shared/globalize_locales", resource: @investment %>
 
 <%= translatable_form_for @investment,
                           url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
