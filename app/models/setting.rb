@@ -93,6 +93,7 @@ class Setting < ApplicationRecord
         "feature.allow_attached_documents": true,
         "feature.allow_images": true,
         "feature.help_page": true,
+        "feature.translation_interface": nil,
         "feature.valuation_comment_notification": true,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
