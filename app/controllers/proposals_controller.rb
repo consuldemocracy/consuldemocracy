@@ -3,6 +3,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
   include ImageAttributes
+  include Translatable
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -34,7 +35,6 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
-
     if @proposal.save
       redirect_to share_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
@@ -85,11 +85,13 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map,
-                                       image_attributes: image_attributes,
-                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                                       map_location_attributes: [:latitude, :longitude, :zoom])
+      attributes = [:external_url, :video_url,:responsible_name, :tag_list,
+                    :terms_of_service, :geozone_id, :skip_map,
+                    image_attributes: image_attributes,
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment,
+                                           :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom]]
+      params.require(:proposal).permit(attributes, translation_params(Proposal))
     end
 
     def retired_params
