@@ -11,6 +11,12 @@ describe "Admin budget investments" do
                   :budget_investment,
                   "admin_budget_budget_investment_path"
 
+  it_behaves_like "translatable",
+                  :budget_investment,
+                  "edit_admin_budget_budget_investment_path",
+                  %w[title],
+                  { "description" => :ckeditor }
+
   before do
     @admin = create(:administrator)
     login_as(@admin.user)
