@@ -36,4 +36,9 @@ namespace :settings do
     Setting['hot_score_period_in_days'] = 31
   end
 
+  desc "Enable translation interface for translatable database contents"
+  task enable_translation_interface: :environment do
+    Setting['feature.translation_interface'] = true
+  end
+
 end
