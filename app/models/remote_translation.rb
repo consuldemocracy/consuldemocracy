@@ -6,4 +6,10 @@ class RemoteTranslation < ActiveRecord::Base
   validates :remote_translatable_type, presence: true
   validates :locale, presence: true
 
+  after_create :enqueue_remote_translation
+
+  def enqueue_remote_translation
+    RemoteTranslationsCaller.new.delay.call(self)
+  end
+
 end

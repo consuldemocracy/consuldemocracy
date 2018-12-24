@@ -28,4 +28,16 @@ describe RemoteTranslation do
     expect(remote_translation).not_to be_valid
   end
 
+  describe '#enqueue_remote_translation' do
+
+    it 'after create enqueue Delayed Job' do
+      Delayed::Worker.delay_jobs = true
+
+      expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
+
+      Delayed::Worker.delay_jobs = false
+    end
+
+  end
+
 end
