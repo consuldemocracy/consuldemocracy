@@ -18,7 +18,10 @@ class Comment < ApplicationRecord
 
   attr_accessor :as_moderator, :as_administrator
 
-  validates :body, presence: true
+  translates :body, touch: true
+  include Globalizable
+
+  validates_translation :body, presence: true
   validates :user, presence: true
 
   validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }

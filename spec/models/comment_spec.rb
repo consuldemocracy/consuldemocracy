@@ -5,6 +5,7 @@ describe Comment do
   let(:comment) { build(:comment) }
 
   it_behaves_like "has_public_author"
+  it_behaves_like "globalizable", :comment
 
   it "is valid" do
     expect(comment).to be_valid

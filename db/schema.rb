@@ -415,6 +415,16 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
+  create_table "comment_translations", force: :cascade do |t|
+    t.integer  "comment_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.index ["comment_id"], name: "index_comment_translations_on_comment_id", using: :btree
+    t.index ["locale"], name: "index_comment_translations_on_locale", using: :btree
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
