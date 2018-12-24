@@ -91,6 +91,7 @@ Setting['feature.allow_images'] = true
 Setting['feature.allow_attached_documents'] = true
 Setting['feature.help_page'] = true
 Setting['feature.translation_interface'] = nil
+Setting['feature.remote_translations'] = nil
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
