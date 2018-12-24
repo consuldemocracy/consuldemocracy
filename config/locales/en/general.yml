@@ -856,4 +856,6 @@ en:
       title: How I can comment this document?
   remote_translations:
     text: The content of this page is not available in your language
+    create:
+      enqueue_remote_translation: The requested translations are pending translation. In a short period of time refreshing the page you will be able to see the translations.
     button: Translate page
