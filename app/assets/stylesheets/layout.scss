@@ -469,6 +469,24 @@ header {
     }
   }
 
+  .remote_translations_button.callout {
+    margin: 0;
+    padding: rem-calc(6);
+
+    input[type=submit] {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-weight: bold;
+      color: $brand;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
   .external-links {
     float: none;
     padding: rem-calc(6) 0;
