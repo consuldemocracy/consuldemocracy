@@ -27,6 +27,16 @@ feature 'Proposals' do
                       %w[title question summary],
                       { 'description' => :ckeditor }
     end
+
+    it_behaves_like 'remotely_translatable',
+                    :proposal,
+                    'proposals_path',
+                    {}
+
+    it_behaves_like 'remotely_translatable',
+                    :proposal,
+                    'proposal_path',
+                    { 'id': 'id' }
   end
 
   context 'Index' do
