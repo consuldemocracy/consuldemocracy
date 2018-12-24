@@ -1242,6 +1242,15 @@ ActiveRecord::Schema.define(version: 20190123122936) do
   add_index "related_contents", ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
   add_index "related_contents", ["related_content_id"], name: "opposite_related_content", using: :btree
 
+  create_table "remote_translations", force: :cascade do |t|
+    t.string   "locale"
+    t.integer  "remote_translatable_id"
+    t.string   "remote_translatable_type"
+    t.text     "error_message"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
