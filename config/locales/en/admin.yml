@@ -924,6 +924,8 @@ en:
         create_question: "Create question"
         table_proposal: "Proposal"
         table_question: "Question"
+        table_poll: "Poll"
+        poll_not_assigned: "Poll not assigned"
       edit:
         title: "Edit Question"
       new:
