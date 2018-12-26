@@ -9,6 +9,15 @@ feature 'Budget Investments' do
     @heading = create(:budget_heading, group: @group, name: "Health")
   end
 
+  it_behaves_like "mappable",
+                  "budget_investment",
+                  "investment",
+                  "new_management_budget_investment_path",
+                  "",
+                  "management_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  management = true
+
   context "Create" do
     before { @budget.update(phase: 'accepting') }
 
