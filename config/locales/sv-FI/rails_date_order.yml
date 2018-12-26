@@ -1,0 +1,6 @@
+sv-FI:
+  date:
+    order:
+      - :year
+      - :month
+      - :day

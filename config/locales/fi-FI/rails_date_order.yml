@@ -1,0 +1,6 @@
+fi:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
