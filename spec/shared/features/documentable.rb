@@ -68,6 +68,33 @@ shared_examples "documentable" do |documentable_factory_name,
 
     end
 
+    describe "When allow attached documents setting is enabled" do
+      before do
+        Setting['feature.allow_attached_documents'] = true
+      end
+
+      after do
+        Setting['feature.allow_attached_documents'] = false
+      end
+
+      scenario "Documents list should be available" do
+        login_as(user)
+        visit send(documentable_path, arguments)
+
+        expect(page).to have_css("#documents")
+        expect(page).to have_content("Documents (1)")
+      end
+
+      scenario "Documents list increase documents number" do
+        create(:document, documentable: documentable, user: documentable.author)
+        login_as(user)
+        visit send(documentable_path, arguments)
+
+        expect(page).to have_css("#documents")
+        expect(page).to have_content("Documents (2)")
+      end
+    end
+
     describe "When allow attached documents setting is disabled" do
       before do
         Setting['feature.allow_attached_documents'] = false
@@ -101,7 +128,7 @@ shared_examples "documentable" do |documentable_factory_name,
       expect(page).to have_content "Document was deleted successfully."
     end
 
-    scenario "Should update documents tab count after successful deletion" do
+    scenario "Should hide documents tab if there is no documents" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
@@ -110,7 +137,7 @@ shared_examples "documentable" do |documentable_factory_name,
         click_on "Destroy document"
       end
 
-      expect(page).to have_content "Documents (0)"
+      expect(page).not_to have_content "Documents (0)"
     end
 
     scenario "Should redirect to documentable path after successful deletion" do
