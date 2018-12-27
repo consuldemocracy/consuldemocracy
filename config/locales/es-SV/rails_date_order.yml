@@ -1,0 +1,6 @@
+es-SV:
+  date:
+    order:
+      - :day
+      - :month
+      - :year
