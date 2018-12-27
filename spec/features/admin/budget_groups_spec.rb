@@ -154,7 +154,7 @@ feature "Admin budget groups" do
 
       fill_in "Group name", with: "Districts"
       select "2", from: "Maximum number of headings in which a user can vote"
-      click_button "Edit group"
+      click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
 
@@ -170,7 +170,7 @@ feature "Admin budget groups" do
       expect(page).to have_field "Group name", with: "All City"
 
       fill_in "Group name", with: "Districts"
-      click_button "Edit group"
+      click_button "Save group"
 
       expect(page).not_to have_content "Group updated successfully"
       expect(page).to have_css("label.error", text: "Group name")
