@@ -8,7 +8,7 @@
 
       <% if can?(:dashboard, @proposal) %>
         <%= link_to t("proposals.created.dashboard"),
-                    proposal_dashboard_path(@proposal),
+                    progress_proposal_dashboard_path(@proposal),
                     class: "button" %>
       <% end %>
 
