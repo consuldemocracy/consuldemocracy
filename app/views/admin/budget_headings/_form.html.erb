@@ -32,8 +32,14 @@
                       label: t("admin.budget_headings.form.longitude"),
                       maxlength: 22,
                       placeholder: "longitude" %>
+    <p class="help-text" id="budgets-coordinates-help-text">
+      <%= t("admin.budget_headings.form.coordinates_info") %>
+    </p>
 
     <%= f.check_box :allow_custom_content, label: t("admin.budget_headings.form.allow_content_block") %>
+    <p class="help-text" id="budgets-content-blocks-help-text">
+      <%= t("admin.budget_headings.form.content_blocks_info") %>
+    </p>
 
     <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
   <% end %>
