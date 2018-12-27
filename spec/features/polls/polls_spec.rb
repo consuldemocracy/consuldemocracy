@@ -28,7 +28,7 @@ feature 'Polls' do
 
     scenario "Proposal polls won't be listed" do
       proposal = create(:proposal)
-      _poll = create(:poll, related: proposal) 
+      _poll = create(:poll, related: proposal)
 
       visit polls_path
       expect(page).to have_content('There are no open votings')
@@ -164,7 +164,7 @@ feature 'Polls' do
       visit poll_path(poll)
 
       within("div#poll_question_#{question.id}") do
-        expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+        expect(answer2.title).to appear_before(answer1.title)
       end
     end
 
@@ -176,7 +176,7 @@ feature 'Polls' do
       visit poll_path(poll)
 
       within('div.poll-more-info-answers') do
-        expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+        expect(answer2.title).to appear_before(answer1.title)
       end
     end
 
