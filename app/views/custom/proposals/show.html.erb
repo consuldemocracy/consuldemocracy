@@ -43,7 +43,6 @@
         <% end %>
 
         <%= render "proposals/info", proposal: @proposal %>
-        <%= render "proposals/custom_documents" %>
 
         <% unless @proposal.proceeding? %>
           <%= render 'shared/geozone', geozonable: @proposal %>
