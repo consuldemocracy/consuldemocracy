@@ -368,6 +368,11 @@ val:
           back: Tornar
           title: Crear proces de legislació col·laborativa
           submit_button: Crear procés
+        proposals:
+          orders:
+            id: Id
+            title: Títol
+            supports: Avals
         process:
           title: Proces
           comments: Comentaris
@@ -378,11 +383,22 @@ val:
           status_planned: Pròximament
         subnav:
           info: Informació
+          homepage: Pàgina principal
+          draft_versions: Redacció
           questions: Debat
           proposals: Propostes
+          milestones: Seguint
+      homepage:
+        edit:
+          title: Configura la teua pàgina principal
       proposals:
         index:
+          title: Títol
           back: Tornar
+          id: Id
+          supports: Avals
+          select: Seleccionar
+          selected: Seleccionada
         form:
           custom_categories: Categoríes
           custom_categories_description: Categoríes que l'usuari pot seleccionar al crear la proposta.
