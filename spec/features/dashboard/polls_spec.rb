@@ -52,7 +52,7 @@ feature 'Polls' do
 
   scenario 'Edit poll is allowed for upcoming polls' do
     poll = create(:poll, :incoming, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -68,7 +68,7 @@ feature 'Polls' do
 
   scenario 'Edit poll redirects back when invalid data', js: true do
     poll = create(:poll, :incoming, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -86,7 +86,7 @@ feature 'Polls' do
 
   scenario 'Edit poll is not allowed for current polls' do
     poll = create(:poll, :current, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -96,7 +96,7 @@ feature 'Polls' do
 
   scenario 'Edit poll is not allowed for expired polls' do
     poll = create(:poll, :expired, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -104,9 +104,58 @@ feature 'Polls' do
     end
   end
 
+  scenario 'Edit poll should allow to remove questions', :js do
+    poll = create(:poll, :incoming, related: proposal)
+    question1 = create(:poll_question, poll: poll)
+    question2 = create(:poll_question, poll: poll)
+    visit proposal_dashboard_polls_path(proposal)
+    within "div#poll_#{poll.id}" do
+      click_link 'Edit survey'
+    end
+
+    within "#questions" do
+      expect(page).to have_css ".nested-fields", count: 2
+      within first(".nested-fields") do
+        find('a.delete').click
+      end
+      expect(page).to have_css ".nested-fields", count: 1
+    end
+
+    click_button 'Update poll'
+    visit edit_proposal_dashboard_poll_path(proposal, poll)
+
+    expect(page).to have_css ".nested-fields", count: 1
+  end
+
+  scenario 'Edit poll should allow to remove answers', :js do
+    poll = create(:poll, :incoming, related: proposal)
+    question = create(:poll_question, poll: poll)
+    answer1 = create(:poll_question_answer, question: question)
+    answer2 = create(:poll_question_answer, question: question)
+    visit proposal_dashboard_polls_path(proposal)
+    within "div#poll_#{poll.id}" do
+      click_link 'Edit survey'
+    end
+
+    within "#questions #answers" do
+      expect(page).to have_css ".nested-fields", count: 2
+      within first(".nested-fields") do
+        find('a.delete').click
+      end
+      expect(page).to have_css ".nested-fields", count: 1
+    end
+
+    click_button 'Update poll'
+    visit edit_proposal_dashboard_poll_path(proposal, poll)
+
+    within "#questions #answers" do
+      expect(page).to have_css ".nested-fields", count: 1
+    end
+  end
+
   scenario 'View results not available for upcoming polls' do
     poll = create(:poll, :incoming, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -116,7 +165,7 @@ feature 'Polls' do
 
   scenario 'View results available for current polls' do
     poll = create(:poll, :current, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -126,7 +175,7 @@ feature 'Polls' do
 
   scenario 'View results available for expired polls' do
     poll = create(:poll, :expired, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -136,7 +185,7 @@ feature 'Polls' do
 
   scenario 'View results redirects to results in public zone', js: true do
     poll = create(:poll, :expired, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
@@ -150,7 +199,7 @@ feature 'Polls' do
 
   scenario 'Poll card' do
      poll = create(:poll, :expired, related: proposal)
-    
+
     visit proposal_dashboard_polls_path(proposal)
 
     within "div#poll_#{poll.id}" do
