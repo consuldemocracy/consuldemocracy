@@ -229,18 +229,27 @@ val:
         debate_start_date: Data d'inici del debat
         debate_end_date: Data de fi del debat
         draft_start_date: Data d'inici del esborrany
+        draft_end_date: Data en la que s'acaba la redacció
         draft_publication_date: Data de publicació de l'esborrany
         allegations_start_date: Data d'inici d'al·legacions
         allegations_end_date: Data de fi d'al·legacions
         result_publication_date: Data de publicació del resultat final
       legislation/process/translation:
         title: Títol del Procés
+        summary: Resum
+        description: Descripció
+        additional_info: Informació addicional
+        milestones_summary: Resum
       legislation/draft_version:
         title: Títol de la versió
         body: Text
         changelog: Canvis
         status: Estat
         final_version: Versió final
+      legislation/draft_version/translation:
+        title: Títol de la versió
+        body: Text
+        changelog: Canvis
       legislation/question:
         title: Títol
         question_options: Respostes
@@ -257,6 +266,9 @@ val:
       poll/question/answer:
         title: Resposta
         description: Descripció
+      poll/question/answer/translation:
+        title: Resposta
+        description: Descripció
       poll/question/answer/video:
         title: Títol
         url: Vídeo extern
@@ -266,17 +278,23 @@ val:
         from: De
         body: Contingut del email
       admin_notification:
+        segment_recipient: Destinataris
         title: Títol
         link: Enllaç
         body: Text
       admin_notification/translation:
         title: Títol
+        body: Text
       widget/card:
         label: Etiqueta (opcional)
         title: Títol
         description: Descripció
         link_text: Text de l'enllaç
         link_url: URL de l'enllaç
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Títol
+        description: Descripció
       widget/feed:
         limit: Número d'elements
     errors:
