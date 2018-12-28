@@ -18,6 +18,9 @@ AllCops:
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
+Layout/IndentationWidth:
+  Enabled: true
+
 Layout/EndOfLine:
   EnforcedStyle: lf
 
