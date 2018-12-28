@@ -24,6 +24,7 @@ val:
     url: "URL general de la web"
     org_name: "Nom de la organització"
     place_name: "Nom del lloc"
+    place_name_description: "Nom de la teua ciutat"
     related_content_score_threshold: "Llindar de puntuació de contingut relacionat"
     map_latitude: "Latitud"
     map_longitude: "Longitud"
@@ -32,6 +33,7 @@ val:
     meta_description: "Descripció del lloc (SEO)"
     meta_keywords: "Paraules clau (SEO)"
     min_age_to_participate: Edat mínima per a participar
+    analytics_url: "URL d'estadístiques externes"
     blog_url: "URL del blog"
     transparency_url: "URL de transparència"
     opendata_url: "URL de open data"
@@ -43,6 +45,7 @@ val:
       facebook_login: "Registre amb Facebook"
       google_login: "Registre amb Google"
       proposals: "Propostes"
+      featured_proposals: "Propostes destacades"
       debates: "Debats"
       polls: "Votacions"
       signature_sheets: "Fulles de signatures"
