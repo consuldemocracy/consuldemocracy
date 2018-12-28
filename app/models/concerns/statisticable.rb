@@ -54,20 +54,21 @@ module Statisticable
          [75, 79],
          [80, 84],
          [85, 89],
-         [90, 300]].reduce({}) do |groups, (start, finish)|
-          users = User.where(id: participants)
-                      .where("date_of_birth > ? AND date_of_birth < ?",
-                             finish.years.ago.beginning_of_year,
-                             start.years.ago.end_of_year)
+         [90, 300]
+        ].map do |start, finish|
+          users = participants.where("date_of_birth > ? AND date_of_birth < ?",
+                                     finish.years.ago.beginning_of_year,
+                                     start.years.ago.end_of_year)
 
-          groups.tap do |age_groups|
-            age_groups["#{start} - #{finish}"] = {
+          [
+            "#{start} - #{finish}",
+            {
               range: range_description(start, finish),
               count: users.count,
               percentage: calculate_percentage(users.count, total_participants)
             }
-          end
-        end
+          ]
+        end.to_h
       end
 
       def calculate_percentage(fraction, total)
