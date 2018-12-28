@@ -2,7 +2,8 @@ class Admin::BudgetPhasesController < Admin::BaseController
 
   before_action :load_phase, only: [:edit, :update]
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @phase.update(budget_phase_params)
