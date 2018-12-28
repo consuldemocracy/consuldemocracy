@@ -3,7 +3,7 @@ class Legislation::Process < ActiveRecord::Base
   include Taggable
   include Milestoneable
   include Documentable
-  documentable max_documents_allowed: 4,
+  documentable max_documents_allowed: 5,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
 
