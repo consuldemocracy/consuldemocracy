@@ -100,6 +100,25 @@ FactoryBot.define do
       end_date   { 1.week.from_now }
     end
 
+    trait :empty do
+      start_date { Date.current - 5.days }
+      end_date { Date.current + 5.days }
+      debate_start_date nil
+      debate_end_date nil
+      draft_publication_date nil
+      allegations_start_date nil
+      allegations_end_date nil
+      proposals_phase_start_date nil
+      proposals_phase_end_date nil
+      result_publication_date nil
+      debate_phase_enabled false
+      allegations_phase_enabled false
+      proposals_phase_enabled false
+      draft_publication_enabled false
+      result_publication_enabled false
+      published true
+    end
+
   end
 
   factory :legislation_draft_version, class: 'Legislation::DraftVersion' do

@@ -80,6 +80,10 @@ class Legislation::Process < ActiveRecord::Base
     Legislation::Process::Publication.new(result_publication_date, result_publication_enabled)
   end
 
+  def enabled_phases?
+    PHASES_AND_PUBLICATIONS.any? { |process| send(process).enabled? }
+  end
+
   def enabled_phases_and_publications_count
     PHASES_AND_PUBLICATIONS.count { |process| send(process).enabled? }
   end
