@@ -10,6 +10,12 @@ val:
       budget/investment:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
+      milestone:
+        one: "fita"
+        other: "fites"
+      milestone/status:
+        one: "Estat de la Fita"
+        other: "Estats de la Fita"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -122,6 +128,14 @@ val:
         organization_name: "Si estàs proposant en nom d'una associació o col·lectiu, escriu el seu nom"
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
+      milestone:
+        status_id: "Estat actual (opcional)"
+        title: "Títol"
+        description: "Descripció (opcional si hi ha un estat asignat)"
+        publication_date: "Data de publicació"
+      milestone/status:
+        name: "Nom"
+        description: "Descripció (opcional)"
       budget/heading:
         name: "Nom de la partida"
         price: "Cost"
@@ -168,11 +182,17 @@ val:
         geozone_restricted: "Restringida per zones"
         summary: "Resum"
         description: "Descripció"
+      poll/translation:
+        name: "Nom"
+        summary: "Resum"
+        description: "Descripció"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
         description: "Descripció"
         external_url: "Enllaç a documentació adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipus de fulla de signatures"
         signable_id: "ID Proposta ciutadana/Proposada inversió"
@@ -188,6 +208,10 @@ val:
         more_info_flag: Mostra a la pàgina de més informació
         print_content_flag: Botó d'imprimir contingut
         locale: Llengua
+      site_customization/page/translation:
+        title: Títol
+        subtitle: Subtítol
+        content: Contingut
       site_customization/image:
         name: Nom
         image: Imatge
@@ -204,10 +228,13 @@ val:
         end_date: Data de fi del procés
         debate_start_date: Data d'inici del debat
         debate_end_date: Data de fi del debat
+        draft_start_date: Data d'inici del esborrany
         draft_publication_date: Data de publicació de l'esborrany
         allegations_start_date: Data d'inici d'al·legacions
         allegations_end_date: Data de fi d'al·legacions
         result_publication_date: Data de publicació del resultat final
+      legislation/process/translation:
+        title: Títol del Procés
       legislation/draft_version:
         title: Títol de la versió
         body: Text
@@ -238,6 +265,12 @@ val:
         subject: Asumpte
         from: De
         body: Contingut del email
+      admin_notification:
+        title: Títol
+        link: Enllaç
+        body: Text
+      admin_notification/translation:
+        title: Títol
       widget/card:
         label: Etiqueta (opcional)
         title: Títol
