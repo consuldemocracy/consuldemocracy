@@ -9,7 +9,7 @@
 <% end %>
 
 <% cache [@stats] do %>
-  <div class="budgets-stats">
+  <div class="participation-stats budgets-stats">
     <div class="expanded no-margin-top padding header">
       <div class="row">
         <div class="small-12 column">
@@ -135,8 +135,8 @@
         <table>
           <thead>
             <tr>
-              <th scope="col" class="table-width border-right"><%= t("budgets.stats.age").upcase %></th>
-              <th scope="col" class="border-left"><%= t("budgets.stats.total").upcase %></th>
+              <th scope="col" class="small-4"><%= t("budgets.stats.age").upcase %></th>
+              <th scope="col"><%= t("budgets.stats.total").upcase %></th>
             </tr>
           </thead>
           <tbody>
@@ -144,8 +144,13 @@
               <tr>
                 <td><%= group[:range] %></td>
                 <td>
-                  <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
-                  <meter min="0" max="100" value="<%= group[:percentage] %>"></meter>
+                  <strong>
+                    <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
+                  </strong>
+                  <div class="progress" tabindex="0">
+                    <span class="progress-meter" style="width: <%= group[:percentage] %>%">
+                    </span>
+                  </div>
                 </td>
               </tr>
             <% end %>

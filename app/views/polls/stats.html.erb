@@ -1,16 +1,18 @@
 <% provide :title do %><%= @poll.name %><% end %>
 
-<div class="polls-results-stats">
+<div class="participation-stats polls-results-stats">
   <%= render "poll_header" %>
 
   <%= render "poll_subnav" %>
 
   <div class="row margin" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
-      <ul class="menu">
-        <li>
-          <%= link_to t("stats.title"), "#participation_statistics" %>
-          <ul>
+      <div class="sticky-container" data-sticky-container>
+        <div class="sticky" data-sticky
+                            data-sticky-on="large"
+                            data-anchor="participation_statistics">
+          <p><strong><%= link_to t("stats.title"), "#participation_statistics" %></strong></p>
+          <ul class="menu vertical">
             <li>
               <%= link_to t("stats.total_participants"), "#total_participants" %>
             </li>
@@ -21,25 +23,25 @@
               <%= link_to t("stats.by_age"), "#participants_by_age" %>
             </li>
           </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <div class="small-12 medium-9 column" data-equalizer-watch>
-      <section id="participation_statistics">
-        <h2><%= t("stats.title") %></h2>
+      <div id="participation_statistics">
+        <h3 class="section-title"><%= t("stats.title") %></h3>
 
-        <section id="total_participants">
-          <h3><%= t("stats.total_participants") %></h3>
+        <div id="total_participants" class="stats-group" >
+          <h4><%= t("stats.total_participants") %></h4>
 
           <p class="participants">
             <span class="number"><%= @stats[:total_participants] %></span>
-            <span class="info"><%= t("polls.show.stats.total_votes") %><br></span>
+            <span class="info"><%= t("polls.show.stats.total_votes") %></span>
           </p>
-        </section>
+        </div>
 
-        <section id="participants_by_gender">
-          <h3><%= t("stats.by_gender") %></h3>
+        <div id="participants_by_gender" class="stats-group">
+          <h4><%= t("stats.by_gender") %></h4>
 
           <p class="gender male participants">
             <span class="number"><%= @stats[:total_male_participants] %></span>
@@ -56,15 +58,17 @@
                          percentage: number_to_stats_percentage(@stats[:female_percentage])) %>
             </span>
           </p>
-        </section>
+        </div>
 
-        <section id="participants_by_age">
-          <h3><%= t("stats.by_age") %></h3>
+        <div id="participants_by_age" class="stats-group">
+          <h4><%= t("stats.by_age") %></h4>
 
           <table>
             <thead>
-              <th><%= t("stats.age") %></th>
-              <th><%= t("stats.total") %></th>
+              <tr>
+                <th class="small-4"><%= t("stats.age") %></th>
+                <th><%= t("stats.total") %></th>
+              </tr>
             </thead>
 
             <tbody>
@@ -72,15 +76,20 @@
                 <tr>
                   <td><%= group[:range] %></td>
                   <td>
-                    <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
-                    <meter min="0" max="100" value="<%= group[:percentage] %>"></meter>
+                    <strong>
+                      <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
+                    </strong>
+                    <div class="progress" tabindex="0">
+                      <span class="progress-meter" style="width: <%= group[:percentage] %>%">
+                      </span>
+                    </div>
                   </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
-        </section>
-      </section>
+        </div>
+      </div>
 
       <table>
         <thead>
