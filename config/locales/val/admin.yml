@@ -242,6 +242,8 @@ val:
         image: "Imatge"
         show_image: "Mostrar imatge"
         documents: "Documents"
+        milestone: Fita
+        new_milestone: Crear nova fita
       form:
         admin_statuses: Estat administratiu de les propostes
         no_statuses_defined: No hi ha estats de projectes definits
@@ -311,6 +313,7 @@ val:
           without_confirmed_hide: Pendents
         title: Usuaris bloquejats
         user: Usuari
+        no_hidden_users: No hi ha usuaris ocults.
       show:
         email: 'Correu electrònic:'
         hidden_at: 'Bloquejat:'
@@ -343,6 +346,7 @@ val:
           enabled: Activa
           process: Procés
           debate_phase: Fase prèvia
+          draft_phase: Fase de redacció
           proposals_phase: Fase de propostes
           start: Inici
           end: Fi
@@ -351,6 +355,7 @@ val:
           summary_placeholder: Resum curt de la descripció
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
+          homepage: Descripció
         index:
           create: Nou procés
           delete: Eliminar
