@@ -52,7 +52,7 @@
   list-style-type: none;
   margin: 0 rem-calc(-10);
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     margin: 0;
   }
 
@@ -62,7 +62,20 @@
     margin: rem-calc(-1) 0;
     position: relative;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large down) {
+
+      &::after {
+        content: '\63';
+        font-family: "icons" !important;
+        font-size: rem-calc(24);
+        pointer-events: none;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+      }
+    }
+
+    @include breakpoint(large) {
       background: #fafafa;
       display: inline-block;
       border-bottom: 0;
@@ -77,25 +90,15 @@
       }
 
       &::after {
-        content: '' !important;
+        content: '';
       }
-    }
-
-    &::after {
-      content: '\63';
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      pointer-events: none;
-      position: absolute;
-      right: 12px;
-      top: 12px;
     }
 
     a {
       display: block;
       padding: $line-height / 4 $line-height / 2;
 
-      @include breakpoint(medium) {
+      @include breakpoint(large) {
         display: inline-block;
       }
 
@@ -118,7 +121,15 @@
     background: $highlight;
     position: relative;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large down) {
+
+      &::after {
+        content: '\61';
+        color: $link;
+      }
+    }
+
+    @include breakpoint(large) {
       background: none;
       border: 1px solid $border;
       border-bottom: 0;
@@ -126,16 +137,11 @@
       &::after {
         border-bottom: 1px solid #fefefe;
         bottom: -1px;
-        content: '' !important;
+        content: '';
         left: 0;
         position: absolute;
         width: 100%;
       }
-    }
-
-    &::after {
-      content: '\61';
-      color: $link;
     }
   }
 }
