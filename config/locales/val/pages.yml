@@ -145,6 +145,7 @@ val:
             - 
               description_column: Incrementa el tamany del text
             - 
+              description_column: Reduïx el tamany del text
     titles:
       accessibility: Accessibilitat
       conditions: Condicions d'us
