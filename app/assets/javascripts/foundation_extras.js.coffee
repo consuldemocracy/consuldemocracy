@@ -1,4 +1,4 @@
-App.Dropdown =
+App.FoundationExtras =
 
   initialize: ->
     $(document).foundation()
