@@ -121,14 +121,6 @@
     background: $highlight;
     position: relative;
 
-    @include breakpoint(large down) {
-
-      &::after {
-        content: '\61';
-        color: $link;
-      }
-    }
-
     @include breakpoint(large) {
       background: none;
       border: 1px solid $border;
@@ -137,11 +129,14 @@
       &::after {
         border-bottom: 1px solid #fefefe;
         bottom: -1px;
-        content: '';
         left: 0;
         position: absolute;
         width: 100%;
       }
+    }
+
+    &::after {
+      content: '';
     }
   }
 }
