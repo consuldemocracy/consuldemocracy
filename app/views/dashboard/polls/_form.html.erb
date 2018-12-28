@@ -30,10 +30,13 @@
       <%= render 'question_fields', f: question %>
     <% end %>
 
-    <div id="links" class="row expanded">
+    <div id="question-links" class="links row expanded">
       <div class="small-12 column">
         <%= link_to_add_association t("dashboard.polls.form.add_question"),
-                                    f, :questions, class: "button" %>
+                                    f, :questions, class: "button",
+                                    data: {
+                                      association_insertion_node: "#question-links"
+                                    } %>
       </div>
     </div>
   </div>

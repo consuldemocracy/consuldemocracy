@@ -1,4 +1,4 @@
-<div class="question-fields">
+<div class="question-fields nested-fields">
   <%= f.hidden_field :author_id, value: f.object.author_id || current_user.id %>
   <%= f.hidden_field :proposal_id, value: f.object.proposal_id || proposal.id %>
   <div class="row expanded">
@@ -17,10 +17,13 @@
       <%= render 'question_answer_fields', f: answer %>
     <% end %>
 
-    <div id="links" class="row expanded">
+    <div id="answer-links" class="links row expanded">
       <div class="small-12 column">
         <%= link_to_add_association t("dashboard.polls.question_fields.add_answer"),
-                                    f, :question_answers, class: "button hollow" %>
+                                    f, :question_answers, class: "button hollow",
+                                    data: {
+                                      association_insertion_node: "#answer-links"
+                                    } %>
       </div>
     </div>
   </div>
