@@ -67,8 +67,8 @@ namespace :admin do
       put :calculate_winners
     end
 
-    resources :budget_groups do
-      resources :budget_headings
+    resources :groups, except: [:show], controller: "budget_groups" do
+      resources :headings, except: [:show], controller: "budget_headings"
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
@@ -223,6 +223,9 @@ namespace :admin do
     resources :pages, except: [:show]
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+    delete '/heading_content_blocks/:id', to: 'content_blocks#delete_heading_content_block', as: 'delete_heading_content_block'
+    get '/edit_heading_content_blocks/:id', to: 'content_blocks#edit_heading_content_block', as: 'edit_heading_content_block'
+    put '/update_heading_content_blocks/:id', to: 'content_blocks#update_heading_content_block', as: 'update_heading_content_block'
     resources :information_texts, only: [:index] do
       post :update, on: :collection
     end

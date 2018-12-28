@@ -174,6 +174,16 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.integer  "poll_ballot_id"
   end
 
+  create_table "budget_content_blocks", force: :cascade do |t|
+    t.integer  "heading_id"
+    t.text     "body"
+    t.string   "locale"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "budget_content_blocks", ["heading_id"], name: "index_budget_content_blocks_on_heading_id", using: :btree
+
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
     t.string  "name",                     limit: 50
@@ -190,6 +200,9 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.integer "price",      limit: 8
     t.string  "slug"
     t.integer "population"
+    t.boolean "allow_custom_content",            default: false
+    t.text    "latitude"
+    t.text    "longitude"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree

@@ -4,41 +4,69 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   before_action :load_budget
   before_action :load_group
-  before_action :load_heading
+  before_action :load_heading, except: [:index, :new, :create]
 
-  def create
-    @budget_group.headings.create(budget_heading_params)
-    @headings = @budget_group.headings
+  def index
+    @headings = @group.headings.order(:id)
+  end
+
+  def new
+    @heading = @group.headings.new
   end
 
   def edit
   end
 
+  def create
+    @heading = @group.headings.new(budget_heading_params)
+    if @heading.save
+      redirect_to headings_index, notice: t('admin.budget_headings.create.notice')
+    else
+      render :new
+    end
+  end
+
   def update
-    @heading.assign_attributes(budget_heading_params)
-    render :edit unless @heading.save
+    if @heading.update(budget_heading_params)
+      redirect_to headings_index, notice: t('admin.budget_headings.update.notice')
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @heading.destroy
-    redirect_to admin_budget_path(@budget)
+    if @heading.can_be_deleted?
+      @heading.destroy
+      redirect_to headings_index, notice: t('admin.budget_headings.destroy.success_notice')
+    else
+      redirect_to headings_index, alert: t('admin.budget_headings.destroy.unable_notice')
+    end
   end
 
   private
 
-    def budget_heading_params
-      params.require(:budget_heading).permit(:name, :price, :population)
-    end
-
     def load_budget
-      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      @budget = Budget.find_by(slug: params[:budget_id])
+      @budget ||= Budget.find_by(id: params[:budget_id])
     end
 
     def load_group
-      @budget_group = @budget.groups.find_by(slug: params[:budget_group_id]) || @budget.groups.find_by(id: params[:budget_group_id])
+      @group = @budget.groups.find_by(slug: params[:group_id])
+      @group ||= @budget.groups.find_by(id: params[:group_id])
     end
 
     def load_heading
-      @heading = @budget_group.headings.find_by(slug: params[:id]) || @budget_group.headings.find_by(id: params[:id])
+      @heading = @group.headings.find_by(slug: params[:id])
+      @heading ||= @group.headings.find_by(id: params[:id])
     end
+
+    def headings_index
+      admin_budget_group_headings_path(@budget, @group)
+    end
+
+    def budget_heading_params
+      params.require(:budget_heading).permit(:name, :price, :population, :allow_custom_content,
+                                             :latitude, :longitude)
+    end
+
 end

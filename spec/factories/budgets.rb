@@ -94,6 +94,8 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
+    latitude '40.416775'
+    longitude '-3.703790'
 
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
@@ -234,5 +236,11 @@ FactoryBot.define do
 
   factory :valuator_group, class: ValuatorGroup do
     sequence(:name) { |n| "Valuator Group #{n}" }
+  end
+
+  factory :heading_content_block, class: 'Budget::ContentBlock' do
+    association :heading, factory: :budget_heading
+    locale 'en'
+    body 'Some heading contents'
   end
 end
