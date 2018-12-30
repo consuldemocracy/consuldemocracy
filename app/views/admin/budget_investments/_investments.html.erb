@@ -1,12 +1,3 @@
-<%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get) do %>
-  <div class="small-12 medium-3 column">
-    <%= select_tag :sort_by, options_for_select(budget_investments_sorting_options, params[:sort_by]),
-                   { prompt: t("admin.budget_investments.index.sort_by.placeholder"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-<% end %>
-
 <%= link_to t("admin.budget_investments.index.download_current_selection"),
             admin_budget_budget_investments_path(csv_params),
             class: "float-right small clear" %>
