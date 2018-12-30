@@ -35,9 +35,9 @@
   <table class="table-for-mobile">
     <thead>
       <tr>
-        <th><%= link_to t("admin.budget_investments.index.list.id"), admin_budget_budget_investments_path(sort_by: "id")  %></th>
-        <th class="small-3"><%= link_to t("admin.budget_investments.index.list.title"), admin_budget_budget_investments_path(sort_by: "title") %></th>
-        <th><%= link_to t("admin.budget_investments.index.list.supports"), admin_budget_budget_investments_path(sort_by: "supports") %></th>
+        <th><%= link_to_investments_sorted_by t("admin.budget_investments.index.list.id")  %></th>
+        <th class="small-3"><%= link_to_investments_sorted_by t("admin.budget_investments.index.list.title") %></th>
+        <th><%= link_to_investments_sorted_by t("admin.budget_investments.index.list.supports") %></th>
         <th><%= t("admin.budget_investments.index.list.admin") %></th>
         <th>
           <%= t("admin.budget_investments.index.list.valuation_group") %>

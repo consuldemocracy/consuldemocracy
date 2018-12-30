@@ -9,6 +9,11 @@ module BudgetInvestmentsHelper
     params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(', ')
   end
 
+  def link_to_investments_sorted_by(column)
+    sorting_option = budget_investments_sorting_options.select { |so| so[1] == column.downcase }.flatten
+    link_to t(sorting_option[0]), admin_budget_budget_investments_path(sort_by: sorting_option[1])
+  end
+
   def investments_minimal_view_path
     custom_budget_investments_path(id: @heading.group.to_param,
                                    heading_id: @heading.to_param,
