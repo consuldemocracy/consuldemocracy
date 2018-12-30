@@ -215,6 +215,10 @@ $sidebar-active: #f4fcd0;
 
     thead {
       color: #fff;
+
+      a {
+        color: inherit;
+      }
     }
 
     th {
