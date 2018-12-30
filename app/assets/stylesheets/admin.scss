@@ -215,10 +215,6 @@ $sidebar-active: #f4fcd0;
 
     thead {
       color: #fff;
-
-      a {
-        color: inherit;
-      }
     }
 
     th {
@@ -227,6 +223,10 @@ $sidebar-active: #f4fcd0;
 
       label {
         color: #fff;
+      }
+
+      a {
+        color: inherit;
       }
     }
 
