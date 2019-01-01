@@ -76,11 +76,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investments
-      params[:direction].present? ? params[:direction] : params[:direction] = "asc"
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                       .order_filter(params[:sort_by], params[:direction])
+                                       .order_filter(params)
 
-      @investments = Budget::Investment.by_budget(@budget).all
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
@@ -137,5 +135,4 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
         end
       end
     end
-
 end

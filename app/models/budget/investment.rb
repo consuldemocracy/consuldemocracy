@@ -145,16 +145,15 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.order_filter(sorting_param, direction)
-      sorting_key = sorting_param.to_sym if sorting_param
-      allowed_sort_option = SORTING_OPTIONS.select { |sp| sp[sorting_key]}.reduce
+    def self.order_filter(params)
+      sorting_key = params[:sort_by].to_sym if params[:sort_by]
+      allowed_sort_option = SORTING_OPTIONS.select { |so| so[sorting_key]}.reduce
 
-      if allowed_sort_option.present? then
-        direction = %w[asc desc].include?(direction) ? direction : "asc"
-        order("#{allowed_sort_option[sorting_key]} #{direction}")
-      else
-        order(cached_votes_up: :desc).order(id: :desc)
+      if allowed_sort_option.present?
+        direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+        return order("#{allowed_sort_option[sorting_key]} #{direction}")
       end
+      order(cached_votes_up: :desc).order(id: :desc)
     end
 
     def self.limit_results(budget, params, results)
