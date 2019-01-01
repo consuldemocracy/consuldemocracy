@@ -4,17 +4,26 @@ module BudgetInvestmentsHelper
   end
 
   def link_to_investments_sorted_by(column)
-    sorting_option = column.downcase
-    direction = params[:direction] ? params[:direction] : "desc"
+    sort_by = column.downcase
+    allowed_directions = %w[asc desc].freeze
+    default_direction = "desc"
+    current_direction = params[:direction]
 
-    icon = direction == "desc" ? "icon-arrow-down" : "icon-arrow-top"
-    icon = sorting_option == params[:sort_by] ? icon : ""
+    if allowed_directions.include?(current_direction)
+      #select opposite direction
+      direction = allowed_directions.reject { |dir| dir == current_direction }.first
+    else
+      direction = default_direction
+    end
 
-    translation = t("admin.budget_investments.index.sort_by.#{sorting_option}")
+    icon = direction == default_direction ? "icon-arrow-top" : "icon-arrow-down"
+    icon = sort_by == params[:sort_by] ? icon : ""
+
+    translation = t("admin.budget_investments.index.sort_by.#{sort_by}")
 
     link_to(
       "#{translation} <span class=\"#{icon}\"></span>".html_safe,
-      admin_budget_budget_investments_path(sort_by: sorting_option, direction: direction)
+      admin_budget_budget_investments_path(sort_by: sort_by, direction: direction)
     )
   end
 

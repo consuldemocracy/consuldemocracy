@@ -149,7 +149,7 @@ class Budget
       sorting_key = sorting_param.to_sym if sorting_param
       allowed_sort_option = SORTING_OPTIONS.select { |sp| sp[sorting_key]}.reduce
 
-      if sorting_param.present? && allowed_sort_option.present? then
+      if allowed_sort_option.present? then
         direction = %w[asc desc].include?(direction) ? direction : "asc"
         order("#{allowed_sort_option[sorting_key]} #{direction}")
       else
