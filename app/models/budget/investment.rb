@@ -146,10 +146,11 @@ class Budget
     end
 
     def self.order_filter(sorting_param, direction)
-      sorting_key = sorting_param.to_sym
+      sorting_key = sorting_param.to_sym if sorting_param
       available_option = SORTING_OPTIONS.select { |sp| sp[sorting_key]}.reduce
+
       if sorting_param.present? && available_option.present? then
-        %w[asc desc].include?(direction) ? direction : "desc"
+        direction = %w[asc desc].include?(direction) ? direction : "asc"
         order("#{available_option[sorting_key]} #{direction}")
       else
         order(cached_votes_up: :desc).order(id: :desc)
