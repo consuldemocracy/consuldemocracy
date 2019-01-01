@@ -1,0 +1,16 @@
+<%= back_link_to admin_site_customization_pages_path %>
+<div id="cards">
+  <h3 class="inline-block"><%= t("admin.homepage.cards_title") %></h3>
+
+  <div class="float-right">
+    <%= link_to t("admin.homepage.create_card"), new_admin_widget_card_path(page_id: params[:page_id]), class: "button" %>
+  </div>
+
+  <% if @cards.present? %>
+    <%= render "cards", cards: @cards %>
+  <% else %>
+    <div class="callout primary clear">
+      <%= t("admin.homepage.no_cards") %>
+    </div>
+  <% end %>
+</div>
