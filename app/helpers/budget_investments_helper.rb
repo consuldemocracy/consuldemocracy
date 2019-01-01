@@ -5,8 +5,9 @@ module BudgetInvestmentsHelper
 
   def link_to_investments_sorted_by(column)
     sorting_option = column.downcase
-    direction = sorting_option && params[:direction] == "asc" ? "desc" : "asc"
-    icon = direction == "asc" ? "icon-arrow-top" : "icon-arrow-down"
+    direction = params[:direction] ? params[:direction] : "desc"
+
+    icon = direction == "desc" ? "icon-arrow-down" : "icon-arrow-top"
     icon = sorting_option == params[:sort_by] ? icon : ""
 
     translation = t("admin.budget_investments.index.sort_by.#{sorting_option}")
