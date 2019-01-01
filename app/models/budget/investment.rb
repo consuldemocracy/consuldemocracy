@@ -1,6 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
-    SORTING_OPTIONS = [{"id": "id"}, {"title": "title"}, {"supports": "cached_votes_up"}].freeze
+    SORTING_OPTIONS = [{id: "id"}, {title: "title"}, {supports: "cached_votes_up"}].freeze
 
     include Rails.application.routes.url_helpers
     include Measurable
