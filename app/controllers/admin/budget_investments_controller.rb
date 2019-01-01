@@ -80,6 +80,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
                                        .order_filter(params[:sort_by], params[:direction])
 
+      @investments = Budget::Investment.by_budget(@budget).all
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
