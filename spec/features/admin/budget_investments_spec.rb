@@ -708,6 +708,9 @@ feature 'Admin budget investments' do
 
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
       end
 
       scenario 'Sort by title' do
@@ -715,6 +718,9 @@ feature 'Admin budget investments' do
 
         expect('A Second Investment').to appear_before('B First Investment')
         expect('B First Investment').to appear_before('C Third Investment')
+        within('th', text: 'Title') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
       end
 
       scenario 'Sort by supports' do
@@ -722,6 +728,9 @@ feature 'Admin budget investments' do
 
         expect('C Third Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('B First Investment')
+        within('th', text: 'Supports') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
       end
     end
 
@@ -731,6 +740,9 @@ feature 'Admin budget investments' do
 
         expect('C Third Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('B First Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-down")
+        end
       end
 
       scenario 'Sort by title' do
@@ -738,6 +750,9 @@ feature 'Admin budget investments' do
 
         expect('C Third Investment').to appear_before('B First Investment')
         expect('B First Investment').to appear_before('A Second Investment')
+        within('th', text: 'Title') do
+          expect(page).to have_css(".icon-arrow-down")
+        end
       end
 
       scenario 'Sort by supports' do
@@ -745,6 +760,9 @@ feature 'Admin budget investments' do
 
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'Supports') do
+          expect(page).to have_css(".icon-arrow-down")
+        end
       end
     end
 
@@ -754,6 +772,9 @@ feature 'Admin budget investments' do
 
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
       end
 
       scenario 'Sort by title' do
@@ -761,6 +782,9 @@ feature 'Admin budget investments' do
 
         expect('A Second Investment').to appear_before('B First Investment')
         expect('B First Investment').to appear_before('C Third Investment')
+        within('th', text: 'Title') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
       end
 
       scenario 'Sort by supports' do
@@ -768,10 +792,23 @@ feature 'Admin budget investments' do
 
         expect('C Third Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('B First Investment')
+        within('th', text: 'Supports') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
       end
     end
 
+    context 'With incorrect direction provided sorts ascending' do
+      scenario 'Sort by ID' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'id', direction: 'incorrect')
 
+        expect('B First Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
+    end
   end
 
   context 'Show' do
