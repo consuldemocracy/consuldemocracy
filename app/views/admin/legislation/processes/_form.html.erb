@@ -201,6 +201,35 @@
     <hr>
   </div>
 
+  <div class="images small-12 column">
+    <%= render 'images/nested_image', imageable: @process, f: f %>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
+  <div class="small-12 column">
+    <h4>Process banner color</h4>
+  </div>
+
+  <div class="row">
+    <div class="small-3 column">
+      <%= f.label :sections, "Background color" %>
+      <%= color_field(:process, :background_color, id: 'legislation_process_background_color_picker') %>
+      <%= f.text_field :background_color, label: false %>
+    </div>
+    <div class="small-3 column end">
+      <%= f.label :sections, "Font color" %>
+      <%= color_field(:process, :font_color, id: 'legislation_process_font_color_picker') %>
+      <%= f.text_field :font_color, label: false %>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
   <%= f.translatable_fields do |translations_form| %>
     <div class="small-12 medium-9 column">
       <%= translations_form.text_field :title,
