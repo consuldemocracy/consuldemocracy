@@ -146,7 +146,7 @@ class Budget
     end
 
     def self.order_filter(params)
-      sorting_key = params[:sort_by].to_sym if params[:sort_by]
+      sorting_key = params[:sort_by].downcase.to_sym if params[:sort_by]
       allowed_sort_option = SORTING_OPTIONS.select { |so| so[sorting_key]}.reduce
 
       if allowed_sort_option.present?
