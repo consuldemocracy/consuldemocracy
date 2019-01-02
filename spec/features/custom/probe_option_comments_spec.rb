@@ -267,7 +267,7 @@ feature 'Commenting Probe Options' do
     comment = create(:comment, commentable: probe_option)
 
     login_as(user)
-    visit probe_probe_option_path(probe_id: probe.codename, id: probe.id)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
 
     within "#comment_#{comment.id}" do
       page.find("#flag-expand-comment-#{comment.id}").click
