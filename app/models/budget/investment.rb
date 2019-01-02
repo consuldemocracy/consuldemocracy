@@ -150,7 +150,7 @@ class Budget
       allowed_sort_option = SORTING_OPTIONS.select { |so| so[sorting_key]}.reduce
 
       if allowed_sort_option.present?
-        direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+        direction = params[:direction] == "desc" ? "desc" : "asc"
         return order("#{allowed_sort_option[sorting_key]} #{direction}")
       end
       order(cached_votes_up: :desc).order(id: :desc)
