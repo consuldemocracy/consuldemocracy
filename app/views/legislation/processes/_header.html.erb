@@ -1,7 +1,19 @@
-<div class="legislation-hero jumbo">
+<div <% if process.background_color.present? && process.font_color.present? %> 
+    class="legislation-hero jumboAlt" style="background:<%= process.background_color %>; color:<%= process.font_color %>;"
+  <% else %>
+    class="legislation-hero jumbo"  
+  <% end %>>
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= back_link_to legislation_processes_path %>
+
+      <% if process.background_color.present? && process.font_color.present? %>
+        <%= link_to content_tag(:span, nil, class: "icon-angle-left",
+                   style: "color:#{process.font_color};") + t("shared.back"),
+                   legislation_processes_path, class: 'back', style: 'color:#FFFFFF !important;'%>
+      <% else %>
+        <%= back_link_to legislation_processes_path %>
+      <% end %>
+
       <h2><%= @process.title %></h2>
 
       <% if header == :small %>
@@ -34,6 +46,11 @@
         url: legislation_process_url(@process),
         description: @process.title
       } %>
+
+      <% if @process.image.present? %>
+        <hr>
+        <%= image_tag(@process.image_url(:large), alt: @process.title, id:'image') %>
+      <% end %>
 
       <% if process.draft_publication.enabled? %>
         <div class="sidebar-divider"></div>
