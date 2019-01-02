@@ -8,9 +8,9 @@ module BudgetInvestmentsHelper
     default_direction = "desc"
     current_direction = params[:direction].downcase if params[:direction]
 
-    direction = current_direction == default_direction ? default_direction : "asc"
+    direction = current_direction == default_direction ? "asc" : default_direction
 
-    icon = direction == default_direction ? "icon-arrow-down" : "icon-arrow-top"
+    icon = direction == default_direction ? "icon-arrow-top" : "icon-arrow-down"
     icon = sort_by == params[:sort_by] ? icon : ""
 
     translation = t("admin.budget_investments.index.sort_by.#{sort_by}")
