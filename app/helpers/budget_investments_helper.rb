@@ -5,18 +5,11 @@ module BudgetInvestmentsHelper
 
   def link_to_investments_sorted_by(column)
     sort_by = column.downcase
-    allowed_directions = %w[asc desc].freeze
     default_direction = "desc"
-    current_direction = params[:direction]
 
-    if allowed_directions.include?(current_direction)
-      #select opposite direction
-      direction = allowed_directions.reject { |dir| dir == current_direction }.first
-    else
-      direction = default_direction
-    end
+    direction = params[:direction] == default_direction ? default_direction : "asc"
 
-    icon = direction == default_direction ? "icon-arrow-top" : "icon-arrow-down"
+    icon = direction == default_direction ? "icon-arrow-down" : "icon-arrow-top"
     icon = sort_by == params[:sort_by] ? icon : ""
 
     translation = t("admin.budget_investments.index.sort_by.#{sort_by}")
