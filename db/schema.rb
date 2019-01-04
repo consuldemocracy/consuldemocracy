@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181206153510) do
+ActiveRecord::Schema.define(version: 20190103132925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1087,6 +1087,26 @@ ActiveRecord::Schema.define(version: 20181206153510) do
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
+
+  create_table "progress_bar_translations", force: :cascade do |t|
+    t.integer  "progress_bar_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "title"
+  end
+
+  add_index "progress_bar_translations", ["locale"], name: "index_progress_bar_translations_on_locale", using: :btree
+  add_index "progress_bar_translations", ["progress_bar_id"], name: "index_progress_bar_translations_on_progress_bar_id", using: :btree
+
+  create_table "progress_bars", force: :cascade do |t|
+    t.integer  "kind"
+    t.integer  "percentage"
+    t.integer  "progressable_id"
+    t.string   "progressable_type"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"

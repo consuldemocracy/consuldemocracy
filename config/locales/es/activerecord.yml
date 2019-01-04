@@ -16,6 +16,9 @@ es:
       milestone/status:
         one: "Estado de seguimiento"
         other: "Estados de seguimiento"
+      progress_bar:
+        one: "Barra de progreso"
+        other: "Barras de progreso"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -136,6 +139,13 @@ es:
       milestone/status:
         name: "Nombre"
         description: "Descripción (opcional)"
+      progress_bar:
+        kind: "Tipo"
+        title: "Título"
+        percentage: "Progreso"
+      progress_bar/kind:
+        primary: "Principal"
+        secondary: "Secundaria"
       budget/heading:
         name: "Nombre de la partida"
         price: "Cantidad"

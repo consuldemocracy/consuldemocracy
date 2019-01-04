@@ -11,4 +11,15 @@ FactoryBot.define do
     description          "Milestone description"
     publication_date     { Date.current }
   end
+
+  factory :progress_bar do
+    association :progressable, factory: :budget_investment
+    percentage { rand(0..100) }
+    kind :primary
+
+    trait(:secondary) do
+      kind :secondary
+      sequence(:title) { |n| "Progress bar #{n} title" }
+    end
+  end
 end
