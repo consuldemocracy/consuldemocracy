@@ -6,10 +6,6 @@ module Sanitizable
     before_validation :sanitize_tag_list
   end
 
-  def description
-    super.try :html_safe
-  end
-
   protected
 
     def sanitize_description
