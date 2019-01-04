@@ -260,6 +260,48 @@ describe Poll::Stats do
         expect(stats.booth_participants_by_age["50 - 54"][:percentage]).to eq(25.0)
       end
     end
+
+    describe "participants by geozone and channel" do
+      before do
+        atlantis = create(:geozone, name: "Atlantis")
+        lemuria = create(:geozone, name: "Lemuria")
+
+        4.times do
+          create :poll_voter, :from_booth, poll: poll,
+                 user: create(:user, :level_two, geozone: atlantis)
+        end
+
+        3.times do
+          create :poll_voter, :from_booth, poll: poll,
+                 user: create(:user, :level_two, geozone: lemuria)
+        end
+
+        2.times do
+          create :poll_voter, :from_web, poll: poll,
+                 user: create(:user, :level_two, geozone: atlantis)
+        end
+
+        1.times do
+          create :poll_voter, :from_web, poll: poll,
+                 user: create(:user, :level_two, geozone: lemuria)
+        end
+      end
+
+      it "calculates the count of users by channel and geozone" do
+        expect(stats.booth_participants_by_geozone["Atlantis"][:count]).to eq(4)
+        expect(stats.booth_participants_by_geozone["Lemuria"][:count]).to eq(3)
+        expect(stats.web_participants_by_geozone["Atlantis"][:count]).to eq(2)
+        expect(stats.web_participants_by_geozone["Lemuria"][:count]).to eq(1)
+      end
+
+      it "calculates percentage relative to the participants for that geozone" do
+        expect(stats.booth_participants_by_geozone["Atlantis"][:percentage]).to eq(66.667)
+        expect(stats.web_participants_by_geozone["Atlantis"][:percentage]).to eq(33.333)
+
+        expect(stats.booth_participants_by_geozone["Lemuria"][:percentage]).to eq(75.0)
+        expect(stats.web_participants_by_geozone["Lemuria"][:percentage]).to eq(25.0)
+      end
+    end
   end
 
   describe "#generate" do

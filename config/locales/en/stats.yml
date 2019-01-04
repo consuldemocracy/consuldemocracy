@@ -20,6 +20,7 @@ en:
       by_channel: "Participants by channel"
       by_gender_and_channel: "Participants by gender and channel"
       by_age_and_channel: "Participants by age and channel"
+      by_geozone_and_channel: "Participants by district and channel"
       vote_by_channel: "Vote type by channel"
       web: "Web"
       booth: "Booths"

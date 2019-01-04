@@ -37,7 +37,7 @@ module Statisticable
     end
 
     def participants_by_geozone
-      Geozone.all.order("name").map do |geozone|
+      geozones.map do |geozone|
         count = participants.where(geozone: geozone).count
 
         [
@@ -101,6 +101,10 @@ module Statisticable
 
       def participants_between_ages(from, to)
         participants.between_ages(from, to)
+      end
+
+      def geozones
+        Geozone.all.order("name")
       end
 
       def calculate_percentage(fraction, total)

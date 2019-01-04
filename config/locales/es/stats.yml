@@ -20,6 +20,7 @@ es:
       by_channel: "Participación por medio"
       by_gender_and_channel: "Participación por género y medio"
       by_age_and_channel: "Participación por edad y medio"
+      by_geozone_and_channel: "Participación por distrito y medio"
       vote_by_channel: "Votos emitidos por medio"
       web: "Web"
       booth: "Urnas"

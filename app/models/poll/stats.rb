@@ -19,7 +19,8 @@ class Poll::Stats
          total_female_web total_female_booth total_female_mail
          male_web_percentage male_booth_percentage male_mail_percentage
          female_web_percentage female_booth_percentage female_mail_percentage
-         web_participants_by_age booth_participants_by_age mail_participants_by_age]
+         web_participants_by_age booth_participants_by_age mail_participants_by_age
+         web_participants_by_geozone booth_participants_by_geozone mail_participants_by_geozone]
   end
 
 
@@ -45,6 +46,19 @@ class Poll::Stats
     define_method :"#{channel}_participants_by_age" do
       participants_by_age_for(send(:"#{channel}_participants"),
                               relative_to: :participants_between_ages)
+    end
+
+    define_method :"#{channel}_participants_by_geozone" do
+      geozones.map do |geozone|
+        count = send(:"#{channel}_participants").where(geozone: geozone).count
+        [
+          geozone.name,
+          {
+            count: count,
+            percentage: calculate_percentage(count, participants.where(geozone: geozone).count)
+          }
+        ]
+      end.to_h
     end
 
     %i[male female].each do |gender|
