@@ -33,20 +33,7 @@ module Statisticable
     end
 
     def participants_by_age
-      age_groups.map do |start, finish|
-        users = participants.where("date_of_birth > ? AND date_of_birth < ?",
-                                   finish.years.ago.beginning_of_year,
-                                   start.years.ago.end_of_year)
-
-        [
-          "#{start} - #{finish}",
-          {
-            range: range_description(start, finish),
-            count: users.count,
-            percentage: calculate_percentage(users.count, total_participants)
-          }
-        ]
-      end.to_h
+      participants_by_age_for(participants)
     end
 
     def participants_by_geozone
@@ -90,6 +77,30 @@ module Statisticable
          [85, 89],
          [90, 300]
         ]
+      end
+
+      def participants_by_age_for(users, relative_to: :participants)
+        age_groups.map do |start, finish|
+          group_count = users.between_ages(start, finish).count
+          total_count = if relative_to == :participants
+                          total_participants
+                        else
+                          send(relative_to, start, finish).count
+                        end
+
+          [
+            "#{start} - #{finish}",
+            {
+              range: range_description(start, finish),
+              count: group_count,
+              percentage: calculate_percentage(group_count, total_count)
+            }
+          ]
+        end.to_h
+      end
+
+      def participants_between_ages(from, to)
+        participants.between_ages(from, to)
       end
 
       def calculate_percentage(fraction, total)

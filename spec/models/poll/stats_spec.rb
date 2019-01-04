@@ -221,6 +221,45 @@ describe Poll::Stats do
         expect(stats.male_booth_percentage).to eq(25.0)
       end
     end
+
+    describe "participants by age and channel" do
+      before do
+        4.times do
+          create :poll_voter, :from_web, poll: poll,
+                 user: create(:user, :level_two, date_of_birth: 37.years.ago)
+        end
+
+        3.times do
+          create :poll_voter, :from_web, poll: poll,
+                 user: create(:user, :level_two, date_of_birth: 52.years.ago)
+        end
+
+        2.times do
+          create :poll_voter, :from_booth, poll: poll,
+                 user: create(:user, :level_two, date_of_birth: 37.years.ago)
+        end
+
+        1.times do
+          create :poll_voter, :from_booth, poll: poll,
+                 user: create(:user, :level_two, date_of_birth: 52.years.ago)
+        end
+      end
+
+      it "calculates the count of users by channel and age" do
+        expect(stats.web_participants_by_age["35 - 39"][:count]).to eq(4)
+        expect(stats.web_participants_by_age["50 - 54"][:count]).to eq(3)
+        expect(stats.booth_participants_by_age["35 - 39"][:count]).to eq(2)
+        expect(stats.booth_participants_by_age["50 - 54"][:count]).to eq(1)
+      end
+
+      it "calculates percentage relative to the participants for that age" do
+        expect(stats.web_participants_by_age["35 - 39"][:percentage]).to eq(66.667)
+        expect(stats.booth_participants_by_age["35 - 39"][:percentage]).to eq(33.333)
+
+        expect(stats.web_participants_by_age["50 - 54"][:percentage]).to eq(75.0)
+        expect(stats.booth_participants_by_age["50 - 54"][:percentage]).to eq(25.0)
+      end
+    end
   end
 
   describe "#generate" do

@@ -15,7 +15,10 @@
           <%= link_to t("stats.polls.by_channel"), "#stats_by_channel" %>
         </li>
         <li>
-          <%= link_to t("stats.polls.by_gender_and_channel"), "#stats_by_gender_and_channel" %>
+          <%= link_to t("stats.polls.by_gender_and_channel"), "#stats_by_gender_and_channel"%>
+        </li>
+        <li>
+          <%= link_to t("stats.polls.by_age_and_channel"), "#stats_by_age_and_channel" %>
         </li>
         <li>
           <%= link_to t("stats.polls.vote_by_channel"), "#vote_stats_by_channel" %>
@@ -63,6 +66,39 @@
                     <td>
                       <%= "#{@stats[:"total_#{gender}_#{channel}"]}
                       (#{number_to_stats_percentage(@stats[:"#{gender}_#{channel}_percentage"])})" %>
+                    </td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="stats_by_age_and_channel" class="stats-group">
+          <h4><%= t("stats.polls.by_age_and_channel") %></h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th><%= t("stats.age") %></th>
+                <% Poll::Stats::CHANNELS.each do |channel| %>
+                  <th><%= t("stats.polls.#{channel}") %></th>
+                <% end %>
+              </tr>
+            </thead>
+            <tbody>
+              <% @stats[:participants_by_age].keys.each do |age_range| %>
+                <tr>
+                  <td><%= @stats[:participants_by_age][age_range][:range] %></td>
+
+                  <% Poll::Stats::CHANNELS.each do |channel| %>
+                    <% group = @stats[:"#{channel}_participants_by_age"][age_range] %>
+                    <td>
+                      <div class="progress" tabindex="0">
+                        <span class="progress-meter" style="width: <%= group[:percentage] %>%">
+                        </span>
+                      </div>
+                      <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
                     </td>
                   <% end %>
                 </tr>

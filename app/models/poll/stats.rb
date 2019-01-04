@@ -18,8 +18,10 @@ class Poll::Stats
          total_male_web total_male_booth total_male_mail
          total_female_web total_female_booth total_female_mail
          male_web_percentage male_booth_percentage male_mail_percentage
-         female_web_percentage female_booth_percentage female_mail_percentage]
+         female_web_percentage female_booth_percentage female_mail_percentage
+         web_participants_by_age booth_participants_by_age mail_participants_by_age]
   end
+
 
   def total_participants
     total_participants_web + total_participants_booth
@@ -38,6 +40,11 @@ class Poll::Stats
 
     define_method :"#{channel}_participants" do
       User.where(id: voters.where(origin: channel).pluck(:user_id))
+    end
+
+    define_method :"#{channel}_participants_by_age" do
+      participants_by_age_for(send(:"#{channel}_participants"),
+                              relative_to: :participants_between_ages)
     end
 
     %i[male female].each do |gender|
