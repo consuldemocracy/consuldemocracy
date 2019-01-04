@@ -13,11 +13,11 @@ module Statisticable
     end
 
     def total_male_participants
-      participants.where(gender: "male").count
+      participants.male.count
     end
 
     def total_female_participants
-      participants.where(gender: "female").count
+      participants.female.count
     end
 
     def total_unknown_gender_or_age

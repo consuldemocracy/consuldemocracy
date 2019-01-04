@@ -182,6 +182,45 @@ describe Poll::Stats do
 
       expect(stats.participants_by_geozone["Midgar"][:percentage]).to eq(33.333)
     end
+
+    describe "participants by gender and channel" do
+      before do
+        4.times do
+          create :poll_voter, :from_web, poll: poll,
+                  user: create(:user, :level_two, gender: "female")
+        end
+
+        3.times do
+          create :poll_voter, :from_web, poll: poll,
+                  user: create(:user, :level_two, gender: "male")
+        end
+
+        2.times do
+          create :poll_voter, :from_booth, poll: poll,
+                  user: create(:user, :level_two, gender: "female")
+        end
+
+        1.times do
+          create :poll_voter, :from_booth, poll: poll,
+                  user: create(:user, :level_two, gender: "male")
+        end
+      end
+
+      it "calculates total participants" do
+        expect(stats.total_female_web).to eq(4)
+        expect(stats.total_male_web).to eq(3)
+        expect(stats.total_female_booth).to eq(2)
+        expect(stats.total_male_booth).to eq(1)
+      end
+
+      it "calculates percentage relative to the participants for that gender" do
+        expect(stats.female_web_percentage).to eq(66.667)
+        expect(stats.female_booth_percentage).to eq(33.333)
+
+        expect(stats.male_web_percentage).to eq(75.0)
+        expect(stats.male_booth_percentage).to eq(25.0)
+      end
+    end
   end
 
   describe "#generate" do

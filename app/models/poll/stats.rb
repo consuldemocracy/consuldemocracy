@@ -14,7 +14,11 @@ class Poll::Stats
          total_participants_mail_percentage
          valid_percentage_web valid_percentage_booth valid_percentage_mail total_valid_percentage
          white_percentage_web white_percentage_booth white_percentage_mail total_white_percentage
-         null_percentage_web null_percentage_booth null_percentage_mail total_null_percentage]
+         null_percentage_web null_percentage_booth null_percentage_mail total_null_percentage
+         total_male_web total_male_booth total_male_mail
+         total_female_web total_female_booth total_female_mail
+         male_web_percentage male_booth_percentage male_mail_percentage
+         female_web_percentage female_booth_percentage female_mail_percentage]
   end
 
   def total_participants
@@ -30,6 +34,23 @@ class Poll::Stats
 
     define_method :"total_participants_#{channel}_percentage" do
       calculate_percentage(send(:"total_participants_#{channel}"), total_participants)
+    end
+
+    define_method :"#{channel}_participants" do
+      User.where(id: voters.where(origin: channel).pluck(:user_id))
+    end
+
+    %i[male female].each do |gender|
+      define_method :"total_#{gender}_#{channel}" do
+        send(:"#{channel}_participants").public_send(gender).count
+      end
+
+      define_method :"#{gender}_#{channel}_percentage" do
+        calculate_percentage(
+          send(:"total_#{gender}_#{channel}"),
+          send(:"total_#{gender}_participants")
+        )
+      end
     end
   end
 
