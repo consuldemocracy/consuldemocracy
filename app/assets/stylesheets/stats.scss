@@ -22,20 +22,14 @@
 
   .number-with-info {
     display: inline-block;
-    margin-right: $line-height * 2;
 
-    &.participants {
-      padding-left: $line-height * 2.5;
-      position: relative;
-
-      &::before {
-        left: 0;
-        position: absolute;
-      }
+    &::before {
+      display: inline-block;
+      margin-right: $line-height / 2;
     }
 
     &.total-participants::before {
-      content: image-url('stats_man.png');
+      content: image-url('stats_users.png');
     }
 
     &.male::before {
@@ -44,6 +38,11 @@
 
     &.female::before {
       content: image-url('stats_woman.png');
+    }
+
+    .content {
+      display: inline-block;
+      margin-right: $line-height * 2;
     }
 
     .number {

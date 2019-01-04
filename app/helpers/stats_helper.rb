@@ -37,7 +37,9 @@ module StatsHelper
 
   def number_with_info_tags(number, text, html_class: "")
     content_tag :p, class: "number-with-info #{html_class}".strip do
-      content_tag(:span, number, class: "number") + content_tag(:span, text, class: "info")
+      content_tag :span, class: "content" do
+        content_tag(:span, number, class: "number") + content_tag(:span, text, class: "info")
+      end
     end
   end
 end
