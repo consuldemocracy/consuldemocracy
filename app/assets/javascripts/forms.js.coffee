@@ -28,9 +28,22 @@ App.Forms =
       input: ->
         $("[name='#{this.name}']").val($(this).val())
 
+  hideOrShowFieldsAfterSelection: ->
+    $("[name='progress_bar[kind]']").on
+      change: ->
+        title_field = $("[name^='progress_bar'][name$='[title]']").parent()
+
+        if this.value == "primary"
+          title_field.addClass("hide")
+        else
+          title_field.removeClass("hide")
+
+    $("[name='progress_bar[kind]']").change()
+
   initialize: ->
     App.Forms.disableEnter()
     App.Forms.submitOnChange()
     App.Forms.toggleLink()
     App.Forms.synchronizeInputs()
+    App.Forms.hideOrShowFieldsAfterSelection()
     false
