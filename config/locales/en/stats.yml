@@ -15,4 +15,8 @@ en:
     geozone: "District"
     geozone_participation: "% District population participation"
     polls:
+      by_channel: "Participants by channel"
       vote_by_channel: "Vote type by channel"
+      web_percentage: "%{percentage} Web"
+      booth_percentage: "%{percentage} Booths"
+      mail_percentage: "%{percentage} Mail"

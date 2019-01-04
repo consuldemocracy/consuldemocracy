@@ -40,6 +40,18 @@
       content: image-url('stats_woman.png');
     }
 
+    &.web::before {
+      content: image-url('stats_web.png');
+    }
+
+    &.booth::before {
+      content: image-url('stats_booth.png');
+    }
+
+    &.mail::before {
+      content: image-url('stats_mail.png');
+    }
+
     .content {
       display: inline-block;
       margin-right: $line-height * 2;

@@ -12,6 +12,9 @@
       <p><strong><%= link_to t("stats.advanced"), "#advanced_statistics" %></strong></p>
       <ul class="menu vertical">
         <li>
+          <%= link_to t("stats.polls.by_channel"), "#stats_by_channel" %>
+        </li>
+        <li>
           <%= link_to t("stats.polls.vote_by_channel"), "#vote_stats_by_channel" %>
         </li>
       </ul>
@@ -22,6 +25,20 @@
 
       <div id="advanced_statistics">
         <h3 class="section-title"><%= t("stats.advanced") %></h3>
+
+        <div id="stats_by_channel" class="stats-group">
+          <h4><%= t("stats.polls.by_channel") %></h4>
+
+          <% Poll::Stats::CHANNELS.each do |channel| %>
+            <%= number_with_info_tags(
+              @stats[:"total_participants_#{channel}"],
+              t("stats.polls.#{channel}_percentage",
+                percentage: number_to_stats_percentage(@stats[:"total_participants_#{channel}_percentage"])
+              ),
+              html_class: channel
+            ) %>
+          <% end %>
+        </div>
 
         <div id="vote_stats_by_channel" class="stats-group">
           <h4><%= t("stats.polls.vote_by_channel") %></h4>
