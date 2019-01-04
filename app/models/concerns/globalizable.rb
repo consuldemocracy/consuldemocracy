@@ -12,6 +12,10 @@ module Globalizable
     def assign_model_to_translations
       translations.each { |translation| translation.globalized_model = self }
     end
+
+    def description
+      self.read_attribute(:description).try :html_safe
+    end
   end
 
   class_methods do
