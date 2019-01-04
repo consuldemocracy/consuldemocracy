@@ -117,7 +117,7 @@ en:
       headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       max_votable_headings: "Maximum number of headings in which a user can vote"
-      no_groups: "No groups created yet. Each user will be able to vote in only one heading per group."
+      no_groups: "There are no groups."
       amount:
         one: "There is 1 group"
         other: "There are %{count} groups"
@@ -133,9 +133,11 @@ en:
         edit: "Edit group"
         name: "Group name"
         submit: "Save group"
+      index:
+        back: "Go back to budgets"
     budget_headings:
       name: "Name"
-      no_headings: "No headings created yet. Each user will be able to vote in only one heading per group."
+      no_headings: "There are no headings."
       amount:
         one: "There is 1 heading"
         other: "There are %{count} headings"
@@ -159,6 +161,8 @@ en:
         create: "Create new heading"
         edit: "Edit heading"
         submit: "Save heading"
+      index:
+        back: "Go back to groups"
     budget_phases:
       edit:
         start_date: Start date
@@ -1347,9 +1351,8 @@ en:
     site_customization:
       content_blocks:
         information: Information about content blocks
-        about: You can create HTML content blocks to be inserted in the header or the footer of your CONSUL.
-        top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
-        footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        about: "You can create HTML content blocks that can be inserted in different places of your website."
+        html_format: "A content block is a group of links, and it must have the following format:"
         no_blocks: "There are no content blocks."
         create:
           notice: Content block created successfully
