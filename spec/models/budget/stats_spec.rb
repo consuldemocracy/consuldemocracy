@@ -148,21 +148,21 @@ describe Budget::Stats do
 
   end
 
-  context "#age_groups" do
+  context "#participants_by_age" do
 
     it "returns the age groups hash" do
-      expect(stats[:age_groups]["16 - 19"][:count]).to be 0
-      expect(stats[:age_groups]["20 - 24"][:count]).to be 7
-      expect(stats[:age_groups]["25 - 29"][:count]).to be 1
-      expect(stats[:age_groups]["30 - 34"][:count]).to be 0
-      expect(stats[:age_groups]["35 - 39"][:count]).to be 1
-      expect(stats[:age_groups]["40 - 44"][:count]).to be 1
-      expect(stats[:age_groups]["45 - 49"][:count]).to be 0
-      expect(stats[:age_groups]["50 - 54"][:count]).to be 1
-      expect(stats[:age_groups]["55 - 59"][:count]).to be 0
-      expect(stats[:age_groups]["60 - 64"][:count]).to be 0
-      expect(stats[:age_groups]["65 - 69"][:count]).to be 0
-      expect(stats[:age_groups]["70 - 74"][:count]).to be 0
+      expect(stats[:participants_by_age]["16 - 19"][:count]).to be 0
+      expect(stats[:participants_by_age]["20 - 24"][:count]).to be 7
+      expect(stats[:participants_by_age]["25 - 29"][:count]).to be 1
+      expect(stats[:participants_by_age]["30 - 34"][:count]).to be 0
+      expect(stats[:participants_by_age]["35 - 39"][:count]).to be 1
+      expect(stats[:participants_by_age]["40 - 44"][:count]).to be 1
+      expect(stats[:participants_by_age]["45 - 49"][:count]).to be 0
+      expect(stats[:participants_by_age]["50 - 54"][:count]).to be 1
+      expect(stats[:participants_by_age]["55 - 59"][:count]).to be 0
+      expect(stats[:participants_by_age]["60 - 64"][:count]).to be 0
+      expect(stats[:participants_by_age]["65 - 69"][:count]).to be 0
+      expect(stats[:participants_by_age]["70 - 74"][:count]).to be 0
     end
 
   end

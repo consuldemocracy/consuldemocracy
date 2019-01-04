@@ -55,7 +55,11 @@ module Statisticable
          [80, 84],
          [85, 89],
          [90, 300]
-        ].map do |start, finish|
+        ]
+      end
+
+      def participants_by_age
+        age_groups.map do |start, finish|
           users = participants.where("date_of_birth > ? AND date_of_birth < ?",
                                      finish.years.ago.beginning_of_year,
                                      start.years.ago.end_of_year)
@@ -90,7 +94,7 @@ module Statisticable
     def stats_methods
       %i[total_participants total_male_participants
          total_female_participants total_unknown_gender_or_age
-         male_percentage female_percentage age_groups]
+         male_percentage female_percentage participants_by_age]
     end
 
     def stats_cache(*method_names)
