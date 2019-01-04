@@ -83,13 +83,10 @@
                 <% end %>
               </li>
             <% end %>
+            <%= raw content_block("footer", I18n.locale) %>
           </ul>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <%= raw content_block("footer", I18n.locale) %>
   </div>
 </footer>
