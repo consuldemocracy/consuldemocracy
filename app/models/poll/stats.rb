@@ -42,72 +42,50 @@ class Poll::Stats
       voters.where(origin: "web").count - total_web_white
     end
 
-    def valid_percentage_web
-      calculate_percentage(total_web_valid, total_valid_votes)
-    end
-
     def total_web_white
       0
-    end
-
-    def white_percentage_web
-      calculate_percentage(total_web_white, total_white_votes)
     end
 
     def total_web_null
       0
     end
 
-    def null_percentage_web
-      calculate_percentage(total_web_null, total_null_votes)
-    end
-
     def total_booth_valid
       recounts.sum(:total_amount)
-    end
-
-    def valid_percentage_booth
-      calculate_percentage(total_booth_valid, total_valid_votes)
     end
 
     def total_booth_white
       recounts.sum(:white_amount)
     end
 
-    def white_percentage_booth
-      calculate_percentage(total_booth_white, total_white_votes)
-    end
-
     def total_booth_null
       recounts.sum(:null_amount)
     end
 
-    def null_percentage_booth
-      calculate_percentage(total_booth_null, total_null_votes)
+    def valid_percentage_web
+      calculate_percentage(total_web_valid, total_valid_votes)
     end
 
-    def total_valid_votes
-      total_web_valid + total_booth_valid
+    def white_percentage_web
+      calculate_percentage(total_web_white, total_white_votes)
     end
 
-    def total_valid_percentage
-      calculate_percentage(total_valid_votes, total_participants)
+    def null_percentage_web
+      calculate_percentage(total_web_null, total_null_votes)
     end
 
-    def total_white_votes
-      total_web_white + total_booth_white
-    end
+    %i[valid white null].each do |type|
+      define_method :"#{type}_percentage_booth" do
+        calculate_percentage(send(:"total_booth_#{type}"), send(:"total_#{type}_votes"))
+      end
 
-    def total_white_percentage
-      calculate_percentage(total_white_votes, total_participants)
-    end
+      define_method :"total_#{type}_votes" do
+        send(:"total_web_#{type}") + send(:"total_booth_#{type}")
+      end
 
-    def total_null_votes
-      total_web_null + total_booth_null
-    end
-
-    def total_null_percentage
-      calculate_percentage(total_null_votes, total_participants)
+      define_method :"total_#{type}_percentage" do
+        calculate_percentage(send(:"total_#{type}_votes"), total_participants)
+      end
     end
 
     def voters
