@@ -20,16 +20,30 @@
     margin-top: $line-height;
   }
 
-  .participants {
+  .number-with-info {
     display: inline-block;
     margin-right: $line-height * 2;
-    padding-left: $line-height * 2.5;
-    position: relative;
 
-    &::before {
+    &.participants {
+      padding-left: $line-height * 2.5;
+      position: relative;
+
+      &::before {
+        left: 0;
+        position: absolute;
+      }
+    }
+
+    &.total-participants::before {
       content: image-url('stats_man.png');
-      left: 0;
-      position: absolute;
+    }
+
+    &.male::before {
+      content: image-url('stats_man.png');
+    }
+
+    &.female::before {
+      content: image-url('stats_woman.png');
     }
 
     .number {
@@ -42,17 +56,6 @@
     .info {
       color: $text-medium;
       font-style: italic;
-    }
-  }
-
-  .gender {
-
-    &.male::before {
-      content: image-url('stats_man.png');
-    }
-
-    &.female::before {
-      content: image-url('stats_woman.png');
     }
   }
 

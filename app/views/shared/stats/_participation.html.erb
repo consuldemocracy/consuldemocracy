@@ -4,7 +4,7 @@
   <div id="total_participants" class="stats-group">
     <h4><%= t("stats.total_participants") %></h4>
 
-    <p class="participants">
+    <p class="number-with-info participants total-participants">
       <span class="number"><%= stats[:total_participants] %></span>
       <span class="info"><%= t("polls.show.stats.total_votes") %></span>
     </p>
@@ -13,7 +13,7 @@
   <div id="participants_by_gender" class="stats-group">
     <h4><%= t("stats.by_gender") %></h4>
 
-    <p class="gender male participants">
+    <p class="number-with-info participants male">
       <span class="number"><%= stats[:total_male_participants] %></span>
       <span class="info">
         <%= I18n.t("stats.men_percentage",
@@ -21,7 +21,7 @@
       </span>
     </p>
 
-    <p class="gender female participants">
+    <p class="number-with-info participants female">
       <span class="number"><%= stats[:total_female_participants] %></span>
       <span class="info">
         <%= I18n.t("stats.women_percentage",
