@@ -34,4 +34,10 @@ module StatsHelper
   def number_to_stats_percentage(number, options = {})
     number_to_percentage(number, { strip_insignificant_zeros: true, precision: 2 }.merge(options))
   end
+
+  def number_with_info_tags(number, text, html_class: "")
+    content_tag :p, class: "number-with-info #{html_class}".strip do
+      content_tag(:span, number, class: "number") + content_tag(:span, text, class: "info")
+    end
+  end
 end

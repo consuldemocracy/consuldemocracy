@@ -4,30 +4,27 @@
   <div id="total_participants" class="stats-group">
     <h4><%= t("stats.total_participants") %></h4>
 
-    <p class="number-with-info participants total-participants">
-      <span class="number"><%= stats[:total_participants] %></span>
-      <span class="info"><%= t("polls.show.stats.total_votes") %></span>
-    </p>
+    <%= number_with_info_tags(
+      stats[:total_participants],
+      t("polls.show.stats.total_votes"),
+      html_class: "participants total-participants"
+    ) %>
   </div>
 
   <div id="participants_by_gender" class="stats-group">
     <h4><%= t("stats.by_gender") %></h4>
 
-    <p class="number-with-info participants male">
-      <span class="number"><%= stats[:total_male_participants] %></span>
-      <span class="info">
-        <%= I18n.t("stats.men_percentage",
-                   percentage: number_to_stats_percentage(stats[:male_percentage])) %>
-      </span>
-    </p>
+    <%= number_with_info_tags(
+      stats[:total_male_participants],
+      t("stats.men_percentage", percentage: number_to_stats_percentage(stats[:male_percentage])),
+      html_class: "participants male"
+    ) %>
 
-    <p class="number-with-info participants female">
-      <span class="number"><%= stats[:total_female_participants] %></span>
-      <span class="info">
-        <%= I18n.t("stats.women_percentage",
-                   percentage: number_to_stats_percentage(stats[:female_percentage])) %>
-      </span>
-    </p>
+    <%= number_with_info_tags(
+      stats[:total_female_participants],
+      t("stats.women_percentage", percentage: number_to_stats_percentage(stats[:female_percentage])),
+      html_class: "participants female"
+    ) %>
   </div>
 
   <div id="participants_by_age" class="stats-group">
