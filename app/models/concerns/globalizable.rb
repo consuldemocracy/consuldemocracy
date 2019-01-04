@@ -13,6 +13,10 @@ module Globalizable
       translations.each { |translation| translation.globalized_model = self }
     end
 
+    def description
+      self.read_attribute(:description).try :html_safe
+    end
+
     if self.paranoid?
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
