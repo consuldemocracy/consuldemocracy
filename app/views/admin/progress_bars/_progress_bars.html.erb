@@ -1,0 +1,49 @@
+<h2><%= t("admin.progress_bars.index.title") %></h2>
+
+<% if progressable.progress_bars.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= ProgressBar.human_attribute_name("id") %></th>
+        <th><%= ProgressBar.human_attribute_name("kind") %></th>
+        <th><%= ProgressBar.human_attribute_name("title") %></th>
+        <th><%= ProgressBar.human_attribute_name("percentage") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% progressable.progress_bars.each do |progress_bar| %>
+        <tr id="<%= dom_id(progress_bar) %>" class="progress-bar">
+          <td>
+            <%= progress_bar.id %>
+          </td>
+          <td><%= ProgressBar.human_attribute_name("kind.#{progress_bar.kind}") %></td>
+          <td><%= progress_bar.title %></td>
+          <td>
+            <%= number_to_percentage(progress_bar.percentage, strip_insignificant_zeros: true) %>
+          </td>
+          <td>
+            <%= link_to t("admin.actions.edit"),
+                        polymorphic_path([:admin, *resource_hierarchy_for(progress_bar)],
+                                         action: :edit),
+                        class: "button hollow expanded" %>
+
+            <%= link_to t("admin.actions.delete"),
+                        polymorphic_path([:admin, *resource_hierarchy_for(progress_bar)]),
+                        method: :delete,
+                        class: "button hollow alert expanded" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p><%= t("admin.progress_bars.index.no_progress_bars") %></p>
+<% end %>
+
+<p>
+  <%= link_to t("admin.progress_bars.index.new_progress_bar"),
+              polymorphic_path([:admin, *resource_hierarchy_for(progressable.progress_bars.new)],
+                               action: :new),
+              class: "button hollow" %>
+</p>

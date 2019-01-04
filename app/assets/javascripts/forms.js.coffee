@@ -23,8 +23,14 @@ App.Forms =
       false
     )
 
+  synchronizeInputs: ->
+    $("[name='progress_bar[percentage]']").on
+      input: ->
+        $("[name='#{this.name}']").val($(this).val())
+
   initialize: ->
     App.Forms.disableEnter()
     App.Forms.submitOnChange()
     App.Forms.toggleLink()
+    App.Forms.synchronizeInputs()
     false
