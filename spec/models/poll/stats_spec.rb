@@ -156,6 +156,34 @@ describe Poll::Stats do
     end
   end
 
+  describe "#participants_by_geozone" do
+    it "groups by geozones in alphabetic order" do
+      %w[Oceania Eurasia Eastasia].each { |name| create(:geozone, name: name) }
+
+      expect(stats.participants_by_geozone.keys).to eq %w[Eastasia Eurasia Oceania]
+    end
+
+    it "calculates percentage relative to total participants" do
+      hobbiton = create(:geozone, name: "Hobbiton")
+      rivendel = create(:geozone, name: "Rivendel")
+
+      3.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: hobbiton) }
+      2.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: rivendel) }
+
+      expect(stats.participants_by_geozone["Hobbiton"][:total]).to eq(count: 3, percentage: 60.0)
+      expect(stats.participants_by_geozone["Rivendel"][:total]).to eq(count: 2, percentage: 40.0)
+    end
+
+    it "calculates percentage relative to the geozone population" do
+      midgar = create(:geozone, name: "Midgar")
+
+      create(:poll_voter, poll: poll, user: create(:user, :level_two, geozone: midgar))
+      2.times { create :user, :level_two, geozone: midgar }
+
+      expect(stats.participants_by_geozone["Midgar"][:percentage]).to eq(33.333)
+    end
+  end
+
   describe "#generate" do
     it "generates the correct stats" do
       poll = create(:poll)

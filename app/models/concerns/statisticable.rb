@@ -49,6 +49,23 @@ module Statisticable
       end.to_h
     end
 
+    def participants_by_geozone
+      Geozone.all.order("name").map do |geozone|
+        count = participants.where(geozone: geozone).count
+
+        [
+          geozone.name,
+          {
+            total: {
+              count: count,
+              percentage: calculate_percentage(count, total_participants)
+            },
+            percentage: calculate_percentage(count, geozone.users.count)
+          }
+        ]
+      end.to_h
+    end
+
     private
 
       def total_participants_with_gender
@@ -92,9 +109,10 @@ module Statisticable
 
   class_methods do
     def stats_methods
-      %i[total_participants total_male_participants
-         total_female_participants total_unknown_gender_or_age
-         male_percentage female_percentage participants_by_age]
+      %i[total_participants
+         total_male_participants total_female_participants total_unknown_gender_or_age
+         male_percentage female_percentage
+         participants_by_age participants_by_geozone]
     end
 
     def stats_cache(*method_names)
