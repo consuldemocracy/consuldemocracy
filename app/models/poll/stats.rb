@@ -22,20 +22,16 @@ class Poll::Stats
       total_participants_web + total_participants_booth
     end
 
-    def total_participants_web
-      total_web_valid + total_web_white + total_web_null
-    end
+    %i[web booth].each do |channel|
+      define_method :"total_participants_#{channel}" do
+        send(:"total_#{channel}_valid") +
+          send(:"total_#{channel}_white") +
+          send(:"total_#{channel}_null")
+      end
 
-    def total_participants_web_percentage
-      calculate_percentage(total_participants_web, total_participants)
-    end
-
-    def total_participants_booth
-      total_booth_valid + total_booth_white + total_booth_null
-    end
-
-    def total_participants_booth_percentage
-      calculate_percentage(total_participants_booth, total_participants)
+      define_method :"total_participants_#{channel}_percentage" do
+        calculate_percentage(send(:"total_participants_#{channel}"), total_participants)
+      end
     end
 
     def total_web_valid
