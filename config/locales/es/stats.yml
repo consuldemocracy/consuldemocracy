@@ -1,6 +1,7 @@
 es:
   stats:
     title: "Estadísticas de participación"
+    advanced: "Estadísticas avanzadas"
     total_participants: "Participantes"
     by_gender: "Participación por género"
     by_age: "Participación por grupos de edad"
@@ -13,3 +14,5 @@ es:
     total: "Total"
     geozone: "Distrito"
     geozone_participation: "% Partipación población del distrito"
+    polls:
+      vote_by_channel: "Votos emitidos por medio"
