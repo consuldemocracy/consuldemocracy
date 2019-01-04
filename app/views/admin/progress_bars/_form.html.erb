@@ -1,0 +1,16 @@
+<%= render "admin/shared/globalize_locales", resource: @progress_bar %>
+
+<%= translatable_form_for [:admin, *resource_hierarchy_for(@progress_bar)] do |f| %>
+
+  <%= f.enum_select :kind %>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <%= translations_form.text_field :title %>
+  <% end %>
+
+  <% progress_options = { min: ProgressBar::RANGE.min, max: ProgressBar::RANGE.max, step: 1 } %>
+  <%= f.text_field :percentage, { type: :range, id: "percentage_range" }.merge(progress_options) %>
+  <%= f.text_field :percentage, { type: :number, label: false }.merge(progress_options) %>
+
+  <%= f.submit nil, class: "button success" %>
+<% end %>
