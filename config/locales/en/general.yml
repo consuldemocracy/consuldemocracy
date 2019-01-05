@@ -566,7 +566,7 @@ en:
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
         intro_text:
-          I am participating in Decide Madrid with my own citizen proposal and only if you also add you can I achieve the
+          <strong>I am participating in Decide Madrid</strong> with my own citizen proposal and only if you also add you can I achieve the
           necessary support to make Madrid the city we all want.
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal

@@ -17,18 +17,19 @@
     <p class="text-center">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
     </p>
+
+    <div class="proposal-image">
+      <% if proposal.image.present? %>
+        <%= wicked_pdf_image_tag proposal.image.attachment.url(:large) %>
+      <% else %>
+        <%= wicked_pdf_image_tag "default_mailing.jpg" %>
+      <% end %>
+      <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
+    </div>
   </div>
 
-  <div class="proposal-image">
-    <% if proposal.image.present? %>
-      <%= wicked_pdf_image_tag proposal.image.attachment.url(:large) %>
-    <% else %>
-      <%= wicked_pdf_image_tag "default_mailing.jpg" %>
-    <% end %>
-  </div>
 
   <div class="poster-content">
-    <h2><%= t("dashboard.poster.index.support") %></h2>
     <h3>
       <span class="title-quote">"</span>
       <%= proposal.title %>
