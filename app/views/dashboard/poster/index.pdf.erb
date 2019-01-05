@@ -12,9 +12,13 @@
       <%= t("dashboard.poster.index.poster_title") %>
       <br>
       <%= t("dashboard.poster.index.poster_subtitle") %>
+
     </h1>
-    <p class="intro"><%= t("dashboard.poster.index.intro_text") %></p>
-    <p class="text-center">
+
+    <p class="intro">
+      <%= t("dashboard.poster.index.intro_text").html_safe %>
+    </p>
+    <p class="text-center proposal_code">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
     </p>
 
@@ -28,15 +32,14 @@
     </div>
   </div>
 
-
   <div class="poster-content">
     <h3>
-      <span class="title-quote">"</span>
+      <%= wicked_pdf_image_tag 'quote-before.svg' %>
       <%= proposal.title %>
-      <span class="title-quote">"</span>
+      <%= wicked_pdf_image_tag 'quote-after.svg' %>
     </h3>
 
-    <p class="poster-footer"><%= t("dashboard.poster.index.footer") %></p>
+    <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
   </div>
 </body>
 </html>

@@ -542,20 +542,18 @@
 // 11. Poster PDF
 // --------------
 
-@page { margin: 0; }
-
 .dashboard-poster-pdf {
-  .poster-header {
-    background: $brand;
-    color: #fff;
-    padding: $line-height * 2 $line-height $line-height * 2;
-    //padding: rem-calc(320) rem-calc(160) rem-calc(160);
-    text-align: center;
 
+  .poster-header {
+    background: #0300ff;
+    color: #fff;
+    padding: 5cm;
+    text-align: center;
+    height: 60cm;
 
     h1 {
       color: #fff;
-      font-size: rem-calc(250);
+      font-size: 6cm;
       line-height: rem-calc(250);
       text-align: left;
     }
@@ -563,55 +561,107 @@
     p {
       font-size: rem-calc(80);
       line-height: rem-calc(80);
+      font-family: 'Open Sans'; //With Lato not work
+      font-style: normal;
+      font-weight: 400;
+      color: #fff;
 
       &.intro {
         margin: rem-calc(160) auto;
-        max-width: 60%;
+        max-width: 80%;
         text-align: justify;
+      }
+
+      &.proposal_code{
+          font-size: 1.7cm;
       }
     }
   }
 
   .proposal-image {
     margin: 0 auto;
-    max-width: rem-calc(2000);
+    max-width: 90%;
     position: relative;
+
     &::before {
       background: #ff9e00;
       content: '';
-      height: rem-calc(400);
-      left: -120px;
+      height: rem-calc(420);
+      left: rem-calc(-130px);
       position: absolute;
-      top: -720px;
-      width: rem-calc(400);
+      top: rem-calc(-130px);
+      width: rem-calc(420);
     }
 
     img {
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-      margin-top: rem-calc(50);
+      //margin-top: rem-calc(-144);
+      margin-top: rem-calc(10);
       position: relative;
       width: 100%;
     }
 
     h2 {
       // color: $text-medium;
-      font-size: rem-calc(80);
-      margin-top: rem-calc(80);
+      margin: $line-height 0;
+      // margin-left: 10%;
+      // text-align: left;
     }
   }
+
+  // .proposal-image {
+  //   margin: 0 auto;
+  //   max-width: rem-calc(2000);
+  //   position: relative;
+  //   &::before {
+  //     background: #ff9e00;
+  //     content: '';
+  //     height: rem-calc(400);
+  //     left: -120px;
+  //     position: absolute;
+  //     top: -720px;
+  //     width: rem-calc(400);
+  //   }
+  //
+  //   img {
+  //     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  //     margin-top: rem-calc(50);
+  //     position: relative;
+  //     width: 100%;
+  //   }
+  //
+  //   h2 {
+  //     // color: $text-medium;
+  //     font-size: rem-calc(80);
+  //     margin-top: rem-calc(80);
+  //   }
+  // }
 
   .poster-content {
-    margin: 0 auto;
-    max-width: rem-calc(2000);
+    margin-top: 20cm;
 
-    h2{
-      max-width: 60%;
-      text-align:left;
-      margin-top: rem-calc(100);
+    h2 {
+      font-size: rem-calc(28);
+      color: $text-medium;
+      margin: $line-height 0;
+      margin-left: 10%;
+      text-align: left;
+    }
+
+    h3 {
+      color: #0300ff;
+      font-size: 4.7cm;
+      margin-bottom: $line-height * 2;
+      margin-top: $line-height * 2;
+      max-width: 80%;
+      display: inline;margin: 0 auto;
+    }
+
+    img{
+      width:5cm;
+      height:5cm;
     }
   }
-
-
 
   h3 {
     color: $brand;
