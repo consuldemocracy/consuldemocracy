@@ -446,18 +446,22 @@
 .dashboard-poster-preview {
 
   .poster-header {
-    background: $brand;
+    //background: $brand;
+    background: #0300ff;
     color: #fff;
-    padding: $line-height * 2 $line-height $line-height * 6;
+    padding: $line-height * 2 $line-height $line-height * 2;
+    height: rem-calc(600);
 
     h1 {
       color: #fff;
-      font-size: rem-calc(80);
+      font-size: rem-calc(60);
       line-height: rem-calc(80);
     }
 
     p {
-      font-size: rem-calc(24);
+      font-size: rem-calc(18);
+      max-width: 60%;
+      margin: 0 auto;
     }
 
     .intro {
@@ -469,65 +473,85 @@
 
   .proposal-image {
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 90%;
     position: relative;
 
     &::before {
       background: #ff9e00;
       content: '';
       height: rem-calc(120);
-      left: -36px;
+      left: -30px;
       position: absolute;
-      top: -180px;
+      top: -20px;
       width: rem-calc(120);
     }
 
     img {
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-      margin-top: rem-calc(-144);
+      //margin-top: rem-calc(-144);
+      margin-top: rem-calc(10);
       position: relative;
       width: 100%;
     }
+
+    h2 {
+      // color: $text-medium;
+      margin: $line-height 0;
+      // margin-left: 10%;
+      // text-align: left;
+    }
   }
 
-  h2 {
-    color: $text-medium;
-    margin: $line-height 0;
-    margin-left: 10%;
-    text-align: left;
-  }
+  .poster-content {
+    margin-top: rem-calc(260);
 
-  h3 {
-    color: $brand;
-    font-size: rem-calc(50);
-    margin-bottom: $line-height * 2;
+    h2 {
+      font-size: rem-calc(28);
+      color: $text-medium;
+      margin: $line-height 0;
+      margin-left: 10%;
+      text-align: left;
+    }
+
+    h3 {
+      //color: $brand;
+      color: #0300ff;
+      font-size: rem-calc(50);
+      margin-bottom: $line-height * 2;
+      margin-top: $line-height * 2;
+      max-width: 80%;
+      display: inline;
+    }
 
     .title-quote {
       display: inline-block;
-      top: rem-calc(-12);
-      vertical-align: baseline;
+      font-size: rem-calc(50);
     }
   }
 
   .poster-footer {
     border-left: 2px solid $border;
-    font-size: rem-calc(20);
+    font-size: rem-calc(19);
     margin: 0 auto;
     padding-left: $line-height / 2;
     width: 50%;
+    margin-top: rem-calc(50);
   }
 }
 
 // 11. Poster PDF
 // --------------
 
-.dashboard-poster-pdf {
+@page { margin: 0; }
 
+.dashboard-poster-pdf {
   .poster-header {
     background: $brand;
     color: #fff;
-    padding: rem-calc(320) rem-calc(160) rem-calc(640);
+    padding: $line-height * 2 $line-height $line-height * 2;
+    //padding: rem-calc(320) rem-calc(160) rem-calc(160);
     text-align: center;
+
 
     h1 {
       color: #fff;
@@ -552,7 +576,6 @@
     margin: 0 auto;
     max-width: rem-calc(2000);
     position: relative;
-
     &::before {
       background: #ff9e00;
       content: '';
@@ -565,26 +588,34 @@
 
     img {
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-      margin-top: rem-calc(-600);
+      margin-top: rem-calc(50);
       position: relative;
       width: 100%;
+    }
+
+    h2 {
+      // color: $text-medium;
+      font-size: rem-calc(80);
+      margin-top: rem-calc(80);
     }
   }
 
   .poster-content {
     margin: 0 auto;
     max-width: rem-calc(2000);
+
+    h2{
+      max-width: 60%;
+      text-align:left;
+      margin-top: rem-calc(100);
+    }
   }
 
-  h2 {
-    color: $text-medium;
-    font-size: rem-calc(80);
-    margin-top: rem-calc(80);
-  }
+
 
   h3 {
     color: $brand;
-    font-size: rem-calc(200);
+    font-size: rem-calc(170);
     line-height: rem-calc(240);
     margin: rem-calc(80) 0;
     position: relative;
