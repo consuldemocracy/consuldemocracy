@@ -3,15 +3,19 @@ namespace :globalize do
     [
       AdminNotification,
       Banner,
-      Milestone,
+      Budget::Investment,
+      Comment,
+      Debate,
       I18nContent,
       Legislation::DraftVersion,
       Legislation::Process,
       Legislation::Question,
       Legislation::QuestionOption,
+      Milestone,
       Poll,
       Poll::Question,
       Poll::Question::Answer,
+      Proposal,
       SiteCustomization::Page,
       Widget::Card
     ]
