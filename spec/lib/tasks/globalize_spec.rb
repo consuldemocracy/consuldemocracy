@@ -142,7 +142,10 @@ describe "Globalize tasks" do
     end
 
     context "locale with non-underscored name" do
-      before { I18n.locale = :"pt-BR" }
+      before do
+        I18n.locale = :"pt-BR"
+        Globalize.locale = :"pt-BR"
+      end
 
       let!(:milestone) do
         create(:milestone).tap do |milestone|
