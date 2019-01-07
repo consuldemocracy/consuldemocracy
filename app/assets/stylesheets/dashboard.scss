@@ -443,19 +443,70 @@
 // 10. Poster preview
 // ------------------
 
-.dashboard-poster-preview {
-
+.dashboard-poster-preview,
+.dashboard-poster-pdf {
   .poster-header {
-    //background: $brand;
     background: #0300ff;
     color: #fff;
+    h1 {
+      color: #fff;
+      text-align: left;
+    }
+  }
+
+  .proposal-image {
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      background: #ff9e00;
+      content: '';
+      position: absolute;
+    }
+  }
+
+  .poster-content {
+
+    margin: 0 auto;
+
+    h2 {
+      color: $text-medium;
+      text-align: left;
+    }
+
+    h3 {
+      color: #0300ff;
+      display: inline;
+    }
+
+    .title-quote {
+      display: inline-block;
+    }
+  }
+
+  .poster-footer {
+    color: $text-medium;
+    border-left: 2px solid $border;
+  }
+}
+
+
+.dashboard-poster-preview {
+  .preview-min-width {
+    min-width: 661px;
+  }
+
+  .poster-header {
     padding: $line-height * 2 $line-height $line-height * 2;
     height: rem-calc(600);
 
     h1 {
-      color: #fff;
       font-size: rem-calc(60);
       line-height: rem-calc(80);
+
+      .icon-finger::before{
+        font-size: rem-calc(60);
+      }
     }
 
     p {
@@ -477,50 +528,38 @@
     position: relative;
 
     &::before {
-      background: #ff9e00;
-      content: '';
       height: rem-calc(120);
       left: -30px;
-      position: absolute;
       top: -20px;
       width: rem-calc(120);
     }
 
     img {
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-      //margin-top: rem-calc(-144);
       margin-top: rem-calc(10);
       position: relative;
       width: 100%;
     }
 
     h2 {
-      // color: $text-medium;
       margin: $line-height 0;
-      // margin-left: 10%;
-      // text-align: left;
     }
   }
 
   .poster-content {
+
+    max-width: 84%;
+    margin: 0 auto;
     margin-top: rem-calc(260);
 
     h2 {
       font-size: rem-calc(28);
-      color: $text-medium;
       margin: $line-height 0;
-      margin-left: 10%;
-      text-align: left;
     }
 
     h3 {
-      //color: $brand;
-      color: #0300ff;
-      font-size: rem-calc(50);
+      font-size: rem-calc(45);
       margin-bottom: $line-height * 2;
-      margin-top: $line-height * 2;
-      max-width: 80%;
-      display: inline;
     }
 
     .title-quote {
@@ -530,7 +569,6 @@
   }
 
   .poster-footer {
-    border-left: 2px solid $border;
     font-size: rem-calc(19);
     margin: 0 auto;
     padding-left: $line-height / 2;
@@ -542,28 +580,26 @@
 // 11. Poster PDF
 // --------------
 
+
 .dashboard-poster-pdf {
 
   .poster-header {
-    background: #0300ff;
-    color: #fff;
     padding: 5cm;
-    text-align: center;
     height: 60cm;
 
     h1 {
-      color: #fff;
       font-size: 6cm;
       line-height: rem-calc(250);
-      text-align: left;
+
+      img{
+        width: 4cm;
+        height: 2.5cm;
+      }
     }
 
     p {
       font-size: rem-calc(80);
       line-height: rem-calc(80);
-      font-family: 'Open Sans'; //With Lato not work
-      font-style: normal;
-      font-weight: 400;
       color: #fff;
 
       &.intro {
@@ -573,7 +609,7 @@
       }
 
       &.proposal_code{
-          font-size: 1.7cm;
+        font-size: 1.7cm;
       }
     }
   }
@@ -584,77 +620,38 @@
     position: relative;
 
     &::before {
-      background: #ff9e00;
-      content: '';
       height: rem-calc(420);
-      left: rem-calc(-130px);
-      position: absolute;
-      top: rem-calc(-130px);
+      left: rem-calc(-130);
+      top: rem-calc(-130);
       width: rem-calc(420);
     }
 
     img {
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-      //margin-top: rem-calc(-144);
       margin-top: rem-calc(10);
       position: relative;
       width: 100%;
     }
 
     h2 {
-      // color: $text-medium;
       margin: $line-height 0;
-      // margin-left: 10%;
-      // text-align: left;
     }
   }
 
-  // .proposal-image {
-  //   margin: 0 auto;
-  //   max-width: rem-calc(2000);
-  //   position: relative;
-  //   &::before {
-  //     background: #ff9e00;
-  //     content: '';
-  //     height: rem-calc(400);
-  //     left: -120px;
-  //     position: absolute;
-  //     top: -720px;
-  //     width: rem-calc(400);
-  //   }
-  //
-  //   img {
-  //     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-  //     margin-top: rem-calc(50);
-  //     position: relative;
-  //     width: 100%;
-  //   }
-  //
-  //   h2 {
-  //     // color: $text-medium;
-  //     font-size: rem-calc(80);
-  //     margin-top: rem-calc(80);
-  //   }
-  // }
-
   .poster-content {
+
+    max-width: 80%;
+    margin: 0 auto;
     margin-top: 20cm;
 
     h2 {
-      font-size: rem-calc(28);
-      color: $text-medium;
+      font-size: 3cm;
       margin: $line-height 0;
-      margin-left: 10%;
-      text-align: left;
     }
 
     h3 {
-      color: #0300ff;
       font-size: 4.7cm;
-      margin-bottom: $line-height * 2;
-      margin-top: $line-height * 2;
+      margin-top: $line-height;
       max-width: 80%;
-      display: inline;margin: 0 auto;
     }
 
     img{
@@ -663,27 +660,11 @@
     }
   }
 
-  h3 {
-    color: $brand;
-    font-size: rem-calc(170);
-    line-height: rem-calc(240);
-    margin: rem-calc(80) 0;
-    position: relative;
-    width: 90%;
-
-    .title-quote {
-      display: inline-block;
-      top: rem-calc(-40);
-      vertical-align: baseline;
-    }
-  }
-
   .poster-footer {
-    border-left: 10px solid $border;
-    color: $text-medium;
     font-size: rem-calc(60);
     line-height: rem-calc(60);
     margin: 0 auto;
+    margin-top: 2cm;
     max-width: 60%;
     padding-left: rem-calc(40);
     width: 100%;
