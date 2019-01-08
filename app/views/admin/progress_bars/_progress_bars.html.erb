@@ -1,4 +1,11 @@
-<h2><%= t("admin.progress_bars.index.title") %></h2>
+<h2 class="inline-block"><%= t("admin.progress_bars.index.title") %></h2>
+
+<%= link_to t("admin.progress_bars.index.new_progress_bar"),
+            polymorphic_path(
+              [:admin, *resource_hierarchy_for(ProgressBar.new(progressable: progressable))],
+              action: :new
+            ),
+            class: "button float-right" %>
 
 <% if progressable.progress_bars.any? %>
   <table>
@@ -7,7 +14,7 @@
         <th><%= ProgressBar.human_attribute_name("id") %></th>
         <th><%= ProgressBar.human_attribute_name("kind") %></th>
         <th><%= ProgressBar.human_attribute_name("title") %></th>
-        <th><%= ProgressBar.human_attribute_name("percentage") %></th>
+        <th class="text-center"><%= ProgressBar.human_attribute_name("percentage") %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -18,32 +25,33 @@
             <%= progress_bar.id %>
           </td>
           <td><%= ProgressBar.human_attribute_name("kind.#{progress_bar.kind}") %></td>
-          <td><%= progress_bar.title %></td>
           <td>
+            <% if progress_bar.title.present? %>
+              <%= progress_bar.title %>
+            <% else %>
+              <strong><%= t("admin.progress_bars.index.primary") %></strong>
+            <% end %>
+          </td>
+          <td class="text-center">
             <%= number_to_percentage(progress_bar.percentage, strip_insignificant_zeros: true) %>
           </td>
           <td>
             <%= link_to t("admin.actions.edit"),
                         polymorphic_path([:admin, *resource_hierarchy_for(progress_bar)],
                                          action: :edit),
-                        class: "button hollow expanded" %>
+                        class: "button hollow" %>
 
             <%= link_to t("admin.actions.delete"),
                         polymorphic_path([:admin, *resource_hierarchy_for(progress_bar)]),
                         method: :delete,
-                        class: "button hollow alert expanded" %>
+                        class: "button hollow alert" %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-  <p><%= t("admin.progress_bars.index.no_progress_bars") %></p>
+  <div class="callout primary">
+    <%= t("admin.progress_bars.index.no_progress_bars") %>
+  </div>
 <% end %>
-
-<p>
-  <%= link_to t("admin.progress_bars.index.new_progress_bar"),
-              polymorphic_path([:admin, *resource_hierarchy_for(progressable.progress_bars.new)],
-                               action: :new),
-              class: "button hollow" %>
-</p>

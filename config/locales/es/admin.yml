@@ -338,6 +338,7 @@ es:
         title: "Barras de progreso"
         no_progress_bars: "No hay barras de progreso"
         new_progress_bar: "Crear nueva barra de progreso"
+        primary: "Barra de progreso principal"
       new:
         creating: "Crear barra de progreso"
       edit:
