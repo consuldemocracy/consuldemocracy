@@ -24,23 +24,25 @@
 
     <div class="proposal-image">
       <% if proposal.image.present? %>
-        <%= wicked_pdf_image_tag proposal.image.attachment.url(:large) %>
+        <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join('app','assets', proposal.image.attachment.url(:large), )}" %>');"></div>
+        <%#= wicked_pdf_image_tag proposal.image.attachment.url(:large) %>
       <% else %>
-        <%= wicked_pdf_image_tag "default_mailing.jpg" %>
+        <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join('app','assets','images','default_mailing.jpg')}" %>');"></div>
+        <%#= wicked_pdf_image_tag "default_mailing.jpg" %>
       <% end %>
+    </div>
 
+    <div class="poster-content">
+      <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
+      <h3>
+        <%= wicked_pdf_image_tag 'quote-before.svg' %>
+        <%= proposal.title %>
+        <%= wicked_pdf_image_tag 'quote-after.svg' %>
+      </h3>
+      <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
     </div>
   </div>
 
-  <div class="poster-content">
-    <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
-    <h3>
-      <%= wicked_pdf_image_tag 'quote-before.svg' %>
-      <%= proposal.title %>
-      <%= wicked_pdf_image_tag 'quote-after.svg' %>
-    </h3>
 
-    <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
-  </div>
 </body>
 </html>
