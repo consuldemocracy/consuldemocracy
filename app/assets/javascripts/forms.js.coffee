@@ -28,6 +28,8 @@ App.Forms =
       input: ->
         $("[name='#{this.name}']").val($(this).val())
 
+    $("[name='progress_bar[percentage]'][type='range']").trigger("input")
+
   hideOrShowFieldsAfterSelection: ->
     $("[name='progress_bar[kind]']").on
       change: ->
