@@ -42,6 +42,7 @@ shared_examples "progressable" do |factory_name, path_name|
         expect(page).to have_content "Progress bar created successfully"
         expect(page).to have_content "43%"
         expect(page).to have_content "Primary"
+        expect(page).to have_content "Primary progress bar"
       end
 
       scenario "Secondary progress bar", :js do
