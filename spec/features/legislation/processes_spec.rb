@@ -134,12 +134,21 @@ feature 'Legislation' do
     context "show" do
       include_examples "not published permissions", :legislation_process_path
 
-      scenario '#show view has document present' do
+      scenario 'show view has document present on all phases' do
         process = create(:legislation_process)
         document = create(:document, documentable: process)
+        phases = ["Debate", "Proposals", "Draft publication",
+                  "Comments", "Final result publication"]
+
         visit legislation_process_path(process)
 
-        expect(page).to have_content(document.title)
+        phases.each do |phase|
+          within(".legislation-process-list") do
+            find('li', :text => "#{phase}").click_link
+          end
+
+          expect(page).to have_content(document.title)
+        end
       end
 
       scenario 'show additional info button' do
