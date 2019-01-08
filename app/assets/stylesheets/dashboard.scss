@@ -498,6 +498,37 @@
       text-align: left;
     }
 
+    .quote {
+      font-family: Georgia, serif;
+      font-size: 14px;
+
+      blockquote {
+        border: 0;
+      }
+
+      .curly-quotes:before,
+      .curly-quotes:after {
+        color: #0300ff;
+        display: inline-block;
+        vertical-align: top;
+        height:  rem-calc(18);
+        line-height: rem-calc(70);
+        font-size: rem-calc(60);
+      }
+
+      .curly-quotes:before {
+        content: '\201C';
+        margin-right: 4px;
+        margin-left: -8px;
+      }
+
+      .curly-quotes:after {
+        content: '\201D';
+        margin-left: 4px;
+        margin-right: -8px;
+      }
+    }
+
     h3 {
       color: #0300ff;
       display: inline;
@@ -510,6 +541,8 @@
     .poster-footer {
       color: $text-medium;
       border-left: 2px solid $border;
+      padding-left: rem-calc(40);
+      margin: 0 auto;
     }
   }
 }
@@ -593,8 +626,6 @@
 
   .poster-footer {
     font-size: rem-calc(19);
-    margin: 0 auto;
-    padding-left: $line-height / 2;
     width: 50%;
     margin-top: rem-calc(50);
   }
@@ -609,10 +640,12 @@
   .poster-header {
     padding: 5cm;
     height: 60cm;
+    font-weight: normal;
 
     h1 {
       font-size: 6cm;
       line-height: rem-calc(250);
+      font-weight: bold;
 
       img {
         width: 4cm;
@@ -622,12 +655,13 @@
 
     p {
       font-size: rem-calc(80);
-      line-height: rem-calc(80);
+      line-height: rem-calc(100);
       color: #fff;
+
 
       &.intro {
         margin: rem-calc(160) auto;
-        max-width: 80%;
+        max-width: 70%;
         text-align: justify;
       }
 
@@ -660,6 +694,15 @@
 
   .poster-content {
 
+    .quote {
+      .curly-quotes:before,
+      .curly-quotes:after {
+        font-size: rem-calc(200);
+        height:  rem-calc(18);
+        line-height: rem-calc(150);
+      }
+    }
+
     h2 {
       font-size: 3cm;
       margin: $line-height 0;
@@ -669,6 +712,7 @@
       font-size: 4.7cm;
       margin-top: $line-height;
       max-width: 80%;
+      line-height: 5cm;
     }
 
     img{
@@ -678,10 +722,8 @@
   }
 
   .poster-footer {
-    margin: 0 auto;
-    margin-top: 2cm;
+    margin-top: 3cm;
     max-width: 60%;
-    padding-left: rem-calc(40);
     width: 100%;
   }
 }
