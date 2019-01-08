@@ -34,6 +34,13 @@
 </div>
 
 <div class="row expanded margin-top">
+  <div class="small-12 medium-12 column">
+    <%= f.check_box :published_proposal, label: t("admin.dashboard.actions.form.published_proposal") %>
+    <p class="help-text"><%= t("admin.dashboard.actions.form.published_proposal_help_text") %></p>
+  </div>
+</div>
+
+<div class="row expanded margin-top">
   <div class="small-12 medium-4 column">
     <%= f.label :day_offset %>
     <p class="help-text"><%= t("admin.dashboard.actions.form.day_offset_help_text") %></p>
