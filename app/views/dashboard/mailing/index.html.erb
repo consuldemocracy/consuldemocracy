@@ -1,7 +1,7 @@
 <% content_for :action_title, t("dashboard.mailing.index.title") %>
 <div class="row expanded">
   <div class="small-12 medium-9 large-7 column dashboard-mail-preview">
-    <div class="mail-header">
+    <div class="mail-header text-left">
       <h1><%= proposal.title %></h1>
       <h2><%= t("dashboard.mailer.forward.subtitle") %></h2>
     </div>
@@ -32,6 +32,8 @@
                    title: @proposal.title,
                    url: proposal_url(@proposal),
                    description: @proposal.summary } %>
+
+        <%= image_tag "decide_madrid.png" %>
       </div>
     </div>
   </div>

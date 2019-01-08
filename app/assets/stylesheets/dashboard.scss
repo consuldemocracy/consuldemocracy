@@ -425,17 +425,32 @@
 .dashboard-mail-preview {
 
   .mail-header {
-    background: #3700fd;
+    background: #0300ff;
     color: #fff;
     padding: $line-height;
-    text-align: center;
+
+    h2 {
+      margin-top: $line-height;
+    }
+  }
+
+  .margin-bottom {
+    img {
+      box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);
+    }
   }
 
   .mail-body {
     text-align: justify;
+    color: $text-medium;
 
     .button {
-      background: #3700fd;
+      background: #064c86;
+    }
+
+    img {
+      margin-top: $line-height;
+      max-width: rem-calc(120);
     }
   }
 }
@@ -644,7 +659,7 @@
   }
 
   .poster-content {
-    
+
     h2 {
       font-size: 3cm;
       margin: $line-height 0;
