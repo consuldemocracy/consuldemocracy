@@ -17,26 +17,23 @@
         <div class="proposal-image">
           <% if proposal.image.present? %>
             <div class="overflow-image" style="background-image: url(<%= asset_url proposal.image.attachment.url(:large) %>);"></div>
-            <%#= image_tag proposal.image.attachment.url(:large) %>
           <% else %>
             <div class="overflow-image" style="background-image: url(<%= asset_url "default_mailing.jpg"%>);"></div>
-            <%#= image_tag "default_mailing.jpg" %>
           <% end %>
         </div>
 
         <div class="poster-content">
           <h2><%= t("dashboard.poster.index.support") %></h2>
 
-          <h3>
-            <span class="title-quote icon-quote-before"></span>
-            <%= proposal.title %>
-            <span class="title-quote icon-quote-after"></span>
-          </h3>
+            <div class="quote">
+              <blockquote class="curly-quotes">
+                <h3><%= proposal.title %></h3>
+              </blockquote>
+            </div>
 
           <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
         </div>
       </div>
-
     </div>
   </div>
 

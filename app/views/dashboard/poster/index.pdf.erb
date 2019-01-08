@@ -34,15 +34,13 @@
 
     <div class="poster-content">
       <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
-      <h3>
-        <%= wicked_pdf_image_tag 'quote-before.svg' %>
-        <%= proposal.title %>
-        <%= wicked_pdf_image_tag 'quote-after.svg' %>
-      </h3>
+      <div class="quote">
+        <blockquote class="curly-quotes">
+          <h3><%= proposal.title %></h3>
+        </blockquote>
+      </div>
       <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
     </div>
   </div>
-
-
 </body>
 </html>
