@@ -6,11 +6,11 @@
     <%= f.enum_select :kind %>
   </div>
 
-  <div class="small-12 medium-6">
-    <%= f.translatable_fields do |translations_form| %>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6">
       <%= translations_form.text_field :title %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <% progress_options = { min: ProgressBar::RANGE.min, max: ProgressBar::RANGE.max, step: 1 } %>
   <div class="small-12 medium-6 large-2">
