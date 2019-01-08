@@ -463,10 +463,19 @@
       content: '';
       position: absolute;
     }
+
+    .overflow-image{
+      border: 2px solid red;
+      overflow: hidden;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+    }
   }
 
   .poster-content {
-
+    max-width: 90%;
     margin: 0 auto;
 
     h2 {
@@ -482,14 +491,13 @@
     .title-quote {
       display: inline-block;
     }
-  }
 
-  .poster-footer {
-    color: $text-medium;
-    border-left: 2px solid $border;
+    .poster-footer {
+      color: $text-medium;
+      border-left: 2px solid $border;
+    }
   }
 }
-
 
 .dashboard-poster-preview {
   .preview-min-width {
@@ -504,7 +512,7 @@
       font-size: rem-calc(60);
       line-height: rem-calc(80);
 
-      .icon-finger::before{
+      .icon-finger::before {
         font-size: rem-calc(60);
       }
     }
@@ -527,6 +535,10 @@
     max-width: 90%;
     position: relative;
 
+    .overflow-image {
+      height: 400px;
+    }
+
     &::before {
       height: rem-calc(120);
       left: -30px;
@@ -547,10 +559,6 @@
   }
 
   .poster-content {
-
-    max-width: 84%;
-    margin: 0 auto;
-    margin-top: rem-calc(260);
 
     h2 {
       font-size: rem-calc(28);
@@ -591,7 +599,7 @@
       font-size: 6cm;
       line-height: rem-calc(250);
 
-      img{
+      img {
         width: 4cm;
         height: 2.5cm;
       }
@@ -608,7 +616,7 @@
         text-align: justify;
       }
 
-      &.proposal_code{
+      &.proposal_code {
         font-size: 1.7cm;
       }
     }
@@ -626,10 +634,8 @@
       width: rem-calc(420);
     }
 
-    img {
-      margin-top: rem-calc(10);
-      position: relative;
-      width: 100%;
+    .overflow-image{
+      height: 37cm;
     }
 
     h2 {
@@ -638,11 +644,7 @@
   }
 
   .poster-content {
-
-    max-width: 80%;
-    margin: 0 auto;
-    margin-top: 20cm;
-
+    
     h2 {
       font-size: 3cm;
       margin: $line-height 0;
@@ -661,8 +663,6 @@
   }
 
   .poster-footer {
-    font-size: rem-calc(60);
-    line-height: rem-calc(60);
     margin: 0 auto;
     margin-top: 2cm;
     max-width: 60%;
