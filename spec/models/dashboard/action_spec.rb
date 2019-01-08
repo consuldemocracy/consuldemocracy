@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe Dashboard::Action do
-  subject do 
-    build :dashboard_action, 
-          title: title, 
+  subject do
+    build :dashboard_action,
+          title: title,
           description: description,
           day_offset: day_offset,
           required_supports: required_supports,
@@ -79,7 +79,7 @@ describe Dashboard::Action do
     it 'is active when published after day_offset' do
       action = build(:dashboard_action, required_supports: 0, day_offset: 10)
       proposal = build(:proposal, published_at: Time.current - 10.days)
-      
+
       expect(action).to be_active_for(proposal)
     end
 
@@ -93,7 +93,7 @@ describe Dashboard::Action do
     it 'is not active when not enough time published' do
       action = build(:dashboard_action, required_supports: 0, day_offset: 10)
       proposal = build(:proposal, published_at: Time.current - 9.days)
-      
+
       expect(action).not_to be_active_for(proposal)
     end
 
@@ -155,23 +155,50 @@ describe Dashboard::Action do
     let!(:not_enough_supports_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 10_000 }
     let!(:inactive_action) { create :dashboard_action, :inactive }
     let!(:future_action) { create :dashboard_action, :active, day_offset: 300, required_supports: 0 }
+    let!(:action_for_published_proposal) { create :dashboard_action,
+                                                  :active,
+                                                  day_offset: 0,
+                                                  required_supports: 0,
+                                                  published_proposal: true }
+    let!(:action_for_draft_proposal) { create :dashboard_action,
+                                              :active,
+                                              day_offset: 0,
+                                              required_supports: 0,
+                                              published_proposal: false }
     let(:proposal) { create :proposal }
+    let(:draft_proposal) { create :proposal, :draft }
 
-    it 'actions with enough supports or days are active' do
+    it "actions with enough supports or days are active" do
       expect(described_class.active_for(proposal)).to include(active_action)
     end
 
-    it 'inactive actions are not included' do
+    it "inactive actions are not included" do
       expect(described_class.active_for(proposal)).not_to include(inactive_action)
     end
 
-    it 'actions without enough supports are not active' do
+    it "actions without enough supports are not active" do
       expect(described_class.active_for(proposal)).not_to include(not_enough_supports_action)
     end
 
-    it 'actions planned to be active in the future are not active' do
+    it "actions planned to be active in the future are not active" do
       expect(described_class.active_for(proposal)).not_to include(future_action)
-    end 
+    end
+
+    it "actions with published_proposal: true, are not included on draft proposal" do
+      expect(described_class.active_for(draft_proposal)).not_to include(action_for_published_proposal)
+    end
+
+    it "actions with published_proposal: true, are included on published proposal" do
+      expect(described_class.active_for(proposal)).to include(action_for_published_proposal)
+    end
+
+    it "actions with published_proposal: false, are included on draft proposal" do
+      expect(described_class.active_for(draft_proposal)).to include(action_for_draft_proposal)
+    end
+
+    it "actions with published_proposal: false, are included on published proposal" do
+      expect(described_class.active_for(proposal)).to include(action_for_draft_proposal)
+    end
   end
 
   context '#course_for' do

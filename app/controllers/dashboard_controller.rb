@@ -11,8 +11,8 @@ class DashboardController < Dashboard::BaseController
     proposal.publish
     redirect_to proposal_dashboard_path(proposal), notice: t('proposals.notice.published')
   end
-  
-  def progress 
+
+  def progress
     authorize! :dashboard, proposal
   end
 
@@ -21,9 +21,12 @@ class DashboardController < Dashboard::BaseController
   end
 
   private
-  
+
   def active_resources
-    @active_resources ||= Dashboard::Action.active.resources.order(required_supports: :asc, day_offset: :asc)
+    @active_resources ||= Dashboard::Action.active
+                                           .resources
+                                           .by_draft(proposal.draft?)
+                                           .order(required_supports: :asc, day_offset: :asc)
   end
 
   def course
