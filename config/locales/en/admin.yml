@@ -339,6 +339,10 @@ en:
         no_progress_bars: "There are no progress bars"
         new_progress_bar: "Create new progress bar"
         primary: "Primary progress bar"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Title"
+        table_percentage: "Current progress"
       new:
         creating: "Create progress bar"
       edit:

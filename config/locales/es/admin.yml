@@ -339,6 +339,10 @@ es:
         no_progress_bars: "No hay barras de progreso"
         new_progress_bar: "Crear nueva barra de progreso"
         primary: "Barra de progreso principal"
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Título"
+        table_percentage: "Progreso"
       new:
         creating: "Crear barra de progreso"
       edit:
