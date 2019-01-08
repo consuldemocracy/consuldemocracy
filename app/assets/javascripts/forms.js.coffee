@@ -34,9 +34,9 @@ App.Forms =
         title_field = $("[name^='progress_bar'][name$='[title]']").parent()
 
         if this.value == "primary"
-          title_field.addClass("hide")
+          title_field.hide()
         else
-          title_field.removeClass("hide")
+          title_field.show()
 
     $("[name='progress_bar[kind]']").change()
 
