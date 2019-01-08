@@ -1,0 +1,80 @@
+ar:
+  comments:
+    orders:
+      newest: الأحدث أولاً
+      most_commented: الأكثر تعليقات
+    select_order: فرز حسب
+    show:
+      return_to_commentable: 'العودة إلى '
+  comments_helper:
+    comment_button: نشر التعليق
+    comment_link: التعليق
+    comments_title: تعليقات
+    reply_button: نشر الرد
+    reply_link: الرد
+  debates:
+    debate:
+      comments:
+        zero: لا توجد تعليقات
+        zero: "%{count} تعليق"
+        one: تعليق واحد
+        two: "%{count} تعليقات"
+        few: "%{count} تعليقات"
+        many: "%{count} تعليقات"
+        other: "%{count} تعليقات"
+    edit:
+      form:
+        submit_button: حفظ التغييرات
+    index:
+      orders:
+        created_at: أحدث
+      search_form:
+        button: بحث
+        title: بحث
+      select_order: ترتيب حسب
+  form:
+    policy: سياسة الخصوصية
+  layouts:
+    application:
+      ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
+    footer:
+      privacy: سياسة الخصوصية
+    header:
+      my_account_link: حسابي
+  omniauth:
+    facebook:
+      sign_in: تسجيل الدخول باستخدام حساب فايسبوك
+  polls:
+    show:
+      info_menu: "المعلومات"
+  shared:
+    advanced_search:
+      date_3: 'الشهر الماضي'
+    followable:
+      budget_investment:
+        create:
+          notice_html: "أنت الآن تتابع في هذا المشروع الإستثماري! </br> سنقوم بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
+        destroy:
+          notice_html: "لقد توقفت من متابعة هذا المشروع الإستثماري! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المشروع."
+      proposal:
+        create:
+          notice_html: "أنت الآن تتابع في إقتراح هذا المواطن! </br> سنقوم بإعلامك بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
+        destroy:
+          notice_html: "لقد توقفت الآن من متابعة مقترح هذا المواطن! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المقترح."
+    tags_cloud:
+      categories: "فئات"
+    you_are_in: "أنت في"
+  spending_proposals:
+    form:
+      description: الوصف
+  stats:
+    index:
+      votes: مجموع الأصوات
+  users:
+    show:
+      delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
+  votes:
+    disagree: أنا لا أوافق
+  welcome:
+    verification:
+      i_dont_have_an_account: لا يوجد لدي حساب

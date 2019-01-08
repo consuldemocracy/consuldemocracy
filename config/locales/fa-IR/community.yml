@@ -1,0 +1,60 @@
+fa:
+  community:
+    sidebar:
+      title: جامعه
+      description:
+        proposal: مشارکت در جامعه کاربر این پیشنهاد.
+        investment: مشارکت در جامعه کاربر این سرمایه گذاری.
+      button_to_access: دسترسی جامعه
+    show:
+      title:
+        proposal: پیشنهادجامعه
+        investment: بودجه سرمایه گذاری جامعه
+      description:
+        proposal: در این پیشنهاد شرکت کنید. جامعه فعال می تواند به بهبود محتوای پیشنهاد و کمک به انتشار بیشتر آن کمک کند.
+        investment: شرکت در این سرمایه گذاری بودجه. جامعه فعال می تواند به بهبود محتوای بودجه سرمایه گذاری کمک کند و انتشار آن را افزایش داده و حمایت بیشتری به دست آورد.
+      create_first_community_topic:
+        first_theme_not_logged_in: هیچ موضوعی در دسترس نیست، مشارکت در ایجاد اولین.
+        first_theme: ایجاد اولین موضوع جامعه
+        sub_first_theme: "برای ایجاد تم شما باید %{sign_in} درجه %{sign_up}."
+        sign_in: "ورود به برنامه"
+        sign_up: "ثبت نام"
+      tab:
+        participants: شرکت کنندگان
+      sidebar:
+        participate: "مشارکت\n"
+        new_topic: ایجاد موضوع
+      topic:
+        edit: ویرایش موضوع
+        destroy: از بین بردن موضوع
+        comments:
+          zero: بدون نظر
+          one: 1 نظر
+          other: "%{count} نظرات"
+      author: نویسنده
+      back: بازگشت به %{community} %{proposal}
+    topic:
+      create: ایجاد موضوع
+      edit: ویرایش موضوع
+      form:
+        topic_title: عنوان
+        topic_text: متن اولیه
+        new:
+          submit_button: ایجاد موضوع
+        edit:
+          submit_button: ویرایش موضوع
+        create:
+          submit_button: ایجاد موضوع
+        update:
+          submit_button: به روز رسانی موضوع 
+      show:
+        tab:
+          comments_tab: توضیحات
+      sidebar:
+        recommendations_title: توصیه های برای ایجاد یک موضوع
+        recommendation_one: عنوان یا جملات کامل را در حروف بزرگ ننویسید.. در اینترنت به عنوان فریاد در نظر گرفته می شود. و هیچ کس فریاد زدن را دوست ندارد.
+        recommendation_two: هر موضوع یا نظری که شامل یک اقدام غیرقانونی است، حذف خواهد شد، همچنین کسانی که قصد خرابکاری از فضاهای موضوع را دارند، هر چیز غیر از این مجاز است.
+        recommendation_three: از این فضا لذت ببرید، صدایی که آن را پر می کند، آن هم شما هستید.
+  topics:
+    show:
+      login_to_comment: شما باید %{signin} یا %{signup} کنید برای نظر دادن.

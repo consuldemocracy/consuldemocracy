@@ -1,0 +1,18 @@
+gl:
+  guides:
+    title: "Tes algunha idea para %{org}?"
+    subtitle: "Escolle que é o que queres crear"
+    budget_investment:
+      title: "Un proxecto de investimento"
+      feature_1_html: "Son ideas de como investir unha parte do <strong>orzamento municipal</strong>"
+      feature_2_html: "Os proxectos de investimentos formúlanse <strong>entre xaneiro e marzo</strong>"
+      feature_3_html: "Se recibir apoios, for viable e de competencia municipal, pasa á fase de votación"
+      feature_4_html: "Se a cidadanía aprobar os proxectos, faranse realidade"
+      new_button: Quero crear un proxecto de investimento
+    proposal:
+      title: "Unha proposta cidadá"
+      feature_1_html: "Son ideas sobre calquera acción que poida realizar o Concello"
+      feature_2_html: "Precisan <strong>%{votes} apoios</strong> en %{org} para pasaren á fase de votación"
+      feature_3_html: "Actívanse en calquera momento. Tes <strong>un ano</strong> para reunir os apoios"
+      feature_4_html: "De se aprobar na votación, o concello asume a proposta"
+      new_button: Quero crear unha proposta

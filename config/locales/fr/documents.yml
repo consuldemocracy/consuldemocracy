@@ -1,0 +1,24 @@
+fr:
+  documents:
+    title: Documents
+    max_documents_allowed_reached_html: Vous avez atteint le nombre maximum de documents ! <strong>Vous devez en supprimer pour pouvoir en ajouter un nouveau.</strong>
+    form:
+      title: Documents
+      title_placeholder: Ajouter un titre descriptif pour le document
+      attachment_label: Choisir un document
+      delete_button: Supprimer le document
+      cancel_button: Annuler
+      note: "Vous pouvez ajouter au plus %{max_documents_allowed} documents de type %{accepted_content_types} et de taille %{max_file_size} Mo par fichier."
+      add_new_document: Ajouter un nouveau document
+    actions:
+      destroy:
+        notice: Le document a été supprimé avec succès.
+        alert: Impossible de supprimer le document.
+        confirm: Êtes-vous sûr(e) de vouloir supprimer ce document ? Cette action est irréversible !
+    buttons:
+      download_document: Télécharger le fichier
+      destroy_document: Détruire le document
+    errors:
+      messages:
+        in_between: doit être entre %{min} et %{max}
+        wrong_content_type: le type de contenu %{content_type} ne correspond à aucun type de contenu accepté (%{accepted_content_types})

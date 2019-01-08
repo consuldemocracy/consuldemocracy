@@ -1,0 +1,39 @@
+zh-TW:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} 已成功創建。"
+        debate: "辯論已成功創建。"
+        direct_message: "您的消息已成功發送。"
+        poll: "投票已成功創建。"
+        poll_booth: "投票亭已成功創建。"
+        poll_question_answer: "回答已成功創建"
+        poll_question_answer_video: "視頻已成功創建"
+        poll_question_answer_image: "圖片已成功上傳"
+        proposal: "建議已成功創建。"
+        proposal_notification: "您的消息已正確發送。"
+        spending_proposal: "開支建議已成功創建。 您可以從%{activity} 訪問它"
+        budget_investment: "預算投資已成功創建。"
+        signature_sheet: "簽名表已成功創建"
+        topic: "主題已成功創建。"
+        valuator_group: "評估組已成功創建"
+      save_changes:
+        notice: 更改已儲存
+      update:
+        notice: "%{resource_name} 已成功更新。"
+        debate: "辯論已成功更新。"
+        poll: "投票已成功更新。"
+        poll_booth: "投票亭已成功更新。"
+        proposal: "建議已成功更新。"
+        spending_proposal: "投資項目已成功更新。"
+        budget_investment: "投資項目已成功更新。"
+        topic: "主題已成功更新。"
+        valuator_group: "評估組已成功更新"
+        translation: "翻譯已成功更新"
+      destroy:
+        spending_proposal: "開支建議已成功刪除。"
+        budget_investment: "投資項目已成功刪除。"
+        error: "無法刪除"
+        topic: "主題已成功刪除。"
+        poll_question_answer_video: "回答視頻已成功刪除。"
+        valuator_group: "評估組已成功刪除"

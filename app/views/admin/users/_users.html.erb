@@ -14,7 +14,7 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user.name %></td>
+          <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
           <td><%= user.email %></td>
           <td><%= user.document_number %></td>
           <td><%= display_user_roles(user) %></td>

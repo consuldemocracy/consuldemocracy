@@ -1,0 +1,128 @@
+id:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Kirim ulang instruksi
+        title: Kirim ulang instruksi konfirmasi
+      show:
+        instructions_html: Mengonfirmasi akun dengan email %{email}
+        new_password_confirmation_label: Ulangi kata sandi akses
+        new_password_label: Kata sandi baru
+        please_set_password: Silakan pilih kata sandi baru anda (ini akan memungkinkan anda masuk dengan email di atas)
+        submit: Konfirmasi
+        title: Konfirmasikan akun saya
+    mailer:
+      confirmation_instructions:
+        confirm_link: Konfirmasikan akun saya
+        text: 'Anda bisa mengkonfirmasi akun email anda di link berikut:'
+        welcome: Selamat Datang
+      reset_password_instructions:
+        change_link: Ubah kata sandi saya
+        hello: Halo
+        ignore_text: Jika anda tidak meminta perubahan kata sandi, anda dapat mengabaikan email ini.
+        info_text: Kata sandi anda tidak akan berubah kecuali anda mengakses link dan mensuntingnya.
+        text: 'Kami telah menerima permintaan untuk mengganti kata sandi anda. Anda dapat melakukan ini di link berikut:'
+        title: Ubah kata sandi anda
+      unlock_instructions:
+        hello: Halo
+        info_text: Akun anda telah diblokir karena banyaknya upaya masuk yang gagal.
+        instructions_text: 'Silahkan klik link ini untuk membuka kunci akun anda:'
+        title: Akun anda telah dikunci
+        unlock_link: Buka akun saya
+    menu:
+      login_items:
+        login: Masuk
+        logout: Keluar
+        signup: Daftar
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Nama organisasi
+          password_confirmation_label: Konfirmasi sandi
+          password_label: Kata Sandi
+          phone_number_label: Nomor telepon
+          responsible_name_label: Nama lengkap orang yang bertanggung jawab atas kolektif
+          responsible_name_note: Ini akan menjadi orang yang mewakili asosiasi / kolektif dalam yang namanya proposal disajikan
+          submit: Daftar
+          title: Mendaftar sebagai organisasi atau kolektif
+        success:
+          back_to_index: Saya mengerti; kembali ke halaman utama
+          instructions_1_html: "<b> Kami akan menghubungi anda segera</b> untuk memverifikasi bahwa Anda sebenarnya mewakili kolektif ini."
+          instructions_2_html: Sementara anda <b>email ditinjau</b>, kami telah mengirim anda <b>link untuk mengkonfirmasi akun anda</b>.
+          instructions_3_html: Setelah dikonfirmasi, anda mungkin mulai berpartisipasi sebagai kolektif yang tidak terverifikasi.
+          thank_you_html: Terima kasih telah mendaftarkan kolektif Anda di situs web. Sekarang <b>verifikasi tertunda</b>.
+          title: Pendaftaran organisasi / kolektif
+    passwords:
+      edit:
+        change_submit: Ubah kata sandi saya
+        password_confirmation_label: Konfirmasi password baru
+        password_label: Kata sandi baru
+        title: Ubah kata sandi anda
+      new:
+        email_label: Email
+        send_submit: Kirim instruksi
+        title: Lupa kata sandi?
+    sessions:
+      new:
+        login_label: Email atau nama pengguna
+        password_label: Kata sandi
+        remember_me: Ingat saya
+        submit: Masukkan
+        title: Masuk
+    shared:
+      links:
+        login: Masukan
+        new_confirmation: Belum menerima instruksi untuk bisa mengatifkan akun anda?
+        new_password: Lupa kata sandi anda?
+        new_unlock: Belum menerima instruksi untuk membuka kunci?
+        signin_with_provider: Masuk dengan %{provider}
+        signup: Belum punya akun? %{signup_link}
+        signup_link: Keluar
+    unlocks:
+      new:
+        email_label: Email
+        submit: Kirim kembali perintah untuk membuka kunci
+        title: Kirim ulang perintah untuk membuka kunci
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Alasan
+          info: Tindakan ini tidak dapat dibatalkan. Pastikan ini yang anda inginkan.
+          info_reason: Jika anda ingin, tinggalkan kami alasan (opsional)
+          submit: Hapus akun saya
+          title: Hapus akun
+        edit:
+          current_password_label: Kata sandi saat ini
+          edit: Sunting
+          email_label: Email
+          leave_blank: Biarkan kosong jika anda tidak ingin memodifikasinya
+          need_current: Kami membutuhkan kata sandi anda saat ini untuk mengkonfirmasi perubahannya
+          password_confirmation_label: Konfirmasi kata sandi baru
+          password_label: Kata sandi baru
+          update_submit: Perbarui
+          waiting_for: 'Menunggu konfirmasi dari:'
+        new:
+          cancel: Batalkan masuk
+          email_label: Email
+          organization_signup: Apakah Anda mewakili sebuah organisasi atau kolektif? %{signup_link}
+          organization_signup_link: Daftar disini
+          password_confirmation_label: Konfirmasi kata sandi
+          password_label: Kata sandi
+          redeemable_code: Kode verifikasi akan diterima melalui email (opsional)
+          submit: Daftar
+          terms: Dengan mendaftarkan anda akan menerima %{terms}
+          terms_link: syarat dan ketentuan penggunaan
+          terms_title: Dengan mendaftar anda akan menerima persyaratan dan ketentuan penggunaan
+          title: Daftar
+          username_is_available: Nama pengguna tersedia
+          username_is_not_available: Nama pengguna sudah digunakan
+          username_label: Nama pengguna
+          username_note: Nama ini akan muncul di postingan anda selanjutnya
+        success:
+          back_to_index: Saya mengerti; kembali ke halaman utama
+          instructions_1_html: Silakan <b>periksa email anda</b> - kami telah mengirimi anda<b>tautan untuk mengkonfirmasi akun anda</b>.
+          instructions_2_html: Setelah dikonfirmasi, anda bisa mulai berpartisipasi.
+          thank_you_html: Terima kasih telah mendaftar untuk situs webnya. Anda sekarang harus<b>mengkonfirmasi alamat email anda</b>.
+          title: Modifikasi emai anda

@@ -1,0 +1,69 @@
+es-VE:
+  pages:
+    general_terms: Términos y Condiciones
+    help:
+      title: "%{org} es una plataforma para la participación ciudadana"
+      guide: "Esta guía explica para qué son cada una de las secciones %{org} y cómo funcionan."
+      menu:
+        debates: "Debates"
+        proposals: "Propuestas"
+        budgets: "Presupuestos participativos"
+        other: "Otra información de interés"
+      debates:
+        title: "Debates"
+        description: "En la sección %{link} puede presentar y compartir su opinión con otras personas sobre asuntos que le preocupan relacionados con la ciudad. También es un lugar para generar ideas que a través de las otras secciones de %{org} conducen a acciones concretas por parte del Concejo Municipal."
+        link: "debates ciudadanos"
+        feature_html: "Puede abrir debates, comentarlos y evaluarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
+        feature_link: "registrarse en %{org}"
+        image_alt: "Botones para calificar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para calificar los debates.'
+      proposals:
+        title: "Propuestas"
+        description: "En la sección %{link} puede hacer propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas requieren apoyo, y si reciben suficiente apoyo, se someten a votación pública. Las propuestas aprobadas en los votos de estos ciudadanos son aceptadas por el Ayuntamiento y llevadas a cabo."
+        link: "propuestas ciudadanas"
+        image_alt: "Botón para apoyar una propuesta"
+      budgets:
+        title: "Presupuesto Participativo"
+        description: "La sección %{link} ayuda a las personas a tomar una decisión de manera directa sobre en qué se gasta parte del presupuesto municipal."
+        link: "presupuestos participativos"
+        image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption_html: 'Fases de "apoyo" y "votación" de los presupuestos participativos.'
+      polls:
+        title: "Encuestas"
+        description: "La sección %{link} se activa cada vez que una propuesta alcanza el 1% de apoyo y pasa a votación o cuando el Ayuntamiento propone un asunto para que la gente decida."
+        link: "encuentas"
+        feature_1: "Para participar en la votación debes %{link} y verificar su cuenta."
+        feature_1_link: "registrarse en %{org_name}"
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lea las Preguntas Frecuentes y resuelva sus dudas."
+        button: "Ver preguntas frecuentes"
+        page:
+          title: "Preguntas frecuentes"
+          description: "Utilice esta página para resolver las Preguntas Frecuentes a los usuarios del sitio."
+          faq_1_title: "Pregunta 1"
+          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
+      other:
+        title: "Otra información de interés"
+        how_to_use: "Usa %{org_name} en tu ciudad"
+      how_to_use:
+        text: |-
+          Úselo en su municipio o ayúdenos a mejorarlo, es software libre.
+          
+          Este Portal de Gobierno Abierto utiliza la [aplicación CONSUL](https://github.com/consul/consul 'consul github') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), eso significa en palabras simples que cualquiera puede usar libremente el código, copiarlo, verlo en detalle, modificarlo y redistribuirlo al mundo con las modificaciones que desee (permitiendo que otros hagan lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+          
+          Si usted es programador, puede ver el código y ayudarnos a mejorarlo en la [aplicación CONSUL](https://github.com/consul/consul 'cónsul github').
+      titles:
+        how_to_use: Úselo en su municipio
+    titles:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
+      help: "¿Qué es %{org}? - Participación ciudadana"
+      privacy: Política de Privacidad
+    verify:
+      code: Código que has recibido en tu carta
+      email: Correo electrónico
+      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      password: Contraseña
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta

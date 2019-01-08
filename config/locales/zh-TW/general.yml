@@ -1,0 +1,823 @@
+zh-TW:
+  account:
+    show:
+      change_credentials_link: 更改我的身份驗證資訊
+      email_on_comment_label: 當有人評論我的建議或辯論時，通過電郵通知我
+      email_on_comment_reply_label: 當有人回覆我的評論時，通過電郵通知我
+      erase_account_link: 刪除我的帳戶
+      finish_verification: 完成驗證
+      notifications: 通知
+      organization_name_label: 組織名稱
+      organization_responsible_name_placeholder: 組織/集體的代表人
+      personal: 個人資料
+      phone_number_label: 電話號碼
+      public_activity_label: 把我的活動清單公開
+      public_interests_label: 把我跟蹤的元素之標籤公開
+      public_interests_my_title_list: 您跟蹤的元素之標籤
+      public_interests_user_title_list: 此用戶跟蹤的元素之標籤
+      save_changes_submit: 儲存更改
+      subscription_to_website_newsletter_label: 通過電郵接收網站相關信息
+      email_on_direct_message_label: 以電郵接收有關直接消息（direct messages）
+      email_digest_label: 接收建議通知的摘要
+      official_position_badge_label: 顯示官方職位徽章
+      recommendations: 推薦
+      show_debates_recommendations: 顯示辯論推薦
+      show_proposals_recommendations: 顯示建議推薦
+      title: 我的帳戶
+      user_permission_debates: 參與辯論
+      user_permission_info: 您可以用您的帳戶來......
+      user_permission_proposal: 創建新建議
+      user_permission_support_proposal: 支持建議
+      user_permission_title: 參與
+      user_permission_verify: 要執行所有操作，請核實您的帳戶。
+      user_permission_verify_info: "*僅適用於人口普查的用戶。"
+      user_permission_votes: 參與最終投票
+      username_label: 用戶名
+      verified_account: 帳戶已被核實
+      verify_my_account: 核實我的帳戶
+  application:
+    close: 關
+    menu: 菜單
+  comments:
+    comments_closed: 評論已關閉
+    verified_only: 要參與 %{verify_account}
+    verify_account: 核實您的帳戶
+    comment:
+      admin: 管理員
+      author: 作者
+      deleted: 此評論已被刪除
+      moderator: 審核員
+      responses:
+        zero: 沒有回覆
+        other: "%{count} 個回覆"
+      user_deleted: 用戶已刪除
+      votes:
+        zero: 沒有投票
+        other: "%{count} 個投票"
+    form:
+      comment_as_admin: 以管理員身份作出評論
+      comment_as_moderator: 以審核員身份作出評論
+      leave_comment: 留下您的評論
+    orders:
+      most_voted: 最多投票
+      newest: 最新排先
+      oldest: 最舊排先
+      most_commented: 最多評論
+    select_order: 排序依據
+    show:
+      return_to_commentable: '返回到 '
+  comments_helper:
+    comment_button: 發佈評論
+    comment_link: 評論
+    comments_title: 評論
+    reply_button: 發佈回覆
+    reply_link: 回覆
+  debates:
+    create:
+      form:
+        submit_button: 開始一個辯論
+    debate:
+      comments:
+        zero: 沒有評論
+        other: "%{count} 個評論"
+      votes:
+        zero: 沒有投票
+        other: "%{count} 個投票"
+    edit:
+      editing: 編輯辯論
+      form:
+        submit_button: 儲存更改
+      show_link: 查看辯論
+    form:
+      debate_text: 初始辯論文本
+      debate_title: 辯論標題
+      tags_instructions: 為此辯論加標籤。
+      tags_label: 主題
+      tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
+    index:
+      featured_debates: 特色
+      filter_topic:
+        other: " 主題'%{topic}'"
+      orders:
+        confidence_score: 最高評分
+        created_at: 最新
+        hot_score: 最活躍
+        most_commented: 最多評論
+        relevance: 具相關性
+        recommendations: 推薦
+      recommendations:
+        without_results: 沒有與您興趣相關的辯論
+        without_interests: 跟蹤建議，以便我們為您提供推薦
+        disable: "如果您摒棄辯論推薦，辯論推薦將停止顯示。 您可以在“我的帳戶”頁面中重新啟用它"
+        actions:
+          success: "此帳戶現已禁用辯論推薦"
+          error: "發生錯誤。 請回到“您的帳戶”頁面，手動停用辯論推薦"
+      search_form:
+        button: 搜尋
+        placeholder: 搜尋辯論...
+        title: 搜尋
+      search_results_html:
+        other: " 包含術語 <strong>'%{search_term}'</strong>"
+      select_order: 排序依據
+      start_debate: 開始一個辯論
+      title: 辯論
+      section_header:
+        icon_alt: 辯論圖標
+        title: 辯論
+        help: 關於辯論的說明
+      section_footer:
+        title: 關於辯論的說明
+        description: 開始一個辯論，與別人分享您關注的主題的意見。
+        help_text_1: "這片公民辯論空間的對象是任何能夠揭露他們關注的問題，以及想要與別人分享意見的人。"
+        help_text_2: '要開始一個辯論，您需要在%{org} 登記。 用戶還可以對公開辯論發表評論，並使用其中的“我同意”或“我不同意”按鈕來評分。'
+    new:
+      form:
+        submit_button: 開始一個辯論
+      info: 如果您想要提出建議，這是錯誤的位置，請進入%{info_link}。
+      info_link: 創建新建議
+      more_info: 更多資訊
+      recommendation_four: 享受這片空間和其中充滿的聲音。 這也是你的空間。
+      recommendation_one: 不要用大寫字母寫辯論標題或整個句子。 在互聯網上，這是被當作為＂叫喊＂。沒有人喜歡被呼喝的。
+      recommendation_three: 無情的批評是非常受歡迎的。 這是一個反思的空間。 但我們建議您保持優雅和智慧。 有著這些美德，這世界將是更美好的地方。
+      recommendation_two: 任何暗示非法行為、和那些意圖破壞辯論空間的辯論或評論都將被刪除。 其餘一切都是允許的。
+      recommendations_title: 創建一個辯論的推薦
+      start_new: 開始一個辯論
+    show:
+      author_deleted: 用戶已刪除
+      comments:
+        zero: 沒有評論
+        other: "%{count} 個評論"
+      comments_title: 評論
+      edit_debate_link: 編輯
+      flag: 此辯論已被一些用戶標記為不適當。
+      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
+      share: 共用
+      author: 作者
+    update:
+      form:
+        submit_button: 儲存更改
+  errors:
+    messages:
+      user_not_found: 未找到用戶
+      invalid_date_range: "日期範圍無效"
+  form:
+    accept_terms: 我同意%{policy} 和%{conditions}
+    accept_terms_title: 我同意隱私政策和使用條款及條件
+    conditions: 使用條款及條件
+    debate: 辯論
+    direct_message: 私人信息
+    error: 錯誤
+    errors: 錯誤
+    not_saved_html: "阻止此%{resource} 的儲存。 <br>請檢查標記的字段以了解如何更正它們："
+    policy: 隱私政策
+    proposal: 建議
+    proposal_notification: "通知"
+    spending_proposal: 開支建議
+    budget/investment: 投資
+    budget/heading: 預算標題
+    poll/shift: 輪班
+    poll/question/answer: 答案
+    user: 帳戶
+    verification/sms: 電話
+    signature_sheet: 簽名表
+    document: 文檔
+    topic: 主題
+    image: 圖像
+  geozones:
+    none: 所有城市
+    all: 所有範圍
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: 我們檢測到您正在使用Internet Explorer來瀏覽。 為了增強體驗，我們建議您使用%{firefox} 或%{chrome}。
+      ie_title: 此網站沒有為您的瀏覽器優化
+    footer:
+      accessibility: 無障礙功能
+      conditions: 使用條款及條件
+      consul: CONSUL 應用程式
+      consul_url: https://github.com/consul/consul
+      contact_us: 進入技術支援
+      copyright: CONSUL, %{year}
+      description: 此入口網頁使用%{consul}，即是%{open_source}。
+      open_source: 開源軟件
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: 決定如何塑造你想要居住的城市。
+      participation_title: 參與
+      privacy: 隱私政策
+    header:
+      administration_menu: 管理員
+      administration: 管理
+      available_locales: 可用語言
+      collaborative_legislation: 立法進程
+      debates: 辯論
+      external_link_blog: 博客
+      locale: '語言：'
+      logo: CONSUL 商標
+      management: 管理
+      moderation: 審核
+      valuation: 評估
+      officing: 投票站職員
+      help: 說明
+      my_account_link: 我的帳戶
+      my_activity_link: 我的活動
+      open: 開
+      open_gov: 開放政府
+      proposals: 建議
+      poll_questions: 投票
+      budgets: 參與式預算編制
+      spending_proposals: 開支建議
+      notification_item:
+        new_notifications:
+          other: 您有%{count} 個新通知
+        notifications: 通知
+        no_notifications: "您沒有新通知"
+    admin:
+      watch_form_message: '您有未儲存的更改。 你是否確認要離開此頁面？'
+  legacy_legislation:
+    help:
+      alt: 選擇要評論的文本，然後按下鉛筆按鈕。
+      text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇要評論的文本，並按下鉛筆按鈕。
+      text_sign_in: 登錄
+      text_sign_up: 登記
+      title: 我怎樣能對此文檔作評論？
+  notifications:
+    index:
+      empty_notifications: 您沒有新通知。
+      mark_all_as_read: 標記所有為已讀
+      read: 讀
+      title: 通知
+      unread: 未讀
+    notification:
+      action:
+        comments_on:
+          other: 有%{count} 個新評論
+        proposal_notification:
+          other: 有%{count} 個新通知
+        replies_to:
+          other: 您的評論有%{count} 個新回复
+      mark_as_read: 標記為已讀
+      mark_as_unread: 標記為未讀
+      notifiable_hidden: 此資源不再可用。
+  map:
+    title: "地區"
+    proposal_for_district: "為您的地區開始一個建議"
+    select_district: 經營範圍
+    start_proposal: 創建一個建議
+  omniauth:
+    facebook:
+      sign_in: 用Facebook登錄
+      sign_up: 用Facebook登記
+      name: Facebook
+    finish_signup:
+      title: "額外細節"
+      username_warning: "由於我們與社交網絡互動的方式發生了變化，您的用戶名可能現在顯示為“已在使用中”。 如果是這種情況，請選擇另一個用戶名。"
+    google_oauth2:
+      sign_in: 用Google登錄
+      sign_up: 用Google登記
+      name: Google
+    twitter:
+      sign_in: 用Twitter登錄
+      sign_up: 用Twitter登記
+      name: Twitter
+    info_sign_in: "登錄用："
+    info_sign_up: "登記用："
+    or_fill: "或填寫以下表格："
+  proposals:
+    create:
+      form:
+        submit_button: 創建建議
+    edit:
+      editing: 編輯建議
+      form:
+        submit_button: 儲存更改
+      show_link: 查看建議
+    retire_form:
+      title: 撤回建議
+      warning: "如果您把建議撤回，此建議仍能接受支持，但將會從主列表中刪除，並且所有用戶都可以看到一條消息，表明作者認為此建議不應再受支持"
+      retired_reason_label: 把建議撤回的原因
+      retired_reason_blank: 選擇一個選項
+      retired_explanation_label: 解釋
+      retired_explanation_placeholder: 簡單地解釋為什麼您認為此提案不應再獲得支持
+      submit_button: 撤回建議
+    retire_options:
+      duplicated: 重複
+      started: 已在進行中
+      unfeasible: 不可行
+      done: 完成
+      other: 其他
+    form:
+      geozone: 經營範圍
+      proposal_external_url: 鏈接到額外文檔
+      proposal_question: 建議問題
+      proposal_question_example_html: "必須總結為一個可以用\"是\"或\"否\"回答的問題"
+      proposal_responsible_name: 提交建議的人的全名
+      proposal_responsible_name_note: "(個人或作為集體的代表；不會公開顯示)"
+      proposal_summary: 建議摘要
+      proposal_summary_note: "(最多200個字元)"
+      proposal_text: 建議文本
+      proposal_title: 建議標題
+      proposal_video_url: 鏈接到外部視頻
+      proposal_video_url_note: 您可以添加到 YouTube 或 Vimeo 的鏈接
+      tag_category_label: "類別"
+      tags_instructions: "為此建議加標籤。 您可以從建議的類別中選擇，或添加自己的"
+      tags_label: 標籤
+      tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
+      map_location: "地圖位置"
+      map_location_instructions: "將地圖導航到該位置，並放置標記。"
+      map_remove_marker: "刪除地圖標記"
+      map_skip_checkbox: "這個建議沒有具體的位置，或我沒有注意到。"
+    index:
+      featured_proposals: 特色
+      filter_topic:
+        other: " 主題'%{topic}'"
+      orders:
+        confidence_score: 最高評分
+        created_at: 最新
+        hot_score: 最活躍
+        most_commented: 最多評論
+        relevance: 具相關性
+        archival_date: 已存檔
+        recommendations: 推薦
+      recommendations:
+        without_results: 沒有與您興趣相關的建議
+        without_interests: 跟蹤建議，以便我們為您提供推薦
+        disable: "如果您取消建議推薦，建議推薦將停止顯示。 您可以在“我的帳戶”頁面中重新啟用它"
+        actions:
+          success: "此帳戶現已禁用建議推薦"
+          error: "發生錯誤。 請回到“您的帳戶”頁面，手動停用建議推薦"
+      retired_proposals: 已撤回建議
+      retired_proposals_link: "建議已被作者撤回"
+      retired_links:
+        all: 所有
+        duplicated: 已重複
+        started: 進行中
+        unfeasible: 不可行
+        done: 完成
+        other: 其他
+      search_form:
+        button: 搜尋
+        placeholder: 搜尋建議...
+        title: 搜尋
+      search_results_html:
+        other: " 包含術語<strong>'%{search_term}'</strong>"
+      select_order: 排序依據
+      select_order_long: '您正在查看的建議是依據：'
+      start_proposal: 創建一個建議
+      title: 建議
+      top: 每週熱門
+      top_link_proposals: 按類別，獲得支持最多的建議
+      section_header:
+        icon_alt: 建議圖標
+        title: 建議
+        help: 關於建議的說明
+      section_footer:
+        title: 關於建議的說明
+        description: 在得到足夠的支持並通過公民投票後，公民的建議是鄰居和集體直接決定他們希望自己的城市將如何發展的機會。
+    new:
+      form:
+        submit_button: 創建建議
+      more_info: 公民建議是如何運作的？
+      recommendation_one: 不要用大寫字母寫建議標題或整個句子。 在互聯網上，這是被當作為＂叫喊＂。沒有人喜歡被呼喝的。
+      recommendation_three: 享受這片空間和其中充滿的聲音。 這也是你的空間。
+      recommendation_two: 任何暗示非法行為、和那些意圖破壞辯論空間的建議或評論都將被刪除。 其餘一切都是允許的。
+      recommendations_title: 創建一個建議的推薦
+      start_new: 創建新建議
+    notice:
+      retired: 建議已被撤回
+    proposal:
+      created: "您創建了一個建議！"
+      share:
+        guide: "現在您可以把它分享，以便人們可以開始支持。"
+        edit: "在分享之前，您可以隨意更改文本。"
+        view_proposal: 不是現在，請轉到我的建議
+      improve_info: "改善您的推廣活動，並獲得更多支持"
+      improve_info_link: "查看更多資訊"
+      already_supported: 您已經支持此建議。 把它分享吧！
+      comments:
+        zero: 沒有評論
+        other: "%{count} 個評論"
+      support: 支持
+      support_title: 支持此建議
+      supports:
+        zero: 沒有支持
+        other: "%{count} 個支持"
+      votes:
+        zero: 沒有投票
+        other: "%{count} 個投票"
+      supports_necessary: "需要%{number} 個支持"
+      total_percent: 100%
+      archived: "此建議已存檔，無法再收集支持。"
+      successful: "此建議已得到所需的支持。"
+    show:
+      author_deleted: 用戶已刪除
+      code: '建議編號：'
+      comments:
+        zero: 沒有評論
+        other: "%{count} 個評論"
+      comments_tab: 評論
+      edit_proposal_link: 編輯
+      flag: 此建議已被一些用戶標記為不適當。
+      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
+      notifications_tab: 通知
+      retired_warning: "作者認為此建議不應再獲得到支持。"
+      retired_warning_link_to_explanation: 投票前請閱讀其說明。
+      retired: 建議已被作者撤回
+      share: 分享
+      send_notification: 發送通知
+      no_notifications: "此建議沒有任何通知。"
+      embed_video_title: "%{proposal} 上的視頻"
+      title_external_url: "額外的文檔"
+      title_video_url: "外部視頻"
+      author: 作者
+    update:
+      form:
+        submit_button: 儲存更改
+  polls:
+    all: "所有"
+    no_dates: "未分配日期"
+    dates: "從%{open_at} 到%{closed_at}"
+    final_date: "最終驗票/結果"
+    index:
+      filters:
+        current: "開"
+        incoming: "傳入"
+        expired: "已過期"
+      title: "投票"
+      participate_button: "參與此投票"
+      participate_button_incoming: "更多資訊"
+      participate_button_expired: "投票結束"
+      no_geozone_restricted: "所有城市"
+      geozone_restricted: "地區"
+      geozone_info: "參與人口普查的人可以： "
+      already_answer: "您已參與此投票"
+      not_logged_in: "您必須登錄或登記才能參與"
+      unverified: "您必須核實您的帳戶才能參與"
+      cant_answer: "此投票在您的地理區域上不可用"
+      section_header:
+        icon_alt: 投票圖示
+        title: 投票中
+        help: 有關投票的說明
+      section_footer:
+        title: 有關投票的說明
+        description: 公民投票是一種參與機制，藉此擁有投票權的公民可以做出直接決定
+      no_polls: "沒有開放的投票"
+    show:
+      already_voted_in_booth: "您已經在實體投票亭參與了。 你不能再次參與。"
+      already_voted_in_web: "您已經參與此投票項。 如果再次投票的話，前票將被覆蓋。"
+      back: 返回投票
+      cant_answer_not_logged_in: "您必須%{signin} 或%{signup} 才能參與。"
+      comments_tab: 評論
+      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
+      signin: 登錄
+      signup: 登記
+      cant_answer_verify_html: "您必須%{verify_link} 才能回答。"
+      verify_link: "核實您的帳戶"
+      cant_answer_incoming: "此投票項尚未開始。"
+      cant_answer_expired: "此投票項已結束。"
+      cant_answer_wrong_geozone: "此問題並不適用於您的地理區域。"
+      more_info_title: "更多資訊"
+      documents: 文檔
+      zoom_plus: 展開圖片
+      read_more: "閱讀更多關於%{answer}"
+      read_less: "閱讀更少關於%{answer}"
+      videos: "外部視頻"
+      info_menu: "資訊"
+      stats_menu: "參與量的統計"
+      results_menu: "投票結果"
+      stats:
+        title: "參與量的數據"
+        total_participation: "總參與量"
+        total_votes: "投票總數"
+        votes: "投票"
+        web: "網絡"
+        booth: "投票亭"
+        total: "總數"
+        valid: "有效"
+        white: "白票"
+        null_votes: "無效"
+      results:
+        title: "問題"
+        most_voted_answer: "得最多投票的答案： "
+  poll_questions:
+    create_question: "創建問題"
+    show:
+      vote_answer: "投票%{answer}"
+      voted: "您已投票%{answer}"
+      voted_token: "您可以寫下此投票識別符號，以便在最終結果中檢查您的投票："
+  proposal_notifications:
+    new:
+      title: "發送消息"
+      title_label: "標題"
+      body_label: "消息"
+      submit_button: "發送消息"
+      info_about_receivers_html: "此消息將發送給<strong>%{count} 個人</strong>，它將顯示在%{proposal_page} 中。<br>消息不會立即發送，用戶將定期收到包含所有建議通知的電子郵件。"
+      proposal_page: "建議的頁面"
+    show:
+      back: "回到我的活動"
+  shared:
+    edit: '編輯'
+    save: '儲存'
+    delete: 刪除
+    "yes": "是"
+    "no": "否"
+    search_results: "搜尋結果"
+    advanced_search:
+      author_type: '按作者類別'
+      author_type_blank: '選擇一個類別'
+      date: '按日期'
+      date_placeholder: 'DD/MM/YYYY'
+      date_range_blank: '選擇一個日期'
+      date_1: '過去24小時'
+      date_2: '上個星期'
+      date_3: '上個月'
+      date_4: '去年'
+      date_5: '自定'
+      from: '從'
+      general: '隨著文本'
+      general_placeholder: '編寫文本'
+      search: '篩選器'
+      title: '進階搜尋'
+      to: '到'
+    author_info:
+      author_deleted: 用戶已刪除
+    back: 返回
+    check: 選擇
+    check_all: 所有
+    check_none: 無
+    collective: 集體
+    flag: 標記為不適當
+    follow: "跟隨"
+    following: "跟隨中"
+    follow_entity: "跟隨%{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "您現在正在跟隨此投資項目！ </br>出現更改時，我們會通知您，以便您了解最新動態。"
+        destroy:
+          notice_html: "您已經停止了跟隨此投資項目！ </br>您將不會再收到與此項目相關的通知。"
+      proposal:
+        create:
+          notice_html: "現在您正在跟隨此公民建議！ </br>出現更改時，我們會通知您，以便您了解最新動態。"
+        destroy:
+          notice_html: "您已停止跟隨此公民建議！ </br>您將不會再收到與此建議相關的通知。"
+    hide: 隱藏
+    print:
+      print_button: 列印此信息
+    search: 搜尋
+    show: 顯示
+    suggest:
+      debate:
+        found:
+          other: "有一些包含'%{query}'一詞的辯論，您可以參與其中，而不用開一個新的。"
+        message: "您看到%{count} 個辯論中的%{limit} 個包含'%{query}'一詞"
+        see_all: "查看所有"
+      budget_investment:
+        found:
+          other: "有一些包含'%{query}'詞字的投資，你可以參與其中，而不用開一個新的。"
+        message: "您看到%{count} 個投資中的%{limit} 個包含'%{query}'一詞"
+        see_all: "查看所有"
+      proposal:
+        found:
+          other: "有一些包含'%{query}'一詞的建議，您可以為它們做出貢獻，而不用創建新的"
+        message: "您看到%{count} 個建議中的%{limit} 個包含'%{query}'一詞"
+        see_all: "查看所有"
+    tags_cloud:
+      tags: 趨勢
+      districts: "地區"
+      districts_list: "地區清單"
+      categories: "類別"
+    target_blank_html: " (鏈接在新視窗中打開)"
+    you_are_in: "你在"
+    unflag: 取消標記
+    unfollow_entity: "取消跟隨%{entity}"
+    outline:
+      budget: 參與性預算
+      searcher: 搜尋者
+    go_to_page: "轉到頁面 "
+    share: 分享
+    orbit:
+      previous_slide: 上一張圖片
+      next_slide: 下一張圖片
+    documentation: 額外文檔
+    view_mode:
+      title: 查看模式
+      cards: 卡
+      list: 清單
+    recommended_index:
+      title: 推薦
+      see_more: 查看更多推薦
+      hide: 隱藏推薦
+  social:
+    blog: "%{org} Blog"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  spending_proposals:
+    form:
+      association_name_label: '如果您以協會或集體的名義提建議，請在這裡添加名稱'
+      association_name: '協會名稱'
+      description: 描述
+      external_url: 鏈接到額外文檔
+      geozone: 經營範圍
+      submit_buttons:
+        create: 創建
+        new: 創建
+      title: 開支建議標題
+    index:
+      title: 參與性預算編制
+      unfeasible: 不可行的投資項目
+      by_geozone: "投資項目範圍：%{geozone}"
+      search_form:
+        button: 搜尋
+        placeholder: 投資項目...
+        title: 搜尋
+      search_results:
+        other: " 包含術語'%{search_term}'"
+      sidebar:
+        geozones: 經營範圍
+        feasibility: 可行性
+        unfeasible: 不可行
+      start_spending_proposal: 創建一個投資項目
+    new:
+      more_info: 參與性預算如何運作？
+      recommendation_one: 建議必須提及的一個可預算的行動。
+      recommendation_three: 在描述您的開支建議時，嘗試詳細說明，以便審查小組能明白您的觀點。
+      recommendation_two: 任何暗示非法行為的建議或評論都將被刪除。
+      recommendations_title: 如何創建一個開支建議
+      start_new: 創建開支建議
+    show:
+      author_deleted: 用戶已刪除
+      code: '建議編號：'
+      share: 分享
+    wrong_price_format: 只供整數
+    spending_proposal:
+      spending_proposal: 投資項目
+      already_supported: 你已經支持此項目。 把它分享吧！
+      support: 支持
+      support_title: 支持此項目
+      supports:
+        zero: 沒有支持
+        other: "%{count} 個支持"
+  stats:
+    index:
+      visits: 訪問
+      debates: 辯論
+      proposals: 建議
+      comments: 評論
+      proposal_votes: 對建議的投票數
+      debate_votes: 對辯論的投票數
+      comment_votes: 對評論的投票數
+      votes: 總投票數
+      verified_users: 已核實的用戶
+      unverified_users: 未核實的用戶
+  unauthorized:
+    default: 您沒有權限訪問此頁面。
+    manage:
+      all: "您沒有權限在%{subject} 上執行操作'%{action}'。"
+  users:
+    direct_messages:
+      new:
+        body_label: 消息
+        direct_messages_bloqued: "此用戶已決定不接收直接消息"
+        submit_button: 發送消息
+        title: 將私人消息發送到%{receiver}
+        title_label: 標題
+        verified_only: 要發送私人消息%{verify_account}
+        verify_account: 核實您的帳戶
+        authenticate: 您必須%{signin} 或%{signup} 才能繼續。
+        signin: 登錄
+        signup: 登記
+      show:
+        receiver: 消息已發送到%{receiver}
+    show:
+      deleted: 已刪除
+      deleted_debate: 此辯論已被刪除
+      deleted_proposal: 此建議已被刪除
+      deleted_budget_investment: 此投資項目已被刪除
+      proposals: 建議
+      debates: 辯論
+      budget_investments: 預算投資
+      comments: 評論
+      actions: 行動
+      filters:
+        comments:
+          other: "%{count} 個評論"
+        debates:
+          other: "%{count} 個辯論"
+        proposals:
+          other: "%{count} 個建議"
+        budget_investments:
+          other: "%{count} 個投資"
+        follows:
+          other: "%{count} 個跟隨中"
+      no_activity: 用戶沒有公開活動
+      no_private_messages: "此用戶不接受私人消息。"
+      private_activity: 此用戶決定把活動清單保密。
+      send_private_message: "發送私人消息"
+      delete_alert: "您確定要刪除您的投資項目嗎？ 此操作將無法撤消"
+    proposals:
+      send_notification: "發送通知"
+      retire: "撤回"
+      retired: "已撤回建議"
+      see: "查看建議"
+  votes:
+    agree: 我同意
+    anonymous: 太多的匿名投票，要允許投票%{verify_account}。
+    comment_unauthenticated: 您必須%{signin} 或%{signup} 才能投票。
+    disagree: 我不同意
+    organizations: 組織不允許投票
+    signin: 登錄
+    signup: 登記
+    supports: 支持
+    unauthenticated: 您必須%{signin} 或%{signup} 才能繼續。
+    verified_only: 只有已核實的用戶才能對建議投票；%{verify_account}。
+    verify_account: 核實您的帳戶
+    spending_proposals:
+      not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
+      not_verified: 只有已核實的用戶才能對建議投票；%{verify_account}。
+      organization: 組織不允許投票
+      unfeasible: 不可行的投資項目不能獲得支持
+      not_voting_allowed: 投票階段已結束
+    budget_investments:
+      not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
+      not_verified: 只有已核實的用戶才能對投資項目投票；%{verify_account}。
+      organization: 組織不允許投票
+      unfeasible: 不可行的投資項目不能獲得支持
+      not_voting_allowed: 投票階段已結束
+      different_heading_assigned:
+        other: "您只能支持%{count} 個地區的投資項目"
+  welcome:
+    feed:
+      most_active:
+        debates: "最活躍的辯論"
+        proposals: "最活躍的建議"
+        processes: "開放進程"
+      see_all_debates: 查看所有辯論
+      see_all_proposals: 查看所有建議
+      see_all_processes: 查看所有進程
+      process_label: 進程
+      see_process: 查看進程
+    cards:
+      title: 特色
+    recommended:
+      title: 您可能感興趣的推薦
+      help: "這些推薦是由您跟隨的辯論和建議的標籤生成的。"
+      debates:
+        title: 推薦的辯論
+        btn_text_link: 所有推薦的辯論
+      proposals:
+        title: 推薦的建議
+        btn_text_link: 所有推薦的建議
+      budget_investments:
+        title: 推薦的投資
+      slide: "查看%{title}"
+    verification:
+      i_dont_have_an_account: 我沒有帳戶
+      i_have_an_account: 我已經有帳戶
+      question: 您是否已在%{org_name} 中擁有帳戶？
+      title: 核實帳戶
+    welcome:
+      go_to_index: 查看建議和辯論
+      title: 參與
+      user_permission_debates: 參與辯論
+      user_permission_info: 您可以用您的帳戶來...
+      user_permission_proposal: 創建新建議
+      user_permission_support_proposal: 支持建議*
+      user_permission_verify: 要執行所有操作，請核實您的帳戶。
+      user_permission_verify_info: "* 僅適用於人口普查的用戶。"
+      user_permission_verify_my_account: 核實我的帳戶
+      user_permission_votes: 參與最終投票
+  invisible_captcha:
+    sentence_for_humans: "如果您是人，請忽略此字段"
+    timestamp_error_message: "對不起，太快了！ 請重新提交。"
+  related_content:
+    title: "相關內容"
+    add: "添加相關內容"
+    label: "鏈接到相關內容"
+    placeholder: "%{url}"
+    help: "您可以在%{org} 中添加%{models} 的鏈接。"
+    submit: "添加"
+    error: "鏈接無效。 請記住以%{url} 開頭。"
+    error_itself: "鏈接無效。 您不能將內容與自身相關聯。"
+    success: "您已添加了一個新的相關內容"
+    is_related: "是相關內容嗎？"
+    score_positive: "是"
+    score_negative: "否"
+    content_title:
+      proposal: "建議"
+      debate: "辯論"
+      budget_investment: "預算投資"
+  admin/widget:
+    header:
+      title: 管理
+  annotator:
+    help:
+      alt: 選擇您想評論的文本，然後按下鉛筆按鈕。
+      text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇您想評論的文本，並按下鉛筆按鈕。
+      text_sign_in: 登錄
+      text_sign_up: 登記
+      title: 我怎樣能對此文檔作評論？

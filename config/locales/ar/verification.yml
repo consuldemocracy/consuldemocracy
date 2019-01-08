@@ -1,0 +1,31 @@
+ar:
+  verification:
+    alert:
+      lock: لقد وصلت إلى الحد الأقصى من المحاولات. الرجاء المحاولة مرة أخرى لاحقاً.
+    back: العودة إلى حسابي
+    email:
+      create:
+        alert:
+          failure: هناك مشكلة في إرسال بريد إلكتروني إلى الحساب الخاص بك
+        flash:
+          success: 'لقد أرسلنا رسالة تأكيد إلكترونية إلى حسابك:%{email}'
+      show:
+        alert:
+          failure: رمز التحقق غير صحيح
+    letter:
+      alert:
+        unconfirmed_code: لم تقم بادخال رمز التحقق
+      errors:
+        incorrect_code: رمز التحقق غير صحيح
+    redirect_notices:
+      email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
+    residence:
+      new:
+        date_of_birth: تاريخ الميلاد
+        document_number_help_title: المساعدة
+        postal_code: الرمز البريدي
+        postal_code_note: لتتمكن من تاكيد حسابك يرجى التسجيل
+    sms:
+      edit:
+        resend_sms_link: اضغط هنا لاعادة الارسال
+        submit_button: ارسال

@@ -15,7 +15,8 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     @officer = @shift.officer
 
     if @shift.save
-      redirect_to new_admin_booth_shift_path(@shift.booth), notice: t("admin.poll_shifts.flash.create")
+      notice = t("admin.poll_shifts.flash.create")
+      redirect_to new_admin_booth_shift_path(@shift.booth), notice: notice
     else
       load_shifts
       flash[:error] = t("admin.poll_shifts.flash.date_missing")
@@ -31,7 +32,7 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
   end
 
   def search_officers
-    @officers = User.search(params[:search]).order(username: :asc).select { |o| o.poll_officer? == true }
+    @officers = User.search(params[:search]).order(username: :asc).select { |o| o.poll_officer? }
   end
 
   private
@@ -51,7 +52,9 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     end
 
     def shift_params
-      shift_params = params.require(:shift).permit(:booth_id, :officer_id, :task, date: [:vote_collection_date, :recount_scrutiny_date])
+      date_attributes = [:vote_collection_date, :recount_scrutiny_date]
+      attributes = [:booth_id, :officer_id, :task, date: date_attributes]
+      shift_params = params.require(:shift).permit(*attributes)
       shift_params.merge(date: shift_params[:date]["#{shift_params[:task]}_date".to_sym])
     end
 end

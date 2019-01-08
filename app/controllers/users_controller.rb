@@ -19,7 +19,7 @@ class UsersController < ApplicationController
                           comments: only_active_commentables.count,
                           votes: votes_count,
                           ballot_lines: ballot_lines_count,
-                          follows: @user.follows.count)
+                          follows: @user.follows.map(&:followable).compact.count)
     end
 
     def load_filtered_activity

@@ -9,3 +9,5 @@ $("#<%= dom_id(@investment) %>_ballot").html('<%= j render("/budgets/investments
             investment: @investment,
             investment_ids: @investments.map(&:id),
             ballot: @ballot %>
+
+App.Map.initialize();

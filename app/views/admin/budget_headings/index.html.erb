@@ -1,0 +1,47 @@
+<%= back_link_to admin_budget_groups_path(@budget) %>
+
+<div class="clear"></div>
+<h2 class="inline-block"><%= "#{@budget.name} / #{@group.name}" %></h2>
+<%= link_to t("admin.budget_headings.form.create"),
+            new_admin_budget_group_heading_path,
+            class: "button float-right" %>
+
+<% if @headings.any? %>
+  <h3><%= t("admin.budget_headings.amount", count: @headings.count) %></h3>
+  <table>
+    <thead>
+      <tr id="<%= dom_id(@group) %>">
+        <th><%= t("admin.budget_headings.name") %></th>
+        <th><%= t("admin.budget_headings.form.amount") %></th>
+        <th><%= t("admin.budget_headings.form.population") %></th>
+        <th><%= t("admin.budget_headings.form.allow_content_block") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @headings.each do |heading| %>
+        <tr id="<%= dom_id(heading) %>">
+          <td><%= link_to heading.name, edit_admin_budget_group_heading_path(@budget, @group, heading) %></td>
+          <td><%= @budget.formatted_heading_price(heading) %></td>
+          <td><%= heading.population %></td>
+          <td>
+            <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
+          </td>
+          <td>
+            <%= link_to t("admin.actions.edit"),
+                        edit_admin_budget_group_heading_path(@budget, @group, heading),
+                        class: "button hollow" %>
+            <%= link_to t("admin.actions.delete"),
+                        admin_budget_group_heading_path(@budget, @group, heading),
+                        method: :delete,
+                        class: "button hollow alert" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("admin.budget_headings.no_headings") %>
+  </div>
+<% end %>

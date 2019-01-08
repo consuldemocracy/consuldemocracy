@@ -1,0 +1,266 @@
+id:
+  activerecord:
+    models:
+      activity:
+        other: "aktivitas"
+      budget:
+        other: "Anggaran"
+      budget/investment:
+        other: "Investasi"
+      milestone:
+        other: "batu peringatan"
+      comment:
+        other: "Komentar"
+      debate:
+        other: "Debat"
+      tag:
+        other: "Penanda"
+      user:
+        other: "Pengguna"
+      moderator:
+        other: "Moderator"
+      administrator:
+        other: "Administrasi"
+      manager:
+        other: "Manajer"
+      vote:
+        other: "Suara"
+      organization:
+        other: "Organisasi"
+      poll/booth:
+        other: "stan"
+      poll/officer:
+        other: "petugas"
+      proposal:
+        other: "Usulan warga"
+      site_customization/page:
+        other: Gambar Khusus
+      site_customization/image:
+        other: Gambar Khusus
+      site_customization/content_block:
+        other: Blok konten khusus
+      legislation/process:
+        other: "Proses"
+      legislation/draft_versions:
+        other: "Rancangan versi"
+      legislation/draft_texts:
+        other: "Konsep"
+      legislation/questions:
+        other: "Pertanyaan"
+      legislation/question_options:
+        other: "Opsi pertanyaan"
+      legislation/answers:
+        other: "Jawaban"
+      documents:
+        other: "Dokumen"
+      images:
+        other: "Gambar"
+      topic:
+        other: "Topik"
+      poll:
+        other: "Jajak pendapat"
+    attributes:
+      budget:
+        name: "Nama"
+        description_accepting: "Deskripsi selama fase menerima"
+        description_reviewing: "Deskripsi selama fase menerima"
+        description_selecting: "Deskripsi selama fase menerima"
+        description_valuating: "Keterangan selama fase kematangan dan penurunan fase"
+        description_balloting: "Deskripsi selama fase menerima"
+        description_reviewing_ballots: "Keterangan selama Meninjau surat Suara tahap"
+        description_finished: "Deskripsi ketika anggaran selesai"
+        phase: "Fase"
+        currency_symbol: "Mata uang"
+      budget/investment:
+        heading_id: "Judul"
+        title: "Judul"
+        description: "Deskripsi"
+        external_url: "Tautkan ke dokumentasi tambahan"
+        administrator_id: "Administrasi"
+        location: "Lokasi (opsional)"
+        organization_name: "Jika Anda usulkan dalam nama kolektif/organisasi, atau atas nama orang lain, menulis namanya"
+        image: "Gambar deskriptif proposal"
+        image_title: "Judul gambar"
+      milestone:
+        title: "Judul"
+        publication_date: "Tanggal publikasi"
+      budget/heading:
+        name: "Nama judul"
+        price: "Harga"
+        population: "Populasi"
+      comment:
+        body: "Komentar"
+        user: "Pengguna"
+      debate:
+        author: "Penulis"
+        description: "Pendapat"
+        terms_of_service: "Persayaratan layanan"
+        title: "Judul"
+      proposal:
+        author: "Penulis"
+        title: "Judul"
+        question: "Pertanyaan"
+        description: "Deskripsi"
+        terms_of_service: "Persayaratan layanan"
+      user:
+        login: "Surel atau nama pengguna"
+        email: "Surel"
+        username: "Nama pengguna"
+        password_confirmation: "Konfirmasi kata sandi"
+        password: "Kata sandi"
+        current_password: "Kata sandi saat ini"
+        phone_number: "Nomor telepon"
+        official_position: "Posisi resmi"
+        official_level: "Tingkat resmi"
+        redeemable_code: "Kode verifikasi diterima melalui surel"
+      organization:
+        name: "Nama organisasi"
+        responsible_name: "Orang yang bertanggung jawab untuk kelompok"
+      spending_proposal:
+        association_name: "Asosiasi nama"
+        description: "Deskripsi"
+        external_url: "Tautkan ke dokumentasi tambahan"
+        geozone_id: "Lingkup operasi"
+        title: "Judul"
+      poll:
+        name: "Nama"
+        starts_at: "Tanggal Mulai"
+        ends_at: "Tanggal Penutupan"
+        geozone_restricted: "Dibatasi oleh geozone"
+        summary: "Ringkasan"
+        description: "Deskripsi"
+      poll/question:
+        title: "Pertanyaan"
+        summary: "Ringkasan"
+        description: "Deskripsi"
+        external_url: "Link ke dokumentasi tambahan"
+      signature_sheet:
+        signable_type: "Tipe yang dapat dipertanggungjawabkan"
+        signable_id: "ID yang dapat dicantumkan"
+        document_numbers: "Dokumen nomor"
+      site_customization/page:
+        content: Konten
+        created_at: Dibuat pada
+        subtitle: Subtitle
+        slug: Siput
+        status: Status
+        title: Judul
+        updated_at: Diperbarui pada
+        more_info_flag: Tampilkan di halaman bantuan
+        print_content_flag: Cetak tombol konten
+        locale: Bahasa
+      site_customization/image:
+        name: Nama
+        image: Gambar
+      site_customization/content_block:
+        name: Nama
+        locale: lokal
+        body: Tubuh
+      legislation/process:
+        title: Proses Judul
+        description: Deskripsi
+        additional_info: Info tambahan
+        start_date: Tanggal mulai
+        end_date: Tanggal akhir
+        debate_start_date: Perdebatan mulai tanggal
+        debate_end_date: Debat tanggal akhir
+        draft_publication_date: Draft tanggal publikasi
+        allegations_start_date: Tuduhan tanggal mulai
+        allegations_end_date: Tuduhan tanggal akhir
+        result_publication_date: Hasil akhir tanggal publikasi
+      legislation/draft_version:
+        title: Versi judul
+        body: Teks
+        changelog: Perubahan
+        status: Status
+        final_version: Versi Final
+      legislation/question:
+        title: Judul
+        question_options: Pilihan
+      legislation/question_option:
+        value: Nilai
+      legislation/annotation:
+        text: Komentar
+      document:
+        title: Judul
+        attachment: Lampiran
+      image:
+        title: Judul
+        attachment: Lampiran
+      poll/question/answer:
+        title: Jawaban
+        description: Deskripsi
+      poll/question/answer/video:
+        title: Judul
+        url: Video eksternal
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Pengguna ini sudah memiliki sebuah kata sandi"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tag harus kurang dari atau sama dengan %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Anda telah mencapai jumlah maksimum pesan pribadi per hari"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Lebar gambar harus setidaknya %{required_min_width}px"
+              min_image_height: "Tinggi gambar harus setidaknya %{required_min_height}px"
+        map_location:
+          attributes:
+            map:
+              invalid: Peta lokas tidak boleh kosong. Tempatkan sebuah penanda atau pilih kotak centang jika geolokalisasi tidak diperlukan
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dokumen tidak dalam sensus"
+              has_voted: "Pengguna yang telah terpilih"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: harus pada atau setelah tanggal mulai
+            debate_end_date:
+              invalid_date_range: link to additional documentation
+            allegations_end_date:
+              invalid_date_range: harus pada atau setelah tuduhan tanggal mulai
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "harus kurang dari atau sama dengan %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "harus kurang dari atau sama dengan %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Anda harus menunggu minium dari %{interval} hari antara pemberitahuan"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Tidak diverifikasi oleh sensus'
+              already_voted: 'Sudah memilih proposal ini'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "harus huruf, _-"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Lebar harus %{required_width}px"
+              image_height: "Tinggi harus %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Anda tidak bisa komentar sebuah penilaian'
+      messages:
+        record_invalid: "Pengesahan gagal: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Tidak dapat menghapus catatan karena tergantung %{record} ada"
+          has_many: "Tidak dapat menghapus record karena tergantung %{record} ada"

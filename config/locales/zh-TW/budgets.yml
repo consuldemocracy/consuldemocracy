@@ -1,0 +1,173 @@
+zh-TW:
+  budgets:
+    ballots:
+      show:
+        title: 你的選票
+        amount_spent: 用了的金額
+        remaining: "您仍然有 <span>%{amount}</span> 可以投資。"
+        no_balloted_group_yet: "你還沒有投票給這個組, 去投票吧!"
+        remove: 刪除投票
+        voted_html:
+          other: "您已為 <span>%{count}</span> 項投資投票。"
+        voted_info_html: "直到這個階段結束前，你可以隨時更改你的投票 。<br>不需要用盡所有可用的錢。"
+        zero: 你沒有為任何投資項目投票。
+      reasons_for_not_balloting:
+        not_logged_in: 您必須 %{signin} 或 %{signup} 才能繼續。
+        not_verified: 只有已通過核實的用戶才能對投資進行投票； %{verify_account}。
+        organization: 組織不允許投票
+        not_selected: 無法支援未選定的投資項目
+        not_enough_money_html: "您已經分配了可用的預算。<br><small>記住，您可以隨時 %{change_ballot} </small>"
+        no_ballots_allowed: 選擇階段已結束
+        different_heading_assigned_html: "您已投票給另一個標題： %{heading_link}"
+        change_ballot: 更改您的投票
+    groups:
+      show:
+        title: 選擇一個選項
+        unfeasible_title: 不可行的投資
+        unfeasible: 查看不可行的投資
+        unselected_title: 未被選入投票階段的投資
+        unselected: 查看未被選入投票階段的投資
+    phase:
+      drafting: 草稿 (公眾不可見)
+      informing: 資訊
+      accepting: 正在接受項目
+      reviewing: 正在審閱項目
+      selecting: 正在選擇項目
+      valuating: 正在評估項目
+      publishing_prices: 正在發佈項目價格
+      balloting: 正在為項目投票
+      reviewing_ballots: 正在審查投票
+      finished: 已完成的預算
+    index:
+      title: 參與性預算
+      empty_budgets: 沒有預算。
+      section_header:
+        icon_alt: 參與性預算的圖標
+        title: 參與性預算
+        help: 參與性預算的説明
+        all_phases: 查看所有階段
+      all_phases: 預算投資階段
+      map: 預算投資之建議的地理位置
+      investment_proyects: 所有投資項目清單
+      unfeasible_investment_proyects: 所有不可行的投資項目清單
+      not_selected_investment_proyects: 未被選入投票階段的所有投資項目清單
+      finished_budgets: 已完成的參與性預算
+      see_results: 查看結果
+      section_footer:
+        title: 參與性預算的説明
+        description: 通過參與性預算, 公民決定哪些項目註定會成為預算案的一部分。
+    investments:
+      form:
+        tag_category_label: "類別"
+        tags_instructions: "為此建議加標籤。您可以從建議的類別中選擇，或添加您自己的"
+        tags_label: 標籤
+        tags_placeholder: "輸入您想使用的標籤, 用逗號 (',') 作分隔"
+        map_location: "地圖位置"
+        map_location_instructions: "將地圖導航到該位置，並放置標記。"
+        map_remove_marker: "刪除地圖標記"
+        location: "位置附加資訊"
+        map_skip_checkbox: "這項投資沒有具體的位置, 或我沒有注意到。"
+      index:
+        title: 參與性預算編制
+        unfeasible: 不可行的投資項目
+        unfeasible_text: "投資必須符合一些標準 (合法性、具體性、是城市的責任, 不超出預算限額)，才能宣佈為可行，並可進入最終投票階段。所有不符合這些標準的投資，均被標記為不可行，並在下面的清單中公佈， 並附有其不可行性的報告。"
+        by_heading: "具有範圍的投資項目： %{heading}"
+        search_form:
+          button: 搜尋
+          placeholder: 搜尋投資項目...
+          title: 搜尋
+        search_results_html:
+          other: " 包含術語 <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: 我的選票
+          voted_html:
+            other: "<strong>您已為 %{count} 項建議投票，成本為 %{amount_spent}</strong>"
+          voted_info: 直到這個階段結束前，你可以隨時%{link} 。不需要用盡所有可用的錢。
+          voted_info_link: 更改您的投票
+          different_heading_assigned_html: "您在另一個標題中有活躍的投票： %{heading_link}"
+          change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
+          check_ballot_link: "查看我的選票"
+          zero: 您沒有在這個小組中投票給任何投資項目。
+          verified_only: "創建新的預算投資 %{verify}。"
+          verify_account: "核實您的帳戶"
+          create: "創建預算投資"
+          not_logged_in: "要創建新的預算投資, 您必須 %{sign_in} 或 %{sign_up}。"
+          sign_in: "登錄"
+          sign_up: "登記"
+          by_feasibility: 通過可行性
+          feasible: 可行項目
+          unfeasible: 不可行項目
+        orders:
+          random: 隨機
+          confidence_score: 最高額定值
+          price: 按價格
+      show:
+        author_deleted: 用戶已刪除
+        price_explanation: 價格說明
+        unfeasibility_explanation: 不可行的解釋
+        code_html: '投資項目代碼： <strong>%{code}</strong>'
+        location_html: '位置： <strong>%{location}</strong>'
+        organization_name_html: '代表 <strong>%{name}</strong>提出建議'
+        share: 共用
+        title: 投資項目
+        supports: 支援
+        votes: 票
+        price: 價格
+        comments_tab: 評論
+        milestones_tab: 里程碑
+        author: 作者
+        project_unfeasible_html: '此投資項目 <strong>已被標記為不可行</strong>，不會進入投票階段。'
+        project_selected_html: '此投資項目 <strong>已被選入</strong>投票階段。'
+        project_winner: '勝出的投資項目'
+        project_not_selected_html: '此投資項目 <strong>未被選入</strong>投票階段。'
+      wrong_price_format: 只供整數
+      investment:
+        add: 票
+        already_added: 您已經添加了此投資項目
+        already_supported: 您已經支持此投資項目。把它分享吧!
+        support_title: 支持此項目
+        confirm_group:
+          other: "您只能支持 %{count} 個區域中的投資。若你要繼續，你就不能改變你所在地區的選舉。是否確定？"
+        supports:
+          zero: 沒有支持
+          other: "%{count} 個支持"
+        give_support: 支持
+      header:
+        check_ballot: 查看我的選票
+        different_heading_assigned_html: "您在另一個標題中有活躍的投票： %{heading_link}"
+        change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
+        check_ballot_link: "查看我的選票"
+        price: "此標題有一個預算"
+    progress_bar:
+      assigned: "您已分配： "
+      available: "可用預算： "
+    show:
+      group: 組
+      phase: 實際階段
+      unfeasible_title: 不可行的投資
+      unfeasible: 查看不可行的投資
+      unselected_title: 未被選入投票階段的投資
+      unselected: 查看未被選入投票階段的投資
+      see_results: 查看結果
+    results:
+      link: 結果
+      page_title: "%{budget} - 結果"
+      heading: "參與性預算結果"
+      heading_selection_title: "按地區"
+      spending_proposal: 建議標題
+      ballot_lines_count: 被選的次數
+      hide_discarded_link: 隱藏廢棄的
+      show_all_link: 顯示所有
+      price: 價格
+      amount_available: 可用預算
+      accepted: "通過的開支建議： "
+      discarded: "廢棄的開支建議： "
+      incompatibles: 不相容
+      investment_proyects: 所有投資項目清單
+      unfeasible_investment_proyects: 所有不可行的投資項目清單
+      not_selected_investment_proyects: 未被選入投票階段的所有投資項目清單
+    phases:
+      errors:
+        dates_range_invalid: "開始日期不能等於或晚於結束日期"
+        prev_phase_dates_invalid: "開始日期必須晚於上一個啟用階段 (%{phase_name}) 的開始日期"
+        next_phase_dates_invalid: "結束日期必須早過下一個啟用階段 (%{phase_name}) 的結束日期"

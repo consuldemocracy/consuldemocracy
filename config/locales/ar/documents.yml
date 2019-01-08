@@ -1,0 +1,24 @@
+ar:
+  documents:
+    title: مستندات
+    max_documents_allowed_reached_html: لقد وصلت الى الحد الاقصى لعدد الوثائق المسموح به! <strong> يجب عليك ان تحذف واحدة قبل ان ترفع اخرى.</strong>
+    form:
+      title: وثائق
+      title_placeholder: اضف عنوان وصفي للمستند
+      attachment_label: اختر وثيقة
+      delete_button: ازالة مستند
+      cancel_button: إلغاء
+      note: "يمكنك تحميل بحد اقصى قدره%{max_documents_allowed} وثائق لانواع المحتوى التالية: %{accepted_content_types}، يصل الى %{max_file_size} ميغابايت لكل ملف."
+      add_new_document: اضافة مستند جديد
+    actions:
+      destroy:
+        notice: تم حذف المستند بنجاح.
+        alert: يتعذر اتلاف الوثيقة.
+        confirm: هل انت متاكد من انك تريد حذف المستند؟ لا يمكن التراجع هن هذه الخطوة!
+    buttons:
+      download_document: تحميل الملف
+      destroy_document: تدمير المستند
+    errors:
+      messages:
+        in_between: يجب ان تكون بين %{min} و %{max}
+        wrong_content_type: نوع المحتوى%{content_type} لا يطابق اي من المحتويات المقبولة %{accepted_content_types}

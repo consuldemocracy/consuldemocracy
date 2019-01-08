@@ -1,0 +1,55 @@
+fr:
+  seeds:
+    settings:
+      official_level_1_name: Position officielle 1
+      official_level_2_name: Position officielle 2
+      official_level_3_name: Position officielle 3
+      official_level_4_name: Position officielle 4
+      official_level_5_name: Position officielle 5
+    geozones:
+      north_district: Secteur Nord
+      west_district: Secteur Sud
+      east_district: Secteur Est
+      central_district: Secteur central
+    organizations:
+      human_rights: Droits humains
+      neighborhood_association: Association de quartier
+    categories:
+      associations: Associations
+      culture: Culture
+      sports: Sport
+      social_rights: Droits sociaux
+      economy: Économie
+      employment: Emploi
+      equity: Équité
+      sustainability: Développement durable
+      participation: Participation
+      mobility: Mobilité
+      media: Médias
+      health: Santé
+      transparency: Transparence
+      security_emergencies: Sécurité et situations d’urgence
+      environment: Environnement
+    budgets:
+      budget: Budget participatif
+      currency: '€'
+      groups:
+        all_city: Toute la ville
+        districts: Secteurs
+      valuator_groups:
+        culture_and_sports: Culture & Sports
+        gender_and_diversity: Politique en matière de genre et de diversité
+        urban_development: Développement durable urbain
+        equity_and_employment: Équité & Emploi
+      statuses:
+        studying_project: Études du projet
+        bidding: Soumettre
+        executing_project: Exécuter le projet
+        executed: Exécuté
+    polls:
+      current_poll: "Vote en cours"
+      current_poll_geozone_restricted: "Géozone du vote en cours restreinte"
+      incoming_poll: "Vote entrant"
+      recounting_poll: "Re-dépouillement du vote"
+      expired_poll_without_stats: "Vote terminé sans statistiques ni résultats"
+      expired_poll_with_stats: "Vote terminé avec statistiques et résultats"

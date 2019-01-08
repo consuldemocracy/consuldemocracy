@@ -1,0 +1,21 @@
+pt-BR:
+  images:
+    remove_image: Remover imagem
+    form:
+      title: Imagem descritiva
+      title_placeholder: Adicionar um título descritivo para a imagem
+      attachment_label: Escolher imagem
+      delete_button: Remover imagem
+      note: "Você pode carregar uma imagem dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB."
+      add_new_image: Adicionar imagem
+      admin_title: "Imagem"
+      admin_alt_text: "Texto alternativo para a imagem"
+    actions:
+      destroy:
+        notice: Imagem excluída com sucesso.
+        alert: Não é possível destruir a imagem.
+        confirm: Tem certeza que deseja excluir esta imagem? Esta ação não pode ser desfeita!
+    errors:
+      messages:
+        in_between: deve estar entre %{min} e %{max}
+        wrong_content_type: tipo de conteúdo %{content_type} não coincide com qualquer um dos tipos de conteúdo aceitos %{accepted_content_types}

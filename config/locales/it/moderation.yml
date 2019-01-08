@@ -1,0 +1,117 @@
+it:
+  moderation:
+    comments:
+      index:
+        block_authors: Blocca autori
+        confirm: Sei sicuro?
+        filter: Filtra
+        filters:
+          all: Tutti
+          pending_flag_review: In sospeso
+          with_ignored_flag: Contrassegna come già visto
+        headers:
+          comment: Commento
+          moderate: Modera
+        hide_comments: Nascondi commenti
+        ignore_flags: Contrassegna come già visto
+        order: Ordina
+        orders:
+          flags: Più segnalati
+          newest: Più recenti
+        title: Commenti
+    dashboard:
+      index:
+        title: Moderazione
+    debates:
+      index:
+        block_authors: Blocca autori
+        confirm: Sei sicuro?
+        filter: Filtra
+        filters:
+          all: Tutti
+          pending_flag_review: In sospeso
+          with_ignored_flag: Contrassegna come già visto
+        headers:
+          debate: Dibattito
+          moderate: Moderare
+        hide_debates: Nascondi i dibattiti
+        ignore_flags: Contrassegna come già visto
+        order: Ordine
+        orders:
+          created_at: Più recente
+          flags: Più contrassegnato
+        title: Dibattiti
+    header:
+      title: Moderare
+    menu:
+      flagged_comments: Commenti
+      flagged_debates: Dibattiti
+      flagged_investments: Investimenti del bilancio
+      proposals: Proposte
+      proposal_notifications: Notifiche di proposte
+      users: Blocca gli utenti
+    proposals:
+      index:
+        block_authors: Blocca gli autori
+        confirm: Sei sicuro?
+        filter: Filtro
+        filters:
+          all: Tutti
+          pending_flag_review: In attesa di revisione
+          with_ignored_flag: Contrassegna come già visto
+        headers:
+          moderate: Moderare
+          proposal: Proposta
+        hide_proposals: Nascondi le proposte
+        ignore_flags: Contrassegna come già visto
+        order: Ordinare per
+        orders:
+          created_at: Più recente
+          flags: Più segnalati
+        title: Proposte
+    budget_investments:
+      index:
+        block_authors: Blocca autori
+        confirm: Sei sicuro?
+        filter: Filtra
+        filters:
+          all: Tutti
+          pending_flag_review: In sospeso
+          with_ignored_flag: Contrassegnati come già visti
+        headers:
+          moderate: Modera
+          budget_investment: Investimento di bilancio
+        hide_budget_investments: Nascondi investimenti di bilancio
+        ignore_flags: Contrassegna come già visto
+        order: Ordina per
+        orders:
+          created_at: Più recenti
+          flags: Più segnalati
+        title: Investimenti di bilancio
+    proposal_notifications:
+      index:
+        block_authors: Blocca autori
+        confirm: Sei sicuro?
+        filter: Filtra
+        filters:
+          all: Tutti
+          pending_review: In attesa di revisione
+          ignored: Contrassegna come già visto
+        headers:
+          moderate: Modera
+          proposal_notification: Notifica di proposta
+        hide_proposal_notifications: Nascondi proposte
+        ignore_flags: Contrassegna come già visto
+        order: Ordina per
+        orders:
+          created_at: Più recenti
+          moderated: Oggetto di moderazione
+        title: Notifiche di proposta
+    users:
+      index:
+        hidden: Bloccato
+        hide: Blocca
+        search: Cerca
+        search_placeholder: email o nome utente
+        title: Blocca utenti
+      notice_hide: Utente bloccato. Tutti i dibattiti e commenti di questo utente sono stati nascosti.

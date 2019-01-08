@@ -1,0 +1,127 @@
+gl:
+  valuation:
+    header:
+      title: Avaliación
+    menu:
+      title: Avaliación
+      budgets: Orzamentos participativos
+      spending_proposals: Propostas de investimento
+    budgets:
+      index:
+        title: Orzamentos participativos
+        filters:
+          current: Abertos
+          finished: Rematados
+        table_name: Nome
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Propostas de investimento asignadas coa avaliación aberta
+        table_actions: Accións
+        evaluate: Avaliar
+    budget_investments:
+      index:
+        headings_filter_all: Todas as partidas
+        filters:
+          valuation_open: Abertas
+          valuating: Baixo avaliación
+          valuation_finished: Avaliación realizada
+        assigned_to: "Asignada a %{valuator}"
+        title: Propostas de investimento
+        edit: Editar informe
+        valuators_assigned:
+          one: Avaliador asignado
+          other: "%{count} avaliadores asignados"
+        no_valuators_assigned: Sen avaliador
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nome da partida
+        table_actions: Accións
+        no_investments: "Non hai proxectos de investimento."
+      show:
+        back: Volver
+        title: Proxectos de investimento
+        info: Información de autoría
+        by: Enviada por
+        sent: Data de creación
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Custo
+        price_first_year: Investimento durante o primeiro ano
+        currency: "€"
+        feasibility: Viabilidade
+        feasible: Viable
+        unfeasible: Inviable
+        undefined: Sen definir
+        valuation_finished: Informe rematado
+        duration: Prazo de execución
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Avaliadores asignados
+      edit:
+        dossier: Informe
+        price_html: "Investimento (%{currency})"
+        price_first_year_html: "Investimento durante o primeiro ano (%{currency})<small>(opcional, dato non público)</small>"
+        price_explanation_html: Informe de custo
+        feasibility: Viabilidade
+        feasible: Viable
+        unfeasible: Inviable
+        undefined_feasible: Pendente
+        feasible_explanation_html: Informe de inviabilidade
+        valuation_finished: Informe rematado
+        valuation_finished_alert: "Tes a certeza de que queres marcar este informe como completo? Se o fas, non se pode desfacer esta opción."
+        not_feasible_alert: "Enviaráselle un correo inmediatamente á autoría do proxecto co informe de inviabilidade."
+        duration_html: Prazo de arteixo
+        save: Gardar cambios
+      notice:
+        valuate: "Informe actualizado"
+      valuation_comments: Comentarios de validación
+      not_in_valuating_phase: Os investimentos só se poden avaliar cando o Orzamento está en fase de avaliación
+    spending_proposals:
+      index:
+        geozone_filter_all: Todas as zonas
+        filters:
+          valuation_open: Abertas
+          valuating: En avaliación
+          valuation_finished: Avaliación rematada
+        title: Proxectos de investimento para orzamentos participativos
+        edit: Editar
+      show:
+        back: Volver
+        heading: Proposta de investimento
+        info: Información de autoría
+        association_name: Asociación
+        by: Enviada por
+        sent: Data de creación
+        geozone: Zona
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Investimento
+        price_first_year: Investimento durante o primeiro ano
+        currency: "€"
+        feasibility: Viabilidade
+        feasible: Viable
+        not_feasible: Non víable
+        undefined: Sen definir
+        valuation_finished: Informe de validación
+        time_scope: Prazo de execución
+        internal_comments: Comentarios internos
+        responsibles: Respondables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Avaliadores asignados
+      edit:
+        dossier: Informe
+        price_html: "Investimento (%{currency})"
+        price_first_year_html: "Custo durante o primeiro ano (%{currency})"
+        currency: "€"
+        price_explanation_html: Informe de custo
+        feasibility: Viabilidade
+        feasible: Viable
+        not_feasible: Inviable
+        undefined_feasible: Pendente
+        feasible_explanation_html: Informe de inviabilidade
+        valuation_finished: Informe rematado
+        time_scope_html: Prazo de execución
+        internal_comments_html: Comentarios internos
+        save: Gardar cambios
+      notice:
+        valuate: "Informe actualizado"

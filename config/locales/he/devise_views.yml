@@ -15,7 +15,6 @@ he:
       confirmation_instructions:
         confirm_link: מאשר/ת את חשבוני
         text: 'ניתן לאשר את חשבון הדואר האלקטרוני שלך בקישור  הבא:'
-        title: ברוכים\ות הבאים\ות לקול העם
         welcome: ברוכים/ות הבאים/ות
       reset_password_instructions:
         change_link: שנה את הסיסמה שלי

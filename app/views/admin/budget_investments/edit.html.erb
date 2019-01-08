@@ -9,7 +9,7 @@
    <%= hidden_field_tag filter_name, filter_value %>
   <% end %>
 
-  <div class="row">
+  <div class="row expanded">
     <div class="small-12 column">
       <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
     </div>
@@ -26,22 +26,26 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.text_field :external_url %>
-    </div>
+      <div class="small-12 medium-6">
+        <%= f.text_field :external_url %>
+      </div>
 
-    <div class="small-12 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+      <div class="small-12 medium-6">
+        <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+      </div>
     </div>
   </div>
 
-  <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>
-
-  <div class="row">
+  <div class="row expanded margin-top">
 
     <div class="small-12 column">
-      <%= f.select(:administrator_id,
-                     @admins.collect{ |a| [a.name_and_email, a.id ] },
-                     { include_blank: t("admin.budget_investments.edit.undefined") }) %>
+      <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>
+
+      <div class="small-12 medium-6">
+        <%= f.select(:administrator_id,
+                       @admins.collect{ |a| [a.name_and_email, a.id ] },
+                       { include_blank: t("admin.budget_investments.edit.undefined") }) %>
+      </div>
     </div>
 
 
@@ -59,17 +63,27 @@
                         class: 'js-tag-list' %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
-
-      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-          <%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %>
+    <div class="small-12 column margin-top">
+      <%= f.label :valuator_ids, t("admin.budget_investments.edit.user_groups") %>
+      <ul>
+      <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
+        <li><%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %></li>
       <% end %>
+      </ul>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+      <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
+      <ul>
+        <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
+            <li><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 
-
-  <div class="row margin-top">
+  <div class="row expanded margin-top">
     <% if @investment.incompatible? || @investment.winner? %>
     <div class="small-12 medium-3 column">
       <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
@@ -88,7 +102,7 @@
     </div>
   </div>
 
-  <div class="margin-top">
+  <div class="small-12 column margin-top">
     <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>
   </div>
 <% end %>

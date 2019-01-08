@@ -1,0 +1,68 @@
+zh-TW:
+  officing:
+    header:
+      title: 投票
+    dashboard:
+      index:
+        title: 投票辦公室當值
+        info: 您可以在此驗證用戶文檔和存儲投票結果
+        no_shifts: 你今天沒有辦公室輪班。
+    menu:
+      voters: 驗證文檔
+      total_recounts: 總計重新計票和結果
+    polls:
+      final:
+        title: 投票已準備好進行最終的重新計票
+        no_polls: 您不用在任何活躍投票的最終重新計票中當值
+        select_poll: 選擇投票項
+        add_results: 添加結果
+    results:
+      flash:
+        create: "結果已儲存"
+        error_create: "結果未儲存。 數據錯誤。"
+        error_wrong_booth: "錯誤的投票亭。 結果未被儲存。"
+      new:
+        title: "%{poll} - 添加结果"
+        not_allowed: "您可以為此投票添加結果"
+        booth: "投票亭"
+        date: "日期"
+        select_booth: "選擇投票亭"
+        ballots_white: "完全空白的選票"
+        ballots_null: "無效選票"
+        ballots_total: "總投票數"
+        submit: "儲存"
+        results_list: "您的結果"
+        see_results: "查看結果"
+      index:
+        no_results: "沒有結果"
+        results: 結果
+        table_answer: 回答
+        table_votes: 投票數
+        table_whites: "完全空白的選票"
+        table_nulls: "無效選票"
+        table_total: "總投票數"
+    residence:
+      flash:
+        create: "通過人口普查核實的文件"
+        not_allowed: "你今天沒有辦公室輪班"
+      new:
+        title: 驗證文件
+        document_number: "文件編號 (包括字母)"
+        submit: 驗證文件
+        error_verifying_census: "人口普查無法核實此文件。"
+        form_errors: 阻止了對此文件的核實
+        no_assignments: "你今天沒有辦公室輪班"
+    voters:
+      new:
+        title: 投票
+        table_poll: 投票
+        table_status: 投票狀態
+        table_actions: 行動
+        not_to_vote: 此人已決定此時不投票
+      show:
+        can_vote: 可以投票
+        error_already_voted: 已經參與了此次投票
+        submit: 確認投票
+        success: "投票介紹！"
+      can_vote:
+        submit_disable_with: "等等，投票確認中..."

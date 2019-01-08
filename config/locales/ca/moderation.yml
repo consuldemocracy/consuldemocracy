@@ -1,0 +1,27 @@
+ca:
+  moderation:
+    comments:
+      index:
+        confirm: Estàs segur?
+        filter: filtre
+        filters:
+          all: Tots
+          pending_flag_review: Pendents
+        headers:
+          comment: Comentari
+        title: Comentaris
+    debates:
+      index:
+        headers:
+          debate: debat
+        title: Debats
+    menu:
+      proposals: Propostes
+    proposals:
+      index:
+        headers:
+          proposal: Proposta
+    users:
+      index:
+        hidden: Bloquejat
+        search: Cercar

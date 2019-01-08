@@ -1,5 +1,5 @@
 class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseController
-  before_action :load_answer
+  before_action :load_answer, except: :destroy
 
   def index
   end
@@ -18,6 +18,15 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
     else
       puts @answer.errors.full_messages.inspect
       render :new
+    end
+  end
+
+  def destroy
+    @image = ::Image.find(params[:id])
+    @image.destroy
+
+    respond_to do |format|
+      format.js { render layout: false }
     end
   end
 

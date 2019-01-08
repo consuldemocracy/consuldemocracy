@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "Voter" do
 
-  context "Origin" do
+  context "Origin", :with_frozen_time do
 
     let(:poll) { create(:poll, :current) }
     let(:question) { create(:poll_question, poll: poll) }
@@ -53,7 +53,7 @@ feature "Voter" do
       expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
-    scenario "Voting in booth", :js do
+    scenario 'Voting in booth', :js do
       user = create(:user, :in_census)
 
       login_through_form_as_officer(officer.user)
@@ -64,22 +64,17 @@ feature "Voter" do
       expect(page).to have_content poll.name
 
       within("#poll_#{poll.id}") do
-        click_button("Confirm vote")
-        expect(page).not_to have_button("Confirm vote")
-        expect(page).to have_button('Wait, confirming vote...', disabled: true)
-        expect(page).to have_content "Vote introduced!"
+        click_button('Confirm vote')
+        expect(page).not_to have_button('Confirm vote')
+        expect(page).to have_content('Vote introduced!')
       end
 
       expect(Poll::Voter.count).to eq(1)
-      expect(Poll::Voter.first.origin).to eq("booth")
+      expect(Poll::Voter.first.origin).to eq('booth')
     end
 
     context "Trying to vote the same poll in booth and web" do
-
       let!(:user) { create(:user, :in_census) }
-
-      background do
-      end
 
       scenario "Trying to vote in web and then in booth", :js do
         login_as user
@@ -130,12 +125,18 @@ feature "Voter" do
 
         click_link "Sign out"
 
-        login_as user
-        visit poll_path(poll)
+        # Time needs to pass between the moment we vote and the moment
+        # we log in; otherwise the link to vote won't be available.
+        # It's safe to advance one second because this test isn't
+        # affected by possible date changes.
+        travel 1.second do
+          login_as user
+          visit poll_path(poll)
 
-        within("#poll_question_#{question.id}_answers") do
-          expect(page).to have_link(answer_yes.title)
-          expect(page).to have_link(answer_no.title)
+          within("#poll_question_#{question.id}_answers") do
+            expect(page).to have_link(answer_yes.title)
+            expect(page).to have_link(answer_no.title)
+          end
         end
       end
     end

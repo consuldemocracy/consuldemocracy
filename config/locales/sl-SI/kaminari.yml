@@ -1,0 +1,26 @@
+sl:
+  helpers:
+    page_entries_info:
+      entry:
+        one: Vnos
+        two: Vnosa
+        other: Vnosi
+        zero: Vnososv
+      more_pages:
+        display_entries: Prikazujem <strong>%{first}&nbsp;-&nbsp;%{last}</strong> od <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          one: Najdem <strong>1 %{entry_name}</strong> vnos
+          two: Najdem <strong>2 %{entry_name}</strong> vnosa
+          three: Najdem <strong>3 %{entry_name}</strong> vnose
+          four: Najdem <strong>4 %{entry_name}</strong> vnose
+          other: Najdem <strong>%{count} %{entry_name}</strong> vnosov
+          zero: "%{entry_name} ni mogoče najti"
+  views:
+    pagination:
+      current: Si na strani
+      first: Prva
+      last: Zadnja
+      next: Naslednja
+      previous: Prejšnja
+      truncate: "&hellip;"

@@ -81,7 +81,7 @@ en:
       new:
         phone: Enter your mobile phone number to receive the code
         phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
-        phone_note: We only user your phone for send to you a code, we never contact to you.
+        phone_note: We only use your phone to send you a code, never to contact you.
         phone_placeholder: "Example: 612345678 or +34612345678"
         submit_button: Send
         title: Send confirmation code
@@ -96,7 +96,7 @@ en:
     step_2: Confirmation code
     step_3: Final verification
     user_permission_debates: Participate on debates
-    user_permission_info: Verifing your information you'll be able to...
+    user_permission_info: Verifying your information you'll be able to...
     user_permission_proposal: Create new proposals
     user_permission_support_proposal: Support proposals*
     user_permission_votes: Participate on final voting*

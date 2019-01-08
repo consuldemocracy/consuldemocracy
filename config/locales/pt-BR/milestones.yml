@@ -1,0 +1,7 @@
+pt-BR:
+  milestones:
+    index:
+      no_milestones: Não possui marcos definidos
+    show:
+      publication_date: "Publicado %{publication_date}"
+      status_changed: Status de investimento mudado para

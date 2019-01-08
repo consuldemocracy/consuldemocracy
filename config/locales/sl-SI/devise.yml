@@ -1,0 +1,67 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+sl:
+  devise:
+    password_expired:
+      expire_password: "Geslo je poteklo"
+      change_required: "Tvoje geslo je poteklo"
+      change_password: "Spremeni svoje geslo"
+      new_password: "Novo geslo"
+      updated: "Geslo uspešno posodobljeno"
+    confirmations:
+      confirmed: "Tvoj račun je potrjen."
+      send_instructions: "V nekaj minutah dobiš e-pošto z navodili, kako ponastaviti svoje geslo."
+      send_paranoid_instructions: "Če imamo tvoj e-naslov v bazi, v nekaj minutah dobiš e-pošto z navodili, kako ponastaviti svoje geslo."
+    failure:
+      already_authenticated: "Si že vpisan/-a."
+      inactive: "Tvoj račun še ni bil aktiviran."
+      invalid: "Neveljavno %{authentication_keys} ali geslo."
+      locked: "Tvoj račun je bil zaklenjen."
+      last_attempt: "Imaš še en poskus, preden bomo tvoj račun blokirali."
+      not_found_in_database: "Neveljavno %{authentication_keys} ali geslo."
+      timeout: "Tvoja seja je potekla. Za nadaljevanje se ponovno vpiši."
+      unauthenticated: "Za nadaljevanje se moraš prijaviti ali registrirati."
+      unconfirmed: "Če želiš nadaljevati, klikni na potrditveno povezavo, ki smo ti jo poslali po e-pošti."
+    mailer:
+      confirmation_instructions:
+        subject: "Navodila za potrditev"
+      reset_password_instructions:
+        subject: "Navodila za ponastavljanje tvojega gesla"
+      unlock_instructions:
+        subject: "Navodila za odklepanje računa"
+    omniauth_callbacks:
+      failure: "Nismo te mogli avtorizirati kot %{kind} zaradi \"%{reason}\"."
+      success: "Uspešno identificiran/-a kot %{kind}."
+    passwords:
+      no_token: "Do te strani ne moreš dostopati drugače kot preko povezave za ponastavljanje gesla. Če si tu preko tovrstne povezave, preveri, da je URL povezave pravilen."
+      send_instructions: "V nekaj minutah dobiš e-pošto z navodili, kako ponastaviti tvoje geslo."
+      send_paranoid_instructions: "Če imamo tvoj e-naslov v bazi, v nekaj minutah dobiš e-pošto s povezavo do ponastavljanja tvojega gesla."
+      updated: "Tvoje geslo je bilo uspešno spremenjeno. Avtentifikacija uspešna."
+      updated_not_active: "Tvoje geslo je bilo uspešno spremenjeno."
+    registrations:
+      destroyed:
+        "Adijo! Tvoj račun smo ugasnili. Upamo, da se kmalu spet vidimo. Skladno s tvojo zahtevo, smo izbrisali osebne podatke, povezane s tvojim računom."
+      signed_up: "Dobrodošel! Uspešno smo te avtentificirali."
+      signed_up_but_inactive: "Tvoja registracija je bila uspešna, ampak nismo te mogli vpisati, ker tvoj račun še ni aktiviran."
+      signed_up_but_locked: "Tvoja registracija je bila uspešna, ampak nismo te mogli vpisati, ker je tvoj račun zaklenjen."
+      signed_up_but_unconfirmed: "Poslali smo ti e-pošto s povezavo za preverjanje. Prosimo, klikni na to povezavo, da aktiviraš svoj račun."
+      update_needs_confirmation: "Tvoj račun je bil uspešno posodobljen, a preveriti moramo še tvoj novi e-naslov. Prosimo, preveri svojo e-pošto in klikni na povezavo, da zaključiš potrditveni proces."
+      updated: "Tvoj račun je bil uspešno posodobljen."
+    sessions:
+      signed_in: "Uspešno si se vpisal."
+      signed_out: "Uspešno si se izpisal."
+      already_signed_out: "Uspešno si se izpisal."
+    unlocks:
+      send_instructions: "V nekaj minutah dobiš e-pošto z navodili, kako odkleniti svoj račun."
+      send_paranoid_instructions: "Če imaš uporabniški račun, v nekaj minutah dobiš e-pošto z navodili, kako ga odkleniti."
+      unlocked: "Tvoj račun je odklenjen. Prosimo, vpiši se za nadaljevanje."
+  errors:
+    messages:
+      already_confirmed: "Tvoj račun je že potrjen, vpiši se."
+      confirmation_period_expired: "Račun moraš potrditi v %{period}; prosimo ponovi zahtevo."
+      expired: "je potekla; prosimo ponovi zahtevo."
+      not_found: "ni mogoče najti."
+      not_locked: "nismo zaklenili."
+      not_saved:
+        one: "1 napaka je preprečila shranjevanje  %{resource}. Prosimo, preveri označeno polje:"
+        other: "%{count} napak je preprečilo shranjevanje %{resource}. Prosimo, preveri označena polja:"
+      equal_to_current_password: "mora biti drugačno od trenutnega gesla."

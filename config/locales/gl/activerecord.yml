@@ -1,0 +1,379 @@
+gl:
+  activerecord:
+    models:
+      activity:
+        one: "actividade"
+        other: "actividades"
+      budget:
+        one: "Orzamento participativo"
+        other: "Orzamentos participativos"
+      budget/investment:
+        one: "Investimento"
+        other: "Investimentos"
+      milestone:
+        one: "fito"
+        other: "fitos"
+      milestone/status:
+        one: "Estado do investimento"
+        other: "Estado dos investimentos"
+      comment:
+        one: "Comentario"
+        other: "Comentarios"
+      debate:
+        one: "Debate"
+        other: "Debates"
+      tag:
+        one: "Etiqueta"
+        other: "Etiquetas"
+      user:
+        one: "Usuario"
+        other: "Usuarios/as"
+      moderator:
+        one: "Moderador"
+        other: "Moderadores"
+      administrator:
+        one: "Administrador"
+        other: "Administradores"
+      valuator:
+        one: "Avaliador"
+        other: "Avaliadores"
+      valuator_group:
+        one: "Grupo de avaliadores"
+        other: "Grupos de avaliadores"
+      manager:
+        one: "Xestor"
+        other: "Xestores"
+      newsletter:
+        one: "Boletín informativo"
+        other: "Boletíns informativos"
+      vote:
+        one: "Voto"
+        other: "Votos"
+      organization:
+        one: "Organización"
+        other: "Organizacións"
+      poll/booth:
+        one: "urna"
+        other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
+      proposal:
+        one: "Proposta cidadá"
+        other: "Propostas cidadás"
+      spending_proposal:
+        one: "Proxecto de investimento"
+        other: "Proxectos de investimento"
+      site_customization/page:
+        one: Páxina
+        other: Páxinas
+      site_customization/image:
+        one: Imaxe
+        other: Imaxes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
+      legislation/process:
+        one: "Proceso"
+        other: "Procesos"
+      legislation/proposal:
+        one: "Proposta"
+        other: "Propostas"
+      legislation/draft_versions:
+        one: "Versión borrador"
+        other: "Versións borrador"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
+      legislation/questions:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_options:
+        one: "Opción de resposta pechada"
+        other: "Opcións de respostas pechadas"
+      legislation/answers:
+        one: "Resposta"
+        other: "Respostas"
+      documents:
+        one: "Documento"
+        other: "Documentos"
+      images:
+        one: "Imaxe"
+        other: "Imaxes"
+      topic:
+        one: "Tema"
+        other: "Temas"
+      poll:
+        one: "Votación"
+        other: "Votacións"
+      proposal_notification:
+        one: "Aviso de proposta"
+        other: "Avisos de propostas"
+    attributes:
+      budget:
+        name: "Nome"
+        description_accepting: "Descrición durante a fase de presentación de proxectos"
+        description_reviewing: "Descrición durante a fase de Revisión"
+        description_selecting: "Descrición durante a fase de Selección"
+        description_valuating: "Descrición durante a fase de Avaliación"
+        description_balloting: "Descrición durante a fase de Votación"
+        description_reviewing_ballots: "Descrición durante a fase de Revisión de votos"
+        description_finished: "Descrición cando o orzamento está rematado"
+        phase: "Fase"
+        currency_symbol: "Moeda"
+      budget/investment:
+        heading_id: "Partida do orzamento"
+        title: "Título"
+        description: "Descrición"
+        external_url: "Ligazón a documentación adicional"
+        administrator_id: "Administrador"
+        location: "Localización (opcional)"
+        organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
+        image: "Imaxe descritiva da proposta"
+        image_title: "Título da imaxe"
+      milestone:
+        status_id: "Estado do investimento actual (opcional)"
+        title: "Título"
+        description: "Descrición (opcional se hai unha condición asignada)"
+        publication_date: "Data de publicación"
+      milestone/status:
+        name: "Nome"
+        description: "Descrición (opcional)"
+      budget/heading:
+        name: "Nome da partida"
+        price: "Cantidade"
+        population: "Poboación"
+      comment:
+        body: "Comentario"
+        user: "Usuario"
+      debate:
+        author: "Autor"
+        description: "Opinión"
+        terms_of_service: "Termos de servizo"
+        title: "Título"
+      proposal:
+        author: "Autoría"
+        title: "Título"
+        question: "Pregunta"
+        description: "Descrición"
+        terms_of_service: "Termos de servizo"
+      user:
+        login: "Enderezo de correo electrónico ou nome de usuario"
+        email: "Correo electrónico"
+        username: "Nome de usuario"
+        password_confirmation: "Confirmación de contrasinal"
+        password: "Contrasinal"
+        current_password: "Contrasinal actual"
+        phone_number: "Teléfono"
+        official_position: "Cargo público"
+        official_level: "Nivel do cargo"
+        redeemable_code: "Código de verificación recibido por correo electrónico"
+      organization:
+        name: "Nome da organización"
+        responsible_name: "Persoa responsable do colectivo"
+      spending_proposal:
+        administrator_id: "Administrador"
+        association_name: "Nome da asociación"
+        description: "Descrición"
+        external_url: "Ligazón á documentación adicional"
+        geozone_id: "Ámbitos de actuación"
+        title: "Título"
+      poll:
+        name: "Nome"
+        starts_at: "Data de apertura"
+        ends_at: "Data de peche"
+        geozone_restricted: "Restrinxida por zonas"
+        summary: "Resumo"
+        description: "Descrición"
+      poll/translation:
+        name: "Nome"
+        summary: "Resumo"
+        description: "Descrición"
+      poll/question:
+        title: "Pregunta"
+        summary: "Resumo"
+        description: "Descrición"
+        external_url: "Ligazón á documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
+      signature_sheet:
+        signable_type: "Tipo de sinaturas"
+        signable_id: "ID de proposta cidadá/proposta de investimento"
+        document_numbers: "Números de documentos"
+      site_customization/page:
+        content: Contido
+        created_at: Creada
+        subtitle: Subtítulo
+        slug: URL
+        status: Estado
+        title: Título
+        updated_at: Última actualización
+        more_info_flag: Amosar na páxina de axuda
+        print_content_flag: Botón de imprimir o contido
+        locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contido
+      site_customization/image:
+        name: Nome
+        image: Imaxe
+      site_customization/content_block:
+        name: Nome
+        locale: idioma
+        body: Contido
+      legislation/process:
+        title: Título do proceso
+        summary: Resumo
+        description: Descrición
+        additional_info: Información adicional
+        start_date: Data de apertura
+        end_date: Data de peche
+        debate_start_date: Data en que comeza o debate
+        debate_end_date: Data en que remata o debate
+        draft_publication_date: Data en que se publica o borrador
+        allegations_start_date: Data en que comezan as alegacións
+        allegations_end_date: Data en que rematan as alegacións
+        result_publication_date: Data de publicación do resultado final
+      legislation/process/translation:
+        title: Título do proceso
+        summary: Resumo
+        description: Descrición
+        additional_info: Información adicional
+      legislation/draft_version:
+        title: Título da versión
+        body: Texto
+        changelog: Cambios
+        status: Estado
+        final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título da versión
+        body: Texto
+        changelog: Cambios
+      legislation/question:
+        title: Título
+        question_options: Opcións
+      legislation/question_option:
+        value: Valor
+      legislation/annotation:
+        text: Comentario
+      document:
+        title: Título
+        attachment: Anexo
+      image:
+        title: Título
+        attachment: Anexo
+      poll/question/answer:
+        title: Resposta
+        description: Descrición
+      poll/question/answer/translation:
+        title: Resposta
+        description: Descrición
+      poll/question/answer/video:
+        title: Título
+        url: Vídeo externo
+      newsletter:
+        segment_recipient: Destinatarios
+        subject: Asunto
+        from: De
+        body: Contido da mensaxe
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Ligazón
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descrición
+        link_text: Texto da ligazón
+        link_url: URL da ligazón
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descrición
+        link_text: Texto da ligazón
+      widget/feed:
+        limit: Número de elementos
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Esta conta xa ten unha chave asociada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Chegaches ao número máximo de mensaxes privadas por día"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "A imaxe debe ter, cando menos, %{required_min_width}px de largo"
+              min_image_height: "A imaxe debe ter, cando menos %{required_min_height}px de alto"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "O segmento de destinatarios é inválido"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "O segmento de destinatarios é inválido"
+        map_location:
+          attributes:
+            map:
+              invalid: A localización no mapa non pode estar en branco. Podes engadir un punto ao mapa ou marcar a cela se non é necesario o mapa
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento non está no censo"
+              has_voted: "Este usuario xa votou"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: ten que ser igual ou posterior á data de inicio
+            debate_end_date:
+              invalid_date_range: ten que ser igual ou posterior á data de comezo do debate
+            allegations_end_date:
+              invalid_date_range: ten que ser igual ou posterior á data en que comezan ás alegacións
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Tes que agardar un mínimo de %{interval} días entre as notificacións"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Non verificado por Padrón'
+              already_voted: 'Xa votaches esta proposta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "deben ser letras, números, _ e -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Debe ter %{required_width}px de largo"
+              image_height: "Debe ter %{required_height}px de alto"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Non podes comentar unha avaliación'
+      messages:
+        record_invalid: "Erro de validación: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Non podes eliminar o rexistro porque existe unha %{record} dependente"
+          has_many: "Non podes eliminar o rexistro porque existe %{record} dependentes"

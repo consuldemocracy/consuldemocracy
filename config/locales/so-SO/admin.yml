@@ -1,0 +1,378 @@
+so:
+  admin:
+    header:
+      title: Mamul
+    actions:
+      actions: Tilaabooyin
+      confirm: Mahubtaa adigu?
+      confirm_hide: Xaqiijinta dhexdhexaadinta
+      hide: Qarin
+      hide_author: Qoore Qarson
+      restore: Socelin
+      mark_featured: Soobandhigiid/ Muqaal
+      unmark_featured: Muqaal an Calamad lahayn
+      edit: Isbedel
+      configure: Isku Hagaajin
+      delete: Titiriid
+    banners:
+      index:
+        title: Xayiraad
+        create: Same banner
+        edit: Bedel baneer
+        delete: Tirir banner
+        filters:
+          all: Dhamaan
+          with_active: Firfircoon
+          with_inactive: Anfirfirconeeyn
+        preview: Hor udhaac
+      banner:
+        title: Ciwaan
+        description: Sharaxaad
+        target_url: Isku xirka
+        post_started_at: Bostada laga bilaabo
+        post_ended_at: Boostada kudhamaatay
+        sections_label: Qaybaha ayka muqan doonan
+        sections:
+          homepage: Bogga
+          debates: Doodo
+          proposals: Sojeedino
+          budgets: Misaaniyada kaqayb qadashada
+          help_page: Bogga Caawinta
+        background_color: Midaabka hore
+      edit:
+        editing: Bedel baneer
+        form:
+          submit_button: Badbaadi beddelka
+      errors:
+        form:
+          error:
+            one: "qalad ayaa ka hortagay banner tan ka badbaaday"
+            other: "qalad ayaa ka hortagay banner tan ka badbaaday"
+      new:
+        creating: Same banner
+    activity:
+      show:
+        action: Tilaabo
+        actions:
+          block: Xanibay
+          hide: Qarsoon
+          restore: Socelin
+        by: Dhexdhexaad ah
+        content: Mowduuc
+        filter: Muuji/ Tusiid
+        filters:
+          all: Dhamaan
+          on_comments: Faalo
+          on_debates: Doodo
+          on_proposals: Sojeedino
+          on_users: Isticmaalayaal
+          on_system_emails: Emaylka nidaamka
+        title: Waxqabadka Xeer ilaliyaha
+        type: Noca
+        no_activity: Majiraan wax qabad xeer ilaliyayasha.
+    budgets:
+      index:
+        title: Misaaniyadaha kaqayb qadashada
+        new_link: Samee misaaniyad cusub
+        filter: Sifeeyee
+        filters:
+          open: Furan
+          finished: Dhamaday
+        budget_investments: Mareynta Mashariicda
+        table_name: Magac
+        table_phase: Weeji
+        table_investments: Maalgashiyo
+        table_edit_groups: Madaxyada Kooxaha
+        table_edit_budget: Isbedel
+        edit_groups: Wax ka bedel Madaxyada Kooxaha
+        edit_budget: Wax ka bedel Misaaniyada
+        no_budgets: "Majiran misaaniyado furaan."
+      create:
+        notice: Sameynta Misaaniyada cusub ee ka qaybqadashada waa lugu guleystay!
+      update:
+        notice: Miisaaniyadda ka qaybqaadashada ayaa si guul leh lo cusbooneysiiyey
+      edit:
+        title: Wax kabedel misaniyada ka qaybqadashada
+        delete: Tirir misaniyada
+        phase: Weeji
+        dates: Tariikhaha
+        enabled: Karti leh
+        actions: Tilaabooyin
+        edit_phase: Wax ka bedelka marxaladda
+        active: Firfircoon
+        blank_dates: Tarikhuhu wa bananyihiin
+      destroy:
+        success_notice: Misaaniyada sii guul ah ayaa loo tirtiray
+        unable_notice: Ma jebin kartid miisaaniyad maalgelinta la xidhiidha
+      new:
+        title: Misaniyada cusub ee kaqaybqaadashada
+      form:
+        group: Mgaca Kooxada
+        no_groups: Kooxo weli lama abuurin. Isticmaal kasta wuxuu awoodi doonaa inuu u codeeyo hal koox oo kaliya hal koox.
+        add_group: Kudar koox cusub
+        create_group: Saame koox cusub
+        edit_group: Wax ka bedel kooxda
+        submit: Bad baadi kooxda
+        heading: Magaca Ciwaanka
+        add_heading: Kudar ciwaan
+        amount: Tirada
+        population: "Dadweynaha(Ikhyaar)"
+        population_help_text: "Xogtan waxaa loo isticmaalaa si gaar ah si loo xisaabiyo ka qaybgalka tirakoobyada"
+        save_heading: Bad baadi ciwaanka
+        no_heading: Kooxdani ma lahan wax madax-bannaan.
+        table_heading: Madaxa
+        table_amount: Tirada
+        table_population: Dadkaweyne
+        population_info: "Miisaaniyadda Meelaynta dadweynaha ayaa loo adeegsadaa ujeedooyinka Istatistikada dhammaadka Miisaaniyadda si ay u muujiyaan mid walba oo ka wakiil ah aag leh dadweynaha boqolkiiba inta codbixinta. Booska waa mid ikhtiyaari ah si aad uga bixi kartid madhan haddii uusan dalban."
+        max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
+      winners:
+        calculate: Xisaabi kugulestayasha Malgelinta
+        calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
+        recalculate: Dib uxisaabinta ku guleystaha malgelinta
+    budget_phases:
+      edit:
+        start_date: Tariikhda biloowga
+        end_date: Tariikhada dhamadka
+        summary: Sookobiid
+        summary_help_text: Qoraalkan ayaa usheegaya isticmaalaha ku saabsan wajiga. Si aad u muujiso xitaa haddii wajiga uusan firfircooneyn, dooro sanduuqa saxda ee hoose
+        description: Sharaxaad
+        description_help_text: Qoraalkan ayaa ka muuqan doona madaxa marka wajiga uu firfircoon yahay
+        enabled: Marxaladda la awoodo
+        enabled_help_text: Marxaladani waxay noqon doontaa mid guud oo ku saabsan marxaladaha miisaaniyadda, iyo sidoo kale firfircoon ujeedooyinka kale
+        save_changes: Badbaadi beddelka
+    budget_investments:
+      index:
+        heading_filter_all: Dhamaan Ciwaanada
+        administrator_filter_all: Dhamaan Mamulayasha
+        valuator_filter_all: Dhamaan qimeeyayasha
+        tags_filter_all: Dhamaan Taagyada
+        advanced_filters: Sifeyaysha Sare
+        placeholder: Mashariic raadin
+        sort_by:
+          placeholder: Kala saar
+          id: Aqoonsi
+          title: Ciwaan
+          supports: Tageerayaal
+        filters:
+          all: Dhamaan
+          without_admin: Anlahayn maamul
+          without_valuator: An lahayn Qimeeyayaal
+          under_valuation: Qimeeyni kusocoto
+          valuation_finished: Qimeeyn ayaa dhamatay
+          feasible: Surtagal
+          selected: Ladoortay
+          undecided: An go aasan
+          unfeasible: An surtgak ahayn
+          min_total_supports: Tageerayasha ugu yar
+          winners: Guleystayasha
+        buttons:
+          filter: Sifeeyee
+        download_current_selection: "Laso deg dorashada had"
+        no_budget_investments: "Majiraan Mashariic malgashi."
+        title: Mashariicda malgashiga
+        assigned_admin: Mamulaha lamagcaabay
+        no_admin_assigned: Mamule lama magcabin
+        no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
+        no_valuation_groups: Majiraan koox qimeyayala o loo qondeyey
+        feasibility:
+          unfeasible: "An surtgak ahayn"
+          undecided: "An go aasan"
+        selected: "Ladoortay"
+        select: "Dorasho"
+        list:
+          id: Aqoonsi
+          title: Ciwaan
+          supports: Tageerayaal
+          admin: Mamulaha
+          valuator: Qimeeye
+          valuation_group: Kooxda qiimaynta
+          geozone: Baxada Hawlgalka
+          feasibility: Suurta galnimada
+          valuation_finished: Qim. Wadha.( Qimeynti dhamatay).
+          selected: Ladoortay
+          visible_to_valuators: Muuji qiimeeyayaasha
+          author_username: Magaca qoragu isticmaalo
+          incompatible: Aan la isku hallayn karin
+        cannot_calculate_winners: Miisaaniyaddu waa inay ku sii jirtaa marxaladda "Mashruucyada Codsiga", "Dib u Eegista Codadka" ama "Miisaaniyadda Dhameystiran" si loo xisaabiyo mashaariicda guusha
+        see_results: "Arag Natijada"
+      show:
+        assigned_admin: Mamulaha lamagcaabay
+        assigned_valuators: Qimeyayasha lo xilsaray
+        classification: Qeybinta
+        edit: Isbedel
+        edit_classification: Beddelida qeexitaanka
+        by: An kadanbayn
+        sent: Diray
+        group: Koox
+        heading: Madaxa
+        dossier: Koob
+        edit_dossier: Tafatiraha Warqadaha
+        tags: Tagyada
+        user_tags: Isamalaha taaga
+        undefined: Aan la garanayn
+        milestone: Marayan/ Yool
+        new_milestone: Sameynta hiigsiga/guleeysiga
+        compatibility:
+          title: U Hogaansanan
+          "true": Aan la isku hallayn karin
+          "false": Waafaqsan
+        selection:
+          title: Xulasho
+          "true": Ladoortay
+          "false": An la dooran
+        winner:
+          title: Guleyste
+          "true": "Haa"
+          "false": "Maya"
+        image: "Sawiir"
+        see_image: "Muuji sawir"
+        no_image: "Sawir la an"
+        documents: "Dukumentiyo"
+        no_documents: "Dukumenti La an"
+        valuator_groups: "Kooxdaha Qimeeynta"
+      edit:
+        classification: Qeybinta
+        compatibility: U Hogaansanan
+        mark_as_incompatible: U calaamadee sida aan ula dhaqmi Karin
+        selection: Xulasho
+        mark_as_selected: Calamadee sida loodortay
+        assigned_valuators: Qimeeyayal
+        select_heading: Dooro Ciwaan
+        submit_button: Cusboneysiin
+        user_tags: Cusbooneysii qoraalka isticmaalaha ee loo yaqaan
+        tags: Tagyada
+        undefined: Aan la garanayn
+        user_groups: "Kooxo"
+      search_unfeasible: Raadinta aan macquul ahayn
+    milestones:
+      index:
+        table_id: "Aqoonsi"
+        table_title: "Ciwaan"
+        table_description: "Sharaxaad"
+        table_publication_date: "Taariikhda daabacaadda"
+        table_status: Xaladda
+        table_actions: "Tilaabooyin"
+        delete: "Tirtir hiigsiga/guleeysiga"
+        no_milestones: "An lahayn yool qeexaan"
+        image: "Sawiir"
+        show_image: "Muuji sawir"
+        documents: "Dukumentiyo"
+      form:
+        admin_statuses: Xaladaha mamulka Malgelinta
+        no_statuses_defined: Weli ma jiraan xaalado maalgashi oo la qeexay
+      new:
+        creating: Abuurida hiigsiga/guleeysiga
+        date: Tariikh
+        description: Sharaxaad
+      edit:
+        title: Wax ka bedel yolka
+      create:
+        notice: Guuleysi cusub ayaa abuuray guul!
+      update:
+        notice: Waxa siguula loo cusboneysiyey Higsiga
+      delete:
+        notice: Siguula ayaa loo tirtiray higsigaa
+    statuses:
+      index:
+        title: Herarka maalgelinta
+        empty_statuses: Weli ma jiraan xaalado maalgashi oo la sameyey
+        new_status: Same xalad cusus oo malgashi
+        table_name: Magac
+        table_description: Sharaxaad
+        table_actions: Tilaabooyin
+        delete: Titiriid
+        edit: Tafatirid
+      edit:
+        title: Tafatir xaalada maalgashiga
+      update:
+        notice: Siguula u cusboneysinta Xalada Malgashiga
+      new:
+        title: Same xalad malgashi
+      create:
+        notice: Siguula ayaa lo Sameyey Xalada Malgashiga
+      delete:
+        notice: Siguula ayaa lo tiritiray Xalada Malgashiga
+    comments:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        hidden_debate: Dood qarsoodi ah
+        hidden_proposal: Soojedin qarsoon
+        title: Falooyin Qarsoon
+        no_hidden_comments: Majiraan Falooyin qarsoon.
+    dashboard:
+      index:
+        back: Dib ugu labo ilaa %{org}
+        title: Mamul
+        description: Kuso dhowow gudiga Mamulka %{org}.
+    debates:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Doodo qarsoodi ah
+        no_hidden_debates: Majiraan Doodo qarsoon.
+    hidden_users:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Isticmaalayasha Qarsoon
+        user: Istimale
+        no_hidden_users: Majiraan Isticmalayaal Qarsoon.
+      show:
+        email: 'Email:'
+        hidden_at: 'Qarsoon ag:'
+        registered_at: 'Kadiwaan gashan ag:'
+        title: Wax qabadka Isticmalaha%{user}
+    legislation:
+      processes:
+        process:
+          status: Xaladda
+          creation_date: Tarikh Abuurid
+          status_open: Furan
+          status_closed: Xiraan
+          status_planned: Qorsheysaan
+        subnav:
+          info: Maclumaad
+          draft_texts: Qoritaan/ Qabya Qorid
+          questions: Dood
+          proposals: Sojeedino
+      proposals:
+        index:
+          title: Ciwaan
+          back: Labasho
+          id: Aqoonsi
+          supports: Tageerayaal
+          select: Dorasho
+          selected: Ladoortay
+        form:
+          custom_categories: Qaybaha
+          custom_categories_description: Qaybaha dadka isticmaala waxay dooran karaan sameynta soojeedinta.
+          custom_categories_placeholder: Gali ereyada aad jeclaan lahayd inaad isticmaashid, kala tagto byaan (,) iyo inta u dhaxaysa xigasho ("")
+      draft_versions:
+        create:
+          error: Qorshe lama abuuri karo
+        update:
+          notice: 'Qabya Qoral ayaa la cusbooneysiiyay. <a href="%{link}"> guji si aad u boqato</a>'
+          error: Qabayo Qoraal lama cusbooneysiin karo
+        destroy:
+          notice: Qabayo Qoralki Si guula ayaa loo tir tiray
+        edit:
+          back: Labasho
+          submit_button: Badbaadi beddelka
+          warning: Waad Tafatirtay qoraalka, ha ilaawin inaad gujiso badbadinta si joogto ah u keydiso isbeddelada.
+        errors:
+          form:
+            error: Khalad
+        form:
+          launch_text_editor: Biaabida Taratiridaa Qoraalka
+          close_text_editor: Tafatirida Qoralka hoose
+          use_markdown: Isticmaal lambarka si aad u sameyso qoraalka

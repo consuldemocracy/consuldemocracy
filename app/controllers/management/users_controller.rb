@@ -57,6 +57,7 @@ class Management::UsersController < Management::BaseController
     def destroy_session
       session[:document_type] = nil
       session[:document_number] = nil
+      clear_password
     end
 
     def verificar_residencia

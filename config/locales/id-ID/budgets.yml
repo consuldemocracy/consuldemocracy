@@ -1,0 +1,157 @@
+id:
+  budgets:
+    ballots:
+      show:
+        title: Suara anda
+        amount_spent: Jumlah dihabiskan
+        remaining: "Anda masih memiliki <span>%{amount}</span> untuk berinvestasi."
+        no_balloted_group_yet: "Anda belum memilih pada kelompok ini belum, buka suara!"
+        remove: Menghapus suara
+        voted_info_html: "Anda dapat mengubah suara anda pada setiap waktu sampai penutupan tahap ini.<br> Tidak perlu menghabiskan semua uang yang tersedia."
+        zero: Anda belum memilih suara di setiap proyek investasi.
+      reasons_for_not_balloting:
+        not_logged_in: Anda harus %{signin}} %{signup} untuk melanjutkan.
+        not_verified: Hanya memverifikasi pengguna dapat memilih investasi; %{verify_account}.
+        organization: Organisasi tidak diizinkan untuk memilih
+        not_selected: Tidak dipilih proyek-proyek investasi tidak dapat didukung
+        not_enough_money_html: "Anda telah ditugaskan anggaran yang tersedia.<br><small>Ingat anda dapat %{change_ballot} di setiap waktu</small>"
+        no_ballots_allowed: Fase pemilihan telah ditutup
+        change_ballot: ubah pemberian suara anda
+    groups:
+      show:
+        title: Pilih sebuah pilihan
+        unfeasible_title: Investasi tidak layak
+        unfeasible: Lihat investasi tidak layak
+        unselected_title: Investasi tidak dipilih untuk pemungutan suara tahap
+        unselected: Melihat investasi yang tidak dipilih untuk pemungutan suara tahap
+    phase:
+      drafting: Konsep (Tidak terlihat ke publik)
+      accepting: Menerima proyek
+      reviewing: Meninjau proyek
+      selecting: Memilih proyek
+      valuating: Menilai proyek
+      publishing_prices: Menerbitkan harga proyek
+      finished: Anggaran yang habis
+    index:
+      title: Anggaran partisipasif
+      section_header:
+        icon_alt: Ikon anggaran partisipatif
+        title: Anggaran partisipasif
+        help: Membantu dengan anggaran partisipatif
+        all_phases: Lihat semua fase
+      all_phases: Anggaran fase investasi
+      map: Anggaran investasi' proposal yang terletak secara geografis
+      investment_proyects: Daftar semua proyek investasi
+      unfeasible_investment_proyects: Daftar semua proyek-proyek investasi tidak layak
+      not_selected_investment_proyects: Daftar semua proyek-proyek investasi tidak dipilih untuk pemungutan suara
+      finished_budgets: Selesai partisipatif anggaran
+      see_results: Lihat hasil
+      section_footer:
+        title: Membantu dengan anggaran partisipatif
+    investments:
+      form:
+        tag_category_label: "Kategori"
+        tags_instructions: "Tag proposal ini. Anda dapat memilih dari yang diusulkan kategori atau menambahkan anda sendiri"
+        tags_label: Tag
+        tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
+        map_location: "Peta lokasi"
+        map_location_instructions: "Arahkan peta ke lokasi dan tempatkan sebuah penanda."
+        map_remove_marker: "Hapus penanda peta"
+        location: "Info tambahan lokasi"
+      index:
+        title: Penganggaran partisipatif
+        unfeasible: Proyek-proyek investasi tidak layak
+        by_heading: "Proyek investasi dengan cakupan: %{heading}"
+        search_form:
+          button: Cari
+          placeholder: Cari proyek investasi...
+          title: Cari
+        search_results_html:
+          other: " berisi istilah <strong>%{search_term}</strong>"
+        sidebar:
+          my_ballot: Suara saya
+          voted_html:
+            other: "<strong>Anda memilih sebuah %{count} proposal dengan suatu biaya%{amount_spent}</strong>"
+          voted_info: Anda dapat %{link} di setiap waktu sampai penutupan tahap ini. Tidak perlu menghabiskan semua uang yang tersedia.
+          voted_info_link: mengubah suara anda
+          different_heading_assigned_html: "Anda telah aktif suara di pos lain: %{heading_link}"
+          change_ballot: "Jika anda mengubah pikiran anda, anda dapat menghapus suara dalam %{check_ballot} dan mulai lagi."
+          check_ballot_link: "periksa suara saya"
+          zero: Anda belum memilih setiap proyek investasi dalam kelompok ini.
+          verified_only: "Untuk membuat anggaran baru investasi %{verify}."
+          verify_account: "memverifikasi akun anda"
+          create: "Membuat anggaran investasi"
+          not_logged_in: "Untuk membuat sebuah anggaran investasi baru anda harus %{sign_in} atau %{sign_up}."
+          sign_in: "masuk"
+          sign_up: "daftar"
+          by_feasibility: Oleh kelayakan
+          feasible: Proyek yang layak
+          unfeasible: Proyek tidak layak
+        orders:
+          random: acak
+          confidence_score: nilai tertinggi
+          price: dengan harga
+      show:
+        author_deleted: Pengguna dihapus
+        price_explanation: Penjelasan harga
+        unfeasibility_explanation: Unfeasibility penjelasan
+        code_html: 'Kode proyek investasi: <strong>%{code}</strong>'
+        location_html: 'Lokasi: <strong>%{location}</strong>'
+        organization_name_html: 'Diusulkan atas nama: <strong>%{name}</strong>'
+        share: Berbagi
+        title: Proyek investasi
+        supports: Mendukung
+        votes: Suara
+        price: Harga
+        comments_tab: Komentar
+        milestones_tab: Tonggak
+        author: Penulis
+      wrong_price_format: Hanya angka bilangan bulat
+      investment:
+        add: Suara
+        already_added: Anda telah menambahkan proyek investasi ini
+        already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
+        support_title: Mendukung proyek ini
+        supports:
+          zero: Tidak ada dukungan
+          other: "1 dukungan\n\n%{count} mendukung"
+        give_support: Dukungan
+      header:
+        check_ballot: Periksa suara saya
+        different_heading_assigned_html: "Anda telah aktif suara di pos lain: %{heading_link}"
+        change_ballot: "Jika anda mengubah pikiran anda, anda dapat menghapus suara di %{check_ballot} dan mulai lagi."
+        check_ballot_link: "periksa suara saya"
+        price: "Judul ini memiliki anggaran sebesar"
+    progress_bar:
+      assigned: "Anda telah ditugaskan: "
+      available: "Anggaran tersedia: "
+    show:
+      group: Kelompok
+      phase: Tahap sebenarnya
+      unfeasible_title: Investasi tidak layak
+      unfeasible: Lihat investasi tidak layak
+      unselected_title: Investasi tidak dipilih untuk pemungutan suara tahap
+      unselected: Melihat investasi yang tidak dipilih untuk pemungutan suara tahap
+      see_results: Lihat hasil
+    results:
+      link: Hasil
+      page_title: "%{budget} - Hasil"
+      heading: "Partisipatif anggaran hasil"
+      heading_selection_title: "Oleh kecamatan"
+      spending_proposal: Proposal judul
+      ballot_lines_count: Waktu yang dipilih
+      hide_discarded_link: Menyembunyikan dibuang
+      show_all_link: Tampilkan semua
+      price: Harga
+      amount_available: Anggaran yang tersedia
+      accepted: "Diterima menghabiskan proposal: "
+      discarded: "Dibuang pengeluaran usulan: "
+      incompatibles: Ketidaksesuaian
+      investment_proyects: Daftar semua proyek-proyek investasi
+      unfeasible_investment_proyects: Daftar semua proyek-proyek investasi tidak layak
+      not_selected_investment_proyects: Daftar semua proyek-proyek investasi tidak dipilih untuk pemungutan suara
+    phases:
+      errors:
+        dates_range_invalid: "Tanggal mulai tidak dapat sama atau lebih lambat dari tanggal Akhir"
+        prev_phase_dates_invalid: "Tanggal mulai harus lambat tanggal mulai dari yang sebelumnya diaktifkan fase (%{phase_name})"
+        next_phase_dates_invalid: "Tanggal akhir harus lebih awal dari tanggal berakhirnya berikutnya diaktifkan fase (%{phase_name})"

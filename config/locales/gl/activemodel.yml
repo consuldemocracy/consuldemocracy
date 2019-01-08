@@ -1,0 +1,22 @@
+gl:
+  activemodel:
+    models:
+      verification:
+        residence: "Domicilio"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipo de documento"
+          document_number: "Número de documento (incluída letra)"
+          date_of_birth: "Data de nacemento"
+          postal_code: "Código postal"
+        sms:
+          phone: "Teléfono"
+          confirmation_code: "Código de confirmación"
+        email:
+          recipient: "Correo electrónico"
+      officing/residence:
+        document_type: "Tipo de documento"
+        document_number: "Número de documento (incluída letra)"
+        year_of_birth: "Ano de nacemento"

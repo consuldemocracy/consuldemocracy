@@ -1,0 +1,13 @@
+ar:
+  officing:
+    results:
+      new:
+        date: "تاريخ"
+        submit: "حفظ"
+      index:
+        no_results: "لا توجد نتائج"
+        results: النتائج
+        table_answer: الإجابة
+    voters:
+      show:
+        submit: تأكيد التصويت

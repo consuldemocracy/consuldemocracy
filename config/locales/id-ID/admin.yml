@@ -1,0 +1,958 @@
+id:
+  admin:
+    header:
+      title: Administrasi
+    actions:
+      actions: Tindakan
+      confirm: Apakah anda yakin?
+      confirm_hide: Konfirmasi
+      hide: Sembunyikan
+      hide_author: Sembunyikan penulis
+      restore: Mengembalikan
+      mark_featured: Fitur
+      unmark_featured: Hapus tanda pada yang ditampilkan
+      edit: Mengedit
+      configure: Konfigurasikan
+    banners:
+      index:
+        title: Spanduk
+        create: Membuat spanduk
+        edit: Mengedit spanduk
+        delete: Menghapus spanduk
+        filters:
+          all: Semua
+          with_active: Aktif
+          with_inactive: Tidak aktif
+        preview: Tinjauan
+      banner:
+        title: Judul
+        description: Deskripsi
+        target_url: Tautan
+        post_started_at: Postingan yang dimulai pada
+        post_ended_at: Postingan yang berakhir pada
+      edit:
+        editing: Mengedit spanduk
+        form:
+          submit_button: Menyimpan perubahan
+      errors:
+        form:
+          error:
+            other: "kesalahan dicegah banner ini untuk diselamatkan"
+      new:
+        creating: Membuat spanduk
+    activity:
+      show:
+        action: Tindakan
+        actions:
+          block: Diblokir
+          hide: Tersembunyi
+          restore: Mengembalikan
+        by: Dikelola oleh
+        content: Konten
+        filter: Tampilkan
+        filters:
+          all: Semua
+          on_comments: Komentar
+          on_debates: Debat
+          on_proposals: Usulan
+          on_users: Pengguna
+        title: Moderator kegiatan
+        type: Tipe
+    budgets:
+      index:
+        title: Anggaran partisipatif
+        new_link: Buat anggaran baru
+        filter: Penyaring
+        filters:
+          open: Buka
+          finished: Diselesaikan
+        budget_investments: Melihat anggaran investasi
+        table_name: Nama
+        table_phase: Fase
+        table_investments: Investasi
+        table_edit_groups: Judul Kelompok
+        table_edit_budget: Mengedit
+        edit_groups: Edit judul grup
+        edit_budget: Edit anggaran
+      create:
+        notice: Anggaran partisipatif telah berhasil dibuat!
+      update:
+        notice: Partisipatif anggaran diperbarui berhasil
+      edit:
+        title: Edit Partisipatif anggaran
+        delete: Menghapus anggaran
+        phase: Fase
+        dates: Tanggal
+        enabled: Diaktifkan
+        actions: Tindakan
+        edit_phase: Mengedit fase
+        active: Aktif
+        blank_dates: Tanggal kosong
+      destroy:
+        success_notice: Anggaran berhasil dihapus
+        unable_notice: Anda tidak bisa menghancurkan Anggaran yang telah mempunyai investasi terkait
+      new:
+        title: Anggaran partisipatif baru
+      show:
+        groups:
+          other: "%{count} Kelompok dari anggaran judul"
+      form:
+        group: Nama grup
+        no_groups: Belum ada yang membuat grup. Setiap pengguna hanya bisa memilih hanya satu judul setiap grup.
+        add_group: Tambahkan grup baru
+        create_group: Membuat grup
+        heading: Nama judul
+        add_heading: Tambahkan judul
+        amount: Jumlah
+        population: "Populasi (pilihan)"
+        population_help_text: "Data ini telah digunakan secara eksklusif untuk memperkirakan statistik partisipasi"
+        save_heading: Menyimpan judul
+        no_heading: Kelompok ini tidak mempunyai pos yang ditugaskan.
+        table_heading: Judul
+        table_amount: Jumlah
+        table_population: Populasi
+        population_info: "Bidang kependudukan Anggaran Kepala digunakan untuk keperluan statistik pada akhir Anggaran untuk ditampilkan pada setiap Pos yang mewakili area dengan populasi berapa persentase yang dipilih. Bidang ini opsional sehingga anda bisa membiarkannya kosong jika tidak berlaku."
+      winners:
+        calculate: Menghitung Pemenang Investasi
+        calculated: Pemenang dihitung, mungkin perlu waktu beberapa menit.
+    budget_phases:
+      edit:
+        start_date: Tanggal mulai
+        end_date: Tanggal akhir
+        summary: Ringkasan
+        summary_help_text: Teks ini akan memberi informasi pengguna tentang fase. Untuk menunjukkannya meski fase sesang tidak aktif, pilih kotak centang di bawah ini
+        description: Deskripsi
+        description_help_text: Teks ini akan muncul di header disaat fase aktif
+        enabled: Fase diaktifkan
+        enabled_help_text: Fase ini akan menjadi publik dalam garis waktu fase anggaran, dan juga akan aktif untuk tujuan yang lain
+        save_changes: Menyimpan perubahan
+    budget_investments:
+      index:
+        heading_filter_all: Semua judul
+        administrator_filter_all: Semua administrator
+        valuator_filter_all: Semua penilai
+        tags_filter_all: Semua tag
+        advanced_filters: Saring lanjutan
+        placeholder: Cari proyek
+        sort_by:
+          placeholder: Urut berdasarkan
+          id: ID
+          title: Judul
+          supports: Mendukung
+        filters:
+          all: Semua
+          without_admin: Tanpa ditugaskan admin
+          without_valuator: Tanpa ditugaskan penilai
+          under_valuation: Dibawah penilaian
+          valuation_finished: Penilaian selesai
+          feasible: Layak
+          selected: Dipilih
+          undecided: Bimbang
+          unfeasible: Tidak layak
+          winners: Pemenang
+          one_filter_html: "Filter yang diterapkan saat ini: <b><em>%{filter}</em></b>"
+          two_filters_html: "Filter yang diterapkan saat ini: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Menyaring
+        download_current_selection: "Unduh pilihan saat ini"
+        no_budget_investments: "Tidak ada proyek investasi."
+        title: Proyek investasi
+        assigned_admin: Pengurus yang ditugaskan
+        no_admin_assigned: Tidak ada pengurus yang ditugaskan
+        no_valuators_assigned: Tidak ada penilai yang ditugaskan
+        feasibility:
+          feasible: "Layak (%{price})"
+          unfeasible: "Tidak layak"
+          undecided: "Bimbang"
+        selected: "Dipilih"
+        select: "Pilih"
+      show:
+        assigned_admin: Pengelola ditetapkan
+        assigned_valuators: Ditugaskan penilai
+        classification: Klasifikasi
+        info: "%{budget_name} - Grup: %{group_name} - Proyek investasi %{id}"
+        edit: Sunting
+        edit_classification: Sunting klasifikasi
+        by: Oleh
+        sent: Terkirim
+        heading: Judul
+        dossier: Berkas
+        edit_dossier: Mengedit berkas
+        tags: Tag
+        user_tags: Tag Pengguna
+        undefined: Tidak terdefinisi
+        compatibility:
+          title: Kecocokan
+          "true": Tidak cocok
+          "false": Dapat dicocokkan
+        selection:
+          title: Pilihan
+          "true": Dipilih
+          "false": Tidak dipilih
+        winner:
+          title: Pemenang
+          "true": "Ya"
+          "false": "Tidak"
+      edit:
+        classification: Klasifikasi
+        compatibility: Kecocokan
+        mark_as_incompatible: Tandai sebagai tidak sesuai
+        selection: Pilihan
+        mark_as_selected: Tandai sebagai yang dipilih
+        assigned_valuators: Penilai
+        select_heading: Memilih judul
+        submit_button: Memperbaharui
+        user_tags: Pengguna tag yang ditugaskan
+        tags: Tag
+        tags_placeholder: "Tuliskan tag yang ingin anda pisahkan dengan koma (,)"
+        undefined: Tidak terdefinisi
+      search_unfeasible: Mencari yang tidak layak
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Judul"
+        table_description: "Deskripsi"
+        table_publication_date: "Tanggal publikasi"
+        table_actions: "Tindakan"
+        delete: "Menghapus batu peringatan"
+        no_milestones: "Tidak mempunyai tonggak yang jelas"
+        image: "Gambar"
+        show_image: "Tampilkan gambar"
+        documents: "Dokumen"
+        milestone: Batu peringatan
+        new_milestone: Membuat batu peringatan baru
+      new:
+        creating: Membuat batu peringatan
+        date: Tanggal
+      edit:
+        title: Mengedit batu peringatan
+      create:
+        notice: Tonggak baru talah berhasil diciptakan!
+      update:
+        notice: Tonggak telah berhasil diperbarui
+      delete:
+        notice: Tonggak telah berhasil dihapus
+    comments:
+      index:
+        filter: Penyaring
+        filters:
+          all: Semua
+          with_confirmed_hide: Dikonfirmasi
+          without_confirmed_hide: Tertunda
+        hidden_debate: Sembunyikan perdebatan
+        hidden_proposal: Sembunyikan proposal
+        title: Sembunyikan komentar
+        no_hidden_comments: Disana tidak ada komentar yang disembunyikan.
+    dashboard:
+      index:
+        back: Kembali ke %{org}
+        title: Administrasi
+        description: Selamat datang di %{org} panel admin.
+    debates:
+      index:
+        filter: Menyaring
+        filters:
+          all: Semua
+          with_confirmed_hide: Dikonfirmasi
+          without_confirmed_hide: Tertunda
+        title: Perdebatan tersembunyi
+        no_hidden_debates: Disana tidak ada perdebatan yang tersembunyi.
+    hidden_users:
+      index:
+        filter: Menyaring
+        filters:
+          all: Semua
+          with_confirmed_hide: Dikonfirmasi
+          without_confirmed_hide: Tertunda
+        title: Pengguna tersembunyi
+        user: Pengguna
+        no_hidden_users: Disana tidak ada pengguna yang disembunyikan.
+      show:
+        email: 'Email:'
+        hidden_at: 'Tersembunyi di:'
+        registered_at: 'Terdaftar di:'
+        title: Aktifitas dari pengguna (%{user})
+    legislation:
+      processes:
+        create:
+          notice: 'Proses berhasil dibuat. <a href="%{link}">Klik untuk mengunjungi</a>'
+          error: Proses tidak dapat dibuat
+        update:
+          notice: 'Proses berhasil diperbarui. <a href="%{link}">Klik untuk mengunjungi</a>'
+          error: Proses yang tidak dapat diperbarui
+        destroy:
+          notice: Proses berhasil dihapus
+        edit:
+          back: Kembali
+          submit_button: Simpan perubahan
+        errors:
+          form:
+            error: Kesalahan
+        form:
+          enabled: Diaktifkan
+          process: Proses
+          debate_phase: Masa perdebatan
+          proposals_phase: Masa proposal
+          start: Mulai
+          end: Berakhir
+          use_markdown: Gunakan Menurun untuk memformat teks
+          title_placeholder: Judul didalam prosesnya
+          summary_placeholder: Ringkasan singkat dari deskripsi
+          description_placeholder: Tambahkan deskripsi prosesnya
+          additional_info_placeholder: Tambahkan informasi tambahan yang anda anggap bisa bermanfaat
+        index:
+          create: Proses baru
+          delete: Hapus
+          title: Proses undang-undang
+          filters:
+            open: Buka
+            next: Lanjut
+            past: Yang lalu
+            all: Semua
+        new:
+          back: Kembali
+          title: Buat proses legislasi kolaboratif baru
+          submit_button: Buat proses
+        process:
+          title: Proses
+          comments: Komentar
+          status: Status
+          creation_date: Tanggal pembuatan
+          status_open: Buka
+          status_closed: Tutup
+          status_planned: Direncanakan
+        subnav:
+          info: Informasi
+          questions: Perdebatan
+          proposals: Proposal
+      proposals:
+        index:
+          back: Kembali
+        form:
+          custom_categories: Kategori
+          custom_categories_description: Kategori itu yang dapat dipilih pengguna membuat proposal.
+      draft_versions:
+        create:
+          notice: 'Draft telah berhasil dibuat. <a href="%{link}">Klik untuk mengunjungi</a>'
+          error: Draft tidak bisa dibuat
+        update:
+          notice: 'Draf telah berhasil diperbarui. <a href="%{link}">Klik untuk mengunjungi</a>'
+          error: Rancangan yang tidak dapat diperbarui
+        destroy:
+          notice: Draf telah berhasil dihapus
+        edit:
+          back: Kembali
+          submit_button: Simpan perubahan
+          warning: Anda sudah mengedit teksnya, jangan lupa klik Simpan untuk menyimpan perubahan secara permanen.
+        errors:
+          form:
+            error: Kesalahan
+        form:
+          title_html: 'Menyunting <span class="strong">%{draft_version_title}</span> dari proses <span class="strong">%{process_title}</span>'
+          launch_text_editor: Meluncurkan penyunting teks
+          close_text_editor: Tutup penyunting teks
+          use_markdown: Menggunakan Markdown untuk format teks
+          hints:
+            final_version: Versi ini akan diterbitkan sebagai hasil akhir bagi proses ini. Komentar tidak akan diizinkan di versi ini.
+            status:
+              draft: Anda dapat melihat pratinjau sebagai admin, tidak ada orang lain dapat melihat ini
+              published: Terlihat untuk semua orang
+          title_placeholder: Menulis judul draft versi
+          changelog_placeholder: Tambahkan perubahan utama dari versi sebelumnya
+          body_placeholder: Menulis draft teks
+        index:
+          title: Versi rancangan
+          create: Membuar versi
+          delete: Hapus
+          preview: Tinjauan
+        new:
+          back: Kembali
+          title: Membuat versi baru
+          submit_button: Membuat versi
+        statuses:
+          draft: Konsep
+          published: Dipublikasikan
+        table:
+          title: Judul
+          created_at: Dibuat di
+          comments: Komentar
+          final_version: Versi terakhir
+          status: Status
+      questions:
+        create:
+          notice: 'Pertanyaan berhasil dibuat.<a href="%{link}">klik di Kunjungi</a>'
+          error: Pertanyaan tidak dapat dibuat
+        update:
+          notice: 'Pertanyaan berhasil dipebarui. <a href="%{link}">Klik untuk mengunjungi</a>'
+          error: Pertanyaan tidak dapat diperbarui
+        destroy:
+          notice: Pertanyaan telah berhasil dihapus
+        edit:
+          back: Kembali
+          title: "Sunting \"%{question_title}\""
+          submit_button: Simpan perubahan
+        errors:
+          form:
+            error: Kesalahan
+        form:
+          add_option: Menambahkan pilihan
+          value_placeholder: Menambahkan sebuah pertanyaan tertutup
+        index:
+          back: Kembali
+          title: Pertanyaan yang terkait dengan proses ini
+          create: Membuat pertanyaan
+          delete: Hapus
+        new:
+          back: Kembali
+          title: Membuat pertanyaan baru
+          submit_button: Membuat pertanyaan
+        table:
+          title: Judul
+          question_options: Pilihan pertanyaan
+          answers_count: Jawaban dihitung
+          comments_count: Komentar dihitung
+        question_option_fields:
+          remove_option: Hapus pilihan
+    managers:
+      index:
+        title: Pengelola
+        name: Nama
+        email: Surel
+        no_managers: Tidak ada manajer disana.
+      manager:
+        add: Tambahkan
+        delete: Hapus
+      search:
+        title: 'Pengelola: Pencarian pengguna'
+    menu:
+      activity: Aktivitas moderator
+      admin: Menu Admin
+      banner: Mengelola spanduk
+      proposals_topics: Tema proposal
+      budgets: Anggaran partisipatif
+      geozones: Mengelola geozone
+      hidden_comments: Komentar tersembunyi
+      hidden_debates: Perdebatan tersembunyi
+      hidden_proposals: Proposal tersembunyi
+      hidden_users: Pengguna tersembunyi
+      administrators: Administrasi
+      managers: Pengelola
+      moderators: Moderator
+      valuators: Penilai
+      poll_officers: Jajak pendapat petugas
+      polls: Jajak pendapat
+      poll_booths: Lokasi bilik
+      poll_booth_assignments: Bilik Tugas
+      poll_shifts: Mengelola perubahan
+      officials: Pejabat
+      organizations: Organisasi
+      spending_proposals: Belanja proposal
+      stats: Statistik
+      signature_sheets: Lembar Tanda Tangan
+      site_customization:
+        content_blocks: Blok konten khusus
+      title_moderated_content: Konten moderasi
+      title_budgets: Anggaran
+      title_polls: Jajak pendapat
+      title_profiles: Profil
+      legislation: Undang-undang kolaboratif
+      users: Pengguna
+    administrators:
+      index:
+        title: Administrasi
+        name: Nama
+        email: Email
+        no_administrators: Tidak ada administrator.
+      administrator:
+        add: Tambahkan
+        delete: Hapus
+        restricted_removal: "Maaf, anda tidak dapat menghapus diri anda dari administrasi"
+      search:
+        title: "Administrasi: Cari pengguna"
+    moderators:
+      index:
+        title: Moderasi
+        name: Nama
+        email: Email
+        no_moderators: Tidak ada moderator.
+      moderator:
+        add: Tambahkan
+        delete: Hapus
+      search:
+        title: 'Moderator: pencarian Pengguna'
+    newsletters:
+      index:
+        title: Laporan berkala
+    valuators:
+      index:
+        title: Penilai
+        name: Nama
+        email: Email
+        description: Deskripsi
+        no_description: Tidak ada deskripsi
+        no_valuators: Tidak ada penilai.
+      valuator:
+        add: Tambahkan ke penilai
+        delete: Hapus
+      search:
+        title: 'Penilai: Pencarian pengguna'
+      summary:
+        title: Ringkasan rujukan untuk proyek investasi
+        valuator_name: Penilai
+        finished_and_feasible_count: Selesai dan layak
+        finished_and_unfeasible_count: Selesai dan tidak layak
+        finished_count: Selesai
+        in_evaluation_count: Dalam evaluasi
+        total_count: Total
+        cost: Biaya
+    poll_officers:
+      index:
+        title: Petugas pemilihan
+      officer:
+        add: Tambahkan
+        delete: Hapus posisi
+        name: Nama
+        email: Surel
+        entry_name: petugas
+      search:
+        email_placeholder: Cari pengguna berdasarkan surel
+        search: Cari
+        user_not_found: Pengguna tidak ditemukan
+    poll_officer_assignments:
+      index:
+        officers_title: "Daftar petugas"
+        no_officers: "Tidak ada petugas yang ditugaskan untuk jajak pendapat ini."
+        table_name: "Nama"
+        table_email: "Surel"
+      by_officer:
+        date: "Tanggal"
+        booth: "Bilik"
+        assignments: "Petugas pergeseran dalam jajak pendapat ini"
+        no_assignments: "Pengguna ini tidak memiliki officing pergeseran dalam jajak pendapat ini."
+    poll_shifts:
+      new:
+        add_shift: "Tambah regu"
+        shift: "Penugasan"
+        shifts: "Pergeseran kamar ini"
+        date: "Tanggal"
+        task: "Tugas"
+        edit_shifts: Sunting regu
+        new_shift: "Regu baru"
+        no_shifts: "Stan ini telah ada pergeseran"
+        officer: "Petugas"
+        remove_shift: "Hapus"
+        search_officer_button: Cari
+        search_officer_placeholder: Cari petugas
+        search_officer_text: Mencari petugas untuk menetapkan pergeseran baru
+        select_date: "Pilih hari"
+        select_task: "Pilih tugas"
+        table_shift: "Regu"
+        table_email: "Surel"
+        table_name: "Nama"
+      flash:
+        create: "Regu ditambahkan"
+        destroy: "Regu dihapus"
+        date_missing: "Tanggal harus dipilih"
+      vote_collection: Kumpulkan suara
+      recount_scrutiny: Penghitungan Ulang & Pengawasan
+    booth_assignments:
+      manage_assignments: Kelola penugasan
+      manage:
+        assignments_list: "Ditugaskan untuk pemilihan '%{poll}'"
+        status:
+          assign_status: Penugasan
+          assigned: Ditugaskan
+          unassigned: Belum ditugaskan
+        actions:
+          assign: Menetapkan stan
+          unassign: Belum menetapkan stan
+    poll_booth_assignments:
+      alert:
+        shifts: "Ada pergeseran yang terkait ke bilik ini. Jika anda menghapus bilik tugas, pergeseran juga akan dihapus. Terus?"
+      flash:
+        destroy: "Stan tidak ditugaskan lagi"
+        create: "Stan ditetapkan"
+        error_destroy: "Terjadi kesalahan saat melepas bilik tugas"
+        error_create: "Terjadi kesalahan saat menugaskan stan ke polling"
+      show:
+        location: "Lokasi"
+        officers: "Petugas"
+        officers_list: "Daftar petugas untuk stan ini"
+        no_officers: "Tidak ada petugas untuk stan ini"
+        recounts: "Penghitungan ulang"
+        recounts_list: "Menceritakan klik disini untuk bilik ini"
+        results: "Hasil"
+        date: "Tanggal"
+        count_final: "Perhitungan akhir (oleh petugas)"
+        count_by_system: "Suara (otomatis)"
+        total_system: Total suara (otomatis)
+      index:
+        booths_title: "Daftar stan"
+        no_booths: "Tidak ada stand-stand yang ditugaskan untuk jajak pendapat ini."
+        table_name: "Nama"
+        table_location: "Lokasi"
+    polls:
+      index:
+        create: "Buat jajak pendapat"
+        name: "Nama"
+        dates: "Tanggal"
+        geozone_restricted: "Terbatas untuk daerah"
+      new:
+        title: "Jajak pendapat baru"
+        show_results_and_stats: "Tampilkan hasil dan statistik"
+        show_results: "Tampilkan hasil"
+        show_stats: "Tampilkan statistik"
+        results_and_stats_reminder: "Menandai kotak centang ini hasil dan/atau statistik dari jajak pendapat ini akan tersedia untuk umum dan setiap pengguna akan melihat mereka."
+        submit_button: "Buat jajak pendapat"
+      edit:
+        submit_button: "Perbarui pemilihan"
+      show:
+        no_questions: "Tidak ada pertanyaan yang ditugaskan untuk jajak pendapat ini."
+        questions_title: "Daftar pertanyaan"
+      flash:
+        question_added: "Pertanyaan menambahkan untuk jajak pendapat ini"
+        error_on_question_added: "Pertanyaan tidak bisa ditugaskan untuk jajak pendapat ini"
+    questions:
+      index:
+        no_questions: "Tidak ada pertanyaan."
+        successful_proposals_tab: "Sukses proposal"
+        create_question: "Membuat pertanyaan"
+      edit:
+        title: "Edit Pertanyaan"
+      new:
+        title: "Membuat Pertanyaan"
+      answers:
+        images:
+          add_image: "Tambahkan Gambar"
+          save_image: "Menyimpan Gambar"
+      show:
+        proposal: Proposal asli
+        author: Penulis
+        question: Pertanyaan
+        valid_answers: Jawaban yang sah
+        add_answer: Tambahkan jawaban
+        video_url: Video eksternal
+        answers:
+          title: Jawaban
+          description: Deskripsi
+          videos: Video
+          video_list: Daftar video
+          images: Gambar
+          images_list: Daftar gambar
+          documents: Dokumen
+          documents_list: Daftar dokumen
+          document_title: Judul
+          document_actions: Tindakan
+    answers:
+      new:
+        title: Jawaban baru
+      show:
+        title: Judul
+        description: Deskripsi
+        images: Gambar
+        images_list: Daftar gambar
+        edit: Sunting jawaban
+      edit:
+        title: Sunting jawaban
+      videos:
+        index:
+          title: Video
+          add_video: Tambahkan video
+          video_title: Judul
+          video_url: Video eksternal
+        new:
+          title: Video baru
+        edit:
+          title: Sunting video
+    recounts:
+      index:
+        title: "Menceritakan"
+        no_recounts: "Tidak ada yang perlu diceritakan disana"
+        table_booth_name: "Stan"
+        table_total_recount: "Total penghitungan ulang (oleh petugas)"
+        table_system_count: "Suara (otomatis)"
+    results:
+      index:
+        title: "Hasil"
+        no_results: "Tidak ada hasil"
+      result:
+        table_whites: "Surat suara kosong sama sekali"
+        table_nulls: "Surat suara tidak sah"
+        table_total: "Total surat suara"
+        table_answer: Jawaban
+        table_votes: Suara
+      results_by_booth:
+        booth: Stan
+        results: Hasil
+        see_results: Lihat hasil
+        title: "Hasil berdasarkan stan"
+    booths:
+      index:
+        add_booth: "Tambahkan stan"
+        location: "Lokasi"
+        no_location: "Tidak ada lokasi"
+      new:
+        title: "Stan baru"
+        submit_button: "Buat stan"
+      edit:
+        title: "Sunting stan"
+        submit_button: "Perbarui stan"
+    officials:
+      edit:
+        destroy: Hapus status 'Resmi'
+        title: 'Pejabat: Sunting pengguna'
+      flash:
+        official_destroyed: 'Rincian disimpan: pengguna tidak lagi resmi'
+        official_updated: Rincian resmi disimpan
+      index:
+        no_officials: Tidak ada pejabat disana.
+        official_position: Posisi resmi
+        official_level: Tingkat
+      level_0: Tidak resmi
+      level_1: Tingkat 1
+      level_2: Tingkat 2
+      level_3: Tingkat 3
+      level_4: Tingkat 4
+      level_5: Tingkat 5
+      search:
+        make_official: Membuat resmi
+        title: 'Posisi resmi: cari Pengguna'
+        no_results: Posisi resmi tidak ditemukan.
+    organizations:
+      index:
+        filters:
+          rejected: Ditolak
+          verified: Diverifikasi
+        hidden_count_html:
+          other: Ada juga <strong>%{count} organisasi</strong> dengan tidak ada pengguna atau user tersembunyi.
+        phone_number: Telepon
+        responsible_name: Tanggung jawab
+        status: Status
+        no_organizations: Tidak ada organisasi disana.
+        reject: Menolak
+        rejected: Ditolak
+        search: Cari
+        search_placeholder: Nama, email atau nomor telepon
+        title: Organisasi
+        verified: Diverifikasi
+      search:
+        title: Cari organisasi
+        no_results: Tidak ada organisasi yang ditemukan.
+    hidden_proposals:
+      index:
+        filters:
+          with_confirmed_hide: Dikonfirmasi
+        title: Proposal tersembunyi
+        no_hidden_proposals: Tidak ada tersembunyi proposal disana.
+    settings:
+      flash:
+        updated: Nilai diperbarui
+      index:
+        feature_flags: Fitur
+        features:
+          enabled: "Fitur diaktifkan"
+          disabled: "Fitur dinonaktifkan"
+          enable: "Aktifkan"
+          disable: "Nonaktifkan"
+        map:
+          help: Di sini anda bisa menyesuaikan cara peta untuk ditampilkan kepada pengguna. Seret penanda peta atau klik di mana saja dari peta, mengatur zoom yang diinginkan dan klik tombol "Update".
+          flash:
+            update: Peta konfigurasi berhasil diperbarui.
+    shared:
+      booths_search:
+        placeholder: Pencarian stan dengan nama
+      poll_officers_search:
+        placeholder: Pencarian jajak pendapat petugas
+      poll_questions_search:
+        placeholder: Pencarian pertanyaan jajak pendapat
+      proposal_search:
+        placeholder: Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan
+      spending_proposal_search:
+        placeholder: Pencarian pengeluaran proposal dengan judul atau deskripsi
+      user_search:
+        placeholder: Pengguna pencarian berdasarkan nama atau email
+    spending_proposals:
+      index:
+        geozone_filter_all: Semua daerah
+        filters:
+          without_admin: Tanpa ditugaskan admin
+        title: Proyek-proyek investasi untuk penganggaran partisipatif
+        assigned_admin: Ditetapkan administrasi
+        no_admin_assigned: Tidak ada admin yang ditugaskan
+        no_valuators_assigned: Tidak ada penilai yang ditugaskan
+        summary_link: "Investasi proyek ringkasan"
+        valuator_summary_link: "Ringkasan penilai"
+        feasibility:
+          feasible: "Layak (%{price})"
+          not_feasible: "Tidak layak"
+          undefined: "Tidak terdefinisi"
+      show:
+        assigned_admin: Ditetapkan administrasi
+        assigned_valuators: Ditugaskan penilai
+        back: Kembali
+        classification: Klasifikasi
+        heading: "Proyek investasi %{id}"
+        edit: Sunting
+        edit_classification: Sunting klasifikasi
+        association_name: Asosiasi
+        by: Oleh
+        sent: Terkirim
+        geozone: Ruang lingkup
+        dossier: Berkas
+        edit_dossier: Sunting berkas
+        undefined: Tidak terdefenisi
+      edit:
+        classification: Klasifikasi
+        tags_placeholder: "Menulis tag-tag yang anda ingin pisahkan dengan koma (,)"
+      summary:
+        title: Ringkasan untuk proyek-proyek investasi
+        title_proposals_with_supports: Ringkasan untuk proyek-proyek investasi dengan mendukung
+        geozone_name: Ruang lingkup
+        finished_and_feasible_count: Selesai dan layak
+        finished_and_unfeasible_count: Selesai dan tidak layak
+        finished_count: Selesai
+        in_evaluation_count: Dalam evaluasi
+        total_count: Total
+    geozones:
+      index:
+        title: Geozone
+        create: Membuat geozone
+      geozone:
+        external_code: Eksternal kode
+        census_code: Sensus kode
+        coordinates: Koordinat
+      errors:
+        form:
+          error:
+            other: 'kesalahan dicegah ini geozone diselamatkan'
+      edit:
+        editing: Mengedit geozone
+        back: Kembali
+      new:
+        creating: Membuat kabupaten
+      delete:
+        success: Geozone berhasil dihapus
+        error: Ini geozone tidak dapat dihapus karena ada unsur-unsur yang melekat padanya
+    signature_sheets:
+      author: Penulis
+      created_at: Tanggal pembuatan
+      no_signature_sheets: "Ada tidak signature_sheets"
+      index:
+        new: Baru tanda tangan lembar
+      new:
+        document_numbers_note: "Menulis angka-angka yang dipisahkan oleh tanda koma (,)"
+        submit: Membuat tanda tangan lembar
+      show:
+        created_at: Dibuat
+        author: Penulis
+        documents: Dokumen
+        document_count: "Jumlah dokumen:"
+        verified:
+          other: "Ada %{count} berlaku tanda tangan"
+        unverified:
+          other: "Ada %{count} tidak valid tanda tangan"
+        unverified_error: (Tidak diverifikasi oleh Sensus)
+        loading: "Masih ada tanda tangan yang sedang diverifikasi oleh Sensus, silahkan muat ulang halaman dalam beberapa saat"
+    stats:
+      show:
+        stats_title: Statistik
+        summary:
+          comment_votes: Suara komentar
+          comments: Komentar
+          debate_votes: Suara perdebatan
+          debates: Perdebatan
+          proposal_votes: Suara proposal
+          budgets: Buka anggaran
+          budget_investments: Proyek-proyek investasi
+          spending_proposals: Belanja proposal
+          unverified_users: Pengguna yang belum diverifikasi
+          user_level_three: Pengguna tingkat tiga
+          user_level_two: Pengguna tingkat satu
+          users: Total pengguna
+          verified_users: Pengguna diverifikasi
+          verified_users_who_didnt_vote_proposals: Pengguna terverifikasi yang tidak votes proposal
+          visits: Mengunjungi
+          votes: Total suara
+        spending_proposals_title: Belanja Proposal
+        budgets_title: Penganggaran partisipatif
+        visits_title: Kunjungi
+        direct_messages: Pesan langsung
+        proposal_notifications: Pemberitahuan proposal
+        incomplete_verifications: Tidak lengkap verifikasi
+        polls: Jajak pendapat
+      direct_messages:
+        title: Pesan langsung
+        users_who_have_sent_message: Pengguna yang telah mengirim pesan pribadi
+      proposal_notifications:
+        title: Proposal pemberitahuan
+        proposals_with_notifications: Proposal dengan pemberitahuan
+      polls:
+        title: Statistik pemilihan
+        web_participants: Peserta web
+        total_participants: Total peserta
+        poll_questions: "Pertanyaan dari jajak pendapat: %{poll}"
+        table:
+          origin_web: Web peserta
+          origin_total: Total peserta
+    tags:
+      index:
+        add_tag: Tambahkan sebuah proposal topik baru
+      name:
+        placeholder: Ketik nama dari topik
+    users:
+      search:
+        placeholder: Pencarian pengguna melalui email, nama, atau nomor dokumen
+    verifications:
+      index:
+        sms_code_not_confirmed: Belum mengkonfirmasi kode sms
+        title: Tidak lengkap verifikasi
+    site_customization:
+      content_blocks:
+        create:
+          notice: Blok konten berhasil dibuat
+          error: Blok konten tidak dapat dibuat
+        update:
+          notice: Blok konten diperbarui berhasil
+          error: Blok konten tidak dapat diperbarui
+        destroy:
+          notice: Blok konten dihapus berhasil
+        edit:
+          title: Mengedit konten blok
+        index:
+          create: Membuat konten baru blok
+        new:
+          title: Membuat konten baru blok
+      images:
+        update:
+          notice: Gambar berhasil diperbarui
+          error: Gambar yang tidak dapat diperbarui
+        destroy:
+          notice: Image deleted successfully
+          error: Gambar tidak bisa dihapus
+      pages:
+        create:
+          notice: Halaman berhasil dibuat
+          error: Halaman tidak dapat dibuat
+        update:
+          notice: Halaman diperbaharui berhasil
+          error: Halaman tidak dapat diperbarui
+        destroy:
+          notice: Halaman berhasil dihapus
+        errors:
+          form:
+            error: Kesalahan
+        form:
+          options: Pilihan
+        index:
+          create: Membuat halaman baru
+          delete: Menghapus halaman
+          title: Halaman Kustom
+          see_page: Lihat Halaman
+        new:
+          title: Membuat halaman kustom baru
+        page:
+          created_at: Dibuat di
+          status: Status
+          updated_at: Diperbarui di
+          status_draft: Konsep
+          status_published: Dipublikasikan

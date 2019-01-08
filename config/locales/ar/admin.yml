@@ -1,0 +1,194 @@
+ar:
+  admin:
+    header:
+      title: الإدارة
+    actions:
+      actions: الإجراءات
+      confirm: هل أنت متأكد؟
+      hide: إخفاء
+      hide_author: إخفاء الكاتب
+      restore: إسترجاع
+      mark_featured: مميز
+      unmark_featured: إلغاء تحديد مميز
+      edit: تعديل
+      configure: تهيئة
+    banners:
+      index:
+        title: لافتات
+        create: إنشاء لافتة
+        edit: تعديل لافتة
+        delete: حذف لافتة
+        filters:
+          all: الكل
+          with_active: نشِط
+          with_inactive: غير نشِط
+        preview: معاينة
+      banner:
+        title: عنوان
+        description: الوصف
+        target_url: رابط
+        post_started_at: المشاركة بدأت في
+        post_ended_at: المشاركة انتهت في
+      edit:
+        editing: تعديل لافتة
+        form:
+          submit_button: حفظ التغييرات
+      new:
+        creating: إنشاء لافتة
+    activity:
+      show:
+        action: فعل
+        actions:
+          block: ممنوع
+          hide: مخفي
+          restore: إسترجاع
+        by: خاضعة لإشراف
+        content: المحتوى
+        filter: إظهار
+        filters:
+          all: الكل
+          on_comments: تعليقات
+          on_debates: النقاشات
+          on_proposals: إقتراحات
+          on_users: المستخدمين
+        title: نشاط المشرف
+        type: النوع
+    budgets:
+      index:
+        title: الميزانيات المشاركة
+        new_link: إنشاء ميزانية جديدة
+        filter: إنتقاء
+        filters:
+          open: فتح
+          finished: انتهى
+        budget_investments: إدارة المشاريع
+    budget_investments:
+      index:
+        administrator_filter_all: كل المدراء
+        valuator_filter_all: كل المقيّمين
+        tags_filter_all: كل العلامات
+        advanced_filters: إنتقاءات متقدمة
+        placeholder: بحث عن مشاريع
+        sort_by:
+          placeholder: ترتيب حسب
+          id: ID
+          title: عنوان
+          supports: تشجيعات
+        filters:
+          all: الكل
+          without_admin: بدون تعيين المشرف
+          without_valuator: بدون تعيين المفيّم
+          under_valuation: تحت التقييم
+          valuation_finished: انتهى التقييم
+          feasible: قابلية
+          selected: محدّد
+          undecided: متردد
+          unfeasible: غير مجد
+          winners: الفائزين
+          one_filter_html: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
+          two_filters_html: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        title: مشاريع استثمارية
+        assigned_admin: المشرف المعين
+        no_admin_assigned: المشرف غير المعين
+      show:
+        classification: تصنيف
+      edit:
+        select_heading: حدد العنوان
+        submit_button: تحديث
+        undefined: غير معرف
+      search_unfeasible: بحث غير مجد
+    milestones:
+      index:
+        table_publication_date: "تاريخ النشر"
+        documents: "الوثائق"
+      new:
+        date: تاريخ
+      edit:
+        title: تعديل المعلم
+    comments:
+      index:
+        filters:
+          with_confirmed_hide: مؤكد
+        hidden_debate: نقاش مخفي
+        hidden_proposal: اقتراح مخفي
+        title: التعليقات المخفية
+        no_hidden_comments: لا توجد أي تعليقات مخفية.
+    dashboard:
+      index:
+        back: العودة إلى %{org}
+    hidden_users:
+      index:
+        no_hidden_users: لا يوجد أي مستخدمين مخفيين.
+      show:
+        email: 'ايمايل:'
+        registered_at: 'تم الحفظ في:'
+    legislation:
+      processes:
+        form:
+          title_placeholder: عنوان العملية
+          summary_placeholder: موجز قصير للوصف
+          description_placeholder: إضافة وصف للعملية
+          additional_info_placeholder: إضافة معلومات إضافية تعتبرها مفيدة
+        index:
+          create: عملية جديدة
+          delete: حذف
+          filters:
+            open: فتح
+            next: التالي
+            past: السابق
+        new:
+          back: عودة
+          submit_button: إنشاء عملية
+        process:
+          status: الحالة
+          creation_date: تاريخ الإنشاء
+          status_closed: مغلق
+          status_planned: مخطط
+        subnav:
+          info: معلومات
+      proposals:
+        form:
+          custom_categories: فئات
+          custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
+    menu:
+      hidden_comments: التعليقات المخفية
+      settings: الإعدادات العامة
+    moderators:
+      index:
+        title: المشرفون
+    newsletters:
+      show:
+        body: محتوى البريد الإلكتروني
+    system_emails:
+      proposal_notification_digest:
+        preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
+    emails_download:
+      index:
+        download_segment: تحميل عناوين البريد الإلكتروني
+        download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+    questions:
+      index:
+        no_questions: "لا توجد هناك أسئلة."
+      answers:
+        images:
+          save_image: "حفظ الصورة"
+      show:
+        add_answer: إضافة إجابة
+        answers:
+          images_list: قائمة الصور
+    answers:
+      videos:
+        edit:
+          title: تعديل الفيديو
+    organizations:
+      index:
+        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
+      search:
+        no_results: لم يتم العثور على منظمات.
+    shared:
+      description: الوصف
+    homepage:
+      cards:
+        title: العنوان
+    translations:
+      add_language: إضافة لغة

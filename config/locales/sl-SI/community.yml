@@ -1,0 +1,63 @@
+sl:
+  skupnost:
+    sidebar:
+      title: Skupnost
+      description:
+        proposal: Sodeluj v skupnosti uporabnikov tega predloga.
+        investment: Sodeluj v skupnosti uporabnikov te proračunske naložbe.
+      button_to_access: Dostopaj do skupnosti
+    show:
+      title:
+        proposal: Skupnost predloga
+        investment: Skupnost proračunske naložbe
+      description:
+        proposal: Sodaluj v skupnosti tega predloga. Aktivna skupnost lahko pomaga izboljšati vsebino predloga in pospešiti njegovo diseminacijo ter tako zagotoviti večjo podporo.
+        investment: Sodeluj v skupnosti te proračunske naložbe. Aktivna skupnost lahko pomaga izboljšati vsebino proračunske naložbe, pospešiti njeno diseminacijo in zagotoviti večjo podporo.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nobena tema ni na voljo, sodeluj in ustvari prvo.
+        first_theme: Ustvari prvo temo skupnosti
+        sub_first_theme: "Za ustvarjanje teme, moraš biti %{sign_in} ali %{sign_up}."
+        sign_in: "Vpiši se"
+        sign_up: "Registriraj se"
+      tab:
+        participants: Sodelujoči
+      sidebar:
+        participate: Sodeluj
+        new_topic: Ustvari temo
+      topic:
+        edit: Uredi temo
+        destroy: Uniči temo
+        comments:
+          one: 1 komentar
+          two: 2 komentarja
+          three: 3 komentarji
+          four: 4 komentarji
+          other: "%{count} komentarjev"
+          zero: Brez komentarjev
+      author: Avtor
+      back: Nazaj v %{community} %{proposal}
+    topic:
+      create: Ustvari temo
+      edit: Uredi temo
+      form:
+        topic_title: Naslov
+        topic_text: Začetno besedilo
+        new:
+          submit_button: Ustvari temo
+        edit:
+          submit_button: Uredi temo
+        create:
+          submit_button: Ustvari temo
+        update:
+          submit_button: Posodobi temo
+      show:
+        tab:
+          comments_tab: Komentarji
+      sidebar:
+        recommendations_title: Nasveti pri ustvarjanju teme
+        recommendation_one: Naslova teme ali daljših stavkov ne piši z velikinimi tiskanimi črkami. Na internetu to razumemo kot kričanje - in nihče ne mara, da ljudje kričijo nanj.
+        recommendation_two: Vse teme ali komentarji, ki implicirajo nezakonita dejanja, bodo odstranjeni, enako velja za tiste, ki želijo sabotirati obstoječe teme, vse drugo je dovoljeno.
+        recommendation_three: Uživaj v tem prostoru in v glasovih, ki ga napolnjujejo. Ta prostor je tudi tvoj.
+  topics:
+    show:
+      login_to_comment: Da lahko komentiraš, moraš biti %{signin} ali %{signup}.

@@ -1,0 +1,278 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+sl:
+  date:
+    abbr_day_names:
+    - Ned
+    - Pon
+    - Tor
+    - Sre
+    - Čet
+    - Pet
+    - Sob
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - Maj
+    - Jun
+    - Jul
+    - Avg
+    - Sep
+    - Okt
+    - Nov
+    - Dec
+    day_names:
+    - Nedelja
+    - Ponedeljek
+    - Torek
+    - Sreda
+    - Četrtek
+    - Petek
+    - Sobota
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    -
+    - Januar
+    - Februar
+    - Marec
+    - April
+    - Maj
+    - Junij
+    - Julij
+    - Avgust
+    - September
+    - Oktober
+    - November
+    - December
+    order:
+    - :leto
+    - :mesec
+    - :dan
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: približno 1 ura
+        two: približno 2 uri
+        three: približno 3 ure
+        four: približno 4 ure
+        other: približno %{count} ur
+      about_x_months:
+        one: približno 1 mesec
+        two: približno 2 meseca
+        three: približno 3 mesece
+        four: približno 4 mesece
+        other: približno %{count} mesecev
+      about_x_years:
+        one: približno 1 leto
+        two: približno 2 leti
+        three: približno 3 leta
+        four: približno 4 leta
+        other: približno %{count} let
+      almost_x_years:
+        one: skoraj 1 leto
+        two: skoraj 2 leti
+        three: skoraj 3 leta
+        four: skoraj 4 leta
+        other: skoraj %{count} let
+      half_a_minute: pol minute
+      less_than_x_minutes:
+        one: manj kot minuta
+        two: manj kot dve minuti
+        three: manj kot tri minute
+        four: manj kot štiri minute
+        other: manj kot %{count} minut
+      less_than_x_seconds:
+        one: manj kot 1 sekunda
+        two: manj kot 2 sekundi
+        three: manj kot 3 sekunde
+        four: manj kot 4 sekunde
+        other: manj kot %{count} sekund
+      over_x_years:
+        one: več kot eno leto
+        two: več kot dve leti
+        three: več kot tri leta
+        four: več kot štiri leta
+        other: več kot %{count} let
+      x_days:
+        one: 1 dan
+        two: 2 dneva
+        three: 3 dnevi
+        four: 4 dnevi
+        other: "%{count} dni"
+      x_minutes:
+        one: 1 minuta
+        two: 2 minuti
+        three: 3 minute
+        four: 4 minute
+        other: "%{count} minut"
+      x_months:
+        one: 1 mesec
+        two: 2 meseca
+        three: 3 meseci
+        four: 4 meseci
+        other: "%{count} mesecev"
+      x_years:
+        one: 1 leto
+        two: 2 leti
+        three: 3 leta
+        four: 4 leta
+        other: "%{count} let"
+      x_seconds:
+        one: 1 sekunda
+        two: 2 sekundi
+        three: 3 sekunde
+        four: 4 sekunde
+        other: "%{count} sekund"
+    prompts:
+      day: Dan
+      hour: Ura
+      minute: Minuta
+      month: Mesec
+      second: Sekunda
+      year: Leto
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: mora biti sprejet
+      blank: ne sme biti prazen
+      present: mora biti prazen
+      confirmation: ne ustreza %{attribute}
+      empty: ne more biti prazen
+      equal_to: mora biti enak %{count}
+      even: mora biti sodo število
+      exclusion: je rezerviran
+      greater_than: mora biti večje od %{count}
+      greater_than_or_equal_to: mora biti večje od ali enako %{count}
+      inclusion: ni vključen na seznamu
+      invalid: ni veljaven
+      less_than: mora biti manj od %{count}
+      less_than_or_equal_to: mora biti manj ali enako %{count}
+      model_invalid: "Potrditev spodletela: %{errors}"
+      not_a_number: ni število
+      not_an_integer: mora biti celo število
+      odd: mora biti liho
+      required: mora obstajati
+      taken: je že zasedeno
+      too_long:
+        one: je predolg (največ 1 znak)
+        two: je predolg (največ 2 znaka)
+        three: je predolg (največ 3 znaki)
+        four: je predolg (največ 4 znaki)
+        other: je predolg (največ %{count} znakov)
+      too_short:
+        one: je prekratek (vsaj 1 znak)
+        two: je prekratek (vsaj 2 znaka)
+        three: je prekratek (vsaj 3 znaki)
+        four: je prekratek (vsaj 4 znaki)
+        other: je prekratek (vsaj %{count} znakov)
+      wrong_length:
+        one: je napačne dolžine (moral bi biti 1 znak)
+        two: je napačne dolžine (moral bi biti 2 znaka)
+        three: je napačne dolžine (moral bi biti 3 znake)
+        four: je napačne dolžine (moral bi biti 4 znake)
+        other: je napačne dolžine (moral bi biti %{count} znakov)
+      other_than: mora biti drugačen kot %{count}
+    template:
+      body: 'V naslednjih poljih so težave:'
+      header:
+        one: 1 napaka je preprečila shranjevanje %{model}
+        two: 2 napaki sta preprečili shranjevanje %{model}
+        three: 3 napake so preprečile shranjevanje %{model}
+        four: 4 napake so preprečile shranjevanje %{model}
+        other: "%{count} napak je preprečilo shranjevanje %{model}"
+  helpers:
+    select:
+      prompt: Izberi
+    submit:
+      create: Ustvari %{model}
+      submit: Shrani %{model}
+      update: Posodobi %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milijarda
+          million: milijon
+          quadrillion: bilijarda
+          thousand: tisoč
+          trillion: bilijon
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Bajt
+            two: Bajta
+            three: Bajti
+            four: Bajti
+            other: Bajtov
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " in "
+      two_words_connector: " in "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

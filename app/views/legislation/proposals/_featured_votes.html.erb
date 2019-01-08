@@ -37,7 +37,11 @@
   <% if voted_for?(@featured_proposals_votes, proposal) %>
     <% if setting['twitter_handle'] %>
       <div class="share-supported">
-        <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
+        <%= render partial: 'shared/social_share', locals: {
+          title: proposal.title,
+          url: proposal_url(proposal),
+          description: proposal.summary
+        } %>
       </div>
     <% end %>
   <% end %>

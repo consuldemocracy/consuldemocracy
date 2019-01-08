@@ -1,0 +1,23 @@
+ar:
+  mailers:
+    no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
+    comment:
+      hi: مرحبا
+      title: تعليق جديد
+    config:
+      manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
+    email_verification:
+      click_here_to_verify: هذا الرابط
+      instructions_html: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
+      subject: تأكيد بريدك الإلكتروني
+      thanks: شكرا جزيلا.
+      title: أكد حسابك باستخدام الرابط التالي
+    reply:
+      hi: مرحبا
+      new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
+    user_invite:
+      ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
+    budget_investment_created:
+      follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
+    budget_investment_unfeasible:
+      hi: "عزيزي المستخدم،"

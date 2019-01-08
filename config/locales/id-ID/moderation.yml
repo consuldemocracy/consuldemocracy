@@ -1,0 +1,77 @@
+id:
+  moderation:
+    comments:
+      index:
+        block_authors: Blokir penulis
+        confirm: Apakah kamu yakin?
+        filter: Menyaring
+        filters:
+          all: Semua
+          pending_flag_review: Tertunda
+          with_ignored_flag: Ditandai seperti yang dilihat
+        headers:
+          comment: Komentar
+          moderate: Moderat
+        hide_comments: Sembunyikan komentar
+        ignore_flags: Tandai seperti yang dilihat
+        order: Memesan
+        orders:
+          flags: Paling ditandai
+          newest: Terbaru
+        title: Komentar
+    dashboard:
+      index:
+        title: Moderasi
+    debates:
+      index:
+        block_authors: Blokir penulis
+        confirm: Apakah kamu yakin?
+        filter: Menyaring
+        filters:
+          all: Semua
+          pending_flag_review: Tertunda
+          with_ignored_flag: Ditandai seperti yang dilihat
+        headers:
+          debate: Perdebatan
+          moderate: Moderat
+        hide_debates: Sembunyikan perdebatan
+        ignore_flags: Tandai seperti yang dilihat
+        order: Memesan
+        orders:
+          created_at: Terbaru
+          flags: Paling ditandai
+        title: Perdebatan
+    header:
+      title: Moderasi
+    menu:
+      flagged_comments: Komentar
+      flagged_debates: Perdebatan
+      proposals: Proposal
+      users: Blokir pengguna
+    proposals:
+      index:
+        block_authors: Blokir penulis
+        confirm: Apakah kamu yakin?
+        filter: Menyaring
+        filters:
+          all: Semua
+          pending_flag_review: Tinjauan tertunda
+          with_ignored_flag: Tandai seperti yang dilihat
+        headers:
+          moderate: Moderat
+          proposal: Usulan
+        hide_proposals: Sembunyikan usulan
+        ignore_flags: Tandai seperti yang dilihat
+        order: Dipesan oleh
+        orders:
+          created_at: Terbaru
+          flags: Paling ditandai
+        title: Usulan
+    users:
+      index:
+        hidden: Diblokir
+        hide: Blokir
+        search: Pencarian
+        search_placeholder: surel atau nama pengguna
+        title: Memblokir pengguna
+      notice_hide: Pengguna yang diblokir. Semua ini pengguna perdebatan dan komentar yang telah disembunyikan.

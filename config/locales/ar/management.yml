@@ -1,0 +1,51 @@
+ar:
+  management:
+    account:
+      menu:
+        reset_password_email: إعادة تعيين كلمة المرور عبر البريد الإلكتروني
+      edit:
+        password:
+          reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
+    document_verifications:
+      please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
+    email_label: البريد الإلكتروني
+    date_of_birth: تاريخ الميلاد
+    email_verifications:
+      choose_options: 'الرجاء اختيار أحد الخيارات التالية:'
+      document_mismatch: 'ينتمي هذا البريد الإلكتروني لمستخدم لديه معرف: %{document_number}(%{document_type})'
+      email_placeholder: اكتب عنوان البريد الإلكتروني الذي إستعمله هذا الشخص لإنشاء حسابه
+      email_sent_instructions: للتحقق من هذا المستخدم تماما، من الضروري أن يقوم المستخدم بالنقر على الرابط الذي أرسلناه إلى البريد الإلكتروني المذكور أعلاه. هذه الخطوة تعد ضرورية من أجل التأكد أن عنوان البريد الإلكتروني ينتمي إليه.
+      if_existing_account: إذا كان هذا الشخص قد فتح حساب مسبقا على الموقع الإلكتروني،
+      if_no_existing_account: إذا لم يقم هذا الشخص بفتح حساب بعد
+      introduce_email: 'الرجاء إدخال عنوان البريد الإلكتروني المستخدم في الحساب:'
+      send_email: إرسال البريد الإلكتروني للتحقق
+    menu:
+      create_proposal: إنشاء مقترح
+      print_proposals: طباعة المقترحات
+      users: إدارة المستخدمين
+      user_invites: إرسال الدعوات
+      select_user: حدد المستخدم
+    permissions:
+      create_proposals: إنشاء مقترحات
+    print:
+      proposals_title: 'المقترحات:'
+    budgets:
+      table_name: الاسم
+    spending_proposals:
+      print:
+        print_button: طباعة
+    username_label: اسم المستخدم
+    users:
+      create_user: إنشاء حساب جديد
+      create_user_submit: إنشاء مستخدم
+      create_user_success_html: لقد أرسلنا رسالة إلكترونية إلى عنوان البريد الإلكتروني <b>%{email}</b> من أجل التحقق أنه ملك لهذا المستخدم. تحتوي الرسالة على رابط يجب النقر عليه. ثم عليهم بعدها بتعيين كلمة المرور الخاص بهم قبل التمكن من تسجيل الدخول إلى الموقع الإلكتروني
+      email_optional_label: البريد الإلكتروني (اختياري)
+      erase_account_link: حذف المستخدم
+      erase_account_confirm: هل انت متاكد من انك تريد حذف الحساب؟ لا يمكن التراجع هن هذه الخطوة
+    user_invites:
+      new:
+        info: "أدخل عناوين البريد الإلكتروني مفصولة بفواصل ('،')"
+        submit: إرسال الدعوات
+        title: إرسال الدعوات
+      create:
+        title: إرسال الدعوات

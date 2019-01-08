@@ -1,14 +1,11 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.new.title") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.new.title") %>
 <% end %>
 
-<div class="legislation-admin legislation-process-new row">
+<div class="legislation-process-new">
+  <%= back_link_to admin_legislation_processes_path, t("admin.legislation.processes.new.back") %>
 
-  <div class="small-12 column">
-    <%= back_link_to admin_legislation_processes_path, t("admin.legislation.processes.new.back") %>
+  <h2><%= t("admin.legislation.processes.new.title") %></h2>
 
-    <h2><%= t("admin.legislation.processes.new.title") %></h2>
-
-    <%= render "form" %>
-  </div>
+  <%= render "form" %>
 </div>

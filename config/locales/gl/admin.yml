@@ -1,0 +1,1400 @@
+gl:
+  admin:
+    header:
+      title: Administración
+    actions:
+      actions: Accións
+      confirm: Queres continuar?
+      confirm_hide: Confirmar moderación
+      hide: Agochar
+      hide_author: Agochar o autor
+      restore: Restaurar
+      mark_featured: Destacar
+      unmark_featured: Quitar destacado
+      edit: Editar
+      configure: Configurar
+      delete: Borrar
+    banners:
+      index:
+        title: Anuncios
+        create: Crear anuncio
+        edit: Editar anuncio
+        delete: Borrar anuncio
+        filters:
+          all: Todo
+          with_active: Activos
+          with_inactive: Inactivos
+        preview: Vista previa
+      banner:
+        title: Título
+        description: Descrición
+        target_url: Ligazón
+        post_started_at: Inicio de publicación
+        post_ended_at: Fin de publicación
+        sections_label: Seccións nas que amosar
+        sections:
+          homepage: Páxina principal
+          debates: Debates
+          proposals: Propostas
+          budgets: Orzamentos participativos
+          help_page: Páxina de axuda
+        background_color: Cor de fondo
+        font_color: Cor da letra
+      edit:
+        editing: Editar anuncio
+        form:
+          submit_button: Gardar os cambios
+      errors:
+        form:
+          error:
+            one: "un erro impediu gardar este anuncio"
+            other: "un erro impediu gardar este anuncio"
+      new:
+        creating: Crear anuncio
+    activity:
+      show:
+        action: Acción
+        actions:
+          block: Bloqueado
+          hide: Agochado
+          restore: Restaurado
+        by: Moderado por
+        content: Contido
+        filter: Amosar
+        filters:
+          all: Todo
+          on_comments: Comentarios
+          on_debates: Debates
+          on_proposals: Propostas
+          on_users: Usuarios
+          on_system_emails: Correos electrónicos do sistema
+        title: Actividade de moderador
+        type: Tipo
+        no_activity: Non hai actividade dos moderadores.
+    budgets:
+      index:
+        title: Orzamentos participativos
+        new_link: Crear un novo orzamento
+        filter: Filtro
+        filters:
+          open: Abertos
+          finished: Rematados
+        budget_investments: Xestionar proxectos
+        table_name: Nome
+        table_phase: Fase
+        table_investments: Propostas de investimento
+        table_edit_groups: Grupo de partidas
+        table_edit_budget: Editar
+        edit_groups: Editar grupos de partidas
+        edit_budget: Editar orzamento
+        no_budgets: "Non hai orzamentos abertas."
+      create:
+        notice: Nova campaña de orzamentos participativos creada con éxito!
+      update:
+        notice: Campaña de orzamentos participativos actualizada
+      edit:
+        title: Editar campaña de orzamentos participativos
+        delete: Eliminar orzamento
+        phase: Fase
+        dates: Datas
+        enabled: Habilitada
+        actions: Accións
+        edit_phase: Editar fase
+        active: Activa
+        blank_dates: Sen datas
+      destroy:
+        success_notice: Orzamento eliminado correctamente
+        unable_notice: Non se pode eliminiar un orzamento con proxectos asociados
+      new:
+        title: Novo orzamento cidadán
+      show:
+        groups:
+          one: 1 Grupo de partidas do orzamento
+          other: "%{count} Grupos de partidas dos orzamentos"
+      form:
+        group: Nome do grupo
+        no_groups: Non hai grupos creados aínda. Cada persoa usuaria poderá votar nunha soa partida de cada grupo.
+        add_group: Engadir un grupo novo
+        create_group: Crear un grupo
+        edit_group: Editar grupo
+        submit: Gardar grupo
+        heading: Nome da partida
+        add_heading: Engadir partida
+        amount: Cantidade
+        population: "Poboación (opcional)"
+        population_help_text: "Este dato utilízase exclusivamente para calcular as estatísticas de participación"
+        save_heading: Gardar partida
+        no_heading: Este grupo non ten ningunha partida asignada.
+        table_heading: Partida
+        table_amount: Cantidade
+        table_population: Poboación
+        population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
+        max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
+        current_of_max_headings: "%{current} de %{max}"
+      winners:
+        calculate: Calcular propostas gañadoras
+        calculated: Calculando gañadoras, pode tardar un minuto.
+        recalculate: Recalcular propostas gañadoras
+    budget_phases:
+      edit:
+        start_date: Data de inicio
+        end_date: Data de final
+        summary: Resumo
+        summary_help_text: Este texto informará ao usuario sobre a fase. Para amosalo aínda que a fase non estea activa, marca a opción inferior
+        description: Descrición
+        description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
+        enabled: Fase habilitada
+        enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
+        save_changes: Gardar os cambios
+    budget_investments:
+      index:
+        heading_filter_all: Todas as partidas
+        administrator_filter_all: Todos os administradores
+        valuator_filter_all: Todos os avaliadores
+        tags_filter_all: Todas as etiquetas
+        advanced_filters: Filtros avanzados
+        placeholder: Buscar proxectos
+        sort_by:
+          placeholder: Ordear por
+          id: ID
+          title: Título
+          supports: Apoios
+        filters:
+          all: Todos
+          without_admin: Sen administrador
+          without_valuator: Sen avaliador asignado
+          under_valuation: En proceso de avaliación
+          valuation_finished: Avaliación rematada
+          feasible: Viable
+          selected: Seleccionadas
+          undecided: Sen decidir
+          unfeasible: Inviable
+          min_total_supports: Soportes mínimos
+          winners: Gañadores
+          one_filter_html: "Filtros aplicados actualmente: <b><em>%{filter}</em></b>"
+          two_filters_html: "Filtros de uso aplicados actualmente: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtrar
+        download_current_selection: "Descargar a selección actual"
+        no_budget_investments: "Non hai proxectos de investimento."
+        title: Proxectos de investimento
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sen administrador asignado
+        no_valuators_assigned: Sen avaliador asignado
+        no_valuation_groups: Grupos asignados sen valoración
+        feasibility:
+          feasible: "Viable (%{price})"
+          unfeasible: "Non viables"
+          undecided: "Sen decidir"
+        selected: "Seleccionada"
+        select: "Seleccionar"
+        list:
+          id: ID
+          title: Título
+          supports: Apoios
+          admin: Administrador
+          valuator: Avaliador
+          valuation_group: Grupo de avaliadores
+          geozone: Ámbito de actuación
+          feasibility: Viabilidade
+          valuation_finished: Av. Fin.
+          selected: Seleccionado
+          visible_to_valuators: Amosar aos avaliadores
+          author_username: Nome de usuario do autor
+          incompatible: Incompatible
+        cannot_calculate_winners: O orzamento debe manterse na fase «Proxecto en votación», «Revisión de votacións» ou «Orzamento rematado» para poder calcular os proxectos gañadores
+        see_results: "Ver resultados"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Avaliadores asignados
+        classification: Clasificación
+        info: "%{budget_name} - Grupo: %{group_name} - Proxecto de investimento %{id}"
+        edit: Editar
+        edit_classification: Editar a clasificación
+        by: autoría
+        sent: Data
+        group: Grupo
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        user_tags: Etiquetas do usuario
+        undefined: Sen definir
+        compatibility:
+          title: Compatibilidade
+          "true": Incompatible
+          "false": Compatible
+        selection:
+          title: Selección
+          "true": Seleccionado
+          "false": Non seleccionado
+        winner:
+          title: Gañadora
+          "true": "Si"
+          "false": "Non"
+        image: "Imaxe"
+        see_image: "Ver imaxe"
+        no_image: "Sen imaxe"
+        documents: "Documentos"
+        see_documents: "Ver documentos (%{count})"
+        no_documents: "Sen documentos"
+        valuator_groups: "Grupos de avaliadores"
+      edit:
+        classification: Clasificación
+        compatibility: Compatibilidade
+        mark_as_incompatible: Marcar como incompatible
+        selection: Selección
+        mark_as_selected: Marcar como seleccionado
+        assigned_valuators: Avaliadores
+        select_heading: Seleccionar partida
+        submit_button: Actualizar
+        user_tags: Etiquetas asignadas polo usuario
+        tags: Etiquetas
+        tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
+        undefined: Sen definir
+        user_groups: "Grupos"
+      search_unfeasible: Buscar inviables
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Título"
+        table_description: "Descrición"
+        table_publication_date: "Data de publicación"
+        table_status: Estado
+        table_actions: "Accións"
+        delete: "Eliminar fito"
+        no_milestones: "Non hai fitos definidos"
+        image: "Imaxe"
+        show_image: "Amosar imaxe"
+        documents: "Documentos"
+        milestone: Seguimento
+        new_milestone: Crear novo seguimento
+      form:
+        admin_statuses: Administrar estados de investimento
+        no_statuses_defined: Aínda non se definirion os estados dos investimentos
+      new:
+        creating: Crear fito
+        date: Data
+        description: Descrición
+      edit:
+        title: Editar fito
+      create:
+        notice: Novo fito creado con éxito!
+      update:
+        notice: Fito actualizado correctamente
+      delete:
+        notice: Fito borrado correctamente
+    statuses:
+      index:
+        title: Estados dos investimentos
+        empty_statuses: Aínda non se definirion os estados dos investimentos
+        new_status: Crear novo estado de investimento
+        table_name: Nome
+        table_description: Descrición
+        table_actions: Accións
+        delete: Borrar
+        edit: Editar
+      edit:
+        title: Editar estados de investimento
+      update:
+        notice: O estado do investimento foi actualizado correctamente
+      new:
+        title: Crear estado de investimento
+      create:
+        notice: O estado do investimento foi creado correctamente
+      delete:
+        notice: O estado do investimento foi eliminado correctamente
+    comments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        hidden_debate: Debate agochado
+        hidden_proposal: Proposta agochada
+        title: Comentarios agochados
+        no_hidden_comments: Non hai comentarios agochados.
+    dashboard:
+      index:
+        back: Volver a %{org}
+        title: Administración
+        description: Benvido ao panel de administración de %{org}.
+    debates:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Debates agochados
+        no_hidden_debates: Non hai debates agochados.
+    hidden_users:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Usuarios agochados
+        user: Usuario
+        no_hidden_users: Non hai usuarios agochados.
+      show:
+        email: 'Enderezo electrónico:'
+        hidden_at: 'Bloqueado:'
+        registered_at: 'Data de alta:'
+        title: Actividade do usuario (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todo
+          with_confirmed_hide: Confirmado
+          without_confirmed_hide: Pendente
+        title: Agochar as propostas de investimento
+        no_hidden_budget_investments: Non hai propostas de investimento agochadas
+    legislation:
+      processes:
+        create:
+          notice: 'Proceso creado correctamente. <a href="%{link}">Preme para velo</a>'
+          error: Non se puido crear o proceso
+        update:
+          notice: 'Proceso actualizado correctamente. <a href="%{link}">Preme para velo</a>'
+          error: Non se puido crear o proceso
+        destroy:
+          notice: Proceso eliminado correctamente
+        edit:
+          back: Volver
+          submit_button: Gardar os cambios
+        errors:
+          form:
+            error: Erro
+        form:
+          enabled: Habilitado
+          process: Proceso
+          debate_phase: Fase previa
+          allegations_phase: Fase de alegaciones
+          proposals_phase: Fase de propostas
+          start: Comezo
+          end: Remate
+          use_markdown: Usar Markdown para darlle formato ao texto
+          title_placeholder: Escribe o título do proceso
+          summary_placeholder: Resumo corto da descrición
+          description_placeholder: Engade unha descrición do proceso
+          additional_info_placeholder: Engade unha información adicional que pode ser de interese
+        index:
+          create: Novo proceso
+          delete: Borrar
+          title: Procesos lexislativos
+          filters:
+            open: Abertos
+            next: Proximamente
+            past: Pasados
+            all: Todos
+        new:
+          back: Volver
+          title: Crear un novo proceso de lexislación colaborativa
+          submit_button: Crear proceso
+        proposals:
+          select_order: Ordenar por
+          orders:
+            id: Id
+            title: Título
+            supports: Apoios
+        process:
+          title: Proceso
+          comments: Comentarios
+          status: Estado
+          creation_date: Data de creación
+          status_open: Abertos
+          status_closed: Pechado
+          status_planned: Planificado
+        subnav:
+          info: Información
+          draft_versions: Redacción
+          questions: Debate
+          proposals: Propostas
+      proposals:
+        index:
+          title: Título
+          back: Volver
+          id: Id
+          supports: Apoios
+          select: Seleccionadas
+          selected: Seleccionadas
+        form:
+          custom_categories: Categorias
+          custom_categories_description: Categorías que o usuario pode seleccionar o crear a proposta.
+          custom_categories_placeholder: Escribe as etiquetas que desexes, separadas por comas (,) e entre comiñas duplas ("")
+      draft_versions:
+        create:
+          notice: 'Borrador creado correctamente. <a href="%{link}">Preme para o veres</a>'
+          error: Non se puido crear o borrador
+        update:
+          notice: 'Borrador actualizado correctamente. <a href="%{link}">Preme para o ver</a>'
+          error: Non se puido actualizar o borrador
+        destroy:
+          notice: O borrador borrouse correctamente
+        edit:
+          back: Volver
+          submit_button: Gardar os cambios
+          warning: Xa editaches o texto, mais lembra premeres o botón Gardar para conservar permanentemente os cambios.
+        errors:
+          form:
+            error: Erro
+        form:
+          title_html: 'Editar <span class="strong">%{draft_version_title}</span> do proceso <span class="strong">%{process_title}</span>'
+          launch_text_editor: Abrir editor de texto
+          close_text_editor: Pechar editor de texto
+          use_markdown: Usar Markdown para formatear o texto
+          hints:
+            final_version: Será a versión que se publique en "publicación de resultados". Esta versión non se poderá comentar.
+            status:
+              draft: Poderás previsualizalo en modo admin, ninguén máis o poderá ver
+              published: Visible para todo o mundo
+          title_placeholder: Escrite o título desta versión do borrador
+          changelog_placeholder: Describe calquera cambio relevante coa versión anterior
+          body_placeholder: Escribe o texto do borrador
+        index:
+          title: Versións do borrador
+          create: Crear versión
+          delete: Borrar
+          preview: Vista previa
+        new:
+          back: Volver
+          title: Crear unha nova versión
+          submit_button: Crear versión
+        statuses:
+          draft: Borrador
+          published: Publicado
+        table:
+          title: Título
+          created_at: Creado
+          comments: Comentarios
+          final_version: Versión final
+          status: Estado
+      questions:
+        create:
+          notice: 'A pregunta creouse correctamente. <a href="%{link}">Preme para a ver</a>'
+          error: Non se puido crear a pregunta
+        update:
+          notice: 'A pregunta creouse correctamente. <a href="%{link}">Preme para a ver</a>'
+          error: A pregunta non se puido actualizar
+        destroy:
+          notice: Pregunta borrada correctamente
+        edit:
+          back: Volver
+          title: "Editar \"%{question_title}\""
+          submit_button: Gardar os cambios
+        errors:
+          form:
+            error: Erro
+        form:
+          add_option: Engadir unha opción
+          title: Pregunta
+          title_placeholder: Engadir pregunta
+          value_placeholder: Engadir unha resposta pechada
+          question_options: "Posibles respostas (opcional, respostas abertas por defecto)"
+        index:
+          back: Volver
+          title: Preguntas asociadas ao proceso
+          create: Crear pregunta
+          delete: Borrar
+        new:
+          back: Regresar
+          title: Crear unha nova pregunta
+          submit_button: Crear pregunta
+        table:
+          title: Título
+          question_options: Opcións da resposta
+          answers_count: Número de respostas
+          comments_count: Número de comentarios
+        question_option_fields:
+          remove_option: Borrar opción
+    managers:
+      index:
+        title: Xestores
+        name: Nome
+        email: Correo electrónico
+        no_managers: Non hai xestores.
+      manager:
+        add: Engadir
+        delete: Borrar
+      search:
+        title: 'Xestores: busca de usuarios'
+    menu:
+      activity: Actividade dos moderadores
+      admin: Menú de administración
+      banner: Xestionar anuncios
+      poll_questions: Preguntas
+      proposals_topics: Temas das propostas
+      budgets: Orzamentos participativos
+      geozones: Xestionar zonas
+      hidden_comments: Comentarios agochados
+      hidden_debates: Debates agochados
+      hidden_proposals: Propostas agochadas
+      hidden_budget_investments: Agochar proposta de investimento
+      hidden_proposal_notifications: Notificacións de propostas agochadas
+      hidden_users: Usuarios agochados
+      administrators: Administradores
+      managers: Xestores
+      moderators: Moderadores
+      messaging_users: Mensaxes aos usuarios
+      newsletters: Boletíns informativos
+      admin_notifications: Notificacións
+      system_emails: Correos electrónicos do sistema
+      emails_download: Descarga de enderezos de correo
+      valuators: Avaliadores
+      poll_officers: Presidentes de mesa
+      polls: Votacións
+      poll_booths: Localización das urnas
+      poll_booth_assignments: Asignación de urnas
+      poll_shifts: Asignar quendas
+      officials: Cargos
+      organizations: Organizacións
+      settings: Configuración global
+      spending_proposals: Propostas de investimento
+      stats: Estatísticas
+      signature_sheets: Follas de sinaturas
+      site_customization:
+        homepage: Páxina principal
+        pages: Páxinas personalizadas
+        images: Imaxes personalizadas
+        content_blocks: Personalizar bloques
+        information_texts: Textos de información personalizados
+        information_texts_menu:
+          debates: "Debates"
+          community: "Comunidade"
+          proposals: "Propostas"
+          polls: "Votacións"
+          layouts: "Capas"
+          mailers: "Correos electrónicos"
+          management: "Xestión"
+          welcome: "Benvida"
+        buttons:
+          save: "Gardar"
+      title_moderated_content: Moderar contido
+      title_budgets: Orzamentos
+      title_polls: Votacións
+      title_profiles: Perfís
+      title_settings: Preferencias
+      title_site_customization: Contido do sitio
+      title_booths: Urnas de votación
+      legislation: Lexislación colaborativa
+      users: Usuarios
+    administrators:
+      index:
+        title: Administradores/as
+        name: Nome
+        email: O teu correo electrónico
+        no_administrators: Non hai ningún administrador.
+      administrator:
+        add: Engadir
+        delete: Borrar
+        restricted_removal: "Sentímolo mais non podes borrarte a ti mesmo da relación"
+      search:
+        title: "Administración: busca de usuarios"
+    moderators:
+      index:
+        title: Moderadores/as
+        name: Nome
+        email: Correo electrónico
+        no_moderators: Non hai ningún moderador/a.
+      moderator:
+        add: Engadir
+        delete: Borrar
+      search:
+        title: 'Moderadores: busca de usuarios'
+    segment_recipient:
+      all_users: Todos os usuarios
+      administrators: Administradores
+      proposal_authors: Autores da proposta
+      investment_authors: Autores do investimento no orzamento actual
+      feasible_and_undecided_investment_authors: "Autores dalgún investimento no orzamento actual que non cumpre con: [avaliación finalizada inviable]"
+      selected_investment_authors: Autores de investimentos seleccionados no orzamento actual
+      winner_investment_authors: Autores de investimentos gañadores no orzamento actual
+      not_supported_on_current_budget: Usuarios que non apoiaron investimentos no orzamento actual
+      invalid_recipients_segment: "Segmento de destinatarios inválido"
+    newsletters:
+      create_success: Boletín informativo creado correctamente
+      update_success: Boletín informativo actualizado correctamente
+      send_success: Boletín informativo enviado correctamente
+      delete_success: Boletín informativo eliminado correctamente
+      index:
+        title: Newsletters
+        new_newsletter: Novo boletín informativo
+        subject: Asunto
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Accións
+        draft: Borrador
+        edit: Editar
+        delete: Eliminar
+        preview: Vista previa
+        empty_newsletters: Non hai notificacións para amosar
+      new:
+        title: Novo boletín informativo
+        from: Enderezo de correo electrónico que aparecerá como remitente no boletín informativo
+      edit:
+        title: Editar boletín informativo
+      show:
+        title: Vista previa do boletín informativo
+        send: Enviar
+        affected_users: (%{n} usuarios afectados)
+        sent_emails:
+          one: 1 mensaxe enviada
+          other: "%{count} mensaxes enviadas"
+        sent_at: Enviado a
+        subject: Asunto
+        segment_recipient: Destinatarios
+        from: Enderezo de correo electrónico que aparecerá como remitente no boletín informativo
+        body: Contido da mensaxe
+        body_help_text: Así verán os usuarios a mensaxe de correo
+        send_alert: Confirma que quere enviar este boletín informativo a %{n} usuarios?
+    admin_notifications:
+      create_success: Notificación creada correctamente
+      update_success: Notificación actualizada correctamente
+      send_success: Notificación enviada correctamente
+      delete_success: Notificación eliminada correctamente
+      index:
+        section_title: Notificacións
+        new_notification: Nova notificación
+        title: Título
+        segment_recipient: Destinatarios
+        sent: Enviado
+        actions: Accións
+        draft: Borrador
+        edit: Editar
+        delete: Eliminar
+        preview: Vista previa
+        view: Ver
+        empty_notifications: Non hai notificacións para amosar
+      new:
+        section_title: Novo notificación
+        submit_button: Crear notificación
+      edit:
+        section_title: Editar notificación
+        submit_button: Actualizar notificación
+      show:
+        section_title: Vista previa da notificación
+        send: Enviar notificación
+        will_get_notified: (%{n} usuarios serán notificados)
+        got_notified: (%{n} usuarios foron notificados)
+        sent_at: Enviado a
+        title: Título
+        body: Texto
+        link: Ligazón
+        segment_recipient: Destinatarios
+        preview_guide: "Así verán os usuarios a notificación:"
+        sent_guide: "Así ven os usuarios a notificación:"
+        send_alert: Confirma que quere enviar esta notificación a %{n} usuarios?
+    system_emails:
+      preview_pending:
+        action: Vista previa pendente
+        preview_of: Vista previa de %{name}
+        pending_to_be_sent: Este é o contido pendente de enviar
+        moderate_pending: Enviada notificación de moderación
+        send_pending: Pendente de envío
+        send_pending_notification: A notificación pendente foi enviada correctamente
+      proposal_notification_digest:
+        title: Resumo de notificacións de propostas
+        description: Agrupa todas as notificacións de proposta para un usuario nunha única mensaxe, evitando o envío dun número elevado de mensaxes.
+        preview_detail: Os usuarios só recibirán as notificacións das propostas que están a seguir
+    emails_download:
+      index:
+        title: Descarga de enderezos de correo
+        download_segment: Descargar enderezos de correo electrónico
+        download_segment_help_text: Descargar en formato CSV
+        download_emails_button: Descargar lista de enderezos
+    valuators:
+      index:
+        title: Avaliadores
+        name: Nome
+        email: Correo electrónico
+        description: Descrición
+        no_description: Sen descrición
+        no_valuators: Non hai avaliadores.
+        valuator_groups: "Grupos de avaliadores"
+        group: "Grupo"
+        no_group: "Sen grupo"
+      valuator:
+        add: Engadir aos avaliadores
+        delete: Borrar
+      search:
+        title: 'Avaliadores: busca de usuarios'
+      summary:
+        title: Resumo de avaliación das propostas de investimento
+        valuator_name: Avaliador/a
+        finished_and_feasible_count: Rematar viables
+        finished_and_unfeasible_count: Rematadas inviables
+        finished_count: Rematadas
+        in_evaluation_count: A avaliárense
+        total_count: Total
+        cost: Custo
+      form:
+        edit_title: "Avaliadores: Editar avaliador"
+        update: "Actualizar avaliador"
+        updated: "Avaliador actualizado correctamente"
+      show:
+        description: "Descrición"
+        email: "Correo electrónico"
+        group: "Grupo"
+        no_description: "Sen descrición"
+        no_group: "Sen grupo"
+    valuator_groups:
+      index:
+        title: "Grupos de avaliadores"
+        new: "Crear grupo de avaliadores"
+        name: "Nome"
+        members: "Membros"
+        no_groups: "Non hai grupos de avalidores"
+      show:
+        title: "Grupo de avaliadores: %{group}"
+        no_valuators: "Non hai avaliadores dentro deste grupo"
+      form:
+        name: "Nome do grupo"
+        new: "Crear grupo de avaliadores"
+        edit: "Gardar grupo de avaliadores"
+    poll_officers:
+      index:
+        title: Presidentes da mesa
+      officer:
+        add: Engadir
+        delete: Borrar cargo
+        name: Nome
+        email: Correo
+        entry_name: presidente de mesa
+      search:
+        email_placeholder: Buscar usuario por correo
+        search: Buscar
+        user_not_found: Non se atopou o usuario
+    poll_officer_assignments:
+      index:
+        officers_title: "Listaxe de presidentes/as asignados/as"
+        no_officers: "Non hai ningún presidente de mesa asignado a esta votación."
+        table_name: "Nome"
+        table_email: "Correo"
+      by_officer:
+        date: "Data"
+        booth: "Urna"
+        assignments: "Quendas como presidencia de mesa nesta votación"
+        no_assignments: "Non ten quendas como presidencia de mesa nesta votación."
+    poll_shifts:
+      new:
+        add_shift: "Engadir quenda"
+        shift: "Asignación"
+        shifts: "Quendas nesta urna"
+        date: "Data"
+        task: "Tarefa"
+        edit_shifts: Asignar quenda
+        new_shift: "Nova quenda"
+        no_shifts: "Esta urna non ten quendas asignadas"
+        officer: "Presidente de mesa"
+        remove_shift: "Borrar"
+        search_officer_button: Buscar
+        search_officer_placeholder: Buscar presidente de mesa
+        search_officer_text: Busca a presidencia de mesa para asignar unha quenda
+        select_date: "Escolle o día"
+        no_voting_days: "Días de votación rematados"
+        select_task: "Escolle tarefa"
+        table_shift: "Quenda"
+        table_email: "Correo electrónico"
+        table_name: "Nome"
+      flash:
+        create: "Engadiuse a quenda da presidencia"
+        destroy: "Borrouse a quenda da presidencia"
+        date_missing: "Debe escoller unha data"
+      vote_collection: Recoller votos
+      recount_scrutiny: Reconto & escrutinio
+    booth_assignments:
+      manage_assignments: Xestionar asignacións
+      manage:
+        assignments_list: "Asignacións para a votaciñon '%{poll}'"
+        status:
+          assign_status: Asignación
+          assigned: Asignada
+          unassigned: Non asignada
+        actions:
+          assign: Asignar urna
+          unassign: Asignar urna
+    poll_booth_assignments:
+      alert:
+        shifts: "Hai quendas asignadas para esta urna. Se a designas, estas quenda elimínanse. Desexas continuar?"
+      flash:
+        destroy: "Urna sen asingar"
+        create: "Urna asignada"
+        error_destroy: "Produciuse un erro ao desasignar a urna"
+        error_create: "Produciuse un erro ao intentar asignar a urna"
+      show:
+        location: "Localización"
+        officers: "Presidentes de mesa"
+        officers_list: "Relación de presidentes de mesa asignados a esta urna"
+        no_officers: "Non hai ningún presidente de mesa para esta urna"
+        recounts: "Recontos"
+        recounts_list: "Listaxe de recontos desta urna"
+        results: "Resultados"
+        date: "Data"
+        count_final: "Escrutinio final (presidente de mesa)"
+        count_by_system: "Votos (automático)"
+        total_system: Votos totais acumulados (automático)
+      index:
+        booths_title: "Listaxe de urnas asignadas"
+        no_booths: "Non hai urnas asignadas a esta votación."
+        table_name: "Nome"
+        table_location: "Localización"
+    polls:
+      index:
+        title: "Lista de votacións activas"
+        no_polls: "Non hai ningunha votación proximamente."
+        create: "Crear votación"
+        name: "Nome"
+        dates: "Datas"
+        geozone_restricted: "Restrinxida aos distritos"
+      new:
+        title: "Nova votación"
+        show_results_and_stats: "Amosar os resultados e as estatísticas"
+        show_results: "Amosar resultados"
+        show_stats: "Amosar estatísticas"
+        results_and_stats_reminder: "Se marcas estas celas, os resultados e/ou as estatísticas desta votación publicaranse e todos os usuarios poderán velos."
+        submit_button: "Crear votación"
+      edit:
+        title: "Editar votación"
+        submit_button: "Actualizar votación"
+      show:
+        questions_tab: Preguntas
+        booths_tab: Urnas
+        officers_tab: Presidentes de mesa
+        recounts_tab: Recontos
+        results_tab: Resultados
+        no_questions: "Non hai preguntas asignadas a esta votación."
+        questions_title: "Listaxe de preguntas"
+        table_title: "Título"
+      flash:
+        question_added: "Pregunta engadida a esta votación"
+        error_on_question_added: "Non se puido asignar a pregunta"
+    questions:
+      index:
+        title: "Preguntas"
+        create: "Crear pregunta"
+        no_questions: "Non hai preguntas cidadás."
+        filter_poll: Filtrar por votación
+        select_poll: Escoller votación
+        questions_tab: "Preguntas"
+        successful_proposals_tab: "Propostas que superaron o límite"
+        create_question: "Crear pregunta para a votación"
+        table_proposal: "Proposta"
+        table_question: "Pregunta"
+      edit:
+        title: "Editar pregunta cidadá"
+      new:
+        title: "Crear pregunta"
+        poll_label: "Votación"
+      answers:
+        images:
+          add_image: "Engadir imaxe"
+          save_image: "Gardar imaxe"
+      show:
+        proposal: Proposta orixinal
+        author: Autoría
+        question: Pregunta
+        edit_question: Editar pregunta
+        valid_answers: Respostas válidas
+        add_answer: Engadir resposta
+        video_url: Vídeo externo
+        answers:
+          title: Resposta
+          description: Descrición
+          videos: Vídeos
+          video_list: Listaxe de vídeos
+          images: Imaxes
+          images_list: Listaxe de imaxes
+          documents: Documentos
+          documents_list: Listaxe de documentos
+          document_title: Título
+          document_actions: Accións
+    answers:
+      new:
+        title: Nova resposta
+      show:
+        title: Título
+        description: Descrición
+        images: Imaxes
+        images_list: Listaxe de imaxes
+        edit: Editar resposta
+      edit:
+        title: Editar resposta
+      videos:
+        index:
+          title: Vídeos
+          add_video: Engadir vídeo
+          video_title: Título
+          video_url: Vídeo externo
+        new:
+          title: Novo vídeo
+        edit:
+          title: Editar vídeo
+    recounts:
+      index:
+        title: "Recontos"
+        no_recounts: "Non hai nada para o que facer o reconto"
+        table_booth_name: "Urna"
+        table_total_recount: "Escrutinio total (presidencia de mesa)"
+        table_system_count: "Votos (automático)"
+    results:
+      index:
+        title: "Resultados"
+        no_results: "Non hai ningún resultado"
+      result:
+        table_whites: "Papeletas en branco"
+        table_nulls: "Papeletas nulas"
+        table_total: "Papeletas totais"
+        table_answer: Resposta
+        table_votes: Votos
+      results_by_booth:
+        booth: Urna
+        results: Resultados
+        see_results: Ver resultados
+        title: "Resultados por urna"
+    booths:
+      index:
+        title: "Lista de urnas activas"
+        no_booths: "Non hai urnas activas para ningunha votación próxima."
+        add_booth: "Engadir urna"
+        name: "Nome"
+        location: "Localización"
+        no_location: "Nova localización"
+      new:
+        title: "Nova urna"
+        name: "Nome"
+        location: "Localización"
+        submit_button: "Crear urna"
+      edit:
+        title: "Editar urna"
+        submit_button: "Actualizar urna"
+      show:
+        location: "Localización"
+      booth:
+        shifts: "Xestionar quendas"
+        edit: "Editar urna"
+    officials:
+      edit:
+        destroy: Eliminar condición de 'Cargo público'
+        title: 'Cargos públicos: editar usuario'
+      flash:
+        official_destroyed: 'Datos gardados: o usuario xa non é cargo público'
+        official_updated: Datos do cargo público gardado
+      index:
+        title: Cargos
+        no_officials: Non hai ningún cargo público.
+        name: Nome
+        official_position: Cargo público
+        official_level: Nivel
+      level_0: Non é cargo público
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
+      search:
+        edit_official: Editar cargo público
+        make_official: Converter en cargo público
+        title: 'Cargos públicos: busca de usuarios'
+        no_results: Non se atopou ningún cargo público.
+    organizations:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          pending: Pendente
+          rejected: Rexeitada
+          verified: Verificada
+        hidden_count_html:
+          one: Hai ademais <strong>unha organización</strong> sen usuario ou co usuario bloqueado.
+          other: Hai ademais <strong>%{count} organizacións</strong> sen usuario ou co usuario bloqueado.
+        name: Nome
+        email: Correo
+        phone_number: Teléfono
+        responsible_name: Responsable
+        status: Estado
+        no_organizations: Non hai organizacións.
+        reject: Rexeitar
+        rejected: Rexeitada
+        search: Buscar
+        search_placeholder: Nome, correo electrónico ou teléfono
+        title: Organización
+        verified: Verificada
+        verify: Verificar
+        pending: Pendente
+      search:
+        title: Buscar organizacións
+        no_results: Non se atoparon organizacións.
+    hidden_proposals:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendentes
+        title: Propostas agochadas
+        no_hidden_proposals: Non hai propostas agochadas.
+    proposal_notifications:
+      index:
+        filter: Filtro
+        filters:
+          all: Todo
+          with_confirmed_hide: Confirmado
+          without_confirmed_hide: Pendente
+        title: Notificacións agochadas
+        no_hidden_proposals: Non hai notificacións agochadas.
+    settings:
+      flash:
+        updated: Valor actualizado
+      index:
+        banners: Estilos de anuncio
+        banner_imgs: Imaxes do anuncio
+        no_banners_images: Non hai imaxes de anuncio
+        no_banners_styles: Non hai estilo de anuncio
+        title: Configuración global
+        update_setting: Actualizar
+        feature_flags: Funcionalidades
+        features:
+          enabled: "Funcionalidade activada"
+          disabled: "Funcionalidade desactivada"
+          enable: "Activar"
+          disable: "Desactivar"
+        map:
+          title: Configuración do mapa
+          help: Aquí podes personalizar o xeito en que os e as usuarias ven o mapa. Arrastra o marcador ou preme en calquera parte do mapa, axusta o zoom e preme o botón 'Actualizar'.
+          flash:
+            update: A configuración do mapa gardouse correctamente.
+          form:
+            submit: Actualizar
+      setting: Característica
+      setting_actions: Accións
+      setting_name: Axuste
+      setting_status: Estados
+      setting_value: Valor
+      no_description: "Sen descrición"
+    shared:
+      booths_search:
+        button: Buscar
+        placeholder: Buscar urna por nome
+      poll_officers_search:
+        button: Buscar
+        placeholder: Buscar presidentes da mesa
+      poll_questions_search:
+        button: Buscar
+        placeholder: Buscar preguntas
+      proposal_search:
+        button: Buscar
+        placeholder: Buscar propostas por título, código, descrición ou pregunta
+      spending_proposal_search:
+        button: Buscar
+        placeholder: Buscar propostas por título ou descrición
+      user_search:
+        button: Buscar
+        placeholder: Buscar usuario por nome ou correo electrónico
+      search_results: "Resultados da busca"
+      no_search_results: "Non se atoparon resultados."
+      actions: Accións
+      title: Título
+      description: Descrición
+      image: Imaxe
+      show_image: Amosar imaxe
+      moderated_content: "Comprobar o contido revisado polos moderadores, e confirmar se a moderación foi realizada correctamente."
+      view: Ver
+      proposal: Proposta
+      author: Autor
+      content: Contido
+      created_at: Creado en
+    spending_proposals:
+      index:
+        geozone_filter_all: Todas as zonas
+        administrator_filter_all: Todos os administradores
+        valuator_filter_all: Todos os avaliadores
+        tags_filter_all: Todas as etiquetas
+        filters:
+          valuation_open: Abertas
+          without_admin: Sen administrador
+          managed: Xestionado
+          valuating: En avaliación
+          valuation_finished: Avaliación rematada
+          all: Todas
+        title: Propostas de investimento para os orzamentos participativos
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sen administrador asignado
+        no_valuators_assigned: Sen avaliador
+        summary_link: "Resumo de proxecto de investimento"
+        valuator_summary_link: "Resumo de avaliadores"
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sen definir"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Avaliadores asignados
+        back: Volver
+        classification: Clasificación
+        heading: "Proposta de investimento %{id}"
+        edit: Editar
+        edit_classification: Editar a clasificación
+        association_name: Asociación
+        by: Por
+        sent: Enviada
+        geozone: Zona
+        dossier: Informe
+        edit_dossier: Editar o informe
+        tags: Etiquetas
+        undefined: Sen definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Avaliadores
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
+        undefined: Sen definir
+      summary:
+        title: Resumo de propostas de investimento
+        title_proposals_with_supports: Resumo para propostas que superaron a fase de apoios
+        geozone_name: Zona
+        finished_and_feasible_count: Rematadas e viables
+        finished_and_unfeasible_count: Rematadas e inviables
+        finished_count: Rematadas
+        in_evaluation_count: En avaliación
+        total_count: Total
+        cost_for_geozone: Investimento
+    geozones:
+      index:
+        title: Zonas
+        create: Crear unha zona
+        edit: Editar
+        delete: Eliminar
+      geozone:
+        name: Nome
+        external_code: Código externo
+        census_code: Código do censo
+        coordinates: Coordenadas
+      errors:
+        form:
+          error:
+            one: "un erro impediu gardar a zona"
+            other: 'varios erros impediron gardar a zona'
+      edit:
+        form:
+          submit_button: Gardar os cambios
+        editing: Editar zona
+        back: Volver
+      new:
+        back: Volver
+        creating: Crear zona
+      delete:
+        success: A zona eliminouse correctamente
+        error: Non se pode eliminar a zona porque xa ten elementos asociados
+    signature_sheets:
+      author: Autoría
+      created_at: Data de creación
+      name: Nome
+      no_signature_sheets: "Non existes follas de sinaturas"
+      index:
+        title: Follas de sinaturas
+        new: Nova folla de sinaturas
+      new:
+        title: Nova folla de sinaturas
+        document_numbers_note: "Escribe os números separados por comas (,)"
+        submit: Crear folla de sinaturas
+      show:
+        created_at: Creado
+        author: Autoría
+        documents: Documentos
+        document_count: "Número de documentos:"
+        verified:
+          one: "Hai %{count} sinatura válida"
+          other: "Hai %{count} sinaturas válidas"
+        unverified:
+          one: "Hai %{count} sinatura válida"
+          other: "Hai %{count} sinaturas válidas"
+        unverified_error: (Non verificada polo padrón)
+        loading: "Aínda hai sinaturas que o padrón está verificando. Actualiza a páxina dentro dun anaco"
+    stats:
+      show:
+        stats_title: Estatísticas
+        summary:
+          comment_votes: Votos en comentarios
+          comments: Comentarios
+          debate_votes: Votos en debates
+          debates: Debates
+          proposal_votes: Votos en propostas
+          proposals: Propostas
+          budgets: Orzamentos abertos
+          budget_investments: Propostas de investimento
+          spending_proposals: Propostas de investimento
+          unverified_users: Usuarios con contas sen verificar
+          user_level_three: Usuarios de nivel tres
+          user_level_two: Usuarios de nivel dous
+          users: Usuarios totais
+          verified_users: Usuarios con contas verificadas
+          verified_users_who_didnt_vote_proposals: Usuarios confirmados que non votaron propostas
+          visits: Visitas
+          votes: Votos totais
+        spending_proposals_title: Propostas de investimento
+        budgets_title: Orzamentos participativos
+        visits_title: Visitas
+        direct_messages: Mensaxes directas
+        proposal_notifications: Notificacións das propostas
+        incomplete_verifications: Confirmacións incompletas
+        polls: Votacións
+      direct_messages:
+        title: Mensaxes directas
+        total: Total
+        users_who_have_sent_message: Usuarios que enviaron unha mensaxe privada
+      proposal_notifications:
+        title: Notificacións de propostas
+        total: Total
+        proposals_with_notifications: Propostas con notifificacións
+      polls:
+        title: Estatísticas das votacións
+        all: Votacións
+        web_participants: Participantes na web
+        total_participants: Participantes totais
+        poll_questions: "Preguntas por votación: %{poll}"
+        table:
+          poll_name: Votación
+          question_name: Pregunta
+          origin_web: Participantes web
+          origin_total: Participantes totais
+    tags:
+      create: Crear tema
+      destroy: Eliminar tema
+      index:
+        add_tag: Engade un novo tema para as propostas
+        title: Temas das propostas
+        topic: Tema
+        help: "Cando un usuario crea unha proposta, amosanse os seguintes temas como etiquetas predeterminadas."
+      name:
+        placeholder: Escribe o nome do tema
+    users:
+      columns:
+        name: Nome
+        email: Correo electrónico
+        document_number: Dni/pasaporte/tarxeta de residencia
+        roles: Roles
+        verification_level: Nivel de verificación
+      index:
+        title: Usuarios
+        no_users: Non hai usuarios.
+      search:
+        placeholder: Buscar usuarios por correo electrónico, nome ou DNI
+        search: Buscar
+    verifications:
+      index:
+        phone_not_given: Non deu o seu teléfono
+        sms_code_not_confirmed: Non introduciu o seu código de seguridade
+        title: Confirmacións incompletas
+    site_customization:
+      content_blocks:
+        information: Información sobre bloques de contido
+        about: Pode crear bloques de contido HTML para ser inseridos na cabeceira ou no rodapé do seu CONSUL.
+        top_links_html: "Os <strong>bloques da cabeceira (top_links)</strong> son bloques que deben ter este formato:"
+        footer_html: "Os <strong> bloques do rodapé</strong> poden ter calquera formato, e poden usarse para inserir Javascript, CSS ou HTML personalizado."
+        no_blocks: "Non hai bloques de contido."
+        create:
+          notice: O bloque creouse correctamente
+          error: Non se puido crear o bloque
+        update:
+          notice: O bloque actualizouse correctamente
+          error: Non se puido actualizar o bloque
+        destroy:
+          notice: O bloque borrouse correctamente
+        edit:
+          title: Editar bloque
+        errors:
+          form:
+            error: Erro
+        index:
+          create: Crear un novo bloque
+          delete: Borrar bloque
+          title: Bloques de contido
+        new:
+          title: Crear un novo bloque de contido
+        content_block:
+          body: Contido
+          name: Nome
+          names:
+            top_links: Destacados
+            footer: Rodapé
+            subnavigation_left: Esquerda Navegación Principal
+            subnavigation_right: Dereita Navegación Principal
+      images:
+        index:
+          title: Personalizar imaxes
+          update: Actualizar
+          delete: Borrar
+          image: Imaxe
+        update:
+          notice: Imaxe actualizada correctamente
+          error: Non se puido actualizar a imaxe
+        destroy:
+          notice: A imaxe borrouse correctamene
+          error: Non se puido borrar a imaxe
+      pages:
+        create:
+          notice: A páxina creouse correctamente
+          error: Non se puido crear a páxina
+        update:
+          notice: A páxina actualizouse correctamente
+          error: Non se puido actualizar a páxina
+        destroy:
+          notice: A páxina borrouse correctamente
+        edit:
+          title: Editar %{page_title}
+        errors:
+          form:
+            error: Erro
+        form:
+          options: Opcións
+        index:
+          create: Crear unha páxina nova
+          delete: Borrar páxina
+          title: Páxinas personalizadas
+          see_page: Ver páxina
+        new:
+          title: Crear unha páxina nova
+        page:
+          created_at: Creada
+          status: Estado
+          updated_at: Última actualización
+          status_draft: Bosquexo
+          status_published: Publicada
+          title: Título
+          slug: URL
+    homepage:
+      title: Páxina principal
+      description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
+      header_title: Cabeceira
+      no_header: Non hai cabeceiras.
+      create_header: Crear cabeceira
+      cards_title: Tarxetas
+      create_card: Crear tarxeta
+      no_cards: Non hai tarxetas.
+      cards:
+        title: Título
+        description: Descrición
+        link_text: Texto da ligazón
+        link_url: URL da ligazón
+      feeds:
+        proposals: Propostas
+        debates: Debates
+        processes: Procesos
+      new:
+        header_title: Nova cabeceira
+        submit_header: Crear cabeceira
+        card_title: Nova tarxeta
+        submit_card: Crear tarxeta
+      edit:
+        header_title: Editar cabeceira
+        submit_header: Gardar cabeceira
+        card_title: Editar tarxeta
+        submit_card: Gardar tarxeta
+    translations:
+      remove_language: Eliminar idioma
+      add_language: Engadir idioma

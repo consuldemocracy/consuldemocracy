@@ -1,0 +1,177 @@
+de:
+  pages:
+    conditions:
+      title: Allgemeine Nutzungsbedingungen
+      subtitle: RECHTLICHE HINWEISE BEZÜGLICH DER NUTZUNG, SCHUTZ DER PRIVATSPHÄRE UND PERSONENBEZOGENER DATEN DES OPEN GOVERNMENT-PORTALS
+      description: Informationsseite über die Nutzungsbedingungen, Privatsphäre und Schutz personenbezogener Daten.
+    general_terms: Allgemeine Nutzungsbedingungen
+    help:
+      title: "%{org} ist eine Plattform zur Bürgerbeteiligung"
+      guide: "Diese Anleitung erklärt Ihnen, was die einzelnen %{org}-Abschnitte sind und wie diese funktionieren."
+      menu:
+        debates: "Diskussionen"
+        proposals: "Vorschläge"
+        budgets: "Bürgerhaushalte"
+        polls: "Umfragen"
+        other: "Weitere interessante Informationen"
+        processes: "Gesetzgebungsverfahren"
+      debates:
+        title: "Diskussionen"
+        description: "Im %{link}-Abschnitt können Sie Ihre Meinung zu Anliegen in Ihrer Stadt äußern und mit anderen Menschen teilen. Zudem ist es ein Bereich, in dem Ideen generiert werden können, die durch andere Abschnitte der %{org} zu Handlungen des Stadtrates führen."
+        link: "Bürger-Debatten"
+        feature_html: "Sie können Diskussionen eröffnen, kommentieren und mit <strong> Ich stimme zu</strong> oder <strong>Ich stimme nicht zu</strong> bewerten. Hierfür müssen Sie %{link}."
+        feature_link: "registrieren für %{org}"
+        image_alt: "Button, um die Diskussionen zu bewerten"
+        figcaption: '"Ich stimme zu" und "Ich stimme nicht zu" Buttons, um die Diskussion zu bewerten.'
+      proposals:
+        title: "Vorschläge"
+        description: "Im %{link}-Abschnitt können Sie Anträge an den Stadtrat stellen. Die Anträge brauchen dann Unterstützung. Wenn Ihr Antrag ausreichend Unterstützung bekommt, wird er zur öffentlichen Wahl freigegeben. Anträge, die durch Bürgerstimmen bestätigt wurden, werden vom Stadtrat angenommen und umgesetzt."
+        link: "Bürgervorschläge"
+        image_alt: "Button zur Unterstützung eines Vorschlags"
+        figcaption_html: 'Button zur "Unterstützung" eines Vorschlags.'
+      budgets:
+        title: "Bürgerhaushalt"
+        description: "Der %{link}-Abschnitt hilft Personen eine direkte Entscheidung zu treffen, für was das kommunale Budget ausgegeben werden soll."
+        link: "Bürgerhaushalte"
+        image_alt: "Verschiedene Phasen eines partizipativen Haushalts"
+        figcaption_html: '"Unterstützungs"- und "Wahlphasen" kommunaler Budgets.'
+      polls:
+        title: "Umfragen"
+        description: "Der %{link}-Abschnitt wird aktiviert, wann immer ein Antrag 1% an Unterstützung erreicht und zur Abstimmung übergeht, oder wenn der Stadtrat ein Problem zur Abstimmung vorlegt."
+        link: "Umfragen"
+        feature_1: "Um an der Abstimmung teilzunehmen, müssen Sie %{link} und Ihr Konto verifizieren."
+        feature_1_link: "anmelden %{org_name}"
+      processes:
+        title: "Prozesse"
+        description: "Im %{link}-Abschnitt nehmen Bürger an der Ausarbeitung und Änderung von, die Stadt betreffenden, Bestimmungen teil und können ihre Meinung bezüglich kommunaler Richtlinien in vorausgehenden Debatten äußern."
+        link: "Prozesse"
+      faq:
+        title: "Technische Probleme?"
+        description: "Lesen Sie die FAQs und finden Sie Antworten auf Ihre Fragen."
+        button: "Zeige häufig gestellte Fragen"
+        page:
+          title: "Häufige gestellte Fragen"
+          description: "Benutzen Sie diese Seite, um gängige FAQs der Seiten-Nutzer zu beantworten."
+          faq_1_title: "Frage 1"
+          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der ersten Frage."
+      other:
+        title: "Weitere interessante Informationen"
+        how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
+      how_to_use:
+        text: |-
+          Verwenden Sie diese Anwendung in Ihrer lokalen Regierung, oder helfen Sie uns sie zu verbessern, die Software ist kostenlos.
+          
+          Dieses offene Regierungs-Portal benutzt die [CONSUL-App](https://github.com/consul/consul 'consul github'), die eine freie Software, mit der Lizens [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) ist. Einfach gesagt, bedeutet das, dass jeder diesen Code frei benutzen, kopieren, detailiert betrachten, modifizieren und Versionen, mit gewünschten Modifikationen neu an die Welt verteilen kann (wobei anderen gestattet wird, dasselbe zu tun). Denn wir glauben, dass Kultur besser und ergiebiger ist, wenn sie öffentlich wird.
+          
+          Wenn Sie ein Programmierer sind, können Sie den Code betrachten und uns helfen diesen auf [CONSUL app](https://github.com/consul/consul 'consul github') zu verbessern.
+      titles:
+        how_to_use: Verwenden Sie diese in Ihrer lokalen Regierung
+    privacy:
+      title: Datenschutzbestimmungen
+      subtitle: INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN
+      info_items:
+        - 
+          text: Die Navigation durch die Informationen auf dem Open Government Portal ist anonym.
+        - 
+          text: Um die im Open Government Portal angebotenen Dienste nutzen zu können, muss sich der/die Benutzer*in registrieren und persönliche Daten bereitstellen.
+        - 
+          text: 'Die bereitgestellten Daten werden von der lokalen Stadtverwaltung aufgenommen und verarbeitet. Dies folgt in Übereinstimmung mit den Bedingungen in der folgenden Datei:'
+        - 
+          subitems:
+            - 
+              field: 'Dateiname:'
+              description: NAME DER DATEI
+            - 
+              field: 'Verwendung der Datei:'
+              description: Steuert Beteiligungsverfahren, um die Qualifikation der an ihnen beteiligten Personen sowie numerische und statistische Nachzählungen der Ergebnisse von Bürgerbeteiligungsprozessen zu kontrollieren.
+            - 
+              field: 'Für die Datei verantwortliche Institution:'
+              description: FÜR DIE DATEI VERANTWORTLICHE INSTITUTION
+        - 
+          text: Die interessierte Partei kann die Rechte auf Zugang, Berichtigung, Löschung und Widerspruch vor der zuständigen Stelle ausüben, die alle gemäß Artikel 5 des Gesetzes 15/1999 vom 13. Dezember über den Schutz persönlicher Daten mitgeteilt wurden.
+        - 
+          text: Als allgemeiner Grundsatz, teilt oder veröffentlicht diese Webseite keine erhaltenen Informationen, außer dies wird vom Nutzer autorisiert, oder die Information wird von der Justizbehörde, der Staatsanwaltschaft, der Gerichtspolizei, oder anderen Fällen, die in Artikel 11 des Organic Law 15/1999 vom 13ten Dezember bezüglich des Schutzes persönlicher Daten festgelegt sind, benötigt.
+    accessibility:
+      title: Zugänglichkeit
+      description: |-
+        Unter Webzugänglichkeit versteht man die Möglichkeit des Zugangs aller Menschen zum Web und seinen Inhalten, unabhängig von den Behinderungen (körperlich, geistig oder technisch), die sich aus dem Kontext der Nutzung (technologisch oder ökologisch) ergeben können. 
+        
+        Wenn Websites unter dem Gesichtspunkt der Barrierefreiheit gestaltet werden, können alle Nutzer beispielsweise unter gleichen Bedingungen auf Inhalte zugreifen:
+      examples:
+        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - Wenn Videos Untertitel haben, können Nutzer mit Hörproblemen diese voll und ganz verstehen.
+        - Wenn die Inhalte in einer einfachen und anschaulichen Sprache geschrieben sind, können Nutzer mit Lernproblemen diese besser verstehen.
+        - Wenn der Nutzer Mobilitätsprobleme hat und es schwierig ist die Maus zu bedienen, helfen Tastatur-Alternativen mit der Navigation.
+      keyboard_shortcuts:
+        title: Tastaturkürzel
+        navigation_table:
+          description: Um auf dieser Website barrierefrei navigieren zu können, wurde eine Gruppe von Schnellzugriffstasten programmiert, die die wichtigsten Bereiche des allgemeinen Interesses, in denen die Website organisiert ist, zusammenfassen.
+          caption: Tastaturkürzel für das Navigationsmenü
+          key_header: Schlüssel
+          page_header: Seite
+          rows:
+            - 
+              key_column: 0
+              page_column: Start
+            - 
+              key_column: 1
+              page_column: Diskussionen
+            - 
+              key_column: 2
+              page_column: Vorschläge
+            - 
+              key_column: 3
+              page_column: Stimmen
+            - 
+              key_column: 4
+              page_column: Bürgerhaushalte
+            - 
+              key_column: 5
+              page_column: Gesetzgebungsverfahren
+        browser_table:
+          description: 'Abhängig vom Betriebssystem und dem verwendeten Browser lautet die Tastenkombination wie folgt:'
+          caption: Tastenkombination je nach Betriebssystem und Browser
+          browser_header: Browser
+          key_header: Tastenkombination
+          rows:
+            - 
+              browser_column: Internet Explorer
+              key_column: ALT + Tastenkombination dann ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + Kürzel
+            - 
+              browser_column: Chrome
+              key_column: ALT + Kürzel (STRG + ALT + Kürzel für MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + Kürzel (CMD + ALT + Kürzel für MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + Kürzel
+      textsize:
+        title: Textgröße
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+    titles:
+      accessibility: Barrierefreiheit
+      conditions: Nutzungsbedingungen
+      help: "Was ist %{org}? -Bürgerbeteiligung"
+      privacy: Datenschutzregelung
+    verify:
+      code: Code, den Sie per Brief/SMS erhalten haben
+      email: E-Mail
+      info: 'Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:'
+      info_code: 'Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:'
+      password: Passwort
+      submit: Mein Benutzerkonto verifizieren
+      title: Verifizieren Sie Ihr Benutzerkonto

@@ -10,23 +10,32 @@ module Verification
     scope :incomplete_verification, -> { includes([:organization, :failed_census_calls]).where("(users.residence_verified_at IS NULL AND users.failed_census_calls_count > ?) OR (users.residence_verified_at IS NOT NULL AND (users.unconfirmed_phone IS NULL OR users.confirmed_phone IS NULL))", 0)  }
   end
 
+  def skip_verification?
+    Setting["feature.user.skip_verification"].present?
+  end
+
   def verification_email_sent?
+    return true if skip_verification?
     email_verification_token.present?
   end
 
   def verification_sms_sent?
+    return true if skip_verification?
     unconfirmed_phone.present? && sms_confirmation_code.present?
   end
 
   def verification_letter_sent?
+    return true if skip_verification?
     letter_requested_at.present? && letter_verification_code.present?
   end
 
   def residence_verified?
+    return true if skip_verification?
     residence_verified_at.present?
   end
 
   def sms_verified?
+    return true if skip_verification?
     confirmed_phone.present?
   end
 
@@ -36,6 +45,7 @@ module Verification
   end
 
   def level_three_verified?
+    return true if skip_verification?
     verified_at.present?
   end
 

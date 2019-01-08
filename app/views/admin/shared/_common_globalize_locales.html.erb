@@ -1,0 +1,18 @@
+<% I18n.available_locales.each do |locale| %>
+  <div class="text-right">
+    <%= link_to t("admin.translations.remove_language"), "#",
+                id: "js_delete_#{locale}",
+                style: display_translation_style(resource, locale),
+                class: 'delete js-delete-language',
+                data: { locale: locale } %>
+  </div>
+<% end %>
+
+<%= render "admin/shared/globalize_tabs", resource: resource, display_style: display_style %>
+
+<div class="small-12 medium-6">
+  <%= select_tag :translation_locale,
+                 options_for_locale_select,
+                 prompt: t("admin.translations.add_language"),
+                 class: "js-globalize-locale" %>
+</div>

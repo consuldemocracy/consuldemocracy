@@ -1,0 +1,129 @@
+ar:
+  pages:
+    help:
+      guide: "هذا الدليل يوضح ما الهدف من الأقسام %{org} وكيفية عملها."
+      debates:
+        feature_html: "يمكنك فتح حوار أو التعليق والتقييم على حوار موجود <strong>أنا اتفق مع</strong> أو <strong>لا أوافق على</strong>. من خلال %{link}."
+        feature_link: "سجل في %{org}"
+        image_alt: "أزرار تقييم الحوارات"
+        figcaption: '"اوافق" و "لا اوافق" لتقييم الحوارات.'
+      proposals:
+        title: "مقترحات"
+        link: "مقترحات المواطنين"
+        image_alt: "زر لدعم اقتراح"
+        figcaption_html: 'الزر "دعم" اقتراح.'
+      faq:
+        title: "مشاكل فنية؟"
+    privacy:
+      title: سياسة الخصوصية
+      subtitle: معلومات بخصوص خصوصية البيانات
+      info_items:
+        - 
+        - 
+        - 
+        - 
+          subitems:
+            - 
+              field: 'اسم الملف:'
+              description: اسم الملف
+            - 
+              field: 'الهدف من الملف:'
+            - 
+    accessibility:
+      description: |-
+        يشير مفهوم (سهولة التصفح) إلى إمكانية الوصول إلى شبكة الإنترنت ومحتوياتها من قبل جميع الناس، بغض النظر عن الإعاقة (المادية أو الفكرية أو الفنية) التي قد تحدث، أو من تلك التي تحدث في السياق (التكنولوجي أو البيئي).
+        
+        عندما يتم تصميم المواقع الإلكترونية وفقا لمفهوم (سهولة التصفح)،سيتمكن كافة المستخدمين من الوصول إلى المحتوى في ظروف متساوية، على سبيل المثال:
+      examples:
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - إذا كان المستخدم لديه مشاكل في التنقل ومن الصعب عليه استخدام الفأرة، فهناك بدائل في لوحة المفاتيح ستساعده في عملية التصفح.
+      keyboard_shortcuts:
+        title: اختصارات لوحة المفاتيح
+        navigation_table:
+          caption: اختصارات لوحة المفاتيح لتصفح القائمة
+          key_header: مفتاح
+          page_header: الصفحة
+          rows:
+            - 
+              key_column: 0
+              page_column: الصفحة الرئيسية
+            - 
+              key_column: 1
+              page_column: الحوارات
+            - 
+              key_column: 2
+              page_column: إقتراحات
+            - 
+              key_column: 3
+              page_column: الأصوات
+            - 
+              key_column: 4
+              page_column: الميزانية التشاركية
+            - 
+              key_column: 5
+              page_column: العمليات التشريعية
+        browser_table:
+          browser_header: مستعرض
+          key_header: تركيبة المفاتيح
+          rows:
+            - 
+              browser_column: إكسبلورر
+              key_column: ALT + الاختصار ثم ENTER
+            - 
+              browser_column: فايرفوكس
+              key_column: ALT + CAPS + الاختصار
+            - 
+              browser_column: كروم
+              key_column: ALT + الاختصار (CTRL + ALT + اختصارات ل MAC)
+            - 
+              browser_column: سفاري
+              key_column: ALT + الاختصار (CMD + اختصار ل MAC)
+            - 
+              browser_column: أوبرا
+              key_column: CAPS + ESC + الاختصار
+      textsize:
+        title: حجم النص
+        browser_settings_table:
+          browser_header: مستعرض
+          action_header: إجراءات واجب اتخاذها
+          rows:
+            - 
+              browser_column: إكسبلورر
+              action_column: عرض > حجم النص
+            - 
+              browser_column: فايرفوكس
+              action_column: عرض > الحجم
+            - 
+              browser_column: كروم
+              action_column: إعدادات (رمز) > خيارات > متقدم > محتوى الويب > حجم النص
+            - 
+              browser_column: سفاري
+              action_column: عرض > التكبير/التصغير
+            - 
+              browser_column: أوبرا
+              action_column: عرض > مقياس
+        browser_shortcuts_table:
+          description: 'طريقة أخرى لتعديل حجم النص استخدام اختصارات لوحة المفاتيح المحددة في المستعرضات:'
+          rows:
+            - 
+              shortcut_column: CTRL و + (CMD و + على الماك)
+              description_column: زيادة حجم النص
+            - 
+              shortcut_column: CTRL و - (CMD و - على الماك)
+              description_column: تصغير حجم النص
+      compatibility:
+        title: التوافق مع المعايير والتصميم المرئي
+    titles:
+      accessibility: إمكانية الوصول
+      conditions: شروط الاستخدام
+      privacy: سياسة الخصوصية
+    verify:
+      code: الكود الذي وصل في الرسالة
+      email: البريد الإلكتروني
+      info: 'للتحقق من حسابك ادخل بيانات الدخول الخاصة بك:'
+      info_code: 'الرجاء إدخال الكود التي وصل إلى بريدك الالكتروني:'
+      password: كلمة المرور
+      submit: التحقق من حسابي
+      title: التحقق من حسابك

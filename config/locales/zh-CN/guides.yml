@@ -1,0 +1,18 @@
+zh-CN:
+  guides:
+    title: "您对%{org} 有什么想法吗？"
+    subtitle: "选择您想要创建的内容"
+    budget_investment:
+      title: "一个投资项目"
+      feature_1_html: "如何使用部分<strong>市政预算</strong>的想法"
+      feature_2_html: "投资项目在<strong>一月和三月之间</strong>被接受"
+      feature_3_html: "如果得到支持，而且又是可行和符合市政能力的，它会进入投票阶段"
+      feature_4_html: "如果公民批准通过这些项目，它们将成为现实"
+      new_button: 我想创建预算投资
+    proposal:
+      title: "公民提议"
+      feature_1_html: "关于任何市政局可以采取一些行动的想法"
+      feature_2_html: "在%{org} 里需要<strong>%{votes} 个支持</strong>才可以进入投票"
+      feature_3_html: "您可以在任何时候激活它，您有<strong>一年</strong>的时间可以得到支持"
+      feature_4_html: "如果在表决中通过，市政局就会接受此提议"
+      new_button: 我想创建一个提议

@@ -1,0 +1,112 @@
+ast:
+  budgets:
+    ballots:
+      show:
+        title: Los mios votos
+        amount_spent: Costu total
+        remaining: "Te queden <span>%{amount}</span> para invertir."
+        no_balloted_group_yet: "Inda nun votasti proyectos d'esti grupu, ¡vota!"
+        remove: Quitar votu
+        voted_html:
+          one: "Votasti <span>una</span> propuesta."
+          other: "Votasti <span>%{count}</span> propuestes."
+        voted_info_html: "Pues camudar los tos votos en cualesquier momentu hasta'l zarru d'esta fase.<br> Nun fai falta que gastes tol dineru disponible."
+      reasons_for_not_balloting:
+        not_logged_in: Precises %{signin} o %{signup} pa siguir.
+        not_verified: Les propuestes d'inversión namás puen ser sofitaes por usuarios verificaos, %{verify_account}.
+        organization: Les organizaciones nun puen votar
+        not_selected: Non puen votase propuestes invidables
+        not_enough_money_html: "Yá asignasti'l presupuestu disponible.<br><small>Recuerda que pues %{change_ballot} en cualesquier momentu</small>"
+        no_ballots_allowed: El periodu de votación ta zarráu
+        change_ballot: camudar los tos votos
+    groups:
+      show:
+        title: Escueye una opción
+        unfeasible_title: Propuestes invidables
+        unfeasible: Ver propuestes invidables
+        unselected_title: Propuestes non escoyíes pa la votación final
+        unselected: Ver les propuestes ensin escoyer pa la votación final
+    phase:
+      accepting: Presentación de proyeutos
+      reviewing: Revisión interna de proyeutos
+      selecting: Fase de sofitos
+      valuating: Evaluación de proyeutos
+      finished: Resultancies
+    index:
+      title: Presupuestos participativos
+    investments:
+      form:
+        tag_category_label: "Categoríes"
+        tags_instructions: "Etiqueta esta propuesta. Puedes escoyer ente les categoríes propuestes o introducir les que deseyes"
+        tags_label: Etiquetes
+        tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
+      index:
+        title: Presupuestos participativos
+        unfeasible: Propuestes d'inversión invidables
+        by_heading: "Propuestes d'inversión con ámbitu: %{heading}"
+        search_form:
+          placeholder: Atopar propuestes d'inversión...
+        search_results_html:
+          one: " que contien <strong>'%{search_term}'</strong>"
+          other: " que contienen <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Los mios votos
+          voted_html:
+            one: "<strong>Votasti xuna propuesta por un costu de %{amount_spent}</strong>"
+            other: "<strong>Votasti %{count} propuestes por un costu de %{amount_spent}</strong>"
+          voted_info: Puedes %{link} en cualesquier momentu hasta'l zarru d'esta fase. Nun fai falta que gastes tol dineru disponible.
+          voted_info_link: camudar los tos votos
+          different_heading_assigned_html: "Yá sofitasti propuestes d'otra sección del presupuestu: %{heading_link}"
+          change_ballot: "Si camudes d'opinión pues borrar los tos votos en %{check_ballot} y volver principiar."
+          check_ballot_link: "revisar los mios votos"
+          verified_only: "Pa crear una nueva propuesta d'inversión %{verify}."
+          verify_account: "verifica la to cuenta"
+          not_logged_in: "Pa crear una nueva propuesta d'inversión debes %{sign_in} o %{sign_up}."
+          sign_in: "accesu"
+          sign_up: "rexistrate"
+          by_feasibility: Por viabilidá
+          feasible: Ver los proyeutos vidables
+          unfeasible: Ver los proyeutos invidables
+        orders:
+          random: aleatories
+          confidence_score: meyor valoraes
+          price: por costu
+      show:
+        author_deleted: Usuariu esaniciáu
+        price_explanation: Informe de costu
+        unfeasibility_explanation: Informe de inviabilidá
+        code_html: 'Códigu propuesta de gastu: <strong>%{code}</strong>'
+        location_html: 'Allugamientu: <strong>%{location}</strong>'
+        share: Compartir
+        title: Propuesta d'inversión
+        supports: Sofitos
+        votes: Votos
+        price: Costu
+        milestones_tab: Siguimientu
+      wrong_price_format: Solo pue incluyir calteres numbéricos
+      investment:
+        add: Votar
+        already_added: Yá añedisti esta propuesta d'inversión
+        support_title: Sofitar esta propuesta
+        supports:
+          one: 1 sofitu
+          other: "%{count} sofitos"
+        give_support: Sofitar
+      header:
+        check_ballot: Revisar los mios votos
+    show:
+      group: Grupu
+      phase: Fase actual
+      see_results: Ver resultancies
+    results:
+      link: Resultancies
+      page_title: "%{budget} - Resultancies"
+      heading: "Presupuestes participativos, resultancies"
+      spending_proposal: Títulu
+      ballot_lines_count: Votos
+      hide_discarded_link: Despintar refugaes
+      show_all_link: Amosar toes
+      amount_available: Presupuestu disponible
+      accepted: "Propuesta d'inversión aceptada: "
+      discarded: "Propuesta d'inversión refugada: "
+      incompatibles: Incompatibles

@@ -1,0 +1,92 @@
+sl:
+  pages:
+    census_terms: Za potrjevanje računa moraš biti star/-a vsaj 16 let in biti registriran/-a. Z nadaljevanjem verifikacijskega procesa dovoljuješ preverbo vseh informacij, ki si jih vnesel/-la, ter dovoljuješ, da te kontaktiramo. Podatki bodo pridobljeni in procesirani skladno s pogoji uporabe portala.
+    conditions: Pogoji uporabe
+    general_terms: Pogoji uporabe
+    help:
+      title: "%{org} je platforma državljanske participacije"
+      subtitle: "V %{org} lahko oddajaš predloge, glasove in posvetovanja z državljani, predlagaš projekte participatornega proračuna, se odločaš o občinskih predpisih in odpiraš razprave za izmenjevanje mnenj z drugimi."
+      guide: "This guide explains what each of the %{org} sections are for and how they work."
+      menu:
+        debates: "Razprave"
+        proposals: "Predlogi"
+        budgets: "Participatorni proračuni"
+        polls: "Glasovanja"
+        other: "Druge relevantne informacije"
+        processes: "Procesi"
+      debates:
+        title: "Razprave"
+        description: "V sekciji %{link} lahko predstavljaš in deliš svoje mnenje o temah, ki se tičejo občine, z drugimi zainteresiranimi. Prav tako je to prostor za generiranje idej, ki skozi druge sekcije %{org} vodijo v konkretna dejanja občinskih svetov."
+        link: "Državljanske razprave"
+        feature_html: "Lahko odpiraš razprave, jih komentiraš in ocenjuješ s <strong>Strinjam se</strong> ali <strong>Ne strinjam se</strong>. Za to se moraš %{link}."
+        feature_link: "registrirati v %{org}"
+        image_alt: "Gumbi za ocenjevanje razprav"
+        figcaption: '"Strinjam se" in "Ne strinjam se" gumba za ocenjevanje razprav.'
+      proposals:
+        title: "Predlogi"
+        description: "V sekciji %{link} lahko oddajaš predloge za občinski svet. Ti predlogi potrebujejo podporo in če je dobijo dovolj, gredo na javno glasovanje. Predlogi, ki na glasovanju uspejo, so sprejeti s strani občinskega sveta in tudi izvedeni."
+        link: "Državljanski predlogi"
+        feature_html: "Za ustvarjanje predloga se moraš registrirati v %{org}. Predlogi, ki dobijo 1 % podporo uporabnikov z glasovalno pravico (%{supports} podpornikov starejših od 16 let), gredo na glasovanje. Za podpiranje predlogov je potrebno verificirati račun."
+        image_alt: "Gumb za podporo predloga"
+        figcaption_html: 'Gumb "Podpri" predlog.<br>Ko doseže potrebno število podpornikov, gre v glasovanje.'
+      budgets:
+        title: "Participatorni proračun"
+        description: "Sekcija %{link} pomaga ljudem sprejemati direktne odločitve o tem, za kaj se porabi del občinskega proračuna."
+        link: "Participatorni proračuni"
+        feature: "V tem procesu ljudje vsako leto predlagajo, podpirajo in glasujejo o projektih. Predlogi z največ glasovi so financirani z občinskim proračunom."
+        phase_1_html: "Med januarjem in marcem ljudje, registrirani v %{org} lahko <strong>predstavljajo predloge</strong>."
+        phase_2_html: "V marcu predlagatelji lahko nabirajo podporo za <strong>pred-selekcijo</strong>."
+        phase_3_html: "Med aprilom in začetkom maja strokovnjaki iz <strong>občinskega sveta ocenijo</strong> projekte po vrstnem redu glede na podporo in preverijo, da so izvedljivi."
+        phase_4_html: "Med majem in junijem lahko vsi volivci <strong>glasujejo</strong> za projekte, ki se jim zdijo zanimivi."
+        phase_5_html: "Občinski svet začne uresničevati zmagovalne projekte prihodnje leto, ko sprejme proračun."
+        image_alt: "Različne faze participatornega proračuna"
+        figcaption_html: '"Podpora" and "Glasovanje" fazi participatornega proračuna.'
+      polls:
+        title: "Glasovanje"
+        description: "Sekcija %{link} se aktivira vsakič, ko predlog dobi 1 % podporo in gre na glasovanje ali ko občinski svet ljudem postavi vprašanje, glede katerega želi, da se opredelijo."
+        link: "Glasovanja"
+        feature_1: "Za sodelovanje na glasovanju moraš obiskati %{link} in verificirati svoj račun."
+        feature_1_link: "registriraj se v %{org_name}"
+        feature_2: "Vsi registrirani volivci, starejši od 16 let, lahko glasujejo."
+        feature_3: "Rezultati vseh glasovanj so zavezujoči za vodstvo občine."
+      processes:
+        title: "Procesi"
+        description: "V sekciji %{link}, državljani sodelujejo v pisanju osnutkov in popravkov regulacij, ki se tičejo mesta oz. občine, in lahko podajajo mnenja o občinskih politikah."
+        link: "Procesi"
+        feature: "Za sodelovanje v procesu se moraš %{sign_up} in redno preverjati stran %{link}, da vidiš, o katerih regulacijah in politikah poteka razprava in izmenjava mnenj."
+        sign_up: "registrirati v %{org}"
+      faq:
+        title: "Tehnične težave?"
+        description: "Preberi FAQ in najdi odgovore na svoja vprašanja."
+        button: "Oglej si pogosto zastavljena vprašanja"
+        page:
+          title: "Pogosto zastavljena vprašanja (FAQ)"
+          description: "Uporabi to stran, da razrešiš najpogostejše dileme uporabnikov tega spletnega mesta."
+          faq_1_title: "1. Vprašanje"
+          faq_1_description: "Primer vprašanja."
+      other:
+        title: "Druge relevantne informacije"
+        how_to_use: "Uporabi %{org_name} v svojem mestu/občini"
+      how_to_use:
+        text: |-
+          Uporabi orodje v svojem lokalnem okolju ali pa nam ga pomagaj nadgraditi, gre za zastonjsko programsko opremo.
+
+          Ta Open Government Portal uporablja [CONSUL app](https://github.com/consul/consul 'consul github'), ki je zastonj in ima [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ki preprosto pomeni, da lahko vsakdo prosto uporablja, kopira, si ogleduje, modificira in redistribuira kodo, dokler to počne pod istimi pogoji.
+
+          Če si programer/-ka, si lahko kodo ogledaš tukaj: [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Uporabi orodje v svojem lokalnem okolju 
+    privacy: Politiko zasebnosti
+    titles:
+      accessibility: Dostopnosti
+      conditions: Pogoji uporabe
+      help: "Kaj je %{org}? - državljanska participacija"
+      privacy: Zasebnostna politika
+    verify:
+      code: Koda, ki si jo prejel/-a po e-pošti
+      email: E-naslov
+      info: 'Za preverjanje svojega računa vnesi svoje podatke o dostopu:'
+      info_code: 'Zdaj vnesi kodo, ki si jo prejel/-a po e-pošti:'
+      password: Geslo
+      submit: Verificiraj moj račun
+      title: Verificiraj svoj račun

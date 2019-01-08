@@ -1,0 +1,116 @@
+ar:
+  moderation:
+    comments:
+      index:
+        block_authors: حظر المؤلفين\المشاركين
+        confirm: هل أنت متأكد؟
+        filter: فرز
+        filters:
+          all: الكل
+          pending_flag_review: معلق
+          with_ignored_flag: شوهد
+        headers:
+          comment: التعليق
+          moderate: المشرف
+        hide_comments: إخفاء التعليقات
+        ignore_flags: شوهد
+        order: طلب
+        orders:
+          flags: العلامة مطلوبة
+          newest: الأحدث
+        title: التعليقات
+    dashboard:
+      index:
+        title: الإشراف
+    debates:
+      index:
+        block_authors: حظر المؤلفين\المشاركين
+        confirm: هل أنت متأكد؟
+        filter: فرز
+        filters:
+          all: الكل
+          pending_flag_review: معلق
+          with_ignored_flag: شوهد
+        headers:
+          debate: الحوارات
+          moderate: المشرف
+        hide_debates: حوارات مخفية
+        ignore_flags: شوهد
+        order: طلب
+        orders:
+          created_at: الأحدث
+          flags: العلامة مطلوبة
+        title: الحوارات
+    header:
+      title: الإشراف
+    menu:
+      flagged_comments: التعليقات
+      flagged_debates: الحوارات
+      flagged_investments: استثمارات الميزانية
+      proposals: مقترحات
+      proposal_notifications: اقتراح الإشعارات
+      users: حظر المستخدمين
+    proposals:
+      index:
+        block_authors: حظر المؤلفين
+        confirm: هل أنت متأكد؟
+        filter: فرز
+        filters:
+          all: الكل
+          pending_flag_review: بانتظار المراجعة
+          with_ignored_flag: شوهد
+        headers:
+          moderate: المشرف
+          proposal: اقتراح
+        hide_proposals: الإقتراحات المخفية
+        ignore_flags: شوهد
+        order: ترتيب حسب
+        orders:
+          created_at: الأحدث
+          flags: العلامة مطلوبة
+        title: مقترحات
+    budget_investments:
+      index:
+        block_authors: حظر المؤلفين\المشاركين
+        confirm: هل أنت متأكد؟
+        filter: إنتقاء \ فلترة
+        filters:
+          all: الكل
+          pending_flag_review: معلق
+          with_ignored_flag: شوهد
+        headers:
+          moderate: المشرف
+          budget_investment: ميزانية الاستثمار
+        hide_budget_investments: إخفاء استثمارات الميزانية
+        ignore_flags: شوهد
+        order: ترتيب حسب
+        orders:
+          created_at: الأحدث
+          flags: علامات أكثر
+        title: استثمارات الميزانية
+    proposal_notifications:
+      index:
+        block_authors: حظر الكاتبين
+        confirm: هل أنت متأكد؟
+        filter: إنتقاء \ فلترة
+        filters:
+          all: الكل
+          pending_review: بانتظار المراجعة
+          ignored: شوهد
+        headers:
+          proposal_notification: التنبيه لاقتراح
+        hide_proposal_notifications: الإقتراحات المخفية
+        ignore_flags: شوهد
+        order: الطلب من طرف
+        orders:
+          created_at: الأحدث
+          moderated: تمت المراجعة
+        title: التنبيه لاقتراح
+    users:
+      index:
+        hidden: محظور
+        hide: حظر
+        search: بحث
+        search_placeholder: البريد الإلكتروني أو اسم المستخدم
+        title: حظر المستخدمين
+      notice_hide: تم حظر المستخدم و إخفاء جميع المناقشات والتعليقات الخاصة به.

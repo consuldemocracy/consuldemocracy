@@ -5,16 +5,9 @@ feature 'Social media meta tags' do
   context 'Setting social media meta tags' do
 
     let(:meta_keywords) { 'citizen, participation, open government' }
-    let(:meta_title) { 'CONSUL TEST' }
-    let(:meta_description) do
-      "<p>Paragraph</p> <a href=\"http://google.es\">link</a> Lorem ipsum dolr"\
-      " sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididt"\
-      " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostud"\
-    end
-    let(:sanitized_truncated_meta_description) do
-      "Paragraph link Lorem ipsum dolr sit amet, consectetur adipisicing elit,"\
-      " sed do eiusmod tempor incididt ut labore et dolore magna aliqua. ..."
-    end
+    let(:meta_title) { 'CONSUL' }
+    let(:meta_description) { 'Citizen participation tool for an open, '\
+                             'transparent and democratic government.' }
     let(:twitter_handle) { '@consul_test' }
     let(:url) { 'http://consul.dev' }
     let(:facebook_handle) { 'consultest' }
@@ -43,19 +36,21 @@ feature 'Social media meta tags' do
     scenario 'Social media meta tags partial render settings content' do
 
       visit root_path
+      expect(page).to have_meta "keywords", with: meta_keywords
+      expect(page).to have_meta "twitter:site", with: twitter_handle
+      expect(page).to have_meta "twitter:title", with: meta_title
+      expect(page).to have_meta "twitter:description", with: meta_description
+      expect(page).to have_meta "twitter:image",
+                                 with:'http://www.example.com/social_media_icon_twitter.png'
 
-      expect(page).to have_css 'meta[name="keywords"][content="' + meta_keywords + '"]', visible: false
-      expect(page).to have_css 'meta[name="twitter:site"][content="' + twitter_handle + '"]', visible: false
-      expect(page).to have_css 'meta[name="twitter:title"][content="' + meta_title + '"]', visible: false
-      expect(page).to have_css 'meta[name="twitter:description"][content="' + sanitized_truncated_meta_description + '"]', visible: false
-      expect(page).to have_css 'meta[name="twitter:image"][content="http://www.example.com/social_media_icon_twitter.png"]', visible: false
-      expect(page).to have_css 'meta[property="og:title"][content="' + meta_title + '"]', visible: false
-      expect(page).to have_css 'meta[property="article:publisher"][content="' + url + '"]', visible: false
-      expect(page).to have_css 'meta[property="article:author"][content="https://www.facebook.com/' + facebook_handle + '"]', visible: false
-      expect(page).to have_css 'meta[property="og:url"][content="http://www.example.com/"]', visible: false
-      expect(page).to have_css 'meta[property="og:image"][content="http://www.example.com/social_media_icon.png"]', visible: false
-      expect(page).to have_css 'meta[property="og:site_name"][content="' + org_name + '"]', visible: false
-      expect(page).to have_css 'meta[property="og:description"][content="' + sanitized_truncated_meta_description + '"]', visible: false
+      expect(page).to have_property "og:title", with: meta_title
+      expect(page).to have_property "article:publisher", with: url
+      expect(page).to have_property "article:author", with: 'https://www.facebook.com/' +
+                                                             facebook_handle
+      expect(page).to have_property "og:url", with: 'http://www.example.com/'
+      expect(page).to have_property "og:image", with: 'http://www.example.com/social_media_icon.png'
+      expect(page).to have_property "og:site_name", with: org_name
+      expect(page).to have_property "og:description", with: meta_description
     end
   end
 

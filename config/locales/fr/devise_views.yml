@@ -1,4 +1,3 @@
----
 fr:
   devise_views:
     confirmations:
@@ -17,7 +16,6 @@ fr:
       confirmation_instructions:
         confirm_link: Confirmer mon compte
         text: 'Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :'
-        title: Bienvenue sur le portail Gouvernement Ouvert
         welcome: Bienvenue
       reset_password_instructions:
         change_link: Changer mon mot de passe
@@ -68,7 +66,7 @@ fr:
         title: Mot de passe oublié ?
     sessions:
       new:
-        email_label: Courriel
+        login_label: Email ou nom d’utilisateur
         password_label: Mot de passe
         remember_me: Se rappeler de moi
         submit: Entrer
@@ -118,8 +116,8 @@ fr:
           terms_link: Conditions d'utilisation
           terms_title: En vous enregistrant, vous acceptez les conditions d'utilisation.
           title: S'enregistrer
-          username_is_available: "Nom d'utilisateur disponible"
-          username_is_not_available: "Nom d'utilisateur déjà utilisé"
+          username_is_available: Nom d'utilisateur disponible
+          username_is_not_available: Nom d'utilisateur déjà utilisé
           username_label: Nom d'utilisateur
           username_note: Nom qui apparaîtra en face de vos publications
         success:
@@ -127,4 +125,4 @@ fr:
           instructions_1_html: Veuillez <b>vérifier votre adresse</b> - nous vous avons envoyé un <b>lien pour confirmer votre compte</b>.
           instructions_2_html: Une fois confirmé, vous pourrez commencer à participer.
           thank_you_html: Merci de vous être enregistré sur la plateforme. Vous devez maintenant <b>confirmer votre adresse</b>.
-          title: Modifier votre courriel
+          title: Confirmer votre adresse électronique

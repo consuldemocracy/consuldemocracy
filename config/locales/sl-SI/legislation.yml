@@ -1,0 +1,138 @@
+sl:
+  legislation:
+    annotations:
+      comments:
+        see_all: Poglej vse
+        see_complete: Poglej zaključene
+        comments_count:
+          one: "%{count} komentar"
+          two: "%{count} komentarja"
+          three: "%{count} komentarji"
+          four: "%{count} komentarji"
+          other: "%{count} komentarjev"
+        replies_count:
+          one: "%{count} odgovor"
+          two: "%{count} odgovora"
+          three: "%{count} odgovori"
+          four: "%{count} odgovori"
+          other: "%{count} odgovorov"
+        cancel: Prekliči
+        publish_comment: Objavi komentar
+      form:
+        phase_not_open: Ta faza ni odprta
+        login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
+        signin: vpisati
+        signup: registrirati
+      index:
+        title: Komentarji
+        comments_about: Komentarji o
+        see_in_context: Poglej v kontekstu
+        comments_count:
+          one: "%{count} komentar"
+          two: "%{count} komentarja"
+          three: "%{count} komentarji"
+          four: "%{count} komentarji"
+          other: "%{count} komentarjev"
+      show:
+        title: Komentar
+      version_chooser:
+        seeing_version: Komentarji za verzijo
+        see_text: Poglej osnutek besedila
+    draft_versions:
+      changes:
+        title: Spremembe
+        seeing_changelog_version: Povzetek sprememb
+        see_text: Poglej osnutek besedila
+      show:
+        loading_comments: Nalagam komentarje
+        seeing_version: Ogleduješ si osnutek
+        select_draft_version: Izberi osnutek
+        select_version_submit: poglej
+        updated_at: posodobljeno %{date}
+        see_changes: poglej povzetek sprememb
+        see_comments: Poglej vse komentarje
+        text_toc: Kazalo
+        text_body: Besedilo
+        text_comments: Komentarji
+    processes:
+      header:
+        additional_info: Dodatne informacije
+        description: Opis
+        more_info: Več informacij in kontekst
+      proposals:
+        empty_proposals: Ni predlogov
+      debate:
+        empty_questions: Ni vprašanj
+        participate: Sodeluj v razpravi
+      index:
+        filter: Filtriraj
+        filters:
+          open: Odprti procesi
+          next: Naslednji
+          past: Pretekli
+        no_open_processes: Ni odprtih procesov
+        no_next_processes: Ni načrtovanih procesov
+        no_past_processes: Ni preteklih procesov
+        section_header:
+          icon_alt: Ikona zakonodajnih procesov
+          title: Zakonodajni procesi
+          help: Pomoč glede zakonodajnih procesov
+        section_footer:
+          title: Pomoč glede zakonodajnih procesov
+          description: Sodeluj v razpravah in procesih pred odobritvijo uredbe ali občinske akcije. O tvojem mnenju bo razmislil tudi občinski/mestni svet.
+          help_text_1: "V participatornih procesih mestni/občinski svet ponuja svojim prebivalcem priložnost, da sodelujejo v pripravi osnutkov in sprememb mestnih/občinskih uredb in podajajo svoja mnenja."
+          help_text_2: "Posamezniki, registrirani v %{org} lahko s prispevki sodelujejo v javnih posvetih glede novih uredb in smernic. Tvoje komentarje analizira pristojno delovno telo, upoštevani so tudi v končnih verzijah uradnih besedil."
+          help_text_3: "Mestni/občinski svet prav tako odpira procese, preko katerih lahko prejme prispevke in mnenja o njihovih načrtih."
+      phase_not_open:
+        not_open: Ta faza še ni odprta
+      phase_empty:
+          empty: Nič še ni objavljeno
+      process:
+        see_latest_comments: Poglej zadnje komentarje
+        see_latest_comments_title: Komentarji na ta proces
+      shared:
+        key_dates: Ključni datumi
+        debate_dates: Razprava
+        draft_publication_date: Objava osnutka
+        allegations_dates: Obtožbe
+        result_publication_date: Objava končnega rezultata
+        proposals_dates: Predlogi
+    questions:
+      comments:
+        comment_button: Objavi odgovor
+        comments_title: Odprti odgovori
+        comments_closed: Zaprta faza
+        form:
+          leave_comment: Prispevaj svoj komentar
+      question:
+        comments:
+          zero: Ni komentarjev
+          one: "%{count} komentar"
+          two: "%{count} komentarja"
+          three: "%{count} komentarji"
+          four: "%{count} komentarji"
+          other: "%{count} komentarjev"
+        debate: Razprava
+      show:
+        answer_question: Dodaj odgovor
+        next_question: Naslednje vprašanje
+        first_question: Prvo vprašanje
+        share: Deli
+        title: Sodelovalni zakonodajni proces
+      participation:
+        phase_not_open: Ta faza ni odprta
+        organizations: Organizacijam ni dovoljeno sodelovati v razpravi
+        signin: vpisati
+        signup: registrirati
+        unauthenticated: Za sodelovanje se moraš %{signin} ali %{signup}.
+        verified_only: Le preverjeni uporabniki lahko sodelujejo, %{verify_account}.
+        verify_account: verificiraj svoj račun
+        debate_phase_not_open: Faza razprave se je zaključila, novi odgovori niso več mogoči
+    shared:
+      share: Deli
+      share_comment: Komentiraj na %{version_name} iz osnutka procesa %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorije"
+      not_verified: "Za glasovanje o predlogih %{verify_account}."
+      closed: "Ta proces je zaprt in ne more sprejemati glasov."

@@ -1,0 +1,55 @@
+sv:
+  seeds:
+    settings:
+      official_level_1_name: Representant för staden nivå 1
+      official_level_2_name: Representant för staden nivå 2
+      official_level_3_name: Representant för staden nivå 3
+      official_level_4_name: Representant för staden nivå 4
+      official_level_5_name: Representant för staden nivå 5
+    geozones:
+      north_district: Norra stadsdelen
+      west_district: Västra stadsdelen
+      east_district: Östra stadsdelen
+      central_district: Centrum
+    organizations:
+      human_rights: Mänskliga rättigheter
+      neighborhood_association: Lokal förening
+    categories:
+      associations: Föreningar
+      culture: Kultur
+      sports: Sport
+      social_rights: Sociala rättigheter
+      economy: Ekonomi
+      employment: Arbetsmarknad
+      equity: Jämlikhet
+      sustainability: Hållbarhet
+      participation: Deltagande
+      mobility: Transporter
+      media: Media
+      health: Hälsa
+      transparency: Transparens
+      security_emergencies: Säkerhet
+      environment: Miljö
+    budgets:
+      budget: Stadsdelar
+      currency: kr
+      groups:
+        all_city: Hela staden
+        districts: Stadsdelar
+      valuator_groups:
+        culture_and_sports: Kultur och sport
+        gender_and_diversity: Jämställdhet och mångfald
+        urban_development: Hållbar stadsutveckling
+        equity_and_employment: Jämlikhet och sysselsättning
+      statuses:
+        studying_project: Granskning av projekt
+        bidding: Budgivning
+        executing_project: Genomförande av projekt
+        executed: Genomfört
+    polls:
+      current_poll: "Aktuell omröstning"
+      current_poll_geozone_restricted: "Omröstningen är begränsad till ett geografiskt område"
+      incoming_poll: "Kommande omröstning"
+      recounting_poll: "Rösträkning"
+      expired_poll_without_stats: "Avslutad omröstning (utan statistik eller resultat)"
+      expired_poll_with_stats: "Avslutad omröstning (med statistik och resultat)"

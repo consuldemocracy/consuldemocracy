@@ -1,0 +1,129 @@
+sl:
+  valuation:
+    header:
+      title: Cenitev
+    menu:
+      title: Cenitev
+      budgets: Participatorni proračun
+      spending_proposals: Predlogi porabe
+    budgets:
+      index:
+        title: Participatorni proračun
+        filters:
+          current: Odprti
+          finished: Končani
+        table_name: Ime
+        table_phase: Faza
+        table_assigned_investments_valuation_open: Naložbeni projekti, dodeljeni s cenitvijo, so odprti
+        table_actions: Dejanja
+        evaluate: Oceni
+    budget_investments:
+      index:
+        headings_filter_all: Vsi naslovi
+        filters:
+          valuation_open: Odprti
+          valuating: V cenitvi
+          valuation_finished: Cenitev končana
+        assigned_to: "Dodeljeno cenilcu %{valuator}"
+        title: Naložbeni projekt
+        edit: Uredi
+        valuators_assigned:
+          one: 1 dodeljen cenilec
+          two: 2 dodeljena cenilca
+          three: 3 dodeljeni cenilci
+          four: 4 dodeljeni cenilci
+          other: "%{count} dodeljenih cenilcev"
+        no_valuators_assigned: Ni dodeljenih cenilcev
+        table_id: ID
+        table_title: Naslov
+        table_heading_name: Ime naslova
+        table_actions: Dejanja
+      show:
+        back: Nazaj
+        title: Naložbeni projekt
+        info: Informacije o avtorju
+        by: Poslano od
+        sent: Poslano na
+        heading: Naslov
+        dossier: Dosje
+        edit_dossier: Uredi dosje
+        price: Cena
+        price_first_year: Cena tekom prvega leta
+        currency: "€"
+        feasibility: Izvedljivost
+        feasible: Izvedljiv
+        unfeasible: Neizvedljiv
+        undefined: Nedefinirano
+        valuation_finished: Cenitev končana
+        duration: Časovni obseg
+        responsibles: Odgovornosti
+        assigned_admin: Zadolžen admin
+        assigned_valuators: Zadolženi cenilci
+      edit:
+        dossier: Dosje
+        price_html: "Cena (%{currency})"
+        price_first_year_html: "Cena tekom prvega leta (%{currency}) <small>(neobvezno, podatki niso javni)</small>"
+        price_explanation_html: Razlaga cene
+        feasibility: Izvedljivost
+        feasible: Izvedljv
+        unfeasible: Neizvedljiv
+        undefined_feasible: V teku
+        feasible_explanation_html: Razlaga izvedljivosti
+        valuation_finished: Cenitev končana
+        valuation_finished_alert: "Ali si prepričan/-a, da želiš to poročilo označiti kot končano? Ko to storiš, ga ne moreš več spreminjati."
+        not_feasible_alert: "Avtorju/-ici projekta bomo nemudoma poslali e-pošto s poročilom o izvedljivosti."
+        duration_html: Časovni obseg
+        save: Shrani spremembe
+      notice:
+        valuate: "Dosje posodobljen"
+      valuation_comments: Komentarji cenitve
+      not_in_valuating_phase: Naložbe so lahko ocenjene le, ko je proračun v fazi vrednotenja
+    spending_proposals:
+      index:
+        geozone_filter_all: Vse geocone
+        filters:
+          valuation_open: Odprti
+          valuating: V cenitvi
+          valuation_finished: Cenitev končana
+        title: Naložbeni projekti za participatorni proračun
+        edit: Uredi
+      show:
+        back: Nazaj
+        heading: Investicijski projekt
+        info: Informacije o avtorju
+        association_name: Združenje
+        by: Poslano od
+        sent: Poslano za
+        geozone: Obseg
+        dossier: Dosje
+        edit_dossier: Uredi dosje
+        price: Cena
+        price_first_year: Cena tekom prvega leta
+        currency: "€"
+        feasibility: Izvedljivost
+        feasible: Izvedljiv
+        not_feasible: Neizvedljiv
+        undefined: Nedefinirano
+        valuation_finished: Cenitev končana
+        time_scope: Časovni obseg
+        internal_comments: Interni komentarji
+        responsibles: Zadolžitve
+        assigned_admin: Zadolžen admin
+        assigned_valuators: Zadolženi cenilci
+      edit:
+        dossier: Dosje
+        price_html: "Cena (%{currency})"
+        price_first_year_html: "Cena tekom prvega leta (%{currency})"
+        currency: "€"
+        price_explanation_html: Razlaga cene
+        feasibility: Izvedljivost
+        feasible: Izvedljiv
+        not_feasible: Neizvedljiv
+        undefined_feasible: V teku
+        feasible_explanation_html: Razlaga izvedljivosti
+        valuation_finished: Cenitev končana
+        time_scope_html: Časovni obseg
+        internal_comments_html: Interni komentarji
+        save: Shrani spremembe
+      notice:
+        valuate: "Dosje posodobljen"

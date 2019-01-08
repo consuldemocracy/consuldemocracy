@@ -1,0 +1,24 @@
+gl:
+  documents:
+    title: Documentos
+    max_documents_allowed_reached_html: Chegaches ao número máximo de documentos que se permiten! <strong>Tes que borrar un antes de subires outro.</strong>
+    form:
+      title: Documentos
+      title_placeholder: Engade un título descritivo para o documento
+      attachment_label: Escoller documento
+      delete_button: Borrar documento
+      cancel_button: Cancelar
+      note: "Podes subir até un máximo de %{max_documents_allowed} documentos nos formatos seguintes: %{accepted_content_types}, e de ata %{max_file_size} MB por ficheiro."
+      add_new_document: Engadir novo documento
+    actions:
+      destroy:
+        notice: O documento eliminouse correctamente.
+        alert: O documento non se puido borrar.
+        confirm: Tes a certeza de que desexas borrar o documento? Está acción non se pode desfacer!
+    buttons:
+      download_document: Descargar ficheiro
+      destroy_document: Eliminar o documento
+    errors:
+      messages:
+        in_between: debe estar entre %{min} e %{max}
+        wrong_content_type: O tipo %{content_type} do ficheiro non coincide con ningún dos tipos de contido aceptados, %{accepted_content_types}

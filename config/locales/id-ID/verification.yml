@@ -1,0 +1,110 @@
+id:
+  verification:
+    alert:
+      lock: Anda telah mencapai jumlah usaha maksimum. Silakan coba lagi nanti.
+    back: Kembali ke akun saya
+    email:
+      create:
+        alert:
+          failure: Ada sebuah masalah dengan mengirimkan sebuah surel ke akun anda
+        flash:
+          success: 'Kami telah mengirimkan sebuah surel konfirmasi ke akun anda: %{email}'
+      show:
+        alert:
+          failure: Kode verifikasi salah
+        flash:
+          success: Anda adalah pengguna terverifikasi
+    letter:
+      alert:
+        unconfirmed_code: Anda belum memasukkan kode verifikasi
+      create:
+        flash:
+          offices: Warga Dukungan Kantor
+          success_html: Terima kasih untuk meminta <b>kode pengamanan maksimum (hanya diperlukan untuk suara akhir)</b> anda. Dalam beberapa hari kami akan mengirimkannya ke alamat yang ditampilkan dalam data yang kami miliki di berkas. Harap diingat itu, jika anda lebih suka, anda dapat mengumpulkan kode anda dari setiap %{offices}.
+      edit:
+        see_all: Melihat proposal
+        title: Surat yang diminta
+      errors:
+        incorrect_code: Kode verifikasi salah
+      new:
+        explanation: 'Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:'
+        go_to_index: Melihat proposal
+        office: Verifikasi dalam setiap %{office}
+        offices: Warga Dukungan Kantor
+        send_letter: Kirimkan saya sebuah surat dengan kode
+        title: Selamat!
+        user_permission_info: Dengan akun anda dapat...
+      update:
+        flash:
+          success: Kode benar. Akun anda sekarang telah diverifikasi
+    redirect_notices:
+      already_verified: Akun anda sudah diverifikasi
+      email_already_sent: Kami sudah mengirimkan sebuah surel dengan sebuah tautan konfirmasi. Jika anda tidak dapat menemukan surel tersebut, anda dapat meminta ulang di sini
+    residence:
+      alert:
+        unconfirmed_residency: Anda belum mengkonfirmasikan tempat tinggal anda
+      create:
+        flash:
+          success: Tempat tinggal diverifikasi
+      new:
+        accept_terms_text: Saya menerima %{terms_url} Sensus
+        accept_terms_text_title: Saya menerima syarat dan ketentuan dari akses Sensus
+        date_of_birth: Tanggal lahir
+        document_number: Nomor dokumen
+        document_number_help_title: Bantuan
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P'
+        document_type:
+          passport: Paspor
+          residence_card: Kartu kediaman
+          spanish_id: DNI
+        document_type_label: Jenis dokumen
+        error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi
+        error_not_allowed_postal_code: Supaya bisa diverifikasi, anda harus terdaftar.
+        error_verifying_census: Sensus tidak mampu untuk memverifikasi informasi anda. Silahkan konfirmasikan bahwa rincian sensus anda adalah benar dengan cara menghubungi ke Dewan Kota atau kunjungi salah satu %{offices}.
+        error_verifying_census_offices: Kantor Dukungan Warga
+        form_errors: mencegah verifikasi tempat tinggal anda
+        postal_code: Kode pos
+        postal_code_note: Untuk memverifikasi akun anda harus terdaftar
+        terms: syarat dan ketentuan akses
+        title: Verifikasi tempat tinggal
+        verify_residence: Verifikasi tinggal
+    sms:
+      create:
+        flash:
+          success: Masukkan kode konfirmasi yang dikirimkan kepada anda melalui pesan teks
+      edit:
+        confirmation_code: Masukkan kode yang anda terima di ponsel anda
+        resend_sms_link: Klik di sini untuk mengirimkannya lagi
+        resend_sms_text: Tidak mendapatkan sebuah teks dengan kode konfirmasi anda?
+        submit_button: Kirim
+        title: Konfirmasi kode keamanan
+      new:
+        phone: Masukan nomor ponsel anda untuk menerima kode
+        phone_format_html: "<strong><em>(Contoh: 612345678 atau +34612345678)</em></strong>"
+        phone_placeholder: "Contoh: 612345678 or +34612345678"
+        submit_button: Kirim
+        title: Kirim kode konfirmasi
+      update:
+        error: Kode konfirmasi salah
+        flash:
+          level_three:
+            success: Kode yang benar. Akun anda telah terverifikasi
+          level_two:
+            success: Kode benar
+    step_1: Tempat tinggal
+    step_2: Kode konfirmasi
+    step_3: Verifikasi akhir
+    user_permission_debates: Berpartisipasi pada perdebatan
+    user_permission_info: Memverifikasi informasi anda akan dapat untuk...
+    user_permission_proposal: Membuat proposal baru
+    user_permission_support_proposal: Mendukung proposal*
+    user_permission_votes: Berpartisipasi pada akhir voting*
+    verified_user:
+      form:
+        submit_button: Kirim kode
+      show:
+        email_title: Emails
+        explanation: Kami saat ini memegang rincian berikut pada Daftar; silahkan pilih sebuah metode untuk kode konfirmasi anda yang akan dikirim.
+        phone_title: Nomor telepon
+        title: Informasi yang tersedia
+        use_another_phone: Gunakan telepon lain

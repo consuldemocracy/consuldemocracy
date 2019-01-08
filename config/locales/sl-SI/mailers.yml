@@ -1,0 +1,92 @@
+sl:
+  mailers:
+    no_reply: "To sporočilo je bilo poslano z e-naslova, ki ne sprejema odgovorov."
+    comment:
+      hi: Hej
+      new_comment_by_html: Imaš nov komentar uporabnika/-ce <b>%{commenter}</b>
+      subject: Nekdo je komentiral na tvoj %{commentable}
+      title: Nov komentar
+    config:
+      manage_email_subscriptions: Če ne želiš več prejemati teh e-sporočil, spremeni svoje nastavitve
+    email_verification:
+      click_here_to_verify: tukaj
+      instructions_2_html: Ta e-pošta bo verificirala tvoj račun z <b>%{document_type} %{document_number}</b>. Če to ni prav, klikni na prejšnji link ali ignoriraj to sporočilo.
+      instructions_html: Da zaključiš preverjanje svojega uporabniškega računa na portalu Open Government, klikni %{verification_link}.
+      subject: Potrdi svoj e-naslov
+      thanks: Najlepša hvala.
+      title: Potrdi svoj račun z uporabo naslednje povezave
+    reply:
+      hi: Hej
+      new_reply_by_html: Imaš nov odgovor uporabnika/-ce <b>%{commenter}</b> na tvoj komentar o
+      subject: Nekdo se je odzval na tvoj komentar
+      title: Nov odgovor na tvoj komentar
+    unfeasible_spending_proposal:
+      hi: "Dragi/-a uporabnik/-ca,"
+      new_html: "Vabimo te, da razviješ <strong>nov predlog</strong>, ki ustreza pogojem tega procesa. Odzoveš se lahko tako, da slediš tej povezavi: %{url}."
+      new_href: "Nov naložbeni projekt"
+      reconsider_html: "Če verjameš, da zavrnjen predlog izpolnjuje vse kriterije za investicijskege predloge, lahko vložiš ugovor v 48 urah, in sicer na e-pošto examples@consul.es. V zadevo Vključi kodo %{code}."
+      sincerely: "Uživaj"
+      signatory: "Tvoja občina / tvoje mesto"
+      sorry: "Opravičujemo se za morebitne nevšečnosti in se ti še enkrat zahvaljujemo za sodelovanje."
+      subject: "Tvoj naložbeni projekt '%{code}' je bil označen kot neizvedljiv"
+      unfeasible_html: "Iz občinske/mestne uprave se ti najlepše zahvaljujemo za sodelovanje v <strong>participatornem proračunu</strong>. Žal te moramo obvestiti, da tvoj predlog <strong>'%{title}'</strong> ne bo vključen v ta participatorni proces, ker:"
+    proposal_notification_digest:
+      info: "Tukaj so nova obvestila, objavljena s strani avtorjev predlogov, ki si jih podprl/-a v %{org_name}."
+      title: "Obvestila predlogov v %{org_name}"
+      share: Deli predlog
+      comment: Komentiraj predlog
+      unsubscribe: "Če ne želiš več prejemati obvestil predloga, obišči %{account} in odznači ustrezno nastavitev."
+      unsubscribe_account: Moj račun
+    direct_message_for_receiver:
+      subject: "Prejel/-a si novo zasebno sporočilo"
+      reply: Odgovori uporabniku/-ci %{sender}
+      unsubscribe: "Če ne želiš sprejemati direktnih sporočil, obišči %{account} in odznači ustrezno nastavitev."
+      unsubscribe_account: Moj račun
+    direct_message_for_sender:
+      subject: "Imaš novo zasebno sporočilo"
+      title_html: "Poslal/-a si novo zasebno sporočilo uporabniku/-ci <strong>%{receiver}</strong>, in sicer s to vsebino:"
+    user_invite:
+      ignore: "Če nisi zahteval/-a tega povabila, ne skrbi, preprosto ignoriraj to e-pošto."
+      text: "Hvala, ker se želiš pridružiti %{org}! V trenutku se lahko začneš odločati o tem, v kateri občini želiš sodelovati, le izpolni spodnji obrazec:"
+      thanks: "Hvala lepa."
+      title: "Dobrodošel/-a v %{org}"
+      button: Zaključi registracijo
+      subject: "Vabilo v %{org_name}"
+    budget_investment_created:
+      subject: "Hvala, ker si ustvaril/-a investicijo!"
+      title: "Hvala, ker si ustvaril/-a investicijo!"
+      intro_html: "Hej <strong>%{author}</strong>,"
+      text_html: "Zahvaljujemo se ti za ustvarjeno investicijo <strong>%{investment}</strong> za participatorni proračun <strong>%{budget}</strong>."
+      follow_html: "O tem, kako proces napreduje, te bomo sproti obveščali, lahko pa se na obvestila tudi naročiš na povezavi <strong>%{link}</strong>."
+      follow_link: "Participatorni proračuni"
+      sincerely: "Z lepimi pozdravi,"
+      signatory: "Tvoja občina"
+      share: "Deli svoj projekt"
+    budget_investment_unfeasible:
+      hi: "Dragi/-a uporabnik/-ca,"
+      new_html: "Vabimo te, da razviješ <strong>novo investicijo</strong>, ki ustreza zahtevanim pogojem tega procesa. To lahko storiš na naslednji povezavi: %{url}."
+      new_href: "Nov naložbeni projekt"
+      reconsider_html: "Če meniš, da zavrnjena naložba izpolnjuje zahtevane pogoje, lahko to v 48 urah sporočiš na e-naslov examples@consul.es. Vključi kodo %{code} v zadevo e-pošte."
+      sincerely: "Z lepimi pozdravi,"
+      signatory: "Tvoja občina"
+      sorry: "Opravičujemo se ti za morebitne nevšečnosti in se ti ponovno zahvaljujemo za sodelovanje."
+      subject: "Tvoj naložbeni projekt '%{code}' je bil označen kot neizvedljiv."
+      unfeasible_html: "Občinski svet se ti zahvaljuje za sodelovanje v <strong>participatornem proračunu</strong>. Žal te moramo obvestiti, da tvoj naložbeni projekt <strong>'%{title}'</strong> ne bo vključen v participatorni proces, saj:"
+    budget_investment_selected:
+      subject: "Tvoj naložbeni projekt '%{code}' je bil izbran"
+      hi: "Dragi/-a uporabnik/-ca,"
+      selected_html: "Občinski svet se ti zahvaljuje za tvoje sodelovanje v <strong>participatornem proračunu</strong>. Obveščamo te, da je tvoj naložbeni projekt <strong>'%{title}'</strong> izbran za fazo končnega glasovanja, ki se bo odvila med <strong>15. majem in 30. junijem</strong>."
+      share: "Začni zbirati glasove, deli svoj naložbeni projekt s prijatelji na družbenih omrežjih in zagotovi njegovo uresničitev."
+      share_button: "Deli svoj naložbeni projekt"
+      thanks: "Še enkrat hvala za sodelovanje."
+      sincerely: "Lepo se imej,"
+      signatory: "Tvoja občina"
+    budget_investment_unselected:
+      subject: "Tvoj naložbeni projekt '%{code}' ni bil izbran"
+      hi: "Dragi/-a uporabnik/-ca,"
+      unselected_html: "Občinski svet se ti zahvaljuje za sodelovanje v <strong>participatornem proračunu</strong>. Žal te moramo obvestiti, da tvoj naložbeni projekt <strong>'%{title}'</strong> ni bil izbran za fazo končnega glasovanja."
+      participate_html: "Še naprej lahko sodeluješ v glasovanju za druge investicijske projekte, in sicer <strong>od 15. maja do 30. junija</strong>."
+      participate_url: "Sodeluj v končnem glasovanju"
+      thanks: "Še enkrat hvala za sodelovanje."
+      sincerely: "Naslednjič bo bolje,"
+      signatory: "Tvoja občina"

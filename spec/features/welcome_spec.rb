@@ -68,4 +68,22 @@ feature "Welcome screen" do
     expect(page).to have_current_path(root_path)
   end
 
+  scenario 'a regular users sees it the first time he logs in, with all options active
+            if the setting skip_verification is activated' do
+
+    Setting["feature.user.skip_verification"] = 'true'
+
+    user = create(:user)
+
+    login_through_form_as(user)
+
+    4.times do |i|
+      expect(page).to have_css ".user-permissions > ul:nth-child(2) >
+                                li:nth-child(#{i + 1}) > span:nth-child(1)"
+    end
+
+    Setting["feature.user.skip_verification"] = nil
+  end
+
+
 end

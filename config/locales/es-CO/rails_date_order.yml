@@ -1,0 +1,6 @@
+es-CO:
+  date:
+    order:
+      - :day
+      - :month
+      - :year

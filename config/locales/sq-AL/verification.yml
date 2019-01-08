@@ -1,0 +1,111 @@
+sq:
+  verification:
+    alert:
+      lock: Ju keni arritur numrin maksimal të përpjekjeve për tu kycur. Ju lutem provoni përsëri më vonë.
+    back: Kthehu tek llogaria ime
+    email:
+      create:
+        alert:
+          failure: Kishte një problem me dërgimin e një email-i në llogarinë tënde
+        flash:
+          success: 'Ne kemi dërguar një email konfirmimi në llogarinë tuaj: %{email}'
+      show:
+        alert:
+          failure: Kodi i verifikimit është i pasaktë
+        flash:
+          success: Ju jeni një përdorues i verifikuar
+    letter:
+      alert:
+        unconfirmed_code: Ju nuk keni futur ende kodin e konfirmimit
+      create:
+        flash:
+          offices: Zyrat e suportit për qytetarët
+          success_html: Faleminderit që kërkuat<b>kodin maksimal të sigurisë (kërkohet vetëm për votat përfundimtare</b>.Pas disa ditësh ne do ta dërgojmë atë në adresën që shfaqet në të dhënat që kemi në dosje. Ju lutem mbani mend se, nëse preferoni, ju mund ta merni kodin tuaj nga ndonjë prej %{offices} 
+      edit:
+        see_all: Shiko propozimet
+        title: Letra e kerkuar
+      errors:
+        incorrect_code: Kodi i verifikimit është i pasaktë
+      new:
+        explanation: 'Për të marrë pjesë në votimin përfundimtar ju mund të:'
+        go_to_index: Shiko propozimet
+        office: Verifiko në çdo %{office}
+        offices: Zyrat e suportit për qytetarët
+        send_letter: Më dërgoni një letër me kodin
+        title: Urime!
+        user_permission_info: Me llogarinë tuaj ju mund të ...
+      update:
+        flash:
+          success: Kodi është i saktë. Llogaria juaj tani është verifikuar
+    redirect_notices:
+      already_verified: Llogaria juaj është verifikuar tashmë
+      email_already_sent: Ne tashmë kemi dërguar një email me një lidhje konfirmimi. Nëse nuk mund ta gjeni emailin, mund të kërkoni një ridërgim këtu
+    residence:
+      alert:
+        unconfirmed_residency: Nuk e keni konfirmuar ende vendbanimin  tuaj
+      create:
+        flash:
+          success: Vendbanimi është verifikuar
+      new:
+        accept_terms_text: Unë pranoj %{terms_url} e regjistrimit
+        accept_terms_text_title: Unë pranoj afatet dhe kushtet e qasjes së regjistrimit
+        date_of_birth: Ditëlindja
+        document_number: Numri i dokumentit
+        document_number_help_title: Ndihmë
+        document_number_help_text_html: '<strong>Dni</strong>: 12345678A<br><strong>Pashaport</strong>: AAA000001<br><strong>Residence card</strong>: X1234567P'
+        document_type:
+          passport: Pashaport
+          residence_card: Karta rezidences
+          spanish_id: DNI
+        document_type_label: Tipi i dokumentit
+        error_not_allowed_age: Ju nuk keni moshën e kërkuar për të marrë pjesë
+        error_not_allowed_postal_code: Që të verifikoheni, duhet të jeni i regjistruar.
+        error_verifying_census: Regjistrimi nuk ishte në gjendje të verifikojë informacionin tuaj. Ju lutemi konfirmoni që detajet e regjistrimit tuaj janë të sakta duke telefonuar në Këshillin e Qytetit ose vizitoni një %{offices}
+        error_verifying_census_offices: Zyrat e suportit për qytetarët
+        form_errors: pengoi verifikimin e vendbanimit tuaj
+        postal_code: Kodi Postar
+        postal_code_note: Për të verifikuar llogarinë tuaj ju duhet të jeni të regjistruar
+        terms: termat dhe kushtet e qasjes
+        title: verifikoni vendbanimin
+        verify_residence: verifikoni vendbanimin
+    sms:
+      create:
+        flash:
+          success: Futni kodin e konfirmimit të dërguar me anë të mesazhit.
+      edit:
+        confirmation_code: Shkruani kodin që keni marrë në celularin tuaj
+        resend_sms_link: Kliko këtu për ta dërguar sërish
+        resend_sms_text: Nuk ke marrë një tekst me kodin e konfirmimit?
+        submit_button: Dergo
+        title: Konfirmimi i kodit të sigurisë
+      new:
+        phone: Shkruani numrin tuaj të telefonit celular për të marrë kodin
+        phone_format_html: "<strong><em>(Shembull: 612345678 or +34612345678)</em></strong>"
+        phone_note: Ne përdorim telefonin tuaj vetëm për t'ju dërguar një kod,jo që t'ju kontaktojmë.
+        phone_placeholder: "Shembull: 612345678 or +34612345678"
+        submit_button: Dergo
+        title: Dërgo kodin e konfirmimit
+      update:
+        error: Kodi i pasaktë i konfirmimit
+        flash:
+          level_three:
+            success: Kodi është i saktë. Llogaria juaj tani është verifikuar
+          level_two:
+            success: Kodi është i saktë
+    step_1: Vendbanimi
+    step_2: Kodi i konfirmimit
+    step_3: Verifikimi përfundimtar
+    user_permission_debates: Merrni pjesë në debate
+    user_permission_info: Verifikimi i  informacionit tuaj ju do të jetë në gjendje të ...
+    user_permission_proposal: Krijo propozime të reja
+    user_permission_support_proposal: Përkrahni propozimet
+    user_permission_votes: Merrni pjesë në votimin përfundimtar
+    verified_user:
+      form:
+        submit_button: Dërgo kodin
+      show:
+        email_title: Emailet
+        explanation: Ne aktualisht mbajmë detajet e mëposhtme në Regjistër; ju lutemi zgjidhni një metodë për dërgimin e kodit tuaj të konfirmimit.
+        phone_title: Numrat e telefonit
+        title: Informacione të disponueshme
+        use_another_phone: Përdorni telefon tjetër

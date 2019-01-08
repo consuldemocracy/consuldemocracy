@@ -6,10 +6,10 @@ Citizen Participation and Open Government Application
 
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
-[![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
-[![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg)](https://coveralls.io/github/consul/consul?branch=master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
 [![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
@@ -25,9 +25,9 @@ Development started on [2015 July 15th](https://github.com/consul/consul/commit/
 
 ## Configuration for development and test environments
 
-**NOTE**: For more detailed instructions check the [docs](https://github.com/consul/docs/tree/master/en/getting_started/prerequisites)
+**NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
 
-Prerequisites: install git, Ruby 2.3.2, `bundler` gem, and PostgreSQL (>=9.4).
+Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
 ```bash
 git clone https://github.com/consul/consul.git
@@ -43,15 +43,15 @@ RAILS_ENV=test rake db:setup
 
 Run the app locally:
 
-```
+```bash
 bin/rails s
 ```
 
-Prerequisites for testing: install PhantomJS >= 2.1.1
+Prerequisites for testing: install ChromeDriver >= 2.33
 
 Run the tests with:
 
-```
+```bash
 bin/rspec
 ```
 
@@ -65,6 +65,10 @@ But for some actions like voting, you will need a verified user, the seeds file 
  **user:** verified@consul.dev
  **pass:** 12345678
 
+## Configuration for production environments
+
+See [installer](https://github.com/consul/installer)
+
 ## Documentation
 
 Check the ongoing documentation at [https://consul_docs.gitbooks.io/docs/content/](https://consul_docs.gitbooks.io/docs/content/) to learn more about how to start your own CONSUL fork, install it, customize it and learn to use it from an administrator/maintainer perspective. You can contribute to it at [https://github.com/consul/docs](https://github.com/consul/docs)
@@ -76,7 +80,3 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Local development with Docker
-
-Please check the documentation at [https://consul_docs.gitbooks.io/docs/content/en/getting_started/docker.html](https://consul_docs.gitbooks.io/docs/content/en/getting_started/docker.html)

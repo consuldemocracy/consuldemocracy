@@ -12,4 +12,20 @@ module DebatesHelper
     end
   end
 
+  def debates_minimal_view_path
+    debates_path(view: debates_secondary_view)
+  end
+
+  def debates_default_view?
+    @view == "default"
+  end
+
+  def debates_current_view
+    @view
+  end
+
+  def debates_secondary_view
+    debates_current_view == "default" ? "minimal" : "default"
+  end
+
 end

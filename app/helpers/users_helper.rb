@@ -52,8 +52,8 @@ module UsersHelper
     current_user && current_user.manager?
   end
 
-  def show_admin_menu?
-    current_administrator? || current_moderator? || current_valuator? || current_manager?
+  def show_admin_menu?(user = nil)
+    current_administrator? || current_moderator? || current_valuator? || current_manager? || (user && user.administrator?)
   end
 
   def interests_title_text(user)

@@ -22,4 +22,14 @@ namespace :moderation do
     put :hide, on: :member
     put :moderate, on: :collection
   end
+
+  resources :proposal_notifications, only: :index do
+    put :hide, on: :member
+    put :moderate, on: :collection
+  end
+
+  resources :budget_investments, only: :index, controller: 'budgets/investments' do
+    put :hide, on: :member
+    put :moderate, on: :collection
+  end
 end

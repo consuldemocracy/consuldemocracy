@@ -13,16 +13,6 @@ describe PagesController do
       expect(response).to be_ok
     end
 
-    it 'includes a general terms page' do
-      get :show, id: :general_terms
-      expect(response).to be_ok
-    end
-
-    it 'includes a terms page' do
-      get :show, id: :census_terms
-      expect(response).to be_ok
-    end
-
     it 'includes a accessibility page' do
       get :show, id: :accessibility
       expect(response).to be_ok

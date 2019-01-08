@@ -1,0 +1,111 @@
+pl:
+  verification:
+    alert:
+      lock: Osiągnąłeś maksymalną liczbę prób. Proszę spróbować ponownie później.
+    back: Wróć do mojego konta
+    email:
+      create:
+        alert:
+          failure: Wystąpił problem z wysłaniem wiadomości e-mail na Twoje konto
+        flash:
+          success: 'Wysłaliśmy e-mail z potwierdzeniem na Twoje konto: %{email}'
+      show:
+        alert:
+          failure: Nieprawidłowy kod weryfikacyjny
+        flash:
+          success: Jesteś zweryfikowanym użytkownikiem.
+    letter:
+      alert:
+        unconfirmed_code: Nie podałeś jeszcze kodu potwierdzenia
+      create:
+        flash:
+          offices: Biura wsparcia obywatelskiego
+          success_html: Dziękujemy za przesłanie prośby o podanie <b>kodu maksymalnego bezpieczeństwa (wymaganego tylko dla ostatecznych głosów) </b>. Za kilka dni wyślemy go na adres podany w danych, które mamy w aktach. Pamiętaj, że jeśli wolisz, możesz odebrać swój kod z dowolnego %{offices}.
+      edit:
+        see_all: Zobacz wnioski
+        title: List wymagany
+      errors:
+        incorrect_code: Nieprawidłowy kod weryfikacyjny
+      new:
+        explanation: 'Aby wziąć udział w ostatnim głosowaniu, możesz:'
+        go_to_index: Zobacz wnioski
+        office: Sprawdź w dowolnym %{office}
+        offices: Biura wsparcia obywatelskiego
+        send_letter: Wyślij do mnie list z kodem
+        title: Gratulacje!
+        user_permission_info: Z Twoim kontem możesz...
+      update:
+        flash:
+          success: Prawidłowy kod weryfikacyjny. Twoje konto zostało zweryfikowane.
+    redirect_notices:
+      already_verified: Twoje konto jest już zweryfikowane
+      email_already_sent: Wysłaliśmy już maila z linkiem potwierdzającym. Jeśli nie otrzymałeś wiadomości e-mail, możesz poprosić o jej ponowne przesłanie.
+    residence:
+      alert:
+        unconfirmed_residency: Nie potwierdziłeś jeszcze swojego adresu
+      create:
+        flash:
+          success: Adres zweryfikowany
+      new:
+        accept_terms_text: Akceptuję %{terms_url} spisu
+        accept_terms_text_title: Akceptuję zasady i warunki dostępu do spisu
+        date_of_birth: Data urodzenia
+        document_number: Numer dokumentu
+        document_number_help_title: Pomoc
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>paszport</strong>: AAA000001<br> <strong>Karta pobytu</strong>: X1234567P'
+        document_type:
+          passport: Paszport
+          residence_card: Karta pobytu
+          spanish_id: DNI
+        document_type_label: Typ dokumentu
+        error_not_allowed_age: Nie masz wymaganego wieku, aby wziąć udział
+        error_not_allowed_postal_code: Aby zostać zweryfikowanym, użytkownik musi być zarejestrowany.
+        error_verifying_census: Spis statystyczny nie był w stanie zweryfikować podanych przez Ciebie informacji. Upewnij się, że Twoje dane w spisie są poprawne, dzwoniąc do Urzędu Miejskiego lub odwiedzając go %{offices}.
+        error_verifying_census_offices: Biura wsparcia obywatelskiego
+        form_errors: uniemożliwił weryfikację twojego miejsca zamieszkania
+        postal_code: Kod pocztowy
+        postal_code_note: Aby zweryfikować swoje konto, musisz być zarejestrowany
+        terms: regulamin dostępu
+        title: Sprawdź adres
+        verify_residence: Sprawdź adres
+    sms:
+      create:
+        flash:
+          success: Wpisz kod potwierdzający, wysłany do Ciebie przez wiadomość tekstową
+      edit:
+        confirmation_code: Wpisz kod otrzymany na telefon
+        resend_sms_link: Kliknij tutaj, aby wysłać go ponownie
+        resend_sms_text: Nie otrzymałeś wiadomości z kodem potwierdzającym?
+        submit_button: Wyślij
+        title: Potwierdzenie kodu zabezpieczień
+      new:
+        phone: Wprowadź swój numer telefonu komórkowego, aby otrzymać kod
+        phone_format_html: "<strong><em>(przykład: 612345678 lub +34612345678)</em></strong>"
+        phone_note: Używamy Twojego telefonu tylko do wysłania kodu, nigdy aby się z Tobą skontaktować.
+        phone_placeholder: "Przykład: 612345678 lub +34612345678"
+        submit_button: Wyślij
+        title: Wyślij kod potwierdzenia
+      update:
+        error: Niepoprawny kod potwierdzający
+        flash:
+          level_three:
+            success: Kod poprawny. Twoje konto zostało zweryfikowane
+          level_two:
+            success: Kod poprawny
+    step_1: Adres
+    step_2: Kod potwierdzający
+    step_3: Ostateczna weryfikacja
+    user_permission_debates: Uczestniczyć w debatach
+    user_permission_info: Weryfikując swoje dane, będziesz w stanie...
+    user_permission_proposal: Stwórz nowe wnioski
+    user_permission_support_proposal: Popieraj propozycje*
+    user_permission_votes: Uczestniczyć w głosowaniu końcowym*
+    verified_user:
+      form:
+        submit_button: Wyślij kod
+      show:
+        email_title: E-maile
+        explanation: Obecnie posiadamy następujące dane w Rejestrze; proszę wybrać metodę wysłania twojego kodu potwierdzenia.
+        phone_title: Numery telefonów
+        title: Dostępne informacje
+        use_another_phone: Użyj innego telefonu

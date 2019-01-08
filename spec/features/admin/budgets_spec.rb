@@ -25,6 +25,12 @@ feature 'Admin budgets' do
 
   context 'Index' do
 
+    scenario 'Displaying no open budgets text' do
+      visit admin_budgets_path
+
+      expect(page).to have_content("There are no open budgets.")
+    end
+
     scenario 'Displaying budgets' do
       budget = create(:budget)
       visit admin_budgets_path
@@ -119,7 +125,7 @@ feature 'Admin budgets' do
       click_link 'Delete budget'
 
       expect(page).to have_content('Budget deleted successfully')
-      expect(page).to have_content('budgets cannot be found')
+      expect(page).to have_content('There are no open budgets.')
     end
 
     scenario 'Try to destroy a budget with investments' do
@@ -187,138 +193,42 @@ feature 'Admin budgets' do
 
   context "Calculate Budget's Winner Investments" do
 
-    scenario 'For a Budget in reviewing balloting' do
+    scenario 'For a Budget in reviewing balloting', :js do
       budget = create(:budget, phase: 'reviewing_ballots')
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, price: 4)
       unselected = create(:budget_investment, :unselected, heading: heading, price: 1,
                                                            ballot_lines_count: 3)
-      winner = create(:budget_investment, :winner, heading: heading, price: 3,
+      winner = create(:budget_investment, :selected, heading: heading, price: 3,
                                                    ballot_lines_count: 2)
-      selected = create(:budget_investment, :selected, heading: heading, price: 2,
-                                                       ballot_lines_count: 1)
+      selected = create(:budget_investment, :selected, heading: heading, price: 2, ballot_lines_count: 1)
 
       visit edit_admin_budget_path(budget)
+      expect(page).not_to have_content 'See results'
       click_link 'Calculate Winner Investments'
       expect(page).to have_content 'Winners being calculated, it may take a minute.'
       expect(page).to have_content winner.title
       expect(page).not_to have_content unselected.title
       expect(page).not_to have_content selected.title
+
+
+      visit edit_admin_budget_path(budget)
+      expect(page).to have_content 'See results'
     end
 
     scenario 'For a finished Budget' do
       budget = create(:budget, phase: 'finished')
+      allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return true
 
       visit edit_admin_budget_path(budget)
+
       expect(page).not_to have_content 'Calculate Winner Investments'
-    end
-
-  end
-
-  context 'Manage groups and headings' do
-
-    scenario 'Create group', :js do
-      budget = create(:budget, name: 'Yearly budget')
-
-      visit admin_budgets_path
-
-      within("#budget_#{budget.id}") do
-        click_link 'Edit headings groups'
-      end
-
-      expect(page).to have_content '0 Groups of budget headings'
-      expect(page).to have_content 'No groups created yet.'
-
-      click_link 'Add new group'
-
-      fill_in 'budget_group_name', with: 'Health'
-      click_button 'Create group'
-
-      expect(page).to have_content '1 Group of budget headings'
-      expect(page).to have_content 'Health'
-      expect(page).to have_content 'Yearly budget'
-      expect(page).not_to have_content 'No groups created yet.'
-
-      visit admin_budgets_path
-      within("#budget_#{budget.id}") do
-        click_link 'Edit headings groups'
-      end
-
-      expect(page).to have_content '1 Group of budget headings'
-      expect(page).to have_content 'Health'
-      expect(page).to have_content 'Yearly budget'
-      expect(page).not_to have_content 'No groups created yet.'
-    end
-
-    scenario 'Create heading', :js do
-      budget = create(:budget, name: 'Yearly budget')
-      group  = create(:budget_group, budget: budget, name: 'Districts improvments')
-
-      visit admin_budget_path(budget)
-
-      within("#budget_group_#{group.id}") do
-        expect(page).to have_content 'This group has no assigned heading.'
-        click_link 'Add heading'
-
-        fill_in 'budget_heading_name', with: 'District 9 reconstruction'
-        fill_in 'budget_heading_price', with: '6785'
-        fill_in 'budget_heading_population', with: '100500'
-        click_button 'Save heading'
-      end
-
-      expect(page).not_to have_content 'This group has no assigned heading.'
-
-      visit admin_budget_path(budget)
-      within("#budget_group_#{group.id}") do
-        expect(page).not_to have_content 'This group has no assigned heading.'
-
-        expect(page).to have_content 'District 9 reconstruction'
-        expect(page).to have_content '€6,785'
-        expect(page).to have_content '100500'
-      end
-    end
-
-    scenario 'Update heading', :js do
-      budget = create(:budget, name: 'Yearly budget')
-      group  = create(:budget_group, budget: budget, name: 'Districts improvments')
-      heading = create(:budget_heading, group: group, name: "District 1")
-      heading = create(:budget_heading, group: group, name: "District 3")
-
-      visit admin_budget_path(budget)
-
-      within("#heading-#{heading.id}") do
-        click_link 'Edit'
-
-        fill_in 'budget_heading_name', with: 'District 2'
-        fill_in 'budget_heading_price', with: '10000'
-        fill_in 'budget_heading_population', with: '6000'
-        click_button 'Save heading'
-      end
-
-      expect(page).to have_content 'District 2'
-      expect(page).to have_content '€10,000'
-      expect(page).to have_content '6000'
-    end
-
-    scenario 'Delete heading', :js do
-      budget = create(:budget, name: 'Yearly budget')
-      group  = create(:budget_group, budget: budget, name: 'Districts improvments')
-      heading = create(:budget_heading, group: group, name: "District 1")
-
-      visit admin_budget_path(budget)
-
-      expect(page).to have_content 'District 1'
-
-      within("#heading-#{heading.id}") do
-        click_link 'Delete'
-      end
-
-      expect(page).not_to have_content 'District 1'
+      expect(page).to have_content 'See results'
     end
 
   end
 end
 
-def translated_phase_name(phase_kind: phase_kind)
+def translated_phase_name(phase_kind: kind)
   I18n.t("budgets.phase.#{phase_kind}")
 end

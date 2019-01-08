@@ -1,0 +1,21 @@
+ar:
+  images:
+    remove_image: إزالة الصورة
+    form:
+      title: صورة وصفية
+      title_placeholder: اضف عنوان للصورة
+      attachment_label: اختر صورة
+      delete_button: إزالة الصورة
+      note: "يمكنك رفع صورة باحد الإمتدادات التالية: %{accepted_content_types}، وبحجم يصل إلى %{max_file_size} ميغابايت."
+      add_new_image: إضافة صورة
+      admin_title: "صورة"
+      admin_alt_text: "نص بديل للصورة"
+    actions:
+      destroy:
+        notice: تم حذف الصورة بنجاح.
+        alert: لايمكن حذف الصورة.
+        confirm: هل أنت متأكد من أنك تريد حذف الصورة؟ لا يمكن التراجع عن هذه الخطوة!
+    errors:
+      messages:
+        in_between: يجب أن تكون بين %{min} و %{max}
+        wrong_content_type: الإمتداد %{content_type} لا يتطابق مع الإمتداد المسموح بها %{accepted_content_types}

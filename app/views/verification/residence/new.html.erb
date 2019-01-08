@@ -3,7 +3,7 @@
   <div class="small-12 column">
 
     <div class="text-center">
-      <div class="small-4 column verification-step active">
+      <div class="small-4 column verification-step is-active">
         <span class="number">1</span> <%= t("verification.step_1") %>
       </div>
       <div class="small-4 column verification-step">
@@ -93,7 +93,9 @@
       </div>
 
       <div class="small-12 medium-3 clear">
-        <%= f.submit t("verification.residence.new.verify_residence"), class: "button success expanded" %>
+        <%= f.submit t("verification.residence.new.verify_residence"),
+                     id: "new_residence_submit",
+                     class: "button success expanded" %>
       </div>
     <% end %>
   </div>

@@ -1,0 +1,129 @@
+it:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Inviare nuovamente le istruzioni
+        title: Inviare nuovamente le istruzioni di conferma
+      show:
+        instructions_html: Stiamo confermando l'account con email %{email}
+        new_password_confirmation_label: Reintrodurre la password
+        new_password_label: Nuova password
+        please_set_password: Si prega di scegliere la nuova pasword (che permetterà di accedere con l'email di cui sopra)
+        submit: Conferma
+        title: Conferma il mio account
+    mailer:
+      confirmation_instructions:
+        confirm_link: Conferma il mio account
+        text: 'È possibile confermare l’account di posta elettronica attraverso il seguente link:'
+        title: Benvenuto
+        welcome: Benvenuto
+      reset_password_instructions:
+        change_link: Cambia la password
+        hello: Ciao
+        ignore_text: Se non hai richiesto una modifica della password, ignora questa email.
+        info_text: La password non verrà cambiata a meno che non si acceda al link e la si modifichi.
+        text: 'Abbiamo ricevuto una richiesta di modifica della password. È possibile farlo attraverso il seguente link:'
+        title: Cambia la password
+      unlock_instructions:
+        hello: Ciao
+        info_text: Il tuo account è stato bloccato a causa di un numero eccessivo di tentativi di accesso non riusciti.
+        instructions_text: 'Si prega di cliccare questo link per sbloccare l’account:'
+        title: Il tuo account è stato bloccato
+        unlock_link: Sbloccare l’account
+    menu:
+      login_items:
+        login: Accedere
+        logout: Uscire
+        signup: Registrarsi
+    organizations:
+      registrations:
+        new:
+          email_label: E-mail
+          organization_name_label: Nome dell'organizzazione
+          password_confirmation_label: Conferma la password
+          password_label: Password
+          phone_number_label: Numero di telefono
+          responsible_name_label: Nome e cognome della persona responsabile del collettivo
+          responsible_name_note: Si tratta del rappresentante dell’associazione o del collettivo in nome dei quali vengono presentate le proposte
+          submit: Registrarsi
+          title: Registrarsi come un'organizzazione o collettivo
+        success:
+          back_to_index: Ho capito; torna alla pagina principale
+          instructions_1_html: "<b>Ti contatteremo a breve</b> al fine di verificare che tu sia effettivamente il rappresentante di questo collettivo."
+          instructions_2_html: Mentre <b>verifichiamo la tua e-mail</b>, ti abbiamo inviato un <b>link per la verifica dell’account</b>.
+          instructions_3_html: Una volta confermato, si potrà iniziare a partecipare come collettivo non verificato.
+          thank_you_html: Grazie per aver registrato il tuo collettivo su questo sito. Ora è <b>in attesa di verifica</b>.
+          title: Registrazione dell'organizzazione / collettivo
+    passwords:
+      edit:
+        change_submit: Cambiare la password
+        password_confirmation_label: Confermare la nuova password
+        password_label: Nuova password
+        title: Cambiare la password
+      new:
+        email_label: E-mail
+        send_submit: Invia istruzioni
+        title: Password dimenticata?
+    sessions:
+      new:
+        login_label: Email o nome utente
+        password_label: Password
+        remember_me: Ricordami
+        submit: Entra
+        title: Accedi
+    shared:
+      links:
+        login: Entra
+        new_confirmation: Non hai ricevuto le istruzioni per attivare il tuo account?
+        new_password: Dimenticato la password?
+        new_unlock: Non hai ricevuto istruzioni di sblocco?
+        signin_with_provider: Accedi con %{provider}
+        signup: Non hai un account? %{signup_link}
+        signup_link: Registrati
+    unlocks:
+      new:
+        email_label: Email
+        submit: Inviare nuovamente le istruzioni di sblocco
+        title: Inviate nuovamente le istruzioni di sblocco
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Motivo
+          info: Questa azione non può essere annullata. Si prega di essere sicuri che sia ciò che si vuole fare.
+          info_reason: Se credi, lasciaci una motivazione (facoltativo)
+          submit: Cancella il mio account
+          title: Cancella account
+        edit:
+          current_password_label: Password attuale
+          edit: Modifica
+          email_label: Email
+          leave_blank: Lasciare vuoto se non si desidera modificare
+          need_current: Abbiamo bisogno della tua attuale password per confermare le modifiche
+          password_confirmation_label: Conferma nuova password
+          password_label: Nuova password
+          update_submit: Aggiorna
+          waiting_for: 'In attesa della conferma di:'
+        new:
+          cancel: Annulla login
+          email_label: Email
+          organization_signup: Rappresenti un’organizzazione o associazione? %{signup_link}
+          organization_signup_link: Registrati qui
+          password_confirmation_label: Conferma password
+          password_label: Password
+          redeemable_code: Codice di verifica ricevuto via email (facoltativo)
+          submit: Registrarsi
+          terms: Registrandoti accetti i %{terms}
+          terms_link: termini e condizioni d’uso
+          terms_title: Registrandoti accetti i termini e le condizioni d'uso
+          title: Registrarsi
+          username_is_available: Nome utente disponibile
+          username_is_not_available: Nome utente già in uso
+          username_label: Nome utente
+          username_note: Nome visualizzato accanto ai tuoi post
+        success:
+          back_to_index: Ho capito; torna alla pagina principale
+          instructions_1_html: Si prega di <b>controllare l’e-mail</b> - abbiamo inviato <b>un link di per confermare l’account</b>.
+          instructions_2_html: Una volta confermati, si può iniziare a partecipare.
+          thank_you_html: Grazie per esserti registrato/a. Ora è necessario <b>confermare il tuo indirizzo e-mail</b>.
+          title: Modifica il tuo indirizzo email

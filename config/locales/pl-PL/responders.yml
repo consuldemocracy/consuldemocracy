@@ -1,0 +1,39 @@
+pl:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} utworzony pomyślnie."
+        debate: "Debatę utworzono pomyślnie."
+        direct_message: "Twoja wiadomość została wysłana pomyślnie."
+        poll: "Ankieta została pomyślnie utworzona."
+        poll_booth: "Stanowisko zostało utworzone pomyślnie."
+        poll_question_answer: "Odpowiedź została utworzona pomyślnie"
+        poll_question_answer_video: "Film wideo został utworzony pomyślnie"
+        poll_question_answer_image: "Obraz przesłany pomyślnie"
+        proposal: "Wniosek został utworzony pomyślnie."
+        proposal_notification: "Twoja wiadomość została wysłana poprawnie."
+        spending_proposal: "Utworzono pakiet propozycji wydatków. Możesz uzyskać do niego dostęp z %{activity}"
+        budget_investment: "Inwestycja budżetowa została pomyślnie utworzona."
+        signature_sheet: "Arkusz podpisu został utworzony pomyślnie"
+        topic: "Temat został utworzony pomyślnie."
+        valuator_group: "Grupa wyceniająca została pomyślnie utworzona"
+      save_changes:
+        notice: Zmiany zapisane
+      update:
+        notice: "%{resource_name} pomyślnie zaktualizowana."
+        debate: "Debata zaktualizowana pomyślnie."
+        poll: "Sonda została pomyślnie zaktualizowana."
+        poll_booth: "Stanowisko zostało zaktualizowane pomyślnie."
+        proposal: "Wniosek został zaktualizowany pomyślnie."
+        spending_proposal: "Projekt inwestycyjny został pomyślnie zaktualizowany."
+        budget_investment: "Projekt inwestycyjny został pomyślnie zaktualizowany."
+        topic: "Temat zaktualizowany pomyślnie."
+        valuator_group: "Grupa wyceniająca została pomyślnie zaktualizowana"
+        translation: "Tłumaczenie zaktualizowane pomyślnie"
+      destroy:
+        spending_proposal: "Wniosek wydatków został pomyślnie usunięty."
+        budget_investment: "Projekt inwestycyjny został pomyślnie usunięty."
+        error: "Nie można usunąć"
+        topic: "Temat został usunięty."
+        poll_question_answer_video: "Odpowiedź wideo została pomyślnie usunięta."
+        valuator_group: "Grupa wyceniając została pomyślnie usunięta"

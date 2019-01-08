@@ -1,0 +1,128 @@
+fa:
+  devise_views:
+    confirmations:
+      new:
+        email_label: پست الکترونیکی
+        submit: ارسال مجدد دستورالعمل 
+        title: ارسال دوباره دستورالعمل تایید 
+      show:
+        instructions_html: تایید حساب با ایمیل %{email}
+        new_password_confirmation_label: تکرار رمز عبور دسترسی
+        new_password_label: رمز عبور دسترسی جدید
+        please_set_password: لطفا رمز عبور جدید خود را انتخاب کنید (به شما این امکان را می دهد که با ایمیل بالا وارد شوید)
+        submit: تایید
+        title: تایید حساب
+    mailer:
+      confirmation_instructions:
+        confirm_link: تایید حساب
+        text: 'شما می توانید حساب ایمیل خود را در لینک زیر تأیید کنید:'
+        welcome: خوش آمدید 
+      reset_password_instructions:
+        change_link: تغییر کلمه عبور
+        hello: سلام
+        ignore_text: اگر تغییر رمز عبور را درخواست نکردید، می توانید این ایمیل را نادیده بگیرید.
+        info_text: گذرواژه شما تغییر نخواهد کرد مگر اینکه به پیوند دسترسی داشته باشید و آن را ویرایش کنید.
+        text: 'ما یک درخواست برای تغییر رمز عبوردریافت کرده ایم. شما می توانید این کار را در لینک زیر انجام دهید:'
+        title: تغییر کلمه عبور
+      unlock_instructions:
+        hello: سلام
+        info_text: حساب شما به علت تعداد بیشماری از تلاشهای ثبت نام شکست خورده مسدود شده است.
+        instructions_text: 'لطفا برای باز کردن قفل حساب خود روی این لینک کلیک کنید:'
+        title: حساب شما قفل شده است.
+        unlock_link: باز کردن حساب
+    menu:
+      login_items:
+        login: ورود به برنامه
+        logout: خروج از سیستم
+        signup: ثبت
+    organizations:
+      registrations:
+        new:
+          email_label: پست الکترونیکی
+          organization_name_label: نام سازمان
+          password_confirmation_label: تایید رمز عبور
+          password_label: رمز عبور
+          phone_number_label: شماره تلفن
+          responsible_name_label: نام کامل مسئول گروه
+          responsible_name_note: این شخص نماینده انجمن / گروهی است که اسامی آنها ارائه شده است
+          submit: ثبت
+          title: ثبت نام به عنوان یک سازمان و یا جمعی
+        success:
+          back_to_index: من میفهمم؛ بازگشت به صفحه اصلی
+          instructions_1_html: "<b> ما به زودی با شما تماس خواهیم گرفت </ b> برای تأیید اینکه شما در واقع این گروه را نشان می دهید."
+          instructions_2_html: در حالی که <b> ایمیل شما بررسی شده است </ b>، ما یک پیوند <b> برای تایید حساب شما </ b> ارسال کردیم.
+          instructions_3_html: پس از تأیید، شما ممکن است شروع به شرکت در یک گروه تأیید نشده کنید.
+          thank_you_html: با تشکر از شما برای ثبت نام جمعی خود در وب سایت. اکنون <b> در انتظار تایید </ b> است.
+          title: ثبت نام به عنوان یک سازمان و یا جمعی
+    passwords:
+      edit:
+        change_submit: تغییر کلمه عبور
+        password_confirmation_label: تایید رمز عبور
+        password_label: رمز عبور جدید
+        title: تغییر کلمه عبور
+      new:
+        email_label: پست الکترونیکی
+        send_submit: ' ارسال دستورالعمل'
+        title: رمز عبور را فراموش کرده اید؟
+    sessions:
+      new:
+        login_label: نام کاربری یا ایمیل
+        password_label: رمز عبور
+        remember_me: مرا به خاطر بسپار
+        submit: ' ورود '
+        title: ورود به برنامه
+    shared:
+      links:
+        login: ' ورود '
+        new_confirmation: دستورالعمل هایی برای فعال کردن حساب کاربری خود دریافت نکرده اید؟
+        new_password: رمز عبور را فراموش کرده اید؟
+        new_unlock: دستورالعمل باز کردن را دریافت نکرده اید؟
+        signin_with_provider: ' ثبت نام با %{provider}'
+        signup: حساب کاربری ندارید؟ %{signup_link}
+        signup_link: ثبت نام
+    unlocks:
+      new:
+        email_label: پست الکترونیکی
+        submit: ارسال دستورالعمل بازکردن مجدد
+        title: ارسال دستورالعمل بازکردن مجدد
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: دلیل
+          info: این عمل قابل لغو نیست لطفا مطمئن شوید که این چیزی است که میخواهید.
+          info_reason: اگر می خواهید، یک دلیل برای ما بنویسید (اختیاری)
+          submit: پاک کردن حساب
+          title: پاک کردن حساب
+        edit:
+          current_password_label: رمز ورود فعلی
+          edit: ویرایش
+          email_label: پست الکترونیکی
+          leave_blank: اگر تمایل ندارید تغییر دهید، خالی بگذارید
+          need_current: ما برای تایید تغییرات نیاز به رمزعبور فعلی داریم
+          password_confirmation_label: تأیید رمز عبور جديد
+          password_label: رمز عبور جدید
+          update_submit: به روز رسانی
+          waiting_for: 'در انتظار تایید:'
+        new:
+          cancel: لغو کردن ورود
+          email_label: پست الکترونیکی
+          organization_signup: آیا نماینده یک سازمان یا گروهی هستید؟%{signup_link}
+          organization_signup_link: "اینجا ثبت نام کنید\n"
+          password_confirmation_label: تایید رمز عبور
+          password_label: رمز عبور
+          redeemable_code: کد تایید  از طریق ایمیل دریافت شد.
+          submit: ثبت
+          terms: با ثبت نام شما قبول می کندکه %{terms}
+          terms_link: شرایط و ضوابط مورد استفاده
+          terms_title: با ثبت نام شما  شرایط و ضوابط مورد استفاده را قبول میکنید
+          title: ثبت
+          username_is_available: نام کاربری موجود
+          username_is_not_available: نام کاربری در حال حاضر در حال استفاده است
+          username_label: نام کاربری
+          username_note: نامی که در کنار پست های شما ظاهر می شود
+        success:
+          back_to_index: من میفهمم؛ بازگشت به صفحه اصلی
+          instructions_1_html: لطفا <b> ایمیل خود را بررسی کنید </ b> - ما یک پیوند <b> برای تأیید اعتبار شما ارسال کردیم </ b>.
+          instructions_2_html: پس از تأیید، شما ممکن است مشارکت را آغاز کنید.
+          thank_you_html: از ثبت نام برای وب سایت سپاسگزاریم اکنون باید <b> آدرس ایمیل خود را تایید کنید </ b>.
+          title: ایمیل خود را تغییر دهید

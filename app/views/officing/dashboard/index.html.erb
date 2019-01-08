@@ -2,4 +2,10 @@
   <h2><%= t("officing.dashboard.index.title") %></h2>
 
   <p><%= t("officing.dashboard.index.info") %></p>
+
+  <% unless final_recount_shift? && vote_collection_shift? %>
+    <div class="callout warning">
+      <%= t("officing.dashboard.index.no_shifts") %>
+    </div>
+  <% end %>
 </div>

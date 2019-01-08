@@ -113,8 +113,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 7 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   scenario "Message about receivers (Followers)" do
@@ -126,8 +128,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 7 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   scenario "Message about receivers (Disctinct Followers and Voters)" do
@@ -140,8 +144,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 14 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 14 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   scenario "Message about receivers (Same Followers and Voters)" do
@@ -155,8 +161,10 @@ feature 'Proposal Notifications' do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be send to 1 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+    expect(page).to have_content "This message will be sent to 1 people and it will "\
+                                 "be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
+                                                     anchor: 'comments'))
   end
 
   context "Permissions" do
@@ -356,7 +364,48 @@ feature 'Proposal Notifications' do
       visit new_proposal_notification_path(proposal_id: proposal.id)
     end
 
-    pending "group notifications for the same proposal"
+    context "Group notifications" do
+
+      background do
+        Setting[:proposal_notification_minimum_interval_in_days] = 0
+      end
+
+      after do
+        Setting[:proposal_notification_minimum_interval_in_days] = 3
+      end
+
+      scenario "for the same proposal", :js do
+        author = create(:user)
+        user = create(:user)
+
+        proposal = create(:proposal, author: author)
+
+        create(:follow, :followed_proposal, user: user, followable: proposal)
+
+        login_as author.reload
+
+        3.times do
+          visit new_proposal_notification_path(proposal_id: proposal.id)
+
+          fill_in "Title", with: "Thank you for supporting my proposal"
+          fill_in "Message", with: "Please share it with others so we can make it happen!"
+          click_button "Send message"
+
+          expect(page).to have_content "Your message has been sent correctly."
+        end
+
+        logout
+        login_as user.reload
+        visit root_path
+
+        within("#notifications") { expect(page).to have_content :all, "You have 3 new notifications" }
+        find(".icon-notification").click
+
+        expect(page).to have_css ".notification", count: 3
+        expect(page).to have_content "There is one new notification on #{proposal.title}", count: 3
+      end
+    end
+
   end
 
   scenario "Error messages" do

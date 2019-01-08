@@ -1,12 +1,15 @@
 module Budgets
   class InvestmentsController < ApplicationController
+
     include FeatureFlags
     include CommentableActions
     include FlagActions
 
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index, :show, :json_data]
 
-    load_and_authorize_resource :budget
+    load_and_authorize_resource :budget, except: :json_data
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
+                                except: :json_data
 
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
@@ -15,6 +18,10 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+    before_action :set_view, only: :index
+    before_action :load_content_blocks, only: :index
+
+    skip_authorization_check only: :json_data
 
     feature_flag :budgets
 
@@ -28,8 +35,17 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(10).for_render
+      all_investments = if @budget.finished?
+                          investments.winners
+                        else
+                          investments
+                        end
+
+      @investments = all_investments.page(params[:page]).per(10).for_render
+
       @investment_ids = @investments.pluck(:id)
+      @investments_map_coordinates =  MapLocation.where(investment_id: all_investments).map { |l| l.json_data }
+
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
     end
@@ -77,6 +93,19 @@ module Budgets
       super
     end
 
+    def json_data
+      investment =  Budget::Investment.find(params[:id])
+      data = {
+        investment_id: investment.id,
+        investment_title: investment.title,
+        budget_id: investment.budget.id
+      }.to_json
+
+      respond_to do |format|
+        format.json { render json: data }
+      end
+    end
+
     private
 
     def resource_model
@@ -93,8 +122,9 @@ module Budgets
 
     def set_random_seed
       if params[:order] == 'random' || params[:order].blank?
-        seed = rand(-100..100) / 100.0
-        params[:random_seed] ||= Float(seed) rescue 0
+        seed = params[:random_seed] || session[:random_seed] || rand
+        params[:random_seed] = seed
+        session[:random_seed] = params[:random_seed]
       else
         params[:random_seed] = nil
       end
@@ -130,8 +160,16 @@ module Budgets
       @categories = ActsAsTaggableOn::Tag.category.order(:name)
     end
 
+    def load_content_blocks
+      @heading_content_blocks = @heading.content_blocks.where(locale: I18n.locale) if @heading
+    end
+
     def tag_cloud
       TagCloud.new(Budget::Investment, params[:search])
+    end
+
+    def set_view
+      @view = (params[:view] == "minimal") ? "minimal" : "default"
     end
 
     def locate(tag_string)
@@ -157,6 +195,9 @@ module Budgets
       end
     end
 
+    def load_map
+      @map_location = MapLocation.load_from_heading(@heading)
+    end
 
   end
 

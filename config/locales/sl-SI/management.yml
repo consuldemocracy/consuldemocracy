@@ -1,0 +1,147 @@
+sl:
+  management:
+    account:
+      menu:
+        reset_password_email: Ponastavi geslo po e-pošti
+        reset_password_manually: Ročno ponastavi geslo
+      alert:
+        unverified_user: Noben preverjen uporabnik se še ni vpisal
+      show:
+        title: Uporabniški račun
+      edit:
+        title: 'Uredi uporabniški račun: Ponastavi geslo'
+        back: Nazaj
+        password:
+          password: Geslo
+          send_email: Pošlji e-sporočilo za ponastavitev gesla
+          reset_email_send: E-sporočilo uspešno poslano.
+          reseted: Geslo uspešno ponastavljeno
+          random: Generiraj naključno geslo
+          save: Shrani
+          print: Natisni geslo
+          print_help: Geslo lahko natisneš, ko je shranjeno.
+    account_info:
+      change_user: Spremeni uporabnika
+      document_number_label: 'Številka dokumenta:'
+      document_type_label: 'Vrsta dokumenta:'
+      email_label: 'E-naslov:'
+      identified_label: 'Identificiran kot:'
+      username_label: 'Uporabniško ime:'
+    check: Preveri
+    dashboard:
+      index:
+        title: Urejanje
+        info: Tukaj lahko urejaš uporabnike preko ukazov v levem meniju.
+    document_number: Številka dokumenta
+    document_type_label: Vrsta dokumenta
+    document_verifications:
+      already_verified: Ta uporabniški račun je že verificiran.
+      has_no_account_html: Če želiš ustvariti uporabniški račun, pojdi na %{link} in klikni <b>'Registriraj se'</b> v zgornjem levem delu ekrana.
+      link: CONSUL
+      in_census_has_following_permissions: 'Ta uporabnik lahko sodeluje na spletnem mestu z naslednjimi dovoljenji:'
+      not_in_census: Ta dokument še ni registriran.
+      not_in_census_info: 'Državljani, ki niso v popisu, lahko sodelujejo na spletnem mestu z naslednjimi dovoljenji:'
+      please_check_account_data: Preveri, da so zgornje informacije pravilne.
+      title: Upravljanje uporabnikov
+      under_age: "Nisi dovolj star/-a za verifikacijo računa."
+      verify: Verificiraj
+    email_label: E-naslov
+    date_of_birth: Datum rojstva
+    email_verifications:
+      already_verified: Ta uporabniški račun je že verificiran.
+      choose_options: 'Izberi eno od naslednjih možnosti:'
+      document_found_in_census: Ta dokument je bil najden v popisu, ampak ni povezan z nobenim uporabniškim računom.
+      document_mismatch: 'Ta e-naslov pripada uporabniku, ki že ima povezan id: %{document_number}(%{document_type})'
+      email_placeholder: Napiši e-naslov, ki ga je uporabnik uporabil za ustvarjanje svojega računa
+      email_sent_instructions: Da lahko popolnoma verificiraš tega uporabnika, mora uporabnik klikniti povezavo, ki smo jo poslali na zgornji e-naslov. Ta korak je potreben, da lahko potrdimo, da ta e-naslov res pripada njemu.
+      if_existing_account: Če ima oseba že uporabniški račun, ustvarjen na spletnem mestu,
+      if_no_existing_account: Če oseba še ni ustvarila uporabniškega računa,
+      introduce_email: 'Vnesi e-naslov, uporabljen v računu:'
+      send_email: Pošlji potrditven e-mail
+    menu:
+      create_proposal: Ustvari predlog
+      print_proposals: Natisni predloge
+      support_proposals: Podpri predloge
+      create_spending_proposal: Ustvari predlog porabe
+      print_spending_proposals: Natisni predloge porabe
+      support_spending_proposals: Podpri predloge porabe
+      create_budget_investment: Dodaj svoj predlog!
+      print_budget_investments: Natisni proračunske naložbe
+      support_budget_investments: Podpri proračunske naložbe
+      users: Uporabniki
+      edit_user_accounts: Uredi uporabniški račun
+      user_invites: Uporabnikova povabila
+    permissions:
+      create_proposals: Ustvari predloge
+      debates: Sodeluj v razpravah
+      support_proposals: Podpri predloge
+      vote_proposals: Glasuj o predlogih
+    print:
+      proposals_info: Ustvari svoj predlog na http://url.consul
+      proposals_note: Predlogi, ki bodo prejeli več podpore, gredo na glasovanje. Če jih sprejme večina, jih bo občina izvedla.
+      proposals_title: 'Predlogi:'
+      spending_proposals_info: Sodeluj na http://url.consul
+      spending_proposals_note: Participatorni proračun bo dodeljen proračunskim naložbam z največ podpore.
+      budget_investments_info: Sodeluj na http://url.consul
+      budget_investments_note: Participatorni proračun bo dodeljen proračunski naložbi z največ podpore.
+    print_info: Natisni te informacije
+    proposals:
+      alert:
+        unverified_user: Uporabnik ni verificiran
+      create_proposal: Ustvari predlog
+      print:
+        print_button: Natisni
+    budgets:
+      create_new_investment: Ustvari novo naložbo
+      print_investments: Natisni proračunske naložbe
+      support_investments: Podpri proračunske naložbe
+    budget_investments:
+      alert:
+        unverified_user: Uporabnik ni verificiran
+      create: Dodaj svoj predlog!
+      filters:
+        heading: Koncept
+        unfeasible: Neizvedljiva naložba
+      print:
+        print_button: Natisni
+      search_results:
+        one: " vsebuje besedo '%{search_term}'"
+        other: " vsebujejo besedo '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Uporabnik ni verificiran
+      create: Ustvari predlog porabe
+      filters:
+        unfeasible: Neizvedljivi naložbeni projekti
+        by_geozone: "Naložbeni projekti v: %{geozone}"
+      print:
+        print_button: Natisni
+      search_results:
+        one: " vključuje besedo '%{search_term}'"
+        other: " vključujejo besedo '%{search_term}'"
+    sessions:
+      signed_out: Uspešno izpisan/-a.
+      signed_out_managed_user: Uporabniška seja uspešno izpisana.
+    username_label: Uporabniško ime
+    users:
+      create_user: Ustvari nov račun
+      create_user_info: 'Ustvarili bomo račun z naslednjimi podatki:'
+      create_user_submit: Ustvari uporabnika
+      create_user_success_html: Na e-naslov <b>%{email}</b> smo poslali sporočilo, da potrdimo, da gre res za njihov naslov. Vsebuje povezavo, ki jo morajo klikniti, nato si morajo nastaviti dostopno geslo, potem pa se lahko vpišejo v spletno mesto.
+      autogenerated_password_html: "Samodejno generirano geslo je <b>%{password}</b>, spremeniš ga lahko v razdelku 'Moj račun'"
+      email_optional_label: E-naslov (neobvezno)
+      erased_notice: Uporabniški račun izbrisan.
+      erased_by_manager: "Izbrisan s strani: %{manager}"
+      erase_account_link: Izbriši uporabnika
+      erase_account_confirm: Si prepričan/-a, da želiš izbrisati račun? Tega se ne da razveljaviti.
+      erase_warning: Tega se ne da razveljaviti. Ponovno razmisli, če res želiš izbrisati ta račun.
+      erase_submit: Izbriši račun
+    user_invites:
+      new:
+        label: E-naslovi
+        info: "Vnesi e-naslove in jih loči z vejicami (',')"
+        submit: Pošlji povabila
+        title: Uporabniška povabila
+      create:
+        success_html: <strong>%{count} povabil</strong> poslanih.
+        title: Uporabniška povabila

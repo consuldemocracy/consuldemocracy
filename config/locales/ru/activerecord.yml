@@ -1,0 +1,270 @@
+ru:
+  activerecord:
+    attributes:
+      budget:
+        name: "Имя"
+        description_accepting: "Описание во время этапа приема"
+        description_reviewing: "Описание во время этапа рассмотрения"
+        description_selecting: "Описание во время этапа выбора"
+        description_valuating: "Описание во время этапа оценки"
+        description_balloting: "Описание во время этапа голосования"
+        description_reviewing_ballots: "Описание во время этапа рассмотрения голосований"
+        description_finished: "Описание по завершению бюджета"
+        phase: "Этап"
+        currency_symbol: "Валюта"
+      budget/investment:
+        heading_id: "Раздел"
+        title: "Название"
+        description: "Описание"
+        external_url: "Ссылка на дополнительную документацию"
+        administrator_id: "Администратор"
+        location: "Местоположение (опционально)"
+        organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
+        image: "Иллюстративное изображение предложения"
+        image_title: "Название изображения"
+      milestone:
+        status_id: "Текущий инвестиционный статус (опционально)"
+        title: "Название"
+        description: "Описание (опционально, если присвоен статус)"
+        publication_date: "Дата публикации"
+      milestone/status:
+        name: "Имя"
+        description: "Описание (опционально)"
+      budget/heading:
+        name: "Название раздела"
+        price: "Цена"
+        population: "Население"
+      comment:
+        body: "Отзыв"
+        user: "Пользователь"
+      debate:
+        author: "Автор"
+        description: "Мнение"
+        terms_of_service: "Условия предоставления услуг"
+        title: "Название"
+      proposal:
+        author: "Автор"
+        title: "Название"
+        question: "Вопрос"
+        description: "Описание"
+        terms_of_service: "Условия предоставления услуг"
+      user:
+        login: "Электронный адрес или имя пользователя"
+        email: "Электронный адрес"
+        username: "Имя пользователя"
+        password_confirmation: "Подтверждение пароля"
+        password: "Пароль"
+        current_password: "Текущий пароль"
+        phone_number: "Номер телефона"
+        official_position: "Официальная позиция"
+        official_level: "Официальный уровень"
+        redeemable_code: "Код подтверждения получен по электронному адресу"
+      organization:
+        name: "Название организации"
+        responsible_name: "Лицо, ответственное за группу"
+      spending_proposal:
+        administrator_id: "Администратор"
+        association_name: "Название ассоциации"
+        description: "Описание"
+        external_url: "Ссылка на дополнительную документацию"
+        geozone_id: "Сфера деятельности"
+        title: "Название"
+      poll:
+        name: "Имя"
+        starts_at: "Дата начала"
+        ends_at: "Дата закрытия"
+        geozone_restricted: "Ограничено геозоной"
+        summary: "Резюме"
+        description: "Описание"
+      poll/translation:
+        name: "Имя"
+        summary: "Резюме"
+        description: "Описание"
+      poll/question:
+        title: "Вопрос"
+        summary: "Резюме"
+        description: "Описание"
+        external_url: "Ссылка на дополнительную документацию"
+      poll/question/translation:
+        title: "Вопрос"
+      signature_sheet:
+        signable_type: "Тип подписания"
+        signable_id: "Подписываемое ID"
+        document_numbers: "Номера документов"
+      site_customization/page:
+        content: Содержание
+        created_at: Создано в
+        subtitle: Субтитр
+        slug: Slug URL
+        status: Статус
+        title: Название
+        updated_at: Обновлено в
+        more_info_flag: Показать на странице справки
+        print_content_flag: Кнопка печати содержимого
+        locale: Язык
+      site_customization/page/translation:
+        title: Название
+        subtitle: Субтитр
+        content: Содержание
+      site_customization/image:
+        name: Имя
+        image: Изображение
+      site_customization/content_block:
+        name: Имя
+        locale: региональный язык
+        body: Тело
+      legislation/process:
+        title: Название процесса
+        summary: Резюме
+        description: Описание
+        additional_info: Дополнительная информация
+        start_date: Дата начала
+        end_date: Дата окончания
+        debate_start_date: Дата начала обсуждения
+        debate_end_date: Дата окончания обсуждения
+        draft_publication_date: Дата публикации проекта
+        allegations_start_date: Дата начала заявлений
+        allegations_end_date: Дата окончания заявлений
+        result_publication_date: Дата публикации окончательного результата
+      legislation/process/translation:
+        title: Название процесса
+        summary: Резюме
+        description: Описание
+        additional_info: Дополнительная информация
+      legislation/draft_version:
+        title: Название версии
+        body: Текст
+        changelog: Изменения
+        status: Статус
+        final_version: Окончательная версия
+      legislation/draft_version/translation:
+        title: Название версии
+        body: Текст
+        changelog: Изменения
+      legislation/question:
+        title: Название
+        question_options: Опции
+      legislation/question_option:
+        value: Значение
+      legislation/annotation:
+        text: Отзыв
+      document:
+        title: Название
+        attachment: Прикрепление
+      image:
+        title: Название
+        attachment: Прикрепление
+      poll/question/answer:
+        title: Ответ
+        description: Описание
+      poll/question/answer/translation:
+        title: Ответ
+        description: Описание
+      poll/question/answer/video:
+        title: Название
+        url: Внешнее видео
+      newsletter:
+        segment_recipient: Получатели
+        subject: Тема
+        from: От
+        body: Содержание электронной почты
+      admin_notification:
+        segment_recipient: Получатели
+        title: Название
+        link: Ссылка
+        body: Текст
+      admin_notification/translation:
+        title: Название
+        body: Текст
+      widget/card:
+        label: Метка (опционально)
+        title: Название
+        description: Описание
+        link_text: Текст ссылки
+        link_url: Ссылка URL
+      widget/card/translation:
+        label: Метка (опционально)
+        title: Название
+        description: Описание
+        link_text: Текст ссылки
+      widget/feed:
+        limit: Количество предметов
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Этот пользователь уже имеет пароль"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Вы достигли лимита максимального количества личных сообщений в день"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Ширина изображения должна быть не менее %{required_min_width}px"
+              min_image_height: "Высота изображения должна быть не менее %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Сегмент получателей пользователя является недействительным"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Сегмент получателей пользователя является недействительным"
+        map_location:
+          attributes:
+            map:
+              invalid: Расположение на карте не может быть пустым. Поместите маркер или установите флажок, если геолокация не требуется
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Документ не в переписи"
+              has_voted: "Пользователь уже проголосовал"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: должно быть не раньше даты начала
+            debate_end_date:
+              invalid_date_range: должно быть не раньше даты начала дебатов
+            allegations_end_date:
+              invalid_date_range: должно быть не раньше даты начала заявлений
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Вы должны ждать не менее %{interval} дней между уведомлениями"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Не проверено переписью'
+              already_voted: 'Уже проголосовано за это предложение'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "должны быть буквы, цифры, _ и -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ширина должна быть %{required_width}px"
+              image_height: "Высота должна быть %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Вы не можете комментировать оценку'
+      messages:
+        record_invalid: "Ошибка проверки: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Невозможно удалить запись, поскольку существует зависимый %{record}"
+          has_many: "Невозможно удалить запись, поскольку существует зависимый %{record}"

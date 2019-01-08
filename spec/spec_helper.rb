@@ -6,7 +6,7 @@ require 'knapsack_pro'
 
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
-Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }
+Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -18,6 +18,8 @@ RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
+  config.include(ActiveSupport::Testing::TimeHelpers)
+
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end
@@ -41,7 +43,9 @@ RSpec.configure do |config|
   config.before do |example|
     DatabaseCleaner.strategy = :transaction
     I18n.locale = :en
+    Globalize.locale = I18n.locale
     load Rails.root.join('db', 'seeds.rb').to_s
+    Setting["feature.user.skip_verification"] = nil
   end
 
   config.before(:each, type: :feature) do
@@ -55,6 +59,10 @@ RSpec.configure do |config|
       # specs, so use truncation strategy.
       DatabaseCleaner.strategy = :truncation
     end
+  end
+
+  config.after(:each, :page_driver) do
+    page.driver.reset!
   end
 
   config.before do
@@ -75,6 +83,25 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
+  config.before(:each, :with_frozen_time) do
+    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
+  end
+
+  config.after(:each, :with_frozen_time) do
+    travel_back
+  end
+
+  config.before(:each, :with_different_time_zone) do
+    system_zone = ActiveSupport::TimeZone.new("UTC")
+    local_zone = ActiveSupport::TimeZone.new("Madrid")
+
+    # Make sure the date defined by `config.time_zone` and
+    # the local date are different.
+    allow(Time).to receive(:zone).and_return(system_zone)
+    allow(Time).to receive(:now).and_return(Date.current.at_end_of_day.in_time_zone(local_zone))
+    allow(Date).to receive(:today).and_return(Time.now.to_date)
+  end
+
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"
@@ -92,7 +119,7 @@ RSpec.configure do |config|
   # Print the 10 slowest examples and example groups at the
   # end of the spec run, to help surface which specs are running
   # particularly slow.
-  config.profile_examples = 10
+  # config.profile_examples = 10
 
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing

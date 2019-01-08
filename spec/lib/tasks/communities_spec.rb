@@ -1,14 +1,8 @@
 require 'rails_helper'
-require 'rake'
 
 describe 'Communities Rake' do
 
   describe '#associate_community' do
-
-    before do
-      Rake.application.rake_require "tasks/communities"
-      Rake::Task.define_task(:environment)
-    end
 
     let :run_rake_task do
       Rake::Task['communities:associate_community'].reenable

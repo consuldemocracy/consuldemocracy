@@ -1,0 +1,7 @@
+so:
+  documents:
+    title: Dukumentiyo
+    max_documents_allowed_reached_html: Waxaad gaadhay tirada ugu badan ee dukumeentiyada la oggol yahay! <strong> Waa inaad tirtirtaa ka hor intaadan gelin mid kale
+    form:
+      title: Dukumentiyo
+      title_placeholder: Ku darso ciwaanka sharaxaadda dukumeentiga

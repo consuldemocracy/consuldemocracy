@@ -1,0 +1,87 @@
+ar:
+  devise_views:
+    confirmations:
+      new:
+        email_label: البريد الإلكتروني
+        submit: إعادة إرسال التعليمات
+        title: إعادة إرسال تعليمات التحقق
+      show:
+        instructions_html: تأكيد الحساب من خلال البريد الإلكتروني %{email}
+        new_password_confirmation_label: أعادة كتابة كلمة المرور
+        new_password_label: كلمة المرور الجديدة
+        please_set_password: يرجى اختيار كلمة المرور الجديدة (ستسمح لك بتسجيل الدخول بالبريد الإلكتروني أعلاه)
+        submit: تأكيد
+        title: تأكيد حسابي
+    mailer:
+      confirmation_instructions:
+        confirm_link: تأكيد حسابي
+        text: 'يمكنك تأكيد حساب البريد الإلكتروني الخاص بك من خلال الرابط التالي:'
+        title: اهلاً وسهلاً
+      reset_password_instructions:
+        ignore_text: إذا لم تطلب تغيير كلمة المرور، فيمكنك تجاهل هذا البريد الإلكتروني.
+        text: 'لقد تلقينا طلبك من أجل تغيير كلمة المرور. يمكنك القيام بذلك عبر الرابط التالي:'
+    menu:
+      login_items:
+        login: تسجيل الدخول
+        logout: تسجيل الخروج
+    sessions:
+      new:
+        password_label: كلمة المرور
+        remember_me: تذكرني
+        submit: دخول
+        title: تسجيل الدخول
+    shared:
+      links:
+        login: دخول
+        new_confirmation: لم تتلق تعليمات لتنشيط حسابك؟
+        new_password: هل نسيت كلمة المرور؟
+        new_unlock: لم تتلق تعليمات الغاء القفل؟
+        signin_with_provider: تسجيل الدخول باستخدام %{provider}
+        signup: لا تمتلك حساب؟ %{signup_link}
+        signup_link: تسجيل
+    unlocks:
+      new:
+        email_label: البريد الالكتروني
+        submit: اعادة ارسال تعليمات الغاء القفل
+        title: اعادة ارسال تعليمات الغاء القفل
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: السبب
+          info: لا يمكن التراجع عن هذا الاجراء. يرجى التأكد من انك تريده.
+          info_reason: اذا كنت تريب اترك لنا سبب (اختياري)
+          submit: مسح حسابي
+          title: مسح الحساب
+        edit:
+          current_password_label: كلمة المرور الحالية
+          edit: تعديل
+          email_label: البريد الالكتروني
+          leave_blank: اترك المساحة فارغة اذا لا كنت ترغب في التعديل
+          need_current: نحتاج كلمة مروروك الحالية لتأكيد التغييرات
+          password_confirmation_label: تأكيد كلمة المرور الجديدة
+          password_label: كلمة المرور الجديدة
+          update_submit: تحديث
+          waiting_for: 'في انتظار التأكيد:'
+        new:
+          cancel: الغاء الدخول
+          email_label: البريد الالكتروني
+          organization_signup: هل تمثل اي منظمة او جماعة؟ %{signup_link}
+          organization_signup_link: قم بتسجيل الدخول هنا
+          password_confirmation_label: تأكيد كلمة المرور
+          password_label: كلمة المرور
+          redeemable_code: تم استلام رمز التحقق عبر البريد الالكتروني (اختياري)
+          submit: سجل 
+          terms: من خلال التسجبل فانك توافق على%{terms}
+          terms_link: شروط واستراطات الاستخدام
+          terms_title: من خلال التسجيل فانك تقبل شروط واحكام الاستخدام
+          title: سجل
+          username_is_available: اسم المستخدم متاح
+          username_is_not_available: اسم المستخدم غير متاح
+          username_label: اسم المستخدم
+          username_note: الاسم الذي سيظهر بجانب مشاركاتك
+        success:
+          back_to_index: العودة إلى الصفحة الرئيسية
+          instructions_1_html: الرجاء <b>التحقق من بريدك الإلكتروني</b> - لقد أرسلنا لك <b>رابط من أجل تأكيد حسابك</b>.
+          instructions_2_html: بمجرد تأكيد، يمكنك البدأ بالمشاركة.
+          thank_you_html: شكرا لتسجيلك في الموقع الإلكتروني. عليك الآن <b>بتأكيد بريدك الإلكتروني</b>.
+          title: تأكيد عنوان بريدك الإلكتروني

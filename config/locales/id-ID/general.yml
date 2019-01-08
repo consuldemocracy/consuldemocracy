@@ -1,0 +1,750 @@
+id:
+  account:
+    show:
+      change_credentials_link: Ubah kredensial saya
+      email_on_comment_label: Beritahu saya melalui email saat seseorang berkomentar mengenai proposal atau debat saya
+      email_on_comment_reply_label: Beritahu saya melalui email saat seseorang membalas komentar saya
+      erase_account_link: Hapus akun saya
+      finish_verification: Verifikasi lengkap
+      notifications: Pemberitahuan
+      organization_name_label: Nama organisasi
+      organization_responsible_name_placeholder: Perwakilan organisasi/kolektif
+      personal: Detail pribadi
+      phone_number_label: Nomor telepon
+      public_activity_label: Menjaga daftar kegiatan Umum
+      public_interests_label: Menjaga label dari unsur-unsur yang saya ikuti Umum
+      public_interests_my_title_list: Tag dari unsur-unsur yang Anda mengikuti
+      public_interests_user_title_list: Tag dari unsur-unsur yang Anda mengikuti
+      save_changes_submit: Simpan perubahan
+      subscription_to_website_newsletter_label: Menerima email situs informasi yang relevan
+      email_on_direct_message_label: Menerima email tentang pesan langsung
+      email_digest_label: Menerima ringkasan pemberitahuan proposal
+      official_position_badge_label: Menunjukkan posisi resmi lencana
+      title: Akun saya
+      user_permission_debates: Berpartisipasi pada perdebatan
+      user_permission_info: Dengan akun Anda, Anda dapat...
+      user_permission_proposal: Membuat proposal baru
+      user_permission_support_proposal: Dukung proposal
+      user_permission_title: Partisipasi
+      user_permission_verify: Untuk melakukan semua tindakan memverifikasi rekening Anda.
+      user_permission_verify_info: "* Hanya untuk pengguna pada sensus."
+      user_permission_votes: Berpartisipasi pada pemungutan suara akhir
+      username_label: Nama pengguna
+      verified_account: Account diverifikasi
+      verify_my_account: Memverifikasi account saya
+  application:
+    close: Tutup
+    menu: Menu
+  comments:
+    comments_closed: Komentar ditutup
+    verified_only: Untuk berpartisipasi %{verify_account}
+    verify_account: memverifikasi akun anda
+    comment:
+      admin: Administrasi
+      author: Penulis
+      deleted: Komentar ini telah dihapus
+      moderator: Moderator
+      responses:
+        zero: Tidak ada tanggapan
+        other: "1 detik\n\n%{count} detik"
+      user_deleted: Pengguna dihapus
+      votes:
+        zero: Tidak ada suara
+        other: "1 bulan\n\n%{count} bulan"
+    form:
+      comment_as_admin: Komentar sebagai admin
+      comment_as_moderator: Komentar sebagai moderator
+      leave_comment: Tinggalkan komentar Anda
+    orders:
+      most_voted: Paling dipilih
+      newest: Yang terbaru pertama
+      oldest: Dahulukan yang tertua
+      most_commented: Paling commented
+    select_order: Urutkan
+    show:
+      return_to_commentable: 'Kembali ke '
+  comments_helper:
+    comment_button: Menerbitkan komentar
+    comment_link: Komentar
+    comments_title: Komentar
+    reply_button: Publikasikan balasan
+    reply_link: Balasan
+  debates:
+    create:
+      form:
+        submit_button: Memulai debat
+    debate:
+      comments:
+        zero: Tidak ada komentar
+        other: "%{count} komentar"
+      votes:
+        zero: Tidak ada suara
+        other: "%{count} suara"
+    edit:
+      editing: Edit debat
+      form:
+        submit_button: Simpan perubahan
+      show_link: Melihat perdebatan
+    form:
+      debate_text: Awal debat teks
+      debate_title: Debat judul
+      tags_instructions: Tag debat ini.
+      tags_label: Topik
+      tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
+    index:
+      featured_debates: Unggulan
+      filter_topic:
+        other: " dengan topik '%{topic}'"
+      orders:
+        confidence_score: nilai tertinggi
+        created_at: terbaru
+        hot_score: paling aktif
+        most_commented: paling banyak komentar
+        relevance: relevansi
+        recommendations: rekomendasi
+      recommendations:
+        without_results: Tidak ada perdebatan yang berkaitan dengan kepentingan anda
+        without_interests: Mengikuti proposal sehingga kami dapat memberikan anda sebagai rekomendasi
+      search_form:
+        button: Cari
+        placeholder: Cari perdebatan...
+        title: Cari
+      search_results_html:
+        other: " mengandung istilah <strong>'%{search_term}'</strong>"
+      select_order: Dipesan oleh
+      start_debate: Memulai perdebatan
+      title: Perdebatan
+      section_header:
+        icon_alt: Perdebatan ikon
+        title: Perdebatan
+        help: Bantuan tentang perdebatan
+      section_footer:
+        title: Bantuan tentang perdebatan
+        description: Memulai sebuah perdebatan untuk berbagi pendapat dengan orang lain tentang topik yang anda pedulikan.
+        help_text_1: "Ruang untuk warga perdebatan ini ditujukan untuk siapa saja yang bisa mengekspos isu-isu keprihatinan mereka dan orang-orang yang ingin berbagi pendapat dengan orang-orang lain."
+        help_text_2: 'Untuk membuka debat yang anda butuhkan untuk mendaftar di %{org}. Pengguna juga dapat memberikan komentar pada debat terbuka dan menilai mereka dengan "saya setuju" atau "saya tidak setuju" tombol yang ditemukan di masing-masing dari mereka.'
+    new:
+      form:
+        submit_button: Memulai sebuah perdebatan
+      info: Jika anda ingin membuat sebuah proposal, ini adalah bagian yang salah, masukkan %{info_link}.
+      info_link: buat proposal baru
+      more_info: Informasi lebih lanjut
+      recommendation_four: Menikmati ruang ini dan suara-suara yang mengisinya. Itu milik anda juga.
+      recommendation_one: Jangan gunakan huruf kapital untuk judul perdebatan atau keseluruhan kalimat. Di internet, hal ini dianggap berteriak. Dan tak ada orang yang berteriak.
+      recommendation_three: Kejam kritik sangat diterima. Ini adalah ruang untuk refleksi. Tapi kami sarankan agar anda tetap keanggunan dan kecerdasan. Dunia adalah tempat yang lebih baik dengan nilai-nilai di dalamnya.
+      recommendation_two: Komentar menyarankan tindakan ilegal atau perdebatan akan dihapus, serta mereka yang berniat untuk menyabot ruang perdebatan. Apa pun diperbolehkan.
+      recommendations_title: Rekomendasi untuk membuat topik
+      start_new: Mulailah debat
+    show:
+      author_deleted: Pengguna dihapus
+      comments:
+        zero: Tidak ada komentar
+        other: "1 Komentar\n%{count} komentar"
+      comments_title: Komentar
+      edit_debate_link: Sunting
+      flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
+      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
+      share: Berbagi
+      author: Penulis
+    update:
+      form:
+        submit_button: Simpan perubahan
+  errors:
+    messages:
+      user_not_found: Pengguna tidak ditemukan
+      invalid_date_range: "Rentang tanggal tidak valid"
+  form:
+    accept_terms: Saya setuju untuk %{policy} dan %{conditions}
+    accept_terms_title: Saya setuju dengan kebijakan privasi dan syarat dan ketentuan penggunaan
+    conditions: Syarat dan ketentuan penggunaan
+    debate: Perdebatan
+    direct_message: pesan pribadi
+    error: kesalahan
+    errors: kesalahan
+    not_saved_html: "menghalanginya %{resource} disimpan. <br>Silakan periksa ditandai bidang untuk mengetahui bagaimana untuk memperbaikinya:"
+    policy: Kebijakan Privasi
+    proposal: Usulan
+    proposal_notification: "Pemberitahuan"
+    spending_proposal: Pengeluaran proposal
+    budget/investment: Investasi
+    budget/heading: Anggaran judul
+    poll/shift: Pergeseran
+    poll/question/answer: Jawaban
+    user: Akun
+    verification/sms: telepon
+    signature_sheet: Lembar tanda tangan
+    document: Dokumen
+    topic: Topik
+    image: Gambar
+  geozones:
+    none: Semua kota
+    all: Semua cangkupan
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Kami telah mendeteksi bahwa Anda browsing dengan Internet Explorer. Untuk pengalaman yang disempurnakan, sebaiknya gunakan %{firefox} atau %{chrome}.
+      ie_title: Situs ini tidak dioptimalkan untuk peramban
+    footer:
+      accessibility: Aksesibilitas
+      conditions: Syarat dan ketentuan penggunaan
+      consul: Konsul aplikasi
+      consul_url: https://github.com/consul/consul
+      contact_us: Untuk bantuan teknis memasuki
+      copyright: KONSUL, %{year}
+      description: Portal ini menggunakan %{consul} Itulah %{open_source}.
+      open_source: perangkat lunak open-source
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Memutuskan bagaimana bentuk kota yang anda ingin tinggal di.
+      participation_title: Partisipasi
+      privacy: Kebijakan Privasi
+    header:
+      administration_menu: Admin
+      administration: Administrasi
+      available_locales: Bahasa yang tersedia
+      collaborative_legislation: Undang-undang proses
+      debates: Perdebatan
+      external_link_blog: Blog
+      locale: 'Bahasa:'
+      logo: Logo CONSUL
+      management: Manajemen
+      moderation: Moderasi
+      valuation: Penilaian
+      officing: Petugas jajak pendapat
+      help: Bantuan
+      my_account_link: Akun saya
+      my_activity_link: Aktifitas saya
+      open: buka
+      open_gov: Pemerintahan terbuka
+      proposals: Proposal
+      poll_questions: Suara
+      budgets: Penganggaran partisipatif
+      spending_proposals: Belanja Proposal
+    admin:
+      watch_form_message: 'Anda memiliki perubahan yang belum disimpan. Apakah anda mengkonfirmasi untuk meninggalkan halaman?'
+  legacy_legislation:
+    help:
+      alt: Pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
+      text: Untuk mengomentari dokumen ini anda harus %{sign_in} atau %{sign_up}. Kemudian pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
+      text_sign_in: masuk
+      text_sign_up: daftar
+      title: Bagaimana saya dapat mengomentari dokumen ini?
+  notifications:
+    index:
+      empty_notifications: Anda tidak memiliki pemberitahuan baru.
+      mark_all_as_read: Tandai semua sebagai telah dibaca
+      title: Pemberitahuan
+  map:
+    title: "Kabupaten"
+    proposal_for_district: "Mulai proposal untuk distrik Anda"
+    select_district: Lingkup operasi
+    start_proposal: Buat proposal
+  omniauth:
+    facebook:
+      sign_in: Sign in dengan Facebook
+      sign_up: Sign in dengan Facebook
+      name: Facebook
+    finish_signup:
+      title: "Rincian tambahan"
+      username_warning: "Karena perubahan dalam cara kita berinteraksi dengan jaringan sosial, mungkin bahwa username sekarang muncul sebagai 'sudah dalam penggunaan'. Jika itu adalah kasus Anda, silakan pilih username yang berbeda."
+    google_oauth2:
+      sign_in: Login dengan Google
+      sign_up: Login dengan Google
+      name: Google
+    twitter:
+      sign_in: Login dengan Google
+      sign_up: Login dengan Google
+      name: Twitter
+    info_sign_in: "Masuk dengan:"
+    info_sign_up: "Mendaftar dengan:"
+    or_fill: "Atau mengisi formulir berikut:"
+  proposals:
+    create:
+      form:
+        submit_button: Buat proposal
+    edit:
+      editing: Cetak proposal
+      form:
+        submit_button: Simpan perubahan
+      show_link: Pilih proposal
+    retire_form:
+      title: Bagikan proposal
+      warning: "Jika Anda pensiun proposal itu masih akan menerima mendukung, tetapi akan dihapus dari daftar utama dan pesan akan terlihat oleh semua pengguna yang menyatakan bahwa penulis menganggap proposal harus tidak didukung lagi"
+      retired_reason_label: Alasan untuk pensiun proposal
+      retired_reason_blank: Pilih opsi
+      retired_explanation_label: Penjelasan
+      retired_explanation_placeholder: Segera menjelaskan mengapa Anda berpikir proposal ini seharusnya tidak menerima lebih mendukung
+      submit_button: Bagikan proposal
+    retire_options:
+      duplicated: Diduplikasi
+      started: Sudah berlangsung
+      unfeasible: Tidak layak
+      done: Dilakukan
+      other: Lainnya
+    form:
+      geozone: Lingkup operasi
+      proposal_external_url: Tautkan ke dokumentasi tambahan
+      proposal_question: Proposal pertanyaan
+      proposal_responsible_name: Nama lengkap orang yang mengajukan proposal
+      proposal_responsible_name_note: "(secara individu atau sebagai wakil dari kolektif; tidak akan ditampilkan dipublikasikan)"
+      proposal_summary: Proposal ringkasan
+      proposal_summary_note: "(maksimum 200 karakter)"
+      proposal_text: Proposal teks
+      proposal_title: Proposal teks
+      proposal_video_url: Link ke video eksternal
+      proposal_video_url_note: Anda dapat menambahkan link anda ke YouTube atau Vimeo
+      tag_category_label: "Kategori"
+      tags_instructions: "Tag proposal ini. Anda dapat memilih dari yang diusulkan kategori atau menambahkan anda sendiri"
+      tags_label: Tag
+      tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
+      map_location: "Peta lokasi"
+      map_location_instructions: "Menavigasi peta lokasi dan tempat penanda."
+      map_remove_marker: "Menghapus penanda peta"
+      map_skip_checkbox: "Proposal ini tidak memiliki beton lokasi atau aku tidak menyadari hal itu."
+    index:
+      featured_proposals: Fitur
+      filter_topic:
+        other: " dengan topik '%{topic}'"
+      orders:
+        confidence_score: nilai tertinggi
+        created_at: terbaru
+        hot_score: paling aktif
+        most_commented: paling banyak komentar
+        relevance: relevansi
+        archival_date: diarsipkan
+        recommendations: rekomendasi
+      recommendations:
+        without_results: Tidak ada proposal yang berkaitan dengan kepentingan anda
+        without_interests: Mengikuti proposal sehingga kami bisa memberikan anda sebagai rekomendasi
+      retired_proposals: Pensiun proposal
+      retired_proposals_link: "Usulan pensiun oleh penulis"
+      retired_links:
+        all: Semua
+        duplicated: Digandakan
+        started: Berlangsung
+        unfeasible: Tidak layak
+        done: Dilakukan
+        other: Lainnya
+      search_form:
+        button: Cari
+        placeholder: Cari proposal...
+        title: Cari
+      search_results_html:
+        other: " mengandung istilah <strong>'%{search_term}'</strong>"
+      select_order: Dipesan oleh
+      select_order_long: 'Anda sedang melihat proposal sesuai untuk:'
+      start_proposal: Membuat sebuah proposal
+      title: Proposal
+      top: Top mingguan
+      top_link_proposals: Yang paling didukung proposal berdasarkan kategori
+      section_header:
+        icon_alt: Proposal ikon
+        title: Proposal
+        help: Bantuan tentang proposal
+      section_footer:
+        title: Bantuan tentang proposal
+    new:
+      form:
+        submit_button: Membuat proposal
+      more_info: Bagaimana warga proposal kerja?
+      recommendation_one: Jangan menggunakan huruf kapital untuk proposal judul atau seluruh kalimat. Di internet, hal ini akan dianggap berteriak. Dan tak ada orang yang berteriak.
+      recommendation_three: Menikmati ruang ini dan suara-suara yang mengisi itu. Itu milik anda juga.
+      recommendation_two: Komentar menyarankan tindakan ilegal atau perdebatan akan dihapus, serta mereka yang berniat untuk menyabot ruang perdebatan. Apa pun diperbolehkan.
+      recommendations_title: Rekomendasi untuk membuat topik
+      start_new: Membuat proposal baru
+    notice:
+      retired: Proposal pensiun
+    proposal:
+      created: "Anda telah membuat sebuah proposal!"
+      share:
+        guide: "Sekarang Anda dapat berbagi sehingga orang dapat mulai mendukung."
+        edit: "Sebelum itu mendapat bersama, Anda akan dapat mengubah teks yang Anda inginkan."
+        view_proposal: Tidak sekarang, pergi ke proposal saya
+      improve_info: "Meningkatkan kampanye Anda dan mendapatkan lebih mendukung"
+      improve_info_link: "Lihat Selengkapnya"
+      already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
+      comments:
+        zero: Tidak ada komentar
+        other: "1 Komentar\n%{count} komentar"
+      support: Mendukung
+      support_title: Mendukung proyek ini
+      supports:
+        zero: Tidak ada dukungan
+        other: "1 detik\n\n%{count} detik"
+      votes:
+        zero: Tidak ada suara
+        other: "1 bulan\n\n%{count} bulan"
+      supports_necessary: "%{number} mendukung diperlukan"
+      total_percent: 100%
+      archived: "Proposal ini telah Diarsipkan dan tidak dapat mengumpulkan mendukung."
+    show:
+      author_deleted: Pengguna dihapus
+      code: 'Usulan kode:'
+      comments:
+        zero: Tidak ada komentar
+        other: "1 Komentar\n%{count} komentar"
+      comments_tab: Komentar
+      edit_proposal_link: Sunting
+      flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
+      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
+      notifications_tab: Pemberitahuan
+      retired_warning: "Penulis menganggap proposal ini seharusnya tidak menerima lebih mendukung."
+      retired_warning_link_to_explanation: Baca penjelasan sebelum pemungutan suara untuk itu.
+      retired: Proposal pensiun oleh penulis
+      share: Berbagi
+      send_notification: Kirim pemberitahuan
+      no_notifications: "Proposal ini memiliki pemberitahuan."
+      embed_video_title: "Video pada %{proposal}"
+      title_external_url: "Tautkan ke dokumentasi tambahan"
+      title_video_url: "Video eksternal"
+      author: Penulis
+    update:
+      form:
+        submit_button: Simpan perubahan
+  polls:
+    all: "Semua"
+    no_dates: "tidak ada tanggal yang ditetapkan"
+    dates: "Dari %{open_at} untuk %{closed_at}"
+    final_date: "Final menceritakan/Hasil"
+    index:
+      filters:
+        current: "Buka"
+        incoming: "Masuk"
+        expired: "Kadaluarsa"
+      title: "Jajak pendapat"
+      participate_button: "Berpartisipasi dalam jajak pendapat ini"
+      participate_button_incoming: "Informasi lebih lanjut"
+      participate_button_expired: "Jajak pendapat terakhir"
+      no_geozone_restricted: "Semua kota"
+      geozone_restricted: "Kabupaten"
+      geozone_info: "Dapat berperan serta orang-orang didalam Sensus: "
+      already_answer: "Anda sudah pernah berpartisipasi dalam jajak pendapat ini"
+      section_header:
+        icon_alt: Pemegang ikon
+        title: Suara
+        help: Bantuan tentang voting
+      section_footer:
+        title: Bantuan tentang voting
+    show:
+      already_voted_in_booth: "Anda telah berpartisipasi dalam fisik bilik. Anda tidak dapat berpartisipasi lagi."
+      already_voted_in_web: "Anda telah berpartisipasi dalam jajak pendapat ini. Jika anda memilih lagi itu akan ditimpa."
+      back: Kembali ke pemegang
+      cant_answer_not_logged_in: "Anda harus %{signin} atau %{signup} untuk berpartisipasi."
+      comments_tab: Komentar
+      login_to_comment: Anda harus %{signin} atau %{signup} untuk menginggalkan sebuah komentar.
+      signin: Masuk
+      signup: Daftar
+      cant_answer_verify_html: "Anda harus %{verify_link} dalam rangka untuk menjawab."
+      verify_link: "verivikasi akun anda"
+      cant_answer_incoming: "Jajak pendapat ini belum dimulai."
+      cant_answer_expired: "Jajak pendapat ini telah selesai."
+      cant_answer_wrong_geozone: "Pertanyaan ini tidak tersedia pada geozone."
+      more_info_title: "Informasi lebih lanjut"
+      documents: Dokumen
+      zoom_plus: Memperluas gambar
+      read_more: "Baca lebih lanjut tentang %{answer}"
+      read_less: "Baca kurang tentang %{answer}"
+      videos: "Video eksternal"
+      info_menu: "Informasi"
+      stats_menu: "Partisipasi statistik"
+      results_menu: "Hasil jajak pendapat"
+      stats:
+        title: "Partisipasi data"
+        total_participation: "Total partisipasi"
+        total_votes: "Total jumlah suara yang diberikan"
+        votes: "SUARA"
+        web: "WEB"
+        booth: "BILIK"
+        total: "TOTAL"
+        valid: "Berlaku"
+        white: "Suara putih"
+        null_votes: "Tidak berlaku"
+      results:
+        title: "Pertanyaan"
+        most_voted_answer: "Jawaban paling banyak suara: "
+  poll_questions:
+    create_question: "Membuat pertanyaan"
+    show:
+      vote_answer: "Suara %{answer}"
+      voted: "Anda telah suara %{answer}"
+      voted_token: "Anda dapat menuliskan suara ini pengenal, untuk memeriksa suara anda pada hasil akhir:"
+  proposal_notifications:
+    new:
+      title: "Mengirim pesan"
+      title_label: "Judul"
+      body_label: "Pesan"
+      submit_button: "Kirim pesan"
+      info_about_receivers_html: "Pesan ini akan dikirimkan ke <strong>%{count}</strong> dan itu akan terlihat dalam %{proposal_page}.<br> Pesan tidak dikirim segera, pengguna akan secara berkala menerima email dengan semua usulan pemberitahuan."
+      proposal_page: "proposal halaman"
+    show:
+      back: "Kembali ke aktivitas saya"
+  shared:
+    edit: 'Ubah'
+    save: 'Simpan'
+    delete: Hapus
+    "yes": "Ya"
+    "no": "Tidak"
+    search_results: "Hasil pencarian"
+    advanced_search:
+      author_type: 'Oleh penulis kategori'
+      author_type_blank: 'Pilih sebuah kategori'
+      date: 'Menurut tanggal'
+      date_placeholder: 'DD/MM/YYYY'
+      date_range_blank: 'Pilih sebuah tanggal'
+      date_1: '24 jam terakhir'
+      date_2: 'Minggu lalu'
+      date_3: 'Bulan lalu'
+      date_4: 'Tahun lalu'
+      date_5: 'Disesuaikan'
+      from: 'Dari'
+      general: 'Dengan teks'
+      general_placeholder: 'Menulis teks'
+      search: 'Menyaring'
+      title: 'Pencarian lanjutan'
+      to: 'Kepada'
+    author_info:
+      author_deleted: Pengguna dihapus
+    back: Kembali
+    check: Pilih
+    check_all: Semua
+    check_none: Tidak ada
+    collective: Kolektif
+    flag: Tandai sebagai tidak pantas
+    follow: "Ikuti"
+    following: "Berikut"
+    follow_entity: "Ikuti %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Anda sekarang berikut ini proyek investasi! </br> Kami akan memberitahu anda tentang perubahan yang terjadi sehingga anda up-to-date."
+        destroy:
+          notice_html: "Anda telah berhenti mengikuti proyek investasi ini! </br> Anda tidak akan menerima lagi pemberitahuan yang terkait dengan proyek ini."
+      proposal:
+        create:
+          notice_html: "Sekarang anda berikut ini warga proposal! </br> Kami akan memberitahu anda tentang perubahan yang terjadi sehingga anda up-to-date."
+        destroy:
+          notice_html: "Anda telah berhenti berikut ini warga proposal! </br> Anda tidak akan lagi menerima pemberitahuan terkait dengan usulan ini."
+    hide: Sembunyikan
+    print:
+      print_button: Cetak info ini
+    search: Cari
+    show: Tampilkan
+    suggest:
+      debate:
+        found:
+          other: "Ada perdebatan dengan istilah '%{query}', anda bisa berpartisipasi di dalamnya, bukannya membuka yang baru."
+        message: "Anda melihat %{limit} atau %{count} perdebatan yang mengandung istilah '%{query}'"
+        see_all: "Lihat semua"
+      budget_investment:
+        found:
+          other: "Disana ada investasi dengan istilah '%{query}', anda bisa berpartisipasi di dalamnya bukannya membuka yang baru."
+        message: "Anda melihat %{limit} %{count} investasi yang mengandung istilah '%{query}'"
+        see_all: "Lihat semuanya"
+      proposal:
+        found:
+          other: "Disana ada usulan dengan istilah '%{query}', anda dapat berkontribusi untuk mereka bukan dari membuat yang baru"
+        message: "Anda melihat %{limit} dari %{count} proposal yang berisi istilah '%{query}'"
+        see_all: "Lihat semuanya"
+    tags_cloud:
+      tags: Tren
+      districts: "Kabupaten"
+      districts_list: "Daftar kabupaten"
+      categories: "Kategori"
+    target_blank_html: " (link terbuka didalam jendela baru)"
+    you_are_in: "Anda berada di"
+    unfollow_entity: "Berhenti ikuti %{entity}"
+    outline:
+      budget: Anggaran partisipatif
+      searcher: Pencarian
+    go_to_page: "Pergi ke halaman "
+    share: Berbagi
+    orbit:
+      previous_slide: Sebelumnya Meluncur
+      next_slide: Selanjutnya Meluncur
+    documentation: Dokumentasi tambahan
+  social:
+    blog: "%{org} Blog"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  spending_proposals:
+    form:
+      association_name_label: 'Jika anda mengusulkan nama sebuah asosiasi atau kolektif menambahkan nama di sini'
+      association_name: 'Asosiasi nama'
+      description: Deskripsi
+      external_url: Link ke dokumentasi tambahan
+      geozone: Lingkup operasi
+      submit_buttons:
+        create: Membuat
+        new: Membuat
+      title: Belanja proposal judul
+    index:
+      title: Penganggaran partisipatif
+      unfeasible: Proyek-proyek investasi tidak layak
+      by_geozone: "Investasi proyek dengan ruang lingkup: %{geozone}"
+      search_form:
+        button: Cari
+        placeholder: Proyek-proyek investasi...
+        title: Cari
+      search_results:
+        other: " mengandung istilah '%{search_term}'"
+      sidebar:
+        geozones: Lingkup operasi
+        feasibility: Kelayakan
+        unfeasible: Tidak layak
+      start_spending_proposal: Membuat suatu proyek investasi
+    new:
+      more_info: Bagaimana penganggaran partisipatif bekerja?
+      recommendation_one: Itu adalah wajib bahwa proposal membuat referensi ke budgetable tindakan.
+      recommendation_three: Cobalah untuk pergi ke rincian ketika menggambarkan pengeluaran anda usulan agar meninjau tim memahami poin anda.
+      recommendation_two: Setiap usulan atau komentar yang menunjukkan tindakan ilegal akan dihapus.
+      recommendations_title: Cara membuat proposal pengeluaran
+      start_new: Membuat proposal pengeluaran
+    show:
+      author_deleted: Pengguna dihapus
+      code: 'Proposal kode:'
+      share: Berbagi
+    wrong_price_format: Hanya angka bilangan bulat
+    spending_proposal:
+      spending_proposal: Investasi proyek
+      already_supported: Anda sudah mendukung ini. Berbagi!
+      support: Mendukung
+      support_title: Mendukung proyek ini
+      supports:
+        zero: Tidak ada dukungan
+        other: "%{count} mendukung"
+  stats:
+    index:
+      visits: Mengunjungi
+      debates: Perdebatan
+      proposals: Proposal
+      comments: Komentar
+      proposal_votes: Suara pada proposal
+      debate_votes: Suara pada perdebatan
+      comment_votes: Suara pada komentar
+      votes: Total suara
+      verified_users: Pengguna terverifikasi
+      unverified_users: Pengguna tidak terverifikasi
+  unauthorized:
+    default: Anda tidak memiliki izin untuk mengakses halaman ini.
+    manage:
+      all: "Anda tidak memiliki izin untuk melaksanakan aksi '%{action}' pada %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Pesan
+        direct_messages_bloqued: "Pengguna ini telah memutuskan untuk tidak menerima pesan langsung"
+        submit_button: Kirim pesan
+        title: Kirim pesan pribadi ke %{receiver}
+        title_label: Judul
+        verified_only: Untuk mengirim sebuah pesan pribadi %{verify_account}
+        verify_account: verifikasi akun anda
+        authenticate: Anda harus %{signin} atau %{signup} untuk melanjutkan.
+        signin: masuk
+        signup: daftar
+      show:
+        receiver: Pesan yang dikirim ke %{receiver}
+    show:
+      deleted: Hapus
+      deleted_debate: Perdebatan ini telah dihapus
+      deleted_proposal: Proposal ini telah dihapus
+      deleted_budget_investment: Ini proyek investasi yang telah dihapus
+      proposals: Proposal
+      debates: Perdebatan
+      budget_investments: Anggaran investasi
+      comments: Komentar
+      actions: Tindakan
+      filters:
+        comments:
+          other: "%{count} Komentar"
+        debates:
+          other: "%{count} perdebatan"
+        proposals:
+          other: "%{count} proposal"
+        budget_investments:
+          other: "%{count} Investasi"
+        follows:
+          other: "%{count} mengikuti"
+      no_activity: Pengguna tidak memiliki aktivitas publik
+      no_private_messages: "Pengguna ini tidak menerima pesan pribadi."
+      private_activity: Pengguna ini memutuskan untuk membuat daftar kegiatan pribadi.
+      send_private_message: "Kirim pesan pribadi"
+    proposals:
+      send_notification: "Mengirim pemberitahuan"
+      retire: "Pensiun"
+      retired: "Pensiun proposal"
+      see: "Melihat proposal"
+  votes:
+    agree: Saya setuju
+    anonymous: Terlalu banyak anonim suara untuk mengakui suara %{verify_account}.
+    comment_unauthenticated: Anda harus %{signin} atau %{signup} untuk memilih.
+    disagree: Saya tidak setuju
+    organizations: Organisasi tidak diizinkan untuk memilih
+    signin: Masuk
+    signup: Daftar
+    supports: Mendukung
+    unauthenticated: Anda harus %{signin} atau %{signup} untuk melanjutkan.
+    verified_only: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
+    verify_account: memverifikasi akun anda
+    spending_proposals:
+      not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
+      not_verified: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
+      organization: Organisasi tidak diizinkan untuk memilih
+      unfeasible: Tidak layak proyek-proyek investasi tidak dapat didukung
+      not_voting_allowed: Tahap Voting ditutup
+    budget_investments:
+      not_logged_in: Anda harus %{signin} %{signup} untuk melanjutkan.
+      not_verified: Hanya memverifikasi pengguna dapat memilih pada proyek-proyek investasi; %{verify_account}.
+      organization: Organisasi tidak diizinkan untuk memilih
+      unfeasible: Tidak layak proyek-proyek investasi tidak dapat didukung
+      not_voting_allowed: Tahap memilih ditutup
+  welcome:
+    recommended:
+      title: Rekomendasi yang mungkin menarik bagi anda
+      debates:
+        title: Dianjurkan perdebatan
+        btn_text_link: Semua dianjurkan perdebatan
+      proposals:
+        title: Dianjurkan proposal
+        btn_text_link: Semua dianjurkan proposal
+      budget_investments:
+        title: Direkomendasikan investasi
+    verification:
+      i_dont_have_an_account: Saya tidak memiliki akun
+      i_have_an_account: Saya sudah memiliki akun
+      question: Apakah anda sudah memiliki akun di %{org_name}?
+      title: Verifikasi akun
+    welcome:
+      go_to_index: Melihat proposal dan perdebatan
+      title: Berpartisipasi
+      user_permission_debates: Berpartisipasi pada perdebatan
+      user_permission_info: Dengan account anda anda dapat...
+      user_permission_proposal: Membuat proposal baru
+      user_permission_support_proposal: Mendukung proposal*
+      user_permission_verify: Untuk melakukan semua tindakan memverifikasi akun anda.
+      user_permission_verify_info: "* Hanya untuk pengguna di Sensus."
+      user_permission_verify_my_account: Verifikasi akun saya
+      user_permission_votes: Berpartisipasi pada akhir suara
+  invisible_captcha:
+    sentence_for_humans: "Jika anda adalah manusia, mengabaikan bidang ini"
+    timestamp_error_message: "Maaf, itu terlalu cepat! Silakan kirimkan kembali."
+  related_content:
+    title: "Konten terkait"
+    add: "Tambahkan konten terkait"
+    label: "Link kepada konten terkait"
+    placeholder: "%{url}"
+    help: "Anda dapat menambahkan link dari %{models} didalam dari %{org}."
+    submit: "Tambahkan"
+    error: "Link tidak valid. Ingat untuk memulai dengan %{url}."
+    error_itself: "Link tidak valid. Anda tidak berhubungan dengan konten itu sendiri."
+    success: "Anda menambahkan baru terkait konten"
+    is_related: "¿Apakah itu konten yang terkait?"
+    score_positive: "Ya"
+    score_negative: "Tidak"
+    content_title:
+      proposal: "Proposal"
+      debate: "Perdebatan"
+      budget_investment: "Anggaran investasi"

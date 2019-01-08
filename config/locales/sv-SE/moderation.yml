@@ -1,0 +1,117 @@
+sv:
+  moderation:
+    comments:
+      index:
+        block_authors: Blockera användare
+        confirm: Är du säker?
+        filter: Filtrera
+        filters:
+          all: Alla
+          pending_flag_review: Väntande
+          with_ignored_flag: Markerad som läst
+        headers:
+          comment: Kommentera
+          moderate: Moderera
+        hide_comments: Dölj kommentarer
+        ignore_flags: Markera som läst
+        order: Sortera efter
+        orders:
+          flags: Mest flaggade
+          newest: Senaste
+        title: Kommentarer
+    dashboard:
+      index:
+        title: Moderering
+    debates:
+      index:
+        block_authors: Blockera användare
+        confirm: Är du säker?
+        filter: Filtrera
+        filters:
+          all: Alla
+          pending_flag_review: Väntande
+          with_ignored_flag: Markerad som läst
+        headers:
+          debate: Diskutera
+          moderate: Moderera
+        hide_debates: Dölj debatter
+        ignore_flags: Markera som läst
+        order: Sortera efter
+        orders:
+          created_at: Senaste
+          flags: Mest flaggade
+        title: Debatter
+    header:
+      title: Moderering
+    menu:
+      flagged_comments: Kommentarer
+      flagged_debates: Debatter
+      flagged_investments: Budgetförslag
+      proposals: Förslag
+      proposal_notifications: Aviseringar om förslag
+      users: Blockera användare
+    proposals:
+      index:
+        block_authors: Blockera användare
+        confirm: Är du säker?
+        filter: Filtrera
+        filters:
+          all: Alla
+          pending_flag_review: Inväntar granskning
+          with_ignored_flag: Markera som läst
+        headers:
+          moderate: Moderera
+          proposal: Förslag
+        hide_proposals: Dölj förslag
+        ignore_flags: Markera som läst
+        order: Sortera efter
+        orders:
+          created_at: Senaste
+          flags: Mest flaggade
+        title: Förslag
+    budget_investments:
+      index:
+        block_authors: Blockera förslagslämnare
+        confirm: Är du säker?
+        filter: Filtrera
+        filters:
+          all: Alla
+          pending_flag_review: Avvaktar
+          with_ignored_flag: Markerad som läst
+        headers:
+          moderate: Moderera
+          budget_investment: Budgetförslag
+        hide_budget_investments: Dölj budgetförslag
+        ignore_flags: Markera som läst
+        order: Sortera efter
+        orders:
+          created_at: Senaste
+          flags: Mest flaggade
+        title: Budgetförslag
+    proposal_notifications:
+      index:
+        block_authors: Blockera förslagslämnare
+        confirm: Är du säker?
+        filter: Filtrera
+        filters:
+          all: Alla
+          pending_review: Inväntar granskning
+          ignored: Markera som läst
+        headers:
+          moderate: Moderera
+          proposal_notification: Avisering om förslag
+        hide_proposal_notifications: Dölj förslag
+        ignore_flags: Markera som läst
+        order: Sortera efter
+        orders:
+          created_at: Senaste
+          moderated: Modererad
+        title: Förslagsaviseringar
+    users:
+      index:
+        hidden: Blockerade
+        hide: Blockera
+        search: Sök
+        search_placeholder: e-postadress eller namn på användare
+        title: Blockera användare
+      notice_hide: Användaren blockerades. Alla användarens inlägg och kommentarer har dolts.

@@ -35,6 +35,7 @@ val:
         table_title: Títol
         table_heading_name: Nom de la partida
         table_actions: Accions
+        no_investments: "No hi ha projectes d'inversió."
       show:
         back: Tornar
         title: Proposta d'inversió
@@ -53,7 +54,6 @@ val:
         undefined: Sense definir
         valuation_finished: Informe finalitzat
         duration: Plaç d'execució
-        internal_comments: Comentaris interns
         responsibles: Responsables
         assigned_admin: Administrador asignat
         assigned_valuators: Avaluadors assignats
@@ -71,10 +71,11 @@ val:
         valuation_finished_alert: "Segur que vols marcar este informe com a finalitzat? Si ho fas, no podràs modificarlo més."
         not_feasible_alert: "Un correu electrònic s'ha enviat a l'autor del projecte amb l'informe d'inviabilitat."
         duration_html: Plaç d'execució
-        internal_comments_html: Comentaris interns
         save: Guardar canvis
       notice:
         valuate: "Dossier actualitzat"
+      valuation_comments: Comentaris d'avaluació
+      not_in_valuating_phase: Els projectes sols poden ser avaluats quant el Pressupost està en fase d'avaluació
     spending_proposals:
       index:
         geozone_filter_all: Tots els àmbits d'actuació

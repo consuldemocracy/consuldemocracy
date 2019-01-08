@@ -19,7 +19,7 @@ he:
       official_position_badge_label: הצג את אות הדירוג הרשמי שלי
       title: החשבון שלי
       user_permission_debates: להשתתף בדיונים
-      user_permission_info: '...עם החשבון שלך תוכל/י'
+      user_permission_info: ...עם החשבון שלך תוכל/י
       user_permission_proposal: ליצור הצעות חדשות
       user_permission_support_proposal: לתמוך בהצעות
       user_permission_title: השתתפות
@@ -154,45 +154,29 @@ he:
       contact_us: לתמיכה טכנית עברו אל
       copyright: Consul, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
-      faq: לעזרה טכנית
-      open_data_text: כל המידע נגיש עבורך
-      open_data_title: מידע נגיש
       open_source: תוכנת קוד פתוח
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: אתם/ן קובעים/ות איך תתנהל המדינה בה אתם/ן גרים/ות
       participation_title: השתתפות
       privacy: מדיניות הפרטיות
-      transparency_text: גלו כל מה שמעניין לדעת על מה אפשר לעשות במדינה
-      transparency_title: שקיפות
-      transparency_url: https://transparency.consul
     header:
       administration: ניהול
       available_locales: שפות לבחירה
       debates: דיונים
       external_link_blog: אתר קול העם
-      external_link_opendata: מידע נגיש
-      external_link_opendata_url: /opendata
-      external_link_transparency: שקיפות
-      external_link_transparency_url: https://transparency.consul
       locale: 'שפה:'
       logo: Consul logo לוגו
       management: ניהול
       moderation: הנחיה
       valuation: הערכה
-      more_info: מידע נוסף
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
-      notifications: התראות
-      no_notifications: "אין לך התראות חדשות"
       open: פתיחה
-      open_city_slogan_html: ערים ומדינות בעולם מתנהלות באופן ישיר בידי האזרחים, שיכולים <b>לדון</b> בנושאים שמדאיגים אותם או חשובים להם, <b>להציע</b> תכניות ורעיונות שישפרו את חייהם ואז <b>לקבוע</b> בעצמם מה ההצעות שיבוצעו בפועל. עכשיו גם בישראל
-      open_city_title: קול העם מזמינה אותך לכתוב ולהחליט על העתיד שלנו ביחד למען כולנו
       open_gov: ממשל פתוח
       proposals: הצעות
       poll_questions: הצבעות
       budgets: מימון השתתפותי
       spending_proposals: הצעות להוצאת כספים
-  locale: עברית
   notifications:
     index:
       empty_notifications: אין לך תגובות חדשות
@@ -303,7 +287,6 @@ he:
       already_supported: תודה שתמכת בהצעה זו. תוכל/י לשתף
       comments:
         zero: אין תגובות עדיין
-      reason_for_supports_necessary: 1% תמיכה נדרשת
       support: בעד
       support_title: לתמיכה בהצעה זו
       supports:
@@ -311,8 +294,6 @@ he:
       supports_necessary: "“נדרשים %{number} תומכים\""
       total_percent: 100%
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
-      successful: "הצעה זו הגיעה לתמיכה הנדרשת ותעלה להצבעה ב%{voting}."
-      voting: "הצבעה הבאה"
     show:
       author_deleted: משתמש זה נמחק
       code: 'קוד ההצעה:'
@@ -348,7 +329,7 @@ he:
       participate_button_expired: "ההצבעה הסתיימה"
       no_geozone_restricted: "בכל הערים/הרשויות"
       geozone_restricted: "מחוזות"
-      geozone_info: 'יכולים להשתתף אזרחים מ: '
+      geozone_info: "יכולים להשתתף אזרחים מ: "
       already_answer: "השתתפת כבר בהצבעה זו"
     show:
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
@@ -449,7 +430,7 @@ he:
     index:
       title: מימון השתתפותי
       unfeasible: פרויקטים שהשקעה בהם אינה ברת ביצוע
-      by_geozone: 'פרויקט השקעה בתחומי: %{geozone}'
+      by_geozone: "פרויקט השקעה בתחומי: %{geozone}"
       search_form:
         button: חיפוש
         placeholder: פרויקטים להשקעה...
@@ -546,18 +527,6 @@ he:
       unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
       not_voting_allowed: שלב ההצבעות נסגר
   welcome:
-    debates:
-      description: לפגישות, דיונים ודיוק הצעות לקראת הצעה סופית
-      title: דיונים
-    decide:
-      description: חברי התנועה מחליטים אם הם מקבלים או דוחים את ההצעות הנתמכות ביותר על ידי הציבור
-      title: ההצבעות שלך
-    do:
-      description: אם ההצעה מקובלת על הרוב, היא תעלה למצע התנועה ותקודם על ידי חבריה
-      title: זה יעשה
-    proposal:
-      description: המרחב הציבורי להצעות שלך לניהול המדינה
-      title: ההצעות שלך
     verification:
       i_dont_have_an_account: אין לי חשבון
       i_have_an_account: כבר יש לי חשבון

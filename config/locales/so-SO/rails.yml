@@ -1,0 +1,54 @@
+so:
+  date:
+    abbr_day_names:
+      - Axad
+      - Isniin
+      - Talado
+      - Arboco
+      - Khamiis
+      - Jimce
+      - Sabti
+    abbr_month_names:
+      - 
+      - Janaayo
+      - Febarayo
+      - Marso
+      - Abril
+      - Maay
+      - Jun
+      - Luliyo
+      - Ogosto
+      - Sebtembar
+      - Oktobar
+      - Nofembar
+      - Disembar
+    day_names:
+      - Malinta Axada
+      - Malinta Isninta
+      - Malinta Taladada
+      - Malinta Arbacada
+      - Malinta Khamista
+      - Malinta Jimcaha
+      - Malinta Sabtiida
+    formats:
+      long: "%B %d, %Y"
+      short: "%d%d"
+    month_names:
+      - 
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+  number:
+    human:
+      format:
+        significant: true
+        strip_insignificant_zeros: true

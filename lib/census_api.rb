@@ -23,7 +23,7 @@ class CensusApi
       str = data[:datos_habitante][:item][:fecha_nacimiento_string]
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
-      Date.new(year.to_i, month.to_i, day.to_i)
+      Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end
 
     def postal_code

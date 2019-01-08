@@ -1,0 +1,306 @@
+zh-CN:
+  activerecord:
+    models:
+      activity:
+        other: "活动"
+      budget:
+        other: "预算"
+      budget/investment:
+        other: "投资"
+      milestone:
+        other: "里程碑"
+      milestone/status:
+        other: "投资状态"
+      comment:
+        other: "意见"
+      debate:
+        other: "讨论"
+      tag:
+        other: "标签"
+      user:
+        other: "用户"
+      moderator:
+        other: "版主"
+      administrator:
+        other: "管理员"
+      valuator:
+        other: "评价者"
+      valuator_group:
+        other: "评价小组"
+      manager:
+        other: "经理"
+      newsletter:
+        other: "时事通讯"
+      vote:
+        other: "投票"
+      organization:
+        other: "组织"
+      poll/booth:
+        other: "摊位"
+      poll/officer:
+        other: "官员"
+      proposal:
+        other: "公民提议"
+      spending_proposal:
+        other: "投资项目"
+      site_customization/page:
+        other: 自定义页面
+      site_customization/image:
+        other: 自定义图片
+      site_customization/content_block:
+        other: 自定义内容模块
+      legislation/process:
+        other: "进程"
+      legislation/draft_versions:
+        other: "草稿版本"
+      legislation/draft_texts:
+        other: "草稿"
+      legislation/questions:
+        other: "问题"
+      legislation/question_options:
+        other: "问题选项"
+      legislation/answers:
+        other: "答案"
+      documents:
+        other: "文件"
+      images:
+        other: "图片"
+      topic:
+        other: "主题"
+      poll:
+        other: "民意调查"
+      proposal_notification:
+        other: "建议通知"
+    attributes:
+      budget:
+        name: "名字"
+        description_accepting: "接受阶段的说明"
+        description_reviewing: "审查阶段的说明"
+        description_selecting: "选择阶段的说明"
+        description_valuating: "评估阶段的说明"
+        description_balloting: "投票阶段的说明"
+        description_reviewing_ballots: "审查选票阶段的说明"
+        description_finished: "预算完成后的说明"
+        phase: "阶段"
+        currency_symbol: "货币"
+      budget/investment:
+        heading_id: "标题"
+        title: "标题"
+        description: "说明书"
+        external_url: "链接到附加文档"
+        administrator_id: "管理员"
+        location: "位置(可选)"
+        organization_name: "如果你是以集体/组织的名义或者代表更多的人提出建议，写下它的名字。"
+        image: "建议说明性图像"
+        image_title: "图像标题"
+      milestone:
+        status_id: "当前投资状况（可选）"
+        title: "标题"
+        description: "说明（如果指定了状态，则可选）"
+        publication_date: "出版日期"
+      milestone/status:
+        name: "名字"
+        description: "说明（可选）"
+      budget/heading:
+        name: "标题名称"
+        price: "价格"
+        population: "人口"
+      comment:
+        body: "评论"
+        user: "用户"
+      debate:
+        author: "作者"
+        description: "意见"
+        terms_of_service: "服务条款"
+        title: "标题"
+      proposal:
+        author: "作者"
+        title: "标题"
+        question: "问题"
+        description: "说明"
+        terms_of_service: "服务条款"
+      user:
+        login: "电子邮件或用户名"
+        email: "电子邮件"
+        username: "用户名"
+        password_confirmation: "密码确认"
+        password: "密码"
+        current_password: "当前密码"
+        phone_number: "电话号码"
+        official_position: "正式职位"
+        official_level: "正式级别"
+        redeemable_code: "通过电子邮件接收到的验证码"
+      organization:
+        name: "组织名称"
+        responsible_name: "组织的负责人"
+      spending_proposal:
+        administrator_id: "管理员"
+        association_name: "协会名称"
+        description: "说明"
+        external_url: "链接到其他文档"
+        geozone_id: "经营范围"
+        title: "标题"
+      poll:
+        name: "名字"
+        starts_at: "开始日期"
+        ends_at: "截止日期"
+        geozone_restricted: "受geozone（地理区域）限制"
+        summary: "总结"
+        description: "说明"
+      poll/question:
+        title: "问题"
+        summary: "总结"
+        description: "说明"
+        external_url: "链接到其他文档"
+      signature_sheet:
+        signable_type: "可签名类型"
+        signable_id: "可签名ID"
+        document_numbers: "文档编号"
+      site_customization/page:
+        content: 内容
+        created_at: 创建于
+        subtitle: 字幕
+        slug: Slug
+        status: 状态
+        title: 标题
+        updated_at: 更新于
+        more_info_flag: 在帮助页面中显示
+        print_content_flag: 打印内容按钮
+        locale: 语言
+      site_customization/image:
+        name: 名字
+        image: 图像
+      site_customization/content_block:
+        name: 名字
+        locale: 地区
+        body: 内容
+      legislation/process:
+        title: 进程标题
+        summary: 总结
+        description: 说明
+        additional_info: 其他信息
+        start_date: 开始日期
+        end_date: 结束日期
+        debate_start_date: 辩论开始日期
+        debate_end_date: 辩论结束日期
+        draft_publication_date: 草稿发布日期
+        allegations_start_date: 指控开始日期
+        allegations_end_date: 指控结束日期
+        result_publication_date: 最终结果发布日期
+      legislation/draft_version:
+        title: 版本标题
+        body: 文本
+        changelog: 变化
+        status: 状态
+        final_version: 最后版本
+      legislation/question:
+        title: 标题
+        question_options: 选项
+      legislation/question_option:
+        value: 价值
+      legislation/annotation:
+        text: 评论
+      document:
+        title: 标题
+        attachment: 附件
+      image:
+        title: 标题
+        attachment: 附件
+      poll/question/answer:
+        title: 回答
+        description: 说明
+      poll/question/answer/video:
+        title: 标题
+        url: 外部视频
+      newsletter:
+        segment_recipient: 收件人
+        subject: 主题
+        from: 从
+        body: 电子邮件内容
+      widget/card:
+        label: 标签（可选）
+        title: 标题
+        description: 说明
+        link_text: 链接文本
+        link_url: 链接URL
+      widget/feed:
+        limit: 项目数
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "此用户已有密码"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "标签必须少于或等于%{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "您已达到每日最大私人信息数"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "图像宽度必须至少为 %{required_min_width}像素"
+              min_image_height: "图像高度必须至少为%{required_min_height}像素"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "用户收件段无效"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "用户收件段无效"
+        map_location:
+          attributes:
+            map:
+              invalid: 地图位置不能为空。如果不需要地理定位，请放置标记或选中复选框
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "不在人口普查中的文档"
+              has_voted: "用户已经投票"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: 必须在开始日期或之后
+            debate_end_date:
+              invalid_date_range: 必须在辩论开始日期或之后
+            allegations_end_date:
+              invalid_date_range: 必须在指控开始日期或之后
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "标签必须小于或等于%{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "标签必须小于或等于%{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "在通知之间必须等待最少%{interval} 天"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: '未通过人口普查核实'
+              already_voted: '这个提案已经被投票'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "必须是字母，数字，_ 和 -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "宽度必须是%{required_width}像素"
+              image_height: "高度必须是%{required_height}像素"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: '您不能对评估做评论'
+      messages:
+        record_invalid: "验证失败: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "因为存在依赖项%{record}，无法删除记录"
+          has_many: "因为存在依赖项%{record}，无法删除记录"

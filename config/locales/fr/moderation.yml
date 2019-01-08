@@ -1,12 +1,9 @@
----
 fr:
   moderation:
-    header:
-      title: Modération
     comments:
       index:
         block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
+        confirm: Êtes-vous sûr(e) ?
         filter: Filtrer
         filters:
           all: Tous
@@ -28,7 +25,7 @@ fr:
     debates:
       index:
         block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
+        confirm: Êtes-vous sûr(e) ?
         filter: Filtrer
         filters:
           all: Tous
@@ -44,15 +41,19 @@ fr:
           created_at: Les plus récents
           flags: Les plus signalés
         title: Débats
+    header:
+      title: Modération
     menu:
       flagged_comments: Commentaires
       flagged_debates: Débats
+      flagged_investments: Propositions d'investissement
       proposals: Propositions
+      proposal_notifications: Notifications des propositions
       users: Bloquer les utilisateurs
     proposals:
       index:
         block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
+        confirm: Êtes-vous sûr(e) ?
         filter: Filtrer
         filters:
           all: Tous
@@ -68,6 +69,44 @@ fr:
           created_at: Les plus récents
           flags: Les plus signalés
         title: Propositions
+    budget_investments:
+      index:
+        block_authors: Bloquer des auteurs
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtrer
+        filters:
+          all: Tous
+          pending_flag_review: En attente
+          with_ignored_flag: Marqué comme vu
+        headers:
+          moderate: Modérer
+          budget_investment: Proposition d'investissement
+        hide_budget_investments: Cacher les propositions d'investissement
+        ignore_flags: Marquer comme vu
+        order: Trier par
+        orders:
+          created_at: Les plus récents
+          flags: Les plus signalés
+        title: Propositions d'investissement
+    proposal_notifications:
+      index:
+        block_authors: Bloquer des auteurs
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtre
+        filters:
+          all: Tout
+          pending_review: Examen en attente
+          ignored: Marquer comme vu
+        headers:
+          moderate: Modérer
+          proposal_notification: Notification de proposition
+        hide_proposal_notifications: Masquer les propositions
+        ignore_flags: Marquer comme vu
+        order: Trier par
+        orders:
+          created_at: Plus récent
+          moderated: Modéré
+        title: Notifications de proposition
     users:
       index:
         hidden: Bloqué

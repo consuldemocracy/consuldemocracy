@@ -1,0 +1,193 @@
+it:
+  pages:
+    conditions:
+      title: Termini e condizioni d'uso
+      subtitle: AVVISO LEGALE SULLE CONDIZIONI D'USO, PRIVACY E PROTEZIONE DEI DATI PERSONALI DEL PORTALE GOVERNO APERTO
+      description: Pagina di informazioni sulle condizioni di utilizzo, privacy e protezione dei dati personali.
+    general_terms: Termini e condizioni d'uso
+    help:
+      title: "%{org} è una piattaforma di partecipazione cittadina"
+      guide: "Questa guida spiega a cosa serve e come funziona ciascuna sezione di %{org}."
+      menu:
+        debates: "Dibattiti"
+        proposals: "Proposte"
+        budgets: "Bilanci partecipativi"
+        polls: "Sondaggi"
+        other: "Altre informazioni interessanti"
+        processes: "Processi"
+      debates:
+        title: "Dibattiti"
+        description: "Nella sezione %{link} è possibile presentare e condividere con altre persone le proprie opinioni rispetto a questioni di interesse relative alla città. È anche un luogo in cui generare idee che, attraverso le altre sezioni di %{org}, possano condurre ad azioni concrete del Consiglio Comunale."
+        link: "dibattiti cittadini"
+        feature_html: "Puoi dare inizio a dibattiti, commentare e valutarli con <strong>Sono d’accordo</strong> o <strong>Non sono d’accordo</strong>. Per farlo occorre %{link}."
+        feature_link: "registratevi su %{org}"
+        image_alt: "Pulsanti per valutare i dibattiti"
+        figcaption: 'Pulsanti "Sono d''accordo" e "Non sono d''accordo" per valutare i dibattiti.'
+      proposals:
+        title: "Proposte"
+        description: "Nella sezione %{link} è possibile avanzare proposte da far realizzare dal Consiglio Comunale. Le proposte necessitano di sostegno e, se viene raggiunto un sostegno sufficiente, vengono ammesse al voto pubblico. Le proposte così approvate dal voto dei cittadini sono accettate dal Consiglio Comunale e realizzate."
+        link: "proposte dei cittadini"
+        image_alt: "Pulsante per sostenere una proposta"
+        figcaption_html: 'Pulsante per “Sostenere” una proposta.'
+      budgets:
+        title: "Bilancio partecipativo"
+        description: "La sezione %{link} aiuta le persone a contribuire in maniera diretta alle decisioni relative a parte della spesa del bilancio comunale."
+        link: "bilanci partecipativi"
+        image_alt: "Diverse fasi del bilancio partecipativo"
+        figcaption_html: 'Fasi di “Sostegno” e “Voto” dei bilanci partecipativi.'
+      polls:
+        title: "Sondaggi"
+        description: "La sezione %{link} si attiva ogni volta che una proposta raggiunge l’1% del sostegno e va al voto o quando il Consiglio Comunale pone una questione sulla quale i cittadini debbano decidere."
+        link: "sondaggi"
+        feature_1: "Per partecipare al voto occorre %{link} e verificare l’account."
+        feature_1_link: "registrarsi su %{org_name}"
+      processes:
+        title: "Processi"
+        description: "Nella sezione %{link} i cittadini partecipano alla realizzazione e all’emendamento dei regolamenti comunali e possono fornire la propria opinione sulle politiche locali in dibattiti preventivi."
+        link: "processi"
+      faq:
+        title: "Problemi tecnici?"
+        description: "Leggi le FAQ per trovare risposta alle tue domande."
+        button: "Visualizzare le domande frequenti (FAQ)"
+        page:
+          title: "Domande frequenti (FAQ)"
+          description: "Usate questa pagina per risolvere le domande frequenti (FAQ) degli utenti del sito."
+          faq_1_title: "Domanda 1"
+          faq_1_description: "Questo è un esempio di descrizione della domanda 1."
+      other:
+        title: "Altre informazioni di interesse"
+        how_to_use: "Usa %{org_name} nella tua città"
+      how_to_use:
+        text: |-
+          Usalo nella tua amministrazione locale o aiutaci a migliorarlo, è un software gratuito.
+          
+          Questo Portale per l’Amministrazione Aperta usa la [app CONSUL](https://github.com/consul/consul 'consul github') che è un software gratuito, con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), il che significa in parole povere che chiunque può utilizzare il codice liberamente, copiarlo, esaminarlo nei particolari, modificarlo e ridistribuirlo nel mondo con le modifiche che desidera (consentendo ad altri di fare lo stesso). Perché crediamo che la cultura sia migliore e più ricca quando è libera.
+          
+          Se sei un programmatore, puoi vedere il codice e aiutarci a migliorarlo sulla [app CONSUL](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Usalo nella tua amministrazione locale
+    privacy:
+      title: Informativa sulla privacy
+      subtitle: INFORMATIVA SULLA PRIVACY DEI DATI
+      info_items:
+        - 
+          text: La navigazione attraverso le informazioni disponibili nel Portale Governo Aperto è anonima.
+        - 
+          text: Per utilizzare i servizi contenuti nel Portale Governo Aperto, l'utente deve registrarsi e fornire anticipatamente i dati personali relativi alle specifiche informazioni incluse in ogni tipo di registrazione.
+        - 
+          text: 'I dati forniti saranno incorporati ed elaborati dal Consiglio Comunale in conformità alla descrizione del seguente file:'
+        - 
+          subitems:
+            - 
+              field: 'Nome file:'
+              description: NOME DEL FILE
+            - 
+              field: 'Scopo del file:'
+              description: Gestione dei processi partecipativi per controllare la qualifica delle persone che vi partecipano e valutazione meramente numerica e statistica dei risultati derivati dai processi di partecipazione dei cittadini.
+            - 
+              field: 'Ente responsabile del documento:'
+              description: ENTE RESPONSABILE DEL DOCUMENTO
+        - 
+          text: L'interessato potrà esercitare i diritti di accesso, rettifica, cancellazione e opposizione, innanzi all'organismo responsabile indicato, secondo quanto previsto dall'articolo 5 della legge organica 15/1999, del 13 dicembre, sulla protezione dei Dati di Carattere Personale.
+        - 
+          text: Come principio generale, questo sito non condivide o divulga le informazioni raccolte, a meno che non venga a ciò autorizzato dall’utente o le informazioni siano richieste dall'Autorità Giudiziaria, compreso l’ufficio del Pubblico Ministero, o dalla polizia giudiziaria, ovvero in qualsiasi altro caso regolamentato dall'articolo 11 della legge organica 15/1999, del 13 dicembre, sulla Protezione dei Dati Personali.
+    accessibility:
+      title: Accessibilità
+      description: |-
+        L'accessibilità della rete si riferisce alla possibilità di accesso alla rete e ai suoi contenuti da parte di tutte le persone, indipendentemente dalle disabilità (fisiche, intellettuali o tecniche) che possano insorgere o da quelle che derivano dal contesto di utilizzo (tecnologico o ambientale).
+        
+        Quando i siti web sono progettati con un occhio all'accessibilità, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
+      examples:
+        - Fornendo un testo alternativo alle immagini, gli utenti ciechi o ipovedenti possono utilizzare lettori speciali per accedere alle informazioni.
+        - Quando i video hanno i sottotitoli, gli utenti con disabilità uditive possono comprenderli appieno.
+        - Se i contenuti sono scritti in un linguaggio semplice e descrittivo, gli utenti con problemi di apprendimento sono in grado di comprenderli meglio.
+        - Se l'utente ha problemi di mobilità ed è difficile utilizzare il mouse, le alternative con la tastiera aiutano nella navigazione.
+      keyboard_shortcuts:
+        title: Scorciatoie da tastiera
+        navigation_table:
+          description: Per consentire di navigare attraverso questo sito in maniera accessibile, è stato programmato un gruppo di tasti di accesso rapido che raccolgono le principali sezioni di interesse generale in cui è organizzato il sito.
+          caption: Scorciatoie da tastiera per il menu di navigazione
+          key_header: Tasto
+          page_header: Pagina
+          rows:
+            - 
+              key_column: 0
+              page_column: Homepage
+            - 
+              key_column: 1
+              page_column: Dibattiti
+            - 
+              key_column: 2
+              page_column: Proposte
+            - 
+              key_column: 3
+              page_column: Voti
+            - 
+              key_column: 4
+              page_column: Bilanci partecipativi
+            - 
+              key_column: 5
+              page_column: Procedimenti legislativi
+        browser_table:
+          description: 'A seconda del sistema operativo e del browser utilizzato, la combinazione di tasti sarà la seguente:'
+          caption: Combinazione di tasti a seconda del sistema operativo e del browser
+          browser_header: Browser
+          key_header: Combinazione di tasti
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + scelta rapida poi INVIO
+            - 
+              browser_column: Firefox
+              key_column: ALT + MAIUSC + scelta rapida
+            - 
+              browser_column: Chrome
+              key_column: ALT + scelta rapida (CTRL + ALT + tasti di scelta rapida per MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + scelta rapida (CMD + scelta rapida per MAC)
+            - 
+              browser_column: Opera
+              key_column: MAIUSC + ESC + scelta rapida
+      textsize:
+        title: Dimensione testo
+        browser_settings_table:
+          description: Il design accessibile di questo sito web consente all'utente di scegliere la dimensione del testo che più gli si addice. Questa azione può essere effettuata in modi diversi a seconda del browser utilizzato.
+          browser_header: Browser
+          action_header: Azione da intraprendere
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Visualizza > Dimensione testo
+            - 
+              browser_column: Firefox
+              action_column: Visualizza > Dimensione
+            - 
+              browser_column: Chrome
+              action_column: Impostazioni (icona) > Opzioni > Avanzate > Contenuto Web > Dimensione testo
+            - 
+              browser_column: Safari
+              action_column: Visualizza > Zoom In/Zoom out
+            - 
+              browser_column: Opera
+              action_column: Visualizza > scala
+        browser_shortcuts_table:
+          description: 'Un altro modo per modificare la dimensione del testo consiste nell''utilizzare le scorciatoie da tastiera definite dai browser, in particolare la combinazione di tasti:'
+          rows:
+            - 
+              shortcut_column: CTRL e + (CMD e + su MAC)
+              description_column: Aumenta le dimensioni del testo
+            - 
+    titles:
+      accessibility: Accessibilità
+      conditions: Termini di utilizzo
+      help: "Cos’é %{org}? - Partecipazione cittadina"
+      privacy: Informativa sulla privacy
+    verify:
+      code: Codice che hai ricevuto nella lettera
+      email: Email
+      info: 'Per verificare il tuo account inserisci i dati di accesso:'
+      info_code: 'Ora introduci il codice che hai ricevuto nella lettera:'
+      password: Password
+      submit: Verifica il mio account
+      title: Verifica il tuo account

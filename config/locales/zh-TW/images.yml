@@ -1,0 +1,21 @@
+zh-TW:
+  images:
+    remove_image: 刪除圖像
+    form:
+      title: 描述性圖像
+      title_placeholder: 為圖像添加描述性標題
+      attachment_label: 選擇圖像
+      delete_button: 刪除圖像
+      note: "您可以上傳以下內容類型的一張圖像：%{accepted_content_types} ，最多%{max_file_size} MB。"
+      add_new_image: 添加圖像
+      admin_title: "圖像"
+      admin_alt_text: "圖像的替代文本"
+    actions:
+      destroy:
+        notice: 圖像已成功刪除。
+        alert: 無法銷毀圖像。
+        confirm: 您確定要刪除圖像嗎？ 此操作將無法撤消！
+    errors:
+      messages:
+        in_between: 必須介於%{min} 和%{max} 之間
+        wrong_content_type: 內容類型%{content_type} 與任何已接受的內容類型%{accepted_content_types} 都不匹配

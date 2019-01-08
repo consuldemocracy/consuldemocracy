@@ -47,7 +47,7 @@ feature 'Registration form' do
     visit new_user_registration_path
 
     fill_in 'user_username',              with: "robot"
-    fill_in 'user_family_name',           with: 'This is the honeypot field'
+    fill_in 'user_address',               with: 'This is the honeypot field'
     fill_in 'user_email',                 with: 'robot@robot.com'
     fill_in 'user_password',              with: 'destroyallhumans'
     fill_in 'user_password_confirmation', with: 'destroyallhumans'
@@ -65,7 +65,7 @@ feature 'Registration form' do
     visit new_user_registration_path
 
     fill_in 'user_username',              with: "robot"
-    fill_in 'user_family_name',           with: 'This is the honeypot field'
+    fill_in 'user_address',               with: 'This is the honeypot field'
     fill_in 'user_email',                 with: 'robot@robot.com'
     fill_in 'user_password',              with: 'destroyallhumans'
     fill_in 'user_password_confirmation', with: 'destroyallhumans'
