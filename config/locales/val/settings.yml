@@ -29,6 +29,10 @@ val:
     map_latitude: "Latitud"
     map_longitude: "Longitud"
     map_zoom: "Zoom"
+    mailer_from_name: "Nom email remitent"
+    mailer_from_name_description: "Aquest nom apareixerà en els emails enviats desde l'aplicació"
+    mailer_from_address: "Direcció email remitent"
+    mailer_from_address_description: "Aquesta direcció de email apareixeràen els emails enviats desde l'aplicació"
     meta_title: "Títol del lloc (SEO)"
     meta_description: "Descripció del lloc (SEO)"
     meta_keywords: "Paraules clau (SEO)"
@@ -50,6 +54,7 @@ val:
       polls: "Votacions"
       signature_sheets: "Fulles de signatures"
       legislation: "Legislació"
+      spending_proposals: "Propostes"
       user:
         recommendations: "Recomanacions"
         skip_verification: "Ometre la verificació d'usuaris"
@@ -61,3 +66,4 @@ val:
       allow_attached_documents: "Permetre la creació de documents adjunts"
       guides: "Guies per a crear propostes o projectes d'inversió"
       public_stats: "Estadístiques públiques"
+      help_page: "Pàgina d'ajuda"
