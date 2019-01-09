@@ -30,5 +30,8 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Metrics/LineLength:
+  Max: 100
+
 RSpec/NotToNot:
   Enabled: true
