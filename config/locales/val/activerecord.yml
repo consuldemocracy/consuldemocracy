@@ -295,6 +295,7 @@ val:
         label: Etiqueta (opcional)
         title: Títol
         description: Descripció
+        link_text: Text de l'enllaç
       widget/feed:
         limit: Número d'elements
     errors:
