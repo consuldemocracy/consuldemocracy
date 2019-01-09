@@ -6,4 +6,10 @@ namespace :legacy_legislation do
     Migrations::LegacyLegislation::Process.new.migrate_processes
   end
 
+  desc "Migrates LegacyLegislation annotations to Legislation::Annotation"
+  task migrate_annotations: :environment do
+    require "migrations/legacy_legislation/annotation"
+    Migrations::LegacyLegislation::Annotation.new.migrate_annotations
+  end
+
 end
