@@ -105,6 +105,9 @@ val:
           random: aleatòries
           confidence_score: millor valorades
           price: per cost
+      share:
+        message: "Acabe de crear una proposta %{title} en %{org}. Crea una tu també!"
+        message_mobile: "Acabe de crear una proposta %{title} en %{handle}. Crea una tu també!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
@@ -176,7 +179,9 @@ val:
     executions:
       link: "Fites"
       page_title: "%{budget} - Fites"
+      heading: "Fites de pressupostos participatius"
       heading_selection_title: "Per districte"
+      no_winner_investments: "No hi ha propostes en aquest estat"
       filters:
         label: "Estat actual del projecte"
         all: "Tots (%{count})"
