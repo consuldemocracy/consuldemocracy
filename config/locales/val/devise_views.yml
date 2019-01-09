@@ -16,6 +16,7 @@ val:
       confirmation_instructions:
         confirm_link: Confirmar el meu compte
         text: 'Pots confirmar el teu compte de correu en el següent enllaç:'
+        title: Benvingut/da
         welcome: Benvingut/da
       reset_password_instructions:
         change_link: Canvia la meua contrasenya
