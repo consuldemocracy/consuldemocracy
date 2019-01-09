@@ -56,6 +56,7 @@ val:
       see_results: Vore resultats
       section_footer:
         title: Ajuda amb els pressupostos participatius
+        description: Amb els pressupostos participatius la ciutadanía decideix a quins projectes va destinada una part del pressupost.
       milestones: Fites
     investments:
       form:
