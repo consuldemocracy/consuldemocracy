@@ -851,7 +851,6 @@ footer {
 .categories a,
 .geozone a,
 .sidebar-links a,
-.sidebar-map a,
 .tags span {
   background: #ececec;
   border-radius: rem-calc(6);
@@ -882,7 +881,7 @@ footer {
 .sidebar-map {
 
   .map {
-    z-index: -1;
+    z-index: 0;
   }
 }
 
