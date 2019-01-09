@@ -560,8 +560,8 @@
       font-size: rem-calc(60);
       line-height: rem-calc(80);
 
-      .icon-finger::before {
-        font-size: rem-calc(60);
+      img {
+        max-width: rem-calc(50)
       }
     }
 
@@ -647,9 +647,8 @@
       line-height: rem-calc(250);
       font-weight: bold;
 
-      img {
-        width: 4cm;
-        height: 2.5cm;
+      img{
+        max-width: rem-calc(150)
       }
     }
 
