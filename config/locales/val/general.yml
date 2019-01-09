@@ -321,6 +321,7 @@ val:
       geozone: Ámbit d'actuació
       proposal_external_url: Enllaç a documentació adicional
       proposal_question: Pregunta de la proposta
+      proposal_question_example_html: "Ha de ser resumida en una pregunta amb respostes Sí o No"
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
@@ -464,6 +465,7 @@ val:
       geozone_restricted: "Districtes"
       geozone_info: "Poden participar les persones empadronades en: "
       already_answer: "Ja has participat en esta votació"
+      not_logged_in: "Has d'iniciar sessió o registrarte per a participar"
       unverified: "Si us plau verifica el teu compte per a participar"
       cant_answer: "Esta votació no està disponible en la teua zona"
       section_header:
