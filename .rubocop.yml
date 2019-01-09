@@ -1,8 +1,5 @@
 inherit_from: .rubocop_basic.yml
 
-Metrics/LineLength:
-  Max: 100
-
 Bundler/DuplicatedGem:
   Enabled: true
 

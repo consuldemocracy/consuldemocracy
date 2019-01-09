@@ -36,5 +36,8 @@ Lint/LiteralAsCondition:
 Lint/UselessAssignment:
   Enabled: true
 
+Metrics/LineLength:
+  Max: 100
+
 RSpec/NotToNot:
   Enabled: true
