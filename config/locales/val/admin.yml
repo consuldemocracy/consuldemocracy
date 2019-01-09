@@ -87,6 +87,7 @@ val:
         table_edit_budget: Editar
         edit_groups: Edita grups de partides
         edit_budget: Edita pressupost
+        no_budgets: "No hi ha pressupostos oberts."
       create:
         notice: Nova campanya de pressupostos participatius creada amb èxit!
       update:
@@ -110,6 +111,25 @@ val:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
         recalculate: Recalcular propostes guanyadores
+    budget_groups:
+      name: "Nom"
+      headings_name: "Partides pressupostàries"
+      headings_edit: "Editar Partides"
+      headings_manage: "Gestionar partides"
+      max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
+      no_groups: "No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup."
+      form:
+        edit: "Editar grup"
+        name: "Nom del grup"
+        submit: "Guardar grup"
+    budget_headings:
+      create:
+        notice: "Partida creada correctament!"
+      update:
+        notice: "Partida actualitzada correctament"
+      form:
+        latitude: "Latitud"
+        longitude: "Longitud"
     budget_phases:
       edit:
         start_date: Data d'inici del procés
