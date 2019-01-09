@@ -81,7 +81,7 @@ class Migrations::LegacyLegislation::Process
         documents: []
       },
       {
-        old_id: nil,
+        old_id: 1,
         start_date: "09/12/2015",
         end_date: "31/01/2016",
         title: "Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid",
@@ -162,6 +162,21 @@ class Migrations::LegacyLegislation::Process
           {
             title: "Resultados de participación",
             path: "public/docs/procesos/resultados_proceso_teleasistencia.pdf"
+          }
+        ]
+      },
+      {
+        old_id: 7,
+        start_date: "01/12/2017",
+        end_date: "29/10/2016",
+        title: "Plan de Derechos Humanos del Ayuntamiento de Madrid (2017-2020)",
+        description_file: "app/views/pages/processes/human_rights/description.html",
+        additional_file: nil,
+        draft_file: "app/views/pages/processes/human_rights/draft.html",
+        documents: [
+          {
+            title: "Borrador del Plan de Derechos Humanos del Ayuntamiento de Madrid (2017-2020)",
+            path: "public/docs/docs/Borrador_PlanDDHH_20Octubre.pdf"
           }
         ]
       }
