@@ -201,6 +201,10 @@ feature 'Legislation' do
 
         visit legislation_process_path(process)
 
+        within(".key-dates") do
+          expect(page).to have_content("Homepage")
+        end
+
         expect(page).to     have_content("This is the process homepage")
         expect(page).not_to have_content("Participate in the debate")
       end
@@ -212,6 +216,10 @@ feature 'Legislation' do
                                                debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
+
+        within(".key-dates") do
+          expect(page).not_to have_content("Homepage")
+        end
 
         expect(page).to have_content("This phase is not open yet")
         expect(page).not_to have_content("This is the process homepage")
