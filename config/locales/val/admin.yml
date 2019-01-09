@@ -133,10 +133,15 @@ val:
         submit: "Guardar grup"
     budget_headings:
       name: "Nom"
+      amount:
+        one: "Hi ha 1 partida"
+        other: "Hi han %{count} partides"
       create:
         notice: "Partida creada correctament!"
       update:
         notice: "Partida actualitzada correctament"
+      destroy:
+        success_notice: "Partida eliminada correctament"
       form:
         amount: "Quantitat"
         latitude: "Latitud"
@@ -665,7 +670,17 @@ val:
         edit: Editar
         delete: Eliminar
         preview: Vista previa
+        view: Veure
+        empty_notifications: No hi ha notificacions per a mostrar
+      new:
+        section_title: Nova notificació
+        submit_button: Crear notificació
+      edit:
+        section_title: Editar notificació
+        submit_button: Actualizar notificació
       show:
+        section_title: Vista previa de notificació
+        send: Enviar notificació
         title: Títol
         body: Text
         link: Enllaç
