@@ -142,6 +142,8 @@ class Budget
     def self.order_filter(sorting_param)
       if sorting_param.present? && SORTING_OPTIONS.include?(sorting_param)
         send("sort_by_#{sorting_param}")
+      else
+        order(cached_votes_up: :desc).order(id: :desc)
       end
     end
 
