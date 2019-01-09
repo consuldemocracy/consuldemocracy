@@ -118,16 +118,27 @@ val:
       headings_manage: "Gestionar partides"
       max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
       no_groups: "No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup."
+      amount:
+        one: "Hi ha 1 grup"
+        other: "Hi ha %{count} grups"
+      create:
+        notice: "Grup creat correctament!"
+      update:
+        notice: "Grup actualitzat correctament"
+      destroy:
+        success_notice: "Grup eliminat correctament"
       form:
         edit: "Editar grup"
         name: "Nom del grup"
         submit: "Guardar grup"
     budget_headings:
+      name: "Nom"
       create:
         notice: "Partida creada correctament!"
       update:
         notice: "Partida actualitzada correctament"
       form:
+        amount: "Quantitat"
         latitude: "Latitud"
         longitude: "Longitud"
     budget_phases:
@@ -523,6 +534,7 @@ val:
       admin: Menú d'administració
       banner: Gestionar banners
       poll_questions: Preguntes ciutadanes
+      proposals: Propostes
       proposals_topics: Temes de propostes
       budgets: Pressupostos participatius
       geozones: Gestionar districtes
@@ -643,6 +655,8 @@ val:
         send_alert: Estàs segur que vols enviar aquest butlletí informatiu a %{n} usuaris?
     admin_notifications:
       index:
+        section_title: Notificacions
+        new_notification: Nova notificació
         title: Títol
         segment_recipient: Destinataris
         sent: Enviat
@@ -983,6 +997,10 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
+    hidden_proposals:
+      index:
+        filters:
+          all: Totes
     proposal_notifications:
       index:
         filter: Filtrar
@@ -1022,6 +1040,8 @@ val:
       setting_value: Valor
       no_description: "Sense descripció"
     shared:
+      true_value: "Si"
+      false_value: "No"
       booths_search:
         button: Cercar
         placeholder: Cercar urna per nom
