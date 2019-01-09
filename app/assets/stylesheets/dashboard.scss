@@ -425,7 +425,7 @@
 .dashboard-mail-preview {
 
   .mail-header {
-    background: #0300ff;
+    background: $pdf-primary;
     color: #fff;
     padding: $line-height;
 
@@ -461,7 +461,7 @@
 .dashboard-poster-preview,
 .dashboard-poster-pdf {
   .poster-header {
-    background: #0300ff;
+    background: $pdf-primary;
     color: #fff;
     h1 {
       color: #fff;
@@ -474,7 +474,7 @@
     position: relative;
 
     &::before {
-      background: #ff9e00;
+      background: $pdf-secondary;
       content: '';
       position: absolute;
     }
@@ -508,7 +508,7 @@
 
       .curly-quotes:before,
       .curly-quotes:after {
-        color: #0300ff;
+        color: $pdf-primary;
         display: inline-block;
         vertical-align: top;
         height:  rem-calc(18);
@@ -530,7 +530,7 @@
     }
 
     h3 {
-      color: #0300ff;
+      color: $pdf-primary;
       display: inline;
     }
 
@@ -550,7 +550,7 @@
 .dashboard-poster-preview {
 
   .preview-width {
-    width: 661px;
+    width: rem-calc(661);
   }
 
   .poster-header {

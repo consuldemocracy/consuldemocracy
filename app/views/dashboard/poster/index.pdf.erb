@@ -14,14 +14,12 @@
       <%= wicked_pdf_image_tag("finger.png") %>
       <%= t("dashboard.poster.index.poster_subtitle") %>
     </h1>
-
     <p class="intro">
       <%= t("dashboard.poster.index.intro_text").html_safe %>
     </p>
     <p class="text-center proposal_code">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
     </p>
-
     <div class="proposal-image">
       <% if proposal.image.present? %>
         <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join('app','assets', proposal.image.attachment.url(:large), )}" %>');"></div>
@@ -31,7 +29,6 @@
         <%#= wicked_pdf_image_tag "default_mailing.jpg" %>
       <% end %>
     </div>
-
     <div class="poster-content">
       <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
       <div class="quote">
