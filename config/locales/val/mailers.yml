@@ -35,6 +35,8 @@ val:
       subject: "Has rebut un missatge privat"
       reply: Respondre a %{sender}
       unsubscribe_account: El meu compte
+    direct_message_for_sender:
+      subject: "Has enviat un nou missatge privat"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
       thanks: "Moltes gràcies."
