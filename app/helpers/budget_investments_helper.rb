@@ -4,9 +4,7 @@ module BudgetInvestmentsHelper
   end
 
   def link_to_investments_sorted_by(column)
-    current_direction = params[:direction].downcase if params[:direction]
-
-    direction = set_direction(current_direction)
+    direction = set_direction(params[:direction])
     icon = set_sorting_icon(direction, column)
 
     translation = t("admin.budget_investments.index.list.#{column}")
