@@ -46,8 +46,7 @@
   }
 }
 
-.tab-milestones .timeline ul li:nth-child(odd),
-.tab-milestones .timeline ul li:nth-child(even) {
+.tab-milestones .timeline ul li {
 
   .milestone-content {
 
@@ -59,27 +58,27 @@
       width: rem-calc(450);
     }
   }
-}
 
-.tab-milestones .timeline ul li:nth-child(odd) {
+  &:nth-child(odd) {
 
-  .milestone-content {
-    text-align: right;
+    .milestone-content {
+      text-align: right;
 
-    @include breakpoint(medium) {
-      margin-left: rem-calc(-315);
-    }
+      @include breakpoint(medium) {
+        margin-left: rem-calc(-315);
+      }
 
-    @include breakpoint(large) {
-      margin-left: rem-calc(-465);
+      @include breakpoint(large) {
+        margin-left: rem-calc(-465);
+      }
     }
   }
-}
 
-.tab-milestones .timeline ul li:nth-child(even) {
+  &:nth-child(even) {
 
-  .milestone-content {
-    left: 15px;
+    .milestone-content {
+      left: 15px;
+    }
   }
 }
 
