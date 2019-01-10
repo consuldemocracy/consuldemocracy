@@ -167,11 +167,16 @@ val:
               browser_column: Opera
               action_column: Veure > escala
         browser_shortcuts_table:
+          description: 'Un altra forma de modificar el tamany del text es utilitzar els atalls de teclat definits en els navegadors, en particular la combinació de tecles:'
           rows:
             - 
+              shortcut_column: CTRL i + (CMD i + en MAC)
               description_column: Incrementa el tamany del text
             - 
+              shortcut_column: CTRL i - (CMD i - en MAC)
               description_column: Reduïx el tamany del text
+      compatibility:
+        title: Compatibilitat amb estàndards i disseny visual
     titles:
       accessibility: Accessibilitat
       conditions: Condicions d'us
