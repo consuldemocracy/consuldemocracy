@@ -1,35 +1,6 @@
 .tab-milestones ul {
   margin-top: rem-calc(40);
   position: relative;
-
-  li {
-    margin: 0 auto;
-    position: relative;
-    width: 0;
-  }
-
-  li::before {
-    background: $budget;
-    border-radius: rem-calc(20);
-    content: '';
-    height: rem-calc(20);
-    position: absolute;
-    top: 5px;
-    transform: translateX(-50%);
-    width: rem-calc(20);
-    z-index: 2;
-  }
-
-  li::after {
-    background: $light-gray;
-    bottom: 100%;
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 25px;
-    width: 1px;
-    z-index: 1;
-  }
 }
 
 .tab-milestones ul .milestone-content {
@@ -47,6 +18,32 @@
 }
 
 .tab-milestones .timeline ul li {
+  margin: 0 auto;
+  position: relative;
+  width: 0;
+
+  &::before {
+    background: $budget;
+    border-radius: rem-calc(20);
+    content: '';
+    height: rem-calc(20);
+    position: absolute;
+    top: 5px;
+    transform: translateX(-50%);
+    width: rem-calc(20);
+    z-index: 2;
+  }
+
+  &::after {
+    background: $light-gray;
+    bottom: 100%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 25px;
+    width: 1px;
+    z-index: 1;
+  }
 
   .milestone-content {
 
