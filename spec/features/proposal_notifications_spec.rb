@@ -440,7 +440,7 @@ feature 'Proposal Notifications' do
       fill_in "Message", with: "Please share it again with others so we can make it happen!"
       click_button "Send message"
 
-      expect(page).to have_content "You have to wait a minium of 3 days between notifications"
+      expect(page).to have_content "You have to wait a minimum of 3 days between notifications"
       expect(page).not_to have_content "Your message has been sent correctly."
     end
 
@@ -465,7 +465,7 @@ feature 'Proposal Notifications' do
       click_button "Send message"
 
       expect(page).to have_content "Your message has been sent correctly."
-      expect(page).not_to have_content "You have to wait a minium of 3 days between notifications"
+      expect(page).not_to have_content "You have to wait a minimum of 3 days between notifications"
 
       travel_back
     end
