@@ -88,9 +88,19 @@ val:
               description: ORGANITZACIÓ RESPONSABLE DE L'ARXIU
     accessibility:
       title: Accessibilitat
+      description: |-
+        L'accessibilitat web es refereix a la possibilitat d'acces a la web i als seus continguts per totes les persones, independentment de les discapacitats (físiques, intelectuals o tècniques) que puguen presentar o de les que es deriven del context d'us (tecnològiques o ambientals)
+
+        Quant les pàgines web estan disenyades pensant en l'accessibilitat, tots els usuaris poden accedir en condicions d'igualtat als continguts, per exemple:
+      examples:
+        - Proporcionar un text alternatiu a les imatges, les persones amb dificultats visuals poden fer ús de lectors especials per accedir a la informació.
+        - Quant els videos disposen de subtitles, els usuaris amb dificultats auditives poden entendrel's plenament.
+        - Si els continguts estan escrits amb un llenguatge senzill i il·lustrats, els usuaris amb problemes d'aprenentatge estan en millors condicions d'entendrel's.
+        - Si l'usuari té problemes de mobilitat i li costa usar el ratolí, les alternatives amb el teclat li ajuden en la navegació.
       keyboard_shortcuts:
         title: Atalls de teclat
         navigation_table:
+          description: Per a poder navegar per este lloc web de forma accessible, s'han programat un grup de tecles d'accés ràpid que arrepleguen les principals seccions d'interés general en què està organitzat el lloc.
           key_header: Clau
           page_header: Pàgina
           rows:
