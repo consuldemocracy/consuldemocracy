@@ -128,11 +128,13 @@ val:
       destroy:
         success_notice: "Grup eliminat correctament"
       form:
+        create: "Crear un nou grup"
         edit: "Editar grup"
         name: "Nom del grup"
         submit: "Guardar grup"
     budget_headings:
       name: "Nom"
+      no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
       amount:
         one: "Hi ha 1 partida"
         other: "Hi han %{count} partides"
@@ -142,8 +144,11 @@ val:
         notice: "Partida actualitzada correctament"
       destroy:
         success_notice: "Partida eliminada correctament"
+        unable_notice: "No es pot eliminar una Partida amb propostes asociades"
       form:
+        name: "Nom de la partida"
         amount: "Quantitat"
+        population: "Població (opcional)"
         latitude: "Latitud"
         longitude: "Longitud"
     budget_phases:
@@ -876,6 +881,8 @@ val:
         create_question: "Crear pregunta per a votació"
         table_proposal: "Proposta"
         table_question: "Pregunta"
+        table_poll: "Votació"
+        poll_not_assigned: "Votació sense asignar"
       edit:
         title: "Editar pregunta ciutadana"
       new:
@@ -978,6 +985,7 @@ val:
       index:
         title: Càrrecs públics
         no_officials: No hi ha carrecs públics.
+        name: Nom
         official_position: Càrrec públic
         official_level: Nivell
       level_0: No és càrrec públic
@@ -1019,10 +1027,22 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
+    proposals:
+      index:
+        title: Propostes
+        id: ID
+        author: Autor
+        milestones: Fites
+        no_proposals: No hi han propostes.
     hidden_proposals:
       index:
+        filter: Filtre
         filters:
           all: Totes
+          with_confirmed_hide: Confirmades
+          without_confirmed_hide: Pendents
+        title: Propostes ocultes
+        no_hidden_proposals: No hi ha propostes ocultes.
     proposal_notifications:
       index:
         filter: Filtrar
@@ -1239,6 +1259,7 @@ val:
         title: Notificacions de propostes
         total: Total
         proposals_with_notifications: Propostes amb notificacions
+        not_available: "Proposta no disponible"
       polls:
         title: Estadístiques de votacions
         all: Votacions
@@ -1307,6 +1328,11 @@ val:
         content_block:
           body: Contingut
           name: Nom
+          names:
+            top_links: Enllaços superiors
+            footer: Peu de pàgina
+            subnavigation_left: Navegació principal esquerra
+            subnavigation_right: Navegació principal dreta
       images:
         index:
           title: Personalitzar imatges
@@ -1349,10 +1375,12 @@ val:
           status_draft: Esborrany
           status_published: Publicada
           title: Títol
+          slug: Slug
     homepage:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
       header_title: Capçalera
+      no_header: No hi ha capçaleres.
       create_header: Crear capçalera
       cards_title: Targetes
       create_card: Crear targeta
