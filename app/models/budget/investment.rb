@@ -151,9 +151,10 @@ class Budget
 
       if allowed_sort_option.present?
         direction = params[:direction] == "desc" ? "desc" : "asc"
-        return order("#{allowed_sort_option} #{direction}")
+        order("#{allowed_sort_option} #{direction}")
+      else
+        order(cached_votes_up: :desc).order(id: :desc)
       end
-      order(cached_votes_up: :desc).order(id: :desc)
     end
 
     def self.limit_results(budget, params, results)
