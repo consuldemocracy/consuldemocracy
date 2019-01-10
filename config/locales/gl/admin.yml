@@ -153,7 +153,9 @@ gl:
         population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
         latitude: "Latitude"
         longitude: "Lonxitude"
+        coordinates_info: "Se se indican a latitude e lonxitude, a páxina de investimentos para esta partida incluirá un mapa. Este mapa estará centrado segundo estas coordenadas."
         allow_content_block: "Permite bloque de contido"
+        content_blocks_info: "Se o permiso de bloque de contido está activado, poderás crear contido propio para esta partida desde a sección Configuración -> Contido de bloques personalizado. Este contido amosarase na páxina de investimentos desta partida."
         create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Gardar partida"
@@ -923,6 +925,8 @@ gl:
         create_question: "Crear pregunta para a votación"
         table_proposal: "Proposta"
         table_question: "Pregunta"
+        table_poll: "Votación"
+        poll_not_assigned: "Votación sen asignar"
       edit:
         title: "Editar pregunta cidadá"
       new:
@@ -1299,6 +1303,7 @@ gl:
         title: Notificacións de propostas
         total: Total
         proposals_with_notifications: Propostas con notifificacións
+        not_available: "Proposta non dispoñible"
       polls:
         title: Estatísticas das votacións
         all: Votacións
