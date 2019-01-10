@@ -12,7 +12,7 @@ module BudgetInvestmentsHelper
     translation = t("admin.budget_investments.index.list.#{column}")
 
     link_to(
-      "#{translation} <span class=\"#{icon}\"></span>".html_safe,
+      "#{translation} <span class='#{icon}'></span>".html_safe,
       admin_budget_budget_investments_path(sort_by: column, direction: direction)
     )
   end
