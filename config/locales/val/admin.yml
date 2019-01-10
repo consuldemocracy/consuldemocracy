@@ -710,10 +710,12 @@ val:
         send: Enviar notificació
         will_get_notified: (%{n} usuaris seran notificats)
         got_notified: (%{n} usuaris han sigut notificats)
+        sent_at: Enviada el
         title: Títol
         body: Text
         link: Enllaç
         segment_recipient: Destinataris
+        preview_guide: "Així es com veuran la notificació els usuaris:"
     emails_download:
       index:
         title: Descàrrega de emails
