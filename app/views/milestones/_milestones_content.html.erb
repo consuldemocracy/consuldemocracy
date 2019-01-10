@@ -5,6 +5,22 @@
         <%= t("milestones.index.no_milestones") %>
       </div>
     <% end %>
+
+    <% if milestoneable.primary_progress_bar %>
+      <%= progress_tag_for(milestoneable.primary_progress_bar) %>
+
+      <% if milestoneable.secondary_progress_bars.any? %>
+        <ul class="milestone-progress">
+          <% milestoneable.secondary_progress_bars.each do |progress_bar| %>
+            <li>
+              <%= progress_bar.title %>
+              <%= progress_tag_for(progress_bar) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+
     <section class="timeline">
       <ul class="no-bullet">
         <% milestoneable.milestones.order_by_publication_date.each do |milestone| %>
