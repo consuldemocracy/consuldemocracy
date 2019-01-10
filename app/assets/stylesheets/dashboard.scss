@@ -40,7 +40,18 @@
 
     @include breakpoint(medium) {
       border-left: 2px solid $highlight;
+    }
+
+    @include breakpoint(large) {
       border-right: 2px solid $highlight;
+    }
+  }
+
+  .supports {
+    margin-top: $line-height;
+
+    @include breakpoint(large) {
+      margin-top: 0;
     }
   }
 
