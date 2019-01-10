@@ -22,5 +22,5 @@ class Widget::Card < ActiveRecord::Base
   def self.page(page_id)
     where(site_customization_page_id: page_id)
   end
-  
+
 end
