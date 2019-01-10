@@ -595,6 +595,8 @@ val:
           welcome: "Benvingut/da"
         buttons:
           save: "Guardar"
+          content_block:
+            update: "Actualitzar bloc"
       title_moderated_content: Contingut moderat
       title_budgets: Pressupostos
       title_polls: Votacions
@@ -609,6 +611,7 @@ val:
         title: Administradors
         name: Nom
         email: Correu electrònic
+        id: ID de l'administrador
         no_administrators: No hi administradors.
       administrator:
         add: Afegir com administrador
@@ -663,6 +666,9 @@ val:
         title: Vista previa del butlletí informatiu
         send: Enviar
         affected_users: (%{n} usuaris afectats)
+        sent_emails:
+          one: 1 email enviat
+          other: "%{count} emails enviats"
         sent_at: Enviada el
         subject: Asumpte
         segment_recipient: Destinataris
@@ -671,6 +677,10 @@ val:
         body_help_text: Així es com veuran el email els usuaris
         send_alert: Estàs segur que vols enviar aquest butlletí informatiu a %{n} usuaris?
     admin_notifications:
+      create_success: Notificació creada correctament
+      update_success: Notificació actualitzada correctament
+      send_success: Notificació enviada correctament
+      delete_success: Notificació eliminada correctament
       index:
         section_title: Notificacions
         new_notification: Nova notificació
@@ -693,6 +703,8 @@ val:
       show:
         section_title: Vista previa de notificació
         send: Enviar notificació
+        will_get_notified: (%{n} usuaris seran notificats)
+        got_notified: (%{n} usuaris han sigut notificats)
         title: Títol
         body: Text
         link: Enllaç
@@ -1384,6 +1396,7 @@ val:
       create_header: Crear capçalera
       cards_title: Targetes
       create_card: Crear targeta
+      no_cards: No hi ha targetes.
       cards:
         title: Títol
         description: Descripció
@@ -1403,3 +1416,6 @@ val:
         submit_header: Guardar capçalera
         card_title: Editar targeta
         submit_card: Guardar targeta
+    translations:
+      remove_language: Eliminar idioma
+      add_language: Afegir idioma
