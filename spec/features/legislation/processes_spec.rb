@@ -376,9 +376,9 @@ feature 'Legislation' do
     end
 
     context "Milestones" do
-      scenario "Without milestones" do
-        process = create(:legislation_process, :upcoming_proposals_phase)
+      let(:process) { create(:legislation_process, :upcoming_proposals_phase) }
 
+      scenario "Without milestones" do
         visit legislation_process_path(process)
 
         within(".legislation-process-list") do
@@ -387,7 +387,6 @@ feature 'Legislation' do
       end
 
       scenario "With milestones" do
-        process = create(:legislation_process, :upcoming_proposals_phase)
         create(:milestone,
                milestoneable:    process,
                description:      "Something important happened",
@@ -406,6 +405,39 @@ feature 'Legislation' do
 
         within(".tab-milestones") do
           expect(page).to have_content "Something important happened"
+        end
+      end
+
+      scenario "With main progress bar" do
+        create(:progress_bar, progressable: process)
+
+        visit milestones_legislation_process_path(process)
+
+        within(".tab-milestones") do
+          expect(page).to have_css "progress"
+        end
+      end
+
+      scenario "With main and secondary progress bar" do
+        create(:progress_bar, progressable: process)
+        create(:progress_bar, :secondary, progressable: process, title: "Build laboratory")
+
+        visit milestones_legislation_process_path(process)
+
+        within(".tab-milestones") do
+          expect(page).to have_css "progress"
+          expect(page).to have_content "Build laboratory"
+        end
+      end
+
+      scenario "No main progress bar" do
+        create(:progress_bar, :secondary, progressable: process, title: "Defeat Evil Lords")
+
+        visit milestones_legislation_process_path(process)
+
+        within(".tab-milestones") do
+          expect(page).not_to have_css "progress"
+          expect(page).not_to have_content "Defeat Evil Lords"
         end
       end
     end
