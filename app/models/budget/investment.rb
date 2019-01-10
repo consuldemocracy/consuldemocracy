@@ -1,6 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
-    SORTING_OPTIONS = [{id: "id"}, {title: "title"}, {supports: "cached_votes_up"}].freeze
+    SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
     include Rails.application.routes.url_helpers
     include Measurable
@@ -146,12 +146,12 @@ class Budget
     end
 
     def self.order_filter(params)
-      sorting_key = params[:sort_by].downcase.to_sym if params[:sort_by]
-      allowed_sort_option = SORTING_OPTIONS.select { |so| so[sorting_key]}.reduce
+      sorting_key = params[:sort_by]&.downcase&.to_sym
+      allowed_sort_option = SORTING_OPTIONS[sorting_key]
 
       if allowed_sort_option.present?
         direction = params[:direction] == "desc" ? "desc" : "asc"
-        return order("#{allowed_sort_option[sorting_key]} #{direction}")
+        return order("#{allowed_sort_option} #{direction}")
       end
       order(cached_votes_up: :desc).order(id: :desc)
     end
