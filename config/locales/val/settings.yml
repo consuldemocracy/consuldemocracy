@@ -61,8 +61,11 @@ val:
     feature:
       budgets: "Pressupostos participatius"
       twitter_login: "Registre amb Twitter"
+      twitter_login_description: "Permetre que els usuaris es registren amb el seu compte de Twiter"
       facebook_login: "Registre amb Facebook"
+      facebook_login_description: "Permetre que els usuaris es registren amb el seu compte de Facebook"
       google_login: "Registre amb Google"
+      google_login_description: "Permetre que els usuaris es registren amb el seu compte de Google"
       proposals: "Propostes"
       featured_proposals: "Propostes destacades"
       debates: "Debats"
