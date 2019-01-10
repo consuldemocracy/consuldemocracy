@@ -420,7 +420,7 @@ feature 'Legislation' do
         visit milestones_legislation_process_path(process)
 
         within(".tab-milestones") do
-          expect(page).to have_css "progress"
+          expect(page).to have_content "Progress"
         end
       end
 
@@ -431,7 +431,7 @@ feature 'Legislation' do
         visit milestones_legislation_process_path(process)
 
         within(".tab-milestones") do
-          expect(page).to have_css "progress"
+          expect(page).to have_content "Progress"
           expect(page).to have_content "Build laboratory"
         end
       end
@@ -442,7 +442,7 @@ feature 'Legislation' do
         visit milestones_legislation_process_path(process)
 
         within(".tab-milestones") do
-          expect(page).not_to have_css "progress"
+          expect(page).not_to have_content "Progress"
           expect(page).not_to have_content "Defeat Evil Lords"
         end
       end
