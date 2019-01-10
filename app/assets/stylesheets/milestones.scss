@@ -8,6 +8,10 @@
   position: relative;
   width: 0;
 
+  @include breakpoint(small only) {
+    width: 100%;
+  }
+
   &::before {
     background: $budget;
     border-radius: rem-calc(20);
@@ -65,6 +69,11 @@
       @include breakpoint(large) {
         margin-left: rem-calc(-465);
       }
+
+      @include breakpoint(small only) {
+        left: 15px;
+        text-align: left;
+      }
     }
   }
 
@@ -72,24 +81,6 @@
 
     .milestone-content {
       left: 15px;
-    }
-  }
-}
-
-.tab-milestones {
-  @include breakpoint(small only) {
-
-    .timeline ul li {
-      width: 100%;
-
-      &:nth-child(odd),
-      &:nth-child(even) {
-
-        .milestone-content {
-          left: 15px;
-          text-align: left;
-        }
-      }
     }
   }
 }
