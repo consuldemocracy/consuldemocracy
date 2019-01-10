@@ -101,6 +101,7 @@ val:
         title: Atalls de teclat
         navigation_table:
           description: Per a poder navegar per este lloc web de forma accessible, s'han programat un grup de tecles d'accés ràpid que arrepleguen les principals seccions d'interés general en què està organitzat el lloc.
+          caption: Atalls de teclat per al menú de navegació
           key_header: Clau
           page_header: Pàgina
           rows:
@@ -123,6 +124,8 @@ val:
               key_column: 5
               page_column: Processos legislatius
         browser_table:
+          description: 'Depenent del sistema operatiu i del navegador que s''utilitze, la combinació de tecles sera la següent:'
+          caption: Combinació de tecles depenent del sistema operatiu i del navegador
           browser_header: Navegador
           key_header: Combinació de tecles
           rows:
@@ -137,11 +140,14 @@ val:
               key_column: ALT + atall (CTRL + ALT + atalls per a MAC)
             - 
               browser_column: Safari
+              key_column: ALT + atall (si es un MAC, CMD + atall)
             - 
               browser_column: Opera
+              key_column: MAJÚSCULES + ESC + atall
       textsize:
         title: Tamany del text
         browser_settings_table:
+          description: El disseny accessible d'aquest lloc web permet que l'usuari puga elegir el tamany del text que li convinga. Esta acció pot dur-se a terme de diferents formes segons el navegador que s'utilitze.
           browser_header: Navegador
           action_header: Acció a realitzar
           rows:
@@ -153,6 +159,7 @@ val:
               action_column: Veure > Tamany
             - 
               browser_column: Chrome
+              action_column: Ajusts (icona) > Opcions > Avançada > Contingut web > Tamany de la font
             - 
               browser_column: Safari
               action_column: Visualització > ampliar/reduïr
