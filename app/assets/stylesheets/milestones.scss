@@ -3,21 +3,7 @@
   position: relative;
 }
 
-.tab-milestones ul .milestone-content {
-  padding: $line-height / 6 $line-height / 2;
-  position: relative;
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  .milestone-date {
-    color: $text-medium;
-    font-size: $small-font-size;
-  }
-}
-
-.tab-milestones .timeline ul li {
+.tab-milestones .timeline li {
   margin: 0 auto;
   position: relative;
   width: 0;
@@ -46,6 +32,8 @@
   }
 
   .milestone-content {
+    padding: $line-height / 6 $line-height / 2;
+    position: relative;
 
     @include breakpoint(medium) {
       width: rem-calc(300);
@@ -53,6 +41,15 @@
 
     @include breakpoint(large) {
       width: rem-calc(450);
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .milestone-date {
+      color: $text-medium;
+      font-size: $small-font-size;
     }
   }
 
