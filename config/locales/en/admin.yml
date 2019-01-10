@@ -184,11 +184,6 @@ en:
         tags_filter_all: All tags
         advanced_filters: Advanced filters
         placeholder: Search projects
-        sort_by:
-          placeholder: Sort by
-          id: ID
-          title: Title
-          supports: Supports
         filters:
           all: All
           without_admin: Without assigned admin
