@@ -151,6 +151,8 @@ val:
         population: "Població (opcional)"
         latitude: "Latitud"
         longitude: "Longitud"
+        edit: "Editar Partida"
+        submit: "Guardar partida"
     budget_phases:
       edit:
         start_date: Data d'inici del procés
@@ -367,6 +369,8 @@ val:
           all: Totes
           with_confirmed_hide: Confirmades
           without_confirmed_hide: Pendents
+        title: Propostes ocultes
+        no_hidden_budget_investments: No hi ha propostes ocultes
     legislation:
       processes:
         create:
@@ -388,6 +392,7 @@ val:
           process: Procés
           debate_phase: Fase prèvia
           draft_phase: Fase de redacció
+          allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           start: Inici
           end: Fi
