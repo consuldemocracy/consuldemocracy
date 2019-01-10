@@ -50,8 +50,11 @@ val:
     mailer_from_address_description: "Aquesta direcció de email apareixeràen els emails enviats desde l'aplicació"
     meta_title: "Títol del lloc (SEO)"
     meta_description: "Descripció del lloc (SEO)"
+    meta_description_description: 'Descripció del lloc <meta name="description">, utilitzada per a millorar el SEO'
     meta_keywords: "Paraules clau (SEO)"
+    meta_keywords_description: 'Paraules clau <meta name="keywords">, utilitzades per a millorar el SEO'
     min_age_to_participate: Edat mínima per a participar
+    min_age_to_participate_description: "Els usuaris majors d'edat podran participar en tots els processos"
     analytics_url: "URL d'estadístiques externes"
     blog_url: "URL del blog"
     transparency_url: "URL de transparència"
@@ -60,6 +63,7 @@ val:
     proposal_improvement_path: Enllaç a informació per a millorar propostes
     feature:
       budgets: "Pressupostos participatius"
+      budgets_description: "Amb els pressupostos participatius la ciutadanía decideix a quins projectes presentats per els veins i veines va destinada una part del pressupost municipal"
       twitter_login: "Registre amb Twitter"
       twitter_login_description: "Permetre que els usuaris es registren amb el seu compte de Twiter"
       facebook_login: "Registre amb Facebook"
@@ -73,6 +77,10 @@ val:
       signature_sheets: "Fulles de signatures"
       legislation: "Legislació"
       spending_proposals: "Propostes"
+      spending_proposals_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
+      spending_proposal_features:
+        voting_allowed: Votacions de propostes d'inversió - Fase de preselecció
+        voting_allowed_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
       user:
         recommendations: "Recomanacions"
         skip_verification: "Ometre la verificació d'usuaris"
