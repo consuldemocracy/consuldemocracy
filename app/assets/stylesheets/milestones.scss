@@ -3,6 +3,53 @@
   position: relative;
 }
 
+.tab-milestones .progress-bars {
+  margin-top: $line-height / 2;
+
+  h5 {
+    font-size: rem-calc(25);
+  }
+
+  ul {
+    border-spacing: rem-calc(15) $line-height / 4;
+    display: table;
+    margin-top: $line-height / 2;
+
+    li {
+      display: table-row;
+
+      > * {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  progress {
+    $background-color: #fef0e2;
+    $progress-color: #fea230;
+
+    background-color: $background-color;
+    color: $progress-color;
+
+    &.primary {
+      width: 100%;
+    }
+
+    &::-webkit-progress-bar {
+      background-color: $background-color;
+    }
+
+    &::-webkit-progress-value {
+      background-color: $progress-color;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $progress-color;
+    }
+  }
+}
+
 .tab-milestones .timeline li {
   margin: 0 auto;
   position: relative;
