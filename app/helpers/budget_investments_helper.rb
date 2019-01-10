@@ -16,8 +16,15 @@ module BudgetInvestmentsHelper
   end
 
   def set_sorting_icon(direction, sort_by)
-    icon = direction == "desc" ? "icon-arrow-top" : "icon-arrow-down"
-    icon = sort_by.to_s == params[:sort_by] ? icon : ""
+    if sort_by.to_s == params[:sort_by]
+      if direction == "desc"
+        "icon-arrow-top"
+      else
+        "icon-arrow-down"
+      end
+    else
+      ""
+    end
   end
 
   def set_direction(current_direction)
