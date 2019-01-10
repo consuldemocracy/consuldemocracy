@@ -211,8 +211,8 @@ es:
         preview_proposal: Previsualizar propuesta
         current_goal: Meta actual
         support_count:
-          one: "%{count} apoyo"
-          other: "%{count} apoyos"
+          one: "%{count} <span class='counter-label'>Apoyo</span>"
+          other: "%{count} <span class='counter-label'>Apoyos</span>"
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

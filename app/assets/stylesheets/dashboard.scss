@@ -27,17 +27,23 @@
 }
 
 .dashboard-proposals-stats {
+  text-align: center;
   border: 2px solid $highlight;
   border-radius: rem-calc(6);
   margin-bottom: $line-height;
   padding: $line-height / 2;
 
-  .counter {
-    text-align: center;
+  @include breakpoint(medium only) {
+    .change-behaviour {
+      padding: $line-height;
+      margin-top: $line-height;
+      float: left;
+      width: 100%;
+      margin-top: $line-height / 2;
+    }
   }
 
   .counter-divider {
-
     @include breakpoint(medium) {
       border-left: 2px solid $highlight;
     }
@@ -48,10 +54,9 @@
   }
 
   .supports {
-    margin-top: $line-height;
 
-    @include breakpoint(large) {
-      margin-top: 0;
+    .counter-label {
+      display: block;
     }
   }
 
@@ -68,7 +73,7 @@
   .progress {
     background: #f0efea;
     border-radius: rem-calc(6);
-    height: $line-height;
+    height: $line-height / 2;
   }
 
   .progress-meter {
