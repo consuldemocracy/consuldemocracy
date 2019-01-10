@@ -4,23 +4,22 @@ module BudgetInvestmentsHelper
   end
 
   def link_to_investments_sorted_by(column)
-    sort_by = column.downcase
     current_direction = params[:direction].downcase if params[:direction]
 
     direction = set_direction(current_direction)
-    icon = set_sorting_icon(direction, sort_by)
+    icon = set_sorting_icon(direction, column)
 
-    translation = t("admin.budget_investments.index.sort_by.#{sort_by}")
+    translation = t("admin.budget_investments.index.list.#{column}")
 
     link_to(
       "#{translation} <span class=\"#{icon}\"></span>".html_safe,
-      admin_budget_budget_investments_path(sort_by: sort_by, direction: direction)
+      admin_budget_budget_investments_path(sort_by: column, direction: direction)
     )
   end
 
   def set_sorting_icon(direction, sort_by)
     icon = direction == "desc" ? "icon-arrow-top" : "icon-arrow-down"
-    icon = sort_by == params[:sort_by] ? icon : ""
+    icon = sort_by.to_s == params[:sort_by] ? icon : ""
   end
 
   def set_direction(current_direction)

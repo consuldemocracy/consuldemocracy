@@ -26,9 +26,9 @@
   <table class="table-for-mobile">
     <thead>
       <tr>
-        <th><%= link_to_investments_sorted_by t("admin.budget_investments.index.list.id")  %></th>
-        <th class="small-3"><%= link_to_investments_sorted_by t("admin.budget_investments.index.list.title") %></th>
-        <th><%= link_to_investments_sorted_by t("admin.budget_investments.index.list.supports") %></th>
+        <th><%= link_to_investments_sorted_by :id  %></th>
+        <th class="small-3"><%= link_to_investments_sorted_by :title %></th>
+        <th><%= link_to_investments_sorted_by :supports %></th>
         <th><%= t("admin.budget_investments.index.list.admin") %></th>
         <th>
           <%= t("admin.budget_investments.index.list.valuation_group") %>
