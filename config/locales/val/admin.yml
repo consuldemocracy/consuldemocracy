@@ -405,6 +405,7 @@ val:
           title: Crear proces de legislació col·laborativa
           submit_button: Crear procés
         proposals:
+          select_order: Ordenar per
           orders:
             id: Id
             title: Títol
@@ -438,6 +439,7 @@ val:
         form:
           custom_categories: Categoríes
           custom_categories_description: Categoríes que l'usuari pot seleccionar al crear la proposta.
+          custom_categories_placeholder: Escriu les etiquetes que desitges separades per comes (',') i entre cometes ("")
       draft_versions:
         create:
           notice: 'Esborrany creat correctament. <a href="%{link}"> Fes click per veure-ho </a>'
@@ -523,6 +525,9 @@ val:
           comments_count: Número de comentaris
         question_option_fields:
           remove_option: Eliminar
+      milestones:
+        index:
+          title: Seguint
     managers:
       index:
         title: Gestors
@@ -546,11 +551,13 @@ val:
       hidden_comments: Comentaris ocults
       hidden_debates: Debats ocults
       hidden_proposals: Propostes ocultes
+      hidden_budget_investments: Propostes d'inversió ocultes
       hidden_proposal_notifications: Notificacions de propostes ocultes
       hidden_users: Usuaris bloquejats
       administrators: Administradors
       managers: Gestors
       moderators: Moderadors
+      messaging_users: Missatges als usuaris
       newsletters: Butlletins informatius
       admin_notifications: Notificacions
       system_emails: Correus electònics del sistema
