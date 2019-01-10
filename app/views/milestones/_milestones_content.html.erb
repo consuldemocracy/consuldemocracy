@@ -6,24 +6,7 @@
       </div>
     <% end %>
 
-    <% if milestoneable.primary_progress_bar %>
-      <section class="progress-bars">
-        <h5><%= t("milestones.index.progress") %></h5>
-
-        <%= progress_tag_for(milestoneable.primary_progress_bar) %>
-
-        <% if milestoneable.secondary_progress_bars.any? %>
-          <ul class="milestone-progress">
-            <% milestoneable.secondary_progress_bars.each do |progress_bar| %>
-              <li>
-                <%= progress_bar.title %>
-                <%= progress_tag_for(progress_bar) %>
-              </li>
-            <% end %>
-          </ul>
-        <% end %>
-      </section>
-    <% end %>
+    <%= render "milestones/progress_bars", milestoneable: milestoneable %>
 
     <section class="timeline">
       <ul class="no-bullet">
