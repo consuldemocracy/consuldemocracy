@@ -151,6 +151,7 @@ val:
         population: "Població (opcional)"
         latitude: "Latitud"
         longitude: "Longitud"
+        create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Guardar partida"
     budget_phases:
@@ -402,9 +403,11 @@ val:
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
           homepage: Descripció
+          homepage_enabled: Pàgina principal habilitada
         index:
           create: Nou procés
           delete: Eliminar
+          title: Processos legislatius
           filters:
             open: Oberts
             next: Pròximament
@@ -589,6 +592,7 @@ val:
         pages: Pàgines personalitzades
         images: Imatges personalitzades
         content_blocks: Personalitzar blocs
+        information_texts: Personalitzar texts
         information_texts_menu:
           debates: "Debats"
           community: "Comunitat"
@@ -716,6 +720,15 @@ val:
         link: Enllaç
         segment_recipient: Destinataris
         preview_guide: "Així es com veuran la notificació els usuaris:"
+        sent_guide: "Així es com els usuaris veuen la notificació:"
+        send_alert: Estas segur/a de que vols enviar esta notificació a %{n} usuaris?
+    system_emails:
+      preview_pending:
+        action: Previsualitzar pendents
+        preview_of: Vista previa de %{name}
+        pending_to_be_sent: Este es tot el contingut pendent d'enviar
+        moderate_pending: Moderar l'enviament de notificació
+        send_pending: Enviar pendents
     emails_download:
       index:
         title: Descàrrega de emails
