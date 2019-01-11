@@ -17,24 +17,20 @@
     <p class="intro">
       <%= t("dashboard.poster.index.intro_text").html_safe %>
     </p>
-    <p class="text-center proposal_code">
+    <p class="text-center proposal-code">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
     </p>
     <div class="proposal-image">
       <% if proposal.image.present? %>
-        <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join('app','assets', proposal.image.attachment.url(:large), )}" %>');"></div>
-        <%#= wicked_pdf_image_tag proposal.image.attachment.url(:large) %>
+        <div class="overflow-image" style="background-image: url(<%= asset_url proposal.image.attachment.url(:large) %>);"></div>
       <% else %>
         <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join('app','assets','images','default_mailing.jpg')}" %>');"></div>
-        <%#= wicked_pdf_image_tag "default_mailing.jpg" %>
       <% end %>
     </div>
     <div class="poster-content">
       <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
       <div class="quote">
-        <blockquote class="curly-quotes">
-          <h3><%= proposal.title %></h3>
-        </blockquote>
+        <h3>"<%= proposal.title %>"</h3>
       </div>
       <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
     </div>
