@@ -1,5 +1,21 @@
 ar:
+  account:
+    show:
+      notifications: إشعارات
+      public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
+      email_digest_label: استلام ملخص عن إشعارات مقترح
+      user_permission_debates: المشاركة بالحوارات
+      user_permission_info: من خلال حسابك يمكنك...
+      user_permission_proposal: انشاء مقترحات جديدة
+      user_permission_support_proposal: دعم مقترحات
+      user_permission_title: المشاركة
+      user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
+      user_permission_verify_info: "* فقط للمستخدمين في التعداد."
+      user_permission_votes: المشاركة في التصويت النهائي
+      username_label: اسم المستخدم
   comments:
+    comment:
+      user_deleted: تم حذف المستخدم
     orders:
       newest: الأحدث أولاً
       most_commented: الأكثر تعليقات
@@ -32,8 +48,15 @@ ar:
         button: بحث
         title: بحث
       select_order: ترتيب حسب
+    new:
+      info_link: انشاء مقترح جديدة
+  errors:
+    messages:
+      user_not_found: المستخدم غير موجود
   form:
     policy: سياسة الخصوصية
+    proposal_notification: "إشعار"
+    user: الحساب
   layouts:
     application:
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
@@ -41,12 +64,97 @@ ar:
       privacy: سياسة الخصوصية
     header:
       my_account_link: حسابي
+      notification_item:
+        notifications: إشعارات
+        no_notifications: "لا يوجد إشعارات جديدة"
+  notifications:
+    index:
+      empty_notifications: لا يوجد إشعارات جديدة.
+      mark_all_as_read: الكل مقروءة
+      read: مقروء
+      title: إشعارات
+      unread: غير مقروء
+    notification:
+      mark_as_read: الكل مقروءة
+      mark_as_unread: الكل غير مقروءة
+      notifiable_hidden: هذ المصدر عم يعد متاح.
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
-  polls:
+    finish_signup:
+      username_warning: "بسبب تغييرات في طريقة التفاعل مع الشبكات الاجتماعية، فمن الممكن أن يكون اسم المستخدم الخاص بك 'مستخدم من قبل '. إذا كان هذا هو الحالة ، الرجاء اختيار اسم مستخدم مختلف."
+  proposals:
+    retire_options:
+      unfeasible: غير مجدي
+    index:
+      retired_links:
+        unfeasible: غير مجدي
     show:
+      notifications_tab: إشعارات
+      send_notification: إرسال إشعار
+      no_notifications: "هذا المقترح لا يحوي إشعارات."
+  polls:
+    all: "الكل"
+    no_dates: "التاريخ غير محدد"
+    dates: "من %{open_at} إلى %{closed_at}"
+    final_date: "التنائج النهائية"
+    index:
+      filters:
+        current: "فتح"
+        incoming: "البريد الوارد"
+        expired: "منتهي الصلاحية"
+      title: "الاستبيانات"
+      participate_button: "المشاركة في هذا التصويت \\ استطلاع الرأي"
+      participate_button_incoming: "مزيد من المعلومات"
+      participate_button_expired: "انتهى التصويت"
+      no_geozone_restricted: "جميع المدن"
+      geozone_info: "يمكن أن يشارك الناس في التعداد السكاني: "
+      already_answer: "انت مشارك في هذا الاستبيان سابقاً"
+      not_logged_in: "يجب تسجيل الدخول أو انشاء حساب جديد للمشاركة"
+      unverified: "يجب عليك التحقق من الحساب الخاص بك على المشاركة"
+      cant_answer: "هذا الاستبيان غير متوفر في منطقتك الجغرافية"
+      section_header:
+        icon_alt: رمز التصويت
+        title: التصويت
+        help: تعليمات حول التصويت
+      section_footer:
+        title: تعليمات حول التصويت
+      no_polls: "جميع الاستبيانات منتهية."
+    show:
+      already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
+      already_voted_in_web: "شاركت في هذا الاستبيان في السابق ، إذا شاركت الان ستيم الغاء المعلومات السابقة."
+      back: العودة إلى التصويت
+      cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
+      comments_tab: تعليقات
+      login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
+      signin: تسجيل الدخول
+      signup: انشاء حساب
+      cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
+      verify_link: "التحقق من حسابك"
+      cant_answer_incoming: "لم يبدأ هذا الاستبيان بعد."
+      cant_answer_expired: "انتهى هذا الاستبيان."
+      cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
+      more_info_title: "مزيد من المعلومات"
+      documents: مستندات
+      zoom_plus: توسيع صورة
+      read_more: "اقرأ المزيد حول %{answer}"
+      read_less: "اقرأ مختصر حول %{answer}"
+      videos: "فيديو خارجي"
       info_menu: "المعلومات"
+      stats_menu: "إحصائيات المشاركة"
+      results_menu: "نتائج استبيان"
+      stats:
+        title: "بيانات المشاركة"
+        total_participation: "مجموع المشاركات"
+  proposal_notifications:
+    new:
+      title: "إرسال رسالة"
+      title_label: "عنوان"
+      body_label: "رسالة"
+      submit_button: "إرسال رسالة"
+      proposal_page: "صفحة المقترح"
+    show:
+      back: "عودة"
   shared:
     advanced_search:
       date_3: 'الشهر الماضي'
@@ -67,14 +175,62 @@ ar:
   spending_proposals:
     form:
       description: الوصف
+    index:
+      unfeasible: الاستثمارات الغير مجدية
+      sidebar:
+        unfeasible: غير مجدي
   stats:
     index:
       votes: مجموع الأصوات
+      verified_users: مستخدمين تم التحقق منهم
+      unverified_users: مستخدمين غير متحقق منهم
   users:
+    direct_messages:
+      new:
+        body_label: رسالة
+        direct_messages_bloqued: "هذا المستخدم اختار عدم تلقي رسائل مباشرة"
+        submit_button: إرسال
+        title: إرسال رسالة خاصة إلى %{receiver}
+        title_label: العنوان
+        verified_only: لإرسال رسالة خاصة %{verify_account}
+        verify_account: تحقق من حسابك
+        authenticate: تحتاج الى %{signin} او %{signup} للمتابعة.
+        signin: تسجيل الدخول
+        signup: انشاء حساب
+      show:
+        receiver: تم إرسال رسالة إلى %{receiver}
     show:
+      deleted: محذوف
+      deleted_debate: تم حذف هذا الحوار
+      deleted_proposal: تم حذف هذا المقترح
+      deleted_budget_investment: تم حذف هذا المشروع الاستثماري
+      proposals: المقترحات
+      debates: الحوارات
+      budget_investments: استثمارات الميزانية
+      comments: التعليقات
+      actions: الإجراءات
+      no_activity: لا يوجد اجراءات للمستخدم
+      no_private_messages: "لا يمكن ارسال رسالة خاصة لهذا المسنخدم."
+      private_activity: قائمة النشاطات الخاصة بهذا المستخدم غير متاحة.
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
+    proposals:
+      send_notification: "إرسال إشعار"
   votes:
     disagree: أنا لا أوافق
+    spending_proposals:
+      unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
+    budget_investments:
+      unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
   welcome:
+    feed:
+      most_active:
+        processes: "إجراءات مفتوحة"
+      see_all_debates: انظر جميع الحوارات
+      see_all_proposals: انظر جميع المقترحات
+      see_all_processes: انظر جميع المقترحات
+      process_label: إجرائية
+      see_process: انظر الإجرائية
+    cards:
+      title: مميز
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب

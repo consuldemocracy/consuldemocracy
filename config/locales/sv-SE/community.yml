@@ -16,7 +16,6 @@ sv:
       create_first_community_topic:
         first_theme_not_logged_in: Inga inlägg finns tillgängliga, skapa det första.
         first_theme: Skapa det första inlägget i gemenskapen
-        sub_first_theme: "För att skapa ett tema behöver du %{sign_in} eller %{sign_up}."
         sign_in: "logga in"
         sign_up: "registrera dig"
       tab:

@@ -22,7 +22,6 @@ es-BO:
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
-        not_allowed: "No tienes permiso para introducir resultados"
         booth: "Urna"
         date: "Día"
         select_booth: "Elige urna"

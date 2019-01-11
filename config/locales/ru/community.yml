@@ -16,7 +16,6 @@ ru:
       create_first_community_topic:
         first_theme_not_logged_in: Нет ни одной темы, участвуйте, чтобы создать первую.
         first_theme: Создать первую тему сообщества
-        sub_first_theme: "Для создания темы необходимо %{sign_in} или %{sign_up}."
         sign_in: "войти"
         sign_up: "регистрация"
       tab:

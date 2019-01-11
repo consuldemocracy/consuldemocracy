@@ -2,9 +2,16 @@ so:
   helpers:
     page_entries_info:
       entry:
-        zero: Gelitaanada
+        zero: Gelitaan
+        one: Gelid
+        other: Gelitaan
       more_pages:
         display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} lama heli karo"
+          one: Waxa jira<strong>1%{entry_name}</strong>
+          other: Waxa jira<strong>%{count}%{entry_name}</strong>
   views:
     pagination:
       current: Waxaad ku jirtaa bogga
@@ -12,3 +19,4 @@ so:
       last: Ugu danbeynti
       next: Xiga
       previous: Hore
+      truncate: "&hellip;"

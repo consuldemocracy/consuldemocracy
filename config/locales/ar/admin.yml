@@ -90,6 +90,9 @@ ar:
         title: مشاريع استثمارية
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
+        feasibility:
+          feasible: "مجدي (%{price})"
+          unfeasible: "غير مجدي"
       show:
         classification: تصنيف
       edit:
@@ -152,20 +155,59 @@ ar:
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
     menu:
       hidden_comments: التعليقات المخفية
+      hidden_proposal_notifications: إخفاء إشعارات اقتراح
+      admin_notifications: إشعارات
+      polls: الاستبيانات
       settings: الإعدادات العامة
+      site_customization:
+        information_texts_menu:
+          polls: "الاستبيانات"
+      title_polls: الاستبيانات
     moderators:
       index:
         title: المشرفون
     newsletters:
       show:
         body: محتوى البريد الإلكتروني
+    admin_notifications:
+      create_success: تم إنشاء الإشعار بنجاح
+      update_success: تم تعديل الإشعار بنجاح
+      send_success: تم إرسال الإشعار بنجاح
+      delete_success: تم حذف الإشعار بنجاح
+      index:
+        section_title: إشعارات
+        new_notification: إشعار جديد
+        empty_notifications: لايوجد عناصر للعرض
+      new:
+        section_title: إشعار جديد
+        submit_button: إنشاء إشعار
+      edit:
+        section_title: تحرير الإشعار
+        submit_button: تحديث الإشعار
+      show:
+        section_title: معاينة الإشعار
+        send: إرسال إشعار
+        preview_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
+        sent_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
+        send_alert: يرجى تاكيد إرسال الإشعار لـ%{n} مستخدم؟
     system_emails:
+      preview_pending:
+        send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
+        description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
       index:
         download_segment: تحميل عناوين البريد الإلكتروني
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+    valuators:
+      summary:
+        finished_and_feasible_count: منتهي و مجدي
+        finished_and_unfeasible_count: منتهي و غير مجدي
+    polls:
+      index:
+        title: "قائمة الاستبيانات المفعلة"
+        no_polls: "لا يوجد استبيانات."
     questions:
       index:
         no_questions: "لا توجد هناك أسئلة."
@@ -185,8 +227,35 @@ ar:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
       search:
         no_results: لم يتم العثور على منظمات.
+    proposal_notifications:
+      index:
+        title: الإشعارات المخفية
+        no_hidden_proposals: لايوجد إشعارات مخفية.
     shared:
       description: الوصف
+    spending_proposals:
+      index:
+        feasibility:
+          feasible: "مجدي (%{price})"
+          not_feasible: "غير مجدي"
+      summary:
+        finished_and_feasible_count: منتهي و مجدي
+        finished_and_unfeasible_count: منتهي و غير مجدي
+    signature_sheets:
+      show:
+        unverified_error: (لم يتم التحقق من قبل التعداد)
+    stats:
+      show:
+        proposal_notifications: إشعارات المقترح
+        polls: الاستبيانات
+      proposal_notifications:
+        title: إشعارات المقترح
+      polls:
+        all: الاستبيانات
+        table:
+          question_name: سؤال
+          origin_web: المشاركون عبر ويب
+          origin_total: مجموع المشاركين
     homepage:
       cards:
         title: العنوان

@@ -17,15 +17,40 @@ ar:
         confirm_link: تأكيد حسابي
         text: 'يمكنك تأكيد حساب البريد الإلكتروني الخاص بك من خلال الرابط التالي:'
         title: اهلاً وسهلاً
+        welcome: اهلاً وسهلاً
       reset_password_instructions:
+        hello: مرحبا
         ignore_text: إذا لم تطلب تغيير كلمة المرور، فيمكنك تجاهل هذا البريد الإلكتروني.
         text: 'لقد تلقينا طلبك من أجل تغيير كلمة المرور. يمكنك القيام بذلك عبر الرابط التالي:'
+      unlock_instructions:
+        hello: مرحبا
     menu:
       login_items:
         login: تسجيل الدخول
         logout: تسجيل الخروج
+    organizations:
+      registrations:
+        new:
+          email_label: البريد الإلكتروني
+          organization_name_label: اسم المنظمة
+          password_confirmation_label: تأكيد كلمة المرور
+          password_label: كلمة المرور
+          phone_number_label: رقم الهاتف
+          responsible_name_label: الاسم الكامل للشخص المسؤول
+          responsible_name_note: وسيكون هذا الشخص الذي يمثل الرابطة/الوحدة التي باسمها يتم عرض المقترحات
+          submit: سجل
+          title: التسجيل كمنظمة أو وحدة
+    passwords:
+      edit:
+        password_confirmation_label: تأكيد كلمة المرور الجديدة
+        password_label: كلمة مرور جديدة
+      new:
+        email_label: البريد الإلكتروني
+        send_submit: إعادة إرسال التعليمات
+        title: هل نسيت كلمة المرور؟
     sessions:
       new:
+        login_label: البريد الإلكتروني أو اسم المستخدم
         password_label: كلمة المرور
         remember_me: تذكرني
         submit: دخول

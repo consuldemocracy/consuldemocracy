@@ -17,6 +17,7 @@ gl:
         table_assigned_investments_valuation_open: Propostas de investimento asignadas coa avaliación aberta
         table_actions: Accións
         evaluate: Avaliar
+        no_budgets: "Non hai orzamentos"
     budget_investments:
       index:
         headings_filter_all: Todas as partidas

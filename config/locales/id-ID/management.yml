@@ -56,7 +56,6 @@ id:
       support_proposals: Dukung proposal
       vote_proposals: Pilih proposal
     print:
-      proposals_info: 'Buat proposal anda di http: //url.consul'
       proposals_title: 'Proposal:'
       spending_proposals_info: 'Berpartisipasi di http: //url.consul'
       budget_investments_info: 'Berpartisipasi di http: //url.consul'

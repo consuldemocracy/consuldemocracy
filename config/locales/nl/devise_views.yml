@@ -33,9 +33,9 @@ nl:
         unlock_link: Deblokkeer mijn account.
     menu:
       login_items:
-        login: Log in
-        logout: Log uit
-        signup: Registreer
+        login: Aanmelden
+        logout: Afmelden
+        signup: Registreren
     organizations:
       registrations:
         new:
@@ -49,11 +49,8 @@ nl:
           submit: Registreer
           title: Registreer als vereniging of organisatie
         success:
-          back_to_index: Ik begrijp het, ga terug naar de hoofdpagina
-          instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
-          instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
+          back_to_index: Ik begrijp het, terug naar de hoofdpagina
           instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
-          thank_you_html: Dank voor uw aanmelding als collectief op deze site. We wachten nu op <b>verificatie</b>.
           title: Aanmelden van organisatie of collectief
     passwords:
       edit:
@@ -105,7 +102,7 @@ nl:
           update_submit: Pas aan
           waiting_for: 'In afwachting van bevestiging:'
         new:
-          cancel: Annuleer inloggen
+          cancel: Aanmelden annuleren
           email_label: Email
           organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
           organization_signup_link: Hier aanmelden
@@ -113,9 +110,9 @@ nl:
           password_label: Wachtwoord
           redeemable_code: Verificatiecode ontvangen via email (optioneel)
           submit: Aanmelden
-          terms: Met aanmelding accepteerd u de %{terms}
+          terms: Met aanmelding accepteert u de %{terms}
           terms_link: voorwaarden van gebruik
-          terms_title: Met aanmelding accepteerd u de voorwaarden van gebruik
+          terms_title: Met aanmelding accepteert u de voorwaarden van gebruik
           title: Aanmelden
           username_is_available: Gebruikersnaam is beschikbaar
           username_is_not_available: Gebruikersnaam is bezet
@@ -126,4 +123,4 @@ nl:
           instructions_1_html: <b>Check uw email</b> - we hebben u een <b>link ter bevestiging</b> gestuurd.
           instructions_2_html: Na bevestiging kunt u deelnemen.
           thank_you_html: Dank voor uw aanmelding. Uw email moet nu worden <b>bevestigd</b>.
-          title: Pas email adres aan
+          title: Mailadres bevestigen

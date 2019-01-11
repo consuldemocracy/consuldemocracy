@@ -108,7 +108,6 @@ es-AR:
         relevance: Más relevantes
         recommendations: Recomendaciones
       recommendations:
-        without_results: No existen debates relacionados con tus intereses
         without_interests: Sigue propuestas para que podamos darte recomendaciones
       search_form:
         button: Buscar
@@ -197,7 +196,6 @@ es-AR:
       conditions: Condiciones de uso
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
@@ -415,7 +413,6 @@ es-AR:
       retired: Propuesta retirada por el autor
       share: Compartir
       send_notification: Enviar notificación
-      no_notifications: "Esta propuesta no tiene notificaciones."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
@@ -497,7 +494,6 @@ es-AR:
       title_label: "Título"
       body_label: "Mensaje"
       submit_button: "Enviar mensaje"
-      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi actividad"
@@ -791,7 +787,6 @@ es-AR:
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
     error_itself: "Enlace no válido. No puede relacionar un contenido suyo."
     success: "Has añadido un nuevo contenido relacionado"
-    is_related: "¿Es contenido relacionado?"
     score_positive: "Sí"
     score_negative: "No"
     content_title:

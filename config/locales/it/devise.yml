@@ -28,7 +28,6 @@ it:
       unlock_instructions:
         subject: "Istruzioni di sblocco"
     omniauth_callbacks:
-      failure: "Non è stato possibile autorizzarti in quanto %{kind} perché “%{reason}”."
       success: "Correttamente identificato come %{kind}."
     passwords:
       no_token: "Non è possibile accedere a questa pagina se non attraverso un link di reset password. Se ci sei arrivato tramite un link di reset password, per favore assicurati che l’URL sia completo."

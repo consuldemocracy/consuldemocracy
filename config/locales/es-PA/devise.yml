@@ -28,7 +28,6 @@ es-PA:
       unlock_instructions:
         subject: "Instrucciones de desbloqueo"
     omniauth_callbacks:
-      failure: "No se te ha podido identificar via %{kind} por el siguiente motivo: \"%{reason}\"."
       success: "Identificado correctamente via %{kind}."
     passwords:
       no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer la contraseña. Si has accedido desde el enlace para restablecer la contraseña, asegúrate de que la URL esté completa."

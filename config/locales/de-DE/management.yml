@@ -77,7 +77,6 @@ de:
       support_proposals: Anträge unterstützen
       vote_proposals: Über Vorschläge abstimmen
     print:
-      proposals_info: Erstellen Sie Ihren Antrag auf http://url.consul
       proposals_title: 'Vorschläge:'
       spending_proposals_info: Auf http://url.consul teilnehmen
       budget_investments_info: Auf http://url.consul teilnehmen

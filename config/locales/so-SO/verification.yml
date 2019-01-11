@@ -1,1 +1,111 @@
 so:
+  verification:
+    alert:
+      lock: Waxaad gaadhay tirada ugu badan ee isku dayga. Fadlan isku day markale dambe.
+    back: Ku noqo xisaabtayda
+    email:
+      create:
+        alert:
+          failure: Dhibaato ayaa ku dhacday in email loo diro koontadaada
+        flash:
+          success: 'Waxaan soo dirnay email caddaynta xisaabtaada:%{email}'
+      show:
+        alert:
+          failure: Xaqiijinta xaqiijinta khalad
+        flash:
+          success: Aad tahay qof la xaqiijiyay
+    letter:
+      alert:
+        unconfirmed_code: Wali ma aadan soo gelin koodhka xaqiijinta
+      create:
+        flash:
+          offices: Xafiisyada Taageerada Muwaadiniinta
+          success_html: Waad ku mahadsan tahay codsigaaga<b> ugu badnaan codsigaaga (kaliya oo looga baahan yahay codadka kama dambaysta ah) </b>. Maalmo gudahood waxaan u direynaa cinwaanka ku jira xogta aan ku hayno faylka. Fadlan xusuusnow, haddii aad doorbidayso, waxaad ka qaadi kartaa lambarkaaga mid ka mid ah%{offices}.
+      edit:
+        see_all: Fiiri soo jeedimaha
+        title: Warqada codsi ah
+      errors:
+        incorrect_code: Xaqiijinta xaqiijinta khalad
+      new:
+        explanation: 'Ka qeyb qaadashada cod bixinta ugu dambeeya waxaad:'
+        go_to_index: Fiiri soo jeedimaha
+        office: Xaqiiji wixii%{office}
+        offices: Xafiisyada Taageerada Muwaadiniinta
+        send_letter: Warqad kood wadata iso diir
+        title: Hanbalayoyin!
+        user_permission_info: Akoonkaga waad karta...
+      update:
+        flash:
+          success: Koodka waa sax. Koontadaada hadda waa la xaqiijiyay
+    redirect_notices:
+      already_verified: Koontadaada waa la xaqiijiyay
+      email_already_sent: Waxaan horey u soo dirnay email ah oo leh xiriirinta xaqiijinta. Haddii aadan heli karin emailka, waxaad codsan kartaa dib-u-celin halkan
+    residence:
+      alert:
+        unconfirmed_residency: Wali ma xaqiijin degenaanshahaaga
+      create:
+        flash:
+          success: Deganaanshaha waa la xaqiijiyay
+      new:
+        accept_terms_text: Waan aqbalay%{terms_url} tirooyinka tirakoobka
+        accept_terms_text_title: Waxaan aqbalayaa shuruudaha iyo xaaladaha helitaanka tirakoobka
+        date_of_birth: Tarikhda Dhalashada
+        document_number: Lambarka dukumeentiga
+        document_number_help_title: Caawin
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br><strong>Basab</strongoorAAA000001<br><strong>Kaarka degganaanshaha\n</strong>: X1234567P"
+        document_type:
+          passport: Baasaboor
+          residence_card: Kaarka degananshaha
+          spanish_id: DNI
+        document_type_label: Qaybaha dukumentiga
+        error_not_allowed_age: Ma haysatid da'da loo baahan yahay si aad uga qayb qaadato
+        error_not_allowed_postal_code: Si loo xaqiijiyo, waa inaad diiwaan gashaa.
+        error_verifying_census: Tirakoobku ma awoodin inuu xaqiijiyo macluumaadkaaga. Fadlan hubi in faahfaahintaada tirakoobku ay sax tahay adigoo wacaya Golaha Magaalada ama booqo hal xafiis%{offices}.
+        error_verifying_census_offices: XafiiskaTaageerada Muwaadiniinta
+        form_errors: hortagaan xaqiijinta degaankaaga
+        postal_code: Lambar ama Xarfo Kokoban oo qaybka ah Adareeska
+        postal_code_note: Si aad u xaqiijiso koontadaada waa inaad diiwaan gashaa
+        terms: shuruudaha iyo xaaladaha helitaanka
+        title: Hubi deganaanshaha
+        verify_residence: Hubi deganaanshaha
+    sms:
+      create:
+        flash:
+          success: Gali koodhka xaqiijinta ee lagu soo diray farriin qoraal ahan
+      edit:
+        confirmation_code: Gali koodka aad ka heshay moobaylkaaga
+        resend_sms_link: Halkan riix si aad mar kale u dirto
+        resend_sms_text: Ma helin qoraal uu la socodo koodhkaaga xaqiijinta?
+        submit_button: Diriid
+        title: Xaqiijinta koodhka amniga
+      new:
+        phone: Geli lamabarkaTalefoonkaga si ad u hesho koodhka
+        phone_format_html: "<strong>Tusaale: 612345678 or+34612345678</em></strong><strong>"
+        phone_note: Waxaanu isticmaalnaa oo kaliya telefoonkaaga si aan kuu soo dirno kodhka, marnaba kula soo xiriiri.
+        phone_placeholder: "Tusaale: 6123445678 ama +34612345678"
+        submit_button: Diriid
+        title: Xaqiijinta koodhka diir
+      update:
+        error: Kodhka xaqiijinta ee an saxda ahayn
+        flash:
+          level_three:
+            success: Koodka waa sax. Koontadaada hadda waa la xaqiijiyay
+          level_two:
+            success: Kodh saxa ah
+    step_1: Degaan
+    step_2: Koodhka Saxda ah
+    step_3: Cadeeynti ugu danbaysay
+    user_permission_debates: Kaqayb qadashada dooda
+    user_permission_info: Hubinta macluumaadkaaga waad awoodi doontaa inaad...
+    user_permission_proposal: Samee soo jeedino cusub
+    user_permission_support_proposal: Tageer so jedinada*
+    user_permission_votes: Kayb galka codaynta ugu danbaysa*
+    verified_user:
+      form:
+        submit_button: Diiir Kodhka
+      show:
+        email_title: Emailo
+        explanation: Hadda waxaanu haynaa faahfaahinta soo socota Diiwaanka; fadlan dooro habka aad u diri lahayd lambarkaaga xaqiijinta.
+        phone_title: Lambarada telefoonka
+        title: Maclumaad laheli karo
+        use_another_phone: Isticmaal telefoon kale

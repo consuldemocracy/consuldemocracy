@@ -1,6 +1,5 @@
 es-VE:
   pages:
-    general_terms: Términos y Condiciones
     help:
       title: "%{org} es una plataforma para la participación ciudadana"
       guide: "Esta guía explica para qué son cada una de las secciones %{org} y cómo funcionan."
@@ -46,13 +45,6 @@ es-VE:
       other:
         title: "Otra información de interés"
         how_to_use: "Usa %{org_name} en tu ciudad"
-      how_to_use:
-        text: |-
-          Úselo en su municipio o ayúdenos a mejorarlo, es software libre.
-          
-          Este Portal de Gobierno Abierto utiliza la [aplicación CONSUL](https://github.com/consul/consul 'consul github') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), eso significa en palabras simples que cualquiera puede usar libremente el código, copiarlo, verlo en detalle, modificarlo y redistribuirlo al mundo con las modificaciones que desee (permitiendo que otros hagan lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
-          
-          Si usted es programador, puede ver el código y ayudarnos a mejorarlo en la [aplicación CONSUL](https://github.com/consul/consul 'cónsul github').
       titles:
         how_to_use: Úselo en su municipio
     titles:

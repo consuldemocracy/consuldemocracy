@@ -28,7 +28,6 @@ pt-BR:
       unlock_instructions:
         subject: "Instruções de desbloqueio"
     omniauth_callbacks:
-      failure: "Não foi possível autorizá-lo como %{kind} porque \"%{reason}\"."
       success: "Identificado com sucesso com %{kind}."
     passwords:
       no_token: "Você não pode acessar esta página, exceto por meio de um link de redefinição de senha. Se você tiver acessado através de um link de redefinição de senha, verifique se o URL está completo."

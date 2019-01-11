@@ -105,29 +105,6 @@ zh-TW:
         unable_notice: 您無法銷毀具有相關投資的預算
       new:
         title: 新的參與性預算
-      show:
-        groups:
-          other: "1組預算標題\n%{count} 組預算標題"
-      form:
-        group: 組名字
-        no_groups: 尚未創建任何小組。 每個用戶只能在每個組中的一個標題中投票。
-        add_group: 添加新組
-        create_group: 創建組
-        edit_group: 編輯組
-        submit: 儲存組
-        heading: 標題名稱
-        add_heading: 添加標題
-        amount: 數量
-        population: "人口 (可選擇填寫)"
-        population_help_text: "此數據僅用於計算參與統計資訊"
-        save_heading: 儲存標題
-        no_heading: 此組沒有指定的標題。
-        table_heading: 標題
-        table_amount: 數量
-        table_population: 人口
-        population_info: "預算標題 \"人口\" 欄位用於統計目的, 在預算結束時顯示每個標題, 代表一個地區與人口百分比投票率。該欄位是可選擇填寫的, 因此如果不適用, 您可以將其留空。"
-        max_votable_headings: "用戶可投票的最大標題數"
-        current_of_max_headings: "%{max} 之%{current}"
       winners:
         calculate: 計算勝出者投資
         calculated: 勝出者正在被計算中，可能需要一分鐘。
@@ -264,8 +241,6 @@ zh-TW:
         image: "圖像"
         show_image: "顯示圖像"
         documents: "文檔"
-        milestone: 里程碑
-        new_milestone: 創建新的里程碑
       form:
         admin_statuses: 管理投資狀態
         no_statuses_defined: 尚未有定義投資狀態
@@ -335,7 +310,6 @@ zh-TW:
           without_confirmed_hide: 有待
         title: 隱藏的用戶
         user: 用戶
-        no_hidden_users: 沒有隱藏的用戶。
       show:
         email: '電郵:'
         hidden_at: '隱藏於:'
@@ -382,7 +356,6 @@ zh-TW:
         index:
           create: 新進程
           delete: 刪除
-          title: 立法進程
           filters:
             open: 打開
             next: 下一個
@@ -402,7 +375,6 @@ zh-TW:
           status_planned: 計劃
         subnav:
           info: 資訊
-          draft_versions: 起草
           questions: 辯論
           proposals: 建議
       proposals:
@@ -969,7 +941,6 @@ zh-TW:
       index:
         title: 官員
         no_officials: 沒有官員
-        name: 名稱
         official_position: 正式職位
         official_level: 級別
       level_0: 不是官員
@@ -1010,15 +981,6 @@ zh-TW:
       search:
         title: 搜尋組織
         no_results: 未找到任何組織。
-    hidden_proposals:
-      index:
-        filter: 篩選器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已確認
-          without_confirmed_hide: 有待
-        title: 隱藏的建議
-        no_hidden_proposals: 沒有隱藏的建議。
     proposal_notifications:
       index:
         filter: 篩選器
@@ -1349,11 +1311,9 @@ zh-TW:
       title: 主頁
       description: 活動模組以與此處相同的順序在主頁中顯示。
       header_title: 標題
-      no_header: 沒有頁首。
       create_header: 創建頁首
       cards_title: 卡
       create_card: 創建卡
-      no_cards: 沒有卡。
       cards:
         title: 標題
         description: 描述

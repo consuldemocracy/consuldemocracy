@@ -1,1 +1,127 @@
 so:
+  valuation:
+    header:
+      title: Qimeyn
+    menu:
+      title: Qimeyn
+      budgets: Misaaniyadaha kaqayb qadashada
+      spending_proposals: Bixinta soo jeedinta
+    budgets:
+      index:
+        title: Misaaniyadaha kaqayb qadashada
+        filters:
+          current: Furan
+          finished: Dhamaday
+        table_name: Magac
+        table_phase: Weeji
+        table_assigned_investments_valuation_open: Mashaariicda maalgashiga ee loo qoondeeyey qiimeyn furan
+        table_actions: Tilaabooyin
+        evaluate: Qiime
+    budget_investments:
+      index:
+        headings_filter_all: Dhamaan Ciwaanada
+        filters:
+          valuation_open: Furan
+          valuating: Qimeeyni kusocoto
+          valuation_finished: Qimeeyn ayaa dhamatay
+        assigned_to: "Loo magacaabo%{valuator}"
+        title: Mashariicda malgashiga
+        edit: Tafatiraha Warqadaha
+        valuators_assigned:
+          one: '%{count} Qimeyayasha lo qoondeyey'
+          other: "%{count} Qimeyayasha lo qoondeyey"
+        no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
+        table_id: Aqoonsi
+        table_title: Ciwaan
+        table_heading_name: Magaca Ciwaanka
+        table_actions: Tilaabooyin
+        no_investments: "Majiraan Mashariic malgashi."
+      show:
+        back: Labasho
+        title: Mashruuca Malgelinta
+        info: Maclumadka qoraga
+        by: Soodiray
+        sent: La soo diray
+        heading: Madaxa
+        dossier: Koob
+        edit_dossier: Tafatiraha Warqadaha
+        price: Qime
+        price_first_year: Kharashka sanadka koowaad
+        currency: "€"
+        feasibility: Suurta galnimada
+        feasible: Surtagal
+        unfeasible: An surtgak ahayn
+        undefined: Aan la garanayn
+        valuation_finished: Qimeeyn ayaa dhamatay
+        duration: Xadida wakhtiga
+        responsibles: Masuuliyaaha
+        assigned_admin: Mamul u astayn
+        assigned_valuators: Qimeyayasha lo xilsaray
+      edit:
+        dossier: Koob
+        price_html: "Qimaha%{currency}"
+        price_first_year_html: "Kharashadka sanadka kowaad%{currency}<small>ikhtiyaari ah, xog aan dadweynaha ahayn</small>"
+        price_explanation_html: Faahfaahinta qiimaha
+        feasibility: Suurta galnimada
+        feasible: Surtagal
+        unfeasible: Aan suurtoobi karin
+        undefined_feasible: Joojin
+        feasible_explanation_html: Sharaxaadda faahfaahinta
+        valuation_finished: Qimeeyn ayaa dhamatay
+        valuation_finished_alert: "Mahubta inaad rabto inaad warbixintaan kadhigtiid mid dhamaystiran Haddii aad samayso, mar dambe dib looma beddeli karo."
+        not_feasible_alert: "Email ayaa isla markiiba loo diri doonaa qoraaga mashruuca iyadoo la soo gudbin doono warbixinta suurtagalnimada."
+        duration_html: Xadida wakhtiga
+        save: Badbaadi beddelka
+      notice:
+        valuate: "Kobiga lacusboneysiyey"
+      valuation_comments: Qimeynta Falooyinka
+      not_in_valuating_phase: Maal-gashiga waxaa la qiimeyn karaa oo kaliya marka miisaaniyadda ay ku jirto wajiga
+    spending_proposals:
+      index:
+        geozone_filter_all: Dhammaan soonaha
+        filters:
+          valuation_open: Furan
+          valuating: Qimeeyni kusocoto
+          valuation_finished: Qimeeyn ayaa dhamatay
+        title: Mashaariicda maalgalinta ee miisaaniyadda ka qaybqaadashada
+        edit: Isbedel
+      show:
+        back: Labasho
+        heading: Mashruuca Malgelinta
+        info: Maclumadka qoraga
+        association_name: Urur
+        by: Soodiray
+        sent: La soo diray
+        geozone: Baxaad
+        dossier: Koob
+        edit_dossier: Tafatiraha Warqadaha
+        price: Qime
+        price_first_year: Kharashka sanadka koowaad
+        currency: "€"
+        feasibility: Suurta galnimada
+        feasible: Surtagal
+        not_feasible: Aan suurtoobi karin
+        undefined: Aan la garanayn
+        valuation_finished: Qimeeyn ayaa dhamatay
+        time_scope: Xadida wakhtiga
+        internal_comments: Falooyinka gudaha
+        responsibles: Masuuliyaaha
+        assigned_admin: Mamul u astayn
+        assigned_valuators: Qimeyayasha lo xilsaray
+      edit:
+        dossier: Koob
+        price_html: "Qimaha%{currency}"
+        price_first_year_html: "Kharashadka inta lugu jiro sanadka hore%{currency}"
+        currency: "€"
+        price_explanation_html: Faahfaahinta qiimaha
+        feasibility: Suurta galnimada
+        feasible: Surtagal
+        not_feasible: Aan suurtoobi karin
+        undefined_feasible: Joojin
+        feasible_explanation_html: Sharaxaadda faahfaahinta
+        valuation_finished: Qimeeyn ayaa dhamatay
+        time_scope_html: Xadida wakhtiga
+        internal_comments_html: Falooyinka gudaha
+        save: Badbaadi beddelka
+      notice:
+        valuate: "Kobiga lacusboneysiyey"

@@ -14,8 +14,8 @@ val:
         one: "fita"
         other: "fites"
       milestone/status:
-        one: "Estat de la proposta"
-        other: "Estat de les propostes"
+        one: "Estat de la Fita"
+        other: "Estats de la Fita"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -82,9 +82,6 @@ val:
       legislation/draft_versions:
         one: "Versió esborrany"
         other: "Versions esborrany"
-      legislation/draft_texts:
-        one: "Esborrany"
-        other: "Esborranys"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntes"
@@ -132,7 +129,7 @@ val:
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
       milestone:
-        status_id: "Estat actual de la proposta (opcional)"
+        status_id: "Estat actual (opcional)"
         title: "Títol"
         description: "Descripció (opcional si hi ha un estat asignat)"
         publication_date: "Data de publicació"
@@ -185,11 +182,17 @@ val:
         geozone_restricted: "Restringida per zones"
         summary: "Resum"
         description: "Descripció"
+      poll/translation:
+        name: "Nom"
+        summary: "Resum"
+        description: "Descripció"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
         description: "Descripció"
         external_url: "Enllaç a documentació adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipus de fulla de signatures"
         signable_id: "ID Proposta ciutadana/Proposada inversió"
@@ -205,6 +208,10 @@ val:
         more_info_flag: Mostra a la pàgina de més informació
         print_content_flag: Botó d'imprimir contingut
         locale: Llengua
+      site_customization/page/translation:
+        title: Títol
+        subtitle: Subtítol
+        content: Contingut
       site_customization/image:
         name: Nom
         image: Imatge
@@ -221,16 +228,28 @@ val:
         end_date: Data de fi del procés
         debate_start_date: Data d'inici del debat
         debate_end_date: Data de fi del debat
+        draft_start_date: Data d'inici del esborrany
+        draft_end_date: Data en la que s'acaba la redacció
         draft_publication_date: Data de publicació de l'esborrany
         allegations_start_date: Data d'inici d'al·legacions
         allegations_end_date: Data de fi d'al·legacions
         result_publication_date: Data de publicació del resultat final
+      legislation/process/translation:
+        title: Títol del Procés
+        summary: Resum
+        description: Descripció
+        additional_info: Informació addicional
+        milestones_summary: Resum
       legislation/draft_version:
         title: Títol de la versió
         body: Text
         changelog: Canvis
         status: Estat
         final_version: Versió final
+      legislation/draft_version/translation:
+        title: Títol de la versió
+        body: Text
+        changelog: Canvis
       legislation/question:
         title: Títol
         question_options: Respostes
@@ -247,6 +266,9 @@ val:
       poll/question/answer:
         title: Resposta
         description: Descripció
+      poll/question/answer/translation:
+        title: Resposta
+        description: Descripció
       poll/question/answer/video:
         title: Títol
         url: Vídeo extern
@@ -255,12 +277,25 @@ val:
         subject: Asumpte
         from: De
         body: Contingut del email
+      admin_notification:
+        segment_recipient: Destinataris
+        title: Títol
+        link: Enllaç
+        body: Text
+      admin_notification/translation:
+        title: Títol
+        body: Text
       widget/card:
         label: Etiqueta (opcional)
         title: Títol
         description: Descripció
         link_text: Text de l'enllaç
         link_url: URL de l'enllaç
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Títol
+        description: Descripció
+        link_text: Text de l'enllaç
       widget/feed:
         limit: Número d'elements
     errors:
@@ -305,6 +340,8 @@ val:
               invalid_date_range: ha de ser igual o posterior a la data d'inici
             debate_end_date:
               invalid_date_range: ha de ser igual o posterior a la data d'inici del debat
+            draft_end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici de l'esborrany
             allegations_end_date:
               invalid_date_range: ha de ser igual o posterior a la data d'inici de les al·legacions
         proposal:

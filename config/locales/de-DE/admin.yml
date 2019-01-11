@@ -106,30 +106,6 @@ de:
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
       new:
         title: Neuer Bürgerhaushalt
-      show:
-        groups:
-          one: 1 Gruppe von Rubriken
-          other: "%{count} Gruppe von Rubriken"
-      form:
-        group: Name der Gruppe
-        no_groups: Bisher wurden noch keine Gruppen erstellt. Jede*r Benutzer*in darf in nur einer Rubrik per Gruppe abstimmen.
-        add_group: Neue Gruppe hinzufügen
-        create_group: Gruppe erstellen
-        edit_group: Gruppe bearbeiten
-        submit: Gruppe speichern
-        heading: Name der Rubrik
-        add_heading: Rubrik hinzufügen
-        amount: Summe
-        population: "Bevölkerung (optional)"
-        population_help_text: "Diese Daten dienen ausschließlich dazu, die Beteiligungsstatistiken zu berechnen"
-        save_heading: Rubrik speichern
-        no_heading: Diese Gruppe hat noch keine zugeordnete Rubrik.
-        table_heading: Rubrik
-        table_amount: Summe
-        table_population: Bevölkerung
-        population_info: "Das Feld 'Bevölkerung' in den Rubriken wird nur für statistische Zwecke verwendet, mit dem Ziel, den Prozentsatz der Stimmen in jeder Rubrik anzuzeigen, die ein Bevölkerungsgebiet darstellt. Dieses Feld ist optional; Sie können es daher leer lassen, wenn es nicht zutrifft."
-        max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
-        current_of_max_headings: "%{current} von %{max}"
       winners:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
@@ -266,8 +242,6 @@ de:
         image: "Bild"
         show_image: "Bild anzeigen"
         documents: "Dokumente"
-        milestone: Meilenstein
-        new_milestone: Neuen Meilenstein erstellen
       form:
         admin_statuses: Status des Ausgabenvorschlags verwalten
         no_statuses_defined: Es wurde noch kein Status für diese Ausgabenvorschläge definiert
@@ -337,7 +311,6 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Benutzer*innen
         user: Benutzer*in
-        no_hidden_users: Es gibt keine verborgenen Benutzer*innen.
       show:
         email: 'E-Mail:'
         hidden_at: 'Verborgen am:'
@@ -383,7 +356,6 @@ de:
         index:
           create: Neues Verfahren
           delete: Löschen
-          title: Kollaborative Gesetzgebungsprozesse
           filters:
             open: Offen
             next: Nächste/r
@@ -403,7 +375,6 @@ de:
           status_planned: Geplant
         subnav:
           info: Information
-          draft_versions: Ausarbeitung
           questions: Diskussion
           proposals: Vorschläge
       proposals:
@@ -962,7 +933,6 @@ de:
       index:
         title: Beamte
         no_officials: Keine Beamten vorhanden.
-        name: Name
         official_position: Beamte*r
         official_level: Stufe
       level_0: Kein/e Beamte*r
@@ -1004,15 +974,6 @@ de:
       search:
         title: Organisationen suchen
         no_results: Keine Organisationen gefunden.
-    hidden_proposals:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bestätigt
-          without_confirmed_hide: Ausstehend
-        title: Verborgene Vorschläge
-        no_hidden_proposals: Keine verborgenen Vorschläge vorhanden.
     proposal_notifications:
       index:
         filter: Filter
@@ -1339,11 +1300,9 @@ de:
       title: Homepage
       description: Die aktiven Module erscheinen auf der Startseite in derselben Reihenfolge wie hier.
       header_title: Kopfzeile
-      no_header: Keine Kopfzeile vorhanden.
       create_header: Kopfzeile erstellen
       cards_title: Karten
       create_card: Karte erstellen
-      no_cards: Keine Karten vorhanden.
       cards:
         title: Titel
         description: Beschreibung

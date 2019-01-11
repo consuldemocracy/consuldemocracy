@@ -22,7 +22,6 @@ pl:
       title: Nowa odpowiedź na Twój komentarz
     unfeasible_spending_proposal:
       hi: "Drogi Użytkowniku,"
-      new_html: "Dla tych wszystkich, zachęcamy do opracowania <strong>nowej propozycji</strong>, która dostosowana jest do warunków tego procesu. Można to zrobić wchodząc w ten link: %{url}."
       new_href: "nowy projekt inwestycyjny"
       sincerely: "Z poważaniem"
       sorry: "Przepraszamy za niedogodności i ponownie dziękujemy Ci za Twoje nieocenione uczestnictwo."
@@ -32,16 +31,11 @@ pl:
       title: "Powiadomienia o wniosku w %{org_name}"
       share: Udostępnij wniosek
       comment: Skomentuj wniosek
-      unsubscribe: "Jeśli nie chcesz otrzymywać powiadomień propozycji, odwiedź %{account} i odznacz 'Otrzymuj podsumowanie powiadomień o propozycjach'."
       unsubscribe_account: Moje konto
     direct_message_for_receiver:
       subject: "Otrzymałeś nową wiadomość prywatną"
       reply: Odpowiedz %{sender}
-      unsubscribe: "Jeśli nie chcesz otrzymywać wiadomości bezpośrednich, odwiedź %{account} i odznacz 'Otrzymuj wiadomości e-mail o wiadomościach bezpośrednich'."
       unsubscribe_account: Moje konto
-    direct_message_for_sender:
-      subject: "Wysłałeś nową wiadomość prywatną"
-      title_html: "Wysłałeś nową wiadomość prywatną do <strong>%{receiver}</strong> o następującej treści:"
     user_invite:
       ignore: "Jeżeli nie prosiłeś o to zaproszenie, nie martw się, możesz zignorować ten e-mail."
       text: "Dziękujemy za wniosek o dołączenie do %{org}! Już za kilka sekund możesz rozpocząć uczestnictwo, wypełnij tylko poniższy formularz:"
@@ -60,7 +54,6 @@ pl:
       share: "Udostępnij swój projekt"
     budget_investment_unfeasible:
       hi: "Drogi Użytkowniku,"
-      new_html: "Dla tych wszystkich, zachęcamy do opracowania <strong>nowej inwestycji</strong>, która dostosowana jest do warunków tego procesu. Można to zrobić wchodząc w ten link: %{url}."
       new_href: "nowy projekt inwestycyjny"
       sincerely: "Z poważaniem"
       sorry: "Przepraszamy za niedogodności i ponownie dziękujemy Ci za Twoje nieocenione uczestnictwo."

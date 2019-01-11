@@ -87,6 +87,7 @@ val:
         table_edit_budget: Editar
         edit_groups: Edita grups de partides
         edit_budget: Edita pressupost
+        no_budgets: "No hi ha pressupostos oberts."
       create:
         notice: Nova campanya de pressupostos participatius creada amb èxit!
       update:
@@ -106,34 +107,58 @@ val:
         unable_notice: No pots eliminar un Pressupost amb propostes
       new:
         title: Nou pressupost ciutadà
-      show:
-        groups:
-          one: 1 Grup de partides pressupostàries
-          other: "%{count} Grups de partides pressupostàries"
-      form:
-        group: Nom del grup
-        no_groups: No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup.
-        add_group: Afegeix nou grup
-        create_group: Crea un grup
-        edit_group: Editar grup
-        submit: Guardar group
-        heading: Nom de la partida
-        add_heading: Afegir partida
-        amount: Quantitat
-        population: "Població (opcional)"
-        population_help_text: "Esta data s'usa excusivament per a calculs estadistics de participació"
-        save_heading: Guardar partida
-        no_heading: Aquest grup no té cap partida assignada.
-        table_heading: Partida
-        table_amount: Quantitat
-        table_population: Població
-        population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
-        max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
         recalculate: Recalcular propostes guanyadores
+    budget_groups:
+      name: "Nom"
+      headings_name: "Partides pressupostàries"
+      headings_edit: "Editar Partides"
+      headings_manage: "Gestionar partides"
+      max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
+      no_groups: "No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup."
+      amount:
+        one: "Hi ha 1 grup"
+        other: "Hi ha %{count} grups"
+      create:
+        notice: "Grup creat correctament!"
+      update:
+        notice: "Grup actualitzat correctament"
+      destroy:
+        success_notice: "Grup eliminat correctament"
+        unable_notice: "No pots eliminar un Grup amb partides associades"
+      form:
+        create: "Crear un nou grup"
+        edit: "Editar grup"
+        name: "Nom del grup"
+        submit: "Guardar grup"
+    budget_headings:
+      name: "Nom"
+      no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
+      amount:
+        one: "Hi ha 1 partida"
+        other: "Hi han %{count} partides"
+      create:
+        notice: "Partida creada correctament!"
+      update:
+        notice: "Partida actualitzada correctament"
+      destroy:
+        success_notice: "Partida eliminada correctament"
+        unable_notice: "No es pot eliminar una Partida amb propostes asociades"
+      form:
+        name: "Nom de la partida"
+        amount: "Quantitat"
+        population: "Població (opcional)"
+        population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
+        latitude: "Latitud"
+        longitude: "Longitud"
+        coordinates_info: "Si s'indiquen la latitud i longitud, la página de propostes per a aquesta partida inclourà un mapa. Aquest mapa estarà centrat utilitzant aquestes coordenades."
+        allow_content_block: "Permet contingut bloquejat"
+        content_blocks_info: "Si el permís de bloc de contingut està activat, podras crear contingut propi per a esta partida desde la secció Configuració -> Contingut de blocs personalitzat. Este continut es mostrarà en la pàgina de propostes d'aquesta partida."
+        create: "Crear nova partida"
+        edit: "Editar Partida"
+        submit: "Guardar partida"
     budget_phases:
       edit:
         start_date: Data d'inici del procés
@@ -266,6 +291,8 @@ val:
         image: "Imatge"
         show_image: "Mostrar imatge"
         documents: "Documents"
+        milestone: Fita
+        new_milestone: Crear nova fita
       form:
         admin_statuses: Estat administratiu de les propostes
         no_statuses_defined: No hi ha estats de projectes definits
@@ -348,6 +375,8 @@ val:
           all: Totes
           with_confirmed_hide: Confirmades
           without_confirmed_hide: Pendents
+        title: Propostes ocultes
+        no_hidden_budget_investments: No hi ha propostes ocultes
     legislation:
       processes:
         create:
@@ -368,6 +397,9 @@ val:
           enabled: Activa
           process: Procés
           debate_phase: Fase prèvia
+          draft_phase: Fase de redacció
+          draft_phase_description: Si aquesta fase està activa, el procés no es mostrarà en el llistat de processos. Permet una vista previa del procés i crea contingut abans de que comence.
+          allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           start: Inici
           end: Fi
@@ -376,10 +408,13 @@ val:
           summary_placeholder: Resum curt de la descripció
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
+          homepage: Descripció
+          homepage_description: Ací pots explicar el contingut del procés
+          homepage_enabled: Pàgina principal habilitada
         index:
           create: Nou procés
           delete: Eliminar
-          title: Processos de legislació col·laborativa
+          title: Processos legislatius
           filters:
             open: Oberts
             next: Pròximament
@@ -389,6 +424,12 @@ val:
           back: Tornar
           title: Crear proces de legislació col·laborativa
           submit_button: Crear procés
+        proposals:
+          select_order: Ordenar per
+          orders:
+            id: Id
+            title: Títol
+            supports: Avals
         process:
           title: Proces
           comments: Comentaris
@@ -399,15 +440,26 @@ val:
           status_planned: Pròximament
         subnav:
           info: Informació
-          draft_versions: Text
+          homepage: Pàgina principal
+          draft_versions: Redacció
           questions: Debat
           proposals: Propostes
+          milestones: Seguint
+      homepage:
+        edit:
+          title: Configura la teua pàgina principal
       proposals:
         index:
+          title: Títol
           back: Tornar
+          id: Id
+          supports: Avals
+          select: Seleccionar
+          selected: Seleccionada
         form:
           custom_categories: Categoríes
           custom_categories_description: Categoríes que l'usuari pot seleccionar al crear la proposta.
+          custom_categories_placeholder: Escriu les etiquetes que desitges separades per comes (',') i entre cometes ("")
       draft_versions:
         create:
           notice: 'Esborrany creat correctament. <a href="%{link}"> Fes click per veure-ho </a>'
@@ -493,6 +545,9 @@ val:
           comments_count: Número de comentaris
         question_option_fields:
           remove_option: Eliminar
+      milestones:
+        index:
+          title: Seguint
     managers:
       index:
         title: Gestors
@@ -509,17 +564,20 @@ val:
       admin: Menú d'administració
       banner: Gestionar banners
       poll_questions: Preguntes ciutadanes
+      proposals: Propostes
       proposals_topics: Temes de propostes
       budgets: Pressupostos participatius
       geozones: Gestionar districtes
       hidden_comments: Comentaris ocults
       hidden_debates: Debats ocults
       hidden_proposals: Propostes ocultes
+      hidden_budget_investments: Propostes d'inversió ocultes
       hidden_proposal_notifications: Notificacions de propostes ocultes
       hidden_users: Usuaris bloquejats
       administrators: Administradors
       managers: Gestors
       moderators: Moderadors
+      messaging_users: Missatges als usuaris
       newsletters: Butlletins informatius
       admin_notifications: Notificacions
       system_emails: Correus electònics del sistema
@@ -541,6 +599,7 @@ val:
         pages: Pàgines personalitzades
         images: Imatges personalitzades
         content_blocks: Personalitzar blocs
+        information_texts: Personalitzar texts
         information_texts_menu:
           debates: "Debats"
           community: "Comunitat"
@@ -552,6 +611,8 @@ val:
           welcome: "Benvingut/da"
         buttons:
           save: "Guardar"
+          content_block:
+            update: "Actualitzar bloc"
       title_moderated_content: Contingut moderat
       title_budgets: Pressupostos
       title_polls: Votacions
@@ -566,6 +627,7 @@ val:
         title: Administradors
         name: Nom
         email: Correu electrònic
+        id: ID de l'administrador
         no_administrators: No hi administradors.
       administrator:
         add: Afegir com administrador
@@ -620,6 +682,9 @@ val:
         title: Vista previa del butlletí informatiu
         send: Enviar
         affected_users: (%{n} usuaris afectats)
+        sent_emails:
+          one: 1 email enviat
+          other: "%{count} emails enviats"
         sent_at: Enviada el
         subject: Asumpte
         segment_recipient: Destinataris
@@ -628,7 +693,13 @@ val:
         body_help_text: Així es com veuran el email els usuaris
         send_alert: Estàs segur que vols enviar aquest butlletí informatiu a %{n} usuaris?
     admin_notifications:
+      create_success: Notificació creada correctament
+      update_success: Notificació actualitzada correctament
+      send_success: Notificació enviada correctament
+      delete_success: Notificació eliminada correctament
       index:
+        section_title: Notificacions
+        new_notification: Nova notificació
         title: Títol
         segment_recipient: Destinataris
         sent: Enviat
@@ -637,11 +708,39 @@ val:
         edit: Editar
         delete: Eliminar
         preview: Vista previa
+        view: Veure
+        empty_notifications: No hi ha notificacions per a mostrar
+      new:
+        section_title: Nova notificació
+        submit_button: Crear notificació
+      edit:
+        section_title: Editar notificació
+        submit_button: Actualizar notificació
       show:
+        section_title: Vista previa de notificació
+        send: Enviar notificació
+        will_get_notified: (%{n} usuaris seran notificats)
+        got_notified: (%{n} usuaris han sigut notificats)
+        sent_at: Enviada el
         title: Títol
         body: Text
         link: Enllaç
         segment_recipient: Destinataris
+        preview_guide: "Així es com veuran la notificació els usuaris:"
+        sent_guide: "Així es com els usuaris veuen la notificació:"
+        send_alert: Estas segur/a de que vols enviar esta notificació a %{n} usuaris?
+    system_emails:
+      preview_pending:
+        action: Previsualitzar pendents
+        preview_of: Vista previa de %{name}
+        pending_to_be_sent: Este es tot el contingut pendent d'enviar
+        moderate_pending: Moderar l'enviament de notificació
+        send_pending: Enviar pendents
+        send_pending_notification: Notificacions pendents enviades correctament
+      proposal_notification_digest:
+        title: Resum de Notificacions de Propostes
+        description: Reuneix totes les notificacions de propostes en un únic missatge, per a evitar massa emails.
+        preview_detail: Els usuaris sols rebran les notificacions d'aquelles propostes que segueixquen
     emails_download:
       index:
         title: Descàrrega de emails
@@ -826,6 +925,8 @@ val:
         create_question: "Crear pregunta per a votació"
         table_proposal: "Proposta"
         table_question: "Pregunta"
+        table_poll: "Votació"
+        poll_not_assigned: "Votació sense asignar"
       edit:
         title: "Editar pregunta ciutadana"
       new:
@@ -970,6 +1071,13 @@ val:
       search:
         title: Cercar Organitzacions
         no_results: No s'han trobat organitzacions.
+    proposals:
+      index:
+        title: Propostes
+        id: ID
+        author: Autor
+        milestones: Fites
+        no_proposals: No hi han propostes.
     hidden_proposals:
       index:
         filter: Filtre
@@ -1018,6 +1126,8 @@ val:
       setting_value: Valor
       no_description: "Sense descripció"
     shared:
+      true_value: "Si"
+      false_value: "No"
       booths_search:
         button: Cercar
         placeholder: Cercar urna per nom
@@ -1044,8 +1154,6 @@ val:
       image: Imatge
       show_image: Mostrar imatge
       moderated_content: "Revisa el contigut moderat pels moderadors, i confirma si la moderació s'ha realitzat correctament."
-      milestone: Seguiment
-      new_milestone: Crear nova fita
       view: Vista
       proposal: Proposta
       author: Autor
@@ -1195,6 +1303,7 @@ val:
         title: Notificacions de propostes
         total: Total
         proposals_with_notifications: Propostes amb notificacions
+        not_available: "Proposta no disponible"
       polls:
         title: Estadístiques de votacions
         all: Votacions
@@ -1263,6 +1372,11 @@ val:
         content_block:
           body: Contingut
           name: Nom
+          names:
+            top_links: Enllaços superiors
+            footer: Peu de pàgina
+            subnavigation_left: Navegació principal esquerra
+            subnavigation_right: Navegació principal dreta
       images:
         index:
           title: Personalitzar imatges
@@ -1305,11 +1419,12 @@ val:
           status_draft: Esborrany
           status_published: Publicada
           title: Títol
+          slug: Slug
     homepage:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
       header_title: Capçalera
-      no_header: No hi ha capçalera.
+      no_header: No hi ha capçaleres.
       create_header: Crear capçalera
       cards_title: Targetes
       create_card: Crear targeta
@@ -1333,3 +1448,6 @@ val:
         submit_header: Guardar capçalera
         card_title: Editar targeta
         submit_card: Guardar targeta
+    translations:
+      remove_language: Eliminar idioma
+      add_language: Afegir idioma

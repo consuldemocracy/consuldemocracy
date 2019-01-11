@@ -28,7 +28,6 @@ pl:
       unlock_instructions:
         subject: "Odblokowanie instrukcji"
     omniauth_callbacks:
-      failure: "Nie była możliwa autoryzacja Ciebie jako %{kind} ponieważ \"%{reason}\"."
       success: "Pomyślnie zidentyfikowany jako %{kind}."
     passwords:
       no_token: "Nie masz dostępu do tej strony, chyba że poprzez link do zresetowania hasła. Jeśli dostałeś się na nią poprzez link do zresetowania hasła, upewnij się, że adres URL jest kompletny."

@@ -14,8 +14,8 @@ gl:
         one: "fito"
         other: "fitos"
       milestone/status:
-        one: "Estado do investimento"
-        other: "Estado dos investimentos"
+        one: "Estado do Fito"
+        other: "Estados do Fito"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -82,9 +82,6 @@ gl:
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versións borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
@@ -134,7 +131,7 @@ gl:
       milestone:
         status_id: "Estado do investimento actual (opcional)"
         title: "Título"
-        description: "Descrición (opcional se hai unha condición asignada)"
+        description: "Descrición (opcional se hai un estado asignado)"
         publication_date: "Data de publicación"
       milestone/status:
         name: "Nome"
@@ -231,6 +228,8 @@ gl:
         end_date: Data de peche
         debate_start_date: Data en que comeza o debate
         debate_end_date: Data en que remata o debate
+        draft_start_date: Data en que comeza a redacción
+        draft_end_date: Data en que remata a redacción
         draft_publication_date: Data en que se publica o borrador
         allegations_start_date: Data en que comezan as alegacións
         allegations_end_date: Data en que rematan as alegacións
@@ -240,6 +239,7 @@ gl:
         summary: Resumo
         description: Descrición
         additional_info: Información adicional
+        milestones_summary: Resumo
       legislation/draft_version:
         title: Título da versión
         body: Texto
@@ -340,6 +340,8 @@ gl:
               invalid_date_range: ten que ser igual ou posterior á data de inicio
             debate_end_date:
               invalid_date_range: ten que ser igual ou posterior á data de comezo do debate
+            draft_end_date:
+              invalid_date_range: ten que ser igual ou posterior á data de comezo da redacción
             allegations_end_date:
               invalid_date_range: ten que ser igual ou posterior á data en que comezan ás alegacións
         proposal:

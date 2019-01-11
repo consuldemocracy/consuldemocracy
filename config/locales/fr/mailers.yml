@@ -22,7 +22,6 @@ fr:
       title: Nouvelle réponse à votre commentaire
     unfeasible_spending_proposal:
       hi: "Cher(e) utilisateur(trice),"
-      new_html: "Pour tout cela, nous vous invitons à élaborer une <strong>nouvelle proposition</strong> qui soit conforme aux conditions de ce processus. Vous pouvez faire cela en allant sur le lien suivant: %{url}."
       new_href: "nouvelle proposition d'investissement"
       sincerely: "Cordialement"
       sorry: "Désolé du dérangement et nous vous remercions à nouveau pour votre inestimable participation."
@@ -32,16 +31,11 @@ fr:
       title: "Notifications des propositions sur %{org_name}"
       share: Partager une proposition
       comment: Commenter une proposition
-      unsubscribe: "Si vous ne souhaitez pas recevoir les notifications des propositions, rendez-vous sur %{account} et décochez 'Recevoir un résumé des notifications de proposition'."
       unsubscribe_account: Mon compte
     direct_message_for_receiver:
       subject: "Vous avez un nouveau message privé"
       reply: Répondre à %{sender}
-      unsubscribe: "Si vous ne souhaitez pas recevoir de messages directs, rendez-vous sur %{account} et décochez 'Recevoir des courriels à propos de messages directs'."
       unsubscribe_account: Mon compte
-    direct_message_for_sender:
-      subject: "Vous avez envoyé un nouveau message privé"
-      title_html: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
     user_invite:
       ignore: "Si vous n'avez pas requis cette invitation, pas d'inquiétude, vous pouvez ignorer ce courriel."
       text: "Merci d'avoir demandé à rejoindre %{org}! Dans quelques secondes vous pourrez commencer à participer, remplissez simplement le formulaire ci-dessous :"
@@ -60,7 +54,6 @@ fr:
       share: "Partager votre projet"
     budget_investment_unfeasible:
       hi: "Cher(e) utilisateur(trice),"
-      new_html: "Pour tout cela, nous vous invitons à élaborer un <strong>nouveau projet de dépenses</strong> qui soit conforme aux conditions de ce processus. Vous pouvez faire cela en allant sur le lien suivant: %{url}."
       new_href: "nouvelle proposition d'investissement"
       sincerely: "Cordialement"
       sorry: "Désolé du dérangement et nous vous remercions à nouveau pour votre inestimable participation."

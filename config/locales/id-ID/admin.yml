@@ -93,25 +93,6 @@ id:
         unable_notice: Anda tidak bisa menghancurkan Anggaran yang telah mempunyai investasi terkait
       new:
         title: Anggaran partisipatif baru
-      show:
-        groups:
-          other: "%{count} Kelompok dari anggaran judul"
-      form:
-        group: Nama grup
-        no_groups: Belum ada yang membuat grup. Setiap pengguna hanya bisa memilih hanya satu judul setiap grup.
-        add_group: Tambahkan grup baru
-        create_group: Membuat grup
-        heading: Nama judul
-        add_heading: Tambahkan judul
-        amount: Jumlah
-        population: "Populasi (pilihan)"
-        population_help_text: "Data ini telah digunakan secara eksklusif untuk memperkirakan statistik partisipasi"
-        save_heading: Menyimpan judul
-        no_heading: Kelompok ini tidak mempunyai pos yang ditugaskan.
-        table_heading: Judul
-        table_amount: Jumlah
-        table_population: Populasi
-        population_info: "Bidang kependudukan Anggaran Kepala digunakan untuk keperluan statistik pada akhir Anggaran untuk ditampilkan pada setiap Pos yang mewakili area dengan populasi berapa persentase yang dipilih. Bidang ini opsional sehingga anda bisa membiarkannya kosong jika tidak berlaku."
       winners:
         calculate: Menghitung Pemenang Investasi
         calculated: Pemenang dihitung, mungkin perlu waktu beberapa menit.
@@ -219,8 +200,6 @@ id:
         image: "Gambar"
         show_image: "Tampilkan gambar"
         documents: "Dokumen"
-        milestone: Batu peringatan
-        new_milestone: Membuat batu peringatan baru
       new:
         creating: Membuat batu peringatan
         date: Tanggal
@@ -266,7 +245,6 @@ id:
           without_confirmed_hide: Tertunda
         title: Pengguna tersembunyi
         user: Pengguna
-        no_hidden_users: Disana tidak ada pengguna yang disembunyikan.
       show:
         email: 'Email:'
         hidden_at: 'Tersembunyi di:'
@@ -303,7 +281,6 @@ id:
         index:
           create: Proses baru
           delete: Hapus
-          title: Proses undang-undang
           filters:
             open: Buka
             next: Lanjut
@@ -738,12 +715,6 @@ id:
       search:
         title: Cari organisasi
         no_results: Tidak ada organisasi yang ditemukan.
-    hidden_proposals:
-      index:
-        filters:
-          with_confirmed_hide: Dikonfirmasi
-        title: Proposal tersembunyi
-        no_hidden_proposals: Tidak ada tersembunyi proposal disana.
     settings:
       flash:
         updated: Nilai diperbarui

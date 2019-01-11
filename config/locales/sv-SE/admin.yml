@@ -106,30 +106,6 @@ sv:
         unable_notice: Du kan inte ta bort en budget som har budgetförslag
       new:
         title: Ny medborgarbudget
-      show:
-        groups:
-          one: 1 delbudget
-          other: "%{count} delbudgetar"
-      form:
-        group: Delbudget
-        no_groups: Inga delbudgetar har skapats. Användare kommer att kunna rösta på ett område inom varje delbudget.
-        add_group: Lägga till delbudget
-        create_group: Skapa delbudget
-        edit_group: Redigera delbudget
-        submit: Spara delbudget
-        heading: Område
-        add_heading: Lägga till område
-        amount: Antal
-        population: "Befolkning (frivilligt fält)"
-        population_help_text: "Den här informationen används uteslutande för statistik"
-        save_heading: Spara område
-        no_heading: Delbudgeten har inga områden.
-        table_heading: Område
-        table_amount: Antal
-        table_population: Befolkning
-        population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
-        max_votable_headings: "Högst antal områden som användare kan rösta inom"
-        current_of_max_headings: "%{current} av %{max}"
       winners:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
@@ -266,8 +242,6 @@ sv:
         image: "Bild"
         show_image: "Visa bild"
         documents: "Dokument"
-        milestone: Milstolpe
-        new_milestone: Skapa ny milstolpe
       form:
         admin_statuses: Administrativ status för budgetförslag
         no_statuses_defined: Det finns ingen definierad status för budgetförslag än
@@ -337,7 +311,6 @@ sv:
           without_confirmed_hide: Väntande
         title: Dolda användare
         user: Användare
-        no_hidden_users: Det finns inga dolda kommentarer.
       show:
         email: 'E-post:'
         hidden_at: 'Dold:'
@@ -383,7 +356,6 @@ sv:
         index:
           create: Ny process
           delete: Ta bort
-          title: Dialoger
           filters:
             open: Pågående
             next: Kommande
@@ -403,7 +375,6 @@ sv:
           status_planned: Planerad
         subnav:
           info: Information
-          draft_versions: Utkast
           questions: Diskussion
           proposals: Förslag
       proposals:
@@ -966,7 +937,6 @@ sv:
       index:
         title: Representanter för staden
         no_officials: Det finns inga representanter för staden.
-        name: Namn
         official_position: Titel
         official_level: Nivå
       level_0: Ej representant för staden
@@ -1008,15 +978,6 @@ sv:
       search:
         title: Sök organisationer
         no_results: Inga organisationer.
-    hidden_proposals:
-      index:
-        filter: Filtrera
-        filters:
-          all: Alla
-          with_confirmed_hide: Godkända
-          without_confirmed_hide: Väntande
-        title: Dolda förslag
-        no_hidden_proposals: Det finns inga dolda förslag.
     proposal_notifications:
       index:
         filter: Filtrera
@@ -1339,11 +1300,9 @@ sv:
       title: Startsida
       description: De aktiva modulerna visas på startsidan i samma ordning som här.
       header_title: Sidhuvud
-      no_header: Det finns inget sidhuvud.
       create_header: Skapa sidhuvud
       cards_title: Kort
       create_card: Skapa kort
-      no_cards: Det finns inga kort.
       cards:
         title: Titel
         description: Beskrivning

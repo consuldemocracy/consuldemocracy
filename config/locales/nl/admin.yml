@@ -67,7 +67,7 @@ nl:
           on_debates: Debatten
           on_proposals: Voorstellen
           on_users: Deelnemers
-          on_system_emails: E-mails van het systeem
+          on_system_emails: Systeemberichten
         title: Moderator activiteit
         type: Type
         no_activity: Er is geen moderator activiteit.
@@ -106,34 +106,33 @@ nl:
         unable_notice: U kunt een begroting met voorstellen niet verwijderen
       new:
         title: Nieuw participatief budgetvoorstel
-      show:
-        groups:
-          one: 1 Groep budgetkoppen
-          other: "%{count} groepen budgetkoppen"
-      form:
-        group: Groepsnaam
-        no_groups: Nog geen groepen. Elke gebruiker kan maar binnen één kop per groep stemmen.
-        add_group: Nieuwe groep toevoegen
-        create_group: Nieuwe groep
-        edit_group: Bewerk groep
-        submit: Sla op
-        heading: Kop naam
-        add_heading: Voeg kop toe
-        amount: Bedrag
-        population: "Bevolking"
-        population_help_text: "Deze gegevens worden uitsluitend gebruikt om de participatiestatistieken te berekenen"
-        save_heading: Bewaar kop
-        no_heading: Deze groep is geen kop toegewezen.
-        table_heading: Kop
-        table_amount: Bedrag
-        table_population: Bevolking
-        population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
-        max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
-        current_of_max_headings: "%{current} of %{max}"
       winners:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
         recalculate: Herbereken gewonnen investeringen
+    budget_groups:
+      amount:
+        one: "Er is 1 groep"
+        other: "Er zijn %{count} groepen"
+      create:
+        notice: "Groep aangemaakt!"
+      update:
+        notice: "Groep aangemaakt"
+      destroy:
+        success_notice: "Groep verwijderd"
+        unable_notice: "Je kunt een groep niet verwijderen wanneer er koppelingen zijn"
+      form:
+        create: "Nieuwe groep"
+        edit: "Groep wijzigen"
+        name: "Groepnaam"
+        submit: "Groep opslaan"
+    budget_headings:
+      name: "Naam"
+      form:
+        amount: "Bedrag"
+        population: "Bevolking (optioneel)"
+        latitude: "Breedte"
+        longitude: "Lengte"
     budget_phases:
       edit:
         start_date: Startdatum
@@ -266,8 +265,6 @@ nl:
         image: "Afbeelding"
         show_image: "Toon afbeelding"
         documents: "Documenten"
-        milestone: Mijlpaal
-        new_milestone: Nieuwe mijlpaal
       form:
         admin_statuses: Beheerderstatussen
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
@@ -316,7 +313,7 @@ nl:
         no_hidden_comments: Er is geen verborgen commentaar.
     dashboard:
       index:
-        back: Ga terug naar
+        back: Terug naar %{org}
         title: Beheer
         description: Welkom op de %{org} beheers pagina.
     debates:
@@ -337,7 +334,6 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen deelnemers
         user: Deelnemer
-        no_hidden_users: Er zijn geen verborgen deelnemers.
       show:
         email: 'E-mail:'
         hidden_at: 'Verborgen op:'
@@ -355,13 +351,13 @@ nl:
     legislation:
       processes:
         create:
-          notice: 'Proces aangamaakt. <a href="%{link}">Klik om te zien</a>'
-          error: Proces kon niet worden aangemaakt
+          notice: 'Plan aangamaakt. <a href="%{link}">Klik om te zien</a>'
+          error: Plan kon niet worden aangemaakt
         update:
-          notice: 'Proces opgeslagen. <a href="%{link}">Klik om te zien</a>'
+          notice: 'Plan opgeslagen. <a href="%{link}">Klik om te zien</a>'
           error: Proces kon niet worden opgeslagen
         destroy:
-          notice: Proces verwijderd
+          notice: Plan verwijderd
         edit:
           back: Terug
           submit_button: Sla op
@@ -393,6 +389,9 @@ nl:
           back: Terug
           title: Nieuw plan creëren
           submit_button: Nieuw plan
+        proposals:
+          orders:
+            title: Titel
         process:
           title: Plan
           comments: Commentaar
@@ -403,7 +402,6 @@ nl:
           status_planned: Gepland
         subnav:
           info: Informatie
-          draft_versions: Tekst
           questions: Debat
           proposals: Voorstellen
       proposals:
@@ -529,13 +527,13 @@ nl:
       messaging_users: Berichten naar gebruikers
       newsletters: Nieuwsbrieven
       admin_notifications: Meldingen
-      system_emails: E-mails van het systeem
+      system_emails: Systeemberichten
       emails_download: E-mails download
       valuators: beoordelaars
       poll_officers: Peiling beambten
       polls: Peilingen
-      poll_booths: Locatie stemhokje
-      poll_booth_assignments: Stemhokje toewijzingen
+      poll_booths: Stemlocatie
+      poll_booth_assignments: Stemlocatie toewijzingen
       poll_shifts: Beheer diensten
       officials: Beambten
       organizations: Organisaties
@@ -604,11 +602,11 @@ nl:
       invalid_recipients_segment: "Gebruikerssegment deelnemers is ongeldig"
     newsletters:
       create_success: Nieuwbrief aangamaakt
-      update_success: Nieuwbrieven aangapast
-      send_success: Nieuwbrieven verzonden
-      delete_success: Nieuwbrieven verwijderd
+      update_success: Nieuwsbrief gewijzigd
+      send_success: Nieuwsbrief verzonden
+      delete_success: Nieuwsbrief verwijderd
       index:
-        title: Nieuwbrieven
+        title: Nieuwsbrieven
         new_newsletter: Nieuwe nieuwsbrief
         subject: Onderwerp
         segment_recipient: Geadresseerden
@@ -625,9 +623,12 @@ nl:
       edit:
         title: Bewerk nieuwsbrief
       show:
-        title: Nieuwbrieven tonen
+        title: Voorbeeld
         send: Stuur
         affected_users: (betreft %{n} deelnemers)
+        sent_emails:
+          one: 1 email verzonden
+          other: "%{count} emails verzonden"
         sent_at: Verstuurd op
         subject: Onderwerp
         segment_recipient: Geadresseerden
@@ -655,6 +656,7 @@ nl:
         empty_notifications: Er zijn geen meldingen te tonen
       new:
         section_title: Nieuwe melding
+        submit_button: Notificatie aanmaken
       edit:
         section_title: Bericht bewerken
       show:
@@ -791,7 +793,7 @@ nl:
     booth_assignments:
       manage_assignments: Bewerk toewijzingen
       manage:
-        assignments_list: "Toewijzingen voor peiling '%{poll}'"
+        assignments_list: "Stemlocaties voor peiling '%{poll}'"
         status:
           assign_status: Toewijzing
           assigned: Toegewezen
@@ -806,9 +808,9 @@ nl:
         destroy: "Stemhokje niet meer toegewezen"
         create: "Stemhokje toegewezen"
         error_destroy: "Fout bij verwijderen toewijzing"
-        error_create: "Fout bij toewijzing"
+        error_create: "Toewijzen van stemlocatie mislukt"
       show:
-        location: "Lokatie"
+        location: "Locatie"
         officers: "Beambten"
         officers_list: "Lijst van beambten voor dit stemhokje"
         no_officers: "Er zijn geen beambten voor dit stemhokje"
@@ -823,7 +825,7 @@ nl:
         booths_title: "Lijst stemhokjes"
         no_booths: "Er zijn geen stemhokjes toegewezen aan deze peiling"
         table_name: "Naam"
-        table_location: "Lokatie"
+        table_location: "Locatie"
     polls:
       index:
         title: "Lijst van peilingen"
@@ -943,18 +945,18 @@ nl:
         no_booths: "Er zijn geen stemhokjes."
         add_booth: "Voeg stemhokje toe"
         name: "Naam"
-        location: "Lokatie"
+        location: "Locatie"
         no_location: "Geen Locatie"
       new:
         title: "Nieuw stemhokje"
         name: "Naam"
-        location: "Lokatie"
+        location: "Locatie"
         submit_button: "Nieuw stemhokje"
       edit:
         title: "Bewerk stemhokje"
         submit_button: "Sla op"
       show:
-        location: "Lokatie"
+        location: "Locatie"
       booth:
         shifts: "Bewerk diensten"
         edit: "Bewerk stemhokje"
@@ -968,7 +970,6 @@ nl:
       index:
         title: Beambten
         no_officials: Er zijn geen officials.
-        name: Naam
         official_position: Official positie
         official_level: Niveau
       level_0: Geen beambte
@@ -1010,15 +1011,6 @@ nl:
       search:
         title: Zoek Organisaties
         no_results: Geen organisaties gevonden.
-    hidden_proposals:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bevestingd
-          without_confirmed_hide: In afwachting
-        title: Verborgen voorstellen
-        no_hidden_proposals: Er zijn geen verborgen voorstellen.
     proposal_notifications:
       index:
         filter: Filter
@@ -1221,12 +1213,12 @@ nl:
         spending_proposals_title: Budger voorstellen
         budgets_title: Burgerbegroting
         visits_title: Bezoeken
-        direct_messages: Directe berichten
+        direct_messages: Privéberichten
         proposal_notifications: Voorstel notificaties
         incomplete_verifications: Onvolledige verificaties
         polls: Peilingen
       direct_messages:
-        title: Directe berichten
+        title: Privéberichten
         total: Totaal
         users_who_have_sent_message: Gebruikers die privéberichten stuurden
       proposal_notifications:
@@ -1352,11 +1344,9 @@ nl:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
       header_title: Koptekst
-      no_header: Er is geen header.
       create_header: Koptekst maken
       cards_title: Kaarten
       create_card: Kaart aanmaken
-      no_cards: Er zijn geen tegels.
       cards:
         title: Titel
         description: Beschrijving
@@ -1365,7 +1355,7 @@ nl:
       feeds:
         proposals: Voorstellen
         debates: Discussies
-        processes: Processen
+        processes: Plannen
       new:
         header_title: Nieuwe header
         submit_header: Koptekst maken

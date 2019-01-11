@@ -87,6 +87,7 @@ gl:
         draft_publication_date: Publicación do borrador
         allegations_dates: Alegaciones
         result_publication_date: Publicación do resultado final
+        milestones_date: Seguindo
         proposals_dates: Propostas
     questions:
       comments:

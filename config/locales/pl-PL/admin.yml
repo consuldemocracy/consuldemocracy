@@ -108,32 +108,6 @@ pl:
         unable_notice: Nie możesz zniszczyć budżetu, który wiąże powiązane inwestycje
       new:
         title: Nowy budżet partycypacyjny
-      show:
-        groups:
-          one: 1 Grupa nagłówków budżetowych
-          few: "%{count} Grupy nagłówków budżetu"
-          many: "%{count} Grupy nagłówków budżetu"
-          other: "%{count} Grupy nagłówków budżetu"
-      form:
-        group: Nazwa grupy
-        no_groups: Nie utworzono jeszcze żadnych grup. Każdy użytkownik będzie mógł głosować tylko w jednym nagłówku na grupę.
-        add_group: Dodaj nową grupę
-        create_group: Utwórz grupę
-        edit_group: Edytuj grupę
-        submit: Zapisz grupę
-        heading: Nazwa nagłówka
-        add_heading: Dodaj nagłówek
-        amount: Ilość
-        population: "Populacja (opcjonalnie)"
-        population_help_text: "Dane te są wykorzystywane wyłącznie do obliczania statystyk uczestnictwa"
-        save_heading: Zapisz nagłówek
-        no_heading: Ta grupa nie ma przypisanego nagłówka.
-        table_heading: Nagłówek
-        table_amount: Ilość
-        table_population: Populacja
-        population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
-        max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
-        current_of_max_headings: "%{current} z %{max}"
       winners:
         calculate: Oblicz Inwestycje Zwycięzców
         calculated: Liczenie zwycięzców może potrwać minutę.
@@ -270,8 +244,6 @@ pl:
         image: "Obraz"
         show_image: "Pokaż obraz"
         documents: "Dokumenty"
-        milestone: Wydarzenie
-        new_milestone: Utwórz wydarzenie
       form:
         admin_statuses: Zarządzaj statusami inwestycyjnymi
         no_statuses_defined: Nie ma jeszcze zdefiniowanych statusów inwestycyjnych
@@ -341,7 +313,6 @@ pl:
           without_confirmed_hide: Oczekujące
         title: Ukryci użytkownicy
         user: Użytkownik
-        no_hidden_users: Nie ma żadnych ukrytych użytkowników.
       show:
         email: 'E-mail:'
         hidden_at: 'Ukryte w:'
@@ -388,7 +359,6 @@ pl:
         index:
           create: Nowy proces
           delete: Usuń
-          title: Procesy legislacyjne
           filters:
             open: Otwórz
             next: Następny
@@ -408,7 +378,6 @@ pl:
           status_planned: Zaplanowany
         subnav:
           info: Informacje
-          draft_versions: Opracowanie
           questions: Debata
           proposals: Wnioski
       proposals:
@@ -975,7 +944,6 @@ pl:
       index:
         title: Urzędnicy
         no_officials: Brak urzędników.
-        name: Nombre
         official_position: Oficjalne stanowisko
         official_level: Poziom
       level_0: Nieurzędowe
@@ -1014,15 +982,6 @@ pl:
       search:
         title: Szukaj organizacji
         no_results: Nie znaleziono organizacji.
-    hidden_proposals:
-      index:
-        filter: Filtr
-        filters:
-          all: Wszystko
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
-        title: Ukryte wnioski
-        no_hidden_proposals: Brak ukrytych wniosków.
     proposal_notifications:
       index:
         filter: Filtr
@@ -1352,11 +1311,9 @@ pl:
       title: Strona główna
       description: Aktywne moduły pojawiają się na stronie głównej w tej samej kolejności co tutaj.
       header_title: Nagłówek
-      no_header: Nie ma nagłówka.
       create_header: Utwórz nagłówek
       cards_title: Karty
       create_card: Utwórz kartę
-      no_cards: Nie ma kart.
       cards:
         title: Tytuł
         description: Opis

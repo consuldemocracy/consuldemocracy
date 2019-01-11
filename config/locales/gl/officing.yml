@@ -23,7 +23,7 @@ gl:
         error_wrong_booth: "A urna non é correcta e os resultados non se gardaron."
       new:
         title: "%{poll} - Engadir resultados"
-        not_allowed: "Non tes permisos para inserir resultados"
+        not_allowed: "Non tes o permiso necesario para inserir resultados nesta votación"
         booth: "Urna"
         date: "Día"
         select_booth: "Elixe urna"

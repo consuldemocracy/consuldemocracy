@@ -13,7 +13,7 @@ nl:
         voted_info_html: "Je kunt ten alle tijden je stem wijzigen, tot de sluiting van deze fase.br> Je hoeft niet het hele bedrag uit te geven."
         zero: Je hebt nog op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
-        not_logged_in: Je moet%{signin} of %{signup} om verder te gaan.
+        not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
         not_verified: Alleen geverifieerde gebruikers kunnen op voorstellen stemmen; %{verify_account}.
         organization: Organisaties kunnen niet stemmen.
         not_selected: Niet geselecteerde voorstellen kunnen niet worden gesteund.
@@ -37,15 +37,15 @@ nl:
       valuating: Voorstellen waarderen
       publishing_prices: Gepubliceerde projectkosten
       balloting: Voorstellen die in stemming zijn
-      reviewing_ballots: Beoordeling van stemmen
+      reviewing_ballots: Evaluatie van stemmen
       finished: Afgeronde begrotingsvoorstellen
     index:
       title: Begrotingsvoorstellen
       empty_budgets: Er zijn geen budgetten.
       section_header:
-        icon_alt: Burgerbegroting icoon
-        title: Burgerbegrotingen
-        help: Hulp bij burgerbegrotingen
+        icon_alt: Budgetafbeelding
+        title: Budget
+        help: Hulp bij budget
         all_phases: Bekijk alle fases
       all_phases: Investeringsfases
       map: Investeringsvoorstellen geografisch weergegeven
@@ -57,19 +57,20 @@ nl:
       section_footer:
         title: Hulp bij burgerbegrotingen
         description: Met de participatieve budgetten beslissen de burgers aan welke projecten zij een deel van de begroting toekennen.
+      milestones: Mijlpalen
     investments:
       form:
         tag_category_label: "Categorieën"
         tags_instructions: "Label dit voorstel. Je kunt je eigen categorie invoeren of kiezen uit voorgestelde categorieen."
-        tags_label: Labels
-        tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door komma's (',')"
+        tags_label: Termen
+        tags_placeholder: "Voer termen in die de kenmerken van de discussie aanduiden (Gebruik een komma als scheidingsteken)."
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan."
         map_remove_marker: "Locatie verwijderen"
         location: "Aanvullende informatie over de locatie"
         map_skip_checkbox: "Deze investering heeft geen concrete locatie of ik ben er niet van op de hoogte."
       index:
-        title: Burgerbegroting
+        title: Budget
         unfeasible: Onhaalbare begrotingsvoorstellen.
         unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
         by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
@@ -95,7 +96,7 @@ nl:
           verify_account: "verifieer je account"
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
-          sign_in: "inloggen"
+          sign_in: "aanmelden"
           sign_up: "registreren"
           by_feasibility: Op haalbaarheid
           feasible: Haalbare voorstellen
@@ -104,6 +105,9 @@ nl:
           random: willekeurig
           confidence_score: best gescoord
           price: op bedrag
+      share:
+        message: "Ik heb investeringsvoorstel %{title} gemaakt in %{org}. Jij kunt ook een investeringsvoorstel doen!"
+        message_mobile: "Ik heb investeringsvoorstel %{title} gemaakt in %{handle}. Jij kunt ook een investeringsvoorstel doen!"
       show:
         author_deleted: Deelnemer verwijderd
         price_explanation: Uitleg bedrag
@@ -160,7 +164,7 @@ nl:
       heading: "Resultaten burgerbegrotingen"
       heading_selection_title: "Per gebied"
       spending_proposal: Titel voorstel
-      ballot_lines_count: Aantal keer geselecteerd
+      ballot_lines_count: Stemmen
       hide_discarded_link: Verberg verworpen voorstellen
       show_all_link: Toon alle
       price: Prijs
@@ -171,6 +175,15 @@ nl:
       investment_proyects: Lijst van alle begrotingsvoorstellen
       unfeasible_investment_proyects: Lijst van alle onhaalbare begrotingsvoorstellen
       not_selected_investment_proyects: Lijst van alle begrotingsvoorstellen niet geschikt voor stemming
+    executions:
+      link: "Mijlpalen"
+      page_title: "%{budget} - Mijlpalen"
+      heading: "Mijlpalen deelnemingsbudget"
+      heading_selection_title: "Per gebied"
+      no_winner_investments: "Geen geaccepteerde investeringen in deze status"
+      filters:
+        label: "Status van het project"
+        all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "Startdatum kan niet gelijk of later zijn dan de einddatum."
