@@ -91,12 +91,11 @@ FactoryBot.define do
     origin "web"
 
     trait :from_booth do
-      association :booth_assignment, factory: :poll_booth_assignment
       origin "booth"
-      before :create do |voter|
-        voter.officer_assignment = create(:poll_officer_assignment,
-                                          officer: voter.officer,
-                                          booth_assignment: voter.booth_assignment)
+      association :booth_assignment, factory: :poll_booth_assignment
+
+      officer_assignment do
+        association :poll_officer_assignment, booth_assignment: booth_assignment, officer: officer
       end
     end
 
