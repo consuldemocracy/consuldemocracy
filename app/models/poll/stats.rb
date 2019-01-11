@@ -13,75 +13,76 @@ class Poll::Stats
          null_percentage_web null_percentage_booth total_null_percentage]
   end
 
+  def total_participants
+    total_participants_web + total_participants_booth
+  end
+
+  %i[web booth].each do |channel|
+    define_method :"total_participants_#{channel}" do
+      send(:"total_#{channel}_valid") +
+        send(:"total_#{channel}_white") +
+        send(:"total_#{channel}_null")
+    end
+
+    define_method :"total_participants_#{channel}_percentage" do
+      calculate_percentage(send(:"total_participants_#{channel}"), total_participants)
+    end
+  end
+
+  def total_web_valid
+    voters.where(origin: "web").count - total_web_white
+  end
+
+  def total_web_white
+    0
+  end
+
+  def total_web_null
+    0
+  end
+
+  def total_booth_valid
+    recounts.sum(:total_amount)
+  end
+
+  def total_booth_white
+    recounts.sum(:white_amount)
+  end
+
+  def total_booth_null
+    recounts.sum(:null_amount)
+  end
+
+  def valid_percentage_web
+    calculate_percentage(total_web_valid, total_valid_votes)
+  end
+
+  def white_percentage_web
+    calculate_percentage(total_web_white, total_white_votes)
+  end
+
+  def null_percentage_web
+    calculate_percentage(total_web_null, total_null_votes)
+  end
+
+  %i[valid white null].each do |type|
+    define_method :"#{type}_percentage_booth" do
+      calculate_percentage(send(:"total_booth_#{type}"), send(:"total_#{type}_votes"))
+    end
+
+    define_method :"total_#{type}_votes" do
+      send(:"total_web_#{type}") + send(:"total_booth_#{type}")
+    end
+
+    define_method :"total_#{type}_percentage" do
+      calculate_percentage(send(:"total_#{type}_votes"), total_participants)
+    end
+  end
+
   private
+
     def participants
       User.where(id: voters.pluck(:user_id))
-    end
-
-    def total_participants
-      total_participants_web + total_participants_booth
-    end
-
-    %i[web booth].each do |channel|
-      define_method :"total_participants_#{channel}" do
-        send(:"total_#{channel}_valid") +
-          send(:"total_#{channel}_white") +
-          send(:"total_#{channel}_null")
-      end
-
-      define_method :"total_participants_#{channel}_percentage" do
-        calculate_percentage(send(:"total_participants_#{channel}"), total_participants)
-      end
-    end
-
-    def total_web_valid
-      voters.where(origin: "web").count - total_web_white
-    end
-
-    def total_web_white
-      0
-    end
-
-    def total_web_null
-      0
-    end
-
-    def total_booth_valid
-      recounts.sum(:total_amount)
-    end
-
-    def total_booth_white
-      recounts.sum(:white_amount)
-    end
-
-    def total_booth_null
-      recounts.sum(:null_amount)
-    end
-
-    def valid_percentage_web
-      calculate_percentage(total_web_valid, total_valid_votes)
-    end
-
-    def white_percentage_web
-      calculate_percentage(total_web_white, total_white_votes)
-    end
-
-    def null_percentage_web
-      calculate_percentage(total_web_null, total_null_votes)
-    end
-
-    %i[valid white null].each do |type|
-      define_method :"#{type}_percentage_booth" do
-        calculate_percentage(send(:"total_booth_#{type}"), send(:"total_#{type}_votes"))
-      end
-
-      define_method :"total_#{type}_votes" do
-        send(:"total_web_#{type}") + send(:"total_booth_#{type}")
-      end
-
-      define_method :"total_#{type}_percentage" do
-        calculate_percentage(send(:"total_#{type}_votes"), total_participants)
-      end
     end
 
     def voters

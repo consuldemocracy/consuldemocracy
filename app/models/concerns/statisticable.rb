@@ -12,30 +12,47 @@ module Statisticable
       self.class.stats_methods.map { |stat_name| [stat_name, send(stat_name)] }.to_h
     end
 
+    def total_male_participants
+      participants.where(gender: "male").count
+    end
+
+    def total_female_participants
+      participants.where(gender: "female").count
+    end
+
+    def total_unknown_gender_or_age
+      participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
+    end
+
+    def male_percentage
+      calculate_percentage(total_male_participants, total_participants_with_gender)
+    end
+
+    def female_percentage
+      calculate_percentage(total_female_participants, total_participants_with_gender)
+    end
+
+    def participants_by_age
+      age_groups.map do |start, finish|
+        users = participants.where("date_of_birth > ? AND date_of_birth < ?",
+                                   finish.years.ago.beginning_of_year,
+                                   start.years.ago.end_of_year)
+
+        [
+          "#{start} - #{finish}",
+          {
+            range: range_description(start, finish),
+            count: users.count,
+            percentage: calculate_percentage(users.count, total_participants)
+          }
+        ]
+      end.to_h
+    end
+
     private
 
       def total_participants_with_gender
         participants.where.not(gender: nil).distinct.count
-      end
-
-      def total_male_participants
-        participants.where(gender: "male").count
-      end
-
-      def total_female_participants
-        participants.where(gender: "female").count
-      end
-
-      def total_unknown_gender_or_age
-        participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
-      end
-
-      def male_percentage
-        calculate_percentage(total_male_participants, total_participants_with_gender)
-      end
-
-      def female_percentage
-        calculate_percentage(total_female_participants, total_participants_with_gender)
       end
 
       def age_groups
@@ -56,23 +73,6 @@ module Statisticable
          [85, 89],
          [90, 300]
         ]
-      end
-
-      def participants_by_age
-        age_groups.map do |start, finish|
-          users = participants.where("date_of_birth > ? AND date_of_birth < ?",
-                                     finish.years.ago.beginning_of_year,
-                                     start.years.ago.end_of_year)
-
-          [
-            "#{start} - #{finish}",
-            {
-              range: range_description(start, finish),
-              count: users.count,
-              percentage: calculate_percentage(users.count, total_participants)
-            }
-          ]
-        end.to_h
       end
 
       def calculate_percentage(fraction, total)
