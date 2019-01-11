@@ -127,6 +127,7 @@ val:
         notice: "Grup actualitzat correctament"
       destroy:
         success_notice: "Grup eliminat correctament"
+        unable_notice: "No pots eliminar un Grup amb partides associades"
       form:
         create: "Crear un nou grup"
         edit: "Editar grup"
@@ -149,6 +150,7 @@ val:
         name: "Nom de la partida"
         amount: "Quantitat"
         population: "Població (opcional)"
+        population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
         latitude: "Latitud"
         longitude: "Longitud"
         allow_content_block: "Permet contingut bloquejat"
