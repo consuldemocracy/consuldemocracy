@@ -53,6 +53,7 @@ val:
     related_content_score_threshold: "Llindar de puntuació de contingut relacionat"
     related_content_score_threshold_description: "Oculta el contingut que els usuaris marquen com a no relacionat"
     hot_score_period_in_days: "Periode (en dies) usat pel filtre 'més actius'"
+    hot_score_period_in_days_description: "El filtre 'mes actius' s'utilitza en multiples seccions, està basat en els vots dels últims X dies"
     map_latitude: "Latitud"
     map_latitude_description: "Latitud per a mostrar la posició del mapa"
     map_longitude: "Longitud"
@@ -95,7 +96,9 @@ val:
       polls: "Votacions"
       polls_description: "Les votacions ciutadanes son un mecanisme de participació pel que la ciutadania amb dret a vot pot prendre decisions de forma directa"
       signature_sheets: "Fulles de signatures"
+      signature_sheets_description: "Permet afegir desde el panell d'Administració les signatures arreplegades in situ per a Propostes i Projectes d'inversió dels Pressupostos participatius"
       legislation: "Legislació"
+      legislation_description: "En els processos participatius, s'ofereix a la ciutadania l'oportunitat de participar en l'elaboració i modificació de normativa que afecta a la ciutat i de donar la seua opinió sobre certes actuacions que es te previst dur a terme"
       spending_proposals: "Propostes"
       spending_proposals_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
       spending_proposal_features:
@@ -103,6 +106,7 @@ val:
         voting_allowed_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
       user:
         recommendations: "Recomanacions"
+        recommendations_description: "Mostra als usuaris recomanacions en la pàgina principal basat en les etiquetes dels elements que segueix"
         skip_verification: "Ometre la verificació d'usuaris"
         recommendations_on_debates: "Recomanacions en debats"
         recommendations_on_proposals: "Recomanacions en propostes"
