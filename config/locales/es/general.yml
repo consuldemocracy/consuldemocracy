@@ -515,6 +515,10 @@ es:
       resource_locked: Recurso bloqueado
     recommended_actions:
       title: Acciones recomendadas
+      see_proposed_actions: Ver todas las acciones recomendadas
+      hide_proposed_actions: Ocultar acciones recomendadas
+      pending_title: Acciones recomendadas pendientes
+      done_title: Acciones recomendadas realizadas
     next_goal:
       title: Meta
       see_complete_course: Ver ruta completa

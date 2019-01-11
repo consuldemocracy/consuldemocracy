@@ -17,8 +17,8 @@
       <% if proposed_action.proposals.where(id: proposal.id).any? %>
         <p><%= l(proposed_action.executed_actions.find_by(proposal: proposal).executed_at.to_date) %></p>
       <% else %>
-        <% if proposed_action.short_description.present? %>
-          <p><%= proposed_action.short_description %></p>
+        <% if proposed_action.description.present? %>
+          <p><%= proposed_action.description.html_safe %></p>
         <% end %>
 
         <% proposed_action.links.each do |link| %>

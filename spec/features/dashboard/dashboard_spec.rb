@@ -50,6 +50,73 @@ feature "Proposal's dashboard" do
     action = create(:dashboard_action, :proposed_action, :active)
 
     visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).to have_content(action.title)
+  end
+
+  scenario "Dashboard progress do not display from the fourth proposed actions", js: true do
+    create_list(:dashboard_action, 4, :proposed_action, :active)
+    action_5 = create(:dashboard_action, :proposed_action, :active)
+
+    visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).not_to have_content(action_5.title)
+  end
+
+  scenario "Dashboard progress display link to new page for proposed actions when there are more than four proposed actions", js: true do
+    create_list(:dashboard_action, 4, :proposed_action, :active)
+    action_5 = create(:dashboard_action, :proposed_action, :active)
+
+    visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).to have_link("Check out recommended actions")
+  end
+
+  scenario "Dashboard progress do not display link to new page for proposed actions when there are less than five proposed actions", js: true do
+    create_list(:dashboard_action, 4, :proposed_action, :active)
+
+    visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).not_to have_link("Check out recommended actions")
+  end
+
+  scenario "Dashboard progress display proposed_action pending on his section" do
+    action = create(:dashboard_action, :proposed_action, :active)
+
+    visit progress_proposal_dashboard_path(proposal)
+
+    within "#proposed_actions_pending" do
+      expect(page).to have_content(action.title)
+    end
+  end
+
+  scenario "Dashboard progress display no results text when there are not proposed_actions pending" do
+    visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).to have_content("No recommended actions pending")
+  end
+
+  scenario "Dashboard progress display proposed_action done on his section" do
+    action = create(:dashboard_action, :proposed_action, :active)
+
+    visit progress_proposal_dashboard_path(proposal)
+    find(:css, "#dashboard_action_#{action.id}_execute").click
+
+    within "#proposed_actions_done" do
+      expect(page).to have_content(action.title)
+    end
+  end
+
+  scenario "Dashboard progress display no results text when there are not proposed_actions pending" do
+    visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).to have_content("No recommended actions done")
+  end
+
+  scenario "Dashboard progress can execute proposed action" do
+    action = create(:dashboard_action, :proposed_action, :active)
+
+    visit progress_proposal_dashboard_path(proposal)
     expect(page).to have_content(action.title)
 
     find(:css, "#dashboard_action_#{action.id}_execute").click
