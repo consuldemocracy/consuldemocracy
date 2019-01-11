@@ -155,6 +155,7 @@ val:
         longitude: "Longitud"
         coordinates_info: "Si s'indiquen la latitud i longitud, la página de propostes per a aquesta partida inclourà un mapa. Aquest mapa estarà centrat utilitzant aquestes coordenades."
         allow_content_block: "Permet contingut bloquejat"
+        content_blocks_info: "Si el permís de bloc de contingut està activat, podras crear contingut propi per a esta partida desde la secció Configuració -> Contingut de blocs personalitzat. Este continut es mostrarà en la pàgina de propostes d'aquesta partida."
         create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Guardar partida"
@@ -397,6 +398,7 @@ val:
           process: Procés
           debate_phase: Fase prèvia
           draft_phase: Fase de redacció
+          draft_phase_description: Si aquesta fase està activa, el procés no es mostrarà en el llistat de processos. Permet una vista previa del procés i crea contingut abans de que comence.
           allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           start: Inici
@@ -407,6 +409,7 @@ val:
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
           homepage: Descripció
+          homepage_description: Ací pots explicar el contingut del procés
           homepage_enabled: Pàgina principal habilitada
         index:
           create: Nou procés
