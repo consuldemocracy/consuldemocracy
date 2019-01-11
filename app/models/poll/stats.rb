@@ -53,21 +53,11 @@ class Poll::Stats
     recounts.sum(:null_amount)
   end
 
-  def valid_percentage_web
-    calculate_percentage(total_web_valid, total_valid_votes)
-  end
-
-  def white_percentage_web
-    calculate_percentage(total_web_white, total_white_votes)
-  end
-
-  def null_percentage_web
-    calculate_percentage(total_web_null, total_null_votes)
-  end
-
   %i[valid white null].each do |type|
-    define_method :"#{type}_percentage_booth" do
-      calculate_percentage(send(:"total_booth_#{type}"), send(:"total_#{type}_votes"))
+    %i[web booth].each do |channel|
+      define_method :"#{type}_percentage_#{channel}" do
+        calculate_percentage(send(:"total_#{channel}_#{type}"), send(:"total_#{type}_votes"))
+      end
     end
 
     define_method :"total_#{type}_votes" do
