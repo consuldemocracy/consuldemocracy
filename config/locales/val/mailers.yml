@@ -11,6 +11,7 @@ val:
     email_verification:
       click_here_to_verify: en aquest enllaç
       instructions_2_html: Aquest email es per verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si estes no son les teues dades, si us plau no pulses l'enllaç anterior i ignora aquest email.
+      instructions_html: Per acabar de verificar el teu compte d'usuari has de polsar %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
       title: Verifica el teu compte amb el següent enllaç
@@ -21,6 +22,7 @@ val:
       title: Nova resposta al teu comentari
     unfeasible_spending_proposal:
       hi: "Estimat usuari,"
+      new_html: "Per tot això, t'invitem a que elabores una <strong>nova proposta</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
       sincerely: "Atentament"
       sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
@@ -30,15 +32,19 @@ val:
       title: "Notificacions de propostes en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
+      unsubscribe: "Si no vols rebre notificacions de propostes, pots entrar en %{account} i desmarcar l'opció de 'Rebre resum de notificacions sobre propostes'."
       unsubscribe_account: El meu compte
     direct_message_for_receiver:
       subject: "Has rebut un missatge privat"
       reply: Respondre a %{sender}
+      unsubscribe: "Si no vols rebre missatges privats, pots entrar en %{account} i desmarcar l'opció 'Rebre correus electrònics amb missatges privats'."
       unsubscribe_account: El meu compte
     direct_message_for_sender:
       subject: "Has enviat un nou missatge privat"
+      title_html: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
+      text: "Gracies per sol·licitar unirte a %{org}! En uns segons podras començar a participar, sols tens que omplir el següent formulari:"
       thanks: "Moltes gràcies."
       title: "Benvingut a %{org}"
       button: Completar registre
@@ -54,6 +60,7 @@ val:
       share: "Comparteix el teu projecte"
     budget_investment_unfeasible:
       hi: "Estimat usuari,"
+      new_html: "Per tot això, t'invitema que elabores un <strong>nou projecte d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
       sincerely: "Atentament"
       sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
