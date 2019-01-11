@@ -1,46 +1,60 @@
 <header>
-
-  <%= render "shared/top_links" %>
-
-  <div class="row margin">
+  <div class="row">
     <div class="top-bar">
-
-
-
-      <%# link_to setting['org_name'], root_path, class: "logo show-for-small-only text-danger" %>
-      <%= link_to image_tag('logo_header_small.png', class: 'logo-small'), root_path, class: "show-for-small-only" %>
-      <%= link_to image_tag('logo.svg', class: 'logo-small'), root_path, class: "show-for-small-only" %>
-
-      <div class="show-for-small-only float-right">
+      <div class="columns small-6 medium-4 large-3">
         <%= render "shared/locale_switcher" %>
       </div>
-      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-left">
+      <div class="columns small-1">
+        <div class="show-for-small-only">
+          <%= render "layouts/notification_item" %>
+        </div>
+      </div>
+      <div class="columns small-2">
+        <div class="show-for-small-only">
+          <ul class="menu" data-responsive-menu="medium-dropdown">
+            <%= render "shared/admin_login_items" %>
+          </ul>
+        </div>
+      </div>
+      <div class="columns small-3 medium-8 large-9">
+        <div class="show-for-small-only">
+          <ul class="menu" data-responsive-menu="medium-dropdown">
+            <%= render "devise/menu/login_items" %>
+          </ul>
+        </div>
+        <div class="hide-for-small-only">
+          <div class="top-bar-right">
+            <ul class="menu float-right" data-responsive-menu="medium-dropdown">
+              <%= render "shared/admin_login_items" %>
+              <%= render "layouts/notification_item" %>
+              <%= render "devise/menu/login_items" %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="top-bar">
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu")%>
       </span>
-
+      <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
+        <%= image_tag('logo.svg') %>
+      <% end %>
+      <div class="top-bar-title float-right">
+        <%= link_to root_path, accesskey: "0" do %>
+          <%= image_tag(image_path_for('logo_header.png'), class: 'float-right', alt: t("layouts.header.logo")) %>
+        <% end %>
+      </div>
       <div id="responsive-menu">
-        <!-- <div class="top-bar-title"> -->
-          <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
-            <%= image_tag('logo.svg') %>
-          <% end %>
-        <!-- </div> -->
-
         <div class="top-bar-right">
-          <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
-            <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '230', alt: t("layouts.header.logo")) %>
-          <% end %>
-        </div>
-
-        <div class="show-for-small-only top-bar-right">
-          <ul class="menu">
-            <%= render "shared/admin_login_items" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
           <div class="show-for-small-only">
-            <div class="subnavigation row">
+            <ul class="menu" data-responsive-menu="medium-dropdown">
               <%= render "shared/subnavigation" %>
-            </div>
+            </ul>
           </div>
         </div>
       </div>

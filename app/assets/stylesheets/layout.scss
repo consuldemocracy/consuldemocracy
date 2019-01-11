@@ -529,10 +529,13 @@ header {
     @include breakpoint(medium) {
       width: auto;
     }
-
+    .show-for-small-only {
+      font-size: 12px;
+    }
     a {
-      color: #fff;
+      color: $text;
       padding-left: 0;
+      font-size: 12px;
 
       @include breakpoint(medium) {
         font-size: $small-font-size;
@@ -553,10 +556,16 @@ header {
   }
 
   .has-submenu {
+    &.is-active a {
+      color: $text;
+      font-weight: bold;
+      font-size: 12px;
+    }
 
     &.is-active a {
-      color: #fff;
+      color: $text;
       font-weight: bold;
+      font-size: 12px;
     }
   }
 
