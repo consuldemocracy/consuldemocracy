@@ -49,7 +49,7 @@
             <%= link_to t("stats.budgets.total_investments"), "#total_investments"%>
           </li>
           <li>
-            <%= link_to t("stats.budgets.total_participants_support_phase"), "#stats_by_phase"%>
+            <%= link_to t("stats.budgets.by_phase"), "#stats_by_phase"%>
           </li>
           <li>
             <%= link_to t("stats.budgets.by_heading"), "#stats_by_heading"%>
@@ -72,15 +72,14 @@
               html_class: "total-investments"
             ) %>
 
-            <%= number_with_info_tags(@stats[:total_selected_investments],
-                                      t("stats.budgets.total_selected_investments")) %>
-
             <%= number_with_info_tags(@stats[:total_unfeasible_investments],
                                       t("stats.budgets.total_unfeasible_investments")) %>
+            <%= number_with_info_tags(@stats[:total_selected_investments],
+                                      t("stats.budgets.total_selected_investments")) %>
           </div>
 
           <div id="stats_by_phase" class="stats-group">
-            <h4><%= t("stats.budgets.total_participants_support_phase") %></h4>
+            <h4><%= t("stats.budgets.by_phase") %></h4>
 
             <%= number_with_info_tags(@stats[:total_participants_support_phase],
                                       t("stats.budgets.participants")) %>
