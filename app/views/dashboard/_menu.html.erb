@@ -13,6 +13,13 @@
     <% end %>
   </li>
 
+  <li class="section-title <%= 'is-active' if recommended_actions_menu_active? %>">
+    <span class="icon-checkmark-circle"></span>
+    <%= link_to recommended_actions_proposal_dashboard_path(proposal.to_param) do %>
+      <strong><%= t("dashboard.menu.recommended_actions") %></strong>
+    <% end %>
+  </li>
+
   <% if resources_menu_visible?(proposal, resources) %>
     <li class="section-title <%= 'is-active' if resources_menu_active? %>">
       <span class="icon-zip"></span>

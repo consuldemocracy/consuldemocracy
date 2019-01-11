@@ -484,6 +484,7 @@ es:
       polls: Encuestas
       mailing: Correo electrónico
       poster: Póster
+      recommended_actions: Acciones recomendadas
     form:
       request: Solicitar
     create_request:
@@ -518,7 +519,9 @@ es:
       see_proposed_actions: Ver todas las acciones recomendadas
       hide_proposed_actions: Ocultar acciones recomendadas
       pending_title: Acciones recomendadas pendientes
+      without_pending_actions: No hay acciones recomendadas pendientes
       done_title: Acciones recomendadas realizadas
+      without_done_actions: No hay acciones recomendadas realizadas
     next_goal:
       title: Meta
       see_complete_course: Ver ruta completa

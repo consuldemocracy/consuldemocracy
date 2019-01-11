@@ -4,6 +4,7 @@ resources :proposals do
       patch :publish
       get :progress
       get :community
+      get :recommended_actions
     end
 
     resources :resources, only: [:index], controller: 'dashboard/resources'

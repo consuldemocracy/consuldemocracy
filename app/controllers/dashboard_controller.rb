@@ -21,6 +21,10 @@ class DashboardController < Dashboard::BaseController
     authorize! :dashboard, proposal
   end
 
+  def recommended_actions
+    authorize! :dashboard, proposal
+  end
+
   private
 
   def active_resources

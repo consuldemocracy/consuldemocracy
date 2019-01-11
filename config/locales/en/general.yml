@@ -484,6 +484,7 @@ en:
       polls: Polls
       mailing: E-mail
       poster: Poster
+      recommended_actions: Recommended actions
     form:
       request: Request
     create_request:
@@ -518,7 +519,9 @@ en:
       see_proposed_actions: Check out recommended actions
       hide_proposed_actions: Hide recommended actions
       pending_title: Recommended actions pending
+      without_pending_actions: No recommended actions pending
       done_title: Recommended actions done
+      without_done_actions: No recommended actions done
     next_goal:
       title: Goal
       see_complete_course: Check out the complete course
