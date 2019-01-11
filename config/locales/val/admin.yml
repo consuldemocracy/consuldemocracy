@@ -153,6 +153,7 @@ val:
         population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
         latitude: "Latitud"
         longitude: "Longitud"
+        coordinates_info: "Si s'indiquen la latitud i longitud, la página de propostes per a aquesta partida inclourà un mapa. Aquest mapa estarà centrat utilitzant aquestes coordenades."
         allow_content_block: "Permet contingut bloquejat"
         create: "Crear nova partida"
         edit: "Editar Partida"
@@ -732,8 +733,11 @@ val:
         pending_to_be_sent: Este es tot el contingut pendent d'enviar
         moderate_pending: Moderar l'enviament de notificació
         send_pending: Enviar pendents
+        send_pending_notification: Notificacions pendents enviades correctament
       proposal_notification_digest:
         title: Resum de Notificacions de Propostes
+        description: Reuneix totes les notificacions de propostes en un únic missatge, per a evitar massa emails.
+        preview_detail: Els usuaris sols rebran les notificacions d'aquelles propostes que segueixquen
     emails_download:
       index:
         title: Descàrrega de emails
