@@ -177,6 +177,7 @@ val:
               description_column: Reduïx el tamany del text
       compatibility:
         title: Compatibilitat amb estàndards i disseny visual
+        description_html: 'Totes les pàgines d''aquest lloc web compleixen amb <strong>Guia d''Accessibilitat</strong> o els Principis Generals del Disseny Accessible establers per el Grup de Treball <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertanyent al W3C.'
     titles:
       accessibility: Accessibilitat
       conditions: Condicions d'us
