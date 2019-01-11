@@ -33,7 +33,9 @@ FactoryBot.define do
     end
 
     trait :hidden do
-      hidden_at { Time.current }
+      after :create do |user|
+        user.destroy
+      end
     end
 
     trait :with_confirmed_hide do

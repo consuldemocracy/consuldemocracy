@@ -6,7 +6,9 @@ FactoryBot.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at { Time.current }
+      after :create do |debate|
+        debate.destroy
+      end
     end
 
     trait :with_ignored_flag do
