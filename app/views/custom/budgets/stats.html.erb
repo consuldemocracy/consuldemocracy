@@ -1,7 +1,7 @@
 <div class="expanded no-margin-top padding">
   <div class="row">
     <div class="small-12 column">
-      <h1><%= t('results.title_html') + @budget.name %></h1>
+      <h1><%= t('stats.title_stats') + @budget.name %></h1>
     </div>
   </div>
 </div>
@@ -18,6 +18,9 @@
         <li class="tabs-title is-active">
           <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
           <%= link_to t("results.results_link"), budget_results_path(@budget) %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t("tracking.title_tracking"), budget_executions_path(@budget) %>
         </li>
         <li class="tabs-title">
           <%= link_to t("stats.stats_link"), budget_stats_path(@budget), class: "is-active" %>
