@@ -151,6 +151,7 @@ val:
         population: "Població (opcional)"
         latitude: "Latitud"
         longitude: "Longitud"
+        allow_content_block: "Permet contingut bloquejat"
         create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Guardar partida"
@@ -729,6 +730,8 @@ val:
         pending_to_be_sent: Este es tot el contingut pendent d'enviar
         moderate_pending: Moderar l'enviament de notificació
         send_pending: Enviar pendents
+      proposal_notification_digest:
+        title: Resum de Notificacions de Propostes
     emails_download:
       index:
         title: Descàrrega de emails
