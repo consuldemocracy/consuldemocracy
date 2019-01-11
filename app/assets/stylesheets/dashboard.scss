@@ -424,10 +424,16 @@
 
 .dashboard-mail-preview {
 
+  max-width: rem-calc(600);
+
   .mail-header {
     background: $pdf-primary;
     color: #fff;
     padding: $line-height;
+
+    h1 {
+      font-size: rem-calc(60);
+    }
 
     h2 {
       margin-top: $line-height;
@@ -437,6 +443,7 @@
   .margin-bottom {
     img {
       box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);
+      width: 100%
     }
   }
 
@@ -446,6 +453,9 @@
 
     .button {
       background: #064c86;
+      box-shadow: -4px 18px 45px -19px rgba(0,0,0,0.75);
+      margin-bottom: $line-height;
+      margin-top: $line-height;
     }
 
     img {
@@ -480,11 +490,10 @@
     }
 
     .overflow-image{
-      border: 2px solid red;
-      overflow: hidden;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
+      overflow: hidden;
       position: relative;
     }
   }
@@ -498,37 +507,6 @@
       text-align: left;
     }
 
-    .quote {
-      font-family: Georgia, serif;
-      font-size: 14px;
-
-      blockquote {
-        border: 0;
-      }
-
-      .curly-quotes:before,
-      .curly-quotes:after {
-        color: $pdf-primary;
-        display: inline-block;
-        vertical-align: top;
-        height:  rem-calc(18);
-        line-height: rem-calc(70);
-        font-size: rem-calc(60);
-      }
-
-      .curly-quotes:before {
-        content: '\201C';
-        margin-right: 4px;
-        margin-left: -8px;
-      }
-
-      .curly-quotes:after {
-        content: '\201D';
-        margin-left: 4px;
-        margin-right: -8px;
-      }
-    }
-
     h3 {
       color: $pdf-primary;
       display: inline;
@@ -539,10 +517,10 @@
     }
 
     .poster-footer {
-      color: $text-medium;
       border-left: 2px solid $border;
-      padding-left: rem-calc(40);
+      color: $text-medium;
       margin: 0 auto;
+      padding-left: rem-calc(40);
     }
   }
 }
@@ -554,15 +532,15 @@
   }
 
   .poster-header {
-    padding: $line-height * 2 $line-height $line-height * 2;
     height: rem-calc(600);
+    padding: $line-height * 2 $line-height $line-height * 2;
 
     h1 {
       font-size: rem-calc(60);
       line-height: rem-calc(80);
 
       img {
-        max-width: rem-calc(50)
+        max-width: rem-calc(50);
       }
     }
 
@@ -648,8 +626,8 @@
       line-height: rem-calc(250);
       font-weight: bold;
 
-      img{
-        max-width: rem-calc(150)
+      img {
+        max-width: rem-calc(150);
       }
     }
 
@@ -665,7 +643,7 @@
         text-align: justify;
       }
 
-      &.proposal_code {
+      &.proposal-code {
         font-size: 1.7cm;
       }
     }
@@ -683,7 +661,7 @@
       width: rem-calc(420);
     }
 
-    .overflow-image{
+    .overflow-image {
       height: 37cm;
     }
 
@@ -695,10 +673,10 @@
   .poster-content {
 
     .quote {
-      .curly-quotes:before,
-      .curly-quotes:after {
+      .curly-quotes::before,
+      .curly-quotes::after {
         font-size: rem-calc(200);
-        height:  rem-calc(18);
+        height: rem-calc(18);
         line-height: rem-calc(150);
       }
     }
@@ -715,9 +693,9 @@
       line-height: 5cm;
     }
 
-    img{
-      width:5cm;
-      height:5cm;
+    img {
+      width: 5cm;
+      height: 5cm;
     }
   }
 

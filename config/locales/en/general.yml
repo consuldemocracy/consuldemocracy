@@ -588,7 +588,7 @@ en:
         sent: The email has been sent
     mailer:
       forward:
-        subtitle: If you support me, we will achieve it.
+        subtitle: If you support me, <br>we will achieve it.
         support_button: Support this proposal
         share_in: Share in
         hi: "Hello!"
