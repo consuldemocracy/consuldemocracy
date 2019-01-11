@@ -35,6 +35,7 @@ shared_examples "progressable" do |factory_name, path_name|
         select "Primary", from: "Type"
 
         expect(page).not_to have_field "Title"
+        expect(page).not_to have_content "Add language"
 
         fill_in "Current progress", with: 43
         click_button "Create Progress bar"
@@ -50,6 +51,9 @@ shared_examples "progressable" do |factory_name, path_name|
         click_link "Create new progress bar"
 
         select "Secondary", from: "Type"
+
+        expect(page).to have_content "Add language"
+
         fill_in "Current progress", with: 36
         fill_in "Title", with: "Plant trees"
         click_button "Create Progress bar"
@@ -70,6 +74,7 @@ shared_examples "progressable" do |factory_name, path_name|
 
         expect(page).to have_field "Current progress"
         expect(page).not_to have_field "Title"
+        expect(page).not_to have_content "Add language"
 
         fill_in "Current progress", with: 44
         click_button "Update Progress bar"
@@ -86,6 +91,8 @@ shared_examples "progressable" do |factory_name, path_name|
 
         visit path
         within("#progress_bar_#{bar.id}") { click_link "Edit" }
+
+        expect(page).to have_content "Add language"
 
         fill_in "Current progress", with: 76
         fill_in "Title", with: "Updated title"

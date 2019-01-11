@@ -37,8 +37,10 @@ App.Forms =
 
         if this.value == "primary"
           title_field.hide()
+          $("#globalize_locales").hide()
         else
           title_field.show()
+          $("#globalize_locales").show()
 
     $("[name='progress_bar[kind]']").change()
 
