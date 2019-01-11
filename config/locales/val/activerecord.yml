@@ -340,6 +340,8 @@ val:
               invalid_date_range: ha de ser igual o posterior a la data d'inici
             debate_end_date:
               invalid_date_range: ha de ser igual o posterior a la data d'inici del debat
+            draft_end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici de l'esborrany
             allegations_end_date:
               invalid_date_range: ha de ser igual o posterior a la data d'inici de les al·legacions
         proposal:
