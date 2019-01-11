@@ -92,7 +92,10 @@ FactoryBot.define do
 
     trait :from_booth do
       origin "booth"
-      association :booth_assignment, factory: :poll_booth_assignment
+
+      booth_assignment do
+        association :poll_booth_assignment, poll: poll
+      end
 
       officer_assignment do
         association :poll_officer_assignment, booth_assignment: booth_assignment, officer: officer
