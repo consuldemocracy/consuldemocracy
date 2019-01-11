@@ -92,4 +92,6 @@ val:
       allow_attached_documents: "Permetre la creació de documents adjunts"
       guides: "Guies per a crear propostes o projectes d'inversió"
       public_stats: "Estadístiques públiques"
+      public_stats_description: "Mostra les estadístiques públiques en el panell d'Administració"
       help_page: "Pàgina d'ajuda"
+      help_page_description: "Mostra un menú Ajuda que conté una pàgina amb una secció d'informació sobre cada funcionalitat habilitada"
