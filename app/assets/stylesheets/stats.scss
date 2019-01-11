@@ -40,6 +40,10 @@
       content: image-url('stats_woman.png');
     }
 
+    &.total-investments::before {
+      content: image-url('stats_investments.png');
+    }
+
     &.web::before {
       content: image-url('stats_web.png');
     }

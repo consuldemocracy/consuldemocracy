@@ -16,6 +16,16 @@ es:
     total: "Total"
     geozone: "Distrito"
     geozone_participation: "% Partipación población del distrito"
+    budgets:
+      total_investments: "Total propuestas enviadas"
+      total_selected_investments: "Propuestas en la fase final"
+      total_unfeasible_investments: "Propuestas inviables"
+      total_participants_support_phase: "Fase de apoyos"
+      total_participants_web: "Participantes web en votación final"
+      total_participants_booths: "Participantes en urnas votación final"
+      participants: "Participantes"
+      supports: "Apoyos"
+      by_heading: "Participación por distritos"
     polls:
       by_channel: "Participación por medio"
       by_gender_and_channel: "Participación por género y medio"
