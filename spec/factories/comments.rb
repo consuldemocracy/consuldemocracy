@@ -5,7 +5,9 @@ FactoryBot.define do
     sequence(:body) { |n| "Comment body #{n}" }
 
     trait :hidden do
-      hidden_at { Time.current }
+      after :create do |comment|
+        comment.destroy
+      end
     end
 
     trait :with_ignored_flag do

@@ -12,7 +12,9 @@ FactoryBot.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at { Time.current }
+      after :create do |proposal|
+        proposal.destroy
+      end
     end
 
     trait :with_ignored_flag do
@@ -68,7 +70,9 @@ FactoryBot.define do
     end
 
     trait :hidden do
-      hidden_at { Date.current }
+      after :create do |proposal_notification|
+        proposal_notification.destroy
+      end
     end
 
     trait :with_confirmed_hide do
