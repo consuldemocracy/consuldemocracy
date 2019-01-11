@@ -191,17 +191,3 @@ en:
         dates_range_invalid: "Start date can't be equal or later than End date"
         prev_phase_dates_invalid: "Start date must be later than the start date of the previous enabled phase (%{phase_name})"
         next_phase_dates_invalid: "End date must be earlier than the end date of the next enabled phase (%{phase_name})"
-    stats:
-      link: Stats
-      page_title: "%{budget} - Participation stats"
-      total: Total
-      heading: Heading
-      investments_sent_html: "Investment proposals sent"
-      participants_support_phase: Participants support phase
-      participants_voting_phase: Participants voting phase
-      participants_total: Total Participants
-      percent_total_participants_html: "% <br>Total<br>Participants"
-      percent_heading_census_html: "% <br>Heading<br>Census"
-      no_demographic_data: "* There is no demographic data for %{total} participants."
-      participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
-      heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
