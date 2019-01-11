@@ -27,19 +27,18 @@
 }
 
 .dashboard-proposals-stats {
-  text-align: center;
   border: 2px solid $highlight;
   border-radius: rem-calc(6);
   margin-bottom: $line-height;
   padding: $line-height / 2;
+  text-align: center;
 
   @include breakpoint(medium only) {
     .change-behaviour {
-      padding: $line-height;
-      margin-top: $line-height;
       float: left;
-      width: 100%;
       margin-top: $line-height / 2;
+      padding: $line-height;
+      width: 100%;
     }
   }
 
@@ -53,11 +52,8 @@
     }
   }
 
-  .supports {
-
-    .counter-label {
-      display: block;
-    }
+  .supports .counter-label {
+    display: block;
   }
 
   .counter-value {
