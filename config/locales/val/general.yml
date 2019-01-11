@@ -240,6 +240,7 @@ val:
           other: Tens %{count} noves notificacions
         notifications: Notificacions
         no_notifications: "No tens noves notificacions"
+      user_menu: Compte
     admin:
       watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
   legacy_legislation:
