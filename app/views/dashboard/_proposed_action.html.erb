@@ -16,6 +16,7 @@
 
       <% if proposed_action.proposals.where(id: proposal.id).any? %>
         <p><%= l(proposed_action.executed_actions.find_by(proposal: proposal).executed_at.to_date) %></p>
+        <%= proposed_action.description.html_safe %>
       <% else %>
         <% if proposed_action.description.present? %>
           <p><%= proposed_action.description.html_safe %></p>

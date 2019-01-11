@@ -1,4 +1,4 @@
-<h2 class="title"><%= t("dashboard.recommended_actions.#{status}_title") %></h2>
+<h3 class="title"><%= t("dashboard.recommended_actions.#{status}_title") %></h3>
 <% if actions.any? %>
   <div id="proposed_actions_<%= status %>" data-toggler=".hide">
     <% actions.first(4).each do |proposed_action| %>
