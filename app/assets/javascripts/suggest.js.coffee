@@ -7,13 +7,15 @@ App.Suggest =
       $this = $(this)
 
       callback = ->
+        locale = $this.closest('.translatable-fields').data('locale')
         $.ajax
           url: $this.data('js-url')
-          data: {search: $this.val()},
-          type: 'GET',
+          data:
+            search: $this.val()
+          type: 'GET'
           dataType: 'html'
           success: (stHtml) ->
-            js_suggest_selector = $this.data('js-suggest')
+            js_suggest_selector = "#{$this.data("js-suggest")}[data-locale=#{locale}]"
             $(js_suggest_selector).html(stHtml)
 
       timer = null

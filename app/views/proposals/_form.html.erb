@@ -5,7 +5,6 @@
   <%= render 'shared/errors', resource: @proposal %>
 
   <div class="row">
-
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 column">
         <%= translations_form.text_field :title,
@@ -13,10 +12,10 @@
               placeholder: t("proposals.form.proposal_title"),
               label: t("proposals.form.proposal_title"),
               data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: "#js-suggest",
+                      js_suggest: ".js-suggest",
                       js_url: suggest_proposals_path } %>
       </div>
-      <div id="js-suggest"></div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="small-12 column">
         <%= translations_form.label :question, t("proposals.form.proposal_question") %>

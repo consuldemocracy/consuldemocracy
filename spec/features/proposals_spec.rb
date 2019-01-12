@@ -1660,7 +1660,7 @@ feature 'Proposals' do
       fill_in 'Proposal title', with: 'search'
       check "proposal_terms_of_service"
 
-      within('div#js-suggest') do
+      within('div.js-suggest') do
         expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
       end
     end
@@ -1676,7 +1676,7 @@ feature 'Proposals' do
       fill_in 'Proposal title', with: 'debate'
       check "proposal_terms_of_service"
 
-      within('div#js-suggest') do
+      within('div.js-suggest') do
         expect(page).not_to have_content 'You are seeing'
       end
     end
