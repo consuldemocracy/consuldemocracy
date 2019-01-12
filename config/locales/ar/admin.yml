@@ -161,6 +161,8 @@ ar:
         feasibility:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
+        list:
+          visible_to_valuators: عرض على المثمنين
       show:
         classification: تصنيف
       edit:
