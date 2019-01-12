@@ -102,6 +102,17 @@ ar:
         unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
       new:
         title: ميزانية تشاركية جديدة
+      winners:
+        calculate: حساب الاستثمارات الفائزة
+        calculated: يجري حساب الفائزين، قد يستغرق ذلك دقيقة.
+        recalculate: إعادة حساب الاستثمارات الفائزة
+    budget_groups:
+      name: "الاسم"
+      headings_name: "العناوين"
+      headings_edit: "تحرير العناوين"
+      headings_manage: "إدارة العناوين"
+      max_votable_headings: "العدد الأقصى للعناوين التي يمكن لمستخدم التصويت لها"
+      no_groups: "لا توجد مجموعات تم إنشاؤها بعد. كل مستخدم سوف يكون قادرا على التصويت لعنوان واحد فقط من كل مجموعة."
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
