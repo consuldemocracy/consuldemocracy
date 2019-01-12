@@ -15,10 +15,10 @@
               maxlength: Budget::Investment.title_max_length,
               label: t("budgets.investments.form.title"),
               data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: "#js-suggest",
+                      js_suggest: ".js-suggest",
                       js_url: suggest_budget_investments_path(@budget) }%>
       </div>
-      <div id="js-suggest"></div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="ckeditor small-12 column">
         <%= translations_form.cktext_area :description,
