@@ -1116,7 +1116,7 @@ feature "Debates" do
       fill_in "Debate title", with: "debate"
       check "debate_terms_of_service"
 
-      within("div#js-suggest") do
+      within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
       end
     end
@@ -1132,7 +1132,7 @@ feature "Debates" do
       fill_in "Debate title", with: "proposal"
       check "debate_terms_of_service"
 
-      within("div#js-suggest") do
+      within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"
       end
     end
