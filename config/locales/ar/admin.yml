@@ -163,8 +163,17 @@ ar:
           unfeasible: "غير مجدي"
         list:
           visible_to_valuators: عرض على المثمنين
+          author_username: اسم الكاتب
+          incompatible: غير متوافق
+        cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
+        see_results: "رؤية النتائج"
       show:
+        assigned_admin: المشرف المعين
+        assigned_valuators: المثمن المعين
         classification: تصنيف
+        info: "%{budget_name} -المجموعة: %{group_name} - مشروع الاستثمار %{id}"
+        edit: تعديل
+        edit_classification: تحرير التصنيف
       edit:
         select_heading: حدد العنوان
         submit_button: تحديث
