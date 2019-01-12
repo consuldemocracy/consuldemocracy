@@ -1,5 +1,6 @@
 class Admin::Widget::CardsController < Admin::BaseController
   include Translatable
+  include ImagesHelper
 
   def new
     if header_card?
@@ -41,8 +42,6 @@ class Admin::Widget::CardsController < Admin::BaseController
   private
 
     def card_params
-      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-
       params.require(:widget_card).permit(
         :label, :title, :description, :link_text, :link_url,
         :button_text, :button_url, :alignment, :header, :site_customization_page_id,

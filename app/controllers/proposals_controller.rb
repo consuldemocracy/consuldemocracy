@@ -2,6 +2,7 @@ class ProposalsController < ApplicationController
   include FeatureFlags
   include CommentableActions
   include FlagActions
+  include ImagesHelper
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -112,7 +113,7 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id, :proceeding, :sub_proceeding, :skip_map,
-                                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                                       image_attributes: image_attributes,
                                        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        map_location_attributes: [:latitude, :longitude, :zoom])
     end
