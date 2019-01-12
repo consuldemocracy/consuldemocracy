@@ -77,6 +77,31 @@ ar:
         budget_investments: إدارة المشاريع
         table_name: الاسم
         table_phase: المرحلة
+        table_investments: إستثمارات
+        table_edit_groups: مجموعات العناوين
+        table_edit_budget: تعديل
+        edit_groups: تعديل مجموعات العناوين
+        edit_budget: تعديل الميزانية
+        no_budgets: "لا يوجد ميزانيات مفتوحة."
+      create:
+        notice: تم إنشاء الميزانية التشاركية الجديدة بنجاح!
+      update:
+        notice: تم تعديل الميزانية التشاركية بنجاح
+      edit:
+        title: تعديل الميزانية المشاركة
+        delete: حذف الميزانية
+        phase: المرحلة
+        dates: التواريخ
+        enabled: تفعيل
+        actions: الإجراءات
+        edit_phase: تحرير المرحلة
+        active: نشِط
+        blank_dates: التواريخ فارغة
+      destroy:
+        success_notice: تم حذف الميزانية بنجاح
+        unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
+      new:
+        title: ميزانية تشاركية جديدة
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
