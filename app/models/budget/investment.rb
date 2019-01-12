@@ -168,12 +168,10 @@ class Budget
     end
 
     def searchable_values
-      { title              => 'A',
-        author.username    => 'B',
+      { author.username    => 'B',
         heading.try(:name) => 'B',
-        tag_list.join(' ') => 'B',
-        description        => 'C'
-      }
+        tag_list.join(' ') => 'B'
+      }.merge(searchable_globalized_values)
     end
 
     def self.search(terms)
@@ -359,6 +357,21 @@ class Budget
       def set_denormalized_ids
         self.group_id = heading.try(:group_id) if heading_id_changed?
         self.budget_id ||= heading.try(:group).try(:budget_id)
+      end
+
+      def searchable_translations_definitions
+        { title       => 'A',
+          description => 'D' }
+      end
+
+      def searchable_globalized_values
+        values = {}
+        translations.each do |translation|
+          Globalize.with_locale(translation.locale) do
+            values.merge! searchable_translations_definitions
+          end
+        end
+        values
       end
 
   end
