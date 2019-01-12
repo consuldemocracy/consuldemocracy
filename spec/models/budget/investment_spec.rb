@@ -659,9 +659,20 @@ describe Budget::Investment do
 
     context "attributes" do
 
+      let(:attributes) { { title: 'save the world',
+                           description: 'in order to save the world one must think about...',
+                           title_es: 'para salvar el mundo uno debe pensar en...',
+                           description_es: 'uno debe pensar' } }
+
       it "searches by title" do
-        budget_investment = create(:budget_investment, title: "save the world")
+        budget_investment = create(:budget_investment, attributes)
         results = described_class.search("save the world")
+        expect(results).to eq([budget_investment])
+      end
+
+      it "searches by title across all languages" do
+        budget_investment = create(:budget_investment, attributes)
+        results = described_class.search('salvar el mundo')
         expect(results).to eq([budget_investment])
       end
 
