@@ -23,15 +23,15 @@ module Globalizable
 
     private
 
-    def searchable_globalized_values
-      values = {}
-      translations.each do |translation|
-        Globalize.with_locale(translation.locale) do
-          values.merge! searchable_translations_definitions
+      def searchable_globalized_values
+        values = {}
+        translations.each do |translation|
+          Globalize.with_locale(translation.locale) do
+            values.merge! searchable_translations_definitions
+          end
         end
+        values
       end
-      values
-    end
   end
 
   class_methods do
