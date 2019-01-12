@@ -20,8 +20,8 @@
 
   <div class="row">
     <div class="small-12 medium-6 large-4 column">
-      <%= f.label :heading_id, t("admin.geographies.geography.related_heading") %>
-      <%= f.collection_select :heading_id, @headings,:id,:name, include_blank: true, label: false %>
+      <%= f.label :budget_headings, t("admin.geographies.geography.related_headings") %>
+      <%= f.collection_select :heading_ids, @headings, :id, :whole_name, {label: false}, { class: "headings-selector", multiple: true } %>
     </div>
   </div>
 

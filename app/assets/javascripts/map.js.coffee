@@ -26,7 +26,7 @@ App.Map =
     zoomInputSelector        = $(element).data('zoom-input-selector')
     removeMarkerSelector     = $(element).data('marker-remove-selector')
     addMarkerInvestments     = $(element).data('marker-investments-coordinates')
-    addGeographyPolygons     = $(element).data('polygons-geographies-coordinates')
+    addGeographyPolygons     = $(element).data('polygons-geographies-data')
     editable                 = $(element).data('marker-editable')
     marker                   = null;
     markerIcon               = L.divIcon(
@@ -46,8 +46,12 @@ App.Map =
     createPolygon = (polygon_data) ->
       colors = ['#0081aa', '#0097aa', '#0063aa', '#00baaa'];
       polygon  = L.polygon(polygon_data.outline_points, {color: colors[Math.floor(Math.random() * colors.length)]})
-      polygon.options['heading_id'] = polygon_data.heading_id
-      polygon.on 'click', openPolygonPopup
+      if polygon_data.heading_id
+        polygon.on 'click', openPolygonPopup
+        polygon.options['heading_id'] = polygon_data.heading_id
+        polygon.options['fillOpacity'] = 0.3
+      else
+        polygon.options['fillOpacity'] = 0
       polygon.addTo(map)
       return polygon
 

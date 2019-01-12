@@ -37,8 +37,8 @@ class Admin::GeographiesController < Admin::BaseController
   end
 
   def destroy
-      @geography.destroy
-      redirect_to admin_geographies_path, notice: t('admin.geozones.delete.success')
+    @geography.destroy
+    redirect_to admin_geographies_path, notice: t('admin.geozones.delete.success')
   end
 
   private
@@ -53,7 +53,7 @@ class Admin::GeographiesController < Admin::BaseController
 
     def geography_params
       documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-      params.require(:geography).permit(:name, :heading_id, documents_attributes: documents_attributes)
+      params.require(:geography).permit(:name, heading_ids: [], documents_attributes: documents_attributes)
     end
 
     def reset_outline_points

@@ -20,7 +20,8 @@ class BudgetsController < ApplicationController
     @finished_budgets = @budgets.finished.order(created_at: :desc)
     @budgets_coordinates = current_budget_map_locations
     @banners = Banner.in_section('budgets').with_active
-    @geographies_coordinates = Geography.all.map{ |g| { outline_points: g.outline_points, heading_id: g.heading_id} }
+    @geographies_data = Geography.all.map{ |g| { outline_points: g.outline_points,
+                                                 heading_id: (@headings_geographies.key?(g.id) ? @headings_geographies[g.id] : nil ) } }
   end
 
   def create_map_Location
@@ -28,6 +29,10 @@ class BudgetsController < ApplicationController
     #@map_location.zoom = OSM_DISTRICT_LEVEL_ZOOM
     @map_location.latitude = NEW_YORK_LATITUDE
     @map_location.longitude = NEW_YORK_LONGITUDE
+  end
+
+  def get_headings_geographies
+    @headings_geographies = Geography.active_headings_geographies
   end
 
 end

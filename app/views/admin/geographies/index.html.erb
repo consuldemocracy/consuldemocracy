@@ -7,7 +7,7 @@
   <thead>
     <tr>
       <th><%= t("admin.geographies.geography.name") %></th>
-      <th><%= t("admin.geographies.geography.related_heading") %></th>
+      <th><%= t("admin.geographies.geography.related_headings") %></th>
       <th><%= t("admin.geographies.geography.geojson_file") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </tr>
@@ -17,7 +17,7 @@
     <% @geographies.each do |geography| %>
       <tr id="<%= dom_id(geography) %>">
         <td><%= geography.name %></td>
-        <td><%= geography.heading_id ? related_heading_name(geography.heading_id) : t("admin.geographies.no_related_heading") %></td>
+        <td><%= (geography.headings.any?) ? (render "related_headings", related_headings: geography.headings) : t("admin.geographies.no_related_headings") %></td>
         <td><%= (geography.documents.any?) ? link_to_document(geography.documents.first) : t("admin.geographies.no_geojson_file") %></td>
         <td>
           <div class="small-6 column">

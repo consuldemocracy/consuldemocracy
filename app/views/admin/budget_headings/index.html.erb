@@ -29,7 +29,7 @@
             <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
           </td>
           <td>
-            <%= heading.geography ? heading.geography.name : t("admin.budget_headings.no_related_geography") %>
+            <%= heading.geography_id ? heading.geography.name : t("admin.budget_headings.no_related_geography") %>
           </td>
           <td>
             <%= link_to t("admin.actions.edit"),

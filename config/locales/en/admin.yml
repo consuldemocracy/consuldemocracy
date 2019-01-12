@@ -1287,7 +1287,7 @@ en:
         delete: Delete
       geography:
         name: Name
-        related_heading: Related Heading
+        related_headings: Related Headings
         geojson_file: GeoJSON file
       errors:
         form:
