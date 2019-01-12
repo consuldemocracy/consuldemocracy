@@ -104,15 +104,19 @@ class Proposal < ActiveRecord::Base
     "#{id}-#{title}".parameterize
   end
 
+  def searchable_translations_definitions
+    { title       => 'A',
+      question    => 'B',
+      summary     => 'C',
+      description => 'D' }
+  end
+
   def searchable_values
-    { title              => 'A',
-      question           => 'B',
-      author.username    => 'B',
-      tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
-      summary            => 'C',
-      description        => 'D'
-    }
+    {
+      author.username       => 'B',
+      tag_list.join(' ')    => 'B',
+      geozone.try(:name)    => 'B'
+    }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
@@ -238,6 +242,16 @@ class Proposal < ActiveRecord::Base
 
     def assign_proposal_to_translations
       translations.each { |translation| translation.globalized_model = self }
+    end
+
+    def searchable_globalized_values
+      values = {}
+      translations.each do |translation|
+        Globalize.with_locale(translation.locale) do
+          values.merge! searchable_translations_definitions
+        end
+      end
+      values
     end
 
 end
