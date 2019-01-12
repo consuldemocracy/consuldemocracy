@@ -5,6 +5,7 @@ ar:
     actions:
       actions: الإجراءات
       confirm: هل أنت متأكد؟
+      confirm_hide: تأكيد
       hide: إخفاء
       hide_author: إخفاء الكاتب
       restore: إسترجاع
@@ -12,6 +13,7 @@ ar:
       unmark_featured: إلغاء تحديد مميز
       edit: تعديل
       configure: تهيئة
+      delete: حذف
     banners:
       index:
         title: لافتات
@@ -29,6 +31,15 @@ ar:
         target_url: رابط
         post_started_at: المشاركة بدأت في
         post_ended_at: المشاركة انتهت في
+        sections_label: الأقسام التي ستظهر بها
+        sections:
+          homepage: الصفحة الرئيسية
+          debates: المناقشات
+          proposals: إقتراحات
+          budgets: الميزانية التشاركية
+          help_page: صفحة المساعدة
+        background_color: لون الخلفية
+        font_color: لون الخط
       edit:
         editing: تعديل لافتة
         form:
@@ -51,8 +62,10 @@ ar:
           on_debates: النقاشات
           on_proposals: إقتراحات
           on_users: المستخدمين
+          on_system_emails: نظام البريد الإلكتروني
         title: نشاط المشرف
         type: النوع
+        no_activity: ليس هناك أي نشاط من المشرفين.
     budgets:
       index:
         title: الميزانيات المشاركة
@@ -62,6 +75,8 @@ ar:
           open: فتح
           finished: انتهى
         budget_investments: إدارة المشاريع
+        table_name: الاسم
+        table_phase: المرحلة
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
