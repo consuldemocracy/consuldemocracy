@@ -211,12 +211,20 @@ ar:
         assigned_valuators: المقيمون
         select_heading: حدد العنوان
         submit_button: تحديث
+        user_tags: العلامات المحددة للمستخدم
         tags: العلامات
+        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (,)"
         undefined: غير معرف
+        user_groups: "المجموعات"
       search_unfeasible: بحث غير مجد
     milestones:
       index:
+        table_id: "ID"
+        table_title: "العنوان"
+        table_description: "الوصف"
         table_publication_date: "تاريخ النشر"
+        table_status: الحالة
+        table_actions: "الإجراءات"
         documents: "الوثائق"
       new:
         date: تاريخ
@@ -239,6 +247,9 @@ ar:
       show:
         email: 'ايمايل:'
         registered_at: 'تم الحفظ في:'
+    hidden_budget_investments:
+      index:
+        no_hidden_budget_investments: لا يوجد هناك ميزانيات استثمارات مخفية
     legislation:
       processes:
         form:
