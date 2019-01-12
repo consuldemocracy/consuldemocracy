@@ -125,14 +125,18 @@ class Proposal < ApplicationRecord
     "#{id}-#{title}".parameterize
   end
 
+  def searchable_translations_definitions
+    { title       => "A",
+      summary     => "C",
+      description => "D" }
+  end
+
   def searchable_values
-    { title              => "A",
-      author.username    => "B",
-      tag_list.join(" ") => "B",
-      geozone.try(:name) => "B",
-      summary            => "C",
-      description        => "D"
-    }
+    {
+      author.username       => "B",
+      tag_list.join(" ")    => "B",
+      geozone.try(:name)    => "B"
+    }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
