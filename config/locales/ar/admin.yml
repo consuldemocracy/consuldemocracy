@@ -126,6 +126,10 @@ ar:
         notice: "تم تحديث المجموعة بنجاح"
       destroy:
         success_notice: "تم حذف المجموعة بنجاح"
+        unable_notice: "لا يمكن حذف مجموعة لها عناوين مرتبطة"
+      form:
+        create: "إنشاء مجموعة جديدة"
+        edit: "تعديل مجموعة"
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
