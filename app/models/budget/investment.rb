@@ -189,12 +189,10 @@ class Budget
     end
 
     def searchable_values
-      { title              => "A",
-        author.username    => "B",
+      { author.username    => "B",
         heading.name       => "B",
-        tag_list.join(" ") => "B",
-        description        => "C"
-      }
+        tag_list.join(" ") => "B"
+      }.merge(searchable_globalized_values)
     end
 
     def self.search(terms)
@@ -397,5 +395,9 @@ class Budget
         self.budget_id ||= heading.try(:group).try(:budget_id)
       end
 
+      def searchable_translations_definitions
+        { title       => 'A',
+          description => 'D' }
+      end
   end
 end
