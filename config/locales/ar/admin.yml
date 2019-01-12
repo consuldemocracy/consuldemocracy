@@ -162,7 +162,7 @@ ar:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
         list:
-          visible_to_valuators: عرض على المثمنين
+          visible_to_valuators: عرض على المقيمين
           author_username: اسم الكاتب
           incompatible: غير متوافق
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
@@ -174,9 +174,44 @@ ar:
         info: "%{budget_name} -المجموعة: %{group_name} - مشروع الاستثمار %{id}"
         edit: تعديل
         edit_classification: تحرير التصنيف
+        by: من قبل
+        sent: أرسلت
+        group: مجموعة
+        heading: عنوان
+        dossier: الملف
+        edit_dossier: تحرير الملف
+        tags: العلامات
+        user_tags: علامات المستخدم
+        undefined: غير معرف
+        compatibility:
+          title: التوافق
+          "true": غير متوافق
+          "false": متوافق
+        selection:
+          title: التحديد
+          "true": محدّد
+          "false": غير محدد
+        winner:
+          title: الفائز
+          "true": "نعم"
+          "false": "لا"
+        image: "صورة"
+        see_image: "رؤية الصورة"
+        no_image: "بدون صورة"
+        documents: "الوثائق"
+        see_documents: "رؤية الوثائق (%{count})"
+        no_documents: "بدون وثائق"
+        valuator_groups: "مجموعة تقييم"
       edit:
+        classification: تصنيف
+        compatibility: التوافق
+        mark_as_incompatible: وضع علامة غير متوافق
+        selection: التحديد
+        mark_as_selected: وضع علامة مختار
+        assigned_valuators: المقيمون
         select_heading: حدد العنوان
         submit_button: تحديث
+        tags: العلامات
         undefined: غير معرف
       search_unfeasible: بحث غير مجد
     milestones:
