@@ -465,15 +465,32 @@ describe Debate do
 
     context "attributes" do
 
+      let(:attributes) { { title: "save the world",
+                           description: "in order to save the world one must think about...",
+                           title_es: "para salvar el mundo uno debe pensar en...",
+                           description_es: "uno debe pensar" } }
+
       it "searches by title" do
-        debate = create(:debate, title: "save the world")
+        debate = create(:debate, attributes)
         results = described_class.search("save the world")
         expect(results).to eq([debate])
       end
 
+      it "searches by title across all languages translations" do
+        debate = create(:debate, attributes)
+        results = described_class.search('salvar el mundo')
+        expect(results).to eq([debate])
+      end
+
       it "searches by description" do
-        debate = create(:debate, description: "in order to save the world one must think about...")
+        debate = create(:debate, attributes)
         results = described_class.search("one must think")
+        expect(results).to eq([debate])
+      end
+
+      it "searches by description across all languages translations" do
+        debate = create(:debate, attributes)
+        results = described_class.search('uno debe pensar')
         expect(results).to eq([debate])
       end
 
