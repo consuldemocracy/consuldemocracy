@@ -807,7 +807,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(budget)
         fill_in "Title", with: "search"
 
-        within("div#js-suggest") do
+        within("div.js-suggest") do
           expect(page).to have_content "You are seeing 5 of 6 investments containing the term 'search'"
         end
       end
@@ -822,7 +822,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(budget)
         fill_in "Title", with: "item"
 
-        within('div#js-suggest') do
+        within('div.js-suggest') do
           expect(page).not_to have_content 'You are seeing'
         end
       end
@@ -837,7 +837,7 @@ feature 'Budget Investments' do
         visit new_budget_investment_path(other_budget)
         fill_in "Title", with: "search"
 
-        within('div#js-suggest') do
+        within('div.js-suggest') do
           expect(page).not_to have_content 'You are seeing'
         end
       end
