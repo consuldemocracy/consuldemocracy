@@ -113,6 +113,19 @@ ar:
       headings_manage: "إدارة العناوين"
       max_votable_headings: "العدد الأقصى للعناوين التي يمكن لمستخدم التصويت لها"
       no_groups: "لا توجد مجموعات تم إنشاؤها بعد. كل مستخدم سوف يكون قادرا على التصويت لعنوان واحد فقط من كل مجموعة."
+      amount:
+        zero: "لا يوجد هناك مجموعات %{count}"
+        one: "هناك مجموعة 1"
+        two: "هناك مجموعتان %{count}"
+        few: "هناك %{count} مجموعات"
+        many: "هناك %{count} مجموعة"
+        other: "هناك %{count} مجموعة"
+      create:
+        notice: "تم إنشاء المجموعة بنجاح!"
+      update:
+        notice: "تم تحديث المجموعة بنجاح"
+      destroy:
+        success_notice: "تم حذف المجموعة بنجاح"
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
