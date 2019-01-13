@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @banners = Banner.in_section('help_page').with_active
 
     if @custom_page.present?
-      @cards = Widget::Card.page(@custom_page.id)
+      @cards = @custom_page.cards
       render action: :custom_page
     else
       render action: params[:id]
