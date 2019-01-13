@@ -2,7 +2,8 @@ class Admin::SiteCustomization::CardsController < Admin::SiteCustomization::Base
   skip_authorization_check
 
   def index
-    @cards = ::Widget::Card.page(params[:page_id])
+    @page = ::SiteCustomization::Page.find(params[:page_id])
+    @cards = @page.cards
   end
 
 end
