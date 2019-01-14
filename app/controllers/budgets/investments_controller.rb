@@ -4,7 +4,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
-    include ImagesHelper
+    include ImageAttributes
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 

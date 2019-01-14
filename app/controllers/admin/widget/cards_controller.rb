@@ -1,6 +1,6 @@
 class Admin::Widget::CardsController < Admin::BaseController
   include Translatable
-  include ImagesHelper
+  include ImageAttributes
 
   def new
     @card = ::Widget::Card.new(header: header_card?)

@@ -1,6 +1,6 @@
 class Admin::Poll::PollsController < Admin::Poll::BaseController
   include Translatable
-  include ImagesHelper
+  include ImageAttributes
   load_and_authorize_resource
 
   before_action :load_search, only: [:search_booths, :search_officers]
