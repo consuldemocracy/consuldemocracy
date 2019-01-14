@@ -8,7 +8,8 @@
       <div class="margin small">
         <% if toggle == true %>
           <a id="see_proposed_actions_link_<%= status %>" data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>">
-            <%= t("dashboard.recommended_actions.see_proposed_actions") %>
+            <%#= t("dashboard.recommended_actions.see_proposed_actions") %>
+            Mostrar todas las acciones recomendadas
           </a>
         <% else %>
           <%= link_to recommended_actions_proposal_dashboard_path(proposal.to_param) do %>
