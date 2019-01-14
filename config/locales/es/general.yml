@@ -516,9 +516,11 @@ es:
       resource_locked: Recurso bloqueado
     recommended_actions:
       title: Acciones recomendadas
+      goto_proposed_actions: Ir a las acciones recomendadas
       see_proposed_actions: Ver todas las acciones recomendadas
       hide_proposed_actions: Ocultar acciones recomendadas
       pending_title: Pendientes
+      show_description: Mostrar descripción
       without_pending_actions: No hay acciones recomendadas pendientes
       done_title: Realizadas
       without_done_actions: No hay acciones recomendadas realizadas

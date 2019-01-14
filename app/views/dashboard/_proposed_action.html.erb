@@ -21,7 +21,7 @@
         </p>
 
         <%= link_to do %>
-          <small>Mostrar Description</small>
+          <small><%= t("dashboard.recommended_actions.show_description") %></small>
         <% end %>
 
         <div class="hide">
@@ -31,7 +31,7 @@
       <% else %>
         <% if proposed_action.description.present? %>
         <%= link_to do %>
-          <small>Mostrar Description</small>
+          <small><%= t("dashboard.recommended_actions.show_description") %></small>
         <% end %>
           <div class="hide">
             <%= proposed_action.description.html_safe %>
