@@ -1,5 +1,1 @@
 gem 'animate-rails', '~> 1.0.10'
-
-group :test do
-  gem 'timecop', '~> 0.8.1'
-end
