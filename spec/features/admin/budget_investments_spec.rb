@@ -660,7 +660,7 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(budget)
 
       expect('D Fourth Investment').to appear_before('B First Investment')
-      expect('D Fourth Investment').to appear_before('A Second Investment')
+      expect('B First Investment').to appear_before('A Second Investment')
       expect('A Second Investment').to appear_before('C Third Investment')
     end
 
