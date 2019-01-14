@@ -216,13 +216,13 @@
   <div class="row">
     <div class="small-3 column">
       <%= f.label :sections, "Background color" %>
-      <%= color_field(:process, :background_color, id: 'legislation_process_background_color_picker') %>
-      <%= f.text_field :background_color, label: false %>
+      <%= color_field(:process, :background_color, id: 'banner_background_color_picker') %>
+      <%= f.text_field :background_color, label: false, id: 'banner_background_color' %>
     </div>
     <div class="small-3 column end">
       <%= f.label :sections, "Font color" %>
-      <%= color_field(:process, :font_color, id: 'legislation_process_font_color_picker') %>
-      <%= f.text_field :font_color, label: false %>
+      <%= color_field(:process, :font_color, id: 'banner_font_color_picker') %>
+      <%= f.text_field :font_color, label: false, id: 'banner_font_color' %>
     </div>
   </div>
 
