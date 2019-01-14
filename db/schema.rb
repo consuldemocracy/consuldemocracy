@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20190103132925) do
 
   # These are extensions that must be enabled in order to support this database
@@ -570,46 +571,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
   add_index "geozones_polls", ["geozone_id"], name: "index_geozones_polls_on_geozone_id", using: :btree
   add_index "geozones_polls", ["poll_id"], name: "index_geozones_polls_on_poll_id", using: :btree
 
-  create_table "house_images", force: :cascade do |t|
-    t.integer  "house_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "house_news", force: :cascade do |t|
-    t.string   "title"
-    t.string   "photo"
-    t.string   "link"
-    t.string   "house_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "houses", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "schedule"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "photo"
-    t.boolean  "disability_access"
-    t.integer  "zonal_administration_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "houses_administrators", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "houses_age_ranges", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "i18n_content_translations", force: :cascade do |t|
     t.integer  "i18n_content_id", null: false
     t.string   "locale",          null: false
@@ -773,8 +734,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.date     "draft_end_date"
     t.boolean  "draft_phase_enabled",        default: false
     t.boolean  "homepage_enabled",           default: false
-    t.text     "background_color"
-    t.text     "font_color"
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -902,7 +861,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.integer "zoom"
     t.integer "proposal_id"
     t.integer "investment_id"
-    t.integer "house_id"
   end
 
   add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
@@ -949,13 +907,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
-  create_table "neighborhoods", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "id_parish"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "newsletters", force: :cascade do |t|
     t.string   "subject"
     t.string   "segment_recipient", null: false
@@ -987,12 +938,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
   end
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
-
-  create_table "parishes", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "poll_answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -1828,54 +1773,16 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.string   "link_text"
     t.string   "link_url"
     t.string   "label"
-    t.boolean  "header",                     default: false
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.integer  "site_customization_page_id", default: 0
+    t.boolean  "header",      default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
-
-  add_index "widget_cards", ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id", using: :btree
 
   create_table "widget_feeds", force: :cascade do |t|
     t.string   "kind"
     t.integer  "limit",      default: 3
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "workshop_images", force: :cascade do |t|
-    t.integer  "workshop_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "workshop_users", force: :cascade do |t|
-    t.integer  "id_user"
-    t.integer  "workshop_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "status"
-  end
-
-  create_table "workshops", force: :cascade do |t|
-    t.string   "name"
-    t.string   "teacher"
-    t.string   "schedule"
-    t.integer  "quota"
-    t.string   "short_description"
-    t.text     "long_description"
-    t.string   "photo"
-    t.integer  "house_id"
-    t.integer  "id_age_range"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "status"
-  end
-
-  create_table "zonal_administrations", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_foreign_key "administrators", "users"
