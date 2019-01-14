@@ -429,7 +429,7 @@
   .mail-header {
     background: $pdf-primary;
     color: #fff;
-    padding: $line-height;
+    padding: $line-height * 2;
 
     h1 {
       font-size: rem-calc(60);
@@ -442,25 +442,31 @@
 
   .margin-bottom {
     img {
-      box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);
-      width: 100%
+      box-shadow: -16px 61px 49px -19px rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
   }
 
   .mail-body {
-    text-align: justify;
     color: $text-medium;
+    padding: $line-height * 2;
+    text-align: left;
 
     .button {
       background: #064c86;
-      box-shadow: -4px 18px 45px -19px rgba(0,0,0,0.75);
-      margin-bottom: $line-height;
+      box-shadow: -4px 18px 45px -19px rgba(0, 0, 0, 0.75);
+      margin-bottom: $line-height * 2;
       margin-top: $line-height;
     }
 
     img {
       margin-top: $line-height;
       max-width: rem-calc(120);
+    }
+
+    p {
+      font-size: rem-calc(24);
+      line-height: rem-calc(30);
     }
   }
 }
@@ -473,6 +479,7 @@
   .poster-header {
     background: $pdf-primary;
     color: #fff;
+
     h1 {
       color: #fff;
       text-align: left;
@@ -489,7 +496,7 @@
       position: absolute;
     }
 
-    .overflow-image{
+    .overflow-image {
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -533,7 +540,7 @@
 
   .poster-header {
     height: rem-calc(600);
-    padding: $line-height * 2 $line-height $line-height * 2;
+    padding: $line-height * 2 $line-height;
 
     h1 {
       font-size: rem-calc(60);
