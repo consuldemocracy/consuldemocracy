@@ -153,7 +153,7 @@ ul.menu > li a {
   background-size: 100%;
   background-repeat: no-repeat;
   @include breakpoint(small) {
-    height: 100px;
+    height: 200px;
   }
   @include breakpoint(medium) {
     height: 380px;
