@@ -4,7 +4,7 @@ module Budgets
     include CommentableActions
     include FlagActions
     include RandomSeed
-    include ImagesHelper
+    include ImageAttributes
 
     PER_PAGE = 10
 

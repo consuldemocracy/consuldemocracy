@@ -1,6 +1,6 @@
 class Admin::MilestonesController < Admin::BaseController
   include Translatable
-  include ImagesHelper
+  include ImageAttributes
 
   before_action :load_milestoneable, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :load_milestone, only: [:edit, :update, :destroy]

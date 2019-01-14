@@ -76,8 +76,4 @@ module ImagesHelper
                        "direct_upload[resource_relation]": "image")
   end
 
-  def image_attributes
-    [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-  end
-
 end
