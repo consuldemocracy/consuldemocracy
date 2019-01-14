@@ -60,6 +60,11 @@ class Migrations::LegacyLegislation::Annotation
         new_id: 87
       },
       {
+        old_id: 1,
+        title: "Ordenanza De Transparencia De La Ciudad De Madrid",
+        new_id: 88
+      },
+      {
         old_id: 6,
         title: "Carta de Servicios del Centro de Prevención del Deterioro Cognitivo",
         new_id: 89
@@ -83,6 +88,11 @@ class Migrations::LegacyLegislation::Annotation
         old_id: 2,
         title: "Carta de Servicios del Servicio de Ayuda a Domicilio",
         new_id: 90
+      },
+      {
+        old_id: 7,
+        title: "Plan de Derechos Humanos del Ayuntamiento de Madrid (2017-2020)",
+        new_id: 94
       }
     ]
   end
