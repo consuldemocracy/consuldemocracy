@@ -170,20 +170,20 @@ $budget-2018-yellow:   #fef384;
   }
 
   .jumbo {
-    background: #d8e9d8 image-url('welcome/background_header_mobile.jpg');
+    background: #ffeaac image-url('welcome/background_header_mobile.jpg');
     background-position: bottom;
     background-repeat: no-repeat;
     padding-bottom: rem-calc(72);
 
     @include breakpoint(medium) {
-      background: #d8e9d8 image-url('welcome/background_header.jpg');
+      background: #ffeaac image-url('welcome/background_header.jpg');
       background-size: cover;
     }
 
     h1 {
-      color: #4a5e4c;
+      color: $text;
       font-size: rem-calc(20);
-      font-weight: 300;
+      font-weight: bold;
       line-height: rem-calc(20);
       margin-top: $line-height / 2;
 
@@ -194,7 +194,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     .lead {
-      color: #4a5e4c;
+      color: $text;
       font-size: rem-calc(30);
       font-weight: 700;
       line-height: rem-calc(30);
@@ -218,7 +218,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     .button {
-      background: #425257;
+      background: #000;
       color: #fff;
     }
   }

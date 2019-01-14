@@ -38,6 +38,8 @@ $budget-2019-blue:        #d0e3e9;
 $budget-2019-blue-dark:   #425257;
 $budget-2019-orange:      #ffeed4;
 $budget-2019-orange-dark: #726e4f;
+$budget-2019-red:         #ef775b;
+$budget-2019-yellow:      #ffeaac;
 
 // Madrid corporate identity manual
 
@@ -2764,12 +2766,16 @@ ul {
 // -------------------------------
 .expanded.budget,
 .jumbo-budget {
-  background: $budget-2019-green;
+  background: $budget-2019-yellow;
 
   @include breakpoint(medium) {
-    background: $budget-2019-green image-url('budget_welcome/background_header.jpg');
-    background-position: 90% top;
+    background: $budget-2019-yellow image-url('budget_welcome/background_header.jpg');
+    background-position: 100% top;
     background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include breakpoint(large) {
     background-size: contain;
   }
 
@@ -2778,11 +2784,11 @@ ul {
   a,
   .back,
   .icon-angle-left {
-    color: $budget-2019-green-dark;
+    color: $text;
   }
 
   h2 {
-    color: $budget-2019-green-dark;
+    color: $text;
     font-size: rem-calc(30);
     font-weight: 700;
     line-height: rem-calc(30);
@@ -2793,23 +2799,23 @@ ul {
     min-height: $line-height * 11;
 
     h3 {
-      color: $budget-2019-blue-dark;
+      color: $text;
     }
   }
 
   &.budget-header {
-    background: $budget-2019-green;
+    background: $budget-2019-yellow;
 
     @include breakpoint(medium) {
-      background: $budget-2019-green image-url('budget_welcome/background_header.jpg');
-      background-position: 40% top;
+      background: $budget-2019-yellow image-url('budget_welcome/background_header.jpg');
+      background-position: 100% top;
       background-repeat: no-repeat;
       background-size: contain;
     }
   }
 
   .info {
-    background: #fffde8;
+    background: rgba(255, 253, 232, 0.8);
     border-bottom: 1px solid $budget-2019-orange;
 
     @include breakpoint(medium) {
