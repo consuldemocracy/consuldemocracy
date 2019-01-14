@@ -80,7 +80,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6.1'
   gem 'email_spec', '~> 2.1.0'
   gem 'rspec-rails', '~> 3.8'
-  gem 'selenium-webdriver', '~> 3.10'
+  gem 'selenium-webdriver', '~> 3.141'
 end
 
 group :development do
