@@ -4,8 +4,8 @@
   <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px;width: 100%;">
     <tbody>
       <tr>
-        <td style="background: #0300ff; padding: 20px; text-align: left;">
-          <h1 style="color: #fff; font-size: 60px; line-height: 60px">"<%= @proposal.title %>"</h1>
+        <td style="background: #0300ff; padding: 50px; padding-top: 0; text-align: left;">
+          <h1 style="color: #fff; font-size: 60px; line-height: 90px">"<%= @proposal.title %>"</h1>
           <h2 style="color: #fff; font-size: 40px; line-height: 60px""><%= t("dashboard.mailer.forward.subtitle").html_safe %></h2>
         </td>
       </tr>
@@ -18,9 +18,9 @@
     <%= image_tag "default_mailing.jpg", style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% end %>
 
-  <p><%= t("dashboard.mailer.forward.hi")%></p>
-  <p><%= t("dashboard.mailer.forward.introduction", org: setting['org_name']) %></p>
-  <p><%= t("dashboard.mailer.forward.support") %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.hi")%></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.introduction", org: setting['org_name']) %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.support") %></p>
 
   <table style="width: 100%;">
     <tbody>
@@ -40,13 +40,13 @@
     </tbody>
   </table>
 
-  <p><%= t("dashboard.mailer.forward.share") %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.share") %></p>
 
   <table style="width: 100%; margin-top: 24px;">
     <tbody>
       <tr>
         <td style="text-align: center;">
-          <h3><%= t("dashboard.mailer.forward.share_in") %></h3>
+          <h3 style="font-size: 22px; line-height: 10px;"><%= t("dashboard.mailer.forward.share_in") %></h3>
         </td>
       </tr>
       <tr>
