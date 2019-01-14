@@ -29,6 +29,10 @@ module AdminHelper
      "hidden_budget_investments"]
   end
 
+  def menu_budgets?
+    %w[budgets budget_groups budget_headings budget_investments].include?(controller_name)
+  end
+
   def menu_budget?
     ["spending_proposals"].include?(controller_name)
   end

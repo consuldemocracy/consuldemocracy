@@ -33,8 +33,7 @@ feature "Admin budget headings" do
     scenario "Displaying no headings for group" do
       visit admin_budget_group_headings_path(budget, group)
 
-      expect(page).to have_content "No headings created yet. "
-      expect(page).to have_content "Each user will be able to vote in only one heading per group."
+      expect(page).to have_content "There are no headings."
     end
 
     scenario "Displaying headings" do
