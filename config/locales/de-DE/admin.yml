@@ -1228,9 +1228,7 @@ de:
     site_customization:
       content_blocks:
         information: Informationen zu Inhaltsblöcken
-        about: Sie können HTML-Inhaltsblöcke erstellen, die in die Kopf- oder Fußzeile von CONSUL eingefügt werden.
-        top_links_html: "<strong>Kopfzeilen-Blöcke (Top_links)</strong> sind Blöcke von Links, die dieses Format haben müssen:"
-        footer_html: "<strong>Fußzeilenblöcke</strong> können jedes beliebige Format haben und zum Einfügen von Javascript, CSS oder benutzerdefiniertem HTML verwendet werden."
+        about: "Sie können HTML-Inhaltsblöcke erstellen, die in die Kopf- oder Fußzeile von CONSUL eingefügt werden."
         no_blocks: "Keine Inhaltsblöcke vorhanden."
         create:
           notice: Inhaltsblock erfolgreich erstellt
