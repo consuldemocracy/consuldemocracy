@@ -1234,9 +1234,7 @@ pl:
     site_customization:
       content_blocks:
         information: Informacje dotyczące bloków zawartości
-        about: Możesz tworzyć bloki zawartości HTML, które będą wstawiane do nagłówka lub stopki twojego CONSUL.
-        top_links_html: "<strong>Bloki nagłówków (top_links)</strong> to bloki linków, które muszą mieć ten format:"
-        footer_html: "<strong>Bloki stopek</strong> mogą mieć dowolny format i można ich używać do wstawiania kodu JavaScript, CSS lub niestandardowego kodu HTML."
+        about: "Możesz tworzyć bloki zawartości HTML, które będą wstawiane do nagłówka lub stopki twojego CONSUL."
         no_blocks: "Nie ma bloków treści."
         create:
           notice: Zawartość bloku została pomyślnie utworzona
