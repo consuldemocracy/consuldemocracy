@@ -117,7 +117,7 @@ es:
       headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
-      no_groups: "No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
         other: "Hay %{count} grupos de partidas presupuestarias"
@@ -133,9 +133,11 @@ es:
         edit: "Editar grupo"
         name: "Nombre del grupo"
         submit: "Guardar grupo"
+      index:
+        back: "Volver a presupuestos"
     budget_headings:
       name: "Nombre"
-      no_headings: "No hay partidas creadas todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
         other: "Hay %{count} partidas presupuestarias"
@@ -159,6 +161,8 @@ es:
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
+      index:
+        back: "Volver a grupos"
     budget_phases:
       edit:
         start_date: Fecha de Inicio
@@ -1345,10 +1349,9 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        information: Información sobre los bloques de texto
-        about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
-        top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
-        footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        information: "Información sobre los bloques de contenido"
+        about: "Puedes crear bloques de contenido HTML que se podrán incrustar en diferentes sitios de tu página."
+        html_format: "Un bloque de contenido es un grupo de enlaces, y debe de tener el siguiente formato:"
         no_blocks: "No hay bloques de texto."
         create:
           notice: Bloque creado correctamente
