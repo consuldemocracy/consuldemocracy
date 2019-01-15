@@ -266,32 +266,76 @@ ar:
         edit:
           back: عودة
           submit_button: حفظ التغييرات
+        errors:
+          form:
+            error: خطأ
         form:
+          enabled: تفعيل
+          process: العملية
+          debate_phase: مرحلة النقاش
+          draft_phase: مرحلة المسودة
+          draft_phase_description: إذا كانت هذه المرحلة نشطة ، فلن يتم إدراج العملية في فهرس العمليات. اسمح بمعاينة العملية وإنشاء محتوى قبل البدء.
+          allegations_phase: مرحلة التعليقات
+          proposals_phase: مرحلة الاقتراحات
+          start: بداية
+          end: نهاية
+          use_markdown: استخدم Markdown لتنسيق النص
           title_placeholder: عنوان العملية
           summary_placeholder: موجز قصير للوصف
           description_placeholder: إضافة وصف للعملية
           additional_info_placeholder: إضافة معلومات إضافية تعتبرها مفيدة
+          homepage: الوصف
+          homepage_description: هنا يمكنك شرح محتوى العملية
+          homepage_enabled: تم تفعيل الصفحة الرئيسية
         index:
           create: عملية جديدة
           delete: حذف
+          title: العمليات التشريعية
           filters:
             open: فتح
             next: التالي
             past: السابق
+            all: الكل
         new:
           back: عودة
+          title: قم بإنشاء عملية تشريع تشاركية جديدة
           submit_button: إنشاء عملية
+        proposals:
+          select_order: فرز حسب
+          orders:
+            id: Id
+            title: عنوان
+            supports: سندات
         process:
+          title: العملية
+          comments: تعليقات
           status: الحالة
           creation_date: تاريخ الإنشاء
+          status_open: فتح
           status_closed: مغلق
           status_planned: مخطط
         subnav:
           info: معلومات
+          homepage: الصفحة الرئيسية
+          draft_versions: صياغة
+          questions: الحوارات
+          proposals: المقترحات
+          milestones: التالية
+      homepage:
+        edit:
+          title: قم بتكوين الصفحة الرئيسية للمعالجة
       proposals:
+        index:
+          title: العنوان
+          back: عودة
+          id: Id
+          supports: سندات
+          select: حدّد
+          selected: محدّد
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
+          custom_categories_placeholder: ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',') وبين الاقتباسات ("")
     menu:
       hidden_comments: التعليقات المخفية
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
