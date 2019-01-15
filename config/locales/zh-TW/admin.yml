@@ -1234,9 +1234,7 @@ zh-TW:
     site_customization:
       content_blocks:
         information: 有關內容塊的資訊
-        about: 您可以創建要插入到CONSUL頁首或頁尾中的 HTML 內容塊。
-        top_links_html: "<strong>頁首塊 (top_links)</strong> 是必須具有此格式的連結塊："
-        footer_html: "<strong>頁尾塊</strong> 可以有任何格式，並可以用於插入 Javascript、CSS 或自訂 HTML。"
+        about: "您可以創建要插入到CONSUL頁首或頁尾中的 HTML 內容塊。"
         no_blocks: "沒有內容塊。"
         create:
           notice: 內容塊已成功創建
