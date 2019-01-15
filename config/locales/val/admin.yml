@@ -1346,9 +1346,7 @@ val:
     site_customization:
       content_blocks:
         information: Informació sobre els blocs de text
-        about: Pots crear blocs de HTML que s'incrustaràn en la capçalera o al peu del teu CONSUL.
-        top_links_html: "Els <strong>blocs de la capçalera (top_links)</strong> son blocs d'enllaços que han de crearse en aquest format:"
-        footer_html: "Els <strong>blocs del peu (footer)</strong> poden tenir qualsevol format i es poden utilitzar per guardar empremtes Javascript, contingut CSS o contingut HTML personalitzat."
+        about: "Pots crear blocs de HTML que s'incrustaràn en la capçalera o al peu del teu CONSUL."
         no_blocks: "No hi ha blocs de text."
         create:
           notice: Bloc creat correctament
