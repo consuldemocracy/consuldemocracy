@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115142648) do
+ActiveRecord::Schema.define(version: 20190115143151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -629,9 +629,6 @@ ActiveRecord::Schema.define(version: 20190115142648) do
   add_index "legislation_process_translations", ["locale"], name: "index_legislation_process_translations_on_locale", using: :btree
 
   create_table "legislation_processes", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.text     "additional_info"
     t.date     "start_date"
     t.date     "end_date"
     t.date     "debate_start_date"
@@ -643,7 +640,6 @@ ActiveRecord::Schema.define(version: 20190115142648) do
     t.datetime "hidden_at"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.text     "summary"
     t.boolean  "debate_phase_enabled",       default: false
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
