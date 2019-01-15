@@ -6,7 +6,7 @@ section "Creating default Milestone Statuses" do
 end
 
 section "Creating investment milestones" do
-  [Budget::Investment, Proposal].each do |model|
+  [Budget::Investment, Proposal, Legislation::Process].each do |model|
     model.find_each do |record|
       rand(1..5).times do
         milestone = record.milestones.build(
