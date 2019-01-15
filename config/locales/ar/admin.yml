@@ -381,8 +381,18 @@ ar:
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
       hidden_users: المستخدمون مخفيون
       administrators: المدراء
+      managers: مدراء
+      moderators: المشرفون
+      messaging_users: رسائل للمستخدمين
+      newsletters: المجلات
       admin_notifications: إشعارات
+      system_emails: نظام البريد الإلكتروني
+      emails_download: تحميل رسائل البريد الإلكتروني
+      valuators: المقيمون
+      poll_officers: أعوان الاستطلاع
       polls: الاستبيانات
+      poll_booths: موقع المقصورات
+      poll_booth_assignments: وظائف المقصورات
       settings: الإعدادات العامة
       site_customization:
         information_texts_menu:
