@@ -1228,9 +1228,7 @@ sv:
     site_customization:
       content_blocks:
         information: Information om innehållsblock
-        about: Du kan skapa innehållsblock i HTML som kan infogas i sidhuvudet eller sidfoten på din CONSUL-installation.
-        top_links_html: "<strong>Header-block (top_links)</strong> är innehållsblock med länkar som måste ha detta format:"
-        footer_html: "<strong>Sidfot-block</strong> kan ha valfritt format och kan användas för att infoga Javascript, CSS eller anpassad HTML."
+        about: "Du kan skapa innehållsblock i HTML som kan infogas i sidhuvudet eller sidfoten på din CONSUL-installation."
         no_blocks: "Det finns inga innehållsblock."
         create:
           notice: Innehållsblocket har skapats
