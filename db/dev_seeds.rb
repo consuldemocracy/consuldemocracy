@@ -15,6 +15,10 @@ def log(msg)
   @logger.info "#{msg}\n"
 end
 
+def random_locales
+  [I18n.default_locale, *I18n.available_locales.sample(4)].uniq
+end
+
 require_relative 'dev_seeds/settings'
 require_relative 'dev_seeds/geozones'
 require_relative 'dev_seeds/users'
