@@ -14,7 +14,7 @@ section "Creating investment milestones" do
           status_id: Milestone::Status.all.sample
         )
 
-        I18n.available_locales.map do |locale|
+        random_locales.map do |locale|
           Globalize.with_locale(locale) do
             milestone.description = "Description for locale #{locale}"
             milestone.title = I18n.l(Time.current, format: :datetime)
