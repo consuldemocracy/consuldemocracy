@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115133846) do
+ActiveRecord::Schema.define(version: 20190115134129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,8 +104,6 @@ ActiveRecord::Schema.define(version: 20190115133846) do
   add_index "banner_translations", ["locale"], name: "index_banner_translations_on_locale", using: :btree
 
   create_table "banners", force: :cascade do |t|
-    t.string   "title",            limit: 80
-    t.string   "description"
     t.string   "target_url"
     t.date     "post_started_at"
     t.date     "post_ended_at"
