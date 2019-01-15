@@ -1,15 +1,13 @@
-<div <% if process.background_color.present? && process.font_color.present? %> 
-    class="legislation-hero jumboAlt" style="background:<%= process.background_color %>; color:<%= process.font_color %>;"
-  <% else %>
-    class="legislation-hero jumbo"  
+<div class="legislation-hero jumbo" <% if banner_color? %> 
+    style="background:<%= process.background_color %>; color:<%= process.font_color %>;"
   <% end %>>
   <div class="row">
     <div class="small-12 medium-9 column">
 
-      <% if process.background_color.present? && process.font_color.present? %>
-        <%= link_to content_tag(:span, nil, class: "icon-angle-left",
-                   style: "color:#{process.font_color};") + t("shared.back"),
-                   legislation_processes_path, class: 'back', style: 'color:#FFFFFF !important;'%>
+      <% if banner_color? %>
+        <%= link_to t("shared.back"), legislation_processes_path,
+                                      class: "icon-angle-left",
+                                      style: "color:#{process.font_color};" %>
       <% else %>
         <%= back_link_to legislation_processes_path %>
       <% end %>

@@ -37,4 +37,8 @@ module LegislationHelper
       "milestones"     => admin_legislation_process_milestones_path(process)
     }
   end
+
+  def banner_color?
+    @process.background_color.present? && @process.font_color.present?
+  end
 end
