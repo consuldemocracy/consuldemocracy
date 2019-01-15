@@ -1235,9 +1235,7 @@ it:
     site_customization:
       content_blocks:
         information: Informazioni sui blocchi di contenuto
-        about: Puoi creare blocchi di contenuto in HTML da inserire nell’intestazione o nel piè di pagina del tuo CONSUL.
-        top_links_html: "I <strong>blocchi intestazione (top_links)</strong> sono blocchi di link che devono avere questo formato:"
-        footer_html: "I <strong>blocchi piè di pagina</strong> possono avere qualsiasi formato e possono essere usati per inserire Javascript, CSS o HTML personalizzato."
+        about: "Puoi creare blocchi di contenuto in HTML da inserire nell’intestazione o nel piè di pagina del tuo CONSUL."
         no_blocks: "Non ci sono blocchi di contenuto."
         create:
           notice: Blocco di contenuto creato con successo
