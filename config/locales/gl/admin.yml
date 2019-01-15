@@ -1346,9 +1346,7 @@ gl:
     site_customization:
       content_blocks:
         information: Información sobre bloques de contido
-        about: Pode crear bloques de contido HTML para ser inseridos na cabeceira ou no rodapé do seu CONSUL.
-        top_links_html: "Os <strong>bloques da cabeceira (top_links)</strong> son bloques que deben ter este formato:"
-        footer_html: "Os <strong> bloques do rodapé</strong> poden ter calquera formato, e poden usarse para inserir Javascript, CSS ou HTML personalizado."
+        about: "Pode crear bloques de contido HTML para ser inseridos na cabeceira ou no rodapé do seu CONSUL."
         no_blocks: "Non hai bloques de contido."
         create:
           notice: O bloque creouse correctamente
