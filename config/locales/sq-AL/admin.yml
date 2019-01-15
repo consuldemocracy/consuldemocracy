@@ -1260,9 +1260,7 @@ sq:
     site_customization:
       content_blocks:
         information: Informacion rreth blloqeve të përmbajtjes
-        about: Mund të krijoni blloqe të përmbajtjes HTML që duhet të futni në kokë ose në fund të CONSUL-it tuaj.
-        top_links_html: "<strong>Header blocks(lidhjet kryesore)</strong>janë blloqe të lidhjeve që duhet të kenë këtë format:"
-        footer_html: "<strong>Footer blocks</strong>mund të ketë ndonjë format dhe mund të përdoret për të futur Javascript, CSS ose HTML."
+        about: "Mund të krijoni blloqe të përmbajtjes HTML që duhet të futni në kokë ose në fund të CONSUL-it tuaj."
         no_blocks: "Nuk ka blloqe përmbajtjeje."
         create:
           notice: Blloku i përmbajtjes është krijuar me sukses
