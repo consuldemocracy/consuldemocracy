@@ -1,13 +1,9 @@
 class Admin::AreasController < Admin::BaseController
-  before_action :set_area, only: [:show, :edit, :update, :destroy]
+  before_action :set_area, only: [:edit, :update, :destroy]
 
   # GET /areas
   def index
     @areas = Area.all
-  end
-
-  # GET /areas/1
-  def show
   end
 
   # GET /areas/new
@@ -24,7 +20,7 @@ class Admin::AreasController < Admin::BaseController
     @area = Area.new(area_params)
 
     if @area.save
-      redirect_to @area, notice: 'Area was successfully created.'
+      redirect_to admin_areas_path
     else
       render :new
     end
@@ -33,7 +29,7 @@ class Admin::AreasController < Admin::BaseController
   # PATCH/PUT /areas/1
   def update
     if @area.update(area_params)
-      redirect_to @area, notice: 'Area was successfully updated.'
+      redirect_to admin_areas_path
     else
       render :edit
     end
@@ -42,7 +38,7 @@ class Admin::AreasController < Admin::BaseController
   # DELETE /areas/1
   def destroy
     @area.destroy
-    redirect_to areas_url, notice: 'Area was successfully destroyed.'
+    redirect_to admin_areas_path
   end
 
   private
@@ -53,6 +49,6 @@ class Admin::AreasController < Admin::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def area_params
-      params[:area]
+      params.require(:area).permit(translations_attributes: [:id, :name, :locale, :_destroy])
     end
 end

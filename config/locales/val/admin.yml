@@ -1,17 +1,26 @@
 val:
   admin:
+    areas:
+      areas_title: Àrees
+      editing: Editar àrea
+      error: ha impedit guardar l'àrea
+      example_name: Urbanisme, Turisme, etc.
+      name: Nom
+      new_area: Nova Àrea
+      no_areas: "No hi ha cap àrea."
     header:
       title: Administració
     actions:
       actions: Accions
       confirm: Estas segur?
       confirm_hide: Confirmar
+      create: Crear
       hide: Amagar
       hide_author: Bloquejar a l'autor
       restore: Restaurar
       mark_featured: Destacar
       unmark_featured: Llevar destacat
-      edit: Editar
+      edit: Guardar
       configure: Configurar
       delete: Eliminar
     banners:

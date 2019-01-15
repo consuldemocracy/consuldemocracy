@@ -1,8 +1,9 @@
-<%= form_for(@area) do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @area %>
+
+<%= translatable_form_for [:admin, @area] do |f| %>
   <% if @area.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@area.errors.count, "error") %> prohibited this area from being saved:</h2>
-
+      <h2><%= pluralize(@area.errors.count, "error ") + t('admin.areas.error')%>:</h2>
       <ul>
       <% @area.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,8 +11,12 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="small-12">
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_field :name, label: t('admin.areas.name') %>
+    <% end %>
+    <div class="actions">
+      <%= f.submit t("admin.actions.#{action}"), class: "button success" %>
+    </div>
   </div>
 <% end %>

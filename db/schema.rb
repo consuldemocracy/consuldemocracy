@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190114161539) do
+ActiveRecord::Schema.define(version: 20190115115138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,17 @@ ActiveRecord::Schema.define(version: 20190114161539) do
 
   add_index "annotations", ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "area_translations", force: :cascade do |t|
+    t.integer  "area_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "area_translations", ["area_id"], name: "index_area_translations_on_area_id", using: :btree
+  add_index "area_translations", ["locale"], name: "index_area_translations_on_locale", using: :btree
 
   create_table "areas", force: :cascade do |t|
     t.string   "name"

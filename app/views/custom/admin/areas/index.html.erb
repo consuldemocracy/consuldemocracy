@@ -1,25 +1,28 @@
-<p id="notice"><%= notice %></p>
+<h1><%= t('admin.areas.areas_title') %></h1>
 
-<h1>Listing Areas</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @areas.each do |area| %>
-      <tr>
-        <td><%= link_to 'Show', admin_area %></td>
-        <td><%= link_to 'Edit', edit_admin_area_path(area) %></td>
-        <td><%= link_to 'Destroy', admin_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Area', new_admin_area_path %>
+<%= link_to t('admin.actions.create'),
+              new_admin_area_path, class: 'button float-right' %>
+<% if @areas.any? %>
+  <table>
+    <thead>
+      <th class="large-10 small-6"><%= t("admin.areas.name") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+      <% @areas.each do |area| %>
+        <tr>
+          <td><%= link_to area.name, edit_admin_area_path(area) %></td>
+          <td>
+            <%= link_to t('admin.actions.delete'),
+                        admin_area_path(area), method: :delete,
+                        data: { confirm: t('admin.actions.confirm') } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class='callout primary'>
+    <%= t('admin.areas.no_areas') %>
+  </div>
+<% end %>

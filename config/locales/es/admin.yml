@@ -1,7 +1,18 @@
 es:
   admin:
+    areas:
+      areas_title: Áreas
+      editing: Editar área
+      error: ha impedido guardar el área
+      example_name: Urbanismo, Turismo, etc.
+      name: Nombre
+      new_area: Nueva Área
+      no_areas: "No hay ninguna área."
     actions:
+      actions: Acciones
+      confirm: ¿Estás seguro?
       confirm_hide: Confirmar moderación
+      create: Crear
       hide_author: Bloquear al autor
       restore: Volver a mostrar
       unmark_featured: Quitar destacado
