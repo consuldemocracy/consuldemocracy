@@ -1239,9 +1239,7 @@ pt-BR:
     site_customization:
       content_blocks:
         information: Infromação sobre os blocos de conteúdo
-        about: Voce pode criar blocos de conteúdo de HTML para serem inseridos no cabeçalho dou rodapé do seu CONSUL.
-        top_links_html: "<strong>blocos de cabeçalho(top_links)</strong> são blocos de links que precisam ter esse formato:"
-        footer_html: "<strong>blocos de rodapé</strong>podem ter qualquer formato e ser usados para inserir Javascript, CSS ou HTML personalizado."
+        about: "Voce pode criar blocos de conteúdo de HTML para serem inseridos no cabeçalho dou rodapé do seu CONSUL."
         no_blocks: "Não há blocos de conteúdo."
         create:
           notice: Bloco de conteúdo criado com sucesso
