@@ -1267,9 +1267,7 @@ nl:
     site_customization:
       content_blocks:
         information: Informatie over inhoudsblokken
-        about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
-        top_links_html: "<strong>header blokken (top_links)</strong> zijn blokken van links die deze indeling moeten hebben:"
-        footer_html: "<strong>voettekst blokken</strong> kan elk formaat hebben en kan worden gebruikt voor het invoegen van Javascript, CSS of een aangepaste HTML-code."
+        about: "You can create HTML content blocks to be inserted in the header or the footer of your Consul."
         no_blocks: "Er zijn geen inhoudsblokken."
         create:
           notice: Content paragraaf toegevoegd
