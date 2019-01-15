@@ -249,9 +249,23 @@ ar:
         registered_at: 'تم الحفظ في:'
     hidden_budget_investments:
       index:
+        filters:
+          without_confirmed_hide: معلق
+        title: استثمارات الميزانية مخفية
         no_hidden_budget_investments: لا يوجد هناك ميزانيات استثمارات مخفية
     legislation:
       processes:
+        create:
+          notice: 'تم إجراء العملية بنجاح <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن إجراء العملية
+        update:
+          notice: 'تم تحديث العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن تحديث العملية
+        destroy:
+          notice: تم حذف العملية بنجاح
+        edit:
+          back: عودة
+          submit_button: حفظ التغييرات
         form:
           title_placeholder: عنوان العملية
           summary_placeholder: موجز قصير للوصف
