@@ -20,12 +20,6 @@ en:
   comment_kinds:
     comment: Comment
     question: Question
-  answers:
-    index:
-      title: Answer sent
-      sent: Your answer has been sent. Thank you for participating.
-    new:
-      send: Send answer
   debates:
     index:
       top: Featured
