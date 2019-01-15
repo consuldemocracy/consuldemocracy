@@ -40,19 +40,7 @@ SitemapGenerator::Sitemap.create do
 
   # old processes
   add processes_path
-  add open_government_path
-  add open_government_doc_path
-  add service_letters_path
-  add service_letters_1_path
-  add service_letters_2_path
-  add service_letters_3_path
-  add service_letters_4_path
-  add service_letters_5_path
   add open_plenary_path
-  add transparency_ordinance_path
-  add transparency_ordinance_draft_path
-  add lobbies_path
-  add lobbies_draft_path
 
   # landings
   add g1000_path

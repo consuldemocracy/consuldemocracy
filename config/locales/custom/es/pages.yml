@@ -83,9 +83,6 @@ es:
     processes:
       back: Volver
       index:
-        process_1_title: Ordenanza de Transparencia
-        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo.
-        process_1_button: Más información sobre la Ordenanza
         process_2_title: Remodelación de Plaza España
         process_2_description_close: La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
         process_2_button: Ver resultados
@@ -94,33 +91,12 @@ es:
         process_3_button: Ver propuestas y preguntas
         process_5_title: Plan de Derechos Humanos
         process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
-        process_5_title_voting: Plan de Derechos Humanos
-        process_5_description_voting_html: "Hasta el 4 de noviembre los ciudadanos priorizaron las medidas y comentaron el borrador del Plan de Derechos Humanos."
-        process_5_button_voting: Más información
-        process_6_title: Cartas de Servicios
-        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
-        process_6_button: Ver resultados de participación
         process_7_title: "Urbanismo: nuevos bancos"
         process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
         process_7_button: Ver resultados de la votación
-        process_9_title: "Alianza para el Gobierno Abierto"
-        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
-        process_9_button: "Más información"
         process_plaza_title: Remodelación de Plaza España
         process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.
         more_info_title: "Ver más información del proceso "
-      process_1:
-        title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
-        comment: dejar tus comentarios
-        text: |
-          Este es el texto sometido a consulta pública. En breve publicaremos el texto del proyecto inicial de Ordenanza que apruebe la Junta de Gobierno de la Ciudad de Madrid con las aportaciones ciudadanas que se hayan incluido.
-
-          La Ordenanza regulará la publicidad activa, el derecho de acceso y la reutilización de la información pública, así como el registro de lobbies, desde un principio básico de máxima transparencia y divulgación de la información que genera el Ayuntamiento de Madrid y el resto de los sujetos obligados por la norma.
-
-          Este texto, en cuya elaboración ha participado un nutrido grupo de representantes de diferentes áreas de gobierno y órganos directivos municipales, surge con la vocación de convertir la transparencia en uno de los ejes inspiradores de la actuación municipal y para lograr devolver la información que genera la Administración a sus verdaderos propietarios, los ciudadanos.
-
-          El proceso de consulta pública finalizó el 31 de Enero de 2016.
-        button: Ver borrador
       process_3:
         view_all: Ver propuestas y preguntas más votadas
         view_questions: Ver todas las preguntas enviadas

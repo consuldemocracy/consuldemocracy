@@ -251,12 +251,6 @@ es:
       district_title: "VOTA PROYECTOS DE UN DISTRITO"
       district_text_html: "Recuerda que puedes votar también proyectos de <strong>uno de los distritos</strong>."
       district_button: "Votar proyectos de un distrito"
-  processes:
-    lobbies:
-      title: "Registro de lobbies del Ayuntamiento de Madrid"
-      description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
-    shared:
-      more_info: "Más información"
   polls_reports:
     label: "Informe técnico"
     button: "Descargar informe técnico"
