@@ -1258,9 +1258,7 @@ so:
     site_customization:
       content_blocks:
         information: Maclumaad kusaabsan mowduuca joojinta
-        about: Waxaad abuuri kartaa xayeysiin HTML ah oo la geliyo madaxa ama boggaaga Qunsulka.
-        top_links_html: "<Xogaan> (isku xirka sare) </ xoogan> waa kuwo isku xiran oo ay tahay in ay leeyihiin qaabkan:"
-        footer_html: "<xoogan> Noocyada hoose ee </ xoogan> waxay yeelan karaan qaab kasta oo waxaa loo isticmaali karaa in la geliyo Javascript, CSS ama HTML-ga caadiga ah."
+        about: "Waxaad abuuri kartaa xayeysiin HTML ah oo la geliyo madaxa ama boggaaga Qunsulka."
         no_blocks: "Ma jiraan wax xuduud ah."
         create:
           notice: Waduca joojinta ayaasi gula lo abuuray
