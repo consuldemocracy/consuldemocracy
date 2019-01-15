@@ -1114,9 +1114,7 @@ es-AR:
     site_customization:
       content_blocks:
         information: Información sobre los bloques de contenido
-        about: Puede crear bloques de contenido HTML para ser insertados en el encabezado o en el final de su CONSUL.
-        top_links_html: "<strong>Encabezados (top_links)</strong> bloques de direcciones deben tener este formato:"
-        footer_html: "<strong>bloques finales</strong>pueden tener cualquier formato y ser usados para insertar javascript, CSS o HTML personalizados."
+        about: "Puede crear bloques de contenido HTML para ser insertados en el encabezado o en el final de su CONSUL."
         no_blocks: "No hay bloques de contenido."
         create:
           notice: Bloque creado correctamente
