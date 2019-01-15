@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115144213) do
+ActiveRecord::Schema.define(version: 20190115144450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -941,8 +941,6 @@ ActiveRecord::Schema.define(version: 20190115144213) do
   add_index "poll_question_answer_videos", ["answer_id"], name: "index_poll_question_answer_videos_on_answer_id", using: :btree
 
   create_table "poll_question_answers", force: :cascade do |t|
-    t.string  "title"
-    t.text    "description"
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted",  default: false
