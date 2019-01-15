@@ -1,4 +1,4 @@
-shared_examples "progressable" do |factory_name, path_name|
+shared_examples "admin_progressable" do |factory_name, path_name|
   let!(:progressable) { create(factory_name) }
 
   feature "Manage progress bars" do
