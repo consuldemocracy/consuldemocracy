@@ -71,7 +71,7 @@ Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
-
+Setting['feature.spending_proposals'] = true
 Setting['feature.proposals'] = true
 Setting['feature.featured_proposals'] = true
 Setting['feature.spending_proposals'] = nil
@@ -92,6 +92,7 @@ Setting['feature.map'] = nil
 Setting['feature.allow_images'] = true
 Setting['feature.allow_attached_documents'] = true
 Setting['feature.help_page'] = true
+Setting['feature.areas'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil

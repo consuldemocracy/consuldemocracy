@@ -1,4 +1,8 @@
 class Admin::AreasController < Admin::BaseController
+  include FeatureFlags
+
+  feature_flag :areas
+
   before_action :set_area, only: [:edit, :update, :destroy]
 
   # GET /areas
