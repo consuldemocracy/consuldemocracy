@@ -336,9 +336,51 @@ ar:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
           custom_categories_placeholder: ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',') وبين الاقتباسات ("")
+      draft_versions:
+        create:
+          notice: 'تم إجراء المسودة بنجاح <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن إجراء المسودة
+        update:
+          notice: 'تم تحديث المسودة بنجاح <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن تحديث المسودة
+      questions:
+        table:
+          title: العنوان
+          question_options: خيارات السؤال
+          answers_count: عدد الإجابات
+          comments_count: عدد التعليقات
+        question_option_fields:
+          remove_option: إزالة الخيار
+      milestones:
+        index:
+          title: التالية
+    managers:
+      index:
+        title: مدراء
+        name: الاسم
+        email: البريد الإلكتروني
+        no_managers: لا يوجد مدراء.
+      manager:
+        add: إضافة
+        delete: حذف
+      search:
+        title: 'المدراء: بحث المستخدم'
     menu:
+      activity: نشاط المشرف
+      admin: قائمة المدير
+      banner: إدارة اللافتات
+      poll_questions: الأسئلة
+      proposals: المقترحات
+      proposals_topics: مواضيع المقترحات
+      budgets: الميزانية التشاركية
+      geozones: إدارة المناطق الجغرافية
       hidden_comments: التعليقات المخفية
+      hidden_debates: حوارات مخفية
+      hidden_proposals: الإقتراحات المخفية
+      hidden_budget_investments: استثمارات الميزانية مخفية
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
+      hidden_users: المستخدمون مخفيون
+      administrators: المدراء
       admin_notifications: إشعارات
       polls: الاستبيانات
       settings: الإعدادات العامة
