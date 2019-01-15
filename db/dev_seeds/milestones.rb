@@ -22,7 +22,24 @@ section "Creating investment milestones" do
           end
         end
       end
+
+      if rand < 0.8
+        record.progress_bars.create!(kind: :primary, percentage: rand(ProgressBar::RANGE))
+      end
+
+      rand(0..3).times do
+        progress_bar = record.progress_bars.build(
+          kind:       :secondary,
+          percentage: rand(ProgressBar::RANGE)
+        )
+
+        random_locales.map do |locale|
+          Globalize.with_locale(locale) do
+            progress_bar.title = "Description for locale #{locale}"
+            progress_bar.save!
+          end
+        end
+      end
     end
   end
 end
-
