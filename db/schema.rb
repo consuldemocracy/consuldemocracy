@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115133404) do
+ActiveRecord::Schema.define(version: 20190115133846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 20190115133404) do
   add_index "admin_notification_translations", ["locale"], name: "index_admin_notification_translations_on_locale", using: :btree
 
   create_table "admin_notifications", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
     t.string   "link"
     t.string   "segment_recipient"
     t.integer  "recipients_count"
