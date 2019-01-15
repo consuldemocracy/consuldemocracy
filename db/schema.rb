@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115134459) do
+ActiveRecord::Schema.define(version: 20190115142030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -722,7 +722,6 @@ ActiveRecord::Schema.define(version: 20190115134459) do
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
-    t.string   "value"
     t.integer  "answers_count",           default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                          null: false
