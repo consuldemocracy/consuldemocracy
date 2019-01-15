@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115143151) do
+ActiveRecord::Schema.define(version: 20190115143931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -807,8 +807,6 @@ ActiveRecord::Schema.define(version: 20190115143151) do
   create_table "milestones", force: :cascade do |t|
     t.integer  "milestoneable_id"
     t.string   "milestoneable_type"
-    t.string   "title",              limit: 80
-    t.text     "description"
     t.datetime "publication_date"
     t.integer  "status_id"
     t.datetime "created_at",                    null: false
