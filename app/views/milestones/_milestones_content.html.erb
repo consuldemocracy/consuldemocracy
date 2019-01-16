@@ -1,12 +1,12 @@
 <div class="row">
   <div class="small-12 column">
+    <%= render "milestones/progress_bars", milestoneable: milestoneable %>
+
     <% if milestoneable.milestones.blank? %>
       <div class="callout primary text-center">
         <%= t("milestones.index.no_milestones") %>
       </div>
     <% end %>
-
-    <%= render "milestones/progress_bars", milestoneable: milestoneable %>
 
     <section class="timeline">
       <ul class="no-bullet">

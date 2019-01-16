@@ -1,66 +1,36 @@
-.tab-milestones .timeline ul {
-  margin-top: rem-calc(40);
-  position: relative;
-}
+$progress-bar-background: #fef0e2;
+$progress-bar-color:      #fea230;
 
-.tab-milestones .progress-bars {
-  margin-top: $line-height / 2;
+.tab-milestones {
 
-  h5 {
-    font-size: rem-calc(25);
-  }
+  .progress-bars {
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height;
 
-  ul {
-    border-spacing: rem-calc(15) $line-height / 4;
-    display: table;
-    margin-top: $line-height / 2;
-
-    li {
-      display: table-row;
-
-      > * {
-        display: table-cell;
-        vertical-align: middle;
-      }
+    h5 {
+      font-size: rem-calc(24);
     }
-  }
 
-  [data-text] {
-    display: block;
-    font-weight: bold;
-    position: relative;
+    .progress {
+      background: $progress-bar-background;
+      border-radius: rem-calc(6);
+      position: relative;
+    }
 
-    &::after {
-      content: attr(data-text);
-      left: 0;
-      position: absolute;
+    .progress-meter {
+      background: $progress-bar-color;
+      border-radius: rem-calc(6);
+    }
+
+    .progress-meter-text {
+      color: #000;
+      right: 12px;
       text-align: right;
-      top: -0.1rem;
-      width: 100%;
-    }
-  }
-
-  progress {
-    $background-color: #fef0e2;
-    $progress-color: #fea230;
-
-    background-color: $background-color;
-    color: $progress-color;
-
-    &.primary {
-      width: 100%;
+      transform: translate(0%, -50%);
     }
 
-    &::-webkit-progress-bar {
-      background-color: $background-color;
-    }
-
-    &::-webkit-progress-value {
-      background-color: $progress-color;
-    }
-
-    &::-moz-progress-bar {
-      background-color: $progress-color;
+    .milestone-progress .row {
+      margin-bottom: $line-height / 2;
     }
   }
 }
