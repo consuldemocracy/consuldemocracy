@@ -536,6 +536,11 @@ ar:
       recount_scrutiny: إعادة الفرز والتدقيق
     booth_assignments:
       manage_assignments: إدارة المهام
+      manage:
+        assignments_list: "%{poll} تعيينات للاقتراع"
+        status:
+          assign_status: تعيينات
+          assigned: تم التعيين
     polls:
       index:
         title: "قائمة الاستبيانات المفعلة"
