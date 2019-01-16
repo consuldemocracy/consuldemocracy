@@ -44,6 +44,8 @@ class Legislation::Process < ActiveRecord::Base
   validates :allegations_end_date, presence: true, if: :allegations_start_date?
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
   validate :valid_date_ranges
+  validates :background_color, format: { allow_blank: true, with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i }
+  validates :font_color, format: { allow_blank: true, with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i }
 
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current)
                     .order('id DESC') }
