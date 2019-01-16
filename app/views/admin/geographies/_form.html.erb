@@ -26,6 +26,13 @@
   </div>
 
   <div class="row">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.label :budget_headings, t("admin.geographies.geography.color") %>
+      <%= f.color_field :color, {label: false} %>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="documents small-12 column">
       <%= render 'documents/nested_documents', documentable: @geography, f: f %>
     </div>

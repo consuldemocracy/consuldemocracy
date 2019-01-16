@@ -6,6 +6,7 @@ class Geography < ActiveRecord::Base
                accepted_content_types: [ "application/json", "text/plain" ]
 
   validates :name, presence: true
+  validates :color, presence: true
   validates_with GeojsonFormat
 
   has_many :headings, class_name: Budget::Heading

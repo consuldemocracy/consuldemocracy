@@ -21,6 +21,7 @@ class BudgetsController < ApplicationController
     @budgets_coordinates = current_budget_map_locations
     @banners = Banner.in_section('budgets').with_active
     @geographies_data = Geography.all.map{ |g| { outline_points: g.outline_points,
+                                                 color: g.color,
                                                  heading_id: (@headings_geographies.key?(g.id) ? @headings_geographies[g.id] : nil ) } }
   end
 

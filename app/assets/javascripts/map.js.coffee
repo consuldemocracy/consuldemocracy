@@ -44,8 +44,7 @@ App.Map =
       return marker
 
     createPolygon = (polygon_data) ->
-      colors = ['#0081aa', '#0097aa', '#0063aa', '#00baaa'];
-      polygon  = L.polygon(polygon_data.outline_points, {color: colors[Math.floor(Math.random() * colors.length)]})
+      polygon  = L.polygon(polygon_data.outline_points, {color: polygon_data.color})
       if polygon_data.heading_id
         polygon.on 'click', openPolygonPopup
         polygon.options['heading_id'] = polygon_data.heading_id

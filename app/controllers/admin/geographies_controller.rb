@@ -29,7 +29,6 @@ class Admin::GeographiesController < Admin::BaseController
 
   def update
     if @geography.update(geography_params)
-      reset_outline_points
       redirect_to admin_geographies_path, notice: 'Geography was successfully updated.'
     else
       render :edit
@@ -52,15 +51,7 @@ class Admin::GeographiesController < Admin::BaseController
     end
 
     def geography_params
-      documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-      params.require(:geography).permit(:name, heading_ids: [], documents_attributes: documents_attributes)
-    end
-
-    def reset_outline_points
-      if not @geography.documents.any?
-        @geography.outline_points = []
-      end
-      @geography.save
+      params.require(:geography).permit(:name, :color, :outline_points, heading_ids: [])
     end
 
 end

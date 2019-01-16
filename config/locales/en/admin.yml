@@ -1288,6 +1288,7 @@ en:
       geography:
         name: Name
         related_headings: Related Headings
+        color: Geography color
         geojson_file: GeoJSON file
       errors:
         form:
