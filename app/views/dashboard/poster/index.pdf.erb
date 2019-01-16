@@ -9,13 +9,14 @@
 <body class="dashboard-poster-pdf">
   <div class="poster-header">
     <h1>
-      <%= t("dashboard.poster.index.poster_title") %>
+      <strong><%= t("dashboard.poster.index.poster_title") %>
       <br>
       <%= wicked_pdf_image_tag("finger.png") %>
       <%= t("dashboard.poster.index.poster_subtitle") %>
+      </strong>
     </h1>
     <p class="intro">
-      <%= t("dashboard.poster.index.intro_text").html_safe %>
+      <%= t("dashboard.poster.index.intro_text", org: Setting["org_name"]).html_safe %>
     </p>
     <p class="text-center proposal-code">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
@@ -28,11 +29,13 @@
       <% end %>
     </div>
     <div class="poster-content">
-      <h2 class="text-center"><%= t("dashboard.poster.index.support") %></h2>
-      <div class="quote">
-        <h3>"<%= proposal.title %>"</h3>
-      </div>
-      <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
+      <h2 class="text-center"><strong><%= t("dashboard.poster.index.support") %></strong></h2>
+      <%= wicked_pdf_image_tag 'quote-before-blue.png' %>
+      <h3><strong><%= proposal.title %></strong></h3>
+      <%= wicked_pdf_image_tag 'quote-after-blue.png' %>
+      <p class="poster-footer">
+        <%= t("dashboard.poster.index.footer", link: Setting["url"]).html_safe %>
+      </p>
     </div>
   </div>
 </body>

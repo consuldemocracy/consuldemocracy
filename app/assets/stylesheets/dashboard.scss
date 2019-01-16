@@ -531,8 +531,6 @@
     .poster-footer {
       border-left: 2px solid $border;
       color: $text-medium;
-      margin: 0 auto;
-      padding-left: rem-calc(40);
     }
   }
 }
@@ -599,6 +597,11 @@
 
   .poster-content {
 
+    img {
+      max-width: rem-calc(40);
+      vertical-align: top;
+    }
+
     h2 {
       font-size: rem-calc(28);
       margin: $line-height 0;
@@ -617,8 +620,9 @@
 
   .poster-footer {
     font-size: rem-calc(19);
-    width: 50%;
     margin-top: rem-calc(50);
+    padding-left: rem-calc(40);
+    width: 50%;
   }
 }
 
@@ -629,14 +633,14 @@
 .dashboard-poster-pdf {
 
   .poster-header {
-    padding: 5cm;
-    height: 60cm;
     font-weight: normal;
+    height: 60cm;
+    padding: 5cm;
 
     h1 {
       font-size: 6cm;
-      line-height: rem-calc(250);
       font-weight: bold;
+      line-height: rem-calc(250);
 
       img {
         max-width: rem-calc(150);
@@ -644,10 +648,9 @@
     }
 
     p {
+      color: #fff;
       font-size: rem-calc(80);
       line-height: rem-calc(100);
-      color: #fff;
-
 
       &.intro {
         margin: rem-calc(160) auto;
@@ -683,14 +686,10 @@
   }
 
   .poster-content {
-
-    .quote {
-      .curly-quotes::before,
-      .curly-quotes::after {
-        font-size: rem-calc(200);
-        height: rem-calc(18);
-        line-height: rem-calc(150);
-      }
+    img {
+      height: 3cm;
+      vertical-align: top;
+      width: 3cm;
     }
 
     h2 {
@@ -700,20 +699,17 @@
 
     h3 {
       font-size: 4.7cm;
+      line-height: 5.5cm;
       margin-top: $line-height;
       max-width: 80%;
-      line-height: 5cm;
-    }
-
-    img {
-      width: 5cm;
-      height: 5cm;
     }
   }
 
   .poster-footer {
-    margin-top: 3cm;
-    max-width: 60%;
-    width: 100%;
+    display: block;
+    margin-left: 15cm;
+    margin-top: 2cm;
+    max-width: 55%;
+    padding-left: 4cm;
   }
 }
