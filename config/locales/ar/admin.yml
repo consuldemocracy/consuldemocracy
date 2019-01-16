@@ -574,6 +574,12 @@ ar:
       index:
         title: "قائمة الاستبيانات المفعلة"
         no_polls: "لا يوجد استبيانات."
+        create: "احداث اقتراع"
+        name: "الاسم"
+        dates: "التواريخ"
+        geozone_restricted: "خاص بالمقاطعات"
+      new:
+        title: "اقتراع جديد"
     questions:
       index:
         no_questions: "لا توجد هناك أسئلة."
@@ -585,9 +591,36 @@ ar:
         answers:
           images_list: قائمة الصور
     answers:
+      show:
+        images: صور
+        images_list: قائمة الصور
+        edit: تعديل الإجابة
+      edit:
+        title: تعديل الإجابة
       videos:
+        index:
+          title: فيديوهات
+          add_video: إضافة فيديو
+          video_title: العنوان
+          video_url: فيديو خارجي
+        new:
+          title: فيديو جديد
         edit:
           title: تعديل الفيديو
+    recounts:
+      index:
+        title: "اعادة الحساب"
+        no_recounts: "لا شيء يمكن اعادة حسابه"
+        table_booth_name: "اقتراع"
+        table_total_recount: "الحساب الجملي (من قبل العون)"
+        table_system_count: "الأصوات (أوتوماتيكي)"
+    results:
+      index:
+        title: "النتائج"
+        no_results: "لا يوجد نتائج"
+      result:
+        table_whites: "الاقتراعات فارغة تماما"
+        table_nulls: "اقتراعات غير صالحة"
     organizations:
       index:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
