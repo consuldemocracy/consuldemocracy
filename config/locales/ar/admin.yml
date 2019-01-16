@@ -436,7 +436,13 @@ ar:
           few: "%{count} رسائل بريد إلكتروني مرسلة"
           many: "%{count} رسالة بريد إلكتروني مرسلة"
           other: "%{count} رسالة بريد إلكتروني مرسلة"
+        sent_at: تم الإرسال بـ
+        subject: الموضوع
+        segment_recipient: المستفيدين
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال المجلة
         body: محتوى البريد الإلكتروني
+        body_help_text: سيعرض البريد الإلكتروني للمستخدمين كما يلي
+        send_alert: يرجى تاكيد إرسال المجلة لـ%{n} مستخدم؟
     admin_notifications:
       create_success: تم إنشاء الإشعار بنجاح
       update_success: تم تعديل الإشعار بنجاح
@@ -445,6 +451,15 @@ ar:
       index:
         section_title: إشعارات
         new_notification: إشعار جديد
+        title: العنوان
+        segment_recipient: المستفيدين
+        sent: أرسلت
+        actions: الإجراءات
+        draft: مسودة
+        edit: تعديل
+        delete: حذف
+        preview: معاينة
+        view: عرض
         empty_notifications: لايوجد عناصر للعرض
       new:
         section_title: إشعار جديد
@@ -455,11 +470,21 @@ ar:
       show:
         section_title: معاينة الإشعار
         send: إرسال إشعار
+        will_get_notified: (سيتم إعلام %{n} مستخدم)
+        got_notified: (تم إعلام %{n} مستخدم)
+        sent_at: تم الإرسال بـ
+        title: العنوان
+        body: النص
+        link: رابط
+        segment_recipient: المستفيدين
         preview_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
         sent_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
         send_alert: يرجى تاكيد إرسال الإشعار لـ%{n} مستخدم؟
     system_emails:
       preview_pending:
+        action: في انتظار المعاينة
+        preview_of: معاينة %{name}
+        pending_to_be_sent: هذا هو المحتوى الذي سيتم إرساله
         send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
         description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
