@@ -61,4 +61,10 @@ module ApplicationHelper
   def css_for_landing
     "landing-" + params[:landing] if params[:landing].present?
   end
+
+  def render_custom_partial(partial_name)
+    controller_action = @virtual_path.split("/").last
+    custom_partial_path = "custom/#{@virtual_path.remove(controller_action)}#{partial_name}"
+    render custom_partial_path if lookup_context.exists?(custom_partial_path, [], true)
+  end
 end

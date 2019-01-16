@@ -956,6 +956,13 @@ es:
         no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
+    active_polls:
+      edit:
+        title: "Descripción general de votaciones"
+      form:
+        description:
+          text: "Descripción"
+          help_text: "Este texto aparecerá en la cabecera de la página de votaciones. Puedes usarlo para añadir un contexto a las votaciones abiertas"
     polls:
       index:
         title: "Listado de votaciones"

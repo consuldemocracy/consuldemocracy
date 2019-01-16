@@ -37,8 +37,12 @@ module AdminHelper
     ["spending_proposals"].include?(controller_name)
   end
 
+  def menu_poll?
+    %w[polls active_polls recounts results].include?(controller_name)
+  end
+
   def menu_polls?
-    %w[polls questions answers recounts results].include?(controller_name)
+    menu_poll? || %w[questions answers].include?(controller_name)
   end
 
   def menu_booths?
