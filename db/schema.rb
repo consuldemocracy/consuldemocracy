@@ -205,8 +205,8 @@ ActiveRecord::Schema.define(version: 20190131122858) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",       limit: 50
-    t.integer "price",      limit: 8
+    t.string  "name",                 limit: 50
+    t.integer "price",                limit: 8
     t.string  "slug"
     t.integer "population"
     t.boolean "allow_custom_content",            default: false
