@@ -431,6 +431,11 @@
     color: #fff;
     padding: $line-height * 2;
 
+    img {
+      max-width: rem-calc(40);
+      vertical-align: top;
+    }
+
     h1 {
       font-size: rem-calc(60);
     }

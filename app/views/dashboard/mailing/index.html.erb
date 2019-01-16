@@ -2,7 +2,9 @@
 <div class="row expanded">
   <div class="small-12 medium-9 dashboard-mail-preview column dashboard-mail-preview">
     <div class="mail-header text-left">
-      <h1 class="inline">"<%= proposal.title %>"</h1>
+      <%= image_tag 'quote-before-white.png' %>
+      <h1 class="inline"><%= proposal.title %></h1>
+      <%= image_tag 'quote-after-white.png' %>
       <h2><%= t("dashboard.mailer.forward.subtitle").html_safe %></h2>
     </div>
 
