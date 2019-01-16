@@ -9,7 +9,8 @@
           <%= image_tag("finger.png") %>
           <%= t("dashboard.poster.index.poster_subtitle") %>
         </h1>
-        <p class="intro"><%= t("dashboard.poster.index.intro_text").html_safe %></p>
+        <p class="intro"><%= t("dashboard.poster.index.intro_text", org: Setting["org_name"]).html_safe %></p>
+
         <p class="text-center">
           <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
         </p>
@@ -22,8 +23,12 @@
         </div>
         <div class="poster-content">
           <h2><%= t("dashboard.poster.index.support") %></h2>
-            <h3>"<%= proposal.title %>"</h3>
-          <p class="poster-footer"><%= t("dashboard.poster.index.footer").html_safe %></p>
+            <%= image_tag 'quote-before-blue.png' %>
+            <h3><%= proposal.title %></h3>
+            <%= image_tag 'quote-after-blue.png' %>
+          <p class="poster-footer">
+            <%= t("dashboard.poster.index.footer", link: Setting["url"]).html_safe %>
+          </p>
         </div>
       </div>
     </div>
