@@ -102,6 +102,7 @@ val:
       update:
         notice: Campanya de pressupostos participatius actualitzada
       edit:
+        activate_areas: 'Activar àrees'
         title: Edita campanya de pressupostos participatius
         delete: Eliminar presupost
         phase: Fase

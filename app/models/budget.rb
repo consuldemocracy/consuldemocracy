@@ -172,6 +172,10 @@ class Budget < ActiveRecord::Base
     investments.winners.any?
   end
 
+  def disable_areas_check
+    !investments.empty? || (investments.empty? && !Setting["feature.areas"])
+  end
+
   private
 
   def sanitize_descriptions

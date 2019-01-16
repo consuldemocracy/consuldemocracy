@@ -74,6 +74,7 @@ es:
       update:
         notice: Presupuestos participativos actualizados
       edit:
+        activate_areas: 'Activar áreas'
         title: Editar presupuestos participativos
         phase: Fase
         dates: Fechas
