@@ -60,7 +60,9 @@
     border: 1px solid $border;
     display: block;
     margin: rem-calc(-1) 0;
+    min-height: $line-height * 3;
     position: relative;
+    vertical-align: top;
 
     @include breakpoint(large down) {
 
