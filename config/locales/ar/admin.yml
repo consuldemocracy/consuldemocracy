@@ -632,6 +632,27 @@ ar:
     booths:
       index:
         title: "قائمة صناديق الاقتراع المفعلة"
+        no_booths: "لا توجد صناديق الاقتراع مفعلة لأي استطلاع قادم."
+        add_booth: "إضافة صندوق اقتراع"
+        name: "الاسم"
+        location: "الموقع"
+        no_location: "لا يوجد موقع"
+      new:
+        title: "صندوق اقتراع جديد"
+        name: "الاسم"
+        location: "الموقع"
+        submit_button: "إحداث صندوق اقتراع"
+      edit:
+        title: "تصحيح صندوق اقتراع"
+        submit_button: "تحديث صندوق اقتراع"
+      show:
+        location: "الموقع"
+      booth:
+        shifts: "إدارة المناوبات"
+        edit: "تصحيح صندوق اقتراع"
+    officials:
+      edit:
+        destroy: إزالة حالة "رسمي"
     organizations:
       index:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
