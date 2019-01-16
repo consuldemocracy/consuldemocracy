@@ -516,6 +516,26 @@ ar:
     poll_shifts:
       new:
         new_shift: "مناوبة جديدة"
+        no_shifts: "هذا الكشك ليس لديه مناوبات"
+        officer: "ضابط"
+        remove_shift: "إزالة"
+        search_officer_button: بحث
+        search_officer_placeholder: بحث عن ضابط
+        search_officer_text: ابحث عن ضابط لتعيين مناوبة جديدة
+        select_date: "حدّد اليوم"
+        no_voting_days: "انتهت أيام التصويت"
+        select_task: "حدّد المهمة"
+        table_shift: "المناوبة"
+        table_email: "البريد الإلكتروني"
+        table_name: "الاسم"
+      flash:
+        create: "تمت إضافة المناوبة"
+        destroy: "تمت إزالة المناوبة"
+        date_missing: "يجب تحديد تاريخ"
+      vote_collection: جمع الاصوات
+      recount_scrutiny: إعادة الفرز والتدقيق
+    booth_assignments:
+      manage_assignments: إدارة المهام
     polls:
       index:
         title: "قائمة الاستبيانات المفعلة"
