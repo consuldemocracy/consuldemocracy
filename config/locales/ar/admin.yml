@@ -485,18 +485,37 @@ ar:
         action: في انتظار المعاينة
         preview_of: معاينة %{name}
         pending_to_be_sent: هذا هو المحتوى الذي سيتم إرساله
+        moderate_pending: إدارة إرسال الإعلانات
+        send_pending: إرسال المعلقة
         send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
         description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
       index:
+        title: تحميل رسائل البريد الإلكتروني
         download_segment: تحميل عناوين البريد الإلكتروني
+        download_segment_help_text: قم بالتنزيل بتنسيق في شكل CSV
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
     valuators:
+      index:
+        title: المقيمون
+        name: الاسم
+        email: البريد الإلكتروني
+        description: الوصف
+        no_description: بدون وصف
+        no_valuators: لا يوجد مقيمون.
+        valuator_groups: "مجموعات تقييم"
+        group: "مجموعة"
+        no_group: "لا توجد مجموعة"
+      valuator:
+        add: اضف إلى المقيمين
       summary:
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
+    poll_shifts:
+      new:
+        new_shift: "مناوبة جديدة"
     polls:
       index:
         title: "قائمة الاستبيانات المفعلة"
