@@ -394,16 +394,48 @@ ar:
       poll_booths: موقع المقصورات
       poll_booth_assignments: وظائف المقصورات
       poll_shifts: إدارة المناوبات
+      officials: المسؤولون
+      organizations: المنظمات
       settings: الإعدادات العامة
+      spending_proposals: مقترحات الانفاق
+      stats: الإحصائيات
+      signature_sheets: أوراق التوقيع
       site_customization:
+        homepage: الصفحة الرئيسية
+        pages: صفحات مخصصة
+        images: صور مخصصة
+        content_blocks: كتلة محتوى مخصص
+        information_texts: نصوص معلومات مخصصة
         information_texts_menu:
+          debates: "المناقشات"
+          community: "الجماعة"
+          proposals: "المقترحات"
           polls: "الاستبيانات"
       title_polls: الاستبيانات
     moderators:
       index:
         title: المشرفون
     newsletters:
+      index:
+        delete: حذف
+        preview: معاينة
+        empty_newsletters: لايوجد مجلات للعرض
+      new:
+        title: مجلة جديدة
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال المجلة
+      edit:
+        title: تحرير مجلة
       show:
+        title: معاينة مجلة
+        send: ارسال
+        affected_users: (%{n} مستخدم متأثر)
+        sent_emails:
+          zero: "%{count} رسالة بريد إلكتروني مرسلة"
+          one: '%{count} رسالة بريد إلكتروني مرسلة'
+          two: "%{count} رسائل بريد إلكتروني مرسلة"
+          few: "%{count} رسائل بريد إلكتروني مرسلة"
+          many: "%{count} رسالة بريد إلكتروني مرسلة"
+          other: "%{count} رسالة بريد إلكتروني مرسلة"
         body: محتوى البريد الإلكتروني
     admin_notifications:
       create_success: تم إنشاء الإشعار بنجاح
