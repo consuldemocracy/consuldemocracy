@@ -393,6 +393,7 @@ ar:
       polls: الاستبيانات
       poll_booths: موقع المقصورات
       poll_booth_assignments: وظائف المقصورات
+      poll_shifts: إدارة المناوبات
       settings: الإعدادات العامة
       site_customization:
         information_texts_menu:
