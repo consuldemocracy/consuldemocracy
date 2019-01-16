@@ -1,6 +1,7 @@
 es:
   admin:
     areas:
+      area: 'Área: '
       areas_title: Áreas
       editing: Editar área
       error: ha impedido guardar el área
@@ -8,6 +9,13 @@ es:
       name: Nombre
       new_area: Nueva Área
       no_areas: "No hay ninguna área."
+    sub_areas:
+      create_sub_area: Crear subárea
+      editing: Editar subárea
+      name: Nombre
+      new_sub_area: Nueva Subárea
+      no_sub_areas: "No hay ninguna subárea."
+      sub_areas_title: Subáreas
     actions:
       actions: Acciones
       confirm: ¿Estás seguro?

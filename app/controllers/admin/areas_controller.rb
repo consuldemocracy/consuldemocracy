@@ -17,6 +17,7 @@ class Admin::AreasController < Admin::BaseController
 
   # GET /areas/1/edit
   def edit
+    @sub_areas = @area.sub_areas
   end
 
   # POST /areas

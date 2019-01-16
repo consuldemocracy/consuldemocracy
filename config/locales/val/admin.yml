@@ -1,6 +1,7 @@
 val:
   admin:
     areas:
+      area: 'Àrea: '
       areas_title: Àrees
       editing: Editar àrea
       error: ha impedit guardar l'àrea
@@ -8,6 +9,13 @@ val:
       name: Nom
       new_area: Nova Àrea
       no_areas: "No hi ha cap àrea."
+    sub_areas:
+      create_sub_area: Crear subàrea
+      editing: Editar subàrea
+      name: Nom
+      new_sub_area: Nova Subàrea
+      no_sub_areas: "No hi ha ninguna subàrea."
+      sub_areas_title: Subàrees
     header:
       title: Administració
     actions:

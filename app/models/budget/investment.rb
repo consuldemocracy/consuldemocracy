@@ -32,6 +32,7 @@ class Budget
     belongs_to :budget
     belongs_to :administrator
 
+    belongs_to :sub_area
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
 
@@ -389,6 +390,10 @@ class Budget
     def update_cached_ballots_up
       self.cached_ballots_up = lines.size
       save
+    end
+
+    def area
+      sub_area.area
     end
 
     private

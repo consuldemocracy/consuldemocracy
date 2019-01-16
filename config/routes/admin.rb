@@ -2,7 +2,7 @@ namespace :admin do
   root to: "dashboard#index"
 
   resources :areas do
-
+    resources :sub_areas, except: [:index, :show]
   end
 
   resources :organizations, only: :index do

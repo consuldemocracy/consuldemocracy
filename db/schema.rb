@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115162650) do
+ActiveRecord::Schema.define(version: 20190116095729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -266,6 +266,7 @@ ActiveRecord::Schema.define(version: 20190115162650) do
     t.boolean  "selected_by_assembly",                        default: false,       null: false
     t.boolean  "visible_to_valuators",                        default: false
     t.integer  "valuator_group_assignments_count",            default: 0
+    t.integer  "sub_area_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -1297,6 +1298,13 @@ ActiveRecord::Schema.define(version: 20190115162650) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+
+  create_table "sub_areas", force: :cascade do |t|
+    t.text     "name",       null: false
+    t.integer  "area_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

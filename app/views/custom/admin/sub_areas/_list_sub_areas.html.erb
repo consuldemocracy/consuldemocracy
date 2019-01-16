@@ -1,0 +1,27 @@
+<%= link_to t('admin.sub_areas.create_sub_area'),
+              new_admin_area_sub_area_path(@area), class: 'button float-right' %>
+
+<% if @sub_areas.any? %>
+  <table>
+    <thead>
+      <th class="large-10 small-6"><%= t("admin.sub_areas.name") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+      <% @sub_areas.each do |sub_area| %>
+        <tr>
+          <td><%= link_to sub_area.name, edit_admin_area_sub_area_path(@area, sub_area) %></td>
+          <td>
+            <%= link_to t('admin.actions.delete'),
+                        admin_area_sub_area_path(@area, sub_area), method: :delete,
+                        data: { confirm: t('admin.actions.confirm') } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class='callout primary'>
+    <%= t('admin.sub_areas.no_sub_areas') %>
+  </div>
+<% end %>

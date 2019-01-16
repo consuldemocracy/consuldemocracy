@@ -1,17 +1,18 @@
 <h1><%= t('admin.areas.areas_title') %></h1>
 
-<%= link_to t('admin.actions.create'),
-              new_admin_area_path, class: 'button float-right' %>
+
 <% if @areas.any? %>
   <table>
     <thead>
-      <th class="large-10 small-6"><%= t("admin.areas.name") %></th>
+      <th class="large-9 small-5"><%= t("admin.areas.name") %></th>
+      <th><%= t("admin.sub_areas.sub_areas_title") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
       <% @areas.each do |area| %>
         <tr>
           <td><%= link_to area.name, edit_admin_area_path(area) %></td>
+          <td><%= area.sub_areas.count %></td>
           <td>
             <%= link_to t('admin.actions.delete'),
                         admin_area_path(area), method: :delete,

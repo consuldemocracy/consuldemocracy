@@ -3,4 +3,6 @@ class Area < ActiveRecord::Base
 
   translates :name, touch: true
   include Globalizable
+
+  has_many :sub_areas
 end
