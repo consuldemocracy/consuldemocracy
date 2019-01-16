@@ -541,6 +541,17 @@ ar:
         status:
           assign_status: تعيينات
           assigned: تم التعيين
+          unassigned: لم يتم التعيين
+        actions:
+          assign: تعيين مكتب التصويت
+          unassign: إلغاء تعيين مكتب التصويت
+    poll_booth_assignments:
+      alert:
+        shifts: "هناك مناوبات مرتبطة بمكتب التصويت. إذا قمت بإزالة تعيين كشك ، سيتم حذف المناوبات أيضا. استمر؟"
+      flash:
+        destroy: "تم إلغاء تعيين مكتب التصويت"
+        create: "تم تعيين مكتب التصويت"
+        error_destroy: "حدث خطأ عند إلغاء تعيين مكتب التصويت"
     polls:
       index:
         title: "قائمة الاستبيانات المفعلة"
