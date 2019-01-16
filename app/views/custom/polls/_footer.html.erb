@@ -1,0 +1,10 @@
+<p><%= t("polls.index.section_footer.description") %></p>
+<p><%= t("polls.index.section_footer.help_text_1") %></p>
+<p><%= t("polls.index.section_footer.help_text_2") %></p>
+<p><%= t("polls.index.section_footer.help_text_3_html") %></p>
+<p><%= t("polls.index.section_footer.help_text_4") %></p>
+<p><%= t("polls.index.section_footer.help_text_5_html",
+          link: link_to(t("polls.index.section_footer.first_voting"),
+          first_voting_path)).html_safe %></p>
+<p><%= t("polls.index.section_footer.help_text_6") %></p>
+<p><%= link_to t("polls.index.section_footer.help_text_7"), more_info_polls_path %></p>
