@@ -57,6 +57,7 @@ it:
       section_footer:
         title: Aiuto con i bilanci partecipativi
         description: Attraverso i bilanci partecipativi i cittadini decidono a che progetti destinare parte del bilancio comunale.
+      milestones: Traguardi
     investments:
       form:
         tag_category_label: "Categorie"
@@ -160,6 +161,7 @@ it:
       heading: "Risultati per il bilancio partecipativo"
       heading_selection_title: "Per distretto"
       spending_proposal: Titolo della proposta
+      ballot_lines_count: Voti
       hide_discarded_link: Nascondi scartati
       show_all_link: Visualizza tutti
       price: Costo
@@ -170,6 +172,10 @@ it:
       investment_proyects: Elenco di tutti i progetti di investimento
       unfeasible_investment_proyects: Elenco di tutti i progetti di investimento irrealizzabili
       not_selected_investment_proyects: Elenco di tutti i progetti di investimento non selezionati per la fase di voto finale
+    executions:
+      link: "Traguardi"
+      filters:
+        all: "Tutto (%{count})"
     phases:
       errors:
         dates_range_invalid: "La Data di inizio non può essere uguale o successiva alla Data finale"
