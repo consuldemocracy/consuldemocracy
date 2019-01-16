@@ -653,6 +653,17 @@ ar:
     officials:
       edit:
         destroy: إزالة حالة "رسمي"
+        title: 'المسؤولون: تحرير المستخدم'
+      flash:
+        official_destroyed: 'تم حفض التفاصيل: لم يعد المستخدم من المسؤولين'
+        official_updated: تم حفض تفاصيل المسؤول
+      index:
+        title: المسؤولون
+        no_officials: لا يوجد مسؤول.
+        name: الاسم
+        official_position: الموقع الرسمي
+        official_level: المستوى
+      level_0: ليس رسميا
     organizations:
       index:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
@@ -662,7 +673,50 @@ ar:
       index:
         title: الإشعارات المخفية
         no_hidden_proposals: لايوجد إشعارات مخفية.
+    settings:
+      index:
+        update_setting: تحديث
+        feature_flags: المميزات
+        features:
+          enabled: "تم تفعيل الميزة"
+          disabled: "تم إلغاء الميزة"
+          enable: "تفعيل"
+          disable: "إلغاء"
+        map:
+          title: تعديل الخريطة
+          help: هنا يمكنك تخصيص طريقة عرض الخريطة للمستخدمين. اسحب علامة الخريطة أو انقر في أي مكان على الخريطة ، اضبط التكبير المطلوب وانقر على زر "تحديث".
+          flash:
+            update: تم تحديث تعديلات الخريطة بنجاح.
+          form:
+            submit: تحديث
+      setting: الميزة
+      setting_actions: الإجراءات
+      setting_name: ضبط
+      setting_status: الحالة
+      setting_value: القيمة
+      no_description: "بدون وصف"
     shared:
+      true_value: "نعم"
+      false_value: "لا"
+      booths_search:
+        button: بحث
+        placeholder: ابحث عن صندوق الاقتراع بالاسم
+      poll_officers_search:
+        button: بحث
+        placeholder: بحث عن ضباط الاستطلاع
+      poll_questions_search:
+        button: بحث
+        placeholder: بحث عن أسئلة الاستطلاع
+      proposal_search:
+        button: بحث
+        placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
+      spending_proposal_search:
+        button: بحث
+        placeholder: البحث عن اقتراحات الإنفاق عن طريق العنوان أو الوصف
+      user_search:
+        button: بحث
+        placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
+      search_results: "نتائج البحث"
       description: الوصف
     spending_proposals:
       index:
