@@ -56,7 +56,7 @@ feature 'Admin budgets' do
     scenario 'Displaying no open budgets text' do
       visit admin_budgets_path
 
-      expect(page).to have_content("There are no open budgets.")
+      expect(page).to have_content("There are no budgets.")
     end
 
     scenario 'Displaying budgets' do
@@ -165,7 +165,7 @@ feature 'Admin budgets' do
       click_link 'Delete budget'
 
       expect(page).to have_content('Budget deleted successfully')
-      expect(page).to have_content('There are no open budgets.')
+      expect(page).to have_content('There are no budgets.')
     end
 
     scenario 'Try to destroy a budget with investments' do

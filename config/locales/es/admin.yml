@@ -89,7 +89,7 @@ es:
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
-        no_budgets: "No hay presupuestos abiertos."
+        no_budgets: "No hay presupuestos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
