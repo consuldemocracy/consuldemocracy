@@ -619,8 +619,19 @@ ar:
         title: "النتائج"
         no_results: "لا يوجد نتائج"
       result:
-        table_whites: "الاقتراعات فارغة تماما"
-        table_nulls: "اقتراعات غير صالحة"
+        table_whites: "أوراق فارغة"
+        table_nulls: "أوراق غير صالحة"
+        table_total: "مجموع الأوراق"
+        table_answer: الإجابة
+        table_votes: الأصوات
+      results_by_booth:
+        booth: اقتراع
+        results: النتائج
+        see_results: رؤية النتائج
+        title: "النتائج حسب صندوق الاقتراع"
+    booths:
+      index:
+        title: "قائمة صناديق الاقتراع المفعلة"
     organizations:
       index:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
