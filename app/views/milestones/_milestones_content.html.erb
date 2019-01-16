@@ -3,7 +3,7 @@
     <%= render "milestones/progress_bars", milestoneable: milestoneable %>
 
     <% if milestoneable.milestones.blank? %>
-      <div class="callout primary text-center">
+      <div class="callout primary text-center margin-top">
         <%= t("milestones.index.no_milestones") %>
       </div>
     <% end %>
