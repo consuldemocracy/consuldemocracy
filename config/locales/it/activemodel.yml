@@ -3,3 +3,11 @@ it:
     models:
       verification:
         sms: "SMS"
+    attributes:
+      verification:
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Tipo di documento"
+        document_number: "Numero del documento (lettere incluse)"
+        year_of_birth: "Anno di nascita"
