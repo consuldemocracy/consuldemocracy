@@ -133,6 +133,8 @@ gl:
         edit: "Editar grupo"
         name: "Nome do grupo"
         submit: "Gardar grupo"
+      index:
+        back: "Volver aos orzamentos"
     budget_headings:
       name: "Nome"
       no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
@@ -159,6 +161,8 @@ gl:
         create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Gardar partida"
+      index:
+        back: "Volver aos grupos"
     budget_phases:
       edit:
         start_date: Data de inicio
@@ -1347,6 +1351,7 @@ gl:
       content_blocks:
         information: Información sobre bloques de contido
         about: "Pode crear bloques de contido HTML para ser inseridos na cabeceira ou no rodapé do seu CONSUL."
+        html_format: "Un bloque de contido é un grupo de ligazóns, e debe ter o seguinte formato:"
         no_blocks: "Non hai bloques de contido."
         create:
           notice: O bloque creouse correctamente
