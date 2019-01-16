@@ -159,6 +159,8 @@ namespace :admin do
       end
       post '/answers/order_answers', to: 'questions/answers#order_answers'
     end
+
+    resource :active_polls, only: [:create, :edit, :update]
   end
 
   resources :verifications, controller: :verifications, only: :index do

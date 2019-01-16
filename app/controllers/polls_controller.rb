@@ -1,6 +1,8 @@
 class PollsController < ApplicationController
   include PollsHelper
 
+  before_action :load_active_poll, only: :index
+
   load_and_authorize_resource
 
   has_filters %w[current expired]
@@ -33,5 +35,11 @@ class PollsController < ApplicationController
 
   def results
   end
+
+  private
+
+    def load_active_poll
+      @active_poll = ActivePoll.first
+    end
 
 end

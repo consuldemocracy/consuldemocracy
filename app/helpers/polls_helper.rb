@@ -64,4 +64,8 @@ module PollsHelper
   def info_menu?
     controller_name == "polls" && action_name == "show"
   end
+
+  def show_polls_description?
+    @active_poll.present? && @current_filter == "current"
+  end
 end
