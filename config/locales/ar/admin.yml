@@ -567,6 +567,9 @@ ar:
         total_system: مجموع الأصوات (أوتوماتيكي)
       index:
         booths_title: "قائمة مكاتب التصويت"
+        no_booths: "لا توجد مكاتب تصويت مخصصة لهذا الاقتراع."
+        table_name: "الاسم"
+        table_location: "الموقع"
     polls:
       index:
         title: "قائمة الاستبيانات المفعلة"
