@@ -34,7 +34,7 @@ class Poll < ActiveRecord::Base
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
 
-  scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
+  scope :sort_for_list, -> { joins(:translations).order(:geozone_restricted, :starts_at, "poll_translations.name") }
 
   def title
     name

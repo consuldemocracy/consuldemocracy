@@ -11,7 +11,7 @@ class PollsController < ApplicationController
   ::Poll::Answer # trigger autoload
 
   def index
-    @polls = @polls.send(@current_filter).includes(:geozones).sort_for_list.page(params[:page])
+    @polls = @polls.send(@current_filter).sort_for_list.page(params[:page])
   end
 
   def show

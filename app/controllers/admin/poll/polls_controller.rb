@@ -62,6 +62,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     end
 
     def poll_params
+      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :results_enabled,
                     :stats_enabled, geozone_ids: [],
                     image_attributes: image_attributes]
