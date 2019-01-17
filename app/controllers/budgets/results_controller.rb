@@ -13,7 +13,9 @@ module Budgets
     private
 
       def load_budget
-        @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id]) || Budget.first
+        @budget = Budget.find_by(slug: params[:budget_id])
+        @budget ||= Budget.find_by(id: params[:budget_id])
+        @budget ||= Budget.first
       end
 
       def load_heading
