@@ -13,8 +13,6 @@ class Milestone < ActiveRecord::Base
 
   validates :milestoneable, presence: true
   validates :publication_date, presence: true
-
-  before_validation :assign_model_to_translations
   validates_translation :description, presence: true, unless: -> { status_id.present? }
 
   scope :order_by_publication_date, -> { order(publication_date: :asc, created_at: :asc) }
