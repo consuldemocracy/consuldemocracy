@@ -137,7 +137,7 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find_by(slug: params[:heading_id]) || @budget.headings.find_by(id: params[:heading_id])
+          @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
           load_map
         end
@@ -156,7 +156,7 @@ module Budgets
       end
 
       def load_budget
-        @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+        @budget = Budget.find_by_slug_or_id! params[:budget_id]
       end
 
       def set_view
