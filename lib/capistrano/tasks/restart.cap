@@ -1,13 +1,10 @@
 namespace :deploy do
-
   desc 'Reinicio de la aplicación'
   task :restart do
     on roles(:app) do
       execute "touch #{fetch(:release_path)}/tmp/restart.txt"
     end
   end
-
-
   # desc 'Reinicio de la aplicación'
   # %w(start stop force-stop restart upgrade reopen-logs).each do |command|
   #   task command.to_sym do
