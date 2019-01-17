@@ -57,7 +57,3 @@ App.Globalize =
       locale = $(this).data("locale")
       $(this).hide()
       App.Globalize.remove_language(locale)
-
-    $('.action-content a').click (event), ->
-      $(this).next('div').toggleClass('hide');
-      event.preventDefault()
