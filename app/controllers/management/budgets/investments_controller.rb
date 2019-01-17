@@ -5,7 +5,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   load_resource :investment, through: :budget, class: 'Budget::Investment'
 
   before_action :only_verified_users, except: :print
-  before_action :load_heading, only: [:index, :show, :print]
 
   def index
     @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
@@ -64,10 +63,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def load_budget
       @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
-    end
-
-    def load_heading
-      @heading = @budget.headings.find(params[:heading_id]) if params[:heading_id].present?
     end
 
     def load_categories
