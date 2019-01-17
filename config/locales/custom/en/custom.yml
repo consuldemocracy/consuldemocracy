@@ -251,12 +251,6 @@ en:
       district_title: "VOTE PROJECTS OF ONE DISTRICT"
       district_text_html: "Remember you can also vote projects of <strong>one district</strong>."
       district_button: "Vote projects of one district"
-  processes:
-    lobbies:
-      title: "Registration of lobbies of the City of Madrid"
-      description: "The City of Madrid wants to develop in detail the regulation of Lobbies registry."
-    shared:
-      more_info: "More information"
   polls_reports:
     label: "Technical report"
     button: "Download technical report"

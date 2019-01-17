@@ -6,12 +6,6 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
       user_permission_create_budget_investments: Crear proyectos de gasto*
       user_permission_votes: Participar en todas las consultas*
-  answers:
-    index:
-      title: Respuesta enviada
-      sent: Tu respuesta ha sido enviada. Gracias por participar.
-    new:
-      send: Enviar respuesta
   comments:
     form:
       leave_reply: Deja tu respuesta

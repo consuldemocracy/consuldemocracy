@@ -1,41 +1,9 @@
-<!-- Registro de lobbies -->
-<div class="panel margin-bottom">
-  <h3><%= link_to t("processes.lobbies.title"), lobbies_path %></h3>
-  <p><%= t("processes.lobbies.description") %></p>
-  <%= link_to t("processes.shared.more_info"), lobbies_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("processes.lobbies.title") %>
-</div>
-
 <!-- Remodelación de Plaza España -->
 <div class="panel margin-bottom">
   <h3><%= link_to t("pages.processes.index.process_2_title"), plaza_path %></h3>
   <p><%= t("pages.processes.index.process_2_description_close") %></p>
   <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "button hollow",
               title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_2_title") %>
-</div>
-
-<!-- Alianza para el Gobierno abierto -->
-<div id="open-government" class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_9_title"), open_government_path %></h3>
-  <p><%= t("pages.processes.index.process_9_description") %></p>
-  <%= link_to t("pages.processes.index.process_9_button"), open_government_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_9_title") %>
-</div>
-
-<!-- Plan Derechos humanos -->
-<div id="dd-hh" class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_5_title_voting"), human_rights_page_path %></h3>
-  <p><%= t("pages.processes.index.process_5_description_voting_html") %></p>
-  <%= link_to t("pages.processes.index.process_5_button_voting"), human_rights_page_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_5_title") %>
-</div>
-
-<!-- Cartas de servicios -->
-<div id="service-letters" class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_6_title"), service_letters_path %></h3>
-  <p><%= t("pages.processes.index.process_6_description") %></p>
-  <%= link_to t("pages.processes.index.process_6_button"), service_letters_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_6_title") %>
 </div>
 
 <!-- Urbanismo bancos -->
@@ -52,12 +20,4 @@
   <p><%= t("pages.processes.index.process_3_description") %></p>
   <%= link_to t("pages.processes.index.process_3_button"), open_plenary_path, class: "button hollow",
               title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_3_title") %>
-</div>
-
-<!-- Ordenanza de transparencia -->
-<div id="transparency-law" class="panel margin-bottom">
-  <h3><%= link_to t("pages.processes.index.process_1_title"), transparency_ordinance_path %></h3>
-  <p><%= t("pages.processes.index.process_1_description") %></p>
-  <%= link_to t("pages.processes.index.process_1_button"), transparency_ordinance_path, class: "button hollow",
-              title: t("pages.processes.index.more_info_title") + t("pages.processes.index.process_1_title") %>
 </div>

@@ -142,8 +142,6 @@ get 'procesos',  to: 'legislation/processes#index', as: 'processes'
 get "vota/stats_2018", to: "polls#stats_2018", as: 'poll_stats_2018'
 get "vota/results_2018", to: "polls#results_2018", as: 'poll_results_2018'
 
-resources :answers, only: [:index, :new, :create]
-
 resources :polls, only: [:show, :index], path: 'vota' do
   member do
     get :stats
@@ -187,8 +185,7 @@ get 'jornada-presupuestos-participativos/success', to: 'budget_polls#success'
 get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
 
 # Human Rights
-get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',      as: 'human_rights_page'
-get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan',       as: 'human_rights_plan'
+get "derechos-humanos",                  to: "legislation/processes#show", id: "94",                as: "human_rights_page"
 get 'derechos-humanos/medidas',          to: 'human_rights#index',                                  as: 'human_rights_proposals'
 get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                                   as: 'human_rights_proposal'
 get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2', as: 'human_rights_question_2'
@@ -234,6 +231,9 @@ get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'p
 get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'first_voting'
 
 # Old processes
+get "proceso/ordenanza-de-transparencia",            to: "legislation/processes#show", id: "88"
+get "proceso/alianza-gobierno-abierto",              to: "legislation/processes#show", id: "87"
+get "proceso/registro-de-lobbies",                   to: "legislation/processes#show", id: "86"
 get 'proceso/parque-lineal-manzanares',              to: 'legislation/processes#show', id: '81'
 get 'proceso/ordenanza-publicidad-exterior',         to: 'legislation/processes#show', id: '80'
 get 'proceso/distrito-villaverde',                   to: 'legislation/processes#show', id: '79'
@@ -248,19 +248,7 @@ get 'proceso/licencias-urbanisticas',                to: 'legislation/processes#
 get 'proceso/ordenanza-subvenciones',                to: 'legislation/processes#show', id: '70'
 
 # Processes
-get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government/index',  as: 'open_government'
-get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government/doc',    as: 'open_government_doc'
-get 'proceso/cartas-de-servicios',                    to: 'pages#show', id: 'processes/service_letters/index',  as: 'service_letters'
-get 'proceso/cartas-de-servicios/1',                  to: 'pages#show', id: 'processes/service_letters/1',      as: 'service_letters_1'
-get 'proceso/cartas-de-servicios/2',                  to: 'pages#show', id: 'processes/service_letters/2',      as: 'service_letters_2'
-get 'proceso/cartas-de-servicios/3',                  to: 'pages#show', id: 'processes/service_letters/3',      as: 'service_letters_3'
-get 'proceso/cartas-de-servicios/4',                  to: 'pages#show', id: 'processes/service_letters/4',      as: 'service_letters_4'
-get 'proceso/cartas-de-servicios/5',                  to: 'pages#show', id: 'processes/service_letters/5',      as: 'service_letters_5'
 get 'proceso/pleno-abierto',                          to: 'pages#show', id: 'processes/open_plenary/index',     as: 'open_plenary'
-get 'proceso/ordenanza-de-transparencia',             to: 'pages#show', id: 'processes/transparency/index',     as: 'transparency_ordinance'
-get 'proceso/ordenanza-de-transparencia/borrador',    to: 'pages#show', id: 'processes/transparency/draft',     as: 'transparency_ordinance_draft'
-get 'proceso/registro-de-lobbies',                    to: 'pages#show', id: 'processes/lobbies/index',          as: 'lobbies'
-get 'proceso/registro-de-lobbies/borrador',           to: 'pages#show', id: 'processes/lobbies/draft',          as: 'lobbies_draft'
 get 'proceso/once-plazas',                            to: 'pages#show', id: 'processes/once_plazas/index',      as: 'once_plazas'
 get 'plenoabierto',                                   to: 'legislation/processes#proposals', id: '24',          as: 'open_plenary_2017'
 get 'plazas-abiertas',                                to: 'pages#show', id: 'landings/plazas_abiertas',         as: 'plazas_abiertas'
