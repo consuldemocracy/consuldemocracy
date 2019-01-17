@@ -9,7 +9,6 @@
 * [Comunicación](forks/communication.md)
 
 ### Instalación
-* [Docker](getting_started/docker.md)
 * [Introducción](getting_started/introduction.md)
 * [Prerrequisitos](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
@@ -18,6 +17,7 @@
 * [Instalación local](getting_started/local_installation.md)
   * [Servidor local de correo](getting_started/dev_mailserver.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
+* [Docker](getting_started/docker.md)
 
 ### Personalización
 * [Introducción](customization/README.md)
