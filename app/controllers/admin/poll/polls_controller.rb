@@ -11,9 +11,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def show
-    @poll = Poll.includes(:questions).
-                          order("poll_questions.title").
-                          find(params[:id])
+    @poll = Poll.find(params[:id])
   end
 
   def new
