@@ -133,6 +133,8 @@ val:
         edit: "Editar grup"
         name: "Nom del grup"
         submit: "Guardar grup"
+      index:
+        back: "Tornar a pressupostos"
     budget_headings:
       name: "Nom"
       no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
@@ -159,6 +161,8 @@ val:
         create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Guardar partida"
+      index:
+        back: "Tornar a grups"
     budget_phases:
       edit:
         start_date: Data d'inici del procés
@@ -1347,6 +1351,7 @@ val:
       content_blocks:
         information: Informació sobre els blocs de text
         about: "Pots crear blocs de HTML que s'incrustaràn en la capçalera o al peu del teu CONSUL."
+        html_format: "Un bloc de contingut es un grup d'enllaços, ha de tenir el següent format:"
         no_blocks: "No hi ha blocs de text."
         create:
           notice: Bloc creat correctament
