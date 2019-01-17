@@ -44,6 +44,17 @@ feature 'Legislation' do
       end
     end
 
+    scenario "Processes are sorted by descending start date", :js do
+      create(:legislation_process, title: "Process 1", start_date: 3.days.ago)
+      create(:legislation_process, title: "Process 2", start_date: 2.days.ago)
+      create(:legislation_process, title: "Process 3", start_date: Date.yesterday)
+
+      visit legislation_processes_path
+
+      expect("Process 3").to appear_before("Process 2")
+      expect("Process 2").to appear_before("Process 1")
+    end
+
     scenario 'Participation phases are displayed only if there is a phase enabled' do
       process = create(:legislation_process, :empty)
       process_debate = create(:legislation_process)
