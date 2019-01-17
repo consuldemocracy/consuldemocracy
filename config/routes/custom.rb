@@ -27,12 +27,12 @@ namespace :admin do
 end
 
 ### Budgets
-get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
-get 'presupuestos',                        to: 'budgets#index', id: 'help/budgets/welcome',    as: 'budgets_welcome'
-get "presupuestos/:id/estadisticas",       to: "budgets/stats#show", as: 'custom_budget_stats'
-get "presupuestos/:id/resultados",         to: "budgets/results#show", as: 'custom_budget_results'
-get 'presupuestos/:id/ejecuciones',        to: 'budgets/executions#show', as: 'custom_budget_executions'
-get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
+get 'participatory_budget',                 to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
+get 'presupuestos',                         to: 'budgets#index', id: 'help/budgets/welcome',    as: 'budgets_welcome'
+get "presupuestos/:budget_id/estadisticas", to: "budgets/stats#show", as: 'custom_budget_stats'
+get "presupuestos/:budget_id/resultados",   to: "budgets/results#show", as: 'custom_budget_results'
+get 'presupuestos/:budget_id/ejecuciones',  to: 'budgets/executions#show', as: 'custom_budget_executions'
+get "presupuestos/:budget_id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
 
 resources :budgets, only: [:show, :index], path: 'presupuestos' do
   resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
@@ -178,7 +178,7 @@ get 'participatory_budget/select_district',        to: 'spending_proposals#selec
 get 'delegacion',                                  to: 'forums#index', as: 'delegation'
 get 'presupuestos-participativos-resultados',      to: 'spending_proposals#results',                    as: 'participatory_budget_results'
 get 'presupuestos-participativos-estadisticas',    to: 'spending_proposals#stats',                      as: 'participatory_budget_stats'
-get 'presupuestos-participativos-ejecuciones',     to: 'budgets/executions#show',                       as: 'participatory_budget_executions', defaults: {id: '2016'}
+get 'presupuestos-participativos-ejecuciones',     to: 'budgets/executions#show',                       as: 'participatory_budget_executions', defaults: {budget_id: '2016'}
 get 'participatory_budget_info',                   to: 'pages#show', id: 'help/budgets/info_2016', as: 'more_info_budgets_2016'
 get 'jornada-presupuestos-participativos',         to: 'budget_polls#new'
 get 'jornada-presupuestos-participativos/success', to: 'budget_polls#success'
