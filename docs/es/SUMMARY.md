@@ -10,6 +10,7 @@
 
 ### Instalación
 * [Docker](getting_started/docker.md)
+* [Introducción](getting_started/introduction.md)
 * [Prerrequisitos](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
