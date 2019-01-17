@@ -46,18 +46,15 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   private
 
     def load_budget
-      @budget = Budget.find_by(slug: params[:budget_id])
-      @budget ||= Budget.find_by(id: params[:budget_id])
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
 
     def load_group
-      @group = @budget.groups.find_by(slug: params[:group_id])
-      @group ||= @budget.groups.find_by(id: params[:group_id])
+      @group = @budget.groups.find_by_slug_or_id! params[:group_id]
     end
 
     def load_heading
-      @heading = @group.headings.find_by(slug: params[:id])
-      @heading ||= @group.headings.find_by(id: params[:id])
+      @heading = @group.headings.find_by_slug_or_id! params[:id]
     end
 
     def headings_index

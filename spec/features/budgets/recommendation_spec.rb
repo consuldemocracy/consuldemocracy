@@ -2,6 +2,31 @@ require 'rails_helper'
 
 feature 'Recommendations' do
 
+  context "Load" do
+
+    let(:user)   { create(:user) }
+    let!(:budget) { create(:budget, slug: "budget_slug") }
+
+    scenario "finds budget by slug" do
+      visit budget_recommendations_path("budget_slug", user_id: user.id)
+
+      expect(page).to have_content budget.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit budget_recommendations_path("wrong_budget", user_id: user.id)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit budget_recommendations_path(0, user_id: user.id)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   scenario "Create by phase" do
     heading = create(:budget_heading)
     budget = heading.budget

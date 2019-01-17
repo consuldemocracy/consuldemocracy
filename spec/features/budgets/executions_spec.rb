@@ -11,6 +11,22 @@ feature 'Executions' do
   let!(:investment4) { create(:budget_investment, :winner,       heading: heading) }
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading) }
 
+  scenario "finds budget by id or slug" do
+    budget.update(slug: "budget_slug")
+
+    visit custom_budget_executions_path("budget_slug")
+    within(".budgets-stats") { expect(page).to have_content budget.name }
+
+    visit custom_budget_executions_path(budget)
+    within(".budgets-stats") { expect(page).to have_content budget.name }
+
+    visit budget_executions_path("budget_slug")
+    within(".budgets-stats") { expect(page).to have_content budget.name }
+
+    visit budget_executions_path(budget)
+    within(".budgets-stats") { expect(page).to have_content budget.name }
+  end
+
   scenario 'only displays investments with milestones' do
     create(:milestone, milestoneable: investment1)
 

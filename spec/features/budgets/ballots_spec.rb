@@ -8,6 +8,55 @@ feature 'Ballots' do
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
   let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
 
+  context "Load" do
+
+    let(:ballot) { create(:budget_ballot, user: user, budget: budget) }
+
+    before do
+      budget.update(slug: "budget_slug")
+      ballot.investments << create(:budget_investment, :selected, heading: california)
+      login_as(user)
+    end
+
+    scenario "finds ballot using budget slug" do
+      visit budget_ballot_path("budget_slug")
+
+      expect(page).to have_content("You have voted one investment")
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit budget_ballot_path("wrong_budget")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit budget_ballot_path(0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
+  context "Lines Load" do
+
+    let!(:investment) { create(:budget_investment, :selected, heading: california) }
+
+    before do
+      create(:budget_ballot, user: user, budget: budget)
+      budget.update(slug: "budget_slug")
+      login_as(user)
+    end
+
+    scenario "finds ballot lines using budget slug", :js do
+      visit budget_investments_path("budget_slug", states, california)
+      add_to_ballot(investment)
+
+      within("#sidebar") { expect(page).to have_content investment.title }
+    end
+
+  end
+
   context "Voting" do
 
     background do
