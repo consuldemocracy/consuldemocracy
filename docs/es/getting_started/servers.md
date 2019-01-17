@@ -1,16 +1,16 @@
 # Servidores de prueba y producción
 
-## Requisitos de Sistema mínimos recomendados:
+## Requisitos de sistema mínimos recomendados:
 
 ### 1. Production Server:
-  - Distrubution: Ubuntu 16.04.3
+  - Distrubution: Ubuntu 16.04.X
   - RAM: 32GB
   - Processor: Quad core
   - Hard Drive: 20 GB
   - Database: Postgres
 
 ### 2. Staging Server:
-  - Distrubution: Ubuntu 16.04.3
+  - Distrubution: Ubuntu 16.04.X
   - RAM: 16GB
   - Processor: Dual core
   - Hard Drive: 20 GB
