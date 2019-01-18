@@ -26,11 +26,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-<<<<<<< HEAD
 Setting["proposal_code_prefix"] = 'CAS'
-=======
-Setting["proposal_code_prefix"] = 'CONSUL'
->>>>>>> master
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -75,13 +71,10 @@ Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
-<<<<<<< HEAD
-Setting['feature.spending_proposals'] = true
-=======
+
 Setting['feature.proposals'] = true
 Setting['feature.featured_proposals'] = true
 Setting['feature.spending_proposals'] = nil
->>>>>>> master
 Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = false
 Setting['feature.facebook_login'] = false
