@@ -14,13 +14,7 @@ class Admin::Widget::CardsController < Admin::BaseController
   def create
     @card = ::Widget::Card.new(card_params)
     if @card.save
-      notice = t("admin.site_customization.pages.cards.create.notice")
-
-      if params[:page_id] != 0
-        redirect_to admin_site_customization_page_cards_path(page), notice: notice
-      else
-        redirect_to admin_homepage_url, notice: notice
-      end
+      redirect_to_customization_page_cards_or_homepage
     else
       render :new
     end
@@ -33,12 +27,7 @@ class Admin::Widget::CardsController < Admin::BaseController
   def update
     @card = ::Widget::Card.find(params[:id])
     if @card.update(card_params)
-      notice = t("admin.site_customization.pages.cards.update.notice")
-      if params[:page_id] != 0
-        redirect_to admin_site_customization_page_cards_path(page), notice: notice
-      else
-        redirect_to admin_homepage_url, notice: notice
-      end
+      redirect_to_customization_page_cards_or_homepage
     else
       render :edit
     end
@@ -48,12 +37,7 @@ class Admin::Widget::CardsController < Admin::BaseController
     @card = ::Widget::Card.find(params[:id])
     @card.destroy
 
-    notice = t("admin.site_customization.pages.cards.delete.notice")
-    if params[:page_id] != 0
-      redirect_to admin_site_customization_page_cards_path(page), notice: notice
-    else
-      redirect_to admin_homepage_url, notice: notice
-    end
+    redirect_to_customization_page_cards_or_homepage
   end
 
   private
@@ -71,6 +55,17 @@ class Admin::Widget::CardsController < Admin::BaseController
   def header_card?
     params[:header_card].present?
   end
+
+  def redirect_to_customization_page_cards_or_homepage
+    notice = t("admin.site_customization.pages.cards.#{params[:action]}.notice")
+
+    if params[:page_id] != 0
+      redirect_to admin_site_customization_page_cards_path(page), notice: notice
+    else
+      redirect_to admin_homepage_url, notice: notice
+    end
+  end
+
   def page
     ::SiteCustomization::Page.find(@card.site_customization_page_id)
   end
