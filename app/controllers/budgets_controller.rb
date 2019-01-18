@@ -62,6 +62,10 @@ class BudgetsController < ApplicationController
     @budget = Budget.find(params[:budget_id])
   end
 
+  def progress_3
+    @budget = Budget.find(params[:budget_id])
+  end
+
   private
 
   def participants
