@@ -4,10 +4,8 @@ class Admin::Widget::CardsController < Admin::BaseController
   def new
     if header_card?
       @card = ::Widget::Card.new(header: header_card?)
-    elsif params[:page_id] != 0
-      @card = ::Widget::Card.new(site_customization_page_id: params[:page_id])
     else
-      @card = ::Widget::Card.new
+      @card = ::Widget::Card.new(site_customization_page_id: params[:page_id])
     end
   end
 
@@ -59,7 +57,7 @@ class Admin::Widget::CardsController < Admin::BaseController
   def redirect_to_customization_page_cards_or_homepage
     notice = t("admin.site_customization.pages.cards.#{params[:action]}.notice")
 
-    if params[:page_id] != 0
+    if @card.site_customization_page_id
       redirect_to admin_site_customization_page_cards_path(page), notice: notice
     else
       redirect_to admin_homepage_url, notice: notice
