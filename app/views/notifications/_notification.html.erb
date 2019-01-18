@@ -1,21 +1,28 @@
-<li id="<%= dom_id(notification) %>" class="notification">
-  <% if notification.notifiable_available? %>
-    <%= link_to notification do %>
-      <p>
-        <em>
-          <%= t("notifications.index.#{notification.notifiable_action}",
-                count: notification.counter) %>
-        </em>
-        <strong><%= notification.notifiable_title %></strong>
-      </p>
-
-      <p class="time"><%= l notification.timestamp, format: :datetime %></p>
-    <% end %>
+<li id="<%= dom_id(notification) %>" class="notification <%= 'unread' if notification&.unread? %>">
+  <% if notification.notifiable.try(:notifiable_available?) %>
+    <% locals = { notification: notification,
+                  timestamp: notification.timestamp,
+                  title: notification.notifiable_title,
+                  body: notification.notifiable.try(:body) } %>
+    <% link_text = render partial: '/notifications/notification_body', locals: locals %>
+    <%= link_to_if notification.link.present?, link_text, notification.link %>
   <% else %>
     <p>
       <strong>
-        <%= t("notifications.index.notifiable_hidden") %>
+        <%= t("notifications.notification.notifiable_hidden") %>
       </strong>
     </p>
+  <% end %>
+
+  <% if notification.unread? %>
+    <%= link_to t("notifications.notification.mark_as_read"),
+              mark_as_read_notification_path(notification),
+              method: :put, remote: true,
+              class: "mark-notification small" %>
+  <% else %>
+    <%= link_to t("notifications.notification.mark_as_unread"),
+              mark_as_unread_notification_path(notification),
+              method: :put, remote: true,
+              class: "mark-notification small" %>
   <% end %>
 </li>

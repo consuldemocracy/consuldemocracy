@@ -1,0 +1,24 @@
+<h2 class="inline-block"><%= t("admin.valuator_groups.index.title") %></h2>
+
+<%= link_to t("admin.valuator_groups.index.new"), new_admin_valuator_group_path, class: "button float-right" %>
+
+<% if @groups.any? %>
+  <h3 class="margin"><%= page_entries_info @groups %></h3>
+
+  <table>
+    <thead>
+      <th scope="col"><%= t("admin.valuator_groups.index.name") %></th>
+      <th scope="col"><%= t("admin.valuator_groups.index.members") %></th>
+      <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+      <%= render partial: 'group', collection: @groups %>
+    </tbody>
+  </table>
+
+  <%= paginate @groups %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.valuator_groups.index.no_groups") %>
+  </div>
+<% end %>

@@ -6,7 +6,8 @@ class Admin::BudgetPhasesController < Admin::BaseController
 
   def update
     if @phase.update(budget_phase_params)
-      redirect_to edit_admin_budget_path(@phase.budget), notice: t("flash.actions.save_changes.notice")
+      notice = t("flash.actions.save_changes.notice")
+      redirect_to edit_admin_budget_path(@phase.budget), notice: notice
     else
       render :edit
     end

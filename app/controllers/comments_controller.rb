@@ -86,7 +86,7 @@ class CommentsController < ApplicationController
       notifiable = comment.reply? ? comment.parent : comment.commentable
       notifiable_author_id = notifiable.try(:author_id)
       if notifiable_author_id.present? && notifiable_author_id != comment.author_id
-        Notification.add(notifiable.author_id, notifiable)
+        Notification.add(notifiable.author, notifiable)
       end
     end
 

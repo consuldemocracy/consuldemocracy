@@ -7,9 +7,9 @@ ca:
       budget:
         one: "Pressupost participatiu"
         other: "Pressupostos participatius"
-      budget/investment/milestone:
-        one: "fita"
-        other: "fites"
+      budget/investment:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -28,15 +28,24 @@ ca:
       administrator:
         one: "Administrador"
         other: "Administradors"
+      valuator:
+        one: "Avaluador"
+        other: "Avaluadors"
+      valuator_group:
+        one: "Grup avaluador"
+        other: "Grup d'avaluadors"
+      manager:
+        one: "Gestor"
+        other: "Gestors"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletters"
       vote:
-        one: "Vot"
-        other: "Vots"
+        one: "Votació"
+        other: "Votacions"
       organization:
         one: "Organització"
         other: "Organitzacions"
-      poll/booth:
-        one: "urna"
-        other: "urnes"
       poll/officer:
         one: "president de taula"
         other: "presidents de taula"
@@ -46,6 +55,14 @@ ca:
       spending_proposal:
         one: "Proposta d'inversió"
         other: "Propostes d'inversió"
+      site_customization/page:
+        one: Pàgina
+        other: Pàgines
+      site_customization/image:
+        one: Imatge
+        other: Imatges
     attributes:
       spending_proposal:
         administrator_id: "Administrador"
+      site_customization/page:
+        locale: Llengua

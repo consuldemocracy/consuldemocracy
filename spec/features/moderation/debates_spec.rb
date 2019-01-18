@@ -22,10 +22,10 @@ feature 'Moderate debates' do
     visit debate_path(debate)
 
     within("#debate_#{debate.id}") do
-      click_link 'Hide'
+      accept_confirm { click_link 'Hide' }
     end
 
-    expect(page).to have_css("#debate_#{debate.id}.faded")
+    expect(find("div#debate_#{debate.id}.faded")).to have_text debate.title
 
     login_as(citizen)
     visit debates_path

@@ -27,7 +27,7 @@ module DocumentsHelper
                   remote: true,
                   class: "delete remove-cached-attachment"
     else
-      link_to_remove_association t('documents.form.delete_button'), builder, class: "delete remove-document"
+      link_to_remove_association document.new_record? ? t('documents.form.cancel_button') : t('documents.form.delete_button') , builder, class: "delete remove-document"
     end
   end
 

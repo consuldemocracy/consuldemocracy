@@ -15,6 +15,7 @@ val:
   stats:
     stats_link: Estadístiques
     page_title: Estadístiques
+    title_stats: "Estadístiques: "
     total_participants: TOTAL PARTICIPANTS
     total_budgets_investments_send: TOTAL PROPOSTES ENVIADES
     budget_investments_final_phase: PROPOSTES EN LA FASE FINAL
@@ -33,6 +34,11 @@ val:
     years: anys
     more_than: Més de
 
+  tracking:
+    title_tracking: Seguiment
+    title_html: "Seguiment: "
+
   progress:
     progress_1_link: Informe d'estat nº 1
     progress_2_link: Informe d'estat nº 2
+    progress_3_link: Informe d'estat nº 3

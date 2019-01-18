@@ -1,0 +1,180 @@
+id:
+  date:
+    abbr_day_names:
+      - Matahari
+      - Senin
+      - Sel
+      - Mengawinkan
+      - Thu
+      - Jum
+      - Duduk
+    abbr_month_names:
+      - 
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Minggu
+      - Senin
+      - Selasa
+      - Rabu
+      - Kamis
+      - Jumat
+      - Sabtu
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - Januari
+      - Februari
+      - Maret
+      - April
+      - Mei
+      - Juni
+      - Juli
+      - Agustus
+      - September
+      - Oktober
+      - November
+      - Desember
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        other: "sekitar 1 jam\n\nsekitar %{count} jam"
+      about_x_months:
+        other: "sekitar 1 bulan\n\nsekitar %{count} bulan"
+      about_x_years:
+        other: "sekitar 1 tahun\n\nsekitar %{count} tahun"
+      almost_x_years:
+        other: "hampir 1 tahun\n\nhampir %{count} tahun"
+      half_a_minute: setengah menit
+      less_than_x_minutes:
+        other: "kurang dari satu menit\n\nkurang dari %{count} menit"
+      less_than_x_seconds:
+        other: "kurang dari 1 detik\n\nKurang dari %{count} detik"
+      over_x_years:
+        other: "lebih 1 tahun\n\nlebih %{count} tahun"
+      x_days:
+        other: "1 hari\n\n%{count} hari"
+      x_minutes:
+        other: "1 menit\n\n%{count} menit"
+      x_months:
+        other: "1 bulan\n\n%{count} bulan"
+      x_years:
+        other: "1 tahun\n\n%{count} tahun"
+      x_seconds:
+        other: "1 detik\n\n%{count} detik"
+    prompts:
+      day: Hari
+      hour: Jam
+      minute: Menit
+      month: Bulan
+      second: Detik
+      year: Tahun
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: harus diterima
+      blank: tidak boleh kosong
+      present: harus kosong
+      confirmation: tidak cocok %{attribute}
+      empty: tidak boleh kosong
+      equal_to: harus sama dengan %{count}
+      even: harus genap
+      exclusion: sudah dipesan
+      greater_than: harus lebih besar dari %{count}
+      greater_than_or_equal_to: harus lebih besar dari atau sama dengan %{count}
+      inclusion: tidak termasuk dalam daftar
+      invalid: tidak sah
+      less_than: harus kurang dari %{count}
+      less_than_or_equal_to: harus kurang dari atau sama dengan %{count}
+      model_invalid: "Pengesahan gagal: %{errors}"
+      not_a_number: bukan sebuah nomor
+      not_an_integer: harus sebuah bilangan bulat
+      odd: harus ganjil
+      required: harus berwujud
+      taken: sudah pernah diambil
+      too_long:
+        other: "terlalu panjang (maksimum adalah 1 karakter)\n\nterlalu panjang (maksimum adalah %{count} karakter)"
+      too_short:
+        other: "terlalu pendek (minimum adalah 1 karakter)\n\nterlalu pendek (minimum adalah %{count} karakter)"
+      wrong_length:
+        other: "panjangnya salah (seharusnya 1 karakter)\n\npanjangnya salah (seharusnya %{count} karakter)"
+      other_than: harus lain daripada %{count}
+    template:
+      body: 'Ada masalah dengan bidang berikut:'
+      header:
+        other: "1 kesalahan melarang %{model} ini supaya tidak disimpan\n\n%{count} kesalahan melarang model ini supaya tidak disimpan"
+  helpers:
+    select:
+      prompt: Silahkan pilih
+    submit:
+      create: Membuat %{model}
+      submit: Simpan %{model}
+      update: Perbarui %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliar
+          million: Juta
+          quadrillion: Kuadriliun
+          thousand: Seribu
+          trillion: Tiga juta
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            other: Byte
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", dan "
+      two_words_connector: " dan "
+      words_connector: ", "
+  time:
+    am: saya
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

@@ -12,7 +12,7 @@ feature 'Moderate comments' do
     visit debate_path(comment.commentable)
 
     within("#comment_#{comment.id}") do
-      click_link 'Hide'
+      accept_confirm { click_link 'Hide' }
       expect(page).to have_css('.comment .faded')
     end
 

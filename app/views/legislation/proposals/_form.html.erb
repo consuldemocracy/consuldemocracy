@@ -31,6 +31,12 @@
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @proposal, f: f %>
+      </div>
+    <% end %>
+
     <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>">
       <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
     </div>

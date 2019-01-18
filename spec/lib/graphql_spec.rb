@@ -91,7 +91,7 @@ describe 'Consul Schema' do
     expect(hidden_field?(response, 'encrypted_password')).to be_truthy
   end
 
-  xit 'hides confidential has_one associations' do
+  it 'hides confidential has_one associations' do
     user.administrator = create(:administrator)
     response = execute("{ user(id: #{user.id}) { administrator { id } } }")
     expect(hidden_field?(response, 'administrator')).to be_truthy
@@ -511,7 +511,7 @@ describe 'Consul Schema' do
       expect(received_tags).to match_array ['Parks', 'Health']
     end
 
-    xit 'uppercase and lowercase tags work ok together for proposals' do
+    it 'uppercase and lowercase tags work ok together for proposals' do
       create(:tag, name: 'Health')
       create(:tag, name: 'health')
       create(:proposal, tag_list: 'health')
@@ -523,7 +523,7 @@ describe 'Consul Schema' do
       expect(received_tags).to match_array ['Health', 'health']
     end
 
-    xit 'uppercase and lowercase tags work ok together for debates' do
+    it 'uppercase and lowercase tags work ok together for debates' do
       create(:tag, name: 'Health')
       create(:tag, name: 'health')
       create(:debate, tag_list: 'Health')

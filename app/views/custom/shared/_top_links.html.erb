@@ -1,14 +1,22 @@
 <div class="top-links hide-for-small-only">
   <div class="row">
-    <div class="large-12 small-12">
-      <ul class="menu text-right">
-        <%= render "shared/admin_login_items" %>
-        <%= render "devise/menu/login_items" %>
+    <div class="columns large-2 small-2">
+      <ul class="menu float-left">
         <%= render "shared/locale_switcher" %>
       </ul>
     </div>
+    <div class="columns large-10 small-10">
+      <div id="responsive-menu">
+        <div class="top-bar-right">
+          <ul class="menu float-right" data-responsive-menu="medium-dropdown">
+            <%= render "shared/admin_login_items" %>
+            <%= render "devise/menu/login_items" %>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-    <!-- <ul class="no-bullet external-links">
+  <ul class="no-bullet external-links">
       <li class="inline-block">
         <%= link_to t("layouts.header.more_information"),
                     page_path('more_information'),
@@ -29,13 +37,13 @@
                     target: "_blank",
                     title: t('shared.target_blank_html') %>
       </li>
-      <% if setting['blog_url'] %>
+      <% if setting['blog_url'] %> %>
         <li class="inline-block">|&nbsp;
-          <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
+          <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %> %>
             <%= t("layouts.header.external_link_blog") %>
           <% end %>
         </li>
       <% end %>
-    </ul> -->
-  <!-- </div> -->
+    </ul>
+  </div>
 </div>

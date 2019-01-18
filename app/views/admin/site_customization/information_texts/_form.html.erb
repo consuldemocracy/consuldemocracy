@@ -1,0 +1,16 @@
+<%= render "globalize_locales" %>
+
+<%= form_tag admin_site_customization_information_texts_path do %>
+  <% I18n.available_locales.each do |l| %>
+    <%= translation_enabled_tag l, site_customization_enable_translation?(l) %>
+  <% end %>
+  <% contents.each do |group| %>
+    <% group.each do |content| %>
+      <b><%= content.key %></b>
+      <% content.globalize_locales.each do |locale| %>
+        <%= render "form_field", content: content, locale: locale %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= submit_tag t("admin.menu.site_customization.buttons.save"), class: "button" %>
+<% end %>

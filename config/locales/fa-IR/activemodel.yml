@@ -1,0 +1,22 @@
+fa:
+  activemodel:
+    models:
+      verification:
+        residence: "محل اقامت"
+        sms: "پیامک"
+    attributes:
+      verification:
+        residence:
+          document_type: "نوع سند"
+          document_number: "شماره سند ( حروف هم شامل میشوند)"
+          date_of_birth: "تاریخ تولد"
+          postal_code: "کد پستی"
+        sms:
+          phone: "تلفن"
+          confirmation_code: "کد تایید"
+        email:
+          recipient: "پست الکترونیکی"
+      officing/residence:
+        document_type: "نوع سند"
+        document_number: "شماره سند ( حروف هم شامل میشوند)"
+        year_of_birth: "سال تولد"

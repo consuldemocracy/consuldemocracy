@@ -1,0 +1,18 @@
+sl:
+  guides:
+    title: "Imaš idejo za %{org}?"
+    subtitle: "Izberi, kaj želiš ustvariti"
+    budget_investment:
+      title: "Investicijski projekt"
+      feature_1_html: "Ideje kako porabiti del <strong>občinskega proračuna</strong>"
+      feature_2_html: "Investicijske projekte sprejemamo med <strong>januarjem in marcem</strong>"
+      feature_3_html: "Če projekt dobi podporo, je izvedljiv in v pristojnosti občine, gre v fazo glasovanja"
+      feature_4_html: "Če državljani odobrijo projekt, ta postane resničnost"
+      new_button: Ustvari naložbeni projekt
+    proposal:
+      title: "Državljanski predlog"
+      feature_1_html: "Ideje o čemerkoli, kar lahko izvede občinski/mestni svet"
+      feature_2_html: "Potrebuje <strong>%{votes} podpornikov</strong> v %{org}, da gre v fazo glasovanja"
+      feature_3_html: "Ustvari ga kadarkoli, imaš <strong>eno leto</strong> časa, da mu zagotoviš podporo"
+      feature_4_html: "Če predlog podprejo državljani na glasovanju, ga sprejme tudi mestni/občinski svet"
+      new_button: Ustvari državljanski predlog

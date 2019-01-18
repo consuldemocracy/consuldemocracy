@@ -1,0 +1,124 @@
+id:
+  valuation:
+    header:
+      title: Penilaian
+    menu:
+      title: Penilaian
+      budgets: Anggaran partisipatif
+      spending_proposals: Belanja proposal
+    budgets:
+      index:
+        title: Anggaran partisipatif
+        filters:
+          current: Buka
+          finished: Selesai
+        table_name: Nama
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Investasi proyek-proyek ditetapkan dengan penilaian terbuka
+        table_actions: Tindakan
+        evaluate: Evaluasi
+    budget_investments:
+      index:
+        headings_filter_all: Semua judul
+        filters:
+          valuation_open: Buka
+          valuating: Di bawah penilaian
+          valuation_finished: Penilaian selesai
+        assigned_to: "Ditugaskan untuk %{valuator}"
+        title: Proyek-proyek investasi
+        edit: Sunting berkas
+        valuators_assigned:
+          other: "Ditetapkan penilai\n\n\n%{count} valuators ditugaskan"
+        no_valuators_assigned: Tidak ada valuators ditugaskan
+        table_id: ID
+        table_title: Judul
+        table_heading_name: Nama judul
+        table_actions: Tindakan
+      show:
+        back: Kembali
+        title: Investasi proyek
+        info: Info penulis
+        by: Dikirim oleh
+        sent: Dikirim pada
+        heading: Judul
+        dossier: Berkas
+        edit_dossier: Edit berkas
+        price: Harga
+        price_first_year: Biaya selama tahun pertama
+        currency: "€"
+        feasibility: Kelayakan
+        feasible: Layak
+        unfeasible: Tidak layak
+        undefined: Tidak terdefinisi
+        valuation_finished: Penilaian selesai
+        duration: Waktu ruang lingkup
+        responsibles: Tanggung jawab
+        assigned_admin: Ditugaskan admin
+        assigned_valuators: Ditugaskan valuators
+      edit:
+        dossier: Berkas
+        price_html: "Harga (%{currency})"
+        price_first_year_html: "Biaya selama tahun pertama (%{currency}) <small>(opsional, data yang tidak umum)</small>"
+        price_explanation_html: Harga penjelasan
+        feasibility: Kelayakan
+        feasible: Layak
+        unfeasible: Tidak layak
+        undefined_feasible: Tertunda
+        feasible_explanation_html: Kelayakan penjelasan
+        valuation_finished: Penilaian selesai
+        valuation_finished_alert: "Apakah anda yakin anda ingin menandai laporan ini selesai? Jika anda melakukannya, itu tidak bisa lagi diubah."
+        not_feasible_alert: "Are you sure you want to mark this report finished? If you do, it can no longer be changed."
+        duration_html: Waktu ruang lingkup
+        save: Simpan perubahan
+      notice:
+        valuate: "Dossier updated"
+      valuation_comments: Penilaian komentar
+    spending_proposals:
+      index:
+        geozone_filter_all: Semua zona
+        filters:
+          valuation_open: Buka
+          valuating: Di bawah penilaian
+          valuation_finished: Penilaian selesai
+        title: Proyek-proyek investasi untuk penganggaran partisipatif
+        edit: Sunting
+      show:
+        back: Kembali
+        heading: Investasi proyek
+        info: Penulis info
+        association_name: Asosiasi
+        by: Dikirim oleh
+        sent: Dikirm pada
+        geozone: Ruang lingkup
+        dossier: Berkas
+        edit_dossier: Mengedit dokumen
+        price: Harga
+        price_first_year: Biaya selama tahun pertama
+        currency: "€"
+        feasibility: Kelayakan
+        feasible: Layak
+        not_feasible: Tidak layak
+        undefined: Undefined
+        valuation_finished: Penilaian selesai
+        time_scope: Waktu ruang lingkup
+        internal_comments: Internal komentar
+        responsibles: Tanggung jawab
+        assigned_admin: Ditugaskan admin
+        assigned_valuators: Ditugaskan valuators
+      edit:
+        dossier: Berkas
+        price_html: "Harga (%{currency})"
+        price_first_year_html: "Biaya selama tahun pertama (%{currency})"
+        currency: "€"
+        price_explanation_html: Harga penjelasan
+        feasibility: Kelayakan
+        feasible: Layak
+        not_feasible: Tidak layak
+        undefined_feasible: Tertunda
+        feasible_explanation_html: Kelayakan penjelasan
+        valuation_finished: Penilaian selesai
+        time_scope_html: Waktu ruang lingkup
+        internal_comments_html: Internal komentar
+        save: Simpan perubahan
+      notice:
+        valuate: "Berkas diperbarui"

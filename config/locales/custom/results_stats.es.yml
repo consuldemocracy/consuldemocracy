@@ -15,6 +15,7 @@ es:
   stats:
     stats_link: Estadísticas
     page_title: Estadísticas
+    title_stats: "Estadísticas: "
     total_participants: TOTAL PARTICIPANTES
     total_budgets_investments_send: TOTAL PROPUESTAS ENVIADAS
     budget_investments_final_phase: PROPUESTAS EN LA FASE FINAL
@@ -33,6 +34,11 @@ es:
     years: años
     more_than: Más de
 
+  tracking:
+    title_tracking: Seguimiento
+    title_html: "Seguimiento: "
+
   progress:
     progress_1_link: 'Informe de estado nº 1'
     progress_2_link: 'Informe de estado nº 2'
+    progress_3_link: 'Informe de estado nº 3'

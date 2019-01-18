@@ -1,0 +1,29 @@
+<%= form_tag(admin_site_customization_update_heading_content_block_path(@content_block.id), method: "put") do %>
+  <% if @content_block.errors.any? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>
+        <%= @content_block.errors.count %>
+        <%= t("admin.site_customization.content_blocks.errors.form.error", count: @content_block.errors.count) %>
+      </strong>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-6 column">
+    <%= label_tag :name %>
+    <%= select_tag :name, options_for_select(valid_blocks, @selected_content_block), label: false %>
+  </div>
+  <div class="small-12 medium-6 column">
+    <%= label_tag :locale %>
+    <%= select_tag :locale, options_for_select(I18n.available_locales, @content_block.locale.to_sym), label: false %>
+  </div>
+  <div class="small-12 column">
+    <%= label_tag :body %>
+    <%= text_area_tag  :body, @content_block.body, rows: 10 %>
+    <div class="small-12 medium-6 large-3">
+      <%= button_tag t("admin.menu.site_customization.buttons.content_block.update"), class: "button success expanded" %>
+    </div>
+  </div>
+<% end %>

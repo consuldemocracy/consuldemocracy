@@ -1,0 +1,4 @@
+ast:
+  mailers:
+    proposal_notification_digest:
+      unsubscribe_account: La mio cuenta

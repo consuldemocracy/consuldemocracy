@@ -1,0 +1,39 @@
+it:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creato con successo."
+        debate: "Dibattito creato con successo."
+        direct_message: "Il messaggio è stato inviato con successo."
+        poll: "Sondaggio creato correttamente."
+        poll_booth: "Seggio creato correttamente."
+        poll_question_answer: "Risposta creata con successo"
+        poll_question_answer_video: "Video creato con successo"
+        poll_question_answer_image: "Immagine caricata con successo"
+        proposal: "Proposta creata correttamente."
+        proposal_notification: "Il tuo messaggio è stato inviato correttamente."
+        spending_proposal: "La proposta è stata creata. È possibile accedervi da %{activity}"
+        budget_investment: "Proposta di investimento creata correttamente."
+        signature_sheet: "Foglio per le firme creato correttamente"
+        topic: "Argomento creato con successo."
+        valuator_group: "Gruppo di stimatori creato con successo"
+      save_changes:
+        notice: Modifiche salvate
+      update:
+        notice: "%{resource_name} aggiornato con successo."
+        debate: "Dibattito creato correttamente."
+        poll: "Sondaggio creato correttamente."
+        poll_booth: "Seggio creato correttamente."
+        proposal: "Proposta aggiornata correttamente."
+        spending_proposal: "Progetto di investimento aggiornato correttamente."
+        budget_investment: "Progetto di investimento aggiornato con successo."
+        topic: "Argomento aggiornato con successo."
+        valuator_group: "Gruppo di stimatori aggiornato con successo"
+        translation: "Traduzione caricata con successo"
+      destroy:
+        spending_proposal: "Proposta di spesa eliminata."
+        budget_investment: "Progetto di investimento eliminato."
+        error: "Non può essere eliminato"
+        topic: "Argomento eliminato con successo."
+        poll_question_answer_video: "Video di risposta eliminato con successo."
+        valuator_group: "Gruppo di stimatori eliminato con successo"

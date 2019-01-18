@@ -1,0 +1,7 @@
+zh-CN:
+  milestones:
+    index:
+      no_milestones: 没有已定义的里程碑
+    show:
+      publication_date: "发布于%{publication_date}"
+      status_changed: 状态更改为

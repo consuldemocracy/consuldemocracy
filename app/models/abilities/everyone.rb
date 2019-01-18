@@ -7,7 +7,7 @@ module Abilities
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
 
-      can [:read, :welcome, :results, :stats, :progress_1, :progress_2], Budget
+      can [:read, :welcome, :results, :stats, :progress_1, :progress_2, :progress_3], Budget
       # can [:read, :welcome], Budget
       can :read, Budget::Investment
 
@@ -28,10 +28,11 @@ module Abilities
       can [:search, :read], Annotation
       can [:read], Budget
       can [:read], Budget::Group
-      can [:read, :print], Budget::Investment
-      can :read_results, Budget, phase: "finished"
+      can [:read, :print, :json_data], Budget::Investment
+      can [:read_results, :read_executions], Budget, phase: "finished"
       can :new, DirectMessage
-      can [:read, :debate, :draft_publication, :allegations, :result_publication, :proposals], Legislation::Process, published: true
+      can [:read, :debate, :draft_publication, :allegations, :result_publication,
+           :proposals, :milestones], Legislation::Process, published: true
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:read, :map, :share], Legislation::Proposal

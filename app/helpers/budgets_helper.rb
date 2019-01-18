@@ -1,5 +1,9 @@
 module BudgetsHelper
 
+  def show_links_to_budget_investments(budget)
+    ['balloting', 'reviewing_ballots', 'finished'].include? budget.phase
+  end
+
   def heading_name_and_price_html(heading, budget)
     content_tag :div do
       concat(heading.name + ' ')
@@ -23,7 +27,7 @@ module BudgetsHelper
 
   def namespaced_budget_investment_path(investment, options = {})
     case namespace
-    when "management/budgets"
+    when "management"
       management_budget_investment_path(investment.budget, investment, options)
     else
       budget_investment_path(investment.budget, investment, options)
@@ -32,7 +36,7 @@ module BudgetsHelper
 
   def namespaced_budget_investment_vote_path(investment, options = {})
     case namespace
-    when "management/budgets"
+    when "management"
       vote_management_budget_investment_path(investment.budget, investment, options)
     else
       vote_budget_investment_path(investment.budget, investment, options)
@@ -45,7 +49,7 @@ module BudgetsHelper
 
   def css_for_ballot_heading(heading)
     return '' if current_ballot.blank?
-    current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
+    current_ballot.has_lines_in_heading?(heading) ? 'is-active' : ''
   end
 
   def current_ballot
@@ -53,7 +57,7 @@ module BudgetsHelper
   end
 
   def investment_tags_select_options(budget)
-    Budget::Investment.where(budget_id: budget).tags_on(:valuation).order(:name).select(:name).distinct
+    Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).select(:name).distinct
   end
 
   def budget_published?(budget)
@@ -61,16 +65,26 @@ module BudgetsHelper
   end
 
   def current_budget_map_locations
-    current_budget.investments.map do |investment|
-      next unless investment.map_location.present?
-      {
-        lat: investment.map_location.latitude,
-        long: investment.map_location.longitude,
-        investment_title: investment.title,
-        investment_id: investment.id,
-        budget_id: current_budget.id
-      }
-    end.flatten.compact
+    return unless current_budget.present?
+    if current_budget.valuating_or_later?
+      investments = current_budget.investments.selected
+    else
+      investments = current_budget.investments
+    end
+
+    MapLocation.where(investment_id: investments).map { |l| l.json_data }
+  end
+
+  def display_calculate_winners_button?(budget)
+    budget.balloting_or_later?
+  end
+
+  def calculate_winner_button_text(budget)
+    if budget.investments.winners.empty?
+      t("admin.budgets.winners.calculate")
+    else
+      t("admin.budgets.winners.recalculate")
+    end
   end
 
   def css_for_highlight_investment_stat(phase)

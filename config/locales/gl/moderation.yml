@@ -1,0 +1,117 @@
+gl:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendente
+          with_ignored_flag: Marcado como revisado
+        headers:
+          comment: Comentario
+          moderate: Moderar
+        hide_comments: Agochar comentarios
+        ignore_flags: Marcar como revisado
+        order: Orde
+        orders:
+          flags: Máis denunciadas
+          newest: Máis novos
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderación
+    debates:
+      index:
+        block_authors: Bloquear autores
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendente
+          with_ignored_flag: Marcado como revisado
+        headers:
+          debate: Debate
+          moderate: Moderar
+        hide_debates: Agochar debates
+        ignore_flags: Marcar como revisado
+        order: Orde
+        orders:
+          created_at: Máis novos
+          flags: Máis denunciadas
+        title: Debates
+    header:
+      title: Moderación
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: Debates
+      flagged_investments: Investimentos orzamentarios
+      proposals: Propostas
+      proposal_notifications: Notificacións de propostas
+      users: Bloquear usuarios
+    proposals:
+      index:
+        block_authors: Bloquear autores/as
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendentes de revisión
+          with_ignored_flag: Marcar como revisado
+        headers:
+          moderate: Moderar
+          proposal: Proposta
+        hide_proposals: Agochar propostas
+        ignore_flags: Marcar como revisado
+        order: Ordenar por
+        orders:
+          created_at: Máis recentes
+          flags: Máis denunciadas
+        title: Propostas
+    budget_investments:
+      index:
+        block_authors: Autores de bloques
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendente
+          with_ignored_flag: Marcado como revisado
+        headers:
+          moderate: Moderar
+          budget_investment: Investimento orzamentario
+        hide_budget_investments: Agochar investimentos orzamentarios
+        ignore_flags: Marcar como revisado
+        order: Ordeado por
+        orders:
+          created_at: Máis recente
+          flags: Máis denunciados
+        title: Investimentos orzamentarios
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_review: Pendentes de revisión
+          ignored: Marcar como revisado
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificación de proposta
+        hide_proposal_notifications: Agochar propostas
+        ignore_flags: Marcar como revisado
+        order: Ordeado por
+        orders:
+          created_at: Máis recente
+          moderated: Moderado
+        title: Notificacións de proposta
+    users:
+      index:
+        hidden: Bloqueado
+        hide: Bloquear
+        search: Buscar
+        search_placeholder: correo electrónico ou nome de usuario
+        title: Bloquear usuarios
+      notice_hide: Usuario bloqueado. Ocultáronse todos os seus debates e comentarios.

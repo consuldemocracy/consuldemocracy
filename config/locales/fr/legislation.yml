@@ -1,0 +1,122 @@
+fr:
+  legislation:
+    annotations:
+      comments:
+        see_all: Voir tous
+        see_complete: Voir l'intégralité
+        comments_count:
+          one: "%{count} commentaire"
+          other: "%{count} commentaires"
+        replies_count:
+          one: "%{count} réponse"
+          other: "%{count} réponses"
+        cancel: Annuler
+        publish_comment: Publier un commentaire
+      form:
+        phase_not_open: Cette phase n’est pas ouverte
+        login_to_comment: Il est nécessaire de %{signin} ou de %{signup} pour laisser un commentaire.
+        signin: Se connecter
+        signup: S'inscrire
+      index:
+        title: Commentaires
+        comments_about: Commentaires au sujet de
+        see_in_context: Voir dans le contexte
+        comments_count:
+          one: "%{count} commentaire"
+          other: "%{count} commentaires"
+      show:
+        title: Commentaire
+      version_chooser:
+        seeing_version: Commentaires pour la version
+        see_text: Voir le brouillon
+    draft_versions:
+      changes:
+        title: Changements
+        seeing_changelog_version: Résumé des changements
+        see_text: Voir le brouillon
+      show:
+        loading_comments: Chargement des commentaires
+        seeing_version: Vous voyez le brouillon
+        select_draft_version: Sélectionnez le brouillon
+        select_version_submit: voir
+        updated_at: mis à jour à %{date}
+        see_changes: voir le résumé des changements
+        see_comments: Voir tous les commentaires
+        text_toc: Table des matières
+        text_body: Texte
+        text_comments: Commentaires
+    processes:
+      header:
+        additional_info: Information supplémentaire
+        description: Description
+        more_info: Plus d'information et de contexte
+      proposals:
+        empty_proposals: Il n’y a pas de propositions
+      debate:
+        empty_questions: Il n'y a pas de question
+        participate: Participer au débat
+      index:
+        filter: Filtrer
+        filters:
+          open: Processus ouverts
+          next: À venir
+          past: Passés
+        no_open_processes: Il n'y a pas de processus ouverts
+        no_next_processes: Il n'y a pas de processus à venir
+        no_past_processes: Il n'y a pas de processus passés
+        section_header:
+          icon_alt: Icône des processus législatifs
+          title: Processus législatifs
+          help: Aide sur les processus législatifs
+        section_footer:
+          title: Aide sur les processus législatifs
+          description: Participer aux débats et aux processus préalables à la création d’une ordonnance ou d'une décision municipale. Votre avis sera examiné par le conseil municipal.
+      phase_not_open:
+        not_open: Cette phase n’est pas encore ouverte
+      phase_empty:
+        empty: Rien de publié pour le moment
+      process:
+        see_latest_comments: Voir les derniers commentaires
+        see_latest_comments_title: Commentaires sur le processus
+      shared:
+        key_dates: Dates-clés
+        debate_dates: Débat
+        draft_publication_date: Brouillon de publication
+        allegations_dates: Commentaires
+        result_publication_date: Publication du résultat final
+        proposals_dates: Propositions
+    questions:
+      comments:
+        comment_button: Publier une réponse
+        comments_title: Réponses ouvertes
+        comments_closed: Phase fermée
+        form:
+          leave_comment: Laisser une réponse
+      question:
+        comments:
+          zero: Aucun commentaire
+          one: "%{count} commentaire"
+          other: "%{count} commentaires"
+        debate: Débat
+      show:
+        answer_question: Soumettre une réponse
+        next_question: Question suivante
+        first_question: Première question
+        share: Partager
+        title: Processus législatif collaboratif
+      participation:
+        phase_not_open: Cette phase n’est pas ouverte
+        organizations: Les organisations ne sont pas autorisées à participer au débat
+        signin: Se connecter
+        signup: S'inscrire
+        unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour participer.
+        verified_only: Seuls les utilisateurs vérifiés peuvent participer, %{verify_account}.
+        verify_account: vérifier votre compte
+        debate_phase_not_open: La phase de débat est terminée et les réponses ne sont plus acceptées
+    shared:
+      share: Partager
+      share_comment: Commenter la version %{version_name} du brouillon du processus %{process_name}
+    proposals:
+      form:
+        tags_label: "Catégories"
+      not_verified: "Pour voter pour les propositions, %{verify_account}."

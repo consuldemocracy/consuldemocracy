@@ -1,10 +1,21 @@
+<h2><%= t("management.budgets.print_investments") %></h2>
+
 <table>
-  <tr id="<%= dom_id(@budget) %>">
-    <td><%= @budget.name %></td>
-    <td><%= @budget.translated_phase %></td>
-    <td align="right">
-      <%= link_to t("management.budgets.print_investments"),
-        print_management_budget_investments_path(@budget) %>
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th><%= t("management.budgets.table_name") %></th>
+      <th><%= t("management.budgets.table_phase") %></th>
+      <th><%= t("management.budgets.table_actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="<%= dom_id(@budget) %>">
+      <td><%= @budget.name %></td>
+      <td><%= @budget.translated_phase %></td>
+      <td align="right">
+        <%= link_to t("management.budgets.print_investments"),
+          print_management_budget_investments_path(@budget) %>
+      </td>
+    </tr>
+  </tbody>
 </table>

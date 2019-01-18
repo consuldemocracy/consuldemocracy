@@ -1,0 +1,21 @@
+ast:
+  moderation:
+    comments:
+      index:
+        confirm: '¿Tas seguru?'
+        filter: Filtru
+        filters:
+          all: Toos
+          pending_flag_review: Pindios
+        headers:
+          comment: Comentariu
+    debates:
+      index:
+        headers:
+          debate: Alderique
+        title: Alderiques
+    menu:
+      proposals: Propuestes
+    users:
+      index:
+        hidden: Bloquiáu

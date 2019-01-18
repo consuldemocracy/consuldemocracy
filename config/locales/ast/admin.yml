@@ -1,0 +1,256 @@
+ast:
+  admin:
+    actions:
+      hide_author: Bloquiar a l'autor
+      restore: Volver amosar
+      unmark_featured: Quitar destacáu
+    banners:
+      index:
+        title: Banners
+        delete: Esaniciar banner
+      banner:
+        target_url: Enllaz
+        post_started_at: Entamu de publicación
+    activity:
+      show:
+        actions:
+          hide: Despintáu
+          restore: Restauráu
+        by: Moderáu por
+        title: Actividá de Moderadores
+        type: Tipu
+    budgets:
+      index:
+        new_link: Crear nuevu presupuestu
+        table_investments: Propuestes d'inversión
+        table_edit_groups: Grupos de partíes
+        edit_groups: Editar grupos de partíes
+        edit_budget: Editar presupuestu
+      create:
+        notice: '¡Nueva campaña de presupuestos participativos creada con ésitu!'
+      new:
+        title: Nuevu presupuestu ciudadanu
+      winners:
+        calculate: Calcular propuestes ganadores
+        calculated: Calculando ganadoras, puede tardar un minutu.
+    budget_investments:
+      index:
+        administrator_filter_all: Tolos alministradores
+        valuator_filter_all: Tolos evaluadores
+        tags_filter_all: Toles etiquetes
+        filters:
+          without_admin: Ensin alministrador
+          selected: Escoyíes
+        assigned_admin: Alministrador asignáu
+        no_admin_assigned: Ensin almin asignáu
+        feasibility:
+          feasible: "Vidable (%{price})"
+          undecided: "Ensin decidir"
+      show:
+        info: "%{budget_name} - Grupu: %{group_name} - Propuesta d'inversión %{id}"
+      edit:
+        assigned_valuators: Evaluaores
+        select_heading: Escoyer partida
+        tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
+      search_unfeasible: Buscar invidables
+    milestones:
+      index:
+        delete: "Esaniciar finxu"
+      new:
+        creating: Crear finxu
+      edit:
+        title: Editar finxu
+      create:
+        notice: '¡Nuevu finxu creáu con ésitu!'
+      update:
+        notice: Finxu actualizáu
+      delete:
+        notice: Finxu borráu correchamente
+    comments:
+      index:
+        filters:
+          with_confirmed_hide: Confirmaos
+        hidden_debate: Alderique ocultu
+    debates:
+      index:
+        title: Alderiques ocultos
+    hidden_users:
+      index:
+        title: Usuarios bloquiaos
+      show:
+        email: 'Email:'
+        hidden_at: 'Bloqueao:'
+        registered_at: 'Fecha d''alta:'
+        title: Actividá del usuariu (%{user})
+    legislation:
+      processes:
+        create:
+          notice: 'Procesu creáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo crear el procesu
+        update:
+          notice: 'Procesu actualizáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo actualizar el procesu
+        destroy:
+          notice: Procesu esaniciáu correchamente
+        errors:
+          form:
+            error: Erru
+        form:
+          enabled: Habilitáu
+          process: Procesu
+          start: Entamu
+          use_markdown: Usa Markdown pa dar formatu al testu
+          title_placeholder: Escribe'l títulu del procesu
+          summary_placeholder: Resume curtiu de la descripción
+          description_placeholder: Añede una descripción del procesu
+          additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
+        index:
+          create: Nuevu procesu
+        new:
+          title: Crear nuevu procesu de lexislación collaborativa
+          submit_button: Crear procesu
+        process:
+          status_closed: Pesllao
+      draft_versions:
+        create:
+          notice: 'Borrador creáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo crear el borrador
+        update:
+          notice: 'Borrador Actualizáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo actualizar el borrador
+        destroy:
+          notice: Borrador esaniciáu correchamente
+        edit:
+          warning: Editasti'l testu. Pa caltener de forma permanente los cambeos, nun escaezas de faer click en Guardar.
+        form:
+          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del procesu <span class="strong">%{process_title}</span>'
+          launch_text_editor: Llanzar editor de testu
+          close_text_editor: Pesllar editor de testu
+          hints:
+            final_version: Esta versión va ser publicada como Resultancia Final pa esti procesu. Esta versión non podrá comentase.
+            status:
+              draft: Puedes previsualizar como almin, naide más lu pue ver
+              published: Visible pa tol mundu
+          title_placeholder: Escribe'l títulu d'esta versión del borrador
+          changelog_placeholder: Describe cualesquier cambíu relevante cola versión anterior
+          body_placeholder: Escribe'l testu del borrador
+        statuses:
+          published: Publicáu
+      questions:
+        create:
+          notice: 'Entruga creada correchamente. <a href="%{link}">Click pa vela</a>'
+          error: La entruga nun se pudo crear
+        update:
+          notice: 'Entruga actualizada correchamente. <a href="%{link}">Click pa vela</a>'
+          error: La entruga nun se pudo actualizar
+        destroy:
+          notice: Entruga esaniciada correchamente
+        form:
+          add_option: +Añedir respuesta zarrada
+          value_placeholder: Escribe una respuesta zarrada
+        index:
+          title: Entrugues acomuñaes a esti procesu
+        new:
+          title: Crear nueva entruga
+        table:
+          answers_count: Númberu de respuestes
+          comments_count: Númberu de comentarios
+        question_option_fields:
+          remove_option: Esaniciar
+    managers:
+      index:
+        title: Xestores
+      manager:
+        add: Añedir como Xestor
+    menu:
+      admin: Menú d'alministración
+      banner: Xestionar banners
+      proposals_topics: Temes de propuestes
+      geozones: Xestionar distritos
+      hidden_proposals: Propuestes ocultes
+      administrators: Alministradores
+      poll_booths: Allugamientu d'urnes
+      stats: Estadístiques
+      signature_sheets: Fueyes de firmes
+      title_moderated_content: Conteníu moderao
+      legislation: Lexislación collaborativa
+    administrators:
+      administrator:
+        restricted_removal: "Sentimoslo, nun puedes esaniciate a ti mesmu de la llista"
+    valuators:
+      valuator:
+        add: Añedir como evaluaor
+      summary:
+        title: Resume d'evaluación de propuestes d'inversión
+        finished_and_feasible_count: Remataes vidables
+        finished_and_unfeasible_count: Remataes invidables
+        in_evaluation_count: N'evaluación
+        total_count: Total
+    poll_officers:
+      officer:
+        delete: Esaniciar cargu
+    poll_officer_assignments:
+      index:
+        officers_title: "Llistáu de presidentes de mesa asignaos"
+        no_officers: "Nun hai presidentes de mesa asignaos a esta votación."
+      by_officer:
+        assignments: "Turnos como presidente de mesa nesta votación"
+        no_assignments: "Nun tien turnos como presidente de mesa nesta votación."
+    poll_booth_assignments:
+      flash:
+        destroy: "Urna ensin asignar"
+        error_destroy: "Producióse un erru al ensin asignar la urna"
+        error_create: "Producióse un erru al intentar asignar la urna"
+      show:
+        officers_list: "Llista de presidentes de mesa asignaos a esta urna"
+        no_officers: "Nun hai presidentes de mesa pa esta urna"
+        recounts_list: "Llista de recuentos d'esta urna"
+        count_by_system: "Votos (automáticu)"
+      index:
+        booths_title: "Llistáu d'urnes asignaes"
+        no_booths: "Nun hai urnes asignaes a esta votación."
+    polls:
+      index:
+        dates: "Feches"
+      show:
+        questions_tab: Entrugues
+        booths_tab: Urnes
+        no_questions: "Nun hai entrugues asignaes a esta votación."
+        questions_title: "Llistáu d'entrugues asignaes"
+      flash:
+        question_added: "Entruga añedida a esta votación"
+        error_on_question_added: "Non pudo asignase la entruga"
+    questions:
+      index:
+        no_questions: "Nun hai nenguna entruga ciudadana."
+        filter_poll: Peñerar por votación
+        select_poll: Escoyer votación
+        successful_proposals_tab: "Propuestes que superaron l'estragal"
+      edit:
+        title: "Editar entruga ciudadana"
+      new:
+        title: "Crear entruga ciudadana"
+      show:
+        valid_answers: Respuestes válides
+    recounts:
+      index:
+        no_recounts: "Nun hai nada de lo que faer recuentu"
+    results:
+      index:
+        no_results: "Nun hai resultancies"
+    booths:
+      index:
+        add_booth: "Añedir urna"
+    officials:
+      edit:
+        destroy: Esaniciar condición de 'Cargu Públicu'
+        title: 'Cargos Públicos: Editar usuariu'
+      flash:
+        official_destroyed: 'Datos guardaos: l''usuariu yá nun ye cargu públicu'
+        official_updated: Datos del cargu públicu guardaos
+      level_0: Nun ye cargu públicu
+      search:
+        edit_official: Editar cargu públicu
+    users:
+      columns:
+        roles: Funciones

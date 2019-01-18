@@ -1,0 +1,21 @@
+id:
+  images:
+    remove_image: Hapus gambar
+    form:
+      title: Gambar deskriptif
+      title_placeholder: Tambahkan judul deskriptif untuk gambar
+      attachment_label: Pilih gambar
+      delete_button: Hapus gambar
+      note: "Anda dapat mengunggah satu gambar dari jenis konten berikut: %{accepted_content_types}, hingga %{max_file_size} MB."
+      add_new_image: Tambahkan gambar
+      admin_title: "Gambar"
+      admin_alt_text: "Teks alternatif untuk gambar"
+    actions:
+      destroy:
+        notice: Gambar telah berhasil dihapus.
+        alert: Tidak bisa menghancurkan gambar.
+        confirm: Apakah Anda yakin ingin menghapus gambar? Tindakan ini tidak dapat dibatalkan!
+    errors:
+      messages:
+        in_between: harus di antara keduanya %{min} dan %{max}
+        wrong_content_type: jenis konten %{content_type} tidak cocok dengan jenis konten yang diterima%{accepted_content_types}

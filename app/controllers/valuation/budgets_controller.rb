@@ -7,11 +7,9 @@ class Valuation::BudgetsController < Valuation::BaseController
   def index
     @budget = current_budget
     if @budget.present?
-      @investments_with_valuation_open = {}
-      @investments_with_valuation_open = @budget.investments
-                                                .by_valuator(current_user.valuator.try(:id))
-                                                .valuation_open
-                                                .count
+      @investments = @budget.investments
+                            .by_valuator(current_user.valuator)
+                            .valuation_open
     end
   end
 end

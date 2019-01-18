@@ -1,10 +1,25 @@
 val:
   management:
     account:
+      menu:
+        reset_password_email: Restablir contrasenya via email
+        reset_password_manually: Restablir contrasenya manualment
       alert:
         unverified_user: Sols es poden editar comptes d'usuaris verificats
       show:
         title: Compte d'usuari
+      edit:
+        title: 'Editar compte d''usuari: Restablir contrasenya'
+        back: Arrere
+        password:
+          password: Contrasenya
+          send_email: Enviar email per a restablir contrasenya
+          reset_email_send: Email enviat correctament.
+          reseted: Contrasenya restablida correctament
+          random: Generar contrasenya aleatoria
+          save: Guardar contrasenya
+          print: Imprimir contrasenya
+          print_help: Podràs imprimir la contrasenya quant s'haja guardat.
     account_info:
       change_user: Canviar usuari
       document_number_label: 'Número de document:'
@@ -12,7 +27,7 @@ val:
       email_label: 'Correu electrònic:'
       identified_label: 'Identificat com:'
       username_label: 'Nom d''usuari:'
-    check: Comprovar
+    check: Revisa document
     dashboard:
       index:
         title: Gestió
@@ -36,7 +51,7 @@ val:
       already_verified: Este compte d'usuari ja està verificat.
       choose_options: 'Eligeix una de les opcions següents:'
       document_found_in_census: Este document està en el registre del padró municipal, però encara no te un compte d'usuari associat.
-      document_mismatch: Este correu electrònic correspon a un usuari que ya te associat el document %{document_number}(%{document_type})
+      document_mismatch: 'Este correu electrònic correspon a un usuari que ya te associat el document %{document_number}(%{document_type})'
       email_placeholder: Introdueix el correu electrònic de registre
       email_sent_instructions: Per acabar de verificar este compte es necessari que faça clic en l'enllaç que li hem enviat a la direcció de correu que figura dalt. Este pas es necessari per a confirmar que eixe compte d'usuari es seua.
       if_existing_account: Si la persona ja ha creat un compte d'usuari en la web
@@ -50,25 +65,22 @@ val:
       create_spending_proposal: Crear proposta d'inversió
       print_spending_proposals: Imprimir propostes d'inversió
       support_spending_proposals: Avalar propostes d'inversió
-      create_budget_investment: Crear propostes
-      print_budget_investments: Imprimir propostes
-      support_budget_investments: Avalar propostes
-      users: Usuaris
-      edit_user_accounts: Editar compte d'usuari
+      create_budget_investment: Crear projectes d'inversió
+      print_budget_investments: Imprimir projectes d'inversió
+      support_budget_investments: Avalar projectes d'inversió
+      users: Gestió d'usuaris
       user_invites: Invitacions per a usuaris
+      select_user: Seleccionar usuari
     permissions:
       create_proposals: Crear noves propostes
       debates: Participar en debats
       support_proposals: Avalar propostes
       vote_proposals: Participar en les votacions finals
     print:
-      proposals_info: Fes la teua proposta en http://url.consul
-      proposals_note: Les propostes més avalades seran dutes a votació. I si les accepta una majoría, l'Ajuntament les durà a terme.
+      proposals_info: Crea la teua proposta en http://url.consul
       proposals_title: 'Propostes:'
       spending_proposals_info: Participa en http://url.consul
-      spending_proposals_note: Els pressupostos participatius s'invertiran en les propostes d'inversió més avalades.
       budget_investments_info: Participa en http://url.consul
-      budget_investments_note: Els pressupostos participatius s'invertiran en les propostes d'inversió més avalades.
     print_info: Imprimir esta informació
     proposals:
       alert:
@@ -76,10 +88,16 @@ val:
       create_proposal: Crear una proposta
       print:
         print_button: Imprimir
+      index:
+        title: Avalar propostes
     budgets:
-      create_new_investment: Crear nou projecte
-      print_investments: Imprimir Propostes d'Inversió
-      support_investments: Avalar Propostes d'Inversió
+      create_new_investment: Crear projecte d'inversió
+      print_investments: Imprimir projectes d'inversió
+      support_investments: Avalar projectes d'inversió
+      table_name: Nom
+      table_phase: Fase
+      table_actions: Accions
+      no_budgets: No hi ha pressupostos participatius actius.
     budget_investments:
       alert:
         unverified_user: Usuari no verificat
@@ -98,7 +116,7 @@ val:
       create: Crear proposta d'inversió
       filters:
         unfeasible: Propostes d'inversió no viables
-        by_geozone: 'Propostes d''inversió amb àmbit: %{geozone}'
+        by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
       print:
         print_button: Imprimir
       search_results:
@@ -110,13 +128,13 @@ val:
     username_label: Nom d'usuari
     users:
       create_user: Crear nou compte d'usuari
-      create_user_info: 'Procedim a crear un usuari amb la següent informació:'
+      create_user_info: Procedim a crear un compte amb la següent informació
       create_user_submit: Crear usuari
       create_user_success_html: Hem enviat un correu electrònic a <strong>%{email}</strong> per a verificar que es seua. El correu enviat conté un enllaç que l'usuari haurà de polsar. Entonces podrà seleccionar una contrasenya, i entrar en la web de participació
       autogenerated_password_html: "S'ha asignat la contrasenya <strong>%{password}</strong> a este usuari. Pots modificarla desde l'apartat 'El meu compte' de la web"
       email_optional_label: Correu electrònic (recomanat pero opcional)
       erased_notice: Compte d'usuari eliminat.
-      erased_by_manager: 'Borrada per el manager: %{manager}'
+      erased_by_manager: "Borrada per el manager: %{manager}"
       erase_account_link: Eliminar compte
       erase_account_confirm: Segur que vols eliminar este usuari? Esta acció no es pot desfer
       erase_warning: Esta acció no es pot desfer. Si us plau asegurat de que vol eliminar este compte.

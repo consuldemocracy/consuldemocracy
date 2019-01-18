@@ -1,0 +1,150 @@
+gl:
+  management:
+    account:
+      menu:
+        reset_password_email: Restabelecer o contrasinal a través do correo
+        reset_password_manually: Restabelecer o contrasinal de xeito manual
+      alert:
+        unverified_user: Aínda non iniciou sesión ningún usuario con conta verificada
+      show:
+        title: Conta de usuario/a
+      edit:
+        title: 'Editar conta de usuario: Restabelecer o contrasinal'
+        back: Atrás
+        password:
+          password: Contrasinal
+          send_email: Enviar correo para restabelecer o contrasinal
+          reset_email_send: Mensaxe enviada correctamente.
+          reseted: Contrasinal restabelecido correctamente
+          random: Crear contrasinal aleatorio
+          save: Gardar contrasinal
+          print: Imprimir contrasinal
+          print_help: Poderás imprimir o contrasinal cando se garde.
+    account_info:
+      change_user: Cambiar usuario/a
+      document_number_label: 'Número de documento:'
+      document_type_label: 'Tipo de documento:'
+      email_label: 'Correo electrónico:'
+      identified_label: 'Identificado como:'
+      username_label: 'Nome de usuario:'
+    check: Comprobar documento
+    dashboard:
+      index:
+        title: Xestión
+        info: Dende aquí podes xestionar usuarios a través das accións listadas no menú da esquerda.
+    document_number: Número de documento
+    document_type_label: Tipo de documento
+    document_verifications:
+      already_verified: Esta conta de usuario xa está confirmada.
+      has_no_account_html: Para crear un usuario, entra en %{link} e preme na opción <b>'Rexistrarse'</b> na parte superior esquerda da pantalla.
+      link: CONSUL
+      in_census_has_following_permissions: 'Este usuario pode participar no sitio web cos seguintes permisos:'
+      not_in_census: Este documento non está rexistrado.
+      not_in_census_info: 'As persoas non empadroadas poden participar no sitio web cos seguintes permisos:'
+      please_check_account_data: Comprobe que os datos da conta de arriba son correctos.
+      title: Xestión de usuarios
+      under_age: "Non tes a idade mínima para poder verificar a túa conta."
+      verify: Verificar
+    email_label: Correo electrónico
+    date_of_birth: Data de nacemento
+    email_verifications:
+      already_verified: Esta conta de usuario xa está confirmada.
+      choose_options: 'Elixe unha das opcións seguintes:'
+      document_found_in_census: Este documento está no rexistro do padrón municipal, pero aínda non ten unha conta de usuario asociada.
+      document_mismatch: 'Ese correo electrónico correspóndelle a un usuario que xa ten asociado un identificador: %{document_number}(%{document_type})'
+      email_placeholder: Escribe o enderezo de correo que usou a persoa para crear a conta
+      email_sent_instructions: Para rematar de verificar esta conta é necesario que premas na ligazón que lle enviamos ao enderezo de correo que figura arriba. Este paso é necesario para confirmar que a conta de usuario é túa.
+      if_existing_account: Se a persoa xa creou unha conta de usuario na web,
+      if_no_existing_account: Se a persoa aínda non creou unha conta de usuario
+      introduce_email: 'Introduza o enderezo de correo co que creou a conta:'
+      send_email: Enviar correo electrónico de confirmación
+    menu:
+      create_proposal: Crear proposta
+      print_proposals: Imprimir propostas
+      support_proposals: Apoiar propostas
+      create_spending_proposal: Crear proposta de gasto
+      print_spending_proposals: Imprimir propostas de gasto
+      support_spending_proposals: Apoiar propostas de gasto
+      create_budget_investment: Crear investimento orzamentario
+      print_budget_investments: Imprimir investimentos orzamentarios
+      support_budget_investments: Apoiar investimentos orzamentarios
+      users: Xestión de usuarios
+      user_invites: Enviar convites
+      select_user: Seleccionar usuario
+    permissions:
+      create_proposals: Crear propostas
+      debates: Participar en debates
+      support_proposals: Apoiar propostas
+      vote_proposals: Votar propostas
+    print:
+      proposals_info: Crea a túa proposta en http://url.consul
+      proposals_title: 'Propostas:'
+      spending_proposals_info: Participa en http://url.consul
+      budget_investments_info: Participa en http://url.consul
+    print_info: Imprimir esta información
+    proposals:
+      alert:
+        unverified_user: Este usuario non ten a conta verificada
+      create_proposal: Crear unha proposta
+      print:
+        print_button: Imprimir
+      index:
+        title: Apoiar propostas
+    budgets:
+      create_new_investment: Crear investimento orzamentario
+      print_investments: Imprimir investimentos orzamentarios
+      support_investments: Apoiar investimentos orzamentarios
+      table_name: Nome
+      table_phase: Fase
+      table_actions: Accións
+      no_budgets: Non hai orzamentos participativos activos.
+    budget_investments:
+      alert:
+        unverified_user: Usuario sen verificar
+      create: Crear un proxecto novo
+      filters:
+        heading: Concepto
+        unfeasible: Proxectos non factibles
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " conteñen o termo '%{search_term}'"
+        other: " conteñen os termos '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Usuario sen verificar
+      create: Crear unha proposta de investimento
+      filters:
+        unfeasible: Propostas de investimento non viables
+        by_geozone: "Propostas de investimento con ámbito: %{geozone}"
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " conteñen o termo '%{search_term}'"
+        other: " conteñen o termo '%{search_term}'"
+    sessions:
+      signed_out: Pechaches a sesión correctamente.
+      signed_out_managed_user: A sesión de usuario foi pechada correctamente.
+    username_label: Nome de usuario
+    users:
+      create_user: Crear unha nova conta
+      create_user_info: Procedemos a crear unha conta coa seguinte información
+      create_user_submit: Crear usuario
+      create_user_success_html: Enviamos un correo electrónico a <b>%{email}</b> para verificar que é túa. O correo enviado contén unha ligazón na que o usuario deberá premer. Entón poderá seleccionar unha clave de acceso, e entrar no sitio web
+      autogenerated_password_html: "O contrasinal autoxerado é <b>%{password}</b>. Podes modificalo na sección 'A miña conta' da web"
+      email_optional_label: Correo (opcional)
+      erased_notice: Conta de usuario eliminada.
+      erased_by_manager: "Elliminada polo xestor: %{manager}"
+      erase_account_link: Eliminar usuario
+      erase_account_confirm: Seguro que queres eliminar a este usuario? Esta acción non se pode desfacer
+      erase_warning: Esta acción non se pode desfacer. Por favor, asegúrese de que quere eliminar esta conta.
+      erase_submit: Eliminar a conta
+    user_invites:
+      new:
+        label: Correos
+        info: "Escribe os correos separados por comas (',')"
+        submit: Enviar convites
+        title: Enviar convites
+      create:
+        success_html: Enviáronse <strong>%{count} convites</strong>.
+        title: Enviar convites

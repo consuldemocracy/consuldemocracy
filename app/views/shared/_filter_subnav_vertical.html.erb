@@ -3,7 +3,7 @@
 
   <% @valid_filters.each do |filter| %>
     <% if @current_filter == filter %>
-      <li class="active">
+      <li class="is-active">
         <h2><%= t("#{i18n_namespace}.filters.#{filter}") %></h2>
       </li>
     <% else %>

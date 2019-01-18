@@ -1,0 +1,60 @@
+gl:
+  community:
+    sidebar:
+      title: Comunidade
+      description:
+        proposal: Participar na comunidade desta proposta.
+        investment: Participar na comunidade deste proxecto de investimento.
+      button_to_access: Acceder á comunidade
+    show:
+      title:
+        proposal: Comunidade da proposta
+        investment: Comunidade do orzamento participativo
+      description:
+        proposal: Participa na comunidade desta proposta. Unha comunidade activa pode axudar a mellorar o contido da proposta así como dinamizar a difusión para conseguir máis apoios.
+        investment: Participa na comunidade deste proxecto de investimento. Unha comunidade activa pode axudar a mellorar o contido do proxecto de investimento así como a dinamizar a difusión para conseguir máis apoios.
+      create_first_community_topic:
+        first_theme_not_logged_in: Non hai ningún tempa dispoñible. Participa creando o primeiro.
+        first_theme: Crea o primeiro tema da comunidade
+        sub_first_theme: "Para crear un tema debes %{sign_in} ou %{sign_up}."
+        sign_in: "iniciar sesión"
+        sign_up: "rexistrarte"
+      tab:
+        participants: Participantes
+      sidebar:
+        participate: Participa
+        new_topic: Crea un tema
+      topic:
+        edit: Editar tema
+        destroy: Borrar tema
+        comments:
+          zero: Sen comentarios
+          one: 1 comentario
+          other: "%{count} comentarios"
+      author: Autoría
+      back: Regresar á %{proposal} %{community}
+    topic:
+      create: Crear un tema
+      edit: Editar tema
+      form:
+        topic_title: Título
+        topic_text: Texto de inicio
+        new:
+          submit_button: Crear un tema
+        edit:
+          submit_button: Editar tema
+        create:
+          submit_button: Crear un tema
+        update:
+          submit_button: Actualizar o tema
+      show:
+        tab:
+          comments_tab: Comentarios
+      sidebar:
+        recommendations_title: Recomendacións para crear un tema
+        recommendation_one: Non escribas o título do tema ou frases enteiras en maiúsculas. Na rede iso interprétase como berrar, e a ninguén lle gusta que lle berren. 
+        recommendation_two: Calquera tema ou comentario que implique unha acción ilegar borrarase, igual que os que tiveren a intención de sabotar os espazos do tema. Todo o demais está permitido.
+        recommendation_three: Goza deste espazo e das voces que o enchen, pois tamén é teu.
+  topics:
+    show:
+      login_to_comment: Precisas %{signin} ou %{signup} para comentares.

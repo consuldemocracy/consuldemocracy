@@ -21,7 +21,7 @@ feature 'Results' do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_selector('a.active', text: budget.headings.first.name)
+    expect(page).to have_selector('a.is-active', text: budget.headings.first.name)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title

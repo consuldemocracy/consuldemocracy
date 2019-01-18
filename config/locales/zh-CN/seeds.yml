@@ -1,0 +1,55 @@
+zh-CN:
+  seeds:
+    settings:
+      official_level_1_name: 正式职位 1
+      official_level_2_name: 正式职位 2
+      official_level_3_name: 正式职位 3
+      official_level_4_name: 正式职位 4
+      official_level_5_name: 正式职位 5
+    geozones:
+      north_district: 北区
+      west_district: 西区
+      east_district: 东区
+      central_district: 中区
+    organizations:
+      human_rights: 人权
+      neighborhood_association: 邻里协会
+    categories:
+      associations: 协会
+      culture: 文化
+      sports: 体育
+      social_rights: 社会权利
+      economy: 经济
+      employment: 就业
+      equity: 平等
+      sustainability: 可持续发展
+      participation: 参与
+      mobility: 流动性
+      media: 媒体
+      health: 健康
+      transparency: 透明度
+      security_emergencies: 安全和紧急情况
+      environment: 环境
+    budgets:
+      budget: 参与性预算
+      currency: '€'
+      groups:
+        all_city: 所有城市
+        districts: 地区
+      valuator_groups:
+        culture_and_sports: 文化&体育
+        gender_and_diversity: 性别 & 多元化政策
+        urban_development: 可持续城市发展
+        equity_and_employment: 平等&就业
+      statuses:
+        studying_project: 研究此项目
+        bidding: 投票
+        executing_project: 执行此项目
+        executed: 已执行
+    polls:
+      current_poll: "当前的投票"
+      current_poll_geozone_restricted: "当前投票地理区域的限制"
+      incoming_poll: "进来的投票"
+      recounting_poll: "重新计票"
+      expired_poll_without_stats: "已过期的投票，没有统计数据&结果"
+      expired_poll_with_stats: "已过期的投票，有统计数据&结果"

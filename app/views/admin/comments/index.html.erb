@@ -1,4 +1,5 @@
 <h2><%= t("admin.comments.index.title") %></h2>
+<p><%= t("admin.shared.moderated_content") %></p>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.comments.index" %>
 
@@ -7,7 +8,7 @@
 
   <table>
     <thead>
-      <th scope="col" class="small-9"><%= t("admin.shared.description") %></th>
+      <th scope="col" class="small-8"><%= t("admin.shared.description") %></th>
       <th scope="col"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>

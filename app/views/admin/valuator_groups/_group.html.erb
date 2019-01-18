@@ -1,0 +1,17 @@
+<tr id="<%= dom_id(group) %>">
+  <td>
+    <%= link_to group.name, admin_valuator_group_path(group) %>
+  </td>
+  <td>
+    <%= group.valuators.count %>
+  </td>
+  <td>
+    <%= link_to t("admin.actions.delete"),
+                admin_valuator_group_path(group),
+                method: :delete, class: "button hollow alert" %>
+
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_valuator_group_path(group),
+                class: "button hollow" %>
+  </td>
+</tr>

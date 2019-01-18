@@ -5,7 +5,7 @@
 <ul id="categories" class="no-bullet categories">
   <% @categories.each do |category| %>
     <li class="inline-block">
-      <% css_class = { class: 'active' } if params[:search] == category.name %>
+      <% css_class = { class: 'is-active' } if params[:search] == category.name %>
       <%= link_to category.name, proposals_path(search: category.name), css_class || {} %>
     </li>
   <% end %>

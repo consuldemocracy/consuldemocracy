@@ -1,5 +1,5 @@
 <div class="small-12 medium-9 column">
-  <ul>
+  <ul class="no-bullet">
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
@@ -68,14 +68,19 @@
                                 controller_name == "pages" && params[:id] == 'more_information',
                                 accesskey: "b" %>
     </li>
-
-    <li class="float_right">
+    <li class="hide-for-small-only float_right">
       <%= layout_menu_link_to t("layouts.subnavigation.query_districte"),
                                 "https://www.castello.es/geoportal",
                                 false,
                                 target: '_blank',
                                 accesskey: "b" %>
     </li>
-
+    <li class="show-for-small-only">
+      <%= layout_menu_link_to t("layouts.subnavigation.query_districte"),
+                                "https://www.castello.es/geoportal",
+                                false,
+                                target: '_blank',
+                                accesskey: "b" %>
+    </li>
   </ul>
 </div>

@@ -48,7 +48,6 @@ En la urgencia del momento, las cosas a veces se ensucian, puedes ayudarnos a li
 * implementando [tests pendientes](https://travis-ci.org/consul/consul)
 * incrementando la [cobertura de tests](https://coveralls.io/github/consul/consul?branch=master)
 * mejorando la [calidad del código](https://codeclimate.com/github/consul/consul)
-* actualizando [dependecias](https://gemnasium.com/consul/consul)
 * haciendo el [código consistente](https://github.com/bbatsov/rubocop)
 
 ## Otras formas de contribuir sin código

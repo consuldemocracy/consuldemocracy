@@ -13,16 +13,15 @@ feature 'Moderate proposals' do
   end
 
   scenario 'Hide', :js do
-    citizen = create(:user)
+    citizen   = create(:user)
+    proposal  = create(:proposal)
     moderator = create(:moderator)
-
-    proposal = create(:proposal)
 
     login_as(moderator.user)
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      click_link 'Hide'
+      accept_confirm { click_link 'Hide' }
     end
 
     expect(page).to have_css("#proposal_#{proposal.id}.faded")

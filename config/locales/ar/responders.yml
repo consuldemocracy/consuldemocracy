@@ -1,0 +1,17 @@
+ar:
+  flash:
+    actions:
+      create:
+        poll_question_answer: "تم إنشاء الإجابة بنجاح"
+        poll_question_answer_video: "تم إنشاء الفيديو بنجاح"
+        poll_question_answer_image: "تم رفع الصورة بنجاح"
+        proposal: "تم إنشاء الإقتراح بنجاح."
+        proposal_notification: "تم إرسال رسالتك بشكل صحيح."
+        spending_proposal: "تم إنشاء مقترح الإنفاق بنجاح. يمكنك الوصول إليه من %{activity}"
+        budget_investment: "تم إنشاء ميزانية الإستثمار بنجاح."
+      save_changes:
+        notice: تم حفظ التغييرات
+      update:
+        proposal: "تم تحديث المقترح بنجاح."
+      destroy:
+        topic: "تم حذف الموضوع بنجاح."

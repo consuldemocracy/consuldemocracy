@@ -1,0 +1,64 @@
+zh-CN:
+  devise:
+    password_expired:
+      expire_password: "密码已过期"
+      change_required: "您的密码已过期"
+      change_password: "更改您的密码"
+      new_password: "新密码"
+      updated: "密码已成功更新"
+    confirmations:
+      confirmed: "您的账号已确认。"
+      send_instructions: "几分钟后，您将收到一封电子邮件，其中包含如何重设密码的说明。"
+      send_paranoid_instructions: "如果您的电子邮件地址在我们的数据库中，几分钟后，您将收到一封电子邮件，其中包含如何重设密码的说明。"
+    failure:
+      already_authenticated: "您已登录。"
+      inactive: "您的账号尚未被激活。"
+      invalid: "无效的%{authentication_keys} 或密码。"
+      locked: "您的账号已被锁定。"
+      last_attempt: "在您的账号被禁用之前，您尚有一次尝试机会。"
+      not_found_in_database: "无效的%{authentication_keys} 或密码。"
+      timeout: "您的会话已过期。请再次登录来继续。"
+      unauthenticated: "您必须登录或注册才能继续。"
+      unconfirmed: "要继续，请点击我们通过电子邮件发送给您的确认链接"
+    mailer:
+      confirmation_instructions:
+        subject: "确认说明"
+      reset_password_instructions:
+        subject: "重新设置密码的说明"
+      unlock_instructions:
+        subject: "解锁的说明"
+    omniauth_callbacks:
+      failure: "因为\"%{reason}\"，还无法将您授权为%{kind}。"
+      success: "成功标识为%{kind}。"
+    passwords:
+      no_token: "除非通过密码重设链接，否则无法访问此页面。如果您已通过密码重设链接来访问，请检查URL 是否完整。"
+      send_instructions: "几分钟后，您将收到一封电子邮件，其中包含重设密码的说明。"
+      send_paranoid_instructions: "如果您的电子邮件在我们的数据库中，几分钟后，您将收到一个链接来重设密码。"
+      updated: "您的密码已成功更改。验证成功。"
+      updated_not_active: "您的密码已成功更改。"
+    registrations:
+      destroyed: "再见！您的账号已取消。我们希望很快会再见到您。"
+      signed_up: "欢迎！您已通过验证。"
+      signed_up_but_inactive: "注册成功，但是您无法登录，因为您的账号还未被激活。"
+      signed_up_but_locked: "注册成功，但是您无法登录，因为您的账号已经被锁了。"
+      signed_up_but_unconfirmed: "内含验证链接的信息已经发送给您。请点击此链接来激活您的账号。"
+      update_needs_confirmation: "您的账号已成功更新；但是，我们需要验证您的新电子邮件地址。请查看您的电子邮件并点击链接来完成确认您的新电子邮件地址。"
+      updated: "您的账号已成功更新。"
+    sessions:
+      signed_in: "您已成功登录。"
+      signed_out: "您已成功登出。"
+      already_signed_out: "您已成功登出。"
+    unlocks:
+      send_instructions: "几分钟后，您将收到一封电子邮件，内含解锁账号的说明。"
+      send_paranoid_instructions: "如果您有账号，几分钟后，您将收到一封电子邮件，内含解锁账号的说明。"
+      unlocked: "您的账号已解锁。请登录以继续。"
+  errors:
+    messages:
+      already_confirmed: "您已被核实；请尝试登录。"
+      confirmation_period_expired: "您需要在%{period} 内被核实；请发出重复请求。"
+      expired: "已过期；请发出重复请求。"
+      not_found: "未找到。"
+      not_locked: "未被锁。"
+      not_saved:
+        other: "%{count} 个错误阻止了此%{resource} 被保存。请检查标记的字段来了解如何更正它们："
+      equal_to_current_password: "必须和当前密码不同。"

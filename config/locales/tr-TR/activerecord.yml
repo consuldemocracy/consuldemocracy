@@ -1,0 +1,21 @@
+tr:
+  activerecord:
+    models:
+      activity:
+        one: "faaliyet"
+        other: "faaliyet"
+      budget:
+        one: "Bütçe"
+        other: "Bütçeler"
+      budget/investment:
+        one: "yatırım"
+        other: "Yatırımlar"
+      comment:
+        one: "Yorum"
+        other: "Yorumlar"
+      administrator:
+        one: "Yönetici"
+        other: "Yöneticiler"
+      vote:
+        one: "Oy"
+        other: "Oylar"

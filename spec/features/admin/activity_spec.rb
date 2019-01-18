@@ -14,7 +14,7 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link 'Hide' }
       end
 
       visit admin_activity_path
@@ -53,7 +53,7 @@ feature 'Admin activity' do
     scenario "Shows admin restores" do
       proposal = create(:proposal, :hidden)
 
-      visit admin_proposals_path
+      visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
         click_on "Restore"
@@ -76,7 +76,7 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link 'Hide' }
       end
 
       visit admin_activity_path
@@ -139,7 +139,7 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link 'Hide' }
       end
 
       visit admin_activity_path
@@ -326,6 +326,24 @@ feature 'Admin activity' do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+  end
+
+  context "System emails" do
+    scenario "Shows moderation activity on system emails" do
+      proposal = create(:proposal, title: 'Proposal A')
+      proposal_notification = create(:proposal_notification, proposal: proposal,
+                                                               title: 'Proposal A Title',
+                                                               body: 'Proposal A Notification Body')
+      proposal_notification.moderate_system_email(@admin.user)
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(proposal_notification.title)
+        expect(page).to have_content("Hidden")
         expect(page).to have_content(@admin.user.username)
       end
     end

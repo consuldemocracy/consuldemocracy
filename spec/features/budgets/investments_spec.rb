@@ -10,6 +10,10 @@ feature 'Budget Investments' do
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", price: 666666, group: group) }
 
+  it_behaves_like "milestoneable",
+                  :budget_investment,
+                  "budget_investment_path"
+
   before do
     Setting['feature.allow_images'] = true
   end
@@ -43,6 +47,37 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Index view mode' do
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading)]
+
+    visit budget_path(budget)
+    click_link 'Health'
+
+    click_button 'View mode'
+
+    click_link 'List'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to     have_link investment.title
+        expect(page).not_to have_content(investment.description)
+      end
+    end
+
+    click_button 'View mode'
+
+    click_link 'Cards'
+
+    investments.each do |investment|
+      within('#budget-investments') do
+        expect(page).to have_link investment.title
+        expect(page).to have_content(investment.description)
+      end
+    end
+  end
+
   scenario 'Index should show investment descriptive image only when is defined' do
     investment = create(:budget_investment, heading: heading)
     investment_with_image = create(:budget_investment, heading: heading)
@@ -55,6 +90,22 @@ feature 'Budget Investments' do
     end
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
+    end
+  end
+
+  scenario 'Index should show a map if heading has coordinates defined', :js do
+    create(:budget_investment, heading: heading)
+    visit budget_investments_path(budget, heading_id: heading.id)
+    within("#sidebar") do
+      expect(page).to have_css(".map_location")
+    end
+
+    unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
+                               longitude: nil, latitude: nil)
+    create(:budget_investment, heading: unlocated_heading)
+    visit budget_investments_path(budget, heading_id: unlocated_heading.id)
+    within("#sidebar") do
+      expect(page).not_to have_css(".map_location")
     end
   end
 
@@ -401,16 +452,16 @@ feature 'Budget Investments' do
           click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
+          fill_in "advanced_search_date_min", with: 7.days.ago.strftime('%d/%m/%Y')
+          fill_in "advanced_search_date_max", with: 1.day.ago.strftime('%d/%m/%Y')
           click_button "Filter"
 
           expect(page).to have_content("investments cannot be found")
 
           within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%d/%m/%Y')}']")
           end
         end
 
@@ -470,7 +521,7 @@ feature 'Budget Investments' do
     end
   end
 
-  context("Orders") do
+  context "Orders" do
     before { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
@@ -502,7 +553,7 @@ feature 'Budget Investments' do
       expect(order).not_to eq(new_order)
     end
 
-    scenario 'Random order maintained with pagination', :js do
+    scenario 'Random order maintained with pagination' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
@@ -520,7 +571,21 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
-    scenario "Investments are not repeated with random order", :js do
+    scenario 'Random order maintained when going back from show' do
+      10.times { |i| create(:budget_investment, heading: heading) }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      click_link Budget::Investment.first.title
+      click_link "Go back"
+
+      new_order = all(".budget-investment h3").collect {|i| i.text }
+      expect(order).to eq(new_order)
+    end
+
+    scenario "Investments are not repeated with random order" do
       12.times { create(:budget_investment, heading: heading) }
       # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
 
@@ -539,7 +604,7 @@ feature 'Budget Investments' do
 
     end
 
-    scenario 'Proposals are ordered by confidence_score', :js do
+    scenario 'Proposals are ordered by confidence_score' do
       best_proposal = create(:budget_investment, heading: heading, title: 'Best proposal')
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:budget_investment, heading: heading, title: 'Worst proposal')
@@ -549,7 +614,7 @@ feature 'Budget Investments' do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#budget-investments' do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -560,16 +625,16 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user as a different and consistent random budget investment order', :js do
+    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint' do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading)
+        visit budget_investments_path(budget, heading: heading, random_seed: rand)
         @first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading)
+        visit budget_investments_path(budget, heading: heading, random_seed: rand)
         @second_user_investments_order = investments_order
       end
 
@@ -594,6 +659,60 @@ feature 'Budget Investments' do
 
         expect(investments_order).to eq(@second_user_investments_order)
       end
+    end
+
+    scenario 'Each user has a equal and consistent budget investment order when the random_seed is equal' do
+      (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
+
+      in_browser(:one) do
+        visit budget_investments_path(budget, heading: heading, random_seed: '1')
+        @first_user_investments_order = investments_order
+      end
+
+      in_browser(:two) do
+        visit budget_investments_path(budget, heading: heading, random_seed: '1')
+        @second_user_investments_order = investments_order
+      end
+
+      expect(@first_user_investments_order).to eq(@second_user_investments_order)
+    end
+
+    scenario "Set votes for investments randomized with a seed" do
+      voter = create(:user, :level_two)
+      login_as(voter)
+
+      10.times { create(:budget_investment, heading: heading) }
+
+      voted_investments = []
+      10.times do
+        investment = create(:budget_investment, heading: heading)
+        create(:vote, votable: investment, voter: voter)
+        voted_investments << investment
+      end
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      voted_investments.each do |investment|
+        if page.has_link?(investment.title)
+          within("#budget_investment_#{investment.id}") do
+            expect(page).to have_content "You have already supported this investment"
+          end
+        end
+      end
+    end
+
+    scenario 'Order is random if budget is finished' do
+      10.times { create(:budget_investment) }
+
+      budget.update(phase: 'finished')
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+      new_order = eq(all(".budget-investment h3").collect {|i| i.text })
+
+      expect(order).not_to eq(new_order)
     end
 
     def investments_order
@@ -783,6 +902,11 @@ feature 'Budget Investments' do
 
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
+          expect(page).to have_link("See price explanation")
+
+          if budget.finished?
+            investment.update(winner: true)
+          end
 
           visit budget_investments_path(budget)
 
@@ -797,6 +921,7 @@ feature 'Budget Investments' do
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
+          expect(page).not_to have_link("See price explanation")
 
           visit budget_investments_path(budget)
 
@@ -818,6 +943,7 @@ feature 'Budget Investments' do
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
+          expect(page).not_to have_link("See price explanation")
 
           visit budget_investments_path(budget)
 
@@ -904,48 +1030,129 @@ feature 'Budget Investments' do
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
     expect(page).to have_content("Unfeasibility explanation")
-    expect(page).to have_content(investment.unfeasibility_explanation)
+    expect(page).to have_content("Local government is not competent in this matter")
+    expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
   end
 
-  scenario "Show milestones", :js do
+  scenario "Show (selected budget investment)" do
     user = create(:user)
-    investment = create(:budget_investment)
-    create(:budget_investment_milestone, investment: investment,
-                                         description: "Last milestone",
-                                         publication_date: Date.tomorrow)
-    first_milestone = create(:budget_investment_milestone, investment: investment,
-                                                           description: "First milestone",
-                                                           publication_date: Date.yesterday)
-    image = create(:image, imageable: first_milestone)
-    document = create(:document, documentable: first_milestone)
-
     login_as(user)
-    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
-    find("#tab-milestones-label").trigger('click')
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        :selected,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
 
-    within("#tab-milestones") do
-      expect(first_milestone.description).to appear_before('Last milestone')
-      expect(page).to have_content(Date.tomorrow)
-      expect(page).to have_content(Date.yesterday)
-      expect(page).not_to have_content(Date.current)
-      expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
-      expect(page).to have_link(document.title)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has been selected for balloting phase")
+  end
+
+  scenario "Show (winner budget investment)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        :selected,
+                        :winner,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("Winning investment project")
+  end
+
+  scenario "Show (not selected budget investment)" do
+    budget.update(phase: 'balloting')
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).to have_content("This investment project has not been selected for balloting phase")
+  end
+
+  scenario "Show title (no message)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :feasible,
+                        :finished,
+                        budget: budget,
+                        group: group,
+                        heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    within("aside") do
+      expect(page).to have_content("Investment project")
+      expect(page).to have_css(".label-budget-investment")
     end
   end
 
-  scenario "Show no_milestones text", :js do
+  scenario "Show (unfeasible budget investment with valuation not finished)" do
     user = create(:user)
-    investment = create(:budget_investment)
-
     login_as(user)
-    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
-    find("#tab-milestones-label").trigger('click')
+    investment = create(:budget_investment,
+                        :unfeasible,
+                        valuation_finished: false,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
 
-    within("#tab-milestones") do
-      expect(page).to have_content("Don't have defined milestones")
-    end
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_content("Unfeasibility explanation")
+    expect(page).not_to have_content("Local government is not competent in this matter")
+  end
+
+  scenario "Show (unfeasible budget investment with valuation not finished)" do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment,
+                        :unfeasible,
+                        valuation_finished: false,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: 'Local government is not competent in this matter')
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_content("Unfeasibility explanation")
+    expect(page).not_to have_content("Local government is not competent in this matter")
+  end
+
+  scenario "Only winner investments are show when budget is finished" do
+    3.times { create(:budget_investment, heading: heading) }
+
+    Budget::Investment.first.update(feasibility: 'feasible', selected: true, winner: true)
+    Budget::Investment.second.update(feasibility: 'feasible', selected: true, winner: true)
+    budget.update(phase: 'finished')
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    expect(page).to have_content("#{Budget::Investment.first.title}")
+    expect(page).to have_content("#{Budget::Investment.second.title}")
+    expect(page).not_to have_content("#{Budget::Investment.third.title}")
   end
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
@@ -1121,6 +1328,27 @@ feature 'Budget Investments' do
 
   end
 
+  context "Publishing prices phase" do
+
+    background do
+      budget.update(phase: "publishing_prices")
+    end
+
+    scenario "Heading index - should show only selected investments" do
+      investment1 = create(:budget_investment, :selected, heading: heading, price: 10000)
+      investment2 = create(:budget_investment, :selected, heading: heading, price: 15000)
+      investment3 = create(:budget_investment, heading: heading, price: 30000)
+
+      visit budget_investments_path(budget, heading: heading)
+
+      within("#budget-investments") do
+        expect(page).to have_content investment1.title
+        expect(page).to have_content investment2.title
+        expect(page).not_to have_content investment3.title
+      end
+    end
+  end
+
   context "Balloting Phase" do
 
     background do
@@ -1160,7 +1388,7 @@ feature 'Budget Investments' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link 'by price'
-      expect(page).to have_selector('a.active', text: 'by price')
+      expect(page).to have_selector('a.is-active', text: 'by price')
 
       within '#budget-investments' do
         expect(high_investment.title).to appear_before(mid_investment.title)
@@ -1197,10 +1425,10 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
 
       global_group   = create(:budget_group, budget: budget, name: 'Global Group')
-      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading')
+      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading', latitude: -43.145412, longitude: 12.009423)
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
-      new_york_heading    = create(:budget_heading, group: group, name: "New York")
+      new_york_heading    = create(:budget_heading, group: group, name: "New York", latitude: -43.223412, longitude: 12.009423)
 
       sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
       sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
@@ -1239,7 +1467,7 @@ feature 'Budget Investments' do
         expect(page).to have_content "€#{sp2.price}"
 
         expect(page).not_to have_content sp3.title
-        expect(page).not_to have_content "#{sp3.price}"
+        expect(page).not_to have_content "€#{sp3.price}"
       end
 
       within("#budget_group_#{group.id}") do
@@ -1378,4 +1606,149 @@ feature 'Budget Investments' do
 
     end
   end
+
+  scenario 'Flagging an investment as innapropriate', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#flag-expand-investment-#{investment.id}").click
+      find("#flag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).to be
+  end
+
+  scenario 'Unflagging an investment', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+    Flag.flag(user, investment)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#unflag-expand-investment-#{investment.id}").click
+      find("#unflag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).not_to be
+  end
+
+  scenario 'Flagging an investment updates the DOM properly', :js do
+    user       = create(:user)
+    investment = create(:budget_investment, heading: heading)
+
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    within "#budget_investment_#{investment.id}" do
+      find("#flag-expand-investment-#{investment.id}").click
+      find("#flag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).to be
+
+    within "#budget_investment_#{investment.id}" do
+      find("#unflag-expand-investment-#{investment.id}").click
+      find("#unflag-investment-#{investment.id}").click
+
+      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
+    end
+
+    expect(Flag.flagged?(user, investment)).not_to be
+  end
+
+  context 'sidebar map' do
+    scenario "Display 6 investment's markers on sidebar map", :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+      investment5 = create(:budget_investment, heading: heading)
+      investment6 = create(:budget_investment, heading: heading)
+
+      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
+      create(:map_location, longitude: 40.1232, latitude: -3.635, investment: investment2)
+      create(:map_location, longitude: 40.1233, latitude: -3.634, investment: investment3)
+      create(:map_location, longitude: 40.1234, latitude: -3.633, investment: investment4)
+      create(:map_location, longitude: 40.1235, latitude: -3.632, investment: investment5)
+      create(:map_location, longitude: 40.1236, latitude: -3.631, investment: investment6)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 6, visible: false)
+      end
+    end
+
+    scenario "Display 2 investment's markers on sidebar map", :js do
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+
+      create(:map_location, longitude: 40.1281, latitude: -3.656, investment: investment1)
+      create(:map_location, longitude: 40.1292, latitude: -3.665, investment: investment2)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 2, visible: false)
+      end
+    end
+
+    scenario "Display only investment's related to the current heading", :js do
+      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+      investment5 = create(:budget_investment, heading: heading_2)
+      investment6 = create(:budget_investment, heading: heading_2)
+
+      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
+      create(:map_location, longitude: 40.1232, latitude: -3.685, investment: investment2)
+      create(:map_location, longitude: 40.1233, latitude: -3.664, investment: investment3)
+      create(:map_location, longitude: 40.1234, latitude: -3.673, investment: investment4)
+      create(:map_location, longitude: 40.1235, latitude: -3.672, investment: investment5)
+      create(:map_location, longitude: 40.1236, latitude: -3.621, investment: investment6)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 4, visible: false)
+      end
+    end
+
+    scenario "Do not display investment's, since they're all related to other heading", :js do
+      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+
+      investment1 = create(:budget_investment, heading: heading_2)
+      investment2 = create(:budget_investment, heading: heading_2)
+      investment3 = create(:budget_investment, heading: heading_2)
+
+      create(:map_location, longitude: 40.1255, latitude: -3.644, investment: investment1)
+      create(:map_location, longitude: 40.1258, latitude: -3.637, investment: investment2)
+      create(:map_location, longitude: 40.1251, latitude: -3.649, investment: investment3)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 0, visible: false)
+      end
+    end
+  end
+
 end

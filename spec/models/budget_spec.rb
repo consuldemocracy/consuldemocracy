@@ -190,6 +190,18 @@ describe Budget do
     end
   end
 
+  describe '#has_winning_investments?' do
+    it 'should return true if there is a winner investment' do
+      budget.investments << build(:budget_investment, :winner, price: 3, ballot_lines_count: 2)
+
+      expect(budget.has_winning_investments?).to eq true
+    end
+
+    it 'hould return false if there is not a winner investment' do
+      expect(budget.has_winning_investments?).to eq false
+    end
+  end
+
   describe "#generate_phases" do
     let(:drafting_phase)          { budget.phases.drafting }
     let(:informing_phase)         { budget.phases.informing }
@@ -226,6 +238,40 @@ describe Budget do
       expect(balloting_phase.prev_phase).to eq(publishing_prices_phase)
       expect(reviewing_ballots_phase.prev_phase).to eq(balloting_phase)
       expect(finished_phase.prev_phase).to eq(reviewing_ballots_phase)
+    end
+  end
+
+  describe "#formatted_amount" do
+    after do
+      I18n.locale = :en
+    end
+
+    it "correctly formats Euros with Spanish" do
+      budget.update(currency_symbol: '€')
+      I18n.locale = :es
+
+      expect(budget.formatted_amount(1000.00)).to eq ('1.000 €')
+    end
+
+    it "correctly formats Dollars with Spanish" do
+      budget.update(currency_symbol: '$')
+      I18n.locale = :es
+
+      expect(budget.formatted_amount(1000.00)).to eq ('1.000 $')
+    end
+
+    it "correctly formats Dollars with English" do
+      budget.update(currency_symbol: '$')
+      I18n.locale = :en
+
+      expect(budget.formatted_amount(1000.00)).to eq ('$1,000')
+    end
+
+    it "correctly formats Euros with English" do
+      budget.update(currency_symbol: '€')
+      I18n.locale = :en
+
+      expect(budget.formatted_amount(1000.00)).to eq ('€1,000')
     end
   end
 end

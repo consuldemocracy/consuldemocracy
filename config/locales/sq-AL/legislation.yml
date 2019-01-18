@@ -1,0 +1,125 @@
+sq:
+  legislation:
+    annotations:
+      comments:
+        see_all: Shiko të gjitha
+        see_complete: "\nShih të plotë"
+        comments_count:
+          one: "%{count} komente"
+          other: "%{count} komente"
+        replies_count:
+          one: "%{count} përgjigje"
+          other: "%{count} përgjigje"
+        cancel: Anullo
+        publish_comment: Publiko komentin
+      form:
+        phase_not_open: Kjo fazë nuk është e hapur
+        login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
+        signin: Kycu
+        signup: Rregjistrohu
+      index:
+        title: Komente
+        comments_about: "\nKomentet rreth"
+        see_in_context: Shiko në kontekst
+        comments_count:
+          one: "%{count} komente"
+          other: "%{count} komente"
+      show:
+        title: Koment
+      version_chooser:
+        seeing_version: Komente për versionin
+        see_text: Shiko draftin e tekstit
+    draft_versions:
+      changes:
+        title: Ndryshimet
+        seeing_changelog_version: Përmbledhje e ndryshimeve të rishikimit
+        see_text: Shiko draftin e tekstit
+      show:
+        loading_comments: Duke ngarkuar komentet
+        seeing_version: "\nJu po shihni  versionin draft"
+        select_draft_version: Zgjidh draftin
+        select_version_submit: Shiko
+        updated_at: përditësuar në %{date}
+        see_changes: "\nshih përmbledhjen e ndryshimeve"
+        see_comments: Shiko të gjitha komentet
+        text_toc: "\nTabela e përmbajtjes"
+        text_body: Tekst
+        text_comments: Komente
+    processes:
+      header:
+        additional_info: "\nInformacion shtese"
+        description: Përshkrimi
+        more_info: Më shumë informacion dhe kontekst
+      proposals:
+        empty_proposals: Nuk ka propozime
+        filters:
+          random: "\nI rastësishëm\n"
+          winners: I zgjedhur
+      debate:
+        empty_questions: Nuk ka pyetje.
+        participate: Merrni pjesë në debat
+      index:
+        filter: Filtër
+        filters:
+          open: "\nProceset e hapura"
+          next: Tjetra
+          past: E kaluara
+        no_open_processes: Nuk ka procese të hapura
+        no_next_processes: Nuk ka procese të planifikuar
+        no_past_processes: Nuk ka procese të kaluara
+        section_header:
+          icon_alt: Ikona e proceseve të legjilacionit
+          title: "\nProceset e legjislacionit"
+          help: Ndihmoni në lidhje me proceset legjislative
+        section_footer:
+          title: Ndihmoni në lidhje me proceset legjislative
+          description: "\nMerrni pjesë në debatet dhe proceset para miratimit të një urdhërese ose të një veprimi komunal. Mendimi juaj do të konsiderohet nga Këshilli i Qytetit."
+      phase_not_open:
+        not_open: Kjo fazë nuk është e hapur ende
+      phase_empty:
+        empty: "\nAsgjë nuk është publikuar ende"
+      process:
+        see_latest_comments: Shiko komentet e fundit
+        see_latest_comments_title: Komentoni në këtë proces
+      shared:
+        key_dates: Datat kryesore
+        debate_dates: Debate
+        draft_publication_date: Publikimi draft
+        allegations_dates: Komente
+        result_publication_date: "\nPublikimi i rezultatit përfundimtar"
+        proposals_dates: Propozime
+    questions:
+      comments:
+        comment_button: Publikoni përgjigjen
+        comments_title: Përgjigjet e hapura
+        comments_closed: Faza e mbyllur
+        form:
+          leave_comment: "\nLëreni përgjigjen tuaj"
+      question:
+        comments:
+          zero: Nuk ka komente
+          one: "%{count} komente"
+          other: "%{count} komente"
+        debate: Debate
+      show:
+        answer_question: Publikoni përgjigjen
+        next_question: "\nPyetja e radhës"
+        first_question: Pyetja e parë
+        share: Shpërndaj
+        title: Procesi i Legjislacionit bashkëpunues
+      participation:
+        phase_not_open: Kjo fazë nuk është e hapur
+        organizations: Organizatat nuk lejohen të marrin pjesë në debat
+        signin: Kycu
+        signup: Rregjistrohu
+        unauthenticated: Ju duhet %{signin} ose %{signup} për të marë pjesë .
+        verified_only: Vetëm përdoruesit e verifikuar mund të marin pjesë; %{verify_account}.
+        verify_account: verifikoni llogarinë tuaj
+        debate_phase_not_open: "\nFaza e debatit ka përfunduar dhe përgjigjet nuk pranohen më"
+    shared:
+      share: Shpërndaj
+      share_comment: Komento mbi %{version_name} nga drafti i procesit%{process_name}
+    proposals:
+      form:
+        tags_label: "Kategoritë"
+      not_verified: "Për propozimet e votimit %{verify_account}"

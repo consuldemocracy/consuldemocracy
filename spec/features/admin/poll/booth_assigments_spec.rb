@@ -119,7 +119,7 @@ feature 'Admin booths assignments' do
         expect(page).to have_content(booth.name)
         expect(page).to have_content "Assigned"
 
-        click_link 'Unassign booth'
+        accept_confirm { click_link 'Unassign booth' }
 
         expect(page).to have_content "Unassigned"
         expect(page).not_to have_content "Assigned"

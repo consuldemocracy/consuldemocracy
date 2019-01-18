@@ -1,0 +1,22 @@
+sv:
+  activemodel:
+    models:
+      verification:
+        residence: "Adress"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Identitetshandling"
+          document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
+          date_of_birth: "Födelsedatum"
+          postal_code: "Postnummer"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Bekräftelsekod"
+        email:
+          recipient: "E-post"
+      officing/residence:
+        document_type: "Identitetshandling"
+        document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
+        year_of_birth: "Födelseår"

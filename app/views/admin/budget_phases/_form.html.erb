@@ -1,67 +1,59 @@
 <%= form_for [:admin, @phase.budget, @phase] do |f| %>
 
-  <div class="row">
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= f.label :starts_at, t("admin.budget_phases.edit.start_date") %>
-        <%= f.text_field :starts_at,
-                          value: format_date_for_calendar_form(@phase.starts_at),
-                          class: "js-calendar-full",
-                          id: "start_date",
-                          label: false %>
-      </div>
-      <div class="small-12 medium-6 column">
-        <%= f.label :ends_at, t("admin.budget_phases.edit.end_date") %>
-        <%= f.text_field :ends_at,
-                          value: format_date_for_calendar_form(@phase.ends_at),
-                          class: "js-calendar-full",
-                          id: "end_date",
-                          label: false %>
-      </div>
-    </div>
-
-    <div class="row margin-top">
-      <div class="small-12 medium-12 column">
-        <%= f.label :description, t("admin.budget_phases.edit.description") %>
-
-        <p class="help-text" id="phase-description-help-text">
-          <%= t("admin.budget_phases.edit.description_help_text") %>
-        </p>
-
-        <%= f.cktext_area :description,
-                          maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                          ckeditor: { language: I18n.locale },
-                          label: false %>
-      </div>
-    </div>
-
-    <div class="row margin-top">
-      <div class="small-12 medium-12 column">
-        <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
-
-        <p class="help-text" id="phase-summary-help-text">
-          <%= t("admin.budget_phases.edit.summary_help_text") %>
-        </p>
-
-        <%= f.cktext_area :summary,
-                          maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                          ckeditor: { language: I18n.locale },
-                          label: false %>
-      </div>
-    </div>
-
-    <div class="row margin-top">
-      <div class="small-12 medium-12 column">
-        <%= f.check_box :enabled, label: t("admin.budget_phases.edit.enabled") %>
-
-        <p class="help-text" id="phase-summary-help-text">
-          <%= t("admin.budget_phases.edit.enabled_help_text") %>
-        </p>
-      </div>
-    </div>
-
-    <div class="margin-top">
-      <%= f.submit t("admin.budget_phases.edit.save_changes"), class: "button success" %>
-    </div>
+  <div class="small-12 medium-6 column">
+    <%= f.label :starts_at, t("admin.budget_phases.edit.start_date") %>
+    <%= f.text_field :starts_at,
+                      value: format_date_for_calendar_form(@phase.starts_at),
+                      class: "js-calendar-full",
+                      id: "start_date",
+                      label: false %>
   </div>
+  <div class="small-12 medium-6 column">
+    <%= f.label :ends_at, t("admin.budget_phases.edit.end_date") %>
+    <%= f.text_field :ends_at,
+                      value: format_date_for_calendar_form(@phase.ends_at),
+                      class: "js-calendar-full",
+                      id: "end_date",
+                      label: false %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.label :description, t("admin.budget_phases.edit.description") %>
+
+    <span class="help-text" id="phase-description-help-text">
+      <%= t("admin.budget_phases.edit.description_help_text") %>
+    </span>
+
+    <%= f.cktext_area :description,
+                      maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                      ckeditor: { language: I18n.locale },
+                      label: false %>
+  </div>
+
+  <div class="small-12 column margin-top">
+    <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
+
+    <span class="help-text" id="phase-summary-help-text">
+      <%= t("admin.budget_phases.edit.summary_help_text") %>
+    </span>
+
+    <%= f.cktext_area :summary,
+                      maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                      ckeditor: { language: I18n.locale },
+                      label: false %>
+  </div>
+
+
+  <div class="small-12 column margin-top">
+    <%= f.check_box :enabled, label: t("admin.budget_phases.edit.enabled") %>
+
+    <span class="help-text" id="phase-summary-help-text">
+      <%= t("admin.budget_phases.edit.enabled_help_text") %>
+    </span>
+  </div>
+
+  <div class="small-12 medium-4 large-3 column end margin-top">
+    <%= f.submit t("admin.budget_phases.edit.save_changes"), class: "button success expanded" %>
+  </div>
+
 <% end %>

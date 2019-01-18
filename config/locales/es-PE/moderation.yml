@@ -1,0 +1,74 @@
+es-PE:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          comment: Comentario
+          moderate: Moderar
+        hide_comments: Ocultar comentarios
+        ignore_flags: Marcar como revisados
+        order: Orden
+        orders:
+          flags: Más denunciados
+          newest: Más nuevos
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderar
+    debates:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          moderate: Moderar
+        hide_debates: Ocultar debates
+        ignore_flags: Marcar como revisados
+        order: Orden
+        orders:
+          created_at: Más nuevos
+          flags: Más denunciados
+    header:
+      title: Moderación
+    menu:
+      flagged_comments: Comentarios
+      proposals: Propuestas
+      users: Bloquear usuarios
+    proposals:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_flag_review: Pendientes de revisión
+          with_ignored_flag: Marcadas como revisadas
+        headers:
+          moderate: Moderar
+          proposal: Propuesta
+        hide_proposals: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Propuestas
+    users:
+      index:
+        hidden: Bloqueado
+        hide: Bloquear
+        search: Buscar
+        search_placeholder: email o nombre de usuario
+        title: Bloquear usuarios
+      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.

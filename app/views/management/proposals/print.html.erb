@@ -1,6 +1,6 @@
 <main>
   <div class="row">
-    <div class="proposals-list small-12 column">
+    <div class="proposals-list">
       <a id="print_link" href="javascript:window.print();" class="button warning float-right">
         <%= t('management.proposals.print.print_button') %>
       </a>
@@ -20,8 +20,7 @@
       <%= render @proposals %>
 
       <div class="for-print-only">
-        <p><strong><%= t("management.print.proposals_info") %></strong><br>
-        <%= t("management.print.proposals_note") %></p>
+        <p><strong><%= t("management.print.proposals_info") %></strong></p>
       </div>
     </div>
   </div>

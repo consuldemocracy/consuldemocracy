@@ -1,11 +1,8 @@
-<p><%= t("management.users.create_user_info") %></p>
+<h2><%= t("management.users.create_user_info") %></h2>
 
-<%= render 'management/user_permissions',
-      message: t("management.document_verifications.in_census_has_following_permissions"),
-      permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
+<div class="small-12 medium-6 column">
 
-<div class="row verification account">
-  <div class="small-12 medium-6 column">
+  <div class="verification account">
     <%= form_for @user, url: management_users_path do |f| %>
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
@@ -27,3 +24,10 @@
   </div>
 </div>
 
+<div class="small-12 medium-6 column">
+  <div class="callout">
+    <%= render "management/user_permissions",
+                message: t("management.document_verifications.in_census_has_following_permissions"),
+                permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+zh-CN:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
