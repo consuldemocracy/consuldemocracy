@@ -153,7 +153,8 @@ ar:
         unable_notice: "لا يمكن حذف عنوان له استثمارات مرتبطة"
       form:
         name: "اسم العنوان"
-        amount: "القيمة"
+        amount: "الكمية"
+        population: "التعداد (اختياري)"
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
