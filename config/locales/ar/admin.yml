@@ -132,6 +132,28 @@ ar:
         edit: "تعديل مجموعة"
         name: "إسم المجموعة"
         submit: "حفظ المجموعة"
+      index:
+        back: "العودة إلى الميزانيات"
+    budget_headings:
+      name: "الاسم"
+      no_headings: "لا توجد هناك عناوين."
+      amount:
+        zero: "%{count} لا توجد هناك عناوين"
+        one: "هناك عنوان %{count}"
+        two: "هناك %{count} عناوين"
+        few: "هناك %{count} عناوين"
+        many: "هناك %{count} عنوانا"
+        other: "هناك %{count} عنوانا"
+      create:
+        notice: "تم إنشاء العنوان بنجاح!"
+      update:
+        notice: "تم تحديث العنوان بنجاح"
+      destroy:
+        success_notice: "تم حذف العنوان بنجاح"
+        unable_notice: "لا يمكن حذف عنوان له استثمارات مرتبطة"
+      form:
+        name: "اسم العنوان"
+        amount: "القيمة"
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
