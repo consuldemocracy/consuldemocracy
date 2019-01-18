@@ -377,7 +377,7 @@ en:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "You have to wait a minimum of %{interval} days between notifications"
         signature:
           attributes:
             document_number:
