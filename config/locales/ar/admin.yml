@@ -130,6 +130,8 @@ ar:
       form:
         create: "إنشاء مجموعة جديدة"
         edit: "تعديل مجموعة"
+        name: "إسم المجموعة"
+        submit: "حفظ المجموعة"
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
