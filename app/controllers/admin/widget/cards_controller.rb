@@ -14,7 +14,8 @@ class Admin::Widget::CardsController < Admin::BaseController
   def create
     @card = ::Widget::Card.new(card_params)
     if @card.save
-      notice = "Success"
+      notice = t("admin.site_customization.pages.cards.create.notice")
+
       if params[:page_id] != 0
         redirect_to admin_site_customization_page_cards_path(page), notice: notice
       else
@@ -32,7 +33,7 @@ class Admin::Widget::CardsController < Admin::BaseController
   def update
     @card = ::Widget::Card.find(params[:id])
     if @card.update(card_params)
-      notice = "Updated"
+      notice = t("admin.site_customization.pages.cards.update.notice")
       if params[:page_id] != 0
         redirect_to admin_site_customization_page_cards_path(page), notice: notice
       else
@@ -47,7 +48,7 @@ class Admin::Widget::CardsController < Admin::BaseController
     @card = ::Widget::Card.find(params[:id])
     @card.destroy
 
-    notice = "Removed"
+    notice = t("admin.site_customization.pages.cards.delete.notice")
     if params[:page_id] != 0
       redirect_to admin_site_customization_page_cards_path(page), notice: notice
     else

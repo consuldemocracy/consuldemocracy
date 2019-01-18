@@ -1434,6 +1434,13 @@ en:
           description: Description
           link_text: Link text
           link_url: Link URL
+          create:
+            notice: "Success"
+          update:
+            notice: "Updated"
+          destroy:
+            notice: "Removed"
+
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.
