@@ -26,13 +26,15 @@ end
 
 section "Creating Budgets" do
   finished_budget = Budget.create(
-    name: "Budget #{Date.current.year - 1}",
+    name_en: "Budget for #{Date.current.year - 1}",
+    name_es: "Presupuestos para #{Date.current.year - 1}",
     currency_symbol: "€",
     phase: 'finished'
   )
 
   accepting_budget = Budget.create(
-    name: "Budget #{Date.current.year}",
+    name_en: "Budget for #{Date.current.year}",
+    name_es: "Presupuestos para #{Date.current.year}",
     currency_symbol: "€",
     phase: 'accepting'
   )
