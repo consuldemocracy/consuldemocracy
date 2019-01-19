@@ -135,7 +135,6 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       click_button update_button_text
 
       expect(page).not_to have_css "#error_explanation"
-      expect(page).not_to have_link "English"
 
       path = updated_path_for(translatable)
       visit path
