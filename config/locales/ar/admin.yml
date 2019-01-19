@@ -239,7 +239,7 @@ ar:
         submit_button: تحديث
         user_tags: العلامات المحددة للمستخدم
         tags: العلامات
-        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (,)"
+        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
         user_groups: "المجموعات"
       search_unfeasible: بحث غير مجد
@@ -361,7 +361,7 @@ ar:
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
-          custom_categories_placeholder: ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',') وبين الاقتباسات ("")
+          custom_categories_placeholder: ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل ('،') وبين الاقتباسات ("")
       draft_versions:
         create:
           notice: 'تم إجراء المسودة بنجاح <a href="%{link}">انقر للزيارة</a>'
@@ -434,7 +434,7 @@ ar:
         information_texts: نصوص معلومات مخصصة
         information_texts_menu:
           debates: "المناقشات"
-          community: "الجماعة"
+          community: "المجتمع"
           proposals: "المقترحات"
           polls: "الاستبيانات"
       title_polls: الاستبيانات
@@ -565,7 +565,7 @@ ar:
       manage:
         assignments_list: "%{poll} تعيينات للاقتراع"
         status:
-          assign_status: تعيينات
+          assign_status: التعيين
           assigned: تم التعيين
           unassigned: لم يتم التعيين
         actions:
@@ -669,13 +669,13 @@ ar:
         location: "الموقع"
         submit_button: "إحداث صندوق اقتراع"
       edit:
-        title: "تصحيح صندوق اقتراع"
+        title: "تعديل صندوق اقتراع"
         submit_button: "تحديث صندوق اقتراع"
       show:
         location: "الموقع"
       booth:
         shifts: "إدارة المناوبات"
-        edit: "تصحيح صندوق اقتراع"
+        edit: "تعديل صندوق اقتراع"
     officials:
       edit:
         destroy: إزالة حالة "رسمي"
@@ -729,7 +729,7 @@ ar:
         placeholder: ابحث عن صندوق الاقتراع بالاسم
       poll_officers_search:
         button: بحث
-        placeholder: بحث عن ضباط الاستطلاع
+        placeholder: بحث عن أعوان الاستطلاع
       poll_questions_search:
         button: بحث
         placeholder: بحث عن أسئلة الاستطلاع
