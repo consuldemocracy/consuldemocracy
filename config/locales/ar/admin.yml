@@ -155,7 +155,7 @@ ar:
         name: "اسم العنوان"
         amount: "القيمة"
         population: "التعداد (اختياري)"
-        population_info: "يتم استخدام حقل \"عنوان الميزانية\" لأغراض إحصائية في نهاية الميزانية لإظهاره نسبة التصويت لكل عنوان يمثل منطقة بها تعداد معين. الحقل اختياري بحيث يمكنك تركه فارغًا إذا لم يكن منطبقا."
+        population_info: "يتم استخدام حقل \"عنوان الميزانية\" لأغراض إحصائية في نهاية الميزانية لإظهار نسبة التصويت لكل عنوان يمثل منطقة بها تعداد معين. الحقل اختياري بحيث يمكنك تركه فارغًا إذا لم يكن مطبقا."
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
@@ -410,12 +410,12 @@ ar:
       managers: مدراء
       moderators: المشرفون
       messaging_users: رسائل للمستخدمين
-      newsletters: النشرات الإخبارية
+      newsletters: الرسائل الإخبارية
       admin_notifications: إشعارات
       system_emails: نظام البريد الإلكتروني
       emails_download: تنزيل رسائل البريد الإلكتروني
       valuators: المقيمون
-      poll_officers: أعوان الإقتراع
+      poll_officers: ضباط الإقتراع
       poll_booths: موقع صناديق الإقتراع
       poll_booth_assignments: تعيينات صناديق الإقتراع
       poll_shifts: إدارة المناوبات
@@ -444,8 +444,8 @@ ar:
         preview: معاينة
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
-        title: نشرة إخبارية جديدة
-        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
+        title: رسائلة إخبارية جديدة
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال الرسالة الإخبارية
       edit:
         title: تعديل الرسالة الإخبارية
       show:
@@ -509,7 +509,7 @@ ar:
         preview_of: معاينة %{name}
         pending_to_be_sent: هذا هو المحتوى في إنتظار الإرسال
         moderate_pending: إدارة إرسال الإعلانات
-        send_pending: إرسال المعلقة
+        send_pending: إرسال الرسائل المعلقة
         send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
         description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
@@ -579,8 +579,8 @@ ar:
       show:
         location: "الموقع"
         officers: "الضباط"
-        officers_list: "قائمة الأعوان لمكتب التصويت"
-        no_officers: "لا يوجد أعوان لمكتب التصويت"
+        officers_list: "قائمة لضباط مكتب التصويت"
+        no_officers: "لا يوجد ضباط لمكتب التصويت"
         recounts: "اعادة الحساب"
         recounts_list: "قائمة اعادة الحساب لمكتب التصويت"
         results: "النتائج"
