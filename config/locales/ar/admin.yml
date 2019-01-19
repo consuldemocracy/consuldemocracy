@@ -194,10 +194,10 @@ ar:
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
       show:
-        assigned_admin: المشرف المعين
-        assigned_valuators: المقيّمين الذين تم تعيينهم
+        assigned_admin: المدير الذي تم تعيينه
+        assigned_valuators: المقيمين الذين تم تعيينهم
         classification: تصنيف
-        info: "%{budget_name} -المجموعة: %{group_name} - مشروع الاستثمار %{id}"
+        info: "%{budget_name} -المجموعة: %{group_name} - المشروع الإستثماري %{id}"
         edit: تعديل
         edit_classification: تعديل التصنيف
         by: من قبل
@@ -227,7 +227,7 @@ ar:
         documents: "الوثائق"
         see_documents: "رؤية الوثائق (%{count})"
         no_documents: "بدون وثائق"
-        valuator_groups: "مجموعة المقيمين"
+        valuator_groups: "مجموعات المقيم"
       edit:
         classification: تصنيف
         compatibility: التوافق
@@ -277,13 +277,13 @@ ar:
       index:
         filters:
           without_confirmed_hide: معلق
-        title: استثمارات الميزانية مخفية
+        title: استثمارات الميزانية المخفية
         no_hidden_budget_investments: لا يوجد هناك ميزانيات استثمارات مخفية
     legislation:
       processes:
         create:
           notice: 'تم إنشاء العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
-          error: لا يمكن إجراء العملية
+          error: لا يمكن إنشاء العملية
         update:
           notice: 'تم تحديث العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
           error: لا يمكن تحديث العملية
