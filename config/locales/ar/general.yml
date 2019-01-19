@@ -103,7 +103,6 @@ ar:
         current: "فتح"
         incoming: "البريد الوارد"
         expired: "منتهي الصلاحية"
-      title: "الاستبيانات"
       participate_button: "المشاركة في هذا التصويت \\ استطلاع الرأي"
       participate_button_incoming: "مزيد من المعلومات"
       participate_button_expired: "انتهى التصويت"
