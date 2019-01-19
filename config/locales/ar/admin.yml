@@ -401,9 +401,9 @@ ar:
       budgets: الميزانية التشاركية
       geozones: إدارة المناطق الجغرافية
       hidden_comments: التعليقات المخفية
-      hidden_debates: النقاشات المخفية
+      hidden_debates: المناقشات المخفية
       hidden_proposals: الإقتراحات المخفية
-      hidden_budget_investments: استثمارات الميزانية مخفية
+      hidden_budget_investments: استثمارات الميزانية المخفية
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
       hidden_users: المستخدمون المخفيون
       administrators: المدراء
@@ -413,13 +413,13 @@ ar:
       newsletters: النشرات الإخبارية
       admin_notifications: إشعارات
       system_emails: نظام البريد الإلكتروني
-      emails_download: تحميل رسائل البريد الإلكتروني
+      emails_download: تنزيل رسائل البريد الإلكتروني
       valuators: المقيمون
       poll_officers: أعوان الإقتراع
-      poll_booths: موقع المقصورات
-      poll_booth_assignments: وظائف المقصورات
+      poll_booths: موقع صناديق الإقتراع
+      poll_booth_assignments: تعيينات صناديق الإقتراع
       poll_shifts: إدارة المناوبات
-      officials: المسؤولون
+      officials: المسؤولين
       organizations: المنظمات
       settings: الإعدادات العامة
       spending_proposals: مقترحات الانفاق
@@ -429,8 +429,8 @@ ar:
         homepage: الصفحة الرئيسية
         pages: صفحات مخصصة
         images: صور مخصصة
-        content_blocks: كتلة محتوى مخصص
-        information_texts: نصوص معلومات مخصصة
+        content_blocks: كتل المحتوى المخصصة
+        information_texts: نصوص المعلومات المخصصة
         information_texts_menu:
           debates: "المناقشات"
           community: "المجتمع"
@@ -442,14 +442,14 @@ ar:
       index:
         delete: حذف
         preview: معاينة
-        empty_newsletters: لايوجد مجلات للعرض
+        empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
-        title: مجلة جديدة
-        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال المجلة
+        title: نشرة إخبارية جديدة
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
       edit:
         title: تعديل الرسالة الإخبارية
       show:
-        title: معاينة مجلة
+        title: معاينة الرسالة الإخبارية
         send: إرسال
         affected_users: (%{n} مستخدم متأثر)
         sent_emails:
@@ -459,10 +459,10 @@ ar:
           few: "%{count} رسائل بريد إلكتروني مرسلة"
           many: "%{count} رسالة بريد إلكتروني مرسلة"
           other: "%{count} رسالة بريد إلكتروني مرسلة"
-        sent_at: تم الإرسال بـ
+        sent_at: أرسلت في
         subject: الموضوع
-        segment_recipient: المستفيدين
-        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال المجلة
+        segment_recipient: المستلمين
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
         body: محتوى البريد الإلكتروني
         body_help_text: سيعرض البريد الإلكتروني للمستخدمين كما يلي
         send_alert: يرجى تاكيد إرسال المجلة لـ%{n} مستخدم؟
