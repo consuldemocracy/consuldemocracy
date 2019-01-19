@@ -195,7 +195,7 @@ ar:
         see_results: "رؤية النتائج"
       show:
         assigned_admin: المشرف المعين
-        assigned_valuators: المثمن المعين
+        assigned_valuators: المقيّمين الذين تم تعيينهم
         classification: تصنيف
         info: "%{budget_name} -المجموعة: %{group_name} - مشروع الاستثمار %{id}"
         edit: تعديل
@@ -282,7 +282,7 @@ ar:
     legislation:
       processes:
         create:
-          notice: 'تم إجراء العملية بنجاح <a href="%{link}">انقر للزيارة</a>'
+          notice: 'تم إنشاء العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
           error: لا يمكن إجراء العملية
         update:
           notice: 'تم تحديث العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
@@ -518,7 +518,7 @@ ar:
       index:
         title: تحميل رسائل البريد الإلكتروني
         download_segment: تحميل عناوين البريد الإلكتروني
-        download_segment_help_text: قم بالتنزيل بتنسيق في شكل CSV
+        download_segment_help_text: قم بالتنزيل بصيغة CSV
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
     valuators:
       index:
@@ -527,7 +527,7 @@ ar:
         email: البريد الإلكتروني
         description: الوصف
         no_description: بدون وصف
-        no_valuators: لا يوجد مقيمون.
+        no_valuators: لا يوجد مقيّمين.
         valuator_groups: "مجموعات المقيمين"
         group: "مجموعة"
         no_group: "لا توجد مجموعة"
@@ -639,7 +639,7 @@ ar:
     results:
       index:
         title: "النتائج"
-        no_results: "لا يوجد نتائج"
+        no_results: "لا توجد نتائج"
       result:
         table_whites: "أوراق فارغة"
         table_nulls: "أوراق غير صالحة"
@@ -722,7 +722,7 @@ ar:
       false_value: "لا"
       booths_search:
         button: بحث
-        placeholder: ابحث عن صندوق الاقتراع بالاسم
+        placeholder: ابحث عن صندوق الاقتراع وفقا للإسم
       poll_officers_search:
         button: بحث
         placeholder: بحث عن أعوان الإقتراع
@@ -767,7 +767,7 @@ ar:
         title: مشاريع استثمارية للميزانية التشاركية
         assigned_admin: المشرف المعين
         no_admin_assigned: لم يتم تعيين أي مشرف
-        no_valuators_assigned: لا يوجد مقيمين معينين
+        no_valuators_assigned: لا يوجد مقيّمين معينين
         feasibility:
           feasible: "مجدي (%{price})"
           not_feasible: "غير مجدي"
