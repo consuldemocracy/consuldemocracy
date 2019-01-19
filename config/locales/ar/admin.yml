@@ -507,7 +507,7 @@ ar:
       preview_pending:
         action: في انتظار المعاينة
         preview_of: معاينة %{name}
-        pending_to_be_sent: هذا هو المحتوى الذي سيتم إرساله
+        pending_to_be_sent: هذا هو المحتوى في إنتظار الإرسال
         moderate_pending: إدارة إرسال الإعلانات
         send_pending: إرسال المعلقة
         send_pending_notification: تم إرسال إشعار الإيقاف
