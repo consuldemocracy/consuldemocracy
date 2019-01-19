@@ -266,6 +266,17 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "budget_translations", force: :cascade do |t|
+    t.integer  "budget_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "budget_translations", ["budget_id"], name: "index_budget_translations_on_budget_id", using: :btree
+  add_index "budget_translations", ["locale"], name: "index_budget_translations_on_locale", using: :btree
+
   create_table "budget_valuator_assignments", force: :cascade do |t|
     t.integer  "valuator_id"
     t.integer  "investment_id"

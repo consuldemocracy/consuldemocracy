@@ -26,14 +26,17 @@ end
 
 section "Creating Budgets" do
   Budget.create(
-    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year - 1}",
-    currency_symbol: I18n.t('seeds.budgets.currency'),
-    phase: 'finished'
+    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
+    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
+    currency_symbol: I18n.t("seeds.budgets.currency"),
+    phase: "finished"
   )
+
   Budget.create(
-    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year}",
-    currency_symbol: I18n.t('seeds.budgets.currency'),
-    phase: 'accepting'
+    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
+    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
+    currency_symbol: I18n.t("seeds.budgets.currency"),
+    phase: "accepting"
   )
 
   Budget.all.each do |budget|

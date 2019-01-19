@@ -329,6 +329,8 @@ def update_button_text
     "Update notification"
   when "Poll"
     "Update poll"
+  when "Budget"
+    "Update Budget"
   when "Poll::Question", "Poll::Question::Answer"
     "Save"
   when "SiteCustomization::Page"
