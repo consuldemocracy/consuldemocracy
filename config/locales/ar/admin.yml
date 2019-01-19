@@ -585,7 +585,7 @@ ar:
         recounts_list: "قائمة اعادة الحساب لمكتب التصويت"
         results: "النتائج"
         date: "تاريخ"
-        count_final: "الحساب النهائي (من قبل العون)"
+        count_final: "إعادة فرز الأصوات النهائي (من طرف الضابط)"
         count_by_system: "الأصوات (أوتوماتيكي)"
         total_system: مجموع الأصوات (أوتوماتيكي)
       index:
@@ -596,7 +596,7 @@ ar:
     polls:
       index:
         no_polls: "لا يوجد استبيانات."
-        create: "احداث اقتراع"
+        create: "إنشاء اقتراع"
         name: "الاسم"
         dates: "التواريخ"
         geozone_restricted: "خاص بالمقاطعات"
@@ -632,9 +632,9 @@ ar:
     recounts:
       index:
         title: "اعادة الحساب"
-        no_recounts: "لا شيء يمكن اعادة حسابه"
-        table_booth_name: "اقتراع"
-        table_total_recount: "الحساب الجملي (من قبل العون)"
+        no_recounts: "لا يوجد شيء ليعاد حسابه"
+        table_booth_name: "مكتب التصويت"
+        table_total_recount: "الحساب الإجمالي (من طرف الضابط)"
         table_system_count: "الأصوات (أوتوماتيكي)"
     results:
       index:
@@ -647,7 +647,7 @@ ar:
         table_answer: الإجابة
         table_votes: الأصوات
       results_by_booth:
-        booth: اقتراع
+        booth: مكتب التصويت
         results: النتائج
         see_results: رؤية النتائج
         title: "النتائج حسب صندوق الاقتراع"
@@ -666,15 +666,15 @@ ar:
         submit_button: "إنشاء صندوق اقتراع"
       edit:
         title: "تعديل صندوق اقتراع"
-        submit_button: "تحديث صندوق اقتراع"
+        submit_button: "تحديث صندوق الإقتراع"
       show:
         location: "الموقع"
       booth:
         shifts: "إدارة المناوبات"
-        edit: "تعديل صندوق اقتراع"
+        edit: "تعديل صندوق الإقتراع"
     officials:
       edit:
-        destroy: إزالة حالة "رسمي"
+        destroy: إزالة حالة 'رسمي'
         title: 'المسؤولون: تعديل المستخدم'
       flash:
         official_destroyed: 'تم حفض التفاصيل: لم يعد المستخدم من المسؤولين'
