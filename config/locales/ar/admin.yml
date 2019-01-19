@@ -94,7 +94,7 @@ ar:
         dates: التواريخ
         enabled: تفعيل
         actions: الإجراءات
-        edit_phase: تحرير المرحلة
+        edit_phase: تعديل المرحلة
         active: نشِط
         blank_dates: التواريخ فارغة
       destroy:
@@ -109,7 +109,7 @@ ar:
     budget_groups:
       name: "الاسم"
       headings_name: "العناوين"
-      headings_edit: "تحرير العناوين"
+      headings_edit: "تعديل العناوين"
       headings_manage: "إدارة العناوين"
       max_votable_headings: "العدد الأقصى للعناوين التي يمكن لمستخدم التصويت لها"
       no_groups: "لا توجد مجموعات تم إنشاؤها بعد. كل مستخدم سوف يكون قادرا على التصويت لعنوان واحد فقط من كل مجموعة."
@@ -199,13 +199,13 @@ ar:
         classification: تصنيف
         info: "%{budget_name} -المجموعة: %{group_name} - مشروع الاستثمار %{id}"
         edit: تعديل
-        edit_classification: تحرير التصنيف
+        edit_classification: تعديل التصنيف
         by: من قبل
         sent: أرسلت
         group: مجموعة
         heading: عنوان
         dossier: الملف
-        edit_dossier: تحرير الملف
+        edit_dossier: تعديل الملف
         tags: العلامات
         user_tags: علامات المستخدم
         undefined: غير معرف
@@ -450,7 +450,7 @@ ar:
         title: مجلة جديدة
         from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال المجلة
       edit:
-        title: تحرير مجلة
+        title: تعديل الرسالة الإخبارية
       show:
         title: معاينة مجلة
         send: إرسال
@@ -679,7 +679,7 @@ ar:
     officials:
       edit:
         destroy: إزالة حالة "رسمي"
-        title: 'المسؤولون: تحرير المستخدم'
+        title: 'المسؤولون: تعديل المستخدم'
       flash:
         official_destroyed: 'تم حفض التفاصيل: لم يعد المستخدم من المسؤولين'
         official_updated: تم حفض تفاصيل المسؤول
