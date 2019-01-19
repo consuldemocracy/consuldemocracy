@@ -560,7 +560,7 @@ ar:
     booth_assignments:
       manage_assignments: إدارة المهام
       manage:
-        assignments_list: "%{poll} تعيينات للاقتراع"
+        assignments_list: "تعيينات للاقتراع '%{poll}'"
         status:
           assign_status: التعيين
           assigned: تم التعيين
@@ -570,7 +570,7 @@ ar:
           unassign: إلغاء تعيين مكتب التصويت
     poll_booth_assignments:
       alert:
-        shifts: "هناك مناوبات مرتبطة بمكتب التصويت. إذا قمت بإزالة تعيين كشك ، سيتم حذف المناوبات أيضا. استمر؟"
+        shifts: "هناك مناوبات مرتبطة بمكتب التصويت. إذا قمت بإزالة تعيين مكتب التصويت، سيتم حذف المناوبات أيضا. هل تريد المتابعة؟"
       flash:
         destroy: "تم إلغاء تعيين مكتب التصويت"
         create: "تم تعيين مكتب التصويت"
@@ -578,7 +578,7 @@ ar:
         error_create: "حدث خطأ عند تعيين مكتب التصويت"
       show:
         location: "الموقع"
-        officers: "الأعوان"
+        officers: "الضباط"
         officers_list: "قائمة الأعوان لمكتب التصويت"
         no_officers: "لا يوجد أعوان لمكتب التصويت"
         recounts: "اعادة الحساب"
