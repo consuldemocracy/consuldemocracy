@@ -527,7 +527,7 @@ ar:
         email: البريد الإلكتروني
         description: الوصف
         no_description: بدون وصف
-        no_valuators: لا يوجد مقيّمين.
+        no_valuators: لا يوجد مقيمون.
         valuator_groups: "مجموعات المقيمين"
         group: "مجموعة"
         no_group: "لا توجد مجموعة"
