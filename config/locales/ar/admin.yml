@@ -331,7 +331,7 @@ ar:
           orders:
             id: Id
             title: عنوان
-            supports: سندات
+            supports: الدعم
         process:
           title: العملية
           comments: تعليقات
@@ -355,7 +355,7 @@ ar:
           title: العنوان
           back: عودة
           id: Id
-          supports: سندات
+          supports: الدعم
           select: حدّد
           selected: محدّد
         form:
@@ -539,7 +539,7 @@ ar:
     poll_shifts:
       new:
         new_shift: "مناوبة جديدة"
-        no_shifts: "هذا الكشك ليس لديه مناوبات"
+        no_shifts: "لا توجد مناوبات لمكتب التصويت هذا"
         officer: "ضابط"
         remove_shift: "إزالة"
         search_officer_button: بحث
@@ -745,7 +745,7 @@ ar:
       description: الوصف
       image: صورة
       show_image: رؤية الصورة
-      moderated_content: "تحقق من المحتوى الذي يشرف عليه المشرفون ، وتأكد مما إذا كان الإشراف قد تم بشكل صحيح."
+      moderated_content: "تحقق من المحتوى الذي يشرف عليه المشرفون، وتأكد مما إذا كان الإشراف قد تم بشكل صحيح."
       view: عرض
       proposal: اقتراح
       author: كاتب
