@@ -311,8 +311,8 @@ def expect_page_to_have_translatable_field(field, locale, with:)
       expect(page).to have_field field_for(field, locale), with: with
       click_link class: "fullscreen-toggle"
     elsif textarea_type == :ckeditor
-      within("div.js-globalize-attribute[data-locale='#{locale}'] .ckeditor ") do
-        within_frame(0) { expect(page).to have_content with }
+      within("div.js-globalize-attribute[data-locale='#{locale}'] .ckeditor [id$='#{field}']") do
+        within_frame(textarea_fields.keys.index(field)) { expect(page).to have_content with }
       end
     end
   end
