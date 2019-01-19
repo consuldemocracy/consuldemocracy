@@ -683,7 +683,7 @@ ar:
         title: المسؤولون
         no_officials: لا يوجد مسؤول.
         name: الاسم
-        official_position: الموقع الرسمي
+        official_position: الموقف الرسمي
         official_level: المستوى
       level_0: ليس رسميا
     organizations:
@@ -713,7 +713,7 @@ ar:
             submit: تحديث
       setting: الميزة
       setting_actions: الإجراءات
-      setting_name: ضبط
+      setting_name: إعداد
       setting_status: الحالة
       setting_value: القيمة
       no_description: "بدون وصف"
@@ -725,7 +725,7 @@ ar:
         placeholder: ابحث عن صندوق الاقتراع وفقا للإسم
       poll_officers_search:
         button: بحث
-        placeholder: بحث عن أعوان الإقتراع
+        placeholder: البحث عن ضباط الإقتراع
       poll_questions_search:
         button: بحث
         placeholder: البحث عن أسئلة الإقتراع
@@ -759,15 +759,15 @@ ar:
         tags_filter_all: كل العلامات
         filters:
           valuation_open: فتح
-          without_admin: بدون تعيين المشرف
-          managed: مدارة
+          without_admin: بدون تعيين المدير
+          managed: الإدارة
           valuating: تحت التقييم
           valuation_finished: انتهى التقييم
           all: الكل
         title: مشاريع استثمارية للميزانية التشاركية
         assigned_admin: المشرف المعين
-        no_admin_assigned: لم يتم تعيين أي مشرف
-        no_valuators_assigned: لا يوجد مقيّمين معينين
+        no_admin_assigned: لم يتم تعيين أي مدير
+        no_valuators_assigned: لم يتم تعيين مقيّمين
         feasibility:
           feasible: "مجدي (%{price})"
           not_feasible: "غير مجدي"
