@@ -188,7 +188,7 @@ ar:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
         list:
-          visible_to_valuators: عرض على المقيمين
+          visible_to_valuators: العرض على المقيمين
           author_username: اسم الكاتب
           incompatible: غير متوافق
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
@@ -227,7 +227,7 @@ ar:
         documents: "الوثائق"
         see_documents: "رؤية الوثائق (%{count})"
         no_documents: "بدون وثائق"
-        valuator_groups: "مجموعة تقييم"
+        valuator_groups: "مجموعة المقيمين"
       edit:
         classification: تصنيف
         compatibility: التوافق
@@ -405,18 +405,17 @@ ar:
       hidden_proposals: الإقتراحات المخفية
       hidden_budget_investments: استثمارات الميزانية مخفية
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
-      hidden_users: المستخدمون مخفيون
+      hidden_users: المستخدمون المخفيون
       administrators: المدراء
       managers: مدراء
       moderators: المشرفون
       messaging_users: رسائل للمستخدمين
-      newsletters: المجلات
+      newsletters: النشرات الإخبارية
       admin_notifications: إشعارات
       system_emails: نظام البريد الإلكتروني
       emails_download: تحميل رسائل البريد الإلكتروني
       valuators: المقيمون
-      poll_officers: أعوان الاستطلاع
-      polls: الاستبيانات
+      poll_officers: أعوان الإقتراع
       poll_booths: موقع المقصورات
       poll_booth_assignments: وظائف المقصورات
       poll_shifts: إدارة المناوبات
@@ -436,8 +435,6 @@ ar:
           debates: "المناقشات"
           community: "المجتمع"
           proposals: "المقترحات"
-          polls: "الاستبيانات"
-      title_polls: الاستبيانات
     moderators:
       index:
         title: المشرفون
@@ -531,11 +528,11 @@ ar:
         description: الوصف
         no_description: بدون وصف
         no_valuators: لا يوجد مقيمون.
-        valuator_groups: "مجموعات تقييم"
+        valuator_groups: "مجموعات المقيمين"
         group: "مجموعة"
         no_group: "لا توجد مجموعة"
       valuator:
-        add: اضف إلى المقيمين
+        add: أضف إلى المقيمين
       summary:
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
@@ -598,7 +595,6 @@ ar:
         table_location: "الموقع"
     polls:
       index:
-        title: "قائمة الاستبيانات المفعلة"
         no_polls: "لا يوجد استبيانات."
         create: "احداث اقتراع"
         name: "الاسم"
@@ -658,7 +654,7 @@ ar:
     booths:
       index:
         title: "قائمة صناديق الاقتراع المفعلة"
-        no_booths: "لا توجد صناديق الاقتراع مفعلة لأي استطلاع قادم."
+        no_booths: "لا توجد صناديق الاقتراع مفعلة لأي إقتراع قادم."
         add_booth: "إضافة صندوق اقتراع"
         name: "الاسم"
         location: "الموقع"
@@ -667,7 +663,7 @@ ar:
         title: "صندوق اقتراع جديد"
         name: "الاسم"
         location: "الموقع"
-        submit_button: "إحداث صندوق اقتراع"
+        submit_button: "إنشاء صندوق اقتراع"
       edit:
         title: "تعديل صندوق اقتراع"
         submit_button: "تحديث صندوق اقتراع"
@@ -707,7 +703,7 @@ ar:
           enabled: "تم تفعيل الميزة"
           disabled: "تم إلغاء الميزة"
           enable: "تفعيل"
-          disable: "إلغاء"
+          disable: "تعطيل"
         map:
           title: تعديل الخريطة
           help: هنا يمكنك تخصيص طريقة عرض الخريطة للمستخدمين. اسحب علامة الخريطة أو انقر في أي مكان على الخريطة ، اضبط التكبير المطلوب وانقر على زر "تحديث".
@@ -729,10 +725,10 @@ ar:
         placeholder: ابحث عن صندوق الاقتراع بالاسم
       poll_officers_search:
         button: بحث
-        placeholder: بحث عن أعوان الاستطلاع
+        placeholder: بحث عن أعوان الإقتراع
       poll_questions_search:
         button: بحث
-        placeholder: بحث عن أسئلة الاستطلاع
+        placeholder: البحث عن أسئلة الإقتراع
       proposal_search:
         button: بحث
         placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
@@ -770,7 +766,7 @@ ar:
           all: الكل
         title: مشاريع استثمارية للميزانية التشاركية
         assigned_admin: المشرف المعين
-        no_admin_assigned: لا يوجد مشرفين معينين
+        no_admin_assigned: لم يتم تعيين أي مشرف
         no_valuators_assigned: لا يوجد مقيمين معينين
         feasibility:
           feasible: "مجدي (%{price})"
