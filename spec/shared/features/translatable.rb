@@ -12,6 +12,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
   let(:input_fields) { input_fields } # So it's accessible by methods
   let(:textarea_fields) { textarea_fields } # So it's accessible by methods
+  let(:path_name) { path_name } # So it's accessible by methods
 
   let(:fields) { input_fields + textarea_fields.keys }
 
@@ -136,6 +137,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect(page).not_to have_css "#error_explanation"
       expect(page).not_to have_link "English"
 
+      path = updated_path_for(translatable)
       visit path
 
       expect(page).not_to have_link "English"
@@ -255,6 +257,10 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field fields.sample, :fr, with: ""
     end
   end
+end
+
+def updated_path_for(resource)
+  send(path_name, *resource_hierarchy_for(resource.reload))
 end
 
 def text_for(field, locale)
