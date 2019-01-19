@@ -300,7 +300,7 @@ ar:
           process: العملية
           debate_phase: مرحلة النقاش
           draft_phase: مرحلة المسودة
-          draft_phase_description: إذا كانت هذه المرحلة نشطة ، فلن يتم إدراج العملية في فهرس العمليات. اسمح بمعاينة العملية وإنشاء محتوى قبل البدء.
+          draft_phase_description: إذا كانت هذه المرحلة نشطة، فلن يتم إدراج العملية في فهرس العمليات. اسمح بمعاينة العملية وإنشاء محتوى قبل البدء.
           allegations_phase: مرحلة التعليقات
           proposals_phase: مرحلة الاقتراحات
           start: بداية
@@ -344,7 +344,7 @@ ar:
           info: معلومات
           homepage: الصفحة الرئيسية
           draft_versions: صياغة
-          questions: الحوارات
+          questions: النقاشات
           proposals: المقترحات
           milestones: التالية
       homepage:
@@ -364,10 +364,10 @@ ar:
           custom_categories_placeholder: ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل ('،') وبين الاقتباسات ("")
       draft_versions:
         create:
-          notice: 'تم إجراء المسودة بنجاح <a href="%{link}">انقر للزيارة</a>'
-          error: لا يمكن إجراء المسودة
+          notice: 'تم إنشاء المسودة بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن إنشاء المسودة
         update:
-          notice: 'تم تحديث المسودة بنجاح <a href="%{link}">انقر للزيارة</a>'
+          notice: 'تم تحديث المسودة بنجاح. <a href="%{link}">انقر للزيارة</a>'
           error: لا يمكن تحديث المسودة
       questions:
         table:
@@ -390,7 +390,7 @@ ar:
         add: إضافة
         delete: حذف
       search:
-        title: 'المدراء: بحث المستخدم'
+        title: 'المدراء: البحث عن المستخدم'
     menu:
       activity: نشاط المشرف
       admin: قائمة المدير
@@ -401,7 +401,7 @@ ar:
       budgets: الميزانية التشاركية
       geozones: إدارة المناطق الجغرافية
       hidden_comments: التعليقات المخفية
-      hidden_debates: حوارات مخفية
+      hidden_debates: النقاشات المخفية
       hidden_proposals: الإقتراحات المخفية
       hidden_budget_investments: استثمارات الميزانية مخفية
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
