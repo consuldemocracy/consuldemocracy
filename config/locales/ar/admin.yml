@@ -453,7 +453,7 @@ ar:
         title: تحرير مجلة
       show:
         title: معاينة مجلة
-        send: ارسال
+        send: إرسال
         affected_users: (%{n} مستخدم متأثر)
         sent_emails:
           zero: "%{count} رسالة بريد إلكتروني مرسلة"
