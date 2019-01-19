@@ -516,7 +516,7 @@ ar:
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
       index:
-        title: تحميل رسائل البريد الإلكتروني
+        title: تنزيل رسائل البريد الإلكتروني
         download_segment: تحميل عناوين البريد الإلكتروني
         download_segment_help_text: قم بالتنزيل بصيغة CSV
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
