@@ -39,6 +39,18 @@ section "Creating Budgets" do
     phase: "accepting"
   )
 
+  Budget.find_each do |budget|
+    budget.phases.each do |phase|
+      random_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          phase.description = "Description for locale #{locale}"
+          phase.summary = "Summary for locale #{locale}"
+          phase.save!
+        end
+      end
+    end
+  end
+
   Budget.all.each do |budget|
     city_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.all_city'))
     city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
