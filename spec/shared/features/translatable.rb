@@ -32,7 +32,16 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
     fields - optional_fields
   end
 
-  let(:translatable) { create(factory_name, attributes) }
+  let(:translatable) do
+    if factory_name == "budget_phase"
+      budget = create(:budget)
+      budget.phases.first.update attributes
+      budget.phases.first
+    else
+      create(factory_name, attributes)
+    end
+  end
+
   let(:path) { send(path_name, *resource_hierarchy_for(translatable)) }
   before { login_as(create(:administrator).user) }
 
