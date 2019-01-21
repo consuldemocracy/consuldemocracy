@@ -788,6 +788,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.text     "additional_info"
     t.text     "milestones_summary"
     t.text     "homepage"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_process_translations_on_hidden_at", using: :btree
     t.index ["legislation_process_id"], name: "index_199e5fed0aca73302243f6a1fca885ce10cdbb55", using: :btree
     t.index ["locale"], name: "index_legislation_process_translations_on_locale", using: :btree
   end
