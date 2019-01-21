@@ -3,6 +3,10 @@ require "rails_helper"
 RSpec.describe Poll::Question, type: :model do
   let(:poll_question) { build(:poll_question) }
 
+  describe "Concerns" do
+    it_behaves_like "acts as paranoid", :poll_question
+  end
+
   describe "#poll_question_id" do
     it "is invalid if a poll is not selected" do
       poll_question.poll_id = nil

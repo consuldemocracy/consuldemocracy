@@ -1025,8 +1025,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "title"
+    t.datetime "hidden_at"
   end
 
+  add_index "poll_question_translations", ["hidden_at"], name: "index_poll_question_translations_on_hidden_at", using: :btree
   add_index "poll_question_translations", ["locale"], name: "index_poll_question_translations_on_locale", using: :btree
   add_index "poll_question_translations", ["poll_question_id"], name: "index_poll_question_translations_on_poll_question_id", using: :btree
 
