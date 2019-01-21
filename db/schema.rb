@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190121122546) do
+ActiveRecord::Schema.define(version: 20190121122946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1047,8 +1047,10 @@ ActiveRecord::Schema.define(version: 20190121122546) do
     t.string   "name"
     t.text     "summary"
     t.text     "description"
+    t.datetime "hidden_at"
   end
 
+  add_index "poll_translations", ["hidden_at"], name: "index_poll_translations_on_hidden_at", using: :btree
   add_index "poll_translations", ["locale"], name: "index_poll_translations_on_locale", using: :btree
   add_index "poll_translations", ["poll_id"], name: "index_poll_translations_on_poll_id", using: :btree
 
