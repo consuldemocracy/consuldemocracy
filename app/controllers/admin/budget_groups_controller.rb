@@ -1,4 +1,5 @@
 class Admin::BudgetGroupsController < Admin::BaseController
+  include Translatable
   include FeatureFlags
   feature_flag :budgets
   before_action :load_budget
@@ -56,7 +57,8 @@ class Admin::BudgetGroupsController < Admin::BaseController
     end
 
     def budget_group_params
-      params.require(:budget_group).permit(:name, :max_votable_headings, :max_supportable_headings)
+      valid_attributes = [:max_votable_headings, :max_supportable_headings]
+      params.require(:budget_group).permit(*valid_attributes, translation_params(Budget::Group))
     end
 
 end
