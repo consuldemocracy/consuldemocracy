@@ -28,6 +28,10 @@
                            label: t("devise_views.users.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.users.registrations.new.password_confirmation_label") %>
 
+      <%= f.text_field :phone_number, maxlength: 9,
+                       placeholder: t("devise_views.users.registrations.new.phone_label"),
+                       label: t("devise_views.users.registrations.new.phone_label") %>
+
       <% if resource.use_redeemable_code %>
         <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
       <% end %>
