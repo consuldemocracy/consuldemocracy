@@ -916,7 +916,7 @@ en:
         table_location: "Location"
     polls:
       index:
-        title: "List of active polls"
+        title: "List of polls"
         no_polls: "There are no polls coming up."
         create: "Create poll"
         name: "Name"

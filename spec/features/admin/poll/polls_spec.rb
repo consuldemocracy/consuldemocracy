@@ -33,6 +33,7 @@ feature 'Admin polls' do
       click_link "Polls"
     end
 
+    expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
     polls = Poll.all
