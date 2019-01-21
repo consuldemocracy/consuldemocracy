@@ -44,11 +44,6 @@
       <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
         <%= image_tag('logo.svg') %>
       <% end %>
-      <div class="top-bar-title float-right">
-        <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for('logo_header.png'), class: 'float-right', alt: t("layouts.header.logo")) %>
-        <% end %>
-      </div>
       <div id="responsive-menu">
         <div class="top-bar-right">
           <div class="show-for-small-only">
@@ -58,6 +53,12 @@
           </div>
         </div>
       </div>
+        <div class="top-bar-title float-right">
+        <%= link_to root_path, accesskey: "0" do %>
+          <%= image_tag(image_path_for('logo_header.png'), class: 'float-right', alt: t("layouts.header.logo")) %>
+        <% end %>
+      </div>
+
     </div>
   </div>
 
