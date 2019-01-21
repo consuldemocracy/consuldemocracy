@@ -22,7 +22,7 @@
 <% end %>
 
 <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
-<%= render 'budgets/investments/categories' %>
+<%= render 'budgets/investments/categories', area_id: @area&.id %>
 
 <% if @heading && can?(:show, @ballot) %>
 
