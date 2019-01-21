@@ -4,7 +4,7 @@ class AddModerationAttrsToInvestments < ActiveRecord::Migration
       t.datetime :confirmed_hide_at
       #t.datetime :ignored_flag_at
       t.datetime :accepted_at
-      t.integer :flags_count, default: 0
+      #t.integer :flags_count, default: 0
     end
   end
 end
