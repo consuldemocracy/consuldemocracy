@@ -6,6 +6,7 @@ describe Poll do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "acts as paranoid", :poll
     it_behaves_like "reportable"
   end
 
