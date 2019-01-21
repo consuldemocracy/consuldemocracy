@@ -16,6 +16,7 @@ module Budgets
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :load_area, only: [:index, :new]
+    before_action :load_geozone, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
@@ -42,6 +43,7 @@ module Budgets
                           investments
                         end
       all_investments = all_investments.by_area(@area.id) if @area.present?
+      all_investments = all_investments.by_geozone(@geozone.id) if @geozone.present?
       @investments = all_investments.page(params[:page]).per(10).for_render
 
       @investment_ids = @investments.pluck(:id)
@@ -135,8 +137,8 @@ module Budgets
       params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
       params[:budget_investment][:tag_list] = add_organization(params[:budget_investment][:tag_list])
       params.require(:budget_investment)
-            .permit(:title, :description, :heading_id, :tag_list,
-                    :organization_name, :location, :terms_of_service, :skip_map,
+            .permit(:title, :description, :heading_id, :tag_list, :organization_name, :location, :terms_of_service, :skip_map,
+                    :sub_area_id, :geozone_id,
                     image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                     map_location_attributes: [:latitude, :longitude, :zoom])
@@ -160,6 +162,10 @@ module Budgets
     def load_area
       @area_id = params[:area_id] ? params[:area_id] : nil
       @area = @area_id ? Area.find(@area_id) : nil
+    end
+
+    def load_geozone
+      @geozone = params[:geozone_id] ? Geozone.find(params[:geozone_id]) : nil
     end
 
     def load_categories

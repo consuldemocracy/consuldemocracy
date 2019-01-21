@@ -267,12 +267,15 @@ ActiveRecord::Schema.define(version: 20190116095729) do
     t.boolean  "visible_to_valuators",                        default: false
     t.integer  "valuator_group_assignments_count",            default: 0
     t.integer  "sub_area_id"
+    t.integer  "geozone_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
   add_index "budget_investments", ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
+  add_index "budget_investments", ["geozone_id"], name: "index_budget_investments_on_geozone_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
+  add_index "budget_investments", ["sub_area_id"], name: "index_budget_investments_on_sub_area_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
   create_table "budget_phases", force: :cascade do |t|
