@@ -855,6 +855,7 @@ es:
       title: '¿Cómo puedo comentar este documento?'
   remote_translations:
     text: El contenido de esta página no está disponible en tu idioma
+    all_remote_translations_enqueued_text: "En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma"
     create:
-      enqueue_remote_translation: Las traducciones solicitadas estan pendientes de traducir. En un breve peridodo de tiempo refrescando la página podrá ver las traducciones.
+      enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página

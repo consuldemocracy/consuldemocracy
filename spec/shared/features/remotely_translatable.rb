@@ -52,7 +52,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       expect(page).not_to have_button("Traducir página")
     end
 
-    scenario "should be present when exist an equal RemoteTranslation is enqueued", :js do
+    scenario "should not be present when exist an equal RemoteTranslation is enqueued", :js do
       Delayed::Worker.delay_jobs = true
 
       create(:remote_translation, remote_translatable: resource, locale: :es)
@@ -60,7 +60,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
       select('Español', from: 'locale-switcher')
 
-      expect(page).to have_button("Traducir página")
+      expect(page).not_to have_button("Traducir página")
+      expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
 
       Delayed::Worker.delay_jobs = false
     end
@@ -166,13 +167,13 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         Delayed::Worker.delay_jobs = false
       end
 
-      scenario "should be present remote translations button", :js do
+      scenario "should not be present remote translations button", :js do
         visit path
         select('Español', from: 'locale-switcher')
 
         click_button "Traducir página"
 
-        expect(page).to have_button("Traducir página")
+        expect(page).not_to have_button("Traducir página")
       end
 
       scenario "should be present enqueued notice", :js do
@@ -181,7 +182,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         click_button "Traducir página"
 
-        expect(page).to have_content("Las traducciones solicitadas estan pendientes de traducir. En un breve peridodo de tiempo refrescando la página podrá ver las traducciones.")
+        expect(page).to have_content("Se han solicitado correctamente las traducciones.")
       end
 
     end
