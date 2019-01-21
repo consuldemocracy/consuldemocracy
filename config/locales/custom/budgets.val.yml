@@ -19,6 +19,8 @@ val:
         sidebar:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
+          required_phone: "Per a crear una nova proposta d'inversió has de introduïr el %{your_phone_number}"
+          your_phone_number: teu telèfon
         lista_seleccionadas: Seleccionades per les reunions de districte
         link_lista_seleccionadas: Consulta aquí les propostes prioritzades d'aquest districte que passen directament a la fase de validació i estudi de viabilitat
       investment:

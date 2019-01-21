@@ -38,7 +38,14 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <% if can?(:new, Budget::Investment) %>
-                  <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area_id), class: "button margin-top expanded" %>
+                  <% if current_user.phone_number? %>
+                    <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area_id), class: "button margin-top expanded" %>
+                  <% else %>
+                    <div class="callout warning margin-top">
+                      <%= t("budgets.investments.index.sidebar.required_phone",
+                            your_phone_number: link_to(t("budgets.investments.index.sidebar.your_phone_number"), account_path)).html_safe %>
+                    </div>
+                  <% end %>
                 <% else %>
                   <div class="callout warning margin-top">
                     <%= t("budgets.investments.index.sidebar.quota_exceeded") %>
@@ -136,7 +143,14 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <% if can?(:new, Budget::Investment) %>
-                  <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area_id), class: "button margin-top expanded" %>
+                  <% if current_user.phone_number? %>
+                    <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area_id), class: "button margin-top expanded" %>
+                  <% else %>
+                    <div class="callout warning margin-top">
+                      <%= t("budgets.investments.index.sidebar.required_phone",
+                            your_phone_number: link_to(t("budgets.investments.index.sidebar.your_phone_number"), account_path)).html_safe %>
+                    </div>
+                  <% end %>
                 <% else %>
                   <div class="callout warning margin-top">
                     <%= t("budgets.investments.index.sidebar.quota_exceeded") %>

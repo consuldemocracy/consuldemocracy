@@ -20,6 +20,8 @@ es:
       index:
         sidebar:
           create: Crear propuesta
+          required_phone: "Para crear un nuevo proyecto de gasto debes introducir %{your_phone_number}"
+          your_phone_number: tu teléfono
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
         by_heading: 'Propuestas de inversión con ámbito: %{heading}'
         lista_seleccionadas: Seleccionadas por las reuniones de distrito
