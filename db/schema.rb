@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190121121823) do
+ActiveRecord::Schema.define(version: 20190121122302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -723,8 +723,10 @@ ActiveRecord::Schema.define(version: 20190121121823) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "value"
+    t.datetime "hidden_at"
   end
 
+  add_index "legislation_question_option_translations", ["hidden_at"], name: "index_legislation_question_option_translations_on_hidden_at", using: :btree
   add_index "legislation_question_option_translations", ["legislation_question_option_id"], name: "index_61bcec8729110b7f8e1e9e5ce08780878597a209", using: :btree
   add_index "legislation_question_option_translations", ["locale"], name: "index_legislation_question_option_translations_on_locale", using: :btree
 
