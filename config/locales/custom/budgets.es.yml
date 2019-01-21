@@ -5,13 +5,18 @@ es:
       reasons_for_not_balloting:
         different_heading_assigned: Ya has votado en un distrito diferente (%{user_heading}) del presupuesto
     show:
+      area: 'Área: '
       view_all: Ver todas las propuestas
       all_headings: Todas las propuestas
+      view_by_areas: Ver por áreas
     investments:
       show:
         title: Propuesta de inversión
       form:
+        area: 'Área'
+        district: 'Zona'
         groups_proposed: Ya has creado una propuesta para %{groups}
+        sub_area: 'Subárea'
       index:
         sidebar:
           create: Crear propuesta

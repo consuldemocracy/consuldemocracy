@@ -1,6 +1,7 @@
 <h1><%= t('admin.areas.areas_title') %></h1>
 
-
+<%= link_to t('admin.areas.create_area'),
+              new_admin_area_path(), class: 'button float-right' %>
 <% if @areas.any? %>
   <table>
     <thead>

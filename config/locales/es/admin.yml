@@ -3,6 +3,7 @@ es:
     areas:
       area: 'Área: '
       areas_title: Áreas
+      create_area: Crear área
       editing: Editar área
       error: ha impedido guardar el área
       example_name: Urbanismo, Turismo, etc.

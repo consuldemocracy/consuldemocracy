@@ -3,9 +3,21 @@
 
   <div class="row">
     <div class="small-10 medium-7 large-7 columns">
-      <%= f.select :heading_id, custom_budget_heading_select_options(@budget), {include_blank: true, } %>
+      <%= f.fields_for @area, index: @area.id do |area_f| %>
+        <%= area_f.text_field :name, disabled: true, label: t('budget.investments.form.area') %>
+      <% end %>
     </div>
-    <div class="small-2 medium-5 large-5 column">
+    <div class="small-10 medium-7 large-7 columns">
+      <%= f.select :sub_area_id, custom_sub_area_select_options(@area_id), { include_blank: false, label: t("budgets.investments.form.sub_area") } %>
+    </div>
+    <% if @investment.budget.only_heading.present? %>
+      <%= f.hidden_field :heading_id, value: @investment.budget.only_heading.id %>
+    <% else %>
+      <div class="small-10 medium-7 large-7 columns">
+        <%= f.select :heading_id, custom_budget_heading_select_options(@budget), {include_blank: false, } %>
+      </div>
+    <% end %>
+    <div class="small-10 medium-7 large-7 column">
       <% gr = groups_not_allowed(@budget) %>
       <% if gr.any? %>
         <br>

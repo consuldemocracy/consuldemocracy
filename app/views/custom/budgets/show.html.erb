@@ -17,31 +17,6 @@
       </p>
       <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
-      <% if @budget.accepting? %>
-        <% if current_user %>
-          <% if current_user.level_two_or_three_verified? %>
-            <% if can?(:new, Budget::Investment) %>
-              <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
-            <% else %>
-              <div class="callout warning margin-top">
-                <%= t("budgets.investments.index.sidebar.quota_exceeded") %>
-              </div>
-            <% end %>
-          <% else %>
-            <div class="callout warning margin-top">
-              <%= t("budgets.investments.index.sidebar.verified_only",
-                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
-            </div>
-          <% end %>
-        <% else %>
-          <div class="callout warning margin-top">
-            <%= t("budgets.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
-                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
-          </div>
-        <% end %>
-      <% end %>
-
       <% if @budget.balloting_or_later? && can?(:read_results, @budget) %>
         <%= link_to t("budgets.show.see_results"),
                     budget_results_path(@budget, heading_id: @budget.headings.first),

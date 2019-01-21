@@ -93,6 +93,7 @@ class Budget
     scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
+    scope :by_area,           ->(area_id)     { where(sub_area_id: Area.find(area_id).sub_areas.pluck(:id)) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
     scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }

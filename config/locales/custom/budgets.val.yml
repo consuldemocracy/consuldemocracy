@@ -5,11 +5,16 @@ val:
       reasons_for_not_balloting:
         different_heading_assigned: Ja has votat en un districte diferent (%{user_heading}) del pressupost
     show:
+      area: 'Àrea: '
       view_all: Vore totes les propostes
       all_headings: Totes les propostes
+      view_by_areas: Vore per àrees
     investments:
       form:
+        area: 'Àrea'
+        district: Districte
         groups_proposed: Ja has creat una proposta per a %{groups}
+        sub_area: 'Subàrea'
       index:
         sidebar:
           create: Crear proposta

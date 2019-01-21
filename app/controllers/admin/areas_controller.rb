@@ -7,7 +7,7 @@ class Admin::AreasController < Admin::BaseController
 
   # GET /areas
   def index
-    @areas = Area.all
+    @areas = Area.includes(:translations, :sub_areas).all
   end
 
   # GET /areas/new

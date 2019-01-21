@@ -3,6 +3,7 @@ val:
     areas:
       area: 'Àrea: '
       areas_title: Àrees
+      create_area: Crear àrea
       editing: Editar àrea
       error: ha impedit guardar l'àrea
       example_name: Urbanisme, Turisme, etc.

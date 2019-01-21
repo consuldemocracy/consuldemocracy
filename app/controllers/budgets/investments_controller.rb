@@ -15,6 +15,7 @@ module Budgets
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
+    before_action :load_area, only: [:index, :new]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
@@ -40,7 +41,7 @@ module Budgets
                         else
                           investments
                         end
-
+      all_investments = all_investments.by_area(@area.id) if @area.present?
       @investments = all_investments.page(params[:page]).per(10).for_render
 
       @investment_ids = @investments.pluck(:id)
@@ -154,6 +155,11 @@ module Budgets
         @heading = nil #@budget.headings.last
         @assigned_heading = @ballot.try(:heading_for_group, @budget.headings.last.try(:group))
       end
+    end
+
+    def load_area
+      @area_id = params[:area_id] ? params[:area_id] : nil
+      @area = @area_id ? Area.find(@area_id) : nil
     end
 
     def load_categories

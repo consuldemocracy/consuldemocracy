@@ -13,7 +13,9 @@
 
   <div class="wrap row">
     <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
-
+      <% if @area_id %>
+        <h3><%= t("budgets.show.area") + Area.find(@area_id).name %></h3>
+      <% end %>
       <div class="small-12 search-results margin-bottom">
 
         <% if @current_filter == "unfeasible" %>
