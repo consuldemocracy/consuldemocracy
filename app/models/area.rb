@@ -1,4 +1,6 @@
 class Area < ActiveRecord::Base
+  include Imageable
+
   validates :name, presence: true
 
   translates :name, touch: true

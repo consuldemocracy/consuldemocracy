@@ -15,11 +15,16 @@
     <%= f.translatable_fields do |translations_form| %>
       <%= translations_form.text_field :name, label: t('admin.areas.name') %>
     <% end %>
+    <% if feature?(:allow_images) %>
+      <%= render 'images/nested_image', imageable: @area, f: f %>
+    <% end %>
     <div class="actions">
       <%= f.submit t("admin.actions.#{action}"), class: "button success" %>
     </div>
   </div>
-  <div class="small-12">
-    <%= render 'admin/sub_areas/list_sub_areas' %>
-  </div>
+  <% if @area.persisted? %>
+    <div class="small-12">
+      <%= render 'admin/sub_areas/list_sub_areas' %>
+    </div>
+  <% end %>
 <% end %>

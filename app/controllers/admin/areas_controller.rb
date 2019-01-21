@@ -54,6 +54,11 @@ class Admin::AreasController < Admin::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def area_params
-      params.require(:area).permit(translations_attributes: [:id, :name, :locale, :_destroy])
+      params.require(:area).permit(translations_attributes: [:id, :name,
+                                                             :locale,
+                                                             :_destroy],
+                                   image_attributes: [:id, :title, :attachment,
+                                                      :cached_attachment,
+                                                      :user_id, :_destroy])
     end
 end
