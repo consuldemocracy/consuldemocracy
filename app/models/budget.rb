@@ -176,6 +176,16 @@ class Budget < ActiveRecord::Base
     !investments.empty? || (investments.empty? && !Setting["feature.areas"])
   end
 
+  def only_heading
+    headings = []
+    groups.each do |group|
+      group.headings.each do |heading|
+        headings.push(heading)
+      end
+    end
+    headings.count == 1 ? headings.first : false
+  end
+
   private
 
   def sanitize_descriptions
