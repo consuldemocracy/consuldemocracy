@@ -5,7 +5,7 @@
   <div class="panel">
     <div class="icon-successful"></div>
     <div class="row">
-
+    <% if false %>
       <div class="small-12 medium-3 large-2 column text-center">
         <div data-equalizer-watch>
           <% if proposal.image.present? %>
@@ -16,10 +16,9 @@
         </div>
 
         <div class="small-12 medium-6 large-7 column">
-    <% else %>
-      <div class="row">
+    <% end %>
         <div class="small-12 medium-9 column">
-      <% end %>
+
         <div class="proposal-content">
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>

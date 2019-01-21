@@ -9,19 +9,6 @@ Rails.application.routes.draw do
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions',
-    confirmations: 'users/confirmations',
-    omniauth_callbacks: 'users/omniauth_callbacks'
-  }
-  devise_for :organizations, class_name: 'User',
-                             controllers: {
-                               registrations: 'organizations/registrations',
-                               sessions: 'devise/sessions'
-                             },
-                             skip: [:omniauth_callbacks]
-
   draw :account
   draw :admin
   draw :annotation
