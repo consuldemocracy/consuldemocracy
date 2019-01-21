@@ -345,6 +345,8 @@ def update_button_text
     "Update Custom page"
   when "Widget::Card"
     "Save card"
+  when "Budget::Group"
+    "Save group"
   else
     "Save changes"
   end
