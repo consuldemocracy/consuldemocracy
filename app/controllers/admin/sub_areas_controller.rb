@@ -1,4 +1,8 @@
 class Admin::SubAreasController < Admin::BaseController
+  include FeatureFlags
+
+  feature_flag :sub_areas
+
   before_action :set_sub_area, except: [:new, :create]
   before_action :set_area
 
@@ -48,6 +52,8 @@ class Admin::SubAreasController < Admin::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def sub_area_params
-      params.require(:sub_area).permit(:id, :name, :area_id)
+      params.require(:sub_area)
+            .permit(:area_id, translations_attributes: [:id, :name, :area_id, :locale,
+                                              :_destroy])
     end
 end

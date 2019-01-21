@@ -1,7 +1,7 @@
 class CreateSubArea < ActiveRecord::Migration
   def self.up
     create_table :sub_areas do |t|
-      t.text :name,       null: false
+      t.text :name
       t.integer :area_id, null: false
 
       t.timestamps        null: false

@@ -70,4 +70,5 @@ task :refresh_sitemap do
 end
 task create_additional_settings: [:environment] do
   Setting['feature.areas'] = true
+  Setting['feature.sub_areas'] = true
 end

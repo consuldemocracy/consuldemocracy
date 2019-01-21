@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190116095729) do
+ActiveRecord::Schema.define(version: 20190117123547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1302,8 +1302,19 @@ ActiveRecord::Schema.define(version: 20190116095729) do
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
 
+  create_table "sub_area_translations", force: :cascade do |t|
+    t.integer  "sub_area_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+  end
+
+  add_index "sub_area_translations", ["locale"], name: "index_sub_area_translations_on_locale", using: :btree
+  add_index "sub_area_translations", ["sub_area_id"], name: "index_sub_area_translations_on_sub_area_id", using: :btree
+
   create_table "sub_areas", force: :cascade do |t|
-    t.text     "name",       null: false
+    t.text     "name"
     t.integer  "area_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,9 +1,9 @@
 class AddSubAreaToBudgetInvestment < ActiveRecord::Migration
   def up
-    add_column :budget_investments, :sub_area_id, :integer
+    add_reference :budget_investments, :sub_area, index: true
   end
 
   def down
-    remove_column :budget_investments, :sub_area_id
+    remove_reference :budget_investments, :sub_area
   end
 end
