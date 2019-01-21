@@ -716,6 +716,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.text     "body"
     t.text     "body_html"
     t.text     "toc_html"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_draft_version_translations_on_hidden_at", using: :btree
     t.index ["legislation_draft_version_id"], name: "index_900e5ba94457606e69e89193db426e8ddff809bc", using: :btree
     t.index ["locale"], name: "index_legislation_draft_version_translations_on_locale", using: :btree
   end
