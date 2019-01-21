@@ -879,6 +879,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "value"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_question_option_translations_on_hidden_at", using: :btree
     t.index ["legislation_question_option_id"], name: "index_61bcec8729110b7f8e1e9e5ce08780878597a209", using: :btree
     t.index ["locale"], name: "index_legislation_question_option_translations_on_locale", using: :btree
   end
