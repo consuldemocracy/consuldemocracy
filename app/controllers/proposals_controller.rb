@@ -44,8 +44,7 @@ class ProposalsController < ApplicationController
   def index_customization
     discard_archived
     load_retired
-    # load_successful_proposals
-    # load_featured unless @proposal_successful_exists
+    load_featured
   end
 
   def vote
@@ -144,10 +143,6 @@ class ProposalsController < ApplicationController
     def set_view
       @view = (params[:view] == "minimal") ? "minimal" : "default"
     end
-
-    # def load_successful_proposals
-    #   @proposal_successful_exists = Proposal.successful.exists?
-    # end
 
     def destroy_map_location_association
       map_location = params[:proposal][:map_location_attributes]
