@@ -3,6 +3,8 @@ require "rails_helper"
 describe Legislation::Question do
   let(:question) { create(:legislation_question) }
 
+  it_behaves_like "acts as paranoid", :legislation_question
+
   describe "Concerns" do
     it_behaves_like "notifiable"
   end
