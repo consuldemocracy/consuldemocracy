@@ -1,4 +1,5 @@
 class RemoteTranslationsCaller
+  attr_accessor :available_remote_locales
 
   def call(remote_translation)
     resource = remote_translation.remote_translatable
@@ -9,6 +10,10 @@ class RemoteTranslationsCaller
 
     update_resource(resource, translations, locale_to)
     destroy_remote_translation(resource, remote_translation)
+  end
+
+  def available_remote_locales
+    @remote_locales = daily_cache('remote_locales') { MicrosoftTranslateClient.new.load_remote_locales() }
   end
 
   private
@@ -36,6 +41,10 @@ class RemoteTranslationsCaller
       ## TODO: Parsear los errores para gurdarlos? #{:"translations.title"=>["is too short (minimum is 4 characters)"]}
       ## TODO: A quien informamos de que ha sucedido un error en la traducción?
     end
+  end
+
+  def daily_cache(key, &block)
+    Rails.cache.fetch("load_remote_locales/#{Time.current.strftime('%Y-%m-%d')}/#{key}", &block)
   end
 
 end

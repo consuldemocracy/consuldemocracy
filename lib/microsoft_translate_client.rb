@@ -1,4 +1,8 @@
 require 'translator-text'
+require 'net/https'
+require 'uri'
+require 'cgi'
+require 'json'
 
 class MicrosoftTranslateClient
   CHARACTERS_LIMIT_PER_REQUEST = 5000
@@ -11,7 +15,12 @@ class MicrosoftTranslateClient
 
   def call(fields_values, locale)
     texts = prepare_texts(fields_values)
-    response = request_translation(texts, locale)
+    valid_locale = parse_locale(locale)
+    response = request_translation(texts, valid_locale)
+  end
+
+  def load_remote_locales
+    remote_available_locales.map { |locale| locale.first }
   end
 
   private
@@ -92,6 +101,37 @@ class MicrosoftTranslateClient
 
   def notranslate?(text)
     text.downcase == PREVENTING_TRANSLATION_KEY
+  end
+
+  def parse_locale(locale)
+    case locale
+    when :"pt-BR"
+      :pt
+    when :"zh-CN"
+      :"zh-Hans"
+    when :"zh-TW"
+      :"zh-Hant"
+    else
+      locale
+    end
+  end
+
+  def remote_available_locales
+    host = 'https://api.cognitive.microsofttranslator.com'
+    path = '/languages?api-version=3.0'
+
+    uri = URI (host + path)
+
+    request = Net::HTTP::Get.new(uri)
+    request['Ocp-Apim-Subscription-Key'] = Rails.application.secrets.microsoft_api_key
+
+    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+      http.request (request)
+    end
+
+    result = response.body.force_encoding("utf-8")
+
+    JSON.parse(result)["translation"]
   end
 
 end
