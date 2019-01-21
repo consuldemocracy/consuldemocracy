@@ -50,8 +50,6 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <!-- Hide fetured proposals for demo -->
-      <% if false %>
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
@@ -63,7 +61,6 @@
             <%= render "featured_proposal", proposal: featured_proposal %>
           <% end %>
         </div>
-      <% end %>
       <% end %>
 
       <div class="row">
