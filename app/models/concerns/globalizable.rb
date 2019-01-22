@@ -12,6 +12,10 @@ module Globalizable
     def assign_model_to_translations
       translations.each { |translation| translation.globalized_model = self }
     end
+
+    if self.paranoid?
+      translation_class.send :acts_as_paranoid, column: :hidden_at
+    end
   end
 
   class_methods do
