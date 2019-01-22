@@ -1,64 +1,173 @@
 ru:
   activerecord:
+    models:
+      activity:
+        one: "активность"
+        other: "активности"
+      budget:
+        one: "Бюджет"
+        other: "Бюджеты"
+      budget/investment:
+        one: "Инвестиция"
+        other: "Инвестиции"
+      budget/investment/milestone:
+        one: "контрольная точка"
+        other: "контрольные точки"
+      budget/investment/status:
+        one: "Статус инвестиции"
+        other: "Статусы инвестиции"
+      comment:
+        one: "Комментарий"
+        other: "Комментарии"
+      debate:
+        one: "Дебаты"
+        other: "Дебаты"
+      tag:
+        one: "Метка"
+        other: "Метки"
+      user:
+        one: "Пользователь"
+        other: "Пользователи"
+      moderator:
+        one: "Модератор"
+        other: "Модераторы"
+      administrator:
+        one: "Администратор"
+        other: "Администраторы"
+      valuator:
+        one: "Оценщик"
+        other: "Оценщики"
+      valuator_group:
+        one: "Группа оценщиков"
+        other: "Группы оценщиков"
+      manager:
+        one: "Менеджер"
+        other: "Менеджеры"
+      newsletter:
+        one: "Новостное письмо"
+        other: "Новостные письма"
+      vote:
+        one: "Голос"
+        other: "Голоса"
+      organization:
+        one: "Организация"
+        other: "Организации"
+      poll/booth:
+        one: "кабинка"
+        other: "кабинки"
+      poll/officer:
+        one: "сотрудник"
+        other: "сотрудники"
+      proposal:
+        one: "Предложение гражданина"
+        other: "Предложения гражданина"
+      spending_proposal:
+        one: "Проект инвестирования"
+        other: "Проекты инвестирования"
+      site_customization/page:
+        one: Настраиваемая страница
+        other: Настраиваемые страницы
+      site_customization/image:
+        one: Настраиваемое изображение
+        other: Настраиваемые изображения
+      site_customization/content_block:
+        one: Настраиваемый блок содержимого
+        other: Настраиваемые блоки содержимого
+      legislation/process:
+        one: "Процесс"
+        other: "Процессы"
+      legislation/proposal:
+        one: "Предложение"
+        other: "Предложения"
+      legislation/draft_versions:
+        one: "Версия черновика"
+        other: "Версии черновика"
+      legislation/draft_texts:
+          one: "Черновик"
+          other: "Черновики"
+      legislation/questions:
+        one: "Вопрос"
+        other: "Вопросы"
+      legislation/question_options:
+        one: "Опция вопроса"
+        other: "Опции вопроса"
+      legislation/answers:
+        one: "Ответ"
+        other: "Ответы"
+      documents:
+        one: "Документ"
+        other: "Документы"
+      images:
+        one: "Изображение"
+        other: "Изображения"
+      topic:
+        one: "Тема"
+        other: "Темы"
+      poll:
+        one: "Опрос"
+        other: "Опросы"
+      proposal_notification:
+        one: "Уведомление опроса"
+        other: "Уведомления опроса"
     attributes:
       budget:
         name: "Имя"
-        description_accepting: "Описание во время этапа приема"
-        description_reviewing: "Описание во время этапа рассмотрения"
-        description_selecting: "Описание во время этапа выбора"
-        description_valuating: "Описание во время этапа оценки"
-        description_balloting: "Описание во время этапа голосования"
-        description_reviewing_ballots: "Описание во время этапа рассмотрения голосований"
-        description_finished: "Описание по завершению бюджета"
-        phase: "Этап"
+        description_accepting: "Описание во время фазы приема"
+        description_reviewing: "Описание во время фазы рассмотрения"
+        description_selecting: "Описание во время фазы выбора"
+        description_valuating: "Описание во время фазы оценки"
+        description_balloting: "Описание во время фазы голосования"
+        description_reviewing_ballots: "Описание во время фазы рассмотрения бюллетеней"
+        description_finished: "Описание, когда бюджет окончен"
+        phase: "Фаза"
         currency_symbol: "Валюта"
       budget/investment:
-        heading_id: "Раздел"
-        title: "Название"
+        heading_id: "Заглавие"
+        title: "Заголовок"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
         administrator_id: "Администратор"
-        location: "Местоположение (опционально)"
-        organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
+        location: "Расположение (не обязательно)"
+        organization_name: "Если вы предлагаете от имени коллектива или организации, или от большего количества людей, то впишите имя организации"
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
-      milestone:
-        status_id: "Текущий инвестиционный статус (опционально)"
-        title: "Название"
-        description: "Описание (опционально, если присвоен статус)"
+      budget/investment/milestone:
+        status_id: "Текущий статус инвестиции (не обязательно)"
+        title: "Заголовок"
+        description: "Описание (не обязательно, если назначен статус)"
         publication_date: "Дата публикации"
-      milestone/status:
+      budget/investment/status:
         name: "Имя"
-        description: "Описание (опционально)"
+        description: "Описание (не обязательно)"
       budget/heading:
-        name: "Название раздела"
-        price: "Цена"
+        name: "Имя заголовка"
+        price: "Стоимость"
         population: "Население"
       comment:
-        body: "Отзыв"
+        body: "Комментарий"
         user: "Пользователь"
       debate:
         author: "Автор"
         description: "Мнение"
-        terms_of_service: "Условия предоставления услуг"
-        title: "Название"
+        terms_of_service: "Пользовательское соглашение"
+        title: "Заголовок"
       proposal:
         author: "Автор"
-        title: "Название"
+        title: "Заголовок"
         question: "Вопрос"
         description: "Описание"
-        terms_of_service: "Условия предоставления услуг"
+        terms_of_service: "Пользовательское соглашение"
       user:
-        login: "Электронный адрес или имя пользователя"
-        email: "Электронный адрес"
+        login: "Email или имя пользователя"
+        email: "Email"
         username: "Имя пользователя"
         password_confirmation: "Подтверждение пароля"
         password: "Пароль"
         current_password: "Текущий пароль"
         phone_number: "Номер телефона"
-        official_position: "Официальная позиция"
-        official_level: "Официальный уровень"
-        redeemable_code: "Код подтверждения получен по электронному адресу"
+        official_position: "Позиция служащего"
+        official_level: "Уровень служащего"
+        redeemable_code: "Код верификации, полученный по email"
       organization:
         name: "Название организации"
         responsible_name: "Лицо, ответственное за группу"
@@ -67,93 +176,93 @@ ru:
         association_name: "Название ассоциации"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
-        geozone_id: "Сфера деятельности"
-        title: "Название"
+        geozone_id: "Область деятельности"
+        title: "Заголовок"
       poll:
-        name: "Имя"
+        name: "Название"
         starts_at: "Дата начала"
         ends_at: "Дата закрытия"
-        geozone_restricted: "Ограничено геозоной"
-        summary: "Резюме"
+        geozone_restricted: "Ограничено географической зоной"
+        summary: "Обобщение"
         description: "Описание"
       poll/translation:
-        name: "Имя"
-        summary: "Резюме"
+        name: "Название"
+        summary: "Обобщение"
         description: "Описание"
       poll/question:
         title: "Вопрос"
-        summary: "Резюме"
+        summary: "Обобщение"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
       poll/question/translation:
         title: "Вопрос"
       signature_sheet:
-        signable_type: "Тип подписания"
-        signable_id: "Подписываемое ID"
+        signable_type: "Тип подписываемого"
+        signable_id: "ID подписываемого"
         document_numbers: "Номера документов"
       site_customization/page:
-        content: Содержание
-        created_at: Создано в
-        subtitle: Субтитр
-        slug: Slug URL
+        content: Содержимое
+        created_at: Создано
+        subtitle: Подзаголовок
+        slug: URL-наименование
         status: Статус
-        title: Название
-        updated_at: Обновлено в
-        more_info_flag: Показать на странице справки
+        title: Заголовок
+        updated_at: Обновлено
+        more_info_flag: Показывать на странице помощи
         print_content_flag: Кнопка печати содержимого
         locale: Язык
       site_customization/page/translation:
-        title: Название
-        subtitle: Субтитр
-        content: Содержание
+        title: Заголовок
+        subtitle: Подзаголовок
+        content: Содержимое
       site_customization/image:
-        name: Имя
+        name: Название
         image: Изображение
       site_customization/content_block:
-        name: Имя
-        locale: региональный язык
-        body: Тело
+        name: Название
+        locale: Язык
+        body: Тело блока
       legislation/process:
-        title: Название процесса
-        summary: Резюме
+        title: Заголовок процесса
+        summary: Обобщение
         description: Описание
         additional_info: Дополнительная информация
         start_date: Дата начала
         end_date: Дата окончания
-        debate_start_date: Дата начала обсуждения
-        debate_end_date: Дата окончания обсуждения
-        draft_publication_date: Дата публикации проекта
-        allegations_start_date: Дата начала заявлений
-        allegations_end_date: Дата окончания заявлений
-        result_publication_date: Дата публикации окончательного результата
+        debate_start_date: Дата начала дебатов
+        debate_end_date: Дата окончания дебатов
+        draft_publication_date: Дата публикации черновика
+        allegations_start_date: Дата начала обвинений без обоснований
+        allegations_end_date: Дата окончания обвинений без обоснований
+        result_publication_date: Дата окончательной публикации результата
       legislation/process/translation:
-        title: Название процесса
-        summary: Резюме
+        title: Заголовок процесса
+        summary: Обобщение
         description: Описание
         additional_info: Дополнительная информация
       legislation/draft_version:
-        title: Название версии
+        title: Заголовок версии
         body: Текст
         changelog: Изменения
         status: Статус
-        final_version: Окончательная версия
+        final_version: Конечная версия
       legislation/draft_version/translation:
-        title: Название версии
+        title: Заголовок версии
         body: Текст
         changelog: Изменения
       legislation/question:
-        title: Название
-        question_options: Опции
+        title: Заголовок
+        question_options: Варианты
       legislation/question_option:
         value: Значение
       legislation/annotation:
-        text: Отзыв
+        text: Комментарий
       document:
-        title: Название
-        attachment: Прикрепление
+        title: Заголовок
+        attachment: Вложение
       image:
-        title: Название
-        attachment: Прикрепление
+        title: Заголовок
+        attachment: Вложение
       poll/question/answer:
         title: Ответ
         description: Описание
@@ -161,99 +270,99 @@ ru:
         title: Ответ
         description: Описание
       poll/question/answer/video:
-        title: Название
+        title: Заголовок
         url: Внешнее видео
       newsletter:
         segment_recipient: Получатели
         subject: Тема
         from: От
-        body: Содержание электронной почты
+        body: Содержимое Email
       admin_notification:
         segment_recipient: Получатели
-        title: Название
+        title: Заголовок
         link: Ссылка
         body: Текст
       admin_notification/translation:
-        title: Название
+        title: Заголовок
         body: Текст
       widget/card:
-        label: Метка (опционально)
-        title: Название
+        label: Ярлык (не обязательно)
+        title: Заголовок
         description: Описание
         link_text: Текст ссылки
-        link_url: Ссылка URL
+        link_url: URL ссылки
       widget/card/translation:
-        label: Метка (опционально)
-        title: Название
+        label: Ярлык (не обязательно)
+        title: Заголовок
         description: Описание
         link_text: Текст ссылки
       widget/feed:
-        limit: Количество предметов
+        limit: Количество элементов
     errors:
       models:
         user:
           attributes:
             email:
-              password_already_set: "Этот пользователь уже имеет пароль"
+              password_already_set: "У этого пользователя уже есть пароль"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+              less_than_or_equal_to: "Меток должно быть не больше %{count}"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "Вы достигли лимита максимального количества личных сообщений в день"
+              invalid: "Вы достигли максимума количества личных сообщений в день"
         image:
           attributes:
             attachment:
-              min_image_width: "Ширина изображения должна быть не менее %{required_min_width}px"
-              min_image_height: "Высота изображения должна быть не менее %{required_min_height}px"
+              min_image_width: "Ширина изображения должна быть минимум %{required_min_width}px"
+              min_image_height: "Высота изображения должна быть минимум %{required_min_height}px"
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Сегмент получателей пользователя является недействительным"
+              invalid: "Не верный сегмент получателей пользователя"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Сегмент получателей пользователя является недействительным"
+              invalid: "Не верный сегмент получателей пользователя"
         map_location:
           attributes:
             map:
-              invalid: Расположение на карте не может быть пустым. Поместите маркер или установите флажок, если геолокация не требуется
+              invalid: Местоположение на карте не может быть пустым. Поместите маркер или установите галочку, если геолокация не нужна
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Документ не в переписи"
+              not_in_census: "Документ не в Цензусе"
               has_voted: "Пользователь уже проголосовал"
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: должно быть не раньше даты начала
+              invalid_date_range: должна равняться или быть позже даты начала
             debate_end_date:
-              invalid_date_range: должно быть не раньше даты начала дебатов
+              invalid_date_range: должна равняться или быть позже даты начала дебатов
             allegations_end_date:
-              invalid_date_range: должно быть не раньше даты начала заявлений
+              invalid_date_range: должна равняться или быть позже даты начала обвинений без оснований
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+              less_than_or_equal_to: "количество меток должно быть не больше %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "метки должны быть меньше или равны %{count}"
+              less_than_or_equal_to: "количество меток должно быть не больше %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "Вы должны ждать не менее %{interval} дней между уведомлениями"
+              invalid: "Вы должны подождать минимум %{interval} дней между уведомлениями"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Не проверено переписью'
-              already_voted: 'Уже проголосовано за это предложение'
+              not_in_census: 'Не верифицировано Учетом'
+              already_voted: 'Этому предложению уже поставлен голос'
         site_customization/page:
           attributes:
             slug:
-              slug_format: "должны быть буквы, цифры, _ и -"
+              slug_format: "должны быть буквы, цифры, символы _ и -"
         site_customization/image:
           attributes:
             image:
@@ -264,7 +373,7 @@ ru:
             valuation:
               cannot_comment_valuation: 'Вы не можете комментировать оценку'
       messages:
-        record_invalid: "Ошибка проверки: %{errors}"
+        record_invalid: "Проверка не пройдена: %{errors}"
         restrict_dependent_destroy:
-          has_one: "Невозможно удалить запись, поскольку существует зависимый %{record}"
-          has_many: "Невозможно удалить запись, поскольку существует зависимый %{record}"
+          has_one: "Невозможно удалить запись, т.к. существует зависимая запись %{record}"
+          has_many: "Невозможно удалить запись, т.к. существуют зависимые записи %{record}"
