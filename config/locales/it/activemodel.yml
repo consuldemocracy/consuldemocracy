@@ -2,10 +2,13 @@ it:
   activemodel:
     models:
       verification:
+        residence: "Indirizzo"
         sms: "SMS"
     attributes:
       verification:
         residence:
+          document_type: "Tipo di documento"
+          document_number: "Numero del documento (lettere incluse)"
           date_of_birth: "Data di nascita"
           postal_code: "Cap"
         sms:
