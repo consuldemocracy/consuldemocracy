@@ -102,9 +102,11 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
   end
 
   add_index "banner_translations", ["banner_id"], name: "index_banner_translations_on_banner_id", using: :btree
+  add_index "banner_translations", ["hidden_at"], name: "index_banner_translations_on_hidden_at", using: :btree
   add_index "banner_translations", ["locale"], name: "index_banner_translations_on_locale", using: :btree
 
   create_table "banners", force: :cascade do |t|
