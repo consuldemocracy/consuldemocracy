@@ -17,7 +17,7 @@ class Admin::HiddenDebatesController < Admin::BaseController
   end
 
   def restore
-    @debate.restore
+    @debate.restore!(recursive: true)
     @debate.ignore_flag
     Activity.log(current_user, :restore, @debate)
     redirect_to request.query_parameters.merge(action: :index)
