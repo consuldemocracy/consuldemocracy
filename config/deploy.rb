@@ -46,7 +46,6 @@ namespace :deploy do
   #before :starting, 'rvm1:install:rvm'  # install/update RVM
   #before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
   #before :starting, 'install_bundler_gem' # install bundler gem
-  after :publishing, 'create_additional_settings'
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
   after :published, 'refresh_sitemap'
@@ -67,8 +66,4 @@ task :refresh_sitemap do
       end
     end
   end
-end
-task create_additional_settings: [:environment] do
-  Setting['feature.areas'] = true
-  Setting['feature.sub_areas'] = true
 end
