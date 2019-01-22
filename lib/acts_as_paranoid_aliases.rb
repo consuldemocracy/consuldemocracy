@@ -28,7 +28,7 @@ module ActsAsParanoidAliases
       def restore(opts = {})
         return false unless hidden?
         super(opts)
-        update_attribute(:confirmed_hide_at, nil)
+        update_attribute(:confirmed_hide_at, nil) if self.class.column_names.include? "confirmed_hide_at"
         after_restore
       end
 
