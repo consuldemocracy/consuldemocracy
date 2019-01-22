@@ -1,4 +1,5 @@
 class Admin::BudgetHeadingsController < Admin::BaseController
+  include Translatable
   include FeatureFlags
   feature_flag :budgets
 
@@ -62,8 +63,8 @@ class Admin::BudgetHeadingsController < Admin::BaseController
     end
 
     def budget_heading_params
-      params.require(:budget_heading).permit(:name, :price, :population, :allow_custom_content,
-                                             :latitude, :longitude)
+      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude]
+      params.require(:budget_heading).permit(*valid_attributes, translation_params(Budget::Heading))
     end
 
 end
