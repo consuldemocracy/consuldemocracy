@@ -158,6 +158,17 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
 
+  create_table "budget_heading_translations", force: :cascade do |t|
+    t.integer  "budget_heading_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+  end
+
+  add_index "budget_heading_translations", ["budget_heading_id"], name: "index_budget_heading_translations_on_budget_heading_id", using: :btree
+  add_index "budget_heading_translations", ["locale"], name: "index_budget_heading_translations_on_locale", using: :btree
+
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
     t.string  "name",                 limit: 50

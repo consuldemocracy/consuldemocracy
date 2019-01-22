@@ -57,37 +57,62 @@ section "Creating Budgets" do
       name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es)
     }
     city_group = budget.groups.create!(city_group_params)
-    city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
-                                price: 1000000,
-                                population: 1000000,
-                                latitude: '40.416775',
-                                longitude: '-3.703790')
+
+    city_heading_params = {
+      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
+      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es),
+      price: 1000000,
+      population: 1000000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    city_group.headings.create!(city_heading_params)
 
     districts_group_params = {
       name_en: I18n.t("seeds.budgets.groups.districts", locale: :en),
       name_es: I18n.t("seeds.budgets.groups.districts", locale: :es)
     }
     districts_group = budget.groups.create!(districts_group_params)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 350000,
-                                     latitude: '40.416775',
-                                     longitude: '-3.703790')
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 300000,
-                                     latitude: '40.416775',
-                                     longitude: '-3.703790')
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 200000,
-                                     latitude: '40.416775',
-                                     longitude: '-3.703790')
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 150000,
-                                     latitude: '40.416775',
-                                     longitude: '-3.703790')
+
+    north_heading_params = {
+      name_en: I18n.t("seeds.geozones.north_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.north_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 350000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(north_heading_params)
+
+    west_heading_params = {
+      name_en: I18n.t("seeds.geozones.west_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.west_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 300000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(west_heading_params)
+
+    east_heading_params = {
+      name_en: I18n.t("seeds.geozones.east_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.east_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 200000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(east_heading_params)
+
+    central_heading_params = {
+      name_en: I18n.t("seeds.geozones.central_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.central_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 150000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(central_heading_params)
   end
 end
 

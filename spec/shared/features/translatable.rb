@@ -347,6 +347,8 @@ def update_button_text
     "Save card"
   when "Budget::Group"
     "Save group"
+  when "Budget::Heading"
+    "Save heading"
   else
     "Save changes"
   end
