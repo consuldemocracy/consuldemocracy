@@ -98,7 +98,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
     t.index ["banner_id"], name: "index_banner_translations_on_banner_id", using: :btree
+    t.index ["hidden_at"], name: "index_banner_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_banner_translations_on_locale", using: :btree
   end
 
