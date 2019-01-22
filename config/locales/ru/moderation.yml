@@ -1,1 +1,117 @@
 ru:
+  moderation:
+    comments:
+      index:
+        block_authors: Заблокировать авторов
+        confirm: Вы уверены?
+        filter: Фильтр
+        filters:
+          all: Все
+          pending_flag_review: Ожидают
+          with_ignored_flag: Отметить на просмотренное
+        headers:
+          comment: Комментировать
+          moderate: Модерировать
+        hide_comments: Скрыть комментарии
+        ignore_flags: Отметить как просмотренное
+        order: Порядок
+        orders:
+          flags: Самое помечаемое
+          newest: Самое новое
+        title: Комментарии
+    dashboard:
+      index:
+        title: Модерация
+    debates:
+      index:
+        block_authors: Заблокировать авторов
+        confirm: Вы уверены?
+        filter: Фильтр
+        filters:
+          all: Все
+          pending_flag_review: Ожидают
+          with_ignored_flag: отметить как просмотренное
+        headers:
+          debate: Обсудить
+          moderate: Модерировать
+        hide_debates: Скрыть обсуждения
+        ignore_flags: Отметить как просмотренное
+        order: Порядок
+        orders:
+          created_at: Самое новое
+          flags: Самое помечаемое
+        title: Дебаты
+    header:
+      title: Модерация
+    menu:
+      flagged_comments: Комментарии
+      flagged_debates: Дебаты
+      flagged_investments: Инвестирования бюджета
+      proposals: Предложения
+      proposal_notifications: Уведомления предложений
+      users: Блокировать пользователей
+    proposals:
+      index:
+        block_authors: Блокировать авторов
+        confirm: Вы уверены?
+        filter: Фильтр
+        filters:
+          all: Все
+          pending_flag_review: Ожидают рассмотрения
+          with_ignored_flag: Отметить как просмотренное
+        headers:
+          moderate: Модерировать
+          proposal: Предложение
+        hide_proposals: Скрыть предложения
+        ignore_flags: Отметить как просмотренное
+        order: Упорядочить но
+        orders:
+          created_at: Самое свежее
+          flags: Самое помечаемое
+        title: Предложения
+    budget_investments:
+      index:
+        block_authors: Блокировать авторов
+        confirm: Вы уверены?
+        filter: Фильтр
+        filters:
+          all: Все
+          pending_flag_review: Ожидают
+          with_ignored_flag: Отмечено как просмотренное
+        headers:
+          moderate: Модерировать
+          budget_investment: Бюджетное инвестирование
+        hide_budget_investments: Скрыть бюджетные инвестиции
+        ignore_flags: Отметить как просмотренное
+        order: Упорядочить по
+        orders:
+          created_at: Самое свежее
+          flags: Самое отмечаемое
+        title: Бюджетные инвестиции
+    proposal_notifications:
+      index:
+        block_authors: Блокировать авторов
+        confirm: Вы уверены?
+        filter: Фильтр
+        filters:
+          all: Все
+          pending_review: Ожидают рассмотрения
+          ignored: Отметить как просмотренное
+        headers:
+          moderate: Модерировать
+          proposal_notification: Уведомления предложения
+        hide_proposal_notifications: Скрыть предложения
+        ignore_flags: Отметить как просмотренное
+        order: Упорядочить
+        orders:
+          created_at: Самое свежее
+          moderated: Отмодерировано
+        title: Уведомления предложений
+    users:
+      index:
+        hidden: Заблокирован
+        hide: Блокировать
+        search: Поиск
+        search_placeholder: email или имя пользователя
+        title: Блокировать пользователей
+      notice_hide: Пользователь заблокирован. Все дебаты и комментарии этого пользователя были скрыты.
