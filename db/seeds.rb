@@ -1,50 +1,26 @@
-# coding: utf-8
-# Default admin user (change password after first deploy to a server!)
 if Administrator.count == 0 && !Rails.env.test?
   admin = User.create!(username: 'admin', email: 'admin@consul.dev', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.current, terms_of_service: "1")
   admin.create_administrator
 end
 
-# Names for the moderation console, as a hint for moderators
-# to know better how to assign users with official positions
 Setting["official_level_1_name"] = "Cargo oficial 1"
 Setting["official_level_2_name"] = "Cargo oficial 2"
 Setting["official_level_3_name"] = "Cargo oficial 3"
 Setting["official_level_4_name"] = "Cargo oficial 4"
 Setting["official_level_5_name"] = "Cargo oficial 5"
-
-# Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
-
-# Max votes where a debate is still editable
 Setting["max_votes_for_debate_edit"] = 1000
-
-# Max votes where a proposal is still editable
 Setting["max_votes_for_proposal_edit"] = 1000
-
-# Max length for comments
 Setting['comments_body_max_length'] = 1000
-
-# Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'CAS'
-
-# Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
-
-# Months to archive proposals
 Setting["months_to_archive_proposals"] = 12
-
-# Users with this email domain will automatically be marked as level 1 officials
-# Emails under the domain's subdomains will also be included
 Setting["email_domain_for_officials"] = ''
-
-# Code to be included at the top (inside <head>) of every page (useful for tracking)
 Setting['per_page_code_head'] = ''
-
-# Code to be included at the top (inside <body>) of every page
 Setting['per_page_code_body'] = ''
+Setting['map_latitude'] = nil
+Setting['map_longitude'] = nil
+Setting['map_zoom'] = nil
 
-# Social settings
 Setting["twitter_handle"] = nil
 Setting["twitter_hashtag"] = nil
 Setting["facebook_handle"] = nil
@@ -55,21 +31,10 @@ Setting["blog_url"] = nil
 Setting["transparency_url"] = nil
 Setting["opendata_url"] = "/opendata"
 
-# Public-facing URL of the app.
-Setting["url"] = "https://decidim.castello.es"
-
-# Consul installation's organization name
-Setting["org_name"] = "Ayuntamiento de Castellón de la Plana"
-
-# Consul installation place name (City, Country...)
-Setting["place_name"] = "Castellón de la Plana"
-
-# Meta tags for SEO
 Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
-# Feature flags
 Setting['feature.debates'] = true
 Setting['feature.spending_proposals'] = true
 Setting['feature.proposals'] = true
@@ -92,85 +57,70 @@ Setting['feature.map'] = nil
 Setting['feature.allow_images'] = true
 Setting['feature.allow_attached_documents'] = true
 Setting['feature.help_page'] = true
+Setting['feature.spending_proposal_features.voting_allowed'] = nil
+Setting['featured_proposals_number'] = 3
+Setting["feature.user.skip_verification"] = 'true'
+Setting['feature.homepage.widgets.feeds.proposals'] = true
+Setting['feature.homepage.widgets.feeds.debates'] = true
+Setting['feature.homepage.widgets.feeds.processes'] = true
 Setting['feature.areas'] = true
 
-# Spending proposals feature flags
-Setting['feature.spending_proposal_features.voting_allowed'] = nil
+Setting['proposal_notification_minimum_interval_in_days'] = 3
+Setting['direct_message_max_per_day'] = 3
+Setting['min_age_to_participate'] = 16
+Setting['proposal_improvement_path'] = true
+Setting['map_longitude'] = 0.0
+Setting['map_zoom'] = 10
+Setting['related_content_score_threshold'] = -0.3
+Setting['hot_score_period_in_days'] = 31
+Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 
-# Banner styles
 Setting['banner-style.banner-style-one']   = "Banner style 1"
 Setting['banner-style.banner-style-two']   = "Banner style 2"
 Setting['banner-style.banner-style-three'] = "Banner style 3"
-
-# Banner images
 Setting['banner-img.banner-img-one']   = "Banner image 1"
 Setting['banner-img.banner-img-two']   = "Banner image 2"
 Setting['banner-img.banner-img-three'] = "Banner image 3"
 
-# Proposal notifications
-Setting['proposal_notification_minimum_interval_in_days'] = 3
-Setting['direct_message_max_per_day'] = 3
-
-# Email settings
-Setting['mailer_from_name'] = 'Decidim Castelló'
-Setting['mailer_from_address'] = 'noreply@castello.es'
-
-# Verification settings
-Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
-Setting['min_age_to_participate'] = 16
-
-# Featured proposals
-Setting['featured_proposals_number'] = 3
-
-# Proposal improvement url path ('/help/proposal-improvement')
-
-##Setting['proposal_improvement_path'] = nil
-
-
-
-# ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-# ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
-#
-# ['Urbanismo', 'Cultura', 'Deportes', 'Agricultura', 'Comercio y consumo', 'Juventud', 'Turismo',
-#  'Igualdad', 'Gente Mayor', 'Bienestar Social', 'Seguridad ciudadana', 'Mercados', 'Fiestas',
-#  'Servicios Públicos', 'Nuevas tecnologías', 'Atención y Participación ciudadana', 'Desarrollo Sostenible',
-#  'Distrito Norte', 'Distrito Sur', 'Distrito Este', 'Distrito Oeste', 'Distrito Centro', 'Distrito Grao'].each do |c|
-#
-#   ActsAsTaggableOn::Tag.create!(name:  c, featured: true, kind: "category")
-#
-#  end
-
-Setting['proposal_improvement_path'] = true
-Setting['map_longitude'] = 0.0
-Setting['map_zoom'] = 10
-
-# Related content
-Setting['related_content_score_threshold'] = -0.3
-
-Setting["feature.user.skip_verification"] = 'true'
-
-Setting['feature.homepage.widgets.feeds.proposals'] = true
-Setting['feature.homepage.widgets.feeds.debates'] = true
-Setting['feature.homepage.widgets.feeds.processes'] = true
-
-# Votes hot_score configuration
-Setting['hot_score_period_in_days'] = 31
+Setting["url"] = "https://decidim.castello.es"                if Setting["url"].nil?
+Setting["org_name"] = "Ayuntamiento de Castellón de la Plana" if Setting["org_name"].nil?
+Setting["place_name"] = "Castellón de la Plana"               if Setting["place_name"].nil?
+Setting['mailer_from_name'] = 'Decidim Castelló'              if Setting["mailer_from_name"].nil?
+Setting['mailer_from_address'] = 'noreply@castello.es'        if Setting["mailer_from_address"].nil?
+Setting["proposal_code_prefix"] = 'CAS'                       if Setting["proposal_code_prefix"].nil?
 
 WebSection.create(name: 'homepage')
 WebSection.create(name: 'debates')
 WebSection.create(name: 'proposals')
 WebSection.create(name: 'budgets')
 WebSection.create(name: 'help_page')
+
+areas_es = { 'Urbanismo' =>  ['Mejora en calles, aceras,…',
+                              'Mejoras limpia',
+                              'Mejoras en el mobiliario',
+                              'Mejoras en las zonas verdes',
+                              'Ideas para hacer más accesible la ciudad',
+                              'Mejorar en temas de iluminación y/o contaminación lumínica'],
+  'Movilidad' => ['Ideas para hacer más fácil ir en bici por la ciudad',
+                'Mejoras en la circulación',
+                'Mejoras en el aparcamiento'],
+  'Educación' => ['Mejoras en las instalaciones educativas',
+                'Implantación de caminos escolares seguros'],
+  'Salud pública' => ['Mejora en el trato con mascotas (espacios específicos, control de limpieza,…)',
+                    'Medidas parra la reducción de la contaminación'],
+  'Servicios municipales' => ['Mejorar la oferta de centros específicos para personas mayores, centros juveniles o infancia',
+                            'Mejoras en el transporte',
+                            'Mejorar las equipaciones deportivas'],
+  'Cultura' => ['Mejoras en la oferta cultural y el ocio de la ciudad'],
+  'Desarrollo y fomento del empleo' => ['Ideas para apoyar el comercio',
+                                      'Ideas para mejorar en empleo',
+                                      'Ideas para apoyar al tejido asociativo'],
+  'Otros' => ['Has detectado algún problema en la ciudad y tienes una propuesta de solución que no entra en los apartados anteriores, cuéntanos!']
+}
+I18n.default_locale = :es
+areas_es.each do |area, sub_areas|
+  new_area = Area.find_or_create_by(name: area)
+  areas_es[area].each do |sub_area_name|
+    sub_area = SubArea.find_or_create_by(name: sub_area_name, area_id: new_area.id)
+  end
+end
