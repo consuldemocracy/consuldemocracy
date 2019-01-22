@@ -18,7 +18,7 @@ class Admin::HiddenProposalsController < Admin::BaseController
   end
 
   def restore
-    @proposal.restore
+    @proposal.restore(recursive: true)
     @proposal.ignore_flag
     Activity.log(current_user, :restore, @proposal)
     redirect_to request.query_parameters.merge(action: :index)
