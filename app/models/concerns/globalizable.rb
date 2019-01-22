@@ -16,6 +16,10 @@ module Globalizable
     def description
       self.read_attribute(:description).try :html_safe
     end
+
+    if self.paranoid?
+      translation_class.send :acts_as_paranoid, column: :hidden_at
+    end
   end
 
   class_methods do
