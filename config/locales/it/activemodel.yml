@@ -5,6 +5,12 @@ it:
         sms: "SMS"
     attributes:
       verification:
+        residence:
+          date_of_birth: "Data di nascita"
+          postal_code: "Cap"
+        sms:
+          phone: "Telefono"
+          confirmation_code: "Codice di conferma"
         email:
           recipient: "Email"
       officing/residence:
