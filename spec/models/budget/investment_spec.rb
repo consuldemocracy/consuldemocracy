@@ -8,6 +8,7 @@ describe Budget::Investment do
     it_behaves_like "sanitizable"
     it_behaves_like "globalizable", :budget_investment
     it_behaves_like "acts as imageable", :budget_investment_image
+    it_behaves_like "acts as paranoid", :budget_investment
   end
 
   it "is valid" do
