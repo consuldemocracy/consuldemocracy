@@ -35,20 +35,14 @@ Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
-Setting['feature.debates'] = true
 Setting['feature.spending_proposals'] = true
-Setting['feature.proposals'] = true
 Setting['feature.featured_proposals'] = true
 Setting['feature.spending_proposals'] = nil
-Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = false
 Setting['feature.facebook_login'] = false
 Setting['feature.google_login'] = false
 Setting['feature.public_stats'] = false
 Setting['feature.budgets'] = true
-Setting['feature.signature_sheets'] = true
-Setting['feature.proposals'] = true
-Setting['feature.legislation'] = true
 Setting['feature.user.recommendations'] = true
 Setting['feature.user.recommendations_on_debates'] = true
 Setting['feature.user.recommendations_on_proposals'] = true
@@ -88,6 +82,11 @@ Setting["place_name"] = "Castellón de la Plana"               if Setting["place
 Setting['mailer_from_name'] = 'Decidim Castelló'              if Setting["mailer_from_name"].nil?
 Setting['mailer_from_address'] = 'noreply@castello.es'        if Setting["mailer_from_address"].nil?
 Setting["proposal_code_prefix"] = 'CAS'                       if Setting["proposal_code_prefix"].nil?
+Setting['feature.debates'] = nil
+Setting['feature.signature_sheets'] = nil
+Setting['feature.proposals'] = nil
+Setting['feature.legislation'] = nil
+Setting['feature.polls'] = nil
 
 WebSection.create(name: 'homepage')
 WebSection.create(name: 'debates')
