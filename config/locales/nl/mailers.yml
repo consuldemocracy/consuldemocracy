@@ -31,6 +31,7 @@ nl:
       title: "Voorstelmeldingen in %{org_name}"
       share: Deel voorstellen
       comment: Reageren op het voorstel
+      unsubscribe: "Wilt u geen berichten ontvangen over een voorstel? Ga dan naar %{account} en vink 'Ontvang samenvattingen van voorstellen.'"
       unsubscribe_account: Mijn account
     direct_message_for_receiver:
       subject: "U hebt een nieuw prive-bericht ontvangen"
