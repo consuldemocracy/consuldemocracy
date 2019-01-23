@@ -207,13 +207,27 @@ ar:
         buttons:
           filter: فرز
         download_current_selection: "تحميل الاختيار الحالي"
+        no_budget_investments: "لا توجد مشاريع استثمارات."
         title: مشاريع استثمارية
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
+        no_valuators_assigned: لم يتم تعيين مقيّمين
+        no_valuation_groups: لم يتم تعيين مجموعات مقيّمين
         feasibility:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
+          undecided: "متردد"
+        selected: "محدّد"
+        select: "حدّد"
         list:
+          id: ID
+          title: العنوان
+          supports: الدعم
+          admin: المدير
+          valuator: المقيّم
+          valuation_group: مجموعة المقيّمين
+          geozone: نطاق العملية
+          feasibility: الجدوى
           visible_to_valuators: العرض على المقيمين
           author_username: اسم الكاتب
           incompatible: غير متوافق
