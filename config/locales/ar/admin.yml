@@ -426,7 +426,57 @@ ar:
         update:
           notice: 'تم تحديث المسودة بنجاح. <a href="%{link}">انقر للزيارة</a>'
           error: لا يمكن تحديث المسودة
+        form:
+          body_placeholder: اكتب نص المسودة
+        index:
+          title: مسودة الإصدارات
+          create: إنشاء إصدار
+          delete: حذف
+          preview: معاينة
+        new:
+          back: عودة
+          title: إنشاء إصدار جديد
+          submit_button: إنشاء إصدار
+        statuses:
+          draft: مسودة
+          published: منشورة
+        table:
+          title: العنوان
+          created_at: أنشئت في
+          comments: التعليقات
+          final_version: الإصدار الأخير
+          status: الحالة
       questions:
+        create:
+          notice: 'تم إنشاء السؤال بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن إنشاء السؤال
+        update:
+          notice: 'تم تحديث السؤال بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن تحديث السؤال
+        destroy:
+          notice: تم حذف السؤال بنجاح
+        edit:
+          back: عودة
+          title: "تصحيح \"%{question_title}\""
+          submit_button: حفظ التغييرات
+        errors:
+          form:
+            error: خطأ
+        form:
+          add_option: إضافة خيار
+          title: سؤال
+          title_placeholder: إضافة سؤال
+          value_placeholder: إضافة إجابة مغلقة
+          question_options: "الإجابات المحتملة (اختياري ، عادة هي الإجابات المفتوحة)"
+        index:
+          back: عودة
+          title: الأسئلة المرتبطة بهذه العملية
+          create: إنشاء سؤال
+          delete: حذف
+        new:
+          back: عودة
+          title: إنشاء سؤال جديد
+          submit_button: إنشاء سؤال
         table:
           title: العنوان
           question_options: خيارات السؤال
@@ -473,6 +523,7 @@ ar:
       emails_download: تنزيل رسائل البريد الإلكتروني
       valuators: المقيمون
       poll_officers: ضباط الإقتراع
+      polls: استبيانات
       poll_booths: موقع صناديق الإقتراع
       poll_booth_assignments: تعيينات صناديق الإقتراع
       poll_shifts: إدارة المناوبات
@@ -492,6 +543,19 @@ ar:
           debates: "المناقشات"
           community: "المجتمع"
           proposals: "المقترحات"
+          polls: "استبيانات"
+          layouts: "تخطيطات"
+          mailers: "البريد الالكتروني"
+          management: "الإدارة"
+          welcome: "اهلاً وسهلاً"
+        buttons:
+          save: "حفظ"
+          content_block:
+            update: "تحديث كتلة"
+      title_moderated_content: محتوى خاضع للإشراف
+      title_budgets: ميزانيات
+      title_polls: استبيانات
+      title_profiles: حسابات
     moderators:
       index:
         title: المشرفون
