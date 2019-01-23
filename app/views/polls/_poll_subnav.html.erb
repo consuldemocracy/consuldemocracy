@@ -1,10 +1,8 @@
-<% if current_user && current_user.administrator? ||
-  (@poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)) %>
   <div class="row margin-top">
     <div class="small-12 column">
       <ul class="menu simple clear">
-        <% if current_user && current_user.administrator? || @poll.results_enabled? %>
           <% if controller_name == "polls" && action_name == "results" %>
+        <% if @poll.results_enabled? %>
             <li class="is-active">
               <h2><%= t("polls.show.results_menu") %></h2>
             </li>
@@ -13,8 +11,8 @@
           <% end %>
         <% end %>
 
-        <% if current_user && current_user.administrator? || @poll.stats_enabled? %>
           <% if controller_name == "polls" && action_name == "stats" %>
+        <% if @poll.stats_enabled? %>
             <li class="is-active">
               <h2><%= t("polls.show.stats_menu") %></h2>
             </li>
