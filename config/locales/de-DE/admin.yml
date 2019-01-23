@@ -127,6 +127,17 @@ de:
       destroy:
         success_notice: "Gruppe erfolgreich gelöscht"
         unable_notice: "Eine Gruppe mit zugehörigen Rubriken kann nicht gelöscht werden"
+      form:
+        create: "Neue Gruppe erstellen"
+        edit: "Gruppe bearbeiten"
+        name: "Name der Gruppe"
+        submit: "Gruppe speichern"
+    budget_headings:
+      name: "Name"
+      form:
+        population: "Bevölkerung (optional)"
+      index:
+        back: "Zurück zu den Gruppen"
     budget_phases:
       edit:
         start_date: Anfangsdatum
@@ -370,9 +381,12 @@ de:
           summary_placeholder: Kurze Zusammenfassung der Beschreibung
           description_placeholder: Fügen Sie eine Beschreibung des Verfahrens hinzu
           additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die von Interesse sein könnte
+          homepage: Beschreibung
+          homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
         index:
           create: Neues Verfahren
           delete: Löschen
+          title: Gesetzgebungsverfahren
           filters:
             open: Offen
             next: Nächste/r
@@ -382,8 +396,13 @@ de:
           back: Zurück
           title: Neues kollaboratives Gesetzgebungsverfahren erstellen
           submit_button: Verfahren erstellen
+        proposals:
+          select_order: Sortieren nach
+          orders:
+            title: Titel
+            supports: Unterstützer/innen
         process:
-          title: Verfahren
+          title: Beteiligungsverfahren
           comments: Kommentare
           status: Status
           creation_date: Erstellungsdatum
@@ -392,11 +411,16 @@ de:
           status_planned: Geplant
         subnav:
           info: Information
+          homepage: Homepage
           questions: Diskussion
           proposals: Vorschläge
       proposals:
         index:
+          title: Titel
           back: Zurück
+          supports: Unterstützer*innen
+          select: Auswählen
+          selected: Ausgewählt
         form:
           custom_categories: Kategorien
           custom_categories_description: Kategorien, die Benutzer*innen bei der Erstellung eines Vorschlags auswählen können.
@@ -614,6 +638,9 @@ de:
         title: Vorschau des Newsletters
         send: Senden
         affected_users: (%{n} betroffene Benutzer*innen)
+        sent_emails:
+          one: 1 E-Mail gesendet
+          other: "%{count} E-Mails gesendet"
         sent_at: Gesendet
         subject: Betreff
         segment_recipient: Empfänger*innen
@@ -641,8 +668,10 @@ de:
         empty_notifications: Keine Benachrichtigungen vorhanden
       new:
         section_title: Neue Benachrichtigung
+        submit_button: Benachrichtigung erstellen
       edit:
         section_title: Benachrichtigung bearbeiten
+        submit_button: Benachrichtigung aktualisieren
       show:
         section_title: Vorschau der Benachrichtigung
         send: Benachrichtigung senden
@@ -660,6 +689,7 @@ de:
       preview_pending:
         action: Vorschau ausstehend
         preview_of: Vorschau von %{name}
+        pending_to_be_sent: Das ist der Inhalt, der verschickt wird
         send_pending: Ausstehendes senden
       proposal_notification_digest:
         description: Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden.
@@ -950,6 +980,7 @@ de:
       index:
         title: Beamte
         no_officials: Keine Beamten vorhanden.
+        name: Name
         official_position: Beamte*r
         official_level: Stufe
       level_0: Kein/e Beamte*r
@@ -991,6 +1022,21 @@ de:
       search:
         title: Organisationen suchen
         no_results: Keine Organisationen gefunden.
+    proposals:
+      index:
+        title: Vorschläge
+        author: Verfasser*in
+        milestones: Meilensteine
+        no_proposals: Es gibt keine Vorschläge.
+    hidden_proposals:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bestätigt
+          without_confirmed_hide: Ausstehend
+        title: Verborgene Vorschläge
+        no_hidden_proposals: Keine verborgenen Vorschläge vorhanden.
     proposal_notifications:
       index:
         filter: Filter
@@ -1028,6 +1074,8 @@ de:
       setting_value: Wert
       no_description: "Ohne Beschreibung"
     shared:
+      true_value: "Ja"
+      false_value: "Nein"
       booths_search:
         button: Suchen
         placeholder: Suche Wahlkabine nach Name
@@ -1203,6 +1251,7 @@ de:
         title: Benachrichtigungen zu einem Vorschlag
         total: Gesamt
         proposals_with_notifications: Vorschläge mit Benachrichtigungen
+        not_available: "Vorschlag nicht verfügbar"
       polls:
         title: Abstimmungsstatistik
         all: Abstimmungen
@@ -1269,6 +1318,8 @@ de:
         content_block:
           body: Inhalt
           name: Name
+          names:
+            footer: Fußzeile
       images:
         index:
           title: Benutzer*definierte Bilder
@@ -1337,3 +1388,6 @@ de:
         submit_header: Kopfzeile speichern
         card_title: Karte bearbeiten
         submit_card: Karte speichern
+    translations:
+      remove_language: Sprache entfernen
+      add_language: Sprache hinzufügen
