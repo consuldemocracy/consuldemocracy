@@ -42,7 +42,7 @@ class Newsletter < ActiveRecord::Base
   end
 
   def batch_interval
-    20.minutes
+    40.minutes
   end
 
   def first_batch_run_at
