@@ -6,6 +6,7 @@ describe Comment do
 
   it_behaves_like "has_public_author"
   it_behaves_like "globalizable", :comment
+  it_behaves_like "acts as paranoid", :comment
 
   it "is valid" do
     expect(comment).to be_valid

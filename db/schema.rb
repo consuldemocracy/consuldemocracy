@@ -421,7 +421,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "body"
+    t.datetime "hidden_at"
     t.index ["comment_id"], name: "index_comment_translations_on_comment_id", using: :btree
+    t.index ["hidden_at"], name: "index_comment_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_comment_translations_on_locale", using: :btree
   end
 
