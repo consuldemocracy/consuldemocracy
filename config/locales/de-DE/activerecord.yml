@@ -122,6 +122,9 @@ de:
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
         image_title: "Bildtitel"
+      milestone/status:
+        name: "Name"
+        description: "Beschreibung (optional)"
       budget/heading:
         name: "Name der Rubrik"
         price: "Kosten"
@@ -168,11 +171,17 @@ de:
         geozone_restricted: "Beschränkt auf Gebiete"
         summary: "Zusammenfassung"
         description: "Beschreibung"
+      poll/translation:
+        name: "Name"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
       poll/question:
         title: "Frage"
         summary: "Zusammenfassung"
         description: "Beschreibung"
         external_url: "Link zu zusätzlicher Dokumentation"
+      poll/question/translation:
+        title: "Frage"
       signature_sheet:
         signable_type: "Unterschriftentyp"
         signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
@@ -188,6 +197,10 @@ de:
         more_info_flag: Auf der Hilfeseite anzeigen
         print_content_flag: Taste Inhalt drucken
         locale: Sprache
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Untertitel
+        content: Inhalt
       site_customization/image:
         name: Name
         image: Bild
@@ -208,12 +221,21 @@ de:
         allegations_start_date: Anfangsdatum Überprüfung
         allegations_end_date: Enddatum Überprüfung
         result_publication_date: Veröffentlichungsdatum Endergebnis
+      legislation/process/translation:
+        title: Titel des Beteiligungsverfahrens
+        summary: Zusammenfassung
+        description: Beschreibung
+        additional_info: Zusätzliche Information
+        milestones_summary: Zusammenfassung
       legislation/draft_version:
         title: Titel der Fassung
         body: Text
         changelog: Änderungen
         status: Status
         final_version: Endgültige Fassung
+      legislation/draft_version/translation:
+        body: Text
+        changelog: Änderungen
       legislation/question:
         title: Titel
         question_options: Antworten
@@ -230,6 +252,9 @@ de:
       poll/question/answer:
         title: Antwort
         description: Beschreibung
+      poll/question/answer/translation:
+        title: Antwort
+        description: Beschreibung
       poll/question/answer/video:
         title: Titel
         url: Externes Video
@@ -238,12 +263,25 @@ de:
         subject: Betreff
         from: Von
         body: Inhalt der E-Mail
+      admin_notification:
+        segment_recipient: Empfänger*innen
+        title: Titel
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
       widget/card:
         label: Tag (optional)
         title: Titel
         description: Beschreibung
         link_text: Linktext
         link_url: URL des Links
+      widget/card/translation:
+        label: Tag (optional)
+        title: Titel
+        description: Beschreibung
+        link_text: Linktext
       widget/feed:
         limit: Anzahl der Elemente
     errors:
