@@ -110,6 +110,23 @@ de:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
         recalculate: Bestbewertete Vorschläge neu ermitteln
+    budget_groups:
+      name: "Name"
+      headings_name: "Rubriken"
+      headings_edit: "Rubriken bearbeiten"
+      headings_manage: "Rubriken verwalten"
+      max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
+      no_groups: "Keine Gruppen vorhanden."
+      amount:
+        one: "Es gibt 1 Gruppe"
+        other: "Es gibt %{count} Gruppen"
+      create:
+        notice: "Gruppe erfolgreich erstellt!"
+      update:
+        notice: "Gruppe erfolgreich aktualisiert"
+      destroy:
+        success_notice: "Gruppe erfolgreich gelöscht"
+        unable_notice: "Eine Gruppe mit zugehörigen Rubriken kann nicht gelöscht werden"
     budget_phases:
       edit:
         start_date: Anfangsdatum
