@@ -495,7 +495,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
     t.index ["debate_id"], name: "index_debate_translations_on_debate_id", using: :btree
+    t.index ["hidden_at"], name: "index_debate_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_debate_translations_on_locale", using: :btree
   end
 
