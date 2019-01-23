@@ -171,13 +171,15 @@ ar:
         start_date: تاريخ البدء
         end_date: تاريخ الإنتهاء
         summary: ملخص
-        summary_help_text: هذا النص سوف يخبر المستخدم عن المرحلة. لإظهاره حتى إذا كانت المرحلة غير مفعلة، حدد مربع الاختيار أدناه
+        summary_help_text: هذا النص سوف يخبر المستخدم عن المرحلة. لإظهاره حتى إذا كانت المرحلة غير نشطة، حدد مربع الاختيار أدناه
         description: الوصف
-        description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة مفعلة
+        description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
         enabled: المرحلة مفعلة
         enabled_help_text: ستكون هذه المرحلة عامة في الجدول الزمني للموازنة ، وكذلك نشطة لأي غرض آخر
+        save_changes: حفظ التغييرات
     budget_investments:
       index:
+        heading_filter_all: كل العناوين
         administrator_filter_all: كل المدراء
         valuator_filter_all: كل المقيّمين
         tags_filter_all: كل العلامات
@@ -198,9 +200,13 @@ ar:
           selected: محدّد
           undecided: متردد
           unfeasible: غير مجد
+          min_total_supports: الحد الأدنى من الدعم
           winners: الفائزين
           one_filter_html: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
           two_filters_html: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: فرز
+        download_current_selection: "تحميل الاختيار الحالي"
         title: مشاريع استثمارية
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
