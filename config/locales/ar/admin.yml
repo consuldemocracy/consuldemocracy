@@ -171,6 +171,11 @@ ar:
         start_date: تاريخ البدء
         end_date: تاريخ الإنتهاء
         summary: ملخص
+        summary_help_text: هذا النص سوف يخبر المستخدم عن المرحلة. لإظهاره حتى إذا كانت المرحلة غير مفعلة، حدد مربع الاختيار أدناه
+        description: الوصف
+        description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة مفعلة
+        enabled: المرحلة مفعلة
+        enabled_help_text: ستكون هذه المرحلة عامة في الجدول الزمني للموازنة ، وكذلك نشطة لأي غرض آخر
     budget_investments:
       index:
         administrator_filter_all: كل المدراء
