@@ -144,8 +144,12 @@ feature 'Admin budgets' do
     let!(:budget) { create(:budget) }
 
     scenario 'Show phases table' do
+      budget.update(phase: "selecting")
+
       visit admin_budgets_path
       click_link 'Edit budget'
+
+      expect(page).to have_select("budget_phase", selected: "Selecting projects")
 
       within '#budget-phases-table' do
 
