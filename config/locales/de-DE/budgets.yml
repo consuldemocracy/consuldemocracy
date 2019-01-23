@@ -57,6 +57,7 @@ de:
       section_footer:
         title: Hilfe mit partizipativen Haushaltsmitteln
         description: Mit den partizipativen Haushaltsmitteln können BürgerInnen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
+      milestones: Meilensteine
     investments:
       form:
         tag_category_label: "Kategorien"
@@ -170,6 +171,10 @@ de:
       investment_proyects: Liste aller Investitionsprojekte
       unfeasible_investment_proyects: Liste aller undurchführbaren Investitionsprojekte
       not_selected_investment_proyects: Liste aller Investitionsprojekte, die nicht zur Abstimmung ausgewählt wurden
+    executions:
+      heading_selection_title: "Nach Stadtteil"
+      filters:
+        all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "Das Startdatum kann nicht gleich oder später als das Enddatum sein"
