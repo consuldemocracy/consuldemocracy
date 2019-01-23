@@ -47,6 +47,7 @@ class PollsController < ApplicationController
       @questions.each do |question|       
         answer = question.answers.find_or_initialize_by(author: current_user)
         answer.answer = params['answer_question_' + question.id.to_s]
+        #debugger
         answer.touch if answer.persisted?        
         answer.save!        
         answer.record_voter_participation(@token)        
