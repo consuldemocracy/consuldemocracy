@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190122133850) do
+ActiveRecord::Schema.define(version: 20190123122113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -216,9 +216,11 @@ ActiveRecord::Schema.define(version: 20190122133850) do
     t.datetime "updated_at",           null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
   end
 
   add_index "budget_investment_translations", ["budget_investment_id"], name: "index_budget_investment_translations_on_budget_investment_id", using: :btree
+  add_index "budget_investment_translations", ["hidden_at"], name: "index_budget_investment_translations_on_hidden_at", using: :btree
   add_index "budget_investment_translations", ["locale"], name: "index_budget_investment_translations_on_locale", using: :btree
 
   create_table "budget_investments", force: :cascade do |t|
