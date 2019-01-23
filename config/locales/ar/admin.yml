@@ -556,6 +556,8 @@ ar:
       title_budgets: ميزانيات
       title_polls: استبيانات
       title_profiles: حسابات
+      title_settings: إعدادات
+      title_site_customization: محتوى الموقع
     moderators:
       index:
         title: المشرفون
