@@ -10,6 +10,7 @@ describe Proposal do
     it_behaves_like "map validations"
     it_behaves_like "globalizable", :proposal
     it_behaves_like "sanitizable"
+    it_behaves_like "acts as paranoid", :proposal
   end
 
   it "is valid" do

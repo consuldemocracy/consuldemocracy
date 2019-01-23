@@ -1162,8 +1162,10 @@ ActiveRecord::Schema.define(version: 20190325185550) do
     t.string   "question"
     t.text     "summary"
     t.text     "retired_explanation"
+    t.datetime "hidden_at"
   end
 
+  add_index "proposal_translations", ["hidden_at"], name: "index_proposal_translations_on_hidden_at", using: :btree
   add_index "proposal_translations", ["locale"], name: "index_proposal_translations_on_locale", using: :btree
   add_index "proposal_translations", ["proposal_id"], name: "index_proposal_translations_on_proposal_id", using: :btree
 
