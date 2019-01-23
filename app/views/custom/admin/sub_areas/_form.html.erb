@@ -1,4 +1,6 @@
-<%= form_for [:admin, @area, @sub_area] do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @sub_area %>
+
+<%= translatable_form_for [:admin, @area, @sub_area] do |f| %>
   <% if @sub_area.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sub_area.errors.count, "error") %> prohibited this sub_area from being saved:</h2>
@@ -15,7 +17,9 @@
       <%= area_f.text_field :name, disabled: true, label: t('admin.sub_areas.area') %>
     <% end %>
     <%= f.hidden_field :area_id, value: @area.id %>
-    <%= f.text_area :name, label: t('admin.sub_areas.name') %>
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_area :name, label: t('admin.sub_areas.name') %>
+    <% end %>
     <div class="actions">
       <%= f.submit t("admin.actions.#{action}"), class: "button success" %>
     </div>
