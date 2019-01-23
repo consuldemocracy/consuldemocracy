@@ -228,6 +228,8 @@ ar:
           valuation_group: مجموعة المقيّمين
           geozone: نطاق العملية
           feasibility: الجدوى
+          valuation_finished: انتهى التقييم.
+          selected: محدّد
           visible_to_valuators: العرض على المقيمين
           author_username: اسم الكاتب
           incompatible: غير متوافق
@@ -291,11 +293,26 @@ ar:
         table_publication_date: "تاريخ النشر"
         table_status: الحالة
         table_actions: "الإجراءات"
+        delete: "حذف معلم"
+        no_milestones: "لا يوجد معالم محددة"
+        image: "صورة"
+        show_image: "رؤية الصورة"
         documents: "الوثائق"
+        milestone: معلم
+        new_milestone: إنشاء معلم جديد
+      form:
+        admin_statuses: إدارة الحالات
+        no_statuses_defined: لا توجد حالات محددة حتى الآن
       new:
+        creating: إنشاء معلم
         date: تاريخ
+        description: الوصف
       edit:
         title: تعديل المعلم
+      create:
+        notice: تم إنشاء المعلم بنجاح!
+      update:
+        notice: تم تحديث المعلم بنجاح
     comments:
       index:
         filters:
