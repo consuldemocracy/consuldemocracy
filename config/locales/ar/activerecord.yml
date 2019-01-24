@@ -114,6 +114,11 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+      milestone:
+        status_id: "الحالة الحالية (اختياري)"
+        title: "العنوان"
+        description: "الوصف (اختياري إذا كانت هناك حالة معينة)"
+        publication_date: "تاريخ النشر"
       budget/heading:
         name: "اسم العنوان"
         price: "السعر"
