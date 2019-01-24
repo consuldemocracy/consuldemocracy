@@ -1097,7 +1097,14 @@ ar:
       summary:
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
+    geozones:
+      delete:
+        success: تم حذف المنطقة الجغرافية بنجاح
+        error: لا يمكن حذف هذه المنطقة الجغرافية نظراً لوجود عناصر مرتبطة بها
     signature_sheets:
+      author: كاتب
+      created_at: تاريخ الإنشاء
+      name: الإسم
       show:
         unverified_error: (لم يتم التحقق من قبل التعداد)
     stats:
