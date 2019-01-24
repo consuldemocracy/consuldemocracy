@@ -967,14 +967,58 @@ ar:
           pending: معلق
           rejected: مرفوضة
           verified: مثبتة
+        hidden_count_html:
+          zero: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          one: هناك <strong> منظمة %{count} </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          two: هناك <strong> منظمتان %{count} </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          few: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          many: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          other: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+        name: الاسم
+        email: البريد الإلكتروني
+        phone_number: الهاتف
+        responsible_name: المسؤول
+        status: حالة
+        no_organizations: لا توجد منظمات.
+        reject: رفض
+        rejected: مرفوضة
+        search: بحث
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
+        title: المنظمات
+        verified: مثبتة
+        verify: تثبت
+        pending: معلق
       search:
+        title: بحث عن منظمات
         no_results: لم يتم العثور على منظمات.
+    proposals:
+      index:
+        title: المقترحات
+        id: ID
+        author: كاتب
+        milestones: الأهداف المرحلية
+        no_proposals: لا توجد مقترحات.
+    hidden_proposals:
+      index:
+        filter: إنتقاء
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: الإقتراحات المخفية
+        no_hidden_proposals: لا توجد أي إقتراحات مخفية.
     proposal_notifications:
       index:
+        filter: إنتقاء
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
         title: الإشعارات المخفية
         no_hidden_proposals: لايوجد إشعارات مخفية.
     settings:
+      flash:
+        updated: تم تحديث القيمة
       index:
         update_setting: تحديث
         feature_flags: المميزات
