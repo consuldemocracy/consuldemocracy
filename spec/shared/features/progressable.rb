@@ -11,7 +11,7 @@ shared_examples "progressable" do |factory_name, path_name|
       find("#tab-milestones-label").click
 
       within("#tab-milestones") do
-        expect(page).to have_css "progress"
+        expect(page).to have_content "Progress"
       end
     end
 
@@ -24,7 +24,7 @@ shared_examples "progressable" do |factory_name, path_name|
       find("#tab-milestones-label").click
 
       within("#tab-milestones") do
-        expect(page).to have_css "progress"
+        expect(page).to have_content "Progress"
         expect(page).to have_content "Build laboratory"
       end
     end
@@ -37,6 +37,7 @@ shared_examples "progressable" do |factory_name, path_name|
       find("#tab-milestones-label").click
 
       within("#tab-milestones") do
+        expect(page).not_to have_content "Progress"
         expect(page).not_to have_content "Defeat Evil Lords"
       end
     end
