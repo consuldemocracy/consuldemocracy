@@ -1105,7 +1105,17 @@ ar:
       author: كاتب
       created_at: تاريخ الإنشاء
       name: الإسم
+      no_signature_sheets: "لا يوجد أوراق توقيع"
+      index:
+        title: أوراق التوقيع
+        new: أوراق توقيع جديدة
+      new:
+        title: أوراق توقيع جديدة
+        document_numbers_note: "اكتب الأرقام مفصولة بفواصل (،)"
+        submit: إنشاء ورقة توقيع
       show:
+        created_at: أنشئت
+        author: كاتب
         unverified_error: (لم يتم التحقق من قبل التعداد)
     stats:
       show:
