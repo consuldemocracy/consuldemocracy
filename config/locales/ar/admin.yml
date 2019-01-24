@@ -762,6 +762,9 @@ ar:
         no_groups: "لا يوجد مجموعة تقييم"
       show:
         title: "مجموعة التقييم: %{group}"
+        no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
+      form:
+        name: "إسم المجموعة"
     poll_shifts:
       new:
         new_shift: "مناوبة جديدة"
