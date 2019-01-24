@@ -8,6 +8,10 @@ module Globalizable
     def locales_not_marked_for_destruction
       translations.reject(&:_destroy).map(&:locale)
     end
+
+    if self.paranoid?
+      translation_class.send :acts_as_paranoid, column: :hidden_at
+    end
   end
 
   class_methods do

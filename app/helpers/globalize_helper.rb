@@ -12,7 +12,7 @@ module GlobalizeHelper
 
   def display_translation?(resource, locale)
     if !resource || resource.translations.blank? ||
-        resource.translations.map(&:locale).include?(I18n.locale)
+       resource.locales_not_marked_for_destruction.include?(I18n.locale)
       locale == I18n.locale
     else
       locale == resource.translations.first.locale

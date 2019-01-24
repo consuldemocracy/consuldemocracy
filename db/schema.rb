@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181206153510) do
+ActiveRecord::Schema.define(version: 20190122133850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,9 +100,11 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
   end
 
   add_index "banner_translations", ["banner_id"], name: "index_banner_translations_on_banner_id", using: :btree
+  add_index "banner_translations", ["hidden_at"], name: "index_banner_translations_on_hidden_at", using: :btree
   add_index "banner_translations", ["locale"], name: "index_banner_translations_on_locale", using: :btree
 
   create_table "banners", force: :cascade do |t|
@@ -598,8 +600,10 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.text     "body"
     t.text     "body_html"
     t.text     "toc_html"
+    t.datetime "hidden_at"
   end
 
+  add_index "legislation_draft_version_translations", ["hidden_at"], name: "index_legislation_draft_version_translations_on_hidden_at", using: :btree
   add_index "legislation_draft_version_translations", ["legislation_draft_version_id"], name: "index_900e5ba94457606e69e89193db426e8ddff809bc", using: :btree
   add_index "legislation_draft_version_translations", ["locale"], name: "index_legislation_draft_version_translations_on_locale", using: :btree
 
@@ -632,8 +636,10 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.text     "additional_info"
     t.text     "milestones_summary"
     t.text     "homepage"
+    t.datetime "hidden_at"
   end
 
+  add_index "legislation_process_translations", ["hidden_at"], name: "index_legislation_process_translations_on_hidden_at", using: :btree
   add_index "legislation_process_translations", ["legislation_process_id"], name: "index_199e5fed0aca73302243f6a1fca885ce10cdbb55", using: :btree
   add_index "legislation_process_translations", ["locale"], name: "index_legislation_process_translations_on_locale", using: :btree
 
@@ -719,8 +725,10 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "value"
+    t.datetime "hidden_at"
   end
 
+  add_index "legislation_question_option_translations", ["hidden_at"], name: "index_legislation_question_option_translations_on_hidden_at", using: :btree
   add_index "legislation_question_option_translations", ["legislation_question_option_id"], name: "index_61bcec8729110b7f8e1e9e5ce08780878597a209", using: :btree
   add_index "legislation_question_option_translations", ["locale"], name: "index_legislation_question_option_translations_on_locale", using: :btree
 
@@ -742,8 +750,10 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.text     "title"
+    t.datetime "hidden_at"
   end
 
+  add_index "legislation_question_translations", ["hidden_at"], name: "index_legislation_question_translations_on_hidden_at", using: :btree
   add_index "legislation_question_translations", ["legislation_question_id"], name: "index_d34cc1e1fe6d5162210c41ce56533c5afabcdbd3", using: :btree
   add_index "legislation_question_translations", ["locale"], name: "index_legislation_question_translations_on_locale", using: :btree
 
@@ -973,8 +983,10 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "title"
+    t.datetime "hidden_at"
   end
 
+  add_index "poll_question_translations", ["hidden_at"], name: "index_poll_question_translations_on_hidden_at", using: :btree
   add_index "poll_question_translations", ["locale"], name: "index_poll_question_translations_on_locale", using: :btree
   add_index "poll_question_translations", ["poll_question_id"], name: "index_poll_question_translations_on_poll_question_id", using: :btree
 
@@ -1039,8 +1051,10 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.string   "name"
     t.text     "summary"
     t.text     "description"
+    t.datetime "hidden_at"
   end
 
+  add_index "poll_translations", ["hidden_at"], name: "index_poll_translations_on_hidden_at", using: :btree
   add_index "poll_translations", ["locale"], name: "index_poll_translations_on_locale", using: :btree
   add_index "poll_translations", ["poll_id"], name: "index_poll_translations_on_poll_id", using: :btree
 
