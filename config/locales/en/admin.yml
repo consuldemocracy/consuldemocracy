@@ -1187,6 +1187,7 @@ en:
       author: Author
       content: Content
       created_at: Created at
+      delete: Delete
     spending_proposals:
       index:
         geozone_filter_all: All zones
