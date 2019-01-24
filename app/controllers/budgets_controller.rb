@@ -3,7 +3,7 @@ class BudgetsController < ApplicationController
   include BudgetsHelper
   feature_flag :budgets
 
-  before_action :load_budget
+  before_action :load_budget, only: :show
   load_and_authorize_resource
   before_action :set_default_budget_filter, only: :show
   has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: :show
@@ -23,7 +23,7 @@ class BudgetsController < ApplicationController
   private
 
   def load_budget
-    @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
+    @budget = Budget.find_by_slug_or_id! params[:id]
   end
 
 end

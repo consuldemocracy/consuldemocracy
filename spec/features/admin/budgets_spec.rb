@@ -23,6 +23,29 @@ feature 'Admin budgets' do
 
   end
 
+  context "Load" do
+
+    let!(:budget) { create(:budget, slug: "budget_slug") }
+
+    scenario "finds budget by slug" do
+      visit admin_budget_path("budget_slug")
+      expect(page).to have_content(budget.name)
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit admin_budget_path("wrong_budget")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit admin_budget_path(0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   context 'Index' do
 
     scenario 'Displaying no open budgets text' do

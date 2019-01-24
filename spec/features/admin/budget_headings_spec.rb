@@ -28,6 +28,56 @@ feature "Admin budget headings" do
 
   end
 
+  context "Load" do
+
+    let!(:budget)  { create(:budget, slug: "budget_slug") }
+    let!(:group)   { create(:budget_group, slug: "group_slug", budget: budget) }
+    let!(:heading) { create(:budget_heading, slug: "heading_slug", group: group) }
+
+    scenario "finds budget, group and heading by slug" do
+      visit edit_admin_budget_group_heading_path("budget_slug", "group_slug", "heading_slug")
+      expect(page).to have_content(budget.name)
+      expect(page).to have_content(group.name)
+      expect(page).to have_field "Heading name", with: heading.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path("wrong_budget", group, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(0, group, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, "wrong_group", heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, 0, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, group, "wrong_heading")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, group, 0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+  end
+
   context "Index" do
 
     scenario "Displaying no headings for group" do

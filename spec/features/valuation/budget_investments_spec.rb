@@ -14,6 +14,30 @@ feature 'Valuation budget investments' do
     login_as(valuator.user)
   end
 
+  context "Load" do
+
+    before { budget.update(slug: "budget_slug") }
+
+    scenario "finds investment using budget slug" do
+      visit valuation_budget_budget_investments_path("budget_slug")
+
+      expect(page).to have_content budget.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit valuation_budget_budget_investments_path("wrong_budget")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit valuation_budget_budget_investments_path(0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   scenario 'Disabled with a feature flag' do
     Setting['feature.budgets'] = nil
     expect{

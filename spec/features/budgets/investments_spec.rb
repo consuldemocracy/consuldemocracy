@@ -25,6 +25,53 @@ feature 'Budget Investments' do
     it_behaves_like 'relationable', Budget::Investment
   end
 
+  context "Load" do
+
+    let(:investment) { create(:budget_investment, heading: heading) }
+
+    before do
+      budget.update(slug: "budget_slug")
+      heading.update(slug: "heading_slug")
+    end
+
+    scenario "finds investment using budget slug" do
+      visit budget_investment_path("budget_slug", investment)
+
+      expect(page).to have_content investment.title
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit budget_investment_path("wrong_budget", investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit budget_investment_path(0, investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "finds investment using heading slug" do
+      visit budget_investment_path(budget, investment, heading_id: "heading_slug")
+
+      expect(page).to have_content investment.title
+    end
+
+    scenario "raises an error if heading slug is not found" do
+      expect do
+        visit budget_investment_path(budget, investment, heading_id: "wrong_heading")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading id is not found" do
+      expect do
+        visit budget_investment_path(budget, investment, heading_id: 0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   scenario 'Index' do
     investments = [create(:budget_investment, heading: heading),
                    create(:budget_investment, heading: heading),
@@ -1682,7 +1729,7 @@ feature 'Budget Investments' do
     it 'Trying to visit an investment with a wrong budget slug' do
       wrong_url = budget_investment_path(budget_id: budget.slug, id: investment.id).gsub(budget.slug, 'wrong_budget_slug')
 
-      expect { visit wrong_url }.to raise_error(ActionController::RoutingError)
+      expect { visit wrong_url }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 

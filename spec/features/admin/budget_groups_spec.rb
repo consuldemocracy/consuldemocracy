@@ -27,6 +27,43 @@ feature "Admin budget groups" do
 
   end
 
+  context "Load" do
+
+    let!(:budget) { create(:budget, slug: "budget_slug") }
+    let!(:group)  { create(:budget_group, slug: "group_slug", budget: budget) }
+
+    scenario "finds budget and group by slug" do
+      visit edit_admin_budget_group_path("budget_slug", "group_slug")
+      expect(page).to have_content(budget.name)
+      expect(page).to have_field "Group name", with: group.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit edit_admin_budget_group_path("wrong_budget", group)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit edit_admin_budget_group_path(0, group)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group slug is not found" do
+      expect do
+        visit edit_admin_budget_group_path(budget, "wrong_group")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group id is not found" do
+      expect do
+        visit edit_admin_budget_group_path(budget, 0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   context "Index" do
 
     scenario "Displaying no groups for budget" do

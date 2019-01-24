@@ -6,6 +6,30 @@ feature 'Budgets' do
   let(:level_two_user)     { create(:user, :level_two) }
   let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
 
+  context "Load" do
+
+    before { budget.update(slug: "budget_slug") }
+
+    scenario "finds budget by slug" do
+      visit budget_path("budget_slug")
+
+      expect(page).to have_content budget.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit budget_path("wrong_budget")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit budget_path(0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   context 'Index' do
     let(:budgets) { create_list(:budget, 3) }
     let(:last_budget) { budgets.last }

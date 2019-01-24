@@ -44,11 +44,11 @@ class Admin::BudgetGroupsController < Admin::BaseController
   private
 
     def load_budget
-      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
 
     def load_group
-      @group = @budget.groups.find_by(slug: params[:id]) || @budget.groups.find_by(id: params[:id])
+      @group = @budget.groups.find_by_slug_or_id! params[:id]
     end
 
     def groups_index

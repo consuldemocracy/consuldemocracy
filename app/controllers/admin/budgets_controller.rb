@@ -4,7 +4,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   has_filters %w{open finished}, only: :index
 
-  before_action :load_budget
+  before_action :load_budget, except: [:index, :new, :create]
   load_and_authorize_resource
 
   def index
@@ -62,7 +62,7 @@ class Admin::BudgetsController < Admin::BaseController
     end
 
     def load_budget
-      @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
+      @budget = Budget.find_by_slug_or_id! params[:id]
     end
 
 end

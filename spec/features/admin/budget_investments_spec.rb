@@ -32,6 +32,34 @@ feature 'Admin budget investments' do
 
   end
 
+  context "Load" do
+
+    let(:group)      { create(:budget_group, budget: budget) }
+    let(:heading)    { create(:budget_heading, group: group) }
+    let!(:investment) { create(:budget_investment, heading: heading) }
+
+    before { budget.update(slug: "budget_slug") }
+
+    scenario "finds investments using budget slug" do
+      visit admin_budget_budget_investments_path("budget_slug")
+
+      expect(page).to have_link investment.title
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit admin_budget_budget_investments_path("wrong_budget", investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit admin_budget_budget_investments_path(0, investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
   context "Index" do
 
     scenario 'Displaying investments' do

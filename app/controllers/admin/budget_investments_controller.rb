@@ -89,8 +89,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_budget
-      @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
-      raise ActionController::RoutingError, 'Not Found' if @budget.blank?
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
 
     def load_investment

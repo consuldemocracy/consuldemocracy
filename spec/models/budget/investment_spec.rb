@@ -441,6 +441,30 @@ describe Budget::Investment do
     end
   end
 
+  describe "scoped_filter" do
+
+    let!(:budget)     { create(:budget, slug: "budget_slug") }
+    let!(:group)      { create(:budget_group, budget: budget) }
+    let!(:heading)    { create(:budget_heading, group: group) }
+    let!(:investment) { create(:budget_investment, :feasible, heading: heading) }
+
+    it "finds budget by id or slug" do
+      result = described_class.scoped_filter({budget_id: budget.id}, nil)
+      expect(result.count).to be 1
+      expect(result.first.id).to be investment.id
+
+      result = described_class.scoped_filter({budget_id: "budget_slug"}, nil)
+      expect(result.count).to be 1
+      expect(result.first.id).to be investment.id
+    end
+
+    it "does not raise error if budget is not found" do
+      result = described_class.scoped_filter({budget_id: "wrong_budget"}, nil)
+      expect(result).to be_empty
+    end
+
+  end
+
   describe "scopes" do
     describe "valuation_open" do
       it "returns all investments with false valuation_finished" do
