@@ -373,15 +373,36 @@ ar:
       index:
         back: العودة إلى %{org}
         title: الإدارة
+        description: مرحبا بكم في لوحة المشرف %{org}.
+    debates:
+      index:
+        filter: إنتقاء
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: المناقشات المخفية
+        no_hidden_debates: لا يوجد أي مناقشات المخفية.
     hidden_users:
       index:
+        filter: إنتقاء
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: المستخدمون المخفيون
+        user: المستخدم
         no_hidden_users: لا يوجد أي مستخدمين مخفيين.
       show:
         email: 'ايمايل:'
+        hidden_at: 'مخفية في:'
         registered_at: 'تم الحفظ في:'
+        title: نشاط المستخدم (%{user})
     hidden_budget_investments:
       index:
+        filter: إنتقاء
         filters:
+          all: الكل
           without_confirmed_hide: معلق
         title: استثمارات الميزانية المخفية
         no_hidden_budget_investments: لا يوجد هناك ميزانيات استثمارات مخفية
@@ -612,6 +633,10 @@ ar:
         title: المشرفون
     newsletters:
       index:
+        sent: أرسلت
+        actions: الإجراءات
+        draft: مسودة
+        edit: تعديل
         delete: حذف
         preview: معاينة
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
@@ -684,6 +709,7 @@ ar:
         send_pending: إرسال الرسائل المعلقة
         send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
+        title: خلاصة إشعارات المقترح
         description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
@@ -705,9 +731,37 @@ ar:
         no_group: "لا توجد مجموعة"
       valuator:
         add: أضف إلى المقيمين
+        delete: حذف
+      search:
+        title: 'المقيمون: البحث عن المستخدم'
       summary:
+        title: ملخص المقيمين للمشاريع الاستثمارية
+        valuator_name: المقيّم
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
+        finished_count: انتهى
+        in_evaluation_count: في التقييم
+        total_count: المجموع
+        cost: الكلفة
+      form:
+        edit_title: "المقيّمون: تحرير المقيّمين"
+        update: "تحديث المقيّمين"
+        updated: "تم تحديث المقيّمين بنجاح"
+      show:
+        description: "الوصف"
+        email: "البريد الإلكتروني"
+        group: "مجموعة"
+        no_description: "بدون وصف"
+        no_group: "بدون فريق"
+    valuator_groups:
+      index:
+        title: "مجموعات تقييم"
+        new: "إنشاء مجموعة تقييم"
+        name: "الاسم"
+        members: "الأعضاء"
+        no_groups: "لا يوجد مجموعة تقييم"
+      show:
+        title: "مجموعة التقييم: %{group}"
     poll_shifts:
       new:
         new_shift: "مناوبة جديدة"
