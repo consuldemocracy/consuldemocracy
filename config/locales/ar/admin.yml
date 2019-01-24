@@ -772,8 +772,29 @@ ar:
         title: ضباط الإقتراع
       officer:
         add: إضافة
+        delete: حذف الموقع
+        name: الاسم
+        email: البريد الإلكتروني
+        entry_name: ضابط
+      search:
+        email_placeholder: بحث عن مستخدم عن طريق البريد الإلكتروني
+        search: بحث
+        user_not_found: المستخدم غير موجود
+    poll_officer_assignments:
+      index:
+        officers_title: "قائمة الضباط"
+        no_officers: "لا يوجد ضباط معينون لهذا الاقتراع."
+        table_name: "الإسم"
+        table_email: "البريد الإلكتروني"
+      by_officer:
+        date: "تاريخ"
+        booth: "مكتب التصويت"
+        assignments: "مناوبات العمل في هذا الاقتراع"
+        no_assignments: "هذا المستخدم ليس لديه أية مناوبات عمل في هذا الاقتراع."
     poll_shifts:
       new:
+        add_shift: "إضافة مناوبة"
+        shift: "التعيين"
         new_shift: "مناوبة جديدة"
         no_shifts: "لا توجد مناوبات لمكتب التصويت هذا"
         officer: "ضابط"
@@ -848,8 +869,14 @@ ar:
         add_answer: إضافة إجابة
         answers:
           images_list: قائمة الصور
+          document_title: العنوان
+          document_actions: الإجراءات
     answers:
+      new:
+        title: إجابة جديدة
       show:
+        title: العنوان
+        description: الوصف
         images: صور
         images_list: قائمة الصور
         edit: تعديل الإجابة
@@ -922,6 +949,11 @@ ar:
         official_position: الموقف الرسمي
         official_level: المستوى
       level_0: ليس رسميا
+      level_1: المستوى 1
+      level_2: المستوى 2
+      level_3: المستوى 3
+      level_4: المستوى 4
+      level_5: المستوى 5
     organizations:
       index:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
