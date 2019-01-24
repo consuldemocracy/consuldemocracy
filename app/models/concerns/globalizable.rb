@@ -19,5 +19,9 @@ module Globalizable
       validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
       translation_class.instance_eval { validates method, options }
     end
+
+    def translation_class_delegate(method)
+      translation_class.instance_eval { delegate method, to: :globalized_model }
+    end
   end
 end
