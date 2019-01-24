@@ -23,8 +23,29 @@ App.Forms =
       false
     )
 
+  synchronizeInputs: ->
+    $("[name='progress_bar[percentage]']").on
+      input: ->
+        $("[name='#{this.name}']").val($(this).val())
+
+    $("[name='progress_bar[percentage]'][type='range']").trigger("input")
+
+  hideOrShowFieldsAfterSelection: ->
+    $("[name='progress_bar[kind]']").on
+      change: ->
+        title_field = $("[name^='progress_bar'][name$='[title]']").parent()
+
+        if this.value == "primary"
+          title_field.hide()
+        else
+          title_field.show()
+
+    $("[name='progress_bar[kind]']").change()
+
   initialize: ->
     App.Forms.disableEnter()
     App.Forms.submitOnChange()
     App.Forms.toggleLink()
+    App.Forms.synchronizeInputs()
+    App.Forms.hideOrShowFieldsAfterSelection()
     false
