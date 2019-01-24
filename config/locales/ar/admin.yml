@@ -765,6 +765,13 @@ ar:
         no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
       form:
         name: "إسم المجموعة"
+        new: "إنشاء مجموعة تقييم"
+        edit: "حفظ مجموعة تقييم"
+    poll_officers:
+      index:
+        title: ضباط الإقتراع
+      officer:
+        add: إضافة
     poll_shifts:
       new:
         new_shift: "مناوبة جديدة"
