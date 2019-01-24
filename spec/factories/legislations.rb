@@ -1,17 +1,4 @@
 FactoryBot.define do
-  factory :legacy_legislation do
-    sequence(:title) { |n| "Legacy Legislation #{n}" }
-    body "In order to achieve this..."
-  end
-
-  factory :annotation do
-    quote "ipsum"
-    text "Loremp ipsum dolor"
-    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
-    legacy_legislation
-    user
-  end
-
   factory :legislation_process, class: 'Legislation::Process' do
     title "A collaborative legislation process"
     description "Description of the process"
