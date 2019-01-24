@@ -22,6 +22,27 @@ ar:
         few: "إستثمارات"
         many: "إستثمارات"
         other: "إستثمارات"
+      milestone:
+        zero: "معالم"
+        one: "معلم"
+        two: "معلمان"
+        few: "معالم"
+        many: "معالم"
+        other: "معالم"
+      milestone/status:
+        zero: "حالة المعلم"
+        one: "حالة المعلم"
+        two: "حالتا المعلم"
+        few: "حالات المعلم"
+        many: "حالات المعلم"
+        other: "حالات المعلم"
+      progress_bar:
+        zero: "أشرطة التقدم"
+        one: "شريط التقدم"
+        two: "أشرطة التقدم"
+        few: "أشرطة التقدم"
+        many: "أشرطة التقدم"
+        other: "أشرطة التقدم"
       comment:
         zero: "تعليق"
         one: "تعليق"
@@ -64,6 +85,13 @@ ar:
         few: "اصوات"
         many: "اصوات"
         other: "اصوات"
+      poll:
+        zero: "تصويت"
+        one: "تصويت"
+        two: "تصويتان"
+        few: "تصويتات"
+        many: "تصويتات"
+        other: "تصويتات"
     attributes:
       budget:
         name: "الاسم"
