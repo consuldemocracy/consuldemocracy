@@ -24,7 +24,7 @@ Aparte de estos directorios también cuentas con ciertos ficheros para:
 
 ## Traducciones remotas bajo demanda del usuario
 
-Este servicio tiene como objetivo poder ofrecer todos los contenidos dinámicos de la aplicación(propuestas, debates, inversiones presupuestarias y comentarios) en diferentes idiomas sin la necesidad de que un usuario ó un administrador haya creado cada una de sus traducciones.
+Este servicio tiene como objetivo poder ofrecer todos los contenidos dinámicos de la aplicación (propuestas, debates, inversiones presupuestarias y comentarios) en diferentes idiomas sin la necesidad de que un usuario ó un administrador haya creado cada una de sus traducciones.
 
 Cuando un usuario accede a una pantalla con un idioma donde parte del contenido dinámico que esta visualizando no tiene traducciones, dispondrá de un botón para solicitar la traducción de todo el contenido. Este contenido se enviará a un traductor automático (en este caso [Microsoft TranslatorText](https://azure.microsoft.com/es-es/services/cognitive-services/translator-text-api/)) y en cuanto se obtenga la respuesta, todas estas traducciones estarán disponibles para cualquier usuario.
 
@@ -43,12 +43,10 @@ En el apartado anterior hemos comentado que una vez subscritos al servicio de tr
 ![Add api key to secrets](../../img/translations/remote_translations/add-api-key-to-secrets.png)
 
 ##### Activar funcionalidad
-Una vez disponemos de la nueva key en el `secrets.yml` ya podemos proceder a activar la funcionalidad. Podemos activarla de dos maneras diferentes con idéntico resultado:
-1. Accediendo a través del panel de administración de su aplicación en la sección **Configuración > Funcionalidades** y activar el módulo de **Traducciones Remotas** como se puede ver a continuación:
+Una vez disponemos de la nueva key en el `secrets.yml` ya podemos proceder a activar la funcionalidad. Para activar la funcionalidad deberá realizar 2 pasos:
+1. Ejecutar el siguiente comando `bin/rake settings:create_remote_translations_setting RAILS_ENV=production`
+1. Acceder a través del panel de administración de su aplicación a la sección **Configuración > Funcionalidades** y activar el módulo de **Traducciones Remotas** como se puede ver a continuación:
 ![Active remote translations](../../img/translations/remote_translations/active-remote-translations-es.png)
-1. O bien ejecutando el siguiente comando `bin/rake settings:enable_remote_translations RAILS_ENV=production`
-
-Con ambas opciones se activa el módulo y empezará a estar operativa la funcionalidad para nuestros usuarios.
 
 #### Funcionalidad
 Una vez tenemos la api key en nuestro `secrets.yml` y el módulo activado, los usuarios ya podrán utilizar la funcionalidad.
@@ -85,28 +83,19 @@ Aunque el precio parece asequible para un Ayuntamiento, se pueden crear Alertas 
 
 #### Añadir un nuevo servicio de traducción
 En el caso de que se quieran integrar más servicios de traducción por cualquier motivo (aparece un nuevo en el mercado más competitivo, se quiere cambiar para contemplar los idiomas que actualmente no tienen soporte, etc) se ha dejado preparado el código para poder añadirlo con las mínimas modificaciones posibles.
-Esto es posible gracias a la class `RemoteTranslationsCaller` que es una capa intermedia entre la gestión de los contenidos sin traducir y el Cliente de traducción de Microsoft utilizado actualmente.
-Una buena solución para añadir otro servicio de traducción sería sustituir la llamada al `MicrosoftTranslateClient` dentro del método `call` del `RemoteTranslationsCaller` por el nuevo servicio implementado.
+Esto es posible gracias a la class `RemoteTranslations::Caller` que es una capa intermedia entre la gestión de los contenidos sin traducir y el Cliente de traducción de Microsoft utilizado actualmente.
+Una buena solución para añadir otro servicio de traducción sería sustituir la llamada al `MicrosoftTranslateClient` dentro del método `translations` del `RemoteTranslations::Caller` por el nuevo servicio implementado.
 En caso de querer convivir con ambos sólo debería gestionarse en que caso queremos utilizar uno u otro, ya sea mediante condiciones especificas en el código o mediante una gestión en los Settings de la aplicación.
 
 ```ruby
 class RemoteTranslationsCaller
-  attr_accessor :available_remote_locales
 
-  def call(remote_translation)
-    resource = remote_translation.remote_translatable
-    fields_values = prepare_fields_values(resource)
-    locale_to = remote_translation.locale
-
-    translations = MicrosoftTranslateClient.new.call(fields_values, locale_to)
-    #Add new Translate Client
-    #translations = NewTranslateClient.new.call(fields_values, locale_to)
-
-
-    update_resource(resource, translations, locale_to)
-    destroy_remote_translation(resource, remote_translation)
+  ...
+  def translations
+    @translations ||= RemoteTranslations::Microsoft::Client.new.call(fields_values, locale)
+    # Add new RemoteTranslations Client
+    # @translations = RemoteTranslations::NewTranslateClient::Client.new.call(fields_values, locale_to)
   end
-
   ...
 
 end
