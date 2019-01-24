@@ -1116,6 +1116,7 @@ ar:
       show:
         created_at: أنشئت
         author: كاتب
+        documents: الوثائق
         unverified_error: (لم يتم التحقق من قبل التعداد)
     stats:
       show:
