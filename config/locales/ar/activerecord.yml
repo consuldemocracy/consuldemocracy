@@ -162,6 +162,83 @@ ar:
         few: صفحات مخصصة
         many: صفحات مخصصة
         other: صفحات مخصصة
+      site_customization/image:
+        zero: صور مخصصة
+        one: صورة مخصصة
+        two: صورتان مخصصتان
+        few: صور مخصصة
+        many: صور مخصصة
+        other: صور مخصصة
+      site_customization/content_block:
+        zero: كتل محتوى مخصصة
+        one: كتلة محتوى مخصصة
+        two: كتلتا محتوى مخصصتان
+        few: كتل محتوى مخصصة
+        many: كتل محتوى مخصصة
+        other: كتل محتوى مخصصة
+      legislation/process:
+        zero: "عمليات"
+        one: "عملية"
+        two: "عمليتان"
+        few: "عمليات"
+        many: "عمليات"
+        other: "عمليات"
+      legislation/proposal:
+        zero: "اقتراحات"
+        one: "اقتراح"
+        two: "اقتراحان"
+        few: "اقتراحات"
+        many: "اقتراحات"
+        other: "اقتراحات"
+      legislation/draft_versions:
+        zero: "إصدارات المسودّة"
+        one: "إصدار المسودّة"
+        two: "إصدارا المسودّة"
+        few: "إصدارات المسودّة"
+        many: "إصدارات المسودّة"
+        other: "إصدارات المسودّة"
+      legislation/questions:
+        zero: "أسئلة"
+        one: "سؤال"
+        two: "سؤالان"
+        few: "أسئلة"
+        many: "أسئلة"
+        other: "أسئلة"
+      legislation/question_options:
+        zero: "خيارات السؤال"
+        one: "خيار السؤال"
+        two: "خيارا السؤال"
+        few: "خيارات السؤال"
+        many: "خيارات السؤال"
+        other: "خيارات السؤال"
+      legislation/answers:
+        zero: "الإجابة"
+        one: "إجابة"
+        two: "إجابتان"
+        few: "إجابات"
+        many: "إجابات"
+        other: "إجابات"
+      documents:
+        zero: "مستندات"
+        one: "مستند"
+        two: "مستندان"
+        few: "مستندات"
+        many: "مستندات"
+        other: "مستندات"
+      images:
+        zero: "صور"
+        one: "صورة"
+        two: "صورتان"
+        few: "صور"
+        many: "صور"
+        other: "صور"
+      topic:
+        zero: "مواضبع"
+        one: "موضوع"
+        two: "موضوعان"
+        few: "مواضبع"
+        many: "مواضبع"
+        other: "مواضبع"
       poll:
         zero: "تصويت"
         one: "تصويت"
@@ -169,6 +246,13 @@ ar:
         few: "تصويتات"
         many: "تصويتات"
         other: "تصويتات"
+      proposal_notification:
+        zero: "إشعارات الإقتراح"
+        one: "إشعار الإقتراح"
+        two: "إشعارا الإقتراح"
+        few: "إشعارات الإقتراح"
+        many: "إشعارات الإقتراح"
+        other: "إشعارات الإقتراح"
     attributes:
       budget:
         name: "الاسم"
