@@ -23,5 +23,12 @@ section "Creating Debates" do
                             tag_list: tags.sample(3).join(','),
                             geozone: Geozone.all.sample,
                             terms_of_service: "1")
+    I18n.available_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        debate.title = "Title for locale #{locale}"
+        debate.description = "<p>Description for locale #{locale}</p>"
+        debate.save!
+      end
+    end
   end
 end
