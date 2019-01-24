@@ -229,7 +229,6 @@ es:
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
-      spending_proposals: Propuestas de inversión
       notification_item:
         new_notifications:
           one: Tienes una nueva notificación

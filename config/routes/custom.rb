@@ -27,7 +27,6 @@ namespace :admin do
 end
 
 ### Budgets
-get 'participatory_budget',                 to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
 get 'presupuestos',                         to: 'budgets#index', id: 'help/budgets/welcome',    as: 'budgets_welcome'
 get "presupuestos/:budget_id/estadisticas", to: "budgets/stats#show", as: 'custom_budget_stats'
 get "presupuestos/:budget_id/resultados",   to: "budgets/results#show", as: 'custom_budget_results'

@@ -232,7 +232,6 @@ en:
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
-      spending_proposals: Spending Proposals
       notification_item:
         new_notifications:
           one: You have a new notification
