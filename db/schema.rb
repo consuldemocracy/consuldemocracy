@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190103132925) do
+ActiveRecord::Schema.define(version: 20190124085815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,19 +72,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
   add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
-
-  create_table "annotations", force: :cascade do |t|
-    t.string   "quote"
-    t.text     "ranges"
-    t.text     "text"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.integer  "user_id"
-    t.integer  "legacy_legislation_id"
-  end
-
-  add_index "annotations", ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
-  add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
   create_table "answers", force: :cascade do |t|
     t.integer  "author_id"
@@ -610,13 +597,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
 
   add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
-
-  create_table "legacy_legislations", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "legislation_annotations", force: :cascade do |t|
     t.string   "quote"
@@ -1785,8 +1765,6 @@ ActiveRecord::Schema.define(version: 20190103132925) do
   end
 
   add_foreign_key "administrators", "users"
-  add_foreign_key "annotations", "legacy_legislations"
-  add_foreign_key "annotations", "users"
   add_foreign_key "budget_investments", "communities"
   add_foreign_key "budget_recommendations", "users"
   add_foreign_key "documents", "users"
