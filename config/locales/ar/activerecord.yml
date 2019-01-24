@@ -50,6 +50,13 @@ ar:
         few: "تعليقات"
         many: "تعليقات"
         other: "تعليقات"
+      debate:
+        zero: "مناقشات"
+        one: "مناقشة"
+        two: "مناقشتان"
+        few: "مناقشات"
+        many: "مناقشات"
+        other: "مناقشات"
       tag:
         zero: "العلامات"
         one: "علامة"
@@ -71,6 +78,13 @@ ar:
         few: "المشرفين"
         many: "المشرفين"
         other: "المشرفين"
+      administrator:
+        zero: "مدراء"
+        one: "مدير"
+        two: "مديران"
+        few: "مدراء"
+        many: "مدراء"
+        other: "مدراء"
       manager:
         zero: "مدير"
         one: "مدير"
@@ -119,6 +133,16 @@ ar:
         title: "العنوان"
         description: "الوصف (اختياري إذا كانت هناك حالة معينة)"
         publication_date: "تاريخ النشر"
+      milestone/status:
+        name: "الإسم"
+        description: "الوصف (اختياري)"
+      progress_bar:
+        kind: "النوع"
+        title: "العنوان"
+        percentage: "التقدم الحالي"
+      progress_bar/kind:
+        primary: "ابتدائي"
+        secondary: "ثانوي"
       budget/heading:
         name: "اسم العنوان"
         price: "السعر"
@@ -211,6 +235,8 @@ ar:
         end_date: تاريخ الإنتهاء
         debate_start_date: تاريخ بدء المناقشة
         debate_end_date: تاريخ انتهاء المناقشة
+        draft_start_date: تاريخ بداية المسودّة
+        draft_end_date: تاريخ نهاية المسودّة
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
@@ -220,6 +246,7 @@ ar:
         summary: ملخص
         description: وصف
         additional_info: معلومات إضافية
+        milestones_summary: الملخص
       legislation/draft_version:
         title: عنوان الإصدار
         body: نص
@@ -320,6 +347,8 @@ ar:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ البدء
             debate_end_date:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المناقشة
+            draft_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المسودّة
             allegations_end_date:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء الادعاءات
         proposal:
