@@ -1,0 +1,66 @@
+it:
+  verification:
+    alert:
+      lock: Hai raggiunto il numero massimo di tentativi ammessi. Si prega di riprovare più tardi.
+    back: Tornare al mio account
+    email:
+      create:
+        alert:
+          failure: C'è stato un problema nell'invio di un'e-mail di conferma al tuo account
+        flash:
+          success: 'Abbiamo inviato una email di conferma al tuo account: %{email}'
+      show:
+        alert:
+          failure: Codice di verifica non corretto
+        flash:
+          success: Sei un utente verificato
+    letter:
+      alert:
+        unconfirmed_code: Non hai ancora inserito il codice di conferma
+      edit:
+        see_all: Vedere le proposte
+        title: Lettera richiesta
+      new:
+        explanation: 'Per partecipare alla votazione finale puoi:'
+        send_letter: Inviatemi una lettera con il codice
+        title: Congratulazioni!
+        user_permission_info: Con il tuo profilo puoi...
+    redirect_notices:
+      already_verified: Questo account utente è già verificato
+      email_already_sent: Abbiamo già inviato un'e-mail con un link di conferma. Se non è possibile recuperare l'email, qui si può richiedere che venga reinviata
+    residence:
+      new:
+        document_number: Numero del documento
+        document_type:
+          passport: Passaporto
+        error_not_allowed_age: Non hai l'età minima richiesta per partecipare
+        terms: termini e condizioni d'uso
+    sms:
+      create:
+        flash:
+          success: Inserisci il codice di conferma inviato tramite SMS
+      edit:
+        confirmation_code: Inserisci il codice ricevuto sul tuo telefonino
+        resend_sms_link: Cliccare qui per richiedere un nuovo codice
+        resend_sms_text: Non hai ricevuto un SMS con il codice di conferma?
+        submit_button: Inviare
+        title: SMS di conferma
+      new:
+        phone: Inserisci il tuo numero di cellulare per ricevere il codice
+        title: Inviare SMS di conferma
+      update:
+        error: Codice di conferma non corretto
+        flash:
+          level_two:
+            success: Codice corretto
+    step_3: Verifica finale
+    user_permission_debates: Partecipare ai dibattiti
+    user_permission_info: Una volta verificati i tuoi dati, sarai in grado di...
+    user_permission_proposal: Creare nuove proposte
+    user_permission_votes: Partecipare al voto finale *
+    verified_user:
+      show:
+        email_title: E-mail
+        phone_title: Numeri di telefono
+        title: Informazioni disponibili
+        use_another_phone: Utilizzare un altro telefono

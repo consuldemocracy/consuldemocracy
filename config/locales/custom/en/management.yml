@@ -1,4 +1,15 @@
 en:
   management:
     document_verifications:
+      in_census_has_following_permissions: "This user can participate in the Open Government Portal of the Madrid City Council with the following permissions:"
+      not_in_census: This document is not registered in Madrid Census.
+      not_in_census_info: "Citizens not in the Madrid Census can participate in the Open Government Portal of the Madrid City Council with the following permissions:"
       link: http://decide.madrid.es
+    print:
+      proposals_info: Create yor proposal on http://decide.madrid.es
+      proposals_note: The proposals more supported will be voted. If are accepted by a majority, the city Council shall be carried out.
+      proposals_title: "Proposals:"
+      spending_proposals_info: Participate at http://decide.madrid.es
+      spending_proposals_note: Participatory budget will be assigned to the most votes spending proposals.
+      budget_investments_info: Participate at http://decide.madrid.es
+      budget_investments_note: Participatory budget will be assigned to the most voted budget investment.

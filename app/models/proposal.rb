@@ -21,6 +21,7 @@ class Proposal < ActiveRecord::Base
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
   include Relationable
+  include Milestoneable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -37,11 +38,11 @@ class Proposal < ActiveRecord::Base
   validates :title, presence: true
   validates :summary, presence: true
   validates :author, presence: true
-  validates :responsible_name, presence: true
+  validates :responsible_name, presence: true, unless: :skip_user_verification?
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
+  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, unless: :skip_user_verification?
   validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
   validates :proceeding, inclusion: { in: PROCEEDINGS, allow_nil: true }
   validates :sub_proceeding, presence: true, length: { in: 10..150 }, if: :proceeding?
@@ -172,14 +173,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates the hot_score because there is a before_save
+    save # update cache when it has a new comment
   end
 
   def calculate_hot_score
-    self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               total_votes,
-                                               total_votes,
-                                               comments_count)
+    self.hot_score = ScoreCalculator.hot_score(self)
   end
 
   def calculate_confidence_score
@@ -232,10 +230,8 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    if user.present? && Setting['feature.user.recommendations'].present?
-      orders << "recommendations"
-    end
-    orders
+    orders << "recommendations" if Setting['feature.user.recommendations_on_proposals'] && user&.recommended_proposals
+    return orders
   end
 
   def self.rank(proposal)
@@ -273,6 +269,10 @@ class Proposal < ActiveRecord::Base
     return false if hidden?
     return false unless ["Derechos Humanos", nil].include?(proceeding)
     return true
+  end
+
+  def skip_user_verification?
+    Setting["feature.user.skip_verification"].present?
   end
 
   protected

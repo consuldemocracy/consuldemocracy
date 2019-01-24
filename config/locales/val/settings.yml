@@ -21,38 +21,40 @@ val:
     youtube_handle: "Usuari de Youtube"
     telegram_handle: "Usuari de Telegram"
     instagram_handle: "Usuari de Instagram"
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparència"
-    opendata_url: "URL de open data"
     url: "URL general de la web"
     org_name: "Nom de la organització"
     place_name: "Nom del lloc"
-    feature:
-      budgets: Pressupostos participatius
-      twitter_login: Registre amb Twitter
-      facebook_login: Registre amb Facebook
-      google_login: Registre amb Google
-      proposals: Propostes
-      debates: Debats
-      polls: Votacions
-      signature_sheets: Fulles de signatures
-      spending_proposals: Propostes d'inversió
-      spending_proposal_features:
-        voting_allowed: Votacions sobre propostes d'inversió
-      legislation: Legislació
-      user:
-        recommendations: Recomanacions
-      community: Comunitat en propostes i projectes d'inversió
-      map: Geolocalització de propostes y projectes d'inversió
-      allow_images: Permetre la pujada i visualització d'imatges
-    map_latitude: Latitud
-    map_longitude: Longitud
-    map_zoom: Zoom
-    mailer_from_name: Nom email remitent
-    mailer_from_address: Direcció email remitent
+    related_content_score_threshold: "Llindar de puntuació de contingut relacionat"
+    map_latitude: "Latitud"
+    map_longitude: "Longitud"
+    map_zoom: "Zoom"
     meta_title: "Títol del lloc (SEO)"
     meta_description: "Descripció del lloc (SEO)"
     meta_keywords: "Paraules clau (SEO)"
-    verification_offices_url: URL oficines verificació
     min_age_to_participate: Edat mínima per a participar
+    blog_url: "URL del blog"
+    transparency_url: "URL de transparència"
+    opendata_url: "URL de open data"
+    verification_offices_url: URL oficines verificació
     proposal_improvement_path: Enllaç a informació per a millorar propostes
+    feature:
+      budgets: "Pressupostos participatius"
+      twitter_login: "Registre amb Twitter"
+      facebook_login: "Registre amb Facebook"
+      google_login: "Registre amb Google"
+      proposals: "Propostes"
+      debates: "Debats"
+      polls: "Votacions"
+      signature_sheets: "Fulles de signatures"
+      legislation: "Legislació"
+      user:
+        recommendations: "Recomanacions"
+        skip_verification: "Ometre la verificació d'usuaris"
+        recommendations_on_debates: "Recomanacions en debats"
+        recommendations_on_proposals: "Recomanacions en propostes"
+      community: "Comunitat en propostes i projectes d'inversió"
+      map: "Geolocalització de propostes y projectes d'inversió"
+      allow_images: "Permetre la pujada i visualització d'imatges"
+      allow_attached_documents: "Permetre la creació de documents adjunts"
+      guides: "Guies per a crear propostes o projectes d'inversió"
+      public_stats: "Estadístiques públiques"

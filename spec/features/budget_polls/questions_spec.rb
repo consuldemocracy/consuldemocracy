@@ -16,7 +16,7 @@ feature "Poll Questions" do
     visit admin_questions_path
 
     expect(page).to have_select("poll_id", text: "Citizen Proposal Poll")
-    expect(page).to_not have_select("poll_id", text: "Participatory Budget Poll")
+    expect(page).not_to have_select("poll_id", text: "Participatory Budget Poll")
   end
 
 end

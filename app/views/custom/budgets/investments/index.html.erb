@@ -49,7 +49,7 @@
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
               <%= t("budgets.investments.index.unfeasible_text",
-              definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), more_info_budgets_path(anchor: "10"))).html_safe %>
+              definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), more_info_budgets_path)).html_safe %>
           </div>
         </div>
       <% elsif @heading.present? %>

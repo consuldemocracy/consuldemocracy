@@ -1,0 +1,21 @@
+eu:
+  activerecord:
+    models:
+      activity:
+        one: "jarduera"
+        other: "jarduerak"
+      legislation/questions:
+        one: "Galdera"
+        other: "Galderak"
+      legislation/answers:
+        one: "Erantzuna"
+        other: "Erantzunak"
+      documents:
+        one: "Dokumentua"
+        other: "Dokumentuak"
+      images:
+        one: "Irudia"
+        other: "Irudiak"
+    attributes:
+      budget:
+        name: "Izena"

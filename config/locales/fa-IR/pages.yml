@@ -1,0 +1,48 @@
+fa:
+  pages:
+    general_terms: شرایط و ضوابط
+    help:
+      menu:
+        debates: "مباحثه"
+        proposals: "طرح های پیشنهادی"
+        budgets: "بودجه مشارکتی"
+        polls: "نظر سنجی ها"
+        other: "اطلاعات دیگر مورد علاقه"
+        processes: "روندها\n"
+      debates:
+        title: "مباحثه"
+        link: "بحث های شهروند"
+      proposals:
+        title: "طرح های پیشنهادی"
+        link: "پیشنهادات شهروند"
+      budgets:
+        link: "بودجه مشارکتی"
+      polls:
+        title: "نظر سنجی ها"
+      processes:
+        title: "روندها\n"
+        link: "روندها\n"
+      faq:
+        button: "مشاهده پرسش و پاسخهای متداول"
+        page:
+          title: "پرسشهای متداول"
+          description: "از این صفحه برای حل مشکالت رایج مشترک کاربران سایت استفاده کنید."
+          faq_1_title: "سوال 1"
+          faq_1_description: "این یک نمونه برای توضیح یک سوال  است."
+      other:
+        title: " دیگراطلاعات  مورد علاقه "
+        how_to_use: "استفاده از %{org_name} در شهر شما"
+      titles:
+        how_to_use: از آن در دولت محلی استفاده کنید
+    titles:
+      accessibility: قابلیت دسترسی
+      conditions: شرایط استفاده
+      help: "%{org}چیست؟ -شرکت شهروند"
+      privacy: سیاست حریم خصوصی
+    verify:
+      code: کدی که شما در نامه دریافت کردید
+      email: پست الکترونیکی
+      info: 'برای تأیید حساب کاربری خود، اطلاعات دسترسی خود را معرفی کنید:'
+      password: رمز عبور
+      submit: تأیید حساب کاربری
+      title: "حساب کاربری خودراتایید کنید\n"

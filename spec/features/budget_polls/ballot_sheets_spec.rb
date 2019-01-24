@@ -58,7 +58,7 @@ feature 'Poll budget ballot sheets' do
       expect(page).to have_content "#{poll.name}"
     end
 
-    scenario "Access ballot sheets officing with multiple booth assignments" do
+    scenario "Access ballot sheets officing with multiple booth assignments", :with_frozen_time do
       booth_2 = create(:poll_booth)
       create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_booth_assignment, poll: poll, booth: booth_2)

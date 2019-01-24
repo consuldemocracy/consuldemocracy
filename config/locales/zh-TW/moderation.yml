@@ -1,0 +1,117 @@
+zh-TW:
+  moderation:
+    comments:
+      index:
+        block_authors: 封鎖作者
+        confirm: 您確定？
+        filter: 篩選器
+        filters:
+          all: 所有
+          pending_flag_review: 有待
+          with_ignored_flag: 標記為已查看
+        headers:
+          comment: 評論
+          moderate: 審核
+        hide_comments: 隱藏評論
+        ignore_flags: 標記為已查看
+        order: 排序
+        orders:
+          flags: 最多標記
+          newest: 最新
+        title: 評論
+    dashboard:
+      index:
+        title: 審核
+    debates:
+      index:
+        block_authors: 封鎖作者
+        confirm: 您確定？
+        filter: 篩選器
+        filters:
+          all: 所有
+          pending_flag_review: 有待
+          with_ignored_flag: 標記為已查看
+        headers:
+          debate: 辯論
+          moderate: 審核
+        hide_debates: 隱藏辯論
+        ignore_flags: 標記為已查看
+        order: 排序
+        orders:
+          created_at: 最新
+          flags: 最多標記
+        title: 辯論
+    header:
+      title: 審核
+    menu:
+      flagged_comments: 評論
+      flagged_debates: 辯論
+      flagged_investments: 預算投資
+      proposals: 建議
+      proposal_notifications: 建議通知
+      users: 封鎖用戶
+    proposals:
+      index:
+        block_authors: 封鎖作者
+        confirm: 您確定？
+        filter: 篩選器
+        filters:
+          all: 所有
+          pending_flag_review: 有待審閱
+          with_ignored_flag: 標記為已查看
+        headers:
+          moderate: 審核
+          proposal: 建議
+        hide_proposals: 隱藏建議
+        ignore_flags: 標記為已查看
+        order: 排序依據
+        orders:
+          created_at: 最新
+          flags: 最多標記
+        title: 建議
+    budget_investments:
+      index:
+        block_authors: 封鎖作者
+        confirm: 您確定？
+        filter: 篩選器
+        filters:
+          all: 所有
+          pending_flag_review: 有待
+          with_ignored_flag: 標記為已查看
+        headers:
+          moderate: 審核
+          budget_investment: 預算投資
+        hide_budget_investments: 隱藏預算投資
+        ignore_flags: 標記為已查看
+        order: 排序依據
+        orders:
+          created_at: 最新
+          flags: 最多標記
+        title: 預算投資
+    proposal_notifications:
+      index:
+        block_authors: 封鎖作者
+        confirm: 您確定？
+        filter: 篩選器
+        filters:
+          all: 所有
+          pending_review: 有待審閱
+          ignored: 標記為已查看
+        headers:
+          moderate: 審核
+          proposal_notification: 建議通知
+        hide_proposal_notifications: 隱藏建議
+        ignore_flags: 標記為已查看
+        order: 排序依據
+        orders:
+          created_at: 最新
+          moderated: 已審核
+        title: 建議通知
+    users:
+      index:
+        hidden: 已被封鎖
+        hide: 封鎖
+        search: 搜尋
+        search_placeholder: 電郵或用戶名
+        title: 封鎖用戶
+      notice_hide: 用戶已被封鎖。 此用戶所有的辯論和評論都被隱藏了。

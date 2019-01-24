@@ -48,6 +48,9 @@ module Abilities
       can [:flag, :unflag], Legislation::Proposal
       cannot [:flag, :unflag], Legislation::Proposal, author_id: user.id
 
+      can [:flag, :unflag], Budget::Investment
+      cannot [:flag, :unflag], Budget::Investment, author_id: user.id
+
       can [:create, :destroy], Follow
 
       can [:destroy], Document, documentable: { author_id: user.id }
@@ -78,6 +81,7 @@ module Abilities
 
         if user.old_enough_to_participate?
           can :vote, Proposal
+          can :newsletter_vote, Proposal
           can :vote_featured, Proposal
           can :vote, SpendingProposal
 
@@ -115,6 +119,8 @@ module Abilities
 
       can [:create], Topic
       can [:update, :destroy], Topic, author_id: user.id
+
+      can :disable_recommendations, [Debate, Proposal]
     end
   end
 end

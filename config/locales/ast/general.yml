@@ -1,0 +1,47 @@
+ast:
+  account:
+    show:
+      change_credentials_link: Camudar los mios datos d'accesu
+      email_on_comment_label: Recibir un corréu electrónicu cuando daquién comenta nes mios propuestes o alderiques
+      email_on_comment_reply_label: Recibir un Corréu electrónicu cuando daquién contesta a los mios comentarios
+      finish_verification: Rematar verificación
+      notifications: Notificaciones
+      organization_name_label: Nome de l'organización
+      organization_responsible_name_placeholder: Representante de l'asociación/coleutivu
+      personal: Datos personales
+      public_activity_label: Amosar públicamente la mio llista d'actividaes
+      subscription_to_website_newsletter_label: Recibir emails con información interesante sobro la web
+      email_on_direct_message_label: Recibir emails con mensaxes privaos
+      email_digest_label: Recibir resume de notificaciones sobro propuestes
+      official_position_badge_label: Amosar etiqueta de tipu d'usuariu
+      user_permission_support_proposal: Sofitar propuestes
+      user_permission_title: Participación
+      user_permission_verify: Pa poder realizar toles acciones, verifica la to cuenta.
+      user_permission_verify_info: "* Namás usuarios empadronaos."
+      user_permission_votes: Participar nes votaciones finales
+      verified_account: Cuenta verificada
+  debates:
+    index:
+      featured_debates: Destacar
+  errors:
+    messages:
+      user_not_found: Usuariu non atopáu
+  layouts:
+    header:
+      administration: Alministración
+      spending_proposals: Propuestas de inversión
+  poll_questions:
+    create_question: "Crear entruga"
+  shared:
+    delete: Borrar
+    search_results: "Resultados de la búsqueda"
+    back: Volver
+    check: Escoyer
+    hide: Despintar
+    show: Amosar
+  stats:
+    index:
+      visits: Visitas
+      votes: Votos
+      verified_users: Usuarios verificados
+      unverified_users: Usuarios sin verificar

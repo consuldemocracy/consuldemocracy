@@ -1,8 +1,8 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %> - <%= @draft_version.title %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %> - <%= @draft_version.title %>
 <% end %>
 
-<div class="legislation-admin legislation-draft-versions-edit legislation-draft-versions-form row">
+<div class="legislation-draft-versions-edit legislation-draft-versions-form">
   <div class="small-12 column">
     <%= back_link_to admin_legislation_process_draft_versions_path(@process),
                      t("admin.legislation.draft_versions.edit.back") %>
@@ -11,17 +11,16 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
 
-    <div class="row">
-      <div class="small-12 column">
-        <div class="callout warning" style="display: none;">
-          <%= t("admin.legislation.draft_versions.edit.warning") %>
-        </div>
+    <div class="small-12 column">
+      <div class="callout warning" style="display: none;">
+        <%= t("admin.legislation.draft_versions.edit.warning") %>
       </div>
+    </div>
 
-      <div class="small-12 medium-9 column">
-        <h3><%= @draft_version.title %></h3>
-      </div>
-      <div class="small-12 medium-3 column legislation-question-delete">
+    <div class="small-12 column">
+      <h3 class="inline-block"><%= @draft_version.title %></h3>
+
+      <div class="float-right">
         <%= link_to t("admin.legislation.draft_versions.index.delete"),
                     admin_legislation_process_draft_version_path(@process, @draft_version),
                     method: :delete,

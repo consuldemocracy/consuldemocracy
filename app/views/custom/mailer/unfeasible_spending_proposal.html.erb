@@ -1,0 +1,29 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.unfeasible_spending_proposal.hi") %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.unfeasible_spending_proposal.unfeasible_html",
+        title: @spending_proposal.title) %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; padding-left: 12px; border-left: 2px solid #ccc;">
+    <%= @spending_proposal.feasible_explanation %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.unfeasible_spending_proposal.reconsider_html", code: @spending_proposal.code) %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.unfeasible_spending_proposal.sorry") %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.unfeasible_spending_proposal.sincerely") %><br>
+  <span style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 12px;font-weight: normal;line-height: 24px; color: #ccc;">
+    <%= t("mailers.unfeasible_spending_proposal.signatory") %></span>
+  </p>
+</td>

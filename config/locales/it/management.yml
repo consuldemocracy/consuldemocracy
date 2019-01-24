@@ -1,0 +1,147 @@
+it:
+  management:
+    account:
+      menu:
+        reset_password_email: Reimposta la password via email
+        reset_password_manually: Reimposta la password manualmente
+      alert:
+        unverified_user: Nessun utente verificato ha ancora effettuato il login
+      show:
+        title: Account utente
+      edit:
+        title: 'Modifica account utente: Reimposta password'
+        back: Indietro
+        password:
+          password: Password
+          send_email: Invia email di reimpostazione password
+          reset_email_send: Email inviata correttamente.
+          reseted: Password reimpostata con successo
+          random: Genera password casuale
+          save: Salva password
+          print: Stampa password
+          print_help: Sarai in grado di stampare la password quando sarà salvata.
+    account_info:
+      change_user: Cambia utente
+      document_number_label: 'Numero del documento:'
+      document_type_label: 'Tipo di documento:'
+      email_label: 'Email:'
+      identified_label: 'Identificato come:'
+      username_label: 'Nome utente:'
+    check: Controlla documento
+    dashboard:
+      index:
+        title: Gestione
+        info: Qui è possibile gestire gli utenti attraverso tutte le azioni elencate nel menu di sinistra.
+    document_number: Numero del documento
+    document_type_label: Tipo di documento
+    document_verifications:
+      already_verified: Questo account utente è già verificato.
+      has_no_account_html: Per creare un account, vai su %{link} e clicca <b>'Registrati'</b> nella parte superiore sinistra dello schermo.
+      link: CONSUL
+      in_census_has_following_permissions: 'Questo utente può partecipare al sito con le seguenti autorizzazioni:'
+      not_in_census: Questo documento non è registrato.
+      not_in_census_info: 'I cittadini non registrati all’Anagrafe possono partecipare al sito con le seguenti autorizzazioni:'
+      please_check_account_data: Si prega di controllare che i dati dell'utenza sopra riportati siano corretti.
+      title: Gestione degli utenti
+      under_age: "Non hai l'età richiesta per verificare il tuo account."
+      verify: Verifica
+    email_label: Email
+    date_of_birth: Data di nascita
+    email_verifications:
+      already_verified: Questo account utente è già verificato.
+      choose_options: 'Si prega di scegliere una delle seguenti opzioni:'
+      document_found_in_census: Questo documento è stato trovato in anagrafe, ma non ha alcun account utente ad esso associato.
+      document_mismatch: 'Questa email appartiene a un utente che dispone già di un documento associato: %{document_number}(%{document_type})'
+      email_placeholder: Inserisci l'email che questa persona ha usato per creare il proprio account
+      email_sent_instructions: Per verificare completamente questo utente, è necessario che clicchi su un link che abbiamo inviato all'indirizzo di posta elettronica sopra riportato. Questo passaggio è necessario al fine di confermare che l'indirizzo email sia suo.
+      if_existing_account: Se la persona ha già un account utente creato nel sito,
+      if_no_existing_account: Se questa persona non ha ancora creato un account
+      introduce_email: 'Si prega di inserire l’email utilizzata per l’account:'
+      send_email: Invia email di verifica
+    menu:
+      create_proposal: Crea proposta
+      print_proposals: Stampa proposte
+      support_proposals: Sostieni proposte
+      create_spending_proposal: Crea proposta di spesa
+      print_spending_proposals: Stampa proposte di spesa
+      support_spending_proposals: Sostieni proposte di spesa
+      create_budget_investment: Crea investimento di bilancio
+      print_budget_investments: Stampa investimenti di bilancio
+      support_budget_investments: Sostieni investimenti di bilancio
+      users: Gestione degli utenti
+      user_invites: Manda inviti
+      select_user: Seleziona utente
+    permissions:
+      create_proposals: Crea proposte
+      debates: Partecipa ai dibattiti
+      support_proposals: Sostieni proposte
+      vote_proposals: Vota proposte
+    print:
+      proposals_info: Crea la tua proposta su http://url.consul
+      proposals_title: 'Proposte:'
+      spending_proposals_info: Partecipa su http://url.consul
+      budget_investments_info: Partecipa su http://url.consul
+    print_info: Stampa queste informazioni
+    proposals:
+      alert:
+        unverified_user: L'utente non è verificato
+      create_proposal: Crea proposta
+      print:
+        print_button: Stampa
+      index:
+        title: Sostieni proposte
+    budgets:
+      create_new_investment: Crea investimento di bilancio
+      print_investments: Stampa investimenti di bilancio
+      support_investments: Sostieni investimenti di bilancio
+      table_name: Nome
+      table_phase: Fase
+      table_actions: Azioni
+      no_budgets: Non ci sono bilanci partecipativi attivi.
+    budget_investments:
+      alert:
+        unverified_user: L'utente non è verificato
+      create: Crea un investimento di bilancio
+      filters:
+        heading: Concetto
+        unfeasible: Progetto irrealizzabile
+      print:
+        print_button: Stampa
+    spending_proposals:
+      alert:
+        unverified_user: L'utente non è verificato
+      create: Crea proposta di spesa
+      filters:
+        unfeasible: Progetti di investimento irrealizzabili
+        by_geozone: "Progetti di investimento con ambito di applicazione: %{geozone}"
+      print:
+        print_button: Stampa
+      search_results:
+        one: " contenente il termine '%{search_term}'"
+        other: " contenenti il termine '%{search_term}'"
+    sessions:
+      signed_out: Disconnesso con successo.
+      signed_out_managed_user: Sessione utente disconnessa con successo.
+    username_label: Nome utente
+    users:
+      create_user: Crea un nuovo account
+      create_user_info: Creeremo un account con i seguenti dati
+      create_user_submit: Crea utente
+      create_user_success_html: Abbiamo inviato una email all’indirizzo di posta elettronica <b>%{email}</b> per verificare che appartenga a questo utente. Contiene un link che l’utente deve cliccare. Successivamente dovrà impostare la propria password di accesso prima di poter effettuare il login al sito
+      autogenerated_password_html: "La password generata automaticamente è <b>%{password}</b>, è possibile modificarla nella sezione «Il mio profilo» del sito"
+      email_optional_label: Email (facoltativa)
+      erased_notice: Account utente eliminato.
+      erased_by_manager: "Eliminato dal gestore: %{manager}"
+      erase_account_link: Elimina utente
+      erase_account_confirm: Sei sicuro di voler cancellare l’account? Quest’azione non può essere annullata
+      erase_warning: Questa azione non può essere annullata. Per favore, assicurati di voler cancellare questo account.
+      erase_submit: Elimina account
+    user_invites:
+      new:
+        label: Email
+        info: "Inserisci gli indirizzi email separati da virgole (',')"
+        submit: Manda inviti
+        title: Manda inviti
+      create:
+        success_html: <strong>%{count} inviti</strong> sono stati inviati.
+        title: Manda inviti

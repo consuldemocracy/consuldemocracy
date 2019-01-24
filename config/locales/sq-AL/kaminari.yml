@@ -1,0 +1,22 @@
+sq:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Hyrjet
+        one: Hyrje
+        other: Hyrjet
+      more_pages:
+        display_entries: Shfaq <strong>%{first}&nbsp;&nbsp;%{last}</strong> të <strong>%{total}%{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} nuk mund të gjehet"
+          one: Ka <strong> 1 %{entry_name}</strong>
+          other: Ka <strong> %{count}%{entry_name}</strong>
+  views:
+    pagination:
+      current: Ju jeni në faqen
+      first: E para
+      last: E fundit
+      next: Tjetra
+      previous: I mëparshëm
+      truncate: "&hellip;"

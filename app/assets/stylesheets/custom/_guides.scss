@@ -1,0 +1,117 @@
+// Guides
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.guides {
+
+  h2 {
+    margin-bottom: $line-height;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    min-height: $line-height * 9;
+
+    li {
+      margin-bottom: $line-height;
+      padding-left: $line-height;
+      position: relative;
+
+      &::before {
+        color: #37af65;
+        content: '\56';
+        font-family: "icons" !important;
+        font-size: $small-font-size;
+        left: 0;
+        position: absolute;
+        top: 1px;
+      }
+    }
+  }
+
+  .guide-budget,
+  .guide-proposal {
+    border-radius: rem-calc(6);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+    margin: $line-height 0;
+    padding: $line-height;
+    position: relative;
+
+    .button {
+      font-weight: bold;
+    }
+
+    &::before {
+      border-radius: 100%;
+      color: #fff;
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      height: rem-calc(40);
+      left: 50%;
+      line-height: rem-calc(40);
+      margin-left: rem-calc(-20);
+      position: absolute;
+      text-align: center;
+      top: -20px;
+      width: rem-calc(40);
+      z-index: 99;
+    }
+  }
+
+  .guide-budget {
+    background: $budget-2019-green;
+    color: $budget-2019-green-dark;
+
+    &::before {
+      background: $budget-2019-green-dark;
+      color: $budget-2019-green;
+      content: '\53';
+    }
+
+    li {
+
+      &::before {
+        color: $budget-2019-green-dark;
+      }
+    }
+
+    .button {
+      background: $budget-2019-green-dark;
+      color: $budget-2019-green;
+    }
+  }
+
+  .guide-proposal {
+    background: $budget-2019-orange;
+    color: $budget-2019-orange-dark;
+
+    &::before {
+      background: $budget-2019-orange-dark;
+      color: $budget-2019-orange;
+      content: '\68';
+    }
+
+    li {
+
+      &::before {
+        color: $budget-2019-orange-dark;
+      }
+    }
+
+    .button {
+      background: $budget-2019-orange-dark;
+      color: $budget-2019-orange;
+    }
+  }
+
+  a:hover .guide-budget h2 {
+    color: $budget-2019-green-dark;
+  }
+
+  a:hover .guide-proposal h2 {
+    color: $budget-2019-orange-dark;
+  }
+}

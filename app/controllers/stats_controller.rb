@@ -14,6 +14,7 @@ class StatsController < ApplicationController
     @debate_votes = daily_cache('debate_votes') { Vote.where(votable_type: 'Debate').count }
     @proposal_votes = daily_cache('proposal_votes') { Vote.where(votable_type: 'Proposal').count }
     @comment_votes = daily_cache('comment_votes') { Vote.where(votable_type: 'Comment').count }
+    @investment_votes = daily_cache('budget_investment_votes') { Vote.where(votable_type: 'Budget::Investment').count }
     @votes = daily_cache('votes') { Vote.count }
 
     @verified_users = daily_cache('verified_users') { User.with_hidden.level_two_or_three_verified.count }

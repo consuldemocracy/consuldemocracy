@@ -1,0 +1,38 @@
+ast:
+  valuation:
+    menu:
+      spending_proposals: Propuestes d'inversión
+    budgets:
+      index:
+        filters:
+          current: Abiertos
+          finished: Terminaos
+        table_actions: Acciones
+    budget_investments:
+      index:
+        headings_filter_all: Toles partíes
+        filters:
+          valuating: N'evaluación
+          valuation_finished: Evaluación rematada
+        title: Propuestes d'inversión
+        edit: Editar informe
+        no_valuators_assigned: Ensin evaluaor
+        table_id: ID
+        table_heading_name: Nome de la partida
+      show:
+        back: Volver
+        dossier: Informe
+        feasibility: Viabilidá
+        unfeasible: Invidable
+        undefined: Ensin definir
+        assigned_valuators: Evaluaores asignaos
+      edit:
+        unfeasible: Inviable
+        save: Guardar Cambeos
+    spending_proposals:
+      index:
+        geozone_filter_all: Todos los ámbitos de actuación
+        title: Propuestas de inversión para presupuestos participativos
+      show:
+        association_name: Asociación
+        geozone: Ámbito

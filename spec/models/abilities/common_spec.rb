@@ -464,7 +464,6 @@ describe Abilities::Common do
     let(:spending_proposal) { create(:spending_proposal) }
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
 
-
     it { should_not be_able_to(:vote, Proposal) }
     it { should_not be_able_to(:vote_featured, Proposal) }
 
@@ -477,6 +476,11 @@ describe Abilities::Common do
 
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
+  end
+
+  describe "#disable_recommendations" do
+    it { should be_able_to(:disable_recommendations, Debate) }
+    it { should be_able_to(:disable_recommendations, Proposal) }
   end
 
 end

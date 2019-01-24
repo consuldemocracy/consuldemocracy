@@ -92,6 +92,19 @@ describe Newsletter do
       expect(ActionMailer::Base.deliveries.count).to eq(3)
     end
 
+    it "only sends the newsletter once to each user" do
+      newsletter.deliver
+      newsletter.deliver
+
+      recipients.each do |recipient|
+        email = Mailer.newsletter(newsletter, recipient)
+        expect(email).to deliver_to(recipient)
+      end
+
+      Delayed::Job.all.map(&:invoke_job)
+      expect(ActionMailer::Base.deliveries.count).to eq(3)
+    end
+
     it "sends emails in batches" do
       allow(newsletter).to receive(:batch_size).and_return(1)
 

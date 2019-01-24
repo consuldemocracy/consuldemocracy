@@ -1,0 +1,39 @@
+tr:
+  seeds:
+    geozones:
+      north_district: Kuzey Bölgesi
+      west_district: Kuzey Bölgesi
+      east_district: Doğu Bölgesi
+      central_district: Merkezî bahşı
+    organizations:
+      human_rights: İnsan hakları
+      neighborhood_association: Mahalle Derneği
+    categories:
+      associations: Dernekler
+      culture: Kültür
+      sports: Spor
+      social_rights: Sosyal haklar
+      economy: Ekonomi
+      employment: İstihdam
+      equity: Hisse senedi
+      sustainability: Sürdürülebilirlik
+      participation: Katılım
+      mobility: Hareketlilik
+      media: Medya
+      health: Sağlık
+      transparency: Şeffaflık
+      security_emergencies: Güvenlik ve acil durumlar
+      environment: Çevre
+    budgets:
+      budget: Katılımcı bütçe
+      currency: '€'
+      groups:
+        all_city: Tüm şehir
+        districts: İlçeler
+    polls:
+      current_poll: "Geçerli Anket"
+      current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
+      incoming_poll: "Gelen anket"
+      recounting_poll: "Anket anlatırken"
+      expired_poll_without_stats: "İstatistikler ve sonuçları olmadan anket süresi"
+      expired_poll_with_stats: "İstatistikler ve sonuçları olmadan anket süresi"

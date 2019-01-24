@@ -33,7 +33,7 @@ feature 'Commenting Probe Options' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{probe_option.name}", href: probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
+    expect(page).to have_link "Go back to #{probe_option.name}", href: probe_probe_option_path(probe.codename, probe_option)
   end
 
   scenario 'Collapsable comments', :js do
@@ -267,7 +267,7 @@ feature 'Commenting Probe Options' do
     comment = create(:comment, commentable: probe_option)
 
     login_as(user)
-    visit probe_probe_option_path(probe_id: probe.codename, id: probe.id)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
 
     within "#comment_#{comment.id}" do
       page.find("#flag-expand-comment-#{comment.id}").click
@@ -468,6 +468,11 @@ feature 'Commenting Probe Options' do
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
+
+        within('.in_favor') do
+          expect(page).to have_content "1"
+        end
+
         find('.against a').click
 
         within('.in_favor') do

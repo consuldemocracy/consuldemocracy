@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Residence' do
+feature 'Residence', :with_frozen_time do
   let(:officer) { create(:poll_officer) }
 
   feature "Officers without assignments" do
@@ -131,11 +131,6 @@ feature 'Residence' do
   end
 
   scenario "Verify booth", :js do
-    allow(Date).to receive_messages(
-                          :current => Date.new(2018,1,1),
-                          :today => Date.new(2018,1,1))
-    allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
-
     booth = create(:poll_booth)
     poll = create(:poll)
 

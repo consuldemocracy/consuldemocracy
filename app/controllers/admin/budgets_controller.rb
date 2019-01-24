@@ -14,9 +14,11 @@ class Admin::BudgetsController < Admin::BaseController
   def show
   end
 
-  def new; end
+  def new
+  end
 
-  def edit; end
+  def edit
+  end
 
   def calculate_winners
     return unless @budget.balloting_process?

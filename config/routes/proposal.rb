@@ -1,6 +1,7 @@
 resources :proposals do
   member do
     post :vote
+    get :vote, action: :newsletter_vote
     post :vote_featured
     put :flag
     put :unflag
@@ -13,5 +14,6 @@ resources :proposals do
     get :map
     get :suggest
     get :summary
+    put 'recommendations/disable', only: :index, controller: 'proposals', action: :disable_recommendations
   end
 end

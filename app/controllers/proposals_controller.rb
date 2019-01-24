@@ -6,9 +6,11 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
+  before_action :login_user_with_newsletter_token!, only: :newsletter_vote
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
+  before_action :proposals_recommendations, only: :index, if: :current_user
 
   feature_flag :proposals
 
@@ -47,8 +49,7 @@ class ProposalsController < ApplicationController
     discard_archived
     load_retired
     hide_advanced_search if custom_search?
-    load_successful_proposals
-    load_featured unless @proposal_successful_exists
+    load_featured
   end
 
   def vote
@@ -56,6 +57,13 @@ class ProposalsController < ApplicationController
     set_proposal_votes(@proposal)
     load_rank
     log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, @proposal_rank)
+  end
+
+  def newsletter_vote
+    @proposal.register_vote(current_user, "yes")
+
+    sign_out(:user) unless @signed_in_before_voting
+    redirect_to @proposal, notice: t("proposals.notice.voted")
   end
 
   def retire
@@ -89,6 +97,14 @@ class ProposalsController < ApplicationController
     super
     @resource.proceeding = params[:proceeding]
     @resource.sub_proceeding = params[:sub_proceeding]
+  end
+
+  def disable_recommendations
+    if current_user.update(recommended_proposals: false)
+      redirect_to proposals_path, notice: t('proposals.index.recommendations.actions.success')
+    else
+      redirect_to proposals_path, error: t('proposals.index.recommendations.actions.error')
+    end
   end
 
   private
@@ -134,10 +150,14 @@ class ProposalsController < ApplicationController
 
     def load_featured
       return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank? && @current_order != "recommendations"
-      @featured_proposals = Proposal.not_archived.not_proceedings.sort_by_confidence_score.limit(2)
-      if @featured_proposals.present?
-        set_featured_proposal_votes(@featured_proposals)
-        @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+      if Setting['feature.featured_proposals']
+        @featured_proposals = Proposal.not_archived.not_proceedings.unsuccessful
+                              .sort_by_confidence_score.limit(Setting['featured_proposals_number'])
+
+        if @featured_proposals.present?
+          set_featured_proposal_votes(@featured_proposals)
+          @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+        end
       end
     end
 
@@ -157,10 +177,6 @@ class ProposalsController < ApplicationController
       params[:custom_search].present?
     end
 
-    def load_successful_proposals
-      @proposal_successful_exists = Proposal.successful.exists?
-    end
-
     def destroy_map_location_association
       map_location = params[:proposal][:map_location_attributes]
       if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
@@ -171,4 +187,27 @@ class ProposalsController < ApplicationController
     def load_rank
       @proposal_rank ||= Proposal.rank(@proposal)
     end
+
+    def proposals_recommendations
+      if Setting['feature.user.recommendations_on_proposals'] && current_user.recommended_proposals
+        @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
+      end
+    end
+
+    def login_user_with_newsletter_token!
+      if current_user.present?
+        @signed_in_before_voting = true
+      elsif newsletter_vote? && newsletter_user&.can?(:newsletter_vote, Proposal)
+        sign_in(:user, newsletter_user)
+      end
+    end
+
+    def newsletter_vote?
+      params[:newsletter_token].present?
+    end
+
+    def newsletter_user
+      User.where(newsletter_token: params[:newsletter_token]).first
+    end
+
 end

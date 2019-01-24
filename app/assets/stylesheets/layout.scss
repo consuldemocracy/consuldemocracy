@@ -18,7 +18,7 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
-// 19. Recommended Section Home
+// 19. Recommendations
 // 20. Documents
 // 21. Related content
 // 22. Images
@@ -32,6 +32,12 @@
 ::selection {
   color: #fff;
   background-color: $brand;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -357,19 +363,34 @@ a {
 
   .tabs-title {
     font-size: $base-font-size;
-    margin-bottom: 0;
+    margin-right: $line-height;
   }
 
   .tabs-title > a {
     color: $text-medium;
-    margin-bottom: rem-calc(-1);
-    margin-right: $line-height;
+    position: relative;
+
+    &:hover {
+      background: none;
+      color: $brand;
+      text-decoration: none;
+    }
 
     &[aria-selected='true'],
     &.is-active {
+      border-bottom: 0;
       color: $brand;
-      border-bottom: 2px solid $brand;
       font-weight: bold;
+
+      &::after {
+        background: $brand;
+        border-bottom: 2px solid $brand;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
   }
 
@@ -421,6 +442,11 @@ a {
   text-transform: uppercase;
 }
 
+.help-text {
+  line-height: rem-calc(20);
+  margin-top: 0;
+}
+
 // 02. Header
 // ----------
 
@@ -437,6 +463,18 @@ header {
     float: left;
     height: $line-height * 1.5;
     margin-left: $line-height / 2;
+    position: relative;
+
+    &::after {
+      color: #808080;
+      content: '\61';
+      font-family: "icons" !important;
+      font-size: $small-font-size;
+      pointer-events: none;
+      position: absolute;
+      right: 2px;
+      top: 9px;
+    }
   }
 
   .external-links {
@@ -547,6 +585,20 @@ header {
 
       a {
         color: $text;
+      }
+    }
+  }
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
       }
     }
   }
@@ -788,8 +840,7 @@ footer {
 }
 
 .footer {
-  background: $border;
-  border-top: 6px solid $brand;
+  background: #f1f1f1;
   margin-top: $line-height * 2;
   padding-top: $line-height;
 }
@@ -835,6 +886,13 @@ footer {
   }
 }
 
+.sidebar-map {
+
+  .map {
+    z-index: 0;
+  }
+}
+
 .sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
@@ -867,15 +925,9 @@ footer {
   h1 {
     margin-top: $line-height;
 
-    img {
-      height: rem-calc(80);
-      width: rem-calc(80);
-    }
-
     a {
       color: #fff;
       display: block;
-      line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
       @include breakpoint(medium) {
@@ -921,15 +973,11 @@ footer {
 
   label {
     color: #fff;
-    font-size: $small-font-size;
+    font-size: $tiny-font-size;
     font-weight: normal;
   }
 
   select {
-    background-image: image-url('language_select.png');
-    background-origin: border-box;
-    background-position: right;
-    background-size: 24px 24px;
 
     option {
       background: #fff;
@@ -940,14 +988,16 @@ footer {
   }
 
   .locale-switcher {
-    background-color: transparent;
+    background: #1a1a1a;
     border: 0;
+    border-radius: rem-calc(4);
     color: #fff;
     font-size: $small-font-size;
+    height: $line-height;
     margin-bottom: 0;
+    margin-top: $line-height / 4;
     outline: none;
-    padding-left: rem-calc(3);
-    padding-right: $line-height;
+    padding: 0 $line-height / 4;
     width: auto;
 
     &:focus {
@@ -1050,6 +1100,7 @@ form {
 
 .callout {
   font-size: $small-font-size;
+  overflow: hidden;
 
   a:not(.button) {
     font-weight: bold;
@@ -1088,6 +1139,10 @@ form {
 
   .close {
     text-decoration: none !important;
+  }
+
+  .button {
+    margin-bottom: 0;
   }
 }
 
@@ -2234,7 +2289,8 @@ table {
 
 .banner-style-one,
 .banner-style-two,
-.banner-style-three {
+.banner-style-three,
+.banner {
   margin: 0;
   margin-bottom: $line-height;
 
@@ -2268,8 +2324,8 @@ table {
   }
 }
 
-// 19. Recommended Section Home
-// ----------------------------
+// 19. Recommendations
+// -------------------
 
 .section-recommended {
   background: #fafafa;
@@ -2411,6 +2467,54 @@ table {
   }
 }
 
+.recommended-index {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  margin-bottom: $line-height;
+  margin-top: rem-calc(-25);
+  padding: $line-height 0 $line-height / 2;
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .recommendation {
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: $line-height / 4;
+    padding: $line-height / 2;
+
+    &:hover {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.hide-recommendations {
+  color: $text-light;
+  position: absolute;
+  right: 12px;
+  top: -18px;
+}
+
 // 20. Documents
 // -------------
 
@@ -2439,12 +2543,8 @@ table {
     border-radius: rem-calc(5);
     display: block;
     margin: $line-height / 2 0;
-    padding: 0 $line-height / 2;
+    padding: $line-height / 2;
     position: relative;
-
-    a {
-      word-wrap: break-word;
-    }
 
     .icon-document {
       color: #007bb7;
@@ -2458,6 +2558,10 @@ table {
       margin-bottom: 0;
     }
   }
+}
+
+.document-link a {
+  word-wrap: break-word;
 }
 
 .additional-document-link {
@@ -2713,6 +2817,11 @@ table {
       width: 100%;
       z-index: 2;
     }
+  }
+
+  figure img {
+    height: 100%;
+    width: 100%;
   }
 }
 

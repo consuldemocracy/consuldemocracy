@@ -174,4 +174,53 @@ feature 'Account' do
 
     expect(page).to have_content "Invalid login or password"
   end
+
+  context 'Recommendations' do
+
+    background do
+      Setting['feature.user.recommendations'] = true
+      Setting['feature.user.recommendations_on_debates'] = true
+      Setting['feature.user.recommendations_on_proposals'] = true
+    end
+
+    after do
+      Setting['feature.user.recommendations'] = nil
+      Setting['feature.user.recommendations_on_debates'] = nil
+      Setting['feature.user.recommendations_on_proposals'] = nil
+    end
+
+    scenario 'are enabled by default' do
+      visit account_path
+
+      expect(page).to have_content('Recommendations')
+      expect(page).to have_content('Show debates recommendations')
+      expect(page).to have_content('Show proposals recommendations')
+      expect(find("#account_recommended_debates")).to be_checked
+      expect(find("#account_recommended_proposals")).to be_checked
+    end
+
+    scenario "can be disabled through 'My account' page" do
+      visit account_path
+
+      expect(page).to have_content('Recommendations')
+      expect(page).to have_content('Show debates recommendations')
+      expect(page).to have_content('Show proposals recommendations')
+      expect(find("#account_recommended_debates")).to be_checked
+      expect(find("#account_recommended_proposals")).to be_checked
+
+      uncheck 'account_recommended_debates'
+      uncheck 'account_recommended_proposals'
+
+      click_button 'Save changes'
+
+      expect(find("#account_recommended_debates")).not_to be_checked
+      expect(find("#account_recommended_proposals")).not_to be_checked
+
+      @user.reload
+
+      expect(@user.recommended_debates).to be(false)
+      expect(@user.recommended_proposals).to be(false)
+    end
+
+  end
 end

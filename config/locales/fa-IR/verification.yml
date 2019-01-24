@@ -1,0 +1,111 @@
+fa:
+  verification:
+    alert:
+      lock: شما به حداکثر تعداد تلاش دست یافته اید. لطفا بعدا دوباره امتحان کنید.
+    back: بازگشت به حساب من
+    email:
+      create:
+        alert:
+          failure: در ارسال ایمیل به حسابتان مشکلی وجود دارد.
+        flash:
+          success: 'ایمیل تایید به حساب شما ارسال شده است: %{email}'
+      show:
+        alert:
+          failure: کد تأیید نادرست است.
+        flash:
+          success: شما کاربر تأیید شده هستید.
+    letter:
+      alert:
+        unconfirmed_code: شما هنوز کد تأیید را وارد نکرده اید.
+      create:
+        flash:
+          offices: دفاتر پشتیبانی شهروند
+          success_html: از شما به خاطر درخواستتان <b>حداکثر کد امنیت (فقط برای رای نهایی مورد نیاز است)</b> تشکر میکنیم. در چند روز آینده ما آن را به آدرس شما ارسال خواهیم کرد. همچنین شما می توانید کد خود را از هر یک از %{offices} دریافت کنید.
+      edit:
+        see_all: مشاهده طرح ها
+        title: نامه درخواست شده
+      errors:
+        incorrect_code: کد تأیید نادرست است.
+      new:
+        explanation: 'برای شرکت در رای گیری نهایی شما می توانید:'
+        go_to_index: مشاهده طرح ها
+        office: تأیید در %{office}
+        offices: دفاتر پشتیبانی شهروند
+        send_letter: یک نامه با کد ارسال کنید.
+        title: تبریک میگم!
+        user_permission_info: با حساب کاربریتان می توانید...
+      update:
+        flash:
+          success: کد صحیح است. حساب شما تایید شد.
+    redirect_notices:
+      already_verified: حساب شما قبلا تایید شده است.
+      email_already_sent: یک ایمیل با لینک تأیید ارسال کرده ایم. اگر نمی توانید ایمیل را پیدا کنید، می توانید  مجدد از اینجا درخواست کنید .
+    residence:
+      alert:
+        unconfirmed_residency: شما هنوز اقامت خود را تأیید نکرده اید.
+      create:
+        flash:
+          success: اقامت تأیید شده است.
+      new:
+        accept_terms_text: من %{terms_url} سرشماری را قبول می کنم
+        accept_terms_text_title: من شرایط و ضوابط دسترسی به سرشماری را می پذیرم.
+        date_of_birth: تاریخ تولد
+        document_number: شماره سند
+        document_number_help_title: کمک
+        document_number_help_text_html: 'DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P'
+        document_type:
+          passport: گذرنامه
+          residence_card: کارت اقامت
+          spanish_id: DNI
+        document_type_label: نوع سند
+        error_not_allowed_age: سن مورد نیاز برای شرکت را ندارید.
+        error_not_allowed_postal_code: به منظور تایید، شما باید ثبت نام کنید.
+        error_verifying_census: سرشماری قادر به تأیید اطلاعات شما نبود. لطفا با  تماس با شورای شهر، جزئیات مربوط به سرشماری خود را اصلاح کنید%{offices}.
+        error_verifying_census_offices: دفاتر پشتیبانی شهروند
+        form_errors: مانع تایید محل اقامت شما شد.
+        postal_code: کد پستی
+        postal_code_note: برای تایید حساب شما باید ثبت نام کنید.
+        terms: شرایط و ضوابط دسترسی
+        title: ' تایید اقامت'
+        verify_residence: ' تایید اقامت'
+    sms:
+      create:
+        flash:
+          success: کد تایید ارسال شده توسط پیام متنی را وارد کنید.
+      edit:
+        confirmation_code: کد دریافت شده توسط تلفن همراه را وارد کنید.
+        resend_sms_link: اینجا را کلیک کنید تا دوباره ارسال شود.
+        resend_sms_text: متن با کد تایید خود را دریافت نکرده اید؟
+        submit_button: "ارسال\n"
+        title: تأیید کد امنیتی
+      new:
+        phone: شماره تلفن همراه خود را برای دریافت کد را وارد کنید
+        phone_format_html: "<strong>-<em>(مثال: 612345678 یا +34612345678)</em></strong>"
+        phone_note: از تلفن شما برای ارسال کد یه شما استفاده خواهد شد، هرگز با شما تماس گرفته نمی شود.
+        phone_placeholder: "مثال: 612345678 یا +34612345678"
+        submit_button: "ارسال\n"
+        title: ارسال کد تأیید
+      update:
+        error: کد تایید نادرست است.
+        flash:
+          level_three:
+            success: کد صحیح است. حساب شما تایید شد.
+          level_two:
+            success: کد صحیح
+    step_1: محل اقامت
+    step_2: کد تایید
+    step_3: تایید نهایی
+    user_permission_debates: مشارکت در بحث
+    user_permission_info: تایید اطلاعات. شما قادر خواهید بود ...
+    user_permission_proposal: ایجاد طرح های جدید
+    user_permission_support_proposal: '* پشتیبانی از طرح های پیشنهادی'
+    user_permission_votes: شرکت در رای گیری نهایی *
+    verified_user:
+      form:
+        submit_button: ارسال کد
+      show:
+        email_title: پست الکترونیکی
+        explanation: ما جزئیات زیر را در ثبت نام نگه می داریم؛ لطفا یک روش برای فرستادن کد تأیید انتخاب کنید.
+        phone_title: شماره تلفن
+        title: اطلاعات موجود
+        use_another_phone: استفاده از تلفن دیگر

@@ -3,6 +3,10 @@ require 'rails_helper'
 
 feature 'Proposals' do
 
+  it_behaves_like "milestoneable",
+                  :proposal,
+                  "proposal_path"
+
   scenario 'Disabled with a feature flag' do
     Setting['feature.proposals'] = nil
     expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -18,6 +22,8 @@ feature 'Proposals' do
 
     before do
       Setting['feature.allow_images'] = true
+      Setting['feature.featured_proposals'] = true
+      Setting['featured_proposals_number'] = 3
     end
 
     after do
@@ -30,7 +36,7 @@ feature 'Proposals' do
 
       visit proposals_path
 
-      expect(page).to have_selector('#proposals .proposal-featured', count: 2)
+      expect(page).to have_selector('#proposals .proposal-featured', count: 3)
       featured_proposals.each do |featured_proposal|
         within('#featured-proposals') do
           expect(page).to have_content featured_proposal.title
@@ -61,7 +67,7 @@ feature 'Proposals' do
       proposals.each do |proposal|
         within('#proposals') do
           expect(page).to     have_link proposal.title
-          expect(page).to_not have_content proposal.summary
+          expect(page).not_to have_content proposal.summary
         end
       end
 
@@ -92,7 +98,8 @@ feature 'Proposals' do
         click_link "Next", exact: false
       end
 
-      expect(page).to have_selector('#proposals .proposal', count: 3)
+      expect(page).to have_selector('#proposals .proposal-featured', count: 3)
+      expect(page).to have_selector('#proposals .proposal', count: 2)
     end
 
     scenario 'Index should show proposal descriptive image only when is defined' do
@@ -774,52 +781,70 @@ feature 'Proposals' do
 
     context 'Recommendations' do
 
-      let!(:best_proposal) { create(:proposal, title: 'Best', cached_votes_up: 10, tag_list: "Sport") }
-      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5, tag_list: "Sport") }
-      let!(:worst_proposal) { create(:proposal, title: 'Worst', cached_votes_up: 1, tag_list: "Sport") }
+      let!(:best_proposal)   { create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: 'Sport') }
+      let!(:medium_proposal) { create(:proposal, title: 'Medium', cached_votes_up: 5,  tag_list: 'Sport') }
+      let!(:worst_proposal)  { create(:proposal, title: 'Worst',  cached_votes_up: 1,  tag_list: 'Sport') }
 
       before do
         Setting['feature.user.recommendations'] = true
+        Setting['feature.user.recommendations_on_proposals'] = true
       end
 
       after do
         Setting['feature.user.recommendations'] = nil
+        Setting['feature.user.recommendations_on_proposals'] = nil
       end
 
-      scenario 'Proposals can not ordered by recommendations when there is not an user logged', :js do
+      scenario "can't be sorted if there's no logged user" do
         visit proposals_path
-
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Should display text when there are not recommendeds results', :js do
-        user = create(:user)
-        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+      scenario 'are shown on index header when account setting is enabled' do
+        user     = create(:user)
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+        visit proposals_path
+
+        expect(page).to have_css('.recommendation', count: 3)
+        expect(page).to have_link 'Best'
+        expect(page).to have_link 'Medium'
+        expect(page).to have_link 'Worst'
+        expect(page).to have_link 'See more recommendations'
+      end
+
+      scenario 'should display text when there are no results' do
+        user     = create(:user)
+        proposal = create(:proposal, tag_list: 'Distinct_to_sport')
+        create(:follow, followable: proposal, user: user)
+
         login_as(user)
         visit proposals_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "There are not proposals related to your interests"
+        expect(page).to have_content 'There are not proposals related to your interests'
       end
 
-      scenario 'Should display text when user has not related interests', :js do
+      scenario 'should display text when user has no related interests' do
         user = create(:user)
+
         login_as(user)
         visit proposals_path
 
         click_link 'recommendations'
 
-        expect(page).to have_content "Follow proposals so we can give you recommendations"
+        expect(page).to have_content 'Follow proposals so we can give you recommendations'
       end
 
-      scenario 'Proposals are ordered by recommendations when there is an user logged', :js do
-        user = create(:user)
-        proposal = create(:proposal, tag_list: "Sport")
+      scenario "can be sorted when there's a logged user" do
+        user     = create(:user)
+        proposal = create(:proposal, tag_list: 'Sport')
         create(:follow, followable: proposal, user: user)
-        login_as(user)
 
+        login_as(user)
         visit proposals_path
 
         click_link 'recommendations'
@@ -833,6 +858,47 @@ feature 'Proposals' do
 
         expect(current_url).to include('order=recommendations')
         expect(current_url).to include('page=1')
+      end
+
+      scenario 'are not shown if account setting is disabled' do
+        user     = create(:user, recommended_proposals: false)
+        proposal = create(:proposal, tag_list: 'Sport')
+        create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+        visit proposals_path
+
+        expect(page).not_to have_css('.recommendation', count: 3)
+        expect(page).not_to have_link('recommendations')
+      end
+
+      scenario 'are automatically disabled when dismissed from index', :js do
+        user     = create(:user)
+        proposal = create(:proposal, tag_list: 'Sport')
+        create(:follow, followable: proposal, user: user)
+
+        login_as(user)
+        visit proposals_path
+
+        within("#recommendations") do
+          expect(page).to have_content('Best')
+          expect(page).to have_content('Worst')
+          expect(page).to have_content('Medium')
+          expect(page).to have_css('.recommendation', count: 3)
+
+          accept_confirm { click_link 'Hide recommendations' }
+        end
+
+        expect(page).not_to have_link('recommendations')
+        expect(page).not_to have_css('.recommendation', count: 3)
+        expect(page).to have_content('Recommendations for proposals are now disabled for this account')
+
+        user.reload
+
+        visit account_path
+
+        expect(find("#account_recommended_proposals")).not_to be_checked
+        expect(user.recommended_proposals).to be(false)
       end
     end
   end
@@ -1370,10 +1436,13 @@ feature 'Proposals' do
       end
     end
 
-    scenario "Reorder by recommendations results maintaing search", :js do
+    scenario "Reorder by recommendations results maintaing search" do
       Setting['feature.user.recommendations'] = true
-      user = create(:user)
+      Setting['feature.user.recommendations_for_proposals'] = true
+
+      user = create(:user, recommended_proposals: true)
       login_as(user)
+
       proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
       proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
       proposal3 = create(:proposal, title: "Do not display with same tag", cached_votes_up: 100, tag_list: "Sport")
@@ -1393,7 +1462,9 @@ feature 'Proposals' do
         expect(page).not_to have_content "Do not display with same tag"
         expect(page).not_to have_content "Do not display"
       end
+
       Setting['feature.user.recommendations'] = nil
+      Setting['feature.user.recommendations_for_proposals'] = nil
     end
 
     scenario 'After a search do not show featured proposals' do
@@ -1771,8 +1842,11 @@ feature 'Successful proposals' do
     end
   end
 
-  scenario 'Successful proposals show create question button to admin users' do
+  scenario 'Successful proposals do not show create question button in index' do
     successful_proposals = create_successful_proposals
+    admin = create(:administrator)
+
+    login_as(admin.user)
 
     visit proposals_path
 
@@ -1781,16 +1855,55 @@ feature 'Successful proposals' do
         expect(page).not_to have_link "Create question"
       end
     end
+  end
 
-    login_as(create(:administrator).user)
+  scenario 'Successful proposals do not show create question button in show' do
+    successful_proposals = create_successful_proposals
+    admin = create(:administrator)
 
-    visit proposals_path
+    login_as(admin.user)
 
     successful_proposals.each do |proposal|
+      visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to have_link "Create question"
+        expect(page).not_to have_link "Create question"
       end
     end
+  end
 
+  context "Skip user verification" do
+
+    before do
+      Setting["feature.user.skip_verification"] = 'true'
+    end
+
+    after do
+      Setting["feature.user.skip_verification"] = nil
+    end
+
+    scenario "Create" do
+      author = create(:user)
+      login_as(author)
+
+      visit proposals_path
+
+      within('aside') do
+        click_link 'Create a proposal'
+      end
+
+      expect(current_path).to eq(new_proposal_path)
+
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_summary', with: 'In summary what we want is...'
+      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
+      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      check 'proposal_terms_of_service'
+
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+    end
   end
 end

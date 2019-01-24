@@ -41,7 +41,7 @@ feature "Admin newsletter emails" do
 
       expect(page).to have_css(".newsletter", count: 3)
 
-      Newsletter.all.each do |newsletter|
+      Newsletter.find_each do |newsletter|
         segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject
@@ -146,14 +146,48 @@ feature "Admin newsletter emails" do
     end
   end
 
-  scenario "Select list of users to send newsletter" do
-    UserSegments::SEGMENTS.each do |user_segment|
-      visit new_admin_newsletter_path
+  context "Counter of emails sent", :js do
 
-      fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))
-      click_button "Create Newsletter"
+    scenario "Display counter" do
+      newsletter = create(:newsletter, segment_recipient: "administrators")
+      visit admin_newsletter_path(newsletter)
 
-      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
+      accept_confirm { click_link "Send" }
+
+      expect(page).to have_content "Newsletter sent successfully"
+
+      expect(page).to have_content "1 affected users"
+      expect(page).to have_content "1 email sent"
     end
+  end
+
+  context "Select list of users to send newsletter" do
+
+    scenario "Custom user segments" do
+      UserSegments.segments.each do |user_segment|
+        visit new_admin_newsletter_path
+
+        fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))
+        click_button "Create Newsletter"
+
+        expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
+      end
+    end
+
+    scenario "Geozone segments" do
+      create(:geozone, name: "Arganzuela")
+      create(:geozone, name: "Barajas")
+      create(:geozone, name: "Centro")
+
+      Geozone.pluck(:name).each do |geozone|
+        visit new_admin_newsletter_path
+
+        fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{geozone.parameterize.underscore}"))
+        click_button "Create Newsletter"
+
+        expect(page).to have_content(I18n.t("admin.segment_recipient.#{geozone.parameterize.underscore}"))
+      end
+    end
+
   end
 end

@@ -87,6 +87,15 @@ feature 'Budgets' do
 
       expect(page).to have_content "There are no budgets"
     end
+
+    scenario "Accepting" do
+      budget.update(phase: "accepting")
+      login_as(create(:user, :level_two))
+
+      visit budgets_path
+
+      expect(page).to have_link "Create a budget investment"
+    end
   end
 
   scenario 'Index shows only published phases' do
@@ -358,8 +367,8 @@ feature 'Budgets' do
       expect(page).to have_css("#budget_heading_#{heading1.id}")
       expect(page).to have_css("#budget_heading_#{heading2.id}")
 
-      expect(page).to_not have_css("#budget_heading_#{heading3.id}")
-      expect(page).to_not have_css("#budget_heading_#{heading4.id}")
+      expect(page).not_to have_css("#budget_heading_#{heading3.id}")
+      expect(page).not_to have_css("#budget_heading_#{heading4.id}")
     end
 
     scenario "See results button is showed if the budget has finished for all users" do
@@ -398,8 +407,15 @@ feature 'Budgets' do
       user = create(:user)
       budget = create(:budget, :finished)
 
-      visit budget_path(budget)
-      expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+      visit budgets_path
+
+      within("#budget_heading") do
+        expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+      end
+
+      within("#finished_budgets") do
+        expect(page).to have_link('See results', href: "/presupuestos/#{budget.slug}/resultados")
+      end
     end
 
   end

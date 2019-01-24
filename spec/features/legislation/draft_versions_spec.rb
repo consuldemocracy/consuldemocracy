@@ -74,7 +74,9 @@ feature 'Legislation Draft Versions' do
 
         expect(page).to have_content("Final body")
         expect(page).not_to have_content("See all comments")
-        expect(page).not_to have_content("Comments")
+        within(".draft-panels") do
+          expect(page).not_to have_content("Comments")
+        end
       end
     end
   end

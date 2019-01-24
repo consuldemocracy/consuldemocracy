@@ -1,0 +1,55 @@
+ar:
+  devise_views:
+    confirmations:
+      new:
+        email_label: البريد الإلكتروني
+        submit: إعادة إرسال التعليمات
+    menu:
+      login_items:
+        login: تسجيل الدخول
+        logout: تسجيل الخروج
+    shared:
+      links:
+        login: دخول
+        new_confirmation: لم تتلق تعليمات لتنشيط حسابك؟
+        new_password: هل نسيت كلمة المرور؟
+        new_unlock: لم تتلق تعليمات الغاء القفل؟
+        signin_with_provider: تسجيل الدخول باستخدام %{provider}
+        signup: لا تمتلك حساب؟ %{signup_link}
+        signup_link: تسجيل
+    unlocks:
+      new:
+        email_label: البريد الالكتروني
+        submit: اعادة ارسال تعليمات الغاء القفل
+        title: اعادة ارسال تعليمات الغاء القفل
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: السبب
+          info: لا يمكن التراجع عن هذا الاجراء. يرجى التأكد من انك تريده.
+          info_reason: اذا كنت تريب اترك لنا سبب (اختياري)
+          submit: مسح حسابي
+          title: مسح الحساب
+        edit:
+          current_password_label: كلمة المرور الحالية
+          edit: تعديل
+          email_label: البريد الالكتروني
+          leave_blank: اترك المساحة فارغة اذا لا كنت ترغب في التعديل
+          need_current: نحتاج كلمة مروروك الحالية لتأكيد التغييرات
+          password_confirmation_label: تأكيد كلمة المرور الجديدة
+          password_label: كلمة المرور الجديدة
+          update_submit: تحديث
+          waiting_for: 'في انتظار التأكيد:'
+        new:
+          cancel: الغاء الدخول
+          email_label: البريد الالكتروني
+          organization_signup: هل تمثل اي منظمة او جماعة؟ %{signup_link}
+          organization_signup_link: قم بتسجيل الدخول هنا
+          password_confirmation_label: تأكيد كلمة المرور
+          password_label: كلمة المرور
+          redeemable_code: تم استلام رمز التحقق عبر البريد الالكتروني (اختياري)
+          submit: سجل 
+          terms: من خلال التسجبل فانك توافق على%{terms}
+          terms_link: شروط واستراطات الاستخدام
+          terms_title: من خلال التسجيل فانك تقبل شروط واحكام الاستخدام
+          title: سجل

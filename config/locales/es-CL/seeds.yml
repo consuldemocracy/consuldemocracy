@@ -1,0 +1,26 @@
+es-CL:
+  seeds:
+    organizations:
+      human_rights: Derechos Humanos
+    categories:
+      associations: Asociaciones
+      culture: Cultura
+      sports: Deportes
+      social_rights: Derechos Sociales
+      economy: Economía
+      employment: Empleo
+      equity: Equidad
+      participation: Participación
+      mobility: Movilidad
+      media: Medios
+      health: Salud
+      transparency: Transparencia
+      security_emergencies: Seguridad y Emergencias
+      environment: Medio Ambiente
+    budgets:
+      budget: Presupuesto Participativo
+      groups:
+        all_city: Toda la Ciudad
+      valuator_groups:
+        culture_and_sports: Cultura y Deportes
+        gender_and_diversity: Políticas de Género y Diversidad

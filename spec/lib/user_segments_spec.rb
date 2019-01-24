@@ -8,7 +8,7 @@ describe UserSegments do
   describe "#all_users" do
     it "returns all active users enabled" do
       active_user = create(:user)
-      erased_user  = create(:user, erased_at: Time.current)
+      erased_user = create(:user, erased_at: Time.current)
 
       expect(described_class.all_users).to include active_user
       expect(described_class.all_users).not_to include erased_user
@@ -192,8 +192,7 @@ describe UserSegments do
 
   describe "#beta_testers" do
     let(:beta_testers) do
-      %w(aranacm@madrid.es bertocq@gmail.com mariajecheca@gmail.com
-       alberto@decabeza.es voodoorai2000@gmail.com)
+      %w(aranacm@madrid.es alberto@decabeza.es voodoorai2000@gmail.com)
     end
 
     before do
@@ -201,9 +200,64 @@ describe UserSegments do
     end
 
     it "returns only users with specific emails" do
-      expect(described_class.beta_testers.count).to eq(5)
+      expect(described_class.beta_testers.count).to eq(3)
       expect(described_class.beta_testers.pluck(:email)).to match_array(beta_testers)
     end
+
+    it "returns users sorted by `created_at` attribute" do
+      users   = described_class.beta_testers.pluck(:email)
+      testers = User.order('created_at ASC').pluck(:email).last(3)
+      expect(users).to eq(testers)
+    end
+  end
+
+  context "Geozones" do
+
+    let!(:new_york) { create(:geozone, name: "New York") }
+    let!(:california) { create(:geozone, name: "California") }
+    let!(:mars) { create(:geozone, name: "Mars") }
+
+    let(:user1) { create(:user, geozone: new_york) }
+    let(:user2) { create(:user, geozone: new_york) }
+    let(:user3) { create(:user, geozone: california) }
+    let(:user4) { create(:user, geozone: mars) }
+
+    before do
+      load 'lib/user_segments.rb'
+    end
+
+    it "dynamically generates user segments for all geozones" do
+      expect(described_class).to respond_to("new_york")
+      expect(described_class).to respond_to("california")
+      expect(described_class).to respond_to("mars")
+      expect(described_class).not_to respond_to("jupiter")
+    end
+
+    it "includes geozones in available segments" do
+      expect(described_class.segments).to include("new_york")
+      expect(described_class.segments).to include("california")
+      expect(described_class.segments).to include("mars")
+      expect(described_class.segments).not_to include("jupiter")
+    end
+
+    it "does not include the generic city as a segment" do
+      expect(described_class.segments).not_to include("city")
+    end
+
+    it "returns users of a geozone" do
+      expect(described_class.new_york).to include(user1)
+      expect(described_class.new_york).to include(user2)
+      expect(described_class.new_york).not_to include(user3)
+      expect(described_class.new_york).not_to include(user4)
+    end
+
+    it "only returns active users of a geozone" do
+      user2.update(erased_at: Time.current)
+
+      expect(described_class.new_york).to include(user1)
+      expect(described_class.new_york).not_to include(user2)
+    end
+
   end
 
 end

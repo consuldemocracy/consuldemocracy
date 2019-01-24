@@ -6,6 +6,9 @@ en:
       proposals:
         form:
           custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
+      processes:
+        form:
+          film_library: Film library
     segment_recipient:
       beta_testers: "Beta testers"
     budget_investments:

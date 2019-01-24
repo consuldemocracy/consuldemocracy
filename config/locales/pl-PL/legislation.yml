@@ -1,0 +1,125 @@
+pl:
+  legislation:
+    annotations:
+      comments:
+        see_all: Zobacz wszystkie
+        see_complete: Zobacz pełne
+        comments_count:
+          one: "%{count} komentarz"
+          few: "%{count} komentarze"
+          many: "%{count} komentarze"
+          other: "%{count} komentarze"
+        replies_count:
+          one: "%{count} odpowiedz"
+          few: "%{count} odpowiedzi"
+          many: "%{count} odpowiedzi"
+          other: "%{count} odpowiedzi"
+        cancel: Anuluj
+        publish_comment: Opublikuj Komentarz
+      form:
+        phase_not_open: Ta faza nie jest otwarta
+        login_to_comment: Musisz się %{signin} lub %{signup} by zostawić komentarz.
+        signin: Zaloguj się
+        signup: Zarejestruj się
+      index:
+        title: Komentarze
+        comments_about: Komentarze na temat
+        see_in_context: Zobacz w kontekście
+      show:
+        title: Komentarz
+      version_chooser:
+        seeing_version: Komentarze dla wersji
+        see_text: Zobacz projekt tekstu
+    draft_versions:
+      changes:
+        title: Zmiany
+        seeing_changelog_version: Podsumowanie zmian rewizji
+        see_text: Zobacz projekt tekstu
+      show:
+        loading_comments: Ładowanie komentarzy
+        seeing_version: Patrzysz na wersję roboczą
+        select_draft_version: Zobacz projekt
+        select_version_submit: zobacz
+        updated_at: zaktualizowane dnia %{date}
+        see_changes: zobacz podsumowanie zmian
+        see_comments: Zobacz wszystkie komentarze
+        text_toc: Spis treści
+        text_body: Tekst
+        text_comments: Komentarze
+    processes:
+      header:
+        additional_info: Dodatkowe informacje
+        description: Opis
+        more_info: Więcej informacji i kontekst
+      proposals:
+        empty_proposals: Brak wniosków
+      debate:
+        empty_questions: Brak pytań
+        participate: Uczestniczyć w debacie
+      index:
+        filter: Filtr
+        filters:
+          open: Otwarte procesy
+          next: Następny
+          past: Ubiegły
+        no_open_processes: Nie ma otwartych procesów
+        no_next_processes: Nie ma zaplanowanych procesów
+        no_past_processes: Brak ubiegłych procesów
+        section_header:
+          icon_alt: Ikona procesów legislacyjnych
+          title: Procesy legislacyjne
+          help: Pomoc odnośnie procesów prawodawczych
+        section_footer:
+          title: Pomoc odnośnie procesów prawodawczych
+          description: Weź udział w debatach i procesach przed zatwierdzeniem zarządzenia lub akcji gminnej. Twoja opinia zostanie rozpatrzona przez Radę Miejską.
+      phase_not_open:
+        not_open: Ten etap nie jest jeszcze otwarty
+      phase_empty:
+        empty: Nic nie jest jeszcze publikowane
+      process:
+        see_latest_comments: Zobacz ostatnie komentarze
+        see_latest_comments_title: Wypowiedz się na temat tego procesu
+      shared:
+        key_dates: Najważniejsze daty
+        debate_dates: Debata
+        draft_publication_date: Projekt publikacji
+        allegations_dates: Komentarze
+        result_publication_date: Publikacja wyniku końcowego
+        proposals_dates: Wnioski
+    questions:
+      comments:
+        comment_button: Opublikuj odpowiedź
+        comments_title: Otwórz odpowiedzi
+        comments_closed: Faza zamknięta
+        form:
+          leave_comment: Zostaw swoją odpowiedź
+      question:
+        comments:
+          zero: Brak komentarzy
+          one: "%{count} komentarz"
+          few: "%{count} komentarze"
+          many: "%{count} komentarze"
+          other: "%{count} komentarze"
+        debate: Debata
+      show:
+        answer_question: Zatwierdź odpowiedź
+        next_question: Następne pytanie
+        first_question: Pierwsze pytanie
+        share: Udostępnij
+        title: Wspólny proces legislacyjny
+      participation:
+        phase_not_open: Ten etap nie jest otwarty
+        organizations: Organizacje nie mogą uczestniczyć w debacie
+        signin: Zaloguj się
+        signup: Zarejestruj się
+        unauthenticated: Muszą być %{signin} lub %{signup} do udziału.
+        verified_only: Tylko zweryfikowani użytkownicy mogą uczestniczyć, %{verify_account}.
+        verify_account: zweryfikuj swoje konto
+        debate_phase_not_open: Faza debaty została zakończona i odpowiedzi nie są już akceptowane
+    shared:
+      share: Udostępnij
+      share_comment: Komentarz odnośnie %{version_name} z projektu procesu %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorie"
+      not_verified: "W przypadku propozycji głosowania %{verify_account}."

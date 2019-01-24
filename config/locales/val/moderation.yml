@@ -47,6 +47,7 @@ val:
       flagged_comments: Comentaris
       flagged_debates: Debats
       proposals: Propostes
+      proposal_notifications: Notificacions de propostes
       users: Bloquejar usuaris
     proposals:
       index:
@@ -67,6 +68,41 @@ val:
           created_at: Más recents
           flags: Més denunciades
         title: Propostes
+    budget_investments:
+      index:
+        filters:
+          all: Totes
+          pending_flag_review: Pendents
+          with_ignored_flag: Marcats com revisats
+        headers:
+          moderate: Moderar
+          budget_investment: Pressupost participatiu
+        hide_budget_investments: Ocultar propostes d'inversió
+        ignore_flags: Marcar com revisades
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+          flags: Més denunciades
+        title: Pressupostos participatius
+    proposal_notifications:
+      index:
+        block_authors: Bloquejar autors
+        confirm: Estàs segur?
+        filter: Filtrar
+        filters:
+          all: Totes
+          pending_review: Pendents de revisió
+          ignored: Marcar com a vistes
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificacio de proposta
+        hide_proposal_notifications: Ocultar propostes
+        ignore_flags: Marcar com a vistes
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+          moderated: Moderades
+        title: Notificacions de propostes
     users:
       index:
         hidden: Bloquejat

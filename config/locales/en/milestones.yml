@@ -1,0 +1,8 @@
+en:
+  milestones:
+    index:
+      no_milestones: Don't have defined milestones
+      progress: Progress
+    show:
+      publication_date: "Published %{publication_date}"
+      status_changed: Status changed to

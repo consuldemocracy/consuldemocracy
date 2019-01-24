@@ -91,13 +91,10 @@
                               title: t("shared.go_to_page") + t("social.instagram", org: setting['org_name']) + t('shared.target_blank_html') %>
               </li>
             <% end %>
+            <%= raw content_block("footer", I18n.locale) %>
           </ul>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <%= raw content_block("footer", I18n.locale) %>
   </div>
 </footer>

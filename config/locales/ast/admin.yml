@@ -1,0 +1,500 @@
+ast:
+  admin:
+    actions:
+      hide_author: Bloquiar a l'autor
+      restore: Volver amosar
+      unmark_featured: Quitar destacáu
+      configure: Configurar
+    banners:
+      index:
+        title: Banners
+        create: Crear un banner
+        edit: Editar banner
+        delete: Esaniciar banner
+        filters:
+          with_active: Activos
+          with_inactive: Inactivos
+        preview: Vista previa
+      banner:
+        target_url: Enllaz
+        post_started_at: Entamu de publicación
+        post_ended_at: Fin de publicación
+    activity:
+      show:
+        action: Acción
+        actions:
+          hide: Despintáu
+          restore: Restauráu
+        by: Moderáu por
+        filters:
+          on_users: Usuarios
+        title: Actividá de Moderadores
+        type: Tipu
+    budgets:
+      index:
+        new_link: Crear nuevu presupuestu
+        table_investments: Propuestes d'inversión
+        table_edit_groups: Grupos de partíes
+        edit_groups: Editar grupos de partíes
+        edit_budget: Editar presupuestu
+      create:
+        notice: '¡Nueva campaña de presupuestos participativos creada con ésitu!'
+      update:
+        notice: Campaña de presupuestos participativos actualizada
+      edit:
+        title: Editar campaña de presupuestos participativos
+      new:
+        title: Nuevu presupuestu ciudadanu
+      show:
+        groups:
+          one: 1 Grupu de partíes presupuestaries
+          other: "%{count} Grupos de partíes presupuestaries"
+      form:
+        group: Nome del grupu
+        no_groups: Nun hai grupos creaos inda. Cada usuariu va poder votar nuna sola partida de cada grupu.
+        add_group: Añedir nuevu grupu
+        create_group: Crear grupu
+        add_heading: Añedir partida
+        amount: Cantidá
+        save_heading: Guardar partida
+        no_heading: Esti grupu nun tien nenguna partida asignada.
+      winners:
+        calculate: Calcular propuestes ganadores
+        calculated: Calculando ganadoras, puede tardar un minutu.
+    budget_investments:
+      index:
+        administrator_filter_all: Tolos alministradores
+        valuator_filter_all: Tolos evaluadores
+        tags_filter_all: Toles etiquetes
+        filters:
+          without_admin: Ensin alministrador
+          selected: Escoyíes
+        assigned_admin: Alministrador asignáu
+        no_admin_assigned: Ensin almin asignáu
+        feasibility:
+          feasible: "Vidable (%{price})"
+          undecided: "Ensin decidir"
+      show:
+        info: "%{budget_name} - Grupu: %{group_name} - Propuesta d'inversión %{id}"
+        edit_classification: Editar clasificación
+        by: Autor
+        sent: Fecha
+        winner:
+          title: Ganadora
+      edit:
+        assigned_valuators: Evaluaores
+        select_heading: Escoyer partida
+        tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
+      search_unfeasible: Buscar invidables
+    milestones:
+      index:
+        delete: "Esaniciar finxu"
+        milestone: Siguimientu
+        new_milestone: Crear nuevu finxu
+      new:
+        creating: Crear finxu
+      edit:
+        title: Editar finxu
+      create:
+        notice: '¡Nuevu finxu creáu con ésitu!'
+      update:
+        notice: Finxu actualizáu
+      delete:
+        notice: Finxu borráu correchamente
+    comments:
+      index:
+        filters:
+          with_confirmed_hide: Confirmaos
+        hidden_debate: Alderique ocultu
+        hidden_proposal: Propuesta oculta
+        title: Comentarios ocultos
+    debates:
+      index:
+        title: Alderiques ocultos
+    hidden_users:
+      index:
+        title: Usuarios bloquiaos
+      show:
+        email: 'Email:'
+        hidden_at: 'Bloqueao:'
+        registered_at: 'Fecha d''alta:'
+        title: Actividá del usuariu (%{user})
+    legislation:
+      processes:
+        create:
+          notice: 'Procesu creáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo crear el procesu
+        update:
+          notice: 'Procesu actualizáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo actualizar el procesu
+        destroy:
+          notice: Procesu esaniciáu correchamente
+        errors:
+          form:
+            error: Erru
+        form:
+          enabled: Habilitáu
+          process: Procesu
+          debate_phase: Fase previa
+          start: Entamu
+          end: Fin
+          use_markdown: Usa Markdown pa dar formatu al testu
+          title_placeholder: Escribe'l títulu del procesu
+          summary_placeholder: Resume curtiu de la descripción
+          description_placeholder: Añede una descripción del procesu
+          additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
+        index:
+          create: Nuevu procesu
+          title: Procesos de lexislación collaborativa
+        new:
+          title: Crear nuevu procesu de lexislación collaborativa
+          submit_button: Crear procesu
+        process:
+          creation_date: Fecha creación
+          status_closed: Pesllao
+          status_planned: Próximamente
+        subnav:
+          info: Información
+      draft_versions:
+        create:
+          notice: 'Borrador creáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo crear el borrador
+        update:
+          notice: 'Borrador Actualizáu correchamente. <a href="%{link}">Click pa velo</a>'
+          error: Nun se pudo actualizar el borrador
+        destroy:
+          notice: Borrador esaniciáu correchamente
+        edit:
+          warning: Editasti'l testu. Pa caltener de forma permanente los cambeos, nun escaezas de faer click en Guardar.
+        form:
+          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del procesu <span class="strong">%{process_title}</span>'
+          launch_text_editor: Llanzar editor de testu
+          close_text_editor: Pesllar editor de testu
+          hints:
+            final_version: Esta versión va ser publicada como Resultancia Final pa esti procesu. Esta versión non podrá comentase.
+            status:
+              draft: Puedes previsualizar como almin, naide más lu pue ver
+              published: Visible pa tol mundu
+          title_placeholder: Escribe'l títulu d'esta versión del borrador
+          changelog_placeholder: Describe cualesquier cambíu relevante cola versión anterior
+          body_placeholder: Escribe'l testu del borrador
+        index:
+          title: Versiones del borrador
+          create: Crear versión
+        new:
+          title: Crear nueva versión
+        statuses:
+          draft: Borrador
+          published: Publicáu
+      questions:
+        create:
+          notice: 'Entruga creada correchamente. <a href="%{link}">Click pa vela</a>'
+          error: La entruga nun se pudo crear
+        update:
+          notice: 'Entruga actualizada correchamente. <a href="%{link}">Click pa vela</a>'
+          error: La entruga nun se pudo actualizar
+        destroy:
+          notice: Entruga esaniciada correchamente
+        edit:
+          title: "Editar “%{question_title}”"
+        form:
+          add_option: +Añedir respuesta zarrada
+          value_placeholder: Escribe una respuesta zarrada
+        index:
+          title: Entrugues acomuñaes a esti procesu
+        new:
+          title: Crear nueva entruga
+        table:
+          question_options: Opciones de respuesta
+          answers_count: Númberu de respuestes
+          comments_count: Númberu de comentarios
+        question_option_fields:
+          remove_option: Esaniciar
+    managers:
+      index:
+        title: Xestores
+      manager:
+        add: Añedir como Xestor
+    menu:
+      admin: Menú d'alministración
+      banner: Xestionar banners
+      proposals_topics: Temes de propuestes
+      geozones: Xestionar distritos
+      hidden_proposals: Propuestes ocultes
+      administrators: Alministradores
+      moderators: Moderadores
+      poll_officers: Presidentes de mesa
+      poll_booths: Allugamientu d'urnes
+      officials: Cargos públicos
+      organizations: Organizaciones
+      stats: Estadístiques
+      signature_sheets: Fueyes de firmes
+      site_customization:
+        content_blocks: Personalizar bloques
+      title_moderated_content: Conteníu moderao
+      title_budgets: Presupuestos
+      title_profiles: Perfiles
+      legislation: Lexislación collaborativa
+    administrators:
+      administrator:
+        restricted_removal: "Sentimoslo, nun puedes esaniciate a ti mesmu de la llista"
+    valuators:
+      valuator:
+        add: Añedir como evaluaor
+      summary:
+        title: Resume d'evaluación de propuestes d'inversión
+        finished_and_feasible_count: Remataes vidables
+        finished_and_unfeasible_count: Remataes invidables
+        in_evaluation_count: N'evaluación
+        total_count: Total
+    poll_officers:
+      officer:
+        delete: Esaniciar cargu
+        entry_name: presidente de mesa
+    poll_officer_assignments:
+      index:
+        officers_title: "Llistáu de presidentes de mesa asignaos"
+        no_officers: "Nun hai presidentes de mesa asignaos a esta votación."
+      by_officer:
+        date: "Fecha"
+        booth: "Urna"
+        assignments: "Turnos como presidente de mesa nesta votación"
+        no_assignments: "Nun tien turnos como presidente de mesa nesta votación."
+    poll_shifts:
+      new:
+        shift: "Asignación"
+    poll_booth_assignments:
+      flash:
+        destroy: "Urna ensin asignar"
+        create: "Urna asignada"
+        error_destroy: "Producióse un erru al ensin asignar la urna"
+        error_create: "Producióse un erru al intentar asignar la urna"
+      show:
+        officers: "Presidentes de mesa"
+        officers_list: "Llista de presidentes de mesa asignaos a esta urna"
+        no_officers: "Nun hai presidentes de mesa pa esta urna"
+        recounts: "Recuentos"
+        recounts_list: "Llista de recuentos d'esta urna"
+        count_by_system: "Votos (automáticu)"
+      index:
+        booths_title: "Llistáu d'urnes asignaes"
+        no_booths: "Nun hai urnes asignaes a esta votación."
+    polls:
+      index:
+        create: "Crear votación"
+        dates: "Feches"
+      new:
+        title: "Nueva votación"
+      edit:
+        title: "Editar votación"
+        submit_button: "Actualizar votación"
+      show:
+        questions_tab: Entrugues
+        booths_tab: Urnes
+        recounts_tab: Recuentos
+        no_questions: "Nun hai entrugues asignaes a esta votación."
+        questions_title: "Llistáu d'entrugues asignaes"
+      flash:
+        question_added: "Entruga añedida a esta votación"
+        error_on_question_added: "Non pudo asignase la entruga"
+    questions:
+      index:
+        no_questions: "Nun hai nenguna entruga ciudadana."
+        filter_poll: Peñerar por votación
+        select_poll: Escoyer votación
+        successful_proposals_tab: "Propuestes que superaron l'estragal"
+      edit:
+        title: "Editar entruga ciudadana"
+      new:
+        title: "Crear entruga ciudadana"
+      show:
+        valid_answers: Respuestes válides
+    recounts:
+      index:
+        no_recounts: "Nun hai nada de lo que faer recuentu"
+    results:
+      index:
+        no_results: "Nun hai resultancies"
+    booths:
+      index:
+        add_booth: "Añedir urna"
+      new:
+        title: "Nueva urna"
+        submit_button: "Crear urna"
+      edit:
+        title: "Editar urna"
+        submit_button: "Actualizar urna"
+    officials:
+      edit:
+        destroy: Esaniciar condición de 'Cargu Públicu'
+        title: 'Cargos Públicos: Editar usuariu'
+      flash:
+        official_destroyed: 'Datos guardaos: l''usuariu yá nun ye cargu públicu'
+        official_updated: Datos del cargu públicu guardaos
+      level_0: Nun ye cargu públicu
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
+      search:
+        edit_official: Editar cargu públicu
+        make_official: Convertir en cargo público
+        title: 'Cargos Públicos: Búsqueda de usuarios'
+    organizations:
+      index:
+        filters:
+          rejected: Rechazadas
+          verified: Verificadas
+        hidden_count_html:
+          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
+          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
+        reject: Rechazar
+        search_placeholder: Nombre, email o teléfono
+        verify: Verificar
+      search:
+        title: Buscar Organizaciones
+    settings:
+      flash:
+        updated: Valor actualizado
+      index:
+        feature_flags: Funcionalidades
+        features:
+          enabled: "Funcionalidad activada"
+          disabled: "Funcionalidad desactivada"
+          enable: "Activar"
+          disable: "Desactivar"
+    shared:
+      booths_search:
+        placeholder: Buscar urna por nombre
+      poll_officers_search:
+        placeholder: Buscar presidentes de mesa
+      poll_questions_search:
+        placeholder: Buscar preguntas
+      proposal_search:
+        placeholder: Buscar propuestas por título, código, descripción o pregunta
+      spending_proposal_search:
+        placeholder: Buscar propuestas por título o descripción
+      user_search:
+        placeholder: Buscar usuario por nombre o email
+      no_search_results: "No se han encontrado resultados."
+    spending_proposals:
+      index:
+        summary_link: "Resumen de propuestas"
+        valuator_summary_link: "Resumen de evaluadores"
+      show:
+        heading: "Propuesta de inversión %{id}"
+      summary:
+        title: Resumen de propuestas de inversión
+        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
+    geozones:
+      index:
+        title: Distritos
+        create: Crear un distrito
+      geozone:
+        external_code: Código externo
+        census_code: Código del censo
+        coordinates: Coordenadas
+      edit:
+        editing: Editando distrito
+      new:
+        creating: Crear distrito
+      delete:
+        success: Distrito borrado correctamente
+        error: No se puede borrar el distrito porque ya tiene elementos asociados
+    signature_sheets:
+      no_signature_sheets: "No existen hojas de firmas"
+      index:
+        title: Hojas de firmas
+        new: Nueva hoja de firmas
+      new:
+        document_numbers_note: "Introduce los números separados por comas (,)"
+        submit: Crear hoja de firmas
+      show:
+        created_at: Creado
+        document_count: "Número de documentos:"
+        verified:
+          one: "Hay %{count} firma válida"
+          other: "Hay %{count} firmas válidas"
+        unverified:
+          one: "Hay %{count} firma inválida"
+          other: "Hay %{count} firmas inválidas"
+        unverified_error: (No verificadas por el Padrón)
+        loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
+    stats:
+      show:
+        stats_title: Estadísticas
+        summary:
+          comment_votes: Votos en comentarios
+          debate_votes: Votos en debates
+          proposal_votes: Votos en propuestas
+          budgets: Presupuestos abiertos
+          user_level_three: Usuarios de nivel tres
+          user_level_two: Usuarios de nivel dos
+          users: Usuarios
+          verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+        incomplete_verifications: Verificaciones incompletas
+      direct_messages:
+        users_who_have_sent_message: Usuarios que han enviado un mensaje privado
+      proposal_notifications:
+        proposals_with_notifications: Propuestas con notificaciones
+    tags:
+      index:
+        add_tag: Añade un nuevo tema de propuesta
+        title: Temas de propuesta
+      name:
+        placeholder: Escribe el nombre del tema
+    users:
+      columns:
+        roles: Funciones
+        verification_level: Nivel de verficación
+      search:
+        placeholder: Buscar usuario por email, nombre o DNI
+    verifications:
+      index:
+        phone_not_given: No ha dado su teléfono
+        sms_code_not_confirmed: No ha introducido su código de seguridad
+    site_customization:
+      content_blocks:
+        create:
+          notice: Bloque creado correctamente
+          error: No se ha podido crear el bloque
+        update:
+          notice: Bloque actualizado correctamente
+          error: No se ha podido actualizar el bloque
+        destroy:
+          notice: Bloque borrado correctamente
+        edit:
+          title: Editar bloque
+        index:
+          create: Crear nuevo bloque
+          delete: Borrar bloque
+          title: Bloques
+      images:
+        index:
+          title: Personalizar imágenes
+        update:
+          notice: Imagen actualizada correctamente
+          error: No se ha podido actualizar la imagen
+        destroy:
+          notice: Imagen borrada correctamente
+          error: No se ha podido borrar la imagen
+      pages:
+        create:
+          notice: Página creada correctamente
+          error: No se ha podido crear la página
+        update:
+          notice: Página actualizada correctamente
+          error: No se ha podido actualizar la página
+        destroy:
+          notice: Página eliminada correctamente
+        edit:
+          title: Editar %{page_title}
+        index:
+          create: Crear nueva página
+          delete: Borrar página
+          see_page: Ver página
+        new:
+          title: Página nueva

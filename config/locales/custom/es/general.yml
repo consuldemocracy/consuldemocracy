@@ -6,12 +6,6 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
       user_permission_create_budget_investments: Crear proyectos de gasto*
       user_permission_votes: Participar en todas las consultas*
-  answers:
-    index:
-      title: Respuesta enviada
-      sent: Tu respuesta ha sido enviada. Gracias por participar.
-    new:
-      send: Enviar respuesta
   comments:
     form:
       leave_reply: Deja tu respuesta
@@ -42,6 +36,9 @@ es:
         title: Ayuda sobre los debates ciudadanos
         description: Inicia un debate para compartir puntos de vista con otras personas sobre los temas que te preocupan de la ciudad de Madrid.
         help_text_1: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas, preferentemente relacionados con la ciudad de Madrid."
+        help_text_3: "Ten en cuenta que un debate no activa ningún mecanismo de actuación concreto. Si quieres hacer una %{proposal} para la ciudad o plantear un proyecto de %{budget} cuando se abra la convocatoria, ve a la sección correspondiente."
+        proposals_link: propuesta
+        budget_link: presupuestos participativos
     show:
       questions:
         one: 1 pregunta
@@ -69,6 +66,10 @@ es:
       sub_proceeding: "Derecho"
       proposal_type: Tipo de propuesta
       tags_label: Tags
+    proposal:
+      reason_for_supports_necessary: 1% del Censo
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
   polls:
     index:
       title: Consultas ciudadanas del Ayuntamiento Madrid
@@ -122,6 +123,7 @@ es:
       transparency_title: Transparencia
       transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_url: http://transparencia.madrid.es
+      faq: Asistencia técnica
     header:
       logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
       external_link_opendata: Datos abiertos
@@ -220,9 +222,10 @@ es:
       different_district_active_info: "(Si retiras todos los votos de este distrito puedes seleccionar otro)"
     results:
       page_title: "Presupuestos participativos | Resultados"
-      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      heading: "PRESUPUESTOS PARTICIPATIVOS 2016"
       results_link: Resultados
       stats_link: "Estadísticas de participación"
+      executions_link: "Seguimiento"
       geozone_selection_title: "Ámbito de actuación"
       spending_proposal: Título
       ballot_lines_count: Votos
@@ -235,9 +238,10 @@ es:
       discarded: "Propuesta de inversión descartada: "
     stats:
       page_title: "Presupuestos participativos | Estadísticas de participación"
-      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      heading: "PRESUPUESTOS PARTICIPATIVOS 2016"
       results_link: Resultados
       stats_link: "Estadísticas de participación"
+      executions_link: "Seguimiento"
   ballots:
     show:
       city_link: Votar para toda la ciudad

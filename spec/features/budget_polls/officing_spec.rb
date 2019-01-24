@@ -33,7 +33,7 @@ feature 'Budget Poll Officing' do
     expect(page).to have_content("Total recounts and results")
   end
 
-  scenario 'Do not show sidebar menus if officer has no shifts assigned' do
+  scenario 'Do not show sidebar menu if officer has no shifts assigned' do
     user = create(:user)
     officer = create(:poll_officer, user: user)
 
@@ -54,7 +54,7 @@ feature 'Budget Poll Officing' do
       login_as user
       visit officing_root_path
 
-      expect(page).to_not have_link("Decide Madrid Polling", href: "/officing")
+      expect(page).not_to have_link("Decide Madrid Polling", href: "/officing")
     end
 
     scenario "Polling officers header menu" do
@@ -64,9 +64,8 @@ feature 'Budget Poll Officing' do
       login_as user
       visit officing_root_path
 
-      expect(page).to_not have_link("Polling officers", href: "/officing")
+      expect(page).not_to have_link("Polling officers", href: "/officing")
     end
 
   end
-
 end

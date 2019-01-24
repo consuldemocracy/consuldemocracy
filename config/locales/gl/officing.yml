@@ -1,0 +1,68 @@
+gl:
+  officing:
+    header:
+      title: Votacións
+    dashboard:
+      index:
+        title: Presidir mesas de votacións
+        info: Aquí podes validar documentos da cidadanía e gardar os resultados das urnas
+        no_shifts: Hoxe non tes quenda de presidente de mesa.
+    menu:
+      voters: Validar documento
+      total_recounts: Reconto total e escrutinio
+    polls:
+      final:
+        title: Listaxe de votacións rematadas
+        no_polls: Non tes permiso para o reconto final en ningunha votación recente
+        select_poll: Escolle votación
+        add_results: Engadir resultados
+    results:
+      flash:
+        create: "Gardaronse os resultados"
+        error_create: "Os resultados non se gardaron pois houbo un erro nos datos."
+        error_wrong_booth: "A urna non é correcta e os resultados non se gardaron."
+      new:
+        title: "%{poll} - Engadir resultados"
+        not_allowed: "Non tes permisos para inserir resultados"
+        booth: "Urna"
+        date: "Día"
+        select_booth: "Elixe urna"
+        ballots_white: "Papeletas totalmente en blanco"
+        ballots_null: "Papeletas nulas"
+        ballots_total: "Papeletas totales"
+        submit: "Guardar"
+        results_list: "Os teus resultados"
+        see_results: "Ver resultados"
+      index:
+        no_results: "Ningún resultado"
+        results: Resultados
+        table_answer: Resposta
+        table_votes: Votos
+        table_whites: "Papeletas totalmente en branco"
+        table_nulls: "Papeletas nulas"
+        table_total: "Papeletas totais"
+    residence:
+      flash:
+        create: "Documento verificado co padrón"
+        not_allowed: "Hoxe non tes quenda de presidente de mesa"
+      new:
+        title: Validar documento
+        document_number: "Número de documento (con letra)"
+        submit: Validar documento
+        error_verifying_census: "O Servizo de padrón non puido verificar este documento."
+        form_errors: evitaron verificar este documento
+        no_assignments: "Non tes quenda de presidente de mesa"
+    voters:
+      new:
+        title: Votacións
+        table_poll: Votación
+        table_status: Estado das votacións
+        table_actions: Accións
+        not_to_vote: A persoa decidiu non votar neste intre
+      show:
+        can_vote: Pode votar
+        error_already_voted: Xa participou nesta votación
+        submit: Confirmar o voto
+        success: "Voto introducido!"
+      can_vote:
+        submit_disable_with: "Agarda, confirmándose o voto..."

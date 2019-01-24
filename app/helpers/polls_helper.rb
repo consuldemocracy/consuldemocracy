@@ -46,11 +46,26 @@ module PollsHelper
   end
 
   def voted_before_sign_in(question)
-    question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at >= vote.updated_at }
+    question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at > vote.updated_at }
   end
 
   def show_link_to_first_voting?(poll)
     poll.starts_at == Time.parse('13-02-2017') && poll.ends_at == Time.parse('19-02-2017')
   end
 
+  def show_stats_or_results?
+    @poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)
+  end
+
+  def results_menu?
+    controller_name == "polls" && action_name == "results"
+  end
+
+  def stats_menu?
+    controller_name == "polls" && action_name == "stats"
+  end
+
+  def info_menu?
+    controller_name == "polls" && action_name == "show"
+  end
 end

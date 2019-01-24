@@ -5,7 +5,7 @@ class Officing::BoothController < Officing::BaseController
   before_action :verify_officer_assignment
 
   def new
-    @booths = todays_booths_for_officer(current_user.poll_officer)
+    @booths = current_user.poll_officer.todays_booths
   end
 
   def create

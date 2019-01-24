@@ -205,7 +205,7 @@ namespace :polls do
 
   desc "Create Poll Question Answer for each Poll Question still with valid_answers values"
     task migrate_poll_question_valid_answers: :environment do
-      Poll::Question.all.each do |question|
+      Poll::Question.find_each do |question|
         valid_answers = question.valid_answers&.try(:split, ',')
         next unless valid_answers.present?
         valid_answers.each do |valid_answer|

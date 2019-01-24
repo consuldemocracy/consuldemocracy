@@ -1,0 +1,125 @@
+de:
+  legislation:
+    annotations:
+      comments:
+        see_all: Alle anzeigen
+        see_complete: Vollständig anzeigen
+        comments_count:
+          one: "%{count} Kommentar"
+          other: "%{count} Kommentare"
+        replies_count:
+          one: "%{count} Antwort"
+          other: "%{count} Antworten"
+        cancel: Abbrechen
+        publish_comment: Kommentar veröffentlichen
+      form:
+        phase_not_open: Diese Phase ist nicht geöffnet
+        login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
+        signin: Anmelden
+        signup: Registrierung
+      index:
+        title: Kommentare
+        comments_about: Kommentare über
+        see_in_context: Im Kontext sehen
+        comments_count:
+          one: "%{count} Kommentar"
+          other: "%{count} Kommentare"
+      show:
+        title: Kommentar
+      version_chooser:
+        seeing_version: Kommentare für Version
+        see_text: Siehe Text-Entwurf
+    draft_versions:
+      changes:
+        title: Änderungen
+        seeing_changelog_version: Änderungszusammenfassung
+        see_text: Nächsten Entwurf sehen
+      show:
+        loading_comments: Kommentare werden geladen
+        seeing_version: Sie sehen den Entwurf
+        select_draft_version: Entwurf auswählen
+        select_version_submit: sehen
+        updated_at: aktualisiert am %{date}
+        see_changes: Zusammenfassung der Änderungen ansehen
+        see_comments: Alle Kommentare anzeigen
+        text_toc: Inhaltsverzeichnis
+        text_body: Text
+        text_comments: Kommentare
+    processes:
+      header:
+        additional_info: Weitere Informationen
+        description: Beschreibung
+        more_info: Mehr Information
+      proposals:
+        empty_proposals: Es gibt keine Vorschläge
+        filters:
+          random: Zufällig
+          winners: Ausgewählt
+      debate:
+        empty_questions: Es gibt keine Fragen
+        participate: An Diskussion teilnehmen
+      index:
+        filter: Filter
+        filters:
+          open: Laufende Verfahren
+          next: Geplante
+          past: Vorherige
+        no_open_processes: Es gibt keine offenen Verfahren
+        no_next_processes: Es gibt keine geplanten Prozesse
+        no_past_processes: Es gibt keine vergangene Prozesse
+        section_header:
+          icon_alt: Gesetzgebungsverfahren Icon
+          title: Gesetzgebungsverfahren
+          help: Hilfe zu Gesetzgebungsverfahren
+        section_footer:
+          title: Hilfe zu Gesetzgebungsverfahren
+          description: Nehmen Sie an Debatten und Verfahren teil, bevor eine Verordnung oder eine kommunale Handlung genehmigt wird. Ihre Meinung wird vom Stadtrat berücksichtigt.
+      phase_not_open:
+        not_open: Diese Phase ist noch nicht geöffnet
+      phase_empty:
+        empty: Keine Veröffentlichung bisher
+      process:
+        see_latest_comments: Neueste Kommentare anzeigen
+        see_latest_comments_title: Kommentar zu diesem Prozess
+      shared:
+        key_dates: Die wichtigsten Termine
+        debate_dates: Diskussion
+        draft_publication_date: Veröffentlichungsentwurf
+        allegations_dates: Kommentare
+        result_publication_date: Veröffentlichung Endergebnis
+        proposals_dates: Vorschläge
+    questions:
+      comments:
+        comment_button: Antwort veröffentlichen
+        comments_title: Offene Antworten
+        comments_closed: Phase geschlossen
+        form:
+          leave_comment: Antwort hinterlassen
+      question:
+        comments:
+          zero: Keine Kommentare
+          one: "%{count} Kommentar"
+          other: "%{count} Kommentare"
+        debate: Diskussion
+      show:
+        answer_question: Antwort einreichen
+        next_question: Nächste Frage
+        first_question: Erste Frage
+        share: Teilen
+        title: kollaboratives Gesetzgebungsverfahren
+      participation:
+        phase_not_open: Diese Phase ist noch nicht geöffnet
+        organizations: Organisationen dürfen sich nicht an der Diskussion beteiligen
+        signin: Anmelden
+        signup: Registrieren
+        unauthenticated: Sie müssen %{signin} oder %{signup}, um teilzunehmen.
+        verified_only: 'Nur verifizierte Benutzer können teilnehmen: %{verify_account}.'
+        verify_account: Verifizieren Sie Ihr Benutzerkonto
+        debate_phase_not_open: Diskussionsphase ist beendet. Antworden werden nicht mehr angenommen
+    shared:
+      share: Teilen
+      share_comment: Kommentieren Sie %{version_name} vom Prozessentwurf %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorien"
+      not_verified: "Für Wahlvorschläge %{verify_account}."

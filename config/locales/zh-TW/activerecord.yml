@@ -1,0 +1,306 @@
+zh-TW:
+  activerecord:
+    models:
+      activity:
+        other: "活動"
+      budget:
+        other: "預算"
+      budget/investment:
+        other: "投資"
+      milestone:
+        other: "里程碑"
+      milestone/status:
+        other: "投資狀態"
+      comment:
+        other: "評論"
+      debate:
+        other: "辯論"
+      tag:
+        other: "標籤"
+      user:
+        other: "用戶"
+      moderator:
+        other: "版主"
+      administrator:
+        other: "管理員"
+      valuator:
+        other: "評估員"
+      valuator_group:
+        other: "評估小組"
+      manager:
+        other: "經理"
+      newsletter:
+        other: "通訊"
+      vote:
+        other: "票"
+      organization:
+        other: "組織"
+      poll/booth:
+        other: "投票亭"
+      poll/officer:
+        other: "職員"
+      proposal:
+        other: "公民提議"
+      spending_proposal:
+        other: "投資項目"
+      site_customization/page:
+        other: 自定義頁面
+      site_customization/image:
+        other: 自定義圖像
+      site_customization/content_block:
+        other: 自定義內容塊
+      legislation/process:
+        other: "過程"
+      legislation/draft_versions:
+        other: "草稿版本"
+      legislation/draft_texts:
+        other: "草稿"
+      legislation/questions:
+        other: "問題"
+      legislation/question_options:
+        other: "問題選項"
+      legislation/answers:
+        other: "答案"
+      documents:
+        other: "文件"
+      images:
+        other: "圖像"
+      topic:
+        other: "主題"
+      poll:
+        other: "投票"
+      proposal_notification:
+        other: "提議通知"
+    attributes:
+      budget:
+        name: "名字"
+        description_accepting: "在接受階段中的說明"
+        description_reviewing: "在審閱階段中的說明"
+        description_selecting: "在選擇階段中的說明"
+        description_valuating: "在評估計價階段中的說明"
+        description_balloting: "在投票階段中的說明"
+        description_reviewing_ballots: "在審查點票階段中的說明"
+        description_finished: "預算完成時的說明"
+        phase: "階段"
+        currency_symbol: "貨幣"
+      budget/investment:
+        heading_id: "標題"
+        title: "標題"
+        description: "說明"
+        external_url: "鏈接到其他文檔"
+        administrator_id: "管理員"
+        location: "地點 (可選擇填寫)"
+        organization_name: "如果您以集體/組織的名義，或代表多人提出建議，請寫下其名稱"
+        image: "建議說明性圖像"
+        image_title: "圖像標題"
+      milestone:
+        status_id: "當前投資狀況 (可選擇填寫)"
+        title: "標題"
+        description: "說明 (如果已經指定了狀態, 則可選擇填寫)"
+        publication_date: "出版日期"
+      milestone/status:
+        name: "名字"
+        description: "說明 (可選擇填寫)"
+      budget/heading:
+        name: "標題名稱"
+        price: "價格"
+        population: "人口"
+      comment:
+        body: "評論"
+        user: "用戶"
+      debate:
+        author: "作者"
+        description: "意見"
+        terms_of_service: "服務條款"
+        title: "標題"
+      proposal:
+        author: "作者"
+        title: "標題"
+        question: "問題"
+        description: "說明"
+        terms_of_service: "服務條款"
+      user:
+        login: "電子郵件或用戶名"
+        email: "電郵"
+        username: "用戶名"
+        password_confirmation: "密碼確認"
+        password: "密碼"
+        current_password: "當前密碼"
+        phone_number: "電話號碼"
+        official_position: "正式職位"
+        official_level: "正式級別"
+        redeemable_code: "通過電子郵件收到的驗證代碼"
+      organization:
+        name: "組織名稱"
+        responsible_name: "組織的負責人"
+      spending_proposal:
+        administrator_id: "管理員"
+        association_name: "協會名稱"
+        description: "說明"
+        external_url: "鏈接到其他文檔"
+        geozone_id: "經營範圍"
+        title: "標題"
+      poll:
+        name: "名字"
+        starts_at: "開始日期"
+        ends_at: "截止日期"
+        geozone_restricted: "受地理區域（geozone）限制"
+        summary: "總結"
+        description: "說明"
+      poll/question:
+        title: "問題"
+        summary: "總結"
+        description: "說明"
+        external_url: "鏈接到其他文檔"
+      signature_sheet:
+        signable_type: "可簽名類型"
+        signable_id: "可簽名 ID"
+        document_numbers: "文檔編號"
+      site_customization/page:
+        content: 內容
+        created_at: 創建於
+        subtitle: 副標題
+        slug: Slug
+        status: 狀態
+        title: 標題
+        updated_at: 更新於
+        more_info_flag: 在説明頁中顯示
+        print_content_flag: '"列印內容" 按鈕'
+        locale: 語言
+      site_customization/image:
+        name: 名字
+        image: 圖像
+      site_customization/content_block:
+        name: 名字
+        locale: 地區
+        body: 內容
+      legislation/process:
+        title: 進程標題
+        summary: 總結
+        description: 說明
+        additional_info: 附加其他資訊
+        start_date: 開始日期
+        end_date: 結束日期
+        debate_start_date: 辯論開始日期
+        debate_end_date: 辯論結束日期
+        draft_publication_date: 草稿發佈日期
+        allegations_start_date: 指控開始日期
+        allegations_end_date: 指控結束日期
+        result_publication_date: 最終結果發佈日期
+      legislation/draft_version:
+        title: 版本標題
+        body: 文本
+        changelog: 變化
+        status: 狀態
+        final_version: 最終版本
+      legislation/question:
+        title: 標題
+        question_options: 選項
+      legislation/question_option:
+        value: 價值
+      legislation/annotation:
+        text: 評論
+      document:
+        title: 標題
+        attachment: 附件
+      image:
+        title: 標題
+        attachment: 附件
+      poll/question/answer:
+        title: 答案
+        description: 說明
+      poll/question/answer/video:
+        title: 標題
+        url: 外部視頻
+      newsletter:
+        segment_recipient: 收件者
+        subject: 主題
+        from: 從
+        body: 電子郵件內容
+      widget/card:
+        label: 標籤 (可選擇填寫)
+        title: 標題
+        description: 說明
+        link_text: 鏈接文本
+        link_url: 鏈接 URL
+      widget/feed:
+        limit: 項目數
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "此用戶已有密碼"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "標記必須小於或等於%{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "您已達到每天的最大私人消息數"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "圖像寬度必須至少為%{required_min_width}像素"
+              min_image_height: "圖像高度必須至少為%{required_min_height}像素"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "用戶收件段無效"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "用戶收件段無效"
+        map_location:
+          attributes:
+            map:
+              invalid: 地圖位置不能為空。 如果不需要地理定位（geolocalization），請放置標記，或選中復選框
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "不在人口普查中的文檔"
+              has_voted: "用戶已經投票"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: 必須在開始日期或之後
+            debate_end_date:
+              invalid_date_range: 必須在辯論開始日期或之後
+            allegations_end_date:
+              invalid_date_range: 必須在指控開始日期或之後
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "標記必須小於或等於 %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "標記必須小於或等於%{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "在通知之間，您必須至少等待%{interval} 天"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: '未通過人口普查核實'
+              already_voted: '這個提案已經被投票'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "必須是字母，數字，_ 和-"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "寬度必須為%{required_width}像素"
+              image_height: "高度必須為%{required_height}像素"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: '你不能對評估作評論'
+      messages:
+        record_invalid: "驗證失敗: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "無法刪除記錄, 因為有依賴的%{record} 存在"
+          has_many: "無法刪除記錄, 因為有依賴的%{record} 存在"

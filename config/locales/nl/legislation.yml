@@ -1,0 +1,121 @@
+nl:
+  legislation:
+    annotations:
+      comments:
+        see_all: Bekijk alles
+        see_complete: Bekijk compleet
+        comments_count:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+        replies_count:
+          one: "%{count} antwoord"
+          other: "%{count} antwoorden"
+        cancel: Cancel
+        publish_comment: Publiceer reactie
+      form:
+        phase_not_open: Deze fase is niet open
+        login_to_comment: Je moet %{signin} of %{signup} om een reactie achter te laten
+        signin: Inloggen
+        signup: Registreren
+      index:
+        title: Reacties
+        comments_about: Reacties over
+        see_in_context: Bekijk in de context
+        comments_count:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+      show:
+        title: Reactie
+      version_chooser:
+        seeing_version: Reacties voor versie
+        see_text: Bekijk concept tekst
+    draft_versions:
+      changes:
+        title: Wijzigingen
+        seeing_changelog_version: Samenvatting van de wijzigingen
+        see_text: Bekijk concept tekst
+      show:
+        loading_comments: Reacties worden geladen
+        seeing_version: Je bekijkt nu de concept versie
+        select_draft_version: Selecteer concept
+        select_version_submit: bekijk
+        updated_at: bijgewerkt op %{date}
+        see_changes: Bekijk de samenvatting van de wijzigingen
+        see_comments: Bekijk alle reacties
+        text_toc: Inhoudsopgave
+        text_body: Tekst
+        text_comments: Reacties
+    processes:
+      header:
+        additional_info: Aanvullende informatie
+        description: Beschrijving
+        more_info: Meer informatie
+      proposals:
+        empty_proposals: Er zijn geen voorstellen
+      debate:
+        empty_questions: Er zijn geen vragen
+        participate: Neem deel aan discussies
+      index:
+        filter: Filter
+        filters:
+          open: Open processen
+          next: Toekomstige
+          past: Vorige
+        no_open_processes: Er zijn geen open processen
+        no_next_processes: Er zijn geen toekomstige plannen
+        no_past_processes: Er zijn geen afgesloten plannen
+        section_header:
+          icon_alt: Plannen icoon
+          title: Plannen
+          help: Hulp bij plannen
+        section_footer:
+          title: Hulp bij plannen
+          description: Neem deel aan discussies en plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering vanuit de gemeente. Jouw mening wordt meegenomen door je gemeente.
+      phase_not_open:
+        not_open: Deze fase is nog niet gestart.
+      phase_empty:
+        empty: Nog niets gepubliceerd
+      process:
+        see_latest_comments: Bekijk de laatste reacties
+        see_latest_comments_title: Reageer op dit proces
+      shared:
+        key_dates: Data
+        debate_dates: Discussie
+        draft_publication_date: Concept publicatie
+        result_publication_date: Eindversie publicatie
+        proposals_dates: Voorstellen
+    questions:
+      comments:
+        comment_button: Publiceer antwoord
+        comments_title: Open antwoorden
+        comments_closed: Gesloten fase
+        form:
+          leave_comment: Laat jouw antwoord achter
+      question:
+        comments:
+          zero: Geen reacties
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+        debate: Discussie
+      show:
+        answer_question: Antwoord indienen
+        next_question: Volgende vraag
+        first_question: Eerste vraag
+        share: Deel
+        title: Samenwerken in plannen
+      participation:
+        phase_not_open: Deze fase is nog niet gestart
+        organizations: Deelname van organisaties in discussies is niet toegestaan
+        signin: Inloggen
+        signup: Registreren
+        unauthenticated: Je moet %{signin} of %{signup} om deel te nemen.
+        verified_only: Alleen geverifieerde gebruikers kunnen deelnemen, %{verify_account}.
+        verify_account: Verifieer je account
+        debate_phase_not_open: Discussiefase is gesloten en reacties worden niet meer geaccepteerd.
+    shared:
+      share: Deel
+      share_comment: Geef een reactie op %{version_name} van het concept proces %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorieen"
+      not_verified: "Voor stemvoorstellen %{verify_account}."

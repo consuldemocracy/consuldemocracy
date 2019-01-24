@@ -1,29 +1,4 @@
-inherit_from: .rubocop_todo.yml
-require: rubocop-rspec
-
-AllCops:
-  DisplayCopNames: true
-  DisplayStyleGuide: true
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-  Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
-  TargetRubyVersion: 2.3
-  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
-  # to ignore them, so only the ones explicitly set in this file are enabled.
-  DisabledByDefault: true
-
-Metrics/LineLength:
-  Max: 100
-
-Layout/IndentationConsistency:
-  EnforcedStyle: rails
-
-Layout/EndOfLine:
-  EnforcedStyle: lf
+inherit_from: .rubocop_basic.yml
 
 Bundler/DuplicatedGem:
   Enabled: true
@@ -274,9 +249,6 @@ RSpec/DescribeMethod:
 RSpec/DescribeSymbol:
   Enabled: true
 
-RSpec/DescribedClass:
-  Enabled: true
-
 RSpec/EmptyExampleGroup:
   Enabled: true
 
@@ -361,9 +333,6 @@ RSpec/NestedGroups:
   Enabled: true
   Max: 4
 
-RSpec/NotToNot:
-  Enabled: true
-
 RSpec/OverwritingSetup:
   Enabled: true
 
@@ -419,4 +388,7 @@ Security/MarshalLoad:
   Enabled: true
 
 Security/YAMLLoad:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
   Enabled: true

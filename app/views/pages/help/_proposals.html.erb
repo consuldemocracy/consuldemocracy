@@ -7,13 +7,6 @@
       <%= t("pages.help.proposals.description",
               link: link_to(t("pages.help.proposals.link"), proposals_path)).html_safe %>
     </p>
-    <ul class="features">
-      <li>
-        <%= t("pages.help.proposals.feature_html",
-              org: setting['org_name'],
-              supports: setting['votes_for_proposal_success']).html_safe %>
-      </li>
-    </ul>
 
     <figure>
       <%= image_tag "help/proposals_#{I18n.locale}.png", alt: t("pages.help.proposals.image_alt") %>

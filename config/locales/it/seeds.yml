@@ -1,0 +1,55 @@
+it:
+  seeds:
+    settings:
+      official_level_1_name: Incarico ufficiale 1
+      official_level_2_name: Incarico ufficiale 2
+      official_level_3_name: Incarico ufficiale 3
+      official_level_4_name: Incarico ufficiale 4
+      official_level_5_name: Incarico ufficiale 5
+    geozones:
+      north_district: Distretto Nord
+      west_district: Distretto Ovest
+      east_district: Distretto Est
+      central_district: Distretto Centrale
+    organizations:
+      human_rights: Diritti Umani
+      neighborhood_association: Associazione di Quartiere
+    categories:
+      associations: Associazioni
+      culture: Cultura
+      sports: Sport
+      social_rights: Diritti Sociali
+      economy: Economia
+      employment: Occupazione
+      equity: Equità
+      sustainability: Sostenibilità
+      participation: Partecipazione
+      mobility: Mobilità
+      media: Media
+      health: Salute
+      transparency: Trasparenza
+      security_emergencies: Sicurezza ed Emergenze
+      environment: Ambiente
+    budgets:
+      budget: Bilancio Partecipativo
+      currency: '€'
+      groups:
+        all_city: Tutta la Città
+        districts: Distretti
+      valuator_groups:
+        culture_and_sports: Cultura & Sport
+        gender_and_diversity: Politiche di Genere & Diversità
+        urban_development: Sviluppo Urbano Sostenibile
+        equity_and_employment: Equità & Occupazione
+      statuses:
+        studying_project: Lo studio del progetto
+        bidding: Offerta
+        executing_project: L'esecuzione del progetto
+        executed: Eseguito
+    polls:
+      current_poll: "Votazione Corrente"
+      current_poll_geozone_restricted: "Votazione Corrente Geograficamente Ristretta"
+      incoming_poll: "Votazione Imminente"
+      recounting_poll: "Votazione a Scrutinio"
+      expired_poll_without_stats: "Votazione Scaduta senza Statistiche & Risultati"
+      expired_poll_with_stats: "Votazione Scaduta con Statistiche & Risultati"

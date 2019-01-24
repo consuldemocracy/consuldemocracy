@@ -1,0 +1,24 @@
+zh-TW:
+  documents:
+    title: 文檔
+    max_documents_allowed_reached_html: 您已到了允許文檔的最大數量！ <strong>您必須先刪除一個，然後才能上載另一個。</strong>
+    form:
+      title: 文檔
+      title_placeholder: 為文檔添加描述性的標題
+      attachment_label: 選擇文檔
+      delete_button: 刪除文檔
+      cancel_button: 取消
+      note: "以下內容類型%{accepted_content_types} 的文檔，您最多可以上載%{max_documents_allowed} 個，每個文檔最大%{max_file_size} MB。"
+      add_new_document: 添加新文檔
+    actions:
+      destroy:
+        notice: 文檔已成功刪除。
+        alert: 無法銷毀文檔。
+        confirm: 您是否確定要刪除該文檔？ 此操作將無法撤消！
+    buttons:
+      download_document: 下載檔案
+      destroy_document: 銷毀文檔
+    errors:
+      messages:
+        in_between: 必須在%{min} 和%{max} 之間
+        wrong_content_type: 內容類型%{content_type} 與任何已接受的內容類型%{accepted_content_types} 都不匹配

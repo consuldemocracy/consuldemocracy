@@ -1,0 +1,196 @@
+pl:
+  pages:
+    conditions:
+      title: Regulamin
+      subtitle: INFORMACJA PRAWNA DOTYCZĄCA WARUNKÓW UŻYTKOWANIA, PRYWATNOŚCI I OCHRONY DANYCH OSOBOWYCH OTWARTEGO PORTALU RZĄDOWEGO
+      description: Strona informacyjna na temat warunków korzystania, prywatności i ochrony danych osobowych.
+    general_terms: Regulamin
+    help:
+      title: "%{org} jest platformą do udziału mieszkańców w miejskich politykach publicznych"
+      guide: "Ten przewodnik objaśnia, do czego służy każda z sekcji %{org} i jak funkcjonuje."
+      menu:
+        debates: "Debaty"
+        proposals: "Propozycje"
+        budgets: "Budżety partycypacyjne"
+        polls: "Ankiety"
+        other: "Inne przydatne informacje"
+        processes: "Procesy"
+      debates:
+        title: "Debaty"
+        description: "W sekcji %{link} możesz przedstawiać swoją opinię na temat istotnych dla Ciebie kwestii związanych z miastem oraz dzielić się nią z innymi ludźmi. Jest to również miejsce do generowania pomysłów, które poprzez inne sekcje %{org} prowadzą do konkretnych działań ze strony Rady Miejskiej."
+        link: "debaty obywatelskie"
+        feature_html: "Możesz otwierać debaty, komentować i oceniać je przy pomocy <strong>Zgadzam się</strong> lub <strong>Nie zgadzam się</strong>. W tym celu musisz %{link}."
+        feature_link: "zarejestruj się w %{org}"
+        image_alt: "Przyciski do oceny debat"
+        figcaption: 'Przyciski "Zgadzam się" i "Nie zgadzam się" do oceniania debat.'
+      proposals:
+        title: "Propozycje"
+        description: "W sekcji %{link} możesz składać propozycje do Rady Miejskiej, celem ich wdrożenia przez ów organ. Takie wnioski wymagają poparcia, a jeśli osiągną wystarczający jego poziom, zostają poddane publicznemu głosowaniu. Propozycje zatwierdzone w głosowaniach są akceptowane i wykonywane przez Radę Miejską."
+        link: "propozycje obywatelskie"
+        image_alt: "Przycisk do popierania propozycji"
+        figcaption_html: 'Przycisk do "Popierania" propozycji.'
+      budgets:
+        title: "Budżetowanie Partycypacyjne"
+        description: "Sekcja %{link} pomaga ludziom podjąć bezpośrednią decyzję odnośnie tego, na co zostanie wydana część budżetu gminnego."
+        link: "budżety obywatelskie"
+        image_alt: "Różne fazy budżetu partycypacyjnego"
+        figcaption_html: 'Fazy "Poparcie" i "Głosowanie" budżetów partycypacyjnych.'
+      polls:
+        title: "Ankiety"
+        description: "Sekcja %{link} jest aktywowana za każdym razem, gdy propozycja osiąga 1% poparcia i przechodzi do głosowania lub gdy Rada Miejska przedkłada kwestię, w której sprawie ludzie mają zadecydować."
+        link: "ankiety"
+        feature_1: "Aby uczestniczyć w głosowaniu, musisz %{link} i zweryfikować swoje konto."
+        feature_1_link: "zarejestruj się w %{org_name}"
+      processes:
+        title: "Procesy"
+        description: "W sekcji %{link} obywatele uczestniczą w opracowywaniu i modyfikowaniu przepisów dotyczących miasta oraz mogą wyrażać własne opinie na temat polityk komunalnych w poprzednich debatach."
+        link: "procesy"
+      faq:
+        title: "Problemy techniczne?"
+        description: "Przeczytaj FAQ, aby znaleźć odpowiedzi na swoje pytania."
+        button: "Zobacz najczęściej zadawane pytania"
+        page:
+          title: "FAQ - najczęściej zadawane pytania"
+          description: "Użyj tej strony, aby odpowiadać na często zadawane pytania użytkownikom serwisu."
+          faq_1_title: "Pytanie 1"
+          faq_1_description: "To jest przykład opisu pytania pierwszego."
+      other:
+        title: "Inne przydatne informacje"
+        how_to_use: "Użyj %{org_name} w Twoim mieście"
+      how_to_use:
+        text: |-
+          Użyj tego w swoim lokalnym rządzie lub pomóż nam się rozwijać, to darmowe oprogramowanie.
+          
+          Ten Open Government Portal używa [CONSUL app](https://github.com/consul/consul 'consul github') będącego darmowym oprogramowaniem, z [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), co w prostych słowach oznacza, że ktokolwiek może za darmo używać kodu swobodnie, kopiować go, oglądać w szczegółach, modyfikować i ponownie udostępniać światu wraz z dowolnymi modyfikacjami, których sobie życzy (pozwalając innym robić to samo). Ponieważ uważamy, że kultura jest lepsza i bogatsza, gdy jest wolna.
+          
+          Jeśli jesteś programistą, możesz przejrzeć kod i pomóc nam go poprawiać na [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Użyj go w swoim lokalnym rządzie
+    privacy:
+      title: Polityka prywatności
+      subtitle: INFORMACJA DOTYCZĄCA PRYWATNOŚCI DANYCH
+      info_items:
+        - 
+          text: Nawigacja poprzez informacje dostępne w Otwartym Portalu Rządowym jest anonimowa.
+        - 
+          text: Aby skorzystać z usług zawartych w Portalu Otwartego Rządu, użytkownik musi się zarejestrować i wcześniej podać dane osobowe zgodnie z konkretnymi informacjami zawartymi w każdym typie rejestracji.
+        - 
+          text: 'Dostarczone dane zostaną włączone i przetworzone przez Radę Miejską zgodnie z opisem poniższego pliku:'
+        - 
+          subitems:
+            - 
+              field: 'Nazwa pliku:'
+              description: NAZWA PLIKU
+            - 
+              field: 'Przeznaczenie pliku:'
+              description: Zarządzanie procesami uczestniczącymi w celu kontrolowania kwalifikacji uczestniczących w nich osób oraz jedynie numeryczne i statystyczne przeliczanie wyników uzyskanych w wyniku procesów uczestnictwa obywateli.
+            - 
+              field: 'Instytucja odpowiedzialna za plik:'
+              description: INSTYTUCJA ODPOWIEDZIALNA ZA PLIK
+        - 
+          text: Zainteresowana strona może skorzystać z prawa dostępu, sprostowania, anulowania i sprzeciwu, zanim organ odpowiedzialny wskazał, z których wszystkie są zgłaszane zgodnie z art. 5 Ustawy Ekologicznej 15/1999 z 13 grudnia o Ochronie Danych Osobowych.
+        - 
+          text: Zgodnie z ogólną zasadą niniejsza strona internetowa nie udostępnia ani nie ujawnia uzyskanych informacji, z wyjątkiem sytuacji, gdy zostało to zatwierdzone przez użytkownika lub informacje są wymagane przez organ sądowy, prokuraturę lub policję sądową, lub dowolny z przypadków uregulowanych w Artykule 11 Ustawy Ekologicznej 15/1999 z 13 Grudnia O Ochronie Danych Osobowych.
+    accessibility:
+      title: Dostępność
+      description: |-
+        Dostęp do sieci oznacza możliwość dostępu do sieci i jej zawartości przez wszystkie osoby, bez względu na niepełnosprawność (fizyczną, intelektualną lub techniczną), która może powstać lub od tych, które wynikają z kontekstu użytkowania (technologiczny lub środowiskowy). Podczas projektowania stron internetowych z myślą o dostępności, wszyscy użytkownicy mogą uzyskać dostęp do treści na równych warunkach, na przykład:
+      examples:
+        - Dostarczając alternatywny tekst zamiast obrazów, pozwala użytkownikom niewidomym lub niedowidzącym na korzystanie ze specjalnych czytników, aby uzyskać dostęp do informacji.
+        - Gdy filmy mają napisy, użytkownicy z problemami ze słuchem mogą je w pełni zrozumieć.
+        - Jeśli treść jest napisana prostym i ilustrującym językiem, użytkownicy mający problem z uczeniem się są w stanie lepiej ją zrozumieć.
+        - Jeśli użytkownik ma problemy z poruszaniem się i trudności z używaniem myszy, alternatywą pomocną w nawigacji jest klawiatura.
+      keyboard_shortcuts:
+        title: Skróty klawiaturowe
+        navigation_table:
+          description: Aby móc poruszać się po tej stronie w przystępny sposób, zaprogramowano grupę kluczy szybkiego dostępu, które spinają główne sekcje ogólnego zainteresowania, wedle których strona jest zorganizowana.
+          caption: Skróty klawiaturowe dla menu nawigacji
+          key_header: Klucz
+          page_header: Strona
+          rows:
+            - 
+              key_column: 0
+              page_column: Strona Główna
+            - 
+              key_column: 1
+              page_column: Debaty
+            - 
+              key_column: 2
+              page_column: Wnioski
+            - 
+              key_column: 3
+              page_column: Głosy
+            - 
+              key_column: 4
+              page_column: Budżety partycypacyjne
+            - 
+              key_column: 5
+              page_column: Procesy legislacyjne
+        browser_table:
+          description: 'W zależności od używanego systemu operacyjnego i przeglądarki, kombinacja klawiszy będzie następująca:'
+          caption: Kombinacja klawiszy w zależności od systemu operacyjnego i przeglądarki
+          browser_header: Przeglądarka
+          key_header: Kombinacje kluczy
+          rows:
+            - 
+              browser_column: Wyszukiwarka
+              key_column: ALT + skrót, a następnie ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + skrót
+            - 
+              browser_column: Chrome
+              key_column: ALT + skrót (CTRL + ALT + skróty dla MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + skrót (CTRL + ALT + skróty dla MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + skrót
+      textsize:
+        title: Rozmiar tekstu
+        browser_settings_table:
+          description: Dostępny projekt tej strony pozwala użytkownikowi wybrać rozmiar tekstu, który mu odpowiada. Ta akcja może odbywać się w różny sposób w zależności od używanej przeglądarki.
+          browser_header: Przeglądarka
+          action_header: Działanie, które należy podjąć
+          rows:
+            - 
+              browser_column: Wyszukiwarka
+              action_column: Widok > rozmiar tekstu
+            - 
+              browser_column: Firefox
+              action_column: Widok > rozmiar
+            - 
+              browser_column: Chrome
+              action_column: Ustawienia (ikona) > Opcje > Zaawansowane > zawartość www > rozmiar tekstu
+            - 
+              browser_column: Safari
+              action_column: Widok > powiększenie / pomniejszenie
+            - 
+              browser_column: Opera
+              action_column: Widok > skala
+        browser_shortcuts_table:
+          description: 'Innym sposobem na modyfikację rozmiar tekstu jest użycie skrótów klawiaturowych zdefiniowanych w przeglądarkach, w szczególności kombinacji klawiszy:'
+          rows:
+            - 
+              shortcut_column: CTRL i + (CMD i + Mac)
+              description_column: Zwiększa rozmiar tekstu
+            - 
+              shortcut_column: CTRL i - (CMD - i na komputerze MAC)
+              description_column: Zmniejsza rozmiar tekstu
+      compatibility:
+        title: Zgodność z normami i projektowaniem wizualnym
+        description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
+    titles:
+      accessibility: Ułatwienia dostępu
+      conditions: Warunki użytkowania
+      help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
+      privacy: Polityka prywatności
+    verify:
+      code: Kod, który otrzymałeś w liście
+      email: Adres e-mail
+      info: 'Aby zweryfikować konto, wprowadź swoje dane dostępu:'
+      info_code: 'Teraz wprowadź kod otrzymany w liście:'
+      password: Hasło
+      submit: Zweryfikuj swoje konto
+      title: Zweryfikuj swoje konto

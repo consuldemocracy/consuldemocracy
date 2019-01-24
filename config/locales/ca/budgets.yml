@@ -1,0 +1,109 @@
+ca:
+  budgets:
+    ballots:
+      show:
+        title: Els meus vots
+        amount_spent: Cost total
+        remaining: "Et queden <span>%{amount}</span> per a invertir"
+        no_balloted_group_yet: "Encara no has votat projectes d'aquest grup, ¡vota!"
+        remove: Llevar vot
+        voted_html:
+          one: "Has votat <span>una</span> proposta."
+          other: "Has votat <span>%{count}</span> propostes."
+        voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
+      reasons_for_not_balloting:
+        not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+        not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
+        organization: Les organitzacions no poden votar.
+        not_selected: No es poden votar propostes inviables.
+        not_enough_money_html: "Ja has assignat el pressupost disponible. <br> <small>Recorda que pots %{change_ballot} en qualsevol moment</small>"
+        no_ballots_allowed: El període de votació està tancat.
+        change_ballot: canviar els teus vots
+    groups:
+      show:
+        title: Selecciona una opció
+        unfeasible_title: Propostes inviables
+        unfeasible: Veure propostes inviables
+        unselected_title: Propostes no seleccionades per a la votació final
+        unselected: Veure les propostes no seleccionades per a la votació final
+    phase:
+      accepting: Acceptant propostes
+      reviewing: Revisant propostes
+      selecting: Selecció de propostes
+      valuating: Avaluació de propostes
+      finished: Presupost finalitzat
+    index:
+      title: Pressupostos participatius
+    investments:
+      form:
+        tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
+        tags_label: etiquetes
+        tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
+      index:
+        title: Pressupostos participatius
+        unfeasible: Propostes d'inversió no viables
+        by_heading: "Propostes d'inversió amb àmbit: %{heading}"
+        search_form:
+          placeholder: Cercar propostes d'inversió...
+        search_results_html:
+          one: "que conté <strong>'%{search_term}'</strong>"
+          other: "que contenen <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Els meus vots
+          voted_html:
+            one: "<strong>Has votat una proposta per un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votat %{count} propostes per un valor de %{amount_spent}</strong>"
+          voted_info: Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
+          voted_info_link: canviar els teus vots
+          different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
+          change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
+          check_ballot_link: "revisar els meus vots"
+          verified_only: "Per a crear una nova proposta d'inversió %{verify}."
+          verify_account: "verifica el teu compte"
+          not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
+          sign_in: "iniciar sessió"
+          sign_up: "registrar-te"
+          by_feasibility: Per viabilitat
+          feasible: Veure les propostes d'inversió viables
+          unfeasible: Veure les propostes d'inversió inviables
+        orders:
+          random: Aleatòries
+          confidence_score: Millor valorades
+          price: Per cost
+      show:
+        author_deleted: Usuari eliminat
+        price_explanation: Informe de cost
+        unfeasibility_explanation: Informe de inviabilitat
+        code_html: 'Codi proposta d''inversió: <strong>%{code}</strong>'
+        location_html: 'Ubicació: <strong>%{location}</strong>'
+        share: Compartir
+        title: Proposta d'inversió
+        supports: suports
+        votes: Votos
+        price: cost
+      wrong_price_format: Solament pot incloure caràcters numèrics
+      investment:
+        add: Afegir
+        already_added: Ja has afegit aquesta proposta d'inversió
+        support_title: Avalar aquesta proposta
+        supports:
+          one: 1 aval
+          other: "%{count} avals"
+        give_support: Avalar
+      header:
+        check_ballot: Revisar els meus vots
+    show:
+      group: Grup
+      phase: Fase actual
+      see_results: veure resultats
+    results:
+      link: Resultats
+      page_title: "%{budget} - Resultats"
+      heading: "Resultats pressupostos participatius"
+      spending_proposal: Títol
+      ballot_lines_count: vots
+      hide_discarded_link: Amaga descartades
+      show_all_link: Mostra totes
+      amount_available: pressupost disponible
+      accepted: "Proposta d'inversió acceptada:"
+      discarded: "Proposta d'inversió descartada:"

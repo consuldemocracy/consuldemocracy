@@ -1,78 +1,117 @@
----
 nl:
   moderation:
-    header:
-      title: Moderation
     comments:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
+        block_authors: Blokkeer auteurs
+        confirm: Weet je het zeker?
         filter: Filter
         filters:
-          all: All
-          pending_flag_review: Pending
-          with_ignored_flag: Marked as viewed
+          all: Allen
+          pending_flag_review: In afwachting
+          with_ignored_flag: Markeer als gelezen
         headers:
-          comment: Comment
-          moderate: Moderate
-        hide_comments: Hide comments
-        ignore_flags: Mark as viewed
-        order: Order
+          comment: Reactie
+          moderate: Modereer
+        hide_comments: Verberg reacties
+        ignore_flags: Markeer als gelezen
+        order: order
         orders:
-          flags: Most flagged
-          newest: Newest
-        title: Comments
+          flags: Meest gemarkeerd
+          newest: Nieuwste
+        title: Reacties
     dashboard:
       index:
-        title: Moderation
+        title: Moderatie
     debates:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
+        block_authors: Blokkeer auteurs
+        confirm: Weet je het zeker?
         filter: Filter
         filters:
-          all: All
-          pending_flag_review: Pending
-          with_ignored_flag: Marked as viewed
+          all: Allen
+          pending_flag_review: In afwachting
+          with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Debate
-          moderate: Moderate
-        hide_debates: Hide debates
-        ignore_flags: Mark as viewed
+          debate: Discussieer
+          moderate: Modereer
+        hide_debates: Verberg discussies
+        ignore_flags: Markeer als gelezen
         order: Order
         orders:
-          created_at: Newest
-          flags: Most flagged
-        title: Debates
+          created_at: Nieuwste
+          flags: Meest gemarkeerde
+        title: Discussies
+    header:
+      title: Moderatie
     menu:
-      flagged_comments: Comments
-      flagged_debates: Debates
-      proposals: Proposals
-      users: Block users
+      flagged_comments: Reacties
+      flagged_debates: Discussies
+      flagged_investments: Begrotingsvoorstellen
+      proposals: Voorstellen
+      proposal_notifications: Voorgestelde notificaties
+      users: Blokkeer deelnemers
     proposals:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
+        block_authors: Blokkeer auteurs
+        confirm: Weet je het zeker?
+        filter: Filter
+        filters:
+          all: Allen
+          pending_flag_review: In afwachting van beoordeling
+          with_ignored_flag: Markeer als gelezen
+        headers:
+          moderate: Modereer
+          proposal: Voorstel
+        hide_proposals: Verberg voorstellen
+        ignore_flags: Markeer als gelezen
+        order: Op volgorde van
+        orders:
+          created_at: Meest recent
+          flags: Meest gemarkeerd
+        title: Voorstellen
+    budget_investments:
+      index:
+        block_authors: Blokkeer auteurs
+        confirm: Weet je het zeker?
+        filter: Filter
+        filters:
+          all: Allen
+          pending_flag_review: In afwachting
+          with_ignored_flag: Markeer als gelezen
+        headers:
+          moderate: Bemiddelen
+          budget_investment: Begrotingsvoorstel
+        hide_budget_investments: Verbergen begrotingsinvesteringen
+        ignore_flags: Markeer als gelezen
+        order: Bestel door
+        orders:
+          created_at: Meest recent
+          flags: Meest gemarkeerd
+        title: Begrotingsvoorstellen
+    proposal_notifications:
+      index:
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
-          pending_flag_review: Pending review
-          with_ignored_flag: Mark as viewed
+          pending_review: In afwachting van beoordeling
+          ignored: Markeer als gelezen
         headers:
-          moderate: Moderate
-          proposal: Proposal
-        hide_proposals: Hide proposals
-        ignore_flags: Mark as viewed
-        order: Order by
+          moderate: Modereer
+          proposal_notification: Voorgestelde notificaties
+        hide_proposal_notifications: Verberg voorstellen
+        ignore_flags: Markeer als gelezen
+        order: Sorteer op
         orders:
-          created_at: Most recent
-          flags: Most flagged
-        title: Proposals
+          created_at: Meest recent
+          moderated: Gemodereerd door
+        title: Voorgestelde notificaties
     users:
       index:
-        hidden: Blocked
-        hide: Block
-        search: Search
-        search_placeholder: email or name of user
-        title: Block users
-      notice_hide: User blocked. All of this user's debates and comments have been hidden.
+        hidden: Geblokkeerd
+        hide: Blokkeer
+        search: Zoek
+        search_placeholder: email of gebruikersnaam
+        title: Blokkeer deelnemers
+      notice_hide: Deelnemer geblokkeerd. Alle discussies en reacties van deze deelnemer worden verborgen.

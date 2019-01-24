@@ -79,7 +79,7 @@ module Users
     expect(find('.top-bar-right')).to have_content 'My account'
   end
 
-  def expect_to_not_be_signed_in
+  def expect_not_to_be_signed_in
     expect(find('.top-bar-right')).not_to have_content 'My account'
   end
 end

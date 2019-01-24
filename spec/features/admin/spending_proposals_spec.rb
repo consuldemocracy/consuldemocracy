@@ -623,7 +623,7 @@ feature 'Admin spending proposals' do
       proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
 
       valuator = create(:valuator, user: create(:user, username: 'Olga'))
-      SpendingProposal.all.each do |sp|
+      SpendingProposal.find_each do |sp|
         sp.valuators << valuator
       end
 

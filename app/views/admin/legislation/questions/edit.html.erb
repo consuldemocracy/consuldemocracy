@@ -1,8 +1,8 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %> - <%= @question.title %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %> - <%= @question.title %>
 <% end %>
 
-<div class="legislation-admin legislation-questions-edit legislation-questions-form row">
+<div class="legislation-questions-edit legislation-questions-form">
   <div class="small-12 column">
     <%= back_link_to admin_legislation_process_questions_path(@process), t("admin.legislation.questions.edit.back") %>
 
@@ -10,11 +10,10 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
 
-    <div class="row">
-      <div class="small-12 medium-9 column">
-        <h3><%= t("admin.legislation.questions.edit.title", question_title: @question.title) %></h3>
-      </div>
-      <div class="small-12 medium-3 column legislation-question-delete">
+    <div class="small-12 column">
+      <h3 class="inline-block"><%= t("admin.legislation.questions.edit.title", question_title: @question.title) %></h3>
+
+      <div class="float-right">
         <%= link_to t("admin.legislation.questions.index.delete"), admin_legislation_process_question_path(@process, @question),
                     method: :delete,
                     class: 'button hollow alert' %>

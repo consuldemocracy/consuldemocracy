@@ -1,15 +1,36 @@
 <h2><%= t("admin.settings.index.feature_flags") %></h2>
 
 <table>
+  <thead>
+    <tr>
+      <th><%= t("admin.settings.setting") %></th>
+      <th><%= t("admin.settings.setting_status") %></th>
+      <th><%= t("admin.settings.setting_actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @feature_flags.each do |feature_flag| %>
       <tr>
-        <td>
+        <td class="small-8">
           <strong><%= t("settings.#{feature_flag.key}") %></strong>
+          <br>
+          <span class="small">
+            <%= t("settings.#{feature_flag.key}_description", default: t("admin.settings.no_description")) %>
+          </span>
         </td>
 
         <td>
-          <%= feature_flag.enabled? ? t("admin.settings.index.features.enabled") : t("admin.settings.index.features.disabled") %>
+          <% if feature_flag.enabled? %>
+            <span class="enabled">
+              <strong>
+                <%= t ("admin.settings.index.features.enabled") %>
+              </strong>
+            </span>
+          <% else %>
+            <span class="disabled">
+              <%= t("admin.settings.index.features.disabled") %>
+            </span>
+          <% end %>
         </td>
 
         <td class="text-right">

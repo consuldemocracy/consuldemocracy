@@ -1,0 +1,337 @@
+it:
+  activerecord:
+    models:
+      activity:
+        one: "attività"
+        other: "attività"
+      budget:
+        one: "Bilancio"
+        other: "Bilanci"
+      budget/investment:
+        one: "Investimento"
+        other: "Investimenti"
+      milestone:
+        one: "traguardo"
+        other: "traguardi"
+      milestone/status:
+        one: "Status dell’investimento"
+        other: "Status dell’investimento"
+      comment:
+        one: "Commento"
+        other: "Commenti"
+      debate:
+        one: "Dibattito"
+        other: "Dibattiti"
+      tag:
+        one: "Etichetta"
+        other: "Etichette"
+      user:
+        one: "Utente"
+        other: "Utenti"
+      moderator:
+        one: "Moderatore"
+        other: "Moderatori"
+      administrator:
+        one: "Amministratore"
+        other: "Amministratori"
+      valuator:
+        one: "Stimatore"
+        other: "Stimatori"
+      valuator_group:
+        one: "Gruppo di stima"
+        other: "Gruppi di stima"
+      manager:
+        one: "Gestore"
+        other: "Dirigenti"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletter"
+      vote:
+        one: "Voto"
+        other: "Voti"
+      organization:
+        one: "Organizzazione"
+        other: "Organizzazioni"
+      poll/booth:
+        one: "seggio"
+        other: "seggi"
+      poll/officer:
+        one: "scrutatore"
+        other: "scrutatori"
+      proposal:
+        one: "Proposta cittadina"
+        other: "Proposte cittadine"
+      spending_proposal:
+        one: "Progetto d’investimento"
+        other: "Progetti d’investimento"
+      site_customization/page:
+        one: Pagina personalizzata
+        other: Pagine personalizzate
+      site_customization/image:
+        one: Immagine personalizzata
+        other: Immagini personalizzate
+      site_customization/content_block:
+        one: Blocco di contenuto personalizzato
+        other: Blocchi di contenuto personalizzati
+      legislation/process:
+        one: "Procedimento"
+        other: "Procedimenti"
+      legislation/draft_versions:
+        one: "Bozza"
+        other: "Bozze"
+      legislation/draft_texts:
+        one: "Bozza"
+        other: "Bozze"
+      legislation/questions:
+        one: "Quesito"
+        other: "Quesiti"
+      legislation/question_options:
+        one: "Opzione quesito"
+        other: "Opzioni quesito"
+      legislation/answers:
+        one: "Risposta"
+        other: "Risposte"
+      documents:
+        one: "Documento"
+        other: "Documenti"
+      images:
+        one: "Immagine"
+        other: "Immagini"
+      topic:
+        one: "Argomento"
+        other: "Argomenti"
+      poll:
+        one: "Votazione"
+        other: "Votazioni"
+      proposal_notification:
+        one: "Notifica di proposta"
+        other: "Notifiche di proposta"
+    attributes:
+      budget:
+        name: "Nome"
+        description_accepting: "Descrizione durante la fase di Accettazione"
+        description_reviewing: "Descrizione durante la fase di Verifica"
+        description_selecting: "Descrizione durante la fase di Selezione"
+        description_valuating: "Descrizione durante la fase di Stima"
+        description_balloting: "Descrizione durante la fase di Voto"
+        description_reviewing_ballots: "Descrizione durante la fase di Verifica dei Voti"
+        description_finished: "Descrizione dopo la conclusione del bilancio"
+        phase: "Fase"
+        currency_symbol: "Valuta"
+      budget/investment:
+        heading_id: "Intestazione"
+        title: "Titolo"
+        description: "Descrizione"
+        external_url: "Link alla documentazione addizionale"
+        administrator_id: "Amministratore"
+        location: "Posizione (facoltativa)"
+        organization_name: "Se presenti una proposta a nome di un collettivo o di un’organizzazione, ovvero per conto di più persone, indicane il nome"
+        image: "Immagine descrittiva della proposta"
+        image_title: "Titolo dell’immagine"
+      milestone:
+        status_id: "Stato attuale dell’investimento (facoltativo)"
+        title: "Titolo"
+        description: "Descrizione (facoltativa se c’è gia uno stato assegnato)"
+        publication_date: "Data di pubblicazione"
+      milestone/status:
+        name: "Nome"
+        description: "Descrizione (facoltativa)"
+      budget/heading:
+        name: "Intestazione"
+        price: "Prezzo"
+        population: "Popolazione"
+      comment:
+        body: "Commento"
+        user: "Utente"
+      debate:
+        author: "Autore"
+        description: "Opinione"
+        terms_of_service: "Termini di servizio"
+        title: "Titolo"
+      proposal:
+        author: "Autore"
+        title: "Titolo"
+        question: "Quesito"
+        description: "Descrizione"
+        terms_of_service: "Termini di servizio"
+      user:
+        login: "Email o username"
+        email: "Email"
+        username: "Username"
+        password_confirmation: "Conferma password"
+        password: "Password"
+        current_password: "Password attuale"
+        phone_number: "Numero di telefono"
+        official_position: "Incarico ufficiale"
+        official_level: "Livello dell'incarico"
+        redeemable_code: "Il codice di verifica che hai ricevuto via email"
+      organization:
+        name: "Nome dell’organizzazione"
+        responsible_name: "La persona responsabile per l'organzzazione"
+      spending_proposal:
+        administrator_id: "Amministratore"
+        association_name: "Nome Associazione"
+        description: "Descrizione"
+        external_url: "Link alla documentazione integrativa"
+        geozone_id: "Ambito operativo"
+        title: "Titolo"
+      poll:
+        name: "Nome"
+        starts_at: "Data inizio"
+        ends_at: "Data chiusura"
+        geozone_restricted: "Limitato al distretto"
+        summary: "Riepilogo"
+        description: "Descrizione"
+      poll/question:
+        title: "Quesito"
+        summary: "Sommario"
+        description: "Descrizione"
+        external_url: "Link alla documentazione integrativa"
+      signature_sheet:
+        signable_type: "Tipo firmabile"
+        signable_id: "ID firmabile"
+        document_numbers: "Numero di documenti"
+      site_customization/page:
+        content: Contenuto
+        created_at: Creato al
+        subtitle: Sottotitolo
+        slug: Slug
+        status: Status
+        title: Titolo
+        updated_at: Aggiornato al
+        more_info_flag: Visualizza nella guida
+        print_content_flag: Pulsante di stampa
+        locale: Lingua
+      site_customization/image:
+        name: Nome
+        image: Immagine
+      site_customization/content_block:
+        name: Nome
+        locale: località
+        body: Corpo
+      legislation/process:
+        title: Titolo del Procedimento
+        summary: Riepilogo
+        description: Descrizione
+        additional_info: Ulteriori info
+        start_date: Data di inizio
+        end_date: Data di conclusione
+        debate_start_date: Data di inizio del dibattito
+        debate_end_date: Data di conclusione del dibattito
+        draft_publication_date: Data di pubblicazione della bozza
+        result_publication_date: Data di pubblicazione del risultato finale
+      legislation/draft_version:
+        title: Titolo della versione
+        body: Testo
+        changelog: Modifiche
+        status: Status
+        final_version: Versione finale
+      legislation/question:
+        title: Titolo
+        question_options: Opzioni
+      legislation/question_option:
+        value: Valore
+      legislation/annotation:
+        text: Commento
+      document:
+        title: Titolo
+        attachment: Allegato
+      image:
+        title: Titolo
+        attachment: Allegato
+      poll/question/answer:
+        title: Risposta
+        description: Descrizione
+      poll/question/answer/video:
+        title: Titolo
+        url: Video esterno
+      newsletter:
+        segment_recipient: Destinatari
+        subject: Oggetto
+        from: Da
+        body: Contenuto dell’email
+      widget/card:
+        label: Etichetta (facoltativa)
+        title: Titolo
+        description: Descrizione
+        link_text: Testo del link
+        link_url: URL del link
+      widget/feed:
+        limit: Numero di elementi
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Questo utente ha già una password"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "le etichette devono essere minori o uguali a %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Hai raggiunto il numero massimo di messaggi privati giornalieri"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La Larghezza dell’immagine dev’essere pari ad almeno %{required_min_width}px"
+              min_image_height: "L’altezza dell’immagine dev’essere pari ad almeno %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Il segmento dei destinatari è errato"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Il segmento dei destinatari è errato"
+        map_location:
+          attributes:
+            map:
+              invalid: La posizione sulla mappa non può essere lasciata in bianco. Posiziona un segnaposto o seleziona l’apposita spunta se la geolocalizzazione non è necessaria
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Il documento non è presente in anagrafe"
+              has_voted: "L'utente ha già votato"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: deve avere data uguale o successiva alla data d’inizio
+            debate_end_date:
+              invalid_date_range: deve avere data uguale o successiva alla data d’inizio del dibattito
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "le etichette devono essere minori o uguali a %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "le etichette devono essere minori o uguali a %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Devi aspettare almeno %{interval} giorni tra una notifica e l’altra"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Non verificato in Anagrafe'
+              already_voted: 'Proposta già votata'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "devono essere lettere, numeri, _ e -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "La dimensione deve essere %{required_width}px"
+              image_height: "L'altezza deve essere %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Non si può commentare una stima'
+      messages:
+        record_invalid: "Convalida non riuscita: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Non è possibile eliminare il documento perché esiste un %{record} subordinato"
+          has_many: "Non è possibile eliminare il documento perché esistono %{record} subordinati"

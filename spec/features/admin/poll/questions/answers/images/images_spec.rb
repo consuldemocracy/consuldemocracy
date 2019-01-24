@@ -14,7 +14,7 @@ feature 'Images' do
 
       visit admin_answer_images_path(answer)
 
-      expect(page).to_not have_css("img[title='']")
+      expect(page).not_to have_css("img[title='']")
     end
 
     scenario 'Answer with images' do
@@ -35,8 +35,8 @@ feature 'Images' do
     image = create(:image)
 
     visit admin_answer_images_path(answer)
-    expect(page).to_not have_css("img[title='clippy.jpg']")
-    expect(page).to_not have_content('clippy.jpg')
+    expect(page).not_to have_css("img[title='clippy.jpg']")
+    expect(page).not_to have_content('clippy.jpg')
 
     visit new_admin_answer_image_path(answer)
     imageable_attach_new_file(image, Rails.root.join('spec/fixtures/files/clippy.jpg'))
@@ -59,8 +59,8 @@ feature 'Images' do
       click_link 'Remove image'
     end
 
-    expect(page).to_not have_css("img[title='#{image.title}']")
-    expect(page).to_not have_content(image.title)
+    expect(page).not_to have_css("img[title='#{image.title}']")
+    expect(page).not_to have_content(image.title)
   end
 
 end

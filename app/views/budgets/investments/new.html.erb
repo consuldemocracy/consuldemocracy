@@ -9,7 +9,7 @@
     <div class="callout primary">
       <%= t("budgets.investments.form.faq") %>
       <br>
-      <%= link_to t("budgets.investments.form.faq_link"), more_info_budgets_path(anchor: "10") %>
+      <%= link_to t("budgets.investments.form.faq_link"), more_info_budgets_path %>
     </div>
 
     <%= render '/budgets/investments/form', form_url: budget_investments_path(@budget) %>

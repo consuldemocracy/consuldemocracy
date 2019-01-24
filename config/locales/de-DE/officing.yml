@@ -1,0 +1,68 @@
+de:
+  officing:
+    header:
+      title: Umfrage
+    dashboard:
+      index:
+        title: Vorsitzende/r der Abstimmung
+        info: Hier können Sie Benutzerdokumente überprüfen und Abstimmungsergebnisse speichern
+        no_shifts: Sie haben heute keinen Amtswechsel.
+    menu:
+      voters: Dokument überprüfen
+      total_recounts: Komplette Nachzählungen und Ergebnisse
+    polls:
+      final:
+        title: Auflistung über abgeschlossene Abstimmungen
+        no_polls: Sie führen keine Nachzählungen in einer aktiven Umfrage durch
+        select_poll: Umfrage auswählen
+        add_results: Ergebnisse hinzufügen
+    results:
+      flash:
+        create: "Ergebnisse speichern"
+        error_create: "Ergebnisse wurden nicht gespeichert. Fehler."
+        error_wrong_booth: "Falsche Wahlkabine. Ergebnisse wurden NICHT gespeichert."
+      new:
+        title: "%{poll} - Ergebnisse hinzufügen"
+        not_allowed: "Sie sind berechtigt, Ergebnisse für diese Umfrage hinzufügen"
+        booth: "Wahlkabine"
+        date: "Datum"
+        select_booth: "Wahlkabine auswählen"
+        ballots_white: "Völlig leere Stimmzettel"
+        ballots_null: "Ungültige Stimmzettel"
+        ballots_total: "Gesamtanzahl der Stimmzettel"
+        submit: "Speichern"
+        results_list: "Ihre Ergebnisse"
+        see_results: "Ergebnisse anzeigen"
+      index:
+        no_results: "Keine Ergebnisse"
+        results: Ergebnisse
+        table_answer: Antwort
+        table_votes: Bewertung
+        table_whites: "Völlig leere Stimmzettel"
+        table_nulls: "Ungültige Stimmzettel"
+        table_total: "Gesamtanzahl der Stimmzettel"
+    residence:
+      flash:
+        create: "Dokument mit Volkszählung überprüft"
+        not_allowed: "Sie haben heute keine Amtswechsel"
+      new:
+        title: Dokument bestätigen
+        document_number: "Dokumentennummer (einschließlich Buchstaben)"
+        submit: Dokument bestätigen
+        error_verifying_census: "Die Volkszählung konnte dieses Dokument nicht bestätigen."
+        form_errors: verhinderte die Bestätigung dieses Dokumentes
+        no_assignments: "Sie haben heute keine Amtswechsel"
+    voters:
+      new:
+        title: Umfragen
+        table_poll: Umfrage
+        table_status: Status Umfrage
+        table_actions: Aktionen
+        not_to_vote: Die Person hat beschlossen, zu diesem Zeitpunkt nicht zu stimmen
+      show:
+        can_vote: Kann abstimmen
+        error_already_voted: Hat bereits an dieser Abstimmung teilgenommen
+        submit: Wahl bestätigen
+        success: "Wahl eingeführt!"
+      can_vote:
+        submit_disable_with: "Warten, Abstimmung bestätigen..."

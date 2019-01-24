@@ -1,0 +1,110 @@
+es-MX:
+  management:
+    account:
+      alert:
+        unverified_user: Solo se pueden editar cuentas de usuarios verificados
+      show:
+        title: Cuenta de usuario
+    account_info:
+      change_user: Cambiar usuario
+      document_number_label: 'Número de documento:'
+      document_type_label: 'Tipo de documento:'
+      identified_label: 'Identificado como:'
+      username_label: 'Usuario:'
+    dashboard:
+      index:
+        title: Gestión
+        info: Desde aquí puedes gestionar usuarios a través de las acciones listadas en el menú de la izquierda.
+    document_number: Número de documento
+    document_type_label: Tipo de documento
+    document_verifications:
+      already_verified: Esta cuenta de usuario ya está verificada.
+      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
+      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      not_in_census: Este documento no está registrado.
+      not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
+      title: Gestión de usuarios
+      under_age: "No tienes edad suficiente para verificar tu cuenta."
+      verify: Verificar usuario
+    date_of_birth: Fecha de nacimiento
+    email_verifications:
+      already_verified: Esta cuenta de usuario ya está verificada.
+      choose_options: 'Elige una de las opciones siguientes:'
+      document_found_in_census: Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada.
+      document_mismatch: 'Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})'
+      email_placeholder: Introduce el email de registro
+      email_sent_instructions: Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya.
+      if_existing_account: Si la persona ya ha creado una cuenta de usuario en la web
+      if_no_existing_account: Si la persona todavía no ha creado una cuenta de usuario en la web
+      introduce_email: 'Introduce el email con el que creó la cuenta:'
+      send_email: Enviar email de verificación
+    menu:
+      create_proposal: Crear propuesta
+      print_proposals: Imprimir propuestas
+      support_proposals: Apoyar propuestas
+      create_spending_proposal: Crear propuesta de inversión
+      print_spending_proposals: Imprimir propts. de inversión
+      support_spending_proposals: Apoyar propts. de inversión
+      create_budget_investment: Crear proyectos de inversión
+    permissions:
+      create_proposals: Crear nuevas propuestas
+      debates: Participar en debates
+      support_proposals: Apoyar propuestas
+      vote_proposals: Participar en las votaciones finales
+    print:
+      proposals_info: Haz tu propuesta en http://url.consul
+      proposals_title: 'Propuestas:'
+      spending_proposals_info: Participa en http://url.consul
+      budget_investments_info: Participa en http://url.consul
+    print_info: Imprimir esta información
+    proposals:
+      alert:
+        unverified_user: Este usuario no está verificado
+      create_proposal: Crear propuesta
+      print:
+        print_button: Imprimir
+    budget_investments:
+      alert:
+        unverified_user: Usuario no verificado
+      create: Crear nuevo proyecto
+      filters:
+        unfeasible: Proyectos no factibles
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " contiene el término '%{search_term}'"
+        other: " contienen el término '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Este usuario no está verificado
+      create: Crear propuesta de inversión
+      filters:
+        unfeasible: Propuestas de inversión no viables
+        by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+    sessions:
+      signed_out: Has cerrado la sesión correctamente.
+      signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
+    username_label: Nombre de usuario
+    users:
+      create_user: Crear nueva cuenta de usuario
+      create_user_submit: Crear usuario
+      create_user_success_html: Hemos enviado un correo electrónico a <b>%{email}</b> para verificar que es suya. El correo enviado contiene un link que el usuario deberá pulsar. Entonces podrá seleccionar una clave de acceso, y entrar en la web de participación.
+      autogenerated_password_html: "Se ha asignado la contraseña <b>%{password}</b> a este usuario. Puede modificarla desde el apartado 'Mi cuenta' de la web."
+      email_optional_label: Email (recomendado pero opcional)
+      erased_notice: Cuenta de usuario borrada.
+      erased_by_manager: "Borrada por el manager: %{manager}"
+      erase_account_link: Borrar cuenta
+      erase_account_confirm: '¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer'
+      erase_warning: Esta acción no se puede deshacer. Por favor asegúrese de que quiere eliminar esta cuenta.
+      erase_submit: Borrar cuenta
+    user_invites:
+      new:
+        info: "Introduce los emails separados por comas (',')"
+      create:
+        success_html: Se han enviado <strong>%{count} invitaciones</strong>.

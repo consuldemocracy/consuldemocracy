@@ -1,8 +1,12 @@
 class AdminNotification < ActiveRecord::Base
   include Notifiable
 
-  validates :title, presence: true
-  validates :body, presence: true
+  translates :title, touch: true
+  translates :body,  touch: true
+  include Globalizable
+
+  validates_translation :title, presence: true
+  validates_translation :body, presence: true
   validates :segment_recipient, presence: true
   validate :validate_segment_recipient
 

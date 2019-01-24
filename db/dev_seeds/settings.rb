@@ -26,6 +26,7 @@ section "Creating Settings" do
 
   Setting.create(key: 'feature.debates', value: "true")
   Setting.create(key: 'feature.proposals', value: "true")
+  Setting.create(key: 'feature.featured_proposals', value: "true")
   Setting.create(key: 'feature.polls', value: "true")
 
   Setting.create(key: 'feature.spending_proposals', value: nil)
@@ -47,6 +48,8 @@ section "Creating Settings" do
   Setting.create(key: 'feature.signature_sheets', value: "true")
   Setting.create(key: 'feature.legislation', value: "true")
   Setting.create(key: 'feature.user.recommendations', value: "true")
+  Setting.create(key: 'feature.user.recommendations_on_debates', value: "true")
+  Setting.create(key: 'feature.user.recommendations_on_proposals', value: "true")
   Setting.create(key: 'feature.community', value: "true")
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
@@ -54,6 +57,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.public_stats', value: "true")
   Setting.create(key: 'feature.guides', value: true)
   Setting.create(key: 'feature.user.skip_verification', value: "true")
+  Setting.create(key: 'feature.help_page', value: "true")
 
   Setting.create(key: 'per_page_code_head', value: "")
   Setting.create(key: 'per_page_code_body', value: "")
@@ -70,8 +74,10 @@ section "Creating Settings" do
   Setting.create(key: 'map_latitude', value: 40.4332002)
   Setting.create(key: 'map_longitude', value: -3.7009591)
   Setting.create(key: 'map_zoom', value: 10)
+  Setting.create(key: 'featured_proposals_number', value: 3)
 
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
+  Setting.create(key: 'hot_score_period_in_days', value: 31)
   Setting.create(key: 'analytics_url', value: "")
 
   # piwik_tracking_code_head = "<!-- Piwik -->

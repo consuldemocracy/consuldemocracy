@@ -1,8 +1,8 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %> - <%= t("admin.legislation.draft_versions.new.title") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %> - <%= t("admin.legislation.draft_versions.new.title") %>
 <% end %>
 
-<div class="legislation-admin legislation-draft-versions-new legislation-draft-versions-form row">
+<div class="legislation-draft-versions-new legislation-draft-versions-form">
   <div class="small-12 column">
     <%= back_link_to admin_legislation_process_draft_versions_path(@process),
                      t("admin.legislation.draft_versions.new.back") %>
@@ -11,10 +11,8 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
 
-    <div class="row">
-      <div class="small-12 medium-9 column">
-        <h3><%= t("admin.legislation.draft_versions.new.title") %></h3>
-      </div>
+    <div class="small-12 column">
+      <h3><%= t("admin.legislation.draft_versions.new.title") %></h3>
     </div>
 
     <%= render 'form', url: admin_legislation_process_draft_versions_path(@process) %>

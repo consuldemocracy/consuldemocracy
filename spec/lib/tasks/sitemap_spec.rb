@@ -1,7 +1,4 @@
-require 'rake'
 require 'rails_helper'
-Rails.application.load_tasks
-Rake::Task.define_task(:environment)
 
 feature 'rake sitemap:create' do
   before do
@@ -32,7 +29,6 @@ feature 'rake sitemap:create' do
     expect(sitemap).to include(faq_path)
     expect(sitemap).to include(help_path)
     expect(sitemap).to include(how_to_use_path)
-    expect(sitemap).to include(page_path(id: 'general_terms'))
 
     # Dynamic URLs
     expect(sitemap).to include(polls_path)

@@ -1,0 +1,21 @@
+sq:
+  images:
+    remove_image: Hiq imazhin
+    form:
+      title: Imazhi përshkrues
+      title_placeholder: Shto një titull përshkrues për imazhin
+      attachment_label: Zgjidh imazhin
+      delete_button: Hiq imazhin
+      note: "Ju mund të ngarkoni një imazh të llojeve të mëposhtme të përmbajtjes: %{accepted_content_types}, deri në %{max_file_size} MB"
+      add_new_image: Shto imazhin
+      admin_title: "Imazh"
+      admin_alt_text: "Teksti alternativ për imazhin"
+    actions:
+      destroy:
+        notice: Imazhi u fshi me sukses
+        alert: Nuk mund të fshihet Imazhi
+        confirm: Jeni i sigurt se doni ta fshini imazhin? Ky veprim nuk mund të zhbëhet!
+    errors:
+      messages:
+        in_between: duhet të jetë në mes %{min} dhe %{max}
+        wrong_content_type: lloji i përmbajtjes %{content_type} nuk përputhet me asnjë lloj të përmbajtjes së pranuar %{accepted_content_types}

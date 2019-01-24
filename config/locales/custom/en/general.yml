@@ -20,12 +20,6 @@ en:
   comment_kinds:
     comment: Comment
     question: Question
-  answers:
-    index:
-      title: Answer sent
-      sent: Your answer has been sent. Thank you for participating.
-    new:
-      send: Send answer
   debates:
     index:
       top: Featured
@@ -39,6 +33,9 @@ en:
         title: Help about citizen debates
         description: Start a debate to share opinions with others about the topics you are concerned about of the city of Madrid.
         help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people, preferably related to the city of Madrid."
+        help_text_3: "Keep in mind that a debate does not start any specific action. If you want to make a %{proposal} for the city or raise a investment project of %{budget} when the phase is open, go to the corresponding section."
+        proposals_link: proposal
+        budget_link: participatory budgeting
     form:
       comment_kind_instructions: Comment kind
       comment_kind_label: Choose the comment kind
@@ -65,6 +62,10 @@ en:
     form:
       sub_proceeding: Human right
       proposal_type: Proposal type
+    proposal:
+      reason_for_supports_necessary: 1% of Census
+      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
+      voting: "next voting"
   polls:
     index:
       title: Madrid City Council Citizen Consultations
@@ -126,6 +127,7 @@ en:
       transparency_title: Transparency
       transparency_text: Find out anything about the Madrid City Council.
       transparency_url: http://transparencia.madrid.es
+      faq: technical assistance
     header:
       spending_proposals: Participatory budgeting
       delegation: Delegation
@@ -186,9 +188,10 @@ en:
       different_district_active_info: "(If you remove all votes of this district you can select another one)"
     results:
       page_title: "Participatory budget | Results"
-      heading: "PARTICIPATORY BUDGET"
+      heading: "PARTICIPATORY BUDGET 2016"
       results_link: Results
       stats_link: "Participation stats"
+      executions_link: "Milestones"
       geozone_selection_title: "By district"
       spending_proposal: Proposal title
       ballot_lines_count: Times selected
@@ -201,9 +204,10 @@ en:
       discarded: "Discarded spending proposal: "
     stats:
       page_title: "Participatory budget | Participation stats"
-      heading: "PARTICIPATORY BUDGET"
+      heading: "PARTICIPATORY BUDGET 2016"
       results_link: Results
       stats_link: "Participation stats"
+      executions_link: "Milestones"
     welcome:
       city_link: Vote city proposals
       city_link_close: City proposals

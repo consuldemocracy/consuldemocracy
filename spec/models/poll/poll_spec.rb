@@ -304,7 +304,7 @@ describe Poll do
 
         expect(Poll.not_budget).to include(poll1)
         expect(Poll.not_budget).to include(poll2)
-        expect(Poll.not_budget).to_not include(poll3)
+        expect(Poll.not_budget).not_to include(poll3)
       end
 
     end

@@ -3,26 +3,31 @@ class Admin::StatsController < Admin::BaseController
   def show
     @event_types = Ahoy::Event.pluck(:name).uniq.sort
 
-    @visits = Visit.count
-    @debates = Debate.with_hidden.count
+    @visits    = Visit.count
+    @debates   = Debate.with_hidden.count
     @proposals = Proposal.with_hidden.count
-    @comments = Comment.not_valuations.with_hidden.count
+    @comments  = Comment.not_valuations.with_hidden.count
     @spending_proposals = SpendingProposal.with_hidden.count
     @ballot_lines = BallotLine.count
 
-    @debate_votes = Vote.where(votable_type: 'Debate').count
+    @debate_votes   = Vote.where(votable_type: 'Debate').count
     @proposal_votes = Vote.where(votable_type: 'Proposal').count
     @spending_proposal_votes = Vote.where(votable_type: 'SpendingProposal').count
-    @comment_votes = Vote.where(votable_type: 'Comment').count
+    @comment_votes  = Vote.where(votable_type: 'Comment').count
     @votes = Vote.count
 
-    @user_level_two = User.active.level_two_verified.count
+    @user_level_two   = User.active.level_two_verified.count
     @user_level_three = User.active.level_three_verified.count
-    @verified_users = User.active.level_two_or_three_verified.count
+    @verified_users   = User.active.level_two_or_three_verified.count
     @unverified_users = User.active.unverified.count
     @users = User.active.count
-    @user_ids_who_voted_proposals = ActsAsVotable::Vote.where(votable_type: 'Proposal').distinct.count(:voter_id)
+
+    @user_ids_who_voted_proposals = ActsAsVotable::Vote.where(votable_type: 'Proposal')
+                                                       .distinct
+                                                       .count(:voter_id)
+
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
+
     @spending_proposals = SpendingProposal.count
     @ballots_with_votes = Ballot.where("ballot_lines_count > ?", 0).count
     budgets_ids = Budget.where.not(phase: 'finished').pluck(:id)
@@ -73,7 +78,7 @@ class Admin::StatsController < Admin::BaseController
     @vote_count = votes.count
     @user_count = votes.select(:voter_id).distinct.count
 
-    @voters_in_city = voters_in_heading(city_heading(@budget)) rescue 0
+    @voters_in_city = voters_in_heading(@budget.city_heading) rescue 0
     @voters_in_district = voters_in_districts(@budget) rescue 0
 
     @voters_in_heading = {}
@@ -129,12 +134,8 @@ class Admin::StatsController < Admin::BaseController
   def voters_in_districts(budget)
     Vote.where(votable_type: 'Budget::Investment').
         includes(:budget_investment).
-        where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) }).
+        where(budget_investments: { heading_id: (budget.heading_ids - [budget.city_heading.id]) }).
         select("votes.voter_id").distinct.count
-  end
-
-  def city_heading(budget)
-    budget.headings.where(name: "Toda la ciudad").first
   end
 
 end

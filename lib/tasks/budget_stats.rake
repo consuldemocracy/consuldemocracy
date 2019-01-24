@@ -5,7 +5,7 @@ namespace :budgets do
     task balloting: :environment do
       Budget.where(phase: ["balloting", "reviewing_ballots", "finished"]).each do |budget|
         namespace = "budget_#{budget.id}_balloting_stats"
-        city_heading = budget.headings.where(name: "Toda la ciudad").first
+        city_heading = budget.city_heading
         city_heading_id = city_heading.present? ? city_heading.id : nil
 
         Stat.named(namespace, 'stats', "user_count").set_value budget.ballots.select {|ballot| ballot.lines.any? }.count

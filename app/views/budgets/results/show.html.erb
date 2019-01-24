@@ -2,11 +2,11 @@
 <% content_for :meta_description do %><%= @budget.description_for_phase('finished') %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: budget_results_url(@budget),
+            social_url: custom_budget_results_url(@budget),
             social_title: @budget.name,
             social_description: @budget.description_for_phase('finished'),
-            twitter_image_url: '/social_media_budgets_results_twitter.png',
-            og_image_url: '/social_media_budgets_results.png' %>
+            twitter_image_url: 'social_budget_2018_results_twitter.png',
+            og_image_url: 'social_budget_2018_results.png' %>
 <% end %>
 
 <% content_for :canonical do %>
@@ -32,10 +32,13 @@
     <ul class="tabs">
       <li class="tabs-title is-active">
         <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
-        <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget), class: "is-active"  %>
+        <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget), class: "is-active" %>
       </li>
       <li class="tabs-title">
-        <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget)%>
+        <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget) %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to t("budgets.executions.link"), custom_budget_executions_path(@budget) %>
       </li>
     </ul>
   </div>

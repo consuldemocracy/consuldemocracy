@@ -10,11 +10,6 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = ["general_terms"]
-  pages.each do |page|
-    add page_path(id: page)
-  end
-
   add debates_path, priority: 0.7, changefreq: "daily"
   Debate.find_each do |debate|
     add debate_path(debate), lastmod: debate.updated_at
@@ -45,31 +40,7 @@ SitemapGenerator::Sitemap.create do
 
   # old processes
   add processes_path
-  add urbanistic_licenses_path
-  add open_government_path
-  add open_government_doc_path
-  add subvention_ordinance_path
-  add air_quality_plan_path
-  add label_streets_path
-  add vallecas_path
-  add linea_madrid_path
-  add movilidad_path
-  add buildings_path
-  add publicity_path
-  add vicalvaro_path
-  add villaverde_path
-  add service_letters_path
-  add service_letters_1_path
-  add service_letters_2_path
-  add service_letters_3_path
-  add service_letters_4_path
-  add service_letters_5_path
   add open_plenary_path
-  add transparency_ordinance_path
-  add transparency_ordinance_draft_path
-  add lobbies_path
-  add lobbies_draft_path
-  add manzanares_path
 
   # landings
   add g1000_path

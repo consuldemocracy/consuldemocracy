@@ -12,6 +12,7 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'selenium/webdriver'
 
+Rails.application.load_tasks
 I18n.default_locale = :en
 
 include Warden::Test::Helpers
@@ -32,7 +33,7 @@ end
 
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w(headless window-size=1200,600) }
+    chromeOptions: { args: %w(headless no-sandbox window-size=1200,600) }
   )
 
   Capybara::Selenium::Driver.new(

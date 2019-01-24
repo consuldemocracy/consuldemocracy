@@ -1,21 +1,15 @@
 require 'rails_helper'
 
-feature "BudgetPolls" do
+feature "BudgetPolls", :with_frozen_time do
   let(:budget) { create(:budget, :balloting) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group) }
   let(:investment) { create(:budget_investment, :selected, heading: heading) }
-  let(:poll) { create(:poll, :current, budget: budget, starts_at: "2017-12-01", ends_at: "2018-02-01") }
+  let(:poll) { create(:poll, :current, budget: budget) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
   let(:admin) { create(:administrator) }
   let!(:user) { create(:user, :in_census) }
-
-  before do
-    allow(Date).to receive(:current).and_return Date.new(2018,1,1)
-    allow(Date).to receive(:today).and_return Date.new(2018,1,1)
-    allow(Time).to receive(:current).and_return Time.zone.parse("2018-01-01 12:00:00")
-  end
 
   background do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
@@ -161,7 +155,7 @@ feature "BudgetPolls" do
       expect(page).to have_content poll.name
 
       within("#side_menu") do
-        expect(page).to_not have_content("Validate document")
+        expect(page).not_to have_content("Validate document")
       end
 
       within("#poll_#{poll.id}") do

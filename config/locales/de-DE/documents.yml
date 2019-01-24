@@ -1,0 +1,24 @@
+de:
+  documents:
+    title: Dokumente
+    max_documents_allowed_reached_html: Sie haben die maximale Anzahl der erlaubten Unterlagen erreicht! <strong>Um einen anderen hochladen zu können, müssen sie eines löschen.</strong>
+    form:
+      title: Unterlagen
+      title_placeholder: Fügen Sie einen beschreibender Titel für die Unterlage hinzu
+      attachment_label: Auswählen Sie die Unterlage
+      delete_button: Entfernen Sie die Unterlage
+      cancel_button: Abbrechen
+      note: "Sie können bis zu eine Maximum %{max_documents_allowed} der Unterlagen im folgenden Inhalttypen hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB pro Datei."
+      add_new_document: Fügen Sie die neue Unterlage hinzu
+    actions:
+      destroy:
+        notice: Die Unterlage wurde erfolgreich gelöscht.
+        alert: Die Unterlage kann nicht zerstört werden.
+        confirm: Sind Sie sicher, dass Sie die Unterlagen löschen möchten? Diese Aktion kann nicht widerrufen werden!
+    buttons:
+      download_document: Download-Datei
+      destroy_document: Dokument löschen
+    errors:
+      messages:
+        in_between: müssen in zwischen %{min} und %{max} sein
+        wrong_content_type: Inhaltstype %{content_type} stimmt nicht mit keiner der akzeptierten Inhaltstypen überein %{accepted_content_types}

@@ -26,7 +26,7 @@ module CommonActions
     click_button 'Register'
   end
 
-  def fill_in_signup_form(email='manuela@consul.dev', password='judgementday')
+  def fill_in_signup_form(email = 'manuela@consul.dev', password = 'judgementday')
     fill_in 'user_username',              with: "Manuela Carmena #{rand(99999)}"
     fill_in 'user_email',                 with: email
     fill_in 'user_password',              with: password
@@ -187,13 +187,6 @@ module CommonActions
 
   def remove_token_from_vote_link
     page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
-  end
-
-  def fill_in_admin_notification_form(options = {})
-    select (options[:segment_recipient] || 'All users'), from: :admin_notification_segment_recipient
-    fill_in :admin_notification_title, with: (options[:title] || 'This is the notification title')
-    fill_in :admin_notification_body, with: (options[:body] || 'This is the notification body')
-    fill_in :admin_notification_link, with: (options[:link] || 'https://www.decide.madrid.es/vota')
   end
 
 end

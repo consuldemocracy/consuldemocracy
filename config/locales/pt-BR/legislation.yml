@@ -1,0 +1,122 @@
+pt-BR:
+  legislation:
+    annotations:
+      comments:
+        see_all: Ver todos
+        see_complete: Ver completo
+        comments_count:
+          one: "%{count} comentário"
+          other: "%{count} comentários"
+        replies_count:
+          one: "%{count} resposta"
+          other: "%{count} respostas"
+        cancel: Cancelar
+        publish_comment: Publicar comentário
+      form:
+        phase_not_open: Esta fase não está aberta
+        login_to_comment: Você deve %{signin} ou %{signup} para comentar.
+        signin: Iniciar sessão
+        signup: Inscrever-se
+      index:
+        title: Comentários
+        comments_about: Comentários sobre
+        see_in_context: Ver no contexto
+        comments_count:
+          one: "%{count} comentário"
+          other: "%{count} comentários"
+      show:
+        title: Comentário
+      version_chooser:
+        seeing_version: Commments para versão
+        see_text: Ver rascunho do texto
+    draft_versions:
+      changes:
+        title: Alterações
+        seeing_changelog_version: Resumo das mudanças de revisão
+        see_text: Ver rascunho do texto
+      show:
+        loading_comments: Carregando comentários
+        seeing_version: Você está vendo a versão preliminar
+        select_draft_version: Selecione rascunho
+        select_version_submit: ver
+        updated_at: atualizado em %{date}
+        see_changes: ver resumo de mudanças
+        see_comments: Ver todos os comentários
+        text_toc: Índice
+        text_body: Texto
+        text_comments: Comentários
+    processes:
+      header:
+        additional_info: Informações adicionais
+        description: Descrição
+        more_info: Mais informação e contexto
+      proposals:
+        empty_proposals: Não existem propostas
+      debate:
+        empty_questions: Não há perguntas
+        participate: Participar no debate
+      index:
+        filter: Filtro
+        filters:
+          open: Processos abertos
+          next: Próximo
+          past: Passado
+        no_open_processes: Não existem processos abertos
+        no_next_processes: Não existem processos planejados
+        no_past_processes: Não existem processos terminados
+        section_header:
+          icon_alt: Ícone de processos legislativos
+          title: Processos legislativos
+          help: Ajuda sobre processos legislativos
+        section_footer:
+          title: Ajuda sobre processos legislativos
+          description: Participar nos debates e processos prévios para a aprovação de um instrumento legal ou uma ação municipal. Sua opinião será considerada pela Prefeitura.
+      phase_not_open:
+        not_open: Nesta fase ainda não está aberta
+      phase_empty:
+        empty: Nada publicado ainda
+      process:
+        see_latest_comments: Ver últimos comentários
+        see_latest_comments_title: Comente sobre este processo
+      shared:
+        key_dates: Datas-chave
+        debate_dates: Debate
+        draft_publication_date: Publicação de rascunho
+        allegations_dates: Comentários
+        result_publication_date: Publicação do resultado final
+        proposals_dates: Propostas
+    questions:
+      comments:
+        comment_button: Publicar resposta
+        comments_title: Respostas abertas
+        comments_closed: Fase fechada
+        form:
+          leave_comment: Deixe sua resposta
+      question:
+        comments:
+          zero: Sem comentários
+          one: "%{count} comentário"
+          other: "%{count} comentários"
+        debate: Debate
+      show:
+        answer_question: Enviar resposta
+        next_question: Próxima pergunta
+        first_question: Primeira pergunta
+        share: Compartilhar
+        title: Processo de legislação colaborativa
+      participation:
+        phase_not_open: Esta fase não está aberta
+        organizations: As organizações não podem participar no debate
+        signin: Iniciar sessão
+        signup: Inscrever-se
+        unauthenticated: Você precisa %{signin} ou %{signup} para participar.
+        verified_only: Somente usuários verificados podem participar, %{verify_account}.
+        verify_account: verifique sua conta
+        debate_phase_not_open: Terminou a fase de debate e respostas não são mais aceitas
+    shared:
+      share: Compartilhar
+      share_comment: Comente em %{version_name} do rascunho de processo %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorias"
+      not_verified: "Para votar as propostas %{verify_account}."

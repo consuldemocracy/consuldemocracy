@@ -1,4 +1,9 @@
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<% provide :title do %><%= t('budgets.index.title') %><% end %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
@@ -28,7 +33,7 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
+                            new_budget_investment_path(current_budget),
                             class: "button margin-top expanded" %>
               <% else %>
                 <div class="callout warning margin-top">
@@ -83,7 +88,7 @@
         </div>
 
         <% unless current_budget.informing? %>
-          <div id="map">
+          <div class="map">
             <h3><%= t("budgets.index.map") %></h3>
             <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
           </div>
@@ -131,17 +136,20 @@
               <div class="budget-investment clear">
                 <div class="panel past-budgets">
                   <div class="row" data-equalizer data-equalizer-on="medium">
-                    <div class="small-12 medium-9 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div class="table-cell align-middle">
                         <h3><%= budget.name %></h3>
                       </div>
                     </div>
 
-                    <div class="small-12 medium-3 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                         <%= link_to t("budgets.index.see_results"),
                                     budget_results_path(budget.id),
-                                    class: "button expanded" %>
+                                    class: "button" %>
+                        <%= link_to t("budgets.index.milestones"),
+                                    budget_executions_path(budget.id),
+                                    class: "button" %>
                       </div>
                     </div>
                   </div>
@@ -178,11 +186,6 @@
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_3",
-                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
     </div>
   </div>
 </div>

@@ -93,31 +93,34 @@ es:
       description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
       title_finished: "Resultados de los Presupuestos participativos de Madrid"
       description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
-    budget_2018:
+    budget_2019:
+      informing:
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presenta tus proyectos a los presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       accepting:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presenta tus proyectos a los presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presenta tus proyectos a los presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       selecting:
         title: "Apoya proyectos de los presupuestos participativos de Madrid"
         description: "Entra en Decide Madrid y apoya las ideas para mejorar Madrid. Los proyectos más apoyados de presupuestos participativos pueden pasar a la votación final."
       valuating:
         title: "Evaluación de proyectos de los presupuestos participativos"
-        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 15 de mayo. ¡Prepárate para decidir el destino de 100 millones!"
+        description: "La votación final de proyectos de los presupuestos participativos de Madrid empieza el 3 de junio. ¡Prepárate para decidir el destino de 100 millones!"
       balloting:
         title: "Vota los proyectos finalistas de presupuestos participativos"
-        description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
+        description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos19"
       finished:
-        title: "Resultados de los presupuestos participativos 2018"
+        title: "Resultados de los presupuestos participativos 2019"
         description: "La ciudadanía ha decidido qué hará el Ayuntamiento con 100 millones de euros reservados a proyectos ciudadanos. Entérate de los proyectos ganadores."
       reviewing:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       publishing_prices:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
       reviewing_ballots:
-        title: "Presupuestos participativos 2018 - Ayuntamiento de Madrid"
-        description: "Presupuestos participativos 2018 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
+        title: "Presupuestos participativos 2019 - Ayuntamiento de Madrid"
+        description: "Presupuestos participativos 2019 del Ayuntamiento de Madrid. Tú decides en qué gastar 100 millones de euros."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
@@ -248,15 +251,6 @@ es:
       district_title: "VOTA PROYECTOS DE UN DISTRITO"
       district_text_html: "Recuerda que puedes votar también proyectos de <strong>uno de los distritos</strong>."
       district_button: "Votar proyectos de un distrito"
-  processes:
-    lobbies:
-      title: "Registro de lobbies del Ayuntamiento de Madrid"
-      description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
-    manzanares:
-      title: "Parque Lineal del Manzanares"
-      description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."
-    shared:
-      more_info: "Más información"
   polls_reports:
     label: "Informe técnico"
     button: "Descargar informe técnico"
@@ -297,6 +291,9 @@ es:
         gender: "Participación por sexo"
         age: "Participación por grupos de edad"
         district: "Participación por distrito"
+    index:
+      title: "Crea una propuesta que quieras que el Ayuntamiento de Madrid lleve a cabo"
+      description: "Entra en Decide Madrid y crea una propuesta"
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA
     date: 13-19 DE FEBRERO 2017
@@ -338,9 +335,8 @@ es:
       start_proposal_question: Crear propuesta o pregunta
   landings:
     signup:
-      title: Vota los proyectos finalistas de presupuestos participativos
-      description: "¿Has pensado qué hacer con 100 millones de #PresupuestosParticipativos? Vota en https://decide.madrid.es/ #VotaParticipativos18"
-      budgets_title: "Vota los proyectos de presupuestos participativos"
+      title: Regístrate y apoya propuestas para mejorar Madrid
+      description: "En la web de participación ciudadana del ayuntamiento tú construyes Madrid. Regístrate, propón y apoya propuestas para llegar a las 27.000 firmas."
     cambia_tu_ciudad:
       phrase_1: "Maya decidió que Madrid necesitaba puntos de carga para coches eléctricos"
       phrase_2: "Jana decidió que había que sensibilizar a los madrileños sobre sostenibilidad"

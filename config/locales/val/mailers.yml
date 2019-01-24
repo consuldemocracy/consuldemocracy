@@ -11,7 +11,6 @@ val:
     email_verification:
       click_here_to_verify: en aquest enllaç
       instructions_2_html: Aquest email es per verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si estes no son les teues dades, si us plau no pulses l'enllaç anterior i ignora aquest email.
-      instructions_html: Per acabar de verificar el teu compte d'usuari en el Portal de Gobern Obert, necessitem que pulses %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
       title: Verifica el teu compte amb el següent enllaç
@@ -24,22 +23,9 @@ val:
       hi: "Estimat usuari,"
       new_html: "Per tot això, t'invitem a que elabores una <strong>nova proposta</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
-      reconsider_html: "Si consideres que la teua proposta rebutjada cumpleix els requisits per a mantindrela com a proposta d'inversió, podràs comunicar-ho, en el plaç de 48 hores, al correu example@consul.es, indicant necessariament per a la seua tramitació el códi %{code} com asunt del correu, corresponent a la teua proposta."
       sincerely: "Atentament"
-      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
       sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
       subject: "La teua proposta d'inversió '%{code}' ha segut marcada com inviable"
-      unfeasible_html: "Desde l'Ajuntament volem agraïr la teua participació en els <strong>Pressupostos participatius</strong>. Lamentem informarte que la teua proposta <strong>'%{title}'</strong> quedarà excluïda d'aquest procés participatiu per el següent motiu:"
-    budget_investment_unfeasible:
-      hi: "Estimat usuari,"
-      new_html: "Per tot això, t'invitema que elabores un <strong>nou projecte d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
-      new_href: "nova proposta d'inversió"
-      reconsider_html: "Si consideres que la teua proposta rebutjada cumpleix els requisits per a mantindrela com a proposta d'inversió, podràs comunicar-ho, en el plaç de 48 hores, al correu example@consul.es, indicant necessariament per a la seua tramitació el códi %{code} com asunt del correu, corresponent a la teua proposta."
-      sincerely: "Atentament"
-      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
-      sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
-      subject: "La teua proposta d'inversió '%{code}' ha segut marcada com inviable"
-      unfeasible_html: "Desde l'Ajuntament volem agraïr la teua participació en els <strong>Pressupostos participatius</strong>. Lamentem informarte que el teu projecte <strong>'%{title}'</strong> quedarà excluïda d'aquest procés participatiu per el següent motiu:"
     proposal_notification_digest:
       info: "A continuació et mostrem les noves modificacions que han publicat els autors de les propostes que estas avalant en %{org_name}."
       title: "Notificacions de propostes en %{org_name}"
@@ -57,7 +43,6 @@ val:
       title_html: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
-      text: "Gracies per sol·licitar unirte a %{org}! En uns segons podras començar a decidir la ciutat que vols, sols tens que omplir el següent formulari:"
       thanks: "Moltes gràcies."
       title: "Benvingut a %{org}"
       button: Completar registre
@@ -70,23 +55,23 @@ val:
       follow_html: "T'informarem de com avança el procés, que també pots seguir en la pàgina de <strong>%{link}</strong>."
       follow_link: "Pressupostos participatius"
       sincerely: "Atentament,"
-      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
       share: "Comparteix el teu projecte"
+    budget_investment_unfeasible:
+      hi: "Estimat usuari,"
+      new_html: "Per tot això, t'invitema que elabores un <strong>nou projecte d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
+      new_href: "nova proposta d'inversió"
+      sincerely: "Atentament"
+      sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha segut marcada com inviable"
     budget_investment_selected:
       subject: "La teua proposta d'inversió '%{code}' ha segut seleccionada"
       hi: "Estimat usuari,"
-      selected_html: "Desde l'Ajuntament agraïm la teua participació amb la teua idea en els <strong>Pressupostos Participatius</strong>. T'informem que el teu projecte <strong>'%{title}'</strong> ha sigut seleccionat i passa a la fase de votació final que te lloc desde __ fins a __."
       share: "Comença ja a conseguir vots, comparteix el teu projecte d'inversió en xarxes socials. Compartir es fonamental per a conseguir ferse realitat."
       share_button: "Comparteix el teu projecte"
       thanks: "Gràcies de nou per la teua participació."
       sincerely: "Atentament"
-      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
     budget_investment_unselected:
       subject: "La teua proposta d'inversió '%{code}' no ha sigut seleccionada"
       hi: "Benvollgut/da usuari/a,"
-      unselected_html: "Desde l'Ajuntament agraïm que hages participat amb la teua idea en els <strong>Pressupostos Participatius</strong>. Lamentem informarte que el teu projecte <strong>'%{title}'</strong> no ha sigut seleccionat per a la fase de votació final."
-      participate_html: "Pots continuar participant en la votació final votant projectes per a tota la ciutat i el districte que tries."
-      participate_url: "participen en la votació final"
       thanks: "Gràcies de nou per la teua participació."
       sincerely: "Atentament"
-      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"

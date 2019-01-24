@@ -1,85 +1,79 @@
----
 nl:
   mailers:
-    no_reply: "This message was sent from an email address that does not accept replies."
+    no_reply: "Dit bericht is verzonden vanaf een e-mailadres dat geen reacties accepteert."
     comment:
-      hi: Hi
-      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
-      subject: Someone has commented on your %{commentable}
-      title: New comment
+      hi: Hoi
+      new_comment_by_html: Er is een reactie van <b>%{commenter}</b>
+      subject: Iemand heeft een reactie achtergelaten op %{commentable}
+      title: Nieuwe reactie
     config:
-      manage_email_subscriptions: To stop receiving these emails change your settings in
+      manage_email_subscriptions: Om deze mails niet meer te ontvangen moet u uw instellingen aanpassen
     email_verification:
-      click_here_to_verify: this link
-      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
-      instructions_html: To complete the verification of your user account in the Open Government Portal, you must click %{verification_link}.
-      subject: Confirm your email
-      thanks: Thank you very much.
-      title: Confirm your account using the following link
+      click_here_to_verify: Deze link
+      instructions_2_html: Deze e-mail verifieert uw account met <b>%{document_type} %{document_number}</ b>. Als deze niet van u zijn, klik dan niet op de vorige link en negeer deze e-mail.
+      instructions_html: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
+      subject: Bevestig uw email
+      thanks: Heel erg bedankt.
+      title: Bevestig uw account door de volgende link te gebruiken
     reply:
-      hi: Hi
-      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
-      subject: Someone has responded to your comment
-      title: New response to your comment
+      hi: Hoi
+      new_reply_by_html: Er is een reactie van <b>%{commenter}</b> op je reactie op
+      subject: Iemand heeft gereageerd op je reactie
+      title: Nieuwe reactie op je reactie
     unfeasible_spending_proposal:
-      hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
-      new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
-      sincerely: "Sincerely"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      hi: "Beste deelnemer,"
+      new_html: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
+      new_href: "nieuw investeringsproject"
+      sincerely: "Oprecht"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
-    budget_investment_unfeasible:
-      hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
-      new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
-      sincerely: "Sincerely"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     proposal_notification_digest:
-      info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
-      title: "Proposal notifications in %{org_name}"
-      share: Share proposal
-      comment: Comment proposal
-      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and unckeck 'Receive a summary of proposal notifications'."
-      unsubscribe_account: My account
+      info: "Dit zijn de nieuwe meldingen die zijn gepubliceerd door auteurs van de voorstellen die u hebt ondersteund in %{org_name}."
+      title: "Voorstelmeldingen in %{org_name}"
+      share: Deel voorstellen
+      comment: Reageren op het voorstel
+      unsubscribe: "Als u geen kennisgeving van voorstellen wilt ontvangen, gaat u naar %{account} en verwijdert u het vinkje bij 'Een samenvatting van de kennisgevingsvoorstellen ontvangen'."
+      unsubscribe_account: Mijn account
     direct_message_for_receiver:
-      subject: "You have received a new private message"
-      reply: Reply to %{sender}
-      unsubscribe: "If you don't want receive direct messages, visit %{account} and unckeck 'Receive emails about direct messages'."
-      unsubscribe_account: My account
+      subject: "U hebt een nieuw prive-bericht ontvangen"
+      reply: Antwoord op %{sender}
+      unsubscribe: "Als u geen directe boodschappen wilt ontvangen, kijk dan eens bij %{account} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
+      unsubscribe_account: Mijn account
     direct_message_for_sender:
-      subject: "You have send a new private message"
-      title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
+      subject: "U heeft een nieuw prive bericht verstuurd"
+      title_html: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
-      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
-      text: "Thank you for applying to join %{org}! In seconds you can start to decide the city you want, just fill the form below:"
-      thanks: "Thank you very much."
-      title: "Welcome to %{org}"
-      button: Complete registration
-      subject: "Invitation to %{org_name}"
+      ignore: "Als u deze uitnodiging niet hebt geaccepteerd maak je geen zorgen, u kunt deze e-mail dan negeren."
+      text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
+      thanks: "Heel erg bedankt."
+      title: "Welkom bij %{org}"
+      button: Inschrijving voltooien
+      subject: "Uitnodiging voor %{org_name}"
     budget_investment_created:
-      subject: "Thank you for creating an investment!"
-      title: "Thank you for creating an investment!"
-      intro_html: "Hi <strong>%{author}</strong>,"
-      text_html: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
-      follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
-      follow_link: "Participatory Budgets"
-      sincerely: "Sincerely,"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      share: "Comparte tu proyecto"
+      subject: "Dank u voor het maken van een investering!"
+      title: "Dank u voor het maken van een investering!"
+      intro_html: "Hallo <strong>%{author}</strong>,"
+      text_html: "Dank u voor het maken van uw investering <strong>%{investment}</strong> voor participatieve budgetten <strong>%{budget}</strong>."
+      follow_html: "Wij zullen u informeren over hoe het proces vordert, dit kun je ook volgen op <strong>%{link}<div class=\"notranslate\"> 2 volgen kun</div>."
+      follow_link: "Participatieve budgetten"
+      sincerely: "Oprecht,"
+      share: "Deel uw project"
     budget_investment_unfeasible:
-      hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
-      new_href: "new investment project"
-      reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
-      sincerely: "Sincerely"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      hi: "Beste gebruiker,"
+      new_html: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
+      new_href: "nieuw investeringsproject"
+      sincerely: "Hoogachtend"
+      sorry: "Sorry voor het ongemak en nogmaals hartelijk dank voor uw waardevolle deelname."
+      subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
+    budget_investment_selected:
+      subject: "Uw investeringsproject '%{code}' is geselecteerd"
+      hi: "Beste gebruiker,"
+      share: "Begin nu om stemmen te ontvangen, deel uw investeringsproject op sociale netwerken. Delen is essentieel om het te realiseren."
+      share_button: "Deel uw investeringsproject"
+      thanks: "Nogmaals dank voor uw deelname."
+      sincerely: "Hoogachtend"
+    budget_investment_unselected:
+      subject: "Uw investeringsproject '%{code}' is niet geselecteerd"
+      hi: "Beste gebruiker,"
+      thanks: "Dank u nogmaals voor uw deelname."
+      sincerely: "Hoogachtend"

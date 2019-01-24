@@ -170,21 +170,22 @@ $budget-2018-yellow:   #fef384;
   }
 
   .jumbo {
-    background: #000 image-url('welcome/background_budget_2018.jpg');
-    background-size: cover;
+    background: #ffeaac image-url('welcome/background_header_mobile.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-bottom: rem-calc(72);
 
-    h1,
-    span,
-    .lead {
-      font-family: 'Souvenir' !important;
+    @include breakpoint(medium) {
+      background: #ffeaac image-url('welcome/background_header.jpg');
+      background-size: cover;
     }
 
     h1 {
-      color: #fff;
+      color: $text;
       font-size: rem-calc(20);
-      font-weight: 300;
+      font-weight: bold;
       line-height: rem-calc(20);
-      margin-top: $line-height;
+      margin-top: $line-height / 2;
 
       @include breakpoint(medium) {
         font-size: rem-calc(30);
@@ -193,7 +194,7 @@ $budget-2018-yellow:   #fef384;
     }
 
     .lead {
-      color: $budget-2018-yellow;
+      color: $text;
       font-size: rem-calc(30);
       font-weight: 700;
       line-height: rem-calc(30);
@@ -217,8 +218,8 @@ $budget-2018-yellow:   #fef384;
     }
 
     .button {
-      background: #fff;
-      color: #000;
+      background: #000;
+      color: #fff;
     }
   }
 }

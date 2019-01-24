@@ -274,4 +274,20 @@ describe Budget do
       expect(budget.formatted_amount(1000.00)).to eq ('€1,000')
     end
   end
+
+  describe '#city_heading' do
+    let!(:group) { create(:budget_group, budget: budget) }
+
+    it 'returns heading with city heading name' do
+      city_heading = create(:budget_heading, group: group, name: 'Toda la ciudad')
+
+      expect(budget.city_heading).to eq city_heading
+    end
+
+    it 'returns nil when no city heading exists' do
+      non_city_heading = create(:budget_heading, group: group)
+
+      expect(budget.city_heading).to eq nil
+    end
+  end
 end

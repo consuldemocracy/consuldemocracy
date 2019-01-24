@@ -1,7 +1,4 @@
 require 'rails_helper'
-require 'rake'
-
-Rails.application.load_tasks
 
 feature 'Stats' do
 
@@ -119,7 +116,7 @@ feature 'Stats' do
       create(:spending_proposal, :feasible, geozone: california)
       create(:spending_proposal, :feasible, geozone: nil)
 
-      SpendingProposal.all.each do |spending_proposal|
+      SpendingProposal.find_each do |spending_proposal|
         create(:ballot, spending_proposals: [spending_proposal], geozone: spending_proposal.geozone)
       end
 
@@ -160,26 +157,22 @@ feature 'Stats' do
 
   feature "Budget investments" do
     context "Supporting phase" do
-      background do
-        @budget = create(:budget)
-        @group_all_city   = create(:budget_group, budget: @budget)
-        @heading_all_city = create(:budget_heading, group: @group_all_city)
-
-        allow_any_instance_of(Admin::StatsController).
-        to receive(:city_heading).and_return(@heading_all_city)
-      end
+      let!(:budget) { create(:budget) }
+      # TODO change name to city_heading?
+      let!(:city_group) { create(:budget_group, budget: budget) }
+      let!(:city_heading) { create(:budget_heading, :city_heading, group: city_group) }
 
       scenario "Number of supports in investment projects" do
-        group_2 = create(:budget_group, budget: @budget)
+        group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: @heading_all_city)
+        investment2 = create(:budget_investment, heading: city_heading)
 
         1.times { create(:vote, votable: investment1) }
         2.times { create(:vote, votable: investment2) }
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Supporting phase"
         end
 
@@ -191,9 +184,9 @@ feature 'Stats' do
         user2 = create(:user, :level_two)
         user3 = create(:user, :level_two)
 
-        group_2 = create(:budget_group, budget: @budget)
+        group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: @heading_all_city)
+        investment2 = create(:budget_investment, heading: city_heading)
 
         create(:vote, votable: investment1, voter: user1)
         create(:vote, votable: investment1, voter: user2)
@@ -201,7 +194,7 @@ feature 'Stats' do
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Supporting phase"
         end
 
@@ -209,12 +202,9 @@ feature 'Stats' do
       end
 
       scenario "Number of users that have supported investments projects per geozone" do
-        budget = create(:budget)
-
-        group_all_city  = create(:budget_group, budget: budget)
         group_districts = create(:budget_group, budget: budget)
 
-        all_city    = create(:budget_heading, group: group_all_city)
+        all_city    = city_heading
         carabanchel = create(:budget_heading, group: group_districts)
         barajas     = create(:budget_heading, group: group_districts)
 
@@ -222,7 +212,7 @@ feature 'Stats' do
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
 
-        Budget::Investment.all.each do |investment|
+        Budget::Investment.find_each do |investment|
           create(:vote, votable: investment)
         end
 
@@ -249,18 +239,10 @@ feature 'Stats' do
       end
 
       scenario "Number of users that have supported geozone/no-geozone wide proposals" do
-        budget = create(:budget)
-
-        group_all_city  = create(:budget_group, budget: budget)
         group_districts = create(:budget_group, budget: budget)
 
-        all_city    = create(:budget_heading, group: group_all_city)
         carabanchel = create(:budget_heading, group: group_districts)
-
-        allow_any_instance_of(Admin::StatsController).
-        to receive(:city_heading).and_return(all_city)
-
-        all_city_investment = create(:budget_investment, heading: all_city)
+        all_city_investment = create(:budget_investment, heading: city_heading)
         district_investment = create(:budget_investment, heading: carabanchel)
 
         user_both = create(:user, :level_two)
@@ -430,7 +412,7 @@ feature 'Stats' do
 
       expect(page).to have_css(".proposal_notification", count: 3)
 
-      ProposalNotification.all.each do |proposal_notification|
+      ProposalNotification.find_each do |proposal_notification|
         expect(page).to have_content proposal_notification.title
         expect(page).to have_content proposal_notification.body
       end

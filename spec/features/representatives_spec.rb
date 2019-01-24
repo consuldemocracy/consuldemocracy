@@ -76,12 +76,12 @@ feature 'Representatives' do
       expect(page).not_to have_button("Delegate on #{forum.name}")
     end
 
-    scenario "Forcing the creation returns forbidden" do
+    scenario "Forcing the creation returns forbidden", :page_driver do
       page.driver.post representatives_path(id: forum.id)
       expect(page.status_code).to eq(403)
     end
 
-    scenario "Forcing the deletion returns forbidden" do
+    scenario "Forcing the deletion returns forbidden", :page_driver do
       page.driver.delete representative_path(id: forum.id)
       expect(page.status_code).to eq(403)
     end

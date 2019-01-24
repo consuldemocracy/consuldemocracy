@@ -32,6 +32,15 @@ $budget-2018-blue:    #408ea2;
 $budget-2018-pink:    #e78573;
 $budget-2018-yellow:  #fef384;
 
+$budget-2019-green:       #d8e9d8;
+$budget-2019-green-dark:  #4a5e4c;
+$budget-2019-blue:        #d0e3e9;
+$budget-2019-blue-dark:   #425257;
+$budget-2019-orange:      #ffeed4;
+$budget-2019-orange-dark: #726e4f;
+$budget-2019-red:         #ef775b;
+$budget-2019-yellow:      #ffeaac;
+
 // Madrid corporate identity manual
 
 $madrid-black: #000;
@@ -107,6 +116,45 @@ header,
         color: #fff;
         text-decoration: none;
       }
+    }
+  }
+}
+
+.banner {
+  position: relative;
+
+  @include breakpoint(medium down) {
+    text-align: center;
+  }
+
+  a {
+
+    &:hover {
+      color: $link !important;
+      text-decoration: none;
+
+      h2,
+      h3 {
+        color: $link !important;
+      }
+    }
+  }
+
+  h3 {
+    max-width: 90%;
+  }
+
+  &::after {
+    background: #ededed image-url('banner_oct_2018.gif');
+    content: '';
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+
+    @include breakpoint(medium) {
+      position: absolute;
+      right: 0;
+      top: 12px;
     }
   }
 }
@@ -308,19 +356,6 @@ header,
 
 .panel.white {
   background: #fff;
-}
-
-.jumbo {
-  background: $highlight;
-
-  @include breakpoint(medium) {
-    padding: rem-calc(24) 0;
-  }
-
-  h1,
-  p {
-    color: $text;
-  }
 }
 
 .jumbo-survey {
@@ -580,13 +615,6 @@ table {
   .back,
   .icon-angle-left {
     color: #fff;
-  }
-}
-
-form {
-
-  &.locale-form select {
-    background-position: rem-calc(48);
   }
 }
 
@@ -1775,7 +1803,7 @@ tr th {
 }
 
 .milestone-status,
-.tab-milestones ul li::before {
+.tab-milestones .timeline ul li::before {
   background: #000;
 }
 
@@ -2736,46 +2764,63 @@ ul {
 
 // Overrides budgets default colors
 // -------------------------------
-
 .expanded.budget,
 .jumbo-budget {
-  background: #000;
+  background: $budget-2019-yellow;
+
+  @include breakpoint(medium) {
+    background: $budget-2019-yellow image-url('budget_welcome/background_header.jpg');
+    background-position: 100% top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include breakpoint(large) {
+    background-size: contain;
+  }
+
+  h1,
+  p,
+  a,
+  .back,
+  .icon-angle-left {
+    color: $text;
+  }
 
   h2 {
-    color: $budget-2018-pink;
-    font-family: "Souvenir" !important;
+    color: $text;
     font-size: rem-calc(30);
     font-weight: 700;
     line-height: rem-calc(30);
+    margin-bottom: $line-height / 2;
   }
 
   &.budget-heading {
     min-height: $line-height * 11;
 
     h3 {
-      color: $budget-2018-yellow;
-      font-family: "Souvenir" !important;
-      font-weight: 400;
+      color: $text;
     }
   }
 
   &.budget-header {
-    background: #000;
+    background: $budget-2019-yellow;
 
     @include breakpoint(medium) {
-      background: #000 image-url('budget_welcome/background_header.jpg');
+      background: $budget-2019-yellow image-url('budget_welcome/background_header.jpg');
       background-position: 100% top;
+      background-repeat: no-repeat;
       background-size: contain;
     }
   }
 
   .info {
-    background: #fff;
-    border-bottom: 1px solid #000;
+    background: rgba(255, 253, 232, 0.8);
+    border-bottom: 1px solid $budget-2019-orange;
 
     @include breakpoint(medium) {
       border-bottom: 0;
-      border-top: rem-calc(6) solid $budget-2018-pink;
+      border-top: 0;
     }
 
     h2,
@@ -2806,6 +2851,12 @@ ul {
   }
 }
 
+.expanded.budget.button {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
 .budget-info {
 
   .submenu .is-active {
@@ -2818,7 +2869,7 @@ ul {
 
     .phase::before {
       background: #fff;
-      border: 4px solid $budget-2018-blue;
+      border: 4px solid $budget-2019-green;
     }
   }
 
@@ -2833,12 +2884,12 @@ ul {
 .budget-timeline .phase.is-active {
 
   h3 {
-    background: #000;
-    color: $budget-2018-blue;
+    background: $budget-2019-blue;
+    color: $budget-2019-blue-dark;
   }
 
   &::before {
-    background: #000;
+    background: $budget-2019-blue-dark;
   }
 }
 
@@ -3052,44 +3103,6 @@ h2 {
   }
 }
 
-.guides {
-
-  .guide-budget {
-    background: #000;
-    border: 1px solid #000;
-    color: #fff;
-
-    h2 {
-      color: $budget-2018-yellow;
-    }
-
-    &::before {
-      background: $budget-2018-yellow;
-      color: #000;
-    }
-
-    li {
-
-      &::before {
-        color: $budget-2018-blue;
-      }
-    }
-
-    .button {
-      background: $budget-2018-yellow;
-      color: #000;
-    }
-  }
-
-  .button {
-    border: 0 !important;
-  }
-
-  .guide-proposal {
-    border: 1px solid $border;
-  }
-}
-
 .groups-and-headings {
 
   .heading {
@@ -3101,6 +3114,13 @@ h2 {
     .heading-info {
       padding: $line-height / 2;
     }
+  }
+}
+
+.budget-execution {
+
+  .price {
+    color: $budget-custom;
   }
 }
 

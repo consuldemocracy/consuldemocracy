@@ -1,6 +1,6 @@
 <% if current_budget.present? %>
-  <% provide :title, t("meta_tags.budget_2018.#{current_budget.phase}.title") %>
-  <% provide :meta_description, t("meta_tags.budget_2018.#{current_budget.phase}.description") %>
+  <% provide :title, t("meta_tags.budget_2019.#{current_budget.phase}.title") %>
+  <% provide :meta_description, t("meta_tags.budget_2019.#{current_budget.phase}.description") %>
 
   <% content_for :canonical do %>
     <%= render "shared/canonical", href: budgets_url %>
@@ -9,10 +9,10 @@
   <% provide :social_media_meta_tags do %>
     <%= render "shared/social_media_meta_tags",
                 social_url: budgets_url,
-                social_title: t("meta_tags.budget_2018.#{current_budget.phase}.title"),
-                social_description: t("meta_tags.budget_2018.#{current_budget.phase}.description"),
-                twitter_image_url: "social_media_budgets_2018_#{current_budget.phase}_twitter.png",
-                og_image_url: "social_media_budgets_2018_#{current_budget.phase}.png" %>
+                social_title: t("meta_tags.budget_2019.#{current_budget.phase}.title"),
+                social_description: t("meta_tags.budget_2019.#{current_budget.phase}.description"),
+                twitter_image_url: "social_media_budgets_2019_selecting_twitter.png",
+                og_image_url: "social_media_budgets_2019_selecting.png" %>
   <% end %>
 
   <% provide :tracking_page_number, "33" %>
@@ -41,7 +41,7 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
+                            new_budget_investment_path(current_budget),
                             class: "button margin-top expanded" %>
               <% else %>
                 <div class="callout warning margin-top">
@@ -100,7 +100,7 @@
 
         <% unless current_budget.informing? %>
           <% cache [@budgets_coordinates] do %>
-            <div id="map">
+            <div class="map">
               <h3><%= t("budgets.index.map") %></h3>
               <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
             </div>
@@ -149,21 +149,26 @@
               <div class="budget-investment clear">
                 <div class="panel past-budgets">
                   <div class="row" data-equalizer data-equalizer-on="medium">
-                    <div class="small-12 medium-9 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div class="table-cell align-middle">
                         <h3><%= budget.name %></h3>
                       </div>
                     </div>
-                    <div class="small-12 medium-3 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                         <% if budget.name == "Presupuestos Participativos 2016" %>
                           <%= link_to t("budgets.index.see_results"),
                                       participatory_budget_results_path,
-                                      class: "button expanded" %>
+                                      class: "button" %>
                         <% else %>
                           <%= link_to t("budgets.index.see_results"),
-                                      budget_results_path(budget.id),
-                                      class: "button expanded" %>
+                                      custom_budget_results_path(budget),
+                                      class: "button" %>
+                        <% end %>
+                        <% unless budget.name == "Presupuestos Participativos 2018" %>
+                          <%= link_to t("budgets.index.milestones"),
+                                      custom_budget_executions_path(budget, status: 1),
+                                      class: "button" %>
                         <% end %>
                       </div>
                     </div>

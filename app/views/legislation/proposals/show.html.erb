@@ -39,6 +39,8 @@
 
         </div>
 
+        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
+
         <br>
         <p>
           <%= t("proposals.show.code") %>
@@ -113,9 +115,13 @@
   </div>
 <% end %>
 
-<div class="row">
-  <div class="small-12 column">
-    <%= render "legislation/proposals/filter_subnav" %>
+<div class="additional-content">
+  <div class="filter-subnav">
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "legislation/proposals/filter_subnav" %>
+      </div>
+    </div>
   </div>
 </div>
 

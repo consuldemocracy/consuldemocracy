@@ -31,6 +31,7 @@ get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcom
 get 'presupuestos',                        to: 'budgets#index', id: 'help/budgets/welcome',    as: 'budgets_welcome'
 get "presupuestos/:id/estadisticas",       to: "budgets/stats#show", as: 'custom_budget_stats'
 get "presupuestos/:id/resultados",         to: "budgets/results#show", as: 'custom_budget_results'
+get 'presupuestos/:id/ejecuciones',        to: 'budgets/executions#show', as: 'custom_budget_executions'
 get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
 
 resources :budgets, only: [:show, :index], path: 'presupuestos' do
@@ -38,9 +39,13 @@ resources :budgets, only: [:show, :index], path: 'presupuestos' do
   resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
     member do
       post :vote
+      put :flag
+      put :unflag
     end
+
     collection { get :suggest }
   end
+
   resource :ballot, only: :show, controller: "budgets/ballots" do
     resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
   end
@@ -49,6 +54,7 @@ resources :budgets, only: [:show, :index], path: 'presupuestos' do
 
   resource :results, only: :show, controller: "budgets/results"
   resource :stats, only: :show, controller: "budgets/stats"
+  resource :executions, only: :show, controller: 'budgets/executions'
 end
 
 get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
@@ -84,6 +90,9 @@ resources :legacy_legislations, only: [:show], path: 'legislations'
 resources :annotations do
   get :search, on: :collection
 end
+
+### Guides
+resources :guides, only: :new
 
 ### Officing
 namespace :officing do
@@ -133,8 +142,6 @@ get 'procesos',  to: 'legislation/processes#index', as: 'processes'
 get "vota/stats_2018", to: "polls#stats_2018", as: 'poll_stats_2018'
 get "vota/results_2018", to: "polls#results_2018", as: 'poll_results_2018'
 
-resources :answers, only: [:index, :new, :create]
-
 resources :polls, only: [:show, :index], path: 'vota' do
   member do
     get :stats
@@ -169,6 +176,7 @@ get 'participatory_budget/select_district',        to: 'spending_proposals#selec
 get 'delegacion',                                  to: 'forums#index', as: 'delegation'
 get 'presupuestos-participativos-resultados',      to: 'spending_proposals#results',                    as: 'participatory_budget_results'
 get 'presupuestos-participativos-estadisticas',    to: 'spending_proposals#stats',                      as: 'participatory_budget_stats'
+get 'presupuestos-participativos-ejecuciones',     to: 'budgets/executions#show',                       as: 'participatory_budget_executions', defaults: {id: '2016'}
 get 'participatory_budget_info',                   to: 'pages#show', id: 'help/budgets/info_2016', as: 'more_info_budgets_2016'
 get 'jornada-presupuestos-participativos',         to: 'budget_polls#new'
 get 'jornada-presupuestos-participativos/success', to: 'budget_polls#success'
@@ -177,8 +185,7 @@ get 'jornada-presupuestos-participativos/success', to: 'budget_polls#success'
 get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
 
 # Human Rights
-get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',      as: 'human_rights_page'
-get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan',       as: 'human_rights_plan'
+get "derechos-humanos",                  to: "legislation/processes#show", id: "94",                as: "human_rights_page"
 get 'derechos-humanos/medidas',          to: 'human_rights#index',                                  as: 'human_rights_proposals'
 get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                                   as: 'human_rights_proposal'
 get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2', as: 'human_rights_question_2'
@@ -223,35 +230,29 @@ get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'p
 get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
 get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'first_voting'
 
+# Old processes
+get "proceso/ordenanza-de-transparencia",            to: "legislation/processes#show", id: "88"
+get "proceso/alianza-gobierno-abierto",              to: "legislation/processes#show", id: "87"
+get "proceso/registro-de-lobbies",                   to: "legislation/processes#show", id: "86"
+get 'proceso/parque-lineal-manzanares',              to: 'legislation/processes#show', id: '81'
+get 'proceso/ordenanza-publicidad-exterior',         to: 'legislation/processes#show', id: '80'
+get 'proceso/distrito-villaverde',                   to: 'legislation/processes#show', id: '79'
+get 'proceso/distrito-vicalvaro',                    to: 'legislation/processes#show', id: '78'
+get 'proceso/conservacion-rehabilitacion-edificios', to: 'legislation/processes#show', id: '77'
+get 'proceso/nueva-ordenanza-movilidad',             to: 'legislation/processes#show', id: '76'
+get 'proceso/linea-madrid',                          to: 'legislation/processes#show', id: '75'
+get 'proceso/plan-calidad-aire',                     to: 'legislation/processes#show', id: '74'
+get 'proceso/distrito-villa-de-vallecas',            to: 'legislation/processes#show', id: '73'
+get 'proceso/rotulacion-vias',                       to: 'legislation/processes#show', id: '72'
+get 'proceso/licencias-urbanisticas',                to: 'legislation/processes#show', id: '71'
+get 'proceso/ordenanza-subvenciones',                to: 'legislation/processes#show', id: '70'
+
 # Processes
-get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic/index',       as: 'urbanistic_licenses'
-get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government/index',  as: 'open_government'
-get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government/doc',    as: 'open_government_doc'
-get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention/index',       as: 'subvention_ordinance'
-get 'proceso/plan-calidad-aire',                      to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
-get 'proceso/rotulacion-vias',                        to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
-get 'proceso/distrito-villa-de-vallecas',             to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
-get 'proceso/linea-madrid',                           to: 'pages#show', id: 'processes/linea_madrid/index',     as: 'linea_madrid'
-get 'proceso/nueva-ordenanza-movilidad',              to: 'pages#show', id: 'processes/movilidad/index',        as: 'movilidad'
-get 'proceso/conservacion-rehabilitacion-edificios',  to: 'pages#show', id: 'processes/buildings/index',        as: 'buildings'
-get 'proceso/ordenanza-publicidad-exterior',          to: 'pages#show', id: 'processes/publicity/index',        as: 'publicity'
-get 'proceso/distrito-vicalvaro',                     to: 'pages#show', id: 'processes/vicalvaro/index',        as: 'vicalvaro'
-get 'proceso/distrito-villaverde',                    to: 'pages#show', id: 'processes/villaverde/index',       as: 'villaverde'
-get 'proceso/cartas-de-servicios',                    to: 'pages#show', id: 'processes/service_letters/index',  as: 'service_letters'
-get 'proceso/cartas-de-servicios/1',                  to: 'pages#show', id: 'processes/service_letters/1',      as: 'service_letters_1'
-get 'proceso/cartas-de-servicios/2',                  to: 'pages#show', id: 'processes/service_letters/2',      as: 'service_letters_2'
-get 'proceso/cartas-de-servicios/3',                  to: 'pages#show', id: 'processes/service_letters/3',      as: 'service_letters_3'
-get 'proceso/cartas-de-servicios/4',                  to: 'pages#show', id: 'processes/service_letters/4',      as: 'service_letters_4'
-get 'proceso/cartas-de-servicios/5',                  to: 'pages#show', id: 'processes/service_letters/5',      as: 'service_letters_5'
 get 'proceso/pleno-abierto',                          to: 'pages#show', id: 'processes/open_plenary/index',     as: 'open_plenary'
-get 'proceso/ordenanza-de-transparencia',             to: 'pages#show', id: 'processes/transparency/index',     as: 'transparency_ordinance'
-get 'proceso/ordenanza-de-transparencia/borrador',    to: 'pages#show', id: 'processes/transparency/draft',     as: 'transparency_ordinance_draft'
-get 'proceso/registro-de-lobbies',                    to: 'pages#show', id: 'processes/lobbies/index',          as: 'lobbies'
-get 'proceso/registro-de-lobbies/borrador',           to: 'pages#show', id: 'processes/lobbies/draft',          as: 'lobbies_draft'
-get 'proceso/parque-lineal-manzanares',               to: 'pages#show', id: 'processes/manzanares/index',       as: 'manzanares'
 get 'proceso/once-plazas',                            to: 'pages#show', id: 'processes/once_plazas/index',      as: 'once_plazas'
 get 'plenoabierto',                                   to: 'legislation/processes#proposals', id: '24',          as: 'open_plenary_2017'
-get 'plazas-abiertas',                                to: 'pages#show', id: 'landings/plazas_abiertas',  as: 'plazas_abiertas'
+get 'plazas-abiertas',                                to: 'pages#show', id: 'landings/plazas_abiertas',         as: 'plazas_abiertas'
+get 'filmotecas',                                     to: 'pages#show', id: 'processes/filmotecas/index',       as: 'filmotecas'
 
 # Probes
 get 'processes/urbanismo-bancos',         to: 'probes#show',    id: 'town_planning',   as: 'town_planning'

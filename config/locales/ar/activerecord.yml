@@ -1,0 +1,334 @@
+ar:
+  activerecord:
+    models:
+      activity:
+        zero: "النشاط"
+        one: "نشاط"
+        two: "نشاطين"
+        few: "الأنشطة"
+        many: "الأنشطة"
+        other: "الأنشطة"
+      budget:
+        zero: "ميزانية"
+        one: "ميزانية"
+        two: "ميزانيات"
+        few: "ميزانيات"
+        many: "ميزانيات"
+        other: "ميزانيات"
+      budget/investment:
+        zero: "إستثمار"
+        one: "إستثمار"
+        two: "إستثمارات"
+        few: "إستثمارات"
+        many: "إستثمارات"
+        other: "إستثمارات"
+      comment:
+        zero: "تعليق"
+        one: "تعليق"
+        two: "تعليقات"
+        few: "تعليقات"
+        many: "تعليقات"
+        other: "تعليقات"
+      tag:
+        zero: "العلامات"
+        one: "علامة"
+        two: "علامتين"
+        few: "البعض من العلامات"
+        many: "الكثير من العلامات"
+        other: "العلامات"
+      user:
+        zero: "المستخدم"
+        one: "المستخدم"
+        two: "المستخدمان"
+        few: "المستخدمين"
+        many: "المستخدمين"
+        other: "المستخدمين"
+      moderator:
+        zero: "المشرف"
+        one: "المشرف"
+        two: "المشرفين"
+        few: "المشرفين"
+        many: "المشرفين"
+        other: "المشرفين"
+      manager:
+        zero: "مدير"
+        one: "مدير"
+        two: "مديران"
+        few: "مدراء"
+        many: "مدراء"
+        other: "مدراء"
+      vote:
+        zero: "تصويت"
+        one: "صوت"
+        two: "صوتان"
+        few: "اصوات"
+        many: "اصوات"
+        other: "اصوات"
+    attributes:
+      budget:
+        name: "الاسم"
+        description_accepting: "وصف خلال مرحلة القبول"
+        description_reviewing: "وصف خلال مرحلة المراجعة"
+        description_selecting: "وصف خلال مرحلة التحديد"
+        description_valuating: "وصف خلال مرحلة التقييم"
+        description_balloting: "وصف خلال مرحلة الإقتراع"
+        description_reviewing_ballots: "الوصف خلال مرحلة مراجعة الإقتراع"
+        description_finished: "الوصف عند الإنتهاء من الميزانية"
+        phase: "مرحلة"
+        currency_symbol: "العملة"
+      budget/investment:
+        heading_id: "عنوان"
+        title: "العنوان"
+        description: "الوصف"
+        external_url: "رابط لوثائق إضافية"
+        administrator_id: "مدير"
+        location: "الموقع (اختياري)"
+        organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
+        image: "اقتراح صورة وصفية"
+        image_title: "عنوان الصورة"
+      milestone:
+        status_id: "حالة الإستثمار الحالية (إختياري)"
+        title: "العنوان"
+        description: "الوصف (إختياري ان كان هناك حالة معينة)"
+        publication_date: "تاريخ النشر"
+      milestone/status:
+        name: "الاسم"
+        description: "الوصف (إختياري)"
+      budget/heading:
+        name: "اسم العنوان"
+        price: "السعر"
+        population: "عدد السكان"
+      comment:
+        body: "تعليق"
+        user: "مستخدم"
+      debate:
+        author: "مؤلف"
+        description: "رأي"
+        terms_of_service: "شروط الخدمة"
+        title: "عنوان"
+      proposal:
+        author: "كاتب"
+        title: "العنوان"
+        question: "سؤال"
+        description: "الوصف"
+        terms_of_service: "شروط الخدمة"
+      user:
+        login: "البريد الإلكتروني أو اسم المستخدم"
+        email: "البريد الإلكتروني"
+        username: "اسم المستخدم"
+        password_confirmation: "تأكيد كلمة المرور"
+        password: "كلمة المرور"
+        current_password: "كلمة المرور الحالية"
+        phone_number: "رقم الهاتف"
+        official_position: "الموقف الرسمي"
+        official_level: "المستوى الرسمي"
+        redeemable_code: "رمز التحقق الواردة عبر البريد الإلكتروني"
+      organization:
+        name: "اسم المنظمة"
+        responsible_name: "الشخص المسؤول عن المجموعة"
+      spending_proposal:
+        administrator_id: "المدير"
+        association_name: "اسم الرابطة"
+        description: "الوصف"
+        external_url: "رابط لوثائق إضافية"
+        geozone_id: "نطاق العملية"
+        title: "العنوان"
+      poll:
+        name: "الاسم"
+        starts_at: "تاريخ البدء"
+        ends_at: "تاريخ الإغلاق"
+        geozone_restricted: "مقيد حسب المناطق"
+        summary: "ملخص"
+        description: "الوصف"
+      poll/translation:
+        name: "الاسم"
+        summary: "ملخص"
+        description: "الوصف"
+      poll/question:
+        title: "سؤال"
+        summary: "ملخص"
+        description: "الوصف"
+        external_url: "رابط لوثائق إضافية"
+      poll/question/translation:
+        title: "سؤال"
+      signature_sheet:
+        signable_type: "نوع القابلة"
+        signable_id: "معرف القابلة"
+        document_numbers: "أرقام المستندات"
+      site_customization/page:
+        content: المحتوى
+        created_at: أنشئت في
+        subtitle: عنوان فرعي
+        slug: سبيكة
+        status: حالة
+        title: العنوان
+        updated_at: تم التحديث في
+        more_info_flag: ظهر في صفحة المساعدة
+        print_content_flag: زر طباعة المحتوى
+        locale: لغة
+      site_customization/page/translation:
+        title: عنوان
+        subtitle: عنوان فرعي
+        content: المحتوى
+      site_customization/image:
+        name: الاسم
+        image: صورة
+      site_customization/content_block:
+        name: الاسم
+        locale: الإعدادات المحلية
+        body: الهيئة
+      legislation/process:
+        title: عنوان العملية
+        summary: ملخص
+        description: وصف
+        additional_info: معلومات إضافية
+        start_date: تاريخ البدء
+        end_date: تاريخ الإنتهاء
+        debate_start_date: تاريخ بدء المناقشة
+        debate_end_date: تاريخ انتهاء المناقشة
+        draft_publication_date: مسودة تاريخ النشر
+        allegations_start_date: تاريخ بداية الإدعاءات
+        allegations_end_date: تاريخ انتهاء الإدعاءات
+        result_publication_date: تاريخ نشر النتيجة النهائية
+      legislation/process/translation:
+        title: عنوان العملية
+        summary: ملخص
+        description: وصف
+        additional_info: معلومات إضافية
+      legislation/draft_version:
+        title: عنوان الإصدار
+        body: نص
+        changelog: تغييرات
+        status: حالة
+        final_version: نهاية الإصدار
+      legislation/draft_version/translation:
+        title: عنوان الإصدار
+        body: نص
+        changelog: تغييرات
+      legislation/question:
+        title: عنوان
+        question_options: خيارات
+      legislation/question_option:
+        value: القيمة
+      legislation/annotation:
+        text: التعليق
+      document:
+        title: العنوان
+        attachment: مرفق
+      image:
+        title: عنوان
+        attachment: مرفق
+      poll/question/answer:
+        title: إجابة
+        description: الوصف
+      poll/question/answer/translation:
+        title: الإجابة
+        description: الوصف
+      poll/question/answer/video:
+        title: العنوان
+        url: فيديو خارجي
+      newsletter:
+        segment_recipient: المستفيدين
+        subject: الموضوع
+        from: من
+        body: محتوى البريد الإلكتروني
+      admin_notification:
+        segment_recipient: المستفيدين
+        title: عنوان
+        link: رابط
+        body: نص
+      admin_notification/translation:
+        title: عنوان
+        body: نص
+      widget/card:
+        label: التسمية (إختياري)
+        title: عنوان
+        description: وصف
+        link_text: نص الرابط
+        link_url: رابط URL
+      widget/card/translation:
+        label: التسمية (إختياري)
+        title: العنوان
+        description: الوصف
+        link_text: نص الرابط
+      widget/feed:
+        limit: عدد العناصر
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "هذا المستخدم لديه بالفعل كلمة مرور"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو يساوي %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "لقد وصلت إلى الحد الأقصى لعدد الرسائل الخاصة في اليوم"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "يجب أن يكون عرض الصورة على الأقل %{required_min_width}بكسل"
+              min_image_height: "يجب ان يكون طول الصورة على الأقل %{required_min_height}بكسل"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "شريحة مستلم المستخدم غير صالحة"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "شريحة مستلم المستخدم غير صالحة"
+        map_location:
+          attributes:
+            map:
+              invalid: لا يمكن ان يكون موقع الخريطة فارغًا. حدد علامة أو حدد مربع الإختيار اذا لم تكن هناك حاجة لتحديد الموقع
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "الوثيقة ليست في التعداد"
+              has_voted: "هذا المستخدم قد صوت بالفعل"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ البدء
+            debate_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المناقشة
+            allegations_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء الادعاءات
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "يجب الانتظار لمدة لا تقل عن %{interval} من الأيام بين الإشعارات"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'لم يتم التحقق من التعداد'
+              already_voted: 'بالفعل صوت هذا الاقتراح'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "يجب ان يكون أحرف, أرقام, _و -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "يجب ان يكون العرض %{required_width}بكسل"
+              image_height: "يجب ان يكون الارتفاع %{required_height}بكسل"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'لا يمكنك التعليق على التقييم'
+      messages:
+        record_invalid: "فشل التحقق من صحة: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
+          has_many: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"

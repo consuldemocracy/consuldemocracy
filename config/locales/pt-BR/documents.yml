@@ -1,0 +1,24 @@
+pt-BR:
+  documents:
+    title: Documentos
+    max_documents_allowed_reached_html: Você atingiu o número máximo de documentos permitidos! <strong> Você tem que apagar um antes de você poder carregar outro.</strong>
+    form:
+      title: Documentos
+      title_placeholder: Adicionar um título descritivo para o documento
+      attachment_label: Escolher documento
+      delete_button: Excluir documento
+      cancel_button: Cancelar
+      note: "Você pode carregar até um máximo de %{max_documents_allowed} documentos dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB por arquivo."
+      add_new_document: Adicionar novo documento
+    actions:
+      destroy:
+        notice: Documento foi excluído com sucesso.
+        alert: Não é possível destruir o documento.
+        confirm: Tem certeza que deseja excluir o documento? Esta ação não pode ser desfeita!
+    buttons:
+      download_document: Baixar arquivo
+      destroy_document: Destruir o documento
+    errors:
+      messages:
+        in_between: deve estar entre %{min} e %{max}
+        wrong_content_type: '%{content_type} tipo de conteúdo não coincide com qualquer um dos tipos de conteúdo aceitos %{accepted_content_types}'

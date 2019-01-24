@@ -1,7 +1,77 @@
 fr:
   pages:
-    census_terms: Pour confirmer ce compte, vous devez être âgé(e) de 16 ans ou plus, et avoir été recensé avec les données indiquées ci-dessus, lesquelles seront vérifiées. En acceptant le processus de vérification, vous donnez également votre consentement au recoupement de cette information, ainsi que les moyens de communication qui figurent dans ce fichier. Les données fournies seront intégrées et traitées dans le fichier indiqué dans les conditions d'utilisations du portail.
-    conditions: Conditions d'utilisation
     general_terms: Conditions générales
+    help:
+      title: "%{org} est une plate-forme pour la participation citoyenne"
+      guide: "Ce guide détaille chacune des sections de la %{org} et comment elles fonctionnent."
+      menu:
+        debates: "Discussions"
+        proposals: "Propositions"
+        budgets: "Budgets participatifs"
+        polls: "Votes"
+        other: "Autre information utile"
+        processes: "Processus législatifs"
+      debates:
+        title: "Discussions"
+        description: "Dans la section %{link}, vous pouvez présenter et partager votre opinion avec d’autres personnes sur des sujets liés à la ville qui vous sont chers. C’est aussi un lieu pour générer des idées qui, associées aux autres sections de %{org}, pourront conduire à des actions concrètes du conseil municipal."
+        link: "débats citoyens"
+        feature_html: "Vous pouvez ouvrir des débats, les commenter et les évaluer avec les boutons <strong>Je suis d'accord</strong> ou <strong>Je ne suis pas d’accord</strong>. Pour cela, vous devez %{link}."
+        feature_link: "s’inscrire à %{org}"
+        image_alt: "Boutons pour évaluer les débats"
+        figcaption: 'Boutons ''Je suis d''accord'' et ''Je ne suis pas d''accord'' pour évaluer les débats.'
+      proposals:
+        title: "Propositions"
+        description: "Dans la section %{link}, vous pouvez faire des propositions que la mairie pourrait réaliser. Les propositions ont besoin de soutiens, et si elles atteignent un nombre suffisant, elles sont soumises à un vote public. Les propositions approuvées par ces votes citoyens sont acceptées par le conseil municipal et réalisées."
+        link: "propositions citoyennes"
+        image_alt: "Bouton pour soutenir une proposition"
+        figcaption_html: 'Bouton pour "Soutenir" une proposition.'
+      budgets:
+        title: "Budget participatif"
+        description: "La section %{link} permet aux citoyens de participer à la répartition du budget municipal."
+        link: "budgets participatifs"
+        image_alt: "Différentes phases d’un budget participatif"
+        figcaption_html: '"Phase de soutien" et "phase de vote" des budgets participatifs.'
+      polls:
+        title: "Votes"
+        description: "La section %{link} est activée chaque fois qu’une proposition atteint 1% de soutiens et passe au vote ou lorsque le conseil municipal propose aux gens de se prononcer sur une mesure."
+        link: "votes"
+        feature_1: "Pour participer au vote, vous devez %{link} et avoir un compte vérifié."
+        feature_1_link: "s’inscrire à %{org_name}"
+      processes:
+        title: "Processus législatifs"
+        description: "Dans la section des %{link} , les citoyens participent à l’élaboration et la modification des réglements qui s'appliquent à la ville et peuvent donner leur avis sur les politiques municipales lors des débats préalables."
+        link: "processus législatifs"
+      faq:
+        title: "Problèmes techniques ?"
+        description: "Lisez la FAQ et trouvez la réponse à vos questions."
+        button: "Voir la foire aux questions"
+        page:
+          title: "Foire aux questions"
+          description: "Cette page répond aux questions les plus communes des utilisateurs du site."
+          faq_1_title: "Question 1"
+          faq_1_description: "Il s’agit d’un exemple pour la description de la première question."
+      other:
+        title: "Autre information utile"
+        how_to_use: "Utiliser %{org_name} dans votre ville"
+      how_to_use:
+        text: |-
+          Utilisez-le pour votre administration locale ou aidez-nous à l'améliorer, il s'agit d'un logiciel libre.
+          
+          Ce Portail Gouvernement Ouvert est basé sur l'application [CONSUL](https://github.com/consul/consul 'consul github'), un logiciel libre publié sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui signifie que n'importe qui peut utiliser le code librement, le copier, le parcourir, le modifier et le redistribuer (pour permettre à d'autres d'en faire autant). Parce que nous croyons en une culture qui s'enrichit et se renforce quand elle est ouverte à tous.
+          
+          Si vous êtes un développeur, vous pouvez accéder au code et nous aider à l'améliorer à [CONSUL](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Utilisez-le pour votre administration locale
+    titles:
+      accessibility: Accessibilité
+      conditions: Conditions d'utilisations
+      help: "Qu'est-ce que %{org} ? - Participation citoyenne"
+      privacy: Politique de confidentialité
     verify:
+      code: Code que vous avez reçu par lettre
       email: Email
+      info: 'Pour vérifier votre compte saisissez vos données d''accès :'
+      info_code: 'Saisissez maintenant le code reçu par lettre :'
+      password: Mot de passe
+      submit: Confirmer mon compte
+      title: Confirmer mon compte

@@ -262,7 +262,7 @@ feature 'Moderate comments' do
         visit moderation_comments_path
 
         expect(page).to have_content "Probe option"
-        expect(page).to have_link probe_option.name, href: probe_probe_option_path(probe_option.probe.codename, probe_option.id)
+        expect(page).to have_link probe_option.name, href: probe_probe_option_path(probe_option.probe.codename, probe_option)
         expect(page).to have_content comment.body
       end
     end

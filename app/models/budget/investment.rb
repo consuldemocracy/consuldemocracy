@@ -23,6 +23,8 @@ class Budget
     include Relationable
     include Notifiable
     include Filterable
+    include Flaggable
+    include Milestoneable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -38,8 +40,6 @@ class Budget
 
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
-
-    has_many :milestones
 
     validates :title, presence: true
     validates :author, presence: true
@@ -63,7 +63,8 @@ class Budget
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
-    scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
+    scope :without_valuator_group,      -> { where(valuator_group_assignments_count: 0) }
+    scope :without_valuator,            -> { valuation_open.without_valuator_group.where(valuator_assignments_count: 0) }
     scope :under_valuation,             -> { valuation_open.valuating.where("administrator_id IS NOT ?", nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
     scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0" ) }
@@ -81,13 +82,15 @@ class Budget
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
+    scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
-    scope :by_budget,         ->(budget)            { where(budget: budget) }
-    scope :by_group,          ->(group_id)          { where(group_id: group_id) }
-    scope :by_heading,        ->(heading_id)        { where(heading_id: heading_id) }
-    scope :by_admin,          ->(admin_id)          { where(administrator_id: admin_id) }
-    scope :by_tag,            ->(tag_name)          { tagged_with(tag_name) }
-    scope :by_valuator,       ->(valuator_id)       { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_budget,         ->(budget)      { where(budget: budget) }
+    scope :by_group,          ->(group_id)    { where(group_id: group_id) }
+    scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
+    scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
+    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
+    scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
     scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
     scope :accesible_by_valuator, ->(valuator) do
       direct_access = by_valuator(valuator&.id)
@@ -98,7 +101,7 @@ class Budget
     scope :for_render, -> { includes(:heading) }
 
     before_save :calculate_confidence_score
-    after_save :recalculate_heading_winners if :incompatible_changed?
+    after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
@@ -147,6 +150,16 @@ class Budget
         send("sort_by_#{sorting_param}")
       else
         order(cached_votes_up: :desc).order(id: :desc)
+      end
+    end
+
+    def self.limit_results(budget, params, results)
+      max_per_heading = params[:max_per_heading].to_i
+      return results if max_per_heading <= 0
+
+      ids = []
+      budget.headings.pluck(:id).each do |hid|
+        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
       end
     end
 
@@ -348,6 +361,16 @@ class Budget
 
     def assigned_valuation_groups
       self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
+    def self.with_milestone_status_id(status_id)
+      joins(:milestones).includes(:milestones).select do |investment|
+        investment.milestone_status_id == status_id.to_i
+      end
+    end
+
+    def milestone_status_id
+      milestones.published.with_status.order_by_publication_date.last&.status_id
     end
 
     private

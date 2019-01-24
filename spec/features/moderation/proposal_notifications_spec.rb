@@ -16,7 +16,7 @@ feature 'Moderate proposal notifications' do
       accept_confirm { click_link 'Hide' }
     end
 
-    expect(page).to have_css("#proposal_notification_#{proposal.id}.faded")
+    expect(page).to have_css("#proposal_notification_#{proposal_notification.id}.faded")
 
     logout
     login_as(citizen)

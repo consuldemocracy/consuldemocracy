@@ -1,4 +1,3 @@
----
 fr:
   officing:
     header:
@@ -7,52 +6,30 @@ fr:
       index:
         title: Bureaux de vote
         info: Ici vous pouvez valider les documents des utilisateurs et enregistrer les résultats des votes
+        no_shifts: Vous n'avez pas de votes à superviser aujourd'hui.
     menu:
-      voters: "Valider un document"
-      recounts: "Enregistrer le dépouillement"
-      total_recounts: "Dépouillements finaux et résultats"
+      voters: Valider un document
+      total_recounts: Dépouillements finaux et résultats
     polls:
-      index:
-        title: "Liste des votes"
-        no_polls: "Vous n'êtes responsable d'aucun vote actif"
-        select_poll: "Sélectionner un vote"
-        add_recount: "Ajouter un dépouillement"
       final:
-        title: "Liste des votes finaux"
-        no_polls: "Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs"
-        select_poll: "Sélectionner un vote"
-        add_recount: "Ajouter le dépouillement final"
-        add_results: "Ajouter les résultats"
-    recounts:
-      flash:
-        create: "Données ajoutées"
-        error_create: "Décompte NON ajouté. Erreur dans les données."
-      new:
-        title: "%{poll} - Ajouter le dépouillement quotidien"
-        not_allowed: "Vous n'êtes pas le président de ce vote"
-        booth_date: "Bureau de vote et date"
-        select_booth_date: "Sélectionner un bureau de vote et une date"
-        count: "Décompte des votes"
-        count_placeholder: "Décompte des votes"
-        submit: "Sauvegarder"
-        recount_list: "Vos dépouillements"
-        booth: "Urne"
-        date: "Date"
+        title: Liste des votes finaux
+        no_polls: Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs
+        select_poll: Sélectionner un vote
+        add_results: Ajouter les résultats
     results:
       flash:
         create: "Résultats sauvegardés"
         error_create: "Résultats NON sauvegardés. Erreur dans les données."
         error_wrong_booth: "Mauvaise urne. Résultats NON sauvegardés."
-        error_wrong_date: "Mauvaise date. Résultats NON sauvegardés."
       new:
         title: "%{poll} - Ajouter des résultats"
         not_allowed: "Vous n'êtes pas autorisé à ajouter des résultats pour ce vote"
         booth: "Bureau de vote"
         date: "Date"
         select_booth: "Sélectionner une bureau de vote"
-        select_date: "Sélectionner une date"
         ballots_white: "Votes blancs"
         ballots_null: "Votes invalides"
+        ballots_total: "Total des bulletins"
         submit: "Sauvegarder"
         results_list: "Vos résultats"
         see_results: "Voir les résultats"
@@ -63,6 +40,7 @@ fr:
         table_votes: Votes
         table_whites: "Votes blancs"
         table_nulls: "Votes invalides"
+        table_total: "Total des bulletins"
     residence:
       flash:
         create: "Document vérifié avec le recensement"
@@ -78,9 +56,13 @@ fr:
       new:
         title: Votes
         table_poll: Vote
+        table_status: Statut du vote
         table_actions: Statut des votes
+        not_to_vote: La personne a décidé de ne pas voter pour le moment
       show:
         can_vote: Peut voter
         error_already_voted: a déjà participé à ce vote
         submit: Confirmer le vote
         success: "A voté !"
+      can_vote:
+        submit_disable_with: "Patientez, le vote est en cours de confirmation..."

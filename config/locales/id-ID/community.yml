@@ -1,0 +1,59 @@
+id:
+  community:
+    sidebar:
+      title: Masyarakat
+      description:
+        proposal: Berpartisipasi dalam komunitas pengguna proposal ini.
+        investment: Berpartisipasi dalam komunitas pengguna investasi ini.
+      button_to_access: Akses komunitas
+    show:
+      title:
+        proposal: Komunitas proposal
+        investment: Komunitas Investasi Anggaran
+      description:
+        proposal: Berpartisipasi dalam komunitas proposal ini. Komunitas yang aktif dapat membantu memperbaiki isi proposal dan meningkatkan penyebarannya untuk mendapatkan dukungan lebih.
+        investment: Ikut serta dalam masyarakat investasi anggaran ini. Komunitas yang aktif dapat membantu memperbaiki isi investasi anggaran dan meningkatkan penyebarannya untuk mendapatkan dukungan lebih.
+      create_first_community_topic:
+        first_theme_not_logged_in: Tidak ada masalah, ikut menciptakan yang pertama.
+        first_theme: Buat topik komunitas pertama
+        sub_first_theme: "Untuk membuat tema Anda harus %{sign_in} o %{sign_up}."
+        sign_in: "masuk"
+        sign_up: "keluar"
+      tab:
+        participants: Peserta
+      sidebar:
+        participate: Ikut
+        new_topic: Buat topik
+      topic:
+        edit: Sunting topik
+        destroy: Menghancurkan topik
+        comments:
+          zero: Tidak ada komentar
+          other: "1 Komentar\n%{count} komentar"
+      author: Penulis
+      back: Kembali ke %{community} %{proposal}
+    topic:
+      create: Buat topik
+      edit: Sunting Topik
+      form:
+        topic_title: Judul
+        topic_text: Teks awal
+        new:
+          submit_button: Buat topik
+        edit:
+          submit_button: Sunting topik
+        create:
+          submit_button: Buat topik
+        update:
+          submit_button: Perbarui topik
+      show:
+        tab:
+          comments_tab: Komentar
+      sidebar:
+        recommendations_title: Rekomendasi untuk membuat topik
+        recommendation_one: Jangan menulis judul topik atau seluruh kalimat dalam huruf kapital. Di internet yang dianggap teriakan. Dan tidak ada yang suka diteriaki.
+        recommendation_two: Setiap topik atau komentar yang menyiratkan tindakan ilegal akan dihilangkan, juga yang bermaksud menyabotase ruang subjek, segala sesuatu yang lain diperbolehkan.
+        recommendation_three: Nikmati ruang ini, suara yang mengisinya, itu milikmu juga.
+  topics:
+    show:
+      login_to_comment: Kamu harus %{signin} atau %{signup} untuk meninggalkan komentar.

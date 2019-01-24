@@ -1,0 +1,34 @@
+<main>
+  <div class="row">
+    <div id="investment-projects" class="investment-projects-list small-12 column">
+
+      <div class="not-print">
+        <%= form_tag print_management_spending_proposals_path, method: :get, enforce_utf8: false do %>
+          <div class="small-12 medium-4 column float-left">
+            <%= select_tag :geozone,
+                           options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone]),
+                           { label: false,
+                             class: "js-submit-on-change" } %>
+          </div>
+        <% end %>
+
+        <a id="print_link" href="javascript:window.print();" class="button warning float-right">
+          <%= t('management.spending_proposals.print.print_button') %>
+        </a>
+      </div>
+
+      <div class="small-12 search-results">
+        <%= content_tag(:h2, t("management.spending_proposals.filters.unfeasible"), class: "inline-block") if params[:unfeasible].present? %>
+        <%= content_tag(:h2, t("management.spending_proposals.filters.by_geozone", geozone: @geozone_name), class: "inline-block") if @geozone_name.present? %>
+        <%= content_tag(:h2, t("management.spending_proposals.search_results", count: @spending_proposals.size, search_term: params[:search]), class: "inline-block") if params[:search].present? %>
+      </div>
+
+      <%= render @spending_proposals %>
+
+      <div class="for-print-only">
+        <p><strong><%= t("management.print.spending_proposals_info") %></strong><br>
+        <%= t("management.print.spending_proposals_note") %></p>
+      </div>
+    </div>
+  </div>
+</main>

@@ -40,12 +40,8 @@ class Budget
         end
 
         def store_user_heading
-          return if heading.id == city_heading_id
+          return if heading.city_heading?
           ballot.user.update(balloted_heading_id: heading.id) unless ballot.physical == true
-        end
-
-        def city_heading_id
-          1
         end
     end
   end

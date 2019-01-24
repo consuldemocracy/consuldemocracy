@@ -1,4 +1,4 @@
-<% if show_admin_menu? %>
+<% if show_admin_menu?(current_user) %>
   <li class="has-submenu">
     <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow", class: "hide-for-small-only" %>
     <ul class="submenu menu vertical" data-submenu>

@@ -1,13 +1,23 @@
 <h2><%= t("admin.settings.index.title") %></h2>
 
 <table>
+  <thead>
+    <tr>
+      <th><%= t("admin.settings.setting_name") %></th>
+      <th><%= t("admin.settings.setting_value") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @settings.each do |setting| %>
       <tr>
-        <td class="small-12 medium-4">
+        <td class="small-6">
           <strong><%= t("settings.#{setting.key}") %></strong>
+          <br>
+          <span class="small">
+            <%= t("settings.#{setting.key}_description", default: t("admin.settings.no_description")) %>
+          </span>
         </td>
-        <td class="small-12 medium-8">
+        <td class="small-6">
           <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
             <div class="small-12 medium-6 large-9 column">
               <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>

@@ -23,5 +23,9 @@ class Poll
                                sort {|x, y| y.ends_at <=> x.ends_at}
     end
 
+    def todays_booths
+      officer_assignments.by_date(Date.current).map(&:booth).uniq
+    end
+
   end
 end

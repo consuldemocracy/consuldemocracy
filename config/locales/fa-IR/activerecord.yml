@@ -1,0 +1,321 @@
+fa:
+  activerecord:
+    models:
+      activity:
+        one: "فعالیت"
+        other: "فعالیت"
+      budget:
+        one: "بودجه"
+        other: "بودجه ها"
+      budget/investment:
+        one: "سرمایه گذاری"
+        other: "سرمایه گذاری ها"
+      milestone:
+        one: "نقطه عطف"
+        other: "نقاط عطف"
+      comment:
+        one: "توضیح"
+        other: "توضیحات"
+      debate:
+        one: "بحث"
+        other: "مباحثه"
+      tag:
+        one: "برچسب "
+        other: "برچسب ها"
+      user:
+        one: "کاربر"
+        other: "کاربران"
+      moderator:
+        one: "سردبیر"
+        other: "سردبیرها"
+      administrator:
+        one: "مدیر"
+        other: "مدیران"
+      valuator:
+        one: "ارزیاب"
+        other: "ارزیاب ها"
+      valuator_group:
+        one: "گروه ارزيابي"
+        other: "گروهای ارزيابي"
+      manager:
+        one: "مدیر\n"
+        other: "مدیرها\n"
+      newsletter:
+        one: "خبرنامه"
+        other: "خبرنامه ها"
+      vote:
+        one: "رای"
+        other: "آرا"
+      organization:
+        one: "سازمان"
+        other: "سازمان ها"
+      poll/booth:
+        one: "غرفه"
+        other: "غرفه ها"
+      poll/officer:
+        one: "افسر"
+        other: "افسرها"
+      proposal:
+        one: "پیشنهاد شهروند"
+        other: "پیشنهادات شهروند"
+      site_customization/page:
+        one: صفحه سفارشی
+        other: صفحه سفارشی
+      site_customization/image:
+        one: صفحات سفارشی
+        other: صفحات سفارشی
+      site_customization/content_block:
+        one: محتوای بلوک سفارشی 
+        other: محتوای بلوکهای سفارشی 
+      legislation/process:
+        one: "روند\n"
+        other: "روندها\n"
+      legislation/draft_versions:
+        one: "نسخه پیش نویس"
+        other: "نسخه های پیش نویس"
+      legislation/draft_texts:
+        one: " پیش نویس"
+        other: " پیش نویس ها"
+      legislation/questions:
+        one: "سوال"
+        other: "سوالات"
+      legislation/question_options:
+        one: "گزینه سوال"
+        other: "گزینه های سوال"
+      legislation/answers:
+        one: "پاسخ"
+        other: "پاسخ ها"
+      documents:
+        one: "سند"
+        other: "اسناد"
+      images:
+        one: "تصویر"
+        other: "تصاویر"
+      topic:
+        one: "موضوع"
+        other: "موضوع ها"
+      poll:
+        one: "نظرسنجی"
+        other: "نظر سنجی ها"
+    attributes:
+      budget:
+        name: "نام"
+        description_accepting: "شرح در مرحله پذیرش"
+        description_reviewing: "توضیحات در مرحله بازبینی"
+        description_selecting: "توضیحات در مرحله انتخاب"
+        description_valuating: "توضیحات در مرحله ارزشیابی"
+        description_balloting: "توضیحات در مرحله رای گیری"
+        description_reviewing_ballots: "توضیحات در مرحله بازبینی آراء"
+        description_finished: "شرح هنگامی که بودجه به پایان رسید"
+        phase: "فاز"
+        currency_symbol: "ارز"
+      budget/investment:
+        heading_id: "سرفصل"
+        title: "عنوان"
+        description: "توضیحات"
+        external_url: "لینک به مدارک اضافی"
+        administrator_id: "مدیر"
+        location: "محل سکونت (اختیاری)"
+        organization_name: "اگر شما به نام یک گروه / سازمان، یا از طرف افراد بیشتری پیشنهاد می کنید، نام آنها را بنویسید."
+        image: "تصویر طرح توصیفی"
+        image_title: "عنوان تصویر"
+      milestone:
+        title: "عنوان"
+        publication_date: "تاریخ انتشار"
+      budget/heading:
+        name: "عنوان نام"
+        price: "قیمت"
+        population: "جمعیت"
+      comment:
+        body: "توضیح"
+        user: "کاربر"
+      debate:
+        author: "نویسنده"
+        description: "نظر"
+        terms_of_service: "شرایط و ضوابط خدمات"
+        title: "عنوان"
+      proposal:
+        author: "نویسنده"
+        title: "عنوان"
+        question: "سوال"
+        description: "توضیحات"
+        terms_of_service: "شرایط و ضوابط خدمات"
+      user:
+        login: "نام کاربری یا ایمیل"
+        email: "پست الکترونیکی"
+        username: "نام کاربری"
+        password_confirmation: "تایید رمز عبور"
+        password: "رمز عبور"
+        current_password: "رمز ورود فعلی"
+        phone_number: "شماره تلفن"
+        official_position: "موضع رسمی"
+        official_level: "سطح رسمی"
+        redeemable_code: "کد تایید  از طریق ایمیل دریافت شد."
+      organization:
+        name: "نام سازمان"
+        responsible_name: "شخص مسئول گروه"
+      spending_proposal:
+        association_name: "نام انجمن"
+        description: "توضیحات"
+        external_url: "لینک به مدارک اضافی"
+        geozone_id: "حوزه عملیات"
+        title: "عنوان"
+      poll:
+        name: "نام"
+        starts_at: "تاریخ شروع\n"
+        ends_at: "تاريخ خاتمه"
+        geozone_restricted: "محدود شده توسط geozone"
+        summary: "خلاصه"
+        description: "توضیحات"
+      poll/question:
+        title: "سوال"
+        summary: "خلاصه"
+        description: "توضیحات"
+        external_url: "لینک به مدارک اضافی"
+      signature_sheet:
+        signable_type: "نوع امضاء"
+        signable_id: "شناسه  امضاء"
+        document_numbers: "شماره سند"
+      site_customization/page:
+        content: محتوا
+        created_at: "ایجاد شده در\n"
+        subtitle: "عنوان فرعی\n"
+        slug: slug
+        status: وضعیت
+        title: عنوان
+        updated_at: "ایجاد شده در\n"
+        more_info_flag: نمایش در صفحه راهنما
+        print_content_flag: چاپ محتوا 
+        locale: زبان
+      site_customization/image:
+        name: نام
+        image: تصویر
+      site_customization/content_block:
+        name: نام
+        locale: زبان محلی
+        body: بدنه
+      legislation/process:
+        title: عنوان فرآیند
+        description: توضیحات
+        additional_info: اطلاعات اضافی
+        start_date: "تاریخ شروع\n"
+        end_date: تاریخ پایان
+        debate_start_date: "تاریخ شروع بحث\n"
+        debate_end_date: تاریخ پایان بحث
+        draft_publication_date: تاریخ انتشار پیش نویس
+        allegations_start_date: ' تاریخ شروع ادعا'
+        allegations_end_date: تاریخ پایان ادعا
+        result_publication_date: تاریخ انتشار نهایی
+      legislation/draft_version:
+        title: عنوان نسخه
+        body: متن
+        changelog: تغییرات
+        status: وضعیت ها
+        final_version: "نسخه نهایی\n"
+      legislation/question:
+        title: عنوان
+        question_options: "گزینه ها\n"
+      legislation/question_option:
+        value: "ارزش\n"
+      legislation/annotation:
+        text: توضیح
+      document:
+        title: عنوان
+        attachment: پیوست
+      image:
+        title: عنوان
+        attachment: پیوست
+      poll/question/answer:
+        title: پاسخ
+        description: توضیحات
+      poll/question/answer/video:
+        title: عنوان
+        url: ویدیوهای خارجی
+      newsletter:
+        segment_recipient: گیرندگان
+        subject: "موضوع\n"
+        from: "از \n"
+        body: محتوای ایمیل
+      widget/card:
+        label: برچسب (اختیاری)
+        title: عنوان
+        description: توضیحات
+        link_text: لینک متن
+        link_url: لینک آدرس
+      widget/feed:
+        limit: تعداد موارد
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "این کاربر دارای یک رمز عبور است."
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "برچسب ها باید کمتر یا برابر باشند با  %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "شما به حداکثر تعداد پیام های خصوصی در روز رسیده اید."
+        image:
+          attributes:
+            attachment:
+              min_image_width: "عرض تصویر باید حداقل%{required_min_width} پیکسل باشد"
+              min_image_height: "طول تصویر باید حداقل%{required_min_height} پیکسل باشد"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "بخش دریافت کننده کاربر نامعتبر است."
+        map_location:
+          attributes:
+            map:
+              invalid: مکان نقشه نمیتواند خالی باشد یک نشانگر را قرار دهید یا اگر گزینه geolocalization مورد نیاز نیست، کادر انتخاب را انتخاب کنید.
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "سند در سرشماری نیست."
+              has_voted: "کاربر قبلا رای داده است"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: باید بعد از تاریخ شروع بحث شروع شود.
+            debate_end_date:
+              invalid_date_range: باید بعد از تاریخ شروع بحث شروع شود.
+            allegations_end_date:
+              invalid_date_range: باید در تاریخ یا بعد از  تاریخ ادعا شروع شود.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "برچسب ها باید کمتر یا برابر باشند با  %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "برچسب ها باید کمتر یا برابر باشند با  %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "شما باید حداقل %{interval}روز بین اعلانها را صبر کنید."
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'توسط سرشماری تایید نشده است.'
+              already_voted: 'قبلا این پیشنهاد رای گیری شده است.'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "باید حروف، اعداد، _ و - باشد."
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "عرض باید %{required_width} پیکسل باشد."
+              image_height: "طول باید %{required_height} پیکسل باشد."
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'شما نمیتوانید در ارزیابی اظهار نظر کنید.'
+      messages:
+        record_invalid: "تأیید اعتبار ناموفق بود:%{errors}"
+        restrict_dependent_destroy:
+          has_one: "نمیتوان رکورد را حذف کرد زیرا وابستگی%{record} وجود دارد."
+          has_many: "نمیتوان رکورد را حذف کرد زیرا وابستگی%{record} وجود دارد."

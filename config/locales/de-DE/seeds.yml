@@ -1,0 +1,55 @@
+de:
+  seeds:
+    settings:
+      official_level_1_name: Offizielle Position 1
+      official_level_2_name: Offizielle Position 2
+      official_level_3_name: Offizielle Position 3
+      official_level_4_name: Offizielle Position 4
+      official_level_5_name: Offizielle Position 5
+    geozones:
+      north_district: Bezirk-Nord
+      west_district: Bezirk-West
+      east_district: Bezirk-Ost
+      central_district: Bezirk-Zentrum
+    organizations:
+      human_rights: Menschenrechte
+      neighborhood_association: Nachbarschaftsvereinigung
+    categories:
+      associations: Verbände
+      culture: Kultur
+      sports: Sport
+      social_rights: Soziale Rechte
+      economy: Wirtschaft
+      employment: Beschäftigung
+      equity: Eigenkapital
+      sustainability: Nachhaltigkeit
+      participation: Beteiligung
+      mobility: Mobilität
+      media: Medien
+      health: Gesundheit
+      transparency: Transparenz
+      security_emergencies: Sicherheit und Notfälle
+      environment: Umwelt
+    budgets:
+      budget: Bürgerhaushalt
+      currency: '€'
+      groups:
+        all_city: Alle Städte
+        districts: Bezirke
+      valuator_groups:
+        culture_and_sports: Kultur & Sport
+        gender_and_diversity: Gender & Diversity-Politik
+        urban_development: Nachhaltige Stadtentwicklung
+        equity_and_employment: Eigenkapital & Beschäftigung
+      statuses:
+        studying_project: Das Projekt untersuchen
+        bidding: Ausschreibung
+        executing_project: Das Projekt durchführen
+        executed: Ausgeführt
+    polls:
+      current_poll: "Aktuelle Umfrage"
+      current_poll_geozone_restricted: "Aktuelle Umfrage eingeschränkt auf Geo-Zone"
+      incoming_poll: "Eingehende Umfrage"
+      recounting_poll: "Umfrage wiederholen"
+      expired_poll_without_stats: "Abgelaufene Umfrage ohne Statistiken und Ergebnisse"
+      expired_poll_with_stats: "Abgelaufene Umfrage mit Statistiken und Ergebnisse"

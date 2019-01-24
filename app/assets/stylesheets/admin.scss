@@ -46,6 +46,10 @@ $sidebar-active: #f4fcd0;
 
   .top-links {
     background: #000;
+
+    a {
+      line-height: rem-calc($line-height * 1.5);
+    }
   }
 
   .admin-top-bar {
@@ -190,6 +194,11 @@ $sidebar-active: #f4fcd0;
 
     &.with-button {
       line-height: $line-height * 2;
+
+      .button {
+        background: #fff;
+        color: $brand;
+      }
     }
   }
 
@@ -208,6 +217,19 @@ $sidebar-active: #f4fcd0;
 
   table {
 
+    thead {
+      color: #fff;
+    }
+
+    th {
+      background: $brand;
+      color: #fff;
+
+      label {
+        color: #fff;
+      }
+    }
+
     .break {
       word-break: break-word;
     }
@@ -224,7 +246,6 @@ $sidebar-active: #f4fcd0;
 
       @include breakpoint(medium) {
         margin-left: $line-height / 2;
-        margin-right: $line-height / 2;
         margin-top: 0;
       }
     }
@@ -232,6 +253,13 @@ $sidebar-active: #f4fcd0;
 
   hr {
     max-width: none;
+  }
+
+  form {
+
+    .input-group-label {
+      height: $line-height * 2;
+    }
   }
 
   .menu.simple {
@@ -266,10 +294,6 @@ $sidebar-active: #f4fcd0;
 
     .proposal-form {
       padding-top: 0;
-    }
-
-    .proposal-show {
-      padding-top: rem-calc(54);
     }
   }
 
@@ -337,6 +361,14 @@ $sidebar-active: #f4fcd0;
 
 .no-margin-bottom {
   margin-bottom: 0 !important;
+}
+
+.enabled {
+  color: $color-success;
+}
+
+.disabled {
+  color: $text-medium;
 }
 
 // 02. Sidebar
@@ -1157,11 +1189,6 @@ $sidebar-active: #f4fcd0;
       content: '\76';
     }
   }
-}
-
-.current-of-max-headings {
-  color: #000;
-  font-weight: bold;
 }
 
 // 11. Newsletters

@@ -127,14 +127,11 @@ class Debate < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates the hot_score because there is a before_save
+    save # update cache when it has a new comment
   end
 
   def calculate_hot_score
-    self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               cached_votes_total,
-                                               cached_votes_up,
-                                               comments_count)
+    self.hot_score = ScoreCalculator.hot_score(self)
   end
 
   def calculate_confidence_score
@@ -156,10 +153,8 @@ class Debate < ActiveRecord::Base
 
   def self.debates_orders(user)
     orders = %w{hot_score confidence_score created_at relevance}
-    if user.present? && Setting['feature.user.recommendations'].present?
-      orders << "recommendations"
-    end
-    orders
+    orders << "recommendations" if Setting['feature.user.recommendations_on_debates'] && user&.recommended_debates
+    return orders
   end
 
   def set_comment_kind
