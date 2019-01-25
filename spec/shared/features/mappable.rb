@@ -147,7 +147,7 @@ shared_examples "mappable" do |mappable_factory_name,
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
-      fill_in "#{mappable_factory_name}_title", with: "New title"
+      fill_in "#{mappable_factory_name.camelize} title", with: "New title"
       click_on("Save changes")
       mappable.reload
 
@@ -172,7 +172,7 @@ shared_examples "mappable" do |mappable_factory_name,
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
-      fill_in "#{mappable_factory_name}_title", with: "New title"
+      fill_in "#{mappable_factory_name.camelize} title", with: "New title"
       click_on("Save changes")
 
       expect(page).not_to have_css(".map_location")
@@ -249,9 +249,9 @@ def do_login_for(user)
 end
 
 def fill_in_proposal_form
-  fill_in "proposal_title", with: "Help refugees"
-  fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-  fill_in "proposal_summary", with: "In summary, what we want is..."
+  fill_in "Proposal title", with: "Help refugees"
+  fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+  fill_in "Proposal summary", with: "In summary, what we want is..."
 end
 
 def submit_proposal_form
