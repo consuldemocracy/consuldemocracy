@@ -2,6 +2,7 @@ module CommentableActions
   extend ActiveSupport::Concern
   include Polymorphic
   include Search
+  include RemotelyTranslatable
 
   def index
     @resources = resource_model.all
@@ -21,6 +22,7 @@ module CommentableActions
     set_resource_votes(@resources)
 
     set_resources_instance
+    @remote_translations = detect_remote_translations(@resources, featured_proposals)
   end
 
   def show
@@ -29,6 +31,7 @@ module CommentableActions
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
     set_resource_instance
+    @remote_translations = detect_remote_translations([@resource], @comment_tree.comments)
   end
 
   def new
@@ -123,4 +126,7 @@ module CommentableActions
       end
     end
 
+    def featured_proposals
+      @featured_proposals ||= []
+    end
 end
