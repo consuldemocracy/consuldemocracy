@@ -837,3 +837,6 @@ es:
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
       title: '¿Cómo puedo comentar este documento?'
+  remote_translations:
+    create:
+      enqueue_remote_translation: Se han solicitado correctamente las traducciones.

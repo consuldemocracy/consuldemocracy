@@ -838,3 +838,6 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
+  remote_translations:
+    create:
+      enqueue_remote_translation: Translations have been correctly requested.
