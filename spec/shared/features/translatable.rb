@@ -32,6 +32,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
     fields - optional_fields
   end
 
+  let(:user) { create(:administrator).user }
   let(:translatable) do
     if factory_name == "budget_phase"
       budget = create(:budget)
@@ -41,9 +42,12 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       create(factory_name, attributes)
     end
   end
-
   let(:path) { send(path_name, *resource_hierarchy_for(translatable)) }
-  before { login_as(create(:administrator).user) }
+
+  before do
+    login_as(user)
+    translatable.update(author: user) if front_end_path_to_visit?(path_name)
+  end
 
   context "Manage translations" do
     before do
@@ -352,4 +356,8 @@ def update_button_text
   else
     "Save changes"
   end
+end
+
+def front_end_path_to_visit?(path)
+  path[/admin|managment|valuation/].blank?
 end
