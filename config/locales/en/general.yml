@@ -991,5 +991,7 @@ en:
     poll:
       take_part: Take part from %{from} to %{to}
   remote_translations:
+    text: The content of this page is not available in your language
     create:
       enqueue_remote_translation: Translations have been correctly requested.
+    button: Translate page
