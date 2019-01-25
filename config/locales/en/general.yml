@@ -855,5 +855,7 @@ en:
       text_sign_up: sign up
       title: How I can comment this document?
   remote_translations:
+    text: The content of this page is not available in your language
     create:
       enqueue_remote_translation: Translations have been correctly requested.
+    button: Translate page
