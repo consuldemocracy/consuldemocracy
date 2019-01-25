@@ -989,6 +989,7 @@ es:
       take_part: Participa del %{from} al %{to}
   remote_translations:
     text: El contenido de esta página no está disponible en tu idioma
+    all_remote_translations_enqueued_text: "En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma"
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
