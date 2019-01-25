@@ -104,6 +104,8 @@ es:
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
+      remote_translations: "Traducciones remotas"
+      remote_translations_description: "Muestra un botón que permite a los usuarios solicitar una traducción de una página no traducida en su idioma."
     map:
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"
