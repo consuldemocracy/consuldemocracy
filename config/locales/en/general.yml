@@ -840,6 +840,7 @@ en:
       title: How I can comment this document?
   remote_translations:
     text: The content of this page is not available in your language
+    all_remote_translations_enqueued_text: In a short period of time refreshing the page you will be able to see all the content in your language.
     create:
       enqueue_remote_translation: Translations have been correctly requested.
     button: Translate page
