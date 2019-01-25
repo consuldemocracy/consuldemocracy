@@ -1400,6 +1400,15 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["related_content_id"], name: "opposite_related_content", using: :btree
   end
 
+  create_table "remote_translations", force: :cascade do |t|
+    t.string   "locale"
+    t.integer  "remote_translatable_id"
+    t.string   "remote_translatable_type"
+    t.text     "error_message"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "reports", force: :cascade do |t|
     t.boolean  "stats"
     t.boolean  "results"
