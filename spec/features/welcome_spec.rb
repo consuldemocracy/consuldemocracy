@@ -2,6 +2,21 @@ require 'rails_helper'
 
 feature "Welcome screen" do
 
+  it_behaves_like "remotely_translatable",
+                  :proposal,
+                  "root_path",
+                  {}
+
+  it_behaves_like "remotely_translatable",
+                  :debate,
+                  "root_path",
+                  {}
+
+  it_behaves_like "remotely_translatable",
+                  :legislation_process,
+                  "root_path",
+                  {}
+
   scenario 'a regular users sees it the first time he logs in' do
     user = create(:user)
 
