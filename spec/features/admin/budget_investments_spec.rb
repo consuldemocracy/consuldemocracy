@@ -852,8 +852,8 @@ feature "Admin budget investments" do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit"
 
-      fill_in "budget_investment_title", with: "Potatoes"
-      fill_in "budget_investment_description", with: "Carrots"
+      fill_in "Title", with: "Potatoes"
+      fill_in "Description", with: "Carrots"
       select "#{budget_investment.group.name}: Barbate", from: "budget_investment[heading_id]"
       uncheck "budget_investment_incompatible"
       check "budget_investment_selected"
@@ -1103,7 +1103,7 @@ feature "Admin budget investments" do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit"
 
-      fill_in "budget_investment_title", with: ""
+      fill_in "Title", with: ""
 
       click_button "Update"
 
