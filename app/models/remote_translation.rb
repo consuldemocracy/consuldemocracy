@@ -11,4 +11,10 @@ class RemoteTranslation < ActiveRecord::Base
   def enqueue_remote_translation
   end
 
+  def self.remote_translation_enqueued?(remote_translation)
+    where(remote_translatable_id: remote_translation["remote_translatable_id"],
+          remote_translatable_type: remote_translation["remote_translatable_type"],
+          locale: remote_translation["locale"],
+          error_message: nil).any?
+  end
 end
