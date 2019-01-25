@@ -1,5 +1,6 @@
 require "translator-text"
 include SentencesParser
+include RemoteAvailableLocales
 
 class MicrosoftTranslateClient
   CHARACTERS_LIMIT_PER_REQUEST = 5000
