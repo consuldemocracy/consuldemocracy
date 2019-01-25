@@ -1,3 +1,4 @@
+include RemoteAvailableLocales
 class RemoteTranslationsCaller
   attr_accessor :available_remote_locales
 
@@ -13,7 +14,7 @@ class RemoteTranslationsCaller
   end
 
   def available_remote_locales
-    @remote_locales = daily_cache('remote_locales') { MicrosoftTranslateClient.new.load_remote_locales() }
+    @remote_locales = daily_cache('remote_locales') { RemoteAvailableLocales.load_remote_locales }
   end
 
   private
@@ -38,8 +39,6 @@ class RemoteTranslationsCaller
       remote_translation.destroy
     else
       remote_translation.update(error_message: resource.errors.messages)
-      ## TODO: Parsear los errores para gurdarlos? #{:"translations.title"=>["is too short (minimum is 4 characters)"]}
-      ## TODO: A quien informamos de que ha sucedido un error en la traducción?
     end
   end
 

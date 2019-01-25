@@ -1,8 +1,6 @@
 require 'translator-text'
-require 'net/https'
-require 'uri'
-require 'cgi'
-require 'json'
+include SentencesParser
+include RemoteAvailableLocales
 
 class MicrosoftTranslateClient
   CHARACTERS_LIMIT_PER_REQUEST = 5000
@@ -17,10 +15,6 @@ class MicrosoftTranslateClient
     texts = prepare_texts(fields_values)
     valid_locale = parse_locale(locale)
     response = request_translation(texts, valid_locale)
-  end
-
-  def load_remote_locales
-    remote_available_locales.map { |locale| locale.first }
   end
 
   private
@@ -49,27 +43,6 @@ class MicrosoftTranslateClient
     end_text = text[split_position + 1 .. text.size]
 
     translate_text(start_text, locale) + @client.translate([end_text], to: locale)
-  end
-
-  def detect_split_position(text)
-    minimum_valid_index = text.size - CHARACTERS_LIMIT_PER_REQUEST
-    valid_point = text[minimum_valid_index..text.size].index('.')
-    valid_whitespace = text[minimum_valid_index..text.size].index(' ')
-
-    split_position = get_split_position(valid_point, valid_whitespace, minimum_valid_index)
-  end
-
-  def get_split_position(valid_point, valid_whitespace, minimum_valid_index)
-    split_position = minimum_valid_index
-    if valid_point.present? || valid_whitespace.present?
-      valid_position = valid_point.present? ? valid_point : valid_whitespace
-      split_position = split_position + valid_position
-    end
-    split_position
-  end
-
-  def characters_count(texts)
-    texts.map(&:size).reduce(:+)
   end
 
   def parse_response(response, split_response)
@@ -101,37 +74,6 @@ class MicrosoftTranslateClient
 
   def notranslate?(text)
     text.downcase == PREVENTING_TRANSLATION_KEY
-  end
-
-  def parse_locale(locale)
-    case locale
-    when :"pt-BR"
-      :pt
-    when :"zh-CN"
-      :"zh-Hans"
-    when :"zh-TW"
-      :"zh-Hant"
-    else
-      locale
-    end
-  end
-
-  def remote_available_locales
-    host = 'https://api.cognitive.microsofttranslator.com'
-    path = '/languages?api-version=3.0'
-
-    uri = URI (host + path)
-
-    request = Net::HTTP::Get.new(uri)
-    request['Ocp-Apim-Subscription-Key'] = Rails.application.secrets.microsoft_api_key
-
-    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-      http.request (request)
-    end
-
-    result = response.body.force_encoding("utf-8")
-
-    JSON.parse(result)["translation"]
   end
 
 end

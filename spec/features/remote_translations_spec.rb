@@ -5,8 +5,8 @@ feature 'Remote Translations' do
   background do
     Setting["feature.remote_translations"] = true
     proposal = create(:proposal)
-    microsoft_translate_client_response = ["af", "ar", "bg", "bn", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fil", "fj", "fr", "he", "hi", "hr", "ht", "hu", "id", "is", "it", "ja", "ko", "lt", "lv", "mg", "ms", "mt", "mww", "nb", "nl", "otq", "pl", "pt", "ro", "ru", "sk", "sl", "sm", "sr-Cyrl", "sr-Latn", "sv", "sw", "ta", "te", "th", "tlh", "to", "tr", "ty", "uk", "ur", "vi", "yua", "yue", "zh-Hans", "zh-Hant"]
-    expect_any_instance_of(MicrosoftTranslateClient).to receive(:load_remote_locales).and_return(microsoft_translate_client_response)
+    microsoft_translate_client_response = ["ar", "de", "en", "es", "fa", "fr", "he", "it", "nl", "pl", "pt", "sv", "zh-Hans", "zh-Hant"]
+    expect_any_instance_of(RemoteAvailableLocales).to receive(:load_remote_locales).and_return(microsoft_translate_client_response)
   end
 
   describe "Display remote translation button when locale is included in microsoft translate client" do

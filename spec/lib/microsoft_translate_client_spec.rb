@@ -6,7 +6,7 @@ describe MicrosoftTranslateClient do
 
   describe '#call' do
 
-    context 'when characters from request are minor than characters limit' do
+    context 'when characters from request are less than the characters limit' do
 
       it 'response has the expected result' do
         response = create_response("Nuevo título", "Nueva descripción")

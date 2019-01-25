@@ -23,7 +23,7 @@ describe RemoteTranslationsCaller do
         expect(debate.translations.count).to eq(2)
       end
 
-      it "when new translation locale is distinct to default_locale skip lenght validations" do
+      it "when new translation locale is distinct to default_locale skip length validations" do
         microsoft_translate_client_response = ["TT", "Descripción traducida"]
         expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
 
@@ -80,7 +80,7 @@ describe RemoteTranslationsCaller do
         expect(proposal.valid?).to eq true
       end
 
-      it "when new translation locale is distinct to default_locale not skip presence validations" do
+      it "when new translation locale is distinct to default_locale do not skip presence validations" do
         microsoft_translate_client_response = ["", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
         expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
 

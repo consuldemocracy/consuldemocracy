@@ -24,10 +24,9 @@ class RemoteTranslationsController < ApplicationController
                           }
   end
 
+
   def translations_enqueued?(remote_translation)
-    RemoteTranslation.where(remote_translatable_id: remote_translation["remote_translatable_id"],
-                            remote_translatable_type: remote_translation["remote_translatable_type"],
-                            locale: remote_translation["locale"],
-                            error_message: nil).any?
+    RemoteTranslation.remote_translation_enqueued?(remote_translation)
   end
+
 end

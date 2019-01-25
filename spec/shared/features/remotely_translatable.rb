@@ -74,7 +74,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         end
       end
 
-      scenario "is not present when exists resource translations but his comment has not tanslations", :js do
+      scenario "is not present when a resource translation exists but his comment has not tanslations", :js do
         add_translations(resource)
         create(:comment, commentable: resource)
         visit path
@@ -95,7 +95,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         end
       end
 
-      scenario "display when exists resource translations but his comment has not tanslations", :js do
+      scenario "display when exists resource translations but the comment does not have a translation", :js do
         add_translations(resource)
         create(:comment, commentable: resource)
         visit path
@@ -167,7 +167,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         Delayed::Worker.delay_jobs = false
       end
 
-      scenario "should not be present remote translations button", :js do
+      scenario "the remote translation button should not be present", :js do
         visit path
         select('Español', from: 'locale-switcher')
 

@@ -32,19 +32,34 @@ module RemotelyTranslatable
     end
 
     def prepare_resources(*args)
-      resources_groups = []
-      args.compact.each do |resources_group|
+      widgets_group = get_widget_group(*args)
+      resources_groups = get_resources_groups(*args)
+      add_widgets_to_resources_groups(resources_groups, widgets_group)
+    end
 
-        next resources_groups << resources_group unless is_widget_feeds?(resources_group)
-        resources_group.each do |feed|
-          resources_groups << feed.items
-        end
+    def get_widget_group(*args)
+      widget_feeds = args.compact.select { |arg| is_widget_feeds?(arg) }
+    end
 
+    def get_resources_groups(*args)
+      args.compact.select { |arg| is_resources_group?(arg) }
+    end
+
+    def add_widgets_to_resources_groups(resources_groups, widgets_group)
+      return resources_groups unless widgets_group.present?
+
+      widgets_group.first.each do |feed|
+        resources_groups << feed.items
       end
+
       resources_groups
     end
 
     def is_widget_feeds?(resources_group)
       resources_group.present? && resources_group.first.class == Widget::Feed
+    end
+
+    def is_resources_group?(resources_group)
+      !is_widget_feeds?(resources_group)
     end
 end
