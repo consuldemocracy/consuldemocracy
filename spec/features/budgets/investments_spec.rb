@@ -30,6 +30,15 @@ feature 'Budget Investments' do
                     "new_budget_investment_path",
                     %w[title],
                     { "description" => :ckeditor }
+    it_behaves_like "remotely_translatable",
+                    :budget_investment,
+                    "budget_investments_path",
+                    { "budget_id": "budget_id" }
+
+    it_behaves_like "remotely_translatable",
+                    :budget_investment,
+                    "budget_investment_path",
+                    { "budget_id": "budget_id", "id": "id" }
   end
 
   scenario 'Index' do
