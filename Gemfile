@@ -55,6 +55,7 @@ gem "whenever", "~> 0.10.0", require: false
 gem "globalize", "~> 5.2.0"
 gem "globalize-accessors", "~> 0.2.1"
 gem "recipient_interceptor", "~> 0.2.0"
+gem "translator-text"
 
 source "https://rails-assets.org" do
   gem "rails-assets-leaflet"
