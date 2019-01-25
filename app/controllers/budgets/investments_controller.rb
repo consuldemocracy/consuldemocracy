@@ -47,6 +47,7 @@ module Budgets
 
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
+      @remote_translations = detect_remote_translations(@investments)
     end
 
     def new
@@ -59,6 +60,7 @@ module Budgets
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
+      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end
 
     def create
