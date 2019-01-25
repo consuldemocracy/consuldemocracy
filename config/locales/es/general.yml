@@ -1030,3 +1030,6 @@ es:
     title: Tipo de priorizacion
     borda: Votación con recuento Borda
     dowdall: Votación con recuento Dowdall
+  remote_translations:
+    create:
+      enqueue_remote_translation: Se han solicitado correctamente las traducciones.

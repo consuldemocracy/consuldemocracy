@@ -1033,3 +1033,6 @@ en:
     title: Prioritization type
     borda: Borda votation
     dowdall: Dowdall votation
+  remote_translations:
+    create:
+      enqueue_remote_translation: Translations have been correctly requested.
