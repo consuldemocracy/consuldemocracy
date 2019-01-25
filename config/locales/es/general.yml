@@ -838,5 +838,7 @@ es:
       text_sign_up: registrarte
       title: '¿Cómo puedo comentar este documento?'
   remote_translations:
+    text: El contenido de esta página no está disponible en tu idioma
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
+    button: Traducir página
