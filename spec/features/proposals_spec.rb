@@ -25,6 +25,14 @@ describe "Proposals" do
                     "edit_proposal_path",
                     %w[title summary],
                     { "description" => :ckeditor }
+    it_behaves_like "remotely_translatable",
+                    :proposal,
+                    "proposals_path",
+                    {}
+    it_behaves_like "remotely_translatable",
+                    :proposal,
+                    "proposal_path",
+                    { "id": "id" }
   end
 
   context "Index" do
