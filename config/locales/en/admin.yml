@@ -1285,11 +1285,12 @@ en:
         create: Create geography
         edit: Edit
         delete: Delete
+        no_related_headings: No related Headings
       geography:
         name: Name
         related_headings: Related Headings
+        outline_points: Outline points
         color: Geography color
-        geojson_file: GeoJSON file
       errors:
         form:
           error:

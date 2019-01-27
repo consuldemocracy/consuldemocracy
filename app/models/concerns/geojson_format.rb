@@ -1,35 +1,23 @@
 class GeojsonFormat < ActiveModel::Validator
+
   def validate(record)
-    if record.documents.any?
-      geojson_document = record.documents.first
-      geojson_file_path = (not geojson_document.cached_attachment.blank?) ? geojson_document.cached_attachment : Rails.root.join("public" + geojson_document.attachment.url)
+    if not record.outline_points.blank?
+      geojson_data_hash = parse_json(record.outline_points)
 
-      if File.exist?(geojson_file_path)
-        geoson_file = File.read(geojson_file_path)
-        data_hash = JSON.parse (geoson_file)
-
-        if (not data_hash.key?("geometry") or not data_hash["geometry"].key?("coordinates"))
-          record.errors.add(:base, "The file content does not follow the GeoJSON file format.")
-        else
-          record.outline_points = parse_geojson_file(data_hash)
-        end
+      if not geojson_data_hash or not validate_geojson_format(geojson_data_hash)
+        record.errors.add(:base, 'The GeoJSON provided does not follow the correct format. It must follow the "Polygon" or "MultiPolygon" type format.')
       end
     end
   end
 
   private
 
-  def parse_geojson_file(data_hash)
-    outline_points = []
+  def parse_json(outline_points_data)
+    JSON.parse(outline_points_data) rescue nil
+  end
 
-    data_hash["geometry"]["coordinates"].each do |coordinates|
-      point_coordinate = [] 
-      point_coordinate << coordinates.second
-      point_coordinate << coordinates.first
-      outline_points << point_coordinate
-    end
-
-    outline_points
+  def validate_geojson_format(geojson_data_hash)
+    geojson_data_hash.key?("geometry") && geojson_data_hash["geometry"].key?("coordinates") && geojson_data_hash["geometry"]["coordinates"].class == Array
   end
 
 end
