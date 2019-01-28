@@ -474,21 +474,28 @@ feature 'Polls' do
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
-    scenario "Show poll results and stats if user is administrator" do
-      poll = create(:poll, :current, results_enabled: false, stats_enabled: false)
-      user = create(:administrator).user
+    scenario "Do not show poll results or stats if are disabled" do
+      poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
+      question1 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question1, title: "Han Solo")
+      create(:poll_question_answer, question: question1, title: "Chewbacca")
+      question2 = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question2, title: "Leia")
+      create(:poll_question_answer, question: question2, title: "Luke")
+      user = create(:user)
+      admin = create(:administrator).user
 
       login_as user
       visit poll_path(poll)
 
-      expect(page).to have_content("Poll results")
-      expect(page).to have_content("Participation statistics")
+      expect(page).not_to have_content("Poll results")
+      expect(page).not_to have_content("Participation statistics")
 
-      visit results_poll_path(poll)
-      expect(page).to have_content("Questions")
+      login_as admin
+      visit poll_path(poll)
 
-      visit stats_poll_path(poll)
-      expect(page).to have_content("Participation data")
+      expect(page).not_to have_content("Poll results")
+      expect(page).not_to have_content("Participation statistics")
     end
   end
 end
