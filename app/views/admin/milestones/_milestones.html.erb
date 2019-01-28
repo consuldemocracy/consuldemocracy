@@ -1,4 +1,8 @@
-<h2><%= t("admin.milestones.index.milestone") %></h2>
+<h2 class="inline-block"><%= t("admin.milestones.index.milestone") %></h2>
+
+<%= link_to t("admin.progress_bars.manage"),
+            polymorphic_path([:admin, *resource_hierarchy_for(milestoneable.progress_bars.new)]),
+            class: "button hollow float-right" %>
 
 <% if milestoneable.milestones.any? %>
   <table>

@@ -332,6 +332,29 @@ en:
         notice: Milestone status created successfully
       delete:
         notice: Milestone status deleted successfully
+    progress_bars:
+      manage: "Manage progress bars"
+      index:
+        title: "Progress bars"
+        no_progress_bars: "There are no progress bars"
+        new_progress_bar: "Create new progress bar"
+        primary: "Primary progress bar"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Title"
+        table_percentage: "Current progress"
+      new:
+        creating: "Create progress bar"
+      edit:
+        title:
+          primary: "Edit primary progress bar"
+          secondary: "Edit progress bar %{title}"
+      create:
+        notice: "Progress bar created successfully!"
+      update:
+        notice: "Progress bar updated successfully"
+      delete:
+        notice: "Progress bar deleted successfully"
     comments:
       index:
         filter: Filter
@@ -1164,6 +1187,7 @@ en:
       author: Author
       content: Content
       created_at: Created at
+      delete: Delete
     spending_proposals:
       index:
         geozone_filter_all: All zones

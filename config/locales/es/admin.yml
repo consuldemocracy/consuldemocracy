@@ -332,6 +332,30 @@ es:
         notice: Estado de seguimiento creado correctamente
       delete:
         notice: Estado de seguimiento eliminado correctamente
+    progress_bars:
+      manage: "Gestionar barras de progreso"
+      index:
+        title: "Barras de progreso"
+        no_progress_bars: "No hay barras de progreso"
+        new_progress_bar: "Crear nueva barra de progreso"
+        primary: "Barra de progreso principal"
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Título"
+        table_percentage: "Progreso"
+      new:
+        creating: "Crear barra de progreso"
+      edit:
+        title:
+          primary: "Editar barra de progreso principal"
+          secondary: "Editar barra de progreso %{title}"
+      create:
+        notice: "¡Barra de progreso creada con éxito!"
+      update:
+        notice: "Barra de progreso actualizada"
+      delete:
+        notice: "Barra de progreso eliminada correctamente"
+
     comments:
       index:
         filter: Filtro
@@ -1163,6 +1187,7 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
+      delete: Eliminar
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
