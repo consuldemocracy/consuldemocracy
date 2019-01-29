@@ -34,6 +34,18 @@ feature 'Admin legislation processes' do
 
       expect(page).to have_content(process.title)
     end
+
+    scenario "Processes are sorted by descending start date" do
+      create(:legislation_process, title: "Process 1", start_date: Date.yesterday)
+      create(:legislation_process, title: "Process 2", start_date: Date.today)
+      create(:legislation_process, title: "Process 3", start_date: Date.tomorrow)
+
+      visit admin_legislation_processes_path(filter: "all")
+
+      expect("Process 3").to appear_before("Process 2")
+      expect("Process 2").to appear_before("Process 1")
+    end
+
   end
 
   context 'Create' do
