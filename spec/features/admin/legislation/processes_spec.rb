@@ -146,23 +146,23 @@ feature 'Admin legislation processes' do
 
     scenario "Create a legislation process with an image", :js do
       visit new_admin_legislation_process_path()
-      fill_in 'Process Title', with: 'An example legislation process'
-      fill_in 'Summary', with: 'Summary of the process'
+      fill_in "Process Title", with: "An example legislation process"
+      fill_in "Summary", with: "Summary of the process"
 
       base_date = Date.current
-      fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
-      fill_in 'legislation_process[end_date]', with: (base_date + 5.days).strftime("%d/%m/%Y")
-      imageable_attach_new_file(create(:image), Rails.root.join('spec/fixtures/files/clippy.jpg'))
+      fill_in "legislation_process[start_date]", with: base_date.strftime("%d/%m/%Y")
+      fill_in "legislation_process[end_date]", with: (base_date + 5.days).strftime("%d/%m/%Y")
+      imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
 
-      click_button 'Create process'
+      click_button "Create process"
 
-      expect(page).to have_content 'An example legislation process'
-      expect(page).to have_content 'Process created successfully'
+      expect(page).to have_content "An example legislation process"
+      expect(page).to have_content "Process created successfully"
 
-      click_link 'Click to visit'
+      click_link "Click to visit"
 
-      expect(page).to have_content 'An example legislation process'
-      expect(page).not_to have_content 'Summary of the process'
+      expect(page).to have_content "An example legislation process"
+      expect(page).not_to have_content "Summary of the process"
       expect(page).to have_css("img[alt='#{Legislation::Process.last.title}']")
     end
   end

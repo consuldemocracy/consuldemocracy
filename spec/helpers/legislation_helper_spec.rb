@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe LegislationHelper do
   let(:process) { build(:legislation_process) }
