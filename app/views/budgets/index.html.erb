@@ -72,8 +72,9 @@
             <ul class="no-bullet" data-equalizer data-equalizer-on="medium">
               <% group.headings.order_by_group_name.each do |heading| %>
                 <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
-                  <% unless current_budget.informing? %>
-                    <%= link_to budget_investments_path(current_budget.id, heading_id: heading.id) do %>
+                  <% unless current_budget.informing? || current_budget.finished? %>
+                    <%= link_to budget_investments_path(current_budget.id,
+                                                        heading_id: heading.id) do %>
                       <%= heading_name_and_price_html(heading, current_budget) %>
                     <% end %>
                   <% else %>
