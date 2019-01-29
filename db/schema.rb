@@ -666,6 +666,8 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.date     "draft_end_date"
     t.boolean  "draft_phase_enabled",        default: false
     t.boolean  "homepage_enabled",           default: false
+    t.text     "background_color"
+    t.text     "font_color"
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree

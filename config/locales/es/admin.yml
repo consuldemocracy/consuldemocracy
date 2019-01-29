@@ -439,6 +439,9 @@ es:
           homepage: Descripción
           homepage_description: Aquí puedes explicar el contenido del proceso
           homepage_enabled: Homepage activada
+          banner_title: Colores del banner
+          banner_background_color: Color de fondo
+          banner_font_color: Color del texto
         index:
           create: Nuevo proceso
           delete: Borrar

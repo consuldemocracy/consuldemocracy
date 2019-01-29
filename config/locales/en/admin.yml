@@ -438,6 +438,9 @@ en:
           homepage: Description
           homepage_description: Here you can explain the content of the process
           homepage_enabled: Homepage enabled
+          banner_title: Banner colors
+          banner_background_color: Background colour
+          banner_font_color: Font colour
         index:
           create: New process
           delete: Delete
