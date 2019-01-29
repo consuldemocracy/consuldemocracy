@@ -513,6 +513,10 @@ ar:
           use_markdown: استخدم Markdown لتنسيق النص
           hints:
             final_version: سيتم نشر هذا الإصدار كنتيجة نهائية لهذه العملية. لن يسمح بالتعليقات على هذا الإصدار.
+            status:
+              draft: يمكنك معاينة كمشرف، لا يمكن لأي شخص آخر أن يرى هذا
+              published: مرئية للجميع
+          title_placeholder: اكتب عنوان إصدار المسودّة
           body_placeholder: اكتب نص المسودة
         index:
           title: مسودة الإصدارات
