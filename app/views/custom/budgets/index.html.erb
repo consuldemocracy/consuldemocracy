@@ -100,7 +100,7 @@
 
         <% unless current_budget.informing? %>
           <% cache [@budgets_coordinates] do %>
-            <div class="map">
+            <div class="map inline">
               <h3><%= t("budgets.index.map") %></h3>
               <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
             </div>
