@@ -193,7 +193,8 @@ describe Legislation::Process do
       expect {
         process1 = create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
         process2 = create(:legislation_process, background_color: "#ffffffff", font_color: "#123")
-      }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Background color is invalid")
+      }.to raise_error(ActiveRecord::RecordInvalid,
+                       "Validation failed: Background color is invalid")
     end
   end
 
