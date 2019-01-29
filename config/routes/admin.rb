@@ -217,7 +217,9 @@ namespace :admin do
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
 
   namespace :site_customization do
-    resources :pages, except: [:show]
+    resources :pages, except: [:show] do
+      resources :cards, only: [:index]
+    end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
     delete '/heading_content_blocks/:id', to: 'content_blocks#delete_heading_content_block', as: 'delete_heading_content_block'

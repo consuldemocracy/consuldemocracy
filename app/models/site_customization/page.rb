@@ -1,5 +1,6 @@
 class SiteCustomization::Page < ActiveRecord::Base
   VALID_STATUSES = %w(draft published)
+  has_many :cards, class_name: 'Widget::Card', foreign_key: 'site_customization_page_id'
 
   translates :title,       touch: true
   translates :subtitle,    touch: true

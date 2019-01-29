@@ -1448,6 +1448,23 @@ en:
           status_published: Published
           title: Title
           slug: Slug
+          cards_title: Cards
+          see_cards: See Cards
+        cards:
+          cards_title: cards
+          create_card: Create card
+          no_cards: There are no cards.
+          title: Title
+          description: Description
+          link_text: Link text
+          link_url: Link URL
+          create:
+            notice: "Success"
+          update:
+            notice: "Updated"
+          destroy:
+            notice: "Removed"
+
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.

@@ -1448,6 +1448,16 @@ es:
           status_published: Publicada
           title: Título
           slug: Slug
+          cards_title: Tarjetas
+          see_cards: Ver tarjetas
+        cards:
+          cards_title: tarjetas
+          create_card: Crear tarjeta
+          no_cards: No hay tarjetas.
+          title: Título
+          description: Descripción
+          link_text: Texto del enlace
+          link_url: URL del enlace
     homepage:
       title: Título
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
