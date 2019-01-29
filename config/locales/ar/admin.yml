@@ -403,6 +403,7 @@ ar:
         filter: إنتقاء
         filters:
           all: الكل
+          with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
         title: استثمارات الميزانية المخفية
         no_hidden_budget_investments: لا يوجد هناك ميزانيات استثمارات مخفية
@@ -496,7 +497,22 @@ ar:
         update:
           notice: 'تم تحديث المسودة بنجاح. <a href="%{link}">انقر للزيارة</a>'
           error: لا يمكن تحديث المسودة
+        destroy:
+          notice: تم حذف المسودّة بنجاح
+        edit:
+          back: عودة
+          submit_button: حفظ التغييرات
+          warning: لقد قمت بتحرير النص، لا تنسى أن تنقر على "حفظ" لحفظ التغييرات بشكل دائم.
+        errors:
+          form:
+            error: خطأ
         form:
+          title_html: 'تحرير <span class="strong">%{draft_version_title}</span> من العملية <span class="strong">%{process_title}</span>'
+          launch_text_editor: تشغيل محرر النص
+          close_text_editor: إغلاق محرر النص
+          use_markdown: استخدم Markdown لتنسيق النص
+          hints:
+            final_version: سيتم نشر هذا الإصدار كنتيجة نهائية لهذه العملية. لن يسمح بالتعليقات على هذا الإصدار.
           body_placeholder: اكتب نص المسودة
         index:
           title: مسودة الإصدارات
