@@ -10,6 +10,9 @@ de:
       budget/investment:
         one: "Ausgabenvorschlag"
         other: "Ausgabenvorschläge"
+      progress_bar:
+        one: "Fortschrittsbalken"
+        other: "Fortschrittsbalken"
       comment:
         one: "Kommentar"
         other: "Kommentare"
@@ -122,9 +125,17 @@ de:
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
         image_title: "Bildtitel"
+      milestone:
+        status_id: "Aktueller Status (optional)"
+        title: "Titel"
+        publication_date: "Datum der Veröffentlichung"
       milestone/status:
         name: "Name"
         description: "Beschreibung (optional)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
+        percentage: "Aktueller Fortschritt"
       budget/heading:
         name: "Name der Rubrik"
         price: "Kosten"
