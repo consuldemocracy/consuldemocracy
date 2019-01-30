@@ -2,6 +2,8 @@ fr:
   pages:
     conditions:
       title: Conditions d'utilisation
+      subtitle: AVIS JURIDIQUE SUR LES CONDITIONS D’UTILISATION, CONFIDENTIALITÉ ET PROTECTION DES DONNÉES PERSONNELLES DU PORTAIL
+      description: Page d’information sur les conditions d’utilisation, de confidentialité et de protection des données personnelles.
     help:
       title: "%{org} est une plate-forme pour la participation citoyenne"
       guide: "Ce guide détaille chacune des sections de la %{org} et comment elles fonctionnent."
@@ -58,6 +60,7 @@ fr:
         how_to_use: Utilisez-le pour votre administration locale
     privacy:
       title: Politique de confidentialité
+      subtitle: INFORMATIONS CONCERNANT LA CONFIDENTIALITÉ DES DONNÉES
       info_items:
         - 
         - 
@@ -71,9 +74,16 @@ fr:
             - 
     accessibility:
       title: Accessibilité
+      examples:
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - Si les contenus sont écrits dans un langage simple et illustré, les utilisateurs ayant des difficultés d'apprentissage sont mieux à même de les comprendre.
+        - Si l'utilisateur a des problèmes de mobilité et qu'il est difficile d'utiliser la souris, les alternatives avec le clavier aident à la navigation.
       keyboard_shortcuts:
         title: Raccourcis clavier
         navigation_table:
+          description: Pour pouvoir naviguer dans ce site de manière accessible, un groupe de touches d'accès rapide a été programmé qui rassemblent les principales sections d'intérêt général dans lesquelles le site est organisé.
+          caption: Raccourcis clavier pour le menu de navigation
           key_header: Touche
           page_header: Page
           rows:
@@ -88,12 +98,15 @@ fr:
               page_column: Propositions
             - 
               key_column: 3
+              page_column: Votes
             - 
               key_column: 4
               page_column: Budgets participatifs
             - 
               key_column: 5
+              page_column: Processus législatifs
         browser_table:
+          description: 'Selon le système d''exploitation et le navigateur utilisé, la combinaison de touches sera la suivante :'
           caption: Combinaison de touches selon le système d’exploitation et le navigateur
           browser_header: Navigateur
           key_header: Combinaison de touches
@@ -116,29 +129,37 @@ fr:
       textsize:
         title: Taille du texte
         browser_settings_table:
+          description: Le design accessible de ce site permet à l'utilisateur de choisir la taille du texte qui lui convient. Cette action peut être effectuée de différentes manières selon le navigateur utilisé.
           browser_header: Navigateur
           action_header: Action à réaliser
           rows:
             - 
               browser_column: IE
+              action_column: Affichage > Taille du texte
             - 
               browser_column: Firefox
+              action_column: Affichage > Taille
             - 
               browser_column: Chrome
+              action_column: Paramètres (icône) > Options > Avancé > Contenu Web > Taille du texte
             - 
               browser_column: Safari
+              action_column: Affichage > Zoom avant/Zoom arrière
             - 
               browser_column: Opera
+              action_column: Affichage > échelle
         browser_shortcuts_table:
           description: 'Une autre manière de modifier la taille du texte est d''utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :'
           rows:
             - 
               shortcut_column: CTRL et + (CMD et + sur Mac)
+              description_column: Augmente la taille du texte
             - 
               shortcut_column: CTRL et - (CMD et - sur Mac)
               description_column: Diminue la taille du texte
       compatibility:
         title: Compatibilité avec les normes et la conception visuelle
+        description_html: 'Toutes les pages de ce site web sont conformes aux <strong> lignes directrices en matière d''accessibilité </strong> ou aux principes généraux de design accessible établis par le groupe de travail <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > appartenant au W3C.'
     titles:
       accessibility: Accessibilité
       conditions: Conditions d'utilisations
