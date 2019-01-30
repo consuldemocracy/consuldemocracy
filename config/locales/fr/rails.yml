@@ -108,6 +108,7 @@ fr:
       not_a_number: n'est pas un nombre
       not_an_integer: doit être un nombre entier
       odd: doit être impair
+      required: doit exister
       taken: est déjà utilisé
       too_long:
         one: est trop long (1 caractère au maximum)
@@ -136,6 +137,7 @@ fr:
       format:
         delimiter: "."
         format: "%n %u"
+        precision: 2
         separator: ","
         significant: false
         strip_insignificant_zeros: false
