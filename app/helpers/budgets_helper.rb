@@ -56,6 +56,10 @@ module BudgetsHelper
     Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).select(:name).distinct
   end
 
+  def unfeasible_or_unselected_filter
+    ["unselected", "unfeasible"].include?(@current_filter)
+  end
+
   def budget_published?(budget)
     !budget.drafting? || current_user&.administrator?
   end

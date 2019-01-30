@@ -81,7 +81,7 @@
             <ul class="no-bullet" data-equalizer data-equalizer-on="medium">
               <% group.headings.order_by_group_name.each do |heading| %>
                 <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
-                  <% unless current_budget.informing? %>
+                  <% unless current_budget.informing? || current_budget.finished? %>
                     <%= link_to custom_budget_investments_path(group,
                                                                budget_id: current_budget,
                                                                heading_id: heading) do %>
@@ -100,7 +100,7 @@
 
         <% unless current_budget.informing? %>
           <% cache [@budgets_coordinates] do %>
-            <div class="map">
+            <div class="map inline">
               <h3><%= t("budgets.index.map") %></h3>
               <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
             </div>
