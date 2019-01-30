@@ -22,6 +22,8 @@ class Legislation::Process < ActiveRecord::Base
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
                                proposals_phase draft_publication result_publication].freeze
 
+  CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
+
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion',
                                                foreign_key: 'legislation_process_id',
                                                dependent: :destroy
@@ -44,8 +46,8 @@ class Legislation::Process < ActiveRecord::Base
   validates :allegations_end_date, presence: true, if: :allegations_start_date?
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
   validate :valid_date_ranges
-  validates :background_color, format: { allow_blank: true, with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i }
-  validates :font_color, format: { allow_blank: true, with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i }
+  validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
+  validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
 
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current) }
   scope :next, -> { where("start_date > ?", Date.current) }

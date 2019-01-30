@@ -177,8 +177,8 @@ describe Legislation::Process do
     end
   end
 
-  describe "banner colors" do
-    it "valid banner colors" do
+  describe "Header colors" do
+    it "valid format colors" do
       process1 = create(:legislation_process, background_color: "123", font_color: "#fff")
       process2 = create(:legislation_process, background_color: "#fff", font_color: "123")
       process3 = create(:legislation_process, background_color: "", font_color: "")
@@ -189,11 +189,16 @@ describe Legislation::Process do
       expect(process4).to be_valid
     end
 
-    it "invalid banner colors" do
+    it "invalid format colors" do
       expect {
-        process1 = create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
-        process2 = create(:legislation_process, background_color: "#ffffffff", font_color: "#123")
-      }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Background color is invalid")
+        process = create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
+      }.to raise_error(ActiveRecord::RecordInvalid,
+                       "Validation failed: Background color is invalid")
+
+      expect {
+        process = create(:legislation_process, background_color: "#fff", font_color: "ggg")
+      }.to raise_error(ActiveRecord::RecordInvalid,
+                       "Validation failed: Font color is invalid")
     end
   end
 
