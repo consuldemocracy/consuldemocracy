@@ -60,22 +60,46 @@ feature 'Budgets' do
       end
     end
 
-    scenario 'Show informing index without links' do
-      budget.update_attributes(phase: 'informing')
+    scenario "Show informing index without links" do
+      budget.update_attributes(phase: "informing")
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group, name: 'Health')
+      heading = create(:budget_heading, group: group)
 
       visit budgets_path
 
-      within('#budget_info') do
-        expect(page).not_to have_link("Health €1,000,000")
-        expect(page).to     have_content("Health €1,000,000")
+      within("#budget_info") do
+        expect(page).not_to have_link "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name} €1,000,000"
 
         expect(page).not_to have_link("List of all investment projects")
         expect(page).not_to have_link("List of all unfeasible investment projects")
         expect(page).not_to have_link("List of all investment projects not selected for balloting")
 
-        expect(page).not_to have_css('div#map')
+        expect(page).not_to have_css("div.map")
+      end
+    end
+
+    scenario "Show finished index without heading links" do
+      budget.update_attributes(phase: "finished")
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).not_to have_link "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name} €1,000,000"
+
+        expect(page).to have_link "List of all investment projects",
+                                   href: budget_url(budget)
+
+        expect(page).to have_link "List of all unfeasible investment projects",
+                                   href: budget_url(budget, filter: "unfeasible")
+
+        expect(page).to have_link "List of all investment projects not selected for balloting",
+                                   href: budget_url(budget, filter: "unselected")
+
+        expect(page).to have_css("div.map")
       end
     end
 
