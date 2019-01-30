@@ -77,6 +77,7 @@ fr:
       support_proposals: Supporter des propositions
       vote_proposals: Voter sur des propositions
     print:
+      proposals_info: Créez votre proposition sur http://url.consul
       proposals_title: 'Propositions :'
       spending_proposals_info: Participer sur http://url.consul
       budget_investments_info: Participer sur http://url.consul
@@ -102,6 +103,7 @@ fr:
         unverified_user: Utilisateur non vérifié
       create: Créer un nouveau projet
       filters:
+        heading: Concept
         unfeasible: Projets infaisables
       print:
         print_button: Imprimer
