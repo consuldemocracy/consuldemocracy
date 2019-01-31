@@ -406,7 +406,7 @@ ar:
           with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
         title: استثمارات الميزانية المخفية
-        no_hidden_budget_investments: لا توجد هناك ميزانيات استثماراتية مخفية
+        no_hidden_budget_investments: لا توجد هناك ميزانيات استثمارية مخفية
     legislation:
       processes:
         create:
@@ -762,7 +762,7 @@ ar:
         finished_count: انتهى
         in_evaluation_count: في التقييم
         total_count: المجموع
-        cost: الكلفة
+        cost: التكلفة
       form:
         edit_title: "المقيّمون: تحرير المقيّمين"
         update: "تحديث المقيّمين"
