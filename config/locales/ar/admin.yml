@@ -130,12 +130,12 @@ ar:
       form:
         create: "إنشاء مجموعة جديدة"
         edit: "تعديل مجموعة"
-        name: "إسم المجموعة"
+        name: "اسم المجموعة"
         submit: "حفظ المجموعة"
       index:
         back: "العودة إلى الميزانيات"
     budget_headings:
-      name: "الإسم"
+      name: "الاسم"
       no_headings: "لا توجد هناك عناوين."
       amount:
         zero: "%{count} لا توجد هناك عناوين"
@@ -231,7 +231,7 @@ ar:
           valuation_finished: انتهى التقييم.
           selected: محدّد
           visible_to_valuators: العرض على المقيمين
-          author_username: إسم الكاتب
+          author_username: اسم الكاتب
           incompatible: غير متوافق
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
@@ -320,7 +320,7 @@ ar:
         title: حالات المعلم
         empty_statuses: لا يوجد حالات معلم منشأة
         new_status: إنشاء حالة معلم جديدة
-        table_name: الإسم
+        table_name: الاسم
         table_description: الوصف
         table_actions: الإجراءات
         delete: حذف
@@ -741,7 +741,7 @@ ar:
     valuators:
       index:
         title: المقيمون
-        name: الإسم
+        name: الاسم
         email: البريد الإلكتروني
         description: الوصف
         no_description: بدون وصف
@@ -784,7 +784,7 @@ ar:
         title: "مجموعة التقييم: %{group}"
         no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
       form:
-        name: "إسم المجموعة"
+        name: "اسم المجموعة"
         new: "إنشاء مجموعة تقييم"
         edit: "حفظ مجموعة تقييم"
     poll_officers:
@@ -793,7 +793,7 @@ ar:
       officer:
         add: إضافة
         delete: حذف الموقع
-        name: الإ سم
+        name: الاسم
         email: البريد الإلكتروني
         entry_name: ضابط
       search:
@@ -804,7 +804,7 @@ ar:
       index:
         officers_title: "قائمة الضباط"
         no_officers: "لا يوجد ضباط معينون لهذا الاقتراع."
-        table_name: "الإسم"
+        table_name: "الاسم"
         table_email: "البريد الإلكتروني"
       by_officer:
         date: "تاريخ"
@@ -939,12 +939,12 @@ ar:
         title: "قائمة صناديق الاقتراع المفعلة"
         no_booths: "لا توجد صناديق الاقتراع مفعلة لأي إقتراع قادم."
         add_booth: "إضافة صندوق اقتراع"
-        name: "الإسم"
+        name: "الاسم"
         location: "الموقع"
         no_location: "لا يوجد موقع"
       new:
         title: "صندوق اقتراع جديد"
-        name: "الإسم"
+        name: "الاسم"
         location: "الموقع"
         submit_button: "إنشاء صندوق اقتراع"
       edit:
@@ -965,7 +965,7 @@ ar:
       index:
         title: المسؤولون
         no_officials: لا يوجد مسؤول.
-        name: الإسم
+        name: الاسم
         official_position: الموقف الرسمي
         official_level: المستوى
       level_0: ليس رسميا
@@ -994,7 +994,7 @@ ar:
           few: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
           many: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
           other: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-        name: الإسم
+        name: الاسم
         email: البريد الإلكتروني
         phone_number: الهاتف
         responsible_name: المسؤول
@@ -1003,7 +1003,7 @@ ar:
         reject: رفض
         rejected: مرفوضة
         search: بحث
-        search_placeholder: الإسم، البريد الإلكتروني أو رقم الهاتف
+        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
         title: المنظمات
         verified: مثبتة
         verify: تثبت
@@ -1065,7 +1065,7 @@ ar:
       false_value: "لا"
       booths_search:
         button: بحث
-        placeholder: ابحث عن صندوق الاقتراع وفقا للإسم
+        placeholder: ابحث عن صندوق الاقتراع وفقا للاسم
       poll_officers_search:
         button: بحث
         placeholder: البحث عن ضباط الإقتراع
@@ -1080,7 +1080,7 @@ ar:
         placeholder: البحث عن اقتراحات الإنفاق عن طريق العنوان أو الوصف
       user_search:
         button: بحث
-        placeholder: بحث عن مستخدم عن طريق الإسم أو البريد الإلكتروني
+        placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
       actions: الإجراءات
@@ -1124,7 +1124,7 @@ ar:
     signature_sheets:
       author: كاتب
       created_at: تاريخ الإنشاء
-      name: الإسم
+      name: الاسم
       no_signature_sheets: "لا يوجد أوراق توقيع"
       index:
         title: أوراق التوقيع
