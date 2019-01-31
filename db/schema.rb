@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190103132925) do
+ActiveRecord::Schema.define(version: 20190131122858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1526,6 +1526,7 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.integer  "site_customization_page_id"
+    t.integer  "columns",                    default: 4
   end
 
   add_index "widget_cards", ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id", using: :btree
