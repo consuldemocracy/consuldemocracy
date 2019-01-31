@@ -163,7 +163,7 @@ ar:
         content_blocks_info: "إذا تم اختيار \"السماح بكتل المحتوى\"، سوف تتمكن من إنشاء محتوى مخصص ذي صلة بهذا العنوان غن طريق إعدادات > كتل المحتوى المخصصة. سوف يظهر هذا المحتوى في صفحة الاستثمارات الخاصة بهذا العنوان."
         create: "إنشاء عنوان جديد"
         edit: "تعديل العنوان"
-        submit: "حفظ العنوان"
+        submit: "تسجيل العنوان"
       index:
         back: "العودة إلى المجموعات"
     budget_phases:
@@ -207,7 +207,7 @@ ar:
         buttons:
           filter: فرز
         download_current_selection: "تحميل الاختيار الحالي"
-        no_budget_investments: "لا توجد مشاريع استثمارات."
+        no_budget_investments: "لا توجد مشاريع استثمارية."
         title: مشاريع استثمارية
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
@@ -223,7 +223,7 @@ ar:
           id: ID
           title: العنوان
           supports: الدعم
-          admin: المدير
+          admin: مدير
           valuator: المقيّم
           valuation_group: مجموعة المقيّمين
           geozone: نطاق العملية
@@ -347,7 +347,7 @@ ar:
         table_title: "العنوان"
         table_percentage: "التقدم الحالي"
       new:
-        creating: "إنشاء شريط تقدم"
+        creating: "إنشاء شريط التقدم"
       edit:
         title:
           primary: "تعديل شريط التقدم الرئيسي"
@@ -406,7 +406,7 @@ ar:
           with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
         title: استثمارات الميزانية المخفية
-        no_hidden_budget_investments: لا يوجد هناك ميزانيات استثمارات مخفية
+        no_hidden_budget_investments: لا توجد هناك ميزانيات استثماراتية مخفية
     legislation:
       processes:
         create:
@@ -753,7 +753,7 @@ ar:
         add: أضف إلى المقيمين
         delete: حذف
       search:
-        title: 'المقيمون: البحث عن المستخدم'
+        title: 'المقيمون: البحث عن مستخدم'
       summary:
         title: ملخص المقيمين للمشاريع الاستثمارية
         valuator_name: المقيّم
@@ -1124,7 +1124,7 @@ ar:
       author: كاتب
       created_at: تاريخ الإنشاء
       name: الاسم
-      no_signature_sheets: "لا يوجد أوراق توقيع"
+      no_signature_sheets: "لا توجد أوراق توقيع"
       index:
         title: أوراق التوقيع
         new: أوراق توقيع جديدة
