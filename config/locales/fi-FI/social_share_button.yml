@@ -1,1 +1,9 @@
 fi:
+  social_share_button:
+    weibo: "Sina Weibo"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    douban: "Douban"
+    qq: "Qzone"
+    tqq: "Tqq"
+    delicious: "Delicious"
