@@ -135,7 +135,7 @@ ar:
       index:
         back: "العودة إلى الميزانيات"
     budget_headings:
-      name: "الاسم"
+      name: "الإسم"
       no_headings: "لا توجد هناك عناوين."
       amount:
         zero: "%{count} لا توجد هناك عناوين"
@@ -231,7 +231,7 @@ ar:
           valuation_finished: انتهى التقييم.
           selected: محدّد
           visible_to_valuators: العرض على المقيمين
-          author_username: اسم الكاتب
+          author_username: إسم الكاتب
           incompatible: غير متوافق
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
@@ -320,7 +320,7 @@ ar:
         title: حالات المعلم
         empty_statuses: لا يوجد حالات معلم منشأة
         new_status: إنشاء حالة معلم جديدة
-        table_name: الاسم
+        table_name: الإسم
         table_description: الوصف
         table_actions: الإجراءات
         delete: حذف
@@ -741,7 +741,7 @@ ar:
     valuators:
       index:
         title: المقيمون
-        name: الاسم
+        name: الإسم
         email: البريد الإلكتروني
         description: الوصف
         no_description: بدون وصف
@@ -793,7 +793,7 @@ ar:
       officer:
         add: إضافة
         delete: حذف الموقع
-        name: الاسم
+        name: الإ سم
         email: البريد الإلكتروني
         entry_name: ضابط
       search:
@@ -939,12 +939,12 @@ ar:
         title: "قائمة صناديق الاقتراع المفعلة"
         no_booths: "لا توجد صناديق الاقتراع مفعلة لأي إقتراع قادم."
         add_booth: "إضافة صندوق اقتراع"
-        name: "الاسم"
+        name: "الإسم"
         location: "الموقع"
         no_location: "لا يوجد موقع"
       new:
         title: "صندوق اقتراع جديد"
-        name: "الاسم"
+        name: "الإسم"
         location: "الموقع"
         submit_button: "إنشاء صندوق اقتراع"
       edit:
@@ -965,7 +965,7 @@ ar:
       index:
         title: المسؤولون
         no_officials: لا يوجد مسؤول.
-        name: الاسم
+        name: الإسم
         official_position: الموقف الرسمي
         official_level: المستوى
       level_0: ليس رسميا
@@ -994,7 +994,7 @@ ar:
           few: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
           many: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
           other: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-        name: الاسم
+        name: الإسم
         email: البريد الإلكتروني
         phone_number: الهاتف
         responsible_name: المسؤول
@@ -1003,7 +1003,7 @@ ar:
         reject: رفض
         rejected: مرفوضة
         search: بحث
-        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
+        search_placeholder: الإسم، البريد الإلكتروني أو رقم الهاتف
         title: المنظمات
         verified: مثبتة
         verify: تثبت
@@ -1080,7 +1080,7 @@ ar:
         placeholder: البحث عن اقتراحات الإنفاق عن طريق العنوان أو الوصف
       user_search:
         button: بحث
-        placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
+        placeholder: بحث عن مستخدم عن طريق الإسم أو البريد الإلكتروني
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
       actions: الإجراءات
