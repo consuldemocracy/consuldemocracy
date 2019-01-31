@@ -281,7 +281,7 @@ ar:
         description: "الوصف (اختياري إذا كانت هناك حالة معينة)"
         publication_date: "تاريخ النشر"
       milestone/status:
-        name: "الإسم"
+        name: "الاسم"
         description: "الوصف (اختياري)"
       progress_bar:
         kind: "النوع"
