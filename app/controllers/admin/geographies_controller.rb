@@ -11,7 +11,6 @@ class Admin::GeographiesController < Admin::BaseController
 
   def new
     @geography = Geography.new
-    #@headings = Budget::Heading.all
   end
 
   def edit
@@ -37,7 +36,7 @@ class Admin::GeographiesController < Admin::BaseController
 
   def destroy
     @geography.destroy
-    redirect_to admin_geographies_path, notice: t('admin.geozones.delete.success')
+    redirect_to admin_geographies_path, notice: t('admin.geographies.delete.success')
   end
 
   private

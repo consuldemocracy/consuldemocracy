@@ -1,6 +1,6 @@
 class BudgetsController < ApplicationController
-  NEW_YORK_LATITUDE = 40.730610
-  NEW_YORK_LONGITUDE = -73.935242
+  NEW_YORK_LATITUDE = 40.4165
+  NEW_YORK_LONGITUDE = -3.70256
 
   include FeatureFlags
   include BudgetsHelper
@@ -32,8 +32,8 @@ class BudgetsController < ApplicationController
     @map_location.longitude = NEW_YORK_LONGITUDE
   end
 
-  def get_headings_geographies
-    @headings_geographies = Geography.active_headings_geographies
+  def get_geographies_with_active_headings
+    @headings_geographies = Geography.geographies_with_active_headings
   end
 
 end

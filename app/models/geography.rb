@@ -6,7 +6,7 @@ class Geography < ActiveRecord::Base
 
   has_many :headings, class_name: Budget::Heading, dependent: :nullify
 
-  def self.active_headings_geographies
+  def self.geographies_with_active_headings
     active_headings = {}
 
     if Budget.current
