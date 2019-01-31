@@ -44,3 +44,52 @@ fi:
       comment:
         body: "Kommentti"
         user: "Käyttäjä"
+      spending_proposal:
+        description: "Kuvaus"
+      poll:
+        name: "Nimi"
+        starts_at: "Aloituspäivä"
+        ends_at: "Sulkeutumispäivä"
+        summary: "Yhteenveto"
+        description: "Kuvaus"
+      poll/translation:
+        name: "Nimi"
+        summary: "Yhteenveto"
+        description: "Kuvaus"
+      poll/question:
+        title: "Kysymys"
+        summary: "Yhteenveto"
+        description: "Kuvaus"
+      poll/question/translation:
+        title: "Kysymys"
+      site_customization/page:
+        content: Sisältö
+        locale: Kieli
+      site_customization/page/translation:
+        content: Sisältö
+      site_customization/image:
+        name: Nimi
+        image: Kuva
+      site_customization/content_block:
+        name: Nimi
+      legislation/process:
+        summary: Yhteenveto
+        description: Kuvaus
+        additional_info: Lisätiedot
+        start_date: Aloituspäivä
+      image:
+        attachment: Liite
+      poll/question/answer:
+        title: Vastaus
+        description: Kuvaus
+      poll/question/answer/translation:
+        title: Vastaus
+        description: Kuvaus
+      newsletter:
+        subject: Aihe
+      admin_notification/translation:
+        body: Teksti
+      widget/card:
+        description: Kuvaus
+      widget/card/translation:
+        description: Kuvaus
