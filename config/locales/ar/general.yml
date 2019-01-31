@@ -103,15 +103,13 @@ ar:
         current: "فتح"
         incoming: "البريد الوارد"
         expired: "منتهي الصلاحية"
-      participate_button: "المشاركة في هذا التصويت \\ استطلاع الرأي"
+      participate_button: "المشاركة في هذا الاستطلاع"
       participate_button_incoming: "مزيد من المعلومات"
-      participate_button_expired: "انتهى التصويت"
+      participate_button_expired: "انتهى الاستطلاع"
       no_geozone_restricted: "جميع المدن"
       geozone_info: "يمكن أن يشارك الناس في التعداد السكاني: "
-      already_answer: "انت مشارك في هذا الاستبيان سابقاً"
       not_logged_in: "يجب تسجيل الدخول أو انشاء حساب جديد للمشاركة"
       unverified: "يجب عليك التحقق من الحساب الخاص بك على المشاركة"
-      cant_answer: "هذا الاستبيان غير متوفر في منطقتك الجغرافية"
       section_header:
         icon_alt: رمز التصويت
         title: التصويت
@@ -121,7 +119,6 @@ ar:
       no_polls: "جميع الاستبيانات منتهية."
     show:
       already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
-      already_voted_in_web: "شاركت في هذا الاستبيان في السابق ، إذا شاركت الان ستيم الغاء المعلومات السابقة."
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
@@ -130,8 +127,7 @@ ar:
       signup: انشاء حساب
       cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
       verify_link: "التحقق من حسابك"
-      cant_answer_incoming: "لم يبدأ هذا الاستبيان بعد."
-      cant_answer_expired: "انتهى هذا الاستبيان."
+      cant_answer_incoming: "لم يبدأ هذا الاستطلاع بعد."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
       more_info_title: "مزيد من المعلومات"
       documents: مستندات
@@ -141,7 +137,6 @@ ar:
       videos: "فيديو خارجي"
       info_menu: "المعلومات"
       stats_menu: "إحصائيات المشاركة"
-      results_menu: "نتائج استبيان"
       stats:
         title: "بيانات المشاركة"
         total_participation: "مجموع المشاركات"
