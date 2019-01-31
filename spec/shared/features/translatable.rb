@@ -47,6 +47,22 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       end
     end
 
+    scenario 'should show first available fallback when current locale translation does not exist', :js do
+      attributes = fields.product(%i[fr]).map do |field, locale|
+        [:"#{field}_#{locale}", text_for(field, locale)]
+      end.to_h
+      translatable.update(attributes)
+      visit path
+
+      select "English", from: :translation_locale
+      click_link 'Remove language'
+      select "Español", from: :translation_locale
+      click_link 'Remove language'
+      click_button update_button_text
+
+      expect(page).to have_content 'en Français'
+    end
+
     scenario "Add a translation", :js do
       visit path
 
