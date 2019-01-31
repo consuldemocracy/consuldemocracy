@@ -1,1 +1,158 @@
 fi:
+  account:
+    show:
+      save_changes_submit: Tallenna muutokset
+      recommendations: Suositukset
+      title: Tilini
+      username_label: Käyttäjätunnus
+      verified_account: Tili vahvistettu
+      verify_my_account: Vahvista tilini
+  application:
+    close: Sulje
+    menu: Valikko
+  comments:
+    comments_closed: Kommentointi on suljettu
+    verify_account: vahvista tilisi
+    comment:
+      responses:
+        zero: Ei vastauksia
+        one: 1 vastaus
+        other: "%{count} vastausta"
+      user_deleted: Käyttäjä poistettu
+      votes:
+        zero: Ei ääniä
+        one: 1 ääni
+        other: "%{count} ääntä"
+    form:
+      leave_comment: Jätä kommenttisi
+    orders:
+      newest: Uusin ensin
+      oldest: Vanhin ensin
+      most_commented: Kommentoiduin
+  comments_helper:
+    comment_button: Julkaise kommentti
+    comment_link: Kommentti
+    comments_title: Kommentit
+  debates:
+    index:
+      orders:
+        recommendations: suositukset
+      search_form:
+        button: Etsi
+        title: Etsi
+    new:
+      info_link: luo uusi ehdotus
+      more_info: Lisää tietoa
+    show:
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      comments_title: Kommentit
+      edit_debate_link: Muokkaa
+      share: Jaa
+    update:
+      form:
+        submit_button: Tallenna muutokset
+  errors:
+    messages:
+      user_not_found: Käyttäjää ei löydy
+  form:
+    direct_message: yksityisviesti
+    error: virhe
+    errors: virheet
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+    footer:
+      conditions: Ehdot ja käyttöehdot
+      consul_url: https://github.com/consul/consul
+      open_source: avoimen lähdekoodin ohjelmisto
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      privacy: Tietosuojakäytäntö
+    header:
+      available_locales: Saatavilla olevat kielet
+      external_link_blog: Blogi
+      locale: 'Kieli:'
+      help: Apua
+      my_account_link: Tilini
+      open: avaa
+      proposals: Ehdotukset
+      poll_questions: Äänestys
+      notification_item:
+        notifications: Ilmoitukset
+  legacy_legislation:
+    help:
+      text_sign_in: kirjaudu
+      text_sign_up: rekisteröidy
+  notifications:
+    index:
+      mark_all_as_read: Merkkaa kaikki luetuiksi
+      read: Lue
+      title: Ilmoitukset
+    notification:
+      mark_as_read: Merkitse luetuksi
+      mark_as_unread: Merkkaa lukemattomaksi
+  map:
+    start_proposal: Luo ehdotus
+  omniauth:
+    facebook:
+      name: Facebook
+    finish_signup:
+      title: "Lisätiedot"
+    google_oauth2:
+      name: Google
+    twitter:
+      name: Twitter
+  proposals:
+    create:
+      form:
+        submit_button: Luo ehdotus
+    edit:
+      editing: Muokkaa ehdotusta
+      form:
+        submit_button: Tallenna muutokset
+      show_link: Näytä ehdotus
+    retire_form:
+      retired_explanation_label: Selitys
+    retire_options:
+      other: Muu
+    form:
+      tag_category_label: "Kategoriat"
+    index:
+      orders:
+        created_at: uusin
+        hot_score: aktiivisin
+        most_commented: kommentoiduin
+        recommendations: suositukset
+      retired_links:
+        all: Kaikki
+      start_proposal: Luo ehdotus
+      title: Ehdotukset
+      section_header:
+        title: Ehdotukset
+    new:
+      form:
+        submit_button: Luo ehdotus
+      start_new: Luo uusi ehdotus
+    proposal:
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      votes:
+        zero: Ei ääniä
+        one: 1 ääni
+        other: "%{count} ääntä"
+      total_percent: 100%
+    show:
+      author_deleted: Käyttäjä poistettu
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      comments_tab: Kommentit
+      edit_proposal_link: Muokkaa
+      notifications_tab: Ilmoitukset
+      share: Jaa
