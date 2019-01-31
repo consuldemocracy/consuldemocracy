@@ -1,1 +1,15 @@
 fi:
+  community:
+    show:
+      create_first_community_topic:
+        sign_in: "kirjaudu"
+        sign_up: "rekisteröidy"
+      topic:
+        comments:
+          zero: Ei kommentteja
+          one: 1 kommentti
+          other: "%{count} kommenttia"
+    topic:
+      show:
+        tab:
+          comments_tab: Kommentit
