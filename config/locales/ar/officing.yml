@@ -18,7 +18,7 @@ ar:
         error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
     voters:
       new:
-        title: الاستطلاعات
+        title: استطلاعات
         table_status: حالة الاستطلاع
       show:
         submit: تأكيد التصويت
