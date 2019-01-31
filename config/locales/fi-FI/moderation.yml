@@ -1,1 +1,24 @@
 fi:
+  moderation:
+    comments:
+      index:
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_flag_review: Vireillä
+          with_ignored_flag: Merkitty katsotuksi
+        headers:
+          comment: Kommentti
+        hide_comments: Piilota kommentit
+        ignore_flags: Merkitse katsotuksi
+        orders:
+          newest: Uusin
+        title: Kommentit
+    debates:
+      index:
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_flag_review: Vireillä
