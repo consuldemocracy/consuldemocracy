@@ -224,7 +224,7 @@ ar:
           title: العنوان
           supports: الدعم
           admin: مدير
-          valuator: المقيّم
+          valuator: مقيّم
           valuation_group: مجموعة المقيّمين
           geozone: نطاق العملية
           feasibility: الجدوى
@@ -395,7 +395,7 @@ ar:
         no_hidden_users: لا يوجد أي مستخدمين مخفيين.
       show:
         email: 'ايمايل:'
-        hidden_at: 'مخفية في:'
+        hidden_at: 'مخفي في:'
         registered_at: 'تم الحفظ في:'
         title: نشاط المستخدم (%{user})
     hidden_budget_investments:
@@ -799,7 +799,7 @@ ar:
       search:
         email_placeholder: بحث عن مستخدم عن طريق البريد الإلكتروني
         search: بحث
-        user_not_found: المستخدم غير موجود
+        user_not_found: لم يتم العثور على المستخدم
     poll_officer_assignments:
       index:
         officers_title: "قائمة الضباط"
@@ -1012,7 +1012,7 @@ ar:
         no_results: لم يتم العثور على منظمات.
     proposals:
       index:
-        title: المقترحات
+        title: مقترحات
         id: ID
         author: كاتب
         milestones: الأهداف المرحلية
