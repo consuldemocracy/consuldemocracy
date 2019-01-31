@@ -131,7 +131,7 @@ feature 'Cards' do
     end
 
     context "Page card" do
-      let!(:custom_page) { create(:site_customization_page) }
+      let!(:custom_page) { create(:site_customization_page, :published) }
 
       scenario "Create", :js do
         visit admin_site_customization_pages_path
@@ -143,6 +143,20 @@ feature 'Cards' do
 
         expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
         expect(page).to have_content "Card for a custom page"
+      end
+
+      scenario "Show" do
+        card_1 = create(:widget_card, page: custom_page, title: "Card large", columns: 8)
+        card_2 = create(:widget_card, page: custom_page, title: "Card medium", columns: 4)
+        card_3 = create(:widget_card, page: custom_page, title: "Card small", columns: 2)
+
+        visit (custom_page).url
+
+        expect(page).to have_css(".card", count: 3)
+
+        expect(page).to have_css("#widget_card_#{card_1.id}.medium-8")
+        expect(page).to have_css("#widget_card_#{card_2.id}.medium-4")
+        expect(page).to have_css("#widget_card_#{card_3.id}.medium-2")
       end
 
       scenario "Edit", :js do
