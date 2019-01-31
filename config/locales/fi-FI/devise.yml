@@ -1,1 +1,14 @@
 fi:
+  devise:
+    password_expired:
+      expire_password: "Salasana vanhentunut"
+      change_required: "Salasanasi on vanhentunut"
+      change_password: "Vaihda salasanasi"
+      new_password: "Uusi salasana"
+      updated: "Salasana päivitetty onnistuneesti"
+    confirmations:
+      confirmed: "Tilisi on vahvistettu."
+    failure:
+      already_authenticated: "Olet jo kirjautunut sisään."
+      inactive: "Tiliäsi ei ole vielä aktivoitu."
+      locked: "Tilisi on lukittu."
