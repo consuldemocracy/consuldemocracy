@@ -45,6 +45,7 @@ class Admin::Widget::CardsController < Admin::BaseController
 
     params.require(:widget_card).permit(
       :link_url, :button_text, :button_url, :alignment, :header, :site_customization_page_id,
+      :columns,
       translation_params(Widget::Card),
       image_attributes: image_attributes
     )
