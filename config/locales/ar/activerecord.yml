@@ -255,7 +255,7 @@ ar:
         other: "إشعارات الإقتراح"
     attributes:
       budget:
-        name: "الاسم"
+        name: "الإ سم"
         description_accepting: "وصف خلال مرحلة القبول"
         description_reviewing: "وصف خلال مرحلة المراجعة"
         description_selecting: "وصف خلال مرحلة التحديد"
