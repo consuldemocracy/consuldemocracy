@@ -24,7 +24,7 @@ feature 'Cards' do
     attach_image_to_card
     click_button "Create card"
 
-    expect(page).to have_content "Success"
+    expect(page).to have_content "Card created successfully!"
     expect(page).to have_css(".homepage-card", count: 1)
 
     card = Widget::Card.last
@@ -74,7 +74,7 @@ feature 'Cards' do
     fill_in "widget_card_link_url", with: "consul.dev updated"
     click_button "Save card"
 
-    expect(page).to have_content "Updated"
+    expect(page).to have_content "Card updated successfully"
 
     expect(page).to have_css(".homepage-card", count: 1)
     within("#widget_card_#{Widget::Card.last.id}") do
@@ -97,7 +97,7 @@ feature 'Cards' do
       end
     end
 
-    expect(page).to have_content "Removed"
+    expect(page).to have_content "Card removed successfully"
     expect(page).to have_css(".homepage-card", count: 0)
   end
 
@@ -114,7 +114,7 @@ feature 'Cards' do
       fill_in "widget_card_link_url", with: "consul.dev"
       click_button "Create header"
 
-      expect(page).to have_content "Success"
+      expect(page).to have_content "Card created successfully!"
 
       within("#header") do
         expect(page).to have_css(".homepage-card", count: 1)

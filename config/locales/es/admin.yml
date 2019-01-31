@@ -1462,6 +1462,12 @@ es:
           link_text: Texto del enlace
           link_url: URL del enlace
           columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
+          create:
+            notice: "¡Tarjeta creada con éxito!"
+          update:
+            notice: "Tarjeta actualizada con éxito"
+          destroy:
+            notice: "Tarjeta eliminada con éxito"
     homepage:
       title: Título
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
