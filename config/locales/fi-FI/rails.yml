@@ -1,35 +1,73 @@
 fi:
   date:
+    abbr_day_names:
+      - Su
+      - Ma
+      - Ti
+      - Ke
+      - To
+      - Pe
+      - La
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Tammi
+      - Helmi
+      - Maalis
+      - Huhti
+      - Touko
+      - Kesä
+      - Heinä
+      - Elo
+      - Syys
+      - Loka
+      - Marras
+      - Joulu
+    day_names:
+      - Sunnuntai
+      - Maanantai
+      - Tiistai
+      - Keskiviikko
+      - Torstai
+      - Perjantai
+      - Lauantai
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Tammikuu
+      - Helmikuu
+      - Maaliskuu
+      - Huhtikuu
+      - Toukokuu
+      - Kesäkuu
+      - Heinäkuu
+      - Elokuu
+      - Syyskuu
+      - Lokakuu
+      - Marraskuu
+      - Joulukuu
+  datetime:
+    distance_in_words:
+      half_a_minute: puoli minuuttia
   number:
+    currency:
+      format:
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
     human:
+      decimal_units:
+        format: "%n %u"
       format:
         significant: true
         strip_insignificant_zeros: true
