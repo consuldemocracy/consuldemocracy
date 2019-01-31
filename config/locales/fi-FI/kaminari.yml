@@ -1,1 +1,8 @@
 fi:
+  views:
+    pagination:
+      first: Ensimmäinen
+      last: Viimeinen
+      next: Seuraava
+      previous: Edellinen
+      truncate: "&hellip;"
