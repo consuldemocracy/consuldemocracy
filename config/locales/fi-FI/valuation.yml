@@ -1,1 +1,34 @@
 fi:
+  valuation:
+    budgets:
+      index:
+        filters:
+          current: Avaa
+        table_name: Nimi
+        table_phase: Vaihe
+        evaluate: Arvioi
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Avaa
+      show:
+        back: Takaisin
+        by: Lähettäjä
+        price: Hinta
+        currency: "€"
+      edit:
+        price_html: "Hinta (%{currency})"
+    spending_proposals:
+      index:
+        filters:
+          valuation_open: Avaa
+        edit: Muokkaa
+      show:
+        back: Takaisin
+        by: Lähettäjä
+        price: Hinta
+        currency: "€"
+      edit:
+        price_html: "Hinta (%{currency})"
+        currency: "€"
+        save: Tallenna muutokset
