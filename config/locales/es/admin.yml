@@ -957,11 +957,13 @@ es:
         table_location: "Ubicación"
     polls:
       index:
-        title: "Listado de votaciones activas"
+        title: "Listado de votaciones"
         no_polls: "No hay ninguna votación próximamente."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
+        start_date: "Fecha de apertura"
+        closing_date: "Fecha de cierre"
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"

@@ -957,11 +957,13 @@ en:
         table_location: "Location"
     polls:
       index:
-        title: "List of active polls"
+        title: "List of polls"
         no_polls: "There are no polls coming up."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
+        start_date: "Start Date"
+        closing_date: "Closing Date"
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
