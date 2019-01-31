@@ -184,12 +184,12 @@ ar:
         many: "عمليات"
         other: "عمليات"
       legislation/proposal:
-        zero: "اقتراحات"
-        one: "اقتراح"
-        two: "اقتراحان"
-        few: "اقتراحات"
-        many: "اقتراحات"
-        other: "اقتراحات"
+        zero: "مقترحات"
+        one: "مقترح"
+        two: "مقترحان"
+        few: "مقترحات"
+        many: "مقترحات"
+        other: "مقترحات"
       legislation/draft_versions:
         zero: "إصدارات المسودّة"
         one: "إصدار المسودّة"
