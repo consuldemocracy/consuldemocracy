@@ -11,4 +11,6 @@ fi:
     failure:
       already_authenticated: "Olet jo kirjautunut sisään."
       inactive: "Tiliäsi ei ole vielä aktivoitu."
+      invalid: "Virheellinen %{authentication_keys} tai salasana."
       locked: "Tilisi on lukittu."
+      not_found_in_database: "Virheellinen %{authentication_keys} tai salasana."
