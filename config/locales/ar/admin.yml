@@ -809,8 +809,8 @@ ar:
       by_officer:
         date: "تاريخ"
         booth: "مكتب التصويت"
-        assignments: "مناوبات العمل في هذا الاقتراع"
-        no_assignments: "هذا المستخدم ليس لديه أية مناوبات عمل في هذا الاقتراع."
+        assignments: "مناوبات العمل في هذا الاستطلاع"
+        no_assignments: "هذا المستخدم ليس لديه أية مناوبات عمل في هذا الاستطلاع."
     poll_shifts:
       new:
         add_shift: "إضافة مناوبة"
@@ -837,7 +837,7 @@ ar:
     booth_assignments:
       manage_assignments: إدارة المهام
       manage:
-        assignments_list: "تعيينات للاقتراع '%{poll}'"
+        assignments_list: "تعيينات للاستطلاع '%{poll}'"
         status:
           assign_status: التعيين
           assigned: تم التعيين
@@ -867,18 +867,17 @@ ar:
         total_system: مجموع الأصوات (أوتوماتيكي)
       index:
         booths_title: "قائمة مكاتب التصويت"
-        no_booths: "لا توجد مكاتب تصويت مخصصة لهذا الاقتراع."
+        no_booths: "لا توجد مكاتب تصويت مخصصة لهذا الاستطلاع."
         table_name: "الاسم"
         table_location: "الموقع"
     polls:
       index:
-        no_polls: "لا يوجد استبيانات."
-        create: "إنشاء اقتراع"
+        create: "إنشاء استطلاع"
         name: "الاسم"
         dates: "التواريخ"
         geozone_restricted: "خاص بالمقاطعات"
       new:
-        title: "اقتراع جديد"
+        title: "استطلاع جديد"
     questions:
       index:
         no_questions: "لا توجد هناك أسئلة."
@@ -937,7 +936,7 @@ ar:
     booths:
       index:
         title: "قائمة صناديق الاقتراع المفعلة"
-        no_booths: "لا توجد صناديق الاقتراع مفعلة لأي إقتراع قادم."
+        no_booths: "لا توجد صناديق تصويت مفعلة لأي إقتراع قادم."
         add_booth: "إضافة صندوق اقتراع"
         name: "الاسم"
         location: "الموقع"
@@ -1068,7 +1067,7 @@ ar:
         placeholder: ابحث عن صندوق الاقتراع وفقا للاسم
       poll_officers_search:
         button: بحث
-        placeholder: البحث عن ضباط الإقتراع
+        placeholder: البحث عن ضباط الاستطلاع
       poll_questions_search:
         button: بحث
         placeholder: البحث عن أسئلة الاستطلاع
@@ -1141,11 +1140,11 @@ ar:
     stats:
       show:
         proposal_notifications: إشعارات المقترح
-        polls: الاستطلاعات
+        polls: استطلاعات
       proposal_notifications:
         title: إشعارات المقترح
       polls:
-        all: الاستطلاعات
+        all: استطلاعات
         table:
           question_name: سؤال
           origin_web: المشاركون عبر ويب
