@@ -7,7 +7,10 @@
         <%= image_tag(card.image_url(:large), alt: card.image.title) %>
       <% end %>
       <figcaption>
-        <span><%= card.label %></span><br>
+        <% if card.label.present? %>
+          <span><%= card.label %></span>
+        <% end %>
+        <br>
         <h3><%= card.title %></h3>
       </figcaption>
     </figure>

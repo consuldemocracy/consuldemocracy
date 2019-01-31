@@ -159,6 +159,21 @@ feature 'Cards' do
         expect(page).to have_css("#widget_card_#{card_3.id}.medium-2")
       end
 
+      scenario "Show label only if it is present" do
+        card_1 = create(:widget_card, page: custom_page, title: "Card one", label: "My label")
+        card_2 = create(:widget_card, page: custom_page, title: "Card two")
+
+        visit (custom_page).url
+
+        within("#widget_card_#{card_1.id}") do
+          expect(page).to have_selector("span", text: "My label")
+        end
+
+        within("#widget_card_#{card_2.id}") do
+          expect(page).not_to have_selector("span")
+        end
+      end
+
       scenario "Edit", :js do
         create(:widget_card, page: custom_page, title: "Original title")
 
