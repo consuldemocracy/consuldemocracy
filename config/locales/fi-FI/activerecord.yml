@@ -1,1 +1,46 @@
 fi:
+  activerecord:
+    models:
+      site_customization/page:
+        one: Mukautettu sivu
+        other: Mukautetut sivut
+      legislation/process:
+        one: "Prosessi"
+        other: "Prosessit"
+      legislation/proposal:
+        one: "Ehdotus"
+        other: "Ehdotukset"
+      legislation/questions:
+        one: "Kysymys"
+        other: "Kysymykset"
+      legislation/answers:
+        one: "Vastaus"
+        other: "Vastaukset"
+      images:
+        one: "Kuva"
+        other: "Kuvat"
+      topic:
+        one: "Aihe"
+        other: "Aiheet"
+    attributes:
+      budget:
+        name: "Nimi"
+        phase: "Vaihe"
+        currency_symbol: "Valuutta"
+      budget/investment:
+        description: "Kuvaus"
+        location: "Sijainti (vapaaehtoinen)"
+        image_title: "Kuvan otsikko"
+      milestone/status:
+        name: "Nimi"
+        description: "Kuvaus (vapaaehtoinen)"
+      progress_bar:
+        kind: "Tyyppi"
+      progress_bar/kind:
+        primary: "Ensisijainen"
+        secondary: "Toissijainen"
+      budget/heading:
+        price: "Hinta"
+      comment:
+        body: "Kommentti"
+        user: "Käyttäjä"
