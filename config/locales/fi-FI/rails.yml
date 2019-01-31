@@ -68,6 +68,30 @@ fi:
     human:
       decimal_units:
         format: "%n %u"
+        units:
+          billion: Miljardi
+          million: Miljoona
+          quadrillion: Kvadriljoona
+          thousand: Tuhat
+          trillion: Biljoona
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", ja "
+      two_words_connector: " ja "
+      words_connector: ", "
+  time:
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
