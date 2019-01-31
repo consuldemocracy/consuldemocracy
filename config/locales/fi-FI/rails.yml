@@ -51,9 +51,49 @@ fi:
   datetime:
     distance_in_words:
       half_a_minute: puoli minuuttia
+    prompts:
+      day: Päivä
+      hour: Tunti
+      minute: Minuutti
+      month: Kuukausi
+      second: Sekuntia
+      year: Vuosi
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: on oltava hyväksytty
+      blank: ei voi olla tyhjä
+      present: on oltava tyhjä
+      confirmation: ei vastaa %{attribute}
+      empty: ei voi olla tyhjä
+      equal_to: on oltava yhtä suuri kuin %{count}
+      even: on oltava parillinen
+      exclusion: on varattu
+      greater_than: on oltava suurempi kuin %{count}
+      greater_than_or_equal_to: on oltava suurempi tai yhtä suuri kuin %{count}
+      inclusion: ei sisälly luetteloon
+      invalid: ei kelpaa
+      less_than: on oltava pienempi kuin %{count}
+      less_than_or_equal_to: on oltava pienempi tai yhtä suuri kuin %{count}
+      model_invalid: "Vahvistaminen epäonnistui: %{errors}"
+      not_a_number: ei ole numero
+      not_an_integer: on oltava kokonaisluku
+      odd: on oltava pariton
+      required: on oltava
+      taken: on jo käytössä
+      other_than: on oltava muu kuin %{count}
+  helpers:
+    select:
+      prompt: Valitse
+    submit:
+      create: Luo %{model}
+      submit: Tallenna %{model}
+      update: Päivitä %{model}
   number:
     currency:
       format:
+        delimiter: ","
+        format: "%u%n"
         precision: 2
         separator: "."
         significant: false
@@ -80,6 +120,11 @@ fi:
         strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
+        units:
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
     percentage:
       format:
         format: "%n%"
