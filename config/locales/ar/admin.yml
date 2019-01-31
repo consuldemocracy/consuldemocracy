@@ -612,8 +612,8 @@ ar:
       system_emails: نظام البريد الإلكتروني
       emails_download: تنزيل رسائل البريد الإلكتروني
       valuators: المقيمون
-      poll_officers: ضباط الإقتراع
-      polls: استبيانات
+      poll_officers: ضباط الاستطلاع
+      polls: استطلاعات
       poll_booths: موقع صناديق الإقتراع
       poll_booth_assignments: تعيينات صناديق الإقتراع
       poll_shifts: إدارة المناوبات
@@ -633,7 +633,7 @@ ar:
           debates: "المناقشات"
           community: "المجتمع"
           proposals: "المقترحات"
-          polls: "استبيانات"
+          polls: "استطلاعات"
           layouts: "تخطيطات"
           mailers: "البريد الالكتروني"
           management: "الإدارة"
@@ -644,7 +644,7 @@ ar:
             update: "تحديث كتلة"
       title_moderated_content: محتوى خاضع للإشراف
       title_budgets: ميزانيات
-      title_polls: استبيانات
+      title_polls: استطلاعات
       title_profiles: حسابات
       title_settings: إعدادات
       title_site_customization: محتوى الموقع
@@ -789,7 +789,7 @@ ar:
         edit: "حفظ مجموعة تقييم"
     poll_officers:
       index:
-        title: ضباط الإقتراع
+        title: ضباط الاستطلاع
       officer:
         add: إضافة
         delete: حذف الموقع
@@ -803,7 +803,7 @@ ar:
     poll_officer_assignments:
       index:
         officers_title: "قائمة الضباط"
-        no_officers: "لا يوجد ضباط معينون لهذا الاقتراع."
+        no_officers: "لا يوجد ضباط معينون لهذا الاستطلاع."
         table_name: "الاسم"
         table_email: "البريد الإلكتروني"
       by_officer:
@@ -1071,7 +1071,7 @@ ar:
         placeholder: البحث عن ضباط الإقتراع
       poll_questions_search:
         button: بحث
-        placeholder: البحث عن أسئلة الإقتراع
+        placeholder: البحث عن أسئلة الاستطلاع
       proposal_search:
         button: بحث
         placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
@@ -1141,11 +1141,11 @@ ar:
     stats:
       show:
         proposal_notifications: إشعارات المقترح
-        polls: الاستبيانات
+        polls: الاستطلاعات
       proposal_notifications:
         title: إشعارات المقترح
       polls:
-        all: الاستبيانات
+        all: الاستطلاعات
         table:
           question_name: سؤال
           origin_web: المشاركون عبر ويب
