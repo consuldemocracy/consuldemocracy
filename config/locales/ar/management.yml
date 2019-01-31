@@ -31,7 +31,7 @@ ar:
     print:
       proposals_title: 'المقترحات:'
     budgets:
-      table_name: الإسم
+      table_name: الاسم
     budget_investments:
       filters:
         unfeasible: الاستثمارات الغير مجدية
