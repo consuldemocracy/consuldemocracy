@@ -202,7 +202,7 @@ ar:
           winners: الفائزين
         buttons:
           filter: ترشيح
-        download_current_selection: "تحميل الاختيار الحالي"
+        download_current_selection: "تنزيل التحديد الحالي"
         no_budget_investments: "لا توجد مشاريع استثمارية."
         title: مشاريع استثمارية
         assigned_admin: المشرف المعين
@@ -641,7 +641,7 @@ ar:
       title_moderated_content: محتوى خاضع للإشراف
       title_budgets: ميزانيات
       title_polls: استطلاعات
-      title_profiles: حسابات
+      title_profiles: ملفات التعريف
       title_settings: إعدادات
       title_site_customization: محتوى الموقع
     moderators:
