@@ -676,7 +676,7 @@ ar:
           few: "%{count} رسائل بريد إلكتروني مرسلة"
           many: "%{count} رسالة بريد إلكتروني مرسلة"
           other: "%{count} رسالة بريد إلكتروني مرسلة"
-        sent_at: تم الإرسال في
+        sent_at: تم الإرسال بـ
         subject: الموضوع
         segment_recipient: المستلمين
         from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
@@ -693,7 +693,7 @@ ar:
         new_notification: إشعار جديد
         title: العنوان
         segment_recipient: المستلمين
-        sent: أرسلت
+        sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
         edit: تعديل
@@ -712,7 +712,7 @@ ar:
         send: إرسال إشعار
         will_get_notified: (سيتم إعلام %{n} مستخدم)
         got_notified: (تم إعلام %{n} مستخدم)
-        sent_at: أرسلت في
+        sent_at: تم الإرسال بـ
         title: العنوان
         body: النص
         link: رابط
