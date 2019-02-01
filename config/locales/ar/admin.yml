@@ -786,7 +786,7 @@ ar:
         title: ضباط الاستطلاع
       officer:
         add: إضافة
-        delete: حذف الموقع
+        delete: حذف المنصب
         name: الاسم
         email: البريد الإلكتروني
         entry_name: ضابط
