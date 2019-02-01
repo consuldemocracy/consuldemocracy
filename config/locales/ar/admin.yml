@@ -336,7 +336,7 @@ ar:
       index:
         title: "أشرطة التقدم"
         no_progress_bars: "ليس هناك أية أشرطة تقدم"
-        new_progress_bar: "إنشاء شريط تقدم الجديد"
+        new_progress_bar: "إنشاء شريط تقدم جديد"
         primary: "شريط التقدم الرئيسي"
         table_id: "ID"
         table_kind: "النوع"
@@ -529,16 +529,16 @@ ar:
         table:
           title: العنوان
           created_at: أنشئت في
-          comments: التعليقات
+          comments: تعليقات
           final_version: الإصدار الأخير
           status: الحالة
       questions:
         create:
           notice: 'تم إنشاء السؤال بنجاح. <a href="%{link}">انقر للزيارة</a>'
-          error: لا يمكن إنشاء السؤال
+          error: تعذر إنشاء السؤال
         update:
           notice: 'تم تحديث السؤال بنجاح. <a href="%{link}">انقر للزيارة</a>'
-          error: لا يمكن تحديث السؤال
+          error: تعذر تحديث السؤال
         destroy:
           notice: تم حذف السؤال بنجاح
         edit:
@@ -731,9 +731,7 @@ ar:
     emails_download:
       index:
         title: تنزيل رسائل البريد الإلكتروني
-        download_segment: تحميل عناوين البريد الإلكتروني
         download_segment_help_text: قم بالتنزيل بصيغة CSV
-        download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
     valuators:
       index:
         title: المقيمون
