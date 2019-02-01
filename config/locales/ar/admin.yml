@@ -223,7 +223,7 @@ ar:
           valuator: مقيّم
           valuation_group: مجموعة المقيّمين
           geozone: نطاق العملية
-          feasibility: الجدوى
+          feasibility: إمكانية التنفيذ
           valuation_finished: انتهى التقييم.
           selected: محدّد
           visible_to_valuators: العرض على المقيمين
@@ -292,7 +292,7 @@ ar:
         delete: "حذف معلم"
         no_milestones: "لا يوجد معالم محددة"
         image: "صورة"
-        show_image: "رؤية الصورة"
+        show_image: "عرض الصورة"
         documents: "الوثائق"
         milestone: معلم
         new_milestone: إنشاء معلم جديد
@@ -317,7 +317,7 @@ ar:
         empty_statuses: لا يوجد حالات معلم منشأة
         new_status: إنشاء حالة معلم جديدة
         table_name: الاسم
-        table_description: الوصف
+        table_description: وصف
         table_actions: الإجراءات
         delete: حذف
         edit: تعديل
@@ -369,7 +369,7 @@ ar:
       index:
         back: العودة إلى %{org}
         title: الإدارة
-        description: مرحبا بكم في لوحة المشرف %{org}.
+        description: أهلا بك %{org} في لوحة الادارة.
     debates:
       index:
         filter: ترشيح
@@ -633,11 +633,11 @@ ar:
           layouts: "تخطيطات"
           mailers: "البريد الالكتروني"
           management: "الإدارة"
-          welcome: "اهلاً وسهلاً"
+          welcome: "أهلا بك"
         buttons:
           save: "حفظ"
           content_block:
-            update: "تحديث كتلة"
+            update: "تحديث الكتلة"
       title_moderated_content: محتوى خاضع للإشراف
       title_budgets: ميزانيات
       title_polls: استطلاعات
@@ -754,7 +754,7 @@ ar:
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
         finished_count: انتهى
-        in_evaluation_count: في التقييم
+        in_evaluation_count: قيد التقييم
         total_count: المجموع
         cost: التكلفة
       form:
