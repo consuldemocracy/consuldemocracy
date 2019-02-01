@@ -935,25 +935,25 @@ ar:
         title: "النتائج حسب مكتب الإقتراع"
     booths:
       index:
-        title: "قائمة صناديق الاقتراع المفعلة"
-        no_booths: "لا توجد صناديق تصويت مفعلة لأي إقتراع قادم."
-        add_booth: "إضافة صندوق اقتراع"
+        title: "قائمة مكاتب الإقتراع المفعلة"
+        no_booths: "لا توجد مكاتب مفعلة لأي إقتراع قادم."
+        add_booth: "إضافة مكتب إقتراع"
         name: "الاسم"
         location: "الموقع"
         no_location: "لا يوجد موقع"
       new:
-        title: "صندوق اقتراع جديد"
+        title: "مكتب إقتراع جديد"
         name: "الاسم"
         location: "الموقع"
-        submit_button: "إنشاء صندوق اقتراع"
+        submit_button: "إنشاء مكتب إقتراع"
       edit:
-        title: "تعديل صندوق اقتراع"
-        submit_button: "تحديث صندوق الإقتراع"
+        title: "تعديل مكتب الإقتراع"
+        submit_button: "تحديث مكتب الإقتراع"
       show:
         location: "الموقع"
       booth:
         shifts: "إدارة المناوبات"
-        edit: "تعديل صندوق الإقتراع"
+        edit: "تعديل مكتب الإقتراع"
     officials:
       edit:
         destroy: إزالة حالة 'رسمي'
@@ -1064,7 +1064,7 @@ ar:
       false_value: "لا"
       booths_search:
         button: بحث
-        placeholder: ابحث عن صندوق الاقتراع وفقا للاسم
+        placeholder: البحث عند مكتب إقتراع وفقا للاسم
       poll_officers_search:
         button: بحث
         placeholder: البحث عن ضباط الاستطلاع
