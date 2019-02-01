@@ -378,7 +378,7 @@ ar:
           with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
         title: المناقشات المخفية
-        no_hidden_debates: لا يوجد أي مناقشات المخفية.
+        no_hidden_debates: لا توجد أي مناقشات مخفية.
     hidden_users:
       index:
         filter: ترشيح
@@ -594,7 +594,7 @@ ar:
       budgets: الميزانية التشاركية
       geozones: إدارة المناطق الجغرافية
       hidden_comments: التعليقات المخفية
-      hidden_debates: المناقشات المخفية
+      hidden_debates: مناقشات المخفية
       hidden_proposals: الإقتراحات المخفية
       hidden_budget_investments: استثمارات الميزانية المخفية
       hidden_proposal_notifications: إخفاء إشعارات اقتراح
@@ -773,7 +773,7 @@ ar:
         new: "إنشاء مجموعة تقييم"
         name: "الاسم"
         members: "الأعضاء"
-        no_groups: "لا يوجد مجموعة تقييم"
+        no_groups: "لا توجد مجموعة تقييم"
       show:
         title: "مجموعة التقييم: %{group}"
         no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
