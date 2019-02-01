@@ -808,7 +808,7 @@ ar:
     poll_shifts:
       new:
         add_shift: "إضافة مناوبة"
-        shift: "التعيين"
+        shift: "تعيين"
         new_shift: "مناوبة جديدة"
         no_shifts: "لا توجد مناوبات لمكتب الإقتراع هذا"
         officer: "ضابط"
@@ -833,7 +833,7 @@ ar:
       manage:
         assignments_list: "تعيينات للاستطلاع '%{poll}'"
         status:
-          assign_status: التعيين
+          assign_status: تعيين
           assigned: تم التعيين
           unassigned: لم يتم التعيين
         actions:
@@ -968,8 +968,8 @@ ar:
       level_4: المستوى 4
       level_5: المستوى 5
       search:
-        edit_official: تغيير المسؤول
-        make_official: تعيين المسؤول
+        edit_official: تعديل مسؤول
+        make_official: تعيين مسؤول
         title: 'مناصب المسؤول: البحث عن مستخدم'
         no_results: لم يتم العثور على مناصب المسؤول.
     organizations:
