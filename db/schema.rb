@@ -666,6 +666,8 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.date     "draft_end_date"
     t.boolean  "draft_phase_enabled",        default: false
     t.boolean  "homepage_enabled",           default: false
+    t.text     "background_color"
+    t.text     "font_color"
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -1520,10 +1522,13 @@ ActiveRecord::Schema.define(version: 20190103132925) do
     t.string   "link_text"
     t.string   "link_url"
     t.string   "label"
-    t.boolean  "header",      default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "header",                     default: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "site_customization_page_id"
   end
+
+  add_index "widget_cards", ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id", using: :btree
 
   create_table "widget_feeds", force: :cascade do |t|
     t.string   "kind"

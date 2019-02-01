@@ -438,6 +438,9 @@ es:
           homepage: Descripción
           homepage_description: Aquí puedes explicar el contenido del proceso
           homepage_enabled: Homepage activada
+          banner_title: Colores del encabezado
+          banner_background_color: Color de fondo
+          banner_font_color: Color del texto
         index:
           create: Nuevo proceso
           delete: Borrar
@@ -912,11 +915,13 @@ es:
         table_location: "Ubicación"
     polls:
       index:
-        title: "Listado de votaciones activas"
+        title: "Listado de votaciones"
         no_polls: "No hay ninguna votación próximamente."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
+        start_date: "Fecha de apertura"
+        closing_date: "Fecha de cierre"
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
@@ -1447,6 +1452,16 @@ es:
           status_published: Publicada
           title: Título
           slug: Slug
+          cards_title: Tarjetas
+          see_cards: Ver tarjetas
+        cards:
+          cards_title: tarjetas
+          create_card: Crear tarjeta
+          no_cards: No hay tarjetas.
+          title: Título
+          description: Descripción
+          link_text: Texto del enlace
+          link_url: URL del enlace
     homepage:
       title: Título
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.

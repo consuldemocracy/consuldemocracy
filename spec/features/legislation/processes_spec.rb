@@ -47,6 +47,17 @@ feature 'Legislation' do
       end
     end
 
+    scenario "Processes are sorted by descending start date", :js do
+      create(:legislation_process, title: "Process 1", start_date: 3.days.ago)
+      create(:legislation_process, title: "Process 2", start_date: 2.days.ago)
+      create(:legislation_process, title: "Process 3", start_date: Date.yesterday)
+
+      visit legislation_processes_path
+
+      expect("Process 3").to appear_before("Process 2")
+      expect("Process 2").to appear_before("Process 1")
+    end
+
     scenario 'Participation phases are displayed only if there is a phase enabled' do
       process = create(:legislation_process, :empty)
       process_debate = create(:legislation_process)
@@ -376,9 +387,9 @@ feature 'Legislation' do
     end
 
     context "Milestones" do
-      scenario "Without milestones" do
-        process = create(:legislation_process, :upcoming_proposals_phase)
+      let(:process) { create(:legislation_process, :upcoming_proposals_phase) }
 
+      scenario "Without milestones" do
         visit legislation_process_path(process)
 
         within(".legislation-process-list") do
@@ -387,7 +398,6 @@ feature 'Legislation' do
       end
 
       scenario "With milestones" do
-        process = create(:legislation_process, :upcoming_proposals_phase)
         create(:milestone,
                milestoneable:    process,
                description:      "Something important happened",
@@ -406,6 +416,39 @@ feature 'Legislation' do
 
         within(".tab-milestones") do
           expect(page).to have_content "Something important happened"
+        end
+      end
+
+      scenario "With main progress bar" do
+        create(:progress_bar, progressable: process)
+
+        visit milestones_legislation_process_path(process)
+
+        within(".tab-milestones") do
+          expect(page).to have_content "Progress"
+        end
+      end
+
+      scenario "With main and secondary progress bar" do
+        create(:progress_bar, progressable: process)
+        create(:progress_bar, :secondary, progressable: process, title: "Build laboratory")
+
+        visit milestones_legislation_process_path(process)
+
+        within(".tab-milestones") do
+          expect(page).to have_content "Progress"
+          expect(page).to have_content "Build laboratory"
+        end
+      end
+
+      scenario "No main progress bar" do
+        create(:progress_bar, :secondary, progressable: process, title: "Defeat Evil Lords")
+
+        visit milestones_legislation_process_path(process)
+
+        within(".tab-milestones") do
+          expect(page).not_to have_content "Progress"
+          expect(page).not_to have_content "Defeat Evil Lords"
         end
       end
     end

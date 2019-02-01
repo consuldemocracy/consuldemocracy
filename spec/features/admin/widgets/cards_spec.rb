@@ -130,6 +130,58 @@ feature 'Cards' do
       end
     end
 
+    context "Page card" do
+      let!(:custom_page) { create(:site_customization_page) }
+
+      scenario "Create", :js do
+        visit admin_site_customization_pages_path
+        click_link "See Cards"
+        click_link "Create card"
+
+        fill_in "Title", with: "Card for a custom page"
+        click_button "Create card"
+
+        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_content "Card for a custom page"
+      end
+
+      scenario "Edit", :js do
+        create(:widget_card, page: custom_page, title: "Original title")
+
+        visit admin_site_customization_page_cards_path(custom_page)
+
+        expect(page).to have_content("Original title")
+
+        click_link "Edit"
+
+        within(".translatable-fields") do
+          fill_in "Title", with: "Updated title"
+        end
+
+        click_button "Save card"
+
+        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_content "Updated title"
+        expect(page).not_to have_content "Original title"
+      end
+
+      scenario "Destroy", :js do
+        create(:widget_card, page: custom_page, title: "Card title")
+
+        visit admin_site_customization_page_cards_path(custom_page)
+
+        expect(page).to have_content("Card title")
+
+        accept_confirm do
+          click_link "Delete"
+        end
+
+        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).not_to have_content "Card title"
+      end
+
+    end
+
   end
 
   pending "add image expectactions"

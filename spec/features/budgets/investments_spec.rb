@@ -715,6 +715,28 @@ feature 'Budget Investments' do
       expect(order).not_to eq(new_order)
     end
 
+    scenario "Order always is random for unfeasible and unselected investments" do
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        budget.update(phase: phase)
+
+        visit budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
+
+        within(".submenu") do
+          expect(page).to have_content "random"
+          expect(page).not_to have_content "by price"
+          expect(page).not_to have_content "highest rated"
+        end
+
+        visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
+
+        within(".submenu") do
+          expect(page).to have_content "random"
+          expect(page).not_to have_content "price"
+          expect(page).not_to have_content "highest rated"
+        end
+      end
+    end
+
     def investments_order
       all(".budget-investment h3").collect {|i| i.text }
     end

@@ -1,114 +1,44 @@
 shared_examples "progressable" do |factory_name, path_name|
-  let!(:progressable) { create(factory_name) }
+  feature "Progress bars", :js do
+    let!(:progressable) { create(factory_name) }
+    let(:path) { send(path_name, *resource_hierarchy_for(progressable)) }
 
-  feature "Manage progress bars" do
-    let(:progressable_path) { send(path_name, *resource_hierarchy_for(progressable)) }
+    scenario "With main progress bar" do
+      create(:progress_bar, progressable: progressable)
 
-    let(:path) do
-      polymorphic_path([:admin, *resource_hierarchy_for(progressable.progress_bars.new)])
-    end
+      visit path
 
-    context "Index" do
-      scenario "Link to index path" do
-        create(:progress_bar, :secondary, progressable:  progressable,
-               title:      "Reading documents",
-               percentage: 20)
+      find("#tab-milestones-label").click
 
-        visit progressable_path
-        click_link "Manage progress bars"
-
-        expect(page).to have_content "Reading documents"
-      end
-
-      scenario "No progress bars" do
-        visit path
-
-        expect(page).to have_content("There are no progress bars")
+      within("#tab-milestones") do
+        expect(page).to have_content "Progress"
       end
     end
 
-    context "New" do
-      scenario "Primary progress bar", :js do
-        visit path
-        click_link "Create new progress bar"
+    scenario "With main and secondary progress bar" do
+      create(:progress_bar, progressable: progressable)
+      create(:progress_bar, :secondary, progressable: progressable, title: "Build laboratory")
 
-        select "Primary", from: "Type"
+      visit path
 
-        expect(page).not_to have_field "Title"
+      find("#tab-milestones-label").click
 
-        fill_in "Current progress", with: 43
-        click_button "Create Progress bar"
-
-        expect(page).to have_content "Progress bar created successfully"
-        expect(page).to have_content "43%"
-        expect(page).to have_content "Primary"
-        expect(page).to have_content "Primary progress bar"
-      end
-
-      scenario "Secondary progress bar", :js do
-        visit path
-        click_link "Create new progress bar"
-
-        select "Secondary", from: "Type"
-        fill_in "Current progress", with: 36
-        fill_in "Title", with: "Plant trees"
-        click_button "Create Progress bar"
-
-        expect(page).to have_content "Progress bar created successfully"
-        expect(page).to have_content "36%"
-        expect(page).to have_content "Secondary"
-        expect(page).to have_content "Plant trees"
+      within("#tab-milestones") do
+        expect(page).to have_content "Progress"
+        expect(page).to have_content "Build laboratory"
       end
     end
 
-    context "Edit" do
-      scenario "Primary progress bar", :js do
-        bar = create(:progress_bar, progressable: progressable)
+    scenario "No main progress bar" do
+      create(:progress_bar, :secondary, progressable: progressable, title: "Defeat Evil Lords")
 
-        visit path
-        within("#progress_bar_#{bar.id}") { click_link "Edit" }
+      visit path
 
-        expect(page).to have_field "Current progress"
-        expect(page).not_to have_field "Title"
+      find("#tab-milestones-label").click
 
-        fill_in "Current progress", with: 44
-        click_button "Update Progress bar"
-
-        expect(page).to have_content "Progress bar updated successfully"
-
-        within("#progress_bar_#{bar.id}") do
-          expect(page).to have_content "44%"
-        end
-      end
-
-      scenario "Secondary progress bar", :js do
-        bar = create(:progress_bar, :secondary, progressable: progressable)
-
-        visit path
-        within("#progress_bar_#{bar.id}") { click_link "Edit" }
-
-        fill_in "Current progress", with: 76
-        fill_in "Title", with: "Updated title"
-        click_button "Update Progress bar"
-
-        expect(page).to have_content "Progress bar updated successfully"
-
-        within("#progress_bar_#{bar.id}") do
-          expect(page).to have_content "76%"
-          expect(page).to have_content "Updated title"
-        end
-      end
-    end
-
-    context "Delete" do
-      scenario "Remove progress bar" do
-        bar = create(:progress_bar, progressable: progressable, percentage: 34)
-
-        visit path
-        within("#progress_bar_#{bar.id}") { click_link "Delete" }
-
-        expect(page).to have_content "Progress bar deleted successfully"
-        expect(page).not_to have_content "34%"
+      within("#tab-milestones") do
+        expect(page).not_to have_content "Progress"
+        expect(page).not_to have_content "Defeat Evil Lords"
       end
     end
   end

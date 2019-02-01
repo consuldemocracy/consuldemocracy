@@ -122,7 +122,7 @@
           <%= link_to t("admin.menu.site_customization.homepage"), admin_homepage_path %>
         </li>
 
-        <li <%= "class=is-active" if controller_name == "pages" %>>
+        <li <%= "class=is-active" if menu_pages? || controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>
 
