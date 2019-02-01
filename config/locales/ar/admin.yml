@@ -212,7 +212,7 @@ ar:
         feasibility:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
-          undecided: "متردد"
+          undecided: "غير مقرر"
         selected: "محدّد"
         select: "حدّد"
         list:
