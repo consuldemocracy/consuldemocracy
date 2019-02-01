@@ -614,8 +614,8 @@ ar:
       valuators: المقيمون
       poll_officers: ضباط الاستطلاع
       polls: استطلاعات
-      poll_booths: موقع صناديق الإقتراع
-      poll_booth_assignments: تعيينات صناديق الإقتراع
+      poll_booths: موقع مكاتب الإقتراع
+      poll_booth_assignments: تعيينات مكاتب الإقتراع
       poll_shifts: إدارة المناوبات
       officials: المسؤولين
       organizations: المنظمات
@@ -808,7 +808,7 @@ ar:
         table_email: "البريد الإلكتروني"
       by_officer:
         date: "تاريخ"
-        booth: "مكتب التصويت"
+        booth: "مكتب الإقتراع"
         assignments: "مناوبات العمل في هذا الاستطلاع"
         no_assignments: "هذا المستخدم ليس لديه أية مناوبات عمل في هذا الاستطلاع."
     poll_shifts:
@@ -816,7 +816,7 @@ ar:
         add_shift: "إضافة مناوبة"
         shift: "التعيين"
         new_shift: "مناوبة جديدة"
-        no_shifts: "لا توجد مناوبات لمكتب التصويت هذا"
+        no_shifts: "لا توجد مناوبات لمكتب الإقتراع هذا"
         officer: "ضابط"
         remove_shift: "إزالة"
         search_officer_button: بحث
@@ -843,31 +843,31 @@ ar:
           assigned: تم التعيين
           unassigned: لم يتم التعيين
         actions:
-          assign: تعيين مكتب التصويت
-          unassign: إلغاء تعيين مكتب التصويت
+          assign: تعيين مكتب الإقتراع
+          unassign: إلغاء تعيين مكتب الإقتراع
     poll_booth_assignments:
       alert:
-        shifts: "هناك مناوبات مرتبطة بمكتب التصويت. إذا قمت بإزالة تعيين مكتب التصويت، سيتم حذف المناوبات أيضا. هل تريد المتابعة؟"
+        shifts: "هناك مناوبات مرتبطة بمكتب التصويت. إذا قمت بإزالة تعيين مكتب الإقتراع، سيتم حذف المناوبات أيضا. هل تريد المتابعة؟"
       flash:
-        destroy: "تم إلغاء تعيين مكتب التصويت"
-        create: "تم تعيين مكتب التصويت"
-        error_destroy: "حدث خطأ عند إلغاء تعيين مكتب التصويت"
-        error_create: "حدث خطأ عند تعيين مكتب التصويت"
+        destroy: "تم إلغاء تعيين مكتب الإقتراع"
+        create: "تم تعيين مكتب الإقتراع"
+        error_destroy: "حدث خطأ عند إلغاء تعيين مكتب الإقتراع"
+        error_create: "حدث خطأ عند تعيين مكتب الإقتراع الخاص بالإستطلاع"
       show:
         location: "الموقع"
         officers: "الضباط"
-        officers_list: "قائمة لضباط مكتب التصويت"
-        no_officers: "لا يوجد ضباط لمكتب التصويت"
+        officers_list: "قائمة لضباط مكتب الإقتراع"
+        no_officers: "لا يوجد ضباط لمكتب الإقتراع"
         recounts: "اعادة الحساب"
-        recounts_list: "قائمة اعادة الحساب لمكتب التصويت"
+        recounts_list: "قائمة اعادة الحساب لمكتب الإقتراع هذا"
         results: "النتائج"
         date: "تاريخ"
         count_final: "إعادة فرز الأصوات النهائي (من طرف الضابط)"
         count_by_system: "الأصوات (أوتوماتيكي)"
         total_system: مجموع الأصوات (أوتوماتيكي)
       index:
-        booths_title: "قائمة مكاتب التصويت"
-        no_booths: "لا توجد مكاتب تصويت مخصصة لهذا الاستطلاع."
+        booths_title: "قائمة مكاتب الإقتراع"
+        no_booths: "لا توجد مكاتب إقتراع مخصصة لهذا الاستطلاع."
         table_name: "الاسم"
         table_location: "الموقع"
     polls:
@@ -915,7 +915,7 @@ ar:
       index:
         title: "اعادة الحساب"
         no_recounts: "لا يوجد شيء ليعاد حسابه"
-        table_booth_name: "مكتب التصويت"
+        table_booth_name: "مكتب إقتراع"
         table_total_recount: "الحساب الإجمالي (من طرف الضابط)"
         table_system_count: "الأصوات (أوتوماتيكي)"
     results:
@@ -929,10 +929,10 @@ ar:
         table_answer: الإجابة
         table_votes: الأصوات
       results_by_booth:
-        booth: مكتب التصويت
+        booth: مكتب إقتراع
         results: النتائج
         see_results: رؤية النتائج
-        title: "النتائج حسب صندوق الاقتراع"
+        title: "النتائج حسب مكتب الإقتراع"
     booths:
       index:
         title: "قائمة صناديق الاقتراع المفعلة"
