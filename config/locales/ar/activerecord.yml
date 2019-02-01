@@ -382,8 +382,8 @@ ar:
         end_date: تاريخ الإنتهاء
         debate_start_date: تاريخ بدء المناقشة
         debate_end_date: تاريخ انتهاء المناقشة
-        draft_start_date: تاريخ بداية المسودّة
-        draft_end_date: تاريخ نهاية المسودّة
+        draft_start_date: تاريخ بداية العمل على المسودة
+        draft_end_date: تاريخ إنتهاء المسودة
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
