@@ -70,7 +70,6 @@ ar:
       index:
         title: الميزانيات المشاركة
         new_link: إنشاء ميزانية جديدة
-        filter: إنتقاء
         filters:
           open: فتح
           finished: انتهى
@@ -183,7 +182,6 @@ ar:
         administrator_filter_all: كل المدراء
         valuator_filter_all: كل المقيّمين
         tags_filter_all: كل العلامات
-        advanced_filters: إنتقاءات متقدمة
         placeholder: بحث عن مشاريع
         sort_by:
           placeholder: ترتيب حسب
@@ -202,10 +200,8 @@ ar:
           unfeasible: غير مجد
           min_total_supports: الحد الأدنى من الدعم
           winners: الفائزين
-          one_filter_html: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
-          two_filters_html: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: فرز
+          filter: ترشيح
         download_current_selection: "تحميل الاختيار الحالي"
         no_budget_investments: "لا توجد مشاريع استثمارية."
         title: مشاريع استثمارية
@@ -360,7 +356,7 @@ ar:
         notice: "تم حذف شريط التقدم بنجاح"
     comments:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           with_confirmed_hide: مؤكد
@@ -376,7 +372,7 @@ ar:
         description: مرحبا بكم في لوحة المشرف %{org}.
     debates:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           with_confirmed_hide: مؤكد
@@ -385,7 +381,7 @@ ar:
         no_hidden_debates: لا يوجد أي مناقشات المخفية.
     hidden_users:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           with_confirmed_hide: مؤكد
@@ -400,7 +396,7 @@ ar:
         title: نشاط المستخدم (%{user})
     hidden_budget_investments:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           with_confirmed_hide: مؤكد
@@ -980,7 +976,7 @@ ar:
         no_results: لم يتم العثور على مناصب المسؤول.
     organizations:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           pending: معلق
@@ -1019,7 +1015,7 @@ ar:
         no_proposals: لا توجد مقترحات.
     hidden_proposals:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           with_confirmed_hide: مؤكد
@@ -1028,7 +1024,7 @@ ar:
         no_hidden_proposals: لا توجد أي إقتراحات مخفية.
     proposal_notifications:
       index:
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           all: الكل
           with_confirmed_hide: مؤكد
