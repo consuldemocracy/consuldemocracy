@@ -513,7 +513,7 @@ ar:
               draft: يمكنك المعاينة كمدير، لا يمكن لأي شخص آخر أن يرى ذلك
               published: مرئية للجميع
           title_placeholder: اكتب عنوان إصدار المسودّة
-          body_placeholder: اكتب نص المسودة
+          body_placeholder: كتابة نص المسودة
         index:
           title: إصدارات المسودة
           create: إنشاء إصدار
@@ -543,7 +543,7 @@ ar:
           notice: تم حذف السؤال بنجاح
         edit:
           back: عودة
-          title: "تصحيح \"%{question_title}\""
+          title: "تعديل \"%{question_title}\""
           submit_button: حفظ التغييرات
         errors:
           form:
@@ -758,7 +758,7 @@ ar:
         total_count: المجموع
         cost: التكلفة
       form:
-        edit_title: "المقيّمون: تحرير المقيّمين"
+        edit_title: "المقيّمون: تعديل المقيّمين"
         update: "تحديث المقيّمين"
         updated: "تم تحديث المقيّمين بنجاح"
       show:
@@ -770,7 +770,7 @@ ar:
     valuator_groups:
       index:
         title: "مجموعات تقييم"
-        new: "إنشاء مجموعة تقييم"
+        new: "إنشاء مجموعة مقيّمين"
         name: "الاسم"
         members: "الأعضاء"
         no_groups: "لا توجد مجموعة تقييم"
@@ -779,8 +779,8 @@ ar:
         no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
       form:
         name: "اسم المجموعة"
-        new: "إنشاء مجموعة تقييم"
-        edit: "حفظ مجموعة تقييم"
+        new: "إنشاء مجموعة مقيّمين"
+        edit: "حفظ مجموعة المقيّمين"
     poll_officers:
       index:
         title: ضباط الاستطلاع
