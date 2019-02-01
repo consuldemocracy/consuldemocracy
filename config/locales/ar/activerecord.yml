@@ -393,7 +393,7 @@ ar:
         summary: ملخص
         description: وصف
         additional_info: معلومات إضافية
-        milestones_summary: الملخص
+        milestones_summary: ملخص
       legislation/draft_version:
         title: عنوان الإصدار
         body: نص
