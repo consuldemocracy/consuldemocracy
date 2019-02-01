@@ -83,6 +83,7 @@
   }
 
   .gender-and-channel {
+
     thead,
     tbody {
       border: 0;
@@ -128,6 +129,7 @@
     }
 
     td {
+
       &.gender {
         font-weight: bold;
         font-size: rem-calc(21);
