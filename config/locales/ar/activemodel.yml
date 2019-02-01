@@ -18,5 +18,4 @@ ar:
           recipient: "البريد الإلكتروني"
       officing/residence:
         document_type: "نوع الوثيقة"
-        document_number: "رقم المستند (بما في ذلك الاحرف)"
         year_of_birth: "ولد في العام"
