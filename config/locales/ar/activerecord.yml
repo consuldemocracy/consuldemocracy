@@ -219,12 +219,12 @@ ar:
         many: "إجابات"
         other: "إجابات"
       documents:
-        zero: "مستندات"
-        one: "مستند"
-        two: "مستندان"
-        few: "مستندات"
-        many: "مستندات"
-        other: "مستندات"
+        zero: "وثائق"
+        one: "وثيقة"
+        two: "وثيقتان"
+        few: "وثائق"
+        many: "وثائق"
+        other: "وثائق"
       images:
         zero: "صور"
         one: "صورة"
