@@ -750,7 +750,7 @@ ar:
         title: 'المقيمون: البحث عن مستخدم'
       summary:
         title: ملخص المقيمين للمشاريع الاستثمارية
-        valuator_name: المقيّم
+        valuator_name: مقيّم
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
         finished_count: انتهى
@@ -1127,7 +1127,7 @@ ar:
         document_numbers_note: "اكتب الأرقام مفصولة بفواصل (،)"
         submit: إنشاء ورقة توقيع
       show:
-        created_at: أنشئت
+        created_at: تم الإنشاء
         author: كاتب
         documents: الوثائق
         unverified_error: (لم يتم التحقق من قبل التعداد)
