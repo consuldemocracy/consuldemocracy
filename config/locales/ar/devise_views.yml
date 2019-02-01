@@ -36,7 +36,6 @@ ar:
           password_confirmation_label: تأكيد كلمة المرور
           password_label: كلمة المرور
           phone_number_label: رقم الهاتف
-          responsible_name_label: الاسم الكامل للشخص المسؤول
           responsible_name_note: وسيكون هذا الشخص الذي يمثل الرابطة/الوحدة التي باسمها يتم عرض المقترحات
           submit: سجل
           title: التسجيل كمنظمة أو وحدة
