@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Poll::Voter do
 
@@ -76,7 +76,7 @@ describe Poll::Voter do
 
     it "is not valid if the user has voted via web" do
       answer = create(:poll_answer)
-      answer.record_voter_participation('token')
+      answer.record_voter_participation("token")
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).not_to be_valid

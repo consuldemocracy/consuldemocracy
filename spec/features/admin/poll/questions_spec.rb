@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin poll questions' do
+feature "Admin poll questions" do
 
   background do
     login_as(create(:administrator).user)
@@ -11,7 +11,7 @@ feature 'Admin poll questions' do
                   "edit_admin_question_path",
                   %w[title]
 
-  scenario 'Index' do
+  scenario "Index" do
     poll1 = create(:poll)
     poll2 = create(:poll)
     question1 = create(:poll_question, poll: poll1)
@@ -30,7 +30,7 @@ feature 'Admin poll questions' do
     end
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     geozone = create(:geozone)
     poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
     question = create(:poll_question, poll: poll)
@@ -41,8 +41,8 @@ feature 'Admin poll questions' do
     expect(page).to have_content(question.author.name)
   end
 
-  scenario 'Create' do
-    poll = create(:poll, name: 'Movies')
+  scenario "Create" do
+    poll = create(:poll, name: "Movies")
     title = "Star Wars: Episode IV - A New Hope"
     description = %{
       During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station
@@ -54,16 +54,16 @@ feature 'Admin poll questions' do
     visit admin_questions_path
     click_link "Create question"
 
-    select 'Movies', from: 'poll_question_poll_id'
-    fill_in 'Question', with: title
+    select "Movies", from: "poll_question_poll_id"
+    fill_in "Question", with: title
 
-    click_button 'Save'
+    click_button "Save"
 
     expect(page).to have_content(title)
   end
 
-  scenario 'Create from successful proposal' do
-    poll = create(:poll, name: 'Proposals')
+  scenario "Create from successful proposal" do
+    poll = create(:poll, name: "Proposals")
     proposal = create(:proposal, :successful)
 
     visit admin_proposal_path(proposal)
@@ -71,18 +71,18 @@ feature 'Admin poll questions' do
     click_link "Create question"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
-    expect(page).to have_field('Question', with: proposal.title)
+    expect(page).to have_field("Question", with: proposal.title)
 
-    select 'Proposals', from: 'poll_question_poll_id'
+    select "Proposals", from: "poll_question_poll_id"
 
-    click_button 'Save'
+    click_button "Save"
 
     expect(page).to have_content(proposal.title)
     expect(page).to have_link(proposal.title, href: proposal_path(proposal))
     expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
   end
 
-  scenario 'Update' do
+  scenario "Update" do
     question1 = create(:poll_question)
 
     visit admin_questions_path
@@ -92,9 +92,9 @@ feature 'Admin poll questions' do
 
     old_title = question1.title
     new_title = "Potatoes are great and everyone should have one"
-    fill_in 'Question', with: new_title
+    fill_in "Question", with: new_title
 
-    click_button 'Save'
+    click_button "Save"
 
     expect(page).to have_content "Changes saved"
     expect(page).to have_content new_title
@@ -105,7 +105,7 @@ feature 'Admin poll questions' do
     expect(page).not_to have_content(old_title)
   end
 
-  scenario 'Destroy' do
+  scenario "Destroy" do
     question1 = create(:poll_question)
     question2 = create(:poll_question)
 
@@ -141,11 +141,11 @@ feature 'Admin poll questions' do
     scenario "translates the poll name in options", :js do
       visit @edit_question_url
 
-      expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
+      expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
 
-      select('Español', from: 'locale-switcher')
+      select("Español", from: "locale-switcher")
 
-      expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
+      expect(page).to have_select("poll_question_poll_id", options: [poll.name_es])
     end
 
     scenario "uses fallback if name is not translated to current locale", :js do
@@ -155,11 +155,11 @@ feature 'Admin poll questions' do
 
       visit @edit_question_url
 
-      expect(page).to have_select('poll_question_poll_id', options: [poll.name_en])
+      expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
 
-      select('Français', from: 'locale-switcher')
+      select("Français", from: "locale-switcher")
 
-      expect(page).to have_select('poll_question_poll_id', options: [poll.name_es])
+      expect(page).to have_select("poll_question_poll_id", options: [poll.name_es])
     end
   end
 

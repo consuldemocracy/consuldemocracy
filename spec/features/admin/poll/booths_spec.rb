@@ -1,28 +1,28 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin booths' do
+feature "Admin booths" do
 
   background do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index empty' do
+  scenario "Index empty" do
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Booths location"
     end
 
     expect(page).to have_content "There are no active booths for any upcoming poll."
   end
 
-  scenario 'Index' do
+  scenario "Index" do
     3.times { create(:poll_booth) }
 
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Booths location"
     end
 
@@ -59,7 +59,7 @@ feature 'Admin booths' do
     expect(page).not_to have_link "Edit booth"
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     booth = create(:poll_booth)
 
     visit admin_booths_path

@@ -6,7 +6,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
     let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
 
     context "Index" do
-      scenario 'Displaying milestones' do
+      scenario "Displaying milestones" do
         milestone = create(:milestone, milestoneable: milestoneable)
         create(:image, imageable: milestone)
         document = create(:document, documentable: milestone)
@@ -18,11 +18,11 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
         expect(page).to have_content(milestone.id)
         expect(page).to have_content(milestone.publication_date.to_date)
         expect(page).to have_content(milestone.status.name)
-        expect(page).to have_link 'Show image'
+        expect(page).to have_link "Show image"
         expect(page).to have_link document.title
       end
 
-      scenario 'Displaying no_milestones text' do
+      scenario "Displaying no_milestones text" do
         visit path
 
         expect(page).to have_content("Milestone")
@@ -35,15 +35,15 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
         status = create(:milestone_status)
         visit path
 
-        click_link 'Create new milestone'
+        click_link "Create new milestone"
 
-        select status.name, from: 'milestone_status_id'
-        fill_in 'Description', with: 'New description milestone'
-        fill_in 'milestone_publication_date', with: Date.current
+        select status.name, from: "milestone_status_id"
+        fill_in "Description", with: "New description milestone"
+        fill_in "milestone_publication_date", with: Date.current
 
-        click_button 'Create milestone'
+        click_button "Create milestone"
 
-        expect(page).to have_content 'New description milestone'
+        expect(page).to have_content "New description milestone"
         expect(page).to have_content Date.current
         expect(page).to have_content status.name
       end
@@ -51,22 +51,22 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
       scenario "Status select is disabled if there are no statuses available" do
         visit path
 
-        click_link 'Create new milestone'
+        click_link "Create new milestone"
         expect(find("#milestone_status_id").disabled?).to be true
       end
 
       scenario "Show validation errors on milestone form" do
         visit path
 
-        click_link 'Create new milestone'
+        click_link "Create new milestone"
 
-        fill_in 'Description', with: 'New description milestone'
+        fill_in "Description", with: "New description milestone"
 
-        click_button 'Create milestone'
+        click_button "Create milestone"
 
         within "#new_milestone" do
           expect(page).to have_content "can't be blank", count: 1
-          expect(page).to have_content 'New description milestone'
+          expect(page).to have_content "New description milestone"
         end
       end
 
@@ -96,16 +96,16 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
         expect(page).to have_css("img[alt='#{milestone.image.title}']")
 
-        fill_in 'Description', with: 'Changed description'
-        fill_in 'milestone_publication_date', with: Date.current
-        fill_in 'milestone_documents_attributes_0_title', with: 'New document title'
+        fill_in "Description", with: "Changed description"
+        fill_in "milestone_publication_date", with: Date.current
+        fill_in "milestone_documents_attributes_0_title", with: "New document title"
 
-        click_button 'Update milestone'
+        click_button "Update milestone"
 
-        expect(page).to have_content 'Changed description'
+        expect(page).to have_content "Changed description"
         expect(page).to have_content Date.current
-        expect(page).to have_link 'Show image'
-        expect(page).to have_link 'New document title'
+        expect(page).to have_link "Show image"
+        expect(page).to have_link "New document title"
       end
     end
 
@@ -117,7 +117,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
         click_link "Delete milestone"
 
-        expect(page).not_to have_content 'Title will it remove'
+        expect(page).not_to have_content "Title will it remove"
       end
     end
   end

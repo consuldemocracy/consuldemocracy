@@ -1,22 +1,22 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Homepage' do
+feature "Homepage" do
 
   background do
     admin = create(:administrator).user
     login_as(admin)
 
-    Setting['feature.homepage.widgets.feeds.proposals'] = false
-    Setting['feature.homepage.widgets.feeds.debates'] = false
-    Setting['feature.homepage.widgets.feeds.processes'] = false
-    Setting['feature.user.recommendations'] = false
+    Setting["feature.homepage.widgets.feeds.proposals"] = false
+    Setting["feature.homepage.widgets.feeds.debates"] = false
+    Setting["feature.homepage.widgets.feeds.processes"] = false
+    Setting["feature.user.recommendations"] = false
   end
 
   let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
   let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
   let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
 
-  let(:user_recommendations) { Setting.where(key: 'feature.user.recommendations').first }
+  let(:user_recommendations) { Setting.where(key: "feature.user.recommendations").first }
   let(:user)                 { create(:user) }
 
   context "Header" do
@@ -25,7 +25,7 @@ feature 'Homepage' do
 
       visit new_admin_widget_card_path(header_card: true)
 
-      click_link Setting['org_name'] + " Administration"
+      click_link Setting["org_name"] + " Administration"
 
       expect(page).to have_current_path(admin_root_path)
     end
@@ -109,7 +109,7 @@ feature 'Homepage' do
 
       visit admin_homepage_path
       within("#widget_feed_#{processes_feed.id}") do
-        select '3', from: 'widget_feed_limit'
+        select "3", from: "widget_feed_limit"
         accept_confirm { click_button "Enable" }
       end
 

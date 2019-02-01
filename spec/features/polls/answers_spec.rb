@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Answers' do
+feature "Answers" do
 
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
@@ -38,7 +38,7 @@ feature 'Answers' do
     expect(page).to have_content "Adding more trees, creating a play area..."
   end
 
-  scenario 'Add video to answer' do
+  scenario "Add video to answer" do
     answer1 = create(:poll_question_answer, question: question)
     answer2 = create(:poll_question_answer, question: question)
 

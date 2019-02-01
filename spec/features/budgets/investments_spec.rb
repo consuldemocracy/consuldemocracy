@@ -925,7 +925,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Ballot is not visible' do
+    scenario "Ballot is not visible" do
       login_as(author)
 
       visit budget_investments_path(budget, heading_id: heading.id)

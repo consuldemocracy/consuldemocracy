@@ -47,19 +47,19 @@ shared_examples "acts as imageable" do |imageable_factory|
   describe "title" do
 
     it "is not valid when correct image attached but no image title provided" do
-      image.title = ''
+      image.title = ""
 
       expect(image).not_to be_valid
     end
 
     it "is not valid when image title is too short" do
-      image.title = 'a' * 3
+      image.title = "a" * 3
 
       expect(image).not_to be_valid
     end
 
     it "is not valid when image title is too long" do
-      image.title = 'a' * 81
+      image.title = "a" * 81
 
       expect(image).not_to be_valid
     end
@@ -69,7 +69,7 @@ shared_examples "acts as imageable" do |imageable_factory|
   it "image destroy should remove image from file storage" do
     image.save
     image_url = image.attachment.url
-    new_url = '/attachments/original/missing.png'
+    new_url = "/attachments/original/missing.png"
 
     expect{ image.attachment.destroy }.to change{ image.attachment.url }.from(image_url).to(new_url)
   end

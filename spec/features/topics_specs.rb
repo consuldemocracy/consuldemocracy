@@ -1,14 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Topics' do
+feature "Topics" do
 
   context "Concerns" do
-    it_behaves_like 'notifiable in-app', Topic
+    it_behaves_like "notifiable in-app", Topic
   end
 
-  context 'New' do
+  context "New" do
 
-    scenario 'Create new topic link should redirect to sign up for anonymous users', :js do
+    scenario "Create new topic link should redirect to sign up for anonymous users", :js do
       proposal = create(:proposal)
       community = proposal.community
 
@@ -20,7 +20,7 @@ feature 'Topics' do
       expect(page).to have_current_path(new_user_session_path)
     end
 
-    scenario 'Can access to new topic page with user logged', :js do
+    scenario "Can access to new topic page with user logged", :js do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -32,7 +32,7 @@ feature 'Topics' do
       expect(page).to have_content "Create a topic"
     end
 
-    scenario 'Should have content on new topic page', :js do
+    scenario "Should have content on new topic page", :js do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -52,9 +52,9 @@ feature 'Topics' do
 
   end
 
-  context 'Create' do
+  context "Create" do
 
-    scenario 'Can create a new topic', :js do
+    scenario "Can create a new topic", :js do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -69,7 +69,7 @@ feature 'Topics' do
       expect(page).to have_current_path(community_path(community))
     end
 
-    scenario 'Can not create a new topic when user not logged', :js do
+    scenario "Can not create a new topic when user not logged", :js do
       proposal = create(:proposal)
       community = proposal.community
 
@@ -80,9 +80,9 @@ feature 'Topics' do
 
   end
 
-  context 'Edit' do
+  context "Edit" do
 
-    scenario 'Can edit a topic' do
+    scenario "Can edit a topic" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -98,7 +98,7 @@ feature 'Topics' do
       expect(page).to have_current_path(community_path(community))
     end
 
-    scenario 'Can not edit a topic when user logged is not an author' do
+    scenario "Can not edit a topic when user logged is not an author" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -112,9 +112,9 @@ feature 'Topics' do
 
   end
 
-  context 'Show' do
+  context "Show" do
 
-    scenario 'Can show topic' do
+    scenario "Can show topic" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -127,9 +127,9 @@ feature 'Topics' do
 
   end
 
-  context 'Destroy' do
+  context "Destroy" do
 
-    scenario 'Can destroy a topic' do
+    scenario "Can destroy a topic" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -144,7 +144,7 @@ feature 'Topics' do
       expect(page).to have_current_path(community_path(community))
     end
 
-    scenario 'Can not destroy a topic when user logged is not an author' do
+    scenario "Can not destroy a topic when user logged is not an author" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
