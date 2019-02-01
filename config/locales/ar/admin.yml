@@ -1018,7 +1018,7 @@ ar:
           all: الكل
           with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
-        title: مقترحات المخفية
+        title: مقترحات مخفية
         no_hidden_proposals: لا توجد أي إقتراحات مخفية.
     proposal_notifications:
       index:
