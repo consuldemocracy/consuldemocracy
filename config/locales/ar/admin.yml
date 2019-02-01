@@ -979,7 +979,7 @@ ar:
           all: الكل
           pending: معلق
           rejected: مرفوضة
-          verified: مثبتة
+          verified: تم التثبت
         hidden_count_html:
           zero: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
           one: هناك <strong> منظمة %{count} </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
@@ -998,7 +998,7 @@ ar:
         search: بحث
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
         title: المنظمات
-        verified: مثبتة
+        verified: تم التثبت
         verify: تحقق
         pending: معلق
       search:
