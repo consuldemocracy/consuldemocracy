@@ -999,7 +999,7 @@ ar:
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
         title: المنظمات
         verified: مثبتة
-        verify: تثبت
+        verify: تحقق
         pending: معلق
       search:
         title: بحث عن منظمات
