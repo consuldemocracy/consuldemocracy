@@ -959,7 +959,6 @@ ar:
         title: المسؤولون
         no_officials: لا يوجد مسؤول.
         name: الاسم
-        official_position: الموقف الرسمي
         official_level: المستوى
       level_0: ليس رسميا
       level_1: المستوى 1
@@ -970,8 +969,8 @@ ar:
       search:
         edit_official: تعديل مسؤول
         make_official: تعيين مسؤول
-        title: 'مناصب المسؤول: البحث عن مستخدم'
-        no_results: لم يتم العثور على مناصب المسؤول.
+        title: 'المناصب الرسمية: البحث عن مستخدم'
+        no_results: لم يتم العثور على مناصب رسمية.
     organizations:
       index:
         filter: ترشيح
