@@ -515,7 +515,7 @@ ar:
           title_placeholder: اكتب عنوان إصدار المسودّة
           body_placeholder: اكتب نص المسودة
         index:
-          title: مسودة الإصدارات
+          title: إصدارات المسودة
           create: إنشاء إصدار
           delete: حذف
           preview: معاينة
@@ -766,7 +766,7 @@ ar:
         email: "البريد الإلكتروني"
         group: "مجموعة"
         no_description: "بدون وصف"
-        no_group: "بدون فريق"
+        no_group: "بدون مجموعة"
     valuator_groups:
       index:
         title: "مجموعات تقييم"
@@ -953,7 +953,7 @@ ar:
         destroy: إزالة حالة 'رسمي'
         title: 'المسؤولون: تعديل المستخدم'
       flash:
-        official_destroyed: 'تم حفض التفاصيل: لم يعد المستخدم من المسؤولين'
+        official_destroyed: 'تم حفظ التفاصيل: لم يعد المستخدم من المسؤولين'
         official_updated: تم حفض تفاصيل المسؤول
       index:
         title: المسؤولون
@@ -1018,7 +1018,7 @@ ar:
           all: الكل
           with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
-        title: الإقتراحات المخفية
+        title: مقترحات المخفية
         no_hidden_proposals: لا توجد أي إقتراحات مخفية.
     proposal_notifications:
       index:
