@@ -243,7 +243,7 @@ ar:
         edit: تعديل
         edit_classification: تعديل التصنيف
         by: من قبل
-        sent: أرسلت
+        sent: تم الإرسال
         group: مجموعة
         heading: عنوان
         dossier: الملف
@@ -653,7 +653,7 @@ ar:
         title: المشرفون
     newsletters:
       index:
-        sent: أرسلت
+        sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
         edit: تعديل
@@ -676,7 +676,7 @@ ar:
           few: "%{count} رسائل بريد إلكتروني مرسلة"
           many: "%{count} رسالة بريد إلكتروني مرسلة"
           other: "%{count} رسالة بريد إلكتروني مرسلة"
-        sent_at: أرسلت في
+        sent_at: تم الإرسال في
         subject: الموضوع
         segment_recipient: المستلمين
         from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
