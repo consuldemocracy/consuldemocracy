@@ -981,12 +981,12 @@ ar:
           rejected: مرفوضة
           verified: تم التثبت
         hidden_count_html:
-          zero: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-          one: هناك <strong> منظمة %{count} </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-          two: هناك <strong> منظمتان %{count} </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-          few: هناك <strong> %{count} منظمات </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-          many: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
-          other: هناك <strong> %{count} منظمة </ strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          zero: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          one: هناك أيضا <strong>منظمة واحدة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          two: هناك <strong>منظمتان</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          few: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          many: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          other: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
         name: الاسم
         email: البريد الإلكتروني
         phone_number: الهاتف
