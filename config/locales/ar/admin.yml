@@ -162,7 +162,7 @@ ar:
         content_blocks_info: "إذا تم اختيار \"السماح بكتل المحتوى\"، سوف تتمكن من إنشاء محتوى مخصص ذي صلة بهذا العنوان غن طريق إعدادات > كتل المحتوى المخصصة. سوف يظهر هذا المحتوى في صفحة الاستثمارات الخاصة بهذا العنوان."
         create: "إنشاء عنوان جديد"
         edit: "تعديل العنوان"
-        submit: "تسجيل العنوان"
+        submit: "حفظ العنوان"
       index:
         back: "العودة إلى المجموعات"
     budget_phases:
@@ -208,7 +208,7 @@ ar:
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
         no_valuators_assigned: لم يتم تعيين مقيّمين
-        no_valuation_groups: لم يتم تعيين مجموعات مقيّمين
+        no_valuation_groups: لم يتم تعيين مجموعات المقيّمين
         feasibility:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
@@ -290,7 +290,7 @@ ar:
         table_status: الحالة
         table_actions: "الإجراءات"
         delete: "حذف معلم"
-        no_milestones: "لا يوجد معالم محددة"
+        no_milestones: "لا توجد معالم محددة"
         image: "صورة"
         show_image: "عرض الصورة"
         documents: "الوثائق"
@@ -759,7 +759,7 @@ ar:
         cost: التكلفة
       form:
         edit_title: "المقيّمون: تعديل المقيّمين"
-        update: "تحديث المقيّمين"
+        update: "تحديث المقيّم"
         updated: "تم تحديث المقيّمين بنجاح"
       show:
         description: "الوصف"
@@ -775,7 +775,7 @@ ar:
         members: "الأعضاء"
         no_groups: "لا توجد مجموعة تقييم"
       show:
-        title: "مجموعة التقييم: %{group}"
+        title: "مجموعة المقيمين: %{group}"
         no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
       form:
         name: "اسم المجموعة"
