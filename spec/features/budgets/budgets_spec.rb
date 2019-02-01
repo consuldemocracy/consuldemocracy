@@ -230,7 +230,7 @@ feature 'Budgets' do
     let(:heading) { create(:budget_heading, group: group) }
 
     background do
-      Setting['feature.map'] = true
+      Setting["feature.map"] = true
     end
 
     scenario "Display investment's map location markers", :js do
@@ -246,6 +246,46 @@ feature 'Budgets' do
 
       within ".map_location" do
         expect(page).to have_css(".map-icon", count: 3, visible: false)
+      end
+    end
+
+    scenario "Display all investment's map location if there are no selected", :js do
+      budget.update(phase: :publishing_prices)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+      investment4.create_map_location(longitude: 40.1240, latitude: 3.1240, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 4, visible: false)
+      end
+    end
+
+    scenario "Display only selected investment's map location from publishing prices phase", :js do
+      budget.update(phase: :publishing_prices)
+
+      investment1 = create(:budget_investment, :selected, heading: heading)
+      investment2 = create(:budget_investment, :selected, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+      investment4.create_map_location(longitude: 40.1240, latitude: 3.1240, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 2, visible: false)
       end
     end
 
