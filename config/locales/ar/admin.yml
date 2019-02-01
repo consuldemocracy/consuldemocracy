@@ -174,7 +174,7 @@ ar:
         description: الوصف
         description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
         enabled: المرحلة مفعلة
-        enabled_help_text: ستكون هذه المرحلة عامة في الجدول الزمني للموازنة ، وكذلك نشطة لأي غرض آخر
+        enabled_help_text: ستكون هذه المرحلة أحد المراحل المتاحة للعامة من بين مراحل الموازنة، إلى جانب كونها نشطة لأي غرض آخر
         save_changes: حفظ التغييرات
     budget_investments:
       index:
@@ -503,7 +503,7 @@ ar:
           form:
             error: خطأ
         form:
-          title_html: 'تحرير <span class="strong">%{draft_version_title}</span> من العملية <span class="strong">%{process_title}</span>'
+          title_html: 'تعديل <span class="strong">%{draft_version_title}</span> من العملية <span class="strong">%{process_title}</span>'
           launch_text_editor: تشغيل محرر النص
           close_text_editor: إغلاق محرر النص
           use_markdown: استخدم Markdown لتنسيق النص
