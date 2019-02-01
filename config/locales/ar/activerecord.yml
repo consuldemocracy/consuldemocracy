@@ -278,7 +278,7 @@ ar:
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "العنوان"
-        description: "الوصف (اختياري إذا كانت هناك حالة معينة)"
+        description: "الوصف (اختياري إذا كانت هناك حالة تم تعيينها)"
         publication_date: "تاريخ النشر"
       milestone/status:
         name: "الاسم"
