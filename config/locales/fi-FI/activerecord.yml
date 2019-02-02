@@ -72,10 +72,18 @@ fi:
         body: "Kommentti"
         user: "Käyttäjä"
       debate:
+        author: "Tekijä"
+        description: "Mielipide"
         terms_of_service: "Käyttöehdot"
       proposal:
+        author: "Tekijä"
         question: "Kysymys"
+        description: "Kuvaus"
+        terms_of_service: "Käyttöehdot"
       user:
+        login: "Sähköposti tai käyttäjänimi"
+        email: "Sähköposti"
+        username: "Käyttäjätunnus"
         password_confirmation: "Salasanan vahvistus"
         password: "Salasana"
         current_password: "Nykyinen salasana"
@@ -118,6 +126,25 @@ fi:
         description: Kuvaus
         additional_info: Lisätiedot
         start_date: Aloituspäivä
+        end_date: Päättymispäivä
+      legislation/process/translation:
+        summary: Yhteenveto
+        description: Kuvaus
+        additional_info: Lisätiedot
+        milestones_summary: Yhteenveto
+      legislation/draft_version:
+        title: Version nimi
+        body: Teksti
+        changelog: Muutokset
+        status: Tila
+      legislation/draft_version/translation:
+        title: Version nimi
+        body: Teksti
+        changelog: Muutokset
+      legislation/annotation:
+        text: Kommentti
+      document:
+        attachment: Liite
       image:
         attachment: Liite
       poll/question/answer:
@@ -126,11 +153,32 @@ fi:
       poll/question/answer/translation:
         title: Vastaus
         description: Kuvaus
+      poll/question/answer/video:
+        url: Ulkoinen video
       newsletter:
         subject: Aihe
+      admin_notification:
+        link: Linkki
+        body: Teksti
       admin_notification/translation:
         body: Teksti
       widget/card:
         description: Kuvaus
+        link_text: Linkin teksti
+        link_url: Linkin URL
       widget/card/translation:
         description: Kuvaus
+        link_text: Linkin teksti
+    errors:
+      models:
+        poll/voter:
+          attributes:
+            document_number:
+              has_voted: "Käyttäjä on jo äänestänyt"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Leveys tulee olla %{required_width}px"
+              image_height: "Korkeus tulee olla %{required_height}px"
+      messages:
+        record_invalid: "Vahvistaminen epäonnistui: %{errors}"
