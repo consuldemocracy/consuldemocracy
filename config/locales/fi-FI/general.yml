@@ -35,6 +35,8 @@ fi:
     comment_link: Kommentti
     comments_title: Kommentit
   debates:
+    form:
+      tags_label: Aiheet
     index:
       orders:
         recommendations: suositukset
@@ -123,6 +125,7 @@ fi:
       other: Muu
     form:
       tag_category_label: "Kategoriat"
+      tags_label: Tunnisteet
     index:
       orders:
         created_at: uusin
@@ -165,6 +168,10 @@ fi:
       author_type_blank: 'Valitse kategoria'
     author_info:
       author_deleted: Käyttäjä poistettu
+    tags_cloud:
+      categories: "Kategoriat"
+  social:
+    instagram: "%{org} Instagram"
   spending_proposals:
     show:
       author_deleted: Käyttäjä poistettu
