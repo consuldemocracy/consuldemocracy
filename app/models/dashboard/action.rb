@@ -2,7 +2,11 @@ class Dashboard::Action < ActiveRecord::Base
   include Documentable
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
-               accepted_content_types: [ 'application/pdf' ]
+               accepted_content_types: [ "application/pdf",
+                                         "image/jpeg",
+                                         "image/jpg",
+                                         "image/png",
+                                         "application/zip" ]
 
   include Linkable
 
@@ -14,7 +18,7 @@ class Dashboard::Action < ActiveRecord::Base
 
   enum action_type: [:proposed_action, :resource]
 
-  validates :title, 
+  validates :title,
             presence: true,
             allow_blank: false,
             length: { in: 4..80 }
@@ -40,7 +44,7 @@ class Dashboard::Action < ActiveRecord::Base
   scope :resources, -> { where(action_type: 1) }
   scope :proposed_actions, -> { where(action_type: 0) }
 
-  def self.active_for(proposal) 
+  def self.active_for(proposal)
     published_at = proposal.published_at&.to_date || Date.today
 
     active
