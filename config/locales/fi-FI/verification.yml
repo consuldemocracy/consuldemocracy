@@ -30,6 +30,7 @@ fi:
         title: Lähetä vahvistuskoodi
       update:
         error: Virheellinen vahvistuskoodi
+    step_1: Asuinpaikka
     step_2: Vahvistuskoodi
     user_permission_proposal: Luo uusia ehdotuksia
     user_permission_support_proposal: Tue ehdotuksia*
