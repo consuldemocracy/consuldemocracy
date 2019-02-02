@@ -1,1 +1,6 @@
 fi:
+  admin:
+    polls:
+      index:
+        start_date: "Aloituspäivä"
+        closing_date: "Sulkeutumispäivä"
