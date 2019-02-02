@@ -1,6 +1,27 @@
 fi:
   activerecord:
     models:
+      budget:
+        one: "Budjetti"
+        other: "Budjetit"
+      budget/investment:
+        one: "Sijoitus"
+        other: "Sijoitukset"
+      comment:
+        one: "Kommentti"
+        other: "Kommentit"
+      user:
+        one: "Käyttäjä"
+        other: "Käyttäjät"
+      newsletter:
+        one: "Uutiskirje"
+        other: "Uutiskirjeet"
+      vote:
+        one: "Ääni"
+        other: "Äänet"
+      organization:
+        one: "Organisaatio"
+        other: "Organisaatiot"
       site_customization/page:
         one: Mukautettu sivu
         other: Mukautetut sivut
@@ -22,6 +43,9 @@ fi:
       topic:
         one: "Aihe"
         other: "Aiheet"
+      poll:
+        one: "Kysely"
+        other: "Kyselyt"
     attributes:
       budget:
         name: "Nimi"
@@ -31,6 +55,9 @@ fi:
         description: "Kuvaus"
         location: "Sijainti (vapaaehtoinen)"
         image_title: "Kuvan otsikko"
+      milestone:
+        status_id: "Nykyinen tila (valinnainen)"
+        publication_date: "Julkaisupäivä"
       milestone/status:
         name: "Nimi"
         description: "Kuvaus (vapaaehtoinen)"
@@ -44,7 +71,19 @@ fi:
       comment:
         body: "Kommentti"
         user: "Käyttäjä"
+      debate:
+        terms_of_service: "Käyttöehdot"
+      proposal:
+        question: "Kysymys"
+      user:
+        password_confirmation: "Salasanan vahvistus"
+        password: "Salasana"
+        current_password: "Nykyinen salasana"
+        phone_number: "Puhelinnumero"
+      organization:
+        name: "Organisaation nimi"
       spending_proposal:
+        administrator_id: "Järjestelmänvalvoja"
         description: "Kuvaus"
       poll:
         name: "Nimi"
@@ -64,6 +103,8 @@ fi:
         title: "Kysymys"
       site_customization/page:
         content: Sisältö
+        created_at: Luotu
+        status: Tila
         locale: Kieli
       site_customization/page/translation:
         content: Sisältö
