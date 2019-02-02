@@ -256,10 +256,28 @@ fi:
       date_range_blank: 'Valitse päivämäärä'
       date_5: 'Mukautettu'
       search: 'Suodatin'
+      title: 'Edistynyt haku'
     author_info:
       author_deleted: Käyttäjä poistettu
+    back: Takaisin
+    check: Valitse
+    check_all: Kaikki
+    check_none: Ei mitään
+    follow: "Seuraa"
+    follow_entity: "Seuraa %{entity}"
+    hide: Piilota
+    search: Etsi
+    show: Näytä
+    suggest:
+      debate:
+        see_all: "Näytä kaikki"
+      budget_investment:
+        see_all: "Näytä kaikki"
+      proposal:
+        see_all: "Näytä kaikki"
     tags_cloud:
       categories: "Kategoriat"
+    target_blank_html: " (linkit avautuvat uudessa ikkunassa)"
     orbit:
       next_slide: Seuraava dia
   social:
@@ -267,9 +285,81 @@ fi:
   spending_proposals:
     form:
       description: Kuvaus
+      submit_buttons:
+        create: Luo
+        new: Luo
+    index:
+      search_form:
+        button: Etsi
+        title: Etsi
+      sidebar:
+        feasibility: Toteutettavuus
+        unfeasible: Toteuttamiskelvoton
     show:
       author_deleted: Käyttäjä poistettu
+      share: Jaa
+    spending_proposal:
+      support: Tue
+      support_title: Tue tätä projektia
+      supports:
+        zero: Ei tukijoita
+        one: 1 tukija
+        other: "%{count} tukijaa"
+  stats:
+    index:
+      proposals: Ehdotukset
+      comments: Kommentit
   users:
+    direct_messages:
+      new:
+        body_label: Viesti
+        submit_button: Lähetä viesti
+        title: Lähetä yksityisviesti käyttäjälle %{receiver}
     show:
       deleted: Poistettu
       deleted_proposal: Tämä ehdotus on poistettu
+      send_private_message: "Lähetä yksityisviesti"
+    proposals:
+      send_notification: "Lähetä ilmoitus"
+      see: "Näytä ehdotus"
+  votes:
+    agree: Hyväksyn
+    disagree: En hyväksy
+    signin: Kirjaudu sisään
+    signup: Rekisteröidy
+    verify_account: vahvista tilisi
+  welcome:
+    feed:
+      see_all_proposals: Näytä kaikki ehdotukset
+      see_all_processes: Näytä kaikki prosessit
+      process_label: Prosessi
+      see_process: Näytä prosessit
+    recommended:
+      slide: "Näytä %{title}"
+    verification:
+      i_dont_have_an_account: Minulla ei ole tunnusta
+      i_have_an_account: Minulla on jo tili
+      title: Tilin vahvistus
+    welcome:
+      title: Osallistu
+      user_permission_info: Tililläsi voit...
+      user_permission_proposal: Luo uusia ehdotuksia
+      user_permission_support_proposal: Tue ehdotuksia*
+      user_permission_verify_my_account: Vahvista tilini
+  invisible_captcha:
+    sentence_for_humans: "Jos olet ihminen, ohita tämä kenttä"
+  related_content:
+    placeholder: "%{url}"
+    submit: "Lisää"
+    score_positive: "Kyllä"
+    score_negative: "Ei"
+    content_title:
+      proposal: "Ehdotus"
+  admin/widget:
+    header:
+      title: Järjestelmänvalvonta
+  annotator:
+    help:
+      text_sign_in: kirjaudu
+      text_sign_up: rekisteröidy
+      title: Kuinka voin kommentoida tätä asiakirjaa?
