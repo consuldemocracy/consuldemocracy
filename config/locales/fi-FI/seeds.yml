@@ -1,1 +1,10 @@
 fi:
+  seeds:
+    organizations:
+      human_rights: Ihmisoikeudet
+    categories:
+      culture: Kulttuuri
+      sports: Urheilu
+      social_rights: Sosiaaliset oikeudet
+      economy: Talous
+      employment: Työllisyys
