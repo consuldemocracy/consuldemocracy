@@ -15,6 +15,7 @@ fi:
     verify_account: vahvista tilisi
     comment:
       author: Tekijä
+      deleted: Tämä kommentti on poistettu
       responses:
         zero: Ei vastauksia
         one: 1 vastaus
@@ -163,15 +164,28 @@ fi:
       notifications_tab: Ilmoitukset
       share: Jaa
       author: Tekijä
+  polls:
+    index:
+      filters:
+        current: "Avaa"
   shared:
+    delete: Poista
     advanced_search:
       author_type_blank: 'Valitse kategoria'
     author_info:
       author_deleted: Käyttäjä poistettu
     tags_cloud:
       categories: "Kategoriat"
+    orbit:
+      next_slide: Seuraava dia
   social:
     instagram: "%{org} Instagram"
   spending_proposals:
+    form:
+      description: Kuvaus
     show:
       author_deleted: Käyttäjä poistettu
+  users:
+    show:
+      deleted: Poistettu
+      deleted_proposal: Tämä ehdotus on poistettu
