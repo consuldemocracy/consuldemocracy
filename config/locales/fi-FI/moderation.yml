@@ -33,6 +33,7 @@ fi:
     menu:
       flagged_comments: Kommentit
       proposals: Ehdotukset
+      users: Estä käyttäjiä
     proposals:
       index:
         block_authors: Estä tekijät
@@ -40,6 +41,7 @@ fi:
         filter: Suodatin
         filters:
           all: Kaikki
+          pending_flag_review: Odottaa tarkastelua
           with_ignored_flag: Merkitse katsotuksi
         headers:
           proposal: Ehdotus
@@ -67,6 +69,7 @@ fi:
         filter: Suodatin
         filters:
           all: Kaikki
+          pending_review: Odottaa tarkastelua
           ignored: Merkitse katsotuksi
         hide_proposal_notifications: Piilota ehdotukset
         ignore_flags: Merkitse katsotuksi
@@ -74,4 +77,7 @@ fi:
           created_at: Viimeisin
     users:
       index:
+        hidden: Estetty
+        hide: Estä
         search: Etsi
+        title: Estä käyttäjiä
