@@ -13,6 +13,7 @@ fi:
           valuation_open: Avaa
       show:
         back: Takaisin
+        info: Tietoa tekijästä
         by: Lähettäjä
         price: Hinta
         currency: "€"
@@ -25,6 +26,7 @@ fi:
         edit: Muokkaa
       show:
         back: Takaisin
+        info: Tietoa tekijästä
         by: Lähettäjä
         price: Hinta
         currency: "€"
