@@ -1,1 +1,6 @@
 fi:
+  management:
+    users:
+      erased_notice: Käyttäjä poistettu onnistuneesti.
+      erase_account_link: Poista käyttäjä
+      erase_submit: Poista tili
