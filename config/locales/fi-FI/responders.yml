@@ -1,1 +1,6 @@
 fi:
+  flash:
+    actions:
+      destroy:
+        error: "Ei voitu poistaa"
+        topic: "Aihe poistettu onnistuneesti."
