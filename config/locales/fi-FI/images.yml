@@ -1,1 +1,6 @@
 fi:
+  images:
+    actions:
+      destroy:
+        notice: Kuva poistettiin onnistuneesti.
+        confirm: Haluatko varmasti poistaa kuvan? Tätä toimintoa ei voida peruuttaa!
