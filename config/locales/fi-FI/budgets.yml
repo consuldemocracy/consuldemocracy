@@ -6,6 +6,7 @@ fi:
     investments:
       form:
         tag_category_label: "Kategoriat"
+        tags_label: Tunnisteet
       index:
         search_form:
           button: Etsi
