@@ -3,7 +3,7 @@ module Dashboard::GroupSupports
 
   included do
     def grouped_supports(attribute)
-      supports.group_by { |v| grouping_key_for(v[attribute].to_date) }
+      supports.group_by { |v| grouping_key_for(v[attribute].in_time_zone.to_date) }
     end
 
     def grouping_key_for(date)
