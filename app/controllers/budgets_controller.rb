@@ -1,7 +1,4 @@
 class BudgetsController < ApplicationController
-  NEW_YORK_LATITUDE = 40.4165
-  NEW_YORK_LONGITUDE = -3.70256
-
   include FeatureFlags
   include BudgetsHelper
   feature_flag :budgets
@@ -23,13 +20,6 @@ class BudgetsController < ApplicationController
     @geographies_data = Geography.all.map{ |g| { outline_points: g.parsed_outline_points,
                                                  color: g.color,
                                                  heading_id: (@headings_geographies.key?(g.id) ? @headings_geographies[g.id] : nil ) } }
-  end
-
-  def create_map_Location
-    @map_location = MapLocation.new
-    #@map_location.zoom = OSM_DISTRICT_LEVEL_ZOOM
-    @map_location.latitude = NEW_YORK_LATITUDE
-    @map_location.longitude = NEW_YORK_LONGITUDE
   end
 
   def get_geographies_with_active_headings

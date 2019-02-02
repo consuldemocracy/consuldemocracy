@@ -2,7 +2,7 @@ module Budgets
   class HeadingsController < ApplicationController
 
     skip_authorization_check :json_data
-    
+
     def json_data
       heading =  Budget::Heading.find(params[:id])
       data = {

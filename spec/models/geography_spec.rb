@@ -19,7 +19,7 @@ describe Geography do
 
   it "is not valid without correct geojson's file format" do
     invalid_geography = build(:geography,
-                               outline_points: "{\"geo\":{\"type\":\"Incorrect key\",\"coordinates\":
+                               geojson: "{\"geo\":{\"type\":\"Incorrect key\",\"coordinates\":
                                                 [[40.8792937308316, -3.9259027239257],
                                                 [40.8788966596619, -3.9249047078766],
                                                 [40.8789131852224, -3.9247799675785]]}}")
@@ -53,11 +53,11 @@ describe Geography do
   end
 
   describe "#parsed_outline_points" do
-    it "returns empty array when outline_points is nil" do
+    it "returns empty array when geojson is nil" do
       expect(geography.parsed_outline_points).to eq([])
     end
 
-    it "returns coordinates array when outline_points is not nil" do
+    it "returns coordinates array when geojson is not nil" do
       geography_with_ouline_points = build(:geography, :with_geojson_coordinates)
       expect(geography_with_ouline_points.parsed_outline_points).to eq(
         [[-3.9259027239257, 40.8792937308316],

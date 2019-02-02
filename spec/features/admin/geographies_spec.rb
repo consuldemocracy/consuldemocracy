@@ -49,7 +49,7 @@ feature 'Admin geographies' do
     click_link 'Create geography'
 
     fill_in 'geography_name', with: 'District 11'
-    fill_in 'geography_outline_points', with: "{\"geometry\":{\"type\":\"Polygon\",\"coordinates\":
+    fill_in 'geography_geojson', with: "{\"geometry\":{\"type\":\"Polygon\",\"coordinates\":
                                                [[40.9192937308316, -3.9259027239257],
                                                [40.9188966596619, -3.9239047078766],
                                                [40.9189131852224, -3.8947799675785]]}}"
@@ -70,7 +70,7 @@ feature 'Admin geographies' do
     click_link 'Create geography'
 
     fill_in 'geography_name', with: 'District 30'
-    fill_in 'geography_outline_points', with: "{\"geometries\":{\"type\":\"Polygon\",\"coords\":
+    fill_in 'geography_geojson', with: "{\"geometries\":{\"type\":\"Polygon\",\"coords\":
                                                [[40.9092937308316, -3.8059027239257],
                                                [[40.9092937308316, -3.8159027239257],
                                                [40.9089131852224, -3.8247799675785]]}}"
@@ -123,7 +123,7 @@ feature 'Admin geographies' do
 
     within("#geography_#{geography.id}") { click_link 'Edit' }
 
-    fill_in 'geography_outline_points', with: "{\"geoADmetries\":{\"type\":\"Polygon\",\"crds\":
+    fill_in 'geography_geojson', with: "{\"geoADmetries\":{\"type\":\"Polygon\",\"crds\":
                                                [[41.9092937308316, -3.8059027239257],
                                                [[41.9092937308316, -3.8159027239257],
                                                [41.9089131852224, -3.8247799675785]]}}"

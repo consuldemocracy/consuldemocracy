@@ -50,7 +50,7 @@ class Admin::GeographiesController < Admin::BaseController
     end
 
     def geography_params
-      params.require(:geography).permit(:name, :color, :outline_points, heading_ids: [])
+      params.require(:geography).permit(:name, :color, :geojson, heading_ids: [])
     end
 
 end

@@ -5,9 +5,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   before_action :load_search, only: [:search_booths, :search_officers]
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
-
-########## AQUI
-
   def index
     @polls = Poll.order(starts_at: :desc)
   end

@@ -1289,16 +1289,9 @@ en:
       geography:
         name: Name
         related_headings: Related Headings
-        outline_points: Outline points
+        geojson: Geojson
         color: Geography color
-      errors:
-        form:
-          error:
-            one: "error prevented this geography from being saved"
-            other: 'errors prevented this geography from being saved'
       edit:
-        form:
-          submit_button: Save changes
         editing: Editing geography
         back: Go back
       new:
@@ -1306,9 +1299,6 @@ en:
         creating: Create geography
       delete:
         success: Geography successfully deleted
-        error: This geography can't be deleted since there are elements attached to it
-      no_related_heading: No Related Heading
-      no_geojson_file: No GeoJSON file
     signature_sheets:
       author: Author
       created_at: Creation date

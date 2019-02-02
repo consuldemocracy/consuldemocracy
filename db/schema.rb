@@ -491,10 +491,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "geographies", force: :cascade do |t|
     t.string   "name"
-    t.text     "outline_points"
+    t.text     "geojson"
     t.string   "color"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "geozones", force: :cascade do |t|

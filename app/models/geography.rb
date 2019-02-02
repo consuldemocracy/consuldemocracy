@@ -23,14 +23,14 @@ class Geography < ActiveRecord::Base
   def parsed_outline_points
     parsed_outline_points = []
 
-    if not outline_points.blank?
-      geojson_data_hash = JSON.parse(outline_points)
+    if not geojson.blank?
+      geojson_data_hash = JSON.parse(geojson)
 
       coordinates_array = geojson_data_hash["geometry"]["coordinates"]
 
-      if outline_points.match(/"coordinates"\s*:\s*\[{4}/)
+      if geojson.match(/"coordinates"\s*:\s*\[{4}/)
         coordinates_array = coordinates_array.reduce([], :concat).reduce([], :concat)
-      elsif outline_points.match(/"coordinates"\s*:\s*\[{3}/)
+      elsif geojson.match(/"coordinates"\s*:\s*\[{3}/)
         coordinates_array = coordinates_array.reduce([], :concat)
       end
 
