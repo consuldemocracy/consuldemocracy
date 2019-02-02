@@ -73,10 +73,126 @@ fi:
         dates: Päivämäärät
         enabled: Käytössä
         actions: Toiminnot
+        edit_phase: Muokkaa vaihetta
+        active: Aktiivinen
+      destroy:
+        success_notice: Budjetti poistettu onnistuneesti
+    budget_groups:
+      name: "Nimi"
+      create:
+        notice: "Ryhmä luotu onnistuneesti!"
+      update:
+        notice: "Ryhmä päivitetty onnistuneesti"
+      destroy:
+        success_notice: "Ryhmä poistettu onnistuneesti"
+      form:
+        create: "Luo uusi ryhmä"
+        edit: "Muokkaa ryhmää"
+        name: "Ryhmän nimi"
+        submit: "Tallenna ryhmä"
+      index:
+        back: "Takaisin budjetteihin"
+    budget_headings:
+      name: "Nimi"
+      form:
+        latitude: "Leveysaste (valinnainen)"
+        longitude: "Pituusaste (valinnainen)"
+      index:
+        back: "Takaisin ryhmiin"
+    budget_phases:
+      edit:
+        start_date: Aloituspäivä
+        end_date: Päättymispäivä
+        summary: Yhteenveto
+        description: Kuvaus
+        save_changes: Tallenna muutokset
     budget_investments:
       index:
+        administrator_filter_all: Kaikki järjestelmänvalvojat
+        tags_filter_all: Kaikki tunnisteet
+        advanced_filters: Edistyneet suodattimet
+        placeholder: Hae projekteja
+        filters:
+          all: Kaikki
+          selected: Valittu
+          winners: Voittajat
+          one_filter_html: "Käytössä olevat suodattimet: <b><em>%{filter}</em></b>"
+          two_filters_html: "Käytössä olevat suodattimet: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Suodatin
+        selected: "Valittu"
+        select: "Valitse"
         list:
+          admin: Järjestelmänvalvoja
+          selected: Valittu
           author_username: Tekijän käyttäjätunnus
+        see_results: "Näytä tulokset"
+      show:
+        edit: Muokkaa
+        group: Ryhmä
+        tags: Tunnisteet
+        undefined: Määrittelemätön
+        compatibility:
+          title: Yhteensopivuus
+          "true": Yhteensopimaton
+          "false": Yhteensopiva
+        selection:
+          title: Valinta
+          "true": Valittu
+          "false": Ei valittu
+        winner:
+          title: Voittaja
+          "true": "Kyllä"
+          "false": "Ei"
+        image: "Kuva"
+        see_image: "Näytä kuva"
+        no_image: "Ilman kuvaa"
+        documents: "Asiakirjat"
+        see_documents: "Näytä asiakirjat (%{count})"
+        no_documents: "Ilman asiakirjoja"
+      edit:
+        classification: Luokitus
+        compatibility: Yhteensopivuus
+        selection: Valinta
+        mark_as_selected: Merkitse valituksi
+        submit_button: Päivitä
+        tags: Tunnisteet
+        undefined: Määrittelemätön
+        user_groups: "Ryhmät"
+    milestones:
+      index:
+        table_description: "Kuvaus"
+        table_publication_date: "Julkaisupäivä"
+        table_status: Tila
+        table_actions: "Toiminnot"
+        image: "Kuva"
+        show_image: "Näytä kuva"
+        documents: "Asiakirjat"
+      new:
+        date: Päivämäärä
+        description: Kuvaus
+    statuses:
+      index:
+        table_name: Nimi
+        table_description: Kuvaus
+        table_actions: Toiminnot
+        delete: Poista
+        edit: Muokkaa
+    progress_bars:
+      index:
+        table_kind: "Tyyppi"
+    comments:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+        hidden_proposal: Piilotettu ehdotus
+        title: Piilotetut kommentit
+    dashboard:
+      index:
+        title: Järjestelmänvalvonta
     segment_recipient:
       proposal_authors: Ehdotuksen tekijät
     polls:
@@ -91,7 +207,19 @@ fi:
         author: Tekijä
     shared:
       author: Tekijä
+    spending_proposals:
+      index:
+        tags_filter_all: Kaikki tunnisteet
+      show:
+        tags: Tunnisteet
+      edit:
+        tags: Tunnisteet
     signature_sheets:
       author: Tekijä
       show:
         author: Tekijä
+    tags:
+      create: Luo aihe
+      destroy: Tuhoa aihe
+      index:
+        topic: Aihe
