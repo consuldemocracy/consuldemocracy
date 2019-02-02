@@ -39,6 +39,7 @@ fi:
       comments:
         comment_button: Julkaise vastaus
         comments_title: Avaa vastaukset
+        comments_closed: Suljettu vaihe
         form:
           leave_comment: Jätä vastauksesi
       question:
