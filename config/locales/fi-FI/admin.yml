@@ -112,6 +112,8 @@ fi:
         tags_filter_all: Kaikki tunnisteet
         advanced_filters: Edistyneet suodattimet
         placeholder: Hae projekteja
+        sort_by:
+          id: ID
         filters:
           all: Kaikki
           selected: Valittu
@@ -123,6 +125,7 @@ fi:
         selected: "Valittu"
         select: "Valitse"
         list:
+          id: ID
           admin: Järjestelmänvalvoja
           selected: Valittu
           author_username: Tekijän käyttäjätunnus
@@ -161,6 +164,7 @@ fi:
         user_groups: "Ryhmät"
     milestones:
       index:
+        table_id: "ID"
         table_description: "Kuvaus"
         table_publication_date: "Julkaisupäivä"
         table_status: Tila
@@ -196,6 +200,7 @@ fi:
         title: Muokkaa tavoitteen tilaa
     progress_bars:
       index:
+        table_id: "ID"
         table_kind: "Tyyppi"
     comments:
       index:
@@ -261,6 +266,9 @@ fi:
         new:
           back: Takaisin
           submit_button: Luo prosessi
+        proposals:
+          orders:
+            id: Id
         process:
           title: Prosessi
           comments: Kommentit
@@ -274,6 +282,7 @@ fi:
       proposals:
         index:
           back: Takaisin
+          id: Id
           select: Valitse
           selected: Valittu
         form:
@@ -301,7 +310,13 @@ fi:
     managers:
       manager:
         delete: Poista
+    menu:
+      hidden_comments: Piilotetut kommentit
+      hidden_proposals: Piilotetut ehdotukset
+      hidden_users: Piilotetut käyttäjät
     administrators:
+      index:
+        id: Järjestelmänvalvojan ID
       administrator:
         delete: Poista
     moderators:
@@ -333,15 +348,36 @@ fi:
     questions:
       show:
         author: Tekijä
+        video_url: Ulkoinen video
         answers:
           description: Kuvaus
+          videos: Videot
+          video_list: Videolista
     answers:
       show:
         description: Kuvaus
+      videos:
+        index:
+          title: Videot
+          add_video: Lisää video
+          video_url: Ulkoinen video
+        new:
+          title: Uusi video
+        edit:
+          title: Muokkaa videota
     proposals:
       index:
+        id: ID
         author: Tekijä
         milestones: Tavoitteet
+    hidden_proposals:
+      index:
+        title: Piilotetut ehdotukset
+        no_hidden_proposals: Ei piilotettuja ehdotuksia.
+    proposal_notifications:
+      index:
+        title: Piilotetut ilmoitukset
+        no_hidden_proposals: Ei piilotettuja ilmoituksia.
     settings:
       no_description: "Ei kuvausta"
     shared:
