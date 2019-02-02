@@ -20,6 +20,7 @@ fi:
         share: Jaa
         price: Hinta
         comments_tab: Kommentit
+        author: Tekijä
     results:
       show_all_link: Näytä kaikki
       price: Hinta
