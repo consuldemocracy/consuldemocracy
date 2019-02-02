@@ -1,1 +1,4 @@
 fi:
+  settings:
+    twitter_hashtag: "Twitter aihetunniste"
+    instagram_handle: "Instagram käyttäjätunnus"
