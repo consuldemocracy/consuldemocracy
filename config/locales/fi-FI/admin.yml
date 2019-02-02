@@ -190,11 +190,126 @@ fi:
           without_confirmed_hide: Vireillä
         hidden_proposal: Piilotettu ehdotus
         title: Piilotetut kommentit
+        no_hidden_comments: Ei piilotettuja kommentteja.
     dashboard:
       index:
+        back: Mene takaisin %{org}
         title: Järjestelmänvalvonta
+    debates:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+    hidden_users:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+        title: Piilotetut käyttäjät
+        user: Käyttäjä
+        no_hidden_users: Ei piilotettuja käyttäjiä.
+      show:
+        email: 'Sähköposti:'
+    hidden_budget_investments:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+    legislation:
+      processes:
+        edit:
+          back: Takaisin
+          submit_button: Tallenna muutokset
+        errors:
+          form:
+            error: Virhe
+        form:
+          enabled: Käytössä
+          process: Prosessi
+          homepage: Kuvaus
+          banner_background_color: Taustaväri
+          banner_font_color: Fontin väri
+        index:
+          create: Uusi prosessi
+          delete: Poista
+          filters:
+            open: Avaa
+            next: Seuraava
+            all: Kaikki
+        new:
+          back: Takaisin
+          submit_button: Luo prosessi
+        process:
+          title: Prosessi
+          comments: Kommentit
+          status: Tila
+          status_open: Avaa
+          status_closed: Suljettu
+        subnav:
+          info: Tiedot
+          homepage: Kotisivu
+          proposals: Ehdotukset
+      proposals:
+        index:
+          back: Takaisin
+          select: Valitse
+          selected: Valittu
+        form:
+          custom_categories: Kategoriat
+      draft_versions:
+        destroy:
+          notice: Luonnos poistettu onnistuneesti
+        edit:
+          submit_button: Tallenna muutokset
+        errors:
+          form:
+            error: Virhe
+        form:
+          close_text_editor: Sulje tekstieditori
+        index:
+          delete: Poista
+      questions:
+        destroy:
+          notice: Kysymys poistettu onnistuneesti
+        errors:
+          form:
+            error: Virhe
+        index:
+          delete: Poista
+    managers:
+      manager:
+        delete: Poista
+    administrators:
+      administrator:
+        delete: Poista
+    moderators:
+      moderator:
+        delete: Poista
     segment_recipient:
       proposal_authors: Ehdotuksen tekijät
+    newsletters:
+      delete_success: Uutiskirje poistettu onnistuneesti
+      index:
+        delete: Poista
+    admin_notifications:
+      delete_success: Ilmoitus poistettu onnistuneesti
+      index:
+        delete: Poista
+    valuators:
+      index:
+        description: Kuvaus
+        no_description: Ei kuvausta
+      valuator:
+        delete: Poista
+      show:
+        description: "Kuvaus"
+        no_description: "Ilman kuvausta"
     polls:
       index:
         start_date: "Aloituspäivä"
@@ -202,24 +317,66 @@ fi:
     questions:
       show:
         author: Tekijä
+        answers:
+          description: Kuvaus
+    answers:
+      show:
+        description: Kuvaus
     proposals:
       index:
         author: Tekijä
+    settings:
+      no_description: "Ei kuvausta"
     shared:
+      description: Kuvaus
       author: Tekijä
+      delete: Poista
     spending_proposals:
       index:
         tags_filter_all: Kaikki tunnisteet
+        filters:
+          valuation_open: Avaa
       show:
         tags: Tunnisteet
       edit:
         tags: Tunnisteet
+    geozones:
+      index:
+        delete: Poista
     signature_sheets:
       author: Tekijä
       show:
         author: Tekijä
+    stats:
+      show:
+        summary:
+          budgets: Avaa budjetit
     tags:
       create: Luo aihe
       destroy: Tuhoa aihe
       index:
         topic: Aihe
+    site_customization:
+      content_blocks:
+        errors:
+          form:
+            error: Virhe
+      images:
+        index:
+          delete: Poista
+        destroy:
+          notice: Kuva poistettu onnistuneesti
+          error: Kuvaa ei voitu poistaa
+      pages:
+        destroy:
+          notice: Sivu poistettu onnistuneesti
+        errors:
+          form:
+            error: Virhe
+        index:
+          delete: Poista sivu
+        cards:
+          description: Kuvaus
+    homepage:
+      cards:
+        description: Kuvaus
