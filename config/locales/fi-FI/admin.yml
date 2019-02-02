@@ -1,6 +1,97 @@
 fi:
   admin:
+    actions:
+      actions: Toiminnot
+      confirm: Oletko varma?
+      hide: Piilota
+      hide_author: Piilota tekijä
+      restore: Palauta
+      edit: Muokkaa
+      configure: Määritä
+      delete: Poista
+    banners:
+      index:
+        title: Bannerit
+        create: Luo banneri
+        edit: Muokkaa banneria
+        delete: Poista banneri
+        filters:
+          all: Kaikki
+          with_active: Aktiivinen
+          with_inactive: Passiivinen
+        preview: Esikatselu
+      banner:
+        description: Kuvaus
+        target_url: Linkki
+        sections:
+          homepage: Kotisivu
+          proposals: Ehdotukset
+          help_page: Ohje-sivu
+        background_color: Taustaväri
+        font_color: Fontin väri
+      edit:
+        editing: Muokkaa banneria
+        form:
+          submit_button: Tallenna muutokset
+      errors:
+        form:
+          error:
+            one: "virhe esti bannerin tallennuksen"
+            other: "virheet esti bannerin tallennuksen"
+      new:
+        creating: Luo banneri
+    activity:
+      show:
+        action: Toiminto
+        actions:
+          block: Estetty
+          hide: Piilotettu
+          restore: Palautettu
+        content: Sisältö
+        filter: Näytä
+        filters:
+          all: Kaikki
+          on_comments: Kommentit
+          on_proposals: Ehdotukset
+          on_users: Käyttäjät
+        type: Tyyppi
+    budgets:
+      index:
+        new_link: Luo uusi budjetti
+        filter: Suodatin
+        filters:
+          open: Avaa
+          finished: Päättynyt
+        table_name: Nimi
+        table_phase: Vaihe
+        table_investments: Sijoitukset
+        table_edit_budget: Muokkaa
+        edit_budget: Muokkaa budjettia
+      edit:
+        delete: Poista budjetti
+        phase: Vaihe
+        dates: Päivämäärät
+        enabled: Käytössä
+        actions: Toiminnot
+    budget_investments:
+      index:
+        list:
+          author_username: Tekijän käyttäjätunnus
+    segment_recipient:
+      proposal_authors: Ehdotuksen tekijät
     polls:
       index:
         start_date: "Aloituspäivä"
         closing_date: "Sulkeutumispäivä"
+    questions:
+      show:
+        author: Tekijä
+    proposals:
+      index:
+        author: Tekijä
+    shared:
+      author: Tekijä
+    signature_sheets:
+      author: Tekijä
+      show:
+        author: Tekijä
