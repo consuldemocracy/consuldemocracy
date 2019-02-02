@@ -1,9 +1,15 @@
 fi:
   account:
     show:
+      erase_account_link: Poista tilini
+      notifications: Ilmoitukset
+      organization_name_label: Organisaation nimi
+      phone_number_label: Puhelinnumero
       save_changes_submit: Tallenna muutokset
       recommendations: Suositukset
       title: Tilini
+      user_permission_proposal: Luo uusia ehdotuksia
+      user_permission_support_proposal: Tue ehdotuksia
       username_label: Käyttäjätunnus
       verified_account: Tili vahvistettu
       verify_my_account: Vahvista tilini
@@ -14,8 +20,10 @@ fi:
     comments_closed: Kommentointi on suljettu
     verify_account: vahvista tilisi
     comment:
+      admin: Järjestelmänvalvoja
       author: Tekijä
       deleted: Tämä kommentti on poistettu
+      moderator: Moderaattori
       responses:
         zero: Ei vastauksia
         one: 1 vastaus
@@ -26,20 +34,44 @@ fi:
         one: 1 ääni
         other: "%{count} ääntä"
     form:
+      comment_as_admin: Kommentoi järjestelmänvalvojana
+      comment_as_moderator: Kommentoi moderaattorina
       leave_comment: Jätä kommenttisi
     orders:
+      most_voted: Äänestetyin
       newest: Uusin ensin
       oldest: Vanhin ensin
       most_commented: Kommentoiduin
+    show:
+      return_to_commentable: 'Mene takaisin '
   comments_helper:
     comment_button: Julkaise kommentti
     comment_link: Kommentti
     comments_title: Kommentit
+    reply_button: Julkaise vastaus
+    reply_link: Vastaa
   debates:
+    debate:
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      votes:
+        zero: Ei ääniä
+        one: 1 ääni
+        other: "%{count} ääntä"
+    edit:
+      form:
+        submit_button: Tallenna muutokset
     form:
       tags_label: Aiheet
     index:
       orders:
+        confidence_score: korkeimmin arvioitu
+        created_at: uusin
+        hot_score: aktiivisin
+        most_commented: kommentoiduin
+        relevance: merkityksellisyys
         recommendations: suositukset
       search_form:
         button: Etsi
@@ -64,9 +96,20 @@ fi:
     messages:
       user_not_found: Käyttäjää ei löydy
   form:
+    conditions: Ehdot ja käyttöehdot
     direct_message: yksityisviesti
     error: virhe
     errors: virheet
+    policy: Tietosuojakäytäntö
+    proposal: Ehdotus
+    proposal_notification: "Ilmoitus"
+    budget/investment: Sijoitus
+    poll/question/answer: Vastaus
+    user: Tili
+    verification/sms: puhelin
+    document: Asiakirja
+    topic: Aihe
+    image: Kuva
   layouts:
     application:
       chrome: Google Chrome
@@ -74,13 +117,17 @@ fi:
     footer:
       conditions: Ehdot ja käyttöehdot
       consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
       open_source: avoimen lähdekoodin ohjelmisto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       privacy: Tietosuojakäytäntö
     header:
+      administration_menu: Järjestelmänvalvoja
+      administration: Järjestelmänvalvonta
       available_locales: Saatavilla olevat kielet
       external_link_blog: Blogi
       locale: 'Kieli:'
+      logo: CONSUL logo
       help: Apua
       my_account_link: Tilini
       open: avaa
@@ -94,9 +141,11 @@ fi:
       text_sign_up: rekisteröidy
   notifications:
     index:
+      empty_notifications: Sinulle ei ole uusia ilmoituksia.
       mark_all_as_read: Merkkaa kaikki luetuiksi
       read: Lue
       title: Ilmoitukset
+      unread: Lukematon
     notification:
       mark_as_read: Merkitse luetuksi
       mark_as_unread: Merkkaa lukemattomaksi
@@ -104,13 +153,22 @@ fi:
     start_proposal: Luo ehdotus
   omniauth:
     facebook:
+      sign_in: Kirjaudu käyttäen Facebookia
+      sign_up: Rekisteröidy käyttäen Facebookia
       name: Facebook
     finish_signup:
       title: "Lisätiedot"
     google_oauth2:
+      sign_in: Kirjaudu sisään käyttäen Googlea
+      sign_up: Rekisteröidy käyttäen Googlea
       name: Google
     twitter:
+      sign_in: Kirjaudu sisään käyttäen Twitteriä
+      sign_up: Rekisteröidy käyttäen Twitteriä
       name: Twitter
+    info_sign_in: "Kirjaudu sisään käyttäen:"
+    info_sign_up: "Rekisteröidy käyttäen:"
+    or_fill: "Tai täytä alla oleva kaavake:"
   proposals:
     create:
       form:
@@ -129,9 +187,11 @@ fi:
       tags_label: Tunnisteet
     index:
       orders:
+        confidence_score: korkeimmin arvioitu
         created_at: uusin
         hot_score: aktiivisin
         most_commented: kommentoiduin
+        relevance: merkityksellisyys
         recommendations: suositukset
       retired_links:
         all: Kaikki
@@ -166,13 +226,36 @@ fi:
       share: Jaa
       author: Tekijä
   polls:
+    all: "Kaikki"
     index:
       filters:
         current: "Avaa"
+      title: "Kyselyt"
+    show:
+      more_info_title: "Lisää tietoa"
+      documents: Asiakirjat
+      videos: "Ulkoinen video"
+      info_menu: "Tiedot"
+      stats:
+        votes: "ÄÄNET"
+      results:
+        title: "Kysymykset"
+  poll_questions:
+    create_question: "Luo kysymys"
+    show:
+      vote_answer: "Äänestä %{answer}"
   shared:
+    edit: 'Muokkaa'
+    save: 'Tallenna'
     delete: Poista
+    "yes": "Kyllä"
+    "no": "Ei"
     advanced_search:
       author_type_blank: 'Valitse kategoria'
+      date_placeholder: 'PP/KK/VVVV'
+      date_range_blank: 'Valitse päivämäärä'
+      date_5: 'Mukautettu'
+      search: 'Suodatin'
     author_info:
       author_deleted: Käyttäjä poistettu
     tags_cloud:
