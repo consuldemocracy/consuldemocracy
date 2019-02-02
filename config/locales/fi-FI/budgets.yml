@@ -3,6 +3,8 @@ fi:
     ballots:
       show:
         remove: Poista ääni
+    index:
+      milestones: Tavoitteet
     investments:
       form:
         tag_category_label: "Kategoriat"
@@ -21,10 +23,13 @@ fi:
         share: Jaa
         price: Hinta
         comments_tab: Kommentit
+        milestones_tab: Tavoitteet
         author: Tekijä
     results:
       show_all_link: Näytä kaikki
       price: Hinta
     executions:
+      link: "Tavoitteet"
+      page_title: "%{budget} - Tavoitteet"
       filters:
         all: "Kaikki (%{count})"
