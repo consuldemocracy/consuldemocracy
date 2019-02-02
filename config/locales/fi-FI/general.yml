@@ -162,6 +162,7 @@ fi:
       comments_tab: Kommentit
       edit_proposal_link: Muokkaa
       notifications_tab: Ilmoitukset
+      milestones_tab: Tavoitteet
       share: Jaa
       author: Tekijä
   polls:
