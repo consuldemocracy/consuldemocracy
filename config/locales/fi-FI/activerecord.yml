@@ -7,6 +7,12 @@ fi:
       budget/investment:
         one: "Sijoitus"
         other: "Sijoitukset"
+      milestone:
+        one: "tavoite"
+        other: "tavoitteet"
+      milestone/status:
+        one: "Tavoitteen tila"
+        other: "Tavoitteen tilat"
       comment:
         one: "Kommentti"
         other: "Kommentit"
