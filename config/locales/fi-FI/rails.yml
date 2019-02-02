@@ -50,7 +50,43 @@ fi:
       - Joulukuu
   datetime:
     distance_in_words:
+      about_x_hours:
+        one: noin 1 tunti
+        other: noint %{count} tuntia
+      about_x_months:
+        one: noin 1 kuukausi
+        other: noin %{count} kuukautta
+      about_x_years:
+        one: noin 1 vuosi
+        other: noin %{count} vuotta
+      almost_x_years:
+        one: melkein 1 vuosi
+        other: melkein %{count} vuotta
       half_a_minute: puoli minuuttia
+      less_than_x_minutes:
+        one: alle minuutti
+        other: alle %{count} minuuttia
+      less_than_x_seconds:
+        one: alle 1 sekunti
+        other: alle %{count} sekuntia
+      over_x_years:
+        one: yli 1 vuosi
+        other: yli %{count} vuotta
+      x_days:
+        one: 1 päivä
+        other: "%{count} päivää"
+      x_minutes:
+        one: 1 minuutti
+        other: "%{count} minuuttia"
+      x_months:
+        one: 1 kuukausi
+        other: "%{count} kuukautta"
+      x_years:
+        one: 1 vuosi
+        other: "%{count} vuotta"
+      x_seconds:
+        one: 1 sekunti
+        other: "%{count} sekuntia"
     prompts:
       day: Päivä
       hour: Tunti
@@ -81,7 +117,21 @@ fi:
       odd: on oltava pariton
       required: on oltava
       taken: on jo käytössä
+      too_long:
+        one: on liian pitkä (maksimi on 1 merkki)
+        other: on liian pitkä (maksimi on %{count} merkkiä)
+      too_short:
+        one: on liian lyhyt (minimi on 1 merkki)
+        other: on liian lyhyt (minimi on %{count} merkkiä)
+      wrong_length:
+        one: on väärän pituinen (pitäisi olla 1 merkki)
+        other: on väärän pituinen (pitäisi olla %{count} merkkiä)
       other_than: on oltava muu kuin %{count}
+    template:
+      body: 'Seuraavissa kentissä oli ongelmia:'
+      header:
+        one: 1 virhe esti tämän %{model} tallentamisen
+        other: "%{count} virheettä esti tämän %{model} tallentamisen"
   helpers:
     select:
       prompt: Valitse
@@ -121,6 +171,9 @@ fi:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            one: Tavu
+            other: Tavua
           gb: GB
           kb: KB
           mb: MB
@@ -134,9 +187,11 @@ fi:
       two_words_connector: " ja "
       words_connector: ", "
   time:
+    am: aamupäivä
     formats:
       datetime: "%Y-%m-%d %H:%M:%S"
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
       api: "%Y-%m-%d %H"
+    pm: iltapäivä
