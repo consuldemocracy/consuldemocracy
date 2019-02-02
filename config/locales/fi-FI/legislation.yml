@@ -50,3 +50,6 @@ fi:
         next_question: Seuraava kysymys
         first_question: Ensimmäinen kysymys
         share: Jaa
+    proposals:
+      form:
+        tags_label: "Kategoriat"
