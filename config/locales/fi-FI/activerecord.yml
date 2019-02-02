@@ -10,6 +10,9 @@ fi:
       comment:
         one: "Kommentti"
         other: "Kommentit"
+      tag:
+        one: "Tunniste"
+        other: "Tunnisteet"
       user:
         one: "Käyttäjä"
         other: "Käyttäjät"
