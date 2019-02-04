@@ -425,6 +425,8 @@ de:
           process: Verfahren
           debate_phase: Diskussionsphase
           draft_phase: Entwurfsphase
+          draft_phase_description: Wenn diese Phase aktiv ist, wird dieses Beteiligungsverfahren nicht in der Liste aller Verfahren angezeigt. Lassen Sie sich eine Vorschau des Verfahrens anzeigen und erstellen Sie Inhalte vor dem Start.
+          allegations_phase: Kommentierphase
           proposals_phase: Vorschlagsphase
           start: Beginn
           end: Ende
