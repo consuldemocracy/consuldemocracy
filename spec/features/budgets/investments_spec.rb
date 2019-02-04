@@ -1073,7 +1073,8 @@ feature 'Budget Investments' do
     expect(page).to have_content("This investment project has been selected for balloting phase")
   end
 
-  scenario "Show (winner budget investment)" do
+  scenario "Show (winner budget investment) only if budget is finished" do
+    budget.update(phase: "balloting")
     user = create(:user)
     login_as(user)
 
@@ -1085,6 +1086,12 @@ feature 'Budget Investments' do
                         budget: budget,
                         group: group,
                         heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_content("Winning investment project")
+
+    budget.update(phase: "finished")
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
