@@ -1,4 +1,5 @@
 <%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
+
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
@@ -8,13 +9,13 @@
       <% end %>
     </div>
     <div class="small-10 medium-7 large-7 columns">
-      <%= f.select :sub_area_id, custom_sub_area_select_options(@area_id), { include_blank: false, label: t("budgets.investments.form.sub_area") } %>
+      <%= f.select :sub_area_id, custom_sub_area_select_options(@area_id), { include_blank: true, label: t("budgets.investments.form.sub_area") } %>
     </div>
     <% if @investment.budget.only_heading.present? %>
       <%= f.hidden_field :heading_id, value: @investment.budget.only_heading.id %>
     <% else %>
       <div class="small-10 medium-7 large-7 columns">
-        <%= f.select :heading_id, custom_budget_heading_select_options(@budget), {include_blank: false, } %>
+        <%= f.select :heading_id, custom_budget_heading_select_options(@budget), { include_blank: true } %>
       </div>
     <% end %>
     <div class="small-10 medium-7 large-7 column">
@@ -27,7 +28,7 @@
       <% end %>
     </div>
     <div class="small-10 medium-7 large-7 columns">
-      <%= f.select :geozone_id, custom_geozone_select_options(), { include_blank: false, label: t("budgets.investments.form.district") } %>
+      <%= f.select :geozone_id, custom_geozone_select_options(), { include_blank: true, label: t("budgets.investments.form.district") } %>
     </div>
     <div class="small-12 column">
       <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>

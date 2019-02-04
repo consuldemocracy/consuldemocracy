@@ -32,22 +32,6 @@ class Users::SessionsController < Devise::SessionsController
         resource.save
       end
       true
-
-      # parametros = {
-      #   document_number: resource.document_number,
-      #   document_type: resource.document_type,
-      #   date_of_birth: resource.date_of_birth,
-      #   postal_code: '12000',
-      #   terms_of_service: "1"
-      # }
-
-
-      # residence = Verification::Residence.new(parametros.merge(user: current_user))
-      # unless residence.save
-      #   resource.residence_verified_at = nil
-      #   resource.verified_at = nil
-      #   resource.save
-      # end
     end
 
 end

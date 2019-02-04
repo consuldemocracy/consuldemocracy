@@ -34,6 +34,7 @@ class Budget
 
     belongs_to :sub_area
     belongs_to :geozone
+
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
 
@@ -55,6 +56,9 @@ class Budget
     validate :description_length
 
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
+
+    validates :sub_area_id, presence: { if: :areas_active }
+    validates :geozone_id, presence: { if: :areas_active }
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
@@ -421,6 +425,10 @@ class Budget
       text = Html2Text.convert(description)
       max = Budget::Investment.description_max_length
       errors.add(:description, I18n.t('errors.messages.too_long', count: max)) if text.length > max
+    end
+
+    def areas_active
+      budget.areas
     end
   end
 end

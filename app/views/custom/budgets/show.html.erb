@@ -26,25 +26,27 @@
   </div>
 </div>
 
-<div class="row margin">
-  <div class="small-12 medium-12 large-12 column">
-    <h2><%= t("budgets.show.view_by_areas") %></h2>
-    <div class="row" data-equalizer-on="medium" data-equalizer>
-      <% Area.all.each do |area| %>
-        <div class="small-12 medium-6 large-4 column end margin-bottom">
-          <div class="budget-execution">
-            <%= link_to budget_investments_path(@budget, area_id: area.id, order: 'random', anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
-              <%= render 'image', area: area %>
-              <div class="budget-execution-info">
-                  <h5><%= area.name %></h5>
-              </div>
-            <% end %>
+<% if @budget.areas %>
+  <div class="row margin">
+    <div class="small-12 medium-12 large-12 column">
+      <h2><%= t("budgets.show.view_by_areas") %></h2>
+      <div class="row" data-equalizer-on="medium" data-equalizer>
+        <% Area.all.each do |area| %>
+          <div class="small-12 medium-6 large-4 column end margin-bottom">
+            <div class="budget-execution">
+              <%= link_to budget_investments_path(@budget, area_id: area.id, order: 'random', anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
+                <%= render 'image', area: area %>
+                <div class="budget-execution-info">
+                    <h5><%= area.name %></h5>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <div class="row margin">
   <div class="small-12 medium-12 large-12 column">
@@ -66,6 +68,8 @@
       <% if @budget.balloting_or_later? %>
         <% filter ||= "selected" %>
       <% end %>
+
+
       <ul class="no-bullet">
         <li class="heading small-12 medium-4 large-3">
           <%= link_to budget_investments_path(@budget, filter: filter, order: 'random') do %>
@@ -74,21 +78,24 @@
           <% end %>
         </li>
       </ul>
-      <%# @budget.groups.each do |group| %>
-        <!-- <h2><%#= group.name %></h2> -->
-        <!-- <ul class="no-bullet"> -->
-          <%# group.headings.each do |heading| %>
-            <!-- <li class="heading small-12 medium-4 large-3"> -->
 
-              <%#= link_to budget_investments_path(@budget, heading_id: heading.id, filter: filter, order: 'random') do %>
-                  <%#= heading.name %>
-                  <!-- <span><%#= number_to_currency(heading.price) %></span> -->
-              <%# end %>
 
-            <!-- </li> -->
-          <%# end %>
-        <!-- </ul> -->
-      <%# end %>
+      <% if !@budget.only_heading %>
+        <% @budget.groups.each do |group| %>
+          <h2><%= group.name %></h2>
+            <ul class="no-bullet">
+              <% group.headings.each do |heading| %>
+                <li class="heading small-12 medium-4 large-3">
+                  <%= link_to budget_investments_path(@budget, heading_id: heading.id, filter: filter, order: 'random') do %>
+                    <%= heading.name %>
+                    <span><%= number_to_currency(heading.price) %></span>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+        <% end %>
+      <% end %>
+
     </div>
   </div>
 </div>

@@ -1,14 +1,9 @@
 <% if ["unfeasible", "unselected"].include?(@current_filter) %>
-
-
-
-
-
 <% else %>
   <ul class="no-bullet submenu">
       <% @valid_orders.each do |order| %>
         <li class="inline-block">
-          <%= link_to current_path_with_query_params(order: order, filter: 'selected', page: 1), class: (order == params[:order] && params[:filter] == 'selected') ? 'active' : '' do %>
+          <%= link_to current_path_with_query_params(order: order, filter: 'not_unfeasible', page: 1), class: (order == params[:order] && params[:filter] == 'not_unfeasible') ? 'active' : '' do %>
             <%= content_tag(order == @current_order ? :h2 : :span) do %>
               <%= t("#{i18n_namespace}.orders.#{order}") %>
             <% end %>

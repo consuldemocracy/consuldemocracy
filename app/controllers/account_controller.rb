@@ -5,20 +5,19 @@ class AccountController < ApplicationController
 
   def show
     @area_id = params[:area_id]
-    puts("--------------------------------> @area_id: #{@area_id}")
   end
 
   def update
-    puts("1-------------------------------->")
-    if @area_id
-      puts("2-------------------------------->")
+    if @account.update(account_params)
+      if session[:area_id]
+        redirect_to new_budget_investment_path(Budget.current, area_id: session[:area_id])
+      else
+        redirect_to account_path, notice: t("flash.actions.save_changes.notice")
+      end
+    else
+      @account.errors.messages.delete(:organization)
+      render :show
     end
-    # if @account.update(account_params)
-    #   redirect_to account_path, notice: t("flash.actions.save_changes.notice")
-    # else
-    #   @account.errors.messages.delete(:organization)
-    #   render :show
-    # end
   end
 
   private
