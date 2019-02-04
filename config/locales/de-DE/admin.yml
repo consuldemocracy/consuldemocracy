@@ -389,7 +389,7 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Benutzer*innen
         user: Benutzer*in
-        no_hidden_users: Es gibt keine verborgenen Benutzer*innen.
+        no_hidden_users: Keine verborgenen Benutzer*innen vorhanden.
       show:
         email: 'E-Mail:'
         hidden_at: 'Verborgen am:'
@@ -590,7 +590,7 @@ de:
         title: 'Manager*innen: Benutzer*innensuche'
     menu:
       activity: Moderator*innenaktivität
-      admin: Administrator*innen-Menü
+      admin: Admin-Menü
       banner: Banner verwalten
       poll_questions: Fragen
       proposals: Vorschläge
@@ -683,7 +683,7 @@ de:
       feasible_and_undecided_investment_authors: "Antragsteller*innen im aktuellen Budget, welches nicht [valuation finished unfesasble] erfüllt"
       selected_investment_authors: Antragsteller*innen ausgewählter Vorschläge im aktuellen Budget
       winner_investment_authors: Antragsteller*innen der ausgewählten Vorschläge im aktuellen Budget
-      not_supported_on_current_budget: Benutzer*innen, die keine Vorschläge im aktuellen Budget unterstützt haben
+      not_supported_on_current_budget: Benutzer*innen, die keine Vorschläge im aktuellen Bürgerhaushalt unterstützt haben
       invalid_recipients_segment: "Das Empfänger*innnensegment ist ungültig"
     newsletters:
       create_success: Newsletter erfolgreich erstellt
@@ -708,7 +708,7 @@ de:
       edit:
         title: Newsletter bearbeiten
       show:
-        title: Vorschau des Newsletters
+        title: Newsletter-Vorschau
         send: Senden
         affected_users: (%{n} betroffene Benutzer*innen)
         sent_emails:
@@ -763,8 +763,11 @@ de:
         action: Vorschau ausstehend
         preview_of: Vorschau von %{name}
         pending_to_be_sent: Das ist der Inhalt, der verschickt wird
+        moderate_pending: Benachrichtigungszustellung moderieren
         send_pending: Ausstehendes senden
+        send_pending_notification: Ausstehende Benachrichtigungen erfolgreich gesendet
       proposal_notification_digest:
+        title: Zusammenfassende Benachrichtigun zu einem Vorschlag
         description: Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden.
         preview_detail: Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen
     emails_download:
