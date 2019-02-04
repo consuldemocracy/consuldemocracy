@@ -73,8 +73,8 @@ de:
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
       index:
-        title: Bürger*innenhaushalte
-        new_link: Neuen Bürger*innenhaushalt erstellen
+        title: Bürgerhaushalte
+        new_link: Neuen Bürgerhaushalt erstellen
         filter: Filter
         filters:
           open: Offen
@@ -87,6 +87,7 @@ de:
         table_edit_budget: Bearbeiten
         edit_groups: Gruppierungen von Rubriken bearbeiten
         edit_budget: Bürgerhaushalt bearbeiten
+        no_budgets: "Keine offenen Bürgerhaushalte vorhanden."
       create:
         notice: Neuer Bürgerhaushalt erfolgreich erstellt!
       update:
@@ -132,10 +133,29 @@ de:
         edit: "Gruppe bearbeiten"
         name: "Name der Gruppe"
         submit: "Gruppe speichern"
+      index:
+        back: "Zurück zu den Bürgerhaushalten"
     budget_headings:
       name: "Name"
+      no_headings: "Keine Rubriken vorhanden."
+      amount:
+        one: "Es gibt 1 Rubrik"
+        other: "Es gibt %{count} Rubriken"
+      create:
+        notice: "Rubrik erfolgreich erstellt!"
+      update:
+        notice: "Rubrik erfolgreich aktualisiert"
+      destroy:
+        success_notice: "Rubrik erfolgreich gelöscht"
+        unable_notice: "Eine Rubrik mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden"
       form:
+        name: "Name der Rubrik"
+        amount: "Menge"
         population: "Bevölkerung (optional)"
+        population_info: "Das Feld 'Bevölkerung' in den Rubriken wird nur für statistische Zwecke am Ende eines Bürgerhaushalts verwendet, mit dem Ziel, den Prozentsatz der Stimmen in jeder Rubrik anzuzeigen, die ein Bevölkerungsgebiet darstellt. Dieses Feld ist optional; Sie können es daher leer lassen, wenn es nicht zutrifft."
+        latitude: "Breitengrad (optional)"
+        longitude: "Längengrad (optional)"
+        coordinates_info: "Wenn Längen- und Breitengrad angegeben sind, enthält die Seite des Ausgabenvorschlags für diese Rubrik eine Karte. Diese Karte wird mit diesen Koordinaten berechnet."
       index:
         back: "Zurück zu den Gruppen"
     budget_phases:
