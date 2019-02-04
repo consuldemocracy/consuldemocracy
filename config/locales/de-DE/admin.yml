@@ -410,8 +410,8 @@ de:
           notice: 'Beteiligungsverfahren erfolgreich erstellt. <a href="%{link}">Jetzt besuchen</a>'
           error: Beteiligungsverfahren konnte nicht erstellt werden
         update:
-          notice: 'Verfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
-          error: Verfahren konnte nicht aktualisiert werden
+          notice: 'Beteiligungsverfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
+          error: Beteiligungsverfahren konnte nicht aktualisiert werden
         destroy:
           notice: Beteiligungsverfahren erfolgreich gelöscht
         edit:
@@ -424,6 +424,7 @@ de:
           enabled: Aktiviert
           process: Verfahren
           debate_phase: Diskussionsphase
+          draft_phase: Entwurfsphase
           proposals_phase: Vorschlagsphase
           start: Beginn
           end: Ende
