@@ -10,6 +10,12 @@ de:
       budget/investment:
         one: "Ausgabenvorschlag"
         other: "Ausgabenvorschläge"
+      milestone:
+        one: "Meilenstein"
+        other: "Meilensteine"
+      milestone/status:
+        one: "Status des Meilensteins"
+        other: "Status der Meilensteine"
       progress_bar:
         one: "Fortschrittsbalken"
         other: "Fortschrittsbalken"
@@ -20,8 +26,8 @@ de:
         one: "Diskussion"
         other: "Diskussionen"
       tag:
-        one: "Kennzeichen"
-        other: "Themen"
+        one: "Tag"
+        other: "Tags"
       user:
         one: "Benutzer*in"
         other: "Benutzer*innen"
