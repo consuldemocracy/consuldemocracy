@@ -863,7 +863,7 @@ de:
         remove_shift: "Entfernen"
         search_officer_button: Suchen
         search_officer_placeholder: Wahlvorsteher*in suchen
-        search_officer_text: Suche nach einem Beamten um eine neue Schicht zuzuweisen
+        search_officer_text: Nach Wahlvorsteher*in suchen, um Arbeitsschicht zuzuordnen
         select_date: "Tag auswählen"
         no_voting_days: "Abstimmungsphase beendet"
         select_task: "Aufgabe auswählen"
@@ -874,7 +874,7 @@ de:
         create: "Arbeitsschicht für Wahlvorsteher*in hinzugefügt"
         destroy: "Arbeitsschicht für Wahlvorsteher*in entfernt"
         date_missing: "Ein Datum muss ausgewählt werden"
-      vote_collection: Stimmen einsammeln
+      vote_collection: Stimmen sammeln
       recount_scrutiny: Nachzählung & Kontrolle
     booth_assignments:
       manage_assignments: Zuordnungen verwalten
@@ -904,9 +904,9 @@ de:
         recounts_list: "Liste der Nachzählungen für diese Wahlurne"
         results: "Ergebnisse"
         date: "Datum"
-        count_final: "Endgültige Nachzählung (Wahlvorsteher*in)"
+        count_final: "Endgültige Nachzählung (durch Wahlvorsteher*in)"
         count_by_system: "Stimmen (automatisch)"
-        total_system: Gesamtanzahl der gesammelten Stimmen (automatisch)
+        total_system: Gesamtanzahl der Stimmen (automatisch)
       index:
         booths_title: "Liste der zugewiesenen Wahlurnen"
         no_booths: "Dieser Abstimmung sind keine Wahlvorsteher*innen zugeordnet."
@@ -919,6 +919,8 @@ de:
         create: "Abstimmung erstellen"
         name: "Name"
         dates: "Datum"
+        start_date: "Anfangsdatum"
+        closing_date: "Enddatum"
         geozone_restricted: "Beschränkt auf Bezirke"
       new:
         title: "Neue Abstimmung"
@@ -954,6 +956,8 @@ de:
         create_question: "Frage erstellen"
         table_proposal: "Vorschlag"
         table_question: "Frage"
+        table_poll: "Abstimmung"
+        poll_not_assigned: "Abstimmung nicht zugeordnet"
       edit:
         title: "Frage bearbeiten"
       new:
@@ -1006,9 +1010,9 @@ de:
     recounts:
       index:
         title: "Nachzählungen"
-        no_recounts: "Es gibt nichts zum Nachzählen"
+        no_recounts: "Es gibt nichts nachzuzählen"
         table_booth_name: "Wahlkabine"
-        table_total_recount: "Endgültige Nachzählung (Wahlvorsteher*in)"
+        table_total_recount: "Gesamte Nachzählung (durch Wahlvorsteher*in)"
         table_system_count: "Stimmen (automatisch)"
     results:
       index:
@@ -1048,7 +1052,7 @@ de:
         edit: "Wahlkabine bearbeiten"
     officials:
       edit:
-        destroy: Status "Beamte/r" entfernen
+        destroy: Status "öffentliches Amt" entfernen
         title: 'Beamte: Benutzer*in bearbeiten'
       flash:
         official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamte/r'
@@ -1057,7 +1061,7 @@ de:
         title: Beamte
         no_officials: Keine Beamten vorhanden.
         name: Name
-        official_position: Beamte*r
+        official_position: Öffentliches Amt
         official_level: Stufe
       level_0: Kein/e Beamte*r
       level_1: Stufe 1
