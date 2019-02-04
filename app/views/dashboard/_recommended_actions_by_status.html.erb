@@ -1,4 +1,4 @@
-<h2 class="title"><%= t("dashboard.recommended_actions.#{status}_title") %></h2>
+<h3 class="title"><%= t("dashboard.recommended_actions.#{status}_title") %></h3>
 <% if actions.any? %>
   <div id="proposed_actions_<%= status %>">
     <% actions.first(4).each do |proposed_action| %>
@@ -23,8 +23,8 @@
       <div id="last_proposed_actions_<%= status %>" class="hide" data-toggler=".hide">
         <%= render partial: 'proposed_action', collection: actions - actions.first(4) %>
         <div class="margin small">
-            <%= t("dashboard.recommended_actions.hide_proposed_actions") %>
           <a data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
+            <strong><%= t("dashboard.recommended_actions.hide_proposed_actions") %></strong>
           </a>
         </div>
       </div>
