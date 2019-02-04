@@ -243,14 +243,33 @@ feature 'Admin budgets' do
       expect(page).to have_content 'See results'
     end
 
-    scenario 'For a finished Budget' do
-      budget = create(:budget, phase: 'finished')
+    scenario "For a finished Budget" do
+      budget = create(:budget, phase: "finished")
       allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return(true)
 
       visit edit_admin_budget_path(budget)
 
-      expect(page).not_to have_content 'Calculate Winner Investments'
-      expect(page).to have_content 'See results'
+      expect(page).to have_content "Calculate Winner Investments"
+      expect(page).to have_content "See results"
+    end
+
+    scenario "Recalculate for a finished Budget" do
+      budget = create(:budget, phase: "finished")
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      create(:budget_investment, :winner, heading: heading)
+
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_content "Recalculate Winner Investments"
+      expect(page).to have_content "See results"
+      expect(page).not_to have_content "Calculate Winner Investments"
+
+      visit admin_budget_budget_investments_path(budget)
+      click_link "Winners"
+
+      expect(page).to have_content "Recalculate Winner Investments"
+      expect(page).not_to have_content "Calculate Winner Investments"
     end
 
     scenario "Custom url for results page" do
