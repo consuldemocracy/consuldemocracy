@@ -235,9 +235,11 @@ de:
         description: Beschreibung
         additional_info: Zusätzliche Information
         start_date: Anfangsdatum
-        end_date: Endtermin des Verfahrens
+        end_date: Enddatum des Verfahrens
         debate_start_date: Anfangsdatum Diskussion
         debate_end_date: Enddatum Diskussion
+        draft_start_date: Anfangsdatum Entwurfsphase
+        draft_end_date: Enddatum Entwurfsphase
         draft_publication_date: Veröffentlichungsdatum des Entwurfs
         allegations_start_date: Anfangsdatum Überprüfung
         allegations_end_date: Enddatum Überprüfung
@@ -255,6 +257,7 @@ de:
         status: Status
         final_version: Endgültige Fassung
       legislation/draft_version/translation:
+        title: Titel der Fassung
         body: Text
         changelog: Änderungen
       legislation/question:
@@ -347,6 +350,8 @@ de:
               invalid_date_range: muss an oder nach dem Anfangsdatum sein
             debate_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Diskussion sein
+            draft_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Entwurfsphase sein
             allegations_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Überprüfung sein
         proposal:
