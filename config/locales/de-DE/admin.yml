@@ -511,13 +511,13 @@ de:
           close_text_editor: Textbearbeitung schließen
           use_markdown: Verwenden Sie Markdown, um den Text zu formationen
           hints:
-            final_version: Diese Fassung wird als Endergebnis dieses Beteiligungsverfahrens veröffenlicht. Kommentare sind daher in dieser Version nicht erlaubt.
+            final_version: Diese Version wird als Endergebnis dieses Beteiligungsverfahrens veröffenlicht. Kommentare sind daher in dieser Fassung nicht erlaubt.
             status:
               draft: Als Admin können Sie eine Vorschau anzeigen lassen, die niemand sonst sehen kann
               published: Für alle sichtbar
           title_placeholder: Titel der Entwurfsfassung
           changelog_placeholder: Beschreiben Sie alle relevanten Änderungen der vorherigen Version
-          body_placeholder: Notieren Sie sich den Entwurf
+          body_placeholder: Schreiben Sie einen Entwurfstext
         index:
           title: Entwurfsversionen
           create: Version erstellen
@@ -534,20 +534,20 @@ de:
           title: Titel
           created_at: Erstellt am
           comments: Kommentare
-          final_version: Endgültige Fassung
+          final_version: Endgültige Version
           status: Status
       questions:
         create:
-          notice: 'Frage erfolgreich erstellt. <a href="%{link}">Zum Anzeigen hier klicken</a>'
+          notice: 'Frage erfolgreich erstellt. <a href="%{link}">Anzeigen</a>'
           error: Frage konnte nicht erstellt werden
         update:
-          notice: 'Frage erfolgreich aktualisiert. <a href="%{link}">Zum Anzeigen hier klicken</a>'
+          notice: 'Frage erfolgreich aktualisiert. <a href="%{link}">Anzeigen</a>'
           error: Frage konnte nicht aktualisiert werden
         destroy:
           notice: Frage erfolgreich gelöscht
         edit:
           back: Zurück
-          title: "Bearbeiten \"%{question_title}\""
+          title: "\"%{question_title}\" bearbeiten"
           submit_button: Änderungen speichern
         errors:
           form:
@@ -556,11 +556,11 @@ de:
           add_option: Antwortmöglichkeit hinzufügen
           title: Frage
           title_placeholder: Frage hinzufügen
-          value_placeholder: Antwortmöglichkeit hinzufügen
+          value_placeholder: Geschlossene Antwort hinzufügen
           question_options: "Mögliche Antworten (optional, standardmäßig offene Antworten)"
         index:
           back: Zurück
-          title: Fragen, die mit diesem Beteiligungsverfahren zusammenhängen
+          title: Fragen im Zusammenhang mit diesem Beteiligungsverfahren
           create: Frage erstellen
           delete: Löschen
         new:
@@ -574,24 +574,28 @@ de:
           comments_count: Anzahl der Kommentare
         question_option_fields:
           remove_option: Entfernen
+      milestones:
+        index:
+          title: Folgen
     managers:
       index:
         title: Manager*innen
         name: Name
         email: E-Mail
-        no_managers: Keine Manager vorhanden.
+        no_managers: Keine Manager*innen vorhanden.
       manager:
         add: Hinzufügen
         delete: Löschen
       search:
-        title: 'Manager: Benutzer*innensuche'
+        title: 'Manager*innen: Benutzer*innensuche'
     menu:
-      activity: Moderatoren*aktivität
+      activity: Moderator*innenaktivität
       admin: Administrator*innen-Menü
       banner: Banner verwalten
       poll_questions: Fragen
+      proposals: Vorschläge
       proposals_topics: Themen der Vorschläge
-      budgets: Bürgerhaushalt
+      budgets: Bürgerhaushalte
       geozones: Stadtteile verwalten
       hidden_comments: Verborgene Kommentare
       hidden_debates: Verborgene Diskussionen
@@ -623,7 +627,8 @@ de:
         homepage: Homepage
         pages: Meine Seiten
         images: Benutzer*innenbilder
-        content_blocks: Benutzer*spezifische Inhaltsdatenblöcke
+        content_blocks: Benutzer*definierte Inhaltsdatenblöcke
+        information_texts: Benutzer*definierte Informationstexte
         information_texts_menu:
           debates: "Diskussionen"
           community: "Community"
@@ -635,8 +640,10 @@ de:
           welcome: "Willkommen"
         buttons:
           save: "Speichern"
+          content_block:
+            update: "Block aktualisieren"
       title_moderated_content: Moderierter Inhalt
-      title_budgets: Bürger*innenhaushalte
+      title_budgets: Bürgerhaushalte
       title_polls: Abstimmungen
       title_profiles: Profile
       title_settings: Einstellungen
@@ -649,6 +656,7 @@ de:
         title: Administrator*innen
         name: Name
         email: E-Mail
+        id: Administrator ID
         no_administrators: Keine Administrator*innen vorhanden.
       administrator:
         add: Hinzufügen
