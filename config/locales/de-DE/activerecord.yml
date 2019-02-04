@@ -62,8 +62,8 @@ de:
         one: "Wahlvorsteher*in"
         other: "Wahlvorsteher*innen"
       proposal:
-        one: "Bürgervorschlag"
-        other: "Bürgervorschläge"
+        one: "Bürger*innenvorschlag"
+        other: "Bürger*innenvorschläge"
       spending_proposal:
         one: "Ausgabenvorschlag"
         other: "Ausgabenvorschläge"
@@ -77,7 +77,7 @@ de:
         one: Benutzerspezifischer Inhaltsdatenblock
         other: Benutzerspezifische Inhaltsdatenblöcke
       legislation/process:
-        one: "Verfahren"
+        one: "Beteiligungsverfahren"
         other: "Beteiligungsverfahren"
       legislation/proposal:
         one: "Vorschlag"
@@ -134,6 +134,7 @@ de:
       milestone:
         status_id: "Aktueller Status (optional)"
         title: "Titel"
+        description: "Beschreibung (optional, wenn ein Status zugewiesen ist)"
         publication_date: "Datum der Veröffentlichung"
       milestone/status:
         name: "Name"
@@ -142,6 +143,9 @@ de:
         kind: "Typ"
         title: "Titel"
         percentage: "Aktueller Fortschritt"
+      progress_bar/kind:
+        primary: "Primär"
+        secondary: "Sekundär"
       budget/heading:
         name: "Name der Rubrik"
         price: "Kosten"
@@ -168,7 +172,7 @@ de:
         password: "Passwort"
         current_password: "Aktuelles Passwort"
         phone_number: "Telefonnummer"
-        official_position: "Beamter/Beamtin"
+        official_position: "Öffentliches Amt"
         official_level: "Amtsebene"
         redeemable_code: "Bestätigungscode per Post (optional)"
       organization:
@@ -231,7 +235,7 @@ de:
         description: Beschreibung
         additional_info: Zusätzliche Information
         start_date: Anfangsdatum
-        end_date: Enddatum des Verfahrens
+        end_date: Endtermin des Verfahrens
         debate_start_date: Anfangsdatum Diskussion
         debate_end_date: Enddatum Diskussion
         draft_publication_date: Veröffentlichungsdatum des Entwurfs
