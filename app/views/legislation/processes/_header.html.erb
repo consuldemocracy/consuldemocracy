@@ -1,7 +1,15 @@
-<div class="legislation-hero jumbo">
+<div class="legislation-hero jumbo" style="<%= css_for_process_header %>">
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= back_link_to legislation_processes_path %>
+
+      <% if banner_color? %>
+        <%= link_to t("shared.back"), legislation_processes_path,
+                                      class: "icon-angle-left",
+                                      style: "color:#{process.font_color};" %>
+      <% else %>
+        <%= back_link_to legislation_processes_path %>
+      <% end %>
+
       <h2><%= @process.title %></h2>
 
       <% if header == :small %>
@@ -34,6 +42,35 @@
         url: legislation_process_url(@process),
         description: @process.title
       } %>
+
+      <% if @process.image.present? %>
+        <hr>
+        <%= image_tag(@process.image_url(:large), alt: @process.title, id:'image') %>
+      <% end %>
+
+      <% if process.draft_publication.enabled? %>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-title">
+          <%= t("legislation.processes.shared.draft_publication_date") %>
+        </p>
+        <p>
+          <%= link_to draft_publication_legislation_process_path(@process) do %>
+            <strong><%= format_date(process.draft_publication_date) %></strong>
+          <% end %>
+        </p>
+      <% end %>
+
+      <% if process.result_publication.enabled? %>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-title">
+          <%= t("legislation.processes.shared.result_publication_date") %>
+        </p>
+        <p>
+          <%= link_to result_publication_legislation_process_path(@process) do %>
+            <strong><%= format_date(process.result_publication_date) %></strong>
+          <% end %>
+        </p>
+      <% end %>
     </aside>
   </div>
 </div>

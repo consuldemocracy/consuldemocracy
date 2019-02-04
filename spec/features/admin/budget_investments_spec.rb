@@ -603,6 +603,16 @@ feature 'Admin budget investments' do
       create(:budget_investment, title: 'C Third Investment', cached_votes_up: 10, budget: budget)
     end
 
+    scenario "Default sorting" do
+      create(:budget_investment, title: 'D Fourth Investment', cached_votes_up: 50, budget: budget)
+
+      visit admin_budget_budget_investments_path(budget)
+
+      expect('D Fourth Investment').to appear_before('B First Investment')
+      expect('B First Investment').to appear_before('A Second Investment')
+      expect('A Second Investment').to appear_before('C Third Investment')
+    end
+
     scenario 'Sort by ID' do
       visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
@@ -1116,18 +1126,22 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Pagination after unselecting an investment", :js do
-      create_list(:budget_investment, 30, budget: budget)
+    feature "Pagination" do
+      background { selected_bi.update(cached_votes_up: 50) }
 
-      visit admin_budget_budget_investments_path(budget)
+      scenario "After unselecting an investment", :js do
+        create_list(:budget_investment, 30, budget: budget)
 
-      within("#budget_investment_#{selected_bi.id}") do
-        click_link('Selected')
+        visit admin_budget_budget_investments_path(budget)
+
+        within("#budget_investment_#{selected_bi.id}") do
+          click_link('Selected')
+        end
+
+        click_link('Next')
+
+        expect(page).to have_link('Previous')
       end
-
-      click_link('Next')
-
-      expect(page).to have_link('Previous')
     end
   end
 

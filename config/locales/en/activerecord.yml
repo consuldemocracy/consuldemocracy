@@ -16,6 +16,9 @@ en:
       milestone/status:
         one: "Milestone Status"
         other: "Milestone Statuses"
+      progress_bar:
+        one: "Progress bar"
+        other: "Progress bars"
       comment:
         one: "Comment"
         other: "Comments"
@@ -136,6 +139,13 @@ en:
       milestone/status:
         name: "Name"
         description: "Description (optional)"
+      progress_bar:
+        kind: "Type"
+        title: "Title"
+        percentage: "Current progress"
+      progress_bar/kind:
+        primary: "Primary"
+        secondary: "Secondary"
       budget/heading:
         name: "Heading name"
         price: "Price"
@@ -355,7 +365,7 @@ en:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "You have to wait a minimum of %{interval} days between notifications"
         signature:
           attributes:
             document_number:

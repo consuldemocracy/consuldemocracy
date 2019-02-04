@@ -7,8 +7,8 @@ describe Budget::Heading do
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
 
-  describe "::OSM_DISTRICT_LEVEL_ZOOM" do
-    it "should be defined" do
+  describe "OSM_DISTRICT_LEVEL_ZOOM constant" do
+    it "is defined" do
       expect(Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM).to be 12
     end
   end
@@ -205,7 +205,8 @@ describe Budget::Heading do
     end
 
     it "Allows longitude inside [-180,180] interval" do
-      heading = create(:budget_heading, group: group, name: 'Longitude is inside [-180,180] interval')
+      heading = create(:budget_heading, group: group,
+                       name: 'Longitude is inside [-180,180] interval')
 
       heading.longitude = '180'
       expect(heading).to be_valid

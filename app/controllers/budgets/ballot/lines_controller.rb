@@ -2,7 +2,6 @@ module Budgets
   module Ballot
     class LinesController < ApplicationController
       before_action :authenticate_user!
-      #before_action :ensure_final_voting_allowed
       before_action :load_budget
       before_action :load_ballot
       before_action :load_tag_cloud
@@ -32,10 +31,6 @@ module Budgets
       end
 
       private
-
-        def ensure_final_voting_allowed
-          return head(:forbidden) unless @budget.balloting?
-        end
 
         def line_params
           params.permit(:investment_id, :budget_id)
@@ -78,7 +73,9 @@ module Budgets
 
         def load_map
           @investments ||= []
-          @investments_map_coordinates = MapLocation.where(investment: @investments).map(&:json_data)
+          @investments_map_coordinates = MapLocation.where(investment: @investments).map do |loc|
+            loc.json_data
+          end
           @map_location = MapLocation.load_from_heading(@heading)
         end
 

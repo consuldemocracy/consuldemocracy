@@ -1,6 +1,10 @@
 class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomization::BaseController
   load_and_authorize_resource :content_block, class: "SiteCustomization::ContentBlock",
-                               except: [:delete_heading_content_block, :edit_heading_content_block, :update_heading_content_block]
+                               except: [
+                                 :delete_heading_content_block,
+                                 :edit_heading_content_block,
+                                 :update_heading_content_block
+                               ]
 
   def index
     @content_blocks = SiteCustomization::ContentBlock.order(:name, :locale)
@@ -27,7 +31,11 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
   end
 
   def edit
-    @selected_content_block =  (@content_block.is_a? SiteCustomization::ContentBlock) ? @content_block.name : "hcb_#{ @content_block.heading_id }"
+    if @content_block.is_a? SiteCustomization::ContentBlock
+      @selected_content_block = @content_block.name
+    else
+      @selected_content_block = "hcb_#{@content_block.heading_id}"
+    end
   end
 
   def update
@@ -65,7 +73,11 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
 
   def edit_heading_content_block
     @content_block = Budget::ContentBlock.find(params[:id])
-    @selected_content_block =  (@content_block.is_a? Budget::ContentBlock) ? "hcb_#{ @content_block.heading_id }" : @content_block.heading.name
+    if @content_block.is_a? Budget::ContentBlock
+      @selected_content_block = "hcb_#{@content_block.heading_id}"
+    else
+      @selected_content_block = @content_block.heading.name
+    end
     @is_heading_content_block = true
     render :edit
   end
@@ -116,7 +128,8 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
       heading_content_block = Budget::ContentBlock.new
       heading_content_block.body = params[:site_customization_content_block][:body]
       heading_content_block.locale = params[:site_customization_content_block][:locale]
-      heading_content_block.heading_id =   params[:site_customization_content_block][:name].sub('hcb_', '').to_i
+      block_heading_id = params[:site_customization_content_block][:name].sub('hcb_', '').to_i
+      heading_content_block.heading_id = block_heading_id
       heading_content_block
     end
 end

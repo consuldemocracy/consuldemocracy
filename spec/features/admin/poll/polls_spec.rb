@@ -23,16 +23,19 @@ feature 'Admin polls' do
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index', :js do
-    3.times { create(:poll) }
+  scenario "Index show polls list order by starts at date", :js do
+    poll_1 = create(:poll, name: "Poll first",  starts_at: 15.days.ago)
+    poll_2 = create(:poll, name: "Poll second", starts_at: 1.month.ago)
+    poll_3 = create(:poll, name: "Poll third",  starts_at: 2.days.ago)
 
     visit admin_root_path
 
     click_link "Polls"
-    within('#polls_menu') do
+    within("#polls_menu") do
       click_link "Polls"
     end
 
+    expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
     polls = Poll.all
@@ -41,6 +44,9 @@ feature 'Admin polls' do
         expect(page).to have_content poll.name
       end
     end
+
+    expect(poll_3.name).to appear_before(poll_1.name)
+    expect(poll_1.name).to appear_before(poll_2.name)
     expect(page).not_to have_content "There are no polls"
   end
 

@@ -34,6 +34,18 @@ feature 'Admin legislation processes' do
 
       expect(page).to have_content(process.title)
     end
+
+    scenario "Processes are sorted by descending start date" do
+      create(:legislation_process, title: "Process 1", start_date: Date.yesterday)
+      create(:legislation_process, title: "Process 2", start_date: Date.today)
+      create(:legislation_process, title: "Process 3", start_date: Date.tomorrow)
+
+      visit admin_legislation_processes_path(filter: "all")
+
+      expect("Process 3").to appear_before("Process 2")
+      expect("Process 2").to appear_before("Process 1")
+    end
+
   end
 
   context 'Create' do
@@ -130,6 +142,28 @@ feature 'Admin legislation processes' do
       expect(page).not_to have_content 'An example legislation process in draft phase'
       expect(page).not_to have_content 'Summary of the process'
       expect(page).not_to have_content 'Describing the process'
+    end
+
+    scenario "Create a legislation process with an image", :js do
+      visit new_admin_legislation_process_path()
+      fill_in "Process Title", with: "An example legislation process"
+      fill_in "Summary", with: "Summary of the process"
+
+      base_date = Date.current
+      fill_in "legislation_process[start_date]", with: base_date.strftime("%d/%m/%Y")
+      fill_in "legislation_process[end_date]", with: (base_date + 5.days).strftime("%d/%m/%Y")
+      imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
+
+      click_button "Create process"
+
+      expect(page).to have_content "An example legislation process"
+      expect(page).to have_content "Process created successfully"
+
+      click_link "Click to visit"
+
+      expect(page).to have_content "An example legislation process"
+      expect(page).not_to have_content "Summary of the process"
+      expect(page).to have_css("img[alt='#{Legislation::Process.last.title}']")
     end
   end
 

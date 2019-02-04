@@ -715,6 +715,28 @@ feature 'Budget Investments' do
       expect(order).not_to eq(new_order)
     end
 
+    scenario "Order always is random for unfeasible and unselected investments" do
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        budget.update(phase: phase)
+
+        visit budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
+
+        within(".submenu") do
+          expect(page).to have_content "random"
+          expect(page).not_to have_content "by price"
+          expect(page).not_to have_content "highest rated"
+        end
+
+        visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
+
+        within(".submenu") do
+          expect(page).to have_content "random"
+          expect(page).not_to have_content "price"
+          expect(page).not_to have_content "highest rated"
+        end
+      end
+    end
+
     def investments_order
       all(".budget-investment h3").collect {|i| i.text }
     end
@@ -1425,10 +1447,12 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
 
       global_group   = create(:budget_group, budget: budget, name: 'Global Group')
-      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading', latitude: -43.145412, longitude: 12.009423)
+      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading',
+                              latitude: -43.145412, longitude: 12.009423)
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
-      new_york_heading    = create(:budget_heading, group: group, name: "New York", latitude: -43.223412, longitude: 12.009423)
+      new_york_heading    = create(:budget_heading, group: group, name: "New York",
+                                   latitude: -43.223412, longitude: 12.009423)
 
       sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
       sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)

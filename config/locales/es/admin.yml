@@ -117,7 +117,7 @@ es:
       headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
-      no_groups: "No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
         other: "Hay %{count} grupos de partidas presupuestarias"
@@ -133,9 +133,11 @@ es:
         edit: "Editar grupo"
         name: "Nombre del grupo"
         submit: "Guardar grupo"
+      index:
+        back: "Volver a presupuestos"
     budget_headings:
       name: "Nombre"
-      no_headings: "No hay partidas creadas todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
         other: "Hay %{count} partidas presupuestarias"
@@ -151,12 +153,16 @@ es:
         amount: "Cantidad"
         population: "Población (opcional)"
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
-        latitude: "Latitud"
-        longitude: "Longitud"
+        latitude: "Latitud (opcional)"
+        longitude: "Longitud (opcional)"
+        coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
         allow_content_block: "Permitir bloque de contenidos"
+        content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
+      index:
+        back: "Volver a grupos"
     budget_phases:
       edit:
         start_date: Fecha de Inicio
@@ -326,6 +332,30 @@ es:
         notice: Estado de seguimiento creado correctamente
       delete:
         notice: Estado de seguimiento eliminado correctamente
+    progress_bars:
+      manage: "Gestionar barras de progreso"
+      index:
+        title: "Barras de progreso"
+        no_progress_bars: "No hay barras de progreso"
+        new_progress_bar: "Crear nueva barra de progreso"
+        primary: "Barra de progreso principal"
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Título"
+        table_percentage: "Progreso"
+      new:
+        creating: "Crear barra de progreso"
+      edit:
+        title:
+          primary: "Editar barra de progreso principal"
+          secondary: "Editar barra de progreso %{title}"
+      create:
+        notice: "¡Barra de progreso creada con éxito!"
+      update:
+        notice: "Barra de progreso actualizada"
+      delete:
+        notice: "Barra de progreso eliminada correctamente"
+
     comments:
       index:
         filter: Filtro
@@ -409,6 +439,9 @@ es:
           homepage: Descripción
           homepage_description: Aquí puedes explicar el contenido del proceso
           homepage_enabled: Homepage activada
+          banner_title: Colores del encabezado
+          banner_background_color: Color de fondo
+          banner_font_color: Color del texto
         index:
           create: Nuevo proceso
           delete: Borrar
@@ -883,11 +916,13 @@ es:
         table_location: "Ubicación"
     polls:
       index:
-        title: "Listado de votaciones activas"
+        title: "Listado de votaciones"
         no_polls: "No hay ninguna votación próximamente."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
+        start_date: "Fecha de apertura"
+        closing_date: "Fecha de cierre"
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
@@ -923,6 +958,8 @@ es:
         create_question: "Crear pregunta para votación"
         table_proposal: "Propuesta"
         table_question: "Pregunta"
+        table_poll: "Votación"
+        poll_not_assigned: "Votación no asignada"
       edit:
         title: "Editar pregunta ciudadana"
       new:
@@ -1155,6 +1192,7 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
+      delete: Eliminar
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1299,6 +1337,7 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+        not_available: "Esta propuesta ya no está disponible"
       polls:
         title: Estadísticas de votaciones
         all: Votaciones
@@ -1340,10 +1379,9 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        information: Información sobre los bloques de texto
-        about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
-        top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
-        footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        information: "Información sobre los bloques de contenido"
+        about: "Puedes crear bloques de contenido HTML que se podrán incrustar en diferentes sitios de tu página."
+        html_format: "Un bloque de contenido es un grupo de enlaces, y debe de tener el siguiente formato:"
         no_blocks: "No hay bloques de texto."
         create:
           notice: Bloque creado correctamente
@@ -1415,6 +1453,16 @@ es:
           status_published: Publicada
           title: Título
           slug: Slug
+          cards_title: Tarjetas
+          see_cards: Ver tarjetas
+        cards:
+          cards_title: tarjetas
+          create_card: Crear tarjeta
+          no_cards: No hay tarjetas.
+          title: Título
+          description: Descripción
+          link_text: Texto del enlace
+          link_url: URL del enlace
     homepage:
       title: Título
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.

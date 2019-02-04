@@ -11,7 +11,7 @@
   </div>
 
   <%= f.translatable_fields do |translations_form| %>
-    <div class="small-12 column end">
+    <div class="small-12 column">
       <div class="ckeditor">
         <%= translations_form.cktext_area :homepage,
                                           language: I18n.locale,
@@ -22,7 +22,7 @@
     </div>
   <% end %>
 
-  <div class="small-12 medium-3 column clear end">
+  <div class="small-12 medium-3 column end margin-top">
     <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
   </div>
 <% end %>
