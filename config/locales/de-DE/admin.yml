@@ -29,8 +29,8 @@ de:
         title: Titel
         description: Beschreibung
         target_url: Link
-        post_started_at: Veröffentlicht am
-        post_ended_at: Eintrag beendet am
+        post_started_at: Beginn der Veröffentlichung
+        post_ended_at: Ende der Veröffentlichung
         sections_label: Abschnitte, in denen es angezeigt wird
         sections:
           homepage: Homepage
@@ -73,8 +73,8 @@ de:
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
       index:
-        title: Bürgerhaushalte
-        new_link: Neuen Bürgerhaushalt erstellen
+        title: Bürger*innenhaushalte
+        new_link: Neuen Bürger*innenhaushalt erstellen
         filter: Filter
         filters:
           open: Offen
