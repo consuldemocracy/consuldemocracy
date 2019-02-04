@@ -428,31 +428,35 @@ de:
           draft_phase_description: Wenn diese Phase aktiv ist, wird dieses Beteiligungsverfahren nicht in der Liste aller Verfahren angezeigt. Lassen Sie sich eine Vorschau des Verfahrens anzeigen und erstellen Sie Inhalte vor dem Start.
           allegations_phase: Kommentierphase
           proposals_phase: Vorschlagsphase
-          start: Beginn
+          start: Anfang
           end: Ende
           use_markdown: Verwenden Sie Markdown, um den Text zu formatieren
-          title_placeholder: Titel des Verfahrens
+          title_placeholder: Titel des Beteiligungsverfahrens
           summary_placeholder: Kurze Zusammenfassung der Beschreibung
-          description_placeholder: Fügen Sie eine Beschreibung des Verfahrens hinzu
-          additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die von Interesse sein könnte
+          description_placeholder: Fügen Sie eine Beschreibung des Beteiligungsverfahrens hinzu
+          additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die Sie für nützlich halten
           homepage: Beschreibung
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
+          homepage_enabled: Homepage aktiviert
+          banner_background_color: Hintergrundfarbe
+          banner_font_color: Schriftfarbe
         index:
-          create: Neues Verfahren
+          create: Neues Beteiligungsverfahren
           delete: Löschen
           title: Gesetzgebungsverfahren
           filters:
             open: Offen
-            next: Nächste/r
+            next: Nächste
             past: Vorherige
             all: Alle
         new:
           back: Zurück
           title: Neues kollaboratives Gesetzgebungsverfahren erstellen
-          submit_button: Verfahren erstellen
+          submit_button: Beteiligungsverfahren erstellen
         proposals:
           select_order: Sortieren nach
           orders:
+            id: ID
             title: Titel
             supports: Unterstützer/innen
         process:
@@ -466,24 +470,31 @@ de:
         subnav:
           info: Information
           homepage: Homepage
+          draft_versions: In Ausarbeitung
           questions: Diskussion
           proposals: Vorschläge
+          milestones: Folgen
+      homepage:
+        edit:
+          title: Konfigurieren Sie Ihre Homepage
       proposals:
         index:
           title: Titel
           back: Zurück
+          id: ID
           supports: Unterstützer*innen
           select: Auswählen
           selected: Ausgewählt
         form:
           custom_categories: Kategorien
           custom_categories_description: Kategorien, die Benutzer*innen bei der Erstellung eines Vorschlags auswählen können.
+          custom_categories_placeholder: Geben Sie die gewünschten Tags ein, getrennt durch Kommas (',') und mit Anführungszeichen ("")
       draft_versions:
         create:
-          notice: 'Entwurf erfolgreich erstellt. <a href="%{link}">Zum Anzeigen hier klicken</a>'
+          notice: 'Entwurf erfolgreich erstellt. <a href="%{link}">Anzeigen</a>'
           error: Entwurf konnte nicht erstellt werden
         update:
-          notice: 'Entwurf erfolgreich aktualisiert. <a href="%{link}">Zum Anzeigen hier klicken</a>'
+          notice: 'Entwurf erfolgreich aktualisiert. <a href="%{link}">Anzeigen</a>'
           error: Entwurf konnte nicht aktualisiert werden
         destroy:
           notice: Entwurf erfolgreich gelöscht
@@ -495,15 +506,15 @@ de:
           form:
             error: Fehler
         form:
-          title_html: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Verfahrens <span class="strong">%{process_title}</span>'
+          title_html: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Beteiligungsverfahrens <span class="strong">%{process_title}</span>'
           launch_text_editor: Textbearbeitung öffnen
           close_text_editor: Textbearbeitung schließen
           use_markdown: Verwenden Sie Markdown, um den Text zu formationen
           hints:
-            final_version: Diese Version wird als Endergebnis dieses Beteiligungsverfahrens veröffenlicht. Kommentare sind daher in dieser Version nicht erlaubt.
+            final_version: Diese Fassung wird als Endergebnis dieses Beteiligungsverfahrens veröffenlicht. Kommentare sind daher in dieser Version nicht erlaubt.
             status:
               draft: Als Admin können Sie eine Vorschau anzeigen lassen, die niemand sonst sehen kann
-              published: Sichtbar für alle
+              published: Für alle sichtbar
           title_placeholder: Titel der Entwurfsfassung
           changelog_placeholder: Beschreiben Sie alle relevanten Änderungen der vorherigen Version
           body_placeholder: Notieren Sie sich den Entwurf
