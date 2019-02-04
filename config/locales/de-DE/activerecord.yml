@@ -5,7 +5,7 @@ de:
         one: "Aktivität"
         other: "Aktivitäten"
       budget:
-        one: "Bürger*innenhaushalt"
+        one: "Bürgerhaushalt"
         other: "Bürger*innenhaushalte"
       budget/investment:
         one: "Ausgabenvorschlag"
