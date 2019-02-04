@@ -15,7 +15,7 @@ module Budgets
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
-    before_action :load_area, only: [:index, :new]
+    before_action :load_area, only: [:index, :new, :create]
     before_action :load_geozone, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]

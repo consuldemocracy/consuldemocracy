@@ -4,15 +4,21 @@ class AccountController < ApplicationController
   load_and_authorize_resource class: "User"
 
   def show
+    @area_id = params[:area_id]
+    puts("--------------------------------> @area_id: #{@area_id}")
   end
 
   def update
-    if @account.update(account_params)
-      redirect_to account_path, notice: t("flash.actions.save_changes.notice")
-    else
-      @account.errors.messages.delete(:organization)
-      render :show
+    puts("1-------------------------------->")
+    if @area_id
+      puts("2-------------------------------->")
     end
+    # if @account.update(account_params)
+    #   redirect_to account_path, notice: t("flash.actions.save_changes.notice")
+    # else
+    #   @account.errors.messages.delete(:organization)
+    #   render :show
+    # end
   end
 
   private
