@@ -156,8 +156,13 @@ de:
         latitude: "Breitengrad (optional)"
         longitude: "Längengrad (optional)"
         coordinates_info: "Wenn Längen- und Breitengrad angegeben sind, enthält die Seite des Ausgabenvorschlags für diese Rubrik eine Karte. Diese Karte wird mit diesen Koordinaten berechnet."
+        allow_content_block: "Inhaltsdatenblock zulassen"
+        content_blocks_info: "Wenn Inhaltsblock zulassen aktiviert ist, können Sie benutzerdefinierte Inhalte, die sich auf diese Rubrik beziehen, im Abschnitt Einstellungen> Benutzerdefinierte Inhaltsblöcke erstellen. Dieser Inhalt wird auf der Ausgabenvorschlagsseite für diese Rubrik angezeigt."
+        create: "Neue Rubrik erstellen"
+        edit: "Rubrik bearbeiten"
+        submit: "Rubrik speichern"
       index:
-        back: "Zurück zu den Gruppen"
+        back: "Zurück zu Gruppen"
     budget_phases:
       edit:
         start_date: Anfangsdatum
@@ -290,6 +295,8 @@ de:
         image: "Bild"
         show_image: "Bild anzeigen"
         documents: "Dokumente"
+        milestone: Meilenstein
+        new_milestone: Neuen Meilenstein erstellen
       form:
         admin_statuses: Status des Ausgabenvorschlags verwalten
         no_statuses_defined: Es wurde noch kein Status für diese Ausgabenvorschläge definiert
@@ -325,6 +332,29 @@ de:
         notice: Status für Ausgabenvorschlag erfolgreich erstellt
       delete:
         notice: Status für Ausgabenvorschlag erfolgreich gelöscht
+    progress_bars:
+      manage: "Fortschrittsbalken verwalten"
+      index:
+        title: "Fortschrittsbalken"
+        no_progress_bars: "Keine Fortschrittsbalken vorhanden"
+        new_progress_bar: "Neuen Fortschrittsbalken erstellen"
+        primary: "Primärer Fortschrittsbalken"
+        table_id: "Ausweis"
+        table_kind: "Typ"
+        table_title: "Titel"
+        table_percentage: "Aktueller Fortschritt"
+      new:
+        creating: "Fortschrittsbalken erstellen"
+      edit:
+        title:
+          primary: "Primären Fortschrittsbalken bearbeiten"
+          secondary: "Fortschrittsbalken %{title} bearbeiten"
+      create:
+        notice: "Fortschrittsbalken erfolgreich erstellt!"
+      update:
+        notice: "Fortschrittsbalken erfolgreich aktualisiert"
+      delete:
+        notice: "Fortschrittsbalken erfolgreich gelöscht"
     comments:
       index:
         filter: Filter
@@ -359,6 +389,7 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Benutzer*innen
         user: Benutzer*in
+        no_hidden_users: Es gibt keine verborgenen Benutzer*innen.
       show:
         email: 'E-Mail:'
         hidden_at: 'Verborgen am:'
@@ -376,7 +407,7 @@ de:
     legislation:
       processes:
         create:
-          notice: 'Verfahren erfolgreich erstellt. <a href="%{link}"> Klicken Sie, um zu besuchen</a>'
+          notice: 'Beteiligungsverfahren erfolgreich erstellt. <a href="%{link}">Jetzt besuchen</a>'
           error: Beteiligungsverfahren konnte nicht erstellt werden
         update:
           notice: 'Verfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
