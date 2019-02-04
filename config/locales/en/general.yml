@@ -516,11 +516,13 @@ en:
       resource_locked: Resource locked
     recommended_actions:
       title: Recommended actions
+      goto_proposed_actions: Go to recommended actions
       see_proposed_actions: Check out recommended actions
       hide_proposed_actions: Hide recommended actions
-      pending_title: Recommended actions pending
+      pending_title: Pending
+      show_description: Show description
       without_pending_actions: No recommended actions pending
-      done_title: Recommended actions done
+      done_title: Done
       without_done_actions: No recommended actions done
     next_goal:
       title: Goal
