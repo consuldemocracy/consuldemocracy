@@ -1150,6 +1150,8 @@ de:
             update: Kartenkonfiguration erfolgreich aktualisiert.
           form:
             submit: Aktualisieren
+      setting: Funktion
+      setting_actions: Aktionen
       setting_name: Einstellung
       setting_status: Status
       setting_value: Wert
@@ -1162,7 +1164,7 @@ de:
         placeholder: Suche Wahlkabine nach Name
       poll_officers_search:
         button: Suchen
-        placeholder: Suche Wahlvorsteher*innen
+        placeholder: Suche Beamte/innen
       poll_questions_search:
         button: Suchen
         placeholder: Suche Fragen
@@ -1188,6 +1190,7 @@ de:
       author: Verfasser*in
       content: Inhalt
       created_at: Erstellt
+      delete: Löschen
     spending_proposals:
       index:
         geozone_filter_all: Alle Bereiche
@@ -1239,7 +1242,7 @@ de:
         title_proposals_with_supports: Zusammenfassung der Ausgabenvorschläge, die die Unterstützungsphase passiert haben
         geozone_name: Bereich
         finished_and_feasible_count: Abgeschlossen und durchführbar
-        finished_and_unfeasible_count: Abgeschlossen und undurchführbar
+        finished_and_unfeasible_count: Abgeschlossen und nicht durchführbar
         finished_count: Abgeschlossen
         in_evaluation_count: In Auswertung
         total_count: Gesamt
@@ -1253,13 +1256,13 @@ de:
       geozone:
         name: Name
         external_code: Externer Code
-        census_code: Melderegister Code
+        census_code: Melderegister-Code
         coordinates: Koordinaten
       errors:
         form:
           error:
-            one: "ein Fehler verhinderte, dass diese Geo-Zone gespeichert wurde"
-            other: 'Fehler verhinderten, dass dieser Bezirk werden konnten'
+            one: "Aufgrund eines Fehlers konnte dieser Bezirk nicht gespeichert werden"
+            other: 'Aufgrund von Fehlern konnte dieser Bezirk nicht gespeichert werden'
       edit:
         form:
           submit_button: Änderungen speichern
@@ -1270,7 +1273,7 @@ de:
         creating: Bezirk anlegen
       delete:
         success: Bezirk erfolgreich gelöscht
-        error: Der Bezirk kann nicht gelöscht werden, da ihm bereits Elemente zugeordnet sind
+        error: Dieser Bezirk kann nicht gelöscht werden, da ihm bereits Elemente zugeordnet sind
     signature_sheets:
       author: Verfasser*in
       created_at: Erstellungsdatum
