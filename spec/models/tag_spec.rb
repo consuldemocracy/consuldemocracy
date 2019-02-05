@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Tag do
 
@@ -28,4 +28,10 @@ describe Tag do
     expect(tag.taggings_count).to eq(0)
   end
 
+  describe "name validation" do
+    it "160 char name should be valid" do
+      tag = build(:tag, name: Faker::Lorem.characters(160))
+      expect(tag).to be_valid
+    end
+  end
 end
