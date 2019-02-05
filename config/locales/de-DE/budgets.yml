@@ -48,41 +48,41 @@ de:
         help: Hilfe zu Bürgerhaushalten
         all_phases: Alle Phasen anzeigen
       all_phases: Phasen des Bürgerhaushalts
-      map: Geographisch verteilte Budget-Investitionsvorschläge
-      investment_proyects: Liste aller Investitionsprojekte
-      unfeasible_investment_proyects: Liste aller undurchführbaren Investitionsprojekte
-      not_selected_investment_proyects: Liste aller Investitionsprojekte, die nicht zur Abstimmung ausgewählt wurden
-      finished_budgets: Abgeschlossene participative Haushalte
+      map: Ausgabenvorschläge geografisch geordnet
+      investment_proyects: Liste aller Ausgabenvorschläge
+      unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
+      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die es nicht in die Abstimmung geschafft haben
+      finished_budgets: Abgeschlossene Bürgerhaushalte
       see_results: Ergebnisse anzeigen
       section_footer:
-        title: Hilfe mit partizipativen Haushaltsmitteln
-        description: Mit den partizipativen Haushaltsmitteln können BürgerInnen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
+        title: Hilfe zu Bürgerhaushalten
+        description: Durch Bürgerhaushalte können Bürger*innen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
       milestones: Meilensteine
     investments:
       form:
         tag_category_label: "Kategorien"
         tags_instructions: "Diesen Vorschlag markieren. Sie können aus vorgeschlagenen Kategorien wählen, oder Ihre eigenen hinzufügen"
         tags_label: Tags
-        tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
+        tags_placeholder: "Geben Sie die gewünschten Tags ein, getrennt durch Kommas (',')"
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
         location: "Weitere Ortsangaben"
-        map_skip_checkbox: "Dieses Investment hat keinen konkreten Standort oder mir ist keiner bewusst."
+        map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
-        title: Partizipative Haushaltsplanung
-        unfeasible: Undurchführbare Investitionsprojekte
-        unfeasible_text: "Die Investition muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Gegenständlichkeit, die Verantwortung der Stadt sein, nicht das Limit des Haushaltes überschreiten) um für durchführbar erklärt zu werden und das Stadium der finalen Wahl zu erreichen. Alle Investitionen, die diese Kriterien nicht erfüllen, sind als undurchführbar markiert und stehen in der folgenden Liste, zusammen mit ihrem Report zur Unausführbarkeit."
-        by_heading: "Investitionsprojekte mit Reichweite: %{heading}"
+        title: Bürgerhaushalte
+        unfeasible: Nicht durchführbare Ausgabenvorschläge
+        unfeasible_text: "Der Ausgabenvorschlag muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Durchführbarkeit, im Aufgabenbereich der Stadt, innerhalb des Limits des Haushaltes) um für durchführbar erklärt werden zu können und das Stadium der finalen Abstimmung zu erreichen. Alle Ausgabenvorschläge, die diese Kriterien nicht erfüllen, sind als nicht durchführbar markiert und stehen in der folgenden Liste, zusammen mit einem Bericht zur Undurchführbarkeit."
+        by_heading: "Ausgabenvorschläge im Bereich: %{heading}"
         search_form:
           button: Suche
-          placeholder: Suche Investitionsprojekte...
+          placeholder: Suche Ausgabenvorschläge...
           title: Suche
         search_results_html:
           one: " enthält den Begriff <strong>'%{search_term}'</strong>"
           other: " enthält die Begriffe <strong>'%{search_term}'</strong>"
         sidebar:
-          my_ballot: Mein Stimmzettel
+          my_ballot: Meine Stimmen
           voted_html:
             one: "<strong>Sie haben für einen Antrag mit Kosten von %{amount_spent}-</strong> gestimmt"
             other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
