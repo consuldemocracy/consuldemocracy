@@ -898,18 +898,18 @@ de:
       show:
         location: "Standort"
         officers: "Beamte*innen"
-        officers_list: "Liste der Wahlvorsteher*innen für diese Wahlurne"
-        no_officers: "Es gibt keine Wahlvorsteher*innen für diese Wahlurne"
+        officers_list: "Liste der Beamten/innen für diese Wahlurne"
+        no_officers: "Es gibt keine Beamten/innen für diese Wahlurne"
         recounts: "Nachzählungen"
         recounts_list: "Liste der Nachzählungen für diese Wahlurne"
         results: "Ergebnisse"
         date: "Datum"
-        count_final: "Endgültige Nachzählung (durch Wahlvorsteher*in)"
+        count_final: "Endgültige Nachzählung (durch Beamten/in)"
         count_by_system: "Stimmen (automatisch)"
         total_system: Gesamtanzahl der Stimmen (automatisch)
       index:
         booths_title: "Liste der zugewiesenen Wahlurnen"
-        no_booths: "Dieser Abstimmung sind keine Wahlvorsteher*innen zugeordnet."
+        no_booths: "Dieser Abstimmung sind keine Wahlkabinen zugeordnet."
         table_name: "Name"
         table_location: "Standort"
     polls:
@@ -935,15 +935,15 @@ de:
       show:
         questions_tab: Fragen
         booths_tab: Wahlkabinen
-        officers_tab: Wahlvorsteher*innen
+        officers_tab: Beamte/innen
         recounts_tab: Nachzählung
         results_tab: Ergebnisse
         no_questions: "Dieser Abstimmung sind keine Fragen zugeordnet."
         questions_title: "Liste der Fragen"
         table_title: "Titel"
       flash:
-        question_added: "Frage zu dieser Abstimmung hinzugefügt"
-        error_on_question_added: "Frage konnte dieser Abstimmung nicht zugeordnet werden"
+        question_added: "Die Frage wurde zu dieser Abstimmung hinzugefügt"
+        error_on_question_added: "Die Frage konnte dieser Abstimmung nicht zugeordnet werden"
     questions:
       index:
         title: "Fragen"
@@ -1012,7 +1012,7 @@ de:
         title: "Nachzählungen"
         no_recounts: "Es gibt nichts nachzuzählen"
         table_booth_name: "Wahlkabine"
-        table_total_recount: "Gesamte Nachzählung (durch Wahlvorsteher*in)"
+        table_total_recount: "Gesamte Nachzählung (durch Beamten/in)"
         table_system_count: "Stimmen (automatisch)"
     results:
       index:
@@ -1053,10 +1053,10 @@ de:
     officials:
       edit:
         destroy: Status "öffentliches Amt" entfernen
-        title: 'Beamte: Benutzer*in bearbeiten'
+        title: 'Beamte/innen: Benutzer*in bearbeiten'
       flash:
-        official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamte/r'
-        official_updated: Details des/r Beamten* gespeichert
+        official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamter/in'
+        official_updated: Details des Beamten gespeichert
       index:
         title: Beamte
         no_officials: Keine Beamten vorhanden.
