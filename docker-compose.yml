@@ -29,7 +29,6 @@ services:
 
     # makes the app container aware of the DB container
     depends_on:
-      - migration
       - database
 
     # expose the port we configured Unicorn to bind to
@@ -50,6 +49,7 @@ services:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated
     depends_on:
+      - app
       - database
   prepare:
     build: .
@@ -62,6 +62,7 @@ services:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated
     depends_on:
+      - app
       - database
 volumes:
   docker-example-postgres: {}
