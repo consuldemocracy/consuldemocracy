@@ -1,1 +1,101 @@
 cs:
+  activerecord:
+    attributes:
+      budget:
+        name: "Název"
+        description_accepting: "Popis během fáze přijímání"
+        description_reviewing: "Popis během fáze revize"
+        description_selecting: "Popis během fáze výběru"
+        description_valuating: "Popis během fáze vyhodnocování"
+        description_balloting: "Popis během fáze hlasování"
+        description_reviewing_ballots: "Popis během fáze přezkoumání hlasování"
+        description_finished: "Popis při dokončení rozpočtu"
+        phase: "Fáze"
+        currency_symbol: "Měna"
+      budget/investment:
+        title: "Název"
+        description: "Popis"
+        external_url: "Odkaz na doplňující informace"
+        administrator_id: "Administrátor"
+        location: "Lokalita (volitelné)"
+        image: "Proposal názorný obrázek"
+        image_title: "Nadpis obrázku"
+      comment:
+        body: "Komentář"
+      debate:
+        title: "Název"
+      proposal:
+        title: "Název"
+      user:
+        login: "Email nebo uživatelské jméno"
+        username: "Uživatelské jméno"
+        password_confirmation: "Potvrzení hesla"
+        password: "Heslo"
+        current_password: "Současné heslo"
+        phone_number: "Telefonní číslo"
+      organization:
+        name: "Název organizace"
+        responsible_name: "Osoba zodpovědná za organizaci či skupinu"
+      spending_proposal:
+        title: "Název"
+      poll:
+        summary: "Souhrn"
+        description: "Popis"
+      poll/translation:
+        name: "Název"
+        summary: "Souhrn"
+        description: "Popis"
+      poll/question:
+        title: "Otázka"
+        summary: "Souhrn"
+        description: "Popis"
+        external_url: "Odkaz na další dokumenty"
+      poll/question/translation:
+        title: "Otázka"
+      site_customization/page:
+        content: Obsah
+        created_at: Vytvořeno v
+        subtitle: Podtitul
+        title: Název
+        updated_at: Aktualizováno dne
+      site_customization/page/translation:
+        title: Název
+        subtitle: Titulek
+        content: Obsah
+      legislation/process:
+        title: Název procesu
+        draft_publication_date: Datum návrhu publikace
+        result_publication_date: Publikace konečného výsledku
+      legislation/process/translation:
+        title: Název procesu
+      legislation/draft_version:
+        title: Název pracovní verze
+      legislation/draft_version/translation:
+        title: Název pracovní verze
+      legislation/question:
+        title: Název
+      legislation/annotation:
+        text: Komentář
+      document:
+        title: Název
+      image:
+        title: Název
+      admin_notification:
+        title: Název
+      admin_notification/translation:
+        title: Název
+      widget/card:
+        title: Název
+      widget/card/translation:
+        title: Název
+    errors:
+      models:
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Šířka obrázku musí být minimálně %{required_min_width} bodů"
+              min_image_height: "Výška obrázku musí být minimálně %{required_min_height} bodů"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "You have to wait a minium of %{interval} days between notifications"
