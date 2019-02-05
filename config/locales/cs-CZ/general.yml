@@ -35,10 +35,15 @@ cs:
     comments_closed: Komentáře jsou uzavřeny
     verify_account: Ověřit váš účet
     comment:
+      admin: Administrátor
       author: Autor
       deleted: Tento komentář byl smazán
       moderator: Moderátor
+      responses:
+        zero: Žádné odezvy
       user_deleted: Uživatel
+      votes:
+        zero: Žádné hlasy
     form:
       comment_as_admin: Komentovat jako administrátor
       comment_as_moderator: Komentovat jako moderátor
@@ -61,6 +66,9 @@ cs:
     create:
       form:
         submit_button: Zahájit debatu
+    debate:
+      comments:
+        zero: Žádné komentáře
     edit:
       editing: Upravit debatu
       form:
@@ -158,11 +166,13 @@ cs:
       participation_title: Zapojte se
       privacy: Zásady ochrany osobních údajů
     header:
+      administration_menu: Správce
       administration: Administrace
       available_locales: Dostupné jazyky
       collaborative_legislation: Legislativní procesy
       debates: Debaty
       locale: 'Jazyk:'
+      management: Správa
       moderation: Moderování
       help: Nápověda
       my_account_link: Můj účet
