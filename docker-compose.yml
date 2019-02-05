@@ -19,7 +19,8 @@ services:
     entrypoint: /usr/local/bin/entrypoint.sh
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     working_dir: /var/www/consul
-    environment: 
+    environment:
+      - NEW_RELIC_AGENT_ENABLED=false
       - DATABASE_HOST=database
       - DATABASE_NAME=postgres
     # rely on the RAILS_ENV value of the host machine
@@ -41,6 +42,9 @@ services:
   migration:
     build: .
     image: consul-app
+    environment:
+      - DATABASE_HOST=database
+      - DATABASE_NAME=postgres
     command: bin/rake db:migrate
     volumes:
       - .:/var/www/consul:delegated
