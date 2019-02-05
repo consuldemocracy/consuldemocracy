@@ -863,7 +863,7 @@ de:
         remove_shift: "Entfernen"
         search_officer_button: Suchen
         search_officer_placeholder: Suche nach Beamten/in
-        search_officer_text: Suche nach Beamter/in, um neue Arbeitsschicht zuzuordnen
+        search_officer_text: Suche nach Beamten/in, um neue Arbeitsschicht zuzuordnen
         select_date: "Tag auswählen"
         no_voting_days: "Abstimmungsphase beendet"
         select_task: "Aufgabe auswählen"
@@ -897,7 +897,7 @@ de:
         error_create: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
       show:
         location: "Standort"
-        officers: "Beamte*innen"
+        officers: "Beamte/innen"
         officers_list: "Liste der Beamten/innen für diese Wahlurne"
         no_officers: "Es gibt keine Beamten/innen für diese Wahlurne"
         recounts: "Nachzählungen"
@@ -1052,7 +1052,7 @@ de:
         edit: "Wahlkabine bearbeiten"
     officials:
       edit:
-        destroy: Status "öffentliches Amt" entfernen
+        destroy: Status "Beamter/in" entfernen
         title: 'Beamte/innen: Benutzer*in bearbeiten'
       flash:
         official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamter/in'
@@ -1061,7 +1061,7 @@ de:
         title: Beamte/innen
         no_officials: Keine Beamten/innen vorhanden.
         name: Name
-        official_position: Öffentliches Amt
+        official_position: Beamte/in
         official_level: Stufe
       level_0: Kein/e Beamter/in
       level_1: Stufe 1
@@ -1096,8 +1096,8 @@ de:
         search: Suchen
         search_placeholder: Name, E-Mail oder Telefonnummer
         title: Organisationen
-        verified: Überprüft
-        verify: Überprüfen
+        verified: Verifiziert
+        verify: Verifizieren
         pending: Ausstehend
       search:
         title: Organisationen suchen
@@ -1178,7 +1178,7 @@ de:
         button: Suchen
         placeholder: Suche Benutzer*in nach Name oder E-Mail
       search_results: "Suchergebnisse"
-      no_search_results: "Es wurden keine Ergebnisse gefunden."
+      no_search_results: "Keine Ergebnisse gefunden."
       actions: Aktionen
       title: Titel
       description: Beschreibung
@@ -1309,7 +1309,7 @@ de:
           debates: Diskussionen
           proposal_votes: Stimmen in Vorschlägen
           proposals: Vorschläge
-          budgets: Offene Budgetvorschläge
+          budgets: Offene Haushalte
           budget_investments: Ausgabenvorschläge
           spending_proposals: Ausgabenvorschläge
           unverified_users: Nicht verifizierte Benutzer*innen
@@ -1321,7 +1321,7 @@ de:
           visits: Besuche
           votes: Gesamtstimmen
         spending_proposals_title: Ausgabenvorschläge
-        budgets_title: Bürgerhaushalt
+        budgets_title: Bürgerhaushalte
         visits_title: Besuche
         direct_messages: Direktnachrichten
         proposal_notifications: Benachrichtigungen zu einem Vorschlag
