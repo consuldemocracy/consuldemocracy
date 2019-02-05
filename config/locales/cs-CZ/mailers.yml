@@ -1,1 +1,6 @@
 cs:
+  mailers:
+    reply:
+      hi: Dobrý den
+    unfeasible_spending_proposal:
+      hi: "Vážený uživateli,"
