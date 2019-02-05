@@ -1,6 +1,8 @@
 cs:
   management:
     account:
+      menu:
+        reset_password_email: Obnovit heslo emailem
       edit:
         password:
           random: Vytvořit náhodné heslo
