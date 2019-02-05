@@ -170,18 +170,23 @@ de:
       show_all_link: Alle anzeigen
       price: Kosten
       amount_available: Verfügbare Haushaltsmittel
-      accepted: "Zugesagter Ausgabenvorschlag:"
-      discarded: "Gelöschter Ausgabenvorschlag: "
-      incompatibles: Unvereinbarkeiten
-      investment_proyects: Liste aller Investitionsprojekte
-      unfeasible_investment_proyects: Liste aller undurchführbaren Investitionsprojekte
-      not_selected_investment_proyects: Liste aller Investitionsprojekte, die nicht zur Abstimmung ausgewählt wurden
+      accepted: "Genehmigter Ausgabenvorschlag: "
+      discarded: "Verworfener Ausgabenvorschlag: "
+      incompatibles: Unvereinbar
+      investment_proyects: Liste aller Ausgabenvorschläge
+      unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
+      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die nicht für die Abstimmung ausgewählt wurden
     executions:
-      heading_selection_title: "Nach Stadtteil"
+      link: "Meilensteine"
+      page_title: "%{budget} - Meilensteine"
+      heading: "Meilensteine des Bürgerhaushaltes"
+      heading_selection_title: "Nach Bezirk"
+      no_winner_investments: "Keine erfolgreichen Ausgabenvorschläge in diesem Status"
       filters:
+        label: "Aktueller Stand des Projekts"
         all: "Alle (%{count})"
     phases:
       errors:
-        dates_range_invalid: "Das Startdatum kann nicht gleich oder später als das Enddatum sein"
-        prev_phase_dates_invalid: "Startdatum muss zu einem späteren Zeitpunkt, als das Startdatum der zuvor freigegebenden Phase (%{phase_name}, liegen"
-        next_phase_dates_invalid: "Abschlussdatum muss vor dem Abschlussdatum der nächsten freigegebenen Phase (%{phase_name}) liegen"
+        dates_range_invalid: "Das Anfangsdatum kann nicht gleich oder später als das Enddatum sein"
+        prev_phase_dates_invalid: "Das Anfangsdatum muss zu einem späteren Zeitpunkt, als das Startdatum der zuvor freigegebenden Phase (%{phase_name}), liegen"
+        next_phase_dates_invalid: "Das Enddatum muss vor dem Enddatum der nächsten freigegebenen Phase (%{phase_name}) liegen"
