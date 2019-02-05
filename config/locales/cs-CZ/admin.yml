@@ -73,6 +73,7 @@ cs:
         no_budgets: "Neexistují žádné otevřené rozpočty."
       edit:
         phase: Fáze
+        enabled: Povoleno
     budget_headings:
       destroy:
         unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
@@ -88,15 +89,22 @@ cs:
         end_date: Konečné datum
         summary: Souhrn
         description: Popis
+        enabled: Fáze je povolena
+        enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         save_changes: Uložit změny
     budget_investments:
       index:
+        tags_filter_all: Všechny štítky
+        placeholder: Prohledat projekty
         sort_by:
           placeholder: Třídit podle
+          id: ID
           title: Název
           supports: Podporovatelé
         filters:
           all: Vše
+        buttons:
+          filter: Filtr
         select: "Vybrat"
         list:
           title: Název
@@ -104,10 +112,23 @@ cs:
           incompatible: Nekompatibilní
         see_results: "Zobrazit výsledky"
       show:
+        classification: Klasifikace
+        winner:
+          "true": "Ano"
+          "false": "Ne"
+        image: "Obrázek"
+        see_image: "Zobrazit obrázek"
+        no_image: "Bez obrázku"
         documents: "Dokumenty"
+        see_documents: "Viz dokumenty (%{count})"
+      edit:
+        submit_button: Aktualizovat
+        tags: Štítky
     milestones:
       index:
         table_title: "Název"
+        table_status: Stav
+        table_actions: "Akce"
         documents: "Dokumenty"
       form:
         admin_statuses: Admin investment statuses
@@ -158,6 +179,7 @@ cs:
           summary_placeholder: Stručné shrnutí popisu
           description_placeholder: Přidat popis procesu
           additional_info_placeholder: Přidat doplňující ifnormace, které považujete za užitečné
+          homepage_enabled: Úvodní stránka povolena
         index:
           create: Nový proces
           delete: Smazat
@@ -308,6 +330,12 @@ cs:
       index:
         title: Hidden proposals
     settings:
+      index:
+        features:
+          enabled: "Funkce povolena"
+          disabled: "Funkce je zakázaná"
+          enable: "Povolit"
+          disable: "Zakázat"
       no_description: "Bez popisu"
     shared:
       booths_search:
