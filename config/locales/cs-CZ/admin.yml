@@ -229,6 +229,7 @@ cs:
       new:
         show_results_and_stats: "Zobrazit výsledky a statistiky"
         show_stats: "Zobrazit statistiky"
+        results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
     questions:
       show:
         answers:
@@ -289,6 +290,7 @@ cs:
           debates: Debaty
           proposal_votes: Hlasů k návrhům
           proposals: Návrhy
+          budgets: Otevřené rozpočty
           budget_investments: Investiční projekty
           unverified_users: Neověření uživatelé
           user_level_three: Počet uživatelů třetí úrovně
@@ -316,8 +318,12 @@ cs:
         all: Průzkumy
         web_participants: Respondenti z webu
         total_participants: Celkový počet respondentů
+        poll_questions: "Otázky z průzkumu: %{poll}"
         table:
+          poll_name: Průzkum
           question_name: Otázky
+          origin_web: Respondenti z webu
+          origin_total: Celkový počet respondentů
     site_customization:
       content_blocks:
         about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
