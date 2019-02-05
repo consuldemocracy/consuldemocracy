@@ -131,43 +131,44 @@ de:
       wrong_price_format: Nur ganze Zahlen
       investment:
         add: Abstimmen
-        already_added: Sie haben dieses Investitionsprojekt schon hinzugefügt
-        already_supported: Sie haben dieses Investitionsprojekt bereits unterstützt. Teilen Sie es!
+        already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
+        already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
         support_title: Unterstützen Sie dieses Projekt
         confirm_group:
-          one: "Sie können nur Investitionen im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
-          other: "Sie können nur Investitionen im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
+          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
-          zero: Keine Unterstützung
-          one: 1 Befürworter/in
-          other: "%{count} Befürworter/innen"
+          zero: Keine Unterstützer*innen
+          one: 1 Unterstützer*in
+          other: "%{count} Unterstützer*innen"
         give_support: Unterstützung
       header:
-        check_ballot: Überprüfung meiner Abstimmung
-        different_heading_assigned_html: "Sie haben aktive Abstimmungen in einem anderen Bereich: %{heading_link}"
+        check_ballot: Meine Abstimmung überprüfen
+        different_heading_assigned_html: "Sie haben bereits in einem anderen Bereich: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
         check_ballot_link: "Überprüfung meiner Abstimmung"
-        price: "Diese Rubrik verfügt über ein Budget von"
+        price: "Diese Rubrik verfügt über einen Haushalt von"
     progress_bar:
       assigned: "Sie haben zugeordnet: "
       available: "Verfügbare Haushaltsmittel: "
     show:
       group: Gruppe
       phase: Aktuelle Phase
-      unfeasible_title: undurchführbare Investitionen
-      unfeasible: Undurchführbare Investitionen anzeigen
-      unselected_title: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden
-      unselected: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
+      unfeasible_title: Nicht durchführbare Ausgabenvorschläge
+      unfeasible: Nicht durchführbare Investitionen anzeigen
+      unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
+      unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
       see_results: Ergebnisse anzeigen
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"
-      heading: "Ergebnisse der partizipativen Haushaltsmittel"
-      heading_selection_title: "Nach Stadtteil"
+      heading: "Ergebnisse des Bürgerhaushalts"
+      heading_selection_title: "Nach Bezirk"
       spending_proposal: Titel des Vorschlages
-      hide_discarded_link: Ausblendung löschen
+      ballot_lines_count: Stimmen
+      hide_discarded_link: Verworfene ausblenden
       show_all_link: Alle anzeigen
-      price: Preis
+      price: Kosten
       amount_available: Verfügbare Haushaltsmittel
       accepted: "Zugesagter Ausgabenvorschlag:"
       discarded: "Gelöschter Ausgabenvorschlag: "
