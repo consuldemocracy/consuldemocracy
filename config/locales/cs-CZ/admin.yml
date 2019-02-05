@@ -226,6 +226,9 @@ cs:
     polls:
       index:
         title: "List of active polls"
+      new:
+        show_results_and_stats: "Zobrazit výsledky a statistiky"
+        show_stats: "Zobrazit statistiky"
     questions:
       show:
         answers:
@@ -280,15 +283,41 @@ cs:
       show:
         stats_title: Statistiky
         summary:
+          comment_votes: Hlasů ke komentářům
+          comments: Komentáře
+          debate_votes: Hlasů k debatám
           debates: Debaty
+          proposal_votes: Hlasů k návrhům
           proposals: Návrhy
+          budget_investments: Investiční projekty
           unverified_users: Neověření uživatelé
           user_level_three: Počet uživatelů třetí úrovně
           user_level_two: Počet uživatelů druhé úrovně
           users: Počet uživatelů
           verified_users: Ověření uživatelé
           verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
+          visits: Návštěvy
+          votes: Hlasů celkem
         visits_title: Návštěvy
+        direct_messages: Soukromé zprávy
+        incomplete_verifications: Neúplné ověření
+        polls: Průzkumy
+      direct_messages:
+        title: Soukromé zprávy
+        total: Celkem
+        users_who_have_sent_message: Uživatelé, kteří poslali soukromou zprávu
+      proposal_notifications:
+        title: Upozornění k návrhům
+        total: Celkem
+        proposals_with_notifications: Návrhy s oznámeními
+        not_available: "Návrh není k dispozici"
+      polls:
+        title: Statistiky průzkumu
+        all: Průzkumy
+        web_participants: Respondenti z webu
+        total_participants: Celkový počet respondentů
+        table:
+          question_name: Otázky
     site_customization:
       content_blocks:
         about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
