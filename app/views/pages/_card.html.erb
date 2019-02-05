@@ -1,4 +1,5 @@
-<div id="<%= dom_id(card) %>" class="card small-12 medium-6 column margin-bottom end large-4" data-equalizer-watch>
+<div id="<%= dom_id(card) %>"
+     class="card small-12 medium-<%= card.columns %> column margin-bottom end" data-equalizer-watch>
   <%= link_to card.link_url do %>
     <figure class="figure-card">
       <div class="gradient"></div>
@@ -6,7 +7,10 @@
         <%= image_tag(card.image_url(:large), alt: card.image.title) %>
       <% end %>
       <figcaption>
-        <span><%= card.label %></span><br>
+        <% if card.label.present? %>
+          <span><%= card.label %></span>
+        <% end %>
+        <br>
         <h3><%= card.title %></h3>
       </figcaption>
     </figure>
