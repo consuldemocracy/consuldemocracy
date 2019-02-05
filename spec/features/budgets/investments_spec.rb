@@ -1513,6 +1513,39 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario "Highlight voted heading except with unfeasible filter", :js do
+      budget.update(phase: "balloting")
+      user = create(:user, :level_two)
+
+      heading_1 = create(:budget_heading, group: group, name: "Heading 1")
+      heading_2 = create(:budget_heading, group: group, name: "Heading 2")
+      investment = create(:budget_investment, :selected, heading: heading_1)
+
+      login_as(user)
+      visit budget_path(budget)
+
+      click_link "Health"
+      click_link "Heading 1"
+
+      add_to_ballot(investment)
+
+      visit budget_group_path(budget, group)
+
+      expect(page).to have_css("#budget_heading_#{heading_1.id}.is-active")
+      expect(page).to have_css("#budget_heading_#{heading_2.id}")
+
+      visit budget_group_path(budget, group)
+
+      click_link "See unfeasible investments"
+      click_link "Health"
+
+      within("#headings") do
+        expect(page).to have_css("#budget_heading_#{heading_1.id}")
+        expect(page).to have_css("#budget_heading_#{heading_2.id}")
+        expect(page).not_to have_css(".is-active")
+      end
+    end
+
     scenario 'Ballot is visible' do
       login_as(author)
 
