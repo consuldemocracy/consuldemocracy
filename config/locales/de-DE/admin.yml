@@ -833,15 +833,15 @@ de:
         delete: Amt löschen
         name: Name
         email: E-Mail
-        entry_name: Wahlvorsteher*in
+        entry_name: Beamter/in
       search:
         email_placeholder: Benutzer*in via E-Mail suchen
         search: Suchen
         user_not_found: Benutzer*in wurde nicht gefunden
     poll_officer_assignments:
       index:
-        officers_title: "Liste der zugewiesenen Wahlvorsteher*innen"
-        no_officers: "Dieser Abstimmung sind keine Wahlvorsteher*innen zugeordnet."
+        officers_title: "Liste der zugewiesenen Beamt*innen"
+        no_officers: "Dieser Abstimmung sind keine Beamt*innen zugeordnet."
         table_name: "Name"
         table_email: "E-Mail"
       by_officer:
