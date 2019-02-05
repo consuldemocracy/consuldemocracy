@@ -16,6 +16,9 @@ val:
       milestone/status:
         one: "Estat de la Fita"
         other: "Estats de la Fita"
+      progress_bar:
+        one: "Barra de progrés"
+        other: "Barres de progrés"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -136,6 +139,13 @@ val:
       milestone/status:
         name: "Nom"
         description: "Descripció (opcional)"
+      progress_bar:
+        kind: "Tipus"
+        title: "Títol"
+        percentage: "Progrés actual"
+      progress_bar/kind:
+        primary: "Primari"
+        secondary: "Secondari"
       budget/heading:
         name: "Nom de la partida"
         price: "Cost"
