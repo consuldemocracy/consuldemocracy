@@ -1,4 +1,16 @@
 cs:
   settings:
+    place_name: "Místo"
+    map_latitude: "Zeměpisná šířka"
+    map_longitude: "Zeměpisná délka"
+    map_zoom: "Zvětšení"
     feature:
       budgets: "Participativní rozpočet"
+      proposals: "Návrhy"
+      featured_proposals: "Doporučené návrhy"
+      user:
+        recommendations_on_debates: "Doporučení k debatám"
+        recommendations_on_proposals: "Doporučení k návrhům"
+      public_stats: "Veřejné statistiky"
+      public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
+      help_page: "Stránka nápovědy"
