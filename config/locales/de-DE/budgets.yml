@@ -113,23 +113,24 @@ de:
         price_explanation: Erläuterung der Kosten
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
         code_html: 'Code des Ausgabenvorschlags: <strong>%{code}</strong>'
-        location_html: 'Lage: <strong>%{location}</strong>'
-        organization_name_html: 'Vorgeschlagen im Namen von: <strong>%{name}</strong>'
+        location_html: 'Standort: <strong>%{location}</strong>'
+        organization_name_html: 'Vorgeschlagen von: <strong>%{name}</strong>'
         share: Teilen
-        title: Investitionsprojekt
-        supports: Unterstützung
+        title: Ausgabenvorschlag
+        supports: Unterstützer*innen
         votes: Stimmen
-        price: Preis
+        price: Kosten
         comments_tab: Kommentare
         milestones_tab: Meilensteine
-        author: Autor
-        project_unfeasible_html: 'Dieses Investitionsprojekt <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
-        project_selected_html: 'Dieses Investitionsprojekt wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
-        project_winner: 'Siegreiches Investitionsprojekt'
-        project_not_selected_html: 'Dieses Investitionsprojekt wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt.'
+        author: Verfasser*in
+        project_unfeasible_html: 'Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
+        project_selected_html: 'Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
+        project_winner: 'Best bewerteter Ausgabenvorschlag'
+        project_not_selected_html: 'Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt.'
+        see_price_explanation: Erläuterung der Kosten anzeigen
       wrong_price_format: Nur ganze Zahlen
       investment:
-        add: Abstimmung
+        add: Abstimmen
         already_added: Sie haben dieses Investitionsprojekt schon hinzugefügt
         already_supported: Sie haben dieses Investitionsprojekt bereits unterstützt. Teilen Sie es!
         support_title: Unterstützen Sie dieses Projekt
