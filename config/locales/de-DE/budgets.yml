@@ -95,21 +95,24 @@ de:
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
           verify_account: "Verifizieren Sie Ihr Benutzer*innenkonto"
           create: "Ausgabenvorschlag erstellen"
-          not_logged_in: "Um ein neues Budget zu erstellen, müssen Sie %{sign_in} oder %{sign_up}."
-          sign_in: "anmelden"
-          sign_up: "registrieren"
+          not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
+          sign_in: "Anmelden"
+          sign_up: "Registrieren"
           by_feasibility: Nach Durchführbarkeit
           feasible: Durchführbare Projekte
-          unfeasible: Undurchführbare Projekte
+          unfeasible: Nicht durchführbare Projekte
         orders:
           random: zufällig
           confidence_score: am besten bewertet
           price: nach Preis
+      share:
+        message: "Ich habe einen Ausgabenvorschlag %{title} in %{org} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
+        message_mobile: "Ich habe einen Ausgabenvorschlag %{title} in %{handle} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
-        author_deleted: Benutzer gelöscht
-        price_explanation: Preiserklärung
+        author_deleted: Benutzer*in gelöscht
+        price_explanation: Erläuterung der Kosten
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
-        code_html: 'Investitionsprojektcode: <strong>%{code}</strong>'
+        code_html: 'Code des Ausgabenvorschlags: <strong>%{code}</strong>'
         location_html: 'Lage: <strong>%{location}</strong>'
         organization_name_html: 'Vorgeschlagen im Namen von: <strong>%{name}</strong>'
         share: Teilen
