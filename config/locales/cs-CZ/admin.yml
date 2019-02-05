@@ -209,6 +209,8 @@ cs:
           comments_count: Počet komentářů
         question_option_fields:
           remove_option: Odstranit možnost
+    menu:
+      stats: Statistiky
     admin_notifications:
       index:
         section_title: Upozornění
@@ -274,6 +276,19 @@ cs:
       show:
         documents: Dokumenty
         document_count: "Počet dokumentů:"
+    stats:
+      show:
+        stats_title: Statistiky
+        summary:
+          debates: Debaty
+          proposals: Návrhy
+          unverified_users: Neověření uživatelé
+          user_level_three: Počet uživatelů třetí úrovně
+          user_level_two: Počet uživatelů druhé úrovně
+          users: Počet uživatelů
+          verified_users: Ověření uživatelé
+          verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
+        visits_title: Návštěvy
     site_customization:
       content_blocks:
         about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
