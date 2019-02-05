@@ -1325,7 +1325,7 @@ de:
         visits_title: Besuche
         direct_messages: Direktnachrichten
         proposal_notifications: Benachrichtigungen zu einem Vorschlag
-        incomplete_verifications: Unvollständige Überprüfungen
+        incomplete_verifications: Unvollständige Verifizierungen
         polls: Abstimmungen
       direct_messages:
         title: Direktnachrichten
@@ -1339,13 +1339,13 @@ de:
       polls:
         title: Abstimmungsstatistik
         all: Abstimmungen
-        web_participants: Web-Teilnehmer*innen
+        web_participants: Online-Teilnehmer*innen
         total_participants: Gesamtanzahl Teilnehmer*innen
         poll_questions: "Fragen der Abstimmung: %{poll}"
         table:
           poll_name: Abstimmung
           question_name: Frage
-          origin_web: Web-Teilnehmer*innen
+          origin_web: Online-Teilnehmer*innen
           origin_total: Gesamtanzahl Teilnehmer*innen
     tags:
       create: Thema erstellen
@@ -1368,17 +1368,18 @@ de:
         title: Benutzer*innen
         no_users: Keine Benutzer*innen vorhanden.
       search:
-        placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis suchen
+        placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis
         search: Suchen
     verifications:
       index:
         phone_not_given: Telefon nicht angegeben
-        sms_code_not_confirmed: Der SMS-Code konnte nicht bestätigt werden
-        title: Unvollständige Überprüfungen
+        sms_code_not_confirmed: Der SMS-Code wurde nicht bestätigt
+        title: Unvollständige Verifizierungen
     site_customization:
       content_blocks:
         information: Informationen zu Inhaltsblöcken
         about: "Sie können HTML-Inhaltsblöcke erstellen, die in die Kopf- oder Fußzeile von CONSUL eingefügt werden."
+        html_format: "Ein Inhaltsblock ist eine Gruppe von Links und muss diesem Format folgen:"
         no_blocks: "Keine Inhaltsblöcke vorhanden."
         create:
           notice: Inhaltsblock erfolgreich erstellt
