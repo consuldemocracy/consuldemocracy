@@ -847,8 +847,8 @@ de:
       by_officer:
         date: "Datum"
         booth: "Wahlkabine"
-        assignments: "Der/Die Wahlvorsteher*in wechselt in dieser Abstimmung"
-        no_assignments: "In dieser Abstimmung gibt es keinen Schichtwechsel des/der Wahlvorsteher*in."
+        assignments: "Amtswechsel in dieser Abstimmung"
+        no_assignments: "In dieser Abstimmung gibt es keinen Amtswechsel."
     poll_shifts:
       new:
         add_shift: "Arbeitsschicht hinzufügen"
@@ -859,11 +859,11 @@ de:
         edit_shifts: Arbeitsschicht zuordnen
         new_shift: "Neue Arbeitsschicht"
         no_shifts: "Dieser Wahlkabine wurden keine Arbeitsschichten zugeordnet"
-        officer: "Wahlvorsteher*in"
+        officer: "Beamter/in"
         remove_shift: "Entfernen"
         search_officer_button: Suchen
-        search_officer_placeholder: Wahlvorsteher*in suchen
-        search_officer_text: Nach Wahlvorsteher*in suchen, um Arbeitsschicht zuzuordnen
+        search_officer_placeholder: Suche nach Beamter/in
+        search_officer_text: Suche nach Beamter/in, um neue Arbeitsschicht zuzuordnen
         select_date: "Tag auswählen"
         no_voting_days: "Abstimmungsphase beendet"
         select_task: "Aufgabe auswählen"
@@ -871,33 +871,33 @@ de:
         table_email: "E-Mail"
         table_name: "Name"
       flash:
-        create: "Arbeitsschicht für Wahlvorsteher*in hinzugefügt"
-        destroy: "Arbeitsschicht für Wahlvorsteher*in entfernt"
-        date_missing: "Ein Datum muss ausgewählt werden"
+        create: "Arbeitsschicht für Beamten/in hinzugefügt"
+        destroy: "Arbeitsschicht für Beamten/in entfernt"
+        date_missing: "Es muss ein Datum gewählt werden"
       vote_collection: Stimmen sammeln
       recount_scrutiny: Nachzählung & Kontrolle
     booth_assignments:
-      manage_assignments: Zuordnungen verwalten
+      manage_assignments: Zuweisungen verwalten
       manage:
-        assignments_list: "Zuweisungen für Umfrage \"%{poll}\""
+        assignments_list: "Zuweisungen für Abstimmung \"%{poll}\""
         status:
-          assign_status: Zuordnung
-          assigned: Zugeordnet
-          unassigned: Nicht zugeordnet
+          assign_status: Zuweisung
+          assigned: Zugewiesen
+          unassigned: Nicht zugewiesen
         actions:
-          assign: Wahlurne zuordnen
-          unassign: Zuweisung der Wahlurne aufheben
+          assign: Wahlkabine zuweisen
+          unassign: Zuweisung der Wahlkabine aufheben
     poll_booth_assignments:
       alert:
-        shifts: "Dieser Wahlurne sind bereits Arbeitsschichten zugeordnet. Wenn Sie die Urnenzuweisung entfernen, werden die Arbeitsschichten gelöscht. Wollen Sie dennoch fortfahren?"
+        shifts: "Dieser Wahlkabine sind bereits Arbeitsschichten zugeordnet. Wenn Sie die Zuweisung entfernen, werden die Arbeitsschichten gelöscht. Wollen Sie dennoch fortfahren?"
       flash:
-        destroy: "Wahlurne nicht mehr zugeordnet"
-        create: "Wahlurne zugeordnet"
-        error_destroy: "Ein Fehler trat auf, als die Zuweisung zur Wahlkabine zurückgezogen wurde"
-        error_create: "Beim Aufheben der Zuweisung der Wahlurne ist ein Fehler aufgetreten"
+        destroy: "Wahlkabine nicht mehr zugewiesen"
+        create: "Wahlkabine zugewiesen"
+        error_destroy: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
+        error_create: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
       show:
         location: "Standort"
-        officers: "Wahlvorsteher*innen"
+        officers: "Beamte*innen"
         officers_list: "Liste der Wahlvorsteher*innen für diese Wahlurne"
         no_officers: "Es gibt keine Wahlvorsteher*innen für diese Wahlurne"
         recounts: "Nachzählungen"
