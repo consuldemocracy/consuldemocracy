@@ -2,18 +2,18 @@ de:
   budgets:
     ballots:
       show:
-        title: Ihre Abstimmung
-        amount_spent: Ausgaben
-        remaining: "Sie können noch <span>%{amount}</span> investieren."
+        title: Mein Stimme
+        amount_spent: Gesamtausgaben
+        remaining: "Sie können noch <span>%{amount}</span> ausgeben."
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
         voted_html:
           one: "Sie haben über <span>einen</span> Vorschlag abgestimmt."
           other: "Sie haben über <span>%{count}</span> Vorschläge abgestimmt."
-        voted_info_html: "Sie können Ihre Stimme bis zum Ende dieser Phase jederzeit ändern. <br> Sie müssen nicht das gesamte verfügbare Geld ausgeben."
+        voted_info_html: "Sie können Ihre Stimme bis zur Schließung dieser Phase jederzeit ändern. <br> Sie müssen nicht sämtliches verfügbares Geld ausgeben."
         zero: Sie haben noch nicht für einen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
-        not_logged_in: Sie müssen %{signin} oder %{signup} um fortfahren zu können.
+        not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
         not_verified: Nur verifizierte NutzerInnen können für Investitionen abstimmen; %{verify_account}.
         organization: Organisationen dürfen nicht abstimmen
         not_selected: Nicht ausgewählte Investitionen können nicht unterstützt werden
