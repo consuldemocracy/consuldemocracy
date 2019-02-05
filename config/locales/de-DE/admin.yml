@@ -841,7 +841,7 @@ de:
     poll_officer_assignments:
       index:
         officers_title: "Liste der zugewiesenen Beamt*innen"
-        no_officers: "Dieser Abstimmung sind keine Beamt*innen zugeordnet."
+        no_officers: "Dieser Abstimmung sind keine Beamten/innen zugeordnet."
         table_name: "Name"
         table_email: "E-Mail"
       by_officer:
@@ -862,7 +862,7 @@ de:
         officer: "Beamter/in"
         remove_shift: "Entfernen"
         search_officer_button: Suchen
-        search_officer_placeholder: Suche nach Beamter/in
+        search_officer_placeholder: Suche nach Beamten/in
         search_officer_text: Suche nach Beamter/in, um neue Arbeitsschicht zuzuordnen
         select_date: "Tag auswählen"
         no_voting_days: "Abstimmungsphase beendet"
