@@ -1,1 +1,5 @@
 cs:
+  verification:
+    verified_user:
+      show:
+        phone_title: Telefonní čísla
