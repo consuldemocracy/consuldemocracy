@@ -8,7 +8,7 @@ val:
       area: 'Àrea: '
       view_all: Vore totes les propostes
       all_headings: Totes les propostes
-      view_by_areas: Vore per àrees
+      view_by_areas: Tria l'àrea en que vols fer la proposta
     investments:
       form:
         area: 'Àrea'

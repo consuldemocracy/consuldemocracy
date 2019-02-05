@@ -8,7 +8,7 @@ es:
       area: 'Área: '
       view_all: Ver todas las propuestas
       all_headings: Todas las propuestas
-      view_by_areas: Ver por áreas
+      view_by_areas: Escoge el área en que quieres hacer la propuesta
     investments:
       show:
         title: Propuesta de inversión

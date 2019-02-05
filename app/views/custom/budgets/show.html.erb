@@ -30,20 +30,33 @@
   <div class="row margin">
     <div class="small-12 medium-12 large-12 column">
       <h2><%= t("budgets.show.view_by_areas") %></h2>
-      <div class="row" data-equalizer-on="medium" data-equalizer>
-        <% Area.all.each do |area| %>
-          <div class="small-12 medium-6 large-4 column end margin-bottom">
-            <div class="budget-execution">
-              <%= link_to budget_investments_path(@budget, area_id: area.id, order: 'random', anchor: "tab-milestones"), data: { 'equalizer-watch': true } do %>
-                <%= render 'image', area: area %>
-                <div class="budget-execution-info">
+      <% Area.all.in_groups_of(3, false).each do |grupo_area| %>
+        <div class="row">
+          <% grupo_area.each do |area| %>
+            <div class="small-12 medium-6 large-4 column end margin-bottom">
+              <div class="budget-execution">
+                <%= link_to "#", data: {toggle: "lista_subareas_#{area.id}"} do %>
+                  <%= render 'image', area: area %>
+                  <div class="budget-execution-info">
                     <h5><%= area.name %></h5>
+                  </div>
+                <% end %>
+                <div id="lista_subareas_<%= area.id %>" class="is-hidden" data-toggler="is-hidden">
+                  <ul class="no-bullet">
+                    <% area.sub_areas.each do |sub_area|%>
+                      <li>
+                        <%= link_to budget_investments_path(@budget, area_id: area.id, sub_area_id: sub_area.id, order: 'random') do %>
+                          <%= sub_area.name %>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
                 </div>
-              <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

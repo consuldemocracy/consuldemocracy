@@ -9,7 +9,8 @@
       <% end %>
     </div>
     <div class="small-10 medium-7 large-7 columns">
-      <%= f.select :sub_area_id, custom_sub_area_select_options(@area_id), { include_blank: true, label: t("budgets.investments.form.sub_area") } %>
+      <%= f.text_field :sub_area_name, disabled: true, value: @sub_area.name, label: t("budgets.investments.form.sub_area")  %>
+      <%= f.hidden_field :sub_area_id, value: params[:sub_area_id]%>
     </div>
     <% if @investment.budget.only_heading.present? %>
       <%= f.hidden_field :heading_id, value: @investment.budget.only_heading.id %>
@@ -70,25 +71,27 @@
       <%= f.text_field :location, label: false %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
+    <% unless @budget.areas %>
+      <div class="small-12 column">
+        <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+        <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
 
-      <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
-        <% @categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= t(tag.name) %></a>
-        <% end %>
+        <div id="category_tags" class="tags">
+          <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
+          <% @categories.each do |tag| %>
+            <a class="js-add-tag-link"><%= t(tag.name) %></a>
+          <% end %>
+        </div>
+
+        <br>
+        <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
+                          label: false,
+                          placeholder: t("budgets.investments.form.tags_placeholder"),
+                          aria: {describedby: "tags-list-help-text"},
+                          class: 'js-tag-list tag-autocomplete',
+                          data: {js_url: suggest_tags_path} %>
       </div>
-
-      <br>
-      <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
-                        label: false,
-                        placeholder: t("budgets.investments.form.tags_placeholder"),
-                        aria: {describedby: "tags-list-help-text"},
-                        class: 'js-tag-list tag-autocomplete',
-                        data: {js_url: suggest_tags_path} %>
-    </div>
+    <% end %>
 
     <%# unless current_user.manager? %>
       <div class="small-12 column">

@@ -160,8 +160,8 @@ module Budgets
     end
 
     def load_area
-      @area_id = params[:area_id] ? params[:area_id] : nil
-      @area = @area_id ? Area.find(@area_id) : nil
+      @area = Area.find(params[:area_id]) if params[:area_id]
+      @sub_area = SubArea.find(params[:sub_area_id]) if params[:sub_area_id]
     end
 
     def load_geozone
@@ -185,9 +185,11 @@ module Budgets
     end
 
     def locate(tag_string)
-      array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
-      array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
-      array_tags.join(',')
+      if tag_string
+        array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
+        array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
+        array_tags.join(',')
+      end
     end
 
     def add_organization(tag_string)

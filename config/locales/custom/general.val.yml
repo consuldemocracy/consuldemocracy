@@ -7,3 +7,8 @@ val:
   votes:
     budget_investments:
       quota_exceeded: Ja has avalat les propostes permeses
+
+
+  shared:
+    tags_cloud:
+      areas: Àrees

@@ -63,7 +63,6 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    #scope :sort_by_random,           -> { reorder("RANDOM()") }
     scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
     scope :sort_by_created_at, -> {reorder(:created_at)}
 
@@ -120,6 +119,8 @@ class Budget
     after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+
+    delegate :name, to: :sub_area, prefix: true, allow_nil: true
 
     def mark_unfeasible
       feasibility = 'unfeasible'

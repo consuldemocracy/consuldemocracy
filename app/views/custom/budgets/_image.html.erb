@@ -1,7 +1,5 @@
 <% if area.image.present? %>
   <%= image_tag area.image_url(:large), alt: area.image.title %>
-<% elsif area.image.present? %>
-  <%= image_tag area.image_url(:large), alt: area.image.title %>
 <% else %>
   <%= image_tag "budget_execution_no_image.jpg", alt: area.name %>
 <% end %>

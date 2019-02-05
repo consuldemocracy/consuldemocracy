@@ -1,3 +1,17 @@
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: budget_investments_path(investment),
+            social_title: investment.title,
+            social_description: investment.description,
+            twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
+            og_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil) %>
+<% end %>
+
+<% cache [locale_and_user_status(investment),
+          investment,
+          investment.author,
+          Flag.flagged?(current_user, investment),
+          @investment_votes] do %>
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
   <div class="row">
     <div class="small-12 medium-9 column">
@@ -8,27 +22,44 @@
       <%   filter = 'unselected_by_assembly' %>
       <% end                                 %>
 
-      <% if request.referer.blank? %>
-        <%= link_to(t("shared.back"), budget_investments_path(investment.budget, heading_id: investment.heading, filter: filter, order: 'random'), class: 'back') %>
-      <% else %>
-        <%= link_to(t("shared.back"), request.referer, class: 'back') %>
+      <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading, area_id: investment&.sub_area&.area&.id, sub_area_id: investment&.sub_area_id) %>
+      <h1><%= investment.title %></h1>
+      <% if @budget.areas %>
+        <h2>
+          <%= investment.area.name %>
+          <small><%= investment.sub_area.name %></small>
+
+        </h2>
+
+
       <% end %>
 
-      <h1><%= investment.title %></h1>
-
-      <div class="budget-investment-info">
-        <%= render '/shared/author_info', resource: investment %>
-
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= l investment.created_at.to_date %>
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= investment.heading.name %>
-      </div>
-
+        <div class="budget-investment-info">
+          <%= render '/shared/author_info', resource: investment %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= l investment.created_at.to_date %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= investment.heading.name %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="js-flag-actions">
+            <%= render 'budgets/investments/flag_actions', investment: @investment %>
+          </span>
+        </div>
       <br>
+
+      <%= render_image(investment.image, :large, true) if investment.image.present? %>
+
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
+
+        <%= safe_html_with_links investment.description.html_safe %>
+
+        <% if feature?(:map) && map_location_available?(@investment.map_location) %>
+          <div class="margin">
+            <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+          </div>
+        <% end %>
 
       <% if investment.location.present? %>
         <p>
@@ -42,6 +73,12 @@
         </p>
       <% end %>
 
+        <% if feature?(:allow_attached_documents) %>
+          <%= render 'documents/documents',
+                      documents: investment.documents,
+                      max_documents_allowed: Budget::Investment.max_documents_allowed %>
+        <% end %>
+
       <%= render 'shared/tags', taggable: investment %>
 
       <%= safe_html_with_links investment.description.html_safe %>
@@ -52,17 +89,36 @@
         </div>
       <% end %>
 
-      <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
+      <% if investment.should_show_unfeasibility_explanation? %>
         <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
 
-      <% if investment.feasible? && investment.price_explanation.present? %>
-        <h2><%= t('budgets.investments.show.price_explanation') %></h2>
+      <% if investment.should_show_price_explanation? %>
+          <h2 id="price_explanation" data-magellan-target="price_explanation">
+            <%= t("budgets.investments.show.price_explanation") %>
+          </h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
+        <%# render 'relationable/related_content', relationable: @investment %>
+
+        <div class="js-moderator-investment-actions margin">
+          <%= render "budgets/investments/actions", investment: @investment %>
+        </div>
     </div>
     <aside class="small-12 medium-3 column">
+        <% if can_destroy_image?(investment) %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.author") %></h2>
+          <div class="show-actions-menu">
+            <%= link_to image_path(investment.image, from: request.url),
+                        method: :delete,
+                        class: 'button hollow alert expanded' do %>
+                <span class="icon-image"></span>
+                <%= t("images.remove_image") %>
+            <% end %>
+          </div>
+        <% end %>
       <% if investment.should_show_aside? %>
         <% if false && investment.selected? %>
             <div class="supports js-participation">
@@ -102,27 +158,72 @@
             </div>
           </div>
         <% end %>
-      <% else %>
-        <div class="float-right">
-          <span class="label-budget-investment float-left">
-            <%= t("budgets.investments.show.title") %>
-          </span>
-          <span class="icon-budget"></span>
-        </div>
-        <br>
       <% end %>
-      <div id="social-share" class="sidebar-divider"></div>
-      <% if false %>
-        <h2><%= t("budgets.investments.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
+
+        <% if investment.unfeasible? %>
+          <div class="callout warning">
+            <%= t("budgets.investments.show.project_unfeasible_html") %>
+          </div>
+        <% elsif investment.winner? %>
+          <div class="callout success">
+            <strong><%= t("budgets.investments.show.project_winner") %></strong>
+          </div>
+        <% elsif investment.selected? %>
+          <div class="callout success">
+            <%= t("budgets.investments.show.project_selected_html") %>
+          </div>
+        <% elsif @budget.balloting_or_later? %>
+          <div class="callout warning">
+            <%= t("budgets.investments.show.project_not_selected_html") %>
+          </div>
+        <% else %>
+          <br>
+          <div class="float-right">
+            <span class="label-budget-investment float-left">
+              <%= t("budgets.investments.show.title") %>
+            </span>
+            <span class="icon-budget"></span>
+          </div>
+        <% end %>
+        <% if investment.should_show_price? %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.price") %></h2>
+          <div class="supports text-center">
+            <p class="investment-project-amount">
+              <%= investment.formatted_price %>
+            </p>
+          </div>
+          <% if investment.should_show_price_explanation? %>
+            <div class="text-center" data-magellan>
+              <%= link_to t("budgets.investments.show.see_price_explanation"),
+                            "#price_explanation", class: "small" %>
+            </div>
           <% end %>
-        </div>
-      <% end %>
+        <% end %>
+
+
+
+        <%= render 'shared/social_share',
+          share_title: t("budgets.investments.show.share"),
+          title: investment.title,
+          image_url: image_absolute_url(investment.image, :thumb),
+          url: budget_investment_url(investment.budget, investment),
+          description: t("budgets.investments.share.message",
+                          title: investment.title,
+                          org: setting['org_name']),
+          mobile: t("budgets.investments.share.message_mobile",
+                     title: investment.title,
+                     handle: setting['twitter_handle']) %>
+
+        <% if current_user %>
+          <div class="sidebar-divider"></div>
+          <p class="sidebar-title"><%= t("shared.follow") %></p>
+
+          <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
+        <% end %>
+
+        <%= render 'communities/access_button', community: investment.community %>
      </aside>
   </div>
 </section>
+<% end %>

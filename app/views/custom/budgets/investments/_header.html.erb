@@ -40,8 +40,8 @@
 
               <% if can?(:new, Budget::Investment) && current_user.can_create_investments(@budget) %>
                 <% if current_user.phone_number? %>
-                  <% if @area_id.present? %>
-                    <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area_id), class: "button margin-top expanded" %>
+                  <% if @area.present? && @sub_area.present? %>
+                    <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area.id, sub_area_id: @sub_area.id), class: "button margin-top expanded" %>
                   <% else %>
                     <div class="callout warning margin-top">
                       <%= t("budgets.investments.index.sidebar.required_area",
@@ -49,7 +49,7 @@
                     </div>
                   <% end %>
                 <% else %>
-                  <% session[:area_id] = @area_id %>
+                  <% session[:area_id] = @area.id %>
                   <div class="callout warning margin-top">
                     <%= t("budgets.investments.index.sidebar.required_phone",
                           your_phone_number: link_to(t("budgets.investments.index.sidebar.your_phone_number"), account_path)).html_safe %>
