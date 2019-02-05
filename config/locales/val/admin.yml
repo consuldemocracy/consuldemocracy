@@ -332,6 +332,11 @@ val:
         notice: Estat de la proposta creat correctament
       delete:
         notice: Estat de la proposta esborrat correctament
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "Tipus"
+        table_title: "Títol"
     comments:
       index:
         filter: Filtre
@@ -415,6 +420,7 @@ val:
           homepage: Descripció
           homepage_description: Ací pots explicar el contingut del procés
           homepage_enabled: Pàgina principal habilitada
+          banner_font_color: Color de font
         index:
           create: Nou procés
           delete: Eliminar
