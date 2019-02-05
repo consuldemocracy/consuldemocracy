@@ -15,16 +15,39 @@ cs:
       configure: Nastavení
       delete: Smazat
     banners:
+      index:
+        title: Bannery
+        create: Vytvořit banner
+        edit: Upravit banner
+        delete: Odstranit banner
+        filters:
+          all: Vše
+          with_active: Aktivní
+          with_inactive: Neaktivní
+        preview: Náhled
       banner:
         title: Název
+        description: Popis
+        target_url: Odkaz
         sections:
+          homepage: Úvodní strana
           debates: Debaty
+          proposals: Návrhy
+          help_page: Stránka nápovědy
+        background_color: Barva pozadí
+        font_color: Barva písma
       edit:
+        editing: Upravit banner
         form:
           submit_button: Uložit změny
+      new:
+        creating: Vytvořit banner
     activity:
       show:
+        action: Akce
+        filter: Zobrazit
         filters:
+          all: Vše
           on_comments: Komentáře
           on_debates: Debaty
           on_proposals: Návrhy
@@ -32,8 +55,39 @@ cs:
           on_system_emails: Systémové maily
         title: Aktivity moderátora
         type: Typ
+        no_activity: Neexistují žádná aktivity moderátorů.
+    budgets:
+      index:
+        filter: Filtr
+        filters:
+          open: Otevřené
+          finished: Dokončené
+        budget_investments: Správa projektů
+        table_name: Název
+        table_phase: Fáze
+        table_investments: Investice
+        table_edit_groups: Záhlaví skupiny
+        table_edit_budget: Upravit
+        edit_groups: Upravit záhlaví skupiny
+        edit_budget: Upravit rozpočet
+        no_budgets: "Neexistují žádné otevřené rozpočty."
+      edit:
+        phase: Fáze
+    budget_headings:
+      destroy:
+        unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
+      form:
+        name: "Název záhlaví"
+        amount: "Množství"
+        population: "Počet obyvatel (volitelné)"
+        latitude: "Zeměpisná šířka (volitelné)"
+        longitude: "Zeměpisná šířka (volitelné)"
     budget_phases:
       edit:
+        start_date: Počáteční datum
+        end_date: Konečné datum
+        summary: Souhrn
+        description: Popis
         save_changes: Uložit změny
     budget_investments:
       index:
