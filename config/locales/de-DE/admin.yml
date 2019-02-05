@@ -1404,6 +1404,7 @@ de:
           body: Inhalt
           name: Name
           names:
+            top_links: Top Links
             footer: Fußzeile
       images:
         index:
@@ -1447,13 +1448,32 @@ de:
           status_draft: Entwurf
           status_published: Veröffentlicht
           title: Titel
+          slug: URL
+          cards_title: Karten
+          see_cards: Karten anzeigen
+        cards:
+          cards_title: Karten
+          create_card: Karte erstellen
+          no_cards: Keine Karten vorhanden.
+          title: Titel
+          description: Beschreibung
+          link_text: Linktext
+          link_url: URL des Links
+          create:
+            notice: "Erfolg"
+          update:
+            notice: "Aktualisiert"
+          destroy:
+            notice: "Entfernt"
     homepage:
       title: Homepage
       description: Die aktiven Module erscheinen auf der Startseite in derselben Reihenfolge wie hier.
       header_title: Kopfzeile
+      no_header: Keine Kopfzeilen vorhanden.
       create_header: Kopfzeile erstellen
       cards_title: Karten
       create_card: Karte erstellen
+      no_cards: Keine Karten vorhanden.
       cards:
         title: Titel
         description: Beschreibung
