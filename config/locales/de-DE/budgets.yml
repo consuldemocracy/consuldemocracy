@@ -11,43 +11,43 @@ de:
           one: "Sie haben über <span>einen</span> Vorschlag abgestimmt."
           other: "Sie haben über <span>%{count}</span> Vorschläge abgestimmt."
         voted_info_html: "Sie können Ihre Stimme bis zur Schließung dieser Phase jederzeit ändern. <br> Sie müssen nicht sämtliches verfügbares Geld ausgeben."
-        zero: Sie haben noch nicht für einen Ausgabenvorschlag abgestimmt.
+        zero: Sie haben noch über keinen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
         not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
-        not_verified: Nur verifizierte NutzerInnen können für Investitionen abstimmen; %{verify_account}.
-        organization: Organisationen dürfen nicht abstimmen
-        not_selected: Nicht ausgewählte Investitionen können nicht unterstützt werden
-        not_enough_money_html: "Sie haben bereits das verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
-        no_ballots_allowed: Auswahlphase ist abgeschlossen
-        different_heading_assigned_html: "Sie haben bereits eine andere Rubrik gewählt: %{heading_link}"
-        change_ballot: Ändern Sie Ihre Stimmen
+        not_verified: Nur verifizierte Benutzer*innen können über einen Ausgabenvorschlag abstimmen; %{verify_account}.
+        organization: Organisationen ist es nicht erlaubt abzustimmen
+        not_selected: Für nicht durchführbare Ausgabevorschläge kann nicht abgestimmt werden
+        not_enough_money_html: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
+        no_ballots_allowed: Die Auswahlphase ist abgeschlossen
+        different_heading_assigned_html: "Sie haben bereits für eine andere Rubrik gestimmt: %{heading_link}"
+        change_ballot: Ändern Sie Ihre Wahl
     groups:
       show:
         title: Wählen Sie eine Option
-        unfeasible_title: undurchführbare Investitionen
-        unfeasible: Undurchführbare Investitionen anzeigen
-        unselected_title: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden
-        unselected: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
+        unfeasible_title: Nicht durchführbare Ausgabenvorschläge
+        unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
+        unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
+        unselected: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben, anzeigen
     phase:
       drafting: Entwurf (nicht für die Öffentlichkeit sichtbar)
       informing: Informationen
-      accepting: Projekte annehmen
+      accepting: Projekte vorschlagen
       reviewing: Interne Überprüfung der Projekte
-      selecting: Projekte auswählen
-      valuating: Projekte bewerten
+      selecting: Auswahlphase
+      valuating: Projekte begutachten
       publishing_prices: Preise der Projekte veröffentlichen
       balloting: Abstimmung für Projekte
-      reviewing_ballots: Wahl überprüfen
+      reviewing_ballots: Abstimmung überprüfen
       finished: Abgeschlossener Haushalt
     index:
-      title: partizipative Haushaltsmittel
-      empty_budgets: Kein Budget vorhanden.
+      title: Bürgerhaushalte
+      empty_budgets: Kein Bürgerhaushalte vorhanden.
       section_header:
-        icon_alt: Symbol für partizipative Haushaltsmittel
-        title: partizipative Haushaltsmittel
-        help: Hilfe mit partizipativen Haushaltsmitteln
+        icon_alt: Symbol für Bürgerhaushalte
+        title: Bürgerhaushalte
+        help: Hilfe zu Bürgerhaushalten
         all_phases: Alle Phasen anzeigen
-      all_phases: Investitionsphasen des Haushalts
+      all_phases: Phasen des Bürgerhaushalts
       map: Geographisch verteilte Budget-Investitionsvorschläge
       investment_proyects: Liste aller Investitionsprojekte
       unfeasible_investment_proyects: Liste aller undurchführbaren Investitionsprojekte
