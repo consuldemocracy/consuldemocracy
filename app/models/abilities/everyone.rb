@@ -19,9 +19,7 @@ module Abilities
       can [:read, :welcome], Budget
       can [:read, :welcome, :select_district], SpendingProposal
       can [:stats, :results], SpendingProposal
-      can :read, LegacyLegislation
       can :read, User
-      can [:search, :read], Annotation
       can [:read], Budget
       can [:read], Budget::Group
       can [:read, :print, :json_data], Budget::Investment
