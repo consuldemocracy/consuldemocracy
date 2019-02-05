@@ -129,7 +129,11 @@ cs:
         table_title: "Název"
         table_status: Stav
         table_actions: "Akce"
+        delete: "Odstranit milník"
+        image: "Obrázek"
+        show_image: "Zobrazit obrázek"
         documents: "Dokumenty"
+        milestone: Milník
       form:
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
@@ -148,6 +152,19 @@ cs:
         notice: Investment status created successfully
       delete:
         notice: Investment status deleted successfully
+    progress_bars:
+      index:
+        title: "Ukazatele průběhu"
+        no_progress_bars: "Neexistují žádné ukazatele průběhu"
+        new_progress_bar: "Vytvořit nový ukazatel průběhu"
+        primary: "Hlavní ukazatel průběhu"
+        table_id: "ID"
+        table_kind: "Typ"
+        table_title: "Název"
+    comments:
+      index:
+        filters:
+          all: Vše
     dashboard:
       index:
         back: Přejít zpět na %{org}
