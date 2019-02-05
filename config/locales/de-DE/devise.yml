@@ -15,19 +15,20 @@ de:
       inactive: "Ihr Konto wurde noch nicht aktiviert."
       invalid: "Ungültiger %{authentication_keys} oder Passwort."
       locked: "Ihr Konto wurde gesperrt."
-      last_attempt: "Sie haben noch einen weiteren Versuch bevor Ihr Benutzerkonto gesperrt wird."
+      last_attempt: "Sie haben noch einen weiteren Versuch bevor Ihr Konto gesperrt wird."
       not_found_in_database: "Ungültiger %{authentication_keys} oder Passwort."
       timeout: "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an, um fortzufahren."
       unauthenticated: "Sie müssen sich anmelden oder registrieren, um fortzufahren."
-      unconfirmed: "Um fortzufahren, bestätigen Sie bitte den Verifizierungslink, den wir Ihnen per E-Mail zugesendet haben"
+      unconfirmed: "Um fortzufahren, bestätigen Sie bitte den Verifizierungslink, den wir Ihnen per E-Mail gesendet haben"
     mailer:
       confirmation_instructions:
-        subject: "Anweisungen zur Bestätigung"
+        subject: "Anleitung zur Bestätigung"
       reset_password_instructions:
         subject: "Anleitung zum Zurücksetzen Ihres Passworts"
       unlock_instructions:
-        subject: "Anweisung zur Entsperrung"
+        subject: "Anleitung zur Entsperrung"
     omniauth_callbacks:
+      failure: "Es ist nicht gelungen, Sie als %{kind} zu autorisieren, weil \"%{reason}\"."
       success: "Erfolgreich identifiziert als %{kind}."
     passwords:
       no_token: "Nur über einen Link zum Zurücksetzen Ihres Passworts können Sie auf diese Seite zugreifen. Falls Sie diesen Link verwendet haben, überprüfen Sie bitte, ob die URL vollständig ist."
