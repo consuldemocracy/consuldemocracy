@@ -1,33 +1,55 @@
 cs:
   date:
+    abbr_day_names:
+      - ned
+      - pon
+      - úte
+      - stř
+      - čtv
+      - pát
+      - sob
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - led
+      - úno
+      - bře
+      - dub
+      - kvě
+      - čer
+      - črv
+      - srp
+      - zář
+      - říj
+      - lis
+      - pro
+    day_names:
+      - neděle
+      - pondělí
+      - úterý
+      - středa
+      - čtvrtek
+      - pátek
+      - sobota
+    formats:
+      default: "%d-%m-%Y"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - leden
+      - únor
+      - březen
+      - duben
+      - květen
+      - červen
+      - červenec
+      - srpen
+      - září
+      - říjen
+      - listopad
+      - prosinec
+  errors:
+    messages:
+      blank: nemůže být prázdné
+      present: musí být prázdné
   number:
     human:
       format:
