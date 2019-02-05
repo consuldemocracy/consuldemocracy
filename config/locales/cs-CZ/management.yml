@@ -1,1 +1,23 @@
 cs:
+  management:
+    account:
+      edit:
+        password:
+          random: Vytvořit náhodné heslo
+    account_info:
+      username_label: 'Uživatelské jméno:'
+    menu:
+      create_proposal: Vytvořit návrh
+      print_proposals: Tisk návrhů
+      support_proposals: Podpora návrhů
+    permissions:
+      create_proposals: Vytvořit návrhy
+    proposals:
+      create_proposal: Vytvořit návrh
+      print:
+        print_button: Tisk
+      index:
+        title: Podpora návrhů
+    budget_investments:
+      create: Přidat investiční projekt
+    username_label: Uživatelské jméno
