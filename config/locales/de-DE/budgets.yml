@@ -84,17 +84,17 @@ de:
         sidebar:
           my_ballot: Meine Stimmen
           voted_html:
-            one: "<strong>Sie haben für einen Antrag mit Kosten von %{amount_spent}-</strong> gestimmt"
+            one: "<strong>Sie haben für einen Vorschlag mit Kosten von %{amount_spent}-</strong> gestimmt"
             other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
           voted_info: Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben.
-          voted_info_link: Bewertung ändern
-          different_heading_assigned_html: "Sie haben aktive Stimmen in einer anderen Rubrik: %{heading_link}"
+          voted_info_link: Ihre Wahl ändern
+          different_heading_assigned_html: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
-          check_ballot_link: "meine Abstimmung überprüfen"
-          zero: Sie haben für keine Investitionsprojekte in dieser Gruppe abgestimmt.
-          verified_only: "Um ein neues Budget zu erstellen %{verify}."
-          verify_account: "verifizieren Sie Ihr Benutzerkonto"
-          create: "Budgetinvestitionen erstellen"
+          check_ballot_link: "Meine Abstimmung überprüfen"
+          zero: Sie haben für keinen Ausgabenvorschlag in dieser Gruppe abgestimmt.
+          verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
+          verify_account: "Verifizieren Sie Ihr Benutzer*innenkonto"
+          create: "Ausgabenvorschlag erstellen"
           not_logged_in: "Um ein neues Budget zu erstellen, müssen Sie %{sign_in} oder %{sign_up}."
           sign_in: "anmelden"
           sign_up: "registrieren"
