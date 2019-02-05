@@ -68,6 +68,7 @@ cs:
       strip_insignificant_zeros: false
     human:
       decimal_units:
+        format: "%n %u"
         units:
           billion: miliarda
           million: milión
@@ -92,6 +93,9 @@ cs:
     array:
       last_word_connector: ", a "
       two_words_connector: " a "
+      words_connector: ", "
   time:
     am: dopoledne
+    formats:
+      api: "%d.%m.%Y %H"
     pm: odpoledne
