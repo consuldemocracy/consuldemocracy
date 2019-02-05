@@ -72,7 +72,7 @@ module BudgetsHelper
 
   def current_budget_map_locations
     return unless current_budget.present?
-    if current_budget.valuating_or_later?
+    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
       investments = current_budget.investments.selected
     else
       investments = current_budget.investments
