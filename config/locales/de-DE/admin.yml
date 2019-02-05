@@ -1056,24 +1056,24 @@ de:
         title: 'Beamte/innen: Benutzer*in bearbeiten'
       flash:
         official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamter/in'
-        official_updated: Details des Beamten gespeichert
+        official_updated: Daten des/r Beamten gespeichert
       index:
-        title: Beamte
-        no_officials: Keine Beamten vorhanden.
+        title: Beamte/innen
+        no_officials: Keine Beamten/innen vorhanden.
         name: Name
         official_position: Öffentliches Amt
         official_level: Stufe
-      level_0: Kein/e Beamte*r
+      level_0: Kein/e Beamter/in
       level_1: Stufe 1
       level_2: Stufe 2
       level_3: Stufe 3
       level_4: Stufe 4
       level_5: Stufe 5
       search:
-        edit_official: Beamte*n bearbeiten
-        make_official: Beamte*n erstellen
-        title: 'Beamte: Benutzer*innensuche'
-        no_results: Keine Beamten gefunden.
+        edit_official: Beamten/in bearbeiten
+        make_official: Beamten/in erstellen
+        title: 'Beamte/innen: Benutzer*innensuche'
+        no_results: Keine Beamten/innen gefunden.
     organizations:
       index:
         filter: Filter
@@ -1105,9 +1105,10 @@ de:
     proposals:
       index:
         title: Vorschläge
+        id: ID
         author: Verfasser*in
         milestones: Meilensteine
-        no_proposals: Es gibt keine Vorschläge.
+        no_proposals: Keine Vorschläge vorhanden.
     hidden_proposals:
       index:
         filter: Filter
