@@ -93,7 +93,10 @@ class Dashboard::Action < ActiveRecord::Base
     actions_for_today = get_actions_for_today(proposal)
     actions_for_yesterday = get_actions_for_yesterday(proposal)
 
-    new_actions = actions_for_today - actions_for_yesterday
+    actions_for_today_ids = actions_for_today.pluck(:id)
+    actions_for_yesterday_ids = actions_for_yesterday.pluck(:id)
+
+    actions_for_today_ids - actions_for_yesterday_ids
   end
 
   private

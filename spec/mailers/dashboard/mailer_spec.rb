@@ -2,6 +2,83 @@ require "rails_helper"
 
 describe Dashboard::Mailer do
 
+  let!(:action)   { create(:dashboard_action, :proposed_action, :active,
+                            day_offset: 0,
+                            published_proposal: true) }
+  let!(:resource) { create(:dashboard_action, :resource, :active,
+                            day_offset: 0,
+                            published_proposal: true) }
+
+  describe "#new_actions_notification rake task" do
+
+    before do
+      Rake.application.rake_require "tasks/dashboards"
+      Rake::Task.define_task(:environment)
+      ActionMailer::Base.deliveries.clear
+    end
+
+    let :run_rake_task do
+      Rake::Task["dashboards:send_notifications"].reenable
+      Rake.application.invoke_task "dashboards:send_notifications"
+    end
+
+    describe "#new_actions_notification_rake_created" do
+      let!(:proposal) { create(:proposal, :draft) }
+
+      it "sends emails when detect new actions for draft proposal" do
+        action.update(published_proposal: false)
+        resource.update(published_proposal: false)
+        run_rake_task
+
+        email = open_last_email
+
+        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
+        expect(email).to deliver_to(proposal.author)
+        expect(email).to have_subject("More news about your citizen proposal in Decide Madrid")
+        expect(email).to have_body_text("Hello #{proposal.author.name},")
+        expect(email).to have_body_text("As you know, on the #{proposal.created_at.day} day of the #{proposal.created_at.strftime("%B")} you created the proposal in draft mode #{proposal.title} on the Decide Madrid platform.")
+        expect(email).to have_body_text("Whenever you want you can publish on this link:")
+        expect(email).to have_body_text("Seize this moment! Learn, add other people with the same interests and prepare the diffusion that you will need when you publish your proposal definitively.")
+        expect(email).to have_body_text("And to accompany you in this challenge, here are the news...")
+        expect(email).to have_body_text("NEW UNLOCKED RESOURCE")
+        expect(email).to have_body_text("#{resource.title}")
+        expect(email).to have_body_text("Take a look at this NEW recommended ACTION:")
+        expect(email).to have_body_text("#{action.title}")
+        expect(email).to have_body_text("#{action.description}")
+        expect(email).to have_body_text("As always, enter the Proposals Panel and we will tell you in detail how to use these resources and how to get the most out of it.")
+        expect(email).to have_body_text("Go ahead, discover them!")
+      end
+    end
+
+    describe "#new_actions_notification_rake_published" do
+      let!(:proposal) { create(:proposal) }
+
+      it "sends emails when detect new actions for proposal" do
+        run_rake_task
+
+        email = open_last_email
+
+        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
+        expect(email).to deliver_to(proposal.author)
+        expect(email).to have_subject("More news about your citizen proposal in Decide Madrid")
+        expect(email).to have_body_text("Hello #{proposal.author.name},")
+        expect(email).to have_body_text("As you know, on the #{proposal.published_at.day} day of the #{proposal.published_at.strftime("%B")} you published the proposal #{proposal.title} on the Decide Madrid platform.")
+        expect(email).to have_body_text("And so, you have a new resource available to help you keep moving forward.")
+        expect(email).to have_body_text("NEW UNLOCKED RESOURCE")
+        expect(email).to have_body_text("#{resource.title}")
+
+        limit_to_archive_proposal = proposal.created_at.to_date + Setting["months_to_archive_proposals"].to_i.months
+        days_count = (limit_to_archive_proposal - Date.today).to_i
+        expect(email).to have_body_text("You are missing #{days_count} days before your proposal gets the #{Setting["votes_for_proposal_success"]} supports and goes to referendum. Cheer up and keep spreading. Are you short of ideas?")
+        expect(email).to have_body_text("NEW RECOMMENDED DIFFUSION ACTION")
+        expect(email).to have_body_text("#{action.title}")
+        expect(email).to have_body_text("#{action.description}")
+        expect(email).to have_body_text("As always, enter the Proposals Panel and we will tell you in detail how to use these resources and how to get the most out of it.")
+        expect(email).to have_body_text("Go ahead, discover them!")
+      end
+    end
+  end
+
   describe "#new_actions_notification_on_create" do
 
     before do
@@ -9,12 +86,6 @@ describe Dashboard::Mailer do
     end
 
     let!(:proposal) { build(:proposal, :draft) }
-    let!(:action)   { create(:dashboard_action, :proposed_action, :active,
-                              day_offset: 0,
-                              published_proposal: true) }
-    let!(:resource) { create(:dashboard_action, :resource, :active,
-                              day_offset: 0,
-                              published_proposal: true) }
 
     it "sends emails when detect new actions when create a proposal" do
       action.update(published_proposal: false)
