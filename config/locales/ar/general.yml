@@ -1,6 +1,8 @@
 ar:
   account:
     show:
+      change_credentials_link: تغيير بيانات الاعتماد الخاصة بي
+      email_on_comment_label: أبلغني عن طريق البريد الإلكتروني عندما شخص التعليقات على المقترحات أو المناقشات
       notifications: إشعارات
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       email_digest_label: استلام ملخص عن إشعارات مقترح
