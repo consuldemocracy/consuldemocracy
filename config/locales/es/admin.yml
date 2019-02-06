@@ -447,7 +447,6 @@ es:
           title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
-            past: Pasados
             all: Todos
         new:
           back: Volver
