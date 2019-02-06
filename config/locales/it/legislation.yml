@@ -59,10 +59,8 @@ it:
         filter: Filtra
         filters:
           open: Procedimenti aperti
-          next: Successivo
           past: Passato
         no_open_processes: Non ci sono procedimenti aperti
-        no_next_processes: Non ci sono procedimenti in programma
         no_past_processes: Non ci sono procedimenti passati
         section_header:
           icon_alt: Icona dei procedimenti legislativi
