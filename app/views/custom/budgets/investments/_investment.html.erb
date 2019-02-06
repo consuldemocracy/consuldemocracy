@@ -52,7 +52,11 @@
               <% end %>
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= investment.heading.name %>
+              <% if @budget.only_heading %>
+                <%= investment.geozone.name %>
+              <% else %>
+                <%= investment.heading.name %>
+              <% end %>
             </p>
             <div class="investment-project-description">
               <p><%= investment.description %></p>
