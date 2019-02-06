@@ -57,7 +57,7 @@ ActsAsVotable::Vote.class_eval do
     joins(:votable).where("#{votable.table_name}.geozone is not null")
   end
 
-  def self.for_budget_investments(budget_investments)
+  def self.for_budget_investments(budget_investments=Budget::Investment.all)
     where(votable_type: 'Budget::Investment', votable_id: budget_investments)
   end
 

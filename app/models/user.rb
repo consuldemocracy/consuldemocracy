@@ -142,13 +142,11 @@ class User < ActiveRecord::Base
   end
 
   def headings_voted_within_group(group)
-    Budget::Heading.where(id:
-      votes.where(votable_type: Budget::Investment)
-           .joins(:budget_investment)
-           .where(budget_investments: {group_id: group.id})
-           .distinct
-           .select('budget_investments.heading_id')
-    )
+    Budget::Heading.where(id: voted_investments.by_group(group).pluck(:heading_id))
+  end
+
+  def voted_investments
+    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
   end
 
   def administrator?
