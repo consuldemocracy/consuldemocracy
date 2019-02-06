@@ -717,3 +717,15 @@ li.float_right {
     padding-top: 0;
   }
 }
+
+.lista-subareas {
+  padding: 0.5rem;
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    font-weight: 600;
+  }
+}

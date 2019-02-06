@@ -41,7 +41,7 @@
                     <h5><%= area.name %></h5>
                   </div>
                 <% end %>
-                <div id="lista_subareas_<%= area.id %>" class="is-hidden" data-toggler="is-hidden">
+                <div id="lista_subareas_<%= area.id %>" class="lista-subareas is-hidden" data-toggler="is-hidden">
                   <ul class="no-bullet">
                     <% area.sub_areas.each do |sub_area|%>
                       <li>
