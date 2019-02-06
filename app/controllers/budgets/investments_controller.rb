@@ -77,6 +77,7 @@ module Budgets
         redirect_to budget_investment_path(@budget, @investment),
                     notice: t('flash.actions.create.budget_investment')
       else
+        load_area
         render :new
       end
     end

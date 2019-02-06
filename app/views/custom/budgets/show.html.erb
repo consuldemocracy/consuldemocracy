@@ -35,12 +35,12 @@
           <% grupo_area.each do |area| %>
             <div class="small-12 medium-6 large-4 column end margin-bottom">
               <div class="budget-execution">
-                <%= link_to "#", data: {toggle: "lista_subareas_#{area.id}"} do %>
+                <a data-toggle="lista_subareas_<%= area.id %>">
                   <%= render 'image', area: area %>
                   <div class="budget-execution-info">
                     <h5><%= area.name %></h5>
                   </div>
-                <% end %>
+                </a>
                 <div id="lista_subareas_<%= area.id %>" class="lista-subareas is-hidden" data-toggler="is-hidden">
                   <ul class="no-bullet">
                     <% area.sub_areas.each do |sub_area|%>
