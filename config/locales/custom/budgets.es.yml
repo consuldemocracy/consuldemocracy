@@ -9,6 +9,9 @@ es:
       view_all: Ver todas las propuestas
       all_headings: Todas las propuestas
       view_by_areas: Escoge el área en que quieres hacer la propuesta
+    index:
+      see_results: Ver resultados
+      milestones: Hitos
     investments:
       show:
         title: Propuesta de inversión
@@ -23,12 +26,17 @@ es:
           required_phone: "Para crear un nuevo proyecto de gasto debes introducir %{your_phone_number}"
           your_phone_number: tu teléfono
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
+          required_area: Para crear una propuesta tienes que seleccionar una área en la barra lateral o desde %{link}
+          required_sub_area: Para crear una proposta tienes que seleccionar una subárea en la barra lateral o desde %{link}
+          budget: presupuestos
         by_heading: 'Propuestas de inversión con ámbito: %{heading}'
         lista_seleccionadas: Seleccionadas por las reuniones de distrito
         link_lista_seleccionadas: Consulta aquí las propuestas priorizadas de este distrito que pasan directamente a la fase de validación y estudio de viabilidad
       investment:
         title: Propuesta de inversión
+        already_added: Ya has añadido esta propuesta
         already_supported: Ya has avalado esta propuesta.
+        confirm_group: "Solo puedes avalar presupuestos en un distrito. Si continúas no podrás cambiar tu decisión. ¿Estás seguro/a?"
         support_title: Avalar esta propuesta
         supports:
           zero: Sin avales

@@ -9,7 +9,12 @@ val:
       view_all: Vore totes les propostes
       all_headings: Totes les propostes
       view_by_areas: Tria l'àrea en que vols fer la proposta
+    index:
+      see_results: Vore resultats
+      milestones: Fites
     investments:
+      show:
+        title: Proposta d'inversió
       form:
         area: 'Àrea'
         district: Districte
