@@ -385,7 +385,6 @@ fr:
           title: Processus législatifs
           filters:
             open: Ouvert
-            past: Passé
             all: Tous
         new:
           back: Retour

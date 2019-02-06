@@ -385,7 +385,6 @@ zh-TW:
           title: 立法進程
           filters:
             open: 打開
-            past: 過去的
             all: 所有
         new:
           back: 返回

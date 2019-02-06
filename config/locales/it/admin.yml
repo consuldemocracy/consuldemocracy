@@ -385,7 +385,6 @@ it:
           title: Procedimenti legislativi
           filters:
             open: Aperti
-            past: Precedente
             all: Tutti
         new:
           back: Indietro

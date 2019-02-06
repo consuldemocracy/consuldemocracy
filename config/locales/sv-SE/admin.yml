@@ -386,7 +386,6 @@ sv:
           title: Dialoger
           filters:
             open: Pågående
-            past: Avslutade
             all: Alla
         new:
           back: Tillbaka
