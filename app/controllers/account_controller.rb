@@ -9,8 +9,8 @@ class AccountController < ApplicationController
 
   def update
     if @account.update(account_params)
-      if session[:area_id]
-        redirect_to new_budget_investment_path(Budget.current, area_id: session[:area_id])
+      if session[:area_id] && session[:sub_area_id]
+        redirect_to new_budget_investment_path(Budget.current, area_id: session[:area_id], sub_area_id: session[:sub_area_id])
       else
         redirect_to account_path, notice: t("flash.actions.save_changes.notice")
       end
