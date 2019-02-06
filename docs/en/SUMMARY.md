@@ -7,17 +7,18 @@
 * [Configure your fork](forks/configuration.md)
 * [Keep your fork updated](forks/update.md)
 * [Communication](forks/communication.md)
-* [Manual deployment to Heroku](getting_started/deploying-on-heroku.md)
 
 ### Installation
-* [Docker](getting_started/docker.md)
+* [Introduction](getting_started/introduction.md)
 * [Prerequisites](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
   * [Windows](getting_started/prerequisites/windows.md)
 * [Local installation](getting_started/local_installation.md)
   * [Development Mail Server](getting_started/dev_mailserver.md)
-* [Production and Test servers](getting_started/servers.md)
+* [Production and Staging servers](getting_started/servers.md)
+* [Heroku](getting_started/deploying-on-heroku.md)
+* [Docker](getting_started/docker.md)
 
 ### Customization
 * [Introduction](customization/introduction.md)

@@ -9,7 +9,7 @@
 * [Comunicación](forks/communication.md)
 
 ### Instalación
-* [Docker](getting_started/docker.md)
+* [Introducción](getting_started/introduction.md)
 * [Prerrequisitos](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
@@ -17,6 +17,8 @@
 * [Instalación local](getting_started/local_installation.md)
   * [Servidor local de correo](getting_started/dev_mailserver.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
+* [Heroku](getting_started/deploying-on-heroku.md)
+* [Docker](getting_started/docker.md)
 
 ### Personalización
 * [Introducción](customization/README.md)
