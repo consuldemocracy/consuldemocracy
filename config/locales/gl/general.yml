@@ -461,11 +461,9 @@ gl:
     index:
       filters:
         current: "Abertas"
-        incoming: "Proximamente"
         expired: "Rematadas"
       title: "Votacións"
       participate_button: "Participar nesta votación"
-      participate_button_incoming: "Máis información"
       participate_button_expired: "Votación rematada"
       no_geozone_restricted: "Toda a cidade"
       geozone_restricted: "Zonas"
@@ -493,7 +491,6 @@ gl:
       signup: rexistrarte
       cant_answer_verify_html: "Debes %{verify_link} para poder responder."
       verify_link: "verificar a túa conta"
-      cant_answer_incoming: "Esta votación aínda non comezou."
       cant_answer_expired: "A votación rematou."
       cant_answer_wrong_geozone: "Esta pregunta non está dispoñible na túa zona."
       more_info_title: "Máis información"
