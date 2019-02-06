@@ -409,11 +409,9 @@ id:
     index:
       filters:
         current: "Buka"
-        incoming: "Masuk"
         expired: "Kadaluarsa"
       title: "Jajak pendapat"
       participate_button: "Berpartisipasi dalam jajak pendapat ini"
-      participate_button_incoming: "Informasi lebih lanjut"
       participate_button_expired: "Jajak pendapat terakhir"
       no_geozone_restricted: "Semua kota"
       geozone_restricted: "Kabupaten"
@@ -436,7 +434,6 @@ id:
       signup: Daftar
       cant_answer_verify_html: "Anda harus %{verify_link} dalam rangka untuk menjawab."
       verify_link: "verivikasi akun anda"
-      cant_answer_incoming: "Jajak pendapat ini belum dimulai."
       cant_answer_expired: "Jajak pendapat ini telah selesai."
       cant_answer_wrong_geozone: "Pertanyaan ini tidak tersedia pada geozone."
       more_info_title: "Informasi lebih lanjut"

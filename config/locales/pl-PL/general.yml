@@ -484,11 +484,9 @@ pl:
     index:
       filters:
         current: "Otwórz"
-        incoming: "Przychodzące"
         expired: "Przedawnione"
       title: "Ankiety"
       participate_button: "Weź udział w tej sondzie"
-      participate_button_incoming: "Więcej informacji"
       participate_button_expired: "Sonda zakończyła się"
       no_geozone_restricted: "Wszystkie miasta"
       geozone_restricted: "Dzielnice"
@@ -516,7 +514,6 @@ pl:
       signup: Zarejestruj się
       cant_answer_verify_html: "Aby odpowiedzieć, musisz %{verify_link}."
       verify_link: "zweryfikuj swoje konto"
-      cant_answer_incoming: "Ta sonda jeszcze się nie rozpoczęła."
       cant_answer_expired: "Ta sonda została zakończona."
       cant_answer_wrong_geozone: "To pytanie nie jest dostępne w Twojej strefie geograficznej."
       more_info_title: "Więcej informacji"

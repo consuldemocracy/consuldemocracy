@@ -422,11 +422,9 @@ es-VE:
     index:
       filters:
         current: "Abiertas"
-        incoming: "Próximamente"
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
-      participate_button_incoming: "Más información"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
@@ -449,7 +447,6 @@ es-VE:
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
