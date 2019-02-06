@@ -62,8 +62,8 @@
     </div>
 
     <div class="float-right">
-      <% if @budget.balloting_process? %>
-        <%= link_to t("admin.budgets.winners.calculate"),
+      <% if display_calculate_winners_button?(@budget) %>
+        <%= link_to calculate_winner_button_text(@budget),
                     calculate_winners_admin_budget_path(@budget),
                     method: :put,
                     class: "button hollow" %>

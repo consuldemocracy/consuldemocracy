@@ -301,6 +301,7 @@ es:
         description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
+        columns: Número de columnas
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título

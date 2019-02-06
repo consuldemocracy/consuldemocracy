@@ -1463,13 +1463,13 @@ en:
           description: Description
           link_text: Link text
           link_url: Link URL
+          columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
           create:
-            notice: "Success"
+            notice: "Card created successfully!"
           update:
-            notice: "Updated"
+            notice: "Card updated successfully"
           destroy:
-            notice: "Removed"
-
+            notice: "Card removed successfully"
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.

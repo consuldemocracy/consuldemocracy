@@ -1253,16 +1253,12 @@
     display: inline-block;
     margin-bottom: $line-height / 2;
 
-    &:hover {
-      background: $highlight;
-      text-decoration: none;
-    }
-
     a {
       display: block;
       padding: $line-height / 2;
 
       &:hover {
+        background: $highlight;
         text-decoration: none;
       }
     }
