@@ -42,7 +42,12 @@ module Budgets
                         else
                           investments
                         end
-      all_investments = all_investments.by_area(@area.id) if @area.present?
+      if @area.present?
+        all_investments = all_investments.by_area(@area.id)
+        if @sub_area.present?
+          all_investments = all_investments.where(sub_area_id: @sub_area.id)
+        end
+      end
       all_investments = all_investments.by_geozone(@geozone.id) if @geozone.present?
       @investments = all_investments.page(params[:page]).per(10).for_render
 
