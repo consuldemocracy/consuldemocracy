@@ -12,7 +12,7 @@ class Geography < ActiveRecord::Base
     if Budget.current
       Budget.current.headings.each do |active_heading|
         if active_heading.geography
-           active_headings[active_heading.geography_id] = active_heading.id
+          active_headings[active_heading.geography_id] = active_heading.id
         end
       end
     end
@@ -46,4 +46,3 @@ class Geography < ActiveRecord::Base
   end
 
 end
-

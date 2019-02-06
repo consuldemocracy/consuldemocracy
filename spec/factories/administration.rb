@@ -16,13 +16,13 @@ FactoryBot.define do
 
   factory :geography do
     sequence(:name) { |n| "District #{n}" }
-    color '#0081aa'
+    color "#0081aa"
 
     trait :with_geojson_coordinates do
-       geojson "{\"geometry\":{\"type\":\"Polygon\",\"coordinates\":
-                       [[40.8792937308316, -3.9259027239257],
-                       [40.8788966596619, -3.9249047078766],
-                       [40.8789131852224, -3.9247799675785]]}}"
+      geojson "{\"geometry\":{\"type\":\"Polygon\",\"coordinates\":
+               [[40.8792937308316, -3.9259027239257],
+               [40.8788966596619, -3.9249047078766],
+               [40.8789131852224, -3.9247799675785]]}}"
     end
 
     trait :with_one_related_heading do

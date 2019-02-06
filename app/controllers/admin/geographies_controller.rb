@@ -20,7 +20,7 @@ class Admin::GeographiesController < Admin::BaseController
     @geography = Geography.new(geography_params)
 
     if @geography.save
-      redirect_to admin_geographies_path, notice: 'Geography was successfully created.'
+      redirect_to admin_geographies_path, notice: "Geography was successfully created."
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::GeographiesController < Admin::BaseController
 
   def update
     if @geography.update(geography_params)
-      redirect_to admin_geographies_path, notice: 'Geography was successfully updated.'
+      redirect_to admin_geographies_path, notice: "Geography was successfully updated."
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class Admin::GeographiesController < Admin::BaseController
 
   def destroy
     @geography.destroy
-    redirect_to admin_geographies_path, notice: t('admin.geographies.delete.success')
+    redirect_to admin_geographies_path, notice: t("admin.geographies.delete.success")
   end
 
   private

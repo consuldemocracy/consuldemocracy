@@ -44,7 +44,8 @@ App.Map =
       return marker
 
     createPolygon = (polygon_data) ->
-      polygon  = L.polygon(polygon_data.outline_points, {color: polygon_data.color})
+      polygon  = L.polygon(polygon_data.outline_points,
+                           {color: polygon_data.color})
       if polygon_data.heading_id
         polygon.on 'click', openPolygonPopup
         polygon.options['heading_id'] = polygon_data.heading_id
@@ -93,7 +94,8 @@ App.Map =
           e.target.bindPopup(getPopupContent(data)).openPopup()
 
     getPopupContent = (data) ->
-      content = "<a href='/budgets/#{data['budget_id']}/investments/#{data['investment_id']}'>#{data['investment_title']}</a>"
+      content = "<a href='/budgets/#{data['budget_id']}/investments/\
+                 #{data['investment_id']}'>#{data['investment_title']}</a>"
       return content
 
     openPolygonPopup = (e) ->
@@ -107,7 +109,8 @@ App.Map =
             e.target.bindPopup(getPolygonPopupContent(data)).openPopup()
 
     getPolygonPopupContent = (data) ->
-      content = "<a href='/budgets/#{data['budget_id']}/investments?heading_id=#{data['heading_id']}'>#{data['heading_name']}</a>"
+      content = "<a href='/budgets/#{data['budget_id']}/investments?\
+                 heading_id=#{data['heading_id']}'>#{data['heading_name']}</a>"
       return content
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
@@ -132,7 +135,7 @@ App.Map =
 
     if addGeographyPolygons
       for i in addGeographyPolygons
-          polygon = createPolygon(i)
+        polygon = createPolygon(i)
 
   toggleMap: ->
       $('.map').toggle()

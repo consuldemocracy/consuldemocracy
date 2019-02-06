@@ -24,12 +24,14 @@ module MapLocationsHelper
     "remove-marker-link-#{dom_id(map_location)}"
   end
 
-  def render_map(map_location, parent_class, editable, remove_marker_label, investments_coordinates=nil, geographies_data=nil)
+  def render_map(map_location, parent_class, editable, remove_marker_label,
+                 investments_coordinates=nil, geographies_data=nil)
     map_location = MapLocation.new if map_location.nil?
     map = content_tag_for :div,
                           map_location,
                           class: "map",
-                          data: prepare_map_settings(map_location, editable, parent_class, investments_coordinates, geographies_data)
+                          data: prepare_map_settings(map_location, editable, parent_class,
+                                                     investments_coordinates, geographies_data)
     map += map_location_remove_marker(map_location, remove_marker_label) if editable
     map
   end
@@ -47,7 +49,8 @@ module MapLocationsHelper
 
   private
 
-  def prepare_map_settings(map_location, editable, parent_class, investments_coordinates=nil, geographies_data=nil)
+  def prepare_map_settings(map_location, editable, parent_class,
+                           investments_coordinates=nil, geographies_data=nil)
     options = {
       map: "",
       map_center_latitude: map_location_latitude(map_location),
