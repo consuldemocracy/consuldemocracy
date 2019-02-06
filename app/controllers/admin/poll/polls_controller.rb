@@ -51,7 +51,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def booth_assignments
-    @polls = Poll.current_or_incoming
+    @polls = Poll.current
   end
 
   private
