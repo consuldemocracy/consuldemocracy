@@ -5,7 +5,7 @@ class BudgetsController < ApplicationController
 
   load_and_authorize_resource
   before_action :set_default_budget_filter, only: :show
-  has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: :show
+  has_filters %w[not_unfeasible feasible unfeasible unselected selected winners], only: :show
 
   respond_to :html, :js
 
