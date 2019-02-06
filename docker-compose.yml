@@ -15,6 +15,7 @@ services:
   app:
 
     # use the Dockerfile next to this file
+    build: .
     image: consul-app
     entrypoint: /usr/local/bin/entrypoint.sh
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
@@ -39,7 +40,6 @@ services:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated
   migration:
-    build: .
     image: consul-app
     environment:
       - DATABASE_HOST=database
