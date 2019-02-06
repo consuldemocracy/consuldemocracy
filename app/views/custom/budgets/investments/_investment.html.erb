@@ -58,13 +58,18 @@
               <p><%= investment.description %></p>
               <div class="truncate"></div>
             </div>
-
-
             <% if @budget.areas && @area.nil? && investment.sub_area %>
               <h4>
                 <%= investment.area.name %>
                 <small><%= investment.sub_area.name %></small>
               </h4>
+            <% end %>
+            <% if @budget.areas %>
+              <% if @area && !@sub_area && investment.sub_area %>
+                <small><%= investment.sub_area.name %></small>
+              <% else %>
+
+              <% end %>
             <% end %>
 
             <%= render "shared/tags", taggable: investment, limit: 5 %>

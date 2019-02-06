@@ -43,10 +43,17 @@
                   <% if @area.present? && @sub_area.present? %>
                     <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget, area_id: @area.id, sub_area_id: @sub_area.id), class: "button margin-top expanded" %>
                   <% else %>
+                    <% if @area.present? && !@sub_area.present? %>
                     <div class="callout warning margin-top">
-                      <%= t("budgets.investments.index.sidebar.required_area",
+                      <%= t("budgets.investments.index.sidebar.required_sub_area",
                           link: link_to(t("budgets.investments.index.sidebar.budget"), budget_path(@budget))).html_safe %>
                     </div>
+                    <% else %>
+                      <div class="callout warning margin-top">
+                        <%= t("budgets.investments.index.sidebar.required_area",
+                            link: link_to(t("budgets.investments.index.sidebar.budget"), budget_path(@budget))).html_safe %>
+                      </div>
+                    <% end %>
                   <% end %>
                 <% else %>
                   <% session[:area_id] = @area.id %>
