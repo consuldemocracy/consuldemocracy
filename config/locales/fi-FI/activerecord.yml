@@ -175,6 +175,7 @@ fi:
         description: Kuvaus
         link_text: Linkin teksti
         link_url: Linkin URL
+        columns: Sarakkeiden määrä
       widget/card/translation:
         description: Kuvaus
         link_text: Linkin teksti
