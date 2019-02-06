@@ -6,6 +6,24 @@ feature 'Emails' do
     reset_mailer
   end
 
+  context "On Staging Environment" do
+
+    scenario "emails are delivered to configured recipient" do
+      interceptor = RecipientInterceptor.new("recipient@consul.dev", subject_prefix: "[staging]")
+      Mail.register_interceptor(interceptor)
+
+      sign_up
+
+      email = open_last_email
+      expect(email).to have_subject("[staging] Confirmation instructions")
+      expect(email).to deliver_to("recipient@consul.dev")
+      expect(email).not_to deliver_to("manuela@consul.dev")
+
+      Mail.unregister_interceptor(interceptor)
+    end
+
+  end
+
   scenario "Signup Email" do
     sign_up
 
