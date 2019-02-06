@@ -7,7 +7,10 @@ class Users::SessionsController < Devise::SessionsController
       if !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
-        super
+        scope = Devise::Mapping.find_scope!(resource)
+        return_path = stored_location_for(scope)
+        return_path || root_path
+        # super
       end
     end
 
