@@ -134,7 +134,6 @@ ar:
           delete: حذف
           filters:
             open: فتح
-            next: التالي
             past: السابق
         new:
           back: عودة

@@ -62,10 +62,8 @@ sq:
         filter: Filtër
         filters:
           open: "\nProceset e hapura"
-          next: Tjetra
           past: E kaluara
         no_open_processes: Nuk ka procese të hapura
-        no_next_processes: Nuk ka procese të planifikuar
         no_past_processes: Nuk ka procese të kaluara
         section_header:
           icon_alt: Ikona e proceseve të legjilacionit

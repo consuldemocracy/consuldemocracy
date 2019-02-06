@@ -59,10 +59,8 @@ pt-BR:
         filter: Filtro
         filters:
           open: Processos abertos
-          next: Próximo
           past: Passado
         no_open_processes: Não existem processos abertos
-        no_next_processes: Não existem processos planejados
         no_past_processes: Não existem processos terminados
         section_header:
           icon_alt: Ícone de processos legislativos

@@ -382,7 +382,6 @@ val:
           title: Processos de legislació col·laborativa
           filters:
             open: Oberts
-            next: Pròximament
             past: Finalitzats
             all: Tots
         new:
