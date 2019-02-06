@@ -45,7 +45,6 @@ class Legislation::Process < ActiveRecord::Base
   validate :valid_date_ranges
 
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current) }
-  scope :next, -> { where("start_date > ?", Date.current) }
   scope :past, -> { where("end_date < ?", Date.current) }
 
   scope :published, -> { where(published: true) }

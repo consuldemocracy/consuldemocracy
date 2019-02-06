@@ -466,7 +466,6 @@ en:
           title: Legislation processes
           filters:
             open: Open
-            next: Next
             past: Past
             all: All
         new:
