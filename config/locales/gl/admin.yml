@@ -388,7 +388,6 @@ gl:
           title: Procesos lexislativos
           filters:
             open: Abertos
-            past: Pasados
             all: Todos
         new:
           back: Volver

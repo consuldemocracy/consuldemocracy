@@ -387,7 +387,6 @@ sq:
           title: Proceset legjislative
           filters:
             open: Hapur
-            past: E kaluara
             all: Të gjithë
         new:
           back: Pas

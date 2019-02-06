@@ -322,7 +322,6 @@ fa:
           title: فرآیندهای قانونی
           filters:
             open: بازکردن
-            past: گذشته
             all: همه
         new:
           back: برگشت

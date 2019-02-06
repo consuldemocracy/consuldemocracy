@@ -306,7 +306,6 @@ id:
           title: Proses undang-undang
           filters:
             open: Buka
-            past: Yang lalu
             all: Semua
         new:
           back: Kembali

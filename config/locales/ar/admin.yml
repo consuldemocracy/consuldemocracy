@@ -134,7 +134,6 @@ ar:
           delete: حذف
           filters:
             open: فتح
-            past: السابق
         new:
           back: عودة
           submit_button: إنشاء عملية
