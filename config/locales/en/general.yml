@@ -451,11 +451,9 @@ en:
     index:
       filters:
         current: "Open"
-        incoming: "Incoming"
         expired: "Expired"
       title: "Polls"
       participate_button: "Participate in this poll"
-      participate_button_incoming: "More information"
       participate_button_expired: "Poll ended"
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
@@ -483,7 +481,6 @@ en:
       signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
       verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info_title: "More information"

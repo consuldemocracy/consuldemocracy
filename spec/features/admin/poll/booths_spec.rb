@@ -38,27 +38,23 @@ feature 'Admin booths' do
 
   scenario "Available" do
     booth_for_current_poll  = create(:poll_booth)
-    booth_for_incoming_poll = create(:poll_booth)
     booth_for_expired_poll  = create(:poll_booth)
 
     current_poll  = create(:poll, :current)
-    incoming_poll = create(:poll, :incoming)
     expired_poll  = create(:poll, :expired)
 
     create(:poll_booth_assignment, poll: current_poll,  booth: booth_for_current_poll)
-    create(:poll_booth_assignment, poll: incoming_poll, booth: booth_for_incoming_poll)
     create(:poll_booth_assignment, poll: expired_poll,  booth: booth_for_expired_poll)
 
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Manage shifts"
     end
 
-    expect(page).to have_css(".booth", count: 2)
+    expect(page).to have_css(".booth", count: 1)
 
     expect(page).to have_content booth_for_current_poll.name
-    expect(page).to have_content booth_for_incoming_poll.name
     expect(page).not_to have_content booth_for_expired_poll.name
     expect(page).not_to have_link "Edit booth"
   end
