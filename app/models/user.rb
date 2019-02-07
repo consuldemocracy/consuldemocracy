@@ -361,7 +361,7 @@ class User < ActiveRecord::Base
   end
 
   def can_create_investments(budget)
-    budget_headings = budget.groups.first.headings.pluck(:id)
+    budget_headings = budget.groups.first&.headings&.pluck(:id)
     user_headings = budget.investments.where(author_id: id).pluck(:heading_id)
 
     budget_headings != user_headings

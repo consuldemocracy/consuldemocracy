@@ -17,7 +17,7 @@ es:
         title: Propuesta de inversión
       form:
         area: 'Área'
-        district: 'Zona'
+        district: 'Distrito'
         groups_proposed: Ya has creado una propuesta para %{groups}
         sub_area: 'Subárea'
       index:
