@@ -55,11 +55,15 @@ module AdminHelper
 
   def menu_customization?
     ["pages", "banners", "information_texts", "documents"].include?(controller_name) ||
-    menu_homepage?
+    menu_homepage? || menu_pages?
   end
 
   def menu_homepage?
-    ["homepage", "cards"].include?(controller_name)
+    ["homepage", "cards"].include?(controller_name) && params[:page_id].nil?
+  end
+
+  def menu_pages?
+    ["pages", "cards"].include?(controller_name) && params[:page_id].present?
   end
 
   def official_level_options

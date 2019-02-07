@@ -2,14 +2,17 @@ class Admin::Widget::CardsController < Admin::BaseController
   include Translatable
 
   def new
-    @card = ::Widget::Card.new(header: header_card?)
+    if header_card?
+      @card = ::Widget::Card.new(header: header_card?)
+    else
+      @card = ::Widget::Card.new(site_customization_page_id: params[:page_id])
+    end
   end
 
   def create
     @card = ::Widget::Card.new(card_params)
     if @card.save
-      notice = "Success"
-      redirect_to admin_homepage_url, notice: notice
+      redirect_to_customization_page_cards_or_homepage
     else
       render :new
     end
@@ -22,8 +25,7 @@ class Admin::Widget::CardsController < Admin::BaseController
   def update
     @card = ::Widget::Card.find(params[:id])
     if @card.update(card_params)
-      notice = "Updated"
-      redirect_to admin_homepage_url, notice: notice
+      redirect_to_customization_page_cards_or_homepage
     else
       render :edit
     end
@@ -33,8 +35,7 @@ class Admin::Widget::CardsController < Admin::BaseController
     @card = ::Widget::Card.find(params[:id])
     @card.destroy
 
-    notice = "Removed"
-    redirect_to admin_homepage_url, notice: notice
+    redirect_to_customization_page_cards_or_homepage
   end
 
   private
@@ -44,7 +45,7 @@ class Admin::Widget::CardsController < Admin::BaseController
 
     params.require(:widget_card).permit(
       :label, :title, :description, :link_text, :link_url,
-      :button_text, :button_url, :alignment, :header,
+      :button_text, :button_url, :alignment, :header, :site_customization_page_id,
       translation_params(Widget::Card),
       image_attributes: image_attributes
     )
@@ -52,6 +53,20 @@ class Admin::Widget::CardsController < Admin::BaseController
 
   def header_card?
     params[:header_card].present?
+  end
+
+  def redirect_to_customization_page_cards_or_homepage
+    notice = t("admin.site_customization.pages.cards.#{params[:action]}.notice")
+
+    if @card.site_customization_page_id
+      redirect_to admin_site_customization_page_cards_path(page), notice: notice
+    else
+      redirect_to admin_homepage_url, notice: notice
+    end
+  end
+
+  def page
+    ::SiteCustomization::Page.find(@card.site_customization_page_id)
   end
 
   def resource
