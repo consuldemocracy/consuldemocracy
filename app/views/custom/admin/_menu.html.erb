@@ -58,10 +58,10 @@
     <% if feature?(:budgets) %>
       <li class="section-title">
         <% url = Setting["feature.areas"] ? '#' : admin_budgets_path %>
-        <a href=<%url%>>
+        <%= link_to url do %>
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.budgets") %></strong>
-        </a>
+        <% end %>
         <% if Setting["feature.areas"] %>
           <ul id="budgets_menu" <%= "class=is-active" if menu_budgets? || menu_areas? %>>
             <li <%= "class=is-active" if %w(budgets budgets_phases results).include?(controller_name) %>>
