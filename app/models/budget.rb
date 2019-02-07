@@ -105,8 +105,8 @@ class Budget < ActiveRecord::Base
     Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
-  def valuating_or_later?
-    valuating? || publishing_prices? || balloting_or_later?
+  def publishing_prices_or_later?
+    publishing_prices? || balloting_or_later?
   end
 
   def balloting_process?
