@@ -40,36 +40,37 @@ class Admin::Widget::CardsController < Admin::BaseController
 
   private
 
-  def card_params
-    image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+    def card_params
+      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
 
-    params.require(:widget_card).permit(
-      :label, :title, :description, :link_text, :link_url,
-      :button_text, :button_url, :alignment, :header, :site_customization_page_id,
-      translation_params(Widget::Card),
-      image_attributes: image_attributes
-    )
-  end
-
-  def header_card?
-    params[:header_card].present?
-  end
-
-  def redirect_to_customization_page_cards_or_homepage
-    notice = t("admin.site_customization.pages.cards.#{params[:action]}.notice")
-
-    if @card.site_customization_page_id
-      redirect_to admin_site_customization_page_cards_path(page), notice: notice
-    else
-      redirect_to admin_homepage_url, notice: notice
+      params.require(:widget_card).permit(
+        :label, :title, :description, :link_text, :link_url,
+        :button_text, :button_url, :alignment, :header, :site_customization_page_id,
+        :columns,
+        translation_params(Widget::Card),
+        image_attributes: image_attributes
+      )
     end
-  end
 
-  def page
-    ::SiteCustomization::Page.find(@card.site_customization_page_id)
-  end
+    def header_card?
+      params[:header_card].present?
+    end
 
-  def resource
-    Widget::Card.find(params[:id])
-  end
+    def redirect_to_customization_page_cards_or_homepage
+      notice = t("admin.site_customization.pages.cards.#{params[:action]}.notice")
+
+      if @card.site_customization_page_id
+        redirect_to admin_site_customization_page_cards_path(page), notice: notice
+      else
+        redirect_to admin_homepage_url, notice: notice
+      end
+    end
+
+    def page
+      ::SiteCustomization::Page.find(@card.site_customization_page_id)
+    end
+
+    def resource
+      Widget::Card.find(params[:id])
+    end
 end

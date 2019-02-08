@@ -2886,11 +2886,19 @@ table {
 .figure-card {
   display: flex;
   margin: 0 0 $line-height;
+  overflow: hidden;
   position: relative;
+
+  @include breakpoint(medium down) {
+    min-height: $line-height * 4;
+  }
 
   @include breakpoint(medium) {
     max-height: rem-calc(185);
-    overflow: hidden;
+  }
+
+  @include breakpoint(large) {
+    min-height: rem-calc(185);
   }
 
   a {
@@ -2922,8 +2930,16 @@ table {
 
     h3,
     .title {
-      font-size: rem-calc(24);
-      line-height: rem-calc(24);
+      font-size: $base-font-size;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(20);
+      }
+
+      @include breakpoint(large) {
+        font-size: rem-calc(24);
+        line-height: rem-calc(24);
+      }
     }
 
     span {
