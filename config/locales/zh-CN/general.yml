@@ -234,13 +234,6 @@ zh-CN:
         no_notifications: "您没有新的通知"
     admin:
       watch_form_message: '您有未保存的更改。是否确认要离开此页面？'
-  legacy_legislation:
-    help:
-      alt: 选择您希望评论的文本然后按下铅笔按钮。
-      text: 若要对此文档做评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
-      text_sign_in: 登录
-      text_sign_up: 注册
-      title: 我可以如何评论此文档？
   notifications:
     index:
       empty_notifications: 您没有新的通知。
