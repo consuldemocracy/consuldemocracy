@@ -461,6 +461,7 @@ en:
           homepage_description: Here you can explain the content of the process
           homepage_enabled: Homepage enabled
           banner_title: Header colors
+          color_help: Hexadecimal format
         index:
           create: New process
           delete: Delete
