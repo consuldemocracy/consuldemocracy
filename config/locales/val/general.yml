@@ -3,7 +3,7 @@ val:
     show:
       change_credentials_link: Canviar les meues dades d'acces
       email_on_comment_label: Rebre un correu electrònic quan algú comenta en les meues propostes o debats
-      email_on_comment_reply_label: Rebre un correu electrònic quant algú contesta els meus comentaris
+      email_on_comment_reply_label: Rebre un correu electrònic quan algú contesta els meus comentaris
       erase_account_link: Eliminar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
