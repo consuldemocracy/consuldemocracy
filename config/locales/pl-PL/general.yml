@@ -247,13 +247,6 @@ pl:
         no_notifications: "Nie masz nowych powiadomień"
     admin:
       watch_form_message: 'Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?'
-  legacy_legislation:
-    help:
-      alt: Zaznacz tekst, który chcesz skomentować i naciśnij przycisk z ołówkiem.
-      text: Aby skomentować ten dokument musisz się %{sign_in} lub %{sign_up}. Zaznacz tekst, który chcesz skomentować i naciśnij przycisk z ołówkiem.
-      text_sign_in: zaloguj się
-      text_sign_up: zarejestruj się
-      title: Jak mogę skomentować ten dokument?
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
