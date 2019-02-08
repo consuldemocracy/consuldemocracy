@@ -438,8 +438,6 @@ de:
           homepage: Beschreibung
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
           homepage_enabled: Homepage aktiviert
-          banner_background_color: Hintergrundfarbe
-          banner_font_color: Schriftfarbe
         index:
           create: Neues Beteiligungsverfahren
           delete: Löschen
