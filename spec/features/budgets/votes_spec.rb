@@ -45,7 +45,7 @@ feature 'Votes' do
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within('.supports') do
-          accept_confirm { find('.in-favor a').click }
+          find(".in-favor a").click
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -67,7 +67,7 @@ feature 'Votes' do
         visit budget_investment_path(budget, @investment)
 
         within('.supports') do
-          accept_confirm { find('.in-favor a').click }
+          find(".in-favor a").click
           expect(page).to have_content "1 support"
 
           expect(page).not_to have_selector ".in-favor a"
@@ -78,7 +78,7 @@ feature 'Votes' do
         visit budget_investment_path(budget, @investment)
 
         within('.supports') do
-          accept_confirm { find('.in-favor a').click }
+          find(".in-favor a").click
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. Share it!"
