@@ -5,7 +5,7 @@
     </div>
   </div>
 </div>
-<% cache [@stats, @geozones] do %>
+<%# cache [@stats, @geozones] do %>
   <% provide :title, t("stats.page_title") %>
 
   <%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
@@ -173,4 +173,4 @@
     </div>
 
   </div>
-<% end %>
+<%# end %>

@@ -14,6 +14,9 @@
           <%= link_to t("results.results_link"), budget_results_path(@budget) %>
         </li>
         <li class="tabs-title">
+          <%= link_to t("tracking.title_tracking"), budget_executions_path(@budget) %>
+        </li>
+        <li class="tabs-title">
           <%= link_to t("stats.stats_link"), budget_stats_path(@budget) %>
         </li>
         <%# A eliminar, sacar documentos de estado por campaña de presupuestos. %>

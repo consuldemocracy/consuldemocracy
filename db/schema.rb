@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181206153510) do
+ActiveRecord::Schema.define(version: 20190117123547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,23 @@ ActiveRecord::Schema.define(version: 20181206153510) do
 
   add_index "annotations", ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "area_translations", force: :cascade do |t|
+    t.integer  "area_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "area_translations", ["area_id"], name: "index_area_translations_on_area_id", using: :btree
+  add_index "area_translations", ["locale"], name: "index_area_translations_on_locale", using: :btree
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "banner_sections", force: :cascade do |t|
     t.integer  "banner_id"
@@ -249,12 +266,16 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.boolean  "selected_by_assembly",                        default: false,       null: false
     t.boolean  "visible_to_valuators",                        default: false
     t.integer  "valuator_group_assignments_count",            default: 0
+    t.integer  "sub_area_id"
+    t.integer  "geozone_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
   add_index "budget_investments", ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
+  add_index "budget_investments", ["geozone_id"], name: "index_budget_investments_on_geozone_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
+  add_index "budget_investments", ["sub_area_id"], name: "index_budget_investments_on_sub_area_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
   create_table "budget_phases", force: :cascade do |t|
@@ -312,6 +333,7 @@ ActiveRecord::Schema.define(version: 20181206153510) do
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
     t.text     "description_informing"
+    t.boolean  "areas",                                    default: false
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -1279,6 +1301,24 @@ ActiveRecord::Schema.define(version: 20181206153510) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+
+  create_table "sub_area_translations", force: :cascade do |t|
+    t.integer  "sub_area_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+  end
+
+  add_index "sub_area_translations", ["locale"], name: "index_sub_area_translations_on_locale", using: :btree
+  add_index "sub_area_translations", ["sub_area_id"], name: "index_sub_area_translations_on_sub_area_id", using: :btree
+
+  create_table "sub_areas", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "area_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

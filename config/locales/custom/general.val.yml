@@ -1,7 +1,14 @@
 val:
+  form:
+    not_saved_html: "1 error impideix guardar %{resource}.<br>Per favor, verifica els camps marcats per a corregir-los:"
   spending_proposals:
     spending_proposal:
       support: Avalar
   votes:
     budget_investments:
       quota_exceeded: Ja has avalat les propostes permeses
+
+
+  shared:
+    tags_cloud:
+      areas: Àrees

@@ -11,3 +11,5 @@ es:
           other: "%{count} Avales"
     errors:
       document_in_use: El documento ya está utilizado por otra cuenta.
+    registrations:
+      phone_validation: tiene que empezar por 6, 7 o 9

@@ -5,15 +5,30 @@ val:
       reasons_for_not_balloting:
         different_heading_assigned: Ja has votat en un districte diferent (%{user_heading}) del pressupost
     show:
+      area: 'Àrea: '
       view_all: Vore totes les propostes
       all_headings: Totes les propostes
+      view_by_areas: Tria l'àrea en que vols fer la proposta
+    index:
+      see_results: Vore resultats
+      milestones: Fites
     investments:
+      show:
+        title: Proposta d'inversió
       form:
+        area: 'Àrea'
+        district: Districte
         groups_proposed: Ja has creat una proposta per a %{groups}
+        sub_area: 'Subàrea'
       index:
         sidebar:
           create: Crear proposta
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
+          required_phone: "Per a crear una nova proposta d'inversió has de introduïr el %{your_phone_number}"
+          your_phone_number: teu telèfon
+          required_area: Per a crear una proposta has de seleccionar una àrea en la barra lateral o des de %{link}
+          required_sub_area: Per a crear una proposta has de seleccionar una subàrea en la barra lateral o des de %{link}
+          budget: pressupostos
         lista_seleccionadas: Seleccionades per les reunions de districte
         link_lista_seleccionadas: Consulta aquí les propostes prioritzades d'aquest districte que passen directament a la fase de validació i estudi de viabilitat
       investment:
@@ -60,56 +75,55 @@ val:
       * lloguers
     fases:
       fase_1: Presentació de Propostes
-      fase_1_subtitle: A partir de les 14:00 hores del 15 de febrer fins a les 14:00 hores del 28 de març de 2018.
+      fase_1_subtitle: A partir de les 14:00 hores del 11 de febrer fins a les 14:00 hores del 4 de març de 2019.
       fase_1_timeline_title: Presentació de propostes
       fase_1_timeline_body: |-
+
         Les persones majors de 16 anys empadronades a Castelló de la Plana podran presentar propostes. Es presentaran de forma individual, sense perjudici que la persona que la presenta represente una organització, un grup, un col·lectiu...
 
-        Es podrà presentar una proposta per a tota la ciutat i/o una proposta per a un districte concret a la seua elecció. No és necessari ser resident en un districte per a poder presentar una proposta d'aquest districte.
+        Es podrà presentar una proposta per persona. La proposta haurà d’estar vinculada a un districte concret de la seua elecció. No cal ser resident en un districte per a poder presentar una proposta d'aquest districte.
 
-        Les propostes es faran preferiblement mitjançant la web decidim.castello.es i excepcionalment es podran presentar a les Tinences d'Alcaldia de l'Ajuntament.
+        Les propostes es faran preferiblement mitjançant la web decidim.castello.es i excepcionalment es podran presentar a l’oficina de Participació Ciutadana, a l’avinguda Germans Bou 27.
 
-
-      fase_2: Reunions de Districte
-      fase_2_subtitle: Del 3 al 13 d'abril de 2018.
-      fase_2_timeline_title: Reunions de districtes
+      fase_2: Jornada de millora de les propostes
+      fase_2_subtitle: Del 5 al 22 de març de 2019.
+      fase_2_timeline_title: Jornada de millora de les propostes
       fase_2_timeline_body: |-
-        S'organitzarà una reunió en cadascun dels districtes per a prioritzar les propostes vinculades al mateix districte.
+        S'organitzarà una jornada de millora de les propostes que es celebrarà entre el 5 i el 22 de març. En aquesta jornada es podrà realitzar suggeriments de millora en els projectes presentats.
 
-        La primera proposta i la segona triades per cada reunió de districte passaran directament a la fase de validació i estudi de viabilitat. En el cas que alguna de les dos propostes siga inviable tècnicament, seguint l'ordre de priorització, es valorarà la següent en la llista.
-
-
+        Els suggeriments de millora es comunicaran a les persones promotores de les propostes, que decidiran si donen el seu consentiment o no per a introduir-les.
 
       fase_3: Suport de les propostes
-      fase_3_subtitle: A partir de les 14:00 hores del 18 d'abril fins a les 14:00 hores del 30 d'abril de 2018.
+      fase_3_subtitle: A partir de les 14:00 hores del 1 d'abril fins a les 14:00 hores del 15 d'abril de 2019.
       fase_3_timeline_title: Suport de les propostes
       fase_3_timeline_body: |-
         Les propostes presentades hauran de comptar amb el suport de 35 vots per a passar a la fase següent. El suport de les propostes es recollirà mitjançant la plataforma web decidim.castello.es
 
-        Les persones empadronades, majors de 16 anys, tenen la possibilitat de donar suport amb el seu vot fins a un màxim de 3 propostes per a la ciutat, per al districte, o per ambdós indistintament.
+        Les persones empadronades, majors de 16 anys, tenen la possibilitat de donar suport amb el seu vot fins a un màxim de 3 propostes, no necesssàriament vinculades al mateix districte.
+
 
       fase_4: Avaluació de les propostes
-      fase_4_subtitle: Del 2 al 30 de maig de 2018.
+      fase_4_subtitle: Del 16 d'abril fins al 21 de maig de 2019.
       fase_4_timeline_title: Avaluació de les propostes
       fase_4_timeline_body: |-
         Les propostes amb suports suficients seran estudiades pels serveis tècnics municipals, que valoraran que cadascuna complisca els requisits necessaris i pressupostaran el cost de dur-les a terme.
 
       fase_5: Votació ciutadana
-      fase_5_subtitle: A partir de les 14:00 hores de l'11 de juny fins a les 14:00 hores del 25 de juny de 2018.
+      fase_5_subtitle: A partir de les 14:00 hores de l'10 de juny fins a les 14:00 hores del 25 de juny de 2019.
       fase_5_timeline_title: Votació ciutadana
       fase_5_timeline_body: |-
-        Podran votar totes les persones majors de 16 anys i empadronades al municipi de Castelló de la Plana. Es podrà votar les propostes a nivell ciutat, i en un districte de la seua elecció (però només en un, pot ser el districte on està empadronat, on trevalla, on viu la seua família...)
+        Podran votar totes les persones majors de 16 anys i empadronades al municipi de Castelló de la Plana.
 
-        Es podran votar tantes propostes com s'estime oportú fins a arribar a la quantitat d'1.050.000 euros en la categoria de ciutat, o a la quantia prevista en la categoria de districte elegit.
+        Es podran votar tantes propostes com s'estime oportú fins a arribar a la quantitat d'1.650.000 euros.
 
         La votació es farà de manera telemàtica mitjançant la plataforma web: decidim.castello.es S'habilitaran uns "punts de votació", amb accés a internet, on es donarà suport presencial a les persones que vullguen votar. Es publicitarà en la plataforma web la llista de seus de "punts de votació".
-
 
       fase_6: Resultats
       fase_6_subtitle:
       fase_6_timeline_title: Resultats
       fase_6_timeline_body: |-
-        El resultat del procés consultiu s'obtindrà, una vegada finalitzada la votació, ordenant les propostes de major a menor votació, sempre que el cost total de les propostes no supere el pressupost assignat a la categoria de ciutat ni a la quantitat assignada al districte.
+        El resultat del procés consultiu s'obtindrà, una vegada finalitzada la votació, ordenant les propostes de major a menor votació, sempre que el cost total de les propostes no supere el pressupost de 1.650.000 euros.
+
 
 
       results: Resultats

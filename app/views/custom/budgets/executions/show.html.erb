@@ -31,6 +31,17 @@
       <li class="tabs-title">
         <%= link_to t("stats.stats_link"), budget_stats_path(@budget) %>
       </li>
+      <% if @budget.id == 1 %>
+        <li class="tabs-title">
+          <%= link_to t("progress.progress_1_link"), budget_progress_1_path(@budget) %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t("progress.progress_2_link"), budget_progress_2_path(@budget) %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t("progress.progress_3_link"), budget_progress_3_path(@budget) %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

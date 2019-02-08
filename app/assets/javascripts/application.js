@@ -129,7 +129,7 @@ var initialize_modules = function() {
   App.Custom.initialize();
 
   //$("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
-  $("#columna_2").css({height: $('div#columna_1').height() + 51 });
+  //$("#columna_2").css({height: $('div#columna_1').height() + 121 });
 
   $('#distritos-map').imageMapResize();
 };

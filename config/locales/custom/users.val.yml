@@ -10,3 +10,5 @@ val:
           other: "%{count} Avals"
     errors:
       document_in_use: El document ja està utilitzat en un altre compte
+    registrations:
+      phone_validation: té que començar per 6, 7 o 9

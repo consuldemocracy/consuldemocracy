@@ -89,7 +89,7 @@ header {
 }
 .menu > li {
   display: block;
-  width: 100%;
+  // width: 100%;
   color: black;
 }
 
@@ -670,4 +670,62 @@ table.survey-districts {
 
 li.float_right {
   float: right;
+}
+
+#areas.menu.vertical {
+  margin: $line-height 0;
+  padding: $line-height 0;
+
+  li {
+    margin-bottom: $line-height / 3;
+
+    a {
+      color: $text-medium;
+      padding: 0;
+
+      &.is-active {
+        font-weight: bold;
+        color: $brand;
+      }
+    }
+
+    h2 {
+      font-size: $base-font-size;
+    }
+
+    &.is-active {
+      border-bottom: none;
+      color: $brand;
+
+      a {
+        background: white;
+      font-weight: 600;
+      }
+    }
+
+    ul.nested.menu.vertical {
+      margin: 0.5rem 0 0.5rem 1rem;
+      padding: 0.5rem 0 0 0;
+    }
+  }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
+}
+
+.lista-subareas {
+  padding: 0.5rem;
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    font-weight: 600;
+  }
 }

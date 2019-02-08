@@ -15,6 +15,8 @@ module Budgets
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
+    before_action :load_area, only: [:index, :new, :create]
+    before_action :load_geozone, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
@@ -40,7 +42,13 @@ module Budgets
                         else
                           investments
                         end
-
+      if @area.present?
+        all_investments = all_investments.by_area(@area.id)
+        if @sub_area.present?
+          all_investments = all_investments.where(sub_area_id: @sub_area.id)
+        end
+      end
+      all_investments = all_investments.by_geozone(@geozone.id) if @geozone.present?
       @investments = all_investments.page(params[:page]).per(10).for_render
 
       @investment_ids = @investments.pluck(:id)
@@ -69,6 +77,7 @@ module Budgets
         redirect_to budget_investment_path(@budget, @investment),
                     notice: t('flash.actions.create.budget_investment')
       else
+        load_area
         render :new
       end
     end
@@ -134,8 +143,8 @@ module Budgets
       params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
       params[:budget_investment][:tag_list] = add_organization(params[:budget_investment][:tag_list])
       params.require(:budget_investment)
-            .permit(:title, :description, :heading_id, :tag_list,
-                    :organization_name, :location, :terms_of_service, :skip_map,
+            .permit(:title, :description, :heading_id, :tag_list, :organization_name, :location, :terms_of_service, :skip_map,
+                    :sub_area_id, :geozone_id,
                     image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                     map_location_attributes: [:latitude, :longitude, :zoom])
@@ -156,6 +165,15 @@ module Budgets
       end
     end
 
+    def load_area
+      @area = Area.find(params[:area_id]) if params[:area_id]
+      @sub_area = SubArea.find(params[:sub_area_id]) if params[:sub_area_id]
+    end
+
+    def load_geozone
+      @geozone = params[:geozone_id] ? Geozone.find(params[:geozone_id]) : nil
+    end
+
     def load_categories
       @categories = ActsAsTaggableOn::Tag.category.order(:name)
     end
@@ -173,9 +191,11 @@ module Budgets
     end
 
     def locate(tag_string)
-      array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
-      array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
-      array_tags.join(',')
+      if tag_string
+        array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
+        array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
+        array_tags.join(',')
+      end
     end
 
     def add_organization(tag_string)

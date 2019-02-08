@@ -42,6 +42,11 @@ class User < ActiveRecord::Base
 
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
 
+  validates :phone_number, presence: true, length: { is: 9 },
+                           numericality: true,
+                           format: { with: /(6|7|9)[0-9]+/,
+                                     message: I18n.t('users.registrations.phone_validation') }
+
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
@@ -353,6 +358,13 @@ class User < ActiveRecord::Base
 
 
     end
+  end
+
+  def can_create_investments(budget)
+    budget_headings = budget.groups.first&.headings&.pluck(:id)
+    user_headings = budget.investments.where(author_id: id).pluck(:heading_id)
+
+    budget_headings != user_headings
   end
 
   private

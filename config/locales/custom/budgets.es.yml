@@ -5,23 +5,38 @@ es:
       reasons_for_not_balloting:
         different_heading_assigned: Ya has votado en un distrito diferente (%{user_heading}) del presupuesto
     show:
+      area: 'Área: '
       view_all: Ver todas las propuestas
       all_headings: Todas las propuestas
+      view_by_areas: Escoge el área en que quieres hacer la propuesta
+    index:
+      see_results: Ver resultados
+      milestones: Hitos
     investments:
       show:
         title: Propuesta de inversión
       form:
+        area: 'Área'
+        district: 'Distrito'
         groups_proposed: Ya has creado una propuesta para %{groups}
+        sub_area: 'Subárea'
       index:
         sidebar:
           create: Crear propuesta
+          required_phone: "Para crear un nuevo proyecto de gasto debes introducir %{your_phone_number}"
+          your_phone_number: tu teléfono
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
+          required_area: Para crear una propuesta tienes que seleccionar una área en la barra lateral o desde %{link}
+          required_sub_area: Para crear una proposta tienes que seleccionar una subárea en la barra lateral o desde %{link}
+          budget: presupuestos
         by_heading: 'Propuestas de inversión con ámbito: %{heading}'
         lista_seleccionadas: Seleccionadas por las reuniones de distrito
         link_lista_seleccionadas: Consulta aquí las propuestas priorizadas de este distrito que pasan directamente a la fase de validación y estudio de viabilidad
       investment:
         title: Propuesta de inversión
+        already_added: Ya has añadido esta propuesta
         already_supported: Ya has avalado esta propuesta.
+        confirm_group: "Solo puedes avalar presupuestos en un distrito. Si continúas no podrás cambiar tu decisión. ¿Estás seguro/a?"
         support_title: Avalar esta propuesta
         supports:
           zero: Sin avales
@@ -70,46 +85,44 @@ es:
       * alquileres
     fases:
       fase_1: Presentación de propuestas
-      fase_1_subtitle: Desde las 14:00 horas del 15 de febrero hasta las 14:00 horas del 28 de marzo de 2018
+      fase_1_subtitle: Desde las 14:00 horas del 11 de febrero hasta las 14:00 horas del 4 de marzo de 2019.
       fase_1_timeline_title: Presentación de propuestas
       fase_1_timeline_body: |-
-        Las personas mayores de 16 años empadronadas en Castellón de la Plana podrán presentar propuestas. Se presentarán de forma individual, sin prejuicio que la persona que la presenta represente a una organización, grupo, colectivo...
+        Las personas mayores de 16 años empadronadas en Castelló de la Plana podrán presentar propuestas. Se presentarán de forma individual, sin prejuicio que la persona que la presenta represente a una organización, grupo, colectivo...
 
-        Se podrá presentar una propuesta para toda la ciudad y/o una propuesta para un distrito concreto a su elección. No es necesario ser residente en un distrito para poder presentar propuesta de ese distrito
+        Se podrá presentar una propuesta por persona. La propuesta tendrá que estar vinculada a un distrito concreto a su elección. No es necesario ser residente en un distrito para poder presentar una propuesta de ese distrito.
 
-        Las propuestas se harán preferiblemente a través de la web decidim.castello.es y excepcionalmente se podrán presentar en las Tenencias de Alcaldía del Ayuntamiento
+        Las propuestas se harán preferiblemente a través de la web decidim.castello.es y excepcionalmente se podrán presentar en la oficina de Participació Ciutadana, a la avenida Hermanos Bou 27.
 
-
-
-      fase_2: Reuniones de Distrito
-      fase_2_subtitle: Del 3 al 13 de abril de 2018
-      fase_2_timeline_title: Reuniones de distritos
+      fase_2: Jornada de mejora de las propuestas
+      fase_2_subtitle: Entre el 5 y el 22 de marzo de 2019
+      fase_2_timeline_title: Jornada de mejora de las propuestas
       fase_2_timeline_body: |-
-        Se organizará una reunión en cada uno de los distritos para priorizar las propuestas vinculadas al mismo distrito.
+        Se organizará una jornada de mejora de las propuestas que se celebrará entre el 5 y el 22 de marzo. En esta jornada se podrán realizar sugerencias de mejora en las propuestas presentadas.
 
-        La primera y segunda propuesta elegidas por cada reunión de Distrito pasarán directamente a la fase de validación y estudio de viabilidad. En el supuesto de que alguna de las dos propuestas sea inviable técnicamente, siguiendo el orden de priorización, se valorará la siguiente en la lista.
+        Las sugerencias de mejora se comunicarán a las personas promotoras de las propuestas, que decidiran si dan su consentimiento o no para introducirlas.
 
       fase_3: Apoyo de las propuestas
-      fase_3_subtitle: Desde las 14:00 horas del 18 de abril hasta las 14:00 horas del 30 de abril de 2018
+      fase_3_subtitle: Desde las 14:00 horas del 1 de abril hasta las 14:00 horas del 15 de abril de 2019.
       fase_3_timeline_title: Apoyo de las propuestas
       fase_3_timeline_body: |-
         Las propuestas presentadas deberán contar con el apoyo de 35 votos para pasar a la siguiente fase. El apoyo de las propuestas se recogerá a través de la plataforma web decidim.castello.es
 
-        La ciudadanía empadronada, mayor de 16 años, tienen la posibilidad de apoyar con su voto hasta un máximo de 3 propuestas, de ciudad, de distrito, o entre ambas.
+        Las personas empadronadas, mayores de 16 años, tienen la posibilidad de apoyar con su voto hasta un máximo de 3 propuestas, no necesariamente vinculadas al mismo distrito.
 
       fase_4: Evaluación de las propuestas
-      fase_4_subtitle: Del 2 al 30 de mayo de 2018
+      fase_4_subtitle: Del 16 de abril al 21 de mayo de 2019.
       fase_4_timeline_title: Evaluación de las propuestas
       fase_4_timeline_body: |-
         Las propuestas con apoyos suficientes, serán estudiadas por los servicios técnicos municipales, quienes valorarán que cada una cumpla con los requisitos necesarios y presupuestarán el coste de llevarlas a cabo.
 
       fase_5: Votación ciudadana
-      fase_5_subtitle: Desde las 14:00 horas del 11 de junio hasta las 14:00 horas del 25 de junio 2018.
+      fase_5_subtitle: Desde las 14:00 horas del 10 de junio hasta las 14:00 horas del 25 de junio de 2019.
       fase_5_timeline_title: Votación ciudadana
       fase_5_timeline_body: |-
-        Podrán votar todas las personas mayores de 16 años y empadronadas en el municipio de Castellón de la Plana. Se podrá votar las propuestas a nivel ciudad, y en un distrito de su elección (pero sólo en uno, puede ser el distrito donde está empadronado, donde trabaja, donde vive su familia...)
+        Podrán votar todas las personas mayores de 16 años y empadronadas en el municipio de Castelló de la Plana.
 
-        Se podrán votar tantas propuestas como se estime oportuno hasta llegar a la cantidad de 1.050.000 euros en la categoría de ciudad, o a la cuantía prevista en la categoría de distrito elegido.
+        Se podrán votar tantas propuestas como se estime oportuno hasta llegar a la cantidad de 1.650.000 euros. 
 
         La votación se realizará de forma telemática a través de la plataforma web: decicim.castello.es Se habilitará unos "puntos de votación", con acceso a internet donde se dará apoyo presencial a las personas que quieran votar. Se publicitará en la plataforma web el listado de sedes de "puntos de votación".
 
@@ -117,7 +130,7 @@ es:
       fase_6_subtitle: ''
       fase_6_timeline_title: Resultados
       fase_6_timeline_body: |-
-        El resultado del proceso consultivo se obtendrá, una vez finalizada la votación, ordenando las propuestas de mayor a menor votación, siempre que el coste total de las propuestas no supere el presupuesto asignado a la categoría de ciudad ni a la cantidad asignada al distrito.
+        El resultado del proceso consultivo se obtendrá, una vez finalizada la votación, ordenando las propuestas de mayor a menor votación, siempre que el coste total de las propuestas no supere el presupuesto de 1.650.000 euros.
 
 
       results: Resultados

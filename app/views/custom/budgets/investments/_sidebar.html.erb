@@ -21,8 +21,10 @@
   </p>
 <% end %>
 
-<%= render "shared/tag_cloud", taggable: 'budget/investment' %>
-<%= render 'budgets/investments/categories' %>
+<% unless @budget.areas %>
+  <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
+<% end %>
+<%= render 'budgets/investments/categories', area_id: @area&.id %>
 
 <% if @heading && can?(:show, @ballot) %>
 

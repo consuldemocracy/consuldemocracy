@@ -1,4 +1,21 @@
 es:
+  account:
+    show:
+      change_credentials_link: Cambiar mis datos de acceso
+      email_on_direct_message_label: Recibir correos electrónicos con mensajes privados
+      email_on_comment_label: Recibir un correo electrónico cuando alguien conteste a mis comentarios
+      email_on_comment_reply_label: Recibir correos electrónicos con información interesante sobre la web
+      erase_account_link: Eliminar mi cuenta
+      notifications: Notificaciones
+      personal: Datos personales
+      phone_number_label: Teléfono
+      public_activity_label: Mostrar públicamente mi lista de actividades
+      save_changes_submit: Guardar cambios
+      email_digest_label: Recibir un resumen de notificaciones sobre propuestas
+      title: Mi cuenta
+      username_label: Nombre de usuario
+  form:
+    not_saved_html: "1 error impide guardar %{resource}.<br>Por favor, verifica los campos marcados para corregirlos:"
   spending_proposals:
     spending_proposal:
       support: Avalar
@@ -6,3 +23,7 @@ es:
     budget_investments:
       quota_exceeded: Ya has avalado los proyectos permitidos
       not_verified: Las propuestas sólo pueden ser avaladas por usuarios verificados, %{verify_account}.
+
+  shared:
+    tags_cloud:
+      areas: Áreas

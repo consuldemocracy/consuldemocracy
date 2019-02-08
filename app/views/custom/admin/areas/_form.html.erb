@@ -1,0 +1,30 @@
+<%= render "admin/shared/globalize_locales", resource: @area %>
+
+<%= translatable_form_for [:admin, @area] do |f| %>
+  <% if @area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@area.errors.count, "error ") + t('admin.areas.error')%>:</h2>
+      <ul>
+      <% @area.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="small-12">
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_field :name, label: t('admin.areas.name') %>
+    <% end %>
+    <% if feature?(:allow_images) %>
+      <%= render 'images/nested_image', imageable: @area, f: f %>
+    <% end %>
+    <div class="actions">
+      <%= f.submit t("admin.actions.#{action}"), class: "button success" %>
+    </div>
+  </div>
+  <% if @area.persisted? %>
+    <div class="small-12">
+      <%= render 'admin/sub_areas/list_sub_areas' %>
+    </div>
+  <% end %>
+<% end %>

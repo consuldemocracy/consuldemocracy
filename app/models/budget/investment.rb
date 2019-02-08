@@ -32,6 +32,9 @@ class Budget
     belongs_to :budget
     belongs_to :administrator
 
+    belongs_to :sub_area
+    belongs_to :geozone
+
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
 
@@ -54,10 +57,12 @@ class Budget
 
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+    validates :sub_area_id, presence: { if: :areas_active }
+    validates :geozone_id, presence: { if: :areas_active }
+
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    #scope :sort_by_random,           -> { reorder("RANDOM()") }
     scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
     scope :sort_by_created_at, -> {reorder(:created_at)}
 
@@ -92,6 +97,8 @@ class Budget
     scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
+    scope :by_area,           ->(area_id)     { where(sub_area_id: Area.find(area_id).sub_areas.pluck(:id)) }
+    scope :by_geozone,        ->(geozone_id)  { where(geozone_id: Geozone.find(geozone_id)) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
     scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
@@ -112,6 +119,8 @@ class Budget
     after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+
+    delegate :name, to: :sub_area, prefix: true, allow_nil: true
 
     def mark_unfeasible
       feasibility = 'unfeasible'
@@ -391,6 +400,10 @@ class Budget
       save
     end
 
+    def area
+      sub_area.area
+    end
+
     private
 
     def self.regenerate_cached_ballots_up
@@ -413,6 +426,10 @@ class Budget
       text = Html2Text.convert(description)
       max = Budget::Investment.description_max_length
       errors.add(:description, I18n.t('errors.messages.too_long', count: max)) if text.length > max
+    end
+
+    def areas_active
+      budget.areas
     end
   end
 end

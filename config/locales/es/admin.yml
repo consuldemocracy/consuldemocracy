@@ -1,7 +1,27 @@
 es:
   admin:
+    areas:
+      area: 'Área: '
+      areas_title: Áreas
+      create_area: Crear área
+      editing: Editar área
+      error: ha impedido guardar el área
+      example_name: Urbanismo, Turismo, etc.
+      name: Nombre
+      new_area: Nueva Área
+      no_areas: "No hay ninguna área."
+    sub_areas:
+      create_sub_area: Crear subárea
+      editing: Editar subárea
+      name: Nombre
+      new_sub_area: Nueva Subárea
+      no_sub_areas: "No hay ninguna subárea."
+      sub_areas_title: Subáreas
     actions:
+      actions: Acciones
+      confirm: ¿Estás seguro?
       confirm_hide: Confirmar moderación
+      create: Crear
       hide_author: Bloquear al autor
       restore: Volver a mostrar
       unmark_featured: Quitar destacado
@@ -63,6 +83,7 @@ es:
       update:
         notice: Presupuestos participativos actualizados
       edit:
+        activate_areas: 'Activar áreas'
         title: Editar presupuestos participativos
         phase: Fase
         dates: Fechas
@@ -361,7 +382,7 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
-        homepage: Homepage
+        homepage: Página principal
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques

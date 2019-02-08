@@ -18,6 +18,23 @@ module BudgetHeadingsHelper
     aux
   end
 
+  def custom_geozone_select_options
+    aux = []
+    Geozone.all.order('created_at DESC').each do |geozone|
+      aux << [geozone.name, geozone.id]
+    end
+    aux
+  end
+
+  def custom_sub_area_select_options(area_id)
+    aux = []
+    sub_areas_allowed = Area.find(area_id).sub_areas
+    sub_areas_allowed.each do |sub_area|
+      aux << [sub_area.name, sub_area.id]
+    end
+    aux
+  end
+
   def groups_not_allowed(budget)
     groups_ids = budget.investments.where(author_id: current_user.id).map(&:group_id)
     budget.groups.where(id: groups_ids)

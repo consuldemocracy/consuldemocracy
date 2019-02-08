@@ -19,7 +19,7 @@ val:
       contact_us: "Pots consultar les preguntes més freqüents sobre l'ús d'aquest portal"
       copyright: Ajuntament de Castelló de la Plana, %{year}
       description: "Aquest portal és una adaptació de la plataforma de %{open_source} %{consul} desenvolupada per l'Ajuntament de Madrid i adaptada per l'Ajuntament de Castelló de la Plana."
-      faq: açí
+      faq: ací
       more_info: Més informació
       open_data_text: "Totes les dades de l'Ajuntament són teues."
       open_data_title: Dades Obertes.

@@ -30,23 +30,23 @@
 
 <div class="budgets-calendar">
   <div class="row">
-    <div class="small-6 large-2 large-offset-1 column text-center">
+    <div class="columns large-2 large-offset-1 text-center">
       <p><strong><%= t('budgets.fases.fase_1')%></strong></p>
       <p><%= t('budgets.fases.fase_1_subtitle')%></p>
     </div>
-    <div class="small-6 large-2 column text-center">
+    <div class="columns large-2 text-center">
       <p><strong><%= t('budgets.fases.fase_2')%></strong></p>
       <p><%= t('budgets.fases.fase_2_subtitle')%></p>
     </div>
-    <div class="small-6 large-2 column text-center">
+    <div class="columns large-2 text-center">
       <p><strong><%= t('budgets.fases.fase_3')%></strong></p>
       <p><%= t('budgets.fases.fase_3_subtitle')%></p>
     </div>
-    <div class="small-6 large-2 column text-center">
+    <div class="columns large-2 text-center">
       <p><strong><%= t('budgets.fases.fase_4')%></strong></p>
       <p><%= t('budgets.fases.fase_4_subtitle')%></p>
     </div>
-    <div class="small-6 large-2 column end text-center">
+    <div class="columns large-2 end text-center">
       <p><strong><%= t('budgets.fases.fase_5')%></strong></p>
       <p><%= t('budgets.fases.fase_5_subtitle')%></p>
     </div>
@@ -124,16 +124,19 @@
             <div class="budget-investment clear">
               <div class="panel past-budgets">
                 <div class="row" data-equalizer data-equalizer-on="medium">
-                  <div class="small-12 medium-9 column table" data-equalizer-watch>
+                  <div class="small-12 medium-8 column table" data-equalizer-watch>
                     <div class="table-cell align-middle">
                       <h3><%= budget.name %></h3>
                     </div>
                   </div>
-                  <div class="small-12 medium-3 column table" data-equalizer-watch>
-                    <div class="table-cell align-middle">
+                  <div class="small-12 medium-4 column table" data-equalizer-watch>
+                    <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                       <%= link_to t("budgets.index.see_results"),
                                   budget_results_path(budget.id),
-                                  class: "button expanded" %>
+                                  class: "button" %>
+                      <%= link_to t("budgets.index.milestones"),
+                                  budget_executions_path(budget.id),
+                                  class: "button" %>
                     </div>
                   </div>
                 </div>
