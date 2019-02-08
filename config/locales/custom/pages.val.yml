@@ -199,6 +199,7 @@ val:
         response: |-
           Fes clic sobre l'enllaç "entrar", introdueix el teu correu electrònic i la teua contrasenya, i prem el botó "entrar" Una vegada fet açò, fes clic sobre l'enllaç "el meu compte" on trobaràs totes les opcions que et permetran canviar el teu correu electrònic , nom d'usuari, contrasenya, donar-te de baixa o activar/desactivar les notificacions. Una vegada realitzat el canvi adequat asegurate de fer clic sobre el botó "Guardar canvis".
     more_information:
+      bases_link: Bases pressupostos participatius
       item_1:
         title: 1.- Què són els pressupostos participatius?
         subt: ''

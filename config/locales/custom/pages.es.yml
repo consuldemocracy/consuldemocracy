@@ -203,6 +203,7 @@ es:
         response: |-
           Haz click en el enlace "Entrar", introduce tu correo electrónico y tu contraseña, y pulsa el botón "Entrar". Una vez hecho esto, haz click en el enlace "Mi cuenta" donde encontrarás todas las opciones que te permitirán cambiar tu correo electrónico, nombre de usuario, contraseña, darte de baja o activar/desactivar las notificaciones. Una vez realizado el cambio adecuado asegúrate de hacer click en el botón "Guardar cambios".
     more_information:
+      bases_link: Bases presupuestos participativos
       item_1:
         title: 1.-¿ Qué són los presupuestos participativos?
         subt: ''
@@ -233,11 +234,6 @@ es:
         text: |-
           Para la consulta ciudadana sobre los presupuestos participativos del 2019 el gobierno municipal destina 1.650.000 euros para invertir en proyectos propuestos por la ciudadanía, y escogidos directamente por los vecinos y vecinas de la ciudad.
 
-
-
-
-
-
       item_3:
         title: 3.- ¿Qué proyectos se pueden presentar?
         subt: ''
@@ -253,7 +249,6 @@ es:
           - Propuestas que no estén destinadas a beneficiar al interés público.
           - Propuestas valoradas en más de un millón de euros.
 
-
       item_4:
         title: 4.- ¿Quién puede presentar propuestas?
         subt: ''
@@ -263,7 +258,6 @@ es:
           Para poder comprobar el empadronamiento se deberá verificar la cuenta de correo electrónico a través de la web decidim.castello.es
 
           La propuesta tendrá que estar vinculada a un distrito concreto, a su elección. No es necesario ser residente de un distrito para poder presentar propuesta sobre dicho distrito.
-
       item_5:
         title: 5.- ¿Cómo presentar propuestas?
         subt: ''
@@ -279,7 +273,6 @@ es:
 
       item_6:
         title: 6.- Jornada de mejora de las propuestas
-
         subt: ''
         text: |-
           Finalizada la fase de presentación de propuestas, el Negociado de Participación Ciudadana organizará una Jornada con el objetivo de mejorar las propuestas presentadas.
@@ -287,6 +280,7 @@ es:
           En dicha jornada la ciudadanía podrá sugerir mejoras sobre las propuestas presentadas. El Negociado de Participación Ciudadana será el encargado de recoger las sugerencias presentadas en la jornada, y comunicarlas a la persona promotora de la propuesta. Este decidirá si da su consentimiento o no para introducirlas.
 
           La jornada y las reuniones de mejora se celebrarán en el periodo del 5 al 22 de marzo de 2019.
+
       item_7:
         title: 7.- ¿Quién puede apoyar las propuestas?
         subt: ''

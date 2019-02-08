@@ -1,6 +1,16 @@
 <% provide :title do %><%= t('pages.titles.more_information') %><% end %>
 
 <div class="row">
+
+  <div class="small-12 large-3 columns"></div>
+  <div class="small-12 large-9 columns">
+    <p>
+      <%= link_to t('pages.more_information.bases_link'), '/system/documentos/2019/bases_2019.pdf', target: '_blank' %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
   <div class="small-12 large-3 columns">
     <ul class="menu vertical margin-top">
       <% (1..10).each do |i| %>

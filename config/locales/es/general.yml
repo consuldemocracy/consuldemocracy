@@ -165,6 +165,7 @@ es:
       empty_notifications: No tienes notificaciones nuevas.
       mark_all_as_read: Marcar todas como leídas
       read: Leídas
+      title: Notificaciones
       unread: Nuevas
     notification:
       action:

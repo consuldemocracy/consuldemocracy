@@ -584,7 +584,7 @@ val:
           notice_html: "Ara estas seguint esta proposta ciutadana! </br>Te notificarem els canvis a mesura que es produïsquen per a que estigues al dia."
         destroy:
           notice_html: "Has deixat de seguir esta proposta ciutadana! </br> Ya no rebras més notificacions relacionades en esta proposta."
-    hide: Amagar
+    hide: Ocultar
     print:
       print_button: Imprimir esta informació
     search: Cercar
