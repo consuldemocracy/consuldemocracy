@@ -102,6 +102,10 @@ class Legislation::Proposal < ActiveRecord::Base
     cached_votes_total
   end
 
+  def votes_score
+    cached_votes_score
+  end
+
   def voters
     User.active.where(id: votes_for.voters)
   end
