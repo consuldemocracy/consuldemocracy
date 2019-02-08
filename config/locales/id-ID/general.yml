@@ -220,13 +220,6 @@ id:
       spending_proposals: Belanja Proposal
     admin:
       watch_form_message: 'Anda memiliki perubahan yang belum disimpan. Apakah anda mengkonfirmasi untuk meninggalkan halaman?'
-  legacy_legislation:
-    help:
-      alt: Pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
-      text: Untuk mengomentari dokumen ini anda harus %{sign_in} atau %{sign_up}. Kemudian pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
-      text_sign_in: masuk
-      text_sign_up: daftar
-      title: Bagaimana saya dapat mengomentari dokumen ini?
   notifications:
     index:
       empty_notifications: Anda tidak memiliki pemberitahuan baru.
