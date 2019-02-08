@@ -281,9 +281,9 @@ describe Budget::Heading do
   end
 
   describe "scope order_by_group_name" do
-    it "only sort headings using the group name (DESC) in the current locale" do
-      last_group  = create(:budget_group, name_en: "CCC", name_es: "BBB")
-      first_group = create(:budget_group, name_en: "DDD", name_es: "AAA")
+    it "sorts headings using the group name (DESC) in any locale" do
+      last_group  = create(:budget_group, name_en: "CCC", name_es: "AAA")
+      first_group = create(:budget_group, name_en: "DDD", name_es: "BBB")
 
       last_heading = create(:budget_heading, group: last_group, name: "Name")
       first_heading = create(:budget_heading, group: first_group, name: "Name")
