@@ -44,6 +44,12 @@ module Verifications
     end
   end
 
+  def fill_in_translatable_ckeditor(field, locale, params = {})
+    selector = ".translatable-fields[data-locale='#{locale}'] textarea[id$='_#{field}']"
+    locator = find(selector, visible: false)[:id]
+    fill_in_ckeditor(locator, params)
+  end
+
   # Used to fill ckeditor fields
   # @param [String] locator label text for the textarea or textarea id
   def fill_in_ckeditor(locator, params = {})

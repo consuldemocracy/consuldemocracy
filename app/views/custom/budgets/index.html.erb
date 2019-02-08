@@ -99,12 +99,12 @@
         </div>
 
         <% unless current_budget.informing? %>
-          <% cache [@budgets_coordinates] do %>
-            <div class="map inline">
-              <h3><%= t("budgets.index.map") %></h3>
+          <div class="map inline">
+            <h3><%= t("budgets.index.map") %></h3>
+            <% cache [@budgets_coordinates] do %>
               <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
 
           <ul class="no-bullet margin-top">
             <% show_links = show_links_to_budget_investments(current_budget) %>

@@ -10,13 +10,19 @@ feature 'Admin budget phases' do
       login_as(admin.user)
     end
 
-    scenario 'Update phase' do
+    it_behaves_like "translatable",
+                  "budget_phase",
+                  "edit_admin_budget_budget_phase_path",
+                  [],
+                  { "description" => :ckeditor, "summary" => :ckeditor }
+
+    scenario "Update phase", :js do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 
       fill_in 'start_date', with: Date.current + 1.days
       fill_in 'end_date', with: Date.current + 12.days
-      fill_in 'budget_phase_summary', with: 'This is the summary of the phase.'
-      fill_in 'budget_phase_description', with: 'This is the description of the phase.'
+      fill_in_translatable_ckeditor "summary", :en, with: "New summary of the phase."
+      fill_in_translatable_ckeditor "description", :en, with: "New description of the phase."
       uncheck 'budget_phase_enabled'
       click_button 'Save changes'
 
@@ -25,8 +31,8 @@ feature 'Admin budget phases' do
 
       expect(budget.current_phase.starts_at.to_date).to eq((Date.current + 1.days).to_date)
       expect(budget.current_phase.ends_at.to_date).to eq((Date.current + 12.days).to_date)
-      expect(budget.current_phase.summary).to eq('This is the summary of the phase.')
-      expect(budget.current_phase.description).to eq('This is the description of the phase.')
+      expect(budget.current_phase.summary).to include("New summary of the phase.")
+      expect(budget.current_phase.description).to include("New description of the phase.")
       expect(budget.current_phase.enabled).to be(false)
     end
   end
