@@ -242,13 +242,6 @@ gl:
         no_notifications: "Non tes notificacións novas"
     admin:
       watch_form_message: 'Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?'
-  legacy_legislation:
-    help:
-      alt: Escolle o texto que queres comentar e preme o botón que ten forma do lapis.
-      text: Para comentar este documento, debes %{sign_in}%{sign_up}. Despois, escolle o texto que queres comentar e preme o botón que ten forma de lapis.
-      text_sign_in: iniciar sesión
-      text_sign_up: rexístrate
-      title: Como podo comentar este documento?
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
