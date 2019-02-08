@@ -164,13 +164,6 @@ pt-BR:
         no_notifications: "Você não possui novas notificações"
     admin:
       watch_form_message: 'Você possui alterações não salvas. Tem certeza que deseja sair da página?'
-  legacy_legislation:
-    help:
-      alt: Selecione o texto que deseja comentar e pressione o botão com o lápis.
-      text: Para comentar este documento, você deve %{sign_in} ou %{sign_up}. Em seguida, selecione o texto que deseja comentar e pressione o botão com o lápis.
-      text_sign_in: iniciar sessão
-      text_sign_up: inscrever-se
-      title: Como eu posso comentar este documento?
   notifications:
     index:
       read: Lido
