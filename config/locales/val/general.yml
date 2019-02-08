@@ -242,13 +242,6 @@ val:
         no_notifications: "No tens noves notificacions"
     admin:
       watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
-  legacy_legislation:
-    help:
-      alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
-      text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
-      text_sign_in: iniciar sessió
-      text_sign_up: registrar-te
-      title: Com puc comentar aquest document?
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
