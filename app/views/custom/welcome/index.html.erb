@@ -1,3 +1,25 @@
+
+
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
+<%= render "header", header: @header %>
+
+<main>
+
+
 <div class="expanded highlight padding no-margin-top">
   <div class="row">
     <div class="small-12 medium-12 column background-principal">
@@ -12,7 +34,25 @@
   </div>
 </div>
 
-<div class="expanded highlight padding no-margin-top text-center">
-  <h1><%# t("layouts.header.open_city_title") %></h1>
-  <h2><%# t("layouts.header.open_date") %></h2>
-</div>
+
+  <%= render "feeds" %>
+
+
+  <div class="row">
+    <% if @cards.any? %>
+      <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
+        <%= render "cards" %>
+      </div>
+    <% end %>
+
+    <div class="small-12 large-4 column">
+      <%= render "processes" %>
+    </div>
+  </div>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+</main>

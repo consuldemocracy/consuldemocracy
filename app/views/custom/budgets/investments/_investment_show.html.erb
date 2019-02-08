@@ -38,8 +38,10 @@
           <%= render '/shared/author_info', resource: investment %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l investment.created_at.to_date %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= investment.heading.name %>
+          <% unless @budget.areas %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= investment.heading.name %>
+          <% end %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
             <%= render 'budgets/investments/flag_actions', investment: @investment %>
