@@ -6,7 +6,7 @@ val:
       actions: Accions
       confirm: Estas segur?
       confirm_hide: Confirmar
-      hide: Amagar
+      hide: Ocultar
       hide_author: Bloquejar a l'autor
       restore: Restaurar
       mark_featured: Destacar
@@ -56,7 +56,7 @@ val:
         action: Acció
         actions:
           block: Bloquejat
-          hide: Ocultat
+          hide: Ocultar
           restore: Restaurat
         by: Moderat per
         content: Contingut
