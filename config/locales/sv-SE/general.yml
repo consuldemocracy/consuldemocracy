@@ -239,13 +239,6 @@ sv:
         no_notifications: "Du har inga nya aviseringar"
     admin:
       watch_form_message: 'Du har inte sparat dina ändringar. Vill du verkligen lämna sidan?'
-  legacy_legislation:
-    help:
-      alt: Markera texten du vill kommentera och klicka på knappen med pennan.
-      text: Du behöver %{sign_in} eller %{sign_up} för att kommentera dokumentet. Markera sedan texten du vill kommentera och klicka på knappen med pennan.
-      text_sign_in: logga in
-      text_sign_up: registrera dig
-      title: Hur kommenterar jag det här dokumentet?
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
