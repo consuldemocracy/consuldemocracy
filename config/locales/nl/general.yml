@@ -240,13 +240,6 @@ nl:
         no_notifications: "Je hebt geen nieuwe notificaties"
     admin:
       watch_form_message: 'Je hebt niet-opgeslagen wijzigingen. Weet je zeker dat je de pagina wilt verlaten?'
-  legacy_legislation:
-    help:
-      alt: Selecteer de tekst waarop u wilt reageren en druk op de knop met het potlood.
-      text: Om te reageren moet je %{sign_in} of %{sign_up}. Selecteer daarna de tekst waarop u wilt reageren en druk op de knop met het potlood.
-      text_sign_in: aanmelden
-      text_sign_up: registreren
-      title: Hoe kan ik reageren op dit document?
   notifications:
     index:
       empty_notifications: Je hebt geen nieuwe notificaties
