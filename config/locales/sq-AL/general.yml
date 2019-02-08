@@ -242,13 +242,6 @@ sq:
         no_notifications: "Ju nuk keni njoftime të reja"
     admin:
       watch_form_message: 'Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?'
-  legacy_legislation:
-    help:
-      alt: Zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
-      text: Për të komentuar këtë dokument duhet të %{sign_in} ose %{sign_up}. Pastaj zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
-      text_sign_in: Kycu
-      text_sign_up: Rregjistrohu
-      title: Si mund ta komentoj këtë dokument?
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
