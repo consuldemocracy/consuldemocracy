@@ -9,6 +9,13 @@ class Users::SessionsController < Devise::SessionsController
       else
         scope = Devise::Mapping.find_scope!(resource)
         return_path = stored_location_for(scope)
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
+        puts return_path.inspect
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
         return_path || root_path
         # super
       end
@@ -16,13 +23,6 @@ class Users::SessionsController < Devise::SessionsController
 
     def after_sign_out_path_for(resource)
       #request.referer.present? && !request.referer.match("management") ? request.referer : super
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
-      puts "SALIMOS"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@///"
       root_path
     end
 

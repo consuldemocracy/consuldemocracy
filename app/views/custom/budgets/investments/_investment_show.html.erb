@@ -53,7 +53,6 @@
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
 
-        <%= safe_html_with_links investment.description.html_safe %>
 
         <% if feature?(:map) && map_location_available?(@investment.map_location) %>
           <div class="margin">
