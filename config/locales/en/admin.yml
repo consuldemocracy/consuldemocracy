@@ -456,7 +456,7 @@ en:
           orders:
             id: Id
             title: Title
-            supports: Supports
+            supports: Total supports
         process:
           title: Process
           comments: Comments
@@ -481,7 +481,7 @@ en:
           back: Back
           id: Id
           title: Title
-          supports: Supports
+          supports: Total supports
           select: Select
           selected: Selected
         form:
