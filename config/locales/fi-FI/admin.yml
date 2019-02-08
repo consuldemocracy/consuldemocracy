@@ -254,8 +254,6 @@ fi:
           enabled: Käytössä
           process: Prosessi
           homepage: Kuvaus
-          banner_background_color: Taustaväri
-          banner_font_color: Fontin väri
         index:
           create: Uusi prosessi
           delete: Poista
