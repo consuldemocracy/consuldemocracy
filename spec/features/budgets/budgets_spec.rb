@@ -73,27 +73,6 @@ feature 'Budgets' do
       end
     end
 
-    scenario "Show groups and headings for missing translations" do
-      group1 = create(:budget_group, budget: last_budget)
-      group2 = create(:budget_group, budget: last_budget)
-
-      heading1 = create(:budget_heading, group: group1)
-      heading2 = create(:budget_heading, group: group2)
-
-      last_budget.update_attributes(phase: "informing")
-
-      visit budgets_path locale: :es
-
-      within("#budget_info") do
-        expect(page).to have_content group1.name
-        expect(page).to have_content group2.name
-        expect(page).to have_content heading1.name
-        expect(page).to have_content last_budget.formatted_heading_price(heading1)
-        expect(page).to have_content heading2.name
-        expect(page).to have_content last_budget.formatted_heading_price(heading2)
-      end
-    end
-
     scenario "Show informing index without links" do
       last_budget.update_attributes(phase: "informing")
       group = create(:budget_group, budget: last_budget)
