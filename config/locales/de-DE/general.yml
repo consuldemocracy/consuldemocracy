@@ -239,13 +239,6 @@ de:
         no_notifications: "Sie haben keine neuen Benachrichtigungen"
     admin:
       watch_form_message: 'Sie haben die Änderungen nicht gespeichert. Möchten Sie die Seite dennoch verlassen?'
-  legacy_legislation:
-    help:
-      alt: Wählen Sie den Text, den Sie kommentieren möchten und drücken Sie den Button mit dem Stift.
-      text: Um dieses Dokument zu kommentieren, müssen Sie %{sign_in} oder %{sign_up}. Dann wählen Sie den Text aus, den Sie kommentieren möchten und klicken auf den Button mit dem Stift.
-      text_sign_in: login
-      text_sign_up: registrieren
-      title: Wie kann ich dieses Dokument kommentieren?
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
