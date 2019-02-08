@@ -239,13 +239,6 @@ fr:
         no_notifications: "Vous n'avez pas de nouvelles notifications"
     admin:
       watch_form_message: 'Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?'
-  legacy_legislation:
-    help:
-      alt: Sélectionnez le texte que vous souhaitez commenter et appuyez sur le bouton avec le crayon.
-      text: Pour commenter ce document, il est nécessaire de %{sign_in} ou %{sign_up}. Puis, sélectionnez le texte que vous souhaitez commenter et pressez le bouton avec le crayon.
-      text_sign_in: se connecter
-      text_sign_up: s'inscrire
-      title: Comment puis-je commenter ce document ?
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
