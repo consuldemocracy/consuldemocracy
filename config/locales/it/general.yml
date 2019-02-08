@@ -239,13 +239,6 @@ it:
         no_notifications: "Non hai nuove notifiche"
     admin:
       watch_form_message: 'Non sono state salvate le modifiche. Confermate per uscire dalla pagina?'
-  legacy_legislation:
-    help:
-      alt: Selezionare il testo che si desidera commentare e premere il pulsante con la matita.
-      text: Per commentare questo documento è necessario %{sign_in} o %{sign_up}. Quindi selezionare il testo che si desidera commentare e premere il pulsante con la matita.
-      text_sign_in: account di accesso
-      text_sign_up: accedere
-      title: Come posso commentare questo documento?
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
