@@ -231,13 +231,6 @@ zh-TW:
         no_notifications: "您沒有新通知"
     admin:
       watch_form_message: '您有未儲存的更改。 你是否確認要離開此頁面？'
-  legacy_legislation:
-    help:
-      alt: 選擇要評論的文本，然後按下鉛筆按鈕。
-      text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇要評論的文本，並按下鉛筆按鈕。
-      text_sign_in: 登錄
-      text_sign_up: 登記
-      title: 我怎樣能對此文檔作評論？
   notifications:
     index:
       empty_notifications: 您沒有新通知。
