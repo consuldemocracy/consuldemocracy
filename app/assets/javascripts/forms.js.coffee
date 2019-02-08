@@ -24,11 +24,16 @@ App.Forms =
     )
 
   synchronizeInputs: ->
-    $("[name='progress_bar[percentage]']").on
+    progress_bar = "[name='progress_bar[percentage]']"
+    process_background = "[name='legislation_process[background_color]']"
+    process_font = "[name='legislation_process[font_color]']"
+
+    inputs = $("#{progress_bar}, #{process_background}, #{process_font}")
+    inputs.on
       input: ->
         $("[name='#{this.name}']").val($(this).val())
 
-    $("[name='progress_bar[percentage]'][type='range']").trigger("input")
+    inputs.trigger("input")
 
   hideOrShowFieldsAfterSelection: ->
     $("[name='progress_bar[kind]']").on
