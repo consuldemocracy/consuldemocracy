@@ -242,13 +242,6 @@ so:
         no_notifications: "Ma haysatid wargelin cusub"
     admin:
       watch_form_message: 'Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?'
-  legacy_legislation:
-    help:
-      alt: Dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
-      text: Si aad uga faalloodto dukumiinti waa inaad%{sign_in} ama%{sign_up}. Ka dibna dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
-      text_sign_in: galaan
-      text_sign_up: saxiixid ilaa
-      title: Sidee ayaan faallo uga bixin karaa qoraalkan?
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
