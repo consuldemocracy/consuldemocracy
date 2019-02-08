@@ -54,7 +54,7 @@ feature 'Nvotes' do
 
     scenario "Valid signature", :page_driver do
       user  = create(:user, :in_census, id: rand(9999999))
-      poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
+      poll = create(:poll, published: true, nvotes_poll_id: 128)
 
       nvote = create(:poll_nvote, user: user, poll: poll)
       nvote.update(voter_hash: "33333333")
@@ -74,7 +74,7 @@ feature 'Nvotes' do
 
     scenario "Invalid signature", :page_driver do
       user  = create(:user, :in_census, id: rand(9999999))
-      poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
+      poll = create(:poll, published: true, nvotes_poll_id: 128)
       nvote = create(:poll_nvote, user: user, poll: poll)
       nvote.update(voter_hash: "33333333")
 
@@ -93,7 +93,7 @@ feature 'Nvotes' do
 
     scenario "Officer information", :page_driver do
       user  = create(:user, :in_census, id: rand(9999999))
-      poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
+      poll = create(:poll, published: true, nvotes_poll_id: 128)
 
       booth_assignment = create(:poll_booth_assignment, poll: poll)
       officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
