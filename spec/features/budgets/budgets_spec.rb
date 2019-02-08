@@ -73,6 +73,16 @@ feature 'Budgets' do
       end
     end
 
+    scenario "Show headings ordered by name" do
+      group = create(:budget_group, budget: last_budget)
+      last_heading = create(:budget_heading, group: group, name: "BBB")
+      first_heading = create(:budget_heading, group: group, name: "AAA")
+
+      visit budgets_path
+
+      expect(first_heading.name).to appear_before(last_heading.name)
+    end
+
     scenario "Show groups and headings for missing translations" do
       group1 = create(:budget_group, budget: last_budget)
       group2 = create(:budget_group, budget: last_budget)
