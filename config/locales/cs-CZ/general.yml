@@ -184,13 +184,6 @@ cs:
       notification_item:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
-  legacy_legislation:
-    help:
-      alt: Vyberte text, který chcete komentovat, a stiskněte tlačítko s tužkou.
-      text: Chcete-li tento dokument připomínat, musíte se %{sign_in} nebo %{sign_up}. Potom vyberte text, který chcete komentovat, a stiskněte tlačítko s tužkou.
-      text_sign_in: přihlásit
-      text_sign_up: registrovat
-      title: Jak mohu komentovat tento dokument?
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
