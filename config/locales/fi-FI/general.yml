@@ -135,10 +135,6 @@ fi:
       poll_questions: Äänestys
       notification_item:
         notifications: Ilmoitukset
-  legacy_legislation:
-    help:
-      text_sign_in: kirjaudu
-      text_sign_up: rekisteröidy
   notifications:
     index:
       empty_notifications: Sinulle ei ole uusia ilmoituksia.
