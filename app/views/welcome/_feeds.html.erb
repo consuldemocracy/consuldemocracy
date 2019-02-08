@@ -17,8 +17,8 @@
                   </div>
                 </div>
               <% end %>
-              <div class="feed-description small-12 column
-                          <%= 'large-9' if feature?(:allow_images) && item.image.present? %>">
+              <div class="feed-description small-12 medium-6 column
+                         <%= item.image.present? ? 'large-9' : 'medium-offset-6 large-offset-3' %>">
                 <strong><%= link_to item.title, url_for(item) %></strong><br>
                 <p><%= item.summary %></p>
               </div>
