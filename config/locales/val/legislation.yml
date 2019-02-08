@@ -59,10 +59,8 @@ val:
         filter: Filtre
         filters:
           open: Processos actius
-          next: Pròximament
           past: Finalitzats
         no_open_processes: No hi ha processos actius
-        no_next_processes: No hi ha processos planejats
         no_past_processes: No hi ha processos finalitzats
         section_header:
           icon_alt: Icona de Processos legislatius

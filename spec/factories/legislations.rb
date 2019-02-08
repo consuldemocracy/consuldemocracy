@@ -21,17 +21,6 @@ FactoryBot.define do
     result_publication_enabled true
     published true
 
-    trait :next do
-      start_date { Date.current + 2.days }
-      end_date { Date.current + 8.days }
-      debate_start_date { Date.current + 2.days }
-      debate_end_date { Date.current + 4.days }
-      draft_publication_date { Date.current + 5.days }
-      allegations_start_date { Date.current + 5.days }
-      allegations_end_date { Date.current + 7.days }
-      result_publication_date { Date.current + 8.days }
-    end
-
     trait :past do
       start_date { Date.current - 12.days }
       end_date { Date.current - 2.days }
