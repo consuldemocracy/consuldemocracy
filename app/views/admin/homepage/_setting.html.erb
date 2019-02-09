@@ -1,3 +1,4 @@
+<% if setting.present? %>
 <div id="<%= dom_id(setting) %>">
   <%= form_for(setting, url: admin_setting_path(setting), method: :put) do |f| %>
 
@@ -9,3 +10,4 @@
           data: {confirm: t("admin.actions.confirm")}) %>
   <% end %>
 </div>
+<% end %>
