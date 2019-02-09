@@ -190,4 +190,15 @@ describe UserSegments do
     end
   end
 
+  describe "#user_segment_emails" do
+    it "returns list of emails sorted by user creation date" do
+      create(:user, email: "first@email.com", created_at: 1.day.ago)
+      create(:user, email: "last@email.com")
+
+      emails = described_class.user_segment_emails(:all_users)
+      expect(emails.first).to eq "first@email.com"
+      expect(emails.last).to eq "last@email.com"
+    end
+  end
+
 end

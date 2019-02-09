@@ -213,26 +213,32 @@
     <h3><%= t("admin.legislation.processes.form.banner_title") %></h3>
   </div>
 
-  <div class="small-3 column">
-    <%= f.label :sections, t("admin.legislation.processes.form.banner_background_color") %>
+  <div class="small-6 large-3 column">
+    <%= f.label :background_color, nil, for: "background_color_input" %>
+    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
     <div class="row collapse">
-      <div class="small-6 column">
-        <%= color_field(:process, :background_color) %>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :background_color, label: false, type: :color %>
       </div>
-      <div class="small-6 column">
-        <%= f.text_field :background_color, label: false %>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :background_color, label: false,
+                                            placeholder: "#e7f2fc",
+                                            id: "background_color_input" %>
       </div>
     </div>
   </div>
 
-  <div class="small-3 column end">
-    <%= f.label :sections, t("admin.legislation.processes.form.banner_font_color") %>
+  <div class="small-6 large-3 column end">
+    <%= f.label :font_color, nil, for: "font_color_input" %>
+    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
     <div class="row collapse">
-      <div class="small-6 column">
-        <%= color_field(:process, :font_color) %>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :font_color, label: false, type: :color %>
       </div>
-      <div class="small-6 column">
-        <%= f.text_field :font_color, label: false %>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :font_color, label: false,
+                                      placeholder: "#222222",
+                                      id: "font_color_input" %>
       </div>
     </div>
   </div>
