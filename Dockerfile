@@ -4,7 +4,7 @@ FROM ruby:2.3.7
 # Various environment variables that can be overruled
 ENV DEBIAN_FRONTEND noninteractive
 ENV RAILS_ENV development
-
+ENV FORCE_SSL false
 ENV DATABASE_ADAPTER postgresql
 ENV DATABASE_ENCODING unicode
 ENV DATABASE_HOST 127.0.0.1
@@ -12,7 +12,7 @@ ENV DATABASE_POOL 5
 ENV DATABASE_NAME consul
 ENV DATABASE_USER postgres
 ENV DATABASE_PASSWORD postgres
-
+ENV RAILS_SERVE_STATIC_FILES true
 ENV SMTP_HOST smtp.example.com
 ENV SMTP_PORT 587
 ENV SMTP_DOMAIN example.com
