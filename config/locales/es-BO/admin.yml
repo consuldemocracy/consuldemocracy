@@ -237,8 +237,6 @@ es-BO:
           delete: Borrar
           filters:
             open: Abiertos
-            next: Próximamente
-            past: Pasados
             all: Todos
         new:
           back: Volver
