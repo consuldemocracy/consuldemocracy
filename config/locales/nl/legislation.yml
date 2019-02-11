@@ -59,10 +59,8 @@ nl:
         filter: Filter
         filters:
           open: Open processen
-          next: Toekomstige
           past: Vorige
         no_open_processes: Er zijn geen open processen
-        no_next_processes: Er zijn geen toekomstige plannen
         no_past_processes: Er zijn geen afgesloten plannen
         section_header:
           icon_alt: Plannen icoon

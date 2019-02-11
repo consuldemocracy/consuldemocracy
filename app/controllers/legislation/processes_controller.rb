@@ -1,5 +1,5 @@
 class Legislation::ProcessesController < Legislation::BaseController
-  has_filters %w[open next past], only: :index
+  has_filters %w[open past], only: :index
   has_filters %w[random winners], only: :proposals
 
   load_and_authorize_resource

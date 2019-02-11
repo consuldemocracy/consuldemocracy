@@ -441,11 +441,9 @@ zh-TW:
     index:
       filters:
         current: "開"
-        incoming: "傳入"
         expired: "已過期"
       title: "投票"
       participate_button: "參與此投票"
-      participate_button_incoming: "更多資訊"
       participate_button_expired: "投票結束"
       no_geozone_restricted: "所有城市"
       geozone_restricted: "地區"
@@ -473,7 +471,6 @@ zh-TW:
       signup: 登記
       cant_answer_verify_html: "您必須%{verify_link} 才能回答。"
       verify_link: "核實您的帳戶"
-      cant_answer_incoming: "此投票項尚未開始。"
       cant_answer_expired: "此投票項已結束。"
       cant_answer_wrong_geozone: "此問題並不適用於您的地理區域。"
       more_info_title: "更多資訊"

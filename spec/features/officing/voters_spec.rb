@@ -75,9 +75,6 @@ feature 'Voters' do
     poll_expired = create(:poll, :expired)
     create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: poll_expired, booth: booth))
 
-    poll_incoming = create(:poll, :incoming)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: poll_incoming, booth: booth))
-
     poll_geozone_restricted_in = create(:poll, :current, geozone_restricted: true, geozones: [Geozone.first])
     booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_in, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
@@ -93,7 +90,6 @@ feature 'Voters' do
     expect(page).to have_content poll.name
     expect(page).not_to have_content poll_current.name
     expect(page).not_to have_content poll_expired.name
-    expect(page).not_to have_content poll_incoming.name
     expect(page).to have_content poll_geozone_restricted_in.name
     expect(page).not_to have_content poll_geozone_restricted_out.name
   end
