@@ -454,11 +454,9 @@ so:
     index:
       filters:
         current: "Furan"
-        incoming: "Soo socda"
         expired: "Dhacy"
       title: "Doorashooyinka"
       participate_button: "Ka qaybqaado doorashadan"
-      participate_button_incoming: "Maclumaad dheraad ah"
       participate_button_expired: "Dorshada dhamadaty"
       no_geozone_restricted: "Dhaman magaloyinka"
       geozone_restricted: "Degmooyinka"
@@ -486,7 +484,6 @@ so:
       signup: Saxiixid
       cant_answer_verify_html: "Waa inaad%%%{verify_link} xaqiijiso xiriirka si aad uga jawaabtid."
       verify_link: "hubi xisaabtaada"
-      cant_answer_incoming: "Doorashadan ayaan wali bilaabin."
       cant_answer_expired: "Ra'yiururintan ayaa dhammaatay."
       cant_answer_wrong_geozone: "Su'aashani ma ahan mid laga heli karo degaankaaga."
       more_info_title: "Maclumaad dheraad ah"
