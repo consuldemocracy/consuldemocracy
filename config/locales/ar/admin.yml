@@ -70,6 +70,7 @@ ar:
       index:
         title: الميزانيات المشاركة
         new_link: إنشاء ميزانية جديدة
+        filter: ترشيح
         filters:
           open: فتح
           finished: انتهى
@@ -182,6 +183,7 @@ ar:
         administrator_filter_all: كل المدراء
         valuator_filter_all: كل المقيّمين
         tags_filter_all: كل العلامات
+        advanced_filters: مرشحات متقدمة
         placeholder: بحث عن مشاريع
         sort_by:
           placeholder: ترتيب حسب
@@ -200,6 +202,8 @@ ar:
           unfeasible: غير مجد
           min_total_supports: الحد الأدنى من الدعم
           winners: الفائزين
+          one_filter_html: "المرشحات المطبقة حاليا: <b><em>%{filter}</em></b>"
+          two_filters_html: "المرشحات المطبقة حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: ترشيح
         download_current_selection: "تنزيل التحديد الحالي"
@@ -437,6 +441,7 @@ ar:
           homepage: الوصف
           homepage_description: هنا يمكنك شرح محتوى العملية
           homepage_enabled: تم تفعيل الصفحة الرئيسية
+          banner_title: لون العنوان
         index:
           create: عملية جديدة
           delete: حذف
@@ -513,6 +518,7 @@ ar:
               draft: يمكنك المعاينة كمدير، لا يمكن لأي شخص آخر أن يرى ذلك
               published: مرئية للجميع
           title_placeholder: اكتب عنوان إصدار المسودّة
+          changelog_placeholder: إضافة التغييرات الرئيسية من النسخة السابقة
           body_placeholder: كتابة نص المسودة
         index:
           title: إصدارات المسودة
@@ -644,6 +650,15 @@ ar:
       title_profiles: ملفات التعريف
       title_settings: إعدادات
       title_site_customization: محتوى الموقع
+      title_booths: صناديق الاقتراع
+      legislation: التشريعات التشاركية
+      users: المستخدمين
+    administrators:
+      index:
+        title: المدراء
+        name: الإسم
+        email: البريد الإلكتروني
+        id: معرف المدير
     moderators:
       index:
         title: المشرفون
