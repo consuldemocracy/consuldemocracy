@@ -8,88 +8,88 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 300;
-  src: font-url('sourcesanspro-light-webfont.eot');
-  src: font-url('sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('sourcesanspro-light-webfont.woff2') format('woff2'),
-       font-url('sourcesanspro-light-webfont.woff') format('woff'),
-       font-url('sourcesanspro-light-webfont.ttf') format('truetype'),
-       font-url('sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+  src: font-url("sourcesanspro-light-webfont.eot");
+  src: font-url("sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("sourcesanspro-light-webfont.woff2") format("woff2"),
+       font-url("sourcesanspro-light-webfont.woff") format("woff"),
+       font-url("sourcesanspro-light-webfont.ttf") format("truetype"),
+       font-url("sourcesanspro-light-webfont.svg#source_sans_prolight") format("svg");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 400;
-  src: font-url('sourcesanspro-regular-webfont.eot');
-  src: font-url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('sourcesanspro-regular-webfont.woff2') format('woff2'),
-       font-url('sourcesanspro-regular-webfont.woff') format('woff'),
-       font-url('sourcesanspro-regular-webfont.ttf') format('truetype'),
-       font-url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  src: font-url("sourcesanspro-regular-webfont.eot");
+  src: font-url("sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("sourcesanspro-regular-webfont.woff2") format("woff2"),
+       font-url("sourcesanspro-regular-webfont.woff") format("woff"),
+       font-url("sourcesanspro-regular-webfont.ttf") format("truetype"),
+       font-url("sourcesanspro-regular-webfont.svg#source_sans_proregular") format("svg");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: italic;
   font-weight: 400;
-  src: font-url('sourcesanspro-italic-webfont.eot');
-  src: font-url('sourcesanspro-italic-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('sourcesanspro-italic-webfont.woff2') format('woff2'),
-       font-url('sourcesanspro-italic-webfont.woff') format('woff'),
-       font-url('sourcesanspro-italic-webfont.ttf') format('truetype'),
-       font-url('sourcesanspro-italic-webfont.svg#source_sans_proitalic') format('svg');
+  src: font-url("sourcesanspro-italic-webfont.eot");
+  src: font-url("sourcesanspro-italic-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("sourcesanspro-italic-webfont.woff2") format("woff2"),
+       font-url("sourcesanspro-italic-webfont.woff") format("woff"),
+       font-url("sourcesanspro-italic-webfont.ttf") format("truetype"),
+       font-url("sourcesanspro-italic-webfont.svg#source_sans_proitalic") format("svg");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 700;
-  src: font-url('sourcesanspro-bold-webfont.eot');
-  src: font-url('sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('sourcesanspro-bold-webfont.woff2') format('woff2'),
-       font-url('sourcesanspro-bold-webfont.woff') format('woff'),
-       font-url('sourcesanspro-bold-webfont.ttf') format('truetype'),
-       font-url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+  src: font-url("sourcesanspro-bold-webfont.eot");
+  src: font-url("sourcesanspro-bold-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("sourcesanspro-bold-webfont.woff2") format("woff2"),
+       font-url("sourcesanspro-bold-webfont.woff") format("woff"),
+       font-url("sourcesanspro-bold-webfont.ttf") format("truetype"),
+       font-url("sourcesanspro-bold-webfont.svg#source_sans_probold") format("svg");
 }
 
 // 02. Lato
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {
-  font-family: 'Lato';
-  src: font-url('lato-light.eot');
-  src: font-url('lato-light.eot?#iefix') format('embedded-opentype'),
-       font-url('lato-light.woff2') format('woff2'),
-       font-url('lato-light.woff') format('woff'),
-       font-url('lato-light.ttf') format('truetype'),
-       font-url('lato-light.svg#latolight') format('svg');
+  font-family: "Lato";
+  src: font-url("lato-light.eot");
+  src: font-url("lato-light.eot?#iefix") format("embedded-opentype"),
+       font-url("lato-light.woff2") format("woff2"),
+       font-url("lato-light.woff") format("woff"),
+       font-url("lato-light.ttf") format("truetype"),
+       font-url("lato-light.svg#latolight") format("svg");
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: font-url('lato-regular.eot');
-  src: font-url('lato-regular.eot?#iefix') format('embedded-opentype'),
-       font-url('lato-regular.woff2') format('woff2'),
-       font-url('lato-regular.woff') format('woff'),
-       font-url('lato-regular.ttf') format('truetype'),
-       font-url('lato-regular.svg#latoregular') format('svg');
+  font-family: "Lato";
+  src: font-url("lato-regular.eot");
+  src: font-url("lato-regular.eot?#iefix") format("embedded-opentype"),
+       font-url("lato-regular.woff2") format("woff2"),
+       font-url("lato-regular.woff") format("woff"),
+       font-url("lato-regular.ttf") format("truetype"),
+       font-url("lato-regular.svg#latoregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: font-url('lato-bold.eot');
-  src: font-url('lato-bold.eot?#iefix') format('embedded-opentype'),
-       font-url('lato-bold.woff2') format('woff2'),
-       font-url('lato-bold.woff') format('woff'),
-       font-url('lato-bold.ttf') format('truetype'),
-       font-url('lato-bold.svg#latobold') format('svg');
+  font-family: "Lato";
+  src: font-url("lato-bold.eot");
+  src: font-url("lato-bold.eot?#iefix") format("embedded-opentype"),
+       font-url("lato-bold.woff2") format("woff2"),
+       font-url("lato-bold.woff") format("woff"),
+       font-url("lato-bold.ttf") format("truetype"),
+       font-url("lato-bold.svg#latobold") format("svg");
   font-weight: bold;
   font-style: normal;
 }
