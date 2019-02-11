@@ -29,8 +29,6 @@ fi:
           winners: Valittu
       index:
         filter: Suodatin
-        filters:
-          next: Seuraava
       shared:
         homepage: Kotisivu
         allegations_dates: Kommentit
