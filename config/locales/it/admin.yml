@@ -357,8 +357,6 @@ it:
           delete: Elimina
           filters:
             open: Aperti
-            next: Successivo
-            past: Precedente
             all: Tutti
         new:
           back: Indietro
