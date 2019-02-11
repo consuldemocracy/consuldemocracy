@@ -51,10 +51,8 @@ cs:
         filter: Filtr
         filters:
           open: Otevřené procesy
-          next: Plánované
           past: Ukončené
         no_open_processes: Neexistují otevřené procesy
-        no_next_processes: Neexistují plánované procesy
         no_past_processes: Neexistují ukončené procesy
         section_header:
           title: Legislativní procesy
