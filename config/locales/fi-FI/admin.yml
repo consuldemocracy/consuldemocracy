@@ -259,7 +259,6 @@ fi:
           delete: Poista
           filters:
             open: Avaa
-            next: Seuraava
             all: Kaikki
         new:
           back: Takaisin
