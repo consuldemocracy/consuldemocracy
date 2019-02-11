@@ -364,8 +364,6 @@ sq:
           title: Proceset e legjislacionit
           filters:
             open: Hapur
-            next: Tjetër
-            past: E kaluara
             all: Të gjithë
         new:
           back: Pas
