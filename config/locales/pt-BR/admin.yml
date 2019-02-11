@@ -359,8 +359,6 @@ pt-BR:
           delete: Excluir
           filters:
             open: Abertos
-            next: Próximo
-            past: Passados
             all: Todos
         new:
           back: Voltar
