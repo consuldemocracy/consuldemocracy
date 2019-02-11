@@ -4,6 +4,7 @@ ar:
       index:
         block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -25,6 +26,7 @@ ar:
       index:
         block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -52,6 +54,7 @@ ar:
       index:
         block_authors: حظر المؤلفين
         confirm: هل أنت متأكد؟
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: بانتظار المراجعة
@@ -70,6 +73,7 @@ ar:
       index:
         block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -88,6 +92,7 @@ ar:
       index:
         block_authors: حظر الكاتبين
         confirm: هل أنت متأكد؟
+        filter: ترشيح
         filters:
           all: الكل
           pending_review: بانتظار المراجعة
