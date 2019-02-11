@@ -428,8 +428,6 @@ val:
           title: Processos legislatius
           filters:
             open: Oberts
-            next: Pròximament
-            past: Finalitzats
             all: Tots
         new:
           back: Tornar
