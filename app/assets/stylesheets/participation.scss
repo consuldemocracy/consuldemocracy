@@ -1988,13 +1988,6 @@
 .polls-results-stats {
 
   .sidebar {
-    border-bottom: 1px solid $border;
-    margin-bottom: $line-height;
-
-    @include breakpoint(medium) {
-      border-bottom: 0;
-      border-right: 1px solid $border;
-    }
 
     .menu:not(.vertical) {
       padding: 0;

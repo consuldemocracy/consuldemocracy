@@ -1,7 +1,19 @@
 .participation-stats {
 
+  @include breakpoint(medium) {
+
+    .stats-content {
+      border-left: 1px solid $border;
+    }
+  }
+
   .sidebar {
-    border-right: 1px solid $border;
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+
+    @include breakpoint(medium) {
+      border-bottom: 0;
+    }
 
     ul {
       margin-left: $line-height / 2;

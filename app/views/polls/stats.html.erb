@@ -5,8 +5,8 @@
 
   <%= render "poll_subnav" %>
 
-  <div class="row margin" data-equalizer data-equalize-on="medium">
-    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+  <div class="row margin">
+    <div class="small-12 medium-3 column sidebar">
       <%= render "shared/stats/links" %>
 
       <p><strong><%= link_to t("stats.advanced"), "#advanced_statistics" %></strong></p>
@@ -29,7 +29,7 @@
       </ul>
     </div>
 
-    <div class="small-12 medium-9 column" data-equalizer-watch>
+    <div class="small-12 medium-9 column stats-content">
       <%= render "shared/stats/participation", stats: @stats %>
 
       <div id="advanced_statistics">
