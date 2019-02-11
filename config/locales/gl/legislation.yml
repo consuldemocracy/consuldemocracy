@@ -62,10 +62,8 @@ gl:
         filter: Filtro
         filters:
           open: Procesos abertos
-          next: Proximamente
           past: Rematados
         no_open_processes: Non hai ningún proceso activo
-        no_next_processes: Non hai ningún proceso planeado
         no_past_processes: Non hai procesos rematados
         section_header:
           icon_alt: Icona de procesos lexislativos
