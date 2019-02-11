@@ -420,6 +420,8 @@ val:
           homepage: Descripció
           homepage_description: Ací pots explicar el contingut del procés
           homepage_enabled: Pàgina principal habilitada
+          banner_title: Colors de capçelera
+          color_help: Format hexadecimal
         index:
           create: Nou procés
           delete: Eliminar
@@ -899,6 +901,8 @@ val:
         create: "Crear votació"
         name: "Nom"
         dates: "Dates"
+        start_date: "Data d'inici"
+        closing_date: "Data de tancament"
         geozone_restricted: "Restringida als districtes"
       new:
         title: "Nova votació"
@@ -1168,6 +1172,7 @@ val:
       author: Autor
       content: Contingut
       created_at: Creat el
+      delete: Eliminar
     spending_proposals:
       index:
         geozone_filter_all: Tots els àmbits d'actuació
@@ -1428,6 +1433,12 @@ val:
           status_published: Publicada
           title: Títol
           slug: Slug
+          cards_title: Targetes
+          see_cards: Vore Targetes
+        cards:
+          cards_title: targetes
+          title: Títol
+          description: Descripció
     homepage:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
