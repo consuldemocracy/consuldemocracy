@@ -358,8 +358,6 @@ zh-TW:
           delete: 刪除
           filters:
             open: 打開
-            next: 下一個
-            past: 過去的
             all: 所有
         new:
           back: 返回
