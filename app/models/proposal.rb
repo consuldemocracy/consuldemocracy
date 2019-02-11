@@ -86,6 +86,7 @@ class Proposal < ActiveRecord::Base
 
   def publish
     update(published_at: Time.now)
+    send_new_actions_notification_on_published
   end
 
   def published?
@@ -243,6 +244,14 @@ class Proposal < ActiveRecord::Base
 
     if new_actions.present?
       Dashboard::Mailer.new_actions_notification_on_create(self).deliver_later
+    end
+  end
+
+  def send_new_actions_notification_on_published
+    new_actions_ids = Dashboard::Action.detect_new_actions(self)
+
+    if new_actions_ids.present?
+      Dashboard::Mailer.new_actions_notification_on_published(self, new_actions_ids).deliver_later
     end
   end
 

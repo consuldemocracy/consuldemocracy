@@ -112,4 +112,40 @@ describe Dashboard::Mailer do
       expect(email).to have_body_text("Go ahead, discover them!")
     end
   end
+
+  describe "#new_actions_notification_on_published" do
+
+    before do
+      ActionMailer::Base.deliveries.clear
+    end
+
+    let!(:proposal) { build(:proposal, :draft) }
+    let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true) }
+    let!(:proposed_action) { create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true) }
+
+    it "sends emails when detect new actions when publish a proposal" do
+      proposal.save
+      proposal.publish
+
+      email = open_last_email
+
+      expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
+      expect(email).to deliver_to(proposal.author)
+      expect(email).to have_subject("Your citizen proposal is already published Dont stop spreading!")
+      expect(email).to have_body_text("Congratulations #{proposal.author.name}! Your proposal #{proposal.title} has been created successfully.")
+      expect(email).to have_body_text("And now, go for your first 100 supports!")
+      expect(email).to have_body_text("Why 100?")
+      expect(email).to have_body_text("Our experience tells us that the first day is fundamental. Because in addition to having the energy to launch something new, being a newly published proposal, you will have the important visibility of being among the new proposals highlighted in Decide Madrid.")
+      expect(email).to have_body_text("Get 100 supports on the first day, and you will have a first community to back you up.")
+      expect(email).to have_body_text("That is why we challenge you to get it, but not without a lot of help!")
+      expect(email).to have_body_text("Remember that in your Proposal Panel you have new resources available and recommendations for dissemination actions.")
+      expect(email).to have_body_text("Come in every day to see your progress and use the tips and resources we will share with you. They are ideas and also practical solutions to get the support you need.")
+      expect(email).to have_body_text("As you get more support, you will unlock new and better resources. Do not stop adding support and we will not stop rewarding and helping you!")
+      expect(email).to have_body_text("And for you to start at full speed...")
+      expect(email).to have_body_text("Here is a great resource at your disposal!")
+      expect(email).to have_body_text("You will also find this new recommended dissemination action...")
+      expect(email).to have_body_text("You sure have more resources to use!")
+      expect(email).to have_body_text("Go ahead, discover them!")
+    end
+  end
 end
