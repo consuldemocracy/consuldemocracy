@@ -123,7 +123,7 @@ val:
           username_note: Nom public que apareixerà en les teues publicacions
         success:
           back_to_index: Entés, tornar a la pàgina principal
-          instructions_1_html: Si us plau <strong>revisa el teu correu electrònic</strong> - t'em envat un <strong>enllaç per a confirmar el teu compte</strong>.
+          instructions_1_html: Si us plau <strong>revisa el teu correu electrònic</strong> - t'hem envat un <strong>enllaç per a confirmar el teu compte</strong>.
           instructions_2_html: Una vegada confirmat, podràs començar a participar.
           thank_you_html: Gràcies per registrar-te en la web. Ara has de <strong>confirmar el teu correu</strong>.
           title: Confirma la teua direcció d'email
