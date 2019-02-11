@@ -676,6 +676,15 @@ li.float_right {
   margin: $line-height 0;
   padding: $line-height 0;
 
+  li.is-active-only {
+      border-bottom: none;
+      color: $brand;
+
+      & > a {
+        background: white;
+        font-weight: 600;
+      }
+    }
   li {
     margin-bottom: $line-height / 3;
 
@@ -693,13 +702,14 @@ li.float_right {
       font-size: $base-font-size;
     }
 
+
     &.is-active {
       border-bottom: none;
       color: $brand;
 
       a {
         background: white;
-      font-weight: 600;
+        font-weight: 600;
       }
     }
 

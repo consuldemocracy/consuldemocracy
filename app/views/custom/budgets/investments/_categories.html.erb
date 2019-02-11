@@ -5,7 +5,7 @@
 
   <ul id="areas" class="vertical menu no-margin-top no-padding-top">
     <% Area.all.each do |area| %>
-      <li>
+      <li class="<%= @area&.id == area.id ? "is-active-only" : nil%>">
         <%= link_to area.name,  budget_investments_path(@budget, area_id: area.id) %>
         <ul class="nested vertical menu">
           <% area.sub_areas.each do |sub_area| %>
