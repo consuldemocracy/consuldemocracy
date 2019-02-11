@@ -448,8 +448,6 @@ ar:
           title: العمليات التشريعية
           filters:
             open: فتح
-            next: التالي
-            past: السابق
             all: الكل
         new:
           back: عودة
