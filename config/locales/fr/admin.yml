@@ -359,8 +359,6 @@ fr:
           delete: Supprimer
           filters:
             open: Ouvert
-            next: Suivant
-            past: Passé
             all: Tous
         new:
           back: Retour
