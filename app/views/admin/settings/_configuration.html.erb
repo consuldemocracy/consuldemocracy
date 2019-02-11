@@ -19,10 +19,10 @@
         </td>
         <td class="small-6">
           <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
-            <div class="small-12 medium-6 large-9 column">
+            <div class="small-12 medium-6 large-8 column">
               <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>
             </div>
-            <div class="small-12 medium-6 large-3 column">
+            <div class="small-12 medium-6 large-4 column">
               <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
             </div>
           <% end %>
