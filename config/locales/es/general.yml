@@ -293,7 +293,6 @@ es:
     final_date: "Recuento final/Resultados"
     index:
       filters:
-        incoming: "Próximamente"
         expired: "Terminadas"
       participate_button: "Participar en esta votación"
       participate_button_expired: "Votación terminada"
@@ -315,7 +314,6 @@ es:
       comments_tab: Comentarios
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
