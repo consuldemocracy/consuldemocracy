@@ -62,10 +62,8 @@ so:
         filter: Sifeeyee
         filters:
           open: Gedisocodka furaan
-          next: Xiga
           past: Hore
         no_open_processes: Miyeysan geedi socodku furneyn
-        no_next_processes: Ma jiraan habab loo qorsheeyay
         no_past_processes: Miyeysan geedi socodku hore
         section_header:
           icon_alt: Nidaamka Sharciga icon
