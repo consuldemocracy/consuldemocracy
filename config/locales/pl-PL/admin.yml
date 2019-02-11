@@ -361,8 +361,6 @@ pl:
           delete: Usuń
           filters:
             open: Otwórz
-            next: Następny
-            past: Ubiegły
             all: Wszystko
         new:
           back: Wstecz
