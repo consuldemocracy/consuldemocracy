@@ -165,7 +165,7 @@ feature 'Admin budgets' do
       click_link 'Delete budget'
 
       expect(page).to have_content('Budget deleted successfully')
-      expect(page).to have_content('There are no budgets.')
+      expect(page).to have_content("There are no budgets.")
     end
 
     scenario 'Try to destroy a budget with investments' do
