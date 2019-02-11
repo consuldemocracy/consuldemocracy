@@ -444,8 +444,6 @@ de:
           title: Gesetzgebungsverfahren
           filters:
             open: Offen
-            next: Nächste
-            past: Vorherige
             all: Alle
         new:
           back: Zurück
