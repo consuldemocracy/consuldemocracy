@@ -244,6 +244,8 @@ val:
         allegations_start_date: Data d'inici d'al·legacions
         allegations_end_date: Data de fi d'al·legacions
         result_publication_date: Data de publicació del resultat final
+        background_color: Color de fons
+        font_color: Color de font
       legislation/process/translation:
         title: Títol del Procés
         summary: Resum
@@ -301,6 +303,7 @@ val:
         description: Descripció
         link_text: Text de l'enllaç
         link_url: URL de l'enllaç
+        columns: Número de columnes
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Títol
