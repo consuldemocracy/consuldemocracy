@@ -16,7 +16,7 @@ class Verification::VerifiedUserController < ApplicationController
       return false if @verified_users.blank?
       data = false
       @verified_users.each do |vu|
-        data = true if vu.phone.present? || vu.email.present?
+        data = true if vu.email.present?
       end
       data
     end
