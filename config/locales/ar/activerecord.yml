@@ -388,6 +388,8 @@ ar:
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
         result_publication_date: تاريخ نشر النتيجة النهائية
+        background_color: لون الخلفية
+        font_color: لون الخط
       legislation/process/translation:
         title: عنوان العملية
         summary: ملخص
@@ -445,6 +447,7 @@ ar:
         description: وصف
         link_text: نص الرابط
         link_url: رابط URL
+        columns: عدد الأعمدة
       widget/card/translation:
         label: التسمية (إختياري)
         title: العنوان
