@@ -659,9 +659,28 @@ ar:
         name: الإسم
         email: البريد الإلكتروني
         id: معرف المدير
+        no_administrators: لا يوجد مدراء.
+      administrator:
+        add: إضافة
+        delete: حذف
+        restricted_removal: "عذراً، لا يمكنك إزالة نفسك من المدراء"
+      search:
+        title: "المسؤولين: بحث عن مستخدم"
     moderators:
       index:
         title: المشرفون
+        name: الإسم
+        email: البريد الإلكتروني
+        no_moderators: لا يوجد مشرفون.
+      moderator:
+        add: إضافة
+        delete: حذف
+      search:
+        title: 'المشرفون: البحث عن مستخدم'
+    segment_recipient:
+      all_users: كل المستخدمين
+      administrators: المدراء
+      proposal_authors: كتّاب الاقتراحات
     newsletters:
       index:
         sent: تم الإرسال
