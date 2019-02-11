@@ -321,11 +321,9 @@ cs:
     index:
       filters:
         current: "Otevřené"
-        incoming: "Příchozí"
         expired: "Prošlé"
       title: "Průzkum"
       participate_button: "Účastnit se tohoto průzkumu"
-      participate_button_incoming: "Více informací"
       participate_button_expired: "Průzkum ukončen"
       no_geozone_restricted: "Celé město"
       geozone_restricted: "Městské části"
@@ -344,7 +342,6 @@ cs:
       signin: Přihlásit
       signup: Registrovat
       verify_link: "ověřte Váš účet"
-      cant_answer_incoming: "Tento průzkum doposud nebyl zahájen."
       cant_answer_expired: "Tento průzkum byl ukončen."
       cant_answer_wrong_geozone: "Tato otázka není dostupná ve vaší čtvrti."
       more_info_title: "Více informací"
