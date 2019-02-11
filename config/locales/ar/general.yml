@@ -103,10 +103,8 @@ ar:
     index:
       filters:
         current: "فتح"
-        incoming: "البريد الوارد"
         expired: "منتهي الصلاحية"
       participate_button: "المشاركة في هذا الاستطلاع"
-      participate_button_incoming: "مزيد من المعلومات"
       participate_button_expired: "انتهى الاستطلاع"
       no_geozone_restricted: "جميع المدن"
       geozone_info: "يمكن أن يشارك الناس في التعداد السكاني: "
@@ -129,7 +127,6 @@ ar:
       signup: انشاء حساب
       cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
       verify_link: "التحقق من حسابك"
-      cant_answer_incoming: "لم يبدأ هذا الاستطلاع بعد."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
       more_info_title: "مزيد من المعلومات"
       documents: مستندات
