@@ -203,8 +203,6 @@ cs:
           title: Legislativní procesy
           filters:
             open: Otevřené
-            next: Plánované
-            past: Ukončené
             all: Vše
         new:
           back: Zpět
