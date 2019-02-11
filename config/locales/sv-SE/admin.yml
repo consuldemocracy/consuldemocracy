@@ -358,8 +358,6 @@ sv:
           delete: Ta bort
           filters:
             open: Pågående
-            next: Kommande
-            past: Avslutade
             all: Alla
         new:
           back: Tillbaka
