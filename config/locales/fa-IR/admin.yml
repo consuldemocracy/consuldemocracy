@@ -296,8 +296,6 @@ fa:
           delete: حذف
           filters:
             open: بازکردن
-            next: بعدی
-            past: گذشته
             all: همه
         new:
           back: برگشت
