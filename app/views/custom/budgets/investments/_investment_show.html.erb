@@ -27,18 +27,20 @@
       <% if @budget.areas %>
         <h2>
           <%= investment.area.name %>
+          <br>
           <small><%= investment.sub_area.name %></small>
 
         </h2>
-
-
       <% end %>
 
         <div class="budget-investment-info">
           <%= render '/shared/author_info', resource: investment %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l investment.created_at.to_date %>
-          <% unless @budget.areas %>
+          <% if @budget.areas %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= investment.geozone.name %>
+          <% else %>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= investment.heading.name %>
           <% end %>
