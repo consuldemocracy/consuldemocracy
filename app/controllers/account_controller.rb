@@ -4,7 +4,6 @@ class AccountController < ApplicationController
   load_and_authorize_resource class: "User"
 
   def show
-    #@area_id = params[:area_id]
   end
 
   def update

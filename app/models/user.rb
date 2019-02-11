@@ -45,7 +45,8 @@ class User < ActiveRecord::Base
   validates :phone_number, presence: true, length: { is: 9 },
                            numericality: true,
                            format: { with: /(6|7|9)[0-9]+/,
-                                     message: I18n.t('users.registrations.phone_validation') }
+                                     message: I18n.t('users.registrations.phone_validation') },
+                           on: :create
 
   validate :validate_username_length
 
