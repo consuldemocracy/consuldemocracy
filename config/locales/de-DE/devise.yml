@@ -49,16 +49,16 @@ de:
       signed_out: "Sie haben sich erfolgreich abgemeldet."
       already_signed_out: "Sie haben sich erfolgreich abgemeldet."
     unlocks:
-      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zum entsperren Ihres Benutzerkontos."
-      send_paranoid_instructions: "Wenn Sie bereits ein Benutzerkonto haben, erhalten Sie in wenigen Minuten eine E-Mail mit weiteren Anweisungen zur Freischaltung Ihres Benutzerkontos."
-      unlocked: "Ihr Benutzerkonto wurde entsperrt. Bitte melden Sie sich an, um fortzufahren."
+      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zur Freischaltung Ihres Kontos."
+      send_paranoid_instructions: "Wenn Sie bereits ein Konto haben, erhalten Sie in wenigen Minuten eine E-Mail mit weiteren Anweisungen zur Freischaltung Ihres Kontos."
+      unlocked: "Ihr Benutzerkonto wurde freigeschalten. Bitte melden Sie sich an, um fortzufahren."
   errors:
     messages:
       already_confirmed: "Sie wurden bereits verifziert. Bitte melden Sie sich nun an."
-      confirmation_period_expired: "Sie müssen innerhalb von %{period} bestätigt werden: Bitte stellen Sie eine neue Anfrage."
+      confirmation_period_expired: "Ihr Konto muss innerhalb von %{period} verifiziert werden; bitte stellen Sie eine neue Anfrage."
       expired: "ist abgelaufen; bitte stellen Sie eine neue Anfrage."
       not_found: "nicht gefunden."
-      not_locked: "wurde nicht gesperrt."
+      not_locked: "war nicht gesperrt."
       not_saved:
         one: "Ein Fehler verhinderte das Speichern dieser %{resource}. Bitte markieren Sie die gekennzeichneten Felder, um zu erfahren wie dieser behoben werden kann:"
         other: "%{count} Fehler verhinderten das Speichern dieser %{resource}. Bitte markieren Sie die gekennzeichneten Felder, um zu erfahren wie diese behoben werden können:"
