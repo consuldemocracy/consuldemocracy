@@ -916,6 +916,7 @@ en:
       flash:
         create: "Shift added"
         destroy: "Shift removed"
+        unable_to_destroy: "Shifts with associated results or recounts cannot be deleted"
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
