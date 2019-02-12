@@ -49,9 +49,9 @@ de:
       signed_out: "Sie haben sich erfolgreich abgemeldet."
       already_signed_out: "Sie haben sich erfolgreich abgemeldet."
     unlocks:
-      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zur Freischaltung Ihres Kontos."
-      send_paranoid_instructions: "Wenn Sie bereits ein Konto haben, erhalten Sie in wenigen Minuten eine E-Mail mit weiteren Anweisungen zur Freischaltung Ihres Kontos."
-      unlocked: "Ihr Benutzerkonto wurde freigeschalten. Bitte melden Sie sich an, um fortzufahren."
+      send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zum Entsperren Ihres Kontos."
+      send_paranoid_instructions: "Wenn Sie bereits ein Konto haben, erhalten Sie in wenigen Minuten eine E-Mail mit weiteren Anweisungen zum Entsperren Ihres Kontos."
+      unlocked: "Ihr Konto wurde entsperrt. Bitte melden Sie sich an, um fortzufahren."
   errors:
     messages:
       already_confirmed: "Sie wurden bereits verifziert. Bitte melden Sie sich nun an."
