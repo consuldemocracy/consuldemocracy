@@ -111,17 +111,17 @@ de:
           password_confirmation_label: Passwort bestätigen
           password_label: Passwort
           redeemable_code: Bestätigungscode per E-Mail erhalten (optional)
-          submit: Registrieren Sie sich
+          submit: Registrieren
           terms: Mit der Registrierung akzeptieren Sie die %{terms}
-          terms_link: allgemeine Nutzungsbedingungen
-          terms_title: Mit Ihrer Registrierung akzeptieren Sie die allgemeinen Nutzungsbedingungen
-          title: Registrieren Sie sich
-          username_is_available: Benutzername verfügbar
-          username_is_not_available: Benutzername bereits vergeben
-          username_label: Benutzername
-          username_note: Namen, der neben Ihren Beiträgen angezeigt wird
+          terms_link: Allgemeine Nutzungsbedingungen
+          terms_title: Mit Ihrer Registrierung akzeptieren Sie die Allgemeinen Nutzungsbedingungen
+          title: Registrieren
+          username_is_available: Benutzer*innenname verfügbar
+          username_is_not_available: Benutzer*innenname bereits vergeben
+          username_label: Benutzer*innenname
+          username_note: Name, der öffentlich neben ihren Beiträgen angezeigt wird
         success:
-          back_to_index: Verstanden; zurück zur Hauptseite
-          instructions_1_html: Bitte <b>überprüfen Sie Ihren E-Maileingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Benutzerkontos</b> geschickt.
+          back_to_index: Ich verstehe; zurück zur Hauptseite
+          instructions_1_html: Bitte <b>überprüfen Sie Ihren E-Mail-Eingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Kontos</b> geschickt.
           instructions_2_html: Nach der Bestätigung können Sie mit der Teilnahme beginnen.
           thank_you_html: Danke für Ihre Registrierung für diese Website. Sie müssen nun <b>Ihre E-Mail-Adresse bestätigen</b>.
