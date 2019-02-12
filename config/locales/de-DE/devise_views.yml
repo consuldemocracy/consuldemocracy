@@ -53,23 +53,23 @@ de:
           instructions_1_html: "<strong>Wir werden Sie bald kontaktieren,</strong> um zu verifizieren, dass Sie tatsächlich diese Gruppe/Organisation repräsentieren."
           instructions_2_html: Während Ihre <strong>E-Mail überprüft wird</strong>, senden wir Ihnen einen<strong>Link, um Ihr Konto zu bestätigen</strong>.
           instructions_3_html: Nach der Bestätigung können Sie anfangen, sich als ungeprüfte Gruppe/Organisation zu beteiligen.
-          title: Eine Organisation oder Kollektiv registrieren
+          title: Als Organisation oder Gruppe registrieren
     passwords:
       edit:
         change_submit: Mein Passwort ändern
         password_confirmation_label: Neues Passwort bestätigen
         password_label: Neues Passwort
-        title: Ändern Sie Ihr Passwort
+        title: Mein Passwort ändern
       new:
         email_label: E-Mail
         send_submit: Anweisungen zusenden
         title: Passwort vergessen?
     sessions:
       new:
-        login_label: E-Mail oder Benutzername
+        login_label: E-Mail oder Benutzer*innenname
         password_label: Passwort
-        remember_me: Erinner mich
-        submit: Eingabe
+        remember_me: Passwort speichern
+        submit: Anmelden
         title: Anmelden
     shared:
       links:
