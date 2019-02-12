@@ -123,5 +123,6 @@ de:
         success:
           back_to_index: Ich verstehe; zurück zur Hauptseite
           instructions_1_html: Bitte <b>überprüfen Sie Ihren E-Mail-Eingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Kontos</b> geschickt.
-          instructions_2_html: Nach der Bestätigung können Sie mit der Teilnahme beginnen.
+          instructions_2_html: Nach der Bestätigung können Sie beginnen sich zu beteiligen.
           thank_you_html: Danke für Ihre Registrierung für diese Website. Sie müssen nun <b>Ihre E-Mail-Adresse bestätigen</b>.
+          title: E-Mail-Adresse bestätigen
