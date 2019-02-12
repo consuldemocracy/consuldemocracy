@@ -2,16 +2,16 @@ de:
   account:
     show:
       change_credentials_link: Meine Anmeldeinformationen ändern
-      email_on_comment_label: Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussion kommentiert
+      email_on_comment_label: Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert
       email_on_comment_reply_label: Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet
       erase_account_link: Mein Konto löschen
-      finish_verification: Prüfung abschließen
+      finish_verification: Verifizierung abschließen
       notifications: Benachrichtigungen
       organization_name_label: Name der Organisation
       organization_responsible_name_placeholder: Vertreter der Organisation/des Kollektivs
       personal: Persönliche Daten
       phone_number_label: Telefonnummer
-      public_activity_label: Meine Liste an Aktivitäten öffentlich zugänglich halten
+      public_activity_label: Meine Liste an Aktivitäten öffentlich zugänglich machen
       public_interests_label: Die Bezeichnungen der Elemente denen ich folge öffentlich zugänglich halten
       public_interests_my_title_list: Kennzeichnungen der Elemente denen Sie folgen
       public_interests_user_title_list: Kennzeichnungen der Elemente denen dieser Benutzer folgt
