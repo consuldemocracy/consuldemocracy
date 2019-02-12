@@ -15,7 +15,7 @@ class Admin::BaseController < ApplicationController
 
     def set_current_tenant
       if session[:current_tenant].nil?
-        session[:current_tenant] = Tenant.find_by(subdomain: Apartment::Tenant.current)
+        session[:current_tenant] = Tenant.current
       end
     end
 

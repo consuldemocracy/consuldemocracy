@@ -4,6 +4,10 @@ class Tenant < ActiveRecord::Base
   after_create :create_tenant
   after_destroy :destroy_tenant
 
+  def self.current
+    find_by(subdomain: Apartment::Tenant.current)
+  end
+
   private
     def create_tenant
       unless subdomain == "public"
