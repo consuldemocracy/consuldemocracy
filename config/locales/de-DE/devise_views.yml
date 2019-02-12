@@ -9,7 +9,7 @@ de:
         instructions_html: Das Konto per E-Mail %{email} bestätigen 
         new_password_confirmation_label: Zugangspasswort wiederholen
         new_password_label: Neues Zugangspasswort
-        please_set_password: Bitte wählen Sie Ihr neues Passwort (dieses ermöglicht Ihnen die Anmeldung mit der oben genannten E-mail-Adresse)
+        please_set_password: Bitte wählen Sie Ihr neues Passwort (dieses ermöglicht Ihnen die Anmeldung mit der oben genannten E-Mail-Adresse)
         submit: Bestätigen
         title: Mein Konto bestätigen
     mailer:
@@ -30,7 +30,7 @@ de:
         info_text: Ihr Konto wurde aufgrund einer übermäßigen Anzahl fehlgeschlagener Anmeldeversuche gesperrt.
         instructions_text: 'Bitte klicken Sie auf folgenden Link, um Ihr Konto zu entsperren:'
         title: Ihr Konto wurde gesperrt
-        unlock_link: Mein Benutzerkonto entsperren
+        unlock_link: Mein Konto entsperren
     menu:
       login_items:
         login: Anmelden
@@ -44,7 +44,7 @@ de:
           password_confirmation_label: Passwort bestätigen
           password_label: Passwort
           phone_number_label: Telefonnummer
-          responsible_name_label: Vollständiger Name der Person, verantwortlich für das Kollektiv
+          responsible_name_label: Vollständiger Name der Person, die die Gruppe repräsentiert
           responsible_name_note: Dies wäre die Person, die den Verein oder das Kollektiv repräsentiert und in dessen Namen die Anträge präsentiert werden
           submit: Registrieren
           title: Als Organisation oder Kollektiv registrieren
