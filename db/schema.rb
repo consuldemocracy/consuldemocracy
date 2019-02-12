@@ -804,8 +804,10 @@ ActiveRecord::Schema.define(version: 20190131122858) do
     t.integer  "cached_votes_down",                 default: 0
     t.string   "proposal_type"
     t.boolean  "selected"
+    t.integer  "cached_votes_score",                default: 0
   end
 
+  add_index "legislation_proposals", ["cached_votes_score"], name: "index_legislation_proposals_on_cached_votes_score", using: :btree
   add_index "legislation_proposals", ["legislation_process_id"], name: "index_legislation_proposals_on_legislation_process_id", using: :btree
 
   create_table "legislation_question_option_translations", force: :cascade do |t|
