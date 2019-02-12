@@ -6,30 +6,30 @@ de:
         submit: Erneut Anweisungen zusenden
         title: Erneut Anweisungen zur Bestätigung zusenden
       show:
-        instructions_html: Das Benutzerkonto per E-Mail %{email} bestätigen
+        instructions_html: Das Konto per E-Mail %{email} bestätigen 
         new_password_confirmation_label: Zugangspasswort wiederholen
         new_password_label: Neues Zugangspasswort
         please_set_password: Bitte wählen Sie Ihr neues Passwort (dieses ermöglicht Ihnen die Anmeldung mit der oben genannten E-mail-Adresse)
         submit: Bestätigen
-        title: Mein Benutzerkonto bestätigen
+        title: Mein Konto bestätigen
     mailer:
       confirmation_instructions:
-        confirm_link: Mein Benutzerkonto bestätigen
-        text: 'Sie können Ihre E-Mail unter folgenden Link bestätigen:'
+        confirm_link: Mein Konto bestätigen
+        text: 'Bestätigen Sie Ihre E-Mail-Adresse mithilfe des folgenden Links:'
         title: Willkommen
         welcome: Willkommen
       reset_password_instructions:
         change_link: Mein Passwort ändern
         hello: Hallo
-        ignore_text: Wenn Sie keine Anforderung zum Ändern Ihres Passworts gestellt haben, können Sie diese E-Mail ignorieren.
-        info_text: Ihr Passwort wird nicht geändert, außer Sie rufen den Link ab und ändern es.
-        text: 'Wir haben eine Anfrage erhalten Ihr Passwort zu ändern. Sie können dies über folgenden Link tun:'
-        title: Ändern Sie Ihr Passwort
+        ignore_text: Wenn Sie keine Anfrage zum Ändern Ihres Passworts gestellt haben, können Sie diese E-Mail ignorieren.
+        info_text: Sie können Ihr Passwort nur ändern, wenn Sie den Link aufrufen und dann die notwendigen Schritte befolgen.
+        text: 'Wir haben eine Anfrage zur Änderung Ihres Passwort erhalten. Sie können dafür den folgenden Link verwenden:'
+        title: Mein Passwort ändern
       unlock_instructions:
         hello: Hallo
-        info_text: Ihr Benutzerkonto wurde, wegen einer übermäßigen Anzahl an fehlgeschlagenen Anmeldeversuchen blockiert.
-        instructions_text: 'Bitte klicken Sie auf folgenden Link, um Ihr Benutzerkonto zu entsperren:'
-        title: Ihr Benutzerkonto wurde gesperrt
+        info_text: Ihr Konto wurde aufgrund einer übermäßigen Anzahl fehlgeschlagener Anmeldeversuche gesperrt.
+        instructions_text: 'Bitte klicken Sie auf folgenden Link, um Ihr Konto zu entsperren:'
+        title: Ihr Konto wurde gesperrt
         unlock_link: Mein Benutzerkonto entsperren
     menu:
       login_items:
