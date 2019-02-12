@@ -77,8 +77,8 @@ de:
         new_confirmation: Haben Sie keine Anweisungen zur Aktivierung Ihres Kontos erhalten?
         new_password: Haben Sie Ihr Passwort vergessen?
         new_unlock: Haben Sie keine Anweisung zur Entsperrung erhalten?
-        signin_with_provider: Melden Sie sich mit %{provider} an
-        signup: Sie haben noch kein Benutzerkonto? %{signup_link}
+        signin_with_provider: Anmelden mit %{provider}
+        signup: Sie haben noch kein Konto? %{signup_link}
         signup_link: Registrieren
     unlocks:
       new:
@@ -89,19 +89,19 @@ de:
       registrations:
         delete_form:
           erase_reason_label: Grund
-          info: Diese Handlung kann nicht rückgängig gemacht werden. Bitte stellen Sie sicher, dass dies ist, was Sie wollen.
+          info: Diese Aktion kann nicht rückgängig gemacht werden. Bitte vergewissern Sie sich, dass sie dieses Konto wirklich löschen möchten.
           info_reason: Wenn Sie möchten, hinterlassen Sie uns einen Grund (optional)
-          submit: Mein Benutzerkonto löschen
-          title: Mein Benutzerkonto löschen
+          submit: Mein Konto löschen
+          title: Konto löschen
         edit:
           current_password_label: Aktuelles Passwort
           edit: Bearbeiten
           email_label: E-Mail
-          leave_blank: Freilassen, wenn Sie nichts verändern möchten
-          need_current: Wir brauchen Ihr aktuelles Passwort, um die Änderungen zu bestätigen
+          leave_blank: Lassen Sie das Feld leer, wenn Sie keine Änderungen vornehmen möchten
+          need_current: Wir benötigen Ihr aktuelles Passwort, um die Änderungen zu bestätigen
           password_confirmation_label: Neues Passwort bestätigen
           password_label: Neues Passwort
-          update_submit: Update
+          update_submit: Aktualisieren
           waiting_for: 'Warten auf Bestätigung von:'
         new:
           cancel: Anmeldung abbrechen
