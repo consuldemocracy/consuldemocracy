@@ -31,7 +31,7 @@ de:
       failure: "Es ist nicht gelungen, Sie als %{kind} zu autorisieren, weil \"%{reason}\"."
       success: "Erfolgreich identifiziert als %{kind}."
     passwords:
-      no_token: "Nur über einen Link zum Zurücksetzen Ihres Passworts können Sie auf diese Seite zugreifen. Falls Sie diesen Link verwendet haben, überprüfen Sie bitte, ob die URL vollständig ist."
+      no_token: "Sie können auf diese Seite nur über einen Link zum Zurücksetzen Ihres Passworts zugreifen. Falls Sie diesen Link verwendet haben, überprüfen Sie bitte, ob die URL vollständig ist."
       send_instructions: "In wenigen Minuten erhalten Sie eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts."
       send_paranoid_instructions: "Wenn sich Ihre E-Mail-Adresse in unserer Datenbank befindet, erhalten Sie in wenigen Minuten eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts."
       updated: "Ihr Passwort wurde erfolgreich geändert. Authentifizierung erfolgreich."
@@ -39,11 +39,11 @@ de:
     registrations:
       destroyed: "Auf Wiedersehen! Ihr Konto wurde gelöscht. Wir hoffen, Sie bald wieder zu sehen."
       signed_up: "Willkommen! Sie wurden authentifiziert."
-      signed_up_but_inactive: "Ihre Registrierung war erfolgreich, aber Sie konnten nicht angemeldet werden, da Ihr Benutzerkonto nicht aktiviert wurde."
-      signed_up_but_locked: "Ihre Registrierung war erfolgreich, aber Sie konnten nicht angemeldet werden, weil Ihr Benutzerkonto gesperrt ist."
-      signed_up_but_unconfirmed: "Sie haben eine Nachricht mit einem Bestätigungslink erhalten. Klicken Sie bitte auf diesen Link, um Ihr Benutzerkonto zu aktivieren."
-      update_needs_confirmation: "Ihr Benutzerkonto wurde erfolgreich aktualisiert. Allerdings müssen wir Ihre neue E-Mail Adresse verifizieren. Bitte überprüfen Sie Ihre E-Mails und klicken Sie auf den Link zur Bestätigung Ihrer neuen E-Mail Adresse."
-      updated: "Ihr Benutzerkonto wurde erfolgreich aktualisiert."
+      signed_up_but_inactive: "Ihre Registrierung war erfolgreich, aber Sie müssen zuerst Ihr Konto aktivieren, um sich anmelden zu können."
+      signed_up_but_locked: "Ihre Registrierung war erfolgreich, aber Sie konnten nicht angemeldet werden, weil Ihr Konto gesperrt ist."
+      signed_up_but_unconfirmed: "Sie haben eine Nachricht mit einem Bestätigungslink erhalten. Klicken Sie bitte auf diesen Link, um Ihr Konto zu aktivieren."
+      update_needs_confirmation: "Ihr Konto wurde erfolgreich aktualisiert. Allerdings müssen wir Ihre neue E-Mail Adresse verifizieren. Bitte überprüfen Sie Ihre E-Mails und klicken Sie auf den Link zur Bestätigung Ihrer neuen E-Mail Adresse."
+      updated: "Ihr Konto wurde erfolgreich aktualisiert."
     sessions:
       signed_in: "Sie haben sich erfolgreich angemeldet."
       signed_out: "Sie haben sich erfolgreich abgemeldet."
