@@ -3,25 +3,25 @@ fr:
     header:
       title: Administration
     actions:
-      actions: Actions
+      actions: Statut des votes
       confirm: Êtes-vous sûr(e) ?
       confirm_hide: Confirmer
       hide: Cacher
       hide_author: Cacher l'auteur
       restore: Restaurer
-      mark_featured: Mettre en avant
+      mark_featured: Mis en avant
       unmark_featured: Retirer la mise en avant
-      edit: Modifier
+      edit: Éditer
       configure: Configurer
       delete: Supprimer
     banners:
       index:
         title: Bannières
-        create: Créer une bannière
+        create: Créer la bannière
         edit: Modifier la bannière
         delete: Supprimer la bannière
         filters:
-          all: Tous
+          all: Toutes
           with_active: Actif
           with_inactive: Inactif
         preview: Aperçu
@@ -34,7 +34,7 @@ fr:
         sections_label: Sections où il figurera
         sections:
           homepage: Page d’accueil
-          debates: Discussions
+          debates: Débats
           proposals: Propositions
           budgets: Budget participatif
           help_page: Page d'aide
@@ -62,26 +62,26 @@ fr:
         content: Contenu
         filter: Montrer
         filters:
-          all: Tous
+          all: Toutes
           on_comments: Commentaires
-          on_debates: Discussions
+          on_debates: Débats
           on_proposals: Propositions
           on_users: Utilisateurs
           on_system_emails: Emails système
-        title: Activité de modération
+        title: Activité des modérateurs
         type: Type
         no_activity: Il n’y a aucune activité de modérateurs.
     budgets:
       index:
         title: Budgets participatifs
         new_link: Créer un nouveau budget
-        filter: Filtrer
+        filter: Filtre
         filters:
           open: Ouvert
           finished: Terminé
         budget_investments: Gestion de projets
         table_name: Nom
-        table_phase: Phases
+        table_phase: Phase
         table_investments: Propositions d'investissement
         table_edit_groups: Groupes de rubriques
         table_edit_budget: Éditer
@@ -545,7 +545,7 @@ fr:
       system_emails: Emails système
       emails_download: Téléchargement des courriels
       valuators: Évaluateurs
-      poll_officers: Assesseurs
+      poll_officers: Présidents
       polls: Votes
       poll_booths: Bureaux de vote
       poll_booth_assignments: Assignations des bureaux de vote
@@ -756,8 +756,8 @@ fr:
       index:
         title: Assesseurs
       officer:
-        add: Ajouter
-        delete: Supprimer le rôle
+        add: Ajouter en tant que président
+        delete: Supprimer la position
         name: Nom
         email: Email
         entry_name: assesseur
@@ -767,8 +767,8 @@ fr:
         user_not_found: Utilisateur introuvable
     poll_officer_assignments:
       index:
-        officers_title: "Liste des assesseurs"
-        no_officers: "Il n'y a aucun assesseur affecté à ce vote."
+        officers_title: "Liste des présidents"
+        no_officers: "Il n'y a aucun président affecté à ce vote."
         table_name: "Nom"
         table_email: "Email"
       by_officer:
@@ -824,9 +824,9 @@ fr:
         error_create: "Une erreur s'est produite lors de l'affectation du bureau de vote au vote"
       show:
         location: "Lieu"
-        officers: "Assesseurs"
-        officers_list: "Liste des assesseurs pour ce bureau de vote"
-        no_officers: "Il n'y a pas d'assesseur pour ce bureau de vote"
+        officers: "Présidents"
+        officers_list: "Liste des présidents pour ce bureau de vote"
+        no_officers: "Il n'y a pas de président pour ce bureau de vote."
         recounts: "Dépouillements"
         recounts_list: "Liste des dépouillements pour ce bureau de vote"
         results: "Résultats"
@@ -946,7 +946,7 @@ fr:
         no_results: "Il n'y a pas de résultats."
       result:
         table_whites: "Votes blancs"
-        table_nulls: "Bulletins invalides"
+        table_nulls: "Votes invalides"
         table_total: "Total des bulletins"
         table_answer: Réponse
         table_votes: Votes
@@ -1089,7 +1089,7 @@ fr:
         placeholder: Rechercher le bureau de vote par nom
       poll_officers_search:
         button: Chercher
-        placeholder: Rechercher un assesseur
+        placeholder: Rechercher le président d'un vote
       poll_questions_search:
         button: Chercher
         placeholder: Rechercher les questions d'un vote
