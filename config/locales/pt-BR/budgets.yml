@@ -77,7 +77,7 @@ pt-BR:
         search_form:
           button: Buscar
           placeholder: Buscar projetos de investimento...
-          title: Pesquisar
+          title: Buscar
         search_results_html:
           one: " contendo o termo <strong>'%{search_term}'</strong>"
           other: " contendo o termo <strong>'%{search_term}'</strong>"
@@ -126,7 +126,7 @@ pt-BR:
         project_not_selected_html: 'Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação.'
       wrong_price_format: Apenas números inteiros
       investment:
-        add: Vote
+        add: Voto
         already_added: Você já adicionou este projeto de investimento
         already_supported: Você já apoiou esta proposta de investimento. Compartilhe!
         support_title: Apoiar este projeto
@@ -134,10 +134,10 @@ pt-BR:
           one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
           other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
         supports:
-          zero: Sem apoio
+          zero: Nenhum apoio
           one: 1 apoio
           other: "%{count} apoios"
-        give_support: Apoio
+        give_support: Apoiar
       header:
         check_ballot: Verificar minha cédula
         different_heading_assigned_html: "Você possui votos ativos em um título diferente: %{heading_link}"
