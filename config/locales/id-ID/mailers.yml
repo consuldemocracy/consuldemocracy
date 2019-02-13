@@ -21,7 +21,6 @@ id:
       title: Tanggapan baru atas komentar anda
     unfeasible_spending_proposal:
       hi: "Pengguna yang terhormat,"
-      new_html: "Untuk semua ini, kami mengundang Anda untuk menguraikan sebuah <strong>proposal baru</strong> yang menyesuaikan dengan kondisi dari proses ini. Anda dapat melakukannya di tautan berikut ini: %{url}."
       new_href: "proyek investasi baru"
       sincerely: "Hormat kami"
       sorry: "Maaf atas ketidaknyamanan ini dan kami berterima kasih atas partisipasi anda yang tak ternilai harganya."
@@ -31,16 +30,11 @@ id:
       title: "Notifikasi proposal di %{org_name}"
       share: Bagikan proposal
       comment: Proposal komentar
-      unsubscribe: "Jika anda tidak ingin menerima pemberitahuan proposal, kunjungi %{account} dan hapus centang 'Terima ringkasan notifikasi proposal'."
       unsubscribe_account: Akun saya
     direct_message_for_receiver:
       subject: "Anda telah menerima pesan pribadi baru"
       reply: Membalas ke %{sender}
-      unsubscribe: "Jika anda tidak ingin menerima pesan langsung, kunjungi %{account} dan hapus centang 'Terima email tentang pesan langsung'."
       unsubscribe_account: Akun saya
-    direct_message_for_sender:
-      subject: "Anda telah mengirim pesan pribadi baru"
-      title_html: "Anda telah mengirim pesan pribadi baru ke <strong>%{receiver}</strong> dengan konten:"
     user_invite:
       ignore: "Jika anda belum meminta undangan ini jangan khawatir, anda bisa mengabaikan email ini."
       thanks: "Terima kasih banyak."
@@ -58,7 +52,6 @@ id:
       share: "Bagikan proyek anda"
     budget_investment_unfeasible:
       hi: "Pengguna yang terhormat,"
-      new_html: "Untuk semua ini, kami mengundang anda untuk menguraikan<strong>investasi baru </strong> yang menyesuaikan dengan kondisi proses ini. Anda dapat melakukannya mengikuti tautan ini: %{url}."
       new_href: "proyek investasi baru"
       sincerely: "Hormat kami"
       sorry: "Maaf atas ketidaknyamanan ini dan kami berterima kasih atas partisipasi anda yang tak ternilai harganya."
