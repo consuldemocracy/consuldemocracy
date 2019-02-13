@@ -10,6 +10,9 @@ sv:
       budget/investment:
         one: "Budgetförslag"
         other: "Budgetförslag"
+      milestone:
+        one: "milstolpe"
+        other: "milstolpar"
       comment:
         one: "Kommentar"
         other: "Kommentarer"
@@ -70,6 +73,9 @@ sv:
       legislation/process:
         one: "Process"
         other: "Processer"
+      legislation/proposal:
+        one: "Förslag"
+        other: "Förslag"
       legislation/draft_versions:
         one: "Utkastversion"
         other: "Utkastversioner"
@@ -119,6 +125,16 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
+      milestone:
+        title: "Titel"
+        description: "Beskrivning (frivilligt fält om projektets status har ställts in)"
+        publication_date: "Publiceringsdatum"
+      milestone/status:
+        name: "Namn"
+        description: "Beskrivning (valfritt)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
       budget/heading:
         name: "Område"
         price: "Kostnad"
@@ -165,11 +181,17 @@ sv:
         geozone_restricted: "Begränsat till område"
         summary: "Sammanfattning"
         description: "Beskrivning"
+      poll/translation:
+        name: "Namn"
+        summary: "Sammanfattning"
+        description: "Beskrivning"
       poll/question:
         title: "Fråga"
         summary: "Sammanfattning"
         description: "Beskrivning"
         external_url: "Länk till ytterligare dokumentation"
+      poll/question/translation:
+        title: "Fråga"
       signature_sheet:
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
@@ -185,6 +207,10 @@ sv:
         more_info_flag: Visa i hjälpsidor
         print_content_flag: Skriv ut innehåll
         locale: Språk
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Underrubrik
+        content: Innehåll
       site_customization/image:
         name: Namn
         image: Bild
@@ -205,12 +231,22 @@ sv:
         allegations_start_date: Startdatum för att kommentera utkast
         allegations_end_date: Slutdatum för att kommentera utkast
         result_publication_date: Publiceringsdatum för resultat
+      legislation/process/translation:
+        title: Processens titel
+        summary: Sammanfattning
+        description: Beskrivning
+        additional_info: Ytterligare information
+        milestones_summary: Sammanfattning
       legislation/draft_version:
         title: Titel på versionen
         body: Text
         changelog: Ändringar
         status: Status
         final_version: Slutgiltig version
+      legislation/draft_version/translation:
+        title: Titel på versionen
+        body: Text
+        changelog: Ändringar
       legislation/question:
         title: Titel
         question_options: Alternativ
@@ -227,6 +263,9 @@ sv:
       poll/question/answer:
         title: Svar
         description: Beskrivning
+      poll/question/answer/translation:
+        title: Svar
+        description: Beskrivning
       poll/question/answer/video:
         title: Titel
         url: Extern video
@@ -235,12 +274,25 @@ sv:
         subject: Ämne
         from: Från
         body: E-postmeddelande
+      admin_notification:
+        segment_recipient: Mottagare
+        title: Titel
+        link: Länk
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
       widget/card:
         label: Etikett (frivilligt fält)
         title: Titel
         description: Beskrivning
         link_text: Länktext
         link_url: Länk-URL
+      widget/card/translation:
+        label: Etikett (frivilligt fält)
+        title: Titel
+        description: Beskrivning
+        link_text: Länktext
       widget/feed:
         limit: Antal objekt
     errors:
