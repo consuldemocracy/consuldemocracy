@@ -1,1 +1,9 @@
 ru:
+  verification:
+    residence:
+      new:
+        date_of_birth: Дата рождения
+        document_type_label: Тип документа
+        postal_code: Почтовый индекс
+    step_1: Место жительства
+    step_2: Код подтверждения
