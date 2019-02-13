@@ -10,9 +10,9 @@ es:
         title: Cuenta de usuario
       edit:
         title: 'Editar cuenta de usuario: Restablecer contraseña'
-        back: Atrás
+        back: Volver
         password:
-          password: Contraseña
+          password: Contraseña que utilizarás para acceder a este sitio web
           send_email: Enviar email para restablecer la contraseña
           reset_email_send: Email enviado correctamente.
           reseted: Contraseña restablecida correctamente
@@ -37,7 +37,6 @@ es:
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
       has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
-      link: CONSUL
       in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
       not_in_census: Este documento no está registrado.
       not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
@@ -61,11 +60,11 @@ es:
     menu:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
-      support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear propuesta de inversión
+      support_proposals: Apoyar propuestas*
+      create_spending_proposal: Crear una propuesta de gasto
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear proyectos de gasto
+      create_budget_investment: Crear nuevo proyecto
       print_budget_investments: Imprimir proyectos de gasto
       support_budget_investments: Apoyar proyectos de gasto
       users: Gestión de usuarios
@@ -74,7 +73,7 @@ es:
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates
-      support_proposals: Apoyar propuestas
+      support_proposals: Apoyar propuestas*
       vote_proposals: Participar en las votaciones finales
     print:
       proposals_info: Haz tu propuesta en http://url.consul
@@ -84,12 +83,12 @@ es:
     print_info: Imprimir esta información
     proposals:
       alert:
-        unverified_user: Este usuario no está verificado
+        unverified_user: Usuario no verificado
       create_proposal: Crear propuesta
       print:
         print_button: Imprimir
       index:
-        title: Apoyar propuestas
+        title: Apoyar propuestas*
     budgets:
       create_new_investment: Crear proyectos de gasto
       print_investments: Imprimir proyectos de gasto
@@ -101,19 +100,19 @@ es:
     budget_investments:
       alert:
         unverified_user: Usuario no verificado
-      create: Crear nuevo proyecto
+      create: Crear proyecto de gasto
       filters:
         heading: Concepto
         unfeasible: Proyectos no factibles
       print:
         print_button: Imprimir
       search_results:
-        one: " contiene el término '%{search_term}'"
-        other: " contienen el término '%{search_term}'"
+        one: " que contiene '%{search_term}'"
+        other: " que contiene '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Este usuario no está verificado
-      create: Crear propuesta de inversión
+        unverified_user: Usuario no verificado
+      create: Crear una propuesta de gasto
       filters:
         unfeasible: Propuestas de inversión no viables
         by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
@@ -121,7 +120,7 @@ es:
         print_button: Imprimir
       search_results:
         one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
+        other: " que contiene '%{search_term}'"
     sessions:
       signed_out: Has cerrado la sesión correctamente.
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
