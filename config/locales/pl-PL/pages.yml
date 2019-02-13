@@ -174,7 +174,7 @@ pl:
       privacy: Polityka prywatności
     verify:
       code: Kod, który otrzymałeś w liście
-      email: Adres e-mail
+      email: E-mail
       info: 'Aby zweryfikować konto, wprowadź swoje dane dostępu:'
       info_code: 'Teraz wprowadź kod otrzymany w liście:'
       password: Hasło
