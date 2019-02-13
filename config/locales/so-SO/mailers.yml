@@ -13,7 +13,7 @@ so:
       instructions_2_html: E-maylkan ayaa xaqiijin doona koontadaada <b> %{document_type}%{document_number} </b>. Haddii aysan kuwaan ku jirin, fadlan ha guji xiriirka hore oo iska dheji emailkan.
       instructions_html: Si aad u buuxiso xaqiijinta koontadaada akoonkaaga waa inaad gujisaa%{verification_link}.
       subject: Xaqiiji emailka
-      thanks: Ad iyo Ad baad u mahadsantahay.
+      thanks: Ad baad u mahadsantahay.
       title: Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda
     reply:
       hi: Haye
