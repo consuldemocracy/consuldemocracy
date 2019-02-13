@@ -41,7 +41,7 @@ it:
         feature_1: "Per partecipare al voto occorre %{link} e verificare l’account."
         feature_1_link: "registrarsi su %{org_name}"
       processes:
-        title: "Processi"
+        title: "Procedimenti"
         description: "Nella sezione %{link} i cittadini partecipano alla realizzazione e all’emendamento dei regolamenti comunali e possono fornire la propria opinione sulle politiche locali in dibattiti preventivi."
         link: "processi"
       faq:
