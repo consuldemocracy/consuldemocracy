@@ -7,7 +7,6 @@ fr:
       title_placeholder: Ajouter un titre descriptif pour le document
       attachment_label: Choisir un document
       delete_button: Supprimer le document
-      cancel_button: Annuler
       note: "Vous pouvez ajouter au plus %{max_documents_allowed} documents de type %{accepted_content_types} et de taille %{max_file_size} Mo par fichier."
       add_new_document: Ajouter un nouveau document
     actions:
