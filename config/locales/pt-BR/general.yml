@@ -24,14 +24,14 @@ pt-BR:
       show_debates_recommendations: Mostrar recomendações de debates
       show_proposals_recommendations: Mostrar as recomendações propostas
       title: Minha conta
-      user_permission_debates: Participar de debates
+      user_permission_debates: Participar nos debates
       user_permission_info: Com a sua conta você pode...
-      user_permission_proposal: Criar nova proposta
+      user_permission_proposal: Criar novas propostas
       user_permission_support_proposal: Apoiar propostas
       user_permission_title: Participação
-      user_permission_verify: Para realizar todas as ações verifique sua conta.
+      user_permission_verify: Para executar todas as ações %{verify}
       user_permission_verify_info: "* Somente para usuários no Censo. "
-      user_permission_votes: Participar da votação final
+      user_permission_votes: Participar na votação final
       username_label: Nome de usuário
       verified_account: Conta verificada
       verify_my_account: Verificar minha conta
@@ -41,7 +41,7 @@ pt-BR:
   comments:
     comments_closed: Comentários estão fechados
     verified_only: Para participar %{verify_account}
-    verify_account: verifique sua conta
+    verify_account: verificar sua conta
     comment:
       admin: Administrador
       author: Autor
@@ -80,7 +80,7 @@ pt-BR:
         submit_button: Iniciar um debate
     debate:
       comments:
-        zero: Nenhum comentário
+        zero: Sem comentários
         one: 1 comentário
         other: "%{count} comentários"
       votes:
@@ -97,15 +97,15 @@ pt-BR:
       debate_title: Título do debate
       tags_instructions: Marcar este debate.
       tags_label: Tópicos
-      tags_placeholder: "Entrar com as marcações que deseja usar, separadas por vírgulas (',')"
+      tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
     index:
-      featured_debates: Recursos
+      featured_debates: Destacado
       filter_topic:
         one: " com tópico '%{topic}'"
-        other: " com tópicos '%{topic}'"
+        other: " com tópico '%{topic}'"
       orders:
-        confidence_score: melhor avaliada
-        created_at: última
+        confidence_score: melhor avaliado
+        created_at: mais recente
         hot_score: mais ativa
         most_commented: mais comentada
         relevance: relevância
@@ -124,7 +124,7 @@ pt-BR:
       search_results_html:
         one: " contendo o termo <strong>'%{search_term}'</strong>"
         other: " contendo o termo <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
+      select_order: Ordenado por
       start_debate: Iniciar um debate
       title: Debates
       section_header:
@@ -142,14 +142,14 @@ pt-BR:
       info: Se quiser elaborar uma proposta, esta seção é inadequada, entre %{info_link}.
       info_link: criar nova proposta
       more_info: Mais informações
-      recommendation_four: Aproveite este espaço e as vozes que ele preenche. Ele pertence a você.
+      recommendation_four: Aproveite este espaço e as vozes que o preenchem. Ele pertence a você também.
       recommendation_one: Não use letras maiúsculas para o título do debate ou para sentenças completas. Na internet, isto é considerado gritaria. Ninguém gosta de ser tratado com gritos.
       recommendation_three: Criticismo impiedoso é bem-vindo. Este é um espaço para reflexão. Mas recomendamos que você mantenha sua inteligência e elegância. O mundo é um lugar melhor com estas virtudes em prática.
       recommendation_two: Todo debate ou comentário sugerindo ações ilegais serão apagados, bem como aqueles tentando sabotar os espaços de debate. Tudo mais será permitido.
       recommendations_title: Recomendações para criar um debate
       start_new: Iniciar um debate
     show:
-      author_deleted: Usuário apagado
+      author_deleted: Usuário excluído
       comments:
         zero: Nenhum comentário
         one: 1 comentário
@@ -157,7 +157,7 @@ pt-BR:
       comments_title: Comentários
       edit_debate_link: Editar
       flag: Este debate foi marcado como inapropriado por vários usuários.
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário.
+      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
       share: Compartilhar
       author: Autor
     update:
@@ -171,7 +171,7 @@ pt-BR:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
     accept_terms_title: Concordo com a Política de Privacidade e os Termos e condições de uso
     conditions: Termos e condições de uso
-    debate: Debater
+    debate: Debate
     direct_message: mensagem privada
     error: erro
     errors: erros
@@ -183,12 +183,12 @@ pt-BR:
     budget/investment: Investimento
     budget/heading: Rubrica Orçamental
     poll/shift: Turno
-    poll/question/answer: Responda
+    poll/question/answer: Resposta
     user: Conta
     verification/sms: telefone
     signature_sheet: Folha de assinatura
     document: Documento
-    topic: Tema
+    topic: Tópico
     image: Imagem
   geozones:
     none: Toda a cidade
@@ -209,7 +209,7 @@ pt-BR:
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decida como dar forma à cidade em que você deseja viver.
+      participation_text: Decida como adequar a Madrid que você deseja viver.
       participation_title: Participação
       privacy: Política de privacidade
     header:
@@ -221,7 +221,7 @@ pt-BR:
       external_link_blog: Blog
       locale: 'Idioma:'
       logo: Consul logotipo
-      management: Gerenciamento
+      management: Gestão
       moderation: Moderação
       valuation: Avaliação
       officing: Presidentes da votação
@@ -236,19 +236,12 @@ pt-BR:
       spending_proposals: Propostas de despesas
       notification_item:
         new_notifications:
-          one: Você possui uma nova notificação
-          other: Você possui %{count} novas notificações
+          one: Você tem uma nova notificação
+          other: Você tem %{count} novas notificações
         notifications: Notificações
-        no_notifications: "Você não possui novas notificações"
+        no_notifications: "Vocie nnao possui novas notificações"
     admin:
       watch_form_message: 'Você possui alterações não salvas. Tem certeza que deseja sair da página?'
-  legacy_legislation:
-    help:
-      alt: Selecione o texto que deseja comentar e pressione o botão com o lápis.
-      text: Para comentar este documento, você deve %{sign_in} ou %{sign_up}. Em seguida, selecione o texto que deseja comentar e pressione o botão com o lápis.
-      text_sign_in: iniciar sessão
-      text_sign_up: inscrever-se
-      title: Como eu posso comentar este documento?
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
@@ -259,14 +252,14 @@ pt-BR:
     notification:
       action:
         comments_on:
-          one: Alguém comentou em
+          one: Alguém comentou sobre
           other: Existem %{count} novos comentários sobre
         proposal_notification:
-          one: Há uma nova notificação sobre
-          other: Existem %{count} novas notificações sobre
+          one: Há uma nova notificação em
+          other: Existem %{count} novas notificações em
         replies_to:
-          one: Alguém respondeu ao seu comentário sobre
-          other: Existem %{count} novas respostas ao seu comentário sobre
+          one: Alguém respondeu sobre
+          other: Existem %{count} novas respostas para seu comentário sobre
       mark_as_read: Marcar como lido
       mark_as_unread: Marcar como não lido
       notifiable_hidden: Este recurso não está mais disponível.
@@ -274,7 +267,7 @@ pt-BR:
     title: "Distritos"
     proposal_for_district: "Inicie uma proposta para seu distrito"
     select_district: Escopo da operação
-    start_proposal: Criar uma proposta
+    start_proposal: Criar proposta
   omniauth:
     facebook:
       sign_in: Iniciar sessão com o Facebook
@@ -316,9 +309,9 @@ pt-BR:
       started: Já em curso
       unfeasible: Inviável
       done: Feito
-      other: Outros
+      other: Outro
     form:
-      geozone: Escopo de operação
+      geozone: Escopo da operação
       proposal_external_url: Link para documentação adicional
       proposal_question: Questão proposta
       proposal_question_example_html: "Deve ser resumido em uma pergunta com uma resposta de Sim ou não"
@@ -334,7 +327,7 @@ pt-BR:
       tags_instructions: "Marque esta proposta. Você pode escolher entre as categorias propostas ou adicionar a sua própria"
       tags_label: Marcação
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
-      map_location: "Localização no mapa"
+      map_location: "Localização do mapa"
       map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
       map_remove_marker: "Remover o marcador do mapa"
       map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
@@ -342,7 +335,7 @@ pt-BR:
       featured_proposals: Destacado
       filter_topic:
         one: " com tópico '%{topic}'"
-        other: " com tópicos '%{topic}'"
+        other: " com tópico '%{topic}'"
       orders:
         confidence_score: melhor avaliado
         created_at: mais recente
@@ -361,12 +354,12 @@ pt-BR:
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas pelo autor"
       retired_links:
-        all: Tudo
+        all: Todos
         duplicated: Duplicado
         started: Em andamento
         unfeasible: Inviável
         done: Feito
-        other: Outro
+        other: Outros
       search_form:
         button: Buscar
         placeholder: Buscar propostas...
@@ -414,7 +407,7 @@ pt-BR:
       support: Apoiar
       support_title: Apoiar esta proposta
       supports:
-        zero: Nenhum apoio
+        zero: Sem apoio
         one: 1 apoio
         other: "%{count} apoios"
       votes:
@@ -426,7 +419,7 @@ pt-BR:
       archived: "Esta proposta foi arquivada e não é possível angariar suporte."
       successful: "Esta proposta tem alcançado os suportes necessários."
     show:
-      author_deleted: Usuário apagado
+      author_deleted: Usuário excluído
       code: 'Código da proposta:'
       comments:
         zero: Nenhum comentário
@@ -437,6 +430,7 @@ pt-BR:
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
       login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
       notifications_tab: Notificações
+      milestones_tab: Marcos
       retired_warning: "O autor considera que esta proposta não deve mais receber apoio."
       retired_warning_link_to_explanation: Leia a explicação antes de votar.
       retired: Proposta retirada pelo autor
@@ -457,7 +451,7 @@ pt-BR:
     final_date: "Contagem final/resultados"
     index:
       filters:
-        current: "Abrir"
+        current: "Aberto"
         expired: "Expirado"
       title: "Votações"
       participate_button: "Participar desta votação"
@@ -475,7 +469,7 @@ pt-BR:
         help: Ajuda sobre votação
       section_footer:
         title: Ajuda sobre votação
-        description: As pesquisas dos cidadãos são um mecanismo participativo através do qual os cidadãos com direito de voto podem tomar decisões diretas
+        description: Votações dos cidadãos são um mecanismo de participação na qual os cidadãos podem ter decisões diretas
       no_polls: "Não há votações abertas."
     show:
       already_voted_in_booth: "Você já participou de uma urna física. Você não pode participar novamente."
@@ -483,11 +477,11 @@ pt-BR:
       back: Voltar à votação
       cant_answer_not_logged_in: "Você precisa %{signin} ou %{signup} para participar."
       comments_tab: Comentários
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário.
+      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
       signin: Iniciar sessão
-      signup: Inscrever-se
+      signup: Inscreva-se
       cant_answer_verify_html: "Você deve %{verify_link} para poder responder."
-      verify_link: "verificar sua conta"
+      verify_link: "verifique sua conta"
       cant_answer_expired: "Esta votação já foi encerrada."
       cant_answer_wrong_geozone: "Esta questão não está disponível na sua geozona."
       more_info_title: "Mais informações"
@@ -496,7 +490,7 @@ pt-BR:
       read_more: "Ler mais sobre %{answer}"
       read_less: "Ler menos sobre %{answer}"
       videos: "Vídeo externo"
-      info_menu: "Informações"
+      info_menu: "Informação"
       stats_menu: "Estatísticas da participação"
       results_menu: "Resultados da votação"
       stats:
@@ -511,10 +505,10 @@ pt-BR:
         white: "Votos brancos"
         null_votes: "Inválido"
       results:
-        title: "Questões"
+        title: "Perguntas"
         most_voted_answer: "Resposta mais votada: "
   poll_questions:
-    create_question: "Criar questão"
+    create_question: "Criar pergunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Você votou %{answer}"
@@ -532,7 +526,7 @@ pt-BR:
   shared:
     edit: 'Editar'
     save: 'Salvar'
-    delete: Apagar
+    delete: Excluir
     "yes": "Sim"
     "no": "Não"
     search_results: "Buscar resultados"
@@ -554,10 +548,10 @@ pt-BR:
       title: 'Busca avançada'
       to: 'Para'
     author_info:
-      author_deleted: Usuário apagado
+      author_deleted: Usuário excluído
     back: Voltar
     check: Selecionar
-    check_all: Todos
+    check_all: Tudo
     check_none: Nenhum
     collective: Coletivo
     flag: Marcar como inapropriado
@@ -575,7 +569,7 @@ pt-BR:
           notice_html: "Agora você está seguindo esta proposta cidadã! </br> Nós o notificaremos das mudanças assim que elas ocorrerem, para que você esteja atualizado."
         destroy:
           notice_html: "Você parou de seguir esta proposta cidadã! </br> Você não receberá mais notificações relacionadas a esta proposta."
-    hide: Ocultar
+    hide: Esconder
     print:
       print_button: Imprimir esta informação
     search: Buscar
@@ -586,7 +580,7 @@ pt-BR:
           one: "Existe um debate com o termo '%{query}', você pode participar dele ao invés de abrir um novo."
           other: "Existem debates com o termo '%{query}', você pode participar deles ao invés de abrir um novo."
         message: "Você está vendo %{limit} de %{count} debates contendo o termo '%{query}'"
-        see_all: "Ver tudo"
+        see_all: "Ver todos"
       budget_investment:
         found:
           one: "Existe um investimento com o termo '%{query}', você pode participar dele ao invés de abrir um novo."
@@ -657,7 +651,7 @@ pt-BR:
         other: " contendo o termo '%{search_term}'"
       sidebar:
         geozones: Escopo da operação
-        feasibility: Viabilidade
+        feasibility: Factibilidade
         unfeasible: Inviável
       start_spending_proposal: Criar um projeto de investimento
     new:
@@ -707,7 +701,7 @@ pt-BR:
         title_label: Título
         verified_only: Para enviar uma mensagem privada %{verify_account}
         verify_account: verifique sua conta
-        authenticate: Você precisa %{signin} ou %{signup} para continuar.
+        authenticate: Você precisa %{signin} ou %{signup} para continuar
         signin: iniciar sessão
         signup: inscrever-se
       show:
@@ -755,21 +749,21 @@ pt-BR:
     disagree: Eu discordo
     organizations: Organizações não tem permissão de voto
     signin: Iniciar sessão
-    signup: Inscrever
+    signup: Inscreva-se
     supports: Apoios
-    unauthenticated: Você precisa %{signin} ou %{signup} para continuar
+    unauthenticated: Você precisa %{signin} ou %{signup} para continuar.
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
-    verify_account: verificar sua conta
+    verify_account: verifique sua conta
     spending_proposals:
       not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
-      not_verified: Somente usuários verificados podem votar em propostas; %{verify_account}.
-      organization: Organizações não têm permissão de voto
+      not_verified: Somente usuários verificados podem votar em propostas;  %{verify_account}.
+      organization: Organizações não tem permissão de voto
       unfeasible: Projetos de investimento inviáveis não podem ser apoiados
       not_voting_allowed: A fase de votação está fechada
     budget_investments:
       not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
       not_verified: Somente usuários verificados podem votar em projetos de investimento; %{verify_account}.
-      organization: Organizações não têm permissão de voto
+      organization: Organizações não tem permissão de voto
       unfeasible: Projetos de investimento inviáveis não podem ser apoiados
       not_voting_allowed: A fase de votação está fechada
       different_heading_assigned:
@@ -787,7 +781,7 @@ pt-BR:
       process_label: Processo
       see_process: Ver processo
     cards:
-      title: Destaque
+      title: Destacado
     recommended:
       title: Recomendações que podem ser de seu interesse
       help: "Estas recomendações são geradas através da identificação dos debates e propostas que você está seguindo."
@@ -809,11 +803,11 @@ pt-BR:
       go_to_index: Veja propostas e debates
       title: Participar
       user_permission_debates: Participar nos debates
-      user_permission_info: Com a sua conta você pode...
+      user_permission_info: Com sua conta, você pode...
       user_permission_proposal: Criar novas propostas
       user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: Para executar todas as ações %{verify}
-      user_permission_verify_info: "* Somente para usuários no Censo. "
+      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar minha conta
       user_permission_votes: Participar na votação final
   invisible_captcha:
@@ -834,8 +828,8 @@ pt-BR:
     score_negative: "Não"
     content_title:
       proposal: "Proposta"
-      debate: "Debate"
-      budget_investment: "Proposta de investimento"
+      debate: "Debater"
+      budget_investment: "Investimentos Orçamentários"
   admin/widget:
     header:
       title: Administração
