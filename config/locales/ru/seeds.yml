@@ -32,7 +32,6 @@ ru:
       environment: Окружающая среда
     budgets:
       budget: Совместный бюджет
-      currency: €
       groups:
         all_city: Весь город
         districts: Районы
@@ -49,7 +48,6 @@ ru:
     polls:
       current_poll: "Текущее голосование"
       current_poll_geozone_restricted: "Геозона текущего голосования ограничена"
-      incoming_poll: "Входящее голосование"
       recounting_poll: "Пересчитываемое голосование"
       expired_poll_without_stats: "Просроченное голосование без статистики и результатов"
       expired_poll_with_stats: "Просроченное голосование со статистикой и результатами"
