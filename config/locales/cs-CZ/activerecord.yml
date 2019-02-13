@@ -1,8 +1,59 @@
 cs:
   activerecord:
+    models:
+      budget/investment:
+        one: "Investice"
+        few: "Investice"
+        many: "Investice"
+        other: "Investice"
+      comment:
+        one: "Komentář"
+        few: "Komentáře"
+        many: "Komentáře"
+        other: "Komentáře"
+      debate:
+        one: "Debata"
+        few: "Debaty"
+        many: "Debaty"
+        other: "Debaty"
+      user:
+        one: "User"
+        few: "Uživatelé"
+        many: "Uživatelé"
+        other: "Uživatelé"
+      legislation/process:
+        one: "Proces"
+        few: "Procesy"
+        many: "Procesy"
+        other: "Procesy"
+      legislation/proposal:
+        one: "Návrhy"
+        few: "Návrhy"
+        many: "Návrhy"
+        other: "Návrhy"
+      legislation/questions:
+        one: "Question"
+        few: "Otázky"
+        many: "Otázky"
+        other: "Otázky"
+      documents:
+        one: "Dokument"
+        few: "Dokumenty"
+        many: "Dokumenty"
+        other: "Dokumenty"
+      topic:
+        one: "Téma"
+        few: "Obsah"
+        many: "Obsah"
+        other: "Obsah"
+      poll:
+        one: "Průzkum"
+        few: "Průzkum"
+        many: "Průzkum"
+        other: "Průzkum"
     attributes:
       budget:
-        name: "Název"
+        name: "Name"
         description_accepting: "Popis během fáze přijímání"
         description_reviewing: "Popis během fáze revize"
         description_selecting: "Popis během fáze výběru"
@@ -14,30 +65,37 @@ cs:
         currency_symbol: "Měna"
       budget/investment:
         heading_id: "Heading"
-        title: "Název"
-        description: "Popis"
-        external_url: "Odkaz na doplňující informace"
+        title: "Předmět"
+        description: "Description"
+        external_url: "Odkaz na další dokumenty"
         administrator_id: "Administrátor"
         location: "Lokalita (volitelné)"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal názorný obrázek"
         image_title: "Nadpis obrázku"
+      milestone:
+        title: "Předmět"
+      milestone/status:
+        name: "Název"
+      progress_bar:
+        kind: "Typ"
+        title: "Předmět"
       budget/heading:
-        name: "Heading name"
-        price: "Price"
+        name: "Název záhlaví"
+        price: "Cena"
         population: "Population"
       comment:
         body: "Komentář"
         user: "User"
       debate:
-        author: "Author"
+        author: "Autor"
         description: "Opinion"
         terms_of_service: "Terms of service"
-        title: "Název"
+        title: "Předmět"
       proposal:
-        author: "Author"
-        title: "Název"
-        question: "Question"
+        author: "Autor"
+        title: "Předmět"
+        question: "Otázka"
         description: "Description"
         terms_of_service: "Terms of service"
       user:
@@ -47,7 +105,7 @@ cs:
         password_confirmation: "Potvrzení hesla"
         password: "Heslo"
         current_password: "Současné heslo"
-        phone_number: "Telefonní číslo"
+        phone_number: "Telefon"
         official_position: "Official position"
         official_level: "Official level"
         redeemable_code: "Verification code received via email"
@@ -55,63 +113,63 @@ cs:
         name: "Název organizace"
         responsible_name: "Osoba zodpovědná za organizaci či skupinu"
       spending_proposal:
-        administrator_id: "Administrator"
+        administrator_id: "Administrátor"
         association_name: "Association name"
         description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Název"
+        external_url: "Odkaz na další dokumenty"
+        geozone_id: "Vymezení oblasti města"
+        title: "Předmět"
       poll:
-        name: "Name"
+        name: "Název"
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
         summary: "Souhrn"
-        description: "Popis"
+        description: "Description"
       poll/translation:
         name: "Název"
         summary: "Souhrn"
-        description: "Popis"
+        description: "Description"
       poll/question:
-        title: "Otázka"
+        title: "Question"
         summary: "Souhrn"
-        description: "Popis"
+        description: "Description"
         external_url: "Odkaz na další dokumenty"
       poll/question/translation:
-        title: "Otázka"
+        title: "Question"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
       site_customization/page:
         content: Obsah
-        created_at: Vytvořeno v
-        subtitle: Podtitul
+        created_at: Vytvořeno dne
+        subtitle: Titulek
         slug: Slug
         status: Status
-        title: Název
+        title: Předmět
         updated_at: Aktualizováno dne
         more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
       site_customization/page/translation:
-        title: Název
-        subtitle: Titulek
+        title: Předmět
+        subtitle: Podtitul
         content: Obsah
       site_customization/image:
-        name: Name
-        image: Image
+        name: Název
+        image: Obrázek
       site_customization/content_block:
-        name: Name
+        name: Název
         locale: locale
         body: Body
       legislation/process:
         title: Název procesu
-        summary: Summary
+        summary: Souhrn
         description: Description
         additional_info: Additional info
-        start_date: Start date
-        end_date: End date
+        start_date: Počáteční datum
+        end_date: Konečné datum
         debate_start_date: Debate start date
         debate_end_date: Debate end date
         draft_publication_date: Datum návrhu publikace
@@ -120,63 +178,64 @@ cs:
         result_publication_date: Publikace konečného výsledku
       legislation/process/translation:
         title: Název procesu
-        summary: Summary
+        summary: Souhrn
         description: Description
         additional_info: Additional info
+        milestones_summary: Souhrn
       legislation/draft_version:
         title: Název pracovní verze
         body: Text
-        changelog: Changes
+        changelog: Změny
         status: Status
-        final_version: Final version
+        final_version: Konečná verze
       legislation/draft_version/translation:
         title: Název pracovní verze
         body: Text
         changelog: Changes
       legislation/question:
-        title: Název
+        title: Předmět
         question_options: Options
       legislation/question_option:
         value: Value
       legislation/annotation:
         text: Komentář
       document:
-        title: Název
+        title: Předmět
         attachment: Attachment
       image:
-        title: Název
+        title: Předmět
         attachment: Attachment
       poll/question/answer:
-        title: Answer
+        title: Odpověď
         description: Description
       poll/question/answer/translation:
         title: Answer
         description: Description
       poll/question/answer/video:
-        title: Title
-        url: External video
+        title: Předmět
+        url: Externí video
       newsletter:
-        segment_recipient: Recipients
+        segment_recipient: Příjemci
         subject: Subject
-        from: From
+        from: Od
         body: Email content
       admin_notification:
         segment_recipient: Recipients
-        title: Název
-        link: Link
+        title: Předmět
+        link: Odkaz
         body: Text
       admin_notification/translation:
-        title: Název
+        title: Předmět
         body: Text
       widget/card:
         label: Label (optional)
-        title: Název
+        title: Předmět
         description: Description
         link_text: Link text
         link_url: Link URL
       widget/card/translation:
         label: Label (optional)
-        title: Název
+        title: Předmět
         description: Description
         link_text: Link text
       widget/feed:
