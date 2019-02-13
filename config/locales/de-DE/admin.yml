@@ -1,15 +1,15 @@
 de:
   admin:
     header:
-      title: Administration
+      title: Verwaltung
     actions:
       actions: Aktionen
       confirm: Sind Sie sich sicher?
       confirm_hide: Moderation bestätigen
-      hide: Verbergen
+      hide: Ausblenden
       hide_author: Verfasser*in verbergen
       restore: Wiederherstellen
-      mark_featured: Markieren
+      mark_featured: Hervorgehoben
       unmark_featured: Markierung aufheben
       edit: Bearbeiten
       configure: Konfigurieren
@@ -36,7 +36,7 @@ de:
           homepage: Homepage
           debates: Diskussionen
           proposals: Vorschläge
-          budgets: Bürgerhaushalt
+          budgets: Partizipative Haushaltsplanung
           help_page: Hilfeseite
         background_color: Hintergrundfarbe
         font_color: Schriftfarbe
@@ -68,7 +68,7 @@ de:
           on_proposals: Vorschläge
           on_users: Benutzer*innen
           on_system_emails: E-Mails vom System
-        title: Aktivität der Moderator*innen
+        title: Moderator*innenaktivität
         type: Typ
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
@@ -166,7 +166,7 @@ de:
     budget_phases:
       edit:
         start_date: Anfangsdatum
-        end_date: Enddatum
+        end_date: Enddatum des Verfahrens
         summary: Zusammenfassung
         summary_help_text: Dieser Text informiert die Benutzer über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an.
         description: Beschreibung
@@ -176,23 +176,23 @@ de:
         save_changes: Änderungen speichern
     budget_investments:
       index:
-        heading_filter_all: Alle Rubriken
-        administrator_filter_all: Alle Administratoren
+        heading_filter_all: Alle Überschriften
+        administrator_filter_all: Alle Administrator*innen
         valuator_filter_all: Alle Begutachter*innen
         tags_filter_all: Alle Tags
         advanced_filters: Erweiterte Filter
         placeholder: Suche Projekte
         sort_by:
           placeholder: Sortieren nach
-          id: Ausweis
+          id: ID
           title: Titel
-          supports: Unterstützer*innen
+          supports: Unterstützung
         filters:
           all: Alle
           without_admin: Ohne zugewiesene*n Administrator*in
           without_valuator: Ohne zugewiesene*n Begutachter*in
-          under_valuation: In Begutachtung
-          valuation_finished: Begutachtung abgeschlossen
+          under_valuation: Unter Bewertung
+          valuation_finished: Bewertung beendet
           feasible: Durchführbar
           selected: Ausgewählt
           undecided: Offen
@@ -204,7 +204,7 @@ de:
         buttons:
           filter: Filter
         download_current_selection: "Aktuelle Auswahl herunterladen"
-        no_budget_investments: "Keine Ausgabenvorschläge vorhanden."
+        no_budget_investments: "Keine Investitionsprojekte vorhanden."
         title: Ausgabenvorschläge
         assigned_admin: Zugewiesene*r Administrator*in
         no_admin_assigned: Kein*e Administrator*in zugewiesen
@@ -217,17 +217,17 @@ de:
         selected: "Ausgewählt"
         select: "Auswählen"
         list:
-          id: Ausweis
+          id: ID
           title: Titel
-          supports: Unterstützer*innen
-          admin: Administrator*in
-          valuator: Begutachter*in
-          valuation_group: Begutachtungsgruppe
-          geozone: Tätigkeitsfeld
+          supports: Unterstützung
+          admin: Administrator
+          valuator: Begutachter/in
+          valuation_group: Bewertungsgruppe
+          geozone: Rahmenbedingungen
           feasibility: Durchführbarkeit
-          valuation_finished: Begutachtung abgeschlossen
+          valuation_finished: Bew. Fin.
           selected: Ausgewählt
-          visible_to_valuators: Den Begutachter*innen zeigen
+          visible_to_valuators: Den Begutachtern/Begutachterinnen zeigen
           author_username: Benutzer*innenname des/der Verfasser*in
           incompatible: Inkompatibel
         cannot_calculate_winners: Das Budget muss in einer der Phasen "Finale Abstimmung", "Abstimmung beendet" oder "Ergebnisse" stehen, um Gewinnervorschläge berechnen zu können
@@ -239,7 +239,7 @@ de:
         info: "%{budget_name} - Gruppe: %{group_name} - Ausgabenvorschlag %{id}"
         edit: Bearbeiten
         edit_classification: Klassifizierung bearbeiten
-        by: Verfasser*in
+        by: Von
         sent: Gesendet
         group: Gruppe
         heading: Rubrik
@@ -284,14 +284,14 @@ de:
       search_unfeasible: Suche undurchführbar
     milestones:
       index:
-        table_id: "Ausweis"
+        table_id: "ID"
         table_title: "Titel"
         table_description: "Beschreibung"
         table_publication_date: "Datum der Veröffentlichung"
         table_status: Status
         table_actions: "Aktionen"
         delete: "Meilenstein löschen"
-        no_milestones: "Keine definierten Meilensteine vorhanden"
+        no_milestones: "Keine Meilensteine definiert"
         image: "Bild"
         show_image: "Bild anzeigen"
         documents: "Dokumente"
@@ -369,7 +369,7 @@ de:
     dashboard:
       index:
         back: Zurück zu %{org}
-        title: Administration
+        title: Verwaltung
         description: Willkommen auf dem Admin-Panel für %{org}.
     debates:
       index:
@@ -422,7 +422,7 @@ de:
             error: Fehler
         form:
           enabled: Aktiviert
-          process: Verfahren
+          process: Beteiligungsverfahren
           debate_phase: Diskussionsphase
           draft_phase: Entwurfsphase
           draft_phase_description: Wenn diese Phase aktiv ist, wird dieses Beteiligungsverfahren nicht in der Liste aller Verfahren angezeigt. Lassen Sie sich eine Vorschau des Verfahrens anzeigen und erstellen Sie Inhalte vor dem Start.
@@ -430,7 +430,7 @@ de:
           proposals_phase: Vorschlagsphase
           start: Anfang
           end: Ende
-          use_markdown: Verwenden Sie Markdown, um den Text zu formatieren
+          use_markdown: Verwenden Sie Markdown, um den Text zu formationen
           title_placeholder: Titel des Beteiligungsverfahrens
           summary_placeholder: Kurze Zusammenfassung der Beschreibung
           description_placeholder: Fügen Sie eine Beschreibung des Beteiligungsverfahrens hinzu
@@ -454,7 +454,7 @@ de:
           orders:
             id: ID
             title: Titel
-            supports: Unterstützer/innen
+            supports: Unterstützung
         process:
           title: Beteiligungsverfahren
           comments: Kommentare
@@ -464,7 +464,7 @@ de:
           status_closed: Abgeschlossen
           status_planned: Geplant
         subnav:
-          info: Information
+          info: Informationen
           homepage: Homepage
           draft_versions: Ausarbeitung
           questions: Diskussion
@@ -478,7 +478,7 @@ de:
           title: Titel
           back: Zurück
           id: ID
-          supports: Unterstützer*innen
+          supports: Unterstützung
           select: Auswählen
           selected: Ausgewählt
         form:
@@ -515,7 +515,7 @@ de:
           changelog_placeholder: Beschreiben Sie alle relevanten Änderungen der vorherigen Version
           body_placeholder: Schreiben Sie einen Entwurfstext
         index:
-          title: Entwurfsversionen
+          title: Entwurfsfassungen
           create: Version erstellen
           delete: Löschen
           preview: Vorschau
@@ -530,7 +530,7 @@ de:
           title: Titel
           created_at: Erstellt am
           comments: Kommentare
-          final_version: Endgültige Version
+          final_version: Endgültige Fassung
           status: Status
       questions:
         create:
@@ -609,11 +609,11 @@ de:
       emails_download: E-Mails herunterladen
       valuators: Begutachter*innen
       poll_officers: Vorsitzende der Abstimmung
-      polls: Abstimmungen
+      polls: Umfragen
       poll_booths: Standort der Wahlkabinen
       poll_booth_assignments: Zuordnung der Wahlkabinen
       poll_shifts: Arbeitsschichten verwalten
-      officials: Öffentliche Ämter
+      officials: Beamte/innen
       organizations: Organisationen
       settings: Globale Einstellungen
       spending_proposals: Ausgabenvorschläge
@@ -622,14 +622,14 @@ de:
       site_customization:
         homepage: Homepage
         pages: Meine Seiten
-        images: Benutzer*innenbilder
+        images: Bilder
         content_blocks: Benutzerspezifische Inhaltsdatenblöcke
         information_texts: Benutzer*definierte Informationstexte
         information_texts_menu:
           debates: "Diskussionen"
           community: "Community"
           proposals: "Vorschläge"
-          polls: "Abstimmungen"
+          polls: "Umfragen"
           layouts: "Layouts"
           mailers: "E-Mails"
           management: "Management"
@@ -640,7 +640,7 @@ de:
             update: "Block aktualisieren"
       title_moderated_content: Moderierter Inhalt
       title_budgets: Bürger*innenhaushalte
-      title_polls: Abstimmungen
+      title_polls: Umfragen
       title_profiles: Profile
       title_settings: Einstellungen
       title_site_customization: Seiteninhalt
@@ -710,7 +710,7 @@ de:
         sent_emails:
           one: 1 E-Mail gesendet
           other: "%{count} E-Mails gesendet"
-        sent_at: Gesendet
+        sent_at: Gesendet um
         subject: Betreff
         segment_recipient: Empfänger*innen
         from: E-Mail-Adresse, die als Absender des Newsletters angezeigt wird
@@ -746,7 +746,7 @@ de:
         send: Benachrichtigung senden
         will_get_notified: (%{n} Benutzer*innen werden benachrichtigt)
         got_notified: (%{n} Benutzer*innen wurden benachrichtigt)
-        sent_at: Gesendet
+        sent_at: Gesendet um
         title: Titel
         body: Text
         link: Link
@@ -790,9 +790,9 @@ de:
         title: 'Begutachter*innen: Benutzer*innensuche'
       summary:
         title: Begutachter*innen-Zusammenfassung der Ausgabenvorschläge
-        valuator_name: Begutachter*in
+        valuator_name: Begutachter/in
         finished_and_feasible_count: Abgeschlossen und durchführbar
-        finished_and_unfeasible_count: Abgeschlossen und undurchführbar
+        finished_and_unfeasible_count: Abgeschlossen und nicht durchführbar
         finished_count: Abgeschlossen
         in_evaluation_count: In Auswertung
         total_count: Gesamt
@@ -818,7 +818,7 @@ de:
         title: "Begutachtungsgruppe: %{group}"
         no_valuators: "Es gibt keine Begutachter*innen, die dieser Gruppe zugeordnet sind"
       form:
-        name: "Gruppenname"
+        name: "Name der Gruppe"
         new: "Begutachtungsgruppe erstellen"
         edit: "Begutachtungsgruppe speichern"
     poll_officers:
@@ -829,11 +829,11 @@ de:
         delete: Amt löschen
         name: Name
         email: E-Mail
-        entry_name: Beamter/in
+        entry_name: Wahlvorsteher*in
       search:
         email_placeholder: Benutzer*in via E-Mail suchen
-        search: Suchen
-        user_not_found: Benutzer*in wurde nicht gefunden
+        search: Suche
+        user_not_found: Benutzer wurde nicht gefunden
     poll_officer_assignments:
       index:
         officers_title: "Liste der zugewiesenen Beamt*innen"
@@ -857,13 +857,13 @@ de:
         no_shifts: "Dieser Wahlkabine wurden keine Arbeitsschichten zugeordnet"
         officer: "Beamter/in"
         remove_shift: "Entfernen"
-        search_officer_button: Suchen
+        search_officer_button: Suche
         search_officer_placeholder: Suche nach Beamten/in
         search_officer_text: Suche nach Beamten/in, um neue Arbeitsschicht zuzuordnen
         select_date: "Tag auswählen"
         no_voting_days: "Abstimmungsphase beendet"
         select_task: "Aufgabe auswählen"
-        table_shift: "Arbeitsschicht"
+        table_shift: "Schicht"
         table_email: "E-Mail"
         table_name: "Name"
       flash:
@@ -877,7 +877,7 @@ de:
       manage:
         assignments_list: "Zuweisungen für Abstimmung \"%{poll}\""
         status:
-          assign_status: Zuweisung
+          assign_status: Zuordnung
           assigned: Zugewiesen
           unassigned: Nicht zugewiesen
         actions:
@@ -892,7 +892,7 @@ de:
         error_destroy: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
         error_create: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
       show:
-        location: "Standort"
+        location: "Lage"
         officers: "Beamte/innen"
         officers_list: "Liste der Beamten/innen für diese Wahlurne"
         no_officers: "Es gibt keine Beamten/innen für diese Wahlurne"
@@ -907,10 +907,10 @@ de:
         booths_title: "Liste der zugewiesenen Wahlurnen"
         no_booths: "Dieser Abstimmung sind keine Wahlkabinen zugeordnet."
         table_name: "Name"
-        table_location: "Standort"
+        table_location: "Lage"
     polls:
       index:
-        title: "Liste der aktiven Abstimmungen"
+        title: "Liste der Umfragen"
         no_polls: "Keine kommenden Abstimmungen geplant."
         create: "Abstimmung erstellen"
         name: "Name"
@@ -958,14 +958,14 @@ de:
         title: "Frage bearbeiten"
       new:
         title: "Frage erstellen"
-        poll_label: "Abstimmung"
+        poll_label: "Umfrage"
       answers:
         images:
           add_image: "Bild hinzufügen"
           save_image: "Bild speichern"
       show:
         proposal: Ursprünglicher Vorschlag
-        author: Verfasser*in
+        author: Autor
         question: Frage
         edit_question: Frage bearbeiten
         valid_answers: Gültige Antworten
@@ -1017,7 +1017,7 @@ de:
       result:
         table_whites: "Völlig leere Stimmzettel"
         table_nulls: "Ungültige Stimmzettel"
-        table_total: "Stimmzettel gesamt"
+        table_total: "Gesamtanzahl der Stimmzettel"
         table_answer: Antwort
         table_votes: Stimmen
       results_by_booth:
@@ -1031,18 +1031,18 @@ de:
         no_booths: "Es gibt keine aktiven Wahlkabinen für bevorstehende Abstimmungen."
         add_booth: "Wahlkabine hinzufügen"
         name: "Name"
-        location: "Standort"
+        location: "Lage"
         no_location: "Ohne Standort"
       new:
         title: "Neue Wahlkabine"
         name: "Name"
-        location: "Standort"
+        location: "Lage"
         submit_button: "Wahlkabine erstellen"
       edit:
         title: "Wahlkabine bearbeiten"
         submit_button: "Wahlkabine aktualisieren"
       show:
-        location: "Standort"
+        location: "Lage"
       booth:
         shifts: "Arbeitsschichten verwalten"
         edit: "Wahlkabine bearbeiten"
@@ -1054,10 +1054,10 @@ de:
         official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamter/in'
         official_updated: Daten des/r Beamten gespeichert
       index:
-        title: Beamte/innen
+        title: Öffentliche Ämter
         no_officials: Keine Beamten/innen vorhanden.
         name: Name
-        official_position: Beamte/in
+        official_position: Öffentliches Amt
         official_level: Stufe
       level_0: Kein/e Beamter/in
       level_1: Stufe 1
@@ -1089,11 +1089,11 @@ de:
         no_organizations: Keine Organisationen vorhanden.
         reject: Ablehnen
         rejected: Abgelehnt
-        search: Suchen
+        search: Suche
         search_placeholder: Name, E-Mail oder Telefonnummer
         title: Organisationen
-        verified: Verifiziert
-        verify: Verifizieren
+        verified: Überprüft
+        verify: Überprüfen
         pending: Ausstehend
       search:
         title: Organisationen suchen
@@ -1102,7 +1102,7 @@ de:
       index:
         title: Vorschläge
         id: ID
-        author: Verfasser*in
+        author: Autor
         milestones: Meilensteine
         no_proposals: Keine Vorschläge vorhanden.
     hidden_proposals:
@@ -1156,24 +1156,24 @@ de:
       true_value: "Ja"
       false_value: "Nein"
       booths_search:
-        button: Suchen
+        button: Suche
         placeholder: Suche Wahlkabine nach Name
       poll_officers_search:
-        button: Suchen
+        button: Suche
         placeholder: Suche Beamte/innen
       poll_questions_search:
-        button: Suchen
+        button: Suche
         placeholder: Suche Fragen
       proposal_search:
-        button: Suchen
+        button: Suche
         placeholder: Suche Vorschläge nach Titel, Code, Beschreibung oder Frage
       spending_proposal_search:
-        button: Suchen
+        button: Suche
         placeholder: Suche Ausgabenvorschläge nach Titel oder Beschreibung
       user_search:
-        button: Suchen
+        button: Suche
         placeholder: Suche Benutzer*in nach Name oder E-Mail
-      search_results: "Suchergebnisse"
+      search_results: "Ergebnisse anzeigen"
       no_search_results: "Keine Ergebnisse gefunden."
       actions: Aktionen
       title: Titel
@@ -1183,24 +1183,24 @@ de:
       moderated_content: "Überprüfen Sie den von den Moderator*innen moderierten Inhalt und bestätigen Sie, ob die Moderation korrekt ausgeführt wurde."
       view: Anzeigen
       proposal: Vorschlag
-      author: Verfasser*in
+      author: Autor
       content: Inhalt
-      created_at: Erstellt
+      created_at: Erstellt am
       delete: Löschen
     spending_proposals:
       index:
         geozone_filter_all: Alle Bereiche
-        administrator_filter_all: Alle Administrator*innen
+        administrator_filter_all: Alle Administratoren
         valuator_filter_all: Alle Begutachter*innen
         tags_filter_all: Alle Tags
         filters:
           valuation_open: Offen
           without_admin: Ohne zugewiesene*n Administrator*in
           managed: Verwaltet
-          valuating: In der Bewertungsphase
+          valuating: Unter Bewertung
           valuation_finished: Begutachtung abgeschlossen
           all: Alle
-        title: Ausgabenvorschläge für den Bürgerhaushalt
+        title: Investitionsprojekte für den Bürgerhaushalt
         assigned_admin: Zugewiesene*r Administrator*in
         no_admin_assigned: Kein*e Administrator*in zugewiesen
         no_valuators_assigned: Kein*e Begutacher*in zugewiesen
@@ -1208,8 +1208,8 @@ de:
         valuator_summary_link: "Zusammenfassung der Begutachter*innen"
         feasibility:
           feasible: "Durchführbar (%{price})"
-          not_feasible: "Nicht durchführbar"
-          undefined: "Nicht definiert"
+          not_feasible: "Undurchführbar"
+          undefined: "Undefiniert"
       show:
         assigned_admin: Zugewiesene*r Administrator*in
         assigned_valuators: Zugewiesene Begutachter*innen
@@ -1219,7 +1219,7 @@ de:
         edit: Bearbeiten
         edit_classification: Klassifizierung bearbeiten
         association_name: Verein
-        by: Von
+        by: Verfasser*in
         sent: Gesendet
         geozone: Bereich
         dossier: Bericht
@@ -1238,7 +1238,7 @@ de:
         title_proposals_with_supports: Zusammenfassung der Ausgabenvorschläge, die die Unterstützungsphase passiert haben
         geozone_name: Bereich
         finished_and_feasible_count: Abgeschlossen und durchführbar
-        finished_and_unfeasible_count: Abgeschlossen und nicht durchführbar
+        finished_and_unfeasible_count: Abgeschlossen und undurchführbar
         finished_count: Abgeschlossen
         in_evaluation_count: In Auswertung
         total_count: Gesamt
@@ -1271,7 +1271,7 @@ de:
         success: Bezirk erfolgreich gelöscht
         error: Dieser Bezirk kann nicht gelöscht werden, da ihm bereits Elemente zugeordnet sind
     signature_sheets:
-      author: Verfasser*in
+      author: Autor
       created_at: Erstellungsdatum
       name: Name
       no_signature_sheets: "Keine Unterschriftenbögen vorhanden"
@@ -1284,8 +1284,8 @@ de:
         submit: Unterschriftenbogen erstellen
       show:
         created_at: Erstellt
-        author: Verfasser*in
-        documents: Dokumente
+        author: Autor
+        documents: Unterlagen
         document_count: "Anzahl der Dokumente:"
         verified:
           one: "Es gibt %{count} gültige Unterschrift"
@@ -1308,21 +1308,21 @@ de:
           budgets: Offene Haushalte
           budget_investments: Ausgabenvorschläge
           spending_proposals: Ausgabenvorschläge
-          unverified_users: Nicht verifizierte Benutzer*innen
+          unverified_users: Benutzer nicht verifziert
           user_level_three: Benutzer*innen auf Stufe 3
           user_level_two: Benutzer*innen auf Stufe 2
           users: Benutzer*innen gesamt
-          verified_users: Verifizierte Benutzer*innen
+          verified_users: Verifizierte Benutzer
           verified_users_who_didnt_vote_proposals: Verifizierte Benutzer*innen, die nicht für Vorschläge abgestimmt haben
           visits: Besuche
           votes: Gesamtbewertung
         spending_proposals_title: Ausgabenvorschläge
-        budgets_title: Bürgerhaushalte
+        budgets_title: Partizipative Haushaltsplanung
         visits_title: Besuche
         direct_messages: Direktnachrichten
         proposal_notifications: Benachrichtigungen zu einem Vorschlag
         incomplete_verifications: Unvollständige Verifizierungen
-        polls: Abstimmungen
+        polls: Umfragen
       direct_messages:
         title: Direktnachrichten
         total: Gesamt
@@ -1334,7 +1334,7 @@ de:
         not_available: "Vorschlag nicht verfügbar"
       polls:
         title: Abstimmungsstatistik
-        all: Abstimmungen
+        all: Umfragen
         web_participants: Online-Teilnehmer*innen
         total_participants: Gesamtanzahl Teilnehmer*innen
         poll_questions: "Fragen der Abstimmung: %{poll}"
@@ -1357,15 +1357,15 @@ de:
       columns:
         name: Name
         email: E-Mail
-        document_number: Ausweis/Pass/Aufenthaltsbetätigung
+        document_number: Dokumentennummern
         roles: Rollen
         verification_level: Überprüfungsstatus
       index:
-        title: Benutzer*innen
+        title: Benutzer*in
         no_users: Keine Benutzer*innen vorhanden.
       search:
         placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis
-        search: Suchen
+        search: Suche
     verifications:
       index:
         phone_not_given: Telefon nicht angegeben
@@ -1429,18 +1429,18 @@ de:
           form:
             error: Fehler
         form:
-          options: Optionen
+          options: Antworten
         index:
           create: Neue Seite erstellen
           delete: Seite löschen
-          title: Meine Seiten
+          title: Benutzer*definierte Seiten
           see_page: Seite anzeigen
         new:
           title: Neue benutzer*definierte Seite erstellen
         page:
           created_at: Erstellt am
           status: Status
-          updated_at: Letzte Aktualisierung
+          updated_at: Aktualisiert am
           status_draft: Entwurf
           status_published: Veröffentlicht
           title: Titel
