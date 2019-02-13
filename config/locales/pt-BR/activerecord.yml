@@ -14,14 +14,14 @@ pt-BR:
         one: "Marco"
         other: "Marcos"
       comment:
-        one: "Comentário"
+        one: "Comentar"
         other: "Comentários"
       debate:
-        one: "Debate"
+        one: "Debater"
         other: "Debates"
       tag:
         one: "Marcação"
-        other: "Marcações"
+        other: "Marcação"
       user:
         one: "Usuário"
         other: "Usuários"
@@ -44,7 +44,7 @@ pt-BR:
         one: "Boletim informativo"
         other: "Boletins informativos"
       vote:
-        one: "Voto"
+        one: "Vote"
         other: "Votos"
       organization:
         one: "Organização"
@@ -81,7 +81,7 @@ pt-BR:
         other: "Versões preliminares"
       legislation/questions:
         one: "Questão"
-        other: "Questões"
+        other: "Perguntas"
       legislation/question_options:
         one: "Opção de pergunta"
         other: "Opções de pergunta"
@@ -101,7 +101,7 @@ pt-BR:
         one: "Votação"
         other: "Votações"
       proposal_notification:
-        one: "Notificação de proposta"
+        one: "Notificação da proposta"
         other: "Notificações de proposta"
     attributes:
       budget:
@@ -136,7 +136,7 @@ pt-BR:
         kind: "Tipo"
         title: "Título"
       budget/heading:
-        name: "Título"
+        name: "Nome do título"
         price: "Preço"
         population: "População"
       comment:
@@ -224,7 +224,7 @@ pt-BR:
         description: Descrição
         additional_info: Informação adicional
         start_date: Data de início
-        end_date: Data final
+        end_date: Data de término
         debate_start_date: Data de início do debate
         debate_end_date: Data final do debate
         draft_publication_date: Data de publicação do rascunho
