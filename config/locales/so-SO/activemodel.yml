@@ -7,8 +7,8 @@ so:
     attributes:
       verification:
         residence:
-          document_type: "Qaybaha dukumentiga"
-          document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
+          document_type: "Noocyada Dukumeentiga"
+          document_number: "Lambarka dukumentiga (oo ay ku jiraan warqad)"
           date_of_birth: "Tarikhda Dhalashada"
           postal_code: "Lambar ama Xarfo Kokoban oo qaybka ah Adareeska"
         sms:
@@ -17,6 +17,6 @@ so:
         email:
           recipient: "Email"
       officing/residence:
-        document_type: "Noocyada Dukumeentiga"
-        document_number: "Lambarka dukumentiga (oo ay ku jiraan warqad)"
+        document_type: "Qaybaha dukumentiga"
+        document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
         year_of_birth: "Sanadka Dhalashada"
