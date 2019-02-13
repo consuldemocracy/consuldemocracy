@@ -75,7 +75,7 @@ ar:
       invalid: غير صالح
       less_than: يجب أن يكون أقل من %{count}
       less_than_or_equal_to: يجب أن يكون أصغر أو يساوي %{count}
-      model_invalid: "فشل التحقق: %{errors}"
+      model_invalid: "فشل التحقق من صحة: %{errors}"
       not_a_number: ليس رقماً
       not_an_integer: يجب أن يكون عدد صحيح
       odd: يجب أن يكون عدد فردي
@@ -127,10 +127,20 @@ ar:
           kb: كيلو بايت
           mb: ميغابايت
           tb: تيرابايت
+    percentage:
+      format:
+        format: "%n%"
   support:
     array:
+      last_word_connector: "و "
       two_words_connector: " و "
+      words_connector: "، "
   time:
+    am: صباحاً
     formats:
       datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
     pm: مساء
