@@ -50,7 +50,7 @@ ar:
       show:
         action: فعل
         actions:
-          block: ممنوع
+          block: محظور
           hide: مخفي
           restore: إسترجاع
         by: خاضعة لإشراف
@@ -59,8 +59,8 @@ ar:
         filters:
           all: الكل
           on_comments: تعليقات
-          on_debates: النقاشات
-          on_proposals: إقتراحات
+          on_debates: الحوارات
+          on_proposals: مقترحات
           on_users: المستخدمين
           on_system_emails: نظام البريد الإلكتروني
         title: نشاط المشرف
@@ -186,20 +186,20 @@ ar:
         advanced_filters: مرشحات متقدمة
         placeholder: بحث عن مشاريع
         sort_by:
-          placeholder: ترتيب حسب
+          placeholder: فرز حسب
           id: ID
           title: عنوان
-          supports: تشجيعات
+          supports: دعم
         filters:
           all: الكل
-          without_admin: بدون تعيين المشرف
+          without_admin: بدون تعيين المدير
           without_valuator: بدون تعيين المفيّم
           under_valuation: تحت التقييم
           valuation_finished: انتهى التقييم
-          feasible: قابلية
+          feasible: مجدي
           selected: محدّد
-          undecided: متردد
-          unfeasible: غير مجد
+          undecided: غير مقرر
+          unfeasible: غير مجدي
           min_total_supports: الحد الأدنى من الدعم
           winners: الفائزين
           one_filter_html: "المرشحات المطبقة حاليا: <b><em>%{filter}</em></b>"
@@ -209,8 +209,8 @@ ar:
         download_current_selection: "تنزيل التحديد الحالي"
         no_budget_investments: "لا توجد مشاريع استثمارية."
         title: مشاريع استثمارية
-        assigned_admin: المشرف المعين
-        no_admin_assigned: المشرف غير المعين
+        assigned_admin: المدير الذي تم تعيينه
+        no_admin_assigned: لم يتم تعيين أي مدير
         no_valuators_assigned: لم يتم تعيين مقيّمين
         no_valuation_groups: لم يتم تعيين مجموعات المقيّمين
         feasibility:
@@ -462,13 +462,13 @@ ar:
         process:
           title: العملية
           comments: تعليقات
-          status: الحالة
+          status: حالة
           creation_date: تاريخ الإنشاء
           status_open: فتح
           status_closed: مغلق
           status_planned: مخطط
         subnav:
-          info: معلومات
+          info: المعلومات
           homepage: الصفحة الرئيسية
           draft_versions: صياغة
           questions: النقاشات
@@ -653,8 +653,8 @@ ar:
       users: المستخدمين
     administrators:
       index:
-        title: المدراء
-        name: الإسم
+        title: مدراء
+        name: الإ سم
         email: البريد الإلكتروني
         id: معرف المدير
         no_administrators: لا يوجد مدراء.
@@ -667,7 +667,7 @@ ar:
     moderators:
       index:
         title: المشرفون
-        name: الإسم
+        name: الإ سم
         email: البريد الإلكتروني
         no_moderators: لا يوجد مشرفون.
       moderator:
@@ -677,10 +677,14 @@ ar:
         title: 'المشرفون: البحث عن مستخدم'
     segment_recipient:
       all_users: كل المستخدمين
-      administrators: المدراء
+      administrators: مدراء
       proposal_authors: كتّاب الاقتراحات
     newsletters:
       index:
+        title: نشرات إخبارية
+        new_newsletter: رسائلة إخبارية جديدة
+        subject: الموضوع
+        segment_recipient: المستفيدين
         sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
@@ -841,6 +845,7 @@ ar:
       new:
         add_shift: "إضافة مناوبة"
         shift: "تعيين"
+        date: "تاريخ"
         new_shift: "مناوبة جديدة"
         no_shifts: "لا توجد مناوبات لمكتب الإقتراع هذا"
         officer: "ضابط"
@@ -901,19 +906,45 @@ ar:
         create: "إنشاء استطلاع"
         name: "الاسم"
         dates: "التواريخ"
+        start_date: "تاريخ البدء"
+        closing_date: "تاريخ الإغلاق"
         geozone_restricted: "خاص بالمقاطعات"
       new:
         title: "استطلاع جديد"
+        submit_button: "إنشاء استطلاع"
+      show:
+        questions_tab: أسئلة
+        officers_tab: الضباط
+        results_tab: النتائج
+        table_title: "عنوان"
     questions:
       index:
+        title: "أسئلة"
+        create: "إنشاء سؤال"
         no_questions: "لا توجد هناك أسئلة."
+        questions_tab: "أسئلة"
+        create_question: "إنشاء سؤال"
+        table_proposal: "اقتراح"
+        table_question: "سؤال"
+        table_poll: "استطلاع"
+      new:
+        poll_label: "استطلاع"
       answers:
         images:
+          add_image: "إضافة صورة"
           save_image: "حفظ الصورة"
       show:
+        author: كاتب
+        question: سؤال
         add_answer: إضافة إجابة
+        video_url: فيديو خارجي
         answers:
+          title: الإجابة
+          description: الوصف
+          videos: فيديوهات
+          images: صور
           images_list: قائمة الصور
+          documents: الوثائق
           document_title: العنوان
           document_actions: الإجراءات
     answers:
@@ -991,6 +1022,7 @@ ar:
         title: المسؤولون
         no_officials: لا يوجد مسؤول.
         name: الاسم
+        official_position: الموقف الرسمي
         official_level: المستوى
       level_0: ليس رسميا
       level_1: المستوى 1
@@ -1118,6 +1150,7 @@ ar:
       author: كاتب
       content: المحتوى
       created_at: أنشئت في
+      delete: حذف
     spending_proposals:
       index:
         geozone_filter_all: كل المناطق
@@ -1138,10 +1171,46 @@ ar:
         feasibility:
           feasible: "مجدي (%{price})"
           not_feasible: "غير مجدي"
+          undefined: "غير معرف"
+      show:
+        assigned_admin: المشرف المعين
+        assigned_valuators: المقيمين الذين تم تعيينهم
+        back: عودة
+        classification: تصنيف
+        edit: تعديل
+        edit_classification: تعديل التصنيف
+        association_name: جمعية
+        by: من قبل
+        sent: تم الإرسال
+        geozone: نطاق
+        dossier: الملف
+        edit_dossier: تعديل الملف
+        tags: علامات
+        undefined: غير معرف
+      edit:
+        classification: تصنيف
+        assigned_valuators: المقيمون
+        submit_button: تحديث
+        tags: علامات
+        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
+        undefined: غير معرف
       summary:
+        geozone_name: نطاق
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
+        finished_count: انتهى
+        in_evaluation_count: قيد التقييم
+        total_count: المجموع
+        cost_for_geozone: التكلفة
     geozones:
+      index:
+        edit: تعديل
+        delete: حذف
+      geozone:
+        name: الإ سم
+      edit:
+        form:
+          submit_button: حفظ التغييرات
       delete:
         success: تم حذف المنطقة الجغرافية بنجاح
         error: لا يمكن حذف هذه المنطقة الجغرافية نظراً لوجود عناصر مرتبطة بها
@@ -1164,18 +1233,84 @@ ar:
         unverified_error: (لم يتم التحقق من قبل التعداد)
     stats:
       show:
+        summary:
+          comments: تعليقات
+          debates: النقاشات
+          proposals: إقتراحات
+          budget_investments: مشاريع استثمارية
+          unverified_users: مستخدمين غير متحقق منهم
+          verified_users: مستخدمين تم التحقق منهم
+          votes: مجموع الأصوات
+        budgets_title: الميزانية التشاركية
         proposal_notifications: إشعارات المقترح
         polls: استطلاعات
+      direct_messages:
+        total: المجموع
       proposal_notifications:
         title: إشعارات المقترح
+        total: المجموع
       polls:
         all: استطلاعات
+        web_participants: المشاركون عبر ويب
         table:
+          poll_name: استطلاع
           question_name: سؤال
           origin_web: المشاركون عبر ويب
           origin_total: مجموع المشاركين
+    tags:
+      index:
+        topic: موضوع
+    users:
+      columns:
+        name: الإ سم
+        email: البريد الإلكتروني
+      index:
+        title: المستخدم
+      search:
+        search: بحث
+    site_customization:
+      content_blocks:
+        errors:
+          form:
+            error: خطأ
+        content_block:
+          body: الهيئة
+          name: الإ سم
+      images:
+        index:
+          title: صور مخصصة
+          update: تحديث
+          delete: حذف
+          image: صورة
+      pages:
+        errors:
+          form:
+            error: خطأ
+        form:
+          options: خيارات
+        page:
+          created_at: أنشئت في
+          status: حالة
+          updated_at: تم التحديث في
+          status_draft: مسودة
+          status_published: منشورة
+          title: عنوان
+          slug: سبيكة
+        cards:
+          title: عنوان
+          description: الوصف
+          link_text: نص الرابط
+          link_url: رابط URL
     homepage:
+      title: الصفحة الرئيسية
       cards:
         title: العنوان
+        description: الوصف
+        link_text: نص الرابط
+        link_url: رابط URL
+      feeds:
+        proposals: إقتراحات
+        debates: النقاشات
+        processes: عمليات
     translations:
       add_language: إضافة لغة
