@@ -1,13 +1,17 @@
 id:
   pages:
+    conditions:
+      title: Syarat dan ketentuan penggunaan
     help:
       title: "%{org} adalah platform untuk partisipasi warga"
       guide: "Panduan ini menjelaskan apa masing-masing bagian %{org} dan bagaimana mereka bekerja."
       menu:
         debates: "Perdebatan"
-        proposals: "Usulan"
-        budgets: "Anggaran partisipatif"
+        proposals: "Proposal"
+        budgets: "Anggaran partisipasif"
+        polls: "Jajak pendapat"
         other: "Informasi lain yang menarik"
+        processes: "Proses"
       debates:
         title: "Perdebatan"
         description: "Di bagian %{link} anda dapat hadir dan berbagi pendapat dengan orang lain mengenai masalah yang menjadi perhatiananda terkait dengan kota. Ini juga merupakan tempat untuk menghasilkan gagasan bahwa melalui bagian lain dari %{org} mengarah pada tindakan nyata oleh Dewan Kota."
@@ -17,7 +21,7 @@ id:
         image_alt: "Tombol untuk menilai perdebatan"
         figcaption: '"Saya setuju" dan "Saya tidak setuju" untuk menilai debat.'
       proposals:
-        title: "Usulan"
+        title: "Proposal"
         description: "Di bagian %{link} anda dapat membuat usulan agar Dewan Kota dapat melaksanakannya. Usulan tersebut memerlukan dukungan, dan jika mendapat dukungan memadai, mereka diminta untuk memberikan suara secara terbuka. Usulan yang disetujui dalam suara warga negara ini diterima oleh Dewan Kota dan dilaksanakan."
         link: "usulan warga"
         image_alt: "Tombol untuk mendukung sebuah usulan"
@@ -33,6 +37,8 @@ id:
         link: "jajak pendapat"
         feature_1: "Untuk berpartisipasi dalam pemungutan suara anda harus %{link} dan memverifikasi akun anda."
         feature_1_link: "mendaftar masuk %{org_name}"
+      processes:
+        title: "Proses"
       faq:
         title: "Masalah teknis?"
         description: "Baca Tanya Jawab dan selesaikan pertanyaan anda."
@@ -47,6 +53,42 @@ id:
         how_to_use: "Gunakan %{org_name} di kota anda"
       titles:
         how_to_use: Gunakan di pemerintah daerah
+    privacy:
+      title: Kebijakan Privasi
+    accessibility:
+      title: Aksesibilitas
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Perdebatan
+            - 
+              key_column: 2
+              page_column: Proposal
+            - 
+              key_column: 3
+              page_column: Suara
+            - 
+              page_column: Anggaran partisipasif
+            - 
+        browser_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
     titles:
       accessibility: Aksesibilitas
       conditions: Ketentuan penggunaan
@@ -56,6 +98,6 @@ id:
       code: Kode yang anda terima di surat
       email: Email
       info_code: 'Sekarang memperkenalkan kode yang anda terima di surat:'
-      password: Kata sandi
-      submit: Verifikasi akun saya
+      password: Kata Sandi
+      submit: Memverifikasi account saya
       title: Verifikasi akun anda
