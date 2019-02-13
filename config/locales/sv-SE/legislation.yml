@@ -13,10 +13,10 @@ sv:
         cancel: Avbryt
         publish_comment: Publicera kommentar
       form:
-        phase_not_open: Fasen är inte öppen
+        phase_not_open: Denna fas är inte öppen
         login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
         signin: Logga in
-        signup: Registrera sig
+        signup: Registrera dig
       index:
         title: Kommentarer
         comments_about: Kommentarer om
@@ -81,7 +81,7 @@ sv:
       shared:
         key_dates: Viktiga datum
         homepage: Startsida
-        debate_dates: Diskussion
+        debate_dates: Debattera
         draft_publication_date: Utkastet publiceras
         allegations_dates: Kommentarer
         result_publication_date: Resultatet publiceras
@@ -99,7 +99,7 @@ sv:
           zero: Inga kommentarer
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
-        debate: Debatt
+        debate: Debattera
       show:
         answer_question: Skicka svar
         next_question: Nästa fråga
@@ -107,7 +107,7 @@ sv:
         share: Dela
         title: Medborgardialoger
       participation:
-        phase_not_open: Denna fas är inte öppen
+        phase_not_open: Fasen är inte öppen
         organizations: Organisationer får inte delta i debatten
         signin: Logga in
         signup: Registrera dig
