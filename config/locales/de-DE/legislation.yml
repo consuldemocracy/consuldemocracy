@@ -13,7 +13,7 @@ de:
         cancel: Abbrechen
         publish_comment: Kommentar veröffentlichen
       form:
-        phase_not_open: Diese Phase ist nicht geöffnet
+        phase_not_open: Diese Phase ist noch nicht geöffnet
         login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
         signin: Anmelden
         signup: Registrierung
@@ -28,12 +28,12 @@ de:
         title: Kommentar
       version_chooser:
         seeing_version: Kommentare für Version
-        see_text: Siehe Text-Entwurf
+        see_text: Nächsten Entwurf sehen
     draft_versions:
       changes:
         title: Änderungen
         seeing_changelog_version: Änderungszusammenfassung
-        see_text: Nächsten Entwurf sehen
+        see_text: Siehe Text-Entwurf
       show:
         loading_comments: Kommentare werden geladen
         seeing_version: Sie sehen den Entwurf
@@ -49,7 +49,7 @@ de:
       header:
         additional_info: Weitere Informationen
         description: Beschreibung
-        more_info: Weitere Informationen und Kontext
+        more_info: Mehr Informationen und Inhalt
       proposals:
         empty_proposals: Es gibt keine Vorschläge
         filters:
@@ -81,10 +81,12 @@ de:
         see_latest_comments_title: Kommentar zu diesem Prozess
       shared:
         key_dates: Die wichtigsten Termine
+        homepage: Homepage
         debate_dates: Diskussion
         draft_publication_date: Veröffentlichungsentwurf
         allegations_dates: Kommentare
         result_publication_date: Veröffentlichung Endergebnis
+        milestones_date: Folgen
         proposals_dates: Vorschläge
     questions:
       comments:
@@ -106,11 +108,11 @@ de:
         share: Teilen
         title: kollaboratives Gesetzgebungsverfahren
       participation:
-        phase_not_open: Diese Phase ist noch nicht geöffnet
+        phase_not_open: Diese Phase ist nicht geöffnet
         organizations: Organisationen dürfen sich nicht an der Diskussion beteiligen
         signin: Anmelden
         signup: Registrieren
-        unauthenticated: Sie müssen %{signin} oder %{signup}, um teilzunehmen.
+        unauthenticated: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
         verified_only: 'Nur verifizierte Benutzer können teilnehmen: %{verify_account}.'
         verify_account: Verifizieren Sie Ihr Benutzerkonto
         debate_phase_not_open: Diskussionsphase ist beendet. Antworden werden nicht mehr angenommen
