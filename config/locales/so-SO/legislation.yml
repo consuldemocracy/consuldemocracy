@@ -16,7 +16,7 @@ so:
         phase_not_open: Wejigan ma furan yahay
         login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
         signin: Geliid
-        signup: Is diwan gelid
+        signup: Saxiixid
       index:
         title: Faalo
         comments_about: Faaloyin ku sabsan
