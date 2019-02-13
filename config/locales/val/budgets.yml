@@ -56,6 +56,8 @@ val:
       see_results: Vore resultats
       section_footer:
         title: Ajuda amb els pressupostos participatius
+        description: Amb els pressupostos participatius la ciutadanía decideix a quins projectes va destinada una part del pressupost.
+      milestones: Fites
     investments:
       form:
         tag_category_label: "Categoríes"
@@ -103,6 +105,8 @@ val:
           random: aleatòries
           confidence_score: millor valorades
           price: per cost
+      share:
+        message: "Acabe de crear una proposta %{title} en %{org}. Crea una tu també!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
@@ -122,6 +126,7 @@ val:
         project_selected_html: 'Este projecte d''inversió <strong>ha sigut seleccionat</strong> per a la fase de votació.'
         project_winner: 'Proposta d''inversió guanyadora'
         project_not_selected_html: 'Esta proposta <strong>no ha sigut seleccionada</strong> per a la fase de votació.'
+        see_price_explanation: Veure informe de cost
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
         add: Votar
@@ -143,7 +148,7 @@ val:
         check_ballot_link: "revisar els meus vots"
         price: "Esta partida te un pressupost de"
     progress_bar:
-      assigned: "Has sigut asignat: "
+      assigned: "Has asignat: "
       available: "Pressupost disponible: "
     show:
       group: Grup
@@ -170,6 +175,15 @@ val:
       investment_proyects: Llista de totes les propostes d'inversió
       unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
       not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
+    executions:
+      link: "Fites"
+      page_title: "%{budget} - Fites"
+      heading: "Fites de pressupostos participatius"
+      heading_selection_title: "Per districte"
+      no_winner_investments: "No hi ha propostes en aquest estat"
+      filters:
+        label: "Estat actual del projecte"
+        all: "Tots (%{count})"
     phases:
       errors:
         dates_range_invalid: "La data d'inici no ha de ser igual o posterior a la data de fi"
