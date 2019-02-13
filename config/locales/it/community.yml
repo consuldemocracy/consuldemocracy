@@ -1,7 +1,7 @@
 it:
   community:
     sidebar:
-      title: Community
+      title: Comunità
       description:
         proposal: Partecipa alla comunità di utenti per questa proposta.
         investment: Partecipa alla comunità di utenti per questo investimento.
@@ -28,7 +28,7 @@ it:
         edit: Modifica argomento
         destroy: Distruggi argomento
         comments:
-          zero: Nessun commento
+          zero: Non ci sono commenti
           one: 1 commento
           other: "%{count} commenti"
       author: Autore
