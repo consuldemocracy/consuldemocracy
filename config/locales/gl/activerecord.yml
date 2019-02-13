@@ -17,13 +17,13 @@ gl:
         one: "Estado do Fito"
         other: "Estados do Fito"
       comment:
-        one: "Comentario"
+        one: "Comentar"
         other: "Comentarios"
       debate:
         one: "Debate"
         other: "Debates"
       tag:
-        one: "Etiqueta"
+        one: "Tema"
         other: "Etiquetas"
       user:
         one: "Usuario"
@@ -32,7 +32,7 @@ gl:
         one: "Moderador"
         other: "Moderadores"
       administrator:
-        one: "Administrador"
+        one: "Administración"
         other: "Administradores"
       valuator:
         one: "Avaliador"
@@ -45,7 +45,7 @@ gl:
         other: "Xestores"
       newsletter:
         one: "Boletín informativo"
-        other: "Boletíns informativos"
+        other: "Envío de newsletters"
       vote:
         one: "Voto"
         other: "Votos"
@@ -77,8 +77,8 @@ gl:
         one: "Proceso"
         other: "Procesos"
       legislation/proposal:
-        one: "Proposta"
-        other: "Propostas"
+        one: "a proposta"
+        other: "Propostas cidadás"
       legislation/draft_versions:
         one: "Versión borrador"
         other: "Versións borrador"
@@ -104,8 +104,8 @@ gl:
         one: "Votación"
         other: "Votacións"
       proposal_notification:
-        one: "Aviso de proposta"
-        other: "Avisos de propostas"
+        one: "Notificación de proposta"
+        other: "Notificacións das propostas"
     attributes:
       budget:
         name: "Nome"
@@ -119,11 +119,11 @@ gl:
         phase: "Fase"
         currency_symbol: "Moeda"
       budget/investment:
-        heading_id: "Partida do orzamento"
+        heading_id: "Partida"
         title: "Título"
         description: "Descrición"
         external_url: "Ligazón a documentación adicional"
-        administrator_id: "Administrador"
+        administrator_id: "Administración"
         location: "Localización (opcional)"
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
@@ -131,20 +131,23 @@ gl:
       milestone:
         status_id: "Estado do investimento actual (opcional)"
         title: "Título"
-        description: "Descrición (opcional se hai un estado asignado)"
+        description: "Descrición (opcional se hai unha condición asignada)"
         publication_date: "Data de publicación"
       milestone/status:
         name: "Nome"
         description: "Descrición (opcional)"
+      progress_bar:
+        kind: "Tipo"
+        title: "Título"
       budget/heading:
         name: "Nome da partida"
-        price: "Cantidade"
+        price: "Custo"
         population: "Poboación"
       comment:
-        body: "Comentario"
-        user: "Usuario"
+        body: "Comentar"
+        user: "Usuario/a"
       debate:
-        author: "Autor"
+        author: "Autoría"
         description: "Opinión"
         terms_of_service: "Termos de servizo"
         title: "Título"
@@ -156,23 +159,23 @@ gl:
         terms_of_service: "Termos de servizo"
       user:
         login: "Enderezo de correo electrónico ou nome de usuario"
-        email: "Correo electrónico"
+        email: "O teu correo electrónico"
         username: "Nome de usuario"
         password_confirmation: "Confirmación de contrasinal"
-        password: "Contrasinal"
+        password: "Contrasinal que empregarás para acceder a este sitio web"
         current_password: "Contrasinal actual"
         phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel do cargo"
-        redeemable_code: "Código de verificación recibido por correo electrónico"
+        redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Nome da organización"
+        name: "Nome de organización"
         responsible_name: "Persoa responsable do colectivo"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administración"
         association_name: "Nome da asociación"
         description: "Descrición"
-        external_url: "Ligazón á documentación adicional"
+        external_url: "Ligazón a documentación adicional"
         geozone_id: "Ámbitos de actuación"
         title: "Título"
       poll:
@@ -190,7 +193,7 @@ gl:
         title: "Pregunta"
         summary: "Resumo"
         description: "Descrición"
-        external_url: "Ligazón á documentación adicional"
+        external_url: "Ligazón a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
       signature_sheet:
@@ -224,8 +227,8 @@ gl:
         summary: Resumo
         description: Descrición
         additional_info: Información adicional
-        start_date: Data de apertura
-        end_date: Data de peche
+        start_date: Data de inicio
+        end_date: Data de final
         debate_start_date: Data en que comeza o debate
         debate_end_date: Data en que remata o debate
         draft_start_date: Data en que comeza a redacción
@@ -256,7 +259,7 @@ gl:
       legislation/question_option:
         value: Valor
       legislation/annotation:
-        text: Comentario
+        text: Comentar
       document:
         title: Título
         attachment: Anexo
@@ -275,7 +278,7 @@ gl:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: De
+        from: Dende
         body: Contido da mensaxe
       admin_notification:
         segment_recipient: Destinatarios
@@ -307,7 +310,7 @@ gl:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
+              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -351,7 +354,7 @@ gl:
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
+              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
