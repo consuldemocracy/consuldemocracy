@@ -23,16 +23,16 @@ de:
       recommendations: Empfehlungen
       show_debates_recommendations: Debatten-Empfehlungen anzeigen
       show_proposals_recommendations: Antrags-Empfehlungen anzeigen
-      title: Mein Konto
+      title: Mein Benutzerkonto
       user_permission_debates: An Diskussion teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
-      user_permission_proposal: Neue Vorschläge erstellen
+      user_permission_proposal: Neuen Vorschlag erstellen
       user_permission_support_proposal: Vorschläge unterstützen
       user_permission_title: Teilnahme
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
       user_permission_verify_info: "* Nur für in der Volkszählung registrierte Nutzer."
       user_permission_votes: An finaler Abstimmung teilnehmen
-      username_label: Benutzername
+      username_label: Benutzer*innenname
       verified_account: Konto verifiziert
       verify_my_account: Mein Konto verifizieren
   application:
@@ -44,16 +44,16 @@ de:
     verify_account: verifizieren Sie Ihr Konto
     comment:
       admin: Administrator
-      author: Autor
+      author: Verfasser*in
       deleted: Dieser Kommentar wurde gelöscht
-      moderator: Moderator
+      moderator: Moderator*in
       responses:
         zero: Keine Rückmeldungen
         one: 1 Antwort
         other: "%{count} Antworten"
       user_deleted: Benutzer gelöscht
       votes:
-        zero: Keine Bewertung
+        zero: Keine Bewertungen
         one: 1 Stimme
         other: "%{count} Stimmen"
     form:
@@ -84,7 +84,7 @@ de:
         one: 1 Kommentar
         other: "%{count} Kommentare"
       votes:
-        zero: Keine Bewertungen
+        zero: Keine Bewertung
         one: 1 Stimme
         other: "%{count} Stimmen"
     edit:
@@ -96,8 +96,8 @@ de:
       debate_text: Beitrag
       debate_title: Titel der Diskussion
       tags_instructions: Diskussion markieren.
-      tags_label: Inhalte
-      tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
+      tags_label: Themen
+      tags_placeholder: "Trennen Sie die Tags mit einem Komma (',')"
     index:
       featured_debates: Hervorgehoben
       filter_topic:
@@ -163,7 +163,7 @@ de:
         submit_button: Änderungen speichern
   errors:
     messages:
-      user_not_found: Benutzer wurde nicht gefunden
+      user_not_found: Benutzer*in wurde nicht gefunden
       invalid_date_range: "Ungültiger Datenbereich"
   form:
     accept_terms: Ich stimme der %{policy} und den %{conditions} zu
@@ -180,7 +180,7 @@ de:
     spending_proposal: Ausgabenvorschlag
     budget/investment: Ausgabenvorschlag
     budget/heading: Haushaltsrubrik
-    poll/shift: Schicht
+    poll/shift: Arbeitsschicht
     poll/question/answer: Antwort
     user: Benutzerkonto
     verification/sms: Telefon
@@ -198,7 +198,7 @@ de:
       ie: Wir haben festgestellt, dass Sie Internet Explorer verwenden. Für eine verbesserte Anwendung empfehlen wir %{firefox} oder %{chrome}.
       ie_title: Diese Website ist für Ihren Browser nicht optimiert
     footer:
-      accessibility: Zugänglichkeit
+      accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
       consul: CONSUL Anwendung
       consul_url: https://github.com/consul/consul
@@ -223,13 +223,13 @@ de:
       valuation: Bewertung
       officing: Wahlhelfer
       help: Hilfe
-      my_account_link: Mein Benutzerkonto
+      my_account_link: Mein Konto
       my_activity_link: Meine Aktivität
       open: offen
       open_gov: Open Government
       proposals: Vorschläge
       poll_questions: Abstimmung
-      budgets: Partizipative Haushaltsplanung
+      budgets: Bürgerhaushalte
       spending_proposals: Ausgabenvorschläge
       notification_item:
         new_notifications:
@@ -305,7 +305,7 @@ de:
       duplicated: Dupliziert
       started: In Ausführung
       unfeasible: Undurchführbar
-      done: Erledigt
+      done: Fertig
       other: Andere
     form:
       geozone: Rahmenbedingungen
@@ -446,7 +446,7 @@ de:
       filters:
         current: "Offen"
         expired: "Abgelaufen"
-      title: "Umfragen"
+      title: "Abstimmungen"
       participate_button: "An dieser Umfrage teilnehmen"
       participate_button_expired: "Umfrage beendet"
       no_geozone_restricted: "Ganze Stadt"
@@ -469,7 +469,7 @@ de:
       comments_tab: Kommentare
       login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
       signin: Anmelden
-      signup: Registrierung
+      signup: Registrieren
       cant_answer_verify_html: "Sie müssen %{verify_link}, um zu antworten."
       verify_link: "Verifizieren Sie Ihr Benutzerkonto"
       cant_answer_expired: "Diese Umfrage wurde beendet."
@@ -592,7 +592,7 @@ de:
     unflag: Demarkieren
     unfollow_entity: "Nicht länger folgen %{entity}"
     outline:
-      budget: Partizipative Haushaltsmittel
+      budget: partizipative Haushaltsmittel
       searcher: Sucher
     go_to_page: "Gehe zur Seite von "
     share: Teilen
@@ -619,7 +619,7 @@ de:
   spending_proposals:
     form:
       association_name_label: 'Wenn Sie einen Vorschlag im Namen eines Vereins oder Verbands äußern, fügen Sie bitte den Namen hinzu'
-      association_name: 'Vereinsname'
+      association_name: 'Name des Vereins'
       description: Beschreibung
       external_url: Link zur weiteren Dokumentation
       geozone: Rahmenbedingungen
@@ -796,7 +796,7 @@ de:
       user_permission_proposal: Neue Vorschläge erstellen
       user_permission_support_proposal: Vorschläge unterstützen*
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
-      user_permission_verify_info: "* Nur für in der Volkszählung registrierte Nutzer."
+      user_permission_verify_info: "* Nur für in der Volkszählung registrierte Benutzer."
       user_permission_verify_my_account: Mein Konto verifizieren
       user_permission_votes: An finaler Abstimmung teilnehmen
   invisible_captcha:
@@ -825,6 +825,6 @@ de:
     help:
       alt: Wählen Sie den Text, den Sie kommentieren möchten und drücken Sie den Button mit dem Stift.
       text: Um dieses Dokument zu kommentieren, müssen Sie %{sign_in} oder %{sign_up}. Dann wählen Sie den Text aus, den Sie kommentieren möchten und klicken auf den Button mit dem Stift.
-      text_sign_in: Anmeldung
+      text_sign_in: login
       text_sign_up: registrieren
       title: Wie kann ich dieses Dokument kommentieren?
