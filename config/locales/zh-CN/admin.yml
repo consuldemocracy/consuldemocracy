@@ -110,6 +110,22 @@ zh-CN:
         calculate: 计算胜出者投资
         calculated: 计算胜出者中，可能需要一分钟时间。
         recalculate: 重新计算胜出者投资
+    budget_groups:
+      name: "名字"
+      max_votable_headings: "用户可以投票的最大标题数"
+      form:
+        edit: "编辑组"
+        name: "组名"
+        submit: "保存组"
+    budget_headings:
+      name: "名字"
+      form:
+        name: "标题名称"
+        amount: "数量"
+        population: "人口（可选）"
+        population_info: "预算标题人口字段用于统计目的，在预算结束后显示每个标题，代表一个地区与人口百分比投票率。此字段为可选，因此如果不适用，您可以将其留空。"
+        allow_content_block: "允许内容模块"
+        submit: "保存标题"
     budget_phases:
       edit:
         start_date: 开始日期
@@ -279,6 +295,11 @@ zh-CN:
         notice: 投资状态已成功创建
       delete:
         notice: 投资状态已成功删除
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "类型"
+        table_title: "标题"
     comments:
       index:
         filter: 过滤器
@@ -359,6 +380,7 @@ zh-CN:
           summary_placeholder: 描述的简短总结
           description_placeholder: 添加进程描述
           additional_info_placeholder: 添加您认为有用的其他信息
+          homepage: 说明
         index:
           create: 新进程
           delete: 删除
@@ -386,6 +408,7 @@ zh-CN:
           status_planned: 计划
         subnav:
           info: 信息
+          homepage: 主页
           draft_versions: 起草
           questions: 辩论
           proposals: 提议
@@ -831,6 +854,8 @@ zh-CN:
         create: "创建投票项"
         name: "名字"
         dates: "日期"
+        start_date: "开始日期"
+        closing_date: "截止日期"
         geozone_restricted: "限于区内"
       new:
         title: "新的投票项"
@@ -866,6 +891,7 @@ zh-CN:
         create_question: "创建问题"
         table_proposal: "提议"
         table_question: "问题"
+        table_poll: "投票"
       edit:
         title: "编辑问题"
       new:
@@ -1064,6 +1090,8 @@ zh-CN:
       setting_value: 价值
       no_description: "没有描述"
     shared:
+      true_value: "是"
+      false_value: "不是"
       booths_search:
         button: 搜索
         placeholder: 按名字搜索投票亭
@@ -1095,6 +1123,7 @@ zh-CN:
       author: 作者
       content: 内容
       created_at: 创建于
+      delete: 删除
     spending_proposals:
       index:
         geozone_filter_all: 所有区域
@@ -1350,6 +1379,14 @@ zh-CN:
           status_published: 已发表
           title: 标题
           slug: Slug
+          cards_title: 卡片
+        cards:
+          create_card: 创建卡
+          no_cards: 没有卡。
+          title: 标题
+          description: 说明
+          link_text: 链接文本
+          link_url: 链接URL
     homepage:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
