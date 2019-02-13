@@ -65,11 +65,11 @@ es-CL:
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      privacy: Política de Privacidad
+      privacy: Política de privacidad
     verify:
       code: Código que has recibido en tu carta
       email: Email
       info_code: 'Ahora introduce el código que has recibido en tu carta:'
-      password: Contraseña
+      password: Contraseña que utilizarás para acceder a este sitio web
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
