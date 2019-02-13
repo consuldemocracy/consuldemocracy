@@ -56,10 +56,8 @@ zh-TW:
         filter: 篩選器
         filters:
           open: 開啟進程
-          next: 下一個
           past: 過去的
         no_open_processes: 沒有已開啟的進程
-        no_next_processes: 沒有已計劃的進程
         no_past_processes: 沒有過去的進程
         section_header:
           icon_alt: 立法進程圖標

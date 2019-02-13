@@ -242,13 +242,6 @@ es:
         no_notifications: "No tienes notificaciones nuevas"
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
-  legacy_legislation:
-    help:
-      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_sign_in: iniciar sesión
-      text_sign_up: registrarte
-      title: '¿Cómo puedo comentar este documento?'
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -452,8 +445,7 @@ es:
       form:
         submit_button: Guardar cambios
     share:
-      message: "He apoyado la propuesta %{summary} en %{org}. Si te interesa, ¡apoya tú también!"
-      message_mobile: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
+      message: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -462,11 +454,9 @@ es:
     index:
       filters:
         current: "Abiertas"
-        incoming: "Próximamente"
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
-      participate_button_incoming: "Más información"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
@@ -494,7 +484,6 @@ es:
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
@@ -780,8 +769,8 @@ es:
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:
-        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
-        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
+        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito. Ya has apoyado en %{supported_headings}."
+        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
   welcome:
     feed:
       most_active:

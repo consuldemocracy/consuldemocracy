@@ -87,7 +87,7 @@ en:
         table_edit_budget: Edit
         edit_groups: Edit headings groups
         edit_budget: Edit budget
-        no_budgets: "There are no open budgets."
+        no_budgets: "There are no budgets."
       create:
         notice: New participatory budget created successfully!
       update:
@@ -439,16 +439,13 @@ en:
           homepage_description: Here you can explain the content of the process
           homepage_enabled: Homepage enabled
           banner_title: Header colors
-          banner_background_color: Background colour
-          banner_font_color: Font colour
+          color_help: Hexadecimal format
         index:
           create: New process
           delete: Delete
           title: Legislation processes
           filters:
             open: Open
-            next: Next
-            past: Past
             all: All
         new:
           back: Back
@@ -459,7 +456,7 @@ en:
           orders:
             id: Id
             title: Title
-            supports: Supports
+            supports: Total supports
         process:
           title: Process
           comments: Comments
@@ -484,7 +481,7 @@ en:
           back: Back
           id: Id
           title: Title
-          supports: Supports
+          supports: Total supports
           select: Select
           selected: Selected
         form:

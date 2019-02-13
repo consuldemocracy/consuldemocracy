@@ -458,11 +458,9 @@ fr:
     index:
       filters:
         current: "Ouvert"
-        incoming: "Entrants"
         expired: "Expirés"
       title: "Votes"
       participate_button: "Participer à ce vote"
-      participate_button_incoming: "Plus d'informations"
       participate_button_expired: "Vote terminé"
       no_geozone_restricted: "Toute la ville"
       geozone_restricted: "Quartiers"
@@ -487,7 +485,6 @@ fr:
       signup: S'inscrire
       cant_answer_verify_html: "Vous devez %{verify_link} pour répondre."
       verify_link: "vérifier votre compte"
-      cant_answer_incoming: "Ce vote n'a pas encore commencé."
       cant_answer_expired: "Ce vote est terminé."
       cant_answer_wrong_geozone: "Cette question n'est pas disponible pour votre zone géographique."
       more_info_title: "Plus d'informations"

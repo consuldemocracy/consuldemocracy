@@ -456,11 +456,9 @@ val:
     index:
       filters:
         current: "Obertes"
-        incoming: "Pròximament"
         expired: "Acabades"
       title: "Votacions"
       participate_button: "Participar en esta votació"
-      participate_button_incoming: "Més informació"
       participate_button_expired: "Votació finalitzada"
       no_geozone_restricted: "Tota la ciutat"
       geozone_restricted: "Districtes"
@@ -484,7 +482,6 @@ val:
       signup: Registrar-te
       cant_answer_verify_html: "Si us plau %{verify_link} per a poder respondre."
       verify_link: "verifica el teu compte"
-      cant_answer_incoming: "Esta votació encara no ha començat."
       cant_answer_expired: "Esta votació ha acabat."
       cant_answer_wrong_geozone: "Esta votació no està disponible en la teua zona."
       more_info_title: "Més informació"

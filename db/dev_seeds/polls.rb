@@ -11,10 +11,6 @@ section "Creating polls" do
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
-  Poll.create(name: I18n.t('seeds.polls.incoming_poll'),
-              starts_at: 1.month.from_now,
-              ends_at:   2.months.from_now)
-
   Poll.create(name: I18n.t('seeds.polls.recounting_poll'),
               starts_at: 15.days.ago,
               ends_at:   2.days.ago)

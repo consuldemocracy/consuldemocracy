@@ -456,11 +456,9 @@ de:
     index:
       filters:
         current: "Offen"
-        incoming: "Demnächst"
         expired: "Abgelaufen"
       title: "Umfragen"
       participate_button: "An dieser Umfrage teilnehmen"
-      participate_button_incoming: "Weitere Informationen"
       participate_button_expired: "Umfrage beendet"
       no_geozone_restricted: "Ganze Stadt"
       geozone_restricted: "Bezirke"
@@ -484,7 +482,6 @@ de:
       signup: Registrierung
       cant_answer_verify_html: "Sie müssen %{verify_link}, um zu antworten."
       verify_link: "verifizieren Sie Ihr Konto"
-      cant_answer_incoming: "Diese Umfrage hat noch nicht begonnen."
       cant_answer_expired: "Diese Umfrage wurde beendet."
       cant_answer_wrong_geozone: "Diese Frage ist nicht in ihrem Gebiet verfügbar."
       more_info_title: "Weitere Informationen"

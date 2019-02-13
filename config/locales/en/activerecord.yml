@@ -244,6 +244,8 @@ en:
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         result_publication_date: Final result publication date
+        background_color: Background color
+        font_color: Font color
       legislation/process/translation:
         title: Process Title
         summary: Summary

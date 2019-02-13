@@ -59,10 +59,8 @@ sv:
         filter: Filtrera
         filters:
           open: Pågående processer
-          next: Kommande
           past: Avslutade
         no_open_processes: Det finns inga pågående processer
-        no_next_processes: Det finns inga planerade processer
         no_past_processes: Det finns inga avslutade processer
         section_header:
           icon_alt: Ikon för dialoger

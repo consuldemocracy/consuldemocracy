@@ -28,7 +28,6 @@ class Poll < ActiveRecord::Base
   validate :date_range
 
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }
-  scope :incoming, -> { where('? < starts_at', Date.current.beginning_of_day) }
   scope :expired,  -> { where('ends_at < ?', Date.current.beginning_of_day) }
   scope :recounting, -> { Poll.where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
   scope :published, -> { where('published = ?', true) }
@@ -45,20 +44,12 @@ class Poll < ActiveRecord::Base
     starts_at <= timestamp && timestamp <= ends_at
   end
 
-  def incoming?(timestamp = Date.current.beginning_of_day)
-    timestamp < starts_at
-  end
-
   def expired?(timestamp = Date.current.beginning_of_day)
     ends_at < timestamp
   end
 
-  def self.current_or_incoming
-    current + incoming
-  end
-
-  def self.current_or_recounting_or_incoming
-    current + recounting + incoming
+  def self.current_or_recounting
+    current + recounting
   end
 
   def answerable_by?(user)

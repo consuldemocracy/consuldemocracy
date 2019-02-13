@@ -1,6 +1,41 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe User do
+
+  describe "#headings_voted_within_group" do
+    it "returns the headings voted by a user ordered by name" do
+      user1 = create(:user)
+      user2 = create(:user)
+
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+
+      new_york = create(:budget_heading, group: group, name: "New york")
+      san_franciso = create(:budget_heading, group: group, name: "San Franciso")
+      wyoming = create(:budget_heading, group: group, name: "Wyoming")
+      another_heading = create(:budget_heading, group: group)
+
+      new_york_investment = create(:budget_investment, heading: new_york)
+      san_franciso_investment = create(:budget_investment, heading: san_franciso)
+      wyoming_investment = create(:budget_investment, heading: wyoming)
+
+      create(:vote, votable: wyoming_investment, voter: user1)
+      create(:vote, votable: san_franciso_investment, voter: user1)
+      create(:vote, votable: new_york_investment, voter: user1)
+
+      headings_names = "#{new_york.name}, #{san_franciso.name}, and #{wyoming.name}"
+
+      expect(user1.headings_voted_within_group(group)).to include(new_york)
+      expect(user1.headings_voted_within_group(group)).to include(san_franciso)
+      expect(user1.headings_voted_within_group(group)).to include(wyoming)
+      expect(user1.headings_voted_within_group(group)).not_to include(another_heading)
+      expect(user1.headings_voted_within_group(group).map(&:name).to_sentence).to eq(headings_names)
+
+      expect(user2.headings_voted_within_group(group)).not_to include(new_york)
+      expect(user2.headings_voted_within_group(group)).not_to include(san_franciso)
+      expect(user2.headings_voted_within_group(group)).not_to include(another_heading)
+    end
+  end
 
   describe "#debate_votes" do
     let(:user) { create(:user) }
@@ -72,39 +107,39 @@ describe User do
     end
   end
 
-  describe 'preferences' do
-    describe 'email_on_comment' do
-      it 'is false by default' do
+  describe "preferences" do
+    describe "email_on_comment" do
+      it "is false by default" do
         expect(subject.email_on_comment).to eq(false)
       end
     end
 
-    describe 'email_on_comment_reply' do
-      it 'is false by default' do
+    describe "email_on_comment_reply" do
+      it "is false by default" do
         expect(subject.email_on_comment_reply).to eq(false)
       end
     end
 
-    describe 'subscription_to_website_newsletter' do
-      it 'is true by default' do
+    describe "subscription_to_website_newsletter" do
+      it "is true by default" do
         expect(subject.newsletter).to eq(true)
       end
     end
 
-    describe 'email_digest' do
-      it 'is true by default' do
+    describe "email_digest" do
+      it "is true by default" do
         expect(subject.email_digest).to eq(true)
       end
     end
 
-    describe 'email_on_direct_message' do
-      it 'is true by default' do
+    describe "email_on_direct_message" do
+      it "is true by default" do
         expect(subject.email_on_direct_message).to eq(true)
       end
     end
 
-    describe 'official_position_badge' do
-      it 'is false by default' do
+    describe "official_position_badge" do
+      it "is false by default" do
         expect(subject.official_position_badge).to eq(false)
       end
     end
@@ -175,7 +210,7 @@ describe User do
       expect(subject.organization?).to be false
     end
 
-    describe 'when it is an organization' do
+    describe "when it is an organization" do
       before { create(:organization, user: subject) }
 
       it "is true when the user is an organization" do
@@ -193,7 +228,7 @@ describe User do
       expect(subject).not_to be_verified_organization
     end
 
-    describe 'when it is an organization' do
+    describe "when it is an organization" do
       before { create(:organization, user: subject) }
 
       it "is false when the user is not a verified organization" do
@@ -208,12 +243,12 @@ describe User do
   end
 
   describe "organization_attributes" do
-    before { subject.organization_attributes = {name: 'org', responsible_name: 'julia'} }
+    before { subject.organization_attributes = {name: "org", responsible_name: "julia"} }
 
     it "triggers the creation of an associated organization" do
       expect(subject.organization).to be
-      expect(subject.organization.name).to eq('org')
-      expect(subject.organization.responsible_name).to eq('julia')
+      expect(subject.organization.name).to eq("org")
+      expect(subject.organization.responsible_name).to eq("julia")
     end
 
     it "deactivates the validation of username, and activates the validation of organization" do
@@ -292,7 +327,7 @@ describe User do
       # We will use empleados.madrid.es as the officials' domain
       # Subdomains are also accepted
 
-      Setting['email_domain_for_officials'] = 'officials.madrid.es'
+      Setting["email_domain_for_officials"] = "officials.madrid.es"
       user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.current)
       user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.current)
       user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.current)
@@ -304,7 +339,7 @@ describe User do
       expect(user4.has_official_email?).to eq(false)
 
       # We reset the officials' domain setting
-      Setting.find_by(key: 'email_domain_for_officials').update(value: '')
+      Setting.find_by(key: "email_domain_for_officials").update(value: "")
     end
   end
 
@@ -461,10 +496,10 @@ describe User do
                      reset_password_token: "token2",
                      email_verification_token: "token3")
 
-      user.erase('a test')
+      user.erase("a test")
       user.reload
 
-      expect(user.erase_reason).to eq('a test')
+      expect(user.erase_reason).to eq("a test")
       expect(user.erased_at).to    be
 
       expect(user.username).to be_nil
@@ -495,7 +530,7 @@ describe User do
       user = create(:user)
       identity = create(:identity, user: user)
 
-      user.erase('an identity test')
+      user.erase("an identity test")
 
       expect(Identity.exists?(identity.id)).not_to be
     end

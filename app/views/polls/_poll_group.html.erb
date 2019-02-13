@@ -75,8 +75,6 @@
           <%= link_to poll, class: "button hollow expanded" do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>
-            <% elsif poll.incoming? %>
-              <%= t("polls.index.participate_button_incoming") %>
             <% else %>
               <%= t("polls.index.participate_button") %>
             <% end %>

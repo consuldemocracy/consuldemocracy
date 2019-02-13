@@ -1,17 +1,4 @@
 FactoryBot.define do
-  factory :legacy_legislation do
-    sequence(:title) { |n| "Legacy Legislation #{n}" }
-    body "In order to achieve this..."
-  end
-
-  factory :annotation do
-    quote "ipsum"
-    text "Loremp ipsum dolor"
-    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
-    legacy_legislation
-    user
-  end
-
   factory :legislation_process, class: 'Legislation::Process' do
     title "A collaborative legislation process"
     description "Description of the process"
@@ -33,17 +20,6 @@ FactoryBot.define do
     draft_publication_enabled true
     result_publication_enabled true
     published true
-
-    trait :next do
-      start_date { Date.current + 2.days }
-      end_date { Date.current + 8.days }
-      debate_start_date { Date.current + 2.days }
-      debate_end_date { Date.current + 4.days }
-      draft_publication_date { Date.current + 5.days }
-      allegations_start_date { Date.current + 5.days }
-      allegations_end_date { Date.current + 7.days }
-      result_publication_date { Date.current + 8.days }
-    end
 
     trait :past do
       start_date { Date.current - 12.days }
