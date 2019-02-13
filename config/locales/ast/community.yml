@@ -1,1 +1,22 @@
 ast:
+  community:
+    show:
+      create_first_community_topic:
+        sign_in: "accesu"
+        sign_up: "rexistrate"
+      sidebar:
+        participate: Colabora en la elaboración de la normativa sobre
+      topic:
+        comments:
+          one: 1 Comentario
+          other: "%{count} comentarios"
+      author: Autor
+    topic:
+      form:
+        topic_title: Títulu
+      show:
+        tab:
+          comments_tab: Comentarios
+  topics:
+    show:
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
