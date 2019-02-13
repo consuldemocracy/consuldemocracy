@@ -13,6 +13,9 @@ nl:
       milestone:
         one: "mijlpaal"
         other: "mijlpalen"
+      milestone/status:
+        one: "Mijlpaalstatus"
+        other: "Mijlpaalstatussen"
       comment:
         one: "Reactie"
         other: "Reacties"
@@ -35,8 +38,8 @@ nl:
         one: "Beoordelaar"
         other: "Beoordelaars"
       valuator_group:
-        one: "Beoordelingsgroep"
-        other: "Beoordelingsgroepen"
+        one: "Evaluatiegroep"
+        other: "Evaluatiegroepen"
       manager:
         one: "Manager"
         other: "Managers"
@@ -50,14 +53,14 @@ nl:
         one: "Organisatie"
         other: "Organisaties"
       poll/booth:
-        one: "Stemhokje"
-        other: "Stemhokjes"
+        one: "stemlocatie"
+        other: "stemlocaties"
       poll/officer:
         one: "Lid"
         other: "Leden"
       proposal:
-        one: "Inwonervoorstel"
-        other: "Inwonervoorstellen"
+        one: "Voorstel"
+        other: "Voorstellen"
       spending_proposal:
         one: "Begrotingsvoorstel"
         other: "Begrotingsvoorstellen"
@@ -73,12 +76,12 @@ nl:
       legislation/process:
         one: "Proces"
         other: "Proces"
+      legislation/proposal:
+        one: "Voorstel"
+        other: "Voorstellen"
       legislation/draft_versions:
         one: "Concept versie"
         other: "Concept versies"
-      legislation/draft_texts:
-        one: "Concept"
-        other: "Concept"
       legislation/questions:
         one: "Vraag"
         other: "Vragen"
@@ -100,15 +103,18 @@ nl:
       poll:
         one: "Poll"
         other: "Polls"
+      proposal_notification:
+        one: "Voorstelnotificatie"
+        other: "Voorstelnotificaties"
     attributes:
       budget:
         name: "Naam"
         description_accepting: "Omschrijving gedurende de Acceptatiefase"
-        description_reviewing: "Omschrijving gedurende de Beoordelingsfase"
+        description_reviewing: "Omschrijving gedurende de evaluatie"
         description_selecting: "Omschrijving gedurende de Selectiefase"
         description_valuating: "Omschrijving gedurende de Waarderingsfase"
         description_balloting: "Omschrijving gedurende de Stemfase"
-        description_reviewing_ballots: "Omschrijving gedurende de beoordeling van de Stemfase"
+        description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer de begroting is afgerond"
         phase: "Fase"
         currency_symbol: "Valuta"
@@ -123,13 +129,13 @@ nl:
         image: "Afbeelding ter omschrijving van het voorstel"
         image_title: "Naam van de afbeelding"
       milestone:
-        status_id: "Huidige investeringsstatus (optioneel)"
+        status_id: "Huidige status (optioneel)"
         title: "Titel"
-        description: "Omschrijving"
+        description: "Omschrijving (optioneel indien een status is toegewezen)"
         publication_date: "Publicatiedatum"
       milestone/status:
         name: "Naam"
-        description: "Beschrijving (optioneel)"
+        description: "Omschrijving (optioneel)"
       budget/heading:
         name: "Kop"
         price: "Kosten"
@@ -156,8 +162,8 @@ nl:
         password: "Wachtwoord"
         current_password: "Huidig wachtwoord"
         phone_number: "Telefoonnummer"
-        official_position: "Officiele positie"
-        official_level: "Officieel niveau"
+        official_position: "Positie"
+        official_level: "Niveau"
         redeemable_code: "Verificatiecode ontvangen via email"
       organization:
         name: "Organisatienaam"
@@ -176,11 +182,17 @@ nl:
         geozone_restricted: "Beperkt tot regio"
         summary: "Samenvatting"
         description: "Omschrijving"
+      poll/translation:
+        name: "Naam"
+        summary: "Samenvatting"
+        description: "Omschrijving"
       poll/question:
         title: "Vraag"
         summary: "Samenvatting"
         description: "Omschrijving"
         external_url: "Link naar aanvullende informatie"
+      poll/question/translation:
+        title: "Vraag"
       signature_sheet:
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
@@ -196,6 +208,10 @@ nl:
         more_info_flag: Toon op de help pagina
         print_content_flag: Print inhoud
         locale: Taal
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Ondertitel
+        content: Inhoud
       site_customization/image:
         name: Naam
         image: Afbeelding
@@ -212,16 +228,26 @@ nl:
         end_date: Einddatum
         debate_start_date: Startdatum debat
         debate_end_date: Einddatum debat
+        draft_start_date: Begindatum concept
+        draft_end_date: Einddatum concept
         draft_publication_date: Publicatiedatum concept
         allegations_start_date: Startdatum bewijsvoering
         allegations_end_date: Einddatum bewijsvoering
         result_publication_date: Publicatiedatum eindresultaat
+      legislation/process/translation:
+        title: Procesnaam
+        summary: Samenvatting
+        description: Omschrijving
+        additional_info: Aanvullende informatie
+        milestones_summary: Samenvatting
       legislation/draft_version:
         title: Versie titel
         body: Tekst
         changelog: Wijzigingen
         status: Status
         final_version: Eindversie
+      legislation/draft_version/translation:
+        title: Versie
       legislation/question:
         title: Titel
         question_options: Opties
@@ -327,9 +353,9 @@ nl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Je kunt niet reageren op een beoordeling'
+              cannot_comment_valuation: 'Je kunt niet reageren op een evaluatie'
       messages:
-        record_invalid: "Beoordeling mislukt: %{errors}"
+        record_invalid: "Evaluatie mislukt: %{errors}"
         restrict_dependent_destroy:
           has_one: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
           has_many: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
