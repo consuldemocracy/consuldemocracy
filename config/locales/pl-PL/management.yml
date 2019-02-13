@@ -106,6 +106,11 @@ pl:
         unfeasible: Niewykonalna inwestycja
       print:
         print_button: Drukuj
+      search_results:
+        one: " zawierające terminy '%{search_term}'"
+        few: " zawierające terminy '%{search_term}'"
+        many: " zawierające terminy '%{search_term}'"
+        other: " zawierające terminy '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Użytkownik nie jest zweryfikowany
@@ -115,6 +120,11 @@ pl:
         by_geozone: "Projekty inwestycyjne o zakresie: %{geozone}"
       print:
         print_button: Drukuj
+      search_results:
+        one: " zawierające terminy '%{search_term}'"
+        few: " zawierające terminy '%{search_term}'"
+        many: " zawierające terminy '%{search_term}'"
+        other: " zawierające terminy '%{search_term}'"
     sessions:
       signed_out: Wylogowano pomyślnie.
       signed_out_managed_user: Sesja użytkownika została pomyślnie wylogowana.
