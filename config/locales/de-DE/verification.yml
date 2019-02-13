@@ -57,7 +57,7 @@ de:
           passport: Pass
           residence_card: Aufenthaltsbescheinigung
           spanish_id: Personalausweis
-        document_type_label: Dokumentenart
+        document_type_label: Dokumententyp
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
         error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
@@ -95,7 +95,7 @@ de:
     step_1: Wohnsitz
     step_2: Bestätigungscode
     step_3: Abschließende Überprüfung
-    user_permission_debates: An Diskussionen teilnehmen
+    user_permission_debates: An Diskussion teilnehmen
     user_permission_proposal: Neuen Vorschlag erstellen
     user_permission_support_proposal: Vorschläge unterstützen*
     user_permission_votes: An finaler Abstimmung teilnehmen*
