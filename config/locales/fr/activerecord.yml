@@ -6,10 +6,13 @@ fr:
         other: "activités"
       budget:
         one: "Budget participatif"
-        other: "Budgets participatifs"
+        other: "Budgets"
       budget/investment:
         one: "Projet d'investissement"
-        other: "Projets d'investissement"
+        other: "Propositions d'investissement"
+      milestone:
+        one: "jalon"
+        other: "jalons"
       comment:
         one: "Commentaire"
         other: "Commentaires"
@@ -18,7 +21,7 @@ fr:
         other: "Débats"
       tag:
         one: "Étiquette"
-        other: "Étiquettes"
+        other: "Sujets"
       user:
         one: "Utilisateur"
         other: "Utilisateurs"
@@ -33,7 +36,7 @@ fr:
         other: "Évaluateurs"
       valuator_group:
         one: "Groupe d’évaluateurs"
-        other: "Groupes d’évaluateurs"
+        other: "Groupes d'évaluateurs"
       manager:
         one: "Responsable"
         other: "Responsables"
@@ -56,7 +59,7 @@ fr:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
       spending_proposal:
-        one: "Proposition d'investissement"
+        one: "Propositions d'investissement"
         other: "Propositions d'investissement"
       site_customization/page:
         one: Page personnalisée
@@ -69,10 +72,13 @@ fr:
         other: Blocs de contenu personnalisés
       legislation/process:
         one: "Processus"
-        other: "Processus"
+        other: "Processus législatifs"
+      legislation/proposal:
+        one: "Proposition"
+        other: "Propositions"
       legislation/draft_versions:
         one: "Ébauche"
-        other: "Ébauches"
+        other: "Version brouillon"
       legislation/questions:
         one: "Question"
         other: "Questions"
@@ -110,7 +116,7 @@ fr:
         phase: "Phase"
         currency_symbol: "Monnaie"
       budget/investment:
-        heading_id: "Rubrique du budget"
+        heading_id: "Titre"
         title: "Titre"
         description: "Description"
         external_url: "Lien vers la documentation complémentaire"
@@ -119,8 +125,18 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+      milestone:
+        title: "Titre"
+        description: "Description (facultative si un statut est affecté)"
+        publication_date: "Date de publication"
+      milestone/status:
+        name: "Nom"
+        description: "Description (optionnel)"
+      progress_bar:
+        kind: "Type"
+        title: "Titre"
       budget/heading:
-        name: "Nom de la rubrique"
+        name: "Nom du titre"
         price: "Coût"
         population: "Population"
       comment:
@@ -155,8 +171,8 @@ fr:
         administrator_id: "Administrateur"
         association_name: "Nom de l'association"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
-        geozone_id: "Périmètre de l'opération"
+        external_url: "Lien vers de la documentation supplémentaire"
+        geozone_id: "Portée de l'opération"
         title: "Titre"
       poll:
         name: "Nom"
@@ -173,7 +189,7 @@ fr:
         title: "Question"
         summary: "Résumé"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
+        external_url: "Lien vers de la documentation supplémentaire"
       poll/question/translation:
         title: "Question"
       signature_sheet:
@@ -193,7 +209,7 @@ fr:
         locale: Langue
       site_customization/page/translation:
         title: Titre
-        subtitle: Sous-titre
+        subtitle: Sous-titres
         content: Contenu
       site_customization/image:
         name: Nom
@@ -215,6 +231,12 @@ fr:
         allegations_start_date: Date de début des allégations
         allegations_end_date: Date de fin des allégations
         result_publication_date: Date de publication du résultat final
+      legislation/process/translation:
+        title: Titre du processus
+        summary: Résumé
+        description: Description
+        additional_info: Plus d'infos
+        milestones_summary: Résumé
       legislation/draft_version:
         title: Titre de la version
         body: Texte
@@ -222,6 +244,7 @@ fr:
         status: Statut
         final_version: Version finale
       legislation/draft_version/translation:
+        title: Titre de la version
         body: Texte
         changelog: Changements
       legislation/question:
@@ -240,13 +263,16 @@ fr:
       poll/question/answer:
         title: Réponse
         description: Description
+      poll/question/answer/translation:
+        title: Réponse
+        description: Description
       poll/question/answer/video:
         title: Titre
         url: Vidéo externe
       newsletter:
         segment_recipient: Destinataires
         subject: Objet
-        from: De
+        from: Du
         body: Contenu du courriel
       admin_notification:
         segment_recipient: Destinataires
@@ -291,11 +317,11 @@ fr:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Le segment des utilisateurs destinataires est invalide"
+              invalid: "Le segment des utilisateurs destinataires n’est pas valide"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Le segment des utilisateurs destinataires n’est pas valide"
+              invalid: "Le segment des utilisateurs destinataires est invalide"
         map_location:
           attributes:
             map:
@@ -344,7 +370,7 @@ fr:
             valuation:
               cannot_comment_valuation: 'Vous ne pouvez pas commenter une évaluation'
       messages:
-        record_invalid: "Échec de la validation : %{errors}"
+        record_invalid: "La validation omise : %{errors}"
         restrict_dependent_destroy:
           has_one: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
           has_many: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
