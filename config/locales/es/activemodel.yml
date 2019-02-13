@@ -3,6 +3,7 @@ es:
     models:
       verification:
         residence: "Residencia"
+        sms: "SMS"
     attributes:
       verification:
         residence:
@@ -13,5 +14,9 @@ es:
         sms:
           phone: "Teléfono"
           confirmation_code: "Código de confirmación"
+        email:
+          recipient: "Email"
       officing/residence:
+        document_type: "Tipo de documento"
+        document_number: "Número de documento (incluida letra)"
         year_of_birth: "Año de nacimiento"
