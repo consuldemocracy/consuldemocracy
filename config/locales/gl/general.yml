@@ -242,13 +242,6 @@ gl:
         no_notifications: "Non tes notificacións novas"
     admin:
       watch_form_message: 'Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?'
-  legacy_legislation:
-    help:
-      alt: Escolle o texto que queres comentar e preme o botón que ten forma do lapis.
-      text: Para comentar este documento, debes %{sign_in}%{sign_up}. Despois, escolle o texto que queres comentar e preme o botón que ten forma de lapis.
-      text_sign_in: iniciar sesión
-      text_sign_up: rexístrate
-      title: Como podo comentar este documento?
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
@@ -437,6 +430,7 @@ gl:
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
       login_to_comment: Debes %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
+      milestones_tab: Fitos
       retired_warning: "O autor desta proposta considera que xa non debe seguir recollendo apoios."
       retired_warning_link_to_explanation: Revisa a súa explicación antes de apoiala.
       retired: Proposta eliminada polo autor
@@ -452,7 +446,6 @@ gl:
         submit_button: Gardar cambios
     share:
       message: "Veño de apoiar a proposta %{summary} en %{org}. Se che interesa, apoia ti tamén!"
-      message_mobile: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
   polls:
     all: "Todas"
     no_dates: "sen data asignada"
