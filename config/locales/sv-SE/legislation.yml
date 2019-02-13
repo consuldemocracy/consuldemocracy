@@ -52,6 +52,8 @@ sv:
         more_info: Mer information
       proposals:
         empty_proposals: Det finns inga förslag
+        filters:
+          winners: Vald
       debate:
         empty_questions: Det finns inga frågor
         participate: Delta i diskussionen
@@ -78,9 +80,12 @@ sv:
         see_latest_comments_title: Kommentera till den här processen
       shared:
         key_dates: Viktiga datum
+        homepage: Startsida
         debate_dates: Diskussion
         draft_publication_date: Utkastet publiceras
+        allegations_dates: Kommentarer
         result_publication_date: Resultatet publiceras
+        milestones_date: Följer
         proposals_dates: Förslag
     questions:
       comments:
