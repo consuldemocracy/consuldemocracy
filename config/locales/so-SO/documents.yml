@@ -20,5 +20,5 @@ so:
       destroy_document: Babi i dukumentiyada
     errors:
       messages:
-        in_between: waa inuu u dhexeeya %{min} iyo%{max}
+        in_between: waa inuu u dhexeyaa%{min} iyo%{max}
         wrong_content_type: qaybaha Noocayada %{content_type} ma waafaqsanaan noocyada noocyada la aqbalo%{accepted_content_types}
