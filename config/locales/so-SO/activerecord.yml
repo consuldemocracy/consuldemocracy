@@ -4,21 +4,93 @@ so:
       activity:
         one: "halqabasho"
         other: "halqabasho"
+      budget:
+        one: "Misaniyaad"
+        other: "Misaniyaado"
+      budget/investment:
+        one: "Maalgashi"
+        other: "Maalgashiyo"
+      comment:
+        one: "Faalo"
+        other: "Faalo"
+      debate:
+        one: "Dood"
+        other: "Doodo"
+      tag:
+        one: "Taag"
+        other: "Tagyada"
+      user:
+        one: "Istimale"
+        other: "Isticmaalayaal"
+      moderator:
+        one: "Dhexdhexaad ah"
+        other: "Dhexdhexadiyayal"
+      administrator:
+        one: "Mamulaha"
+        other: "Mamulayal"
       valuator:
         one: "Qimeeye"
-        other: "Qimeeye"
+        other: "Qimeeyayal"
+      valuator_group:
+        one: "Kooxda Qimeeynta"
+        other: "Bilaa Kooxdaha Qimeeynta"
       manager:
         one: "Mamule"
         other: "Mamule"
+      newsletter:
+        one: "Waraaqda Wargeeska"
+        other: "Wargeesyo"
+      vote:
+        one: "Codeyn"
+        other: "Codaad"
+      organization:
+        one: "Urur"
+        other: "Ururo"
       poll/booth:
         one: "labadaba"
         other: "labadodaba"
+      spending_proposal:
+        one: "Mashruuca Malgelinta"
+        other: "Mashariicda malgashiga"
       site_customization/page:
         one: Bog gaara
         other: Bog gaara
+      site_customization/image:
+        one: Sawirka Cadada
+        other: Sawirada Cadada
       site_customization/content_block:
         one: Xayiraaddaha gaarka ah ee gaarka ah
-        other: Xayiraaddaha gaarka ah ee gaarka ah
+        other: Noocyada gaarka ah ee gaarka ah
+      legislation/process:
+        one: "Geedisocoodka"
+        other: "Geedi socodka"
+      legislation/proposal:
+        one: "Sojeedin"
+        other: "Sojeedino"
+      legislation/draft_versions:
+        one: "Qaybta Qabyo Qoraalka ah"
+        other: "Weerinta qabya qoralka"
+      legislation/questions:
+        one: "Sual"
+        other: "Sualo"
+      legislation/question_options:
+        one: "Sual Dorsho"
+        other: "Doorashooyinka su'aasha"
+      documents:
+        one: "Dukumenti"
+        other: "Dukumentiyo"
+      images:
+        one: "Sawiir"
+        other: "Sawiiro"
+      topic:
+        one: "Mawduuc"
+        other: "Mawduucyada"
+      poll:
+        one: "Dorasho"
+        other: "Doorashooyinka"
+      proposal_notification:
+        one: "Ogeysiin Sojeedineed"
+        other: "Ogaysiis soo jedin"
     attributes:
       budget:
         name: "Magac"
@@ -41,13 +113,23 @@ so:
         organization_name: "Haddii aad soo jeedineyso magaca wadajir /urur, ama wakiil ka socda dad badan, qor magacisa"
         image: "Sawir muuqaal ah oo soo jeedinaya"
         image_title: "Sawirka Ciwaanka"
+      milestone:
+        title: "Ciwaan"
+        description: "Sharaxaad (ikhtiyaari haddii ay jirto xaalad loo xilsaaray)"
+        publication_date: "Taariikhda daabacaadda"
+      milestone/status:
+        name: "Magac"
+        description: "Sharaxaad (Ikhyaari ah)"
+      progress_bar:
+        kind: "Noca"
+        title: "Ciwaan"
       budget/heading:
         name: "Magaca Ciwaanka"
         price: "Qime"
-        population: "Dadka"
+        population: "Dadkaweyne"
       comment:
         body: "Faalo"
-        user: "Istimaale"
+        user: "Istimale"
       debate:
         author: "Qoraa"
         description: "Fikraad"
@@ -103,11 +185,11 @@ so:
         signable_id: "Aqonsiga la aqoonsan yahay"
         document_numbers: "Tirada Dukumentiyada"
       site_customization/page:
-        content: Mawduuc
-        created_at: Abuuray
+        content: Mowduuc
+        created_at: Saame
         subtitle: Ciwaan hoosaad
         slug: Laqabso
-        status: Xaladda
+        status: Status
         title: Ciwaan
         updated_at: La casriyeeyay
         more_info_flag: Muuji bogga gargarka
@@ -142,16 +224,17 @@ so:
         summary: Sookobiid
         description: Sharaxaad
         additional_info: Xogdheeriya
+        milestones_summary: Sookobiid
       legislation/draft_version:
         title: Ciwaanka Sawirka
         body: Qoraal
         changelog: Isbedel
-        status: Xaladda
+        status: Status
         final_version: Koobiga kama dabeysta ah
       legislation/draft_version/translation:
         title: Ciwaanka Sawirka
         body: Qoraal
-        changelog: Isbedeladda
+        changelog: Isbedel
       legislation/question:
         title: Ciwaan
         question_options: Fursadaha
