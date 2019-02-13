@@ -6,9 +6,9 @@ de:
         other: "Aktivitäten"
       budget:
         one: "Bürgerhaushalt"
-        other: "Bürger*innenhaushalte"
+        other: "Bürgerhaushalte"
       budget/investment:
-        one: "Ausgabenvorschlag"
+        one: "Investitionsvorschlag"
         other: "Ausgabenvorschläge"
       milestone:
         one: "Meilenstein"
@@ -29,16 +29,16 @@ de:
         one: "Tag"
         other: "Tags"
       user:
-        one: "Benutzer*in"
-        other: "Benutzer*innen"
+        one: "Benutzer*innen"
+        other: "Benutzer"
       moderator:
-        one: "Moderator*in"
+        one: "Moderator"
         other: "Moderator*innen"
       administrator:
-        one: "Administrator*in"
+        one: "Administrator"
         other: "Administrator*innen"
       valuator:
-        one: "Begutachter*in"
+        one: "Begutachter/in"
         other: "Begutachter*innen"
       valuator_group:
         one: "Begutachtungsgruppe"
@@ -50,8 +50,8 @@ de:
         one: "Newsletter"
         other: "Newsletter"
       vote:
-        one: "Stimme"
-        other: "Stimmen"
+        one: "Abstimmen"
+        other: "Bewertung"
       organization:
         one: "Organisation"
         other: "Organisationen"
@@ -65,26 +65,26 @@ de:
         one: "Bürger*innenvorschlag"
         other: "Bürger*innenvorschläge"
       spending_proposal:
-        one: "Ausgabenvorschlag"
+        one: "Investitionsprojekt"
         other: "Ausgabenvorschläge"
       site_customization/page:
         one: Meine Seite
         other: Meine Seiten
       site_customization/image:
         one: Bild
-        other: Bilder
+        other: Benutzer*definierte Bilder
       site_customization/content_block:
         one: Benutzerspezifischer Inhaltsdatenblock
-        other: Benutzerspezifische Inhaltsdatenblöcke
+        other: Benutzer*definierte Inhaltsdatenblöcke
       legislation/process:
         one: "Beteiligungsverfahren"
-        other: "Beteiligungsverfahren"
+        other: "Gesetzgebungsverfahren"
       legislation/proposal:
         one: "Vorschlag"
         other: "Vorschläge"
       legislation/draft_versions:
         one: "Entwurfsfassung"
-        other: "Entwurfsfassungen"
+        other: "Entwurfsversionen"
       legislation/questions:
         one: "Frage"
         other: "Fragen"
@@ -102,12 +102,12 @@ de:
         other: "Bilder"
       topic:
         one: "Thema"
-        other: "Themen"
+        other: "Inhalte"
       poll:
         one: "Abstimmung"
-        other: "Abstimmungen"
+        other: "Umfragen"
       proposal_notification:
-        one: "Benachrichtigung zu einem Vorschlag"
+        one: "Antrags-Benachrichtigung"
         other: "Benachrichtigungen zu einem Vorschlag"
     attributes:
       budget:
@@ -125,8 +125,8 @@ de:
         heading_id: "Rubrik"
         title: "Titel"
         description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
-        administrator_id: "Administrator*in"
+        external_url: "Link zur weiteren Dokumentation"
+        administrator_id: "Administrator"
         location: "Standort (optional)"
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
@@ -134,7 +134,7 @@ de:
       milestone:
         status_id: "Aktueller Status (optional)"
         title: "Titel"
-        description: "Beschreibung (optional, wenn ein Status zugewiesen ist)"
+        description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
         publication_date: "Datum der Veröffentlichung"
       milestone/status:
         name: "Name"
@@ -148,18 +148,18 @@ de:
         secondary: "Sekundär"
       budget/heading:
         name: "Name der Rubrik"
-        price: "Kosten"
+        price: "Preis"
         population: "Bevölkerung"
       comment:
         body: "Kommentar"
         user: "Benutzer*in"
       debate:
-        author: "Verfasser*in"
+        author: "Autor"
         description: "Beitrag"
         terms_of_service: "Nutzungsbedingungen"
         title: "Titel"
       proposal:
-        author: "Verfasser*in"
+        author: "Autor"
         title: "Titel"
         question: "Frage"
         description: "Beschreibung"
@@ -179,16 +179,16 @@ de:
         name: "Name der Organisation"
         responsible_name: "Der/die* Gruppenverantwortliche"
       spending_proposal:
-        administrator_id: "Administrator*in"
-        association_name: "Name des Vereins"
+        administrator_id: "Administrator"
+        association_name: "Vereinsname"
         description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
-        geozone_id: "Tätigkeitsfeld"
+        external_url: "Link zur weiteren Dokumentation"
+        geozone_id: "Rahmenbedingungen"
         title: "Titel"
       poll:
         name: "Name"
         starts_at: "Anfangsdatum"
-        ends_at: "Einsendeschluss"
+        ends_at: "Enddatum"
         geozone_restricted: "Beschränkt auf Gebiete"
         summary: "Zusammenfassung"
         description: "Beschreibung"
@@ -200,7 +200,7 @@ de:
         title: "Frage"
         summary: "Zusammenfassung"
         description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
+        external_url: "Link zur weiteren Dokumentation"
       poll/question/translation:
         title: "Frage"
       signature_sheet:
@@ -214,7 +214,7 @@ de:
         slug: URL
         status: Status
         title: Titel
-        updated_at: Aktualisiert am
+        updated_at: Letzte Aktualisierung
         more_info_flag: Auf der Hilfeseite anzeigen
         print_content_flag: Taste Inhalt drucken
         locale: Sprache
@@ -230,12 +230,12 @@ de:
         locale: Sprache
         body: Inhalt
       legislation/process:
-        title: Titel des Verfahrens
+        title: Titel des Beteiligungsverfahrens
         summary: Zusammenfassung
         description: Beschreibung
         additional_info: Zusätzliche Information
         start_date: Anfangsdatum
-        end_date: Enddatum des Verfahrens
+        end_date: Enddatum
         debate_start_date: Anfangsdatum Diskussion
         debate_end_date: Enddatum Diskussion
         draft_start_date: Anfangsdatum Entwurfsphase
@@ -245,7 +245,7 @@ de:
         allegations_end_date: Enddatum Überprüfung
         result_publication_date: Veröffentlichungsdatum Endergebnis
       legislation/process/translation:
-        title: Titel des Beteiligungsverfahrens
+        title: Titel des Verfahrens
         summary: Zusammenfassung
         description: Beschreibung
         additional_info: Zusätzliche Information
@@ -255,14 +255,14 @@ de:
         body: Text
         changelog: Änderungen
         status: Status
-        final_version: Endgültige Fassung
+        final_version: Endgültige Version
       legislation/draft_version/translation:
         title: Titel der Fassung
         body: Text
         changelog: Änderungen
       legislation/question:
         title: Titel
-        question_options: Antworten
+        question_options: Optionen
       legislation/question_option:
         value: Wert
       legislation/annotation:
@@ -330,11 +330,11 @@ de:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Das Benutzer*innensegment ist ungültig"
+              invalid: "Das Empfänger*innensegment ist ungültig"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Das Empfänger*innensegment ist ungültig"
+              invalid: "Das Benutzer*innensegment ist ungültig"
         map_location:
           attributes:
             map:
