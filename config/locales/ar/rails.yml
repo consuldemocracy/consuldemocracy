@@ -75,7 +75,7 @@ ar:
       invalid: غير صالح
       less_than: يجب أن يكون أقل من %{count}
       less_than_or_equal_to: يجب أن يكون أصغر أو يساوي %{count}
-      model_invalid: "فشل التحقق: %{errors}"
+      model_invalid: "فشل التحقق من صحة: %{errors}"
       not_a_number: ليس رقماً
       not_an_integer: يجب أن يكون عدد صحيح
       odd: يجب أن يكون عدد فردي
