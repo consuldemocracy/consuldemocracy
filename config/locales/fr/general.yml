@@ -51,9 +51,9 @@ fr:
         zero: Aucune réponse
         one: 1 réponse
         other: "%{count} réponses"
-      user_deleted: Utilisateur supprimé
+      user_deleted: Utilisateur effacé
       votes:
-        zero: Aucun votes
+        zero: Aucun vote
         one: 1 vote
         other: "%{count} votes"
     form:
@@ -166,7 +166,7 @@ fr:
       user_not_found: Utilisateur introuvable
       invalid_date_range: "Intervalle de dates invalide"
   form:
-    accept_terms: J'accepte la %{policy} et les %{conditions}
+    accept_terms: J'accepte le %{policy} et les %{conditions}
     accept_terms_title: J’accepte la politique de confidentialité et les conditions d’utilisation
     conditions: Conditions légales
     debate: Débat
@@ -174,7 +174,7 @@ fr:
     error: erreur
     errors: erreurs
     not_saved_html: "a empêché cette %{resource} d'être sauvegardée. <br>Vérifiez les champs marqués pour les corriger :"
-    policy: Politique de confidentialité
+    policy: Vie privée
     proposal: Proposition
     proposal_notification: "Notification"
     spending_proposal: Proposition de dépense
@@ -203,12 +203,12 @@ fr:
       consul: Application Consul
       consul_url: https://github.com/consul/consul
       copyright: Consul, %{year}
-      description: Ce portail utilise l' %{consul} qui est un %{open_source}.
+      description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
       open_source: logiciel libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Modelez la ville dans laquelle vous souhaitez vivre.
+      participation_text: Modelez la ville de Madrid dans laquelle vous souhaitez vivre
       participation_title: Participation
-      privacy: Politique de confidentialité
+      privacy: Vie privée
     header:
       administration_menu: Admin
       administration: Administration
@@ -217,7 +217,7 @@ fr:
       debates: Débats
       external_link_blog: Blog
       locale: 'Langue :'
-      logo: Logo de Consul
+      logo: Consul logo
       management: Gestion
       moderation: Modération
       valuation: Évaluation
@@ -228,7 +228,7 @@ fr:
       open: ouvert
       open_gov: Gouvernement ouvert
       proposals: Propositions
-      poll_questions: Votes
+      poll_questions: Vote
       budgets: Budget participatif
       spending_proposals: Propositions de dépense
       notification_item:
@@ -533,12 +533,12 @@ fr:
       date_3: 'Le mois passé'
       date_4: 'L''année passée'
       date_5: 'La période de votre choix'
-      from: 'Du'
+      from: 'Depuis'
       general: 'Avec le texte'
       general_placeholder: 'Écrire le texte'
       search: 'Filtre'
       title: 'Recherche avancée'
-      to: 'Au'
+      to: 'Pour'
     author_info:
       author_deleted: Utilisateur effacé
     back: Revenir
@@ -647,7 +647,7 @@ fr:
         unfeasible: Infaisable
       start_spending_proposal: Créer une proposition d'investissement
     new:
-      more_info: Comment marche le budget participatif ?
+      more_info: Comment le budget participatif marche ?
       recommendation_one: Faire référence à une action budgétaire est obligatoire pour la proposition.
       recommendation_three: N'hésitez pas à détailler votre proposition pour que l'équipe d'analyse la comprenne
       recommendation_two: Toute proposition ou commentaire qui appelle à une action illégale sera supprimée.
