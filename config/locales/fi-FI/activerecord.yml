@@ -46,6 +46,9 @@ fi:
       legislation/answers:
         one: "Vastaus"
         other: "Vastaukset"
+      documents:
+        one: "Asiakirja"
+        other: "Asiakirjat"
       images:
         one: "Kuva"
         other: "Kuvat"
@@ -62,6 +65,7 @@ fi:
         currency_symbol: "Valuutta"
       budget/investment:
         description: "Kuvaus"
+        administrator_id: "Järjestelmänvalvoja"
         location: "Sijainti (vapaaehtoinen)"
         image_title: "Kuvan otsikko"
       milestone:
