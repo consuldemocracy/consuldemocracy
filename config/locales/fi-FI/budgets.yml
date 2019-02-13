@@ -1,1 +1,35 @@
 fi:
+  budgets:
+    ballots:
+      show:
+        remove: Poista ääni
+    index:
+      milestones: Tavoitteet
+    investments:
+      form:
+        tag_category_label: "Kategoriat"
+        tags_label: Tunnisteet
+      index:
+        search_form:
+          button: Etsi
+          title: Etsi
+        sidebar:
+          sign_in: "kirjaudu"
+          sign_up: "rekisteröidy"
+        orders:
+          random: satunnainen
+      show:
+        author_deleted: Käyttäjä poistettu
+        share: Jaa
+        price: Hinta
+        comments_tab: Kommentit
+        milestones_tab: Tavoitteet
+        author: Tekijä
+    results:
+      show_all_link: Näytä kaikki
+      price: Hinta
+    executions:
+      link: "Tavoitteet"
+      page_title: "%{budget} - Tavoitteet"
+      filters:
+        all: "Kaikki (%{count})"
