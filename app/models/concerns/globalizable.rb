@@ -20,6 +20,18 @@ module Globalizable
     if self.paranoid? && translation_class.attribute_names.include?("hidden_at")
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
+
+    private
+
+    def searchable_globalized_values
+      values = {}
+      translations.each do |translation|
+        Globalize.with_locale(translation.locale) do
+          values.merge! searchable_translations_definitions
+        end
+      end
+      values
+    end
   end
 
   class_methods do
