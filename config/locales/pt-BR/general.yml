@@ -26,7 +26,7 @@ pt-BR:
       title: Minha conta
       user_permission_debates: Participar nos debates
       user_permission_info: Com a sua conta você pode...
-      user_permission_proposal: Criar nova proposta
+      user_permission_proposal: Criar novas propostas
       user_permission_support_proposal: Apoiar propostas
       user_permission_title: Participação
       user_permission_verify: Para executar todas as ações %{verify}
@@ -80,7 +80,7 @@ pt-BR:
         submit_button: Iniciar um debate
     debate:
       comments:
-        zero: Nenhum comentário
+        zero: Sem comentários
         one: 1 comentário
         other: "%{count} comentários"
       votes:
@@ -104,7 +104,7 @@ pt-BR:
         one: " com tópico '%{topic}'"
         other: " com tópico '%{topic}'"
       orders:
-        confidence_score: melhor avaliada
+        confidence_score: melhor avaliado
         created_at: mais recente
         hot_score: mais ativa
         most_commented: mais comentada
@@ -169,7 +169,7 @@ pt-BR:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
     accept_terms_title: Concordo com a Política de Privacidade e os Termos e condições de uso
     conditions: Termos e condições de uso
-    debate: Debater
+    debate: Debate
     direct_message: mensagem privada
     error: erro
     errors: erros
@@ -181,7 +181,7 @@ pt-BR:
     budget/investment: Investimento
     budget/heading: Rubrica Orçamental
     poll/shift: Turno
-    poll/question/answer: Responda
+    poll/question/answer: Resposta
     user: Conta
     verification/sms: telefone
     signature_sheet: Folha de assinatura
@@ -249,11 +249,11 @@ pt-BR:
     notification:
       action:
         comments_on:
-          one: Alguém comentou em
+          one: Alguém comentou sobre
           other: Existem %{count} novos comentários sobre
         proposal_notification:
-          one: Há uma nova notificação sobre
-          other: Existem %{count} novas notificações sobre
+          one: Há uma nova notificação em
+          other: Existem %{count} novas notificações em
         replies_to:
           one: Alguém respondeu sobre
           other: Existem %{count} novas respostas para seu comentário sobre
@@ -306,7 +306,7 @@ pt-BR:
       started: Já em curso
       unfeasible: Inviável
       done: Feito
-      other: Outros
+      other: Outro
     form:
       geozone: Escopo da operação
       proposal_external_url: Link para documentação adicional
@@ -324,7 +324,7 @@ pt-BR:
       tags_instructions: "Marque esta proposta. Você pode escolher entre as categorias propostas ou adicionar a sua própria"
       tags_label: Marcação
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
-      map_location: "Localização no mapa"
+      map_location: "Localização do mapa"
       map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
       map_remove_marker: "Remover o marcador do mapa"
       map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
@@ -350,12 +350,12 @@ pt-BR:
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas pelo autor"
       retired_links:
-        all: Tudo
+        all: Todos
         duplicated: Duplicado
         started: Em andamento
         unfeasible: Inviável
         done: Feito
-        other: Outro
+        other: Outros
       search_form:
         button: Buscar
         placeholder: Buscar propostas...
@@ -446,7 +446,7 @@ pt-BR:
     final_date: "Contagem final/resultados"
     index:
       filters:
-        current: "Abrir"
+        current: "Aberto"
         expired: "Expirado"
       title: "Votações"
       participate_button: "Participar desta votação"
@@ -476,7 +476,7 @@ pt-BR:
       signin: Iniciar sessão
       signup: Inscreva-se
       cant_answer_verify_html: "Você deve %{verify_link} para poder responder."
-      verify_link: "verificar sua conta"
+      verify_link: "verifique sua conta"
       cant_answer_expired: "Esta votação já foi encerrada."
       cant_answer_wrong_geozone: "Esta questão não está disponível na sua geozona."
       more_info_title: "Mais informações"
@@ -485,7 +485,7 @@ pt-BR:
       read_more: "Ler mais sobre %{answer}"
       read_less: "Ler menos sobre %{answer}"
       videos: "Vídeo externo"
-      info_menu: "Informações"
+      info_menu: "Informação"
       stats_menu: "Estatísticas da participação"
       results_menu: "Resultados da votação"
       stats:
@@ -500,10 +500,10 @@ pt-BR:
         white: "Votos brancos"
         null_votes: "Inválido"
       results:
-        title: "Questões"
+        title: "Perguntas"
         most_voted_answer: "Resposta mais votada: "
   poll_questions:
-    create_question: "Criar questão"
+    create_question: "Criar pergunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Você votou %{answer}"
@@ -563,7 +563,7 @@ pt-BR:
           notice_html: "Agora você está seguindo esta proposta cidadã! </br> Nós o notificaremos das mudanças assim que elas ocorrerem, para que você esteja atualizado."
         destroy:
           notice_html: "Você parou de seguir esta proposta cidadã! </br> Você não receberá mais notificações relacionadas a esta proposta."
-    hide: Ocultar
+    hide: Esconder
     print:
       print_button: Imprimir esta informação
     search: Buscar
@@ -574,7 +574,7 @@ pt-BR:
           one: "Existe um debate com o termo '%{query}', você pode participar dele ao invés de abrir um novo."
           other: "Existem debates com o termo '%{query}', você pode participar deles ao invés de abrir um novo."
         message: "Você está vendo %{limit} de %{count} debates contendo o termo '%{query}'"
-        see_all: "Ver tudo"
+        see_all: "Ver todos"
       budget_investment:
         found:
           one: "Existe um investimento com o termo '%{query}', você pode participar dele ao invés de abrir um novo."
@@ -797,7 +797,7 @@ pt-BR:
       user_permission_proposal: Criar novas propostas
       user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: Para executar todas as ações %{verify}
-      user_permission_verify_info: "* Somente para usuários no Censo. "
+      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar minha conta
       user_permission_votes: Participar na votação final
   invisible_captcha:
