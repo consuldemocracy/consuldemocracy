@@ -1,5 +1,8 @@
 cs:
   devise:
+    password_expired:
+      change_password: "Změňte si své heslo"
+      new_password: "Nové heslo"
     failure:
       unauthenticated: "Pro pokračování se musíte přihlásit nebo registrovat."
     sessions:
