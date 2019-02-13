@@ -13,7 +13,7 @@ val:
         budgets: "Pressupostos participatius"
         polls: "Votacions"
         other: "Altra informació d'interés"
-        processes: "Processos legislatius"
+        processes: "Processos"
       debates:
         title: "Debats"
         description: "En la secció de %{link} pots exposar i compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats en la teua ciutat. També es un espai on generar idees que a través de les altres seccions de %{org} duguen a actuacions concretes per part de l'Ajuntament."
@@ -33,7 +33,7 @@ val:
         description: "La secció de %{link} serveix per a que la gent decidisca de manera directa a qué es estina una part del pressupost municipal."
         link: "pressupostos participatius"
         image_alt: "Diferents fases d'un pressupost participatiu"
-        figcaption_html: 'Fase d''"Avals" i fase de "Votació" dels pressupostos participatius.'
+        figcaption_html: 'Fase "d''Avals" i fase de "Votació" dels pressupostos participatius.'
       polls:
         title: "Votacions"
         description: "La secció de %{link} s'activa cada vegada que una proposta arriba a l'1% d'avals i passa a votació o quant l'Ajuntament proposa un tema per a que la gent decidisca sobre ell."
@@ -41,13 +41,13 @@ val:
         feature_1: "Per a participar en les votacions has de %{link} i verificar el teu compte."
         feature_1_link: "registrar-te en %{org_name}"
       processes:
-        title: "Processos legislatius"
+        title: "Processos"
         description: "En la secció de %{link} la ciutadania participa en l'elaboració i modificació de normativa que afecta a la ciutat i pot donar la seua opinió sobre les polítiques municipals en debats previs."
         link: "processos legislatius"
       faq:
         title: "Problemes tècnics?"
-        description: "Llig les preguntes freqüents i resol els teus dubtes."
-        button: "Veure les preguntes freqüents"
+        description: "Llig les preguntes frequents i resol els teus dubtes."
+        button: "Vore les preguntes freqüents"
         page:
           title: "Preguntes Freqüents"
           description: "Utilitza esta pàgina per a resoldre les Preguntes freqüents als usuaris del lloc."
@@ -64,7 +64,7 @@ val:
 
           Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
       titles:
-        how_to_use: Utilitza-ho en el teu municipi
+        how_to_use: Utilítzal en el teu municipi
     privacy:
       title: Política de privacitat
       subtitle: INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES
