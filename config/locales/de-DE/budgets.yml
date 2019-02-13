@@ -25,12 +25,12 @@ de:
       show:
         title: Wählen Sie eine Option
         unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-        unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
-        unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
-        unselected: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben, anzeigen
+        unfeasible: Nicht durchführbare Investitionen anzeigen
+        unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
+        unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
     phase:
       drafting: Entwurf (nicht für die Öffentlichkeit sichtbar)
-      informing: Informationen
+      informing: Information
       accepting: Projekte vorschlagen
       reviewing: Interne Überprüfung der Projekte
       selecting: Auswahlphase
@@ -61,17 +61,17 @@ de:
     investments:
       form:
         tag_category_label: "Kategorien"
-        tags_instructions: "Diesen Vorschlag markieren. Sie können aus vorgeschlagenen Kategorien wählen, oder Ihre eigenen hinzufügen"
+        tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
-        tags_placeholder: "Geben Sie die gewünschten Tags ein, getrennt durch Kommas (',')"
+        tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
         location: "Weitere Ortsangaben"
         map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
-        title: Bürgerhaushalte
-        unfeasible: Nicht durchführbare Ausgabenvorschläge
+        title: Partizipative Haushaltsplanung
+        unfeasible: Undurchführbare Investitionsvorschläge
         unfeasible_text: "Der Ausgabenvorschlag muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Durchführbarkeit, im Aufgabenbereich der Stadt, innerhalb des Limits des Haushaltes) um für durchführbar erklärt werden zu können und das Stadium der finalen Abstimmung zu erreichen. Alle Ausgabenvorschläge, die diese Kriterien nicht erfüllen, sind als nicht durchführbar markiert und stehen in der folgenden Liste, zusammen mit einem Bericht zur Undurchführbarkeit."
         by_heading: "Ausgabenvorschläge im Bereich: %{heading}"
         search_form:
@@ -89,15 +89,15 @@ de:
           voted_info: Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben.
           voted_info_link: Ihre Wahl ändern
           different_heading_assigned_html: "Sie haben bereits in einem anderen Bereich: %{heading_link} abgestimmt"
-          change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
-          check_ballot_link: "Meine Abstimmung überprüfen"
+          change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
+          check_ballot_link: "Überprüfung meiner Abstimmung"
           zero: Sie haben für keinen Ausgabenvorschlag in dieser Gruppe abgestimmt.
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
-          verify_account: "Verifizieren Sie Ihr Benutzer*innenkonto"
-          create: "Ausgabenvorschlag erstellen"
+          verify_account: "verifizieren Sie Ihr Konto"
+          create: "Eine Budgetinvestitionen erstellen"
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
-          sign_in: "Anmelden"
-          sign_up: "Registrieren"
+          sign_in: "anmelden"
+          sign_up: "registrieren"
           by_feasibility: Nach Durchführbarkeit
           feasible: Durchführbare Projekte
           unfeasible: Nicht durchführbare Projekte
@@ -108,20 +108,20 @@ de:
       share:
         message: "Ich habe einen Ausgabenvorschlag %{title} in %{org} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
-        author_deleted: Benutzer*in gelöscht
-        price_explanation: Erläuterung der Kosten
+        author_deleted: Benutzer gelöscht
+        price_explanation: Preiserklärung
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
         code_html: 'Code des Ausgabenvorschlags: <strong>%{code}</strong>'
         location_html: 'Standort: <strong>%{location}</strong>'
         organization_name_html: 'Vorgeschlagen von: <strong>%{name}</strong>'
         share: Teilen
-        title: Ausgabenvorschlag
-        supports: Unterstützer*innen
+        title: Investitionsprojekt
+        supports: Unterstützung
         votes: Stimmen
-        price: Kosten
+        price: Preis
         comments_tab: Kommentare
         milestones_tab: Meilensteine
-        author: Verfasser*in
+        author: Autor
         project_unfeasible_html: 'Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
         project_selected_html: 'Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
         project_winner: 'Best bewerteter Ausgabenvorschlag'
@@ -129,7 +129,7 @@ de:
         see_price_explanation: Erläuterung der Kosten anzeigen
       wrong_price_format: Nur ganze Zahlen
       investment:
-        add: Abstimmen
+        add: Stimme
         already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
         already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
         support_title: Unterstützen Sie dieses Projekt
@@ -137,14 +137,14 @@ de:
           one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
-          zero: Keine Unterstützer*innen
-          one: 1 Unterstützer*in
-          other: "%{count} Unterstützer*innen"
+          zero: Keine Unterstützung
+          one: 1 Unterstützer/in
+          other: "%{count} Unterstützer/innen"
         give_support: Unterstützung
       header:
         check_ballot: Meine Abstimmung überprüfen
-        different_heading_assigned_html: "Sie haben bereits in einem anderen Bereich: %{heading_link} abgestimmt"
-        change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
+        different_heading_assigned_html: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
+        change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
         check_ballot_link: "Meine Abstimmung überprüfen"
         price: "Diese Rubrik verfügt über einen Haushalt von"
     progress_bar:
@@ -154,9 +154,9 @@ de:
       group: Gruppe
       phase: Aktuelle Phase
       unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-      unfeasible: Nicht durchführbare Investitionen anzeigen
-      unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
-      unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
+      unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
+      unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
+      unselected: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben, anzeigen
       see_results: Ergebnisse anzeigen
     results:
       link: Ergebnisse
@@ -167,14 +167,14 @@ de:
       ballot_lines_count: Stimmen
       hide_discarded_link: Verworfene ausblenden
       show_all_link: Alle anzeigen
-      price: Kosten
+      price: Preis
       amount_available: Verfügbare Haushaltsmittel
       accepted: "Genehmigter Ausgabenvorschlag: "
       discarded: "Verworfener Ausgabenvorschlag: "
       incompatibles: Unvereinbar
       investment_proyects: Liste aller Ausgabenvorschläge
       unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
-      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die nicht für die Abstimmung ausgewählt wurden
+      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die es nicht in die Abstimmung geschafft haben
     executions:
       link: "Meilensteine"
       page_title: "%{budget} - Meilensteine"
