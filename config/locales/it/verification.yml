@@ -55,7 +55,6 @@ it:
             success: Codice corretto
     step_3: Verifica finale
     user_permission_debates: Partecipare ai dibattiti
-    user_permission_info: Una volta verificati i tuoi dati, sarai in grado di...
     user_permission_proposal: Creare nuove proposte
     user_permission_votes: Partecipare al voto finale *
     verified_user:
