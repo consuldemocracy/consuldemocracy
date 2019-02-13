@@ -21,9 +21,12 @@ fi:
         by: Lähettäjä
         price: Hinta
         currency: "€"
+        feasibility: Toteutettavuus
+        unfeasible: Toteuttamiskelvoton
         undefined: Määrittelemätön
       edit:
         price_html: "Hinta (%{currency})"
+        feasibility: Toteutettavuus
         undefined_feasible: Vireillä
         save: Tallenna muutokset
     spending_proposals:
@@ -37,9 +40,11 @@ fi:
         by: Lähettäjä
         price: Hinta
         currency: "€"
+        feasibility: Toteutettavuus
         undefined: Määrittelemätön
       edit:
         price_html: "Hinta (%{currency})"
         currency: "€"
+        feasibility: Toteutettavuus
         undefined_feasible: Vireillä
         save: Tallenna muutokset
