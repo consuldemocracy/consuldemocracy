@@ -1,1 +1,16 @@
 ru:
+  officing:
+    results:
+      new:
+        see_results: "Просмотр результатов"
+      index:
+        results: Результаты
+        table_answer: Ответ
+        table_votes: Голоса
+    residence:
+      new:
+        document_number: "Номер документа (включая буквы)"
+    voters:
+      new:
+        title: Опросы
+        table_poll: Опрос
