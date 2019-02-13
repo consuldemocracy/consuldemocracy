@@ -57,6 +57,7 @@ gl:
       section_footer:
         title: Axuda sobre os orzamentos participativos
         description: Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento municipal.
+      milestones: Fitos
     investments:
       form:
         tag_category_label: "Categorías"
@@ -104,6 +105,8 @@ gl:
           random: aleatorias
           confidence_score: mellor valoradas
           price: por custo
+      share:
+        message: "Acabo de crear o proxecto de investimento %{title} en %{org}. Anímote a crear o teu proxecto de investimento!"
       show:
         author_deleted: Usuaria borrada
         price_explanation: Informe de custo
@@ -123,6 +126,7 @@ gl:
         project_selected_html: 'Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación.'
         project_winner: 'Proxecto de investimento gañador'
         project_not_selected_html: 'O proxecto de inversión <strong>non foi seleccionado</strong> para a fase de votación.'
+        see_price_explanation: Ver xustificación do prezo
       wrong_price_format: Só pode incluír caracteres numéricos
       investment:
         add: Votar
@@ -171,6 +175,15 @@ gl:
       investment_proyects: Listaxe de todos os proxectos de investimento
       unfeasible_investment_proyects: Ver a relación de proxectos de investimento inviables
       not_selected_investment_proyects: Ver a listaxe de proxecto de investimento non seleccionadas para a votación final
+    executions:
+      link: "Fitos"
+      page_title: "%{budget} - Fitos"
+      heading: "Fitos dos orzamentos participativos"
+      heading_selection_title: "Por zona"
+      no_winner_investments: "Non hai investimentos gañadores neste estado"
+      filters:
+        label: "Estado actual do proxecto"
+        all: "Todo (%{count})"
     phases:
       errors:
         dates_range_invalid: "A data de comezo non pode ser igual ou superior á de remate"
