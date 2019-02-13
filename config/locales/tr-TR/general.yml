@@ -1,1 +1,49 @@
 tr:
+  account:
+    show:
+      user_permission_title: Katılım
+  comments:
+    comment:
+      admin: Yönetici
+  comments_helper:
+    comment_link: Yorum
+    comments_title: Yorumlar
+  debates:
+    show:
+      comments_title: Yorumlar
+      edit_debate_link: Düzenleme
+  form:
+    budget/investment: yatırım
+    image: Fotoğraf
+  layouts:
+    footer:
+      participation_title: Katılım
+    header:
+      administration: Yönetim
+  map:
+    title: "İlçeler"
+  proposals:
+    show:
+      comments_tab: Yorumlar
+      edit_proposal_link: Düzenleme
+  polls:
+    index:
+      filters:
+        current: "Açık"
+      geozone_restricted: "İlçeler"
+    show:
+      comments_tab: Yorumlar
+  shared:
+    edit: 'Düzenleme'
+    tags_cloud:
+      districts: "İlçeler"
+  stats:
+    index:
+      comments: Yorumlar
+  users:
+    show:
+      comments: Yorumlar
+      actions: Aksiyon
+  admin/widget:
+    header:
+      title: Yönetim
