@@ -13,7 +13,7 @@ sq:
         budgets: "Buxhetet  pjesëmarrës"
         polls: "Sondazhet"
         other: "Informacione të tjera me interes"
-        processes: "Proçese"
+        processes: "Proçes"
       debates:
         title: "Debate"
         description: "Në seksionin %{link} ju mund të paraqisni dhe të ndani mendimin tuaj me njerëzit e tjerë për çështjet që kanë lidhje me ju në lidhje me qytetin. Është gjithashtu një vend për të krijuar ide që përmes seksioneve të tjera të %{org} të çojnë në veprime konkrete nga Këshilli i Qytetit."
@@ -41,7 +41,7 @@ sq:
         feature_1: "Për të marrë pjesë në votim duhet të %{link} dhe të verifikoni llogarinë tuaj."
         feature_1_link: "regjistrohuni në  %{org_name}"
       processes:
-        title: "Proçese"
+        title: "Proçes"
         description: "Në seksionin %{link}, qytetarët marrin pjesë në hartimin dhe modifikimin e rregulloreve që ndikojnë në qytet dhe mund të japin mendimin e tyre mbi politikat komunale në debatet e mëparshme."
         link: "Proçese"
       faq:
@@ -111,7 +111,7 @@ sq:
               page_column: Propozime
             - 
               key_column: 3
-              page_column: Vota
+              page_column: Votim
             - 
               key_column: 4
               page_column: Buxhetet  pjesëmarrës
@@ -125,7 +125,7 @@ sq:
           key_header: Kombinim i celsave
           rows:
             - 
-              browser_column: Explorer
+              browser_column: Eksploro
               key_column: ALT + shkurtore pastaj ENTER
             - 
               browser_column: Firefox
@@ -147,7 +147,7 @@ sq:
           action_header: Veprimi që duhet marrë
           rows:
             - 
-              browser_column: Eksploro
+              browser_column: Explorer
               action_column: Shiko> Madhësia e tekstit
             - 
               browser_column: Firefox
@@ -174,7 +174,7 @@ sq:
         title: Pajtueshmëria me standardet dhe dizajni vizual
         description_html: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> i përkasinW3C.'
     titles:
-      accessibility: Dispnueshmësia
+      accessibility: Aksesueshmëria
       conditions: Kushtet e përdorimit
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
       privacy: Politika e privatësisë
