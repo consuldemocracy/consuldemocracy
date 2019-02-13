@@ -813,6 +813,42 @@ es:
         title: "Resumen de notificationes de propuestas"
         description: "Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails."
         preview_detail: "Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen."
+      budget_investment_created:
+        title: "Proyecto de gasto creado"
+        description: "Enviado cuando un usuario crea un proyecto de presupuestos participativos."
+      budget_investment_selected:
+        title: "Proyecto de gasto seleccionado"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido seleccionado."
+      budget_investment_unfeasible:
+        title: "Proyecto de gasto inviable"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como inviable."
+      budget_investment_unselected:
+        title: "Proyecto de gasto no seleccionado"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que no ha sido seleccionado para la fase de votación."
+      comment:
+        title: "Comentario"
+        description: "Enviado al autor cuando recibe un comentario."
+      reply:
+        title: "Respuesta"
+        description: "Enviado al autor del comentario cuando recibe una respuesta."
+      direct_message_for_receiver:
+        title: "Mensaje privado recibido"
+        description: "Enviado al receptor de un mensaje privado."
+      direct_message_for_sender:
+        title: "Mensaje privado enviado"
+        description: "Enviado al remitente de un mensaje privado."
+      email_verification:
+        title: "Verificación por email"
+        description: "Enviado al nuevo usuario registrado para verificar su cuenta."
+      user_invite:
+        title: "Invitación de usuarios"
+        description: "Enviado a la persona que ha sido invitada a registrar una cuenta."
+      edit_info: "Puedes editar este email en"
+      alert:
+        no_investments: "No se ha creado ningún proyecto de gasto. Se necesita algún ejemplo para poder previsualizar el email."
+        no_comments: "No se ha creado ningún comentario. Se necesita algún ejemplo para poder previsualizar el email."
+        no_replies: "No se ha creado ninguna respuesta. Se necesita algún ejemplo para poder previsualizar el email."
+        no_direct_messages: "No se ha creado ningún mensaje privado. Se necesita algún ejemplo para poder previsualizar el email."
     emails_download:
       index:
         title: Descarga de emails

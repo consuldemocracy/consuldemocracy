@@ -371,6 +371,10 @@ $sidebar-active: #f4fcd0;
   color: $text-medium;
 }
 
+code {
+  word-break: break-all;
+}
+
 // 02. Sidebar
 // -----------
 
