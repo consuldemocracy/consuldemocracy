@@ -6,7 +6,116 @@ tr:
       actions: Aksiyon
       confirm: Emin misiniz?
       edit: Düzenleme
+    activity:
+      show:
+        filters:
+          on_comments: Yorumlar
     budgets:
       index:
         filters:
           open: Açık
+        table_investments: Yatırımlar
+        table_edit_budget: Düzenleme
+      edit:
+        actions: Aksiyon
+    budget_investments:
+      index:
+        list:
+          admin: Yönetici
+      show:
+        edit: Düzenleme
+        image: "Fotoğraf"
+    milestones:
+      index:
+        table_actions: "Aksiyon"
+        image: "Fotoğraf"
+    statuses:
+      index:
+        table_actions: Aksiyon
+        edit: Düzenleme
+    dashboard:
+      index:
+        title: Yönetim
+    legislation:
+      processes:
+        index:
+          filters:
+            open: Açık
+        process:
+          comments: Yorumlar
+          status_open: Açık
+      draft_versions:
+        table:
+          comments: Yorumlar
+    managers:
+      index:
+        email: E-posta
+    menu:
+      administrators: Yöneticiler
+      title_budgets: Bütçeler
+    administrators:
+      index:
+        title: Yöneticiler
+        email: E-posta
+    moderators:
+      index:
+        email: E-posta
+    segment_recipient:
+      administrators: Yöneticiler
+    newsletters:
+      index:
+        actions: Aksiyon
+        edit: Düzenleme
+    admin_notifications:
+      index:
+        actions: Aksiyon
+        edit: Düzenleme
+    valuators:
+      index:
+        email: E-posta
+      show:
+        email: "E-posta"
+    poll_officers:
+      officer:
+        email: E-posta
+    poll_officer_assignments:
+      index:
+        table_email: "E-posta"
+    poll_shifts:
+      new:
+        table_email: "E-posta"
+    questions:
+      show:
+        answers:
+          document_actions: Aksiyon
+    results:
+      result:
+        table_votes: Oylar
+    organizations:
+      index:
+        email: E-posta
+    settings:
+      setting_actions: Aksiyon
+    shared:
+      actions: Aksiyon
+      image: Fotoğraf
+    spending_proposals:
+      index:
+        filters:
+          valuation_open: Açık
+      show:
+        edit: Düzenleme
+    geozones:
+      index:
+        edit: Düzenleme
+    stats:
+      show:
+        summary:
+          comments: Yorumlar
+    users:
+      columns:
+        email: E-posta
+    site_customization:
+      images:
+        index:
+          image: Fotoğraf
