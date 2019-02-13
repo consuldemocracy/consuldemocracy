@@ -19,7 +19,7 @@ class Comment < ActiveRecord::Base
 
   validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
 
-  validate :validate_body_length
+  validate :validate_body_length, unless: -> { valuation }
   validate :comment_valuation, if: -> { valuation }
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
