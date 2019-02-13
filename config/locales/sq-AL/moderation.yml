@@ -2,7 +2,7 @@ sq:
   moderation:
     comments:
       index:
-        block_authors: Autori i bllokut
+        block_authors: Blloko autorët
         confirm: A je i sigurt?
         filter: Filtër
         filters:
