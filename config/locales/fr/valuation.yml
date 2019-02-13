@@ -13,7 +13,9 @@ fr:
           current: Ouvert
           finished: Terminé
         table_name: Nom
+        table_phase: Phase
         table_assigned_investments_valuation_open: Propositions d'investissement assignées avec une évaluation ouverte
+        table_actions: Actions
         evaluate: Évaluer
     budget_investments:
       index:
@@ -29,9 +31,11 @@ fr:
           one: Évaluateur assigné
           other: "%{count} évaluateurs assignés"
         no_valuators_assigned: Pas d'évaluateur assigné
+        table_id: ID
         table_title: Titre
         table_heading_name: Nom du titre
-        no_investments: "Il n’y a pas de projet d’investissement."
+        table_actions: Actions
+        no_investments: "Il n’y a aucun projet d’investissement."
       show:
         back: Retour
         title: Propositions d'investissement
@@ -43,6 +47,7 @@ fr:
         edit_dossier: Éditer le rapport
         price: Coût
         price_first_year: Coût durant la première année
+        currency: "€"
         feasibility: Faisabilité
         feasible: Faisable
         unfeasible: Infaisable
@@ -84,6 +89,7 @@ fr:
         back: Retour
         heading: Proposition d'investissement
         info: Données d'envoi
+        association_name: Association
         by: Envoyé par
         sent: Envoyé à
         geozone: Domaines
@@ -91,6 +97,7 @@ fr:
         edit_dossier: Éditer le rapport
         price: Coût
         price_first_year: Coût durant la première année
+        currency: "€"
         feasibility: Faisabilité
         feasible: Faisable
         not_feasible: Infaisable
@@ -105,6 +112,7 @@ fr:
         dossier: Rapport
         price_html: "Coût (%{currency}) <small>(données publiques)</small>"
         price_first_year_html: "Coût durant la première année (%{currency}) <small>(optionnel, données non publiques)</small>"
+        currency: "€"
         price_explanation_html: Informations sur le coût <small>(optionnel, données publiques)</small>
         feasibility: Faisabilité
         feasible: Faisable
