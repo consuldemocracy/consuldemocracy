@@ -2,21 +2,21 @@ it:
   devise:
     password_expired:
       expire_password: "Password scaduta"
-      change_required: "La tua password è scaduta"
-      change_password: "Cambia la tua password"
+      change_required: "La password è scaduta"
+      change_password: "Cambia la password"
       new_password: "Nuova password"
       updated: "Password aggiornata correttamente"
     confirmations:
       confirmed: "Il tuo account è stato confermato."
-      send_instructions: "Tra pochi minuti riceverai un'email contenente le istruzioni su come reimpostare la password."
-      send_paranoid_instructions: "Se il tuo indirizzo email è nel nostro archivio, in pochi minuti riceverai un'email contenente le istruzioni su come reimpostare la password."
+      send_instructions: "Tra pochi minuti riceverai un'e-mail contenente le istruzioni su come reimpostare la password."
+      send_paranoid_instructions: "Se il tuo indirizzo email è nel nostro archivio, in pochi minuti riceverai un'e-mail contenente le istruzioni su come reimpostare la password."
     failure:
-      already_authenticated: "Sei già collegato."
+      already_authenticated: "Sei già iscritto."
       inactive: "Il tuo account non è ancora stato attivato."
       invalid: "%{authentication_keys} o password non validi."
       locked: "Il tuo account è stato bloccato."
-      last_attempt: "Hai un altro tentativo rimasto prima che il tuo account sia bloccato."
-      not_found_in_database: "%{authentication_keys} o password errata."
+      last_attempt: "Hai sono un altro tentativo prima che il tuo account sia bloccato."
+      not_found_in_database: "%{authentication_keys} o password non validi."
       timeout: "La sessione è scaduta. Per favore accedi nuovamente per continuare."
       unauthenticated: "È necessario eseguire il log in o registrarsi per continuare."
       unconfirmed: "Per proseguire, per favore clicca sul link di conferma che ti abbiamo inviato via mail"
