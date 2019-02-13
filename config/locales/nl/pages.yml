@@ -1,61 +1,61 @@
 nl:
   pages:
     conditions:
-      title: Gebruikersvoorwaarden
+      title: Gebruiksvoorwaarden
       subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
       description: Informatiepagina over de gebruiksvoorwaarden, privacy en bescherming van persoonsgegevens.
     help:
       title: "%{org} is een platform voor burgerparticipatie"
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
       menu:
-        debates: "Discussies"
-        proposals: "Voorstellen"
-        budgets: "Burgerbegrotingen"
-        polls: "Peilingen"
+        debates: "Discussie"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        polls: "Polls"
         other: "Andere relevante informatie"
-        processes: "Plannen"
+        processes: "Proces"
       debates:
-        title: "Discussies"
+        title: "Discussie"
         description: "Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden."
         link: "Discussies"
         feature_html: "Je kunt discussies een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
         image_alt: "Knoppen om een discussie te scoren"
-        figcaption: '"Eens" en "Oneens" knoppen om de discussie te scoren.'
+        figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
       proposals:
-        title: "Voorstellen"
+        title: "Proposals"
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
         link: "Voorstellen"
         image_alt: "Knop om een voorstel te steunen"
         figcaption_html: 'Knop om een voorstel te ''''steunen''''.'
       budgets:
-        title: "Burgerbegrotingen"
+        title: "Burgerbegroting"
         description: "Het %{link} onderdeel helpt bij het geven van direct zeggenschap aan inwoners over de besteding van gebiedsbudgetten van de gemeente."
         link: "Burgerbegrotingen"
-        image_alt: "Verschillende fasen van een burgerbegroting"
-        figcaption_html: '"Steun" and "Stem" fases van de burgerbegroting.'
+        image_alt: "Verschillende fasen in de burgerbegroting"
+        figcaption_html: '"Steun" fase en "Stem" fase in de burgerbegroting.'
       polls:
-        title: "Peilingen"
+        title: "Polls"
         description: "Het %{link} onderdeel wordt geactiveerd elke keer wanneer een voorstel 1% steun krijgt en tot stemming over gaat, of als de gemeente een vraagstuk en besluit aan de inwoners wil voorleggen."
         link: "peilingen"
         feature_1: "Om te participeren bij de peilingen moet je %{link} en je account verifiëren."
         feature_1_link: "registreren in %{org_name}"
       processes:
-        title: "Plannen"
+        title: "Proces"
         description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies."
         link: "plannen"
       faq:
         title: "Technische problemen?"
-        description: "Vind de antwoorden op je vragen in de Veelgestelde vragen."
-        button: "Bekijk de Veelgestelde vragen"
+        description: "Lees de FAQs en kijk of dat helpt."
+        button: "Bekijk de meest gestelde vragen"
         page:
-          title: "Veelgestelde vragen"
-          description: "Gebruik deze pagina om de meest gestelde vragen te verzamelen."
+          title: "Veel gestelde vragen"
+          description: "Gebruik deze pagina veelgestelde vragen van de gebruikers van de site te beantwoorden."
           faq_1_title: "Vraag 1"
-          faq_1_description: "Beschrijf hier de vraag."
+          faq_1_description: "Dit is een voorbeeld voor de beschrijving van de eerste vraag."
       other:
-        title: "Andere relevante informatie"
-        how_to_use: "Gebruik %{org_name} in jouw gemeente"
+        title: "Verdere informatie"
+        how_to_use: "Gebruik %{org_name} in uw gemeente"
       how_to_use:
         text: |-
           Gebruik consul in je gemeente of help ons consul te verbeteren, dat kan met open source software.
@@ -64,7 +64,7 @@ nl:
 
           Als je programmeur bent kun je de broncode bekijken en ons helpen deze te verbeteren via [Github](https://github.com/consul/consul 'consul github').
       titles:
-        how_to_use: Gebruik het in je gemeente
+        how_to_use: Gebruik het in uw gemeente
     privacy:
       title: Privacybeleid
       subtitle: INFORMATIE OVER GEGEVENSBESCHERMING
@@ -110,16 +110,16 @@ nl:
               page_column: Homepagina
             - 
               key_column: 1
-              page_column: Discussies
+              page_column: Discussie
             - 
               key_column: 2
-              page_column: Voorstellen
+              page_column: Proposals
             - 
               key_column: 3
-              page_column: Stemmen
+              page_column: Votes
             - 
               key_column: 4
-              page_column: Burgerbegrotingen
+              page_column: Participatory budgets
             - 
               key_column: 5
               page_column: Plannen
@@ -184,7 +184,7 @@ nl:
       privacy: Privacybeleid
     verify:
       code: Code die je in je email ontvangt
-      email: Email
+      email: E-mail
       info: 'Geef hier je contactgegevens op om je account te verifieren:'
       info_code: 'Geef hier de code in die je hebt ontvangen:'
       password: Wachtwoord
