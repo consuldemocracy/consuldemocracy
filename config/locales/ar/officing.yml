@@ -1,5 +1,8 @@
 ar:
   officing:
+    polls:
+      final:
+        title: الاستطلاعات جاهزة لعملية العد النهائي
     results:
       new:
         date: "تاريخ"
@@ -8,6 +11,14 @@ ar:
         no_results: "لا توجد نتائج"
         results: النتائج
         table_answer: الإجابة
+    residence:
+      flash:
+        create: "وثيقة تم التحقق منها من خلال التعداد"
+      new:
+        error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
     voters:
+      new:
+        title: استطلاعات
+        table_status: حالة الاستطلاع
       show:
         submit: تأكيد التصويت
