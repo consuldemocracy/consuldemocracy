@@ -1,1 +1,53 @@
 tr:
+  moderation:
+    comments:
+      index:
+        confirm: Emin misiniz?
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
+        headers:
+          comment: Yorum
+          moderate: Yönet
+        hide_comments: Yorumları gizle
+        ignore_flags: Görüldü olarak işaretle
+        order: Sipariş
+        orders:
+          flags: En çok işaretlenen
+          newest: En yeni
+        title: Yorumlar
+    dashboard:
+      index:
+        title: Moderasyon
+    debates:
+      index:
+        block_authors: Yazarları engelle
+        confirm: Emin misiniz?
+        filter: Filtre
+        headers:
+          debate: Tartışma
+        hide_debates: Tartışmaları gizle
+    menu:
+      flagged_comments: Yorumlar
+      flagged_investments: Bütçe yatırımları
+      proposals: Öneriler
+      proposal_notifications: Öneri bildirimleri
+      users: Kullanıcıları engelle
+    proposals:
+      index:
+        confirm: Emin misiniz?
+    budget_investments:
+      index:
+        confirm: Emin misiniz?
+    proposal_notifications:
+      index:
+        confirm: Emin misiniz?
+    users:
+      index:
+        hidden: Engellendi
+        hide: Engelle
+        search: Ara
+        search_placeholder: e-posta veya kullanıcının adı
+      notice_hide: Kullanıcı engellendi. Bu kullanıcının tüm tartışmaları ve yorumları gizlendi.
