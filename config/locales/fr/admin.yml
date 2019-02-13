@@ -67,6 +67,7 @@ fr:
           on_debates: Discussions
           on_proposals: Propositions
           on_users: Utilisateurs
+          on_system_emails: Emails système
         title: Activité de modération
         type: Type
         no_activity: Il n’y a aucune activité de modérateurs.
@@ -105,30 +106,6 @@ fr:
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
       new:
         title: Nouveau budget citoyen
-      show:
-        groups:
-          one: 1 groupe de rubriques budgétaires
-          other: "%{count} groupes de rubriques budgétaires"
-      form:
-        group: Nom du groupe
-        no_groups: Aucun groupe existant. Chaque utilisateur ne pourra voter que dans une rubrique par groupe.
-        add_group: Ajouter un nouveau groupe
-        create_group: Créer un groupe
-        edit_group: Modifier le groupe
-        submit: Sauvegarder le groupe
-        heading: Nom de la rubrique
-        add_heading: Ajouter une rubrique
-        amount: Montant
-        population: "Population"
-        population_help_text: "Ces données sont utilisées exclusivement pour calculer les statistiques de participation"
-        save_heading: Sauvegarder la rubrique
-        no_heading: Ce groupe n'a pas de rubrique assignée.
-        table_heading: Rubrique
-        table_amount: Montant
-        table_population: Population
-        population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
-        max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
-        current_of_max_headings: "%{current} sur %{max}"
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
@@ -265,8 +242,6 @@ fr:
         image: "Image"
         show_image: "Afficher l'image"
         documents: "Documents"
-        milestone: Jalon
-        new_milestone: Créer nouveau jalon
       form:
         admin_statuses: Administrer les statuts d'investissement
         no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis
@@ -382,7 +357,6 @@ fr:
         index:
           create: Nouveau processus
           delete: Supprimer
-          title: Processus législatifs
           filters:
             open: Ouvert
             all: Tous
@@ -390,6 +364,12 @@ fr:
           back: Retour
           title: Créer un nouveau processus législatif collaboratif
           submit_button: Créer un processus
+        proposals:
+          select_order: Trier par
+          orders:
+            id: Id
+            title: Titre
+            supports: Soutiens
         process:
           title: Processus
           comments: Commentaires
@@ -400,12 +380,17 @@ fr:
           status_planned: Planifié
         subnav:
           info: Information
-          draft_versions: Brouillon
+          draft_versions: Rédaction
           questions: Débat
           proposals: Propositions
       proposals:
         index:
+          title: Titre
           back: Retour
+          id: Id
+          supports: Soutiens
+          select: Sélectionner
+          selected: Sélectionné
         form:
           custom_categories: Catégories
           custom_categories_description: Catégories que les utilisateurs peuvent sélectionner créer une proposition.
@@ -526,6 +511,7 @@ fr:
       messaging_users: Messages aux utilisateurs
       newsletters: Bulletins d’information
       admin_notifications: Notifications
+      system_emails: Emails système
       emails_download: Téléchargement des courriels
       valuators: Évaluateurs
       poll_officers: Assesseurs
@@ -651,8 +637,10 @@ fr:
         empty_notifications: Aucune notification à afficher
       new:
         section_title: Nouvelle notification
+        submit_button: Créez la notification
       edit:
         section_title: Editer la notification
+        submit_button: Editer la notification
       show:
         section_title: Aperçu de la notification
         send: Envoyer la notification
@@ -671,9 +659,11 @@ fr:
         action: Aperçu en attente
         preview_of: Aperçu de %{name}
         pending_to_be_sent: Ceci est le contenu en attente d’être envoyé
+        moderate_pending: Modérer la notification envoyée
         send_pending: Envoi en attente
         send_pending_notification: Les notifications en attente ont été envoyées avec succès
       proposal_notification_digest:
+        title: Résumé des notifications des propositions
         description: Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails.
         preview_detail: Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent
     emails_download:
@@ -1004,15 +994,6 @@ fr:
       search:
         title: Rechercher une organisation
         no_results: Aucune organisation trouvée.
-    hidden_proposals:
-      index:
-        filter: Filtrer
-        filters:
-          all: Tous
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
-        title: Propositions masquées
-        no_hidden_proposals: Il n’y a aucune proposition masquée.
     proposal_notifications:
       index:
         filter: Filtrer
@@ -1269,9 +1250,7 @@ fr:
     site_customization:
       content_blocks:
         information: Information à propos des blocs de contenu
-        about: Vous pouvez créer des blocs de contenu en HTML pour les insérer dans l'en-tête ou le pied de page de votre Consul.
-        top_links_html: "<strong>Les blocs de l'en-tête (top_links)</strong> sont des blocs de liens devant impérativement respecter ce format :"
-        footer_html: "<strong>Les blocs du pied de page</strong> ont un format libre et peuvent être utilisés pour insérer du Javascript, du CSS ou du HTML personnalisé."
+        about: "Vous pouvez créer des blocs de contenu en HTML pour les insérer dans l'en-tête ou le pied de page de votre Consul."
         no_blocks: "Il n'y a pas de bloc de contenu."
         create:
           notice: Bloc de contenu créé avec succès
@@ -1295,6 +1274,11 @@ fr:
         content_block:
           body: Contenu
           name: Nom
+          names:
+            top_links: Liens du haut
+            footer: Pied de page
+            subnavigation_left: Navigation principale gauche
+            subnavigation_right: Navigation principale droite
       images:
         index:
           title: Images personnalisées
@@ -1337,6 +1321,7 @@ fr:
           status_draft: Brouillon
           status_published: Publié
           title: Titre
+          slug: Slug
     homepage:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
@@ -1365,3 +1350,6 @@ fr:
         submit_header: Sauvegarder l'entête
         card_title: Modifier l'encart
         submit_card: Sauvegarder l'encart
+    translations:
+      remove_language: Retirer la langue
+      add_language: Ajouter une langue
