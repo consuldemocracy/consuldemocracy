@@ -1,1 +1,5 @@
 fi:
+  documents:
+    actions:
+      destroy:
+        notice: Asiakirja poistettu onnistuneesti.
