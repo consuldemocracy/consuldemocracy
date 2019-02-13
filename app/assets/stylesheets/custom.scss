@@ -524,6 +524,13 @@ table {
   }
 }
 
+.locale-form {
+
+  .locale-switcher {
+    background: #1a1a1a;
+  }
+}
+
 @import 'motion-ui/motion-ui';
 @include foundation-orbit;
 @include motion-ui-transitions;
