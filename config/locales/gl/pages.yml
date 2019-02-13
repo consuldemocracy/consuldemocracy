@@ -1,7 +1,7 @@
 gl:
   pages:
     conditions:
-      title: Termos e condicións de uso
+      title: Condicións de uso
       subtitle: AVISO LEGAL DAS CONDICIÓNS DE USO, PRIVACIDADE E PROTECCIÓN DOS DATOS DE CARÁCTER PERSOAL DO PORTAL DE GOBERNO ABERTO
       description: Páxina de información sobre as condicións de uso, privacidade e protección de datos de carácter persoal.
     help:
@@ -9,7 +9,7 @@ gl:
       guide: "Esta guía explica para que serven e como funcionan cada unha das seccións de %{org}."
       menu:
         debates: "Debates"
-        proposals: "Propostas"
+        proposals: "Propostas cidadás"
         budgets: "Orzamentos participativos"
         polls: "Votacións"
         other: "Outra información de interese"
@@ -23,7 +23,7 @@ gl:
         image_alt: "Botóns para avaliar os debates"
         figcaption: 'Botones "estou de acordo" e "non estou de acordo" para avaliar os debates.'
       proposals:
-        title: "Propostas"
+        title: "Propostas cidadás"
         description: "Na sección %{link} podes formular propostas para que o Concello as leve a cabo. As propostas obteñen apoios e se alcanzan abondos sométense a votación cidadá. As propostas aprobadas nestas votacións cidadás son asumidas polo Concello e lévanse a cabo."
         link: "propostas cidadás"
         image_alt: "Botón para apoiar unha proposta"
@@ -113,7 +113,7 @@ gl:
               page_column: Debates
             - 
               key_column: 2
-              page_column: Propostas
+              page_column: Propostas cidadás
             - 
               key_column: 3
               page_column: Votos
@@ -185,9 +185,9 @@ gl:
       privacy: Política de privacidade
     verify:
       code: Código que recibiches na túa carta
-      email: Correo electrónico
+      email: O teu correo electrónico
       info: 'Para verificares a túa conta, introduce os datos de acceso:'
       info_code: 'Agora escribe o código que recibiches na carta:'
-      password: Contrasinal
+      password: Contrasinal que empregarás para acceder a este sitio web
       submit: Verificar a miña conta
       title: Verifica a túa conta
