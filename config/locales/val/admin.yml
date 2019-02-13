@@ -334,9 +334,11 @@ val:
         notice: Estat de la proposta esborrat correctament
     progress_bars:
       index:
+        title: "Barres de progrés"
         table_id: "ID"
         table_kind: "Tipus"
         table_title: "Títol"
+        table_percentage: "Progrés actual"
     comments:
       index:
         filter: Filtre
@@ -899,7 +901,7 @@ val:
         create: "Crear votació"
         name: "Nom"
         dates: "Dates"
-        start_date: "Data d'inici"
+        start_date: "Data d'apertura"
         closing_date: "Data de tancament"
         geozone_restricted: "Restringida als districtes"
       new:
@@ -1435,8 +1437,12 @@ val:
           see_cards: Vore Targetes
         cards:
           cards_title: targetes
+          create_card: Crear targeta
+          no_cards: No hi ha targetes.
           title: Títol
           description: Descripció
+          link_text: Text de l'enllaç
+          link_url: URL de l'enllaç
     homepage:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
