@@ -17,6 +17,7 @@ val:
         table_assigned_investments_valuation_open: Propostes d'inversió asignades en avaluació
         table_actions: Accions
         evaluate: Avaluar
+        no_budgets: "No hi ha pressupostos"
     budget_investments:
       index:
         headings_filter_all: Totes les partides
