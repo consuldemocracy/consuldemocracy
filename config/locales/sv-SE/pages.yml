@@ -1,5 +1,7 @@
 sv:
   pages:
+    conditions:
+      title: användarvillkoren
     help:
       title: "%{org} är en plattform för medborgardeltagande"
       guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
@@ -54,6 +56,42 @@ sv:
         how_to_use: "Använd %{org_name} i din stad"
       titles:
         how_to_use: Använd det i din kommun
+    privacy:
+      title: sekretesspolicyn
+    accessibility:
+      title: Tillgänglighet
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Debatter
+            - 
+              key_column: 2
+              page_column: Förslag
+            - 
+              key_column: 3
+              page_column: Röster
+            - 
+              page_column: Medborgarbudgetar
+            - 
+        browser_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
     titles:
       accessibility: Tillgänglighet
       conditions: Användarvillkor
