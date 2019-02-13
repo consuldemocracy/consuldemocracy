@@ -28,6 +28,9 @@ ru:
       - October
       - November
       - December
+  errors:
+    messages:
+      model_invalid: "Ошибка проверки: %{errors}"
   number:
     human:
       format:
