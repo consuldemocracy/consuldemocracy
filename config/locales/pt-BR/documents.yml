@@ -7,6 +7,7 @@ pt-BR:
       title_placeholder: Adicionar um título descritivo para o documento
       attachment_label: Escolher documento
       delete_button: Excluir documento
+      cancel_button: Cancelar
       note: "Você pode carregar até um máximo de %{max_documents_allowed} documentos dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB por arquivo."
       add_new_document: Adicionar novo documento
     actions:
@@ -20,4 +21,4 @@ pt-BR:
     errors:
       messages:
         in_between: deve estar entre %{min} e %{max}
-        wrong_content_type: '%{content_type} tipo de conteúdo não coincide com qualquer um dos tipos de conteúdo aceitos %{accepted_content_types}'
+        wrong_content_type: tipo de conteúdo %{content_type} não coincide com qualquer um dos tipos de conteúdo aceitos %{accepted_content_types}
