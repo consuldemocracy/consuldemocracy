@@ -46,8 +46,8 @@ val:
       updated: "Has actualitzat el teu compte correctament."
     sessions:
       signed_in: "Has iniciat sessió correctament."
-      signed_out: "Has tancat la sessió correctament."
-      already_signed_out: "Has tancat la sesió correctament."
+      signed_out: "Has tancat la sesió correctament."
+      already_signed_out: "Has tancat la sessió correctament."
     unlocks:
       send_instructions: "Rebràs un correu electrònic en uns minuts amb instruccions sobre com desbloquejar el teu compte."
       send_paranoid_instructions: "Si el teu compte existeix, rebràs un correu electrònic en uns minuts amb instruccions sobre com desbloquejar el teu compte."
