@@ -24,7 +24,7 @@ nl:
       change_user: Wijzig gebruiker
       document_number_label: 'Document nummer:'
       document_type_label: 'Document soort:'
-      email_label: 'Email:'
+      email_label: 'E-mail:'
       identified_label: 'Geïdentificeerd als:'
       username_label: 'Gebruikersnaam:'
     check: Kies bestand
@@ -45,7 +45,7 @@ nl:
       title: Gebruikersbeheer
       under_age: "Je hebt niet de vereiste leeftijd om je account te verifiëren."
       verify: Verifieer
-    email_label: Email
+    email_label: E-mail
     date_of_birth: Geboortedatum
     email_verifications:
       already_verified: Dit gebruikersaccount is al geverifieerd.
@@ -59,7 +59,7 @@ nl:
       introduce_email: 'Voer de e-mail in die wordt gebruikt voor het account:'
       send_email: Verstuur verificatie-e-mail
     menu:
-      create_proposal: Doe voorstel
+      create_proposal: Maak voorstel
       print_proposals: Voorstellen afdrukken
       support_proposals: Steun voorstellen
       create_spending_proposal: Maak een begrotingsvoorstel
@@ -89,14 +89,14 @@ nl:
       print:
         print_button: Afdrukken
       index:
-        title: Steun voorstellen
+        title: Support proposals
     budgets:
-      create_new_investment: Nieuw begrotingsvoorstel maken
+      create_new_investment: Maak budgetinvestering
       print_investments: Druk begrotinginvestering af
       support_investments: Steun budgetinvestering
-      table_name: Naam
-      table_phase: Fase
-      table_actions: Acties
+      table_name: Name
+      table_phase: Phase
+      table_actions: Activiteiten
       no_budgets: Er zijn geen actieve participatieve budgetten.
     budget_investments:
       alert:
@@ -108,8 +108,8 @@ nl:
       print:
         print_button: Afdrukken
       search_results:
-        one: " bevat de term '%{search_term}'"
-        other: " bevat de term '%{search_term}'"
+        one: " bevat de term'%{search_term}'"
+        other: " bevat de term'%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Gebruiker is niet geverifieerd
@@ -120,8 +120,8 @@ nl:
       print:
         print_button: Afdrukken
       search_results:
-        one: " bevat de term '%{search_term}'"
-        other: " bevat de term '%{search_term}'"
+        one: " bevat de term'%{search_term}'"
+        other: " bevat de term'%{search_term}'"
     sessions:
       signed_out: Met succes afgemeld.
       signed_out_managed_user: De sessie van de gebruiker met succes afgemeld.
