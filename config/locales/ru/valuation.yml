@@ -4,16 +4,16 @@ ru:
       title: Оценка
     menu:
       title: Оценка
-      budgets: Совместные бюджеты
+      budgets: Партисипаторные бюджеты
       spending_proposals: Отправка предложений
     budgets:
       index:
-        title: Совместные бюджеты
+        title: Партисипаторные бюджеты
         filters:
           current: Открытые
           finished: Оконченные
         table_name: Имя
-        table_phase: Фаза
+        table_phase: Этап
         table_assigned_investments_valuation_open: Назначенные проекты инвестирования с открытой оценкой
         table_actions: Действия
         evaluate: Оценить
@@ -25,29 +25,24 @@ ru:
           valuating: Производится оценка
           valuation_finished: Оценка окончена
         assigned_to: "Назначено %{valuator}"
-        title: Проекты инвестирования
+        title: Инновационные проекты
         edit: Редактировать пакет документов
-        valuators_assigned:
-          one: Назначенный оценщик
-          other: "%{count} оценщиков назначено"
         no_valuators_assigned: Оценщики не назначены
-        table_id: ID
         table_title: Название
-        table_heading_name: Имя заголовка
+        table_heading_name: Название раздела
         table_actions: Действия
         no_investments: "Нет проектов инвестирования."
       show:
         back: Назад
-        title: Проект инвестирования
+        title: Инвестиционный проект
         info: Об авторе
         by: Отправил(а)
         sent: Дата отправки
-        heading: Заголовок
+        heading: Раздел
         dossier: Пакет документов
         edit_dossier: Редактировать пакет документов
-        price: Стоимость
+        price: Цена
         price_first_year: Стоимость в течение первого года
-        currency: "€"
         feasibility: Выполнимость
         feasible: Выполнимо
         unfeasible: Не выполнимо
@@ -61,7 +56,7 @@ ru:
         dossier: Пакет документов
         price_html: "Стоимость (%{currency})"
         price_first_year_html: "Стоимость во время первого года (%{currency}) <small>(не обязательно, данные не публичные)</small>"
-        price_explanation_html: Разъяснение стоимости
+        price_explanation_html: Описание цены
         feasibility: Выполнимость
         feasible: Выполнимо
         unfeasible: Не выполнимо
@@ -87,7 +82,7 @@ ru:
         edit: Редактировать
       show:
         back: Назад
-        heading: Проект инвестирования
+        heading: Инвестиционный проект
         info: Об авторе
         association_name: Ассоциация
         by: Отправил(а)
@@ -95,9 +90,8 @@ ru:
         geozone: Охват
         dossier: Пакет документов
         edit_dossier: Редактировать пакет документов
-        price: Стоимость
+        price: Цена
         price_first_year: Стоимость в первый год
-        currency: "€"
         feasibility: Выполнимость
         feasible: Выполнимо
         not_feasible: Не выполнимо
@@ -112,8 +106,7 @@ ru:
         dossier: Пакет документов
         price_html: "Стоимость (%{currency})"
         price_first_year_html: "Стоимость в первый год (%{currency})"
-        currency: "€"
-        price_explanation_html: Разъяснение стоимости
+        price_explanation_html: Описание цены
         feasibility: Выполнимость
         feasible: Выполнимо
         not_feasible: Не выполнимо
