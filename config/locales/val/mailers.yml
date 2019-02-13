@@ -74,6 +74,6 @@ val:
       sincerely: "Atentament"
     budget_investment_unselected:
       subject: "La teua proposta d'inversió '%{code}' no ha sigut seleccionada"
-      hi: "Benvollgut/da usuari/a,"
+      hi: "Estimat usuari,"
       thanks: "Gràcies de nou per la teua participació."
       sincerely: "Atentament"
