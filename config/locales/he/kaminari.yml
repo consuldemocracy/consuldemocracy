@@ -1,1 +1,12 @@
 he:
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: מציג <b>%{first}&nbsp;-&nbsp;%{last}</b> מתוך<b>%{total}</b> %{entry_name}
+  views:
+    pagination:
+      current: את/ה נמצא/ת בדף
+      first: לראשון
+      last: לאחרון
+      next: הבא
+      previous: הקודם
