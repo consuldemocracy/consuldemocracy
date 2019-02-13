@@ -13,7 +13,7 @@ de:
         budgets: "Bürgerhaushalte"
         polls: "Umfragen"
         other: "Weitere interessante Informationen"
-        processes: "Gesetzgebungsverfahren"
+        processes: "Beteiligungsverfahren"
       debates:
         title: "Diskussionen"
         description: "Im %{link}-Abschnitt können Sie Ihre Meinung zu Anliegen in Ihrer Stadt äußern und mit anderen Menschen teilen. Zudem ist es ein Bereich, in dem Ideen generiert werden können, die durch andere Abschnitte der %{org} zu Handlungen des Stadtrates führen."
@@ -29,11 +29,11 @@ de:
         image_alt: "Klicken Sie hier um den Vorschlag zu unterstützen"
         figcaption_html: 'Button zur "Unterstützung" eines Vorschlags.'
       budgets:
-        title: "Bürgerhaushalt"
+        title: "partizipative Haushaltsmittel"
         description: "Der %{link}-Abschnitt hilft Personen eine direkte Entscheidung zu treffen, für was das kommunale Budget ausgegeben werden soll."
         link: "Bürgerhaushalte"
         image_alt: "Verschiedene Phasen eines partizipativen Haushalts"
-        figcaption_html: '"Unterstützungs"- und "Wahlphasen" kommunaler Budgets.'
+        figcaption_html: '"Unterstützungs-" und "Abstimmungs-"Phasen des partizipativen Haushaltes.'
       polls:
         title: "Umfragen"
         description: "Der %{link}-Abschnitt wird aktiviert, wann immer ein Antrag 1% an Unterstützung erreicht und zur Abstimmung übergeht, oder wenn der Stadtrat ein Problem zur Abstimmung vorlegt."
@@ -163,5 +163,5 @@ de:
       info: 'Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:'
       info_code: 'Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:'
       password: Passwort
-      submit: Mein Benutzerkonto verifizieren
+      submit: Mein Konto verifizieren
       title: Verifizieren Sie Ihr Benutzerkonto
