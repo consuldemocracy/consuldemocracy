@@ -1,1 +1,18 @@
 ru:
+  management:
+    account:
+      edit:
+        password:
+          password: Пароль
+    document_type_label: Тип документа
+    email_label: Электронный адрес
+    date_of_birth: Дата рождения
+    budgets:
+      table_name: Имя
+      table_phase: Этап
+    budget_investments:
+      create: Создать бюджетную инвестицию
+    spending_proposals:
+      filters:
+        unfeasible: Неосуществимые инвестиционные проекты
+    username_label: Имя пользователя
