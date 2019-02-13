@@ -409,6 +409,7 @@ zh-TW:
       flag: 此建議已被一些用戶標記為不適當。
       login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
       notifications_tab: 通知
+      milestones_tab: 里程碑
       retired_warning: "作者認為此建議不應再獲得到支持。"
       retired_warning_link_to_explanation: 投票前請閱讀其說明。
       retired: 建議已被作者撤回
