@@ -59,6 +59,7 @@ pl:
       section_footer:
         title: Pomoc z budżetem partycypacyjnym
         description: Przy pomocy budżetów partycypacyjnych obywatele decydują, którym projektom przeznaczona jest część budżetu gminnego.
+      milestones: Kamienie milowe
     investments:
       form:
         tag_category_label: "Kategorie"
@@ -79,6 +80,11 @@ pl:
           button: Szukaj
           placeholder: Przeszukaj projekty inwestycyjne...
           title: Szukaj
+        search_results_html:
+          one: " zawierające termin <strong>%{search_term}</strong>"
+          few: " zawierające termin <strong>%{search_term}</strong>"
+          many: " zawierające termin <strong>'%{search_term}'</strong>"
+          other: " zawierające termin <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Moje głosowanie
           voted_info: Możesz %{link} w każdej chwili aż do zamknięcia tej fazy. Nie ma potrzeby wydawania wszystkich dostępnych pieniędzy.
@@ -89,7 +95,7 @@ pl:
           zero: Nie zagłosowałeś na żaden z projektów inwestycyjnych w tej grupie.
           verified_only: "By stworzyć nową inwestycję budżetową %{verify}."
           verify_account: "zweryfikuj swoje konto"
-          create: "Utwórz nowy projekt"
+          create: "Utwórz inwestycję budżetową"
           not_logged_in: "By stworzyć nową inwestycję budżetową musisz %{sign_in} lub %{sign_up}."
           sign_in: "zaloguj się"
           sign_up: "zarejestruj się"
@@ -127,6 +133,10 @@ pl:
         support_title: Wesprzyj ten projekt
         supports:
           zero: Brak wsparcia
+          one: 1 popierający
+          few: "%{count} popierających"
+          many: "%{count} popierających"
+          other: "%{count} popierających"
         give_support: Wsparcie
       header:
         check_ballot: Sprawdź moje głosowanie
@@ -151,6 +161,7 @@ pl:
       heading: "Wyniki budżetu partycypacyjnego"
       heading_selection_title: "Przez powiat"
       spending_proposal: Tytuł wniosku
+      ballot_lines_count: Głosów
       hide_discarded_link: Ukryj odrzucone
       show_all_link: Pokaż wszystkie
       price: Koszt
@@ -161,6 +172,9 @@ pl:
       investment_proyects: Lista wszystkich projektów inwestycyjnych
       unfeasible_investment_proyects: Lista wszystkich niewykonalnych projektów inwestycyjnych
       not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania
+    executions:
+      link: "Kamienie milowe"
+      heading_selection_title: "Przez powiat"
     phases:
       errors:
         dates_range_invalid: "Data rozpoczęcia nie może być taka sama lub późniejsza od daty zakończenia"
