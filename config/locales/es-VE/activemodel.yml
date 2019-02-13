@@ -13,7 +13,7 @@ es-VE:
           postal_code: "Código postal"
         sms:
           phone: "Teléfono"
-          confirmation_code: "Código de confirmación"
+          confirmation_code: "SMS de confirmación"
         email:
           recipient: "Correo electrónico"
       officing/residence:
