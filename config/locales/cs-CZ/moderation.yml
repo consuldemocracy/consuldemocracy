@@ -1,0 +1,19 @@
+cs:
+  moderation:
+    comments:
+      index:
+        headers:
+          comment: Komentář
+          moderate: Moderovat
+        order: Pořadí
+    dashboard:
+      index:
+        title: Moderování
+    debates:
+      index:
+        title: Debaty
+    header:
+      title: Moderování
+    menu:
+      flagged_comments: Komentáře
+      flagged_debates: Debaty
