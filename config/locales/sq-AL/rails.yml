@@ -23,7 +23,7 @@ sq:
       - Nëntor
       - Dhjetor
     day_names:
-      - E diel
+      - E hënë
       - E hënë
       - E martë
       - "\nE mërkurë"
@@ -111,7 +111,7 @@ sq:
       invalid: "\nështë i pavlefshëm"
       less_than: duhet të jetë më i vogel se %{count}
       less_than_or_equal_to: etiketat duhet të jenë më pak ose të barabartë me%{count}
-      model_invalid: "Vlefshmëria dështoi: %{errors}"
+      model_invalid: "Vlefshmëria dështoi:%{errors}"
       not_a_number: nuk është një numër
       not_an_integer: "\nduhet të jetë një numër i plotë"
       odd: duhet të jetë i rastësishëm
