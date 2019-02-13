@@ -14,20 +14,41 @@ describe Budget::Heading do
   end
 
   describe "name" do
+
+    let(:heading) { create(:budget_heading, group: group) }
+
     before do
-      create(:budget_heading, group: group, name: 'object name')
+      heading.update(name_en: "object name")
     end
 
-    it "can be repeatead in other budget's groups" do
-      expect(build(:budget_heading, group: create(:budget_group), name: 'object name')).to be_valid
+    it "can be repeatead in other budgets" do
+      new_budget = create(:budget)
+      new_group = create(:budget_group, budget: new_budget)
+
+      expect(build(:budget_heading, group: new_group, name_en: "object name")).to be_valid
     end
 
     it "must be unique among all budget's groups" do
-      expect(build(:budget_heading, group: create(:budget_group, budget: budget), name: 'object name')).not_to be_valid
+      new_group = create(:budget_group, budget: budget)
+
+      expect(build(:budget_heading, group: new_group, name_en: "object name")).not_to be_valid
     end
 
     it "must be unique among all it's group" do
-      expect(build(:budget_heading, group: group, name: 'object name')).not_to be_valid
+      expect(build(:budget_heading, group: group, name_en: "object name")).not_to be_valid
+    end
+
+    it "can be repeated for the same heading and a different locale" do
+      heading.update(name_fr: "object name")
+
+      expect(heading.translations.last).to be_valid
+    end
+
+    it "must not be repeated for a different heading in any locale" do
+      heading.update(name_en: "English", name_es: "Español")
+
+      expect(build(:budget_heading, group: group, name_en: "English")).not_to be_valid
+      expect(build(:budget_heading, group: group, name_en: "Español")).not_to be_valid
     end
   end
 
@@ -256,6 +277,47 @@ describe Budget::Heading do
 
       expect(heading1.can_be_deleted?).to eq false
       expect(heading2.can_be_deleted?).to eq true
+    end
+  end
+
+  describe ".sort_by_name" do
+
+    it "returns headings sorted by DESC group name first and then ASC heading name" do
+      last_group  = create(:budget_group, name: "Group A")
+      first_group = create(:budget_group, name: "Group B")
+
+      heading4 = create(:budget_heading, group: last_group, name: "Name B")
+      heading3 = create(:budget_heading, group: last_group, name: "Name A")
+      heading2 = create(:budget_heading, group: first_group, name: "Name D")
+      heading1 = create(:budget_heading, group: first_group, name: "Name C")
+
+      sorted_headings = [heading1, heading2, heading3, heading4]
+      expect(Budget::Heading.sort_by_name).to eq sorted_headings
+    end
+
+    it "only sort headings using the group name (DESC) in the current locale" do
+      last_group  = create(:budget_group, name_en: "CCC", name_es: "BBB")
+      first_group = create(:budget_group, name_en: "DDD", name_es: "AAA")
+
+      last_heading = create(:budget_heading, group: last_group, name: "Name")
+      first_heading = create(:budget_heading, group: first_group, name: "Name")
+
+      expect(Budget::Heading.sort_by_name.size).to be 2
+      expect(Budget::Heading.sort_by_name.first).to eq first_heading
+      expect(Budget::Heading.sort_by_name.last).to eq last_heading
+    end
+
+  end
+
+  describe "scope allow_custom_content" do
+    it "returns headings with allow_custom_content order by name" do
+      excluded_heading = create(:budget_heading, name: "Name A")
+      last_heading     = create(:budget_heading, allow_custom_content: true, name: "Name C")
+      first_heading    = create(:budget_heading, allow_custom_content: true, name: "Name B")
+
+      expect(Budget::Heading.allow_custom_content.count).to be 2
+      expect(Budget::Heading.allow_custom_content.first).to eq first_heading
+      expect(Budget::Heading.allow_custom_content.last).to eq last_heading
     end
   end
 

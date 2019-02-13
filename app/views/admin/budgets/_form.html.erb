@@ -1,7 +1,16 @@
-<%= form_for [:admin, @budget] do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @budget %>
+
+<%= translatable_form_for [:admin, @budget] do |f| %>
+
+  <%= render 'shared/errors', resource: @budget %>
 
   <div class="small-12 medium-9 column">
-    <%= f.text_field :name, maxlength: Budget.title_max_length %>
+    <%= f.translatable_fields do |translations_form| %>
+    <%= translations_form.text_field :name,
+        label: t("activerecord.attributes.budget.name"),
+        maxlength: Budget.title_max_length,
+        placeholder: t("activerecord.attributes.budget.name") %>
+    <% end %>
   </div>
 
   <div class="margin-top">
