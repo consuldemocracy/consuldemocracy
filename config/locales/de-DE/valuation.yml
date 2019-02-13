@@ -11,7 +11,7 @@ de:
         title: Bürgerhaushalte
         filters:
           current: Offen
-          finished: Fertig
+          finished: Abgeschlossen
         table_name: Name
         table_phase: Phase
         table_assigned_investments_valuation_open: Zugeordnete Investmentprojekte mit offener Bewertung
@@ -19,13 +19,13 @@ de:
         evaluate: Bewerten
     budget_investments:
       index:
-        headings_filter_all: Alle Überschriften
+        headings_filter_all: Alle Rubriken
         filters:
           valuation_open: Offen
           valuating: In der Bewertungsphase
           valuation_finished: Bewertung beendet
         assigned_to: "%{valuator} zugewiesen"
-        title: Investitionsprojekte
+        title: Ausgabenvorschläge
         edit: Bericht bearbeiten
         valuators_assigned:
           one: '%{valuator} zugewiesen'
@@ -39,7 +39,7 @@ de:
       show:
         back: Zurück
         title: Investitionsprojekt
-        info: Autor Informationen
+        info: Autor info
         by: Gesendet von
         sent: Gesendet um
         heading: Rubrik
@@ -82,17 +82,17 @@ de:
         filters:
           valuation_open: Offen
           valuating: In der Bewertungsphase
-          valuation_finished: Bewertung beendet
+          valuation_finished: Begutachtung abgeschlossen
         title: Investitionsprojekte für den Bürgerhaushalt
         edit: Bearbeiten
       show:
         back: Zurück
-        heading: Investitionsprojekte
-        info: Autor info
+        heading: Investitionsprojekt
+        info: Autor Informationen
         association_name: Verein
         by: Gesendet von
         sent: Gesendet um
-        geozone: Rahmen
+        geozone: Bereich
         dossier: Bericht
         edit_dossier: Bericht bearbeiten
         price: Preis
@@ -109,7 +109,7 @@ de:
         assigned_admin: Zugewiesener Admin
         assigned_valuators: Zugewiesene Gutachter
       edit:
-        dossier: Dossier
+        dossier: Bericht
         price_html: "Preis (%{currency})"
         price_first_year_html: "Kosten im ersten Jahr (%{currency})"
         currency: "€"
