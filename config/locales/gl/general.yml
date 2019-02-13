@@ -32,7 +32,7 @@ gl:
       user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
       user_permission_verify_info: "* Só para persoas empadroadas."
       user_permission_votes: Participar nas votacións finais*
-      username_label: Nome de usuario
+      username_label: Nome de usuario/a
       verified_account: Conta verificada
       verify_my_account: Verificar a miña conta
   application:
@@ -67,7 +67,7 @@ gl:
       most_commented: Máis comentados
     select_order: Ordenar por
     show:
-      return_to_commentable: 'Volver a '
+      return_to_commentable: 'Volver a'
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
@@ -120,7 +120,7 @@ gl:
       search_form:
         button: Buscar
         placeholder: Buscar debates...
-        title: Buscar
+        title: Procurar
       search_results_html:
         one: " contén o termo <strong>'%{search_term}'</strong>"
         other: " contén o termo <strong>'%{search_term}'</strong>"
@@ -149,7 +149,7 @@ gl:
       recommendations_title: Recomendacións para crear un debate
       start_new: Comezar un debate
     show:
-      author_deleted: Usuario eliminado
+      author_deleted: Usuario/a borrado/a
       comments:
         zero: Ningún comentario
         one: 1 comentario
@@ -180,7 +180,7 @@ gl:
     proposal: a proposta
     proposal_notification: "a notificación"
     spending_proposal: Proposta de investimento
-    budget/investment: a proposta de investimento
+    budget/investment: Investimento
     budget/heading: a partida orzamentaria
     poll/shift: Quenda
     poll/question/answer: Resposta
@@ -252,7 +252,7 @@ gl:
     notification:
       action:
         comments_on:
-          one: Hai un comentario novo en
+          one: Hai un novo comentario en
           other: Hai %{count} comentarios novos en
         proposal_notification:
           one: Hai unha nova notificación en
@@ -361,9 +361,9 @@ gl:
         done: Realizadas
         other: Outras
       search_form:
-        button: Buscar
+        button: Procurar
         placeholder: Buscar propostas...
-        title: Buscar
+        title: Procurar
       search_results_html:
         one: " contén o termo <strong>'%{search_term}'</strong>"
         other: " contén o termo <strong>'%{search_term}'</strong>"
@@ -550,7 +550,7 @@ gl:
       title: 'Busca avanzada'
       to: 'Ata'
     author_info:
-      author_deleted: Usuario eliminado
+      author_deleted: Usuario/a borrado/a
     back: Volver
     check: Seleccionar
     check_all: Todo
@@ -574,7 +574,7 @@ gl:
     hide: Ocultar
     print:
       print_button: Imprimir esta información
-    search: Buscar
+    search: Procurar
     show: Mostrar
     suggest:
       debate:
@@ -594,7 +594,7 @@ gl:
           one: "Existe unha proposta co termo '%{query}', podes participar nela en vez de abrir unha nova."
           other: "Existen propostas co termo '%{query}', podes participar nelas en vez de abrir unha nova."
         message: "Estás vendo %{limit} de %{count} propostas que conteñen o termo '%{query}'"
-        see_all: "Ver todas"
+        see_all: "Ver todos"
     tags_cloud:
       tags: Tendencias
       districts: "Zonas"
@@ -645,9 +645,9 @@ gl:
       unfeasible: Propostas de investimento non viables
       by_geozone: "Propostas de investimento con ámbito: %{geozone}"
       search_form:
-        button: Buscar
+        button: Procurar
         placeholder: Propostas de investimento...
-        title: Buscar
+        title: Procurar
       search_results:
         one: " que contén '%{search_term}'"
         other: " que contén '%{search_term}'"
@@ -681,7 +681,7 @@ gl:
     index:
       visits: Visitas
       debates: Debates
-      proposals: Propostas
+      proposals: Propostas cidadás
       comments: Comentarios
       proposal_votes: Votos en propostas
       debate_votes: Votos en debates
@@ -753,7 +753,7 @@ gl:
     signin: Entrar
     signup: Rexístrate
     supports: Apoios
-    unauthenticated: Precisas %{signin} ou %{signup} para continuares.
+    unauthenticated: Debes %{signin} ou %{signup} para continuares.
     verified_only: As propostas de investimento só poden ser apoiadas por usuarios verificados, %{verify_account}.
     verify_account: verificar a túa conta
     spending_proposals:
