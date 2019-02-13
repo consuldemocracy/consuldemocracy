@@ -1,1 +1,125 @@
 ast:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Corréu electrónicu
+        submit: Reenviar instrucciones
+        title: Reenviar instrucciones de confirmación
+      show:
+        instructions_html: Vamos proceder a confirmar la cuenta col email <b>%{email}</b>
+        new_password_confirmation_label: Repite la contraseña otra vegada
+        new_password_label: Nueva contraseña d'accesu
+        please_set_password: Po favor introduz la to contraseña pa la to cuenta (permitirate facer login col email d'enriba)
+        submit: Confirmar
+        title: Confirmar la mio cuenta
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmar la mio cuenta
+        text: 'Pues confirmar la to cuenta corréu lleutrónicu n''esti enllace:'
+        title: Bienveníu/a
+        welcome: Bienveníu/a
+      reset_password_instructions:
+        change_link: Camudar la mío contraseña
+        hello: Hola
+        ignore_text: Si nun lo solicitaste, pues ignorar esti corréu.
+        info_text: La to contraseña nun camudará mentantu nun accedas al enllace y la modifiques.
+        text: 'Recibimos una solicitú pa camudar la to contraseña, pues facelo nel siguiente enllace:'
+        title: Camuda la to clave
+      unlock_instructions:
+        hello: Hola
+        info_text: La to cuenta fue pesllá por un excesivu númberu de intentos fallíos d'alta.
+        instructions_text: 'Vete a esti enllace pa despesllar la to cuenta:'
+        title: La to cuenta fue pesllá
+        unlock_link: Despesllar la mio cuenta
+    menu:
+      login_items:
+        login: Entamar sesión
+        logout: Colar
+        signup: Rexistrase
+    organizations:
+      registrations:
+        new:
+          email_label: Corréu electrónicu
+          organization_name_label: Nome d'organización
+          password_confirmation_label: Repite la contraseña anterior
+          password_label: Contraseña que utilizarás para acceder a este sitio web
+          phone_number_label: Númberu de teléfonu
+          responsible_name_label: Nome y apellíos de la persona responsable del coleutivu
+          responsible_name_note: Será la persona representante de la asociación/coleutivu nel nome del que se presenten les propuestes
+          submit: Rexistrase
+          title: Rexistrase como organización o coleutivu
+        success:
+          back_to_index: Entendío; volver a la páxina principal
+          instructions_3_html: Una vez confirmao, pues entamar a participar como coleutivu no verificáu.
+          title: Rexistru de organización o coleutivu
+    passwords:
+      edit:
+        change_submit: Camudar la mío contraseña
+        password_confirmation_label: Confimar contraseña nueva
+        password_label: Nueva clave
+        title: Camuda la to clave
+      new:
+        email_label: Corréu electrónicu
+        send_submit: Enviar instrucciones
+        title: '¿Escaeciste la contraseña?'
+    sessions:
+      new:
+        login_label: Corréu electrónicu o nome d'usuariu
+        password_label: Contraseña que utilizarás para acceder a este sitio web
+        remember_me: Recordarme
+        submit: Entrar
+        title: Entamar sesión
+    shared:
+      links:
+        login: Entrar
+        new_confirmation: '¿No has recibido instrucciones para confirmar tu cuenta?'
+        new_password: '¿Olvidaste tu contraseña?'
+        new_unlock: '¿No has recibido instrucciones para desbloquear?'
+        signin_with_provider: Entrar con %{provider}
+        signup: '¿No tienes una cuenta? %{signup_link}'
+        signup_link: registrarte
+    unlocks:
+      new:
+        email_label: Corréu electrónicu
+        submit: Reenviar instrucciones para desbloquear
+        title: Reenviar instrucciones para desbloquear
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Razón de la baja
+          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella.
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
+          submit: Dame de baxa
+          title: Darme de baja
+        edit:
+          current_password_label: Contraseña actual
+          edit: Editar propuesta
+          email_label: Corréu electrónicu
+          leave_blank: Dejar en blanco si no deseas cambiarla
+          need_current: Necesitamos tu contraseña actual para confirmar los cambios
+          password_confirmation_label: Confimar contraseña nueva
+          password_label: Nueva clave
+          update_submit: Actualizar
+          waiting_for: 'Esperando confirmación de:'
+        new:
+          cancel: Cancelar login
+          email_label: Corréu electrónicu
+          organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
+          organization_signup_link: Regístrate aquí
+          password_confirmation_label: Repite la contraseña anterior
+          password_label: Contraseña que utilizarás para acceder a este sitio web
+          redeemable_code: Tu código de verificación (si has recibido una carta con él)
+          submit: Rexistrase
+          terms: Al registrarte aceptas las %{terms}
+          terms_link: condiciones de uso
+          terms_title: Al registrarte aceptas las condiciones de uso
+          title: Rexistrase
+          username_is_available: Nombre de usuario disponible
+          username_is_not_available: Nombre de usuario ya existente
+          username_label: Nome d'usuariu
+          username_note: Nombre público que aparecerá en tus publicaciones
+        success:
+          back_to_index: Entendío; volver a la páxina principal
+          instructions_1_html: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_2_html: Una vez confirmado, podrás empezar a participar.
+          thank_you_html: Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>.
