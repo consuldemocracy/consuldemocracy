@@ -59,7 +59,7 @@ so:
           hide: Qarsoon
           restore: Socelin
         by: Dhexdhexaad ah
-        content: Mowduuc
+        content: Mawduuc
         filter: Muuji/ Tusiid
         filters:
           all: Dhamaan
@@ -87,7 +87,7 @@ so:
         table_edit_budget: Isbedel
         edit_groups: Wax ka bedel Madaxyada Kooxaha
         edit_budget: Wax ka bedel Misaaniyada
-        no_budgets: "Majiran misaaniyado furaan."
+        no_budgets: "Majiiraan misaniyado."
       create:
         notice: Sameynta Misaaniyada cusub ee ka qaybqadashada waa lugu guleystay!
       update:
@@ -111,6 +111,21 @@ so:
         calculate: Xisaabi kugulestayasha Malgelinta
         calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
         recalculate: Dib uxisaabinta ku guleystaha malgelinta
+    budget_groups:
+      name: "Magac"
+      max_votable_headings: "Tirada ugu badan ee cinwaankeda uu qofku codayn karo"
+      form:
+        edit: "Wax ka bedel kooxda"
+        name: "Mgaca Kooxada"
+        submit: "Bad baadi kooxda"
+    budget_headings:
+      name: "Magac"
+      form:
+        name: "Magaca Ciwaanka"
+        amount: "Tirada"
+        population: "Dadweynaha(Ikhyaar)"
+        population_info: "Miisaaniyadda Meelaynta dadweynaha ayaa loo adeegsadaa ujeedooyinka Istatistikada dhammaadka Miisaaniyadda si ay u muujiyaan mid walba oo ka wakiil ah aag leh dadweynaha boqolkiiba inta codbixinta. Booska waa mid ikhtiyaari ah si aad uga bixi kartid madhan haddii uusan dalban."
+        submit: "Bad baadi ciwaanka"
     budget_phases:
       edit:
         start_date: Tariikhda biloowga
@@ -159,7 +174,7 @@ so:
         no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
         no_valuation_groups: Majiraan koox qimeyayala o loo qondeyey
         feasibility:
-          feasible: "Waa suurtogal%{price}"
+          feasible: "Suurto gal %{price}"
           unfeasible: "An surtgak ahayn"
           undecided: "An go aasan"
         selected: "Ladoortay"
@@ -236,13 +251,15 @@ so:
         table_title: "Ciwaan"
         table_description: "Sharaxaad"
         table_publication_date: "Taariikhda daabacaadda"
-        table_status: Xaladda
+        table_status: Status
         table_actions: "Tilaabooyin"
         delete: "Tirtir hiigsiga/guleeysiga"
         no_milestones: "An lahayn yool qeexaan"
         image: "Sawiir"
         show_image: "Muuji sawir"
         documents: "Dukumentiyo"
+        milestone: Marayan/ Yool
+        new_milestone: Sameynta hiigsiga/guleeysiga
       form:
         admin_statuses: Xaladaha mamulka Malgelinta
         no_statuses_defined: Weli ma jiraan xaalado maalgashi oo la qeexay
@@ -278,6 +295,11 @@ so:
         notice: Siguula ayaa lo Sameyey Xalada Malgashiga
       delete:
         notice: Siguula ayaa lo tiritiray Xalada Malgashiga
+    progress_bars:
+      index:
+        table_id: "Aqoonsi"
+        table_kind: "Noca"
+        table_title: "Ciwaan"
     comments:
       index:
         filter: Sifeeyee
@@ -356,6 +378,7 @@ so:
           summary_placeholder: Soo koobista kooban ee sharaxaadda
           description_placeholder: Ku dar sharaxaad ku saabsan hannaanka
           additional_info_placeholder: Ku dar xog dheeriya oo ad u aragto iney faido ledahay
+          homepage: Sharaxaad
         index:
           create: New process
           delete: Titiriid
@@ -376,15 +399,18 @@ so:
         process:
           title: Geedisocoodka
           comments: Faalo
-          status: Xaladda
+          status: Status
           creation_date: Tarikh Abuurid
           status_open: Furan
           status_closed: Xiraan
           status_planned: Qorsheysaan
         subnav:
-          info: Maclumaad
+          info: Maclumad
+          homepage: Bogga
+          draft_versions: Qoritaan/ Qabya Qorid
           questions: Dood
           proposals: Sojeedino
+          milestones: Kuxiga
       proposals:
         index:
           title: Ciwaan
@@ -443,7 +469,7 @@ so:
           created_at: Abuuray
           comments: Faalo
           final_version: Koobiga kama dabeysta ah
-          status: Xaladda
+          status: Status
       questions:
         create:
           notice: 'Suasha si guula ayaa lo sameyey. <a href="%{link}">Click to visit</a>'
@@ -469,12 +495,12 @@ so:
         index:
           back: Labasho
           title: Su'aalaha la xiriira habkan
-          create: Saame Sual
+          create: Saame sual
           delete: Titiriid
         new:
           back: Labasho
           title: Saame sual cusub
-          submit_button: Saame Sual
+          submit_button: Saame sual
         table:
           title: Ciwaan
           question_options: Doorashooyinka su'aasha
@@ -482,6 +508,9 @@ so:
           comments_count: Tirinta falooyinka
         question_option_fields:
           remove_option: Kaas Ikhyariga
+      milestones:
+        index:
+          title: Kuxiga
     managers:
       index:
         title: Mamule
@@ -498,6 +527,7 @@ so:
       admin: Mamulka Warqada qiimo
       banner: Mamulka xayiraada
       poll_questions: Sualo
+      proposals: Sojeedino
       proposals_topics: Ciwaanka sojedinada
       budgets: Misaaniyadaha kaqayb qadashada
       geozones: MamulDusha sare
@@ -512,7 +542,7 @@ so:
       moderators: Dhexdhexadiyayal
       messaging_users: Isticmaalka farimaha
       newsletters: Wargeesyo
-      admin_notifications: Ogaysiis
+      admin_notifications: Ogaysiisyo
       system_emails: Nidaamka Emaylada
       emails_download: Emaylada Sodejinta
       valuators: Qimeeyayal
@@ -531,7 +561,7 @@ so:
         homepage: Bogga
         pages: Bog gaara
         images: Sawirada Cadada
-        content_blocks: Noocyada gaarka ah ee gaarka ah
+        content_blocks: Xayiraaddaha gaarka ah ee gaarka ah
         information_texts: Qoraallada macluumaadka gaarka ah
         information_texts_menu:
           debates: "Doodo"
@@ -821,6 +851,8 @@ so:
         create: "Saame dorshada"
         name: "Magac"
         dates: "Tariikhaha"
+        start_date: "Tariikhda biloowga"
+        closing_date: "Tarikhada xiritaanka"
         geozone_restricted: "Xayiraadda degmooyinka"
       new:
         title: "Dorashada Cusub"
@@ -847,15 +879,16 @@ so:
     questions:
       index:
         title: "Sualo"
-        create: "Saame Sual"
+        create: "Saame sual"
         no_questions: "Majiraan Suaalo."
         filter_poll: Falanqee sorashada
         select_poll: Xuulo doorshada
         questions_tab: "Sualo"
         successful_proposals_tab: "Soojedin guleysatay"
-        create_question: "Saame Sual"
+        create_question: "Saame sual"
         table_proposal: "Sojeedin"
         table_question: "Sual"
+        table_poll: "Dorasho"
       edit:
         title: "Tafatiir Suasha"
       new:
@@ -1000,6 +1033,21 @@ so:
       search:
         title: Raadinta Ururada
         no_results: Wax Urura lama helin.
+    proposals:
+      index:
+        title: Sojeedino
+        id: Aqoonsi
+        author: Qoraa
+        milestones: Dhib meel loga baxo oo an lahayn dhibato wayn
+    hidden_proposals:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Soojedino qarsoon
+        no_hidden_proposals: Majiraan soojedino qarsoon.
     proposal_notifications:
       index:
         filter: Sifeeyee
@@ -1035,12 +1083,14 @@ so:
       setting: Soobandhigiid / Muqaal
       setting_actions: Tilaabooyin
       setting_name: Dejinta
-      setting_status: Xaladda
+      setting_status: Status
       setting_value: Qimaha
       no_description: "Sharaxaad la'aan"
     shared:
+      true_value: "Haa"
+      false_value: "Maya"
       booths_search:
-        button: Radiin
+        button: Raadin
         placeholder: Raadi labada magacba
       poll_officers_search:
         button: Raadin
@@ -1070,6 +1120,7 @@ so:
       author: Qoraa
       content: Mawduuc
       created_at: Abuuray
+      delete: Titiriid
     spending_proposals:
       index:
         geozone_filter_all: Dhammaan soonaha
@@ -1090,7 +1141,7 @@ so:
         summary_link: "Sookobida Mashaariicda Malelinta"
         valuator_summary_link: "Soo kobida qimeeynta"
         feasibility:
-          feasible: "Suurto gal %{price}"
+          feasible: "Waa suurtogal%{price}"
           not_feasible: "Aan suurtoobi karin"
           undefined: "Aan la garanayn"
       show:
@@ -1321,13 +1372,21 @@ so:
         new:
           title: Sameyso bog cusub
         page:
-          created_at: Saame
+          created_at: Abuuray
           status: Status
           updated_at: La casriyeeyay
           status_draft: Qabyo Qorid
           status_published: Sobandhigaay
           title: Ciwaan
           slug: Laqabso
+          cards_title: Kararka
+        cards:
+          create_card: Kar saame
+          no_cards: Majiraan karar.
+          title: Ciwaan
+          description: Sharaxaad
+          link_text: Qoraalka Xirirka
+          link_url: Isku xirka URL
     homepage:
       title: Bogga
       description: Modhale-ka firfircoon ayaa ka muuqda bogga si isku mid ah halkaan.
