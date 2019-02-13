@@ -7,6 +7,7 @@ fi:
         sign_in: "kirjaudu"
         sign_up: "rekisteröidy"
       sidebar:
+        participate: Osallistu
         new_topic: Luo aihe
       topic:
         edit: Muokkaa aihetta
