@@ -33,7 +33,7 @@ de:
         offices: Bürgerbüros
         send_letter: Schicken Sie mir einen Brief mit dem Code
         title: Glückwunsch!
-        user_permission_info: Mit Ihrem Benutzerkonto können Sie...
+        user_permission_info: Mit Ihrem Konto können Sie...
       update:
         flash:
           success: Code bestätigt. Ihr Benutzerkonto ist nun verifiziert
@@ -50,7 +50,7 @@ de:
         accept_terms_text: Ich stimme den %{terms_url} des Melderegisters zu
         accept_terms_text_title: Ich stimme den Allgemeinen Nutzungsbedingungen des Melderegisters zu
         date_of_birth: Geburtsdatum
-        document_number: Dokumentennummer
+        document_number: Dokumentennummern
         document_number_help_title: Hilfe
         document_number_help_text_html: '<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P'
         document_type:
@@ -96,7 +96,7 @@ de:
     step_2: Bestätigungscode
     step_3: Abschließende Überprüfung
     user_permission_debates: An Diskussion teilnehmen
-    user_permission_proposal: Neuen Vorschlag erstellen
+    user_permission_proposal: Neue Vorschläge erstellen
     user_permission_support_proposal: Vorschläge unterstützen*
     user_permission_votes: An finaler Abstimmung teilnehmen*
     verified_user:
