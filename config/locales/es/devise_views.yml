@@ -33,7 +33,7 @@ es:
         unlock_link: Desbloquear mi cuenta
     menu:
       login_items:
-        login: Entrar
+        login: iniciar sesión
         logout: Salir
         signup: Registrarse
     organizations:
@@ -71,7 +71,7 @@ es:
         password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
-        title: Iniciar sesión
+        title: Entrar
     shared:
       links:
         login: Entrar
@@ -80,7 +80,7 @@ es:
         new_unlock: '¿No has recibido instrucciones para desbloquear?'
         signin_with_provider: Entrar con %{provider}
         signup: '¿No tienes una cuenta? %{signup_link}'
-        signup_link: Regístrate
+        signup_link: registrarte
     unlocks:
       new:
         email_label: Email
@@ -91,7 +91,7 @@ es:
         delete_form:
           erase_reason_label: Razón de la baja
           info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a entrar con ella.
-          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional)
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
           submit: Darme de baja
           title: Darme de baja
         edit:
