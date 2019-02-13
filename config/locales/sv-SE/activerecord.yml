@@ -14,10 +14,10 @@ sv:
         one: "milstolpe"
         other: "milstolpar"
       comment:
-        one: "Kommentar"
+        one: "Kommentera"
         other: "Kommentarer"
       debate:
-        one: "Debatt"
+        one: "Debattera"
         other: "Debatter"
       tag:
         one: "Tagg"
@@ -44,7 +44,7 @@ sv:
         one: "Nyhetsbrev"
         other: "Nyhetsbrev"
       vote:
-        one: "Röst"
+        one: "Rösta"
         other: "Röster"
       organization:
         one: "Organisation"
@@ -78,7 +78,7 @@ sv:
         other: "Förslag"
       legislation/draft_versions:
         one: "Utkastversion"
-        other: "Utkastversioner"
+        other: "Versioner av utkast"
       legislation/questions:
         one: "Fråga"
         other: "Frågor"
@@ -101,8 +101,8 @@ sv:
         one: "Omröstning"
         other: "Omröstningar"
       proposal_notification:
-        one: "Förslagsavisering"
-        other: "Förslagsaviseringar"
+        one: "Avisering om förslag"
+        other: "Aviseringar om förslag"
     attributes:
       budget:
         name: "Namn"
@@ -140,21 +140,21 @@ sv:
         price: "Kostnad"
         population: "Befolkning"
       comment:
-        body: "Kommentar"
+        body: "Kommentera"
         user: "Användare"
       debate:
-        author: "Debattör"
+        author: "Skribent"
         description: "Inlägg"
         terms_of_service: "Användarvillkor"
         title: "Titel"
       proposal:
-        author: "Förslagslämnare"
+        author: "Skribent"
         title: "Titel"
         question: "Fråga"
         description: "Beskrivning"
         terms_of_service: "Användarvillkor"
       user:
-        login: "E-post eller användarnamn"
+        login: "E-postadress eller användarnamn"
         email: "E-post"
         username: "Användarnamn"
         password_confirmation: "Bekräfta lösenord"
@@ -165,7 +165,7 @@ sv:
         official_level: "Tjänstepersonnivå"
         redeemable_code: "Mottagen bekräftelsekod"
       organization:
-        name: "Organisationens namn"
+        name: "Organisationsnamn"
         responsible_name: "Representant för gruppen"
       spending_proposal:
         administrator_id: "Administratör"
@@ -198,12 +198,12 @@ sv:
         document_numbers: "Dokumentnummer"
       site_customization/page:
         content: Innehåll
-        created_at: Skapad den
+        created_at: Skapad
         subtitle: Underrubrik
         slug: URL
         status: Status
         title: Titel
-        updated_at: Uppdaterad den
+        updated_at: Uppdaterad
         more_info_flag: Visa i hjälpsidor
         print_content_flag: Skriv ut innehåll
         locale: Språk
@@ -242,7 +242,7 @@ sv:
         body: Text
         changelog: Ändringar
         status: Status
-        final_version: Slutgiltig version
+        final_version: Slutversion
       legislation/draft_version/translation:
         title: Titel på versionen
         body: Text
@@ -253,7 +253,7 @@ sv:
       legislation/question_option:
         value: Kostnad
       legislation/annotation:
-        text: Kommentar
+        text: Kommentera
       document:
         title: Titel
         attachment: Bilaga
