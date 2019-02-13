@@ -1,1 +1,6 @@
 pl:
+  milestones:
+    index:
+      no_milestones: Nie ma zdefiniowanych wydarzeń
+    show:
+      publication_date: "Opublikowane %{publication_date}"
