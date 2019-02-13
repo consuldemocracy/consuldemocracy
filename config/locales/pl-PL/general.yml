@@ -32,9 +32,9 @@ pl:
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
       user_permission_verify_info: "* Tylko dla użytkowników Census."
       user_permission_votes: Uczestnicz w głosowaniu końcowym
-      username_label: Nazwa użytkownika/użytkowniczki
+      username_label: Nazwa użytkownika
       verified_account: Konto zweryfikowane
-      verify_my_account: Zweryfikuj swoje konto
+      verify_my_account: Zweryfikuj moje konto
   application:
     close: Zamknij
     menu: Menu
@@ -56,6 +56,10 @@ pl:
       user_deleted: Użytkownik usunięty
       votes:
         zero: Brak głosów
+        one: 1 głos
+        few: "%{count} głosów"
+        many: "%{count} głosów"
+        other: "%{count} głosów"
     form:
       comment_as_admin: Skomentuj jako administrator
       comment_as_moderator: Skomentuj jako moderator
@@ -100,7 +104,7 @@ pl:
       debate_text: Początkowy tekst debaty
       debate_title: Tytuł debaty
       tags_instructions: Oznacz tę debatę.
-      tags_label: Tematy
+      tags_label: Tematów
       tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
     index:
       featured_debates: Opisany
@@ -158,6 +162,10 @@ pl:
       author_deleted: Użytkownik usunięty
       comments:
         zero: Brak komentarzy
+        one: 1 komentarz
+        few: "%{count} komentarzy"
+        many: "%{count} komentarzy"
+        other: "%{count} komentarzy"
       comments_title: Komentarze
       edit_debate_link: Edytuj
       flag: Ta debata została oznaczona jako nieodpowiednia przez kilku użytkowników.
@@ -213,7 +221,7 @@ pl:
       open_source: oprogramowanie open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decyduj, jak kształtować miasto, w którym chcesz mieszkać.
-      participation_title: Partycypacja
+      participation_title: Udział
       privacy: Polityka prywatności
     header:
       administration_menu: Administrator
@@ -452,6 +460,7 @@ pl:
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
       login_to_comment: Muszą się %{signin} lub %{signup} by zostawić komentarz.
       notifications_tab: Powiadomienia
+      milestones_tab: Kamienie milowe
       retired_warning: "Autor uważa, że niniejszy wniosek nie powinien otrzymywać więcej poparcia."
       retired_warning_link_to_explanation: Przed głosowaniem przeczytaj wyjaśnienie.
       retired: Wniosek wycofany przez autora
@@ -473,10 +482,10 @@ pl:
       filters:
         current: "Otwórz"
         expired: "Przedawnione"
-      title: "Ankiety"
+      title: "Głosowania"
       participate_button: "Weź udział w tej sondzie"
       participate_button_expired: "Sonda zakończyła się"
-      no_geozone_restricted: "Wszystkie miasta"
+      no_geozone_restricted: "Całe miasto"
       geozone_restricted: "Dzielnice"
       geozone_info: "Mogą brać udział osoby w Census: "
       already_answer: "Brałeś już udział w tej sondzie"
@@ -570,7 +579,7 @@ pl:
       author_deleted: Użytkownik usunięty
     back: Wróć
     check: Wybierz
-    check_all: Wszystko
+    check_all: Wszystkie
     check_none: Żaden
     collective: Zbiorowy
     flag: Oznacz jako nieodpowiednie
@@ -844,7 +853,7 @@ pl:
       user_permission_support_proposal: Popieraj propozycje*
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
       user_permission_verify_info: "* Tylko dla użytkowników Census."
-      user_permission_verify_my_account: Zweryfikuj moje konto
+      user_permission_verify_my_account: Zweryfikuj swoje konto
       user_permission_votes: Uczestnicz w głosowaniu końcowym
   invisible_captcha:
     sentence_for_humans: "Jeśli jesteś człowiekiem, zignoruj to pole"
