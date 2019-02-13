@@ -1,1 +1,34 @@
 ru:
+  pages:
+    help:
+      menu:
+        debates: "Обсуждения проблем"
+        proposals: "Заявки"
+        budgets: "Партисипаторные бюджеты"
+        polls: "Опросы"
+        processes: "Процессы"
+      debates:
+        title: "Обсуждения проблем"
+      proposals:
+        title: "Заявки"
+      polls:
+        title: "Опросы"
+      processes:
+        title: "Процессы"
+    accessibility:
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Обсуждения проблем
+            - 
+              page_column: Заявки
+            - 
+              page_column: Голоса
+            - 
+              page_column: Партисипаторные бюджеты
+            - 
+    verify:
+      email: Электронный адрес
+      password: Пароль
