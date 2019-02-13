@@ -99,7 +99,7 @@ val:
       signature_sheets_description: "Permet afegir desde el panell d'Administració les signatures arreplegades in situ per a Propostes i Projectes d'inversió dels Pressupostos participatius"
       legislation: "Legislació"
       legislation_description: "En els processos participatius, s'ofereix a la ciutadania l'oportunitat de participar en l'elaboració i modificació de normativa que afecta a la ciutat i de donar la seua opinió sobre certes actuacions que es te previst dur a terme"
-      spending_proposals: "Propostes"
+      spending_proposals: "Propostes d'inversió"
       spending_proposals_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
       spending_proposal_features:
         voting_allowed: Votacions de propostes d'inversió - Fase de preselecció
