@@ -698,7 +698,7 @@ so:
       new:
         body_label: Fariin
         direct_messages_bloqued: "Isticmaalahan ayaa go'aansaday inaanu helin farriimo toos ah"
-        submit_button: Fariin dir
+        submit_button: Farri dir
         title: Fariin gara diir%{receiver}
         title_label: Ciwaan
         verified_only: Diir fariin khasa%{verify_account}
