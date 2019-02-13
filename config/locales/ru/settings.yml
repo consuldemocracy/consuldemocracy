@@ -1,1 +1,7 @@
 ru:
+  settings:
+    feature:
+      budgets: "Партисипаторное бюджетирование"
+      proposals: "Заявки"
+      debates: "Обсуждения проблем"
+      polls: "Опросы"
