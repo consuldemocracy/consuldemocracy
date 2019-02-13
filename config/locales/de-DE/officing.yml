@@ -28,7 +28,7 @@ de:
         select_booth: "Wahlkabine auswählen"
         ballots_white: "Völlig leere Stimmzettel"
         ballots_null: "Ungültige Stimmzettel"
-        ballots_total: "Gesamtanzahl der Stimmzettel"
+        ballots_total: "Stimmzettel gesamt"
         submit: "Speichern"
         results_list: "Ihre Ergebnisse"
         see_results: "Ergebnisse anzeigen"
@@ -39,15 +39,15 @@ de:
         table_votes: Stimmen
         table_whites: "Völlig leere Stimmzettel"
         table_nulls: "Ungültige Stimmzettel"
-        table_total: "Gesamtanzahl der Stimmzettel"
+        table_total: "Stimmzettel gesamt"
     residence:
       flash:
         create: "Dokument mit Volkszählung überprüft"
         not_allowed: "Sie haben heute keine Amtswechsel"
       new:
-        title: Dokument bestätigen
+        title: Dokument überprüfen
         document_number: "Dokumentennummer (einschließlich Buchstaben)"
-        submit: Dokument bestätigen
+        submit: Dokument überprüfen
         error_verifying_census: "Die Volkszählung konnte dieses Dokument nicht bestätigen."
         form_errors: verhinderte die Bestätigung dieses Dokumentes
         no_assignments: "Sie haben heute keine Amtswechsel"
