@@ -21,20 +21,20 @@ de:
       title: Neue Antwort auf Ihren Kommentar
     unfeasible_spending_proposal:
       hi: "Liebe*r Benutzer*in,"
-      new_href: "neuer Ausgabenvorschlag"
+      new_href: "neues Investitionsprojekt"
       sincerely: "Mit freundlichen Grüßen"
       sorry: "Entschuldigung für die Unannehmlichkeiten und vielen Dank für Ihre wertvolle Beteiligung."
-      subject: "Ihr Ausgabenvorschlag '%{code}' wurde als undurchführbar markiert"
+      subject: "Ihr Investitionsprojekt %{code} wurde als undurchführbar markiert"
     proposal_notification_digest:
       info: "Hier sind die neuen Benachrichtigungen, die von Autoren, für den Antrag von %{org_name}, den Sie unterstützen, veröffentlicht wurden."
       title: "Antrags-Benachrichtigungen von %{org_name}"
       share: Vorschlag teilen
       comment: Vorschlag kommentieren
-      unsubscribe_account: Mein Benutzerkonto
+      unsubscribe_account: Mein Konto
     direct_message_for_receiver:
       subject: "Sie haben eine neue persönliche Nachricht erhalten"
       reply: Auf %{sender} antworten
-      unsubscribe_account: Mein Benutzerkonto
+      unsubscribe_account: Mein Konto
     user_invite:
       ignore: "Wenn Sie diese Einladung nicht angefordert haben, können Sie diese E-Mail einfach ignorieren."
       thanks: "Vielen Dank."
@@ -55,7 +55,7 @@ de:
       new_href: "neuer Ausgabenvorschlag"
       sincerely: "Mit freundlichen Grüßen"
       sorry: "Entschuldigung für die Unannehmlichkeiten und vielen Dank für Ihre wertvolle Beteiligung."
-      subject: "Ihr Investitionsprojekt %{code} wurde als undurchführbar markiert"
+      subject: "Ihr Ausgabenvorschlag '%{code}' wurde als undurchführbar markiert"
     budget_investment_selected:
       subject: "Ihr Investitionsprojekt %{code} wurde ausgewählt"
       hi: "Liebe*r Benutzer*in,"
