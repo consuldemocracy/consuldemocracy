@@ -5,10 +5,13 @@ fi:
     help:
       menu:
         proposals: "Ehdotukset"
+        polls: "Kyselyt"
         other: "Muita kiinnostavia tietoja"
         processes: "Prosessit"
       proposals:
         title: "Ehdotukset"
+      polls:
+        title: "Kyselyt"
       processes:
         title: "Prosessit"
         link: "prosessit"
