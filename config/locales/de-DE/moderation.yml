@@ -52,22 +52,22 @@ de:
       users: Benutzer blockieren
     proposals:
       index:
-        block_authors: Autor blockieren
+        block_authors: Autoren blockieren
         confirm: Sind Sie sich sicher?
         filter: Filter
         filters:
           all: Alle
           pending_flag_review: Ausstehende Bewertung
-          with_ignored_flag: Als gesehen markieren
+          with_ignored_flag: Als gelesen markieren
         headers:
           moderate: Moderieren
           proposal: Vorschlag
         hide_proposals: Vorschläge ausblenden
-        ignore_flags: als gesehen markieren
-        order: sortieren nach
+        ignore_flags: Als gelesen markieren
+        order: Sortieren nach
         orders:
-          created_at: neuestes
-          flags: am meisten markiert
+          created_at: Neuste
+          flags: Am meisten markiert
         title: Vorschläge
     budget_investments:
       index:
@@ -104,7 +104,7 @@ de:
         ignore_flags: Als gesehen markieren
         order: Sortieren nach
         orders:
-          created_at: Neuste
+          created_at: neuestes
           moderated: Moderiert
         title: Antrags-Benachrichtigungen
     users:

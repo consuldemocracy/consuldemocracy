@@ -11,9 +11,9 @@ pt-BR:
         title: Orçamentos participativos
         filters:
           current: Aberto
-          finished: Finalizado
+          finished: Terminados
         table_name: Nome
-        table_phase: Fase
+        table_phase: Estágio
         table_assigned_investments_valuation_open: Projetos de investimento atribuídos com avaliação aberta
         table_actions: Ações
         evaluate: Avaliar
@@ -26,7 +26,7 @@ pt-BR:
           valuation_finished: Avaliação terminada
         assigned_to: "Atribuído a %{valuator}"
         title: Projetos de investimento
-        edit: Editar dossiê
+        edit: Editar relatório
         valuators_assigned:
           one: Avaliador designado
           other: "%{count} Avaliador designado"
@@ -43,30 +43,30 @@ pt-BR:
         by: Enviado por
         sent: Enviado em
         heading: Título
-        dossier: Dossiê
-        edit_dossier: Editar dossiê
+        dossier: Relatório
+        edit_dossier: Editar relatório
         price: Preço
         price_first_year: Custo durante o primeiro ano
         currency: "€"
         feasibility: Viabilidade
         feasible: Viável
         unfeasible: Inviável
-        undefined: Indefinido
+        undefined: Não definido
         valuation_finished: Avaliação terminada
         duration: Prazo
         responsibles: Responsáveis
         assigned_admin: Administrador designado
         assigned_valuators: Avaliadores designados
       edit:
-        dossier: Dossiê
+        dossier: Relatório
         price_html: "Preço (%{currency})"
         price_first_year_html: "Custo durante o primeiro ano (%{currency})<small>(opcional, dados não públicos)</small>"
-        price_explanation_html: Explicação do preço
+        price_explanation_html: Explanação do preço
         feasibility: Viabilidade
         feasible: Viável
         unfeasible: Não viável
         undefined_feasible: Pendente
-        feasible_explanation_html: Explicação de viabilidade
+        feasible_explanation_html: Informe de viabilidade
         valuation_finished: Avaliação terminada
         valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Se você fizer isso, o relatório não poderá mais ser modificado."
         not_feasible_alert: "Um e-mail será enviado imediatamente para o autor do projeto com o relatório de inviabilidade."
@@ -83,7 +83,7 @@ pt-BR:
           valuation_open: Aberto
           valuating: Em avaliação
           valuation_finished: Avaliação terminada
-        title: Projetos de investimento para orçamento participativo
+        title: Projectos de investimento para orçamento participativo
         edit: Editar
       show:
         back: Voltar
@@ -93,15 +93,15 @@ pt-BR:
         by: Enviado por
         sent: Enviado em
         geozone: Âmbito
-        dossier: Dossiê
-        edit_dossier: Editar dossiê
+        dossier: Relatório
+        edit_dossier: Editar relatório
         price: Preço
         price_first_year: Custo durante o primeiro ano
         currency: "€"
         feasibility: Viabilidade
         feasible: Viável
         not_feasible: Não viável
-        undefined: Indefinido
+        undefined: Não definido
         valuation_finished: Avaliação terminada
         time_scope: Prazo
         internal_comments: Comentários internos
@@ -109,16 +109,16 @@ pt-BR:
         assigned_admin: Administrador designado
         assigned_valuators: Avaliadores designados
       edit:
-        dossier: Dossiê
+        dossier: Relatório
         price_html: "Preço (%{currency})"
         price_first_year_html: "Custo durante o primeiro ano (%{currency})"
         currency: "€"
-        price_explanation_html: Explicação do preço
+        price_explanation_html: Explanação do preço
         feasibility: Viabilidade
         feasible: Viável
         not_feasible: Não viável
         undefined_feasible: Pendente
-        feasible_explanation_html: Informe de viabilidade
+        feasible_explanation_html: Explicação de viabilidade
         valuation_finished: Avaliação terminada
         time_scope_html: Prazo
         internal_comments_html: Comentários internos

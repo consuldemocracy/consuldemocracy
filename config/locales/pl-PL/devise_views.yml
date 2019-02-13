@@ -50,10 +50,7 @@ pl:
           title: Zarejestruj się jako organizacja lub kolektyw
         success:
           back_to_index: Rozumiem; wróć do strony głównej
-          instructions_1_html: "<b>Wkrótce skontaktujemy się z Tobą</b>, aby zweryfikować, czy rzeczywiście reprezentujesz ten kolektyw."
-          instructions_2_html: Podczas gdy Twój <b>e-mail jest przeglądany</b>, wysłaliśmy Ci <b>link do potwierdzenia Twojego konta</b>.
           instructions_3_html: Po potwierdzeniu możesz zacząć uczestniczyć jako niezweryfikowany kolektyw.
-          thank_you_html: Dziękujemy za zarejestrowanie Twojego kolektywu na stronie. W tym momencie <b>oczekuje weryfikacji</b>.
           title: Rejestracja organizacji / kolektywu
     passwords:
       edit:
@@ -126,4 +123,3 @@ pl:
           instructions_1_html: <b>Sprawdź swoją skrzynkę e-mail</b> - wysłaliśmy Ci <b>link do potwierdzenia Twojego konta</b>.
           instructions_2_html: Po potwierdzeniu możesz rozpocząć udział.
           thank_you_html: Dziękujemy za rejestrację na stronie. Teraz musisz <b>potwierdzić swój adres e-mail</b>.
-          title: Zmień swój adres e-mail

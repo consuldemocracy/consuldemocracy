@@ -30,7 +30,7 @@ sq:
     check: Kontrrollo dokumentin
     dashboard:
       index:
-        title: Menaxhimi
+        title: Drejtuesit
         info: Këtu ju mund të menaxhoni përdoruesit përmes të gjitha veprimeve të renditura në menunë e majtë.
     document_number: Numri i dokumentit
     document_type_label: Tipi i dokumentit
@@ -69,7 +69,7 @@ sq:
       print_budget_investments: Printo investimin buxhetor
       support_budget_investments: Mbështet investimin buxhetor
       users: Menaxhimi i përdoruesve
-      user_invites: Dërgo ftesat
+      user_invites: Dërgo ftesa
       select_user: Zgjidh përdoruesin
     permissions:
       create_proposals: Krijo propozimin
@@ -84,7 +84,7 @@ sq:
     print_info: Printoni këtë informacion
     proposals:
       alert:
-        unverified_user: Përdoruesi nuk verifikohet
+        unverified_user: Përdoruesi nuk është verifikuar
       create_proposal: Krijo propozim
       print:
         print_button: Printo
@@ -100,7 +100,7 @@ sq:
       no_budgets: Nuk ka buxhet pjesmarrës aktiv.
     budget_investments:
       alert:
-        unverified_user: Përdoruesi nuk është verifikuar
+        unverified_user: Përdoruesi nuk verifikohet
       create: Krijo një investim buxhetor
       filters:
         heading: Koncept
@@ -108,20 +108,20 @@ sq:
       print:
         print_button: Printo
       search_results:
-        one: "që përmbajnë termin %{search_term}"
-        other: "që përmbajnë termin %{search_term}"
+        one: "që përmbajnë termin '%{search_term}'"
+        other: "që përmbajnë termin '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Përdoruesi nuk është verifikuar
+        unverified_user: Përdoruesi nuk verifikohet
       create: Krijo propozimin e shpenzimeve
       filters:
-        unfeasible: Projektet investuese të papërshtatshme 
+        unfeasible: Investimet e papranueshme
         by_geozone: "Projektet e investimeve me qëllim: %{geozone}"
       print:
         print_button: Printo
       search_results:
-        one: "që përmbajnë termin %{search_term}"
-        other: "që përmbajnë termin %{search_term}"
+        one: "që përmbajnë termin '%{search_term}'"
+        other: "që përmbajnë termin '%{search_term}'"
     sessions:
       signed_out: U c'kycët me sukses.
       signed_out_managed_user: Sesioni i përdoruesit u  c'kyc me sukses.
@@ -143,8 +143,8 @@ sq:
       new:
         label: Emailet
         info: "Shkruani emailet të ndara me presje (',')"
-        submit: Dërgo ftesa
-        title: Dërgo ftesa
+        submit: Dërgo ftesat
+        title: Dërgo ftesat
       create:
         success_html: <strong>%{count}ftesat</strong>janë dërguar.
         title: Dërgo ftesat

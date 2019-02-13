@@ -21,7 +21,7 @@ pl:
         edit: Edytuj baner
         delete: Usuń baner
         filters:
-          all: Wszystko
+          all: Wszystkie
           with_active: Aktywny
           with_inactive: Nieaktywny
         preview: Podgląd
@@ -33,10 +33,10 @@ pl:
         post_ended_at: Post zakończył się o
         sections_label: Sekcje, w których się pojawią
         sections:
-          homepage: Strona domowa
+          homepage: Strona główna
           debates: Debaty
-          proposals: Propozycje
-          budgets: Budżet partycypacyjny
+          proposals: Wnioski
+          budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
         background_color: Kolor tła
         font_color: Kolor czcionki
@@ -64,11 +64,11 @@ pl:
         content: Zawartość
         filter: Pokaż
         filters:
-          all: Wszystko
+          all: Wszystkie
           on_comments: Komentarze
           on_debates: Debaty
-          on_proposals: Propozycje
-          on_users: Użytkownicy
+          on_proposals: Wnioski
+          on_users: Użytkowników
           on_system_emails: E-maile systemowe
         title: Aktywność moderatora
         type: Typ
@@ -80,15 +80,16 @@ pl:
         filter: Filtr
         filters:
           open: Otwórz
-          finished: Zakończony
+          finished: Zakończone
         budget_investments: Zarządzanie projektami
         table_name: Nazwa
         table_phase: Etap
-        table_investments: Inwestycje
+        table_investments: Inwestycji
         table_edit_groups: Grupy nagłówków
         table_edit_budget: Edytuj
         edit_groups: Edytuj grupy nagłówków
         edit_budget: Edytuj budżet
+        no_budgets: "Brak budżetów."
       create:
         notice: Nowy budżet partycypacyjny został pomyślnie utworzony!
       update:
@@ -108,36 +109,25 @@ pl:
         unable_notice: Nie możesz zniszczyć budżetu, który wiąże powiązane inwestycje
       new:
         title: Nowy budżet partycypacyjny
-      show:
-        groups:
-          one: 1 Grupa nagłówków budżetowych
-          few: "%{count} Grupy nagłówków budżetu"
-          many: "%{count} Grupy nagłówków budżetu"
-          other: "%{count} Grupy nagłówków budżetu"
-      form:
-        group: Nazwa grupy
-        no_groups: Nie utworzono jeszcze żadnych grup. Każdy użytkownik będzie mógł głosować tylko w jednym nagłówku na grupę.
-        add_group: Dodaj nową grupę
-        create_group: Utwórz grupę
-        edit_group: Edytuj grupę
-        submit: Zapisz grupę
-        heading: Nazwa nagłówka
-        add_heading: Dodaj nagłówek
-        amount: Ilość
-        population: "Populacja (opcjonalnie)"
-        population_help_text: "Dane te są wykorzystywane wyłącznie do obliczania statystyk uczestnictwa"
-        save_heading: Zapisz nagłówek
-        no_heading: Ta grupa nie ma przypisanego nagłówka.
-        table_heading: Nagłówek
-        table_amount: Ilość
-        table_population: Populacja
-        population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
-        max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
-        current_of_max_headings: "%{current} z %{max}"
       winners:
         calculate: Oblicz Inwestycje Zwycięzców
         calculated: Liczenie zwycięzców może potrwać minutę.
         recalculate: Przelicz inwestycje na zwycięzcę
+    budget_groups:
+      name: "Nazwa"
+      max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
+      form:
+        edit: "Edytuj grupę"
+        name: "Nazwa grupy"
+        submit: "Zapisz grupę"
+    budget_headings:
+      name: "Nazwa"
+      form:
+        name: "Nazwa nagłówka"
+        amount: "Ilość"
+        population: "Populacja (opcjonalnie)"
+        population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
+        submit: "Zapisz nagłówek"
     budget_phases:
       edit:
         start_date: Data rozpoczęcia
@@ -187,7 +177,7 @@ pl:
         no_valuation_groups: Nie przypisano żadnych grup wyceny
         feasibility:
           feasible: "Wykonalne (%{price})"
-          unfeasible: "Niemożliwy do realizacji"
+          unfeasible: "Niewykonalne"
           undecided: "Niezdecydowany"
         selected: "Wybrany"
         select: "Wybierz"
@@ -307,6 +297,11 @@ pl:
         notice: Stan inwestycji został pomyślnie utworzony
       delete:
         notice: Status inwestycji został pomyślnie usunięty
+    progress_bars:
+      index:
+        table_id: "Numer ID"
+        table_kind: "Typ"
+        table_title: "Tytuł"
     comments:
       index:
         filter: Filtr
@@ -341,7 +336,6 @@ pl:
           without_confirmed_hide: Oczekujące
         title: Ukryci użytkownicy
         user: Użytkownik
-        no_hidden_users: Nie ma żadnych ukrytych użytkowników.
       show:
         email: 'E-mail:'
         hidden_at: 'Ukryte w:'
@@ -385,6 +379,7 @@ pl:
           summary_placeholder: Krótkie podsumowanie opisu
           description_placeholder: Dodaj opis procesu
           additional_info_placeholder: Dodaj dodatkowe informacje, które uważasz za przydatne
+          homepage: Opis
         index:
           create: Nowy proces
           delete: Usuń
@@ -396,6 +391,11 @@ pl:
           back: Wstecz
           title: Stwórz nowy zbiorowy proces prawodawczy
           submit_button: Proces tworzenia
+        proposals:
+          select_order: Sortuj według
+          orders:
+            title: Tytuł
+            supports: Wsparcie
         process:
           title: Proces
           comments: Komentarze
@@ -406,12 +406,18 @@ pl:
           status_planned: Zaplanowany
         subnav:
           info: Informacje
+          homepage: Strona główna
           draft_versions: Opracowanie
           questions: Debata
           proposals: Wnioski
+          milestones: Obserwowane
       proposals:
         index:
+          title: Tytuł
           back: Wstecz
+          supports: Wsparcie
+          select: Wybierz
+          selected: Wybrany
         form:
           custom_categories: Kategorie
           custom_categories_description: Kategorie, które użytkownicy mogą wybrać, tworząc propozycję.
@@ -446,8 +452,8 @@ pl:
           changelog_placeholder: Dodaj najważniejsze zmiany z poprzedniej wersji
           body_placeholder: Zapisz projekt tekstu
         index:
-          title: Wersje robocze
-          create: Wróć
+          title: Wersji roboczych
+          create: Utwórz wersję
           delete: Usuń
           preview: Podgląd
         new:
@@ -501,6 +507,9 @@ pl:
           comments_count: Liczba komentarzy
         question_option_fields:
           remove_option: Usuń opcję
+      milestones:
+        index:
+          title: Obserwowane
     managers:
       index:
         title: Kierownicy
@@ -517,6 +526,7 @@ pl:
       admin: Menu admina
       banner: Zarządzaj banerami
       poll_questions: Pytania
+      proposals: Wnioski
       proposals_topics: Tematy propozycji
       budgets: Budżety partycypacyjne
       geozones: Zarządzaj geostrefami
@@ -571,10 +581,10 @@ pl:
       title_site_customization: Zawartość witryny
       title_booths: Kabiny wyborcze
       legislation: Grupowy proces prawodawczy
-      users: Użytkownicy
+      users: Użytkowników
     administrators:
       index:
-        title: Administrator
+        title: Administratorów
         name: Nazwisko
         email: E-mail
         no_administrators: Brak administratorów.
@@ -836,6 +846,8 @@ pl:
         create: "Utwórz głosowanie"
         name: "Nazwa"
         dates: "Daty"
+        start_date: "Data Rozpoczęcia"
+        closing_date: "Data Zakończenia"
         geozone_restricted: "Ograniczone do dzielnic"
       new:
         title: "Nowe głosowanie"
@@ -871,6 +883,7 @@ pl:
         create_question: "Utwórz pytanie"
         table_proposal: "Wniosek"
         table_question: "Pytanie"
+        table_poll: "Głosowanie"
       edit:
         title: "Edytuj Pytanie"
       new:
@@ -973,7 +986,7 @@ pl:
       index:
         title: Urzędnicy
         no_officials: Brak urzędników.
-        name: Nombre
+        name: Nazwa
         official_position: Oficjalne stanowisko
         official_level: Poziom
       level_0: Nieurzędowe
@@ -1012,14 +1025,20 @@ pl:
       search:
         title: Szukaj organizacji
         no_results: Nie znaleziono organizacji.
+    proposals:
+      index:
+        title: Wnioski
+        id: Numer ID
+        author: Autor
+        milestones: Kamienie milowe
     hidden_proposals:
       index:
         filter: Filtr
         filters:
-          all: Wszystko
+          all: Wszystkie
           with_confirmed_hide: Potwierdzone
           without_confirmed_hide: Oczekujące
-        title: Ukryte wnioski
+        title: Ukryte propozycje
         no_hidden_proposals: Brak ukrytych wniosków.
     proposal_notifications:
       index:
@@ -1060,6 +1079,8 @@ pl:
       setting_value: Wartość
       no_description: "Brak opisu"
     shared:
+      true_value: "Tak"
+      false_value: "Nie"
       booths_search:
         button: Szukaj
         placeholder: Wyszukaj stoisko według nazwy
@@ -1091,6 +1112,7 @@ pl:
       author: Autor
       content: Zawartość
       created_at: Utworzony w
+      delete: Usuń
     spending_proposals:
       index:
         geozone_filter_all: Wszystkie strefy
@@ -1273,9 +1295,7 @@ pl:
     site_customization:
       content_blocks:
         information: Informacje dotyczące bloków zawartości
-        about: Możesz tworzyć bloki zawartości HTML, które będą wstawiane do nagłówka lub stopki twojego CONSUL.
-        top_links_html: "<strong>Bloki nagłówków (top_links)</strong> to bloki linków, które muszą mieć ten format:"
-        footer_html: "<strong>Bloki stopek</strong> mogą mieć dowolny format i można ich używać do wstawiania kodu JavaScript, CSS lub niestandardowego kodu HTML."
+        about: "Możesz tworzyć bloki zawartości HTML, które będą wstawiane do nagłówka lub stopki twojego CONSUL."
         no_blocks: "Nie ma bloków treści."
         create:
           notice: Zawartość bloku została pomyślnie utworzona
@@ -1346,15 +1366,21 @@ pl:
           status_draft: Projekt
           status_published: Opublikowany
           title: Tytuł
+          slug: Ścieżka
+          cards_title: Karty
+        cards:
+          create_card: Utwórz kartę
+          title: Tytuł
+          description: Opis
+          link_text: Tekst łącza
+          link_url: Łącze URL
     homepage:
       title: Strona główna
       description: Aktywne moduły pojawiają się na stronie głównej w tej samej kolejności co tutaj.
       header_title: Nagłówek
-      no_header: Nie ma nagłówka.
       create_header: Utwórz nagłówek
       cards_title: Karty
       create_card: Utwórz kartę
-      no_cards: Nie ma kart.
       cards:
         title: Tytuł
         description: Opis

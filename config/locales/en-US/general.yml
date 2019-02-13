@@ -1,1 +1,38 @@
 en-US:
+  comments:
+    comment:
+      admin: Administrator(in),Verwaltungsleiter(in)
+      moderator: Moderator,Gesprächsleiter
+  comments_helper:
+    comment_link: Kommentar
+    comments_title: Kommentare
+  debates:
+    index:
+      title: Debatten
+      section_header:
+        title: Debatten
+    show:
+      comments_title: Kommentare
+  form:
+    debate: Debatte
+    budget/investment: Investition
+  layouts:
+    header:
+      debates: Debatten
+  proposals:
+    show:
+      comments_tab: Kommentare
+  polls:
+    show:
+      comments_tab: Kommentare
+  stats:
+    index:
+      debates: Debatten
+      comments: Kommentare
+  users:
+    show:
+      debates: Debatten
+      comments: Kommentare
+  related_content:
+    content_title:
+      debate: "Debatte"

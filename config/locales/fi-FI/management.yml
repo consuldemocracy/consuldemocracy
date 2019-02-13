@@ -1,1 +1,33 @@
 fi:
+  management:
+    account:
+      edit:
+        back: Takaisin
+        password:
+          password: Salasana
+    account_info:
+      email_label: 'Sähköposti:'
+    document_type_label: Asiakirjatyyppi
+    email_label: Sähköposti
+    date_of_birth: Syntymäaika
+    menu:
+      create_proposal: Luo ehdotus
+      support_proposals: Tue ehdotuksia
+    permissions:
+      support_proposals: Tue ehdotuksia
+    proposals:
+      create_proposal: Luo ehdotus
+      index:
+        title: Tue ehdotuksia
+    budgets:
+      table_name: Nimi
+      table_phase: Vaihe
+      table_actions: Toiminnot
+    username_label: Käyttäjätunnus
+    users:
+      erased_notice: Käyttäjä poistettu onnistuneesti.
+      erase_account_link: Poista käyttäjä
+      erase_submit: Poista tili
+    user_invites:
+      new:
+        label: Sähköpostit

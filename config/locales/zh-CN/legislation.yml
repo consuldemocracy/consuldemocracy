@@ -78,10 +78,12 @@ zh-CN:
         see_latest_comments_title: 对此进程的评论
       shared:
         key_dates: 关键日期
+        homepage: 主页
         debate_dates: 辩论
         draft_publication_date: 发表草稿
         allegations_dates: 评论
         result_publication_date: 发表最终结果
+        milestones_date: 跟随着
         proposals_dates: 提议
     questions:
       comments:

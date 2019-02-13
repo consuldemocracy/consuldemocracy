@@ -242,13 +242,6 @@ val:
         no_notifications: "No tens noves notificacions"
     admin:
       watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
-  legacy_legislation:
-    help:
-      alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
-      text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
-      text_sign_in: iniciar sessió
-      text_sign_up: registrar-te
-      title: Com puc comentar aquest document?
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
@@ -321,6 +314,7 @@ val:
       geozone: Ámbit d'actuació
       proposal_external_url: Enllaç a documentació adicional
       proposal_question: Pregunta de la proposta
+      proposal_question_example_html: "Ha de ser resumida en una pregunta amb respostes Sí o No"
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
@@ -385,6 +379,7 @@ val:
         help: Ajuda sobre les propostes
       section_footer:
         title: Ajuda sobre les propostes
+        description: Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decideixen directament com volen que siga la seua ciutat, després d'aconseguir els avals suficients i de sotmetres a votació ciutadana.
     new:
       form:
         submit_button: Crear proposta
@@ -422,6 +417,7 @@ val:
       supports_necessary: "%{number} avals necessaris"
       total_percent: 100%
       archived: "Aquesta proposta ha sigut arxivada i ja no pot recollir avals."
+      successful: "Aquesta proposta ha asolit els avals necesaris."
     show:
       author_deleted: Usuari eliminat
       code: 'Codi de la proposta:'
@@ -434,13 +430,13 @@ val:
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       notifications_tab: Notificacions
-      milestones_tab: Seguiments
+      milestones_tab: Fites
       retired_warning: "L'autor d'esta proposta considera que ja no ha de seguir recollint avals."
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
       retired: Proposta retirada per l'autor
       share: Compartir
       send_notification: Enviar notificació
-      no_notifications: "Esta proposta no te notificacions."
+      no_notifications: "Aquesta proposta no te notificacions."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentació adicional"
       title_video_url: "Vídeo extern"
@@ -448,6 +444,8 @@ val:
     update:
       form:
         submit_button: Guardar canvis
+    share:
+      message: "He avalat la proposta %{summary} en %{org}. Si t'interessa, avala tu també!"
   polls:
     all: "Totes"
     no_dates: "sense data asignada"
@@ -464,12 +462,16 @@ val:
       geozone_restricted: "Districtes"
       geozone_info: "Poden participar les persones empadronades en: "
       already_answer: "Ja has participat en esta votació"
+      not_logged_in: "Has d'iniciar sessió o registrarte per a participar"
+      unverified: "Si us plau verifica el teu compte per a participar"
+      cant_answer: "Esta votació no està disponible en la teua zona"
       section_header:
         icon_alt: Icona de Votacions
         title: Votacions
         help: Ajuda sobre les votacions
       section_footer:
         title: Ajuda sobre les votacions
+        description: Les votacions ciutadanes son un mecanisme de participació pel que la ciutadania amb dret a vot pot prendre decisions de forma directa
       no_polls: "No hi ha votacions obertes."
     show:
       already_voted_in_booth: "Ya has participat en esta votació en urnes presencials, no pots tornar a participar."
@@ -519,7 +521,7 @@ val:
       title_label: "Títol"
       body_label: "Missatge"
       submit_button: "Enviar missatge"
-      info_about_receivers_html: "Este missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.<br>El missatge no s'enviarà inmediatament, els usuaris rebran periòdicament un correu electrònic amb totes les notificacions de propostes."
+      info_about_receivers_html: "Este missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.<br>Els missatges no s'envien inmediatament, els usuaris rebran periòdicament un correu electrònic amb totes les notificacions de propostes."
       proposal_page: "la pàgina de la proposta"
     show:
       back: "Tornar a la meua activitat"

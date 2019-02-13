@@ -1,0 +1,321 @@
+cs:
+  activerecord:
+    models:
+      budget/investment:
+        one: "Investice"
+        few: "Investice"
+        many: "Investice"
+        other: "Investice"
+      comment:
+        one: "Komentář"
+        few: "Komentáře"
+        many: "Komentáře"
+        other: "Komentáře"
+      debate:
+        one: "Debata"
+        few: "Debaty"
+        many: "Debaty"
+        other: "Debaty"
+      user:
+        one: "User"
+        few: "Uživatelé"
+        many: "Uživatelé"
+        other: "Uživatelé"
+      legislation/process:
+        one: "Proces"
+        few: "Procesy"
+        many: "Procesy"
+        other: "Procesy"
+      legislation/proposal:
+        one: "Návrhy"
+        few: "Návrhy"
+        many: "Návrhy"
+        other: "Návrhy"
+      legislation/questions:
+        one: "Question"
+        few: "Otázky"
+        many: "Otázky"
+        other: "Otázky"
+      documents:
+        one: "Dokument"
+        few: "Dokumenty"
+        many: "Dokumenty"
+        other: "Dokumenty"
+      topic:
+        one: "Téma"
+        few: "Obsah"
+        many: "Obsah"
+        other: "Obsah"
+      poll:
+        one: "Průzkum"
+        few: "Průzkum"
+        many: "Průzkum"
+        other: "Průzkum"
+    attributes:
+      budget:
+        name: "Name"
+        description_accepting: "Popis během fáze přijímání"
+        description_reviewing: "Popis během fáze revize"
+        description_selecting: "Popis během fáze výběru"
+        description_valuating: "Popis během fáze vyhodnocování"
+        description_balloting: "Popis během fáze hlasování"
+        description_reviewing_ballots: "Popis během fáze přezkoumání hlasování"
+        description_finished: "Popis při dokončení rozpočtu"
+        phase: "Fáze"
+        currency_symbol: "Měna"
+      budget/investment:
+        heading_id: "Heading"
+        title: "Předmět"
+        description: "Description"
+        external_url: "Odkaz na další dokumenty"
+        administrator_id: "Administrátor"
+        location: "Lokalita (volitelné)"
+        organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
+        image: "Proposal názorný obrázek"
+        image_title: "Nadpis obrázku"
+      milestone:
+        title: "Předmět"
+      milestone/status:
+        name: "Název"
+      progress_bar:
+        kind: "Typ"
+        title: "Předmět"
+      budget/heading:
+        name: "Název záhlaví"
+        price: "Cena"
+        population: "Population"
+      comment:
+        body: "Komentář"
+        user: "User"
+      debate:
+        author: "Autor"
+        description: "Opinion"
+        terms_of_service: "Terms of service"
+        title: "Předmět"
+      proposal:
+        author: "Autor"
+        title: "Předmět"
+        question: "Otázka"
+        description: "Description"
+        terms_of_service: "Terms of service"
+      user:
+        login: "Email nebo uživatelské jméno"
+        email: "Email"
+        username: "Uživatelské jméno"
+        password_confirmation: "Potvrzení hesla"
+        password: "Heslo"
+        current_password: "Současné heslo"
+        phone_number: "Telefon"
+        official_position: "Official position"
+        official_level: "Official level"
+        redeemable_code: "Verification code received via email"
+      organization:
+        name: "Název organizace"
+        responsible_name: "Osoba zodpovědná za organizaci či skupinu"
+      spending_proposal:
+        administrator_id: "Administrátor"
+        association_name: "Association name"
+        description: "Description"
+        external_url: "Odkaz na další dokumenty"
+        geozone_id: "Vymezení oblasti města"
+        title: "Předmět"
+      poll:
+        name: "Název"
+        starts_at: "Start Date"
+        ends_at: "Closing Date"
+        geozone_restricted: "Restricted by geozone"
+        summary: "Souhrn"
+        description: "Description"
+      poll/translation:
+        name: "Název"
+        summary: "Souhrn"
+        description: "Description"
+      poll/question:
+        title: "Question"
+        summary: "Souhrn"
+        description: "Description"
+        external_url: "Odkaz na další dokumenty"
+      poll/question/translation:
+        title: "Question"
+      signature_sheet:
+        signable_type: "Signable type"
+        signable_id: "Signable ID"
+        document_numbers: "Documents numbers"
+      site_customization/page:
+        content: Obsah
+        created_at: Vytvořeno dne
+        subtitle: Titulek
+        slug: Slug
+        status: Status
+        title: Předmět
+        updated_at: Aktualizováno dne
+        more_info_flag: Show in help page
+        print_content_flag: Print content button
+        locale: Language
+      site_customization/page/translation:
+        title: Předmět
+        subtitle: Podtitul
+        content: Obsah
+      site_customization/image:
+        name: Název
+        image: Obrázek
+      site_customization/content_block:
+        name: Název
+        locale: locale
+        body: Body
+      legislation/process:
+        title: Název procesu
+        summary: Souhrn
+        description: Description
+        additional_info: Additional info
+        start_date: Počáteční datum
+        end_date: Konečné datum
+        debate_start_date: Debate start date
+        debate_end_date: Debate end date
+        draft_publication_date: Datum návrhu publikace
+        allegations_start_date: Allegations start date
+        allegations_end_date: Allegations end date
+        result_publication_date: Publikace konečného výsledku
+      legislation/process/translation:
+        title: Název procesu
+        summary: Souhrn
+        description: Description
+        additional_info: Additional info
+        milestones_summary: Souhrn
+      legislation/draft_version:
+        title: Název pracovní verze
+        body: Text
+        changelog: Změny
+        status: Status
+        final_version: Konečná verze
+      legislation/draft_version/translation:
+        title: Název pracovní verze
+        body: Text
+        changelog: Changes
+      legislation/question:
+        title: Předmět
+        question_options: Options
+      legislation/question_option:
+        value: Value
+      legislation/annotation:
+        text: Komentář
+      document:
+        title: Předmět
+        attachment: Attachment
+      image:
+        title: Předmět
+        attachment: Attachment
+      poll/question/answer:
+        title: Odpověď
+        description: Description
+      poll/question/answer/translation:
+        title: Answer
+        description: Description
+      poll/question/answer/video:
+        title: Předmět
+        url: Externí video
+      newsletter:
+        segment_recipient: Příjemci
+        subject: Subject
+        from: Od
+        body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Předmět
+        link: Odkaz
+        body: Text
+      admin_notification/translation:
+        title: Předmět
+        body: Text
+      widget/card:
+        label: Label (optional)
+        title: Předmět
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      widget/card/translation:
+        label: Label (optional)
+        title: Předmět
+        description: Description
+        link_text: Link text
+      widget/feed:
+        limit: Number of items
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "This user already has a password"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "You have reached the maximum number of private messages per day"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Šířka obrázku musí být minimálně %{required_min_width} bodů"
+              min_image_height: "Výška obrázku musí být minimálně %{required_min_height} bodů"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        map_location:
+          attributes:
+            map:
+              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Document not in census"
+              has_voted: "User has already voted"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: must be on or after the start date
+            debate_end_date:
+              invalid_date_range: must be on or after the debate start date
+            allegations_end_date:
+              invalid_date_range: must be on or after the allegations start date
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "You have to wait a minium of %{interval} days between notifications"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Not verified by Census'
+              already_voted: 'Already voted this proposal'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "must be letters, numbers, _ and -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'You cannot comment a valuation'
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"

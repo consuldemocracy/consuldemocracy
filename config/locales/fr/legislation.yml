@@ -14,7 +14,7 @@ fr:
         publish_comment: Publier un commentaire
       form:
         phase_not_open: Cette phase n’est pas ouverte
-        login_to_comment: Il est nécessaire de %{signin} ou de %{signup} pour laisser un commentaire.
+        login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
         signin: Se connecter
         signup: S'inscrire
       index:
@@ -52,14 +52,16 @@ fr:
         more_info: Plus d'information et de contexte
       proposals:
         empty_proposals: Il n’y a pas de propositions
+        filters:
+          winners: Sélectionné
       debate:
         empty_questions: Il n'y a pas de question
         participate: Participer au débat
       index:
-        filter: Filtrer
+        filter: Filtre
         filters:
           open: Processus ouverts
-          past: Passés
+          past: Passé
         no_open_processes: Il n'y a pas de processus ouverts
         no_past_processes: Il n'y a pas de processus passés
         section_header:
@@ -78,10 +80,12 @@ fr:
         see_latest_comments_title: Commentaires sur le processus
       shared:
         key_dates: Dates-clés
+        homepage: Page d’accueil
         debate_dates: Débat
         draft_publication_date: Brouillon de publication
         allegations_dates: Commentaires
         result_publication_date: Publication du résultat final
+        milestones_date: Suivent
         proposals_dates: Propositions
     questions:
       comments:
@@ -92,7 +96,7 @@ fr:
           leave_comment: Laisser une réponse
       question:
         comments:
-          zero: Aucun commentaire
+          zero: Aucun commentaires
           one: "%{count} commentaire"
           other: "%{count} commentaires"
         debate: Débat

@@ -16,7 +16,6 @@ fa:
       create_first_community_topic:
         first_theme_not_logged_in: هیچ موضوعی در دسترس نیست، مشارکت در ایجاد اولین.
         first_theme: ایجاد اولین موضوع جامعه
-        sub_first_theme: "برای ایجاد تم شما باید %{sign_in} درجه %{sign_up}."
         sign_in: "ورود به برنامه"
         sign_up: "ثبت نام"
       tab:
@@ -57,4 +56,4 @@ fa:
         recommendation_three: از این فضا لذت ببرید، صدایی که آن را پر می کند، آن هم شما هستید.
   topics:
     show:
-      login_to_comment: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
+      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .

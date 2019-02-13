@@ -23,7 +23,7 @@ val:
         error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
       new:
         title: "%{poll} - Afegir resultats"
-        not_allowed: "No tens permís per a introduir resultats"
+        not_allowed: "No tens permís per a introduir resultats en aquesta votació"
         booth: "Urna"
         date: "Data"
         select_booth: "Eligeix urna"

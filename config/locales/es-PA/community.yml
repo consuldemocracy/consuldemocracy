@@ -16,16 +16,15 @@ es-PA:
       create_first_community_topic:
         first_theme_not_logged_in: No hay ningún tema disponible, participa creando el primero.
         first_theme: Crea el primer tema de la comunidad
-        sub_first_theme: "Para crear un tema debes %{sign_in} o %{sign_up}."
         sign_in: "iniciar sesión"
         sign_up: "registrarte"
       tab:
         participants: Participantes
       sidebar:
-        participate: Participa
-        new_topic: Crea un tema
+        participate: Empieza a participar
+        new_topic: Crear tema
       topic:
-        edit: Editar tema
+        edit: Guardar cambios
         destroy: Eliminar tema
         comments:
           zero: Sin comentarios
@@ -40,11 +39,11 @@ es-PA:
         topic_title: Título
         topic_text: Texto inicial
         new:
-          submit_button: Crear tema
+          submit_button: Crea un tema
         edit:
-          submit_button: Guardar cambios
+          submit_button: Editar tema
         create:
-          submit_button: Crear tema
+          submit_button: Crea un tema
         update:
           submit_button: Actualizar tema
       show:

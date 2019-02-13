@@ -4,7 +4,7 @@ es-EC:
       expire_password: "Contraseña caducada"
       change_required: "Tu contraseña ha caducado"
       change_password: "Cambia tu contraseña"
-      new_password: "Nueva contraseña"
+      new_password: "Contraseña nueva"
       updated: "Contraseña actualizada con éxito"
     confirmations:
       confirmed: "Tu cuenta ha sido confirmada. Por favor autentifícate con tu red social o tu usuario y contraseña"
@@ -28,7 +28,6 @@ es-EC:
       unlock_instructions:
         subject: "Instrucciones de desbloqueo"
     omniauth_callbacks:
-      failure: "No se te ha podido identificar via %{kind} por el siguiente motivo: \"%{reason}\"."
       success: "Identificado correctamente via %{kind}."
     passwords:
       no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer la contraseña. Si has accedido desde el enlace para restablecer la contraseña, asegúrate de que la URL esté completa."

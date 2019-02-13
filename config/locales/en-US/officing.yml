@@ -1,1 +1,5 @@
 en-US:
+  officing:
+    residence:
+      new:
+        document_number: "Document number (including letters)"

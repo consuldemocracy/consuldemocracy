@@ -3,14 +3,14 @@ pl:
     comments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewien?
+        confirm: Jesteś pewny/a?
         filter: Filtr
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
-          comment: Skomentuj
+          comment: Komentarz
           moderate: Moderuj
         hide_comments: Ukryj komentarze
         ignore_flags: Oznacz jako wyświetlone
@@ -72,7 +72,7 @@ pl:
     budget_investments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewien?
+        confirm: Jesteś pewny/a?
         filter: Filtr
         filters:
           all: Wszystko

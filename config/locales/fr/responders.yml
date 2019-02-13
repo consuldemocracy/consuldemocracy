@@ -25,7 +25,7 @@ fr:
         poll: "Vote mis-à-jour avec succès."
         poll_booth: "Urne mise-à-jour avec succès."
         proposal: "Proposition mise-à-jour avec succès."
-        spending_proposal: "Proposition de dépense mise-à-jour avec succès."
+        spending_proposal: "Budget d'investissement mis-à-jour avec succès."
         budget_investment: "Budget d'investissement mis-à-jour avec succès."
         topic: "Sujet mis à jour avec succès."
         valuator_group: "Groupe d’évaluation créé avec succès"

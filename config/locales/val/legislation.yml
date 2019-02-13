@@ -52,6 +52,9 @@ val:
         more_info: Més informació i context
       proposals:
         empty_proposals: No hi ha propostes
+        filters:
+          random: Aleatòries
+          winners: Seleccionades
       debate:
         empty_questions: No hi ha preguntes
         participate: Realitza les teues aportacions al debat previ participant en els seguents temes
@@ -78,9 +81,12 @@ val:
         see_latest_comments_title: Aportar a aquest procés
       shared:
         key_dates: Dates clau
+        homepage: Pàgina principal
         debate_dates: Debat
         draft_publication_date: Data de publicació de l'esborrany
+        allegations_dates: Comentaris
         result_publication_date: Publicació de resultats
+        milestones_date: Seguint
         proposals_dates: Propostes
     questions:
       comments:

@@ -44,8 +44,9 @@ fa:
       proposals: "طرح های پیشنهادی"
       debates: "مباحثه"
       polls: "نظر سنجی ها"
-      signature_sheets: "محاسبه برنده سرمایه گذاری"
+      signature_sheets: "ورق امضا"
       legislation: "قانون"
+      spending_proposals: "هزینه های طرح ها"
       user:
         recommendations: "توصیه ها"
         skip_verification: "رد کردن تأیید کاربر "

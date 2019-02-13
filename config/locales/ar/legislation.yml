@@ -1,1 +1,55 @@
 ar:
+  legislation:
+    annotations:
+      comments:
+        cancel: إلغاء
+      form:
+        login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
+        signin: تسجيل الدخول
+        signup: تسجيل
+      index:
+        title: تعليقات
+      show:
+        title: التعليق
+    draft_versions:
+      changes:
+        title: تغييرات
+      show:
+        text_body: نص
+        text_comments: تعليقات
+    processes:
+      header:
+        description: الوصف
+      proposals:
+        filters:
+          winners: محدّد
+      index:
+        filter: ترشيح
+        filters:
+          open: إجراءات مفتوحة
+          past: السابق
+        section_header:
+          title: العمليات التشريعية
+      shared:
+        homepage: الصفحة الرئيسية
+        debate_dates: الحوارات
+        allegations_dates: تعليقات
+        milestones_date: التالية
+        proposals_dates: إقتراحات
+    questions:
+      question:
+        comments:
+          zero: لا توجد تعليقات
+        debate: الحوارات
+      show:
+        share: مشاركة
+      participation:
+        signin: تسجيل الدخول
+        signup: تسجيل
+        unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
+        verify_account: التحقق من حسابك
+    shared:
+      share: مشاركة
+    proposals:
+      form:
+        tags_label: "فئات"

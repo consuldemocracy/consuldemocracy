@@ -1,1 +1,45 @@
 fi:
+  verification:
+    back: Palaa tiliini
+    email:
+      show:
+        alert:
+          failure: Virheellinen vahvistuskoodi
+    letter:
+      edit:
+        see_all: Näytä ehdotukset
+      errors:
+        incorrect_code: Virheellinen vahvistuskoodi
+      new:
+        go_to_index: Näytä ehdotukset
+        title: Onneksi olkoon!
+        user_permission_info: Tililläsi voit...
+    residence:
+      new:
+        date_of_birth: Syntymäaika
+        document_number_help_title: Apua
+        document_type:
+          passport: Passi
+        document_type_label: Asiakirjatyyppi
+        postal_code: Postinumero
+    sms:
+      edit:
+        submit_button: Lähetä
+      new:
+        phone_format_html: "<strong><em>(Esimerkki: 612345678 or +34612345678)</em></strong>"
+        phone_placeholder: "Esimerkki: 612345678 or +34612345678"
+        submit_button: Lähetä
+        title: Lähetä vahvistuskoodi
+      update:
+        error: Virheellinen vahvistuskoodi
+    step_1: Asuinpaikka
+    step_2: Vahvistuskoodi
+    user_permission_proposal: Luo uusia ehdotuksia
+    user_permission_support_proposal: Tue ehdotuksia*
+    verified_user:
+      form:
+        submit_button: Lähetä koodi
+      show:
+        email_title: Sähköpostit
+        phone_title: Puhelinnumerot
+        use_another_phone: Käytä toista puhelinta

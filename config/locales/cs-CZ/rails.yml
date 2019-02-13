@@ -1,0 +1,102 @@
+cs:
+  date:
+    abbr_day_names:
+      - ned
+      - pon
+      - úte
+      - stř
+      - čtv
+      - pát
+      - sob
+    abbr_month_names:
+      - 
+      - led
+      - úno
+      - bře
+      - dub
+      - květen
+      - čer
+      - črv
+      - srp
+      - zář
+      - říj
+      - lis
+      - pro
+    day_names:
+      - neděle
+      - pondělí
+      - úterý
+      - středa
+      - čtvrtek
+      - pátek
+      - sobota
+    formats:
+      default: "%d-%m-%Y"
+    month_names:
+      - 
+      - leden
+      - únor
+      - březen
+      - duben
+      - kvě
+      - červen
+      - červenec
+      - srpen
+      - září
+      - říjen
+      - listopad
+      - prosinec
+  errors:
+    messages:
+      blank: nemůže být prázdné
+      present: musí být prázdné
+      model_invalid: "Validation failed: %{errors}"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: miliarda
+          million: milión
+          quadrillion: kvadrilion
+          thousand: tisíc
+          trillion: bilión
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", a "
+      two_words_connector: " a "
+      words_connector: ", "
+  time:
+    am: dopoledne
+    formats:
+      api: "%d.%m.%Y %H"
+    pm: odpoledne

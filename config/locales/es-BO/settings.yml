@@ -44,6 +44,7 @@ es-BO:
       polls: "Votaciones"
       signature_sheets: "Hojas de firmas"
       legislation: "Legislación"
+      spending_proposals: "Propuestas de inversión"
       community: "Comunidad en propuestas y proyectos de inversión"
       map: "Geolocalización de propuestas y proyectos de inversión"
       allow_images: "Permitir subir y mostrar imágenes"

@@ -13,9 +13,9 @@ fr:
           current: Ouvert
           finished: Terminé
         table_name: Nom
-        table_phase: Phase de
+        table_phase: Phase
         table_assigned_investments_valuation_open: Propositions d'investissement assignées avec une évaluation ouverte
-        table_actions: Statut des votes
+        table_actions: Actions
         evaluate: Évaluer
     budget_investments:
       index:
@@ -34,8 +34,8 @@ fr:
         table_id: ID
         table_title: Titre
         table_heading_name: Nom du titre
-        table_actions: Statut des votes
-        no_investments: "Il n’y a pas de projet d’investissement."
+        table_actions: Actions
+        no_investments: "Il n’y a aucun projet d’investissement."
       show:
         back: Retour
         title: Propositions d'investissement

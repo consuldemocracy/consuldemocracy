@@ -24,10 +24,10 @@ fr:
     groups:
       show:
         title: Sélectionner une option
-        unfeasible_title: Investissements irréalisables
-        unfeasible: Voir les investissements irréalisables
-        unselected_title: Investissements non-sélectionnés pour la phase de vote
-        unselected: Voir les investissements non-sélectionnés pour la phase de vote
+        unfeasible_title: Propositions infaisables
+        unfeasible: Voir les propositions infaisables
+        unselected_title: Propositions non-sélectionnées pour la phase de vote
+        unselected: Voir les propositions non-sélectionnées pour la phase de vote
     phase:
       drafting: Brouillon (non visible du public)
       informing: Information
@@ -57,12 +57,13 @@ fr:
       section_footer:
         title: Aide sur les budgets participatifs
         description: Avec la participation des budgets les citoyens décident à quels projets est destinée une partie du budget.
+      milestones: Jalons
     investments:
       form:
         tag_category_label: "Catégories"
-        tags_instructions: "Marquez cette proposition. Vous pouvez choisir parmi les catégories proposées ou en ajouter"
+        tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
         tags_label: Tags
-        tags_placeholder: "Saisissez les tags que vous souhaitez utiliser, séparés par des virgules (',')"
+        tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
         map_location: "Emplacement sur la carte"
         map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
         map_remove_marker: "Supprimer le marqueur"
@@ -70,7 +71,7 @@ fr:
         map_skip_checkbox: "Cet investissement n'a pas d'emplacement concret, à ma connaissance."
       index:
         title: Budget participatif
-        unfeasible: Projets d'investissement irréalisables
+        unfeasible: Propositions d'investissement irréalisables
         unfeasible_text: "Les projets d'investissement doivent satisfaire un certain nombre de critères (être légaux et concrets, relever des compétences de la commune, ne pas dépasser le plafond des budgets, %{definitions}) pour être déclarés viables et atteindre le stade final des votes. Tous les projets qui ne respectent pas ces critères sont identifiés comme irréalisables et publiés dans la liste suivante, accompagnés de leur rapport d'irréalisabilité."
         by_heading: "Portée des projets d'investissement : %{heading}"
         search_form:
@@ -79,7 +80,7 @@ fr:
           title: Recherche
         search_results_html:
           one: " contenant le terme <strong>'%{search_term}'</strong>"
-          other: " contenant les termes <strong>'%{search_term}'</strong>"
+          other: " contenant le terme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mon vote
           voted_html:
@@ -87,13 +88,13 @@ fr:
             other: "<strong>Vous avez voté %{count} propositions pour un coût de %{amount_spent}</strong>"
           voted_info: Vous pouvez %{link} à tout moment jusqu'à la clôture de cette phase. Vous n'avez pas besoin de dépenser tout le budget disponible.
           voted_info_link: modifier votre vote
-          different_heading_assigned_html: "Vous avez des votes actifs dans une autre section : %{heading_link}"
+          different_heading_assigned_html: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
           change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
           check_ballot_link: "vérifier mon vote"
           zero: Vous n'avez voté aucun projet d'investissement dans ce groupe.
           verified_only: "Pour créer un projet d'investissement %{verify}."
           verify_account: "vérifiez votre compte"
-          create: "Créer un projet d'investissement"
+          create: "Créer un nouveau projet"
           not_logged_in: "Pour créer un projet d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
           sign_in: "connecter"
           sign_up: "enregistrer"
@@ -112,7 +113,7 @@ fr:
         location_html: 'Lieu: <strong>%{location}</strong>'
         organization_name_html: 'Proposé au nom de : <strong>%{name}</strong>'
         share: Partager
-        title: Projet d'investissement
+        title: Propositions d'investissement
         supports: Soutiens
         votes: Votes
         price: Coût
@@ -125,7 +126,7 @@ fr:
         project_not_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
       wrong_price_format: Nombres entiers uniquement
       investment:
-        add: Voter
+        add: Vote
         already_added: Vous avez déjà ajouté ce projet d'investissement
         already_supported: Vous avez déjà soutenu ce projet d'investissement. Partagez-le !
         support_title: Soutenir cette proposition
@@ -149,8 +150,8 @@ fr:
     show:
       group: Groupe
       phase: Phase actuelle
-      unfeasible_title: Projets d'investissement irréalisables
-      unfeasible: Voir les projets d'investissement irréalisables
+      unfeasible_title: Investissements irréalisables
+      unfeasible: Voir les investissements irréalisables
       unselected_title: Projets d'investissement non-sélectionnés pour la phase de vote
       unselected: Voir les projets d'investissement non-sélectionnés pour la phase de vote
       see_results: Voir les résultats
@@ -160,7 +161,7 @@ fr:
       heading: "Résultats du budget participatif"
       heading_selection_title: "Par quartier"
       spending_proposal: Titre de la proposition
-      ballot_lines_count: Nombre de fois sélectionné
+      ballot_lines_count: Votes
       hide_discarded_link: Cacher les résultats rejetés
       show_all_link: Tout afficher
       price: Coût
@@ -171,6 +172,9 @@ fr:
       investment_proyects: Liste des projets d’investissement
       unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
       not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
+    executions:
+      link: "Jalons"
+      heading_selection_title: "Par quartier"
     phases:
       errors:
         dates_range_invalid: "La date de début ne peut pas être égale ou postérieure à la date de fin"

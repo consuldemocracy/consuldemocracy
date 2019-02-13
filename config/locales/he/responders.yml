@@ -16,7 +16,7 @@ he:
         notice: "%{resource_name} עודכן בהצלחה"
         debate: "הדיון עודכן בהצלחה"
         proposal: "ההצעה עודכנה בהצלחה"
-        spending_proposal: "הצעתך לתקצוב עודכנה בהצלחה"
+        spending_proposal: "מיזם ההשקעות עודכן בהצלחה"
         budget_investment: "מיזם ההשקעות עודכן בהצלחה"
       destroy:
         spending_proposal: "הצעתך לתקצוב נמחקה בהצלחה"

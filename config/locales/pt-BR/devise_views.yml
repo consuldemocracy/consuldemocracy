@@ -19,7 +19,7 @@ pt-BR:
         title: Bem-vindo
         welcome: Bem-vindo
       reset_password_instructions:
-        change_link: Altere minha senha
+        change_link: Alterar minha senha
         hello: Olá
         ignore_text: Se você não pediu uma mudança de senha, você pode ignorar este e-mail.
         info_text: Sua senha não será alterada a menos que você acesse o link e a edite.
@@ -43,21 +43,18 @@ pt-BR:
           organization_name_label: Nome da organização
           password_confirmation_label: Confirmar senha
           password_label: Senha
-          phone_number_label: Número de Telefone
+          phone_number_label: Números de telefone
           responsible_name_label: Nome completo da pessoa responsável pelo coletivo
           responsible_name_note: Esta seria a pessoa que representa a associação/coletivo em nome de quem as propostas são apresentadas
           submit: Registre-se
           title: Registar-se como uma organização ou coletivo
         success:
           back_to_index: Eu entendo; voltar à página principal
-          instructions_1_html: "<b>, Entraremos em contato em breve</b> para verificar que você de fato representa este coletivo."
-          instructions_2_html: Enquanto seu email <b> é revisado</b>, enviamos um link para <b> para confirmar sua conta</b>.
           instructions_3_html: Uma vez confirmado, você pode começar a participar como um coletivo não verificado.
-          thank_you_html: Obrigado por registrar seu coletivo no site. Agora é <b>pendente de verificação</b>.
           title: Registro de organização / coletivo
     passwords:
       edit:
-        change_submit: Alterar minha senha
+        change_submit: Altere minha senha
         password_confirmation_label: Confirmar nova senha
         password_label: Nova senha
         title: Altere sua senha
@@ -80,7 +77,7 @@ pt-BR:
         new_unlock: Ainda não recebeu as instruções de desbloqueio?
         signin_with_provider: Conecte-se com %{provider}
         signup: Não tem uma conta? %{signup_link}
-        signup_link: Inscreva-se
+        signup_link: Inscrever
     unlocks:
       new:
         email_label: Email
@@ -126,4 +123,3 @@ pt-BR:
           instructions_1_html: Por favor <b> confira seu email <b> enviamos um link <b> para confirmar sua conta</b>.
           instructions_2_html: Uma vez confirmado, você pode começar sua participação.
           thank_you_html: Obrigado por se registrar no site. Você deve <b> confirmar seu endereço de e-mail </b>.
-          title: Modifique seu email

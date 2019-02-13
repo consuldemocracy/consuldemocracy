@@ -49,6 +49,8 @@ zh-TW:
         more_info: 更多資訊和上下文
       proposals:
         empty_proposals: 沒有建議
+        filters:
+          winners: 已選擇
       debate:
         empty_questions: 沒有任何問題
         participate: 參與辯論
@@ -75,10 +77,12 @@ zh-TW:
         see_latest_comments_title: 對此進程的評論
       shared:
         key_dates: 關鍵日期
+        homepage: 主頁
         debate_dates: 辯論
         draft_publication_date: 發佈草稿
         allegations_dates: 評論
         result_publication_date: 最終結果發佈
+        milestones_date: 跟隨中
         proposals_dates: 建議
     questions:
       comments:

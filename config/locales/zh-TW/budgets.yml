@@ -56,6 +56,7 @@ zh-TW:
       section_footer:
         title: 參與性預算的説明
         description: 通過參與性預算, 公民決定哪些項目註定會成為預算案的一部分。
+      milestones: 里程碑
     investments:
       form:
         tag_category_label: "類別"
@@ -155,7 +156,7 @@ zh-TW:
       heading: "參與性預算結果"
       heading_selection_title: "按地區"
       spending_proposal: 建議標題
-      ballot_lines_count: 被選的次數
+      ballot_lines_count: 票
       hide_discarded_link: 隱藏廢棄的
       show_all_link: 顯示所有
       price: 價格
@@ -166,6 +167,9 @@ zh-TW:
       investment_proyects: 所有投資項目清單
       unfeasible_investment_proyects: 所有不可行的投資項目清單
       not_selected_investment_proyects: 未被選入投票階段的所有投資項目清單
+    executions:
+      link: "里程碑"
+      heading_selection_title: "按地區"
     phases:
       errors:
         dates_range_invalid: "開始日期不能等於或晚於結束日期"

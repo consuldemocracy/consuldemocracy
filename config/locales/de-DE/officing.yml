@@ -8,7 +8,7 @@ de:
         info: Hier können Sie Benutzerdokumente überprüfen und Abstimmungsergebnisse speichern
         no_shifts: Sie haben heute keinen Amtswechsel.
     menu:
-      voters: Dokument überprüfen
+      voters: Dokument bestätigen
       total_recounts: Komplette Nachzählungen und Ergebnisse
     polls:
       final:
@@ -23,7 +23,6 @@ de:
         error_wrong_booth: "Falsche Wahlkabine. Ergebnisse wurden NICHT gespeichert."
       new:
         title: "%{poll} - Ergebnisse hinzufügen"
-        not_allowed: "Sie sind berechtigt, Ergebnisse für diese Umfrage hinzufügen"
         booth: "Wahlkabine"
         date: "Datum"
         select_booth: "Wahlkabine auswählen"
@@ -37,7 +36,7 @@ de:
         no_results: "Keine Ergebnisse"
         results: Ergebnisse
         table_answer: Antwort
-        table_votes: Bewertung
+        table_votes: Stimmen
         table_whites: "Völlig leere Stimmzettel"
         table_nulls: "Ungültige Stimmzettel"
         table_total: "Gesamtanzahl der Stimmzettel"
@@ -55,7 +54,7 @@ de:
     voters:
       new:
         title: Umfragen
-        table_poll: Umfrage
+        table_poll: Abstimmung
         table_status: Status Umfrage
         table_actions: Aktionen
         not_to_vote: Die Person hat beschlossen, zu diesem Zeitpunkt nicht zu stimmen

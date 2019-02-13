@@ -111,7 +111,7 @@ fa:
       invalid: نامعتبر است
       less_than: باید کمتر از %{count} باشند 
       less_than_or_equal_to: باید کمتر یا برابر با %{count} باشد
-      model_invalid: "تأیید اعتبار انجام نشد: %{errors}"
+      model_invalid: "تأیید اعتبار ناموفق بود:%{errors}"
       not_a_number: شماره نیست
       not_an_integer: باید یک عدد صحیح باشد 
       odd: باید فرد باشد 

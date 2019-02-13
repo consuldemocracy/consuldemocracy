@@ -16,6 +16,7 @@ fa:
       confirmation_instructions:
         confirm_link: تایید حساب
         text: 'شما می توانید حساب ایمیل خود را در لینک زیر تأیید کنید:'
+        title: خوش آمدید 
         welcome: خوش آمدید 
       reset_password_instructions:
         change_link: تغییر کلمه عبور
@@ -49,15 +50,12 @@ fa:
           title: ثبت نام به عنوان یک سازمان و یا جمعی
         success:
           back_to_index: من میفهمم؛ بازگشت به صفحه اصلی
-          instructions_1_html: "<b> ما به زودی با شما تماس خواهیم گرفت </ b> برای تأیید اینکه شما در واقع این گروه را نشان می دهید."
-          instructions_2_html: در حالی که <b> ایمیل شما بررسی شده است </ b>، ما یک پیوند <b> برای تایید حساب شما </ b> ارسال کردیم.
           instructions_3_html: پس از تأیید، شما ممکن است شروع به شرکت در یک گروه تأیید نشده کنید.
-          thank_you_html: با تشکر از شما برای ثبت نام جمعی خود در وب سایت. اکنون <b> در انتظار تایید </ b> است.
           title: ثبت نام به عنوان یک سازمان و یا جمعی
     passwords:
       edit:
         change_submit: تغییر کلمه عبور
-        password_confirmation_label: تایید رمز عبور
+        password_confirmation_label: تأیید رمز عبور جديد
         password_label: رمز عبور جدید
         title: تغییر کلمه عبور
       new:
@@ -99,7 +97,7 @@ fa:
           email_label: پست الکترونیکی
           leave_blank: اگر تمایل ندارید تغییر دهید، خالی بگذارید
           need_current: ما برای تایید تغییرات نیاز به رمزعبور فعلی داریم
-          password_confirmation_label: تأیید رمز عبور جديد
+          password_confirmation_label: تایید رمز عبور
           password_label: رمز عبور جدید
           update_submit: به روز رسانی
           waiting_for: 'در انتظار تایید:'
@@ -125,4 +123,3 @@ fa:
           instructions_1_html: لطفا <b> ایمیل خود را بررسی کنید </ b> - ما یک پیوند <b> برای تأیید اعتبار شما ارسال کردیم </ b>.
           instructions_2_html: پس از تأیید، شما ممکن است مشارکت را آغاز کنید.
           thank_you_html: از ثبت نام برای وب سایت سپاسگزاریم اکنون باید <b> آدرس ایمیل خود را تایید کنید </ b>.
-          title: ایمیل خود را تغییر دهید

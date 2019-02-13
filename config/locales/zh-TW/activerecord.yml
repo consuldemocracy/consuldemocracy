@@ -9,8 +9,6 @@ zh-TW:
         other: "投資"
       milestone:
         other: "里程碑"
-      milestone/status:
-        other: "投資狀態"
       comment:
         other: "評論"
       debate:
@@ -51,10 +49,10 @@ zh-TW:
         other: 自定義內容塊
       legislation/process:
         other: "過程"
+      legislation/proposal:
+        other: "建議"
       legislation/draft_versions:
         other: "草稿版本"
-      legislation/draft_texts:
-        other: "草稿"
       legislation/questions:
         other: "問題"
       legislation/question_options:
@@ -94,13 +92,15 @@ zh-TW:
         image: "建議說明性圖像"
         image_title: "圖像標題"
       milestone:
-        status_id: "當前投資狀況 (可選擇填寫)"
         title: "標題"
         description: "說明 (如果已經指定了狀態, 則可選擇填寫)"
-        publication_date: "出版日期"
+        publication_date: "發佈日期"
       milestone/status:
         name: "名字"
         description: "說明 (可選擇填寫)"
+      progress_bar:
+        kind: "類型"
+        title: "標題"
       budget/heading:
         name: "標題名稱"
         price: "價格"
@@ -147,11 +147,17 @@ zh-TW:
         geozone_restricted: "受地理區域（geozone）限制"
         summary: "總結"
         description: "說明"
+      poll/translation:
+        name: "名字"
+        summary: "總結"
+        description: "描述"
       poll/question:
         title: "問題"
         summary: "總結"
         description: "說明"
         external_url: "鏈接到其他文檔"
+      poll/question/translation:
+        title: "問題"
       signature_sheet:
         signable_type: "可簽名類型"
         signable_id: "可簽名 ID"
@@ -167,6 +173,10 @@ zh-TW:
         more_info_flag: 在説明頁中顯示
         print_content_flag: '"列印內容" 按鈕'
         locale: 語言
+      site_customization/page/translation:
+        title: 標題
+        subtitle: 副標題
+        content: 內容
       site_customization/image:
         name: 名字
         image: 圖像
@@ -187,12 +197,22 @@ zh-TW:
         allegations_start_date: 指控開始日期
         allegations_end_date: 指控結束日期
         result_publication_date: 最終結果發佈日期
+      legislation/process/translation:
+        title: 進程標題
+        summary: 總結
+        description: 描述
+        additional_info: 附加其他資訊
+        milestones_summary: 總結
       legislation/draft_version:
         title: 版本標題
         body: 文本
         changelog: 變化
         status: 狀態
         final_version: 最終版本
+      legislation/draft_version/translation:
+        title: 版本標題
+        body: 文本
+        changelog: 變化
       legislation/question:
         title: 標題
         question_options: 選項
@@ -209,6 +229,9 @@ zh-TW:
       poll/question/answer:
         title: 答案
         description: 說明
+      poll/question/answer/translation:
+        title: 回答
+        description: 描述
       poll/question/answer/video:
         title: 標題
         url: 外部視頻
@@ -217,12 +240,25 @@ zh-TW:
         subject: 主題
         from: 從
         body: 電子郵件內容
+      admin_notification:
+        segment_recipient: 收件者
+        title: 標題
+        link: 鏈接
+        body: 文本
+      admin_notification/translation:
+        title: 標題
+        body: 文本
       widget/card:
         label: 標籤 (可選擇填寫)
         title: 標題
         description: 說明
         link_text: 鏈接文本
         link_url: 鏈接 URL
+      widget/card/translation:
+        label: 標籤 (可選擇填寫)
+        title: 標題
+        description: 描述
+        link_text: 鏈接文本
       widget/feed:
         limit: 項目數
     errors:

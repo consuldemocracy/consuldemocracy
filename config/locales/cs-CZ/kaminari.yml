@@ -1,0 +1,17 @@
+cs:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Záznamy
+        one: Záznam
+        few: Záznamy
+        many: Záznamy
+        other: Záznamy
+  views:
+    pagination:
+      current: Jste na stránce
+      first: První
+      last: Poslední
+      next: Plánované
+      previous: Předchozí
+      truncate: "&hellip;"

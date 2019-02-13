@@ -3,7 +3,7 @@ it:
     password_expired:
       expire_password: "Password scaduta"
       change_required: "La tua password è scaduta"
-      change_password: "Cambia la tua password"
+      change_password: "Cambia la password"
       new_password: "Nuova password"
       updated: "Password aggiornata correttamente"
     confirmations:
@@ -16,7 +16,7 @@ it:
       invalid: "%{authentication_keys} o password non validi."
       locked: "Il tuo account è stato bloccato."
       last_attempt: "Hai un altro tentativo rimasto prima che il tuo account sia bloccato."
-      not_found_in_database: "%{authentication_keys} o password errata."
+      not_found_in_database: "%{authentication_keys} o password non validi."
       timeout: "La sessione è scaduta. Per favore accedi nuovamente per continuare."
       unauthenticated: "È necessario eseguire il log in o registrarsi per continuare."
       unconfirmed: "Per proseguire, per favore clicca sul link di conferma che ti abbiamo inviato via mail"
@@ -28,7 +28,6 @@ it:
       unlock_instructions:
         subject: "Istruzioni di sblocco"
     omniauth_callbacks:
-      failure: "Non è stato possibile autorizzarti in quanto %{kind} perché “%{reason}”."
       success: "Correttamente identificato come %{kind}."
     passwords:
       no_token: "Non è possibile accedere a questa pagina se non attraverso un link di reset password. Se ci sei arrivato tramite un link di reset password, per favore assicurati che l’URL sia completo."

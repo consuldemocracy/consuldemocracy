@@ -1,1 +1,8 @@
 eu:
+  officing:
+    results:
+      index:
+        table_answer: Erantzuna
+    residence:
+      new:
+        document_number: "Dokumentu zenbakia (letrak barne)"

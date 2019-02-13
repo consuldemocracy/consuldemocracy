@@ -13,9 +13,9 @@ es-AR:
           postal_code: "Código postal"
         sms:
           phone: "Teléfono"
-          confirmation_code: "Código de confirmación"
+          confirmation_code: "SMS de confirmación"
         email:
-          recipient: "Correo"
+          recipient: "Correo electrónico"
       officing/residence:
         document_type: "Tipo documento"
         document_number: "Numero de documento (incluida letra)"

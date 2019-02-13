@@ -16,7 +16,6 @@ pt-BR:
       create_first_community_topic:
         first_theme_not_logged_in: Nenhum tema disponível, participe criando o primeiro.
         first_theme: Crie o primeiro tópico da comunidade
-        sub_first_theme: "Para criar um tema você precisa %{sign_in} ou %{sign_up}."
         sign_in: "iniciar sessão"
         sign_up: "inscrever-se"
       tab:
@@ -57,4 +56,4 @@ pt-BR:
         recommendation_three: Aproveite este espaço, ele é seu também.
   topics:
     show:
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário.
+      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário

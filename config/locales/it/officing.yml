@@ -23,13 +23,12 @@ it:
         error_wrong_booth: "Seggio sbagliato. Risultati NON salvati."
       new:
         title: "%{poll} - Aggiungi risultati"
-        not_allowed: "Sei autorizzato ad aggiungere risultati per questa votazione"
-        booth: "Seggio"
+        booth: "Urna"
         date: "Data"
         select_booth: "Seleziona seggio"
         ballots_white: "Schede totalmente bianche"
-        ballots_null: "Schede invalidate"
-        ballots_total: "Schede totali"
+        ballots_null: "Voti non validi"
+        ballots_total: "Totale schede"
         submit: "Salva"
         results_list: "I tuoi risultati"
         see_results: "Vedi risultati"
@@ -40,7 +39,7 @@ it:
         table_votes: Voti
         table_whites: "Schede totalmente bianche"
         table_nulls: "Schede invalidate"
-        table_total: "Schede totali"
+        table_total: "Totale schede"
     residence:
       flash:
         create: "Documento verificato con l'Anagrafe"
@@ -55,7 +54,7 @@ it:
     voters:
       new:
         title: Votazioni
-        table_poll: Votazione
+        table_poll: Sondaggio
         table_status: Status votazioni
         table_actions: Azioni
         not_to_vote: La persona ha deciso di non votare al momento

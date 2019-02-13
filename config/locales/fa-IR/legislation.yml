@@ -13,7 +13,7 @@ fa:
         cancel: لغو
         publish_comment: نشر نظر
       form:
-        phase_not_open: این فاز  باز نمی شود.
+        phase_not_open: این مرحله هنوز باز نشده است
         login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
         signin: ورود به برنامه
         signup: ثبت نام
@@ -52,6 +52,8 @@ fa:
         more_info: کسب اطلاعات بیشتر و زمینه
       proposals:
         empty_proposals: پیشنهادی وجود ندارد
+        filters:
+          winners: انتخاب شده
       debate:
         empty_questions: هیچ سوالی وجود ندارد
         participate: مشارکت در بحث
@@ -78,8 +80,10 @@ fa:
         see_latest_comments_title: اظهار نظر در مورد این روند
       shared:
         key_dates: تاريخهاي مهم
+        homepage: صفحه اصلی
         debate_dates: بحث
         draft_publication_date: انتشار پیش نویس
+        allegations_dates: توضیحات
         result_publication_date: انتشار نتیجه نهایی
         proposals_dates: طرح های پیشنهادی
     questions:
@@ -102,7 +106,7 @@ fa:
         share: "اشتراک گذاری\n"
         title: روند قانونی همکاری
       participation:
-        phase_not_open: این مرحله هنوز باز نشده است
+        phase_not_open: این فاز  باز نمی شود.
         organizations: سازمانها مجاز به شرکت در بحث نیستند
         signin: ورود به برنامه
         signup: ثبت نام

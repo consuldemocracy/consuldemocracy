@@ -23,9 +23,9 @@ es:
         see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
-          other: "%{count} comentarios"
+          other: "%{count} Comentarios"
       show:
-        title: Comentario
+        title: Comentar
       version_chooser:
         seeing_version: Comentarios para la versión
         see_text: Ver borrador del texto
@@ -80,13 +80,13 @@ es:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso
       shared:
-        key_dates: Fases de participación
-        homepage: Inicio
-        debate_dates: Debate previo
+        key_dates: Fechas clave
+        homepage: Homepage
+        debate_dates: Debate
         draft_publication_date: Publicación borrador
         allegations_dates: Comentarios
         result_publication_date: Publicación resultados
-        milestones_date: Seguimiento
+        milestones_date: Siguiendo
         proposals_dates: Propuestas
     questions:
       comments:
@@ -99,7 +99,7 @@ es:
         comments:
           zero: Sin comentarios
           one: "%{count} comentario"
-          other: "%{count} comentarios"
+          other: "%{count} Comentarios"
         debate: Debate
       show:
         answer_question: Enviar respuesta
@@ -112,7 +112,7 @@ es:
         organizations: Las organizaciones no pueden participar en el debate
         signin: iniciar sesión
         signup: registrarte
-        unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
+        unauthenticated: Necesitas %{signin} o %{signup} para participar.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
         verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas

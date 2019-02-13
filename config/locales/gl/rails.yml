@@ -10,18 +10,18 @@ gl:
       - sáb
     abbr_month_names:
       - 
-      - Xan
-      - Feb
-      - Mar
-      - Abr
-      - Mai
-      - Xuñ
-      - Xul
-      - Ago
-      - Set
-      - Out
-      - Nov
-      - Dec
+      - xan
+      - feb
+      - mar
+      - abr
+      - maio
+      - xuñ
+      - xul
+      - ago
+      - set
+      - out
+      - nov
+      - dec
     day_names:
       - domingo
       - luns
@@ -36,18 +36,18 @@ gl:
       short: "%d de %b"
     month_names:
       - 
-      - Xaneiro
-      - Febreiro
-      - Marzo
-      - Abril
-      - Maio
-      - Xuño
-      - Xullo
-      - Agosto
-      - Setembro
-      - Outubro
-      - Novembro
-      - Decembro
+      - xaneiro
+      - febreiro
+      - marzo
+      - abril
+      - Mai
+      - xuño
+      - xullo
+      - agosto
+      - setembro
+      - outubro
+      - novembro
+      - decembro
   datetime:
     distance_in_words:
       about_x_hours:
@@ -90,7 +90,7 @@ gl:
     prompts:
       day: Día
       hour: Hora
-      minute: Minuto
+      minute: Minutos
       month: Mes
       second: Segundos
       year: Ano
@@ -106,11 +106,11 @@ gl:
       even: debe ser par
       exclusion: está reservado
       greater_than: debe ser maior que %{count}
-      greater_than_or_equal_to: debe ser maior ou igual que %{count}
+      greater_than_or_equal_to: debe ser maior que ou igual a %{count}
       inclusion: non está incluído na lista
       invalid: non é válido
       less_than: debe ser menor que %{count}
-      less_than_or_equal_to: debe ser menor ou igual que %{count}
+      less_than_or_equal_to: debe ser menor que ou igual a %{count}
       model_invalid: "Erro de validación: %{errors}"
       not_a_number: non é un número
       not_an_integer: debe ser un enteiro
@@ -130,8 +130,8 @@ gl:
     template:
       body: 'Houbo problemas cos seguintes campos:'
       header:
-        one: 1 erro impediu que este %{model} fose gardado
-        other: "%{count} erros impediron que este %{model} fose gardado"
+        one: Non se puido gardar este/a %{model} porque se atopou 1 erro
+        other: "Non se puido gardar este/a %{model} porque se atoparon %{count} erros"
   helpers:
     select:
       prompt: Por favor seleccione
@@ -150,8 +150,8 @@ gl:
         strip_insignificant_zeros: false
         unit: "€"
     format:
-      delimiter: ","
-      precision: 3
+      delimiter: "."
+      precision: 1
       separator: ","
       significant: false
       strip_insignificant_zeros: false
@@ -159,11 +159,11 @@ gl:
       decimal_units:
         format: "%n %u"
         units:
-          billion: Billón
-          million: Millón
+          billion: mil millóns
+          million: millón
           quadrillion: mil billóns
-          thousand: Mil
-          trillion: Trillón
+          thousand: mil
+          trillion: billón
       format:
         precision: 3
         significant: true
@@ -183,15 +183,15 @@ gl:
         format: "%n%"
   support:
     array:
-      last_word_connector: ", e"
-      two_words_connector: "e"
+      last_word_connector: " e "
+      two_words_connector: " e "
       words_connector: ", "
   time:
     am: am
     formats:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d de %B de %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
+      long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
       api: "%d/%m/%Y %H"
     pm: pm

@@ -28,7 +28,6 @@ es:
       unlock_instructions:
         subject: "Instrucciones de desbloqueo"
     omniauth_callbacks:
-      failure: "No se te ha podido identificar via %{kind} por el siguiente motivo: \"%{reason}\"."
       success: "Identificado correctamente via %{kind}."
     passwords:
       no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer la contraseña. Si has accedido desde el enlace para restablecer la contraseña, asegúrate de que la URL esté completa."
@@ -59,7 +58,4 @@ es:
       expired: "ha expirado, por favor vuelve a solicitarla."
       not_found: "no se ha encontrado."
       not_locked: "no estaba bloqueado."
-      not_saved:
-        one: "1 error impidió que este %{resource} fuera guardado. Por favor revisa los campos marcados para saber cómo corregirlos:"
-        other: "%{count} errores impidieron que este %{resource} fuera guardado. Por favor revisa los campos marcados para saber cómo corregirlos:"
       equal_to_current_password: "debe ser diferente a la contraseña actual"

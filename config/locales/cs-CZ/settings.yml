@@ -1,0 +1,23 @@
+cs:
+  settings:
+    place_name: "Místo"
+    place_name_description: "Název vašeho města"
+    map_latitude: "Zeměpisná šířka"
+    map_longitude: "Zeměpisná délka"
+    map_zoom: "Zvětšení"
+    feature:
+      budgets: "Participativní rozpočtování"
+      proposals: "Návrhy"
+      featured_proposals: "Doporučené návrhy"
+      debates: "Debaty"
+      polls: "Průzkum"
+      user:
+        recommendations: "Doporučení"
+        recommendations_on_debates: "Doporučení k debatám"
+        recommendations_on_proposals: "Doporučení k návrhům"
+      map_description: "Povolit geolokaci návrhů a investičních projektů"
+      allow_images: "Umožnit nahrát a zobrazit obrázky"
+      allow_attached_documents: "Umožnit nahrát a zobrazit připojené dokumenty"
+      public_stats: "Veřejné statistiky"
+      public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
+      help_page: "Stránka nápovědy"

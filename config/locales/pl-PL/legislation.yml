@@ -25,6 +25,11 @@ pl:
         title: Komentarze
         comments_about: Komentarze na temat
         see_in_context: Zobacz w kontekście
+        comments_count:
+          one: "%{count} komentarz"
+          few: "%{count} komentarzy"
+          many: "%{count} komentarzy"
+          other: "%{count} komentarzy"
       show:
         title: Komentarz
       version_chooser:
@@ -53,6 +58,8 @@ pl:
         more_info: Więcej informacji i kontekst
       proposals:
         empty_proposals: Brak wniosków
+        filters:
+          winners: Wybrany
       debate:
         empty_questions: Brak pytań
         participate: Uczestniczyć w debacie
@@ -79,10 +86,12 @@ pl:
         see_latest_comments_title: Wypowiedz się na temat tego procesu
       shared:
         key_dates: Najważniejsze daty
+        homepage: Strona główna
         debate_dates: Debata
         draft_publication_date: Projekt publikacji
         allegations_dates: Komentarze
         result_publication_date: Publikacja wyniku końcowego
+        milestones_date: Obserwowane
         proposals_dates: Wnioski
     questions:
       comments:

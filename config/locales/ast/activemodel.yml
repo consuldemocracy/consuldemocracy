@@ -14,5 +14,9 @@ ast:
         sms:
           phone: "Teléfonu"
           confirmation_code: "Códigu de confirmación"
+        email:
+          recipient: "Corréu electrónicu"
       officing/residence:
+        document_type: "Tipu de documentu"
+        document_number: "Númberu de documentu (incluyendo lletres)"
         year_of_birth: "Añu de nacencia"

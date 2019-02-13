@@ -17,12 +17,11 @@ es:
         table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
         table_actions: Acciones
         evaluate: Evaluar
-        no_budgets: "No hay presupuestos"
     budget_investments:
       index:
         headings_filter_all: Todas las partidas
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abierto
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         assigned_to: "Asignadas a %{valuator}"
@@ -69,23 +68,20 @@ es:
         undefined_feasible: Sin decidir
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
         valuation_finished: Informe finalizado
-        valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
-        not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
         save: Guardar Cambios
       notice:
         valuate: "Dossier actualizado"
-      valuation_comments: Comentarios de evaluación
       not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abierto
           valuating: En evaluación
-          valuation_finished: Evaluación finalizada
+          valuation_finished: Informe finalizado
         title: Propuestas de inversión para presupuestos participativos
-        edit: Editar
+        edit: Editar propuesta
       show:
         back: Volver
         heading: Propuesta de inversión
@@ -104,8 +100,8 @@ es:
         not_feasible: No viable
         undefined: Sin definir
         valuation_finished: Informe finalizado
-        time_scope: Plazo de ejecución
-        internal_comments: Comentarios internos
+        time_scope: Plazo de ejecución <small>(opcional, dato no público)</small>
+        internal_comments: Comentarios y observaciones <small>(para responsables internos, dato no público)</small>
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -117,7 +113,7 @@ es:
         price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
         feasibility: Viabilidad
         feasible: Viable
-        not_feasible: Inviable
+        not_feasible: No viable
         undefined_feasible: Sin decidir
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
         valuation_finished: Informe finalizado

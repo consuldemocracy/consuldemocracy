@@ -23,31 +23,30 @@ pt-BR:
         error_wrong_booth: "Cabine incorreta. Resultados NÃO foram salvos."
       new:
         title: "%{poll} - Adicionar resultados"
-        not_allowed: "Você tem autorização para introduzir resultados"
         booth: "Urna"
         date: "Data"
         select_booth: "Selecione a urna"
         ballots_white: "Cédulas completamente em branco"
         ballots_null: "Cédulas inválidas"
-        ballots_total: "Total de cédulas"
+        ballots_total: "Total de células"
         submit: "Salvar"
         results_list: "Seus resultados"
         see_results: "Exibir resultados"
       index:
         no_results: "Nenhum resultado"
         results: Resultados
-        table_answer: Resposta
+        table_answer: Responda
         table_votes: Votos
         table_whites: "Cédulas completamente em branco"
         table_nulls: "Cédulas inválidas"
-        table_total: "Total de cédulas"
+        table_total: "Total de células"
     residence:
       flash:
         create: "Documento verificado com o Censo"
         not_allowed: "Você não tem turnos como presidente hoje"
       new:
         title: Validar documento
-        document_number: "Número do documento (incluindo letras)"
+        document_number: "Número do documento (incluindo as letras)"
         submit: Validar documento
         error_verifying_census: "O Censo foi incapaz de verificar este documento."
         form_errors: impediu a verificação deste documento

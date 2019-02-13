@@ -21,7 +21,7 @@ es-HN:
       index:
         headings_filter_all: Todas las partidas
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abiertos
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         assigned_to: "Asignadas a %{valuator}"
@@ -34,13 +34,14 @@ es-HN:
         table_title: Título
         table_heading_name: Nombre de la partida
         table_actions: Acciones
+        no_investments: "No hay proyectos de inversión."
       show:
         back: Volver
         title: Propuesta de inversión
         info: Datos de envío
         by: Enviada por
         sent: Fecha de creación
-        heading: Partida
+        heading: Partida presupuestaria
         dossier: Informe
         edit_dossier: Editar informe
         price: Coste
@@ -49,8 +50,8 @@ es-HN:
         feasible: Viable
         unfeasible: Inviable
         undefined: Sin definir
-        valuation_finished: Informe finalizado
-        duration: Plazo de ejecución
+        valuation_finished: Evaluación finalizada
+        duration: Plazo de ejecución <small>(opcional, dato no público)</small>
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -58,28 +59,28 @@ es-HN:
         dossier: Informe
         price_html: "Coste (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
-        price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
+        price_explanation_html: Informe de coste
         feasibility: Viabilidad
         feasible: Viable
         unfeasible: Inviable
-        undefined_feasible: Sin decidir
+        undefined_feasible: Pendientes
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
-        valuation_finished: Informe finalizado
+        valuation_finished: Evaluación finalizada
         valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
         not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
-        duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
-        save: Guardar Cambios
+        duration_html: Plazo de ejecución
+        save: Guardar cambios
       notice:
-        valuate: "Dossier actualizado"
+        valuate: "Informe actualizado"
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abiertos
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         title: Propuestas de inversión para presupuestos participativos
-        edit: Editar
+        edit: Editar propuesta
       show:
         back: Volver
         heading: Propuesta de inversión
@@ -94,9 +95,9 @@ es-HN:
         price_first_year: Coste en el primer año
         feasibility: Viabilidad
         feasible: Viable
-        not_feasible: No viable
+        not_feasible: Inviable
         undefined: Sin definir
-        valuation_finished: Informe finalizado
+        valuation_finished: Evaluación finalizada
         time_scope: Plazo de ejecución
         internal_comments: Comentarios internos
         responsibles: Responsables
@@ -106,15 +107,15 @@ es-HN:
         dossier: Informe
         price_html: "Coste (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, privado)</small>"
-        price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
+        price_explanation_html: Informe de coste
         feasibility: Viabilidad
         feasible: Viable
         not_feasible: Inviable
-        undefined_feasible: Sin decidir
+        undefined_feasible: Pendientes
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
-        valuation_finished: Informe finalizado
-        time_scope_html: Plazo de ejecución <small>(opcional, dato no público)</small>
-        internal_comments_html: Comentarios y observaciones <small>(para responsables internos, dato no público)</small>
+        valuation_finished: Evaluación finalizada
+        time_scope_html: Plazo de ejecución
+        internal_comments_html: Comentarios internos
         save: Guardar cambios
       notice:
-        valuate: "Informe actualizado"
+        valuate: "Dossier actualizado"
