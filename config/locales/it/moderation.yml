@@ -2,7 +2,7 @@ it:
   moderation:
     comments:
       index:
-        block_authors: Blocca autori
+        block_authors: Blocca gli autori
         confirm: Sei sicuro?
         filter: Filtra
         filters:
@@ -11,17 +11,17 @@ it:
           with_ignored_flag: Contrassegna come già visto
         headers:
           comment: Commentare
-          moderate: Modera
-        hide_comments: Nascondi commenti
+          moderate: Moderare
+        hide_comments: Nascondere i commenti
         ignore_flags: Contrassegna come già visto
-        order: Ordina
+        order: Ordine
         orders:
-          flags: Più segnalati
-          newest: Più recenti
+          flags: I più segnalati
+          newest: Più recente
         title: Commenti
     dashboard:
       index:
-        title: Moderazione
+        title: Moderare
     debates:
       index:
         block_authors: Blocca autori
@@ -110,8 +110,8 @@ it:
     users:
       index:
         hidden: Bloccato
-        hide: Blocca
+        hide: Blocco
         search: Ricercare
-        search_placeholder: email o nome utente
+        search_placeholder: e-mail o nome utente
         title: Blocca gli utenti
-      notice_hide: Utente bloccato. Tutti i dibattiti e commenti di questo utente sono stati nascosti.
+      notice_hide: Utente bloccato. Tutti i dibattiti e commenti di questo utente sono state nascostie.
