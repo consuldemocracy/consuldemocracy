@@ -1,6 +1,72 @@
 he:
   pages:
-    general_terms: כללים ותנאים
+    conditions:
+      title: כללים ותנאי שימוש
+    help:
+      menu:
+        debates: "דיונים"
+        proposals: "הצעות"
+        budgets: "תקציבים השתתפותיים"
+        polls: "סקרים"
+        other: "מידע נוסף שעשוי לעניין אותך"
+      debates:
+        title: "דיונים"
+        image_alt: "לחצנים לדרג את הדיונים"
+        figcaption: '"אני מסכים/ה" ו "לא מסכים/ה" לחצנים המדרגים את הדיונים'
+      proposals:
+        title: "הצעות"
+        image_alt: "לחצן תמיכה בהצעה"
+      budgets:
+        title: "תקציב השתתפותי"
+        image_alt: "שלבים שונים של התקציב ההשתתפותי"
+        figcaption_html: '“שלב התמיכה ושלב ההצבעה על התקציב ההשתתפותי”'
+      polls:
+        title: "סקרים"
+      faq:
+        title: "נתקלת בבעיות טכניות?"
+        description: "נא להיכנס ולקרוא תשובות לשאלות נפוצות שאולי יפתרו את הבעיות בהן נתקלת"
+        button: "הצגת שאלות נפוצות"
+      other:
+        title: "מידע נוסף שעשוי לעניין אותך"
+        how_to_use: "שימוש %{org_name} בעירך"
+      titles:
+        how_to_use: ניתן להשתמש בה בממשל המקומי שלך
+    privacy:
+      title: מדיניות הפרטיות
+    accessibility:
+      title: נגישות
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: דיונים
+            - 
+              key_column: 2
+              page_column: הצעות
+            - 
+              key_column: 3
+              page_column: הצבעות
+            - 
+              page_column: תקציבים השתתפותיים
+            - 
+        browser_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox פיירפוקס
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox פיירפוקס
+            - 
+            - 
+            - 
     titles:
       accessibility: נגישות
       conditions: תנאי שימוש
