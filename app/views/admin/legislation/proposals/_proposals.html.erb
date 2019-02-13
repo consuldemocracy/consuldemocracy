@@ -18,7 +18,7 @@
         <tr id="<%= dom_id(proposal) %>" class="legislation_proposal">
           <td class="text-center"><%= proposal.id %></td>
           <td><%= proposal.title %></td>
-          <td class="text-center"><%= proposal.cached_votes_up %></td>
+          <td class="text-center"><%= proposal.votes_score %></td>
           <td class="select"><%= render "select_proposal", proposal: proposal %></td>
         </tr>
       <% end %>

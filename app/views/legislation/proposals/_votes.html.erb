@@ -42,7 +42,7 @@
   <% end %>
 
   <span class="total-votes">
-    <%= t("proposals.proposal.votes", count: proposal.total_votes) %>
+    <%= t("proposals.proposal.votes", count: proposal.votes_score) %>
   </span>
 
   <% if user_signed_in? && current_user.organization? %>

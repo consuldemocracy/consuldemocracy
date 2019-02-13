@@ -47,7 +47,7 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
   scope :sort_by_title,            -> { reorder(title: :asc) }
   scope :sort_by_id,               -> { reorder(id: :asc) }
-  scope :sort_by_supports,         -> { reorder(cached_votes_up: :desc) }
+  scope :sort_by_supports,         -> { reorder(cached_votes_score: :desc) }
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
@@ -94,6 +94,10 @@ class Legislation::Proposal < ActiveRecord::Base
 
   def total_votes
     cached_votes_total
+  end
+
+  def votes_score
+    cached_votes_score
   end
 
   def voters

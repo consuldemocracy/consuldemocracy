@@ -88,6 +88,10 @@ class Debate < ActiveRecord::Base
     cached_votes_total
   end
 
+  def votes_score
+    cached_votes_score
+  end
+
   def total_anonymous_votes
     cached_anonymous_votes_total
   end
