@@ -1,7 +1,7 @@
 fr:
   pages:
     conditions:
-      title: Conditions d'utilisation
+      title: Conditions légales
       subtitle: AVIS JURIDIQUE SUR LES CONDITIONS D’UTILISATION, CONFIDENTIALITÉ ET PROTECTION DES DONNÉES PERSONNELLES DU PORTAIL
       description: Page d’information sur les conditions d’utilisation, de confidentialité et de protection des données personnelles.
     help:
@@ -41,18 +41,18 @@ fr:
         feature_1: "Pour participer au vote, vous devez %{link} et avoir un compte vérifié."
         feature_1_link: "s’inscrire à %{org_name}"
       processes:
-        title: "Processus législatifs"
+        title: "Processus"
         description: "Dans la section des %{link} , les citoyens participent à l’élaboration et la modification des réglements qui s'appliquent à la ville et peuvent donner leur avis sur les politiques municipales lors des débats préalables."
         link: "processus législatifs"
       faq:
         title: "Problèmes techniques ?"
         description: "Lisez la FAQ et trouvez la réponse à vos questions."
-        button: "Voir la foire aux questions"
+        button: "Voir les questions fréquemment posées"
         page:
-          title: "Foire aux questions"
-          description: "Cette page répond aux questions les plus communes des utilisateurs du site."
+          title: "Voir les questions fréquemment posées"
+          description: "Cette page permet de résoudre la Foire aux questions communes aux utilisateurs du site."
           faq_1_title: "Question 1"
-          faq_1_description: "Il s’agit d’un exemple pour la description de la première question."
+          faq_1_description: "Il s’agit d’un exemple pour la description de la question."
       other:
         title: "Autre information utile"
         how_to_use: "Utiliser %{org_name} dans votre ville"
@@ -64,9 +64,9 @@ fr:
 
           Si vous êtes développeur, vous pouvez voir le code et nous aider à l'améliorer sur [CONSUL application] (https://github.com/consul/consul'consul github').
       titles:
-        how_to_use: Utilisez-le pour votre administration locale
+        how_to_use: Utilisez-le pour votre gouvernement
     privacy:
-      title: Politique de confidentialité
+      title: Vie privée
       subtitle: INFORMATIONS CONCERNANT LA CONFIDENTIALITÉ DES DONNÉES
       info_items:
         - 
@@ -182,7 +182,7 @@ fr:
       accessibility: Accessibilité
       conditions: Conditions d'utilisations
       help: "Qu'est-ce que %{org} ? - Participation citoyenne"
-      privacy: Politique de confidentialité
+      privacy: Vie privée
     verify:
       code: Code que vous avez reçu par lettre
       email: Email
