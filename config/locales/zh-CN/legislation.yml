@@ -11,7 +11,7 @@ zh-CN:
         cancel: 取消
         publish_comment: 发表评论
       form:
-        phase_not_open: 此阶段未开放
+        phase_not_open: 此阶段尚未开启
         login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
         signin: 登录
         signup: 注册
@@ -28,7 +28,7 @@ zh-CN:
         see_text: 查看文字草稿
     draft_versions:
       changes:
-        title: 更改
+        title: 变化
         seeing_changelog_version: 修订更改总结
         see_text: 查看文字草稿
       show:
@@ -45,20 +45,20 @@ zh-CN:
     processes:
       header:
         additional_info: 额外信息
-        description: 描述
+        description: 说明
         more_info: 更多信息和上下文
       proposals:
         empty_proposals: 没有提议
         filters:
           random: 随机
-          winners: 已选择
+          winners: 已选
       debate:
         empty_questions: 没有问题
         participate: 参与辩论
       index:
         filter: 过滤器
         filters:
-          open: 开启进程
+          open: 开放进程
           past: 过去的
         no_open_processes: 没有已开放的进程
         no_past_processes: 没有已去过的进程
@@ -78,10 +78,12 @@ zh-CN:
         see_latest_comments_title: 对此进程的评论
       shared:
         key_dates: 关键日期
+        homepage: 主页
         debate_dates: 辩论
         draft_publication_date: 发表草稿
         allegations_dates: 评论
         result_publication_date: 发表最终结果
+        milestones_date: 跟随着
         proposals_dates: 提议
     questions:
       comments:
@@ -99,10 +101,10 @@ zh-CN:
         answer_question: 提交答案
         next_question: 下个问题
         first_question: 第一个问题
-        share: 分享
+        share: 共用
         title: 合作立法进程
       participation:
-        phase_not_open: 此阶段尚未开启
+        phase_not_open: 此阶段未开放
         organizations: 组织不得参与辩论
         signin: 登录
         signup: 注册
@@ -111,7 +113,7 @@ zh-CN:
         verify_account: 验证您的账户
         debate_phase_not_open: 辩论阶段已结束，答案不再被接受
     shared:
-      share: 分享
+      share: 共用
       share_comment: 从进程草稿%{process_name} 中对%{version_name} 的评论
     proposals:
       form:
