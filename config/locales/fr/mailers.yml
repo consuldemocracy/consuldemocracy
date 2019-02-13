@@ -7,7 +7,7 @@ fr:
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
     config:
-      manage_email_subscriptions: Pour ne plus recevoir ces courriels, changez vos options dans
+      manage_email_subscriptions: Pour ne plus recevoir ces courriels, changer vos options dans
     email_verification:
       click_here_to_verify: sur ce lien
       instructions_2_html: Ce courriel va vérifier votre compte avec <b>%{document_type}%{document_number}</b>. Si ce compte ne vous appartient pas, veuillez ne pas cliquer sur le lien et ignorer ce courriel.
