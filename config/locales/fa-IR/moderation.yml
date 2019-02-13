@@ -24,7 +24,7 @@ fa:
         title: سردبیر
     debates:
       index:
-        block_authors: انسداد  نویسنده
+        block_authors: بلوک نویسنده
         confirm: آیا مطمئن هستید؟
         filter: فیلتر
         filters:
