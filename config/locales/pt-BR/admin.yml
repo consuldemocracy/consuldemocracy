@@ -6,7 +6,7 @@ pt-BR:
       actions: Ações
       confirm: Tem certeza?
       confirm_hide: Confirmar a moderação
-      hide: Esconder
+      hide: Ocultar
       hide_author: Esconder o autor
       restore: Restaurar
       mark_featured: Destacado
@@ -21,7 +21,7 @@ pt-BR:
         edit: Editar banner
         delete: Excluir banner
         filters:
-          all: Todos
+          all: Tudo
           with_active: Ativo
           with_inactive: Inativo
         preview: Prévia
@@ -62,7 +62,7 @@ pt-BR:
         content: Conteúdo
         filter: Exibir
         filters:
-          all: Todos
+          all: Tudo
           on_comments: Comentários
           on_debates: Debates
           on_proposals: Propostas
@@ -77,8 +77,8 @@ pt-BR:
         new_link: Criar novo orçamento
         filter: Filtro
         filters:
-          open: Abertos
-          finished: Terminados
+          open: Aberto
+          finished: Finalizados
         budget_investments: Gerenciar projetos
         table_name: Nome
         table_phase: Estágio
@@ -149,7 +149,7 @@ pt-BR:
           placeholder: Organizado por
           id: ID
           title: Título
-          supports: Apoio
+          supports: Apoios
         filters:
           all: Tudo
           without_admin: Sem administrador designado
@@ -206,7 +206,7 @@ pt-BR:
         sent: Enviado
         group: Grupo
         heading: Título
-        dossier: Relatório
+        dossier: Dossiê
         edit_dossier: Editar dossiê
         tags: Marcação
         user_tags: Marcações do usuário
@@ -403,7 +403,7 @@ pt-BR:
           status_closed: Fechados
           status_planned: Planejados
         subnav:
-          info: Informação
+          info: Informações
           homepage: Página inicial
           draft_versions: Seleção
           questions: Debater
@@ -492,12 +492,12 @@ pt-BR:
         index:
           back: Voltar
           title: Perguntas associadas a esse processo
-          create: Criar pergunta
+          create: Criar questão
           delete: Apagar
         new:
           back: Voltar
           title: Criar nova pergunta
-          submit_button: Criar pergunta
+          submit_button: Criar questão
         table:
           title: Título
           question_options: Opções de pergunta
@@ -894,13 +894,13 @@ pt-BR:
       show:
         proposal: Proposta original
         author: Autor
-        question: Pergunta
+        question: Questão
         edit_question: Editar questão
         valid_answers: Respostas válidas
         add_answer: Adicionar resposta
         video_url: Vídeo externo
         answers:
-          title: Responda
+          title: Resposta
           description: Descrição
           videos: Vídeos
           video_list: Lista de vídeos
@@ -946,7 +946,7 @@ pt-BR:
         table_whites: "Cédulas completamente em branco"
         table_nulls: "Cédulas inválidas"
         table_total: "Total de cédulas"
-        table_answer: Responder
+        table_answer: Resposta
         table_votes: Votos
       results_by_booth:
         booth: Urna
@@ -1002,7 +1002,7 @@ pt-BR:
       index:
         filter: Filtro
         filters:
-          all: Todos
+          all: Tudo
           pending: Pendente
           rejected: Rejeitado
           verified: Verificado
@@ -1017,7 +1017,7 @@ pt-BR:
         no_organizations: Não há nenhuma organização.
         reject: Rejeitar
         rejected: Rejeitado
-        search: Pesquisar
+        search: Buscar
         search_placeholder: Nome, e-mail ou número de telefone
         title: Organizações
         verified: Verificado
@@ -1149,8 +1149,8 @@ pt-BR:
         by: Por
         sent: Enviados
         geozone: Escopo
-        dossier: Dossiê
-        edit_dossier: Editar dossiê
+        dossier: Relatório
+        edit_dossier: Editar relatório
         tags: Marcação
         undefined: Não definido
       edit:
@@ -1163,7 +1163,7 @@ pt-BR:
       summary:
         title: Resumo para projetos de investimento
         title_proposals_with_supports: Resumo para projetos de investimento com suportes
-        geozone_name: Escopo
+        geozone_name: Âmbito
         finished_and_feasible_count: Finalizado e factível
         finished_and_unfeasible_count: Finalizado e infactível
         finished_count: Terminados
@@ -1266,7 +1266,7 @@ pt-BR:
         poll_questions: "Perguntas da votação: %{poll}"
         table:
           poll_name: Votação
-          question_name: Pergunta
+          question_name: Questão
           origin_web: Participantes da Web
           origin_total: Total de participantes
     tags:
@@ -1291,7 +1291,7 @@ pt-BR:
         no_users: Não há usuários.
       search:
         placeholder: Buscar usuário por e-mail, nome ou número do documento
-        search: Pesquisar
+        search: Buscar
     verifications:
       index:
         phone_not_given: Telefone não dado
