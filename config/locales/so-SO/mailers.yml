@@ -45,7 +45,7 @@ so:
     user_invite:
       ignore: "Haddii aadan codsanin martiqaadkan ha walwalin, waad iska indha tiri kartaa emailkan."
       text: "Waad ku mahadsantahay codsigaaga inaad ku biirto %{org}! marbaad waxaad bilaabi kartaa inaad kaqaybqaadato, kaliya buuxi foomka hoose:"
-      thanks: "Ad baad u mahadsantahay."
+      thanks: "Ad iyo Ad baad u mahadsantahay."
       title: "Kuso dhowow%{org}"
       button: Diiwaangelinta buuxda
       subject: "Martiqaadka%{org_name}"
