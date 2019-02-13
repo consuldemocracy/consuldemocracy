@@ -1,1 +1,29 @@
 ru:
+  moderation:
+    comments:
+      index:
+        headers:
+          comment: Отзыв
+        title: Комментарии
+    debates:
+      index:
+        headers:
+          debate: Обсуждение
+        title: Обсуждения проблем
+    menu:
+      flagged_comments: Комментарии
+      flagged_debates: Обсуждения проблем
+      proposals: Заявки
+    proposals:
+      index:
+        headers:
+          proposal: Заявка
+        title: Заявки
+    proposal_notifications:
+      index:
+        headers:
+          proposal_notification: Уведомление о предложении
+        title: Уведомления о предложениях
+    users:
+      index:
+        search: Поиск
