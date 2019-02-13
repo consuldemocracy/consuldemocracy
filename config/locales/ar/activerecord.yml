@@ -22,6 +22,27 @@ ar:
         few: "إستثمارات"
         many: "إستثمارات"
         other: "إستثمارات"
+      milestone:
+        zero: "معالم"
+        one: "معلم"
+        two: "معلمان"
+        few: "معالم"
+        many: "معالم"
+        other: "معالم"
+      milestone/status:
+        zero: "حالة المعلم"
+        one: "حالة المعلم"
+        two: "حالتا المعلم"
+        few: "حالات المعلم"
+        many: "حالات المعلم"
+        other: "حالات المعلم"
+      progress_bar:
+        zero: "أشرطة التقدم"
+        one: "شريط التقدم"
+        two: "شريطان التقدم"
+        few: "أشرطة التقدم"
+        many: "أشرطة التقدم"
+        other: "أشرطة التقدم"
       comment:
         zero: "تعليق"
         one: "تعليق"
@@ -29,6 +50,13 @@ ar:
         few: "تعليقات"
         many: "تعليقات"
         other: "تعليقات"
+      debate:
+        zero: "مناقشات"
+        one: "مناقشة"
+        two: "مناقشتان"
+        few: "مناقشات"
+        many: "مناقشات"
+        other: "مناقشات"
       tag:
         zero: "العلامات"
         one: "علامة"
@@ -50,6 +78,27 @@ ar:
         few: "المشرفين"
         many: "المشرفين"
         other: "المشرفين"
+      administrator:
+        zero: "مدراء"
+        one: "مدير"
+        two: "مديران"
+        few: "مدراء"
+        many: "مدراء"
+        other: "مدراء"
+      valuator:
+        zero: "مقيّمين"
+        one: "مقيّم"
+        two: "مقيّمين"
+        few: "مقيّمين"
+        many: "مقيّمين"
+        other: "مقيّمين"
+      valuator_group:
+        zero: "مجموعة تقييم"
+        one: "مجموعة تقييم"
+        two: "مجموعتا تقييم"
+        few: "مجموعات تقييم"
+        many: "مجموعات تقييم"
+        other: "مجموعات تقييم"
       manager:
         zero: "مدير"
         one: "مدير"
@@ -57,6 +106,13 @@ ar:
         few: "مدراء"
         many: "مدراء"
         other: "مدراء"
+      newsletter:
+        zero: "نشرات إخبارية"
+        one: "نشرة إخبارية"
+        two: "نشرتان إخباريتان"
+        few: "نشرات إخبارية"
+        many: "نشرات إخبارية"
+        other: "نشرات إخبارية"
       vote:
         zero: "تصويت"
         one: "صوت"
@@ -64,9 +120,142 @@ ar:
         few: "اصوات"
         many: "اصوات"
         other: "اصوات"
+      organization:
+        zero: "منظمات"
+        one: "منظمة"
+        two: "منظمتان"
+        few: "منظمات"
+        many: "منظمات"
+        other: "منظمات"
+      poll/booth:
+        zero: "مكتب إقتراع"
+        one: "مكتب إقتراع"
+        two: "مكتبين إقتراع"
+        few: "مكاتب إقتراع"
+        many: "مكاتب إقتراع"
+        other: "مكاتب إنتخاب"
+      poll/officer:
+        zero: "ضابط"
+        one: "ضابط"
+        two: "ضابطان"
+        few: "ضباط"
+        many: "ضباط"
+        other: "ضباط"
+      proposal:
+        zero: "مقترحات المواطنين"
+        one: "مقترح المواطنين"
+        two: "مقترحا المواطنين"
+        few: "مقترحات المواطنين"
+        many: "مقترحات المواطنين"
+        other: "مقترحات المواطنين"
+      spending_proposal:
+        zero: "مشروع استثماري"
+        one: "مشروع استثماري"
+        two: "مشروعان استثماريان"
+        few: "مشاريع استثمارية"
+        many: "مشاريع استثمارية"
+        other: "مشاريع استثمارية"
+      site_customization/page:
+        zero: صفحات مخصصة
+        one: صفحة مخصصة
+        two: صفحتان مخصصتان
+        few: صفحات مخصصة
+        many: صفحات مخصصة
+        other: صفحات مخصصة
+      site_customization/image:
+        zero: صور مخصصة
+        one: صورة مخصصة
+        two: صورتان مخصصتان
+        few: صور مخصصة
+        many: صور مخصصة
+        other: صور مخصصة
+      site_customization/content_block:
+        zero: كتل محتوى مخصصة
+        one: كتلة محتوى مخصصة
+        two: كتلتا محتوى مخصصتان
+        few: كتل محتوى مخصصة
+        many: كتل محتوى مخصصة
+        other: كتل محتوى مخصصة
+      legislation/process:
+        zero: "عمليات"
+        one: "عملية"
+        two: "عمليتان"
+        few: "عمليات"
+        many: "عمليات"
+        other: "عمليات"
+      legislation/proposal:
+        zero: "مقترحات"
+        one: "مقترح"
+        two: "مقترحان"
+        few: "مقترحات"
+        many: "مقترحات"
+        other: "مقترحات"
+      legislation/draft_versions:
+        zero: "إصدارات المسودّة"
+        one: "إصدار المسودّة"
+        two: "إصدارا المسودّة"
+        few: "إصدارات المسودّة"
+        many: "إصدارات المسودّة"
+        other: "إصدارات المسودّة"
+      legislation/questions:
+        zero: "أسئلة"
+        one: "سؤال"
+        two: "سؤالان"
+        few: "أسئلة"
+        many: "أسئلة"
+        other: "أسئلة"
+      legislation/question_options:
+        zero: "خيارات السؤال"
+        one: "خيار السؤال"
+        two: "خيارا السؤال"
+        few: "خيارات السؤال"
+        many: "خيارات السؤال"
+        other: "خيارات السؤال"
+      legislation/answers:
+        zero: "الإجابة"
+        one: "إجابة"
+        two: "إجابتان"
+        few: "إجابات"
+        many: "إجابات"
+        other: "إجابات"
+      documents:
+        zero: "وثائق"
+        one: "وثيقة"
+        two: "وثيقتان"
+        few: "وثائق"
+        many: "وثائق"
+        other: "وثائق"
+      images:
+        zero: "صور"
+        one: "صورة"
+        two: "صورتان"
+        few: "صور"
+        many: "صور"
+        other: "صور"
+      topic:
+        zero: "مواضبع"
+        one: "موضوع"
+        two: "موضوعان"
+        few: "مواضبع"
+        many: "مواضبع"
+        other: "مواضبع"
+      poll:
+        zero: "الاستطلاع"
+        one: "استطلاع"
+        two: "استطلاعان"
+        few: "استطلاعات"
+        many: "استطلاعات"
+        other: "استطلاعات"
+      proposal_notification:
+        zero: "إشعارات المقترح"
+        one: "إشعار المقترح"
+        two: "إشعارا المقترح"
+        few: "إشعارات المقترح"
+        many: "إشعارات المقترح"
+        other: "إشعارات المقترح"
     attributes:
       budget:
-        name: "الاسم"
+        name: "الإ سم"
         description_accepting: "وصف خلال مرحلة القبول"
         description_reviewing: "وصف خلال مرحلة المراجعة"
         description_selecting: "وصف خلال مرحلة التحديد"
@@ -87,13 +276,20 @@ ar:
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
       milestone:
-        status_id: "حالة الإستثمار الحالية (إختياري)"
+        status_id: "الحالة الحالية (اختياري)"
         title: "العنوان"
-        description: "الوصف (إختياري ان كان هناك حالة معينة)"
+        description: "الوصف (اختياري إذا كانت هناك حالة تم تعيينها)"
         publication_date: "تاريخ النشر"
       milestone/status:
         name: "الاسم"
-        description: "الوصف (إختياري)"
+        description: "الوصف (اختياري)"
+      progress_bar:
+        kind: "النوع"
+        title: "العنوان"
+        percentage: "التقدم الحالي"
+      progress_bar/kind:
+        primary: "ابتدائي"
+        secondary: "ثانوي"
       budget/heading:
         name: "اسم العنوان"
         price: "السعر"
@@ -186,15 +382,20 @@ ar:
         end_date: تاريخ الإنتهاء
         debate_start_date: تاريخ بدء المناقشة
         debate_end_date: تاريخ انتهاء المناقشة
+        draft_start_date: تاريخ بداية العمل على المسودة
+        draft_end_date: تاريخ إنتهاء المسودة
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
         result_publication_date: تاريخ نشر النتيجة النهائية
+        background_color: لون الخلفية
+        font_color: لون الخط
       legislation/process/translation:
         title: عنوان العملية
         summary: ملخص
         description: وصف
         additional_info: معلومات إضافية
+        milestones_summary: ملخص
       legislation/draft_version:
         title: عنوان الإصدار
         body: نص
@@ -246,6 +447,7 @@ ar:
         description: وصف
         link_text: نص الرابط
         link_url: رابط URL
+        columns: عدد الأعمدة
       widget/card/translation:
         label: التسمية (إختياري)
         title: العنوان
@@ -295,6 +497,8 @@ ar:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ البدء
             debate_end_date:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المناقشة
+            draft_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المسودّة
             allegations_end_date:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء الادعاءات
         proposal:
