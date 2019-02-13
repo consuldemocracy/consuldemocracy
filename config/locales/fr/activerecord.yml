@@ -8,7 +8,7 @@ fr:
         one: "Budget participatif"
         other: "Budgets"
       budget/investment:
-        one: "Projet d'investissement"
+        one: "Investissement"
         other: "Propositions d'investissement"
       milestone:
         one: "jalon"
@@ -23,7 +23,7 @@ fr:
         one: "Étiquette"
         other: "Sujets"
       user:
-        one: "Utilisateur"
+        one: "Utilisateurs masqués"
         other: "Utilisateurs"
       moderator:
         one: "Modérateur"
@@ -53,7 +53,7 @@ fr:
         one: "bureau de vote"
         other: "bureaux de vote"
       poll/officer:
-        one: "assesseur"
+        one: "président"
         other: "présidents"
       proposal:
         one: "Proposition citoyenne"
@@ -98,8 +98,8 @@ fr:
         one: "Sujet"
         other: "Sujets"
       poll:
-        one: "Sondage"
-        other: "Sondages"
+        one: "Vote"
+        other: "Votes"
       proposal_notification:
         one: "Notification de proposition"
         other: "Notifications des propositions"
@@ -107,19 +107,19 @@ fr:
       budget:
         name: "Nom"
         description_accepting: "Description durant la phase d'acceptation"
-        description_reviewing: "Description durant la phase d'examen"
+        description_reviewing: "Description durant la phase de revue"
         description_selecting: "Description durant la phase de sélection"
         description_valuating: "Description durant la phase d'évaluation"
         description_balloting: "Description durant la phase de vote"
-        description_reviewing_ballots: "Description durant la phase d'examen des votes"
+        description_reviewing_ballots: "Description durant la phase de revue des votes"
         description_finished: "Description quand le budget est finalisé"
-        phase: "Phase"
-        currency_symbol: "Monnaie"
+        phase: "Phases"
+        currency_symbol: "Devise"
       budget/investment:
         heading_id: "Titre"
         title: "Titre"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
+        external_url: "Lien vers de la documentation supplémentaire"
         administrator_id: "Administrateur"
         location: "Lieu (optionnel)"
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
@@ -141,7 +141,7 @@ fr:
         population: "Population"
       comment:
         body: "Commentaire"
-        user: "Utilisateur"
+        user: "Utilisateurs masqués"
       debate:
         author: "Auteur"
         description: "Avis"
@@ -155,12 +155,12 @@ fr:
         terms_of_service: "Conditions d'utilisation"
       user:
         login: "Email ou nom d’utilisateur"
-        email: "Courriel"
+        email: "Email"
         username: "Nom d'utilisateur"
         password_confirmation: "Confirmation du mot de passe"
         password: "Mot de passe"
         current_password: "Mot de passe actuel"
-        phone_number: "Téléphone"
+        phone_number: "Numéro de téléphone"
         official_position: "Position officielle"
         official_level: "Niveau officiel"
         redeemable_code: "Vérification du code reçu par courriel"
