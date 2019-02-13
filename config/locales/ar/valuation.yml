@@ -1,5 +1,98 @@
 ar:
   valuation:
-    spending_proposals:
+    menu:
+      budgets: الميزانيات المشاركة
+      spending_proposals: مقترحات الانفاق
+    budgets:
+      index:
+        title: الميزانيات المشاركة
+        filters:
+          current: فتح
+          finished: انتهى
+        table_name: الإ سم
+        table_phase: مرحلة
+        table_actions: الإجراءات
+    budget_investments:
+      index:
+        headings_filter_all: كل العناوين
+        filters:
+          valuation_open: فتح
+          valuating: تحت التقييم
+          valuation_finished: انتهى التقييم
+        title: مشاريع استثمارية
+        edit: تعديل الملف
+        no_valuators_assigned: لم يتم تعيين مقيّمين
+        table_id: ID
+        table_title: عنوان
+        table_heading_name: اسم العنوان
+        table_actions: الإجراءات
+        no_investments: "لا توجد مشاريع استثمارية."
       show:
+        back: عودة
+        title: مشروع استثماري
+        info: معلومات المشارك
+        by: إُرسال بواسطة
+        sent: تم الإرسال بـ
+        heading: عنوان
+        dossier: الملف
+        edit_dossier: تعديل الملف
+        price: السعر
+        price_first_year: التكلفة خلال السنة الأولى
+        currency: "€"
+        feasibility: الجدوى
+        feasible: مجدي
+        unfeasible: غير مجدي
+        undefined: غير معرف
+        valuation_finished: انتهى التقييم
+        assigned_valuators: المقيمين الذين تم تعيينهم
+      edit:
+        dossier: الملف
+        price_explanation_html: توضيح الاسعار
+        feasibility: الجدوى
+        feasible: مجدي
+        unfeasible: غير مجدي
+        undefined_feasible: معلق
+        feasible_explanation_html: تفسير مجدي \ ممكن
+        valuation_finished: انتهى التقييم
+        not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
+        save: حفظ التغييرات
+    spending_proposals:
+      index:
+        geozone_filter_all: كل المناطق
+        filters:
+          valuation_open: فتح
+          valuating: تحت التقييم
+          valuation_finished: انتهى التقييم
+        title: مشاريع استثمارية للميزانية التشاركية
+        edit: تعديل
+      show:
+        back: عودة
+        heading: مشاريع استثمارية
+        info: معلومات المشارك
+        association_name: جمعية
+        by: إُرسال بواسطة
+        sent: تم الإرسال في
+        geozone: نطاق
+        dossier: الملف
+        edit_dossier: تعديل الملف
+        price: سعر
+        price_first_year: التكلفة خلال السنة الأولى
+        currency: "€"
+        feasibility: إمكانية التنفيذ
+        feasible: مجدي
+        not_feasible: غير مجدي
+        undefined: غير معرف
+        valuation_finished: انتهى التقييم
         responsibles: المسؤوليات
+        assigned_valuators: المقيمين الذين تم تعيينهم
+      edit:
+        dossier: الملف
+        currency: "€"
+        price_explanation_html: توضيح الاسعار
+        feasibility: الجدوى
+        feasible: مجدي
+        not_feasible: غير مجدي
+        undefined_feasible: معلق
+        feasible_explanation_html: تفسير مجدي \ ممكن
+        valuation_finished: انتهى التقييم
+        save: حفظ التغييرات
