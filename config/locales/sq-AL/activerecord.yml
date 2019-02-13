@@ -9,22 +9,25 @@ sq:
         other: "Buxhet"
       budget/investment:
         one: "Investim"
-        other: "Investim"
+        other: "Investimet"
+      milestone:
+        one: "moment historik"
+        other: "milestone"
       comment:
-        one: "Komente"
-        other: "Komente"
+        one: "Koment"
+        other: "Komentet"
       debate:
         one: "Debate"
         other: "Debate"
       tag:
         one: "Etiketë"
-        other: "Etiketë - Tag"
+        other: "Etiketë"
       user:
         one: "Përdorues"
-        other: "Përdorues"
+        other: "Përdoruesit"
       moderator:
         one: "Moderator"
-        other: "Moderator"
+        other: "Moderatorët"
       administrator:
         one: "Administrator"
         other: "Administrator"
@@ -36,16 +39,16 @@ sq:
         other: "Grup vlerësuesish"
       manager:
         one: "Manaxher"
-        other: "Manaxher"
+        other: "Menaxherët"
       newsletter:
         one: "Buletin informativ"
         other: "Buletin informativ"
       vote:
-        one: "Votim"
-        other: "Votim"
+        one: "Votë"
+        other: "Vota"
       organization:
         one: "Organizim"
-        other: "Organizim"
+        other: "Organizatat"
       poll/booth:
         one: "kabinë"
         other: "kabinë"
@@ -60,7 +63,7 @@ sq:
         other: "Projekt investimi"
       site_customization/page:
         one: Faqe e personalizuar
-        other: Faqe e personalizuar
+        other: Faqet e personalizuara
       site_customization/image:
         one: Imazhi personalizuar
         other: Imazhe personalizuara
@@ -69,16 +72,16 @@ sq:
         other: Personalizimi i blloqeve të përmbatjeve
       legislation/process:
         one: "Proçes"
-        other: "Proçes"
+        other: "Proçese"
       legislation/proposal:
         one: "Propozime"
-        other: "Propozimet"
+        other: "Propozime"
       legislation/draft_versions:
         one: "Version drafti"
         other: "Version drafti"
       legislation/questions:
         one: "Pyetje"
-        other: "Pyetje"
+        other: "Pyetjet"
       legislation/question_options:
         one: "Opsioni i pyetjeve"
         other: "Opsioni i pyetjeve"
@@ -87,16 +90,16 @@ sq:
         other: "Përgjigjet"
       documents:
         one: "Dokument"
-        other: "Dokument"
+        other: "Dokumentet"
       images:
         one: "Imazh"
-        other: "Imazh"
+        other: "Imazhet"
       topic:
         one: "Temë"
         other: "Temë"
       poll:
         one: "Sondazh"
-        other: "Sondazh"
+        other: "Sondazhet"
       proposal_notification:
         one: "Notifikimi i propozimeve"
         other: "Notifikimi i propozimeve"
@@ -122,8 +125,18 @@ sq:
         organization_name: "Nëse propozoni në emër të një kolektivi / organizate, ose në emër të më shumë njerëzve, shkruani emrin e tij"
         image: "Imazhi përshkrues i propozimit"
         image_title: "Titulli i imazhit"
+      milestone:
+        title: "Titull"
+        description: "Përshkrimi (opsional nëse ka status të caktuar)"
+        publication_date: "Data e publikimit"
+      milestone/status:
+        name: "Emri"
+        description: "Përshkrimi (opsional)"
+      progress_bar:
+        kind: "Tipi"
+        title: "Titull"
       budget/heading:
-        name: "Emri i kreut"
+        name: "Emri i titullit"
         price: "Çmim"
         population: "Popullsia"
       comment:
@@ -225,6 +238,7 @@ sq:
         summary: Përmbledhje
         description: Përshkrimi
         additional_info: Informacion shtesë
+        milestones_summary: Përmbledhje
       legislation/draft_version:
         title: Titulli i versionit
         body: Tekst
@@ -249,10 +263,10 @@ sq:
         title: Titull
         attachment: Bashkëngjitur
       poll/question/answer:
-        title: Përgjigjet
+        title: Përgjigje
         description: Përshkrimi
       poll/question/answer/translation:
-        title: Përgjigjet
+        title: Përgjigje
         description: Përshkrimi
       poll/question/answer/video:
         title: Titull
@@ -360,7 +374,7 @@ sq:
             valuation:
               cannot_comment_valuation: 'Ju nuk mund të komentoni një vlerësim'
       messages:
-        record_invalid: "Vlefshmëria dështoi:%{errors}"
+        record_invalid: "Vlefshmëria dështoi: %{errors}"
         restrict_dependent_destroy:
           has_one: "Nuk mund të fshihet regjistrimi për shkak se ekziston një%{record} i varur"
           has_many: "Nuk mund të fshihet regjistrimi për shkak se ekziston një%{record} i varur"
