@@ -21,4 +21,4 @@ cs:
     errors:
       messages:
         in_between: musí být mezi %{min} a %{max}
-        wrong_content_type: typ dokumentu  %{content_type} neodpovídá povoleným typům %{accepted_content_types}
+        wrong_content_type: obsah typu %{content_type} neodpovídá žádnému z přijímaných typů obsahu %{accepted_content_types}
