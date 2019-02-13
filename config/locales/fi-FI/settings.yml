@@ -19,4 +19,6 @@ fi:
       proposals: "Ehdotukset"
       polls: "Kyselyt"
       legislation: "Lainsäädäntö"
+      user:
+        recommendations: "Suositukset"
       help_page: "Ohje-sivu"
