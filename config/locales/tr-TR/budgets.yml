@@ -6,3 +6,11 @@ tr:
         amount_spent: Harcanan miktar
         remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
         remove: Oy kaldırmak
+    investments:
+      show:
+        votes: Oylar
+        comments_tab: Yorumlar
+      investment:
+        add: Oy
+    results:
+      ballot_lines_count: Oylar
