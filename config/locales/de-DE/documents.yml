@@ -20,5 +20,5 @@ de:
       destroy_document: Dokument löschen
     errors:
       messages:
-        in_between: muss zwischen %{min} und %{max} sein
-        wrong_content_type: Inhaltstyp %{content_type} entspricht keinem der akzeptierten Inhaltstypen %{accepted_content_types}
+        in_between: muss zwischen %{min} und %{max} liegen
+        wrong_content_type: Inhaltstyp %{content_type} stimmt mit keiner der akzeptierten Inhaltstypen überein %{accepted_content_types}
