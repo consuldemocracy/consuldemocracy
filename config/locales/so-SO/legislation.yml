@@ -6,7 +6,7 @@ so:
         see_complete: Fiiri dhamaystiran
         comments_count:
           one: "%{count} Falo"
-          other: "%{count} Falooyin"
+          other: "%{count} falooyinka"
         replies_count:
           one: "%{count} j Jawab celin"
           other: "%{count} j Jawabo celin"
@@ -23,7 +23,7 @@ so:
         see_in_context: Fiiri macnaha guud
         comments_count:
           one: "%{count} Falo"
-          other: "%{count} Falooyin"
+          other: "%{count} falooyinka"
       show:
         title: Faalo
       version_chooser:
@@ -81,10 +81,12 @@ so:
         see_latest_comments_title: Falada kusabsan Habkan
       shared:
         key_dates: Tarikhaha muhiimka ah
+        homepage: Bogga
         debate_dates: Dood
         draft_publication_date: Daabacaadda qoraalka
         allegations_dates: Faalo
         result_publication_date: Daabacaadda natiijada kama dambaysta ah
+        milestones_date: Kuxiga
         proposals_dates: Sojeedino
     questions:
       comments:
@@ -96,8 +98,8 @@ so:
       question:
         comments:
           zero: Falooyin majiraan
-          one: "%{count} faalo"
-          other: "%{count} faaloyin"
+          one: "%{count} Falo"
+          other: "%{count} falooyinka"
         debate: Dood
       show:
         answer_question: Soo gudbi jawaabta
