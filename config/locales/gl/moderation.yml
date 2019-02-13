@@ -8,7 +8,7 @@ gl:
         filters:
           all: Todo
           pending_flag_review: Pendentes
-          with_ignored_flag: Marcado como revisado
+          with_ignored_flag: Marcados como revisados
         headers:
           comment: Comentar
           moderate: Moderar
@@ -24,7 +24,7 @@ gl:
         title: Moderar
     debates:
       index:
-        block_authors: Bloquear autores
+        block_authors: Bloquear autores/as
         confirm: Queres continuar?
         filter: Filtro
         filters:
@@ -111,7 +111,7 @@ gl:
       index:
         hidden: Bloqueado
         hide: Bloquear
-        search: Buscar
+        search: Procurar
         search_placeholder: correo electrónico ou nome de usuario
         title: Bloquear usuarios
       notice_hide: Usuario bloqueado. Ocultáronse todos os seus debates e comentarios.
