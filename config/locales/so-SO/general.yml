@@ -6,7 +6,7 @@ so:
       email_on_comment_reply_label: Ii wargali email ahaan marka qof uu jawaabo ku yiraahdo
       erase_account_link: Ka tiri akoonka
       finish_verification: Xaqiijin dhamaystiran
-      notifications: Ogaysiisyo
+      notifications: Ogaysiis
       organization_name_label: Magacaga ururka
       organization_responsible_name_placeholder: Wakiilka ururka / wadajirka
       personal: Warbixinada qofka
@@ -54,8 +54,8 @@ so:
       user_deleted: Isticmalaha la tirtiray
       votes:
         zero: Looma baahna codad
-        one: 1 Cod 
-        other: "%{count} codadka"
+        one: 1 cod
+        other: "%{count} codad"
     form:
       comment_as_admin: Faallada sida admin
       comment_as_moderator: Falada xer ilaliyaha
@@ -81,12 +81,12 @@ so:
     debate:
       comments:
         zero: Falooyin majiraan
-        one: 1 faalo
-        other: "%{count} falooyinka"
+        one: hal faalo
+        other: "hal faalo%{count} Talooyin ku saabsan abuurista dood"
       votes:
         zero: Looma baahna codad
-        one: 1 cod
-        other: "%{count} codad"
+        one: 1 Cod 
+        other: "%{count} codadka"
     edit:
       editing: Beddel dood
       form:
@@ -101,8 +101,8 @@ so:
     index:
       featured_debates: Soobandhigiid/ Muqaal
       filter_topic:
-        one: " mawduuc '%{topic}"
-        other: " mawduuc '%{topic}"
+        one: " mawduuc%{topic}"
+        other: " mawduuc%{topic}"
       orders:
         confidence_score: ugu sareeya
         created_at: ugu cusub
@@ -122,8 +122,8 @@ so:
         placeholder: Doodaha raadinta...
         title: Raadin
       search_results_html:
-        one: " raadinta Dugsi ee ku jira ereyga <strong>%{search_term}</strong>"
-        other: " raadinta Dugsi ee ku jira ereyga <strong>%{search_term}</strong>"
+        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       select_order: Dalbaday
       start_debate: Biloow dooda
       title: Doodo
@@ -152,8 +152,8 @@ so:
       author_deleted: Isticmalaha la tirtiray
       comments:
         zero: Falooyin majiraan
-        one: hal faalo
-        other: "hal faalo%{count} Talooyin ku saabsan abuurista dood"
+        one: 1 faalo
+        other: "%{count} falooyinka"
       comments_title: Faalo
       edit_debate_link: Isbedel
       flag: Dooddani waxaa loo calaamadiyay iyada oo aan ku habboonayn dad badan oo isticmaala.
@@ -238,7 +238,7 @@ so:
         new_notifications:
           one: Waxaad heysataa ogeysiis cusub
           other: Waxaad heysataa%{count} ogeysiis cusub
-        notifications: Ogaysiis
+        notifications: Ogaysiisyo
         no_notifications: "Ma haysatid wargelin cusub"
     admin:
       watch_form_message: 'Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?'
@@ -247,7 +247,7 @@ so:
       empty_notifications: Ma haysatid wargelin cusub,.
       mark_all_as_read: Calaamadee dhammaantood sida akhriska ah
       read: Akhri
-      title: Ogaysiis
+      title: Ogaysiisyo
       unread: An akhrin
     notification:
       action:
@@ -334,8 +334,8 @@ so:
     index:
       featured_proposals: Soobandhigiid/ Muqaal
       filter_topic:
-        one: " mawduuc%{topic}"
-        other: " mawduuc%{topic}"
+        one: " mawduuc '%{topic}"
+        other: " mawduuc '%{topic}"
       orders:
         confidence_score: ugu sareeya
         created_at: ugu cusub
@@ -365,8 +365,8 @@ so:
         placeholder: Soo jeedinta raadinta...
         title: Raadin
       search_results_html:
-        one: " oo ku jira ereyga <strong>%{search_term}</strong>"
-        other: " oo ku jira ereyga <strong>%{search_term}</strong>"
+        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       select_order: Dalbaday
       select_order_long: 'Waxaad daawaneysaa soo jeedinada sida:'
       start_proposal: Abuur soo jeedin
@@ -403,17 +403,17 @@ so:
       comments:
         zero: Falooyin majiraan
         one: 1 faalo
-        other: "%{count} faloyin"
+        other: "%{count} falooyinka"
       support: Tageero
       support_title: Taageeraan hindisahan
       supports:
         zero: Tageero la an
-        one: 1 tagere
-        other: "%{count} tagerayal"
+        one: 1tageere
+        other: "%{count} tageereyal"
       votes:
         zero: Looma baahna codad
-        one: 1 cood
-        other: "%{count} codad"
+        one: 1 Cod 
+        other: "%{count} codadka"
       supports_necessary: "%{number} taageerada loo baahan yahay"
       total_percent: 100%
       archived: "Soo jeedintaas waa la diiwaangeliyey oo ma soo qaadan karo taageerooyinka."
@@ -424,12 +424,13 @@ so:
       comments:
         zero: Falooyin majiraan
         one: 1 faalo
-        other: "%{count} faaloyin"
+        other: "%{count} falooyinka"
       comments_tab: Faalo
       edit_proposal_link: Isbedel
       flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.
       login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
-      notifications_tab: Ogaysiis
+      notifications_tab: Ogaysiisyo
+      milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
       retired_warning: "Qoruhu wuxuu tixgelinayaa hindisahaan in aysan helin taageero dheeraad ah."
       retired_warning_link_to_explanation: Akhri sharraxa kahor intaadan codeynin.
       retired: Soo-jeedinta ay ka fariisteen qoraaga
@@ -444,7 +445,7 @@ so:
       form:
         submit_button: Badbaadi beddelka
     share:
-      message: "Waxaan taageeray hindisaha%{summary} ee%{org} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
+      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
   polls:
     all: "Dhamaan"
     no_dates: "tirada taariikhda la magacaabay"
@@ -490,8 +491,8 @@ so:
       zoom_plus: Ballaarin sawir
       read_more: "Akhriso wax dheeraad ah oo ku saabsan%{answer}"
       read_less: "Akhri wax yar oo ku saabsan%{answer}"
-      videos: "Fiidiyowga dibadda"
-      info_menu: "Maclumad"
+      videos: "Fidyoowga dibada"
+      info_menu: "Maclumaad"
       stats_menu: "Participation statisticsTirakoobka ka qaybqaadashada"
       results_menu: "Natiijooyinka ra'yiga"
       stats:
@@ -509,17 +510,17 @@ so:
         title: "Sualo"
         most_voted_answer: "Ita badan jawabah codayey: "
   poll_questions:
-    create_question: "Saame sual"
+    create_question: "Saame Sual"
     show:
       vote_answer: "Cod%{answer}"
       voted: "Wad codeysay%{answer}"
       voted_token: "Waxaad ku qori kartaa liiska codbixinta, si aad u hubiso codkaaga natiijooyinka kama dambaysta ah:"
   proposal_notifications:
     new:
-      title: "Farri dir"
+      title: "Fariin dir"
       title_label: "Ciwaan"
       body_label: "Fariin"
-      submit_button: "Fariin dir"
+      submit_button: "Farri dir"
       info_about_receivers_html: "Fariintan waxaa loo diri doonaa <strong>%{count} dadka </strong> waxaana lagu arki doonaa%{proposal_page}.<br> - Xawaaruhu si dhakhso ah uma dirin, dadka isticmaala waxay helayaan wakhti gaaban email ah oo leh dhammaan ogeysiinta soo jeedinta."
       proposal_page: "bogga soo jeedinta"
     show:
@@ -648,8 +649,8 @@ so:
         placeholder: Mashariicda malgashiga...
         title: Raadin
       search_results:
-        one: " oo ku jira ereyga %{search_term}"
-        other: " oo ku jira ereyga %{search_term}"
+        one: " oo ku jira ereyga'%{search_term}"
+        other: " oo ku jira ereyga'%{search_term}"
       sidebar:
         geozones: Baxada Hawlgalka
         feasibility: Suurta galnimada
@@ -674,8 +675,8 @@ so:
       support_title: Tageer Mashruucaan
       supports:
         zero: Tageero la an
-        one: 1tageere
-        other: "%{count} tageereyal"
+        one: 1 tagere
+        other: "%{count} tagerayal"
   stats:
     index:
       visits: Boqashooyinka
@@ -703,8 +704,8 @@ so:
         verified_only: Diir fariin khasa%{verify_account}
         verify_account: hubi xisaabtaada
         authenticate: Waa inad igu %{signin} ama%{signup} si wada.
-        signin: gelid
-        signup: iska diwan gelin
+        signin: saxiixid
+        signup: saxiixid ilaa
       show:
         receiver: Fariin diir%{receiver}
     show:
@@ -750,7 +751,7 @@ so:
     disagree: Ma aqbalin
     organizations: Ururada loma fasixin iney codeyaan
     signin: Geliid
-    signup: Is diwan gelid
+    signup: Saxiixid
     supports: Tageerayaal
     unauthenticated: Waa inad igu %{signin} ama%{signup} si wada.
     verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
