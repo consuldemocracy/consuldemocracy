@@ -1,1 +1,38 @@
 ru:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Электронный адрес
+    mailer:
+      reset_password_instructions:
+        title: Измените ваш пароль
+    organizations:
+      registrations:
+        new:
+          email_label: Электронный адрес
+          organization_name_label: Название организации
+          password_label: Пароль
+          phone_number_label: Номер телефона
+    passwords:
+      edit:
+        password_label: Новый пароль
+        title: Измените ваш пароль
+      new:
+        email_label: Электронный адрес
+    sessions:
+      new:
+        login_label: Электронный адрес или имя пользователя
+        password_label: Пароль
+    unlocks:
+      new:
+        email_label: Электронный адрес
+    users:
+      registrations:
+        edit:
+          current_password_label: Текущий пароль
+          email_label: Электронный адрес
+          password_label: Новый пароль
+        new:
+          email_label: Электронный адрес
+          password_label: Пароль
+          username_label: Имя пользователя
