@@ -24,7 +24,7 @@ it:
       change_user: Cambia utente
       document_number_label: 'Numero del documento:'
       document_type_label: 'Tipo di documento:'
-      email_label: 'Email:'
+      email_label: 'E-mail:'
       identified_label: 'Identificato come:'
       username_label: 'Nome utente:'
     check: Controlla documento
@@ -61,11 +61,11 @@ it:
     menu:
       create_proposal: Crea proposta
       print_proposals: Stampa proposte
-      support_proposals: Sostieni proposte
+      support_proposals: Appoggiare le proposte
       create_spending_proposal: Crea proposta di spesa
       print_spending_proposals: Stampa proposte di spesa
       support_spending_proposals: Sostieni proposte di spesa
-      create_budget_investment: Crea investimento di bilancio
+      create_budget_investment: Creare un progetto di investimento
       print_budget_investments: Stampa investimenti di bilancio
       support_budget_investments: Sostieni investimenti di bilancio
       users: Gestione degli utenti
@@ -74,7 +74,7 @@ it:
     permissions:
       create_proposals: Crea proposte
       debates: Partecipa ai dibattiti
-      support_proposals: Sostieni proposte
+      support_proposals: Appoggiare le proposte
       vote_proposals: Vota proposte
     print:
       proposals_title: 'Proposte:'
@@ -88,12 +88,12 @@ it:
       print:
         print_button: Stampa
       index:
-        title: Sostieni proposte
+        title: Appoggiare le proposte
     budgets:
       create_new_investment: Crea investimento di bilancio
       print_investments: Stampa investimenti di bilancio
       support_investments: Sostieni investimenti di bilancio
-      table_name: Nome
+      table_name: Nominativo
       table_phase: Fase
       table_actions: Azioni
       no_budgets: Non ci sono bilanci partecipativi attivi.
@@ -106,6 +106,9 @@ it:
         unfeasible: Progetto irrealizzabile
       print:
         print_button: Stampa
+      search_results:
+        one: " contenenti il termine '%{search_term}'"
+        other: " contenenti il termine '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: L'utente non è verificato
@@ -116,7 +119,7 @@ it:
       print:
         print_button: Stampa
       search_results:
-        one: " contenente il termine '%{search_term}'"
+        one: " contenenti il termine '%{search_term}'"
         other: " contenenti il termine '%{search_term}'"
     sessions:
       signed_out: Disconnesso con successo.
@@ -137,7 +140,7 @@ it:
       erase_submit: Elimina account
     user_invites:
       new:
-        label: Email
+        label: E-mail
         info: "Inserisci gli indirizzi email separati da virgole (',')"
         submit: Manda inviti
         title: Manda inviti
