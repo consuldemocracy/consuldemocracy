@@ -2,6 +2,7 @@ es:
   helpers:
     page_entries_info:
       entry:
+        zero: Entradas
         one: entrada
         other: entradas
       more_pages:
@@ -15,4 +16,6 @@ es:
       current: Estás en la página
       first: Primera
       last: Última
+      next: Siguiente
       previous: Anterior
+      truncate: "&hellip;"
