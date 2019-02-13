@@ -1,19 +1,27 @@
 tr:
   date:
+    abbr_day_names:
+      - Pzr
+      - Pzt
+      - Sal
+      - Çrş
+      - Prş
+      - Cum
+      - Cts
     abbr_month_names:
       - 
-      - Jan
-      - Feb
+      - Ock
+      - Şub
       - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Nis
+      - Mayıs 
+      - Haz
+      - Tem
+      - Ağu
+      - Eyl
+      - Eki
+      - Kas
+      - Ara
     day_names:
       - Pazar
       - Pazartesi
@@ -22,6 +30,10 @@ tr:
       - Perşembe
       - Cuma
       - Cumartesi
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d,%Y"
+      short: "%b %d"
     month_names:
       - 
       - Ocak
@@ -35,10 +47,57 @@ tr:
       - Eylül
       - Ekim
       - Kasım
-      - December
+      - Aralık
   datetime:
+    distance_in_words:
+      about_x_months:
+        one: yaklaşık 1 ay
+        other: yaklaşık %{count} ay
+      about_x_years:
+        one: yaklaşık 1 yıl
+        other: yaklaşık %{count} yıl
+      almost_x_years:
+        one: neredeyse 1 yıl
+        other: neredeyse %{count} yıl
+      half_a_minute: yarım dakika
+      less_than_x_minutes:
+        one: bir dakikadan az
+        other: '%{count} dakikadan az'
+      over_x_years:
+        one: 1 yıldan fazla
+        other: '%{count} yıldan fazla'
+      x_months:
+        one: 1 ay
+        other: "%{count} ay"
+      x_years:
+        one: 1 yıl
+        other: "%{count} yıl"
+      x_seconds:
+        one: 1 saniye
+        other: "%{count} saniye"
     prompts:
       day: Gün
+      hour: Saat
+      minute: Dakika
+      month: Ay
+      second: Saniye
+      year: Yıl
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: kabul edilmeli
+      blank: boş olamaz
+      present: boş olmalıdır
+      confirmation: '%{attribute} ile eşleşmiyor'
+      empty: boş olamaz
+      equal_to: '%{count}''a denk olmalıdır'
+      even: eşit olmalı
+      exclusion: ayrılmıştır
+      greater_than: '%{count}''dan büyük olmalıdır'
+      greater_than_or_equal_to: '%{count}''dan büyük veya eşit olmalıdır'
+      inclusion: listeye dahil değildir
+      invalid: geçersizdir
+      less_than: '%{count}''dan küçük olmalıdır'
   number:
     human:
       format:
