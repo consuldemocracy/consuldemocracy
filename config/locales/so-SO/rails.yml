@@ -145,19 +145,19 @@ so:
         delimiter: ","
         format: "%u%n"
         precision: 2
-        separator: "."
+        separator: ",."
         significant: false
         strip_insignificant_zeros: false
         unit: "&"
     format:
       delimiter: ","
       precision: 3
-      separator: ",."
+      separator: "."
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: "%u%u"
+        format: "%n"
         units:
           billion: Bilyaan
           million: Malyaan
@@ -169,7 +169,7 @@ so:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: "%n"
+        format: "%u%u"
         units:
           byte:
             one: Byte
