@@ -1,1 +1,389 @@
 ru:
+  admin:
+    banners:
+      banner:
+        title: Название
+        description: Описание
+        target_url: Ссылка
+        sections:
+          debates: Обсуждения проблем
+          proposals: Заявки
+          budgets: Партисипаторное бюджетирование
+    activity:
+      show:
+        content: Содержание
+        filters:
+          on_comments: Комментарии
+          on_debates: Обсуждения проблем
+          on_proposals: Заявки
+          on_users: Пользователи
+    budgets:
+      index:
+        title: Партисипаторные бюджеты
+        table_name: Имя
+        table_phase: Этап
+        table_investments: Инвестиции
+        no_budgets: "Нет бюджетов."
+      edit:
+        phase: Этап
+    budget_groups:
+      name: "Имя"
+    budget_headings:
+      name: "Имя"
+      form:
+        name: "Название раздела"
+    budget_phases:
+      edit:
+        start_date: Дата начала
+        end_date: Дата окончания
+        summary: Резюме
+        description: Описание
+    budget_investments:
+      index:
+        sort_by:
+          title: Название
+          supports: Поддержки
+        title: Инновационные проекты
+        list:
+          title: Название
+          supports: Поддержки
+          admin: Администратор
+          valuator: Эксперт
+          geozone: Сфера деятельности
+        see_results: "Просмотр результатов"
+      show:
+        group: Группа
+        heading: Раздел
+        tags: Метки
+        image: "Изображение"
+        documents: "Документы"
+      edit:
+        assigned_valuators: Эксперты
+        tags: Метки
+    milestones:
+      index:
+        table_title: "Название"
+        table_description: "Описание"
+        table_publication_date: "Дата публикации"
+        table_status: Статус
+        no_milestones: "Не имеет определенных основных этапов"
+        image: "Изображение"
+        documents: "Документы"
+      new:
+        description: Описание
+    statuses:
+      index:
+        table_name: Имя
+        table_description: Описание
+    progress_bars:
+      index:
+        table_title: "Название"
+    hidden_users:
+      index:
+        user: Пользователь
+    legislation:
+      processes:
+        form:
+          process: Процесс
+          homepage: Описание
+        proposals:
+          orders:
+            title: Название
+            supports: Поддержки
+        process:
+          title: Процесс
+          comments: Комментарии
+          status: Статус
+        subnav:
+          info: Информация
+          questions: Обсуждение
+          proposals: Заявки
+      proposals:
+        index:
+          title: Название
+          supports: Поддержки
+        form:
+          custom_categories: Категории
+      draft_versions:
+        index:
+          title: Предварительные варианты
+        statuses:
+          draft: Черновик
+        table:
+          title: Название
+          created_at: Создано в
+          comments: Комментарии
+          final_version: Окончательная версия
+          status: Статус
+      questions:
+        form:
+          title: Вопрос
+        table:
+          title: Название
+          question_options: Варианты вопроса
+    managers:
+      index:
+        title: Менеджеры
+        name: Имя
+        email: Электронный адрес
+    menu:
+      poll_questions: Вопросы
+      proposals: Заявки
+      budgets: Партисипаторные бюджеты
+      administrators: Администраторы
+      managers: Менеджеры
+      moderators: Модераторы
+      newsletters: Информационные бюллетени
+      valuators: Эксперты
+      polls: Опросы
+      organizations: Организации
+      site_customization:
+        information_texts_menu:
+          debates: "Обсуждения проблем"
+          community: "Сообщество"
+          proposals: "Заявки"
+          polls: "Опросы"
+      title_budgets: Бюджеты
+      title_polls: Опросы
+      users: Пользователи
+    administrators:
+      index:
+        title: Администраторы
+        name: Имя
+        email: Электронный адрес
+    moderators:
+      index:
+        title: Модераторы
+        name: Имя
+        email: Электронный адрес
+    segment_recipient:
+      administrators: Администраторы
+    newsletters:
+      index:
+        title: Информационные бюллетени
+        subject: Тема
+        segment_recipient: Получатели
+        draft: Черновик
+      show:
+        subject: Тема
+        segment_recipient: Получатели
+        body: Содержание электронной почты
+    admin_notifications:
+      index:
+        title: Название
+        segment_recipient: Получатели
+        draft: Черновик
+      show:
+        title: Название
+        body: Текст
+        link: Ссылка
+        segment_recipient: Получатели
+    valuators:
+      index:
+        title: Эксперты
+        name: Имя
+        email: Электронный адрес
+        description: Описание
+        group: "Группа"
+      summary:
+        valuator_name: Эксперт
+      show:
+        description: "Описание"
+        email: "Электронный адрес"
+        group: "Группа"
+    valuator_groups:
+      index:
+        title: "Экспертные группы"
+        name: "Имя"
+    poll_officers:
+      officer:
+        name: Имя
+        email: Электронный адрес
+        entry_name: офицер
+      search:
+        search: Поиск
+    poll_officer_assignments:
+      index:
+        table_name: "Имя"
+        table_email: "Электронный адрес"
+    poll_shifts:
+      new:
+        search_officer_button: Поиск
+        table_email: "Электронный адрес"
+        table_name: "Имя"
+    poll_booth_assignments:
+      show:
+        results: "Результаты"
+      index:
+        table_name: "Имя"
+    polls:
+      index:
+        name: "Имя"
+        start_date: "Дата начала"
+        closing_date: "Дата закрытия"
+      show:
+        questions_tab: Вопросы
+        results_tab: Результаты
+        table_title: "Название"
+    questions:
+      index:
+        title: "Вопросы"
+        questions_tab: "Вопросы"
+        table_proposal: "Заявка"
+        table_question: "Вопрос"
+        table_poll: "Опрос"
+      new:
+        poll_label: "Опрос"
+      answers:
+        images:
+          add_image: "Добавить изображение"
+      show:
+        author: Автор
+        question: Вопрос
+        video_url: Внешнее видео
+        answers:
+          title: Ответ
+          description: Описание
+          images: Изображения
+          documents: Документы
+          document_title: Название
+    answers:
+      show:
+        title: Название
+        description: Описание
+        images: Изображения
+      videos:
+        index:
+          video_title: Название
+          video_url: Внешнее видео
+    results:
+      index:
+        title: "Результаты"
+      result:
+        table_answer: Ответ
+        table_votes: Голоса
+      results_by_booth:
+        results: Результаты
+        see_results: Просмотр результатов
+    booths:
+      index:
+        name: "Имя"
+      new:
+        name: "Имя"
+    officials:
+      index:
+        name: Имя
+        official_position: Официальная позиция
+    organizations:
+      index:
+        name: Имя
+        email: Электронный адрес
+        status: Статус
+        search: Поиск
+        title: Организации
+    proposals:
+      index:
+        title: Заявки
+        author: Автор
+        milestones: Основные этапы
+    settings:
+      setting_status: Статус
+      setting_value: Значение
+    shared:
+      booths_search:
+        button: Поиск
+      poll_officers_search:
+        button: Поиск
+      poll_questions_search:
+        button: Поиск
+      proposal_search:
+        button: Поиск
+      spending_proposal_search:
+        button: Поиск
+      user_search:
+        button: Поиск
+      title: Название
+      description: Описание
+      image: Изображение
+      proposal: Заявка
+      author: Автор
+      content: Содержание
+      created_at: Создано в
+    spending_proposals:
+      show:
+        tags: Метки
+      edit:
+        assigned_valuators: Эксперты
+        tags: Метки
+    geozones:
+      geozone:
+        name: Имя
+    signature_sheets:
+      author: Автор
+      name: Имя
+      show:
+        author: Автор
+        documents: Документы
+    stats:
+      show:
+        summary:
+          comments: Комментарии
+          debates: Обсуждения проблем
+          proposals: Заявки
+          budget_investments: Инновационные проекты
+        budgets_title: Партисипаторное бюджетирование
+        proposal_notifications: Уведомления о предложениях
+        polls: Опросы
+      proposal_notifications:
+        title: Уведомления о предложениях
+      polls:
+        all: Опросы
+        table:
+          poll_name: Опрос
+          question_name: Вопрос
+    tags:
+      create: Создать тему
+      destroy: Удалить тему
+      index:
+        topic: Тема
+    users:
+      columns:
+        name: Имя
+        email: Электронный адрес
+      index:
+        title: Пользователь
+      search:
+        search: Поиск
+    site_customization:
+      content_blocks:
+        content_block:
+          body: Тело
+          name: Имя
+      images:
+        index:
+          image: Изображение
+      pages:
+        form:
+          options: Опции
+        page:
+          created_at: Создано в
+          status: Статус
+          updated_at: Обновлено в
+          status_draft: Черновик
+          title: Название
+          slug: Slug URL
+        cards:
+          title: Название
+          description: Описание
+          link_text: Текст ссылки
+          link_url: Ссылка URL
+    homepage:
+      cards:
+        title: Название
+        description: Описание
+        link_text: Текст ссылки
+        link_url: Ссылка URL
+      feeds:
+        proposals: Заявки
+        debates: Обсуждения проблем
+        processes: Процессы
