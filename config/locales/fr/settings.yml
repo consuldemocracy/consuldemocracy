@@ -54,9 +54,10 @@ fr:
       proposals: "Propositions"
       debates: "Débats"
       polls: "Votes"
+      polls_description: "Les sondages des citoyens sont un mécanisme participatif par lequel les citoyens ayant le droit de vote peuvent prendre des décisions directes"
       signature_sheets: "Feuilles de signature"
       legislation: "Législation"
-      spending_proposals: "Propositions de dépense"
+      spending_proposals: "Propositions d'investissement"
       user:
         recommendations: "Recommandations"
         skip_verification: "Passer la vérification de l'utilisateur"
@@ -68,3 +69,4 @@ fr:
       allow_attached_documents: "Permettre le téléchargement et le visionnage de pièces jointes"
       guides: "Guides pour créer des propositions ou projets d’investissement"
       public_stats: "Stats publiques"
+      help_page: "Page d'aide"
