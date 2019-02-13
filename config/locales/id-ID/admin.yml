@@ -4,14 +4,14 @@ id:
       title: Administrasi
     actions:
       actions: Tindakan
-      confirm: Apakah anda yakin?
+      confirm: Apakah kamu yakin?
       confirm_hide: Konfirmasi
       hide: Sembunyikan
       hide_author: Sembunyikan penulis
       restore: Mengembalikan
       mark_featured: Unggulan
       unmark_featured: Hapus tanda pada yang ditampilkan
-      edit: Mengedit
+      edit: Sunting
       configure: Konfigurasikan
       delete: Hapus
     banners:
@@ -123,7 +123,7 @@ id:
         description_help_text: Teks ini akan muncul di header disaat fase aktif
         enabled: Fase diaktifkan
         enabled_help_text: Fase ini akan menjadi publik dalam garis waktu fase anggaran, dan juga akan aktif untuk tujuan yang lain
-        save_changes: Menyimpan perubahan
+        save_changes: Simpan perubahan
     budget_investments:
       index:
         heading_filter_all: Semua judul
@@ -403,14 +403,14 @@ id:
           changelog_placeholder: Tambahkan perubahan utama dari versi sebelumnya
           body_placeholder: Menulis draft teks
         index:
-          title: Versi rancangan
-          create: Membuar versi
+          title: Rancangan versi
+          create: Membuat versi
           delete: Hapus
           preview: Tinjauan
         new:
           back: Kembali
           title: Membuat versi baru
-          submit_button: Membuat versi
+          submit_button: Membuar versi
         statuses:
           draft: Konsep
           published: Dipublikasikan
@@ -1087,7 +1087,7 @@ id:
       polls:
         title: Statistik pemilihan
         all: Jajak pendapat
-        web_participants: Peserta web
+        web_participants: Web peserta
         total_participants: Total peserta
         poll_questions: "Pertanyaan dari jajak pendapat: %{poll}"
         table:
