@@ -1,13 +1,36 @@
 ar:
   officing:
+    polls:
+      final:
+        title: الاستطلاعات جاهزة لعملية العد النهائي
     results:
       new:
+        booth: "مكتب الإقتراع"
         date: "تاريخ"
+        ballots_white: "أوراق فارغة"
+        ballots_null: "أوراق غير صالحة"
+        ballots_total: "مجموع الأوراق"
         submit: "حفظ"
+        see_results: "رؤية النتائج"
       index:
         no_results: "لا توجد نتائج"
         results: النتائج
-        table_answer: الإجابة
+        table_answer: إجابة
+        table_votes: اصوات
+        table_whites: "أوراق فارغة"
+        table_nulls: "أوراق غير صالحة"
+        table_total: "مجموع الأوراق"
+    residence:
+      flash:
+        create: "وثيقة تم التحقق منها من خلال التعداد"
+      new:
+        document_number: "رقم المستند (بما في ذلك الاحرف)"
+        error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
     voters:
+      new:
+        title: استطلاعات
+        table_poll: استطلاع
+        table_status: حالة الاستطلاع
+        table_actions: الإجراءات
       show:
         submit: تأكيد التصويت
