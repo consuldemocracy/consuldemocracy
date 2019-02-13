@@ -26,7 +26,7 @@ de:
         title: "Vorschläge"
         description: "Im %{link}-Abschnitt können Sie Anträge an den Stadtrat stellen. Die Anträge brauchen dann Unterstützung. Wenn Ihr Antrag ausreichend Unterstützung bekommt, wird er zur öffentlichen Wahl freigegeben. Anträge, die durch Bürgerstimmen bestätigt wurden, werden vom Stadtrat angenommen und umgesetzt."
         link: "Bürgervorschläge"
-        image_alt: "Button zur Unterstützung eines Vorschlags"
+        image_alt: "Klicken Sie hier um den Vorschlag zu unterstützen"
         figcaption_html: 'Button zur "Unterstützung" eines Vorschlags.'
       budgets:
         title: "Bürgerhaushalt"
@@ -41,23 +41,23 @@ de:
         feature_1: "Um an der Abstimmung teilzunehmen, müssen Sie %{link} und Ihr Konto verifizieren."
         feature_1_link: "anmelden %{org_name}"
       processes:
-        title: "Prozesse"
+        title: "Beteiligungsverfahren"
         description: "Im %{link}-Abschnitt nehmen Bürger an der Ausarbeitung und Änderung von, die Stadt betreffenden, Bestimmungen teil und können ihre Meinung bezüglich kommunaler Richtlinien in vorausgehenden Debatten äußern."
         link: "Prozesse"
       faq:
         title: "Technische Probleme?"
         description: "Lesen Sie die FAQs und finden Sie Antworten auf Ihre Fragen."
-        button: "Zeige häufig gestellte Fragen"
+        button: "Lies die Liste der häufig gestellten Fragen"
         page:
-          title: "Häufige gestellte Fragen"
-          description: "Benutzen Sie diese Seite, um gängige FAQs der Seiten-Nutzer zu beantworten."
+          title: "Häufig gestellte Fragen"
+          description: "Benutzen Sie diese Seite um die gemeinsamen FAQs für die Benutzer der Website zu beheben."
           faq_1_title: "Frage 1"
-          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der ersten Frage."
+          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der Frage eins."
       other:
         title: "Weitere interessante Informationen"
         how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
       titles:
-        how_to_use: Verwenden Sie diese in Ihrer lokalen Regierung
+        how_to_use: Verwenden Sie es in Ihrer Kommunalverwaltung
     privacy:
       title: Datenschutzbestimmungen
       subtitle: INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN
@@ -140,8 +140,10 @@ de:
       textsize:
         title: Textgröße
         browser_settings_table:
+          browser_header: Browser
           rows:
             - 
+              browser_column: Internet Explorer
             - 
               browser_column: Firefox
             - 
@@ -151,10 +153,10 @@ de:
             - 
               browser_column: Opera
     titles:
-      accessibility: Barrierefreiheit
+      accessibility: Zugänglichkeit
       conditions: Nutzungsbedingungen
       help: "Was ist %{org}? -Bürgerbeteiligung"
-      privacy: Datenschutzregelung
+      privacy: Datenschutzbestimmungen
     verify:
       code: Code, den Sie per Brief/SMS erhalten haben
       email: E-Mail
