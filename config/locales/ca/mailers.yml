@@ -1,1 +1,69 @@
 ca:
+  mailers:
+    no_reply: "Aquest missatge s'ha enviat des d'una adreça de correu electrònic que no admet respostes."
+    comment:
+      hi: Hola
+      new_comment_by_html: Hi ha un nou comentari de <b>%{commenter}</b> en
+      subject: Algú ha comentat en el teu %{commentable}
+      title: Nou comentari
+    config:
+      manage_email_subscriptions: Pots deixar de rebre aquests emails canviant la teua configuració en
+    email_verification:
+      click_here_to_verify: en aquest enllaç
+      instructions_2_html: Aquest email és per a verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si aquestes no són les teues dades, per favor no premes l'enllaç anterior i ignora aquest email.
+      subject: Verifica el teu email
+      thanks: Moltes gràcies.
+      title: Verifica el teu compte amb el següent enllaç
+    reply:
+      hi: Hola
+      new_reply_by_html: Hi ha una nova resposta de <b>%{commenter}</b> al teu comentari en
+      subject: Algú ha respost al teu comentari
+      title: Nova resposta al teu comentari
+    unfeasible_spending_proposal:
+      hi: "Benvolgut usuari,"
+      new_href: "nova proposta d'inversió"
+      sincerely: "Atentament"
+      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
+    proposal_notification_digest:
+      info: "A continuació et mostrem les noves notificacions que han publicat els autors de les propostes que estàs avalant en %{org_name}."
+      title: "Notificacions de propostes en %{org_name}"
+      share: Compartir proposta
+      comment: Comentar proposta
+      unsubscribe_account: El meu compte
+    direct_message_for_receiver:
+      subject: "Has rebut un nou missatge privat"
+      reply: Respondre a %{sender}
+      unsubscribe_account: El meu compte
+    user_invite:
+      ignore: "Si no has sol·licitat aquesta invitació no et preocupes, pots ignorar aquest correu."
+      thanks: "Moltes gràcies."
+      title: "Benvingut a %{org}"
+      button: Completar registre
+      subject: "Invitació a %{org_name}"
+    budget_investment_created:
+      subject: "Gràcies per crear una proposta d'inversió!"
+      title: "Gràcies per crear una proposta d'inversió!"
+      intro_html: "Hola <strong>%{author}</strong>,"
+      text_html: "Moltes gràcies per crear la teua proposta d'inversió <strong>%{investment}</strong> per als Pressupostos Participatius <strong>%{budget}</strong>."
+      follow_html: "T'informarem de com avança el procés, que també pots seguir en la pàgina de <strong>%{link}</strong>."
+      follow_link: "Pressupostos participatius"
+      sincerely: "Atentament,"
+    budget_investment_unfeasible:
+      hi: "Benvolgut usuari,"
+      new_href: "nova proposta d'inversió"
+      sincerely: "Atentament"
+      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
+    budget_investment_selected:
+      subject: "La teva proposta d'inversió '%{code}' ha estat seleccionada"
+      hi: "Benvolgut usuari,"
+      share: "Comença ja a aconseguir vots, comparteix el teu projecte de despesa en xarxes socials. La difusió és fonamental per aconseguir que es faci realitat."
+      share_button: "Comparteix el teu projecte"
+      thanks: "Gràcies de nou per la teva participació."
+      sincerely: "atentament"
+    budget_investment_unselected:
+      subject: "La teva proposta d'inversió '%{code}' no ha estat seleccionada"
+      hi: "Benvolgut usuari,"
+      thanks: "Gràcies de nou per la teva participació."
+      sincerely: "atentament"
