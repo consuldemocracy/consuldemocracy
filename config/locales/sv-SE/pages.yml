@@ -10,7 +10,7 @@ sv:
         proposals: "Förslag"
         budgets: "Medborgarbudgetar"
         polls: "Omröstningar"
-        other: "Annan information av intresse"
+        other: "Andra intresseområden"
         processes: "Processer"
       debates:
         title: "Debatter"
@@ -18,8 +18,8 @@ sv:
         link: "debatter"
         feature_html: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
         feature_link: "registrera dig på %{org}"
-        image_alt: "Knappar för att betygsätta debatter"
-        figcaption: '"Jag håller med"- och "Jag håller inte med"-knappar för att betygsätta debatter.'
+        image_alt: "Knappar för att betygsätta diskussioner"
+        figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
       proposals:
         title: "Förslag"
         description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
@@ -50,9 +50,9 @@ sv:
           title: "Vanliga frågor"
           description: "Använd den här sidan för att hjälpa dina användare med deras vanligaste frågor."
           faq_1_title: "Fråga 1"
-          faq_1_description: "Det här är ett exempel på beskrivning till fråga ett."
+          faq_1_description: "Detta är ett exempel på beskrivning till fråga ett."
       other:
-        title: "Annan information av intresse"
+        title: "Andra intresseområden"
         how_to_use: "Använd %{org_name} i din stad"
       titles:
         how_to_use: Använd det i din kommun
@@ -96,7 +96,7 @@ sv:
       accessibility: Tillgänglighet
       conditions: Användarvillkor
       help: "Vad är %{org}? - Medborgardeltagande"
-      privacy: Sekretesspolicy
+      privacy: sekretesspolicyn
     verify:
       code: Koden du fick i ett brev
       email: E-post
