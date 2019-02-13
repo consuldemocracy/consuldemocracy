@@ -170,6 +170,7 @@ pt-BR:
       compatibility:
         title: Compatibilidade com padrões e design visual
     titles:
+      accessibility: Acessibilidade
       conditions: Termos de uso
       help: "O que é %{org}? -Participação cidadã"
       privacy: Política de privacidade
@@ -179,4 +180,5 @@ pt-BR:
       info: 'Para verificar sua conta introduza seus dados de acesso:'
       info_code: 'Agora introduza o código recebido na carta:'
       password: Senha
+      submit: Verificar minha conta
       title: Verifique sua conta
