@@ -157,7 +157,7 @@ pl:
         many: "Ankiety"
         other: "Ankiety"
       proposal_notification:
-        one: "Powiadomienie o wniosku"
+        one: "Zgłoszenie propozycji"
         few: "Powiadomienie o wnioskach"
         many: "Powiadomienie o wnioskach"
         other: "Powiadomienie o wnioskach"
@@ -203,14 +203,14 @@ pl:
       debate:
         author: "Autor"
         description: "Opinia"
-        terms_of_service: "Regulamin"
+        terms_of_service: "Warunki użytkowania"
         title: "Tytuł"
       proposal:
         author: "Autor"
         title: "Tytuł"
         question: "Pytanie"
         description: "Opis"
-        terms_of_service: "Warunki użytkowania"
+        terms_of_service: "Regulamin"
       user:
         login: "E-mail lub nazwa użytkownika"
         email: "E-mail"
@@ -259,7 +259,7 @@ pl:
         created_at: Utworzony w
         subtitle: Napis
         slug: Ścieżka
-        status: Stan
+        status: Status
         title: Tytuł
         updated_at: Aktualizacja w
         more_info_flag: Pokaż na stronie pomocy
@@ -275,7 +275,7 @@ pl:
       site_customization/content_block:
         name: Nazwa
         locale: ustawienia regionalne
-        body: Ciało
+        body: Zawartość
       legislation/process:
         title: Tytuł procesu
         summary: Podsumowanie
@@ -299,7 +299,7 @@ pl:
         title: Tytuł w wersji
         body: Tekst
         changelog: Zmiany
-        status: Stan
+        status: Status
         final_version: Wersja ostateczna
       legislation/draft_version/translation:
         title: Tytuł w wersji
@@ -362,7 +362,7 @@ pl:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tagów może być najwyżej %{count}"
+              less_than_or_equal_to: "liczba tagów musi być mniejsza lub równa %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -400,11 +400,11 @@ pl:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "liczba tagów musi być mniejsza lub równa %{count}"
+              less_than_or_equal_to: "tagów może być najwyżej %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "liczba tagów musi być mniejsza lub równa %{count}"
+              less_than_or_equal_to: "tagów może być najwyżej %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -428,7 +428,7 @@ pl:
             valuation:
               cannot_comment_valuation: 'Nie możesz komentować wyceny'
       messages:
-        record_invalid: "Walidacja nie powiodła się: %{errors}"
+        record_invalid: "Sprawdzanie poprawności nie powiodło się: %{errors}"
         restrict_dependent_destroy:
           has_one: "Nie można usunąć zapisu, ponieważ istnieje zależny %{record}"
           has_many: "Nie można usunąć zapisu, ponieważ istnieją zależne %{record}"
