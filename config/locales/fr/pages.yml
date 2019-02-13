@@ -8,32 +8,32 @@ fr:
       title: "%{org} est une plate-forme pour la participation citoyenne"
       guide: "Ce guide détaille chacune des sections de la %{org} et comment elles fonctionnent."
       menu:
-        debates: "Discussions"
+        debates: "Débats"
         proposals: "Propositions"
         budgets: "Budgets participatifs"
         polls: "Votes"
         other: "Autre information utile"
-        processes: "Processus législatifs"
+        processes: "Processus"
       debates:
-        title: "Discussions"
+        title: "Débats"
         description: "Dans la section %{link}, vous pouvez présenter et partager votre opinion avec d’autres personnes sur des sujets liés à la ville qui vous sont chers. C’est aussi un lieu pour générer des idées qui, associées aux autres sections de %{org}, pourront conduire à des actions concrètes du conseil municipal."
         link: "débats citoyens"
         feature_html: "Vous pouvez ouvrir des débats, les commenter et les évaluer avec les boutons <strong>Je suis d'accord</strong> ou <strong>Je ne suis pas d’accord</strong>. Pour cela, vous devez %{link}."
         feature_link: "s’inscrire à %{org}"
-        image_alt: "Boutons pour évaluer les débats"
-        figcaption: 'Boutons ''Je suis d''accord'' et ''Je ne suis pas d''accord'' pour évaluer les débats.'
+        image_alt: "Boutons pour noter les débats"
+        figcaption: 'Les boutons ''Je suis d''accord'' et ''Je ne suis pas d''accord'' pour noter les débats.'
       proposals:
         title: "Propositions"
         description: "Dans la section %{link}, vous pouvez faire des propositions que la mairie pourrait réaliser. Les propositions ont besoin de soutiens, et si elles atteignent un nombre suffisant, elles sont soumises à un vote public. Les propositions approuvées par ces votes citoyens sont acceptées par le conseil municipal et réalisées."
         link: "propositions citoyennes"
-        image_alt: "Bouton pour soutenir une proposition"
+        image_alt: "Bouton pour supporter une proposition"
         figcaption_html: 'Bouton pour "Soutenir" une proposition.'
       budgets:
-        title: "Budget participatif"
+        title: "Budgets participatifs"
         description: "La section %{link} permet aux citoyens de participer à la répartition du budget municipal."
         link: "budgets participatifs"
-        image_alt: "Différentes phases d’un budget participatif"
-        figcaption_html: '"Phase de soutien" et "phase de vote" des budgets participatifs.'
+        image_alt: "Différentes phases d'un budget participatif"
+        figcaption_html: '"Phase de support" et "phase de vote" des budgets participatifs.'
       polls:
         title: "Votes"
         description: "La section %{link} est activée chaque fois qu’une proposition atteint 1% de soutiens et passe au vote ou lorsque le conseil municipal propose aux gens de se prononcer sur une mesure."
@@ -189,5 +189,5 @@ fr:
       info: 'Pour vérifier votre compte saisissez vos données d''accès :'
       info_code: 'Saisissez maintenant le code reçu par lettre :'
       password: Mot de passe
-      submit: Confirmer mon compte
+      submit: Vérifier mon compte
       title: Confirmer mon compte
