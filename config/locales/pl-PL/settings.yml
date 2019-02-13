@@ -72,7 +72,7 @@ pl:
     verification_offices_url: Adres URL biur weryfikujących
     proposal_improvement_path: Wewnętrzny link informacji dotyczącej ulepszenia wniosku
     feature:
-      budgets: "Budżetowanie Partycypacyjne"
+      budgets: "Budżetowanie partycypacyjne"
       budgets_description: "Dzięki budżetom partycypacyjnym obywatele decydują, które projekty przedstawione przez ich sąsiadów otrzymają część budżetu gminy"
       twitter_login: "Login do Twittera"
       twitter_login_description: "Zezwalaj użytkownikom na rejestrację za pomocą konta na Twitterze"
