@@ -1,1 +1,213 @@
 ru:
+  account:
+    show:
+      phone_number_label: Номер телефона
+      username_label: Имя пользователя
+  comments:
+    verify_account: подтвердите ваш аккаунт
+    comment:
+      admin: Администратор
+      author: Автор
+      moderator: Модератор
+      user_deleted: Пользователь удален
+  comments_helper:
+    comment_link: Отзыв
+    comments_title: Комментарии
+  debates:
+    debate:
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+    form:
+      tags_label: Темы
+      tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
+    index:
+      orders:
+        confidence_score: наивысший рейтинг
+      search_form:
+        button: Поиск
+        title: Поиск
+      search_results_html:
+        one: " содержащие термин <strong>'%{search_term}'</strong>"
+        few: " содержащие термин <strong>'%{search_term}'</strong>"
+        many: " содержащие термин <strong>'%{search_term}'</strong>"
+        other: " содержащие термин <strong>'%{search_term}'</strong>"
+      title: Обсуждения проблем
+      section_header:
+        title: Обсуждения проблем
+    show:
+      author_deleted: Пользователь удален
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      comments_title: Комментарии
+      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      share: Доля
+      author: Автор
+  form:
+    debate: Обсуждение
+    proposal: Заявка
+    budget/investment: Инвестиция
+    poll/question/answer: Ответ
+    document: Документ
+    topic: Тема
+    image: Изображение
+  layouts:
+    header:
+      debates: Обсуждения проблем
+      proposals: Заявки
+      budgets: Партисипаторное бюджетирование
+  map:
+    select_district: Сфера деятельности
+  proposals:
+    form:
+      geozone: Сфера деятельности
+      proposal_external_url: Ссылка на дополнительную документацию
+      proposal_title: Заголовок предложения
+      tag_category_label: "Категории"
+      tags_instructions: "Отметьте это предложение. Вы можете выбрать из предлагаемых категорий или добавить свои собственные"
+      tags_label: Метки
+      tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
+      map_location: "Местоположение на карте"
+      map_location_instructions: "Перейдите на карте к местоположению и поместите маркер."
+      map_remove_marker: "Удалить маркер карты"
+    index:
+      orders:
+        confidence_score: наивысший рейтинг
+      search_form:
+        button: Поиск
+        title: Поиск
+      search_results_html:
+        one: " содержащие термин <strong>'%{search_term}'</strong>"
+        few: " содержащие термин <strong>'%{search_term}'</strong>"
+        many: " содержащие термин <strong>'%{search_term}'</strong>"
+        other: " содержащие термин <strong>'%{search_term}'</strong>"
+      title: Заявки
+      section_header:
+        title: Заявки
+    proposal:
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      support: Поддержка
+      supports:
+        zero: Нет поддержки
+        one: 1 поддержка
+        few: "поддерживает %{count}"
+        many: "поддерживает %{count}"
+        other: "поддерживает %{count}"
+    show:
+      author_deleted: Пользователь удален
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      comments_tab: Комментарии
+      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      milestones_tab: Основные этапы
+      share: Доля
+      title_video_url: "Внешнее видео"
+      author: Автор
+  polls:
+    index:
+      title: "Опросы"
+    show:
+      comments_tab: Комментарии
+      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      verify_link: "подтвердите ваш аккаунт"
+      documents: Документы
+      videos: "Внешнее видео"
+      info_menu: "Информация"
+      results:
+        title: "Вопросы"
+  proposal_notifications:
+    new:
+      title_label: "Название"
+  shared:
+    advanced_search:
+      from: 'От'
+    author_info:
+      author_deleted: Пользователь удален
+    search: Поиск
+    tags_cloud:
+      categories: "Категории"
+    share: Доля
+  spending_proposals:
+    form:
+      association_name: 'Название ассоциации'
+      description: Описание
+      external_url: Ссылка на дополнительную документацию
+      geozone: Сфера деятельности
+    index:
+      title: Партисипаторное бюджетирование
+      unfeasible: Неосуществимые инвестиционные проекты
+      search_form:
+        button: Поиск
+        title: Поиск
+      sidebar:
+        geozones: Сфера деятельности
+    show:
+      author_deleted: Пользователь удален
+      share: Доля
+    wrong_price_format: Только целые числа
+    spending_proposal:
+      spending_proposal: Инвестиционный проект
+      support: Поддержка
+      support_title: Поддержать этот проект
+      supports:
+        zero: Нет поддержки
+        one: 1 поддержка
+        few: "поддерживает %{count}"
+        many: "поддерживает %{count}"
+        other: "поддерживает %{count}"
+  stats:
+    index:
+      debates: Обсуждения проблем
+      proposals: Заявки
+      comments: Комментарии
+  users:
+    direct_messages:
+      new:
+        title_label: Название
+        verify_account: подтвердите ваш аккаунт
+        authenticate: Чтобы продолжить, %{signin} или %{signup}.
+        signin: войти
+        signup: регистрация
+    show:
+      proposals: Заявки
+      debates: Обсуждения проблем
+      comments: Комментарии
+  votes:
+    organizations: Организациям не разрешается голосовать
+    supports: Поддержки
+    unauthenticated: Чтобы продолжить, %{signin} или %{signup}.
+    verify_account: подтвердите ваш аккаунт
+    spending_proposals:
+      not_logged_in: Чтобы продолжить, %{signin} или %{signup}.
+      organization: Организациям не разрешается голосовать
+    budget_investments:
+      not_logged_in: Чтобы продолжить, %{signin} или %{signup}.
+      organization: Организациям не разрешается голосовать
+  welcome:
+    feed:
+      process_label: Процесс
+    welcome:
+      title: Участвовать
+  related_content:
+    content_title:
+      proposal: "Заявка"
+      debate: "Обсуждение"
+  annotator:
+    help:
+      text_sign_up: регистрация
