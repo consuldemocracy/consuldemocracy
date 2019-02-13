@@ -1,5 +1,31 @@
 ru:
   activerecord:
+    models:
+      milestone:
+        one: "этап"
+        few: "этапы"
+        many: "этапы"
+        other: "этапы"
+      comment:
+        one: "Отзыв"
+        few: "Комментарии"
+        many: "Комментарии"
+        other: "Отзывы"
+      tag:
+        one: "Метка"
+        few: "Метки"
+        many: "Метки"
+        other: "Метки"
+      vote:
+        one: "Голос"
+        few: "Голоса"
+        many: "Голоса"
+        other: "Голоса"
+      documents:
+        one: "Документ"
+        few: "Документы"
+        many: "Документы"
+        other: "Документы"
     attributes:
       budget:
         name: "Имя"
@@ -22,6 +48,15 @@ ru:
         organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
+      milestone:
+        title: "Название"
+        description: "Описание (опционально, если присвоен статус)"
+        publication_date: "Дата публикации"
+      milestone/status:
+        name: "Имя"
+        description: "Описание (опционально)"
+      progress_bar:
+        title: "Название"
       budget/heading:
         name: "Название раздела"
         price: "Цена"
@@ -123,6 +158,7 @@ ru:
         summary: Резюме
         description: Описание
         additional_info: Дополнительная информация
+        milestones_summary: Резюме
       legislation/draft_version:
         title: Название версии
         body: Текст
