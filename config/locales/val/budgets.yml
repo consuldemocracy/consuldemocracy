@@ -13,7 +13,7 @@ val:
         voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
-        not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+        not_logged_in: Necessites %{signin} o %{signup}.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
         organization: Les organitzacions no poden votar
         not_selected: No es poden votar propostes inviables
@@ -25,7 +25,7 @@ val:
       show:
         title: Selecciona una opció
         unfeasible_title: Propostes inviables
-        unfeasible: Veure propostes inviables
+        unfeasible: Vore les propostes inviables
         unselected_title: Propostes no seleccionades per a la votació final
         unselected: Veure les propostes no seleccionades per a la votació final
     phase:
@@ -50,21 +50,23 @@ val:
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
       investment_proyects: Llista de totes les propostes d'inversió
-      unfeasible_investment_proyects: Llista de projectes d'inversió inviables
+      unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
       not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
       section_footer:
         title: Ajuda amb els pressupostos participatius
+        description: Amb els pressupostos participatius la ciutadanía decideix a quins projectes va destinada una part del pressupost.
+      milestones: Seguiments
     investments:
       form:
         tag_category_label: "Categoríes"
-        tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
-        tags_label: Etiquetes
-        tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
+        tags_instructions: "Etiqueta esta proposta. Pots elegir entre les categories propostes o introduir les que desitges"
+        tags_label: Temes
+        tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
         map_location: "Ubicació en el mapa"
         map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
-        map_remove_marker: "Eliminar el marcador"
+        map_remove_marker: "Eliminar marcador"
         location: "Informació adicional de localització"
         map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la conec."
       index:
@@ -77,7 +79,7 @@ val:
           placeholder: Cercar propostes d'inversió...
           title: Cercar
         search_results_html:
-          one: " que conté <strong>'%{search_term}'</strong>"
+          one: " que contenen <strong>'%{search_term}'</strong>"
           other: " que contenen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Els meus vots
@@ -86,13 +88,13 @@ val:
             other: "<strong>Has votat %{count} propostes per un valor de %{amount_spent}</strong>"
           voted_info: Pots %{link} els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
           voted_info_link: canviar el teu vot
-          different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
-          change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
+          different_heading_assigned_html: "Ja vas votar propostes d'un altra secció del presupost %{heading_link}"
+          change_ballot: "Si canvies d'opinió pots borrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió en aquest àmbit del pressupost.
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           verify_account: "verifica el teu compte"
-          create: "Crear proposta d'inversió"
+          create: "Crear nou projecte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
           sign_in: "iniciar sessió"
           sign_up: "registrar-te"
@@ -101,8 +103,10 @@ val:
           unfeasible: Veure les propostes d'inversió inviables
         orders:
           random: aleatòries
-          confidence_score: millor valorades
+          confidence_score: millor valorats
           price: per cost
+      share:
+        message: "Acabe de crear una proposta %{title} en %{org}. Crea una tu també!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
@@ -116,18 +120,19 @@ val:
         votes: Vots
         price: Cost
         comments_tab: Comentaris
-        milestones_tab: Seguiments
+        milestones_tab: Fites
         author: Autor
         project_unfeasible_html: 'Esta proposta <strong>ha sigut marcada com inviable</strong> i no passarà a la fase de votació.'
         project_selected_html: 'Este projecte d''inversió <strong>ha sigut seleccionat</strong> per a la fase de votació.'
         project_winner: 'Proposta d''inversió guanyadora'
         project_not_selected_html: 'Esta proposta <strong>no ha sigut seleccionada</strong> per a la fase de votació.'
+        see_price_explanation: Veure informe de cost
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
-        add: Votar
+        add: Vot
         already_added: Ja has afegit aquesta proposta d'inversió
         already_supported: Ja has avalat aquest projecte d'inversió. Comparteixlo!
-        support_title: Avalar aquesta proposta
+        support_title: Avalar este projecte
         confirm_group:
           one: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
           other: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
@@ -138,27 +143,27 @@ val:
         give_support: Avalar
       header:
         check_ballot: Revisar els meus vots
-        different_heading_assigned_html: "Ja vas votar propostes d'un altra secció del presupost %{heading_link}"
-        change_ballot: "Si canvies d'opinió pots borrar els teus vots en %{check_ballot} i tornar a començar."
+        different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
+        change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Esta partida te un pressupost de"
     progress_bar:
-      assigned: "Has sigut asignat: "
+      assigned: "Has asignat: "
       available: "Pressupost disponible: "
     show:
       group: Grup
       phase: Fase actual
       unfeasible_title: Propostes inviables
-      unfeasible: Vore les propostes inviables
+      unfeasible: Veure propostes inviables
       unselected_title: Propostes no seleccionades per a la votació final
       unselected: Veure les propostes no seleccionades per a la votació final
-      see_results: Veure resultats
+      see_results: Vore resultats
     results:
       link: Resultats
       page_title: "%{budget} - Resultats"
       heading: "Resultats pressupostos participatius"
-      heading_selection_title: "Àmbit d'actuació"
-      spending_proposal: Títol
+      heading_selection_title: "Per districte"
+      spending_proposal: Títol de la proposta
       ballot_lines_count: Vots
       hide_discarded_link: Oculta descartades
       show_all_link: Mostrar totes
@@ -168,8 +173,17 @@ val:
       discarded: "Proposta d'inversió descartada: "
       incompatibles: Incompatibles
       investment_proyects: Llista de totes les propostes d'inversió
-      unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
+      unfeasible_investment_proyects: Llista de projectes d'inversió inviables
       not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
+    executions:
+      link: "Seguiments"
+      page_title: "%{budget} - Fites"
+      heading: "Fites de pressupostos participatius"
+      heading_selection_title: "Àmbit d'actuació"
+      no_winner_investments: "No hi ha propostes en aquest estat"
+      filters:
+        label: "Estat actual del projecte"
+        all: "Tots (%{count})"
     phases:
       errors:
         dates_range_invalid: "La data d'inici no ha de ser igual o posterior a la data de fi"
