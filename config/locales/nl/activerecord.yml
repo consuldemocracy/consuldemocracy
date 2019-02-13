@@ -6,10 +6,10 @@ nl:
         other: "activiteiten"
       budget:
         one: "Burgerbegroting"
-        other: "Burgerbegrotingen"
+        other: "Budgetten"
       budget/investment:
         one: "Investerning"
-        other: "Investeringen"
+        other: "Investments"
       milestone:
         one: "mijlpaal"
         other: "mijlpalen"
@@ -17,77 +17,77 @@ nl:
         one: "Mijlpaalstatus"
         other: "Mijlpaalstatussen"
       comment:
-        one: "Reactie"
-        other: "Reacties"
+        one: "Commentaar"
+        other: "Comments"
       debate:
         one: "Discussie"
-        other: "Discussies"
+        other: "Discussie"
       tag:
         one: "Label"
-        other: "Labels"
+        other: "Tags"
       user:
-        one: "Deelnemer"
-        other: "Deelnemer"
+        one: "Hidden users"
+        other: "Gebruikers"
       moderator:
         one: "Moderator"
         other: "Moderators"
       administrator:
-        one: "Admin"
+        one: "Beheerder"
         other: "Admins"
       valuator:
-        one: "Beoordelaar"
-        other: "Beoordelaars"
+        one: "beoordelaar"
+        other: "beoordelaars"
       valuator_group:
         one: "Evaluatiegroep"
         other: "Evaluatiegroepen"
       manager:
         one: "Manager"
-        other: "Managers"
+        other: "Beheerders"
       newsletter:
         one: "Nieuwsbrief"
         other: "Nieuwsbrieven"
       vote:
-        one: "Stem"
-        other: "Stemmen"
+        one: "Voeg toe"
+        other: "Votes"
       organization:
         one: "Organisatie"
-        other: "Organisaties"
+        other: "Organisations"
       poll/booth:
         one: "stemlocatie"
         other: "stemlocaties"
       poll/officer:
-        one: "Lid"
+        one: "officer"
         other: "Leden"
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
       spending_proposal:
-        one: "Begrotingsvoorstel"
-        other: "Begrotingsvoorstellen"
+        one: "Investment project"
+        other: "Budget bestemmingen"
       site_customization/page:
         one: Aangepaste pagina
         other: Aangepaste pagina's
       site_customization/image:
         one: Aangepaste afbeelding
-        other: Aangepaste afbeeldingen
+        other: Custom images
       site_customization/content_block:
         one: Aangepaste inhoud
-        other: Aangepaste inhoud
+        other: Custom content blocks
       legislation/process:
         one: "Proces"
-        other: "Proces"
+        other: "Plannen"
       legislation/proposal:
-        one: "Voorstel"
-        other: "Voorstellen"
+        one: "Proposal"
+        other: "Proposals"
       legislation/draft_versions:
-        one: "Concept versie"
+        one: "Conceptversie"
         other: "Concept versies"
       legislation/questions:
-        one: "Vraag"
+        one: "Question"
         other: "Vragen"
       legislation/question_options:
         one: "Vraag optie"
-        other: "Vraag opties"
+        other: "Vraag keuzen"
       legislation/answers:
         one: "Antwoord"
         other: "Antwoorden"
@@ -99,16 +99,16 @@ nl:
         other: "Afbeeldingen"
       topic:
         one: "Onderwerp"
-        other: "Onderwerpen"
+        other: "Termen"
       poll:
         one: "Poll"
         other: "Polls"
       proposal_notification:
         one: "Voorstelnotificatie"
-        other: "Voorstelnotificaties"
+        other: "Voorstel notificaties"
     attributes:
       budget:
-        name: "Naam"
+        name: "Name"
         description_accepting: "Omschrijving gedurende de Acceptatiefase"
         description_reviewing: "Omschrijving gedurende de evaluatie"
         description_selecting: "Omschrijving gedurende de Selectiefase"
@@ -116,13 +116,13 @@ nl:
         description_balloting: "Omschrijving gedurende de Stemfase"
         description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer de begroting is afgerond"
-        phase: "Fase"
+        phase: "Phase"
         currency_symbol: "Valuta"
       budget/investment:
-        heading_id: "Kop"
-        title: "Titel"
-        description: "Omschrijving"
-        external_url: "Link naar aanvullende informatie"
+        heading_id: "Partida"
+        title: "Title"
+        description: "Beschrijving"
+        external_url: "Link naar meer informatie"
         administrator_id: "Admin"
         location: "Locatie (optioneel)"
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
@@ -130,34 +130,37 @@ nl:
         image_title: "Naam van de afbeelding"
       milestone:
         status_id: "Huidige status (optioneel)"
-        title: "Titel"
-        description: "Omschrijving (optioneel indien een status is toegewezen)"
+        title: "Title"
+        description: "Omschrijving"
         publication_date: "Publicatiedatum"
       milestone/status:
-        name: "Naam"
-        description: "Omschrijving (optioneel)"
+        name: "Name"
+        description: "Description (optional)"
+      progress_bar:
+        kind: "Type"
+        title: "Title"
       budget/heading:
-        name: "Kop"
+        name: "Kop naam"
         price: "Kosten"
         population: "Populatie"
       comment:
-        body: "Reactie"
-        user: "Deelnemer"
+        body: "Commentaar"
+        user: "Hidden users"
       debate:
-        author: "Auteur"
+        author: "Author"
         description: "Mening"
         terms_of_service: "Gebruiksvoorwaarden"
-        title: "Titel"
+        title: "Title"
       proposal:
-        author: "Auteur"
-        title: "Titel"
-        question: "Vraag"
-        description: "Omschrijving"
+        author: "Author"
+        title: "Title"
+        question: "Question"
+        description: "Beschrijving"
         terms_of_service: "Gebruiksvoorwaarden"
       user:
         login: "Email of gebruikersnaam"
         email: "Email"
-        username: "Gebruikersnaam"
+        username: "Username"
         password_confirmation: "Wachtwoord bevestiging"
         password: "Wachtwoord"
         current_password: "Huidig wachtwoord"
@@ -169,75 +172,75 @@ nl:
         name: "Organisatienaam"
         responsible_name: "Persoon verantwoordelijk voor de groep"
       spending_proposal:
-        administrator_id: "Admin"
-        association_name: "Verenigingsnaam"
-        description: "Omschrijving"
-        external_url: "Link naar aanvullende informatie"
-        geozone_id: "Reikwijdte van het werk"
-        title: "Titel"
+        administrator_id: "Beheerder"
+        association_name: "Naam van de vereniging"
+        description: "Beschrijving"
+        external_url: "Link naar meer informatie"
+        geozone_id: "Betreffende regio"
+        title: "Title"
       poll:
-        name: "Naam"
+        name: "Name"
         starts_at: "Startdatum"
         ends_at: "Einddatum"
         geozone_restricted: "Beperkt tot regio"
         summary: "Samenvatting"
-        description: "Omschrijving"
+        description: "Beschrijving"
       poll/translation:
-        name: "Naam"
+        name: "Name"
         summary: "Samenvatting"
-        description: "Omschrijving"
+        description: "Beschrijving"
       poll/question:
-        title: "Vraag"
+        title: "Question"
         summary: "Samenvatting"
-        description: "Omschrijving"
-        external_url: "Link naar aanvullende informatie"
+        description: "Beschrijving"
+        external_url: "Link naar meer informatie"
       poll/question/translation:
-        title: "Vraag"
+        title: "Question"
       signature_sheet:
-        signable_type: "Geschikt voor tekenen"
-        signable_id: "Geschikt voor identificatie"
+        signable_type: "Ondertekenbaar type"
+        signable_id: "Ondertekende ID"
         document_numbers: "Documentnummers"
       site_customization/page:
-        content: Inhoud
-        created_at: Aangemaakt op
+        content: Content
+        created_at: Created at
         subtitle: Ondertitel
-        slug: Bullet
+        slug: Slug
         status: Status
-        title: Titel
-        updated_at: Bijgewerkt op
+        title: Title
+        updated_at: Updated at
         more_info_flag: Toon op de help pagina
         print_content_flag: Print inhoud
         locale: Taal
       site_customization/page/translation:
-        title: Titel
+        title: Title
         subtitle: Ondertitel
-        content: Inhoud
+        content: Content
       site_customization/image:
-        name: Naam
-        image: Afbeelding
+        name: Name
+        image: Image
       site_customization/content_block:
-        name: Naam
+        name: Name
         locale: locale
-        body: Body
+        body: Tekst
       legislation/process:
-        title: Titel van het proces
+        title: Proces titel
         summary: Samenvatting
-        description: Omschrijving
-        additional_info: Aanvullende informatie
+        description: Beschrijving
+        additional_info: Extra info
         start_date: Startdatum
         end_date: Einddatum
-        debate_start_date: Startdatum debat
-        debate_end_date: Einddatum debat
+        debate_start_date: De begindatum van het debat
+        debate_end_date: Debat einddatum
         draft_start_date: Begindatum concept
         draft_end_date: Einddatum concept
         draft_publication_date: Publicatiedatum concept
         allegations_start_date: Startdatum bewijsvoering
         allegations_end_date: Einddatum bewijsvoering
-        result_publication_date: Publicatiedatum eindresultaat
+        result_publication_date: Datum van de bekendmaking van de uiteindelijke resultaat
       legislation/process/translation:
-        title: Procesnaam
+        title: Titel van het proces
         summary: Samenvatting
-        description: Omschrijving
+        description: Beschrijving
         additional_info: Aanvullende informatie
         milestones_summary: Samenvatting
       legislation/draft_version:
@@ -245,39 +248,57 @@ nl:
         body: Tekst
         changelog: Wijzigingen
         status: Status
-        final_version: Eindversie
+        final_version: Definitieve versie
       legislation/draft_version/translation:
-        title: Versie
+        title: Versie titel
+        body: Tekst
+        changelog: Wijzigingen
       legislation/question:
-        title: Titel
-        question_options: Opties
+        title: Title
+        question_options: Instellingen
       legislation/question_option:
         value: Waarde
       legislation/annotation:
-        text: Reactie
+        text: Commentaar
       document:
-        title: Titel
+        title: Title
         attachment: Bijlage
       image:
-        title: Titel
+        title: Title
         attachment: Bijlage
       poll/question/answer:
         title: Antwoord
-        description: Omschrijving
+        description: Beschrijving
+      poll/question/answer/translation:
+        title: Antwoord
+        description: Beschrijving
       poll/question/answer/video:
-        title: Titel
+        title: Title
         url: Externe video
       newsletter:
-        segment_recipient: Ontvangers
+        segment_recipient: Geadresseerden
         subject: Onderwerp
-        from: Van
-        body: Email inhoud
+        from: Vanaf
+        body: E-mail inhoud
+      admin_notification:
+        segment_recipient: Ontvangers
+        title: Title
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Title
+        body: Tekst
       widget/card:
         label: Label (optioneel)
-        title: Titel
+        title: Title
         description: Beschrijving
         link_text: Tekst link
         link_url: URL link
+      widget/card/translation:
+        label: Label (optioneel)
+        title: Title
+        description: Beschrijving
+        link_text: Tekst link
       widget/feed:
         limit: Aantal items
     errors:
@@ -314,24 +335,24 @@ nl:
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Niet geverifieerd door de gemeente"
+              not_in_census: "Een document niet in de plaats"
               has_voted: "Deelnemer heeft al gestemd"
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: moet op of na de startdatum zijn
+              invalid_date_range: moet op of na de begindatum liggen
             debate_end_date:
-              invalid_date_range: moet op of na de debat startdatum zijn
+              invalid_date_range: moet op of na de begindatum van het debat zijn
             allegations_end_date:
               invalid_date_range: moet op of na de startdatum van bewijsvoering zijn
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "labels moeten kleiner of gelijk aan %{count} zijn"
+              less_than_or_equal_to: "labels moeten kleiner of gelijk zijn aan %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "labels moeten kleiner of gelijk aan %{count} zijn"
+              less_than_or_equal_to: "labels moeten kleiner of gelijk zijn aan %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -355,7 +376,7 @@ nl:
             valuation:
               cannot_comment_valuation: 'Je kunt niet reageren op een evaluatie'
       messages:
-        record_invalid: "Evaluatie mislukt: %{errors}"
+        record_invalid: "Validatie mislukt: %{errors}"
         restrict_dependent_destroy:
           has_one: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
           has_many: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
