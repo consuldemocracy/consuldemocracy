@@ -75,9 +75,9 @@ gl:
         unfeasible_text: "Os investimentos deben cumprir unha serie de criterios (como a legalidade, a concrención, seren competencia do concello, non superaren o máximo do orzamento), para seren declaradas viables e chegaren até a votación final. Todos os investimentos que non cumpriren estes criterios son marcados como inviables e publicadas na seguinte relación, xunto co seu informe de inviabilidade."
         by_heading: "Propostas de investimento con ámbito: %{heading}"
         search_form:
-          button: Buscar
+          button: Procurar
           placeholder: Buscar propostas de investimento...
-          title: Buscar
+          title: Procurar
         search_results_html:
           one: " que conteñen <strong>%{search_term}</strong>"
           other: " que conteñen <strong>%{search_term}</strong>"
