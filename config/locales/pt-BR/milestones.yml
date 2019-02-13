@@ -1,1 +1,6 @@
 pt-BR:
+  milestones:
+    index:
+      no_milestones: Não há marcos definidos
+    show:
+      publication_date: "Publicado %{publication_date}"
