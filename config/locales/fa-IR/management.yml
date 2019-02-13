@@ -23,7 +23,7 @@ fa:
       change_user: تغییر کاربر
       document_number_label: 'شماره سند:'
       document_type_label: 'نوع سند:'
-      email_label: 'پست الکترونیکی:'
+      email_label: 'پست الکترونیکی'
       identified_label: 'شناخته شده به عنوان:'
       username_label: 'نام کاربری:'
     dashboard:
