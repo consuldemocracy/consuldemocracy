@@ -9,11 +9,11 @@ it:
           other: "%{count} commenti"
         replies_count:
           one: "%{count} risposta"
-          other: "%{count} risposte"
+          other: "%{count} risposta"
         cancel: Cancella
-        publish_comment: Pubblica Commento
+        publish_comment: Pubblica commento
       form:
-        phase_not_open: Questa fase non è aperta
+        phase_not_open: Questa fase non è ancora aperta
         login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
         signin: Accedere
         signup: Registrati
@@ -28,7 +28,7 @@ it:
         title: Commentare
       version_chooser:
         seeing_version: Commmenti per la versione
-        see_text: Vedi la bozza di testo
+        see_text: Vedere la bozza di testo
     draft_versions:
       changes:
         title: Modifiche
@@ -37,11 +37,11 @@ it:
       show:
         loading_comments: Caricamento dei commenti
         seeing_version: Stai vedendo la versione in bozza
-        select_draft_version: Seleziona bozza
+        select_draft_version: Selezionare la bozza
         select_version_submit: vedi
-        updated_at: aggiornato in data %{date}
-        see_changes: vedi il riepilogo delle modifiche
-        see_comments: Vedi tutti i commenti
+        updated_at: aggiornato a %{date}
+        see_changes: vedere il riepilogo delle modifiche
+        see_comments: Vedere tutti i commenti
         text_toc: Sommario
         text_body: Testo
         text_comments: Commenti
@@ -56,14 +56,14 @@ it:
           winners: Selezionato
       debate:
         empty_questions: Non ci sono domande
-        participate: Partecipa al dibattito
+        participate: Partecipare al dibattito
       index:
         filter: Filtra
         filters:
-          open: Procedimenti aperti
-          past: Passato
-        no_open_processes: Non ci sono procedimenti aperti
-        no_past_processes: Non ci sono procedimenti passati
+          open: Processi aperti
+          past: Precedente
+        no_open_processes: Non ci sono processi aperti
+        no_past_processes: Non ci sono processi precedenti
         section_header:
           icon_alt: Icona dei procedimenti legislativi
           title: Processi di legislazione
@@ -76,7 +76,7 @@ it:
       phase_empty:
         empty: Nulla è stato pubblicato al momento
       process:
-        see_latest_comments: Vedi i commenti più recenti
+        see_latest_comments: Vedere i commenti più recenti
         see_latest_comments_title: Commenta questo procedimento
       shared:
         key_dates: Date chiave
