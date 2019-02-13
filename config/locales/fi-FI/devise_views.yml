@@ -14,6 +14,7 @@ fi:
       reset_password_instructions:
         change_link: Vaihda salasanani
         hello: Hei
+        title: Vaihda salasanasi
       unlock_instructions:
         hello: Hei
         title: Tilisi on lukittu
@@ -31,6 +32,8 @@ fi:
           password_label: Salasana
           phone_number_label: Puhelinnumero
           submit: Rekisteröidy
+        success:
+          back_to_index: Ymmärrän; Mene takaisin pääsivulle
     passwords:
       edit:
         change_submit: Vaihda salasanani
