@@ -426,6 +426,7 @@ sv:
       flag: Förslaget har markerats som olämpligt av flera användare.
       login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
       notifications_tab: Avisering
+      milestones_tab: Milstolpar
       retired_warning: "Förslagslämnaren vill inte längre att förslaget ska samla stöd."
       retired_warning_link_to_explanation: Läs beskrivningen innan du röstar på förslaget.
       retired: Förslag som dragits tillbaka av förslagslämnaren
