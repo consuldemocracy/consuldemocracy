@@ -5,7 +5,7 @@ de:
         one: "Aktivität"
         other: "Aktivitäten"
       budget:
-        one: "Bürger*innenhaushalt"
+        one: "Bürgerhaushalt"
         other: "Bürger*innenhaushalte"
       budget/investment:
         one: "Ausgabenvorschlag"
@@ -14,8 +14,11 @@ de:
         one: "Meilenstein"
         other: "Meilensteine"
       milestone/status:
-        one: "Status des Ausgabenvorschlags"
-        other: "Status der Ausgabenvorschläge"
+        one: "Status des Meilensteins"
+        other: "Status der Meilensteine"
+      progress_bar:
+        one: "Fortschrittsbalken"
+        other: "Fortschrittsbalken"
       comment:
         one: "Kommentar"
         other: "Kommentare"
@@ -23,8 +26,8 @@ de:
         one: "Diskussion"
         other: "Diskussionen"
       tag:
-        one: "Kennzeichen"
-        other: "Themen"
+        one: "Tag"
+        other: "Tags"
       user:
         one: "Benutzer*in"
         other: "Benutzer*innen"
@@ -59,8 +62,8 @@ de:
         one: "Wahlvorsteher*in"
         other: "Wahlvorsteher*innen"
       proposal:
-        one: "Bürgervorschlag"
-        other: "Bürgervorschläge"
+        one: "Bürger*innenvorschlag"
+        other: "Bürger*innenvorschläge"
       spending_proposal:
         one: "Ausgabenvorschlag"
         other: "Ausgabenvorschläge"
@@ -74,7 +77,7 @@ de:
         one: Benutzerspezifischer Inhaltsdatenblock
         other: Benutzerspezifische Inhaltsdatenblöcke
       legislation/process:
-        one: "Verfahren"
+        one: "Beteiligungsverfahren"
         other: "Beteiligungsverfahren"
       legislation/proposal:
         one: "Vorschlag"
@@ -82,9 +85,6 @@ de:
       legislation/draft_versions:
         one: "Entwurfsfassung"
         other: "Entwurfsfassungen"
-      legislation/draft_texts:
-        one: "Entwurf"
-        other: "Entwürfe"
       legislation/questions:
         one: "Frage"
         other: "Fragen"
@@ -132,13 +132,20 @@ de:
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
         image_title: "Bildtitel"
       milestone:
-        status_id: "Derzeitiger Status des Ausgabenvorschlags (optional)"
+        status_id: "Aktueller Status (optional)"
         title: "Titel"
-        description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
+        description: "Beschreibung (optional, wenn ein Status zugewiesen ist)"
         publication_date: "Datum der Veröffentlichung"
       milestone/status:
         name: "Name"
         description: "Beschreibung (optional)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
+        percentage: "Aktueller Fortschritt"
+      progress_bar/kind:
+        primary: "Primär"
+        secondary: "Sekundär"
       budget/heading:
         name: "Name der Rubrik"
         price: "Kosten"
@@ -165,7 +172,7 @@ de:
         password: "Passwort"
         current_password: "Aktuelles Passwort"
         phone_number: "Telefonnummer"
-        official_position: "Beamter/Beamtin"
+        official_position: "Öffentliches Amt"
         official_level: "Amtsebene"
         redeemable_code: "Bestätigungscode per Post (optional)"
       organization:
@@ -185,11 +192,17 @@ de:
         geozone_restricted: "Beschränkt auf Gebiete"
         summary: "Zusammenfassung"
         description: "Beschreibung"
+      poll/translation:
+        name: "Name"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
       poll/question:
         title: "Frage"
         summary: "Zusammenfassung"
         description: "Beschreibung"
         external_url: "Link zu zusätzlicher Dokumentation"
+      poll/question/translation:
+        title: "Frage"
       signature_sheet:
         signable_type: "Unterschriftentyp"
         signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
@@ -205,6 +218,10 @@ de:
         more_info_flag: Auf der Hilfeseite anzeigen
         print_content_flag: Taste Inhalt drucken
         locale: Sprache
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Untertitel
+        content: Inhalt
       site_customization/image:
         name: Name
         image: Bild
@@ -221,16 +238,28 @@ de:
         end_date: Enddatum des Verfahrens
         debate_start_date: Anfangsdatum Diskussion
         debate_end_date: Enddatum Diskussion
+        draft_start_date: Anfangsdatum Entwurfsphase
+        draft_end_date: Enddatum Entwurfsphase
         draft_publication_date: Veröffentlichungsdatum des Entwurfs
         allegations_start_date: Anfangsdatum Überprüfung
         allegations_end_date: Enddatum Überprüfung
         result_publication_date: Veröffentlichungsdatum Endergebnis
+      legislation/process/translation:
+        title: Titel des Beteiligungsverfahrens
+        summary: Zusammenfassung
+        description: Beschreibung
+        additional_info: Zusätzliche Information
+        milestones_summary: Zusammenfassung
       legislation/draft_version:
         title: Titel der Fassung
         body: Text
         changelog: Änderungen
         status: Status
         final_version: Endgültige Fassung
+      legislation/draft_version/translation:
+        title: Titel der Fassung
+        body: Text
+        changelog: Änderungen
       legislation/question:
         title: Titel
         question_options: Antworten
@@ -247,6 +276,9 @@ de:
       poll/question/answer:
         title: Antwort
         description: Beschreibung
+      poll/question/answer/translation:
+        title: Antwort
+        description: Beschreibung
       poll/question/answer/video:
         title: Titel
         url: Externes Video
@@ -255,12 +287,25 @@ de:
         subject: Betreff
         from: Von
         body: Inhalt der E-Mail
+      admin_notification:
+        segment_recipient: Empfänger*innen
+        title: Titel
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
       widget/card:
         label: Tag (optional)
         title: Titel
         description: Beschreibung
         link_text: Linktext
         link_url: URL des Links
+      widget/card/translation:
+        label: Tag (optional)
+        title: Titel
+        description: Beschreibung
+        link_text: Linktext
       widget/feed:
         limit: Anzahl der Elemente
     errors:
@@ -305,6 +350,8 @@ de:
               invalid_date_range: muss an oder nach dem Anfangsdatum sein
             debate_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Diskussion sein
+            draft_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Entwurfsphase sein
             allegations_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Überprüfung sein
         proposal:
