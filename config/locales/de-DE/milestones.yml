@@ -1,7 +1,7 @@
 de:
   milestones:
     index:
-      no_milestones: Keine Meilensteine definiert
+      no_milestones: Keine definierten Meilensteine vorhanden
       progress: Fortschritte
     show:
       publication_date: "Veröffentlicht %{publication_date}"
