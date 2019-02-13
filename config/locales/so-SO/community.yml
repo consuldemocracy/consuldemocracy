@@ -17,8 +17,8 @@ so:
         first_theme_not_logged_in: Wax arin ah looma helin, ka qaybqaado abuurida koowaad.
         first_theme: Saame Mowducii ugu horeyey ee bulshada
         sub_first_theme: "Si aad u abuurto duluc waa inaad%{sign_in} ama%{sign_up}."
-        sign_in: "saxiixid"
-        sign_up: "saxiixid ilaa"
+        sign_in: "gelid"
+        sign_up: "iska diwan gelin"
       tab:
         participants: Kaqayb galayaal
       sidebar:
@@ -29,8 +29,8 @@ so:
         destroy: Burburi moowduuca
         comments:
           zero: Falooyin majiraan
-          one: 1 Falo
-          other: "%{count} Falooyin"
+          one: 1 faalo
+          other: "%{count} falooyinka"
       author: Qoraa
       back: Kulaabo ila%{community}%{proposal}
     topic:
