@@ -34,9 +34,9 @@ ru:
         sections_label: Разделы, где он появится
         sections:
           homepage: Главная страница
-          debates: Дебаты
-          proposals: Предложения
-          budgets: Совместное финансирование
+          debates: Обсуждения проблем
+          proposals: Заявки
+          budgets: Партисипаторное бюджетирование
           help_page: Страница помощи
         background_color: Цвет фона
         font_color: Цвет шрифта
@@ -44,11 +44,6 @@ ru:
         editing: Редактировать баннер
         form:
           submit_button: Сохранить изменения
-      errors:
-        form:
-          error:
-            one: "ошибка не позволила сохранить этот баннер"
-            other: "ошибки не позволили сохранить этот баннер"
       new:
         creating: Создать баннер
     activity:
@@ -59,13 +54,13 @@ ru:
           hide: Скрытые
           restore: Восстановленные
         by: Отмодерированные
-        content: Содержимое
+        content: Содержание
         filter: Показать
         filters:
           all: Все
           on_comments: Комментарии
-          on_debates: Дебаты
-          on_proposals: Предложения
+          on_debates: Обсуждения проблем
+          on_proposals: Заявки
           on_users: Пользователи
           on_system_emails: Системные email'ы
         title: Активность модератора
@@ -73,20 +68,21 @@ ru:
         no_activity: Активность модераторов отсутствует.
     budgets:
       index:
-        title: Совместные бюджеты
+        title: Партисипаторные бюджеты
         new_link: Создать новый бюджет
         filter: Фильтровать
         filters:
           open: Открытые
           finished: Завершены
         budget_investments: Управлять проектами
-        table_name: Название
-        table_phase: Фаза
+        table_name: Имя
+        table_phase: Этап
         table_investments: Инвестиции
         table_edit_groups: Группы заголовков
         table_edit_budget: Редактировать
         edit_groups: Редактировать группы заголовков
         edit_budget: Редактировать бюджет
+        no_budgets: "Нет бюджетов."
       create:
         notice: Новый совместный бюджет успешно создан!
       update:
@@ -94,7 +90,7 @@ ru:
       edit:
         title: Редактировать совместный бюджет
         delete: Удалить бюджет
-        phase: Фаза
+        phase: Этап
         dates: Даты
         enabled: Включено
         actions: Действия
@@ -106,39 +102,21 @@ ru:
         unable_notice: Вы не можете уничтожить бюджет, для которого есть связанные инвестиции
       new:
         title: Новый совместный бюджет
-      show:
-        groups:
-          one: 1 Группа бюджетных заголовков
-          other: "%{count} Групп бюджетных заголовков"
-      form:
-        group: Название группы
-        no_groups: Пока не создано групп. Каждый пользователь сможет проголосовать только в одном заголовке на группу.
-        add_group: Добавить новую группу
-        create_group: Создать группу
-        edit_group: Редактировать группу
-        submit: Сохранить группу
-        heading: Название заголовка
-        add_heading: Добавить заголовок
-        amount: Сумма
-        population: "Популяция (не обязательно)"
-        population_help_text: "Эти данные используются эксклюзивно, чтобы вычислить статистику участия"
-        save_heading: Сохранить заголовок
-        no_heading: У этой группы нет назначенного заголовка.
-        table_heading: Заголовок
-        table_amount: Сумма
-        table_population: Население
-        population_info: "Поле населения заголовка бюджета используется для статистических целей в конце бюджета, чтобы показать для каждого заголовка, который представляет местность с населением, какой процент проголосовал. Это поле не обязательное, поэтому вы можете оставить его пустым, если оно не применимо."
-        max_votable_headings: "Максимальное количество заголовков, в которых пользователь может голосовать"
-        current_of_max_headings: "%{current} из %{max}"
       winners:
         calculate: Посчитать выигравшие инвестиции
         calculated: Победители подсчитываются, это может занять минуту.
         recalculate: Пересчитать победившие инвестиции
+    budget_groups:
+      name: "Имя"
+    budget_headings:
+      name: "Имя"
+      form:
+        name: "Название раздела"
     budget_phases:
       edit:
         start_date: Дата начала
         end_date: Дата окончания
-        summary: Сводка
+        summary: Резюме
         summary_help_text: Этот текст проинформирует пользователя о фазе. Чтобы отобразить его даже при неактивной фазе, отметьте галочку снизу
         description: Описание
         description_help_text: Этот текст появится в заголовке, когда фаза станет активной
@@ -155,7 +133,6 @@ ru:
         placeholder: Искать в проектах
         sort_by:
           placeholder: Сортировать по
-          id: ID
           title: Название
           supports: Поддержки
         filters:
@@ -176,7 +153,7 @@ ru:
           filter: Отфильтровать
         download_current_selection: "Скачать текущий выбор"
         no_budget_investments: "Нет проектов инвестиций."
-        title: Проекты инвестиций
+        title: Инновационные проекты
         assigned_admin: Назначенный администратор
         no_admin_assigned: Ни один администратор не назначен
         no_valuators_assigned: Ни один оценщик не назначен
@@ -188,13 +165,12 @@ ru:
         selected: "Выбранная"
         select: "Выбрать"
         list:
-          id: ID
           title: Название
-          supports: Поддерживает
+          supports: Поддержки
           admin: Администратор
-          valuator: Оценщик
+          valuator: Эксперт
           valuation_group: Грцппа оценки
-          geozone: Зона действия
+          geozone: Сфера деятельности
           feasibility: Выполнимость
           valuation_finished: Оцен. Оконч.
           selected: Выбранная
@@ -202,7 +178,7 @@ ru:
           author_username: Имя пользователя автора
           incompatible: Несовместимая
         cannot_calculate_winners: Бюджет должен остаться в фазе "Проекты баллотирования", "Анализ бюллетеней" или "Оконченный бюджет", чтобы посчитать выигравшие проекты
-        see_results: "Посмотреть результаты"
+        see_results: "Просмотр результатов"
       show:
         assigned_admin: Назначенный администратор
         assigned_valuators: Назначенные оценщики
@@ -213,14 +189,12 @@ ru:
         by: Кто
         sent: Отправлено
         group: Группа
-        heading: Заголовок
+        heading: Раздел
         dossier: Пакет документов
         edit_dossier: Редактировать пакет документов
         tags: Метки
         user_tags: Метки пользователя
         undefined: Неопределено
-        milestone: Этап
-        new_milestone: Создать новый этап
         compatibility:
           title: Совместимость
           "true": Несовместимо
@@ -246,7 +220,7 @@ ru:
         mark_as_incompatible: Отметить как несовместимое
         selection: Выбор
         mark_as_selected: Отметить как выбранную
-        assigned_valuators: Оценщики
+        assigned_valuators: Эксперты
         select_heading: Выбрать заголовок
         submit_button: Обновить
         user_tags: Метки, назначенные пользователем
@@ -257,14 +231,13 @@ ru:
       search_unfeasible: Поиск невыполним
     milestones:
       index:
-        table_id: "ID"
         table_title: "Название"
         table_description: "Описание"
         table_publication_date: "Дата публикации"
         table_status: Статус
         table_actions: "Действия"
         delete: "Удалить этап"
-        no_milestones: "Нет определенных этапов"
+        no_milestones: "Не имеет определенных основных этапов"
         image: "Изображение"
         show_image: "Показать изображение"
         documents: "Документы"
@@ -288,7 +261,7 @@ ru:
         title: Статус инвестиции
         empty_statuses: Не создано статусов инвестиций
         new_status: Создать новый статус инвестиции
-        table_name: Название
+        table_name: Имя
         table_description: Описание
         table_actions: Действия
         delete: Удалить
@@ -303,6 +276,9 @@ ru:
         notice: Статус инвестиции успешно создан
       delete:
         notice: Статус инвестиции успешно удален
+    progress_bars:
+      index:
+        table_title: "Название"
     comments:
       index:
         filter: Фильтр
@@ -339,7 +315,6 @@ ru:
         user: Пользователь
         no_hidden_users: Нет скрытых пользователей.
       show:
-        email: 'Email:'
         hidden_at: 'Скрыто в:'
         registered_at: 'Зарегистрировано в:'
         title: Активность пользователя (%{user})
@@ -381,14 +356,13 @@ ru:
           summary_placeholder: Краткая выжимка из описания
           description_placeholder: Добавить описание процесса
           additional_info_placeholder: Добавить информацию, которую вы считаете полезной
+          homepage: Описание
         index:
           create: Новый процесс
           delete: Удалить
           title: Процессы законотворчества
           filters:
             open: Открыть
-            next: Следующий
-            past: Прошедший
             all: Все
         new:
           back: Назад
@@ -397,7 +371,6 @@ ru:
         proposals:
           select_order: Сортировать по
           orders:
-            id: Id
             title: Название
             supports: Поддержки
         process:
@@ -410,20 +383,17 @@ ru:
           status_planned: Запланирован
         subnav:
           info: Информация
-          draft_texts: Написание черновика
-          questions: Дебаты
-          proposals: Предложения
+          questions: Обсуждение
+          proposals: Заявки
       proposals:
         index:
-          title: Предложения
-          back: Назад
-          id: Id
           title: Название
+          back: Назад
           supports: Поддержки
           select: Выбрать
           selected: Выбрано
         form:
-          custom_categories: Котегории
+          custom_categories: Категории
           custom_categories_description: Категории, которые пользователи могут выбрать при создании предложения.
           custom_categories_placeholder: Введите метки, которые вы хотели бы использовать, разделенные запятыми (,) и заключенные в кавычки ("")
       draft_versions:
@@ -456,7 +426,7 @@ ru:
           changelog_placeholder: Добавьте основные изменения из предыдущей версии
           body_placeholder: Впишите текст черновика
         index:
-          title: Версии черновика
+          title: Предварительные варианты
           create: Создать версию
           delete: Удалить
           preview: Предпросмотр
@@ -471,7 +441,7 @@ ru:
           title: Название
           created_at: Создано в
           comments: Комментарии
-          final_version: Конечная версия
+          final_version: Окончательная версия
           status: Статус
       questions:
         create:
@@ -514,8 +484,8 @@ ru:
     managers:
       index:
         title: Менеджеры
-        name: Название
-        email: Email
+        name: Имя
+        email: Электронный адрес
         no_managers: Нет менеджеров.
       manager:
         add: Добавить
@@ -527,8 +497,9 @@ ru:
       admin: Меню администрирования
       banner: Управление баннерами
       poll_questions: Вопросы
+      proposals: Заявки
       proposals_topics: Темы предложений
-      budgets: Совместные бюджеты
+      budgets: Партисипаторные бюджеты
       geozones: Управление геозонами
       hidden_comments: Скрытые комментарии
       hidden_debates: Скрытые дебаты
@@ -540,13 +511,13 @@ ru:
       managers: Менеджеры
       moderators: Модераторы
       messaging_users: Сообщения пользователям
-      newsletters: Рассылки
+      newsletters: Информационные бюллетени
       admin_notifications: Уведомления
       system_emails: Системные Email'ы
       emails_download: Скачивание Email'ов
-      valuators: Оценщики
+      valuators: Эксперты
       poll_officers: Сотрудники избирательных участков
-      polls: Голосования
+      polls: Опросы
       poll_booths: Расположение кабинок
       poll_booth_assignments: Назначения на кабинки
       poll_shifts: Управление сменами
@@ -563,10 +534,10 @@ ru:
         content_blocks: Настраиваемые блоки содержимого
         information_texts: Настраиваемые информационные тексты
         information_texts_menu:
-          debates: "Дебаты"
+          debates: "Обсуждения проблем"
           community: "Сообщество"
-          proposals: "Предложения"
-          polls: "Голосования"
+          proposals: "Заявки"
+          polls: "Опросы"
           layouts: "Макеты"
           mailers: "Email'ы"
           management: "Управление"
@@ -575,7 +546,7 @@ ru:
           save: "Сохранить"
       title_moderated_content: Модерируемое содержимое
       title_budgets: Бюджеты
-      title_polls: Голосования
+      title_polls: Опросы
       title_profiles: Профили
       title_settings: Настройки
       title_site_customization: Содержимое сайта
@@ -586,7 +557,7 @@ ru:
       index:
         title: Администраторы
         name: Имя
-        email: Email
+        email: Электронный адрес
         no_administrators: Нет администраторов.
       administrator:
         add: Добавить
@@ -598,7 +569,7 @@ ru:
       index:
         title: Модераторы
         name: Имя
-        email: Email
+        email: Электронный адрес
         no_moderators: Нет модераторов.
       moderator:
         add: Добавить
@@ -621,7 +592,7 @@ ru:
       send_success: Новостное письмо успешно отправлено
       delete_success: Новостное письмо успешно удалено
       index:
-        title: Новостные письма
+        title: Информационные бюллетени
         new_newsletter: Новое новостное письмо
         subject: Тема
         segment_recipient: Получатели
@@ -641,14 +612,11 @@ ru:
         title: Предпросмотр новостного письма
         send: Отправить
         affected_users: (%{n} затронутых пользователей)
-        sent_emails:
-          one: 1 email отправлено
-          other: "%{count} email'ов отправлено"
         sent_at: Отправлено в
         subject: Тема
         segment_recipient: Получатели
         from: Адрес Email, который появится как отправитель новостного письма
-        body: Содержимое Email'а
+        body: Содержание электронной почты
         body_help_text: Таким пользователи увидят email
         send_alert: Вы уверены, что хотите отправить это новостное письмо для %{n} пользователей?
     admin_notifications:
@@ -708,9 +676,9 @@ ru:
         download_emails_button: Скачать список email'ов
     valuators:
       index:
-        title: Оценщики
+        title: Эксперты
         name: Имя
-        email: Email
+        email: Электронный адрес
         description: Описание
         no_description: Нет описания
         no_valuators: Нет оценщиков.
@@ -724,7 +692,7 @@ ru:
         title: 'Оценщики: Поиск пользователя'
       summary:
         title: Обзок оценщиков по проектам инвестиций
-        valuator_name: Оценщик
+        valuator_name: Эксперт
         finished_and_feasible_count: Оконченные и выполнимые
         finished_and_unfeasible_count: Оконченные и невыполнимые
         finished_count: Оконченные
@@ -737,15 +705,15 @@ ru:
         updated: "Оценщик обновлен успешно"
       show:
         description: "Описание"
-        email: "Email"
+        email: "Электронный адрес"
         group: "Группа"
         no_description: "Без описания"
         no_group: "Без группы"
     valuator_groups:
       index:
-        title: "Группы оценщиков"
+        title: "Экспертные группы"
         new: "Создать группу оценщиков"
-        name: "Название"
+        name: "Имя"
         members: "Участники"
         no_groups: "Группы оценщиков отсутствуют"
       show:
@@ -762,8 +730,8 @@ ru:
         add: Добавить
         delete: Удалить позицию
         name: Имя
-        email: Email
-        entry_name: сотрудник
+        email: Электронный адрес
+        entry_name: офицер
       search:
         email_placeholder: Искать пользователя по email
         search: Поиск
@@ -773,7 +741,7 @@ ru:
         officers_title: "Список сотрудников"
         no_officers: "Нет сотрудников, назначенных на это голосование."
         table_name: "Имя"
-        table_email: "Email"
+        table_email: "Электронный адрес"
       by_officer:
         date: "Дата"
         booth: "Кабинка"
@@ -798,7 +766,7 @@ ru:
         no_voting_days: "Дни голосования завершены"
         select_task: "Выбрать задачу"
         table_shift: "Смена"
-        table_email: "Email"
+        table_email: "Электронный адрес"
         table_name: "Имя"
       flash:
         create: "Смена добавлена"
@@ -835,7 +803,7 @@ ru:
         results: "Результаты"
         date: "Дата"
         count_final: "Финальный пересчет (сотрудниками)"
-        count_by_system:  "Голоса (автоматически)"
+        count_by_system: "Голоса (автоматически)"
         total_system: Всего голосов (автоматически)
       index:
         booths_title: "Список кабинок"
@@ -849,6 +817,8 @@ ru:
         create: "Создать голосование"
         name: "Имя"
         dates: "Даты"
+        start_date: "Дата начала"
+        closing_date: "Дата закрытия"
         geozone_restricted: "Ограничено для районов"
       new:
         title: "Новое голосование"
@@ -882,13 +852,14 @@ ru:
         questions_tab: "Вопросы"
         successful_proposals_tab: "Успешные предложения"
         create_question: "Создать вопрос"
-        table_proposal: "Предложение"
+        table_proposal: "Заявка"
         table_question: "Вопрос"
+        table_poll: "Опрос"
       edit:
         title: "Редактировать вопрос"
       new:
         title: "Создать вопрос"
-        poll_label: "Голосование"
+        poll_label: "Опрос"
       answers:
         images:
           add_image: "Добавить изображение"
@@ -949,23 +920,23 @@ ru:
         table_nulls: "Недействительные бюллетени"
         table_total: "Всего бюллетеней"
         table_answer: Ответ
-        table_votes: Голосов
+        table_votes: Голоса
       results_by_booth:
         booth: Кабинка
         results: Результаты
-        see_results: Смотреть результаты
+        see_results: Просмотр результатов
         title: "Результаты по кабинке"
     booths:
       index:
         title: "Список действующих кабинок"
         no_booths: "Ни для какого предстоящего голосования нет действующих кабинок."
         add_booth: "Добавить кабинку"
-        name: "Название"
+        name: "Имя"
         location: "Местоположение"
         no_location: "Нет местоположения"
       new:
         title: "Новая кабинка"
-        name: "Название"
+        name: "Имя"
         location: "Местоположение"
         submit_button: "Создать кабинку"
       edit:
@@ -987,7 +958,7 @@ ru:
         title: Чиновники
         no_officials: Нет чиновников.
         name: Имя
-        official_position: Позиция чиновника
+        official_position: Официальная позиция
         official_level: Уровень
       level_0: Не чиновник
       level_1: Уровень 1
@@ -1008,11 +979,8 @@ ru:
           pending: Ожидают
           rejected: Отклоненные
           verified: Верифицированные
-        hidden_count_html:
-          one: Также есть <strong>одна организация</strong> без пользователей, либо со скрытым пользователем.
-          other: Также есть <strong>%{count} организаций</strong> без пользователей, либо со скрытым пользователем.
         name: Имя
-        email: Email
+        email: Электронный адрес
         phone_number: Телефон
         responsible_name: Ответственный
         status: Статус
@@ -1030,13 +998,9 @@ ru:
         no_results: Организации не найдены.
     proposals:
       index:
-        filter: Фильтровать
-        filters:
-          all: Все
-          with_confirmed_hide: Подтверждено
-          without_confirmed_hide: Ожидает
-        title: Скрытые предложения
-        no_hidden_proposals: Нет скрытых предложений.
+        title: Заявки
+        author: Автор
+        milestones: Основные этапы
     proposal_notifications:
       index:
         filter: Фильтровать
@@ -1103,10 +1067,10 @@ ru:
       show_image: Показать изображение
       moderated_content: "Проверьте модерируемое содержимое и подтвердите, корректно ли была проведена модерация."
       view: Просмотреть
-      proposal: Предложение
+      proposal: Заявка
       author: Автор
-      content: Содержимое
-      created_at: Создано
+      content: Содержание
+      created_at: Создано в
     spending_proposals:
       index:
         geozone_filter_all: Все зоны
@@ -1148,7 +1112,7 @@ ru:
         undefined: Неопределено
       edit:
         classification: Классификация
-        assigned_valuators: Оценщики
+        assigned_valuators: Эксперты
         submit_button: Обновить
         tags: Метки
         tags_placeholder: "Впишите желаемые метки, разделенные запятыми (,)"
@@ -1170,15 +1134,10 @@ ru:
         edit: Редактировать
         delete: Удалить
       geozone:
-        name: Название
+        name: Имя
         external_code: Внешний код
         census_code: Код Цензуса
         coordinates: Координаты
-      errors:
-        form:
-          error:
-            one: "из-за ошибки эта геозона не была сохранена"
-            other: 'из-за ошибок эта геозона не была сохранена'
       edit:
         form:
           submit_button: Сохранить изменения
@@ -1193,7 +1152,7 @@ ru:
     signature_sheets:
       author: Автор
       created_at: Дата создания
-      name: Название
+      name: Имя
       no_signature_sheets: "Нет подписных листов"
       index:
         title: Подписные листы
@@ -1207,12 +1166,6 @@ ru:
         author: Автор
         documents: Документы
         document_count: "Количество документов:"
-        verified:
-          one: "Есть %{count} верная подпись"
-          other: "Есть %{count} верных подписей"
-        unverified:
-          one: "Есть %{count} неверная подпись"
-          other: "Есть %{count} неверных подписей"
         unverified_error: (Не верифицировано Цензусом)
         loading: "Еще есть подписи, находящиеся на проверке у Цензуса, пожалуйста обновите страницу чуть позже"
     stats:
@@ -1222,11 +1175,11 @@ ru:
           comment_votes: Голоса за комментарии
           comments: Комментарии
           debate_votes: Голоса за дебаты
-          debates: Дебаты
+          debates: Обсуждения проблем
           proposal_votes: Голоса за предложения
-          proposals: Предложения
+          proposals: Заявки
           budgets: Открытые бюджеты
-          budget_investments: Проекты инвестирования
+          budget_investments: Инновационные проекты
           spending_proposals: Проекты трат
           unverified_users: Неверифицированные пользователи
           user_level_three: Пользователи третьего уровня
@@ -1237,12 +1190,12 @@ ru:
           visits: Посещения
           votes: Всего голосов
         spending_proposals_title: Предложения трат
-        budgets_title: Совместное финансирование
+        budgets_title: Партисипаторное бюджетирование
         visits_title: Посещения
         direct_messages: Прямые сообщения
-        proposal_notifications: Уведомления предложений
+        proposal_notifications: Уведомления о предложениях
         incomplete_verifications: Незавершенные верификации
-        polls: Голосования
+        polls: Опросы
       direct_messages:
         title: Прямые сообщения
         total: Всего
@@ -1253,18 +1206,18 @@ ru:
         proposals_with_notifications: Предложения с уведомлениями
       polls:
         title: Статистика голосований
-        all: Голосования
+        all: Опросы
         web_participants: Участники сети
         total_participants: Всего участников
         poll_questions: "Вопросы от голосования: %{poll}"
         table:
-          poll_name: Голосование
+          poll_name: Опрос
           question_name: Вопрос
           origin_web: Участники сети
           origin_total: Всего участников
     tags:
       create: Создать тему
-      destroy: Уничтожить тему
+      destroy: Удалить тему
       index:
         add_tag: Добавить новую тему предложения
         title: Темы предложения
@@ -1275,7 +1228,7 @@ ru:
     users:
       columns:
         name: Имя
-        email: Email
+        email: Электронный адрес
         document_number: Номер документа
         roles: Роли
         verification_level: Уровень верификации
@@ -1293,9 +1246,7 @@ ru:
     site_customization:
       content_blocks:
         information: Информация о блоках содержимого
-        about: Вы можете создать блоки HTML-содержимого для вставки в заголовок или подвал вашего приложения CONSUL.
-        top_links_html: "<strong>Блоки заголовка (top_links)</strong> - это блоки из ссылок, которые должны иметь следующий формат:"
-        footer_html: "<strong>Блоки подвала</strong> могут иметь любой формат и могут использоваться для вставки Javascript-, CSS- или произвольного HTML-кода."
+        about: "Вы можете создать блоки HTML-содержимого для вставки в заголовок или подвал вашего приложения CONSUL."
         no_blocks: "Нет блоков содержимого."
         create:
           notice: Блок содержимого успешно создан
@@ -1318,7 +1269,7 @@ ru:
           title: Создать новый блок содержимого
         content_block:
           body: Тело
-          name: Название
+          name: Имя
           names:
             top_links: Верхние ссылки
             footer: Подвал
@@ -1360,13 +1311,18 @@ ru:
         new:
           title: Создать новую настраиваемую страницу
         page:
-          created_at: Создано
+          created_at: Создано в
           status: Статус
-          updated_at: Обновлено
+          updated_at: Обновлено в
           status_draft: Черновик
           status_published: Опубликовано
-          title: Заголовок
-          slug: Описательная часть url-адреса
+          title: Название
+          slug: Slug URL
+        cards:
+          title: Название
+          description: Описание
+          link_text: Текст ссылки
+          link_url: Ссылка URL
     homepage:
       title: Главная страница
       description: Активные модули появляются на главной странице в том же порядке как и здесь.
@@ -1380,10 +1336,10 @@ ru:
         title: Название
         description: Описание
         link_text: Текст ссылки
-        link_url: URL ссылки
+        link_url: Ссылка URL
       feeds:
-        proposals: Предложения
-        debates: Дебаты
+        proposals: Заявки
+        debates: Обсуждения проблем
         processes: Процессы
       new:
         header_title: Новый заголовок
@@ -1396,5 +1352,5 @@ ru:
         card_title: Редактировать карту
         submit_card: Сохранить карту
     translations:
-        remove_language: Убрать язык
-        add_language: Добавить язык
+      remove_language: Убрать язык
+      add_language: Добавить язык
