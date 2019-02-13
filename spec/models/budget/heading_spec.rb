@@ -280,21 +280,8 @@ describe Budget::Heading do
     end
   end
 
-  describe "scope order_by_group_name" do
-    it "only sort headings using the group name (DESC) in the current locale" do
-      last_group  = create(:budget_group, name_en: "CCC", name_es: "BBB")
-      first_group = create(:budget_group, name_en: "DDD", name_es: "AAA")
+  describe ".sort_by_name" do
 
-      last_heading = create(:budget_heading, group: last_group, name: "Name")
-      first_heading = create(:budget_heading, group: first_group, name: "Name")
-
-      expect(Budget::Heading.order_by_group_name.count).to be 2
-      expect(Budget::Heading.order_by_group_name.first).to eq first_heading
-      expect(Budget::Heading.order_by_group_name.last).to eq last_heading
-    end
-  end
-
-  describe "scope order_by_name" do
     it "returns headings sorted by DESC group name first and then ASC heading name" do
       last_group  = create(:budget_group, name: "Group A")
       first_group = create(:budget_group, name: "Group B")
@@ -305,8 +292,21 @@ describe Budget::Heading do
       heading1 = create(:budget_heading, group: first_group, name: "Name C")
 
       sorted_headings = [heading1, heading2, heading3, heading4]
-      expect(Budget::Heading.order_by_name.to_a).to eq sorted_headings
+      expect(Budget::Heading.sort_by_name).to eq sorted_headings
     end
+
+    it "only sort headings using the group name (DESC) in the current locale" do
+      last_group  = create(:budget_group, name_en: "CCC", name_es: "BBB")
+      first_group = create(:budget_group, name_en: "DDD", name_es: "AAA")
+
+      last_heading = create(:budget_heading, group: last_group, name: "Name")
+      first_heading = create(:budget_heading, group: first_group, name: "Name")
+
+      expect(Budget::Heading.sort_by_name.size).to be 2
+      expect(Budget::Heading.sort_by_name.first).to eq first_heading
+      expect(Budget::Heading.sort_by_name.last).to eq last_heading
+    end
+
   end
 
   describe "scope allow_custom_content" do

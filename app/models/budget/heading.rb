@@ -27,11 +27,13 @@ class Budget
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
     scope :i18n,                  -> { includes(:translations) }
-    scope :with_group,            -> { joins(group: :translations).where("budget_group_translations.locale = ?", I18n.locale) }
-    scope :order_by_group_name,   -> { i18n.with_group.order("budget_group_translations.name DESC") }
-    scope :order_by_heading_name, -> { i18n.with_group.order("budget_heading_translations.name") }
-    scope :order_by_name,         -> { i18n.with_group.order_by_group_name.order_by_heading_name }
     scope :allow_custom_content,  -> { i18n.where(allow_custom_content: true).order(:name) }
+
+    def self.sort_by_name
+      all.sort do |heading, other_heading|
+        [other_heading.group.name, heading.name] <=> [heading.group.name, other_heading.name]
+      end
+    end
 
     def name_scoped_by_group
       group.single_heading_group? ? name : "#{group.name}: #{name}"
