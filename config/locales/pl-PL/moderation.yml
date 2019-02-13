@@ -3,14 +3,14 @@ pl:
     comments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewien?
+        confirm: Jesteś pewny/a?
         filter: Filtr
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
-          comment: Skomentuj
+          comment: Komentarz
           moderate: Moderuj
         hide_comments: Ukryj komentarze
         ignore_flags: Oznacz jako wyświetlone
@@ -26,9 +26,9 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtrtuj
+        filter: Filtr
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
@@ -47,35 +47,35 @@ pl:
       flagged_comments: Komentarze
       flagged_debates: Debaty
       flagged_investments: Inwestycje budżetowe
-      proposals: Propozycje
+      proposals: Wnioski
       proposal_notifications: Zgłoszenia propozycji
       users: Blokuj użytkowników
     proposals:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtrtuj
+        filter: Filtr
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_flag_review: Recenzja oczekująca
           with_ignored_flag: Oznacz jako wyświetlone
         headers:
           moderate: Moderuj
-          proposal: Propozycja
+          proposal: Wniosek
         hide_proposals: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
         order: Uporządkuj według
         orders:
           created_at: Ostatnie
           flags: Najbardziej oflagowane
-        title: Propozycje
+        title: Wnioski
     budget_investments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewien?
+        confirm: Jesteś pewny/a?
         filter: Filtr
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
@@ -92,21 +92,21 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtrtuj
+        filter: Filtr
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_review: Recenzja oczekująca
           ignored: Oznacz jako wyświetlone
         headers:
           moderate: Moderuj
-          proposal_notification: Zgłoszenie propozycji
+          proposal_notification: Powiadomienie o wniosku
         hide_proposal_notifications: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
         order: Uporządkuj według
         orders:
           created_at: Ostatnie
           moderated: Moderowany
-        title: Zgłoszenia propozycji
+        title: Powiadomienie o wnioskach
     users:
       index:
         hidden: Zablokowany
