@@ -45,8 +45,10 @@ sv:
       proposals: "Förslag"
       debates: "Debatter"
       polls: "Omröstningar"
+      polls_description: "Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning"
       signature_sheets: "Namninsamlingar"
       legislation: "Planering"
+      spending_proposals: "Investeringsförslag"
       user:
         recommendations: "Rekommendationer"
         skip_verification: "Hoppa över användarverifiering"
@@ -58,3 +60,4 @@ sv:
       allow_attached_documents: "Tillåt uppladdning och visning av dokument"
       guides: "Instruktioner för att skapa budgetförslag"
       public_stats: "Offentlig statistik"
+      help_page: "Hjälpsida"
