@@ -93,28 +93,6 @@ fa:
         unable_notice: شما نمی توانید یک بودجه را اختصاص داده شده را از بین ببرید.
       new:
         title: بودجه مشارکت جدید
-      show:
-        groups:
-          one: 1 گروه بندی بودجه
-          other: " گروه بندی بودجه%{count}"
-      form:
-        group: نام گروه
-        no_groups: هیچ گروهی ایجاد نشده است. هر کاربر تنها در یک گروه  میتواند رای دهد.
-        add_group: افزودن گروه جدید
-        create_group: ایجاد گروه
-        edit_group: ویرایش گروه
-        submit: ذخیره گروه
-        heading: عنوان سرفصل
-        add_heading: اضافه کردن سرفصل
-        amount: مقدار
-        population: "جمعیت (اختیاری)"
-        population_help_text: "این داده ها  منحصرا برای محاسبه آمار شرکت استفاده شده است"
-        save_heading: ذخیره سرفصل
-        no_heading: این گروه هیچ عنوان مشخصی ندارد
-        table_heading: سرفصل
-        table_amount: مقدار
-        table_population: جمعیت
-        population_info: "فیلد جمع آوری بودجه برای اهداف آماری در انتهای بودجه برای نشان دادن  هر بخش که نشان دهنده منطقه با جمعیتی است که رای داده است. فیلد اختیاری است، بنابراین اگر آن را خالی بگذارید اعمال نخواهد شد."
       winners:
         calculate: محاسبه سرمایه گذاری های برنده
         calculated: برندگان در حال محاسبه می باشند، ممکن است یک دقیقه طول بکشد.
@@ -234,8 +212,6 @@ fa:
         image: "تصویر"
         show_image: "نمایش تصویر"
         documents: "اسناد"
-        milestone: نقطه عطف
-        new_milestone: ایجاد نقطه عطف جدید
       new:
         creating: ایجاد نقطه عطف جدید
         date: تاریخ
@@ -282,7 +258,6 @@ fa:
           without_confirmed_hide: انتظار
         title: کاربران پنهان
         user: کاربر
-        no_hidden_users: هیچ کاربر پنهانی وجود ندارد
       show:
         email: 'پست الکترونیکی'
         hidden_at: 'پنهان در:'
@@ -319,7 +294,6 @@ fa:
         index:
           create: فرآیند جدید
           delete: حذف
-          title: فرآیندهای قانونی
           filters:
             open: بازکردن
             all: همه
@@ -819,7 +793,6 @@ fa:
       index:
         title: مقامات
         no_officials: هیچ مقام رسمی وجود ندارد
-        name: نام
         official_position: موضع رسمی
         official_level: سطح 
       level_0: رسمی نیست
@@ -861,15 +834,6 @@ fa:
       search:
         title: جستجو سازمان ها
         no_results: هیچ سازمان یافت نشد
-    hidden_proposals:
-      index:
-        filter: فیلتر
-        filters:
-          all: همه
-          with_confirmed_hide: تایید
-          without_confirmed_hide: انتظار
-        title: طرح های پنهان
-        no_hidden_proposals: پیشنهادات مخفی وجود ندارد.
     settings:
       flash:
         updated: ارزش به روز شد
@@ -1171,11 +1135,9 @@ fa:
       title: صفحه اصلی
       description: ماژول های فعال در صفحه اصلی به ترتیب در اینجا نمایش داده می شوند.
       header_title: سربرگ
-      no_header: بدون سربرگ
       create_header: ایجاد سربرگ
       cards_title: کارتها
       create_card: ایجاد کارت
-      no_cards: بدون کارت
       cards:
         title: عنوان
         description: توضیحات
