@@ -107,34 +107,62 @@ gl:
         unable_notice: Non se pode eliminiar un orzamento con proxectos asociados
       new:
         title: Novo orzamento cidadán
-      show:
-        groups:
-          one: 1 Grupo de partidas do orzamento
-          other: "%{count} Grupos de partidas dos orzamentos"
-      form:
-        group: Nome do grupo
-        no_groups: Non hai grupos creados aínda. Cada persoa usuaria poderá votar nunha soa partida de cada grupo.
-        add_group: Engadir un grupo novo
-        create_group: Crear un grupo
-        edit_group: Editar grupo
-        submit: Gardar grupo
-        heading: Nome da partida
-        add_heading: Engadir partida
-        amount: Cantidade
-        population: "Poboación (opcional)"
-        population_help_text: "Este dato utilízase exclusivamente para calcular as estatísticas de participación"
-        save_heading: Gardar partida
-        no_heading: Este grupo non ten ningunha partida asignada.
-        table_heading: Partida
-        table_amount: Cantidade
-        table_population: Poboación
-        population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
-        max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
-        current_of_max_headings: "%{current} de %{max}"
       winners:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
         recalculate: Recalcular propostas gañadoras
+    budget_groups:
+      name: "Nome"
+      headings_name: "Partidas"
+      headings_edit: "Editar Partidas"
+      headings_manage: "Xestionar Partidas"
+      max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
+      no_groups: "Non hai grupos creados aínda. Cada usuario poderá votar nunha soa partida de cada grupo."
+      amount:
+        one: "Hai 1 grupo"
+        other: "Hai %{count} grupos"
+      create:
+        notice: "Grupo creado correctamente!"
+      update:
+        notice: "Grupo creado correctamente"
+      destroy:
+        success_notice: "Grupo eliminado correctamente"
+        unable_notice: "Non se pode eliminar un Grupo que ten partidas asociadas"
+      form:
+        create: "Crear novo grupo"
+        edit: "Editar grupo"
+        name: "Nome do grupo"
+        submit: "Gardar grupo"
+      index:
+        back: "Volver aos orzamentos"
+    budget_headings:
+      name: "Nome"
+      no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
+      amount:
+        one: "Hai 1 partida"
+        other: "Hai %{count} partidas"
+      create:
+        notice: "Partida creada correctamente!"
+      update:
+        notice: "Partida actualizada correctamente"
+      destroy:
+        success_notice: "Partida eliminada correctamente"
+        unable_notice: "Non se pode eliminar unha partida con proxectos asociados"
+      form:
+        name: "Nome da partida"
+        amount: "Cantidade"
+        population: "Poboación (opcional)"
+        population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
+        latitude: "Latitude"
+        longitude: "Lonxitude"
+        coordinates_info: "Se se indican a latitude e lonxitude, a páxina de investimentos para esta partida incluirá un mapa. Este mapa estará centrado segundo estas coordenadas."
+        allow_content_block: "Permite bloque de contido"
+        content_blocks_info: "Se o permiso de bloque de contido está activado, poderás crear contido propio para esta partida desde a sección Configuración -> Contido de bloques personalizado. Este contido amosarase na páxina de investimentos desta partida."
+        create: "Crear nova partida"
+        edit: "Editar Partida"
+        submit: "Gardar partida"
+      index:
+        back: "Volver aos grupos"
     budget_phases:
       edit:
         start_date: Data de inicio
@@ -267,8 +295,8 @@ gl:
         image: "Imaxe"
         show_image: "Amosar imaxe"
         documents: "Documentos"
-        milestone: Seguimento
-        new_milestone: Crear novo seguimento
+        milestone: Fitos
+        new_milestone: Crear un novo fito
       form:
         admin_statuses: Administrar estados de investimento
         no_statuses_defined: Aínda non se definirion os estados dos investimentos
@@ -373,6 +401,8 @@ gl:
           enabled: Habilitado
           process: Proceso
           debate_phase: Fase previa
+          draft_phase: Fase de redacción
+          draft_phase_description: Se esta fase está activa, o proceso non se amosará no listado de procesos. Amosa unha vista previa do proceso e crea contido antes de que comece.
           allegations_phase: Fase de alegaciones
           proposals_phase: Fase de propostas
           start: Comezo
@@ -382,6 +412,9 @@ gl:
           summary_placeholder: Resumo corto da descrición
           description_placeholder: Engade unha descrición do proceso
           additional_info_placeholder: Engade unha información adicional que pode ser de interese
+          homepage: Descrición
+          homepage_description: Aquí podes explicar o contido do proceso
+          homepage_enabled: Páxina principal habilitada
         index:
           create: Novo proceso
           delete: Borrar
@@ -409,9 +442,14 @@ gl:
           status_planned: Planificado
         subnav:
           info: Información
+          homepage: Páxina principal
           draft_versions: Redacción
           questions: Debate
           proposals: Propostas
+          milestones: Seguindo
+      homepage:
+        edit:
+          title: Configura a túa páxina principal
       proposals:
         index:
           title: Título
@@ -509,6 +547,9 @@ gl:
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Borrar opción
+      milestones:
+        index:
+          title: Seguindo
     managers:
       index:
         title: Xestores
@@ -525,6 +566,7 @@ gl:
       admin: Menú de administración
       banner: Xestionar anuncios
       poll_questions: Preguntas
+      proposals: Propostas
       proposals_topics: Temas das propostas
       budgets: Orzamentos participativos
       geozones: Xestionar zonas
@@ -571,6 +613,8 @@ gl:
           welcome: "Benvida"
         buttons:
           save: "Gardar"
+          content_block:
+            update: "Actualizar Bloque"
       title_moderated_content: Moderar contido
       title_budgets: Orzamentos
       title_polls: Votacións
@@ -585,6 +629,7 @@ gl:
         title: Administradores/as
         name: Nome
         email: O teu correo electrónico
+        id: ID do administrador
         no_administrators: Non hai ningún administrador.
       administrator:
         add: Engadir
@@ -882,6 +927,8 @@ gl:
         create_question: "Crear pregunta para a votación"
         table_proposal: "Proposta"
         table_question: "Pregunta"
+        table_poll: "Votación"
+        poll_not_assigned: "Votación sen asignar"
       edit:
         title: "Editar pregunta cidadá"
       new:
@@ -1026,13 +1073,20 @@ gl:
       search:
         title: Buscar organizacións
         no_results: Non se atoparon organizacións.
+    proposals:
+      index:
+        title: Propostas
+        id: ID
+        author: Autor
+        milestones: Fitos
+        no_proposals: Non hai ningunha proposta.
     hidden_proposals:
       index:
         filter: Filtro
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendentes
+          all: Todo
+          with_confirmed_hide: Confirmado
+          without_confirmed_hide: Pendente
         title: Propostas agochadas
         no_hidden_proposals: Non hai propostas agochadas.
     proposal_notifications:
@@ -1074,6 +1128,8 @@ gl:
       setting_value: Valor
       no_description: "Sen descrición"
     shared:
+      true_value: "Si"
+      false_value: "Non"
       booths_search:
         button: Buscar
         placeholder: Buscar urna por nome
@@ -1249,6 +1305,7 @@ gl:
         title: Notificacións de propostas
         total: Total
         proposals_with_notifications: Propostas con notifificacións
+        not_available: "Proposta non dispoñible"
       polls:
         title: Estatísticas das votacións
         all: Votacións
@@ -1291,9 +1348,8 @@ gl:
     site_customization:
       content_blocks:
         information: Información sobre bloques de contido
-        about: Pode crear bloques de contido HTML para ser inseridos na cabeceira ou no rodapé do seu CONSUL.
-        top_links_html: "Os <strong>bloques da cabeceira (top_links)</strong> son bloques que deben ter este formato:"
-        footer_html: "Os <strong> bloques do rodapé</strong> poden ter calquera formato, e poden usarse para inserir Javascript, CSS ou HTML personalizado."
+        about: "Pode crear bloques de contido HTML para ser inseridos na cabeceira ou no rodapé do seu CONSUL."
+        html_format: "Un bloque de contido é un grupo de ligazóns, e debe ter o seguinte formato:"
         no_blocks: "Non hai bloques de contido."
         create:
           notice: O bloque creouse correctamente
