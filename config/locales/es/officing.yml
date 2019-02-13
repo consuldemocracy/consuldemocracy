@@ -8,7 +8,7 @@ es:
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
         no_shifts: No tienes turnos de presidente de mesa asignados hoy.
     menu:
-      voters: Validar documento y votar
+      voters: Validar documento
       total_recounts: Recuento total y escrutinio
     polls:
       final:
