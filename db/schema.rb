@@ -423,8 +423,8 @@ ActiveRecord::Schema.define(version: 20190325185550) do
   add_index "debate_translations", ["locale"], name: "index_debate_translations_on_locale", using: :btree
 
   create_table "debates", force: :cascade do |t|
-    t.string   "title",                        limit: 80
-    t.text     "description"
+    t.string   "deprecated_title",             limit: 80
+    t.text     "deprecated_description"
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
@@ -456,7 +456,6 @@ ActiveRecord::Schema.define(version: 20190325185550) do
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
-  add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
   add_index "debates", ["tsv"], name: "index_debates_on_tsv", using: :gin
 
   create_table "delayed_jobs", force: :cascade do |t|
