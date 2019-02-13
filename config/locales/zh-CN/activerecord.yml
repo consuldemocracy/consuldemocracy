@@ -20,13 +20,13 @@ zh-CN:
       user:
         other: "用户"
       moderator:
-        other: "版主"
+        other: "审核员"
       administrator:
         other: "管理员"
       valuator:
-        other: "评价者"
+        other: "评估者"
       valuator_group:
-        other: "评价小组"
+        other: "评估员组"
       manager:
         other: "经理"
       newsletter:
@@ -44,11 +44,11 @@ zh-CN:
       spending_proposal:
         other: "投资项目"
       site_customization/page:
-        other: 自定义页面
+        other: 定制页面
       site_customization/image:
-        other: 自定义图片
+        other: 自定义图像
       site_customization/content_block:
-        other: 自定义内容模块
+        other: 定制内容块
       legislation/process:
         other: "进程"
       legislation/proposal:
@@ -62,13 +62,13 @@ zh-CN:
       legislation/answers:
         other: "回答"
       documents:
-        other: "文件"
+        other: "文档"
       images:
-        other: "图片"
+        other: "图像"
       topic:
         other: "主题"
       poll:
-        other: "民意调查"
+        other: "投票"
       proposal_notification:
         other: "建议通知"
     attributes:
@@ -86,8 +86,8 @@ zh-CN:
       budget/investment:
         heading_id: "标题"
         title: "标题"
-        description: "说明书"
-        external_url: "链接到附加文档"
+        description: "说明"
+        external_url: "链接到其他文档"
         administrator_id: "管理员"
         location: "位置(可选)"
         organization_name: "如果你是以集体/组织的名义或者代表更多的人提出建议，写下它的名字。"
@@ -101,6 +101,9 @@ zh-CN:
       milestone/status:
         name: "名称"
         description: "说明（可选）"
+      progress_bar:
+        kind: "类型"
+        title: "标题"
       budget/heading:
         name: "标题名称"
         price: "价格"
