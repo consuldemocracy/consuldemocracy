@@ -165,16 +165,4 @@ class Debate < ApplicationRecord
     orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
     return orders
   end
-
-  private
-
-    def searchable_globalized_values
-      values = {}
-      translations.each do |translation|
-        Globalize.with_locale(translation.locale) do
-          values.merge! searchable_translations_definitions
-        end
-      end
-      values
-    end
 end
