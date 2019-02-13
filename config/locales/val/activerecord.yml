@@ -29,7 +29,7 @@ val:
         one: "Tema"
         other: "Temes"
       user:
-        one: "Usuari"
+        one: "Usuaris"
         other: "Usuaris"
       moderator:
         one: "Moderador"
@@ -48,13 +48,13 @@ val:
         other: "Gestors"
       newsletter:
         one: "Butlletí informatiu"
-        other: "Butlletins informatius"
+        other: "Enviament de Newsletters"
       vote:
-        one: "Vot"
+        one: "Votar"
         other: "Vots"
       organization:
         one: "Associació"
-        other: "Associacions"
+        other: "Organitzacions"
       poll/booth:
         one: "urna"
         other: "urnes"
@@ -69,28 +69,28 @@ val:
         other: "Propostes d'inversió"
       site_customization/page:
         one: Pàgina
-        other: Pàgines
+        other: Pàgines personalitzades
       site_customization/image:
         one: Imatge
-        other: Imatges
+        other: Personalitzar imatges
       site_customization/content_block:
         one: Bloc
-        other: Blocs
+        other: Personalitzar blocs
       legislation/process:
         one: "Proces"
-        other: "Processos"
+        other: "Processos legislatius"
       legislation/proposal:
         one: "Proposta"
         other: "Propostes"
       legislation/draft_versions:
         one: "Versió esborrany"
-        other: "Versions esborrany"
+        other: "Versions de l'esborrany"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntes"
       legislation/question_options:
         one: "Opció de resposta tancada"
-        other: "Opcions de resposta tancada"
+        other: "Opcions de resposta"
       legislation/answers:
         one: "Resposta"
         other: "Respostes"
@@ -107,7 +107,7 @@ val:
         one: "Votació"
         other: "Votacions"
       proposal_notification:
-        one: "Notificació de proposta"
+        one: "Notificacio de proposta"
         other: "Notificacions de propostes"
     attributes:
       budget:
@@ -122,10 +122,10 @@ val:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        heading_id: "Partida pressupostària"
+        heading_id: "Partida"
         title: "Títol"
         description: "Descripció"
-        external_url: "Enllaç a documentació addicional"
+        external_url: "Enllaç a documentació adicional"
         administrator_id: "Administrador"
         location: "Localització (opcional)"
         organization_name: "Si estàs proposant en nom d'una associació o col·lectiu, escriu el seu nom"
@@ -156,17 +156,17 @@ val:
       debate:
         author: "Autor"
         description: "Opinió"
-        terms_of_service: "Termes de servei"
+        terms_of_service: "Termes de servici"
         title: "Títol"
       proposal:
         author: "Autor"
         title: "Títol"
         question: "Pregunta"
         description: "Descripció"
-        terms_of_service: "Termes de servici"
+        terms_of_service: "Termes de servei"
       user:
         login: "Email o nom d'usuari"
-        email: "Correu electrónic"
+        email: "Correu electrònic"
         username: "Nom d'usuari"
         password_confirmation: "Confirmació de contrasenya"
         password: "Contrasenya"
@@ -182,23 +182,23 @@ val:
         administrator_id: "Administrador"
         association_name: "Nom de l'associació"
         description: "Descripció"
-        external_url: "Enllaç a documentació addicional"
+        external_url: "Enllaç a documentació adicional"
         geozone_id: "Ámbit d'actuació"
         title: "Títol"
       poll:
         name: "Nom"
-        starts_at: "Data d'apertura"
+        starts_at: "Data d'inici"
         ends_at: "Data de tancament"
         geozone_restricted: "Restringida per zones"
-        summary: "Resum"
+        summary: "Resumen"
         description: "Descripció"
       poll/translation:
         name: "Nom"
-        summary: "Resum"
+        summary: "Resumen"
         description: "Descripció"
       poll/question:
         title: "Pregunta"
-        summary: "Resumen"
+        summary: "Resum"
         description: "Descripció"
         external_url: "Enllaç a documentació adicional"
       poll/question/translation:
@@ -209,7 +209,7 @@ val:
         document_numbers: "Números de documents"
       site_customization/page:
         content: Contingut
-        created_at: Creada el
+        created_at: Creada
         subtitle: Subtítol
         slug: Slug
         status: Estat
@@ -217,7 +217,7 @@ val:
         updated_at: Actualitzada el
         more_info_flag: Mostra a la pàgina de més informació
         print_content_flag: Botó d'imprimir contingut
-        locale: Llengua
+        locale: Idioma
       site_customization/page/translation:
         title: Títol
         subtitle: Subtítol
@@ -230,8 +230,8 @@ val:
         locale: idioma
         body: Contingut
       legislation/process:
-        title: Títol del procés
-        summary: Resum
+        title: Títol del Procés
+        summary: Resumen
         description: Descripció
         additional_info: Informació addicional
         start_date: Data d'inici del procés
@@ -247,11 +247,11 @@ val:
         background_color: Color de fons
         font_color: Color de font
       legislation/process/translation:
-        title: Títol del Procés
-        summary: Resum
+        title: Títol del procés
+        summary: Resumen
         description: Descripció
         additional_info: Informació addicional
-        milestones_summary: Resum
+        milestones_summary: Resumen
       legislation/draft_version:
         title: Títol de la versió
         body: Text
@@ -264,17 +264,17 @@ val:
         changelog: Canvis
       legislation/question:
         title: Títol
-        question_options: Respostes
+        question_options: Opcions
       legislation/question_option:
         value: Valor
       legislation/annotation:
         text: Comentari
       document:
         title: Títol
-        attachment: Archiu adjunt
+        attachment: Fitxer adjunt
       image:
         title: Títol
-        attachment: Fitxer adjunt
+        attachment: Archiu adjunt
       poll/question/answer:
         title: Resposta
         description: Descripció
@@ -283,11 +283,11 @@ val:
         description: Descripció
       poll/question/answer/video:
         title: Títol
-        url: Vídeo extern
+        url: Video extern
       newsletter:
         segment_recipient: Destinataris
         subject: Asumpte
-        from: De
+        from: Desde
         body: Contingut del email
       admin_notification:
         segment_recipient: Destinataris
@@ -320,7 +320,7 @@ val:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+              less_than_or_equal_to: "els temes han de ser menor o igual a %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -333,11 +333,11 @@ val:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segment d'usuaris es invàlid"
+              invalid: "L'usuari del destinatari es invàlid"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "L'usuari del destinatari es invàlid"
+              invalid: "El segment d'usuaris es invàlid"
         map_location:
           attributes:
             map:
@@ -360,11 +360,11 @@ val:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "els temes han de ser menor o igual a %{count}"
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "els temes han de ser menor o igual a %{count}"
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
