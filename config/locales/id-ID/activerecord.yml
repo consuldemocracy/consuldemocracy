@@ -12,7 +12,7 @@ id:
       comment:
         other: "Komentar"
       debate:
-        other: "Debat"
+        other: "Perdebatan"
       tag:
         other: "Tag"
       user:
@@ -121,7 +121,7 @@ id:
         email: "Email"
         username: "Nama pengguna"
         password_confirmation: "Konfirmasi kata sandi"
-        password: "Kata sandi"
+        password: "Kata Sandi"
         current_password: "Kata sandi saat ini"
         phone_number: "Nomor telepon"
         official_position: "Posisi resmi"
