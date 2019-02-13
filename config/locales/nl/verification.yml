@@ -30,7 +30,7 @@ nl:
         explanation: 'Om deel te nemen aan de definitieve stemming kun je:'
         go_to_index: Bekijk voorstellen
         office: Bevestig in een %{office}
-        offices: Ondersteuningskantoor
+        offices: Ondersteuning
         send_letter: Stuur mij een brief met de code
         title: Gefeliciteerd!
         user_permission_info: Met je account kun je...
@@ -50,7 +50,7 @@ nl:
         accept_terms_text: Ik accepteer %{terms_url} van de telling
         accept_terms_text_title: Ik accepteer de algemene voorwaarden voor toegang tot de telling
         date_of_birth: Geboortedatum
-        document_number: Documentnummer
+        document_number: Document nummer
         document_number_help_title: Help
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Paspoort</strong>: AAA000001<br> <strong>Verblijfsvergunning</strong>: X1234567P'
         document_type:
@@ -89,7 +89,7 @@ nl:
         error: Onjuiste bevestigingscode
         flash:
           level_three:
-            success: Juiste code. Je account is nu geverifieerd
+            success: Code correct. Je account is nu geverifieerd
           level_two:
             success: Code correct
     step_1: Woonplaats
@@ -98,7 +98,7 @@ nl:
     user_permission_debates: Neem deel aan discussies
     user_permission_info: Als u uw gegevens verifieert, kunt u...
     user_permission_proposal: Nieuwe voorstellen maken
-    user_permission_support_proposal: Steun voorstellen*
+    user_permission_support_proposal: Voorstellen steunen*
     user_permission_votes: Neem deel aan definitieve stemronde
     verified_user:
       form:
