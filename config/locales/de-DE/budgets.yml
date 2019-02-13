@@ -51,7 +51,7 @@ de:
       map: Ausgabenvorschläge geografisch geordnet
       investment_proyects: Liste aller Ausgabenvorschläge
       unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
-      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die es nicht in die Abstimmung geschafft haben
+      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die nicht für die Abstimmung ausgewählt wurden
       finished_budgets: Abgeschlossene Bürgerhaushalte
       see_results: Ergebnisse anzeigen
       section_footer:
@@ -80,7 +80,7 @@ de:
           title: Suche
         search_results_html:
           one: " enthält den Begriff <strong>'%{search_term}'</strong>"
-          other: " enthält die Begriffe <strong>'%{search_term}'</strong>"
+          other: " enthält den Begriff <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Meine Stimmen
           voted_html:
@@ -88,7 +88,7 @@ de:
             other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
           voted_info: Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben.
           voted_info_link: Ihre Wahl ändern
-          different_heading_assigned_html: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
+          different_heading_assigned_html: "Sie haben bereits in einem anderen Bereich: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
           check_ballot_link: "Meine Abstimmung überprüfen"
           zero: Sie haben für keinen Ausgabenvorschlag in dieser Gruppe abgestimmt.
@@ -145,7 +145,7 @@ de:
         check_ballot: Meine Abstimmung überprüfen
         different_heading_assigned_html: "Sie haben bereits in einem anderen Bereich: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
-        check_ballot_link: "Überprüfung meiner Abstimmung"
+        check_ballot_link: "Meine Abstimmung überprüfen"
         price: "Diese Rubrik verfügt über einen Haushalt von"
     progress_bar:
       assigned: "Sie haben zugeordnet: "
