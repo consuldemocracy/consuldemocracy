@@ -24,7 +24,7 @@ fr:
       change_user: Changer l'utilisateur
       document_number_label: 'Numéro de document :'
       document_type_label: 'Type de document :'
-      email_label: 'Courriel :'
+      email_label: 'Courriel:'
       identified_label: 'Identifié en tant que :'
       username_label: 'Nom d''utilisateur :'
     check: Vérifier le document
