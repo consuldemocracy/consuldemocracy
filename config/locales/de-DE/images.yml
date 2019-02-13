@@ -17,5 +17,5 @@ de:
         confirm: Sind sie sicher, dass Sie das Bild löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden!
     errors:
       messages:
-        in_between: muss zwischen %{min} und %{max} liegen
+        in_between: muss zwischen %{min} und %{max} sein
         wrong_content_type: Inhaltstyp %{content_type} entspricht keinem der akzeptierten Inhaltstypen %{accepted_content_types}
