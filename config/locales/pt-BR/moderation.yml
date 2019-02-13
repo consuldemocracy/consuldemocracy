@@ -71,7 +71,7 @@ pt-BR:
         title: Propostas
     budget_investments:
       index:
-        block_authors: Bloquear alterações
+        block_authors: Bloquear autores
         confirm: Tem certeza?
         filter: Filtro
         filters:
