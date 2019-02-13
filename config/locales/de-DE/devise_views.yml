@@ -69,7 +69,7 @@ de:
         login_label: E-Mail oder Benutzer*innenname
         password_label: Passwort
         remember_me: Passwort speichern
-        submit: Anmelden
+        submit: Eingabe
         title: Anmelden
     shared:
       links:
