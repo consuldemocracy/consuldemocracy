@@ -14,7 +14,7 @@ cs:
       - úno
       - bře
       - dub
-      - kvě
+      - květen
       - čer
       - črv
       - srp
@@ -38,7 +38,7 @@ cs:
       - únor
       - březen
       - duben
-      - květen
+      - kvě
       - červen
       - červenec
       - srpen
@@ -50,6 +50,7 @@ cs:
     messages:
       blank: nemůže být prázdné
       present: musí být prázdné
+      model_invalid: "Validation failed: %{errors}"
   number:
     currency:
       format:
