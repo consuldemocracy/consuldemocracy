@@ -102,7 +102,7 @@ ar:
           proposal_notification: إشعار المقترح
         hide_proposal_notifications: الإقتراحات المخفية
         ignore_flags: شوهد
-        order: الطلب من طرف
+        order: ترتيب حسب
         orders:
           created_at: الأحدث
           moderated: تمت المراجعة
