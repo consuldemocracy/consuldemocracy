@@ -1,1 +1,22 @@
 fi:
+  seeds:
+    organizations:
+      human_rights: Ihmisoikeudet
+      neighborhood_association: Naapuruusjärjestö
+    categories:
+      associations: Yhdistykset
+      culture: Kulttuuri
+      sports: Urheilu
+      social_rights: Sosiaaliset oikeudet
+      economy: Talous
+      employment: Työllisyys
+      sustainability: Kestävyys
+      media: Media
+      health: Terveys
+      transparency: Läpinäkyvyys
+      security_emergencies: Turvallisuus ja hätätilanteet
+      environment: Ympäristö
+    budgets:
+      currency: '€'
+      valuator_groups:
+        culture_and_sports: Kulttuuri & urheilu
