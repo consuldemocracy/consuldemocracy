@@ -10,17 +10,17 @@ fr:
       - sam
     abbr_month_names:
       - 
-      - Janv
-      - Févr
-      - Mar
-      - Avr
-      - Mai
-      - Juin
-      - Juill
-      - Août
-      - Sept
-      - Oct
-      - Nov
+      - fév
+      - mar
+      - avr
+      - mai
+      - juin
+      - jul
+      - aoû
+      - sep
+      - oct
+      - nov
+      - déc
       - Déc
     day_names:
       - dimanche
@@ -36,12 +36,12 @@ fr:
       short: "%d %b"
     month_names:
       - 
-      - Janvier
-      - Février
-      - Mars
-      - Avril
-      - Mai
-      - Juin
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
       - août
       - septembre
       - octobre
@@ -84,7 +84,7 @@ fr:
     prompts:
       day: Jour
       hour: Heure
-      minute: Minute
+      minute: Minutes
       month: Mois
       second: Secondes
       year: Année
@@ -158,7 +158,7 @@ fr:
           thousand: mille
           trillion: trillion
       format:
-        precision: 1
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
