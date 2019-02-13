@@ -36,8 +36,8 @@ sq:
       index:
         no_results: "Nuk ka rezultate"
         results: Rezultatet
-        table_answer: Përgjigje
-        table_votes: Vota
+        table_answer: Përgjigjet
+        table_votes: Votim
         table_whites: "Vota të plota"
         table_nulls: "Votat e pavlefshme"
         table_total: "Totali i fletëvotimeve"
