@@ -1,1 +1,58 @@
 ast:
+  officing:
+    header:
+      title: Votaciones
+    dashboard:
+      index:
+        title: Presidir mesa de votaciones
+        info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+    menu:
+      voters: Validar documento
+    polls:
+      final:
+        title: Listado de votaciones finalizadas
+        no_polls: No tienes permiso para recuento final en ninguna votación reciente
+        select_poll: Selecciona votación
+        add_results: Añadir resultados
+    results:
+      flash:
+        create: "Datos guardados"
+        error_create: "Resultados NO añadidos. Error en los datos"
+        error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
+      new:
+        title: "%{poll} - Añadir resultados"
+        booth: "Urna"
+        date: "Día"
+        select_booth: "Escoyer urna"
+        ballots_null: "Papeletes nules"
+        submit: "Guardar"
+        results_list: "Tus resultados"
+        see_results: "Ver resultancies"
+      index:
+        no_results: "No hay resultados"
+        results: Resultancies
+        table_answer: Respuesta
+        table_votes: Votos
+        table_nulls: "Papeletes nules"
+    residence:
+      flash:
+        create: "Documento verificado con el Padrón"
+        not_allowed: "Hoy no tienes turno de presidente de mesa"
+      new:
+        title: Validar documento
+        document_number: "Númberu de documentu (incluyendo lletres)"
+        submit: Validar documento
+        error_verifying_census: "El Padrón no pudo verificar este documento."
+        form_errors: evitaron verificar este documento
+        no_assignments: "Hoy no tienes turno de presidente de mesa"
+    voters:
+      new:
+        title: Votaciones
+        table_poll: Votación
+        table_status: Estado de las votaciones
+        table_actions: Acciones
+      show:
+        can_vote: Puede votar
+        error_already_voted: Ya ha participado en esta votación.
+        submit: Confirmar voto
+        success: "¡Voto introducido!"
