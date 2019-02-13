@@ -106,30 +106,6 @@ it:
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
       new:
         title: Nuovo bilancio partecipativo
-      show:
-        groups:
-          one: 1 Gruppo di voci di bilancio
-          other: "%{count} Gruppi di voci di bilancio"
-      form:
-        group: Nome del gruppo
-        no_groups: Non è ancora stato creato alcun gruppo. Ciascun utente potrà votare per un’unica voce in ciascun gruppo.
-        add_group: Aggiungi nuovo gruppo
-        create_group: Crea gruppo
-        edit_group: Modifica gruppo
-        submit: Salva gruppo
-        heading: Denominazione della voce di bilancio
-        add_heading: Aggiungi voce di bilancio
-        amount: Importo
-        population: "Popolazione (facoltativo)"
-        population_help_text: "Questo dato è utilizzato esclusivamente per elaborare le statistiche relative alla partecipazione"
-        save_heading: Salvare voce di bilancio
-        no_heading: Questo gruppo non ha voci di bilancio assegnate.
-        table_heading: Voce di bilancio
-        table_amount: Importo
-        table_population: Popolazione
-        population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
-        max_votable_headings: "Numero massimo di voci che un utente può votare"
-        current_of_max_headings: "%{current} di %{max}"
       winners:
         calculate: Calcola Investimenti Vincitori
         calculated: Stiamo calcolando i vincitori, il che potrebbe richiedere un minuto.
@@ -266,8 +242,6 @@ it:
         image: "Immagine"
         show_image: "Mostra immagine"
         documents: "Documenti"
-        milestone: Traguardo
-        new_milestone: Crea nuovo traguardo
       form:
         no_statuses_defined: Non ci sono ancora status d’investimento definiti
       new:
@@ -336,7 +310,6 @@ it:
           without_confirmed_hide: In sospeso
         title: Utenti nascosti
         user: Utente
-        no_hidden_users: Non ci sono utenti nascosti.
       show:
         email: 'Email:'
         hidden_at: 'Nascosto:'
@@ -382,7 +355,6 @@ it:
         index:
           create: Nuovo procedimento
           delete: Elimina
-          title: Procedimenti legislativi
           filters:
             open: Aperti
             all: Tutti
@@ -400,7 +372,6 @@ it:
           status_planned: Programmato
         subnav:
           info: Informazione
-          draft_versions: Redazione
           questions: Dibattito
           proposals: Proposte
       proposals:
@@ -965,7 +936,6 @@ it:
       index:
         title: Funzionari
         no_officials: Non ci sono funzionari.
-        name: Nome
         official_position: Incarico da funzionario
         official_level: Livello
       level_0: Non funzionario
@@ -1007,15 +977,6 @@ it:
       search:
         title: Cerca Organizzazioni
         no_results: Nessuna organizzazione trovata.
-    hidden_proposals:
-      index:
-        filter: Filtra
-        filters:
-          all: Tutti
-          with_confirmed_hide: Confermata
-          without_confirmed_hide: In sospeso
-        title: Proposte nascoste
-        no_hidden_proposals: Non ci sono proposte nascoste.
     proposal_notifications:
       index:
         filter: Filtra
@@ -1272,9 +1233,7 @@ it:
     site_customization:
       content_blocks:
         information: Informazioni sui blocchi di contenuto
-        about: Puoi creare blocchi di contenuto in HTML da inserire nell’intestazione o nel piè di pagina del tuo CONSUL.
-        top_links_html: "I <strong>blocchi intestazione (top_links)</strong> sono blocchi di link che devono avere questo formato:"
-        footer_html: "I <strong>blocchi piè di pagina</strong> possono avere qualsiasi formato e possono essere usati per inserire Javascript, CSS o HTML personalizzato."
+        about: "Puoi creare blocchi di contenuto in HTML da inserire nell’intestazione o nel piè di pagina del tuo CONSUL."
         no_blocks: "Non ci sono blocchi di contenuto."
         create:
           notice: Blocco di contenuto creato con successo
@@ -1344,11 +1303,9 @@ it:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
       header_title: Intestazione
-      no_header: Non c'è alcuna intestazione.
       create_header: Crea intestazione
       cards_title: Schede
       create_card: Crea scheda
-      no_cards: Non c’è alcuna scheda.
       cards:
         title: Titolo
         description: Descrizione
