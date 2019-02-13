@@ -1,9 +1,9 @@
 nl:
   valuation:
     header:
-      title: Beoordeling
+      title: Evaluatie
     menu:
-      title: Beoordeling
+      title: Evaluatie
       budgets: Burgerbegroting
       spending_proposals: Begrotingsvoorstel
     budgets:
@@ -14,7 +14,7 @@ nl:
           finished: Afgerond
         table_name: Naam
         table_phase: Fase
-        table_assigned_investments_valuation_open: Investeringsprojecten met open beoordeling
+        table_assigned_investments_valuation_open: Investeringsprojecten zonder evaluatie
         table_actions: Acties
         evaluate: Evalueer
     budget_investments:
@@ -22,8 +22,8 @@ nl:
         headings_filter_all: Alle rubrieken
         filters:
           valuation_open: Open
-          valuating: In beoordeling
-          valuation_finished: Beoordeling afgerond
+          valuating: In evaluatie
+          valuation_finished: Evaluatie afgerond
         assigned_to: "Toegewezen aan %{valuator}"
         title: Investeringsprojecten
         edit: Wijzig dossier
@@ -52,7 +52,7 @@ nl:
         feasible: Haalbaar
         unfeasible: Niet haalbaar
         undefined: Ongedefinieerd
-        valuation_finished: Beoordeling afgerond
+        valuation_finished: Evaluatie afgerond
         duration: Tijdsspanne
         responsibles: Verantwoordelijken
         assigned_admin: Toegewezen beheerder
@@ -67,22 +67,22 @@ nl:
         unfeasible: Niet haalbaar
         undefined_feasible: In afwachting
         feasible_explanation_html: Toelichting op de haalbaarheid
-        valuation_finished: Beoordeling afgerond
+        valuation_finished: Evaluatie afgerond
         valuation_finished_alert: "Dit rapport als voltooid markeren? Daarna kan het niet meer worden gewijzigd."
         not_feasible_alert: "Een email met de beoordeling van de haalbaarheid wordt verstuurd aan de auteur van het project."
         duration_html: Tijdsspanne
         save: Bewaar wijzigingen
       notice:
         valuate: "Dossier bijgewerkt"
-      valuation_comments: Reacties op beoordelingen
-      not_in_valuating_phase: Inversteringen kunnen alleen worden beoordeeld wanneer de beoordelingsfase is gestart.
+      valuation_comments: Reacties op evaluaties
+      not_in_valuating_phase: Budgetten kunnen alleen worden geëvalueerd wanneer evaluatie is gestart
     spending_proposals:
       index:
         geozone_filter_all: Alle gebieden
         filters:
           valuation_open: Open
-          valuating: In beoordeling
-          valuation_finished: Beoordeling afgesloten
+          valuating: In evaluatie
+          valuation_finished: Evaluatie afgesloten
         title: Investeringsprojecten voor burgerbegrotingen
         edit: Pas aan
       show:
@@ -102,7 +102,7 @@ nl:
         feasible: Haalbaar
         not_feasible: Niet haalbaar
         undefined: Ongedefinieerd
-        valuation_finished: Beoordeling afgerond
+        valuation_finished: Evaluatie afgerond
         time_scope: Tijdsspanne
         internal_comments: Interne reacties
         responsibles: Verantwoordelijken
@@ -119,7 +119,7 @@ nl:
         not_feasible: Niet haalbaar
         undefined_feasible: In afwachting
         feasible_explanation_html: Toelichting op de haalbaarheid
-        valuation_finished: Beoordeling afgerond
+        valuation_finished: Evaluatie afgerond
         time_scope_html: Tijdsspanning
         internal_comments_html: Interne reacties
         save: Bewaar wijzigingen
