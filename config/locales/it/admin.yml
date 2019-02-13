@@ -11,9 +11,9 @@ it:
       restore: Ripristina
       mark_featured: In primo piano
       unmark_featured: Deseleziona 'in primo piano'
-      edit: Modifica
+      edit: Modificare
       configure: Configura
-      delete: Elimina
+      delete: Eliminare
     banners:
       index:
         title: Banner
@@ -43,14 +43,14 @@ it:
       edit:
         editing: Modifica banner
         form:
-          submit_button: Salvare le modifiche
+          submit_button: Salva modifiche
       errors:
         form:
           error:
             one: "errore ha impedito il salvataggio di questo banner"
             other: "errori hanno impedito il salvataggio di questo banner"
       new:
-        creating: Creare il banner
+        creating: Crea banner
     activity:
       show:
         action: Azione
@@ -80,13 +80,14 @@ it:
           open: Aperti
           finished: Terminati
         budget_investments: Gestisci i progetti
-        table_name: Nome
+        table_name: Nominativo
         table_phase: Fase
         table_investments: Investimenti
         table_edit_groups: Gruppi di voci di bilancio
-        table_edit_budget: Modifica
+        table_edit_budget: Modificare
         edit_groups: Modifica gruppi di voci di bilancio
         edit_budget: Modifica bilancio
+        no_budgets: "Non ci sono bilanci."
       create:
         notice: Nuovo bilancio partecipativo creato con successo!
       update:
@@ -96,10 +97,10 @@ it:
         delete: Elimina budget
         phase: Fase
         dates: Date
-        enabled: Abilitata
+        enabled: Abilitato
         actions: Azioni
         edit_phase: Modifica fase
-        active: Attiva
+        active: Attivo
         blank_dates: Le date risultano vuote
       destroy:
         success_notice: Bilancio cancellato con successo
@@ -110,11 +111,26 @@ it:
         calculate: Calcola Investimenti Vincitori
         calculated: Stiamo calcolando i vincitori, il che potrebbe richiedere un minuto.
         recalculate: Ricalcolare Investimenti Vincitori
+    budget_groups:
+      name: "Nominativo"
+      max_votable_headings: "Numero massimo di voci che un utente può votare"
+      form:
+        edit: "Modifica gruppo"
+        name: "Nome del gruppo"
+        submit: "Salva gruppo"
+    budget_headings:
+      name: "Nominativo"
+      form:
+        name: "Denominazione della voce di bilancio"
+        amount: "Importo"
+        population: "Popolazione (facoltativo)"
+        population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
+        submit: "Salvare voce di bilancio"
     budget_phases:
       edit:
         start_date: Data di inizio
         end_date: Data di conclusione
-        summary: Riepilogo
+        summary: Sommario
         summary_help_text: Questo paragrafo darà agli utenti informazioni sulla fase. Per renderlo visibile anche se la fase non risulta attiva, selezionare la spunta sottostante
         description: Descrizione
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
@@ -123,7 +139,7 @@ it:
         save_changes: Salva modifiche
     budget_investments:
       index:
-        heading_filter_all: Tutte le voci
+        heading_filter_all: Tutte le intestazioni
         administrator_filter_all: Tutti gli amministratori
         valuator_filter_all: Tutti gli stimatori
         tags_filter_all: Tutte le etichette
@@ -138,9 +154,9 @@ it:
           all: Tutti
           without_admin: Senza amministratore designato
           without_valuator: Senza stimatore assegnato
-          under_valuation: In corso di stima
-          valuation_finished: Stima conclusa
-          feasible: Realizzabile
+          under_valuation: Valutazione in corso
+          valuation_finished: Valutazione terminata
+          feasible: Fattibile
           selected: Selezionato
           undecided: Nessuna decisione
           unfeasible: Irrealizzabile
@@ -155,22 +171,22 @@ it:
         title: Progetti di investimento
         assigned_admin: Amministratore assegnato
         no_admin_assigned: Nessun amministratore assegnato
-        no_valuators_assigned: Nessuno stimatore assegnato
+        no_valuators_assigned: Nessun valutatore assegnato
         no_valuation_groups: Nessun gruppo di stima assegnato
         feasibility:
           feasible: "Realizzabile (%{price})"
           unfeasible: "Irrealizzabile"
           undecided: "Nessuna decisione"
         selected: "Selezionato"
-        select: "Seleziona"
+        select: "Selezionare"
         list:
           id: ID
           title: Titolo
           supports: Sostegni
           admin: Amministratore
-          valuator: Stimatore
+          valuator: Valutatore
           valuation_group: Gruppo di Stima
-          geozone: Ambito dell’operazione
+          geozone: Ambito operativo
           feasibility: Fattibilità
           valuation_finished: Stim. Conc.
           selected: Selezionato
@@ -178,20 +194,20 @@ it:
           author_username: Username dell’autore
           incompatible: Incompatibile
         cannot_calculate_winners: Il bilancio deve rimanere nella fase “Progetti in votazione”, “Revisione Schede” o “Bilancio concluso” percalcolare i progetti vincitori
-        see_results: "Visualizza i risultati"
+        see_results: "Vedi risultati"
       show:
         assigned_admin: Amministratore assegnato
-        assigned_valuators: Stimatori assegnati
+        assigned_valuators: Valutatori assegnati
         classification: Classificazione
         info: "%{budget_name} - Gruppo: %{group_name} - %{id} progetto di investimento"
-        edit: Modifica
+        edit: Modificare
         edit_classification: Modifica classificazione
         by: Di
         sent: Inviato
         group: Gruppo
-        heading: Voce di bilancio
-        dossier: Fascicolo
-        edit_dossier: Modifica fascicolo
+        heading: Intestazione
+        dossier: Dossier
+        edit_dossier: Modificare il dossier
         tags: Etichette
         user_tags: Etichette utente
         undefined: Non definito
@@ -238,10 +254,12 @@ it:
         table_status: Status
         table_actions: "Azioni"
         delete: "Elimina traguardo"
-        no_milestones: "Non risultano traguardi predefiniti"
+        no_milestones: "Non ci sono traguardi-milestone definiti"
         image: "Immagine"
         show_image: "Mostra immagine"
         documents: "Documenti"
+        milestone: Traguardo
+        new_milestone: Crea nuovo traguardo
       form:
         no_statuses_defined: Non ci sono ancora status d’investimento definiti
       new:
@@ -261,11 +279,11 @@ it:
         title: Status di investimento
         empty_statuses: Non sono stati creati status di investimento
         new_status: Crea nuovo status di investimento
-        table_name: Nome
+        table_name: Nominativo
         table_description: Descrizione
         table_actions: Azioni
-        delete: Elimina
-        edit: Modifica
+        delete: Eliminare
+        edit: Modificare
       edit:
         title: Modifica status dell’investimento
       update:
@@ -276,9 +294,14 @@ it:
         notice: Status di investimento creato con successo
       delete:
         notice: Status di investimento eliminato con successo
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Titolo"
     comments:
       index:
-        filter: Filtra
+        filter: Filtro
         filters:
           all: Tutti
           with_confirmed_hide: Confermato
@@ -336,7 +359,7 @@ it:
           notice: Procedimento eliminato con successo
         edit:
           back: Indietro
-          submit_button: Salvare le modifiche
+          submit_button: Salva modifiche
         errors:
           form:
             error: Errore
@@ -352,9 +375,11 @@ it:
           summary_placeholder: Breve riassunto della descrizione
           description_placeholder: Aggiungi una descrizione del procedimento
           additional_info_placeholder: Aggiungi ulteriori informazioni che ritieni utili
+          homepage: Descrizione
         index:
           create: Nuovo procedimento
-          delete: Elimina
+          delete: Eliminare
+          title: Processi di legislazione
           filters:
             open: Aperti
             all: Tutti
@@ -362,21 +387,33 @@ it:
           back: Indietro
           title: Crea nuovo procedimento collaborativo di legislazione
           submit_button: Crea procedimento
+        proposals:
+          select_order: Ordina per
+          orders:
+            title: Titolo
+            supports: Sostegni
         process:
           title: Procedimento
           comments: Commenti
           status: Status
           creation_date: Data di creazione
-          status_open: Aperto
+          status_open: Aperti
           status_closed: Chiuso
           status_planned: Programmato
         subnav:
           info: Informazione
+          homepage: Homepage
+          draft_versions: Redazione
           questions: Dibattito
           proposals: Proposte
+          milestones: Seguendo
       proposals:
         index:
+          title: Titolo
           back: Indietro
+          supports: Sostegni
+          select: Selezionare
+          selected: Selezionato
         form:
           custom_categories: Categorie
           custom_categories_description: Categorie che gli utenti possono selezionare creando la proposta.
@@ -392,7 +429,7 @@ it:
           notice: Bozza cancellata con successo
         edit:
           back: Indietro
-          submit_button: Salvare le modifiche
+          submit_button: Salva modifiche
           warning: Hai modificato il testo, non dimenticare di cliccare su Salva per salvare le modifiche in modo permanente.
         errors:
           form:
@@ -413,7 +450,7 @@ it:
         index:
           title: Versioni in bozza
           create: Crea versione
-          delete: Elimina
+          delete: Eliminare
           preview: Anteprima
         new:
           back: Indietro
@@ -424,7 +461,7 @@ it:
           published: Pubblicato
         table:
           title: Titolo
-          created_at: Creata a
+          created_at: Creato al
           comments: Commenti
           final_version: Versione finale
           status: Status
@@ -440,7 +477,7 @@ it:
         edit:
           back: Indietro
           title: "Modifica \"%{question_title}\""
-          submit_button: Salva le modifiche
+          submit_button: Salva modifiche
         errors:
           form:
             error: Errore
@@ -453,12 +490,12 @@ it:
         index:
           back: Indietro
           title: Quesiti associati a questo procedimento
-          create: Crea quesito
-          delete: Elimina
+          create: Creare la domanda
+          delete: Eliminare
         new:
           back: Indietro
           title: Crea nuovo quesito
-          submit_button: Crea quesito
+          submit_button: Creare la domanda
         table:
           title: Titolo
           question_options: Opzioni quesito
@@ -466,15 +503,18 @@ it:
           comments_count: Conteggio commenti
         question_option_fields:
           remove_option: Rimuovi opzione
+      milestones:
+        index:
+          title: Seguendo
     managers:
       index:
         title: Gestori
-        name: Nome
+        name: Nominativo
         email: Email
         no_managers: Non ci sono dirigenti.
       manager:
         add: Aggiungi
-        delete: Elimina
+        delete: Eliminare
       search:
         title: 'Dirigenti: Ricerca utenti'
     menu:
@@ -482,6 +522,7 @@ it:
       admin: Menù amministratore
       banner: Gestisci banner
       poll_questions: Quesiti
+      proposals: Proposte
       proposals_topics: Argomenti delle proposte
       budgets: Bilanci partecipativi
       geozones: Gestisci distretti
@@ -490,7 +531,7 @@ it:
       hidden_proposals: Proposte nascoste
       hidden_budget_investments: Investimenti di bilancio nascosti
       hidden_proposal_notifications: Notifiche di proposte nascoste
-      hidden_users: Utenti nascosti
+      hidden_users: Utenti bloccati
       administrators: Amministratori
       managers: Gestori
       moderators: Moderatori
@@ -519,7 +560,7 @@ it:
         information_texts: SMS informativi personalizzati
         information_texts_menu:
           debates: "Dibattiti"
-          community: "Comunità"
+          community: "Community"
           proposals: "Proposte"
           polls: "Votazioni"
           layouts: "Impaginazione"
@@ -540,24 +581,24 @@ it:
     administrators:
       index:
         title: Amministratori
-        name: Nome
+        name: Nominativo
         email: Email
         no_administrators: Non ci sono amministratori.
       administrator:
         add: Aggiungi
-        delete: Elimina
+        delete: Eliminare
         restricted_removal: "Spiacenti, non è possibile rimuovere se stessi dagli amministratori"
       search:
         title: "Amministratori: Ricerca utenti"
     moderators:
       index:
         title: Moderatori
-        name: Nome
+        name: Nominativo
         email: Email
         no_moderators: Non ci sono moderatori.
       moderator:
         add: Aggiungi
-        delete: Elimina
+        delete: Eliminare
       search:
         title: 'Moderatori: Ricerca utenti'
     segment_recipient:
@@ -580,11 +621,11 @@ it:
         new_newsletter: Nuova newsletter
         subject: Oggetto
         segment_recipient: Destinatari
-        sent: Inviata
+        sent: Inviato
         actions: Azioni
         draft: Bozza
-        edit: Modifica
-        delete: Elimina
+        edit: Modificare
+        delete: Eliminare
         preview: Anteprima
         empty_newsletters: Non ci sono newsletter da visualizzare
       new:
@@ -594,7 +635,7 @@ it:
         title: Modifica newsletter
       show:
         title: Anteprima newsletter
-        send: Invia
+        send: Inviare
         affected_users: (%{n} utenti interessati)
         sent_at: Inviato alle
         subject: Oggetto
@@ -613,11 +654,11 @@ it:
         new_notification: Nuova notifica
         title: Titolo
         segment_recipient: Destinatari
-        sent: Inviata
+        sent: Inviato
         actions: Azioni
         draft: Bozza
-        edit: Modifica
-        delete: Elimina
+        edit: Modificare
+        delete: Eliminare
         preview: Anteprima
         view: Visualizza
         empty_notifications: Non ci sono notifiche da visualizzare
@@ -630,7 +671,7 @@ it:
         send: Invia notifica
         will_get_notified: (%{n} utenti riceveranno una notifica)
         got_notified: (%{n} utenti hanno ricevuto una notifica)
-        sent_at: Inviata alle
+        sent_at: Inviato alle
         title: Titolo
         body: Testo
         link: Link
@@ -659,7 +700,7 @@ it:
     valuators:
       index:
         title: Stimatori
-        name: Nome
+        name: Nominativo
         email: Email
         description: Descrizione
         no_description: Nessuna descrizione
@@ -674,13 +715,13 @@ it:
         title: 'Stimatori: Ricerca utenti'
       summary:
         title: Riepilogo della stima dei progetti di investimento
-        valuator_name: Stimatore
+        valuator_name: Valutatore
         finished_and_feasible_count: Concluso e realizzabile
         finished_and_unfeasible_count: Concluso e irrealizzabile
-        finished_count: Terminate
+        finished_count: Terminati
         in_evaluation_count: Stima in corso
         total_count: Totale
-        cost: Costo
+        cost: Costi
       form:
         edit_title: "Stimatori: Modificare stimatore"
         update: "Aggiorna stimatore"
@@ -693,9 +734,9 @@ it:
         no_group: "Senza gruppo"
     valuator_groups:
       index:
-        title: "Gruppi di stimatori"
-        new: "Crea gruppo di stimatori"
-        name: "Nome"
+        title: "Gruppi di stima"
+        new: "Creare gruppo di stimatori"
+        name: "Nominativo"
         members: "Membri"
         no_groups: "Non risultano gruppi di stimatori"
       show:
@@ -703,7 +744,7 @@ it:
         no_valuators: "Non risultano stimatori assegnati a questo gruppo"
       form:
         name: "Nome del gruppo"
-        new: "Creare gruppo di stimatori"
+        new: "Crea gruppo di stimatori"
         edit: "Salvare il gruppo di stimatori"
     poll_officers:
       index:
@@ -711,18 +752,18 @@ it:
       officer:
         add: Aggiungi
         delete: Elimina posizione
-        name: Nome
+        name: Nominativo
         email: Email
         entry_name: scrutatore
       search:
-        email_placeholder: Cerca utente tramite email
-        search: Cerca
+        email_placeholder: Cerca utente via email
+        search: Ricercare
         user_not_found: Utente non trovato
     poll_officer_assignments:
       index:
         officers_title: "Elenco degli scrutatori"
         no_officers: "Non ci sono scrutatori assegnati a questa votazione."
-        table_name: "Nome"
+        table_name: "Nominativo"
         table_email: "Email"
       by_officer:
         date: "Data"
@@ -731,7 +772,7 @@ it:
         no_assignments: "Questo utente non ha turni da scrutatore in questa votazione."
     poll_shifts:
       new:
-        add_shift: "Aggiungere turno"
+        add_shift: "Aggiungere il turno"
         shift: "Assegnazione"
         shifts: "Turni per questo seggio"
         date: "Data"
@@ -740,16 +781,16 @@ it:
         new_shift: "Nuovo turno"
         no_shifts: "Questo seggio non ha turni"
         officer: "Scrutatore"
-        remove_shift: "Rimuovi"
-        search_officer_button: Cerca
+        remove_shift: "Rimuovere"
+        search_officer_button: Ricercare
         search_officer_placeholder: Cerca scrutatore
         search_officer_text: Cerca uno scrutatore cui assegnare un nuovo turno
-        select_date: "Seleziona giorno"
+        select_date: "Selezionare il giorno"
         no_voting_days: "Votazioni chiuse"
         select_task: "Seleziona incarico"
         table_shift: "Turno"
         table_email: "Email"
-        table_name: "Nome"
+        table_name: "Nominativo"
       flash:
         create: "Turno aggiunto"
         destroy: "Turno rimosso"
@@ -776,7 +817,7 @@ it:
         error_destroy: "Si è verificato un errore nella rimozione dell’assegnazione del seggio"
         error_create: "Si è verificato un errore nell’assegnazione del seggio alla votazione"
       show:
-        location: "Posizione"
+        location: "Luogo"
         officers: "Scrutatori"
         officers_list: "Lista degli scrutatori per questo seggio"
         no_officers: "Non ci sono scrutatori per questo seggio"
@@ -784,21 +825,23 @@ it:
         recounts_list: "Elenco scrutatori per il riconteggio in questo seggio"
         results: "Risultati"
         date: "Data"
-        count_final: "Conteggio finale (per scrutatore)"
+        count_final: "Scrutinio finale (per presidente)"
         count_by_system: "Voti (automatico)"
         total_system: Totale voti (automatico)
       index:
-        booths_title: "Elenco seggi"
+        booths_title: "Elenco dei seggi"
         no_booths: "Non ci sono seggi assegnati a questa votazione."
-        table_name: "Nome"
-        table_location: "Posizione"
+        table_name: "Nominativo"
+        table_location: "Luogo"
     polls:
       index:
         title: "Lista di votazioni attive"
         no_polls: "Non ci sono votazioni in programma."
-        create: "Crea votazione"
-        name: "Nome"
+        create: "Creare sondaggio"
+        name: "Nominativo"
         dates: "Date"
+        start_date: "Data inizio"
+        closing_date: "Data chiusura"
         geozone_restricted: "Limitato ai distretti"
       new:
         title: "Nuova votazione"
@@ -825,20 +868,21 @@ it:
     questions:
       index:
         title: "Quesiti"
-        create: "Crea quesito"
+        create: "Creare la domanda"
         no_questions: "Non ci sono quesiti."
         filter_poll: Filtra in base alla Votazione
         select_poll: Soluziona Votazione
         questions_tab: "Quesiti"
         successful_proposals_tab: "Proposta che ha superato la soglia richiesta"
-        create_question: "Crea quesito"
+        create_question: "Creare la domanda"
         table_proposal: "Proposta"
         table_question: "Quesito"
+        table_poll: "Sondaggio"
       edit:
         title: "Modifica Quesito"
       new:
         title: "Crea Quesito"
-        poll_label: "Votazione"
+        poll_label: "Sondaggio"
       answers:
         images:
           add_image: "Aggiungi immagine"
@@ -887,7 +931,7 @@ it:
       index:
         title: "Riconteggi"
         no_recounts: "Non c'è nulla da riconteggiare"
-        table_booth_name: "Seggio"
+        table_booth_name: "Urna"
         table_total_recount: "Conteggio complessivo (per scrutatore)"
         table_system_count: "Voti (automatico)"
     results:
@@ -896,33 +940,33 @@ it:
         no_results: "Non ci sono risultati"
       result:
         table_whites: "Schede totalmente bianche"
-        table_nulls: "Schede invalidate"
-        table_total: "Totale schede"
+        table_nulls: "Voti non validi"
+        table_total: "Schede totali"
         table_answer: Risposta
         table_votes: Voti
       results_by_booth:
-        booth: Seggio
+        booth: Urna
         results: Risultati
-        see_results: Visualizza risultati
+        see_results: Vedi risultati
         title: "Risultati per seggio"
     booths:
       index:
         title: "Elenco dei seggi attivi"
         no_booths: "Non risultano seggi attivi per alcuna votazione imminente."
         add_booth: "Aggiungi seggio"
-        name: "Nome"
-        location: "Posizione"
+        name: "Nominativo"
+        location: "Luogo"
         no_location: "Nessuna Posizione"
       new:
         title: "Nuovo seggio"
-        name: "Nome"
-        location: "Posizione"
+        name: "Nominativo"
+        location: "Luogo"
         submit_button: "Crea seggio"
       edit:
         title: "Modifica seggio"
         submit_button: "Aggiorna seggio"
       show:
-        location: "Posizione"
+        location: "Luogo"
       booth:
         shifts: "Gestisci turni"
         edit: "Modifica seggio"
@@ -936,7 +980,8 @@ it:
       index:
         title: Funzionari
         no_officials: Non ci sono funzionari.
-        official_position: Incarico da funzionario
+        name: Nominativo
+        official_position: Incarico ufficiale
         official_level: Livello
       level_0: Non funzionario
       level_1: Livello 1
@@ -960,29 +1005,44 @@ it:
         hidden_count_html:
           one: C'è anche <strong>una organizzazione</strong> senza utenti o con un utente nascosto.
           other: Ci sono <strong>%{count} organizzazioni</strong> senza utenti o con un utente nascosto.
-        name: Nome
+        name: Nominativo
         email: Email
         phone_number: Telefono
         responsible_name: Responsabile
         status: Status
         no_organizations: Non ci sono organizzazioni.
         reject: Respingi
-        rejected: Respinta
-        search: Cerca
+        rejected: Respinto
+        search: Ricercare
         search_placeholder: Nome, email o numero di telefono
         title: Organizzazioni
-        verified: Verificata
+        verified: Verificato
         verify: Verifica
         pending: In sospeso
       search:
         title: Cerca Organizzazioni
         no_results: Nessuna organizzazione trovata.
+    proposals:
+      index:
+        title: Proposte
+        id: ID
+        author: Autore
+        milestones: Traguardi
+    hidden_proposals:
+      index:
+        filter: Filtra
+        filters:
+          all: Tutti
+          with_confirmed_hide: Confermato
+          without_confirmed_hide: In sospeso
+        title: Proposte nascoste
+        no_hidden_proposals: Non ci sono proposte nascoste.
     proposal_notifications:
       index:
         filter: Filtra
         filters:
           all: Tutti
-          with_confirmed_hide: Confermata
+          with_confirmed_hide: Confermato
           without_confirmed_hide: In sospeso
         title: Notififiche nascoste
         no_hidden_proposals: Non ci sono notifiche nascoste.
@@ -1016,23 +1076,25 @@ it:
       setting_value: Valore
       no_description: "Nessuna descrizione"
     shared:
+      true_value: "Sì"
+      false_value: "No"
       booths_search:
-        button: Cerca
+        button: Ricercare
         placeholder: Cerca seggio per nome
       poll_officers_search:
-        button: Cerca
+        button: Ricercare
         placeholder: Cerca scrutatori
       poll_questions_search:
-        button: Cerca
+        button: Ricercare
         placeholder: Cerca quesiti oggetto di votazione
       proposal_search:
-        button: Cerca
+        button: Ricercare
         placeholder: Cerca le proposte per titolo, codice. descrizione o quesito
       spending_proposal_search:
-        button: Cerca
+        button: Ricercare
         placeholder: Cerca le proposte di spesa per titolo o descrizione
       user_search:
-        button: Cerca
+        button: Ricercare
         placeholder: Cerca utente in base al nome o all’email
       search_results: "Risultati della ricerca"
       no_search_results: "Nessun risultato trovato."
@@ -1046,18 +1108,19 @@ it:
       proposal: Proposta
       author: Autore
       content: Contenuto
-      created_at: Creato a
+      created_at: Creato al
+      delete: Eliminare
     spending_proposals:
       index:
-        geozone_filter_all: Tutti i distretti
+        geozone_filter_all: Tutti gli ambiti
         administrator_filter_all: Tutti gli amministratori
         valuator_filter_all: Tutti gli stimatori
         tags_filter_all: Tutte le etichette
         filters:
-          valuation_open: Aperta
-          without_admin: Senza amministratore assegnato
-          managed: Gestita
-          valuating: In corso di stima
+          valuation_open: Aperti
+          without_admin: Senza amministratore designato
+          managed: Gestito
+          valuating: Valutazione in corso
           valuation_finished: Stima conclusa
           all: Tutti
         title: Progetti di investimento per bilancio partecipativo
@@ -1068,7 +1131,7 @@ it:
         valuator_summary_link: "Riepilogo dello stimatore"
         feasibility:
           feasible: "Realizzabile (%{price})"
-          not_feasible: "Irrealizzabile"
+          not_feasible: "Non è fattibile"
           undefined: "Non definito"
       show:
         assigned_admin: Amministratore assegnato
@@ -1076,20 +1139,20 @@ it:
         back: Indietro
         classification: Classificazione
         heading: "Progetto di investimento %{id}"
-        edit: Modifica
+        edit: Modificare
         edit_classification: Modifica classificazione
         association_name: Associazione
-        by: Di
-        sent: Inviata
+        by: Autore
+        sent: Inviato
         geozone: Ambito
-        dossier: Fascicolo
-        edit_dossier: Modifica fascicolo
+        dossier: Dossier
+        edit_dossier: Modificare il dossier
         tags: Etichette
         undefined: Non definito
       edit:
         classification: Classificazione
         assigned_valuators: Stimatori
-        submit_button: Aggiornare
+        submit_button: Aggiorna
         tags: Etichette
         tags_placeholder: "Scrivi le etichette che vuoi separate da virgole (,)"
         undefined: Non definito
@@ -1099,18 +1162,18 @@ it:
         geozone_name: Ambito
         finished_and_feasible_count: Concluso e realizzabile
         finished_and_unfeasible_count: Concluso e irrealizzabile
-        finished_count: Terminato
-        in_evaluation_count: In corso di stima
+        finished_count: Terminati
+        in_evaluation_count: Stima in corso
         total_count: Totale
-        cost_for_geozone: Costo
+        cost_for_geozone: Costi
     geozones:
       index:
         title: Distretto
         create: Crea distretto
-        edit: Modifica
-        delete: Elimina
+        edit: Modificare
+        delete: Eliminare
       geozone:
-        name: Nome
+        name: Nominativo
         external_code: Codice esterno
         census_code: Codice anagrafico
         coordinates: Coordinate
@@ -1121,11 +1184,11 @@ it:
             other: 'errori hanno impedito il salvataggio di questo distretto'
       edit:
         form:
-          submit_button: Salva le modifiche
+          submit_button: Salva modifiche
         editing: Modifica distretto
-        back: Torna indietro
+        back: Indietro
       new:
-        back: Torna indietro
+        back: Indietro
         creating: Crea distretto
       delete:
         success: Distretto eliminato con successo
@@ -1133,11 +1196,11 @@ it:
     signature_sheets:
       author: Autore
       created_at: Data di creazione
-      name: Nome
+      name: Nominativo
       no_signature_sheets: "Non ci sono fogli firma"
       index:
         title: Fogli firma
-        new: Nuovi fogli firma
+        new: Nuovo foglio di firma
       new:
         title: Nuovi fogli firma
         document_numbers_note: "Scrivi i numeri separati da virgole (,)"
@@ -1198,7 +1261,7 @@ it:
         total_participants: Totale Partecipanti
         poll_questions: "Quesiti oggetto di votazione: %{poll}"
         table:
-          poll_name: Votazione
+          poll_name: Sondaggio
           question_name: Quesito
           origin_web: Partecipanti via web
           origin_total: Totale partecipanti
@@ -1214,9 +1277,9 @@ it:
         placeholder: Digitare il nome del tema
     users:
       columns:
-        name: Nome
+        name: Nominativo
         email: Email
-        document_number: Numero di documento
+        document_number: Numero del documento
         roles: Ruoli
         verification_level: Livello di verifica
       index:
@@ -1224,7 +1287,7 @@ it:
         no_users: Non ci sono utenti.
       search:
         placeholder: Ricerca utente per email, nome o numero del documento
-        search: Cerca
+        search: Ricercare
     verifications:
       index:
         phone_not_given: Telefono non fornito
@@ -1232,7 +1295,7 @@ it:
         title: Verifiche incomplete
     site_customization:
       content_blocks:
-        information: Informazioni sui blocchi di contenuto
+        information: Informazione sui blocchi di contenuto
         about: "Puoi creare blocchi di contenuto in HTML da inserire nell’intestazione o nel piè di pagina del tuo CONSUL."
         no_blocks: "Non ci sono blocchi di contenuto."
         create:
@@ -1255,13 +1318,13 @@ it:
         new:
           title: Crea nuovo blocco di contenuto
         content_block:
-          body: Corpo
-          name: Nome
+          body: Testo
+          name: Nominativo
       images:
         index:
           title: Immagini personalizzate
           update: Aggiorna
-          delete: Elimina
+          delete: Eliminare
           image: Immagine
         update:
           notice: Immagine aggiornata correttamente
@@ -1293,12 +1356,20 @@ it:
         new:
           title: Crea nuova pagina personalizzata
         page:
-          created_at: Creata al
-          status: Status
-          updated_at: Aggiornata al
+          created_at: Creato al
+          status: Stato
+          updated_at: Aggiornato al
           status_draft: Bozza
           status_published: Pubblicato
           title: Titolo
+          slug: Slug
+          cards_title: Schede
+        cards:
+          create_card: Crea scheda
+          title: Titolo
+          description: Descrizione
+          link_text: Testo del link
+          link_url: URL del link
     homepage:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
@@ -1325,3 +1396,6 @@ it:
         submit_header: Salva intestazione
         card_title: Modifica scheda
         submit_card: Salva scheda
+    translations:
+      remove_language: Rimuovi lingua
+      add_language: Aggiungi lingua
