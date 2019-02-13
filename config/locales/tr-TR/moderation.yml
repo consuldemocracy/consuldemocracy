@@ -1,1 +1,31 @@
 tr:
+  moderation:
+    comments:
+      index:
+        confirm: Emin misiniz?
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
+        headers:
+          comment: Yorum
+          moderate: Yönet
+        hide_comments: Yorumları gizle
+        ignore_flags: Görüldü olarak işaretle
+        order: Sipariş
+        title: Yorumlar
+    debates:
+      index:
+        confirm: Emin misiniz?
+    menu:
+      flagged_comments: Yorumlar
+    proposals:
+      index:
+        confirm: Emin misiniz?
+    budget_investments:
+      index:
+        confirm: Emin misiniz?
+    proposal_notifications:
+      index:
+        confirm: Emin misiniz?
