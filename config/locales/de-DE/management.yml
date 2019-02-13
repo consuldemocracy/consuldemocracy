@@ -74,21 +74,21 @@ de:
     permissions:
       create_proposals: Vorschlag erstellen
       debates: In Debatten engagieren
-      support_proposals: Anträge unterstützen
+      support_proposals: Vorschläge unterstützen
       vote_proposals: Über Vorschläge abstimmen
     print:
       proposals_title: 'Vorschläge:'
       spending_proposals_info: Auf http://url.consul teilnehmen
       budget_investments_info: Auf http://url.consul teilnehmen
-    print_info: Diese Info drucken
+    print_info: Die Info drucken
     proposals:
       alert:
-        unverified_user: Benutzer ist nicht bestätigt
+        unverified_user: Der Benutzer ist nicht verifiziert
       create_proposal: Vorschlag erstellen
       print:
         print_button: Drucken
       index:
-        title: Anträge unterstützen
+        title: Vorschläge unterstützen
     budgets:
       create_new_investment: Budgetinvestitionen erstellen
       print_investments: Budgetinvestitionen drucken
@@ -100,7 +100,7 @@ de:
     budget_investments:
       alert:
         unverified_user: Benutzer ist nicht bestätigt
-      create: Eine Budgetinvestitionen erstellen
+      create: Ausgabenvorschlag erstellen
       filters:
         heading: Konzept
         unfeasible: Undurchführbare Investition
@@ -114,7 +114,7 @@ de:
         unverified_user: Benutzer ist nicht bestätigt
       create: Ausgabenvorschlag erstellen
       filters:
-        unfeasible: Undurchführbare Investitionsprojekte
+        unfeasible: Undurchführbare Investitionsvorschläge
         by_geozone: "Investitionsvorschläge im Bereich: %{geozone}"
       print:
         print_button: Drucken
