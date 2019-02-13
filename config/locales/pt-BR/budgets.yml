@@ -57,13 +57,14 @@ pt-BR:
       section_footer:
         title: Ajuda com orçamentos participativos
         description: Com os orçamentos participativos, os cidadãos decidem para quais dos projetos apresentados será destinada uma parte do orçamento municipal.
+      milestones: Marcos
     investments:
       form:
         tag_category_label: "Categorias"
         tags_instructions: "Marque esta proposta. Você pode escolher entre as categorias propostas ou adicionar a sua própria"
-        tags_label: Marcações
-        tags_placeholder: "Insira as marcações que você deseja usar, separadas por vírgulas (',')"
-        map_location: "Localização do mapa"
+        tags_label: Marcação
+        tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
+        map_location: "Localização no mapa"
         map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
         map_remove_marker: "Remover o marcador do mapa"
         location: "Informações adicionais de localização"
@@ -76,7 +77,7 @@ pt-BR:
         search_form:
           button: Buscar
           placeholder: Buscar projetos de investimento...
-          title: Pesquisar
+          title: Buscar
         search_results_html:
           one: " contendo o termo <strong>'%{search_term}'</strong>"
           other: " contendo o termo <strong>'%{search_term}'</strong>"
@@ -106,7 +107,7 @@ pt-BR:
           price: por preço
       show:
         author_deleted: Usuário excluído
-        price_explanation: Explanação do preço
+        price_explanation: Explicação do preço
         unfeasibility_explanation: Explanação da inviabilidade
         code_html: 'Código do projeto de investimento: <strong>%{code}</strong>'
         location_html: 'Localização: <strong>%{location}</strong>'
@@ -125,7 +126,7 @@ pt-BR:
         project_not_selected_html: 'Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação.'
       wrong_price_format: Apenas números inteiros
       investment:
-        add: Vote
+        add: Voto
         already_added: Você já adicionou este projeto de investimento
         already_supported: Você já apoiou esta proposta de investimento. Compartilhe!
         support_title: Apoiar este projeto
@@ -133,10 +134,10 @@ pt-BR:
           one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
           other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
         supports:
-          zero: Sem apoio
+          zero: Nenhum apoio
           one: 1 apoio
           other: "%{count} apoios"
-        give_support: Apoio
+        give_support: Apoiar
       header:
         check_ballot: Verificar minha cédula
         different_heading_assigned_html: "Você possui votos ativos em um título diferente: %{heading_link}"
@@ -160,7 +161,7 @@ pt-BR:
       heading: "Resultados do orçamento participativo"
       heading_selection_title: "Por distrito"
       spending_proposal: Título da proposta
-      ballot_lines_count: Tempos selecionados
+      ballot_lines_count: Votos
       hide_discarded_link: Esconder descartados
       show_all_link: Mostrar todos
       price: Preço
@@ -171,6 +172,9 @@ pt-BR:
       investment_proyects: Lista de todos os projetos de investimento
       unfeasible_investment_proyects: Lista de todos os projetos de investimento inviáveis
       not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
+    executions:
+      link: "Marcos"
+      heading_selection_title: "Por distrito"
     phases:
       errors:
         dates_range_invalid: "Data de início não pode ser igual ou posterior à data de término"
