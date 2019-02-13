@@ -1,1 +1,26 @@
 ru:
+  valuation:
+    menu:
+      budgets: Партисипаторные бюджеты
+    budgets:
+      index:
+        title: Партисипаторные бюджеты
+        table_name: Имя
+        table_phase: Этап
+    budget_investments:
+      index:
+        title: Инновационные проекты
+        table_title: Название
+        table_heading_name: Название раздела
+      show:
+        title: Инвестиционный проект
+        heading: Раздел
+        price: Цена
+      edit:
+        price_explanation_html: Описание цены
+    spending_proposals:
+      show:
+        heading: Инвестиционный проект
+        price: Цена
+      edit:
+        price_explanation_html: Описание цены
