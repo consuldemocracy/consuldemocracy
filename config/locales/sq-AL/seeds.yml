@@ -35,7 +35,7 @@ sq:
       currency: '€'
       groups:
         all_city: I gjithë qyteti
-        districts: Rrethet
+        districts: Zonë
       valuator_groups:
         culture_and_sports: Kulturë dhe sport
         gender_and_diversity: Politikat gjinore dhe të diversitetit
