@@ -1,1 +1,36 @@
 ru:
+  legislation:
+    annotations:
+      form:
+        login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      index:
+        title: Комментарии
+      show:
+        title: Отзыв
+    draft_versions:
+      changes:
+        title: Изменения
+      show:
+        text_body: Текст
+        text_comments: Комментарии
+    processes:
+      header:
+        description: Описание
+      shared:
+        debate_dates: Обсуждение
+        allegations_dates: Комментарии
+        proposals_dates: Заявки
+    questions:
+      question:
+        comments:
+          zero: Нет комментариев
+        debate: Обсуждение
+      show:
+        share: Доля
+      participation:
+        verify_account: подтвердите ваш аккаунт
+    shared:
+      share: Доля
+    proposals:
+      form:
+        tags_label: "Категории"
