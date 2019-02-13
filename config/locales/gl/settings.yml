@@ -87,7 +87,7 @@ gl:
       facebook_login_description: "Permitir aos usuarios o inicio de sesión coa conta de Facebook"
       google_login: "Rexistro con Google"
       google_login_description: "Permitir aos usuarios o inicio de sesión coa conta de Google"
-      proposals: "Propostas"
+      proposals: "Propostas cidadás"
       proposals_description: "As propostas da cidadanía son unha oportunidade para que os veciños e colectivos poidan decidir sobre como queren que sexa a súa cidade, despois de conseguir suficientes apoios e sometelas a un proceso de votación"
       featured_proposals: "Propostas destacadas"
       featured_proposals_description: "Amosar as propostas destacadas na páxina principal das propostas"
@@ -99,7 +99,7 @@ gl:
       signature_sheets_description: "Permite adherir desde o panel de administración as sinaturas recollidas no sitio para propostas e proxectos de investimento dos orzamentos participativos"
       legislation: "Lexislación"
       legislation_description: "Nos procesos participativos, o concello ofrécelle á cidadanía a oportunidade de participar na elaboración e modificación de normativa que lle afecta á cidade e de dar a súa opinión sobre algunhas accións que teñen previsto levar a cabo"
-      spending_proposals: "Propostas de gasto"
+      spending_proposals: "Propostas de investimento"
       spending_proposals_description: "⚠️ AVISO: Esta característica foi substituída polo Orzamento Participativo e vai desaparecer nas novas versións"
       spending_proposal_features:
         voting_allowed: Votando nos proxectos de investimento - Fase de preselección
