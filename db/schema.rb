@@ -500,8 +500,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "debates", force: :cascade do |t|
-    t.string   "title",                        limit: 80
-    t.text     "description"
+    t.string   "deprecated_title",             limit: 80
+    t.text     "deprecated_description"
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
@@ -531,7 +531,6 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_debates_on_hot_score", using: :btree
-    t.index ["title"], name: "index_debates_on_title", using: :btree
     t.index ["tsv"], name: "index_debates_on_tsv", using: :gin
   end
 
