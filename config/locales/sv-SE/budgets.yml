@@ -57,6 +57,7 @@ sv:
       section_footer:
         title: Hjälp med medborgarbudgetar
         description: "Medborgarbudgetar är processer där invånarna beslutar om en del av stadens budget. Alla som är skrivna i staden kan ge förslag på projekt till budgeten.\n\nDe projekt som får flest röster granskas och skickas till en slutomröstning för att utse de vinnande projekten.\n\nBudgetförslag tas emot från januari till och med mars. För att skicka in ett förslag för hela staden eller en del av staden behöver du registrera dig och verifiera ditt konto.\n\nVälj en beskrivande och tydlig rubrik för ditt projekt och förklara hur du vill att det ska genomföras. Komplettera med bilder, dokument och annan viktig information för att göra ditt förslag så bra som möjligt."
+      milestones: Milstolpar
     investments:
       form:
         tag_category_label: "Kategorier"
@@ -160,6 +161,7 @@ sv:
       heading: "Resultat av medborgarbudget"
       heading_selection_title: "Efter stadsdel"
       spending_proposal: Förslagets titel
+      ballot_lines_count: Röster
       hide_discarded_link: Göm avvisade
       show_all_link: Visa alla
       price: Kostnad
@@ -170,6 +172,9 @@ sv:
       investment_proyects: Lista över budgetförslag
       unfeasible_investment_proyects: Lista över ej genomförbara budgetförslag
       not_selected_investment_proyects: Lista över budgetförslag som inte gått vidare till omröstning
+    executions:
+      link: "Milstolpar"
+      heading_selection_title: "Efter stadsdel"
     phases:
       errors:
         dates_range_invalid: "Startdatum kan inte vara samma eller senare än slutdatum"
