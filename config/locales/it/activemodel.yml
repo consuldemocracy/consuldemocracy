@@ -2,20 +2,20 @@ it:
   activemodel:
     models:
       verification:
-        residence: "Indirizzo"
+        residence: "Residenza"
         sms: "SMS"
     attributes:
       verification:
         residence:
-          document_type: "Tipo di documento"
+          document_type: "Tipo Documento di identità"
           document_number: "Numero del documento (lettere incluse)"
           date_of_birth: "Data di nascita"
           postal_code: "Cap"
         sms:
           phone: "Telefono"
-          confirmation_code: "Codice di conferma"
+          confirmation_code: "SMS di conferma"
         email:
-          recipient: "Email"
+          recipient: "E-mail"
       officing/residence:
         document_type: "Tipo di documento"
         document_number: "Numero del documento (lettere incluse)"
