@@ -57,7 +57,7 @@ nl:
         filter: Filter
         filters:
           all: Allen
-          pending_flag_review: In afwachting van beoordeling
+          pending_flag_review: In afwachting van evaluatie
           with_ignored_flag: Markeer als gelezen
         headers:
           moderate: Modereer
@@ -95,7 +95,7 @@ nl:
         filter: Filter
         filters:
           all: All
-          pending_review: In afwachting van beoordeling
+          pending_review: In afwachting van evaluatie
           ignored: Markeer als gelezen
         headers:
           moderate: Modereer
