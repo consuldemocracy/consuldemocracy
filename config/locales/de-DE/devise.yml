@@ -3,7 +3,7 @@ de:
     password_expired:
       expire_password: "Passwort abgelaufen"
       change_required: "Ihr Passwort ist abgelaufen"
-      change_password: "Ändern Sie Ihr Passwort"
+      change_password: "Mein Passwort ändern"
       new_password: "Neues Passwort"
       updated: "Passwort erfolgreich aktualisiert"
     confirmations:
