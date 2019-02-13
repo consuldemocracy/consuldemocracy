@@ -14,13 +14,13 @@ it:
         one: "traguardo"
         other: "traguardi"
       comment:
-        one: "Commento"
+        one: "Commentare"
         other: "Commenti"
       debate:
         one: "Dibattito"
         other: "Dibattiti"
       tag:
-        one: "Etichetta"
+        one: "Tag"
         other: "Etichette"
       user:
         one: "Utente"
@@ -32,14 +32,14 @@ it:
         one: "Amministratore"
         other: "Amministratori"
       valuator:
-        one: "Stimatore"
+        one: "Valutatore"
         other: "Stimatori"
       valuator_group:
         one: "Gruppo di stima"
-        other: "Gruppi di stima"
+        other: "Gruppi di stimatori"
       manager:
         one: "Gestore"
-        other: "Dirigenti"
+        other: "Gestori"
       newsletter:
         one: "Newsletter"
         other: "Newsletter"
@@ -50,17 +50,17 @@ it:
         one: "Organizzazione"
         other: "Organizzazioni"
       poll/booth:
-        one: "seggio"
-        other: "seggi"
+        one: "area di voto"
+        other: "aree di voto"
       poll/officer:
-        one: "scrutatore"
-        other: "scrutatori"
+        one: "responsabile"
+        other: "responsabili"
       proposal:
         one: "Proposta cittadina"
         other: "Proposte cittadine"
       spending_proposal:
-        one: "Progetto d’investimento"
-        other: "Progetti d’investimento"
+        one: "Progetto di investimento"
+        other: "Progetti di investimento"
       site_customization/page:
         one: Pagina personalizzata
         other: Pagine personalizzate
@@ -69,22 +69,22 @@ it:
         other: Immagini personalizzate
       site_customization/content_block:
         one: Blocco di contenuto personalizzato
-        other: Blocchi di contenuto personalizzati
+        other: Blocchi di contenuto personalizzato
       legislation/process:
-        one: "Procedimento"
-        other: "Procedimenti"
+        one: "Processo"
+        other: "Processi"
       legislation/proposal:
         one: "Proposta"
         other: "Proposte"
       legislation/draft_versions:
-        one: "Bozza"
-        other: "Bozze"
+        one: "Versione in bozza"
+        other: "Versioni in bozza"
       legislation/questions:
         one: "Quesito"
         other: "Quesiti"
       legislation/question_options:
-        one: "Opzione quesito"
-        other: "Opzioni quesito"
+        one: "Opzione della domanda"
+        other: "Opzioni per la domanda"
       legislation/answers:
         one: "Risposta"
         other: "Risposte"
@@ -98,7 +98,7 @@ it:
         one: "Argomento"
         other: "Argomenti"
       poll:
-        one: "Votazione"
+        one: "Sondaggio"
         other: "Votazioni"
       proposal_notification:
         one: "Notifica di proposta"
@@ -106,13 +106,13 @@ it:
     attributes:
       budget:
         name: "Nominativo"
-        description_accepting: "Descrizione durante la fase di Accettazione"
-        description_reviewing: "Descrizione durante la fase di Verifica"
-        description_selecting: "Descrizione durante la fase di Selezione"
-        description_valuating: "Descrizione durante la fase di Stima"
-        description_balloting: "Descrizione durante la fase di Voto"
-        description_reviewing_ballots: "Descrizione durante la fase di Verifica dei Voti"
-        description_finished: "Descrizione dopo la conclusione del bilancio"
+        description_accepting: "Descrizione durante la fase della Accettazione"
+        description_reviewing: "Descrizione durante la fase della Verifica"
+        description_selecting: "Descrizione durante la fase della Ricerca di appoggi"
+        description_valuating: "Descrizione durante la fase della Valutazione"
+        description_balloting: "Descrizione durante la fase del Voto"
+        description_reviewing_ballots: "Descrizione durante la fase della Verifica del voto"
+        description_finished: "Descrizione durante la fase della Approvazione del Bilancio / Risultati"
         phase: "Fase"
         currency_symbol: "Valuta"
       budget/investment:
@@ -136,11 +136,11 @@ it:
         kind: "Tipo"
         title: "Titolo"
       budget/heading:
-        name: "Intestazione"
-        price: "Prezzo"
+        name: "Denominazione della voce di bilancio"
+        price: "Costi"
         population: "Popolazione"
       comment:
-        body: "Commento"
+        body: "Commentare"
         user: "Utente"
       debate:
         author: "Autore"
@@ -150,13 +150,13 @@ it:
       proposal:
         author: "Autore"
         title: "Titolo"
-        question: "Quesito"
+        question: "Domanda"
         description: "Descrizione"
-        terms_of_service: "Termini di servizio"
+        terms_of_service: "Termini del servizio"
       user:
-        login: "Email o username"
+        login: "E-mail o nome utente"
         email: "Email"
-        username: "Username"
+        username: "Nome utente"
         password_confirmation: "Conferma password"
         password: "Password"
         current_password: "Password attuale"
@@ -175,11 +175,11 @@ it:
         geozone_id: "Ambito operativo"
         title: "Titolo"
       poll:
-        name: "Nome"
+        name: "Nominativo"
         starts_at: "Data inizio"
         ends_at: "Data chiusura"
-        geozone_restricted: "Limitato al distretto"
-        summary: "Riepilogo"
+        geozone_restricted: "Ristretto alla zona geografica"
+        summary: "Sommario"
         description: "Descrizione"
       poll/translation:
         name: "Nominativo"
@@ -198,35 +198,35 @@ it:
         document_numbers: "Numero di documenti"
       site_customization/page:
         content: Contenuto
-        created_at: Creato al
+        created_at: Creato
         subtitle: Sottotitolo
         slug: Slug
         status: Status
         title: Titolo
-        updated_at: Aggiornato al
+        updated_at: Ultimo aggiornamento
         more_info_flag: Visualizza nella guida
-        print_content_flag: Pulsante di stampa
+        print_content_flag: Bottone di stampa
         locale: Lingua
       site_customization/page/translation:
         title: Titolo
         subtitle: Sottotitolo
         content: Contenuto
       site_customization/image:
-        name: Nome
+        name: Nominativo
         image: Immagine
       site_customization/content_block:
-        name: Nome
-        locale: località
+        name: Nominativo
+        locale: Lingua
         body: Corpo
       legislation/process:
-        title: Titolo del Procedimento
-        summary: Riepilogo
+        title: Titolo del processo
+        summary: Sommario
         description: Descrizione
         additional_info: Ulteriori info
         start_date: Data di inizio
-        end_date: Data di conclusione
+        end_date: Data di fine
         debate_start_date: Data di inizio del dibattito
-        debate_end_date: Data di conclusione del dibattito
+        debate_end_date: Data di fine del dibattito
         draft_publication_date: Data di pubblicazione della bozza
         result_publication_date: Data di pubblicazione del risultato finale
       legislation/process/translation:
@@ -251,7 +251,7 @@ it:
       legislation/question_option:
         value: Valore
       legislation/annotation:
-        text: Commento
+        text: Commentare
       document:
         title: Titolo
         attachment: Allegato
@@ -332,9 +332,9 @@ it:
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: deve avere data uguale o successiva alla data d’inizio
+              invalid_date_range: deve essere almeno dalla data di inizio
             debate_end_date:
-              invalid_date_range: deve avere data uguale o successiva alla data d’inizio del dibattito
+              invalid_date_range: deve essere almeno dalla data di inizio del dibattio
         proposal:
           attributes:
             tag_list:
