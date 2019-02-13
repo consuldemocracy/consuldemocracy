@@ -8,9 +8,9 @@ cs:
         publish_comment: Zveřejnit komentář
       form:
         phase_not_open: Tato fáze není otevřena
-        login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
-        signin: přihlásit
-        signup: registrovat
+        login_to_comment: Pro vložení komentáře se musíte %{signin} nebo %{signup}.
+        signin: Přihlásit se
+        signup: Registrujte se!
       index:
         title: Komentáře
         comments_about: Komentáře k
@@ -22,7 +22,7 @@ cs:
         see_text: Zobrazit pracovní verzi
     draft_versions:
       changes:
-        title: Změny
+        title: Changes
         seeing_changelog_version: Popis změn v revizi
         see_text: Zobrazit pracovní verzi
       show:
@@ -34,11 +34,12 @@ cs:
         see_changes: zobrazit shrnutí změn
         see_comments: Zobrazit všechny komentáře
         text_toc: Obsah
+        text_body: Text
         text_comments: Komentáře
     processes:
       header:
         additional_info: Doplňující informace
-        description: Popis
+        description: Description
         more_info: Další informace a souvislosti
       proposals:
         empty_proposals: Neexistují žádné návrhy
@@ -50,7 +51,7 @@ cs:
       index:
         filter: Filtr
         filters:
-          open: Otevřené procesy
+          open: Aktivní procesy
           past: Ukončené
         no_open_processes: Neexistují otevřené procesy
         no_past_processes: Neexistují ukončené procesy
@@ -69,10 +70,12 @@ cs:
         see_latest_comments_title: Komentář k tomuto procesu
       shared:
         key_dates: Fáze procesu
+        homepage: Úvodní strana
         debate_dates: Debata
         draft_publication_date: Návrh publikace
         allegations_dates: Komentáře
         result_publication_date: Finální výsledek
+        milestones_date: Sledované
         proposals_dates: Návrhy
     questions:
       comments:
@@ -82,19 +85,24 @@ cs:
         form:
           leave_comment: Napište odpověď
       question:
+        comments:
+          zero: Žádné komentáře
         debate: Debata
       show:
         answer_question: Odeslat odpověď
         next_question: Následující otázka
         first_question: První otázka
-        share: Sdílení
+        share: Sdílet
         title: Participativní legislativní proces
       participation:
         phase_not_open: Tato fáze není otevřena
         organizations: Organizacím není dovoleno účastnit se v debatě
+        signin: Přihlásit se
+        signup: Registrujte se!
+        verify_account: ověřte Váš účet
         debate_phase_not_open: Fáze debaty skončila a odpovědi již nejsou přijímány
     shared:
       share: Sdílet
     proposals:
       form:
-        tags_label: "Katogorie"
+        tags_label: "Kategorie"
