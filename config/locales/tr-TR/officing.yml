@@ -1,1 +1,11 @@
 tr:
+  officing:
+    results:
+      index:
+        table_votes: Oylar
+    residence:
+      new:
+        document_number: "Belge numarası (harfler de dahil)"
+    voters:
+      new:
+        table_actions: Aksiyon
