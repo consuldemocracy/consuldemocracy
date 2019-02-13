@@ -1,25 +1,25 @@
 it:
   account:
     show:
-      change_credentials_link: Modifica le mie credenziali
+      change_credentials_link: Modificare le mie credenziali
       email_on_comment_label: Avvisami via email quando qualcuno commenta le mie proposte o dibattiti
       email_on_comment_reply_label: Avvisami via email quando qualcuno risponde ai miei commenti
       erase_account_link: Cancella il mio account
       finish_verification: Completa la verifica
       notifications: Notifiche
       organization_name_label: Nome dell'organizzazione
-      organization_responsible_name_placeholder: Rappresentante dell'organizzazione/associazione
+      organization_responsible_name_placeholder: Rappresentante dell'organizzazione o collettivo
       personal: Dettagli personali
       phone_number_label: Numero di telefono
-      public_activity_label: Mantieni pubblica la mia lista delle attività
+      public_activity_label: Mantenere pubbliche la mia lista delle attività
       public_interests_label: Mantieni pubbliche le etichette degli elementi che seguo
       public_interests_my_title_list: Etichette di elementi che segui
       public_interests_user_title_list: Etichette degli elementi che segue questo utente
-      save_changes_submit: Salva modifiche
-      subscription_to_website_newsletter_label: Ricevi per email informazioni interessanti riguardanti il sito
-      email_on_direct_message_label: Ricevi email riguardanti i messaggi privati
-      email_digest_label: Ricevi un riepilogo delle notifiche di proposta
-      official_position_badge_label: Mostra il distintivo della posizione ufficiale
+      save_changes_submit: Salvare le modifiche
+      subscription_to_website_newsletter_label: Ricevere per e-mail informazioni interessanti pubblicate sul sito
+      email_on_direct_message_label: Ricevere e-mail con i messaggi privati
+      email_digest_label: Ricevere un riepilogo delle notifiche di proposta
+      official_position_badge_label: Visualizza l'etichetta (badge) del tipo di utente
       recommendations: Raccomandazioni
       show_debates_recommendations: Visualizza le raccomandazioni per i dibattiti
       show_proposals_recommendations: Visualizza le raccomandazioni per le proposte
@@ -70,17 +70,17 @@ it:
       return_to_commentable: 'Torna indietro a '
   comments_helper:
     comment_button: Pubblica il commento
-    comment_link: Commento
+    comment_link: Commentare
     comments_title: Commenti
     reply_button: Pubblicare la risposta
     reply_link: Rispondere
   debates:
     create:
       form:
-        submit_button: Avvia un dibattito
+        submit_button: Avviare un dibattito
     debate:
       comments:
-        zero: Non ci sono commenti
+        zero: Nessun commento
         one: 1 commento
         other: "%{count} commenti"
       votes:
@@ -88,7 +88,7 @@ it:
         one: 1 voto
         other: "%{count} voti"
     edit:
-      editing: Modifica il dibattito
+      editing: Modificare il dibattito
       form:
         submit_button: Salva modifiche
       show_link: Vedi il dibattito
@@ -101,17 +101,17 @@ it:
     index:
       featured_debates: In primo piano
       filter_topic:
-        one: " con argomento '%{topic}'"
-        other: " con argomento '%{topic}'"
+        one: " con argomento '%{topic}'\ncon argomento '%{topîc}'"
+        other: " con argomento '%{topic}'\ncon argomento '%{topîc}'"
       orders:
         confidence_score: più apprezzati
         created_at: più recenti
-        hot_score: più attivi
+        hot_score: più attivi oggi
         most_commented: più commentati
         relevance: rilevanza
         recommendations: consigli
       recommendations:
-        without_interests: Segui le proposte così potremo darti maggiori consigli
+        without_interests: Seguire proposte così possiamo darvi consigli
         disable: "Le raccomandazioni per i dibattiti smetteranno di apparire se scegli di ignorarle. Puoi riattivarle dalla pagina “Il mio account”"
         actions:
           success: "Le raccomandazioni per i dibattiti risultano ora disabilitate per questo account"
@@ -153,7 +153,7 @@ it:
         one: 1 commento
         other: "%{count} commenti"
       comments_title: Commenti
-      edit_debate_link: Modifica
+      edit_debate_link: Modificare
       flag: Questo dibattito è stato contrassegnato come inappropriato da diversi utenti.
       login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
       share: Condividere
