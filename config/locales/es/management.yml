@@ -61,11 +61,11 @@ es:
     menu:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
-      support_proposals: Apoyar propuestas*
+      support_proposals: Apoyar propuestas
       create_spending_proposal: Crear una propuesta de gasto
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear nuevo proyecto
+      create_budget_investment: Crear proyectos de gasto
       print_budget_investments: Imprimir proyectos de gasto
       support_budget_investments: Apoyar proyectos de gasto
       users: Gestión de usuarios
@@ -74,7 +74,7 @@ es:
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates
-      support_proposals: Apoyar propuestas*
+      support_proposals: Apoyar propuestas
       vote_proposals: Participar en las votaciones finales
     print:
       proposals_info: Haz tu propuesta en http://url.consul
