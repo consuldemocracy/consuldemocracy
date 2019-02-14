@@ -11,14 +11,14 @@ ast:
         one: "finxu"
         other: "finxos"
       comment:
-        one: "Comentariu"
+        one: "Comentario"
         other: "Comentarios"
       debate:
         one: "Alderique"
-        other: "Alderiques"
+        other: "Alderique"
       tag:
         one: "Etiqueta"
-        other: "Etiquetes"
+        other: "Temes"
       user:
         one: "Usuariu"
         other: "Usuarios"
@@ -28,6 +28,9 @@ ast:
       administrator:
         one: "Alministrador"
         other: "Alministradores"
+      valuator:
+        one: "Evaluaor"
+        other: "Evaluaores"
       vote:
         one: "Votu"
         other: "Votos"
@@ -43,6 +46,9 @@ ast:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestes ciudadanes"
+      spending_proposal:
+        one: "Propuesta d'inversión"
+        other: "Propuestes d'inversión"
       site_customization/page:
         one: Páxina
         other: Páxines
@@ -51,16 +57,16 @@ ast:
         other: Imaxes
       site_customization/content_block:
         one: Bloque
-        other: Bloques
+        other: Personalizar bloques
       legislation/process:
         one: "Procesu"
         other: "Procesos"
+      legislation/proposal:
+        one: "la propuesta"
+        other: "Propuestes"
       legislation/draft_versions:
         one: "Versión borrador"
-        other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
+        other: "Versiones del borrador"
       legislation/questions:
         one: "Entruga"
         other: "Entruges"
@@ -70,9 +76,12 @@ ast:
       legislation/answers:
         one: "Respuesta"
         other: "Respuestes"
+      poll:
+        one: "Votación"
+        other: "Votaciones"
     attributes:
       budget:
-        name: "Nombre"
+        name: "Nome"
         description_accepting: "Descripción mientres la fase d'Aceptación"
         description_reviewing: "Descripción mientres la fase de revisión interna"
         description_selecting: "Descripción mientres la fase de sofitos"
@@ -83,55 +92,105 @@ ast:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        heading_id: "Partida presupuestaria"
+        heading_id: "Partida"
         title: "Títulu"
-        description: "Descripción"
+        description: "Descripción detallada"
         external_url: "Enllaz a documentación adicional"
         administrator_id: "Alministrador"
+      milestone:
+        title: "Títulu"
+      milestone/status:
+        name: "Nome"
+        description: "Descripción (opcional)"
+      progress_bar:
+        kind: "Tipu"
+        title: "Títulu"
+      budget/heading:
+        name: "Nome de la partida"
+        price: "Costu"
+        population: "Población"
       comment:
+        body: "Comentario"
         user: "Usuariu"
       debate:
         author: "Autor"
         description: "Opinión"
         terms_of_service: "Términos de serviciu"
+        title: "Títulu"
       proposal:
+        author: "Autor"
+        title: "Títulu"
         question: "Entruga"
+        description: "Descripción detallada"
+        terms_of_service: "Términos de serviciu"
       user:
+        login: "Corréu electrónicu o nome d'usuariu"
+        email: "Corréu electrónicu"
+        username: "Nome d'usuariu"
         password_confirmation: "Confirmación de contraseña"
+        password: "Contraseña que utilizarás para acceder a este sitio web"
+        current_password: "Contraseña actual"
+        phone_number: "Númberu de teléfonu"
         official_position: "Cargu públicu"
         official_level: "Nivel del cargu"
         redeemable_code: "Códigu de verificación per email"
       organization:
+        name: "Nome d'organización"
         responsible_name: "Persona responsable del colectivu"
       spending_proposal:
+        administrator_id: "Alministrador"
         association_name: "Nome de l'asociación"
+        description: "Descripción detallada"
+        external_url: "Enllaz a documentación adicional"
         geozone_id: "Ámbitu d'actuación"
+        title: "Títulu"
       poll:
+        name: "Nome"
         starts_at: "Fecha d'apertura"
         ends_at: "Fecha de zarru"
         geozone_restricted: "Acutáu per xeozones"
-      poll/question:
         summary: "Resume"
+        description: "Descripción detallada"
+      poll/translation:
+        name: "Nome"
+        summary: "Resume"
+        description: "Descripción detallada"
+      poll/question:
+        title: "Entruga"
+        summary: "Resume"
+        description: "Descripción detallada"
+        external_url: "Enllaz a documentación adicional"
+      poll/question/translation:
+        title: "Entruga"
       signature_sheet:
         signable_type: "Tipu de fueya de firmes"
         signable_id: "ID Propuesta ciudadana/Propuesta d'inversión"
         document_numbers: "Númberos de documentos"
       site_customization/page:
         content: Conteníu
-        created_at: Creáu en
+        created_at: Creáu
         subtitle: Subtítulu
         slug: Slug
         status: Estáu
+        title: Títulu
         updated_at: Actualizáu en
         print_content_flag: Botón d'imprimir conteníu
         locale: Llinguaxe
+      site_customization/page/translation:
+        title: Títulu
+        subtitle: Subtítulu
+        content: Conteníu
       site_customization/image:
+        name: Nome
         image: Imaxe
       site_customization/content_block:
+        name: Nome
         locale: llingua
         body: Conteníu
       legislation/process:
         title: Títulu del procesu
+        summary: Resume
+        description: Descripción detallada
         additional_info: Información adicional
         start_date: Fecha d'entamu del procesu
         end_date: Fecha de fin del procesu
@@ -141,15 +200,56 @@ ast:
         allegations_start_date: Fecha d'entamu d'allegamientos
         allegations_end_date: Fecha de fin d'allegamientos
         result_publication_date: Fecha de publicación del resultancia final
+      legislation/process/translation:
+        title: Títulu del procesu
+        summary: Resume
+        description: Descripción detallada
+        additional_info: Información adicional
+        milestones_summary: Resume
       legislation/draft_version:
         title: Títulu de la versión
         body: Testu
         changelog: Cambeos
+        status: Estáu
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Títulu de la versión
+        body: Testu
+        changelog: Cambeos
       legislation/question:
+        title: Títulu
         question_options: Respuestes
       legislation/question_option:
         value: Valor
+      legislation/annotation:
+        text: Comentario
+      document:
+        title: Títulu
+      image:
+        title: Títulu
+      poll/question/answer:
+        title: Respuesta
+        description: Descripción detallada
+      poll/question/answer/translation:
+        title: Respuesta
+        description: Descripción detallada
+      poll/question/answer/video:
+        title: Títulu
+      newsletter:
+        from: Desde
+      admin_notification:
+        title: Títulu
+        link: Enllaz
+        body: Testu
+      admin_notification/translation:
+        title: Títulu
+        body: Testu
+      widget/card:
+        title: Títulu
+        description: Descripción detallada
+      widget/card/translation:
+        title: Títulu
+        description: Descripción detallada
     errors:
       models:
         user:
@@ -177,6 +277,14 @@ ast:
               invalid_date_range: tien que ser igual o posterior a la fecha d'entamu del alderique
             allegations_end_date:
               invalid_date_range: tien que ser igual o posterior a la fecha d'entamu de los allegamientos
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "les temes tienen de ser menor o igual que %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "les temes tienen de ser menor o igual que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -195,3 +303,5 @@ ast:
             image:
               image_width: "Tien de tener %{required_width}px d'anchu"
               image_height: "Tien de tener %{required_height}px d'altu"
+      messages:
+        record_invalid: "Erru de validación: %{errors}"
