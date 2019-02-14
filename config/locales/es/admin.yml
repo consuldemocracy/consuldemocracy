@@ -871,6 +871,7 @@ es:
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
+        unable_to_destroy: "No se pueden eliminar turnos que tienen resultados o recuentos asociados"
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
