@@ -1,12 +1,7 @@
 sl:
   pages:
-    census_terms: Za potrjevanje računa moraš biti star/-a vsaj 16 let in biti registriran/-a. Z nadaljevanjem verifikacijskega procesa dovoljuješ preverbo vseh informacij, ki si jih vnesel/-la, ter dovoljuješ, da te kontaktiramo. Podatki bodo pridobljeni in procesirani skladno s pogoji uporabe portala.
-    conditions: Pogoji uporabe
-    general_terms: Pogoji uporabe
     help:
       title: "%{org} je platforma državljanske participacije"
-      subtitle: "V %{org} lahko oddajaš predloge, glasove in posvetovanja z državljani, predlagaš projekte participatornega proračuna, se odločaš o občinskih predpisih in odpiraš razprave za izmenjevanje mnenj z drugimi."
-      guide: "This guide explains what each of the %{org} sections are for and how they work."
       menu:
         debates: "Razprave"
         proposals: "Predlogi"
@@ -26,19 +21,12 @@ sl:
         title: "Predlogi"
         description: "V sekciji %{link} lahko oddajaš predloge za občinski svet. Ti predlogi potrebujejo podporo in če je dobijo dovolj, gredo na javno glasovanje. Predlogi, ki na glasovanju uspejo, so sprejeti s strani občinskega sveta in tudi izvedeni."
         link: "Državljanski predlogi"
-        feature_html: "Za ustvarjanje predloga se moraš registrirati v %{org}. Predlogi, ki dobijo 1 % podporo uporabnikov z glasovalno pravico (%{supports} podpornikov starejših od 16 let), gredo na glasovanje. Za podpiranje predlogov je potrebno verificirati račun."
         image_alt: "Gumb za podporo predloga"
         figcaption_html: 'Gumb "Podpri" predlog.<br>Ko doseže potrebno število podpornikov, gre v glasovanje.'
       budgets:
         title: "Participatorni proračun"
         description: "Sekcija %{link} pomaga ljudem sprejemati direktne odločitve o tem, za kaj se porabi del občinskega proračuna."
         link: "Participatorni proračuni"
-        feature: "V tem procesu ljudje vsako leto predlagajo, podpirajo in glasujejo o projektih. Predlogi z največ glasovi so financirani z občinskim proračunom."
-        phase_1_html: "Med januarjem in marcem ljudje, registrirani v %{org} lahko <strong>predstavljajo predloge</strong>."
-        phase_2_html: "V marcu predlagatelji lahko nabirajo podporo za <strong>pred-selekcijo</strong>."
-        phase_3_html: "Med aprilom in začetkom maja strokovnjaki iz <strong>občinskega sveta ocenijo</strong> projekte po vrstnem redu glede na podporo in preverijo, da so izvedljivi."
-        phase_4_html: "Med majem in junijem lahko vsi volivci <strong>glasujejo</strong> za projekte, ki se jim zdijo zanimivi."
-        phase_5_html: "Občinski svet začne uresničevati zmagovalne projekte prihodnje leto, ko sprejme proračun."
         image_alt: "Različne faze participatornega proračuna"
         figcaption_html: '"Podpora" and "Glasovanje" fazi participatornega proračuna.'
       polls:
@@ -47,14 +35,10 @@ sl:
         link: "Glasovanja"
         feature_1: "Za sodelovanje na glasovanju moraš obiskati %{link} in verificirati svoj račun."
         feature_1_link: "registriraj se v %{org_name}"
-        feature_2: "Vsi registrirani volivci, starejši od 16 let, lahko glasujejo."
-        feature_3: "Rezultati vseh glasovanj so zavezujoči za vodstvo občine."
       processes:
         title: "Procesi"
         description: "V sekciji %{link}, državljani sodelujejo v pisanju osnutkov in popravkov regulacij, ki se tičejo mesta oz. občine, in lahko podajajo mnenja o občinskih politikah."
         link: "Procesi"
-        feature: "Za sodelovanje v procesu se moraš %{sign_up} in redno preverjati stran %{link}, da vidiš, o katerih regulacijah in politikah poteka razprava in izmenjava mnenj."
-        sign_up: "registrirati v %{org}"
       faq:
         title: "Tehnične težave?"
         description: "Preberi FAQ in najdi odgovore na svoja vprašanja."
@@ -75,8 +59,7 @@ sl:
 
           Če si programer/-ka, si lahko kodo ogledaš tukaj: [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
-        how_to_use: Uporabi orodje v svojem lokalnem okolju 
-    privacy: Politiko zasebnosti
+        how_to_use: Uporabi orodje v svojem lokalnem okolju
     titles:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
