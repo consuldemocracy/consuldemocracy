@@ -138,7 +138,7 @@ es:
         help_text_2: 'Para abrir un debate es necesario registrarse en %{org}. Los usuarios ya registrados también pueden comentar los debates abiertos y valorarlos con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se encuentran en cada uno de ellos.'
     new:
       form:
-        submit_button: Empezar un debate
+        submit_button: Empieza un debate
       info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
       info_link: crear nueva propuesta
       more_info: Más información
@@ -511,7 +511,7 @@ es:
         title: "Preguntas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
-    create_question: "Crear pregunta para votación"
+    create_question: "Crear pregunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
@@ -527,7 +527,7 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar propuesta'
+    edit: 'Editar'
     save: 'Guardar'
     delete: Borrar
     "yes": "Si"
