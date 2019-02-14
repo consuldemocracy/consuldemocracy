@@ -4,7 +4,7 @@ es:
       expire_password: "Contraseña caducada"
       change_required: "Tu contraseña ha caducado"
       change_password: "Cambia tu contraseña"
-      new_password: "Nueva contraseña"
+      new_password: "Contraseña nueva"
       updated: "Contraseña actualizada con éxito"
     confirmations:
       confirmed: "Tu cuenta ha sido confirmada. Por favor autentifícate con tu red social o tu usuario y contraseña"
