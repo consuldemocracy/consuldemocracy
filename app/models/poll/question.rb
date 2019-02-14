@@ -1,6 +1,5 @@
 class Poll::Question < ActiveRecord::Base
   include Measurable
-  include Searchable
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -27,6 +26,7 @@ class Poll::Question < ActiveRecord::Base
   scope :for_render,    -> { includes(:author, :proposal) }
 
   def self.search(params)
+    include Searchable
     results = all
     results = results.by_poll_id(params[:poll_id]) if params[:poll_id].present?
     results = results.pg_search(params[:search])   if params[:search].present?

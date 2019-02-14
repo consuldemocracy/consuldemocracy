@@ -2,7 +2,6 @@ class SpendingProposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include Taggable
-  include Searchable
 
   acts_as_votable
 
@@ -16,9 +15,9 @@ class SpendingProposal < ActiveRecord::Base
   validates :author, presence: true
   validates :description, presence: true
   validates :feasible_explanation, presence: { if: :feasible_explanation_required? }
-
-  validates :title, length: { in: 4..SpendingProposal.title_max_length }
-  validates :description, length: { maximum: SpendingProposal.description_max_length }
+  # TODO: Move this validation to a position where it will not interupt application start
+  #validates :title, length: { in: 4..SpendingProposal.title_max_length }
+  #validates :description, length: { maximum: SpendingProposal.description_max_length }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   scope :valuation_open,         -> { where(valuation_finished: false) }
@@ -66,6 +65,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def self.search(terms)
+    include Searchable
     pg_search(terms)
   end
 
