@@ -181,6 +181,7 @@ es:
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
+    budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: Respuesta
