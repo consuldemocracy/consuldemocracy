@@ -35,11 +35,11 @@ es:
           debate: Debate
           moderate: Moderar
         hide_debates: Ocultar debates
-        ignore_flags: Marcar como revisadas
+        ignore_flags: Marcar como revisados
         order: Orden
         orders:
           created_at: Más nuevos
-          flags: Más denunciadas
+          flags: Más denunciados
         title: Debates
     header:
       title: Moderar
