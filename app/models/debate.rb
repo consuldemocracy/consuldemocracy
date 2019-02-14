@@ -6,7 +6,6 @@ class Debate < ActiveRecord::Base
   include Conflictable
   include Measurable
   include Sanitizable
-  include Searchable
   include Filterable
   include HasPublicAuthor
   include Graphqlable
@@ -69,6 +68,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
+    include Searchable
     pg_search(terms)
   end
 
