@@ -143,7 +143,7 @@ es:
         give_support: Apoyar
       header:
         check_ballot: Revisar mis votos
-        different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+        different_heading_assigned_html: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
         price: "Esta partida tiene un presupuesto de"
@@ -154,7 +154,7 @@ es:
       group: Grupo
       phase: Fase actual
       unfeasible_title: Proyectos de gasto inviables
-      unfeasible: Ver proyectos inviables
+      unfeasible: Ver los proyectos inviables
       unselected_title: Proyectos no seleccionados para la votación final
       unselected: Ver los proyectos no seleccionados para la votación final
       see_results: Ver resultados
@@ -165,12 +165,12 @@ es:
       heading_selection_title: "Ámbito de actuación"
       spending_proposal: Título de la propuesta
       ballot_lines_count: Votos
-      hide_discarded_link: Ocultar descartadas
-      show_all_link: Mostrar todas
+      hide_discarded_link: Ocultar descartados
+      show_all_link: Mostrar todos
       price: Coste
       amount_available: Presupuesto disponible
-      accepted: "Propuesta de inversión aceptada: "
-      discarded: "Propuesta de inversión descartada: "
+      accepted: "Proyecto de gasto aceptado: "
+      discarded: "Proyecto de gasto descartado: "
       incompatibles: Incompatibles
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
