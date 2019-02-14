@@ -10,17 +10,17 @@ fr:
       - sam
     abbr_month_names:
       - 
-      - Janv
-      - Févr
-      - Mar
-      - Avr
-      - Mai
-      - Juin
-      - Juill
-      - Août
-      - Sept
-      - Oct
-      - Nov
+      - fév
+      - mar
+      - avr
+      - mai
+      - juin
+      - jul
+      - aoû
+      - sep
+      - oct
+      - nov
+      - déc
       - Déc
     day_names:
       - dimanche
@@ -36,17 +36,17 @@ fr:
       short: "%d %b"
     month_names:
       - 
-      - Janvier
-      - Février
-      - Mars
-      - Avril
-      - Mai
-      - Juin
-      - Juillet
-      - Août
-      - Septembre
-      - Octobre
-      - Novembre
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
+      - août
+      - septembre
+      - octobre
+      - novembre
+      - décembre
       - Décembre
   datetime:
     distance_in_words:
@@ -75,27 +75,23 @@ fr:
       x_days:
         one: 1 jour
         other: "%{count} jours"
-      x_minutes:
-        one: 1 minute
-        other: "%{count} mois"
       x_months:
         one: 1 mois
         other: "%{count} mois"
       x_years:
         one: 1 an
-        other: "%{count} jours"
+        other: "%{count} ans"
       x_seconds:
         one: 1 seconde
         other: "%{count} secondes"
     prompts:
       day: Jour
       hour: Heure
-      minute: Minute
+      minute: Minutes
       month: Mois
       second: Secondes
       year: Année
   errors:
-    format: "%{attribute} %{message}"
     messages:
       accepted: doit être accepté
       blank: ne peut pas être vide
@@ -111,7 +107,7 @@ fr:
       invalid: n'est pas valide
       less_than: doit être plus petit que %{count}
       less_than_or_equal_to: doit être plus petit que ou égal à %{count}
-      model_invalid: "La validation omise : %{errors}"
+      model_invalid: "Échec de la validation : %{errors}"
       not_a_number: n'est pas un nombre
       not_an_integer: doit être un nombre entier
       odd: doit être impair
@@ -121,7 +117,7 @@ fr:
         one: est trop long (maximum est de 1 caractère)
         other: est trop long (maximum est %{count} caractères)
       too_short:
-        one: est trop long (maximum est de 1 caractère)
+        one: est trop court (1 caractère au minimum)
         other: est trop long (maximum est %{count} caractères)
       wrong_length:
         one: est la mauvaise longueur (soit 1 caractère)
@@ -151,7 +147,7 @@ fr:
         unit: "€"
     format:
       delimiter: "."
-      precision: 3
+      precision: 1
       separator: ","
       significant: false
       strip_insignificant_zeros: false
@@ -165,7 +161,7 @@ fr:
           thousand: mille
           trillion: trillion
       format:
-        precision: 1
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
@@ -185,13 +181,11 @@ fr:
     array:
       last_word_connector: " et "
       two_words_connector: " et "
-      words_connector: ", "
   time:
     am: du matin
     formats:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d %B %Y %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
-      short: "%d %b %H:%M"
       api: "%H %d/%m/%Y"
     pm: de l'après-midi
