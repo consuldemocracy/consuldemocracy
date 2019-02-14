@@ -440,7 +440,7 @@ es:
           delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
-            open: Abiertos
+            active: Activos
             all: Todos
         new:
           back: Volver
