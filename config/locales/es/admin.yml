@@ -1,7 +1,7 @@
 es:
   admin:
     header:
-      title: Administrar
+      title: Administración
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
@@ -9,25 +9,25 @@ es:
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
-      mark_featured: Destacadas
+      mark_featured: Destacar
       unmark_featured: Quitar destacado
-      edit: Editar propuesta
+      edit: Editar
       configure: Configurar
       delete: Borrar
     banners:
       index:
         title: Banners
-        create: Crear banner
-        edit: Editar el banner
+        create: Crear un banner
+        edit: Editar banner
         delete: Eliminar banner
         filters:
-          all: Todas
+          all: Todos
           with_active: Activos
           with_inactive: Inactivos
-        preview: Previsualizar
+        preview: Vista previa
       banner:
         title: Título
-        description: Descripción detallada
+        description: Descripción
         target_url: Enlace
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
@@ -35,9 +35,9 @@ es:
         sections:
           homepage: Homepage
           debates: Debates
-          proposals: Propuestas ciudadanas
+          proposals: Propuestas
           budgets: Presupuestos participativos
-          help_page: Página de Ayuda
+          help_page: Página de ayuda
         background_color: Color de fondo
         font_color: Color del texto
       edit:
@@ -62,10 +62,10 @@ es:
         content: Contenido
         filter: Mostrar
         filters:
-          all: Todas
+          all: Todos
           on_comments: Comentarios
           on_debates: Debates
-          on_proposals: Propuestas ciudadanas
+          on_proposals: Propuestas
           on_users: Usuarios
           on_system_emails: Emails del sistema
         title: Actividad de moderadores
@@ -75,32 +75,32 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
-        filter: Filtrar
+        filter: Filtro
         filters:
-          open: Abierto
-          finished: Finalizadas
+          open: Abiertos
+          finished: Terminados
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
         table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar propuesta
+        table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         no_budgets: "No hay presupuestos participativos."
       create:
-        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
+        notice: '¡Presupuestos participativos creados con éxito!'
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Presupuestos participativos actualizados
       edit:
-        title: Editar campaña de presupuestos participativos
+        title: Editar presupuestos participativos
         delete: Eliminar presupuesto
         phase: Fase
         dates: Fechas
-        enabled: Habilitado
+        enabled: Habilitada
         actions: Acciones
         edit_phase: Editar fase
-        active: Activos
+        active: Activa
         blank_dates: Sin fechas
       destroy:
         success_notice: Presupuesto eliminado correctamente
@@ -108,9 +108,9 @@ es:
       new:
         title: Nuevo presupuesto ciudadano
       winners:
-        calculate: Calcular propuestas ganadoras
-        calculated: Calculando ganadoras, puede tardar un minuto.
-        recalculate: Recalcular propuestas ganadoras
+        calculate: Calcular proyectos ganadores
+        calculated: Calculando ganadores, puede tardar un minuto.
+        recalculate: Recalcular proyectos ganadores
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -165,11 +165,11 @@ es:
         back: "Volver a grupos"
     budget_phases:
       edit:
-        start_date: Fecha de inicio del proceso
-        end_date: Fecha de fin del proceso
+        start_date: Fecha de inicio
+        end_date: Fecha de fin
         summary: Resumen
         summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
-        description: Descripción detallada
+        description: Descripción
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         enabled: Fase habilitada
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
@@ -188,33 +188,33 @@ es:
           title: Título
           supports: Apoyos
         filters:
-          all: Todas
+          all: Todos
           without_admin: Sin administrador
           without_valuator: Sin evaluador
           under_valuation: En evaluación
-          valuation_finished: Informe finalizado
-          feasible: Viable
-          selected: Seleccionado
+          valuation_finished: Evaluación finalizada
+          feasible: Viables
+          selected: Seleccionados
           undecided: Sin decidir
-          unfeasible: No viables
+          unfeasible: Inviables
           min_total_supports: Apoyos mínimos
-          winners: Ganadoras
+          winners: Ganadores
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtrar
         download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de gasto."
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
         no_valuation_groups: Sin grupos evaluadores
         feasibility:
           feasible: "Viable (%{price})"
-          unfeasible: "No viables"
+          unfeasible: "Inviable"
           undecided: "Sin decidir"
-        selected: "Seleccionados"
+        selected: "Seleccionado"
         select: "Seleccionar"
         list:
           id: ID
@@ -236,8 +236,8 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
-        edit: Editar propuesta
+        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
+        edit: Editar
         edit_classification: Editar clasificación
         by: Autor
         sent: Fecha
@@ -254,7 +254,7 @@ es:
           "false": Compatible
         selection:
           title: Selección
-          "true": Seleccionados
+          "true": Seleccionado
           "false": No seleccionado
         winner:
           title: Ganador
@@ -871,7 +871,6 @@ es:
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
-        unable_to_destroy: "No se pueden eliminar turnos que tienen resultados o recuentos asociados"
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
