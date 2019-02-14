@@ -102,14 +102,14 @@ es:
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
         orders:
-          random: Aleatorias
-          confidence_score: Más apoyadas
+          random: Aleatorios
+          confidence_score: Mejor valorados
           price: Por coste
       share:
         message: "He presentado el proyecto %{title} en %{handle}. ¡Presenta un proyecto tú también!"
       show:
         author_deleted: Usuario eliminado
-        price_explanation: Informe de coste <small>(opcional, dato público)</small>
+        price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código proyecto de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
@@ -134,8 +134,8 @@ es:
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
         confirm_group:
-          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
-          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro?"
+          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
