@@ -9,7 +9,7 @@ es:
       guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
       menu:
         debates: "Debates"
-        proposals: "Propuestas ciudadanas"
+        proposals: "Propuestas"
         budgets: "Presupuestos participativos"
         polls: "Votaciones"
         other: "Otra información de interés"
@@ -23,7 +23,7 @@ es:
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
-        title: "Propuestas ciudadanas"
+        title: "Propuestas"
         description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
         link: "propuestas ciudadanas"
         image_alt: "Botón para apoyar una propuesta"
@@ -113,10 +113,10 @@ es:
               page_column: Debates
             - 
               key_column: 2
-              page_column: Propuestas ciudadanas
+              page_column: Propuestas
             - 
               key_column: 3
-              page_column: Votos
+              page_column: Votaciones
             - 
               key_column: 4
               page_column: Presupuestos participativos
