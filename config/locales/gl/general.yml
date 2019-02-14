@@ -181,6 +181,7 @@ gl:
     proposal_notification: "a notificación"
     spending_proposal: Proposta de investimento
     budget/investment: Investimento
+    budget/group: Grupo orzamento
     budget/heading: a partida orzamentaria
     poll/shift: Quenda
     poll/question/answer: Resposta
