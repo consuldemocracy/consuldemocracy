@@ -2,18 +2,18 @@ es:
   legislation:
     annotations:
       comments:
-        see_all: Ver todas
+        see_all: Ver todos
         see_complete: Ver completo
         comments_count:
           one: "%{count} comentario"
-          other: "%{count} Comentarios"
+          other: "%{count} comentarios"
         replies_count:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
         cancel: Cancelar
         publish_comment: Publicar Comentario
       form:
-        phase_not_open: Esta fase no está abierta
+        phase_not_open: Esta fase del proceso no está abierta
         login_to_comment: Necesitas %{signin} o %{signup} para comentar.
         signin: iniciar sesión
         signup: registrarte
@@ -23,9 +23,9 @@ es:
         see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
-          other: "%{count} Comentarios"
+          other: "%{count} comentarios"
       show:
-        title: Comentar
+        title: Comentario
       version_chooser:
         seeing_version: Comentarios para la versión
         see_text: Ver borrador del texto
@@ -48,18 +48,18 @@ es:
     processes:
       header:
         additional_info: Información adicional
-        description: Descripción detallada
+        description: En qué consiste
         more_info: Más información y contexto
       proposals:
         empty_proposals: No hay propuestas
         filters:
           random: Aleatorias
-          winners: Seleccionados
+          winners: Seleccionadas
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
           open: Procesos activos
           past: Terminados
@@ -80,14 +80,14 @@ es:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso
       shared:
-        key_dates: Fechas clave
-        homepage: Homepage
-        debate_dates: Debate
+        key_dates: Fases de participación
+        homepage: Inicio
+        debate_dates: Debate previo
         draft_publication_date: Publicación borrador
         allegations_dates: Comentarios
         result_publication_date: Publicación resultados
-        milestones_date: Siguiendo
-        proposals_dates: Propuestas ciudadanas
+        milestones_date: Seguimiento
+        proposals_dates: Propuestas
     questions:
       comments:
         comment_button: Publicar respuesta
@@ -99,7 +99,7 @@ es:
         comments:
           zero: Sin comentarios
           one: "%{count} comentario"
-          other: "%{count} Comentarios"
+          other: "%{count} comentarios"
         debate: Debate
       show:
         answer_question: Enviar respuesta
@@ -112,7 +112,7 @@ es:
         organizations: Las organizaciones no pueden participar en el debate
         signin: iniciar sesión
         signup: registrarte
-        unauthenticated: Necesitas %{signin} o %{signup} para participar.
+        unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
         verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
