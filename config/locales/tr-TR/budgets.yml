@@ -5,4 +5,13 @@ tr:
         title: Oy
         amount_spent: Harcanan miktar
         remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
+        no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oy kaldırmak
+    investments:
+      show:
+        votes: Oylar
+        comments_tab: Yorumlar
+      investment:
+        add: Oy
+    results:
+      ballot_lines_count: Oylar
