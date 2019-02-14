@@ -587,11 +587,11 @@ es:
       search:
         title: 'Gestores: Búsqueda de usuarios'
     menu:
-      activity: Actividad de Moderadores
+      activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas ciudadanas
-      proposals: Propuestas ciudadanas
+      poll_questions: Preguntas
+      proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
@@ -605,7 +605,7 @@ es:
       managers: Gestores
       moderators: Moderadores
       messaging_users: Mensajes a usuarios
-      newsletters: Envío de newsletters
+      newsletters: Newsletters
       admin_notifications: Notificaciones
       system_emails: Emails del sistema
       emails_download: Descarga de emails
@@ -615,7 +615,7 @@ es:
       poll_booths: Ubicación de urnas
       poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar turnos
-      officials: Cargos Públicos
+      officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
       spending_proposals: Propuestas de inversión
@@ -623,21 +623,21 @@ es:
       signature_sheets: Hojas de firmas
       site_customization:
         homepage: Homepage
-        pages: Páginas
+        pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
         information_texts: Personalizar textos
         information_texts_menu:
           debates: "Debates"
           community: "Comunidad"
-          proposals: "Propuestas ciudadanas"
+          proposals: "Propuestas"
           polls: "Votaciones"
           layouts: "Plantillas"
-          mailers: "Emails"
+          mailers: "Correos"
           management: "Gestión"
           welcome: "Bienvenido/a"
         buttons:
-          save: "Guardar"
+          save: "Guardar cambios"
           content_block:
             update: "Actualizar Bloque"
       title_moderated_content: Contenido moderado
@@ -657,7 +657,7 @@ es:
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
-        add: Añadir como Presidente de mesa
+        add: Añadir como Administrador
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
@@ -669,7 +669,7 @@ es:
         email: Email
         no_moderators: No hay moderadores.
       moderator:
-        add: Añadir como Presidente de mesa
+        add: Añadir como Moderador
         delete: Borrar
       search:
         title: 'Moderadores: Búsqueda de usuarios'
@@ -690,18 +690,18 @@ es:
       delete_success: Newsletter borrada correctamente
       index:
         title: Envío de newsletters
-        new_newsletter: Nueva newsletter
+        new_newsletter: Crear newsletter
         subject: Asunto
         segment_recipient: Destinatarios
-        sent: Fecha
+        sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
+        edit: Editar
         delete: Borrar
         preview: Previsualizar
         empty_newsletters: No hay newsletters para mostrar
       new:
-        title: Crear newsletter
+        title: Nueva newsletter
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
       edit:
         title: Editar newsletter
@@ -712,7 +712,7 @@ es:
         sent_emails:
           one: 1 correo enviado
           other: "%{count} correos enviados"
-        sent_at: Fecha de creación
+        sent_at: Enviado
         subject: Asunto
         segment_recipient: Destinatarios
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
@@ -725,20 +725,20 @@ es:
       send_success: Notificación enviada correctamente
       delete_success: Notificación borrada correctamente
       index:
-        section_title: Notificaciones
-        new_notification: Nueva notificación
+        section_title: Envío de notificaciones
+        new_notification: Crear notificación
         title: Título
         segment_recipient: Destinatarios
-        sent: Fecha
+        sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
+        edit: Editar
         delete: Borrar
         preview: Previsualizar
-        view: Ver
+        view: Visualizar
         empty_notifications: No hay notificaciones para mostrar
       new:
-        section_title: Crear notificación
+        section_title: Nueva notificación
         submit_button: Crear notificación
       edit:
         section_title: Editar notificación
@@ -748,7 +748,7 @@ es:
         send: Enviar notificación
         will_get_notified: (%{n} usuarios serán notificados)
         got_notified: (%{n} usuarios fueron notificados)
-        sent_at: Fecha de creación
+        sent_at: Enviado
         title: Título
         body: Texto
         link: Enlace
@@ -779,10 +779,10 @@ es:
         title: Evaluadores
         name: Nombre
         email: Email
-        description: Descripción detallada
+        description: Descripción
         no_description: Sin descripción
         no_valuators: No hay evaluadores.
-        valuator_groups: "Grupos de evaluadores"
+        valuator_groups: "Grupo de evaluadores"
         group: "Grupo"
         no_group: "Sin grupo"
       valuator:
@@ -791,20 +791,20 @@ es:
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
         finished_count: Finalizadas
         in_evaluation_count: En evaluación
         total_count: Total
-        cost: Coste
+        cost: Coste total
       form:
         edit_title: "Evaluadores: Editar evaluador"
         update: "Actualizar evaluador"
         updated: "Evaluador actualizado correctamente"
       show:
-        description: "Descripción detallada"
+        description: "Descripción"
         email: "Email"
         group: "Grupo"
         no_description: "Sin descripción"
@@ -835,7 +835,7 @@ es:
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar
-        user_not_found: No se encontró el usuario
+        user_not_found: Usuario no encontrado
     poll_officer_assignments:
       index:
         officers_title: "Listado de presidentes de mesa asignados"
@@ -843,7 +843,7 @@ es:
         table_name: "Nombre"
         table_email: "Email"
       by_officer:
-        date: "Día"
+        date: "Fecha"
         booth: "Urna"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
@@ -852,7 +852,7 @@ es:
         add_shift: "Añadir turno"
         shift: "Asignación"
         shifts: "Turnos en esta urna"
-        date: "Día"
+        date: "Fecha"
         task: "Tarea"
         edit_shifts: Asignar turno
         new_shift: "Nuevo turno"
@@ -865,7 +865,7 @@ es:
         select_date: "Seleccionar día"
         no_voting_days: "Los días de votación han terminado"
         select_task: "Seleccionar tarea"
-        table_shift: "el turno"
+        table_shift: "Turno"
         table_email: "Email"
         table_name: "Nombre"
       flash:
@@ -901,12 +901,12 @@ es:
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
         results: "Resultados"
-        date: "Día"
+        date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system: "Votos (automático)"
         total_system: Votos totales acumulados(automático)
       index:
-        booths_title: "Lista de urnas"
+        booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
@@ -931,7 +931,7 @@ es:
         title: "Editar votación"
         submit_button: "Actualizar votación"
       show:
-        questions_tab: Preguntas ciudadanas
+        questions_tab: Preguntas
         booths_tab: Urnas
         officers_tab: Presidentes de mesa
         recounts_tab: Recuentos
@@ -944,15 +944,15 @@ es:
         error_on_question_added: "No se pudo asignar la pregunta"
     questions:
       index:
-        title: "Preguntas ciudadanas"
+        title: "Preguntas de votaciones"
         create: "Crear pregunta para votación"
         no_questions: "No hay ninguna pregunta ciudadana."
         filter_poll: Filtrar por votación
         select_poll: Seleccionar votación
-        questions_tab: "Preguntas ciudadanas"
+        questions_tab: "Preguntas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
-        table_proposal: "la propuesta"
+        table_proposal: "Propuesta"
         table_question: "Pregunta"
         table_poll: "Votación"
         poll_not_assigned: "Votación no asignada"
@@ -975,7 +975,7 @@ es:
         video_url: Vídeo externo
         answers:
           title: Respuesta
-          description: Descripción detallada
+          description: Descripción
           videos: Vídeos
           video_list: Lista de vídeos
           images: Imágenes
@@ -989,7 +989,7 @@ es:
         title: Nueva respuesta
       show:
         title: Título
-        description: Descripción detallada
+        description: Descripción
         images: Imágenes
         images_list: Lista de imágenes
         edit: Editar respuesta
@@ -1074,12 +1074,12 @@ es:
         no_results: No se han encontrado cargos públicos.
     organizations:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
           all: Todas
-          pending: Sin decidir
-          rejected: Rechazada
-          verified: Verificada
+          pending: Pendientes
+          rejected: Rechazadas
+          verified: Verificadas
         hidden_count_html:
           one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
           other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
@@ -1095,21 +1095,21 @@ es:
         search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
-        verify: Verificar usuario
-        pending: Sin decidir
+        verify: Verificar
+        pending: Pendiente
       search:
         title: Buscar Organizaciones
         no_results: No se han encontrado organizaciones.
     proposals:
       index:
-        title: Propuestas ciudadanas
+        title: Propuestas
         id: ID
         author: Autor
-        milestones: Seguimiento
+        milestones: Hitos
         no_proposals: No hay propuestas.
     hidden_proposals:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
           all: Todas
           with_confirmed_hide: Confirmadas
