@@ -232,7 +232,7 @@ es:
       legislation/process:
         title: Título del proceso
         summary: Resumen
-        description: Descripción detallada
+        description: En qué consiste
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso
         end_date: Fecha de fin del proceso
@@ -249,26 +249,26 @@ es:
       legislation/process/translation:
         title: Título del proceso
         summary: Resumen
-        description: Descripción detallada
+        description: En qué consiste
         additional_info: Información adicional
-        milestones_summary: Resumen
+        milestones_summary: Seguimiento del proceso
       legislation/draft_version:
-        title: Título de la version
+        title: Título de la versión
         body: Texto
         changelog: Cambios
         status: Estado
         final_version: Versión final
       legislation/draft_version/translation:
-        title: Título de la version
+        title: Título de la versión
         body: Texto
         changelog: Cambios
       legislation/question:
         title: Título
-        question_options: Opciones
+        question_options: Respuestas
       legislation/question_option:
         value: Valor
       legislation/annotation:
-        text: Comentar
+        text: Comentario
       document:
         title: Título
         attachment: Archivo adjunto
@@ -287,7 +287,7 @@ es:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: Desde
+        from: Enviado por
         body: Contenido del email
       admin_notification:
         segment_recipient: Destinatarios
