@@ -13,7 +13,7 @@ es:
         budgets: "Presupuestos participativos"
         polls: "Votaciones"
         other: "Otra información de interés"
-        processes: "Procesos"
+        processes: "Procesos legislativos"
       debates:
         title: "Debates"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
@@ -41,7 +41,7 @@ es:
         feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
       processes:
-        title: "Procesos"
+        title: "Procesos legislativos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
         link: "procesos legislativos"
       faq:
