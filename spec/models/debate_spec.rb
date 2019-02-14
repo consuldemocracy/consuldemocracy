@@ -479,7 +479,7 @@ describe Debate do
 
       it "searches by title across all languages translations" do
         debate = create(:debate, attributes)
-        results = described_class.search('salvar el mundo')
+        results = described_class.search("salvar el mundo")
         expect(results).to eq([debate])
       end
 
@@ -491,7 +491,7 @@ describe Debate do
 
       it "searches by description across all languages translations" do
         debate = create(:debate, attributes)
-        results = described_class.search('uno debe pensar')
+        results = described_class.search("uno debe pensar")
         expect(results).to eq([debate])
       end
 
