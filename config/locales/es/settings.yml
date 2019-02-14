@@ -58,6 +58,7 @@ es:
     map_latitude_description: "Latitud para mostrar la posición del mapa"
     map_longitude: "Longitud"
     map_longitude_description: "Longitud para mostrar la posición del mapa"
+    map_zoom: "Zoom"
     map_zoom_description: "Zoom para mostrar la posición del mapa"
     mailer_from_name: "Nombre email remitente"
     mailer_from_name_description: "Este nombre aparecerá en los emails enviados desde la aplicación"
