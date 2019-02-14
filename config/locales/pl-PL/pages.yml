@@ -4,17 +4,16 @@ pl:
       title: Regulamin
       subtitle: INFORMACJA PRAWNA DOTYCZĄCA WARUNKÓW UŻYTKOWANIA, PRYWATNOŚCI I OCHRONY DANYCH OSOBOWYCH OTWARTEGO PORTALU RZĄDOWEGO
       description: Strona informacyjna na temat warunków korzystania, prywatności i ochrony danych osobowych.
-    general_terms: Regulamin
     help:
       title: "%{org} jest platformą do udziału mieszkańców w miejskich politykach publicznych"
       guide: "Ten przewodnik objaśnia, do czego służy każda z sekcji %{org} i jak funkcjonuje."
       menu:
         debates: "Debaty"
-        proposals: "Propozycje"
+        proposals: "Wnioski"
         budgets: "Budżety partycypacyjne"
         polls: "Ankiety"
         other: "Inne przydatne informacje"
-        processes: "Procesy"
+        processes: "Procesów"
       debates:
         title: "Debaty"
         description: "W sekcji %{link} możesz przedstawiać swoją opinię na temat istotnych dla Ciebie kwestii związanych z miastem oraz dzielić się nią z innymi ludźmi. Jest to również miejsce do generowania pomysłów, które poprzez inne sekcje %{org} prowadzą do konkretnych działań ze strony Rady Miejskiej."
@@ -24,7 +23,7 @@ pl:
         image_alt: "Przyciski do oceny debat"
         figcaption: 'Przyciski "Zgadzam się" i "Nie zgadzam się" do oceniania debat.'
       proposals:
-        title: "Propozycje"
+        title: "Wnioski"
         description: "W sekcji %{link} możesz składać propozycje do Rady Miejskiej, celem ich wdrożenia przez ów organ. Takie wnioski wymagają poparcia, a jeśli osiągną wystarczający jego poziom, zostają poddane publicznemu głosowaniu. Propozycje zatwierdzone w głosowaniach są akceptowane i wykonywane przez Radę Miejską."
         link: "propozycje obywatelskie"
         image_alt: "Przycisk do popierania propozycji"
@@ -42,7 +41,7 @@ pl:
         feature_1: "Aby uczestniczyć w głosowaniu, musisz %{link} i zweryfikować swoje konto."
         feature_1_link: "zarejestruj się w %{org_name}"
       processes:
-        title: "Procesy"
+        title: "Procesów"
         description: "W sekcji %{link} obywatele uczestniczą w opracowywaniu i modyfikowaniu przepisów dotyczących miasta oraz mogą wyrażać własne opinie na temat polityk komunalnych w poprzednich debatach."
         link: "procesy"
       faq:
@@ -60,9 +59,9 @@ pl:
       how_to_use:
         text: |-
           Użyj tego w swoim lokalnym rządzie lub pomóż nam się rozwijać, to darmowe oprogramowanie.
-          
+
           Ten Open Government Portal używa [CONSUL app](https://github.com/consul/consul 'consul github') będącego darmowym oprogramowaniem, z [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), co w prostych słowach oznacza, że ktokolwiek może za darmo używać kodu swobodnie, kopiować go, oglądać w szczegółach, modyfikować i ponownie udostępniać światu wraz z dowolnymi modyfikacjami, których sobie życzy (pozwalając innym robić to samo). Ponieważ uważamy, że kultura jest lepsza i bogatsza, gdy jest wolna.
-          
+
           Jeśli jesteś programistą, możesz przejrzeć kod i pomóc nam go poprawiać na [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Użyj go w swoim lokalnym rządzie
@@ -87,10 +86,6 @@ pl:
             - 
               field: 'Instytucja odpowiedzialna za plik:'
               description: INSTYTUCJA ODPOWIEDZIALNA ZA PLIK
-        - 
-          text: Zainteresowana strona może skorzystać z prawa dostępu, sprostowania, anulowania i sprzeciwu, zanim organ odpowiedzialny wskazał, z których wszystkie są zgłaszane zgodnie z art. 5 Ustawy Ekologicznej 15/1999 z 13 grudnia o Ochronie Danych Osobowych.
-        - 
-          text: Zgodnie z ogólną zasadą niniejsza strona internetowa nie udostępnia ani nie ujawnia uzyskanych informacji, z wyjątkiem sytuacji, gdy zostało to zatwierdzone przez użytkownika lub informacje są wymagane przez organ sądowy, prokuraturę lub policję sądową, lub dowolny z przypadków uregulowanych w Artykule 11 Ustawy Ekologicznej 15/1999 z 13 Grudnia O Ochronie Danych Osobowych.
     accessibility:
       title: Dostępność
       description: |-
@@ -119,7 +114,7 @@ pl:
               page_column: Wnioski
             - 
               key_column: 3
-              page_column: Głosy
+              page_column: Głosów
             - 
               key_column: 4
               page_column: Budżety partycypacyjne
@@ -182,13 +177,13 @@ pl:
         title: Zgodność z normami i projektowaniem wizualnym
         description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
     titles:
-      accessibility: Ułatwienia dostępu
+      accessibility: Dostępność
       conditions: Warunki użytkowania
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
       privacy: Polityka prywatności
     verify:
       code: Kod, który otrzymałeś w liście
-      email: Adres e-mail
+      email: E-mail
       info: 'Aby zweryfikować konto, wprowadź swoje dane dostępu:'
       info_code: 'Teraz wprowadź kod otrzymany w liście:'
       password: Hasło
