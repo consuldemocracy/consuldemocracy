@@ -10,8 +10,8 @@ es:
       index:
         title: Presupuestos participativos
         filters:
-          current: Abierto
-          finished: Finalizadas
+          current: Abiertos
+          finished: Terminados
         table_name: Nombre
         table_phase: Fase
         table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
@@ -24,7 +24,7 @@ es:
         filters:
           valuation_open: Abierto
           valuating: En evaluación
-          valuation_finished: Informe finalizado
+          valuation_finished: Evaluación finalizada
         assigned_to: "Asignadas a %{valuator}"
         title: Proyectos de gasto
         edit: Editar informe
@@ -39,7 +39,7 @@ es:
         no_investments: "No hay proyectos de gasto."
       show:
         back: Volver
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         info: Datos de envío
         by: Enviada por
         sent: Fecha de creación
@@ -51,10 +51,10 @@ es:
         currency: "€"
         feasibility: Viabilidad
         feasible: Viable
-        unfeasible: No viables
+        unfeasible: Inviable
         undefined: Sin definir
         valuation_finished: Informe finalizado
-        duration: Plazo de ejecución <small>(opcional, dato no público)</small>
+        duration: Plazo de ejecución
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -65,7 +65,7 @@ es:
         price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
         feasibility: Viabilidad
         feasible: Viable
-        unfeasible: No viable
+        unfeasible: Inviable
         undefined_feasible: Sin decidir
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
         valuation_finished: Informe finalizado
@@ -74,7 +74,7 @@ es:
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
         save: Guardar cambios
       notice:
-        valuate: "Informe actualizado"
+        valuate: "Dossier actualizado"
       valuation_comments: Comentarios de evaluación
       not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación
     spending_proposals:
