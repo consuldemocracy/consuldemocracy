@@ -53,7 +53,7 @@ es:
         feasible: Viable
         unfeasible: Inviable
         undefined: Sin definir
-        valuation_finished: Evaluación finalizada
+        valuation_finished: Informe finalizado
         duration: Plazo de ejecución
         responsibles: Responsables
         assigned_admin: Administrador asignado
@@ -103,7 +103,7 @@ es:
         feasible: Viable
         not_feasible: No viable
         undefined: Sin definir
-        valuation_finished: Informe finalizado
+        valuation_finished: Evaluación finalizada
         time_scope: Plazo de ejecución
         internal_comments: Comentarios internos
         responsibles: Responsables
