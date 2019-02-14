@@ -10,19 +10,20 @@ he:
         new_password_label: הכנסת סיסמה חדשה
         please_set_password: לבחור בבקשה סיסמה חדשה (זה יאפשר לך להתחבר עם הדואר האלקטרוני שלמעלה)
         submit: אישור
-        title: נא לאשר את חשבוני
+        title: מאשר/ת את חשבוני
     mailer:
       confirmation_instructions:
         confirm_link: מאשר/ת את חשבוני
         text: 'ניתן לאשר את חשבון הדואר האלקטרוני שלך בקישור  הבא:'
+        title: ברוכים/ות הבאים/ות
         welcome: ברוכים/ות הבאים/ות
       reset_password_instructions:
-        change_link: שנה את הסיסמה שלי
+        change_link: שנו את הסיסמה שלי
         hello: שלום
         ignore_text: אם לא ביקשת לשנות סיסמה, בבקשה להתעלם מההודעה
         info_text: סיסמתך לא תשונה אלא אם תיכנס/י לקישור ותערוך/י אותו
         text: 'קיבלנו בקשה לשנות את הסיסמה. הנך יכול/ה לעשות זאת בקישור הבא:'
-        title: שנה  את הסיסמה
+        title: שנה את הסיסמה
       unlock_instructions:
         hello: שלום
         info_text: חשבונך נחסם בגלל מספר כשלונות גדול בניסינות כניסה לחשבון
@@ -39,7 +40,7 @@ he:
         new:
           email_label: דואר אלקטרוני
           organization_name_label: שם הארגון
-          password_confirmation_label: אישור הסיסמה
+          password_confirmation_label: אשר/י סיסמה
           password_label: סיסמה
           phone_number_label: מספר טלפון
           responsible_name_label: שם מלא של אחראי/ת הקבוצה
@@ -47,7 +48,7 @@ he:
           submit: הרשמה
           title: הרשמה כארגון או כקבוצה
         success:
-          back_to_index: חזרה לדף הראשי
+          back_to_index: הבנתי ; חזור לדף הבית
           instructions_1_html: "<b>ניצור איתך קשר בקרוב</b>כדי לוודא שאת/ה מייצג/ת את הקבוצה"
           instructions_2_html: אנו בודקים  <b>את הדואר האלקטרוני שלך</b>, שלחנו לך <b>קישור לאימות חשבונך</b>.
           instructions_3_html: לאחר האישור, ניתן להתחיל להשתתף כקבוצה לא מאושרת
@@ -56,7 +57,7 @@ he:
     passwords:
       edit:
         change_submit: שנו את הסיסמה שלי
-        password_confirmation_label: נא לאשר את הסיסמה החדשה
+        password_confirmation_label: הסיסמה החדשה שלך  אושרה
         password_label: סיסמה חדשה
         title: שנה את הסיסמה
       new:
@@ -89,7 +90,7 @@ he:
           erase_reason_label: סיבה
           info: פעולה זו  ל א  ניתנת לביטול. נא לוודא שזה מה שברצונך לעשות.
           info_reason: (אם ברצונך, הסבר/י את הסיבה (אופציה
-          submit: מחקו את החשבון שלי
+          submit: מחק את החשבון שלי
           title: החשבון נמחק
         edit:
           current_password_label: הסיסמה הנוכחית
@@ -116,7 +117,7 @@ he:
           title: הרשמה
           username_is_available: שם משתמש זמין
           username_is_not_available: שם משתמש לא זמין
-          username_label: שם משתמש/ת
+          username_label: שם המשתמש/ת
           username_note: השם שיופיע ליד הפוסטים שלך
         success:
           back_to_index: הבנתי ; חזור לדף הבית
