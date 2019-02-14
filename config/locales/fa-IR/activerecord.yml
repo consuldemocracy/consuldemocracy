@@ -29,10 +29,10 @@ fa:
         one: "سردبیر"
         other: "سردبیرها"
       administrator:
-        one: "مدیر"
+        one: "مدیران"
         other: "مدیران"
       valuator:
-        one: "ارزیاب"
+        one: "ارزیابی"
         other: "ارزیاب ها"
       valuator_group:
         one: "گروه ارزيابي"
@@ -58,6 +58,9 @@ fa:
       proposal:
         one: "پیشنهاد شهروند"
         other: "پیشنهادات شهروند"
+      spending_proposal:
+        one: "پروژه سرمایه گذاری"
+        other: "پروژه سرمایه گذاری"
       site_customization/page:
         one: صفحه سفارشی
         other: صفحه سفارشی
@@ -68,14 +71,14 @@ fa:
         one: محتوای بلوک سفارشی 
         other: محتوای بلوکهای سفارشی 
       legislation/process:
-        one: "روند\n"
+        one: "فرآیند\n"
         other: "روندها\n"
+      legislation/proposal:
+        one: "طرح های پیشنهادی"
+        other: "طرح های پیشنهادی"
       legislation/draft_versions:
         one: "نسخه پیش نویس"
         other: "نسخه های پیش نویس"
-      legislation/draft_texts:
-        one: " پیش نویس"
-        other: " پیش نویس ها"
       legislation/questions:
         one: "سوال"
         other: "سوالات"
@@ -114,7 +117,7 @@ fa:
         title: "عنوان"
         description: "توضیحات"
         external_url: "لینک به مدارک اضافی"
-        administrator_id: "مدیر"
+        administrator_id: "مدیران"
         location: "محل سکونت (اختیاری)"
         organization_name: "اگر شما به نام یک گروه / سازمان، یا از طرف افراد بیشتری پیشنهاد می کنید، نام آنها را بنویسید."
         image: "تصویر طرح توصیفی"
@@ -122,8 +125,13 @@ fa:
       milestone:
         title: "عنوان"
         publication_date: "تاریخ انتشار"
+      milestone/status:
+        name: "نام"
+      progress_bar:
+        kind: "نوع"
+        title: "عنوان"
       budget/heading:
-        name: "عنوان نام"
+        name: "عنوان سرفصل"
         price: "قیمت"
         population: "جمعیت"
       comment:
@@ -155,6 +163,7 @@ fa:
         name: "نام سازمان"
         responsible_name: "شخص مسئول گروه"
       spending_proposal:
+        administrator_id: "مدیران"
         association_name: "نام انجمن"
         description: "توضیحات"
         external_url: "لینک به مدارک اضافی"
@@ -167,11 +176,17 @@ fa:
         geozone_restricted: "محدود شده توسط geozone"
         summary: "خلاصه"
         description: "توضیحات"
+      poll/translation:
+        name: "نام"
+        summary: "خلاصه"
+        description: "توضیحات"
       poll/question:
         title: "سوال"
         summary: "خلاصه"
         description: "توضیحات"
         external_url: "لینک به مدارک اضافی"
+      poll/question/translation:
+        title: "سوال"
       signature_sheet:
         signable_type: "نوع امضاء"
         signable_id: "شناسه  امضاء"
@@ -181,12 +196,16 @@ fa:
         created_at: "ایجاد شده در\n"
         subtitle: "عنوان فرعی\n"
         slug: slug
-        status: وضعیت
+        status: وضعیت ها
         title: عنوان
         updated_at: "ایجاد شده در\n"
         more_info_flag: نمایش در صفحه راهنما
         print_content_flag: چاپ محتوا 
         locale: زبان
+      site_customization/page/translation:
+        title: عنوان
+        subtitle: "عنوان فرعی\n"
+        content: محتوا
       site_customization/image:
         name: نام
         image: تصویر
@@ -196,6 +215,7 @@ fa:
         body: بدنه
       legislation/process:
         title: عنوان فرآیند
+        summary: خلاصه
         description: توضیحات
         additional_info: اطلاعات اضافی
         start_date: "تاریخ شروع\n"
@@ -206,12 +226,22 @@ fa:
         allegations_start_date: ' تاریخ شروع ادعا'
         allegations_end_date: تاریخ پایان ادعا
         result_publication_date: تاریخ انتشار نهایی
+      legislation/process/translation:
+        title: عنوان فرآیند
+        summary: خلاصه
+        description: توضیحات
+        additional_info: اطلاعات اضافی
+        milestones_summary: خلاصه
       legislation/draft_version:
         title: عنوان نسخه
         body: متن
         changelog: تغییرات
         status: وضعیت ها
         final_version: "نسخه نهایی\n"
+      legislation/draft_version/translation:
+        title: عنوان نسخه
+        body: متن
+        changelog: تغییرات
       legislation/question:
         title: عنوان
         question_options: "گزینه ها\n"
@@ -228,6 +258,9 @@ fa:
       poll/question/answer:
         title: پاسخ
         description: توضیحات
+      poll/question/answer/translation:
+        title: پاسخ
+        description: توضیحات
       poll/question/answer/video:
         title: عنوان
         url: ویدیوهای خارجی
@@ -236,12 +269,25 @@ fa:
         subject: "موضوع\n"
         from: "از \n"
         body: محتوای ایمیل
+      admin_notification:
+        segment_recipient: گیرندگان
+        title: عنوان
+        link: لینک
+        body: متن
+      admin_notification/translation:
+        title: عنوان
+        body: متن
       widget/card:
         label: برچسب (اختیاری)
         title: عنوان
         description: توضیحات
         link_text: لینک متن
         link_url: لینک آدرس
+      widget/card/translation:
+        label: برچسب (اختیاری)
+        title: عنوان
+        description: توضیحات
+        link_text: لینک متن
       widget/feed:
         limit: تعداد موارد
     errors:
@@ -264,6 +310,10 @@ fa:
               min_image_width: "عرض تصویر باید حداقل%{required_min_width} پیکسل باشد"
               min_image_height: "طول تصویر باید حداقل%{required_min_height} پیکسل باشد"
         newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "بخش دریافت کننده کاربر نامعتبر است."
+        admin_notification:
           attributes:
             segment_recipient:
               invalid: "بخش دریافت کننده کاربر نامعتبر است."
@@ -315,7 +365,7 @@ fa:
             valuation:
               cannot_comment_valuation: 'شما نمیتوانید در ارزیابی اظهار نظر کنید.'
       messages:
-        record_invalid: "تأیید اعتبار ناموفق بود:%{errors}"
+        record_invalid: "تأیید اعتبار انجام نشد: %{errors}"
         restrict_dependent_destroy:
           has_one: "نمیتوان رکورد را حذف کرد زیرا وابستگی%{record} وجود دارد."
           has_many: "نمیتوان رکورد را حذف کرد زیرا وابستگی%{record} وجود دارد."
