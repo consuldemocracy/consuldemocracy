@@ -7,9 +7,6 @@ sl:
         remaining: "Za investirati imaš še <span>%{amount}</span>."
         no_balloted_group_yet: "Nisi še glasoval v tej skupini, glasuj zdaj!"
         remove: Odstrani glas
-        voted_html:
-          one: "Glasoval/-a si o <span>eni</span> naložbi."
-          other: "Glasoval/-a si o <span>%{count}</span> naložbah."
         voted_info_html: "Svoj glas lahko do konca te faze kadarkoli spremeniš.<br> Ni ti treba porabiti vsega denarja, ki je na voljo."
         zero: Nisi glasoval za noben naložbeni projekt.
       reasons_for_not_balloting:
@@ -57,10 +54,6 @@ sl:
       section_footer:
         title: Pomoč s participatornimi proračuni
         description: S participatornimi proračuni se državljani odločijo, kateri projekti, ki jih predstavljajo sosedi, so namenjeni delu občinskega proračuna.
-        help_text_1: "Participatorni proračuni so procesi, v katerih se državljani direktno odločijo, za kaj se porabi del občinskega proračuna. Vsaka registrirana oseba nad 16 let lahko predlaga naložbeni projekt, ki je predizbran v fazi podpore državljanov."
-        help_text_2: "Projekti, ki dobijo največ glasov, se ocenjujejo in se uvrstijo v končno glasovanje, v katerem se odloča o ukrepih, ki jih bo sprejel občinski svet po odobritvi občinskih proračunov za prihodnje leto."
-        help_text_3: "Predstavitev projektov participatornega proračuna poteka od januarja in traja mesec in pol. Če želiš sodelovati in vložiti predloge za svojo občino ali mesto, se moraš prijaviti na %{org} in verificirati svoj račun."
-        help_text_4: "Če želiš dobiti čim več podpore in glasov, izberi deskriptiven in razumljiv naslov svojega projekta. Nato je na voljo prostor za natančen opis predloga. Navedi vse podatke in pojasnila ter dodaj dokumente in slike, da bodo drugi uporabniki lažje razumeli, kaj predlagaš."
     investments:
       form:
         tag_category_label: "Kategorije"
@@ -81,14 +74,8 @@ sl:
           button: Išči
           placeholder: Išči investicijske projekte ...
           title: Išči
-        search_results_html:
-          one: " s pojmom <strong>'%{search_term}'</strong>"
-          other: " s pojmom <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Moja glasovanja
-          voted_html:
-            one: "<strong>Glasoval/-a si za en predlog s stroški %{amount_spent}</strong>"
-            other: "<strong>Glasoval/-a si za %{count} predlogov s stroški %{amount_spent}</strong>"
           voted_info: Lahko %{link} kadarkoli do konca te faze. Ni treba porabiti vsega denarja, ki je na voljo.
           voted_info_link: spremeniš svoj glas
           different_heading_assigned_html: "V drugem naslovu imaš aktivna glasovanja: %{heading_link}"
@@ -122,8 +109,6 @@ sl:
         price: Cena
         comments_tab: Komentarji
         milestones_tab: Mejniki
-        no_milestones: Nimaš definiranih mejnikov
-        milestone_publication_date: "Objavljen %{publication_date}"
         author: Avtor
         project_unfeasible_html: 'Ta naložbeni projekt <strong>je bil označen kot neizvedljiv</strong> in ni dosegel faze glasovanja.'
         project_not_selected_html: 'Ta naložbeni projekt <strong>ni bil izbran</strong> za fazo glasovanja.'
@@ -133,12 +118,7 @@ sl:
         already_added: Ta naložbeni projekt si že dodal
         already_supported: Ta naložbeni projekt si že podprl. Deli ga z drugimi!
         support_title: Podpri ta projekt
-        confirm_group:
-          one: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
-          other: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
         supports:
-          one: 1 podpora
-          other: "%{count} podpor"
           zero: brez podpore
         give_support: Glasuj za predlog!
       header:
