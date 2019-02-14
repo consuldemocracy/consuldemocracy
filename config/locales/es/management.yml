@@ -109,7 +109,7 @@ es:
         print_button: Imprimir
       search_results:
         one: " que contiene '%{search_term}'"
-        other: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Usuario no verificado
@@ -121,7 +121,7 @@ es:
         print_button: Imprimir
       search_results:
         one: " que contiene '%{search_term}'"
-        other: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     sessions:
       signed_out: Has cerrado la sesión correctamente.
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
