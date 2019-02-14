@@ -16,6 +16,7 @@ ast:
       invalid: "%{authentication_keys} o clave inválidos."
       locked: "La to cuenta foi bloquiada."
       last_attempt: "Tienes un último intento antes de que tu cuenta sea bloqueada."
+      not_found_in_database: "%{authentication_keys} o clave inválidos."
       timeout: "Tu sesión ha expirado, por favor inicia sesión nuevamente para continuar."
       unauthenticated: "Necesitas iniciar sesión o registrarte para continuar."
       unconfirmed: "Para continuar, por favor pulsa en el enlace de confirmación que hemos enviado a tu cuenta de correo."
@@ -45,7 +46,16 @@ ast:
     sessions:
       signed_in: "Has iniciado sesión correctamente."
       signed_out: "Has cerrado la sesión correctamente."
+      already_signed_out: "Has cerrado la sesión correctamente."
     unlocks:
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
       send_paranoid_instructions: "Si tu cuenta existe, recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
       unlocked: "Tu cuenta ha sido desbloqueada. Por favor inicia sesión para continuar."
+  errors:
+    messages:
+      already_confirmed: "ya has sido confirmado, por favor intenta iniciar sesión."
+      confirmation_period_expired: "necesitas ser confirmado en %{period}, por favor vuelve a solicitarla."
+      expired: "ha expirado, por favor vuelve a solicitarla."
+      not_found: "no se ha encontrado."
+      not_locked: "no estaba bloqueado."
+      equal_to_current_password: "debe ser diferente a la contraseña actual"
