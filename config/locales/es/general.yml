@@ -827,10 +827,10 @@ es:
     error_itself: "Enlace no válido. No se puede relacionar un contenido consigo mismo."
     success: "Has añadido un nuevo contenido relacionado"
     is_related: "¿Es contenido relacionado?"
-    score_positive: "Si"
+    score_positive: "Sí"
     score_negative: "No"
     content_title:
-      proposal: "la propuesta"
+      proposal: "Propuesta"
       debate: "Debate"
       budget_investment: "Proyecto de gasto"
   admin/widget:
