@@ -3,8 +3,8 @@ id:
     comments:
       index:
         block_authors: Blokir penulis
-        confirm: Apakah kamu yakin?
-        filter: Menyaring
+        confirm: Apakah anda yakin?
+        filter: Penyaring
         filters:
           all: Semua
           pending_flag_review: Tertunda
@@ -25,8 +25,8 @@ id:
     debates:
       index:
         block_authors: Blokir penulis
-        confirm: Apakah kamu yakin?
-        filter: Menyaring
+        confirm: Apakah anda yakin?
+        filter: Penyaring
         filters:
           all: Semua
           pending_flag_review: Tertunda
@@ -46,13 +46,14 @@ id:
     menu:
       flagged_comments: Komentar
       flagged_debates: Perdebatan
+      flagged_investments: Anggaran investasi
       proposals: Proposal
-      users: Blokir pengguna
+      users: Memblokir pengguna
     proposals:
       index:
         block_authors: Blokir penulis
-        confirm: Apakah kamu yakin?
-        filter: Menyaring
+        confirm: Apakah anda yakin?
+        filter: Penyaring
         filters:
           all: Semua
           pending_flag_review: Tinjauan tertunda
@@ -66,12 +67,47 @@ id:
         orders:
           created_at: Terbaru
           flags: Paling ditandai
-        title: Usulan
+        title: Proposal
+    budget_investments:
+      index:
+        block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
+        filter: Penyaring
+        filters:
+          all: Semua
+          pending_flag_review: Tertunda
+          with_ignored_flag: Ditandai seperti yang dilihat
+        headers:
+          moderate: Moderat
+          budget_investment: Anggaran investasi
+        ignore_flags: Tandai seperti yang dilihat
+        order: Dipesan oleh
+        orders:
+          created_at: Terbaru
+          flags: Paling ditandai
+        title: Anggaran investasi
+    proposal_notifications:
+      index:
+        block_authors: Blokir penulis
+        confirm: Apakah anda yakin?
+        filter: Penyaring
+        filters:
+          all: Semua
+          pending_review: Tinjauan tertunda
+          ignored: Tandai seperti yang dilihat
+        headers:
+          moderate: Moderat
+        hide_proposal_notifications: Sembunyikan usulan
+        ignore_flags: Tandai seperti yang dilihat
+        order: Dipesan oleh
+        orders:
+          created_at: Terbaru
+        title: Pemberitahuan proposal
     users:
       index:
         hidden: Diblokir
         hide: Blokir
-        search: Pencarian
+        search: Cari
         search_placeholder: surel atau nama pengguna
-        title: Memblokir pengguna
+        title: Blokir pengguna
       notice_hide: Pengguna yang diblokir. Semua ini pengguna perdebatan dan komentar yang telah disembunyikan.
