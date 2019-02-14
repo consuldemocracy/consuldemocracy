@@ -10,10 +10,10 @@ es:
           pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
-          comment: Comentar
+          comment: Comentario
           moderate: Moderar
         hide_comments: Ocultar comentarios
-        ignore_flags: Marcar como revisadas
+        ignore_flags: Marcar como revisados
         order: Orden
         orders:
           flags: Más denunciados
@@ -42,12 +42,12 @@ es:
           flags: Más denunciados
         title: Debates
     header:
-      title: Moderar
+      title: Moderación
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debates
-      flagged_investments: Proyectos de presupuestos participativos
-      proposals: Propuestas ciudadanas
+      flagged_investments: Proyectos de gasto
+      proposals: Propuestas
       proposal_notifications: Notificaciones de propuestas
       users: Bloquear usuarios
     proposals:
@@ -61,14 +61,14 @@ es:
           with_ignored_flag: Marcadas como revisadas
         headers:
           moderate: Moderar
-          proposal: la propuesta
+          proposal: Propuesta
         hide_proposals: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         order: Ordenar por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
-        title: Propuestas ciudadanas
+        title: Propuestas
     budget_investments:
       index:
         block_authors: Bloquear autores
@@ -82,7 +82,7 @@ es:
           moderate: Moderar
           budget_investment: Proyecto de gasto
         hide_budget_investments: Ocultar proyectos de gasto
-        ignore_flags: Marcar como revisadas
+        ignore_flags: Marcar como revisados
         order: Ordenar por
         orders:
           created_at: Más recientes
