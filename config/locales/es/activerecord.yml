@@ -29,7 +29,7 @@ es:
         one: "Etiqueta"
         other: "Etiquetas"
       user:
-        one: "Usuarios"
+        one: "Usuario"
         other: "Usuarios"
       moderator:
         one: "Moderador"
@@ -48,9 +48,9 @@ es:
         other: "Gestores"
       newsletter:
         one: "Newsletter"
-        other: "Envío de newsletters"
+        other: "Newsletters"
       vote:
-        one: "Votar"
+        one: "Voto"
         other: "Votos"
       organization:
         one: "Organización"
@@ -72,30 +72,30 @@ es:
         other: Páginas
       site_customization/image:
         one: Imagen
-        other: Personalizar imágenes
+        other: Imágenes
       site_customization/content_block:
         one: Bloque
-        other: Personalizar bloques
+        other: Bloques
       legislation/process:
         one: "Proceso"
         other: "Procesos"
       legislation/proposal:
-        one: "la propuesta"
-        other: "Propuestas ciudadanas"
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
-        one: "Versión borrador"
+        one: "Versión del borrador"
         other: "Versiones del borrador"
       legislation/questions:
         one: "Pregunta"
-        other: "Preguntas ciudadanas"
+        other: "Preguntas"
       legislation/question_options:
         one: "Opción de respuesta cerrada"
-        other: "Opciones de respuesta"
+        other: "Opciones de respuesta cerrada"
       legislation/answers:
         one: "Respuesta"
         other: "Respuestas"
       documents:
-        one: "el documento"
+        one: "Documento"
         other: "Documentos"
       images:
         one: "Imagen"
@@ -108,7 +108,7 @@ es:
         other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
-        other: "Notificaciones de propuestas"
+        other: "Notificaciones de propuesta"
     attributes:
       budget:
         name: "Nombre"
@@ -151,8 +151,8 @@ es:
         price: "Coste"
         population: "Población"
       comment:
-        body: "Comentar"
-        user: "Usuarios"
+        body: "Comentario"
+        user: "Usuario"
       debate:
         author: "Autor"
         description: "Opinión"
@@ -183,7 +183,7 @@ es:
         association_name: "Nombre de la asociación"
         description: "Descripción detallada"
         external_url: "Enlace a documentación adicional"
-        geozone_id: "Ámbitos de actuación"
+        geozone_id: "Ámbito de actuación"
         title: "Título"
       poll:
         name: "Nombre"
@@ -205,11 +205,11 @@ es:
         title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
-        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
-        created_at: Creado
+        created_at: Creada
         subtitle: Subtítulo
         slug: Slug
         status: Estado
