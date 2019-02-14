@@ -13,9 +13,9 @@ es:
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:
-        not_logged_in: Necesitas %{signin} o %{signup}.
+        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
-        organization: Las organizaciones no pueden votar
+        organization: Las organizaciones no pueden votar.
         not_selected: No se pueden votar proyectos inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
@@ -80,7 +80,7 @@ es:
           title: Buscar
         search_results_html:
           one: " que contiene <strong>'%{search_term}'</strong>"
-          other: " que contiene <strong>'%{search_term}'</strong>"
+          other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
           voted_html:
@@ -94,7 +94,7 @@ es:
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           verify_account: "verifica tu cuenta"
-          create: "Crear nuevo proyecto"
+          create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
           sign_in: "iniciar sesión"
           sign_up: "registrarte"
@@ -167,7 +167,7 @@ es:
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartados
       show_all_link: Mostrar todos
-      price: Coste
+      price: Precio total
       amount_available: Presupuesto disponible
       accepted: "Proyecto de gasto aceptado: "
       discarded: "Proyecto de gasto descartado: "
