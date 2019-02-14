@@ -1,0 +1,43 @@
+cs:
+  management:
+    account:
+      menu:
+        reset_password_email: Obnovit heslo emailem
+      edit:
+        back: Zpět
+        password:
+          password: Heslo
+          random: Vytvořit náhodné heslo
+    account_info:
+      username_label: 'Uživatelské jméno:'
+    dashboard:
+      index:
+        title: Správa
+    document_type_label: Typ dokumentu
+    email_label: Email
+    date_of_birth: Datum narození
+    menu:
+      create_proposal: Vytvořit návrh
+      print_proposals: Tisk návrhů
+      support_proposals: Podpora návrhů
+    permissions:
+      create_proposals: Vytvořit návrhy
+      support_proposals: Podpora návrhů
+    proposals:
+      create_proposal: Vytvořit návrh
+      print:
+        print_button: Tisk
+      index:
+        title: Podpora návrhů
+    budgets:
+      table_name: Název
+      table_phase: Fáze
+      table_actions: Akce
+    budget_investments:
+      create: Přidat investiční projekt
+      print:
+        print_button: Tisk
+    spending_proposals:
+      print:
+        print_button: Tisk
+    username_label: Uživatelské jméno
