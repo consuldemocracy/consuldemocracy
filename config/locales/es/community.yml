@@ -25,7 +25,7 @@ es:
         participate: Participa
         new_topic: Crea un tema
       topic:
-        edit: Guardar cambios
+        edit: Editar tema
         destroy: Eliminar tema
         comments:
           zero: Sin comentarios
