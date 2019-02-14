@@ -266,7 +266,7 @@ es:
         documents: "Documentos"
         see_documents: "Ver documentos (%{count})"
         no_documents: "Sin documentos"
-        valuator_groups: "Grupo de evaluadores"
+        valuator_groups: "Grupos de evaluadores"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
@@ -286,7 +286,7 @@ es:
       index:
         table_id: "ID"
         table_title: "Título"
-        table_description: "Descripción detallada"
+        table_description: "Descripción"
         table_publication_date: "Fecha de publicación"
         table_status: Estado
         table_actions: "Acciones"
@@ -298,40 +298,40 @@ es:
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
       form:
-        admin_statuses: Gestionar estados de proyectos
+        admin_statuses: Gestionar estados
         no_statuses_defined: No hay estados definidos
       new:
         creating: Crear hito
-        date: Día
-        description: Descripción detallada
+        date: Fecha
+        description: Descripción
       edit:
         title: Editar hito
       create:
-        notice: Nuevo hito creado con éxito!
+        notice: '¡Nuevo hito creado con éxito!'
       update:
         notice: Hito actualizado
       delete:
         notice: Hito borrado correctamente
     statuses:
       index:
-        title: Estados de proyectos
-        empty_statuses: Aún no se ha creado ningún estado de proyecto
-        new_status: Crear nuevo estado de proyecto
+        title: Estados de seguimiento
+        empty_statuses: Aún no se ha creado ningún estado de seguimiento
+        new_status: Crear nuevo estado de seguimiento
         table_name: Nombre
-        table_description: Descripción detallada
+        table_description: Descripción
         table_actions: Acciones
         delete: Borrar
-        edit: Editar propuesta
+        edit: Editar
       edit:
-        title: Editar estado de proyecto
+        title: Editar estado de seguimiento
       update:
-        notice: Estado de proyecto editado correctamente
+        notice: Estado de seguimiento editado correctamente
       new:
-        title: Crear estado de proyecto
+        title: Crear estado de seguimiento
       create:
-        notice: Estado de proyecto creado correctamente
+        notice: Estado de seguimiento creado correctamente
       delete:
-        notice: Estado de proyecto eliminado correctamente
+        notice: Estado de seguimiento eliminado correctamente
     progress_bars:
       manage: "Gestionar barras de progreso"
       index:
@@ -357,11 +357,11 @@ es:
         notice: "Barra de progreso eliminada correctamente"
     comments:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
         hidden_debate: Debate oculto
         hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
@@ -369,26 +369,26 @@ es:
     dashboard:
       index:
         back: Volver a %{org}
-        title: Administrar
+        title: Administración
         description: Bienvenido al panel de administración de %{org}.
     debates:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
         title: Debates ocultos
         no_hidden_debates: No hay debates ocultos.
     hidden_users:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
-        user: Usuarios
+        user: Usuario
         no_hidden_users: No hay usuarios bloqueados.
       show:
         email: 'Email:'
@@ -397,11 +397,11 @@ es:
         title: Actividad del usuario (%{user})
     hidden_budget_investments:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
         title: Proyectos de gasto ocultos
         no_hidden_budget_investments: No hay proyectos de gasto ocultos
     legislation:
@@ -435,7 +435,7 @@ es:
           summary_placeholder: Resumen corto de la descripción
           description_placeholder: Añade una descripción del proceso
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
-          homepage: Descripción detallada
+          homepage: Descripción
           homepage_description: Aquí puedes explicar el contenido del proceso
           homepage_enabled: Homepage activada
           banner_title: Colores del encabezado
@@ -443,10 +443,10 @@ es:
         index:
           create: Nuevo proceso
           delete: Borrar
-          title: Procesos legislativos
+          title: Procesos de legislación colaborativa
           filters:
-            open: Abierto
-            all: Todas
+            open: Abiertos
+            all: Todos
         new:
           back: Volver
           title: Crear nuevo proceso de legislación colaborativa
@@ -456,7 +456,7 @@ es:
           orders:
             id: Id
             title: Título
-            supports: Apoyos
+            supports: Apoyos totales
         process:
           title: Proceso
           comments: Comentarios
@@ -470,8 +470,8 @@ es:
           homepage: Homepage
           draft_versions: Redacción
           questions: Debate
-          proposals: Propuestas ciudadanas
-          milestones: Siguiendo
+          proposals: Propuestas
+          milestones: Seguimiento
       homepage:
         edit:
           title: Configura la homepage del proceso
@@ -480,7 +480,7 @@ es:
           title: Título
           back: Volver
           id: Id
-          supports: Apoyos
+          supports: Apoyos totales
           select: Seleccionar
           selected: Seleccionados
         form:
@@ -527,7 +527,7 @@ es:
           submit_button: Crear versión
         statuses:
           draft: Borrador
-          published: Publicada
+          published: Publicado
         table:
           title: Título
           created_at: Creado
@@ -551,7 +551,7 @@ es:
           form:
             error: Error
         form:
-          add_option: +Añadir respuesta cerrada
+          add_option: Añadir respuesta cerrada
           title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
@@ -559,7 +559,7 @@ es:
         index:
           back: Volver
           title: Preguntas asociadas a este proceso
-          create: Crear pregunta para votación
+          create: Crear pregunta
           delete: Borrar
         new:
           back: Volver
@@ -574,7 +574,7 @@ es:
           remove_option: Eliminar
       milestones:
         index:
-          title: Siguiendo
+          title: Seguimiento
     managers:
       index:
         title: Gestores
@@ -582,7 +582,7 @@ es:
         email: Email
         no_managers: No hay gestores.
       manager:
-        add: Añadir como Presidente de mesa
+        add: Añadir como gestor
         delete: Borrar
       search:
         title: 'Gestores: Búsqueda de usuarios'
