@@ -6,7 +6,6 @@ class Budget
     include Measurable
     include Sanitizable
     include Taggable
-    include Searchable
     include Reclassification
     include Followable
     include Communitable
@@ -177,6 +176,7 @@ class Budget
     end
 
     def self.search(terms)
+      include Searchable
       pg_search(terms)
     end
 
