@@ -387,8 +387,6 @@ pt-BR:
           title: Processos legislativos
           filters:
             open: Abertos
-            next: Próximo
-            past: Passados
             all: Todos
         new:
           back: Voltar

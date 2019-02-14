@@ -321,11 +321,9 @@ he:
     index:
       filters:
         current: "פתיחה"
-        incoming: "מתקרב"
         expired: "לא בתוקף"
       title: "הצבעות"
       participate_button: "השתתפות בהצבעה זו"
-      participate_button_incoming: "מידע נוסף"
       participate_button_expired: "ההצבעה הסתיימה"
       no_geozone_restricted: "בכל הערים/הרשויות"
       geozone_restricted: "מחוזות"
@@ -337,7 +335,6 @@ he:
       signup: הרשמה
       cant_answer_verify_html: "נדרש %{verify_link}על מנת להצביע."
       verify_link: "לאמת את חשבונך"
-      cant_answer_incoming: "הצבעה זו טרם התחילה"
       cant_answer_expired: "הצבעה זו הסתיימה"
   poll_questions:
     create_question: "יצירת שאלה חדשה"

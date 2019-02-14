@@ -59,10 +59,8 @@ fr:
         filter: Filtrer
         filters:
           open: Processus ouverts
-          next: À venir
           past: Passés
         no_open_processes: Il n'y a pas de processus ouverts
-        no_next_processes: Il n'y a pas de processus à venir
         no_past_processes: Il n'y a pas de processus passés
         section_header:
           icon_alt: Icône des processus législatifs

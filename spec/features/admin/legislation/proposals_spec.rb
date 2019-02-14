@@ -10,20 +10,20 @@ feature 'Admin legislation processes' do
   context "Index" do
 
     scenario 'Displaying legislation proposals' do
-      proposal = create(:legislation_proposal, cached_votes_up: 10)
+      proposal = create(:legislation_proposal, cached_votes_score: 10)
 
       visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
 
       within "#legislation_proposal_#{proposal.id}" do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content(proposal.id)
-        expect(page).to have_content(proposal.cached_votes_up)
+        expect(page).to have_content(proposal.cached_votes_score)
         expect(page).to have_content('Select')
       end
     end
 
     scenario 'Selecting legislation proposals', :js do
-      proposal = create(:legislation_proposal, cached_votes_up: 10)
+      proposal = create(:legislation_proposal, cached_votes_score: 10)
 
       visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
       click_link 'Select'
@@ -51,12 +51,12 @@ feature 'Admin legislation processes' do
 
     scenario 'Sorting legislation proposals by supports', js: true do
       process = create(:legislation_process)
-      create(:legislation_proposal, cached_votes_up: 10, legislation_process_id: process.id)
-      create(:legislation_proposal, cached_votes_up: 30, legislation_process_id: process.id)
-      create(:legislation_proposal, cached_votes_up: 20, legislation_process_id: process.id)
+      create(:legislation_proposal, cached_votes_score: 10, legislation_process_id: process.id)
+      create(:legislation_proposal, cached_votes_score: 30, legislation_process_id: process.id)
+      create(:legislation_proposal, cached_votes_score: 20, legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id)
-      select "Supports", from: "order-selector-participation"
+      select "Total supports", from: "order-selector-participation"
 
       within('#legislation_proposals_list') do
         within all('.legislation_proposal')[0] { expect(page).to have_content('30') }

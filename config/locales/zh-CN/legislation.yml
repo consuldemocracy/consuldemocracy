@@ -59,10 +59,8 @@ zh-CN:
         filter: 过滤器
         filters:
           open: 开启进程
-          next: 下一个
           past: 过去的
         no_open_processes: 没有已开放的进程
-        no_next_processes: 没有已计划的进程
         no_past_processes: 没有已去过的进程
         section_header:
           icon_alt: 立法进程图标

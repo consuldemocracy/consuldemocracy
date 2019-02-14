@@ -138,6 +138,17 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   add_index "budget_content_blocks", ["heading_id"], name: "index_budget_content_blocks_on_heading_id", using: :btree
 
+  create_table "budget_group_translations", force: :cascade do |t|
+    t.integer  "budget_group_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "name"
+  end
+
+  add_index "budget_group_translations", ["budget_group_id"], name: "index_budget_group_translations_on_budget_group_id", using: :btree
+  add_index "budget_group_translations", ["locale"], name: "index_budget_group_translations_on_locale", using: :btree
+
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
     t.string  "name",                 limit: 50
@@ -146,6 +157,17 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
+
+  create_table "budget_heading_translations", force: :cascade do |t|
+    t.integer  "budget_heading_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+  end
+
+  add_index "budget_heading_translations", ["budget_heading_id"], name: "index_budget_heading_translations_on_budget_heading_id", using: :btree
+  add_index "budget_heading_translations", ["locale"], name: "index_budget_heading_translations_on_locale", using: :btree
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
@@ -242,6 +264,18 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
+  create_table "budget_phase_translations", force: :cascade do |t|
+    t.integer  "budget_phase_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "description"
+    t.text     "summary"
+  end
+
+  add_index "budget_phase_translations", ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id", using: :btree
+  add_index "budget_phase_translations", ["locale"], name: "index_budget_phase_translations_on_locale", using: :btree
+
   create_table "budget_phases", force: :cascade do |t|
     t.integer  "budget_id"
     t.integer  "next_phase_id"
@@ -265,6 +299,17 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "budget_translations", force: :cascade do |t|
+    t.integer  "budget_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "budget_translations", ["budget_id"], name: "index_budget_translations_on_budget_id", using: :btree
+  add_index "budget_translations", ["locale"], name: "index_budget_translations_on_locale", using: :btree
 
   create_table "budget_valuator_assignments", force: :cascade do |t|
     t.integer  "valuator_id"
@@ -691,8 +736,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.integer  "cached_votes_total",                default: 0
     t.integer  "cached_votes_down",                 default: 0
     t.boolean  "selected"
+    t.integer  "cached_votes_score",                default: 0
   end
 
+  add_index "legislation_proposals", ["cached_votes_score"], name: "index_legislation_proposals_on_cached_votes_score", using: :btree
   add_index "legislation_proposals", ["legislation_process_id"], name: "index_legislation_proposals_on_legislation_process_id", using: :btree
 
   create_table "legislation_question_option_translations", force: :cascade do |t|

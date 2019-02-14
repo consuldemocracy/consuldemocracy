@@ -181,6 +181,7 @@ es:
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: el proyecto de gasto
+    budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: la respuesta
@@ -445,8 +446,7 @@ es:
       form:
         submit_button: Guardar cambios
     share:
-      message: "He apoyado la propuesta %{summary} en %{org}. Si te interesa, ¡apoya tú también!"
-      message_mobile: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
+      message: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -455,11 +455,9 @@ es:
     index:
       filters:
         current: "Abiertas"
-        incoming: "Próximamente"
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
-      participate_button_incoming: "Más información"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
@@ -487,7 +485,6 @@ es:
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
@@ -773,8 +770,8 @@ es:
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:
-        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
-        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
+        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito. Ya has apoyado en %{supported_headings}."
+        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
   welcome:
     feed:
       most_active:

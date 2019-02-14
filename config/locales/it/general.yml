@@ -458,11 +458,9 @@ it:
     index:
       filters:
         current: "Aperte"
-        incoming: "In arrivo"
         expired: "Scadute"
       title: "Votazioni"
       participate_button: "Partecipa a questa votazione"
-      participate_button_incoming: "Più informazioni"
       participate_button_expired: "Votazione conclusa"
       no_geozone_restricted: "Tutta la città"
       geozone_restricted: "Distretti"
@@ -490,7 +488,6 @@ it:
       signup: Registrati
       cant_answer_verify_html: "È necessario %{verify_link} per rispondere."
       verify_link: "verifica il tuo account"
-      cant_answer_incoming: "Questa votazione non è ancora iniziata."
       cant_answer_expired: "Questa votazione è conclusa."
       cant_answer_wrong_geozone: "Questo quesito non è disponibile nella tua zona."
       more_info_title: "Più informazioni"

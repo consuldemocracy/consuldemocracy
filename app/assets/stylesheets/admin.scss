@@ -431,7 +431,7 @@ $sidebar-active: #f4fcd0;
 
     > a::after {
       border: 0;
-      content: '\61' !important;
+      content: "\61" !important;
       font-family: "icons" !important;
       height: auto;
       position: absolute !important;
@@ -1113,7 +1113,7 @@ table {
     }
 
     .map-icon::after {
-      content: '';
+      content: "";
       width: 14px;
       height: 14px;
       margin: 8px 0 0 8px;
@@ -1173,7 +1173,7 @@ table {
 
   &.enabled::before,
   &.disabled::before {
-    font-family: 'icons';
+    font-family: "icons";
     left: 0;
     position: absolute;
   }
@@ -1183,7 +1183,7 @@ table {
 
     &::before {
       color: $check;
-      content: '\6c';
+      content: "\6c";
     }
   }
 
@@ -1192,7 +1192,7 @@ table {
 
     &::before {
       color: #000;
-      content: '\76';
+      content: "\76";
     }
   }
 }

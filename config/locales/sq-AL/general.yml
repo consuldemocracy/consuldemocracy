@@ -458,11 +458,9 @@ sq:
     index:
       filters:
         current: "Hapur"
-        incoming: "Hyrës"
         expired: "Ka skaduar"
       title: "Sondazhet"
       participate_button: "Merrni pjesë në këtë sondazh"
-      participate_button_incoming: "Më shumë informacion"
       participate_button_expired: "Sondazhi përfundoi"
       no_geozone_restricted: "I gjithë qyteti"
       geozone_restricted: "Zonë"
@@ -490,7 +488,6 @@ sq:
       signup: Rregjistrohu
       cant_answer_verify_html: "Ju duhet të %{verify_link}për t'u përgjigjur."
       verify_link: "verifikoni llogarinë tuaj"
-      cant_answer_incoming: "Ky sondazh ende nuk ka filluar."
       cant_answer_expired: "Ky sondazh ka përfunduar."
       cant_answer_wrong_geozone: "Kjo pyetje nuk është e disponueshme në gjeozonën tuaj"
       more_info_title: "Më shumë informacion"

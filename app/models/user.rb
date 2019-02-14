@@ -127,6 +127,14 @@ class User < ActiveRecord::Base
     votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
   end
 
+  def headings_voted_within_group(group)
+    Budget::Heading.order("name").where(id: voted_investments.by_group(group).pluck(:heading_id))
+  end
+
+  def voted_investments
+    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
+  end
+
   def administrator?
     administrator.present?
   end

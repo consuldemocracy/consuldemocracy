@@ -59,7 +59,7 @@ nl:
         filter: Filter
         filters:
           open: Actieve plannen
-          next: Toekomstige
+          next: Volgende
           past: Vorige
         no_open_processes: Er zijn geen actieve plannen
         no_next_processes: Er zijn geen toekomstige plannen

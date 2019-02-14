@@ -391,8 +391,6 @@ pl:
           title: Procesy legislacyjne
           filters:
             open: Otwórz
-            next: Następny
-            past: Ubiegły
             all: Wszystko
         new:
           back: Wstecz

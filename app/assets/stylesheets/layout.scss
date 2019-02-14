@@ -372,7 +372,7 @@ a {
       text-decoration: none;
     }
 
-    &[aria-selected='true'],
+    &[aria-selected="true"],
     &.is-active {
       border-bottom: 0;
       color: $brand;
@@ -382,7 +382,7 @@ a {
         background: $brand;
         border-bottom: 2px solid $brand;
         bottom: 0;
-        content: '';
+        content: "";
         left: 0;
         position: absolute;
         width: 100%;
@@ -459,7 +459,7 @@ header {
 
     &::after {
       color: #808080;
-      content: '\61';
+      content: "\61";
       font-family: "icons" !important;
       font-size: $small-font-size;
       pointer-events: none;
@@ -501,7 +501,7 @@ header {
     a {
       color: #fff;
       display: inline-block;
-      font-family: 'Lato' !important;
+      font-family: "Lato" !important;
       font-size: rem-calc(24);
       font-weight: lighter;
       line-height: $line-height * 2;
@@ -646,7 +646,7 @@ header {
       display: inline-block;
 
       &::after {
-        content: '|';
+        content: "|";
       }
 
       &:last-child::after {
@@ -794,7 +794,7 @@ footer {
   color: $text;
 
   .logo a {
-    font-family: 'Lato' !important;
+    font-family: "Lato" !important;
     text-decoration: none;
 
     &:hover {
@@ -906,7 +906,7 @@ footer {
 }
 
 .auth-image {
-  background: $brand image-url('auth_bg.jpg');
+  background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -980,7 +980,7 @@ footer {
   }
 
   .locale-switcher {
-    background: #1a1a1a;
+    background: #001d33;
     border: 0;
     border-radius: rem-calc(4);
     color: #fff;
@@ -1279,7 +1279,7 @@ form {
 
   &::before {
     background: $border;
-    content: '';
+    content: "";
     height: 100%;
     left: 7px;
     position: absolute;
@@ -1325,14 +1325,14 @@ form {
     }
 
     &::before {
-      content: '\43';
+      content: "\43";
     }
   }
 
   &::before {
     background: #fff;
     color: $brand;
-    content: '\4d';
+    content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
     height: rem-calc(20);
@@ -1487,7 +1487,7 @@ table {
 
   &::before {
     color: #45b0e3;
-    content: 'f';
+    content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1507,7 +1507,7 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: 'f';
+    content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1530,7 +1530,7 @@ table {
 
   &::before {
     color: #3b5998;
-    content: 'A';
+    content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1550,7 +1550,7 @@ table {
   width: rem-calc(48) !important;
 
   &::before {
-    content: 'A';
+    content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1573,7 +1573,7 @@ table {
 
   &::before {
     color: #de4c34;
-    content: 'B';
+    content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1593,7 +1593,7 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: 'B';
+    content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1616,7 +1616,7 @@ table {
 
   &::before {
     color: #08c;
-    content: '1';
+    content: "1";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1636,7 +1636,7 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: '1';
+    content: "1";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1689,7 +1689,7 @@ table {
     width: $line-height * 2;
 
     &::before {
-      content: 'f';
+      content: "f";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1714,7 +1714,7 @@ table {
     width: rem-calc(48);
 
     &::before {
-      content: 'A';
+      content: "A";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1739,7 +1739,7 @@ table {
     width: rem-calc(48);
 
     &::before {
-      content: 'B';
+      content: "B";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1764,7 +1764,7 @@ table {
     width: $line-height * 2;
 
     &::before {
-      content: '1';
+      content: "1";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1808,7 +1808,7 @@ table {
       top: 24px;
 
       @include breakpoint(medium) {
-        content: 'c';
+        content: "c";
       }
     }
   }
@@ -2260,15 +2260,15 @@ table {
 @include breakpoint(large) {
 
   .banner-img-one {
-    background-image: image-url('banners/banner1.png');
+    background-image: image-url("banners/banner1.png");
   }
 
   .banner-img-two {
-    background-image: image-url('banners/banner2.png');
+    background-image: image-url("banners/banner2.png");
   }
 
   .banner-img-three {
-    background-image: image-url('banners/banner3.png');
+    background-image: image-url("banners/banner3.png");
   }
 }
 
@@ -2385,7 +2385,7 @@ table {
   }
 
   .card .orbit .orbit-wrapper .truncate {
-    background: image-url('truncate.png');
+    background: image-url("truncate.png");
     background-repeat: repeat-x;
     bottom: 0;
     height: rem-calc(20);
@@ -2668,7 +2668,7 @@ table {
 
     &.score-positive::before,
     &.score-negative::before {
-      font-family: 'icons';
+      font-family: "icons";
       left: 0;
       position: absolute;
     }
@@ -2678,7 +2678,7 @@ table {
 
       &::before {
         color: $color-success;
-        content: '\6c';
+        content: "\6c";
       }
     }
 
@@ -2687,7 +2687,7 @@ table {
 
       &::before {
         color: $color-alert;
-        content: '\76';
+        content: "\76";
       }
     }
   }

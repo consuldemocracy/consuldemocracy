@@ -1,11 +1,17 @@
+<%= render "admin/shared/globalize_locales", resource: @heading %>
+
 <div class="small-12 medium-6">
 
-  <%= form_for [:admin, @budget, @group, @heading], url: path do |f| %>
+  <%= translatable_form_for [:admin, @budget, @group, @heading], url: path do |f| %>
 
-    <%= f.text_field :name,
-                     label: t("admin.budget_headings.form.name"),
-                     maxlength: 50,
-                     placeholder: t("admin.budget_headings.form.name") %>
+    <%= render 'shared/errors', resource: @heading %>
+
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_field :name,
+                                        label: t("admin.budget_headings.form.name"),
+                                        maxlength: 50,
+                                        placeholder: t("admin.budget_headings.form.name") %>
+    <% end %>
 
     <%= f.text_field :price,
                       label: t("admin.budget_headings.form.amount"),

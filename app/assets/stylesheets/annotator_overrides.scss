@@ -14,7 +14,7 @@
 }
 
 .annotator-adder {
-  background-image: image-url('annotator_adder.png');
+  background-image: image-url("annotator_adder.png");
   margin-top: -52px;
 }
 
@@ -43,7 +43,7 @@
 
 .annotator-widget::after,
 .annotator-editor.annotator-invert-y .annotator-widget::after {
-  background-image: image-url('annotator_items.png');
+  background-image: image-url("annotator_items.png");
 }
 
 .annotator-editor a,

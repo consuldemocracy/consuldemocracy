@@ -5,8 +5,10 @@
 module ActionDispatch::Routing::UrlFor
   def resource_hierarchy_for(resource)
     case resource.class.name
-    when "Budget::Investment"
+    when "Budget::Investment", "Budget::Phase", "Budget::Group"
       [resource.budget, resource]
+    when "Budget::Heading"
+      [resource.group.budget, resource.group, resource]
     when "Milestone"
       [*resource_hierarchy_for(resource.milestoneable), resource]
     when "ProgressBar"

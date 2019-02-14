@@ -59,10 +59,8 @@ fa:
         filter: فیلتر
         filters:
           open: فرآیندهای باز
-          next: بعدی
           past: گذشته
         no_open_processes: فرایندهای باز وجود ندارد
-        no_next_processes: فرایندها برنامه ریزی نشده است
         no_past_processes: فرآیندهای گذشته وجود ندارد
         section_header:
           icon_alt: آیکون قوانین پردازش 

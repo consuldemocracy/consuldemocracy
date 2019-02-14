@@ -1,4 +1,8 @@
-<%= form_for [:admin, @phase.budget, @phase] do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @phase %>
+
+<%= translatable_form_for [:admin, @phase.budget, @phase] do |f| %>
+
+  <%= render 'shared/errors', resource: @phase %>
 
   <div class="small-12 medium-6 column">
     <%= f.label :starts_at, t("admin.budget_phases.edit.start_date") %>
@@ -18,31 +22,33 @@
   </div>
 
   <div class="small-12 column">
-    <%= f.label :description, t("admin.budget_phases.edit.description") %>
+    <%= f.translatable_fields do |translations_form| %>
 
-    <span class="help-text" id="phase-description-help-text">
-      <%= t("admin.budget_phases.edit.description_help_text") %>
-    </span>
+      <%= f.label :description, t("admin.budget_phases.edit.description") %>
 
-    <%= f.cktext_area :description,
-                      maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
+      <span class="help-text" id="phase-description-help-text">
+        <%= t("admin.budget_phases.edit.description_help_text") %>
+      </span>
+
+      <div class="ckeditor">
+        <%= translations_form.cktext_area :description,
+                                           maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                                           label: false %>
+      </div>
+
+      <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
+
+      <span class="help-text" id="phase-summary-help-text">
+        <%= t("admin.budget_phases.edit.summary_help_text") %>
+      </span>
+
+      <div class="ckeditor">
+        <%= translations_form.cktext_area :summary,
+                                           maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                                           label: false%>
+      </div>
+    <% end %>
   </div>
-
-  <div class="small-12 column margin-top">
-    <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
-
-    <span class="help-text" id="phase-summary-help-text">
-      <%= t("admin.budget_phases.edit.summary_help_text") %>
-    </span>
-
-    <%= f.cktext_area :summary,
-                      maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
-  </div>
-
 
   <div class="small-12 column margin-top">
     <%= f.check_box :enabled, label: t("admin.budget_phases.edit.enabled") %>

@@ -128,7 +128,7 @@ feature 'Votes' do
 
         visit debate_path(debate)
 
-        expect(page).to have_content "2 votes"
+        expect(page).to have_content "No votes"
 
         within('.in-favor') do
           expect(page).to have_content "50%"

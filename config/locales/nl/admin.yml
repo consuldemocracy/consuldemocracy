@@ -384,8 +384,6 @@ nl:
           delete: Verwijder
           filters:
             open: Open
-            next: Volgende
-            past: Verleden
             all: Alle
         new:
           back: Terug

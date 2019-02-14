@@ -10,10 +10,6 @@
       <%= t('polls.show.cant_answer_verify_html',
             verify_link: link_to(t('polls.show.verify_link'), verification_path)) %>
     </div>
-  <% elsif @poll.incoming? %>
-    <div class="callout primary">
-      <%= t('polls.show.cant_answer_incoming') %>
-    </div>
   <% elsif @poll.expired? %>
     <div class="callout alert">
       <%= t('polls.show.cant_answer_expired') %>

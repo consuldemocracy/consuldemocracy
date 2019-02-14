@@ -62,10 +62,8 @@ de:
         filter: Filter
         filters:
           open: Laufende Verfahren
-          next: Geplante
           past: Vorherige
         no_open_processes: Es gibt keine offenen Verfahren
-        no_next_processes: Es gibt keine geplanten Prozesse
         no_past_processes: Es gibt keine vergangene Prozesse
         section_header:
           icon_alt: Gesetzgebungsverfahren Icon

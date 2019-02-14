@@ -28,24 +28,15 @@ feature 'Polls' do
 
     scenario 'Filtering polls' do
       create(:poll, name: "Current poll")
-      create(:poll, :incoming, name: "Incoming poll")
       create(:poll, :expired, name: "Expired poll")
 
       visit polls_path
       expect(page).to have_content('Current poll')
       expect(page).to have_link('Participate in this poll')
-      expect(page).not_to have_content('Incoming poll')
-      expect(page).not_to have_content('Expired poll')
-
-      visit polls_path(filter: 'incoming')
-      expect(page).not_to have_content('Current poll')
-      expect(page).to have_content('Incoming poll')
-      expect(page).to have_link('More information')
       expect(page).not_to have_content('Expired poll')
 
       visit polls_path(filter: 'expired')
       expect(page).not_to have_content('Current poll')
-      expect(page).not_to have_content('Incoming poll')
       expect(page).to have_content('Expired poll')
       expect(page).to have_link('Poll ended')
     end
@@ -53,17 +44,10 @@ feature 'Polls' do
     scenario "Current filter is properly highlighted" do
       visit polls_path
       expect(page).not_to have_link('Open')
-      expect(page).to have_link('Incoming')
-      expect(page).to have_link('Expired')
-
-      visit polls_path(filter: 'incoming')
-      expect(page).to have_link('Open')
-      expect(page).not_to have_link('Incoming')
       expect(page).to have_link('Expired')
 
       visit polls_path(filter: 'expired')
       expect(page).to have_link('Open')
-      expect(page).to have_link('Incoming')
       expect(page).not_to have_link('Expired')
     end
 
@@ -202,26 +186,6 @@ feature 'Polls' do
 
       expect(page).to have_link('Han Solo', href: verification_path)
       expect(page).to have_link('Chewbacca', href: verification_path)
-    end
-
-    scenario 'Level 2 users in an incoming poll' do
-      incoming_poll = create(:poll, :incoming, geozone_restricted: true)
-      incoming_poll.geozones << geozone
-
-      question = create(:poll_question, poll: incoming_poll)
-      answer1 = create(:poll_question_answer, question: question, title: 'Rey')
-      answer2 = create(:poll_question_answer, question: question, title: 'Finn')
-
-      login_as(create(:user, :level_two, geozone: geozone))
-
-      visit poll_path(incoming_poll)
-
-      expect(page).to have_content('Rey')
-      expect(page).to have_content('Finn')
-      expect(page).not_to have_link('Rey')
-      expect(page).not_to have_link('Finn')
-
-      expect(page).to have_content('This poll has not yet started')
     end
 
     scenario 'Level 2 users in an expired poll' do

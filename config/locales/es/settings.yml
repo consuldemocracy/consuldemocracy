@@ -14,7 +14,7 @@ es:
     official_level_5_name_description: "Etiqueta que aparecerá en los usuarios marcados como Nivel 5 de cargo público"
     max_ratio_anon_votes_on_debates: "Porcentaje máximo de votos anónimos por Debate"
     max_ratio_anon_votes_on_debates_description: "Se consideran votos anónimos los realizados por usuarios registrados con una cuenta sin verificar"
-    max_votes_for_proposal_edit: "Número de votos en que una Propuesta deja de poderse editar"
+    max_votes_for_proposal_edit: "Número de apoyos en que una Propuesta deja de poderse editar"
     max_votes_for_proposal_edit_description: "A partir de este número de apoyos el autor de una Propuesta ya no podrá editarla"
     max_votes_for_debate_edit: "Número de votos en que un Debate deja de poderse editar"
     max_votes_for_debate_edit_description: "A partir de este número de votos el autor de un Debate ya no podrá editarlo"

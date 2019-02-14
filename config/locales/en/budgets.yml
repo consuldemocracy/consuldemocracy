@@ -106,8 +106,7 @@ en:
           confidence_score: highest rated
           price: by price
       share:
-        message: "I created the investment project %{title} in %{org}. Create an investment project you too!"
-        message_mobile: "I created the investment project %{title} in %{handle}. Create an investment project you too!"
+        message: "I created the investment project %{title} in %{handle}. Create an investment project too!"
       show:
         author_deleted: User deleted
         price_explanation: Price explanation
@@ -147,7 +146,7 @@ en:
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "check my ballot"
-        price: "This heading have a budget of"
+        price: "This heading has a budget of"
     progress_bar:
       assigned: "You have assigned: "
       available: "Available budget: "

@@ -26,14 +26,11 @@ feature 'Legislation' do
 
   context 'processes home page' do
 
-    scenario 'No processes to be listed' do
+    scenario "No processes to be listed" do
       visit legislation_processes_path
       expect(page).to have_text "There aren't open processes"
 
-      visit legislation_processes_path(filter: 'next')
-      expect(page).to have_text "There aren't planned processes"
-
-      visit legislation_processes_path(filter: 'past')
+      visit legislation_processes_path(filter: "past")
       expect(page).to have_text "There aren't past processes"
     end
 
@@ -90,24 +87,16 @@ feature 'Legislation' do
 
     scenario 'Filtering processes' do
       create(:legislation_process, title: "Process open")
-      create(:legislation_process, :next, title: "Process next")
       create(:legislation_process, :past, title: "Process past")
       create(:legislation_process, :in_draft_phase, title: "Process in draft phase")
 
       visit legislation_processes_path
       expect(page).to have_content('Process open')
-      expect(page).not_to have_content('Process next')
       expect(page).not_to have_content('Process past')
       expect(page).not_to have_content('Process in draft phase')
 
-      visit legislation_processes_path(filter: 'next')
-      expect(page).not_to have_content('Process open')
-      expect(page).to have_content('Process next')
-      expect(page).not_to have_content('Process past')
-
       visit legislation_processes_path(filter: 'past')
       expect(page).not_to have_content('Process open')
-      expect(page).not_to have_content('Process next')
       expect(page).to have_content('Process past')
     end
 
@@ -115,10 +104,8 @@ feature 'Legislation' do
       before do
         create(:legislation_process, title: "published")
         create(:legislation_process, :not_published, title: "not published")
-        [:next, :past].each do |trait|
-          create(:legislation_process, trait, title: "#{trait} published")
-          create(:legislation_process, :not_published, trait, title: "#{trait} not published")
-        end
+        create(:legislation_process, :past, title: "past published")
+        create(:legislation_process, :not_published, :past, title: "past not published")
       end
 
       it "aren't listed" do
@@ -130,17 +117,6 @@ feature 'Legislation' do
         visit legislation_processes_path
         expect(page).not_to have_content('not published')
         expect(page).to have_content('published')
-      end
-
-      it "aren't listed with next filter" do
-        visit legislation_processes_path(filter: 'next')
-        expect(page).not_to have_content('not published')
-        expect(page).to have_content('next published')
-
-        login_as(administrator)
-        visit legislation_processes_path(filter: 'next')
-        expect(page).not_to have_content('not published')
-        expect(page).to have_content('next published')
       end
 
       it "aren't listed with past filter" do

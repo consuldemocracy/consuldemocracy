@@ -458,11 +458,9 @@ sv:
     index:
       filters:
         current: "Pågående"
-        incoming: "Kommande"
         expired: "Avslutade"
       title: "Omröstningar"
       participate_button: "Delta i omröstningen"
-      participate_button_incoming: "Mer information"
       participate_button_expired: "Omröstningen är avslutad"
       no_geozone_restricted: "Hela staden"
       geozone_restricted: "Stadsdelar"
@@ -487,7 +485,6 @@ sv:
       signup: Registrera dig
       cant_answer_verify_html: "Du måste %{verify_link} för att svara."
       verify_link: "verifiera ditt konto"
-      cant_answer_incoming: "Omröstningen har inte börjat än."
       cant_answer_expired: "Omröstningen är avslutad."
       cant_answer_wrong_geozone: "Den här frågan är inte tillgänglig i ditt område."
       more_info_title: "Mer information"

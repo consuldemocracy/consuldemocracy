@@ -12,7 +12,7 @@ class Poll
     end
 
     def self.available
-      where(polls: { id: Poll.current_or_recounting_or_incoming }).includes(:polls)
+      where(polls: { id: Poll.current_or_recounting }).includes(:polls)
     end
 
     def assignment_on_poll(poll)

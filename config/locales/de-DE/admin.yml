@@ -386,8 +386,6 @@ de:
           title: Kollaborative Gesetzgebungsprozesse
           filters:
             open: Offen
-            next: Nächste/r
-            past: Vorherige
             all: Alle
         new:
           back: Zurück

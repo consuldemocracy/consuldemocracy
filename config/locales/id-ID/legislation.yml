@@ -51,10 +51,8 @@ id:
       index:
         filters:
           open: Proses yang terbuka
-          next: Selanjutnya
           past: Sebelumnya
         no_open_processes: Tidak ada proses yang terbuka
-        no_next_processes: Tidak ada proses yang direncanakan
         no_past_processes: Tidak ada masa lalu proses
         section_header:
           icon_alt: Undang-undang proses ikon

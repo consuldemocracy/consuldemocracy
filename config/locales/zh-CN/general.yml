@@ -441,11 +441,9 @@ zh-CN:
     index:
       filters:
         current: "打开"
-        incoming: "传入"
         expired: "过期的"
       title: "投票"
       participate_button: "参与此投票"
-      participate_button_incoming: "更多信息"
       participate_button_expired: "投票已结束"
       no_geozone_restricted: "所有城市"
       geozone_restricted: "地区"
@@ -473,7 +471,6 @@ zh-CN:
       signup: 注册
       cant_answer_verify_html: "您必须%{verify_link} 才能回答。"
       verify_link: "验证您的账户"
-      cant_answer_incoming: "此投票还没有开始。"
       cant_answer_expired: "此投票已经结束。"
       cant_answer_wrong_geozone: "此问题在您的地理区域里不可用。"
       more_info_title: "更多信息"

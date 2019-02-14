@@ -60,10 +60,8 @@ pl:
         filter: Filtr
         filters:
           open: Otwarte procesy
-          next: Następny
           past: Ubiegły
         no_open_processes: Nie ma otwartych procesów
-        no_next_processes: Nie ma zaplanowanych procesów
         no_past_processes: Brak ubiegłych procesów
         section_header:
           icon_alt: Ikona procesów legislacyjnych

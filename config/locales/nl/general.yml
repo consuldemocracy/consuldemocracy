@@ -454,11 +454,9 @@ nl:
     index:
       filters:
         current: "Open"
-        incoming: "Binnenkort"
         expired: "Verlopen"
       title: "Stemmen"
       participate_button: "Neem deel aan deze stemronde"
-      participate_button_incoming: "Meer informatie"
       participate_button_expired: "Stemronde is voorbij"
       no_geozone_restricted: "Gehele gemeente"
       geozone_restricted: "Regio's"
@@ -483,7 +481,6 @@ nl:
       signup: Registreren
       cant_answer_verify_html: "Je moet %{verify_link} om te kunnen antwoorden."
       verify_link: "je account verifieren"
-      cant_answer_incoming: "Deze stemronde is nog niet gestart."
       cant_answer_expired: "Deze stemronde is afgesloten."
       cant_answer_wrong_geozone: "Deze vraag wordt niet behandeld in jouw regio."
       more_info_title: "Meer informatie"

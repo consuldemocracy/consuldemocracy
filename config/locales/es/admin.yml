@@ -87,7 +87,7 @@ es:
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
-        no_budgets: "No hay presupuestos abiertos."
+        no_budgets: "No hay presupuestos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
@@ -447,8 +447,6 @@ es:
           title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
-            next: Próximamente
-            past: Pasados
             all: Todos
         new:
           back: Volver
@@ -459,7 +457,7 @@ es:
           orders:
             id: Id
             title: Título
-            supports: Apoyos
+            supports: Apoyos totales
         process:
           title: Proceso
           comments: Comentarios
@@ -483,7 +481,7 @@ es:
           title: Título
           back: Volver
           id: Id
-          supports: Apoyos
+          supports: Apoyos totales
           select: Seleccionar
           selected: Seleccionada
         form:
@@ -874,6 +872,7 @@ es:
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
+        unable_to_destroy: "No se pueden eliminar turnos que tienen resultados o recuentos asociados"
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
