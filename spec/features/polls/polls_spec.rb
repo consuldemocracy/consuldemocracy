@@ -8,6 +8,19 @@ feature 'Polls' do
 
   context '#index' do
 
+    scenario "Shows description for open polls" do
+      visit polls_path
+      expect(page).not_to have_content "Description for open polls"
+
+      create(:active_poll, description: "Description for open polls")
+
+      visit polls_path
+      expect(page).to have_content "Description for open polls"
+
+      click_link "Expired"
+      expect(page).not_to have_content "Description for open polls"
+    end
+
     scenario 'Polls can be listed' do
       visit polls_path
       expect(page).to have_content('There are no open votings')

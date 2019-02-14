@@ -1,0 +1,8 @@
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: polls_url,
+              social_title: t("polls.index.title"),
+              social_description: t("polls.index.description"),
+              twitter_image_url:  "social_media_polls_twitter.jpg",
+              og_image_url: "social_media_polls.jpg" %>
+<% end %>

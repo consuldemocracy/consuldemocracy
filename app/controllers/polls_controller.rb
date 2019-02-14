@@ -2,6 +2,7 @@ class PollsController < ApplicationController
   include PollsHelper
 
   before_action :load_poll, except: [:index]
+  before_action :load_active_poll, only: :index
 
   load_and_authorize_resource
 
@@ -87,5 +88,9 @@ class PollsController < ApplicationController
 
     def load_poll
       @poll = Poll.where(slug: params[:id]).first || Poll.where(slug: params[:poll_id]).first
+    end
+
+    def load_active_poll
+      @active_poll = ActivePoll.first
     end
 end
