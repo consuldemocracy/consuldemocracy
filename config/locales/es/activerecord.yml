@@ -6,10 +6,10 @@ es:
         other: "actividades"
       budget:
         one: "Presupuesto participativo"
-        other: "Presupuestos"
+        other: "Presupuestos participativos"
       budget/investment:
-        one: "el proyecto de gasto"
-        other: "Propuestas de inversión"
+        one: "Proyecto de gasto"
+        other: "Proyectos de gasto"
       milestone:
         one: "hito"
         other: "hitos"
@@ -20,13 +20,13 @@ es:
         one: "Barra de progreso"
         other: "Barras de progreso"
       comment:
-        one: "Comentar"
+        one: "Comentario"
         other: "Comentarios"
       debate:
         one: "Debate"
         other: "Debates"
       tag:
-        one: "Tema"
+        one: "Etiqueta"
         other: "Etiquetas"
       user:
         one: "Usuarios"
