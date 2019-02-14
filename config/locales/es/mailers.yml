@@ -21,7 +21,7 @@ es:
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"
@@ -59,12 +59,12 @@ es:
       sincerely: "Atentamente,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nuevo proyecto de gasto"
+      new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
+      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
     budget_investment_selected:
       subject: "Tu propuesta de inversión '%{code}' ha sido seleccionada"
       hi: "Estimado/a usuario/a"
@@ -73,7 +73,7 @@ es:
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
     budget_investment_unselected:
-      subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
+      subject: "Tu propuesta de inversión '%{code}' no ha sido seleccionada"
       hi: "Estimado/a usuario/a"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
