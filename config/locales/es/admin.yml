@@ -1113,16 +1113,16 @@ es:
         filters:
           all: Todas
           with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
+          without_confirmed_hide: Pendientes
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
     proposal_notifications:
       index:
-        filter: Filtrar
+        filter: Filtro
         filters:
           all: Todas
           with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
+          without_confirmed_hide: Pendientes
         title: Notificaciones ocultas
         no_hidden_proposals: No hay notificaciones ocultas.
     settings:
@@ -1155,7 +1155,7 @@ es:
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Si"
+      true_value: "Sí"
       false_value: "No"
       booths_search:
         button: Buscar
@@ -1175,20 +1175,20 @@ es:
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
-      search_results: "Resultados de búsqueda"
+      search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
       title: Título
-      description: Descripción detallada
+      description: Descripción
       image: Imagen
       show_image: Mostrar imagen
       moderated_content: "Revisa el contenido moderado por los moderadores, y confirma si la moderación se ha realizado correctamente."
-      view: Visualizar
-      proposal: la propuesta
+      view: Ver
+      proposal: Propuesta
       author: Autor
       content: Contenido
-      created_at: Creado
-      delete: Borrar
+      created_at: Fecha de creación
+      delete: Eliminar
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1196,11 +1196,11 @@ es:
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         filters:
-          valuation_open: Abierto
+          valuation_open: Abiertas
           without_admin: Sin administrador
           managed: Gestionando
           valuating: En evaluación
-          valuation_finished: Informe finalizado
+          valuation_finished: Evaluación finalizada
           all: Todas
         title: Propuestas de inversión para presupuestos participativos
         assigned_admin: Administrador asignado
@@ -1210,7 +1210,7 @@ es:
         valuator_summary_link: "Resumen de evaluadores"
         feasibility:
           feasible: "Viable (%{price})"
-          not_feasible: "No viable"
+          not_feasible: "Inviable"
           undefined: "Sin definir"
       show:
         assigned_admin: Administrador asignado
@@ -1218,12 +1218,12 @@ es:
         back: Volver
         classification: Clasificación
         heading: "Propuesta de inversión %{id}"
-        edit: Editar propuesta
+        edit: Editar
         edit_classification: Editar clasificación
         association_name: Asociación
         by: Autor
         sent: Fecha
-        geozone: Ámbito de ciudad
+        geozone: Ámbito
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
@@ -1244,12 +1244,12 @@ es:
         finished_count: Finalizadas
         in_evaluation_count: En evaluación
         total_count: Total
-        cost_for_geozone: Coste
+        cost_for_geozone: Coste total
     geozones:
       index:
         title: Distritos
         create: Crear un distrito
-        edit: Editar propuesta
+        edit: Editar
         delete: Borrar
       geozone:
         name: Nombre
@@ -1306,7 +1306,7 @@ es:
           debate_votes: Votos en debates
           debates: Debates
           proposal_votes: Votos en propuestas
-          proposals: Propuestas ciudadanas
+          proposals: Propuestas
           budgets: Presupuestos abiertos
           budget_investments: Proyectos de gasto
           spending_proposals: Propuestas de inversión
@@ -1337,7 +1337,7 @@ es:
       polls:
         title: Estadísticas de votaciones
         all: Votaciones
-        web_participants: Participantes Web
+        web_participants: Participantes en Web
         total_participants: Participantes totales
         poll_questions: "Preguntas de votación: %{poll}"
         table:
@@ -1375,8 +1375,8 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        information: Información sobre los bloques de texto
-        about: "Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL."
+        information: Información sobre los bloques de contenido
+        about: "Puedes crear bloques de contenido HTML que se podrán incrustar en diferentes sitios de tu página."
         html_format: "Un bloque de contenido es un grupo de enlaces, y debe de tener el siguiente formato:"
         no_blocks: "No hay bloques de texto."
         create:
@@ -1442,7 +1442,7 @@ es:
         new:
           title: Página nueva
         page:
-          created_at: Creado
+          created_at: Creada
           status: Estado
           updated_at: Última actualización
           status_draft: Borrador
@@ -1456,7 +1456,7 @@ es:
           create_card: Crear tarjeta
           no_cards: No hay tarjetas.
           title: Título
-          description: Descripción detallada
+          description: Descripción
           link_text: Texto del enlace
           link_url: URL del enlace
           columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
@@ -1477,11 +1477,11 @@ es:
       no_cards: No hay tarjetas.
       cards:
         title: Título
-        description: Descripción detallada
+        description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
       feeds:
-        proposals: Propuestas ciudadanas
+        proposals: Propuestas
         debates: Debates
         processes: Procesos
       new:
