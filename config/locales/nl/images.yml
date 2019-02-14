@@ -18,4 +18,4 @@ nl:
     errors:
       messages:
         in_between: moet tussen %{min} en %{max} zijn
-        wrong_content_type: type bestand afbeelding %{content_type} komt niet overeen met een van de toegestane type bestanden %{accepted_content_types}
+        wrong_content_type: Type bestand %{content_type} komt niet overeen met een van de toegestane type bestanden %{accepted_content_types}
