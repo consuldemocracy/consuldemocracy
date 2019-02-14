@@ -342,6 +342,19 @@ gl:
         table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
+        table_percentage: "Progreso"
+      new:
+        creating: "Crear barra de progreso"
+      edit:
+        title:
+          primary: "Editar barra de progreso principal"
+          secondary: "Editar barra de progreso %{title}"
+      create:
+        notice: "A barra de progreso creouse correctamente!"
+      update:
+        notice: "A barra de progreso actualizouse correctamente"
+      delete:
+        notice: "A barra de progreso foi eliminada correctamente"
     comments:
       index:
         filter: Filtro
@@ -425,6 +438,8 @@ gl:
           homepage: Descrición
           homepage_description: Aquí podes explicar o contido do proceso
           homepage_enabled: Páxina principal habilitada
+          banner_title: Cores da cabeceira
+          color_help: Formato hexadecimal
         index:
           create: Novo proceso
           delete: Borrar
@@ -1435,13 +1450,22 @@ gl:
           title: Título
           slug: URL
           cards_title: Tarxetas
+          see_cards: Ver tarxetas
         cards:
+          cards_title: tarxetas
           create_card: Crear tarxeta
           no_cards: Non hai tarxetas.
           title: Título
           description: Descrición
           link_text: Texto da ligazón
           link_url: URL da ligazón
+          columns_help: "Largura da tarxeta en número de columnas. En pantallas móbiles sempre ten unha largura do 100%."
+          create:
+            notice: "Tarxeta creada correctamente!"
+          update:
+            notice: "Tarxeta actualizada correctamente"
+          destroy:
+            notice: "Tarxeta eliminada correctamente"
     homepage:
       title: Páxina principal
       description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
