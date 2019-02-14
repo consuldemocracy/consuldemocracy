@@ -67,7 +67,7 @@ zh-TW:
         title: 忘記密碼？
     sessions:
       new:
-        login_label: 電郵或用戶名
+        login_label: 電子郵件或用戶名
         password_label: 密碼
         remember_me: 記住我
         submit: 進入
