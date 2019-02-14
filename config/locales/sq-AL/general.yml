@@ -6,7 +6,7 @@ sq:
       email_on_comment_reply_label: Më njoftoni me email kur dikush përgjigjet në komentet e mia
       erase_account_link: Fshi llogarinë time
       finish_verification: Verifikime të plota
-      notifications: Njoftimet
+      notifications: Njoftime
       organization_name_label: Emri i organizatës
       organization_responsible_name_placeholder: Përfaqësuesi i organizatës / kolektive
       personal: Detaje personale
@@ -30,7 +30,7 @@ sq:
       user_permission_support_proposal: Përkrahni propozimet
       user_permission_title: Pjesëmarrje
       user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
-      user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
+      user_permission_verify_info: "* Vetëm për përdoruesit e regjistruar."
       user_permission_votes: Merrni pjesë në votimin përfundimtar
       username_label: Emer përdoruesi
       verified_account: Llogaria është verifikuar
@@ -122,8 +122,8 @@ sq:
         placeholder: Kërko debate...
         title: Kërko
       search_results_html:
-        one: " që përmbajnë termin <strong>'%{search_term}'</strong>"
-        other: " që përmbajnë termin <strong>'%{search_term}'</strong>"
+        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
+        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
       start_debate: Filloni një debat
       title: Debate
@@ -183,7 +183,7 @@ sq:
     budget/investment: Investim
     budget/heading: Titulli i buxhetit
     poll/shift: Ndryshim
-    poll/question/answer: Përgjigjet
+    poll/question/answer: Përgjigje
     user: Llogari
     verification/sms: telefoni
     signature_sheet: Nënshkrimi i fletëve
@@ -200,7 +200,7 @@ sq:
       ie: Ne kemi zbuluar se po shfletoni me Internet Explorer. Për një eksperiencë të zgjeruar, ne rekomandojmë përdorimin %{firefox} ose %{chrome}.
       ie_title: Kjo faqe interneti nuk është optimizuar për shfletuesin tuaj
     footer:
-      accessibility: Aksesueshmëria
+      accessibility: Dispnueshmësia
       conditions: Termat dhe kushtet e përdorimit
       consul: Consul Tirana
       consul_url: https://github.com/consul/consul
@@ -216,12 +216,12 @@ sq:
       administration_menu: Admin
       administration: Administrim
       available_locales: Gjuhët në dispozicion
-      collaborative_legislation: Legjislacion
+      collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
       external_link_blog: Blog
       locale: 'Gjuha:'
       logo: Logoja
-      management: Drejtuesit
+      management: Menaxhimi
       moderation: Moderim
       valuation: Vlerësim
       officing: Oficerët e votimit
@@ -233,28 +233,21 @@ sq:
       proposals: Propozime
       poll_questions: Votim
       budgets: Buxhetet  pjesëmarrës
-      spending_proposals: Propozimet e shpenzimeve
+      spending_proposals: Shpenzimet e propozimeve
       notification_item:
         new_notifications:
           one: Ju keni një njoftim të ri
           other: Ju keni %{count} njoftim të reja
-        notifications: Njoftime
+        notifications: Njoftimet
         no_notifications: "Ju nuk keni njoftime të reja"
     admin:
       watch_form_message: 'Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?'
-  legacy_legislation:
-    help:
-      alt: Zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
-      text: Për të komentuar këtë dokument duhet të %{sign_in} ose %{sign_up}. Pastaj zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
-      text_sign_in: Kycu
-      text_sign_up: Rregjistrohu
-      title: Si mund ta komentoj këtë dokument?
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
       mark_all_as_read: Shëno të gjitha si të lexuara
       read: Lexo
-      title: Njoftime
+      title: Njoftimet
       unread: Palexuar
     notification:
       action:
@@ -312,7 +305,7 @@ sq:
       retired_explanation_placeholder: Shpjegoni shkurtimisht pse mendoni se ky propozim nuk duhet të marrë më shumë mbështetje
       submit_button: Heq dorë nga propozimi
     retire_options:
-      duplicated: Dublohet
+      duplicated: Dublikuar
       started: Tashmë po zhvillohet
       unfeasible: Parealizueshme
       done: E bërë
@@ -332,7 +325,7 @@ sq:
       proposal_video_url_note: Ju mund të shtoni një link në YouTube ose Vimeo
       tag_category_label: "Kategoritë"
       tags_instructions: "Etiketoni këtë propozim. Ju mund të zgjidhni nga kategoritë e propozuara ose të shtoni tuajën"
-      tags_label: Etiketë
+      tags_label: Etiketimet
       tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
       map_location: "Vendndodhja në hartë"
       map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
@@ -341,7 +334,7 @@ sq:
     index:
       featured_proposals: Karakteristika
       filter_topic:
-        one: " me temë '%{topic}'"
+        one: " me tema '%{topic}'"
         other: " me tema '%{topic}'"
       orders:
         confidence_score: më të vlerësuarat
@@ -362,7 +355,7 @@ sq:
       retired_proposals_link: "Propozimet e vecuara nga autori"
       retired_links:
         all: Të gjithë
-        duplicated: Dublikuar
+        duplicated: Dublohet
         started: Duke u zhvilluar
         unfeasible: Parealizueshme
         done: E bërë
@@ -372,8 +365,8 @@ sq:
         placeholder: Kërko propozimet...
         title: Kërko
       search_results_html:
-        one: " që përmbajnë termin <strong>'%{search_term}'</strong>"
-        other: " që përmbajnë termin <strong>'%{search_term}'</strong>"
+        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
+        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
       select_order_long: 'Ju shikoni propozime sipas:'
       start_proposal: Krijo propozim
@@ -416,7 +409,7 @@ sq:
       supports:
         zero: Asnjë mbështetje
         one: 1  mbështetje
-        other: "1%{count} mbështetje"
+        other: "%{count} mbështetje"
       votes:
         zero: Asnjë votë
         one: 1 Votë
@@ -432,11 +425,12 @@ sq:
         zero: Nuk ka komente
         one: 1 koment
         other: "%{count} komente"
-      comments_tab: Komente
+      comments_tab: Komentet
       edit_proposal_link: Ndrysho
       flag: Ky propozim është shënuar si i papërshtatshëm nga disa përdorues.
       login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
-      notifications_tab: Njoftime
+      notifications_tab: Njoftimet
+      milestones_tab: Pikëarritje
       retired_warning: "Autori  konsideron që ky propozim nuk duhet të marrë më shumë mbështetje."
       retired_warning_link_to_explanation: Lexoni shpjegimin para se të votoni për të.
       retired: Propozimet e vecuara nga autori
@@ -450,6 +444,8 @@ sq:
     update:
       form:
         submit_button: Ruaj ndryshimet
+    share:
+      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
   polls:
     all: "Të gjithë"
     no_dates: "Asnjë datë e caktuar"
@@ -459,7 +455,7 @@ sq:
       filters:
         current: "Hapur"
         expired: "Ka skaduar"
-      title: "Sondazhet"
+      title: "Sondazh"
       participate_button: "Merrni pjesë në këtë sondazh"
       participate_button_expired: "Sondazhi përfundoi"
       no_geozone_restricted: "I gjithë qyteti"
@@ -482,7 +478,7 @@ sq:
       already_voted_in_web: "Ju keni marrë pjesë tashmë në këtë sondazh. Nëse votoni përsëri ajo do të mbishkruhet."
       back: Kthehu tek votimi
       cant_answer_not_logged_in: "Ju duhet %{signin} ose %{signup} për të marë pjesë ."
-      comments_tab: Komente
+      comments_tab: Komentet
       login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
       signin: Kycu
       signup: Rregjistrohu
@@ -511,7 +507,7 @@ sq:
         white: "VotaT e bardha"
         null_votes: "E pavlefshme"
       results:
-        title: "Pyetje"
+        title: "Pyetjet"
         most_voted_answer: "Përgjigja më e votuar:"
   poll_questions:
     create_question: "Krijo pyetje"
@@ -556,7 +552,7 @@ sq:
     author_info:
       author_deleted: Përdoruesi u fshi
     back: Kthehu pas
-    check: Zgjidh
+    check: Zgjedh
     check_all: Të gjithë
     check_none: Asnjë
     collective: Kolektiv
@@ -575,7 +571,7 @@ sq:
           notice_html: "Tani ju po  ndiqni këtë projekt investimi! </br> Ne do t'ju njoftojmë për ndryshimet që ndodhin në mënyrë që ju të jeni i azhornuar."
         destroy:
           notice_html: "Ti nuk e ndjek më këtë propozim qytetar! </br> Ju nuk do të merrni më njoftime lidhur me këtë projekt."
-    hide: Fshih
+    hide: Fsheh
     print:
       print_button: Printoni këtë informacion
     search: Kërko
@@ -646,15 +642,15 @@ sq:
       title: Titulli i Shpenzimeve të propozimeve
     index:
       title: Buxhetet  pjesëmarrës
-      unfeasible: Investimet e papranueshme
+      unfeasible: Projektet investuese të papërshtatshme 
       by_geozone: "Projektet e investimeve me qëllim: %{geozone}"
       search_form:
         button: Kërko
         placeholder: Projekte investimi...
         title: Kërko
       search_results:
-        one: "që përmbajnë termin '%{search_term}'"
-        other: "që përmbajnë termin '%{search_term}'"
+        one: "që përmbajnë termin %{search_term}"
+        other: "që përmbajnë termin %{search_term}"
       sidebar:
         geozones: Fusha e veprimit
         feasibility: Fizibiliteti
@@ -680,13 +676,13 @@ sq:
       supports:
         zero: Asnjë mbështetje
         one: 1  mbështetje
-        other: "%{count} mbështetje"
+        other: "1%{count} mbështetje"
   stats:
     index:
       visits: Vizitat
-      debates: Debatet
+      debates: Debate
       proposals: Propozime
-      comments: Komente
+      comments: Komentet
       proposal_votes: Voto propozimet
       debate_votes: Voto debatet
       comment_votes: Voto komentet
@@ -720,7 +716,7 @@ sq:
       proposals: Propozime
       debates: Debate
       budget_investments: Investime buxhetor
-      comments: Komente
+      comments: Komentet
       actions: Veprimet
       filters:
         comments:
@@ -784,7 +780,7 @@ sq:
       see_all_debates: Shihni të gjitha debated
       see_all_proposals: Shiko të gjitha propozimet
       see_all_processes: Shiko të gjitha proceset
-      process_label: Proçeset
+      process_label: Proçes
       see_process: Shihni procesin
     cards:
       title: Karakteristika
@@ -813,7 +809,7 @@ sq:
       user_permission_proposal: Krijo propozime të reja
       user_permission_support_proposal: Përkrahni propozimet
       user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
-      user_permission_verify_info: "* Vetëm për përdoruesit e regjistruar."
+      user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
       user_permission_verify_my_account: Verifikoni llogarinë time
       user_permission_votes: Merrni pjesë në votimin përfundimtar
   invisible_captcha:
@@ -833,7 +829,7 @@ sq:
     score_positive: "Po"
     score_negative: "Jo"
     content_title:
-      proposal: "Propozim"
+      proposal: "Propozime"
       debate: "Debate"
       budget_investment: "Investim buxhetor"
   admin/widget:
