@@ -28,11 +28,25 @@ feature 'Admin legislation processes' do
 
   context "Index" do
 
-    scenario 'Displaying legislation processes' do
-      process = create(:legislation_process)
-      visit admin_legislation_processes_path(filter: 'all')
+    scenario "Displaying legislation processes" do
+      process_1 = create(:legislation_process, title: "Process open")
+      process_2 = create(:legislation_process, title: "Process for the future",
+                                               start_date: Date.current + 5.days)
+      process_3 = create(:legislation_process, title: "Process closed",
+                                               start_date: Date.current - 10.days,
+                                               end_date: Date.current - 6.days)
 
-      expect(page).to have_content(process.title)
+      visit admin_legislation_processes_path(filter: "active")
+
+      expect(page).to have_content(process_1.title)
+      expect(page).to have_content(process_2.title)
+      expect(page).not_to have_content(process_3.title)
+
+      visit admin_legislation_processes_path(filter: "all")
+
+      expect(page).to have_content(process_1.title)
+      expect(page).to have_content(process_2.title)
+      expect(page).to have_content(process_3.title)
     end
 
     scenario "Processes are sorted by descending start date" do

@@ -1,7 +1,7 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
   include Translatable
 
-  has_filters %w[open all], only: :index
+  has_filters %w[active all], only: :index
 
   load_and_authorize_resource :process, class: "Legislation::Process"
 
