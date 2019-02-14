@@ -77,7 +77,7 @@ es:
   debates:
     create:
       form:
-        submit_button: Empezar un debate
+        submit_button: Empieza un debate
     debate:
       comments:
         zero: Sin comentarios
@@ -99,15 +99,15 @@ es:
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
-      featured_debates: Destacadas
+      featured_debates: Destacar
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
       orders:
-        confidence_score: Más apoyadas
-        created_at: Nuevas
-        hot_score: Más activas hoy
-        most_commented: Más comentadas
+        confidence_score: Mejor valorados
+        created_at: Nuevos
+        hot_score: Más activos
+        most_commented: Más comentados
         relevance: Más relevantes
         recommendations: Recomendaciones
       recommendations:
@@ -123,9 +123,9 @@ es:
         title: Buscar
       search_results_html:
         one: " que contiene <strong>'%{search_term}'</strong>"
-        other: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
-      start_debate: Empezar un debate
+      start_debate: Empieza un debate
       title: Debates
       section_header:
         icon_alt: Icono de Debates
@@ -155,7 +155,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       comments_title: Comentarios
-      edit_debate_link: Editar propuesta
+      edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
@@ -165,13 +165,13 @@ es:
         submit_button: Guardar cambios
   errors:
     messages:
-      user_not_found: No se encontró el usuario
+      user_not_found: Usuario no encontrado
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
-    debate: Debate
+    debate: el debate
     direct_message: el mensaje privado
     error: error
     errors: errores
@@ -180,11 +180,11 @@ es:
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
-    budget/investment: la propuesta de inversión
+    budget/investment: el proyecto de gasto
     budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
     poll/shift: el turno
-    poll/question/answer: Respuesta
+    poll/question/answer: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -214,8 +214,8 @@ es:
       participation_title: Participación
       privacy: Política de privacidad
     header:
-      administration_menu: Administrar
-      administration: Administrar
+      administration_menu: Admin
+      administration: Administración
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
       debates: Debates
@@ -231,7 +231,7 @@ es:
       my_activity_link: Mi actividad
       open: abierto
       open_gov: Gobierno %{open}
-      proposals: Propuestas ciudadanas
+      proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
       spending_proposals: Propuestas de inversión
@@ -267,7 +267,7 @@ es:
   map:
     title: "Distritos"
     proposal_for_district: "Crea una propuesta para tu distrito"
-    select_district: Ámbitos de actuación
+    select_district: Ámbito de actuación
     start_proposal: Crea una propuesta
   omniauth:
     facebook:
@@ -306,13 +306,13 @@ es:
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
     retire_options:
-      duplicated: Duplicadas
+      duplicated: Duplicada
       started: En ejecución
-      unfeasible: No viables
-      done: Realizadas
-      other: Otras
+      unfeasible: Inviable
+      done: Realizada
+      other: Otra
     form:
-      geozone: Ámbitos de actuación
+      geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
@@ -367,7 +367,7 @@ es:
         title: Buscar
       search_results_html:
         one: " que contiene <strong>'%{search_term}'</strong>"
-        other: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       select_order_long: 'Estas viendo las propuestas'
       start_proposal: Crea una propuesta
@@ -636,7 +636,7 @@ es:
       association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
-      geozone: Ámbitos de actuación
+      geozone: Ámbito de actuación
       submit_buttons:
         create: Crear
         new: Crear
@@ -651,7 +651,7 @@ es:
         title: Buscar
       search_results:
         one: " que contiene '%{search_term}'"
-        other: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
       sidebar:
         geozones: Ámbitos de actuación
         feasibility: Viabilidad
@@ -835,7 +835,7 @@ es:
       budget_investment: "Proyecto de gasto"
   admin/widget:
     header:
-      title: Administrar
+      title: Administración
   annotator:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
