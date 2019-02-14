@@ -25,12 +25,12 @@ gl:
         title: "%{poll} - Engadir resultados"
         not_allowed: "Non tes permisos para inserir resultados"
         booth: "Urna"
-        date: "Día"
+        date: "Data"
         select_booth: "Elixe urna"
-        ballots_white: "Papeletas totalmente en blanco"
+        ballots_white: "Papeletas totalmente en branco"
         ballots_null: "Papeletas nulas"
-        ballots_total: "Papeletas totales"
-        submit: "Guardar"
+        ballots_total: "Papeletas totais"
+        submit: "Gardar"
         results_list: "Os teus resultados"
         see_results: "Ver resultados"
       index:
@@ -38,20 +38,20 @@ gl:
         results: Resultados
         table_answer: Resposta
         table_votes: Votos
-        table_whites: "Papeletas totalmente en branco"
+        table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
         table_total: "Papeletas totais"
     residence:
       flash:
         create: "Documento verificado co padrón"
-        not_allowed: "Hoxe non tes quenda de presidente de mesa"
+        not_allowed: "Non tes quenda de presidente de mesa"
       new:
         title: Validar documento
-        document_number: "Número de documento (con letra)"
+        document_number: "Número de documento (incluída letra)"
         submit: Validar documento
         error_verifying_census: "O Servizo de padrón non puido verificar este documento."
         form_errors: evitaron verificar este documento
-        no_assignments: "Non tes quenda de presidente de mesa"
+        no_assignments: "Hoxe non tes quenda de presidente de mesa"
     voters:
       new:
         title: Votacións
