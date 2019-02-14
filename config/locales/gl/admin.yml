@@ -333,7 +333,12 @@ gl:
       delete:
         notice: O estado do investimento foi eliminado correctamente
     progress_bars:
+      manage: "Xestionar barras de progreso"
       index:
+        title: "Barras de progreso"
+        no_progress_bars: "Non hai barras de progreso"
+        new_progress_bar: "Crear nova barra de progreso"
+        primary: "Barra de progreso principal"
         table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
