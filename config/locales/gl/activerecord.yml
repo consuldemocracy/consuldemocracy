@@ -16,6 +16,9 @@ gl:
       milestone/status:
         one: "Estado do investimento"
         other: "Estado dos investimentos"
+      progress_bar:
+        one: "Barra de progreso"
+        other: "Barras de progreso"
       comment:
         one: "Comentar"
         other: "Comentarios"
@@ -139,6 +142,10 @@ gl:
       progress_bar:
         kind: "Tipo"
         title: "Título"
+        percentage: "Progreso"
+      progress_bar/kind:
+        primary: "Principal"
+        secondary: "Secundaria"
       budget/heading:
         name: "Nome da partida"
         price: "Custo"
@@ -237,6 +244,8 @@ gl:
         allegations_start_date: Data en que comezan as alegacións
         allegations_end_date: Data en que rematan as alegacións
         result_publication_date: Data de publicación do resultado final
+        background_color: Cor de fondo
+        font_color: Cor da letra
       legislation/process/translation:
         title: Título do proceso
         summary: Resumo
@@ -294,6 +303,7 @@ gl:
         description: Descrición
         link_text: Texto da ligazón
         link_url: URL da ligazón
+        columns: Número de columnas
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título
