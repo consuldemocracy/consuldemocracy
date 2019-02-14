@@ -10,27 +10,28 @@ gl:
       index:
         title: Orzamentos participativos
         filters:
-          current: Abertos
+          current: Abertas
           finished: Rematados
         table_name: Nome
         table_phase: Fase
         table_assigned_investments_valuation_open: Propostas de investimento asignadas coa avaliación aberta
         table_actions: Accións
         evaluate: Avaliar
+        no_budgets: "Non hai orzamentos"
     budget_investments:
       index:
         headings_filter_all: Todas as partidas
         filters:
           valuation_open: Abertas
-          valuating: Baixo avaliación
-          valuation_finished: Avaliación realizada
+          valuating: En avaliación
+          valuation_finished: Avaliación rematada
         assigned_to: "Asignada a %{valuator}"
-        title: Propostas de investimento
+        title: Proxectos de investimento
         edit: Editar informe
         valuators_assigned:
           one: Avaliador asignado
           other: "%{count} avaliadores asignados"
-        no_valuators_assigned: Sen avaliador
+        no_valuators_assigned: Sen avaliador asignado
         table_id: ID
         table_title: Título
         table_heading_name: Nome da partida
@@ -38,40 +39,40 @@ gl:
         no_investments: "Non hai proxectos de investimento."
       show:
         back: Volver
-        title: Proxectos de investimento
-        info: Información de autoría
+        title: Proposta de investimento
+        info: Datos de envío
         by: Enviada por
         sent: Data de creación
-        heading: Partida
+        heading: Partida do orzamento
         dossier: Informe
         edit_dossier: Editar informe
         price: Custo
-        price_first_year: Investimento durante o primeiro ano
+        price_first_year: Custo no primeiro ano
         currency: "€"
         feasibility: Viabilidade
         feasible: Viable
-        unfeasible: Inviable
+        unfeasible: Non viables
         undefined: Sen definir
-        valuation_finished: Informe rematado
-        duration: Prazo de execución
+        valuation_finished: Avaliación rematada
+        duration: Prazo de execución <small>(opcional, dato non público)</small>
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Avaliadores asignados
       edit:
         dossier: Informe
-        price_html: "Investimento (%{currency})"
+        price_html: "Custo (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Investimento durante o primeiro ano (%{currency})<small>(opcional, dato non público)</small>"
         price_explanation_html: Informe de custo
         feasibility: Viabilidade
         feasible: Viable
         unfeasible: Inviable
-        undefined_feasible: Pendente
-        feasible_explanation_html: Informe de inviabilidade
-        valuation_finished: Informe rematado
+        undefined_feasible: Pendentes
+        feasible_explanation_html: Informe de inviabilidade <small>(en caso de que o sexa, dato público)</small>
+        valuation_finished: Avaliación rematada
         valuation_finished_alert: "Tes a certeza de que queres marcar este informe como completo? Se o fas, non se pode desfacer esta opción."
         not_feasible_alert: "Enviaráselle un correo inmediatamente á autoría do proxecto co informe de inviabilidade."
-        duration_html: Prazo de arteixo
-        save: Gardar cambios
+        duration_html: Prazo de execución <small>(opcional, dato non público)</small>
+        save: Gardar so cambios
       notice:
         valuate: "Informe actualizado"
       valuation_comments: Comentarios de validación
@@ -83,8 +84,8 @@ gl:
           valuation_open: Abertas
           valuating: En avaliación
           valuation_finished: Avaliación rematada
-        title: Proxectos de investimento para orzamentos participativos
-        edit: Editar
+        title: Propostas de investimento para os orzamentos participativos
+        edit: Editar proposta
       show:
         back: Volver
         heading: Proposta de investimento
@@ -95,17 +96,17 @@ gl:
         geozone: Ámbito
         dossier: Informe
         edit_dossier: Editar informe
-        price: Investimento
+        price: Custo
         price_first_year: Investimento durante o primeiro ano
         currency: "€"
         feasibility: Viabilidade
         feasible: Viable
-        not_feasible: Non víable
+        not_feasible: Inviable
         undefined: Sen definir
-        valuation_finished: Informe de validación
-        time_scope: Prazo de execución
-        internal_comments: Comentarios internos
-        responsibles: Respondables
+        valuation_finished: Avaliación rematada
+        time_scope: Prazo de execución <small>(opcional, dato non público)</small>
+        internal_comments: Comentarios e observacións <small>(para responsables internos, dato non público)</small>
+        responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Avaliadores asignados
       edit:
@@ -117,11 +118,11 @@ gl:
         feasibility: Viabilidade
         feasible: Viable
         not_feasible: Inviable
-        undefined_feasible: Pendente
+        undefined_feasible: Pendentes
         feasible_explanation_html: Informe de inviabilidade
-        valuation_finished: Informe rematado
-        time_scope_html: Prazo de execución
-        internal_comments_html: Comentarios internos
-        save: Gardar cambios
+        valuation_finished: Avaliación rematada
+        time_scope_html: Prazo de execución <small>(opcional, dato non público)</small>
+        internal_comments_html: Comentarios e observacións <small>(para responsables internos, dato non público)</small>
+        save: Gardar so cambios
       notice:
         valuate: "Informe actualizado"

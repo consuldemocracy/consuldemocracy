@@ -1,1 +1,4 @@
 ru:
+  social_share_button:
+    share_to: "Поделиться с %{name}"
+    email: "Электронный адрес"

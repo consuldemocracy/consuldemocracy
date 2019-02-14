@@ -23,7 +23,7 @@ zh-CN:
         error_wrong_booth: "投票亭错误。结果未保存。"
       new:
         title: "%{poll}－ 添加结果"
-        not_allowed: "您被允许为此投票添加结果"
+        not_allowed: "您未被允许为此投票添加结果"
         booth: "投票亭"
         date: "日期"
         select_booth: "选择投票亭"
@@ -47,7 +47,7 @@ zh-CN:
         not_allowed: "您今天没有当值轮班"
       new:
         title: 验证文档
-        document_number: "文档编码（包含字母）"
+        document_number: "文档编号(包括信件)"
         submit: 验证文档
         error_verifying_census: "人口普查无法核实此文档。"
         form_errors: 阻止了此文档的核实

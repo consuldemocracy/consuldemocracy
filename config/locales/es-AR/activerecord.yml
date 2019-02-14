@@ -5,8 +5,8 @@ es-AR:
         one: "actividad"
         other: "actividades"
       budget/investment:
-        one: "Proyecto de inversión"
-        other: "Proyectos de inversión"
+        one: "la propuesta de inversión"
+        other: "Propuestas de inversión"
       milestone:
         one: "hito"
         other: "hitos"
@@ -14,13 +14,16 @@ es-AR:
         one: "Estado de Inversiones"
         other: "Estado de Inversiones"
       comment:
-        one: "Comentario"
+        one: "Comentar"
         other: "Comentarios"
+      debate:
+        one: "el debate"
+        other: "Debates"
       tag:
         one: "Tema"
         other: "Temas"
       user:
-        one: "Usuario"
+        one: "Usuarios"
         other: "Usuarios"
       moderator:
         one: "Moderador"
@@ -28,14 +31,17 @@ es-AR:
       administrator:
         one: "Administrador"
         other: "Administradores"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
       valuator_group:
         one: "Grupo Valorador"
-        other: "Grupos Valoradores"
+        other: "Grupos evaluadores"
       manager:
         one: "Gestor"
         other: "Gestores"
       vote:
-        one: "Voto"
+        one: "Votar"
         other: "Votos"
       organization:
         one: "Organización"
@@ -50,37 +56,37 @@ es-AR:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
       spending_proposal:
-        one: "Proyecto de Inversión"
-        other: "Proyectos de Inversiónes"
+        one: "Propuesta de inversión"
+        other: "Propuestas de inversión"
       site_customization/page:
         one: Página
         other: Páginas
       site_customization/image:
         one: Imagen
-        other: Imágenes
+        other: Personalizar imágenes
       site_customization/content_block:
         one: Bloque
-        other: Bloques
+        other: Personalizar bloques
       legislation/process:
         one: "Proceso"
         other: "Procesos"
+      legislation/proposal:
+        one: "la propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
         one: "Versión borrador"
-        other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
+        other: "Versiones del borrador"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
       legislation/question_options:
         one: "Opción de respuesta cerrada"
-        other: "Opciones de respuesta cerrada"
+        other: "Opciones de respuesta"
       legislation/answers:
         one: "Respuesta"
         other: "Respuestas"
       documents:
-        one: "Documento"
+        one: "el documento"
         other: "Documentos"
       images:
         one: "Imagen"
@@ -104,9 +110,9 @@ es-AR:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        heading_id: "Partida presupuestaria"
+        heading_id: "Partida"
         title: "Título"
-        description: "Descripción"
+        description: "Descripción detallada"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
         location: "Ubicación (opcional)"
@@ -121,12 +127,15 @@ es-AR:
       milestone/status:
         name: "Nombre"
         description: "Descripción (opcional)"
+      progress_bar:
+        kind: "Tipo"
+        title: "Título"
       budget/heading:
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Coste"
         population: "Población"
       comment:
-        body: "Comentario"
+        body: "Comentar"
         user: "Usuario"
       debate:
         author: "Autor"
@@ -137,26 +146,26 @@ es-AR:
         author: "Autor"
         title: "Título"
         question: "Pregunta"
-        description: "Descripción"
+        description: "Descripción detallada"
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
-        email: "Correo electrónico"
+        email: "Correo"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
-        password: "Contraseña"
+        password: "Contraseña que utilizarás para acceder a este sitio web"
         current_password: "Contraseña actual"
         phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel del cargo"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Nombre de organización"
+        name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
       spending_proposal:
         administrator_id: "Administrador"
         association_name: "Nombre de la asociación"
-        description: "Descripción"
+        description: "Descripción detallada"
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
@@ -166,12 +175,18 @@ es-AR:
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
-        description: "Descripción"
+        description: "Descripción detallada"
+      poll/translation:
+        name: "Nombre"
+        summary: "Resumen"
+        description: "Descripción detallada"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
-        description: "Descripción"
+        description: "Descripción detallada"
         external_url: "Enlace a documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
@@ -183,10 +198,14 @@ es-AR:
         slug: Ficha
         status: Estado
         title: Título
-        updated_at: última actualización
+        updated_at: Última actualización
         more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contenido
       site_customization/image:
         name: Nombre
         image: Imagen
@@ -196,30 +215,40 @@ es-AR:
         body: Contenido
       legislation/process:
         title: Título del proceso
-        summary: Sumario
-        description: En qué consiste
+        summary: Resumen
+        description: Descripción detallada
         additional_info: Información adicional
-        start_date: Fecha de inicio del proceso
-        end_date: Fecha de fin del proceso
+        start_date: Fecha de comienzo
+        end_date: Fecha de finalización
         debate_start_date: Fecha de inicio del debate
         debate_end_date: Fecha de fin del debate
         draft_publication_date: Fecha de publicación del borrador
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
         result_publication_date: Fecha de publicación del resultado final
+      legislation/process/translation:
+        title: Título del proceso
+        summary: Resumen
+        description: Descripción detallada
+        additional_info: Información adicional
+        milestones_summary: Resumen
       legislation/draft_version:
         title: Título de la version
         body: Texto
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
-        question_options: Respuestas
+        question_options: Opciones
       legislation/question_option:
         value: Valor
       legislation/annotation:
-        text: Comentario
+        text: Comentar
       document:
         title: Título
         attachment: Archivo adjunto
@@ -228,21 +257,37 @@ es-AR:
         attachment: Archivo adjunto
       poll/question/answer:
         title: Respuesta
-        description: Descripción
+        description: Descripción detallada
+      poll/question/answer/translation:
+        title: Respuesta
+        description: Descripción detallada
       poll/question/answer/video:
         title: Título
-        url: Vídeo externo
+        url: Video externo
       newsletter:
         segment_recipient: Destinatarios
         subject: Tema
         from: Desde
-        body: Contenido de correo
+        body: Contenido del correo
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Enlace
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
       widget/card:
         label: Etiqueta (opcional)
         title: Título
-        description: Descripción
-        link_text: Texto del enlace
+        description: Descripción detallada
+        link_text: Enlace de texto
         link_url: Enlace URL
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción detallada
+        link_text: Enlace de texto
       widget/feed:
         limit: Número de items
     errors:
@@ -265,6 +310,10 @@ es-AR:
               min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
               min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
         newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "El destinatario es inválido"
+        admin_notification:
           attributes:
             segment_recipient:
               invalid: "El destinatario es inválido"

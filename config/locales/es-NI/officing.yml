@@ -7,7 +7,7 @@ es-NI:
         title: Presidir mesa de votaciones
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
-      voters: Validar documento y votar
+      voters: Validar documento
       total_recounts: Recuento total y escrutinio
     polls:
       final:
@@ -24,7 +24,7 @@ es-NI:
         title: "%{poll} - Añadir resultados"
         not_allowed: "No tienes permiso para introducir resultados"
         booth: "Urna"
-        date: "Día"
+        date: "Fecha"
         select_booth: "Elige urna"
         ballots_white: "Papeletas totalmente en blanco"
         ballots_null: "Papeletas nulas"
@@ -45,9 +45,9 @@ es-NI:
         create: "Documento verificado con el Padrón"
         not_allowed: "Hoy no tienes turno de presidente de mesa"
       new:
-        title: Validar documento
-        document_number: "Número de documento (incluida letra)"
-        submit: Validar documento
+        title: Validar documento y votar
+        document_number: "Numero de documento (incluida letra)"
+        submit: Validar documento y votar
         error_verifying_census: "El Padrón no pudo verificar este documento."
         form_errors: evitaron verificar este documento
         no_assignments: "Hoy no tienes turno de presidente de mesa"

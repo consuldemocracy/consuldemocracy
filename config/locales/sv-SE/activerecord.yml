@@ -17,10 +17,10 @@ sv:
         one: "Budgetförslagets status"
         other: "Budgetförslagens status"
       comment:
-        one: "Kommentar"
+        one: "Kommentera"
         other: "Kommentarer"
       debate:
-        one: "Debatt"
+        one: "Debattera"
         other: "Debatter"
       tag:
         one: "Tagg"
@@ -47,7 +47,7 @@ sv:
         one: "Nyhetsbrev"
         other: "Nyhetsbrev"
       vote:
-        one: "Röst"
+        one: "Rösta"
         other: "Röster"
       organization:
         one: "Organisation"
@@ -76,12 +76,12 @@ sv:
       legislation/process:
         one: "Process"
         other: "Processer"
+      legislation/proposal:
+        one: "Förslag"
+        other: "Förslag"
       legislation/draft_versions:
         one: "Utkastversion"
-        other: "Utkastversioner"
-      legislation/draft_texts:
-        one: "Utkast"
-        other: "Utkast"
+        other: "Versioner av utkast"
       legislation/questions:
         one: "Fråga"
         other: "Frågor"
@@ -104,8 +104,8 @@ sv:
         one: "Omröstning"
         other: "Omröstningar"
       proposal_notification:
-        one: "Förslagsavisering"
-        other: "Förslagsaviseringar"
+        one: "Avisering om förslag"
+        other: "Aviseringar om förslag"
     attributes:
       budget:
         name: "Namn"
@@ -135,27 +135,30 @@ sv:
         publication_date: "Publiceringsdatum"
       milestone/status:
         name: "Namn"
-        description: "Beskrivning (frivilligt fält)"
+        description: "Beskrivning (valfritt)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
       budget/heading:
         name: "Område"
         price: "Kostnad"
         population: "Befolkning"
       comment:
-        body: "Kommentar"
+        body: "Kommentera"
         user: "Användare"
       debate:
-        author: "Debattör"
+        author: "Skribent"
         description: "Inlägg"
         terms_of_service: "Användarvillkor"
         title: "Titel"
       proposal:
-        author: "Förslagslämnare"
+        author: "Skribent"
         title: "Titel"
         question: "Fråga"
         description: "Beskrivning"
         terms_of_service: "Användarvillkor"
       user:
-        login: "E-post eller användarnamn"
+        login: "E-postadress eller användarnamn"
         email: "E-post"
         username: "Användarnamn"
         password_confirmation: "Bekräfta lösenord"
@@ -166,7 +169,7 @@ sv:
         official_level: "Tjänstepersonnivå"
         redeemable_code: "Mottagen bekräftelsekod"
       organization:
-        name: "Organisationens namn"
+        name: "Organisationsnamn"
         responsible_name: "Representant för gruppen"
       spending_proposal:
         administrator_id: "Administratör"
@@ -182,26 +185,36 @@ sv:
         geozone_restricted: "Begränsat till område"
         summary: "Sammanfattning"
         description: "Beskrivning"
+      poll/translation:
+        name: "Namn"
+        summary: "Sammanfattning"
+        description: "Beskrivning"
       poll/question:
         title: "Fråga"
         summary: "Sammanfattning"
         description: "Beskrivning"
         external_url: "Länk till ytterligare dokumentation"
+      poll/question/translation:
+        title: "Fråga"
       signature_sheet:
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
         document_numbers: "Dokumentnummer"
       site_customization/page:
         content: Innehåll
-        created_at: Skapad den
+        created_at: Skapad
         subtitle: Underrubrik
         slug: URL
         status: Status
         title: Titel
-        updated_at: Uppdaterad den
+        updated_at: Uppdaterad
         more_info_flag: Visa i hjälpsidor
         print_content_flag: Skriv ut innehåll
         locale: Språk
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Underrubrik
+        content: Innehåll
       site_customization/image:
         name: Namn
         image: Bild
@@ -222,19 +235,29 @@ sv:
         allegations_start_date: Startdatum för att kommentera utkast
         allegations_end_date: Slutdatum för att kommentera utkast
         result_publication_date: Publiceringsdatum för resultat
+      legislation/process/translation:
+        title: Processens titel
+        summary: Sammanfattning
+        description: Beskrivning
+        additional_info: Ytterligare information
+        milestones_summary: Sammanfattning
       legislation/draft_version:
         title: Titel på versionen
         body: Text
         changelog: Ändringar
         status: Status
-        final_version: Slutgiltig version
+        final_version: Slutversion
+      legislation/draft_version/translation:
+        title: Titel på versionen
+        body: Text
+        changelog: Ändringar
       legislation/question:
         title: Titel
         question_options: Alternativ
       legislation/question_option:
         value: Kostnad
       legislation/annotation:
-        text: Kommentar
+        text: Kommentera
       document:
         title: Titel
         attachment: Bilaga
@@ -242,6 +265,9 @@ sv:
         title: Titel
         attachment: Bilaga
       poll/question/answer:
+        title: Svar
+        description: Beskrivning
+      poll/question/answer/translation:
         title: Svar
         description: Beskrivning
       poll/question/answer/video:
@@ -252,12 +278,25 @@ sv:
         subject: Ämne
         from: Från
         body: E-postmeddelande
+      admin_notification:
+        segment_recipient: Mottagare
+        title: Titel
+        link: Länk
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
       widget/card:
         label: Etikett (frivilligt fält)
         title: Titel
         description: Beskrivning
         link_text: Länktext
         link_url: Länk-URL
+      widget/card/translation:
+        label: Etikett (frivilligt fält)
+        title: Titel
+        description: Beskrivning
+        link_text: Länktext
       widget/feed:
         limit: Antal objekt
     errors:

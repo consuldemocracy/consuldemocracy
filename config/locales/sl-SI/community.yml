@@ -1,1 +1,4 @@
 sl:
+  topics:
+    show:
+      login_to_comment: Da lahko komentiraš, moraš biti %{signin} ali %{signup}.

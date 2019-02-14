@@ -33,7 +33,17 @@ it:
     verification_offices_url: URL dell'ufficio che verifica
     proposal_improvement_path: Informazioni su come migliorare le proposte
     feature:
+      budgets: "Bilancio partecipativo"
       twitter_login: "Accesso con Twitter"
       facebook_login: "Accesso con Facebook"
       google_login: "Accesso con Google"
+      proposals: "Proposte"
+      debates: "Dibattiti"
+      polls: "Votazioni"
+      polls_description: "Le votazioni cittadine sono un meccanismo partecipativo attraverso il quale i cittadini con diritto di voto possono prendere decisioni in maniera diretta"
+      signature_sheets: "Fogli firma"
       legislation: "Legislazione"
+      spending_proposals: "Proposte di spesa"
+      user:
+        recommendations: "Raccomandazioni"
+      help_page: "Guida"

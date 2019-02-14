@@ -1,1 +1,69 @@
 ar:
+  mailers:
+    no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
+    comment:
+      hi: مرحبا
+      new_comment_by_html: هناك تعليق جديد من <b>%{commenter}</b>
+      title: تعليق جديد
+    config:
+      manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
+    email_verification:
+      click_here_to_verify: هذا الرابط
+      instructions_html: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
+      subject: تأكيد بريدك الإلكتروني
+      thanks: شكرا جزيلا.
+      title: أكد حسابك باستخدام الرابط التالي
+    reply:
+      hi: مرحبا
+      new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
+      title: اجابة جديدة على تعليقك
+    unfeasible_spending_proposal:
+      hi: "عزيزي المستخدم،"
+      new_href: "مشروع استثماري جديد"
+      sincerely: "مع خالص التقدير،"
+      sorry: "عذراً للإزعاج وشكر على مشاركتكم."
+      subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
+    proposal_notification_digest:
+      share: مشاركة مقترح
+      comment: تعليق على مقترح
+      unsubscribe_account: حسابي
+    direct_message_for_receiver:
+      subject: "لقد تلقيت رسالة خاصة جديدة"
+      unsubscribe_account: حسابي
+    direct_message_for_sender:
+      subject: "لقد قمت بإرسال رسالة خاصة جديدة"
+      title_html: "وقد أرسلت رسالة خاصة جديدة إلى <strong>%{receiver}</strong> مع المحتوى:"
+    user_invite:
+      ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
+      text: "شكراً لك لتقديم طلب للإنضمام إلى %{org} ، خلال ثواني ستكون قادر على المشاركة ، الرجاء ملاً النموذج التالي:"
+      thanks: "شكرا جزيلا."
+      title: "مرحباً في %{org}"
+      button: إكمال التسجيل
+      subject: "دعوة إلى %{org_name}"
+    budget_investment_created:
+      subject: "شكرا لك لانشاء استثمار!"
+      title: "شكرا لك لانشاء استثمار!"
+      intro_html: "مرحبا <strong>%{author}</strong>،"
+      text_html: "شكرا لك لإنشاء استثمارك <strong>%{investment}</strong> من اجل الميزانيات المشتركة <strong>%{budget}</strong>."
+      follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
+      follow_link: "الميزانية التشاركية"
+      sincerely: "مع خالص التقدير،"
+      share: "شارك مشروعك"
+    budget_investment_unfeasible:
+      hi: "عزيزي المستخدم،"
+      new_href: "مشروع استثماري جديد"
+      sincerely: "مع خالص التقدير،"
+      sorry: "عذراً للإزعاج وشكر على مشاركتكم."
+      subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
+    budget_investment_selected:
+      subject: "مشروعك %{code} تم اختياره"
+      hi: "عزيزي المستخدم،"
+      share: "ابدأ باستقبال الأصوات ، مشاركة مشروعك على الشبكات الاجتماعية ، المشاركة ضرورية ليتحقق مشروعك على أرض الواقع."
+      share_button: "شارك مشروعك"
+      thanks: "شكراً مرة أخرى على المشاركة."
+      sincerely: "مع خالص التقدير"
+    budget_investment_unselected:
+      subject: "لم يتم اختيار المشروع %{code} الخاص بك"
+      hi: "عزيزي المستخدم،"
+      thanks: "شكراً مرة أخرى على المشاركة."
+      sincerely: "مع خالص التقدير"

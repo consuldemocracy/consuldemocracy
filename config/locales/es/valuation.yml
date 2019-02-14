@@ -73,7 +73,7 @@ es:
         valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
         not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
-        save: Guardar Cambios
+        save: Guardar cambios
       notice:
         valuate: "Dossier actualizado"
       valuation_comments: Comentarios de evaluación
@@ -94,7 +94,7 @@ es:
         association_name: Asociación
         by: Enviada por
         sent: Fecha de creación
-        geozone: Ámbito
+        geozone: Ámbito de actuación
         dossier: Informe
         edit_dossier: Editar informe
         price: Coste

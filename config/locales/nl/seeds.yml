@@ -35,7 +35,7 @@ nl:
       currency: '€'
       groups:
         all_city: Hele gemeente
-        districts: Gebieden
+        districts: Regio's
       valuator_groups:
         culture_and_sports: Cultuur & sport
         gender_and_diversity: Geslacht & diversiteitsbeleid

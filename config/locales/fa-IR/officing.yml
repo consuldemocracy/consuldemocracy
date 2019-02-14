@@ -7,7 +7,7 @@ fa:
         title: نظرسنجی
         info: در اینجا میتوانید اسناد کاربر را تأیید کنید و نتایج رای گیری را ذخیره کنید.
     menu:
-      voters: اعتبار سند
+      voters: مدارک معتبر
       total_recounts: مجموع بازدیدها و نتایج
     polls:
       final:
@@ -45,9 +45,9 @@ fa:
         create: "سند با سرشماری تأیید شد"
         not_allowed: "شما امروز شیفت ندارید"
       new:
-        title: مدارک معتبر
+        title: اعتبار سند
         document_number: "شماره سند ( حروف هم شامل میشوند)"
-        submit: مدارک معتبر
+        submit: اعتبار سند
         error_verifying_census: "سرشماری قادر به تایید این سند نیست."
         form_errors: مانع تایید این سند شد
         no_assignments: "شما امروز شیفت ندارید"

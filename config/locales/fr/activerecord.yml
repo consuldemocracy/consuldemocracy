@@ -6,10 +6,10 @@ fr:
         other: "activités"
       budget:
         one: "Budget participatif"
-        other: "Budgets participatifs"
+        other: "Budgets"
       budget/investment:
-        one: "Projet d'investissement"
-        other: "Projets d'investissement"
+        one: "Investissement"
+        other: "Propositions d'investissement"
       milestone:
         one: "jalon"
         other: "jalons"
@@ -24,9 +24,9 @@ fr:
         other: "Débats"
       tag:
         one: "Étiquette"
-        other: "Étiquettes"
+        other: "Sujets"
       user:
-        one: "Utilisateur"
+        one: "Utilisateurs masqués"
         other: "Utilisateurs"
       moderator:
         one: "Modérateur"
@@ -39,7 +39,7 @@ fr:
         other: "Évaluateurs"
       valuator_group:
         one: "Groupe d’évaluateurs"
-        other: "Groupes d’évaluateurs"
+        other: "Groupes d'évaluateurs"
       manager:
         one: "Responsable"
         other: "Responsables"
@@ -56,13 +56,13 @@ fr:
         one: "bureau de vote"
         other: "bureaux de vote"
       poll/officer:
-        one: "assesseur"
+        one: "président"
         other: "présidents"
       proposal:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
       spending_proposal:
-        one: "Proposition d'investissement"
+        one: "Propositions d'investissement"
         other: "Propositions d'investissement"
       site_customization/page:
         one: Page personnalisée
@@ -75,13 +75,13 @@ fr:
         other: Blocs de contenu personnalisés
       legislation/process:
         one: "Processus"
-        other: "Processus"
+        other: "Processus législatifs"
+      legislation/proposal:
+        one: "Proposition"
+        other: "Propositions"
       legislation/draft_versions:
         one: "Ébauche"
-        other: "Ébauches"
-      legislation/draft_texts:
-        one: "Brouillon"
-        other: "Brouillons"
+        other: "Version brouillon"
       legislation/questions:
         one: "Question"
         other: "Questions"
@@ -101,8 +101,8 @@ fr:
         one: "Sujet"
         other: "Sujets"
       poll:
-        one: "Sondage"
-        other: "Sondages"
+        one: "Vote"
+        other: "Votes"
       proposal_notification:
         one: "Notification de proposition"
         other: "Notifications des propositions"
@@ -110,19 +110,19 @@ fr:
       budget:
         name: "Nom"
         description_accepting: "Description durant la phase d'acceptation"
-        description_reviewing: "Description durant la phase d'examen"
+        description_reviewing: "Description durant la phase de revue"
         description_selecting: "Description durant la phase de sélection"
         description_valuating: "Description durant la phase d'évaluation"
         description_balloting: "Description durant la phase de vote"
-        description_reviewing_ballots: "Description durant la phase d'examen des votes"
+        description_reviewing_ballots: "Description durant la phase de revue des votes"
         description_finished: "Description quand le budget est finalisé"
-        phase: "Phase"
-        currency_symbol: "Monnaie"
+        phase: "Phases"
+        currency_symbol: "Devise"
       budget/investment:
-        heading_id: "Rubrique du budget"
+        heading_id: "Titre"
         title: "Titre"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
+        external_url: "Lien vers de la documentation supplémentaire"
         administrator_id: "Administrateur"
         location: "Lieu (optionnel)"
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
@@ -135,14 +135,17 @@ fr:
         publication_date: "Date de publication"
       milestone/status:
         name: "Nom"
-        description: "Description (facultative)"
+        description: "Description (optionnel)"
+      progress_bar:
+        kind: "Type"
+        title: "Titre"
       budget/heading:
-        name: "Nom de la rubrique"
+        name: "Nom du titre"
         price: "Coût"
         population: "Population"
       comment:
         body: "Commentaire"
-        user: "Utilisateur"
+        user: "Utilisateurs masqués"
       debate:
         author: "Auteur"
         description: "Avis"
@@ -156,12 +159,12 @@ fr:
         terms_of_service: "Conditions d'utilisation"
       user:
         login: "Email ou nom d’utilisateur"
-        email: "Courriel"
+        email: "Email"
         username: "Nom d'utilisateur"
         password_confirmation: "Confirmation du mot de passe"
         password: "Mot de passe"
         current_password: "Mot de passe actuel"
-        phone_number: "Téléphone"
+        phone_number: "Numéro de téléphone"
         official_position: "Position officielle"
         official_level: "Niveau officiel"
         redeemable_code: "Vérification du code reçu par courriel"
@@ -172,8 +175,8 @@ fr:
         administrator_id: "Administrateur"
         association_name: "Nom de l'association"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
-        geozone_id: "Périmètre de l'opération"
+        external_url: "Lien vers de la documentation supplémentaire"
+        geozone_id: "Portée de l'opération"
         title: "Titre"
       poll:
         name: "Nom"
@@ -182,11 +185,17 @@ fr:
         geozone_restricted: "Restreint selon la zone géographique"
         summary: "Résumé"
         description: "Description"
+      poll/translation:
+        name: "Nom"
+        summary: "Résumé"
+        description: "Description"
       poll/question:
         title: "Question"
         summary: "Résumé"
         description: "Description"
-        external_url: "Lien vers la documentation complémentaire"
+        external_url: "Lien vers de la documentation supplémentaire"
+      poll/question/translation:
+        title: "Question"
       signature_sheet:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
@@ -202,6 +211,10 @@ fr:
         more_info_flag: Montrer dans la page Plus d'informations
         print_content_flag: Bouton impression du contenu
         locale: Langue
+      site_customization/page/translation:
+        title: Titre
+        subtitle: Sous-titres
+        content: Contenu
       site_customization/image:
         name: Nom
         image: Image
@@ -222,12 +235,22 @@ fr:
         allegations_start_date: Date de début des allégations
         allegations_end_date: Date de fin des allégations
         result_publication_date: Date de publication du résultat final
+      legislation/process/translation:
+        title: Titre du processus
+        summary: Résumé
+        description: Description
+        additional_info: Plus d'infos
+        milestones_summary: Résumé
       legislation/draft_version:
         title: Titre de la version
         body: Texte
         changelog: Changements
         status: Statut
         final_version: Version finale
+      legislation/draft_version/translation:
+        title: Titre de la version
+        body: Texte
+        changelog: Changements
       legislation/question:
         title: Titre
         question_options: Options
@@ -244,20 +267,36 @@ fr:
       poll/question/answer:
         title: Réponse
         description: Description
+      poll/question/answer/translation:
+        title: Réponse
+        description: Description
       poll/question/answer/video:
         title: Titre
         url: Vidéo externe
       newsletter:
         segment_recipient: Destinataires
         subject: Objet
-        from: De
+        from: Du
         body: Contenu du courriel
+      admin_notification:
+        segment_recipient: Destinataires
+        title: Titre
+        link: Lien
+        body: Texte
+      admin_notification/translation:
+        title: Titre
+        body: Texte
       widget/card:
         label: Label (facultatif)
         title: Titre
         description: Description
         link_text: Texte du lien
         link_url: Url du lien
+      widget/card/translation:
+        label: Label (facultatif)
+        title: Titre
+        description: Description
+        link_text: Texte du lien
       widget/feed:
         limit: Nombre d’éléments
     errors:
@@ -282,11 +321,11 @@ fr:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Le segment des utilisateurs destinataires est invalide"
+              invalid: "Le segment des utilisateurs destinataires n’est pas valide"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Le segment des utilisateurs destinataires n’est pas valide"
+              invalid: "Le segment des utilisateurs destinataires est invalide"
         map_location:
           attributes:
             map:
@@ -335,7 +374,7 @@ fr:
             valuation:
               cannot_comment_valuation: 'Vous ne pouvez pas commenter une évaluation'
       messages:
-        record_invalid: "Échec de la validation : %{errors}"
+        record_invalid: "La validation omise : %{errors}"
         restrict_dependent_destroy:
           has_one: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
           has_many: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"

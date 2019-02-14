@@ -13,9 +13,10 @@ ar:
     failure:
       already_authenticated: ".انت بالفعل مسجل"
       inactive: "لم يكن تنشيط حسابك بعد."
-      invalid: "بريد إلكتروني أو كلمة السر غير صالحة."
+      invalid: "%{authentication_keys} أو كلمة السر غير صالحة."
       locked: "حسابك مغلق مؤقتا."
       last_attempt: "امامك محاولة اخرى واحدة قبل حظر حسابك."
+      not_found_in_database: "%{authentication_keys} أو كلمة السر غير صالحة."
       timeout: "جلستك انتهت، الرجاء تسجيل الدخول مرة أخرى للمتابعة."
       unauthenticated: "تحتاج لتسجيل الدخول أو الاشتراك قبل المتابعة."
       unconfirmed: "لا بد من تأكيد حسابك قبل المتابعة."
@@ -27,7 +28,7 @@ ar:
       unlock_instructions:
         subject: "تعليمات إعادة الفتح"
     omniauth_callbacks:
-      failure: "تعذر توثيقك من %{kind} بسبب \"%{reason}\"."
+      failure: "تعذر التأكد من %{kind} بسبب \"%{reason}\"."
       success: "تم التوثيق بنجاح من حساب %{kind}."
     passwords:
       no_token: "لا بمكنك الوصول الى هذه الصفحة الا من خلال رابط اعادة تعيين كلمة المرور. اذا كنت قد وصلت اليه من خلال رابط تعيين كلمة المرور, فيرجى التحقق من اكتمال عنوان URL."
@@ -53,9 +54,9 @@ ar:
       unlocked: "تم إعادة فتح حسابك بنجاح. الرجاء تسجيل الدخول للمتابعة."
   errors:
     messages:
-      already_confirmed: "تم التحقق منك; يرجى محاولة تسجيل الدخول."
+      already_confirmed: "تأكد بالفعل، من فضلك حاول تسجيل الدخول"
       confirmation_period_expired: "يجب التحقق من صحتك داحل %{period}؛ يرجى تقديم طلب تكرار."
-      expired: "انتهت صلاحيته; يرجى اعادة طلبك."
-      not_found: "غير موجود."
-      not_locked: "لم يكن مغلقا."
+      expired: "انتهت الصلاحية، يرجى طلب واحد جديد"
+      not_found: "لا يوجد"
+      not_locked: "لم يغلق مؤقتا"
       equal_to_current_password: "يجب ان تكون كلمة المرور مختلفة عن الحالية."

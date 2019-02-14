@@ -13,14 +13,14 @@ de:
         cancel: Abbrechen
         publish_comment: Kommentar veröffentlichen
       form:
-        phase_not_open: Diese Phase ist nicht geöffnet
+        phase_not_open: Diese Phase ist noch nicht geöffnet
         login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
         signin: Anmelden
-        signup: Registrierung
+        signup: Registrieren
       index:
         title: Kommentare
         comments_about: Kommentare über
-        see_in_context: Im Kontext sehen
+        see_in_context: Im Kontext zeigen
         comments_count:
           one: "%{count} Kommentar"
           other: "%{count} Kommentare"
@@ -28,19 +28,19 @@ de:
         title: Kommentar
       version_chooser:
         seeing_version: Kommentare für Version
-        see_text: Siehe Text-Entwurf
+        see_text: Nächsten Entwurf sehen
     draft_versions:
       changes:
         title: Änderungen
         seeing_changelog_version: Änderungszusammenfassung
-        see_text: Nächsten Entwurf sehen
+        see_text: Siehe Text-Entwurf
       show:
         loading_comments: Kommentare werden geladen
         seeing_version: Sie sehen den Entwurf
         select_draft_version: Entwurf auswählen
-        select_version_submit: sehen
+        select_version_submit: anzeigen
         updated_at: aktualisiert am %{date}
-        see_changes: Zusammenfassung der Änderungen ansehen
+        see_changes: Zusammenfassung der Änderungen anzeigen
         see_comments: Alle Kommentare anzeigen
         text_toc: Inhaltsverzeichnis
         text_body: Text
@@ -49,7 +49,7 @@ de:
       header:
         additional_info: Weitere Informationen
         description: Beschreibung
-        more_info: Mehr Information
+        more_info: Mehr Informationen und Inhalt
       proposals:
         empty_proposals: Es gibt keine Vorschläge
         filters:
@@ -61,7 +61,7 @@ de:
       index:
         filter: Filter
         filters:
-          open: Laufende Verfahren
+          open: Offene Prozesse
           past: Vorherige
         no_open_processes: Es gibt keine offenen Verfahren
         no_past_processes: Es gibt keine vergangene Prozesse
@@ -81,10 +81,12 @@ de:
         see_latest_comments_title: Kommentar zu diesem Prozess
       shared:
         key_dates: Die wichtigsten Termine
+        homepage: Homepage
         debate_dates: Diskussion
         draft_publication_date: Veröffentlichungsentwurf
         allegations_dates: Kommentare
         result_publication_date: Veröffentlichung Endergebnis
+        milestones_date: Folgen
         proposals_dates: Vorschläge
     questions:
       comments:
@@ -106,13 +108,13 @@ de:
         share: Teilen
         title: kollaboratives Gesetzgebungsverfahren
       participation:
-        phase_not_open: Diese Phase ist noch nicht geöffnet
+        phase_not_open: Diese Phase ist nicht geöffnet
         organizations: Organisationen dürfen sich nicht an der Diskussion beteiligen
         signin: Anmelden
         signup: Registrieren
-        unauthenticated: Sie müssen %{signin} oder %{signup}, um teilzunehmen.
+        unauthenticated: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
         verified_only: 'Nur verifizierte Benutzer können teilnehmen: %{verify_account}.'
-        verify_account: Verifizieren Sie Ihr Benutzerkonto
+        verify_account: verifizieren Sie Ihr Konto
         debate_phase_not_open: Diskussionsphase ist beendet. Antworden werden nicht mehr angenommen
     shared:
       share: Teilen

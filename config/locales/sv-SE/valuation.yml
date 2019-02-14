@@ -1,16 +1,16 @@
 sv:
   valuation:
     header:
-      title: Kostnadsberäkning
+      title: Bedömning
     menu:
-      title: Kostnadsberäkning
+      title: Bedömning
       budgets: Medborgarbudgetar
-      spending_proposals: Budgetförslag
+      spending_proposals: Investeringsförslag
     budgets:
       index:
         title: Medborgarbudgetar
         filters:
-          current: Pågående
+          current: Öppna
           finished: Avslutade
         table_name: Namn
         table_phase: Fas
@@ -21,7 +21,7 @@ sv:
       index:
         headings_filter_all: Alla områden
         filters:
-          valuation_open: Pågående
+          valuation_open: Öppna
           valuating: Under kostnadsberäkning
           valuation_finished: Kostnadsberäkning avslutad
         assigned_to: "Tilldelad %{valuator}"
@@ -40,7 +40,7 @@ sv:
         back: Tillbaka
         title: Budgetförslag
         info: Om förslagslämnaren
-        by: Inskickat av
+        by: Skickat av
         sent: Registrerat
         heading: Område
         dossier: Rapport
@@ -52,7 +52,7 @@ sv:
         feasible: Genomförbart
         unfeasible: Ej genomförbart
         undefined: Odefinierat
-        valuation_finished: Bedömning avslutad
+        valuation_finished: Kostnadsberäkning avslutad
         duration: Tidsram
         responsibles: Ansvariga
         assigned_admin: Ansvarig administratör
@@ -67,7 +67,7 @@ sv:
         unfeasible: Ej genomförbart
         undefined_feasible: Väntande
         feasible_explanation_html: Förklaring av genomförbarhet
-        valuation_finished: Bedömning avslutad
+        valuation_finished: Kostnadsberäkning avslutad
         valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
         not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."
         duration_html: Tidsram
@@ -78,9 +78,9 @@ sv:
       not_in_valuating_phase: Budgetförslag kan endast kostnadsberäknas när budgeten är i kostnadsberäkningsfasen
     spending_proposals:
       index:
-        geozone_filter_all: Alla stadsdelar
+        geozone_filter_all: Alla områden
         filters:
-          valuation_open: Pågående
+          valuation_open: Öppna
           valuating: Under kostnadsberäkning
           valuation_finished: Kostnadsberäkning avslutad
         title: Budgetförslag för medborgarbudget
@@ -90,7 +90,7 @@ sv:
         heading: Budgetförslag
         info: Om förslagslämnaren
         association_name: Förening
-        by: Skickat av
+        by: Inskickat av
         sent: Registrerat
         geozone: Område
         dossier: Rapport
@@ -107,7 +107,7 @@ sv:
         internal_comments: Interna kommentarer
         responsibles: Ansvariga
         assigned_admin: Ansvarig administratör
-        assigned_valuators: Ansvarig bedömare
+        assigned_valuators: Ansvariga bedömare
       edit:
         dossier: Rapport
         price_html: "Kostnad (%{currency})"
@@ -119,7 +119,7 @@ sv:
         not_feasible: Ej genomförbart
         undefined_feasible: Väntande
         feasible_explanation_html: Förklaring av genomförbarhet
-        valuation_finished: Bedömning avslutad
+        valuation_finished: Kostnadsberäkning avslutad
         time_scope_html: Tidsram
         internal_comments_html: Interna kommentarer
         save: Spara ändringar

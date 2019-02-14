@@ -3,8 +3,8 @@ gl:
     password_expired:
       expire_password: "Contrasinal caducado"
       change_required: "O teu contrasinal caducou"
-      change_password: "Cambia o contrasinal"
-      new_password: "Novo contrasinal"
+      change_password: "Cambia o teu contrasinal"
+      new_password: "Contrasinal novo"
       updated: "O contrasinal actualizouse con éxito"
     confirmations:
       confirmed: "A túa conta foi confirmada. Por favor, autentifícate coa túa rede social ou o teu usuario e contrasinal"
@@ -16,7 +16,7 @@ gl:
       invalid: "%{authentication_keys} ou contrasinal inválidos."
       locked: "A túa conta foi bloqueada."
       last_attempt: "Tes un último intento antes de que a túa conta sexa bloqueada."
-      not_found_in_database: "%{authentication_keys} ou o contrasinal non son correctos."
+      not_found_in_database: "Contrasinal ou %{authentication_keys} inválidos."
       timeout: "A túa sesión expirou, por favor, inicia sesión novamente para continuar."
       unauthenticated: "Necesitas iniciar sesión ou rexistrarte para continuar."
       unconfirmed: "Para continuar, por favor, preme no enlace de confirmación que che enviamos á túa conta de correo."
@@ -38,7 +38,7 @@ gl:
       updated_not_active: "O teu contrasinal cambiouse correctamente."
     registrations:
       destroyed: "Ata pronto! A súa conta foi desactivada. Agardamos poder velo de novo."
-      signed_up: "Benvido! Fuches autenticado correctamente"
+      signed_up: "Benvido! Fuches identificado."
       signed_up_but_inactive: "Rexistrácheste correctamente, pero non puideches iniciar sesión porque a túa conta non foi activada."
       signed_up_but_locked: "Rexistrácheste correctamente, pero non puideches iniciar sesión porque a túa conta está bloqueada."
       signed_up_but_unconfirmed: "Envióuseche unha mensaxe cun enlace de confirmación. Por favor, visita o enlace para activar a túa conta."
@@ -54,11 +54,11 @@ gl:
       unlocked: "A túa conta foi desbloqueada. Por favor, inicia sesión para continuar."
   errors:
     messages:
-      already_confirmed: "xa se confirmou a túa conta. Se queres, podes iniciar sesión."
-      confirmation_period_expired: "precisas que se confirme a conta en %{period}; por favor, podes volver a solicitala."
-      expired: "expirou; por favor, volve solicitalo."
-      not_found: "non se atopou."
-      not_locked: "non está bloqueado."
+      already_confirmed: "xa fuches confirmado, por favor intenta iniciar sesión."
+      confirmation_period_expired: "necesitas ser confirmado en %{period}, por favor vólvea solicitar."
+      expired: "expirou, por favor vólvea solicitar."
+      not_found: "non se encontrou."
+      not_locked: "non estaba bloqueado."
       not_saved:
         one: "1 erro impediu que este %{resource} se gardase. Podes revisar os campos marcados para saberes como corrixilos:"
         other: "%{count} erros impediron que este %{resource} se gardase. Podes revisar os campos marcados para saberes como corrixilos:"

@@ -16,6 +16,7 @@ es-VE:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
         text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
+        title: Bienvenido/a
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña
@@ -32,16 +33,16 @@ es-VE:
         unlock_link: Desbloquear mi cuenta
     menu:
       login_items:
-        login: Entrar
+        login: iniciar sesión
         logout: Salir
         signup: Registrarse
     organizations:
       registrations:
         new:
           email_label: Correo electrónico
-          organization_name_label: Nombre de la organización
+          organization_name_label: Nombre de organización
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
+          password_label: Contraseña
           phone_number_label: Teléfono
           responsible_name_label: Nombre y apellidos de la persona responsable del colectivo
           responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las propuestas
@@ -70,7 +71,7 @@ es-VE:
         password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
-        title: Iniciar sesión
+        title: Entrar
     shared:
       links:
         login: Entrar
@@ -79,7 +80,7 @@ es-VE:
         new_unlock: '¿No has recibido instrucciones para desbloquear?'
         signin_with_provider: Entrar con %{provider}
         signup: '¿No tienes una cuenta? %{signup_link}'
-        signup_link: Regístrate
+        signup_link: registrarte
     unlocks:
       new:
         email_label: Correo electrónico
@@ -95,7 +96,7 @@ es-VE:
           title: Darme de baja
         edit:
           current_password_label: Contraseña actual
-          edit: Editar propuesta
+          edit: Editar debate
           email_label: Correo electrónico
           leave_blank: Dejar en blanco si no deseas cambiarla
           need_current: Necesitamos tu contraseña actual para confirmar los cambios
@@ -105,7 +106,7 @@ es-VE:
           waiting_for: 'Esperando confirmación de:'
         new:
           cancel: Cancelar login
-          email_label: Tu correo electrónico
+          email_label: Correo electrónico
           organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
           organization_signup_link: Regístrate aquí
           password_confirmation_label: Repite la contraseña anterior

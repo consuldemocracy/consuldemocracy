@@ -1,1 +1,120 @@
 ru:
+  valuation:
+    header:
+      title: Оценка
+    menu:
+      title: Оценка
+      budgets: Партисипаторные бюджеты
+      spending_proposals: Отправка предложений
+    budgets:
+      index:
+        title: Партисипаторные бюджеты
+        filters:
+          current: Открытые
+          finished: Оконченные
+        table_name: Имя
+        table_phase: Этап
+        table_assigned_investments_valuation_open: Назначенные проекты инвестирования с открытой оценкой
+        table_actions: Действия
+        evaluate: Оценить
+    budget_investments:
+      index:
+        headings_filter_all: Все заголовки
+        filters:
+          valuation_open: Открытые
+          valuating: Производится оценка
+          valuation_finished: Оценка окончена
+        assigned_to: "Назначено %{valuator}"
+        title: Инновационные проекты
+        edit: Редактировать пакет документов
+        no_valuators_assigned: Оценщики не назначены
+        table_title: Название
+        table_heading_name: Название раздела
+        table_actions: Действия
+        no_investments: "Нет проектов инвестирования."
+      show:
+        back: Назад
+        title: Инвестиционный проект
+        info: Об авторе
+        by: Отправил(а)
+        sent: Дата отправки
+        heading: Раздел
+        dossier: Пакет документов
+        edit_dossier: Редактировать пакет документов
+        price: Цена
+        price_first_year: Стоимость в течение первого года
+        feasibility: Выполнимость
+        feasible: Выполнимо
+        unfeasible: Не выполнимо
+        undefined: Не определено
+        valuation_finished: Оценка окончена
+        duration: Объем времени
+        responsibles: Ответственные
+        assigned_admin: Назначенный администратор
+        assigned_valuators: Назначенные оценщики
+      edit:
+        dossier: Пакет документов
+        price_html: "Стоимость (%{currency})"
+        price_first_year_html: "Стоимость во время первого года (%{currency}) <small>(не обязательно, данные не публичные)</small>"
+        price_explanation_html: Описание цены
+        feasibility: Выполнимость
+        feasible: Выполнимо
+        unfeasible: Не выполнимо
+        undefined_feasible: На рассмотрении
+        feasible_explanation_html: Разъяснение выполнимости
+        valuation_finished: Оценка окончена
+        valuation_finished_alert: "Вы уверены, что хотите отметить этот отчет как завершенный? Если вы так сделаете, его уже нельзя будет изменить."
+        not_feasible_alert: "Автору проекта будет незамедлительно отправлен email с отчетом о невыполнимости."
+        duration_html: Объем времени
+        save: Сохранить изменения
+      notice:
+        valuate: "Пакет документов обновлен"
+      valuation_comments: Комментарии к оценке
+      not_in_valuating_phase: Инвестиции можно оценивать только когда бюджет находится в фазе оценки
+    spending_proposals:
+      index:
+        geozone_filter_all: Все зоны
+        filters:
+          valuation_open: Открытые
+          valuating: Оцениваемые
+          valuation_finished: Оценка завершена
+        title: Проекты инвестирования для совместного бюджета
+        edit: Редактировать
+      show:
+        back: Назад
+        heading: Инвестиционный проект
+        info: Об авторе
+        association_name: Ассоциация
+        by: Отправил(а)
+        sent: Дата отправки
+        geozone: Охват
+        dossier: Пакет документов
+        edit_dossier: Редактировать пакет документов
+        price: Цена
+        price_first_year: Стоимость в первый год
+        feasibility: Выполнимость
+        feasible: Выполнимо
+        not_feasible: Не выполнимо
+        undefined: Неопределено
+        valuation_finished: Оценка окончена
+        time_scope: Объем времени
+        internal_comments: Внутренние комментарии
+        responsibles: Ответственные
+        assigned_admin: Назначенный администратор
+        assigned_valuators: Назначенные оценщики
+      edit:
+        dossier: Пакет документов
+        price_html: "Стоимость (%{currency})"
+        price_first_year_html: "Стоимость в первый год (%{currency})"
+        price_explanation_html: Описание цены
+        feasibility: Выполнимость
+        feasible: Выполнимо
+        not_feasible: Не выполнимо
+        undefined_feasible: На рассмотрении
+        feasible_explanation_html: Разъяснение выполнимости
+        valuation_finished: Оценка окончена
+        time_scope_html: Объем времени
+        internal_comments_html: Внутренние комментарии
+        save: Сохранить изменения
+      notice:
+        valuate: "Пакет документов обновлен"

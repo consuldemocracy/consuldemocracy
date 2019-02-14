@@ -8,12 +8,12 @@ gl:
         filters:
           all: Todo
           pending_flag_review: Pendentes
-          with_ignored_flag: Marcado como revisado
+          with_ignored_flag: Marcados como revisados
         headers:
-          comment: Comentario
+          comment: Comentar
           moderate: Moderar
-        hide_comments: Agochar comentarios
-        ignore_flags: Marcar como revisado
+        hide_comments: Ocultar comentarios
+        ignore_flags: Marcar como revisadas
         order: Orde
         orders:
           flags: Máis denunciados
@@ -24,17 +24,17 @@ gl:
         title: Moderar
     debates:
       index:
-        block_authors: Bloquear autores
+        block_authors: Bloquear autores/as
         confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
-          pending_flag_review: Pendente
+          pending_flag_review: Pendentes
           with_ignored_flag: Marcado como revisado
         headers:
-          debate: Debate
+          debate: o debate
           moderate: Moderar
-        hide_debates: Agochar debates
+        hide_debates: Ocultar debates
         ignore_flags: Marcar como revisado
         order: Orde
         orders:
@@ -42,12 +42,12 @@ gl:
           flags: Máis denunciadas
         title: Debates
     header:
-      title: Moderación
+      title: Moderar
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debates
-      flagged_investments: Investimentos orzamentarios
-      proposals: Propostas
+      flagged_investments: Proxectos de orzamentos participativos
+      proposals: Propostas cidadás
       proposal_notifications: Notificacións de propostas
       users: Bloquear usuarios
     proposals:
@@ -61,36 +61,36 @@ gl:
           with_ignored_flag: Marcar como revisado
         headers:
           moderate: Moderar
-          proposal: Proposta
-        hide_proposals: Agochar propostas
+          proposal: a proposta
+        hide_proposals: Ocultar propostas
         ignore_flags: Marcar como revisado
         order: Ordenar por
         orders:
           created_at: Máis recentes
           flags: Máis denunciadas
-        title: Propostas
+        title: Propostas cidadás
     budget_investments:
       index:
-        block_authors: Autores de bloques
+        block_authors: Bloquear autores/as
         confirm: Queres continuar?
         filter: Filtro
         filters:
           all: Todo
-          pending_flag_review: Pendente
+          pending_flag_review: Pendentes
           with_ignored_flag: Marcado como revisado
         headers:
           moderate: Moderar
-          budget_investment: Investimento orzamentario
+          budget_investment: Proposta de investimento
         hide_budget_investments: Agochar investimentos orzamentarios
         ignore_flags: Marcar como revisado
-        order: Ordeado por
+        order: Ordenar por
         orders:
-          created_at: Máis recente
-          flags: Máis denunciados
-        title: Investimentos orzamentarios
+          created_at: Máis recentes
+          flags: Máis denunciadas
+        title: Proxectos de orzamentos participativos
     proposal_notifications:
       index:
-        block_authors: Bloquear autores
+        block_authors: Bloquear autores/as
         confirm: Queres continuar?
         filter: Filtro
         filters:
@@ -99,19 +99,19 @@ gl:
           ignored: Marcar como revisado
         headers:
           moderate: Moderar
-          proposal_notification: Notificación de proposta
+          proposal_notification: Aviso de proposta
         hide_proposal_notifications: Agochar propostas
         ignore_flags: Marcar como revisado
-        order: Ordeado por
+        order: Ordenar por
         orders:
-          created_at: Máis recente
+          created_at: Máis recentes
           moderated: Moderado
-        title: Notificacións de proposta
+        title: Notificacións das propostas
     users:
       index:
         hidden: Bloqueado
         hide: Bloquear
-        search: Buscar
+        search: Procurar
         search_placeholder: correo electrónico ou nome de usuario
         title: Bloquear usuarios
       notice_hide: Usuario bloqueado. Ocultáronse todos os seus debates e comentarios.

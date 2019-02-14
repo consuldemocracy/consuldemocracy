@@ -1,0 +1,777 @@
+cs:
+  admin:
+    header:
+      title: Administrace
+    actions:
+      actions: Akce
+      confirm: Jste si jisti?
+      confirm_hide: Potvrdit moderování
+      hide: Skrýt
+      hide_author: Skrýt autora
+      restore: Obnovit
+      mark_featured: Označené
+      unmark_featured: Zrušit označení
+      edit: Upravit
+      configure: Nastavení
+      delete: Smazat
+    banners:
+      index:
+        title: Bannery
+        create: Vytvořit banner
+        edit: Upravit banner
+        delete: Odstranit banner
+        filters:
+          all: Vše
+          with_active: Aktivní
+          with_inactive: Neaktivní
+        preview: Zobrazit
+      banner:
+        title: Předmět
+        description: Description
+        target_url: Link
+        sections:
+          homepage: Úvodní strana
+          debates: Debaty
+          proposals: Návrhy
+          budgets: Participativní rozpočtování
+          help_page: Stránka nápovědy
+        background_color: Barva pozadí
+        font_color: Barva písma
+      edit:
+        editing: Upravit banner
+        form:
+          submit_button: Uložit změny
+      new:
+        creating: Vytvořit banner
+    activity:
+      show:
+        action: Akce
+        content: Obsah
+        filter: Zobrazit
+        filters:
+          all: Vše
+          on_comments: Komentáře
+          on_debates: Debaty
+          on_proposals: Návrhy
+          on_users: Uživatelé
+          on_system_emails: Systémové maily
+        title: Aktivity moderátora
+        type: Typ
+        no_activity: Neexistují žádná aktivity moderátorů.
+    budgets:
+      index:
+        title: Participativní rozpočty
+        filter: Filtr
+        filters:
+          open: Otevřené
+          finished: Dokončené
+        budget_investments: Správa projektů
+        table_name: Název
+        table_phase: Fáze
+        table_investments: Investice
+        table_edit_groups: Záhlaví skupiny
+        table_edit_budget: Upravit
+        edit_groups: Upravit záhlaví skupiny
+        edit_budget: Upravit rozpočet
+        no_budgets: "Neexistují žádné rozpočty."
+      edit:
+        phase: Fáze
+        enabled: Povolit
+        actions: Akce
+        active: Aktivní
+    budget_groups:
+      name: "Název"
+    budget_headings:
+      name: "Název"
+      destroy:
+        unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
+      form:
+        name: "Heading name"
+        amount: "Množství"
+        population: "Počet obyvatel (volitelné)"
+        latitude: "Zeměpisná šířka (volitelné)"
+        longitude: "Zeměpisná šířka (volitelné)"
+    budget_phases:
+      edit:
+        start_date: Start date
+        end_date: End date
+        summary: Souhrn
+        description: Description
+        enabled: Fáze je povolena
+        enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
+        save_changes: Uložit změny
+    budget_investments:
+      index:
+        tags_filter_all: Všechny štítky
+        placeholder: Prohledat projekty
+        sort_by:
+          placeholder: Třídit podle
+          id: ID
+          title: Předmět
+          supports: Podpora
+        filters:
+          all: Vše
+          selected: Vybrané
+          unfeasible: Nerealizovatelné
+        buttons:
+          filter: Filtr
+        title: Investiční projekty
+        feasibility:
+          unfeasible: "Nerealizovatelné"
+        selected: "Vybrané"
+        select: "Vybrat"
+        list:
+          id: ID
+          title: Předmět
+          supports: Podpora
+          admin: Administrátor
+          geozone: Vymezení oblasti města
+          selected: Vybrané
+          author_username: Uživatelské jméno autora
+          incompatible: Nekompatibilní
+        see_results: "Zobrazit výsledky"
+      show:
+        classification: Klasifikace
+        edit: Upravit
+        group: Skupina
+        heading: Heading
+        tags: Štítky
+        compatibility:
+          "true": Nekompatibilní
+        selection:
+          "true": Vybrané
+        winner:
+          "true": "Ano"
+          "false": "Ne"
+        image: "Image"
+        see_image: "Zobrazit obrázek"
+        no_image: "Bez obrázku"
+        documents: "Dokumenty"
+        see_documents: "Viz dokumenty (%{count})"
+      edit:
+        classification: Klasifikace
+        submit_button: Aktualizovat
+        tags: Štítky
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Předmět"
+        table_description: "Description"
+        table_status: Status
+        table_actions: "Akce"
+        delete: "Odstranit milník"
+        no_milestones: "Milníky nejsou definovány"
+        image: "Image"
+        show_image: "Zobrazit obrázek"
+        documents: "Dokumenty"
+        milestone: Milník
+      form:
+        admin_statuses: Admin investment statuses
+        no_statuses_defined: There are no defined investment statuses yet
+      new:
+        description: Description
+    statuses:
+      index:
+        title: Investment statuses
+        empty_statuses: There are no investment statuses created
+        new_status: Create new investment status
+        table_name: Název
+        table_description: Description
+        table_actions: Akce
+        delete: Smazat
+        edit: Upravit
+      edit:
+        title: Edit investment status
+      update:
+        notice: Investment status updated successfully
+      new:
+        title: Create investment status
+      create:
+        notice: Investment status created successfully
+      delete:
+        notice: Investment status deleted successfully
+    progress_bars:
+      index:
+        title: "Ukazatele průběhu"
+        no_progress_bars: "Neexistují žádné ukazatele průběhu"
+        new_progress_bar: "Vytvořit nový ukazatel průběhu"
+        primary: "Hlavní ukazatel průběhu"
+        table_id: "ID"
+        table_kind: "Typ"
+        table_title: "Předmět"
+    comments:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          without_confirmed_hide: Nevyřízený
+    dashboard:
+      index:
+        back: Přejít zpět na %{org}
+        title: Administrace
+    debates:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          without_confirmed_hide: Nevyřízený
+    hidden_users:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          without_confirmed_hide: Nevyřízený
+        user: User
+    hidden_budget_investments:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          without_confirmed_hide: Nevyřízený
+    legislation:
+      processes:
+        create:
+          notice: 'Proces byl úspěšně vytvořen. <a href="%{link}">Klikněte pro zobrazení</a>'
+          error: Proces nemohl být vytvořen.
+        update:
+          notice: 'Proces byl úspěšně aktualizován. <a href="%{link}">Klikněte pro zobrazení</a>'
+          error: Proces nemohl být aktualizován
+        destroy:
+          notice: Proces byl úspěšně smazán
+        edit:
+          back: Zpět
+          submit_button: Uložit změny
+        errors:
+          form:
+            error: Chyba
+        form:
+          enabled: Povoleno
+          process: Proces
+          debate_phase: Fáze debaty
+          allegations_phase: Fáze připomínkování
+          proposals_phase: Fáze návrhu
+          start: Zahájení
+          end: Konec
+          title_placeholder: Název procesu
+          summary_placeholder: Stručné shrnutí popisu
+          description_placeholder: Přidat popis procesu
+          additional_info_placeholder: Přidat doplňující ifnormace, které považujete za užitečné
+          homepage: Description
+          homepage_enabled: Úvodní stránka povolena
+        index:
+          create: Nový proces
+          delete: Smazat
+          title: Legislativní procesy
+          filters:
+            open: Otevřené
+            all: Vše
+        new:
+          back: Zpět
+          title: Vytvořit nový participativní legislativní proces
+          submit_button: Vytvořit proces
+        proposals:
+          select_order: Třídit podle
+          orders:
+            title: Předmět
+            supports: Podpora
+        process:
+          title: Proces
+          comments: Komentáře
+          status: Status
+          creation_date: Datum vytvoření
+          status_open: Otevřené
+          status_closed: Uzavřené
+          status_planned: Plánované
+        subnav:
+          info: Informace
+          homepage: Úvodní strana
+          questions: Debata
+          proposals: Návrhy
+          milestones: Sledované
+      proposals:
+        index:
+          title: Předmět
+          back: Zpět
+          supports: Podpora
+          select: Vybrat
+          selected: Vybrané
+        form:
+          custom_categories: Kategorie
+          custom_categories_description: Kategorie, které uživatelé mohou vybrat při vytvoření návrhu.
+          custom_categories_placeholder: Zadejte štítky, které chcete použít, oddělené čárkami (,) a mezi uvozovkami ("")
+      draft_versions:
+        create:
+          notice: 'Pracovní verze úspěšně vytvořena. <a href="%{link}">Klikněte pro zobrazení</a>'
+          error: Pracovní verze nemohla být vytvořena.
+        update:
+          notice: 'Pracovní verze byla úspěšně aktualizována. <a href="%{link}">Klikněte pro zobrazení</a>'
+          error: Pracovní verze nemohla být aktualizována.
+        destroy:
+          notice: Pracovní verze byla smazána.
+        edit:
+          back: Zpět
+          submit_button: Uložit změny
+        errors:
+          form:
+            error: Chyba
+        index:
+          title: Pracovní verze
+          create: Vytvořit verzi
+          delete: Smazat
+          preview: Náhled
+        new:
+          back: Zpět
+          title: Vytvořit novou verzi
+          submit_button: Vytvořit pracovní verzi
+        statuses:
+          draft: Pracovní verze
+          published: Publikováno
+        table:
+          title: Předmět
+          created_at: Vytvořeno v
+          comments: Komentáře
+          final_version: Final version
+          status: Status
+      questions:
+        create:
+          notice: 'Otázka byla úspěšně vytvořena. <a href="%{link}">Klikněte pro zobrazení</a>'
+          error: Otázka nemohla být vytvořena
+        update:
+          notice: 'Otázka byla úspěšně aktualizována. <a href="%{link}">Klikněte pro zobrazení</a>'
+          error: Otázka nemohla být aktualizována
+        destroy:
+          notice: Otázka byla úspěšně smazána.
+        edit:
+          back: Zpět
+          submit_button: Uložit změny
+        errors:
+          form:
+            error: Chyba
+        form:
+          add_option: Přidat možnost
+          title: Question
+          title_placeholder: Přidat otázku
+          value_placeholder: Přidat uzavřenou odpověď
+          question_options: "Možné odpovědi (volitelné, standardně otevřené odpovědi)"
+        index:
+          back: Zpět
+          title: Otázky spojené s tímto procesem
+          create: Vytvořit otázku
+          delete: Smazat
+        new:
+          back: Zpět
+          title: Vytvořit otázku
+          submit_button: Vytvořit otázku
+        table:
+          title: Předmět
+          question_options: Možnosti otázky
+          answers_count: Počet odpovědí
+          comments_count: Počet komentářů
+        question_option_fields:
+          remove_option: Odstranit možnost
+      milestones:
+        index:
+          title: Sledované
+    managers:
+      index:
+        name: Název
+        email: Email
+      manager:
+        delete: Smazat
+    menu:
+      activity: Aktivity moderátora
+      poll_questions: Otázky
+      proposals: Návrhy
+      budgets: Participativní rozpočty
+      admin_notifications: Upozornění
+      polls: Průzkum
+      organizations: Organizace
+      stats: Statistiky
+      site_customization:
+        homepage: Úvodní strana
+        information_texts_menu:
+          debates: "Debaty"
+          community: "Připojte se ke komunitě"
+          proposals: "Návrhy"
+          polls: "Průzkum"
+          management: "Správa"
+          welcome: "Vítejte"
+        buttons:
+          save: "Uložit"
+      title_polls: Průzkum
+      users: Uživatelé
+    administrators:
+      index:
+        name: Název
+        email: Email
+      administrator:
+        delete: Smazat
+    moderators:
+      index:
+        name: Název
+        email: Email
+      moderator:
+        delete: Smazat
+    newsletters:
+      index:
+        subject: Subject
+        segment_recipient: Recipients
+        actions: Akce
+        draft: Pracovní verze
+        edit: Upravit
+        delete: Smazat
+        preview: Náhled
+      show:
+        subject: Subject
+        segment_recipient: Recipients
+        body: Email content
+    admin_notifications:
+      index:
+        section_title: Upozornění
+        new_notification: Nové upozornění
+        title: Předmět
+        segment_recipient: Recipients
+        actions: Akce
+        draft: Pracovní verze
+        edit: Upravit
+        delete: Smazat
+        preview: Náhled
+        view: Zobrazit
+      new:
+        section_title: Nové upozornění
+      show:
+        send: Odeslat upozornění
+        title: Předmět
+        body: Text
+        link: Odkaz
+        segment_recipient: Recipients
+    valuators:
+      index:
+        name: Název
+        email: Email
+        description: Description
+        no_description: Bez popisu
+        group: "Skupina"
+      valuator:
+        delete: Smazat
+      summary:
+        finished_count: Dokončené
+        total_count: Celkem
+      show:
+        description: "Description"
+        email: "Email"
+        group: "Skupina"
+    valuator_groups:
+      index:
+        name: "Název"
+    poll_officers:
+      officer:
+        name: Název
+        email: Email
+      search:
+        search: Vyhledat
+        user_not_found: Uživatel nenalezen
+    poll_officer_assignments:
+      index:
+        table_name: "Název"
+        table_email: "Email"
+    poll_shifts:
+      new:
+        search_officer_button: Vyhledat
+        table_email: "Email"
+        table_name: "Název"
+    poll_booth_assignments:
+      show:
+        results: "Výsledky"
+      index:
+        table_name: "Název"
+    polls:
+      index:
+        title: "List of active polls"
+        name: "Název"
+        start_date: "Start Date"
+        closing_date: "Closing Date"
+      new:
+        show_results_and_stats: "Zobrazit výsledky a statistiky"
+        show_stats: "Zobrazit statistiky"
+        results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
+      show:
+        questions_tab: Otázky
+        results_tab: Výsledky
+        table_title: "Předmět"
+    questions:
+      index:
+        title: "Otázky"
+        create: "Vytvořit otázku"
+        questions_tab: "Otázky"
+        create_question: "Vytvořit otázku"
+        table_proposal: "Návrhy"
+        table_question: "Question"
+        table_poll: "Průzkum"
+      new:
+        poll_label: "Průzkum"
+      answers:
+        images:
+          add_image: "Přidat obrázek"
+      show:
+        author: Autor
+        question: Question
+        video_url: External video
+        answers:
+          title: Answer
+          description: Description
+          documents: Dokumenty
+          documents_list: Seznam dokumentů
+          document_title: Předmět
+          document_actions: Akce
+    answers:
+      show:
+        title: Předmět
+        description: Description
+      videos:
+        index:
+          video_title: Předmět
+          video_url: External video
+    results:
+      index:
+        title: "Výsledky"
+      result:
+        table_answer: Answer
+        table_votes: Hlasů
+      results_by_booth:
+        results: Výsledky
+        see_results: Zobrazit výsledky
+    booths:
+      index:
+        name: "Název"
+      new:
+        name: "Název"
+    officials:
+      index:
+        name: Název
+        official_position: Official position
+    organizations:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          pending: Nevyřízený
+          rejected: Odmítnutý
+          verified: Ověřen
+        name: Název
+        email: Email
+        phone_number: Telefonní číslo
+        status: Status
+        rejected: Odmítnutý
+        search: Vyhledat
+        search_placeholder: Jméno, email nebo telefonní číslo
+        title: Organizace
+        verified: Ověřen
+        pending: Nevyřízený
+    proposals:
+      index:
+        title: Návrhy
+        id: ID
+        author: Autor
+        milestones: Milníky
+    hidden_proposals:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          without_confirmed_hide: Nevyřízený
+    proposal_notifications:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          without_confirmed_hide: Nevyřízený
+    settings:
+      index:
+        update_setting: Aktualizovat
+        features:
+          enabled: "Funkce povolena"
+          disabled: "Funkce je zakázaná"
+          enable: "Povolit"
+          disable: "Zakázat"
+        map:
+          form:
+            submit: Aktualizovat
+      setting_actions: Akce
+      setting_status: Status
+      setting_value: Value
+      no_description: "Bez popisu"
+    shared:
+      true_value: "Ano"
+      false_value: "Ne"
+      booths_search:
+        button: Vyhledat
+      poll_officers_search:
+        button: Vyhledat
+      poll_questions_search:
+        button: Vyhledat
+      proposal_search:
+        button: Vyhledat
+      spending_proposal_search:
+        button: Vyhledat
+      user_search:
+        button: Vyhledat
+      search_results: "Výsledky vyhledávání"
+      actions: Akce
+      title: Předmět
+      description: Description
+      image: Image
+      show_image: Zobrazit obrázek
+      moderated_content: "Zkontrolujte obsah, který moderují moderátoři a ověřte, zda je moderování provedeno správně."
+      view: Zobrazit
+      proposal: Návrhy
+      author: Autor
+      content: Obsah
+      created_at: Vytvořeno v
+      delete: Smazat
+    spending_proposals:
+      index:
+        tags_filter_all: Všechny štítky
+        filters:
+          valuation_open: Otevřené
+          all: Vše
+      show:
+        back: Zpět
+        classification: Klasifikace
+        edit: Upravit
+        tags: Štítky
+      edit:
+        classification: Klasifikace
+        submit_button: Aktualizovat
+        tags: Štítky
+      summary:
+        finished_count: Dokončené
+        total_count: Celkem
+    geozones:
+      index:
+        edit: Upravit
+        delete: Smazat
+      geozone:
+        name: Název
+      edit:
+        form:
+          submit_button: Uložit změny
+        back: Jít zpět
+      new:
+        back: Jít zpět
+    signature_sheets:
+      author: Autor
+      created_at: Datum vytvoření
+      name: Název
+      show:
+        author: Autor
+        documents: Dokumenty
+        document_count: "Počet dokumentů:"
+    stats:
+      show:
+        stats_title: Statistiky
+        summary:
+          comment_votes: Hlasů ke komentářům
+          comments: Komentáře
+          debate_votes: Hlasů k debatám
+          debates: Debaty
+          proposal_votes: Hlasů k návrhům
+          proposals: Návrhy
+          budgets: Otevřené rozpočty
+          budget_investments: Investiční projekty
+          unverified_users: Neověření uživatelé
+          user_level_three: Počet uživatelů třetí úrovně
+          user_level_two: Počet uživatelů druhé úrovně
+          users: Počet uživatelů
+          verified_users: Ověření uživatelé
+          verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
+          visits: Návštěvy
+          votes: Hlasů celkem
+        budgets_title: Participativní rozpočtování
+        visits_title: Návštěvy
+        direct_messages: Soukromé zprávy
+        proposal_notifications: Upozornění k návrhům
+        incomplete_verifications: Neúplné ověření
+        polls: Průzkum
+      direct_messages:
+        title: Soukromé zprávy
+        total: Celkem
+        users_who_have_sent_message: Uživatelé, kteří poslali soukromou zprávu
+      proposal_notifications:
+        title: Upozornění k návrhům
+        total: Celkem
+        proposals_with_notifications: Návrhy s oznámeními
+        not_available: "Návrh není k dispozici"
+      polls:
+        title: Statistiky průzkumu
+        all: Průzkum
+        web_participants: Respondenti z webu
+        total_participants: Celkový počet respondentů
+        poll_questions: "Otázky z průzkumu: %{poll}"
+        table:
+          poll_name: Průzkum
+          question_name: Question
+          origin_web: Respondenti z webu
+          origin_total: Celkový počet respondentů
+    tags:
+      create: Vytvořit téma
+      destroy: Smazat téma
+      index:
+        topic: Téma
+    users:
+      columns:
+        name: Název
+        email: Email
+      index:
+        title: User
+      search:
+        search: Vyhledat
+    verifications:
+      index:
+        title: Neúplné ověření
+    site_customization:
+      content_blocks:
+        about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
+        errors:
+          form:
+            error: Chyba
+        content_block:
+          body: Body
+          name: Název
+      images:
+        index:
+          update: Aktualizovat
+          delete: Smazat
+          image: Image
+      pages:
+        errors:
+          form:
+            error: Chyba
+        form:
+          options: Options
+        page:
+          created_at: Vytvořeno v
+          status: Status
+          updated_at: Aktualizováno dne
+          status_draft: Pracovní verze
+          status_published: Publikováno
+          title: Předmět
+          slug: Slug
+          cards_title: Karty
+        cards:
+          title: Předmět
+          description: Description
+          link_text: Link text
+          link_url: Link URL
+    homepage:
+      title: Úvodní strana
+      cards_title: Karty
+      cards:
+        title: Předmět
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      feeds:
+        proposals: Návrhy
+        debates: Debaty
+        processes: Procesy

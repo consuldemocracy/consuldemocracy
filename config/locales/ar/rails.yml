@@ -59,6 +59,24 @@ ar:
       present: يجب أن يكون فارغا
       confirmation: لا يتطابق مع %{attribute}
       empty: لا يمكن أن يكون فارغا
+      equal_to: يجب أن تكون القيمة تساوي %{count}
+      even: يجب أن يكون عدد زوجي
+      exclusion: محجوز
+      greater_than: يجب أن يكون أكبر من %{count}
+      greater_than_or_equal_to: يجب أن يكون أكبر أو يساوي %{count}
+      inclusion: غير موجود في القائمة
+      invalid: غير صالح
+      less_than: يجب أن يكون أقل من %{count}
+      less_than_or_equal_to: يجب أن يكون أصغر أو يساوي %{count}
+      model_invalid: "فشل التحقق من صحة: %{errors}"
+      not_a_number: ليس رقماً
+      not_an_integer: يجب أن يكون عدد صحيح
+      odd: يجب أن يكون عدد فردي
+      required: مطلوب
+      taken: محجوز مسبقاً
+      other_than: يجب أن يكون خلاف %{count}
+    template:
+      body: 'هناك مشاكل مع الحقول التالية:'
   helpers:
     select:
       prompt: الرجاء الإختيار
@@ -83,6 +101,20 @@ ar:
           gb: غيغا بايت
           kb: كيلو بايت
           tb: تيرابايت
+    percentage:
+      format:
+        format: "%n%"
   support:
     array:
+      last_word_connector: "و "
       two_words_connector: " و "
+      words_connector: "، "
+  time:
+    am: صباحاً
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: مساء

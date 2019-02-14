@@ -1,0 +1,11 @@
+cs:
+  devise:
+    password_expired:
+      change_password: "Změňte si své heslo"
+      new_password: "Nové heslo"
+    failure:
+      unauthenticated: "Pro pokračování se musíte přihlásit nebo registrovat."
+    sessions:
+      signed_in: "Byli jste úspěšně přihlášeni."
+      signed_out: "Byli jste úspěšně odhlášeni."
+      already_signed_out: "Byli jste úspěšně odhlášeni."
