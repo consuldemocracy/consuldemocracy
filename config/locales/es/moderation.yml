@@ -4,10 +4,10 @@ es:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todas
-          pending_flag_review: Sin decidir
+          all: Todos
+          pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
           comment: Comentar
@@ -16,7 +16,7 @@ es:
         ignore_flags: Marcar como revisadas
         order: Orden
         orders:
-          flags: Más denunciadas
+          flags: Más denunciados
           newest: Más nuevos
         title: Comentarios
     dashboard:
@@ -28,8 +28,8 @@ es:
         confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
-          all: Todas
-          pending_flag_review: Sin decidir
+          all: Todos
+          pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
           debate: Debate
@@ -54,11 +54,11 @@ es:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtrar
+        filter: Filtro
         filters:
           all: Todas
           pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcar como revisadas
+          with_ignored_flag: Marcadas como revisadas
         headers:
           moderate: Moderar
           proposal: la propuesta
@@ -73,10 +73,10 @@ es:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todas
-          pending_flag_review: Sin decidir
+          all: Todos
+          pending_flag_review: Pendientes de revisión
           with_ignored_flag: Marcados como revisados
         headers:
           moderate: Moderar
@@ -87,20 +87,20 @@ es:
         orders:
           created_at: Más recientes
           flags: Más denunciadas
-        title: Proyectos de presupuestos participativos
+        title: Proyectos de gasto
     proposal_notifications:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtrar
+        filter: Filtro
         filters:
           all: Todas
           pending_review: Pendientes de revisión
-          ignored: Marcar como revisadas
+          ignored: Marcadas como revisadas
         headers:
           moderate: Moderar
           proposal_notification: Notificación de propuesta
-        hide_proposal_notifications: Ocultar Propuestas
+        hide_proposal_notifications: Ocultar notificaciones
         ignore_flags: Marcar como revisadas
         order: Ordenar por
         orders:
