@@ -4,19 +4,19 @@ es:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtro
+        filter: Filtrar
         filters:
-          all: Todos
-          pending_flag_review: Pendientes
+          all: Todas
+          pending_flag_review: Sin decidir
           with_ignored_flag: Marcados como revisados
         headers:
-          comment: Comentario
+          comment: Comentar
           moderate: Moderar
         hide_comments: Ocultar comentarios
-        ignore_flags: Marcar como revisados
+        ignore_flags: Marcar como revisadas
         order: Orden
         orders:
-          flags: Más denunciados
+          flags: Más denunciadas
           newest: Más nuevos
         title: Comentarios
     dashboard:
@@ -28,56 +28,56 @@ es:
         confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
-          all: Todos
-          pending_flag_review: Pendientes
+          all: Todas
+          pending_flag_review: Sin decidir
           with_ignored_flag: Marcados como revisados
         headers:
           debate: Debate
           moderate: Moderar
         hide_debates: Ocultar debates
-        ignore_flags: Marcar como revisados
+        ignore_flags: Marcar como revisadas
         order: Orden
         orders:
           created_at: Más nuevos
-          flags: Más denunciados
+          flags: Más denunciadas
         title: Debates
     header:
-      title: Moderación
+      title: Moderar
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debates
-      flagged_investments: Proyectos de gasto
-      proposals: Propuestas
+      flagged_investments: Proyectos de presupuestos participativos
+      proposals: Propuestas ciudadanas
       proposal_notifications: Notificaciones de propuestas
       users: Bloquear usuarios
     proposals:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtro
+        filter: Filtrar
         filters:
           all: Todas
           pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcadas como revisadas
+          with_ignored_flag: Marcar como revisadas
         headers:
           moderate: Moderar
-          proposal: Propuesta
+          proposal: la propuesta
         hide_proposals: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         order: Ordenar por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
-        title: Propuestas
+        title: Propuestas ciudadanas
     budget_investments:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtro
+        filter: Filtrar
         filters:
-          all: Todos
-          pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcadas como revisadas
+          all: Todas
+          pending_flag_review: Sin decidir
+          with_ignored_flag: Marcados como revisados
         headers:
           moderate: Moderar
           budget_investment: Proyecto de gasto
@@ -87,20 +87,20 @@ es:
         orders:
           created_at: Más recientes
           flags: Más denunciadas
-        title: Proyectos de gasto
+        title: Proyectos de presupuestos participativos
     proposal_notifications:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtro
+        filter: Filtrar
         filters:
           all: Todas
           pending_review: Pendientes de revisión
-          ignored: Marcadas como revisadas
+          ignored: Marcar como revisadas
         headers:
           moderate: Moderar
           proposal_notification: Notificación de propuesta
-        hide_proposal_notifications: Ocultar notificaciones
+        hide_proposal_notifications: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         order: Ordenar por
         orders:
