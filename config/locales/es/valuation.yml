@@ -83,7 +83,7 @@ es:
         filters:
           valuation_open: Abiertas
           valuating: En evaluación
-          valuation_finished: Informe finalizado
+          valuation_finished: Evaluación finalizada
         title: Propuestas de inversión para presupuestos participativos
         edit: Editar
       show:
