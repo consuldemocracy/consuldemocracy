@@ -28,20 +28,12 @@ sl:
       banner:
         title: Naslov
         description: Opis
-        target_url: Link
-        style: Slog
-        image: Slika
         post_started_at: Objava se je začela pri
         post_ended_at: Objava se je končala pri
       edit:
         editing: Uredi pasico
         form:
           submit_button: Shrani spremembe
-      errors:
-        form:
-          error:
-            one: "Napaka je preprečila shranjevanje te pasice"
-            other: "Napake so preprečile shranjevanje te pasice"
       new:
         creating: Ustvari pasico
     activity:
@@ -67,7 +59,6 @@ sl:
       index:
         title: Participatorni proračuni
         new_link: Ustvari nov proračun
-        filter: Filter
         filters:
           open: Odpri
           finished: Končano
@@ -75,7 +66,6 @@ sl:
         table_name: Ime
         table_phase: Faza
         table_investments: Naložbe
-        table_edit_groups: Headings groups
         table_edit_budget: Uredi
         edit_groups: Uredi headings groups
         edit_budget: Uredi proračun
@@ -98,29 +88,6 @@ sl:
         unable_notice: Ne moreš uničiti proračuna, ki ima povezane naložbe
       new:
         title: Nov participatorni proračun
-      show:
-        groups:
-          one: 1 Skupina naslovov proračunov
-          other: "%{count} Skupine naslovov proračunov"
-      form:
-        group: Ime skupine
-        no_groups: Zaenkrat ni nobene ustvarjene skupine. Vsak uporabnik bo lahko glasoval v le enem naslovu skupine.
-        add_group: Dodaj novo skupino
-        create_group: Ustvari skupino
-        edit_group: Uredi skupino
-        submit: Shrani skupino
-        heading: Ime naslova
-        add_heading: Dodaj naslov
-        amount: Znesek
-        population: "Populacija (neobvezno)"
-        population_help_text: "Ti podatki se uporabljajo izključno za izračun statistike udeležbe."
-        save_heading: Shrani naslov
-        no_heading: Ta skupina nima pripisanega naslova.
-        table_heading: Naslov
-        table_amount: Znesek
-        table_population: Populacija
-        population_info: "Polje prebivalstva v naslovu proračuna se uporablja za statistične namene na koncu proračuna, da se za vsako postavko, ki predstavlja območje s populacijo, prikaže, kolikšen odstotek je glasoval. To polje je neobvezno, zato ga pustite praznega, če se ne uporablja."
-        max_votable_headings: "Največje število naslovov, v katerih lahko uporabnik glasuje"
       winners:
         calculate: Izračunaj zmagovalne naložbe
         calculated: Kalkuliram zmagovalce, morda bo malo trajalo.
@@ -146,7 +113,6 @@ sl:
         placeholder: Išči projekte
         sort_by:
           placeholder: Razvrsti po
-          id: ID
           title: Naslov
           supports: Podpira
         filters:
@@ -159,12 +125,10 @@ sl:
           selected: Označeno
           undecided: Neodločeno
           unfeasible: Neizvedljivo
-          max_per_heading: Max. supports per heading
           winners: Zmagovalci
           one_filter_html: "Trenutno vklopljeni filtri: <b><em>%{filter}</em></b>"
           two_filters_html: "Trenutno vklopljeni filtri: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          search: Išči
           filter: Filtriraj
         download_current_selection: "Prenesi trenuten izbor"
         no_budget_investments: "Ni nobenih naložbenih projektov."
@@ -172,25 +136,12 @@ sl:
         assigned_admin: Določen administrator
         no_admin_assigned: Brez določenega administratorja
         no_valuators_assigned: Brez določenih cenilcev
-        no_valuation_groups: No valuation groups assigned
         feasibility:
           feasible: "Izvedljivo (%{price})"
           unfeasible: "Neizvedljivo"
           undecided: "Neodločeno"
         selected: "Izbrano"
         select: "Izberi"
-        table_id: "ID"
-        table_title: "Naslov"
-        table_supports: "Podpira"
-        table_admin: "Administrator"
-        table_valuator: "Cenilec"
-        table_valuation_group: "Valuation Group"
-        table_geozone: "Področje uporabe"
-        table_feasibility: "Izvedljivost"
-        table_valuation_finished: "Cen. kon."
-        table_selection: "Izbran"
-        table_evaluation: "Pokaži cenilcem"
-        table_incompatible: "Nekompatibilen"
         cannot_calculate_winners: Proračun mora ostati v fazi "Projekti za glasovanje", "Pregled glasov", ali "Dokončan proračun", da se izračuna zmagovalni projekt
         see_results: "Poglej rezultate"
       show:
@@ -209,8 +160,6 @@ sl:
         tags: Oznake
         user_tags: Uporabniške oznake
         undefined: Nedefinirano
-        milestone: Mejnik
-        new_milestone: Ustvari nov mejnik
         compatibility:
           title: Kompatibilnost
           "true": Nekompatibilen
@@ -229,7 +178,6 @@ sl:
         documents: "Dokumenti"
         see_documents: "Poglej dokumente (%{count})"
         no_documents: "Brez dokumentov"
-        valuator_groups: "Valuator Groups"
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
@@ -247,7 +195,6 @@ sl:
       search_unfeasible: Iskanje neizvedljivo
     milestones:
       index:
-        table_id: "ID"
         table_title: "Naslov"
         table_description: "Opis"
         table_publication_date: "Datum objave"
@@ -257,9 +204,6 @@ sl:
         image: "Slika"
         show_image: "Pokaži sliko"
         documents: "Dokumenti"
-      form:
-        add_language: Dodaj jezik
-        remove_language: Odstrani jezik
       new:
         creating: Ustvari mejnik
         date: Datum
@@ -274,7 +218,6 @@ sl:
         notice: Mejnik uspešno izbrisan
     comments:
       index:
-        filter: Filter
         filters:
           all: Vse
           with_confirmed_hide: Potrjen
@@ -290,7 +233,6 @@ sl:
         description: Dobrodošel na %{org} administratorski vmesnik.
     debates:
       index:
-        filter: Filter
         filters:
           all: Vse
           with_confirmed_hide: Potrjen
@@ -299,7 +241,6 @@ sl:
         no_hidden_debates: Ni skritih debat.
     hidden_users:
       index:
-        filter: Filter
         filters:
           all: Vsi
           with_confirmed_hide: Potrjen
@@ -347,8 +288,6 @@ sl:
           title: Procesi legislacije
           filters:
             open: Odpri
-            next: Naslednji
-            past: Pretekli
             all: Vsi
         new:
           back: Nazaj
@@ -357,14 +296,12 @@ sl:
         process:
           title: Proces
           comments: Komentarji
-          status: Status
           creation_date: Ustvarjen na
           status_open: Odprt
           status_closed: Zaprt
           status_planned: Načrtovan
         subnav:
           info: Informacije
-          draft_texts: Besedilo
           questions: Debata
           proposals: Predlogi
       proposals:
@@ -420,7 +357,6 @@ sl:
           created_at: Ustvarjeno na
           comments: Komentarji
           final_version: Zadnja verzija
-          status: Status
       questions:
         create:
           notice: 'Vprašanje uspešno ustvarjeno. <a href="%{link}">Klikni za obisk</a>'
@@ -483,7 +419,6 @@ sl:
       administrators: Administratorji
       managers: Upravljalci
       moderators: Moderatorji
-      emails: Pošiljanje e-pošte
       newsletters: Obvestilniki
       emails_download: Prenos e-pošte
       valuators: Cenilci
@@ -503,12 +438,10 @@ sl:
         pages: Strani po meri
         images: Slike po meri
         content_blocks: Bloki vsebine po meri
-      title_categories: Kategorije
       title_moderated_content: Moderirana vsebina
       title_budgets: Proračuni
       title_polls: Glasovanja
       title_profiles: Profili
-      title_banners: Pasice
       title_site_customization: Prilagajanje spletnega mesta
       legislation: Kolaborativna zakonodaja
       users: Uporabniki
@@ -569,7 +502,6 @@ sl:
       show:
         title: Predogled obvestilnika
         send: Pošlji
-        affected_users: (%{n} affected users)
         sent_at: Poslano na
         subject: Zadeva
         segment_recipient: Prejemniki
@@ -712,7 +644,7 @@ sl:
         results: "Rezultati"
         date: "Datum"
         count_final: "Končno ponovno štetje (uradnika)"
-        count_by_system:  "Glasovi (avtomatsko štetje)"
+        count_by_system: "Glasovi (avtomatsko štetje)"
         total_system: Glasovi skupaj (avtomatsko štetje)
       index:
         booths_title: "Seznam volišč"
@@ -885,14 +817,10 @@ sl:
           pending: V teku
           rejected: Zavrnjeni
           verified: Verificirani
-        hidden_count_html:
-          one: Obstaja tudi <strong>ena organizacija</strong>, ki nima uporabnikov ali ima skrite.
-          other: Obstaja tudi <strong>%{count} organizacij</strong>, ki nimajo uporabnikov ali imajo skrite.
         name: Ime
         email: E-naslov
         phone_number: Telefonska številka
         responsible_name: Odgovorna oseba
-        status: Status
         no_organizations: Ni organizacij.
         reject: Zavrni
         rejected: Zavrnjeno
@@ -907,13 +835,7 @@ sl:
         no_results: Ni najdenih organizacij.
     proposals:
       index:
-        filter: Filtriraj
-        filters:
-          all: Vse
-          with_confirmed_hide: Potrjene
-          without_confirmed_hide: V teku
         title: Skriti predlogi
-        no_hidden_proposals: Ni skritih predlogov.
     settings:
       flash:
         updated: Vrednost posodobljena
@@ -1030,11 +952,6 @@ sl:
         external_code: Zunanja koda
         census_code: Koda popisa
         coordinates: Koordinate
-      errors:
-        form:
-          error:
-            one: "Napaka je preprečila shranjevanje te geocone"
-            other: 'Napake so preprečile shranjevanje te geocone'
       edit:
         form:
           submit_button: Shrani spremembe
@@ -1063,18 +980,6 @@ sl:
         author: Avtor
         documents: Dokumenti
         document_count: "Število dokumentov:"
-        verified:
-          one: "Obstaja %{count} veljaven podpis"
-          two: "Obstajata %{count} veljavna podpisa"
-          three: "Obstajajo %{count} veljavni podpisi"
-          four: "Obstajajo %{count} veljavni podpisi"
-          other: "Obstaja %{count} veljavnih podpisov"
-        unverified:
-          one: "Obstaja %{count} neveljaven podpis"
-          two: "Obstajata %{count} neveljavna podpisa"
-          three: "Obstajajo %{count} neveljavni podpisi"
-          four: "Obstajajo %{count} neveljavni podpisi"
-          other: "Obstaja %{count} neveljavnih podpisov"
         unverified_error: (Ni verificirano s strani popisa)
         loading: "Obstajajo še podpisi, ki so v postopku verifikacije s strani popisa, prosimo osveži stran čez nekaj trenutkov"
     stats:
@@ -1088,7 +993,7 @@ sl:
           proposal_votes: Glasovi predlogov
           proposals: Predlogi
           budgets: Odprti proračuni
-          budget_investments: Naložbeni projekti 
+          budget_investments: Naložbeni projekti
           spending_proposals: Predlogi porabe
           unverified_users: Nepreverjeni uporabniki
           user_level_three: Uporabniki tretjega nivoja
@@ -1149,15 +1054,10 @@ sl:
     verifications:
       index:
         phone_not_given: Ni podatka o telefonski številki
-        sms_code_not_confirmed: Številka ni potrjena preko SMS kode 
+        sms_code_not_confirmed: Številka ni potrjena preko SMS kode
         title: Nedokončane verifikacije
     site_customization:
       content_blocks:
-        form:
-          content_blocks_information: Informacije o blokih vsebine
-          content_block_about: Ustvariš lahko HTML bloke vsebine, ki jih je mogoče vstaviti v glavo ali nogo aplikacije CONSUL.
-          content_block_top_links_html: "<strong>Bloki glave (top_links)</strong> so bloki povezav, ki morajo imeti ta format:"
-          content_block_footer_html: "<strong>Bloki noge</strong> lahko imajo kakršen koli format in lahko vsebujejo Javascript, CSS ali HTML po meri."
         create:
           notice: Blok vsebine uspešno ustvarjen
           error: Blok vsebine ni mogel biti ustvarjen
@@ -1217,12 +1117,10 @@ sl:
           title: Ustvari novo stran po meri
         page:
           created_at: Ustvarjena na
-          status: Status
-          title: Naslov
           updated_at: Posodobljena
           status_draft: Osnutek
           status_published: Objavljena
-          locale: Jezik
+          title: Naslov
     homepage:
       title: Domača stran
       description: Aktivni moduli se na domači strani prikazujejo v istem vrstnem redu kot tukaj.
