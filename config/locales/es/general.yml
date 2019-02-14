@@ -340,7 +340,7 @@ es:
       orders:
         confidence_score: Más apoyadas
         created_at: Nuevas
-        hot_score: Más activas hoy
+        hot_score: Más activas
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
@@ -358,7 +358,7 @@ es:
         all: Todas
         duplicated: Duplicadas
         started: En ejecución
-        unfeasible: No viables
+        unfeasible: Inviables
         done: Realizadas
         other: Otras
       search_form:
@@ -376,7 +376,7 @@ es:
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
         icon_alt: Icono de Propuestas
-        title: Propuestas ciudadanas
+        title: Propuestas
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
@@ -454,7 +454,7 @@ es:
     final_date: "Recuento final/Resultados"
     index:
       filters:
-        current: "Abierto"
+        current: "Abiertas"
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
@@ -472,7 +472,7 @@ es:
         help: Ayuda sobre las votaciones
       section_footer:
         title: Ayuda sobre las votaciones
-        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa
+        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay votaciones abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
@@ -508,7 +508,7 @@ es:
         white: "En blanco"
         null_votes: "Nulos"
       results:
-        title: "Preguntas ciudadanas"
+        title: "Preguntas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
     create_question: "Crear pregunta para votación"
@@ -532,7 +532,7 @@ es:
     delete: Borrar
     "yes": "Si"
     "no": "No"
-    search_results: "Resultados de búsqueda"
+    search_results: "Resultados de la búsqueda"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
@@ -554,7 +554,7 @@ es:
       author_deleted: Usuario eliminado
     back: Volver
     check: Seleccionar
-    check_all: Todas
+    check_all: Todos
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
@@ -564,9 +564,9 @@ es:
     followable:
       budget_investment:
         create:
-          notice_html: "¡Ahora estás siguiendo este proyecto de inversión! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+          notice_html: "¡Ahora estás siguiendo este proyecto de gasto! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
         destroy:
-          notice_html: "¡Has dejado de seguir este proyecto de inverisión! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
+          notice_html: "¡Has dejado de seguir este proyecto de gasto! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
       proposal:
         create:
           notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
@@ -586,10 +586,10 @@ es:
         see_all: "Ver todas"
       budget_investment:
         found:
-          one: "Existe una propuesta de inversión con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
-          other: "Existen propuestas de inversión con el término '%{query}', puedes participar en ellas en vez de abrir una nueva."
-        message: "Estás viendo %{limit} de %{count} propuestas de inversión que contienen el término '%{query}'"
-        see_all: "Ver todas"
+          one: "Existe un proyecto de gasto con el término '%{query}', puedes participar en él en vez de crear uno nuevo."
+          other: "Existen proyectos de gasto de con el término '%{query}', puedes participar en ellos en vez de crear una nuevo."
+        message: "Estás viendo %{limit} de %{count} proyectos de gasto que contienen el término '%{query}'"
+        see_all: "Ver todos"
       proposal:
         found:
           one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
@@ -716,7 +716,7 @@ es:
       deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       proposals: Propuestas ciudadanas
       debates: Debates
-      budget_investments: Proyectos de gasto
+      budget_investments: Proyectos de presupuestos participativos
       comments: Comentarios
       actions: Acciones
       filters:
@@ -750,41 +750,41 @@ es:
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
-    organizations: Las organizaciones no pueden votar
+    organizations: Las organizaciones no pueden votar.
     signin: iniciar sesión
     signup: registrarte
     supports: Apoyos
-    unauthenticated: Necesitas %{signin} o %{signup}.
+    unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
     spending_proposals:
-      not_logged_in: Necesitas %{signin} o %{signup}.
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar
+      organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup}.
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar
+      organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:
-        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito"
-        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos"
+        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito. Ya has apoyado en %{supported_headings}."
+        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
   welcome:
     feed:
       most_active:
         debates: "Debates más activos"
         proposals: "Propuestas más activas"
-        processes: "Procesos activos"
+        processes: "Procesos abiertos"
       see_all_debates: Ver todos los debates
       see_all_proposals: Ver todas las propuestas
       see_all_processes: Ver todos los procesos
       process_label: Proceso
       see_process: Ver proceso
     cards:
-      title: Destacadas
+      title: Destacados
     recommended:
       title: Recomendaciones que te pueden interesar
       help: "Estas recomendaciones se generan por las etiquetas de los debates y propuestas que estás siguiendo."
@@ -804,7 +804,7 @@ es:
       title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ver propuestas
-      title: Participa
+      title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
@@ -822,7 +822,7 @@ es:
     label: "Enlace a contenido relacionado"
     placeholder: "%{url}"
     help: "Puedes introducir cualquier enlace de %{models} que esté dentro de %{org}."
-    submit: "Añadir como Presidente de mesa"
+    submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
     error_itself: "Enlace no válido. No se puede relacionar un contenido consigo mismo."
     success: "Has añadido un nuevo contenido relacionado"
