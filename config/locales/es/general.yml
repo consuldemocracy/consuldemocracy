@@ -583,7 +583,7 @@ es:
           one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
           other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
         message: "Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'"
-        see_all: "Ver todas"
+        see_all: "Ver todos"
       budget_investment:
         found:
           one: "Existe un proyecto de gasto con el término '%{query}', puedes participar en él en vez de crear uno nuevo."
@@ -714,7 +714,7 @@ es:
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Esta propuesta ha sido eliminada
       deleted_budget_investment: Este proyecto de gasto ha sido eliminado
-      proposals: Propuestas ciudadanas
+      proposals: Propuestas
       debates: Debates
       budget_investments: Proyectos de presupuestos participativos
       comments: Comentarios
@@ -755,7 +755,7 @@ es:
     signup: registrarte
     supports: Apoyos
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
-    verified_only: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+    verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
     spending_proposals:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
