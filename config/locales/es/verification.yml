@@ -19,7 +19,7 @@ es:
         unconfirmed_code: Todavía no has introducido el código de confirmación
       create:
         flash:
-          offices: Oficina de Atención al Ciudadano
+          offices: Oficinas de Atención al Ciudadano
           success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
       edit:
         see_all: Ver propuestas
