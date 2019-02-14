@@ -122,9 +122,9 @@ es:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        heading_id: "Partida"
+        heading_id: "Partida presupuestaria"
         title: "Título"
-        description: "Descripción detallada"
+        description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
         location: "Ubicación (opcional)"
@@ -162,7 +162,7 @@ es:
         author: "Autor"
         title: "Título"
         question: "Pregunta"
-        description: "Descripción detallada"
+        description: "Descripción"
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
@@ -181,7 +181,7 @@ es:
       spending_proposal:
         administrator_id: "Administrador"
         association_name: "Nombre de la asociación"
-        description: "Descripción detallada"
+        description: "Descripción"
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
@@ -191,15 +191,15 @@ es:
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
-        description: "Descripción detallada"
+        description: "Descripción"
       poll/translation:
         name: "Nombre"
         summary: "Resumen"
-        description: "Descripción detallada"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
-        description: "Descripción detallada"
+        description: "Descripción"
         external_url: "Enlace a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
@@ -277,10 +277,10 @@ es:
         attachment: Archivo adjunto
       poll/question/answer:
         title: Respuesta
-        description: Descripción detallada
+        description: Descripción
       poll/question/answer/translation:
         title: Respuesta
-        description: Descripción detallada
+        description: Descripción
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -300,14 +300,14 @@ es:
       widget/card:
         label: Etiqueta (opcional)
         title: Título
-        description: Descripción detallada
+        description: Descripción
         link_text: Texto del enlace
         link_url: URL del enlace
         columns: Número de columnas
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título
-        description: Descripción detallada
+        description: Descripción
         link_text: Texto del enlace
       widget/feed:
         limit: Número de elementos
