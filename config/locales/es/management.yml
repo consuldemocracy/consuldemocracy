@@ -101,7 +101,7 @@ es:
     budget_investments:
       alert:
         unverified_user: Usuario no verificado
-      create: Crear proyecto de gasto
+      create: Crear nuevo proyecto
       filters:
         heading: Concepto
         unfeasible: Proyectos no factibles
