@@ -27,14 +27,7 @@ sl:
         assigned_to: "Dodeljeno cenilcu %{valuator}"
         title: Naložbeni projekt
         edit: Uredi
-        valuators_assigned:
-          one: 1 dodeljen cenilec
-          two: 2 dodeljena cenilca
-          three: 3 dodeljeni cenilci
-          four: 4 dodeljeni cenilci
-          other: "%{count} dodeljenih cenilcev"
         no_valuators_assigned: Ni dodeljenih cenilcev
-        table_id: ID
         table_title: Naslov
         table_heading_name: Ime naslova
         table_actions: Dejanja
@@ -49,7 +42,6 @@ sl:
         edit_dossier: Uredi dosje
         price: Cena
         price_first_year: Cena tekom prvega leta
-        currency: "€"
         feasibility: Izvedljivost
         feasible: Izvedljiv
         unfeasible: Neizvedljiv
@@ -99,7 +91,6 @@ sl:
         edit_dossier: Uredi dosje
         price: Cena
         price_first_year: Cena tekom prvega leta
-        currency: "€"
         feasibility: Izvedljivost
         feasible: Izvedljiv
         not_feasible: Neizvedljiv
@@ -114,7 +105,6 @@ sl:
         dossier: Dosje
         price_html: "Cena (%{currency})"
         price_first_year_html: "Cena tekom prvega leta (%{currency})"
-        currency: "€"
         price_explanation_html: Razlaga cene
         feasibility: Izvedljivost
         feasible: Izvedljiv
