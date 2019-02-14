@@ -223,10 +223,10 @@ es:
           admin: Administrador
           valuator: Evaluador
           valuation_group: Grupos evaluadores
-          geozone: Ámbitos de actuación
+          geozone: Ámbito de actuación
           feasibility: Viabilidad
           valuation_finished: Ev. Fin.
-          selected: Seleccionados
+          selected: Seleccionado
           visible_to_valuators: Mostrar a evaluadores
           author_username: Usuario autor
           incompatible: Incompatible
@@ -482,7 +482,7 @@ es:
           id: Id
           supports: Apoyos totales
           select: Seleccionar
-          selected: Seleccionados
+          selected: Seleccionada
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
@@ -564,7 +564,7 @@ es:
         new:
           back: Volver
           title: Crear nueva pregunta
-          submit_button: Crear pregunta para votación
+          submit_button: Crear pregunta
         table:
           title: Título
           question_options: Opciones de respuesta
@@ -945,7 +945,7 @@ es:
     questions:
       index:
         title: "Preguntas de votaciones"
-        create: "Crear pregunta para votación"
+        create: "Crear pregunta ciudadana"
         no_questions: "No hay ninguna pregunta ciudadana."
         filter_poll: Filtrar por votación
         select_poll: Seleccionar votación
@@ -966,7 +966,7 @@ es:
           add_image: "Añadir imagen"
           save_image: "Guardar imagen"
       show:
-        proposal: Propuesta original
+        proposal: Propuesta ciudadana original
         author: Autor
         question: Pregunta
         edit_question: Editar pregunta
