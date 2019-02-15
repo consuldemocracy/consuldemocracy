@@ -12,7 +12,7 @@ es:
         title: 'Editar cuenta de usuario: Restablecer contraseña'
         back: Volver
         password:
-          password: Contraseña que utilizarás para acceder a este sitio web
+          password: Contraseña
           send_email: Enviar email para restablecer la contraseña
           reset_email_send: Email enviado correctamente.
           reseted: Contraseña restablecida correctamente
@@ -89,7 +89,7 @@ es:
       print:
         print_button: Imprimir
       index:
-        title: Apoyar propuestas*
+        title: Apoyar propuestas
     budgets:
       create_new_investment: Crear proyectos de gasto
       print_investments: Imprimir proyectos de gasto
