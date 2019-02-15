@@ -145,11 +145,6 @@ it:
         tags_filter_all: Tutti i tag
         advanced_filters: Filtri avanzati
         placeholder: Cerca progetti
-        sort_by:
-          placeholder: Ordina per
-          id: ID
-          title: Titolo
-          supports: Sostegni
         filters:
           all: Tutti
           without_admin: Senza amministratore designato
