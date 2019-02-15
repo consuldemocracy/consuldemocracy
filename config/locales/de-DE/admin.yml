@@ -182,11 +182,6 @@ de:
         tags_filter_all: Alle Tags
         advanced_filters: Erweiterte Filter
         placeholder: Suche Projekte
-        sort_by:
-          placeholder: Sortieren nach
-          id: ID
-          title: Titel
-          supports: Unterstützung
         filters:
           all: Alle
           without_admin: Ohne zugewiesene*n Administrator*in
