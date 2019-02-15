@@ -182,11 +182,6 @@ val:
         tags_filter_all: Totes les etiquetes
         advanced_filters: Filtres avançats
         placeholder: Buscar projectes
-        sort_by:
-          placeholder: Ordenar per
-          id: ID
-          title: Títol
-          supports: Avals
         filters:
           all: Totes
           without_admin: Sense administrador
