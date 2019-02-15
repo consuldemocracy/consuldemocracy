@@ -98,6 +98,30 @@ tr:
       inclusion: listeye dahil değildir
       invalid: geçersizdir
       less_than: '%{count}''dan küçük olmalıdır'
+      less_than_or_equal_to: '%{count}''dan küçük veya eşit olmalıdır'
+      model_invalid: "Doğrulama başarısız: %{errors}"
+      not_a_number: bir sayı değil
+      not_an_integer: tam sayı olmalıdır
+      odd: tek sayı olmalıdır
+      required: mevcut olmalıdır
+      taken: zaten alındı
+      too_long:
+        one: çok uzun (en fazla 1 karakter)
+        other: çok uzun (en fazla %{count} karakter)
+      too_short:
+        one: çok kısa (en az 1 karakter)
+        other: çok kısa (en az %{count} karakter)
+      wrong_length:
+        one: hatalı uzunluk (1 karakter olmalı)
+        other: hatalı uzunluk (%{count} karakter olmalı)
+      other_than: '%{count}''dan farklı olmalıdır'
+    template:
+      body: 'Aşağıdaki alanlar ile ilgili sorunlar vardır:'
+  helpers:
+    select:
+      prompt: Lütfen seçiniz
+    submit:
+      create: '%{model} Oluştur'
   number:
     human:
       format:
