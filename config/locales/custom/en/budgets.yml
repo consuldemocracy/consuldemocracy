@@ -18,8 +18,7 @@ en:
         faq: "What can you propose?"
         faq_link: "See all information of participatory budgets"
       share:
-        message: "I supported the investment project %{title} in %{org} of participatory budget 2019. Support you too and #PonChuloMadrid"
-        message_mobile: "I supported the investment project %{title} in %{handle} of participatory budget 2019. Support you too and #PonChuloMadrid"
+        message: "I supported the investment project %{title} in %{handle} of participatory budget 2019. Support you too and #PonChuloMadrid"
     stats:
       title: Participation stats
       link: Stats
