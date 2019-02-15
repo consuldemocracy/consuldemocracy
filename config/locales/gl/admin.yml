@@ -182,11 +182,6 @@ gl:
         tags_filter_all: Todas as etiquetas
         advanced_filters: Filtros avanzados
         placeholder: Buscar proxectos
-        sort_by:
-          placeholder: Ordenar por
-          id: ID
-          title: Título
-          supports: Apoios
         filters:
           all: Todo
           without_admin: Sen administrador
