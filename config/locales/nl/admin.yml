@@ -158,11 +158,6 @@ nl:
         tags_filter_all: All tags
         advanced_filters: Geavanceerde filters
         placeholder: Zoek in projecten
-        sort_by:
-          placeholder: Sorteer op
-          id: ID
-          title: Title
-          supports: Steunt
         filters:
           all: All
           without_admin: Without assigned admin
