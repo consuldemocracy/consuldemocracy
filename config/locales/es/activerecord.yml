@@ -169,7 +169,7 @@ es:
         email: "Email"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
-        password: "Contraseña que utilizarás para acceder a este sitio web"
+        password: "Contraseña"
         current_password: "Contraseña actual"
         phone_number: "Teléfono"
         official_position: "Cargo público"
