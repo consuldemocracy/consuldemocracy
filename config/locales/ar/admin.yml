@@ -185,11 +185,6 @@ ar:
         tags_filter_all: كل العلامات
         advanced_filters: إنتقاءات متقدمة
         placeholder: بحث عن مشاريع
-        sort_by:
-          placeholder: فرز حسب
-          id: ID
-          title: عنوان
-          supports: دعم
         filters:
           all: الكل
           without_admin: بدون تعيين المدير
