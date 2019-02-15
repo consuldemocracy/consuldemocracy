@@ -145,11 +145,6 @@ sv:
         tags_filter_all: Alla taggar
         advanced_filters: Avancerade filter
         placeholder: Sök projekt
-        sort_by:
-          placeholder: Sortera efter
-          id: Legitimation
-          title: Titel
-          supports: Stöd
         filters:
           all: Alla
           without_admin: Utan ansvarig administratör
