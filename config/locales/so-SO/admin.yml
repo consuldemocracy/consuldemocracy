@@ -145,11 +145,6 @@ so:
         tags_filter_all: Dhamaan Taagyada
         advanced_filters: Sifeyaysha Sare
         placeholder: Mashariic raadin
-        sort_by:
-          placeholder: Kala saar
-          id: Aqoonsi
-          title: Ciwaan
-          supports: Tageerayaal
         filters:
           all: Dhamaan
           without_admin: Anlahayn maamul
