@@ -147,11 +147,6 @@ pl:
         tags_filter_all: Wszystkie tagi
         advanced_filters: Zaawansowane filtry
         placeholder: Wyszukaj projekty
-        sort_by:
-          placeholder: Sortuj według
-          id: Numer ID
-          title: Tytuł
-          supports: Wsparcie
         filters:
           all: Wszystkie
           without_admin: Bez przypisanego administratora
