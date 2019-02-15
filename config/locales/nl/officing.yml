@@ -1,68 +1,68 @@
 nl:
   officing:
     header:
-      title: Peilingen
+      title: Polling
     dashboard:
       index:
-        title: Beheer peilingen
-        info: Hier kun je documenten van gebruikers valideren en stemresultaten opslaan
+        title: Poll officing
+        info: Here you can validate user documents and store voting results
         no_shifts: Je hebt geen beheerdienst vandaag.
     menu:
-      voters: Valideer bestand
+      voters: Validate document
       total_recounts: Totaal aantal hertellingen en resultaten
     polls:
       final:
-        title: Peilingen gereed voor laatste hertelling
-        no_polls: Je beheert geen laatste hertellingen in een actieve peiling
-        select_poll: Selecteer peiling
-        add_results: Voeg resultaten toe
+        title: Polls ready for final recounting
+        no_polls: You are not officing final recounts in any active poll
+        select_poll: Select poll
+        add_results: Add results
     results:
       flash:
-        create: "Resultaten opgeslagen"
-        error_create: "Resultaten NIET opgeslagen. Foutmelding in data"
-        error_wrong_booth: "Verkeerd stemhokje. Resultaten NIET opgeslagen."
+        create: "Results saved"
+        error_create: "Results NOT saved. Error in data."
+        error_wrong_booth: "Wrong booth. Results NOT saved."
       new:
-        title: "%{poll} - Voeg resultaten toe"
+        title: "%{poll} - Add results"
         not_allowed: "Voor deze peiling kun je resultaten toevoegen"
         booth: "Stemhokje"
         date: "Datum"
-        select_booth: "Selecteer stemhokje"
+        select_booth: "Select booth"
         ballots_white: "Blanco stemmen"
-        ballots_null: "Ongeldige stemmen"
-        ballots_total: "Totaal aantal stemmen"
-        submit: "Opslaan"
-        results_list: "Jouw resultaten"
+        ballots_null: "Invalid ballots"
+        ballots_total: "Totaal stemmen"
+        submit: "Save"
+        results_list: "Your results"
         see_results: "Bekijk resultaten"
       index:
-        no_results: "Geen resultaten"
+        no_results: "No results"
         results: Resultaten
         table_answer: Antwoord
-        table_votes: Stemmen
+        table_votes: Votes
         table_whites: "Blanco stemmen"
-        table_nulls: "Ongeldige stemmen"
-        table_total: "Totaal aantal stemmen"
+        table_nulls: "Invalid ballots"
+        table_total: "Totaal stemmen"
     residence:
       flash:
-        create: "Document geverifieerd door gemeente"
-        not_allowed: "Je hebt geen beheerdienst vandaag"
+        create: "Document verified with Census"
+        not_allowed: "You don't have officing shifts today"
       new:
-        title: Valideer document
-        document_number: "Document nummer (inclusief letters)"
-        submit: Valideer document
-        error_verifying_census: "De gemeente was niet in staat dit document te valideren."
-        form_errors: voorkwam de verificatie van dit document
+        title: Valideer bestand
+        document_number: "Documentnummer (inclusief letters)"
+        submit: Valideer bestand
+        error_verifying_census: "The Census was unable to verify this document."
+        form_errors: prevented the verification of this document
         no_assignments: "Je hebt geen beheerdienst vandaag"
     voters:
       new:
-        title: Peilingen
-        table_poll: Peiling
-        table_status: Peilingen status
-        table_actions: Acties
+        title: Polls
+        table_poll: Poll
+        table_status: Polls status
+        table_actions: Activiteiten
         not_to_vote: De persoon heeft besloten niet te stemmen op dit moment
       show:
-        can_vote: Mag stemmen
-        error_already_voted: Heeft al deelgenomen aan deze peiling
-        submit: Stem bevestigen
-        success: "Stem ingediend!"
+        can_vote: Can vote
+        error_already_voted: Has already participated in this poll
+        submit: Confirm vote
+        success: "Vote introduced!"
       can_vote:
         submit_disable_with: "Een moment geduld a.u.b., stem wordt bevestigd..."

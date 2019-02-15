@@ -8,6 +8,7 @@ he:
       delete_button: הסרת התמונה
       note: "ניתן להעלות תמונה אחת בנושאי התוכן הבאים: %{accepted_content_types}, גודל מקסמלי %{max_file_size} MB."
       add_new_image: הוספת תמונה
+      admin_title: "תמונה"
       admin_alt_text: "טקסט חלופי עבור התמונה"
     actions:
       destroy:

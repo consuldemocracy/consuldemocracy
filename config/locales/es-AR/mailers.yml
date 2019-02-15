@@ -65,13 +65,13 @@ es-AR:
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
     budget_investment_selected:
       subject: "Tu propuesta de inversión '%{code}' ha sido seleccionada"
-      hi: "Estimado/a usuario/a"
+      hi: "Estimado usuario,"
       share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
       share_button: "Comparte tu proyecto"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
     budget_investment_unselected:
       subject: "Tu propuesta de inversión '%{code}' no ha sido seleccionada"
-      hi: "Estimado/a usuario/a"
+      hi: "Estimado usuario,"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"

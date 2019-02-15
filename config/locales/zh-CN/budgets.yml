@@ -14,7 +14,7 @@ zh-CN:
       reasons_for_not_balloting:
         not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
         not_verified: 只有已验证用户可以对投资进行投票；%{verify_account}。
-        organization: 组织不允许投票
+        organization: 组织不得投票
         not_selected: 无法支持未选择的投资项目
         not_enough_money_html: "您已经分配了可用的预算。<br><small>请记住您可以随时%{change_ballot}</small>"
         no_ballots_allowed: 选择阶段已结束
@@ -50,12 +50,13 @@ zh-CN:
       map: 预算投资提议的地理位置
       investment_proyects: 所有投资项目的列表
       unfeasible_investment_proyects: 所有不可行投资项目的列表
-      not_selected_investment_proyects: 所有未选入投票阶段的投资项目的列表
+      not_selected_investment_proyects: 所有未被选入投票的投资项目的列表
       finished_budgets: 已完成的参与性预算
       see_results: 查看结果
       section_footer:
         title: 参与性预算的帮助说明
         description: 通过参与性预算，公民决定哪些项目注定会是预算的一部分。
+      milestones: 里程碑
     investments:
       form:
         tag_category_label: "类别"
@@ -68,7 +69,7 @@ zh-CN:
         location: "位置附加信息"
         map_skip_checkbox: "此投资没有具体的位置或者我并不知道。"
       index:
-        title: 参与性预算编制
+        title: 参与性预算
         unfeasible: 不可行的投资项目
         unfeasible_text: "投资必须符合若干标准（合法性，具体性，是城市的责任，不超出预算限制）才可以被宣布为可行并进入最终投票阶段。所有不符合这些标准的投资都被标记为不可行，并将连同其不可行报告一起发布在以下列表中。"
         by_heading: "具有范围的投资项目：%{heading}"
@@ -85,11 +86,11 @@ zh-CN:
           voted_info: 在此阶段结束前您可以随时%{link}。不需要花掉所有可用的钱。
           voted_info_link: 更改您的投票
           different_heading_assigned_html: "您在另一个标题中有有效投票：%{heading_link}"
-          change_ballot: "如果您改变主意，您可以在%{check_ballot} 中删除投票并重新开始。"
+          change_ballot: "如果您改变主意，您可以删除您在%{check_ballot} 中的投票并重新开始。"
           check_ballot_link: "查看我的选票"
           zero: 您没有对此组中的任何投资项目投票。
           verified_only: "创建新的预算投资%{verify}。"
-          verify_account: "验证您的账号"
+          verify_account: "验证您的账户"
           create: "创建预算投资"
           not_logged_in: "要创建新的预算投资，您必须%{sign_in} 或者%{sign_up}。"
           sign_in: "登录"
@@ -99,10 +100,12 @@ zh-CN:
           unfeasible: 不可行的项目
         orders:
           random: 随机
-          confidence_score: 最高额定值
+          confidence_score: 最高评分
           price: 按价格
+      share:
+        message: "我在%{org} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
       show:
-        author_deleted: 用户已删除
+        author_deleted: 已删除的用户
         price_explanation: 价格说明
         unfeasibility_explanation: 不可行性说明
         code_html: '投资项目代码：<strong>%{code}</strong>'
@@ -135,7 +138,7 @@ zh-CN:
       header:
         check_ballot: 查看我的选票
         different_heading_assigned_html: "您在另一个标题中有有效投票：%{heading_link}"
-        change_ballot: "如果您改变主意，您可以删除您在%{check_ballot} 中的投票并重新开始。"
+        change_ballot: "如果您改变主意，您可以在%{check_ballot} 中删除投票并重新开始。"
         check_ballot_link: "查看我的选票"
         price: "此标题有一个预算"
     progress_bar:
@@ -155,7 +158,7 @@ zh-CN:
       heading: "参与性预算结果"
       heading_selection_title: "按区域"
       spending_proposal: 提议标题
-      ballot_lines_count: 被选的次数
+      ballot_lines_count: 投票
       hide_discarded_link: 隐藏放弃的
       show_all_link: 显示所有
       price: 价格
@@ -165,7 +168,16 @@ zh-CN:
       incompatibles: 不兼容
       investment_proyects: 所有投资项目的列表
       unfeasible_investment_proyects: 所有不可行投资项目的列表
-      not_selected_investment_proyects: 所有未被选入投票的投资项目的列表
+      not_selected_investment_proyects: 所有未选入投票阶段的投资项目的列表
+    executions:
+      link: "里程碑"
+      page_title: "%{budget}－里程碑"
+      heading: "参与性预算里程碑"
+      heading_selection_title: "按区域"
+      no_winner_investments: "这个州里没有胜出的投资"
+      filters:
+        label: "项目的当前状态"
+        all: "所有(%{count})"
     phases:
       errors:
         dates_range_invalid: "开始日期不能等于或晚于结束日期"

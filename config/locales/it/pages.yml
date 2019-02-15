@@ -4,7 +4,6 @@ it:
       title: Termini e condizioni d'uso
       subtitle: AVVISO LEGALE SULLE CONDIZIONI D'USO, PRIVACY E PROTEZIONE DEI DATI PERSONALI DEL PORTALE GOVERNO APERTO
       description: Pagina di informazioni sulle condizioni di utilizzo, privacy e protezione dei dati personali.
-    general_terms: Termini e condizioni d'uso
     help:
       title: "%{org} è una piattaforma di partecipazione cittadina"
       guide: "Questa guida spiega a cosa serve e come funziona ciascuna sezione di %{org}."
@@ -12,9 +11,9 @@ it:
         debates: "Dibattiti"
         proposals: "Proposte"
         budgets: "Bilanci partecipativi"
-        polls: "Sondaggi"
-        other: "Altre informazioni interessanti"
-        processes: "Processi"
+        polls: "Votazioni"
+        other: "Altre informazioni di interesse"
+        processes: "Procedimenti"
       debates:
         title: "Dibattiti"
         description: "Nella sezione %{link} è possibile presentare e condividere con altre persone le proprie opinioni rispetto a questioni di interesse relative alla città. È anche un luogo in cui generare idee che, attraverso le altre sezioni di %{org}, possano condurre ad azioni concrete del Consiglio Comunale."
@@ -22,32 +21,32 @@ it:
         feature_html: "Puoi dare inizio a dibattiti, commentare e valutarli con <strong>Sono d’accordo</strong> o <strong>Non sono d’accordo</strong>. Per farlo occorre %{link}."
         feature_link: "registratevi su %{org}"
         image_alt: "Pulsanti per valutare i dibattiti"
-        figcaption: 'Pulsanti "Sono d''accordo" e "Non sono d''accordo" per valutare i dibattiti.'
+        figcaption: 'Pulsanti "Sono d''accordo" e "Non sonod''accordo" per valutare ed appoggiare o meno i dibattiti.'
       proposals:
         title: "Proposte"
         description: "Nella sezione %{link} è possibile avanzare proposte da far realizzare dal Consiglio Comunale. Le proposte necessitano di sostegno e, se viene raggiunto un sostegno sufficiente, vengono ammesse al voto pubblico. Le proposte così approvate dal voto dei cittadini sono accettate dal Consiglio Comunale e realizzate."
         link: "proposte dei cittadini"
-        image_alt: "Pulsante per sostenere una proposta"
+        image_alt: "Pulsante per appoggiare una proposta"
         figcaption_html: 'Pulsante per “Sostenere” una proposta.'
       budgets:
         title: "Bilancio partecipativo"
         description: "La sezione %{link} aiuta le persone a contribuire in maniera diretta alle decisioni relative a parte della spesa del bilancio comunale."
         link: "bilanci partecipativi"
-        image_alt: "Diverse fasi del bilancio partecipativo"
-        figcaption_html: 'Fasi di “Sostegno” e “Voto” dei bilanci partecipativi.'
+        image_alt: "Le fasi del bilancio partecipativo"
+        figcaption_html: 'Le fasi di appoggio e di voto dei bilanci partecipativi.'
       polls:
-        title: "Sondaggi"
+        title: "Votazioni"
         description: "La sezione %{link} si attiva ogni volta che una proposta raggiunge l’1% del sostegno e va al voto o quando il Consiglio Comunale pone una questione sulla quale i cittadini debbano decidere."
         link: "sondaggi"
         feature_1: "Per partecipare al voto occorre %{link} e verificare l’account."
         feature_1_link: "registrarsi su %{org_name}"
       processes:
-        title: "Processi"
+        title: "Procedimenti"
         description: "Nella sezione %{link} i cittadini partecipano alla realizzazione e all’emendamento dei regolamenti comunali e possono fornire la propria opinione sulle politiche locali in dibattiti preventivi."
         link: "processi"
       faq:
         title: "Problemi tecnici?"
-        description: "Leggi le FAQ per trovare risposta alle tue domande."
+        description: "Leggi le FAQ per avere una possibile risposta alle tue domande."
         button: "Visualizzare le domande frequenti (FAQ)"
         page:
           title: "Domande frequenti (FAQ)"
@@ -60,12 +59,12 @@ it:
       how_to_use:
         text: |-
           Usalo nella tua amministrazione locale o aiutaci a migliorarlo, è un software gratuito.
-          
+
           Questo Portale per l’Amministrazione Aperta usa la [app CONSUL](https://github.com/consul/consul 'consul github') che è un software gratuito, con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), il che significa in parole povere che chiunque può utilizzare il codice liberamente, copiarlo, esaminarlo nei particolari, modificarlo e ridistribuirlo nel mondo con le modifiche che desidera (consentendo ad altri di fare lo stesso). Perché crediamo che la cultura sia migliore e più ricca quando è libera.
-          
+
           Se sei un programmatore, puoi vedere il codice e aiutarci a migliorarlo sulla [app CONSUL](https://github.com/consul/consul 'consul github').
       titles:
-        how_to_use: Usalo nella tua amministrazione locale
+        how_to_use: Utilizzalo nel tuo comune
     privacy:
       title: Informativa sulla privacy
       subtitle: INFORMATIVA SULLA PRIVACY DEI DATI
@@ -87,15 +86,11 @@ it:
             - 
               field: 'Ente responsabile del documento:'
               description: ENTE RESPONSABILE DEL DOCUMENTO
-        - 
-          text: L'interessato potrà esercitare i diritti di accesso, rettifica, cancellazione e opposizione, innanzi all'organismo responsabile indicato, secondo quanto previsto dall'articolo 5 della legge organica 15/1999, del 13 dicembre, sulla protezione dei Dati di Carattere Personale.
-        - 
-          text: Come principio generale, questo sito non condivide o divulga le informazioni raccolte, a meno che non venga a ciò autorizzato dall’utente o le informazioni siano richieste dall'Autorità Giudiziaria, compreso l’ufficio del Pubblico Ministero, o dalla polizia giudiziaria, ovvero in qualsiasi altro caso regolamentato dall'articolo 11 della legge organica 15/1999, del 13 dicembre, sulla Protezione dei Dati Personali.
     accessibility:
       title: Accessibilità
       description: |-
         L'accessibilità della rete si riferisce alla possibilità di accesso alla rete e ai suoi contenuti da parte di tutte le persone, indipendentemente dalle disabilità (fisiche, intellettuali o tecniche) che possano insorgere o da quelle che derivano dal contesto di utilizzo (tecnologico o ambientale).
-        
+
         Quando i siti web sono progettati con un occhio all'accessibilità, tutti gli utenti possono accedere ai contenuti a parità di condizioni, ad esempio:
       examples:
         - Fornendo un testo alternativo alle immagini, gli utenti ciechi o ipovedenti possono utilizzare lettori speciali per accedere alle informazioni.
@@ -189,5 +184,5 @@ it:
       info: 'Per verificare il tuo account inserisci i dati di accesso:'
       info_code: 'Ora introduci il codice che hai ricevuto nella lettera:'
       password: Password
-      submit: Verifica il mio account
+      submit: Verifica il tuo account
       title: Verifica il tuo account

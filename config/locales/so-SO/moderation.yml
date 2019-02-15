@@ -1,1 +1,117 @@
 so:
+  moderation:
+    comments:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending_flag_review: Joojin
+          with_ignored_flag: Ku alaamadeysan sida loo arko
+        headers:
+          comment: Faalo
+          moderate: Dhexdhadiye
+        hide_comments: Qari Falooyinka
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbo
+        orders:
+          flags: Inta badan calanka
+          newest: Ugu cusub
+        title: Faalo
+    dashboard:
+      index:
+        title: Dhexdhexaadinta
+    debates:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending_flag_review: Joojin
+          with_ignored_flag: Ku alaamadeysan sida loo arko
+        headers:
+          debate: Dood
+          moderate: Dhexdhadiye
+        hide_debates: Qari dodaha
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbo
+        orders:
+          created_at: Ugu cusub
+          flags: Inta badan calanka
+        title: Doodo
+    header:
+      title: Dhexdhexaadinta
+    menu:
+      flagged_comments: Faalo
+      flagged_debates: Doodo
+      flagged_investments: Misaniyada malgashiyada
+      proposals: Sojeedino
+      proposal_notifications: Ogaysiis soo jedinada
+      users: Isticmalaysha la xayiray
+    proposals:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending_flag_review: Dib u eegidaada
+          with_ignored_flag: Ku calaamadee sida loo arko
+        headers:
+          moderate: Dhexdhadiye
+          proposal: Sojeedin
+        hide_proposals: Qari talooyinka
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbaday
+        orders:
+          created_at: Ugu danbeyey
+          flags: Inta badan calanka
+        title: Sojeedino
+    budget_investments:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending_flag_review: Joojin
+          with_ignored_flag: Ku alaamadeysan sida loo arko
+        headers:
+          moderate: Dhexdhadiye
+          budget_investment: Misaniyada malgashiga
+        hide_budget_investments: Qari Misaniyada Malashiyada
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbaday
+        orders:
+          created_at: Ugu danbeyey
+          flags: Inta badan calanka
+        title: Misaniyada malgashiyada
+    proposal_notifications:
+      index:
+        block_authors: Qorayaasha baaritaanka
+        confirm: Mahubtaa adigu?
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          pending_review: Dib u eegidaada
+          ignored: Ku calaamadee sida loo arko
+        headers:
+          moderate: Dhexdhadiye
+          proposal_notification: Ogeysiin Sojeedineed
+        hide_proposal_notifications: Qari talooyinka
+        ignore_flags: Ku calaamadee sida loo arko
+        order: Dalbaday
+        orders:
+          created_at: Ugu danbeyey
+          moderated: Dhexdhexaadiyay
+        title: Ogaysiis soo jedin
+    users:
+      index:
+        hidden: Xanibay
+        hide: Xanibaan
+        search: Raadin
+        search_placeholder: emailka ama magaca isticamalaha
+        title: Isticmalaysha la xayiray
+      notice_hide: Isticmaalayaasha ayaa xiran. Dhamaan doodaha user-ka iyo faallooyinka ayaa la qariyey.

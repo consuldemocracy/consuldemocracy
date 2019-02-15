@@ -18,4 +18,4 @@ es-AR:
     errors:
       messages:
         in_between: debe estar entre %{min} y %{max}
-        wrong_content_type: El tipo de contenido %{content_type} de la imagen no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}
+        wrong_content_type: El tipo de contenido %{content_type} del archivo no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}

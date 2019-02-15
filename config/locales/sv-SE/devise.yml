@@ -3,7 +3,7 @@ sv:
     password_expired:
       expire_password: "Lösenordet har gått ut"
       change_required: "Ditt lösenord har gått ut"
-      change_password: "Uppdatera ditt lösenord"
+      change_password: "Ändra ditt lösenord"
       new_password: "Nytt lösenord"
       updated: "Lösenordet har uppdaterats"
     confirmations:

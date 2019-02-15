@@ -6,11 +6,11 @@ es-PA:
         confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
-          all: Todos
+          all: Todas
           pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
-          comment: Comentario
+          comment: Comentar
           moderate: Moderar
         hide_comments: Ocultar comentarios
         ignore_flags: Marcar como revisados
@@ -26,12 +26,13 @@ es-PA:
       index:
         block_authors: Bloquear autores
         confirm: '¿Estás seguro?'
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todos
+          all: Todas
           pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
+          debate: el debate
           moderate: Moderar
         hide_debates: Ocultar debates
         ignore_flags: Marcar como revisados
@@ -40,9 +41,10 @@ es-PA:
           created_at: Más nuevos
           flags: Más denunciados
     header:
-      title: Moderación
+      title: Moderar
     menu:
       flagged_comments: Comentarios
+      flagged_investments: Proyectos de presupuestos participativos
       proposals: Propuestas
       users: Bloquear usuarios
     proposals:
@@ -53,17 +55,52 @@ es-PA:
         filters:
           all: Todas
           pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcadas como revisadas
+          with_ignored_flag: Marcar como revisados
         headers:
           moderate: Moderar
-          proposal: Propuesta
+          proposal: la propuesta
         hide_proposals: Ocultar Propuestas
-        ignore_flags: Marcar como revisadas
+        ignore_flags: Marcar como revisados
         order: Ordenar por
         orders:
           created_at: Más recientes
-          flags: Más denunciadas
+          flags: Más denunciados
         title: Propuestas
+    budget_investments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          moderate: Moderar
+          budget_investment: Propuesta de inversión
+        ignore_flags: Marcar como revisados
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciados
+        title: Proyectos de presupuestos participativos
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_review: Pendientes de revisión
+          ignored: Marcar como revisados
+        headers:
+          moderate: Moderar
+        hide_proposal_notifications: Ocultar Propuestas
+        ignore_flags: Marcar como revisados
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+        title: Notificaciones de propuestas
     users:
       index:
         hidden: Bloqueado

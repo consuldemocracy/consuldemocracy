@@ -1,71 +1,70 @@
 nl:
   pages:
     conditions:
-      title: Gebruikersvoorwaarden
-      subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN PERSOONSGEGEVENS VAN DE OPEN OVERHEID PORTAL
+      title: Gebruiksvoorwaarden
+      subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
       description: Informatiepagina over de gebruiksvoorwaarden, privacy en bescherming van persoonsgegevens.
-    general_terms: Algemene voorwaarden
     help:
       title: "%{org} is een platform voor burgerparticipatie"
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
       menu:
-        debates: "Discussies"
-        proposals: "Voorstellen"
-        budgets: "Burgerbegrotingen"
-        polls: "Peilingen"
-        other: "Andere relevante informatie"
-        processes: "Processen"
+        debates: "Discussie"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        polls: "Polls"
+        other: "Verdere informatie"
+        processes: "Proces"
       debates:
-        title: "Discussies"
+        title: "Discussie"
         description: "Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden."
         link: "Discussies"
         feature_html: "Je kunt discussies een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
         image_alt: "Knoppen om een discussie te scoren"
-        figcaption: '"Eens" en "Oneens" knoppen om de discussie te scoren.'
+        figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
       proposals:
-        title: "Voorstellen"
+        title: "Proposals"
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
         link: "Voorstellen"
         image_alt: "Knop om een voorstel te steunen"
         figcaption_html: 'Knop om een voorstel te ''''steunen''''.'
       budgets:
-        title: "Burgerbegrotingen"
+        title: "Burgerbegroting"
         description: "Het %{link} onderdeel helpt bij het geven van direct zeggenschap aan inwoners over de besteding van gebiedsbudgetten van de gemeente."
         link: "Burgerbegrotingen"
-        image_alt: "Verschillende fasen van een burgerbegroting"
-        figcaption_html: '"Steun" and "Stem" fases van de burgerbegroting.'
+        image_alt: "Verschillende fasen in de burgerbegroting"
+        figcaption_html: '"Steun" fase en "Stem" fase in de burgerbegroting.'
       polls:
-        title: "Peilingen"
+        title: "Polls"
         description: "Het %{link} onderdeel wordt geactiveerd elke keer wanneer een voorstel 1% steun krijgt en tot stemming over gaat, of als de gemeente een vraagstuk en besluit aan de inwoners wil voorleggen."
         link: "peilingen"
         feature_1: "Om te participeren bij de peilingen moet je %{link} en je account verifiëren."
         feature_1_link: "registreren in %{org_name}"
       processes:
-        title: "Processen"
-        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid in eerdere discussies."
-        link: "processen"
+        title: "Proces"
+        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies."
+        link: "plannen"
       faq:
         title: "Technische problemen?"
-        description: "Vind de antwoorden op je vragen in de Veelgestelde vragen."
-        button: "Bekijk de Veelgestelde vragen"
+        description: "Lees de FAQs en kijk of dat helpt."
+        button: "Bekijk de meest gestelde vragen"
         page:
-          title: "Veelgestelde vragen"
-          description: "Gebruik deze pagina om de meest gestelde vragen te verzamelen."
+          title: "Veel gestelde vragen"
+          description: "Gebruik deze pagina veelgestelde vragen van de gebruikers van de site te beantwoorden."
           faq_1_title: "Vraag 1"
-          faq_1_description: "Beschrijf hier de vraag."
+          faq_1_description: "Dit is een voorbeeld voor de beschrijving van de eerste vraag."
       other:
-        title: "Andere relevante informatie"
-        how_to_use: "Gebruik %{org_name} in jouw gemeente"
+        title: "Verdere informatie"
+        how_to_use: "Gebruik %{org_name} in uw gemeente"
       how_to_use:
         text: |-
           Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.
-          
+
           Dit platform gebruikt de [CONSUL app](https://github.com/consul/consul 'consul github') wat open source software is [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), wat betekent dat iedereen vrij is om de code te gebruiken, te kopieren, in detail te bekijken aan te passen en opnieuw de wereld in te sturen met de aanpassingen die men maakt (en daarmee anderen toe te staan dit ook te doen). Omdat wij denken dat cultuur beter en rijker wordt als het wordt opengesteld.
-          
+
           Als je programmeur bent kun je de code bekijken en ons helpen deze te verbeteren via [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
-        how_to_use: Gebruik het in je gemeente
+        how_to_use: Gebruik het in uw gemeente
     privacy:
       title: Privacy Verklaring
       subtitle: INFORMATIE OVER GEGEVENSBESCHERMING
@@ -79,23 +78,19 @@ nl:
         - 
           subitems:
             - 
-              field: 'De naam van het bestand:'
+              field: 'Bestandsnaam:'
               description: NAAM VAN HET BESTAND
             - 
               field: 'Doel van het bestand:'
-              description: Het beheer van participatieve processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
+              description: Het beheer van participatie processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
             - 
               field: 'Instelling die belast is met het bestand:'
               description: INSTELLING DIE BELAST IS MET HET BESTAND
-        - 
-          text: De betrokkene mag de rechten van toegang, rectificatie, annulering en oppositie bij de verantwoordelijke instantie aangeven, welke allemaal worden gerapporteerd in overeenstemming met artikel 5 van de Organische wet 15/1999 van 13 December, op de bescherming van persoonsgegevens.
-        - 
-          text: Algemeen uitgangspunt is dat deze website geen informatie deelt of ontsluit, enkel als hier door de betrokken deelnemer toestemming voor is gegeven. Of wanneer de informatie is vereist door de rechterlijke instantie, ministerie of de gerechtelijke politie of een van de gevallen geregeld in het artikel 11 van de organieke wet 15/1999 van 13 December betreffende de bescherming van persoonsgegevens.
     accessibility:
       title: Toegankelijkheid
       description: |-
         Toegankelijkheid van het web verwijst naar de mogelijkheid van toegang tot het web en de inhoud ervan door alle mensen, ongeacht de (fysieke, intellectuele of technische) handicaps of zaken die zich door de context in het gebruik voordoen (technologisch of omgeving).
-        
+
         Wanneer websites zijn ontworpen met toegankelijkheid in het achterhoofd, kunnen alle gebruikers toegang tot inhoud in gelijke omstandigheden krijgen, bijvoorbeeld:
       examples:
         - Het beschikbaar stellen van alternatieve tekst bij afbeeldingen kan blinde of visueel beperkte deelnemers op die wijze toegang verschaffen tot de informatie.
@@ -115,16 +110,16 @@ nl:
               page_column: Homepagina
             - 
               key_column: 1
-              page_column: Discussies
+              page_column: Discussie
             - 
               key_column: 2
-              page_column: Voorstellen
+              page_column: Proposals
             - 
               key_column: 3
-              page_column: Stemmen
+              page_column: Votes
             - 
               key_column: 4
-              page_column: Burgerbegrotingen
+              page_column: Participatory budgets
             - 
               key_column: 5
               page_column: Plannen
@@ -185,14 +180,14 @@ nl:
         description_html: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
       accessibility: Toegankelijkheid
-      conditions: Gebruikersvoorwaarden
+      conditions: Gebruiksvoorwaarden
       help: "Wat is %{org}? - Burgerparticipatie"
-      privacy: Privacy beleid
+      privacy: Privacy Verklaring
     verify:
-      code: Code die je in je email ontvangt
-      email: Email
+      code: Code die u in een brief heeft ontvangen
+      email: E-mail
       info: 'Geef hier je contactgegevens op om je account te verifieren:'
-      info_code: 'Geef hier de code in die je hebt ontvangen:'
+      info_code: 'en de code die u heeft ontvangen:'
       password: Wachtwoord
       submit: Verifieer mijn account
-      title: Verifieer je account
+      title: Verifieer uw account

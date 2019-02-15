@@ -1,1 +1,198 @@
 fi:
+  activerecord:
+    models:
+      budget:
+        one: "Budjetti"
+        other: "Budjetit"
+      budget/investment:
+        one: "Sijoitus"
+        other: "Sijoitukset"
+      milestone:
+        one: "tavoite"
+        other: "tavoitteet"
+      milestone/status:
+        one: "Tavoitteen tila"
+        other: "Tavoitteen tilat"
+      comment:
+        one: "Kommentti"
+        other: "Kommentit"
+      tag:
+        one: "Tunniste"
+        other: "Tunnisteet"
+      user:
+        one: "Käyttäjä"
+        other: "Käyttäjät"
+      newsletter:
+        one: "Uutiskirje"
+        other: "Uutiskirjeet"
+      vote:
+        one: "Ääni"
+        other: "Äänet"
+      organization:
+        one: "Organisaatio"
+        other: "Organisaatiot"
+      site_customization/page:
+        one: Mukautettu sivu
+        other: Mukautetut sivut
+      legislation/process:
+        one: "Prosessi"
+        other: "Prosessit"
+      legislation/proposal:
+        one: "Ehdotus"
+        other: "Ehdotukset"
+      legislation/questions:
+        one: "Kysymys"
+        other: "Kysymykset"
+      legislation/answers:
+        one: "Vastaus"
+        other: "Vastaukset"
+      documents:
+        one: "Asiakirja"
+        other: "Asiakirjat"
+      images:
+        one: "Kuva"
+        other: "Kuvat"
+      topic:
+        one: "Aihe"
+        other: "Aiheet"
+      poll:
+        one: "Kysely"
+        other: "Kyselyt"
+    attributes:
+      budget:
+        name: "Nimi"
+        phase: "Vaihe"
+        currency_symbol: "Valuutta"
+      budget/investment:
+        description: "Kuvaus"
+        administrator_id: "Järjestelmänvalvoja"
+        location: "Sijainti (vapaaehtoinen)"
+        image_title: "Kuvan otsikko"
+      milestone:
+        status_id: "Nykyinen tila (valinnainen)"
+        publication_date: "Julkaisupäivä"
+      milestone/status:
+        name: "Nimi"
+        description: "Kuvaus (vapaaehtoinen)"
+      progress_bar:
+        kind: "Tyyppi"
+      progress_bar/kind:
+        primary: "Ensisijainen"
+        secondary: "Toissijainen"
+      budget/heading:
+        price: "Hinta"
+      comment:
+        body: "Kommentti"
+        user: "Käyttäjä"
+      debate:
+        author: "Tekijä"
+        description: "Mielipide"
+        terms_of_service: "Käyttöehdot"
+      proposal:
+        author: "Tekijä"
+        question: "Kysymys"
+        description: "Kuvaus"
+        terms_of_service: "Käyttöehdot"
+      user:
+        login: "Sähköposti tai käyttäjänimi"
+        email: "Sähköposti"
+        username: "Käyttäjätunnus"
+        password_confirmation: "Salasanan vahvistus"
+        password: "Salasana"
+        current_password: "Nykyinen salasana"
+        phone_number: "Puhelinnumero"
+      organization:
+        name: "Organisaation nimi"
+      spending_proposal:
+        administrator_id: "Järjestelmänvalvoja"
+        description: "Kuvaus"
+      poll:
+        name: "Nimi"
+        starts_at: "Aloituspäivä"
+        ends_at: "Sulkeutumispäivä"
+        summary: "Yhteenveto"
+        description: "Kuvaus"
+      poll/translation:
+        name: "Nimi"
+        summary: "Yhteenveto"
+        description: "Kuvaus"
+      poll/question:
+        title: "Kysymys"
+        summary: "Yhteenveto"
+        description: "Kuvaus"
+      poll/question/translation:
+        title: "Kysymys"
+      site_customization/page:
+        content: Sisältö
+        created_at: Luotu
+        status: Tila
+        locale: Kieli
+      site_customization/page/translation:
+        content: Sisältö
+      site_customization/image:
+        name: Nimi
+        image: Kuva
+      site_customization/content_block:
+        name: Nimi
+      legislation/process:
+        summary: Yhteenveto
+        description: Kuvaus
+        additional_info: Lisätiedot
+        start_date: Aloituspäivä
+        end_date: Päättymispäivä
+      legislation/process/translation:
+        summary: Yhteenveto
+        description: Kuvaus
+        additional_info: Lisätiedot
+        milestones_summary: Yhteenveto
+      legislation/draft_version:
+        title: Version nimi
+        body: Teksti
+        changelog: Muutokset
+        status: Tila
+      legislation/draft_version/translation:
+        title: Version nimi
+        body: Teksti
+        changelog: Muutokset
+      legislation/annotation:
+        text: Kommentti
+      document:
+        attachment: Liite
+      image:
+        attachment: Liite
+      poll/question/answer:
+        title: Vastaus
+        description: Kuvaus
+      poll/question/answer/translation:
+        title: Vastaus
+        description: Kuvaus
+      poll/question/answer/video:
+        url: Ulkoinen video
+      newsletter:
+        subject: Aihe
+      admin_notification:
+        link: Linkki
+        body: Teksti
+      admin_notification/translation:
+        body: Teksti
+      widget/card:
+        description: Kuvaus
+        link_text: Linkin teksti
+        link_url: Linkin URL
+        columns: Sarakkeiden määrä
+      widget/card/translation:
+        description: Kuvaus
+        link_text: Linkin teksti
+    errors:
+      models:
+        poll/voter:
+          attributes:
+            document_number:
+              has_voted: "Käyttäjä on jo äänestänyt"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Leveys tulee olla %{required_width}px"
+              image_height: "Korkeus tulee olla %{required_height}px"
+      messages:
+        record_invalid: "Vahvistaminen epäonnistui: %{errors}"

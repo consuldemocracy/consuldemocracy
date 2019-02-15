@@ -6,9 +6,9 @@ gl:
     email:
       create:
         alert:
-          failure: Houbo un problema enviándoche unha mensaxe de correo á túa conta
+          failure: Houbo un problema enviándoche un correo electrónico á túa conta
         flash:
-          success: 'Enviámosche unha mensaxe de confirmación á túa conta: %{email}'
+          success: 'Enviámosche un correo electrónico de confirmación á túa conta: %{email}'
       show:
         alert:
           failure: Código de verificación incorrecto
@@ -20,7 +20,7 @@ gl:
       create:
         flash:
           offices: Oficina de Atención á Cidadanía
-          success_html: Grazas pola solicitude do teu <b>código de máxima seguridade (só válido para as votacións finais)</b>. Nuns días enviarémolo ao enderezo que figura nos nosos ficheiros. Recorda que, se o desexas, podes recoller o teu código en calquera das nosas %{offices}.
+          success_html: Antes das votacións recibirás unha carta coas instrucións para verificar a túa conta.<br> Lembra que podes aforrar o envío verificándote presencialmente en calquera das %{offices}.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
@@ -29,26 +29,26 @@ gl:
       new:
         explanation: 'Para participar nas votacións finais podes:'
         go_to_index: Ver propostas
-        office: Verificar a túa conta de xeito presencial en calquera %{office}
+        office: Verificarte presencialmente en calquera %{office}
         offices: Oficina de Atención á Cidadanía
-        send_letter: Solicitar unha carta co código
+        send_letter: Solicitar unha carta por correo postal
         title: Parabéns!
-        user_permission_info: Coa túa conta podes...
+        user_permission_info: Coa túa conta xa podes...
       update:
         flash:
           success: Código correcto. A túa conta xa está verificada
     redirect_notices:
       already_verified: A túa conta xa está verificada
-      email_already_sent: Xa che enviamos un correo electrónico cunha ligazón de confirmación. Se non o atopas, podes solicitar aquí que cho reenviemos
+      email_already_sent: Xa che enviamos un correo electrónico cun enlace de confirmación, se non o atopas podes solicitar aquí que cho reenviemos
     residence:
       alert:
-        unconfirmed_residency: Aínda non confirmaches a túa residencia
+        unconfirmed_residency: Aínda non verificaches a túa residencia
       create:
         flash:
           success: Residencia verificada
       new:
-        accept_terms_text: Acepto %{terms_url} do Padrón
-        accept_terms_text_title: Acepto os termos e condicións de acceso ao Padrón
+        accept_terms_text: Acepto %{terms_url} ao Padrón
+        accept_terms_text_title: Acepto os termos de acceso ao Padrón
         date_of_birth: Data de nacemento
         document_number: Número de documento
         document_number_help_title: Axuda
@@ -57,16 +57,16 @@ gl:
           passport: Pasaporte
           residence_card: Tarxeta de residencia
           spanish_id: DNI
-        document_type_label: Tipo de documento
-        error_not_allowed_age: Non tes a idade mínima para poder participar
-        error_not_allowed_postal_code: Para poder realizar a verificación, debes estar rexistrado.
-        error_verifying_census: O Servizo de padrón non puido verificar a túa información. Por favor, confirma que os teus datos de empadroamento sexan correctos chamando ao Concello, ou visita calquera das %{offices}.
-        error_verifying_census_offices: Oficina de Atención á Cidadanía
-        form_errors: evitaron a comprobación a túa residencia
+        document_type_label: Tipo documento
+        error_not_allowed_age: Hai que ter polo menos 16 anos
+        error_not_allowed_postal_code: Para verificarte debes estar empadroado no municipio de Madrid.
+        error_verifying_census: O Padrón de Madrid non puido verificar a túa información. Por favor, confirma que os teus datos de empadroamento sexan correctos chamando ao 010 (ou á súa versión gratuíta 915298210) ou visita calquera das %{offices}.
+        error_verifying_census_offices: 26 Oficinas de Atención á Cidadanía
+        form_errors: evitaron verificar a túa residencia
         postal_code: Código postal
-        postal_code_note: Para verificar os teus datos debes estar empadroado no Concello
-        terms: os termos e condicións de acceso
-        title: Verificar domicilio
+        postal_code_note: Para verificar os teus datos debes estar empadroado no municipio de Madrid
+        terms: os termos de acceso
+        title: Verificar residencia
         verify_residence: Verificar domicilio
     sms:
       create:
@@ -74,17 +74,17 @@ gl:
           success: Introduce o código de confirmación que che enviamos por mensaxe de texto
       edit:
         confirmation_code: Introduce o código que recibiches no teu móbil
-        resend_sms_link: Fai clic aquí para un novo envío
+        resend_sms_link: Solicitar un novo código
         resend_sms_text: Non recibiches unha mensaxe de texto co teu código de confirmación?
         submit_button: Enviar
-        title: Confirmación de código de seguridade
+        title: SMS de confirmación
       new:
-        phone: Introduce o teu número de móbil para recibir o código
+        phone: Introduce o teu teléfono móbil para recibir o código
         phone_format_html: "<strong><em>(Exemplo: 612345678 ou +34612345678)</em></strong>"
         phone_note: Só usaremos o teu número de teléfono para o envío de códigos, nunca para chamarte.
         phone_placeholder: "Exemplo: 612345678 ou +34612345678"
         submit_button: Enviar
-        title: Enviar código de confirmación
+        title: SMS de confirmación
       update:
         error: Código de confirmación incorrecto
         flash:
@@ -99,13 +99,13 @@ gl:
     user_permission_info: Comprobando a túa información serás capaz de...
     user_permission_proposal: Crear novas propostas
     user_permission_support_proposal: Apoiar propostas*
-    user_permission_votes: Participar nas votacións finais*
+    user_permission_votes: Participar nas votacións finais
     verified_user:
       form:
         submit_button: Enviar código
       show:
-        email_title: Correos electrónicos
-        explanation: Actualmente dispoñemos dos seguintes datos no Rexistro, selecciona a onde queres que che enviemos o código de confirmación.
-        phone_title: Números de teléfono
+        email_title: Correos
+        explanation: Actualmente dispoñemos dos seguintes datos no Padrón, selecciona a onde queres que che enviemos o código de confirmación.
+        phone_title: Teléfonos
         title: Información dispoñible
         use_another_phone: Utilizar outro teléfono

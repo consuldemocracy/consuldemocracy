@@ -2,18 +2,18 @@ it:
   mailers:
     no_reply: "Questo messaggio è stato inviato da un indirizzo di posta elettronica che non accetta risposte."
     comment:
-      hi: Ciao
+      hi: Salve
       new_comment_by_html: C'è un nuovo commento da <b>%{commenter}</b>
       subject: Qualcuno ha commentato sul tuo %{commentable}
       title: Nuovo commento
     config:
-      manage_email_subscriptions: Per non ricevere più queste email, modifica le tue impostazioni su
+      manage_email_subscriptions: Per non ricevere più queste email, modifica le impostazioni
     email_verification:
       click_here_to_verify: questo link
-      instructions_2_html: Questa email consente di verificare il tuo account con <b>%{document_type} %{document_number}</b>. Se questi documenti non ti appartengono, non cliccare sul link precedente e ignorare questa email.
+      instructions_2_html: Questa e-mail consente di verificare il tuo account con <b>%{document_type} %{document_number}</b>. Se questi documenti non ti appartengono, non cliccare sul link precedente e ignorare questa email.
       instructions_html: Per completare la verifica dell'account utente, è necessario cliccare su %{verification_link}.
       subject: Conferma il tuo indirizzo email
-      thanks: Grazie mille.
+      thanks: Grazie.
       title: Conferma il tuo account utilizzando il seguente link
     reply:
       hi: Ciao
@@ -26,17 +26,17 @@ it:
       new_href: "nuovo progetto di investimento"
       sincerely: "Cordiali saluti"
       sorry: "Ci scusiamo per l'inconveniente e ancora grazie per la tua preziosa partecipazione."
-      subject: "Il tuo progetto di investimento '%{code}' è stato contrassegnato come irrealizzabile"
+      subject: "Il tuo progetto di investimento '%{code}' è stato contrassegnato come non realizzabile"
     proposal_notification_digest:
       info: "Ecco le nuove notifiche pubblicate dagli autori delle proposte da te sostenute su %{org_name}."
       title: "Notifiche di proposte su %{org_name}"
-      share: Condividi proposta
-      comment: Commenta proposta
+      share: Condividi la proposta
+      comment: Commenta la proposta
       unsubscribe: "Se non si desidera ricevere notifiche relativamente alle proposte, visita %{account} e togli la spunta a 'Ricevi un riassunto delle notifiche relative alle proposte'."
       unsubscribe_account: Il mio account
     direct_message_for_receiver:
       subject: "Hai ricevuto un nuovo messaggio privato"
-      reply: Rispondi a %{sender}
+      reply: Rispondere a %{sender}
       unsubscribe: "Se non si desidera ricevere messaggi diretti, visita %{account} e togli la spunta a 'Ricevi email sui messaggi diretti'."
       unsubscribe_account: Il mio account
     direct_message_for_sender:
@@ -46,8 +46,8 @@ it:
       ignore: "Se non hai richiesto questo invito non ti preoccupare, puoi ignorare questa email."
       text: "Grazie per aver chiesto di aderire a %{org}! Tra pochi secondi potrai iniziare a partecipare, basta solo compilare il modulo qui sotto:"
       thanks: "Grazie mille."
-      title: "Benvenuto su %{org}"
-      button: Completa la registrazione
+      title: "Benvenuto/a a %{org}"
+      button: Completare la registrazione
       subject: "Invito per %{org_name}"
     budget_investment_created:
       subject: "Grazie per aver creato un investimento!"
@@ -68,12 +68,12 @@ it:
     budget_investment_selected:
       subject: "Il tuo progetto di investimento '%{code}' è stato selezionato"
       hi: "Gentile utente,"
-      share: "Inizia a ottenere voti, condividi il tuo progetto di investimento sui social network. La condivisione è essenziale per vederlo realizzato."
+      share: "Per iniziare a ottenere voti, condividi il tuo progetto di investimento sui social network. Solo così potrai vederlo realizzato!"
       share_button: "Condividi il tuo progetto di investimento"
       thanks: "Grazie ancora per aver partecipato."
       sincerely: "Cordiali saluti"
     budget_investment_unselected:
-      subject: "Il tuo progetto di investimento '%{code}' non è stato selezionato"
+      subject: "Il tuo progetto di investimento '%{code}' è stato selezionato"
       hi: "Gentile utente,"
       thanks: "Grazie ancora per aver partecipato."
       sincerely: "Cordiali saluti"

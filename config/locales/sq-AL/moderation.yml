@@ -2,7 +2,7 @@ sq:
   moderation:
     comments:
       index:
-        block_authors: Autori i bllokut
+        block_authors: Blloko autorët
         confirm: A je i sigurt?
         filter: Filtër
         filters:
@@ -18,13 +18,13 @@ sq:
         orders:
           flags: Më shumë e shënjuar
           newest: Më të rejat
-        title: Komente
+        title: Komentet
     dashboard:
       index:
         title: Moderim
     debates:
       index:
-        block_authors: Blloko autorët
+        block_authors: Autori i bllokut
         confirm: A je i sigurt?
         filter: Filtër
         filters:
@@ -40,12 +40,12 @@ sq:
         orders:
           created_at: Më të rejat
           flags: Më shumë e shënjuar
-        title: Debatet
+        title: Debate
     header:
       title: Moderim
     menu:
       flagged_comments: Komentet
-      flagged_debates: Debatet
+      flagged_debates: Debate
       flagged_investments: Investime buxhetor
       proposals: Propozime
       proposal_notifications: Njoftimet e propozimeve
@@ -106,7 +106,7 @@ sq:
         orders:
           created_at: Më të fundit
           moderated: Moderuar
-        title: Njoftimet e propozimeve
+        title: Notifikimi i propozimeve
     users:
       index:
         hidden: Bllokuar

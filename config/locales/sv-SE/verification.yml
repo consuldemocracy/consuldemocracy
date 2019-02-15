@@ -36,7 +36,7 @@ sv:
         user_permission_info: Med ditt konto kan du...
       update:
         flash:
-          success: Koden är giltig. Ditt konto har verifierats
+          success: Giltig kod. Ditt konto har verifierats
     redirect_notices:
       already_verified: Ditt konto är redan verifierat
       email_already_sent: Vi har redan skickat ett e-postmeddelande med en bekräftelselänk. Om du inte hittar e-postmeddelandet, kan du begära ett nytt här
@@ -50,7 +50,7 @@ sv:
         accept_terms_text: Jag accepterar %{terms_url} för adressregistret
         accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
         date_of_birth: Födelsedatum
-        document_number: Identitetshandlingens nummer
+        document_number: Dokumentnummer
         document_number_help_title: Hjälp
         document_number_help_text_html: '<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P'
         document_type:
@@ -89,7 +89,7 @@ sv:
         error: Ogiltig bekräftelsekod
         flash:
           level_three:
-            success: Giltig kod. Ditt konto har verifierats
+            success: Koden är giltig. Ditt konto har verifierats
           level_two:
             success: Giltig kod
     step_1: Adress
@@ -98,7 +98,7 @@ sv:
     user_permission_debates: Delta i debatter
     user_permission_info: Genom att verifiera din information kommer du kunna...
     user_permission_proposal: Skapa nya förslag
-    user_permission_support_proposal: Stödja förslag
+    user_permission_support_proposal: Stödja förslag*
     user_permission_votes: Delta i slutomröstningar*
     verified_user:
       form:

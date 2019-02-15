@@ -12,7 +12,7 @@ zh-TW:
         voted_info_html: "直到這個階段結束前，你可以隨時更改你的投票 。<br>不需要用盡所有可用的錢。"
         zero: 你沒有為任何投資項目投票。
       reasons_for_not_balloting:
-        not_logged_in: 您必須 %{signin} 或 %{signup} 才能繼續。
+        not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
         not_verified: 只有已通過核實的用戶才能對投資進行投票； %{verify_account}。
         organization: 組織不允許投票
         not_selected: 無法支援未選定的投資項目
@@ -56,19 +56,20 @@ zh-TW:
       section_footer:
         title: 參與性預算的説明
         description: 通過參與性預算, 公民決定哪些項目註定會成為預算案的一部分。
+      milestones: 里程碑
     investments:
       form:
         tag_category_label: "類別"
-        tags_instructions: "為此建議加標籤。您可以從建議的類別中選擇，或添加您自己的"
+        tags_instructions: "為此建議加標籤。 您可以從建議的類別中選擇，或添加自己的"
         tags_label: 標籤
-        tags_placeholder: "輸入您想使用的標籤, 用逗號 (',') 作分隔"
+        tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
         map_location: "地圖位置"
         map_location_instructions: "將地圖導航到該位置，並放置標記。"
         map_remove_marker: "刪除地圖標記"
         location: "位置附加資訊"
         map_skip_checkbox: "這項投資沒有具體的位置, 或我沒有注意到。"
       index:
-        title: 參與性預算編制
+        title: 參與式預算編制
         unfeasible: 不可行的投資項目
         unfeasible_text: "投資必須符合一些標準 (合法性、具體性、是城市的責任, 不超出預算限額)，才能宣佈為可行，並可進入最終投票階段。所有不符合這些標準的投資，均被標記為不可行，並在下面的清單中公佈， 並附有其不可行性的報告。"
         by_heading: "具有範圍的投資項目： %{heading}"
@@ -99,7 +100,7 @@ zh-TW:
           unfeasible: 不可行項目
         orders:
           random: 隨機
-          confidence_score: 最高額定值
+          confidence_score: 最高評分
           price: 按價格
       show:
         author_deleted: 用戶已刪除
@@ -110,7 +111,7 @@ zh-TW:
         organization_name_html: '代表 <strong>%{name}</strong>提出建議'
         share: 共用
         title: 投資項目
-        supports: 支援
+        supports: 支持
         votes: 票
         price: 價格
         comments_tab: 評論
@@ -155,7 +156,7 @@ zh-TW:
       heading: "參與性預算結果"
       heading_selection_title: "按地區"
       spending_proposal: 建議標題
-      ballot_lines_count: 被選的次數
+      ballot_lines_count: 票
       hide_discarded_link: 隱藏廢棄的
       show_all_link: 顯示所有
       price: 價格
@@ -166,6 +167,9 @@ zh-TW:
       investment_proyects: 所有投資項目清單
       unfeasible_investment_proyects: 所有不可行的投資項目清單
       not_selected_investment_proyects: 未被選入投票階段的所有投資項目清單
+    executions:
+      link: "里程碑"
+      heading_selection_title: "按地區"
     phases:
       errors:
         dates_range_invalid: "開始日期不能等於或晚於結束日期"
