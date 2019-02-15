@@ -59,7 +59,7 @@
                   <% session[:area_id] = @area&.id %>
                   <% session[:sub_area_id] = @sub_area&.id %>
                   <%= link_to account_path, class: "button margin-top expanded" do %>
-                      <%= t("budgets.investments.index.sidebar.create") %>
+                      <strong><%= t("budgets.investments.index.sidebar.create") %></strong>
                       <small class="float-center"><%= t("budgets.investments.index.sidebar.required_phone_instructions") %></small>
                   <% end %>
                 <% end %>
