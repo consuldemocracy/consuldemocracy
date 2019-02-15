@@ -111,10 +111,6 @@ sl:
         tags_filter_all: Vse oznake
         advanced_filters: Napredni filtri
         placeholder: Išči projekte
-        sort_by:
-          placeholder: Razvrsti po
-          title: Naslov
-          supports: Podpira
         filters:
           all: Vsi
           without_admin: Brez določenega administratorja
