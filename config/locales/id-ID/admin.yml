@@ -132,11 +132,6 @@ id:
         tags_filter_all: Semua tag
         advanced_filters: Saring lanjutan
         placeholder: Cari proyek
-        sort_by:
-          placeholder: Urutkan
-          id: ID
-          title: Judul
-          supports: Mendukung
         filters:
           all: Semua
           without_admin: Tanpa ditugaskan admin
