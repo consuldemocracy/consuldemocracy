@@ -1,12 +1,34 @@
 module BudgetInvestmentsHelper
-  def budget_investments_sorting_options
-    Budget::Investment::SORTING_OPTIONS.map do |so|
-      [t("admin.budget_investments.index.sort_by.#{so}"), so]
+  def budget_investments_advanced_filters(params)
+    params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(', ')
+  end
+
+  def link_to_investments_sorted_by(column)
+    direction = set_direction(params[:direction])
+    icon = set_sorting_icon(direction, column)
+
+    translation = t("admin.budget_investments.index.list.#{column}")
+
+    link_to(
+      "#{translation} <span class='#{icon}'></span>".html_safe,
+      admin_budget_budget_investments_path(sort_by: column, direction: direction)
+    )
+  end
+
+  def set_sorting_icon(direction, sort_by)
+    if sort_by.to_s == params[:sort_by]
+      if direction == "desc"
+        "icon-arrow-top"
+      else
+        "icon-arrow-down"
+      end
+    else
+      ""
     end
   end
 
-  def budget_investments_advanced_filters(params)
-    params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(', ')
+  def set_direction(current_direction)
+    current_direction == "desc" ? "asc" : "desc"
   end
 
   def investments_minimal_view_path

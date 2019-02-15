@@ -1,6 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
-    SORTING_OPTIONS = %w(id title supports).freeze
+    SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
     include Rails.application.routes.url_helpers
     include Measurable
@@ -139,9 +139,13 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.order_filter(sorting_param)
-      if sorting_param.present? && SORTING_OPTIONS.include?(sorting_param)
-        send("sort_by_#{sorting_param}")
+    def self.order_filter(params)
+      sorting_key = params[:sort_by]&.downcase&.to_sym
+      allowed_sort_option = SORTING_OPTIONS[sorting_key]
+
+      if allowed_sort_option.present?
+        direction = params[:direction] == "desc" ? "desc" : "asc"
+        order("#{allowed_sort_option} #{direction}")
       else
         order(cached_votes_up: :desc).order(id: :desc)
       end
