@@ -1299,30 +1299,30 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "proposals", force: :cascade do |t|
-    t.string   "title",               limit: 80
-    t.text     "description"
+    t.string   "deprecated_title",               limit: 80
+    t.text     "deprecated_description"
     t.integer  "author_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                    default: 0
+    t.integer  "flags_count",                               default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_up",                default: 0
-    t.integer  "comments_count",                 default: 0
+    t.integer  "cached_votes_up",                           default: 0
+    t.integer  "comments_count",                            default: 0
     t.datetime "confirmed_hide_at"
-    t.bigint   "hot_score",                      default: 0
-    t.integer  "confidence_score",               default: 0
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "responsible_name",    limit: 60
-    t.text     "summary"
+    t.bigint   "hot_score",                                 default: 0
+    t.integer  "confidence_score",                          default: 0
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+    t.string   "responsible_name",               limit: 60
+    t.text     "deprecated_summary"
     t.string   "video_url"
     t.tsvector "tsv"
     t.integer  "geozone_id"
     t.datetime "retired_at"
     t.string   "retired_reason"
-    t.text     "retired_explanation"
+    t.text     "deprecated_retired_explanation"
     t.integer  "community_id"
     t.datetime "published_at"
-    t.boolean  "selected",                       default: false
+    t.boolean  "selected",                                  default: false
     t.index ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
     t.index ["author_id"], name: "index_proposals_on_author_id", using: :btree
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
@@ -1331,8 +1331,6 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
-    t.index ["summary"], name: "index_proposals_on_summary", using: :btree
-    t.index ["title"], name: "index_proposals_on_title", using: :btree
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
   end
 
