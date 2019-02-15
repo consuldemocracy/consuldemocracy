@@ -112,11 +112,6 @@ ast:
         administrator_filter_all: Tolos alministradores
         valuator_filter_all: Tolos evaluadores
         tags_filter_all: Toles etiquetes
-        sort_by:
-          placeholder: Ordenar por
-          id: ID
-          title: Títulu
-          supports: Sofitos
         filters:
           all: Toes
           without_admin: Ensin alministrador
