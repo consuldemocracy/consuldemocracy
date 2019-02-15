@@ -145,11 +145,6 @@ pt-BR:
         tags_filter_all: Todas as marcações
         advanced_filters: Filtros avançados
         placeholder: Buscar projetos
-        sort_by:
-          placeholder: Organizado por
-          id: ID
-          title: Título
-          supports: Apoios
         filters:
           all: Tudo
           without_admin: Sem administrador designado
