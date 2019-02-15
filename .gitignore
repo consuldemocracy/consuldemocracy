@@ -19,7 +19,7 @@
 /spec/examples.txt
 /config/deploy-secrets.yml
 /config/maintenance.yml
-
+/public/assets/
 /coverage
 
 /config/beta-testers.txt

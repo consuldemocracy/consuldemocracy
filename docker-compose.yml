@@ -13,10 +13,10 @@ services:
     working_dir: /var/www/consul
     environment:
       - RAILS_ENV=development
-      - FORCE_SSL=false
+      - RAILS_SERVE_STATIC_FILES=true
       - NEW_RELIC_AGENT_ENABLED=false
       - DATABASE_HOST=database
-      - DATABASE_NAME=postgres
+      - DATABASE_NAME=consul_development
     depends_on:
       - database
     ports:

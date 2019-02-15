@@ -78,4 +78,6 @@ module Consul
   end
 end
 
-require "./config/application_custom.rb"
+if(File.exist?("./config/custom/application_custom.rb"))
+  require "./config/custom/application_custom.rb"
+end
