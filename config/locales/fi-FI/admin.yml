@@ -114,8 +114,6 @@ fi:
         tags_filter_all: Kaikki tunnisteet
         advanced_filters: Edistyneet suodattimet
         placeholder: Hae projekteja
-        sort_by:
-          id: ID
         filters:
           all: Kaikki
           selected: Valittu
