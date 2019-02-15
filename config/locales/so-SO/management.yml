@@ -1,1 +1,150 @@
 so:
+  management:
+    account:
+      menu:
+        reset_password_email: Sifaan erayga sirta ah e-mail
+        reset_password_manually: Furaha sirta ah dib u so celin qaab macmaal ah
+      alert:
+        unverified_user: Qofka la xaqiijiyay weli lama soo galin
+      show:
+        title: Koontada isticmaalaha
+      edit:
+        title: 'Isticmaal koontada isticmaalaha: Sifar erayga'
+        back: Labasho
+        password:
+          password: Furaha sirta ah
+          send_email: Ku soo dir email kumbuyuutar
+          reset_email_send: Email ayaa si sax ah loo diraa.
+          reseted: Fure siredka ayaa si guul ah loo celiyey
+          random: Abuuraa ereyga rasmiga ah
+          save: Bad badi lamabar sireedka
+          print: Dabac lambar sireedka
+          print_help: Waxaad awoodi doontaa inaad daabacdo lambarka sirta marka la kaydinayo.
+    account_info:
+      change_user: Bedelo isticmalaha
+      document_number_label: 'Lambarka dukumeentiga:'
+      document_type_label: 'Qaybaha dukumentiga:'
+      email_label: 'Email:'
+      identified_label: 'Waxaa loo aqoonsaday sida:'
+      username_label: 'Magaca Isticmaalaha:'
+    check: Hubi dukumentiga
+    dashboard:
+      index:
+        title: Maraynta
+        info: Halkan waxaad maamuli kartaa dadka isticmaala dhammaan ficillada ku qoran liiska bidixda.
+    document_number: Lambarka dukumeentiga
+    document_type_label: Qaybaha dukumentiga
+    document_verifications:
+      already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
+      has_no_account_html: Si aad u abuurto koonto, u gudub%{link} oo guji bastaha 'Diiwaangel' <b> qaybta sare ee shaashadda.
+      link: Qunsul
+      in_census_has_following_permissions: 'Isticmaalahan ayaa ka qaybgeli kara website-kan leh ogolaanshaha soo socda:'
+      not_in_census: Dukumeentigan lama diiwaan geliyo.
+      not_in_census_info: 'Muwaadiniinta aan ku jirin Tirakoobka waxay ka qaybqaadan karaan bogga internetka iyagoo leh ogolaanshaha soo socda:'
+      please_check_account_data: Fadlan hubi in xogta kor ku xusan ay sax yihiin.
+      title: Maaraynta isticmaalaha
+      under_age: "Ma haysatid da'da loo baahan yahay si loo xaqiijiyo koontadaada."
+      verify: Xaqiijin
+    email_label: Email
+    date_of_birth: Tarikhda Dhalashada
+    email_verifications:
+      already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
+      choose_options: 'Fadlan dooro mid ka mid ah xulashooyinka soo socda:'
+      document_found_in_census: Dukumeentigan waxaa laga heley tirakoobka, laakiin ma leh xisaab biil ah oo la xidhiidha.
+      document_mismatch: 'Emaylkani waxaa iska leh qof isticmaala horey u lahaa id xiriir la leh:%{document_number}%{document_type}'
+      email_placeholder: U qor emaylka qofkan loo isticmaalo inuu abuuro akoonkiisa
+      email_sent_instructions: Si buuxda loo xaqiijiyo isticmaalaha, waxaa lagama maarmaan ah in isticmaalaha uu isku xiro link oo aanu u dirnay cinwaanka emailka kor ku xusan. Talaabadaan waxaa loo baahan yahay si loo xaqiijiyo in cinwaanka isaga ka tirsan yahay.
+      if_existing_account: Haddii uu qofku horayba u isticmaalay xisaab beri ah,
+      if_no_existing_account: Hadii qof kani aanu weli koonto sameysaan
+      introduce_email: 'Fadlan isbar Email istmalaha ackoonka:'
+      send_email: Soodir Emaylka xaqiijinta
+    menu:
+      create_proposal: Abuur soo jeedin
+      print_proposals: Dabac soojedinta
+      support_proposals: Tageer so jedinta
+      create_spending_proposal: Samee qorshaha kharashad
+      print_spending_proposals: Dabaac so jedinada Kharashaadka
+      support_spending_proposals: Tageer Soojeedinada Kharashadka
+      create_budget_investment: Saame misaaniyad malgashelin
+      print_budget_investments: Dabac misaniyada malgashiyada
+      support_budget_investments: Tageer misaniyada malgashiyada
+      users: Maaraynta isticmaalayasha
+      user_invites: Soo dir casuumada
+      select_user: Dooro isticmalaha
+    permissions:
+      create_proposals: Abuur soo jeedino
+      debates: Ka qaybqaado doodaha
+      support_proposals: Tageer so jedinta
+      vote_proposals: Soo jeedinada cod bixinta
+    print:
+      proposals_info: 'Abuuro codsigaaga http: //url.consul'
+      proposals_title: 'Sojeedino:'
+      spending_proposals_info: 'Ka qaybgal http: //url.consul'
+      budget_investments_info: 'Ka qaybgal http: //url.consul'
+    print_info: Daabac xogtan
+    proposals:
+      alert:
+        unverified_user: Isticmaalaha lama hubin
+      create_proposal: Abuur soo jeedin
+      print:
+        print_button: Dabac
+      index:
+        title: Tageer so jedinta
+    budgets:
+      create_new_investment: Saame misaaniyad malgashelin
+      print_investments: Dabac misaniyada malgashiyada
+      support_investments: Tageer misaniyada malgashiyada
+      table_name: Magac
+      table_phase: Weeji
+      table_actions: Tilaabooyin
+      no_budgets: Ma jiraan miisaaniyad firfircoon oo ka-qaybgal ah.
+    budget_investments:
+      alert:
+        unverified_user: Isticmaalaha lama hubin
+      create: Saame misaaniyad malgashelin
+      filters:
+        heading: Fikradda
+        unfeasible: Malgashi an macqul ahayn
+      print:
+        print_button: Dabac
+      search_results:
+        one: " oo ku jira ereyga %{search_term}"
+        other: " oo ku jira ereyga %{search_term}"
+    spending_proposals:
+      alert:
+        unverified_user: Isticmaalaha lama hubin
+      create: Samee qorshaha kharashad
+      filters:
+        unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
+        by_geozone: "Baxaada mashruuca malgashiga%{geozone}"
+      print:
+        print_button: Dabac
+      search_results:
+        one: " oo ku jira ereyga %{search_term}"
+        other: " oo ku jira ereyga %{search_term}"
+    sessions:
+      signed_out: Uga baxay siguul ah.
+      signed_out_managed_user: Fadhiga isticmaalaha ayaa si guul leh u saxeexay.
+    username_label: Magaca Isticmaalaha
+    users:
+      create_user: Sameyso xisaab cusub
+      create_user_info: Waxan Samayn doona akoon ay lajirto xogta so socota
+      create_user_submit: Abuur isticmaale
+      create_user_success_html: Waxaan email ugu dirnay cinwaanka emailka <b>%{email}</b> si loo xaqiijiyo in ay ka mid tahay Isticmalahan. Waxaa ku jira xiriir ay leeyihiin inay gujiyaan. Kadibna waa inay dejiyaan sirta furahooda kahor intaanay awoodin inay galaan bogga intarnetka
+      autogenerated_password_html: "Kaararka Awoodda La Qaadey waa <b>%{password}</b>, waxaad ku bedeli kartaa qaybta \"akonkayga\" ee shabakadda"
+      email_optional_label: Email (ikhtiyaar)
+      erased_notice: Akoonka isticmaalaha laga tirtiray.
+      erased_by_manager: "Waxa tir tiraay mamulaha:%{manager}"
+      erase_account_link: Tirtiir isticmalaha
+      erase_account_confirm: Ma hubtaa inaad rabto inaad tirtirto koontada? Ficilkan lama tirtiri karo
+      erase_warning: Ficilkan lama tirtiri karo. Fadlan hubso inaad rabto inaad tirtirto koontadan.
+      erase_submit: Tirtir xisaabta
+    user_invites:
+      new:
+        label: Emailo
+        info: "Geli Lamaradaa oo ay ka socanyihiin qooyska(', ')"
+        submit: Soo dir casuumada
+        title: Soo dir casuumada
+      create:
+        success_html: "<strong>%{count} martiqaadyada\n</strong>waa ladiray."
+        title: Soo dir casuumada

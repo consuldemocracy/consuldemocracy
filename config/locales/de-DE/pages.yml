@@ -4,7 +4,6 @@ de:
       title: Allgemeine Nutzungsbedingungen
       subtitle: RECHTLICHE HINWEISE BEZÜGLICH DER NUTZUNG, SCHUTZ DER PRIVATSPHÄRE UND PERSONENBEZOGENER DATEN DES OPEN GOVERNMENT-PORTALS
       description: Informationsseite über die Nutzungsbedingungen, Privatsphäre und Schutz personenbezogener Daten.
-    general_terms: Allgemeine Nutzungsbedingungen
     help:
       title: "%{org} ist eine Plattform zur Bürgerbeteiligung"
       guide: "Diese Anleitung erklärt Ihnen, was die einzelnen %{org}-Abschnitte sind und wie diese funktionieren."
@@ -14,7 +13,7 @@ de:
         budgets: "Bürgerhaushalte"
         polls: "Umfragen"
         other: "Weitere interessante Informationen"
-        processes: "Gesetzgebungsverfahren"
+        processes: "Beteiligungsverfahren"
       debates:
         title: "Diskussionen"
         description: "Im %{link}-Abschnitt können Sie Ihre Meinung zu Anliegen in Ihrer Stadt äußern und mit anderen Menschen teilen. Zudem ist es ein Bereich, in dem Ideen generiert werden können, die durch andere Abschnitte der %{org} zu Handlungen des Stadtrates führen."
@@ -27,14 +26,14 @@ de:
         title: "Vorschläge"
         description: "Im %{link}-Abschnitt können Sie Anträge an den Stadtrat stellen. Die Anträge brauchen dann Unterstützung. Wenn Ihr Antrag ausreichend Unterstützung bekommt, wird er zur öffentlichen Wahl freigegeben. Anträge, die durch Bürgerstimmen bestätigt wurden, werden vom Stadtrat angenommen und umgesetzt."
         link: "Bürgervorschläge"
-        image_alt: "Button zur Unterstützung eines Vorschlags"
+        image_alt: "Klicken Sie hier um den Vorschlag zu unterstützen"
         figcaption_html: 'Button zur "Unterstützung" eines Vorschlags.'
       budgets:
-        title: "Bürgerhaushalt"
+        title: "partizipative Haushaltsmittel"
         description: "Der %{link}-Abschnitt hilft Personen eine direkte Entscheidung zu treffen, für was das kommunale Budget ausgegeben werden soll."
         link: "Bürgerhaushalte"
         image_alt: "Verschiedene Phasen eines partizipativen Haushalts"
-        figcaption_html: '"Unterstützungs"- und "Wahlphasen" kommunaler Budgets.'
+        figcaption_html: '"Unterstützungs-" und "Abstimmungs-"Phasen des partizipativen Haushaltes.'
       polls:
         title: "Umfragen"
         description: "Der %{link}-Abschnitt wird aktiviert, wann immer ein Antrag 1% an Unterstützung erreicht und zur Abstimmung übergeht, oder wenn der Stadtrat ein Problem zur Abstimmung vorlegt."
@@ -42,30 +41,30 @@ de:
         feature_1: "Um an der Abstimmung teilzunehmen, müssen Sie %{link} und Ihr Konto verifizieren."
         feature_1_link: "anmelden %{org_name}"
       processes:
-        title: "Prozesse"
+        title: "Beteiligungsverfahren"
         description: "Im %{link}-Abschnitt nehmen Bürger an der Ausarbeitung und Änderung von, die Stadt betreffenden, Bestimmungen teil und können ihre Meinung bezüglich kommunaler Richtlinien in vorausgehenden Debatten äußern."
         link: "Prozesse"
       faq:
         title: "Technische Probleme?"
         description: "Lesen Sie die FAQs und finden Sie Antworten auf Ihre Fragen."
-        button: "Zeige häufig gestellte Fragen"
+        button: "Lies die Liste der häufig gestellten Fragen"
         page:
-          title: "Häufige gestellte Fragen"
-          description: "Benutzen Sie diese Seite, um gängige FAQs der Seiten-Nutzer zu beantworten."
+          title: "Häufig gestellte Fragen"
+          description: "Benutzen Sie diese Seite um die gemeinsamen FAQs für die Benutzer der Website zu beheben."
           faq_1_title: "Frage 1"
-          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der ersten Frage."
+          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der Frage eins."
       other:
         title: "Weitere interessante Informationen"
         how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
       how_to_use:
         text: |-
           Verwenden Sie diese Anwendung in Ihrer lokalen Regierung, oder helfen Sie uns sie zu verbessern, die Software ist kostenlos.
-          
+
           Dieses offene Regierungs-Portal benutzt die [CONSUL-App](https://github.com/consul/consul 'consul github'), die eine freie Software, mit der Lizens [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) ist. Einfach gesagt, bedeutet das, dass jeder diesen Code frei benutzen, kopieren, detailiert betrachten, modifizieren und Versionen, mit gewünschten Modifikationen neu an die Welt verteilen kann (wobei anderen gestattet wird, dasselbe zu tun). Denn wir glauben, dass Kultur besser und ergiebiger ist, wenn sie öffentlich wird.
-          
+
           Wenn Sie ein Programmierer sind, können Sie den Code betrachten und uns helfen diesen auf [CONSUL app](https://github.com/consul/consul 'consul github') zu verbessern.
       titles:
-        how_to_use: Verwenden Sie diese in Ihrer lokalen Regierung
+        how_to_use: Verwenden Sie es in Ihrer Kommunalverwaltung
     privacy:
       title: Datenschutzbestimmungen
       subtitle: INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN
@@ -87,15 +86,11 @@ de:
             - 
               field: 'Für die Datei verantwortliche Institution:'
               description: FÜR DIE DATEI VERANTWORTLICHE INSTITUTION
-        - 
-          text: Die interessierte Partei kann die Rechte auf Zugang, Berichtigung, Löschung und Widerspruch vor der zuständigen Stelle ausüben, die alle gemäß Artikel 5 des Gesetzes 15/1999 vom 13. Dezember über den Schutz persönlicher Daten mitgeteilt wurden.
-        - 
-          text: Als allgemeiner Grundsatz, teilt oder veröffentlicht diese Webseite keine erhaltenen Informationen, außer dies wird vom Nutzer autorisiert, oder die Information wird von der Justizbehörde, der Staatsanwaltschaft, der Gerichtspolizei, oder anderen Fällen, die in Artikel 11 des Organic Law 15/1999 vom 13ten Dezember bezüglich des Schutzes persönlicher Daten festgelegt sind, benötigt.
     accessibility:
       title: Zugänglichkeit
       description: |-
-        Unter Webzugänglichkeit versteht man die Möglichkeit des Zugangs aller Menschen zum Web und seinen Inhalten, unabhängig von den Behinderungen (körperlich, geistig oder technisch), die sich aus dem Kontext der Nutzung (technologisch oder ökologisch) ergeben können. 
-        
+        Unter Webzugänglichkeit versteht man die Möglichkeit des Zugangs aller Menschen zum Web und seinen Inhalten, unabhängig von den Behinderungen (körperlich, geistig oder technisch), die sich aus dem Kontext der Nutzung (technologisch oder ökologisch) ergeben können.
+
         Wenn Websites unter dem Gesichtspunkt der Barrierefreiheit gestaltet werden, können alle Nutzer beispielsweise unter gleichen Bedingungen auf Inhalte zugreifen:
       examples:
         - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
@@ -152,8 +147,10 @@ de:
       textsize:
         title: Textgröße
         browser_settings_table:
+          browser_header: Browser
           rows:
             - 
+              browser_column: Internet Explorer
             - 
               browser_column: Firefox
             - 
@@ -163,15 +160,15 @@ de:
             - 
               browser_column: Opera
     titles:
-      accessibility: Barrierefreiheit
+      accessibility: Zugänglichkeit
       conditions: Nutzungsbedingungen
       help: "Was ist %{org}? -Bürgerbeteiligung"
-      privacy: Datenschutzregelung
+      privacy: Datenschutzbestimmungen
     verify:
       code: Code, den Sie per Brief/SMS erhalten haben
       email: E-Mail
       info: 'Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:'
       info_code: 'Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:'
       password: Passwort
-      submit: Mein Benutzerkonto verifizieren
+      submit: Mein Konto verifizieren
       title: Verifizieren Sie Ihr Benutzerkonto

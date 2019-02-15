@@ -36,7 +36,7 @@ pl:
         user_permission_info: Z Twoim kontem możesz...
       update:
         flash:
-          success: Prawidłowy kod weryfikacyjny. Twoje konto zostało zweryfikowane.
+          success: Kod poprawny. Twoje konto zostało zweryfikowane
     redirect_notices:
       already_verified: Twoje konto jest już zweryfikowane
       email_already_sent: Wysłaliśmy już maila z linkiem potwierdzającym. Jeśli nie otrzymałeś wiadomości e-mail, możesz poprosić o jej ponowne przesłanie.
@@ -57,7 +57,7 @@ pl:
           passport: Paszport
           residence_card: Karta pobytu
           spanish_id: DNI
-        document_type_label: Typ dokumentu
+        document_type_label: Rodzaj dokumentu
         error_not_allowed_age: Nie masz wymaganego wieku, aby wziąć udział
         error_not_allowed_postal_code: Aby zostać zweryfikowanym, użytkownik musi być zarejestrowany.
         error_verifying_census: Spis statystyczny nie był w stanie zweryfikować podanych przez Ciebie informacji. Upewnij się, że Twoje dane w spisie są poprawne, dzwoniąc do Urzędu Miejskiego lub odwiedzając go %{offices}.
@@ -89,13 +89,13 @@ pl:
         error: Niepoprawny kod potwierdzający
         flash:
           level_three:
-            success: Kod poprawny. Twoje konto zostało zweryfikowane
+            success: Prawidłowy kod weryfikacyjny. Twoje konto zostało zweryfikowane.
           level_two:
             success: Kod poprawny
     step_1: Adres
-    step_2: Kod potwierdzający
+    step_2: Kod weryfikacyjny
     step_3: Ostateczna weryfikacja
-    user_permission_debates: Uczestniczyć w debatach
+    user_permission_debates: Uczestnicz w debatach
     user_permission_info: Weryfikując swoje dane, będziesz w stanie...
     user_permission_proposal: Stwórz nowe wnioski
     user_permission_support_proposal: Popieraj propozycje*

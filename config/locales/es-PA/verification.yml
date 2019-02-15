@@ -19,7 +19,7 @@ es-PA:
         unconfirmed_code: Todavía no has introducido el código de confirmación
       create:
         flash:
-          offices: Oficinas de Atención al Ciudadano
+          offices: Oficina de Atención al Ciudadano
           success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
       edit:
         see_all: Ver propuestas
@@ -30,13 +30,13 @@ es-PA:
         explanation: 'Para participar en las votaciones finales puedes:'
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier %{office}
-        offices: Oficina de Atención al Ciudadano
+        offices: Oficinas de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
         title: '¡Felicidades!'
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
-          success: Tu cuenta ya está verificada
+          success: Código correcto. Tu cuenta ya está verificada
     redirect_notices:
       already_verified: Tu cuenta ya está verificada
       email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
@@ -50,13 +50,13 @@ es-PA:
         accept_terms_text: Acepto %{terms_url} al Padrón
         accept_terms_text_title: Acepto los términos de acceso al Padrón
         date_of_birth: Fecha de nacimiento
-        document_number: DNI/Pasaporte/Tarjeta de residencia
+        document_number: Número de documento
         document_number_help_title: Ayuda
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
         document_type:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
-        document_type_label: Tipo de documento
+        document_type_label: Tipo documento
         error_not_allowed_age: No tienes la edad mínima para participar
         error_not_allowed_postal_code: Para verificarte debes estar empadronado.
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
@@ -87,16 +87,16 @@ es-PA:
         error: Código de confirmación incorrecto
         flash:
           level_three:
-            success: Código correcto. Tu cuenta ya está verificada
+            success: Tu cuenta ya está verificada
           level_two:
             success: Código correcto
     step_1: Residencia
-    step_2: SMS de confirmación
+    step_2: Código de confirmación
     step_3: Verificación final
     user_permission_debates: Participar en debates
     user_permission_info: Al verificar tus datos podrás...
     user_permission_proposal: Crear nuevas propuestas
-    user_permission_support_proposal: Apoyar propuestas
+    user_permission_support_proposal: Apoyar propuestas*
     user_permission_votes: Participar en las votaciones finales*
     verified_user:
       form:

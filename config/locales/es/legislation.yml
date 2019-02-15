@@ -62,10 +62,8 @@ es:
         filter: Filtro
         filters:
           open: Procesos activos
-          next: Próximamente
           past: Terminados
         no_open_processes: No hay procesos activos
-        no_next_processes: No hay procesos planeados
         no_past_processes: No hay procesos terminados
         section_header:
           icon_alt: Icono de Procesos legislativos
@@ -83,6 +81,7 @@ es:
         see_latest_comments_title: Aportar a este proceso
       shared:
         key_dates: Fases de participación
+        homepage: Inicio
         debate_dates: Debate previo
         draft_publication_date: Publicación borrador
         allegations_dates: Comentarios

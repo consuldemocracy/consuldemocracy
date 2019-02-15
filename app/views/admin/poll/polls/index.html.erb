@@ -7,8 +7,9 @@
 <% if @polls.any? %>
   <table>
     <thead>
-      <th class="small-6"><%= t("admin.polls.index.name") %></th>
-      <th><%= t("admin.polls.index.dates") %></th>
+      <th class="small-5"><%= t("admin.polls.index.name") %></th>
+      <th class="text-center"><%= t("admin.polls.index.start_date") %></th>
+      <th class="text-center"><%= t("admin.polls.index.closing_date") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>

@@ -50,7 +50,7 @@ class UserSegments
   end
 
   def self.user_segment_emails(users_segment)
-    UserSegments.send(users_segment).newsletter.pluck(:email).compact
+    UserSegments.send(users_segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
   private

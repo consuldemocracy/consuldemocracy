@@ -2,7 +2,7 @@ fa:
   moderation:
     comments:
       index:
-        block_authors: بلوک نویسنده
+        block_authors: انسداد  نویسنده
         confirm: آیا مطمئن هستید؟
         filter: فیلتر
         filters:
@@ -24,7 +24,7 @@ fa:
         title: سردبیر
     debates:
       index:
-        block_authors: انسداد  نویسنده
+        block_authors: بلوک نویسنده
         confirm: آیا مطمئن هستید؟
         filter: فیلتر
         filters:
@@ -46,11 +46,12 @@ fa:
     menu:
       flagged_comments: توضیحات
       flagged_debates: مباحثه
+      flagged_investments: بودجه سرمایه گذاری ها 
       proposals: طرح های پیشنهادی
       users: انسداد کاربران
     proposals:
       index:
-        block_authors: انسداد  نویسنده
+        block_authors: بلوک نویسنده
         confirm: آیا مطمئن هستید؟
         filter: فیلتر
         filters:
@@ -67,6 +68,41 @@ fa:
           created_at: جدید ترین
           flags: بیشتر پرچم گذاری شده 
         title: طرح های پیشنهادی
+    budget_investments:
+      index:
+        block_authors: بلوک نویسنده
+        confirm: آیا مطمئن هستید؟
+        filter: فیلتر
+        filters:
+          all: همه
+          pending_flag_review: انتظار
+          with_ignored_flag: علامتگذاری به عنوان مشاهده شده
+        headers:
+          moderate: سردبیر
+          budget_investment: بودجه سرمایه گذاری
+        ignore_flags: علامتگذاری به عنوان مشاهده شده
+        order: "سفارش توسط\n"
+        orders:
+          created_at: جدید ترین
+          flags: بیشتر پرچم گذاری شده 
+        title: بودجه سرمایه گذاری ها 
+    proposal_notifications:
+      index:
+        block_authors: بلوک نویسنده
+        confirm: آیا مطمئن هستید؟
+        filter: فیلتر
+        filters:
+          all: همه
+          pending_review: بررسی انتظار
+          ignored: علامتگذاری به عنوان مشاهده شده
+        headers:
+          moderate: سردبیر
+        hide_proposal_notifications: پنهان کردن پیشنهادات
+        ignore_flags: علامتگذاری به عنوان مشاهده شده
+        order: "سفارش توسط\n"
+        orders:
+          created_at: جدید ترین
+        title: اطلاعیه های پیشنهاد
     users:
       index:
         hidden: مسدود شده

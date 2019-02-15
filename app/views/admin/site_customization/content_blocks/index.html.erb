@@ -9,13 +9,13 @@
 <h3><%= t("admin.site_customization.content_blocks.information") %></h3>
 
 <p><%= t("admin.site_customization.content_blocks.about") %></p>
-<p><%= t("admin.site_customization.content_blocks.top_links_html") %></p>
+<p><%= t("admin.site_customization.content_blocks.html_format") %></p>
 
-<code>&lt;li&gt;&lt;a href=&quot;http://site1.com&quot;&gt;Site 1&lt;/a&gt;&lt;/li&gt;</code><br>
-<code>&lt;li&gt;&lt;a href=&quot;http://site2.com&quot;&gt;Site 2&lt;/a&gt;&lt;/li&gt;</code><br>
-<code>&lt;li&gt;&lt;a href=&quot;http://site3.com&quot;&gt;Site 3&lt;/a&gt;&lt;/li&gt;</code><br>
-
-<p class="margin-top"><%= t("admin.site_customization.content_blocks.footer_html") %></p>
+<p>
+  <code><%= '<li><a href="http://site1.com">Site 1</a></li>' %></code><br>
+  <code><%= '<li><a href="http://site2.com">Site 2</a></li>' %></code><br>
+  <code><%= '<li><a href="http://site3.com">Site 3</a></li>' %></code><br>
+</p>
 
 <% if @content_blocks.any? || @headings_content_blocks.any? %>
   <table class="cms-page-list">

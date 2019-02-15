@@ -28,7 +28,7 @@ it:
         edit: Modifica argomento
         destroy: Distruggi argomento
         comments:
-          zero: Nessun commento
+          zero: Non ci sono commenti
           one: 1 commento
           other: "%{count} commenti"
       author: Autore

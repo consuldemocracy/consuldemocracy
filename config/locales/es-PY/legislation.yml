@@ -2,30 +2,30 @@ es-PY:
   legislation:
     annotations:
       comments:
-        see_all: Ver todos
+        see_all: Ver todas
         see_complete: Ver completo
         comments_count:
           one: "%{count} comentario"
-          other: "%{count} comentarios"
+          other: "%{count} Comentarios"
         replies_count:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
         cancel: Cancelar
         publish_comment: Publicar Comentario
       form:
-        phase_not_open: Esta fase del proceso no está abierta
+        phase_not_open: Esta fase no está abierta
         login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-        signin: iniciar sesión
-        signup: registrarte
+        signin: Entrar
+        signup: Regístrate
       index:
         title: Comentarios
         comments_about: Comentarios sobre
         see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
-          other: "%{count} comentarios"
+          other: "%{count} Comentarios"
       show:
-        title: Comentario
+        title: Comentar
       version_chooser:
         seeing_version: Comentarios para la versión
         see_text: Ver borrador del texto
@@ -46,18 +46,22 @@ es-PY:
         text_body: Texto
         text_comments: Comentarios
     processes:
+      header:
+        description: Descripción detallada
+        more_info: Más información y contexto
       proposals:
         empty_proposals: No hay propuestas
+        filters:
+          winners: Seleccionadas
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
       index:
+        filter: Filtro
         filters:
           open: Procesos activos
-          next: Próximamente
-          past: Terminados
+          past: Pasados
         no_open_processes: No hay procesos activos
-        no_next_processes: No hay procesos planeados
         no_past_processes: No hay procesos terminados
         section_header:
           icon_alt: Icono de Procesos legislativos
@@ -74,9 +78,11 @@ es-PY:
         see_latest_comments_title: Aportar a este proceso
       shared:
         key_dates: Fases de participación
-        debate_dates: Debate previo
+        debate_dates: el debate
         draft_publication_date: Publicación borrador
+        allegations_dates: Comentarios
         result_publication_date: Publicación resultados
+        milestones_date: Siguiendo
         proposals_dates: Propuestas
     questions:
       comments:
@@ -89,7 +95,8 @@ es-PY:
         comments:
           zero: Sin comentarios
           one: "%{count} comentario"
-          other: "%{count} comentarios"
+          other: "%{count} Comentarios"
+        debate: el debate
       show:
         answer_question: Enviar respuesta
         next_question: Siguiente pregunta
@@ -97,11 +104,11 @@ es-PY:
         share: Compartir
         title: Proceso de legislación colaborativa
       participation:
-        phase_not_open: Esta fase no está abierta
+        phase_not_open: Esta fase del proceso no está abierta
         organizations: Las organizaciones no pueden participar en el debate
-        signin: iniciar sesión
-        signup: registrarte
-        unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
+        signin: Entrar
+        signup: Regístrate
+        unauthenticated: Necesitas %{signin} o %{signup} para participar.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
         verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas

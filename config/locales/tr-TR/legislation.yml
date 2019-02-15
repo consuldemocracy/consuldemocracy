@@ -1,1 +1,13 @@
 tr:
+  legislation:
+    annotations:
+      index:
+        title: Yorumlar
+      show:
+        title: Yorum
+    draft_versions:
+      show:
+        text_comments: Yorumlar
+    processes:
+      shared:
+        allegations_dates: Yorumlar

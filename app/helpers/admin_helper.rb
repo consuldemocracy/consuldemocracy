@@ -29,6 +29,10 @@ module AdminHelper
      "hidden_budget_investments"]
   end
 
+  def menu_budgets?
+    controller_name.starts_with?("budget")
+  end
+
   def menu_budget?
     ["spending_proposals"].include?(controller_name)
   end
@@ -50,11 +54,16 @@ module AdminHelper
   end
 
   def menu_customization?
-    ["pages", "banners", "information_texts"].include?(controller_name) || menu_homepage?
+    ["pages", "banners", "information_texts"].include?(controller_name) ||
+    menu_homepage? || menu_pages?
   end
 
   def menu_homepage?
-    ["homepage", "cards"].include?(controller_name)
+    ["homepage", "cards"].include?(controller_name) && params[:page_id].nil?
+  end
+
+  def menu_pages?
+    ["pages", "cards"].include?(controller_name) && params[:page_id].present?
   end
 
   def official_level_options

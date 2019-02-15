@@ -50,7 +50,7 @@ describe ProposalNotification do
       Setting[:proposal_notification_minimum_interval_in_days] = 3
     end
 
-    it "is not valid if below minium interval" do
+    it "is not valid if below minimum interval" do
       proposal = create(:proposal)
 
       notification1 = create(:proposal_notification, proposal: proposal)
@@ -60,7 +60,7 @@ describe ProposalNotification do
       expect(notification2).not_to be_valid
     end
 
-    it "is valid if notifications above minium interval" do
+    it "is valid if notifications above minimum interval" do
       proposal = create(:proposal)
 
       notification1 = create(:proposal_notification, proposal: proposal, created_at: 4.days.ago)

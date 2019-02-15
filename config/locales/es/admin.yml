@@ -43,7 +43,7 @@ es:
       edit:
         editing: Editar el banner
         form:
-          submit_button: Guardar Cambios
+          submit_button: Guardar cambios
       errors:
         form:
           error:
@@ -68,7 +68,7 @@ es:
           on_proposals: Propuestas
           on_users: Usuarios
           on_system_emails: Emails del sistema
-        title: Actividad de Moderadores
+        title: Actividad de moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
@@ -87,7 +87,7 @@ es:
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
-        no_budgets: "No hay presupuestos abiertos."
+        no_budgets: "No hay presupuestos participativos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
@@ -110,14 +110,14 @@ es:
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
-        recalculate: Recalcular propuestas ganadoras
+        recalculate: Recalcular proyectos ganadores
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
       headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
-      no_groups: "No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
         other: "Hay %{count} grupos de partidas presupuestarias"
@@ -133,9 +133,11 @@ es:
         edit: "Editar grupo"
         name: "Nombre del grupo"
         submit: "Guardar grupo"
+      index:
+        back: "Volver a presupuestos"
     budget_headings:
       name: "Nombre"
-      no_headings: "No hay partidas creadas todavía. Cada usuario podrá votar en una sola partida de cada grupo."
+      no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
         other: "Hay %{count} partidas presupuestarias"
@@ -159,9 +161,11 @@ es:
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
+      index:
+        back: "Volver a grupos"
     budget_phases:
       edit:
-        start_date: Fecha de Inicio
+        start_date: Fecha de inicio
         end_date: Fecha de fin
         summary: Resumen
         summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
@@ -210,7 +214,7 @@ es:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
-        selected: "Seleccionada"
+        selected: "Seleccionado"
         select: "Seleccionar"
         list:
           id: ID
@@ -253,7 +257,7 @@ es:
           "true": Seleccionado
           "false": No seleccionado
         winner:
-          title: Ganadora
+          title: Ganador
           "true": "Si"
           "false": "No"
         image: "Imagen"
@@ -328,6 +332,29 @@ es:
         notice: Estado de seguimiento creado correctamente
       delete:
         notice: Estado de seguimiento eliminado correctamente
+    progress_bars:
+      manage: "Gestionar barras de progreso"
+      index:
+        title: "Barras de progreso"
+        no_progress_bars: "No hay barras de progreso"
+        new_progress_bar: "Crear nueva barra de progreso"
+        primary: "Barra de progreso principal"
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Título"
+        table_percentage: "Progreso"
+      new:
+        creating: "Crear barra de progreso"
+      edit:
+        title:
+          primary: "Editar barra de progreso principal"
+          secondary: "Editar barra de progreso %{title}"
+      create:
+        notice: "¡Barra de progreso creada con éxito!"
+      update:
+        notice: "Barra de progreso actualizada"
+      delete:
+        notice: "Barra de progreso eliminada correctamente"
     comments:
       index:
         filter: Filtro
@@ -411,14 +438,14 @@ es:
           homepage: Descripción
           homepage_description: Aquí puedes explicar el contenido del proceso
           homepage_enabled: Homepage activada
+          banner_title: Colores del encabezado
+          color_help: Formato hexadecimal
         index:
           create: Nuevo proceso
           delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
-            next: Próximamente
-            past: Pasados
             all: Todos
         new:
           back: Volver
@@ -429,12 +456,12 @@ es:
           orders:
             id: Id
             title: Título
-            supports: Apoyos
+            supports: Apoyos totales
         process:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha creación
+          creation_date: Fecha de creación
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -453,7 +480,7 @@ es:
           title: Título
           back: Volver
           id: Id
-          supports: Apoyos
+          supports: Apoyos totales
           select: Seleccionar
           selected: Seleccionada
         form:
@@ -555,7 +582,7 @@ es:
         email: Email
         no_managers: No hay gestores.
       manager:
-        add: Añadir como Gestor
+        add: Añadir como gestor
         delete: Borrar
       search:
         title: 'Gestores: Búsqueda de usuarios'
@@ -625,9 +652,9 @@ es:
     administrators:
       index:
         title: Administradores
-        id: ID de Administrador
         name: Nombre
         email: Email
+        id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
@@ -844,6 +871,7 @@ es:
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
+        unable_to_destroy: "No se pueden eliminar turnos que tienen resultados o recuentos asociados"
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
@@ -885,11 +913,13 @@ es:
         table_location: "Ubicación"
     polls:
       index:
-        title: "Listado de votaciones activas"
+        title: "Listado de votaciones"
         no_polls: "No hay ninguna votación próximamente."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
+        start_date: "Fecha de apertura"
+        closing_date: "Fecha de cierre"
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
@@ -943,7 +973,7 @@ es:
         edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
-        video_url: Video externo
+        video_url: Vídeo externo
         answers:
           title: Respuesta
           description: Descripción
@@ -1159,6 +1189,7 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
+      delete: Eliminar
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1313,7 +1344,7 @@ es:
         table:
           poll_name: Votación
           question_name: Pregunta
-          origin_web: Participantes Web
+          origin_web: Participantes en Web
           origin_total: Participantes Totales
     tags:
       create: Crear tema
@@ -1328,8 +1359,8 @@ es:
     users:
       columns:
         name: Nombre
-        email: Correo electrónico
-        document_number: DNI/Pasaporte/Tarjeta de residencia
+        email: Email
+        document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verficación
       index:
@@ -1345,10 +1376,9 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        information: Información sobre los bloques de texto
-        about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
-        top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
-        footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        information: Información sobre los bloques de contenido
+        about: "Puedes crear bloques de contenido HTML que se podrán incrustar en diferentes sitios de tu página."
+        html_format: "Un bloque de contenido es un grupo de enlaces, y debe de tener el siguiente formato:"
         no_blocks: "No hay bloques de texto."
         create:
           notice: Bloque creado correctamente
@@ -1420,8 +1450,25 @@ es:
           status_published: Publicada
           title: Título
           slug: Slug
+          cards_title: Tarjetas
+          see_cards: Ver tarjetas
+        cards:
+          cards_title: tarjetas
+          create_card: Crear tarjeta
+          no_cards: No hay tarjetas.
+          title: Título
+          description: Descripción
+          link_text: Texto del enlace
+          link_url: URL del enlace
+          columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
+          create:
+            notice: "¡Tarjeta creada con éxito!"
+          update:
+            notice: "Tarjeta actualizada con éxito"
+          destroy:
+            notice: "Tarjeta eliminada con éxito"
     homepage:
-      title: Título
+      title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.
       header_title: Encabezado
       no_header: No hay encabezado.

@@ -150,7 +150,7 @@
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
-        <% elsif investment.winner? %>
+        <% elsif investment.winner? && @budget.finished? %>
           <div class="callout success">
             <strong><%= t("budgets.investments.show.project_winner") %></strong>
           </div>
@@ -194,8 +194,8 @@
           url: budget_investment_url(investment.budget, investment),
           description: t("budgets.investments.share.message",
                           title: investment.title,
-                          org: setting['org_name']),
-          mobile: t("budgets.investments.share.message_mobile",
+                          handle: setting['org_name']),
+          mobile: t("budgets.investments.share.message",
                      title: investment.title,
                      handle: setting['twitter_handle']) %>
 

@@ -144,14 +144,6 @@ describe Legislation::Process do
       expect(processes_not_in_draft).not_to include(process_with_draft_only_today)
     end
 
-    it "filters next" do
-      next_processes = ::Legislation::Process.next
-
-      expect(next_processes).to include(process_2)
-      expect(next_processes).not_to include(process_1)
-      expect(next_processes).not_to include(process_3)
-    end
-
     it "filters past" do
       past_processes = ::Legislation::Process.past
 
@@ -174,6 +166,31 @@ describe Legislation::Process do
 
     it "detects open phase" do
       expect(process.status).to eq(:open)
+    end
+  end
+
+  describe "Header colors" do
+    it "valid format colors" do
+      process1 = create(:legislation_process, background_color: "123", font_color: "#fff")
+      process2 = create(:legislation_process, background_color: "#fff", font_color: "123")
+      process3 = create(:legislation_process, background_color: "", font_color: "")
+      process4 = create(:legislation_process, background_color: "#abf123", font_color: "fff123")
+      expect(process1).to be_valid
+      expect(process2).to be_valid
+      expect(process3).to be_valid
+      expect(process4).to be_valid
+    end
+
+    it "invalid format colors" do
+      expect {
+        process = create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
+      }.to raise_error(ActiveRecord::RecordInvalid,
+                       "Validation failed: Background color is invalid")
+
+      expect {
+        process = create(:legislation_process, background_color: "#fff", font_color: "ggg")
+      }.to raise_error(ActiveRecord::RecordInvalid,
+                       "Validation failed: Font color is invalid")
     end
   end
 

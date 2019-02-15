@@ -1,1 +1,24 @@
 fi:
+  settings:
+    twitter_handle: "Twitter-tunnus"
+    twitter_hashtag: "Twitter aihetunniste"
+    facebook_handle: "Facebook-tunnus"
+    youtube_handle: "YouTube-tunnus"
+    telegram_handle: "Telegram-tunnus"
+    instagram_handle: "Instagram käyttäjätunnus"
+    org_name: "Organisaatio"
+    map_latitude: "Leveysaste"
+    map_longitude: "Pituusaste"
+    feature:
+      twitter_login: "Twitter kirjautuminen"
+      twitter_login_description: "Sallii kirjautumisen käyttämällä Twitter-tiliä"
+      facebook_login: "Facebook kirjautuminen"
+      facebook_login_description: "Sallii kirjautumisen käyttämällä Facebook-tiliä"
+      google_login: "Google kirjautuminen"
+      google_login_description: "Sallii kirjautumisen käyttämällä Google-tiliä"
+      proposals: "Ehdotukset"
+      polls: "Kyselyt"
+      legislation: "Lainsäädäntö"
+      user:
+        recommendations: "Suositukset"
+      help_page: "Ohje-sivu"

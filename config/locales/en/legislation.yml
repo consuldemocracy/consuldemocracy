@@ -62,10 +62,8 @@ en:
         filter: Filter
         filters:
           open: Open processes
-          next: Next
           past: Past
         no_open_processes: There aren't open processes
-        no_next_processes: There aren't planned processes
         no_past_processes: There aren't past processes
         section_header:
           icon_alt: Legislation processes icon
@@ -83,6 +81,7 @@ en:
         see_latest_comments_title: Comment on this process
       shared:
         key_dates: Participation phases
+        homepage: Homepage
         debate_dates: Debate
         draft_publication_date: Draft publication
         allegations_dates: Comments

@@ -25,7 +25,7 @@ module Budgets
       end
 
       def load_budget
-        @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
+        @budget = Budget.find_by_slug_or_id params[:budget_id]
       end
 
       def investments_by_heading_ordered_alphabetically

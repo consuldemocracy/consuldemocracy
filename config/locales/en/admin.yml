@@ -87,7 +87,7 @@ en:
         table_edit_budget: Edit
         edit_groups: Edit headings groups
         edit_budget: Edit budget
-        no_budgets: "There are no open budgets."
+        no_budgets: "There are no budgets."
       create:
         notice: New participatory budget created successfully!
       update:
@@ -117,7 +117,7 @@ en:
       headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       max_votable_headings: "Maximum number of headings in which a user can vote"
-      no_groups: "No groups created yet. Each user will be able to vote in only one heading per group."
+      no_groups: "There are no groups."
       amount:
         one: "There is 1 group"
         other: "There are %{count} groups"
@@ -133,9 +133,11 @@ en:
         edit: "Edit group"
         name: "Group name"
         submit: "Save group"
+      index:
+        back: "Go back to budgets"
     budget_headings:
       name: "Name"
-      no_headings: "No headings created yet. Each user will be able to vote in only one heading per group."
+      no_headings: "There are no headings."
       amount:
         one: "There is 1 heading"
         other: "There are %{count} headings"
@@ -159,6 +161,8 @@ en:
         create: "Create new heading"
         edit: "Edit heading"
         submit: "Save heading"
+      index:
+        back: "Go back to groups"
     budget_phases:
       edit:
         start_date: Start date
@@ -328,6 +332,29 @@ en:
         notice: Milestone status created successfully
       delete:
         notice: Milestone status deleted successfully
+    progress_bars:
+      manage: "Manage progress bars"
+      index:
+        title: "Progress bars"
+        no_progress_bars: "There are no progress bars"
+        new_progress_bar: "Create new progress bar"
+        primary: "Primary progress bar"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Title"
+        table_percentage: "Current progress"
+      new:
+        creating: "Create progress bar"
+      edit:
+        title:
+          primary: "Edit primary progress bar"
+          secondary: "Edit progress bar %{title}"
+      create:
+        notice: "Progress bar created successfully!"
+      update:
+        notice: "Progress bar updated successfully"
+      delete:
+        notice: "Progress bar deleted successfully"
     comments:
       index:
         filter: Filter
@@ -411,14 +438,14 @@ en:
           homepage: Description
           homepage_description: Here you can explain the content of the process
           homepage_enabled: Homepage enabled
+          banner_title: Header colors
+          color_help: Hexadecimal format
         index:
           create: New process
           delete: Delete
           title: Legislation processes
           filters:
             open: Open
-            next: Next
-            past: Past
             all: All
         new:
           back: Back
@@ -429,7 +456,7 @@ en:
           orders:
             id: Id
             title: Title
-            supports: Supports
+            supports: Total supports
         process:
           title: Process
           comments: Comments
@@ -454,7 +481,7 @@ en:
           back: Back
           id: Id
           title: Title
-          supports: Supports
+          supports: Total supports
           select: Select
           selected: Selected
         form:
@@ -845,6 +872,7 @@ en:
       flash:
         create: "Shift added"
         destroy: "Shift removed"
+        unable_to_destroy: "Shifts with associated results or recounts cannot be deleted"
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
@@ -886,11 +914,13 @@ en:
         table_location: "Location"
     polls:
       index:
-        title: "List of active polls"
+        title: "List of polls"
         no_polls: "There are no polls coming up."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
+        start_date: "Start Date"
+        closing_date: "Closing Date"
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
@@ -1160,6 +1190,7 @@ en:
       author: Author
       content: Content
       created_at: Created at
+      delete: Delete
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1347,9 +1378,8 @@ en:
     site_customization:
       content_blocks:
         information: Information about content blocks
-        about: You can create HTML content blocks to be inserted in the header or the footer of your CONSUL.
-        top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
-        footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        about: "You can create HTML content blocks that can be inserted in different places of your website."
+        html_format: "A content block is a group of links, and it must have the following format:"
         no_blocks: "There are no content blocks."
         create:
           notice: Content block created successfully
@@ -1421,6 +1451,23 @@ en:
           status_published: Published
           title: Title
           slug: Slug
+          cards_title: Cards
+          see_cards: See Cards
+        cards:
+          cards_title: cards
+          create_card: Create card
+          no_cards: There are no cards.
+          title: Title
+          description: Description
+          link_text: Link text
+          link_url: Link URL
+          columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
+          create:
+            notice: "Card created successfully!"
+          update:
+            notice: "Card updated successfully"
+          destroy:
+            notice: "Card removed successfully"
     homepage:
       title: Homepage
       description: The active modules appear in the homepage in the same order as here.

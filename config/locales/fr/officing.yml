@@ -8,7 +8,7 @@ fr:
         info: Ici vous pouvez valider les documents des utilisateurs et enregistrer les résultats des votes
         no_shifts: Vous n'avez pas de votes à superviser aujourd'hui.
     menu:
-      voters: Valider un document
+      voters: Valider le document
       total_recounts: Dépouillements finaux et résultats
     polls:
       final:
@@ -24,7 +24,7 @@ fr:
       new:
         title: "%{poll} - Ajouter des résultats"
         not_allowed: "Vous n'êtes pas autorisé à ajouter des résultats pour ce vote"
-        booth: "Bureau de vote"
+        booth: "Urne"
         date: "Date"
         select_booth: "Sélectionner une bureau de vote"
         ballots_white: "Votes blancs"
@@ -56,8 +56,8 @@ fr:
       new:
         title: Votes
         table_poll: Vote
-        table_status: Statut du vote
-        table_actions: Statut des votes
+        table_status: Statut des votes
+        table_actions: Actions
         not_to_vote: La personne a décidé de ne pas voter pour le moment
       show:
         can_vote: Peut voter

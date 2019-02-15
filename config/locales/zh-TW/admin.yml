@@ -4,7 +4,7 @@ zh-TW:
       title: 管理
     actions:
       actions: 行動
-      confirm: 您是否確定？
+      confirm: 您確定？
       confirm_hide: 確認審核
       hide: 隱藏
       hide_author: 隱藏作者
@@ -36,8 +36,8 @@ zh-TW:
           homepage: 主頁
           debates: 辯論
           proposals: 建議
-          budgets: 參與性預算編制
-          help_page: 幫助頁
+          budgets: 參與式預算編制
+          help_page: 説明頁
         background_color: 背景色
         font_color: 字體色
       edit:
@@ -54,7 +54,7 @@ zh-TW:
       show:
         action: 行動
         actions:
-          block: 禁用
+          block: 已被封鎖
           hide: 隱藏
           restore: 恢復
         by: 審核者
@@ -76,8 +76,8 @@ zh-TW:
         new_link: 創建新預算
         filter: 篩選器
         filters:
-          open: 打開
-          finished: 完成
+          open: 開
+          finished: 已完成
         budget_investments: 管理項目
         table_name: 名字
         table_phase: 階段
@@ -86,6 +86,7 @@ zh-TW:
         table_edit_budget: 編輯
         edit_groups: 編輯標題組
         edit_budget: 編輯預算
+        no_budgets: "沒有預算。"
       create:
         notice: 新的參與性預算創建成功!
       update:
@@ -105,33 +106,25 @@ zh-TW:
         unable_notice: 您無法銷毀具有相關投資的預算
       new:
         title: 新的參與性預算
-      show:
-        groups:
-          other: "1組預算標題\n%{count} 組預算標題"
-      form:
-        group: 組名字
-        no_groups: 尚未創建任何小組。 每個用戶只能在每個組中的一個標題中投票。
-        add_group: 添加新組
-        create_group: 創建組
-        edit_group: 編輯組
-        submit: 儲存組
-        heading: 標題名稱
-        add_heading: 添加標題
-        amount: 數量
-        population: "人口 (可選擇填寫)"
-        population_help_text: "此數據僅用於計算參與統計資訊"
-        save_heading: 儲存標題
-        no_heading: 此組沒有指定的標題。
-        table_heading: 標題
-        table_amount: 數量
-        table_population: 人口
-        population_info: "預算標題 \"人口\" 欄位用於統計目的, 在預算結束時顯示每個標題, 代表一個地區與人口百分比投票率。該欄位是可選擇填寫的, 因此如果不適用, 您可以將其留空。"
-        max_votable_headings: "用戶可投票的最大標題數"
-        current_of_max_headings: "%{max} 之%{current}"
       winners:
         calculate: 計算勝出者投資
         calculated: 勝出者正在被計算中，可能需要一分鐘。
         recalculate: 重新計算勝出者投資
+    budget_groups:
+      name: "名字"
+      max_votable_headings: "用戶可投票的最大標題數"
+      form:
+        edit: "編輯組"
+        name: "組名字"
+        submit: "儲存組"
+    budget_headings:
+      name: "名字"
+      form:
+        name: "標題名稱"
+        amount: "數量"
+        population: "人口 (可選擇填寫)"
+        population_info: "預算標題 \"人口\" 欄位用於統計目的, 在預算結束時顯示每個標題, 代表一個地區與人口百分比投票率。該欄位是可選擇填寫的, 因此如果不適用, 您可以將其留空。"
+        submit: "儲存標題"
     budget_phases:
       edit:
         start_date: 開始日期
@@ -155,13 +148,13 @@ zh-TW:
           placeholder: 排序依據
           id: ID
           title: 標題
-          supports: 支援
+          supports: 支持
         filters:
           all: 所有
           without_admin: 沒有指定的管理員
           without_valuator: 沒有指定的評估員
-          under_valuation: 正在評估中
-          valuation_finished: 評估完成
+          under_valuation: 在評估中
+          valuation_finished: 評估已完成
           feasible: 可行
           selected: 已選擇
           undecided: 未定
@@ -173,7 +166,7 @@ zh-TW:
         buttons:
           filter: 篩選器
         download_current_selection: "下載當前所選內容"
-        no_budget_investments: "沒有投資項目。"
+        no_budget_investments: "沒有投資項目"
         title: 投資項目
         assigned_admin: 指定的管理員
         no_admin_assigned: 未分配管理員
@@ -188,7 +181,7 @@ zh-TW:
         list:
           id: ID
           title: 標題
-          supports: 支援
+          supports: 支持
           admin: 管理員
           valuator: 評估員
           valuation_group: 評估組
@@ -203,7 +196,7 @@ zh-TW:
         see_results: "查看結果"
       show:
         assigned_admin: 指定的管理員
-        assigned_valuators: 指定的評估員
+        assigned_valuators: 分配的評估員
         classification: 分類
         info: "%{budget_name} - 組： %{group_name} - 投資項目 %{id}"
         edit: 編輯
@@ -227,7 +220,7 @@ zh-TW:
           "false": 未被選擇
         winner:
           title: 勝出者
-          "true": "是的"
+          "true": "是"
           "false": "否"
         image: "圖像"
         see_image: "請參閱圖像"
@@ -256,11 +249,11 @@ zh-TW:
         table_id: "ID"
         table_title: "標題"
         table_description: "描述"
-        table_publication_date: "發佈日期"
+        table_publication_date: "出版日期"
         table_status: 狀態
         table_actions: "行動"
         delete: "刪除里程碑"
-        no_milestones: "沒有定義里程碑"
+        no_milestones: "沒有已定義的里程碑"
         image: "圖像"
         show_image: "顯示圖像"
         documents: "文檔"
@@ -301,6 +294,11 @@ zh-TW:
         notice: 投資狀態已創建成功
       delete:
         notice: 投資狀態已成功刪除
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "類型"
+        table_title: "標題"
     comments:
       index:
         filter: 篩選器
@@ -337,7 +335,7 @@ zh-TW:
         user: 用戶
         no_hidden_users: 沒有隱藏的用戶。
       show:
-        email: '電郵:'
+        email: '電郵：'
         hidden_at: '隱藏於:'
         registered_at: '註冊於:'
         title: 用戶的活動 (%{user})
@@ -379,19 +377,23 @@ zh-TW:
           summary_placeholder: 描述的簡短摘要
           description_placeholder: 添加進程的描述
           additional_info_placeholder: 添加您認為有用的額外資訊
+          homepage: 描述
         index:
           create: 新進程
           delete: 刪除
           title: 立法進程
           filters:
-            open: 打開
-            next: 下一個
-            past: 過去的
+            open: 開
             all: 所有
         new:
           back: 返回
           title: 創建新的合作立法進程
           submit_button: 創建進程
+        proposals:
+          select_order: 排序依據
+          orders:
+            title: 標題
+            supports: 支持
         process:
           title: 進程
           comments: 評論
@@ -402,12 +404,18 @@ zh-TW:
           status_planned: 計劃
         subnav:
           info: 資訊
+          homepage: 主頁
           draft_versions: 起草
           questions: 辯論
           proposals: 建議
+          milestones: 跟隨中
       proposals:
         index:
+          title: 標題
           back: 返回
+          supports: 支持
+          select: 選擇
+          selected: 已選擇
         form:
           custom_categories: 類別
           custom_categories_description: 用戶可以選擇創建建議的類別。
@@ -497,6 +505,9 @@ zh-TW:
           comments_count: 評論數
         question_option_fields:
           remove_option: 刪除選項
+      milestones:
+        index:
+          title: 跟隨中
     managers:
       index:
         title: 經理
@@ -513,6 +524,7 @@ zh-TW:
       admin: 管理菜單
       banner: 管理橫幅
       poll_questions: 問題
+      proposals: 建議
       proposals_topics: 建議主題
       budgets: 參與性預算
       geozones: 管理地理區域（geozones）
@@ -524,12 +536,12 @@ zh-TW:
       hidden_users: 隱藏的用戶
       administrators: 管理員
       managers: 經理
-      moderators: 審核員
+      moderators: 版主
       messaging_users: 向用戶發送的消息
       newsletters: 通訊
       admin_notifications: 通知
       system_emails: 系統電子郵件
-      emails_download: 電子郵件下載
+      emails_download: 電郵下載
       valuators: 評估員
       poll_officers: 投票站職員
       polls: 投票
@@ -539,18 +551,18 @@ zh-TW:
       officials: 官員
       organizations: 組織
       settings: 全域設置
-      spending_proposals: 支出建議
+      spending_proposals: 開支建議
       stats: 統計
       signature_sheets: 簽名表
       site_customization:
         homepage: 主頁
-        pages: 自訂頁
-        images: 自訂圖像
-        content_blocks: 自訂內容塊
+        pages: 自定義頁面
+        images: 自定義圖像
+        content_blocks: 自定義內容塊
         information_texts: 自訂資訊文本
         information_texts_menu:
           debates: "辯論"
-          community: "社區"
+          community: "社群"
           proposals: "建議"
           polls: "投票"
           layouts: "佈局"
@@ -582,7 +594,7 @@ zh-TW:
         title: "管理員：用戶搜索"
     moderators:
       index:
-        title: 審核員
+        title: 版主
         name: 名字
         email: 電郵
         no_moderators: 沒有審核員。
@@ -613,7 +625,7 @@ zh-TW:
         segment_recipient: 收件者
         sent: 發送
         actions: 行動
-        draft: 起草
+        draft: 草稿
         edit: 編輯
         delete: 刪除
         preview: 預覽
@@ -631,7 +643,7 @@ zh-TW:
         subject: 主題
         segment_recipient: 收件者
         from: 將顯示為發送通訊的電子郵件地址
-        body: 電郵內容
+        body: 電子郵件內容
         body_help_text: 這是用戶將看到電郵的方式
         send_alert: 您確實要將此通訊發送到 %{n} 用戶嗎？
     admin_notifications:
@@ -685,7 +697,7 @@ zh-TW:
         preview_detail: 用戶將只收到他們所跟蹤的建議之通知
     emails_download:
       index:
-        title: 電郵下載
+        title: 電子郵件下載
         download_segment: 下載電郵地址
         download_segment_help_text: 以 CSV 格式下載
         download_emails_button: 下載電郵清單
@@ -708,9 +720,9 @@ zh-TW:
       summary:
         title: 評估員為投資項目作出的總結
         valuator_name: 評估員
-        finished_and_feasible_count: 完成和可行
-        finished_and_unfeasible_count: 完成和不可行
-        finished_count: 已完成
+        finished_and_feasible_count: 已完成和可行
+        finished_and_unfeasible_count: 已完成和不可行
+        finished_count: 完成
         in_evaluation_count: 正在評估中
         total_count: 總
         cost: 成本
@@ -726,7 +738,7 @@ zh-TW:
         no_group: "沒有組"
     valuator_groups:
       index:
-        title: "評估組"
+        title: "評估小組"
         new: "創建評估組"
         name: "名字"
         members: "成員"
@@ -735,7 +747,7 @@ zh-TW:
         title: "評估組: %{group}"
         no_valuators: "沒有評估員被分配到此組"
       form:
-        name: "組名稱"
+        name: "組名字"
         new: "創建評估組"
         edit: "儲存評估組"
     poll_officers:
@@ -832,6 +844,8 @@ zh-TW:
         create: "創建投票項"
         name: "名字"
         dates: "日期"
+        start_date: "開始日期"
+        closing_date: "截止日期"
         geozone_restricted: "限於區內"
       new:
         title: "新投票項"
@@ -867,6 +881,7 @@ zh-TW:
         create_question: "創建問題"
         table_proposal: "建議"
         table_question: "問題"
+        table_poll: "投票"
       edit:
         title: "編輯問題"
       new:
@@ -885,7 +900,7 @@ zh-TW:
         add_answer: 添加答案
         video_url: 外部視頻
         answers:
-          title: 答案
+          title: 回答
           description: 描述
           videos: 視頻
           video_list: 視頻清單
@@ -930,8 +945,8 @@ zh-TW:
       result:
         table_whites: "完全空白的選票"
         table_nulls: "無效選票"
-        table_total: "選票總數"
-        table_answer: 答案
+        table_total: "總投票數"
+        table_answer: 回答
         table_votes: 票
       results_by_booth:
         booth: 投票亭
@@ -943,12 +958,12 @@ zh-TW:
         title: "活躍投票亭清單"
         no_booths: "任何即將進行的投票項都沒有活躍投票亭。"
         add_booth: "添加投票亭"
-        name: "名稱"
+        name: "名字"
         location: "位置"
         no_location: "無位置"
       new:
         title: "新投票亭"
-        name: "名稱"
+        name: "名字"
         location: "位置"
         submit_button: "創建投票亭"
       edit:
@@ -969,7 +984,7 @@ zh-TW:
       index:
         title: 官員
         no_officials: 沒有官員
-        name: 名稱
+        name: 名字
         official_position: 正式職位
         official_level: 級別
       level_0: 不是官員
@@ -1010,12 +1025,18 @@ zh-TW:
       search:
         title: 搜尋組織
         no_results: 未找到任何組織。
+    proposals:
+      index:
+        title: 建議
+        id: ID
+        author: 作者
+        milestones: 里程碑
     hidden_proposals:
       index:
         filter: 篩選器
         filters:
           all: 所有
-          with_confirmed_hide: 已確認
+          with_confirmed_hide: 確認
           without_confirmed_hide: 有待
         title: 隱藏的建議
         no_hidden_proposals: 沒有隱藏的建議。
@@ -1024,7 +1045,7 @@ zh-TW:
         filter: 篩選器
         filters:
           all: 所有
-          with_confirmed_hide: 已確認
+          with_confirmed_hide: 確認
           without_confirmed_hide: 有待
         title: 隱藏通知
         no_hidden_proposals: 沒有隱藏的通知。
@@ -1052,12 +1073,14 @@ zh-TW:
           form:
             submit: 更新
       setting: 功能
-      setting_actions: 操作
+      setting_actions: 行動
       setting_name: 設置
       setting_status: 狀態
       setting_value: 價值
       no_description: "沒有描述"
     shared:
+      true_value: "是"
+      false_value: "否"
       booths_search:
         button: 搜尋
         placeholder: 按名稱搜尋投票亭
@@ -1078,7 +1101,7 @@ zh-TW:
         placeholder: 按名稱或電郵搜索用戶
       search_results: "搜尋結果"
       no_search_results: "未找到結果。"
-      actions: 操作
+      actions: 行動
       title: 標題
       description: 描述
       image: 圖像
@@ -1089,6 +1112,7 @@ zh-TW:
       author: 作者
       content: 內容
       created_at: 創建於
+      delete: 刪除
     spending_proposals:
       index:
         geozone_filter_all: 所有區域
@@ -1099,11 +1123,11 @@ zh-TW:
           valuation_open: 開
           without_admin: 沒有指定的管理員
           managed: 已管理
-          valuating: 在評估中
-          valuation_finished: 評估已完成
+          valuating: 評估中
+          valuation_finished: 評估完成
           all: 所有
         title: 參與性預算的投資項目
-        assigned_admin: 已分配管理員
+        assigned_admin: 指定的管理員
         no_admin_assigned: 未分配管理員
         no_valuators_assigned: 未分配評估員
         summary_link: "投資項目摘要"
@@ -1113,8 +1137,8 @@ zh-TW:
           not_feasible: "不可行"
           undefined: "未定義"
       show:
-        assigned_admin: 已分配的管理員
-        assigned_valuators: 分配的評估員
+        assigned_admin: 指定的管理員
+        assigned_valuators: 指定的評估員
         back: 返回
         classification: 分類
         heading: "投資項目 %{id}"
@@ -1139,9 +1163,9 @@ zh-TW:
         title: 投資項目摘要
         title_proposals_with_supports: 具有支援的投資項目摘要
         geozone_name: 範圍
-        finished_and_feasible_count: 已完成和可行
-        finished_and_unfeasible_count: 已完成和不可行
-        finished_count: 已完成
+        finished_and_feasible_count: 完成和可行
+        finished_and_unfeasible_count: 完成和不可行
+        finished_count: 完成
         in_evaluation_count: 正在評估中
         total_count: 總
         cost_for_geozone: 成本
@@ -1152,7 +1176,7 @@ zh-TW:
         edit: 編輯
         delete: 刪除
       geozone:
-        name: 名稱
+        name: 名字
         external_code: 外部代碼
         census_code: 人口普查代碼
         coordinates: 座標
@@ -1174,7 +1198,7 @@ zh-TW:
     signature_sheets:
       author: 作者
       created_at: 創建日期
-      name: 名稱
+      name: 名字
       no_signature_sheets: "沒有簽名表"
       index:
         title: 簽名表
@@ -1207,16 +1231,16 @@ zh-TW:
           budgets: 開放式預算
           budget_investments: 投資項目
           spending_proposals: 開支建議
-          unverified_users: 未經核實的用戶
+          unverified_users: 未核實的用戶
           user_level_three: 三級用戶
           user_level_two: 二級用戶
           users: 用戶總數
           verified_users: 已核實的用戶
           verified_users_who_didnt_vote_proposals: 已核實的用戶，但沒有為建議投票
           visits: 訪問
-          votes: 投票總數
+          votes: 總投票數
         spending_proposals_title: 開支建議
-        budgets_title: 參與性預算編制
+        budgets_title: 參與式預算編制
         visits_title: 訪問
         direct_messages: 直接消息
         proposal_notifications: 建議通知
@@ -1253,7 +1277,7 @@ zh-TW:
         placeholder: 鍵入主題的名稱
     users:
       columns:
-        name: 名稱
+        name: 名字
         email: 電郵
         document_number: 文檔編號
         roles: 角色
@@ -1272,9 +1296,7 @@ zh-TW:
     site_customization:
       content_blocks:
         information: 有關內容塊的資訊
-        about: 您可以創建要插入到CONSUL頁首或頁尾中的 HTML 內容塊。
-        top_links_html: "<strong>頁首塊 (top_links)</strong> 是必須具有此格式的連結塊："
-        footer_html: "<strong>頁尾塊</strong> 可以有任何格式，並可以用於插入 Javascript、CSS 或自訂 HTML。"
+        about: "您可以創建要插入到CONSUL頁首或頁尾中的 HTML 內容塊。"
         no_blocks: "沒有內容塊。"
         create:
           notice: 內容塊已成功創建
@@ -1297,7 +1319,7 @@ zh-TW:
           title: 創建新內容塊
         content_block:
           body: 內容
-          name: 名稱
+          name: 名字
           names:
             top_links: 熱門鏈接
             footer: 頁尾
@@ -1305,7 +1327,7 @@ zh-TW:
             subnavigation_right: 主導航右
       images:
         index:
-          title: 自訂圖像
+          title: 自定義圖像
           update: 更新
           delete: 刪除
           image: 圖像
@@ -1345,6 +1367,14 @@ zh-TW:
           status_draft: 草稿
           status_published: 發表
           title: 標題
+          slug: Slug
+          cards_title: 卡
+        cards:
+          create_card: 創建卡
+          title: 標題
+          description: 描述
+          link_text: 鏈接文本
+          link_url: 鏈接 URL
     homepage:
       title: 主頁
       description: 活動模組以與此處相同的順序在主頁中顯示。
@@ -1362,7 +1392,7 @@ zh-TW:
       feeds:
         proposals: 建議
         debates: 辯論
-        processes: 進程
+        processes: 過程
       new:
         header_title: 新頁首
         submit_header: 創建頁首

@@ -128,6 +128,43 @@ feature 'Debates' do
     end
   end
 
+  scenario "Show votes score on index and show" do
+    debate_positive = create(:debate, title: "Debate positive")
+    debate_zero = create(:debate, title: "Debate zero")
+    debate_negative = create(:debate, title: "Debate negative")
+
+    10.times { create(:vote, votable: debate_positive, vote_flag: true) }
+    3.times  { create(:vote, votable: debate_positive, vote_flag: false) }
+
+    5.times { create(:vote, votable: debate_zero, vote_flag: true) }
+    5.times  { create(:vote, votable: debate_zero, vote_flag: false) }
+
+    6.times  { create(:vote, votable: debate_negative, vote_flag: false) }
+
+    visit debates_path
+
+    within "#debate_#{debate_positive.id}" do
+      expect(page).to have_content("7 votes")
+    end
+
+    within "#debate_#{debate_zero.id}" do
+      expect(page).to have_content("No votes")
+    end
+
+    within "#debate_#{debate_negative.id}" do
+      expect(page).to have_content("-6 votes")
+    end
+
+    visit debate_path(debate_positive)
+    expect(page).to have_content("7 votes")
+
+    visit debate_path(debate_zero)
+    expect(page).to have_content("No votes")
+
+    visit debate_path(debate_negative)
+    expect(page).to have_content("-6 votes")
+  end
+
   scenario 'Create' do
     author = create(:user)
     login_as(author)

@@ -359,20 +359,30 @@ feature 'Admin budget investments' do
     end
 
     scenario "Disable 'Calculate winner' button if incorrect phase" do
-      budget.update(phase: 'reviewing_ballots')
+      budget.update(phase: "reviewing_ballots")
 
       visit admin_budget_budget_investments_path(budget)
-      click_link 'Winners'
+      click_link "Winners"
 
       expect(page).to have_link "Calculate Winner Investments"
 
-      budget.update(phase: 'accepting')
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_link "Calculate Winner Investments"
+
+      budget.update(phase: "accepting")
 
       visit admin_budget_budget_investments_path(budget)
-      click_link 'Winners'
+      click_link "Winners"
 
       expect(page).not_to have_link "Calculate Winner Investments"
-      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects'
+      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", '\
+                                   '"Reviewing Ballots" or "Finished budget" in order '\
+                                   "to calculate winners projects"
+
+      visit edit_admin_budget_path(budget)
+
+      expect(page).not_to have_link "Calculate Winner Investments"
     end
 
     scenario "Filtering by minimum number of votes", :js do

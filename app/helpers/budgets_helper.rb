@@ -48,8 +48,8 @@ module BudgetsHelper
   end
 
   def css_for_ballot_heading(heading)
-    return '' if current_ballot.blank?
-    current_ballot.has_lines_in_heading?(heading) ? 'is-active' : ''
+    return "" if current_ballot.blank? || @current_filter == "unfeasible"
+    current_ballot.has_lines_in_heading?(heading) ? "is-active" : ""
   end
 
   def current_ballot
@@ -60,13 +60,17 @@ module BudgetsHelper
     Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).select(:name).distinct
   end
 
+  def unfeasible_or_unselected_filter
+    ["unselected", "unfeasible"].include?(@current_filter)
+  end
+
   def budget_published?(budget)
     !budget.drafting? || current_user&.administrator?
   end
 
   def current_budget_map_locations
     return unless current_budget.present?
-    if current_budget.valuating_or_later?
+    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
       investments = current_budget.investments.selected
     else
       investments = current_budget.investments
@@ -85,5 +89,11 @@ module BudgetsHelper
     else
       t("admin.budgets.winners.recalculate")
     end
+  end
+
+  def display_support_alert?(investment)
+    current_user &&
+    !current_user.voted_in_group?(investment.group) &&
+    investment.group.headings.count > 1
   end
 end

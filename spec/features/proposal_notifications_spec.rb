@@ -422,8 +422,53 @@ feature 'Proposal Notifications' do
 
   context "Limits" do
 
-    pending "Cannot send more than one notification within established interval"
-    pending "use timecop to make sure notifications can be sent after time interval"
+    scenario "Cannot send more than one notification within established interval" do
+      author = create(:user)
+      proposal = create(:proposal, author: author)
+
+      login_as author.reload
+
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+      fill_in "Title", with: "Thank you for supporting my proposal"
+      fill_in "Message", with: "Please share it with others so we can make it happen!"
+      click_button "Send message"
+
+      expect(page).to have_content "Your message has been sent correctly."
+
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+      fill_in "Title", with: "Thank you again for supporting my proposal"
+      fill_in "Message", with: "Please share it again with others so we can make it happen!"
+      click_button "Send message"
+
+      expect(page).to have_content "You have to wait a minimum of 3 days between notifications"
+      expect(page).not_to have_content "Your message has been sent correctly."
+    end
+
+    scenario "Use time traveling to make sure notifications can be sent after time interval" do
+      author = create(:user)
+      proposal = create(:proposal, author: author)
+
+      login_as author.reload
+
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+      fill_in "Title", with: "Thank you for supporting my proposal"
+      fill_in "Message", with: "Please share it with others so we can make it happen!"
+      click_button "Send message"
+
+      expect(page).to have_content "Your message has been sent correctly."
+
+      travel 3.days + 1.second
+
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+      fill_in "Title", with: "Thank you again for supporting my proposal"
+      fill_in "Message", with: "Please share it again with others so we can make it happen!"
+      click_button "Send message"
+
+      expect(page).to have_content "Your message has been sent correctly."
+      expect(page).not_to have_content "You have to wait a minimum of 3 days between notifications"
+
+      travel_back
+    end
 
   end
 

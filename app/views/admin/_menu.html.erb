@@ -56,8 +56,7 @@
     <% end %>
 
     <% if feature?(:budgets) %>
-      <li class="section-title <%= "is-active" if controller_name == "budgets" ||
-                                                  controller_name == "milestone_statuses" %>">
+      <li class="section-title <%= "is-active" if menu_budgets? %>">
         <%= link_to admin_budgets_path do %>
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.budgets") %></strong>
@@ -123,7 +122,7 @@
           <%= link_to t("admin.menu.site_customization.homepage"), admin_homepage_path %>
         </li>
 
-        <li <%= "class=is-active" if controller_name == "pages" %>>
+        <li <%= "class=is-active" if menu_pages? || controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>
 

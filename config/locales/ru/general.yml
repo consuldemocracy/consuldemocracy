@@ -1,1 +1,785 @@
 ru:
+  account:
+    show:
+      change_credentials_link: Изменить мои учетные данные
+      email_on_comment_label: Уведомлять меня по email, когда кто-то комментирует мои предложения или дебаты
+      email_on_comment_reply_label: Уведомлять меня по email, когда кто-то отвечает на мои комментарии
+      erase_account_link: Стереть мой аккаунт
+      finish_verification: Завершить верификацию
+      notifications: Уведомления
+      organization_name_label: Название орагнизации
+      organization_responsible_name_placeholder: Представитель организации/коллектива
+      personal: Личные данные
+      phone_number_label: Номер телефона
+      public_activity_label: Оставить мой список действий публичным
+      public_interests_label: Оставить ярлыки элементов, на которые я подписан, публичными
+      public_interests_my_title_list: Метки элементов, на которые вы подписаны
+      public_interests_user_title_list: Метки элементов, на которые подписан этот пользователь
+      save_changes_submit: Сохранить изменения
+      subscription_to_website_newsletter_label: Получать по email информацию, относящуюся к вебсайту
+      email_on_direct_message_label: Получать email'ы о прямых сообщениях
+      email_digest_label: Получать сводку уведомлений по предложению
+      official_position_badge_label: Показывать бейдж позиции госслужащего
+      recommendations: Рекомендации
+      show_debates_recommendations: Показывать некомендации дебатов
+      show_proposals_recommendations: Показывать рекомендации предложений
+      title: Мой аккаунт
+      user_permission_debates: Участвовать в дебатах
+      user_permission_info: При помощи вашего аккаунта вы можете...
+      user_permission_proposal: Создавать новый предложения
+      user_permission_support_proposal: Поддерживать предложения
+      user_permission_title: Участие
+      user_permission_verify: Чтобы выполнить все действия, верифицируйте ваш аккаунт.
+      user_permission_verify_info: "* Только для пользователей на Цензусе."
+      user_permission_votes: Участвовать в финальном голосовании
+      username_label: Имя пользователя
+      verified_account: Аккаунт верифицирован
+      verify_my_account: Верифицировать мой аккаунт
+  application:
+    close: Закрыть
+    menu: Меню
+  comments:
+    comments_closed: Комментарии закрыты
+    verified_only: Чтобы участвовать, %{verify_account}
+    verify_account: подтвердите ваш аккаунт
+    comment:
+      admin: Администратор
+      author: Автор
+      deleted: Этот комментарий был удален
+      moderator: Модератор
+      responses:
+        zero: Нет ответов
+      user_deleted: Пользователь удален
+      votes:
+        zero: Нет голосов
+    form:
+      comment_as_admin: Прокомментировать от имени администратора
+      comment_as_moderator: Прокомментировать от имени модератора
+      leave_comment: Оставьте ваш комментарий
+    orders:
+      most_voted: Самое голосуемое
+      newest: Самое свежее
+      oldest: Самое давнее
+      most_commented: Самое комментируемое
+    select_order: Сортировать по
+    show:
+      return_to_commentable: 'Вернуться к '
+  comments_helper:
+    comment_button: Опубликовать комментарий
+    comment_link: Отзыв
+    comments_title: Комментарии
+    reply_button: Опубликовать ответ
+    reply_link: Ответить
+  debates:
+    create:
+      form:
+        submit_button: Начать дебаты
+    debate:
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      votes:
+        zero: Нет голосов
+    edit:
+      editing: Редактировать дебаты
+      form:
+        submit_button: Сохранить изменения
+      show_link: Просмотреть дебаты
+    form:
+      debate_text: Начальный текст дебатов
+      debate_title: Название дебатов
+      tags_instructions: Пометить эти дебаты.
+      tags_label: Темы
+      tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
+    index:
+      featured_debates: Особенные
+      orders:
+        confidence_score: наивысший рейтинг
+        created_at: самые свежие
+        hot_score: самые активные
+        most_commented: самые комментируемые
+        relevance: соответствие
+        recommendations: некомендации
+      recommendations:
+        without_results: Нет дебатов, соответствующих вашим интересам
+        without_interests: Подписывайтесь на предложения, чтобы мы могли давать вам рекомендации
+        disable: "Рекомендации дебатов не будут больше показываться, если вы от них откажетесь. Вы можете включить их снова на странице 'Мой аккаунт'"
+        actions:
+          success: "Рекомендации дебатов теперь отключены для этого аккаунта"
+          error: "Произошла ошибка. Пожалуйста перейдите на страницу 'Ваш аккаунт', чтобы вручную отключить рекомендации по дебатам"
+      search_form:
+        button: Поиск
+        placeholder: Искать дебаты...
+        title: Поиск
+      search_results_html:
+        one: " содержащие термин <strong>'%{search_term}'</strong>"
+        few: " содержащие термин <strong>'%{search_term}'</strong>"
+        many: " содержащие термин <strong>'%{search_term}'</strong>"
+        other: " содержащие термин <strong>'%{search_term}'</strong>"
+      select_order: Сортировать по
+      start_debate: Начать дебаты
+      title: Обсуждения проблем
+      section_header:
+        icon_alt: Иконка дебатов
+        title: Обсуждения проблем
+        help: Помощь по дебатам
+      section_footer:
+        title: Помощь по дебатам
+        description: Начните дебаты, чтобы поделиться мнениями с другими людьми о темах, которые вас волнуют.
+        help_text_1: "Пространство для дебатов граждан нацелено на каждого, кто может изложить вопросы, их интересующие, и тех, кто хочет поделиться мнениями с другими людьми."
+        help_text_2: 'Чтобы открыть дебаты, вам нужно зарегистрироваться на %{org}. Пользователи также могут комментировать в открытых дебатах и оценивать их, нажимая на кнопки "Я согласен" или "Я не согласен", находящиеся в каждой из них.'
+    new:
+      form:
+        submit_button: Начать дебаты
+      info: Если вы хотите сделать предложение, то это не тот раздел, перейдите на %{info_link}.
+      info_link: создать новое предложение
+      more_info: Подробнее
+      recommendation_four: Наслаждайтесь этим пространством и голосами, его наполняющими. Оно также принадлежит и вам.
+      recommendation_one: Не используйте заглавные буквы для названий дебатов или для целых предложений. В Интернете это воспринимается как крик, и никому не нравится, когда на них кричат.
+      recommendation_three: Жесткая критика приветствуется. Это место для размышления. Но мы рекомендуем вам придерживаться ясности и интеллигентности. Мир становится лучше с этими принципами.
+      recommendation_two: Любые дебаты или комментарий, предлагающие незаконное действие, будут удалены, ровно как и те, которые направлены на саботаж пространств дебатов. Всё остальное разрешено.
+      recommendations_title: Рекомендации по созданию дебатов
+      start_new: Начать дебаты
+    show:
+      author_deleted: Пользователь удален
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      comments_title: Комментарии
+      edit_debate_link: Редактировать
+      flag: Эти дебаты были отмечены несколькими пользователями как неуместная.
+      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      share: Доля
+      author: Автор
+    update:
+      form:
+        submit_button: Сохранить изменения
+  errors:
+    messages:
+      user_not_found: Пользователь не найден
+      invalid_date_range: "Неверный диапазон дат"
+  form:
+    accept_terms: Я согласен с %{policy} и %{conditions}
+    accept_terms_title: Я согласен с Политикой конфиденциальности и Положениями и условиями пользования
+    conditions: Положения и условия пользования
+    debate: Обсуждение
+    direct_message: личное сообщение
+    error: ошибка
+    errors: ошибки
+    not_saved_html: "предотвратил сохранение этого %{resource}. <br>Пожалуйста проверьте отмеченные поля, чтобы понять как их исправить:"
+    policy: Политика конфиденциальности
+    proposal: Заявка
+    proposal_notification: "Уведомление"
+    spending_proposal: Предложение по тратам
+    budget/investment: Инвестиция
+    budget/heading: Заголовок бюджета
+    poll/shift: Смена
+    poll/question/answer: Ответ
+    user: Аккаунт
+    verification/sms: телефон
+    signature_sheet: Подписной лист
+    document: Документ
+    topic: Тема
+    image: Изображение
+  geozones:
+    none: Весь город
+    all: Все зоны
+  layouts:
+    application:
+      ie: Мы обнаружили, что вы используете Internet Explorer. Для лучшей работы с сайтом, мы рекомендуем вам использовать %{firefox} или %{chrome}.
+      ie_title: Этот сайт не оптимизирован для вашего браузера
+    footer:
+      accessibility: Доступность
+      conditions: Положения и условия пользования
+      consul: Приложение CONSUL
+      contact_us: Для технической поддержки используйте
+      description: Этот портал использует %{consul}, являющийся %{open_source}.
+      open_source: открытым программным обеспечением
+      participation_text: Решайте каким сделать город, в котором вы хотите жить.
+      participation_title: Участие
+      privacy: Политика конфиденциальности
+    header:
+      administration_menu: Админ
+      administration: Администрирование
+      available_locales: Доступные языки
+      collaborative_legislation: Процесс законотворчества
+      debates: Обсуждения проблем
+      external_link_blog: Блог
+      locale: 'Язык:'
+      logo: CONSUL логотип
+      management: Управление
+      moderation: Модерирование
+      valuation: Оценка
+      officing: Должностные лица голосования
+      help: Помощь
+      my_account_link: Мой аккаунт
+      my_activity_link: Моя активность
+      open: открыто
+      open_gov: Открытое правительство
+      proposals: Заявки
+      poll_questions: Голосования
+      budgets: Партисипаторное бюджетирование
+      spending_proposals: Предложения трат
+      notification_item:
+        notifications: Уведомления
+        no_notifications: "У вас нет новых уведомлений"
+    admin:
+      watch_form_message: 'У вас есть не сохраненные изменения. Вы подтверждаете, что хотите покинуть страницу?'
+  notifications:
+    index:
+      empty_notifications: У вас нет новых уведомлений.
+      mark_all_as_read: Отметить всё как прочитанное
+      read: Прочитано
+      title: Уведомления
+      unread: Не прочитано
+    notification:
+      mark_as_read: Отметить прочитанным
+      mark_as_unread: Отметить не прочитанным
+      notifiable_hidden: Этот ресурс больше не доступен.
+  map:
+    title: "Районы"
+    proposal_for_district: "Запустить предложение для вашего района"
+    select_district: Сфера деятельности
+    start_proposal: Создать предложение
+  omniauth:
+    facebook:
+      sign_in: Войти при помощи Facebook
+      sign_up: Зарегистрироваться при помощи Facebook
+    finish_signup:
+      title: "Дополнительная информация"
+      username_warning: "Вследствие изменений в способе нашего взаимодействия с социальными сетями, есть вероятность, что ваше имя пользователя теперь показывается как 'уже используется'. Если это ваш случай, пожалуйста выберите другое имя пользователя."
+    google_oauth2:
+      sign_in: Войти при помощи Google
+      sign_up: Зарегистрироваться при помощи Google
+    twitter:
+      sign_in: Войти при помощи Twitter
+      sign_up: Зарегистрироваться при помощи Twitter
+    info_sign_in: "Войти при помощи:"
+    info_sign_up: "Зарегистрироваться при помощи:"
+    or_fill: "Или заполните следующую форму:"
+  proposals:
+    create:
+      form:
+        submit_button: Отменить предложение
+    edit:
+      editing: Редактировать предложение
+      form:
+        submit_button: Сохранить изменения
+      show_link: Просмотреть предложение
+    retire_form:
+      title: Снять предложение
+      warning: "Если вы снимете предложение, оно все еще будет принимать голоса поддержки, но будет убрано из основного списка, и всем пользователям будет видно сообщение, что по мнению автора предложение больше не должно получать поддержку"
+      retired_reason_label: Причина снятия предложения
+      retired_reason_blank: Выберите вариант
+      retired_explanation_label: Объяснение
+      retired_explanation_placeholder: Кратно объясните, почему вы считаете, что это предложение не должно больше получать поддержку
+      submit_button: Снять предложение
+    retire_options:
+      duplicated: Дубль
+      started: Уже реализуется
+      unfeasible: Невыполнимо
+      done: Выполнено
+      other: Другое
+    form:
+      geozone: Сфера деятельности
+      proposal_external_url: Ссылка на дополнительную документацию
+      proposal_question: Вопрос по предложению
+      proposal_question_example_html: "Должен быть сведен к одному вопросу с вариантами ответа Да или Нет"
+      proposal_responsible_name: Полное имя лица, отправляющего предложение
+      proposal_responsible_name_note: "(индивидуально или в качестве представителя коллектива; не будет отображаться публично)"
+      proposal_summary: Краткое изложение предложения
+      proposal_summary_note: "(максимум 200 символов)"
+      proposal_text: Текст предложения
+      proposal_title: Заголовок предложения
+      proposal_video_url: Ссылка на внешнее видео
+      proposal_video_url_note: Вы можете добавить ссылку на YouTube или Vimeo
+      tag_category_label: "Категории"
+      tags_instructions: "Отметьте это предложение. Вы можете выбрать из предлагаемых категорий или добавить свои собственные"
+      tags_label: Метки
+      tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
+      map_location: "Местоположение на карте"
+      map_location_instructions: "Перейдите на карте к местоположению и поместите маркер."
+      map_remove_marker: "Удалить маркер карты"
+      map_skip_checkbox: "Это предложение не имеет конкретного места на карте, или я о нем не знаю."
+    index:
+      featured_proposals: Особенные
+      orders:
+        confidence_score: наивысший рейтинг
+        created_at: наиболее свежие
+        hot_score: наиболее активные
+        most_commented: наиболее комментируемые
+        relevance: соответствие
+        archival_date: архивировано
+        recommendations: рекомендации
+      recommendations:
+        without_results: Нет предложений, соответствующих вашим интересам
+        without_interests: Подписывайтесь на предложения, чтобы мы могли давать вам рекомендации
+        disable: "Рекомендации предложений перестанут показываться, если вы их отключите. Вы можете снова их включить на странице 'Мой аккаунт'"
+        actions:
+          success: "Теперь для этого аккаунта рекомендации по предложениям отключены"
+          error: "Произошла ошибка. Пожалуйста перейдите на страницу 'Ваш аккаунт', чтобы вручную отключить рекомендации по предложениям"
+      retired_proposals: Отозванные предложения
+      retired_proposals_link: "Предложения, отозванные автором"
+      retired_links:
+        all: Все
+        duplicated: Дубли
+        started: Выполняются
+        unfeasible: Невыполнимые
+        done: Сделано
+        other: Другое
+      search_form:
+        button: Поиск
+        placeholder: Искать предложения...
+        title: Поиск
+      search_results_html:
+        one: " содержащие термин <strong>'%{search_term}'</strong>"
+        few: " содержащие термин <strong>'%{search_term}'</strong>"
+        many: " содержащие термин <strong>'%{search_term}'</strong>"
+        other: " содержащие термин <strong>'%{search_term}'</strong>"
+      select_order: Упорядочить по
+      select_order_long: 'Вы просматриваете предложения в соответствии с:'
+      start_proposal: Создать предложение
+      title: Заявки
+      top: Лучшие за неделю
+      top_link_proposals: Самые поддерживаемые предложения по категориям
+      section_header:
+        icon_alt: Иконка предложений
+        title: Заявки
+        help: Помощь по предложениям
+      section_footer:
+        title: Помощь по предложениям
+        description: Предложения граждан являются возможностью для соседей и коллективов напрямую решать, каким они хотят, чтобы был их город, после получения достаточной поддержки и отправки на голосование граждан.
+    new:
+      form:
+        submit_button: Создать предложение
+      more_info: Как работают предложения граждан?
+      recommendation_one: Не используйте заглавные буквы для заголовков предложений или целых предложений. В Интернете это рассматривается как крик. Никто не любит, когда на него кричат.
+      recommendation_three: Наслаждайтесь пространством и голосами, его наполняющими. Оно принадлежит и вам.
+      recommendation_two: Любое предложение или комментарий, предлагающие незаконное действие, будут удалены, как и те, которые нацелены на подрыв пространства дебатов. Все остальное разрешено.
+      recommendations_title: Рекомендации по созданию предложения
+      start_new: Создать новое предложение
+    notice:
+      retired: Предложение отозвано
+    proposal:
+      created: "Вы создали предложение!"
+      share:
+        guide: "Теперь вы можете поделиться им, чтобы люди могли начать его поддерживать."
+        edit: "Прежде чем им поделятся, вы сможете изменить текст так, как пожелаете."
+        view_proposal: Не сейчас, перейти к моему предложению
+      improve_info: "Улучшите вашу кампанию и получите больше поддержки"
+      improve_info_link: "Получить больше информации"
+      already_supported: Вы уже поддержали это предложение. Поделитесь им!
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      support: Поддержка
+      support_title: Поддержать это предложение
+      supports:
+        zero: Нет поддержки
+        one: 1 поддержка
+        few: "поддерживает %{count}"
+        many: "поддерживает %{count}"
+        other: "поддерживает %{count}"
+      votes:
+        zero: Нет голосов
+      supports_necessary: "%{number} поддержек требуется"
+      archived: "Это предложение перенесено в архив и не может получать поддержки."
+      successful: "Это предложение достигло требуемого уровня поддержки."
+    show:
+      author_deleted: Пользователь удален
+      code: 'Код предложения:'
+      comments:
+        zero: Нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      comments_tab: Комментарии
+      edit_proposal_link: Редактировать
+      flag: Это предложение было помечено несколькими пользователями как неуместное.
+      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      notifications_tab: Уведомления
+      milestones_tab: Основные этапы
+      retired_warning: "Автор считает, что это предложение не должно больше получать поддержку."
+      retired_warning_link_to_explanation: Читайте пояснение, прежде чем голосовать за него.
+      retired: Предложение отозвано автором
+      share: Доля
+      send_notification: Отправить ведомление
+      no_notifications: "По этому предложению нет уведомлений."
+      embed_video_title: "Видео по %{proposal}"
+      title_external_url: "Дополнительная документация"
+      title_video_url: "Внешнее видео"
+      author: Автор
+    update:
+      form:
+        submit_button: Сохранить изменения
+    share:
+      message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
+  polls:
+    all: "Все"
+    no_dates: "дата не назначена"
+    dates: "С %{open_at} по %{closed_at}"
+    final_date: "Последние пересчеты/Результаты"
+    index:
+      filters:
+        current: "Открытые"
+        expired: "Просроченные"
+      title: "Опросы"
+      participate_button: "Участвовать в этом голосовании"
+      participate_button_expired: "Голосование окончено"
+      no_geozone_restricted: "Весь город"
+      geozone_restricted: "Районы"
+      geozone_info: "Могут участвовать люди в Цензусе из: "
+      already_answer: "Вы уже приняли участие в этом голосовании"
+      not_logged_in: "Вы должны войти или зарегистрироваться, чтобы участвовать"
+      unverified: "Вы должны верифицировать ваш аккаунт, чтобы участвовать"
+      cant_answer: "Это голосование не доступно в вашей гео зоне"
+      section_header:
+        icon_alt: Иконка голосования
+        title: Голосование
+        help: Помощь по голосованию
+      section_footer:
+        title: Помощь по голосованию
+        description: Голосования граждан представляют из себя механизм участия, при помощи которого граждане с правами голоса могут принимать непосредственные решения
+      no_polls: "Нет открытых голосований."
+    show:
+      already_voted_in_booth: "Вы уже участвовали в физической кабинке. Вы не можете участвовать снова."
+      already_voted_in_web: "Вы уже участвовали в этом голосовании. Если вы проголосуете снова, ваш голос будет переписан."
+      back: Обратно к голосованию
+      cant_answer_not_logged_in: "Вы должны %{signin} или %{signup}, чтобы принять участие."
+      comments_tab: Комментарии
+      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+      signin: Войти
+      signup: Регистрация
+      cant_answer_verify_html: "Вы должны %{verify_link}, чтобы ответить."
+      verify_link: "подтвердите ваш аккаунт"
+      cant_answer_expired: "Этот опрос закончился."
+      cant_answer_wrong_geozone: "Этот вопрос не доступен в вашей геозоне."
+      more_info_title: "Больше информации"
+      documents: Документы
+      zoom_plus: Расширить изображение
+      read_more: "Подробно о %{answer}"
+      read_less: "Кратко о %{answer}"
+      videos: "Внешнее видео"
+      info_menu: "Информация"
+      stats_menu: "Статистика участия"
+      results_menu: "Результаты голосования"
+      stats:
+        title: "Данные по участию"
+        total_participation: "Всего участвует"
+        total_votes: "Общее количество поданых голосов"
+        votes: "ГОЛОСА"
+        web: "СЕТЬ"
+        booth: "КАБИНКА"
+        total: "ВСЕГО"
+        valid: "Верно"
+        white: "Белые голоса"
+        null_votes: "Неверно"
+      results:
+        title: "Вопросы"
+        most_voted_answer: "Самый голосуемый ответ: "
+  poll_questions:
+    create_question: "Создать вопрос"
+    show:
+      vote_answer: "Голосовать по %{answer}"
+      voted: "Вы проголосовали по %{answer}"
+      voted_token: "Вы можете сохранить письменно этот идентификатор голоса, чтобы проверить ваш голос среди конечных результатов:"
+  proposal_notifications:
+    new:
+      title: "Отправить сообщение"
+      title_label: "Название"
+      body_label: "Сообщение"
+      submit_button: "Отправить сообщение"
+      info_about_receivers_html: "Это сообщение будет отправлено для <strong>%{count} человек</strong> и будет видимо на %{proposal_page}.<br> Сообщения не отправляются немедленно, пользователи периодически будут получать email со всеми уведомлениями по предложению."
+      proposal_page: "странице предложения"
+    show:
+      back: "Вернуться в мою активность"
+  shared:
+    edit: 'Редактировать'
+    save: 'Сохранить'
+    delete: Удалить
+    "yes": "Да"
+    "no": "Нет"
+    search_results: "Результаты поиска"
+    advanced_search:
+      author_type: 'По категории автора'
+      author_type_blank: 'Выбрать категорию'
+      date: 'По дате'
+      date_range_blank: 'Выберите дату'
+      date_1: 'Последние 24 часа'
+      date_2: 'Последняя неделя'
+      date_3: 'Последний месяц'
+      date_4: 'Последний год'
+      date_5: 'Настраиваемая'
+      from: 'От'
+      general: 'С текстом'
+      general_placeholder: 'Записать текст'
+      search: 'Фильтровать'
+      title: 'Расширенный поиск'
+      to: 'Для'
+    author_info:
+      author_deleted: Пользователь удален
+    back: Вернуться
+    check: Выбрать
+    check_all: Все
+    check_none: Ни одного
+    collective: Коллектив
+    flag: Пометить как неуместное
+    follow: "Подписаться"
+    following: "Подписан"
+    follow_entity: "Подписаться на %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Теперь вы подписаны на этот проект инвестирования! </br> Мы уведомим вас оь изменениях, когда они будут происходить, чтобы вы всегда были в курсе."
+        destroy:
+          notice_html: "Вы прекратили подписку на этот проект инвестирования! </br> Вы больше не будете получать уведомления, относящиеся к этому проекту."
+      proposal:
+        create:
+          notice_html: "Теперь вы подписаны на это предложение гражданина! </br> Мы уведомим вас об изменениях, когда они будут происходить, чтобы вы всегда были в курсе."
+        destroy:
+          notice_html: "Вы прекратили подписку на это предложение гражданина! </br> Вы больше не будете получать уведомления, относящиеся к этому предложению."
+    hide: Скрыть
+    print:
+      print_button: Распечатать эту информацию
+    search: Поиск
+    show: Показать
+    suggest:
+      debate:
+        message: "Вы видите %{limit} из %{count} дебатов, содержащих термин '%{query}'"
+        see_all: "Смотреть все"
+      budget_investment:
+        message: "Вы видите %{limit} из %{count} инвестиций, содержащих термин '%{query}'"
+        see_all: "Смотреть все"
+      proposal:
+        message: "Вы видите %{limit} из %{count} предложений, содержащих термин '%{query}'"
+        see_all: "Смотреть все"
+    tags_cloud:
+      tags: В тренде
+      districts: "Районы"
+      districts_list: "Список районов"
+      categories: "Категории"
+    target_blank_html: " (ссылка открывается в новом окне)"
+    you_are_in: "Вы находитесь в"
+    unflag: Снять флаг
+    unfollow_entity: "Отписаться от %{entity}"
+    outline:
+      budget: Совместный бюджет
+      searcher: Ищущий
+    go_to_page: "Перейти на страницу "
+    share: Доля
+    orbit:
+      previous_slide: Предыдущий слайд
+      next_slide: Следующий слайд
+    documentation: Дополнительная документация
+    view_mode:
+      title: Режим просмотра
+      cards: Карты
+      list: Список
+    recommended_index:
+      title: Рекомендации
+      see_more: Смотреть больше рекомендация
+      hide: Скрыть рекомендации
+  social:
+    blog: "%{org} Блог"
+  spending_proposals:
+    form:
+      association_name_label: 'Если вы предлагаете от имени ассоциации или коллектива, то добавьте имя здесь'
+      association_name: 'Название ассоциации'
+      description: Описание
+      external_url: Ссылка на дополнительную документацию
+      geozone: Сфера деятельности
+      submit_buttons:
+        create: Создать
+        new: Создать
+      title: Название предложения трат
+    index:
+      title: Партисипаторное бюджетирование
+      unfeasible: Неосуществимые инвестиционные проекты
+      by_geozone: "Проекты инвестирования в зоне: %{geozone}"
+      search_form:
+        button: Поиск
+        placeholder: Проекты инвестирования...
+        title: Поиск
+      sidebar:
+        geozones: Сфера деятельности
+        feasibility: Выполнимость
+        unfeasible: Невыполнимо
+      start_spending_proposal: Создать проект инвестирования
+    new:
+      more_info: Как работают совместные бюджеты?
+      recommendation_one: Необходимо, чтобы предложение ссылалось на действие, для которого возможно финансирование.
+      recommendation_three: Попытайтесь вдаваться в детали, когда описываете ваше предложение трат, чтобы команда проверки поняла ваши аргументы.
+      recommendation_two: Любое предложение или комментарий, предлагающие незаконное действие, будут удалены.
+      recommendations_title: Как создать предложение трат
+      start_new: Создать предложение трат
+    show:
+      author_deleted: Пользователь удален
+      code: 'Код предложения:'
+      share: Доля
+    wrong_price_format: Только целые числа
+    spending_proposal:
+      spending_proposal: Инвестиционный проект
+      already_supported: Вы же поддержали это. Поделитесь им!
+      support: Поддержка
+      support_title: Поддержать этот проект
+      supports:
+        zero: Нет поддержки
+        one: 1 поддержка
+        few: "поддерживает %{count}"
+        many: "поддерживает %{count}"
+        other: "поддерживает %{count}"
+  stats:
+    index:
+      visits: посещения
+      debates: Обсуждения проблем
+      proposals: Заявки
+      comments: Комментарии
+      proposal_votes: Голоса по предложениям
+      debate_votes: Голоса по дебатам
+      comment_votes: Голоса по комментариям
+      votes: Всего голосов
+      verified_users: Верифицированные пользователи
+      unverified_users: Неверифицированные пользователи
+  unauthorized:
+    default: У вас нет разрешения, чтобы видеть эту страницу.
+    manage:
+      all: "У вас нет разрешения на выполнение действия '%{action}' по %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Сообщение
+        direct_messages_bloqued: "Этот пользователь решил не получать прямых сообщений"
+        submit_button: Отправить сообщение
+        title: Отправить личное сообщение для %{receiver}
+        title_label: Название
+        verified_only: Чтобы отправить личное сообщение, %{verify_account}
+        verify_account: подтвердите ваш аккаунт
+        authenticate: Чтобы продолжить, %{signin} или %{signup}.
+        signin: войти
+        signup: регистрация
+      show:
+        receiver: Сообщение отправлено для %{receiver}
+    show:
+      deleted: Удалено
+      deleted_debate: Эти дебаты были удалены
+      deleted_proposal: Это предложение было удалено
+      deleted_budget_investment: Это инвестирование было удалено
+      proposals: Заявки
+      debates: Обсуждения проблем
+      budget_investments: Инвестиции бюджета
+      comments: Комментарии
+      actions: Действия
+      no_activity: У пользователя нет публичной активности
+      no_private_messages: "Этот пользователь не принимает личные сообщения."
+      private_activity: Этот пользователь решил скрыть список активности.
+      send_private_message: "Отправить личное сообщение"
+      delete_alert: "Вы уверены, что хотите удалить ваш проект инвестирования? Это действие необратимо"
+    proposals:
+      send_notification: "Отправить уведомление"
+      retire: "Снять"
+      retired: "Снятое предложение"
+      see: "Просмотреть предложение"
+  votes:
+    agree: Я согласен
+    anonymous: Слишком много анонимных голосов, чтобы признать голос %{verify_account}.
+    comment_unauthenticated: Вы должны %{signin} или %{signup}, чтобы голосовать.
+    disagree: Я не согласен
+    organizations: Организациям не разрешается голосовать
+    signin: Войти
+    signup: Зарегистрироваться
+    supports: Поддержки
+    unauthenticated: Чтобы продолжить, %{signin} или %{signup}.
+    verified_only: Только верифицированные пользователи могут голосовать по предложениям; %{verify_account}.
+    verify_account: подтвердите ваш аккаунт
+    spending_proposals:
+      not_logged_in: Чтобы продолжить, %{signin} или %{signup}.
+      not_verified: Только верифицированные пользователи могут голосовать по предложениям; %{verify_account}.
+      organization: Организациям не разрешается голосовать
+      unfeasible: Невыполнимые проекты инвестирования не могут поддерживаться
+      not_voting_allowed: Фаза голосования закрыта
+    budget_investments:
+      not_logged_in: Чтобы продолжить, %{signin} или %{signup}.
+      not_verified: Только верифицированные пользователи могут голосовать по проектам инвестирования; %{verify_account}.
+      organization: Организациям не разрешается голосовать
+      unfeasible: Невыполнимые проекты инвестирования нельзя поддерживать
+      not_voting_allowed: Фаза голосования закрыта
+  welcome:
+    feed:
+      most_active:
+        debates: "Самые активные дебаты"
+        proposals: "Самые активные предложения"
+        processes: "Открытые процессы"
+      see_all_debates: Просмотреть все дебаты
+      see_all_proposals: Просмотреть все предложения
+      see_all_processes: Просмотреть все процессы
+      process_label: Процесс
+      see_process: Просмотреть процесс
+    cards:
+      title: Особенное
+    recommended:
+      title: Рекомендации, которые могут вас заинтересовать
+      help: "Эти рекомендации генерируются на основе меток дебатов и предложений, на которые вы подписаны."
+      debates:
+        title: Рекомендуемые дебаты
+        btn_text_link: Все рекомендуемые дебаты
+      proposals:
+        title: Рекомендуемые предложения
+        btn_text_link: Все рекомендуемые предложения
+      budget_investments:
+        title: Рекомендуемые инвестиции
+      slide: "Смотрите %{title}"
+    verification:
+      i_dont_have_an_account: У меня нет аккаунта
+      i_have_an_account: У меня уже есть аккаунт
+      question: У вас уже есть аккаунт в %{org_name}?
+      title: Верификация аккаунта
+    welcome:
+      go_to_index: Просмотреть предложения и дебаты
+      title: Участвовать
+      user_permission_debates: Участвовать в дебатах
+      user_permission_info: При помощи вашего аккаунта вы можете...
+      user_permission_proposal: Создавать новые предложения
+      user_permission_support_proposal: Поддерживать предложения*
+      user_permission_verify: Выполнять все действия верифицировать ваш аккаунт.
+      user_permission_verify_info: "* Только для пользователей на Цензусе."
+      user_permission_verify_my_account: Верифицировать мой аккаунт
+      user_permission_votes: Участвовать в финальном голосовании
+  invisible_captcha:
+    sentence_for_humans: "Если вы человек, игнорируйте это поле"
+    timestamp_error_message: "Извините, это было слишком быстро! Пожалуйста повторите отправку."
+  related_content:
+    title: "Соответствующее содержимое"
+    add: "Все соответствующее содержимое"
+    label: "Ссылка на соответствующее содержимое"
+    help: "Вы можете добавить ссылки %{models} внутри %{org}."
+    submit: "Добавить"
+    error: "Неверная ссылка. Не забудьте начинать с %{url}."
+    error_itself: "Неверная ссылка. Вы не можете связать содержимое с ним же."
+    success: "Вы добавили новое соответствующее содержимое"
+    is_related: "Это содержимое соответствующее?"
+    score_positive: "Да"
+    score_negative: "Нет"
+    content_title:
+      proposal: "Заявка"
+      debate: "Обсуждение"
+      budget_investment: "Бюджетная инвестиция"
+  admin/widget:
+    header:
+      title: Администрирование
+  annotator:
+    help:
+      alt: Выделите текст, который вы хотите прокомментировать, и нажмите на кнопку с карандашом.
+      text: Чтобы прокомментировать этот документ, вы должны %{sign_in} или %{sign_up}. После этого выделите текст, который вы хотите прокомментировать, и нажмите на кнопку с карандашом.
+      text_sign_in: войти
+      text_sign_up: регистрация
+      title: Как я могу прокомментировать этот документ?

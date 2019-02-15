@@ -3,6 +3,30 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
+## [0.18.1](https://github.com/consul/consul/tree/v0.18.1) (2019-01-17)
+
+### Added
+
+- **Legislation:** Legislation process homepage phase [\#3188](https://github.com/consul/consul/pull/3188)
+- **Legislation:** Show documents on processes proposals phase [\#3136](https://github.com/consul/consul/pull/3136)
+- **Maintenance-Refactorings:** Remove semicolons from controllers [\#3160](https://github.com/consul/consul/pull/3160)
+- **Maintenance-Refactorings:** Remove before action not used [\#3167](https://github.com/consul/consul/pull/3167)
+- **Maintenance-Rubocop:** Enable double quotes rubocop rule [\#3175](https://github.com/consul/consul/pull/3175)
+- **Maintenance-Rubocop:** Enable line length rubocop rule [\#3165](https://github.com/consul/consul/pull/3165)
+- **Maintenance-Rubocop:** Add rubocop rule to indent private methods [\#3134](https://github.com/consul/consul/pull/3134)
+
+### Changed
+
+- **Admin:** Improve CRUD budgets and content blocks [\#3173](https://github.com/consul/consul/pull/3173)
+- **Design/UX:** new CRUD budgets, content blocks and heading map [\#3150](https://github.com/consul/consul/pull/3150)
+- **Design/UX:** Processes key dates [\#3137](https://github.com/consul/consul/pull/3137)
+
+### Fixed
+
+- **Admin:** checks for deleted proposals [\#3154](https://github.com/consul/consul/pull/3154)
+- **Admin:** Add default order for admin budget investments list [\#3151](https://github.com/consul/consul/pull/3151)
+- **Budgets:** Bug Management Cannot create Budget Investment without a map location [\#3133](https://github.com/consul/consul/pull/3133)
+
 ## [0.18.0](https://github.com/consul/consul/compare/v0.17...v0.18) (2018-12-27)
 
 ### Added
@@ -47,6 +71,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Admin:** Improve visualization for small resolution [\#3025](https://github.com/consul/consul/pull/3025)
 - **Admin:** Budgets admin [\#3012](https://github.com/consul/consul/pull/3012)
 - **Budgets:** Budget investments social share [\#3053](https://github.com/consul/consul/pull/3053)
+- **Design/UX:** Documents title [\#3131](https://github.com/consul/consul/pull/3131)
 - **Design/UX:** Proposal create question [\#3122](https://github.com/consul/consul/pull/3122)
 - **Design/UX:** Budget investments price explanation [\#3121](https://github.com/consul/consul/pull/3121)
 - **Design/UX:** Change CRUD for budget groups and headings [\#3106](https://github.com/consul/consul/pull/3106)

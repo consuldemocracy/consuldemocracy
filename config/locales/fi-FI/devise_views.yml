@@ -1,1 +1,94 @@
 fi:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Sähköposti
+      show:
+        submit: Vahvista
+        title: Vahvista tilini
+    mailer:
+      confirmation_instructions:
+        confirm_link: Vahvista tilini
+        title: Tervetuloa
+        welcome: Tervetuloa
+      reset_password_instructions:
+        change_link: Vaihda salasanani
+        hello: Hei
+        title: Vaihda salasanasi
+      unlock_instructions:
+        hello: Hei
+        title: Tilisi on lukittu
+    menu:
+      login_items:
+        login: Kirjaudu sisään
+        logout: Kirjaudu ulos
+        signup: Rekisteröidy
+    organizations:
+      registrations:
+        new:
+          email_label: Sähköposti
+          organization_name_label: Organisaation nimi
+          password_confirmation_label: Vahvista salasana
+          password_label: Salasana
+          phone_number_label: Puhelinnumero
+          submit: Rekisteröidy
+        success:
+          back_to_index: Ymmärrän; Mene takaisin pääsivulle
+    passwords:
+      edit:
+        change_submit: Vaihda salasanani
+        password_confirmation_label: Vahvista uusi salasana
+        password_label: Uusi salasana
+        title: Vaihda salasanasi
+      new:
+        email_label: Sähköposti
+        send_submit: Lähetä ohjeet
+        title: Salasana unohtunut?
+    sessions:
+      new:
+        login_label: Sähköposti tai käyttäjänimi
+        password_label: Salasana
+        remember_me: Muista minut
+        title: Kirjaudu sisään
+    shared:
+      links:
+        new_password: Oletko unohtanut salasanasi?
+        signin_with_provider: Kirjaudu sisään käyttäen %{provider}
+        signup_link: Rekisteröidy
+    unlocks:
+      new:
+        email_label: Sähköposti
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Syy
+          submit: Poista tilini
+          title: Poista tili
+        edit:
+          current_password_label: Nykyinen salasana
+          edit: Muokkaa
+          email_label: Sähköposti
+          leave_blank: Jätä tyhjäksi jos et halua muuttaa
+          need_current: Tarvitsemme nykyisen salasanasi tehdäksemme muutokset
+          password_confirmation_label: Vahvista uusi salasana
+          password_label: Uusi salasana
+          update_submit: Päivitä
+        new:
+          cancel: Peruuta kirjautuminen
+          email_label: Sähköposti
+          organization_signup: Edustatko organisaatiota tai yhteisöä? %{signup_link}
+          organization_signup_link: Rekisteröidy täällä
+          password_confirmation_label: Vahvista salasana
+          password_label: Salasana
+          submit: Rekisteröidy
+          terms: Rekisteröitymällä hyväksyt %{terms}
+          terms_link: ehdot ja käyttöehdot
+          terms_title: Rekisteröitymällä hyväksyt ehdot ja käyttöehdot
+          title: Rekisteröidy
+          username_is_available: Käyttäjätunnus käytettävissä
+          username_is_not_available: Käyttäjätunnus on jo käytössä
+          username_label: Käyttäjätunnus
+          username_note: Nimi, joka näytetään viestiesi vieressä
+        success:
+          back_to_index: Ymmärrän; Mene takaisin pääsivulle
+          title: Vahvista sähköpostiosoitteesi

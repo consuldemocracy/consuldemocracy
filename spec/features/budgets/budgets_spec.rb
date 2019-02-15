@@ -60,22 +60,75 @@ feature 'Budgets' do
       end
     end
 
-    scenario 'Show informing index without links' do
-      budget.update_attributes(phase: 'informing')
+    scenario "Show headings ordered by name" do
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group, name: 'Health')
+      last_heading = create(:budget_heading, group: group, name: "BBB")
+      first_heading = create(:budget_heading, group: group, name: "AAA")
 
       visit budgets_path
 
-      within('#budget_info') do
-        expect(page).not_to have_link("Health €1,000,000")
-        expect(page).to     have_content("Health €1,000,000")
+      expect(first_heading.name).to appear_before(last_heading.name)
+    end
+
+    scenario "Show groups and headings for missing translations" do
+      group1 = create(:budget_group, budget: budget)
+      group2 = create(:budget_group, budget: budget)
+
+      heading1 = create(:budget_heading, group: group1)
+      heading2 = create(:budget_heading, group: group2)
+
+      visit budgets_path locale: :es
+
+      within("#budget_info") do
+        expect(page).to have_content group1.name
+        expect(page).to have_content group2.name
+        expect(page).to have_content heading1.name
+        expect(page).to have_content budget.formatted_heading_price(heading1)
+        expect(page).to have_content heading2.name
+        expect(page).to have_content budget.formatted_heading_price(heading2)
+      end
+    end
+
+    scenario "Show informing index without links" do
+      budget.update_attributes(phase: "informing")
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).not_to have_link "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name} €1,000,000"
 
         expect(page).not_to have_link("List of all investment projects")
         expect(page).not_to have_link("List of all unfeasible investment projects")
         expect(page).not_to have_link("List of all investment projects not selected for balloting")
 
-        expect(page).not_to have_css('div#map')
+        expect(page).not_to have_css("div.map")
+      end
+    end
+
+    scenario "Show finished index without heading links" do
+      budget.update_attributes(phase: "finished")
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).not_to have_link "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name} €1,000,000"
+
+        expect(page).to have_link "List of all investment projects",
+                                   href: budget_url(budget)
+
+        expect(page).to have_link "List of all unfeasible investment projects",
+                                   href: budget_url(budget, filter: "unfeasible")
+
+        expect(page).to have_link "List of all investment projects not selected for balloting",
+                                   href: budget_url(budget, filter: "unselected")
+
+        expect(page).to have_css("div.map")
       end
     end
 
@@ -206,7 +259,7 @@ feature 'Budgets' do
     let(:heading) { create(:budget_heading, group: group) }
 
     background do
-      Setting['feature.map'] = true
+      Setting["feature.map"] = true
     end
 
     scenario "Display investment's map location markers", :js do
@@ -222,6 +275,46 @@ feature 'Budgets' do
 
       within ".map_location" do
         expect(page).to have_css(".map-icon", count: 3, visible: false)
+      end
+    end
+
+    scenario "Display all investment's map location if there are no selected", :js do
+      budget.update(phase: :publishing_prices)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+      investment4.create_map_location(longitude: 40.1240, latitude: 3.1240, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 4, visible: false)
+      end
+    end
+
+    scenario "Display only selected investment's map location from publishing prices phase", :js do
+      budget.update(phase: :publishing_prices)
+
+      investment1 = create(:budget_investment, :selected, heading: heading)
+      investment2 = create(:budget_investment, :selected, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, heading: heading)
+
+      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
+      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
+      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
+      investment4.create_map_location(longitude: 40.1240, latitude: 3.1240, zoom: 10)
+
+      visit budgets_path
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon", count: 2, visible: false)
       end
     end
 
@@ -251,77 +344,6 @@ feature 'Budgets' do
 
       within ".map_location" do
         expect(page).to have_css(".map-icon", count: 1, visible: false)
-      end
-    end
-  end
-
-  xcontext "Index map" do
-
-    let(:group) { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group) }
-
-    before do
-      Setting['feature.map'] = true
-    end
-
-    scenario "Display investment's map location markers" , :js do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-
-      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
-      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
-      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
-
-      visit budgets_path
-
-      within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 3)
-      end
-    end
-
-    scenario "Display selected investment's map location markers" , :js do
-
-      budget.update(phase: :valuating)
-
-      investment1 = create(:budget_investment, :selected, heading: heading)
-      investment2 = create(:budget_investment, :selected, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-
-      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
-      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
-      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
-
-      visit budgets_path
-
-      within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 2)
-      end
-    end
-
-    scenario "Skip invalid map markers" , :js do
-      map_locations = []
-      map_locations << { longitude: 40.123456789, latitude: 3.12345678 }
-      map_locations << { longitude: 40.123456789, latitude: "*******" }
-      map_locations << { longitude: "**********", latitude: 3.12345678 }
-
-      budget_map_locations = map_locations.map do |map_location|
-        {
-          lat: map_location[:latitude],
-          long: map_location[:longitude],
-          investment_title: "#{rand(999)}",
-          investment_id: "#{rand(999)}",
-          budget_id: budget.id
-        }
-      end
-
-      allow_any_instance_of(BudgetsHelper).
-      to receive(:current_budget_map_locations).and_return(budget_map_locations)
-
-      visit budgets_path
-
-      within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 1)
       end
     end
   end

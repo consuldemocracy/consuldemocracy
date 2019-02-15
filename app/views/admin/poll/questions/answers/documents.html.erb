@@ -14,18 +14,12 @@
 
     <%= render 'shared/errors', resource: @answer %>
 
-    <div class="row">
-      <div class="small-12 column">
-        <div class="documents small-12">
-          <%= render 'documents/nested_documents', documentable: @answer, f: f %>
-        </div>
+    <div class="documents">
+      <%= render 'documents/nested_documents', documentable: @answer, f: f %>
+    </div>
 
-        <div class="row">
-          <div class="actions small-12 medium-4 margin-top">
-            <%= f.submit(class: "button expanded", value: t("shared.save")) %>
-          </div>
-        </div>
-      </div>
+    <div class="small-12 medium-6 large-2">
+      <%= f.submit(class: "button expanded", value: t("shared.save")) %>
     </div>
   <% end %>
 
@@ -42,11 +36,17 @@
             <%= link_to document.title, document.attachment.url %>
           </td>
           <td class="text-right">
-            <%= link_to t('documents.buttons.download_document'),
+            <%= link_to t("documents.buttons.download_document"),
                         document.attachment.url,
                         target: "_blank",
                         rel: "nofollow",
-                        class: 'button hollow' %>
+                        class: "button hollow" %>
+
+            <%= link_to t("admin.shared.delete"),
+                          document_path(document),
+                          method: :delete,
+                          class: "button hollow alert",
+                          data: { confirm: t("admin.actions.confirm") } %>
           </td>
         </tr>
       <% end %>

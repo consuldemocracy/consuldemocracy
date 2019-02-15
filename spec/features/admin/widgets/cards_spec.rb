@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Cards' do
+feature "Cards" do
 
   background do
     admin = create(:administrator).user
@@ -24,7 +24,7 @@ feature 'Cards' do
     attach_image_to_card
     click_button "Create card"
 
-    expect(page).to have_content "Success"
+    expect(page).to have_content "Card created successfully!"
     expect(page).to have_css(".homepage-card", count: 1)
 
     card = Widget::Card.last
@@ -55,6 +55,18 @@ feature 'Cards' do
     end
   end
 
+  scenario "Show" do
+    card_1 = create(:widget_card, title: "Card homepage large", columns: 8)
+    card_2 = create(:widget_card, title: "Card homepage medium", columns: 4)
+    card_3 = create(:widget_card, title: "Card homepage small", columns: 2)
+
+    visit root_path
+
+    expect(page).to have_css("#widget_card_#{card_1.id}.medium-8")
+    expect(page).to have_css("#widget_card_#{card_2.id}.medium-4")
+    expect(page).to have_css("#widget_card_#{card_3.id}.medium-2")
+  end
+
   scenario "Edit" do
     card = create(:widget_card)
 
@@ -74,7 +86,7 @@ feature 'Cards' do
     fill_in "widget_card_link_url", with: "consul.dev updated"
     click_button "Save card"
 
-    expect(page).to have_content "Updated"
+    expect(page).to have_content "Card updated successfully"
 
     expect(page).to have_css(".homepage-card", count: 1)
     within("#widget_card_#{Widget::Card.last.id}") do
@@ -97,7 +109,7 @@ feature 'Cards' do
       end
     end
 
-    expect(page).to have_content "Removed"
+    expect(page).to have_content "Card removed successfully"
     expect(page).to have_css(".homepage-card", count: 0)
   end
 
@@ -114,7 +126,7 @@ feature 'Cards' do
       fill_in "widget_card_link_url", with: "consul.dev"
       click_button "Create header"
 
-      expect(page).to have_content "Success"
+      expect(page).to have_content "Card created successfully!"
 
       within("#header") do
         expect(page).to have_css(".homepage-card", count: 1)
@@ -130,6 +142,87 @@ feature 'Cards' do
       end
     end
 
+    context "Page card" do
+      let!(:custom_page) { create(:site_customization_page, :published) }
+
+      scenario "Create", :js do
+        visit admin_site_customization_pages_path
+        click_link "See Cards"
+        click_link "Create card"
+
+        fill_in "Title", with: "Card for a custom page"
+        click_button "Create card"
+
+        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_content "Card for a custom page"
+      end
+
+      scenario "Show" do
+        card_1 = create(:widget_card, page: custom_page, title: "Card large", columns: 8)
+        card_2 = create(:widget_card, page: custom_page, title: "Card medium", columns: 4)
+        card_3 = create(:widget_card, page: custom_page, title: "Card small", columns: 2)
+
+        visit (custom_page).url
+
+        expect(page).to have_css(".card", count: 3)
+
+        expect(page).to have_css("#widget_card_#{card_1.id}.medium-8")
+        expect(page).to have_css("#widget_card_#{card_2.id}.medium-4")
+        expect(page).to have_css("#widget_card_#{card_3.id}.medium-2")
+      end
+
+      scenario "Show label only if it is present" do
+        card_1 = create(:widget_card, page: custom_page, title: "Card one", label: "My label")
+        card_2 = create(:widget_card, page: custom_page, title: "Card two")
+
+        visit (custom_page).url
+
+        within("#widget_card_#{card_1.id}") do
+          expect(page).to have_selector("span", text: "My label")
+        end
+
+        within("#widget_card_#{card_2.id}") do
+          expect(page).not_to have_selector("span")
+        end
+      end
+
+      scenario "Edit", :js do
+        create(:widget_card, page: custom_page, title: "Original title")
+
+        visit admin_site_customization_page_cards_path(custom_page)
+
+        expect(page).to have_content("Original title")
+
+        click_link "Edit"
+
+        within(".translatable-fields") do
+          fill_in "Title", with: "Updated title"
+        end
+
+        click_button "Save card"
+
+        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_content "Updated title"
+        expect(page).not_to have_content "Original title"
+      end
+
+      scenario "Destroy", :js do
+        create(:widget_card, page: custom_page, title: "Card title")
+
+        visit admin_site_customization_page_cards_path(custom_page)
+
+        expect(page).to have_content("Card title")
+
+        accept_confirm do
+          click_link "Delete"
+        end
+
+        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).not_to have_content "Card title"
+      end
+
+    end
+
   end
 
   pending "add image expectactions"
@@ -139,8 +232,8 @@ feature 'Cards' do
     image_input = all(".image").last.find("input[type=file]", visible: false)
     attach_file(
       image_input[:id],
-      Rails.root.join('spec/fixtures/files/clippy.jpg'),
+      Rails.root.join("spec/fixtures/files/clippy.jpg"),
       make_visible: true)
-    expect(page).to have_field('widget_card_image_attributes_title', with: "clippy.jpg")
+    expect(page).to have_field("widget_card_image_attributes_title", with: "clippy.jpg")
   end
 end

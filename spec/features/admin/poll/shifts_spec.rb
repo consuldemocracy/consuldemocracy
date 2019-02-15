@@ -32,7 +32,6 @@ feature 'Admin shifts' do
 
   scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
     create(:poll)
-    create(:poll, :incoming)
     poll = create(:poll, :current)
     booth = create(:poll_booth)
     create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -164,6 +163,58 @@ feature 'Admin shifts' do
 
     expect(page).to have_content "Shift removed"
     expect(page).to have_css(".shift", count: 0)
+  end
+
+  scenario "Try to destroy with associated recount" do
+    assignment = create(:poll_booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
+    create(:poll_recount, booth_assignment: assignment, officer_assignment: officer_assignment)
+
+    officer = officer_assignment.officer
+    booth = assignment.booth
+    shift = create(:poll_shift, officer: officer, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    expect(page).to have_css(".shift", count: 1)
+    within("#shift_#{shift.id}") do
+      click_link "Remove"
+    end
+
+    expect(page).not_to have_content "Shift removed"
+    expect(page).to have_content "Shifts with associated results or recounts cannot be deleted"
+    expect(page).to have_css(".shift", count: 1)
+  end
+
+  scenario "try to destroy with associated partial results" do
+    assignment = create(:poll_booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
+    create(:poll_partial_result,
+           booth_assignment: assignment,
+           officer_assignment: officer_assignment)
+
+    officer = officer_assignment.officer
+    booth = assignment.booth
+    shift = create(:poll_shift, officer: officer, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    expect(page).to have_css(".shift", count: 1)
+    within("#shift_#{shift.id}") do
+      click_link "Remove"
+    end
+
+    expect(page).not_to have_content "Shift removed"
+    expect(page).to have_content "Shifts with associated results or recounts cannot be deleted"
+    expect(page).to have_css(".shift", count: 1)
   end
 
   scenario "Destroy an officer" do

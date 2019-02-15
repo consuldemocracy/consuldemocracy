@@ -25,12 +25,12 @@ zh-TW:
       show_proposals_recommendations: 顯示建議推薦
       title: 我的帳戶
       user_permission_debates: 參與辯論
-      user_permission_info: 您可以用您的帳戶來......
+      user_permission_info: 您可以用您的帳戶來...
       user_permission_proposal: 創建新建議
       user_permission_support_proposal: 支持建議
       user_permission_title: 參與
       user_permission_verify: 要執行所有操作，請核實您的帳戶。
-      user_permission_verify_info: "*僅適用於人口普查的用戶。"
+      user_permission_verify_info: "* 僅適用於人口普查的用戶。"
       user_permission_votes: 參與最終投票
       username_label: 用戶名
       verified_account: 帳戶已被核實
@@ -151,7 +151,7 @@ zh-TW:
       edit_debate_link: 編輯
       flag: 此辯論已被一些用戶標記為不適當。
       login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
-      share: 共用
+      share: 分享
       author: 作者
     update:
       form:
@@ -176,7 +176,7 @@ zh-TW:
     budget/investment: 投資
     budget/heading: 預算標題
     poll/shift: 輪班
-    poll/question/answer: 答案
+    poll/question/answer: 回答
     user: 帳戶
     verification/sms: 電話
     signature_sheet: 簽名表
@@ -224,8 +224,8 @@ zh-TW:
       open: 開
       open_gov: 開放政府
       proposals: 建議
-      poll_questions: 投票
-      budgets: 參與式預算編制
+      poll_questions: 投票中
+      budgets: 參與性預算編制
       spending_proposals: 開支建議
       notification_item:
         new_notifications:
@@ -234,13 +234,6 @@ zh-TW:
         no_notifications: "您沒有新通知"
     admin:
       watch_form_message: '您有未儲存的更改。 你是否確認要離開此頁面？'
-  legacy_legislation:
-    help:
-      alt: 選擇要評論的文本，然後按下鉛筆按鈕。
-      text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇要評論的文本，並按下鉛筆按鈕。
-      text_sign_in: 登錄
-      text_sign_up: 登記
-      title: 我怎樣能對此文檔作評論？
   notifications:
     index:
       empty_notifications: 您沒有新通知。
@@ -301,14 +294,14 @@ zh-TW:
       retired_explanation_placeholder: 簡單地解釋為什麼您認為此提案不應再獲得支持
       submit_button: 撤回建議
     retire_options:
-      duplicated: 重複
+      duplicated: 已重複
       started: 已在進行中
       unfeasible: 不可行
       done: 完成
       other: 其他
     form:
       geozone: 經營範圍
-      proposal_external_url: 鏈接到額外文檔
+      proposal_external_url: 鏈接到其他文檔
       proposal_question: 建議問題
       proposal_question_example_html: "必須總結為一個可以用\"是\"或\"否\"回答的問題"
       proposal_responsible_name: 提交建議的人的全名
@@ -320,7 +313,7 @@ zh-TW:
       proposal_video_url: 鏈接到外部視頻
       proposal_video_url_note: 您可以添加到 YouTube 或 Vimeo 的鏈接
       tag_category_label: "類別"
-      tags_instructions: "為此建議加標籤。 您可以從建議的類別中選擇，或添加自己的"
+      tags_instructions: "為此建議加標籤。您可以從建議的類別中選擇，或添加您自己的"
       tags_label: 標籤
       tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
       map_location: "地圖位置"
@@ -350,7 +343,7 @@ zh-TW:
       retired_proposals_link: "建議已被作者撤回"
       retired_links:
         all: 所有
-        duplicated: 已重複
+        duplicated: 重複
         started: 進行中
         unfeasible: 不可行
         done: 完成
@@ -360,7 +353,7 @@ zh-TW:
         placeholder: 搜尋建議...
         title: 搜尋
       search_results_html:
-        other: " 包含術語<strong>'%{search_term}'</strong>"
+        other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order: 排序依據
       select_order_long: '您正在查看的建議是依據：'
       start_proposal: 創建一個建議
@@ -420,14 +413,15 @@ zh-TW:
       flag: 此建議已被一些用戶標記為不適當。
       login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
       notifications_tab: 通知
+      milestones_tab: 里程碑
       retired_warning: "作者認為此建議不應再獲得到支持。"
       retired_warning_link_to_explanation: 投票前請閱讀其說明。
       retired: 建議已被作者撤回
-      share: 分享
+      share: 共用
       send_notification: 發送通知
       no_notifications: "此建議沒有任何通知。"
       embed_video_title: "%{proposal} 上的視頻"
-      title_external_url: "額外的文檔"
+      title_external_url: "額外文檔"
       title_video_url: "外部視頻"
       author: 作者
     update:
@@ -441,11 +435,9 @@ zh-TW:
     index:
       filters:
         current: "開"
-        incoming: "傳入"
         expired: "已過期"
       title: "投票"
       participate_button: "參與此投票"
-      participate_button_incoming: "更多資訊"
       participate_button_expired: "投票結束"
       no_geozone_restricted: "所有城市"
       geozone_restricted: "地區"
@@ -456,7 +448,7 @@ zh-TW:
       cant_answer: "此投票在您的地理區域上不可用"
       section_header:
         icon_alt: 投票圖示
-        title: 投票中
+        title: 投票
         help: 有關投票的說明
       section_footer:
         title: 有關投票的說明
@@ -473,7 +465,6 @@ zh-TW:
       signup: 登記
       cant_answer_verify_html: "您必須%{verify_link} 才能回答。"
       verify_link: "核實您的帳戶"
-      cant_answer_incoming: "此投票項尚未開始。"
       cant_answer_expired: "此投票項已結束。"
       cant_answer_wrong_geozone: "此問題並不適用於您的地理區域。"
       more_info_title: "更多資訊"
@@ -519,7 +510,7 @@ zh-TW:
     edit: '編輯'
     save: '儲存'
     delete: 刪除
-    "yes": "是"
+    "yes": "是的"
     "no": "否"
     search_results: "搜尋結果"
     advanced_search:
@@ -563,7 +554,7 @@ zh-TW:
           notice_html: "您已停止跟隨此公民建議！ </br>您將不會再收到與此建議相關的通知。"
     hide: 隱藏
     print:
-      print_button: 列印此信息
+      print_button: 打印此資訊
     search: 搜尋
     show: 顯示
     suggest:
@@ -595,11 +586,11 @@ zh-TW:
       budget: 參與性預算
       searcher: 搜尋者
     go_to_page: "轉到頁面 "
-    share: 分享
+    share: 共用
     orbit:
       previous_slide: 上一張圖片
       next_slide: 下一張圖片
-    documentation: 額外文檔
+    documentation: 額外的文檔
     view_mode:
       title: 查看模式
       cards: 卡
@@ -620,7 +611,7 @@ zh-TW:
     form:
       association_name_label: '如果您以協會或集體的名義提建議，請在這裡添加名稱'
       association_name: '協會名稱'
-      description: 描述
+      description: 說明
       external_url: 鏈接到額外文檔
       geozone: 經營範圍
       submit_buttons:
@@ -628,8 +619,8 @@ zh-TW:
         new: 創建
       title: 開支建議標題
     index:
-      title: 參與性預算編制
-      unfeasible: 不可行的投資項目
+      title: 參與式預算編制
+      unfeasible: 不可行投資項目
       by_geozone: "投資項目範圍：%{geozone}"
       search_form:
         button: 搜尋
@@ -652,7 +643,7 @@ zh-TW:
     show:
       author_deleted: 用戶已刪除
       code: '建議編號：'
-      share: 分享
+      share: 共用
     wrong_price_format: 只供整數
     spending_proposal:
       spending_proposal: 投資項目
@@ -671,9 +662,9 @@ zh-TW:
       proposal_votes: 對建議的投票數
       debate_votes: 對辯論的投票數
       comment_votes: 對評論的投票數
-      votes: 總投票數
+      votes: 投票總數
       verified_users: 已核實的用戶
-      unverified_users: 未核實的用戶
+      unverified_users: 未經核實的用戶
   unauthorized:
     default: 您沒有權限訪問此頁面。
     manage:
@@ -732,7 +723,7 @@ zh-TW:
     organizations: 組織不允許投票
     signin: 登錄
     signup: 登記
-    supports: 支持
+    supports: 支援
     unauthenticated: 您必須%{signin} 或%{signup} 才能繼續。
     verified_only: 只有已核實的用戶才能對建議投票；%{verify_account}。
     verify_account: 核實您的帳戶
@@ -755,7 +746,7 @@ zh-TW:
       most_active:
         debates: "最活躍的辯論"
         proposals: "最活躍的建議"
-        processes: "開放進程"
+        processes: "開啟進程"
       see_all_debates: 查看所有辯論
       see_all_proposals: 查看所有建議
       see_all_processes: 查看所有進程
@@ -784,11 +775,11 @@ zh-TW:
       go_to_index: 查看建議和辯論
       title: 參與
       user_permission_debates: 參與辯論
-      user_permission_info: 您可以用您的帳戶來...
+      user_permission_info: 您可以用您的帳戶來......
       user_permission_proposal: 創建新建議
       user_permission_support_proposal: 支持建議*
       user_permission_verify: 要執行所有操作，請核實您的帳戶。
-      user_permission_verify_info: "* 僅適用於人口普查的用戶。"
+      user_permission_verify_info: "*僅適用於人口普查的用戶。"
       user_permission_verify_my_account: 核實我的帳戶
       user_permission_votes: 參與最終投票
   invisible_captcha:
@@ -816,8 +807,8 @@ zh-TW:
       title: 管理
   annotator:
     help:
-      alt: 選擇您想評論的文本，然後按下鉛筆按鈕。
-      text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇您想評論的文本，並按下鉛筆按鈕。
+      alt: 選擇要評論的文本，然後按下鉛筆按鈕。
+      text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇要評論的文本，並按下鉛筆按鈕。
       text_sign_in: 登錄
       text_sign_up: 登記
       title: 我怎樣能對此文檔作評論？

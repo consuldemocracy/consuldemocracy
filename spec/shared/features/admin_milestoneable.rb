@@ -1,4 +1,5 @@
 shared_examples "admin_milestoneable" do |factory_name, path_name|
+  it_behaves_like "admin_progressable", factory_name, path_name
 
   feature "Admin milestones" do
     let!(:milestoneable) { create(factory_name) }

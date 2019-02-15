@@ -201,6 +201,52 @@
     <hr>
   </div>
 
+  <div class="images small-12 column">
+    <%= render 'images/nested_image', imageable: @process, f: f %>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
+  <div class="small-12 column">
+    <h3><%= t("admin.legislation.processes.form.banner_title") %></h3>
+  </div>
+
+  <div class="small-6 large-3 column">
+    <%= f.label :background_color, nil, for: "background_color_input" %>
+    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
+    <div class="row collapse">
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :background_color, label: false, type: :color %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :background_color, label: false,
+                                            placeholder: "#e7f2fc",
+                                            id: "background_color_input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-6 large-3 column end">
+    <%= f.label :font_color, nil, for: "font_color_input" %>
+    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
+    <div class="row collapse">
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :font_color, label: false, type: :color %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :font_color, label: false,
+                                      placeholder: "#222222",
+                                      id: "font_color_input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
   <%= f.translatable_fields do |translations_form| %>
     <div class="small-12 medium-9 column">
       <%= translations_form.text_field :title,

@@ -1,4 +1,6 @@
 shared_examples "milestoneable" do |factory_name, path_name|
+  it_behaves_like "progressable", factory_name, path_name
+
   let!(:milestoneable) { create(factory_name) }
 
   feature "Show milestones" do

@@ -1,4 +1,5 @@
-<div id="<%= dom_id(card) %>" class="card small-12 medium-6 column margin-bottom end <%= 'large-4' unless feed_processes_enabled? %>" data-equalizer-watch>
+<div id="<%= dom_id(card) %>"
+     class="card small-12 medium-<%= card.columns %> column margin-bottom end" data-equalizer-watch>
   <%= link_to card.link_url do %>
     <figure class="figure-card">
       <div class="gradient"></div>

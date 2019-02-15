@@ -35,3 +35,6 @@ Metrics/LineLength:
 
 RSpec/NotToNot:
   Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

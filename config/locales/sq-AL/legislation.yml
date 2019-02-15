@@ -18,7 +18,7 @@ sq:
         signin: Kycu
         signup: Rregjistrohu
       index:
-        title: Komente
+        title: Komentet
         comments_about: "\nKomentet rreth"
         see_in_context: Shiko në kontekst
         comments_count:
@@ -44,7 +44,7 @@ sq:
         see_comments: Shiko të gjitha komentet
         text_toc: "\nTabela e përmbajtjes"
         text_body: Tekst
-        text_comments: Komente
+        text_comments: Komentet
     processes:
       header:
         additional_info: "\nInformacion shtese"
@@ -62,14 +62,12 @@ sq:
         filter: Filtër
         filters:
           open: "\nProceset e hapura"
-          next: Tjetra
           past: E kaluara
         no_open_processes: Nuk ka procese të hapura
-        no_next_processes: Nuk ka procese të planifikuar
         no_past_processes: Nuk ka procese të kaluara
         section_header:
           icon_alt: Ikona e proceseve të legjilacionit
-          title: "\nProceset e legjislacionit"
+          title: Legjislacion
           help: Ndihmoni në lidhje me proceset legjislative
         section_footer:
           title: Ndihmoni në lidhje me proceset legjislative
@@ -83,10 +81,12 @@ sq:
         see_latest_comments_title: Komentoni në këtë proces
       shared:
         key_dates: Datat kryesore
+        homepage: Kryefaqja
         debate_dates: Debate
         draft_publication_date: Publikimi draft
-        allegations_dates: Komente
+        allegations_dates: Komentet
         result_publication_date: "\nPublikimi i rezultatit përfundimtar"
+        milestones_date: Duke ndjekur
         proposals_dates: Propozime
     questions:
       comments:

@@ -1,10 +1,16 @@
-<div class="small-12 medium-6">
-  <%= form_for [:admin, @budget, @group], url: path do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @group %>
 
-    <%= f.text_field :name,
-                      label: t("admin.budget_groups.form.name"),
-                      maxlength: 50,
-                      placeholder: t("admin.budget_groups.form.name") %>
+<div class="small-12 medium-6">
+  <%= translatable_form_for [:admin, @budget, @group], url: path do |f| %>
+
+    <%= render 'shared/errors', resource: @group %>
+
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_field :name,
+                                       label: t("admin.budget_groups.form.name"),
+                                       maxlength: 50,
+                                       placeholder: t("admin.budget_groups.form.name") %>
+    <% end %>
 
     <% if @group.persisted? %>
         <%= f.select :max_votable_headings,

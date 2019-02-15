@@ -3,7 +3,7 @@ zh-CN:
     password_expired:
       expire_password: "密码已过期"
       change_required: "您的密码已过期"
-      change_password: "更改您的密码"
+      change_password: "更改密码"
       new_password: "新密码"
       updated: "密码已成功更新"
     confirmations:

@@ -8,11 +8,20 @@ describe Budget do
 
   describe "name" do
     before do
-      create(:budget, name: 'object name')
+      budget.update(name_en: "object name")
     end
 
-    it "is validated for uniqueness" do
-      expect(build(:budget, name: 'object name')).not_to be_valid
+    it "must not be repeated for a different budget and same locale" do
+      expect(build(:budget, name_en: "object name")).not_to be_valid
+    end
+
+    it "must not be repeated for a different budget and a different locale" do
+      expect(build(:budget, name_fr: "object name")).not_to be_valid
+    end
+
+    it "may be repeated for the same budget and a different locale" do
+      budget.update(name_fr: "object name")
+      expect(budget.translations.last).to be_valid
     end
   end
 

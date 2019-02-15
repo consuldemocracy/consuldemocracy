@@ -2,8 +2,8 @@ id:
   helpers:
     page_entries_info:
       entry:
-        zero: Masuk
-        other: Entri
+        zero: Entri
+        other: Masuk
       more_pages:
         display_entries: Menampilkan <strong>%{first}&nbsp;-&nbsp;%{last}</strong> pada <strong>%{total} %{entry_name}</strong>
       one_page:
@@ -15,6 +15,6 @@ id:
       current: Anda sedang di halaman
       first: Pertama
       last: Terakhir
-      next: Selanjutnya
+      next: Lanjut
       previous: Sebelumnya
       truncate: "&hellip;"

@@ -13,7 +13,8 @@
   <% if can?(:destroy, document) %>
     <br>
     <%= link_to t("documents.buttons.destroy_document"),
-                  document_path(document, from: request.url), method: :delete,
+                  document,
+                  method: :delete,
                   data: { confirm: t("documents.actions.destroy.confirm") },
                   class: "delete" %>
   <% end %>
