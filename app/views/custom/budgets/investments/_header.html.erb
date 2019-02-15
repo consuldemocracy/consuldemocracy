@@ -58,10 +58,10 @@
                 <% else %>
                   <% session[:area_id] = @area&.id %>
                   <% session[:sub_area_id] = @sub_area&.id %>
-                  <div class="callout warning margin-top">
-                    <%= t("budgets.investments.index.sidebar.required_phone",
-                          your_phone_number: link_to(t("budgets.investments.index.sidebar.your_phone_number"), account_path)).html_safe %>
-                  </div>
+                  <%= link_to account_path, class: "button margin-top expanded" do %>
+                      <%= t("budgets.investments.index.sidebar.create") %>
+                      <small class="float-center"><%= t("budgets.investments.index.sidebar.required_phone_instructions") %></small>
+                  <% end %>
                 <% end %>
               <% else %>
                 <div class="callout warning margin-top">

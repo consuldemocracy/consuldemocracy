@@ -23,6 +23,7 @@ val:
       index:
         sidebar:
           create: Crear proposta
+          required_phone_instructions: "abans deuràs introduïr el teu telèfon"
           quota_exceeded: Ja ha fet totes les propostes permeses en aquesta campanya
           required_phone: "Per a crear una nova proposta d'inversió has de introduïr el %{your_phone_number}"
           your_phone_number: teu telèfon

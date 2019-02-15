@@ -23,7 +23,7 @@ es:
       index:
         sidebar:
           create: Crear propuesta
-          required_phone: "Para crear un nuevo proyecto de gasto debes introducir %{your_phone_number}"
+          required_phone_instructions: "antes deberás introducir tu teléfono"
           your_phone_number: tu teléfono
           quota_exceeded: Ya ha hecho todas las propuestas permitidas para esta campaña
           required_area: Para crear una propuesta tienes que seleccionar una área en la barra lateral o desde %{link}
