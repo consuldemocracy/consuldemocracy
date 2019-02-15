@@ -447,6 +447,11 @@ header {
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
 
+  @include breakpoint(small down) {
+    position: relative;
+    z-index: 10;
+  }
+
   .selected {
     border-bottom: 1px solid #fff;
   }
