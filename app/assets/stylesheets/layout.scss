@@ -2666,6 +2666,12 @@ table {
   }
 }
 
+.leaflet-bottom,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 4 !important;
+}
+
 // 24. Homepage
 // ------------
 
