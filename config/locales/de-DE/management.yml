@@ -30,12 +30,12 @@ de:
     check: Dokument überprüfen
     dashboard:
       index:
-        title: Verwaltung
+        title: Management
         info: Hier können Sie die Benutzer durch alle aufgelisteten Aktionen im linken Menü verwalten.
-    document_number: Dokumentennummern
-    document_type_label: Dokumentenart
+    document_number: Dokumentennummer
+    document_type_label: Dokumententyp
     document_verifications:
-      already_verified: Das Benutzerkonto ist bereits verifiziert.
+      already_verified: Das Benutzerkonnte ist bereits verifiziert.
       has_no_account_html: Um ein Konto zu erstellen, gehen Sie zu %{link} und klicken Sie<b>'Register'</b> im oberen linken Teil des Bildschirms.
       link: CONSUL
       in_census_has_following_permissions: 'Der Benutzer kann auf der Seite mit folgenden Rechten partizipieren:'
@@ -44,11 +44,11 @@ de:
       please_check_account_data: Bitte überprüfen Sie, dass die oben angegebenen Kontodaten korrekt sind.
       title: Benutzerverwaltung
       under_age: "Sie erfüllen nicht das erforderliche Alter, um Ihr Konto verifizieren."
-      verify: Überprüfen
+      verify: Verifizieren
     email_label: E-Mail
     date_of_birth: Geburtsdatum
     email_verifications:
-      already_verified: Das Benutzerkonnte ist bereits verifiziert.
+      already_verified: Das Benutzerkonto ist bereits verifiziert.
       choose_options: 'Bitte wählen Sie eine der folgenden Optionen aus:'
       document_found_in_census: Dieses Dokument wurde in der Volkszählung gefunden, hat aber kein dazugehöriges Benutzerkonto.
       document_mismatch: 'Diese E-Mail-Adresse gehört zu einem Nutzer mit einer bereits zugehörigen ID:%{document_number}(%{document_type})'
@@ -74,22 +74,22 @@ de:
     permissions:
       create_proposals: Vorschlag erstellen
       debates: In Debatten engagieren
-      support_proposals: Anträge unterstützen
+      support_proposals: Vorschläge unterstützen
       vote_proposals: Über Vorschläge abstimmen
     print:
       proposals_info: Erstellen Sie Ihren Antrag auf http://url.consul
       proposals_title: 'Vorschläge:'
       spending_proposals_info: Auf http://url.consul teilnehmen
       budget_investments_info: Auf http://url.consul teilnehmen
-    print_info: Diese Info drucken
+    print_info: Die Info drucken
     proposals:
       alert:
-        unverified_user: Benutzer ist nicht bestätigt
+        unverified_user: Der Benutzer ist nicht verifiziert
       create_proposal: Vorschlag erstellen
       print:
         print_button: Drucken
       index:
-        title: Anträge unterstützen
+        title: Vorschläge unterstützen
     budgets:
       create_new_investment: Budgetinvestitionen erstellen
       print_investments: Budgetinvestitionen drucken
@@ -100,32 +100,32 @@ de:
       no_budgets: Es gibt keine aktiven Bürgerhaushalte.
     budget_investments:
       alert:
-        unverified_user: Der Benutzer ist nicht verifiziert
-      create: Eine Budgetinvestitionen erstellen
+        unverified_user: Benutzer ist nicht bestätigt
+      create: Ausgabenvorschlag erstellen
       filters:
         heading: Konzept
         unfeasible: Undurchführbare Investition
       print:
         print_button: Drucken
       search_results:
-        one: "die den Begriff '%{search_term}' enthalten"
-        other: "die den Begriff '%{search_term}' enthalten"
+        one: "enthält die Begriffe  '%{search_term}'"
+        other: "enthält die Begriffe  '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Benutzer ist nicht verifiziert
+        unverified_user: Benutzer ist nicht bestätigt
       create: Ausgabenvorschlag erstellen
       filters:
-        unfeasible: Undurchführbare Investitionsprojekte
+        unfeasible: Undurchführbare Investitionsvorschläge
         by_geozone: "Investitionsvorschläge im Bereich: %{geozone}"
       print:
         print_button: Drucken
       search_results:
-        one: "die den Begriff '%{search_term}' enthalten"
-        other: "die den Begriff '%{search_term}' enthalten"
+        one: "enthält die Begriffe  '%{search_term}'"
+        other: "enthält die Begriffe  '%{search_term}'"
     sessions:
       signed_out: Erfolgreich abgemeldet.
       signed_out_managed_user: Benutzersitzung erfolgreich abgemeldet.
-    username_label: Benutzername
+    username_label: Benutzer*innenname
     users:
       create_user: Neues Konto erstellen
       create_user_info: Wir werden ein Konto mit den folgenden Daten erstellen

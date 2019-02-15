@@ -1,1 +1,14 @@
 he:
+  officing:
+    results:
+      new:
+        submit: "שמירה"
+      index:
+        table_votes: הצבעות
+    residence:
+      new:
+        document_number: "מספר מסמך (כולל אותיות)"
+    voters:
+      new:
+        title: סקרים
+        table_poll: הצבעה

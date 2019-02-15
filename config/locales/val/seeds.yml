@@ -1,5 +1,11 @@
 val:
   seeds:
+    settings:
+      official_level_1_name: Càrrec públic 1
+      official_level_2_name: Càrrec públic 2
+      official_level_3_name: Càrrec públic 3
+      official_level_4_name: Càrrec públic 4
+      official_level_5_name: Càrrec públic 5
     geozones:
       north_district: Districte Nord
       west_district: Districte Oest

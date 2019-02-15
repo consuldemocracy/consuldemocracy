@@ -1,6 +1,7 @@
 class Legislation::ProposalsController < Legislation::BaseController
   include CommentableActions
   include FlagActions
+  include ImageAttributes
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -54,7 +55,7 @@ class Legislation::ProposalsController < Legislation::BaseController
       params.require(:legislation_proposal).permit(:legislation_process_id, :title,
                     :question, :summary, :description, :video_url, :tag_list,
                     :terms_of_service, :geozone_id,
-                    image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                    image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
     end
 

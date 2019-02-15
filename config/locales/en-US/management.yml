@@ -1,1 +1,5 @@
 en-US:
+  management:
+    document_type_label: Document type
+    email_label: Email
+    date_of_birth: Date of birth

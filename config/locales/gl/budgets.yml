@@ -13,9 +13,9 @@ gl:
         voted_info_html: "Podes mudar os teus votos cando quixeres até o peche desta fase.<br> Non é necesario que gastes todo o diñeiro dispoñible."
         zero: Aínda non votaches ningunha proposta de investimento.
       reasons_for_not_balloting:
-        not_logged_in: Precisas %{signin} ou %{signup} para continuar.
+        not_logged_in: Debes %{signin} ou %{signup} para continuares.
         not_verified: As propostas de investimento só poden ser apoiadas por usuarios con contas verificadas; %{verify_account}.
-        organization: As organizacións non poden votar
+        organization: As organizacións non poden votar.
         not_selected: Non se poden votar propostas inviables
         not_enough_money_html: "Xa asignaches o orzamento dispoñible.<br><small>Lembra que podes %{change_ballot} cando quixeres</small>"
         no_ballots_allowed: O período de votacións está pechado
@@ -27,7 +27,7 @@ gl:
         unfeasible_title: Propostas inviables
         unfeasible: Ver as propostas inviables
         unselected_title: Propostas non seleccionadas para a votación final
-        unselected: Ver as propostas que non foron seleccionadas para a votación final
+        unselected: Ver as propostas non seleccionadas para a votación final
     phase:
       drafting: Borrador (non visible para o público)
       informing: Información
@@ -49,20 +49,21 @@ gl:
         all_phases: Ver todas as fases
       all_phases: Fases dos orzamentos participativos
       map: Proxectos localizables xeograficamente
-      investment_proyects: Ver a relación completa dos proxectos de investimento
+      investment_proyects: Listaxe de todos os proxectos de investimento
       unfeasible_investment_proyects: Ver a relación de proxectos de investimento inviables
-      not_selected_investment_proyects: Ver a relación de proxectos de investimento non seleccionados para a votación final
+      not_selected_investment_proyects: Ver a listaxe de proxecto de investimento non seleccionadas para a votación final
       finished_budgets: Orzamentos participativos rematados
-      see_results: Ver os resultados
+      see_results: Ver resultados
       section_footer:
         title: Axuda sobre os orzamentos participativos
         description: Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento municipal.
+      milestones: Seguimento
     investments:
       form:
         tag_category_label: "Categorías"
-        tags_instructions: "Clasifica esta proposta. Podes elixir entre as categorías que propomos ou inserir as que desexares"
+        tags_instructions: "Etiqueta esta proposta. Podes elixir entre as categorías propostas ou escribir as que desexares"
         tags_label: Etiquetas
-        tags_placeholder: "Escribe as etiquetas que desexares separadas por unha coma (',')"
+        tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
         map_location: "Localización no mapa"
         map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
         map_remove_marker: "Borrar o marcador do mapa"
@@ -70,16 +71,16 @@ gl:
         map_skip_checkbox: "Este investimento non ten unha localización concreta ou non a coñezo."
       index:
         title: Orzamentos participativos
-        unfeasible: Proxectos de investimento non viables
+        unfeasible: Propostas de investimento non viables
         unfeasible_text: "Os investimentos deben cumprir unha serie de criterios (como a legalidade, a concrención, seren competencia do concello, non superaren o máximo do orzamento), para seren declaradas viables e chegaren até a votación final. Todos os investimentos que non cumpriren estes criterios son marcados como inviables e publicadas na seguinte relación, xunto co seu informe de inviabilidade."
         by_heading: "Propostas de investimento con ámbito: %{heading}"
         search_form:
-          button: Buscar
+          button: Procurar
           placeholder: Buscar propostas de investimento...
-          title: Buscar
+          title: Procurar
         search_results_html:
-          one: " contén o termo <strong>'%{search_term}'</strong>"
-          other: " contén o termo <strong>'%{search_term}'</strong>"
+          one: " que conteñen <strong>%{search_term}</strong>"
+          other: " que conteñen <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Os meus votos
           voted_html:
@@ -92,21 +93,23 @@ gl:
           check_ballot_link: "revisar os meus votos"
           zero: Añinda non votaches ningunha proposta de investimento neste ámbito do orzamento.
           verified_only: "Para creares unha nova proposta de investimento %{verify}."
-          verify_account: "verifica a túa conta"
-          create: "Crear un proxecto de gasto"
+          verify_account: "verificar a túa conta"
+          create: "Crear un proxecto novo"
           not_logged_in: "Para creares unha nova proposta de investimento debes %{sign_in} ou %{sign_up}."
           sign_in: "iniciar sesión"
-          sign_up: "rexistrarte"
+          sign_up: "rexistrate"
           by_feasibility: Por viabilidade
           feasible: Ver os proxectos viables
           unfeasible: Ver os proxectos inviables
         orders:
           random: aleatorias
-          confidence_score: mellor valoradas
+          confidence_score: Máis apoiados
           price: por custo
+      share:
+        message: "Acabo de crear o proxecto de investimento %{title} en %{org}. Anímote a crear o teu proxecto de investimento!"
       show:
-        author_deleted: Usuaria borrada
-        price_explanation: Informe de custo
+        author_deleted: Usuario/a borrado/a
+        price_explanation: Informe de custo <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidade
         code_html: 'Código de proposta de gasto:<strong>%{code}</strong>'
         location_html: 'Localización: <strong>%{location}</strong>'
@@ -117,23 +120,24 @@ gl:
         votes: Votos
         price: Custo
         comments_tab: Comentarios
-        milestones_tab: Seguimento
+        milestones_tab: Fitos
         author: Autoría
         project_unfeasible_html: 'O proxecto de investimento <strong>foi marcado como inviable</strong> e non chegará á fase de votación.'
         project_selected_html: 'Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación.'
         project_winner: 'Proxecto de investimento gañador'
         project_not_selected_html: 'O proxecto de inversión <strong>non foi seleccionado</strong> para a fase de votación.'
+        see_price_explanation: Ver xustificación do prezo
       wrong_price_format: Só pode incluír caracteres numéricos
       investment:
-        add: Votar
+        add: Voto
         already_added: Xa engadiches esta proposta de investimento
         already_supported: Xa apoiaches este proxecto de investimento. Compárteo!
-        support_title: Apoiar esta proposta
+        support_title: Apoiar este proxecto
         confirm_group:
           one: "Só pode apoiar investimentos en %{count} distrito. De continuar, non poderá cambiarse de distrito. Está seguro?"
           other: "Só pode apoiar investimentos en %{count} distritos. De continuar, non poderá cambiarse de distrito. Está seguro?"
         supports:
-          zero: Sen apoios
+          zero: Sen apoio
           one: 1 apoio
           other: "%{count} apoios"
         give_support: Apoiar
@@ -152,25 +156,34 @@ gl:
       unfeasible_title: Propostas inviables
       unfeasible: Ver as propostas inviables
       unselected_title: Propostas non seleccionadas para a votación final
-      unselected: Ver as propostas non seleccionadas para a votación final
-      see_results: Ver os resultados
+      unselected: Ver as propostas que non foron seleccionadas para a votación final
+      see_results: Ver resultados
     results:
       link: Resultados
       page_title: "%{budget} - Resultados"
       heading: "Resultados dos orzamentos participativos"
-      heading_selection_title: "Por ámbito de actuación"
-      spending_proposal: Título
+      heading_selection_title: "Por zona"
+      spending_proposal: Título da proposta
       ballot_lines_count: Votos
       hide_discarded_link: Agochar as rexeitadas
       show_all_link: Amosar todas
-      price: Prezo
+      price: Custo
       amount_available: Orzamento dispoñible
       accepted: "Proposta de investimento aceptada: "
       discarded: "Proposta de investimento rexeitada: "
       incompatibles: Incompatibles
-      investment_proyects: Listaxe de todos os proxectos de investimento
+      investment_proyects: Ver a relación completa dos proxectos de investimento
       unfeasible_investment_proyects: Ver a relación de proxectos de investimento inviables
-      not_selected_investment_proyects: Ver a listaxe de proxecto de investimento non seleccionadas para a votación final
+      not_selected_investment_proyects: Ver a relación de proxectos de investimento non seleccionados para a votación final
+    executions:
+      link: "Seguimento"
+      page_title: "%{budget} - Fitos"
+      heading: "Fitos dos orzamentos participativos"
+      heading_selection_title: "Por ámbito de actuación"
+      no_winner_investments: "Non hai investimentos gañadores neste estado"
+      filters:
+        label: "Estado actual do proxecto"
+        all: "Todo (%{count})"
     phases:
       errors:
         dates_range_invalid: "A data de comezo non pode ser igual ou superior á de remate"

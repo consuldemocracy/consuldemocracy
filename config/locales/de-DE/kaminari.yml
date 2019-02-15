@@ -6,7 +6,7 @@ de:
         one: Eintrag
         other: Einträge
       more_pages:
-        display_entries: Es wird <strong>%{first}&nbsp;&nbsp;%{last}</strong> von <strong>%{total}%{entry_name}</strong> angezeigt
+        display_entries: <strong>%{first}&nbsp;&nbsp;%{last}</strong> von <strong>%{total}%{entry_name}</strong> angezeigen
       one_page:
         display_entries:
           zero: "%{entry_name} kann nicht gefunden werden"

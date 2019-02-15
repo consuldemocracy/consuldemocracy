@@ -1,1 +1,78 @@
 en-US:
+  admin:
+    banners:
+      banner:
+        sections:
+          debates: Debatten
+    activity:
+      show:
+        filters:
+          on_comments: Kommentare
+          on_debates: Debatten
+          on_users: Benutzer
+    budget_investments:
+      index:
+        list:
+          admin: Administrator(in),Verwaltungsleiter(in)
+    hidden_users:
+      index:
+        user: Benutzer
+    legislation:
+      processes:
+        process:
+          comments: Kommentare
+        subnav:
+          questions: Debatte
+      draft_versions:
+        table:
+          comments: Kommentare
+    managers:
+      index:
+        email: Email
+    menu:
+      administrators: Administrator(in),Verwaltungsleiter(in)
+      moderators: Moderatoren,Gesprächsleiter
+      site_customization:
+        information_texts_menu:
+          debates: "Debatten"
+      users: Benutzer
+    administrators:
+      index:
+        title: Administrator(in),Verwaltungsleiter(in)
+        email: Email
+    moderators:
+      index:
+        title: Moderatoren,Gesprächsleiter
+        email: Email
+    segment_recipient:
+      administrators: Administrator(in),Verwaltungsleiter(in)
+    valuators:
+      index:
+        email: Email
+      show:
+        email: "Email"
+    poll_officers:
+      officer:
+        email: Email
+    poll_officer_assignments:
+      index:
+        table_email: "Email"
+    poll_shifts:
+      new:
+        table_email: "Email"
+    organizations:
+      index:
+        email: Email
+    stats:
+      show:
+        summary:
+          comments: Kommentare
+          debates: Debatten
+    users:
+      columns:
+        email: Email
+      index:
+        title: Benutzer
+    homepage:
+      feeds:
+        debates: Debatten

@@ -36,7 +36,7 @@ es:
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
-          success: Tu cuenta ya está verificada
+          success: Código correcto. Tu cuenta ya está verificada
     redirect_notices:
       already_verified: Tu cuenta ya está verificada
       email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
@@ -50,7 +50,7 @@ es:
         accept_terms_text: Acepto %{terms_url} al Padrón
         accept_terms_text_title: Acepto los términos de acceso al Padrón
         date_of_birth: Fecha de nacimiento
-        document_number: DNI/Pasaporte/Tarjeta de residencia
+        document_number: Número de documento
         document_number_help_title: Ayuda
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
         document_type:

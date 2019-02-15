@@ -613,7 +613,7 @@ feature 'Admin budget investments' do
       create(:budget_investment, title: 'C Third Investment', cached_votes_up: 10, budget: budget)
     end
 
-    scenario "Default sorting" do
+    scenario "Default" do
       create(:budget_investment, title: 'D Fourth Investment', cached_votes_up: 50, budget: budget)
 
       visit admin_budget_budget_investments_path(budget)
@@ -623,25 +623,112 @@ feature 'Admin budget investments' do
       expect('A Second Investment').to appear_before('C Third Investment')
     end
 
-    scenario 'Sort by ID' do
-      visit admin_budget_budget_investments_path(budget, sort_by: 'id')
+    context 'Ascending' do
+      scenario 'Sort by ID' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'id', direction: 'asc')
 
-      expect('C Third Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('B First Investment')
+        expect('B First Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
+
+      scenario 'Sort by title' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'title', direction: 'asc')
+
+        expect('A Second Investment').to appear_before('B First Investment')
+        expect('B First Investment').to appear_before('C Third Investment')
+        within('th', text: 'Title') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
+
+      scenario 'Sort by supports' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'supports', direction: 'asc')
+
+        expect('C Third Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('B First Investment')
+        within('th', text: 'Supports') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
     end
 
-    scenario 'Sort by title' do
-      visit admin_budget_budget_investments_path(budget, sort_by: 'title')
+    context 'Descending' do
+      scenario 'Sort by ID' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'id', direction: 'desc')
 
-      expect('A Second Investment').to appear_before('B First Investment')
-      expect('B First Investment').to appear_before('C Third Investment')
+        expect('C Third Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('B First Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-down")
+        end
+      end
+
+      scenario 'Sort by title' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'title', direction: 'desc')
+
+        expect('C Third Investment').to appear_before('B First Investment')
+        expect('B First Investment').to appear_before('A Second Investment')
+        within('th', text: 'Title') do
+          expect(page).to have_css(".icon-arrow-down")
+        end
+      end
+
+      scenario 'Sort by supports' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'supports', direction: 'desc')
+
+        expect('B First Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'Supports') do
+          expect(page).to have_css(".icon-arrow-down")
+        end
+      end
     end
 
-    scenario 'Sort by supports' do
-      visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
+    context 'With no direction provided sorts ascending' do
+      scenario 'Sort by ID' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'id')
 
-      expect('B First Investment').to appear_before('A Second Investment')
-      expect('A Second Investment').to appear_before('C Third Investment')
+        expect('B First Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
+
+      scenario 'Sort by title' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'title')
+
+        expect('A Second Investment').to appear_before('B First Investment')
+        expect('B First Investment').to appear_before('C Third Investment')
+        within('th', text: 'Title') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
+
+      scenario 'Sort by supports' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'supports')
+
+        expect('C Third Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('B First Investment')
+        within('th', text: 'Supports') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
+    end
+
+    context 'With incorrect direction provided sorts ascending' do
+      scenario 'Sort by ID' do
+        visit admin_budget_budget_investments_path(budget, sort_by: 'id', direction: 'incorrect')
+
+        expect('B First Investment').to appear_before('A Second Investment')
+        expect('A Second Investment').to appear_before('C Third Investment')
+        within('th', text: 'ID') do
+          expect(page).to have_css(".icon-arrow-top")
+        end
+      end
     end
   end
 

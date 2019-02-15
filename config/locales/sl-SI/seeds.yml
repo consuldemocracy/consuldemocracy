@@ -32,14 +32,12 @@ sl:
       environment: Okolje
     budgets:
       budget: Participatorni proračun
-      currency: €
       groups:
         all_city: Celo mesto
         districts: Področja
     polls:
       current_poll: "Trenutno glasovanje"
       current_poll_geozone_restricted: "Trenutno glasovanje zaprto glede na geografska področja"
-      incoming_poll: "Dohodno glasovanje"
       recounting_poll: "Glasovanje s ponovnim štetjem"
       expired_poll_without_stats: "Končano glasovanje brez statistik in rezultatov"
       expired_poll_with_stats: "Končano glasovanje s statistikami in rezultati"

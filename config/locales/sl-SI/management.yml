@@ -37,7 +37,6 @@ sl:
     document_verifications:
       already_verified: Ta uporabniški račun je že verificiran.
       has_no_account_html: Če želiš ustvariti uporabniški račun, pojdi na %{link} in klikni <b>'Registriraj se'</b> v zgornjem levem delu ekrana.
-      link: CONSUL
       in_census_has_following_permissions: 'Ta uporabnik lahko sodeluje na spletnem mestu z naslednjimi dovoljenji:'
       not_in_census: Ta dokument še ni registriran.
       not_in_census_info: 'Državljani, ki niso v popisu, lahko sodelujejo na spletnem mestu z naslednjimi dovoljenji:'
@@ -69,7 +68,6 @@ sl:
       print_budget_investments: Natisni proračunske naložbe
       support_budget_investments: Podpri proračunske naložbe
       users: Uporabniki
-      edit_user_accounts: Uredi uporabniški račun
       user_invites: Uporabnikova povabila
     permissions:
       create_proposals: Ustvari predloge
@@ -78,12 +76,9 @@ sl:
       vote_proposals: Glasuj o predlogih
     print:
       proposals_info: Ustvari svoj predlog na http://url.consul
-      proposals_note: Predlogi, ki bodo prejeli več podpore, gredo na glasovanje. Če jih sprejme večina, jih bo občina izvedla.
       proposals_title: 'Predlogi:'
       spending_proposals_info: Sodeluj na http://url.consul
-      spending_proposals_note: Participatorni proračun bo dodeljen proračunskim naložbam z največ podpore.
       budget_investments_info: Sodeluj na http://url.consul
-      budget_investments_note: Participatorni proračun bo dodeljen proračunski naložbi z največ podpore.
     print_info: Natisni te informacije
     proposals:
       alert:
@@ -104,9 +99,6 @@ sl:
         unfeasible: Neizvedljiva naložba
       print:
         print_button: Natisni
-      search_results:
-        one: " vsebuje besedo '%{search_term}'"
-        other: " vsebujejo besedo '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Uporabnik ni verificiran
@@ -116,9 +108,6 @@ sl:
         by_geozone: "Naložbeni projekti v: %{geozone}"
       print:
         print_button: Natisni
-      search_results:
-        one: " vključuje besedo '%{search_term}'"
-        other: " vključujejo besedo '%{search_term}'"
     sessions:
       signed_out: Uspešno izpisan/-a.
       signed_out_managed_user: Uporabniška seja uspešno izpisana.

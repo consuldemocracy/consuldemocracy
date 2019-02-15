@@ -21,4 +21,4 @@ fr:
     errors:
       messages:
         in_between: doit être entre %{min} et %{max}
-        wrong_content_type: le type de contenu %{content_type} ne correspond à aucun type de contenu accepté (%{accepted_content_types})
+        wrong_content_type: Le format %{content_type} ne correspond à aucun format accepté (%{accepted_content_types}).

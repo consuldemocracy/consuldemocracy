@@ -23,25 +23,25 @@ zh-CN:
       recommendations: 推荐
       show_debates_recommendations: 显示辩论推荐
       show_proposals_recommendations: 显示提议推荐
-      title: 我的帐号
+      title: 我的帐户
       user_permission_debates: 参与辩论
-      user_permission_info: 您可以用您的帐号来...
+      user_permission_info: 您可以用您的账户来...
       user_permission_proposal: 创建新的提议
       user_permission_support_proposal: 支持提议
       user_permission_title: 参与
-      user_permission_verify: 要执行所有操作，请验证您的帐号。
-      user_permission_verify_info: "＊仅适用于人口普查用户。"
+      user_permission_verify: 要执行所有操作，请验证您的账户。
+      user_permission_verify_info: "＊仅适用于人口普查的用户。"
       user_permission_votes: 参与最终投票
       username_label: 用户名
       verified_account: 已验证的帐号
-      verify_my_account: 验证我的帐号
+      verify_my_account: 验证我的账户
   application:
     close: 关闭
     menu: 菜单
   comments:
     comments_closed: 评论已关闭
     verified_only: 要参与%{verify_account}
-    verify_account: 验证您的帐号
+    verify_account: 验证您的账户
     comment:
       admin: 管理员
       author: 作者
@@ -93,7 +93,7 @@ zh-CN:
       debate_title: 辩论标题
       tags_instructions: 为此辩论加标签。
       tags_label: 主题
-      tags_placeholder: "输入您希望使用的标签，用逗号 (',') 分割"
+      tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
     index:
       featured_debates: 特色
       filter_topic:
@@ -111,7 +111,7 @@ zh-CN:
         disable: "如果您取消它们，辩论推荐将停止显示。您可以在‘我的帐户’页面再次启用它们"
         actions:
           success: "此账户的辩论推荐现已禁用"
-          error: "出现错误。请回到‘您的账户’页面，手动禁用辩论推荐"
+          error: "出现错误。请回到‘我的账户’页面，手动禁用辩论推荐"
       search_form:
         button: 搜索
         placeholder: 搜索辩论...
@@ -151,7 +151,7 @@ zh-CN:
       edit_debate_link: 编辑
       flag: 此辩论已被几个用户标记为不恰当。
       login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
-      share: 共用
+      share: 分享
       author: 作者
     update:
       form:
@@ -176,7 +176,7 @@ zh-CN:
     budget/investment: 投资
     budget/heading: 预算标题
     poll/shift: 轮班
-    poll/question/answer: 答案
+    poll/question/answer: 回答
     user: 帐户
     verification/sms: 电话
     signature_sheet: 签名表
@@ -193,11 +193,11 @@ zh-CN:
       ie: 我们检测到您正在用Internet Explorer浏览。为了加强体验，我们建议使用%{firefox} 或者%{chrome}。
       ie_title: 此网站没有对您的浏览器优化
     footer:
-      accessibility: 辅助功能选项
+      accessibility: 无障碍功能
       conditions: 使用条款及条件
       consul: CONSUL应用程序
       consul_url: https://github.com/consul/consul
-      contact_us: 进入技术支援
+      contact_us: 访问技术支援
       copyright: CONSUL, %{year}
       description: 此门户网站使用%{consul}，其是%{open_source}。
       open_source: 开源软件
@@ -219,13 +219,13 @@ zh-CN:
       valuation: 评估
       officing: 投票站官员
       help: 帮助
-      my_account_link: 我的帐户
+      my_account_link: 我的帐号
       my_activity_link: 我的活动
       open: 打开
       open_gov: 开放政府
       proposals: 提议
       poll_questions: 投票
-      budgets: 参与性预算
+      budgets: 参与性预算编制
       spending_proposals: 支出提议
       notification_item:
         new_notifications:
@@ -234,13 +234,6 @@ zh-CN:
         no_notifications: "您没有新的通知"
     admin:
       watch_form_message: '您有未保存的更改。是否确认要离开此页面？'
-  legacy_legislation:
-    help:
-      alt: 选择您希望评论的文本然后按下铅笔按钮。
-      text: 若要对此文档做评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
-      text_sign_in: 登录
-      text_sign_up: 注册
-      title: 我可以如何评论此文档？
   notifications:
     index:
       empty_notifications: 您没有新的通知。
@@ -301,7 +294,7 @@ zh-CN:
       retired_explanation_placeholder: 简短解释为什么您认为此提议不应该再接受更多的支持
       submit_button: 撤回提议
     retire_options:
-      duplicated: 重复
+      duplicated: 重复的
       started: 已在进行中
       unfeasible: 不可行
       done: 完成
@@ -322,7 +315,7 @@ zh-CN:
       tag_category_label: "类别"
       tags_instructions: "为此提议加标签。您可以从推荐的类别中选择或者自行添加"
       tags_label: 标签
-      tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
+      tags_placeholder: "输入您希望使用的标签，用逗号 (',') 分割"
       map_location: "地图位置"
       map_location_instructions: "将地图导航到该位置并放置标记。"
       map_remove_marker: "删除地图标记"
@@ -345,12 +338,12 @@ zh-CN:
         disable: "如果您取消它们，提议推荐将停止显示。您可以在‘我的账户’页面再次启用它们"
         actions:
           success: "此账户的提议推荐现已禁用"
-          error: "出现错误。请回到‘您的帐号’页面，手动禁用提议推荐"
+          error: "出现错误。请回到‘我的账户’页面，手动禁止提议推荐"
       retired_proposals: 撤回的提议
       retired_proposals_link: "被作者撤回的提议"
       retired_links:
         all: 所有
-        duplicated: 重复的
+        duplicated: 重复
         started: 进行中
         unfeasible: 不可行
         done: 完成
@@ -360,7 +353,7 @@ zh-CN:
         placeholder: 搜索提议...
         title: 搜索
       search_results_html:
-        other: " 包含术语 <strong>'%{search_term}'</strong>"
+        other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order: 排序依据
       select_order_long: '您正在查看的提议是依据：'
       start_proposal: 创建提议
@@ -411,7 +404,7 @@ zh-CN:
       successful: "此提议已达到所需要的支持。"
     show:
       author_deleted: 已删除的用户
-      code: '提议编号：'
+      code: '提议编码：'
       comments:
         zero: 没有评论
         other: "%{count} 个评论"
@@ -420,19 +413,22 @@ zh-CN:
       flag: 此提议已被几个用户标记为不恰当。
       login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
       notifications_tab: 通知
+      milestones_tab: 里程碑
       retired_warning: "作者认为此提议不应再得到支持。"
       retired_warning_link_to_explanation: 投票前请先阅读说明。
       retired: 被作者撤回的提议
       share: 共用
       send_notification: 发送通知
-      no_notifications: "此提议没有任何通知。"
+      no_notifications: "此提议没有通知。"
       embed_video_title: "%{proposal} 的视频"
-      title_external_url: "附加文档"
+      title_external_url: "其他文档"
       title_video_url: "外部视频"
       author: 作者
     update:
       form:
         submit_button: 保存更改
+    share:
+      message: "我支持%{handle} 中的提议%{summary}。如果您感兴趣，也请支持它！"
   polls:
     all: "所有"
     no_dates: "没指定日期"
@@ -458,7 +454,7 @@ zh-CN:
         help: 关于投票的帮助
       section_footer:
         title: 关于投票的帮助
-        description: 公民投票是一种参与机制，有投票权的公民可以直接做出决定
+        description: 公民投票是一种参与机制，有投票权的公民可以通过这种机制来做出直接决定
       no_polls: "没有开放的投票。"
     show:
       already_voted_in_booth: "您已经在实体投票亭参与了。您不能再次参与。"
@@ -506,9 +502,9 @@ zh-CN:
     new:
       title: "发送信息"
       title_label: "标题"
-      body_label: "信息"
+      body_label: "消息"
       submit_button: "发送信息"
-      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong> ，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
+      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong>，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
       proposal_page: "提议页面"
     show:
       back: "返回我的活动"
@@ -592,14 +588,14 @@ zh-CN:
       budget: 参与性预算
       searcher: 搜寻者
     go_to_page: "转到页面 "
-    share: 分享
+    share: 共用
     orbit:
       previous_slide: 上一张幻灯片
       next_slide: 下一张幻灯片
-    documentation: 其他文档
+    documentation: 附加文档
     view_mode:
       title: 查看模式
-      cards: 卡片
+      cards: 卡
       list: 列表
     recommended_index:
       title: 推荐
@@ -625,7 +621,7 @@ zh-CN:
         new: 创建
       title: 支出提议标题
     index:
-      title: 参与性预算编制
+      title: 参与性预算
       unfeasible: 不可行的投资项目
       by_geozone: "投资项目范围：%{geozone}"
       search_form:
@@ -648,8 +644,8 @@ zh-CN:
       start_new: 创建支出提议
     show:
       author_deleted: 已删除的用户
-      code: '提议编码：'
-      share: 分享
+      code: '提议编号：'
+      share: 共用
     wrong_price_format: 仅限整数
     spending_proposal:
       spending_proposal: 投资项目
@@ -678,9 +674,9 @@ zh-CN:
   users:
     direct_messages:
       new:
-        body_label: 消息
+        body_label: 信息
         direct_messages_bloqued: "此用户已决定不接收直接消息"
-        submit_button: 发送消息
+        submit_button: 发送信息
         title: 发送私人消息给%{receiver}
         title_label: 标题
         verified_only: 要发送私人消息%{verify_account}
@@ -752,7 +748,7 @@ zh-CN:
       most_active:
         debates: "最活跃的辩论"
         proposals: "最活跃的提议"
-        processes: "开放进程"
+        processes: "开启进程"
       see_all_debates: 查看所有辩论
       see_all_proposals: 查看所有提议
       see_all_processes: 查看所有进程
@@ -781,12 +777,12 @@ zh-CN:
       go_to_index: 查看提议和辩论
       title: 参与
       user_permission_debates: 参与辩论
-      user_permission_info: 您可以用您的账户来...
+      user_permission_info: 您可以用您的帐号来...
       user_permission_proposal: 创建新的提议
-      user_permission_support_proposal: 支持提议＊
-      user_permission_verify: 要执行所有操作，请验证您的账户。
-      user_permission_verify_info: "＊仅适用于人口普查的用户。"
-      user_permission_verify_my_account: 验证我的账户
+      user_permission_support_proposal: 支持提议*
+      user_permission_verify: 要执行所有操作，请验证您的帐号。
+      user_permission_verify_info: "＊仅适用于人口普查用户。"
+      user_permission_verify_my_account: 验证我的帐号
       user_permission_votes: 参与最终投票
   invisible_captcha:
     sentence_for_humans: "如果您是人类，请忽略此字段"
@@ -813,8 +809,8 @@ zh-CN:
       title: 管理
   annotator:
     help:
-      alt: 选择您希望评论的文本，然后按下铅笔按钮。
-      text: 若要对此文档进行评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
+      alt: 选择您希望评论的文本然后按下铅笔按钮。
+      text: 若要对此文档做评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
       text_sign_in: 登录
       text_sign_up: 注册
-      title: 我怎样对此文档做评论？
+      title: 我可以如何评论此文档？

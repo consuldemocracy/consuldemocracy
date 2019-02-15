@@ -26,7 +26,7 @@ sq:
         title: Zgjidh një opsion
         unfeasible_title: Investimet e papranueshme
         unfeasible: Shih Investimet e papranueshme
-        unselected_title: Investimet nuk janë përzgjedhur për fazën e votimit
+        unselected_title: Investimet që nuk janë përzgjedhur për fazën e votimit
         unselected: Shih investimet që nuk janë përzgjedhur për fazën e votimit
     phase:
       drafting: Draft (jo i dukshëm për publikun)
@@ -40,7 +40,7 @@ sq:
       reviewing_ballots: Rishikimi i votimit
       finished: Buxheti i përfunduar
     index:
-      title: Buxhetet  pjesëmarrës
+      title: Buxhetet me pjesëmarrje
       empty_budgets: Nuk ka buxhet.
       section_header:
         icon_alt: Ikona e buxheteve  pjesëmarrëse
@@ -57,11 +57,12 @@ sq:
       section_footer:
         title: Ndihmoni me buxhetet pjesëmarrëse
         description: Me buxhetet pjesëmarrëse qytetarët vendosin se në cilat projekte janë të destinuara një pjesë e buxhetit.
+      milestones: Pikëarritje
     investments:
       form:
         tag_category_label: "Kategoritë"
         tags_instructions: "Etiketoni këtë propozim. Ju mund të zgjidhni nga kategoritë e propozuara ose të shtoni tuajën"
-        tags_label: Etiketimet
+        tags_label: Etiketë
         tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
         map_location: "Vendndodhja në hartë"
         map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
@@ -78,8 +79,8 @@ sq:
           placeholder: Kërkoni projekte investimi ...
           title: Kërko
         search_results_html:
-          one: "që përmbajnë termin <strong>%{search_term}</strong>"
-          other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
+          one: " që përmbajnë termin <strong>'%{search_term}'</strong>"
+          other: " që përmbajnë termin <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votimi im
           voted_html:
@@ -87,7 +88,7 @@ sq:
             other: "<strong>Ke votuar %{count} propozime me një kosto prej %{amount_spent}</strong>"
           voted_info: Ti mundesh %{link}  në çdo kohë deri në fund të kësaj faze. Nuk ka nevojë të harxhoni të gjitha paratë në dispozicion.
           voted_info_link: Ndryshoni votat tuaja
-          different_heading_assigned_html: "Ju keni votat aktive në një titull tjetër: %{heading_link}"
+          different_heading_assigned_html: "Ju keni votuar tashmë një titull tjetër: %{heading_link}"
           change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
           check_ballot_link: "Kontrolloni votimin tim"
           zero: Ju nuk keni votuar në asnjë projekt investimi në këtë grup
@@ -104,6 +105,8 @@ sq:
           random: "\ni rastësishëm\n"
           confidence_score: më të vlerësuarat
           price: nga çmimi
+      share:
+        message: "Kam krijuar projektin e investimeve%{title} në %{org}. Krijoni një projekt investimi edhe ju!"
       show:
         author_deleted: Përdoruesi u fshi
         price_explanation: Shpjegimi i çmimit
@@ -114,18 +117,18 @@ sq:
         share: Shpërndaj
         title: Projekt investimi
         supports: Suporti
-        votes: Vota
+        votes: Votim
         price: Çmim
         comments_tab: Komentet
         milestones_tab: Pikëarritje
-        author: Autori
+        author: Autor
         project_unfeasible_html: 'Ky projekt investimi <strong> është shënuar si jo e realizueshme </strong> dhe nuk do të shkojë në fazën e votimit.'
         project_selected_html: 'Ky projekt investimi <strong> është përzgjedhur</strong>  për fazën e votimit.'
         project_winner: 'Projekti fitues i investimeve'
         project_not_selected_html: 'Ky projekt investimi <strong>  nuk eshte selektuar </strong> për fazën e votimit.'
       wrong_price_format: Vetëm numra të plotë
       investment:
-        add: Votë
+        add: Votim
         already_added: Ju e keni shtuar tashmë këtë projekt investimi
         already_supported: Ju e keni mbështetur tashmë këtë projekt investimi. Shperndaje!
         support_title: Mbështetni këtë projekt
@@ -135,11 +138,11 @@ sq:
         supports:
           zero: Asnjë mbështetje
           one: 1  mbështetje
-          other: "%{count} mbështetje"
+          other: "1%{count} mbështetje"
         give_support: Suporti
       header:
         check_ballot: Kontrolloni votimin tim
-        different_heading_assigned_html: "Ju keni votuar tashmë një titull tjetër: %{heading_link}"
+        different_heading_assigned_html: "Ju keni votat aktive në një titull tjetër: %{heading_link}"
         change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
         check_ballot_link: "Kontrolloni votimin tim"
         price: "Ky titull ka një buxhet prej"
@@ -151,7 +154,7 @@ sq:
       phase: Faza aktuale
       unfeasible_title: Investimet e papranueshme
       unfeasible: Shih Investimet e papranueshme
-      unselected_title: Investimet që nuk janë përzgjedhur për fazën e votimit
+      unselected_title: Investimet nuk janë përzgjedhur për fazën e votimit
       unselected: Shih investimet që nuk janë përzgjedhur për fazën e votimit
       see_results: Shiko rezultatet
     results:
@@ -160,7 +163,7 @@ sq:
       heading: "Rezultatet e buxhetit pjesëmarrjës"
       heading_selection_title: "Nga rrethi"
       spending_proposal: Titulli i Propozimit
-      ballot_lines_count: Kohë të zgjedhura
+      ballot_lines_count: Votim
       hide_discarded_link: Hiq të fshehurat
       show_all_link: Shfaqi të gjitha
       price: Çmim
@@ -171,6 +174,15 @@ sq:
       investment_proyects: Lista e të gjitha projekteve të investimeve 
       unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
       not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
+    executions:
+      link: "Pikëarritje"
+      page_title: "%{budget}- Pikëarritje"
+      heading: "Buxhetet pjesëmarrës i Pikës së arritjes"
+      heading_selection_title: "Nga rrethi"
+      no_winner_investments: "Asnjë investim fitues në këtë gjendje"
+      filters:
+        label: "Gjendja aktuale e projektit"
+        all: "Të gjitha (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data e fillimit nuk mund të jetë e barabartë ose më vonë se data e përfundimit"

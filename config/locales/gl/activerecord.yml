@@ -6,33 +6,36 @@ gl:
         other: "actividades"
       budget:
         one: "Orzamento participativo"
-        other: "Orzamentos participativos"
+        other: "Orzamentos"
       budget/investment:
-        one: "Investimento"
-        other: "Investimentos"
+        one: "a proposta de investimento"
+        other: "Propostas de investimento"
       milestone:
         one: "fito"
         other: "fitos"
       milestone/status:
         one: "Estado do investimento"
         other: "Estado dos investimentos"
+      progress_bar:
+        one: "Barra de progreso"
+        other: "Barras de progreso"
       comment:
-        one: "Comentario"
+        one: "Comentar"
         other: "Comentarios"
       debate:
-        one: "Debate"
+        one: "o debate"
         other: "Debates"
       tag:
-        one: "Etiqueta"
+        one: "Tema"
         other: "Etiquetas"
       user:
         one: "Usuario"
-        other: "Usuarios/as"
+        other: "Usuarios"
       moderator:
         one: "Moderador"
         other: "Moderadores"
       administrator:
-        one: "Administrador"
+        one: "Administración"
         other: "Administradores"
       valuator:
         one: "Avaliador"
@@ -45,7 +48,7 @@ gl:
         other: "Xestores"
       newsletter:
         one: "Boletín informativo"
-        other: "Boletíns informativos"
+        other: "Envío de newsletters"
       vote:
         one: "Voto"
         other: "Votos"
@@ -62,40 +65,37 @@ gl:
         one: "Proposta cidadá"
         other: "Propostas cidadás"
       spending_proposal:
-        one: "Proxecto de investimento"
+        one: "Proposta de investimento"
         other: "Proxectos de investimento"
       site_customization/page:
         one: Páxina
-        other: Páxinas
+        other: Páxinas personalizadas
       site_customization/image:
         one: Imaxe
-        other: Imaxes
+        other: Personalizar imaxes
       site_customization/content_block:
         one: Bloque
-        other: Bloques
+        other: Personalizar bloques
       legislation/process:
         one: "Proceso"
         other: "Procesos"
       legislation/proposal:
-        one: "Proposta"
-        other: "Propostas"
+        one: "a proposta"
+        other: "Propostas cidadás"
       legislation/draft_versions:
         one: "Versión borrador"
-        other: "Versións borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
+        other: "Versións do borrador"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
       legislation/question_options:
         one: "Opción de resposta pechada"
-        other: "Opcións de respostas pechadas"
+        other: "Opcións da resposta"
       legislation/answers:
         one: "Resposta"
         other: "Respostas"
       documents:
-        one: "Documento"
+        one: "o documento"
         other: "Documentos"
       images:
         one: "Imaxe"
@@ -107,8 +107,8 @@ gl:
         one: "Votación"
         other: "Votacións"
       proposal_notification:
-        one: "Aviso de proposta"
-        other: "Avisos de propostas"
+        one: "Notificación de proposta"
+        other: "Notificacións das propostas"
     attributes:
       budget:
         name: "Nome"
@@ -122,11 +122,11 @@ gl:
         phase: "Fase"
         currency_symbol: "Moeda"
       budget/investment:
-        heading_id: "Partida do orzamento"
+        heading_id: "Partida"
         title: "Título"
         description: "Descrición"
         external_url: "Ligazón a documentación adicional"
-        administrator_id: "Administrador"
+        administrator_id: "Administración"
         location: "Localización (opcional)"
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
@@ -139,15 +139,22 @@ gl:
       milestone/status:
         name: "Nome"
         description: "Descrición (opcional)"
+      progress_bar:
+        kind: "Tipo"
+        title: "Título"
+        percentage: "Progreso"
+      progress_bar/kind:
+        primary: "Principal"
+        secondary: "Secundaria"
       budget/heading:
         name: "Nome da partida"
-        price: "Cantidade"
+        price: "Custo"
         population: "Poboación"
       comment:
-        body: "Comentario"
-        user: "Usuario"
+        body: "Comentar"
+        user: "Usuario/a"
       debate:
-        author: "Autor"
+        author: "Autoría"
         description: "Opinión"
         terms_of_service: "Termos de servizo"
         title: "Título"
@@ -158,24 +165,24 @@ gl:
         description: "Descrición"
         terms_of_service: "Termos de servizo"
       user:
-        login: "Enderezo de correo electrónico ou nome de usuario"
-        email: "Correo electrónico"
-        username: "Nome de usuario"
+        login: "Correo electrónico ou nome de usuaria"
+        email: "O teu correo electrónico"
+        username: "Nome de usuario/a"
         password_confirmation: "Confirmación de contrasinal"
-        password: "Contrasinal"
+        password: "Contrasinal que empregarás para acceder a este sitio web"
         current_password: "Contrasinal actual"
         phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel do cargo"
-        redeemable_code: "Código de verificación recibido por correo electrónico"
+        redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Nome da organización"
+        name: "Nome de organización"
         responsible_name: "Persoa responsable do colectivo"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administración"
         association_name: "Nome da asociación"
         description: "Descrición"
-        external_url: "Ligazón á documentación adicional"
+        external_url: "Ligazón a documentación adicional"
         geozone_id: "Ámbitos de actuación"
         title: "Título"
       poll:
@@ -193,7 +200,7 @@ gl:
         title: "Pregunta"
         summary: "Resumo"
         description: "Descrición"
-        external_url: "Ligazón á documentación adicional"
+        external_url: "Ligazón a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
       signature_sheet:
@@ -227,19 +234,24 @@ gl:
         summary: Resumo
         description: Descrición
         additional_info: Información adicional
-        start_date: Data de apertura
-        end_date: Data de peche
+        start_date: Data de inicio
+        end_date: Data de final
         debate_start_date: Data en que comeza o debate
         debate_end_date: Data en que remata o debate
+        draft_start_date: Data en que comeza a redacción
+        draft_end_date: Data en que remata a redacción
         draft_publication_date: Data en que se publica o borrador
         allegations_start_date: Data en que comezan as alegacións
         allegations_end_date: Data en que rematan as alegacións
         result_publication_date: Data de publicación do resultado final
+        background_color: Cor de fondo
+        font_color: Cor da letra
       legislation/process/translation:
         title: Título do proceso
         summary: Resumo
         description: Descrición
         additional_info: Información adicional
+        milestones_summary: Resumo
       legislation/draft_version:
         title: Título da versión
         body: Texto
@@ -256,7 +268,7 @@ gl:
       legislation/question_option:
         value: Valor
       legislation/annotation:
-        text: Comentario
+        text: Comentar
       document:
         title: Título
         attachment: Anexo
@@ -275,7 +287,7 @@ gl:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: De
+        from: Dende
         body: Contido da mensaxe
       admin_notification:
         segment_recipient: Destinatarios
@@ -291,6 +303,7 @@ gl:
         description: Descrición
         link_text: Texto da ligazón
         link_url: URL da ligazón
+        columns: Número de columnas
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título
@@ -307,7 +320,7 @@ gl:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
+              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -340,6 +353,8 @@ gl:
               invalid_date_range: ten que ser igual ou posterior á data de inicio
             debate_end_date:
               invalid_date_range: ten que ser igual ou posterior á data de comezo do debate
+            draft_end_date:
+              invalid_date_range: ten que ser igual ou posterior á data de comezo da redacción
             allegations_end_date:
               invalid_date_range: ten que ser igual ou posterior á data en que comezan ás alegacións
         proposal:
@@ -349,7 +364,7 @@ gl:
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "os temas deben ser menor ou igual que %{count}"
+              less_than_or_equal_to: "o número de etiquetas debe ser igual ou menor que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:

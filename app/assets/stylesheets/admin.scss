@@ -224,6 +224,11 @@ $sidebar-active: #f4fcd0;
       label {
         color: #fff;
       }
+
+      a {
+        color: inherit;
+        white-space: nowrap;
+      }
     }
 
     .break {

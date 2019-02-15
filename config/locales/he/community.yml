@@ -1,1 +1,27 @@
 he:
+  community:
+    show:
+      create_first_community_topic:
+        sign_in: "התחברות"
+        sign_up: "הרשמה"
+      sidebar:
+        participate: רוצה להשתתף בזה
+        new_topic: יצירת נושא
+      topic:
+        destroy: מחיקת הנושא
+        comments:
+          zero: אין תגובות
+      author: מחבר/ת
+    topic:
+      form:
+        topic_title: שם
+        new:
+          submit_button: יצירת נושא
+        create:
+          submit_button: יצירת נושא
+      show:
+        tab:
+          comments_tab: הערות
+  topics:
+    show:
+      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה

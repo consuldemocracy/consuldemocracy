@@ -2,115 +2,118 @@ de:
   budgets:
     ballots:
       show:
-        title: Ihre Abstimmung
-        amount_spent: Ausgaben
-        remaining: "Sie können noch <span>%{amount}</span> investieren."
+        title: Mein Stimme
+        amount_spent: Gesamtausgaben
+        remaining: "Sie können noch <span>%{amount}</span> ausgeben."
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
         voted_html:
           one: "Sie haben über <span>einen</span> Vorschlag abgestimmt."
           other: "Sie haben über <span>%{count}</span> Vorschläge abgestimmt."
-        voted_info_html: "Sie können Ihre Stimme bis zum Ende dieser Phase jederzeit ändern. <br> Sie müssen nicht das gesamte verfügbare Geld ausgeben."
-        zero: Sie haben noch nicht für einen Ausgabenvorschlag abgestimmt.
+        voted_info_html: "Sie können Ihre Stimme bis zur Schließung dieser Phase jederzeit ändern. <br> Sie müssen nicht sämtliches verfügbares Geld ausgeben."
+        zero: Sie haben noch über keinen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
-        not_logged_in: Sie müssen %{signin} oder %{signup} um fortfahren zu können.
-        not_verified: Nur verifizierte NutzerInnen können für Investitionen abstimmen; %{verify_account}.
-        organization: Organisationen dürfen nicht abstimmen
-        not_selected: Nicht ausgewählte Investitionen können nicht unterstützt werden
-        not_enough_money_html: "Sie haben bereits das verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
-        no_ballots_allowed: Auswahlphase ist abgeschlossen
-        different_heading_assigned_html: "Sie haben bereits eine andere Rubrik gewählt: %{heading_link}"
-        change_ballot: Ändern Sie Ihre Stimmen
+        not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
+        not_verified: Nur verifizierte Benutzer*innen können über einen Ausgabenvorschlag abstimmen; %{verify_account}.
+        organization: Organisationen ist es nicht erlaubt abzustimmen
+        not_selected: Für nicht durchführbare Ausgabevorschläge kann nicht abgestimmt werden
+        not_enough_money_html: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
+        no_ballots_allowed: Die Auswahlphase ist abgeschlossen
+        different_heading_assigned_html: "Sie haben bereits für eine andere Rubrik gestimmt: %{heading_link}"
+        change_ballot: Ändern Sie Ihre Wahl
     groups:
       show:
         title: Wählen Sie eine Option
-        unfeasible_title: undurchführbare Investitionen
-        unfeasible: Undurchführbare Investitionen anzeigen
-        unselected_title: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden
-        unselected: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
+        unfeasible_title: Nicht durchführbare Ausgabenvorschläge
+        unfeasible: Nicht durchführbare Investitionen anzeigen
+        unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
+        unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
     phase:
       drafting: Entwurf (nicht für die Öffentlichkeit sichtbar)
-      informing: Informationen
-      accepting: Projekte annehmen
+      informing: Information
+      accepting: Projekte vorschlagen
       reviewing: Interne Überprüfung der Projekte
-      selecting: Projekte auswählen
-      valuating: Projekte bewerten
+      selecting: Auswahlphase
+      valuating: Projekte begutachten
       publishing_prices: Preise der Projekte veröffentlichen
       balloting: Abstimmung für Projekte
-      reviewing_ballots: Wahl überprüfen
+      reviewing_ballots: Abstimmung überprüfen
       finished: Abgeschlossener Haushalt
     index:
-      title: partizipative Haushaltsmittel
-      empty_budgets: Kein Budget vorhanden.
+      title: Bürgerhaushalte
+      empty_budgets: Kein Bürgerhaushalte vorhanden.
       section_header:
-        icon_alt: Symbol für partizipative Haushaltsmittel
-        title: partizipative Haushaltsmittel
-        help: Hilfe mit partizipativen Haushaltsmitteln
+        icon_alt: Symbol für Bürgerhaushalte
+        title: Bürgerhaushalte
+        help: Hilfe zu Bürgerhaushalten
         all_phases: Alle Phasen anzeigen
-      all_phases: Investitionsphasen des Haushalts
-      map: Geographisch verteilte Budget-Investitionsvorschläge
-      investment_proyects: Liste aller Investitionsprojekte
-      unfeasible_investment_proyects: Liste aller undurchführbaren Investitionsprojekte
-      not_selected_investment_proyects: Liste aller Investitionsprojekte, die nicht zur Abstimmung ausgewählt wurden
-      finished_budgets: Abgeschlossene participative Haushalte
+      all_phases: Phasen des Bürgerhaushalts
+      map: Ausgabenvorschläge geografisch geordnet
+      investment_proyects: Liste aller Ausgabenvorschläge
+      unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
+      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die nicht für die Abstimmung ausgewählt wurden
+      finished_budgets: Abgeschlossene Bürgerhaushalte
       see_results: Ergebnisse anzeigen
       section_footer:
-        title: Hilfe mit partizipativen Haushaltsmitteln
-        description: Mit den partizipativen Haushaltsmitteln können BürgerInnen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
+        title: Hilfe zu Bürgerhaushalten
+        description: Durch Bürgerhaushalte können Bürger*innen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
+      milestones: Meilensteine
     investments:
       form:
         tag_category_label: "Kategorien"
-        tags_instructions: "Diesen Vorschlag markieren. Sie können aus vorgeschlagenen Kategorien wählen, oder Ihre eigenen hinzufügen"
+        tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
         tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
         location: "Weitere Ortsangaben"
-        map_skip_checkbox: "Dieses Investment hat keinen konkreten Standort oder mir ist keiner bewusst."
+        map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
         title: Partizipative Haushaltsplanung
-        unfeasible: Undurchführbare Investitionsprojekte
-        unfeasible_text: "Die Investition muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Gegenständlichkeit, die Verantwortung der Stadt sein, nicht das Limit des Haushaltes überschreiten) um für durchführbar erklärt zu werden und das Stadium der finalen Wahl zu erreichen. Alle Investitionen, die diese Kriterien nicht erfüllen, sind als undurchführbar markiert und stehen in der folgenden Liste, zusammen mit ihrem Report zur Unausführbarkeit."
-        by_heading: "Investitionsprojekte mit Reichweite: %{heading}"
+        unfeasible: Undurchführbare Investitionsvorschläge
+        unfeasible_text: "Der Ausgabenvorschlag muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Durchführbarkeit, im Aufgabenbereich der Stadt, innerhalb des Limits des Haushaltes) um für durchführbar erklärt werden zu können und das Stadium der finalen Abstimmung zu erreichen. Alle Ausgabenvorschläge, die diese Kriterien nicht erfüllen, sind als nicht durchführbar markiert und stehen in der folgenden Liste, zusammen mit einem Bericht zur Undurchführbarkeit."
+        by_heading: "Ausgabenvorschläge im Bereich: %{heading}"
         search_form:
           button: Suche
-          placeholder: Suche Investitionsprojekte...
+          placeholder: Suche Ausgabenvorschläge...
           title: Suche
         search_results_html:
           one: " enthält den Begriff <strong>'%{search_term}'</strong>"
-          other: " enthält die Begriffe <strong>'%{search_term}'</strong>"
+          other: " enthält den Begriff <strong>'%{search_term}'</strong>"
         sidebar:
-          my_ballot: Mein Stimmzettel
+          my_ballot: Meine Stimmen
           voted_html:
-            one: "<strong>Sie haben für einen Antrag mit Kosten von %{amount_spent}-</strong> gestimmt"
+            one: "<strong>Sie haben für einen Vorschlag mit Kosten von %{amount_spent}-</strong> gestimmt"
             other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
           voted_info: Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben.
-          voted_info_link: Bewertung ändern
-          different_heading_assigned_html: "Sie haben aktive Stimmen in einer anderen Rubrik: %{heading_link}"
-          change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
-          check_ballot_link: "meine Abstimmung überprüfen"
-          zero: Sie haben für keine Investitionsprojekte in dieser Gruppe abgestimmt.
-          verified_only: "Um ein neues Budget zu erstellen %{verify}."
-          verify_account: "verifizieren Sie Ihr Benutzerkonto"
-          create: "Budgetinvestitionen erstellen"
-          not_logged_in: "Um ein neues Budget zu erstellen, müssen Sie %{sign_in} oder %{sign_up}."
+          voted_info_link: Ihre Wahl ändern
+          different_heading_assigned_html: "Sie haben bereits in einem anderen Bereich: %{heading_link} abgestimmt"
+          change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
+          check_ballot_link: "Überprüfung meiner Abstimmung"
+          zero: Sie haben für keinen Ausgabenvorschlag in dieser Gruppe abgestimmt.
+          verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
+          verify_account: "verifizieren Sie Ihr Konto"
+          create: "Eine Budgetinvestitionen erstellen"
+          not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
           sign_in: "anmelden"
           sign_up: "registrieren"
           by_feasibility: Nach Durchführbarkeit
           feasible: Durchführbare Projekte
-          unfeasible: Undurchführbare Projekte
+          unfeasible: Nicht durchführbare Projekte
         orders:
           random: zufällig
           confidence_score: am besten bewertet
           price: nach Preis
+      share:
+        message: "Ich habe einen Ausgabenvorschlag %{title} in %{org} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
         author_deleted: Benutzer gelöscht
         price_explanation: Preiserklärung
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
-        code_html: 'Investitionsprojektcode: <strong>%{code}</strong>'
-        location_html: 'Lage: <strong>%{location}</strong>'
-        organization_name_html: 'Vorgeschlagen im Namen von: <strong>%{name}</strong>'
+        code_html: 'Code des Ausgabenvorschlags: <strong>%{code}</strong>'
+        location_html: 'Standort: <strong>%{location}</strong>'
+        organization_name_html: 'Vorgeschlagen von: <strong>%{name}</strong>'
         share: Teilen
         title: Investitionsprojekt
         supports: Unterstützung
@@ -119,60 +122,70 @@ de:
         comments_tab: Kommentare
         milestones_tab: Meilensteine
         author: Autor
-        project_unfeasible_html: 'Dieses Investitionsprojekt <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
-        project_selected_html: 'Dieses Investitionsprojekt wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
-        project_winner: 'Siegreiches Investitionsprojekt'
-        project_not_selected_html: 'Dieses Investitionsprojekt wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt.'
+        project_unfeasible_html: 'Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
+        project_selected_html: 'Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
+        project_winner: 'Best bewerteter Ausgabenvorschlag'
+        project_not_selected_html: 'Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt.'
+        see_price_explanation: Erläuterung der Kosten anzeigen
       wrong_price_format: Nur ganze Zahlen
       investment:
-        add: Abstimmung
-        already_added: Sie haben dieses Investitionsprojekt schon hinzugefügt
-        already_supported: Sie haben dieses Investitionsprojekt bereits unterstützt. Teilen Sie es!
+        add: Stimme
+        already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
+        already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
         support_title: Unterstützen Sie dieses Projekt
         confirm_group:
-          one: "Sie können nur Investitionen im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
-          other: "Sie können nur Investitionen im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
+          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
-          one: 1 Befürworter/in
-          other: "%{count} Befürworter/innen"
+          one: 1 Unterstützer/in
+          other: "%{count} Unterstützer/innen"
         give_support: Unterstützung
       header:
-        check_ballot: Überprüfung meiner Abstimmung
-        different_heading_assigned_html: "Sie haben aktive Abstimmungen in einem anderen Bereich: %{heading_link}"
-        change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
-        check_ballot_link: "Überprüfung meiner Abstimmung"
-        price: "Diese Rubrik verfügt über ein Budget von"
+        check_ballot: Meine Abstimmung überprüfen
+        different_heading_assigned_html: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
+        change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
+        check_ballot_link: "Meine Abstimmung überprüfen"
+        price: "Diese Rubrik verfügt über einen Haushalt von"
     progress_bar:
       assigned: "Sie haben zugeordnet: "
       available: "Verfügbare Haushaltsmittel: "
     show:
       group: Gruppe
       phase: Aktuelle Phase
-      unfeasible_title: undurchführbare Investitionen
-      unfeasible: Undurchführbare Investitionen anzeigen
-      unselected_title: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden
-      unselected: Investitionen, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
+      unfeasible_title: Nicht durchführbare Ausgabenvorschläge
+      unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
+      unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
+      unselected: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben, anzeigen
       see_results: Ergebnisse anzeigen
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"
-      heading: "Ergebnisse der partizipativen Haushaltsmittel"
-      heading_selection_title: "Nach Stadtteil"
+      heading: "Ergebnisse des Bürgerhaushalts"
+      heading_selection_title: "Nach Bezirk"
       spending_proposal: Titel des Vorschlages
-      ballot_lines_count: Male ausgewählt
-      hide_discarded_link: Ausblendung löschen
+      ballot_lines_count: Stimmen
+      hide_discarded_link: Verworfene ausblenden
       show_all_link: Alle anzeigen
       price: Preis
       amount_available: Verfügbare Haushaltsmittel
-      accepted: "Zugesagter Ausgabenvorschlag:"
-      discarded: "Gelöschter Ausgabenvorschlag: "
-      incompatibles: Unvereinbarkeiten
-      investment_proyects: Liste aller Investitionsprojekte
-      unfeasible_investment_proyects: Liste aller undurchführbaren Investitionsprojekte
-      not_selected_investment_proyects: Liste aller Investitionsprojekte, die nicht zur Abstimmung ausgewählt wurden
+      accepted: "Genehmigter Ausgabenvorschlag: "
+      discarded: "Verworfener Ausgabenvorschlag: "
+      incompatibles: Unvereinbar
+      investment_proyects: Liste aller Ausgabenvorschläge
+      unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
+      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die es nicht in die Abstimmung geschafft haben
+    executions:
+      link: "Meilensteine"
+      page_title: "%{budget} - Meilensteine"
+      heading: "Meilensteine des Bürgerhaushaltes"
+      heading_selection_title: "Nach Bezirk"
+      no_winner_investments: "Keine erfolgreichen Ausgabenvorschläge in diesem Status"
+      filters:
+        label: "Aktueller Stand des Projekts"
+        all: "Alle (%{count})"
     phases:
       errors:
-        dates_range_invalid: "Das Startdatum kann nicht gleich oder später als das Enddatum sein"
-        prev_phase_dates_invalid: "Startdatum muss zu einem späteren Zeitpunkt, als das Startdatum der zuvor freigegebenden Phase (%{phase_name}, liegen"
-        next_phase_dates_invalid: "Abschlussdatum muss vor dem Abschlussdatum der nächsten freigegebenen Phase (%{phase_name}) liegen"
+        dates_range_invalid: "Das Anfangsdatum kann nicht gleich oder später als das Enddatum sein"
+        prev_phase_dates_invalid: "Das Anfangsdatum muss zu einem späteren Zeitpunkt, als das Startdatum der zuvor freigegebenden Phase (%{phase_name}), liegen"
+        next_phase_dates_invalid: "Das Enddatum muss vor dem Enddatum der nächsten freigegebenen Phase (%{phase_name}) liegen"

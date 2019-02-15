@@ -2,35 +2,35 @@ nl:
   devise_views:
     confirmations:
       new:
-        email_label: Email
+        email_label: E-mail
         submit: Stuur instructies opnieuw
-        title: Stuur bevestigingsinstructies opnieuw
+        title: Stuur bevestiging instructies opnieuw
       show:
-        instructions_html: Bevestig de account via %{email}
+        instructions_html: Bevestig het account via %{email}
         new_password_confirmation_label: Herhaal wachtwoord
         new_password_label: Nieuw wachtwoord
-        please_set_password: Kies een nieuw wachtwoord (voor login met de email hierboven)
-        submit: Bevestig
+        please_set_password: Kies een nieuw wachtwoord (voor login met email hierboven)
+        submit: Confirm
         title: Bevestig mijn account
     mailer:
       confirmation_instructions:
         confirm_link: Bevestig mijn account
-        text: 'Je kunt je emailaccount via de volgende link bevestigen.'
+        text: 'U kunt uw email adres bevestigen via de volgende link:'
         title: Welkom
         welcome: Welkom
       reset_password_instructions:
-        change_link: Wijzig mijn wachtwoord
+        change_link: Verander wachtwoord
         hello: Hallo
-        ignore_text: Negeer deze email als u geen wachtwoord reset heeft aangevraagd.
-        info_text: Je wachtwoord wordt niet aangepast tenzij je dit via de link aanpast.
-        text: 'We hebben een verzoek tot wijziging van je wachtwoord ontvangen. Je kunt dit doen via de volgende link:'
-        title: Wijzig je wachtwoord
+        ignore_text: Negeer deze mail als u geen wachtwoord aanpassing heeft aangevraagd.
+        info_text: Uw wachtwoord zal niet worden aangepast tot u dit via de link edit.
+        text: 'We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:'
+        title: Pas wachtwoord aan
       unlock_instructions:
         hello: Hallo
-        info_text: Je account is geblokkeerd vanwege een teveel aan mislukte inlogpogingen.
-        instructions_text: 'Klik op deze link om je account te deblokkeren :'
-        title: Je account is geblokkeerd.
-        unlock_link: Deblokkeer mijn account.
+        info_text: Uw account is geblokkeerd vanwege een te groot aantal mislukte inlogpogingen.
+        instructions_text: 'Klik deze link om uw account te de-blokkeren:'
+        title: Uw account is geblokkeerd
+        unlock_link: De-blokkeer mijn account
     menu:
       login_items:
         login: Aanmelden
@@ -39,17 +39,19 @@ nl:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Organisatienaam
+          email_label: E-mail
+          organization_name_label: Naam van organisatie
           password_confirmation_label: Bevestig wachtwoord
           password_label: Wachtwoord
           phone_number_label: Telefoonnummer
-          responsible_name_label: Volledige naam van de vertegenwoordiger van deze organisatie/vereniging.
-          responsible_name_note: Dit is de persoon die namens de vereniging/organisatie voorstellen indient.
-          submit: Registreer
-          title: Registreer als vereniging of organisatie
+          responsible_name_label: Volledige naam van de vertegenwoordiger van het collectief
+          responsible_name_note: Dit is de persoon die namens de vereniging of het collectief voorstellen indient
+          submit: Aanmelden
+          title: Als organisatie of collectief aanmelden
         success:
-          back_to_index: Ik begrijp het, ga terug naar de hoofdpagina
+          back_to_index: Begrepen; terug naar hoofdpagina
+          instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
+          instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
           instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
           title: Aanmelden van organisatie of collectief
     passwords:
@@ -59,7 +61,7 @@ nl:
         password_label: Nieuw wachtwoord
         title: Verander uw wachtwoord
       new:
-        email_label: Email
+        email_label: E-mail
         send_submit: Stuur instructies
         title: Wachtwoord vergeten?
     sessions:
@@ -67,7 +69,7 @@ nl:
         login_label: Email of gebruikersnaam
         password_label: Wachtwoord
         remember_me: Onthoud mij
-        submit: Ok
+        submit: Log in
         title: Log in
     shared:
       links:
@@ -77,10 +79,10 @@ nl:
         new_unlock: Geen de-blokkeer instructies ontvangen?
         signin_with_provider: Log in met %{provider}
         signup: Geen account? %{signup_link}
-        signup_link: Aanmelden
+        signup_link: Registreer
     unlocks:
       new:
-        email_label: Email
+        email_label: E-mail
         submit: Stuur de-blokker instructies opnieuw.
         title: Stuur de-blokker instructies
     users:
@@ -93,17 +95,17 @@ nl:
           title: Verwijder account
         edit:
           current_password_label: Huidig wachtwoord
-          edit: Toegangsgegevens aanpassen
-          email_label: Email
+          edit: Edit
+          email_label: E-mail
           leave_blank: Laat leeg als u het niet wilt aanpassen
           need_current: Uw huidige wachtwoord ter bevestiging van de veranderingen
           password_confirmation_label: Bevestig nieuw wachtwoord
           password_label: Nieuw wachtwoord
-          update_submit: Pas aan
+          update_submit: Update
           waiting_for: 'In afwachting van bevestiging:'
         new:
-          cancel: Annuleer inloggen
-          email_label: Email
+          cancel: Annuleren inloggen
+          email_label: E-mail
           organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
           organization_signup_link: Hier aanmelden
           password_confirmation_label: Bevestig wachtwoord
@@ -113,10 +115,10 @@ nl:
           terms: Met aanmelding accepteerd u de %{terms}
           terms_link: voorwaarden van gebruik
           terms_title: Met aanmelding accepteerd u de voorwaarden van gebruik
-          title: Aanmelden
+          title: Registreren
           username_is_available: Gebruikersnaam is beschikbaar
           username_is_not_available: Gebruikersnaam is bezet
-          username_label: Gebruikersnaam
+          username_label: Username
           username_note: De naam bij uw bijdragen
         success:
           back_to_index: Begrepen; terug naar hoofdpagina
