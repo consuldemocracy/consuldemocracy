@@ -4,6 +4,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include ImageAttributes
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 
@@ -130,7 +131,7 @@ module Budgets
         params.require(:budget_investment)
               .permit(:title, :description, :heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
-                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom])
       end
