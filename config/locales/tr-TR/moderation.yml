@@ -2,6 +2,7 @@ tr:
   moderation:
     comments:
       index:
+        block_authors: Yazarları engelle
         confirm: Emin misiniz?
         filter: Filtre
         filters:
