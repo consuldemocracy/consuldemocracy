@@ -88,11 +88,6 @@ he:
         administrator_filter_all: כל מנהלי המערכת
         valuator_filter_all: כל המעריכים
         tags_filter_all: כל התגיות
-        sort_by:
-          placeholder: סדר לפי
-          id: ID
-          title: שם
-          supports: לחיצה לתמיכה
         filters:
           all: כולם
           without_admin: מבלי להקצות מנהל/ת
