@@ -18,7 +18,9 @@ Rails.application.configure do
   config.allow_concurrency = false
 
   # Configure static file server for tests with Cache-Control for performance.
-  config.serve_static_files   = true
+  config.serve_static_assets = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.serve_static_file = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.static_cache_control = 'public, max-age=3600'
 
   # Show full error reports and disable caching.
