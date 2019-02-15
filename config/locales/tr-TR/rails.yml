@@ -122,8 +122,28 @@ tr:
       prompt: Lütfen seçiniz
     submit:
       create: '%{model} Oluştur'
+      submit: '%{model} Kaydet'
+      update: '%{model} Güncelle'
   number:
     human:
+      decimal_units:
+        units:
+          billion: Milyar
+          million: Milyon
+          quadrillion: Katrilyon
+          thousand: Bin
+          trillion: Trilyon
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          byte:
+            one: Bayt
+            other: Bayt
+  support:
+    array:
+      two_words_connector: " ve "
+  time:
+    am: öö
+    pm: ös
