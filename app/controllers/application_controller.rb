@@ -122,8 +122,9 @@ class ApplicationController < ActionController::Base
 
     def set_return_url
       if !devise_controller? && controller_name != 'welcome' && controller_name != 'direct_uploads' && is_navigational_format?
-        # store_location_for(:user, request.path) # De esta forma no guarda los parámetros que hay en la url.
-        store_location_for(:user, url_for(request.params))
+        path = request.path
+        path = url_for(request.params) if request.method == 'GET'
+        store_location_for(:user, path)
       end
     end
 
