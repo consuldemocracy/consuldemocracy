@@ -131,10 +131,6 @@ ru:
         tags_filter_all: Все метки
         advanced_filters: Расширенные фильтры
         placeholder: Искать в проектах
-        sort_by:
-          placeholder: Сортировать по
-          title: Название
-          supports: Поддержки
         filters:
           all: Все
           without_admin: Без назначенного администратора
