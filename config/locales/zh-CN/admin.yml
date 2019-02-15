@@ -145,11 +145,6 @@ zh-CN:
         tags_filter_all: 所有标签
         advanced_filters: 高级过滤器
         placeholder: 搜索项目
-        sort_by:
-          placeholder: 排序依据
-          id: ID
-          title: 标题
-          supports: 支持
         filters:
           all: 所有
           without_admin: 没有指定的管理员
