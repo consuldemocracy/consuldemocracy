@@ -120,10 +120,6 @@ es-PE:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
-        sort_by:
-          placeholder: Ordenar por
-          title: Título
-          supports: Apoyos
         filters:
           all: Todas
           without_admin: Sin administrador
