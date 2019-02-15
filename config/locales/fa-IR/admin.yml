@@ -136,11 +136,6 @@ fa:
         tags_filter_all: همه برچسب ها
         advanced_filters: فیلترهای پیشرفته
         placeholder: جستجو در پروژه ها
-        sort_by:
-          placeholder: مرتب سازی بر اساس
-          id: شناسه
-          title: عنوان
-          supports: پشتیبانی ها
         filters:
           all: همه
           without_admin: بدون تعیین مدیر
