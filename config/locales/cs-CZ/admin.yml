@@ -104,11 +104,6 @@ cs:
       index:
         tags_filter_all: Všechny štítky
         placeholder: Prohledat projekty
-        sort_by:
-          placeholder: Třídit podle
-          id: ID
-          title: Předmět
-          supports: Podpora
         filters:
           all: Vše
           selected: Vybrané
