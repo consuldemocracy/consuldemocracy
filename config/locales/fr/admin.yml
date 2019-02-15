@@ -145,11 +145,6 @@ fr:
         tags_filter_all: Toutes les étiquettes
         advanced_filters: Filtres avancés
         placeholder: Chercher des projets
-        sort_by:
-          placeholder: Trier par
-          id: ID
-          title: Titre
-          supports: Soutiens
         filters:
           all: Toutes
           without_admin: Sans administrateur affecté
