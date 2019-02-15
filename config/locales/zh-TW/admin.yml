@@ -144,11 +144,6 @@ zh-TW:
         tags_filter_all: 所有標籤
         advanced_filters: 高級篩選器
         placeholder: 搜索項目
-        sort_by:
-          placeholder: 排序依據
-          id: ID
-          title: 標題
-          supports: 支持
         filters:
           all: 所有
           without_admin: 沒有指定的管理員
