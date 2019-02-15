@@ -145,11 +145,6 @@ sq:
         tags_filter_all: Të gjitha etiketat
         advanced_filters: Filtra të avancuar
         placeholder: Kërko projekte
-        sort_by:
-          placeholder: Ndaj sipas
-          id: ID
-          title: Titull
-          supports: Suporti
         filters:
           all: Të gjithë
           without_admin: Pa caktuar administratorin
