@@ -108,10 +108,6 @@ ca:
         administrator_filter_all: Tots els administradors
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
-        sort_by:
-          placeholder: Ordenar per
-          title: Títol
-          supports: Avals
         filters:
           all: tots
           without_admin: Sense administrador
