@@ -101,6 +101,7 @@ ar:
   form:
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
+    not_saved_html: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
@@ -136,6 +137,8 @@ ar:
       notification_item:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
+    admin:
+      watch_form_message: 'لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟'
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -341,6 +344,8 @@ ar:
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
     whatsapp: واتساب
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
     form:
       association_name: 'اسم الرابطة'
