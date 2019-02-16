@@ -136,18 +136,15 @@ nl:
         title: "Title"
         description: "Omschrijving"
         publication_date: "Publicatiedatum"
-<<<<<<< HEAD
       budget/investment/status:
         name: "Naam"
         description: "Beschrijving (optioneel)"
-=======
       milestone/status:
-        name: "Name"
-        description: "Description (optional)"
+        name: "Naam"
+        description: "Beschrijving (optioneel)"
       progress_bar:
         kind: "Type"
-        title: "Title"
->>>>>>> b330de01f6719a4729617d17f3bef0f43950fd38
+        title: "Titel"
       budget/heading:
         name: "Kop naam"
         price: "Prijs"
