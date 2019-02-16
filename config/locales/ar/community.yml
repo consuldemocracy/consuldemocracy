@@ -9,6 +9,7 @@ ar:
     show:
       title:
         proposal: اقتراح المجتمع
+        investment: مجتمع ميزانية الاستثمار
       create_first_community_topic:
         sign_in: "تسجيل الدخول"
         sign_up: "انشاء حساب"
