@@ -22,6 +22,7 @@ ar:
           offices: مكاتب دعم المواطنين
       edit:
         see_all: انظر جميع المقترحات
+        title: أحرف مطلوبة
       errors:
         incorrect_code: رمز التحقق غير صحيح
       new:
@@ -32,7 +33,11 @@ ar:
         send_letter: أرسل لي رسالة مع الرمز
         title: تهانينا!
         user_permission_info: من خلال حسابك يمكنك...
+      update:
+        flash:
+          success: الكود صحيح. تم التأكد من حسابك بنجاح
     redirect_notices:
+      already_verified: تم تأكيد حسابك مسبقاً
       email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
     residence:
       new:
@@ -41,11 +46,20 @@ ar:
         document_type_label: نوع الوثيقة
         postal_code: الرمز البريدي
         postal_code_note: لتتمكن من تاكيد حسابك يرجى التسجيل
+        title: التحقق من مكان الإقامة
+        verify_residence: التحقق من مكان الإقامة
     sms:
+      create:
+        flash:
+          success: ادخل الرمز الذي ارسل إلك برسالة نصية
       edit:
+        confirmation_code: أدخل الرمز الذي وصلك على هاتفك
         resend_sms_link: اضغط هنا لاعادة الارسال
+        resend_sms_text: لم احصل على رمز التاكيد ؟
         submit_button: إرسال
+        title: رمز التأكيد
       new:
+        phone: ادخل رقم الموبايل ليصلك الرمز
         submit_button: ارسال
     step_1: الإقامة
     step_2: رمز التأكيد
