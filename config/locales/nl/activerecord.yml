@@ -5,12 +5,9 @@ nl:
         one: "activiteit"
         other: "activiteiten"
       budget:
-        one: "Burgerbegroting"
+        one: "Budget"
         other: "Budgetten"
       budget/investment:
-        one: "Investering"
-        other: "Investeringen"
-      budget/investment/milestone:
         one: "Investering"
         other: "Investeringen"
       milestone:
@@ -19,6 +16,9 @@ nl:
       milestone/status:
         one: "Mijlpaalstatus"
         other: "Mijlpaalstatussen"
+      progress_bar:
+        one: "Voortgang"
+        other: "Voortgang"
       comment:
         one: "Commentaar"
         other: "Comments"
@@ -26,17 +26,17 @@ nl:
         one: "Discussie"
         other: "Discussie"
       tag:
-        one: "Label"
-        other: "Tags"
+        one: "Term"
+        other: "Termen"
       user:
-        one: "Hidden users"
+        one: "Gebruiker"
         other: "Gebruikers"
       moderator:
         one: "Moderator"
-        other: "Moderators"
+        other: "Moderatoren"
       administrator:
         one: "Beheerder"
-        other: "Admins"
+        other: "Beheerders"
       valuator:
         one: "beoordelaar"
         other: "beoordelaars"
@@ -122,8 +122,8 @@ nl:
         phase: "Phase"
         currency_symbol: "Valuta"
       budget/investment:
-        heading_id: "Partida"
-        title: "Title"
+        heading_id: "Rubriek"
+        title: "Titel"
         description: "Beschrijving"
         external_url: "Link naar meer informatie"
         administrator_id: "Beheerder"
@@ -131,20 +131,21 @@ nl:
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding ter omschrijving van het voorstel"
         image_title: "Naam van de afbeelding"
-      budget/investment/milestone:
+      milestone:
         status_id: "Huidige investeringsstatus (optioneel)"
-        title: "Title"
+        title: "Titel"
         description: "Omschrijving"
         publication_date: "Publicatiedatum"
-      budget/investment/status:
-        name: "Naam"
-        description: "Beschrijving (optioneel)"
       milestone/status:
         name: "Naam"
         description: "Beschrijving (optioneel)"
       progress_bar:
         kind: "Type"
         title: "Titel"
+        percentage: "Voortgang"
+      progress_bar/kind:
+        primary: "Primair"
+        secondary: "Secundair"
       budget/heading:
         name: "Kop naam"
         price: "Prijs"
@@ -348,6 +349,8 @@ nl:
             end_date:
               invalid_date_range: moet op of na de begindatum liggen
             debate_end_date:
+              invalid_date_range: moet op of na de begindatum van het debat zijn
+            draft_end_date:
               invalid_date_range: moet op of na de begindatum van het debat zijn
             allegations_end_date:
               invalid_date_range: moet op of na de startdatum van bewijsvoering zijn

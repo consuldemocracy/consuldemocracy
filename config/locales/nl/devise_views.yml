@@ -53,6 +53,7 @@ nl:
           instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
           instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
           instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
+          thank_you_html: Bedankt voor het aanmelden. Een verificatie email is verzonden.
           title: Aanmelden van organisatie of collectief
     passwords:
       edit:
@@ -125,3 +126,4 @@ nl:
           instructions_1_html: <b>Check uw email</b> - we hebben u een <b>link ter bevestiging</b> gestuurd.
           instructions_2_html: Na bevestiging kunt u deelnemen.
           thank_you_html: Dank voor uw aanmelding. Uw email moet nu worden <b>bevestigd</b>.
+          title: Emailadres bevestigen

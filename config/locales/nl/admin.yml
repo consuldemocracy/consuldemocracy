@@ -113,7 +113,11 @@ nl:
         recalculate: Herbereken gewonnen investeringen
     budget_groups:
       name: "Name"
+      headings_name: "Rubrieken"
+      headings_edit: "Rubrieken bewerken"
+      headings_manage: "Rubrieken beheren"
       max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
+      no_groups: "Geen groepen aanwezig."
       amount:
         one: "Er is 1 groep"
         other: "Er zijn %{count} groepen"
@@ -131,14 +135,32 @@ nl:
         submit: "Sla op"
     budget_headings:
       name: "Name"
+      no_headings: "Geen rubrieken aanwezig."
+      amount:
+        one: "Er is 1 Rubriek"
+        other: "Es zijn %{count} Rubrieken"
+      create:
+        notice: "Rubrik aangemaakt"
+      update:
+        notice: "Rubrik bijgewerkt"
+      destroy:
+        success_notice: "Rubriek verwijderd"
+        unable_notice: "De rubriek kon niet worden verwijderd"
       form:
-        name: "Kop naam"
-        amount: "Bedrag"
+        name: "Rubrieknaam"
+        amount: "Aantal"
         population: "Bevolking"
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
         latitude: "Breedte"
         longitude: "Lengte"
-        submit: "Bewaar kop"
+        coordinates_info: "Wanneer lenge- en breedetegraad zijn opgegeven, wordt de rubriek van een kaart voorzien. De kaart wordt op basis van de opgegeven coordinaten getoond."
+        allow_content_block: "Inhoud toestaan"
+        content_blocks_info: "Wanneer inhoud is toegestaan, kunnen gebruikers inhoud toevoegen die bij de rubriek wordt getoond."
+        create: "Nieuwe rubriek aanmaken"
+        edit: "Rubriek bewerken"
+        submit: "Rubriek opslaan"
+      index:
+        back: "terug naar groepen"
     budget_phases:
       edit:
         start_date: Startdatum
@@ -271,6 +293,8 @@ nl:
         image: "Afbeelding"
         show_image: "Toon afbeelding"
         documents: "Documenten"
+        milestone: Mijlpaal
+        new_milestone: Nieuwe mijlpaal instellen
       form:
         admin_statuses: Beheerderstatussen
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
@@ -307,10 +331,28 @@ nl:
       delete:
         notice: Investeringsstatus succesvol verwijderd
     progress_bars:
+      manage: "Voortgangsindicatie beheren"
       index:
+        title: "Voortgangsindicatie"
+        no_progress_bars: "Geen voortgangsindicaties"
+        new_progress_bar: "Nieuwe voortgangsindicatie instellen"
+        primary: "Primaire voortgangsindicatie"
         table_id: "ID"
         table_kind: "Type"
-        table_title: "Title"
+        table_title: "Titel"
+        table_percentage: "Actuele voortgang"
+      new:
+        creating: "Voortgangsindicatie instellen"
+      edit:
+        title:
+          primary: "Primaire voortgangsindicatie bewerken"
+          secondary: "Voortgangsindicatie %{title} bewerken"
+      create:
+        notice: "Voortgangsindicatie aangemaakt"
+      update:
+        notice: "Voortgangsindicatie bijgewerkt"
+      delete:
+        notice: "Voortgangsindicatie verwijderd"
     comments:
       index:
         filter: Filter
@@ -380,6 +422,9 @@ nl:
           enabled: Ingeschakeld
           process: Proces
           debate_phase: Debatfase
+          draft_phase: Ontwerpfase
+          draft_phase_description: Omschrijving ontwerpfase
+          allegations_phase: Commentaarfase
           proposals_phase: Voorstelfase
           start: Start
           end: Eind
@@ -389,6 +434,8 @@ nl:
           description_placeholder: Voeg een beschrijving van het plan toe
           additional_info_placeholder: Voeg een aanvullende informatie toe
           homepage: Beschrijving
+          homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
+          homepage_enabled: Homepage aktiviert
         index:
           create: Nieuw plan
           delete: Verwijder
@@ -403,7 +450,8 @@ nl:
         proposals:
           select_order: Sorteer op
           orders:
-            title: Title
+            id: ID
+            title: Titel
             supports: Steunt
         process:
           title: Proces
@@ -420,10 +468,14 @@ nl:
           questions: Vragen
           proposals: Voorstellen
           milestones: Volgend
+      homepage:
+        edit:
+          title: Homepage instellen
       proposals:
         index:
           title: Title
           back: Terug
+          id: ID
           supports: Steunt
           select: Select
           selected: Geselecteerd
@@ -582,6 +634,8 @@ nl:
           welcome: "Welkom"
         buttons:
           save: "Save"
+          content_block:
+            update: "Blok bewerken"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
@@ -596,6 +650,7 @@ nl:
         title: Admins
         name: Name
         email: E-mail
+        id: ID
         no_administrators: Er zijn geen beheerders.
       administrator:
         add: Voeg toe
@@ -683,6 +738,7 @@ nl:
         submit_button: Notificatie aanmaken
       edit:
         section_title: Bericht bewerken
+        submit_button: Bericht opslaan
       show:
         section_title: Voorbeeld van de kennisgeving
         send: Verzend notificatie
@@ -885,21 +941,22 @@ nl:
     questions:
       index:
         title: "Vragen"
-        create: "Stel een vraag"
-        no_questions: "There are no questions."
-        filter_poll: Filter by Poll
-        select_poll: Select Poll
+        create: "Vraag aanmaken"
+        no_questions: "Er zijn geen vragen."
+        filter_poll: Op peiling filteren
+        select_poll: Peiling selecteren
         questions_tab: "Vragen"
-        successful_proposals_tab: "Successful proposals"
-        create_question: "Stel een vraag"
-        table_proposal: "Proposal"
-        table_question: "Question"
-        table_poll: "Poll"
+        successful_proposals_tab: "Succesvolle voorstellen"
+        create_question: "Vraag aanmaken"
+        table_proposal: "Voorstel"
+        table_question: "Vraag"
+        table_poll: "Peiling"
+        poll_not_assigned: "Peiling niet toegewezen"
       edit:
-        title: "Edit Question"
+        title: "Vraag bewerken"
       new:
-        title: "Create Question"
-        poll_label: "Poll"
+        title: "Vraag aanmaken"
+        poll_label: "Peiling"
       answers:
         images:
           add_image: "Voeg afbeelding toe"
@@ -1045,6 +1102,7 @@ nl:
         id: ID
         author: Auteur
         milestones: Mijlpalen
+        no_proposals: Geen voorstellen aanwezig.
     hidden_proposals:
       index:
         filter: Filter
@@ -1271,6 +1329,7 @@ nl:
         title: Voorstel notificaties
         total: Totaal
         proposals_with_notifications: Proposals with notifications
+        not_available: "Geen voorstellen aanwezig"
       polls:
         title: Peiling Stats
         all: Polls
@@ -1312,8 +1371,9 @@ nl:
         title: Onvolledige verificaties
     site_customization:
       content_blocks:
-        information: Information about content blocks
+        information: Informatie over inhoudsblokken
         about: "You can create HTML content blocks to be inserted in the header or the footer of your Consul."
+        html_format: "Een inhoudsblok is een groep van links en moet als volgt worden ingesteld:"
         no_blocks: "Er zijn geen inhoudsblokken."
         create:
           notice: Content block created successfully
@@ -1340,8 +1400,6 @@ nl:
           names:
             top_links: Top links
             footer: Voettekst
-            subnavigation_left: Hoofd navigatie links
-            subnavigation_right: Hoofd navigatie rechts
       images:
         index:
           title: Aangepaste afbeeldingen
@@ -1378,27 +1436,36 @@ nl:
         new:
           title: Create new custom page
         page:
-          created_at: Created at
+          created_at: Gemaakt op
           status: Status
-          updated_at: Updated at
+          updated_at: Bijgewerkt op
           status_draft: Concept
-          status_published: Published
-          title: Title
+          status_published: Gepubliceerd
+          title: Titel
           slug: Bullet
           cards_title: Tegels
+          see_cards: Tegels tonen
         cards:
           create_card: Kaart aanmaken
           title: Title
           description: Beschrijving
           link_text: Tekst link
           link_url: URL link
+          create:
+            notice: "Aanmaken"
+          update:
+            notice: "Bewerken"
+          destroy:
+            notice: "Verwijderen"
     homepage:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
       header_title: Koptekst
+      no_header: Geen koptekst aanwezig.
       create_header: Koptekst maken
       cards_title: Tegels
-      create_card: Kaart aanmaken
+      create_card: Tegel aanmaken
+      no_cards: Geen tegels aanwezig.
       cards:
         title: Title
         description: Beschrijving

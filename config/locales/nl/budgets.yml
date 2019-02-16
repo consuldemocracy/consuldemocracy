@@ -40,11 +40,11 @@ nl:
       reviewing_ballots: Evaluatie van stemmen
       finished: Afronden budgetvoorstel
     index:
-      title: Participatory budgets
+      title: Burgerbegrotingen
       empty_budgets: Er zijn geen budgetten.
       section_header:
         icon_alt: Budgetafbeelding
-        title: Participatory budgets
+        title: Burgerbegrotingen
         help: Hulp bij burgerbegrotingen
         all_phases: Bekijk alle fases
       all_phases: Investeringsfases
@@ -126,6 +126,7 @@ nl:
         project_selected_html: 'Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase.'
         project_winner: 'Winnend investeringsproject'
         project_not_selected_html: 'Dit investeringsproject <strong> is niet geselecteerd </strong> voor beslissingsfase.'
+        see_price_explanation: Toelichting op het aantal
       wrong_price_format: Alleen hele cijfers
       investment:
         add: Voeg toe

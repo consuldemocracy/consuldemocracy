@@ -116,6 +116,7 @@ nl:
         disable: "Aanbevelingen voor discussies worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
         actions:
           success: "Aanbevelingen voor debatten zijn nu uitgeschakeld voor dit account"
+          error: "Er is een fout opgetreden"
       search_form:
         button: Search
         placeholder: Zoek in discussies...
@@ -231,8 +232,8 @@ nl:
       open_gov: Open bestuur
       proposals: Proposals
       poll_questions: Stemmen
-      budgets: Participatory budgeting
-      spending_proposals: Spending Proposals
+      budgets: Burgerbegroting
+      spending_proposals: Voorstellen
       notification_item:
         new_notifications:
           one: U heeft een nieuwe melding
@@ -349,6 +350,7 @@ nl:
         disable: "Aanbevelingen van voorstellen worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
         actions:
           success: "Aanbevelingen voor voorstellen zijn nu uitgeschakeld voor dit account"
+          error: "Er is een fout opgetreden"
       retired_proposals: Teruggetrokken voorstellen
       retired_proposals_link: "Teruggetrokken voorstellen"
       retired_links:
@@ -377,7 +379,6 @@ nl:
         help: Hulp over voorstellen
       section_footer:
         title: Hulp over voorstellen
-        description: Voorstellen van de burgers zijn een kans voor buren en collectieven om direct te beslissen hoe ze hun stad willen, na het ontvangen van voldoende steun en het voorleggen aan een burger stemming.
     new:
       form:
         submit_button: Maak voorstel
@@ -415,7 +416,6 @@ nl:
       supports_necessary: "%{number} steunbetuigingen nodig"
       total_percent: 100%
       archived: "Dit voorstel is gearchiveerd en kan niet worden gesteund."
-      successful: "Dit voorstel heeft de vereiste ondersteuning bereikt."
     show:
       author_deleted: Gebruiker verwijderd
       code: 'Voorstel code:'
@@ -458,8 +458,6 @@ nl:
       geozone_restricted: "Regio's"
       geozone_info: "Open voor deelnemers uit: "
       already_answer: "U heeft al deelgenomen aan deze ronde"
-      not_logged_in: "U moet inloggen om deel te kunnen nemen"
-      cant_answer: "Deze stemronde is niet beschikbaar in uw regio"
       section_header:
         icon_alt: Stemmen icoon
         title: Peilingen
@@ -820,6 +818,7 @@ nl:
     error: "Link niet geldig. Begin met %{url}."
     error_itself: "De link is niet geldig. Je kunt niet relateren aan dezelfde inhoud."
     success: "Je hebt nieuwe gerelateerde inhoud toegevoegd"
+    is_related: "Is de inhoud gerelateerd?"
     score_positive: "Ja"
     score_negative: "Nee"
     content_title:
