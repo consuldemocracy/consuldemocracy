@@ -21,16 +21,28 @@ ar:
       header:
         description: الوصف
       proposals:
+        empty_proposals: لا توجد مقترحات
         filters:
+          random: عشوائي
           winners: محدّد
+      debate:
+        empty_questions: لا توجد أي أسئلة
+        participate: المشاركة بالحوارات
       index:
         filter: ترشيح
         filters:
           open: إجراءات مفتوحة
           past: السابق
+        no_open_processes: لا توجد إجراءات مفتوحة
         section_header:
           title: العمليات التشريعية
+      phase_empty:
+        empty: لم ينشر شيء بعد
+      process:
+        see_latest_comments: مشاهدة أخر التعليقات
+        see_latest_comments_title: التعليق على الإجرائية
       shared:
+        key_dates: مراحل المشاركة
         homepage: الصفحة الرئيسية
         debate_dates: الحوارات
         allegations_dates: تعليقات
