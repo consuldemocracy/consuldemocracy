@@ -335,6 +335,12 @@ ar:
       categories: "فئات"
     you_are_in: "أنت في"
     share: مشاركة
+  social:
+    blog: "مدونة %{org}"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: واتساب
   spending_proposals:
     form:
       association_name: 'اسم الرابطة'
