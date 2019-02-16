@@ -27,6 +27,10 @@ ar:
         title: تغيير كلمة المرور
       unlock_instructions:
         hello: مرحبا
+        info_text: تم إغلاق حسابك ، بعد تجاوز عدد المحاولات الخاطئة في الدخول.
+        instructions_text: 'الرجاء الضعط على الرابط لإعادة تفعيل الحساب الخاص بك:'
+        title: حسابك مغلق مؤقتا
+        unlock_link: إعادة تفعيل \ فتح الحساب
     menu:
       login_items:
         login: تسجيل الدخول
@@ -47,6 +51,7 @@ ar:
           back_to_index: العودة إلى الصفحة الرئيسية
     passwords:
       edit:
+        change_submit: تغيير كلمة المرور
         password_confirmation_label: تأكيد كلمة المرور الجديدة
         password_label: كلمة المرور الجديدة
         title: تغيير كلمة المرور
