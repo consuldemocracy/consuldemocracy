@@ -1309,5 +1309,8 @@ ar:
         proposals: إقتراحات
         debates: النقاشات
         processes: عمليات
+      edit:
+        submit_header: حفظ العنوان
+        submit_card: حفظ البطاقة
     translations:
       add_language: إضافة لغة
