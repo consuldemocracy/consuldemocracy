@@ -2,7 +2,13 @@ ar:
   community:
     sidebar:
       title: المجتمع
+      description:
+        proposal: المشاركة في مجتمع هذا الاقتراح.
+        investment: المشاركة في مجتمع هذا الاستثمار.
+      button_to_access: الوصول إلى المجتمع
     show:
+      title:
+        proposal: اقتراح المجتمع
       create_first_community_topic:
         sign_in: "تسجيل الدخول"
         sign_up: "انشاء حساب"
