@@ -34,6 +34,7 @@ ar:
         figcaption_html: '"الدعم" و "التصويت" مراحل ميزانيات المشتركة.'
       polls:
         title: "استطلاعات"
+        link: "استطلاعات الرأي"
         feature_1_link: "سجل في %{org_name}"
       processes:
         title: "عمليات"
