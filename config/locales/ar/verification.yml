@@ -60,9 +60,21 @@ ar:
         title: رمز التأكيد
       new:
         phone: ادخل رقم الموبايل ليصلك الرمز
+        phone_format_html: "<strong><em>(مثال: 0958044933 أو +963934543234)</em></strong>"
+        phone_note: سوف نستخدم رقم الموبايل لإرسال الرمز فقط ، لن يتم الاتصال بك مطلقاً.
+        phone_placeholder: "على سبيل المثال: 612345678 أو +34612345678"
         submit_button: ارسال
+        title: إرسال رمز التأكيد
+      update:
+        error: كود تأكيد غير صحيح
+        flash:
+          level_three:
+            success: الرمز صحيح. تم التأكد من حسابك بنجاح
+          level_two:
+            success: الرمز الصحيح
     step_1: الإقامة
     step_2: رمز التأكيد
+    step_3: الخطوة الأخيرة للتحقق
     user_permission_debates: المشاركة بالحوارات
     user_permission_info: التحقق من معلومات سيمنحك...
     user_permission_proposal: انشاء مقترحات جديدة
