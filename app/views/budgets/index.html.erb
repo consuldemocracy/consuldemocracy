@@ -7,7 +7,7 @@
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
-
+<%= render "shared/section_header", i18n_namespace: "budgets.index.section_header", image: "budgets" %>
 <% if current_budget.present? %>
   <div id="budget_heading" class="expanded budget no-margin-top">
     <div class="row" data-equalizer data-equalizer-on="medium">
@@ -169,14 +169,6 @@
     <% end %>
   </div>
 <% else %>
-  <div class="expanded budget no-margin-top margin-bottom">
-    <div class="row">
-      <div class="small-12 medium-9 column padding">
-          <h1><%= t("budgets.index.title") %></h1>
-      </div>
-    </div>
-  </div>
-
   <div class="row">
     <div class="small-12 column">
       <div class="callout primary">
