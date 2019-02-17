@@ -725,12 +725,12 @@ nl:
         information_texts: Aangepaste informatie teksten
         information_texts_menu:
           community: Community
-          debates: Discussie
+          debates: Debat
           layouts: Lay-outs
           mailers: Emails
           management: Beheer
           polls: Peilingen
-          proposals: Ideeën
+          proposals: "Ideeën"
           welcome: Welkom
         pages: Aangepaste pagina's
       spending_proposals: Bestedingsvoorstellen

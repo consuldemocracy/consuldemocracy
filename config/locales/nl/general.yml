@@ -235,7 +235,7 @@ nl:
       available_locales: Beschikbare talen
       budgets: Burgerbegroting
       collaborative_legislation: Wetgevingsproces
-      debates: Discussie
+      debates: Debat
       external_link_blog: Blog
       help: Help
       locale: 'Taal:'
@@ -253,7 +253,7 @@ nl:
       officing: Stembureau
       open_gov: Open bestuur
       poll_questions: Stemmen
-      proposals: Ideeën
+      proposals: "Ideeën"
       spending_proposals: Bestedingsvoorstellen
       valuation: Waardering
   map:
