@@ -26,8 +26,8 @@ nl:
         filters:
           all: All
           on_comments: Comments
-          on_debates: Discussie
-          on_proposals: Proposals
+          on_debates: Debat
+          on_proposals: Ideeën
           on_system_emails: Systeemberichten
           on_users: Deelnemer
         no_activity: Er is geen moderator activiteit.
@@ -116,7 +116,7 @@ nl:
           debates: Discussie
           help_page: Help-pagina
           homepage: Homepage
-          proposals: Proposals
+          proposals: Ideeën
         sections_label: Secties waar het wordt weergegeven
         target_url: Link
         title: Title
@@ -289,11 +289,6 @@ nl:
         see_results: Bekijk resultaten
         select: Select
         selected: Geselecteerd
-        sort_by:
-          id: ID
-          placeholder: Sorteer op
-          supports: Steunt
-          title: Title
         tags_filter_all: All tags
         title: Investment projects
         valuator_filter_all: All valuators
@@ -460,8 +455,8 @@ nl:
           all: All
           with_confirmed_hide: Bevestigd
           without_confirmed_hide: In afwachting
-        no_hidden_proposals: Er zijn geen verborgen voorstellen.
-        title: Verborgen voorstellen
+        no_hidden_proposals: Er zijn geen verborgen ideeën.
+        title: Verborgen ideeën
     hidden_users:
       index:
         filter: Filter
@@ -495,7 +490,7 @@ nl:
       feeds:
         debates: Discussie
         processes: Proces
-        proposals: Proposals
+        proposals: Ideeën
       header_title: Koptekst
       new:
         card_title: Nieuwe kaart
@@ -586,7 +581,7 @@ nl:
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
           homepage_enabled: Homepage aktiviert
           process: Proces
-          proposals_phase: Voorstelfase
+          proposals_phase: Ideeënfase
           start: Start
           summary_placeholder: Korte samenvatting van de beschrijving
           title_placeholder: De titel van het plan
@@ -597,7 +592,6 @@ nl:
           filters:
             all: All
             open: Open
-          titel: Plannen
           title: Legislation processes
         new:
           back: Terug
@@ -622,7 +616,7 @@ nl:
           homepage: Home
           info: Informatie
           milestones: Volgend
-          proposals: Voorstellen
+          proposals: Ideeën
           questions: Vragen
         update:
           error: Proces kon niet worden opgeslagen
@@ -701,7 +695,7 @@ nl:
       hidden_comments: Verborgen commentaar
       hidden_debates: Verborgen debatten
       hidden_proposal_notifications: Verborgen notificaties
-      hidden_proposals: Hidden proposals
+      hidden_proposals: Verborgen ideeën
       hidden_users: Hidden users
       legislation: Plannen
       managers: Beheerders
@@ -716,8 +710,8 @@ nl:
       poll_questions: Vragen
       poll_shifts: Bewerk diensten
       polls: Polls
-      proposals: Proposals
-      proposals_topics: Proposals topics
+      proposals: Ideeën
+      proposals_topics: Ideeonderwerpen
       settings: Instellingen
       signature_sheets: Signature Sheets
       site_customization:
@@ -735,11 +729,11 @@ nl:
           layouts: Lay-outs
           mailers: Emails
           management: Beheer
-          polls: Polls
-          proposals: Proposals
+          polls: Peilingen
+          proposals: Ideeën
           welcome: Welkom
         pages: Aangepaste pagina's
-      spending_proposals: Spending proposals
+      spending_proposals: Bestedingsvoorstellen
       stats: Statistics
       system_emails: Systeemberichten
       title_booths: Stemhokjes
@@ -1019,15 +1013,15 @@ nl:
           all: All
           with_confirmed_hide: Bevestigd
           without_confirmed_hide: In afwachting
-        no_hidden_proposals: Er is geen verborgen meldingen.
-        title: Verborgen notificaties
+        no_hidden_proposals: Er zijn geen verborgen meldingen
+        title: Verborgen meldingen
     proposals:
       index:
         author: Auteur
         id: ID
         milestones: Mijlpalen
-        no_proposals: Geen voorstellen aanwezig.
-        title: Voorstellen
+        no_proposals: Geen ideeën aanwezig
+        title: Ideeën
     questions:
       answers:
         images:
@@ -1043,9 +1037,9 @@ nl:
         poll_not_assigned: Peiling niet toegewezen
         questions_tab: Vragen
         select_poll: Peiling selecteren
-        successful_proposals_tab: Succesvolle voorstellen
+        successful_proposals_tab: Succesvolle ideeën
         table_poll: Peiling
-        table_proposal: Voorstel
+        table_proposal: Idee
         table_question: Vraag
         title: Vragen
       new:
@@ -1154,13 +1148,13 @@ nl:
       proposal: Proposal
       proposal_search:
         button: Search
-        placeholder: Search proposals by title, code, description or question
+        placeholder: Doorzoek ideeën op titel, code omschrijving of vraag
       search_results: Zoekresultaten
       show_image: Toon afbeelding
       spending_proposal_search:
         button: Search
-        placeholder: Search spending proposals by title or description
-      title: Title
+        placeholder: Doorzoek bestedingsvoorstellen op titel of omschrijving
+      title: Titel
       true_value: Ja
       user_search:
         button: Search
@@ -1337,8 +1331,8 @@ nl:
         finished_count: Afgelopen
         geozone_name: Scope
         in_evaluation_count: In overweging
-        title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
+        title: Samenvatting voor bestedingsvoorstellen
+        title_proposals_with_supports: Samenvatting voor bestedingsvoorstellen die gesteund worden
         total_count: Totaal
     stats:
       direct_messages:
@@ -1346,7 +1340,7 @@ nl:
         total: Totaal
         users_who_have_sent_message: Users that have sent a private message
       polls:
-        all: Polls
+        all: Peilingen
         poll_questions: 'Vragen van de peiling: %{poll}'
         table:
           origin_total: Aantal deelnemers
@@ -1358,7 +1352,7 @@ nl:
         web_participants: Web deelnemers
       proposal_notifications:
         not_available: Geen voorstellen aanwezig
-        proposals_with_notifications: Proposals with notifications
+        proposals_with_notifications: Ideeën met notificaties
         title: Voorstel notificaties
         total: Totaal
       show:
@@ -1373,21 +1367,21 @@ nl:
           budget_investments: Budget bestemmingen
           budgets: Open budgetten
           comment_votes: Comment votes
-          comments: Comments
-          debate_votes: Debate votes
-          debates: Discussie
-          proposal_votes: Proposal votes
-          proposals: Proposals
+          comments: Opmerkingen
+          debate_votes: Stemmen op debatten
+          debates: Debatten
+          proposal_votes: Stemmen op ideeën
+          proposals: Ideeën
           spending_proposals: Bestedingsvoorstellen
           unverified_users: Ongeverifieerde gebruikers
-          user_level_three: Level three users
-          user_level_two: Level two users
-          users: Total users
+          user_level_three: Gebruikers van het derde niveau
+          user_level_two: Gebruikers van het tweede niveau
+          users: Totaal aantal gebruikers
           verified_users: Geverifieerde gebruikers
-          verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
-          visits: Visits
-          votes: Total votes
-        visits_title: Visits
+          verified_users_who_didnt_vote_proposals: Geverifieerde gebruikers die niet hebben gestemd op Ideeën
+          visits: Bezoeken
+          votes: Totaal aantal stemmen
+        visits_title: Bezoeken
     statuses:
       create:
         notice: Investeringsstatus succesvol bijgewerkt

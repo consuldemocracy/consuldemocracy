@@ -111,12 +111,12 @@ nl:
 
           Als je programmeur bent kun je de code bekijken en ons helpen deze te verbeteren via [CONSUL app](https://github.com/consul/consul 'consul github').
       menu:
-        budgets: Participatory budgets
-        debates: Discussie
+        budgets: Budget
+        debates: Debat
         other: Verdere informatie
-        polls: Polls
+        polls: Peilingen
         processes: Proces
-        proposals: Proposals
+        proposals: Ideeën
       other:
         how_to_use: Gebruik %{org_name} in uw gemeente
         title: Verdere informatie
@@ -134,8 +134,8 @@ nl:
         description: In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd.
         figcaption_html: Knop om een voorstel te ''steunen''.
         image_alt: Knop om een voorstel te steunen
-        link: Voorstellen
-        title: Proposals
+        link: Ideeën
+        title: Ideeën
       title: "%{org} is een platform voor burgerparticipatie"
       titles:
         how_to_use: Gebruik het in uw gemeente

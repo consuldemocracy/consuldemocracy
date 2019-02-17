@@ -23,13 +23,13 @@ nl:
           offices: Citizen Support Offices
           success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the %{offices}.
       edit:
-        see_all: See proposals
+        see_all: Ideeën tonen
         title: Letter requested
       errors:
         incorrect_code: De verificatiecode is onjuist
       new:
         explanation: 'For participate on final voting you can:'
-        go_to_index: See proposals
+        go_to_index: Ideeën tonen
         office: Verify in any %{office}
         offices: Ondersteuning
         send_letter: Send me a letter with the code

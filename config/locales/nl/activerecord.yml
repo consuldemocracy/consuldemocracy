@@ -319,8 +319,8 @@ nl:
         one: Proces
         other: Plannen
       legislation/proposal:
-        one: Proposal
-        other: Proposals
+        one: Idee
+        other: Ideeën
       legislation/question_options:
         one: Vraag optie
         other: Vraag keuzen

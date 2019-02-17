@@ -22,13 +22,13 @@ nl:
       recommendations: Aanbevelingen
       save_changes_submit: Save changes
       show_debates_recommendations: Laat discussie aanbevelingen zien
-      show_proposals_recommendations: Laat aanbevelingen van de voorstellen zien
+      show_proposals_recommendations: Laat aanbevelingen voor ideeën zien
       subscription_to_website_newsletter_label: Stuur me email met relevante informatie over de website
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals
+      user_permission_proposal: Nieuw idee inbrengen
+      user_permission_support_proposal: Idee steunen
       user_permission_title: Participatie
       user_permission_verify: Verifieer uw account om alles te kunnen.
       user_permission_verify_info: "* Alleen voor gebruikers in de regio."
@@ -251,12 +251,11 @@ nl:
         no_notifications: U heeft geen nieuwe meldingen
         notifications: Notificaties
       officing: Stembureau
-      open: open
       open_gov: Open bestuur
       poll_questions: Stemmen
-      proposals: Proposals
-      spending_proposals: Voorstellen
-      valuation: Valuation
+      proposals: Ideeën
+      spending_proposals: Bestedingsvoorstellen
+      valuation: Waardering
   map:
     proposal_for_district: Start een voorstel voor uw regio
     select_district: Scope of operation
@@ -384,7 +383,7 @@ nl:
   proposals:
     create:
       form:
-        submit_button: Voorstel maken
+        submit_button: Idee aanmaken
     edit:
       editing: Bewerk voorstel
       form:
@@ -427,23 +426,23 @@ nl:
       recommendations:
         actions:
           error: Er is een fout opgetreden
-          success: Aanbevelingen voor voorstellen zijn nu uitgeschakeld voor dit account
-        disable: Aanbevelingen van voorstellen worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'
-        without_interests: Volg voorstellen zodat we je aanbevelingen kunnen geven
-        without_results: Er zijn geen voorstellen die aan je interesses voldoen
+          success: Aanbevelingen voor ideeën zijn nu uitgeschakeld voor dit account
+        disable: Aanbevelingen van ideeën worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'
+        without_interests: Volg ideeën zodat we je aanbevelingen kunnen geven
+        without_results: Er zijn geen ideeën die aan je interesses voldoen
       retired_links:
-        all: All
+        all: Alles
         done: Is al gereed
-        duplicated: Dubbele
+        duplicated: Dubbel
         other: Anders
-        started: Gestartte
-        unfeasible: Unfeasible
-      retired_proposals: Teruggetrokken voorstellen
-      retired_proposals_link: Teruggetrokken voorstellen
+        started: Gestart
+        unfeasible: Niet haalbaar
+      retired_proposals: Ingetrokken ideeën
+      retired_proposals_link: Ingetrokken ideeën
       search_form:
-        button: Search
-        placeholder: Zoek voorstellen..
-        title: Search
+        button: Zoek
+        placeholder: Zoek ideeën..
+        title: Zoek
       search_results_html:
         one: " bevat de term <strong>'%{search_term}'</strong>"
         other: " bevat de term <strong>'%{search_term}'</strong>"
@@ -453,11 +452,11 @@ nl:
       section_header:
         help: Hulp over voorstellen
         icon_alt: Voorgestelde pictogrammen
-        title: Proposals
+        title: Ideeën
       select_order: Order by
       select_order_long: 'U ziet de voorstellen op:'
       start_proposal: Maak een nieuw voorstel
-      title: Proposals
+      title: Ideeën
       top: Wekelijkse top
       top_link_proposals: De meest gesteunde voorstellen per categorie
     new:
@@ -715,8 +714,8 @@ nl:
       comments: Comments
       debate_votes: Stemmen op discussies
       debates: Discussie
-      proposal_votes: Stemmen op voorstellen
-      proposals: Proposals
+      proposal_votes: Stemmen op ideeën
+      proposals: Ideeën
       unverified_users: Unverified users
       verified_users: Verified users
       visits: Visits
@@ -743,8 +742,8 @@ nl:
     proposals:
       retire: Terugtrekken
       retired: Teruggetrokken
-      see: Bekijk voorstel
-      send_notification: Verzend notificatie
+      see: Idee bekijken
+      send_notification: Notificatie verzenden
     show:
       actions: Activiteiten
       budget_investments: Begrotingsvoorstellen
@@ -769,12 +768,12 @@ nl:
           one: 1 volgend
           other: "%{count} volgend"
         proposals:
-          one: 1 Voorstel
-          other: "%{count} Voorstellen"
+          one: 1 idee
+          other: "%{count} ideeën"
       no_activity: Deze deelnemer heeft geen publieke activiteit
       no_private_messages: Deze deelnemer ontvangt geen privé berichten.
       private_activity: Deze deelnemer heeft besloten de lijst met activiteiten niet te delen"
-      proposals: Proposals
+      proposals: Ideeën
       send_private_message: Stuur privé bericht
   votes:
     agree: Ik ben het eens
@@ -810,17 +809,17 @@ nl:
       most_active:
         debates: Discussies
         processes: Plannen
-        proposals: Voorstellen
+        proposals: Ideeën
       process_label: Proces
       see_all_debates: Alle debatten
       see_all_processes: Alle plannen
-      see_all_proposals: Alle voorstellen
+      see_all_proposals: Alle ideeën
       see_process: Zie proces
     recommended:
       budget_investments:
         title: Aanbevolen investeringsprojecten
       debates:
-        btn_text_link: Alle aanbevolen discussies
+        btn_text_link: Alle aanbevolen debatten
         title: Aanbevolen discussies
       help: Deze aanbevelingen worden gegenereerd door de codes van de debatten en voorstellen die u volgen.
       proposals:
@@ -838,9 +837,9 @@ nl:
       title: Deelnemen
       user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals*
-      user_permission_verify: Verifi
+      user_permission_proposal: Nieuw idee aanmaken
+      user_permission_support_proposal: Ideeën steunen*
+      user_permission_verify: Verifieren
       user_permission_verify_info: "* Alleen voor locale deelnemers."
       user_permission_verify_my_account: Verifieer mijn account
       user_permission_votes: Deelnemen aan laatste peilronde

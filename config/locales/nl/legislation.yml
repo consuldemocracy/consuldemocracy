@@ -76,7 +76,7 @@ nl:
         see_latest_comments: Bekijk de laatste reacties
         see_latest_comments_title: Reageer op dit proces
       proposals:
-        empty_proposals: Er zijn geen voorstellen
+        empty_proposals: Er zijn geen ideeën
         filters:
           random: Random
           winners: Geselecteerd
@@ -87,12 +87,12 @@ nl:
         homepage: Homepage
         key_dates: Data
         milestones_date: Volgend
-        proposals_dates: Proposals
+        proposals_dates: Ideeën
         result_publication_date: Eindversie publicatie
     proposals:
       form:
-        tags_label: Categorieen
-      not_verified: Voor stemvoorstellen %{verify_account}.
+        tags_label: Categorieën
+      not_verified: Voor stemideeën %{verify_account}.
     questions:
       comments:
         comment_button: Publiceer antwoord
