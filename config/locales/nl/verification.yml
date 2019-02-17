@@ -1,3 +1,4 @@
+---
 nl:
   verification:
     alert:
@@ -51,8 +52,8 @@ nl:
         accept_terms_text_title: I accept the terms and conditions of access of the Census
         date_of_birth: Date of birth
         document_number: Document nummer
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_number_help_title: Help
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
         document_type:
           passport: Passport
           residence_card: Residence card
@@ -81,8 +82,8 @@ nl:
       new:
         phone: Enter your mobile phone number to receive the code
         phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
-        phone_note: We gebruiken uw mobiele telefoonnummer alleen om u een code toe te sturen, nooit om u te contacten.  
-        phone_placeholder: "Example: 612345678 or +34612345678"
+        phone_note: We gebruiken uw mobiele telefoonnummer alleen om u een code toe te sturen, nooit om u te contacten.
+        phone_placeholder: 'Example: 612345678 or +34612345678'
         submit_button: Verzenden
         title: Send confirmation code
       update:

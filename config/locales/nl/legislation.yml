@@ -1,62 +1,59 @@
+---
 nl:
   legislation:
     annotations:
       comments:
-        see_all: Bekijk alle
-        see_complete: Bekijk compleet
+        cancel: Annuleren
         comments_count:
           one: "%{count} reactie"
           other: "%{count} opmerkingen"
+        publish_comment: Publiceer reactie
         replies_count:
           one: "%{count} antwoord"
           other: "%{count} antwoorden"
-        cancel: Annuleren
-        publish_comment: Publiceer reactie
+        see_all: Bekijk alle
+        see_complete: Bekijk compleet
       form:
-        phase_not_open: Deze fase is nog niet gestart
         login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
+        phase_not_open: Deze fase is nog niet gestart
         signin: Aanmelden
         signup: Registreer
       index:
-        title: Comments
         comments_about: Reacties over
-        see_in_context: Bekijk in de context
         comments_count:
           one: "%{count} reactie"
           other: "%{count} opmerkingen"
+        see_in_context: Bekijk in de context
+        title: Comments
       show:
         title: Commentaar
       version_chooser:
-        seeing_version: Reacties voor versie
         see_text: Bekijk concept tekst
+        seeing_version: Reacties voor versie
     draft_versions:
       changes:
-        title: Wijzigingen
-        seeing_changelog_version: Samenvatting van de wijzigingen
         see_text: Bekijk concept tekst
+        seeing_changelog_version: Samenvatting van de wijzigingen
+        title: Wijzigingen
       show:
         loading_comments: Reacties worden geladen
+        see_changes: Bekijk de samenvatting van de wijzigingen
+        see_comments: Bekijk alle reacties
         seeing_version: Je bekijkt nu de concept versie
         select_draft_version: Selecteer concept
         select_version_submit: bekijk
-        updated_at: bijgewerkt op %{date}
-        see_changes: Bekijk de samenvatting van de wijzigingen
-        see_comments: Bekijk alle reacties
-        text_toc: Inhoudsopgave
         text_body: Tekst
         text_comments: Comments
+        text_toc: Inhoudsopgave
+        updated_at: bijgewerkt op %{date}
     processes:
+      debate:
+        empty_questions: Er zijn geen vragen
+        participate: Neem deel aan discussies
       header:
         additional_info: Aanvullende informatie
         description: Beschrijving
         more_info: Meer informatie
-      proposals:
-        empty_proposals: Er zijn geen voorstellen
-        filters:
-          winners: Geselecteerd
-      debate:
-        empty_questions: Er zijn geen vragen
-        participate: Neem deel aan discussies
       index:
         filter: Filter
         filters:
@@ -64,61 +61,66 @@ nl:
           past: Vorige
         no_open_processes: Er zijn geen actieve plannen
         no_past_processes: Er zijn geen afgesloten plannen
+        section_footer:
+          description: Neem deel aan discussies en plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering vanuit de gemeente. Jouw mening wordt meegenomen door je gemeente.
+          title: Hulp bij plannen
         section_header:
+          help: Hulp bij plannen
           icon_alt: Plannen icoon
           title: Plannen
-          help: Hulp bij plannen
-        section_footer:
-          title: Hulp bij plannen
-          description: Neem deel aan discussies en plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering vanuit de gemeente. Jouw mening wordt meegenomen door je gemeente.
-      phase_not_open:
-        not_open: Deze fase is nog niet gestart.
       phase_empty:
         empty: Nog niets gepubliceerd
+      phase_not_open:
+        not_open: Deze fase is nog niet gestart.
       process:
         see_latest_comments: Bekijk de laatste reacties
         see_latest_comments_title: Reageer op dit proces
+      proposals:
+        empty_proposals: Er zijn geen voorstellen
+        filters:
+          random: Random
+          winners: Geselecteerd
       shared:
-        key_dates: Data
-        homepage: Homepage
+        allegations_dates: Comments
         debate_dates: Discussie
         draft_publication_date: Concept publicatie
-        allegations_dates: Comments
-        result_publication_date: Eindversie publicatie
+        homepage: Homepage
+        key_dates: Data
         milestones_date: Volgend
         proposals_dates: Proposals
+        result_publication_date: Eindversie publicatie
+    proposals:
+      form:
+        tags_label: Categorieen
+      not_verified: Voor stemvoorstellen %{verify_account}.
     questions:
       comments:
         comment_button: Publiceer antwoord
-        comments_title: Open antwoorden
         comments_closed: Gesloten fase
+        comments_title: Open antwoorden
         form:
           leave_comment: Laat jouw antwoord achter
-      question:
-        comments:
-          zero: Geen reacties
-          one: "%{count} reactie"
-          other: "%{count} opmerkingen"
-        debate: Discussie
-      show:
-        answer_question: Antwoord indienen
-        next_question: Volgende vraag
-        first_question: Eerste vraag
-        share: Deel
-        title: Samenwerken in plannen
       participation:
-        phase_not_open: Deze fase is niet open
+        debate_phase_not_open: Discussiefase is gesloten en reacties worden niet meer geaccepteerd.
         organizations: Deelname van organisaties in discussies is niet toegestaan
+        phase_not_open: Deze fase is niet open
         signin: Aanmelden
         signup: Registreer
         unauthenticated: Je moet %{signin} of %{signup} om deel te nemen.
         verified_only: Alleen geverifieerde gebruikers kunnen deelnemen, %{verify_account}.
         verify_account: je account verifieren
-        debate_phase_not_open: Discussiefase is gesloten en reacties worden niet meer geaccepteerd.
+      question:
+        comments:
+          one: "%{count} reactie"
+          other: "%{count} opmerkingen"
+          zero: Geen reacties
+        debate: Discussie
+      show:
+        answer_question: Antwoord indienen
+        first_question: Eerste vraag
+        next_question: Volgende vraag
+        share: Deel
+        title: Samenwerken in plannen
     shared:
       share: Deel
       share_comment: Geef een reactie op %{version_name} van het concept proces %{process_name}
-    proposals:
-      form:
-        tags_label: "Categorieen"
-      not_verified: "Voor stemvoorstellen %{verify_account}."
