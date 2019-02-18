@@ -960,13 +960,13 @@ nl:
         question_added: Question added to this poll
       index:
         closing_date: Einddatum
-        create: Create poll
+        create: Nieuwe peiling
         dates: Dates
         geozone_restricted: Beperkt tot buurten
         name: Name
         no_polls: Er zijn geen peilingen.
         start_date: Startdatum
-        title: List of polls
+        title: Peilingen
       new:
         results_and_stats_reminder: Als u deze vakjes selecteert, zijn de resultaten en / of statistieken van deze poll openbaar beschikbaar en ziet elke deelnemer ze.
         show_results: Toon resultaten
@@ -1030,8 +1030,8 @@ nl:
       edit:
         title: Vraag bewerken
       index:
-        create: Vraag aanmaken
-        create_question: Vraag aanmaken
+        create: Nieuw
+        create_question: Nieuwe vraag
         filter_poll: Op peiling filteren
         no_questions: Er zijn geen vragen.
         poll_not_assigned: Peiling niet toegewezen
@@ -1046,23 +1046,23 @@ nl:
         poll_label: Peiling
         title: Vraag aanmaken
       show:
-        add_answer: Voeg antwoord toe
+        add_answer: Nieuwe keuze
         answers:
           description: Beschrijving
           document_actions: Activiteiten
-          document_title: Title
+          document_title: Titel
           documents: Documenten
           documents_list: Lijst documenten
           images: Afbeeldingen
           images_list: Lijst afbeeldingen
-          title: Antwoord
+          title: Keuze
           video_list: Lijst video's
           videos: Videos
         author: Author
         edit_question: Bewerk vraag
         proposal: Original proposal
         question: Question
-        valid_answers: Valid answers
+        valid_answers: Mogelijke keuzes
         video_url: Externe video
     recounts:
       index:
