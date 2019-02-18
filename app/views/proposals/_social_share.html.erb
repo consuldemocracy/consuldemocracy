@@ -4,7 +4,7 @@
             url: proposal_url(proposal),
             description: t("proposals.share.message",
                             summary: proposal.summary,
-                            org: setting['org_name']),
-            mobile: t("proposals.share.message_mobile",
+                            handle: setting['org_name']),
+            mobile: t("proposals.share.message",
                         summary: proposal.summary,
                         handle: setting['twitter_handle']) %>
