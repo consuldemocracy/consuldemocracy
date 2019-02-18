@@ -2,11 +2,11 @@
 # Default admin user (change password after first deploy to a server!)
 if Administrator.count == 0 && !Rails.env.test?
   admin = User.create!(
-    username: ENV['ADMIN_NAME'] || 'admin', 
-    email: ENV['ADMIN_EMAIL'] || 'admin@consul.dev', 
-    password: ENV['ADMIN_PASSWORD'] || '12345678', 
-    password_confirmation: ENV['ADMIN_PASSWORD'] || '12345678', 
-    confirmed_at: Time.current, 
+    username: ENV['CONSUL_ADMIN_NAME'] || 'admin',
+    email: ENV['CONSUL_ADMIN_EMAIL'] || 'admin@consul.dev',
+    password: ENV['CONSUL_ADMIN_PASSWORD'] || '12345678',
+    password_confirmation: ENV['CONSUL_ADMIN_PASSWORD'] || '12345678',
+    confirmed_at: Time.current,
     terms_of_service: "1"
   )
   admin.create_administrator
@@ -14,11 +14,11 @@ end
 
 # Names for the moderation console, as a hint for moderators
 # to know better how to assign users with official positions
-Setting["official_level_1_name"] = "Cargo oficial 1"
-Setting["official_level_2_name"] = "Cargo oficial 2"
-Setting["official_level_3_name"] = "Cargo oficial 3"
-Setting["official_level_4_name"] = "Cargo oficial 4"
-Setting["official_level_5_name"] = "Cargo oficial 5"
+Setting["official_level_1_name"] = ENV['CONSUL_OFFICIAL_1'] || "Cargo oficial 1"
+Setting["official_level_2_name"] = ENV['CONSUL_OFFICIAL_2'] || "Cargo oficial 2"
+Setting["official_level_3_name"] = ENV['CONSUL_OFFICIAL_3'] || "Cargo oficial 3"
+Setting["official_level_4_name"] = ENV['CONSUL_OFFICIAL_4'] || "Cargo oficial 4"
+Setting["official_level_5_name"] = ENV['CONSUL_OFFICIAL_5'] || "Cargo oficial 5"
 
 # Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
@@ -33,7 +33,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'CONSUL'
+Setting["proposal_code_prefix"] = ENV['CONSUL_CODE_PREFIX'] || 'CONSUL'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -60,16 +60,16 @@ Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
 Setting["blog_url"] = nil
 Setting["transparency_url"] = nil
-Setting["opendata_url"] = "/opendata"
+Setting["opendata_url"] = ENV['CONSUL_OPENDATA'] || "/opendata"
 
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
 
 # CONSUL installation's organization name
-Setting["org_name"] = "CONSUL"
+Setting["org_name"] = ENV['CONSUL_ORGANIZATION'] || "CONSUL"
 
 # CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
+Setting["place_name"] = ENV['CONSUL_CITY'] || "CONSUL-land"
 
 # Meta tags for SEO
 Setting["meta_title"] = nil
