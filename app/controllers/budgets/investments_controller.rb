@@ -169,11 +169,11 @@ module Budgets
 
       def investments
         if @current_order == 'random'
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}", params[:random_seed])
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}", params[:random_seed])
         else
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}")
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}")
         end
       end
 
