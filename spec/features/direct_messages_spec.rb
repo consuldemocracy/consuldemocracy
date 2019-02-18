@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Direct messages' do
+feature "Direct messages" do
 
   background do
     Setting[:direct_message_max_per_day] = 3
@@ -17,8 +17,8 @@ feature 'Direct messages' do
 
     expect(page).to have_content "Send private message to #{receiver.name}"
 
-    fill_in 'direct_message_title', with: "Hey!"
-    fill_in 'direct_message_body',  with: "How are you doing?"
+    fill_in "direct_message_title", with: "Hey!"
+    fill_in "direct_message_body",  with: "How are you doing?"
     click_button "Send message"
 
     expect(page).to have_content "You message has been sent successfully."
@@ -109,8 +109,8 @@ feature 'Direct messages' do
 
       expect(page).to have_content "Send private message to #{receiver.name}"
 
-      fill_in 'direct_message_title', with: "Hey!"
-      fill_in 'direct_message_body',  with: "How are you doing?"
+      fill_in "direct_message_title", with: "Hey!"
+      fill_in "direct_message_body",  with: "How are you doing?"
       click_button "Send message"
 
       expect(page).to have_content "You have reached the maximum number of private messages per day"

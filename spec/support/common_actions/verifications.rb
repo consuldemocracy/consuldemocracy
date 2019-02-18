@@ -8,26 +8,26 @@ module Verifications
   end
 
   def verify_residence
-    select 'DNI', from: 'residence_document_type'
-    fill_in 'residence_document_number', with: "12345678Z"
+    select "DNI", from: "residence_document_type"
+    fill_in "residence_document_number", with: "12345678Z"
     select_date "31-#{I18n.l(Date.current.at_end_of_year, format: "%B")}-1980",
                 from: "residence_date_of_birth"
 
-    fill_in 'residence_postal_code', with: '28013'
-    check 'residence_terms_of_service'
+    fill_in "residence_postal_code", with: "28013"
+    check "residence_terms_of_service"
 
     click_button "new_residence_submit"
     expect(page).to have_content I18n.t("verification.residence.create.flash.success")
   end
 
   def officing_verify_residence
-    select 'DNI', from: 'residence_document_type'
-    fill_in 'residence_document_number', with: "12345678Z"
-    fill_in 'residence_year_of_birth', with: "1980"
+    select "DNI", from: "residence_document_type"
+    fill_in "residence_document_number", with: "12345678Z"
+    fill_in "residence_year_of_birth", with: "1980"
 
-    click_button 'Validate document'
+    click_button "Validate document"
 
-    expect(page).to have_content 'Document verified with Census'
+    expect(page).to have_content "Document verified with Census"
   end
 
   def expect_badge_for(resource_name, resource)
@@ -53,11 +53,11 @@ module Verifications
   # @param [String] locator label text for the textarea or textarea id
   def fill_in_ckeditor(locator, params = {})
     # Find out ckeditor id at runtime using its label
-    locator = find('label', text: locator)[:for] if page.has_css?('label', text: locator)
+    locator = find("label", text: locator)[:for] if page.has_css?("label", text: locator)
     # Fill the editor content
     page.execute_script <<-SCRIPT
         var ckeditor = CKEDITOR.instances.#{locator}
-        ckeditor.setData('#{params[:with]}')
+        ckeditor.setData("#{params[:with]}")
         ckeditor.focus()
         ckeditor.updateElement()
     SCRIPT

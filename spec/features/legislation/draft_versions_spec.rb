@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Legislation Draft Versions' do
+feature "Legislation Draft Versions" do
   let(:user) { create(:user) }
   let(:administrator) do
     create(:administrator, user: user)
@@ -23,7 +23,7 @@ feature 'Legislation Draft Versions' do
 
       expect(page).to have_content("Body of the first version")
 
-      within('select#draft_version_id') do
+      within("select#draft_version_id") do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
         expect(page).not_to have_content("Version 3")
@@ -37,7 +37,7 @@ feature 'Legislation Draft Versions' do
 
       expect(page).to have_content("Body of the third version")
 
-      within('select#draft_version_id') do
+      within("select#draft_version_id") do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
         expect(page).to have_content("Version 3 *")
@@ -97,7 +97,7 @@ feature 'Legislation Draft Versions' do
 
       expect(page).to have_content("Changes for first version")
 
-      within('select#draft_version_id') do
+      within("select#draft_version_id") do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
         expect(page).not_to have_content("Version 3")
@@ -111,7 +111,7 @@ feature 'Legislation Draft Versions' do
 
       expect(page).to have_content("Changes for third version")
 
-      within('select#draft_version_id') do
+      within("select#draft_version_id") do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
         expect(page).to have_content("Version 3 *")
@@ -140,12 +140,12 @@ feature 'Legislation Draft Versions' do
     end
   end
 
-  context 'Annotations', :js do
+  context "Annotations", :js do
     let(:user) { create(:user) }
 
     background { login_as user }
 
-    scenario 'Visit as anonymous' do
+    scenario "Visit as anonymous" do
       logout
       draft_version = create(:legislation_draft_version, :published)
 
@@ -153,11 +153,11 @@ feature 'Legislation Draft Versions' do
 
       page.find(:css, ".legislation-annotatable").double_click
       page.find(:css, ".annotator-adder button").click
-      expect(page).not_to have_css('#legislation_annotation_text')
+      expect(page).not_to have_css("#legislation_annotation_text")
       expect(page).to have_content "You must Sign in or Sign up to leave a comment."
     end
 
-    scenario 'Create' do
+    scenario "Create" do
       draft_version = create(:legislation_draft_version, :published)
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
@@ -167,7 +167,7 @@ feature 'Legislation Draft Versions' do
       page.click_button "Publish Comment"
       expect(page).to have_content "Comment can't be blank"
 
-      fill_in 'legislation_annotation_text', with: 'this is my annotation'
+      fill_in "legislation_annotation_text", with: "this is my annotation"
       page.click_button "Publish Comment"
 
       expect(page).to have_css ".annotator-hl"
@@ -181,7 +181,7 @@ feature 'Legislation Draft Versions' do
       expect(page).to have_content "this is my annotation"
     end
 
-    scenario 'View annotations and comments' do
+    scenario "View annotations and comments" do
       draft_version = create(:legislation_draft_version, :published)
       annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
                                                     ranges: [{"start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10}])
@@ -224,7 +224,7 @@ feature 'Legislation Draft Versions' do
 
     background { login_as user }
 
-    scenario 'View annotations and comments in an included range' do
+    scenario "View annotations and comments in an included range" do
       draft_version = create(:legislation_draft_version, :published)
       annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
                                                     ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5}])

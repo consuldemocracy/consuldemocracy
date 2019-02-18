@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Incomplete verifications' do
+feature "Incomplete verifications" do
 
   background do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index' do
+  scenario "Index" do
     incompletely_verified_user1 = create(:user, :incomplete_verification)
     incompletely_verified_user2 = create(:user, :incomplete_verification)
     never_tried_to_verify_user = create(:user)
@@ -21,7 +21,7 @@ feature 'Incomplete verifications' do
     expect(page).not_to have_content(verified_user.username)
   end
 
-  scenario 'Search' do
+  scenario "Search" do
     verified_user = create(:user, :level_two, username: "Juan Carlos")
     unverified_user = create(:user, :incomplete_verification, username: "Juan_anonymous")
     unverified_user = create(:user, :incomplete_verification, username: "Isabel_anonymous")
@@ -55,7 +55,7 @@ feature 'Incomplete verifications' do
     visit admin_verifications_path
 
     within "#user_#{incompletely_verified_user.id}" do
-      expect(page).to have_content 'Phone not given'
+      expect(page).to have_content "Phone not given"
     end
   end
 
@@ -68,7 +68,7 @@ feature 'Incomplete verifications' do
     visit admin_verifications_path
 
     within "#user_#{incompletely_verified_user.id}" do
-      expect(page).to have_content 'Has not confirmed the sms code'
+      expect(page).to have_content "Has not confirmed the sms code"
     end
   end
 

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe UserSegments do
   let(:user1) { create(:user) }
@@ -178,8 +178,8 @@ describe UserSegments do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
       budget = create(:budget)
-      investment1.vote_by(voter: user1, vote: 'yes')
-      investment2.vote_by(voter: user2, vote: 'yes')
+      investment1.vote_by(voter: user1, vote: "yes")
+      investment2.vote_by(voter: user2, vote: "yes")
       investment1.update(budget: budget)
       investment2.update(budget: budget)
 

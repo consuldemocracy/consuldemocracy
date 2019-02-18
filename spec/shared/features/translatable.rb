@@ -104,7 +104,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
-      select('Español', from: 'locale-switcher')
+      select("Español", from: "locale-switcher")
 
       expect_page_to_have_translatable_field field, :es, with: updated_text
     end
@@ -190,7 +190,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field field, :es, with: text_for(field, :es)
     end
 
-    scenario 'Change value of a translated field to blank', :js do
+    scenario "Change value of a translated field to blank", :js do
       skip("can't have translatable blank fields") if optional_fields.empty?
 
       field = optional_fields.sample
@@ -198,11 +198,11 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       visit path
       expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
-      fill_in_field field, :en, with: ''
+      fill_in_field field, :en, with: ""
       click_button update_button_text
 
       visit path
-      expect_page_to_have_translatable_field field, :en, with: ''
+      expect_page_to_have_translatable_field field, :en, with: ""
     end
 
     scenario "Add a translation for a locale with non-underscored name", :js do
@@ -214,7 +214,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       visit path
 
-      select('Português brasileiro', from: 'locale-switcher')
+      select("Português brasileiro", from: "locale-switcher")
 
       field = fields.sample
       expect_page_to_have_translatable_field field, :"pt-BR", with: text_for(field, :"pt-BR")
@@ -227,7 +227,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
 
-      select('Español', from: 'locale-switcher')
+      select("Español", from: "locale-switcher")
 
       expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
     end

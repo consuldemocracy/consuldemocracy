@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Age do
-  describe '.in_years' do
+  describe ".in_years" do
     it "handles nils" do
       expect(described_class.in_years(nil)).to be_nil
     end

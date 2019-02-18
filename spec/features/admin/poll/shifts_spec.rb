@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin shifts' do
+feature "Admin shifts" do
 
   background do
     admin = create(:administrator)
@@ -50,9 +50,9 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    expect(page).to have_select('shift_date_vote_collection_date', options: ["Select day", *vote_collection_dates])
-    expect(page).not_to have_select('shift_date_recount_scrutiny_date')
-    select I18n.l(Date.current, format: :long), from: 'shift_date_vote_collection_date'
+    expect(page).to have_select("shift_date_vote_collection_date", options: ["Select day", *vote_collection_dates])
+    expect(page).not_to have_select("shift_date_recount_scrutiny_date")
+    select I18n.l(Date.current, format: :long), from: "shift_date_vote_collection_date"
     click_button "Add shift"
 
     expect(page).to have_content "Shift added"
@@ -74,11 +74,11 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    select "Recount & Scrutiny", from: 'shift_task'
+    select "Recount & Scrutiny", from: "shift_task"
 
-    expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
-    expect(page).not_to have_select('shift_date_vote_collection_date')
-    select I18n.l(poll.ends_at.to_date + 4.days, format: :long), from: 'shift_date_recount_scrutiny_date'
+    expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day", *recount_scrutiny_dates])
+    expect(page).not_to have_select("shift_date_vote_collection_date")
+    select I18n.l(poll.ends_at.to_date + 4.days, format: :long), from: "shift_date_recount_scrutiny_date"
     click_button "Add shift"
 
     expect(page).to have_content "Shift added"
@@ -117,9 +117,9 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    expect(page).to have_select('shift_date_vote_collection_date', options: ["Select day", *vote_collection_dates])
-    select "Recount & Scrutiny", from: 'shift_task'
-    expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
+    expect(page).to have_select("shift_date_vote_collection_date", options: ["Select day", *vote_collection_dates])
+    select "Recount & Scrutiny", from: "shift_task"
+    expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day", *recount_scrutiny_dates])
   end
 
   scenario "Error on create", :js do

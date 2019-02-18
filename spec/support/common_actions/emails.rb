@@ -7,8 +7,8 @@ module Emails
 
     expect(page).to have_content "Send private message to #{receiver.name}"
 
-    fill_in 'direct_message_title', with: "Hey #{receiver.name}!"
-    fill_in 'direct_message_body',  with: "How are you doing? This is #{sender.name}"
+    fill_in "direct_message_title", with: "Hey #{receiver.name}!"
+    fill_in "direct_message_body",  with: "How are you doing? This is #{sender.name}"
 
     click_button "Send message"
 
@@ -18,7 +18,7 @@ module Emails
 
   def fill_in_newsletter_form(options = {})
     fill_in "newsletter_subject", with: (options[:subject] || "This is a different subject")
-    select (options[:segment_recipient] || 'All users'), from: 'newsletter_segment_recipient'
+    select (options[:segment_recipient] || "All users"), from: "newsletter_segment_recipient"
     fill_in "newsletter_from", with: (options[:from] || "no-reply@consul.dev")
     fill_in "newsletter_body", with: (options[:body] || "This is a different body")
   end

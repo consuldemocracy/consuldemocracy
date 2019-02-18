@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'cancan/matchers'
+require "rails_helper"
+require "cancan/matchers"
 
 describe Abilities::Everyone do
   subject(:ability) { Ability.new(user) }
@@ -8,8 +8,8 @@ describe Abilities::Everyone do
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
 
-  let(:reviewing_ballot_budget) { create(:budget, phase: 'reviewing_ballots') }
-  let(:finished_budget) { create(:budget, phase: 'finished') }
+  let(:reviewing_ballot_budget) { create(:budget, phase: "reviewing_ballots") }
+  let(:finished_budget) { create(:budget, phase: "finished") }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }

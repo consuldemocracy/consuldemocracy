@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Topic do
   let(:topic) { build(:topic) }
@@ -76,6 +76,6 @@ describe Topic do
   end
 
   describe "notifications" do
-    it_behaves_like 'notifiable'
+    it_behaves_like "notifiable"
   end
 end

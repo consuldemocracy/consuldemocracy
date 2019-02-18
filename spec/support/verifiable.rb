@@ -90,7 +90,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#sms_verified?' do
+  describe "#sms_verified?" do
     it "is true only if confirmed_phone" do
       user = create(:user, confirmed_phone: "123456789")
       expect(user.sms_verified?).to eq(true)
@@ -100,7 +100,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#level_two_verified?' do
+  describe "#level_two_verified?" do
     it "is true if manually set, or if residence_verified_at and confirmed_phone" do
       user = create(:user, level_two_verified_at: Time.current)
       expect(user.level_two_verified?).to eq(true)
@@ -116,7 +116,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#level_three_verified?' do
+  describe "#level_three_verified?" do
     it "is true only if verified_at" do
       user = create(:user, verified_at: Time.current)
       expect(user.level_three_verified?).to eq(true)
@@ -126,7 +126,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#unverified?' do
+  describe "#unverified?" do
     it "is true only if not level_three_verified and not level_two_verified" do
       user = create(:user, verified_at: nil, confirmed_phone: nil)
       expect(user.unverified?).to eq(true)
@@ -137,7 +137,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#verification_email_sent?' do
+  describe "#verification_email_sent?" do
     it "is true only if user has email_verification_token" do
       user = create(:user, email_verification_token: "xxxxxxx")
       expect(user.verification_email_sent?).to eq(true)
@@ -147,7 +147,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#verification_sms_sent?' do
+  describe "#verification_sms_sent?" do
     it "is true if user has unconfirmed_phone & sms_confirmation_code" do
       user = create(:user, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
       expect(user.verification_sms_sent?).to eq(true)
@@ -163,7 +163,7 @@ shared_examples_for "verifiable" do
     end
   end
 
-  describe '#verification_letter_sent?' do
+  describe "#verification_letter_sent?" do
     it "is true if user has letter_requested_at & letter_verification_code" do
       user = create(:user, letter_requested_at: Time.current, letter_verification_code: "666")
       expect(user.verification_letter_sent?).to eq(true)
@@ -184,7 +184,7 @@ shared_examples_for "verifiable" do
     let(:user) {create(:user)}
 
     before do
-      Setting["feature.user.skip_verification"] = 'true'
+      Setting["feature.user.skip_verification"] = "true"
     end
 
     after do
