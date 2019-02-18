@@ -8,6 +8,7 @@ namespace :users do
   end
 
   desc "Create superuser"
+  require "Faker"
   task superuser: :environment do
       email = Faker::Internet.email
       password = Faker::Internet.password
