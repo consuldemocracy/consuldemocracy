@@ -218,7 +218,6 @@ en:
       available_locales: Available languages
       collaborative_legislation: Collaborative legislation
       debates: Debates
-      external_link_blog: Blog
       locale: 'Language:'
       logo: CONSUL logo
       management: Management
@@ -620,7 +619,6 @@ en:
         see_more: See more recommendations
         hide: Hide recommendations
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"

@@ -73,9 +73,6 @@ en:
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Users over this age can participate in all processes"
     analytics_url: "Analytics URL"
-    blog_url: "Blog URL"
-    transparency_url: "Transparency URL"
-    opendata_url: "Open Data URL"
     verification_offices_url: Verification offices URL
     proposal_improvement_path: Proposal improvement info internal link
     feature:
