@@ -110,7 +110,9 @@ class Budget
     end
 
     def self.sort_by_title
-      all.sort_by(&:title)
+      includes(:translations).
+        with_locales(Globalize.fallbacks(I18n.locale)).
+        order("budget_investment_translations.title ASC")
     end
 
     def self.filter_params(params)
@@ -170,11 +172,10 @@ class Budget
     end
 
     def self.search_by_title_or_id(title_or_id, results)
-      if title_or_id =~ /^[0-9]+$/
-        results.where(id: title_or_id)
-      else
-        results.with_translations(I18n.locale).where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%")
-      end
+      return results.where(id: title_or_id) if title_or_id =~ /^[0-9]+$/
+
+      results.with_translations(Globalize.fallbacks(I18n.locale)).
+        where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%")
     end
 
     def searchable_values

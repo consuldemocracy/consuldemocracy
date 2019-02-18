@@ -561,10 +561,30 @@ describe Budget::Investment do
         spanish_investment = Globalize.with_locale(:es) do
           I18n.with_locale(:es) do
             create(:budget_investment, :selected, title: "Título en español")
+
+    describe "search_by_title_or_id" do
+      before { create(:budget_investment) }
+
+      let!(:investment) do
+        I18n.with_locale(:es) do
+          Globalize.with_locale(:es) do
+            create(:budget_investment,
+              title_es: "Título del proyecto de inversión",
+              description_es: "Descripción del proyecto de inversión")
           end
         end
+      end
 
-        expect(described_class.sort_by_title).to eq [english_investment, spanish_investment]
+      let(:all_investments) { described_class.all }
+
+      it "return investment by given id" do
+        expect(described_class.search_by_title_or_id(investment.id.to_s, all_investments)).
+          to eq([investment])
+      end
+
+      it "return investments by given title" do
+        expect(described_class.search_by_title_or_id("Título del proyecto de inversión", all_investments)).
+          to eq([investment])
       end
     end
   end

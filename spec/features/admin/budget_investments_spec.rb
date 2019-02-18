@@ -594,33 +594,43 @@ feature "Admin budget investments" do
     end
 
     background do
-      create(:budget_investment, title: "Some investment", budget: budget)
+      I18n.with_locale(:es) do
+        Globalize.with_locale(:es) do
+          create(:budget_investment, title: "Proyecto de inversión", budget: budget)
+        end
+      end
     end
 
     scenario "Search investments by title" do
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Some investment"
+      fill_in "title_or_id", with: "Proyecto de inversión"
       click_button "Filter"
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).not_to have_content("Some other investment")
+
+      fill_in "title_or_id", with: "Some other investment"
+      click_button "Filter"
+
+      expect(page).not_to have_content("Proyecto de inversión")
+      expect(page).to have_content("Some other investment")
     end
 
     scenario "Search investments by ID" do
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
       fill_in "title_or_id", with: first_investment.id
       click_button "Filter"
 
       expect(page).to have_content("Some other investment")
-      expect(page).not_to have_content("Some investment")
+      expect(page).not_to have_content("Proyecto de inversión")
     end
   end
 
