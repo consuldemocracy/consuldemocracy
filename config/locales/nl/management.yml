@@ -100,7 +100,7 @@ nl:
     print:
       budget_investments_info: Neem deel op http://url.consul
       proposals_info: Maak je eigen voorstel op http://url.consul
-      proposals_title: 'Voorstellen:'
+      proposals_title: 'Ideeën:'
       spending_proposals_info: Neem deel op http://url.consul
     print_info: Print deze informatie
     proposals:

@@ -40,11 +40,11 @@ section "Creating header and cards for the homepage" do
 
     link_text_en: 'More about debates',
     link_text_es: 'Más sobre debates',
-    link_text_nl: 'Over discussies',
+    link_text_nl: 'Over debatten',
 
     label_en: 'Debates',
     label_es: 'Debates',
-    label_nl: 'Discussies',
+    label_nl: 'Debatten',
 
     link_url: 'https://youtu.be/zU_0UN4VajY',
     header: false,

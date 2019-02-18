@@ -4,7 +4,7 @@ nl:
     actions:
       create:
         budget_investment: Budget investering is aangemaakt.
-        debate: Discussie is gestart.
+        debate: Debat is gestart.
         direct_message: Uw boodschap is verzonden.
         notice: "%{resource_name} aangemaakt."
         poll: Stemronde is aangemaakt.
@@ -29,7 +29,7 @@ nl:
         notice: Veranderingen opgeslagen
       update:
         budget_investment: Budget investering is bijgewerkt.
-        debate: Discussie is bijgewerkt.
+        debate: Debat is bijgewerkt.
         notice: "%{resource_name} is bijgewerkt."
         poll: Stemronde is bijgewerkt.
         poll_booth: Booth is bijgewerkt.

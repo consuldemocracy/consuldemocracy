@@ -113,7 +113,7 @@ nl:
         post_started_at: Post started at
         sections:
           budgets: Burgerbegrotingen
-          debates: Discussie
+          debates: Debatten
           help_page: Help-pagina
           homepage: Startpagina
           proposals: Ideeën
@@ -344,7 +344,7 @@ nl:
         notice: New participatory budget created successfully!
       destroy:
         success_notice: Begroting verwijderd
-        unable_notice: U kunt een begroting met voorstellen niet verwijderen
+        unable_notice: U kunt een begrotingsvoorstel niet verwijderen
       edit:
         actions: Activiteiten
         active: Actieve
@@ -488,7 +488,7 @@ nl:
         submit_card: Kaart opslaan
         submit_header: Bewaar koptekst
       feeds:
-        debates: Discussie
+        debates: Debatten
         processes: Proces
         proposals: Ideeën
       header_title: Koptekst
@@ -709,7 +709,7 @@ nl:
       poll_officers: Coördinatoren
       poll_questions: Vragen
       poll_shifts: Bewerk diensten
-      polls: Peilingen
+      polls: Stemmen
       proposals: Ideeën
       proposals_topics: Ideeonderwerpen
       settings: Instellingen
@@ -729,17 +729,17 @@ nl:
           layouts: Lay-outs
           mailers: Emails
           management: Beheer
-          polls: Peilingen
+          polls: Stemmen
           proposals: "Ideeën"
           welcome: Welkom
         pages: Aangepaste pagina's
-      spending_proposals: Bestedingsvoorstellen
+      spending_proposals: Begrotingsvoorstellen
       stats: Statistics
       system_emails: Systeemberichten
       title_booths: Stemmen
       title_budgets: Budgetten
       title_moderated_content: Moderated content
-      title_polls: Peilingen
+      title_polls: Stemmen
       title_profiles: Profielen
       title_settings: Instellingen
       title_site_customization: Aanpassing Site
@@ -964,9 +964,9 @@ nl:
         dates: Dates
         geozone_restricted: Beperkt tot buurten
         name: Name
-        no_polls: Er zijn geen peilingen.
+        no_polls: Er zijn geen stemrondes.
         start_date: Startdatum
-        title: Peilingen
+        title: Stemmen
       new:
         results_and_stats_reminder: Als u deze vakjes selecteert, zijn de resultaten en / of statistieken van deze poll openbaar beschikbaar en ziet elke deelnemer ze.
         show_results: Toon resultaten

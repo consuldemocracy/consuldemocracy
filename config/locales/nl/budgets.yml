@@ -8,8 +8,8 @@ nl:
         no_ballots_allowed: De selectiefase is voorbij
         not_enough_money_html: U hebt al het beschikbare budget toegewezen. <br><small>U kunt op elk gewenst moment %{change_ballot}</small>
         not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
-        not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
-        not_verified: Alleen geverrifieerde deelnemers kunnen op voorstellen stemmen; %{verify_account}.
+        not_selected: Niet-geselecteerde begrotingsvoorstellen kunnen niet worden gesteund
+        not_verified: Alleen geverrifieerde deelnemers kunnen op begrotingsvoorstellen stemmen; %{verify_account}.
         organization: Organisaties mogen niet stemmen
       show:
         amount_spent: Uitgegeven
@@ -18,10 +18,10 @@ nl:
         remove: Verwijder keuze
         title: Uw keuze
         voted_html:
-          one: U heeft op <span>één</span> voorstel gestemd.
-          other: U heeft op <span>%{count}</span> voorstellen gestemd.
+          one: U heeft op <span>één</span> begrotingsvoorstel gestemd.
+          other: U heeft op <span>%{count}</span> begrotingsvoorstellen gestemd.
         voted_info_html: U te allen tijde uw stem wijzigen, tot de sluiting van deze fase.<br> U hoeft niet het héle bedrag uit te geven.
-        zero: U heeft op geen enkel voorstel gestemd.
+        zero: U heeft op geen enkel begrotingsvoorstel gestemd.
     executions:
       filters:
         all: Alle (%{count})
@@ -34,24 +34,24 @@ nl:
     groups:
       show:
         title: Kies een mogelijkheid
-        unfeasible: Bekijk onhaalbare voorstellen
-        unfeasible_title: Onhaalbare voorstellen
-        unselected: Zie voorstellen niet geselecteerd voor de stemfase
-        unselected_title: Voorstellen niet geselecteerd voor de stemfase
+        unfeasible: Bekijk onhaalbare begrotingsvoorstellen
+        unfeasible_title: Onhaalbare begrotingsvoorstellen
+        unselected: Zie begrotingsvoorstellen niet geselecteerd voor de stemfase
+        unselected_title: begrotingsvoorstellen niet geselecteerd voor de stemfase
     index:
       all_phases: Investeringsfases
       empty_budgets: Er zijn geen budgetten.
       finished_budgets: Afgeronde burgerbegrotingen
       investment_proyects: Lijst van alle begrotingsvoorstellen
-      map: Investeringsvoorstellen geografisch weergegeven
+      map: Begrotingsvoorstellen geografisch weergegeven
       milestones: Mijlpalen
       not_selected_investment_proyects: Lijst van alle begrotingsvoorstellen niet geschikt voor stemming
       section_footer:
         description: Met de participatieve budgetten beslissen de burgers aan welke projecten zij een deel van de begroting toekennen.
-        title: Hulp bij budget
+        title: Over budget
       section_header:
         all_phases: Bekijk alle fases
-        help: Hulp bij burgerbegrotingen
+        help: Help
         icon_alt: Budgetafbeelding
         title: Burgerbegrotingen
       see_results: Bekijk resultaten
@@ -65,7 +65,7 @@ nl:
         map_remove_marker: Locatie verwijderen
         map_skip_checkbox: Deze investering heeft geen concrete locatie of ik ben er niet van op de hoogte.
         tag_category_label: Categorieen
-        tags_instructions: 'Label dit voorstel. U kunt '
+        tags_instructions: 'Label dit begrotingsvoorstel. U kunt '
         tags_label: Tags
         tags_placeholder: Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')
       header:
@@ -77,7 +77,7 @@ nl:
       index:
         by_heading: 'Begrotingsvoorstellen in de context van: %{heading}'
         orders:
-          confidence_score: best gescored
+          confidence_score: Populair
           price: op bedrag
           random: willekeurig
         search_form:
@@ -92,33 +92,33 @@ nl:
           change_ballot: Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen.
           check_ballot_link: check mijn stemming
           create: Nieuw begrotingsvoorstel maken
-          different_heading_assigned_html: 'Je steunt al in een ander onderdeel van het voorstel: %{heading_link}'
-          feasible: Haalbare voorstellen
+          different_heading_assigned_html: 'Je steunt al in een ander onderdeel van het begrotingsvoorstel: %{heading_link}'
+          feasible: Haalbare begrotingsvoorstellen
           my_ballot: Mijn stemmen
           not_logged_in: Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}.
           sign_in: aanmelden
           sign_up: registreren
-          unfeasible: Onhaalbare voorstellen
+          unfeasible: Onhaalbare begrotingsvoorstellen
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           verify_account: je account verifieren
           voted_html:
-            one: "<strong>U heeft gestemd op een voorstel dat %{amount_spent} kost</strong>"
-            other: "<strong>U heeft gestemd op %{count} voorstellen met een prijs van %{amount_spent}</strong>"
+            one: "<strong>U heeft gestemd op een begrotingsvoorstel dat %{amount_spent} kost</strong>"
+            other: "<strong>U heeft gestemd op %{count} begrotingsvoorstellen met een prijs van %{amount_spent}</strong>"
           voted_info: Tot het einde van deze fase kun je %{link}. Het is niet nodig om al het geld te besteden.
           voted_info_link: uw stem wijzigen
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
         title: Burgerbegrotingen
         unfeasible: Unfeasible investment projects
-        unfeasible_text: De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid.
+        unfeasible_text: De begrotingsvoorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. begrotingsvoorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid.
       investment:
         add: Voeg toe
-        already_added: U heeft dit voorstel al toegevoegd
+        already_added: U heeft dit begrotingsvoorstel al toegevoegd
         already_supported: Je hebt dit begrotingsvoorstel al gesteund. Deel het!
         confirm_group:
-          one: Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?
-          other: Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?
+          one: Je kunt maar in %{count} wijk begrotingsvoorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?
+          other: Je kunt maar in %{count} wijk begrotingsvoorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?
         give_support: Support
-        support_title: Steun dit voorstel
+        support_title: Steun dit begrotingsvoorstel
         supports:
           one: 1 steunbetuiging
           other: "%{count} steunbetuigingen"
@@ -147,16 +147,16 @@ nl:
         votes: Votes
       wrong_price_format: Alleen hele cijfers
     phase:
-      accepting: Voorstellen doen
-      balloting: Voorstellen die in stemming zijn
+      accepting: begrotingsvoorstellen doen
+      balloting: begrotingsvoorstellen die in stemming zijn
       drafting: Concept (niet publiekelijk zichtbaar)
       finished: Afronden budgetvoorstel
       informing: Informatie
       publishing_prices: Gepubliceerde projectkosten
-      reviewing: Voorstellen beoordelen
+      reviewing: begrotingsvoorstellen beoordelen
       reviewing_ballots: Evaluatie van stemmen
-      selecting: Voorstellen selecteren
-      valuating: Voorstellen waarderen
+      selecting: begrotingsvoorstellen selecteren
+      valuating: begrotingsvoorstellen waarderen
     phases:
       errors:
         dates_range_invalid: Startdatum kan niet gelijk of later zijn dan de einddatum.
@@ -172,7 +172,7 @@ nl:
       discarded: 'Verworpen uitgavenvoorstel: '
       heading: Resultaten burgerbegroting
       heading_selection_title: Per gebied
-      hide_discarded_link: Verberg verworpen voorstellen
+      hide_discarded_link: Verberg verworpen begrotingsvoorstellen
       incompatibles: Niet compatibel
       investment_proyects: Lijst van alle investeringsvoorstellen
       link: Resultaten
@@ -180,13 +180,13 @@ nl:
       page_title: "%{budget} - resultaten"
       price: Prijs
       show_all_link: Toon alle
-      spending_proposal: Titel van het voorstel
+      spending_proposal: Titel van het begrotingsvoorstel
       unfeasible_investment_proyects: Lijst van alle niet haalbare investeringsvoorstellen
     show:
       group: Groep
       phase: Huidige fase
       see_results: Bekijk resultaten
-      unfeasible: Bekijk de niet haalbare voorstellen
-      unfeasible_title: Onhaalbare voorstellen
-      unselected: Bekijk de voorstellen die niet geselecteerd zijn voor de stemfase
-      unselected_title: Voorstellen die niet geselecteerd zijn voor de stemfase
+      unfeasible: Bekijk de niet haalbare begrotingsvoorstellen
+      unfeasible_title: Onhaalbare begrotingsvoorstellen
+      unselected: Bekijk de begrotingsvoorstellen die niet geselecteerd zijn voor de stemfase
+      unselected_title: begrotingsvoorstellen die niet geselecteerd zijn voor de stemfase

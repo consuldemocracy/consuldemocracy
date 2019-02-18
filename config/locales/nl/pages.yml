@@ -40,7 +40,7 @@ nl:
           - key_column: 0
             page_column: Homepagina
           - key_column: 1
-            page_column: Discussie
+            page_column: Debat
           - key_column: 2
             page_column: Proposals
           - key_column: 3
@@ -86,13 +86,13 @@ nl:
         link: Burgerbegrotingen
         title: Burgerbegroting
       debates:
-        description: Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden.
-        feature_html: Je kunt discussies een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}.
+        description: Bij %{link} kun je debateren en je mening met anderen delen en bespreken. Dit is ook een plek waar je ideeën kunt presenteren, die via andere onderdelen van %{org} tot concrete acties kunnen leiden.
+        feature_html: Je kunt een debat een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}.
         feature_link: registreren in %{org}
-        figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
-        image_alt: Knoppen om een discussie te scoren
-        link: Discussies
-        title: Discussie
+        figcaption: '"Eens" en "Oneens" knoppen om een debat te beoordelen.'
+        image_alt: Knoppen om een debat te beoordelen
+        link: Debatten
+        title: Debat
       faq:
         button: Bekijk de meest gestelde vragen
         description: Lees de FAQs en kijk of dat helpt.
@@ -127,11 +127,11 @@ nl:
         link: peilingen
         title: Polls
       processes:
-        description: In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies.
+        description: In het %{link} onderdeel kun je meehelpen met het opstellen en aanpassen van regelgeving en formele stukken. Je kunt hier ook je mening geven over beleid en plannen uit eerdere debatten.
         link: plannen
         title: Proces
       proposals:
-        description: In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd.
+        description: In dit %{link} onderdeel kun je ideeën indienen en reageren op ideeën van anderen. Ideeën hebben steun van anderen nodig om tot een stemronde te leiden. Als een idee veel stemmen krijgt, wordt het geaccepteerd en uitgevoerd.
         figcaption_html: Knop om een voorstel te ''steunen''.
         image_alt: Knop om een voorstel te steunen
         link: Ideeën

@@ -49,7 +49,7 @@ nl:
     processes:
       debate:
         empty_questions: Er zijn geen vragen
-        participate: Neem deel aan discussies
+        participate: Neem deel aan debatten
       header:
         additional_info: Aanvullende informatie
         description: Beschrijving
@@ -57,15 +57,15 @@ nl:
       index:
         filter: Filter
         filters:
-          open: Open plannen
-          past: Vorige
-        no_open_processes: Er zijn geen actieve plannen
-        no_past_processes: Er zijn geen afgesloten plannen
+          open: Actueel
+          past: Gearchiveerd
+        no_open_processes: Er zijn geen actuele plannen
+        no_past_processes: Er zijn geen gearchiveerde plannen
         section_footer:
-          description: Neem deel aan discussies en plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering vanuit de gemeente. Jouw mening wordt meegenomen door je gemeente.
-          title: Hulp bij plannen
+          description: Help mee met het beoordelen en schrijven van plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering. Jouw mening telt en heeft invloed.
+          title: Over plannen
         section_header:
-          help: Hulp bij plannen
+          help: Help
           icon_alt: Plannen icoon
           title: Plannen
       phase_empty:
@@ -82,7 +82,7 @@ nl:
           winners: Geselecteerd
       shared:
         allegations_dates: Comments
-        debate_dates: Discussie
+        debate_dates: Debatdatum
         draft_publication_date: Concept publicatie
         homepage: Homepage
         key_dates: Data
@@ -101,8 +101,8 @@ nl:
         form:
           leave_comment: Laat jouw antwoord achter
       participation:
-        debate_phase_not_open: Discussiefase is gesloten en reacties worden niet meer geaccepteerd.
-        organizations: Deelname van organisaties in discussies is niet toegestaan
+        debate_phase_not_open: Het debat is gesloten en reacties worden niet meer geaccepteerd.
+        organizations: Deelname van organisaties in debat is niet toegestaan
         phase_not_open: Deze fase is niet open
         signin: Aanmelden
         signup: Registreer
@@ -114,7 +114,7 @@ nl:
           one: "%{count} reactie"
           other: "%{count} opmerkingen"
           zero: Geen reacties
-        debate: Discussie
+        debate: Debat
       show:
         answer_question: Antwoord indienen
         first_question: Eerste vraag

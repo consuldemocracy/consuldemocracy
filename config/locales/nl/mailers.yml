@@ -54,10 +54,10 @@ nl:
     no_reply: This message was sent from an email address that does not accept replies.
     proposal_notification_digest:
       comment: Reageren op het voorstel
-      info: Dit zijn de nieuwe meldingen die zijn gepubliceerd door auteurs van de voorstellen die u hebt ondersteund in %{org_name}.
-      share: Deel voorstellen
+      info: Dit zijn de nieuwe meldingen die zijn gepubliceerd door auteurs van ideeën die u hebt ondersteund in %{org_name}.
+      share: Delen
       title: Voorstelmeldingen in %{org_name}
-      unsubscribe: Als u geen kennisgeving van voorstellen wilt ontvangen, gaat u naar %{account} en verwijdert u het vinkje bij 'Een samenvatting van de kennisgevingsvoorstellen ontvangen'.
+      unsubscribe: Als u geen kennisgeving van ideeën wilt ontvangen, gaat u naar %{account} en verwijdert u het vinkje bij 'Een samenvatting van ideeën ontvangen'.
       unsubscribe_account: Mijn account
     reply:
       hi: Hoi

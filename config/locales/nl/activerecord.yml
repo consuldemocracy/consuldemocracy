@@ -301,8 +301,8 @@ nl:
         one: Commentaar
         other: Comments
       debate:
-        one: Discussie
-        other: Discussie
+        one: Debat
+        other: Debatten
       documents:
         one: Document
         other: Documenten
@@ -358,8 +358,8 @@ nl:
         one: Voortgang
         other: Voortgang
       proposal:
-        one: Burgervoorstel
-        other: Burgervoorstellen
+        one: Idee
+        other: Ideeën
       proposal_notification:
         one: Voorgestelde notificaties
         other: Voorstel notificaties

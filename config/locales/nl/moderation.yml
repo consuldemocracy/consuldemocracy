@@ -52,7 +52,7 @@ nl:
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Discussie
+          debate: Debat
           moderate: Modereer
         hide_debates: Hide debates
         ignore_flags: Markeer als gelezen
@@ -60,12 +60,12 @@ nl:
         orders:
           created_at: Nieuwste
           flags: Meest gemarkeerd
-        title: Discussie
+        title: Debat
     header:
       title: Moderation
     menu:
       flagged_comments: Comments
-      flagged_debates: Discussie
+      flagged_debates: Debat
       flagged_investments: Begrotingsvoorstellen
       proposal_notifications: Voorgestelde notificaties
       proposals: Proposals
@@ -82,7 +82,7 @@ nl:
         headers:
           moderate: Modereer
           proposal_notification: Voorstelnotificatie
-        hide_proposal_notifications: Verberg voorstellen
+        hide_proposal_notifications: Ideeën verbergen
         ignore_flags: Markeer als gelezen
         order: Order by
         orders:

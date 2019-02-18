@@ -46,7 +46,7 @@ nl:
           password_label: Wachtwoord
           phone_number_label: Telefoonnummer
           responsible_name_label: Volledige naam van de vertegenwoordiger van het collectief
-          responsible_name_note: Dit is de persoon die namens de vereniging of het collectief voorstellen indient
+          responsible_name_note: Dit is de persoon die namens de vereniging of het collectief ideeën indient
           submit: Aanmelden
           title: Als organisatie of collectief aanmelden
         success:
