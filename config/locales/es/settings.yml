@@ -73,9 +73,6 @@ es:
     min_age_to_participate: Edad mínima para participar
     min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos"
     analytics_url: "URL de estadísticas externas"
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparencia"
-    opendata_url: "URL de open data"
     verification_offices_url: URL oficinas verificación
     proposal_improvement_path: Link a información para mejorar propuestas
     feature:

@@ -51,9 +51,6 @@ Setting["facebook_handle"] = nil
 Setting["youtube_handle"] = nil
 Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
-Setting["blog_url"] = nil
-Setting["transparency_url"] = nil
-Setting["opendata_url"] = "/opendata"
 
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
