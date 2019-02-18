@@ -248,8 +248,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
     t.integer  "administrator_id"
-    t.string   "title"
-    t.text     "description"
+    t.string   "deprecated_title"
+    t.text     "deprecated_description"
     t.string   "external_url"
     t.bigint   "price"
     t.string   "feasibility",                      limit: 15, default: "undecided"
