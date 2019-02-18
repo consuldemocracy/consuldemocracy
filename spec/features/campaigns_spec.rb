@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Email campaigns' do
+feature "Email campaigns" do
 
   background do
     @campaign1 = create(:campaign)

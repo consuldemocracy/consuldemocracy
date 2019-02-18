@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Poll do
 
@@ -102,7 +102,7 @@ describe Poll do
     let(:level2_from_geozone) { create(:user, :level_two, geozone: geozone) }
     let(:all_users) { [non_user, level1, level2, level2_from_geozone] }
 
-    describe 'instance method' do
+    describe "instance method" do
       it "rejects non-users and level 1 users" do
         all_polls.each do |poll|
           expect(poll).not_to be_answerable_by(non_user)
@@ -129,7 +129,7 @@ describe Poll do
       end
     end
 
-    describe 'class method' do
+    describe "class method" do
       it "returns no polls for non-users and level 1 users" do
         expect(described_class.answerable_by(nil)).to be_empty
         expect(described_class.answerable_by(level1)).to be_empty

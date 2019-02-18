@@ -3,7 +3,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
 
   let!(:arguments) { {} }
   let!(:followable) { create(followable_class_name) }
-  let!(:followable_dom_name) { followable_class_name.tr('_', '-') }
+  let!(:followable_dom_name) { followable_class_name.tr("_", "-") }
 
   before do
     followable_path_arguments.each do |argument_name, path_to_value|

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::Phase do
 
@@ -29,7 +29,7 @@ describe Budget::Phase do
       end
 
       it "is not valid with a kind not in valid budget phases" do
-        expect(build(:budget_phase, kind: 'invalid_phase_kind')).not_to be_valid
+        expect(build(:budget_phase, kind: "invalid_phase_kind")).not_to be_valid
       end
 
       it "is not valid with the same kind as another budget's phase" do

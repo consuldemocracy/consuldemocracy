@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Voters' do
+feature "Voters" do
 
   let(:poll) { create(:poll, :current) }
   let(:booth) { create(:poll_booth) }

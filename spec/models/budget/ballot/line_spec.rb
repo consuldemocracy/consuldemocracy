@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::Ballot::Line do
 
@@ -9,7 +9,7 @@ describe Budget::Ballot::Line do
   let(:ballot) { create(:budget_ballot, budget: budget) }
   let(:ballot_line) { build(:budget_ballot_line, ballot: ballot, investment: investment) }
 
-  describe 'Validations' do
+  describe "Validations" do
 
     it "is valid and automatically denormallyze budget, group and heading when validated" do
       expect(ballot_line).to be_valid
@@ -18,7 +18,7 @@ describe Budget::Ballot::Line do
       expect(ballot_line.heading).to eq(heading)
     end
 
-    describe 'Money' do
+    describe "Money" do
       it "is not valid if insufficient funds" do
         investment.update(price: heading.price + 1)
         expect(ballot_line).not_to be_valid
@@ -30,7 +30,7 @@ describe Budget::Ballot::Line do
       end
     end
 
-    describe 'Selectibility' do
+    describe "Selectibility" do
       it "is not valid if investment is unselected" do
         investment.update(selected: false)
         expect(ballot_line).not_to be_valid

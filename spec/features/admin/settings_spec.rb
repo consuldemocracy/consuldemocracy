@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin settings' do
+feature "Admin settings" do
 
   background do
     @setting1 = create(:setting)
@@ -9,7 +9,7 @@ feature 'Admin settings' do
     login_as(create(:administrator).user)
   end
 
-  scenario 'Index' do
+  scenario "Index" do
     visit admin_settings_path
 
     expect(page).to have_content @setting1.key
@@ -17,21 +17,21 @@ feature 'Admin settings' do
     expect(page).to have_content @setting3.key
   end
 
-  scenario 'Update' do
+  scenario "Update" do
     visit admin_settings_path
 
     within("#edit_setting_#{@setting2.id}") do
-      fill_in "setting_#{@setting2.id}", with: 'Super Users of level 2'
-      click_button 'Update'
+      fill_in "setting_#{@setting2.id}", with: "Super Users of level 2"
+      click_button "Update"
     end
 
-    expect(page).to have_content 'Value updated'
+    expect(page).to have_content "Value updated"
   end
 
   describe "Update map" do
 
     scenario "Should not be able when map feature deactivated" do
-      Setting['feature.map'] = false
+      Setting["feature.map"] = false
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -41,7 +41,7 @@ feature 'Admin settings' do
     end
 
     scenario "Should be able when map feature activated" do
-      Setting['feature.map'] = true
+      Setting["feature.map"] = true
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -51,7 +51,7 @@ feature 'Admin settings' do
     end
 
     scenario "Should show successful notice" do
-      Setting['feature.map'] = true
+      Setting["feature.map"] = true
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -64,7 +64,7 @@ feature 'Admin settings' do
     end
 
     scenario "Should display marker by default", :js do
-      Setting['feature.map'] = true
+      Setting["feature.map"] = true
       admin = create(:administrator).user
       login_as(admin)
 
@@ -75,7 +75,7 @@ feature 'Admin settings' do
     end
 
     scenario "Should update marker", :js do
-      Setting['feature.map'] = true
+      Setting["feature.map"] = true
       admin = create(:administrator).user
       login_as(admin)
 
@@ -95,7 +95,7 @@ feature 'Admin settings' do
   describe "Skip verification" do
 
     scenario "deactivate skip verification", :js do
-      Setting["feature.user.skip_verification"] = 'true'
+      Setting["feature.user.skip_verification"] = "true"
       setting = Setting.where(key: "feature.user.skip_verification").first
 
       visit admin_settings_path
@@ -105,7 +105,7 @@ feature 'Admin settings' do
         find("#edit_setting_#{setting.id} .button").click
       end
 
-      expect(page).to have_content 'Value updated'
+      expect(page).to have_content "Value updated"
     end
 
     scenario "activate skip verification", :js do
@@ -119,7 +119,7 @@ feature 'Admin settings' do
         find("#edit_setting_#{setting.id} .button").click
       end
 
-      expect(page).to have_content 'Value updated'
+      expect(page).to have_content "Value updated"
 
       Setting["feature.user.skip_verification"] = nil
     end

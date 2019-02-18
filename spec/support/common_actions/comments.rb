@@ -17,10 +17,10 @@ module Comments
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
-      click_button 'Publish reply'
+      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      click_button "Publish reply"
     end
-    expect(page).to have_content 'It will be done next week.'
+    expect(page).to have_content "It will be done next week."
   end
 
   def avatar(name)
