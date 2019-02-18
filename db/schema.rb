@@ -428,7 +428,7 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.text     "body"
+    t.text     "deprecated_body"
     t.string   "subject"
     t.integer  "user_id",                            null: false
     t.datetime "created_at"
