@@ -1,12 +1,23 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
+
+<%= render_custom_partial "meta_description" %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: polls_url %>
 <% end %>
+
+<%= render_custom_partial "social_meta_tags" %>
 
 <%= render "shared/section_header", i18n_namespace: "polls.index.section_header", image: "polls" %>
 
 <div class="row">
   <div class="small-12 column">
+    <% if show_polls_description? %>
+		  <div class="polls-description">
+        <%= safe_html_with_links WYSIWYGSanitizer.new.sanitize(@active_poll.description) %>
+      </div>
+		<% end %>
+
     <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
 
     <% if @polls.any? %>
@@ -38,6 +49,7 @@
         <strong><%= t("polls.index.section_footer.title") %></strong>
       </p>
       <p><%= t("polls.index.section_footer.description") %></p>
+      <%= render_custom_partial "footer" %>
     </div>
   </div>
 </div>
