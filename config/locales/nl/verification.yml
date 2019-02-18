@@ -3,7 +3,7 @@ nl:
   verification:
     alert:
       lock: You have reached the maximum number of attempts. Please try again later.
-    back: Return to my account
+    back: Terug naar mijn gegevens
     email:
       create:
         alert:

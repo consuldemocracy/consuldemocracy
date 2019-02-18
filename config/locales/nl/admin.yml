@@ -115,7 +115,7 @@ nl:
           budgets: Burgerbegrotingen
           debates: Discussie
           help_page: Help-pagina
-          homepage: Homepage
+          homepage: Startpagina
           proposals: Ideeën
         sections_label: Secties waar het wordt weergegeven
         target_url: Link
@@ -481,7 +481,7 @@ nl:
       cards_title: Tegels
       create_card: Tegel aanmaken
       create_header: Koptekst maken
-      description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
+      description: Voorzie de startpagina van teksten en componenten om bezoekers op weg te helpen.
       edit:
         card_title: Kaart bewerken
         header_title: Header bewerken
@@ -684,10 +684,10 @@ nl:
         title: 'Managers: zoek deelnemers'
     menu:
       activity: Moderator activiteit
-      admin: Admin menu
+      admin: Beheerdersmenu
       admin_notifications: Notificaties
-      administrators: Admins
-      banner: Manage banners
+      administrators: Beheerders
+      banner: Banners beheren
       budgets: Participatory budgets
       emails_download: E-mails download
       geozones: Manage geozones
@@ -696,20 +696,20 @@ nl:
       hidden_debates: Verborgen debatten
       hidden_proposal_notifications: Verborgen notificaties
       hidden_proposals: Verborgen ideeën
-      hidden_users: Hidden users
+      hidden_users: Verborgen gebruikers
       legislation: Plannen
       managers: Beheerders
       messaging_users: Berichten naar gebruikers
       moderators: Moderators
       newsletters: Nieuwsbrieven
       officials: Officials
-      organizations: Organisations
-      poll_booth_assignments: Stemlocatie toewijzingen
-      poll_booths: Booths location
-      poll_officers: Poll officers
+      organizations: Organisaties
+      poll_booth_assignments: Toegewezen stemlocaties
+      poll_booths: Stemlocaties
+      poll_officers: Coördinatoren
       poll_questions: Vragen
       poll_shifts: Bewerk diensten
-      polls: Polls
+      polls: Peilingen
       proposals: Ideeën
       proposals_topics: Ideeonderwerpen
       settings: Instellingen
@@ -736,11 +736,11 @@ nl:
       spending_proposals: Bestedingsvoorstellen
       stats: Statistics
       system_emails: Systeemberichten
-      title_booths: Stemhokjes
-      title_budgets: Budgets
+      title_booths: Stemmen
+      title_budgets: Budgetten
       title_moderated_content: Moderated content
-      title_polls: Polls
-      title_profiles: Profiles
+      title_polls: Peilingen
+      title_profiles: Profielen
       title_settings: Instellingen
       title_site_customization: Aanpassing Site
       users: Deelnemer
@@ -831,11 +831,11 @@ nl:
         official_updated: Details of official saved
       index:
         name: Naam
-        no_officials: Er zijn geen officials.
+        no_officials: Er zijn geen coördinatoren.
         official_level: Niveau
         official_position: Positie
-        title: Beambten
-      level_0: Not official
+        title: Coördinatoren
+      level_0: Vrijwillig
       level_1: Level 1
       level_2: Level 2
       level_3: Level 3
@@ -1100,14 +1100,14 @@ nl:
       flash:
         updated: Value updated
       index:
-        banner_imgs: Banier beelden
-        banners: Banieren
-        feature_flags: Features
+        banner_imgs: Afbeeldingen
+        banners: Banners
+        feature_flags: Modules
         features:
-          disable: Disable
-          disabled: Feature disabled
-          enable: Enable
-          enabled: Feature enabled
+          disable: Uitschakelen
+          disabled: Uitgeschakeld
+          enable: Inschakelen
+          enabled: Ingeschakeld
         map:
           flash:
             update: Instellingen opgeslagen.
@@ -1117,7 +1117,7 @@ nl:
           title: Kaart instellingen
         no_banners_images: Geen banner afbeeldingen
         no_banners_styles: Geen banner stijlen
-        title: Configuration settings
+        title: Configuratie
         update_setting: Update
       no_description: Geen beschrijving
       setting: Functie
