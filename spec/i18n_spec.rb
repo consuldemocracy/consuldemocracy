@@ -56,9 +56,27 @@ describe "I18n" do
       I18n.backend.store_translations(:en, { test_plural: keys })
 
       expect(I18n.t("test_plural", count: 0)).to eq("No comments")
-      expect(I18n.t("test_plural", count: 1)).to eq(1)
-      expect(I18n.t("test_plural", count: 2)).to eq(2)
+      expect(I18n.t("test_plural", count: 1)).to eq("1")
+      expect(I18n.t("test_plural", count: 2)).to eq("2")
     end
 
+    it "returns a String to avoid exception 'undefined method for Fixnum'" do
+      keys = { zero:  "No comments" }
+      I18n.backend.store_translations(:en, { test_plural: keys })
+
+      result = I18n.t("test_plural", count: 1)
+      expect(result.class).to be String
+      expect { result.pluralize }.not_to raise_error
+    end
+
+    it "returns the number not pluralized for missing translations" do
+      keys = { zero:  "No comments" }
+      I18n.backend.store_translations(:en, { test_plural: keys })
+
+      expect(I18n.t("test_plural", count: 1).pluralize).to eq "1"
+      expect(I18n.t("test_plural", count: 2).pluralize).to eq "2"
+      expect(I18n.t("test_plural", count: 1).pluralize).not_to eq "1s"
+      expect(I18n.t("test_plural", count: 2).pluralize).not_to eq "2s"
+    end
   end
 end
