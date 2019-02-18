@@ -483,7 +483,8 @@ en:
           title: Process
           comments: Comments
           status: Status
-          creation_date: Creation date
+          start_date: Start date
+          end_date: End date
           status_open: Open
           status_closed: Closed
           status_planned: Planned
