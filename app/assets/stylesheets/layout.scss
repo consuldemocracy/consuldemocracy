@@ -588,10 +588,6 @@ header {
       height: rem-calc(48);
       margin: 0;
       width: auto;
-
-      @include breakpoint(medium up) {
-        height: auto;
-      }
     }
   }
 }
