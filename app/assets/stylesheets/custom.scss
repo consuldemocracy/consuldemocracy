@@ -145,8 +145,8 @@ header,
   }
 
   &::after {
-    background: #ededed image-url('banner_oct_2018.gif');
-    content: '';
+    background: #ededed image-url("banner_oct_2018.gif");
+    content: " ";
     display: inline-block;
     height: 100px;
     width: 100px;
@@ -517,8 +517,8 @@ table {
   position: relative;
 
   &::after {
-    content: '\46';
-    font-family: 'icons';
+    content: "\46";
+    font-family: "icons";
     margin-left: $line-height / 4;
     position: absolute;
   }
@@ -531,7 +531,7 @@ table {
   }
 }
 
-@import 'motion-ui/motion-ui';
+@import "motion-ui/motion-ui";
 @include foundation-orbit;
 @include motion-ui-transitions;
 @include motion-ui-animations;
@@ -1201,7 +1201,7 @@ table {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .spending-proposals {
-  background: $budget image-url('spending_proposals_bg.jpg');
+  background: $budget image-url("spending_proposals_bg.jpg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1290,7 +1290,7 @@ table {
     border-top: 4px solid $info-border;
 
     @include breakpoint(medium) {
-      background: image-url('investment_project_city.jpg') no-repeat bottom;
+      background: image-url("investment_project_city.jpg") no-repeat bottom;
     }
   }
 
@@ -1298,7 +1298,7 @@ table {
     border-top: 4px solid $success-border;
 
     @include breakpoint(medium) {
-      background: image-url('investment_project_districts.jpg') no-repeat bottom;
+      background: image-url("investment_project_districts.jpg") no-repeat bottom;
     }
 
     .button {
@@ -1365,8 +1365,8 @@ table {
 
   &::after {
     color: $check;
-    content: '\6c';
-    font-family: 'icons';
+    content: "\6c";
+    font-family: "icons";
     margin-left: rem-calc(6);
   }
 }
@@ -1409,7 +1409,7 @@ table {
 }
 
 .jumbo-delegation {
-  background: #7e328a image-url('investment_project_delegation.jpg');
+  background: #7e328a image-url("investment_project_delegation.jpg");
   margin-bottom: rem-calc(-96);
 
   @include breakpoint(medium) {
@@ -1462,7 +1462,7 @@ table {
   padding: $line-height / 2;
 
   @include breakpoint(medium) {
-    background: #33dadf image-url('processes_plaza_espana_small.gif') no-repeat;
+    background: #33dadf image-url("processes_plaza_espana_small.gif") no-repeat;
     background-position: right;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -1487,7 +1487,7 @@ table {
   padding: $line-height / 2;
 
   @include breakpoint(medium) {
-    background: $budget image-url('featured_spending_proposals.png') no-repeat;
+    background: $budget image-url("featured_spending_proposals.png") no-repeat;
     background-position: bottom right;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -1677,7 +1677,7 @@ tr th {
 
       &::before {
         color: #ddd;
-        content: '\201C';
+        content: "\201C";
         font-size: rem-calc(60);
         left: -40px;
         position: absolute;
@@ -1728,8 +1728,8 @@ tr th {
 
       &::before {
         color: $brand;
-        content: '\56';
-        font-family: 'icons';
+        content: "\56";
+        font-family: "icons";
         position: absolute;
         right: -6px;
         top: -12px;
@@ -1770,8 +1770,8 @@ tr th {
 
       &::after {
         color: $brand;
-        content: '\56';
-        font-family: 'icons';
+        content: "\56";
+        font-family: "icons";
         position: absolute;
         right: -6px;
         top: -12px;
@@ -1855,8 +1855,8 @@ tr th {
 
   &.selected::after {
     color: #fbfbfb;
-    content: '\56';
-    font-family: 'icons';
+    content: "\56";
+    font-family: "icons";
     font-size: rem-calc(30);
     position: absolute;
     right: 50px;
@@ -2019,7 +2019,7 @@ aside {
 
     &::after {
       color: #fff;
-      content: '\73';
+      content: "\73";
       font-family: "icons" !important;
       font-size: rem-calc(16);
       left: -34px;
@@ -2043,7 +2043,7 @@ aside {
       padding-top: $line-height;
 
       &::after {
-        content: ' equipo derechos humanos';
+        content: " equipo derechos humanos";
       }
     }
 
@@ -2073,8 +2073,8 @@ a {
     position: relative;
 
     &::before {
-      background: image-url('icon_eye.png') no-repeat;
-      content: ' ';
+      background: image-url("icon_eye.png") no-repeat;
+      content: " ";
       height: 24px;
       left: -26px;
       position: absolute;
@@ -2179,8 +2179,8 @@ a {
 
     &::before {
       color: $budget-2018-pink;
-      content: '\57';
-      font-family: 'icons';
+      content: "\57";
+      font-family: "icons";
       font-size: $small-font-size;
       position: absolute;
       right: -7px;
@@ -2327,8 +2327,8 @@ ul {
   padding: $line-height / 4;
 
   &::after {
-    content: '\56';
-    font-family: 'icons';
+    content: "\56";
+    font-family: "icons";
     font-size: $small-font-size;
     font-weight: normal;
     line-height: $line-height;
@@ -2501,7 +2501,7 @@ ul {
 
     &::after {
       color: #fff;
-      content: '\73';
+      content: "\73";
       font-family: "icons" !important;
       font-size: rem-calc(20);
       left: 30px;
@@ -2531,7 +2531,7 @@ ul {
 
     h1 {
       color: #000;
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(36);
       text-transform: uppercase;
 
@@ -2576,7 +2576,7 @@ ul {
     }
 
     .day {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(30);
       line-height: rem-calc(30);
       text-transform: uppercase;
@@ -2634,7 +2634,7 @@ ul {
 
   .title {
     color: #0054a1;
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
     font-size: rem-calc(40);
     line-height: rem-calc(40);
     margin-bottom: 0;
@@ -2756,8 +2756,8 @@ ul {
       background: $brand;
       border-radius: rem-calc(40);
       color: #fff;
-      content: '\6c';
-      font-family: 'icons';
+      content: "\6c";
+      font-family: "icons";
       font-size: rem-calc(16);
       height: rem-calc(24);
       padding: 0 $line-height / 6;
@@ -2776,7 +2776,7 @@ ul {
   background: $budget-2019-yellow;
 
   @include breakpoint(medium) {
-    background: $budget-2019-yellow image-url('budget_welcome/background_header.jpg');
+    background: $budget-2019-yellow image-url("budget_welcome/background_header.jpg");
     background-position: 100% top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2814,7 +2814,7 @@ ul {
     background: $budget-2019-yellow;
 
     @include breakpoint(medium) {
-      background: $budget-2019-yellow image-url('budget_welcome/background_header.jpg');
+      background: $budget-2019-yellow image-url("budget_welcome/background_header.jpg");
       background-position: 100% top;
       background-repeat: no-repeat;
       background-size: contain;
@@ -3016,7 +3016,7 @@ ul {
   p {
 
     &.budgets-lead-title {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(40);
       line-height: rem-calc(40);
       text-transform: uppercase;
@@ -3179,8 +3179,8 @@ p {
       }
 
       &::after {
-        content: '\63';
-        font-family: 'icons';
+        content: "\63";
+        font-family: "icons";
         right: 12px;
         position: absolute;
         top: 12px;
@@ -3201,7 +3201,7 @@ p {
 
   &.is-active::after {
     color: $brand;
-    content: '\61';
+    content: "\61";
   }
 
   a {
@@ -3249,7 +3249,7 @@ p {
 
   h3 {
     color: #000;
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
   }
 
   img {
@@ -3278,7 +3278,7 @@ p {
   h1,
   h2 {
     color: #fff;
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
   }
 
   .icon-angle-left,
@@ -3316,7 +3316,7 @@ p {
     border-radius: rem-calc(100);
     color: #000;
     display: inline-block;
-    font-family: 'Franklin gothic';
+    font-family: "Franklin gothic";
     font-size: rem-calc(40);
     height: rem-calc(60);
     line-height: rem-calc(50);
@@ -3360,8 +3360,8 @@ h3 {
   position: relative;
 
   &.pdf::after {
-    background: image-url('icon_pdf_white.png');
-    content: '';
+    background: image-url("icon_pdf_white.png");
+    content: " ";
     height: 48px;
     position: absolute;
     right: 10px;
@@ -3384,7 +3384,7 @@ h3 {
   figcaption {
     bottom: 0;
     color: #fff;
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
     font-size: rem-calc(36);
     line-height: rem-calc(36);
     text-transform: uppercase;
@@ -3394,7 +3394,7 @@ h3 {
 
     h3,
     .title {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(36);
       line-height: rem-calc(36);
     }

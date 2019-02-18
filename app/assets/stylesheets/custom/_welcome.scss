@@ -66,7 +66,7 @@
     padding: $line-height * 2 0;
 
     .lead-title {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(40);
       font-weight: bold;
       line-height: rem-calc(40);
@@ -170,13 +170,13 @@ $budget-2018-yellow:   #fef384;
   }
 
   .jumbo {
-    background: #ffeaac image-url('welcome/background_header_mobile.jpg');
+    background: #ffeaac image-url("welcome/background_header_mobile.jpg");
     background-position: bottom;
     background-repeat: no-repeat;
     padding-bottom: rem-calc(72);
 
     @include breakpoint(medium) {
-      background: #ffeaac image-url('welcome/background_header.jpg');
+      background: #ffeaac image-url("welcome/background_header.jpg");
       background-size: cover;
     }
 
