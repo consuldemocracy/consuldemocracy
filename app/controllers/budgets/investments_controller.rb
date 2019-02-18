@@ -37,7 +37,7 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(10).for_render
+      @investments = investments.page(params[:page]).per(per_page).for_render
 
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
@@ -203,6 +203,10 @@ module Budgets
           @investments.apply_filters_and_search(@budget, params, @current_filter)
                       .send("sort_by_#{@current_order}")
         end
+      end
+
+      def per_page
+        10
       end
 
       def load_map
