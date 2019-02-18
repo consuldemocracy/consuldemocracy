@@ -24,7 +24,7 @@ nl:
       show_debates_recommendations: Laat discussie aanbevelingen zien
       show_proposals_recommendations: Laat aanbevelingen voor ideeën zien
       subscription_to_website_newsletter_label: Stuur me email met relevante informatie over de website
-      title: My account
+      title: Mijn gegevens
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
       user_permission_proposal: Nieuw idee inbrengen
@@ -242,7 +242,7 @@ nl:
       logo: Consul logo
       management: Beheer
       moderation: Moderation
-      my_account_link: My account
+      my_account_link: Mijn gegevens
       my_activity_link: Mijn bijdragen
       notification_item:
         new_notifications:

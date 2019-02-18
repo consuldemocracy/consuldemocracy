@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::Investment do
   let(:investment) { build(:budget_investment) }
@@ -618,15 +618,15 @@ describe Budget::Investment do
     context "attributes" do
 
       it "searches by title" do
-        budget_investment = create(:budget_investment, title: 'save the world')
-        results = described_class.search('save the world')
+        budget_investment = create(:budget_investment, title: "save the world")
+        results = described_class.search("save the world")
         expect(results).to eq([budget_investment])
       end
 
       it "searches by author name" do
-        author = create(:user, username: 'Danny Trejo')
+        author = create(:user, username: "Danny Trejo")
         budget_investment = create(:budget_investment, author: author)
-        results = described_class.search('Danny')
+        results = described_class.search("Danny")
         expect(results).to eq([budget_investment])
       end
 
@@ -634,19 +634,19 @@ describe Budget::Investment do
 
     context "tags" do
       it "searches by tags" do
-        investment = create(:budget_investment, tag_list: 'Latina')
+        investment = create(:budget_investment, tag_list: "Latina")
 
-        results = described_class.search('Latina')
+        results = described_class.search("Latina")
         expect(results.first).to eq(investment)
 
-        results = described_class.search('Latin')
+        results = described_class.search("Latin")
         expect(results.first).to eq(investment)
       end
     end
 
   end
 
-  describe 'Permissions' do
+  describe "Permissions" do
     let(:budget)      { create(:budget) }
     let(:group)       { create(:budget_group, budget: budget) }
     let(:heading)     { create(:budget_heading, group: group) }
@@ -654,7 +654,7 @@ describe Budget::Investment do
     let(:luser)       { create(:user) }
     let(:district_sp) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
-    describe '#reason_for_not_being_selectable_by' do
+    describe "#reason_for_not_being_selectable_by" do
       it "rejects not logged in users" do
         expect(district_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
       end
@@ -908,7 +908,7 @@ describe Budget::Investment do
 
   describe "Final Voting" do
 
-    describe 'Permissions' do
+    describe "Permissions" do
       let(:budget)      { create(:budget) }
       let(:group)       { create(:budget_group, budget: budget) }
       let(:heading)     { create(:budget_heading, group: group) }
@@ -917,7 +917,7 @@ describe Budget::Investment do
       let(:ballot)      { create(:budget_ballot, budget: budget) }
       let(:investment)  { create(:budget_investment, :selected, budget: budget, heading: heading) }
 
-      describe '#reason_for_not_being_ballotable_by' do
+      describe "#reason_for_not_being_ballotable_by" do
         it "rejects not logged in users" do
           expect(investment.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
         end

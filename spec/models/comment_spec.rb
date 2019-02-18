@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Comment do
 
@@ -63,7 +63,7 @@ describe Comment do
       expect(comment.confidence_score).to eq(1)
     end
 
-    describe 'actions which affect it' do
+    describe "actions which affect it" do
       let(:comment) { create(:comment, :with_confidence_score) }
 
       it "increases with like" do
@@ -175,14 +175,14 @@ describe Comment do
       expect(described_class.public_for_api).not_to include(comment)
     end
 
-    it 'does not return comments on elements which are not debates or proposals' do
+    it "does not return comments on elements which are not debates or proposals" do
       budget_investment = create(:budget_investment)
       comment = create(:comment, commentable: budget_investment)
 
       expect(described_class.public_for_api).not_to include(comment)
     end
 
-    it 'does not return comments with no commentable' do
+    it "does not return comments with no commentable" do
       comment = build(:comment, commentable: nil).save!(validate: false)
 
       expect(described_class.public_for_api).not_to include(comment)

@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Official positions' do
+feature "Official positions" do
 
   context "Badge" do
 

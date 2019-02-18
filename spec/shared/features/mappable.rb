@@ -15,7 +15,7 @@ shared_examples "mappable" do |mappable_factory_name,
   let(:management)    { management }
 
   before do
-    Setting['feature.map'] = true
+    Setting["feature.map"] = true
   end
 
   describe "At #{mappable_new_path}" do
@@ -69,7 +69,7 @@ shared_examples "mappable" do |mappable_factory_name,
     end
 
     scenario "Can not display map on #{mappable_factory_name} when feature.map is disabled", :js do
-      Setting['feature.map'] = false
+      Setting["feature.map"] = false
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -80,7 +80,7 @@ shared_examples "mappable" do |mappable_factory_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario 'Errors on create' do
+    scenario "Errors on create" do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -89,7 +89,7 @@ shared_examples "mappable" do |mappable_factory_name,
       expect(page).to have_content "Map location can't be blank"
     end
 
-    scenario 'Skip map', :js do
+    scenario "Skip map", :js do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -100,7 +100,7 @@ shared_examples "mappable" do |mappable_factory_name,
       expect(page).not_to have_content "Map location can't be blank"
     end
 
-    scenario 'Toggle map', :js do
+    scenario "Toggle map", :js do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -168,7 +168,7 @@ shared_examples "mappable" do |mappable_factory_name,
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled", :js do
-      Setting['feature.map'] = false
+      Setting["feature.map"] = false
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -178,7 +178,7 @@ shared_examples "mappable" do |mappable_factory_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario 'No errors on update', :js do
+    scenario "No errors on update", :js do
       skip ""
       do_login_for mappable.author
 
@@ -189,7 +189,7 @@ shared_examples "mappable" do |mappable_factory_name,
       expect(page).not_to have_content "Map location can't be blank"
     end
 
-    scenario 'No need to skip map on update' do
+    scenario "No need to skip map on update" do
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -227,7 +227,7 @@ shared_examples "mappable" do |mappable_factory_name,
     end
 
     scenario "Should not display map on #{mappable_factory_name} show page when feature.map is disable", :js do
-      Setting['feature.map'] = false
+      Setting["feature.map"] = false
       arguments[:id] = mappable.id
 
       visit send(mappable_show_path, arguments)
@@ -249,17 +249,17 @@ def do_login_for(user)
 end
 
 def fill_in_proposal_form
-  fill_in 'proposal_title', with: 'Help refugees'
-  fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-  fill_in 'proposal_summary', with: 'In summary, what we want is...'
+  fill_in "proposal_title", with: "Help refugees"
+  fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
+  fill_in "proposal_summary", with: "In summary, what we want is..."
 end
 
 def submit_proposal_form
   check :proposal_terms_of_service
-  click_button 'Create proposal'
+  click_button "Create proposal"
 
-  if page.has_content?('Not now, go to my proposal')
-    click_link 'Not now, go to my proposal'
+  if page.has_content?("Not now, go to my proposal")
+    click_link "Not now, go to my proposal"
   end
 end
 
@@ -279,7 +279,7 @@ end
 
 def submit_budget_investment_form
   check :budget_investment_terms_of_service
-  click_button 'Create Investment'
+  click_button "Create Investment"
 end
 
 def set_arguments(arguments, mappable, mappable_path_arguments)

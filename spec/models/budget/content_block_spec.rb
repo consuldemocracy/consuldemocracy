@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::ContentBlock do
   let(:block) { build(:heading_content_block) }

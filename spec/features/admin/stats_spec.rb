@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Stats' do
+feature "Stats" do
 
   background do
     admin = create(:administrator)
@@ -8,9 +8,9 @@ feature 'Stats' do
     visit root_path
   end
 
-  context 'Summary' do
+  context "Summary" do
 
-    scenario 'General' do
+    scenario "General" do
       create(:debate)
       2.times { create(:proposal) }
       3.times { create(:comment, commentable: Debate.first) }
@@ -24,7 +24,7 @@ feature 'Stats' do
       expect(page).to have_content "Visits 4"
     end
 
-    scenario 'Votes' do
+    scenario "Votes" do
       debate = create(:debate)
       create(:vote, votable: debate)
 
@@ -46,7 +46,7 @@ feature 'Stats' do
 
   context "Users" do
 
-    scenario 'Summary' do
+    scenario "Summary" do
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
       3.times { create(:user) }
@@ -88,10 +88,10 @@ feature 'Stats' do
       expect(page).to have_content "Total users 1"
     end
 
-    scenario 'Level 2 user Graph' do
+    scenario "Level 2 user Graph" do
       create(:geozone)
       visit account_path
-      click_link 'Verify my account'
+      click_link "Verify my account"
       verify_residence
       confirm_phone
 

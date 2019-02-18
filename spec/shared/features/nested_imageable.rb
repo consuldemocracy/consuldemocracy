@@ -13,7 +13,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
   before do
 
-    Setting['feature.allow_images'] = true
+    Setting["feature.allow_images"] = true
 
     imageable_path_arguments&.each do |argument_name, path_to_value|
         arguments.merge!("#{argument_name}": imageable.send(path_to_value))
@@ -23,7 +23,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
   end
 
   after do
-    Setting['feature.allow_images'] = nil
+    Setting["feature.allow_images"] = nil
   end
 
   describe "at #{path}" do
@@ -52,7 +52,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
       image_input = find(".image").find("input[type=file]", visible: false)
       attach_file(
         image_input[:id],
-        Rails.root.join('spec/fixtures/files/clippy.jpg'),
+        Rails.root.join("spec/fixtures/files/clippy.jpg"),
         make_visible: true
       )
 
@@ -65,7 +65,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/clippy.jpg')
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
       expect_image_has_title("clippy.jpg")
@@ -81,7 +81,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
       image_input = find(".image").find("input[type=file]", visible: false)
       attach_file(
         image_input[:id],
-        Rails.root.join('spec/fixtures/files/clippy.jpg'),
+        Rails.root.join("spec/fixtures/files/clippy.jpg"),
         make_visible: true
       )
 
@@ -98,7 +98,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/clippy.jpg')
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
       expect(page).to have_selector ".loading-bar.complete"
@@ -110,7 +110,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        Rails.root.join("spec/fixtures/files/logo_header.png"),
         false
       )
 
@@ -123,7 +123,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/clippy.jpg')
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
       expect_image_has_cached_attachment(".jpg")
@@ -135,7 +135,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        Rails.root.join("spec/fixtures/files/logo_header.png"),
         false
       )
 
@@ -164,7 +164,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/clippy.jpg')
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
       within "#nested-image .image" do
@@ -194,7 +194,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/clippy.jpg')
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
       click_on submit_button
@@ -209,7 +209,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
       imageable_attach_new_file(
         imageable_factory_name,
-        Rails.root.join('spec/fixtures/files/clippy.jpg')
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
       click_on submit_button

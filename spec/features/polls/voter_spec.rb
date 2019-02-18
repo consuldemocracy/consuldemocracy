@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Voter" do
 
@@ -8,8 +8,8 @@ feature "Voter" do
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
-    let!(:answer_yes) { create(:poll_question_answer, question: question, title: 'Yes') }
-    let!(:answer_no) { create(:poll_question_answer, question: question, title: 'No') }
+    let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
+    let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
     background do
       create(:geozone, :in_census)
@@ -30,7 +30,7 @@ feature "Voter" do
       end
 
       expect(page).to have_css(".js-token-message", visible: true)
-      token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
+      token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, "").gsub("token=", "")
 
       expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
 
@@ -53,7 +53,7 @@ feature "Voter" do
       expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
-    scenario 'Voting in booth', :js do
+    scenario "Voting in booth", :js do
       user = create(:user, :in_census)
 
       login_through_form_as_officer(officer.user)
@@ -64,13 +64,13 @@ feature "Voter" do
       expect(page).to have_content poll.name
 
       within("#poll_#{poll.id}") do
-        click_button('Confirm vote')
-        expect(page).not_to have_button('Confirm vote')
-        expect(page).to have_content('Vote introduced!')
+        click_button("Confirm vote")
+        expect(page).not_to have_button("Confirm vote")
+        expect(page).to have_content("Vote introduced!")
       end
 
       expect(Poll::Voter.count).to eq(1)
-      expect(Poll::Voter.first.origin).to eq('booth')
+      expect(Poll::Voter.first.origin).to eq("booth")
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -116,7 +116,7 @@ feature "Voter" do
 
         visit poll_path(poll)
 
-        expect(page).not_to have_selector('.js-token-message')
+        expect(page).not_to have_selector(".js-token-message")
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
@@ -152,7 +152,7 @@ feature "Voter" do
 
       login_as user
       visit account_path
-      click_link 'Verify my account'
+      click_link "Verify my account"
 
       verify_residence
       confirm_phone(user)

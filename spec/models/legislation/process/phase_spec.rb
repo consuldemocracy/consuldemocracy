@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Legislation::Process::Phase, type: :model do
   let(:process) { create(:legislation_process) }

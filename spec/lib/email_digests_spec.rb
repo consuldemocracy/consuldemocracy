@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe EmailDigest do
 
@@ -140,14 +140,14 @@ describe EmailDigest do
   describe "#valid_email?" do
 
     it "returns a MatchData if email is valid" do
-      user = create(:user, email: 'valid_email@email.com')
+      user = create(:user, email: "valid_email@email.com")
 
       email_digest = described_class.new(user)
       expect(email_digest.valid_email?).to be_a(MatchData)
     end
 
     it "returns nil if email is invalid" do
-      user = create(:user, email: 'invalid_email@email..com')
+      user = create(:user, email: "invalid_email@email..com")
 
       email_digest = described_class.new(user)
       expect(email_digest.valid_email?).to be(nil)

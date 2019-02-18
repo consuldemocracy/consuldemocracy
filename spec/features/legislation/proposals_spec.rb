@@ -1,7 +1,7 @@
-require 'rails_helper'
-require 'sessions_helper'
+require "rails_helper"
+require "sessions_helper"
 
-feature 'Legislation Proposals' do
+feature "Legislation Proposals" do
 
   let(:user)     { create(:user) }
   let(:user2)    { create(:user) }
@@ -9,14 +9,14 @@ feature 'Legislation Proposals' do
   let(:proposal) { create(:legislation_proposal) }
 
   context "Concerns" do
-    it_behaves_like 'notifiable in-app', Legislation::Proposal
+    it_behaves_like "notifiable in-app", Legislation::Proposal
   end
 
   scenario "Only one menu element has 'active' CSS selector" do
     visit legislation_process_proposal_path(proposal.process, proposal)
 
-    within('#navigation_bar') do
-      expect(page).to have_css('.is-active', count: 1)
+    within("#navigation_bar") do
+      expect(page).to have_css(".is-active", count: 1)
     end
   end
 
@@ -81,43 +81,43 @@ feature 'Legislation Proposals' do
     end
   end
 
-  context 'Selected filter' do
-    scenario 'apperars even if there are not any selected poposals' do
+  context "Selected filter" do
+    scenario "apperars even if there are not any selected poposals" do
       create(:legislation_proposal, legislation_process_id: process.id)
 
       visit legislation_process_proposals_path(process)
 
-      expect(page).to have_content('Selected')
+      expect(page).to have_content("Selected")
     end
 
-    scenario 'defaults to winners if there are selected proposals' do
+    scenario "defaults to winners if there are selected proposals" do
       create(:legislation_proposal, legislation_process_id: process.id)
       create(:legislation_proposal, legislation_process_id: process.id, selected: true)
 
       visit legislation_process_proposals_path(process)
 
-      expect(page).to have_link('Random')
-      expect(page).not_to have_link('Selected')
-      expect(page).to have_content('Selected')
+      expect(page).to have_link("Random")
+      expect(page).not_to have_link("Selected")
+      expect(page).to have_content("Selected")
     end
 
-    scenario 'defaults to random if the current process does not have selected proposals' do
+    scenario "defaults to random if the current process does not have selected proposals" do
       create(:legislation_proposal, legislation_process_id: process.id)
       create(:legislation_proposal, selected: true)
 
       visit legislation_process_proposals_path(process)
 
-      expect(page).to have_link('Selected')
-      expect(page).not_to have_link('Random')
-      expect(page).to have_content('Random')
+      expect(page).to have_link("Selected")
+      expect(page).not_to have_link("Random")
+      expect(page).to have_content("Random")
     end
 
-    scenario 'filters correctly' do
+    scenario "filters correctly" do
       proposal1 = create(:legislation_proposal, legislation_process_id: process.id)
       proposal2 = create(:legislation_proposal, legislation_process_id: process.id, selected: true)
 
       visit legislation_process_proposals_path(process, filter: "random")
-      click_link 'Selected'
+      click_link "Selected"
 
       expect(page).to have_css("div#legislation_proposal_#{proposal2.id}")
       expect(page).not_to have_css("div#legislation_proposal_#{proposal1.id}")
@@ -135,14 +135,14 @@ feature 'Legislation Proposals' do
 
     visit new_legislation_process_proposal_path(process)
 
-    fill_in 'Proposal title', with: 'Legislation proposal with image'
-    fill_in 'Proposal summary', with: 'Including an image on a legislation proposal'
-    imageable_attach_new_file(create(:image), Rails.root.join('spec/fixtures/files/clippy.jpg'))
-    check 'legislation_proposal_terms_of_service'
-    click_button 'Create proposal'
+    fill_in "Proposal title", with: "Legislation proposal with image"
+    fill_in "Proposal summary", with: "Including an image on a legislation proposal"
+    imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
+    check "legislation_proposal_terms_of_service"
+    click_button "Create proposal"
 
-    expect(page).to have_content 'Legislation proposal with image'
-    expect(page).to have_content 'Including an image on a legislation proposal'
+    expect(page).to have_content "Legislation proposal with image"
+    expect(page).to have_content "Including an image on a legislation proposal"
     expect(page).to have_css("img[alt='#{Legislation::Proposal.last.image.title}']")
   end
 
