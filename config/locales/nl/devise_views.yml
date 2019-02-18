@@ -50,7 +50,7 @@ nl:
           submit: Aanmelden
           title: Als organisatie of collectief aanmelden
         success:
-          back_to_index: Begrepen; terug naar hoofdpagina
+          back_to_index: Terug naar hoofdpagina
           instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
           instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
           instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
@@ -123,8 +123,8 @@ nl:
           username_label: Naam
           username_note: De opgegeven naam zal zichtbaar zijn voor andere gebruikers
         success:
-          back_to_index: Begrepen; terug naar hoofdpagina
-          instructions_1_html: "<b>Check uw mail</b> - we hebben u een <b>link ter bevestiging</b> gestuurd."
-          instructions_2_html: Na bevestiging kunt u deelnemen.
-          thank_you_html: Dank voor uw aanmelding. Uw mail moet nu worden <b>bevestigd</b>.
+          back_to_index: Terug naar hoofdpagina
+          instructions_1_html: "Een bevestigingsmail is verstuurd, <b>controleer de mail</b>"
+          instructions_2_html: Het account wordt geactiveerd zodra de bevestiging compleet is
+          thank_you_html: Bedankt voor het aanmelden
           title: Mailadres bevestigen
