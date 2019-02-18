@@ -456,7 +456,8 @@ es:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha de creación
+          start_date: Fecha de apertura
+          end_date: Fecha de cierre
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
