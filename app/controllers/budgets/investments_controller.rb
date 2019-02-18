@@ -4,6 +4,8 @@ module Budgets
     include CommentableActions
     include FlagActions
 
+    PER_PAGE = 10
+
     before_action :authenticate_user!, except: [:index, :show, :redirect_to_new_url, :json_data]
     before_action :load_budget, except: [:redirect_to_new_url, :json_data]
     before_action :load_investment, only: [:show]
@@ -37,7 +39,7 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(per_page).for_render
+      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
 
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
@@ -197,16 +199,12 @@ module Budgets
 
       def investments
         if @current_order == 'random'
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}", params[:random_seed])
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}", params[:random_seed])
         else
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}")
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}")
         end
-      end
-
-      def per_page
-        10
       end
 
       def load_map
