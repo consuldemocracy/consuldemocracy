@@ -18,6 +18,22 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   enable_extension "unaccent"
   enable_extension "pg_trgm"
 
+  create_table "active_poll_translations", force: :cascade do |t|
+    t.integer  "active_poll_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.text     "description"
+  end
+
+  add_index "active_poll_translations", ["active_poll_id"], name: "index_active_poll_translations_on_active_poll_id", using: :btree
+  add_index "active_poll_translations", ["locale"], name: "index_active_poll_translations_on_locale", using: :btree
+
+  create_table "active_polls", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "action"

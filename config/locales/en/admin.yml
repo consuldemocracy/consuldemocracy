@@ -907,6 +907,13 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
+    active_polls:
+      edit:
+        title: "Polls description"
+      form:
+        description:
+          text: "Description"
+          help_text: "This text will appear in the header of the polls page. It can be used to add a context to the open polls."
     polls:
       index:
         title: "List of polls"

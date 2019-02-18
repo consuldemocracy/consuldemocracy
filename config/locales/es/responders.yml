@@ -24,6 +24,7 @@ es:
         debate: "Debate actualizado correctamente."
         poll: "Votación actualizada correctamente."
         poll_booth: "Urna actualizada correctamente."
+        active_poll: "Descripción general de votaciones actualizada correctamente."
         proposal: "Propuesta actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
         budget_investment: "Proyecto de gasto actualizado correctamente"

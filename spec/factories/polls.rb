@@ -134,4 +134,7 @@ FactoryBot.define do
       year_of_birth { Time.current.year }
     end
   end
+
+  factory :active_poll do
+  end
 end
