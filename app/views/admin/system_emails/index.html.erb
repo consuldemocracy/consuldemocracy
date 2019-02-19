@@ -37,6 +37,13 @@
                         method: :put %>
           </div>
         <% end %>
+        <% if system_email_actions.include?("edit_info") %>
+          <div class="small-8 column">
+            <p class="help-text">
+              <%= t("admin.system_emails.edit_info") %><br>
+              <code><%= "app/views/mailer/#{system_email_title}.html.erb" %></code>
+            </p>
+          </div>
         <% end %>
       </td>
     </tr>
