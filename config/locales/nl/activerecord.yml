@@ -180,7 +180,7 @@ nl:
         title: Title
       user:
         current_password: Huidig wachtwoord
-        email: E-mail
+        email: Email
         login: Email of gebruikersnaam
         official_level: Officieel niveau
         official_position: Officiele positie

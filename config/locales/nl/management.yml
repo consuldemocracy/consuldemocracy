@@ -3,7 +3,7 @@ nl:
   management:
     account:
       alert:
-        unverified_user: Geen geverifieerde gebruiker nog ingelogd
+        unverified_user: Geen geverifieerde gebruikers aangemeld
       edit:
         back: Terug
         password:
@@ -141,11 +141,11 @@ nl:
       create_user: Create a new account
       create_user_info: We zullen een account aanmaken met de volgende gegevens
       create_user_submit: Create user
-      create_user_success_html: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      create_user_success_html: Er is een bericht gestuurd naar <b>%{email}</b> ter controle. In het bericht bevindt zich een link waarmee deelname kan worden bevestigd.
       email_optional_label: Email (optioneel)
       erase_account_confirm: Are you sure you want to erase the account? This action can not be undone
-      erase_account_link: Delete user
-      erase_submit: Delete account
+      erase_account_link: Account verwijderen
+      erase_submit: Account verwijderen
       erase_warning: This action can not be undone. Please make sure you want to erase this account.
-      erased_by_manager: 'Deleted by manager: %{manager}'
-      erased_notice: User account deleted.
+      erased_by_manager: 'Verwijderd door %{manager}'
+      erased_notice: Account verwijderd.

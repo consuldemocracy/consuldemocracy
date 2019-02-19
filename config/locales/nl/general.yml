@@ -137,8 +137,8 @@ nl:
         other: " bevat de term <strong>'%{search_term}'</strong>"
       section_footer:
         description: Start een debat om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
-        help_text_1: Deze plek voor debat is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die men belangrijk vindt in de gemeente.
-        help_text_2: "'Om een debat te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande debatten en deze beoordelen met de knoppen 'Eens' of 'Oneens' die bij debatten staan."
+        help_text_1: Met een debat kunnen meningen worden geuit en gedeeld en worden kansen of knelpunten inzichtelijk.
+        help_text_2: "Om een debat te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande debatten en deze beoordelen met de knoppen 'Eens' of 'Oneens' die bij debatten staan."
         title: Over debat
       section_header:
         help: Help
@@ -285,21 +285,21 @@ nl:
   omniauth:
     facebook:
       name: Facebook
-      sign_in: Log in via Facebook
+      sign_in: Aanmelden met Facebook
       sign_up: Registreer via Facebook
     finish_signup:
       title: Verdere details
       username_warning: Door een verandering in de manier waarop we met sociale netwerken communiceren, is het mogelijk dat uw gebruikersnaam nu als 'al in gebruik' verschijnt. Kiest u dan een andere gebruikersnaam, aub.
     google_oauth2:
       name: Google
-      sign_in: Log in via Google
+      sign_in: Aanmelden Google
       sign_up: Registreer via Google
-    info_sign_in: 'Log in via:'
-    info_sign_up: 'Registreer via:'
-    or_fill: 'Of vul het volgende in:'
+    info_sign_in: 'Aanmelden via sociale media'
+    info_sign_up: 'Registreren via sociale media'
+    or_fill: 'Direct aanmelden'
     twitter:
       name: Twitter
-      sign_in: Log in via Twitter
+      sign_in: Aanmelden met Twitter
       sign_up: Registreer via Twitter
   poll_questions:
     create_question: Create question
@@ -437,8 +437,8 @@ nl:
         other: Anders
         started: Gestart
         unfeasible: Niet haalbaar
-      retired_proposals: Ingetrokken ideeën
-      retired_proposals_link: Ingetrokken ideeën
+      retired_proposals: Gearchiveerde ideeën
+      retired_proposals_link: Gearchiveerde ideeën
       search_form:
         button: Zoek
         placeholder: Zoek ideeën..
