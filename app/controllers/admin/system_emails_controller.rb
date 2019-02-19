@@ -4,36 +4,15 @@ class Admin::SystemEmailsController < Admin::BaseController
 
   def index
     @system_emails = {
-      proposal_notification_digest: %w[view preview_pending],
-      budget_investment_created:    %w[view edit_info],
-      budget_investment_selected:   %w[view edit_info],
-      budget_investment_unfeasible: %w[view edit_info],
-      budget_investment_unselected: %w[view edit_info],
-      comment:                      %w[view edit_info],
-      reply:                        %w[view edit_info],
-      direct_message_for_receiver:  %w[view edit_info],
-      direct_message_for_sender:    %w[view edit_info],
-      email_verification:           %w[view edit_info],
-      user_invite:                  %w[view edit_info]
+      proposal_notification_digest: %w(view preview_pending)
     }
   end
 
   def view
     case @system_email
     when "proposal_notification_digest"
-      load_sample_proposal_notifications
-    when /\Abudget_investment/
-      load_sample_investment
-    when /\Adirect_message/
-      load_sample_direct_message
-    when "comment"
-      load_sample_comment
-    when "reply"
-      load_sample_reply
-    when "email_verification"
-      load_sample_user
-    when "user_invite"
-      @subject = t("mailers.user_invite.subject", org_name: Setting["org_name"])
+      @notifications = Notification.where(notifiable_type: "ProposalNotification").limit(2)
+      @subject = t('mailers.proposal_notification_digest.title', org_name: Setting['org_name'])
     end
   end
 
@@ -60,65 +39,12 @@ class Admin::SystemEmailsController < Admin::BaseController
 
   private
 
-    def load_system_email
-      @system_email = params[:system_email_id]
-    end
+  def load_system_email
+    @system_email = params[:system_email_id]
+  end
 
-    def load_sample_proposal_notifications
-      @notifications = Notification.where(notifiable_type: "ProposalNotification").limit(2)
-      @subject = t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"])
-    end
-
-    def load_sample_investment
-      if Budget::Investment.any?
-        @investment = Budget::Investment.last
-        @subject = t("mailers.#{@system_email}.subject", code: @investment.code)
-      else
-        redirect_to admin_system_emails_path, alert: t("admin.system_emails.alert.no_investments")
-      end
-    end
-
-    def load_sample_comment
-      @comment = Comment.where(commentable_type: %w[Debate Proposal Budget::Investment]).last
-      if @comment
-        @commentable = @comment.commentable
-        @subject = t("mailers.comment.subject", commentable: commentable_name)
-      else
-        redirect_to admin_system_emails_path, alert: t("admin.system_emails.alert.no_comments")
-      end
-    end
-
-    def load_sample_reply
-      reply = Comment.select { |comment| comment.reply? }.last
-      if reply
-        @email = ReplyEmail.new(reply)
-      else
-        redirect_to admin_system_emails_path, alert: t("admin.system_emails.alert.no_replies")
-      end
-    end
-
-    def load_sample_user
-      @user = User.last
-      @token = @user.email_verification_token
-      @token ||= SecureRandom.hex
-      @subject = t("mailers.email_verification.subject")
-    end
-
-    def load_sample_direct_message
-      if DirectMessage.any?
-        @direct_message = DirectMessage.last
-        @subject = t("mailers.#{@system_email}.subject")
-      else
-        redirect_to admin_system_emails_path, alert: t("admin.system_emails.alert.no_direct_messages")
-      end
-    end
-
-    def commentable_name
-      t("activerecord.models.#{@commentable.class.name.underscore}", count: 1)
-    end
-
-    def unsent_proposal_notifications_ids
-      Notification.where(notifiable_type: "ProposalNotification", emailed_at: nil)
-                  .group(:notifiable_id).count.keys
-    end
+  def unsent_proposal_notifications_ids
+    Notification.where(notifiable_type: "ProposalNotification", emailed_at: nil)
+                .group(:notifiable_id).count.keys
+  end
 end
