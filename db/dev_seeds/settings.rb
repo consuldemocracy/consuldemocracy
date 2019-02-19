@@ -25,7 +25,6 @@ section "Creating Settings" do
   Setting.create(key: 'instagram_handle', value: 'CONSUL')
   Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'CONSUL')
-  Setting.create(key: 'place_name', value: 'City')
 
   Setting.create(key: 'feature.debates', value: "true")
   Setting.create(key: 'feature.proposals', value: "true")

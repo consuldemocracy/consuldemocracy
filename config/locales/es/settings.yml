@@ -48,8 +48,6 @@ es:
     url_description: "URL principal de tu web"
     org_name: "Nombre de la organización"
     org_name_description: "Nombre de tu organización"
-    place_name: "Nombre del lugar"
-    place_name_description: "Nombre de tu ciudad"
     related_content_score_threshold: "Umbral de puntuación de contenido relacionado"
     related_content_score_threshold_description: "Oculta el contenido que los usuarios marquen como no relacionado"
     hot_score_period_in_days: "Periodo (días) usado para el filtro 'Más Activos'"

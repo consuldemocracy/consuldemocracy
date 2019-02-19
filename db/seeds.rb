@@ -58,9 +58,6 @@ Setting["url"] = "http://example.com"
 # CONSUL installation's organization name
 Setting["org_name"] = "CONSUL"
 
-# CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
-
 # Meta tags for SEO
 Setting["meta_title"] = nil
 Setting["meta_description"] = nil
