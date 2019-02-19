@@ -110,9 +110,9 @@ nl:
         title: Proposals
     users:
       index:
-        hidden: Geblokkeerd
-        hide: Block
-        search: Search
-        search_placeholder: email or name of user
-        title: Blokkeer deelnemers
+        hidden: Verborgen
+        hide: Verbergen
+        search: Zoeken
+        search_placeholder: Persoon zoeken op naam
+        title: Verberg deelnemers
       notice_hide: User blocked. All of this user's debates and comments have been hidden.

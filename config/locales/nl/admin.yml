@@ -2,13 +2,13 @@
 nl:
   admin:
     actions:
-      actions: Actions
-      configure: Configure
-      confirm: Are you sure?
+      actions: Acties
+      configure: Instellen
+      confirm: Weet je het zeker?
       confirm_hide: Bevestig
-      delete: Delete
-      edit: Edit
-      hide: Hide
+      delete: Verwijder
+      edit: Bewerk
+      hide: Verberg
       hide_author: Hide author
       mark_featured: Featured
       restore: Restore
@@ -144,35 +144,35 @@ nl:
     booth_assignments:
       manage:
         actions:
-          assign: Assign booth
+          assign: Stemlocaties toewijzen
           unassign: Verwijder toewijzing
         assignments_list: Stemlocaties voor peiling '%{poll}'
         status:
-          assign_status: Assignment
+          assign_status: Toewijzing
           assigned: Toegewezen
           unassigned: Niet toegewezen
-      manage_assignments: Bewerk toewijzingen
+      manage_assignments: Stemlocaties toewijzen
     booths:
       booth:
-        edit: Bewerk stemhokje
-        shifts: Beheer diensten
+        edit: Bewerk stemlocatie
+        shifts: Beheer piket
       edit:
-        submit_button: Update booth
-        title: Edit booth
+        submit_button: Locatie bewerken
+        title: Stemlocatie bewerken
       index:
-        add_booth: Add booth
-        location: Location
-        name: Name
-        no_booths: Er zijn geen stemhokjes.
-        no_location: Geen Locatie
-        title: Lijst van stemhokjes
+        add_booth: Nieuwe stemlocatie
+        location: Locatie
+        name: Naam
+        no_booths: Er zijn geen stemlocaties.
+        no_location: Geen stemlocatie
+        title: Stemlocaties
       new:
-        location: Location
-        name: Name
-        submit_button: Create booth
-        title: New booth
+        location: Adres
+        name: Naam
+        submit_button: Opslaan
+        title: Nieuwe stemlocatie
       show:
-        location: Location
+        location: Adres
     budget_groups:
       amount:
         one: Er is 1 groep
@@ -698,18 +698,18 @@ nl:
       hidden_proposals: Verborgen ideeën
       hidden_users: Verborgen gebruikers
       legislation: Plannen
-      managers: Beheerders
+      managers: Managers
       messaging_users: Berichten naar gebruikers
       moderators: Moderators
       newsletters: Nieuwsbrieven
-      officials: Officials
+      officials: Bemensing
       organizations: Organisaties
       poll_booth_assignments: Toegewezen stemlocaties
       poll_booths: Stemlocaties
-      poll_officers: Coördinatoren
+      poll_officers: Bemensing
       poll_questions: Vragen
-      poll_shifts: Bewerk diensten
-      polls: Stemmen
+      poll_shifts: Piket
+      polls: Peilingen
       proposals: Ideeën
       proposals_topics: Ideeonderwerpen
       settings: Instellingen
@@ -729,7 +729,7 @@ nl:
           layouts: Lay-outs
           mailers: Emails
           management: Beheer
-          polls: Stemmen
+          polls: Peilingen
           proposals: "Ideeën"
           welcome: Welkom
         pages: Aangepaste pagina's
@@ -739,12 +739,12 @@ nl:
       title_booths: Stemmen
       title_budgets: Budgetten
       title_moderated_content: Moderated content
-      title_polls: Stemmen
+      title_polls: Peilingen
       title_profiles: Profielen
       title_settings: Instellingen
       title_site_customization: Aanpassing Site
       users: Deelnemer
-      valuators: beoordelaars
+      valuators: Beoordelaars
     milestones:
       create:
         notice: Nieuwe mijlpaal aangemaakt
@@ -831,10 +831,10 @@ nl:
         official_updated: Details of official saved
       index:
         name: Naam
-        no_officials: Er zijn geen coördinatoren.
+        no_officials: Er is geen bemensing.
         official_level: Niveau
         official_position: Positie
-        title: Coördinatoren
+        title: Bemensing
       level_0: Vrijwillig
       level_1: Level 1
       level_2: Level 2
@@ -876,15 +876,15 @@ nl:
         title: Search Organisations
     poll_booth_assignments:
       alert:
-        shifts: Er zijn diensten verbonden aan dit stemhokje. Als u de toewijzing verwijdert, worden de diensten ook verwijderd. Doorgaan?
+        shifts: Er is piket verbonden aan deze stemlocatie. Als u de toewijzing verwijdert, worden het piket ook verwijderd. Doorgaan?
       flash:
         create: Booth assigned
         destroy: Booth not assigned anymore
         error_create: An error ocurred when assigning booth to the poll
         error_destroy: An error ocurred when removing booth assignment
       index:
-        booths_title: List of booths
-        no_booths: There are no booths assigned to this poll.
+        booths_title: Locaties
+        no_booths: Er zijn geen locaties voor deze peiling.
         table_location: Location
         table_name: Name
       show:
@@ -912,17 +912,17 @@ nl:
         table_name: Name
     poll_officers:
       index:
-        title: Peiling beambten
+        title: Bemensing
       officer:
         add: Voeg toe
-        delete: Delete position
-        email: E-mail
-        entry_name: Lid
-        name: Name
+        delete: Positie verwijderen
+        email: Email
+        entry_name: Persoon
+        name: Naam
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: Gebruiker niet gevonden
+        email_placeholder: Persoon zoeken op emailadres
+        search: Zoeken
+        user_not_found: Geen personen gevonden
     poll_shifts:
       flash:
         create: Dienst toegevoegd
@@ -932,19 +932,19 @@ nl:
       new:
         add_shift: Add shift
         date: Datum
-        edit_shifts: Bewerk diensten
+        edit_shifts: Piket bewerken
         new_shift: New shift
-        no_shifts: Dit stemhokje heeft geen diensten
+        no_shifts: Deze stemlocatie heeft geen piket
         no_voting_days: Dagen waarop niet wordt gestemd
         officer: Official
         remove_shift: Remove
-        search_officer_button: Search
-        search_officer_placeholder: Zoek official
-        search_officer_text: Zoek een official voor een nieuwe dienst
+        search_officer_button: Zoeken
+        search_officer_placeholder: Zoek een persoon
+        search_officer_text: Wijs personen toe aan piket
         select_date: Select day
         select_task: Selecteer taak
         shift: Assignment
-        shifts: Diensten in dit stemhokje
+        shifts: Piket op deze stemlocatie
         table_email: E-mail
         table_name: Name
         table_shift: Shift
@@ -953,36 +953,36 @@ nl:
       vote_collection: Verzamel stemmen
     polls:
       edit:
-        submit_button: Update poll
-        title: Edit poll
+        submit_button: Opslaan
+        title: Peiling bewerken
       flash:
         error_on_question_added: Question could not be assigned to this poll
         question_added: Question added to this poll
       index:
-        closing_date: Einddatum
+        closing_date: Sluiting
         create: Nieuwe peiling
-        dates: Dates
+        dates: Periode
         geozone_restricted: Beperkt tot buurten
-        name: Name
-        no_polls: Er zijn geen stemrondes.
-        start_date: Startdatum
-        title: Stemmen
+        name: Naam
+        no_polls: Er zijn geen peilingen.
+        start_date: Aanvang
+        title: Peilingen
       new:
         results_and_stats_reminder: Als u deze vakjes selecteert, zijn de resultaten en / of statistieken van deze poll openbaar beschikbaar en ziet elke deelnemer ze.
         show_results: Toon resultaten
         show_results_and_stats: Toon resultaten en statistieken
         show_stats: Toon statistieken
         submit_button: Nieuwe peiling
-        title: New poll
+        title: Nieuwe peiling
       show:
-        booths_tab: Booths
-        no_questions: There are no questions assigned to this poll.
-        officers_tab: Beambten
-        questions_tab: Questions
-        questions_title: List of questions
-        recounts_tab: Recounting
-        results_tab: Results
-        table_title: Title
+        booths_tab: Locaties
+        no_questions: Er zijn geen vragen bij deze peiling.
+        officers_tab: Bemensing
+        questions_tab: Vragen
+        questions_title: Vragen
+        recounts_tab: Hertellingen
+        results_tab: Resultaten
+        table_title: Titel
     progress_bars:
       create:
         notice: Voortgangsindicatie aangemaakt
@@ -1066,14 +1066,14 @@ nl:
         video_url: Externe video
     recounts:
       index:
-        no_recounts: There is nothing to be recounted
-        table_booth_name: Stemhokje
+        no_recounts: Geen hertellingen
+        table_booth_name: Naam
         table_system_count: Stemmen (automatisch)
-        table_total_recount: Uiteindelijke hertelling (door beambte)
+        table_total_recount: Uiteindelijke hertelling
         title: Hertellingen
     results:
       index:
-        no_results: There are no results
+        no_results: Geen resultaten
         title: Resultaten
       result:
         table_answer: Antwoord
@@ -1082,10 +1082,10 @@ nl:
         table_votes: Votes
         table_whites: Blanco stemmen
       results_by_booth:
-        booth: Stemhokje
+        booth: Stemlocatie
         results: Resultaten
         see_results: Bekijk resultaten
-        title: Resultaten per stemhokje
+        title: Resultaten per stemlocatie
     segment_recipient:
       administrators: Admins
       all_users: Alle deelnemers
@@ -1140,14 +1140,14 @@ nl:
       moderated_content: Controleer de inhoud die door de moderators is aangemaakt en bevestig wanneer dit correct is gedaan.
       no_search_results: No results found.
       poll_officers_search:
-        button: Search
+        button: Zoeken
         placeholder: Search poll officers
       poll_questions_search:
-        button: Search
-        placeholder: Search poll questions
+        button: Zoeken
+        placeholder: Vragen zoeken
       proposal: Proposal
       proposal_search:
-        button: Search
+        button: Zoeken
         placeholder: Doorzoek ideeën op titel, code omschrijving of vraag
       search_results: Zoekresultaten
       show_image: Toon afbeelding
@@ -1157,8 +1157,8 @@ nl:
       title: Titel
       true_value: Ja
       user_search:
-        button: Search
-        placeholder: Search user by name or email'
+        button: Zoek
+        placeholder: Zoek een persoon op naam of emailadres
       view: Weergave
     signature_sheets:
       author: Author
@@ -1359,7 +1359,7 @@ nl:
         budgets_title: Budgetten
         direct_messages: Direct messages
         incomplete_verifications: Incomplete verifications
-        polls: Polls
+        polls: Peilingen
         proposal_notifications: Proposal notifications
         spending_proposals_title: Bestedingsvoorstellen
         stats_title: Stats

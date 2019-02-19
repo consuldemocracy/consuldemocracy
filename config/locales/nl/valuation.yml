@@ -95,7 +95,7 @@ nl:
         undefined_feasible: In afwachting
         valuation_finished: Beoordeling voltooid
       index:
-        edit: Edit
+        edit: Bewerk
         filters:
           valuating: Under valuation
           valuation_finished: Beoordeling voltooid

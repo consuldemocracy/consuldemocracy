@@ -252,7 +252,7 @@ nl:
         notifications: Notificaties
       officing: Stembureau
       open_gov: Open bestuur
-      poll_questions: Stemmen
+      poll_questions: Peilingen
       proposals: "Ideeën"
       spending_proposals: Begrotingsvoorstellen
       valuation: Waardering
@@ -302,7 +302,7 @@ nl:
       sign_in: Aanmelden met Twitter
       sign_up: Registreer via Twitter
   poll_questions:
-    create_question: Create question
+    create_question: Vraag stellen
     show:
       vote_answer: Stem %{answer}
       voted: U heeft %{answer} gestemd
@@ -312,26 +312,26 @@ nl:
     dates: Van %{open_at} tot %{closed_at}
     final_date: Definitieve hertelling/resultaten
     index:
-      already_answer: U heeft al deelgenomen aan deze ronde
-      cant_answer: This poll is not available on your geozone
+      already_answer: U heeft al deelgenomen aan deze peiling
+      cant_answer: Deze peiling is niet actief in uw gebied
       filters:
         current: Actueel
         expired: Gearchiveerd
       geozone_info: 'Open voor deelnemers uit: '
       geozone_restricted: Regio's
       no_geozone_restricted: Hele stad
-      no_polls: Er zijn geen actuele stemrondes.
-      not_logged_in: You must sign in or sign up to participate
-      participate_button: Neem aan deze stemronde deel
-      participate_button_expired: Stemronde is voorbij
+      no_polls: Er zijn geen actuele peilingen.
+      not_logged_in: Je moet aanmelden of registreren om deel te nemen
+      participate_button: Neem deel aan de peiling
+      participate_button_expired: Peiling is gearchiveerd
       section_footer:
-        description: "Stemmen maakt het mogelijk aan te geven wat je belangrijk vindt en beslissingen te beïnvloeden"
-        title: Over stemmen
+        description: "Met een peiling kan worden gekeken wat mensen belangrijk vinden"
+        title: Over peilingen
       section_header:
         help: Help
-        icon_alt: Stemmen icoon
-        title: Stemmen
-      title: Stemrondes
+        icon_alt: Peilingen icoon
+        title: Peilingen
+      title: Peilingen
       unverified: You must verify your account to participate
     no_dates: nog geen datum
     show:
@@ -339,7 +339,7 @@ nl:
       already_voted_in_web: Je hebt al deelgenomen in deze stemronde. Als je nogmaals stemt, wordt je eerdere stemming overschreven.
       back: Terug naar stemmen
       cant_answer_expired: Deze stemronde is voorbij.
-      cant_answer_not_logged_in: Je moet %{signin} of %{signup} om deel te nemen.
+      cant_answer_not_logged_in: Je dient %{signin} of %{signup} om deel te nemen.
       cant_answer_verify_html: Je moet %{verify_link} om te kunnen antwoorden.
       cant_answer_wrong_geozone: Deze vraag wordt niet behandeld in uw regio
       comments_tab: Comments
@@ -353,8 +353,8 @@ nl:
         most_voted_answer: 'Antwoord met de meeste stemmen: '
         title: Vragen
       results_menu: Stemresultaten
-      signin: Aanmelden
-      signup: Registreer
+      signin: aan te melden
+      signup: te registreren
       stats:
         booth: Stemlocatie
         null_votes: Ongeldig
@@ -576,14 +576,14 @@ nl:
       to: Aan
     author_info:
       author_deleted: Gebruiker verwijderd
-    back: Go back
-    check: Select
-    check_all: All
+    back: Ga terug
+    check: Selecteer
+    check_all: Alles
     check_none: Geen
     collective: Collectief
-    delete: Delete
+    delete: Verwijder
     documentation: Aanvullende documentatie
-    edit: Edit
+    edit: Bewerk
     flag: Markeer als ongepast
     follow: Volg
     follow_entity: Volg %{entity}
@@ -787,11 +787,11 @@ nl:
       not_voting_allowed: Stemronde is gesloten.
       organization: Organisaties mogen niet stemmen
       unfeasible: Onhaalbare ideeën kunnen niet gesteund worden.
-    comment_unauthenticated: Je moet %{signin} of %{signup} om ideeën te steunen.
+    comment_unauthenticated: Je dient %{signin} of %{signup} om ideeën te steunen.
     disagree: Ik ben het oneens
     organizations: Organisaties kunnen niet stemmen
-    signin: Aanmelden
-    signup: Registreer
+    signin: aan te melden
+    signup: te registreren
     spending_proposals:
       not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
       not_verified: Alleen geverifieerde gebruikers kunnen ideeën steunen; %{verify_account}.

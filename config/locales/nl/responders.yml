@@ -7,8 +7,8 @@ nl:
         debate: Debat is gestart.
         direct_message: Uw boodschap is verzonden.
         notice: "%{resource_name} aangemaakt."
-        poll: Stemronde is aangemaakt.
-        poll_booth: Booth is aangemaakt.
+        poll: Peiling is aangemaakt.
+        poll_booth: Stemlocatie is aangemaakt.
         poll_question_answer: Antwoord is aangemaakt
         poll_question_answer_image: Afbeelding is geupload
         poll_question_answer_video: Video is aangemaakt
@@ -31,8 +31,8 @@ nl:
         budget_investment: Budget investering is bijgewerkt.
         debate: Debat is bijgewerkt.
         notice: "%{resource_name} is bijgewerkt."
-        poll: Stemronde is bijgewerkt.
-        poll_booth: Booth is bijgewerkt.
+        poll: Peiling is bijgewerkt.
+        poll_booth: Stemlocatie is bijgewerkt.
         proposal: Voorstel is bijgewerkt.
         spending_proposal: Budget investering is bijgewerkt.
         topic: Onderwerp is bijgewerkt.

@@ -97,7 +97,7 @@ nl:
           title: Verwijder account
         edit:
           current_password_label: Huidig wachtwoord
-          edit: Edit
+          edit: Bewerken
           email_label: Emailadres
           leave_blank: Laat leeg als u het niet wilt aanpassen
           need_current: Uw huidige wachtwoord ter bevestiging van de veranderingen

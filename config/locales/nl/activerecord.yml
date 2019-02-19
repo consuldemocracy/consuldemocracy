@@ -19,8 +19,8 @@ nl:
         description_reviewing_ballots: Omschrijving gedurende de beoordeling van de Stemfase
         description_selecting: Omschrijving gedurende de Selectiefase
         description_valuating: Omschrijving gedurende de Waarderingsfase
-        name: Name
-        phase: Phase
+        name: Naam
+        phase: Fase
       budget/heading:
         name: Kop naam
         population: Bevolking
@@ -107,10 +107,10 @@ nl:
         responsible_name: Persoon verantwoordelijk voor de groep
       poll:
         description: Beschrijving
-        ends_at: Eind Datum
-        geozone_restricted: Beperkt tot regio
-        name: Name
-        starts_at: Start Datum
+        ends_at: Einde
+        geozone_restricted: Deelname beperken op basis van gebied
+        name: Naam
+        starts_at: Aanvang
         summary: Samenvatting
       poll/question:
         description: Beschrijving
@@ -130,7 +130,7 @@ nl:
         title: Question
       poll/translation:
         description: Beschrijving
-        name: Name
+        name: Naam
         summary: Samenvatting
       progress_bar:
         kind: Type
@@ -151,11 +151,11 @@ nl:
         signable_type: Ondertekenbaar type
       site_customization/content_block:
         body: Tekst
-        locale: locale
-        name: Name
+        locale: Taal
+        name: Naam
       site_customization/image:
-        image: Image
-        name: Name
+        image: Afbeelding
+        name: Naam
       site_customization/page:
         content: Content
         created_at: Created at
@@ -182,8 +182,8 @@ nl:
         current_password: Huidig wachtwoord
         email: Email
         login: Email of gebruikersnaam
-        official_level: Officieel niveau
-        official_position: Officiele positie
+        official_level: Niveau
+        official_position: Positie
         password: Wachtwoord
         password_confirmation: Bevestiging wachtwoord
         phone_number: Telefoonnummer
@@ -329,7 +329,7 @@ nl:
         other: Vragen
       manager:
         one: Manager
-        other: Beheerders
+        other: Managers
       milestone:
         one: mijlpaal
         other: mijlpalen
@@ -349,8 +349,8 @@ nl:
         one: Poll
         other: Polls
       poll/booth:
-        one: stemhokje
-        other: stemhokjes
+        one: stemlocatie
+        other: stemlocaties
       poll/officer:
         one: officer
         other: leden

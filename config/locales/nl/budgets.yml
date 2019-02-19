@@ -81,9 +81,9 @@ nl:
           price: op bedrag
           random: willekeurig
         search_form:
-          button: Search
+          button: Zoeken
           placeholder: Zoek begrotingsvoorstellen...
-          title: Search
+          title: Zoeken
         search_results_html:
           one: " waarin de term <strong>'%{search_term}'</strong> voorkomt"
           other: " waarin de term <strong>'%{search_term}'</strong> voorkomt"

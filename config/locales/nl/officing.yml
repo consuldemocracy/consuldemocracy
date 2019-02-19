@@ -30,11 +30,11 @@ nl:
         title: Valideer bestand
     results:
       flash:
-        create: Results saved
-        error_create: Results NOT saved. Error in data.
-        error_wrong_booth: Wrong booth. Results NOT saved.
+        create: Resultaten opgeslagen
+        error_create: Foute gegevens, de resultaten konden niet worden opgeslagen.
+        error_wrong_booth: Verkeerde stemlocatie, de resultaten worden niet opgeslagen.
       index:
-        no_results: No results
+        no_results: Geen resultaten
         results: Resultaten
         table_answer: Antwoord
         table_nulls: Invalid ballots
@@ -45,12 +45,12 @@ nl:
         ballots_null: Invalid ballots
         ballots_total: Totaal stemmen
         ballots_white: Blanco stemmen
-        booth: Stemhokje
+        booth: Stemlocatie
         date: Datum
         not_allowed: Voor deze peiling kun je resultaten toevoegen
         results_list: Your results
         see_results: Bekijk resultaten
-        select_booth: Select booth
+        select_booth: Geselecteerde stemlocatie
         submit: Save
         title: "%{poll} - Voeg resultaten toe"
     voters:
