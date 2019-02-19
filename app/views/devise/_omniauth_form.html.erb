@@ -2,12 +2,9 @@
 
   <% if current_page?(new_user_session_path) %>
     <div class="row">
-      <div class="small-12 column">
-        <div class="margin-bottom">
-          <strong><%= t("omniauth.info_sign_in") %></strong>
-        </div>
+      <div class="small-12 column auth-divider">
+        <span><%= t("omniauth.info_sign_in") %></span>
       </div>
-
       <% if feature? :twitter_login %>
         <div class="small-12 medium-6 large-4 column end">
           <%= link_to t("omniauth.twitter.name"), user_omniauth_authorize_path(:twitter),
@@ -39,10 +36,8 @@
 
   <% elsif current_page?(new_user_registration_path) %>
     <div class="row">
-      <div class="small-12 column">
-        <div class="margin-bottom">
-          <strong><%= t("omniauth.info_sign_up") %></strong>
-        </div>
+      <div class="small-12 column auth-divider">
+        <span><%= t("omniauth.info_sign_up") %></span>
       </div>
 
       <% if feature? :twitter_login %>
