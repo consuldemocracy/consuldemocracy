@@ -81,10 +81,10 @@ nl:
     help:
       budgets:
         description: Het %{link} onderdeel helpt bij het geven van direct zeggenschap aan inwoners over de besteding van gebiedsbudgetten van de gemeente.
-        figcaption_html: '"Steun" fase en "Stem" fase in de burgerbegroting.'
-        image_alt: Verschillende fasen in de burgerbegroting
-        link: Burgerbegrotingen
-        title: Burgerbegroting
+        figcaption_html: 'Steun- en stemfase voor het budget.'
+        image_alt: Verschillende fasen in het budget
+        link: Budgetten
+        title: Budget
       debates:
         description: Bij %{link} kun je debateren en je mening met anderen delen en bespreken. Dit is ook een plek waar je ideeën kunt presenteren, die via andere onderdelen van %{org} tot concrete acties kunnen leiden.
         feature_html: Je kunt een debat een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}.

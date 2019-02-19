@@ -75,8 +75,8 @@ nl:
     verification_offices_url: Verification offices URL
     proposal_improvement_path: Interne link naar info ter verbetering voorstel
     feature:
-      budgets: "Burgerbegrotingen"
-      budgets_description: "Met burgerbegrotingen kunnen inwoners meebeslissen welke projecten onderdeel moeten zijn van de gemeentelijke begroting"
+      budgets: "Budgetten"
+      budgets_description: "Met budgetten kunnen inwoners meebeslissen welke projecten onderdeel moeten zijn van de gemeentelijke begroting"
       twitter_login: "Twitter login"
       twitter_login_description: "Sta gebruikers to om aan te melden met hun Twitter account"
       facebook_login: "Facebook login"

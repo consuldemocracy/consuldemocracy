@@ -233,7 +233,7 @@ nl:
       administration: Administration
       administration_menu: Beheerder
       available_locales: Beschikbare talen
-      budgets: Burgerbegroting
+      budgets: Budget
       collaborative_legislation: Plannen
       debates: Debat
       external_link_blog: Blog
@@ -685,10 +685,10 @@ nl:
         geozones: Betreffende regio
         unfeasible: Unfeasible
       start_spending_proposal: Initieer een begrotingsvoorstel
-      title: Burgerbegrotingen
+      title: Budgetten
       unfeasible: Unfeasible investment projects
     new:
-      more_info: Hoe werkt een burgerbegroting?
+      more_info: Hoe werkt een budget?
       recommendation_one: Het voorstel moet refereren aan een begrootbare activiteit.
       recommendation_three: Geef voldoende en gedetailleerde informatie, zodat de beoordelingscommissie goed begrijpt waar het over gaat.
       recommendation_two: Ideeën die illegale activiteiten stimuleren worden verwijderd.

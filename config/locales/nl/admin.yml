@@ -112,7 +112,7 @@ nl:
         post_ended_at: Post ended at
         post_started_at: Post started at
         sections:
-          budgets: Burgerbegrotingen
+          budgets: Budgetten
           debates: Debatten
           help_page: Help-pagina
           homepage: Startpagina
@@ -1091,11 +1091,11 @@ nl:
       all_users: Alle deelnemers
       feasible_and_undecided_investment_authors: 'Auteurs van sommige investeringen in het huidige budget die niet voldoen: [beoordeling afgerond onhaalbaar]'
       invalid_recipients_segment: Gebruikerssegment deelnemers is ongeldig
-      investment_authors: Voorstel schrijvers in de huidige burgerbegroting
-      not_supported_on_current_budget: Deelnemers die geen voorstellen hebben gesteund in de huidige burgerbegroting
+      investment_authors: Budgethouders
+      not_supported_on_current_budget: Deelnemers die geen voorstellen hebben gesteund in het huidige budget
       proposal_authors: Voorstel schrijvers
-      selected_investment_authors: Auteurs van geselecteerde voorstellen in de huidige burgerbegroting
-      winner_investment_authors: Auteurs van winnende voorstellen in de huidige burgerbegroting
+      selected_investment_authors: Houders van geselecteerd budget
+      winner_investment_authors: Houders van populaire budget
     settings:
       flash:
         updated: Value updated
@@ -1356,7 +1356,7 @@ nl:
         title: Voorstel notificaties
         total: Totaal
       show:
-        budgets_title: Burgerbegrotingen
+        budgets_title: Budgetten
         direct_messages: Direct messages
         incomplete_verifications: Incomplete verifications
         polls: Polls

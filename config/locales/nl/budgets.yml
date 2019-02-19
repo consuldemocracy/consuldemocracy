@@ -41,7 +41,7 @@ nl:
     index:
       all_phases: Investeringsfases
       empty_budgets: Er zijn geen budgetten.
-      finished_budgets: Afgeronde burgerbegrotingen
+      finished_budgets: Gearchiveerde budgetten
       investment_proyects: Lijst van alle begrotingsvoorstellen
       map: Begrotingsvoorstellen geografisch weergegeven
       milestones: Mijlpalen
@@ -53,9 +53,9 @@ nl:
         all_phases: Bekijk alle fases
         help: Help
         icon_alt: Budgetafbeelding
-        title: Burgerbegrotingen
+        title: Budgetten
       see_results: Bekijk resultaten
-      title: Burgerbegrotingen
+      title: Budgetten
       unfeasible_investment_proyects: Lijst van alle onhaalbare begrotingsvoorstellen
     investments:
       form:
@@ -107,7 +107,7 @@ nl:
           voted_info: Tot het einde van deze fase kun je %{link}. Het is niet nodig om al het geld te besteden.
           voted_info_link: uw stem wijzigen
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
-        title: Burgerbegrotingen
+        title: Budgetten
         unfeasible: Unfeasible investment projects
         unfeasible_text: De begrotingsvoorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. begrotingsvoorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid.
       investment:
@@ -170,9 +170,9 @@ nl:
       amount_available: Beschikbare budget
       ballot_lines_count: Stemmen
       discarded: 'Verworpen uitgavenvoorstel: '
-      heading: Resultaten burgerbegroting
+      heading: Budgetresultaten
       heading_selection_title: Per gebied
-      hide_discarded_link: Verberg verworpen begrotingsvoorstellen
+      hide_discarded_link: Verberg verworpen budgetten
       incompatibles: Niet compatibel
       investment_proyects: Lijst van alle investeringsvoorstellen
       link: Resultaten
