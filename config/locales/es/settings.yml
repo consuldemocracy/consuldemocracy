@@ -74,7 +74,6 @@ es:
     min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos"
     analytics_url: "URL de estadísticas externas"
     verification_offices_url: URL oficinas verificación
-    proposal_improvement_path: Link a información para mejorar propuestas
     feature:
       budgets: "Presupuestos participativos"
       budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal"

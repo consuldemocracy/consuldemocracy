@@ -116,9 +116,6 @@ Setting['min_age_to_participate'] = 16
 # Featured proposals
 Setting['featured_proposals_number'] = 3
 
-# Proposal improvement url path ('/help/proposal-improvement')
-Setting['proposal_improvement_path'] = nil
-
 # City map feature default configuration (Greenwich)
 Setting['map_latitude'] = 51.48
 Setting['map_longitude'] = 0.0
