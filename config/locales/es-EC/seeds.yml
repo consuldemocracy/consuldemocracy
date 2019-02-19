@@ -1,8 +1,0 @@
-es-EC:
-  seeds:
-    categories:
-      participation: Participación
-      transparency: Transparencia
-    budgets:
-      groups:
-        districts: Distritos

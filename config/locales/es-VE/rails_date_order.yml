@@ -1,6 +1,0 @@
-es-VE:
-  date:
-    order:
-      - :day
-      - :month
-      - :year
