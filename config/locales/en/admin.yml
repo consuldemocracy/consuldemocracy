@@ -762,9 +762,9 @@ en:
         send_pending: Send pending
         send_pending_notification: Pending notifications sent succesfully
       proposal_notification_digest:
-        title: Proposal Notification Digest
-        description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
-        preview_detail: Users will only recieve notifications from the proposals they are following
+        title: "Proposal notification digest"
+        description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
+        preview_detail: "Users will only recieve notifications from the proposals they are following"
     emails_download:
       index:
         title: Emails download
