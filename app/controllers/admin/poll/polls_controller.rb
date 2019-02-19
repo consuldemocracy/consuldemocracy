@@ -1,5 +1,6 @@
 class Admin::Poll::PollsController < Admin::Poll::BaseController
   include Translatable
+  include ImageAttributes
   load_and_authorize_resource
 
   before_action :load_search, only: [:search_booths, :search_officers]
@@ -66,7 +67,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     end
 
     def poll_params
-      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :results_enabled,
                     :stats_enabled, :budget_id, geozone_ids: [],
                     image_attributes: image_attributes]
