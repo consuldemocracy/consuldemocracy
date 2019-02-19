@@ -1,1 +1,21 @@
 fi:
+  images:
+    remove_image: Poista kuva
+    form:
+      title: Kuvaava kuva
+      title_placeholder: Lisää kuvaava otsikko kuvalle
+      attachment_label: Valitse kuva
+      delete_button: Poista kuva
+      note: "Voit lisätä yhden kuvan muodossa: %{accepted_content_types}, jonka koko on korkeintaan %{max_file_size} MB."
+      add_new_image: Lisää kuva
+      admin_title: "Kuva"
+      admin_alt_text: "Vaihtoehtoinen kuvateksti"
+    actions:
+      destroy:
+        notice: Kuva poistettiin onnistuneesti.
+        alert: Kuvaa ei voida tuhota.
+        confirm: Haluatko varmasti poistaa kuvan? Tätä toimintoa ei voida peruuttaa!
+    errors:
+      messages:
+        in_between: pitää olla %{min} ja %{max} väliltä
+        wrong_content_type: tiedostomuoto %{content_type} ei vastaa hyväksyttyjä muotoja %{accepted_content_types}

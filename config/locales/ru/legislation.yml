@@ -1,1 +1,112 @@
 ru:
+  legislation:
+    annotations:
+      comments:
+        see_all: Просмотреть все
+        see_complete: Посмотреть целиком
+        cancel: Отмена
+        publish_comment: Опубликовать комментарий
+      form:
+        phase_not_open: Эта фаза не открыта
+        login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
+        signin: Войти
+        signup: Зарегистрироваться
+      index:
+        title: Комментарии
+        comments_about: Комментарии о
+        see_in_context: Посмотреть в контексте
+      show:
+        title: Отзыв
+      version_chooser:
+        seeing_version: Комментарии версии
+        see_text: Посмотреть черновик текста
+    draft_versions:
+      changes:
+        title: Изменения
+        seeing_changelog_version: Сводка по смене ревизий
+        see_text: Посмотреть черновик текста
+      show:
+        loading_comments: Загружаются комментарии
+        seeing_version: Вы видите черновик
+        select_draft_version: Выбрать черновик
+        select_version_submit: посмотреть
+        updated_at: обновлено %{date}
+        see_changes: посмотреть сводку изменений
+        see_comments: Посмотреть все комментарии
+        text_toc: Оглавление
+        text_body: Текст
+        text_comments: Комментарии
+    processes:
+      header:
+        additional_info: Дополнительная информация
+        description: Описание
+        more_info: Дополнительная информация и контекст
+      proposals:
+        empty_proposals: Предложений нет
+        filters:
+          random: Случайно
+          winners: Выбраны
+      debate:
+        empty_questions: Вопросов нет
+        participate: Участвовать в дебатах
+      index:
+        filter: Фильтровать
+        filters:
+          open: Открытые процессы
+          past: Прошедший
+        no_open_processes: Нет открытых процессов
+        no_past_processes: Нет прошедших процессов
+        section_header:
+          icon_alt: Иконка процессов законотворчества
+          title: Процессы законотворчества
+          help: Помощь по процессам законотворчества
+        section_footer:
+          title: Помощь по процессам законотворчества
+          description: Участвовать в дебатах и процессах до утверждения постановления или действия муниципалитета. Ваш вариант будет принят к сведению городским советом.
+      phase_not_open:
+        not_open: Эта фаза еще не открыта
+      phase_empty:
+        empty: Ничего еще не опубликовано
+      process:
+        see_latest_comments: Посмотреть последние комментарии
+        see_latest_comments_title: Прокомментировать этот процесс
+      shared:
+        key_dates: Ключевые даты
+        debate_dates: Обсуждение
+        draft_publication_date: Публикация черновика
+        allegations_dates: Комментарии
+        result_publication_date: Публикация конечного результата
+        proposals_dates: Заявки
+    questions:
+      comments:
+        comment_button: Опубликовать ответ
+        comments_title: Открыть ответы
+        comments_closed: Закрытая фаза
+        form:
+          leave_comment: Оставьте ваш ответ
+      question:
+        comments:
+          zero: Нет комментариев
+        debate: Обсуждение
+      show:
+        answer_question: Отправить ответ
+        next_question: Следующий вопрос
+        first_question: Первый вопрос
+        share: Доля
+        title: Процесс совместного законотворчества
+      participation:
+        phase_not_open: Эта фаза не открыта
+        organizations: Организациям не разрешено участвовать в дебатах
+        signin: Войти
+        signup: Зарегистрироваться
+        unauthenticated: Вы должны %{signin} или %{signup} чтобы принять участие.
+        verified_only: Только верифицированные пользователи могут участвовать, %{verify_account}.
+        verify_account: подтвердите ваш аккаунт
+        debate_phase_not_open: Фаза дебатов окончена, и ответы больше не принимаются
+    shared:
+      share: Доля
+      share_comment: Комментировать %{version_name} из черновика процесса %{process_name}
+    proposals:
+      form:
+        tags_label: "Категории"
+      not_verified: "Для предложений голосов, %{verify_account}."

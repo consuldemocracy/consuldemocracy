@@ -42,8 +42,12 @@ es-SV:
       google_login: "Registro con Google"
       proposals: "Propuestas"
       polls: "Votaciones"
+      polls_description: "Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa."
       signature_sheets: "Hojas de firmas"
       legislation: "Legislación"
+      spending_proposals: "Propuestas de inversión"
+      user:
+        recommendations: "Recomendaciones"
       community: "Comunidad en propuestas y proyectos de inversión"
       map: "Geolocalización de propuestas y proyectos de inversión"
       allow_images: "Permitir subir y mostrar imágenes"

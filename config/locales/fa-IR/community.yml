@@ -57,4 +57,4 @@ fa:
         recommendation_three: از این فضا لذت ببرید، صدایی که آن را پر می کند، آن هم شما هستید.
   topics:
     show:
-      login_to_comment: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
+      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .

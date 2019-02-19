@@ -10,18 +10,18 @@ es-VE:
       - sáb
     abbr_month_names:
       - 
-      - Ene
-      - Feb
-      - Mar
-      - Abr
-      - May
-      - Jun
-      - Jul
-      - Ago
-      - Sep
-      - Oct
-      - Nov
-      - Dic
+      - ene
+      - feb
+      - mar
+      - abr
+      - may
+      - jun
+      - jul
+      - ago
+      - sep
+      - oct
+      - nov
+      - dic
     day_names:
       - domingo
       - lunes
@@ -36,18 +36,18 @@ es-VE:
       short: "%d de %b"
     month_names:
       - 
-      - Enero
-      - Febrero
-      - Marzo
-      - Abril
-      - Mayo
-      - Junio
-      - Julio
-      - Agosto
-      - Septiembre
-      - Octubre
-      - Noviembre
-      - Diciembre
+      - enero
+      - febrero
+      - marzo
+      - abril
+      - mayo
+      - junio
+      - julio
+      - agosto
+      - septiembre
+      - octubre
+      - noviembre
+      - diciembre
   datetime:
     distance_in_words:
       about_x_hours:

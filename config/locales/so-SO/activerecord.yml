@@ -1,1 +1,364 @@
 so:
+  activerecord:
+    models:
+      activity:
+        one: "halqabasho"
+        other: "halqabasho"
+      budget:
+        one: "Misaniyaad"
+        other: "Misaniyaado"
+      budget/investment:
+        one: "Maalgashi"
+        other: "Maalgashiyo"
+      comment:
+        one: "Faalo"
+        other: "Faalo"
+      debate:
+        one: "Dood"
+        other: "Doodo"
+      tag:
+        one: "Taag"
+        other: "Tagyada"
+      user:
+        one: "Istimale"
+        other: "Isticmaalayaal"
+      moderator:
+        one: "Dhexdhexaad ah"
+        other: "Dhexdhexadiyayal"
+      administrator:
+        one: "Mamulaha"
+        other: "Mamulayal"
+      valuator:
+        one: "Qimeeye"
+        other: "Qimeeyayal"
+      valuator_group:
+        one: "Kooxda Qimeeynta"
+        other: "Bilaa Kooxdaha Qimeeynta"
+      manager:
+        one: "Mamule"
+        other: "Mamule"
+      newsletter:
+        one: "Waraaqda Wargeeska"
+        other: "Wargeesyo"
+      vote:
+        one: "Codeyn"
+        other: "Codaad"
+      organization:
+        one: "Urur"
+        other: "Ururo"
+      poll/booth:
+        one: "labadaba"
+        other: "labadodaba"
+      spending_proposal:
+        one: "Mashruuca Malgelinta"
+        other: "Mashariicda malgashiga"
+      site_customization/page:
+        one: Bog gaara
+        other: Bog gaara
+      site_customization/image:
+        one: Sawirka Cadada
+        other: Sawirada Cadada
+      site_customization/content_block:
+        one: Xayiraaddaha gaarka ah ee gaarka ah
+        other: Noocyada gaarka ah ee gaarka ah
+      legislation/process:
+        one: "Geedisocoodka"
+        other: "Geedi socodka"
+      legislation/proposal:
+        one: "Sojeedin"
+        other: "Sojeedino"
+      legislation/draft_versions:
+        one: "Qaybta Qabyo Qoraalka ah"
+        other: "Weerinta qabya qoralka"
+      legislation/questions:
+        one: "Sual"
+        other: "Sualo"
+      legislation/question_options:
+        one: "Sual Dorsho"
+        other: "Doorashooyinka su'aasha"
+      documents:
+        one: "Dukumenti"
+        other: "Dukumentiyo"
+      images:
+        one: "Sawiir"
+        other: "Sawiiro"
+      topic:
+        one: "Mawduuc"
+        other: "Mawduucyada"
+      poll:
+        one: "Dorasho"
+        other: "Doorashooyinka"
+      proposal_notification:
+        one: "Ogeysiin Sojeedineed"
+        other: "Ogaysiis soo jedin"
+    attributes:
+      budget:
+        name: "Magac"
+        description_accepting: "Sharaxada mudada lugu jiro aqbalaada"
+        description_reviewing: "Sharaxada xiliga Dib u eegida"
+        description_selecting: "Sharaxaada inta lugu jiro dorashada"
+        description_valuating: "Sharaxada inta lugu jiro Qimeeynta"
+        description_balloting: "Sharaxada mudada lugu jiro balanka"
+        description_reviewing_ballots: "Sharaxaadda inta lagu jiro dib u fiirinta xaashida codadka"
+        description_finished: "Sharaxaada Marka ay Misaaniyadu dhamatoo"
+        phase: "Weeji"
+        currency_symbol: "Lacagta"
+      budget/investment:
+        heading_id: "Madaxa"
+        title: "Ciwaan"
+        description: "Sharaxaad"
+        external_url: "Isku xirka dukumentiyada dheeraadka ah"
+        administrator_id: "Mamulaha"
+        location: "Xulashada gobta"
+        organization_name: "Haddii aad soo jeedineyso magaca wadajir /urur, ama wakiil ka socda dad badan, qor magacisa"
+        image: "Sawir muuqaal ah oo soo jeedinaya"
+        image_title: "Sawirka Ciwaanka"
+      milestone:
+        title: "Ciwaan"
+        description: "Sharaxaad (ikhtiyaari haddii ay jirto xaalad loo xilsaaray)"
+        publication_date: "Taariikhda daabacaadda"
+      milestone/status:
+        name: "Magac"
+        description: "Sharaxaad (Ikhyaari ah)"
+      progress_bar:
+        kind: "Noca"
+        title: "Ciwaan"
+      budget/heading:
+        name: "Magaca Ciwaanka"
+        price: "Qime"
+        population: "Dadkaweyne"
+      comment:
+        body: "Faalo"
+        user: "Istimale"
+      debate:
+        author: "Qoraa"
+        description: "Fikraad"
+        terms_of_service: "Shuruudaha adeega"
+        title: "Ciwaan"
+      proposal:
+        author: "Qoraa"
+        title: "Ciwaan"
+        question: "Sual"
+        description: "Sharaxaad"
+        terms_of_service: "Shuruudaha adeega"
+      user:
+        login: "Email ama magaca isticmalaha"
+        email: "Email"
+        username: "Magaca Isticmaalaha"
+        password_confirmation: "Aqoonsiga furaha sirta ah"
+        password: "Furaha sirta ah"
+        current_password: "Magaca Sirta ah hada"
+        phone_number: "Talafoon lambar"
+        official_position: "Goob rasmi ah"
+        official_level: "Heerka Rasmiga ah"
+        redeemable_code: "Koodhka xaqiijinta ee la helay email ahaan"
+      organization:
+        name: "Magaca ururka"
+        responsible_name: "Qofka masuulka ka ah kooxda"
+      spending_proposal:
+        administrator_id: "Mamulaha"
+        association_name: "Magaca ururka"
+        description: "Sharaxaad"
+        external_url: "Isku xirka dukumentiyada dheeraadka ah"
+        geozone_id: "Baxada Hawlgalka"
+        title: "Ciwaan"
+      poll:
+        name: "Magac"
+        starts_at: "Tariikhda biloowga"
+        ends_at: "Tarikhada xiritaanka"
+        geozone_restricted: "Waxaa xakameynaya qulqulka"
+        summary: "Sookobiid"
+        description: "Sharaxaad"
+      poll/translation:
+        name: "Magac"
+        summary: "Sookobiid"
+        description: "Sharaxaad"
+      poll/question:
+        title: "Sual"
+        summary: "Sookobiid"
+        description: "Sharaxaad"
+        external_url: "Isku xirka dukumentiyada dheeraadka ah"
+      poll/question/translation:
+        title: "Sual"
+      signature_sheet:
+        signable_type: "Nooca muuqda"
+        signable_id: "Aqonsiga la aqoonsan yahay"
+        document_numbers: "Tirada Dukumentiyada"
+      site_customization/page:
+        content: Mowduuc
+        created_at: Saame
+        subtitle: Ciwaan hoosaad
+        slug: Laqabso
+        status: Status
+        title: Ciwaan
+        updated_at: La casriyeeyay
+        more_info_flag: Muuji bogga gargarka
+        print_content_flag: Dabiciida batoonka
+        locale: Luqad
+      site_customization/page/translation:
+        title: Ciwaan
+        subtitle: Ciwaan hoosaad
+        content: Mawduuc
+      site_customization/image:
+        name: Magac
+        image: Sawiir
+      site_customization/content_block:
+        name: Magac
+        locale: degaanka
+        body: Jirka
+      legislation/process:
+        title: Hirgelinta Mowduuca
+        summary: Sookobiid
+        description: Sharaxaad
+        additional_info: Xogdheeriya
+        start_date: Tariikhda biloowga
+        end_date: Tariikhada dhamadka
+        debate_start_date: Taariikhda bilaabashada doodda
+        debate_end_date: Taariikhda dhamaadka doodda
+        draft_publication_date: Tariikhada Dabacaada
+        allegations_start_date: Taageerida taariikhda bilawga
+        allegations_end_date: Taageerida taariikhda dhamaadka
+        result_publication_date: Taariikhda daabacaadda natiijada kama dambaysta ah
+      legislation/process/translation:
+        title: Hirgelinta Mowduuca
+        summary: Sookobiid
+        description: Sharaxaad
+        additional_info: Xogdheeriya
+        milestones_summary: Sookobiid
+      legislation/draft_version:
+        title: Ciwaanka Sawirka
+        body: Qoraal
+        changelog: Isbedel
+        status: Status
+        final_version: Koobiga kama dabeysta ah
+      legislation/draft_version/translation:
+        title: Ciwaanka Sawirka
+        body: Qoraal
+        changelog: Isbedel
+      legislation/question:
+        title: Ciwaan
+        question_options: Fursadaha
+      legislation/question_option:
+        value: Qimaha
+      legislation/annotation:
+        text: Faalo
+      document:
+        title: Ciwaan
+        attachment: Kulifaaq
+      image:
+        title: Ciwaan
+        attachment: Kulifaaq
+      poll/question/answer:
+        title: Jawaab
+        description: Sharaxaad
+      poll/question/answer/translation:
+        title: Jawaab
+        description: Sharaxaad
+      poll/question/answer/video:
+        title: Ciwaan
+        url: Fidyoowga dibada
+      newsletter:
+        segment_recipient: Sooqataha
+        subject: Mawduuc
+        from: Ka
+        body: Macluumadka Emailka
+      admin_notification:
+        segment_recipient: Sooqataha
+        title: Ciwaan
+        link: Isku xirka
+        body: Qoraal
+      admin_notification/translation:
+        title: Ciwaan
+        body: Qoraal
+      widget/card:
+        label: Calaamadda (ikhtiyaar)
+        title: Ciwaan
+        description: Sharaxaad
+        link_text: Qoraalka Xirirka
+        link_url: Isku xirka URL
+      widget/card/translation:
+        label: Calaamadda (ikhtiyaar)
+        title: Ciwaan
+        description: Sharaxaad
+        link_text: Qoraalka Xirirka
+      widget/feed:
+        limit: Tirada Lambarada
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Isticmaalkan horeba wuxuu leeyahay password"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagyada waa inay ahaadaan wax ka yar ama la mid ah%{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Waxad gaadhay fariimaha ugu badan ee gaarka looleyahay malinlaha ah"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Image Width waa inuu ahaado ugu yaraan%{required_min_width}"
+              min_image_height: "Sawirka dhererka waa inuu ahaado ugu yaraan%{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
+        map_location:
+          attributes:
+            map:
+              invalid: Goobta khariidadu ma bannaan karto. Saar calaamad ama dooro sanduuqa sanduuqa haddii aan loo baahnayn geolocalization
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dukumenti mahan tiro koob"
+              has_voted: "Isticmaalkii hore ayaa u codeeyay"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: waa inay ahaataa mid joogto ah ama ka dib taariikhda bilowga
+            debate_end_date:
+              invalid_date_range: waa inay ahaataa mid joogto ah ama ka dib taariikhda tartanka doodda
+            allegations_end_date:
+              invalid_date_range: waa inuu jiraa ama ka dib marka eedeymaha la bilaabo taariikhda
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagyada waa inay ahaadaan wax ka yar ama la mid ah%{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagyada waa inay ahaadaan wax ka yar ama la mid ah%{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Waa inaad sugto ugu yaraan%{interval} maalmood ee u dhexeeya ogeysiinta"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Ma xaqiijin Tirakoobka'
+              already_voted: 'Hore uso jediyey qorshahan'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "waa inuu ahaado waraaqo, lambaro, _ iyo -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Wareegtu waa inay ahaataa%{required_width} px"
+              image_height: "Dhererka wa inuu ahado%{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Kama doodi kartid qiimaha'
+      messages:
+        record_invalid: "Xaqiijinta ayaa ku fashilantay%{errors}"
+        restrict_dependent_destroy:
+          has_one: "Ma tirtiri karaan diiwaanka sababta oo ah ku tiirsane%{record} jirtanada"
+          has_many: "Ma tirtiri karaan diiwaanka sababta oo ah ku tiirsane%{record} jirtanka"

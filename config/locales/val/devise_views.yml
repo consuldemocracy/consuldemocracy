@@ -16,6 +16,7 @@ val:
       confirmation_instructions:
         confirm_link: Confirmar el meu compte
         text: 'Pots confirmar el teu compte de correu en el següent enllaç:'
+        title: Benvingut/da
         welcome: Benvingut/da
       reset_password_instructions:
         change_link: Canvia la meua contrasenya
@@ -48,11 +49,11 @@ val:
           submit: Registrarse
           title: Registrar-se com organització / col·lectiu
         success:
-          back_to_index: Entes, tornar a la pàgina principal
-          instructions_1_html: "En breu <b>ens ficarem en contacte amb tu</b> per a verificar que realment representes a aquest col·lectiu."
-          instructions_2_html: Mentres <b>revisa el teu correu electrònic</b>, t'hem enviat un <b>enllaç per a confirmar el teu compte</b>.
+          back_to_index: Entés, tornar a la pàgina principal
+          instructions_1_html: "<strong>Contactarem amb tu en breu</strong> per comprovar que tens la capacitat de representar a aquest colectiu."
+          instructions_2_html: Mentres que el teu <strong>email es revisat</strong>, t'hem enviat un <strong>enllaç per a confirmar el teu compte</strong>.
           instructions_3_html: Una vegada confirmat, podràs començar a participar com a col·lectiu no verificat.
-          thank_you_html: Gracies per registrar el teu col·lectiu en la web. Ara està <b>pendent de verificació</b>.
+          thank_you_html: Gracies per registrar el teu col·lectiu en la web. Ara està <strong>pendent de verificació</strong>.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
@@ -111,18 +112,18 @@ val:
           password_confirmation_label: Repeteix la contrasenya anterior
           password_label: Contrasenya
           redeemable_code: Codi de verificació per correu electronic (opcional)
-          submit: Registrar-se
+          submit: Registrarse
           terms: Al registrarte acceptes les %{terms}
           terms_link: termes i condicions d'us
           terms_title: Al registrar-te acceptes les condicions d'us
-          title: Registrar-se
+          title: Registrarse
           username_is_available: Nom d'usuari disponible
           username_is_not_available: Nom d'usuari ya existeix
           username_label: Nom d'usuari
           username_note: Nom public que apareixerà en les teues publicacions
         success:
-          back_to_index: Entés, tornar a la pàgina principal
-          instructions_1_html: Si us plau <strong>revisa el teu correu electrònic</strong> - t'em envat un <strong>enllaç per a confirmar el teu compte</strong>.
+          back_to_index: Entes, tornar a la pàgina principal
+          instructions_1_html: Si us plau <strong>revisa el teu correu electrònic</strong> - t'hem envat un <strong>enllaç per a confirmar el teu compte</strong>.
           instructions_2_html: Una vegada confirmat, podràs començar a participar.
           thank_you_html: Gràcies per registrar-te en la web. Ara has de <strong>confirmar el teu correu</strong>.
-          title: Revisa el teu correu
+          title: Confirma la teua direcció d'email

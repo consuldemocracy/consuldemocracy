@@ -1,5 +1,31 @@
 ru:
   activerecord:
+    models:
+      milestone:
+        one: "этап"
+        few: "этапы"
+        many: "этапы"
+        other: "этапы"
+      comment:
+        one: "Отзыв"
+        few: "Комментарии"
+        many: "Комментарии"
+        other: "Комментарии"
+      tag:
+        one: "Метка"
+        few: "Метки"
+        many: "Метки"
+        other: "Метки"
+      vote:
+        one: "Голос"
+        few: "Голоса"
+        many: "Голоса"
+        other: "Голоса"
+      documents:
+        one: "Документ"
+        few: "Документы"
+        many: "Документы"
+        other: "Документы"
     attributes:
       budget:
         name: "Имя"
@@ -13,7 +39,7 @@ ru:
         phase: "Этап"
         currency_symbol: "Валюта"
       budget/investment:
-        heading_id: "Раздел"
+        heading_id: "Заглавие"
         title: "Название"
         description: "Описание"
         external_url: "Ссылка на дополнительную документацию"
@@ -23,13 +49,14 @@ ru:
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
       milestone:
-        status_id: "Текущий инвестиционный статус (опционально)"
         title: "Название"
         description: "Описание (опционально, если присвоен статус)"
         publication_date: "Дата публикации"
       milestone/status:
         name: "Имя"
         description: "Описание (опционально)"
+      progress_bar:
+        title: "Название"
       budget/heading:
         name: "Название раздела"
         price: "Цена"
@@ -73,7 +100,7 @@ ru:
         name: "Имя"
         starts_at: "Дата начала"
         ends_at: "Дата закрытия"
-        geozone_restricted: "Ограничено геозоной"
+        geozone_restricted: "Ограничено географической зоной"
         summary: "Резюме"
         description: "Описание"
       poll/translation:
@@ -88,14 +115,14 @@ ru:
       poll/question/translation:
         title: "Вопрос"
       signature_sheet:
-        signable_type: "Тип подписания"
+        signable_type: "Тип подписываемого"
         signable_id: "Подписываемое ID"
         document_numbers: "Номера документов"
       site_customization/page:
         content: Содержание
         created_at: Создано в
         subtitle: Субтитр
-        slug: Slug URL
+        slug: URL-наименование
         status: Статус
         title: Название
         updated_at: Обновлено в
@@ -111,7 +138,7 @@ ru:
         image: Изображение
       site_customization/content_block:
         name: Имя
-        locale: региональный язык
+        locale: Язык
         body: Тело
       legislation/process:
         title: Название процесса
@@ -131,6 +158,7 @@ ru:
         summary: Резюме
         description: Описание
         additional_info: Дополнительная информация
+        milestones_summary: Резюме
       legislation/draft_version:
         title: Название версии
         body: Текст
@@ -249,7 +277,7 @@ ru:
           attributes:
             document_number:
               not_in_census: 'Не проверено переписью'
-              already_voted: 'Уже проголосовано за это предложение'
+              already_voted: 'Этому предложению уже поставлен голос'
         site_customization/page:
           attributes:
             slug:

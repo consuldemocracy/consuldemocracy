@@ -1,35 +1,110 @@
 ru:
   date:
+    abbr_day_names:
+      - Вс
+      - Пн
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Янв
+      - Фев
+      - Мар
+      - Апр
+      - Май
+      - Июн
+      - Июл
+      - Авг
+      - Сен
+      - Окт
+      - Ноя
+      - Дек
+    day_names:
+      - Воскресенье
+      - Понедельник
+      - Вторник
+      - Среда
+      - Четверг
+      - Пятница
+      - Суббота
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Январь
+      - Февраль
+      - Март
+      - Апрель
+      - Май
+      - Июнь
+      - Июль
+      - Август
+      - Сентябрь
+      - Октябрь
+      - Ноябрь
+      - Декабрь
+  datetime:
+    distance_in_words:
+      half_a_minute: пол минуты
+    prompts:
+      day: День
+      hour: Час
+      minute: Минуты
+      month: Месяц
+      second: Секунды
+      year: Год
+  errors:
+    messages:
+      accepted: должно быть принято
+      blank: не может быть пустым
+      present: должно быть пустым
+      confirmation: не совпадает с %{attribute}
+      empty: не может быть пустым
+      equal_to: должно быть равно %{count}
+      even: должно быть четным
+      exclusion: зарезервировано
+      greater_than: должно быть больше чем %{count}
+      greater_than_or_equal_to: должно быть больше, либо равно %{count}
+      inclusion: не включено в список
+      invalid: не верное
+      less_than: должно быть меньше, чем %{count}
+      less_than_or_equal_to: должно быть меньше или равно %{count}
+      model_invalid: "Ошибка проверки: %{errors}"
+      not_a_number: не является числом
+      not_an_integer: должно быть целым
+      odd: должно быть не четным
+      required: должно присутствовать
+      taken: уже было занято
+      other_than: не должно равняться %{count}
+    template:
+      body: 'Со следующими полями возникли проблемы:'
+  helpers:
+    select:
+      prompt: Пожалуйста выберите
+    submit:
+      create: Создать %{model}
+      submit: Сохранить %{model}
+      update: Обновить %{model}
   number:
     human:
+      decimal_units:
+        units:
+          billion: Миллиард
+          million: Миллион
+          quadrillion: Квадрильон
+          thousand: Тысяча
+          trillion: Триллион
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          gb: ГБ
+          kb: КБ
+          mb: МБ
+          tb: ТБ
+  support:
+    array:
+      last_word_connector: ", и "
+      two_words_connector: " и "

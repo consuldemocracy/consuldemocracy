@@ -21,15 +21,10 @@ es:
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-    budget_investment_unfeasible:
-      hi: "Estimado usuario,"
-      sincerely: "Atentamente"
-      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
     proposal_notification_digest:
       info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
       title: "Notificaciones de propuestas en %{org_name}"
@@ -62,7 +57,7 @@ es:
       sincerely: "Atentamente,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"

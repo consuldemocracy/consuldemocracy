@@ -13,9 +13,9 @@ es-CL:
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
-        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+        not_logged_in: Necesitas %{signin} o %{signup}.
         not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-        organization: Las organizaciones no pueden votar.
+        organization: Las organizaciones no pueden votar
         not_selected: No se pueden votar propuestas inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
@@ -24,11 +24,12 @@ es-CL:
       show:
         title: Selecciona una opción
         unfeasible_title: Propuestas inviables
-        unfeasible: Ver propuestas inviables
+        unfeasible: Ver las propuestas inviables
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
       drafting: Borrador (No visible para el público)
+      informing: Información
       accepting: Presentación de proyectos
       reviewing: Revisión interna de proyectos
       selecting: Fase de apoyos
@@ -48,12 +49,13 @@ es-CL:
       not_selected_investment_proyects: Ver lista de proyectos de inversión no seleccionados para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
+      milestones: Seguimiento
     investments:
       form:
         tag_category_label: "Categorías"
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
-        tags_label: Etiquetas
-        tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+        tags_label: Temas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
@@ -67,7 +69,7 @@ es-CL:
           placeholder: Buscar propuestas de inversión...
           title: Buscar
         search_results_html:
-          one: " que contiene <strong>'%{search_term}'</strong>"
+          one: " que contienen <strong>'%{search_term}'</strong>"
           other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
@@ -82,7 +84,7 @@ es-CL:
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
-          create: "Crear proyecto de gasto"
+          create: "Crear nuevo proyecto"
           not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
           sign_in: "iniciar sesión"
           sign_up: "registrarte"
@@ -91,11 +93,11 @@ es-CL:
           unfeasible: Ver los proyectos inviables
         orders:
           random: Aleatorias
-          confidence_score: Mejor valoradas
+          confidence_score: Mejor valorados
           price: Por coste
       show:
         author_deleted: Usuario eliminado
-        price_explanation: Informe de coste
+        price_explanation: Informe de coste <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
@@ -110,10 +112,10 @@ es-CL:
         author: Autor
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
-        add: Votar
+        add: Voto
         already_added: Ya has añadido esta propuesta de inversión
         already_supported: Ya has apoyado este proyecto de inversión. ¡Compártelo!
-        support_title: Apoyar esta propuesta
+        support_title: Apoyar este proyecto
         supports:
           zero: Sin apoyos
           one: 1 apoyo
@@ -132,7 +134,7 @@ es-CL:
       group: Grupo
       phase: Fase actual
       unfeasible_title: Propuestas inviables
-      unfeasible: Ver las propuestas inviables
+      unfeasible: Ver propuestas inviables
       unselected_title: Propuestas no seleccionadas para la votación final
       unselected: Ver las propuestas no seleccionadas para la votación final
       see_results: Ver resultados
@@ -141,14 +143,20 @@ es-CL:
       page_title: "%{budget} - Resultados"
       heading: "Resultados presupuestos participativos"
       heading_selection_title: "Ámbito de actuación"
-      spending_proposal: Título
+      spending_proposal: Título de la propuesta
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartadas
       show_all_link: Mostrar todas
-      price: Precio total
+      price: Coste
       amount_available: Presupuesto disponible
       accepted: "Propuesta de inversión aceptada: "
       discarded: "Propuesta de inversión descartada: "
+      investment_proyects: Ver lista completa de proyectos de inversión
+      unfeasible_investment_proyects: Ver lista de proyectos de inversión inviables
+      not_selected_investment_proyects: Ver lista de proyectos de inversión no seleccionados para la votación final
+    executions:
+      link: "Seguimiento"
+      heading_selection_title: "Ámbito de actuación"
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"

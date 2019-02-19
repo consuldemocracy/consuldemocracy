@@ -20,19 +20,19 @@ zh-TW:
       user:
         other: "用戶"
       moderator:
-        other: "版主"
+        other: "審核員"
       administrator:
         other: "管理員"
       valuator:
         other: "評估員"
       valuator_group:
-        other: "評估小組"
+        other: "評估組"
       manager:
         other: "經理"
       newsletter:
         other: "通訊"
       vote:
-        other: "票"
+        other: "投票數"
       organization:
         other: "組織"
       poll/booth:
@@ -44,17 +44,17 @@ zh-TW:
       spending_proposal:
         other: "投資項目"
       site_customization/page:
-        other: 自定義頁面
+        other: 自訂頁
       site_customization/image:
-        other: 自定義圖像
+        other: 自訂圖像
       site_customization/content_block:
-        other: 自定義內容塊
+        other: 自訂內容塊
       legislation/process:
         other: "過程"
+      legislation/proposal:
+        other: "建議"
       legislation/draft_versions:
         other: "草稿版本"
-      legislation/draft_texts:
-        other: "草稿"
       legislation/questions:
         other: "問題"
       legislation/question_options:
@@ -62,7 +62,7 @@ zh-TW:
       legislation/answers:
         other: "答案"
       documents:
-        other: "文件"
+        other: "文檔"
       images:
         other: "圖像"
       topic:
@@ -70,7 +70,7 @@ zh-TW:
       poll:
         other: "投票"
       proposal_notification:
-        other: "提議通知"
+        other: "建議通知"
     attributes:
       budget:
         name: "名字"
@@ -86,8 +86,8 @@ zh-TW:
       budget/investment:
         heading_id: "標題"
         title: "標題"
-        description: "說明"
-        external_url: "鏈接到其他文檔"
+        description: "描述"
+        external_url: "鏈接到額外文檔"
         administrator_id: "管理員"
         location: "地點 (可選擇填寫)"
         organization_name: "如果您以集體/組織的名義，或代表多人提出建議，請寫下其名稱"
@@ -97,10 +97,13 @@ zh-TW:
         status_id: "當前投資狀況 (可選擇填寫)"
         title: "標題"
         description: "說明 (如果已經指定了狀態, 則可選擇填寫)"
-        publication_date: "出版日期"
+        publication_date: "發佈日期"
       milestone/status:
         name: "名字"
         description: "說明 (可選擇填寫)"
+      progress_bar:
+        kind: "類型"
+        title: "標題"
       budget/heading:
         name: "標題名稱"
         price: "價格"
@@ -117,10 +120,10 @@ zh-TW:
         author: "作者"
         title: "標題"
         question: "問題"
-        description: "說明"
+        description: "描述"
         terms_of_service: "服務條款"
       user:
-        login: "電子郵件或用戶名"
+        login: "電郵或用戶名"
         email: "電郵"
         username: "用戶名"
         password_confirmation: "密碼確認"
@@ -136,8 +139,8 @@ zh-TW:
       spending_proposal:
         administrator_id: "管理員"
         association_name: "協會名稱"
-        description: "說明"
-        external_url: "鏈接到其他文檔"
+        description: "描述"
+        external_url: "鏈接到額外文檔"
         geozone_id: "經營範圍"
         title: "標題"
       poll:
@@ -146,12 +149,18 @@ zh-TW:
         ends_at: "截止日期"
         geozone_restricted: "受地理區域（geozone）限制"
         summary: "總結"
-        description: "說明"
+        description: "描述"
+      poll/translation:
+        name: "名字"
+        summary: "總結"
+        description: "描述"
       poll/question:
         title: "問題"
         summary: "總結"
-        description: "說明"
-        external_url: "鏈接到其他文檔"
+        description: "描述"
+        external_url: "鏈接到額外文檔"
+      poll/question/translation:
+        title: "問題"
       signature_sheet:
         signable_type: "可簽名類型"
         signable_id: "可簽名 ID"
@@ -167,6 +176,10 @@ zh-TW:
         more_info_flag: 在説明頁中顯示
         print_content_flag: '"列印內容" 按鈕'
         locale: 語言
+      site_customization/page/translation:
+        title: 標題
+        subtitle: 副標題
+        content: 內容
       site_customization/image:
         name: 名字
         image: 圖像
@@ -177,7 +190,7 @@ zh-TW:
       legislation/process:
         title: 進程標題
         summary: 總結
-        description: 說明
+        description: 描述
         additional_info: 附加其他資訊
         start_date: 開始日期
         end_date: 結束日期
@@ -187,12 +200,22 @@ zh-TW:
         allegations_start_date: 指控開始日期
         allegations_end_date: 指控結束日期
         result_publication_date: 最終結果發佈日期
+      legislation/process/translation:
+        title: 進程標題
+        summary: 總結
+        description: 描述
+        additional_info: 附加其他資訊
+        milestones_summary: 總結
       legislation/draft_version:
         title: 版本標題
         body: 文本
-        changelog: 變化
+        changelog: 更改
         status: 狀態
         final_version: 最終版本
+      legislation/draft_version/translation:
+        title: 版本標題
+        body: 文本
+        changelog: 變化
       legislation/question:
         title: 標題
         question_options: 選項
@@ -207,8 +230,11 @@ zh-TW:
         title: 標題
         attachment: 附件
       poll/question/answer:
-        title: 答案
-        description: 說明
+        title: 回答
+        description: 描述
+      poll/question/answer/translation:
+        title: 回答
+        description: 描述
       poll/question/answer/video:
         title: 標題
         url: 外部視頻
@@ -216,13 +242,26 @@ zh-TW:
         segment_recipient: 收件者
         subject: 主題
         from: 從
-        body: 電子郵件內容
+        body: 電郵內容
+      admin_notification:
+        segment_recipient: 收件者
+        title: 標題
+        link: 鏈接
+        body: 文本
+      admin_notification/translation:
+        title: 標題
+        body: 文本
       widget/card:
         label: 標籤 (可選擇填寫)
         title: 標題
-        description: 說明
+        description: 描述
         link_text: 鏈接文本
         link_url: 鏈接 URL
+      widget/card/translation:
+        label: 標籤 (可選擇填寫)
+        title: 標題
+        description: 描述
+        link_text: 鏈接文本
       widget/feed:
         limit: 項目數
     errors:
@@ -234,7 +273,7 @@ zh-TW:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "標記必須小於或等於%{count}"
+              less_than_or_equal_to: "標記必須小於或等於 %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -272,7 +311,7 @@ zh-TW:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "標記必須小於或等於 %{count}"
+              less_than_or_equal_to: "標記必須小於或等於%{count}"
         budget/investment:
           attributes:
             tag_list:
@@ -300,7 +339,7 @@ zh-TW:
             valuation:
               cannot_comment_valuation: '你不能對評估作評論'
       messages:
-        record_invalid: "驗證失敗: %{errors}"
+        record_invalid: "驗證失敗：%{errors}"
         restrict_dependent_destroy:
           has_one: "無法刪除記錄, 因為有依賴的%{record} 存在"
           has_many: "無法刪除記錄, 因為有依賴的%{record} 存在"

@@ -18,17 +18,17 @@ gl:
         first_theme: Crea o primeiro tema da comunidade
         sub_first_theme: "Para creares un tema debes %{sign_in} ou %{sign_up}."
         sign_in: "iniciar sesión"
-        sign_up: "rexistrarte"
+        sign_up: "rexistrate"
       tab:
         participants: Participantes
       sidebar:
-        participate: Comeza a participar
-        new_topic: Crea un tema
+        participate: Participa
+        new_topic: Crear tema
       topic:
         edit: Editar tema
-        destroy: Borrar tema
+        destroy: Eliminar tema
         comments:
-          zero: Sen comentarios
+          zero: Ningún comentario
           one: 1 comentario
           other: "%{count} comentarios"
       author: Autoría
@@ -40,11 +40,11 @@ gl:
         topic_title: Título
         topic_text: Texto de inicio
         new:
-          submit_button: Crear un tema
+          submit_button: Crea un tema
         edit:
           submit_button: Editar tema
         create:
-          submit_button: Crear un tema
+          submit_button: Crea un tema
         update:
           submit_button: Actualizar o tema
       show:

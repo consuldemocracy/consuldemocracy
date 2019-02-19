@@ -1,1 +1,24 @@
 tr:
+  devise_views:
+    confirmations:
+      new:
+        email_label: E-posta
+      show:
+        submit: Onaylamak
+    organizations:
+      registrations:
+        new:
+          email_label: E-posta
+    passwords:
+      new:
+        email_label: E-posta
+    unlocks:
+      new:
+        email_label: E-posta
+    users:
+      registrations:
+        edit:
+          edit: Düzenleme
+          email_label: E-posta
+        new:
+          email_label: E-posta

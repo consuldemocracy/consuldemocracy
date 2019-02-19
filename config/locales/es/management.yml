@@ -10,7 +10,7 @@ es:
         title: Cuenta de usuario
       edit:
         title: 'Editar cuenta de usuario: Restablecer contraseña'
-        back: Atrás
+        back: Volver
         password:
           password: Contraseña
           send_email: Enviar email para restablecer la contraseña
@@ -62,7 +62,7 @@ es:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear propuesta de inversión
+      create_spending_proposal: Crear una propuesta de gasto
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
       create_budget_investment: Crear proyectos de gasto
@@ -84,7 +84,7 @@ es:
     print_info: Imprimir esta información
     proposals:
       alert:
-        unverified_user: Este usuario no está verificado
+        unverified_user: Usuario no verificado
       create_proposal: Crear propuesta
       print:
         print_button: Imprimir
@@ -108,12 +108,12 @@ es:
       print:
         print_button: Imprimir
       search_results:
-        one: " contiene el término '%{search_term}'"
-        other: " contienen el término '%{search_term}'"
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Este usuario no está verificado
-      create: Crear propuesta de inversión
+        unverified_user: Usuario no verificado
+      create: Crear una propuesta de gasto
       filters:
         unfeasible: Propuestas de inversión no viables
         by_geozone: "Propuestas de inversión con ámbito: %{geozone}"

@@ -43,7 +43,7 @@ es:
       edit:
         editing: Editar el banner
         form:
-          submit_button: Guardar Cambios
+          submit_button: Guardar cambios
       errors:
         form:
           error:
@@ -68,7 +68,7 @@ es:
           on_proposals: Propuestas
           on_users: Usuarios
           on_system_emails: Emails del sistema
-        title: Actividad de Moderadores
+        title: Actividad de moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
@@ -89,7 +89,7 @@ es:
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
-        no_budgets: "No hay presupuestos."
+        no_budgets: "No hay presupuestos participativos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
@@ -112,7 +112,7 @@ es:
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
-        recalculate: Recalcular propuestas ganadoras
+        recalculate: Recalcular proyectos ganadores
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -167,7 +167,7 @@ es:
         back: "Volver a grupos"
     budget_phases:
       edit:
-        start_date: Fecha de Inicio
+        start_date: Fecha de inicio
         end_date: Fecha de fin
         summary: Resumen
         summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
@@ -261,7 +261,7 @@ es:
           "true": Seleccionado
           "false": No seleccionado
         winner:
-          title: Ganadora
+          title: Ganador
           "true": "Si"
           "false": "No"
         valuator_groups: "Grupos de evaluadores"
@@ -360,7 +360,6 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
-
     comments:
       index:
         filter: Filtro
@@ -484,7 +483,7 @@ es:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha creación
+          creation_date: Fecha de creación
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -605,7 +604,7 @@ es:
         email: Email
         no_managers: No hay gestores.
       manager:
-        add: Añadir como Gestor
+        add: Añadir como gestor
         delete: Borrar
       search:
         title: 'Gestores: Búsqueda de usuarios'
@@ -676,9 +675,9 @@ es:
     administrators:
       index:
         title: Administradores
-        id: ID de Administrador
         name: Nombre
         email: Email
+        id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
@@ -1025,7 +1024,7 @@ es:
         edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
-        video_url: Video externo
+        video_url: Vídeo externo
         answers:
           title: Respuesta
           description: Descripción
@@ -1405,7 +1404,7 @@ es:
         table:
           poll_name: Votación
           question_name: Pregunta
-          origin_web: Participantes Web
+          origin_web: Participantes en Web
           origin_total: Participantes Totales
     tags:
       create: Crear tema
@@ -1420,8 +1419,8 @@ es:
     users:
       columns:
         name: Nombre
-        email: Correo electrónico
-        document_number: DNI/Pasaporte/Tarjeta de residencia
+        email: Email
+        document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verficación
       index:
@@ -1437,7 +1436,7 @@ es:
         title: Verificaciones incompletas
     site_customization:
       content_blocks:
-        information: "Información sobre los bloques de contenido"
+        information: Información sobre los bloques de contenido
         about: "Puedes crear bloques de contenido HTML que se podrán incrustar en diferentes sitios de tu página."
         html_format: "Un bloque de contenido es un grupo de enlaces, y debe de tener el siguiente formato:"
         no_blocks: "No hay bloques de texto."

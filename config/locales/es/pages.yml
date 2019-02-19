@@ -186,7 +186,7 @@ es:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       help: "¿Qué es %{org}? - Participación ciudadana"
-      privacy: Política de Privacidad
+      privacy: Política de privacidad
     verify:
       code: Código que has recibido en tu carta
       email: Email

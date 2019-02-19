@@ -26,8 +26,8 @@ es:
         one: "Debate"
         other: "Debates"
       tag:
-        one: "Tema"
-        other: "Temas"
+        one: "Etiqueta"
+        other: "Etiquetas"
       user:
         one: "Usuario"
         other: "Usuarios"
@@ -48,7 +48,7 @@ es:
         other: "Gestores"
       newsletter:
         one: "Newsletter"
-        other: "Newsletter"
+        other: "Newsletters"
       vote:
         one: "Voto"
         other: "Votos"
@@ -68,7 +68,7 @@ es:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
       spending_proposal:
-        one: "Proyecto de inversión"
+        one: "Propuesta de inversión"
         other: "Proyectos de gasto"
       site_customization/page:
         one: Página
@@ -89,8 +89,8 @@ es:
         one: "Propuesta"
         other: "Propuestas"
       legislation/draft_versions:
-        one: "Versión borrador"
-        other: "Versiones borrador"
+        one: "Versión del borrador"
+        other: "Versiones del borrador"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
@@ -154,7 +154,7 @@ es:
         secondary: "Secundaria"
       budget/heading:
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Coste"
         population: "Población"
       comment:
         body: "Comentario"
@@ -172,7 +172,7 @@ es:
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
-        email: "Correo electrónico"
+        email: "Email"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña"
@@ -182,7 +182,7 @@ es:
         official_level: "Nivel del cargo"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Nombre de organización"
+        name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
       spending_proposal:
         administrator_id: "Administrador"
@@ -224,7 +224,7 @@ es:
         slug: Slug
         status: Estado
         title: Título
-        updated_at: última actualización
+        updated_at: Última actualización
         more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
@@ -263,7 +263,7 @@ es:
         additional_info: Información adicional
         milestones_summary: Seguimiento del proceso
       legislation/draft_version:
-        title: Título de la version
+        title: Título de la versión
         body: Texto
         changelog: Cambios
         status: Estado
@@ -291,7 +291,7 @@ es:
         title: Respuesta
         description: Descripción
       poll/question/answer/translation:
-        title: Título
+        title: Respuesta
         description: Descripción
       poll/question/answer/video:
         title: Título

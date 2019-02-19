@@ -1,7 +1,7 @@
 gl:
   pages:
     conditions:
-      title: Termos e condicións de uso
+      title: Condicións de uso
       subtitle: AVISO LEGAL DAS CONDICIÓNS DE USO, PRIVACIDADE E PROTECCIÓN DOS DATOS DE CARÁCTER PERSOAL DO PORTAL DE GOBERNO ABERTO
       description: Páxina de información sobre as condicións de uso, privacidade e protección de datos de carácter persoal.
     general_terms: Termos e condicións
@@ -10,7 +10,7 @@ gl:
       guide: "Esta guía explica para que serven e como funcionan cada unha das seccións de %{org}."
       menu:
         debates: "Debates"
-        proposals: "Propostas"
+        proposals: "Propostas cidadás"
         budgets: "Orzamentos participativos"
         polls: "Votacións"
         other: "Outra información de interese"
@@ -24,7 +24,7 @@ gl:
         image_alt: "Botóns para avaliar os debates"
         figcaption: 'Botones "estou de acordo" e "non estou de acordo" para avaliar os debates.'
       proposals:
-        title: "Propostas"
+        title: "Propostas cidadás"
         description: "Na sección %{link} podes formular propostas para que o Concello as leve a cabo. As propostas obteñen apoios e se alcanzan abondos sométense a votación cidadá. As propostas aprobadas nestas votacións cidadás son asumidas polo Concello e lévanse a cabo."
         link: "propostas cidadás"
         image_alt: "Botón para apoiar unha proposta"
@@ -59,7 +59,11 @@ gl:
         how_to_use: "Emprega %{org_name} no teu concello"
       how_to_use:
         text: |-
-          Emprégao no teu concello ou axúdanos a melloralo, é software libre. Este portal de goberno aberto emprega a [aplicación CONSUL app] (https://github.com/consul/consul 'consul github') que é software libre con [licenzaAGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), o que significa que calquera pode usar libremente o código, copialo, velo en detalle, modificalo e redistribuílo ao mundo coas notificacións que quixer (mantendo o que outros poidan facer á súa vez o mesmo). Porque xulgamos que a cultura é mellor e máis rica cando se libera. Se sabes programar, podes ver o código e axudáresnos a melloralo en [CONSUL app](https://github.com/consul/consul 'consul github').
+          Emprégao no teu concello ou axúdanos a melloralo, é software libre.
+
+          Este portal de goberno aberto emprega a [aplicación CONSUL] (https://github.com/consul/consul 'consul github') que é software libre con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), o que significa que calquera pode usar libremente o código, copialo, velo en detalle, modificalo e redistribuílo ao mundo coas modificacións que quixer (mantendo o que outros poidan facer á súa vez o mesmo). Porque xulgamos que a cultura é mellor e máis rica cando se libera.
+
+          Se sabes programar, podes ver o código e axudáresnos a melloralo en [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Emprégao no teu concello
     privacy:
@@ -90,8 +94,8 @@ gl:
     accessibility:
       title: Accesibilidade
       description: |-
-        A accesibilidade web refírese á posibilidade de acceso a Internet e os seus contidos por parte de todas as persoas, independentemente das discapacidades (físicas, intelectuais ou técnicas) que poidan xurdir, ou das derivadas do contexto de uso (tecnolóxico ou ambiental). 
-        
+        A accesibilidade web refírese á posibilidade de acceso a Internet e os seus contidos por parte de todas as persoas, independentemente das discapacidades (físicas, intelectuais ou técnicas) que poidan xurdir, ou das derivadas do contexto de uso (tecnolóxico ou ambiental).
+
         Cando os sitios web son deseñados coa accesibilidade en mente, todos os usuarios poden acceder ao contido en condicións iguais, por exemplo:
       examples:
         - Proporcionando un texto alternativo ás imaxes, os usuarios invidentes ou con problemas de visión, poden utilizar lectores especiais para acceder á información.
@@ -114,7 +118,7 @@ gl:
               page_column: Debates
             - 
               key_column: 2
-              page_column: Propostas
+              page_column: Propostas cidadás
             - 
               key_column: 3
               page_column: Votos
@@ -186,9 +190,9 @@ gl:
       privacy: Política de privacidade
     verify:
       code: Código que recibiches na túa carta
-      email: Correo electrónico
+      email: O teu correo electrónico
       info: 'Para verificares a túa conta, introduce os datos de acceso:'
       info_code: 'Agora escribe o código que recibiches na carta:'
-      password: Contrasinal
+      password: Contrasinal que empregarás para acceder a este sitio web
       submit: Verificar a miña conta
       title: Verifica a túa conta

@@ -1,1 +1,844 @@
 so:
+  account:
+    show:
+      change_credentials_link: Bedesho aqoonsigayga
+      email_on_comment_label: Iigu soo sheegaan email ahaan marka qof uu ku faahfaahiyo soo jeedimaha ama doodaha
+      email_on_comment_reply_label: Ii wargali email ahaan marka qof uu jawaabo ku yiraahdo
+      erase_account_link: Ka tiri akoonka
+      finish_verification: Xaqiijin dhamaystiran
+      notifications: Ogaysiis
+      organization_name_label: Magacaga ururka
+      organization_responsible_name_placeholder: Wakiilka ururka / wadajirka
+      personal: Warbixinada qofka
+      phone_number_label: Talafoon lambar
+      public_activity_label: Wakiilka hay'adda / wadajirka Liiska ku saabsan waxqabadka dadweynaha
+      public_interests_label: Xaji sumadaha waxyaabaha aan raacayo dadweynaha
+      public_interests_my_title_list: Tagyada oo ka mid ah qodobada aad raacdo
+      public_interests_user_title_list: Da'da walxahan ee istimalka soo socota
+      save_changes_submit: Badbaadi beddelka
+      subscription_to_website_newsletter_label: Helitaanka bogga internetka ee macluumaadka khuseeya
+      email_on_direct_message_label: Helaan emayl ku saabsan fariimaha tooska ah
+      email_digest_label: Soo hel warbixinta kooban ee soo jeedinta soo jeedinta
+      official_position_badge_label: Muuji calaamadda booska rasmiga ah
+      recommendations: Talloyin
+      show_debates_recommendations: Muuji talooyinka dodaha
+      show_proposals_recommendations: Muuji talooyinka soo jeedinta
+      title: Xisaabteyda
+      user_permission_debates: Kaqayb qadashada dooda
+      user_permission_info: Akoonkaga waad karta...
+      user_permission_proposal: Samee soo jeedino cusub
+      user_permission_support_proposal: Tageer so jedinta
+      user_permission_title: Kaqaybgalka
+      user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
+      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
+      user_permission_votes: Kayb galka codaynta ugu danbaysa
+      username_label: Magaca Isticmaalaha
+      verified_account: Xisaabi la xaqiijiyay
+      verify_my_account: Hubi xisaabtayda
+  application:
+    close: Xir
+    menu: Muujinta
+  comments:
+    comments_closed: Faallooyinka waa la xidhay
+    verified_only: Si aad uga qayb gasho%{verify_account}
+    verify_account: hubi xisaabtaada
+    comment:
+      admin: Mamulaha
+      author: Qoraa
+      deleted: Faalladan ayaa la tirtiray
+      moderator: Dhexdhexaad ah
+      responses:
+        zero: Jawaab ma jirto
+        one: 1 jawaab
+        other: "%{count} jawaabaha"
+      user_deleted: Isticmalaha la tirtiray
+      votes:
+        zero: Looma baahna codad
+        one: 1 cod
+        other: "%{count} codad"
+    form:
+      comment_as_admin: Faallada sida admin
+      comment_as_moderator: Falada xer ilaliyaha
+      leave_comment: Ka tag faallooyinkaaga
+    orders:
+      most_voted: Inta badan cod bixinta
+      newest: Cuseybka ugu horeyey
+      oldest: Ugu deda wayn ugu horynti
+      most_commented: Inta badan faallooyin ah
+    select_order: Kala saar
+    show:
+      return_to_commentable: 'Ku noqo '
+  comments_helper:
+    comment_button: Dabaac falada
+    comment_link: Faalo
+    comments_title: Faalo
+    reply_button: Soo daabac jawaabta
+    reply_link: Jawab
+  debates:
+    create:
+      form:
+        submit_button: Biloow dooda
+    debate:
+      comments:
+        zero: Falooyin majiraan
+        one: hal faalo
+        other: "hal faalo%{count} Talooyin ku saabsan abuurista dood"
+      votes:
+        zero: Looma baahna codad
+        one: 1 Cod 
+        other: "%{count} codadka"
+    edit:
+      editing: Beddel dood
+      form:
+        submit_button: Badbaadi beddelka
+      show_link: Aragtida doodda
+    form:
+      debate_text: Qoraalka hore ee doodda
+      debate_title: Ciwaanka dooda
+      tags_instructions: Taaga dooda.
+      tags_label: Mawduucyada
+      tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
+    index:
+      featured_debates: Soobandhigiid/ Muqaal
+      filter_topic:
+        one: " mawduuc%{topic}"
+        other: " mawduuc%{topic}"
+      orders:
+        confidence_score: ugu sareeya
+        created_at: ugu cusub
+        hot_score: ugu firfircoon
+        most_commented: inta badan faaliyey
+        relevance: kuhabon
+        recommendations: talloyin
+      recommendations:
+        without_results: Ma jiraan doodo la xiriira danahaaga
+        without_interests: Raac sojedinada si aan kuu siino talooyin
+        disable: "Doodaha talooyinka ayaa joojin doona muujinta haddii aad iyaga dafiri karto. Waxaad mar labaad awood u yeelan kartaa bogga 'My account'"
+        actions:
+          success: "Talooyinka doodda ayaa hadda naafo u ah koontadan"
+          error: "Qalad ayaa dhacay. Fadlan u gudub bogga 'akoonkayga' si gacan looga gooyo talooyinka doodaha"
+      search_form:
+        button: Raadin
+        placeholder: Doodaha raadinta...
+        title: Raadin
+      search_results_html:
+        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
+      select_order: Dalbaday
+      start_debate: Biloow dooda
+      title: Doodo
+      section_header:
+        icon_alt: Doodaha icon
+        title: Doodo
+        help: Ka caawi doodda
+      section_footer:
+        title: Ka caawi doodda
+        description: Bilow dood ku saabsan inaad la wadaagto ra'yiga dadka kale mowduucyada aad ka walaacsan tahay.
+        help_text_1: "Mawduucyada doodaha muwaadiniinta waxaa loogu talagalay qof kasta oo soo bandhigi kara arrimaha walaaca iyo kuwa doonaya in ay la wadaagaan ra'yiga dadka kale."
+        help_text_2: 'Si aad dood u furatid waxaad u baahan tahay inaad saxiixdo% %{org} Isticmaalayaasha ayaa sidoo kale faallo ka bixin kara doodaha furan oo ay ku qiimeeyaan iyaga oo leh "Anigu waafaqsanahay" ama "Waan diidanaa" badhkood kasta oo iyaga ka mid ah.'
+    new:
+      form:
+        submit_button: Biloow dooda
+      info: Haddii aad rabto inaad soo jeediso, tani waa qayb qaldan, gali%{info_link}.
+      info_link: samee soo jeedino cusub
+      more_info: Maclumaad dheraad ah
+      recommendation_four: Ku raaxee meeshan iyo codadka buuxiya. Adigaa iska leh.
+      recommendation_one: Ha u isticmaalin farwaweyn tartanka doodda ama jumlado dhan. Internetka, tan waxaa loo tixgeliyaa qaylo. Ma jiro qof jecel in lagu qayliyo.
+      recommendation_three: Dhaleeceyn aan naxariis lahayn ayaa aad loo soo dhaweynayaa. Tani waa meel loogu talagalay soo-jeedinta. Laakiin waxaannu kugula talinaynaa inaad xajisid xarrago iyo sirdoon. Dunidu waa meel wanaagsan oo leh waxyaalahaas oo kale.
+      recommendation_two: Dood-kasta ama faallo kasta oo soo jeedinaysa tallaabo sharci ah ayaa la tirtiri doonaa, iyo sidoo kale kuwa doonaya inay khalkhal galiyaan goobaha doodda. Wax kasta oo kale waa la oggol yahay.
+      recommendations_title: Talooyin ku saabsan abuurista dood
+      start_new: Biloow dooda
+    show:
+      author_deleted: Isticmalaha la tirtiray
+      comments:
+        zero: Falooyin majiraan
+        one: 1 faalo
+        other: "%{count} falooyinka"
+      comments_title: Faalo
+      edit_debate_link: Isbedel
+      flag: Dooddani waxaa loo calaamadiyay iyada oo aan ku habboonayn dad badan oo isticmaala.
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+      share: Lawadag
+      author: Qoraa
+    update:
+      form:
+        submit_button: Badbaadi beddelka
+  errors:
+    messages:
+      user_not_found: Iisticamalaha lama hayo
+      invalid_date_range: "Taariikhda ku-meel-gaadhka ah"
+  form:
+    accept_terms: Wan ogolahay%{policy} iyo%{conditions}
+    accept_terms_title: Waxaan ku raacsanahay Siyaasadda Khaaska ah iyo shuruudaha isticmaalka
+    conditions: Shuruudaha iyo xaaladaha isticmaalka
+    debate: Dood
+    direct_message: fariin Garaa
+    error: khalad
+    errors: khaladaad
+    not_saved_html: "1 qalad ayaa ka hortagey tan%{resource} in laga badbaadiyo.<br> Fadlan calaamadee beeraha calaamadeeyay si aad u ogaatid sida loo saxo:"
+    policy: Qaanuunka Arrimaha Khaaska ah
+    proposal: Sojeedin
+    proposal_notification: "Ogaysiis"
+    spending_proposal: Soo jeedinta qarashka
+    budget/investment: Maalgashi
+    budget/heading: Ciwaanka misaniyada
+    poll/shift: Wareeg
+    poll/question/answer: Jawaab
+    user: Kontada
+    verification/sms: taleefan
+    signature_sheet: Warqada Saxixyada
+    document: Dukumenti
+    topic: Mawduuc
+    image: Sawiir
+  geozones:
+    none: Dhaman magaloyinka
+    all: Dhaman baxadaha
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Dab-demiska
+      ie: Waxaanu ogaanay inaad adigu internetka kula socoto. Wixii khibrad dheeraad ah, waxaan ku talineynaa isticmaalka% %{firefox} ama%{chrome}.
+      ie_title: Websaydaan laguma soo koobi karo barta internetka
+    footer:
+      accessibility: Helitaanka
+      conditions: Shuruudaha iyo xaaladaha isticmaalka
+      consul: Codsiga Qunsulka
+      consul_url: https://github.com/consul/qonsul
+      contact_us: Booqashada gargaar farsamo
+      copyright: Qonsul%{year}
+      description: Qeybtaani waxay isticmaashaa%{consul} kaas oo ah%{open_source}.
+      open_source: ilo Softiweer oo furan
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Go'aanso sida loo qaabeeyo magaalada aad rabto inaad ku noolaato.
+      participation_title: Kaqaybgalka
+      privacy: Qaanuunka Arrimaha Khaaska ah
+    header:
+      administration_menu: Mamul
+      administration: Mamul
+      available_locales: Luqadaha diyarka ah
+      collaborative_legislation: Nidaamka Sharciga
+      debates: Doodo
+      external_link_blog: Blog
+      locale: 'Luqad:'
+      logo: Logada qunsuliyada
+      management: Maraynta
+      moderation: Dhexdhexaadinta
+      valuation: Qimeyn
+      officing: Saraakiisha codeynta
+      help: Caawin
+      my_account_link: Xisaabteyda
+      my_activity_link: Hawlgalkayga
+      open: fur
+      open_gov: Dawlad furan
+      proposals: Sojeedino
+      poll_questions: Codeynta
+      budgets: Misaaniyada kaqayb qadashada
+      spending_proposals: Soo-jeedinta Kharashka
+      notification_item:
+        new_notifications:
+          one: Waxaad heysataa ogeysiis cusub
+          other: Waxaad heysataa%{count} ogeysiis cusub
+        notifications: Ogaysiisyo
+        no_notifications: "Ma haysatid wargelin cusub"
+    admin:
+      watch_form_message: 'Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?'
+  notifications:
+    index:
+      empty_notifications: Ma haysatid wargelin cusub,.
+      mark_all_as_read: Calaamadee dhammaantood sida akhriska ah
+      read: Akhri
+      title: Ogaysiisyo
+      unread: An akhrin
+    notification:
+      action:
+        comments_on:
+          one: Qof ayaa faallo ka bixiyay
+          other: Waxa jira %{count} faallo ka bixiyay
+        proposal_notification:
+          one: Waxaa jira hal wargalin oo cusub
+          other: Waxaa jira %{count} wargalin oo cusub
+        replies_to:
+          one: Qof ayaa ku jawaabay faalladaada
+          other: Waxaa jira%{count}] jawaabo cusub faladada
+      mark_as_read: Ku calaamadee sida akhriska
+      mark_as_unread: U calaamadee sida aanad akhrisay
+      notifiable_hidden: Khayraadkan lama heli karo mar dambe.
+  map:
+    title: "Degmooyinka"
+    proposal_for_district: "Billow qorshe degmadaada"
+    select_district: Baxada Hawlgalka
+    start_proposal: Abuur soo jeedin
+  omniauth:
+    facebook:
+      sign_in: Gali Facebook
+      sign_up: Kabax Facebook
+      name: Faysbuug
+    finish_signup:
+      title: "Faahfaahin dheeraad ah"
+      username_warning: "Sababtoo ah isbedelka habka aan ula macaamili karno shabakadaha bulshada, waxaa suurtagal ah in magacaaga magaciisu hadda uu u muuqdo 'horeyba loo isticmaalo'. Haddii ay taasi tahay kiiskaaga, fadlan dooro magac kale oo magacaaga ah."
+    google_oauth2:
+      sign_in: Ku soo gal Google
+      sign_up: Ku soo gal Google
+      name: Google
+    twitter:
+      sign_in: Ku soo gal tuwiter
+      sign_up: Iska diwangeli tuwitaar
+      name: Tuwiitar
+    info_sign_in: "Ku saxiix:"
+    info_sign_up: "Isku qor:"
+    or_fill: "Ama buuxi foomka soo socda:"
+  proposals:
+    create:
+      form:
+        submit_button: Abuur soo jeedin
+    edit:
+      editing: Tafatiir soojedinta
+      form:
+        submit_button: Badbaadi beddelka
+      show_link: Soo jeedinta aragtida
+    retire_form:
+      title: Soo jeedinta hawlgabka
+      warning: "Haddii aad ka fariisato hindise-gelinta, weli waa ay aqbali doontaa taageerada, laakiin waa laga saari doonaa liiska ugu weyn oo farriin ayaa loo arki doonaa dhammaan dadka isticmaala oo sheegaya in qoruhu uu tixgelinayo hindisaha aan la taageereynin mar dambe"
+      retired_reason_label: Sababta loo joojiyo soo jeedinta
+      retired_reason_blank: Dooro ikhtiyaar
+      retired_explanation_label: Sharaxaad
+      retired_explanation_placeholder: Si kooban u sharax sababta aad u maleyneyso in hindisahan aan la siin karin taageerooyin dheeraad ah
+      submit_button: Soo jeedinta hawlgabka
+    retire_options:
+      duplicated: La duubay
+      started: Horeyba waa socotaa
+      unfeasible: An surtgak ahayn
+      done: La sameeyo
+      other: Midkale
+    form:
+      geozone: Baxada Hawlgalka
+      proposal_external_url: Isku xirka dukumentiyada dheeraadka ah
+      proposal_question: Suasha so jedinta
+      proposal_question_example_html: "Waa in lagu soo koobaa hal su'aal oo jawaabta Haa ama Maya"
+      proposal_responsible_name: Magaca buuxa ee qofka soo gudbinaya soo jeedinta
+      proposal_responsible_name_note: "(shakhsi ahaan ama matalaad wadajir ah; lama soo bandhigi doono si cad)"
+      proposal_summary: Sokoobida sojedinta
+      proposal_summary_note: "(ugu badnaan 200 jibbaar)"
+      proposal_text: Qorlka sojedinta
+      proposal_title: Ciwaanka soo jedinta
+      proposal_video_url: Xiriirinta fiidiyowga dibadda
+      proposal_video_url_note: Waxaad ku dari kartaa link to YouTube ama Vimeo
+      tag_category_label: "Qaybaha"
+      tags_instructions: "Tag soojeedintaan. Waxaad kala dooran kartaa qaybaha la soo jeediyey ama ku dar adiga keligaa"
+      tags_label: Tagyada
+      tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
+      map_location: "Goobta Khariirada"
+      map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
+      map_remove_marker: "Ka saar sumadaha khariidada"
+      map_skip_checkbox: "Soo jeedintaas ma laha meel la taaban karo ama aanan ogeyn."
+    index:
+      featured_proposals: Soobandhigiid/ Muqaal
+      filter_topic:
+        one: " mawduuc '%{topic}"
+        other: " mawduuc '%{topic}"
+      orders:
+        confidence_score: ugu sareeya
+        created_at: ugu cusub
+        hot_score: ugu firfircoon
+        most_commented: inta badan faaliyey
+        relevance: kuhabon
+        archival_date: diiwaangeliyeY
+        recommendations: talloyin
+      recommendations:
+        without_results: Ma jiraan qorshooyin la xiriira danahaaga
+        without_interests: Raac sojedinada si aan kuu siino talooyin
+        disable: "Talooyinka la soo jeediyay ayaa joojin doona muujinta haddii aad iyaga dafiri karto. Waxaad mar labaad awood u yeelan kartaa bogga 'My account'"
+        actions:
+          success: "Talooyinka loogu talagalay soo jeedinta hadda way naafo tahay koontadan"
+          error: "Qalad ayaa dhacay. Fadlan u gudub bogga 'akoonkayga' si gacan looga gooyo talooyinka Sojeedinta"
+      retired_proposals: Soo jeedinta hawlgabka
+      retired_proposals_link: "Soo-jeedinta ay ka fariisteen qoraaga"
+      retired_links:
+        all: Dhamaan
+        duplicated: La duubay
+        started: Hoos u dhac
+        unfeasible: An surtgak ahayn
+        done: La sameeyo
+        other: Midkale
+      search_form:
+        button: Raadin
+        placeholder: Soo jeedinta raadinta...
+        title: Raadin
+      search_results_html:
+        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
+      select_order: Dalbaday
+      select_order_long: 'Waxaad daawaneysaa soo jeedinada sida:'
+      start_proposal: Abuur soo jeedin
+      title: Sojeedino
+      top: Usbuuca ugu sarreeya
+      top_link_proposals: Soo jeedinta ugu taageerada badan ee qaybta
+      section_header:
+        icon_alt: Icon soo jedinada
+        title: Sojeedino
+        help: Ka caawi qorshayaasha
+      section_footer:
+        title: Ka caawi qorshayaasha
+        description: Soo jeedinta muwaadiniintu waa fursad ay deriska iyo ururrada ururadu si toos ah u go'aansadaan si toos ah sida ay rabaan magaaladooda, ka dib markay helaan taageero ku filan oo ay u gudbiyaan codbixinta muwaadiniinta,.
+    new:
+      form:
+        submit_button: Abuur soo jeedin
+      more_info: Sidee muwaadin u soo jeedin kartaa shaqada?
+      recommendation_one: Ha u isticmaalin farwaweyn tartanka sojeedinta ama jumlado dhan. Internetka, tan waxaa loo tixgeliyaa qaylo. Ma jiro qof jecel in lagu qayliyo.
+      recommendation_three: Ku raaxee meeshan iyo codadka buuxiya. Adigaa iska leh.
+      recommendation_two: Soojedin-kasta ama faallo kasta oo soo jeedinaysa tallaabo sharci ah ayaa la tirtiri doonaa, iyo sidoo kale kuwa doonaya inay khalkhal galiyaan goobaha doodda. Wax kasta oo kale waa la oggol yahay.
+      recommendations_title: Talooyin ku saabsan abuurista sojeedinta
+      start_new: Samee soo jeedin cusub
+    notice:
+      retired: Soo jeedinta hawlgabnimada
+    proposal:
+      created: "Waxaad abuurtay qorshe!"
+      share:
+        guide: "Hadda waxaad la wadaagi kartaa si dadka ay u bilaabi karaan taageerada."
+        edit: "Ka hor inta aan la wadaagin waxaad awoodi doontaa inaad bedesho qoraalka sida aad jeceshahay."
+        view_proposal: Hadda ma ahan, u gudbi dalabkayga
+      improve_info: "Hagaajinta ololahaaga iyo inaad hesho taageero dheeraad ah"
+      improve_info_link: "Fiiri macluumaad dheeraad ah"
+      already_supported: Waxaad hore u taageertay qorshahaan. La wadaag!
+      comments:
+        zero: Falooyin majiraan
+        one: 1 faalo
+        other: "%{count} falooyinka"
+      support: Tageero
+      support_title: Taageeraan hindisahan
+      supports:
+        zero: Tageero la an
+        one: 1tageere
+        other: "%{count} tageereyal"
+      votes:
+        zero: Looma baahna codad
+        one: 1 Cod 
+        other: "%{count} codadka"
+      supports_necessary: "%{number} taageerada loo baahan yahay"
+      total_percent: 100%
+      archived: "Soo jeedintaas waa la diiwaangeliyey oo ma soo qaadan karo taageerooyinka."
+      successful: "Hindisahani wuxuu gaadhay taageerooyinka loo baahan yahay."
+    show:
+      author_deleted: Isticmalaha la tirtiray
+      code: 'Talo soo jeedin:'
+      comments:
+        zero: Falooyin majiraan
+        one: 1 faalo
+        other: "%{count} falooyinka"
+      comments_tab: Faalo
+      edit_proposal_link: Isbedel
+      flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+      notifications_tab: Ogaysiisyo
+      milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
+      retired_warning: "Qoruhu wuxuu tixgelinayaa hindisahaan in aysan helin taageero dheeraad ah."
+      retired_warning_link_to_explanation: Akhri sharraxa kahor intaadan codeynin.
+      retired: Soo-jeedinta ay ka fariisteen qoraaga
+      share: Lawadag
+      send_notification: Diir Ogaysiin
+      no_notifications: "Soo jeedintaasi ma leh ogeysiisyo."
+      embed_video_title: "Fidyowga%{proposal}"
+      title_external_url: "Dukumentiyo dheeraad ah"
+      title_video_url: "Fidyoowga dibada"
+      author: Qoraa
+    update:
+      form:
+        submit_button: Badbaadi beddelka
+    share:
+      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
+  polls:
+    all: "Dhamaan"
+    no_dates: "tirada taariikhda la magacaabay"
+    dates: "Kadimid%{open_at} ila%{closed_at}"
+    final_date: "Soo-celinta ugu dambeysa / Natiijooyinka"
+    index:
+      filters:
+        current: "Furan"
+        expired: "Dhacy"
+      title: "Doorashooyinka"
+      participate_button: "Ka qaybqaado doorashadan"
+      participate_button_expired: "Dorshada dhamadaty"
+      no_geozone_restricted: "Dhaman magaloyinka"
+      geozone_restricted: "Degmooyinka"
+      geozone_info: "Ka-qayb-galka dadka tirakoobka: "
+      already_answer: "Waxaad horay uga qaybqaadatay cod-bixintan"
+      not_logged_in: "Wa inaad gasha ama iska qorta is aad uga qayb gasho"
+      unverified: "Waa inaad hubisaa akonkaga si aad uga qayb qaadato"
+      cant_answer: "Doorashadan laguma heli karo galkaaga"
+      section_header:
+        icon_alt: Astaanta codeynta
+        title: Codeynta
+        help: Ka caawi doorashada
+      section_footer:
+        title: Ka caawi doorashada
+        description: Muwaadiniinta codbixinta waa farsamo ka qaybqaadasho leh oo muwaadiniinta leh xuquuqda codbixinta ay samayn karaan go'aano toos ah
+      no_polls: "Ma jiraan wax codad furan."
+    show:
+      already_voted_in_booth: "Waxaad horeyba uga qaybgashay wadiiqo jireed. Mar labaad kama qaybqaadan kartid."
+      already_voted_in_web: "Waxaad horay uga qaybqaadatay codeyntan. Haddii aad mar labaad codkaaga dhiibato, waa lagu qori doonaa."
+      back: Dib u laabasho
+      cant_answer_not_logged_in: "Waa inaad%{signin}%{signup} inaad ka qayb qaadato."
+      comments_tab: Faalo
+      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+      signin: Geliid
+      signup: Saxiixid
+      cant_answer_verify_html: "Waa inaad%%%{verify_link} xaqiijiso xiriirka si aad uga jawaabtid."
+      verify_link: "hubi xisaabtaada"
+      cant_answer_expired: "Ra'yiururintan ayaa dhammaatay."
+      cant_answer_wrong_geozone: "Su'aashani ma ahan mid laga heli karo degaankaaga."
+      more_info_title: "Maclumaad dheraad ah"
+      documents: Dukumentiyo
+      zoom_plus: Ballaarin sawir
+      read_more: "Akhriso wax dheeraad ah oo ku saabsan%{answer}"
+      read_less: "Akhri wax yar oo ku saabsan%{answer}"
+      videos: "Fidyoowga dibada"
+      info_menu: "Maclumaad"
+      stats_menu: "Participation statisticsTirakoobka ka qaybqaadashada"
+      results_menu: "Natiijooyinka ra'yiga"
+      stats:
+        title: "Macluumaadka ka qaybqaadashada"
+        total_participation: "Ka qaybgalka wadarta"
+        total_votes: "Wadarta tirada codadka la siiyay"
+        votes: "Codadka"
+        web: "WEB"
+        booth: "Laba"
+        total: "Wadar"
+        valid: "Ansax ah"
+        white: "Codadka cad"
+        null_votes: "An la isticmali karin/ an shaqeyneyn"
+      results:
+        title: "Sualo"
+        most_voted_answer: "Ita badan jawabah codayey: "
+  poll_questions:
+    create_question: "Saame Sual"
+    show:
+      vote_answer: "Cod%{answer}"
+      voted: "Wad codeysay%{answer}"
+      voted_token: "Waxaad ku qori kartaa liiska codbixinta, si aad u hubiso codkaaga natiijooyinka kama dambaysta ah:"
+  proposal_notifications:
+    new:
+      title: "Fariin dir"
+      title_label: "Ciwaan"
+      body_label: "Fariin"
+      submit_button: "Farri dir"
+      info_about_receivers_html: "Fariintan waxaa loo diri doonaa <strong>%{count} dadka </strong> waxaana lagu arki doonaa%{proposal_page}.<br> - Xawaaruhu si dhakhso ah uma dirin, dadka isticmaala waxay helayaan wakhti gaaban email ah oo leh dhammaan ogeysiinta soo jeedinta."
+      proposal_page: "bogga soo jeedinta"
+    show:
+      back: "Ku noqo hawlahayga"
+  shared:
+    edit: 'Isbedel'
+    save: 'Badbaado'
+    delete: Titiriid
+    "yes": "Haa"
+    "no": "Maya"
+    search_results: "Raadi natiijada"
+    advanced_search:
+      author_type: 'Qeybta qoraaga'
+      author_type_blank: 'Xuulo qaybta'
+      date: 'Taariikhda'
+      date_placeholder: 'M/B/S'
+      date_range_blank: 'Dooro taariikh'
+      date_1: '24saac ee ugu dabyey'
+      date_2: 'Isbuucii hore'
+      date_3: 'Bishi hore'
+      date_4: 'Snadkii hore'
+      date_5: 'La isku habeeyey'
+      from: 'Ka'
+      general: 'Qoraalka'
+      general_placeholder: 'Qor Qoraal'
+      search: 'Sifeeyee'
+      title: 'Raadinta sare'
+      to: 'Ku'
+    author_info:
+      author_deleted: Isticmalaha la tirtiray
+    back: Dib ulaabo
+    check: Dorasho
+    check_all: Dhamaan
+    check_none: Midna
+    collective: Wadijir
+    flag: Calamee sida aan habboonayn
+    follow: "Raac"
+    following: "Kuxiga"
+    follow_entity: "Raac%{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Hadda waxaad raacdaa mashruucan maalgashiga! </br> Waan kuu sheegi doonaa isbeddellada markay dhacaan si aad uhesho."
+        destroy:
+          notice_html: "Waxaad joojisay ka dib mashruucan maalgashiga! </br>Mar dambe ma heli doontid ogeysiisyada la xiriira mashruucan."
+      proposal:
+        create:
+          notice_html: "Hadda waxaad raacaysaa qorshaha muwaadiniinta! </br> Waan kuu sheegi doonaa isbeddellada markay dhacaan si aad uhesho."
+        destroy:
+          notice_html: "Waxaad joojisay ka dib sojeedinta muwadinta! </br>Mar dambe ma heli doontid ogeysiisyada la xiriira mashruucan."
+    hide: Qarin
+    print:
+      print_button: Daabac xogtan
+    search: Raadin
+    show: Muuji/ Tusiid
+    suggest:
+      debate:
+        found:
+          one: "Waxaa jira dood ku saabsan ereyga%{query} waxaad ka qayb qaadan kartaa halkii laga furi lahaa mid cusub."
+          other: "Waxaa jira dood ku saabsan ereyga%{query} waxaad ka qayb qaadan kartaa halkii laga furi lahaa mid cusub."
+        message: "Waxaad arki doontaa%{limit}%{count} doodad ku jirta ereyga %{query}"
+        see_all: "Eegida dhaaman"
+      budget_investment:
+        found:
+          one: "Waxaa jira maalgelin ereyga%{query} waad ka qaybgeli kartaa halkii laga furi lahaa mid cusub."
+          other: "Waxaa jira maalgelin ereyga%{query} waad ka qaybgeli kartaa halkii laga furi lahaa mid cusub."
+        message: "Waxaad arkeysaa%{limit} %{count} maalgelin oo ku jirta ereyga %{query}"
+        see_all: "Eegida dhaaman"
+      proposal:
+        found:
+          one: "Waxaa jira soo jeedin ku saabsan ereyga %{query} waxaad ku darsan kartaa halkii aad abuuri lahayd mid cusub"
+          other: "Waxaa jira soo jeedin ku saabsan ereyga %{query} waxaad ku darsan kartaa halkii aad abuuri lahayd mid cusub"
+        message: "Waxaad arkaysaa%{limit}%{count} soo-jeedin oo ku jira ereyga '%{query}"
+        see_all: "Eegida dhaaman"
+    tags_cloud:
+      tags: Kicin
+      districts: "Degmooyinka"
+      districts_list: "Liiska Degmoyinka"
+      categories: "Qaybaha"
+    target_blank_html: " (iskuxir furan daaqad cusub)"
+    you_are_in: "Waad joogtaa"
+    unflag: Foolxumo
+    unfollow_entity: "Lama socdaan\n%{entity}"
+    outline:
+      budget: Misaaniyada kaqayb qadashada
+      searcher: Raadiye
+    go_to_page: "Tag bogga "
+    share: Lawadag
+    orbit:
+      previous_slide: Horey udheer
+      next_slide: Islaydhka xiga
+    documentation: Dukumentiyo dheeraad ah
+    view_mode:
+      title: Qaabka muuqaalka
+      cards: Kararka
+      list: Liska
+    recommended_index:
+      title: Talloyin
+      see_more: Eeg talooyin dheeraad ah
+      hide: Qari talooyinka
+  social:
+    blog: "%{org} bloga"
+    facebook: "%{org} faysbuug"
+    twitter: "%{org} tuwiitar"
+    youtube: "%{org} yotuyuub"
+    whatsapp: Wat isaaab
+    telegram: "%{org} telegaraam"
+    instagram: "%{org} istigraam"
+  spending_proposals:
+    form:
+      association_name_label: 'Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan'
+      association_name: 'Magaca ururka'
+      description: Sharaxaad
+      external_url: Isku xirka dukumentiyada dheeraadka ah
+      geozone: Baxada Hawlgalka
+      submit_buttons:
+        create: Abuur
+        new: Abuur
+      title: Soo jeedinta hindisaha
+    index:
+      title: Misaaniyada kaqayb qadashada
+      unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
+      by_geozone: "Baxaada mashruuca malgashiga%{geozone}"
+      search_form:
+        button: Raadin
+        placeholder: Mashariicda malgashiga...
+        title: Raadin
+      search_results:
+        one: " oo ku jira ereyga'%{search_term}"
+        other: " oo ku jira ereyga'%{search_term}"
+      sidebar:
+        geozones: Baxada Hawlgalka
+        feasibility: Suurta galnimada
+        unfeasible: An surtgak ahayn
+      start_spending_proposal: Abaabul mashruuc maalgashi
+    new:
+      more_info: Sidee ayay miisaaniyad-dejinta uga qaybqaadataa?
+      recommendation_one: Waa khasab in hindise-soo-jeedinta ay tixraac ku tahay tallaabada miisaaniyadda.
+      recommendation_three: Isku day inaad tagto faahfaahinta markaad sharaxdo soo jeedintaada kharashka si markaa kooxda dib u eegista ay fahmaan qodobadaada.
+      recommendation_two: Soo jeedinta ama faallooyinka soo jeedinaya tallaabo sharci ah ayaa lagu tirtiri doonaa.
+      recommendations_title: Sida loo abuuro soo jeedinta kharashka
+      start_new: Samee qorshaha kharashad
+    show:
+      author_deleted: Isticmalaha la tirtiray
+      code: 'Talo soo jeedin:'
+      share: Lawadag
+    wrong_price_format: Tirooyinka keliya e isku dhafka ah
+    spending_proposal:
+      spending_proposal: Mashruuca Malgelinta
+      already_supported: Waxaad hore u taageertay kan. La wadaag!
+      support: Tageero
+      support_title: Tageer Mashruucaan
+      supports:
+        zero: Tageero la an
+        one: 1 tagere
+        other: "%{count} tagerayal"
+  stats:
+    index:
+      visits: Boqashooyinka
+      debates: Doodo
+      proposals: Sojeedino
+      comments: Faalo
+      proposal_votes: Codbixin ku saabsan soo jeedinta
+      debate_votes: Codadka doodda
+      comment_votes: Falloyinka codbixinta
+      votes: Wadarka codadka
+      verified_users: Isticmalayaasha la aqonsan yahay
+      unverified_users: Isticmalayaasha an la aqonsaneyn
+  unauthorized:
+    default: Uma haysid fasax aad ku heli kartid boggan.
+    manage:
+      all: "Ma haysato fasax inaad ku dhaqaaqdo ficil %{action} oo ku saabsan%{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Fariin
+        direct_messages_bloqued: "Isticmaalahan ayaa go'aansaday inaanu helin farriimo toos ah"
+        submit_button: Farri dir
+        title: Fariin gara diir%{receiver}
+        title_label: Ciwaan
+        verified_only: Diir fariin khasa%{verify_account}
+        verify_account: hubi xisaabtaada
+        authenticate: Waa inad igu %{signin} ama%{signup} si wada.
+        signin: saxiixid
+        signup: saxiixid ilaa
+      show:
+        receiver: Fariin diir%{receiver}
+    show:
+      deleted: Titiray
+      deleted_debate: Doodan wala tirtiray
+      deleted_proposal: Soo jeedintan ayaa la tirtiray
+      deleted_budget_investment: Mashruucan maalgashiga ayaa la tirtiray
+      proposals: Sojeedino
+      debates: Doodo
+      budget_investments: Misaniyada malgashiyada
+      comments: Faalo
+      actions: Tilaabooyin
+      filters:
+        comments:
+          one: 1fallada
+          other: "%{count} falloyin"
+        debates:
+          one: 1 dood
+          other: "%{count} doodo"
+        proposals:
+          one: 1 Soo jeedin
+          other: "%{count} sojeedin"
+        budget_investments:
+          one: 1 Malgeelin
+          other: "%{count} Malgashiyo"
+        follows:
+          one: 1 Ka dib
+          other: "%{count} Ka dib"
+      no_activity: Isticmaaluhu ma laha wax firfircoon dadweyne
+      no_private_messages: "Isticmaalkani ma aqbalayo fariimo gaar ah."
+      private_activity: Isticmaalkani waxa uu go'aansaday in uu hayo liiska hawlaha gaarka ah.
+      send_private_message: "U dir fariin gaar ah"
+      delete_alert: "Ma hubtaa inaad rabto inaad tirtirto mashruuca maalgalinta? Ficilkan lama tirtiri karo"
+    proposals:
+      send_notification: "Diir Ogaysiin"
+      retire: "Hawl gab"
+      retired: "Soo jeedinta hawlgabka"
+      see: "Fiiri soo jeedinta"
+  votes:
+    agree: Wan aqbalay
+    anonymous: Codad qarsoodi ah oo badan si ay u qirto codka%{verify_account}.
+    comment_unauthenticated: Waa inaad%{signin} ama%{signup} codka.
+    disagree: Ma aqbalin
+    organizations: Ururada loma fasixin iney codeyaan
+    signin: Geliid
+    signup: Saxiixid
+    supports: Tageerayaal
+    unauthenticated: Waa inad igu %{signin} ama%{signup} si wada.
+    verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
+    verify_account: hubi xisaabtaada
+    spending_proposals:
+      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
+      not_verified: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
+      organization: Ururada loma fasixin iney codeyaan
+      unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
+      not_voting_allowed: Heerka codbixinta waa la xiray
+    budget_investments:
+      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
+      not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara Mashariicdamaalgashiga; %{verify_account}.
+      organization: Ururada loma fasixin iney codeyaan
+      unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
+      not_voting_allowed: Heerka codbixinta waa la xiray
+      different_heading_assigned:
+        one: "Waxaad taageeri kartaa oo kaliya mashaariicda maalgashiga%{count} kala duwan"
+        other: "Waxaad taageeri kartaa oo kaliya mashaariicda maalgashiga%{count} kala duwanada"
+  welcome:
+    feed:
+      most_active:
+        debates: "Inta badan doodaha firfircoon"
+        proposals: "Talooyinka ugu firfircoon"
+        processes: "Gedisocodka furaan"
+      see_all_debates: Arag dhaman doodaha
+      see_all_proposals: Arag dhaman sojedimaha
+      see_all_processes: Arag dhaman gedis socodyada
+      process_label: Geedisocoodka
+      see_process: Arag gedi socodka
+    cards:
+      title: Soobandhigiid/ Muqaal
+    recommended:
+      title: Talooyinka laga yaabo inaad daneyseysid
+      help: "Talooyinkaan waxaa ka soo baxa tixraacyada doodaha iyo soo jeedimaha aad soo socotid."
+      debates:
+        title: Doodaha lagu taliyay
+        btn_text_link: Dhaman Doodaha lagu taliyay
+      proposals:
+        title: Sojeedimaha lagu taliyey
+        btn_text_link: Dhaman Sojeedimaha lagu taliyey
+      budget_investments:
+        title: Malgashiyada lugu taliyey
+      slide: "Arag%{title}"
+    verification:
+      i_dont_have_an_account: Ma haysto xisaab
+      i_have_an_account: Hore ayaan haystay xisaab
+      question: Ma horey ayaad xisaab ugu leedahay%{org_name}?
+      title: Cadeynta xisaabta
+    welcome:
+      go_to_index: Eeg soojeedinta iyo doodaha
+      title: Kaqayb gal
+      user_permission_debates: Kaqayb qadashada dooda
+      user_permission_info: Akoonkaga waad karta...
+      user_permission_proposal: Samee soo jeedino cusub
+      user_permission_support_proposal: Tageer so jedinada*
+      user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
+      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
+      user_permission_verify_my_account: Hubi xisaabtayda
+      user_permission_votes: Kayb galka codaynta ugu danbaysa
+  invisible_captcha:
+    sentence_for_humans: "Haddii aad tahay aadane, iska indha tirtan arimahan"
+    timestamp_error_message: "Waan ka xumahay, taas oo ahayd mid deg deg ah! Fadlan soo gudbi."
+  related_content:
+    title: "Mawduuca laxiriray"
+    add: "Ku dar tusmada laxiriray"
+    label: "Isku xir xirka waxyaabaha la xiriira"
+    placeholder: "%{url}"
+    help: "Wadku darikara isku xirirka %{models} gudaha%{org}."
+    submit: "Kudar"
+    error: "Isku xirnaanshaha ma laha. Xusuusnow inaad ku bilowdo%{url}."
+    error_itself: "Isku xirnaanshaha ma laha. Kuma sharixi kartid waxyaabaha ku jira."
+    success: "Waxaad ku dartay wax cusub oo la xiriira"
+    is_related: "Miyay la socotaa mawduuc?"
+    score_positive: "Haa"
+    score_negative: "Maya"
+    content_title:
+      proposal: "Sojeedin"
+      debate: "Dood"
+      budget_investment: "Misaniyada malgashiga"
+  admin/widget:
+    header:
+      title: Mamul
+  annotator:
+    help:
+      alt: Dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
+      text: Si aad uga faalloodto dukumiinti waa inaad%{sign_in} ama%{sign_up}. Ka dibna dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
+      text_sign_in: galaan
+      text_sign_up: iska diwan gelin
+      title: Sidee ayaan faallo uga bixin karaa qoraalkan?

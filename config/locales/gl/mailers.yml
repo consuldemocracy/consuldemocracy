@@ -3,18 +3,18 @@ gl:
     no_reply: "Esta mensaxe enviouse desde un enderezo de correo electrónico que non admite respostas."
     comment:
       hi: Ola
-      new_comment_by_html: Hai un novo comentario de <b>%{commenter}</b>
+      new_comment_by_html: Hai un novo comentario de <b>%{commenter}</b> en
       subject: Alguén comentou no teu %{commentable}
       title: Novo comentario
     config:
       manage_email_subscriptions: Podes deixar de recibir estes correos electrónicos cambiando a túa configuración en
     email_verification:
-      click_here_to_verify: nesta ligazón
-      instructions_2_html: Este correo electrónico é para verificar a túa conta con <b>%{document_type} %{document_number}</b>. Se eses non son os teus datos, por favor non premas a ligazón anterior e ignora este correo.
+      click_here_to_verify: neste enlace
+      instructions_2_html: Este correo electrónico é para verificar a túa conta con <b>%{document_type} %{document_number}</b>. Se eses non son os teus datos, por favor non premas o enlace anterior e ignora este correo.
       instructions_html: Para completar o proceso de verificación da túa conta, tes que premer en %{verification_link}
       subject: Verifica o teu correo electrónico
       thanks: Moitas grazas.
-      title: Verifica a túa conta coa seguinte ligazón
+      title: Verifica a túa conta co seguinte enlace
     reply:
       hi: Ola
       new_reply_by_html: Hai unha nova resposta de <b>%{commenter}</b> ao tu comentario en
@@ -22,9 +22,9 @@ gl:
       title: Nova resposta ao teu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      new_html: "Por todo iso, invitámoste a que elabores unha <strong>nova proposta</strong> que se axuste ás condicións deste proceso. Isto pódelo facer neste enlace: %{url}."
-      new_href: "novo proxecto de investimento"
-      sincerely: "Un cordial saúdo"
+      new_html: "Para todos eles, convidámoste a redactar unha <strong>nova proposta</strong> que se axuste ás condicións deste proceso. Podes facelo a través desta ligazón: %{url}."
+      new_href: "nova proposta de investimento"
+      sincerely: "Atentamente"
       sorry: "Sentimos as molestias ocasionadas e volvémosche dar as grazas pola túa inestimable participación."
       subject: "A túa proposta de investimento '%{code}' foi marcada como inviable"
     proposal_notification_digest:
@@ -60,20 +60,20 @@ gl:
       share: "Comparte o teu proxecto"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
-      new_html: "Por todo isto, convidámoste a que elabores un <strong>novo proxecto de investimento</strong> que se axuste ás condicións deste proceso. Pódelo facer desde esta ligazón: %{url}."
-      new_href: "nova proposta de investimento"
+      new_html: "Para todos eles, convidámoste a elaborar un <strong>novo investimento</strong> que se axuste ás condicións deste proceso. Podes facelo a través da seguinte ligazón: %{url}."
+      new_href: "novo proxecto de investimento"
       sincerely: "Un cordial saúdo"
-      sorry: "Sentimos as molestias ocasionadas e volvemos darche as grazas pola túa inestimable participación."
+      sorry: "Sentimos as molestias ocasionadas e volvémosche dar as grazas pola túa inestimable participación."
       subject: "A túa proposta de investimento '%{code}' foi marcada como inviable"
     budget_investment_selected:
       subject: "A túa proposta de investimento '%{code}' foi seleccionada"
-      hi: "Estimado usuario"
+      hi: "Estimado usuario,"
       share: "Empeza xa a conseguir votos, comparte o teu proxecto de gasto nas redes sociais. A difusión é fundamental para conseguir que se faga realidade."
       share_button: "Comparte o teu proxecto"
       thanks: "Grazas de novo pola túa participación."
-      sincerely: "Un saúdo cordial,"
+      sincerely: "Un saúdo cordial"
     budget_investment_unselected:
       subject: "A túa proposta de investimento '%{code}' non foi seleccionada"
-      hi: "Estimado usuario"
+      hi: "Estimado usuario,"
       thanks: "Grazas de novo pola túa participación."
-      sincerely: "Un saúdo cordial"
+      sincerely: "Un saúdo cordial,"
