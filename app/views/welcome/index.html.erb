@@ -19,15 +19,15 @@
   <%= render "feeds" %>
 
 
-  <div class="row">
+  <div class="row margin-bottom feeds-list" data-equalizer data-equalize-on="medium">
     <% if @cards.any? %>
-      <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
+      <div class="margin-top small-12 column <%= 'large-8' if feed_processes_enabled? %>">
         <%= render "cards" %>
       </div>
     <% end %>
 
     <% if feed_processes_enabled? %>
-      <div class="small-12 large-4 column">
+      <div id="feed_processes" class="margin-top small-12 large-4 column">
         <%= render "processes" %>
       </div>
     <% end %>
