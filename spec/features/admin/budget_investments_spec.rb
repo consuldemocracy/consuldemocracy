@@ -270,19 +270,30 @@ feature 'Admin budget investments' do
     end
 
     scenario "Filtering by assignment status" do
-      assigned = create(:budget_investment, title: "Assigned idea", budget: budget, administrator: create(:administrator))
-      valuating = create(:budget_investment, title: "Evaluating...", budget: budget)
-      valuating.valuators.push(create(:valuator))
+      create(:budget_investment, title: "Assigned idea", budget: budget,
+             administrator: create(:administrator))
+      create(:budget_investment, title: "Evaluating...", budget: budget,
+             valuators: [create(:valuator)])
+      create(:budget_investment, title: "With group", budget: budget,
+             valuator_groups: [create(:valuator_group)])
+
+      visit admin_budget_budget_investments_path(budget_id: budget.id, filter: "valuation_open")
+
+      expect(page).to have_content("Assigned idea")
+      expect(page).to have_content("Evaluating...")
+      expect(page).to have_content("With group")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'without_admin')
 
       expect(page).to have_content("Evaluating...")
+      expect(page).to have_content("With group")
       expect(page).not_to have_content("Assigned idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: 'without_valuator')
 
       expect(page).to have_content("Assigned idea")
       expect(page).not_to have_content("Evaluating...")
+      expect(page).not_to have_content("With group")
     end
 
     scenario "Filtering by valuation status" do
