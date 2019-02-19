@@ -866,6 +866,7 @@ gl:
       flash:
         create: "Engadiuse a quenda da presidencia"
         destroy: "Borrouse a quenda da presidencia"
+        unable_to_destroy: "As quendas con resultados asociados, ou os recontos, non se poden eliminar"
         date_missing: "Debe escoller unha data"
       vote_collection: Recoller votos
       recount_scrutiny: Reconto & escrutinio
@@ -906,9 +907,12 @@ gl:
         table_name: "Nome"
         table_location: "Localización"
     active_polls:
+      edit:
+        title: "Descrición de votacións"
       form:
         description:
           text: "Descrición"
+          help_text: "Este texto amosarase na cabeceira da páxina das votacións. Pode usarse para engadir un contexto ás votacións abertas."
     polls:
       index:
         title: "Relación de votacións"
