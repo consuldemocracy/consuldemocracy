@@ -905,6 +905,10 @@ gl:
         no_booths: "Non hai urnas asignadas a esta votación."
         table_name: "Nome"
         table_location: "Localización"
+    active_polls:
+      form:
+        description:
+          text: "Descrición"
     polls:
       index:
         title: "Relación de votacións"
