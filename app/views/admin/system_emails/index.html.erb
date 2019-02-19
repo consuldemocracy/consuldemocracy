@@ -30,13 +30,14 @@
                         admin_system_email_preview_pending_path(system_email_title),
                         class: "button expanded" %>
           </div>
+          <div class="small-4 column">
+            <%= link_to t("admin.system_emails.preview_pending.send_pending"),
+                        admin_system_email_send_pending_path(system_email_title),
+                        class: "button success expanded",
+                        method: :put %>
+          </div>
         <% end %>
-        <div class="small-4 column">
-          <%= link_to t("admin.system_emails.preview_pending.send_pending"),
-                      admin_system_email_send_pending_path(system_email_title),
-                      class: "button success expanded",
-                      method: :put %>
-        </div>
+        <% end %>
       </td>
     </tr>
   <% end %>
