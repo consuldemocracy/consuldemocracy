@@ -47,7 +47,7 @@ $progress-bar-color:      #fea230;
   &::before {
     background: $budget;
     border-radius: rem-calc(20);
-    content: '';
+    content: "";
     height: rem-calc(20);
     position: absolute;
     top: 5px;
@@ -59,7 +59,7 @@ $progress-bar-color:      #fea230;
   &::after {
     background: $light-gray;
     bottom: 100%;
-    content: '';
+    content: "";
     height: 100%;
     position: absolute;
     top: 25px;

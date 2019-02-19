@@ -29,6 +29,9 @@ feature 'Legislation' do
     scenario "No processes to be listed" do
       visit legislation_processes_path
       expect(page).to have_text "There aren't open processes"
+
+      visit legislation_processes_path(filter: "past")
+      expect(page).to have_text "There aren't past processes"
     end
 
     scenario 'Processes can be listed' do

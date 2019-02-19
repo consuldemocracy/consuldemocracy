@@ -32,8 +32,7 @@ es:
       header:
         different_heading_assigned_html: "Ya has votado proyectos de otro distrito: %{heading_link}"
       share:
-        message: "He apoyado el proyecto %{title} en %{org} de Presupuestos participativos 2019. Apoya tú también y #PonChuloMadrid"
-        message_mobile: "He apoyado el proyecto %{title} en %{handle} de Presupuestos participativos 2019. Apoya tú también y #PonChuloMadrid"
+        message: "He apoyado el proyecto %{title} en %{handle} de Presupuestos participativos 2019. Apoya tú también y #PonChuloMadrid"
     stats:
       title: Estadísticas de participación
       link: Estadísticas

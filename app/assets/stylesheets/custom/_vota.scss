@@ -6,7 +6,7 @@ $campaign-red:    #e23135;
 $campaign-yellow: #ffdb19;
 
 .landing-voting {
-  font-family: 'Franklin Gothic' !important;
+  font-family: "Franklin Gothic" !important;
   font-weight: normal;
   font-size: rem-calc(24);
 
@@ -39,7 +39,7 @@ $campaign-yellow: #ffdb19;
   h2,
   h3,
   h4 {
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
     font-weight: normal;
   }
 
@@ -296,12 +296,12 @@ $campaign-yellow: #ffdb19;
 }
 
 @font-face {
-  font-family: 'Franklin Gothic';
+  font-family: "Franklin Gothic";
   font-style: normal;
   font-weight: normal;
-  src: font-url('franklin_gothic.eot');
-  src: font-url('franklin_gothic.eot?#iefix') format('embedded-opentype'),
-       font-url('franklin_gothic.woff2')      format('woff2'),
-       font-url('franklin_gothic.woff')       format('woff'),
-       font-url('franklin_gothic.ttf')        format('truetype');
+  src: font-url("franklin_gothic.eot");
+  src: font-url("franklin_gothic.eot?#iefix") format("embedded-opentype"),
+       font-url("franklin_gothic.woff2")      format("woff2"),
+       font-url("franklin_gothic.woff")       format("woff"),
+       font-url("franklin_gothic.ttf")        format("truetype");
 }
