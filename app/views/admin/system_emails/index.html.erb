@@ -24,7 +24,7 @@
                                                 class: "button hollow expanded" %>
           </div>
         <% end %>
-        <% if system_email_actions.include?('preview_pending') %>
+        <% if system_email_actions.include?("preview_pending") %>
           <div class="small-4 column">
             <%= link_to t("admin.system_emails.preview_pending.action"),
                         admin_system_email_preview_pending_path(system_email_title),
