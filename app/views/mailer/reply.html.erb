@@ -5,15 +5,15 @@
   </h1>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.reply.hi") %> <strong><%= @email.recipient.name %></strong>,
+    <%= t("mailers.reply.hi") %> <strong><%= @recipient.name %></strong>,
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.reply.new_reply_by_html", commenter: @email.reply.author.name) %> <%= link_to @email.commentable.title, comment_url(@email.reply.id), style: "color: #2895F1; text-decoration:none;" %>
+    <%= t("mailers.reply.new_reply_by_html", commenter: @reply.author.name) %> <%= link_to @commentable.title, comment_url(@reply.id), style: "color: #2895F1; text-decoration:none;" %>
   </p>
 
   <div style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
-    <%= simple_format text_with_links(@email.reply.body), {}, sanitize: false %>
+    <%= simple_format text_with_links(@reply.body), {}, sanitize: false %>
   </div>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 12px;font-weight: normal;line-height: 20px;">

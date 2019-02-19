@@ -8,56 +8,16 @@ feature "System Emails" do
   end
 
   context "Index" do
-
-    let(:system_emails_with_preview) { %w[proposal_notification_digest] }
-    let(:system_emails) do
-      %w[proposal_notification_digest budget_investment_created budget_investment_selected
-         budget_investment_unfeasible budget_investment_unselected comment reply
-         direct_message_for_receiver direct_message_for_sender email_verification user_invite]
-    end
-
     scenario "Lists all system emails with correct actions" do
       visit admin_system_emails_path
 
-      system_emails.each do |email_id|
-        within("##{email_id}") do
-          expect(page).to have_link("View", href: admin_system_email_view_path(email_id))
-        end
-      end
-
-      system_emails_with_preview.each do |email_id|
-        within("##{email_id}") do
-          expect(page).to have_link("Preview Pending",
-                                    href: admin_system_email_preview_pending_path(email_id))
-          expect(page).to have_link("Send pending",
-                                    href: admin_system_email_send_pending_path(email_id))
-
-          expect(page).not_to have_content "You can edit this email in"
-          expect(page).not_to have_content "app/views/mailer/#{email_id}.html.erb"
-        end
-      end
-
-      system_emails_with_info = system_emails - system_emails_with_preview
-      system_emails_with_info.each do |email_id|
-        within("##{email_id}") do
-          expect(page).to have_content "You can edit this email in"
-          expect(page).to have_content "app/views/mailer/#{email_id}.html.erb"
-
-          expect(page).not_to have_link "Preview Pending"
-          expect(page).not_to have_link "Send pending"
-        end
+      within('#proposal_notification_digest') do
+        expect(page).to have_link('View')
       end
     end
-
   end
 
   context "View" do
-
-    let(:user)    { create(:user, :level_two, username: "John Doe") }
-    let(:budget)  { create(:budget, name: "Budget for 2019") }
-    let(:group)   { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group) }
-
     scenario "#proposal_notification_digest" do
       proposal_a = create(:proposal, title: 'Proposal A')
       proposal_b = create(:proposal, title: 'Proposal B')
@@ -80,166 +40,6 @@ feature "System Emails" do
       expect(page).to have_content('Proposal A Notification Body')
       expect(page).to have_content('Proposal B Notification Body')
     end
-
-    scenario "#budget_investment_created" do
-      investment = create(:budget_investment, title: "Cleaner city", heading: heading, author: user)
-
-      visit admin_system_email_view_path("budget_investment_created")
-
-      expect(page).to have_content "Thank you for creating an investment!"
-      expect(page).to have_content "John Doe"
-      expect(page).to have_content "Cleaner city"
-      expect(page).to have_content "Budget for 2019"
-
-      expect(page).to have_link "Participatory Budgets", href: budgets_url
-
-      share_url = budget_investment_url(budget, investment, anchor: "social-share")
-      expect(page).to have_link "Share your project", href: share_url
-    end
-
-    scenario "#budget_investment_selected" do
-      investment = create(:budget_investment, title: "Cleaner city", heading: heading, author: user)
-
-      visit admin_system_email_view_path("budget_investment_selected")
-
-      expect(page).to have_content "Your investment project '#{investment.code}' has been selected"
-      expect(page).to have_content "Start to get votes, share your investment project"
-
-      share_url = budget_investment_url(budget, investment, anchor: "social-share")
-      expect(page).to have_link "Share your investment project", href: share_url
-    end
-
-    scenario "#budget_investment_unfeasible" do
-      investment = create(:budget_investment, title: "Cleaner city", heading: heading, author: user)
-
-      visit admin_system_email_view_path("budget_investment_unfeasible")
-
-      expect(page).to have_content "Your investment project '#{investment.code}' "
-      expect(page).to have_content "has been marked as unfeasible"
-      expect(page).to have_content "believe that the rejected investment meets the requirements"
-      expect(page).to have_content "you can communicate this"
-      expect(page).to have_content "Including the code #{investment.code} in the subject"
-    end
-
-    scenario "#budget_investment_unselected" do
-      investment = create(:budget_investment, title: "Cleaner city", heading: heading, author: user)
-
-      visit admin_system_email_view_path("budget_investment_unselected")
-
-      expect(page).to have_content "Your investment project '#{investment.code}' "
-      expect(page).to have_content "has not been selected"
-      expect(page).to have_content "Thank you again for participating."
-    end
-
-    scenario "#comment" do
-      debate = create(:debate, title: "Let's do...", author: user)
-
-      commenter = create(:user)
-      comment = create(:comment, commentable: debate, author: commenter)
-
-      visit admin_system_email_view_path("comment")
-
-      expect(page).to have_content "Someone has commented on your Debate"
-      expect(page).to have_content "Hi John Doe,"
-      expect(page).to have_content "There is a new comment from #{commenter.name}"
-      expect(page).to have_content comment.body
-
-      expect(page).to have_link "Let's do...", href: debate_url(debate)
-    end
-
-    scenario "#reply" do
-      debate = create(:debate, title: "Let's do...", author: user)
-      comment = create(:comment, commentable: debate, author: user)
-
-      replier = create(:user)
-      reply = create(:comment, commentable: debate, parent: comment, author: replier)
-
-      visit admin_system_email_view_path("reply")
-
-      expect(page).to have_content "Someone has responded to your comment"
-      expect(page).to have_content "Hi John Doe,"
-      expect(page).to have_content "There is a new response from #{replier.name}"
-      expect(page).to have_content reply.body
-
-      expect(page).to have_link "Let's do...", href: comment_url(reply)
-    end
-
-    scenario "#direct_message_for_receiver" do
-      message = create(:direct_message, sender: user)
-
-      visit admin_system_email_view_path("direct_message_for_receiver")
-
-      expect(page).to have_content "You have received a new private message"
-      expect(page).to have_content message.title
-      expect(page).to have_content message.body
-
-      expect(page).to have_link "Reply to John Doe", href: user_url(user)
-    end
-
-    scenario "#direct_message_for_sender" do
-      message = create(:direct_message, receiver: user)
-
-      visit admin_system_email_view_path("direct_message_for_sender")
-
-      expect(page).to have_content "You have sent a new private message to John Doe"
-      expect(page).to have_content message.title
-      expect(page).to have_content message.body
-    end
-
-    scenario "#email_verification" do
-      create(:user, confirmed_at: nil, email_verification_token: "abc")
-
-      visit admin_system_email_view_path("email_verification")
-
-      expect(page).to have_content "Confirm your account using the following link"
-
-      expect(page).to have_link "this link", href: email_url(email_verification_token: "abc")
-    end
-
-    scenario "#user_invite" do
-      visit admin_system_email_view_path("user_invite")
-
-      expect(page).to have_content "Invitation to Decide Madrid"
-      expect(page).to have_content "Thank you for applying to join Decide Madrid!"
-
-      registration_url = new_user_registration_url(track_id: 172943750183759812)
-      expect(page).to have_link "Complete registration", href: registration_url
-    end
-
-    scenario "show flash message if there is no sample data to render the email" do
-      visit admin_system_email_view_path("budget_investment_created")
-      expect(page).to have_content "There aren't any budget investment created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("budget_investment_selected")
-      expect(page).to have_content "There aren't any budget investment created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("budget_investment_unfeasible")
-      expect(page).to have_content "There aren't any budget investment created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("budget_investment_unselected")
-      expect(page).to have_content "There aren't any budget investment created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("comment")
-      expect(page).to have_content "There aren't any comments created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("reply")
-      expect(page).to have_content "There aren't any replies created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("direct_message_for_receiver")
-      expect(page).to have_content "There aren't any private messages created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-
-      visit admin_system_email_view_path("direct_message_for_sender")
-      expect(page).to have_content "There aren't any private messages created."
-      expect(page).to have_content "Some example data is needed in order to preview the email."
-    end
-
   end
 
   context "Preview Pending" do
