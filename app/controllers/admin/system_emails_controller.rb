@@ -4,7 +4,7 @@ class Admin::SystemEmailsController < Admin::BaseController
 
   def index
     @system_emails = {
-      proposal_notification_digest: %w(view preview_pending)
+      proposal_notification_digest: %w[view preview_pending],
     }
   end
 
