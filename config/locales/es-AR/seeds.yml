@@ -1,9 +1,0 @@
-es-AR:
-  seeds:
-    categories:
-      participation: Participación
-      transparency: Transparencia
-    budgets:
-      currency: '€'
-      groups:
-        districts: Distritos
