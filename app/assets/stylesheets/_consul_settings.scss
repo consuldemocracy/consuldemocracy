@@ -71,7 +71,7 @@ $color-alert:       #a94442;
 $black: #222;
 $white: #fff;
 
-$body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important;
 
 $header-font-family: $body-font-family;
 
@@ -79,24 +79,24 @@ $global-radius: rem-calc(3);
 
 $button-radius: $global-radius;
 
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
 
 $header-styles: (
   small: (
-    'h1': ('font-size': 34),
-    'h2': ('font-size': 24),
-    'h3': ('font-size': 20),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 16),
-    'h6': ('font-size': 14),
+    "h1": ("font-size": 34),
+    "h2": ("font-size": 24),
+    "h3": ("font-size": 20),
+    "h4": ("font-size": 18),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 14),
   ),
   medium: (
-    'h1': ('font-size': 44),
-    'h2': ('font-size': 34),
-    'h3': ('font-size': 24),
-    'h4': ('font-size': 19),
-    'h5': ('font-size': 16),
-    'h6': ('font-size': 13),
+    "h1": ("font-size": 44),
+    "h2": ("font-size": 34),
+    "h3": ("font-size": 24),
+    "h4": ("font-size": 19),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 13),
   ),
 );
 

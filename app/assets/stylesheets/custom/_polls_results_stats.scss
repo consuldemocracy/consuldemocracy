@@ -19,7 +19,7 @@
     }
 
     h1 {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(60);
       font-weight: normal;
       line-height: rem-calc(60);
@@ -52,7 +52,7 @@
     background: $campaign-yellow;
     color: #000;
     display: inline;
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
     font-size: rem-calc(40);
     line-height: $line-height * 2;
     margin-bottom: 0;
@@ -63,7 +63,7 @@
     border-right: 1px solid $border;
 
     p {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(30);
       text-transform: uppercase;
     }
@@ -112,7 +112,7 @@
   h4 {
     background: #000;
     color: #fff;
-    font-family: 'Franklin Gothic' !important;
+    font-family: "Franklin Gothic" !important;
     font-size: rem-calc(24);
     line-height: $line-height * 1.5;
     margin-bottom: 0;
@@ -128,7 +128,7 @@
     text-transform: uppercase;
 
     span {
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(80);
       font-weight: normal;
       line-height: rem-calc(80);
@@ -258,112 +258,112 @@
     &.polls-participation {
 
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(3)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
 
     &.polls-participation-letter {
 
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(3)::before {
-        // content: 'CORREO';
+        // content: "CORREO";
       }
 
       td:nth-of-type(4)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
 
     &.polls-participation-age {
 
       td:nth-of-type(1)::before {
-        content: 'EDAD';
+        content: "EDAD";
       }
 
       td:nth-of-type(2)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(3)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(4)::before {
-        // content: 'CORREO';
+        // content: "CORREO";
       }
 
       td:nth-of-type(5)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
 
     &.polls-participation-district {
 
       td:nth-of-type(1)::before {
-        content: 'DISTRITO';
+        content: "DISTRITO";
       }
 
       td:nth-of-type(2)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(3)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(4)::before {
-        // content: 'CORREO';
+        // content: "CORREO";
       }
 
       td:nth-of-type(5)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
 
       td:nth-of-type(6)::before {
-        content: '% PARTICIPACIÓN POBLACIÓN DEL DISTRITO';
+        content: "% PARTICIPACIÓN POBLACIÓN DEL DISTRITO";
       }
     }
 
     &.polls-total-stats {
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(3)::before {
-        // content: 'CORREO';
+        // content: "CORREO";
       }
     }
 
     &.polls-stats-district {
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(3)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
   }
@@ -438,81 +438,81 @@
     &.polls-participation {
 
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(3)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
 
     &.polls-participation-age {
 
       td:nth-of-type(1)::before {
-        content: 'EDAD';
+        content: "EDAD";
       }
 
       td:nth-of-type(2)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(3)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(4)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
 
     &.polls-participation-district {
 
       td:nth-of-type(1)::before {
-        content: 'DISTRITO';
+        content: "DISTRITO";
       }
 
       td:nth-of-type(2)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(3)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(4)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
 
       td:nth-of-type(5)::before {
-        content: '% PARTICIPACIÓN POBLACIÓN DEL DISTRITO';
+        content: "% PARTICIPACIÓN POBLACIÓN DEL DISTRITO";
       }
     }
 
     &.polls-total-stats {
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
     }
 
     &.polls-stats-district {
       td:nth-of-type(1)::before {
-        content: 'WEB';
+        content: "WEB";
       }
 
       td:nth-of-type(2)::before {
-        content: 'URNAS';
+        content: "URNAS";
       }
 
       td:nth-of-type(3)::before {
-        content: 'TOTAL';
+        content: "TOTAL";
       }
     }
   }

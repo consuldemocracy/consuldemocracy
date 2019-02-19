@@ -8,43 +8,43 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {
-  font-family: 'Rubik';
-  src: font-url('rubik-regular.ttf') format('truetype');
+  font-family: "Rubik";
+  src: font-url("rubik-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: font-url('rubik-italic.ttf') format('truetype');
+  font-family: "Rubik";
+  src: font-url("rubik-italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: font-url('rubik-light.ttf') format('truetype');
+  font-family: "Rubik";
+  src: font-url("rubik-light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: font-url('rubik-lightitalic.ttf') format('truetype');
+  font-family: "Rubik";
+  src: font-url("rubik-lightitalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: font-url('rubik-medium.ttf') format('truetype');
+  font-family: "Rubik";
+  src: font-url("rubik-medium.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: font-url('rubik-mediumitalic.ttf') format('truetype');
+  font-family: "Rubik";
+  src: font-url("rubik-mediumitalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
@@ -53,89 +53,89 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: normal;
   font-weight: 700;
-  src: font-url('souvenirstd-bold.eot');
-  src: font-url('souvenirstd-bold.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-bold.woff') format('woff'),
-       font-url('souvenirstd-bold.ttf') format('truetype'),
-       font-url('souvenirstd-bold.svg') format('svg');
+  src: font-url("souvenirstd-bold.eot");
+  src: font-url("souvenirstd-bold.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-bold.woff") format("woff"),
+       font-url("souvenirstd-bold.ttf") format("truetype"),
+       font-url("souvenirstd-bold.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: italic;
   font-weight: 700;
-  src: font-url('souvenirstd-bolditalic.eot');
-  src: font-url('souvenirstd-bolditalic.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-bolditalic.woff') format('woff'),
-       font-url('souvenirstd-bolditalic.ttf') format('truetype'),
-       font-url('souvenirstd-bolditalic.svg') format('svg');
+  src: font-url("souvenirstd-bolditalic.eot");
+  src: font-url("souvenirstd-bolditalic.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-bolditalic.woff") format("woff"),
+       font-url("souvenirstd-bolditalic.ttf") format("truetype"),
+       font-url("souvenirstd-bolditalic.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: normal;
   font-weight: 400;
-  src: font-url('souvenirstd-demi.eot');
-  src: font-url('souvenirstd-demi.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-demi.woff') format('woff'),
-       font-url('souvenirstd-demi.ttf') format('truetype'),
-       font-url('souvenirstd-demi.svg') format('svg');
+  src: font-url("souvenirstd-demi.eot");
+  src: font-url("souvenirstd-demi.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-demi.woff") format("woff"),
+       font-url("souvenirstd-demi.ttf") format("truetype"),
+       font-url("souvenirstd-demi.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: italic;
   font-weight: 400;
-  src: font-url('souvenirstd-demiitalic.eot');
-  src: font-url('souvenirstd-demiitalic.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-demiitalic.woff') format('woff'),
-       font-url('souvenirstd-demiitalic.ttf') format('truetype'),
-       font-url('souvenirstd-demiitalic.svg') format('svg');
+  src: font-url("souvenirstd-demiitalic.eot");
+  src: font-url("souvenirstd-demiitalic.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-demiitalic.woff") format("woff"),
+       font-url("souvenirstd-demiitalic.ttf") format("truetype"),
+       font-url("souvenirstd-demiitalic.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: normal;
   font-weight: 300;
-  src: font-url('souvenirstd-medium.eot');
-  src: font-url('souvenirstd-medium.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-medium.woff') format('woff'),
-       font-url('souvenirstd-medium.ttf') format('truetype'),
-       font-url('souvenirstd-medium.svg') format('svg');
+  src: font-url("souvenirstd-medium.eot");
+  src: font-url("souvenirstd-medium.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-medium.woff") format("woff"),
+       font-url("souvenirstd-medium.ttf") format("truetype"),
+       font-url("souvenirstd-medium.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: italic;
   font-weight: 300;
-  src: font-url('souvenirstd-mediumitalic.eot');
-  src: font-url('souvenirstd-mediumitalic.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-mediumitalic.woff') format('woff'),
-       font-url('souvenirstd-mediumitalic.ttf') format('truetype'),
-       font-url('souvenirstd-mediumitalic.svg') format('svg');
+  src: font-url("souvenirstd-mediumitalic.eot");
+  src: font-url("souvenirstd-mediumitalic.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-mediumitalic.woff") format("woff"),
+       font-url("souvenirstd-mediumitalic.ttf") format("truetype"),
+       font-url("souvenirstd-mediumitalic.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: normal;
   font-weight: 100;
-  src: font-url('souvenirstd-light.eot');
-  src: font-url('souvenirstd-light.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-light.woff') format('woff'),
-       font-url('souvenirstd-light.ttf') format('truetype'),
-       font-url('souvenirstd-light.svg') format('svg');
+  src: font-url("souvenirstd-light.eot");
+  src: font-url("souvenirstd-light.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-light.woff") format("woff"),
+       font-url("souvenirstd-light.ttf") format("truetype"),
+       font-url("souvenirstd-light.svg") format("svg");
 }
 
 @font-face {
-  font-family: 'Souvenir';
+  font-family: "Souvenir";
   font-style: italic;
   font-weight: 100;
-  src: font-url('souvenirstd-lightitalic.eot');
-  src: font-url('souvenirstd-lightitalic.eot?#iefix') format('embedded-opentype'),
-       font-url('souvenirstd-lightitalic.woff') format('woff'),
-       font-url('souvenirstd-lightitalic.ttf') format('truetype'),
-       font-url('souvenirstd-lightitalic.svg') format('svg');
+  src: font-url("souvenirstd-lightitalic.eot");
+  src: font-url("souvenirstd-lightitalic.eot?#iefix") format("embedded-opentype"),
+       font-url("souvenirstd-lightitalic.woff") format("woff"),
+       font-url("souvenirstd-lightitalic.ttf") format("truetype"),
+       font-url("souvenirstd-lightitalic.svg") format("svg");
 }

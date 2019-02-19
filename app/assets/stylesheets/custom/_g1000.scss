@@ -1,8 +1,8 @@
 // G1000 landing
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+@import url("https://fonts.googleapis.com/css?family=Anton");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
 
 $g1000-black: #1d1d1b;
 $g1000-blue:  #1d70b7;
@@ -10,7 +10,7 @@ $g1000-red:   #e20613;
 
 .g1000 {
   color: $g1000-black;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 
   p {
     font-weight: bold;
@@ -18,7 +18,7 @@ $g1000-red:   #e20613;
 
   h1,
   h2 {
-    font-family: 'Anton', sans-serif !important;
+    font-family: "Anton", sans-serif !important;
   }
 
   h1 {
@@ -39,7 +39,7 @@ $g1000-red:   #e20613;
 
   .people {
     color: $g1000-blue;
-    font-family: 'Anton', sans-serif !important;
+    font-family: "Anton", sans-serif !important;
     font-size: rem-calc(36);
     padding-bottom: $line-height * 2;
     padding-top: $line-height * 2;
@@ -53,13 +53,13 @@ $g1000-red:   #e20613;
   .button-red {
     background: $g1000-red;
     color: #fff;
-    font-family: 'Anton', sans-serif !important;
+    font-family: "Anton", sans-serif !important;
     font-size: rem-calc(30);
     padding: 0 $line-height * 2;
   }
 
   .who {
-    background: #fff image-url('landings/g1000_2.png') no-repeat;
+    background: #fff image-url("landings/g1000_2.png") no-repeat;
     background-position: 90%;
     margin-top: $line-height * 2;
     min-height: rem-calc(630);
@@ -95,7 +95,7 @@ $g1000-red:   #e20613;
     padding-top: $line-height * 2;
 
     p {
-      font-family: 'Anton', sans-serif !important;
+      font-family: "Anton", sans-serif !important;
       font-size: rem-calc(30);
       font-weight: normal;
       line-height: $line-height * 1.5;
@@ -120,7 +120,7 @@ $g1000-red:   #e20613;
     .button-how-red {
       color: #fff;
       display: inline-block;
-      font-family: 'Anton', sans-serif !important;
+      font-family: "Anton", sans-serif !important;
       font-size: rem-calc(30);
       line-height: rem-calc(30);
       margin: $line-height $line-height 0;

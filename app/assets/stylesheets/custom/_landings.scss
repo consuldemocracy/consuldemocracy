@@ -12,7 +12,7 @@
 // ------------------------------
 
 .franklin-title {
-  font-family: 'Franklin Gothic' !important;
+  font-family: "Franklin Gothic" !important;
   text-transform: uppercase;
 }
 
@@ -27,7 +27,7 @@
 
     h1 {
       color: $text;
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(40);
       line-height: rem-calc(40);
       margin-top: $line-height * 2;
@@ -74,7 +74,7 @@ $villaverde:        #8e4e28;
 
     h1 {
       color: $text;
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(40);
       line-height: rem-calc(40);
       margin-top: $line-height;
@@ -98,7 +98,7 @@ $villaverde:        #8e4e28;
     figcaption {
       bottom: 0;
       color: #fff;
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(36);
       line-height: rem-calc(36);
       text-transform: uppercase;
@@ -108,7 +108,7 @@ $villaverde:        #8e4e28;
 
       h3 {
         color: #000;
-        font-family: 'Franklin Gothic' !important;
+        font-family: "Franklin Gothic" !important;
         font-size: rem-calc(36);
         line-height: rem-calc(36);
       }
@@ -334,7 +334,7 @@ $villaverde:        #8e4e28;
     background: #000;
 
     @include breakpoint(medium) {
-      background: #000 image-url('budget_welcome/background_header.jpg');
+      background: #000 image-url("budget_welcome/background_header.jpg");
       background-position: 100% top;
       background-size: contain;
     }
@@ -383,7 +383,7 @@ $geocraft: #006800;
 .geocraft {
 
   .header {
-    background: $brand image-url('landings/header_geocraft.jpg');
+    background: $brand image-url("landings/header_geocraft.jpg");
     background-position: 50% 90%;
     background-size: cover;
     min-height: $line-height * 20;
@@ -473,7 +473,7 @@ $geocraft: #006800;
       word-break: break-all;
 
       &::before {
-        content: image-url('landings/icon_minecraft.png');
+        content: image-url("landings/icon_minecraft.png");
         left: -72px;
         position: absolute;
       }
@@ -499,7 +499,7 @@ $geocraft: #006800;
 .landing-cambia-tu-ciudad {
 
   .auth-image {
-    background: $brand image-url('landings/bg_landing_cambia_tu_ciudad.jpg');
+    background: $brand image-url("landings/bg_landing_cambia_tu_ciudad.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: $line-height * 2;
@@ -571,7 +571,7 @@ $geocraft: #006800;
 .landing-budgets {
 
   .auth-image {
-    background: #000 image-url('landings/bg_landing.jpg');
+    background: #000 image-url("landings/bg_landing.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: $line-height * 2;

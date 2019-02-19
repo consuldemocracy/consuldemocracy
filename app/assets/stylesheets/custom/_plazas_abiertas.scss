@@ -21,7 +21,7 @@
       border-top: 24px solid transparent;
       border-bottom: 24px solid transparent;
       display: block;
-      content: '';
+      content: " ";
       width: 100%;
       position: absolute;
       margin-left: 0;
@@ -30,7 +30,7 @@
 
     h1 {
       color: $text;
-      font-family: 'Franklin Gothic' !important;
+      font-family: "Franklin Gothic" !important;
       font-size: rem-calc(60);
       line-height: rem-calc(60);
       text-transform: uppercase;
@@ -65,7 +65,7 @@
       top: 100%;
       left: 50%;
       border: solid transparent;
-      content: ' ';
+      content: " ";
       height: 0;
       width: 0;
       position: absolute;
@@ -98,7 +98,7 @@
           top: 100%;
           left: 50%;
           border: solid transparent;
-          content: ' ';
+          content: " ";
           height: 0;
           width: 0;
           position: absolute;
