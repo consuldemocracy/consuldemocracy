@@ -104,12 +104,14 @@ class ProposalsController < ApplicationController
                     documents_attributes: [:id, :title, :attachment, :cached_attachment,
                                            :user_id, :_destroy],
                     map_location_attributes: [:latitude, :longitude, :zoom]]
-      params.require(:proposal).permit(attributes, translation_params(Proposal))
+      translations_attributes = translation_params(Proposal, except: :retired_explanation)
+      params.require(:proposal).permit(attributes, translations_attributes)
     end
 
     def retired_params
       attributes = [:retired_reason]
-      params.require(:proposal).permit(attributes, translation_params(Proposal))
+      translations_attributes = translation_params(Proposal, only: :retired_explanation)
+      params.require(:proposal).permit(attributes, translations_attributes)
     end
 
     def resource_model
