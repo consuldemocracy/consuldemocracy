@@ -46,10 +46,10 @@ en:
     instagram_handle_description: "If filled in it will appear in the footer"
     url: "Main URL"
     url_description: "Main URL of your website"
-    org_name: "Organization"
-    org_name_description: "Name of your organization"
+    org_name: "Site name"
+    org_name_description: "This name will appear on mailers subject, help pages..."
     related_content_score_threshold: "Related content score threshold"
-    related_content_score_threshold_description: "Hides content that users mark as unrelated"
+    related_content_score_threshold_description: "According to the rating of votes in a related content, hides content that users mark as unrelated"
     hot_score_period_in_days: "Period (days) used by the filter 'most active'"
     hot_score_period_in_days_description: "The filter 'most active' used in multiple sections will be based on the votes during the last X days"
     map_latitude: "Latitude"
@@ -59,7 +59,7 @@ en:
     map_zoom: "Zoom"
     map_zoom_description: "Zoom to show the map position"
     mailer_from_name: "Sender email name"
-    mailer_from_name_description: "This name will appear in emails sent from the application"
+    mailer_from_name_description: "This name will appear as sender name in emails sent from the application"
     mailer_from_address: "Sender email address"
     mailer_from_address_description: "This email address will appear in emails sent from the application"
     meta_title: "Site title (SEO)"
@@ -69,7 +69,7 @@ en:
     meta_keywords: "Keywords (SEO)"
     meta_keywords_description: 'Keywords <meta name="keywords">, used to improve SEO'
     min_age_to_participate: Minimum age needed to participate
-    min_age_to_participate_description: "Users over this age can participate in all processes"
+    min_age_to_participate_description: "Users over this age can participate in all processes where a user verified account is needed"
     analytics_url: "Analytics URL"
     verification_offices_url: Verification offices URL
     proposal_improvement_path: Proposal improvement info internal link
@@ -121,4 +121,4 @@ en:
       public_stats: "Public stats"
       public_stats_description: "Display public stats in the Administration panel"
       help_page: "Help page"
-      help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"
+      help_page_description: 'Displays a Help menu that contains a page with an info section about each enabled feature. Also custom pages and menus can be created in the "Custom pages" and  "Custom content blocks" sections'
