@@ -556,8 +556,8 @@ describe Budget::Investment do
 
       it "should take into consideration title fallbacks when there is no
           translation for current locale" do
-        english_investment = create(:budget_investment, title: "BBBB")
-        spanish_investment = Globalize.with_locale(:es) do
+        create(:budget_investment, title: "BBBB")
+        Globalize.with_locale(:es) do
           I18n.with_locale(:es) do
             create(:budget_investment, title: "AAAA")
           end
