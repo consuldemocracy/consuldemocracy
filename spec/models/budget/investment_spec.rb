@@ -556,8 +556,8 @@ describe Budget::Investment do
 
       it "should take into consideration title fallbacks when there is no
           translation for current locale" do
-        english_investment = create(:budget_investment, title: "BBBB")
-        spanish_investment = Globalize.with_locale(:es) do
+        create(:budget_investment, title: "BBBB")
+        Globalize.with_locale(:es) do
           I18n.with_locale(:es) do
             create(:budget_investment, title: "AAAA")
           end
@@ -684,10 +684,10 @@ describe Budget::Investment do
 
     context "attributes" do
 
-      let(:attributes) { { title: 'save the world',
-                           description: 'in order to save the world one must think about...',
-                           title_es: 'para salvar el mundo uno debe pensar en...',
-                           description_es: 'uno debe pensar' } }
+      let(:attributes) { { title: "save the world",
+                           description: "in order to save the world one must think about...",
+                           title_es: "para salvar el mundo uno debe pensar en...",
+                           description_es: "uno debe pensar" } }
 
       it "searches by title" do
         budget_investment = create(:budget_investment, attributes)
@@ -697,7 +697,7 @@ describe Budget::Investment do
 
       it "searches by title across all languages" do
         budget_investment = create(:budget_investment, attributes)
-        results = described_class.search('salvar el mundo')
+        results = described_class.search("salvar el mundo")
         expect(results).to eq([budget_investment])
       end
 
