@@ -22,7 +22,6 @@ section "Creating Settings" do
   Setting.create(key: 'blog_url', value: 'https://diario.madrid.es/decidemadrid/')
   Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'Decide Madrid')
-  Setting.create(key: 'place_name', value: 'City')
 
   Setting.create(key: 'feature.debates', value: "true")
   Setting.create(key: 'feature.proposals', value: "true")

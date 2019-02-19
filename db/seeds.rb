@@ -61,9 +61,6 @@ Setting["url"] = "https://decide.madrid.es"
 # Consul installation's organization name
 Setting["org_name"] = "Decide Madrid"
 
-# Consul installation place name (City, Country...)
-Setting["place_name"] = "Madrid"
-
 # Meta tags for SEO
 Setting["meta_title"] = nil
 Setting["meta_description"] = nil

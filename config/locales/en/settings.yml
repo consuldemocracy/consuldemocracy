@@ -48,8 +48,6 @@ en:
     url_description: "Main URL of your website"
     org_name: "Organization"
     org_name_description: "Name of your organization"
-    place_name: "Place"
-    place_name_description: "Name of your city"
     related_content_score_threshold: "Related content score threshold"
     related_content_score_threshold_description: "Hides content that users mark as unrelated"
     hot_score_period_in_days: "Period (days) used by the filter 'most active'"
