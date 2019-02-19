@@ -731,16 +731,16 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint' do
+    scenario "Each user has a different and consistent random budget investment order" do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading, random_seed: rand)
+        visit budget_investments_path(budget, heading: heading)
         @first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading, random_seed: rand)
+        visit budget_investments_path(budget, heading: heading)
         @second_user_investments_order = investments_order
       end
 

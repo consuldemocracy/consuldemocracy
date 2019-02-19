@@ -1,4 +1,6 @@
 class ProbesController < ApplicationController
+  include RandomSeed
+
   skip_authorization_check
 
   before_action :load_probe
@@ -44,8 +46,13 @@ class ProbesController < ApplicationController
     end
 
     def load_probe_options
-      order = @probe.selecting_allowed? ? "RANDOM()" : { probe_selections_count: :desc }
-      @probe_options = @probe.probe_options.all.includes(:debate).order(order)
+      @probe_options = @probe.probe_options.all.includes(:debate)
+
+      if @probe.selecting_allowed?
+        @probe_options = @probe_options.sort_by_random(session[:random_seed])
+      else
+        @probe_options = @probe_options.order(probe_selections_count: :desc)
+      end
     end
 
     def load_discarded_probe_options
@@ -58,17 +65,5 @@ class ProbesController < ApplicationController
 
     def probe_thanks_route
       method("#{@probe.codename}_thanks_path").call
-    end
-
-    def set_random_seed
-      seed = params[:random_seed] || session[:random_seed] || (rand(99) / 100.0)
-      seed = begin
-               Float(params[:random_seed])
-             rescue
-               0
-             end
-      seed = (-1..1).cover?(seed) ? seed : 1
-      session[:random_seed], params[:random_seed] = seed
-      ProbeOption.connection.execute "select setseed(#{seed})"
     end
 end

@@ -17,6 +17,7 @@ class Legislation::Proposal < ActiveRecord::Base
   include Documentable
   include Notifiable
   include Imageable
+  include Randomizable
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
@@ -54,11 +55,9 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :sort_by_title,            -> { reorder(title: :asc) }
   scope :sort_by_id,               -> { reorder(id: :asc) }
   scope :sort_by_supports,         -> { reorder(cached_votes_score: :desc) }
-  scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :selected,                 -> { where(selected: true) }
-  scope :random,                   -> { sort_by_random }
   scope :winners,                  -> { selected.sort_by_confidence_score }
 
   def to_param
