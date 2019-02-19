@@ -730,8 +730,8 @@ nl:
         authenticate: U moet %{signin} of %{signup} om verder te gaan.
         body_label: Bericht
         direct_messages_bloqued: Deze deelnemer heeft ervoor gekozen geen directe berichten te ontvangen
-        signin: log in
-        signup: aanmelden
+        signin: Aanmelden
+        signup: Registreren
         submit_button: Stuur bericht
         title: Stuur privé bericht aan %{receiver}
         title_label: Title

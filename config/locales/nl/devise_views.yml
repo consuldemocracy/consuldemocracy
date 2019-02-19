@@ -47,7 +47,7 @@ nl:
           phone_number_label: Telefoonnummer
           responsible_name_label: Volledige naam van de vertegenwoordiger van het collectief
           responsible_name_note: Dit is de persoon die namens de vereniging of het collectief ideeën indient
-          submit: Aanmelden
+          submit: Versturen
           title: Als organisatie of collectief aanmelden
         success:
           back_to_index: Terug naar hoofdpagina
@@ -101,7 +101,7 @@ nl:
           email_label: Emailadres
           leave_blank: Laat leeg als u het niet wilt aanpassen
           need_current: Uw huidige wachtwoord ter bevestiging van de veranderingen
-          password_confirmation_label: Bevestig nieuw wachtwoord
+          password_confirmation_label: Bevestig wachtwoord
           password_label: Nieuw wachtwoord
           update_submit: Update
           waiting_for: 'In afwachting van bevestiging:'
@@ -109,18 +109,18 @@ nl:
           cancel: Aanmelden annuleren
           email_label: Emailadres
           organization_signup: Bent u lid van een organisatie of collectief? %{signup_link}
-          organization_signup_link: Meld dan hier aan
+          organization_signup_link: Registreer dan hier
           password_confirmation_label: Bevestig wachtwoord
           password_label: Wachtwoord
           redeemable_code: Verificatiecode ontvangen per email (optioneel)
-          submit: Aanmelden
+          submit: Registreren
           terms: Ik accepteer de %{terms}
           terms_link: gebruiksvoorwaarden
           terms_title: Ik accepteer de gebruiksvoorwaarden
           title: Registreren
           username_is_available: Deze naam is beschikbaar
           username_is_not_available: Deze naam is al in gebruik
-          username_label: Naam
+          username_label: Gebruikersnaam
           username_note: De opgegeven naam zal zichtbaar zijn voor andere gebruikers
         success:
           back_to_index: Terug naar hoofdpagina
