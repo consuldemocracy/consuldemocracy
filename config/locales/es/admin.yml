@@ -805,9 +805,9 @@ es:
         send_pending: Enviar pendientes
         send_pending_notification: Notificaciones pendientes enviadas correctamente
       proposal_notification_digest:
-        title: Resumen de Notificationes de Propuestas
-        description: Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails.
-        preview_detail: Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen.
+        title: "Resumen de notificationes de propuestas"
+        description: "Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails."
+        preview_detail: "Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen."
     emails_download:
       index:
         title: Descarga de emails
