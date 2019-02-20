@@ -52,7 +52,63 @@ tr:
       organization:
         one: "Organizasyon"
         other: "Organizasyonlar"
+      poll/booth:
+        one: "kabin"
+        other: "kabinler"
+      poll/officer:
+        one: "memur"
+        other: "memurlar"
+      proposal:
+        one: "Vatandaş teklifi"
+        other: "Vatandaş teklifleri"
+      spending_proposal:
+        one: "Yatırım projesi"
+        other: "Yatırım projeleri"
+      site_customization/page:
+        one: Özel sayfa
+        other: Özel sayfalar
+      site_customization/image:
+        one: Özel resim
+        other: Özel resimler
+      site_customization/content_block:
+        one: Özel içerik bloğu
+        other: Özel içerik blokları
+      legislation/process:
+        one: "İşlem"
+        other: "İşlemler"
+      legislation/proposal:
+        one: "Öneri"
+        other: "Öneriler"
+      legislation/draft_versions:
+        one: "Taslak versiyon"
+        other: "Taslak versiyonlar"
+      legislation/questions:
+        one: "Soru"
+        other: "Sorular"
+      legislation/question_options:
+        one: "Soru seçeneği"
+        other: "Soru seçenekleri"
+      legislation/answers:
+        one: "Cevap"
+        other: "Cevaplar"
+      documents:
+        one: "Belge"
+        other: "Belgeler"
+      images:
+        one: "Resim"
+        other: "Resimler"
+      topic:
+        one: "Konu"
+        other: "Konular"
+      poll:
+        one: "Anket"
+        other: "Anketler"
+      proposal_notification:
+        one: "Öneri bildirimi"
+        other: "Öneri bildirimleri"
     attributes:
+      budget:
+        name: "İsim"
       budget/investment:
         administrator_id: "Yönetici"
       comment:
