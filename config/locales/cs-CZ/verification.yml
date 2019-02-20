@@ -1,18 +1,65 @@
 cs:
   verification:
+    alert:
+      lock: Dosáhli jste maximálního počtu pokusů. Opakujte akci později.
+    back: Návrat do mého účtu
+    email:
+      create:
+        alert:
+          failure: Došlo k potížím s odesíláním e-mailu na váš účet
+      show:
+        alert:
+          failure: Ověřovací kód je nesprávný
+        flash:
+          success: Jste ověřený uživatel
     letter:
+      edit:
+        see_all: Zobrazit návrhy
+        title: Dopis požadován
+      errors:
+        incorrect_code: Ověřovací kód je nesprávný
       new:
+        go_to_index: Zobrazit návrhy
+        office: 'Ověřit v jakékoliv z uvedených subjektů: %{office}'
+        send_letter: Pošlete mi dopis s kódem
+        title: Blahopřejeme!
         user_permission_info: S vaším účtem můžete...
     residence:
+      create:
+        flash:
+          success: Bydliště ověřeno
       new:
         date_of_birth: Datum narození
+        document_number: Číslo dokladu
         document_number_help_title: Nápověda
+        document_type:
+          passport: Cestovní pas
         document_type_label: Typ dokumentu
         postal_code: PSČ
+    sms:
+      new:
+        title: Poslat potvrzovací kód
+      update:
+        error: Nesprávný potvrzovací kód
+        flash:
+          level_three:
+            success: Správný kód. Váš účet je nyní ověřen
+          level_two:
+            success: Správný kód
     step_1: Bydliště
     step_2: Potvrzující kód
+    step_3: Konečné ověření
     user_permission_debates: Zapojte se do debat
+    user_permission_info: Ověřením informací budete mít možnost...
     user_permission_proposal: Vytvořit nové návrhy
+    user_permission_support_proposal: Podpora návrhů *
+    user_permission_votes: Účast na závěrečném hlasování *
     verified_user:
+      form:
+        submit_button: Odeslat kód
       show:
+        email_title: E-maily
+        explanation: 'V procesu registrace evidujeme v současné době následující údaje: vyberte prosím způsob odeslání potvrzovacího kódu.'
         phone_title: Telefonní čísla
+        title: Dostupné informace
+        use_another_phone: Použít jiný telefon
