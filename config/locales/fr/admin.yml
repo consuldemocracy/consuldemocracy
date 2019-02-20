@@ -378,7 +378,6 @@ fr:
           delete: Supprimer
           title: Processus législatifs
           filters:
-            open: Ouvert
             all: Toutes
         new:
           back: Retour
@@ -394,7 +393,6 @@ fr:
           title: Processus
           comments: Commentaires
           status: Statut
-          creation_date: Date de création
           status_open: Ouvert
           status_closed: Fermé
           status_planned: Planifié
