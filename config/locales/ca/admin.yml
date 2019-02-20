@@ -264,7 +264,6 @@ ca:
           delete: Borrar
           title: processos legislatius
           filters:
-            open: obert
             all: tots
         new:
           back: Tornar
@@ -279,7 +278,6 @@ ca:
           title: procés
           comments: Comentarios
           status: Estat
-          creation_date: Data de creació
           status_open: obert
           status_closed: tancat
           status_planned: Properament
