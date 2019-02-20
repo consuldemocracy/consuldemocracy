@@ -283,7 +283,6 @@ sl:
           delete: Izbriši
           title: Procesi legislacije
           filters:
-            open: Odpri
             all: Vsi
         new:
           back: Nazaj
@@ -292,7 +291,6 @@ sl:
         process:
           title: Proces
           comments: Komentarji
-          creation_date: Ustvarjen na
           status_open: Odprt
           status_closed: Zaprt
           status_planned: Načrtovan
