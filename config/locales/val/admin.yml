@@ -424,7 +424,6 @@ val:
           delete: Eliminar
           title: Processos legislatius
           filters:
-            open: Oberts
             all: Totes
         new:
           back: Tornar
@@ -440,7 +439,6 @@ val:
           title: Proces
           comments: Comentaris
           status: Estat
-          creation_date: Data creació
           status_open: Oberts
           status_closed: Tancat
           status_planned: Pròximament
