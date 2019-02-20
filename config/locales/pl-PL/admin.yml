@@ -381,7 +381,6 @@ pl:
           delete: Usuń
           title: Procesy legislacyjne
           filters:
-            open: Otwórz
             all: Wszystkie
         new:
           back: Wróć
@@ -396,7 +395,6 @@ pl:
           title: Proces
           comments: Komentarze
           status: Status
-          creation_date: Data utworzenia
           status_open: Otwórz
           status_closed: Zamknięty
           status_planned: Zaplanowany
