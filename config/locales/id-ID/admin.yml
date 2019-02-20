@@ -335,7 +335,6 @@ id:
           delete: Hapus
           title: Undang-undang proses
           filters:
-            open: Buka
             all: Semua
         new:
           back: Kembali
@@ -350,7 +349,6 @@ id:
           title: Proses
           comments: Komentar
           status: Status
-          creation_date: Tanggal pembuatan
           status_open: Buka
           status_closed: Tutup
           status_planned: Direncanakan
