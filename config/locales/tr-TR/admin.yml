@@ -9,19 +9,81 @@ tr:
       hide: Gizle
       hide_author: Yazarı gizle
       restore: Onarma
+      mark_featured: Öne Çıkan
+      unmark_featured: Öne çıkan işareti kaldır
       edit: Düzenleme
+      configure: Yapılandırma
+      delete: Sil
+    banners:
+      index:
+        title: Bannerlar
+        create: Banner oluştur
+        edit: Banner düzenleme
+        delete: Banner silme
+        filters:
+          all: Tüm
+          with_active: Aktif
+          with_inactive: Pasif
+        preview: Önizleme
+      banner:
+        title: İsim
+        description: Tanımlama
+        target_url: Bağlantı
+        post_started_at: Yayın başladı
+        post_ended_at: Yayın bitti
+        sections_label: Görüneceği bölümler
+        sections:
+          homepage: Ana sayfa
+          debates: Tartışmalar
+          proposals: Öneriler
+          budgets: Katılımcı bütçeleme
+          help_page: Yardım sayfası
+        background_color: Arka plan rengi
+        font_color: Yazı tipi rengi
+      edit:
+        editing: Banner düzenleme
+        form:
+          submit_button: Değişiklikleri kaydetme
+      errors:
+        form:
+          error:
+            one: "hata bu bannerın kaydedilmesini engelledi"
+            other: "hatalar bu bannerın kaydedilmesini engelledi"
+      new:
+        creating: Banner oluşturuldu
     activity:
       show:
+        action: Eylem
+        actions:
+          block: Engellendi
+          hide: Gizlendi
+          restore: Onarıldı
+        by: Tarafından denetlendi
+        content: İçerik
+        filter: Göster
         filters:
+          all: Tüm
           on_comments: Yorumlar
+          on_debates: Tartışmalar
+          on_proposals: Öneriler
+          on_users: Kullanıcılar
+          on_system_emails: Sistem e-postaları
+        title: Moderatör faaliyeti
+        type: Tür
+        no_activity: Hiç moderatör faaliyeti yok.
     budgets:
       index:
+        title: Katılımcı bütçe
+        new_link: Yeni bütçe oluştur
         filters:
           open: Açık
         table_investments: Yatırımlar
         table_edit_budget: Düzenleme
       edit:
         actions: Aksiyon
+    budget_headings:
+      form:
+        population: "Konum (isteğe bağlı)"
     budget_investments:
       index:
         list:
