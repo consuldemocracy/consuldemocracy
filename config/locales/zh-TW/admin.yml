@@ -378,7 +378,6 @@ zh-TW:
           delete: 刪除
           title: 立法進程
           filters:
-            open: 開
             all: 所有
         new:
           back: 返回
@@ -393,7 +392,6 @@ zh-TW:
           title: 進程
           comments: 評論
           status: 狀態
-          creation_date: 創建日期
           status_open: 開
           status_closed: 關
           status_planned: 計劃
