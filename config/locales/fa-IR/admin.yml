@@ -349,7 +349,6 @@ fa:
           delete: حذف
           title: فرآیندهای قانونی
           filters:
-            open: بازکردن
             all: همه
         new:
           back: برگشت
@@ -364,7 +363,6 @@ fa:
           title: "روند\n"
           comments: توضیحات
           status: وضعیت ها
-          creation_date: ' ایجاد تاریخ'
           status_open: بازکردن
           status_closed: بسته
           status_planned: برنامه ریزی شده
