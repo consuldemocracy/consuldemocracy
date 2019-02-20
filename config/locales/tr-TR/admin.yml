@@ -168,10 +168,57 @@ tr:
         no_milestones: "Tanımlanmış kilometre taşları yok"
         image: "Fotoğraf"
         show_image: "Resmi göster"
+        documents: "Belgeler"
+        milestone: Kilometre taşı
+        new_milestone: Yeni kilometre taşı oluştur
+      form:
+        admin_statuses: Durumları yönet
+        no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
+      new:
+        creating: Kilometre taşı oluştur
+        date: Tarih
+        description: Tanımlama
+      edit:
+        title: Kilometre taşı düzenle
+      create:
+        notice: Yeni kilometre taşı başarıyla oluşturuldu!
+      update:
+        notice: Kilometre taşı başarıyla güncellendi
+      delete:
+        notice: Kilometre taşı başarıyla silindi
     statuses:
       index:
+        title: Kilometre taşı durumları
+        empty_statuses: Hiç kilometre taşı durumları oluşturulmamış
+        new_status: Yeni kilometre taşı durumu oluştur
+        table_name: İsim
+        table_description: Tanımlama
         table_actions: Aksiyon
+        delete: Sil
         edit: Düzenleme
+      edit:
+        title: Kilometre taşı durumu düzenle
+      update:
+        notice: Kilometre taşı durumu başarıyla güncellendi
+      new:
+        title: Kilometre taşı durumu oluştur
+      create:
+        notice: Kilometre taşı durumu başarıyla oluşturuldu
+      delete:
+        notice: Kilometre taşı durumu başarıyla silindi
+    progress_bars:
+      manage: "İşlem çubuklarını yönet"
+      index:
+        title: "İşlem çubukları"
+        no_progress_bars: "İşlem çubukları yok"
+        new_progress_bar: "Yeni işlem çubuğu oluştur"
+        primary: "Birincil işlem çubuğu"
+        table_id: "Kimlik"
+        table_kind: "Tür"
+        table_title: "İsim"
+        table_percentage: "Mevcut işlem"
+      new:
+        creating: "İşlem çubuğu oluştur"
     dashboard:
       index:
         title: Yönetim
