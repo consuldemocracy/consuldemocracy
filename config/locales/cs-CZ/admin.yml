@@ -46,6 +46,11 @@ cs:
     activity:
       show:
         action: Akce
+        actions:
+          block: Blokováno
+          hide: Skrytý
+          restore: Obnovený
+        by: Upraveno moderátorem
         content: Obsah
         filter: Zobrazit
         filters:
@@ -85,6 +90,14 @@ cs:
         blank_dates: Data jsou prázdné
     budget_groups:
       name: "Název"
+      headings_name: "Nadpisy"
+      headings_edit: "Upravit nadpisy"
+      headings_manage: "Spravovat nadpisy"
+      form:
+        create: "Vytvořit novou skupinu"
+        edit: "Upravit skupinu"
+        name: "Název skupiny"
+        submit: "Uložit skupinu"
     budget_headings:
       name: "Název"
       destroy:
@@ -95,6 +108,7 @@ cs:
         population: "Počet obyvatel (volitelné)"
         latitude: "Zeměpisná šířka (volitelné)"
         longitude: "Zeměpisná šířka (volitelné)"
+        submit: "Uložit hadpisy"
     budget_phases:
       edit:
         start_date: Start date
