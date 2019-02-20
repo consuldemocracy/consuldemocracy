@@ -7,18 +7,26 @@ cs:
       create:
         alert:
           failure: Došlo k potížím s odesíláním e-mailu na váš účet
+        flash:
+          success: 'Odeslali jsem potvrzovací e-mail k účtu: %{email}'
       show:
         alert:
           failure: Ověřovací kód je nesprávný
         flash:
           success: Jste ověřený uživatel
     letter:
+      alert:
+        unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
+      create:
+        flash:
+          success_html: Děkujeme, že jste požádali o maximální bezpečnostní kód (vyžaduje se pouze pro konečné hlasování) </b>. Za pár dní ji zašleme na adresu uvedenou ve vašem profilu, který máme k dispozici. Nezapomeňte, že pokud chcete, můžete svůj kód získat z kteréhokoliv subjektu %{offices}.
       edit:
         see_all: Zobrazit návrhy
         title: Dopis požadován
       errors:
         incorrect_code: Ověřovací kód je nesprávný
       new:
+        explanation: 'Pro účast na finálním hlasování může:'
         go_to_index: Zobrazit návrhy
         office: 'Ověřit v jakékoliv z uvedených subjektů: %{office}'
         send_letter: Pošlete mi dopis s kódem
@@ -34,10 +42,27 @@ cs:
         document_number_help_title: Nápověda
         document_type:
           passport: Cestovní pas
+          residence_card: Občanský průkaz
         document_type_label: Typ dokumentu
         postal_code: PSČ
+        title: Ověření bydliště
+        verify_residence: Ověření bydliště
     sms:
+      create:
+        flash:
+          success: Zadejte potvrzovací kód, který vám byl odeslán textovou zprávu
+      edit:
+        confirmation_code: Zadejte kód, který jste obdrželi na váš mobil
+        resend_sms_link: Klikněte zde pro opětovné odeslání
+        resend_sms_text: Nedostali jste text s potvrzovací kód?
+        submit_button: Odeslat
+        title: Bezpečnostní kód potvrzení
       new:
+        phone: Zadejte číslo svého mobilního telefonu pro získání kódu
+        phone_format_html: "<strong><em>(příklad: 712345678 nebo +42012345678)</em></strong>"
+        phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
+        phone_placeholder: "Příklad: 612345678 nebo +42012345678"
+        submit_button: Odeslat
         title: Poslat potvrzovací kód
       update:
         error: Nesprávný potvrzovací kód
