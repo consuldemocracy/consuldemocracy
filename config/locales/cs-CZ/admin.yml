@@ -258,7 +258,6 @@ cs:
           delete: Smazat
           title: Legislativní procesy
           filters:
-            open: Otevřené
             all: Vše
         new:
           back: Zpět
@@ -273,7 +272,6 @@ cs:
           title: Proces
           comments: Komentáře
           status: Status
-          creation_date: Datum vytvoření
           status_open: Otevřené
           status_closed: Uzavřené
           status_planned: Plánované
