@@ -21,6 +21,11 @@ cs:
         few: "Uživatelé"
         many: "Uživatelé"
         other: "Uživatelé"
+      organization:
+        one: "Organizace"
+        few: "Organizace"
+        many: "Organizace"
+        other: "Organizace"
       legislation/process:
         one: "Proces"
         few: "Procesy"
