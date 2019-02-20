@@ -391,7 +391,6 @@ nl:
           delete: Delete
           title: Plannen
           filters:
-            open: Open
             all: All
         new:
           back: Terug
@@ -406,7 +405,6 @@ nl:
           title: Proces
           comments: Comments
           status: Status
-          creation_date: Datum
           status_open: Open
           status_closed: Gesloten
           status_planned: Gepland
