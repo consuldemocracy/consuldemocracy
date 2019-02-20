@@ -5,6 +5,10 @@ tr:
     actions:
       actions: Aksiyon
       confirm: Emin misiniz?
+      confirm_hide: Denetlemeyi onayla
+      hide: Gizle
+      hide_author: Yazarı gizle
+      restore: Onarma
       edit: Düzenleme
     activity:
       show:
