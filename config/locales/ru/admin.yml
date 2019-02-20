@@ -358,7 +358,6 @@ ru:
           delete: Удалить
           title: Процессы законотворчества
           filters:
-            open: Открыть
             all: Все
         new:
           back: Назад
@@ -373,7 +372,6 @@ ru:
           title: Процесс
           comments: Комментарии
           status: Статус
-          creation_date: Дата создания
           status_open: Открытый
           status_closed: Закрытый
           status_planned: Запланирован
