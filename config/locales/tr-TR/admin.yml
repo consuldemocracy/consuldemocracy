@@ -110,15 +110,64 @@ tr:
       index:
         heading_filter_all: Tüm başlıklar
         administrator_filter_all: Tüm yöneticiler
+        valuator_filter_all: Tüm bilirkişiler
+        tags_filter_all: Tüm etiketler
+        advanced_filters: Gelişmiş filtreler
+        placeholder: Arama projeleri
+        filters:
+          all: Tüm
+          without_admin: Atanmış yönetici olmadan
+          without_valuator: Atanmış bilirkişi olmadan
+          under_valuation: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+          feasible: Uygulanabilir
+          selected: Seçilmiş
+          undecided: Kararsız
+          unfeasible: Uygulanamaz
+          min_total_supports: Minimum destek
+          winners: Kazananlar
+          one_filter_html: "Mevcut uygulanan filtreler: <b><em>%{filter}</em></b>"
+          two_filters_html: "Mevcut uygulanan filtreler: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtre
+        download_current_selection: "Mevcut seçimi indir"
+        no_budget_investments: "Hiç yatırım projesi yok."
+        title: Yatırım projeleri
+        assigned_admin: Atanmış yönetici
+        no_admin_assigned: Hiç yönetici atanmamış
+        no_valuators_assigned: Hiç bilirkişi atanmamış
+        no_valuation_groups: Hiç değerlendirme grupları atanmamış
+        feasibility:
+          feasible: "Uygulanabilir (%{price})"
+          unfeasible: "Uygulanamaz"
+          undecided: "Kararsız"
         list:
           admin: Yönetici
       show:
         edit: Düzenleme
         image: "Fotoğraf"
+      edit:
+        assigned_valuators: Bilirkişiler
+        select_heading: Başlık seç
+        submit_button: Güncelleme
+        user_tags: Kullanıcı etiketler atanmış
+        tags: Etiketler
+        tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
+        undefined: Tanımsız
+        user_groups: "Gruplar"
+      search_unfeasible: Uygulanamaz arama
     milestones:
       index:
+        table_id: "Kimlik"
+        table_title: "İsim"
+        table_description: "Tanımlama"
+        table_publication_date: "Yayın tarihi"
+        table_status: Durum
         table_actions: "Aksiyon"
+        delete: "Kilometre taşı sil"
+        no_milestones: "Tanımlanmış kilometre taşları yok"
         image: "Fotoğraf"
+        show_image: "Resmi göster"
     statuses:
       index:
         table_actions: Aksiyon
