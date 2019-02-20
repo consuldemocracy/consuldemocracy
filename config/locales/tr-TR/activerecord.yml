@@ -125,8 +125,42 @@ tr:
         external_url: "Ek belgelere bağlantı"
         administrator_id: "Yönetici"
         location: "Konum (isteğe bağlı)"
+        organization_name: "Eğer bir ortaklık/organizasyon adına veya daha fazla kişi adına teklif ediyorsanız, ismini yazın"
+        image: "Teklif betimleyici resmi"
+        image_title: "Resim ismi"
+      milestone:
+        status_id: "Mevcut durum (isteğe bağlı)"
+        title: "İsim"
+        description: "Tanımlama ( isteğe bağlı eğer belirlenmiş bir durum varsa)"
+        publication_date: "Yayın tarihi"
+      milestone/status:
+        name: "İsim"
+        description: "Tanımlama (isteğe bağlı)"
+      progress_bar:
+        kind: "Tür"
+        title: "İsim"
+        percentage: "Mevcut ilerleme"
+      progress_bar/kind:
+        primary: "Birincil"
+        secondary: "İkincil"
+      budget/heading:
+        name: "Başlık adı"
+        price: "Fiyat"
+        population: "Nüfus"
       comment:
         body: "Yorum"
+        user: "Kullanıcı"
+      debate:
+        author: "Yazar"
+        description: "Fikir"
+        terms_of_service: "Hizmet şartları"
+        title: "İsim"
+      proposal:
+        author: "Yazar"
+        title: "İsim"
+        question: "Soru"
+        description: "Tanımlama"
+        terms_of_service: "Hizmet şartları"
       user:
         email: "E-posta"
       spending_proposal:
