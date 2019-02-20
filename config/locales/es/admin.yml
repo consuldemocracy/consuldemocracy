@@ -184,11 +184,6 @@ es:
         tags_filter_all: Todas las etiquetas
         advanced_filters: Filtros avanzados
         placeholder: Buscar proyectos
-        sort_by:
-          placeholder: Ordenar por
-          id: ID
-          title: Título
-          supports: Apoyos
         filters:
           valuation_open: Abiertos
           all: Todos

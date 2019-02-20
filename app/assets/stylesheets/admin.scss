@@ -228,6 +228,11 @@ $sidebar-active: #f4fcd0;
       label {
         color: #fff;
       }
+
+      a {
+        color: inherit;
+        white-space: nowrap;
+      }
     }
 
     .break {
@@ -369,6 +374,44 @@ $sidebar-active: #f4fcd0;
 
 .disabled {
   color: $text-medium;
+}
+
+.icon-sortable {
+  font-family: "icons";
+  font-size: $small-font-size;
+  padding-right: $line-height / 2;
+  position: relative;
+
+  &::before,
+  &::after {
+    left: 6px;
+    opacity: 0.25;
+    position: absolute;
+  }
+
+  &::before {
+    content: "\57";
+    top: -2px;
+  }
+
+  &::after {
+    content: "\52";
+    bottom: -10px;
+  }
+
+  &.asc {
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.desc {
+
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
 // 02. Sidebar
