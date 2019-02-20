@@ -19,6 +19,7 @@ cs:
         unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
       create:
         flash:
+          offices: Občansko správný odbor
           success_html: Děkujeme, že jste požádali o maximální bezpečnostní kód (vyžaduje se pouze pro konečné hlasování) </b>. Za pár dní ji zašleme na adresu uvedenou ve vašem profilu, který máme k dispozici. Nezapomeňte, že pokud chcete, můžete svůj kód získat z kteréhokoliv subjektu %{offices}.
       edit:
         see_all: Zobrazit návrhy
@@ -38,6 +39,7 @@ cs:
           success: Správný kód. Váš účet je nyní ověřen
     redirect_notices:
       already_verified: Tento uživatelský účet je již ověřen
+      email_already_sent: E-mail s odkazem pro potvrzení jsme již odeslali. Pokud nemůžete najít e-mail, můžete požádat o opětovné zaslání zde
     residence:
       alert:
         unconfirmed_residency: Doposud jste nepotvrdili své bydliště
@@ -56,10 +58,13 @@ cs:
           residence_card: Občanský průkaz
           spanish_id: Číslo OP
         document_type_label: Typ dokumentu
+        error_not_allowed_age: Nemáte požadovaný věk pro účast
+        error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
         error_verifying_census: Nepodařilo se ověřit Vaše údaje. Potvrďte prosím, že vaše údaje jsou správné zavoláním na úřad nebo navštivte jeden ze subjektů %{offices}.
         error_verifying_census_offices: Občansko správní odbor
         form_errors: zabránil ověření vašeho bydliště
         postal_code: PSČ
+        postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
         terms: podmínky přístupu
         title: Ověření bydliště
         verify_residence: Ověření bydliště
