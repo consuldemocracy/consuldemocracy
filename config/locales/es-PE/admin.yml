@@ -309,7 +309,6 @@ es-PE:
           delete: Borrar
           title: Procesos legislativos
           filters:
-            open: Abierto
             all: Todas
         new:
           back: Volver
@@ -324,7 +323,6 @@ es-PE:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha de creación
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
