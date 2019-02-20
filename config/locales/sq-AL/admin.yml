@@ -381,7 +381,6 @@ sq:
           delete: Fshi
           title: Legjislacion
           filters:
-            open: Hapur
             all: Të gjithë
         new:
           back: Pas
@@ -397,7 +396,6 @@ sq:
           title: Proçes
           comments: Komentet
           status: Statusi
-          creation_date: Data e krijimit
           status_open: Hapur
           status_closed: Mbyllur
           status_planned: Planifikuar
