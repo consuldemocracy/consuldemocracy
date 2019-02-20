@@ -39,7 +39,7 @@ nl:
         body: Commentaar
         user: Hidden users
       debate:
-        author: Author
+        author: Auteur
         description: Mening
         terms_of_service: Gebruiksvoorwaarden
         title: Title
@@ -140,11 +140,11 @@ nl:
         primary: Primair
         secondary: Secundair
       proposal:
-        author: Author
+        author: Auteur
         description: Beschrijving
-        question: Question
+        question: Vraag
         terms_of_service: Gebruiksvoorwaarden
-        title: Title
+        title: Titel
       signature_sheet:
         document_numbers: Documentnummers
         signable_id: Ondertekende ID

@@ -22,7 +22,7 @@ nl:
         title: Begrotingsvoorstellen
     comments:
       index:
-        block_authors: Block authors
+        block_authors: Blokkeer auteurs
         confirm: Bent u zeker?
         filter: Filter
         filters:

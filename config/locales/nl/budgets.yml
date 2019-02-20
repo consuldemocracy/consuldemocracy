@@ -126,8 +126,8 @@ nl:
       share:
         message: Ik heb investeringsvoorstel %{title} gemaakt in %{org}. Jij kunt ook een investeringsvoorstel doen!
       show:
-        author: Author
-        author_deleted: Gebruiker verwijderd
+        author: Auteur
+        author_deleted: Auteur verwijderd
         code_html: 'Begrotingsvoorstel code: <strong>%{code}</strong>'
         comments_tab: Comments
         location_html: 'Plaats: <strong>%{location}</strong>'

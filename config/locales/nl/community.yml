@@ -2,7 +2,7 @@
 nl:
   community:
     show:
-      author: Author
+      author: Auteur
       back: Terug naar %{community} %{proposal}
       create_first_community_topic:
         first_theme: Creeer het eerste community onderwerp.

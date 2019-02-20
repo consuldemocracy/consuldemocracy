@@ -52,7 +52,7 @@ nl:
   comments:
     comment:
       admin: Beheerder
-      author: Author
+      author: Auteur
       deleted: Deze reactie is verwijderd
       moderator: Moderator
       responses:
@@ -160,8 +160,8 @@ nl:
       recommendations_title: Advies bij het beginnen van een debat
       start_new: Nieuw debat
     show:
-      author: Author
-      author_deleted: Gebruiker verwijderd
+      author: Auteur
+      author_deleted: Auteur verwijderd
       comments:
         one: 1 opmerking
         other: "%{count} opmerkingen"
@@ -514,8 +514,8 @@ nl:
     share:
       message: I supported the proposal %{summary} in %{handle}. If you're interested, support it too!
     show:
-      author: Author
-      author_deleted: Gebruiker verwijderd
+      author: Auteur
+      author_deleted: Auteur verwijderd
       code: 'Voorstel code:'
       comments:
         one: 1 opmerking
@@ -558,8 +558,8 @@ nl:
     title: Gerelateerde inhoud
   shared:
     advanced_search:
-      author_type: Op auteur categorie
-      author_type_blank: Selecteer een categorie
+      author_type: Auteurtype
+      author_type_blank: Selecteer een type
       date: Op datum
       date_1: Afgelopen 24 uur
       date_2: Afgelopen week
@@ -575,7 +575,7 @@ nl:
       title: Geavanceerd zoeken
       to: Aan
     author_info:
-      author_deleted: Gebruiker verwijderd
+      author_deleted: Auteur verwijderd
     back: Ga terug
     check: Selecteer
     check_all: Alles
@@ -695,8 +695,8 @@ nl:
       recommendations_title: Hoe doet u een begrotingsvoorstel
       start_new: Create spending proposal
     show:
-      author_deleted: Gebruiker verwijderd
-      code: 'Voorstel code:'
+      author_deleted: Auteur verwijderd
+      code: 'Code:'
       share: Deel
     spending_proposal:
       already_supported: U heeft dit al gestuend. Deel 't!

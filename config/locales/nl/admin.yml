@@ -9,7 +9,7 @@ nl:
       delete: Verwijder
       edit: Bewerk
       hide: Verberg
-      hide_author: Hide author
+      hide_author: Auteur verbergen
       mark_featured: Featured
       restore: Restore
       unmark_featured: Unmark featured
@@ -269,7 +269,7 @@ nl:
         heading_filter_all: All headings
         list:
           admin: Beheerder
-          author_username: Gebruikersnaam van de auteur
+          author_username: Naam van de auteur
           feasibility: Feasibility
           geozone: Betreffende regio
           id: ID
@@ -1058,7 +1058,7 @@ nl:
           title: Keuze
           video_list: Lijst video's
           videos: Videos
-        author: Author
+        author: Auteur
         edit_question: Bewerk vraag
         proposal: Original proposal
         question: Question
@@ -1093,7 +1093,7 @@ nl:
       invalid_recipients_segment: Gebruikerssegment deelnemers is ongeldig
       investment_authors: Budgethouders
       not_supported_on_current_budget: Deelnemers die geen voorstellen hebben gesteund in het huidige budget
-      proposal_authors: Voorstel schrijvers
+      proposal_authors: Auteurs
       selected_investment_authors: Houders van geselecteerd budget
       winner_investment_authors: Houders van populaire budget
     settings:
@@ -1127,7 +1127,7 @@ nl:
       setting_value: Waarde
     shared:
       actions: Activiteiten
-      author: Author
+      author: Auteur
       booths_search:
         button: Search
         placeholder: Search booth by name
@@ -1161,8 +1161,8 @@ nl:
         placeholder: Zoek een persoon op naam of emailadres
       view: Weergave
     signature_sheets:
-      author: Author
-      created_at: Creation date
+      author: Auteur
+      created_at: Datum
       index:
         new: New signature sheets
         title: Signature sheets
@@ -1173,10 +1173,10 @@ nl:
         title: Niewe handtekeninglijst
       no_signature_sheets: There are not signature_sheets
       show:
-        author: Author
-        created_at: Created
-        document_count: 'Number of documents:'
-        documents: Documents
+        author: Auteur
+        created_at: Datum
+        document_count: 'Aantal documenten:'
+        documents: Documenten
         loading: There are still signatures that are being verified by the Census, please refresh the page in a few moments
         unverified:
           one: There is %{count} invalid signature
