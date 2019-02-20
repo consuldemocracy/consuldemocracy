@@ -4,6 +4,8 @@ cs:
       menu:
         reset_password_email: Obnovit heslo emailem
         reset_password_manually: Ručně obnovit heslo
+      alert:
+        unverified_user: Doposud není přihlášen žádný ověřený uživatel
       show:
         title: Uživatelský účet
       edit:
@@ -29,6 +31,7 @@ cs:
     dashboard:
       index:
         title: Správa
+        info: Zde můžete spravovat uživatele prostřednictvím všech akcí uvedených v levém menu.
     document_number: Číslo dokladu
     document_type_label: Typ dokumentu
     document_verifications:
@@ -48,6 +51,11 @@ cs:
       already_verified: Tento uživatelský účet již ověřen.
       choose_options: 'Vyberte jednu z následujících možností:'
       document_found_in_census: Tento doklad byl úspěšně ověřen v základních registrech, ale nemá přidružený žádný uživatelský účet.
+      document_mismatch: 'Tento e-mail patří uživateli, který již má přidružené Id: %{document_number} (%{document_type})'
+      email_placeholder: Napište e-mail, který tato osoba použila při vytváření svého účtu
+      email_sent_instructions: Za účelem úplného ověření tohoto uživatele je nutné, aby uživatel kliknul na odkaz, který jsme odeslali na výše uvedenou e-mailovou adresu. Tento krok je nutný k potvrzení, že mu emailová adresa patří.
+      if_existing_account: Pokud má uživatel již vytvořen uživatelský účet na webu,
+      send_email: Odeslat ověřovací e-mail
     menu:
       create_proposal: Vytvořit návrh
       print_proposals: Tisk návrhů
@@ -60,7 +68,12 @@ cs:
     permissions:
       create_proposals: Vytvořit návrhy
       support_proposals: Podpora návrhů
+    print:
+      proposals_title: 'Návrhy:'
+    print_info: Vytisknout tuto informaci
     proposals:
+      alert:
+        unverified_user: Uživatel není ověřen
       create_proposal: Vytvořit návrh
       print:
         print_button: Tisk
@@ -78,3 +91,17 @@ cs:
       print:
         print_button: Tisk
     username_label: Uživatelské jméno
+    users:
+      email_optional_label: E-mail (volitelné)
+      erased_notice: Uživatelský účet byl smazán.
+      erased_by_manager: "Smazáno manažerem: %{manager}"
+      erase_account_link: Smazat uživatele
+      erase_submit: Smazat účet
+    user_invites:
+      new:
+        label: E-maily
+        submit: Odeslat pozvánky
+        title: Odeslat pozvánky
+      create:
+        success_html: Bylo odesláno <strong>%{count} pozvánek</strong>.
+        title: Odeslat pozvánky
