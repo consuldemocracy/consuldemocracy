@@ -109,8 +109,22 @@ tr:
     attributes:
       budget:
         name: "İsim"
+        description_accepting: "Kabul aşamasında tanımlama"
+        description_reviewing: "Gözden geçirme aşamasında tanımlama"
+        description_selecting: "Seçim aşamasında tanımlama"
+        description_valuating: "Değerlendirme aşamasında tanımlama"
+        description_balloting: "Oylama aşamasında tanımlama"
+        description_reviewing_ballots: "Oyları Gözden Geçirme aşamasında tanımlama"
+        description_finished: "Bütçe bittiğinde tanımlama"
+        phase: "Aşama"
+        currency_symbol: "Para Birimi"
       budget/investment:
+        heading_id: "Başlık"
+        title: "İsim"
+        description: "Tanımlama"
+        external_url: "Ek belgelere bağlantı"
         administrator_id: "Yönetici"
+        location: "Konum (isteğe bağlı)"
       comment:
         body: "Yorum"
       user:
