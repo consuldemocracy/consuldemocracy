@@ -29,22 +29,38 @@ cs:
         explanation: 'Pro účast na finálním hlasování může:'
         go_to_index: Zobrazit návrhy
         office: 'Ověřit v jakékoliv z uvedených subjektů: %{office}'
+        offices: Občansko správní odbor
         send_letter: Pošlete mi dopis s kódem
         title: Blahopřejeme!
         user_permission_info: S vaším účtem můžete...
+      update:
+        flash:
+          success: Správný kód. Váš účet je nyní ověřen
+    redirect_notices:
+      already_verified: Tento uživatelský účet je již ověřen
     residence:
+      alert:
+        unconfirmed_residency: Doposud jste nepotvrdili své bydliště
       create:
         flash:
           success: Bydliště ověřeno
       new:
+        accept_terms_text: Přijímám %{terms_url} přístupu k základním registrům
+        accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
         date_of_birth: Datum narození
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
+        document_number_help_text_html: '<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P'
         document_type:
           passport: Cestovní pas
           residence_card: Občanský průkaz
+          spanish_id: Číslo OP
         document_type_label: Typ dokumentu
+        error_verifying_census: Nepodařilo se ověřit Vaše údaje. Potvrďte prosím, že vaše údaje jsou správné zavoláním na úřad nebo navštivte jeden ze subjektů %{offices}.
+        error_verifying_census_offices: Občansko správní odbor
+        form_errors: zabránil ověření vašeho bydliště
         postal_code: PSČ
+        terms: podmínky přístupu
         title: Ověření bydliště
         verify_residence: Ověření bydliště
     sms:
