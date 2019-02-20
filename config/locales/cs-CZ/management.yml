@@ -3,12 +3,23 @@ cs:
     account:
       menu:
         reset_password_email: Obnovit heslo emailem
+        reset_password_manually: Ručně obnovit heslo
+      show:
+        title: Uživatelský účet
       edit:
+        title: 'Upravit uživatelský účet: obnovení hesla'
         back: Zpět
         password:
           password: Heslo
+          send_email: Odeslat e-mail pro obnovení hesla
+          reset_email_send: E-mail byl úspěšně odeslán.
+          reseted: Heslo bylo úspěšně resetováno
           random: Vytvořit náhodné heslo
+          save: Uložit heslo
+          print: Tisknout heslo
+          print_help: Když je heslo uložené, můžete ho vytisknout.
     account_info:
+      change_user: Změnit uživatele
       username_label: 'Uživatelské jméno:'
     dashboard:
       index:
