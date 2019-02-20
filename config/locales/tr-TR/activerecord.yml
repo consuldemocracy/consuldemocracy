@@ -13,6 +13,9 @@ tr:
       milestone:
         one: "kilometre taşı"
         other: "kilometre taşları"
+      milestone/status:
+        one: "Kilometre Taşı Durumu"
+        other: "Kilometre Taşı Durumları"
       progress_bar:
         one: "İlerleme çubuğu"
         other: "İlerleme çubukları"
@@ -238,8 +241,64 @@ tr:
         draft_start_date: Taslak başlangıç tarihi
         draft_end_date: Taslak bitiş tarihi
         draft_publication_date: Taslak yayın tarihi
+        allegations_start_date: İddialar başlangıç tarihi
+        allegations_end_date: İddialar bitiş tarihi
+        result_publication_date: Son sonuç yayın tarihi
+        background_color: Arka plan rengi
+        font_color: Yazı tipi rengi
+      legislation/process/translation:
+        title: İşlem Adı
+        summary: Özet
+        description: Tanımlama
+        additional_info: Ek bilgi
+        milestones_summary: Özet
+      legislation/draft_version:
+        title: Sürüm adı
+        body: Metin
+        changelog: Değişiklikler
+        status: Durum
+        final_version: Son sürüm
+      legislation/draft_version/translation:
+        title: Sürüm adı
+        body: Metin
+        changelog: Değişiklikler
+      legislation/question:
+        title: İsim
+        question_options: Seçenekler
+      legislation/question_option:
+        value: Değer
       legislation/annotation:
         text: Yorum
+      document:
+        title: İsim
+        attachment: Ek dosya
+      image:
+        title: İsim
+        attachment: Ek dosya
+      poll/question/answer:
+        title: Cevap
+        description: Tanımlama
+      poll/question/answer/translation:
+        title: Cevap
+        description: Tanımlama
+      poll/question/answer/video:
+        title: İsim
+        url: Harici video
+      newsletter:
+        segment_recipient: Alıcılar
+        subject: Konu
+        from: Kaynak
+        body: E-posta içeriği
+      admin_notification:
+        segment_recipient: Alıcılar
+        title: İsim
+        link: Bağlantı
+        body: Metin
+      admin_notification/translation:
+        title: İsim
+        body: Metin
+      widget/card:
+        label: Etiket (isteğe bağlı)
       widget/card/translation:
         link_text: Bağlantı metni
       widget/feed:
@@ -263,3 +322,65 @@ tr:
             attachment:
               min_image_width: "Görüntü Genişliği en az %{required_min_width}px olmalıdır"
               min_image_height: "Görüntü Yüksekliği en az %{required_min_height}px olmalıdır"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Kullanıcı alıcıları bölümü geçersizdir"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Kullanıcı alıcıları bölümü geçersiz"
+        map_location:
+          attributes:
+            map:
+              invalid: Harita konumu boş olamaz. Coğrafi konum belirleme gerekli değilse bir işaretleyici yerleştirin veya onay kutusunu işaretleyin
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Belge sayımda değil"
+              has_voted: "Kullanıcı zaten oylanmış"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: başlangıç tarihi sonrasında veya sırasında olmalıdır
+            debate_end_date:
+              invalid_date_range: tartışma başlangıç tarihi sonrasında veya sırasında olmalıdır
+            draft_end_date:
+              invalid_date_range: taslak başlangıç tarihi sonrasında veya sırasında olmalıdır
+            allegations_end_date:
+              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalı
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Bildirimler arasında en az %{interval} gün beklemeniz gerekir"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Census tarafından doğrulanmadı'
+              already_voted: 'Bu öneri zaten oylandı'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "harfler, sayılar, _ ve - olmalıdır"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Genişlik %{required_width}px olmalı"
+              image_height: "Yükseklik %{required_height}px olmalı"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Bir değerlendirmeye yorum yapamazsınız'
+      messages:
+        record_invalid: "Onaylama başarısız: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Bir bağlı %{record} bulunduğundan kayıt silinemiyor"
+          has_many: "Bağlı %{record} bulunduğundan kayıt silinemiyor"
