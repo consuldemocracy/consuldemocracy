@@ -107,6 +107,8 @@ cs:
         debate_phase_not_open: Fáze debaty skončila a odpovědi již nejsou přijímány
     shared:
       share: Sdílet
+      share_comment: Komentář k %{version_name} z fáze návrhu %{process_name}
     proposals:
       form:
         tags_label: "Kategorie"
+      not_verified: "Pro hlasování o návrzích %{verify_account}."
