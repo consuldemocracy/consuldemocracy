@@ -136,6 +136,7 @@ cs:
         selection:
           "true": Vybrané
         winner:
+          title: Vítěz
           "true": "Ano"
           "false": "Ne"
         image: "Image"
@@ -145,8 +146,12 @@ cs:
         see_documents: "Viz dokumenty (%{count})"
       edit:
         classification: Klasifikace
+        selection: Výběr
+        select_heading: Vyberte záhlaví
         submit_button: Aktualizovat
         tags: Štítky
+        undefined: Nedefinováno
+        user_groups: "Skupiny"
     milestones:
       index:
         table_id: "ID"
@@ -164,7 +169,10 @@ cs:
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
       new:
+        date: Datum
         description: Description
+      edit:
+        title: Upravit fázi
     statuses:
       index:
         title: Investment statuses
@@ -194,12 +202,23 @@ cs:
         table_id: "ID"
         table_kind: "Typ"
         table_title: "Předmět"
+        table_percentage: "Aktuální pokrok"
+      new:
+        creating: "Vytvořit nový ukazatel průběhu"
+      edit:
+        title:
+          primary: "Upravit hlavní ukazatel průběhu"
     comments:
       index:
         filter: Filtr
         filters:
           all: Vše
+          with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
+        hidden_debate: Skrýt debatu
+        hidden_proposal: Skrýt návrh
+        title: Skrýt komentáře
+        no_hidden_comments: Neexistují žádné skryté komentáře.
     dashboard:
       index:
         back: Přejít zpět na %{org}
@@ -222,6 +241,7 @@ cs:
         filter: Filtr
         filters:
           all: Vše
+          with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
     legislation:
       processes:
@@ -258,6 +278,7 @@ cs:
           delete: Smazat
           title: Legislativní procesy
           filters:
+            active: Aktivní
             all: Vše
         new:
           back: Zpět
@@ -266,12 +287,14 @@ cs:
         proposals:
           select_order: Třídit podle
           orders:
+            id: Id
             title: Předmět
             supports: Podpora
         process:
           title: Proces
           comments: Komentáře
           status: Status
+          start_date: Počáteční datum
           status_open: Otevřené
           status_closed: Uzavřené
           status_planned: Plánované
@@ -370,15 +393,25 @@ cs:
         name: Název
         email: Email
       manager:
+        add: Přidat
         delete: Smazat
+      search:
+        title: 'Manažeři: Vyhledávání uživatelů'
     menu:
       activity: Aktivity moderátora
       poll_questions: Otázky
       proposals: Návrhy
       budgets: Participativní rozpočty
+      managers: Manažeři
+      moderators: Moderátoři
+      messaging_users: Zprávy uživatelům
+      newsletters: Informační bulletiny
       admin_notifications: Upozornění
+      system_emails: Systémové e-maily
+      valuators: Hodnotitelé
       polls: Průzkum
       organizations: Organizace
+      settings: Hlavní nastavení
       stats: Statistiky
       site_customization:
         homepage: Úvodní strana
@@ -387,10 +420,13 @@ cs:
           community: "Připojte se ke komunitě"
           proposals: "Návrhy"
           polls: "Průzkum"
+          mailers: "E-maily"
           management: "Správa"
           welcome: "Vítejte"
         buttons:
           save: "Uložit"
+          content_block:
+            update: "Aktualizace bloku"
       title_polls: Průzkum
       users: Uživatelé
     administrators:
@@ -398,9 +434,11 @@ cs:
         name: Název
         email: Email
       administrator:
+        add: Přidat
         delete: Smazat
     moderators:
       index:
+        title: Moderátoři
         name: Název
         email: Email
       moderator:
