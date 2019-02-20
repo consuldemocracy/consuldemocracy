@@ -13,15 +13,45 @@ tr:
       milestone:
         one: "kilometre taşı"
         other: "kilometre taşları"
+      progress_bar:
+        one: "İlerleme çubuğu"
+        other: "İlerleme çubukları"
       comment:
         one: "Yorum"
         other: "Yorumlar"
+      debate:
+        one: "Tartışma"
+        other: "Tartışmalar"
+      tag:
+        one: "Etiket"
+        other: "Etiketler"
+      user:
+        one: "Kullanıcı"
+        other: "Kullanıcılar"
+      moderator:
+        one: "Moderatör"
+        other: "Moderatörler"
       administrator:
         one: "Yönetici"
         other: "Yöneticiler"
+      valuator:
+        one: "Bilirkişi"
+        other: "Bilirkişiler"
+      valuator_group:
+        one: "Bilirkişi grubu"
+        other: "Bilirkişi grupları"
+      manager:
+        one: "Yönetici"
+        other: "Yöneticiler"
+      newsletter:
+        one: "Bülten"
+        other: "Bültenler"
       vote:
         one: "Oy"
         other: "Oylar"
+      organization:
+        one: "Organizasyon"
+        other: "Organizasyonlar"
     attributes:
       budget/investment:
         administrator_id: "Yönetici"
