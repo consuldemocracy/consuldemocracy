@@ -224,8 +224,45 @@ tr:
         title: Yönetim
     legislation:
       processes:
+        form:
+          draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
+          allegations_phase: Aşama yorumları
+          proposals_phase: Öneriler aşaması
+          start: Başlat
+          end: Bitir
+          use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
+          title_placeholder: İşlem başlığı
+          summary_placeholder: Tanımlamanın kısa özeti
+          description_placeholder: Bir işlem tanımlaması ekle
+          additional_info_placeholder: Yararlı olduğunu düşündüğünüz bir ek bilgi ekleyin
+          homepage: Tanımlama
+          homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
+          homepage_enabled: Ana sayfa etkinleştirildi
+          banner_title: Başlık renkleri
+          color_help: Onaltılık format
+        index:
+          create: Yeni işlem
+          delete: Sil
+          title: Mevzuat işlemleri
+          filters:
+            active: Aktif
+            all: Tüm
+        new:
+          back: Geri
+          title: Yeni katılımcı mevzuat süreci oluşturun
+          submit_button: İşlem oluşturma
+        proposals:
+          select_order: Sıralama ölçütü
+          orders:
+            id: Kimlik
+            title: İsim
+            supports: Tam destek
         process:
+          title: İşlem
           comments: Yorumlar
+          status: Durum
+          start_date: Başlangıç tarihi
+          end_date: Bitiş tarihi
           status_open: Açık
       draft_versions:
         table:
