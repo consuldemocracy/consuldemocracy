@@ -5,6 +5,26 @@ class DeviseMailer < Devise::Mailer
   default from: "#{Setting["mailer_from_name"]} <#{Setting["mailer_from_address"]}>"
   default reply_to: "#{Setting["mailer_from_name"]} <#{Setting["mailer_from_address"]}>"
 
+  def default_url_options
+    dup = Rails.application.config.action_mailer.default_url_options
+    if Apartment::Tenant.current != "public"
+        tenant = Tenant.find_by(subdomain: Apartment::Tenant.current)
+        dup = { host: "#{tenant.subdomain}.#{tenant.server_name}" }
+    end
+    
+    return dup
+  end
+  
+  def asset_host
+    ah = Rails.application.config.action_mailer.asset_host
+    if Apartment::Tenant.current != "public"
+        tenant = Tenant.find_by(subdomain: Apartment::Tenant.current)
+        ah = "#{tenant.subdomain}.#{tenant.server_name}"
+    end
+    
+    return ah
+  end
+  
   protected
 
   def devise_mail(record, action, opts = {})

@@ -1489,6 +1489,7 @@ es:
         institution_code_census: Código Institución
         portal_name_census: Código Portal
         user_code_census: Código Usuario
+        server_name: Nombre servidor
       create:
         success: Entidad creada correctamente
       update:

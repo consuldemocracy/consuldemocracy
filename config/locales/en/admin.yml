@@ -1490,6 +1490,7 @@ en:
         institution_code_census: Institution code
         portal_name_census: Portal code
         user_code_census: User code
+        server_name: Server name
       create:
         success: Tenant created successfully
       update:

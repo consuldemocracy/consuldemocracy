@@ -2,22 +2,29 @@
 
   <%= render "errors" %>
 
-  <div clas="row">
+  <div class="row">
     <div class="small-12 medium-6 large-4 column">
       <%= f.label :name, t("admin.tenants.tenant.name") %>
       <%= f.text_field :name, label: false %>
     </div>
-    <div class="small-12 medium-6 large-4 column">
+    <div class="small-12 medium-6 column">
       <%= f.label :title, t("admin.tenants.tenant.title") %>
       <%= f.text_field :title, label: false %>
     </div>
     <div class="small-12 medium-6 large-2 column">
+      <%= f.label :postal_code, t("admin.tenants.tenant.postal_code") %>
+      <%= f.text_field :postal_code, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-4 column">
       <%= f.label :subdomain, t("admin.tenants.tenant.subdomain") %>
       <%= f.text_field :subdomain, label: false, :readonly => !change_subdomain?(@tenant) %>
     </div>
-    <div class="small-12 medium-6 large-2 column">
-      <%= f.label :postal_code, t("admin.tenants.tenant.postal_code") %>
-      <%= f.text_field :postal_code, label: false %>
+    <div class="small-12 medium-8 column">
+      <%= f.label :server_name, t("admin.tenants.tenant.server_name") %>
+      <%= f.text_field :server_name, label: false %>
     </div>
   </div>
 
