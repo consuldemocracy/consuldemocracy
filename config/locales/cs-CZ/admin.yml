@@ -444,18 +444,35 @@ cs:
       moderator:
         delete: Smazat
     newsletters:
+      update_success: Informační bulletin byl úspěšně aktualizován
+      send_success: Informační bulletin byl úspěšně odeslán
+      delete_success: Informační bulletin byl úspěšně smazán
       index:
+        title: Informační bulletin
+        new_newsletter: Nový informační bulletin
         subject: Subject
         segment_recipient: Recipients
+        sent: Odesláno
         actions: Akce
         draft: Pracovní verze
         edit: Upravit
         delete: Smazat
         preview: Náhled
+        empty_newsletters: Žádné informační bulletiny k zobrazení
+      new:
+        title: Nový informační bulletin
+        from: E-mailová adresa odesílatele informačního bulletinu
+      edit:
+        title: Upravit informační bulletin
       show:
+        title: Náhled informačního bulletinu
+        send: Odeslat
+        sent_at: Odesláno v čase
         subject: Subject
         segment_recipient: Recipients
+        from: E-mailová adresa odesílatele informačního bulletinu
         body: Email content
+        body_help_text: To je jak uživatelé uvidí e-mail
     admin_notifications:
       index:
         section_title: Upozornění
@@ -495,17 +512,28 @@ cs:
     valuator_groups:
       index:
         name: "Název"
+      form:
+        name: "Název skupiny"
+        new: "Vytvořit skupinu hodnotitelů"
+        edit: "Uložit skupinu hodnotitelů"
     poll_officers:
       officer:
+        add: Přidat
         name: Název
         email: Email
+        entry_name: úředník
       search:
+        email_placeholder: Vyhledat uživatele podle emailu
         search: Vyhledat
         user_not_found: Uživatel nenalezen
     poll_officer_assignments:
       index:
+        officers_title: "Seznam úředníků"
         table_name: "Název"
         table_email: "Email"
+      by_officer:
+        date: "Datum"
+        booth: "Oba"
     poll_shifts:
       new:
         search_officer_button: Vyhledat
@@ -628,7 +656,9 @@ cs:
         map:
           form:
             submit: Aktualizovat
+      setting: Vlastnosti
       setting_actions: Akce
+      setting_name: Nastavení
       setting_status: Status
       setting_value: Value
       no_description: "Bez popisu"
@@ -648,6 +678,7 @@ cs:
       user_search:
         button: Vyhledat
       search_results: "Výsledky vyhledávání"
+      no_search_results: "Nebyly nalezeny žádné výsledky."
       actions: Akce
       title: Předmět
       description: Description
@@ -662,6 +693,9 @@ cs:
       delete: Smazat
     spending_proposals:
       index:
+        geozone_filter_all: Všechny oblasti
+        administrator_filter_all: Všichni administrátoři
+        valuator_filter_all: Všichni hodnotitelé
         tags_filter_all: Všechny štítky
         filters:
           valuation_open: Otevřené
@@ -780,6 +814,8 @@ cs:
             error: Chyba
         form:
           options: Options
+        index:
+          delete: Smazat stránku
         page:
           created_at: Vytvořeno v
           status: Status
@@ -806,3 +842,6 @@ cs:
         proposals: Návrhy
         debates: Debaty
         processes: Procesy
+      new:
+        header_title: Nové záhlaví
+        submit_header: Vytvořit záhlaví
