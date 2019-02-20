@@ -20,17 +20,43 @@ cs:
           print_help: Když je heslo uložené, můžete ho vytisknout.
     account_info:
       change_user: Změnit uživatele
+      document_number_label: 'Číslo dokladu:'
+      document_type_label: 'Typ dokladu:'
+      email_label: 'E-mail:'
+      identified_label: 'Identifikován jako:'
       username_label: 'Uživatelské jméno:'
+    check: Zkontrolovat doklad
     dashboard:
       index:
         title: Správa
+    document_number: Číslo dokladu
     document_type_label: Typ dokumentu
+    document_verifications:
+      already_verified: Tento uživatelský účet je již ověřen.
+      has_no_account_html: Chcete-li vytvořit účet, přejděte na %{link} a klepněte na tlačítko <b>'Registrace'</b> v levé horní části obrazovky.
+      link: CONSUL
+      in_census_has_following_permissions: 'Tento uživatel se může zapojovat s následujícími oprávněními:'
+      not_in_census: Tento doklad není registrován.
+      not_in_census_info: 'Občané neověření v základních registrech se mohou zapojovat s následujícími oprávněními:'
+      please_check_account_data: Zkontrolujte prosím správnost výše uvedených údajů účtu.
+      title: Správa uživatelů
+      under_age: "Nemáte požadovaný věk pro ověření účtu."
+      verify: Ověřit
     email_label: Email
     date_of_birth: Datum narození
+    email_verifications:
+      already_verified: Tento uživatelský účet již ověřen.
+      choose_options: 'Vyberte jednu z následujících možností:'
+      document_found_in_census: Tento doklad byl úspěšně ověřen v základních registrech, ale nemá přidružený žádný uživatelský účet.
     menu:
       create_proposal: Vytvořit návrh
       print_proposals: Tisk návrhů
       support_proposals: Podpora návrhů
+      create_spending_proposal: Vytvořit nový návrh
+      create_budget_investment: Přidat investiční projekt
+      users: Správa uživatelů
+      user_invites: Odeslat pozvánky
+      select_user: Vybrat uživatele
     permissions:
       create_proposals: Vytvořit návrhy
       support_proposals: Podpora návrhů
