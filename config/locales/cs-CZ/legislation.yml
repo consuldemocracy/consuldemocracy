@@ -47,6 +47,7 @@ cs:
           random: Náhodné pořadí
           winners: Vybrané
       debate:
+        empty_questions: Nejsou k dispozici žádné otázky
         participate: Účastnit se dabaty
       index:
         filter: Filtr
@@ -56,6 +57,7 @@ cs:
         no_open_processes: Neexistují otevřené procesy
         no_past_processes: Neexistují ukončené procesy
         section_header:
+          icon_alt: Právní procesy - ikona
           title: Legislativní procesy
           help: Nápověda pro legislativní procesy
         section_footer:
@@ -99,6 +101,8 @@ cs:
         organizations: Organizacím není dovoleno účastnit se v debatě
         signin: Přihlásit se
         signup: Registrujte se!
+        unauthenticated: Chcete-li se zapojit, musíte se %{signin} nebo %{signup}.
+        verified_only: Pouze ověření uživatelé se mohou zapojit, %{verify_account}.
         verify_account: ověřte Váš účet
         debate_phase_not_open: Fáze debaty skončila a odpovědi již nejsou přijímány
     shared:
