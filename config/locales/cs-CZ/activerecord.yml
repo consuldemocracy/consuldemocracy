@@ -80,11 +80,17 @@ cs:
         image_title: "Nadpis obrázku"
       milestone:
         title: "Předmět"
+        publication_date: "Datum publikace"
       milestone/status:
         name: "Název"
+        description: "Popis (volitelné)"
       progress_bar:
         kind: "Typ"
         title: "Předmět"
+        percentage: "Aktuální pokrok"
+      progress_bar/kind:
+        primary: "Primární"
+        secondary: "Sekundární"
       budget/heading:
         name: "Název záhlaví"
         price: "Cena"
@@ -177,10 +183,14 @@ cs:
         end_date: Konečné datum
         debate_start_date: Debate start date
         debate_end_date: Debate end date
+        draft_start_date: Návrh počátečního data
+        draft_end_date: Datum konce návrhu
         draft_publication_date: Datum návrhu publikace
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         result_publication_date: Publikace konečného výsledku
+        background_color: Barva pozadí
+        font_color: Barva písma
       legislation/process/translation:
         title: Název procesu
         summary: Souhrn
@@ -238,6 +248,7 @@ cs:
         description: Description
         link_text: Link text
         link_url: Link URL
+        columns: Počet sloupců
       widget/card/translation:
         label: Label (optional)
         title: Předmět
@@ -287,6 +298,8 @@ cs:
               invalid_date_range: must be on or after the start date
             debate_end_date:
               invalid_date_range: must be on or after the debate start date
+            draft_end_date:
+              invalid_date_range: musí být v datum zahájení nebo pozdější
             allegations_end_date:
               invalid_date_range: must be on or after the allegations start date
         proposal:
