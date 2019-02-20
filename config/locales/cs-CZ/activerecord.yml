@@ -79,7 +79,9 @@ cs:
         image: "Proposal názorný obrázek"
         image_title: "Nadpis obrázku"
       milestone:
+        status_id: "Aktuální stav (volitelné)"
         title: "Předmět"
+        description: "Popis (volitelné, jestliže je stav přiřazen)"
         publication_date: "Datum publikace"
       milestone/status:
         name: "Název"
