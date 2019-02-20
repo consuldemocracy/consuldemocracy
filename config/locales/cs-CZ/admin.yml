@@ -75,10 +75,14 @@ cs:
         edit_budget: Upravit rozpočet
         no_budgets: "Neexistují žádné rozpočty."
       edit:
+        delete: Odstranit rozpočet
         phase: Fáze
+        dates: Kalendářní data
         enabled: Povolit
         actions: Akce
+        edit_phase: Upravit fázi
         active: Aktivní
+        blank_dates: Data jsou prázdné
     budget_groups:
       name: "Název"
     budget_headings:
@@ -102,12 +106,15 @@ cs:
         save_changes: Uložit změny
     budget_investments:
       index:
+        valuator_filter_all: Všichni hodotitelé
         tags_filter_all: Všechny štítky
+        advanced_filters: Pokročilé filtry
         placeholder: Prohledat projekty
         filters:
           all: Vše
           selected: Vybrané
           unfeasible: Nerealizovatelné
+          winners: Vítězové
         buttons:
           filter: Filtr
         title: Investiční projekty
@@ -120,6 +127,7 @@ cs:
           title: Předmět
           supports: Podpora
           admin: Administrátor
+          valuator: Hodnotitel
           geozone: Vymezení oblasti města
           selected: Vybrané
           author_username: Uživatelské jméno autora
@@ -147,6 +155,7 @@ cs:
       edit:
         classification: Klasifikace
         selection: Výběr
+        assigned_valuators: Hodnotitel
         select_heading: Vyberte záhlaví
         submit_button: Aktualizovat
         tags: Štítky
@@ -228,14 +237,18 @@ cs:
         filter: Filtr
         filters:
           all: Vše
+          with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
     hidden_users:
       index:
         filter: Filtr
         filters:
           all: Vše
+          with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
         user: User
+      show:
+        email: 'Email:'
     hidden_budget_investments:
       index:
         filter: Filtr
@@ -479,6 +492,7 @@ cs:
         new_notification: Nové upozornění
         title: Předmět
         segment_recipient: Recipients
+        sent: Odesláno
         actions: Akce
         draft: Pracovní verze
         edit: Upravit
@@ -487,24 +501,35 @@ cs:
         view: Zobrazit
       new:
         section_title: Nové upozornění
+        submit_button: Vytvořit upozornění
+      edit:
+        section_title: Upravit upozornění
+        submit_button: Aktualizovat upozornění
       show:
+        section_title: Náhled upozornění
         send: Odeslat upozornění
+        sent_at: Odesláno v čase
         title: Předmět
         body: Text
         link: Odkaz
         segment_recipient: Recipients
     valuators:
       index:
+        title: Hodnotitelé
         name: Název
         email: Email
         description: Description
         no_description: Bez popisu
         group: "Skupina"
+        no_group: "Žádná skupina"
       valuator:
+        add: Přidat k hodnotitelům
         delete: Smazat
       summary:
+        valuator_name: Hodnotitel
         finished_count: Dokončené
         total_count: Celkem
+        cost: Náklady
       show:
         description: "Description"
         email: "Email"
@@ -536,9 +561,18 @@ cs:
         booth: "Oba"
     poll_shifts:
       new:
+        date: "Datum"
+        task: "Úkol"
+        officer: "Úředník"
         search_officer_button: Vyhledat
+        select_task: "Vybrat úkol"
         table_email: "Email"
         table_name: "Název"
+    booth_assignments:
+      manage:
+        status:
+          assigned: Přiřazeno
+          unassigned: Nepřiřazeno
     poll_booth_assignments:
       show:
         results: "Výsledky"
@@ -845,3 +879,13 @@ cs:
       new:
         header_title: Nové záhlaví
         submit_header: Vytvořit záhlaví
+        card_title: Nová karta
+        submit_card: Vytvořit kartu
+      edit:
+        header_title: Upravit záhlaví
+        submit_header: Uložit záhlaví
+        card_title: Upravit kartu
+        submit_card: Uložit kartu
+    translations:
+      remove_language: Odstranit jazykovou sadu
+      add_language: Přidat jazykovou sadu
