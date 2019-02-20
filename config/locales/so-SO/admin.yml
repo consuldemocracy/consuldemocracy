@@ -379,7 +379,6 @@ so:
           delete: Titiriid
           title: Nidaamka Sharciga
           filters:
-            open: Furan
             all: Dhamaan
         new:
           back: Labasho
@@ -395,7 +394,6 @@ so:
           title: Geedisocoodka
           comments: Faalo
           status: Status
-          creation_date: Tarikh Abuurid
           status_open: Furan
           status_closed: Xiraan
           status_planned: Qorsheysaan
