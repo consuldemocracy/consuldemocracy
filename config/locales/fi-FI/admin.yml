@@ -264,7 +264,6 @@ fi:
           create: Uusi prosessi
           delete: Poista
           filters:
-            open: Avaa
             all: Kaikki
         new:
           back: Takaisin
