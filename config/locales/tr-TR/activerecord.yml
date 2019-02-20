@@ -299,7 +299,15 @@ tr:
         body: Metin
       widget/card:
         label: Etiket (isteğe bağlı)
+        title: İsim
+        description: Tanımlama
+        link_text: Bağlantı metni
+        link_url: Bağlantı Adresi
+        columns: Sütunların sayısı
       widget/card/translation:
+        label: Etiket (isteğe bağlı)
+        title: İsim
+        description: Tanımlama
         link_text: Bağlantı metni
       widget/feed:
         limit: Öğelerin sayısı
