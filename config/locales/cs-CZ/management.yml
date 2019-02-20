@@ -55,21 +55,32 @@ cs:
       email_placeholder: Napište e-mail, který tato osoba použila při vytváření svého účtu
       email_sent_instructions: Za účelem úplného ověření tohoto uživatele je nutné, aby uživatel kliknul na odkaz, který jsme odeslali na výše uvedenou e-mailovou adresu. Tento krok je nutný k potvrzení, že mu emailová adresa patří.
       if_existing_account: Pokud má uživatel již vytvořen uživatelský účet na webu,
+      if_no_existing_account: Pokud tato osoba dosud nevytvořila účet
+      introduce_email: 'Vložte e-mail, používaný účtem:'
       send_email: Odeslat ověřovací e-mail
     menu:
       create_proposal: Vytvořit návrh
       print_proposals: Tisk návrhů
       support_proposals: Podpora návrhů
       create_spending_proposal: Vytvořit nový návrh
+      print_spending_proposals: Vytiskněte návrhy výdajů
+      support_spending_proposals: Podpořte návrhy výdajů
       create_budget_investment: Přidat investiční projekt
+      print_budget_investments: Vytiskněte investice rozpočtu
+      support_budget_investments: Podpořte investice rozpočtu
       users: Správa uživatelů
       user_invites: Odeslat pozvánky
       select_user: Vybrat uživatele
     permissions:
       create_proposals: Vytvořit návrhy
+      debates: Zapojte se do debat
       support_proposals: Podpora návrhů
+      vote_proposals: Hlasujte o návrzích
     print:
+      proposals_info: Vytvořte svůj návrh na http://url.consul
       proposals_title: 'Návrhy:'
+      spending_proposals_info: Zapojte se na http://url.consul
+      budget_investments_info: Zapojte se na http://url.consul
     print_info: Vytisknout tuto informaci
     proposals:
       alert:
@@ -80,18 +91,34 @@ cs:
       index:
         title: Podpora návrhů
     budgets:
+      create_new_investment: Vytvořte investici rozpočtu
+      print_investments: Vytiskněte investice rozpočtu
+      support_investments: Podpořte investice rozpočtu
       table_name: Název
       table_phase: Fáze
       table_actions: Akce
+      no_budgets: Neexistují žádné aktivní participativní rozpočty.
     budget_investments:
+      alert:
+        unverified_user: Uživatel není ověřen
       create: Přidat investiční projekt
+      filters:
+        heading: Koncepce
+        unfeasible: Nerealizovatelná investuce
       print:
         print_button: Tisk
     spending_proposals:
+      alert:
+        unverified_user: Uživatel není ověřen
       print:
         print_button: Tisk
+    sessions:
+      signed_out: Odhlášení bylo úspěšné.
+      signed_out_managed_user: Uživatelská relace byla úspěšně odhlášená.
     username_label: Uživatelské jméno
     users:
+      create_user: Vytvořit nový účet
+      create_user_submit: Vytvořit uživatele
       email_optional_label: E-mail (volitelné)
       erased_notice: Uživatelský účet byl smazán.
       erased_by_manager: "Smazáno manažerem: %{manager}"
