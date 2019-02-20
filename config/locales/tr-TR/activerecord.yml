@@ -211,7 +211,55 @@ tr:
         slug: Parça
         status: Durum
         title: İsim
+        updated_at: Güncellenmiş
+        more_info_flag: Yardım sayfasında göster
+        print_content_flag: İçerik yazdır düğmesi
+        locale: Dil
+      site_customization/page/translation:
+        title: İsim
+        subtitle: Altyazı
+        content: İçerik
       site_customization/image:
+        name: Ad
         image: Fotoğraf
+      site_customization/content_block:
+        name: Ad
+        locale: yer
+        body: Gövde
+      legislation/process:
+        title: İşlem Adı
+        summary: Özet
+        description: Tanımlama
+        additional_info: Ek bilgi
+        start_date: Başlangıç tarihi
+        end_date: Bitiş tarihi
+        debate_start_date: Tartışma başlangıç tarihi
+        debate_end_date: Tartışma bitiş tarihi
+        draft_start_date: Taslak başlangıç tarihi
+        draft_end_date: Taslak bitiş tarihi
+        draft_publication_date: Taslak yayın tarihi
       legislation/annotation:
         text: Yorum
+      widget/card/translation:
+        link_text: Bağlantı metni
+      widget/feed:
+        limit: Öğelerin sayısı
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Bu kullanıcının zaten bir şifresi var"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketler %{count} 'tan küçük veya ona eşit olmalıdır"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Günlük maksimum özel mesaj sayısına ulaştınız"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Görüntü Genişliği en az %{required_min_width}px olmalıdır"
+              min_image_height: "Görüntü Yüksekliği en az %{required_min_height}px olmalıdır"
