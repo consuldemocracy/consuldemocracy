@@ -440,7 +440,6 @@ gl:
           delete: Borrar
           title: Procesos lexislativos
           filters:
-            open: Abertas
             all: Todo
         new:
           back: Volver
@@ -456,7 +455,6 @@ gl:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Data de creación
           status_open: Abertas
           status_closed: Pechado
           status_planned: Planificado
