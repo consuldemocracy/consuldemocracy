@@ -378,7 +378,6 @@ sv:
           delete: Ta bort
           title: Dialoger
           filters:
-            open: Öppna
             all: Alla
         new:
           back: Tillbaka
@@ -393,7 +392,6 @@ sv:
           title: Process
           comments: Kommentarer
           status: Status
-          creation_date: Skapad den
           status_open: Öppna
           status_closed: Avslutad
           status_planned: Planerad
