@@ -1874,6 +1874,24 @@ feature 'Budget Investments' do
         expect(page).to have_css(".map-icon", count: 0, visible: false)
       end
     end
+
+    scenario "Shows all investments and not only the ones on the current page", :js do
+      stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 2)
+
+      3.times do
+        create(:map_location, investment: create(:budget_investment, heading: heading))
+      end
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within("#budget-investments") do
+        expect(page).to have_css(".budget-investment", count: 2)
+      end
+
+      within(".map_location") do
+        expect(page).to have_css(".map-icon", count: 3, visible: false)
+      end
+    end
   end
 
 end
