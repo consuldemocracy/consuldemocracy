@@ -265,7 +265,7 @@ nl:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: Je moet minstens %{interval} dagen wachten tussen meldingen
+              invalid: Je dient minstens %{interval} dagen te wachten tussen meldingen
         signature:
           attributes:
             document_number:

@@ -7,7 +7,7 @@ nl:
         different_heading_assigned_html: 'Je hebt al gestemd in een andere rubriek: %{heading_link}'
         no_ballots_allowed: De selectiefase is voorbij
         not_enough_money_html: U hebt al het beschikbare budget toegewezen. <br><small>U kunt op elk gewenst moment %{change_ballot}</small>
-        not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
+        not_logged_in: Je dient %{signin} of %{signup} om verder te gaan.
         not_selected: Niet-geselecteerde begrotingsvoorstellen kunnen niet worden gesteund
         not_verified: Alleen geverrifieerde deelnemers kunnen op begrotingsvoorstellen stemmen; %{verify_account}.
         organization: Organisaties mogen niet stemmen

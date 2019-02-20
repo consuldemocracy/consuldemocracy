@@ -169,7 +169,7 @@ nl:
       comments_title: Comments
       edit_debate_link: Edit
       flag: Verschillende mensen vinden de inhoud ongepast.
-      login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
+      login_to_comment: Je dient %{signin} of %{signup} om te reageren.
       share: Deel
     update:
       form:
@@ -220,10 +220,10 @@ nl:
       accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
       consul: Consul
-      consul_url: https://github.com/consul/consul
-      contact_us: Neem voor technische ondersteuning contact op met de beheerder
+      consul_url: https://github.com/codefornl/consul
+      contact_us: Neem voor technische ondersteuning contact op met de beheerder.
       copyright: Consul, %{year}
-      description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
+      description: Dit systeem is mogelijk gemaakt door %{consul}, een %{open_source} platform.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Beslis mee over de vormgeving en beleid in uw gemeente.
@@ -251,7 +251,7 @@ nl:
         no_notifications: U heeft geen nieuwe meldingen
         notifications: Notificaties
       officing: Stembureau
-      open_gov: Open bestuur
+      open_gov: Informatie
       poll_questions: Peilingen
       proposals: "Ideeën"
       spending_proposals: Begrotingsvoorstellen
@@ -321,7 +321,7 @@ nl:
       geozone_restricted: Regio's
       no_geozone_restricted: Hele stad
       no_polls: Er zijn geen actuele peilingen.
-      not_logged_in: Je moet aanmelden of registreren om deel te nemen
+      not_logged_in: Je dient aan te melden of te registreren om deel te nemen
       participate_button: Neem deel aan de peiling
       participate_button_expired: Peiling is gearchiveerd
       section_footer:
@@ -340,12 +340,12 @@ nl:
       back: Terug naar stemmen
       cant_answer_expired: Deze stemronde is voorbij.
       cant_answer_not_logged_in: Je dient %{signin} of %{signup} om deel te nemen.
-      cant_answer_verify_html: Je moet %{verify_link} om te kunnen antwoorden.
+      cant_answer_verify_html: Je moet %{verify_link} om te antwoorden.
       cant_answer_wrong_geozone: Deze vraag wordt niet behandeld in uw regio
       comments_tab: Comments
       documents: Documenten
       info_menu: Informatie
-      login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
+      login_to_comment: Je dient %{signin} of %{signup} om te reageren.
       more_info_title: Meer informatie
       read_less: Lees minder over %{answer}
       read_more: Lees meer over %{answer}
@@ -525,7 +525,7 @@ nl:
       edit_proposal_link: Edit
       embed_video_title: Video voor %{proposal}
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
-      login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
+      login_to_comment: Je dient %{signin} of %{signup} om te reageren.
       milestones_tab: Mijlpalen
       no_notifications: Dit voorstel heeft geen meldingen.
       notifications_tab: Notificaties
@@ -782,7 +782,7 @@ nl:
       different_heading_assigned:
         one: Je kunt alleen in %{count} regio investeringsprojecten steunen
         other: Je kunt alleen in %{count} regio's investeringsprojecten steunen
-      not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
+      not_logged_in: Je dient %{signin} of %{signup} om verder te gaan.
       not_verified: Alleen geverifieerde gebruikers mogen stemmen op begrotingsvoorstellen; %{verify_account}.
       not_voting_allowed: Stemronde is gesloten.
       organization: Organisaties mogen niet stemmen
@@ -793,13 +793,13 @@ nl:
     signin: aan te melden
     signup: te registreren
     spending_proposals:
-      not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
+      not_logged_in: Je dient %{signin} of %{signup} om verder te gaan.
       not_verified: Alleen geverifieerde gebruikers kunnen ideeën steunen; %{verify_account}.
       not_voting_allowed: Stemronde is gesloten
       organization: Organisaties mogen niet stemmen
       unfeasible: Onhaalbare ideeën kunnen niet worden gesteund
     supports: Steunt
-    unauthenticated: Je moet %{signin} of %{signup} om verder te gaan.
+    unauthenticated: Je dient %{signin} of %{signup} om verder te gaan.
     verified_only: Alleen geverifieerde deelnemers kunnen ideeën steunen; %{verify_account}.
     verify_account: je account verifieren
   welcome:
