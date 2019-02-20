@@ -1,10 +1,20 @@
 cs:
   settings:
+    url: "Hlavní URL"
+    url_description: "Hlavní URL vašeho webu"
+    org_name: "Organizace"
+    org_name_description: "Název vaší organizace"
     place_name: "Místo"
     place_name_description: "Název vašeho města"
     map_latitude: "Zeměpisná šířka"
     map_longitude: "Zeměpisná délka"
     map_zoom: "Zvětšení"
+    mailer_from_name: "Jméno odesílatele"
+    mailer_from_name_description: "Toto jméno se objeví v emailech odesílaných aplikací"
+    mailer_from_address: "E-mailová adresa odesílatele"
+    meta_title: "Název stránek (SEO)"
+    meta_description: "Popis stránek (SEO)"
+    meta_keywords: "Klíčová slova (SEO)"
     feature:
       budgets: "Participativní rozpočtování"
       proposals: "Návrhy"
@@ -13,6 +23,7 @@ cs:
       polls: "Průzkum"
       user:
         recommendations: "Doporučení"
+        skip_verification: "Přeskočit ověřování uživatele"
         recommendations_on_debates: "Doporučení k debatám"
         recommendations_on_proposals: "Doporučení k návrhům"
       map_description: "Povolit geolokaci návrhů a investičních projektů"
