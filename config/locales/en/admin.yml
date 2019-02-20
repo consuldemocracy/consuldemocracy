@@ -440,7 +440,7 @@ en:
           delete: Delete
           title: Legislation processes
           filters:
-            open: Open
+            active: Active
             all: All
         new:
           back: Back
@@ -456,7 +456,8 @@ en:
           title: Process
           comments: Comments
           status: Status
-          creation_date: Creation date
+          start_date: Start date
+          end_date: End date
           status_open: Open
           status_closed: Closed
           status_planned: Planned
@@ -481,7 +482,7 @@ en:
           selected: Selected
         form:
           custom_categories: Categories
-          custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres by category.
           custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:

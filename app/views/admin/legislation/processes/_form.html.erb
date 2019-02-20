@@ -218,12 +218,11 @@
     <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
-        <%= f.text_field :background_color, label: false, type: :color %>
+        <%= f.text_field :background_color, label: false, type: :color,
+                                            value: bg_color_or_default %>
       </div>
       <div class="small-12 medium-6 column">
-        <%= f.text_field :background_color, label: false,
-                                            placeholder: "#e7f2fc",
-                                            id: "background_color_input" %>
+        <%= f.text_field :background_color, label: false, id: "background_color_input" %>
       </div>
     </div>
   </div>
@@ -233,12 +232,10 @@
     <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
-        <%= f.text_field :font_color, label: false, type: :color %>
+        <%= f.text_field :font_color, label: false, type: :color, value: font_color_or_default %>
       </div>
       <div class="small-12 medium-6 column">
-        <%= f.text_field :font_color, label: false,
-                                      placeholder: "#222222",
-                                      id: "font_color_input" %>
+        <%= f.text_field :font_color, label: false, id: "font_color_input" %>
       </div>
     </div>
   </div>
