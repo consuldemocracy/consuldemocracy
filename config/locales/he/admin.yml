@@ -212,7 +212,6 @@ he:
         index:
           delete: מחיקה
           filters:
-            open: Open
             all: כולם
         new:
           back: חזרה
@@ -223,7 +222,6 @@ he:
             supports: לחיצה לתמיכה
         process:
           comments: הערות
-          creation_date: תאריך יצירה
           status_open: Open
         subnav:
           questions: דיון
