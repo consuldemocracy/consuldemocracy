@@ -162,7 +162,15 @@ tr:
         description: "Tanımlama"
         terms_of_service: "Hizmet şartları"
       user:
+        login: "E-posta veya kullanıcı adı"
         email: "E-posta"
+        username: "Kullanıcı adı"
+        password_confirmation: "Şifre onayı"
+        password: "Şifre"
+        current_password: "Mevcut şifre"
+        phone_number: "Telefon numarası"
+        official_position: "Resmi pozisyon"
+        official_level: "Resmi düzey"
       spending_proposal:
         administrator_id: "Yönetici"
       site_customization/image:
