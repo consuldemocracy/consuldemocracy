@@ -462,7 +462,7 @@ es:
           delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
-            open: Abiertos
+            active: Activos
             all: Todos
         new:
           back: Volver
@@ -478,7 +478,8 @@ es:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha de creación
+          start_date: Fecha de apertura
+          end_date: Fecha de cierre
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -502,7 +503,7 @@ es:
           selected: Seleccionada
         form:
           custom_categories: Categorías
-          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
+          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta. Máximo 160 caracteres por categoría.
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
       draft_versions:
         create:
