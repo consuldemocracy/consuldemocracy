@@ -438,7 +438,6 @@ de:
           delete: Löschen
           title: Gesetzgebungsverfahren
           filters:
-            open: Offen
             all: Alle
         new:
           back: Zurück
@@ -454,7 +453,6 @@ de:
           title: Beteiligungsverfahren
           comments: Kommentare
           status: Status
-          creation_date: Erstellungsdatum
           status_open: Offen
           status_closed: Abgeschlossen
           status_planned: Geplant
