@@ -442,7 +442,6 @@ ar:
           delete: حذف
           title: العمليات التشريعية
           filters:
-            open: فتح
             all: الكل
         new:
           back: عودة
@@ -458,7 +457,6 @@ ar:
           title: عملية
           comments: تعليقات
           status: حالة
-          creation_date: تاريخ الإنشاء
           status_open: فتح
           status_closed: مغلق
           status_planned: مخطط
