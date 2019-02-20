@@ -84,8 +84,32 @@ tr:
     budget_headings:
       form:
         population: "Konum (isteğe bağlı)"
+        population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için göstermek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
+        latitude: "Enlem (isteğe bağlı)"
+        longitude: "Boylam (isteğe bağlı)"
+        coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir."
+        allow_content_block: "İçerik bloğuna izin ver"
+        content_blocks_info: "Eğer içerik bloğuna izin ver seçeneği işaretliyse, bu başlıkla ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz."
+        create: "Yeni başlık oluştur"
+        edit: "Başlığı düzenle"
+        submit: "Başlığı kaydet"
+      index:
+        back: "Gruplara geri dön"
+    budget_phases:
+      edit:
+        start_date: Başlangıç tarihi
+        end_date: Bitiş tarihi
+        summary: Özet
+        summary_help_text: Bu metin kullanıcıyı aşama hakkında bilgilendirecektir. Aşama etkin olmasa bile göstermek için aşağıdaki onay kutusunu seçin
+        description: Tanımlama
+        description_help_text: Aşama etkinken bu metin başlıkta görünecektir
+        enabled: Aşama etkinleştirildi
+        enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
+        save_changes: Değişiklikleri kaydet
     budget_investments:
       index:
+        heading_filter_all: Tüm başlıklar
+        administrator_filter_all: Tüm yöneticiler
         list:
           admin: Yönetici
       show:
