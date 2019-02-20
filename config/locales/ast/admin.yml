@@ -288,7 +288,6 @@ ast:
           delete: Borrar
           title: Procesos legislativos
           filters:
-            open: Abiertu
             all: Toes
         new:
           back: Volver
@@ -303,7 +302,6 @@ ast:
           title: Procesu
           comments: Comentarios
           status: Estáu
-          creation_date: Fecha de creación
           status_open: Abiertu
           status_closed: Pesllao
           status_planned: Próximamente
