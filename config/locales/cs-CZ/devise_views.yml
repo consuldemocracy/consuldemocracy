@@ -30,6 +30,7 @@ cs:
         info_text: Váš účet byl zablokován kvůli nadměrnému počtu neúspěšných pokusů o přihlášení.
         instructions_text: 'Klepnutím na tento odkaz odemknete svůj účet:'
         title: Váš účet byl uzamčen
+        unlock_link: Odemknout účet
     menu:
       login_items:
         login: Přihlásit
