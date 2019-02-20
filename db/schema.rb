@@ -561,6 +561,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.string "queue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "tenant"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
