@@ -171,8 +171,46 @@ tr:
         phone_number: "Telefon numarası"
         official_position: "Resmi pozisyon"
         official_level: "Resmi düzey"
+        redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
+      organization:
+        name: "Organizasyon adı"
+        responsible_name: "Gruptan sorumlu kişi"
       spending_proposal:
         administrator_id: "Yönetici"
+        association_name: "İlişkilendirme adı"
+        description: "Tanımlama"
+        external_url: "Ek belgelere bağlantı"
+        geozone_id: "İşlem kapsamı"
+        title: "İsim"
+      poll:
+        name: "Ad"
+        starts_at: "Başlangıç Tarihi"
+        ends_at: "Kapanış Tarihi"
+        geozone_restricted: "Geozone tarafından kısıtlandırılmış"
+        summary: "Özet"
+        description: "Tanımlama"
+      poll/translation:
+        name: "Ad"
+        summary: "Özet"
+        description: "Tanımlama"
+      poll/question:
+        title: "Soru"
+        summary: "Özet"
+        description: "Tanımlama"
+        external_url: "Ek belgelere bağlantı"
+      poll/question/translation:
+        title: "Soru"
+      signature_sheet:
+        signable_type: "İmzalanır tür"
+        signable_id: "İmzalanır Kimlik"
+        document_numbers: "Belgelerin numaraları"
+      site_customization/page:
+        content: İçerik
+        created_at: Oluşturuldu
+        subtitle: Altyazı
+        slug: Parça
+        status: Durum
+        title: İsim
       site_customization/image:
         image: Fotoğraf
       legislation/annotation:
