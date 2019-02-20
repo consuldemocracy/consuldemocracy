@@ -379,7 +379,6 @@ pt-BR:
           delete: Apagar
           title: Processos legislativos
           filters:
-            open: Aberto
             all: Tudo
         new:
           back: Voltar
@@ -394,7 +393,6 @@ pt-BR:
           title: Processo
           comments: Comentários
           status: Status
-          creation_date: Data de criação
           status_open: Aberto
           status_closed: Fechados
           status_planned: Planejados
