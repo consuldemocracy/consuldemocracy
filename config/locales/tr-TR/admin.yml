@@ -264,7 +264,33 @@ tr:
           start_date: Başlangıç tarihi
           end_date: Bitiş tarihi
           status_open: Açık
+          status_closed: Kapalı
+          status_planned: Planlanan
+        subnav:
+          info: Bilgi
+          homepage: Ana sayfa
+          draft_versions: Çizim
+          questions: Tartışma
+          proposals: Öneriler
+          milestones: Takip etme
+      homepage:
+        edit:
+          title: İşlem ana sayfanızı yapılandırın
+      proposals:
+        index:
+          title: İsim
+          back: Geri
+          id: Kimlik
+          supports: Tam destek
+          select: Seç
+          selected: Seçilmiş
+        form:
+          custom_categories: Kategoriler
+          custom_categories_description: Kullanıcıların öneri oluşturmayı seçebileceği kategoriler. Kategori başına maksimum 160 karakter.
+          custom_categories_placeholder: Kullanmak istediğiniz etiketleri, virgüller (,) ve tırnak işaretleri arasına ("") girin
       draft_versions:
+        create:
+          notice: 'Taslak başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
         table:
           comments: Yorumlar
     managers:
