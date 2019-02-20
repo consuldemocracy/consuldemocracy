@@ -377,7 +377,6 @@ it:
           delete: Eliminare
           title: Processi di legislazione
           filters:
-            open: Aperti
             all: Tutti
         new:
           back: Indietro
@@ -392,7 +391,6 @@ it:
           title: Procedimento
           comments: Commenti
           status: Status
-          creation_date: Data di creazione
           status_open: Aperti
           status_closed: Chiuso
           status_planned: Programmato
