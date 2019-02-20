@@ -104,8 +104,8 @@ nl:
         submit_button: Bewaar wijzigingen
       show_link: Bekijk debat
     form:
-      debate_text: Initiële tekst debat
-      debate_title: Titel debat
+      debate_text: Omschrijving
+      debate_title: Ondewerp
       tags_instructions: Voeg labels toe.
       tags_label: Onderwerpen
       tags_placeholder: Voeg de gewenste labels toe, gescheiden door een komma (',')
@@ -150,8 +150,8 @@ nl:
     new:
       form:
         submit_button: Nieuw debat
-      info: Dit is niet de juiste plek voor ideeën; ga daarvoor naar %{info_link}.
-      info_link: nieuw voorstel
+      info: Dit is niet de juiste plek voor ideeën, ga daar voor naar %{info_link}.
+      info_link: nieuw idee
       more_info: Meer informatie
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
@@ -395,16 +395,16 @@ nl:
       map_location_instructions: Beweeg de kaart en wijs de locatie aan.
       map_remove_marker: Locatie verwijderen
       map_skip_checkbox: De locatie voor het voorstel is niet bekend.
-      proposal_external_url: Link naar extra documentatie
+      proposal_external_url: Verwijzing
       proposal_question: Vraag
       proposal_question_example_html: Moeten worden samengevat in één vraag met een Ja of nee als antwoord
       proposal_responsible_name: Volledige naam van persoon die het voorstel doet
       proposal_responsible_name_note: "(individueel of als vertegenwoordiger van een collectief; niet publiek zichtbaar)"
-      proposal_summary: Samenvatting voorstel
+      proposal_summary: Samenvatting
       proposal_summary_note: "(max is 200 letters)"
-      proposal_text: Beschrijving van het voorstel
-      proposal_title: Titel van het voorstel
-      proposal_video_url: Link naar video
+      proposal_text: Omschrijving
+      proposal_title: Titel
+      proposal_video_url: Video
       proposal_video_url_note: U kunt een link naar YouTube of Vimeo toevoegen
       tag_category_label: Categories
       tags_instructions: Label dit voorstel. U kunt uw eigen categorie kiezen of één van de bestaande.
@@ -462,14 +462,14 @@ nl:
     new:
       form:
         submit_button: Maak voorstel
-      more_info: Hoe werken ideeën?
+      more_info: Hoe plaats je een idee?
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
       recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_two: Ieder voorstel waarin een illegale activiteit wordt aanmoedigd zal worden verwijderd, en ook die welke het debat saboteren. Verder is alles toegestaan.
       recommendations_title: Aanbevelingen bij het doen van ideeën
-      start_new: Doe nieuw voorstel
+      start_new: Nieuw idee
     notice:
-      retired: Voorstel teruggetrokken
+      retired: Idee gearchiveerd
     proposal:
       already_supported: U steunt dit voorstel al. Deel het!
       archived: Dit voorstel is gearchiveerd en kan niet worden gesteund.
@@ -664,7 +664,7 @@ nl:
     form:
       association_name: Verenigingsnaam
       association_name_label: Voeg hier de naam toe als u een voorstel doet namens een vereniging of collectief
-      description: Beschrijving
+      description: Omschrijving
       external_url: Link naar meer informatie
       geozone: Betreffende regio
       submit_buttons:

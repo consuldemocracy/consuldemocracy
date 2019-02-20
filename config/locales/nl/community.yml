@@ -58,4 +58,4 @@ nl:
         recommendations_title: Advies bij het beginnen van een debat.
   topics:
     show:
-      login_to_comment: Je dient %{signin} of %{signup} om te kunnen reageren.
+      login_to_comment: Je dient %{signin} of %{signup} om te reageren.
