@@ -381,7 +381,6 @@ zh-CN:
           delete: 删除
           title: 立法进程
           filters:
-            open: 打开
             all: 所有
         new:
           back: 返回
@@ -397,7 +396,6 @@ zh-CN:
           title: 进程
           comments: 评论
           status: 状态
-          creation_date: 创建日期
           status_open: 打开
           status_closed: 关闭
           status_planned: 计划
