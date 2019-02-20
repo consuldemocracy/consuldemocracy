@@ -38,9 +38,6 @@ tr:
         title: Yönetim
     legislation:
       processes:
-        index:
-          filters:
-            open: Açık
         process:
           comments: Yorumlar
           status_open: Açık
