@@ -12,6 +12,10 @@ module Notifiable
     end
   end
 
+  def notifiable_body
+    body if attribute_names.include?("body")
+  end
+
   def notifiable_available?
     case self.class.name
     when "ProposalNotification"
