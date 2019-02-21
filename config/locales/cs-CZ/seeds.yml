@@ -48,5 +48,7 @@ cs:
         executed: Realizováno
     polls:
       current_poll: "Aktuální průzkum"
+      current_poll_geozone_restricted: "Geozóna aktuální ankety byla omezena"
+      recounting_poll: "Zaznamenávání ankety"
       expired_poll_without_stats: "Prošlé průzkumy bez statistiky a výsledků"
       expired_poll_with_stats: "Prošle průzkum se statistikou a výsledky"
