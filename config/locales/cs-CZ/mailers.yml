@@ -10,23 +10,40 @@ cs:
       manage_email_subscriptions: Chcete-li tyto e-maily přestat přijímat, změňte nastavení v
     email_verification:
       click_here_to_verify: tento odkaz
+      instructions_2_html: Tento e-mail ověří váš účet pomocí <b>%{document_type} %{document_number} </b>. Pokud Vám email nepatří, prosím, neklikněte na předchozí odkaz a ignorujte tento e-mail.
+      instructions_html: K dokončení ověření uživatelského účtu musíte klikněte na %{verification_link}.
       subject: Potvrďte svoji emailovou adresu
       thanks: Mockrát děkujeme.
+      title: Potvrďte svůj účet pomocí následujícího odkazu
     reply:
       hi: Dobrý den
+      new_reply_by_html: Nová odpověď od <b>%{commenter} </b> na Váš komentář
+      subject: Někdo odpověděl na váš komentář
       title: Nová odpověď na váš komentář
     unfeasible_spending_proposal:
       hi: "Vážený uživateli,"
+      new_html: "Pro všechny tyto skutečnosti vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
       new_href: "nový investiční projekt"
       sincerely: "S pozdravem"
+      sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
+      subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
     proposal_notification_digest:
+      info: "Josu zde nová oznámení, která byla publikována autory návrhů, které jste podpořili v %{org_name}."
+      title: "Oznámení o návrhu v %{org_name}"
       share: Sdílet návrh
       comment: Připomínky k návrhu
+      unsubscribe: "Pokud nechcete dostávat oznámení o návrhu, přejděte na adresu %{account} a zrušte zaškrtnutí políčka \"Příjem oznámení o návrzích\"."
       unsubscribe_account: Můj účet
     direct_message_for_receiver:
+      subject: "Obdrželi jste novou soukromou zprávu"
       reply: Odpovědět uživateli %{sender}
+      unsubscribe: "Pokud nechcete přijímat přímé zprávy, navštivte stránku %{account} a zrušte zaškrtnutí políčka \"Příjem e-mailů o přímých zprávách\"."
       unsubscribe_account: Můj účet
+    direct_message_for_sender:
+      subject: "Odeslali jste novou soukromou zprávu"
+      title_html: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
     user_invite:
+      ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
       thanks: "Mockrát děkujeme."
       button: Dokončit registraci
     budget_investment_created:
