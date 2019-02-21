@@ -831,20 +831,61 @@ cs:
         title: "Výsledky"
         no_results: "Nejsou žádné výsledky"
       result:
+        table_whites: "Celkem prázdných hlasovacích lístků"
+        table_nulls: "Neplatné hlasovací lístky"
+        table_total: "Celkový počet hlasovacích lístků"
         table_answer: Answer
         table_votes: Hlasů
       results_by_booth:
+        booth: Informační stánek
         results: Výsledky
         see_results: Zobrazit výsledky
+        title: "Výsledky podle informačních stánků"
     booths:
       index:
+        title: "Seznam aktivních informačních stánků"
+        no_booths: "Nemáte žádné aktivní informační stánky pro nadcházející ankety."
+        add_booth: "Přidat informační stánek"
         name: "Název"
+        location: "Umístění"
+        no_location: "Bez umístění"
       new:
+        title: "Nový informační stánek"
         name: "Název"
+        location: "Umístění"
+        submit_button: "Vytvořit informační stánek"
+      edit:
+        title: "Upravit informační stánek"
+        submit_button: "Aktualizovat informační stánek"
+      show:
+        location: "Umístění"
+      booth:
+        shifts: "Správa směn"
+        edit: "Upravit informační stánek"
     officials:
+      edit:
+        destroy: Odebrat status 'Úředníka'
+        title: 'Úředníci: Upravit uživatele'
+      flash:
+        official_destroyed: 'Podrobnosti uložené: uživatel již nadále není úředník'
+        official_updated: Podrobnosti o úředníkovi uložené
       index:
+        title: Úředníci
+        no_officials: Nemáte žádné úředníky.
         name: Název
         official_position: Official position
+        official_level: Úroveň
+      level_0: Není úředníkem
+      level_1: Úroveň 1
+      level_2: Úroveň 2
+      level_3: Úroveň 3
+      level_4: Úroveň 4
+      level_5: Úroveň 5
+      search:
+        edit_official: Upravit úředníka
+        make_official: Učinit úředníkem
+        title: 'Úřednické pozice: Vyhledávání uživatelů'
+        no_results: Nebyly nalezeny žádné úřednické pozice.
     organizations:
       index:
         filter: Filtr
