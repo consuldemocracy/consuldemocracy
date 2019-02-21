@@ -31,6 +31,7 @@ cs:
         target_url: Link
         post_started_at: Příspěvek byl zahájen v
         post_ended_at: Příspěvek byl ukončen v
+        sections_label: Sekce, kde se objeví
         sections:
           homepage: Úvodní strana
           debates: Debaty
@@ -68,6 +69,7 @@ cs:
     budgets:
       index:
         title: Participativní rozpočty
+        new_link: Vytvořit nový rozpočet
         filter: Filtr
         filters:
           open: Otevřené
@@ -110,6 +112,7 @@ cs:
       headings_edit: "Upravit kapitoly"
       headings_manage: "Spravovat kapitoly"
       max_votable_headings: "Maximální počet skupin, ve kterých uživatel může hlasovat"
+      no_groups: "Neexistují žádné skupiny."
       create:
         notice: "Skupina byla úspěšně vytvořena!"
       update:
@@ -122,16 +125,26 @@ cs:
         edit: "Upravit skupinu"
         name: "Název skupiny"
         submit: "Uložit skupinu"
+      index:
+        back: "Přejít zpět do rozpočtu"
     budget_headings:
       name: "Název"
+      no_headings: "Neexistují žádné kapitoly."
+      create:
+        notice: "Kapitola byla úspěšně vytvořena!"
+      update:
+        notice: "Kapitola byla úspěšně aktualizována"
       destroy:
+        success_notice: "Kapitola byla smazána"
         unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
       form:
         name: "Heading name"
         amount: "Množství"
         population: "Počet obyvatel (volitelné)"
+        population_info: "Položka Populace se používá ke statistickým účelům na konci rozpočtu a ukáže pro každou kapitolu, která představuje oblast s populací, jaké procento hlasovalo. Pole je volitelně, takže jej můžete nechat prázdné, pak se nepoužije."
         latitude: "Zeměpisná šířka (volitelné)"
         longitude: "Zeměpisná šířka (volitelné)"
+        coordinates_info: "Je-li k dispozici zeměpisná šířka a délka, stránka investic pro tuto kapitolu bude obsahovat mapu. Tato mapa bude vycentrována pomocí těchto souřadnic."
         submit: "Uložit hadpisy"
     budget_phases:
       edit:
