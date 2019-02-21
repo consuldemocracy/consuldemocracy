@@ -387,16 +387,25 @@ cs:
       notifications_tab: Upozornění
       milestones_tab: Milníky
       retired_warning: "Autor se domnívá, že tento návrh by neměl přijímat více podporovatelů."
+      retired_warning_link_to_explanation: Přečtěte si vysvětlení před vlastním hlasováním.
+      retired: Zrušené návrhy tříděné podle autorů
       share: Sdílet
       send_notification: Poslat upozornění
+      no_notifications: "Tento návrh nemá žádné oznámení."
+      embed_video_title: "Video v návrhu %{proposal}"
       title_external_url: "Dodatečná dokumentace"
       title_video_url: "External video"
       author: Autor
     update:
       form:
         submit_button: Uložit změny
+    share:
+      message: "Podpořil jsem návrh %{summary} v %{handle}. Pokud máte zájem, podporují jej také!"
   polls:
     all: "Vše"
+    no_dates: "není přiřazené datum"
+    dates: "Od %{open_at} do %{closed_at}"
+    final_date: "Konečné přepočty/výsledky"
     index:
       filters:
         current: "Otevřené"
@@ -406,20 +415,28 @@ cs:
       participate_button_expired: "Průzkum ukončen"
       no_geozone_restricted: "Celé město"
       geozone_restricted: "Městské části"
+      already_answer: "Tohoto hlasování jste se již účastnili"
       not_logged_in: "Pro účast se musíte registrovat a přihlásit"
+      unverified: "Pro zapojení je nutné ověřit váš účet"
       cant_answer: "Tento průzkum není ve vaší čtvrti dostupný"
       section_header:
+        icon_alt: Ikona hlasování
         title: Průzkumy
         help: Nápověda k průzkumům
       section_footer:
         title: Nápověda k průzkumům
+        description: Průzkum veřejného mínění je participační mechanismus, kterým se občané s hlasovacími právy mohou zapojit do přímých rozhodnutí
+      no_polls: "Neexistují žádná otevřená hlasování."
     show:
+      already_voted_in_booth: "Už jste hlasovali v informačním stánku. Nemůžete znovu hlasovat."
       already_voted_in_web: "Již jste se tohoto průzkumu zúčastnili. Pokud budete znovu hlasovat, výsledky budou přepsány."
       back: Zpět na průzkumy
+      cant_answer_not_logged_in: "Chcete-li se zapojit, musíte se %{signin} nebo %{signup}."
       comments_tab: Komentáře
       login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
       signin: Přihlásit se
       signup: Registrujte se!
+      cant_answer_verify_html: "Odpovědět můžete zde %{verify_link}."
       verify_link: "ověřit váš účet"
       cant_answer_expired: "Tento průzkum byl ukončen."
       cant_answer_wrong_geozone: "Tato otázka není dostupná ve vaší čtvrti."
@@ -438,14 +455,19 @@ cs:
         total_votes: "Celkový počet odevzdaných hlasů"
         votes: "HLASŮ"
         web: "WEB"
+        booth: "INFORMAČNÍ STÁNKY"
         total: "CELKEM"
         valid: "Platné"
+        white: "Prázdné hlasy"
         null_votes: "Neplatné"
       results:
         title: "Otázky"
         most_voted_answer: "Odpověď s nejvíce hlasy: "
   poll_questions:
     create_question: "Vytvořit otázku"
+    show:
+      vote_answer: "Hlasování %{answer}"
+      voted: "Hlasovali jste %{answer}"
   proposal_notifications:
     new:
       title: "Odeslat zprávu"
