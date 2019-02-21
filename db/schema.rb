@@ -1304,15 +1304,15 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "site_customization_pages", force: :cascade do |t|
-    t.string   "slug",                                 null: false
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "content"
+    t.string   "slug",                                  null: false
+    t.string   "deprecated_title"
+    t.string   "deprecated_subtitle"
+    t.text     "deprecated_content"
     t.boolean  "more_info_flag"
     t.boolean  "print_content_flag"
-    t.string   "status",             default: "draft"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.string   "status",              default: "draft"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "locale"
   end
 
