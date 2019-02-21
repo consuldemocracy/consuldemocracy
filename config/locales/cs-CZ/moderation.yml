@@ -2,30 +2,42 @@ cs:
   moderation:
     comments:
       index:
+        block_authors: Blokovaní autoři
         confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
           pending_flag_review: Nevyřízený
+          with_ignored_flag: Označené jako přečtené
         headers:
           comment: Komentář
           moderate: Moderovat
+        hide_comments: Skrýt komentáře
+        ignore_flags: Označené jako přečtené
         order: Pořadí
+        orders:
+          newest: Nejnovější
         title: Komentáře
     dashboard:
       index:
         title: Moderování
     debates:
       index:
+        block_authors: Blokovaní autoři
         confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
           pending_flag_review: Nevyřízený
+          with_ignored_flag: Označené jako přečtené
         headers:
           debate: Debata
           moderate: Moderovat
+        hide_debates: Skrýt debaty
+        ignore_flags: Označit za přečtené
         order: Pořadí
+        orders:
+          created_at: Nejnovější
         title: Debaty
     header:
       title: Moderování
@@ -33,12 +45,15 @@ cs:
       flagged_comments: Komentáře
       flagged_debates: Debaty
       proposals: Návrhy
+      users: Blokovat uživatele
     proposals:
       index:
+        block_authors: Blokovat autory
         confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
+          pending_flag_review: Čeká na kontrolu
         headers:
           moderate: Moderovat
           proposal: Návrhy
