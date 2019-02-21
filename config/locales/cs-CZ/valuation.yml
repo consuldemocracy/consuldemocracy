@@ -64,6 +64,8 @@ cs:
         save: Uložit změny
       notice:
         valuate: "Dokumentace byla aktualizována"
+      valuation_comments: Komentáře hodnotitele
+      not_in_valuating_phase: Investice mohou být naceněny pouze tehdy, když je rozpočet ve fázi naceňování
     spending_proposals:
       index:
         geozone_filter_all: Všechny oblasti
@@ -71,15 +73,43 @@ cs:
           valuation_open: Otevřené
           valuating: Podhodnoceno
           valuation_finished: Hodnocení bylo ukončeno
+        title: Investiční projekty pro participativní rozpočet
         edit: Upravit
       show:
         back: Zpět
+        heading: Investiční projekt
         info: Informace o autorovi
+        association_name: Sdružení
+        by: Odesláno uživatelem
+        sent: Odesláno v čase
+        geozone: Rozsah
+        dossier: Dokumentace
+        edit_dossier: Upravit dokumentaci
         price: Cena
+        price_first_year: Náklady během prvního roku
         currency: "Kč"
+        feasibility: Proveditelnost
+        feasible: Proveditelný
+        not_feasible: Neproveditelný
+        undefined: Nedefinováno
+        valuation_finished: Hodnocení bylo ukončeno
+        time_scope: Časový rozsah
+        internal_comments: Interní poznámky
+        responsibles: Odpovědnost
+        assigned_admin: Přiřazeno administrátorovi
+        assigned_valuators: Přiřazeno hodnotiteli
       edit:
+        dossier: Dokumentace
+        price_html: "Náklady (%{currency})"
+        price_first_year_html: "Náklady během prvního roku (%{currency})"
         currency: "Kč"
+        price_explanation_html: Vysvětlení nákladů
+        feasibility: Proveditelnost
+        feasible: Proveditelný
+        not_feasible: Neproveditelný
         undefined_feasible: Nevyřízený
+        feasible_explanation_html: Vysvětlení proveditelnosti
+        valuation_finished: Hodnocení bylo ukončeno
         time_scope_html: Časový rozsah
         internal_comments_html: Interní poznámky
         save: Uložit změny
