@@ -14,6 +14,7 @@ cs:
           finished: Dokončené
         table_name: Název
         table_phase: Fáze
+        table_assigned_investments_valuation_open: Investiční projekty s doposud otevřeným naceňováním
         table_actions: Akce
         evaluate: Posoudit cenu
         no_budgets: "Neexistují žádné rozpočty"
@@ -65,7 +66,7 @@ cs:
         undefined_feasible: Nevyřízený
         feasible_explanation_html: Vysvětlení proveditelnosti
         valuation_finished: Naceňování bylo ukončeno
-        valuation_finished_alert: "Opravdu že chcete tuto zprávu označit jako dokončenou? Pokud to uděláte, nemůže již změnit."
+        valuation_finished_alert: "Opravdu chcete tuto zprávu označit za dokončenou? Pokud to uděláte, nemůže již změnit."
         not_feasible_alert: "Autorovi projektu bude okamžitě zaslán email s informací o nerealizovatelnosti projektu."
         duration_html: Časový rozsah
         save: Uložit změny
