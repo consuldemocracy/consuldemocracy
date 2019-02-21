@@ -314,8 +314,10 @@ cs:
         recommendations: doporučení
       recommendations:
         without_results: Neexistují žádné návrhy týkající se vašich zájmů
+        without_interests: Sledujte návrhy, můžeme Vám dát doporučení
         disable: "Doporučení ohledně návrhů se přestanou zobrazovat, pokud je odmítnete. Můžete je znovu aktivovat na stránce Můj účet"
         actions:
+          success: "Doporučení k podávání návrhů jsou nyní pro tento účet zakázány"
           error: "Jejda, chyba. Přejděte na stránku 'Můj účet', abyste ručně deaktivovali doporučení pro návrhy"
       retired_proposals: Pozastavené návrhy
       retired_proposals_link: "Pozastavené návrhy tříděné podle autorů"
@@ -468,6 +470,7 @@ cs:
     show:
       vote_answer: "Hlasování %{answer}"
       voted: "Hlasovali jste %{answer}"
+      voted_token: "Můžete si zapsat tento identifikátor hlasování, abyste si ověřili svůj hlas v konečných výsledcích:"
   proposal_notifications:
     new:
       title: "Odeslat zprávu"
@@ -489,6 +492,7 @@ cs:
       author_type: 'Podle kategorie autora'
       author_type_blank: 'Zvolte kategorii'
       date: 'Podle stáří'
+      date_placeholder: 'DD/MM/YYYY'
       date_range_blank: 'Zvolte období'
       date_1: 'Posledních 24 hodin'
       date_2: 'Poslední týden'
@@ -518,6 +522,9 @@ cs:
           notice_html: "Nyní sledujete tento investiční projekt! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
         destroy:
           notice_html: "Ukončili jste sledování tohoto projektu! </br> Nebude nadále dostávat oznámení související s tímto projektem."
+      proposal:
+        create:
+          notice_html: "Nyní sledujete tento občanský návrh! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
     hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
@@ -556,12 +563,16 @@ cs:
       see_more: Další doporučení
       hide: Skrýt doporučení
   social:
+    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
     whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
     form:
+      association_name_label: 'Pokud navrhujete jménem sdružení nebo kolektivu, přidejte zde jméno'
       association_name: 'Association name'
       description: Description
       external_url: Odkaz na další dokumenty
@@ -569,8 +580,11 @@ cs:
       submit_buttons:
         create: Vytvořit
         new: Vytvořit
+      title: Název výdaje návrhu
     index:
       title: Participativní rozpočtování
+      unfeasible: Nerealizovatelné investiční projekty
+      by_geozone: "Investiční projekty s působností: %{geozone}"
       search_form:
         button: Vyhledat
         placeholder: Investiční projekty...
@@ -583,6 +597,7 @@ cs:
     new:
       more_info: Jak funguje participativní rozpočtování?
       recommendation_one: Je povinné propojit návrh s položkou rozpočtu.
+      recommendation_three: Snažte se jít do podrobností při popisu výdajů svého návrhu tak, aby hodnotitelský tým chápal vaše body.
       recommendation_two: Jakýkoli návrh nebo komentář, který naznačuje nezákonnou akci, bude smazán.
       recommendations_title: Jak vytvořit výdaje návrhu
       start_new: Vytvořit výdaje návrhu
@@ -604,6 +619,7 @@ cs:
       debates: Debaty
       proposals: Návrhy
       comments: Komentáře
+      proposal_votes: Hlasujte o návrzích
       debate_votes: Hlasování k debatám
       comment_votes: Hlasování ke komentářům
       votes: Hlasů celkem
@@ -611,6 +627,8 @@ cs:
       unverified_users: Neověření uživatelé
   unauthorized:
     default: Nemáte oprávnění k přístupu na tuto stránku.
+    manage:
+      all: "Nemáte oprávnění k provedení akce \"%{action}\" subjektu %{subject}."
   users:
     direct_messages:
       new:
@@ -629,6 +647,7 @@ cs:
     show:
       deleted: Smazán
       deleted_debate: Tato debata byla smazána
+      deleted_proposal: Tento návrh byl odstraněn
       deleted_budget_investment: Tento investiční projekt byl smazán
       proposals: Návrhy
       debates: Debaty
