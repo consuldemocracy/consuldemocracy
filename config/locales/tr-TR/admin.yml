@@ -90,8 +90,43 @@ tr:
         no_budgets: "Hiç bütçe yok."
       create:
         notice: Yeni katılımcı bütçe başarıyla oluşturuldu!
+      update:
+        notice: Katılımcı bütçe başarıyla güncellendi
       edit:
+        title: Katılımcı bütçeyi düzenle
+        delete: Bütçeyi sil
+        phase: Aşama
+        dates: Tarih
+        enabled: Etkinleştirildi
         actions: Aksiyon
+        edit_phase: Aşama düzenleme
+        active: Aktif
+        blank_dates: Tarihler boş
+      destroy:
+        success_notice: Bütçe başarıyla silindi
+        unable_notice: İlişkili yatırımları olan bir Bütçeyi yok edemezsiniz
+      new:
+        title: Yeni katılımcı bütçe
+      winners:
+        calculate: Kazanan Yatırımları Hesapla
+        calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
+        recalculate: Kazanan Yatırımları Yeniden Hesapla
+    budget_groups:
+      name: "Ad"
+      headings_name: "Başlıklar"
+      headings_edit: "Başlıkları Düzenle"
+      headings_manage: "Başlıkları yönet"
+      max_votable_headings: "Bir kullanıcının oy verebileceği maksimum başlık sayısı"
+      no_groups: "Hiç grup yok."
+      amount:
+        one: "1 grup var"
+        other: "%{count} gruplar var"
+      create:
+        notice: "Grup başarıyla oluşturuldu!"
+      update:
+        notice: "Grup başarıyla güncellendi"
+      destroy:
+        success_notice: "Grup başarıyla silindi"
     budget_headings:
       form:
         population: "Konum (isteğe bağlı)"
