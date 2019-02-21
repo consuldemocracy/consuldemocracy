@@ -207,15 +207,18 @@ cs:
     facebook:
       sign_in: Přihlásit se pomocí služby Facebook
       sign_up: Přihlásit se pomocí služby Facebook
+      name: Facebook
     finish_signup:
       title: "Další detaily"
       username_warning: "Vzhledem ke změně ve způsobu interakce se sociálními sítěmi je možné, že se vaše uživatelské jméno nyní zobrazuje jako 'již je používáno'. Pokud se jedná o váš případ, vyberte prosím jiné uživatelské jméno."
     google_oauth2:
       sign_in: Přihlásit se pomocí služby Google
       sign_up: Přihlásit se pomocí služby Google
+      name: Google
     twitter:
       sign_in: Přihlásit se pomocí služby Twitter
       sign_up: Přihlásit se pomocí služby Twitter
+      name: Twitter
     info_sign_in: "Přihlásit se pomocí:"
     info_sign_up: "Přihlásit se pomocí:"
     or_fill: "Nebo vyplňte následující formulář:"
