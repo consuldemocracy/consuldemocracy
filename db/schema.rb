@@ -985,12 +985,10 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   create_table "milestones", force: :cascade do |t|
     t.string   "milestoneable_type"
     t.integer  "milestoneable_id"
-    t.string   "title",              limit: 80
-    t.text     "description"
     t.datetime "publication_date"
     t.integer  "status_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["status_id"], name: "index_milestones_on_status_id", using: :btree
   end
 
