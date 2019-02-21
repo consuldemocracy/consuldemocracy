@@ -910,8 +910,17 @@ ar:
         no_booths: "لا توجد مكاتب إقتراع مخصصة لهذا الاستطلاع."
         table_name: "الإ سم"
         table_location: "الموقع"
+    active_polls:
+      edit:
+        title: "وصف استطلاعات الرأي"
+      form:
+        description:
+          text: "الوصف"
+          help_text: "يظهر هذا النص في عنوان صفحة استطلاعات الرأي. ويمكن استخدامه لإضافة موضوع إلى الاستطلاعات المفتوحة."
     polls:
       index:
+        title: "قائمة الاستطلاعات"
+        no_polls: "لا توجد استطلاعات قريبة."
         create: "إنشاء استطلاع"
         name: "الإ سم"
         dates: "التواريخ"
@@ -920,17 +929,31 @@ ar:
         geozone_restricted: "خاص بالمقاطعات"
       new:
         title: "استطلاع جديد"
+        show_results_and_stats: "اظهار النتائج والإحصائيات"
+        show_results: "إظهار النتائج"
+        show_stats: "إظهار الإحصائيات"
         submit_button: "إنشاء استطلاع"
+      edit:
+        title: "تحرير الاستطلاع"
+        submit_button: "تحديث الاستطلاع"
       show:
         questions_tab: أسئلة
+        booths_tab: مكاتب الإقتراع
         officers_tab: الضباط
+        recounts_tab: اعادة الحساب
         results_tab: النتائج
+        no_questions: "لا توجد أسئلة مخصصة لهذا الاستطلاع."
+        questions_title: "قائمة الأسئلة"
         table_title: "عنوان"
+      flash:
+        question_added: "تمت إضافة السؤال إلى هذا الاستطلاع"
+        error_on_question_added: "لا يمكن إضافة السؤال إلى هذا الاستطلاع"
     questions:
       index:
         title: "أسئلة"
         create: "إنشاء سؤال"
         no_questions: "لا توجد هناك أسئلة."
+        filter_poll: ترشيح حسب استطلاع الرأي
         questions_tab: "أسئلة"
         create_question: "إنشاء سؤال"
         table_proposal: "اقتراح"
