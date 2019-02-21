@@ -29,6 +29,8 @@ cs:
         title: Předmět
         description: Description
         target_url: Link
+        post_started_at: Příspěvek byl zahájen v
+        post_ended_at: Příspěvek byl ukončen v
         sections:
           homepage: Úvodní strana
           debates: Debaty
@@ -95,7 +97,7 @@ cs:
         blank_dates: Data jsou prázdné
       destroy:
         success_notice: Rozpočet byl smazán
-        unable_notice: Nemůžete odstranit rozpočet, který spojený s investicemi
+        unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
       new:
         title: Nový participativní rozpočet
       winners:
@@ -104,10 +106,17 @@ cs:
         recalculate: Přepočítat vítězné investice
     budget_groups:
       name: "Název"
-      headings_name: "Nadpisy"
-      headings_edit: "Upravit nadpisy"
-      headings_manage: "Spravovat nadpisy"
+      headings_name: "Kapitoly"
+      headings_edit: "Upravit kapitoly"
+      headings_manage: "Spravovat kapitoly"
       max_votable_headings: "Maximální počet skupin, ve kterých uživatel může hlasovat"
+      create:
+        notice: "Skupina byla úspěšně vytvořena!"
+      update:
+        notice: "Skupina byla úspěšně aktualizovaná"
+      destroy:
+        success_notice: "Skupina byla smazána"
+        unable_notice: "Nemůžete odstranit skupinu, která je propojená s kapitolou"
       form:
         create: "Vytvořit novou skupinu"
         edit: "Upravit skupinu"
