@@ -24,7 +24,7 @@
       <% @budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>" class="budget">
           <td>
-            <%= link_to budget.name, admin_budget_path(budget) %>
+            <%= budget.name %>
           </td>
           <td class="small">
             <%= t("budgets.phase.#{budget.phase}") %>
