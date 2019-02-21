@@ -821,22 +821,49 @@ cs:
         officers: "Úředníci"
         officers_list: "Seznam úředníků pro tento informační stánek"
         no_officers: "Nemáte žádné úředníky pro tento informační stánek"
-        recounts: "Přepočet"
+        recounts: "Přepisy"
+        recounts_list: "Seznam rozpisů pro tento informační stánek"
         results: "Výsledky"
+        date: "Datum"
+        count_final: "Konečné přepočtení (podle úředníka)"
+        count_by_system: "Hlasů (automaticky)"
+        total_system: Hlasů celkem (automaticky)
       index:
+        booths_title: "Seznam informačních stánků"
+        no_booths: "Nemáte žádné informační stánky přiřazené k tomuto průzkumu."
         table_name: "Název"
+        table_location: "Umístění"
+    active_polls:
+      edit:
+        title: "Popis hlasování"
+      form:
+        description:
+          text: "Popis"
+          help_text: "Text bude zobrazen v záhlaví stránky s anketou. Může být použit k přidání kontextu probíhající ankety."
     polls:
       index:
         title: "List of active polls"
+        no_polls: "Nemáte žádné plánované ankety."
+        create: "Vytvořit anketu"
         name: "Název"
+        dates: "Kalendářní data"
         start_date: "Start Date"
         closing_date: "Closing Date"
+        geozone_restricted: "Omezeno na oblasti"
       new:
+        title: "Nová anketa"
         show_results_and_stats: "Zobrazit výsledky a statistiky"
+        show_results: "Zobrazit výsledky"
         show_stats: "Zobrazit statistiky"
         results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
+        submit_button: "Vytvořit anketu"
+      edit:
+        title: "Upravit anketu"
+        submit_button: "Aktualizovat anketu"
       show:
         questions_tab: Otázky
+        booths_tab: Informační stánky
+        officers_tab: Úředníci
         results_tab: Výsledky
         table_title: "Předmět"
     questions:
