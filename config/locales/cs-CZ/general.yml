@@ -500,16 +500,24 @@ cs:
       general_placeholder: 'Napište text'
       search: 'Filtr'
       title: 'Pokročilé vyhledávání'
+      to: 'do'
     author_info:
       author_deleted: Uživatel
     back: Jít zpět
     check: Vybrat
     check_all: Vše
     check_none: Žádné
+    collective: Kolektiv
     flag: Označit jako nevhodné
     follow: "Sledování"
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Nyní sledujete tento investiční projekt! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
+        destroy:
+          notice_html: "Ukončili jste sledování tohoto projektu! </br> Nebude nadále dostávat oznámení související s tímto projektem."
     hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
@@ -621,8 +629,10 @@ cs:
     show:
       deleted: Smazán
       deleted_debate: Tato debata byla smazána
+      deleted_budget_investment: Tento investiční projekt byl smazán
       proposals: Návrhy
       debates: Debaty
+      budget_investments: Rozpočtové investice
       comments: Komentáře
       actions: Akce
       no_activity: Uživatel nemá žádnou veřejnou aktivitu
@@ -687,6 +697,7 @@ cs:
     verification:
       i_dont_have_an_account: Nemám ještě účet
       i_have_an_account: Účet již mám
+      question: Máte již účet na portále %{org_name}?
       title: Ověření účtu
     welcome:
       go_to_index: Zobrazit návrhy a debaty
@@ -694,7 +705,9 @@ cs:
       user_permission_debates: Zapojte se do debat
       user_permission_info: S vaším účtem můžete...
       user_permission_proposal: Vytvořit nové návrhy
+      user_permission_support_proposal: Podpora návrhů *
       user_permission_verify: Chcete-li provést všechny akce, ověřte svůj účet.
+      user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
       user_permission_verify_my_account: Ověřit můj účet
       user_permission_votes: Zapojit se do konečného hlasování
   invisible_captcha:
@@ -704,6 +717,8 @@ cs:
     title: "Související informace"
     add: "Přidat související informace"
     label: "Odkaz na související informace"
+    placeholder: "%{url}"
+    help: "Můžete přidat odkazy %{models} uvnitř %{org}."
     submit: "Přidat"
     error: "Odkaz není platný. Nezapomeňte začít %{url}."
     error_itself: "Odkaz není platný. Nelze odkazovat na totožný obsah."
