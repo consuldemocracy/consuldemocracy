@@ -120,6 +120,7 @@ cs:
         title: Nápověda k debatám
         description: Zahajte diskusi a sdílejte s ostatními témata, která vás znepokojují.
         help_text_1: "Prostor pro diskusi občanů je určen každému, kdo chce zveřejnit problémy, které ho zajímají a chce sdílet názory s ostatními lidmi."
+        help_text_2: 'Chcete-li otevřít debatu, musíte se zaregistrovat na portále %{org}. Uživatelé mohou také komentovat otevřené debaty a hodnotit je pomocí tlačítek "Souhlasím" nebo "Nesouhlasím".'
     new:
       form:
         submit_button: Zahájit debatu
@@ -157,13 +158,19 @@ cs:
     direct_message: soukromá zpráva
     error: chyba
     errors: chyby
+    not_saved_html: "zabránil uložení %{resource}. <br>Zkontrolujte označená pole a pokuste se je opravit:"
     policy: Zásady ochrany osobních údajů
     proposal: Návrhy
     proposal_notification: "upozornění"
+    spending_proposal: Výdaje návrhu
     budget/investment: Investice
+    budget/group: Rozpočtová skupina
+    budget/heading: Rozpočtová skupina
+    poll/shift: Posun
     poll/question/answer: Answer
     user: Účet
     verification/sms: telefon
+    signature_sheet: Podpisové arch
     document: Dokument
     topic: Téma
     image: Image
@@ -172,14 +179,20 @@ cs:
     all: Všechny oblasti
   layouts:
     application:
+      chrome: Google Chrome
+      firefox: Firefox
       ie: Zjistili jsme, že prohlížíte aplikaci Internet Explorer. Pro rozšířené zkušenosti doporučujeme použít %{firefox} nebo %{chrome}.
       ie_title: Tato webová stránka není optimalizována pro váš prohlížeč
     footer:
       accessibility: Přístupnost
       conditions: Podmínky používání
       consul: aplikace CONSUL
+      consul_url: https://github.com/consul/consul
       contact_us: Kontaktujte technickou podporu
+      copyright: CONSUL, %{year}
       description: Tento portál software %{consul}, což je %{open_source}.
+      open_source: open source software
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Rozhodněte se, jak utvářet město, ve kterém žijete.
       participation_title: Participace
       privacy: Zásady ochrany osobních údajů
@@ -189,19 +202,27 @@ cs:
       available_locales: Dostupné jazyky
       collaborative_legislation: Legislativní procesy
       debates: Debaty
+      external_link_blog: Blog
       locale: 'Jazyk:'
+      logo: CONSUL logo
       management: Správa
       moderation: Moderování
+      valuation: Naceňování
+      officing: Asistenti hlasování
       help: Nápověda
       my_account_link: Můj účet
       my_activity_link: Moje aktivity
+      open: otevřené
       open_gov: Otevřený úřad
       proposals: Návrhy
       poll_questions: Průzkumy
       budgets: Participativní rozpočet
+      spending_proposals: Výdaje návrhů
       notification_item:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
+    admin:
+      watch_form_message: 'Máte neuložené změny. Potvrdíte opuštění stránky?'
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
