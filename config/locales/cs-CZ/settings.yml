@@ -92,10 +92,18 @@ cs:
       featured_proposals: "Doporučené návrhy"
       featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
       debates: "Debaty"
+      debates_description: "Občanský debatní prostor je zaměřen na každého, kdo představuje problémy, které se jich týkají a o kterých chtějí sdílet své názory s ostatními"
       polls: "Průzkum"
+      polls_description: "Průzkum veřejného mínění je participační mechanismus, kterým se občané s hlasovacími právy mohou zapojit do přímých rozhodnutí"
       signature_sheets: "Podpisové archy"
+      signature_sheets_description: "Umožnit v administrativním panelu přidávat podpisy shromážděné v terénu k návrhům a investičním projektům v rámci participativních rozpočtů"
+      legislation: "Právní předpisy"
+      legislation_description: "V participačních procesech je občanům nabídnuta příležitost k účasti na vypracování a k úpravám předpisů, které mají vliv na město a vyjádřit svůj názor na určité akce, které jsou plánovány k uskutečnění"
       spending_proposals: "Návrhy výdajů"
       spending_proposals_description: "⚠️ Poznámka: Tato funkce byla nahrazena sekcí participativní rozpočtování a neobjeví se v nových verzích"
+      spending_proposal_features:
+        voting_allowed: Hlasování o investičních projektech - Fáze předvoleb
+        voting_allowed_description: "⚠️ Poznámka: Tato funkce byla nahrazena sekcí Participativní rozpočtování a neobjeví se v nových verzích"
       user:
         recommendations: "Doporučení"
         skip_verification: "Přeskočit ověřování uživatele"
