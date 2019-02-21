@@ -104,7 +104,7 @@ tr:
         blank_dates: Tarihler boş
       destroy:
         success_notice: Bütçe başarıyla silindi
-        unable_notice: İlişkili yatırımları olan bir Bütçeyi yok edemezsiniz
+        unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
       new:
         title: Yeni katılımcı bütçe
       winners:
@@ -127,8 +127,30 @@ tr:
         notice: "Grup başarıyla güncellendi"
       destroy:
         success_notice: "Grup başarıyla silindi"
-    budget_headings:
+        unable_notice: "Başlıklarla ilişkili olan bir Grubu yok edemezsiniz"
       form:
+        create: "Yeni grup oluştur"
+        edit: "Grup düzenle"
+        name: "Grup adı"
+        submit: "Grubu kaydet"
+      index:
+        back: "Bütçelere geri dön"
+    budget_headings:
+      name: "Ad"
+      no_headings: "Hiç başlık yok."
+      amount:
+        one: "1 başlık var"
+        other: "%{count} başlıklar var"
+      create:
+        notice: "Başlık başarıyla oluşturuldu!"
+      update:
+        notice: "Başlık başarıyla güncellendi"
+      destroy:
+        success_notice: "Başlık başarıyla silindi"
+        unable_notice: "Yatırımlarla ilişkili olan bir Başlığı yok edemezsiniz"
+      form:
+        name: "Başlık adı"
+        amount: "Miktar"
         population: "Konum (isteğe bağlı)"
         population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
         latitude: "Enlem (isteğe bağlı)"
@@ -265,6 +287,27 @@ tr:
         table_percentage: "Mevcut işlem"
       new:
         creating: "İşlem çubuğu oluştur"
+      edit:
+        title:
+          primary: "Birincil işlem çubuğunu düzenle"
+          secondary: "İşlem çubuğunu düzenle %{title}"
+      create:
+        notice: "İşlem çubuğu başarıyla oluşturuldu!"
+      update:
+        notice: "İşlem çubuğu başarıyla güncellendi"
+      delete:
+        notice: "İşlem çubuğu başarıyla silindi"
+    comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        hidden_debate: Gizli tartışma
+        hidden_proposal: Gizli öneri
+        title: Gizli yorumlar
+        no_hidden_comments: Hiç gizli yorumlar yok.
     dashboard:
       index:
         title: Yönetim
