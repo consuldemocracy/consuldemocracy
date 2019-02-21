@@ -31,7 +31,26 @@ cs:
       success: "Úspěšně byl identifikován jako %{kind}."
     passwords:
       no_token: "Na tuto stránku nemůžete přistupovat jinak než odkazem pro obnovení hesla. Pokud se tak stalo prostřednictvím odkazu pro obnovení hesla, zkontrolujte, zda je adresa URL kompletní."
+      send_instructions: "Za pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_paranoid_instructions: "Je-li vaše e-mailová adresa je v naší databázi, za pár minut obdržíte odkaz použít k obnovení hesla."
+      updated: "Vaše heslo bylo úspěšně změněno. Ověření bylo úspěšné."
+      updated_not_active: "Vaše heslo bylo úspěšně změněno."
+    registrations:
+      destroyed: "Na shledanou! Váš účet byl zrušen. Doufáme, že se někdy vrátíte zpět."
+      signed_up: "Vítejte! Ověření bylo úspěšné."
+      signed_up_but_inactive: "Registrace byla úspěšná, ale nemohli jste být přihlášeni, protože váš účet nebyl aktivován."
+      signed_up_but_locked: "Registrace byla úspěšná, ale nemohli jste být přihlášeni, protože váš účet je uzamčen."
+      signed_up_but_unconfirmed: "Byla vám zaslána zpráva s ověřovacím odkazem. Kliknutím na tento odkaz aktivujete svůj účet."
+      update_needs_confirmation: "Účet byl úspěšně aktualizován. musíme však ověřit vaši novou e-mailovou adresu. Zkontrolujte e-mail a kliknutím na odkaz dokončete potvrzení vaší nové e-mailové adresy."
+      updated: "Účet byl úspěšně aktualizován."
     sessions:
       signed_in: "Byli jste úspěšně přihlášeni."
       signed_out: "Byli jste úspěšně odhlášeni."
       already_signed_out: "Byli jste úspěšně odhlášeni."
+    unlocks:
+      send_instructions: "Během několika minut obdržíte e-mail obsahující pokyny k odemčení účtu."
+      send_paranoid_instructions: "Pokud máte účet, během několika minut obdržíte e-mail obsahující pokyny k odemčení účtu."
+      unlocked: "Váš účet byl odemčen. Chcete-li pokračovat, přihlaste se."
+  errors:
+    messages:
+      already_confirmed: "Byl jste již ověřen; prosím, pokuste se přihlásit."
