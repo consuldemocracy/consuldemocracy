@@ -51,6 +51,7 @@ cs:
       sidebar:
         recommendations_title: Doporučení k vytváření témat
         recommendation_one: Nepište název tématu nebo celé věty velkými písmeny. Na internetu je to považováno  za výkřiky. A nikdo nechce, aby na něho někdo křičel.
+        recommendation_two: Jakékoli téma nebo komentář, který obsahuje nezákonné, nenávistné či vulgární projevy budou odstraněny, a to i ty, které chtějí zapojování ostatních sabotovat. Vše ostatní je povoleno.
         recommendation_three: Užijte si tento prostor, myšlenky, které ho vyplňují, jsou i ty vaše.
   topics:
     show:
