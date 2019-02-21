@@ -1,7 +1,7 @@
 class Budget
   require "csv"
   class Investment < ApplicationRecord
-    SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
+    SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
     include ActiveModel::Dirty
     include Rails.application.routes.url_helpers
@@ -119,9 +119,7 @@ class Budget
     end
 
     def self.sort_by_title
-      includes(:translations).
-        with_locales(Globalize.fallbacks(I18n.locale)).
-        order("budget_investment_translations.title ASC")
+      with_translation.sort_by(&:title)
     end
 
     def self.filter_params(params)
@@ -169,10 +167,12 @@ class Budget
     def self.order_filter(params)
       sorting_key = params[:sort_by]&.downcase&.to_sym
       allowed_sort_option = SORTING_OPTIONS[sorting_key]
+      direction = params[:direction] == "desc" ? "desc" : "asc"
 
       if allowed_sort_option.present?
-        direction = params[:direction] == "desc" ? "desc" : "asc"
         order("#{allowed_sort_option} #{direction}")
+      elsif sorting_key == :title
+        direction == "asc" ? sort_by_title : sort_by_title.reverse
       else
         order(cached_votes_up: :desc).order(id: :desc)
       end
