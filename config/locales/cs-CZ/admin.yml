@@ -181,11 +181,21 @@ cs:
           unfeasible: Nerealizovatelné
           min_total_supports: Minimální podpora
           winners: Vítězové
+          one_filter_html: "Aktuální použité filtry: <b><em>%{filter}</em></b>"
+          two_filters_html: "Aktuální použité filtry: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtr
+        download_current_selection: "Stáhnout aktuální výběr"
+        no_budget_investments: "Neexistují žádné investiční projekty."
         title: Investiční projekty
+        assigned_admin: Přiřazený administrátor
+        no_admin_assigned: Administrátor není přiřazen
+        no_valuators_assigned: Žádný hodnotitel není přiřazen
+        no_valuation_groups: Není přiřazena žádná skupina hodnotitelů
         feasibility:
+          feasible: "Proveditelné (%{price})"
           unfeasible: "Nerealizovatelné"
+          undecided: "Nerozhodnuté"
         selected: "Vybrané"
         select: "Vybrat"
         list:
@@ -194,14 +204,23 @@ cs:
           supports: Podpora
           admin: Administrátor
           valuator: Hodnotitel
+          valuation_group: Skupina hodnotitelů
           geozone: Vymezení oblasti města
+          feasibility: Proveditelnost
+          valuation_finished: Konec oc.
           selected: Vybrané
+          visible_to_valuators: Zobrazit hodnotitelům
           author_username: Uživatelské jméno autora
           incompatible: Nekompatibilní
+        cannot_calculate_winners: Rozpočet musí zůstat na fázi "Hlasování o projektech", "Přezkoumání hlasování" nebo "Ukončený rozpočet" za účelem výpočtu vítězných projektů
         see_results: "Zobrazit výsledky"
       show:
+        assigned_admin: Přiřazený administrátor
+        assigned_valuators: Přiřazení hodnotitelé
         classification: Klasifikace
+        info: "%{budget_name} - skupina: %{group_name} - investiční projekt %{id}"
         edit: Upravit
+        edit_classification: Upravit klasifikaci
         group: Skupina
         heading: Heading
         tags: Štítky
