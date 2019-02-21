@@ -525,6 +525,8 @@ cs:
       proposal:
         create:
           notice_html: "Nyní sledujete tento občanský návrh! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
+        destroy:
+          notice_html: "Ukončili jste sledování tohoto návrhu!</br> Nebudeme Vám již zasílat upozornění k tomuto návrhu."
     hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
@@ -532,6 +534,7 @@ cs:
     show: Zobrazit
     suggest:
       debate:
+        message: "Je zobrazeno %{limit} z %{count} debat obsahujících výraz '%{query}'"
         see_all: "Zobrazit vše"
       budget_investment:
         see_all: "Zobrazit vše"
