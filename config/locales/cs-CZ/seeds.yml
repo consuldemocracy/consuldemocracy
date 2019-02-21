@@ -1,5 +1,16 @@
 cs:
   seeds:
+    settings:
+      official_level_1_name: Oficiální pozice 1
+      official_level_2_name: Oficiální pozice 2
+      official_level_3_name: Oficiální pozice 3
+      official_level_4_name: Oficiální pozice 4
+      official_level_5_name: Oficiální pozice 5
+    geozones:
+      north_district: Oblast Sever
+      west_district: Oblast Západ
+      east_district: Oblast Východ
+      central_district: Centrální oblast
     organizations:
       human_rights: Lidská práva
       neighborhood_association: Sdružování
@@ -29,6 +40,7 @@ cs:
         culture_and_sports: Kultura & Sport
         gender_and_diversity: Politiky v oblasti rovnosti žen a mužů
         urban_development: Udržitelný urbání rozboj
+        equity_and_employment: Vlastní kapitál & zaměstnanost
       statuses:
         studying_project: Studium projektu
         bidding: Nabídka
