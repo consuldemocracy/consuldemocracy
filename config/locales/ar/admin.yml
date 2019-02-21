@@ -681,6 +681,9 @@ ar:
       not_supported_on_current_budget: المستخدميون الذين لم يدعمو استثمارات في الميزانية الحالية
     newsletters:
       create_success: تم إنشاء الرسالة الإخبارية بنجاح
+      update_success: تم تحديث الرسالة الإخبارية بنجاح
+      send_success: تم إرسال الرسالة الإخبارية بنجاح
+      delete_success: تم حذف الرسالة الإخبارية بنجاح
       index:
         title: نشرات إخبارية
         new_newsletter: رسائلة إخبارية جديدة
@@ -848,7 +851,10 @@ ar:
       new:
         add_shift: "إضافة مناوبة"
         shift: "تعيين"
+        shifts: "المناوبات في هذا المكتب"
         date: "تاريخ"
+        task: "المهمة"
+        edit_shifts: تحرير المناوبات
         new_shift: "مناوبة جديدة"
         no_shifts: "لا توجد مناوبات لمكتب الإقتراع هذا"
         officer: "ضابط"
