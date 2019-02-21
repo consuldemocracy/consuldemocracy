@@ -981,30 +981,67 @@ cs:
         back: Zpět
         classification: Klasifikace
         edit: Upravit
+        dossier: Dokumentace
+        edit_dossier: Upravit dokumentaci
         tags: Štítky
+        undefined: Nedefinováno
       edit:
         classification: Klasifikace
+        assigned_valuators: Hodnotitelé
         submit_button: Aktualizovat
         tags: Štítky
+        tags_placeholder: "Napište štítky které chcete a oddělte je čárkami (,)"
+        undefined: Nedefinováno
       summary:
+        title: Přehled o vyhodnocení investičních projektů
+        title_proposals_with_supports: Shrnutí pro investiční projekty s podporovateli
+        geozone_name: Rozsah
+        finished_and_feasible_count: Ukončené a proveditelné
+        finished_and_unfeasible_count: Ukončené a neproveditelné
         finished_count: Dokončené
+        in_evaluation_count: V procesu hodnocení
         total_count: Celkem
+        cost_for_geozone: Náklady
     geozones:
       index:
+        title: Geozóna
+        create: Vytvořit geozónu
         edit: Upravit
         delete: Smazat
       geozone:
         name: Název
+        external_code: Externí kód
+        census_code: Kód statistického úřadu
+        coordinates: Souřadnice
+      errors:
+        form:
+          error:
+            one: "chyba zabránila uložení této geozóny"
+            few: 'chyba zabránila uložení této geozóny'
+            many: 'chyba zabránila uložení této geozóny'
+            other: 'chyby zabránily uložení této geozóny'
       edit:
         form:
           submit_button: Uložit změny
+        editing: Úprava geozóny
         back: Jít zpět
       new:
         back: Jít zpět
+        creating: Vytvořit oblast
+      delete:
+        success: Geozóna byla odstraněna
+        error: Tato geozóna nemohla být odstraněna, protože jsou k ní připojeny některé prvky
     signature_sheets:
       author: Autor
       created_at: Datum vytvoření
       name: Název
+      no_signature_sheets: "Nemáte žádné podpisové archy"
+      index:
+        title: Podpisové archy
+        new: Nové podpisové archy
+      new:
+        title: Nové podpisové archy
+        document_numbers_note: "Napište čísla oddělené čárkou (,)"
       show:
         author: Autor
         documents: Dokumenty
