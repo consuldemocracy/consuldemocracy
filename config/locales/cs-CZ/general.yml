@@ -537,8 +537,10 @@ cs:
         message: "Je zobrazeno %{limit} z %{count} debat obsahujících výraz '%{query}'"
         see_all: "Zobrazit vše"
       budget_investment:
+        message: "Je zobrazeno %{limit} z %{count} investičních projektů obsahujících výraz '%{query}'"
         see_all: "Zobrazit vše"
       proposal:
+        message: "Je zobrazeno %{limit} z %{count} návrhů obsahujících výraz '%{query}'"
         see_all: "Zobrazit vše"
     tags_cloud:
       tags: Populární
@@ -547,6 +549,7 @@ cs:
       categories: "Kategorie"
     target_blank_html: " (odkaz se otevře v novém okně)"
     you_are_in: "Jste v"
+    unflag: Odblokovat
     unfollow_entity: "Přestat sledovat %{entity}"
     outline:
       budget: Participativní rozpočet
