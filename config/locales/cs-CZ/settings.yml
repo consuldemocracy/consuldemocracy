@@ -1,5 +1,7 @@
 cs:
   settings:
+    comments_body_max_length: "Maximální délka komentáře"
+    comments_body_max_length_description: "V počtu znaků"
     url: "Hlavní URL"
     url_description: "Hlavní URL vašeho webu"
     org_name: "Organizace"
