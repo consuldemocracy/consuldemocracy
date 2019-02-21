@@ -32,8 +32,8 @@ cs:
       - sobota
     formats:
       default: "%d-%m-%Y"
-      long: "%d.%m.%Y"
-      short: "%d.%b"
+      long: "%d. %B %Y"
+      short: "%d %b"
     month_names:
       - 
       - leden
@@ -49,6 +49,8 @@ cs:
       - listopad
       - prosinec
   datetime:
+    distance_in_words:
+      half_a_minute: p
     prompts:
       day: Den
       hour: Hodina
@@ -108,5 +110,8 @@ cs:
   time:
     am: dopoledne
     formats:
+      default: "%a %d. %B %Y %H:%M %z"
+      long: "%A %d. %B %Y %H:%M"
+      short: "%d. %m. %H:%M"
       api: "%d.%m.%Y %H"
     pm: odpoledne
