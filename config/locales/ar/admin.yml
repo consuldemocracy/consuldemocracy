@@ -954,29 +954,40 @@ ar:
         create: "إنشاء سؤال"
         no_questions: "لا توجد هناك أسئلة."
         filter_poll: ترشيح حسب استطلاع الرأي
+        select_poll: تحديد الاستطلاع
         questions_tab: "أسئلة"
+        successful_proposals_tab: "الاقتراحات الناجحة"
         create_question: "إنشاء سؤال"
         table_proposal: "اقتراح"
         table_question: "سؤال"
         table_poll: "استطلاع"
+        poll_not_assigned: "استطلاع غير معين"
+      edit:
+        title: "تحرير سؤال"
       new:
+        title: "إنشاء سؤال"
         poll_label: "استطلاع"
       answers:
         images:
           add_image: "إضافة صورة"
           save_image: "حفظ الصورة"
       show:
+        proposal: الاقتراح الأصلي
         author: كاتب
         question: سؤال
+        edit_question: تحرير سؤال
+        valid_answers: إجابات صالحة
         add_answer: إضافة إجابة
         video_url: فيديو خارجي
         answers:
           title: الإجابة
           description: الوصف
           videos: فيديوهات
+          video_list: قائمة الفيديو
           images: صور
           images_list: قائمة الصور
           documents: الوثائق
+          documents_list: قائمة الوثائق
           document_title: عنوان
           document_actions: الإجراءات
     answers:
@@ -1128,6 +1139,10 @@ ar:
       flash:
         updated: تم تحديث القيمة
       index:
+        banners: أنماط اللافتة
+        banner_imgs: صور اللافتة
+        no_banners_images: لا توجد صور للافتة
+        no_banners_styles: لا توجد أنماط للافتة
         update_setting: تحديث
         feature_flags: المميزات
         features:
@@ -1292,16 +1307,31 @@ ar:
     tags:
       index:
         topic: موضوع
+      name:
+        placeholder: اكتب اسم الموضوع
     users:
       columns:
         name: الإ سم
         email: البريد الإلكتروني
+        document_number: رقم الوثيقة
+        roles: الأدوار
+        verification_level: مستوى التحقق
       index:
         title: المستخدم
+        no_users: لا يوجد مستخدمين.
       search:
+        placeholder: البحث عن المستخدم عبر البريد الإلكتروني أو الاسم أو رقم الوثيقة
         search: بحث
+    verifications:
+      index:
+        phone_not_given: الهاتف غير معطى
+        title: عملية التحقق غير مكتملة
     site_customization:
       content_blocks:
+        information: معلومات حول كتل المحتوى
+        about: "يمكنك إنشاء كتل محتوى HTML التي يمكن إدراجها في أماكن مختلفة من موقع الويب الخاص بك."
+        html_format: "كتلة المحتوى هي مجموعة من الروابط، ويجب أن يكون لها التنسيق التالي:"
+        no_blocks: "ليس هناك كتل محتوى."
         errors:
           form:
             error: خطأ
