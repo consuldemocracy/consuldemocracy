@@ -75,10 +75,21 @@ tr:
       index:
         title: Katılımcı bütçe
         new_link: Yeni bütçe oluştur
+        filter: Filtre
         filters:
           open: Açık
+          finished: Bitmiş
+        budget_investments: Projeleri yönetme
+        table_name: Ad
+        table_phase: Aşama
         table_investments: Yatırımlar
+        table_edit_groups: Başlıklar grupları
         table_edit_budget: Düzenleme
+        edit_groups: Başlıklar gruplarını düzenle
+        edit_budget: Bütçe düzenleme
+        no_budgets: "Hiç bütçe yok."
+      create:
+        notice: Yeni katılımcı bütçe başarıyla oluşturuldu!
       edit:
         actions: Aksiyon
     budget_headings:
