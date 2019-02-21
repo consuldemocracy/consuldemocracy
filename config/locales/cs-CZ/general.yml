@@ -275,6 +275,8 @@ cs:
       recommendations:
         without_results: Neexistují žádné návrhy týkající se vašich zájmů
         disable: "Doporučení ohledně návrhů se přestanou zobrazovat, pokud je odmítnete. Můžete je znovu aktivovat na stránce Můj účet"
+        actions:
+          error: "Jejda, chyba. Přejděte na stránku 'Můj účet', abyste ručně deaktivovali doporučení pro návrhy"
       retired_proposals: Pozastavené návrhy
       retired_proposals_link: "Pozastavené návrhy tříděné podle autorů"
       retired_links:
@@ -320,6 +322,7 @@ cs:
       votes:
         zero: Žádné hlasy
       supports_necessary: "Potřebuje podporu %{number} lidí"
+      total_percent: 100%
       archived: "Tento návrh byl archivován a nelze jej již podpořit."
       successful: "Tento návrh dosáhl požadované podpory."
     show:
@@ -371,6 +374,9 @@ cs:
       cant_answer_wrong_geozone: "Tato otázka není dostupná ve vaší čtvrti."
       more_info_title: "Více informací"
       documents: Dokumenty
+      zoom_plus: Zvětšit obrázek
+      read_more: "Číst více o %{answer}"
+      read_less: "Číst méně o %{answer}"
       videos: "External video"
       info_menu: "Informace"
       stats_menu: "Statistika účasti"
@@ -380,6 +386,7 @@ cs:
         total_participation: "Počet respondentů"
         total_votes: "Celkový počet odevzdaných hlasů"
         votes: "HLASŮ"
+        web: "WEB"
         total: "CELKEM"
         valid: "Platné"
         null_votes: "Neplatné"
@@ -431,6 +438,8 @@ cs:
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
     hide: Skrýt
+    print:
+      print_button: Vytisknout tuto informaci
     search: Vyhledat
     show: Zobrazit
     suggest:
@@ -481,15 +490,24 @@ cs:
         title: Vyhledat
       sidebar:
         geozones: Vymezení oblasti města
+        feasibility: Proveditelnost
         unfeasible: Nerealizovatelné
+      start_spending_proposal: Vytvořit investiční projekt
+    new:
+      recommendations_title: Jak vytvořit výdaje návrhu
+      start_new: Vytvořit výdaje návrhu
     show:
       author_deleted: Uživatel
       code: 'Kód návrhu:'
       share: Sdílet
+    wrong_price_format: Pouze celá čísla
     spending_proposal:
+      spending_proposal: Investiční projekt
       already_supported: Tento návrh jste již podpořili. Sdílejte jej!
       support: Podpořte!
       support_title: Podpořit tento projekt
+      supports:
+        zero: Žádná podpora
   stats:
     index:
       visits: Návštěvy
@@ -519,6 +537,7 @@ cs:
       show:
         receiver: Zpráva odeslána uživateli %{receiver}
     show:
+      deleted: Smazán
       deleted_debate: Tato debata byla smazána
       proposals: Návrhy
       debates: Debaty
@@ -603,6 +622,7 @@ cs:
     title: "Související informace"
     add: "Přidat související informace"
     label: "Odkaz na související informace"
+    submit: "Přidat"
     error: "Odkaz není platný. Nezapomeňte začít %{url}."
     error_itself: "Odkaz není platný. Nelze odkazovat na totožný obsah."
     success: "Přidali jste související informace"
