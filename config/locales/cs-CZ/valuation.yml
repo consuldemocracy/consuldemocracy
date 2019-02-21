@@ -1,5 +1,7 @@
 cs:
   valuation:
+    header:
+      title: Hodnocení
     menu:
       budgets: Participativní rozpočty
     budgets:
@@ -11,6 +13,8 @@ cs:
         table_name: Název
         table_phase: Fáze
         table_actions: Akce
+        evaluate: Hodnotit
+        no_budgets: "Neexistují žádné rozpočty"
     budget_investments:
       index:
         filters:
@@ -22,23 +26,52 @@ cs:
         table_actions: Akce
       show:
         back: Zpět
+        info: Informace o autorovi
+        by: Odesláno uživatelem
+        sent: Odesláno v čase
         heading: Heading
         price: Cena
         currency: "Kč"
+        feasibility: Proveditelnost
+        feasible: Proveditelný
         unfeasible: Nerealizovatelné
+        undefined: Neproveditelný
+        valuation_finished: Hodnocení bylo ukončeno
+        duration: Časový rozsah
+        responsibles: Odpovědnost
+        assigned_admin: Přiřazeno administrátorovi
+        assigned_valuators: Přiřazeno hodnotiteli
       edit:
+        dossier: Dokumentace
+        price_html: "Cena (%{currency})"
+        price_explanation_html: Vysvětlení nákladů
+        feasibility: Proveditelnost
+        feasible: Proveditelný
+        unfeasible: Neproveditelný
         undefined_feasible: Nevyřízený
+        feasible_explanation_html: Vysvětlení proveditelnosti
+        valuation_finished: Hodnocení bylo ukončeno
         save: Uložit změny
+      notice:
+        valuate: "Dokumentace byla aktualizována"
     spending_proposals:
       index:
+        geozone_filter_all: Všechny oblasti
         filters:
           valuation_open: Otevřené
+          valuating: Podhodnoceno
+          valuation_finished: Hodnocení bylo ukončeno
         edit: Upravit
       show:
         back: Zpět
+        info: Informace o autorovi
         price: Cena
         currency: "Kč"
       edit:
         currency: "Kč"
         undefined_feasible: Nevyřízený
+        time_scope_html: Časový rozsah
+        internal_comments_html: Interní poznámky
         save: Uložit změny
+      notice:
+        valuate: "Dokumentace byla aktualizována"
