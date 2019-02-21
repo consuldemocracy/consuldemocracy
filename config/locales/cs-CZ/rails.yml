@@ -59,10 +59,34 @@ cs:
       second: Sekund
       year: Rok
   errors:
+    format: "%{attribute} %{message}"
     messages:
+      accepted: musí být přijata
       blank: nemůže být prázdné
       present: musí být prázdné
+      confirmation: neodpovídá %{attribute}
+      empty: nemůže být prázdné
+      equal_to: musí být rovno %{count}
+      even: musí být sudé
+      exclusion: je vyhrazeno
+      greater_than: musí být větší než %{count}
+      greater_than_or_equal_to: musí být větší nebo rovno %{count}
+      inclusion: není zahrnuto v seznamu
+      invalid: je neplatné
+      less_than: musí být menší než %{count}
+      less_than_or_equal_to: musí být menší nebo rovno %{count}
       model_invalid: "Validation failed: %{errors}"
+      not_a_number: není číslo
+      not_an_integer: musí být celé číslo
+      odd: musí být liché
+      required: musí existovat
+      taken: již byla přijata
+      other_than: musí být jiný než %{count}
+    template:
+      body: 'Došlo k problémům s následujícími poli:'
+  helpers:
+    select:
+      prompt: Prosím vyberte
   number:
     currency:
       format:
