@@ -16,6 +16,7 @@ cs:
         not_selected: Nevybrané investiční projekty nelze podpořit
         not_enough_money_html: "Již jste rozdělili dostupný rozpočet. <br> <small>Pamatujte, že můžete kdykoli %{change_ballot}</small>"
         no_ballots_allowed: Fáze výběru byla ukončena
+        different_heading_assigned_html: "Už jste hlasovali pro jiný heading: %{heading_link}"
     groups:
       show:
         unfeasible_title: Nerealizovatelné projekty
