@@ -17,7 +17,12 @@ cs:
       locked: "Váš účet byl uzamčen."
       last_attempt: "Máte ještě jeden další pokus, než váš účet bude zablokován."
       not_found_in_database: "Neplatný %{authentication_keys} nebo heslo."
+      timeout: "Platnost vaší relace vypršela. Chcete-li pokračovat, přihlaste se znovu."
       unauthenticated: "Pro pokračování se musíte přihlásit nebo registrovat."
+      unconfirmed: "Chcete-li pokračovat, klikněte na potvrzovací odkaz, který vám byl zaslán e-mailem"
+    mailer:
+      confirmation_instructions:
+        subject: "Instrukce pro potvrzení"
     sessions:
       signed_in: "Byli jste úspěšně přihlášeni."
       signed_out: "Byli jste úspěšně odhlášeni."
