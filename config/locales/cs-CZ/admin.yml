@@ -724,15 +724,39 @@ cs:
         officer: "Úředník"
         remove_shift: "Odstranit"
         search_officer_button: Vyhledat
+        search_officer_placeholder: Vyhledat úředníka
+        search_officer_text: Vyhledat úředníka a přiřadit ho k nové směně
+        select_date: "Vyberte den"
+        no_voting_days: "Dny hlasování skončily"
         select_task: "Vybrat úkol"
+        table_shift: "Směna"
         table_email: "Email"
         table_name: "Název"
+      flash:
+        create: "Směna přidána"
+        destroy: "Směna odstraněna"
+        unable_to_destroy: "Směna s přiřazenými výsledky nebo přepočítáním nemůže být odstraněna"
+        date_missing: "Musí být vybráno datum"
+      vote_collection: Shromáždit hlasy
+      recount_scrutiny: Přepočítávání & Kontrola
     booth_assignments:
+      manage_assignments: Spravovat přiřazení
       manage:
+        assignments_list: "Přiřazení pro anketu \"%{poll}\""
         status:
+          assign_status: Přiřazení
           assigned: Přiřazeno
           unassigned: Nepřiřazeno
+        actions:
+          assign: Přiřadit informační stánek
+          unassign: Zrušit přiřazení informačního stánku
     poll_booth_assignments:
+      alert:
+        shifts: "K tomuto informačnímu stánku jsou přiřazené směny. Pokud odeberete přiřazení informačního stánku, směny budou také odstraněny. Chcete pokračovat?"
+      flash:
+        destroy: "Informační stánek již není přiřazen"
+        create: "Informační stánek přiřazen"
+        error_destroy: "Došlo k chybě při odstranění přiřazení informačního stánku"
       show:
         results: "Výsledky"
       index:
@@ -780,13 +804,32 @@ cs:
       show:
         title: Předmět
         description: Description
+        images: Obrázky
+        images_list: Seznam obrázků
+        edit: Upravit odpověď
+      edit:
+        title: Upravit odpověď
       videos:
         index:
+          title: Videa
+          add_video: Přidat video
           video_title: Předmět
           video_url: External video
+        new:
+          title: Nové video
+        edit:
+          title: Upravit video
+    recounts:
+      index:
+        title: "Přepočítat"
+        no_recounts: "Není nic k přepočítání"
+        table_booth_name: "Informační stánek"
+        table_total_recount: "Celkový přepočet (úředníkem)"
+        table_system_count: "Hlasů (automaticky)"
     results:
       index:
         title: "Výsledky"
+        no_results: "Nejsou žádné výsledky"
       result:
         table_answer: Answer
         table_votes: Hlasů
