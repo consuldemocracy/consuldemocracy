@@ -155,10 +155,10 @@ tr:
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımsız
         user_groups: "Gruplar"
-      search_unfeasible: Uygulanamaz arama
+      search_unfeasible: Arama uygulanamaz
     milestones:
       index:
-        table_id: "Kimlik"
+        table_id: "KİMLİK"
         table_title: "İsim"
         table_description: "Tanımlama"
         table_publication_date: "Yayın tarihi"
@@ -213,7 +213,7 @@ tr:
         no_progress_bars: "İşlem çubukları yok"
         new_progress_bar: "Yeni işlem çubuğu oluştur"
         primary: "Birincil işlem çubuğu"
-        table_id: "Kimlik"
+        table_id: "KİMLİK"
         table_kind: "Tür"
         table_title: "İsim"
         table_percentage: "Mevcut işlem"
@@ -226,10 +226,10 @@ tr:
       processes:
         form:
           draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
-          allegations_phase: Aşama yorumları
+          allegations_phase: Yorumlar aşaması
           proposals_phase: Öneriler aşaması
           start: Başlat
-          end: Bitir
+          end: Bitiş
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
           title_placeholder: İşlem başlığı
           summary_placeholder: Tanımlamanın kısa özeti
