@@ -769,7 +769,7 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
-    t.string   "value"
+    t.string   "deprecated_value"
     t.integer  "answers_count",           default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                          null: false
