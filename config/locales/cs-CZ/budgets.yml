@@ -16,14 +16,17 @@ cs:
         not_selected: Nevybrané investiční projekty nelze podpořit
         not_enough_money_html: "Již jste rozdělili dostupný rozpočet. <br> <small>Pamatujte, že můžete kdykoli %{change_ballot}</small>"
         no_ballots_allowed: Fáze výběru byla ukončena
-        different_heading_assigned_html: "Už jste hlasovali pro jiný heading: %{heading_link}"
+        different_heading_assigned_html: "Už jste hlasovali v jiné kapitole: %{heading_link}"
+        change_ballot: změnit své hlasování
     groups:
       show:
+        title: Vyberte možnost
         unfeasible_title: Nerealizovatelné projekty
         unfeasible: Podívejte se na nerealizovatelné investice
         unselected_title: Projekty, které nebyly vybrány pro fázi hlasování
         unselected: Zobrazit projekty, které nebyly vybrány pro fázi hlasování
     phase:
+      drafting: Koncept (není veřejně viditelný)
       informing: Informace
       accepting: Přijímání projektů
       reviewing: Posuzování projektů
@@ -62,12 +65,22 @@ cs:
         map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
         map_remove_marker: "Odstranit značku z mapy"
         location: "Doplňující informace k lokalitě"
+        map_skip_checkbox: "Tato investice nemá konkrétní umístění nebo si umístěním nejsem jistý."
       index:
         title: Participativní rozpočtování
+        unfeasible: Nerealizovatelné investiční projekty
+        unfeasible_text: "Investice musí splňovat řadu kritérií (zákonnost, konkrétní věc, odpovědnost města, nesmí překročit hranici rozpočtu), aby byly prohlášeny za životaschopné a byly zařazeny do konečného hlasování. Všechny investice, které nesplňují tato kritéria, jsou označeny jako neuskutečnitelné a publikovány v následujícím seznamu spolu se zprávou o neudržitelnosti."
+        by_heading: "Investiční projekty s působností: %{heading}"
         search_form:
           button: Vyhledat
+          placeholder: Vyhledat investiční projekty...
           title: Vyhledat
         sidebar:
+          my_ballot: Moje hlasování
+          voted_info: Můžete %{link} kdykoli před ukončením této fáze. Není třeba utrácet všechny dostupné peníze.
+          voted_info_link: změnit své hlasování
+          different_heading_assigned_html: "Už jste hlasovali pro jiný heading: %{heading_link}"
+          change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
           check_ballot_link: "kontrola mého hlasování"
           verify_account: "ověřte Váš účet"
           create: "Přidat investiční projekt"
@@ -90,6 +103,7 @@ cs:
         give_support: Podpořte!
       header:
         check_ballot: Kontrola mého hlasování
+        different_heading_assigned_html: "Už jste hlasovali v jiné kapitole: %{heading_link}"
         check_ballot_link: "kontrola mého hlasování"
         price: "Tato položka má rozpočet"
     progress_bar:
