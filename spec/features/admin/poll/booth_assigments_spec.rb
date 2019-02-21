@@ -12,17 +12,17 @@ feature 'Admin booths assignments' do
     let!(:poll) { create(:poll) }
     let!(:booth) { create(:poll_booth) }
 
-    scenario 'List Polls and Booths to manage', :js do
+    scenario "List Polls and Booths to manage", :js do
       second_poll = create(:poll)
       second_booth = create(:poll_booth)
 
       visit booth_assignments_admin_polls_path
 
-      expect(page).to have_content(poll.name)
+      expect(page).to have_link(poll.name, href: manage_admin_poll_booth_assignments_path(poll))
       expect(page).to have_content(second_poll.name)
 
       within("#poll_#{second_poll.id}") do
-        click_link 'Manage assignments'
+        click_link "Manage assignments"
       end
 
       expect(page).to have_content "Assignments for poll '#{second_poll.name}'"
