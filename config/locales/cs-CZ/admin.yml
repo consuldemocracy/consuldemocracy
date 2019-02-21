@@ -646,30 +646,53 @@ cs:
         description: Description
         no_description: Bez popisu
         no_valuators: Nemáte žádné hodnotitele.
+        valuator_groups: "Skupiny hodnotitelů"
         group: "Skupina"
         no_group: "Žádná skupina"
       valuator:
         add: Přidat k hodnotitelům
         delete: Smazat
+      search:
+        title: 'Hodnotitelé: Vyhledávání uživatelů'
       summary:
+        title: Přehled o vyhodnocení investičních projektů
         valuator_name: Hodnotitel
+        finished_and_feasible_count: Ukončené a proveditelné
+        finished_and_unfeasible_count: Ukončené a neproveditelné
         finished_count: Dokončené
+        in_evaluation_count: V procesu hodnocení
         total_count: Celkem
         cost: Náklady
+      form:
+        edit_title: "Hodnotitelé: Upravit hodnotitele"
+        update: "Aktualizovat hodnotitele"
+        updated: "Hodnotitel byl úspěšně aktualizován"
       show:
         description: "Description"
         email: "Email"
         group: "Skupina"
+        no_description: "Bez popisu"
+        no_group: "Bez skupiny"
     valuator_groups:
       index:
+        title: "Skupiny hodnotitelů"
+        new: "Vytvořit skupinu hodnotitelů"
         name: "Název"
+        members: "Členové"
+        no_groups: "Nemáte žádnou skupinu hodnotitelů"
+      show:
+        title: "Skupina hodnotitelů: %{group}"
+        no_valuators: "Nemáte žádné hodnotitele přiřazené k této skupině"
       form:
         name: "Název skupiny"
         new: "Vytvořit skupinu hodnotitelů"
         edit: "Uložit skupinu hodnotitelů"
     poll_officers:
+      index:
+        title: Asistenti hlasování
       officer:
         add: Přidat
+        delete: Odstranit pozici
         name: Název
         email: Email
         entry_name: úředník
@@ -680,16 +703,26 @@ cs:
     poll_officer_assignments:
       index:
         officers_title: "Seznam úředníků"
+        no_officers: "Nemáte žádné hodnotitele přiřazené k tomuto hlasování."
         table_name: "Název"
         table_email: "Email"
       by_officer:
         date: "Datum"
         booth: "Oba"
+        assignments: "Administrativní směny v této anketě"
+        no_assignments: "Tento uživatel nemá žádnou směnu v tomto hlasování."
     poll_shifts:
       new:
+        add_shift: "Přidat směnu"
+        shift: "Přiřazení"
+        shifts: "Směny na tomto informačním stánku"
         date: "Datum"
         task: "Úkol"
+        edit_shifts: Upravit směny
+        new_shift: "Nová směna"
+        no_shifts: "Informační stánek nemá přiřazenou směnu"
         officer: "Úředník"
+        remove_shift: "Odstranit"
         search_officer_button: Vyhledat
         select_task: "Vybrat úkol"
         table_email: "Email"
