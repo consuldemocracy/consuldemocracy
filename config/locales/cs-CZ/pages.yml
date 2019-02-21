@@ -37,12 +37,22 @@ cs:
       polls:
         title: "Průzkum"
         description: "%{link} sekce je aktivována pokud návrh dosáhne 1% podpory a tím je zařazen do veřejného hlasování, a nebo když vedení města samo zveřejní tento návrh k veřejnému hlasování."
+        link: "průzkumy"
+        feature_1: "K účasti v hlasování využijte následující odkaz %{link} a ověřte svůj účet."
+        feature_1_link: "registrován na portále %{org_name}"
       processes:
         title: "Procesy"
+        description: "V části %{link} se občané podílejí na přípravě a úpravách předpisů, které mají vliv na město a mohou se vyjádřit např. k návrhům obecních vyhlášek v předchozích debatách."
+        link: "procesy"
       faq:
         title: "Technické problémy?"
+        description: "Přečtěte si časté otázky a řešit vaše dotazy."
+        button: "Zobrazit často kladené otázky"
         page:
           title: "Otázky a odpovědi"
+          description: "Tato stránka slouží k vyřešení běžné dotazy uživatelům webového portálu."
+          faq_1_title: "Otázka 1"
+          faq_1_description: "Toto je příklad popisu první otázky."
       other:
         title: "Další zajímavé informace"
         how_to_use: "Použijte %{org_name} ve vašem městě"
@@ -58,6 +68,21 @@ cs:
     privacy:
       title: Zásady ochrany osobních údajů
       subtitle: INFORMACE O OCHRANĚ ÚDAJŮ O DATECH
+      info_items:
+        - 
+          text: Navigace prostřednictvím informací dostupných na portálu Open Government Portal je anonymní.
+        - 
+          text: Chcete-li využívat služby obsažené na portálu Open Government, musí se uživatel zaregistrovat a předtím poskytnout osobní údaje podle konkrétních informací obsažených v každém typu registrace.
+        - 
+          text: 'Poskytnuté údaje budou zapracovány a zpracovány vedením města v souladu s popisem následujícího souboru:'
+        - 
+          subitems:
+            - 
+              field: 'Název souboru:'
+              description: NÁZEV SOUBORU
+            - 
+              field: 'Účel souboru:'
+            - 
     accessibility:
       title: Přístupnost
       keyboard_shortcuts:
