@@ -87,6 +87,10 @@ cs:
   helpers:
     select:
       prompt: Prosím vyberte
+    submit:
+      create: Vytvořte %{model}
+      submit: Uložte %{model}
+      update: Aktualizujte %{model}
   number:
     currency:
       format:
@@ -134,6 +138,7 @@ cs:
   time:
     am: dopoledne
     formats:
+      datetime: "%d.%m.%Y %H:%M:%S"
       default: "%a %d. %B %Y %H:%M %z"
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
