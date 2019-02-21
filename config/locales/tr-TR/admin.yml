@@ -225,10 +225,49 @@ tr:
           visible_to_valuators: Bilirkişileri göster
           author_username: Yazar kullanıcı adı
           incompatible: Uyumsuz
+        cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
+        see_results: "Sonuçları gör"
       show:
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
+        classification: Sınıflandırma
+        info: "%{budget_name} - Grup: %{group_name} - Yatırım projesi %{id}"
         edit: Düzenleme
+        edit_classification: Sınıflandırmayı düzenle
+        by: Tarafından
+        sent: Gönderme
+        group: Grup
+        heading: Başlık
+        dossier: Dosya
+        edit_dossier: Dosya düzenleme
+        tags: Etiketler
+        user_tags: Kullanıcı etiketleri
+        undefined: Tanımsız
+        compatibility:
+          title: Uygunluk
+          "true": Uyumsuz
+          "false": Uyumlu
+        selection:
+          title: Seçim
+          "true": Seçilmiş
+          "false": Seçilmemiş
+        winner:
+          title: Kazanan
+          "true": "Evet"
+          "false": "Hayır"
         image: "Fotoğraf"
+        see_image: "Görüntüyü göster"
+        no_image: "Görüntü olmadan"
+        documents: "Belgeler"
+        see_documents: "Belgeleri göster (%{count})"
+        no_documents: "Belgeler olmadan"
+        valuator_groups: "Bilirkişi Grupları"
       edit:
+        classification: Sınıflandırma
+        compatibility: Uygunluk
+        mark_as_incompatible: Uyumsuz olarak işaretle
+        selection: Seçim
+        mark_as_selected: Seçilmiş olarak işaretle
         assigned_valuators: Bilirkişiler
         select_heading: Başlık seç
         submit_button: Güncelleme
@@ -495,6 +534,19 @@ tr:
       messaging_users: Kullanıcılara mesajlar
       newsletters: Bültenler
       admin_notifications: Bildirimler
+      system_emails: Sistem E-postaları
+      emails_download: E-postaları indirme
+      valuators: Bilirkişiler
+      poll_officers: Anket memurları
+      polls: Anketler
+      poll_booths: Kabinler konumu
+      poll_booth_assignments: Kabin Atamaları
+      poll_shifts: Vardiyaları yönet
+      officials: Yetkililer
+      organizations: Organizasyonlar
+      settings: Genel ayarlar
+      spending_proposals: Harcama önerileri
+      stats: İstatistikler
       title_budgets: Bütçeler
     administrators:
       index:
