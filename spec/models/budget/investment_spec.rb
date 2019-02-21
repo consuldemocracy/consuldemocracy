@@ -555,12 +555,25 @@ describe Budget::Investment do
     end
 
     describe "sort_by_title" do
+      it "sorts using the title in the current locale" do
+        create(:budget_investment, title_en: "CCCC", title_es: "BBBB", description_en: "CCCC", description_es: "BBBB")
+        create(:budget_investment, title_en: "DDDD", title_es: "AAAA", description_en: "DDDD", description_es: "AAAA")
+
+        expect(described_class.sort_by_title.map(&:title)).to eq %w[CCCC DDDD]
+      end
+
       it "should take into consideration title fallbacks when there is no
           translation for current locale" do
-        english_investment = create(:budget_investment, :selected, title: "English title")
+        english_investment = create(:budget_investment, title: "BBBB")
         spanish_investment = Globalize.with_locale(:es) do
           I18n.with_locale(:es) do
-            create(:budget_investment, :selected, title: "Título en español")
+            create(:budget_investment, title: "AAAA")
+          end
+        end
+
+        expect(described_class.sort_by_title.map(&:title)).to eq %w[AAAA BBBB]
+      end
+    end
 
     describe "search_by_title_or_id" do
       before { create(:budget_investment) }
