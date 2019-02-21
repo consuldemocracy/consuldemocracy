@@ -24,6 +24,7 @@ cs:
       comment: Připomínky k návrhu
       unsubscribe_account: Můj účet
     direct_message_for_receiver:
+      reply: Odpovědět uživateli %{sender}
       unsubscribe_account: Můj účet
     user_invite:
       thanks: "Mockrát děkujeme."
