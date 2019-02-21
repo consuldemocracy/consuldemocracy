@@ -899,7 +899,6 @@ ActiveRecord::Schema.define(version: 20190607160900) do
 
   create_table "legislation_questions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.text     "title"
     t.integer  "answers_count",          default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                         null: false
