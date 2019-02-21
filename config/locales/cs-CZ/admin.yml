@@ -157,7 +157,9 @@ cs:
         start_date: Start date
         end_date: End date
         summary: Souhrn
+        summary_help_text: Text bude informovat uživatele o této fázi. Chcete-li ho zobrazit i v případě, že fáze není aktivní, zaškrtněte políčko dole
         description: Description
+        description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         enabled: Fáze je povolena
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         save_changes: Uložit změny
@@ -222,13 +224,22 @@ cs:
         edit: Upravit
         edit_classification: Upravit klasifikaci
         by: Od
+        sent: Odesláno
         group: Skupina
         heading: Heading
+        dossier: Dokumentace
+        edit_dossier: Upravit dokumentaci
         tags: Štítky
+        user_tags: Uživatelské štítky
+        undefined: Nedefinováno
         compatibility:
+          title: Kompatibilita
           "true": Nekompatibilní
+          "false": Kompatibilní
         selection:
+          title: Výběr
           "true": Vybrané
+          "false": Není vybráno
         winner:
           title: Vítěz
           "true": "Ano"
@@ -238,20 +249,29 @@ cs:
         no_image: "Bez obrázku"
         documents: "Dokumenty"
         see_documents: "Viz dokumenty (%{count})"
+        no_documents: "Bez dokladů"
+        valuator_groups: "Skupiny hodnotitelů"
       edit:
         classification: Klasifikace
+        compatibility: Kompatibilita
+        mark_as_incompatible: Označit jako nekompatibilní
         selection: Výběr
+        mark_as_selected: Označit jako vybrané
         assigned_valuators: Hodnotitel
         select_heading: Vyberte záhlaví
         submit_button: Aktualizovat
+        user_tags: Uživatelské přiřazené štítky
         tags: Štítky
+        tags_placeholder: "Napište štítky které chcete a oddělte je čárkami (,)"
         undefined: Nedefinováno
         user_groups: "Skupiny"
+      search_unfeasible: Hledat neproveditelné
     milestones:
       index:
         table_id: "ID"
         table_title: "Předmět"
         table_description: "Description"
+        table_publication_date: "Datum publikace"
         table_status: Status
         table_actions: "Akce"
         delete: "Odstranit milník"
@@ -260,14 +280,22 @@ cs:
         show_image: "Zobrazit obrázek"
         documents: "Dokumenty"
         milestone: Milník
+        new_milestone: Vytvořit nový milník
       form:
         admin_statuses: Admin investment statuses
         no_statuses_defined: There are no defined investment statuses yet
       new:
+        creating: Vytvořit milník
         date: Datum
         description: Description
       edit:
         title: Upravit fázi
+      create:
+        notice: Úspěšně vytvořen nový milník!
+      update:
+        notice: Milník úspěšně aktualizován
+      delete:
+        notice: Milník byl odstraněn
     statuses:
       index:
         title: Investment statuses
@@ -289,6 +317,7 @@ cs:
       delete:
         notice: Investment status deleted successfully
     progress_bars:
+      manage: "Spravovat ukazatel průběhu"
       index:
         title: "Ukazatele průběhu"
         no_progress_bars: "Neexistují žádné ukazatele průběhu"
@@ -303,6 +332,13 @@ cs:
       edit:
         title:
           primary: "Upravit hlavní ukazatel průběhu"
+          secondary: "Upravit ukazatel průběhu %{title}"
+      create:
+        notice: "Ukazatel průběhu byl úspěšně vytvořen!"
+      update:
+        notice: "Ukazatel průběhu byl úspěšně aktualizován"
+      delete:
+        notice: "Ukazatel průběhu byl smazán"
     comments:
       index:
         filter: Filtr
@@ -318,6 +354,7 @@ cs:
       index:
         back: Přejít zpět na %{org}
         title: Administrace
+        description: Vítejte v admin panelu portálu %{org}.
     debates:
       index:
         filter: Filtr
@@ -325,6 +362,8 @@ cs:
           all: Vše
           with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
+        title: Skryté debaty
+        no_hidden_debates: Nemáte žádné skryté debaty.
     hidden_users:
       index:
         filter: Filtr
@@ -332,9 +371,14 @@ cs:
           all: Vše
           with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
+        title: Skrytí uživatelé
         user: User
+        no_hidden_users: Nemáte žádné skryté uživatele.
       show:
         email: 'Email:'
+        hidden_at: 'Skryté v:'
+        registered_at: 'Registrace v:'
+        title: Aktivita uživatele (%{user})
     hidden_budget_investments:
       index:
         filter: Filtr
@@ -342,6 +386,8 @@ cs:
           all: Vše
           with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
+        title: Skryté rozpočtové investice
+        no_hidden_budget_investments: Nemáte žádné skryté rozpočtové investice
     legislation:
       processes:
         create:
@@ -362,6 +408,7 @@ cs:
           enabled: Povoleno
           process: Proces
           debate_phase: Fáze debaty
+          draft_phase: Návrh fáze
           allegations_phase: Fáze připomínkování
           proposals_phase: Fáze návrhu
           start: Zahájení
