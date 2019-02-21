@@ -74,13 +74,23 @@ cs:
     min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
     analytics_url: "Adresa URL služby Analytics"
     blog_url: "Adresa URL blogu"
+    transparency_url: "Adresa URL transparentnosti"
+    opendata_url: "Otevřená Data URL"
+    verification_offices_url: URL adresa pro ověření
+    proposal_improvement_path: Informace pro zlepšení Návrhů - interní odkaz
     feature:
       budgets: "Participativní rozpočtování"
+      budgets_description: "Participativními rozpočty občané rozhodují, které projekty předložené jejich sousedy obdrží část rozpočtu obce / města"
       twitter_login: "Twutter přihlášení"
+      twitter_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Twitter"
       facebook_login: "Facebook přihlášení"
+      facebook_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Facebook"
       google_login: "Přihlášení Google"
+      google_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Google"
       proposals: "Návrhy"
+      proposals_description: "Návrhy občanů jsou příležitostí pro sousedy a skupiny obyvatel aby na přímo rozhodli, jak město bude vypadat, když jejich návrh získá dostatečnou podporu v hlasování občanů"
       featured_proposals: "Doporučené návrhy"
+      featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
       debates: "Debaty"
       polls: "Průzkum"
       signature_sheets: "Podpisové archy"
