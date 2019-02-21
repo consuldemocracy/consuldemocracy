@@ -310,9 +310,55 @@ tr:
         no_hidden_comments: Hiç gizli yorumlar yok.
     dashboard:
       index:
+        back: Geri dön %{org}
         title: Yönetim
+        description: Hoş geldiniz %{org} yönetici paneline.
+    debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli tartışmalar
+        no_hidden_debates: Hiç gizli tartışmalar yok.
+    hidden_users:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli kullanıcılar
+        user: Kullanıcı
+        no_hidden_users: Hiç gizli kullanıcılar yok.
+      show:
+        email: 'E-posta:'
+        hidden_at: 'Gizlenmiş:'
+        registered_at: 'Kayıtlı:'
+        title: Kullanıcının etkinliği (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli bütçeler yatırımları
+        no_hidden_budget_investments: Hiç gizli bütçe yatırımları yok
     legislation:
       processes:
+        create:
+          notice: 'İşlem başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: İşlem oluşturulamadı
+        update:
+          notice: 'İşlem başarıyla güncellendi. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: İşlem güncellenemedi
+        destroy:
+          notice: İşlem başarıyla silindi
+        edit:
+          back: Geri
+          submit_button: Değişiklikleri kaydet
         form:
           draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
           allegations_phase: Yorumlar aşaması
