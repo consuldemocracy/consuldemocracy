@@ -51,10 +51,11 @@ cs:
     place_name: "Místo"
     place_name_description: "Název vašeho města"
     related_content_score_threshold: "Prahová hodnota pro související obsah"
+    related_content_score_threshold_description: "Skrývá obsah, kteří uživatelé označí jako nesouvisející"
     hot_score_period_in_days: "Období (dny) použité ve filtru \"nejaktivnější\""
     hot_score_period_in_days_description: "Filtr \"Nejvíce aktivní\" používaný ve více oddílech bude nastaven na základě hlasování během posledních X dní"
     map_latitude: "Zeměpisná šířka"
-    map_latitude_description: "Zeměpisná šířka pro zobrazení polohy mapy"
+    map_latitude_description: "Zeměpisná šířka pro zobrazení mapy"
     map_longitude: "Zeměpisná délka"
     map_longitude_description: "Zeměpisná délka pro zobrazení mapy"
     map_zoom: "Zvětšení"
@@ -62,9 +63,17 @@ cs:
     mailer_from_name: "Jméno odesílatele"
     mailer_from_name_description: "Toto jméno se objeví v emailech odesílaných aplikací"
     mailer_from_address: "E-mailová adresa odesílatele"
+    mailer_from_address_description: "Tato e-mailová adresa se objeví v emailech odeslaných aplikací"
     meta_title: "Název stránek (SEO)"
+    meta_title_description: "Název pro webový portál <title>, použitý ke zlepšení SEO"
     meta_description: "Popis stránek (SEO)"
+    meta_description_description: 'Popis webového portálu <meta name="description">, použitý ke zlepšení SEO'
     meta_keywords: "Klíčová slova (SEO)"
+    meta_keywords_description: 'Klíčová slova <meta name="keywords">, použitá ke zlepšení SEO'
+    min_age_to_participate: Minimální věk potřebný k účasti
+    min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
+    analytics_url: "Adresa URL služby Analytics"
+    blog_url: "Adresa URL blogu"
     feature:
       budgets: "Participativní rozpočtování"
       twitter_login: "Twutter přihlášení"
