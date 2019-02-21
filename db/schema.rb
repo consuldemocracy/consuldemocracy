@@ -1010,11 +1010,11 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "poll_question_answers", force: :cascade do |t|
-    t.string  "title"
-    t.text    "description"
+    t.string  "deprecated_title"
+    t.text    "deprecated_description"
     t.integer "question_id"
-    t.integer "given_order", default: 1
-    t.boolean "most_voted",  default: false
+    t.integer "given_order",            default: 1
+    t.boolean "most_voted",             default: false
     t.index ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
   end
 
