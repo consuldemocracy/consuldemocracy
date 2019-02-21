@@ -1113,13 +1113,10 @@ ActiveRecord::Schema.define(version: 20190411090023) do
   end
 
   create_table "polls", force: :cascade do |t|
-    t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
-    t.text     "summary"
-    t.text     "description"
     t.integer  "comments_count",     default: 0
     t.integer  "author_id"
     t.datetime "hidden_at"
