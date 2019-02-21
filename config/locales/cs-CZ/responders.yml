@@ -8,6 +8,7 @@ cs:
         poll: "Anketa úspěšně vytvořena."
         poll_booth: "Booth byl úspěšně vytvořen."
         poll_question_answer: "Odpověď byla úspěšně vytvořena"
+        poll_question_answer_video: "Video bylo úspěšně vytvořeno"
         poll_question_answer_image: "Obrázek byl úspěšně nahrán"
         proposal: "Návrh byl úspěšně vytvořen."
         proposal_notification: "Vaše zpráva byla odeslána správně."
