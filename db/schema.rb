@@ -1677,11 +1677,7 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "widget_cards", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "link_text"
     t.string   "link_url"
-    t.string   "label"
     t.boolean  "header",                     default: false
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
