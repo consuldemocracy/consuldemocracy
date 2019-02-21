@@ -43,14 +43,14 @@ tr:
       edit:
         editing: Banner düzenleme
         form:
-          submit_button: Değişiklikleri kaydetme
+          submit_button: Değişiklikleri kaydet
       errors:
         form:
           error:
             one: "hata bu bannerın kaydedilmesini engelledi"
             other: "hatalar bu bannerın kaydedilmesini engelledi"
       new:
-        creating: Banner oluşturuldu
+        creating: Banner oluştur
     activity:
       show:
         action: Eylem
@@ -84,10 +84,10 @@ tr:
     budget_headings:
       form:
         population: "Konum (isteğe bağlı)"
-        population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için göstermek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
+        population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
         latitude: "Enlem (isteğe bağlı)"
         longitude: "Boylam (isteğe bağlı)"
-        coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir."
+        coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir. Bu harita bu koordinatlar kullanılarak ortalanacaktır."
         allow_content_block: "İçerik bloğuna izin ver"
         content_blocks_info: "Eğer içerik bloğuna izin ver seçeneği işaretliyse, bu başlıkla ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz."
         create: "Yeni başlık oluştur"
