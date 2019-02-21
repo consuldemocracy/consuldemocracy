@@ -1,8 +1,17 @@
 cs:
   budgets:
     ballots:
+      show:
+        title: Vaše hlasování
+        amount_spent: Vydaná částka
+        remaining: "Ještě můžete investovat částku <span>%{amount}</span>."
+        no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
+        remove: Odstranit hlas
+        voted_info_html: "Vaše hlasování můžete kdykoli změnit před ukončením této fáze. <br> Nemusíte utrácet všechny dostupné peníze."
+        zero: Nehlasoval jste pro žádný investiční projekt.
       reasons_for_not_balloting:
         not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
+        not_verified: O investicích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
         organization: Organizacím není dovoleno hlasovat
     groups:
       show:
