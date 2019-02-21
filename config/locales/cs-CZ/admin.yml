@@ -409,16 +409,21 @@ cs:
           process: Proces
           debate_phase: Fáze debaty
           draft_phase: Návrh fáze
+          draft_phase_description: Jestliže je tato fáze aktivní, proces nebude uveden na seznamu procesů. To umožní náhled procesů a vytvoření obsahu před jeho zahájením.
           allegations_phase: Fáze připomínkování
           proposals_phase: Fáze návrhu
           start: Zahájení
           end: Konec
+          use_markdown: Pro formátování textu použijte Markdown
           title_placeholder: Název procesu
           summary_placeholder: Stručné shrnutí popisu
           description_placeholder: Přidat popis procesu
           additional_info_placeholder: Přidat doplňující ifnormace, které považujete za užitečné
           homepage: Description
+          homepage_description: Zde můžete vysvětlit obsah procesu
           homepage_enabled: Úvodní stránka povolena
+          banner_title: Barvy záhlaví
+          color_help: Hexadecimální formát
         index:
           create: Nový proces
           delete: Smazat
@@ -441,19 +446,25 @@ cs:
           comments: Komentáře
           status: Status
           start_date: Počáteční datum
+          end_date: Konečné datum
           status_open: Otevřené
           status_closed: Uzavřené
           status_planned: Plánované
         subnav:
           info: Informace
           homepage: Úvodní strana
+          draft_versions: Návrh
           questions: Debata
           proposals: Návrhy
           milestones: Sledované
+      homepage:
+        edit:
+          title: Nakonfigurovat domovskou stránku procesu
       proposals:
         index:
           title: Předmět
           back: Zpět
+          id: Id
           supports: Podpora
           select: Vybrat
           selected: Vybrané
@@ -804,7 +815,13 @@ cs:
         destroy: "Informační stánek již není přiřazen"
         create: "Informační stánek přiřazen"
         error_destroy: "Došlo k chybě při odstranění přiřazení informačního stánku"
+        error_create: "Při přiřazování informačního stánku k anketě nastala chyba"
       show:
+        location: "Umístění"
+        officers: "Úředníci"
+        officers_list: "Seznam úředníků pro tento informační stánek"
+        no_officers: "Nemáte žádné úředníky pro tento informační stánek"
+        recounts: "Přepočet"
         results: "Výsledky"
       index:
         table_name: "Název"
