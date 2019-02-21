@@ -1,9 +1,22 @@
 cs:
   devise:
     password_expired:
+      expire_password: "Platnost hesla vypršela"
+      change_required: "Vaše heslo vypršelo"
       change_password: "Změňte si své heslo"
       new_password: "Nové heslo"
+      updated: "Heslo bylo úspěšně aktualizováno"
+    confirmations:
+      confirmed: "Váš účet byl potvrzen."
+      send_instructions: "Za pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_paranoid_instructions: "Je-li vaše e-mailová adresa v naší databázi, za pár minut obdržíte e-mail s pokyny k obnovení hesla."
     failure:
+      already_authenticated: "Jste již přihlášeni."
+      inactive: "Váš účet nebyl dosud aktivován."
+      invalid: "Neplatný %{authentication_keys} nebo heslo."
+      locked: "Váš účet byl uzamčen."
+      last_attempt: "Máte ještě jeden další pokus, než váš účet bude zablokován."
+      not_found_in_database: "Neplatný %{authentication_keys} nebo heslo."
       unauthenticated: "Pro pokračování se musíte přihlásit nebo registrovat."
     sessions:
       signed_in: "Byli jste úspěšně přihlášeni."
