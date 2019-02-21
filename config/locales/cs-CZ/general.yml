@@ -233,8 +233,10 @@ cs:
     notification:
       mark_as_read: Označit za přečtené
       mark_as_unread: Označit za nepřečtené
+      notifiable_hidden: Tento prostředek není k dispozici.
   map:
     title: "Městské části"
+    proposal_for_district: "Dejte se do návrhu pro Vaši oblast"
     select_district: Vymezení oblasti města
     start_proposal: Vytvořit návrh
   omniauth:
@@ -320,6 +322,7 @@ cs:
       retired_links:
         all: Vše
         duplicated: Duplicitní
+        started: Probíhá
         unfeasible: Nerealizovatelné
         done: Hotové
         other: Jiné
@@ -327,10 +330,14 @@ cs:
         button: Vyhledat
         placeholder: Prohledat návrhy...
         title: Vyhledat
+      select_order: Seřadit podle
+      select_order_long: 'Zobrazit návrhy podle:'
       start_proposal: Vytvořit návrh
       title: Návrhy
+      top: Top týden
       top_link_proposals: Nejvíce podporované návrhy podle kategorií
       section_header:
+        icon_alt: Ikona návrhů
         title: Návrhy
         help: Nápověda k návrhům
       section_footer:
@@ -345,18 +352,23 @@ cs:
       recommendation_two: Jakýkoli návrhy nebo poznámky naznačující nezákonnou akci budou odstraněny, stejně jako ty, které zamýšlejí sabotovat diskusní prostor. Cokoliv jiného je povoleno.
       recommendations_title: Doporučení pro vytvoření návrhu
       start_new: Vytvořit nový návrh
+    notice:
+      retired: Zrušený návrh
     proposal:
       created: "Právě jste vytvořili návrh!"
       share:
         guide: "Nyní ho můžete sdílet, aby ho lidé mohli začít podporovat."
         edit: "Než bude sdílen, můžete měnit text, jak se vám líbí."
         view_proposal: Teď ne, přejít na můj návrh
+      improve_info: "Zlepšit svou kampaň a získat větší podporu"
       improve_info_link: "Další informace"
       already_supported: Tento návrh jste již podpořili. Sdílejte jej!
       comments:
         zero: Žádné komentáře
       support: Podpořit
       support_title: Podpořit tento návrh
+      supports:
+        zero: Žádná podpora
       votes:
         zero: Žádné hlasy
       supports_necessary: "Potřebuje podporu %{number} lidí"
@@ -374,6 +386,7 @@ cs:
       login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
       notifications_tab: Upozornění
       milestones_tab: Milníky
+      retired_warning: "Autor se domnívá, že tento návrh by neměl přijímat více podporovatelů."
       share: Sdílet
       send_notification: Poslat upozornění
       title_external_url: "Dodatečná dokumentace"
