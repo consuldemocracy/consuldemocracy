@@ -205,7 +205,7 @@ tr:
         title: "Soru"
       signature_sheet:
         signable_type: "İmzalanır tür"
-        signable_id: "İmzalanır Kimlik"
+        signable_id: "İmzalanır KİMLİK"
         document_numbers: "Belgelerin numaraları"
       site_customization/page:
         content: İçerik
@@ -337,7 +337,7 @@ tr:
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Kullanıcı alıcıları bölümü geçersiz"
+              invalid: "Kullanıcı alıcıları bölümü geçersizdir"
         map_location:
           attributes:
             map:
