@@ -1042,10 +1042,14 @@ cs:
       new:
         title: Nové podpisové archy
         document_numbers_note: "Napište čísla oddělené čárkou (,)"
+        submit: Vytvořit podpisový arch
       show:
+        created_at: Vytvořen
         author: Autor
         documents: Dokumenty
         document_count: "Počet dokumentů:"
+        unverified_error: (Není ověřeno statistickým úřadem)
+        loading: "Stále existují podpisy, které nejsou ověřeny základními datovými registry, prosíme aktualizujte stránku za pár okamžiků"
     stats:
       show:
         stats_title: Statistiky
@@ -1058,6 +1062,7 @@ cs:
           proposals: Návrhy
           budgets: Otevřené rozpočty
           budget_investments: Investiční projekty
+          spending_proposals: Náklady návrhů
           unverified_users: Neověření uživatelé
           user_level_three: Počet uživatelů třetí úrovně
           user_level_two: Počet uživatelů druhé úrovně
@@ -1066,6 +1071,7 @@ cs:
           verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
           visits: Návštěvy
           votes: Hlasů celkem
+        spending_proposals_title: Náklady návrhů
         budgets_title: Participativní rozpočtování
         visits_title: Návštěvy
         direct_messages: Soukromé zprávy
@@ -1096,21 +1102,36 @@ cs:
       create: Vytvořit téma
       destroy: Smazat téma
       index:
+        add_tag: Přidat nové téma návrhu
+        title: Témata návrhů
         topic: Téma
+        help: "Když uživatel vytvoří návrh, následující témata jsou navrženy jako výchozí štítky."
+      name:
+        placeholder: Zadejte název tématu
     users:
       columns:
         name: Název
         email: Email
+        document_number: Číslo dokladu
+        roles: Role
+        verification_level: Úroveň ověření
       index:
         title: User
+        no_users: Nemáte žádné uživatele.
       search:
+        placeholder: Hledat uživatele pomocí e-mailu, jména nebo čísla dokladu
         search: Vyhledat
     verifications:
       index:
+        phone_not_given: Telefon není uveden
+        sms_code_not_confirmed: Není potvrzené pomocí sms kódu
         title: Neúplné ověření
     site_customization:
       content_blocks:
+        information: Informace o blocích obsahu
         about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
+        html_format: "Blok s obsahem je skupina odkazů, a to musí mít následující formát:"
+        no_blocks: "Nemáte žádné bloky obsahu."
         errors:
           form:
             error: Chyba
