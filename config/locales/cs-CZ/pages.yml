@@ -24,10 +24,19 @@ cs:
         figcaption: 'Tlačítka "souhlasím" a "nesouhlasím" k vyhodnocení debat.'
       proposals:
         title: "Návrhy"
+        description: "V sekci %{link} můžete publikovat návrhy pro vedení města. Návrhy vyžadují podporu, a pokud dosáhnou dostatečné podpory, jsou zařazené k veřejnému hlasování. Návrhy schválené těmito hlasy občanů jsou přijímány vedením města k projednání."
+        link: "návrhy občanů"
+        image_alt: "Tlačítko pro podporu návrhu"
+        figcaption_html: 'Tlačítko "Podpořit" návrh.'
       budgets:
         title: "Participativní rozpočty"
+        description: "Sekce %{link} pomáhá lidem přímo rozhodovat o tom, na kterou část rozpočtu města vynakládá své finanční prostředky."
+        link: "participativní rozpočty"
+        image_alt: "Různé fáze participativního rozpočtu"
+        figcaption_html: 'Fáze "Podpora" a "Hlasování" participativního rozpočtu.'
       polls:
         title: "Průzkum"
+        description: "%{link} sekce je aktivována pokud návrh dosáhne 1% podpory a tím je zařazen do veřejného hlasování, a nebo když vedení města samo zveřejní tento návrh k veřejnému hlasování."
       processes:
         title: "Procesy"
       faq:
@@ -110,12 +119,21 @@ cs:
               shortcut_column: CTRL + (CMD + pro počítače MAC)
               description_column: Zvětší velikost textu
             - 
+              shortcut_column: CTRL - (CMD - pro počítače MAC)
+              description_column: Zmenšit velikost textu
       compatibility:
+        title: Kompatibilita se standardy a vizuální design
         description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
     titles:
       accessibility: Přístupnost
+      conditions: Podmínky použití
+      help: "Co je %{org}? - Zapojování občanů"
       privacy: Zásady ochrany osobních údajů
     verify:
+      code: Kód, který jste obdrželi v dopise
       email: Email
+      info: 'Chcete-li ověřit svůj účet, zadejte své přístupové údaje:'
+      info_code: 'Nyní zadejte kód, který jste obdrželi v dopise:'
       password: Heslo
       submit: Ověřit můj účet
+      title: Ověřte svůj účet
