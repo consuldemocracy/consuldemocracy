@@ -1,6 +1,15 @@
 cs:
   officing:
+    dashboard:
+      index:
+        title: Anketa
+    polls:
+      final:
+        add_results: Přidat výsledky
     results:
+      flash:
+        create: "Výsledky byly uloženy"
+        error_create: "Výsledky NEJSOU uloženy. Chyba v datech."
       new:
         submit: "Uložit"
         see_results: "Zobrazit výsledky"
