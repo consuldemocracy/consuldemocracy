@@ -22,7 +22,15 @@ cs:
       unconfirmed: "Chcete-li pokračovat, klikněte na potvrzovací odkaz, který vám byl zaslán e-mailem"
     mailer:
       confirmation_instructions:
-        subject: "Instrukce pro potvrzení"
+        subject: "Pokyny pro potvrzení"
+      reset_password_instructions:
+        subject: "Pokyny k obnovení hesla"
+      unlock_instructions:
+        subject: "Pokyny k odblokování"
+    omniauth_callbacks:
+      success: "Úspěšně byl identifikován jako %{kind}."
+    passwords:
+      no_token: "Na tuto stránku nemůžete přistupovat jinak než odkazem pro obnovení hesla. Pokud se tak stalo prostřednictvím odkazu pro obnovení hesla, zkontrolujte, zda je adresa URL kompletní."
     sessions:
       signed_in: "Byli jste úspěšně přihlášeni."
       signed_out: "Byli jste úspěšně odhlášeni."
