@@ -675,7 +675,12 @@ ar:
       all_users: كل المستخدمين
       administrators: مدراء
       proposal_authors: كتّاب الاقتراحات
+      investment_authors: مؤلفو الاستثمار في الميزانية الحالية
+      selected_investment_authors: مؤلفو الاستثمارات المحددة في الميزانية الحالية
+      winner_investment_authors: مؤلفو الاستثمارات الفائزة في الميزانية الحالية
+      not_supported_on_current_budget: المستخدميون الذين لم يدعمو استثمارات في الميزانية الحالية
     newsletters:
+      create_success: تم إنشاء الرسالة الإخبارية بنجاح
       index:
         title: نشرات إخبارية
         new_newsletter: رسائلة إخبارية جديدة
