@@ -79,7 +79,12 @@ cs:
         edit_groups: Upravit záhlaví skupiny
         edit_budget: Upravit rozpočet
         no_budgets: "Neexistují žádné rozpočty."
+      create:
+        notice: Nový participativní rozpočet byl úspěšně vytvořen!
+      update:
+        notice: Participativní rozpočet byl úspěšně aktualizován
       edit:
+        title: Upravit participativní rozpočet
         delete: Odstranit rozpočet
         phase: Fáze
         dates: Kalendářní data
@@ -88,11 +93,21 @@ cs:
         edit_phase: Upravit fázi
         active: Aktivní
         blank_dates: Data jsou prázdné
+      destroy:
+        success_notice: Rozpočet byl smazán
+        unable_notice: Nemůžete odstranit rozpočet, který spojený s investicemi
+      new:
+        title: Nový participativní rozpočet
+      winners:
+        calculate: Vypočítat vítěznou investici
+        calculated: Výpočet vítězných investic může chvíli trvat.
+        recalculate: Přepočítat vítězné investice
     budget_groups:
       name: "Název"
       headings_name: "Nadpisy"
       headings_edit: "Upravit nadpisy"
       headings_manage: "Spravovat nadpisy"
+      max_votable_headings: "Maximální počet skupin, ve kterých uživatel může hlasovat"
       form:
         create: "Vytvořit novou skupinu"
         edit: "Upravit skupinu"
