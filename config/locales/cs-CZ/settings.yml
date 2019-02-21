@@ -17,10 +17,16 @@ cs:
     meta_keywords: "Klíčová slova (SEO)"
     feature:
       budgets: "Participativní rozpočtování"
+      twitter_login: "Twutter přihlášení"
+      facebook_login: "Facebook přihlášení"
+      google_login: "Přihlášení Google"
       proposals: "Návrhy"
       featured_proposals: "Doporučené návrhy"
       debates: "Debaty"
       polls: "Průzkum"
+      signature_sheets: "Podpisové archy"
+      spending_proposals: "Návrhy výdajů"
+      spending_proposals_description: "⚠️ Poznámka: Tato funkce byla nahrazena sekcí participativní rozpočtování a neobjeví se v nových verzích"
       user:
         recommendations: "Doporučení"
         skip_verification: "Přeskočit ověřování uživatele"
@@ -32,3 +38,4 @@ cs:
       public_stats: "Veřejné statistiky"
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
+      help_page_description: "Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci"
