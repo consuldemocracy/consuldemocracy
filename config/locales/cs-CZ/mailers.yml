@@ -68,9 +68,12 @@ cs:
     budget_investment_selected:
       subject: "Váš investiční projekt '%{code}' byl vybrán"
       hi: "Vážený uživateli,"
+      share: "Pro získání podpory sdílejte svůj investiční projekt na sociálních sítích. Sdílení je nezbytné pro získání široké podpory."
+      share_button: "Sdílejte svůj investiční projekt"
       thanks: "Ještě jednou děkujeme za vaši účast."
       sincerely: "S pozdravem"
     budget_investment_unselected:
+      subject: "Váš investiční projekt '%{code}' nebyl vybrán"
       hi: "Vážený uživateli,"
       thanks: "Ještě jednou děkujeme za vaši účast."
       sincerely: "S pozdravem"
