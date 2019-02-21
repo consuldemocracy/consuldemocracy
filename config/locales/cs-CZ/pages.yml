@@ -85,6 +85,7 @@ cs:
               description: Spravovat participační procesy k využití zkušeností lidí zapojených do těchto procesů a numericky a statisticky přepočítávat výsledky z těchto procesů odvozených.
             - 
               field: 'Orgán zodpovědný za dokument:'
+              description: INSTITUCE, KTERÉ JSOU V SOULADU S TÍMTO DOKUMENTEM
     accessibility:
       title: Přístupnost
       description: |-
@@ -94,10 +95,13 @@ cs:
       examples:
         - Poskytování alternativního textu k obrázkům pomáhá slepým nebo zrakově postiženým uživatelům, kteří mohou použít speciální čtečky k přístupu k informacím.
         - Pokud mají videa titulky, mohou jim uživatelé s poruchami sluchu plně rozumět.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - Pokud je obsah napsán v jednoduchém a ilustrovaném jazyce, uživatelé s problémy s učením jsou lépe schopni mu porozumět.
+        - Pokud má uživatel problémy s mobilitou a je těžké používat myš, alternativy s klávesnicí pomáhají při navigaci.
       keyboard_shortcuts:
+        title: Klávesové zkratky
         navigation_table:
+          description: Na podporu přístupnosti webových stránek, byla naprogramována skupina rychlých klávesových zkratek, které zpřístupňují hlavní části sekcí, ve kterých je web organizován.
+          caption: Klávesové zkratky pro nabídky navigace
           key_header: Klíč
           page_header: Stránka
           rows:
@@ -129,13 +133,27 @@ cs:
               browser_column: Explorer
               key_column: ALT + zkratka pak ENTER
             - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + zkratka
             - 
+              browser_column: Chrome
+              key_column: ALT + zkratku (CTRL + ALT + klávesové zkratky pro MAC)
             - 
+              browser_column: Safari
+              key_column: ALT + zkratku (CTRL + ALT + klávesové zkratky pro MAC)
             - 
+              browser_column: Opera
+              key_column: CAPS + ESC + zkratka
       textsize:
+        title: Velikost textu
         browser_settings_table:
+          description: Design tohoto webu podporující dostupnost umožňuje uživateli zvolit velikost textu, který mu vyhovuje. Tuto akci lze provést různými způsoby v závislosti na prohlížeč použitý.
+          browser_header: Prohlížeč
+          action_header: Opatření, které je třeba podniknout
           rows:
             - 
+              browser_column: Explorer
+              action_column: Zobrazit > Velikost textu
             - 
               browser_column: Firefox
               action_column: Zobrazit > Velikost
