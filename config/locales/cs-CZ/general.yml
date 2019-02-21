@@ -474,6 +474,11 @@ cs:
       title: Doporučení
       see_more: Další doporučení
       hide: Skrýt doporučení
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
   spending_proposals:
     form:
       association_name: 'Association name'
@@ -487,6 +492,7 @@ cs:
       title: Participativní rozpočtování
       search_form:
         button: Vyhledat
+        placeholder: Investiční projekty...
         title: Vyhledat
       sidebar:
         geozones: Vymezení oblasti města
@@ -494,6 +500,9 @@ cs:
         unfeasible: Nerealizovatelné
       start_spending_proposal: Vytvořit investiční projekt
     new:
+      more_info: Jak funguje participativní rozpočtování?
+      recommendation_one: Je povinné propojit návrh s položkou rozpočtu.
+      recommendation_two: Jakýkoli návrh nebo komentář, který naznačuje nezákonnou akci, bude smazán.
       recommendations_title: Jak vytvořit výdaje návrhu
       start_new: Vytvořit výdaje návrhu
     show:
