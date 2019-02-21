@@ -359,7 +359,14 @@ tr:
         edit:
           back: Geri
           submit_button: Değişiklikleri kaydet
+        errors:
+          form:
+            error: Hata
         form:
+          enabled: Etkinleştirildi
+          process: İşlem
+          debate_phase: Tartışma aşaması
+          draft_phase: Taslak aşaması
           draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
           allegations_phase: Yorumlar aşaması
           proposals_phase: Öneriler aşaması
@@ -428,11 +435,52 @@ tr:
           notice: 'Taslak başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
         table:
           comments: Yorumlar
+      questions:
+        new:
+          title: Yeni soru oluştur
+          submit_button: Soru oluştur
+        table:
+          title: İsim
+          question_options: Soru seçenekleri
+          answers_count: Cevapların sayısı
+          comments_count: Yorumların sayısı
+        question_option_fields:
+          remove_option: Seçeneği kaldır
+      milestones:
+        index:
+          title: Takip
     managers:
       index:
+        title: Yöneticiler
+        name: Ad
         email: E-posta
+        no_managers: Hiç yönetici yok.
+      manager:
+        add: Ekle
+        delete: Sil
+      search:
+        title: 'Yöneticiler: Kullanıcı arama'
     menu:
+      activity: Moderatör faaliyeti
+      admin: Yönetici menüsü
+      banner: Bannerları yönet
+      poll_questions: Sorular
+      proposals: Öneriler
+      proposals_topics: Öneri konuları
+      budgets: Katılımcı bütçeler
+      geozones: Geozone'ları yönet
+      hidden_comments: Gizli yorumlar
+      hidden_debates: Gizli tartışmalar
+      hidden_proposals: Gizli öneriler
+      hidden_budget_investments: Gizli bütçe yatırımları
+      hidden_proposal_notifications: Gizli öneri bildirimleri
+      hidden_users: Gizli kullanıcılar
       administrators: Yöneticiler
+      managers: Yöneticiler
+      moderators: Moderatörler
+      messaging_users: Kullanıcılara mesajlar
+      newsletters: Bültenler
+      admin_notifications: Bildirimler
       title_budgets: Bütçeler
     administrators:
       index:
