@@ -112,10 +112,10 @@ tr:
     attributes:
       budget:
         name: "İsim"
-        description_accepting: "Kabul aşamasında tanımlama"
-        description_reviewing: "Gözden geçirme aşamasında tanımlama"
-        description_selecting: "Seçim aşamasında tanımlama"
-        description_valuating: "Değerlendirme aşamasında tanımlama"
+        description_accepting: "Kabul aşaması sırasında tanımlama"
+        description_reviewing: "Gözden Geçirme aşaması sırasında tanımlama"
+        description_selecting: "Seçim aşaması sırasında tanımlama"
+        description_valuating: "Değerlendirme aşaması sırasında tanımlama"
         description_balloting: "Oylama aşamasında tanımlama"
         description_reviewing_ballots: "Oyları Gözden Geçirme aşamasında tanımlama"
         description_finished: "Bütçe bittiğinde tanımlama"
