@@ -1,8 +1,13 @@
 cs:
   mailers:
+    no_reply: "Tato zpráva byla odeslána z e-mailové adresy, která nepřijímá odpovědi."
     comment:
       hi: Dobrý den
+      new_comment_by_html: K dispozici je nový komentář od <b>%{commenter}</b>
+      subject: Někdo komentoval váš příspěvek %{commentable}
       title: Nový komentář
+    config:
+      manage_email_subscriptions: Chcete-li tyto e-maily přestat přijímat, změňte nastavení v
     email_verification:
       click_here_to_verify: tento odkaz
       subject: Potvrďte svoji emailovou adresu
@@ -15,14 +20,18 @@ cs:
       new_href: "nový investiční projekt"
       sincerely: "S pozdravem"
     proposal_notification_digest:
+      share: Sdílet návrh
       comment: Připomínky k návrhu
       unsubscribe_account: Můj účet
     direct_message_for_receiver:
       unsubscribe_account: Můj účet
     user_invite:
       thanks: "Mockrát děkujeme."
+      button: Dokončit registraci
     budget_investment_created:
+      follow_link: "Prticipativní rozpočty"
       sincerely: "S pozdravem,"
+      share: "Sdílet projekt"
     budget_investment_unfeasible:
       hi: "Vážený uživateli,"
       new_href: "nový investiční projekt"
