@@ -1,9 +1,9 @@
 cs:
   valuation:
     header:
-      title: Hodnocení
+      title: Odhad ceny
     menu:
-      title: Hodnocení
+      title: Odhad ceny
       budgets: Participativní rozpočty
       spending_proposals: Náklady návrhů
     budgets:
@@ -15,7 +15,7 @@ cs:
         table_name: Název
         table_phase: Fáze
         table_actions: Akce
-        evaluate: Hodnotit
+        evaluate: Posoudit cenu
         no_budgets: "Neexistují žádné rozpočty"
     budget_investments:
       index:
@@ -23,16 +23,19 @@ cs:
         filters:
           valuation_open: Otevřené
           valuating: Podhodnoceno
-          valuation_finished: Hodnocení bylo ukončeno
+          valuation_finished: Naceňování bylo ukončeno
         assigned_to: "Přiřazeno hodnotiteli %{valuator}"
         title: Investiční projekty
         edit: Upravit dokumentaci
+        no_valuators_assigned: Není přiřazen žádný hodnotitel
         table_id: ID
         table_title: Předmět
         table_heading_name: Heading name
         table_actions: Akce
+        no_investments: "Neexistují žádné investiční projekty."
       show:
         back: Zpět
+        title: Investiční projekt
         info: Informace o autorovi
         by: Odesláno uživatelem
         sent: Odesláno v čase
@@ -40,12 +43,13 @@ cs:
         dossier: Dokumentace
         edit_dossier: Upravit dokumentaci
         price: Cena
+        price_first_year: Náklady během prvního roku
         currency: "Kč"
         feasibility: Proveditelnost
         feasible: Proveditelný
         unfeasible: Nerealizovatelné
         undefined: Neproveditelný
-        valuation_finished: Hodnocení bylo ukončeno
+        valuation_finished: Naceňování bylo ukončeno
         duration: Časový rozsah
         responsibles: Odpovědnost
         assigned_admin: Přiřazeno administrátorovi
@@ -53,13 +57,16 @@ cs:
       edit:
         dossier: Dokumentace
         price_html: "Cena (%{currency})"
+        price_first_year_html: "Náklady během prvního roku (%{currency}) <small>(nepovinné, údaje nejsou veřejné)</small>"
         price_explanation_html: Vysvětlení nákladů
         feasibility: Proveditelnost
         feasible: Proveditelný
         unfeasible: Neproveditelný
         undefined_feasible: Nevyřízený
         feasible_explanation_html: Vysvětlení proveditelnosti
-        valuation_finished: Hodnocení bylo ukončeno
+        valuation_finished: Naceňování bylo ukončeno
+        valuation_finished_alert: "Opravdu že chcete tuto zprávu označit jako dokončenou? Pokud to uděláte, nemůže již změnit."
+        not_feasible_alert: "Autorovi projektu bude okamžitě zaslán email s informací o nerealizovatelnosti projektu."
         duration_html: Časový rozsah
         save: Uložit změny
       notice:
@@ -72,7 +79,7 @@ cs:
         filters:
           valuation_open: Otevřené
           valuating: Podhodnoceno
-          valuation_finished: Hodnocení bylo ukončeno
+          valuation_finished: Naceňování bylo ukončeno
         title: Investiční projekty pro participativní rozpočet
         edit: Upravit
       show:
@@ -92,7 +99,7 @@ cs:
         feasible: Proveditelný
         not_feasible: Neproveditelný
         undefined: Nedefinováno
-        valuation_finished: Hodnocení bylo ukončeno
+        valuation_finished: Naceňování bylo ukončeno
         time_scope: Časový rozsah
         internal_comments: Interní poznámky
         responsibles: Odpovědnost
@@ -109,7 +116,7 @@ cs:
         not_feasible: Neproveditelný
         undefined_feasible: Nevyřízený
         feasible_explanation_html: Vysvětlení proveditelnosti
-        valuation_finished: Hodnocení bylo ukončeno
+        valuation_finished: Naceňování bylo ukončeno
         time_scope_html: Časový rozsah
         internal_comments_html: Interní poznámky
         save: Uložit změny
