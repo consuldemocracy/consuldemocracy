@@ -2,7 +2,7 @@ cs:
   moderation:
     comments:
       index:
-        block_authors: Blokovaní autoři
+        block_authors: Blokovat autory
         confirm: Jste si jisti?
         filter: Filtr
         filters:
@@ -16,6 +16,7 @@ cs:
         ignore_flags: Označené jako přečtené
         order: Pořadí
         orders:
+          flags: Nejvíc označené
           newest: Nejnovější
         title: Komentáře
     dashboard:
@@ -23,7 +24,7 @@ cs:
         title: Moderování
     debates:
       index:
-        block_authors: Blokovaní autoři
+        block_authors: Blokovat autory
         confirm: Jste si jisti?
         filter: Filtr
         filters:
@@ -38,6 +39,7 @@ cs:
         order: Pořadí
         orders:
           created_at: Nejnovější
+          flags: Nejvíc označené
         title: Debaty
     header:
       title: Moderování
@@ -60,6 +62,7 @@ cs:
         title: Návrhy
     budget_investments:
       index:
+        block_authors: Blokovat autory
         confirm: Jste si jisti?
         filter: Filtr
         filters:
@@ -70,6 +73,7 @@ cs:
           budget_investment: Rozpočet
     proposal_notifications:
       index:
+        block_authors: Blokovat autory
         confirm: Jste si jisti?
         filter: Filtr
         filters:
@@ -79,4 +83,8 @@ cs:
         title: Upozornění k návrhům
     users:
       index:
+        hidden: Blokováno
+        hide: Blokovat
         search: Vyhledat
+        title: Blokovat uživatele
+      notice_hide: Uživatel byl zablokován. Všechny debaty a komentáře tohoto uživatele byly skryty.
