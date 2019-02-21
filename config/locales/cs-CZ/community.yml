@@ -7,6 +7,12 @@ cs:
         investment: Komunikujte s dalšími členy ve skupině této investice.
       button_to_access: Diskusní fórum skupiny
     show:
+      title:
+        proposal: Komunita ohledně tohoto návrhu
+        investment: Komunita ohledně této investice
+      description:
+        proposal: Účast v komunitě tohoto návrhu. Aktivní komunita může pomoci zlepšit obsah návrhu, zvyšovat jejich šíření a získat větší podporu.
+        investment: Zapojte se do komunity této investice. Aktivní komunita může zlepšit obsah investice, zvýšit sdílení návrhu a tím zajistit větší podporu.
       create_first_community_topic:
         first_theme: Vytvořte první téma této skupiny
         sub_first_theme: "Pro vytvoření téma se musíte %{sign_in} nebo %{sign_up}."
