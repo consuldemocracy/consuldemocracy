@@ -32,6 +32,8 @@ cs:
       - sobota
     formats:
       default: "%d-%m-%Y"
+      long: "%d.%m.%Y"
+      short: "%d.%b"
     month_names:
       - 
       - leden
