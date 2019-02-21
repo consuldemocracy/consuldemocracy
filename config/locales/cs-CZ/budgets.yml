@@ -13,6 +13,9 @@ cs:
         not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
         not_verified: O investicích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
         organization: Organizacím není dovoleno hlasovat
+        not_selected: Nevybrané investiční projekty nelze podpořit
+        not_enough_money_html: "Již jste rozdělili dostupný rozpočet. <br> <small>Pamatujte, že můžete kdykoli %{change_ballot}</small>"
+        no_ballots_allowed: Fáze výběru byla ukončena
     groups:
       show:
         unfeasible_title: Nerealizovatelné projekty
