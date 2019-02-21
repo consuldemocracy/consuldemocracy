@@ -55,8 +55,6 @@ ActiveRecord::Schema.define(version: 20190411090023) do
   end
 
   create_table "admin_notifications", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
     t.string   "link"
     t.string   "segment_recipient"
     t.integer  "recipients_count"
