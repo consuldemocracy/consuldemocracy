@@ -11,8 +11,9 @@ class Notification < ApplicationRecord
   scope :recent,      -> { order(id: :desc) }
   scope :for_render,  -> { includes(:notifiable) }
 
-  delegate :notifiable_title, :notifiable_available?, :check_availability,
-           :linkable_resource, to: :notifiable, allow_nil: true
+  delegate :notifiable_title, :notifiable_body, :notifiable_available?,
+           :check_availability, :linkable_resource,
+           to: :notifiable, allow_nil: true
 
   def mark_as_read
     update(read_at: Time.current)
