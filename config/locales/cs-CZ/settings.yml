@@ -2,6 +2,11 @@ cs:
   settings:
     comments_body_max_length: "Maximální délka komentáře"
     comments_body_max_length_description: "V počtu znaků"
+    official_level_1_name: "Pracovník úřadu - Úroveň 1"
+    official_level_2_name: "Pracovník úřadu - Úroveň 2"
+    official_level_3_name: "Pracovník úřadu - Úroveň 3"
+    official_level_4_name: "Pracovník úřadu - Úroveň 4"
+    official_level_5_name: "Pracovník úřadu - Úroveň 5"
     url: "Hlavní URL"
     url_description: "Hlavní URL vašeho webu"
     org_name: "Organizace"
