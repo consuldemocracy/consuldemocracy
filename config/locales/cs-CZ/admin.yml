@@ -221,6 +221,7 @@ cs:
         info: "%{budget_name} - skupina: %{group_name} - investiční projekt %{id}"
         edit: Upravit
         edit_classification: Upravit klasifikaci
+        by: Od
         group: Skupina
         heading: Heading
         tags: Štítky
@@ -488,8 +489,10 @@ cs:
           title: Sledované
     managers:
       index:
+        title: Manažeři
         name: Název
         email: Email
+        no_managers: Nemáte žádné manažery.
       manager:
         add: Přidat
         delete: Smazat
@@ -497,27 +500,51 @@ cs:
         title: 'Manažeři: Vyhledávání uživatelů'
     menu:
       activity: Aktivity moderátora
+      admin: Admin menu
+      banner: Správa bannerů
       poll_questions: Otázky
       proposals: Návrhy
+      proposals_topics: Témata návrhů
       budgets: Participativní rozpočty
+      geozones: Správa geozón
+      hidden_comments: Skrýt komentáře
+      hidden_debates: Skrýt debaty
+      hidden_proposals: Skrýt návrhy
+      hidden_budget_investments: Skrýt rozpočtové investice
+      hidden_proposal_notifications: Skrýt upozornění k návrhům
+      hidden_users: Skrýt uživatele
+      administrators: Administrátoři
       managers: Manažeři
       moderators: Moderátoři
       messaging_users: Zprávy uživatelům
       newsletters: Informační bulletiny
       admin_notifications: Upozornění
       system_emails: Systémové e-maily
+      emails_download: Stahování e-mailů
       valuators: Hodnotitelé
+      poll_officers: Asistenti hlasování
       polls: Průzkum
+      poll_booths: Umístění informačního stánku
+      poll_booth_assignments: Rozpis služeb na informačních stáncích
+      poll_shifts: Správa služeb
+      officials: Úředníci
       organizations: Organizace
       settings: Hlavní nastavení
+      spending_proposals: Náklady návrhů
       stats: Statistiky
+      signature_sheets: Podpisové archy
       site_customization:
         homepage: Úvodní strana
+        pages: Vlastní stránky
+        images: Vlastní obrázky
+        content_blocks: Vlastní bloky obsahu
+        information_texts: Vlastní informační texty
         information_texts_menu:
           debates: "Debaty"
           community: "Připojte se ke komunitě"
           proposals: "Návrhy"
           polls: "Průzkum"
+          layouts: "Rozložení"
           mailers: "E-maily"
           management: "Správa"
           welcome: "Vítejte"
@@ -525,15 +552,28 @@ cs:
           save: "Uložit"
           content_block:
             update: "Aktualizace bloku"
+      title_moderated_content: Moderovaný obsah
+      title_budgets: Rozpočty
       title_polls: Průzkum
+      title_profiles: Profily
+      title_settings: Nastavení
+      title_site_customization: Obsah webu
+      title_booths: Hlasovací informační stánky
+      legislation: Participativní legislativní proces
       users: Uživatelé
     administrators:
       index:
+        title: Administrátoři
         name: Název
         email: Email
+        id: Administrátor ID
+        no_administrators: Neexistují žádní administrátoři.
       administrator:
         add: Přidat
         delete: Smazat
+        restricted_removal: "Omlouváme se, nemůžete se odstranit ze skupiny administrátorů"
+      search:
+        title: "Administrátoři: Vyhledávání uživatelů"
     moderators:
       index:
         title: Moderátoři
@@ -605,6 +645,7 @@ cs:
         email: Email
         description: Description
         no_description: Bez popisu
+        no_valuators: Nemáte žádné hodnotitele.
         group: "Skupina"
         no_group: "Žádná skupina"
       valuator:
