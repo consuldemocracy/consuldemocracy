@@ -19,6 +19,7 @@ cs:
       subscription_to_website_newsletter_label: Příjem relevantních informací e-mailem
       email_on_direct_message_label: Přijímat e-maily s přímými zprávami
       email_digest_label: Získat přehled oznámení o návrzích
+      official_position_badge_label: Zobrazit odznak oficiální pozice
       recommendations: Doporučení
       show_debates_recommendations: Zobrazit doporučení k debatám
       show_proposals_recommendations: Zobrazit doporučení k návrhům
@@ -417,6 +418,7 @@ cs:
       participate_button_expired: "Průzkum ukončen"
       no_geozone_restricted: "Celé město"
       geozone_restricted: "Městské části"
+      geozone_info: "Otevřeno pro obyvatele z: "
       already_answer: "Tohoto hlasování jste se již účastnili"
       not_logged_in: "Pro účast se musíte registrovat a přihlásit"
       unverified: "Pro zapojení je nutné ověřit váš účet"
