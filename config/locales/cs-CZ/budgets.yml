@@ -166,5 +166,12 @@ cs:
       page_title: "%{budget} - Milníky"
       heading: "Participatory Milníky rozpočtu"
       heading_selection_title: "Podle městských částí"
+      no_winner_investments: "V tomto stavu není žádná vítězná investice"
       filters:
+        label: "Aktuální stav projektu"
         all: "Všechny (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Počáteční datum nemůže být stejné nebo pozdější než koncové datum"
+        prev_phase_dates_invalid: "Počáteční datum musí být pozdější než počáteční datum předchozí povolené fáze (%{phase_name})"
+        next_phase_dates_invalid: "Konečné datum musí být dřívější než datum ukončení další povolené fáze (%{phase_name})"
