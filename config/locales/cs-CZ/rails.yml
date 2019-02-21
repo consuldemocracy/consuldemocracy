@@ -48,6 +48,14 @@ cs:
       - říjen
       - listopad
       - prosinec
+  datetime:
+    prompts:
+      day: Den
+      hour: Hodina
+      minute: Minuta
+      month: Měsíc
+      second: Sekund
+      year: Rok
   errors:
     messages:
       blank: nemůže být prázdné
