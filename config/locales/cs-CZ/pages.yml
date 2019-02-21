@@ -82,9 +82,20 @@ cs:
               description: NÁZEV SOUBORU
             - 
               field: 'Účel souboru:'
+              description: Spravovat participační procesy k využití zkušeností lidí zapojených do těchto procesů a numericky a statisticky přepočítávat výsledky z těchto procesů odvozených.
             - 
+              field: 'Orgán zodpovědný za dokument:'
     accessibility:
       title: Přístupnost
+      description: |-
+        Přístupnost webu se týká možnosti přístupu k internetu a jeho obsahu všemi lidmi, bez ohledu na postižení (fyzické, intelektuální nebo technické), které mohou vzniknout, nebo z těch, které vycházejí z kontextu použití (technologické nebo environmentální).
+
+        Pokud jsou webové stránky navrženy s ohledem na dostupnost, všichni uživatelé mohou přistupovat k obsahu za stejných podmínek, například:
+      examples:
+        - Poskytování alternativního textu k obrázkům pomáhá slepým nebo zrakově postiženým uživatelům, kteří mohou použít speciální čtečky k přístupu k informacím.
+        - Pokud mají videa titulky, mohou jim uživatelé s poruchami sluchu plně rozumět.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       keyboard_shortcuts:
         navigation_table:
           key_header: Klíč
