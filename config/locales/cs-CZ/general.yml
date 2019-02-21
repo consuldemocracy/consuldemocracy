@@ -2,6 +2,7 @@ cs:
   account:
     show:
       change_credentials_link: Změnit své přihlašovací údaje
+      email_on_comment_label: Informujte mě e-mailem, když někdo okomentuje mé návrhy nebo debaty
       email_on_comment_reply_label: Informujte mě emailem, když někdo odpoví na mé komentáře
       erase_account_link: Smazat můj účet
       finish_verification: Dokončete ověření
@@ -12,8 +13,11 @@ cs:
       phone_number_label: Telefon
       public_activity_label: Udržujte seznam mých aktivit veřejný
       public_interests_label: Uchovávejte štítky prvků, které sleduji veřejně
+      public_interests_my_title_list: Štítky oblastí, které sledujete
+      public_interests_user_title_list: Štítky oblastí, které tento uživatel sleduje
       save_changes_submit: Uložit změny
       subscription_to_website_newsletter_label: Příjem relevantních informací e-mailem
+      email_on_direct_message_label: Přijímat e-maily s přímými zprávami
       email_digest_label: Získat přehled oznámení o návrzích
       recommendations: Doporučení
       show_debates_recommendations: Zobrazit doporučení k debatám
@@ -25,14 +29,17 @@ cs:
       user_permission_support_proposal: Podpora návrhů
       user_permission_title: Zapojte se
       user_permission_verify: Chcete-li provést všechny akce, ověřte svůj účet.
+      user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
       user_permission_votes: Účastnit se konečného hlasování
       username_label: Uživatelské jméno
       verified_account: Účet ověřen
       verify_my_account: Ověřit můj účet
   application:
     close: Zavřít
+    menu: Nabídka
   comments:
     comments_closed: Komentáře jsou uzavřeny
+    verified_only: Pro zapojení %{verify_account}
     verify_account: ověřte Váš účet
     comment:
       admin: Administrátor
@@ -89,8 +96,12 @@ cs:
         created_at: nejnovější
         hot_score: nejaktivnější
         most_commented: nejvíce komentované
+        relevance: závažnost
         recommendations: doporučení
       recommendations:
+        without_results: Neexistují žádné debaty týkající se vašich zájmů
+        without_interests: Sledujte návrhy, můžeme Vám dát doporučení
+        disable: "Doporučení ohledně debat se přestanou zobrazovat, pokud je odmítnete. Můžete je znovu aktivovat na stránce Můj účet"
         actions:
           success: "Doporučení pro debaty jsou pro tento účet zakázána"
           error: "Jejda, chyba. Přejděte na stránku 'Můj účet', abyste ručně deaktivovali doporučení pro diskusi"
@@ -98,9 +109,11 @@ cs:
         button: Vyhledat
         placeholder: Prohledat debaty...
         title: Vyhledat
+      select_order: Seřadit podle
       start_debate: Zahájit debatu
       title: Debaty
       section_header:
+        icon_alt: Ikona debat
         title: Debaty
         help: Nápověda k debatám
       section_footer:
@@ -273,6 +286,7 @@ cs:
         created_at: nejnovější
         hot_score: nejaktivnější
         most_commented: nejvíce komentované
+        relevance: závažnost
         archival_date: archivováno
         recommendations: doporučení
       recommendations:
