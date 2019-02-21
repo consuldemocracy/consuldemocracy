@@ -53,9 +53,14 @@ cs:
       title: Přístupnost
       keyboard_shortcuts:
         navigation_table:
+          key_header: Klíč
+          page_header: Stránka
           rows:
             - 
+              key_column: 0
+              page_column: Úvod
             - 
+              key_column: 1
               page_column: Debaty
             - 
               key_column: 2
@@ -64,7 +69,46 @@ cs:
               key_column: 3
               page_column: Hlasů
             - 
+              key_column: 4
               page_column: Participativní rozpočty
+            - 
+              key_column: 5
+              page_column: Legislativní procesy
+        browser_table:
+          description: 'V závislosti na operačním systému a použitém prohlížeči bude kombinace kláves následující:'
+          caption: Kombinace kláves závisí na operačním systému a prohlížeči
+          browser_header: Prohlížeč
+          key_header: Kombinace kláves
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + zkratka pak ENTER
+            - 
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+              action_column: Zobrazit > Velikost
+            - 
+              browser_column: Chrome
+              action_column: Nastavení (ikona) > možnosti > Rozšířené > Obsah webu > Velikost textu
+            - 
+              browser_column: Safari
+              action_column: Zobrazit > Přiblížit / Oddálit
+            - 
+              browser_column: Opera
+              action_column: Zobrazit > Měřítko
+        browser_shortcuts_table:
+          description: 'Další způsob, jak upravit velikost textu, je použít v prohlížečích, zejména kombinace kláves definované klávesové zkratky:'
+          rows:
+            - 
+              shortcut_column: CTRL + (CMD + pro počítače MAC)
+              description_column: Zvětší velikost textu
             - 
       compatibility:
         description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
