@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190221164056) do
+ActiveRecord::Schema.define(version: 20190221164559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -646,16 +646,11 @@ ActiveRecord::Schema.define(version: 20190221164056) do
 
   create_table "legislation_draft_versions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.string   "title"
-    t.text     "changelog"
     t.string   "status",                 default: "draft"
     t.boolean  "final_version",          default: false
-    t.text     "body"
     t.datetime "hidden_at"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.text     "body_html"
-    t.text     "toc_html"
   end
 
   add_index "legislation_draft_versions", ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
