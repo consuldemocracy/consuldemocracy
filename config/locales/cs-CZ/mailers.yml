@@ -44,17 +44,29 @@ cs:
       title_html: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
     user_invite:
       ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
+      text: "Děkujeme za žádost o připojení k %{org}! Za pár vteřin se můžete zapojit, stačí vyplnit formulář níže:"
       thanks: "Mockrát děkujeme."
+      title: "Vítejte v %{org}"
       button: Dokončit registraci
+      subject: "Pozvánka k účasti na %{org_name}"
     budget_investment_created:
+      subject: "Děkujeme za vytvoření investice!"
+      title: "Děkujeme za vytvoření investice!"
+      intro_html: "Zdravíme uživatele <strong>%{author}</strong>,"
+      text_html: "Děkujeme za vytvoření <strong>%{investment} </strong> v rámci participativního rozpočtu <strong>%{budget}</strong>."
+      follow_html: "Budeme vás informovat o tom jak postup probíhá a můžete ho také sledovat prostřednictvím tohoto odkazu <strong>%{link}</strong>."
       follow_link: "Prticipativní rozpočty"
       sincerely: "S pozdravem,"
       share: "Sdílet projekt"
     budget_investment_unfeasible:
       hi: "Vážený uživateli,"
+      new_html: "Kvůli těmto skutečnostem Vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
       new_href: "nový investiční projekt"
       sincerely: "S pozdravem"
+      sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
+      subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
     budget_investment_selected:
+      subject: "Váš investiční projekt '%{code}' byl vybrán"
       hi: "Vážený uživateli,"
       thanks: "Ještě jednou děkujeme za vaši účast."
       sincerely: "S pozdravem"
