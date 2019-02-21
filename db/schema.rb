@@ -651,16 +651,16 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "legislation_draft_versions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.string   "title"
-    t.text     "changelog"
+    t.string   "deprecated_title"
+    t.text     "deprecated_changelog"
     t.string   "status",                 default: "draft"
     t.boolean  "final_version",          default: false
-    t.text     "body"
+    t.text     "deprecated_body"
     t.datetime "hidden_at"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.text     "body_html"
-    t.text     "toc_html"
+    t.text     "deprecated_body_html"
+    t.text     "deprecated_toc_html"
     t.index ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
     t.index ["legislation_process_id"], name: "index_legislation_draft_versions_on_legislation_process_id", using: :btree
     t.index ["status"], name: "index_legislation_draft_versions_on_status", using: :btree
