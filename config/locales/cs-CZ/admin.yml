@@ -145,7 +145,13 @@ cs:
         latitude: "Zeměpisná šířka (volitelné)"
         longitude: "Zeměpisná šířka (volitelné)"
         coordinates_info: "Je-li k dispozici zeměpisná šířka a délka, stránka investic pro tuto kapitolu bude obsahovat mapu. Tato mapa bude vycentrována pomocí těchto souřadnic."
+        allow_content_block: "Povolit blok obsahu"
+        content_blocks_info: "Pokud je blok obsahu povolen, budete schopni vytvářet vlastní obsah vztahující se k této kapitole ze sekce Nastavení > Vlastní bloky obsahu. Tento obsah se zobrazí na stránce investic pro tuto kapitolu."
+        create: "Vytvořit novou kapitolu"
+        edit: "Upravit kapitolu"
         submit: "Uložit hadpisy"
+      index:
+        back: "Jít zpět do skupin"
     budget_phases:
       edit:
         start_date: Start date
@@ -157,14 +163,23 @@ cs:
         save_changes: Uložit změny
     budget_investments:
       index:
+        heading_filter_all: Všechny kapitoly
+        administrator_filter_all: Všichni administrátoři
         valuator_filter_all: Všichni hodotitelé
         tags_filter_all: Všechny štítky
         advanced_filters: Pokročilé filtry
         placeholder: Prohledat projekty
         filters:
           all: Vše
+          without_admin: Bez přidělené role admin
+          without_valuator: Bez přidělené role hodnotitel
+          under_valuation: Podhodnoceno
+          valuation_finished: Naceňování bylo ukončeno
+          feasible: Proveditelný
           selected: Vybrané
+          undecided: Nerozhodnuté
           unfeasible: Nerealizovatelné
+          min_total_supports: Minimální podpora
           winners: Vítězové
         buttons:
           filter: Filtr
