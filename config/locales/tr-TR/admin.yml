@@ -209,8 +209,22 @@ tr:
           feasible: "Uygulanabilir (%{price})"
           unfeasible: "Uygulanamaz"
           undecided: "Kararsız"
+        selected: "Seçilmiş"
+        select: "Seç"
         list:
+          id: KİMLİK
+          title: İsim
+          supports: Destekler
           admin: Yönetici
+          valuator: Bilirkişi
+          valuation_group: Değerlendirme Grubu
+          geozone: İşlem kapsamı
+          feasibility: Fizibilite
+          valuation_finished: Değ. Bit.
+          selected: Seçilmiş
+          visible_to_valuators: Bilirkişileri göster
+          author_username: Yazar kullanıcı adı
+          incompatible: Uyumsuz
       show:
         edit: Düzenleme
         image: "Fotoğraf"
