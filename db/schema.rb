@@ -102,14 +102,14 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "banners", force: :cascade do |t|
-    t.string   "title",            limit: 80
-    t.string   "description"
+    t.string   "deprecated_title",       limit: 80
+    t.string   "deprecated_description"
     t.string   "target_url"
     t.date     "post_started_at"
     t.date     "post_ended_at"
     t.datetime "hidden_at"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.text     "background_color"
     t.text     "font_color"
     t.index ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
