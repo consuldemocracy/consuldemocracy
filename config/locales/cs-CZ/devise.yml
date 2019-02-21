@@ -8,8 +8,8 @@ cs:
       updated: "Heslo bylo úspěšně aktualizováno"
     confirmations:
       confirmed: "Váš účet byl potvrzen."
-      send_instructions: "Za pár minut obdržíte e-mail s pokyny k obnovení hesla."
-      send_paranoid_instructions: "Je-li vaše e-mailová adresa v naší databázi, za pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_instructions: "Během pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_paranoid_instructions: "Je-li vaše e-mailová adresa v naší databázi, během pár minut obdržíte e-mail s pokyny k obnovení hesla."
     failure:
       already_authenticated: "Jste již přihlášeni."
       inactive: "Váš účet nebyl dosud aktivován."
@@ -28,11 +28,12 @@ cs:
       unlock_instructions:
         subject: "Pokyny k odblokování"
     omniauth_callbacks:
+      failure: "Nebylo možné Vás autorizovat jako %{kind} protože \"%{reason}\"."
       success: "Úspěšně byl identifikován jako %{kind}."
     passwords:
       no_token: "Na tuto stránku nemůžete přistupovat jinak než odkazem pro obnovení hesla. Pokud se tak stalo prostřednictvím odkazu pro obnovení hesla, zkontrolujte, zda je adresa URL kompletní."
-      send_instructions: "Za pár minut obdržíte e-mail s pokyny k obnovení hesla."
-      send_paranoid_instructions: "Je-li vaše e-mailová adresa je v naší databázi, za pár minut obdržíte odkaz použít k obnovení hesla."
+      send_instructions: "Během pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_paranoid_instructions: "Je-li vaše e-mailová adresa je v naší databázi, během pár minut obdržíte odkaz použít k obnovení hesla."
       updated: "Vaše heslo bylo úspěšně změněno. Ověření bylo úspěšné."
       updated_not_active: "Vaše heslo bylo úspěšně změněno."
     registrations:
@@ -54,3 +55,8 @@ cs:
   errors:
     messages:
       already_confirmed: "Byl jste již ověřen; prosím, pokuste se přihlásit."
+      confirmation_period_expired: "Musíte být ověřeni během %{period}; prosím, opakujte žádost."
+      expired: "vypršela platnost; prosím, opakujte žádost."
+      not_found: "nebylo nalezeno."
+      not_locked: "nebyl uzamčen."
+      equal_to_current_password: "musí být jiné než současné heslo."
