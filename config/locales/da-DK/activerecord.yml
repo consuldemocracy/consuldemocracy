@@ -16,3 +16,9 @@ da:
       milestone/status:
         one: "Status for milepæl"
         other: "Status for milepæle"
+      progress_bar:
+        one: "Statusbar"
+        other: "Statuslinjer"
+      comment:
+        one: "Kommentar"
+        other: "Kommentarer"
