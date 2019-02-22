@@ -1,1 +1,18 @@
 da:
+  activerecord:
+    models:
+      activity:
+        one: "Aktivitet"
+        other: "Aktiviteter"
+      budget:
+        one: "Budget"
+        other: "Budgetter"
+      budget/investment:
+        one: "Investering"
+        other: "Investeringer"
+      milestone:
+        one: "Milepæl"
+        other: "Milepæle"
+      milestone/status:
+        one: "Status for milepæl"
+        other: "Status for milepæle"
