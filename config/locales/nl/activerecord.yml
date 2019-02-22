@@ -320,11 +320,11 @@ nl:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "labels moeten kleiner of gelijk aan %{count} zijn"
+              less_than_or_equal_to: "het aantal termen moet kleiner of gelijk aan %{count} zijn"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "U heeft het maximum aan privé berichten per dag bereikt"
+              invalid: "U heeft het maximum aan privéberichten per dag bereikt"
         image:
           attributes:
             attachment:
@@ -341,30 +341,30 @@ nl:
         map_location:
           attributes:
             map:
-              invalid: Locatie mag niet leeg zijn. Plaats een markering of vink aan als de geolocalisatie niet nodig is.
+              invalid: Locatie mag niet leeg zijn. Plaats een markering of vink aan als de locatie niet nodig is
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Een document niet in de plaats"
-              has_voted: "Deelnemer heeft al gestemd"
+              not_in_census: "Niet geverifieerd"
+              has_voted: "Gebruiker heeft al gestemd"
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: moet op of na de begindatum liggen
+              invalid_date_range: moet op of na de begindatum zijn
             debate_end_date:
-              invalid_date_range: moet op of na de begindatum van het debat zijn
+              invalid_date_range: moet op of na de begindatum zijn
             draft_end_date:
               invalid_date_range: dient later te zijn dan de aanvangsdatum
             allegations_end_date:
-              invalid_date_range: moet op of na de startdatum van bewijsvoering zijn
+              invalid_date_range: moet op of na de begindatum zijn
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "labels moeten kleiner of gelijk zijn aan %{count}"
+              less_than_or_equal_to: "termen moeten kleiner of gelijk zijn aan %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "labels moeten kleiner of gelijk zijn aan %{count}"
+              less_than_or_equal_to: "termen moeten kleiner of gelijk zijn aan %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -372,7 +372,7 @@ nl:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Niet geverifieerd door gemeente'
+              not_in_census: 'Niet geverifieerd'
               already_voted: 'Heeft al gestemd over dit voorstel'
         site_customization/page:
           attributes:
@@ -386,7 +386,7 @@ nl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Je kunt niet reageren op een evaluatie'
+              cannot_comment_valuation: 'Je kunt niet reageren op een beoordeling'
       messages:
         record_invalid: "Validatie mislukt: %{errors}"
         restrict_dependent_destroy:
