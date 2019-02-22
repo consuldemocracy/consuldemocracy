@@ -3,11 +3,11 @@ en:
     processes:
       index:
         section_header:
-          icon_alt: Legislation processes icon
-          title: Legislation processes
-          help: Help about legislation processes
+          icon_alt: Collaborative legislation icon
+          title: Collaborative legislation
+          help: Help about collaborative legislation
         section_footer:
-          title: Help about legislation processes
+          title: Help about collaborative legislation
           help_text_1: "In participatory processes, the City Council offers to its citizens the opportunity to participate in the drafting and modification of regulations, affecting the city of Madrid and to be able to give their opinion on certain actions that it plans to carry out."
           help_text_2: "People registered in %{org} can participate with contributions in the public consultation of new ordinances, regulations and guidelines, among others. Your comments are analyzed by the corresponding area and considered for the final drafting of the ordinances. The subsidy ordinance, the Human Rights Plan, the draft Air Quality and Climate Change Plan, the new EMVS public housing award regulations, etc. have passed through this process."
           help_text_3: 'The City Council also opens processes to receive contributions and opinions on municipal actions. Examples of past processes are the change of denomination of the neighborhood "San Andrés", the convenience of creating new neighborhoods in the District of Vicálvaro, questions about the Linear Park of the Manzanares or the opinions about the remodeling of eleven squares of the city.'
