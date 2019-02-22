@@ -487,6 +487,17 @@ cs:
         errors:
           form:
             error: Chyba
+        form:
+          launch_text_editor: Spustit textový editor
+          close_text_editor: Zavřít textový editor
+          use_markdown: Pro formátování textu použijte Markdown
+          hints:
+            status:
+              draft: Můžete zobrazit náhled jako aministrátor, nikdo jiný to nevidí
+              published: Viditelné pro každého
+          title_placeholder: Napište název pracovní verze
+          changelog_placeholder: Přidat hlavní změny od předchozí verze
+          body_placeholder: Poznamenejte si návrh textu
         index:
           title: Pracovní verze
           create: Vytvořit verzi
@@ -713,6 +724,18 @@ cs:
         link: Odkaz
         segment_recipient: Recipients
         preview_guide: "Takto uživatelé uvidí upozornění:"
+        sent_guide: "Takto uživatelé vidí upozornění:"
+        send_alert: Jste si jistý, že chcete poslat toto oznámení %{n} uživatelům?
+    system_emails:
+      preview_pending:
+        action: Náhled čekajících
+        preview_of: Náhled %{name}
+    emails_download:
+      index:
+        title: Stahování e-mailů
+        download_segment: Stáhnout e-mailové adresy
+        download_segment_help_text: Stáhnout ve formátu CSV
+        download_emails_button: Stáhnout seznam e-mailů
     valuators:
       index:
         title: Hodnotitelé
@@ -1038,22 +1061,31 @@ cs:
         filter: Filtr
         filters:
           all: Vše
+          with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
     proposal_notifications:
       index:
         filter: Filtr
         filters:
           all: Vše
+          with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
     settings:
       index:
+        banners: Banner styly
+        banner_imgs: Banner obrázky
+        no_banners_images: Nemáte žádné obrázky bannerů
+        no_banners_styles: Nemáte žádné styly bannerů
+        title: Nastavení konfigurace
         update_setting: Aktualizovat
+        feature_flags: Doporučené
         features:
           enabled: "Funkce povolena"
           disabled: "Funkce je zakázaná"
           enable: "Povolit"
           disable: "Zakázat"
         map:
+          title: Konfigurace mapy
           form:
             submit: Aktualizovat
       setting: Vlastnosti
@@ -1099,8 +1131,20 @@ cs:
         tags_filter_all: Všechny štítky
         filters:
           valuation_open: Otevřené
+          without_admin: Bez přidělené role admin
+          managed: Spravované
+          valuating: Podhodnoceno
+          valuation_finished: Naceňování bylo ukončeno
           all: Vše
+        title: Investiční projekty pro participativní rozpočet
+        assigned_admin: Přiřazený administrátor
+        no_admin_assigned: Administrátor není přiřazen
+        no_valuators_assigned: Žádný hodnotitel není přiřazen
+        summary_link: "Investiční projekt souhrn"
+        valuator_summary_link: "Shrnutí hodnotitele"
         feasibility:
+          feasible: "Proveditelné (%{price})"
+          not_feasible: "Neproveditelný"
           undefined: "Nedefinováno"
       show:
         assigned_admin: Přiřazený administrátor
@@ -1359,6 +1403,8 @@ cs:
       no_header: Neexistují žádné záhlaví.
       create_header: Vytvořit záhlaví
       cards_title: Karty
+      create_card: Vytvořit kartu
+      no_cards: Nemáte žádné karty.
       cards:
         title: Předmět
         description: Description
