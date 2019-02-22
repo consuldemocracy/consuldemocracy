@@ -638,7 +638,16 @@ cs:
         name: Název
         email: Email
       moderator:
+        add: Přidat
         delete: Smazat
+      search:
+        title: 'Moderátoři: Vyhledávání uživatelů'
+    segment_recipient:
+      all_users: Všichni uživatelé
+      administrators: Administrátoři
+      proposal_authors: Autoři návrhů
+      investment_authors: Autoři investic v aktuálním rozpočtu
+      feasible_and_undecided_investment_authors: "Autoři některých investic v současném rozpočtu, kteří nejsou v souladu s: [ocenění skončilo neočekávaně]"
     newsletters:
       update_success: Informační bulletin byl úspěšně aktualizován
       send_success: Informační bulletin byl úspěšně odeslán
@@ -670,6 +679,10 @@ cs:
         body: Email content
         body_help_text: To je jak uživatelé uvidí e-mail
     admin_notifications:
+      create_success: Oznámení úspěšně vytvořeno
+      update_success: Oznámení úspěšně aktualizováno
+      send_success: Oznámení úspěšně odesláno
+      delete_success: Oznámení úspěšně odstraněno
       index:
         section_title: Upozornění
         new_notification: Nové upozornění
@@ -682,6 +695,7 @@ cs:
         delete: Smazat
         preview: Náhled
         view: Zobrazit
+        empty_notifications: Nemáte žádná oznámení
       new:
         section_title: Nové upozornění
         submit_button: Vytvořit upozornění
@@ -691,11 +705,14 @@ cs:
       show:
         section_title: Náhled upozornění
         send: Odeslat upozornění
+        will_get_notified: (%{n} uživatelů bude upozorněno)
+        got_notified: (%{n} uživatelů dostalo oznámení)
         sent_at: Odesláno v čase
         title: Předmět
         body: Text
         link: Odkaz
         segment_recipient: Recipients
+        preview_guide: "Takto uživatelé uvidí upozornění:"
     valuators:
       index:
         title: Hodnotitelé
@@ -1337,6 +1354,10 @@ cs:
             notice: "Karta úspěšně smazána"
     homepage:
       title: Úvodní strana
+      description: Aktivní moduly se objeví na úvodní stránce ve stejném pořadí jako zde.
+      header_title: Záhlaví
+      no_header: Neexistují žádné záhlaví.
+      create_header: Vytvořit záhlaví
       cards_title: Karty
       cards:
         title: Předmět
