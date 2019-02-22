@@ -17,76 +17,76 @@ nl:
         one: "Mijlpaalstatus"
         other: "Mijlpaalstatussen"
       progress_bar:
-        one: "Voortgangsbalk"
-        other: "Voortgangsbalken"
+        one: "Voortgang"
+        other: "Voortgang"
       comment:
         one: "Reactie"
         other: "Reacties"
       debate:
         one: "Discussie"
-        other: "Discussie"
+        other: "Debatten"
       tag:
-        one: "Label"
-        other: "Tags"
+        one: "Term"
+        other: "Termen"
       user:
-        one: "Hidden users"
+        one: "Gebruiker"
         other: "Gebruikers"
       moderator:
         one: "Moderator"
-        other: "Moderators"
+        other: "Moderatoren"
       administrator:
         one: "Beheerder"
-        other: "Admins"
+        other: "Beheerders"
       valuator:
         one: "beoordelaar"
         other: "beoordelaars"
       valuator_group:
-        one: "Evaluatiegroep"
-        other: "Beoordelingsgroepen"
+        one: "Beoordelaarsgroep"
+        other: "Beoordelaarsgroepen"
       manager:
         one: "Manager"
-        other: "Beheerders"
+        other: "Managers"
       newsletter:
         one: "Nieuwsbrief"
         other: "Nieuwsbrieven"
       vote:
-        one: "Voeg toe"
-        other: "Votes"
+        one: "Stem"
+        other: "Stemmen"
       organization:
         one: "Organisatie"
-        other: "Organisations"
+        other: "Organisaties"
       poll/booth:
-        one: "stemhokje"
-        other: "stemhokjes"
+        one: "stemlocatie"
+        other: "stemlocaties"
       poll/officer:
-        one: "officer"
-        other: "leden"
+        one: "coördinator"
+        other: "coördinatoren"
       proposal:
-        one: "Burgervoorstel"
-        other: "Burgervoorstellen"
+        one: "Idee"
+        other: "Ideeën"
       spending_proposal:
         one: "Investment project"
         other: "Budget bestemmingen"
       site_customization/page:
         one: Aangepaste pagina
-        other: Aangepaste paginas
+        other: Aangepaste pagina's
       site_customization/image:
-        one: Aangepaste illustratie
-        other: Custom images
+        one: Aangepaste afbeelding
+        other: Aangepaste afbeeldingen
       site_customization/content_block:
         one: Aangepaste inhoud
-        other: Custom content blocks
+        other: Aangepaste inhoud
       legislation/process:
         one: "Proces"
-        other: "Plannen"
+        other: "Processen"
       legislation/proposal:
         one: "Proposal"
         other: "Proposals"
       legislation/draft_versions:
-        one: "Conceptversie"
-        other: "Concept versies"
+        one: "Concept"
+        other: "Conceptem"
       legislation/questions:
-        one: "Question"
+        one: "Vraag"
         other: "Vragen"
       legislation/question_options:
         one: "Vraag optie"
@@ -102,13 +102,13 @@ nl:
         other: "Afbeeldingen"
       topic:
         one: "Onderwerp"
-        other: "Termen"
+        other: "Onderwerpen"
       poll:
-        one: "Poll"
-        other: "Polls"
+        one: "Peiling"
+        other: "Peilingen"
       proposal_notification:
-        one: "Voorgestelde notificaties"
-        other: "Voorstel notificaties"
+        one: "Notificatie"
+        other: "Notificaties"
     attributes:
       budget:
         name: "Name"
