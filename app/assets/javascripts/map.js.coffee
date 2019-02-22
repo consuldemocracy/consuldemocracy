@@ -13,7 +13,12 @@ App.Map =
 
   initializeMap: (element) ->
     App.Map.cleanInvestmentCoordinates(element)
-
+    options = {
+      zoomControl: if $(element).data('map-allow-zoom') == false then false else true,
+      scrollWheelZoom: if $(element).data('map-allow-scroll') == false then false else true,
+      keyboard: if $(element).data('map-allow-keyboard') == false then false else true,
+      dragging: if $(element).data('map-allow-dragging') == false then false else true
+    }
     mapCenterLatitude        = $(element).data('map-center-latitude')
     mapCenterLongitude       = $(element).data('map-center-longitude')
     markerLatitude           = $(element).data('marker-latitude')
@@ -85,7 +90,7 @@ App.Map =
       return content
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
-    map              = L.map(element.id).setView(mapCenterLatLng, zoom)
+    map              = L.map(element.id, options).setView(mapCenterLatLng, zoom)
     L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
 
     if markerLatitude && markerLongitude && !addMarkerInvestments
