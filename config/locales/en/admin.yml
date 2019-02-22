@@ -438,7 +438,7 @@ en:
         index:
           create: New process
           delete: Delete
-          title: Legislation processes
+          title: Collaborative legislation
           filters:
             active: Active
             all: All
