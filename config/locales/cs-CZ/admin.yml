@@ -864,6 +864,7 @@ cs:
         questions_tab: Otázky
         booths_tab: Informační stánky
         officers_tab: Úředníci
+        recounts_tab: Přepočet
         results_tab: Výsledky
         table_title: "Předmět"
     questions:
@@ -875,23 +876,37 @@ cs:
         table_proposal: "Návrhy"
         table_question: "Question"
         table_poll: "Průzkum"
+      edit:
+        title: "Upravit dotaz"
       new:
+        title: "Vytvořit otázku"
         poll_label: "Průzkum"
       answers:
         images:
           add_image: "Přidat obrázek"
+          save_image: "Uložit obrázek"
       show:
+        proposal: Původní návrh
         author: Autor
         question: Question
+        edit_question: Upravit dotaz
+        valid_answers: Správné odpovědi
+        add_answer: Upravit odpověď
         video_url: External video
         answers:
           title: Answer
           description: Description
+          videos: Videa
+          video_list: Seznam videí
+          images: Obrázky
+          images_list: Seznam obrázků
           documents: Dokumenty
           documents_list: Seznam dokumentů
           document_title: Předmět
           document_actions: Akce
     answers:
+      new:
+        title: Nová odpověď
       show:
         title: Předmět
         description: Description
@@ -1068,10 +1083,20 @@ cs:
         filters:
           valuation_open: Otevřené
           all: Vše
+        feasibility:
+          undefined: "Nedefinováno"
       show:
+        assigned_admin: Přiřazený administrátor
+        assigned_valuators: Přiřazení hodnotitelé
         back: Zpět
         classification: Klasifikace
+        heading: "Investiční projekt %{id}"
         edit: Upravit
+        edit_classification: Upravit klasifikaci
+        association_name: Sdružení
+        by: uživatelem
+        sent: Odesláno
+        geozone: Rozsah
         dossier: Dokumentace
         edit_dossier: Upravit dokumentaci
         tags: Štítky
@@ -1223,25 +1248,68 @@ cs:
         about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
         html_format: "Blok s obsahem je skupina odkazů, a to musí mít následující formát:"
         no_blocks: "Nemáte žádné bloky obsahu."
+        create:
+          notice: Blok s obsahem úspěšně vytvořen
+          error: Nelze vytvořit blok s obsahem
+        update:
+          notice: Blok s obsahem úspěšně aktualizován
+          error: Blok s obsahem nemohl být aktualizován
+        destroy:
+          notice: Blok s obsahem byl smazán
+        edit:
+          title: Úprava bloku s obsahem
         errors:
           form:
             error: Chyba
+        index:
+          create: Vytvořit nový blok s obsahem
+          delete: Odstranit blok
+          title: Bloky s obsahem
+        new:
+          title: Vytvořit nový blok s obsahem
         content_block:
           body: Body
           name: Název
+          names:
+            top_links: Hlavní odkazy
+            footer: Zápatí
+            subnavigation_left: Hlavní navigace vlevo
+            subnavigation_right: Hlavní navigace vpravo
       images:
         index:
+          title: Vlastní obrázky
           update: Aktualizovat
           delete: Smazat
           image: Image
+        update:
+          notice: Obrázek byl úspěšně aktualizován
+          error: Obrázek nemohl být aktualizován
+        destroy:
+          notice: Obrázek byl úspěšně smazán
+          error: Obrázek nemohl být smazán
       pages:
+        create:
+          notice: Stránka byla úspěšně vytvořena
+          error: Stránka nemohla být vytvořena
+        update:
+          notice: Stránka úspěšně aktualizována
+          error: Stránka nemohla být aktualizována
+        destroy:
+          notice: Stránka byla úspěšně smazána
+        edit:
+          title: Editace %{page_title}
         errors:
           form:
             error: Chyba
         form:
           options: Options
         index:
+          create: Vytvořit novou stránku
           delete: Smazat stránku
+          title: Vlastní stránky
+          see_page: Viz strana
+        new:
+          title: Vytvořit novou vlastní stránku
         page:
           created_at: Vytvořeno v
           status: Status
@@ -1251,11 +1319,22 @@ cs:
           title: Předmět
           slug: Slug
           cards_title: Karty
+          see_cards: Viz karty
         cards:
+          cards_title: karty
+          create_card: Vytvořit kartu
+          no_cards: Nemáte žádnou kartu.
           title: Předmět
           description: Description
           link_text: Link text
           link_url: Link URL
+          columns_help: "Šířka karty v počtu sloupců. Na mobilních obrazovkách je vždy šířka 100 %."
+          create:
+            notice: "Karta úspěšně vytvořena!"
+          update:
+            notice: "Karta úspěšně aktualizována"
+          destroy:
+            notice: "Karta úspěšně smazána"
     homepage:
       title: Úvodní strana
       cards_title: Karty
