@@ -189,125 +189,125 @@ nl:
         name: "Naam"
         starts_at: "Begindatum"
         ends_at: "Einddatum"
-        geozone_restricted: "Beperkt tot regio"
+        geozone_restricted: "Beperkt tot gebied"
         summary: "Samenvatting"
-        description: "Beschrijving"
+        description: "Omschrijving"
       poll/translation:
-        name: "Name"
+        name: "Naam"
         summary: "Samenvatting"
-        description: "Beschrijving"
+        description: "Omschrijving"
       poll/question:
-        title: "Question"
+        title: "Vraag"
         summary: "Samenvatting"
-        description: "Beschrijving"
-        external_url: "Link naar meer informatie"
+        description: "Omschrijving"
+        external_url: "Link naar aanvullende informatie"
       poll/question/translation:
-        title: "Question"
+        title: "Vraag"
       signature_sheet:
-        signable_type: "Ondertekenbaar type"
-        signable_id: "Ondertekende ID"
+        signable_type: "Geschikt voor tekenen"
+        signable_id: "Geschikt voor identificatie"
         document_numbers: "Documentnummers"
       site_customization/page:
-        content: Content
-        created_at: Created at
-        subtitle: Subtitel
+        content: Inhoud
+        created_at: Aangemaakt op
+        subtitle: Ondertitel
         slug: Slug
         status: Status
-        title: Title
-        updated_at: Updated at
+        title: Titel
+        updated_at: Bijgewerkt op
         more_info_flag: Toon op de help pagina
         print_content_flag: Print inhoud
         locale: Taal
       site_customization/page/translation:
-        title: Title
+        title: Titel
         subtitle: Ondertitel
-        content: Content
+        content: Inhoud
       site_customization/image:
-        name: Name
-        image: Image
+        name: Naam
+        image: Afbeelding
       site_customization/content_block:
-        name: Name
-        locale: locale
+        name: Naam
+        locale: taal
         body: Tekst
       legislation/process:
-        title: Proces titel
+        title: Titel
         summary: Samenvatting
-        description: Beschrijving
-        additional_info: Extra info
+        description: Omschrijving
+        additional_info: Aanvullende informatie
         start_date: Begindatum
         end_date: Einddatum
-        debate_start_date: De begindatum van het debat
-        debate_end_date: Debat einddatum
-        draft_start_date: Begindatum concept
-        draft_end_date: Einddatum concept
-        draft_publication_date: Publicatiedatum concept
-        allegations_start_date: Startdatum bewijsvoering
-        allegations_end_date: Einddatum bewijsvoering
-        result_publication_date: Datum van de bekendmaking van de uiteindelijke resultaat
+        debate_start_date: Begindatum
+        debate_end_date: Einddatum
+        draft_start_date: Begindatum
+        draft_end_date: Einddatum
+        draft_publication_date: Publicatiedatum
+        allegations_start_date: Startdatum
+        allegations_end_date: Einddatum
+        result_publication_date: Publicatiedatum eindresultaat
         background_color: Achtergrondkleur
         font_color: Tekstkleur
       legislation/process/translation:
-        title: Titel van het proces
+        title: Titel
         summary: Samenvatting
-        description: Beschrijving
+        description: Omschrijving
         additional_info: Aanvullende informatie
         milestones_summary: Samenvatting
       legislation/draft_version:
-        title: Versie titel
+        title: Titel
         body: Tekst
         changelog: Wijzigingen
         status: Status
-        final_version: Definitieve versie
+        final_version: Eindversie
       legislation/draft_version/translation:
-        title: Versie titel
+        title: Titel
         body: Tekst
         changelog: Wijzigingen
       legislation/question:
-        title: Title
+        title: Titel
         question_options: Instellingen
       legislation/question_option:
         value: Waarde
       legislation/annotation:
-        text: Commentaar
+        text: Reactie
       document:
-        title: Title
+        title: Titel
         attachment: Bijlage
       image:
-        title: Title
+        title: Titel
         attachment: Bijlage
       poll/question/answer:
         title: Antwoord
-        description: Beschrijving
+        description: Omschrijving
       poll/question/answer/translation:
         title: Antwoord
-        description: Beschrijving
+        description: Omschrijving
       poll/question/answer/video:
-        title: Title
+        title: Titel
         url: Externe video
       newsletter:
-        segment_recipient: Geadresseerden
+        segment_recipient: Ontvangers
         subject: Onderwerp
-        from: Vanaf
-        body: E-mail inhoud
+        from: Van
+        body: Email inhoud
       admin_notification:
         segment_recipient: Ontvangers
-        title: Title
+        title: Titel
         link: Link
         body: Tekst
       admin_notification/translation:
-        title: Title
+        title: Titel
         body: Tekst
       widget/card:
-        label: Label (optioneel)
-        title: Title
-        description: Beschrijving
+        label: Term (optioneel)
+        title: Titel
+        description: Omschrijving
         link_text: Tekst link
         link_url: URL link
         columns: Aantal kolommen
       widget/card/translation:
-        label: Label (optioneel)
-        title: Title
-        description: Beschrijving
+        label: Term (optioneel)
+        title: Titel
+        description: Omschrijving
         link_text: Tekst link
       widget/feed:
         limit: Aantal items
@@ -316,7 +316,7 @@ nl:
         user:
           attributes:
             email:
-              password_already_set: "Deze deelnemer heeft al een wachtwoord"
+              password_already_set: "Deze gebruiker heeft al een wachtwoord"
         debate:
           attributes:
             tag_list:
