@@ -666,7 +666,10 @@ cs:
       feasible_and_undecided_investment_authors: "Autoři některých investic v současném rozpočtu, kteří nejsou v souladu s: [ocenění skončilo neočekávaně]"
       selected_investment_authors: Autoři vybraných investic v aktuálním rozpočtu
       winner_investment_authors: Autoři vítězných investic v aktuálním rozpočtu
+      not_supported_on_current_budget: Uživatelé, kteří nepodporovali investice v aktuálním rozpočtu
+      invalid_recipients_segment: "Segment uživatelů je neplatný"
     newsletters:
+      create_success: Informační bulletin byl úspěšně vytvořen
       update_success: Informační bulletin byl úspěšně aktualizován
       send_success: Informační bulletin byl úspěšně odeslán
       delete_success: Informační bulletin byl úspěšně smazán
@@ -690,12 +693,14 @@ cs:
       show:
         title: Náhled informačního bulletinu
         send: Odeslat
+        affected_users: (%{n} postižených uživatelů)
         sent_at: Odesláno v čase
         subject: Subject
         segment_recipient: Recipients
         from: E-mailová adresa odesílatele informačního bulletinu
         body: Email content
         body_help_text: To je jak uživatelé uvidí e-mail
+        send_alert: Jste si jistý, že chcete poslat informační bulletin %{n} uživatelům?
     admin_notifications:
       create_success: Oznámení úspěšně vytvořeno
       update_success: Oznámení úspěšně aktualizováno
@@ -737,6 +742,9 @@ cs:
       preview_pending:
         action: Náhled čekajících
         preview_of: Náhled %{name}
+        pending_to_be_sent: Toto je obsah čekající na odeslání
+        send_pending: Odeslat čekající
+        send_pending_notification: Úspěšně odeslaná čekající oznámení
     emails_download:
       index:
         title: Stahování e-mailů
@@ -913,6 +921,7 @@ cs:
         officers_tab: Úředníci
         recounts_tab: Přepočet
         results_tab: Výsledky
+        no_questions: "Nemáte žádné otázky přiřazené k této anketě."
         questions_title: "Seznam otázek"
         table_title: "Předmět"
       flash:
@@ -1116,6 +1125,7 @@ cs:
           disable: "Zakázat"
         map:
           title: Konfigurace mapy
+          help: Zde můžete přizpůsobit zobrazení mapy uživatelům. Přetáhněte značku mapy nebo klikněte kdekoli na mapu, nastavte požadované zvětšení a klikněte na tlačítko "Aktualizovat".
           flash:
             update: Nastavení mapy bylp úspěšně aktualizováno.
           form:
@@ -1140,10 +1150,13 @@ cs:
         placeholder: Vyhledat otázky ankety
       proposal_search:
         button: Vyhledat
+        placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
       spending_proposal_search:
         button: Vyhledat
+        placeholder: Vyhledat výdaje návrhů podle názvu nebo popisu
       user_search:
         button: Vyhledat
+        placeholder: Vyhledat uživatele podle jména nebo e-mailu
       search_results: "Výsledky vyhledávání"
       no_search_results: "Nebyly nalezeny žádné výsledky."
       actions: Akce
