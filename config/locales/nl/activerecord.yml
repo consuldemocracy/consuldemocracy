@@ -5,20 +5,23 @@ nl:
         one: "activiteit"
         other: "activiteiten"
       budget:
-        one: "Burgerbegroting"
+        one: "Budget"
         other: "Budgetten"
       budget/investment:
         one: "Investering"
-        other: "Investments"
+        other: "Investeringen"
       milestone:
         one: "mijlpaal"
         other: "mijlpalen"
       milestone/status:
         one: "Mijlpaalstatus"
         other: "Mijlpaalstatussen"
+      progress_bar:
+        one: "Voortgangsbalk"
+        other: "Voortgangsbalken"
       comment:
-        one: "Commentaar"
-        other: "Comments"
+        one: "Reactie"
+        other: "Reacties"
       debate:
         one: "Discussie"
         other: "Discussie"
@@ -139,6 +142,10 @@ nl:
       progress_bar:
         kind: "Type"
         title: "Title"
+        percentage: "Huidige voortgang"
+      progress_bar/kind:
+        primary: "Primair"
+        secondary: "Secundair"
       budget/heading:
         name: "Kop naam"
         price: "Prijs"
@@ -237,6 +244,8 @@ nl:
         allegations_start_date: Startdatum bewijsvoering
         allegations_end_date: Einddatum bewijsvoering
         result_publication_date: Datum van de bekendmaking van de uiteindelijke resultaat
+        background_color: Achtergrondkleur
+        font_color: Tekstkleur
       legislation/process/translation:
         title: Titel van het proces
         summary: Samenvatting
@@ -294,6 +303,7 @@ nl:
         description: Beschrijving
         link_text: Tekst link
         link_url: URL link
+        columns: Aantal kolommen
       widget/card/translation:
         label: Label (optioneel)
         title: Title
@@ -343,6 +353,8 @@ nl:
               invalid_date_range: moet op of na de begindatum liggen
             debate_end_date:
               invalid_date_range: moet op of na de begindatum van het debat zijn
+            draft_end_date:
+              invalid_date_range: dient later te zijn dan de aanvangsdatum
             allegations_end_date:
               invalid_date_range: moet op of na de startdatum van bewijsvoering zijn
         proposal:
