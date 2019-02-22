@@ -1,1 +1,11 @@
 da:
+  activemodel:
+    models:
+      verification:
+        residence: "Adresse"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Type af dokument"
+          document_number: "Dokumentnummer (bogstaver inkluderet)"
