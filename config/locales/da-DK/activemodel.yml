@@ -9,3 +9,14 @@ da:
         residence:
           document_type: "Type af dokument"
           document_number: "Dokumentnummer (bogstaver inkluderet)"
+          date_of_birth: "Fødselsdato"
+          postal_code: "Postnummer"
+        sms:
+          phone: "Telefonnummer"
+          confirmation_code: "Bekræftelseskode"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Type af dokument"
+        document_number: "Dokumentnummer (bogstaver inkluderet)"
+        year_of_birth: "Fødselsår"
