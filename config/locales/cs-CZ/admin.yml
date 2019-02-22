@@ -484,14 +484,17 @@ cs:
         edit:
           back: Zpět
           submit_button: Uložit změny
+          warning: Text jste upravili, nezapomeňte kliknout na tlačítko Uložit, aby změny byly trvale uloženy.
         errors:
           form:
             error: Chyba
         form:
+          title_html: 'Editace <span class="strong">%{draft_version_title}</span> z procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Spustit textový editor
           close_text_editor: Zavřít textový editor
           use_markdown: Pro formátování textu použijte Markdown
           hints:
+            final_version: Tato verze bude zveřejněna jako konečný výsledek pro tento proces. Komentáře v této verzi nejsou povoleny.
             status:
               draft: Můžete zobrazit náhled jako aministrátor, nikdo jiný to nevidí
               published: Viditelné pro každého
@@ -527,6 +530,7 @@ cs:
           notice: Otázka byla úspěšně smazána.
         edit:
           back: Zpět
+          title: "Upravit \"%{question_title}\""
           submit_button: Uložit změny
         errors:
           form:
@@ -648,6 +652,7 @@ cs:
         title: Moderátoři
         name: Název
         email: Email
+        no_moderators: Nemáte žádné moderátory.
       moderator:
         add: Přidat
         delete: Smazat
@@ -659,6 +664,8 @@ cs:
       proposal_authors: Autoři návrhů
       investment_authors: Autoři investic v aktuálním rozpočtu
       feasible_and_undecided_investment_authors: "Autoři některých investic v současném rozpočtu, kteří nejsou v souladu s: [ocenění skončilo neočekávaně]"
+      selected_investment_authors: Autoři vybraných investic v aktuálním rozpočtu
+      winner_investment_authors: Autoři vítězných investic v aktuálním rozpočtu
     newsletters:
       update_success: Informační bulletin byl úspěšně aktualizován
       send_success: Informační bulletin byl úspěšně odeslán
@@ -906,16 +913,25 @@ cs:
         officers_tab: Úředníci
         recounts_tab: Přepočet
         results_tab: Výsledky
+        questions_title: "Seznam otázek"
         table_title: "Předmět"
+      flash:
+        question_added: "Otázka přidána k této anketě"
+        error_on_question_added: "Otázku nelze přiřadit k této anketě"
     questions:
       index:
         title: "Otázky"
         create: "Vytvořit otázku"
+        no_questions: "Nejsou k dispozici žádné otázky."
+        filter_poll: Filtrovat podle ankety
+        select_poll: Vyberte anketu
         questions_tab: "Otázky"
+        successful_proposals_tab: "Úspěšné návrhy"
         create_question: "Vytvořit otázku"
         table_proposal: "Návrhy"
         table_question: "Question"
         table_poll: "Průzkum"
+        poll_not_assigned: "Anketa není přiřazena"
       edit:
         title: "Upravit dotaz"
       new:
@@ -1043,19 +1059,27 @@ cs:
         name: Název
         email: Email
         phone_number: Telefonní číslo
+        responsible_name: Odpovědnost
         status: Status
+        no_organizations: Nemáte žádné organizace.
+        reject: Odmítnout
         rejected: Odmítnutý
         search: Vyhledat
         search_placeholder: Jméno, email nebo telefonní číslo
         title: Organizace
         verified: Ověřen
+        verify: Ověřit
         pending: Nevyřízený
+      search:
+        title: Hledání organizací
+        no_results: Nebyla nalezena žádná organizace.
     proposals:
       index:
         title: Návrhy
         id: ID
         author: Autor
         milestones: Milníky
+        no_proposals: Neexistují žádné návrhy.
     hidden_proposals:
       index:
         filter: Filtr
@@ -1063,6 +1087,8 @@ cs:
           all: Vše
           with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
+        title: Skryté návrhy
+        no_hidden_proposals: Nemáte žádné skryté návrhy.
     proposal_notifications:
       index:
         filter: Filtr
@@ -1070,7 +1096,11 @@ cs:
           all: Vše
           with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
+        title: Skrytá upozornění
+        no_hidden_proposals: Nemáte žádná skrytá upozornění.
     settings:
+      flash:
+        updated: Hodnota aktualizována
       index:
         banners: Banner styly
         banner_imgs: Banner obrázky
@@ -1086,6 +1116,8 @@ cs:
           disable: "Zakázat"
         map:
           title: Konfigurace mapy
+          flash:
+            update: Nastavení mapy bylp úspěšně aktualizováno.
           form:
             submit: Aktualizovat
       setting: Vlastnosti
@@ -1099,10 +1131,13 @@ cs:
       false_value: "Ne"
       booths_search:
         button: Vyhledat
+        placeholder: Vyhledat informační stánek podle jména
       poll_officers_search:
         button: Vyhledat
+        placeholder: Vyhledat úředníky ankety
       poll_questions_search:
         button: Vyhledat
+        placeholder: Vyhledat otázky ankety
       proposal_search:
         button: Vyhledat
       spending_proposal_search:
