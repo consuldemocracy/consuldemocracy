@@ -722,9 +722,32 @@ tr:
       by_officer:
         date: "Tarih"
         booth: "Kabin"
+        assignments: "Bu ankette ofis vardiyaları"
+        no_assignments: "Bu ankette bu kullanıcının ofis vardiyasi yok."
     poll_shifts:
       new:
+        add_shift: "Vardiya ekle"
+        shift: "Atama"
+        shifts: "Bu kabindeki vardiyalar"
+        date: "Tarih"
+        task: "Görev"
+        edit_shifts: Vardiyaları düzenle
+        new_shift: "Yeni vardiya"
+        no_shifts: "Bu kabinin vardiyası yok"
+        officer: "Memur"
+        remove_shift: "Kaldır"
+        search_officer_button: Ara
+        search_officer_placeholder: Memur ara
+        search_officer_text: Yeni bir vardiyaya atamak için bir memur arayın
+        select_date: "Gün seç"
+        no_voting_days: "Oylama günleri sona erdi"
+        select_task: "Görev seç"
+        table_shift: "Vardiya"
         table_email: "E-posta"
+        table_name: "İsim"
+      flash:
+        create: "Vardiya eklendi"
+        destroy: "Vardiya kaldırıldı"
     questions:
       show:
         answers:
