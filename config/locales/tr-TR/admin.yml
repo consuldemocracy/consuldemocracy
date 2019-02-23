@@ -995,10 +995,43 @@ tr:
           one: "%{count} geçersiz imza var"
           other: "%{count} geçersiz imzalar var"
         unverified_error: (Census tarafından doğrulanmadı)
+        loading: "Census tarafından doğrulanan imzalar var, lütfen sayfayı birkaç dakika içinde yenileyin"
     stats:
       show:
+        stats_title: İstatistikler
         summary:
+          comment_votes: Yorum oyları
           comments: Yorumlar
+          debate_votes: Tartışma oyları
+          debates: Tartışmalar
+          proposal_votes: Öneri oyları
+          proposals: Öneriler
+          budgets: Açık bütçeler
+          budget_investments: Yatırım projeleri
+          spending_proposals: Bekleyen Öneriler
+          unverified_users: Doğrulanmamış kullanıcılar
+          user_level_three: Üçüncü seviye kullanıcılar
+          user_level_two: İkinci seviye kullanıcılar
+          users: Toplam kullanıcılar
+          verified_users: Doğrulanan kullanıcılar
+          verified_users_who_didnt_vote_proposals: Teklifleri oylamayan doğrulanan kullanıcılar
+          visits: Ziyaretler
+          votes: Toplam oylar
+        spending_proposals_title: Bekleyen Öneriler
+        budgets_title: Katılımcı bütçeleme
+        visits_title: Ziyaretler
+        direct_messages: Doğrudan mesajlar
+        proposal_notifications: Öneri bildirimleri
+        incomplete_verifications: Tamamlanmamış doğrulamalar
+        polls: Anketler
+      direct_messages:
+        title: Doğrudan mesajlar
+        total: Toplam
+        users_who_have_sent_message: Bir özel mesaj gönderen kullanıcılar
+      proposal_notifications:
+        title: Öneri bildirimleri
+        total: Toplam
+        proposals_with_notifications: Bildirimler ile öneriler
     users:
       columns:
         email: E-posta
