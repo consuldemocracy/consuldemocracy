@@ -501,8 +501,35 @@ tr:
             error: Hata
         form:
           title_html: 'Düzenleniyor <span class="strong">%{draft_version_title}</span> işlemden <span class="strong">%{process_title}</span>'
+          launch_text_editor: Metin düzenleyicisini başlatın
+          close_text_editor: Metin düzenleyiciyi kapatın
+          use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
+          hints:
+            final_version: Bu sürüm, bu işlem için Son Sonuç olarak yayınlanacaktır. Yorumlara bu sürümde izin verilmeyecektir.
+            status:
+              draft: Yönetici olarak önizleme yapabilirsiniz, başka kimse göremez
+              published: Herkes için görünür
+          title_placeholder: Taslak sürümün başlığını yaz
+          changelog_placeholder: Önceki sürümden ana değişiklikleri ekle
+          body_placeholder: Taslak metni yaz
+        index:
+          title: Taslak sürümler
+          create: Sürüm oluştur
+          delete: Sil
+          preview: Önizleme
+        new:
+          back: Geri
+          title: Yeni sürüm oluştur
+          submit_button: Sürüm oluştur
+        statuses:
+          draft: Taslak
+          published: Yayınlandı
         table:
+          title: Başlık
+          created_at: Oluşturuldu
           comments: Yorumlar
+          final_version: Son sürüm
+          status: Durum
       questions:
         new:
           title: Yeni soru oluştur
