@@ -151,7 +151,7 @@ tr:
       form:
         name: "Başlık adı"
         amount: "Miktar"
-        population: "Konum (isteğe bağlı)"
+        population: "Nüfus (isteğe bağlı)"
         population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
         latitude: "Enlem (isteğe bağlı)"
         longitude: "Boylam (isteğe bağlı)"
@@ -917,17 +917,64 @@ tr:
       false_value: "Hayır"
       booths_search:
         button: Ara
+        placeholder: İsme göre kabin ara
+      poll_officers_search:
+        button: Ara
+        placeholder: Anket memurlarını ara
+      poll_questions_search:
+        button: Ara
+        placeholder: Anket sorularını ara
+      proposal_search:
+        button: Ara
+        placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
+      spending_proposal_search:
+        button: Ara
+        placeholder: Bekleyen önerileri başlığa veya tanımlamaya göre ara
+      user_search:
+        button: Ara
+        placeholder: İsim veya e-posta ile kullanıcı ara
+      search_results: "Arama sonuçları"
+      no_search_results: "Hiç sonuç bulunamadı."
       actions: Aksiyon
+      title: Başlık
+      description: Tanımlama
       image: Fotoğraf
+      show_image: Resmi göster
+      moderated_content: "Moderatörler tarafından denetlenen içeriği kontrol edin ve denetlemenin doğru yapıldığını onaylayın."
+      view: Görünüm
+      proposal: Öneri
+      author: Yazar
+      content: İçerik
+      created_at: Oluşturuldu
+      delete: Sil
     spending_proposals:
       index:
+        geozone_filter_all: Tüm bölgeler
+        administrator_filter_all: Tüm yöneticiler
+        valuator_filter_all: Tüm bilirkişiler
+        tags_filter_all: Tüm etiketler
         filters:
           valuation_open: Açık
+          without_admin: Atanmış yönetici olmadan
+          managed: Yönetilen
       show:
         edit: Düzenleme
     geozones:
       index:
         edit: Düzenleme
+      edit:
+        editing: Geozone düzenleniyor
+        back: Geri git
+      new:
+        back: Geri git
+        creating: Bölge oluştur
+      delete:
+        success: Geozone başarıyla silindi
+        error: Bu geozone, kendisine eklenmiş öğeler olduğundan silinemez
+    signature_sheets:
+      author: Yazar
+      created_at: Oluşturma tarihi
+      name: İsim
     stats:
       show:
         summary:
