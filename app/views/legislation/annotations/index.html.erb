@@ -25,7 +25,7 @@
           <%= annotation.context.try(:html_safe).presence || annotation.quote %>
         </div>
         <%= link_to legislation_process_draft_version_annotation_path(@process, @draft_version, annotation) do %>
-          <span class="icon-comments" aria-hidden="true"></span> <span><%= t('.comments_count', count: annotation.comments_count) %></span></a>
+          <span class="far fa-comments fa-fw" aria-hidden="true"></span> <span><%= t('.comments_count', count: annotation.comments_count) %></span></a>
         <% end %>
       </div>
     <% end %>

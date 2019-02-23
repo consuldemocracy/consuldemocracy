@@ -335,7 +335,11 @@ a {
   color: $text;
   top: $line-height / 2;
 }
-
+.back {
+  i {
+    padding-right: 2em;
+  }
+}
 .back,
 .icon-angle-left {
   clear: both;
@@ -1234,11 +1238,11 @@ form {
       font-size: rem-calc(12);
     }
 
-    .icon-check {
+    .fa-check {
       color: $check;
     }
 
-    .icon-x {
+    .fa-times {
       color: $delete;
     }
   }
@@ -1483,8 +1487,10 @@ table {
 
   &::before {
     color: #45b0e3;
-    content: "f";
-    font-family: "icons" !important;
+    content: "\f099";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height * 2;
@@ -1503,8 +1509,10 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: "f";
-    font-family: "icons" !important;
+    content: "\f099";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 50%;
     line-height: $line-height * 2;
@@ -1526,8 +1534,10 @@ table {
 
   &::before {
     color: #3b5998;
-    content: "A";
-    font-family: "icons" !important;
+    content: "\f39e";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height * 2;
@@ -1546,8 +1556,10 @@ table {
   width: rem-calc(48) !important;
 
   &::before {
-    content: "A";
-    font-family: "icons" !important;
+    content: "\f39e";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 50%;
     line-height: $line-height * 2;
@@ -1569,8 +1581,10 @@ table {
 
   &::before {
     color: #de4c34;
-    content: "B";
-    font-family: "icons" !important;
+    content: "\f1a0";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height * 2;
@@ -1589,8 +1603,10 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: "B";
-    font-family: "icons" !important;
+    content: "\f1a0";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 50%;
     line-height: $line-height * 2;
@@ -1612,8 +1628,10 @@ table {
 
   &::before {
     color: #08c;
-    content: "1";
-    font-family: "icons" !important;
+    content: "\f2c6";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height * 2;
@@ -1632,8 +1650,10 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: "1";
-    font-family: "icons" !important;
+    content: "\f2c6";
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Font Awesome 5 Brands" !important;
     font-size: rem-calc(24);
     left: 50%;
     line-height: $line-height * 2;
@@ -1685,8 +1705,10 @@ table {
     width: $line-height * 2;
 
     &::before {
-      content: "f";
-      font-family: "icons" !important;
+      content: "\f099";
+      font-style: normal;
+      font-weight: normal;
+      font-family: "Font Awesome 5 Brands" !important;
       font-size: rem-calc(24);
       left: 50%;
       line-height: $line-height * 2;
@@ -1710,8 +1732,10 @@ table {
     width: rem-calc(48);
 
     &::before {
-      content: "A";
-      font-family: "icons" !important;
+      content: "\f39e";
+      font-style: normal;
+      font-weight: normal;
+      font-family: "Font Awesome 5 Brands" !important;
       font-size: rem-calc(24);
       left: 50%;
       line-height: $line-height * 2;
@@ -1735,8 +1759,10 @@ table {
     width: rem-calc(48);
 
     &::before {
-      content: "B";
-      font-family: "icons" !important;
+      content: "\f1a0";
+      font-style: normal;
+      font-weight: normal;
+      font-family: "Font Awesome 5 Brands" !important;
       font-size: rem-calc(24);
       left: 50%;
       line-height: $line-height * 2;
@@ -1760,8 +1786,10 @@ table {
     width: $line-height * 2;
 
     &::before {
-      content: "1";
-      font-family: "icons" !important;
+      content: "\f2c6";
+      font-style: normal;
+      font-weight: normal;
+      font-family: "Font Awesome 5 Brands" !important;
       font-size: rem-calc(24);
       left: 50%;
       line-height: $line-height * 2;
@@ -2114,11 +2142,11 @@ table {
     color: $text-medium;
     text-decoration: none;
 
-    .icon-like {
+    .fa-thumbs-up {
       color: $like;
     }
 
-    .icon-unlike {
+    .fa-thumbs-up {
       color: $unlike;
     }
   }

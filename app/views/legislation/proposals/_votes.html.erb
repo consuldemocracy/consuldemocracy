@@ -5,14 +5,14 @@
       <% if user_signed_in? %>
         <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: 'yes'),
             class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
-          <span class="icon-like">
+          <span class="fas fa-thumbs-up fa-fw">
             <span class="show-for-sr"><%= t('votes.agree') %></span>
           </span>
           <span class="percentage"><%= votes_percentage('likes', proposal) %></span>
         <% end %>
       <% else %>
         <div class="like">
-          <span class="icon-like">
+          <span class="fas fa-thumbs-up fa-fw">
             <span class="show-for-sr"><%= t('votes.agree') %></span>
           </span>
           <span class="percentage"><%= votes_percentage('likes', proposal) %></span>
@@ -25,14 +25,14 @@
     <div class="against inline-block">
       <% if user_signed_in? %>
         <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: 'no'), class: "unlike #{voted_classes[:against]}", title: t('votes.disagree'), method: "post", remote: true do %>
-          <span class="icon-unlike">
+          <span class="fas fa-thumbs-down fa-fw">
             <span class="show-for-sr"><%= t('votes.disagree') %></span>
           </span>
           <span class="percentage"><%= votes_percentage('dislikes', proposal) %></span>
         <% end %>
       <% else %>
         <div class="unlike">
-          <span class="icon-unlike">
+          <span class="fas fa-thumbs-down fa-fw">
             <span class="show-for-sr"><%= t('votes.disagree') %></span>
           </span>
           <span class="percentage"><%= votes_percentage('dislikes', proposal) %></span>

@@ -18,9 +18,9 @@ module BudgetInvestmentsHelper
   def set_sorting_icon(direction, sort_by)
     if sort_by.to_s == params[:sort_by]
       if direction == "desc"
-        "icon-arrow-top"
+        "fas fa-arrow-up"
       else
-        "icon-arrow-down"
+        "fas fa-arrow-down"
       end
     else
       ""

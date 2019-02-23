@@ -4,7 +4,7 @@
 .ui-datepicker-header {
   background: $brand;
   color: #fff;
-  font-weight: bold;
+  padding: 1em !important;
 }
 
 .ui-datepicker-calendar {
@@ -29,20 +29,17 @@
 }
 
 .ui-datepicker {
-  padding: 0;
   z-index: 4 !important;
-
+  .ui-datepicker-prev {
+    left: auto !important;
+  }
   .ui-datepicker-prev,
   .ui-datepicker-next {
     color: #fff;
     cursor: pointer;
-    font-family: "icons" !important;
     font-size: rem-calc(24);
     font-weight: normal;
-    height: rem-calc(30);
-    line-height: $line-height;
     position: absolute;
-    top: 4px;
     width: rem-calc(30);
 
     &:hover {
@@ -51,11 +48,17 @@
   }
 
   .ui-datepicker-prev::after {
-    content: "\62";
+    font-style: normal;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free" !important;
+    content: "\f0d9";
   }
 
   .ui-datepicker-next::after {
-    content: "\63";
+    font-style: normal;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free" !important;
+    content: "\f0da";
   }
 
   table {

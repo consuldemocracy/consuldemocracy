@@ -26,11 +26,8 @@
     margin-top: 0;
   }
 
-  .icon-like,
-  .icon-unlike {
-    background: #fff;
-    border: 2px solid $text-light;
-    border-radius: rem-calc(3);
+  .fa-thumbs-up,
+  .fa-thumbs-down {
     color: $text-light;
     display: inline-block;
     font-size: rem-calc(30);
@@ -40,27 +37,24 @@
 
     &:hover,
     &:active {
-      color: #fff;
       cursor: pointer;
       opacity: 1 !important;
     }
   }
 
-  .icon-like {
+  .fa-thumbs-up {
 
     &:hover,
     &:active {
-      background: $like;
-      border: 2px solid $like;
+      color: $like;
     }
   }
 
-  .icon-unlike {
+  .fa-thumbs-down {
 
     &:hover,
     &:active {
-      background: $unlike;
-      border: 2px solid $unlike;
+      color: $unlike;
     }
   }
 
@@ -88,26 +82,24 @@
 
   .voted {
 
-    .icon-like,
-    .icon-unlike {
+    .fa-thumbs-up,
+    .fa-thumbs-down {
       color: #fff;
     }
 
-    .icon-like {
-      background: $like;
-      border: 2px solid $like;
+    .fa-thumbs-up {
+      color: $like;
     }
 
-    .icon-unlike {
-      background: $unlike;
-      border: 2px solid $unlike;
+    .fa-thumbs-down {
+      color: $unlike;
     }
   }
 
   .no-voted {
 
-    .icon-like,
-    .icon-unlike {
+    .fa-thumbs-up,
+    .fa-thumbs-down {
       opacity: 0.3;
     }
   }
@@ -1404,7 +1396,7 @@
       display: block;
       height: 0;
 
-      .icon-x {
+      .fa-times {
         color: #9f9f9f;
         font-size: rem-calc(24);
         line-height: $line-height / 2;
@@ -1430,7 +1422,7 @@
         text-decoration: none;
       }
 
-      .remove-investment-project .icon-x {
+      .remove-investment-project .fa-times {
         color: #fff;
       }
     }

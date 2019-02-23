@@ -45,7 +45,7 @@ module ApplicationHelper
 
   def back_link_to(destination = :back, text = t("shared.back"))
     link_to destination, class: "back" do
-      content_tag(:span, nil, class: "icon-angle-left") + text
+      content_tag(:i, nil, class: ["fas", "fa-caret-left"]) + text
     end
   end
 

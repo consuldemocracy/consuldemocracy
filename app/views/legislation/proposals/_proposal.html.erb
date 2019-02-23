@@ -19,7 +19,7 @@
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %></h3>
             <p class="proposal-info">
-              <span class="icon-comments"></span>&nbsp;
+              <span class="far fa-comments fa-fw"></span>&nbsp;
               <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), legislation_process_proposal_path(proposal.legislation_process_id, proposal, anchor: "comments") %>
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>

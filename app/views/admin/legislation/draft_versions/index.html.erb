@@ -46,9 +46,9 @@
             <td class="text-center"><%= draft_version.total_comments %></td>
             <td class="text-center">
               <% if draft_version.final_version %>
-                <span class="icon-check" title="<%= draft_version.final_version %>"></span>
+                <i class="fas fa-check fa-fw" title="<%= draft_version.final_version %>"></i>
               <% else %>
-                <span class="icon-x delete" title="<%= draft_version.final_version %>"></span>
+                <i class="fas fa-times fa-fw delete" title="<%= draft_version.final_version %>"></i>
               <% end %>
             </td>
           </tr>
