@@ -640,10 +640,57 @@ tr:
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
         title: Yeni bülten
+        from: Bülten gönderirken görünecek e-posta adresi
+      edit:
+        title: Bülteni düzenle
+      show:
+        title: Bülten önizleme
+        send: Gönder
+        affected_users: (%{n} etkilenen kullanıcılar)
+        sent_emails:
+          one: 1 e-posta gönderildi
+          other: "%{count} e-postalar gönderildi"
+        sent_at: Gönderilen
+        subject: Konu
+        segment_recipient: Alıcılar
+        from: Bülten gönderirken görünecek e-posta adresi
+        body: E-posta içeriği
+        body_help_text: Kullanıcılar e-postayı bu şekilde görecekler
+        send_alert: Bu bülteni %{n} kullanıcılarına göndermek istediğinize emin misiniz?
     admin_notifications:
+      create_success: Bildirim başarıyla oluşturuldu
+      update_success: Bildirim başarıyla güncellendi
+      send_success: Bildirim başarıyla gönderildi
+      delete_success: Bildirim başarıyla silindi
       index:
+        section_title: Bildirimler
+        new_notification: Yeni bildirim
+        title: Başlık
+        segment_recipient: Alıcılar
+        sent: Gönder
         actions: Aksiyon
+        draft: Taslak
         edit: Düzenleme
+        delete: Sil
+        preview: Önizleme
+        view: Görünüm
+        empty_notifications: Hiç gösterilecek bildirim yok
+      new:
+        section_title: Yeni bildirim
+        submit_button: Bildirim oluştur
+      edit:
+        section_title: Bildirimi düzenle
+        submit_button: Bildirimi güncelle
+      show:
+        section_title: Bildirim önizleme
+        send: Bildirim gönder
+        will_get_notified: (%{n} kullanıcılara bildirilecek)
+        got_notified: (%{n} kullanıcılara bildirildi)
+        sent_at: Gönderildi
+        title: Başlık
+        body: Metin
+        link: Bağlantı
+        segment_recipient: Alıcılar
     valuators:
       index:
         email: E-posta
