@@ -495,6 +495,12 @@ tr:
         edit:
           back: Geri
           submit_button: Değişiklikleri kaydet
+          warning: Metni düzenlediniz, değişiklikleri kalıcı olarak kaydetmek için Kaydet'e tıklamayı unutmayın.
+        errors:
+          form:
+            error: Hata
+        form:
+          title_html: 'Düzenleniyor <span class="strong">%{draft_version_title}</span> işlemden <span class="strong">%{process_title}</span>'
         table:
           comments: Yorumlar
       questions:
