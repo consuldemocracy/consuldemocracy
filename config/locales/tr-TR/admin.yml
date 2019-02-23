@@ -957,11 +957,45 @@ tr:
           valuation_open: Açık
           without_admin: Atanmış yönetici olmadan
           managed: Yönetilen
+          valuating: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+          all: Tüm
+        no_admin_assigned: Hiç yönetici atanmamış
+        no_valuators_assigned: Hiç bilirkişi atanmamış
+        summary_link: "Yatırım projesi özeti"
+        feasibility:
+          undefined: "Tanımsız"
       show:
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
+        back: Geri
+        classification: Sınıflandırma
+        heading: "Yatırım projesi %{id}"
         edit: Düzenleme
+        edit_classification: Sınıflandırmayı düzenle
+        by: Tarafından
+        sent: Gönder
+        tags: Etiketler
+        undefined: Tanımsız
+      edit:
+        classification: Sınıflandırma
+        assigned_valuators: Bilirkişiler
+        submit_button: Güncelleme
+        tags: Etiketler
+        tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
+        undefined: Tanımsız
+      summary:
+        title: Yatırım projelerinin özeti
+        total_count: Toplam
+        cost_for_geozone: Maliyet
     geozones:
       index:
         edit: Düzenleme
+        delete: Sil
+      geozone:
+        name: İsim
+        external_code: Harici kod
+        coordinates: Koordinatlar
       edit:
         editing: Geozone düzenleniyor
         back: Geri git
@@ -1108,7 +1142,35 @@ tr:
           update: Güncelleme
           delete: Sil
           image: Fotoğraf
+        update:
+          notice: Resim başarıyla güncellendi
+          error: Resim güncellenemedi
+        destroy:
+          notice: Resim başarıyla silindi
+          error: Resim silinemedi
       pages:
+        create:
+          notice: Sayfa başarıyla oluşturuldu
+          error: Sayfa oluşturulamadı
+        update:
+          notice: Sayfa başarıyla güncellendi
+          error: Sayfa güncellenemedi
+        destroy:
+          notice: Sayfa başarıyla silindi
+        edit:
+          title: Düzenleniyor %{page_title}
+        errors:
+          form:
+            error: Hata
+        form:
+          options: Seçenekler
+        index:
+          create: Yeni sayfa oluştur
+          delete: Sayfayı sil
+          title: Kişisel Sayfalar
+          see_page: Sayfayı göster
+        new:
+          title: Yeni kişisel sayfa oluştur
         page:
           created_at: Oluşturuldu
           status: Durum
