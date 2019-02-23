@@ -9,7 +9,7 @@ shared_examples "notifiable in-app" do |described_class|
     login_as author
     visit root_path
 
-    expect(page).to have_css ".icon-notification"
+    expect(page).to have_css ".fa-bell"
   end
 
   scenario "A user commented on my notifiable", :js do
@@ -17,7 +17,7 @@ shared_examples "notifiable in-app" do |described_class|
 
     login_as author
     visit root_path
-    find(".icon-notification").click
+    find(".fa-bell").click
 
     expect(page).to have_css ".notification", count: 1
     expect(page).to have_content "Someone commented on"
@@ -109,7 +109,7 @@ shared_examples "notifiable in-app" do |described_class|
     end
 
     within("#notifications") do
-      find(".icon-no-notification").click
+      find(".fa-bell-slash").click
       expect(page).to have_css ".notification", count: 0
     end
   end
@@ -131,7 +131,7 @@ shared_examples "notifiable in-app" do |described_class|
     end
 
     within("#notifications") do
-      find(".icon-no-notification").click
+      find(".fa-bell-slash").click
       expect(page).to have_css ".notification", count: 0
     end
 

@@ -4,7 +4,8 @@ services:
     image: postgres:9.4.5
     volumes:
       - docker-example-postgres:/var/lib/postgresql/data
-
+    ports:
+      - "5432:5432"
   app:
     build: .
     image: consul-app
@@ -12,11 +13,16 @@ services:
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     working_dir: /var/www/consul
     environment:
-      - RAILS_ENV=development
+      - RAILS_ENV=production
       - RAILS_SERVE_STATIC_FILES=true
       - NEW_RELIC_AGENT_ENABLED=false
       - DATABASE_HOST=database
-      - DATABASE_NAME=consul_development
+      - DATABASE_NAME=consul_production
+      - SMTP_DOMAIN=codefor.nl
+      - SMTP_HOST=smtp.mailgun.org
+      - SMTP_PASSWORD=a6d631757784f24beace64715c850781
+      - SMTP_USER=postmaster@codefor.nl
+      - SMTP_FROM=no-reply@codefor.nl
     depends_on:
       - database
     ports:
@@ -30,20 +36,7 @@ services:
     environment:
       - DATABASE_HOST=database
       - DATABASE_NAME=postgres
-    command: bin/rake db:migrate
-    volumes:
-      - .:/var/www/consul:delegated
-      - bundle:/usr/local/bundle:delegated
-    depends_on:
-      - app
-      - database
-
-  prepare:
-    image: consul-app
-    command: bash -c "bin/rake db:create && bin/rake db:migrate && bin/rake db:seed && bin/rake db:dev_seed"
-    environment: 
-      - DATABASE_HOST=database
-      - DATABASE_NAME=postgres
+    command: bin/rake db:setup
     volumes:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated

@@ -22,15 +22,15 @@ RSpec.describe BudgetInvestmentsHelper, type: :helper do
     let(:params)  { { sort_by: sort_by } }
 
     it "returns arrow down if current direction is ASC" do
-      expect(set_sorting_icon("asc", sort_by)).to eq "icon-arrow-down"
+      expect(set_sorting_icon("asc", sort_by)).to eq "fa-arrow-down"
     end
 
     it "returns arrow top if current direction is DESC" do
-      expect(set_sorting_icon("desc", sort_by)).to eq "icon-arrow-top"
+      expect(set_sorting_icon("desc", sort_by)).to eq "fa-arrow-up"
     end
 
     it "returns arrow down if sort_by present, but no direction" do
-      expect(set_sorting_icon(nil, sort_by)).to eq "icon-arrow-down"
+      expect(set_sorting_icon(nil, sort_by)).to eq "fa-arrow-down"
     end
 
     it "returns no icon if sort_by and direction is missing" do

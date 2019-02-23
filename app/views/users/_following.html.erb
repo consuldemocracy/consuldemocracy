@@ -9,7 +9,7 @@
     <% @follows.each do |followable_type, follows| %>
 
       <h3 id="<%= followable_type_title(followable_type).parameterize.underscore %>">
-        <span class="icon-<%= followable_icon(followable_type) %>"></span>
+        <span class="fas fa-<%= followable_icon(followable_type) %>"></span>
         <%= followable_type_title(followable_type) %>
       </h3>
 

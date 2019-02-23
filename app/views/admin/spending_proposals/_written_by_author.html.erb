@@ -36,7 +36,7 @@
 <% end %>
 
 <% if @spending_proposal.external_url.present? %>
-  <p><%= text_with_links @spending_proposal.external_url %>&nbsp;<span class="icon-external small"></span></p>
+  <p><%= text_with_links @spending_proposal.external_url %>&nbsp;<span class="fa-external-link-alt small"></span></p>
 <% end %>
 
 <%= safe_html_with_links @spending_proposal.description %>

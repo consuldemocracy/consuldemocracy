@@ -45,7 +45,7 @@
 <% if @proposal.external_url.present? %>
   <div class="document-link">
     <p>
-      <span class="icon-document"></span>&nbsp;
+      <span class="fas fa-file fa-fw"></span>&nbsp;
       <strong><%= t('proposals.show.title_external_url') %></strong>
     </p>
       <%= text_with_links @proposal.external_url %>
@@ -55,7 +55,7 @@
 <% if @proposal.video_url.present? %>
   <div class="video-link">
     <p>
-      <span class="icon-video"></span>&nbsp;
+      <span class="fas fa-file-video fa-fw"></span>&nbsp;
       <strong><%= t('proposals.show.title_video_url') %></strong>
     </p>
     <%= text_with_links @proposal.video_url %>

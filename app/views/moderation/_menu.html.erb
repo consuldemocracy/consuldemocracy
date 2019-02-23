@@ -7,14 +7,14 @@
     <% if feature?(:proposals) %>
       <li <%= "class=is-active" if controller_name == "proposals" %>>
         <%= link_to moderation_proposals_path do %>
-          <span class="icon-proposals"></span>
+          <span class="fas fa-lightbulb fa-fw"></span>
           <%= t("moderation.menu.proposals") %>
         <% end %>
       </li>
 
       <li <%= "class=is-active" if controller_name == "proposal_notifications" %>>
         <%= link_to moderation_proposal_notifications_path do %>
-          <span class="icon-proposals"></span>
+          <span class="fas fa-lightbulb fa-fw"></span>
           <%= t("moderation.menu.proposal_notifications") %>
         <% end %>
       </li>
@@ -23,7 +23,7 @@
     <% if feature?(:debates) %>
       <li <%= "class=is-active" if controller_name == "debates" %>>
         <%= link_to moderation_debates_path do %>
-          <span class="icon-debates"></span>
+          <span class="fa-comment-alt"></span>
           <%= t('moderation.menu.flagged_debates') %>
         <% end %>
       </li>
@@ -32,7 +32,7 @@
     <% if feature?(:budgets) %>
       <li <%= "class=is-active" if controller_name == "investments" %>>
         <%= link_to moderation_budget_investments_path do %>
-          <span class="icon-budget"></span>
+          <span class="fas fa-hand-holding-usd fa-fw"></span>
           <%= t("moderation.menu.flagged_investments") %>
         <% end %>
       </li>
@@ -47,7 +47,7 @@
 
     <li <%= "class=is-active" if controller_name == "users" %>>
       <%= link_to moderation_users_path do %>
-        <span class="icon-user"></span>
+        <span class="fas fa-user fa-fw"></span>
         <%= t("moderation.menu.users") %>
       <% end %>
     </li>

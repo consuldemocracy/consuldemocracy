@@ -246,25 +246,25 @@
 .topic-new,
 .topic-form {
 
-  .icon-debates,
-  .icon-proposals,
-  .icon-budget,
-  .icon-image {
+  .fa-comment-alt,
+  .fa-lightbulb,
+  .fa-hand-holding-usd,
+  .fa-image {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
   }
 
-  .icon-debates {
+  .fa-comment-alt {
     color: $debates;
   }
 
-  .icon-proposals,
-  .icon-image {
+  .fa-lightbulb,
+  .fa-image {
     color: $proposals;
   }
 
-  .icon-budget {
+  .fa-hand-holding-usd {
     color: $budget;
   }
 }
@@ -277,11 +277,6 @@
   li {
     font-size: $small-font-size;
     margin: $line-height / 2 0;
-
-    &::before {
-      content: "l ";
-      font-family: "icons" !important;
-    }
   }
 }
 
@@ -461,7 +456,7 @@
       word-wrap: break-word;
     }
 
-    .icon-video {
+    .fa-file-video {
       color: #cc181e;
       display: inline-block;
       font-size: rem-calc(24);
@@ -517,7 +512,7 @@
 
 .show-actions-menu {
 
-  [class^="icon-"] {
+  [class^="fa-"] {
     display: inline-block;
     vertical-align: middle;
   }
@@ -665,24 +660,24 @@
     }
   }
 
-  .icon-debates,
-  .icon-proposals,
-  .icon-budget {
+  .fa-comment-alt,
+  .fa-lightbulb,
+  .fa-hand-holding-usd {
     font-size: rem-calc(18);
     line-height: $line-height;
     margin-left: rem-calc(6);
     top: 0;
   }
 
-  .icon-debates {
+  .fa-comment-alt {
     color: $debates;
   }
 
-  .icon-proposals {
+  .fa-lightbulb {
     color: $proposals-dark;
   }
 
-  .icon-budget {
+  .fa-hand-holding-usd {
     color: $budget;
     font-size: $small-font-size;
   }
@@ -696,7 +691,7 @@
     font-size: $small-font-size;
     margin: rem-calc(6) 0 0;
 
-    .icon-comments {
+    .fa-comments {
       font-size: rem-calc(16);
       vertical-align: top;
     }
@@ -827,7 +822,7 @@
       font-weight: bold;
     }
 
-    .remove .icon-check-circle {
+    .remove .fa-check-circle {
       color: $budget;
       display: block;
       font-size: rem-calc(70);
@@ -885,7 +880,7 @@
     text-transform: uppercase;
   }
 
-  .icon-budget {
+  .fa-hand-holding-usd {
     color: $budget;
     font-size: $small-font-size;
     line-height: $line-height;
@@ -1140,7 +1135,7 @@
     p,
     a,
     .back,
-    .icon-angle-left,
+    .fa-caret-left,
     .description {
       color: #fff;
     }
@@ -1188,7 +1183,7 @@
   h2,
   h3,
   .back,
-  .icon-angle-left,
+  .fa-caret-left,
   p,
   a {
     color: #fff;
@@ -1298,16 +1293,6 @@
     text-align: right;
     top: 16px;
     width: 100%;
-
-    &::before {
-      color: #a5a1ff;
-      content: "\57";
-      font-family: "icons";
-      font-size: $small-font-size;
-      position: absolute;
-      right: -6px;
-      top: -17px;
-    }
   }
 
   .total-amount {
@@ -1443,20 +1428,6 @@
   border-radius: rem-calc(3);
   color: $budget;
   font-weight: bold;
-
-  &::after {
-    content: "\56";
-    font-family: "icons";
-    font-size: $small-font-size;
-    font-weight: normal;
-    line-height: $line-height;
-    padding-left: rem-calc(3);
-    vertical-align: baseline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
 
 .progress-bar-nav {
@@ -1651,7 +1622,7 @@
 
 .successful .panel {
 
-  .icon-successful {
+  .fa-check-double {
     border-right: 60px solid #ffd200;
     border-top: 0;
     border-bottom: 60px solid transparent;
@@ -1660,15 +1631,6 @@
     right: 0;
     top: 0;
     width: 0;
-
-    &::after {
-      color: #1b254c;
-      content: "\59";
-      font-family: "icons" !important;
-      left: 34px;
-      position: absolute;
-      top: 5px;
-    }
   }
 }
 
@@ -1831,7 +1793,7 @@
   padding: $line-height / 2;
   position: relative;
 
-  .icon-poll-answer {
+  .fa-vote-yes {
     border-top: 0;
     border-bottom: 60px solid transparent;
     height: 0;
@@ -1839,17 +1801,6 @@
     right: 0;
     top: 0;
     width: 0;
-
-    &.can-answer::after,
-    &.cant-answer::after,
-    &.not-logged-in::after,
-    &.already-answer::after,
-    &.unverified::after {
-      font-family: "icons" !important;
-      left: 34px;
-      position: absolute;
-      top: 5px;
-    }
 
     &.can-answer {
       border-right: 60px solid $info-bg;
@@ -1954,19 +1905,6 @@
       border: 2px solid #92ba48;
       color: $text;
       position: relative;
-
-      &::after {
-        background: #92ba48;
-        border-radius: rem-calc(20);
-        content: "\6c";
-        color: #fff;
-        font-family: "icons" !important;
-        font-size: rem-calc(12);
-        padding: $line-height / 4;
-        position: absolute;
-        right: -6px;
-        top: -6px;
-      }
     }
   }
 }

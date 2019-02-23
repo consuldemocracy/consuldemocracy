@@ -205,7 +205,7 @@ a {
   background: $highlight;
 }
 
-.icon-check {
+.fa-check {
   color: $check;
 }
 
@@ -340,14 +340,8 @@ a {
     padding-right: 2em;
   }
 }
-.back,
-.icon-angle-left {
-  clear: both;
-  color: $text-medium;
-  display: inline-block;
-}
 
-.back:not([class^="icon-"]) {
+.back:not([class^="fa-"]) {
   text-decoration: underline;
 }
 
@@ -1189,7 +1183,7 @@ form {
       margin: $line-height / 2 0;
     }
 
-    .icon-box {
+    .fa-person-booth {
       color: #d4a26d;
       font-size: rem-calc(120);
       line-height: rem-calc(120);
@@ -1257,7 +1251,7 @@ form {
     text-decoration: none;
   }
 
-  [class^="icon-"] {
+  [class^="fa-"] {
     font-size: rem-calc(19);
     vertical-align: middle;
   }
@@ -1329,20 +1323,6 @@ form {
     &::before {
       content: "\43";
     }
-  }
-
-  &::before {
-    background: #fff;
-    color: $brand;
-    content: "\4d";
-    font-family: "icons" !important;
-    font-size: $small-font-size;
-    height: rem-calc(20);
-    left: -24px;
-    line-height: rem-calc(20);
-    position: absolute;
-    text-align: center;
-    width: rem-calc(20);
   }
 
   p {
@@ -1824,19 +1804,6 @@ table {
       display: inline-block;
       font-weight: normal;
     }
-
-    &::after {
-      content: none;
-      color: $text-medium;
-      font-family: "icons" !important;
-      position: absolute;
-      right: 0;
-      top: 24px;
-
-      @include breakpoint(medium) {
-        content: "c";
-      }
-    }
   }
 
   a {
@@ -1964,7 +1931,7 @@ table {
     color: $check;
     line-height: $line-height * 2;
 
-    .icon-check {
+    .fa-check {
       font-size: rem-calc(24);
       line-height: rem-calc(45);
       vertical-align: middle;
@@ -1979,7 +1946,7 @@ table {
   h1 {
     color: $check;
 
-    .icon-check {
+    .fa-check {
       line-height: rem-calc(30);
       vertical-align: middle;
     }
@@ -1992,7 +1959,7 @@ table {
     margin: rem-calc(24) 0;
     position: relative;
 
-    .icon-letter {
+    .fa-envelope {
       background: #fff;
       color: $color-info;
       font-size: rem-calc(24);
@@ -2031,7 +1998,7 @@ table {
       margin-bottom: 0;
     }
 
-    [class^="icon-"] {
+    [class^="fa-"] {
       font-size: $base-font-size;
       text-decoration: none;
       vertical-align: sub;
@@ -2057,11 +2024,11 @@ table {
     position: relative;
 
     .relative,
-    [class^="icon-arrow"] {
+    [class^="fa-arrow"] {
       padding-left: $line-height / 2;
     }
 
-    [class^="icon-arrow"] {
+    [class^="fa-arrow"] {
       font-size: $base-font-size;
       left: -20px;
       position: absolute;
@@ -2564,7 +2531,7 @@ table {
     padding: $line-height / 2;
     position: relative;
 
-    .icon-document {
+    .fa-file-alt {
       color: #007bb7;
       display: inline-block;
       font-size: rem-calc(24);
@@ -2594,7 +2561,7 @@ table {
     word-wrap: break-word;
   }
 
-  .icon-document {
+  .fa-file-alt {
     color: #007bb7;
     display: inline-block;
     font-size: rem-calc(24);
@@ -2691,31 +2658,6 @@ table {
     padding-left: rem-calc(20);
     position: relative;
     text-decoration: none;
-
-    &.score-positive::before,
-    &.score-negative::before {
-      font-family: "icons";
-      left: 0;
-      position: absolute;
-    }
-
-    &.score-positive {
-      color: $color-success;
-
-      &::before {
-        color: $color-success;
-        content: "\6c";
-      }
-    }
-
-    &.score-negative {
-      color: $color-alert;
-
-      &::before {
-        color: $color-alert;
-        content: "\76";
-      }
-    }
   }
 }
 

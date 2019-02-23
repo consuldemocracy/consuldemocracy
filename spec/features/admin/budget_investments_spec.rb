@@ -641,7 +641,7 @@ feature 'Admin budget investments' do
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
         within('th', text: 'ID') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
 
@@ -651,7 +651,7 @@ feature 'Admin budget investments' do
         expect('A Second Investment').to appear_before('B First Investment')
         expect('B First Investment').to appear_before('C Third Investment')
         within('th', text: 'Title') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
 
@@ -661,7 +661,7 @@ feature 'Admin budget investments' do
         expect('C Third Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('B First Investment')
         within('th', text: 'Supports') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
     end
@@ -673,7 +673,7 @@ feature 'Admin budget investments' do
         expect('C Third Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('B First Investment')
         within('th', text: 'ID') do
-          expect(page).to have_css(".icon-arrow-down")
+          expect(page).to have_css(".fa-arrow-down")
         end
       end
 
@@ -683,7 +683,7 @@ feature 'Admin budget investments' do
         expect('C Third Investment').to appear_before('B First Investment')
         expect('B First Investment').to appear_before('A Second Investment')
         within('th', text: 'Title') do
-          expect(page).to have_css(".icon-arrow-down")
+          expect(page).to have_css(".fa-arrow-down")
         end
       end
 
@@ -693,7 +693,7 @@ feature 'Admin budget investments' do
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
         within('th', text: 'Supports') do
-          expect(page).to have_css(".icon-arrow-down")
+          expect(page).to have_css(".fa-arrow-down")
         end
       end
     end
@@ -705,7 +705,7 @@ feature 'Admin budget investments' do
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
         within('th', text: 'ID') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
 
@@ -715,7 +715,7 @@ feature 'Admin budget investments' do
         expect('A Second Investment').to appear_before('B First Investment')
         expect('B First Investment').to appear_before('C Third Investment')
         within('th', text: 'Title') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
 
@@ -725,7 +725,7 @@ feature 'Admin budget investments' do
         expect('C Third Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('B First Investment')
         within('th', text: 'Supports') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
     end
@@ -737,7 +737,7 @@ feature 'Admin budget investments' do
         expect('B First Investment').to appear_before('A Second Investment')
         expect('A Second Investment').to appear_before('C Third Investment')
         within('th', text: 'ID') do
-          expect(page).to have_css(".icon-arrow-top")
+          expect(page).to have_css(".fa-arrow-up")
         end
       end
     end
