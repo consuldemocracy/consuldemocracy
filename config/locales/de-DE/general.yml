@@ -458,6 +458,7 @@ de:
       geozone_restricted: "Bezirke"
       geozone_info: "Können BürgerInnen an folgender Volkszählung teilnehmen: "
       already_answer: "Sie haben bereits an dieser Abstimmung teilgenommen"
+      cant_answer: "Diese Umfrage ist nicht in ihrem Gebiet verfügbar"
       section_header:
         icon_alt: Wahlsymbol
         title: Abstimmung
