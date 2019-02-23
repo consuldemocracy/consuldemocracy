@@ -365,7 +365,7 @@ tr:
       index:
         back: Geri dön %{org}
         title: Yönetim
-        description: Hoş geldiniz %{org} yönetici paneline.
+        description: '%{org} yönetici paneline hoş geldiniz.'
     debates:
       index:
         filter: Filtre
@@ -428,7 +428,7 @@ tr:
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
           title_placeholder: İşlem başlığı
           summary_placeholder: Tanımlamanın kısa özeti
-          description_placeholder: Bir işlem tanımlaması ekle
+          description_placeholder: İşlemin bir tanımlamasını ekleyin
           additional_info_placeholder: Yararlı olduğunu düşündüğünüz bir ek bilgi ekleyin
           homepage: Tanımlama
           homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
@@ -889,8 +889,34 @@ tr:
       index:
         banners: Banner stilleri
         banner_imgs: Banner resimleri
+        no_banners_images: Hiç banner görüntüsü yok
+        no_banners_styles: Hiç banner stili yok
+        title: Yapılandırma ayarları
+        update_setting: Güncelleme
+        feature_flags: Özellikler
+        features:
+          enabled: "Özellik etkinleştirildi"
+          disabled: "Özellik devre dışı"
+          enable: "Etkinleştirildi"
+          disable: "Devre dışı bırakma"
+        map:
+          title: Harita yapılandırma
+          help: Burada haritanın kullanıcılara gösterilme şeklini kişiselleştirebilirsiniz. Harita işaretçisini sürükleyin veya haritanın herhangi bir yerine tıklayın, istediğiniz yakınlaştırmayı ayarlayın ve "Güncelle" düğmesine tıklayın.
+          flash:
+            update: Harita yapılandırma başarıyla güncellendi.
+          form:
+            submit: Güncelleme
+      setting: Özellik
       setting_actions: Aksiyon
+      setting_name: Ayar
+      setting_status: Durum
+      setting_value: Değer
+      no_description: "Tanımlama yok"
     shared:
+      true_value: "Evet"
+      false_value: "Hayır"
+      booths_search:
+        button: Ara
       actions: Aksiyon
       image: Fotoğraf
     spending_proposals:
