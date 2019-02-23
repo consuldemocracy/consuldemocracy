@@ -975,6 +975,26 @@ tr:
       author: Yazar
       created_at: Oluşturma tarihi
       name: İsim
+      no_signature_sheets: "İmza_sayfaları yok"
+      index:
+        title: İmza sayfaları
+        new: Yeni imza sayfaları
+      new:
+        title: Yeni imza sayfaları
+        document_numbers_note: "Virgül ile ayrılmış sayıları yazın (,)"
+        submit: İmza sayfası oluştur
+      show:
+        created_at: Oluşturuldu
+        author: Yazar
+        documents: Belgeler
+        document_count: "Belgelerin sayısı:"
+        verified:
+          one: "%{count} geçerli imza var"
+          other: "%{count} geçerli imzalar var"
+        unverified:
+          one: "%{count} geçersiz imza var"
+          other: "%{count} geçersiz imzalar var"
+        unverified_error: (Census tarafından doğrulanmadı)
     stats:
       show:
         summary:
