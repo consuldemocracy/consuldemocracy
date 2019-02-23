@@ -691,17 +691,37 @@ tr:
         body: Metin
         link: Bağlantı
         segment_recipient: Alıcılar
+        preview_guide: "Kullanıcılar bildirimi bu şekilde görecekler:"
     valuators:
       index:
         email: E-posta
       show:
         email: "E-posta"
+    valuator_groups:
+      form:
+        edit: "Bilirkişiler grubunu kaydet"
     poll_officers:
+      index:
+        title: Anket memurları
       officer:
+        add: Ekle
+        delete: Pozisyonu sil
+        name: İsim
         email: E-posta
+        entry_name: memur
+      search:
+        email_placeholder: E-posta ile kullanıcı ara
+        search: Ara
+        user_not_found: Kullanıcı bulunamadı
     poll_officer_assignments:
       index:
+        officers_title: "Memurların listesi"
+        no_officers: "Bu ankete atanmış hiç memur yok."
+        table_name: "İsim"
         table_email: "E-posta"
+      by_officer:
+        date: "Tarih"
+        booth: "Kabin"
     poll_shifts:
       new:
         table_email: "E-posta"
