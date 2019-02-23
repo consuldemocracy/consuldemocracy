@@ -244,6 +244,8 @@ de:
         allegations_start_date: Anfangsdatum Überprüfung
         allegations_end_date: Enddatum Überprüfung
         result_publication_date: Veröffentlichungsdatum Endergebnis
+        background_color: Hintergrundfarbe
+        font_color: Schriftfarbe
       legislation/process/translation:
         title: Titel des Verfahrens
         summary: Zusammenfassung
