@@ -486,6 +486,15 @@ tr:
       draft_versions:
         create:
           notice: 'Taslak başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Taslak oluşturulamadı
+        update:
+          notice: 'Taslak başarıyla güncellendi.<a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Taslak güncellenemedi
+        destroy:
+          notice: Taslak başarıyla silindi
+        edit:
+          back: Geri
+          submit_button: Değişiklikleri kaydet
         table:
           comments: Yorumlar
       questions:
