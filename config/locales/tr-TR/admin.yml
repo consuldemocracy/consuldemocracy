@@ -997,14 +997,14 @@ tr:
         external_code: Harici kod
         coordinates: Koordinatlar
       edit:
-        editing: Geozone düzenleniyor
+        editing: Coğrafi bölge (geozone) düzenleniyor
         back: Geri git
       new:
         back: Geri git
         creating: Bölge oluştur
       delete:
-        success: Geozone başarıyla silindi
-        error: Bu geozone, kendisine eklenmiş öğeler olduğundan silinemez
+        success: Coğrafi bölge (Geozone) başarıyla silindi
+        error: Bu coğrafi bölge (geozone) kendisine eklenmiş öğeler olduğundan silinemez
     signature_sheets:
       author: Yazar
       created_at: Oluşturma tarihi
