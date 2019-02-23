@@ -779,15 +779,73 @@ tr:
         table_question: "Soru"
         table_poll: "Anket"
         poll_not_assigned: "Anket atanmamış"
+      edit:
+        title: "Soru Düzenle"
+      new:
+        title: "Soru Oluştur"
+        poll_label: "Anket"
+      answers:
+        images:
+          add_image: "Görüntü ekle"
+          save_image: "Görüntüyü kaydet"
       show:
+        proposal: Orjinal teklif
+        author: Yazar
+        question: Soru
+        edit_question: Soru düzenle
+        valid_answers: Geçerli cevaplar
+        add_answer: Cevap ekle
+        video_url: Harici video
         answers:
+          title: Cevap
+          description: Tanımlama
+          videos: Videolar
+          video_list: Video listesi
+          images: Resimler
+          images_list: Resim listesi
+          documents: Belgeler
+          documents_list: Belgeler listesi
+          document_title: Başlık
           document_actions: Aksiyon
+    answers:
+      new:
+        title: Yeni cevap
+      show:
+        title: Başlık
+        description: Tanımlama
+        images: Resimler
+        images_list: Resim listesi
+        edit: Cevap düzenle
+      edit:
+        title: Cevap düzenle
+      videos:
+        index:
+          title: Videolar
+          add_video: Video ekle
+          video_title: Başlık
+          video_url: Harici video
+        new:
+          title: Yeni video
+        edit:
+          title: Video düzenle
+    recounts:
+      index:
+        title: "Yeniden Sayma"
+        no_recounts: "Yeniden sayılan bir şey yok"
+        table_booth_name: "Kabin"
+        table_total_recount: "Toplam yeniden sayım (memur tarafından)"
+        table_system_count: "Oylar (otomatik)"
     results:
+      index:
+        title: "Sonuçlar"
+        no_results: "Hiç sonuç yok"
       result:
+        table_whites: "Tamamen boş oylar"
         table_votes: Oylar
     organizations:
       index:
         email: E-posta
+        status: Durum
     settings:
       setting_actions: Aksiyon
     shared:
