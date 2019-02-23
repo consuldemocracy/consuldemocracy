@@ -438,6 +438,7 @@ de:
           delete: Löschen
           title: Gesetzgebungsverfahren
           filters:
+            active: Aktiv
             all: Alle
         new:
           back: Zurück
@@ -453,6 +454,8 @@ de:
           title: Beteiligungsverfahren
           comments: Kommentare
           status: Status
+          start_date: Anfangsdatum
+          end_date: Enddatum
           status_open: Offen
           status_closed: Abgeschlossen
           status_planned: Geplant
@@ -901,6 +904,12 @@ de:
         no_booths: "Dieser Abstimmung sind keine Wahlvorsteher*innen zugeordnet."
         table_name: "Name"
         table_location: "Lage"
+    active_polls:
+      edit:
+        title: "Umfragen Beschreibung"
+      form:
+        description:
+          text: "Beschreibung"
     polls:
       index:
         title: "Liste der Umfragen"
