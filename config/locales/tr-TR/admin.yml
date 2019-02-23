@@ -846,7 +846,49 @@ tr:
       index:
         email: E-posta
         status: Durum
+        no_organizations: Hiç organizasyon yok.
+        reject: Reddet
+        rejected: Reddedildi
+        search: Ara
+        search_placeholder: İsim, e-posta veya telefon numarası
+        title: Organizasyonlar
+        verified: Doğrulandı
+        verify: Doğrula
+        pending: Beklemede
+      search:
+        title: Organizasyon Arama
+        no_results: Hiç organizasyon yok.
+    proposals:
+      index:
+        title: Öneriler
+        id: KİMLİK
+        author: Yazar
+        milestones: Kilometre taşı
+        no_proposals: Hiç öneri yok.
+    hidden_proposals:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli öneriler
+        no_hidden_proposals: Hiç gizli öneriler yok.
+    proposal_notifications:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli bildirimler
+        no_hidden_proposals: Hiç gizli bildirimler yok.
     settings:
+      flash:
+        updated: Değer güncellendi
+      index:
+        banners: Banner stilleri
+        banner_imgs: Banner resimleri
       setting_actions: Aksiyon
     shared:
       actions: Aksiyon
