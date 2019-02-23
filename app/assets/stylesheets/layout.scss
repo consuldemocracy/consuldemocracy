@@ -463,8 +463,10 @@ header {
 
     &::after {
       color: #808080;
-      content: "\61";
-      font-family: "icons" !important;
+      font-style: normal;
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free" !important;
+      content: "\f0d7";
       font-size: $small-font-size;
       pointer-events: none;
       position: absolute;
@@ -1260,7 +1262,7 @@ form {
     vertical-align: middle;
   }
 
-  .icon-circle {
+  .fa-circle {
     color: #ecf00b;
     font-size: rem-calc(10);
     position: absolute;

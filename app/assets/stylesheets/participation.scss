@@ -907,7 +907,6 @@
 }
 
 .view-mode {
-
   ul {
     margin-bottom: 0;
 
@@ -930,7 +929,8 @@
 
     &::before {
       color: $text;
-      font-family: "icons";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free" !important;
     }
   }
 
@@ -939,7 +939,7 @@
     .button {
 
       &::before {
-        content: "\51";
+        content: "\f00a";
       }
     }
   }
@@ -949,7 +949,7 @@
     .button {
 
       &::before {
-        content: "\22";
+      content: "\f00b";
       }
     }
   }
@@ -958,8 +958,9 @@
     position: relative;
 
     &::before {
-      content: "\22";
-      font-family: "icons";
+      content: "\f00b";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free" !important;
       left: 0;
       position: absolute;
       top: 6px;
@@ -970,8 +971,9 @@
     position: relative;
 
     &::before {
-      content: "\51";
-      font-family: "icons";
+      content: "\f00a";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free" !important;
       left: 0;
       position: absolute;
       top: 6px;
@@ -982,8 +984,9 @@
     color: $brand;
 
     &::after {
-      content: "\6c";
-      font-family: "icons";
+      content: "\f00c";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free" !important;
       font-size: $tiny-font-size;
     }
   }
