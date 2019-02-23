@@ -748,7 +748,37 @@ tr:
       flash:
         create: "Vardiya eklendi"
         destroy: "Vardiya kaldırıldı"
+        unable_to_destroy: "Sonuçlar veya yeniden sayımlarla ilişkili vardiyalar silinemez"
+        date_missing: "Bir tarih seçilmelidir"
+      vote_collection: Oyları Toplamak
+      recount_scrutiny: Yeniden Sayım & Dikkatli İnceleme
+    booth_assignments:
+      manage_assignments: Atamaları yönetmek
+      manage:
+        assignments_list: "Anket için atamalar '%{poll}'"
+        status:
+          assign_status: Atama
+          assigned: Atanmış
+          unassigned: Atanmamış
+        actions:
+          assign: Kabin atama
+          unassign: Kabin atamayı kaldırma
+    poll_booth_assignments:
+      alert:
+        shifts: "Bu kabinle ilişkili vardiyalar var. Kabin atamayı kaldırırsanız, aynı zamanda vardiyalar silinecektir. Devam edilsin mi?"
+      flash:
+        destroy: "Kabin artık atanmış değil"
+        create: "Atanmış kabin"
     questions:
+      index:
+        select_poll: Anket Seç
+        questions_tab: "Sorular"
+        successful_proposals_tab: "Başarılı öneriler"
+        create_question: "Soru oluştur"
+        table_proposal: "Öneri"
+        table_question: "Soru"
+        table_poll: "Anket"
+        poll_not_assigned: "Anket atanmamış"
       show:
         answers:
           document_actions: Aksiyon
