@@ -1059,9 +1059,54 @@ tr:
         name: İsim
         email: E-posta
         document_number: Belge numarası
+        roles: Roller
+        verification_level: Doğrulama seviyesi
+      index:
+        title: Kullanıcı
+        no_users: Kullanıcı yok.
+      search:
+        placeholder: E-posta, isim veya belge numarasına göre kullanıcı ara
+        search: Ara
+    verifications:
+      index:
+        phone_not_given: Telefon verilmemiş
+        sms_code_not_confirmed: Sms kodunu onaylamadı
+        title: Tamamlanmamış doğrulamalar
     site_customization:
+      content_blocks:
+        information: İçerik blokları hakkında bilgi
+        about: "Web sitenizin farklı yerlerine eklenebilecek HTML içerik blokları oluşturabilirsiniz."
+        html_format: "Bir içerik bloğu bir bağlantı grubudur ve aşağıdaki biçimde olmalıdır:"
+        no_blocks: "İçerik blokları yok."
+        create:
+          notice: İçerik bloğu başarıyla oluşturuldu
+          error: İçerik bloğu oluşturulamadı
+        update:
+          notice: İçerik bloğu başarıyla güncellendi
+          error: İçerik bloğu güncellenemedi
+        destroy:
+          notice: İçerik bloğu başarıyla silindi
+        edit:
+          title: İçerik bloğu düzenleniyor
+        errors:
+          form:
+            error: Hata
+        index:
+          create: Yeni içerik bloğu oluştur
+          delete: Blok silme
+          title: İçerik blokları
+        new:
+          title: Yeni içerik bloğu oluştur
+        content_block:
+          body: Gövde
+          name: İsim
+          names:
+            top_links: En İyi Bağlantılar
+            footer: Altbilgi
       images:
         index:
+          update: Güncelleme
+          delete: Sil
           image: Fotoğraf
       pages:
         page:
@@ -1092,3 +1137,31 @@ tr:
     homepage:
       title: Ana sayfa
       description: Aktif modüller ana sayfada, buradakiyle aynı sırada görünür.
+      header_title: Üstbilgi
+      no_header: Üstbilgi yok.
+      create_header: Üstbilgi oluştur
+      cards_title: Kartlar
+      create_card: Kart oluştur
+      no_cards: Kart yok.
+      cards:
+        title: Başlık
+        description: Tanımlama
+        link_text: Bağlantı metni
+        link_url: Bağlantı Adresi
+      feeds:
+        proposals: Öneriler
+        debates: Tartışmalar
+        processes: İşlemler
+      new:
+        header_title: Yeni üstbilgi
+        submit_header: Üstbilgi oluştur
+        card_title: Yeni kart
+        submit_card: Kart oluştur
+      edit:
+        header_title: Üstbilgi düzenle
+        submit_header: Üstbilgiyi kaydet
+        card_title: Kart düzenle
+        submit_card: Kart kaydet
+    translations:
+      remove_language: Dil kaldır
+      add_language: Dil ekle
