@@ -1032,10 +1032,63 @@ tr:
         title: Öneri bildirimleri
         total: Toplam
         proposals_with_notifications: Bildirimler ile öneriler
+        not_available: "Öneri mevcut değil"
+      polls:
+        title: Anket İstatistikleri
+        all: Anketler
+        web_participants: Web katılımcıları
+        total_participants: Toplam Katılımcılar
+        poll_questions: "Anketten sorular: %{poll}"
+        table:
+          poll_name: Anket
+          question_name: Soru
+          origin_web: Web katılımcıları
+          origin_total: Toplam katılımcılar
+    tags:
+      create: Konu oluştur
+      destroy: Konuyu yok etmek
+      index:
+        add_tag: Yeni bir öneri konusu ekle
+        title: Öneri konuları
+        topic: Konu
+        help: "Bir kullanıcı bir öneri oluşturduğunda, aşağıdaki konular varsayılan etiketler olarak önerilir."
+      name:
+        placeholder: Konunun adını yazın
     users:
       columns:
+        name: İsim
         email: E-posta
+        document_number: Belge numarası
     site_customization:
       images:
         index:
           image: Fotoğraf
+      pages:
+        page:
+          created_at: Oluşturuldu
+          status: Durum
+          updated_at: Güncellendi
+          status_draft: Taslak
+          status_published: Yayınlandı
+          title: Başlık
+          slug: Parça
+          cards_title: Kartlar
+          see_cards: Kartları Gör
+        cards:
+          cards_title: kartlar
+          create_card: Kart oluştur
+          no_cards: Kart yok.
+          title: Başlık
+          description: Tanımlama
+          link_text: Bağlantı metni
+          link_url: Bağlantı Adresi
+          columns_help: "Sütün sayılarında kartın genişliği. Mobil ekranlarda her zaman %100 genişliğindedir."
+          create:
+            notice: "Kart başarıyla oluşturuldu!"
+          update:
+            notice: "Kart başarıyla güncellendi"
+          destroy:
+            notice: "Kart başarıyla kaldırıldı"
+    homepage:
+      title: Ana sayfa
+      description: Aktif modüller ana sayfada, buradakiyle aynı sırada görünür.
