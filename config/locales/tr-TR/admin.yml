@@ -531,7 +531,34 @@ tr:
           final_version: Son sürüm
           status: Durum
       questions:
+        create:
+          notice: 'Soru başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Soru oluşturulamadı
+        update:
+          notice: 'Soru başarıyla güncellendi. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Soru güncellenemedi
+        destroy:
+          notice: Soru başarıyla silindi
+        edit:
+          back: Geri
+          title: "Düzenle \"%{question_title}\""
+          submit_button: Değişiklikleri kaydet
+        errors:
+          form:
+            error: Hata
+        form:
+          add_option: Seçenek ekle
+          title: Soru
+          title_placeholder: Soru ekle
+          value_placeholder: Bir kapalı cevap ekle
+          question_options: "Olası yanıtlar (isteğe bağlı, varsayılan açık cevaplar tarafından)"
+        index:
+          back: Geri
+          title: Bu işlem ile ilgili sorular
+          create: Soru oluştur
+          delete: Sil
         new:
+          back: Geri
           title: Yeni soru oluştur
           submit_button: Soru oluştur
         table:
@@ -601,8 +628,18 @@ tr:
       administrators: Yöneticiler
     newsletters:
       index:
+        new_newsletter: Yeni bültenler
+        subject: Konu
+        segment_recipient: Alıcılar
+        sent: Gönder
         actions: Aksiyon
+        draft: Taslak
         edit: Düzenleme
+        delete: Sil
+        preview: Önizleme
+        empty_newsletters: Hiç gösterilecek bülten yok
+      new:
+        title: Yeni bülten
     admin_notifications:
       index:
         actions: Aksiyon
