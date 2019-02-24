@@ -21,7 +21,7 @@
 
   <div class="subfooter row">
     <div class="small-12 medium-6 column">
-      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+      &#169;&nbsp;<%= t("layouts.footer.copyright", year: Time.current.year) %> | <i><%= Rails.application.secrets.version || "0.18.2" %></i>&nbsp;<% if !Rails.env.production? then %>- <i><%= Rails.env %></i><% end %>&nbsp;
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|</li>
