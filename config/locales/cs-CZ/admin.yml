@@ -111,7 +111,7 @@ cs:
       headings_name: "Kapitoly"
       headings_edit: "Upravit kapitoly"
       headings_manage: "Spravovat kapitoly"
-      max_votable_headings: "Maximální počet skupin, ve kterých uživatel může hlasovat"
+      max_votable_headings: "Maximální počet kapitol, ve kterých uživatel může hlasovat"
       no_groups: "Neexistují žádné skupiny."
       create:
         notice: "Skupina byla úspěšně vytvořena!"
