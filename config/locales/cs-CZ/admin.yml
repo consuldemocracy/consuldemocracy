@@ -1421,7 +1421,7 @@ cs:
           create: Vytvořit novou stránku
           delete: Smazat stránku
           title: Vlastní stránky
-          see_page: Viz strana
+          see_page: Zobrazit stránku
         new:
           title: Vytvořit novou vlastní stránku
         page:
@@ -1433,7 +1433,7 @@ cs:
           title: Předmět
           slug: Slug
           cards_title: Karty
-          see_cards: Viz karty
+          see_cards: Zobrazit karty
         cards:
           cards_title: karty
           create_card: Vytvořit kartu
@@ -1453,7 +1453,7 @@ cs:
       title: Úvodní strana
       description: Aktivní moduly se objeví na úvodní stránce ve stejném pořadí jako zde.
       header_title: Záhlaví
-      no_header: Neexistují žádné záhlaví.
+      no_header: Nemáte žádná záhlaví.
       create_header: Vytvořit záhlaví
       cards_title: Karty
       create_card: Vytvořit kartu
