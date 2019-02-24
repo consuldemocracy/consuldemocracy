@@ -3,8 +3,6 @@
             <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
   <div class="panel <%= 'with-image' if proposal.image.present? %>">
-    <div class="fas fa-check-double fa-fw"></div>
-
     <% if proposal.image.present? %>
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
