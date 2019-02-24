@@ -16,16 +16,36 @@ cs:
         few: "Debaty"
         many: "Debaty"
         other: "Debaty"
+      tag:
+        one: "Štítek"
+        few: "Štítky"
+        many: "Štítky"
+        other: "Štítky"
       user:
         one: "User"
         few: "Uživatelé"
         many: "Uživatelé"
         other: "Uživatelé"
+      vote:
+        one: "Hlas"
+        few: "Hlasů"
+        many: "Hlasů"
+        other: "Hlasů"
       organization:
         one: "Organizace"
         few: "Organizace"
         many: "Organizace"
         other: "Organizace"
+      proposal:
+        one: "Návrh občana"
+        few: "Návrhy občanů"
+        many: "Návrhy občanů"
+        other: "Návrhů občanů"
+      spending_proposal:
+        one: "Investiční projekt"
+        few: "Investiční projekty"
+        many: "Investiční projekty"
+        other: "Investiční projekty"
       legislation/process:
         one: "Proces"
         few: "Procesy"
