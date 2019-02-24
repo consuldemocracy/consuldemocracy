@@ -579,7 +579,7 @@ cs:
       proposals: Návrhy
       proposals_topics: Témata návrhů
       budgets: Participativní rozpočty
-      geozones: Správa geozón
+      geozones: Správa geografických oblastí
       hidden_comments: Skryté komentáře
       hidden_debates: Skrýt debaty
       hidden_proposals: Skryté návrhy
@@ -1360,7 +1360,7 @@ cs:
       content_blocks:
         information: Informace o blocích obsahu
         about: "You can create HTML content blocks to be inserted in the header or the footer of your CONSUL."
-        html_format: "Blok s obsahem je skupina odkazů, a to musí mít následující formát:"
+        html_format: "Blok s obsahem je skupina odkazů a musí mít následující formát:"
         no_blocks: "Nemáte žádné bloky obsahu."
         create:
           notice: Blok s obsahem úspěšně vytvořen
