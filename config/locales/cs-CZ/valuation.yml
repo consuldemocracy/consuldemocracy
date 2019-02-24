@@ -20,7 +20,7 @@ cs:
         no_budgets: "Neexistují žádné rozpočty"
     budget_investments:
       index:
-        headings_filter_all: Všechny nadpisy
+        headings_filter_all: Všechny kapitoly
         filters:
           valuation_open: Otevřené
           valuating: Podhodnoceno
