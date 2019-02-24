@@ -67,7 +67,7 @@ cs:
       support_spending_proposals: Podpořte návrhy výdajů
       create_budget_investment: Přidat investiční projekt
       print_budget_investments: Tisk investic rozpočtu
-      support_budget_investments: Podpořte investice rozpočtu
+      support_budget_investments: Podpora investic rozpočtu
       users: Správa uživatelů
       user_invites: Odeslat pozvánky
       select_user: Vybrat uživatele
@@ -93,7 +93,7 @@ cs:
     budgets:
       create_new_investment: Vytvořte investici rozpočtu
       print_investments: Tisk investic rozpočtu
-      support_investments: Podpořte investice rozpočtu
+      support_investments: Podpora investic rozpočtu
       table_name: Název
       table_phase: Fáze
       table_actions: Akce
