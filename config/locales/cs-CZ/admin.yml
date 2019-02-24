@@ -346,8 +346,8 @@ cs:
           all: Vše
           with_confirmed_hide: Potvrzeno
           without_confirmed_hide: Nevyřízený
-        hidden_debate: Skrýt debatu
-        hidden_proposal: Skrýt návrh
+        hidden_debate: Skryté debaty
+        hidden_proposal: Skryté návrhy
         title: Skrýt komentáře
         no_hidden_comments: Neexistují žádné skryté komentáře.
     dashboard:
@@ -580,9 +580,9 @@ cs:
       proposals_topics: Témata návrhů
       budgets: Participativní rozpočty
       geozones: Správa geozón
-      hidden_comments: Skrýt komentáře
+      hidden_comments: Skryté komentáře
       hidden_debates: Skrýt debaty
-      hidden_proposals: Skrýt návrhy
+      hidden_proposals: Skryté návrhy
       hidden_budget_investments: Skrýt rozpočtové investice
       hidden_proposal_notifications: Skrýt upozornění k návrhům
       hidden_users: Skrýt uživatele
