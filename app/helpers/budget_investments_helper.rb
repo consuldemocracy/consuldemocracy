@@ -1,6 +1,6 @@
 module BudgetInvestmentsHelper
   def budget_investments_advanced_filters(params)
-    params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(', ')
+    params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(", ")
   end
 
   def link_to_investments_sorted_by(column)
@@ -10,7 +10,7 @@ module BudgetInvestmentsHelper
     translation = t("admin.budget_investments.index.list.#{column}")
 
     link_to(
-      "#{translation} <span class='#{icon}'></span>".html_safe,
+      "#{translation} <span class='icon-sortable #{icon}'></span>".html_safe,
       admin_budget_budget_investments_path(sort_by: column, direction: direction)
     )
   end
@@ -18,9 +18,9 @@ module BudgetInvestmentsHelper
   def set_sorting_icon(direction, sort_by)
     if sort_by.to_s == params[:sort_by]
       if direction == "desc"
-        "fas fa-arrow-up"
+        "desc"
       else
-        "fas fa-arrow-down"
+        "asc"
       end
     else
       ""
