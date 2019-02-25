@@ -757,6 +757,7 @@ tr:
         action: Bekleyen Ön İzleme
         preview_of: '%{name} ''in Ön İzlemesi'
         pending_to_be_sent: Bu gönderilmeyi bekleyen içeriktir
+        moderate_pending: Bildirim göndermeyi denetle
         send_pending: Gönderme beklemede
         send_pending_notification: Bekleyen bildirimler başarıyla gönderildi
       proposal_notification_digest:
@@ -1050,8 +1051,16 @@ tr:
         location: "Konum"
       booth:
         shifts: "Vardiyaları yönet"
+        edit: "Kabin düzenle"
     officials:
+      edit:
+        destroy: '''Yetkili'' durumunu kaldır'
+        title: 'Yetkililer: Kullanıcıyı düzenle'
+      flash:
+        official_destroyed: 'Ayrıntılar kaydedildi: kullanıcı artık bir yetkili değil'
+        official_updated: Yetkili detayları kaydedildi
       index:
+        title: Yetkililer
         name: İsim
         official_position: Resmi pozisyon
       level_1: Seviye 1
