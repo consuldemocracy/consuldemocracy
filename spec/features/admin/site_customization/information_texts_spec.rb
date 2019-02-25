@@ -98,10 +98,10 @@ feature "Admin custom information texts" do
                                            value_en: "Custom debate title",
                                            value_es: "Título personalizado de debate")
 
-      second_key = "debates.form.debate_text"
-      debate_text = create(:i18n_content, key: second_key,
-                                          value_en: "Custom debate text",
-                                          value_es: "Texto personalizado de debate")
+      second_key = "debates.new.start_new"
+      page_title = create(:i18n_content, key: second_key,
+                                          value_en: "Start a new debate",
+                                          value_es: "Empezar un debate")
 
       visit admin_site_customization_information_texts_path
 
@@ -112,15 +112,15 @@ feature "Admin custom information texts" do
       expect(page).not_to have_link "Español"
 
       click_link "English"
-      expect(page).to have_content "Custom debate text"
+      expect(page).to have_content "Start a new debate"
       expect(page).to have_content "Custom debate title"
 
       debate_title.reload
-      debate_text.reload
+      page_title.reload
 
-      expect(debate_text.value_es).to be(nil)
+      expect(page_title.value_es).to be(nil)
       expect(debate_title.value_es).to be(nil)
-      expect(debate_text.value_en).to eq("Custom debate text")
+      expect(page_title.value_en).to eq("Start a new debate")
       expect(debate_title.value_en).to eq("Custom debate title")
     end
   end
