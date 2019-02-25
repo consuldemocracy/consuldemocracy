@@ -86,6 +86,15 @@ tr:
           voted_html:
             one: "<strong>%{amount_spent} maliyetli bir teklifi oyladınız</strong>"
             other: "<strong>%{amount_spent} maliyetli %{count} teklifleri oyladınız</strong>"
+          voted_info: Bu aşamanın sonuna kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanıza gerek yok.
+          voted_info_link: oyunuzu değiştirin
+          different_heading_assigned_html: "Başka bir başlıkta aktif oylarınız bulunmaktadır: %{heading_link}"
+          change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'tan kaldırabilirsiniz ve baştan başlayabilirsiniz."
+          check_ballot_link: "oyumu kontrol et"
+          zero: Bu grupta herhangi bir yatırım projesine oy vermediniz.
+          verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
+          verify_account: "hesabınızı doğrulayın"
+          create: "Bir bütçe yatırımı oluşturun"
           unfeasible: Uygulanamaz projeler
       show:
         votes: Oylar
