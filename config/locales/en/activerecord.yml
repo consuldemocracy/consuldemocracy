@@ -169,6 +169,12 @@ en:
         question: "Question"
         description: "Description"
         terms_of_service: "Terms of service"
+      proposal/translation:
+        title: "Proposal title"
+        description: "Proposal text"
+        question: "Proposal question"
+        summary: "Proposal summary"
+        retired_explanation: "Explanation"
       user:
         login: "Email or username"
         email: "Email"
