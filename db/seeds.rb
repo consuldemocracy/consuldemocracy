@@ -98,16 +98,6 @@ Setting['feature.spending_proposal_features.final_voting_allowed'] = true
 Setting['feature.spending_proposal_features.open_results_page'] = nil
 Setting['feature.spending_proposal_features.valuation_allowed'] = nil
 
-# Banner styles
-Setting['banner-style.banner-style-one']   = "Banner style 1"
-Setting['banner-style.banner-style-two']   = "Banner style 2"
-Setting['banner-style.banner-style-three'] = "Banner style 3"
-
-# Banner images
-Setting['banner-img.banner-img-one']   = "Banner image 1"
-Setting['banner-img.banner-img-two']   = "Banner image 2"
-Setting['banner-img.banner-img-three'] = "Banner image 3"
-
 # Proposal notifications
 Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
