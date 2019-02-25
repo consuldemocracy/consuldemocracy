@@ -90,9 +90,12 @@ App.Map =
       return content
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
-    map              = L.map(element.id, options).setView(mapCenterLatLng, zoom)
+    map = L.map(element.id, options)
     L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
 
+    if !addMarkerInvestments
+      map.setView(mapCenterLatLng, zoom)
+      
     if markerLatitude && markerLongitude && !addMarkerInvestments
       marker  = createMarker(markerLatitude, markerLongitude)
 
@@ -102,12 +105,18 @@ App.Map =
       map.on    'click',   moveOrPlaceMarker
 
     if addMarkerInvestments
+      markers = []
       for i in addMarkerInvestments
         if App.Map.validCoordinates(i)
           marker = createMarker(i.lat, i.long)
           marker.options['id'] = i.investment_id
 
           marker.on 'click', openMarkerPopup
+          markers.push(marker)
+      markergroup = new L.featureGroup(markers).addTo(map);
+      map.fitBounds(markergroup.getBounds())
+      
+      
 
   toggleMap: ->
       $('.map').toggle()
