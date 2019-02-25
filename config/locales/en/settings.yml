@@ -73,6 +73,10 @@ en:
     analytics_url: "Analytics URL"
     verification_offices_url: Verification offices URL
     proposal_improvement_path: Proposal improvement info internal link
+    proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
+    proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all supporters of their proposal"
+    direct_message_max_per_day: "Direct Message max number per day"
+    direct_message_max_per_day_description: "Number max of direct messages one user can send per day"
     feature:
       budgets: "Participatory budgeting"
       budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the municipal budget"
