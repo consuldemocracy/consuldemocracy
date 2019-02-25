@@ -95,13 +95,36 @@ tr:
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
           verify_account: "hesabınızı doğrulayın"
           create: "Bir bütçe yatırımı oluşturun"
+          not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
           sign_in: "oturum aç"
           sign_up: "kaydol"
+          by_feasibility: Fizibilite'ye göre
+          feasible: Uygulanabilir projeler
           unfeasible: Uygulanamaz projeler
+        orders:
+          random: rasgele
+          confidence_score: en yüksek puanlı
+          price: fiyata göre
+      share:
+        message: "Ben %{title} içinde %{handle} yatırım projesi oluşturdum. Siz de bir yatırım projesi oluşturun!"
       show:
+        author_deleted: Kullanıcı silindi
+        price_explanation: Fiyat açıklama
+        unfeasibility_explanation: Uygun değildir açıklaması
+        code_html: 'Yatırım projesi kodu: <strong>%{code}</strong>'
+        location_html: 'Konum: <strong>%{location}</strong>'
+        organization_name_html: 'Adına önerilen: <strong>%{name}</strong>'
+        share: Paylaş
+        title: Yatırım projesi
+        supports: Destekler
         votes: Oylar
+        price: Fiyat
         comments_tab: Yorumlar
+        milestones_tab: Kilometre taşları
+        author: Yazar
         project_unfeasible_html: 'Bu yatırım projesi <strong>uygun değil olarak işaretlendi</strong> ve oy kullanma aşamasına geçmeyecek.'
+        project_selected_html: 'Bu yatırım projesi, oy aşaması için <strong>seçildi</strong>.'
+        project_winner: 'Kazanan yatırım projesi'
       investment:
         add: Oy
     show:
@@ -126,3 +149,8 @@ tr:
       filters:
         label: "Projenin mevcut durumu"
         all: "Tüm (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Başlangıç tarihi Bitiş tarihine eşit veya ondan sonra olamaz"
+        prev_phase_dates_invalid: "Başlangıç tarihi, etkin olan önceki aşamanın başlangıç tarihinden sonra olmalıdır (%{phase_name})"
+        next_phase_dates_invalid: "Bitiş tarihi, bir sonraki etkinleştirilmiş aşamanın bitiş tarihinden önce olmalıdır (%{phase_name})"
