@@ -255,6 +255,7 @@ en:
       voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
       zero: You have not voted any investment project.
   social:
+    blog: "Blog de %{org}"
     blog_link: "Blog"
     facebook_link: "Facebook"
     twitter_link: "Twitter"

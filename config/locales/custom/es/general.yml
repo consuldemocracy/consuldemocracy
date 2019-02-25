@@ -259,6 +259,7 @@ es:
       voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
       zero: "Todavía no has votado ninguna propuesta de inversión."
   social:
+    blog: "%{org} Blog"
     blog_link: "Blog"
     facebook_link: "Facebook"
     twitter_link: "Twitter"
