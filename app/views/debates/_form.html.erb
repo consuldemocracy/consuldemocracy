@@ -20,8 +20,7 @@
       <div class="ckeditor small-12 column">
         <%= translations_form.cktext_area :description,
               maxlength: Debate.description_max_length,
-              ckeditor: { language: I18n.locale },
-              label: t("debates.form.debate_text") %>
+              ckeditor: { language: I18n.locale } %>
       </div>
     <% end %>
 
