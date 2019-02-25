@@ -1061,20 +1061,36 @@ tr:
         official_updated: Yetkili detayları kaydedildi
       index:
         title: Yetkililer
+        no_officials: Hiç yetkili yok.
         name: İsim
         official_position: Resmi pozisyon
+        official_level: Seviye
+      level_0: Yetkili değil
       level_1: Seviye 1
       level_2: Seviye 2
       level_3: Seviye 3
       level_4: Seviye 4
       level_5: Seviye 5
+      search:
+        edit_official: Yetkiliyi düzenle
+        make_official: Yetkili yap
+        title: 'Resmi pozisyonlar: Kullanıcı ara'
+        no_results: Resmi pozisyonlar bulunamadı.
     organizations:
       index:
         filter: Filtre
         filters:
           all: Tüm
           pending: Beklemede
+          rejected: Reddedildi
+          verified: Doğrulandı
+        hidden_count_html:
+          one: Ayrıca kullanıcısı olmayan veya gizli bir kullanıcısı olan <strong>bir kuruluş</strong> vardır.
+          other: Ayrıca kullanıcısı olmayan veya gizli bir kullanıcısı olan <strong>%{count} kuruluşlar</strong> vardır.
+        name: İsim
         email: E-posta
+        phone_number: Telefon
+        responsible_name: Sorumlu
         status: Durum
         no_organizations: Hiç organizasyon yok.
         reject: Reddet
@@ -1190,10 +1206,15 @@ tr:
           valuating: Değerlendirme altında
           valuation_finished: Değerlendirme bitti
           all: Tüm
+        title: Katılımcı bütçeleme için yatırım projeleri
+        assigned_admin: Atanmış yönetici
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
         summary_link: "Yatırım projesi özeti"
+        valuator_summary_link: "Bilirkişi özeti"
         feasibility:
+          feasible: "Uygulanabilir (%{price})"
+          not_feasible: "Mümkün değil"
           undefined: "Tanımsız"
       show:
         assigned_admin: Atanmış yönetici
@@ -1203,8 +1224,12 @@ tr:
         heading: "Yatırım projesi %{id}"
         edit: Düzenleme
         edit_classification: Sınıflandırmayı düzenle
+        association_name: Dernek
         by: Tarafından
         sent: Gönder
+        geozone: Kapsam
+        dossier: Dosya
+        edit_dossier: Dosyayı düzenle
         tags: Etiketler
         undefined: Tanımsız
       edit:
@@ -1216,6 +1241,12 @@ tr:
         undefined: Tanımsız
       summary:
         title: Yatırım projelerinin özeti
+        title_proposals_with_supports: Desteklenen yatırım projeleri için özet
+        geozone_name: Kapsam
+        finished_and_feasible_count: Bitmiş ve uygulanabilir
+        finished_and_unfeasible_count: Bitmiş ve uygulanamaz
+        finished_count: Bitmiş
+        in_evaluation_count: Değerlendirmede
         total_count: Toplam
         cost_for_geozone: Maliyet
     geozones:
