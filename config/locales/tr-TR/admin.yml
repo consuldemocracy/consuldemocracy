@@ -893,20 +893,33 @@ tr:
         location: "Konum"
         officers: "Memurlar"
         officers_list: "Bu kabin için memur listesi"
+        no_officers: "Bu kabin için hiçbir memur yok"
         recounts: "Yeniden Sayımlar"
+        recounts_list: "Bu kabin için yeniden sayım listesi"
         results: "Sonuçlar"
         date: "Tarih"
+        count_final: "Son yeniden sayım (memur tarafından)"
         count_by_system: "Oylar (otomatik)"
+        total_system: Toplam oylar (otomatik)
       index:
+        booths_title: "Kabinlerin listesi"
+        no_booths: "Bu ankete atanmış hiç kabin yok."
         table_name: "İsim"
         table_location: "Konum"
     active_polls:
+      edit:
+        title: "Anketlerin tanımlaması"
       form:
         description:
           text: "Tanımlama"
+          help_text: "Bu metin anket sayfasının başlığında görünecektir. Açık anketlere bir içerik eklemek için kullanılabilir."
     polls:
       index:
+        title: "Anketlerin listesi"
+        no_polls: "Yaklaşan hiç anket yok."
+        create: "Anket oluştur"
         name: "İsim"
+        dates: "Tarihler"
         start_date: "Başlangıç Tarihi"
         closing_date: "Kapanış Tarihi"
       show:
