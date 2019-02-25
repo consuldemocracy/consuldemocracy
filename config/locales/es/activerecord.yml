@@ -194,6 +194,11 @@ es:
         description: "Descripción"
         selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
+      proposal/translation:
+        title: "Título de la propuesta"
+        description: "Texto desarrollado de la propuesta"
+        summary: "Resumen de la propuesta"
+        retired_explanation: "Explicación"
       user:
         login: "Email o nombre de usuario"
         email: "Email"

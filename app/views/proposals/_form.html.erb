@@ -10,7 +10,6 @@
         <%= translations_form.text_field :title,
               maxlength: Proposal.title_max_length,
               placeholder: t("proposals.form.proposal_title"),
-              label: t("proposals.form.proposal_title"),
               data: { js_suggest_result: "js_suggest_result",
                       js_suggest: ".js-suggest",
                       js_url: suggest_proposals_path } %>
@@ -32,8 +31,7 @@
       <div class="ckeditor small-12 column">
         <%= translations_form.cktext_area :description,
                                           maxlength: Proposal.description_max_length,
-                                          ckeditor: { language: I18n.locale },
-                                          label: t("proposals.form.proposal_text") %>
+                                          ckeditor: { language: I18n.locale } %>
       </div>
     <% end %>
 
