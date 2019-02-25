@@ -7,6 +7,11 @@ tr:
         remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oy kaldırmak
+        voted_html:
+          one: "<span>Bir</span> yatırıma oy verdiniz."
+          other: "<span>%{count}</span> yatırımlara oy verdiniz."
+        voted_info_html: "Oyunuzu, bu aşamanın sonuna kadar istediğiniz zaman değiştirebilirsiniz. <br>Mevcut tüm parayı harcamanıza gerek yok."
+        zero: Herhangi bir yatırım projesine oy vermediniz.
     phase:
       accepting: Projeler kabul ediliyor
       reviewing: Projeler inceleniyor
