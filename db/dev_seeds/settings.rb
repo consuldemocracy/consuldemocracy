@@ -64,6 +64,8 @@ section "Creating Settings" do
   Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'featured_proposals_number', value: 3)
+  Setting.create(key: 'proposal_notification_minimum_interval_in_days', value: 0)
+  Setting.create(key: 'direct_message_max_per_day', value: 3)
 
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
   Setting.create(key: 'hot_score_period_in_days', value: 31)
