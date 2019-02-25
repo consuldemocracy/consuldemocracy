@@ -26,18 +26,51 @@ tr:
         title: Bir seçenek seçin
         unfeasible_title: Uygulanamaz yatırımlar
         unfeasible: Uygulanamaz yatırımları göster
+        unselected_title: Oy aşaması için seçilmeyen yatırımlar
+        unselected: Oy aşaması için seçilmeyen yatırımları göster
     phase:
+      drafting: Taslak (Halka açık değil)
+      informing: Bilgi
       accepting: Projeler kabul ediliyor
       reviewing: Projeler inceleniyor
       selecting: Projeler seçiliyor
+      valuating: Projeler değerlendiriliyor
       publishing_prices: Projelerin fiyatları yayınlanıyor
       balloting: Projeler oylanıyor
       reviewing_ballots: Oylama inceleniyor
+      finished: Bütçe tamamlandı
+    index:
+      title: Katılımcı bütçeler
+      empty_budgets: Hiç bütçe yok.
+      section_header:
+        icon_alt: Katılımcı bütçeler simgesi
+        title: Katılımcı bütçeler
+        help: Katılımcı bütçelere yardım edin
+        all_phases: Tüm aşamaları göster
+      all_phases: Bütçe yatırım'ının aşamaları
+      map: Coğrafi konumdaki bütçe yatırım önerileri
+      investment_proyects: Tüm yatırım projelerinin listesi
+      unfeasible_investment_proyects: Tüm uygulanamaz yatırım projelerinin listesi
+      not_selected_investment_proyects: Oylama için seçilmeyen tüm yatırım projelerinin listesi
+      finished_budgets: Bitmiş katılımcı bütçeler
+      see_results: Sonuçları gör
+      section_footer:
+        title: Katılımcı bütçelere yardım edin
     investments:
+      index:
+        unfeasible: Uygulanamaz yatırım projeleri
+        unfeasible_text: "Yatırımlar, geçerli olarak ilan edilip nihai oylama aşamasına ulaşmak için bir dizi kriteri (yasallık, somutluk, bütçenin sınırını aşmamak, kentin sorumluluğunda olmak) karşılamalıdır."
+        sidebar:
+          unfeasible: Uygulanamaz projeler
       show:
         votes: Oylar
         comments_tab: Yorumlar
+        project_unfeasible_html: 'Bu yatırım projesi <strong>uygun değil olarak işaretlendi</strong> ve oy kullanma aşamasına geçmeyecek.'
       investment:
         add: Oy
+    show:
+      unfeasible_title: Uygulanamaz yatırımlar
+      unfeasible: Uygulanamaz yatırımları göster
     results:
       ballot_lines_count: Oylar
+      unfeasible_investment_proyects: Tüm uygulanamaz yatırım projelerinin listesi
