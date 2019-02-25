@@ -57,7 +57,7 @@ tr:
       section_footer:
         title: Katılımcı bütçelere yardım edin
         description: Katılımcı bütçelerle vatandaşlar hangi projelerin bütçenin bir parçası olduğuna karar verir.
-      milestones: Kilometre taşı
+      milestones: Kilometre taşları
     investments:
       form:
         tag_category_label: "Kategoriler"
@@ -95,6 +95,8 @@ tr:
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
           verify_account: "hesabınızı doğrulayın"
           create: "Bir bütçe yatırımı oluşturun"
+          sign_in: "oturum aç"
+          sign_up: "kaydol"
           unfeasible: Uygulanamaz projeler
       show:
         votes: Oylar
@@ -107,4 +109,20 @@ tr:
       unfeasible: Uygulanamaz yatırımları göster
     results:
       ballot_lines_count: Oylar
+      price: Fiyat
+      amount_available: Mevcut bütçe
+      accepted: "Kabul edilen harcama teklifi: "
+      discarded: "Atılan harcama teklifi: "
+      incompatibles: Uyuşmayanlar
+      investment_proyects: Tüm yatırım projelerinin listesi
       unfeasible_investment_proyects: Tüm uygulanamaz yatırım projelerinin listesi
+      not_selected_investment_proyects: Oylama için seçilmeyen tüm yatırım projelerinin listesi
+    executions:
+      link: "Kilometre taşları"
+      page_title: "%{budget} - Kilometre taşları"
+      heading: "Katılımcı bütçe Kilometre taşları"
+      heading_selection_title: "Bölge tarafından"
+      no_winner_investments: "Bu mevkide kazanan yatırım yok"
+      filters:
+        label: "Projenin mevcut durumu"
+        all: "Tüm (%{count})"
