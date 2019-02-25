@@ -676,8 +676,15 @@ tr:
       investment_authors: Cari bütçede yatırım yazarları
       selected_investment_authors: Cari bütçedeki seçilen yatırımların yazarları
       winner_investment_authors: Cari bütçede kazanan yatırımların yazarları
+      not_supported_on_current_budget: Cari bütçeye yapılan yatırımları desteklemeyen kullanıcılar
+      invalid_recipients_segment: "Kullanıcı segmenti alıcıları geçersiz"
     newsletters:
+      create_success: Bülten başarıyla oluşturuldu
+      update_success: Bülten başarıyla güncellendi
+      send_success: Bülten başarıyla gönderildi
+      delete_success: Bülten başarıyla silindi
       index:
+        title: Bültenler
         new_newsletter: Yeni bültenler
         subject: Konu
         segment_recipient: Alıcılar
@@ -742,6 +749,18 @@ tr:
         link: Bağlantı
         segment_recipient: Alıcılar
         preview_guide: "Kullanıcılar bildirimi bu şekilde görecekler:"
+        sent_guide: "Kullanıcılar bildirimi bu şekilde görecekler:"
+        send_alert: Bu bildirimi %{n} kullanıcılarına göndermek istediğinize emin misiniz?
+    system_emails:
+      preview_pending:
+        action: Bekleyen Ön İzleme
+        preview_of: '%{name} ''in Ön İzlemesi'
+        pending_to_be_sent: Bu gönderilmeyi bekleyen içeriktir
+        send_pending_notification: Bekleyen bildirimler başarıyla gönderildi
+    emails_download:
+      index:
+        title: E-postaları indirme
+        download_segment: E-posta adreslerini indir
     valuators:
       index:
         email: E-posta
