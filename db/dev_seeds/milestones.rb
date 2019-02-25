@@ -1,8 +1,8 @@
 section "Creating default Milestone Statuses" do
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
+  Milestone::Status.create(name: I18n.t("seeds.budgets.statuses.studying_project"))
+  Milestone::Status.create(name: I18n.t("seeds.budgets.statuses.bidding"))
+  Milestone::Status.create(name: I18n.t("seeds.budgets.statuses.executing_project"))
+  Milestone::Status.create(name: I18n.t("seeds.budgets.statuses.executed"))
 end
 
 section "Creating investment milestones" do

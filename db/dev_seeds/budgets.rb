@@ -1,11 +1,11 @@
-INVESTMENT_IMAGE_FILES = %w{
+INVESTMENT_IMAGE_FILES = %w[
   brennan-ehrhardt-25066-unsplash_713x513.jpg
   carl-nenzen-loven-381554-unsplash_713x475.jpg
   carlos-zurita-215387-unsplash_713x475.jpg
   hector-arguello-canals-79584-unsplash_713x475.jpg
   olesya-grichina-218176-unsplash_713x475.jpg
   sole-d-alessandro-340443-unsplash_713x475.jpg
-}.map do |filename|
+].map do |filename|
   File.new(Rails.root.join("db",
                            "dev_seeds",
                            "images",
@@ -129,10 +129,10 @@ section "Creating Investments" do
       title: Faker::Lorem.sentence(3).truncate(60),
       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
-      feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
+      feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
       valuation_finished: [false, true].sample,
-      tag_list: tags.sample(3).join(','),
+      tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
       skip_map: "1",
       terms_of_service: "1"
@@ -151,9 +151,9 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
-                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
-                         zoom: Setting['map_zoom'],
+      MapLocation.create(latitude: Setting["map_latitude"].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting["map_longitude"].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting["map_zoom"],
                          investment_id: investment.id)
     end
   end
@@ -175,7 +175,7 @@ section "Winner Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
-      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+      description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",
       valuation_finished: true,
