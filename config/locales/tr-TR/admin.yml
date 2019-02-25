@@ -639,15 +639,43 @@ tr:
       title_moderated_content: Denetlenen içerik
       title_budgets: Bütçeler
       title_polls: Anketler
+      title_profiles: Profiller
+      title_settings: Ayarlar
+      title_site_customization: Site içeriği
+      title_booths: Oylama kabinleri
+      legislation: Katılımcı Mevzuat
+      users: Kullanıcılar
     administrators:
       index:
         title: Yöneticiler
+        name: İsim
         email: E-posta
+        id: Yönetici KİMLİĞİ
+        no_administrators: Hiç yönetici yok.
+      administrator:
+        add: Ekle
+        delete: Sil
+        restricted_removal: "Üzgünüm, kendinizi yöneticilerden kaldıramazsınız"
+      search:
+        title: "Yöneticiler: Kullanıcı ara"
     moderators:
       index:
+        title: Moderatörler
+        name: İsim
         email: E-posta
+        no_moderators: Hiç moderatör yok.
+      moderator:
+        add: Ekle
+        delete: Sil
+      search:
+        title: 'Moderatörler: Kullanıcı arama'
     segment_recipient:
+      all_users: Tüm kullanıcılar
       administrators: Yöneticiler
+      proposal_authors: Öneri yazarları
+      investment_authors: Cari bütçede yatırım yazarları
+      selected_investment_authors: Cari bütçedeki seçilen yatırımların yazarları
+      winner_investment_authors: Cari bütçede kazanan yatırımların yazarları
     newsletters:
       index:
         new_newsletter: Yeni bültenler
