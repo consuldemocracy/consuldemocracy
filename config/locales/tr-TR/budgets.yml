@@ -56,11 +56,36 @@ tr:
       see_results: Sonuçları gör
       section_footer:
         title: Katılımcı bütçelere yardım edin
+        description: Katılımcı bütçelerle vatandaşlar hangi projelerin bütçenin bir parçası olduğuna karar verir.
+      milestones: Kilometre taşı
     investments:
+      form:
+        tag_category_label: "Kategoriler"
+        tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendinizinkini ekleyebilirsiniz"
+        tags_label: Etiketler
+        tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
+        map_location: "Harita konumu"
+        map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
+        map_remove_marker: "Harita işaretçisini kaldır"
+        location: "Konum ek bilgisi"
+        map_skip_checkbox: "Bu yatırımın somut bir yeri yok veya ben farkında değilim."
       index:
+        title: Katılımcı bütçeleme
         unfeasible: Uygulanamaz yatırım projeleri
         unfeasible_text: "Yatırımlar, geçerli olarak ilan edilip nihai oylama aşamasına ulaşmak için bir dizi kriteri (yasallık, somutluk, bütçenin sınırını aşmamak, kentin sorumluluğunda olmak) karşılamalıdır."
+        by_heading: "Kapsam ile yatırım projeleri: %{heading}"
+        search_form:
+          button: Ara
+          placeholder: Yatırım projelerini ara...
+          title: Ara
+        search_results_html:
+          one: " <strong>'%{search_term}'</strong> terimini içeren"
+          other: " <strong>'%{search_term}'</strong> terimini içeren"
         sidebar:
+          my_ballot: Oyum
+          voted_html:
+            one: "<strong>%{amount_spent} maliyetli bir teklifi oyladınız</strong>"
+            other: "<strong>%{amount_spent} maliyetli %{count} teklifleri oyladınız</strong>"
           unfeasible: Uygulanamaz projeler
       show:
         votes: Oylar
