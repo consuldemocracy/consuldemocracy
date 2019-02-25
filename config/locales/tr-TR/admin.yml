@@ -1251,12 +1251,20 @@ tr:
         cost_for_geozone: Maliyet
     geozones:
       index:
+        title: Coğrafi Bölge (Geozone)
+        create: Coğrafi bölge (Geozone) oluştur
         edit: Düzenleme
         delete: Sil
       geozone:
         name: İsim
         external_code: Harici kod
+        census_code: Census kodu
         coordinates: Koordinatlar
+      errors:
+        form:
+          error:
+            one: "hata bu coğrafi bölgenin (geozone) kaydedilmesini engelledi"
+            other: 'hatalar bu coğrafi bölgenin (geozone) kaydedilmesini engelledi'
       edit:
         form:
           submit_button: Değişiklikleri kaydet
@@ -1400,8 +1408,11 @@ tr:
           names:
             top_links: En İyi Bağlantılar
             footer: Altbilgi
+            subnavigation_left: Ana Navigasyon Sol
+            subnavigation_right: Ana Navigasyon Sağ
       images:
         index:
+          title: Özel resimler
           update: Güncelleme
           delete: Sil
           image: Fotoğraf
