@@ -23,10 +23,9 @@
 
       <div class="row">
         <%= f.translatable_fields do |translations_form| %>
-          <div class="small-12 medium-9 column">
+          <div class="small-12 medium-9 column float-left">
             <%= translations_form.text_area :retired_explanation,
                   rows: 4, maxlength: 500,
-                  label:  t("proposals.retire_form.retired_explanation_label"),
                   placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
           </div>
         <% end %>
