@@ -125,13 +125,48 @@ tr:
         project_unfeasible_html: 'Bu yatırım projesi <strong>uygun değil olarak işaretlendi</strong> ve oy kullanma aşamasına geçmeyecek.'
         project_selected_html: 'Bu yatırım projesi, oy aşaması için <strong>seçildi</strong>.'
         project_winner: 'Kazanan yatırım projesi'
+        project_not_selected_html: 'Bu yatırım projesi, oy aşaması için <strong>seçilmemiş</strong>.'
+        see_price_explanation: Fiyat açıklamasını gör
+      wrong_price_format: Sadece tam sayılar
       investment:
         add: Oy
+        already_added: Bu yatırım projesini zaten eklediniz
+        already_supported: Bu yatırım projesini zaten desteklediniz. Paylaşın!
+        support_title: Bu projeyi destekleyin
+        confirm_group:
+          one: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+          other: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+        supports:
+          zero: Destek yok
+          one: 1 destek
+          other: "%{count} destekler"
+        give_support: Destek
+      header:
+        check_ballot: Oyumu kontrol et
+        different_heading_assigned_html: "Başka bir başlıkta aktif oyunuz var: %{heading_link}"
+        change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'tan kaldırabilirsiniz ve baştan başlayabilirsiniz."
+        check_ballot_link: "oyumu kontrol et"
+        price: "Bu başlığın bir bütçesi var"
+    progress_bar:
+      assigned: "Atadınız: "
+      available: "Mevcut bütçe: "
     show:
+      group: Grup
+      phase: Gerçek aşama
       unfeasible_title: Uygulanamaz yatırımlar
       unfeasible: Uygulanamaz yatırımları göster
+      unselected_title: Oy aşaması için seçilmeyen yatırımlar
+      unselected: Oy aşaması için seçilmeyen yatırımları göster
+      see_results: Sonuçları gör
     results:
+      link: Sonuçlar
+      page_title: "%{budget} - Sonuçlar"
+      heading: "Katılımcı bütçe sonuçları"
+      heading_selection_title: "Bölgeye göre"
+      spending_proposal: Öneri başlığı
       ballot_lines_count: Oylar
+      hide_discarded_link: Atılanı gizle
+      show_all_link: Tümünü göster
       price: Fiyat
       amount_available: Mevcut bütçe
       accepted: "Kabul edilen harcama teklifi: "
@@ -144,7 +179,7 @@ tr:
       link: "Kilometre taşları"
       page_title: "%{budget} - Kilometre taşları"
       heading: "Katılımcı bütçe Kilometre taşları"
-      heading_selection_title: "Bölge tarafından"
+      heading_selection_title: "Bölgeye göre"
       no_winner_investments: "Bu mevkide kazanan yatırım yok"
       filters:
         label: "Projenin mevcut durumu"
