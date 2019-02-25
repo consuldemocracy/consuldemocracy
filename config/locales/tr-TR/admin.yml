@@ -616,7 +616,29 @@ tr:
       settings: Genel ayarlar
       spending_proposals: Harcama önerileri
       stats: İstatistikler
+      signature_sheets: İmza Sayfaları
+      site_customization:
+        homepage: Ana sayfa
+        pages: Özel sayfalar
+        images: Özel resimler
+        content_blocks: Özel içerik blokları
+        information_texts: Özel bilgi metinleri
+        information_texts_menu:
+          debates: "Tartışmalar"
+          community: "Topluluk"
+          proposals: "Öneriler"
+          polls: "Anketler"
+          layouts: "Düzenler"
+          mailers: "E-postalar"
+          management: "Yönetim"
+          welcome: "Hoş geldiniz"
+        buttons:
+          save: "Kaydet"
+          content_block:
+            update: "Bloğu Güncelle"
+      title_moderated_content: Denetlenen içerik
       title_budgets: Bütçeler
+      title_polls: Anketler
     administrators:
       index:
         title: Yöneticiler
