@@ -761,13 +761,54 @@ tr:
       index:
         title: E-postaları indirme
         download_segment: E-posta adreslerini indir
+        download_emails_button: E-postalar listesini indir
     valuators:
       index:
+        title: Bilirkişiler
+        name: İsim
         email: E-posta
-      show:
-        email: "E-posta"
-    valuator_groups:
+        description: Tanımlama
+        no_description: Tanımlama yok
+        no_valuators: Hiç bilirkişi yok.
+        valuator_groups: "Bilirkişi Grupları"
+        group: "Grup"
+        no_group: "Grup yok"
+      valuator:
+        add: Bilirkişilere ekle
+        delete: Sil
+      search:
+        title: 'Bilirkişiler: Kullanıcı arama'
+      summary:
+        title: Yatırım projeleri için bilirkişi özeti
+        valuator_name: Bilirkişi
+        finished_and_feasible_count: Bitmiş ve uygulanabilir
+        finished_and_unfeasible_count: Bitmiş ve uygulanamaz
+        finished_count: Bitmiş
+        total_count: Toplam
+        cost: Maliyet
       form:
+        edit_title: "Bilirkişiler: Bilirkişi düzenle"
+        update: "Bilirkişi güncelle"
+        updated: "Bilirkişi başarıyla güncellendi"
+      show:
+        description: "Tanımlama"
+        email: "E-posta"
+        group: "Grup"
+        no_description: "Tanımlama olmadan"
+        no_group: "Grup olmadan"
+    valuator_groups:
+      index:
+        title: "Bilirkişi grupları"
+        new: "Bilirkişiler grubu oluştur"
+        name: "İsim"
+        members: "Üyeler"
+        no_groups: "Hiç bilirkişi grupları yok"
+      show:
+        title: "Bilirkişiler grubu: %{group}"
+        no_valuators: "Bu gruba atanmış hiç bilirkişi yok"
+      form:
+        name: "Grup adı"
+        new: "Bilirkişiler grubu oluştur"
         edit: "Bilirkişiler grubunu kaydet"
     poll_officers:
       index:
@@ -838,8 +879,33 @@ tr:
       flash:
         destroy: "Kabin artık atanmış değil"
         create: "Atanmış kabin"
+      show:
+        location: "Konum"
+        officers: "Memurlar"
+        results: "Sonuçlar"
+        date: "Tarih"
+        count_by_system: "Oylar (otomatik)"
+      index:
+        table_name: "İsim"
+        table_location: "Konum"
+    active_polls:
+      form:
+        description:
+          text: "Tanımlama"
+    polls:
+      index:
+        name: "İsim"
+        start_date: "Başlangıç Tarihi"
+        closing_date: "Kapanış Tarihi"
+      show:
+        results_tab: Sonuçlar
+      flash:
+        question_added: "Bu ankete soru eklendi"
     questions:
       index:
+        title: "Sorular"
+        create: "Soru oluştur"
+        no_questions: "Soru yok."
         select_poll: Anket Seç
         questions_tab: "Sorular"
         successful_proposals_tab: "Başarılı öneriler"
@@ -910,9 +976,39 @@ tr:
         no_results: "Hiç sonuç yok"
       result:
         table_whites: "Tamamen boş oylar"
+        table_answer: Cevap
         table_votes: Oylar
+      results_by_booth:
+        booth: Kabin
+        results: Sonuçlar
+        see_results: Sonuçları gör
+    booths:
+      index:
+        name: "İsim"
+        location: "Konum"
+        no_location: "Konum Yok"
+      new:
+        name: "İsim"
+        location: "Konum"
+      show:
+        location: "Konum"
+      booth:
+        shifts: "Vardiyaları yönet"
+    officials:
+      index:
+        name: İsim
+        official_position: Resmi pozisyon
+      level_1: Seviye 1
+      level_2: Seviye 2
+      level_3: Seviye 3
+      level_4: Seviye 4
+      level_5: Seviye 5
     organizations:
       index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending: Beklemede
         email: E-posta
         status: Durum
         no_organizations: Hiç organizasyon yok.
@@ -1066,6 +1162,8 @@ tr:
         external_code: Harici kod
         coordinates: Koordinatlar
       edit:
+        form:
+          submit_button: Değişiklikleri kaydet
         editing: Coğrafi bölge (geozone) düzenleniyor
         back: Geri git
       new:
