@@ -922,15 +922,35 @@ tr:
         dates: "Tarihler"
         start_date: "Başlangıç Tarihi"
         closing_date: "Kapanış Tarihi"
+        geozone_restricted: "Bölgelerle sınırlıdır"
+      new:
+        title: "Yeni anket"
+        show_results_and_stats: "Sonuçları ve istatistikleri göster"
+        show_results: "Sonuçları göster"
+        show_stats: "İstatistikleri göster"
+        results_and_stats_reminder: "Bu onay kutularını işaretlemek, bu anketin sonuçlarını ve/veya istatistiklerini kamuya açık tutacak ve her kullanıcı bunları görecektir."
+        submit_button: "Anket oluştur"
+      edit:
+        title: "Anketi düzenle"
+        submit_button: "Anketi güncelle"
       show:
+        questions_tab: Sorular
+        booths_tab: Kabinler
+        officers_tab: Memurlar
+        recounts_tab: Yeniden Sayımlar
         results_tab: Sonuçlar
+        no_questions: "Bu ankete atanmış hiç soru yok."
+        questions_title: "Soruların listesi"
+        table_title: "Başlık"
       flash:
         question_added: "Bu ankete soru eklendi"
+        error_on_question_added: "Bu ankete soru atanamadı"
     questions:
       index:
         title: "Sorular"
         create: "Soru oluştur"
         no_questions: "Soru yok."
+        filter_poll: Ankete göre filtrele
         select_poll: Anket Seç
         questions_tab: "Sorular"
         successful_proposals_tab: "Başarılı öneriler"
@@ -1001,20 +1021,31 @@ tr:
         no_results: "Hiç sonuç yok"
       result:
         table_whites: "Tamamen boş oylar"
+        table_nulls: "Geçersiz oylar"
+        table_total: "Toplam oylar"
         table_answer: Cevap
         table_votes: Oylar
       results_by_booth:
         booth: Kabin
         results: Sonuçlar
         see_results: Sonuçları gör
+        title: "Kabine göre sonuçlar"
     booths:
       index:
+        title: "Aktif kabinlerin listesi"
+        no_booths: "Yaklaşan herhangi bir anket için aktif kabin yok."
+        add_booth: "Kabin ekle"
         name: "İsim"
         location: "Konum"
         no_location: "Konum Yok"
       new:
+        title: "Yeni kabin"
         name: "İsim"
         location: "Konum"
+        submit_button: "Kabin oluştur"
+      edit:
+        title: "Kabin düzenle"
+        submit_button: "Kabini güncelle"
       show:
         location: "Konum"
       booth:
