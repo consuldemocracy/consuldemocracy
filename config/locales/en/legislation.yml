@@ -66,11 +66,11 @@ en:
         no_open_processes: There aren't open processes
         no_past_processes: There aren't past processes
         section_header:
-          icon_alt: Legislation processes icon
-          title: Legislation processes
-          help: Help about legislation processes
+          icon_alt: Collaborative legislation icon
+          title: Collaborative legislation
+          help: Help about collaborative legislation
         section_footer:
-          title: Help about legislation processes
+          title: Help about collaborative legislation
           description: Participate in the debates and processes prior to the approval of a ordinance or a municipal action. Your opinion will be considered by the City Council.
       phase_not_open:
         not_open: This phase is not open yet
