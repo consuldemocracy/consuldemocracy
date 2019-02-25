@@ -12,6 +12,20 @@ tr:
           other: "<span>%{count}</span> yatırımlara oy verdiniz."
         voted_info_html: "Oyunuzu, bu aşamanın sonuna kadar istediğiniz zaman değiştirebilirsiniz. <br>Mevcut tüm parayı harcamanıza gerek yok."
         zero: Herhangi bir yatırım projesine oy vermediniz.
+      reasons_for_not_balloting:
+        not_logged_in: Devam etmelisin %{signin} veya %{signup} devam et.
+        not_verified: Yalnızca doğrulanan kullanıcılar yatırımlara oy verebilir; %{verify_account}.
+        organization: Kuruluşların oy kullanmalarına izin verilmiyor
+        not_selected: Seçilmeyen yatırım projeleri desteklenemez
+        not_enough_money_html: "Mevcut bütçeyi zaten atadınız. <br><small>İstediğiniz zaman yapabileceğinizi %{change_ballot} unutmayın</small>"
+        no_ballots_allowed: Seçim aşaması kapanmıştır
+        different_heading_assigned_html: "Zaten farklı bir başlığa oy verdiniz: %{heading_link}"
+        change_ballot: oylarınızı değiştirin
+    groups:
+      show:
+        title: Bir seçenek seçin
+        unfeasible_title: Uygulanamaz yatırımlar
+        unfeasible: Uygulanamaz yatırımları göster
     phase:
       accepting: Projeler kabul ediliyor
       reviewing: Projeler inceleniyor
