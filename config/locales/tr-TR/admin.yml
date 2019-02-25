@@ -674,6 +674,7 @@ tr:
       administrators: Yöneticiler
       proposal_authors: Öneri yazarları
       investment_authors: Cari bütçede yatırım yazarları
+      feasible_and_undecided_investment_authors: "Cari bütçeye uymayan bazı yatırımların yazarları: [değerleme imkansız sonuçlandı]"
       selected_investment_authors: Cari bütçedeki seçilen yatırımların yazarları
       winner_investment_authors: Cari bütçede kazanan yatırımların yazarları
       not_supported_on_current_budget: Cari bütçeye yapılan yatırımları desteklemeyen kullanıcılar
@@ -756,11 +757,17 @@ tr:
         action: Bekleyen Ön İzleme
         preview_of: '%{name} ''in Ön İzlemesi'
         pending_to_be_sent: Bu gönderilmeyi bekleyen içeriktir
+        send_pending: Gönderme beklemede
         send_pending_notification: Bekleyen bildirimler başarıyla gönderildi
+      proposal_notification_digest:
+        title: Öneri Bildirimi Özeti
+        description: Çok fazla e-posta almamak için bir kullanıcı için tüm öneri bildirimlerini tek bir mesajda toplar.
+        preview_detail: Kullanıcılar yalnızca takip ettikleri önerilerden bildirim alırlar
     emails_download:
       index:
         title: E-postaları indirme
         download_segment: E-posta adreslerini indir
+        download_segment_help_text: CSV formatında indirin
         download_emails_button: E-postalar listesini indir
     valuators:
       index:
@@ -784,6 +791,7 @@ tr:
         finished_and_feasible_count: Bitmiş ve uygulanabilir
         finished_and_unfeasible_count: Bitmiş ve uygulanamaz
         finished_count: Bitmiş
+        in_evaluation_count: Değerlendirmede
         total_count: Toplam
         cost: Maliyet
       form:
@@ -879,9 +887,13 @@ tr:
       flash:
         destroy: "Kabin artık atanmış değil"
         create: "Atanmış kabin"
+        error_destroy: "Kabin ataması kaldırılırken bir hata oluştu"
+        error_create: "Ankete kabin atanırken bir hata oluştu"
       show:
         location: "Konum"
         officers: "Memurlar"
+        officers_list: "Bu kabin için memur listesi"
+        recounts: "Yeniden Sayımlar"
         results: "Sonuçlar"
         date: "Tarih"
         count_by_system: "Oylar (otomatik)"
