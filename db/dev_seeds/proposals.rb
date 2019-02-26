@@ -1,9 +1,9 @@
-IMAGE_FILES = %w{
+IMAGE_FILES = %w[
   firdouss-ross-414668-unsplash_846x475.jpg
   nathan-dumlao-496190-unsplash_713x475.jpg
   steve-harvey-597760-unsplash_713x475.jpg
   tim-mossholder-302931-unsplash_713x475.jpg
-}.map do |filename|
+].map do |filename|
   File.new(Rails.root.join("db",
                            "dev_seeds",
                            "images",
@@ -34,7 +34,7 @@ section "Creating Proposals" do
                                 external_url: Faker::Internet.url,
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
-                                tag_list: tags.sample(3).join(','),
+                                tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1")
@@ -54,7 +54,7 @@ section "Creating Archived Proposals" do
                                 responsible_name: Faker::Name.name,
                                 external_url: Faker::Internet.url,
                                 description: description,
-                                tag_list: tags.sample(3).join(','),
+                                tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
@@ -76,7 +76,7 @@ section "Creating Successful Proposals" do
                                 external_url: Faker::Internet.url,
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
-                                tag_list: tags.sample(3).join(','),
+                                tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
@@ -84,7 +84,7 @@ section "Creating Successful Proposals" do
     add_image_to proposal
   end
 
-  tags = ActsAsTaggableOn::Tag.where(kind: 'category')
+  tags = ActsAsTaggableOn::Tag.where(kind: "category")
   30.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -96,7 +96,7 @@ section "Creating Successful Proposals" do
                                 external_url: Faker::Internet.url,
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
-                                tag_list: tags.sample(3).join(','),
+                                tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1")
@@ -123,7 +123,8 @@ section "Creating Proposals for Human Right Proceeding" do
                     "Derecho a la cultura",
                     "Derecho al cuidado, incluyendo los derechos de las personas cuidadoras",
                     "Derecho de las mujeres a la no discriminación",
-                    "Derecho de las personas gays, lesbianas, transexuales, bisexuales e intersexuales a la no discriminación",
+                    "Derecho de las personas gays, lesbianas, transexuales, bisexuales e "\
+                    "intersexuales a la no discriminación",
                     "Derecho a no sufrir racismo y derechos de las personas migrantes y refugiadas",
                     "Derechos de la infancia",
                     "Derechos de las personas con diversidad funcional",
@@ -136,37 +137,37 @@ section "Creating Proposals for Human Right Proceeding" do
   (1..30).each do |_i|
     author = User.reorder("RANDOM()").first
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                question: Faker::Lorem.sentence(3) + "?",
-                                summary: Faker::Lorem.sentence(3),
-                                responsible_name: Faker::Name.name,
-                                external_url: Faker::Internet.url,
-                                description: description,
-                                created_at: rand((Time.now - 1.week)..Time.now),
-                                tag_list: tags.sample(3).join(','),
-                                geozone: Geozone.reorder("RANDOM()").first,
-                                skip_map: "1",
-                                terms_of_service: "1",
-                                proceeding: "Derechos Humanos",
-                                sub_proceeding: subproceedings.sample)
+    Proposal.create!(author: author,
+                     title: Faker::Lorem.sentence(3).truncate(60),
+                     question: Faker::Lorem.sentence(3) + "?",
+                     summary: Faker::Lorem.sentence(3),
+                     responsible_name: Faker::Name.name,
+                     external_url: Faker::Internet.url,
+                     description: description,
+                     created_at: rand((Time.now - 1.week)..Time.now),
+                     tag_list: tags.sample(3).join(","),
+                     geozone: Geozone.reorder("RANDOM()").first,
+                     skip_map: "1",
+                     terms_of_service: "1",
+                     proceeding: "Derechos Humanos",
+                     sub_proceeding: subproceedings.sample)
   end
 end
 
 section "Open plenary proposal" do
   (1..30).each do |_i|
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                question: Faker::Lorem.sentence(3),
-                                summary: Faker::Lorem.sentence(3),
-                                responsible_name: Faker::Name.name,
-                                description: description,
-                                created_at: Date.parse("20-04-2016"),
-                                terms_of_service: "1",
-                                tag_list: 'plenoabierto',
-                                skip_map: "1",
-                                cached_votes_up: rand(1000))
+    Proposal.create!(author: User.reorder("RANDOM()").first,
+                     title: Faker::Lorem.sentence(3).truncate(60),
+                     question: Faker::Lorem.sentence(3),
+                     summary: Faker::Lorem.sentence(3),
+                     responsible_name: Faker::Name.name,
+                     description: description,
+                     created_at: Date.parse("20-04-2016"),
+                     terms_of_service: "1",
+                     tag_list: "plenoabierto",
+                     skip_map: "1",
+                     cached_votes_up: rand(1000))
   end
 end
 

@@ -1,11 +1,11 @@
-INVESTMENT_IMAGE_FILES = %w{
+INVESTMENT_IMAGE_FILES = %w[
   brennan-ehrhardt-25066-unsplash_713x513.jpg
   carl-nenzen-loven-381554-unsplash_713x475.jpg
   carlos-zurita-215387-unsplash_713x475.jpg
   hector-arguello-canals-79584-unsplash_713x475.jpg
   olesya-grichina-218176-unsplash_713x475.jpg
   sole-d-alessandro-340443-unsplash_713x475.jpg
-}.map do |filename|
+].map do |filename|
   File.new(Rails.root.join("db",
                            "dev_seeds",
                            "images",
@@ -29,14 +29,14 @@ section "Creating Budgets" do
     name_en: "Budget for #{Date.current.year - 1}",
     name_es: "Presupuestos para #{Date.current.year - 1}",
     currency_symbol: "€",
-    phase: 'finished'
+    phase: "finished"
   )
 
   accepting_budget = Budget.create(
     name_en: "Budget for #{Date.current.year}",
     name_es: "Presupuestos para #{Date.current.year}",
     currency_symbol: "€",
-    phase: 'accepting'
+    phase: "accepting"
   )
 
   Budget.find_each do |budget|
@@ -129,10 +129,10 @@ section "Creating Investments" do
       title: Faker::Lorem.sentence(3).truncate(60),
       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
-      feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
+      feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
       valuation_finished: [false, true].sample,
-      tag_list: tags.sample(3).join(','),
+      tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
       skip_map: "1",
       terms_of_service: "1"
@@ -151,9 +151,9 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
-                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
-                         zoom: Setting['map_zoom'],
+      MapLocation.create(latitude: Setting["map_latitude"].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting["map_longitude"].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting["map_zoom"],
                          investment_id: investment.id)
     end
   end
@@ -166,7 +166,7 @@ section "Balloting Investments" do
 end
 
 section "Voting Investments" do
-  not_org_users = User.where(['users.id NOT IN(?)', User.organizations.pluck(:id)])
+  not_org_users = User.where(["users.id NOT IN(?)", User.organizations.pluck(:id)])
   100.times do
     voter = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
     investment = Budget::Investment.reorder("RANDOM()").first
@@ -209,14 +209,13 @@ section "Winner Investments" do
 end
 
 section "Creating Valuator Groups Assignments" do
-  valuators_count = Valuator.count
-  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.culture_and_sports'),
+  ValuatorGroup.create(name: I18n.t("seeds.budgets.valuator_groups.culture_and_sports"),
                        valuators: [Valuator.find(1), Valuator.find(2)])
-  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.gender_and_diversity'),
+  ValuatorGroup.create(name: I18n.t("seeds.budgets.valuator_groups.gender_and_diversity"),
                        valuators: [Valuator.find(3), Valuator.find(4)])
-  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.urban_development'),
+  ValuatorGroup.create(name: I18n.t("seeds.budgets.valuator_groups.urban_development"),
                        valuators: [Valuator.find(5), Valuator.find(6)])
-  ValuatorGroup.create(name: I18n.t('seeds.budgets.valuator_groups.equity_and_employment'),
+  ValuatorGroup.create(name: I18n.t("seeds.budgets.valuator_groups.equity_and_employment"),
                        valuators: [Valuator.find(7), Valuator.find(8)])
 end
 
