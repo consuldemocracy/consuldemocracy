@@ -5,6 +5,7 @@ class BudgetsController < ApplicationController
 
   load_and_authorize_resource
   before_action :set_default_budget_filter, only: :show
+  before_action :get_active_geographies, only: :index
   has_filters %w[not_unfeasible feasible unfeasible unselected selected winners], only: :show
 
   respond_to :html, :js
@@ -26,7 +27,7 @@ class BudgetsController < ApplicationController
                         }
   end
 
-  def get_geographies_with_active_headings
+  def get_active_geographies
     @active_geographies = Geography.geographies_with_active_headings
   end
 
