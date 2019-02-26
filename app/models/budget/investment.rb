@@ -349,6 +349,14 @@ class Budget
       self.valuator_groups.collect(&:name).compact.join(', ').presence
     end
 
+    def valuation_tag_list
+      tag_list_on(:valuation)
+    end
+
+    def valuation_tag_list=(tags)
+      set_tag_list_on(:valuation, tags)
+    end
+
     def self.with_milestone_status_id(status_id)
       joins(:milestones).includes(:milestones).select do |investment|
         investment.milestone_status_id == status_id.to_i
