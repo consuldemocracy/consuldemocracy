@@ -694,9 +694,9 @@ sq:
         send_pending: Dërgo në pritje
         send_pending_notification: Njoftimet në pritje janë dërguar me sukses
       proposal_notification_digest:
-        title: Përfundimi i njoftimeve të propozimeve
-        description: Mblidh të gjitha njoftimet e propozimeve për një përdorues në një mesazh të vetëm, për të shmangur shumë e-mail.
-        preview_detail: Përdoruesit do të marrin njoftime vetëm nga propozimet që po ndjekin
+        title: "Përfundimi i njoftimeve të propozimeve"
+        description: "Mblidh të gjitha njoftimet e propozimeve për një përdorues në një mesazh të vetëm, për të shmangur shumë e-mail."
+        preview_detail: "Përdoruesit do të marrin njoftime vetëm nga propozimet që po ndjekin"
     emails_download:
       index:
         title: Shkarkimi i emaileve
