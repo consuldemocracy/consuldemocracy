@@ -700,9 +700,9 @@ nl:
         send_pending: Stuur in behandeling
         send_pending_notification: In behandeling zijnde aanmeldingen succesvol verzonden
       proposal_notification_digest:
-        title: Voorgestelde melding verwerken
-        description: Verzamelt alle meldingen van het voorstel voor een gebruiker in een enkel bericht, om te voorkomen dat er te veel e-mails worden verstuurd.
-        preview_detail: Gebruikers ontvangen alleen meldingen uit de voorstellen die ze volgen
+        title: "Voorgestelde melding verwerken"
+        description: "Verzamelt alle meldingen van het voorstel voor een gebruiker in een enkel bericht, om te voorkomen dat er te veel e-mails worden verstuurd."
+        preview_detail: "Gebruikers ontvangen alleen meldingen uit de voorstellen die ze volgen"
     emails_download:
       index:
         title: E-mails download
