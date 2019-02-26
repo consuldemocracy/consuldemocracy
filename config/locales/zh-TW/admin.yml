@@ -685,9 +685,9 @@ zh-TW:
         send_pending: 有待發送
         send_pending_notification: 待處理通知已成功發送
       proposal_notification_digest:
-        title: 建議通知摘要
-        description: 在單個消息中收集用戶的所有建議通知，以避免過多的電子郵件。
-        preview_detail: 用戶將只收到他們所跟蹤的建議之通知
+        title: "建議通知摘要"
+        description: "在單個消息中收集用戶的所有建議通知，以避免過多的電子郵件。"
+        preview_detail: "用戶將只收到他們所跟蹤的建議之通知"
     emails_download:
       index:
         title: 電子郵件下載
