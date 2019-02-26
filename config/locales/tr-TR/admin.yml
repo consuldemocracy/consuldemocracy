@@ -1143,7 +1143,7 @@ tr:
         features:
           enabled: "Özellik etkinleştirildi"
           disabled: "Özellik devre dışı"
-          enable: "Etkinleştirildi"
+          enable: "Etkinleştir"
           disable: "Devre dışı bırakma"
         map:
           title: Harita yapılandırma
