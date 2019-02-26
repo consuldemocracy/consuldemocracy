@@ -686,9 +686,9 @@ pt-BR:
         send_pending: Enviar pendente
         send_pending_notification: Notificações pendentes enviadas com sucesso
       proposal_notification_digest:
-        title: Resumo danotificação da proposta
-        description: Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails.
-        preview_detail: Usuários apenas vão receber notificações das rpopostas que eles estão seguindo
+        title: "Resumo danotificação da proposta"
+        description: "Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails."
+        preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
     emails_download:
       index:
         title: Download de emails
