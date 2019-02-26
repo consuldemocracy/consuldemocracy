@@ -695,9 +695,9 @@ zh-CN:
         send_pending: 有待发送
         send_pending_notification: 待发送通知已经成功发送
       proposal_notification_digest:
-        title: 提议通知摘要
-        description: 在单个信息中收集给用户的所有提议通知，避免太多电子邮件。
-        preview_detail: 用户将只接收到他们跟随提议的通知
+        title: "提议通知摘要"
+        description: "在单个信息中收集给用户的所有提议通知，避免太多电子邮件。"
+        preview_detail: "用户将只接收到他们跟随提议的通知"
     emails_download:
       index:
         title: 电子邮件下载
