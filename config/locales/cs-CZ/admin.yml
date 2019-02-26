@@ -747,9 +747,9 @@ cs:
         send_pending: Odeslat čekající
         send_pending_notification: Úspěšně odeslaná čekající oznámení
       proposal_notification_digest:
-        title: Upozornění k návrhu - Přehled
-        description: Shromažďuje všechny oznámení o návrzích pro uživatele v jedné zprávě, aby se zabránilo odesílání velkého množství e-mailů.
-        preview_detail: Uživatelé budou přijímat pouze oznámení od návrhů, které sledují
+        title: "Upozornění k návrhu - Přehled"
+        description: "Shromažďuje všechny oznámení o návrzích pro uživatele v jedné zprávě, aby se zabránilo odesílání velkého množství e-mailů."
+        preview_detail: "Uživatelé budou přijímat pouze oznámení od návrhů, které sledují"
     emails_download:
       index:
         title: Stahování e-mailů
