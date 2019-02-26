@@ -688,9 +688,9 @@ pl:
         send_pending: Wyślij oczekujące
         send_pending_notification: Oczekujące powiadomienia wysłane pomyślnie
       proposal_notification_digest:
-        title: Przegląd powiadomień o wnioskach
-        description: Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail.
-        preview_detail: Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują
+        title: "Przegląd powiadomień o wnioskach"
+        description: "Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail."
+        preview_detail: "Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują"
     emails_download:
       index:
         title: Pobieranie e-mail
