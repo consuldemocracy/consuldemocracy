@@ -682,9 +682,9 @@ it:
         send_pending: Invia sospesa
         send_pending_notification: Notifiche in sospeso inviate con successo
       proposal_notification_digest:
-        title: Riassunto Notifiche Proposta
-        description: Raccoglie tutte le notifiche relative alla proposta destinate ad un utente in un singolo messaggio, per evitare troppe email.
-        preview_detail: Gli utenti riceveranno notifiche solo per le proposte che seguono
+        title: "Riassunto Notifiche Proposta"
+        description: "Raccoglie tutte le notifiche relative alla proposta destinate ad un utente in un singolo messaggio, per evitare troppe email."
+        preview_detail: "Gli utenti riceveranno notifiche solo per le proposte che seguono"
     emails_download:
       index:
         title: Scarica email
