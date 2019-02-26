@@ -759,9 +759,9 @@ de:
         send_pending: Ausstehendes senden
         send_pending_notification: Ausstehende Benachrichtigungen erfolgreich gesendet
       proposal_notification_digest:
-        title: Zusammenfassende Benachrichtigun zu einem Vorschlag
-        description: Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden.
-        preview_detail: Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen
+        title: "Zusammenfassende Benachrichtigun zu einem Vorschlag"
+        description: "Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden."
+        preview_detail: "Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen"
     emails_download:
       index:
         title: E-Mails herunterladen
