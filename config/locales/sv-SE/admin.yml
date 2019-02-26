@@ -682,9 +682,9 @@ sv:
         send_pending: Väntar på att skicka
         send_pending_notification: Aviseringarna har skickats
       proposal_notification_digest:
-        title: Sammanfattande avisering om förslag
-        description: Samlar alla aviseringar om förslag till en användare i ett meddelande för att undvika för mycket e-post.
-        preview_detail: Användare kommer endast få aviseringar från förslag de följer
+        title: "Sammanfattande avisering om förslag"
+        description: "Samlar alla aviseringar om förslag till en användare i ett meddelande för att undvika för mycket e-post."
+        preview_detail: "Användare kommer endast få aviseringar från förslag de följer"
     emails_download:
       index:
         title: Hämta e-postadresser
