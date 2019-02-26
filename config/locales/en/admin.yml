@@ -762,9 +762,46 @@ en:
         send_pending: Send pending
         send_pending_notification: Pending notifications sent succesfully
       proposal_notification_digest:
-        title: Proposal Notification Digest
-        description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
-        preview_detail: Users will only recieve notifications from the proposals they are following
+        title: "Proposal notification digest"
+        description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
+        preview_detail: "Users will only recieve notifications from the proposals they are following"
+      budget_investment_created:
+        title: "Budget investment created"
+        description: "Sent when a user creates a budget investment."
+      budget_investment_selected:
+        title: "Budget investment selected"
+        description: "Sent to the author when its budget investment has been selected."
+      budget_investment_unfeasible:
+        title: "Budget investment unfeasible"
+        description: "Sent to the author when its budget investment has been marked as unfeasible."
+      budget_investment_unselected:
+        title: "Budget investment unselected"
+        description: "Sent to the author when its budget investment hasn't been selected for voting phase."
+      comment:
+        title: "Comment"
+        description: "Sent to the author when recieves a comment."
+      reply:
+        title: "Reply"
+        description: "Sent to the comment's author when recieves a reply."
+      direct_message_for_receiver:
+        title: "Private message receiver"
+        description: "Sent to the private message's receiver."
+      direct_message_for_sender:
+        title: "Private message sender"
+        description: "Sent to the private message's sender."
+      email_verification:
+        title: "Email verification"
+        description: "Sent to a new user to verify its account."
+      user_invite:
+        title: "User Invitation"
+        description: "Sent to the person that has been invited to register an account."
+      edit_info: "You can edit this email in"
+      message_title: "Message's Title"
+      message_body: "This is a sample of message's content."
+      alert:
+        no_investments: "There aren't any budget investment created. Some example data is needed in order to preview the email."
+        no_comments: "There aren't any comments created. Some example data is needed in order to preview the email."
+        no_replies: "There aren't any replies created. Some example data is needed in order to preview the email."
     emails_download:
       index:
         title: Emails download
