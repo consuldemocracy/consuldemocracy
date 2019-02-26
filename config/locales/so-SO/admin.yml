@@ -692,9 +692,9 @@ so:
         send_pending: U dir waqtiga la sugayo
         send_pending_notification: Ogeysiisyada la sugayo ayaa lo diray si guul leh
       proposal_notification_digest:
-        title: Soojeedinta khafiifinta ogaysiisyada
-        description: Wuxuu soo ururiyaa dhammaan ogeysiinta soo jeedinta ee loogu talagalay isticmaale ahaan hal farriin, si looga fogaado emails aad u badan.
-        preview_detail: Isticmaalayaasha ayaa kaliya ogaan doona ogeysiisyada soo jeedinta ay soo socdaan
+        title: "Soojeedinta khafiifinta ogaysiisyada"
+        description: "Wuxuu soo ururiyaa dhammaan ogeysiinta soo jeedinta ee loogu talagalay isticmaale ahaan hal farriin, si looga fogaado emails aad u badan."
+        preview_detail: "Isticmaalayaasha ayaa kaliya ogaan doona ogeysiisyada soo jeedinta ay soo socdaan"
     emails_download:
       index:
         title: Emaylada Sodejinta
