@@ -687,9 +687,9 @@ fr:
         send_pending: Envoi en attente
         send_pending_notification: Les notifications en attente ont été envoyées avec succès
       proposal_notification_digest:
-        title: Résumé des notifications des propositions
-        description: Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails.
-        preview_detail: Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent
+        title: "Résumé des notifications des propositions"
+        description: "Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails."
+        preview_detail: "Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent"
     emails_download:
       index:
         title: Téléchargement des courriels
