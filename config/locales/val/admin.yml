@@ -742,9 +742,9 @@ val:
         send_pending: Enviar pendents
         send_pending_notification: Notificacions pendents enviades correctament
       proposal_notification_digest:
-        title: Resum de Notificacions de Propostes
-        description: Reuneix totes les notificacions de propostes en un únic missatge, per a evitar massa emails.
-        preview_detail: Els usuaris sols rebran les notificacions d'aquelles propostes que segueixquen
+        title: "Resum de Notificacions de Propostes"
+        description: "Reuneix totes les notificacions de propostes en un únic missatge, per a evitar massa emails."
+        preview_detail: "Els usuaris sols rebran les notificacions d'aquelles propostes que segueixquen"
     emails_download:
       index:
         title: Descàrrega de emails
