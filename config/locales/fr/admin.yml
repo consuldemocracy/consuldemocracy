@@ -1049,10 +1049,6 @@ fr:
       flash:
         updated: Valeur mise-à-jour
       index:
-        banners: Style des bannières
-        banner_imgs: Images des bannières
-        no_banners_images: Aucune image de bannière
-        no_banners_styles: Aucun style de bannière
         title: Paramètres
         update_setting: Mettre-à-jour
         feature_flags: Fonctionnalités
