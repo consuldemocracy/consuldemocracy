@@ -1056,10 +1056,6 @@ sq:
       flash:
         updated: Vlera e përditësuar
       index:
-        banners: Stili i banderolës
-        banner_imgs: Imazhet banderol
-        no_banners_images: Jo Imazhet banderol
-        no_banners_styles: Jo Stil i banderolës
         title: Cilësimet e konfigurimit
         update_setting: Përditëso
         feature_flags: Karakteristikat
