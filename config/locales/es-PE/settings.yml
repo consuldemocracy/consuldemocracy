@@ -23,18 +23,13 @@ es-PE:
     instagram_handle: "Usuario de Instagram"
     url: "URL general de la web"
     org_name: "Nombre de la organización"
-    place_name: "Nombre del lugar"
     map_latitude: "Latitud"
     map_longitude: "Longitud"
     meta_title: "Título del sitio (SEO)"
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     min_age_to_participate: Edad mínima para participar
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparencia"
-    opendata_url: "URL de open data"
     verification_offices_url: URL oficinas verificación
-    proposal_improvement_path: Link a información para mejorar propuestas
     feature:
       budgets: "Presupuestos participativos"
       twitter_login: "Registro con Twitter"
