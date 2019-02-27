@@ -48,8 +48,6 @@ cs:
     url_description: "Hlavní URL vašeho webu"
     org_name: "Organizace"
     org_name_description: "Název vaší organizace"
-    place_name: "Místo"
-    place_name_description: "Název vašeho města"
     related_content_score_threshold: "Prahová hodnota pro související obsah"
     related_content_score_threshold_description: "Skrývá obsah, kteří uživatelé označí jako nesouvisející"
     hot_score_period_in_days: "Období (dny) použité ve filtru \"nejaktivnější\""
@@ -73,11 +71,7 @@ cs:
     min_age_to_participate: Minimální věk potřebný k účasti
     min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
     analytics_url: "Adresa URL služby Analytics"
-    blog_url: "Adresa URL blogu"
-    transparency_url: "Adresa URL transparentnosti"
-    opendata_url: "Otevřená Data URL"
     verification_offices_url: URL adresa pro ověření
-    proposal_improvement_path: Informace pro zlepšení Návrhů - interní odkaz
     feature:
       budgets: "Participativní rozpočtování"
       budgets_description: "Participativními rozpočty občané rozhodují, které projekty předložené jejich sousedy obdrží část rozpočtu obce / města"
@@ -126,4 +120,4 @@ cs:
       public_stats: "Veřejné statistiky"
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
-      help_page_description: "Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci"
+      help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
