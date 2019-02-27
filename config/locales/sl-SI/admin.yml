@@ -834,10 +834,6 @@ sl:
       flash:
         updated: Vrednost posodobljena
       index:
-        banners: Slogi pasic
-        banner_imgs: Slike pasic
-        no_banners_images: Ni slik pasic
-        no_banners_styles: Ni slogov pasic
         title: Nastavitve konfiguracije
         update_setting: Posodobi
         feature_flags: Funkcije
