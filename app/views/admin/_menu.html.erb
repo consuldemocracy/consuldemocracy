@@ -75,6 +75,15 @@
       </ul>
     </li>
 
+    <% if feature?(:signature_sheets) %>
+      <li class="section-title <%= "is-active" if controller_name == "signature_sheets" %>">
+        <%= link_to admin_signature_sheets_path do %>
+          <span class="icon-file-text-o"></span>
+          <strong><%= t("admin.menu.signature_sheets") %></strong>
+        <% end %>
+      </li>
+    <% end %>
+
     <% if feature?(:spending_proposals) %>
       <li class="section-title">
         <a href="#">
@@ -137,15 +146,6 @@
         </li>
       </ul>
     </li>
-
-    <% if feature?(:signature_sheets) %>
-      <li class="section-title <%= "is-active" if controller_name == "signature_sheets" %>">
-        <%= link_to admin_signature_sheets_path do %>
-          <span class="icon-file-text-o"></span>
-          <strong><%= t("admin.menu.signature_sheets") %></strong>
-        <% end %>
-      </li>
-    <% end %>
 
     <li class="section-title">
       <a href="#">
