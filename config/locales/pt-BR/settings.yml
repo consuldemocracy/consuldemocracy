@@ -46,8 +46,6 @@ pt-BR:
     url_description: "URL principal do seu website"
     org_name: "Organização"
     org_name_description: "Nome da sua organização"
-    place_name: "Lugar"
-    place_name_description: "Nome da sua cidade"
     related_content_score_threshold: "Limiar de pontuação de conteúdo relacionado"
     related_content_score_threshold_description: "Esconde conteúdo que marca usuários como não-relacionados"
     map_latitude: "Latitude"
@@ -69,11 +67,7 @@ pt-BR:
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Usuários acima dessa idade podem participar de todo o processo"
     analytics_url: "URL das análises"
-    blog_url: "URL do blog"
-    transparency_url: "URL de transparência"
-    opendata_url: "URL de Open Data"
     verification_offices_url: URL dos escritórios de verificação
-    proposal_improvement_path: Link para a informação sobre o melhoramento de propostas
     feature:
       budgets: "Orçamento participativo"
       budgets_description: "Com o orçamento participativo, cidadãos decidem quais projetos apresentados pelos seus vizinhos receberão parte do orçamento do município"
@@ -120,4 +114,4 @@ pt-BR:
       public_stats: "Estatísticas públicas"
       public_stats_description: "Mostra estatísticas públicas no painel de administração"
       help_page: "Página de ajuda"
-      help_page_description: "Mostra um menu de Ajuda contendo a página com a seção de informações sobre cada recurso abilitado"
+      help_page_description: 'Mostra um menu de Ajuda contendo a página com a seção de informações sobre cada recurso abilitado'
