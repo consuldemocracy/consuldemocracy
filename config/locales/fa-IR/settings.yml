@@ -23,7 +23,6 @@ fa:
     instagram_handle: "اینستاگرام"
     url: "آدرس اصلی"
     org_name: "سازمان"
-    place_name: "محل"
     map_latitude: "عرض جغرافیایی\n"
     map_longitude: "طول جغرافیایی"
     map_zoom: "زوم"
@@ -31,11 +30,7 @@ fa:
     meta_description: "توضیحات سایت (SEO)"
     meta_keywords: "واژه هاي كليدي (SEO)"
     min_age_to_participate: حداقل سن مورد نیاز برای شرکت 
-    blog_url: "نشانی اینترنتی وبلاگ"
-    transparency_url: "نشانی اینترنتی شفافیت"
-    opendata_url: "URL Data را باز کنید"
     verification_offices_url: دفاتر تأیید URL
-    proposal_improvement_path: لینک بهبود اطلاعات لینک داخلی
     feature:
       budgets: "بودجه مشارکتی"
       twitter_login: "ورود توییتر"
