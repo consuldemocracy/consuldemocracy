@@ -1044,10 +1044,6 @@ sv:
       flash:
         updated: Uppdaterat
       index:
-        banners: Bannerformat
-        banner_imgs: Banner
-        no_banners_images: Ingen banner
-        no_banners_styles: Inga bannerformat
         title: Konfigurationsinställningar
         update_setting: Uppdatera
         feature_flags: Funktioner
