@@ -337,8 +337,6 @@ sl:
         guide: "Zdaj ga lahko deliš z drugimi, da lahko začne pridobivati podporo."
         edit: "Preden ga deliš, lahko še spremeniš besedilo."
         view_proposal: Ne zdaj, pojdi v moj predlog
-      improve_info: "Izboljšaj svojo kampanjo in pridobi več podpore"
-      improve_info_link: "Oglej si več informacij"
       already_supported: Ta predlog si že podprl/-a. Deli ga z drugimi!
       comments:
         zero: Brez komentarjev
