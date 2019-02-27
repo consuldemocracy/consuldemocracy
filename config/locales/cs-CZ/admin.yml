@@ -1116,10 +1116,6 @@ cs:
       flash:
         updated: Hodnota aktualizována
       index:
-        banners: Banner styly
-        banner_imgs: Banner obrázky
-        no_banners_images: Nemáte žádné obrázky bannerů
-        no_banners_styles: Nemáte žádné styly bannerů
         title: Nastavení konfigurace
         update_setting: Aktualizovat
         feature_flags: Doporučené
