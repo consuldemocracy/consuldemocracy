@@ -148,7 +148,7 @@ en:
           rows:
             - shortcut_column: CTRL and + (CMD and + on MAC)
               description_column: Increases text size
-            - shortcut_column: CTRL and - (CMD  and - on MAC)
+            - shortcut_column: CTRL and - (CMD and - on MAC)
               description_column: Decreases text size
       compatibility:
         title: Compatibility with standards and visual design
