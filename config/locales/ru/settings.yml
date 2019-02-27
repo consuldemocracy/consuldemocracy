@@ -46,8 +46,6 @@ ru:
     url_description: "Основной URL вашего вебсайта"
     org_name: "Организация"
     org_name_description: "Название вашей организации"
-    place_name: "Место"
-    place_name_description: "Имя вашего города"
     related_content_score_threshold: "Порог очков релевантного контента"
     related_content_score_threshold_description: "Скрывает контент, который пользователи отмечают как нерелевантный"
     map_latitude: "Широта"
@@ -69,9 +67,7 @@ ru:
     min_age_to_participate: Минимальный возраст для участия
     min_age_to_participate_description: "Пользователи старше этого возраста могут участвовать во всех процессах"
     analytics_url: "URL аналитики"
-    blog_url: "URL блога"
     verification_offices_url: URL офисов верификации
-    proposal_improvement_path: Внутренняя ссылка на информацию об улучшениях предложений
     feature:
       budgets: "Партисипаторное бюджетирование"
       budgets_description: "При помощи совместных бюджетов граждане решают, какие из проектов, предложенных их соседями, получат часть в муниципальном бюджете"
@@ -118,4 +114,4 @@ ru:
       public_stats: "Публичная статистика"
       public_stats_description: "Отображать публичную статистику в панели администрирования"
       help_page: "Страница помощи"
-      help_page_description: "Отображает меню помощи, содержащее страницу с разделом информации о каждой включенной функции"
+      help_page_description: 'Отображает меню помощи, содержащее страницу с разделом информации о каждой включенной функции'
