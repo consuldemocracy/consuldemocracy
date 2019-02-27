@@ -1046,10 +1046,6 @@ zh-TW:
       flash:
         updated: 價值已更新
       index:
-        banners: 橫幅樣式
-        banner_imgs: 橫幅圖像
-        no_banners_images: 無橫幅圖像
-        no_banners_styles: 無橫幅樣式
         title: 配置設置
         update_setting: 更新
         feature_flags: 功能
