@@ -24,6 +24,7 @@ en:
         debate: "Debate updated successfully."
         poll: "Poll updated successfully."
         poll_booth: "Booth updated successfully."
+        active_poll: "Polls description updated successfully."
         proposal: "Proposal updated successfully."
         spending_proposal: "Investment project updated succesfully."
         budget_investment: "Investment project updated succesfully."

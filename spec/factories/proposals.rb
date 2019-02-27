@@ -2,13 +2,13 @@ FactoryBot.define do
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
-    description          'Proposal description'
-    question             'Proposal question'
-    external_url         'http://external_documention.es'
-    video_url            'https://youtu.be/nhuNb0XtRhQ'
-    responsible_name     'John Snow'
-    terms_of_service     '1'
-    skip_map             '1'
+    description          "Proposal description"
+    question             "Proposal question"
+    external_url         "http://external_documention.es"
+    video_url            "https://youtu.be/nhuNb0XtRhQ"
+    responsible_name     "John Snow"
+    terms_of_service     "1"
+    skip_map             "1"
     association :author, factory: :user
 
     trait :hidden do

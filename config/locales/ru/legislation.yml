@@ -4,28 +4,19 @@ ru:
       comments:
         see_all: Просмотреть все
         see_complete: Посмотреть целиком
-        comments_count:
-          one: "%{count} комментарий"
-          other: "%{count} комментариев"
-        replies_count:
-          one: "%{count} ответ"
-          other: "%{count} ответов"
         cancel: Отмена
         publish_comment: Опубликовать комментарий
       form:
         phase_not_open: Эта фаза не открыта
-        login_to_comment: Вы должны %{signin} или %{signup} чтобы оставить комментарий.
+        login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
         signin: Войти
         signup: Зарегистрироваться
       index:
         title: Комментарии
         comments_about: Комментарии о
         see_in_context: Посмотреть в контексте
-        comments_count:
-          one: "%{count} комментарий"
-          other: "%{count} комментариев"
       show:
-        title: Комментарий
+        title: Отзыв
       version_chooser:
         seeing_version: Комментарии версии
         see_text: Посмотреть черновик текста
@@ -62,10 +53,8 @@ ru:
         filter: Фильтровать
         filters:
           open: Открытые процессы
-          next: Следующий
           past: Прошедший
         no_open_processes: Нет открытых процессов
-        no_next_processes: Нет запланированных процессов
         no_past_processes: Нет прошедших процессов
         section_header:
           icon_alt: Иконка процессов законотворчества
@@ -77,17 +66,17 @@ ru:
       phase_not_open:
         not_open: Эта фаза еще не открыта
       phase_empty:
-          empty: Ничего еще не опубликовано
+        empty: Ничего еще не опубликовано
       process:
         see_latest_comments: Посмотреть последние комментарии
         see_latest_comments_title: Прокомментировать этот процесс
       shared:
         key_dates: Ключевые даты
-        debate_dates: Обсудить
+        debate_dates: Обсуждение
         draft_publication_date: Публикация черновика
         allegations_dates: Комментарии
         result_publication_date: Публикация конечного результата
-        proposals_dates: Предложения
+        proposals_dates: Заявки
     questions:
       comments:
         comment_button: Опубликовать ответ
@@ -98,14 +87,12 @@ ru:
       question:
         comments:
           zero: Нет комментариев
-          one: "%{count} комментарий"
-          other: "%{count} комментариев"
-        debate: Обсудить
+        debate: Обсуждение
       show:
         answer_question: Отправить ответ
         next_question: Следующий вопрос
         first_question: Первый вопрос
-        share: Поделиться
+        share: Доля
         title: Процесс совместного законотворчества
       participation:
         phase_not_open: Эта фаза не открыта
@@ -114,10 +101,10 @@ ru:
         signup: Зарегистрироваться
         unauthenticated: Вы должны %{signin} или %{signup} чтобы принять участие.
         verified_only: Только верифицированные пользователи могут участвовать, %{verify_account}.
-        verify_account: верифицируйте ваш аккаунт
+        verify_account: подтвердите ваш аккаунт
         debate_phase_not_open: Фаза дебатов окончена, и ответы больше не принимаются
     shared:
-      share: Поделиться
+      share: Доля
       share_comment: Комментировать %{version_name} из черновика процесса %{process_name}
     proposals:
       form:

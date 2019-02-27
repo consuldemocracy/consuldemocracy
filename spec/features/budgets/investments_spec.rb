@@ -685,16 +685,16 @@ feature 'Budget Investments' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Each user has a different and consistent random budget investment order when random_seed is disctint' do
+    scenario "Each user has a different and consistent random budget investment order" do
       (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
-        visit budget_investments_path(budget, heading: heading, random_seed: rand)
+        visit budget_investments_path(budget, heading: heading)
         @first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
-        visit budget_investments_path(budget, heading: heading, random_seed: rand)
+        visit budget_investments_path(budget, heading: heading)
         @second_user_investments_order = investments_order
       end
 
@@ -925,7 +925,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario 'Ballot is not visible' do
+    scenario "Ballot is not visible" do
       login_as(author)
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -948,9 +948,9 @@ feature 'Budget Investments' do
 
       select_options = find('#budget_investment_heading_id').all('option').collect(&:text)
       expect(select_options.first).to eq('')
-      expect(select_options.second).to eq('Health: More health professionals')
-      expect(select_options.third).to eq('Health: More hospitals')
-      expect(select_options.fourth).to eq('Toda la ciudad')
+      expect(select_options.second).to eq("Toda la ciudad")
+      expect(select_options.third).to eq("Health: More health professionals")
+      expect(select_options.fourth).to eq("Health: More hospitals")
     end
   end
 
@@ -1872,6 +1872,24 @@ feature 'Budget Investments' do
 
       within ".map_location" do
         expect(page).to have_css(".map-icon", count: 0, visible: false)
+      end
+    end
+
+    scenario "Shows all investments and not only the ones on the current page", :js do
+      stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 2)
+
+      3.times do
+        create(:map_location, investment: create(:budget_investment, heading: heading))
+      end
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within("#budget-investments") do
+        expect(page).to have_css(".budget-investment", count: 2)
+      end
+
+      within(".map_location") do
+        expect(page).to have_css(".map-icon", count: 3, visible: false)
       end
     end
   end

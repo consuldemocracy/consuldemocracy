@@ -12,6 +12,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
   let(:input_fields) { input_fields } # So it's accessible by methods
   let(:textarea_fields) { textarea_fields } # So it's accessible by methods
+  let(:path_name) { path_name } # So it's accessible by methods
 
   let(:fields) { input_fields + textarea_fields.keys }
 
@@ -31,7 +32,16 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
     fields - optional_fields
   end
 
-  let(:translatable) { create(factory_name, attributes) }
+  let(:translatable) do
+    if factory_name == "budget_phase"
+      budget = create(:budget)
+      budget.phases.first.update attributes
+      budget.phases.first
+    else
+      create(factory_name, attributes)
+    end
+  end
+
   let(:path) { send(path_name, *resource_hierarchy_for(translatable)) }
   before { login_as(create(:administrator).user) }
 
@@ -94,7 +104,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
-      select('Español', from: 'locale-switcher')
+      select("Español", from: "locale-switcher")
 
       expect_page_to_have_translatable_field field, :es, with: updated_text
     end
@@ -134,8 +144,8 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       click_button update_button_text
 
       expect(page).not_to have_css "#error_explanation"
-      expect(page).not_to have_link "English"
 
+      path = updated_path_for(translatable)
       visit path
 
       expect(page).not_to have_link "English"
@@ -180,7 +190,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field field, :es, with: text_for(field, :es)
     end
 
-    scenario 'Change value of a translated field to blank', :js do
+    scenario "Change value of a translated field to blank", :js do
       skip("can't have translatable blank fields") if optional_fields.empty?
 
       field = optional_fields.sample
@@ -188,11 +198,11 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       visit path
       expect_page_to_have_translatable_field field, :en, with: text_for(field, :en)
 
-      fill_in_field field, :en, with: ''
+      fill_in_field field, :en, with: ""
       click_button update_button_text
 
       visit path
-      expect_page_to_have_translatable_field field, :en, with: ''
+      expect_page_to_have_translatable_field field, :en, with: ""
     end
 
     scenario "Add a translation for a locale with non-underscored name", :js do
@@ -204,7 +214,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       visit path
 
-      select('Português brasileiro', from: 'locale-switcher')
+      select("Português brasileiro", from: "locale-switcher")
 
       field = fields.sample
       expect_page_to_have_translatable_field field, :"pt-BR", with: text_for(field, :"pt-BR")
@@ -217,7 +227,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
 
       expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
 
-      select('Español', from: 'locale-switcher')
+      select("Español", from: "locale-switcher")
 
       expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
     end
@@ -255,6 +265,10 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       expect_page_to_have_translatable_field fields.sample, :fr, with: ""
     end
   end
+end
+
+def updated_path_for(resource)
+  send(path_name, *resource_hierarchy_for(resource.reload))
 end
 
 def text_for(field, locale)
@@ -306,8 +320,8 @@ def expect_page_to_have_translatable_field(field, locale, with:)
       expect(page).to have_field field_for(field, locale), with: with
       click_link class: "fullscreen-toggle"
     elsif textarea_type == :ckeditor
-      within("div.js-globalize-attribute[data-locale='#{locale}'] .ckeditor ") do
-        within_frame(0) { expect(page).to have_content with }
+      within("div.js-globalize-attribute[data-locale='#{locale}'] .ckeditor [id$='#{field}']") do
+        within_frame(textarea_fields.keys.index(field)) { expect(page).to have_content with }
       end
     end
   end
@@ -323,12 +337,18 @@ def update_button_text
     "Update notification"
   when "Poll"
     "Update poll"
-  when "Poll::Question", "Poll::Question::Answer"
+  when "Budget"
+    "Update Budget"
+  when "Poll::Question", "Poll::Question::Answer", "ActivePoll"
     "Save"
   when "SiteCustomization::Page"
     "Update Custom page"
   when "Widget::Card"
     "Save card"
+  when "Budget::Group"
+    "Save group"
+  when "Budget::Heading"
+    "Save heading"
   else
     "Save changes"
   end

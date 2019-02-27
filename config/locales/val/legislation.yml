@@ -2,11 +2,11 @@ val:
   legislation:
     annotations:
       comments:
-        see_all: Vore tots
+        see_all: Vore totes
         see_complete: Vore complet
         comments_count:
           one: "%{count} comentari"
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
         replies_count:
           one: "%{count} resposta"
           other: "%{count} respostes"
@@ -23,7 +23,7 @@ val:
         see_in_context: Vore en context
         comments_count:
           one: "%{count} comentari"
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
       show:
         title: Comentari
       version_chooser:
@@ -49,16 +49,19 @@ val:
       header:
         additional_info: Informació adicional
         description: Descripció
-        more_info: Més informació i context
+        more_info: Més informació y contexte
       proposals:
         empty_proposals: No hi ha propostes
+        filters:
+          random: Aleatòries
+          winners: Seleccionades
       debate:
         empty_questions: No hi ha preguntes
         participate: Realitza les teues aportacions al debat previ participant en els seguents temes
       index:
         filter: Filtre
         filters:
-          open: Processos actius
+          open: Processos oberts
           past: Finalitzats
         no_open_processes: No hi ha processos actius
         no_past_processes: No hi ha processos finalitzats
@@ -78,9 +81,12 @@ val:
         see_latest_comments_title: Aportar a aquest procés
       shared:
         key_dates: Dates clau
+        homepage: Pàgina principal
         debate_dates: Debat
         draft_publication_date: Data de publicació de l'esborrany
+        allegations_dates: Comentaris
         result_publication_date: Publicació de resultats
+        milestones_date: Seguint
         proposals_dates: Propostes
     questions:
       comments:
@@ -93,7 +99,7 @@ val:
         comments:
           zero: Sense comentaris
           one: "%{count} comentari"
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
         debate: Debat
       show:
         answer_question: Publicar resposta

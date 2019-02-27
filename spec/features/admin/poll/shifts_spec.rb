@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin shifts' do
+feature "Admin shifts" do
 
   background do
     admin = create(:administrator)
@@ -50,9 +50,9 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    expect(page).to have_select('shift_date_vote_collection_date', options: ["Select day", *vote_collection_dates])
-    expect(page).not_to have_select('shift_date_recount_scrutiny_date')
-    select I18n.l(Date.current, format: :long), from: 'shift_date_vote_collection_date'
+    expect(page).to have_select("shift_date_vote_collection_date", options: ["Select day", *vote_collection_dates])
+    expect(page).not_to have_select("shift_date_recount_scrutiny_date")
+    select I18n.l(Date.current, format: :long), from: "shift_date_vote_collection_date"
     click_button "Add shift"
 
     expect(page).to have_content "Shift added"
@@ -74,11 +74,11 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    select "Recount & Scrutiny", from: 'shift_task'
+    select "Recount & Scrutiny", from: "shift_task"
 
-    expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
-    expect(page).not_to have_select('shift_date_vote_collection_date')
-    select I18n.l(poll.ends_at.to_date + 4.days, format: :long), from: 'shift_date_recount_scrutiny_date'
+    expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day", *recount_scrutiny_dates])
+    expect(page).not_to have_select("shift_date_vote_collection_date")
+    select I18n.l(poll.ends_at.to_date + 4.days, format: :long), from: "shift_date_recount_scrutiny_date"
     click_button "Add shift"
 
     expect(page).to have_content "Shift added"
@@ -117,9 +117,9 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    expect(page).to have_select('shift_date_vote_collection_date', options: ["Select day", *vote_collection_dates])
-    select "Recount & Scrutiny", from: 'shift_task'
-    expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
+    expect(page).to have_select("shift_date_vote_collection_date", options: ["Select day", *vote_collection_dates])
+    select "Recount & Scrutiny", from: "shift_task"
+    expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day", *recount_scrutiny_dates])
   end
 
   scenario "Error on create", :js do
@@ -163,6 +163,58 @@ feature 'Admin shifts' do
 
     expect(page).to have_content "Shift removed"
     expect(page).to have_css(".shift", count: 0)
+  end
+
+  scenario "Try to destroy with associated recount" do
+    assignment = create(:poll_booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
+    create(:poll_recount, booth_assignment: assignment, officer_assignment: officer_assignment)
+
+    officer = officer_assignment.officer
+    booth = assignment.booth
+    shift = create(:poll_shift, officer: officer, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    expect(page).to have_css(".shift", count: 1)
+    within("#shift_#{shift.id}") do
+      click_link "Remove"
+    end
+
+    expect(page).not_to have_content "Shift removed"
+    expect(page).to have_content "Shifts with associated results or recounts cannot be deleted"
+    expect(page).to have_css(".shift", count: 1)
+  end
+
+  scenario "try to destroy with associated partial results" do
+    assignment = create(:poll_booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
+    create(:poll_partial_result,
+           booth_assignment: assignment,
+           officer_assignment: officer_assignment)
+
+    officer = officer_assignment.officer
+    booth = assignment.booth
+    shift = create(:poll_shift, officer: officer, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    expect(page).to have_css(".shift", count: 1)
+    within("#shift_#{shift.id}") do
+      click_link "Remove"
+    end
+
+    expect(page).not_to have_content "Shift removed"
+    expect(page).to have_content "Shifts with associated results or recounts cannot be deleted"
+    expect(page).to have_css(".shift", count: 1)
   end
 
   scenario "Destroy an officer" do

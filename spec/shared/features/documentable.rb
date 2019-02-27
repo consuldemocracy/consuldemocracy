@@ -70,11 +70,11 @@ shared_examples "documentable" do |documentable_factory_name,
 
     describe "When allow attached documents setting is enabled" do
       before do
-        Setting['feature.allow_attached_documents'] = true
+        Setting["feature.allow_attached_documents"] = true
       end
 
       after do
-        Setting['feature.allow_attached_documents'] = false
+        Setting["feature.allow_attached_documents"] = false
       end
 
       scenario "Documents list should be available" do
@@ -97,11 +97,11 @@ shared_examples "documentable" do |documentable_factory_name,
 
     describe "When allow attached documents setting is disabled" do
       before do
-        Setting['feature.allow_attached_documents'] = false
+        Setting["feature.allow_attached_documents"] = false
       end
 
       after do
-        Setting['feature.allow_attached_documents'] = true
+        Setting["feature.allow_attached_documents"] = true
       end
 
       scenario "Documents list should not be available" do

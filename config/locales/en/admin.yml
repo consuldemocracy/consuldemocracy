@@ -182,11 +182,6 @@ en:
         tags_filter_all: All tags
         advanced_filters: Advanced filters
         placeholder: Search projects
-        sort_by:
-          placeholder: Sort by
-          id: ID
-          title: Title
-          supports: Supports
         filters:
           all: All
           without_admin: Without assigned admin
@@ -443,9 +438,9 @@ en:
         index:
           create: New process
           delete: Delete
-          title: Legislation processes
+          title: Collaborative legislation
           filters:
-            open: Open
+            active: Active
             all: All
         new:
           back: Back
@@ -461,7 +456,8 @@ en:
           title: Process
           comments: Comments
           status: Status
-          creation_date: Creation date
+          start_date: Start date
+          end_date: End date
           status_open: Open
           status_closed: Closed
           status_planned: Planned
@@ -486,7 +482,7 @@ en:
           selected: Selected
         form:
           custom_categories: Categories
-          custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres by category.
           custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
@@ -766,9 +762,46 @@ en:
         send_pending: Send pending
         send_pending_notification: Pending notifications sent succesfully
       proposal_notification_digest:
-        title: Proposal Notification Digest
-        description: Gathers all proposal notifications for an user in a single message, to avoid too much emails.
-        preview_detail: Users will only recieve notifications from the proposals they are following
+        title: "Proposal notification digest"
+        description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
+        preview_detail: "Users will only recieve notifications from the proposals they are following"
+      budget_investment_created:
+        title: "Budget investment created"
+        description: "Sent when a user creates a budget investment."
+      budget_investment_selected:
+        title: "Budget investment selected"
+        description: "Sent to the author when its budget investment has been selected."
+      budget_investment_unfeasible:
+        title: "Budget investment unfeasible"
+        description: "Sent to the author when its budget investment has been marked as unfeasible."
+      budget_investment_unselected:
+        title: "Budget investment unselected"
+        description: "Sent to the author when its budget investment hasn't been selected for voting phase."
+      comment:
+        title: "Comment"
+        description: "Sent to the author when recieves a comment."
+      reply:
+        title: "Reply"
+        description: "Sent to the comment's author when recieves a reply."
+      direct_message_for_receiver:
+        title: "Private message receiver"
+        description: "Sent to the private message's receiver."
+      direct_message_for_sender:
+        title: "Private message sender"
+        description: "Sent to the private message's sender."
+      email_verification:
+        title: "Email verification"
+        description: "Sent to a new user to verify its account."
+      user_invite:
+        title: "User Invitation"
+        description: "Sent to the person that has been invited to register an account."
+      edit_info: "You can edit this email in"
+      message_title: "Message's Title"
+      message_body: "This is a sample of message's content."
+      alert:
+        no_investments: "There aren't any budget investment created. Some example data is needed in order to preview the email."
+        no_comments: "There aren't any comments created. Some example data is needed in order to preview the email."
+        no_replies: "There aren't any replies created. Some example data is needed in order to preview the email."
     emails_download:
       index:
         title: Emails download
@@ -872,6 +905,7 @@ en:
       flash:
         create: "Shift added"
         destroy: "Shift removed"
+        unable_to_destroy: "Shifts with associated results or recounts cannot be deleted"
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
@@ -911,6 +945,13 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
+    active_polls:
+      edit:
+        title: "Polls description"
+      form:
+        description:
+          text: "Description"
+          help_text: "This text will appear in the header of the polls page. It can be used to add a context to the open polls."
     polls:
       index:
         title: "List of polls"
@@ -1130,10 +1171,6 @@ en:
       flash:
         updated: Value updated
       index:
-        banners: Banner styles
-        banner_imgs: Banner images
-        no_banners_images: No banner images
-        no_banners_styles: No banner styles
         title: Configuration settings
         update_setting: Update
         feature_flags: Features

@@ -2,7 +2,7 @@ zh-TW:
   activemodel:
     models:
       verification:
-        residence: "住址"
+        residence: "居住地"
         sms: "短信"
     attributes:
       verification:
@@ -13,7 +13,7 @@ zh-TW:
           postal_code: "郵政編碼"
         sms:
           phone: "電話"
-          confirmation_code: "確認碼"
+          confirmation_code: "確認代碼"
         email:
           recipient: "電郵"
       officing/residence:

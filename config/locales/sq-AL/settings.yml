@@ -23,7 +23,7 @@ sq:
     votes_for_proposal_success: "Numri i votave të nevojshme për miratimin e një Propozimi"
     votes_for_proposal_success_description: "Kur një propozim arrin këtë numër të mbështetësve, ai nuk do të jetë më në gjendje të marrë më shumë mbështetje dhe konsiderohet i suksesshëm"
     months_to_archive_proposals: "Muajt për të arkivuar Propozimet"
-    months_to_archive_proposals_description: Pas këtij numri të muajve, Propozimet do të arkivohen dhe nuk do të jenë më në gjendje të marrin mbështetje 
+    months_to_archive_proposals_description: "Pas këtij numri të muajve, Propozimet do të arkivohen dhe nuk do të jenë më në gjendje të marrin mbështetje"
     email_domain_for_officials: "Domaini i emailit për zyrtarët publikë"
     email_domain_for_officials_description: "Të gjithë përdoruesit e regjistruar me këtë domain do të kenë llogarinë e tyre të verifikuar gjatë regjistrimit"
     per_page_code_head: "Kodi duhet të përfshihet në çdo faqe (<head>)"
@@ -87,7 +87,7 @@ sq:
       proposals_description: "\nPropozimet e qytetarëve janë një mundësi për fqinjët dhe kolektivët për të vendosur drejtpërdrejt se si ata duan që qyteti i tyre të jetë, pasi të ketë mbështetje të mjaftueshme dhe t'i nënshtrohet votimit të qytetarëve"
       debates: "Debate"
       debates_description: "Hapësira e debatit të qytetarëve mundëson që ata të mund të paraqesin çështje që i prekin  dhe për të cilën ata duan të ndajnë pikëpamjet e tyre me të tjerët"
-      polls: "Sondazh"
+      polls: "Sondazhet"
       polls_description: "Sondazhet e qytetarëve janë një mekanizëm pjesëmarrës përmes të cilit qytetarët me të drejtë vote mund të marrin vendime të drejtpërdrejta"
       signature_sheets: "Nënshkrimi i fletëve"
       signature_sheets_description: "Kjo lejon shtimin e nënshkrimit të paneleve të Administratës të mbledhura në vend të Propozimeve dhe projekteve të investimeve të buxheteve pjesëmarrëse"
@@ -120,3 +120,4 @@ sq:
       public_stats: "Statistikat publike"
       public_stats_description: "Shfaqni statistikat publike në panelin e Administratës"
       help_page: "Faqja ndihmëse"
+      help_page_description: "Shfaq një meny Ndihmë që përmban një faqe me një seksion informacioni rreth secilës janë të akitivizuar vecoritë"

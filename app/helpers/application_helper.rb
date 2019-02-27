@@ -7,10 +7,6 @@ module ApplicationHelper
     request.path == '/'
   end
 
-  def opendata_page?
-    request.path == '/opendata'
-  end
-
   # if current path is /debates current_path_with_query_params(foo: 'bar') returns /debates?foo=bar
   # notice: if query_params have a param which also exist in current path, it "overrides" (query_params is merged last)
   def current_path_with_query_params(query_parameters)
@@ -60,4 +56,11 @@ module ApplicationHelper
   def kaminari_path(url)
     "#{root_url.chomp("\/")}#{url}"
   end
+
+  def render_custom_partial(partial_name)
+    controller_action = @virtual_path.split("/").last
+    custom_partial_path = "custom/#{@virtual_path.remove(controller_action)}#{partial_name}"
+    render custom_partial_path if lookup_context.exists?(custom_partial_path, [], true)
+  end
+
 end

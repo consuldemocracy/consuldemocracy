@@ -25,7 +25,7 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_question, class: 'Poll::Question' do
+  factory :poll_question, class: "Poll::Question" do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
@@ -38,29 +38,29 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_question_answer, class: 'Poll::Question::Answer' do
+  factory :poll_question_answer, class: "Poll::Question::Answer" do
     association :question, factory: :poll_question
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
   end
 
-  factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
+  factory :poll_answer_video, class: "Poll::Question::Answer::Video" do
     association :answer, factory: :poll_question_answer
     title "Sample video title"
     url "https://youtu.be/nhuNb0XtRhQ"
   end
 
-  factory :poll_booth, class: 'Poll::Booth' do
+  factory :poll_booth, class: "Poll::Booth" do
     sequence(:name) { |n| "Booth #{n}" }
     sequence(:location) { |n| "Street #{n}" }
   end
 
-  factory :poll_booth_assignment, class: 'Poll::BoothAssignment' do
+  factory :poll_booth_assignment, class: "Poll::BoothAssignment" do
     poll
     association :booth, factory: :poll_booth
   end
 
-  factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do
+  factory :poll_officer_assignment, class: "Poll::OfficerAssignment" do
     association :officer, factory: :poll_officer
     association :booth_assignment, factory: :poll_booth_assignment
     date { Date.current }
@@ -70,7 +70,7 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_shift, class: 'Poll::Shift' do
+  factory :poll_shift, class: "Poll::Shift" do
     association :booth, factory: :poll_booth
     association :officer, factory: :poll_officer
     date { Date.current }
@@ -84,7 +84,7 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_voter, class: 'Poll::Voter' do
+  factory :poll_voter, class: "Poll::Voter" do
     poll
     association :user, :level_two
     association :officer, factory: :poll_officer
@@ -105,25 +105,25 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_answer, class: 'Poll::Answer' do
+  factory :poll_answer, class: "Poll::Answer" do
     association :question, factory: [:poll_question, :with_answers]
     association :author, factory: [:user, :level_two]
     answer { question.question_answers.sample.title }
   end
 
-  factory :poll_partial_result, class: 'Poll::PartialResult' do
+  factory :poll_partial_result, class: "Poll::PartialResult" do
     association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
-    origin 'web'
+    origin "web"
     answer { question.question_answers.sample.title }
   end
 
-  factory :poll_recount, class: 'Poll::Recount' do
+  factory :poll_recount, class: "Poll::Recount" do
     association :author, factory: :user
-    origin 'web'
+    origin "web"
   end
 
-  factory :officing_residence, class: 'Officing::Residence' do
+  factory :officing_residence, class: "Officing::Residence" do
     user
     association :officer, factory: :poll_officer
     document_number
@@ -133,5 +133,8 @@ FactoryBot.define do
     trait :invalid do
       year_of_birth { Time.current.year }
     end
+  end
+
+  factory :active_poll do
   end
 end

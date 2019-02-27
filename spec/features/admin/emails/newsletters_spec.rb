@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Admin newsletter emails" do
 
@@ -11,7 +11,7 @@ feature "Admin newsletter emails" do
   context "Show" do
     scenario "Valid newsletter" do
       newsletter = create(:newsletter, subject: "This is a subject",
-                                       segment_recipient: 'all_users',
+                                       segment_recipient: "all_users",
                                        from: "no-reply@consul.dev",
                                        body: "This is a body")
 
@@ -25,7 +25,7 @@ feature "Admin newsletter emails" do
 
     scenario "Invalid newsletter" do
       invalid_newsletter = create(:newsletter)
-      invalid_newsletter.update_attribute(:segment_recipient, 'invalid_segment')
+      invalid_newsletter.update_attribute(:segment_recipient, "invalid_segment")
 
       visit admin_newsletter_path(invalid_newsletter)
 
@@ -52,7 +52,7 @@ feature "Admin newsletter emails" do
 
     scenario "Invalid newsletter" do
       invalid_newsletter = create(:newsletter)
-      invalid_newsletter.update_attribute(:segment_recipient, 'invalid_segment')
+      invalid_newsletter.update_attribute(:segment_recipient, "invalid_segment")
 
       visit admin_newsletters_path
 
@@ -108,7 +108,7 @@ feature "Admin newsletter emails" do
     expect(page).to have_css(".newsletter", count: 0)
   end
 
-  scenario 'Errors on create' do
+  scenario "Errors on create" do
     visit new_admin_newsletter_path
 
     click_button "Create Newsletter"
@@ -139,7 +139,7 @@ feature "Admin newsletter emails" do
 
     scenario "Invalid newsletter cannot be sent", :js do
       invalid_newsletter = create(:newsletter)
-      invalid_newsletter.update_attribute(:segment_recipient, 'invalid_segment')
+      invalid_newsletter.update_attribute(:segment_recipient, "invalid_segment")
       visit admin_newsletter_path(invalid_newsletter)
 
       expect(page).not_to have_link("Send")

@@ -4,7 +4,7 @@ ar:
       index:
         block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
-        filter: فرز
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -18,7 +18,7 @@ ar:
         orders:
           flags: العلامة مطلوبة
           newest: الأحدث
-        title: التعليقات
+        title: تعليقات
     dashboard:
       index:
         title: الإشراف
@@ -26,13 +26,13 @@ ar:
       index:
         block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
-        filter: فرز
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
           with_ignored_flag: شوهد
         headers:
-          debate: الحوارات
+          debate: النقاشات
           moderate: المشرف
         hide_debates: حوارات مخفية
         ignore_flags: شوهد
@@ -40,21 +40,21 @@ ar:
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
-        title: الحوارات
+        title: النقاشات
     header:
       title: الإشراف
     menu:
-      flagged_comments: التعليقات
-      flagged_debates: الحوارات
+      flagged_comments: تعليقات
+      flagged_debates: النقاشات
       flagged_investments: استثمارات الميزانية
-      proposals: مقترحات
+      proposals: إقتراحات
       proposal_notifications: اقتراح الإشعارات
       users: حظر المستخدمين
     proposals:
       index:
-        block_authors: حظر المؤلفين
+        block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
-        filter: فرز
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: بانتظار المراجعة
@@ -68,12 +68,12 @@ ar:
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
-        title: مقترحات
+        title: إقتراحات
     budget_investments:
       index:
         block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
-        filter: إنتقاء \ فلترة
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -86,29 +86,30 @@ ar:
         order: ترتيب حسب
         orders:
           created_at: الأحدث
-          flags: علامات أكثر
+          flags: العلامة مطلوبة
         title: استثمارات الميزانية
     proposal_notifications:
       index:
-        block_authors: حظر الكاتبين
+        block_authors: حظر المؤلفين\المشاركين
         confirm: هل أنت متأكد؟
-        filter: إنتقاء \ فلترة
+        filter: ترشيح
         filters:
           all: الكل
           pending_review: بانتظار المراجعة
           ignored: شوهد
         headers:
-          proposal_notification: التنبيه لاقتراح
+          moderate: المشرف
+          proposal_notification: إشعار المقترح
         hide_proposal_notifications: الإقتراحات المخفية
         ignore_flags: شوهد
-        order: الطلب من طرف
+        order: ترتيب حسب
         orders:
           created_at: الأحدث
           moderated: تمت المراجعة
-        title: التنبيه لاقتراح
+        title: إشعارات المقترح
     users:
       index:
-        hidden: محظور
+        hidden: ممنوع
         hide: حظر
         search: بحث
         search_placeholder: البريد الإلكتروني أو اسم المستخدم

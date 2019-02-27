@@ -57,4 +57,4 @@ pt-BR:
         recommendation_three: Aproveite este espaço, ele é seu também.
   topics:
     show:
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário.
+      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário

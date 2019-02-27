@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Admin budget headings" do
 
@@ -9,6 +9,11 @@ feature "Admin budget headings" do
     admin = create(:administrator)
     login_as(admin.user)
   end
+
+  it_behaves_like "translatable",
+                  "budget_heading",
+                  "edit_admin_budget_group_heading_path",
+                  %w[name]
 
   context "Feature flag" do
 
@@ -151,6 +156,30 @@ feature "Admin budget headings" do
       expect(find_field("Allow content block")).not_to be_checked
     end
 
+    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+      heading = create(:budget_heading, group: group)
+      old_slug = heading.slug
+
+      visit edit_admin_budget_group_heading_path(budget, group, heading)
+
+      select "Español", from: "translation_locale"
+      fill_in "Heading name", with: "Spanish name"
+      click_button "Save heading"
+
+      expect(page).to have_content "Heading updated successfully"
+      expect(heading.reload.slug).to eq old_slug
+
+      visit edit_admin_budget_group_heading_path(budget, group, heading)
+
+      click_link "English"
+      fill_in "Heading name", with: "New English Name"
+      click_button "Save heading"
+
+      expect(page).to have_content "Heading updated successfully"
+      expect(heading.reload.slug).not_to eq old_slug
+      expect(heading.slug).to eq "new-english-name"
+    end
+
   end
 
   context "Update" do
@@ -203,7 +232,7 @@ feature "Admin budget headings" do
 
       expect(page).not_to have_content "Heading updated successfully"
       expect(page).to have_css("label.error", text: "Heading name")
-      expect(page).to have_content "has already been taken"
+      expect(page).to have_css("small.error", text: "has already been taken")
     end
 
   end

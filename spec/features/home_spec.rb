@@ -1,16 +1,16 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Home" do
 
   context "For not logged users" do
 
-    scenario 'Welcome message' do
+    scenario "Welcome message" do
       visit root_path
 
       expect(page).to have_content "CONSUL"
     end
 
-    scenario 'Not display recommended section' do
+    scenario "Not display recommended section" do
       debate = create(:debate)
 
       visit root_path
@@ -25,7 +25,7 @@ feature "Home" do
     feature "Recommended" do
 
       background do
-        Setting['feature.user.recommendations'] = true
+        Setting["feature.user.recommendations"] = true
         user = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
         create(:follow, followable: proposal, user: user)
@@ -33,25 +33,25 @@ feature "Home" do
       end
 
       after do
-        Setting['feature.user.recommendations'] = nil
+        Setting["feature.user.recommendations"] = nil
       end
 
-      scenario 'Display recommended section when feature flag recommended is active' do
+      scenario "Display recommended section when feature flag recommended is active" do
         debate = create(:debate, tag_list: "Sport")
         visit root_path
         expect(page).to have_content "Recommendations that may interest you"
       end
 
-      scenario 'Not display recommended section when feature flag recommended is not active' do
+      scenario "Not display recommended section when feature flag recommended is not active" do
         debate = create(:debate, tag_list: "Sport")
-        Setting['feature.user.recommendations'] = false
+        Setting["feature.user.recommendations"] = false
 
         visit root_path
 
         expect(page).not_to have_content "Recommendations that may interest you"
       end
 
-      scenario 'Display debates' do
+      scenario "Display debates" do
         debate = create(:debate, tag_list: "Sport")
 
         visit root_path
@@ -60,13 +60,13 @@ feature "Home" do
         expect(page).to have_content debate.description
       end
 
-      scenario 'Display all recommended debates link' do
+      scenario "Display all recommended debates link" do
         debate = create(:debate, tag_list: "Sport")
         visit root_path
         expect(page).to have_link("All recommended debates", href: debates_path(order: "recommendations"))
       end
 
-      scenario 'Display proposal' do
+      scenario "Display proposal" do
         proposal = create(:proposal, tag_list: "Sport")
 
         visit root_path
@@ -75,35 +75,35 @@ feature "Home" do
         expect(page).to have_content proposal.description
       end
 
-      scenario 'Display all recommended proposals link' do
+      scenario "Display all recommended proposals link" do
         debate = create(:proposal, tag_list: "Sport")
         visit root_path
         expect(page).to have_link("All recommended proposals", href: proposals_path(order: "recommendations"))
       end
 
-      scenario 'Display orbit carrousel' do
+      scenario "Display orbit carrousel" do
         create_list(:debate, 3, tag_list: "Sport")
 
         visit root_path
 
-        expect(page).to have_selector('li[data-slide="0"]')
-        expect(page).to have_selector('li[data-slide="1"]', visible: false)
-        expect(page).to have_selector('li[data-slide="2"]', visible: false)
+        expect(page).to have_selector("li[data-slide='0']")
+        expect(page).to have_selector("li[data-slide='1']", visible: false)
+        expect(page).to have_selector("li[data-slide='2']", visible: false)
       end
 
-      scenario 'Display recommended show when click on carousel' do
+      scenario "Display recommended show when click on carousel" do
         debate = create(:debate, tag_list: "Sport")
 
         visit root_path
 
-        within('#section_recommended') do
+        within("#section_recommended") do
           click_on debate.title
         end
 
         expect(page).to have_current_path(debate_path(debate))
       end
 
-      scenario 'Do not display recommended section when there are not debates and proposals' do
+      scenario "Do not display recommended section when there are not debates and proposals" do
         visit root_path
         expect(page).not_to have_content "Recommendations that may interest you"
       end
@@ -111,32 +111,32 @@ feature "Home" do
 
   end
 
-  feature 'IE alert' do
-    scenario 'IE visitors are presented with an alert until they close it', :page_driver do
+  feature "IE alert" do
+    scenario "IE visitors are presented with an alert until they close it", :page_driver do
       # Selenium API does not include page request/response inspection methods
       # so we must use Capybara::RackTest driver to set the browser's headers
       Capybara.current_session.driver.header(
-        'User-Agent',
-        'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'
+        "User-Agent",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
       )
 
       visit root_path
       expect(page).to have_xpath(ie_alert_box_xpath, visible: false)
-      expect(page.driver.request.cookies['ie_alert_closed']).to be_nil
+      expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
 
       # faking close button, since a normal find and click
       # will not work as the element is inside a HTML conditional comment
-      page.driver.browser.set_cookie('ie_alert_closed=true')
+      page.driver.browser.set_cookie("ie_alert_closed=true")
 
       visit root_path
       expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
-      expect(page.driver.request.cookies['ie_alert_closed']).to eq('true')
+      expect(page.driver.request.cookies["ie_alert_closed"]).to eq("true")
     end
 
-    scenario 'non-IE visitors are not bothered with IE alerts', :page_driver do
+    scenario "non-IE visitors are not bothered with IE alerts", :page_driver do
       visit root_path
       expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
-      expect(page.driver.request.cookies['ie_alert_closed']).to be_nil
+      expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
     end
 
     def ie_alert_box_xpath
@@ -144,7 +144,7 @@ feature "Home" do
     end
   end
 
-  scenario 'if there are cards, the "featured" title will render' do
+  scenario "if there are cards, the 'featured' title will render" do
     card = create(:widget_card,
       title: "Card text",
       description: "Card description",
@@ -157,7 +157,7 @@ feature "Home" do
     expect(page).to have_css(".title", text: "Featured")
   end
 
-  scenario 'if there are no cards, the "featured" title will not render' do
+  scenario "if there are no cards, the 'featured' title will not render" do
     visit root_path
 
     expect(page).not_to have_css(".title", text: "Featured")

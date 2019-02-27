@@ -51,18 +51,12 @@ Setting["facebook_handle"] = nil
 Setting["youtube_handle"] = nil
 Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
-Setting["blog_url"] = nil
-Setting["transparency_url"] = nil
-Setting["opendata_url"] = "/opendata"
 
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
 
 # CONSUL installation's organization name
 Setting["org_name"] = "CONSUL"
-
-# CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
 
 # Meta tags for SEO
 Setting["meta_title"] = nil
@@ -94,16 +88,6 @@ Setting['feature.help_page'] = true
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
 
-# Banner styles
-Setting['banner-style.banner-style-one']   = "Banner style 1"
-Setting['banner-style.banner-style-two']   = "Banner style 2"
-Setting['banner-style.banner-style-three'] = "Banner style 3"
-
-# Banner images
-Setting['banner-img.banner-img-one']   = "Banner image 1"
-Setting['banner-img.banner-img-two']   = "Banner image 2"
-Setting['banner-img.banner-img-three'] = "Banner image 3"
-
 # Proposal notifications
 Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
@@ -118,9 +102,6 @@ Setting['min_age_to_participate'] = 16
 
 # Featured proposals
 Setting['featured_proposals_number'] = 3
-
-# Proposal improvement url path ('/help/proposal-improvement')
-Setting['proposal_improvement_path'] = nil
 
 # City map feature default configuration (Greenwich)
 Setting['map_latitude'] = 51.48

@@ -29,7 +29,7 @@ es:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
-      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
+      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
@@ -181,6 +181,7 @@ es:
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: el proyecto de gasto
+    budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
     poll/shift: el turno
     poll/question/answer: la respuesta
@@ -216,9 +217,8 @@ es:
       administration_menu: Admin
       administration: Administración
       available_locales: Idiomas disponibles
-      collaborative_legislation: Procesos legislativos
+      collaborative_legislation: Legislación colaborativa
       debates: Debates
-      external_link_blog: Blog
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestión
@@ -325,8 +325,8 @@ es:
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
-      tags_label: Temas
-      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      tags_label: Etiquetas
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
@@ -397,8 +397,6 @@ es:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      improve_info: "Mejora tu campaña y consigue más apoyos"
-      improve_info_link: "Ver más información"
       already_supported: '¡Ya has apoyado esta propuesta, compártela!'
       comments:
         zero: Sin comentarios
@@ -487,7 +485,7 @@ es:
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
-      documents: Documentación
+      documents: Documentos
       zoom_plus: Ampliar imagen
       read_more: "Leer más sobre %{answer}"
       read_less: "Leer menos sobre %{answer}"
@@ -622,7 +620,6 @@ es:
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
@@ -749,7 +746,7 @@ es:
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
-    organizations: Las organizaciones no pueden votar
+    organizations: Las organizaciones no pueden votar.
     signin: iniciar sesión
     signup: registrarte
     supports: Apoyos

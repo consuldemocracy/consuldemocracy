@@ -1,10 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe MigrateSpendingProposalsToInvestments do
 
   let(:importer) { described_class.new }
 
-  describe '#import' do
+  describe "#import" do
 
     it "Creates the budget if it doesn't exist" do
       sp = create(:spending_proposal)
@@ -57,9 +57,9 @@ describe MigrateSpendingProposalsToInvestments do
       feasible   = create(:spending_proposal, feasible: true)
       unfeasible = create(:spending_proposal, feasible: false)
 
-      expect(importer.import(sp).feasibility).to eq('undecided')
-      expect(importer.import(feasible).feasibility).to eq('feasible')
-      expect(importer.import(unfeasible).feasibility).to eq('unfeasible')
+      expect(importer.import(sp).feasibility).to eq("undecided")
+      expect(importer.import(feasible).feasibility).to eq("feasible")
+      expect(importer.import(unfeasible).feasibility).to eq("unfeasible")
     end
 
     it "Imports valuation assignments" do

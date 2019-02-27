@@ -4,6 +4,10 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include RandomSeed
+    include ImageAttributes
+
+    PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 
@@ -36,7 +40,7 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(10).for_render
+      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
 
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
@@ -116,21 +120,11 @@ module Budgets
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
-      def set_random_seed
-        if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand
-          params[:random_seed] = seed
-          session[:random_seed] = params[:random_seed]
-        else
-          params[:random_seed] = nil
-        end
-      end
-
       def investment_params
         params.require(:budget_investment)
               .permit(:title, :description, :heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
-                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom])
       end
@@ -166,11 +160,11 @@ module Budgets
 
       def investments
         if @current_order == 'random'
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}", params[:random_seed])
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .sort_by_random(session[:random_seed])
         else
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}")
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}")
         end
       end
 

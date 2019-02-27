@@ -1,6 +1,0 @@
-es-PR:
-  date:
-    order:
-      - :day
-      - :month
-      - :year

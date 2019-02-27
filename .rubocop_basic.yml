@@ -30,6 +30,12 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Lint/LiteralAsCondition:
+  Enabled: true
+
+Lint/UselessAssignment:
+  Enabled: true
+
 Metrics/LineLength:
   Max: 100
 

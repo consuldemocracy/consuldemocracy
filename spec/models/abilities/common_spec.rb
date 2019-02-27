@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'cancan/matchers'
+require "rails_helper"
+require "cancan/matchers"
 
 describe Abilities::Common do
   subject(:ability) { Ability.new(user) }
@@ -15,10 +15,10 @@ describe Abilities::Common do
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
 
-  let(:accepting_budget) { create(:budget, phase: 'accepting') }
-  let(:reviewing_budget) { create(:budget, phase: 'reviewing') }
-  let(:selecting_budget) { create(:budget, phase: 'selecting') }
-  let(:balloting_budget) { create(:budget, phase: 'balloting') }
+  let(:accepting_budget) { create(:budget, phase: "accepting") }
+  let(:reviewing_budget) { create(:budget, phase: "reviewing") }
+  let(:selecting_budget) { create(:budget, phase: "selecting") }
+  let(:balloting_budget) { create(:budget, phase: "balloting") }
 
   let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
   let(:investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget) }
@@ -98,7 +98,7 @@ describe Abilities::Common do
   it { should be_able_to(:destroy, own_budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_image) }
 
-  describe 'flagging content' do
+  describe "flagging content" do
     it { should be_able_to(:flag, debate)   }
     it { should be_able_to(:unflag, debate) }
 

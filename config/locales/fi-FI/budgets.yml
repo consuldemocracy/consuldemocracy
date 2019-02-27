@@ -1,1 +1,53 @@
 fi:
+  budgets:
+    ballots:
+      show:
+        remove: Poista ääni
+    phase:
+      informing: Tiedot
+    index:
+      see_results: Näytä tulokset
+      milestones: Tavoitteet
+    investments:
+      form:
+        tag_category_label: "Kategoriat"
+        tags_label: Tunnisteet
+      index:
+        search_form:
+          button: Etsi
+          title: Etsi
+        sidebar:
+          verify_account: "vahvista tilisi"
+          sign_in: "kirjaudu"
+          sign_up: "rekisteröidy"
+        orders:
+          random: satunnainen
+          confidence_score: korkeimmin arvioitu
+      show:
+        author_deleted: Käyttäjä poistettu
+        share: Jaa
+        votes: Äänet
+        price: Hinta
+        comments_tab: Kommentit
+        milestones_tab: Tavoitteet
+        author: Tekijä
+      investment:
+        add: Ääni
+        support_title: Tue tätä projektia
+        supports:
+          zero: Ei tukijoita
+          one: 1 tukija
+          other: "%{count} tukijaa"
+        give_support: Tue
+    show:
+      group: Ryhmä
+      see_results: Näytä tulokset
+    results:
+      ballot_lines_count: Äänet
+      show_all_link: Näytä kaikki
+      price: Hinta
+    executions:
+      link: "Tavoitteet"
+      page_title: "%{budget} - Tavoitteet"
+      filters:
+        all: "Kaikki (%{count})"

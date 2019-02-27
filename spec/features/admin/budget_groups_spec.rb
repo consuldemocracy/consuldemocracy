@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Admin budget groups" do
 
@@ -8,6 +8,11 @@ feature "Admin budget groups" do
     admin = create(:administrator)
     login_as(admin.user)
   end
+
+  it_behaves_like "translatable",
+                  "budget_group",
+                  "edit_admin_budget_group_path",
+                  %w[name]
 
   context "Feature flag" do
 
@@ -140,6 +145,30 @@ feature "Admin budget groups" do
       expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"
     end
 
+    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+      group = create(:budget_group, budget: budget)
+      old_slug = group.slug
+
+      visit edit_admin_budget_group_path(budget, group)
+
+      select "Español", from: "translation_locale"
+      fill_in "Group name", with: "Spanish name"
+      click_button "Save group"
+
+      expect(page).to have_content "Group updated successfully"
+      expect(group.reload.slug).to eq old_slug
+
+      visit edit_admin_budget_group_path(budget, group)
+
+      click_link "English"
+      fill_in "Group name", with: "New English Name"
+      click_button "Save group"
+
+      expect(page).to have_content "Group updated successfully"
+      expect(group.reload.slug).not_to eq old_slug
+      expect(group.slug).to eq "new-english-name"
+    end
+
   end
 
   context "Update" do
@@ -173,7 +202,7 @@ feature "Admin budget groups" do
 
       expect(page).not_to have_content "Group updated successfully"
       expect(page).to have_css("label.error", text: "Group name")
-      expect(page).to have_content "has already been taken"
+      expect(page).to have_css("small.error", text: "has already been taken")
     end
 
   end

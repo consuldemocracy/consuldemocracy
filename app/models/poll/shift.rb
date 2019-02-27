@@ -35,6 +35,10 @@ class Poll
       end
     end
 
+    def unable_to_destroy?
+      booth.booth_assignments.map(&:unable_to_destroy?).any?
+    end
+
     def destroy_officer_assignments
       Poll::OfficerAssignment.where(booth_assignment: booth.booth_assignments,
                                     officer: officer,

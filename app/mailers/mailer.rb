@@ -17,14 +17,11 @@ class Mailer < ApplicationMailer
   end
 
   def reply(reply)
-    @reply = reply
-    @commentable = @reply.commentable
-    parent = Comment.find(@reply.parent_id)
-    @recipient = parent.author
-    @email_to = @recipient.email
+    @email = ReplyEmail.new(reply)
+    @email_to = @email.to
 
-    with_user(@recipient) do
-      mail(to: @email_to, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+    with_user(@email.recipient) do
+      mail(to: @email_to, subject: @email.subject) if @email.can_be_sent?
     end
   end
 

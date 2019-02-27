@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'cancan/matchers'
+require "rails_helper"
+require "cancan/matchers"
 
 describe Abilities::Valuator do
   subject(:ability) { Ability.new(user) }
@@ -8,9 +8,9 @@ describe Abilities::Valuator do
   let(:valuator) { create(:valuator) }
   let(:group) { create(:valuator_group) }
   let(:non_assigned_investment) { create(:budget_investment) }
-  let(:assigned_investment) { create(:budget_investment, budget: create(:budget, phase: 'valuating')) }
-  let(:group_assigned_investment) { create(:budget_investment, budget: create(:budget, phase: 'valuating')) }
-  let(:finished_assigned_investment) { create(:budget_investment, budget: create(:budget, phase: 'finished')) }
+  let(:assigned_investment) { create(:budget_investment, budget: create(:budget, phase: "valuating")) }
+  let(:group_assigned_investment) { create(:budget_investment, budget: create(:budget, phase: "valuating")) }
+  let(:finished_assigned_investment) { create(:budget_investment, budget: create(:budget, phase: "finished")) }
 
   before do
     assigned_investment.valuators << valuator

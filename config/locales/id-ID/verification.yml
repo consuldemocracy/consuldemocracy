@@ -33,10 +33,10 @@ id:
         offices: Warga Dukungan Kantor
         send_letter: Kirimkan saya sebuah surat dengan kode
         title: Selamat!
-        user_permission_info: Dengan akun anda dapat...
+        user_permission_info: Dengan akun Anda, Anda dapat...
       update:
         flash:
-          success: Kode benar. Akun anda sekarang telah diverifikasi
+          success: Kode yang benar. Akun anda telah terverifikasi
     redirect_notices:
       already_verified: Akun anda sudah diverifikasi
       email_already_sent: Kami sudah mengirimkan sebuah surel dengan sebuah tautan konfirmasi. Jika anda tidak dapat menemukan surel tersebut, anda dapat meminta ulang di sini
@@ -50,24 +50,24 @@ id:
         accept_terms_text: Saya menerima %{terms_url} Sensus
         accept_terms_text_title: Saya menerima syarat dan ketentuan dari akses Sensus
         date_of_birth: Tanggal lahir
-        document_number: Nomor dokumen
+        document_number: Nomor Dokumen
         document_number_help_title: Bantuan
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P'
         document_type:
           passport: Paspor
           residence_card: Kartu kediaman
           spanish_id: DNI
-        document_type_label: Jenis dokumen
+        document_type_label: Tipe dokumen
         error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi
         error_not_allowed_postal_code: Supaya bisa diverifikasi, anda harus terdaftar.
         error_verifying_census: Sensus tidak mampu untuk memverifikasi informasi anda. Silahkan konfirmasikan bahwa rincian sensus anda adalah benar dengan cara menghubungi ke Dewan Kota atau kunjungi salah satu %{offices}.
         error_verifying_census_offices: Kantor Dukungan Warga
         form_errors: mencegah verifikasi tempat tinggal anda
-        postal_code: Kode pos
+        postal_code: Kode Pos
         postal_code_note: Untuk memverifikasi akun anda harus terdaftar
         terms: syarat dan ketentuan akses
-        title: Verifikasi tempat tinggal
-        verify_residence: Verifikasi tinggal
+        title: Verifikasi tinggal
+        verify_residence: Verifikasi tempat tinggal
     sms:
       create:
         flash:
@@ -88,7 +88,7 @@ id:
         error: Kode konfirmasi salah
         flash:
           level_three:
-            success: Kode yang benar. Akun anda telah terverifikasi
+            success: Kode benar. Akun anda sekarang telah diverifikasi
           level_two:
             success: Kode benar
     step_1: Tempat tinggal
@@ -103,7 +103,7 @@ id:
       form:
         submit_button: Kirim kode
       show:
-        email_title: Emails
+        email_title: Email
         explanation: Kami saat ini memegang rincian berikut pada Daftar; silahkan pilih sebuah metode untuk kode konfirmasi anda yang akan dikirim.
         phone_title: Nomor telepon
         title: Informasi yang tersedia

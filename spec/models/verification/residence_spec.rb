@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Verification::Residence do
 
@@ -70,12 +70,12 @@ describe Verification::Residence do
       residence.save
 
       user.reload
-      expect(user.document_number).to eq('12345678Z')
+      expect(user.document_number).to eq("12345678Z")
       expect(user.document_type).to eq("1")
       expect(user.date_of_birth.year).to eq(1980)
       expect(user.date_of_birth.month).to eq(12)
       expect(user.date_of_birth.day).to eq(31)
-      expect(user.gender).to eq('male')
+      expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
     end
 

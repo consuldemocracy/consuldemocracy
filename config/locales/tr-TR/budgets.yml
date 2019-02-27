@@ -5,4 +5,20 @@ tr:
         title: Oy
         amount_spent: Harcanan miktar
         remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
+        no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oy kaldırmak
+    phase:
+      accepting: Projeler kabul ediliyor
+      reviewing: Projeler inceleniyor
+      selecting: Projeler seçiliyor
+      publishing_prices: Projelerin fiyatları yayınlanıyor
+      balloting: Projeler oylanıyor
+      reviewing_ballots: Oylama inceleniyor
+    investments:
+      show:
+        votes: Oylar
+        comments_tab: Yorumlar
+      investment:
+        add: Oy
+    results:
+      ballot_lines_count: Oylar

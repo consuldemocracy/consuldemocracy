@@ -19,7 +19,7 @@ pl:
         title: Witaj
         welcome: Witaj
       reset_password_instructions:
-        change_link: Zmień moje hasło
+        change_link: Zmień hasło
         hello: Witaj
         ignore_text: Jeżeli nie zażądałeś zmiany hasła, możesz zignorować ten e-mail.
         info_text: Twoje hasło nie zostanie zmienione dopóki nie wejdziesz w link i nie dokonasz jego edycji.
@@ -57,7 +57,7 @@ pl:
           title: Rejestracja organizacji / kolektywu
     passwords:
       edit:
-        change_submit: Zmień hasło
+        change_submit: Zmień moje hasło
         password_confirmation_label: Potwierdź nowe hasło
         password_label: Nowe hasło
         title: Zmień hasło
