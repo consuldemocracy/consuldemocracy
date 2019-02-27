@@ -7,7 +7,7 @@ da:
     attributes:
       verification:
         residence:
-          document_type: "Type af dokument"
+          document_type: "Dokumenttype"
           document_number: "Dokumentnummer (bogstaver inkluderet)"
           date_of_birth: "Fødselsdato"
           postal_code: "Postnummer"
@@ -17,6 +17,6 @@ da:
         email:
           recipient: "Email"
       officing/residence:
-        document_type: "Type af dokument"
+        document_type: "Dokumenttype"
         document_number: "Dokumentnummer (bogstaver inkluderet)"
         year_of_birth: "Fødselsår"
