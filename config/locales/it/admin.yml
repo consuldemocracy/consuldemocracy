@@ -1044,10 +1044,6 @@ it:
       flash:
         updated: Valore aggiornato
       index:
-        banners: Stili banner
-        banner_imgs: Immagini banner
-        no_banners_images: Nessuna immagine banner
-        no_banners_styles: Nessuno stile banner
         title: Impostazioni di configurazione
         update_setting: Aggiorna
         feature_flags: Funzionalità
