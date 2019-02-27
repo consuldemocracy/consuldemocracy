@@ -1008,10 +1008,6 @@ ru:
       flash:
         updated: Значение обновлено
       index:
-        banners: Стили баннеров
-        banner_imgs: Изображения баннеров
-        no_banners_images: Нет изображений баннеров
-        no_banners_styles: Нет стилей баннеров
         title: Настройки конфигурации
         update_setting: Обновить
         feature_flags: Функции
