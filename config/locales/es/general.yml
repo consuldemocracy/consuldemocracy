@@ -219,7 +219,6 @@ es:
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
       debates: Debates
-      external_link_blog: Blog
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestión
@@ -398,8 +397,6 @@ es:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      improve_info: "Mejora tu campaña y consigue más apoyos"
-      improve_info_link: "Ver más información"
       already_supported: '¡Ya has apoyado esta propuesta, compártela!'
       comments:
         zero: Sin comentarios
@@ -623,7 +620,6 @@ es:
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
