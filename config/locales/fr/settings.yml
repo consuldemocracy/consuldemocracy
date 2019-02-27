@@ -29,7 +29,6 @@ fr:
     instagram_handle: "Nom d'utilisateur Instagram"
     url: "URL principale"
     org_name: "Nom de l'organisation"
-    place_name: "Nom du lieu"
     related_content_score_threshold: "Seuil de score pour le contenu associé"
     map_latitude: "Latitude"
     map_longitude: "Longitude"
@@ -38,11 +37,7 @@ fr:
     meta_description: "Description du site (SEO)"
     meta_keywords: "Mots-clés (SEO)"
     min_age_to_participate: Âge minimum de participation
-    blog_url: "URL du blog"
-    transparency_url: "URL de transparence"
-    opendata_url: "URL d'Open Data"
     verification_offices_url: URL des bureaux de vérification
-    proposal_improvement_path: Lien interne vers les suggestions d'amélioration de la proposition
     feature:
       budgets: "Budget participatif"
       twitter_login: "Se connecter avec Twitter"
