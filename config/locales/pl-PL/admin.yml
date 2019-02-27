@@ -1047,10 +1047,6 @@ pl:
       flash:
         updated: Wartość zaktualizowana
       index:
-        banners: Style banerów
-        banner_imgs: Obrazy banerów
-        no_banners_images: Brak obrazów banerów
-        no_banners_styles: Brak styli banerów
         title: Ustawienia konfiguracji
         update_setting: Zaktualizuj
         feature_flags: Funkcje
