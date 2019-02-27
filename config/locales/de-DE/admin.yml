@@ -1129,10 +1129,6 @@ de:
       flash:
         updated: Wert aktualisiert
       index:
-        banners: Stil des Banners
-        banner_imgs: Banner-Bilder
-        no_banners_images: Keine Banner-Bilder
-        no_banners_styles: Keine Banner-Stile
         title: Konfigurationseinstellungen
         update_setting: Aktualisieren
         feature_flags: Funktionen
