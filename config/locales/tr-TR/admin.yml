@@ -1133,10 +1133,6 @@ tr:
       flash:
         updated: Değer güncellendi
       index:
-        banners: Banner stilleri
-        banner_imgs: Banner resimleri
-        no_banners_images: Hiç banner görüntüsü yok
-        no_banners_styles: Hiç banner stili yok
         title: Yapılandırma ayarları
         update_setting: Güncelleme
         feature_flags: Özellikler
