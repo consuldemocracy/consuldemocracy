@@ -97,7 +97,6 @@ Setting['mailer_from_name'] = 'CONSUL'
 Setting['mailer_from_address'] = 'noreply@consul.dev'
 
 # Verification settings
-Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
 # Featured proposals
