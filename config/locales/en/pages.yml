@@ -154,10 +154,7 @@ en:
         title: Compatibility with standards and visual design
         description_html: 'All pages of this website comply with the <strong>Accessibility Guidelines</strong> or General Principles of Accessible Design established by the Working Group <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> belonging to W3C.'
     titles:
-      accessibility: Accessibility
-      conditions: Terms of use
       help: "What is %{org}? - Citizen participation"
-      privacy: Privacy Policy
     verify:
       code: Code you received in letter
       email: Email

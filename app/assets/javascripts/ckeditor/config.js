@@ -98,7 +98,7 @@ CKEDITOR.editorConfig = function( config )
   ];
 
   config.toolbar_admin = config.toolbar_mini.concat([
-    { name: 'insert', items: [ 'Image' ] }
+    { name: 'insert', items: [ 'Image', 'Table' ] }
   ]);
 
   config.toolbar = "mini";

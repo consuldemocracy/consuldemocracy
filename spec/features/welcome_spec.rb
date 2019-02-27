@@ -2,12 +2,29 @@ require "rails_helper"
 
 feature "Welcome screen" do
 
-  scenario "a regular users sees it the first time he logs in" do
-    user = create(:user)
+  let(:budget) { create(:budget) }
 
+  scenario "for a not verified user" do
+    user = create(:user)
     login_through_form_as(user)
 
-    expect(page).to have_current_path(welcome_path)
+    expect(page).to have_current_path(page_path("welcome_not_verified"))
+  end
+
+  scenario "for a level two verified user" do
+    user = create(:user, :level_two)
+    login_as(user)
+
+    visit welcome_path
+    expect(page).to have_current_path(page_path("welcome_level_two_verified"))
+  end
+
+  scenario "for a level three verified user" do
+    user = create(:user, :level_three)
+    login_as(user)
+
+    visit welcome_path
+    expect(page).to have_current_path(page_path("welcome_level_three_verified"))
   end
 
   scenario "a regular user does not see it when coing to /email" do

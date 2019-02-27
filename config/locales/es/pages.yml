@@ -179,10 +179,7 @@ es:
         title: Compatibilidad con estándares y diseño visual
         description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
-      accessibility: Accesibilidad
-      conditions: Condiciones de uso
       help: "¿Qué es %{org}? - Participación ciudadana"
-      privacy: Política de privacidad
     verify:
       code: Código que has recibido en tu carta
       email: Email

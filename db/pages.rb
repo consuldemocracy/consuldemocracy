@@ -1,0 +1,7 @@
+require_relative "pages/welcome_level_three_verified"
+require_relative "pages/welcome_level_two_verified"
+require_relative "pages/welcome_not_verified"
+require_relative "pages/accessibility"
+require_relative "pages/conditions"
+require_relative "pages/privacy"
+require_relative "pages/faq"

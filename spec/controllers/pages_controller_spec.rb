@@ -32,7 +32,7 @@ describe PagesController do
     end
 
     it "includes a faq page" do
-      get :show, id: "help/faq/index"
+      get :show, id: :faq
       expect(response).to be_ok
     end
   end
