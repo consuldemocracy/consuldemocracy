@@ -218,7 +218,6 @@ de:
       available_locales: Verfügbare Sprachen
       collaborative_legislation: Gesetzgebungsverfahren
       debates: Diskussionen
-      external_link_blog: Blog
       locale: 'Sprache:'
       logo: Consul-Logo
       management: Verwaltung
@@ -396,8 +395,6 @@ de:
         guide: "Nun können Sie ihren Vorschlag teilen, damit andere ihn unterstützen."
         edit: "Bevor Sie ihren Text teilen, können Sie ihn beliebig bearbeiten. "
         view_proposal: Nicht jetzt. Gehe zu meinem Vorschlag
-      improve_info: "Verbessern Sie ihre Kampagne und erhalten Sie stärkere Unterstützung"
-      improve_info_link: "Weitere Informationen anzeigen"
       already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie es!
       comments:
         zero: Keine Kommentare
@@ -616,7 +613,6 @@ de:
       see_more: Weitere Empfehlungen
       hide: Empfehlungen ausblenden
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
