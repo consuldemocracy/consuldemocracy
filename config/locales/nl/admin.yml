@@ -1062,10 +1062,6 @@ nl:
       flash:
         updated: Value updated
       index:
-        banners: Banieren
-        banner_imgs: Banier beelden
-        no_banners_images: Geen banner afbeeldingen
-        no_banners_styles: Geen banner stijlen
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
