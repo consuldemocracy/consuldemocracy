@@ -616,7 +616,6 @@ es:
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"

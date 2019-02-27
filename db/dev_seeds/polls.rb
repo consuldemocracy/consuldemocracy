@@ -1,30 +1,30 @@
 section "Creating polls" do
 
-  Poll.create(name: I18n.t('seeds.polls.current_poll'),
-              slug: I18n.t('seeds.polls.current_poll').parameterize,
+  Poll.create(name: I18n.t("seeds.polls.current_poll"),
+              slug: I18n.t("seeds.polls.current_poll").parameterize,
               starts_at: 7.days.ago,
               ends_at:   7.days.from_now,
               geozone_restricted: false)
 
-  Poll.create(name: I18n.t('seeds.polls.current_poll_geozone_restricted'),
-              slug: I18n.t('seeds.polls.current_poll_geozone_restricted').parameterize,
+  Poll.create(name: I18n.t("seeds.polls.current_poll_geozone_restricted"),
+              slug: I18n.t("seeds.polls.current_poll_geozone_restricted").parameterize,
               starts_at: 5.days.ago,
               ends_at:   5.days.from_now,
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
-  Poll.create(name: I18n.t('seeds.polls.recounting_poll'),
-              slug: I18n.t('seeds.polls.recounting_poll').parameterize,
+  Poll.create(name: I18n.t("seeds.polls.recounting_poll"),
+              slug: I18n.t("seeds.polls.recounting_poll").parameterize,
               starts_at: 15.days.ago,
               ends_at:   2.days.ago)
 
-  Poll.create(name: I18n.t('seeds.polls.expired_poll_without_stats'),
-              slug: I18n.t('seeds.polls.expired_poll_without_stats').parameterize,
+  Poll.create(name: I18n.t("seeds.polls.expired_poll_without_stats"),
+              slug: I18n.t("seeds.polls.expired_poll_without_stats").parameterize,
               starts_at: 2.months.ago,
               ends_at:   1.month.ago)
 
-  Poll.create(name: I18n.t('seeds.polls.expired_poll_with_stats'),
-              slug: I18n.t('seeds.polls.expired_poll_with_stats').parameterize,
+  Poll.create(name: I18n.t("seeds.polls.expired_poll_with_stats"),
+              slug: I18n.t("seeds.polls.expired_poll_with_stats").parameterize,
               starts_at: 2.months.ago,
               ends_at:   1.month.ago,
               results_enabled: true,
@@ -47,7 +47,7 @@ end
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
     (1..4).to_a.sample.times do
-      question_title = Faker::Lorem.sentence(3).truncate(60) + '?'
+      question_title = Faker::Lorem.sentence(3).truncate(60) + "?"
       question = Poll::Question.new(author: User.all.sample,
                                     title: question_title,
                                     poll: poll)
@@ -58,7 +58,7 @@ section "Creating Poll Questions & Answers" do
       end
       question.save!
       Faker::Lorem.words((2..4).to_a.sample).each do |answer_title|
-        description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+        description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
         answer = Poll::Question::Answer.new(question: question,
                                             title: answer_title.capitalize,
                                             description: description)
@@ -125,7 +125,7 @@ section "Creating Poll Voters" do
                        document_number: user.document_number,
                        user: user,
                        poll: poll,
-                       origin: 'booth',
+                       origin: "booth",
                        officer: officer,
                        officer_assignment: officer.officer_assignments.sample,
                        booth_assignment: poll.booth_assignments.sample)
@@ -137,7 +137,7 @@ section "Creating Poll Voters" do
                        document_number: user.document_number,
                        user: user,
                        poll: poll,
-                       origin: 'web',
+                       origin: "web",
                        token: SecureRandom.hex(32))
   end
 

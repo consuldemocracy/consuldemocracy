@@ -1,6 +1,6 @@
 section "Creating Users" do
   def create_user(email, username = Faker::Name.name)
-    pwd = '12345678'
+    pwd = "12345678"
     User.create!(
       username:               username,
       email:                  email,
@@ -17,23 +17,23 @@ section "Creating Users" do
   def unique_document_number
     @document_number ||= 12345678
     @document_number += 1
-    "#{@document_number}#{[*'A'..'Z'].sample}"
+    "#{@document_number}#{[*"A".."Z"].sample}"
   end
 
-  admin = create_user('admin@madrid.es', 'admin')
+  admin = create_user("admin@madrid.es", "admin")
   admin.create_administrator
   admin.update(residence_verified_at: Time.current,
                confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                verified_at: Time.current, document_number: unique_document_number)
   admin.create_poll_officer
 
-  moderator = create_user('mod@madrid.es', 'mod')
+  moderator = create_user("mod@madrid.es", "mod")
   moderator.create_moderator
   moderator.update(residence_verified_at: Time.current,
                    confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                    verified_at: Time.current, document_number: unique_document_number)
 
-  manager = create_user('manager@madrid.es', 'manager')
+  manager = create_user("manager@madrid.es", "manager")
   manager.create_manager
   manager.update(residence_verified_at: Time.current,
                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
@@ -47,26 +47,26 @@ section "Creating Users" do
                     verified_at: Time.current, document_number: unique_document_number)
   end
 
-  poll_officer = create_user('poll_officer@madrid.es', 'Paul O. Fisher')
+  poll_officer = create_user("poll_officer@madrid.es", "Paul O. Fisher")
   poll_officer.create_poll_officer
   poll_officer.update(residence_verified_at: Time.current,
                       confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                       verified_at: Time.current, document_number: unique_document_number)
 
-  poll_officer2 = create_user('poll_officer2@madrid.es', 'Pauline M. Espinosa')
+  poll_officer2 = create_user("poll_officer2@madrid.es", "Pauline M. Espinosa")
   poll_officer2.create_poll_officer
   poll_officer2.update(residence_verified_at: Time.current,
                        confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                        verified_at: Time.current, document_number: unique_document_number)
 
-  create_user('unverified@madrid.es', 'unverified')
+  create_user("unverified@madrid.es", "unverified")
 
-  level_2 = create_user('leveltwo@madrid.es', 'level 2')
+  level_2 = create_user("leveltwo@madrid.es", "level 2")
   level_2.update(residence_verified_at: Time.current,
                  confirmed_phone: Faker::PhoneNumber.phone_number,
                  document_number: unique_document_number, document_type: "1")
 
-  verified = create_user('verified@madrid.es', 'verified')
+  verified = create_user("verified@madrid.es", "verified")
   verified.update(residence_verified_at: Time.current,
                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)

@@ -16,7 +16,7 @@ section "Creating Newsletters" do
     Newsletter.create!(
       subject: "Newsletter subject #{n}",
       segment_recipient: UserSegments.segments.sample,
-      from: 'no-reply@consul.dev',
+      from: "no-reply@consul.dev",
       body: newsletter_body.sample,
       sent_at: [Time.now, nil].sample
     )

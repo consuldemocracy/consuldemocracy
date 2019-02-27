@@ -46,12 +46,10 @@ es:
     instagram_handle_description: "Si está rellenado aparecerá en el pie de página"
     url: "URL general de la web"
     url_description: "URL principal de tu web"
-    org_name: "Nombre de la organización"
-    org_name_description: "Nombre de tu organización"
-    place_name: "Nombre del lugar"
-    place_name_description: "Nombre de tu ciudad"
+    org_name: "Nombre del sitio"
+    org_name_description: "Este nombre aparecerá en el asunto de emails, páginas de ayuda..."
     related_content_score_threshold: "Umbral de puntuación de contenido relacionado"
-    related_content_score_threshold_description: "Oculta el contenido que los usuarios marquen como no relacionado"
+    related_content_score_threshold_description: "Según la puntuación de votos en un contenido relacionado, oculta el contenido que los usuarios marquen como no relacionado"
     hot_score_period_in_days: "Periodo (días) usado para el filtro 'Más Activos'"
     hot_score_period_in_days_description: "El filtro 'Más Activos' usado en diferentes secciones se basará en los votos de los últimos X días"
     map_latitude: "Latitud"
@@ -61,7 +59,7 @@ es:
     map_zoom: "Zoom"
     map_zoom_description: "Zoom para mostrar la posición del mapa"
     mailer_from_name: "Nombre email remitente"
-    mailer_from_name_description: "Este nombre aparecerá en los emails enviados desde la aplicación"
+    mailer_from_name_description: "Este nombre aparecerá como nombre del remitente en los emails enviados desde la aplicación"
     mailer_from_address: "Dirección email remitente"
     mailer_from_address_description: "Esta dirección de email aparecerá en los emails enviados desde la aplicación"
     meta_title: "Título del sitio (SEO)"
@@ -71,13 +69,14 @@ es:
     meta_keywords: "Palabras clave (SEO)"
     meta_keywords_description: 'Palabras clave <meta name="keywords">, utilizadas para mejorar el SEO'
     min_age_to_participate: Edad mínima para participar
-    min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos"
+    min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos donde se necesite una cueta verificada"
     analytics_url: "URL de estadísticas externas"
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparencia"
-    opendata_url: "URL de open data"
     verification_offices_url: URL oficinas verificación
     proposal_improvement_path: Link a información para mejorar propuestas
+    proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que los autores de propuestas puedan enviar nuevas notificaciones de propuesta"
+    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
+    direct_message_max_per_day: "Mensajes directos máximos por día"
+    direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
       budgets: "Presupuestos participativos"
       budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal"
@@ -126,4 +125,4 @@ es:
       public_stats: "Estadísticas públicas"
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
-      help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada"
+      help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'

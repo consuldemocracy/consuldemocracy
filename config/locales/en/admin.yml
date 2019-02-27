@@ -1217,10 +1217,6 @@ en:
       flash:
         updated: Value updated
       index:
-        banners: Banner styles
-        banner_imgs: Banner images
-        no_banners_images: No banner images
-        no_banners_styles: No banner styles
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
