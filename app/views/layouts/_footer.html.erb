@@ -53,15 +53,6 @@
               <% end %>
             </li>
           <% end %>
-          <%  if setting['blog_url'] %>
-            <li class="inline-block">
-              <%= link_to setting['blog_url'], target: "_blank",
-                          title: t("shared.go_to_page") + t("social.blog", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                          <span class="show-for-sr"><%= t("social.blog", org: setting['org_name']) %></span>
-                          <span class="icon-blog" aria-hidden="true"></span>
-              <% end %>
-            </li>
-          <% end %>
           <% if setting['youtube_handle'] %>
             <li class="inline-block">
               <%= link_to "https://www.youtube.com/#{setting['youtube_handle']}", target: "_blank",

@@ -219,7 +219,6 @@ en:
       available_locales: Available languages
       collaborative_legislation: Collaborative legislation
       debates: Debates
-      external_link_blog: Blog
       locale: 'Language:'
       logo: CONSUL logo
       management: Management
@@ -398,8 +397,6 @@ en:
         guide: "Now you can share it so people can start supporting."
         edit: "Before it gets shared you'll be able to change the text as you like."
         view_proposal: Not now, go to my proposal
-      improve_info: "Improve your campaign and get more supports"
-      improve_info_link: "See more information"
       already_supported: You have already supported this proposal. Share it!
       comments:
         one: 1 comment
@@ -624,7 +621,6 @@ en:
         see_more: See more recommendations
         hide: Hide recommendations
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
