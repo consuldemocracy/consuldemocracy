@@ -218,7 +218,6 @@ pt-BR:
       available_locales: Idiomas disponíveis
       collaborative_legislation: Processos legislativos
       debates: Debates
-      external_link_blog: Blog
       locale: 'Idioma:'
       logo: Consul logotipo
       management: Gestão
@@ -397,8 +396,6 @@ pt-BR:
         guide: "Agora você pode compartilhá-la para que as pessoas podem começar a apoiar."
         edit: "Antes que ela seja publicada, você pode alterar o texto da maneira que quiser."
         view_proposal: Agora não, ir para minha proposta
-      improve_info: "Melhore sua campanha e obtenha mais suporte"
-      improve_info_link: "Mais informações"
       already_supported: Você já apoiou esta proposta. Compartilhe!
       comments:
         zero: Nenhum comentário
@@ -620,7 +617,6 @@ pt-BR:
       see_more: Ver mais recomendações
       hide: Ocultar recomendações
   social:
-    blog: "Blog"
     facebook: "Facebook"
     twitter: "Twitter"
     youtube: "YouTube"
