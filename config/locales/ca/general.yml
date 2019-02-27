@@ -324,8 +324,6 @@ ca:
       share:
         guide: "Ara pots compartir-la a Twitter, Facebook, Google+, Telegram o WhatsApp (si utilitzes un dispositiu mòbil) perquè la gent comenci a recolzar-la. Qual Abans que es publiqui el text en les xarxes socials podràs modificar al teu gust"
         view_proposal: Ara no, veure la meva proposta
-      improve_info: "També pots %{improve_info_link} de com millorar la teva campanya"
-      improve_info_link: "veure més informació"
       already_supported: Ja has avalat aquesta proposta.
       comments:
         one: 1 Comentari
