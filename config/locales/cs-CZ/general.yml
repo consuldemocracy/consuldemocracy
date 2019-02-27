@@ -203,7 +203,6 @@ cs:
       available_locales: Dostupné jazyky
       collaborative_legislation: Legislativní procesy
       debates: Debaty
-      external_link_blog: Blog
       locale: 'Jazyk:'
       logo: CONSUL logo
       management: Správa
@@ -363,8 +362,6 @@ cs:
         guide: "Nyní ho můžete sdílet, aby ho lidé mohli začít podporovat."
         edit: "Než bude sdílen, můžete měnit text, jak se vám líbí."
         view_proposal: Teď ne, přejít na můj návrh
-      improve_info: "Zlepšit svou kampaň a získat větší podporu"
-      improve_info_link: "Další informace"
       already_supported: Tento návrh jste již podpořili. Sdílejte jej!
       comments:
         zero: Žádné komentáře
@@ -571,7 +568,6 @@ cs:
       see_more: Další doporučení
       hide: Skrýt doporučení
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
