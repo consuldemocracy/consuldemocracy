@@ -1048,10 +1048,6 @@ pt-BR:
       flash:
         updated: Valor atualizado
       index:
-        banners: Estilos de banner
-        banner_imgs: Imagens de banner
-        no_banners_images: Sem imagens de banner
-        no_banners_styles: Sem estilos de banner
         title: Definições de configuração
         update_setting: Atualizar
         feature_flags: Atributos
