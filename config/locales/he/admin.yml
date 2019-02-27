@@ -465,8 +465,6 @@ he:
           without_confirmed_hide: Pending
     settings:
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
         title: Configuration settings
         update_setting: עודכן
         feature_flags: מאפיינים
