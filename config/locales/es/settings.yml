@@ -48,8 +48,6 @@ es:
     url_description: "URL principal de tu web"
     org_name: "Nombre de la organización"
     org_name_description: "Nombre de tu organización"
-    place_name: "Nombre del lugar"
-    place_name_description: "Nombre de tu ciudad"
     related_content_score_threshold: "Umbral de puntuación de contenido relacionado"
     related_content_score_threshold_description: "Oculta el contenido que los usuarios marquen como no relacionado"
     hot_score_period_in_days: "Periodo (días) usado para el filtro 'Más Activos'"
@@ -73,11 +71,7 @@ es:
     min_age_to_participate: Edad mínima para participar
     min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos"
     analytics_url: "URL de estadísticas externas"
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparencia"
-    opendata_url: "URL de open data"
     verification_offices_url: URL oficinas verificación
-    proposal_improvement_path: Link a información para mejorar propuestas
     feature:
       budgets: "Presupuestos participativos"
       budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal"
@@ -126,4 +120,4 @@ es:
       public_stats: "Estadísticas públicas"
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
-      help_page_description: "Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada"
+      help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada'
