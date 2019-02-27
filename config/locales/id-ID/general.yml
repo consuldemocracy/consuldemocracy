@@ -204,7 +204,6 @@ id:
       available_locales: Bahasa yang tersedia
       collaborative_legislation: Undang-undang proses
       debates: Perdebatan
-      external_link_blog: Blog
       locale: 'Bahasa:'
       logo: Logo CONSUL
       management: Manajemen
@@ -367,8 +366,6 @@ id:
         guide: "Sekarang Anda dapat berbagi sehingga orang dapat mulai mendukung."
         edit: "Sebelum itu mendapat bersama, Anda akan dapat mengubah teks yang Anda inginkan."
         view_proposal: Tidak sekarang, pergi ke proposal saya
-      improve_info: "Meningkatkan kampanye Anda dan mendapatkan lebih mendukung"
-      improve_info_link: "Lihat Selengkapnya"
       already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
       comments:
         zero: Tidak ada komentar
@@ -568,7 +565,6 @@ id:
       next_slide: Selanjutnya Meluncur
     documentation: Tautkan ke dokumentasi tambahan
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
