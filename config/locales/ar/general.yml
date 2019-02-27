@@ -339,7 +339,6 @@ ar:
     you_are_in: "أنت في"
     share: مشاركة
   social:
-    blog: "مدونة %{org}"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
