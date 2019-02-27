@@ -23,7 +23,6 @@ sv:
     instagram_handle: "Användarnamn på Instagram"
     url: "Huvudsaklig webbadress"
     org_name: "Organisation"
-    place_name: "Plats"
     related_content_score_threshold: "Nivå för överensstämmelse med relaterat innehåll"
     map_latitude: "Latitud"
     map_longitude: "Longitud"
@@ -32,11 +31,7 @@ sv:
     meta_description: "Webbplatsens beskrivning (SEO)"
     meta_keywords: "Nyckelord (SEO)"
     min_age_to_participate: Minimiålder för deltagande
-    blog_url: "Webbadress till blogg"
-    transparency_url: "Webbadress för information om transparens"
-    opendata_url: "Webbadress för information om öppen data"
     verification_offices_url: Webbadress för verifieringskontor
-    proposal_improvement_path: Intern länk för förbättring av förslag
     feature:
       budgets: "Medborgarbudgetar"
       twitter_login: "Twitter-inloggning"
