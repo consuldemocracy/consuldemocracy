@@ -218,7 +218,6 @@ nl:
       available_locales: Beschikbare talen
       collaborative_legislation: Wetgevingsproces
       debates: Discussie
-      external_link_blog: Blog
       locale: 'Taal:'
       logo: Consul logo
       management: Beheer
@@ -397,8 +396,6 @@ nl:
         guide: "Nu kun je jouw voorstel gaan delen zodat mensen het kunnen gaan steunen."
         edit: "Voordat het gedeeld gaat worden, kun je de tekst nog wijzigen."
         view_proposal: Niet nu, door naar mijn voorstel
-      improve_info: "Verbeter je campagne en krijg meer steun"
-      improve_info_link: "Bekijk meer informatie"
       already_supported: U steunt dit voorstel al. Deel het!
       comments:
         zero: Geen reacties
@@ -619,7 +616,6 @@ nl:
       see_more: Meer aanbevelingen bekijken
       hide: Verborgen aanbevelingen
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
