@@ -127,7 +127,6 @@ fi:
       administration_menu: Järjestelmänvalvoja
       administration: Järjestelmänvalvonta
       available_locales: Saatavilla olevat kielet
-      external_link_blog: Blogi
       locale: 'Kieli:'
       logo: CONSUL logo
       help: Apua
