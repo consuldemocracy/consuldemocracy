@@ -19,11 +19,9 @@ ca:
     youtube_handle: "Usuari de Youtube"
     url: "URL general de la web"
     org_name: "Nomb de l'organizació"
-    place_name: "Nome del lloc"
     meta_description: "Descripció de la web (SEO)"
     meta_keywords: "Paraules clau (SEO)"
     min_age_to_participate: Edat mínima per participar
-    blog_url: "URL del blog"
     verification_offices_url: URL oficines verificació
     feature:
       budgets: "Pressupostos ciutadans"
