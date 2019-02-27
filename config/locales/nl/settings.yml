@@ -46,8 +46,6 @@ nl:
     url_description: "Hoofd URL van je website"
     org_name: "Organization"
     org_name_description: "Naam van uw organisatie"
-    place_name: "Place"
-    place_name_description: "Naam van uw stad"
     related_content_score_threshold: "Gerelateerde scorelimiet voor inhoud"
     related_content_score_threshold_description: "Verbergt inhoud die gebruikers markeren als niet-gerelateerd"
     map_latitude: "Breedte"
@@ -69,11 +67,7 @@ nl:
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Gebruikers van deze leeftijd kunnen deelnemen aan alle processen"
     analytics_url: "Analytics-URL"
-    blog_url: "Blog URL"
-    transparency_url: "Transparency URL"
-    opendata_url: "Open Data URL"
     verification_offices_url: Verification offices URL
-    proposal_improvement_path: Interne link naar info ter verbetering voorstel
     feature:
       budgets: "Burgerbegrotingen"
       budgets_description: "Met burgerbegrotingen kunnen inwoners meebeslissen welke projecten onderdeel moeten zijn van de gemeentelijke begroting"
@@ -120,4 +114,4 @@ nl:
       public_stats: "Openbare statistieken"
       public_stats_description: "De openbare statistieken weergeven in het beheerderspaneel"
       help_page: "Help-pagina"
-      help_page_description: "Toont informatie over alle beschikbare functionaliteit"
+      help_page_description: 'Toont informatie over alle beschikbare functionaliteit'
