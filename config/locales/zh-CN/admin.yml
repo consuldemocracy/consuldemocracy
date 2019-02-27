@@ -1057,10 +1057,6 @@ zh-CN:
       flash:
         updated: 价值已更新
       index:
-        banners: 横幅样式
-        banner_imgs: 横幅图像
-        no_banners_images: 没有横幅图像
-        no_banners_styles: 没有横幅样式
         title: 配置设置
         update_setting: 更新
         feature_flags: 功能
