@@ -764,6 +764,10 @@ gl:
         title: "Resumo de notificacións de propostas"
         description: "Agrupa todas as notificacións de proposta para un usuario nunha única mensaxe, evitando o envío dun número elevado de mensaxes."
         preview_detail: "Os usuarios só recibirán as notificacións das propostas que están a seguir"
+      comment:
+        title: "Comentario"
+      reply:
+        title: "Responder"
     emails_download:
       index:
         title: Descarga de enderezos de correo
