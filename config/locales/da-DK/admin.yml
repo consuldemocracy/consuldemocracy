@@ -1,1 +1,12 @@
 da:
+  admin:
+    system_emails:
+      comment:
+        title: "Kommentar"
+      reply:
+        title: "Svar"
+      email_verification:
+        title: "Bekræftelse af e-mail"
+      user_invite:
+        title: "Bruger invitation"
+      message_title: "Meddelelses titel"
