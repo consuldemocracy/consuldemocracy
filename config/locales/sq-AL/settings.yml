@@ -46,8 +46,6 @@ sq:
     url_description: "URL-ja kryesore e faqes suaj të internetit"
     org_name: "Organizatë"
     org_name_description: "Emri i organizatës"
-    place_name: "Vendi"
-    place_name_description: "Emri i qytetit tuaj"
     related_content_score_threshold: "Pragu i vlerësimit të përmbajtjes përkatëse"
     related_content_score_threshold_description: "Fsheh përmbajtjen që përdoruesit e shënojnë si të palidhur"
     map_latitude: "Gjerësi"
@@ -69,11 +67,7 @@ sq:
     min_age_to_participate: Mosha minimale e nevojshme për të marrë pjesë
     min_age_to_participate_description: "Përdoruesit e kësaj moshe mund të marrin pjesë në të gjitha proceset"
     analytics_url: "URL e analitikës"
-    blog_url: "URL e blogut"
-    transparency_url: "\nURL e Transparencës"
-    opendata_url: "URL E Open Data"
     verification_offices_url: URL e Zyrave te verifikimit
-    proposal_improvement_path: LInku i brendshëm i informacionit të përmirësimt të propozimit
     feature:
       budgets: "Buxhetet  pjesëmarrës"
       budgets_description: "\nMe buxhetet pjesëmarrëse, qytetarët vendosin se cilat projekte të paraqitura nga fqinjët e tyre do të marrin një pjesë të buxhetit komunal"
@@ -120,4 +114,4 @@ sq:
       public_stats: "Statistikat publike"
       public_stats_description: "Shfaqni statistikat publike në panelin e Administratës"
       help_page: "Faqja ndihmëse"
-      help_page_description: "Shfaq një meny Ndihmë që përmban një faqe me një seksion informacioni rreth secilës janë të akitivizuar vecoritë"
+      help_page_description: 'Shfaq një meny Ndihmë që përmban një faqe me një seksion informacioni rreth secilës janë të akitivizuar vecoritë'
