@@ -218,7 +218,6 @@ val:
       available_locales: Idiomes disponibles
       collaborative_legislation: Processos legislatius
       debates: Debats
-      external_link_blog: Blog
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestió
@@ -397,8 +396,6 @@ val:
         guide: "Comparteix-la per a que la gent comence a avalarla."
         edit: "Abans de publicar-se podràs modificar el text al teu gust."
         view_proposal: Ara no, anar a la meua proposta
-      improve_info: "Millora la teua campanya i aconsegueix més avals"
-      improve_info_link: "Vore més informació"
       already_supported: Ja has avalat aquesta proposta. Comparteixla!
       comments:
         zero: Sense comentaris
@@ -622,7 +619,6 @@ val:
       see_more: Veure més recomanacions
       hide: Ocultar recomanacions
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
