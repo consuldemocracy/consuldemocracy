@@ -167,7 +167,6 @@ he:
       administration: ניהול
       available_locales: שפות לבחירה
       debates: דיונים
-      external_link_blog: אתר קול העם
       locale: 'שפה:'
       logo: Consul logo לוגו
       management: הנהלה
@@ -430,7 +429,6 @@ he:
       searcher: חיפוש
     share: שיתוף
   social:
-    blog: "בלוג"
     facebook: "פייסבוק"
     twitter: "טוויטר"
     youtube: "יוטיוב YouTube"
