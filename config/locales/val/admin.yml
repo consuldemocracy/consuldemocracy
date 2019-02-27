@@ -1106,10 +1106,6 @@ val:
       flash:
         updated: Valor actualitzat
       index:
-        banners: Estil del banner
-        banner_imgs: Imatges del banner
-        no_banners_images: No hi ha imatges de banner
-        no_banners_styles: No hi ha estils de banner
         title: Configuració global
         update_setting: Actualitzar
         feature_flags: Funcionalitats
