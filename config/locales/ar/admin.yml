@@ -1139,10 +1139,6 @@ ar:
       flash:
         updated: تم تحديث القيمة
       index:
-        banners: أنماط اللافتة
-        banner_imgs: صور اللافتة
-        no_banners_images: لا توجد صور للافتة
-        no_banners_styles: لا توجد أنماط للافتة
         update_setting: تحديث
         feature_flags: المميزات
         features:
