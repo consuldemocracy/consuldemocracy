@@ -367,8 +367,6 @@ es-PE:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      improve_info: "Mejora tu campaña y consigue más apoyos"
-      improve_info_link: "Ver más información"
       already_supported: Você já apoiou esta proposta. Compartilhe!
       comments:
         zero: Sin comentarios
@@ -572,7 +570,6 @@ es-PE:
       next_slide: Siguiente imagen
     documentation: Documentación adicional
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
