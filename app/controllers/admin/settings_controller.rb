@@ -2,8 +2,8 @@ class Admin::SettingsController < Admin::BaseController
 
   def index
     all_settings = Setting.all.group_by { |s| s.type }
-    @settings = all_settings['common']
-    @feature_flags = all_settings['feature']
+    @settings = all_settings["common"].reject { |setting| hidden_settings.include?(setting.key)}
+    @feature_flags = all_settings["feature"]
   end
 
   def update
@@ -23,6 +23,16 @@ class Admin::SettingsController < Admin::BaseController
 
     def settings_params
       params.require(:setting).permit(:value)
+    end
+
+    def hidden_settings
+      ["place_name",
+       "banner-style.banner-style-one",
+       "banner-style.banner-style-two",
+       "banner-style.banner-style-three",
+       "banner-img.banner-img-one",
+       "banner-img.banner-img-two",
+       "banner-img.banner-img-three"]
     end
 
 end
