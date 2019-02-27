@@ -1137,10 +1137,6 @@ gl:
       flash:
         updated: Valor actualizado
       index:
-        banners: Estilos de anuncio
-        banner_imgs: Imaxes do anuncio
-        no_banners_images: Non hai imaxes de anuncio
-        no_banners_styles: Non hai estilo de anuncio
         title: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
