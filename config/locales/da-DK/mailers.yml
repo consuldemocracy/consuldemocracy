@@ -1,1 +1,12 @@
 da:
+  mailers:
+    no_reply: "Denne meddelelse blev sendt fra en e-mail-adresse, der ikke accepterer svar."
+    comment:
+      hi: Hej
+      new_comment_by_html: Der er en ny kommentar fra <b>%{commenter}</b>
+      subject: Nogen har kommenteret på din %{commentable}
+      title: Ny kommentar
+    config:
+      manage_email_subscriptions: For at stoppe med at modtage disse e-mails skal du ændre dine indstillinger i
+    email_verification:
+      click_here_to_verify: dette link
