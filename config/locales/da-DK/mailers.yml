@@ -23,10 +23,12 @@ da:
     unfeasible_spending_proposal:
       hi: "Kære bruger,"
       new_href: "nyt investeringsprojekt"
+      sincerely: "Med venlig hilsen"
       sorry: "Undskyld ulejligheden og vi takker igen for din uvurderlige deltagelse."
       subject: "Dit investeringsprojekt '%{code}' er blevet vurderet som uigennemførligt"
     proposal_notification_digest:
       info: "Her er de nye notifikationer, der er blevet publiceret af forfatterne til de forslag, du har støttet op om i %{org_name}."
+      title: "Notifikationer vedrørende forslag i %{org_name}"
       share: Del forslag
       comment: Skriv en kommentar til forslaget
       unsubscribe_account: Min konto
@@ -39,3 +41,15 @@ da:
       title_html: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
     user_invite:
       ignore: "Hvis du ikke har anmodet om denne invitation, skal du ikke bekymre dig. Du kan ignorere denne e-mail."
+      text: "Tak for din ansøgning til %{org}! Du kan påbegynde din deltagelse om få sekunder, du skal blot udfylde nedenstående formular:"
+      thanks: "Mange tak."
+      title: "Velkommen til %{org}"
+      button: Færdiggør registrering
+      subject: "Invitation til %{org_name}"
+    budget_investment_created:
+      intro_html: "Hej <strong>%{author}</strong>,"
+      follow_link: "Deltagerbudgetter"
+      sincerely: "Med venlig hilsen"
+      share: "Del dit projekt"
+    budget_investment_unfeasible:
+      hi: "Kære bruger,"
