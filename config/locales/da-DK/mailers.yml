@@ -14,3 +14,16 @@ da:
       instructions_html: For at færdiggøre verifikationen af din brugerkonto klik på %{verification_link}.
       subject: Bekræft din e-mail
       thanks: Mange tak.
+      title: Bekræft din konto ved hjælp af følgende link
+    reply:
+      hi: Hej
+      new_reply_by_html: Der er et nyt svar fra <b>%{commenter}</b> på din kommentar på
+      subject: Nogen har reageret på din kommentar
+      title: Nyt svar til din kommentar
+    unfeasible_spending_proposal:
+      hi: "Kære bruger,"
+      new_href: "nyt investeringsprojekt"
+      sorry: "Undskyld ulejligheden og vi takker igen for din uvurderlige deltagelse."
+      subject: "Dit investeringsprojekt '%{code}' er blevet vurderet som uigennemførligt"
+    proposal_notification_digest:
+      info: "Her er de nye notifikationer, der er blevet publiceret af forfatterne til de forslag, du har støttet op om i %{org_name}."
