@@ -1,6 +1,6 @@
 da:
   mailers:
-    no_reply: "Denne meddelelse blev sendt fra en e-mail-adresse, der ikke accepterer svar."
+    no_reply: "Denne meddelelse blev sendt fra en e-mail-adresse, der ikke kan besvares."
     comment:
       hi: Hej
       new_comment_by_html: Der er en ny kommentar fra <b>%{commenter}</b>
@@ -31,10 +31,12 @@ da:
       title: "Notifikationer vedrørende forslag i %{org_name}"
       share: Del forslag
       comment: Skriv en kommentar til forslaget
+      unsubscribe: "Hvis du ikke ønsker at modtage notifikationer om forslag, følg %{account} og fjern markeringen ved 'Modtag notifikationer vedrørende forslag'."
       unsubscribe_account: Min konto
     direct_message_for_receiver:
       subject: "Du har modtaget en ny privat besked"
       reply: Svar %{sender}
+      unsubscribe: "Hvis du ikke ønsker at modtage direkte beskeder, følg %{account} og fjern markeringen ved 'Modtag e-mails om direkte beskeder'."
       unsubscribe_account: Min konto
     direct_message_for_sender:
       subject: "Du har sendt en ny privat besked"
@@ -47,9 +49,28 @@ da:
       button: Færdiggør registrering
       subject: "Invitation til %{org_name}"
     budget_investment_created:
+      subject: "Tak fordi du har oprettet en investering!"
+      title: "Tak fordi du har oprettet en investering!"
       intro_html: "Hej <strong>%{author}</strong>,"
+      follow_html: "Vi vil løbende informere dig om processens forløb, som du også kan følge på <strong>%{link}</strong>."
       follow_link: "Deltagerbudgetter"
       sincerely: "Med venlig hilsen"
       share: "Del dit projekt"
     budget_investment_unfeasible:
       hi: "Kære bruger,"
+      new_href: "nyt investeringsprojekt"
+      sincerely: "Med venlig hilsen"
+      sorry: "Undskyld ulejligheden og vi takker endnu engang for din deltagelse."
+      subject: "Dit investeringsprojekt '%{code}' er blevet vurderet som uigennemførligt"
+    budget_investment_selected:
+      subject: "Dit investeringsprojekt '%{code}' er blevet valgt"
+      hi: "Kære bruger,"
+      share: "Få stemmer, del dit investeringsprojekt i dit sociale netværk. Deling af investeringsprojektet er afgørende for at gøre det til en realitet."
+      share_button: "Del dit investeringsprojekt"
+      thanks: "Endnu engang tak for din deltagelse."
+      sincerely: "Med venlig hilsen"
+    budget_investment_unselected:
+      subject: "Dit investeringsprojekt '%{code}' er ikke blevet valgt"
+      hi: "Kære bruger,"
+      thanks: "Endnu engang tak for din deltagelse."
+      sincerely: "Med venlig hilsen"
