@@ -52,6 +52,7 @@ da:
       subject: "Tak fordi du har oprettet en investering!"
       title: "Tak fordi du har oprettet en investering!"
       intro_html: "Hej <strong>%{author}</strong>,"
+      text_html: "Tak fordi du oprettede investeringsforslaget <strong>%{investment}</strong> for Deltagerbudgettet <strong>%{budget}</strong>."
       follow_html: "Vi vil løbende informere dig om processens forløb, som du også kan følge på <strong>%{link}</strong>."
       follow_link: "Deltagerbudgetter"
       sincerely: "Med venlig hilsen"
