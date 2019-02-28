@@ -38,8 +38,6 @@ en:
           proposals: Proposals
           budgets: Participatory budgeting
           help_page: Help page
-        background_color: Background colour
-        font_color: Font colour
       edit:
         editing: Edit banner
         form:
@@ -434,7 +432,6 @@ en:
           homepage_description: Here you can explain the content of the process
           homepage_enabled: Homepage enabled
           banner_title: Header colors
-          color_help: Hexadecimal format
         index:
           create: New process
           delete: Delete
@@ -1227,6 +1224,7 @@ en:
       content: Content
       created_at: Created at
       delete: Delete
+      color_help: Hexadecimal format
     spending_proposals:
       index:
         geozone_filter_all: All zones

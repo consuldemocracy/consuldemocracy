@@ -27,8 +27,9 @@ App.Forms =
     progress_bar = "[name='progress_bar[percentage]']"
     process_background = "[name='legislation_process[background_color]']"
     process_font = "[name='legislation_process[font_color]']"
+    banners = "[name='banner[background_color]'], [name='banner[font_color]']"
 
-    inputs = $("#{progress_bar}, #{process_background}, #{process_font}")
+    inputs = $("#{progress_bar}, #{process_background}, #{process_font}, #{banners}")
     inputs.on
       input: ->
         $("[name='#{this.name}']").val($(this).val())

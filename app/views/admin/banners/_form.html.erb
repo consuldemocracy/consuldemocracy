@@ -64,15 +64,31 @@
   </div>
 
   <div class="row">
-    <div class="small-3 column">
-      <%= f.label :sections, t("admin.banners.banner.background_color") %>
-      <%= color_field(:banner, :background_color, id: 'banner_background_color_picker') %>
-      <%= f.text_field :background_color, label: false %>
+    <div class="small-12 medium-6 large-3 column">
+      <%= f.label :sections, nil, for: "background_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, type: :color,
+                                              value: banner_bg_color_or_default %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, id: "background_color_input" %>
+        </div>
+      </div>
     </div>
-    <div class="small-3 column end">
-      <%= f.label :sections, t("admin.banners.banner.font_color") %>
-      <%= color_field(:banner, :font_color, id: 'banner_font_color_picker') %>
-      <%= f.text_field :font_color, label: false %>
+
+    <div class="small-12 medium-6 large-3 column end">
+      <%= f.label :sections, nil, for: "font_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, type: :color,
+                                        value: banner_font_color_or_default %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, id: "font_color_input" %>
+        </div>
     </div>
   </div>
 
@@ -80,11 +96,12 @@
     <div class="actions small-12 medium-3 column">
       <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
-  </div>
-  <div id="js-banner-background" class="banner" style="background-color:<%= @banner.background_color %>">
-    <%= link_to @banner.target_url do %>
-      <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
-      <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
-    <% end %>
+
+    <div id="js-banner-background" class="banner" style="background-color:<%= @banner.background_color %>">
+      <%= link_to @banner.target_url do %>
+        <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
+        <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
+      <% end %>
+    </div>
   </div>
 <% end %>
