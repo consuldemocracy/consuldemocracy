@@ -583,7 +583,6 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
@@ -635,7 +634,6 @@ es:
             update: "Actualizar Bloque"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
-      title_polls: Votaciones
       title_profiles: Perfiles
       title_settings: Configuración
       title_site_customization: Contenido del sitio

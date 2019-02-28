@@ -37,12 +37,9 @@ module AdminHelper
     ["spending_proposals"].include?(controller_name)
   end
 
-  def menu_poll?
-    %w[polls active_polls recounts results].include?(controller_name)
-  end
-
   def menu_polls?
-    menu_poll? || %w[questions answers].include?(controller_name)
+    %w[polls active_polls recounts results questions answers].include?(controller_name) ||
+    controller.class.parent == Admin::Poll::Questions::Answers
   end
 
   def menu_booths?
@@ -54,7 +51,8 @@ module AdminHelper
   end
 
   def menu_settings?
-    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name)
+    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name) &&
+    controller.class.parent != Admin::Poll::Questions::Answers
   end
 
   def menu_customization?
