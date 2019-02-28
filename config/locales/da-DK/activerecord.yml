@@ -71,3 +71,6 @@ da:
       site_customization/page:
         content: Indhold
         subtitle: Undertitel
+        slug: Signaturlinje
+        status: Status
+        title: Titel
