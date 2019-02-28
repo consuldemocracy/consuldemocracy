@@ -74,3 +74,41 @@ da:
         slug: Signaturlinje
         status: Status
         title: Titel
+        updated_at: Opdateret
+        locale: Sprog
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Undertitel
+        content: Indhold
+      site_customization/image:
+        name: Navn
+        image: Billede
+      site_customization/content_block:
+        name: Navn
+      legislation/process:
+        summary: Resumé
+        description: Beskrivelse
+        additional_info: Yderligere information
+        start_date: Startdato
+        end_date: Slutdato
+        debate_start_date: Startdato for debat
+        debate_end_date: Slutdato for debat
+        draft_start_date: Startdato for udkast
+        draft_end_date: Slutdato for udkast
+        draft_publication_date: Dato for offentliggørelse af udkast
+        background_color: Baggrundsfarve
+        font_color: Skriftfarve
+      legislation/process/translation:
+        summary: Resumé
+        description: Beskrivelse
+        additional_info: Yderligere information
+        milestones_summary: Resumé
+      widget/card/translation:
+        title: Titel
+        description: Beskrivelse
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Denne bruger har allerede en adgangskode"
