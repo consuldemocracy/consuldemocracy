@@ -34,6 +34,9 @@ da:
       legislation/answers:
         one: "Svar"
         other: "Svar"
+      documents:
+        one: "Dokumenter"
+        other: "Dokumenter"
     attributes:
       budget:
         name: "Navn"
