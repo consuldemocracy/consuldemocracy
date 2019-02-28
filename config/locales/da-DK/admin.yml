@@ -8,6 +8,23 @@ da:
       confirm_hide: Bekræft moderation
       hide: Skjul
       hide_author: Skjul bruger
+      restore: Gendan
+      delete: Slet
+    banners:
+      index:
+        title: Bannere
+        create: Opret banner
+        edit: Rediger banner
+        delete: Slet banner
+        filters:
+          all: Alle
+          with_active: Aktive
+          with_inactive: Inaktive
+        preview: Forhåndsvisning
+      banner:
+        title: Titel
+        description: Beskrivelse
+        target_url: Link
     system_emails:
       comment:
         title: "Kommentar"
