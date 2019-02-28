@@ -72,7 +72,7 @@ tr:
       index:
         title: Katılımcı bütçeleme
         unfeasible: Uygulanamaz yatırım projeleri
-        unfeasible_text: "Yatırımlar, geçerli olarak ilan edilip nihai oylama aşamasına ulaşmak için bir dizi kriteri (yasallık, somutluk, bütçenin sınırını aşmamak, kentin sorumluluğunda olmak) karşılamalıdır."
+        unfeasible_text: "Yatırımlar, geçerli olarak ilan edilip nihai oylama aşamasına ulaşmak için bir dizi kriteri (yasallık, somutluk, bütçenin sınırını aşmamak, kentin sorumluluğunda olmak) karşılamalıdır. Bu kriterlere uymayan tüm yatırımlar uygulanamaz olarak işaretlenir ve uygun olmama raporu ile birlikte takip eden listede yayınlanır."
         by_heading: "Kapsam ile yatırım projeleri: %{heading}"
         search_form:
           button: Ara
