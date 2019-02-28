@@ -36,4 +36,24 @@ namespace :settings do
     Setting['hot_score_period_in_days'] = 31
   end
 
+  desc "Remove deprecated settings"
+  task remove_deprecated_settings: :environment do
+    deprecated_keys = [
+      "place_name",
+      "banner-style.banner-style-one",
+      "banner-style.banner-style-two",
+      "banner-style.banner-style-three",
+      "banner-img.banner-img-one",
+      "banner-img.banner-img-two",
+      "banner-img.banner-img-three"
+    ]
+
+    deprecated_keys.each do |key|
+      setting = Setting.where(key: key).first
+      if setting.present?
+        setting.destroy
+      end
+    end
+  end
+
 end
