@@ -1,0 +1,40 @@
+require: rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+  TargetRubyVersion: 2.3
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/TrailingBlankLines:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 100
+
+RSpec/NotToNot:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
