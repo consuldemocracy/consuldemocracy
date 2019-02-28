@@ -170,6 +170,17 @@ da:
           orders:
             id: Id
             title: Titel
+        process:
+          title: Proces
+          comments: Kommentarer
+          status: Status
+          start_date: Startdato
+          end_date: Slutdato
+          status_open: Åben
+          status_closed: Lukket
+        subnav:
+          info: Information
+          homepage: Startside
     system_emails:
       comment:
         title: "Kommentar"
