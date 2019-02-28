@@ -25,6 +25,15 @@ da:
       debate:
         one: "Debat"
         other: "Debatter"
+      legislation/proposal:
+        one: "Forslag"
+        other: "Forslag"
+      legislation/questions:
+        one: "Spørgsmål"
+        other: "Spørgsmål"
+      legislation/answers:
+        one: "Svar"
+        other: "Svar"
     attributes:
       budget:
         name: "Navn"
@@ -137,3 +146,34 @@ da:
           attributes:
             end_date:
               invalid_date_range: skal være på eller efter startdatoen
+            debate_end_date:
+              invalid_date_range: skal være på eller efter startdatoen for debatten
+            draft_end_date:
+              invalid_date_range: skal være på eller efter startdatoen for udkastet
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags skal være mindre end eller lig med %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags skal være mindre end eller lig med %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Du skal vente mindst %{interval} dage mellem notifikationer"
+        signature:
+          attributes:
+            document_number:
+              already_voted: 'Der er allerede stemt på dette forslag'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "skal være bogstaver, tal, _ og -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Bredden skal være %{required_width}px"
+              image_height: "Højde skal være %{required_height}px"
+      messages:
+        record_invalid: "Valideringen mislykkedes: %{errors}"
