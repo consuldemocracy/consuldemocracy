@@ -761,7 +761,7 @@ tr:
         send_pending: Gönderme beklemede
         send_pending_notification: Bekleyen bildirimler başarıyla gönderildi
       proposal_notification_digest:
-        title: "Öneri Bildirimi Özeti"
+        title: "Öneri bildirimi özeti"
         description: "Çok fazla e-posta almamak için bir kullanıcı için tüm öneri bildirimlerini tek bir mesajda toplar."
         preview_detail: "Kullanıcılar yalnızca takip ettikleri önerilerden bildirim alırlar"
     emails_download:
