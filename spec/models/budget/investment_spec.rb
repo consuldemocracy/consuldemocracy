@@ -642,6 +642,14 @@ describe Budget::Investment do
         results = described_class.search("Latin")
         expect(results.first).to eq(investment)
       end
+
+      it "gets and sets valuation tags through virtual attributes" do
+        investment = create(:budget_investment)
+
+        investment.valuation_tag_list = %w[Code Test Refactor]
+
+        expect(investment.valuation_tag_list).to match_array(%w[Code Test Refactor])
+      end
     end
 
   end

@@ -64,12 +64,6 @@ class ProposalsController < ApplicationController
   def retire_form
   end
 
-  def share
-    if Setting['proposal_improvement_path'].present?
-      @proposal_improvement_path = Setting['proposal_improvement_path']
-    end
-  end
-
   def vote_featured
     @proposal.register_vote(current_user, 'yes')
     set_featured_proposal_votes(@proposal)

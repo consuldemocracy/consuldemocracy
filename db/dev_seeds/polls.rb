@@ -1,25 +1,25 @@
 section "Creating polls" do
 
-  Poll.create(name: I18n.t('seeds.polls.current_poll'),
+  Poll.create(name: I18n.t("seeds.polls.current_poll"),
               starts_at: 7.days.ago,
               ends_at:   7.days.from_now,
               geozone_restricted: false)
 
-  Poll.create(name: I18n.t('seeds.polls.current_poll_geozone_restricted'),
+  Poll.create(name: I18n.t("seeds.polls.current_poll_geozone_restricted"),
               starts_at: 5.days.ago,
               ends_at:   5.days.from_now,
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
-  Poll.create(name: I18n.t('seeds.polls.recounting_poll'),
+  Poll.create(name: I18n.t("seeds.polls.recounting_poll"),
               starts_at: 15.days.ago,
               ends_at:   2.days.ago)
 
-  Poll.create(name: I18n.t('seeds.polls.expired_poll_without_stats'),
+  Poll.create(name: I18n.t("seeds.polls.expired_poll_without_stats"),
               starts_at: 2.months.ago,
               ends_at:   1.month.ago)
 
-  Poll.create(name: I18n.t('seeds.polls.expired_poll_with_stats'),
+  Poll.create(name: I18n.t("seeds.polls.expired_poll_with_stats"),
               starts_at: 2.months.ago,
               ends_at:   1.month.ago,
               results_enabled: true,
@@ -42,7 +42,7 @@ end
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
     (1..4).to_a.sample.times do
-      title = Faker::Lorem.sentence(3).truncate(60) + '?'
+      title = Faker::Lorem.sentence(3).truncate(60) + "?"
       question = Poll::Question.new(author: User.all.sample,
                                     title: title,
                                     poll: poll)
@@ -118,7 +118,7 @@ section "Creating Poll Voters" do
                         document_number: user.document_number,
                         user: user,
                         poll: poll,
-                        origin: 'booth',
+                        origin: "booth",
                         officer: Poll::Officer.all.sample)
   end
 
@@ -128,7 +128,7 @@ section "Creating Poll Voters" do
                         document_number: user.document_number,
                         user: user,
                         poll: poll,
-                        origin: 'web',
+                        origin: "web",
                         token: SecureRandom.hex(32))
   end
 

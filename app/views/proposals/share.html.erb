@@ -27,13 +27,6 @@
           description: @proposal.summary
         } %>
 
-        <% if @proposal_improvement_path.present? %>
-          <div class="callout highlight margin-top text-center">
-            <p class="lead"><strong><%= t("proposals.proposal.improve_info") %></strong></p>
-            <%= link_to t("proposals.proposal.improve_info_link"), @proposal_improvement_path, class: "button" %>
-          </div>
-        <% end %>
-
         <div class="small margin-bottom">
           <%= link_to t("proposals.proposal.share.view_proposal"), proposal_path(@proposal) %>
         </div>

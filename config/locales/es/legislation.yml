@@ -66,11 +66,11 @@ es:
         no_open_processes: No hay procesos activos
         no_past_processes: No hay procesos terminados
         section_header:
-          icon_alt: Icono de Procesos legislativos
-          title: Procesos legislativos
-          help: Ayuda sobre procesos legislativos
+          icon_alt: Icono de legislación colaborativa
+          title: Legislación colaborativa
+          help: Ayuda sobre legislación colaborativa
         section_footer:
-          title: Ayuda sobre procesos legislativos
+          title: Ayuda sobre Legislación colaborativa
           description: Participa en los debates y procesos previos a la aprobación de una norma o de una actuación municipal. Tu opinión será tenida en cuenta por el Ayuntamiento.
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta

@@ -248,34 +248,6 @@ feature "Proposals" do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
-  scenario "Create with proposal improvement info link" do
-    Setting["proposal_improvement_path"] = "/more-information/proposal-improvement"
-    author = create(:user)
-    login_as(author)
-
-    visit new_proposal_path
-    fill_in "proposal_title", with: "Help refugees"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "This is very important because..."
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
-    fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    fill_in "proposal_tag_list", with: "Refugees, Solidarity"
-    check "proposal_terms_of_service"
-
-    click_button "Create proposal"
-
-    expect(page).to have_content "Proposal created successfully."
-    expect(page).to have_content "Improve your campaign and get more supports"
-
-    click_link "Not now, go to my proposal"
-
-    expect(page).to have_content "Help refugees"
-
-    Setting["proposal_improvement_path"] = nil
-  end
-
   scenario "Create with invisible_captcha honeypot field" do
     author = create(:user)
     login_as(author)

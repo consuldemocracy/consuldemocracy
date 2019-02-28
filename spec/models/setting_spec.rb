@@ -54,28 +54,4 @@ describe Setting do
       expect(setting.enabled?).to eq false
     end
   end
-
-  describe "#banner_style?" do
-    it "is true if key starts with 'banner-style.'" do
-      setting = described_class.create(key: "banner-style.whatever")
-      expect(setting.banner_style?).to eq true
-    end
-
-    it "is false if key does not start with 'banner-style.'" do
-      setting = described_class.create(key: "whatever")
-      expect(setting.banner_style?).to eq false
-    end
-  end
-
-  describe "#banner_img?" do
-    it "is true if key starts with 'banner-img.'" do
-      setting = described_class.create(key: "banner-img.whatever")
-      expect(setting.banner_img?).to eq true
-    end
-
-    it "is false if key does not start with 'banner-img.'" do
-      setting = described_class.create(key: "whatever")
-      expect(setting.banner_img?).to eq false
-    end
-  end
 end

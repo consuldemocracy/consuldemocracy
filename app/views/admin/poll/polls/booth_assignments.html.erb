@@ -11,7 +11,7 @@
       <% @polls.each do |poll| %>
         <tr id="<%= dom_id(poll) %>" class="poll">
           <td>
-            <strong><%= link_to poll.name, admin_poll_path(poll) %></strong>
+            <%= link_to poll.name, manage_admin_poll_booth_assignments_path(poll) %>
           </td>
           <td>
             <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>

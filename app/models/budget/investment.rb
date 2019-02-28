@@ -24,6 +24,7 @@ class Budget
     include Filterable
     include Flaggable
     include Milestoneable
+    include Randomizable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -54,7 +55,6 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
 
     scope :sort_by_id, -> { order("id DESC") }
     scope :sort_by_title, -> { order("title ASC") }
@@ -347,6 +347,14 @@ class Budget
 
     def assigned_valuation_groups
       self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
+    def valuation_tag_list
+      tag_list_on(:valuation)
+    end
+
+    def valuation_tag_list=(tags)
+      set_tag_list_on(:valuation, tags)
     end
 
     def self.with_milestone_status_id(status_id)

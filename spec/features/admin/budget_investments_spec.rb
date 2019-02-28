@@ -1376,6 +1376,22 @@ feature "Admin budget investments" do
         expect(valuating_checkbox).not_to be_checked
       end
     end
+
+    scenario "Keeps the valuation tags", :js do
+      investment1.set_tag_list_on(:valuation, %w[Possimpible Truthiness])
+      investment1.save
+
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#budget_investment_#{investment1.id}") do
+        check "budget_investment_visible_to_valuators"
+      end
+
+      visit edit_admin_budget_budget_investment_path(budget, investment1)
+
+      expect(page).to have_content "Possimpible"
+      expect(page).to have_content "Truthiness"
+    end
   end
 
   context "Selecting csv" do
