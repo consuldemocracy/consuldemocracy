@@ -25,3 +25,49 @@ da:
       debate:
         one: "Debat"
         other: "Debatter"
+    attributes:
+      budget:
+        name: "Navn"
+        phase: "Fase"
+        currency_symbol: "Valuta"
+      budget/investment:
+        heading_id: "Overskrift"
+        title: "Titel"
+        description: "Beskrivelse"
+        administrator_id: "Administrator"
+        location: "Placering (valgfri)"
+        image_title: "Titel på billede"
+      milestone:
+        status_id: "Nuværende status (valgfri)"
+        title: "Titel"
+        publication_date: "Dato for offentliggørelse"
+      milestone/status:
+        name: "Navn"
+        description: "Placering (valgfri)"
+      progress_bar:
+        kind: "Type"
+        title: "Titel"
+      debate:
+        author: "Forfatter"
+        description: "Mening"
+        terms_of_service: "Servicevilkår"
+        title: "Titel"
+      proposal:
+        author: "Forfatter"
+        title: "Titel"
+        question: "Spørgsmål"
+        description: "Beskrivelse"
+        terms_of_service: "Servicevilkår"
+      poll/translation:
+        summary: "Resumé"
+        description: "Beskrivelse"
+      poll/question:
+        title: "Spørgsmål"
+        summary: "Resumé"
+        description: "Beskrivelse"
+        external_url: "Link til yderligere dokumentation"
+      poll/question/translation:
+        title: "Spørgsmål"
+      site_customization/page:
+        content: Indhold
+        subtitle: Undertitel
