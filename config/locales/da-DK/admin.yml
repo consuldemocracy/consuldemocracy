@@ -73,6 +73,46 @@ da:
         back: "Gå tilbage til budgetter"
     budget_headings:
       name: "Navn"
+      form:
+        latitude: "Breddegrad (valgfri)"
+        longitude: "Længdegrad (valgfri)"
+    budget_phases:
+      edit:
+        start_date: Startdato
+        end_date: Slutdato
+        summary: Resumé
+        summary_help_text: Denne tekst vil informere brugeren om fasen. For at vise informationen selvom fasen ikke er aktiv, skal du sætte kryds i feltet nedenfor
+        description: Beskrivelse
+        enabled: Fase aktiveret
+        save_changes: Gem ændringer
+    budget_investments:
+      index:
+        administrator_filter_all: Alle administratorer
+        valuator_filter_all: Alle evaluatorer
+        tags_filter_all: Alle tags
+        advanced_filters: Avancerede filtre
+        placeholder: Søg efter projekter
+        filters:
+          all: Alle
+          under_valuation: Under værdiansættelse
+          valuation_finished: Værdiansættelse færdig
+          selected: Vælg
+          undecided: Ikke besluttet
+          unfeasible: Uigennemførlig
+          winners: Vindere
+        list:
+          incompatible: Uforenelig
+        see_results: "Se resultat"
+      show:
+        assigned_admin: Tildelt administrator
+        assigned_valuators: Tildelt evaluatorer
+        classification: Klassificering
+        info: "%{budget_name} - Gruppe: %{group_name} - Investeringsprojekt %{id}"
+        edit: Rediger
+        edit_classification: Rediger klassificering
+        by: Af
+        sent: Sendt
+        group: Gruppe
     system_emails:
       comment:
         title: "Kommentar"
