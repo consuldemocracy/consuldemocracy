@@ -44,17 +44,13 @@ feature "Admin poll questions" do
   scenario "Create" do
     poll = create(:poll, name: "Movies")
     title = "Star Wars: Episode IV - A New Hope"
-    description = %{
-      During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station
-       with enough power to destroy an entire planet.
-      Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her
-       people and restore freedom to the galaxy....
-    }
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
     click_link "Create question"
 
-    select "Movies", from: "poll_question_poll_id"
+    expect(page).to have_content("Create question to poll Movies")
+    expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
+                                   visible: false)
     fill_in "Question", with: title
 
     click_button "Save"
@@ -156,12 +152,8 @@ feature "Admin poll questions" do
                                             title_en: "Question in English",
                                             title_es: "Pregunta en Español") }
 
-    before do
-      @edit_question_url = edit_admin_question_path(question)
-    end
-
     scenario "translates the poll name in options", :js do
-      visit @edit_question_url
+      visit edit_admin_question_path(question)
 
       expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
 
@@ -175,7 +167,7 @@ feature "Admin poll questions" do
         skip("Spec only useful when French falls back to Spanish")
       end
 
-      visit @edit_question_url
+      visit edit_admin_question_path(question)
 
       expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
 

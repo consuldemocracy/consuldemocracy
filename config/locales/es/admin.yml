@@ -995,7 +995,8 @@ es:
       edit:
         title: "Editar pregunta ciudadana"
       new:
-        title: "Crear pregunta ciudadana"
+        title: "Crear pregunta ciudadana para la votación %{poll}"
+        title_proposal: "Crear pregunta ciudadana"
         poll_label: "Votación"
       answers:
         images:

@@ -996,7 +996,8 @@ en:
       edit:
         title: "Edit Question"
       new:
-        title: "Create Question"
+        title: "Create question to poll %{poll}"
+        title_proposal: "Create question"
         poll_label: "Poll"
       answers:
         images:

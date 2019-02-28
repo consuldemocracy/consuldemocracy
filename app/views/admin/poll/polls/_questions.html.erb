@@ -1,4 +1,7 @@
-<h3><%= t("admin.polls.show.questions_title") %></h3>
+<h3 class="inline-block"><%= t("admin.polls.show.questions_title") %></h3>
+
+<%= link_to t("admin.questions.index.create"), new_admin_question_path(poll_id: @poll.id),
+            class: "button float-right" %>
 
 <% if @poll.questions.empty? %>
   <div class="callout primary margin-top">
