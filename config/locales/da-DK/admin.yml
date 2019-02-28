@@ -113,6 +113,63 @@ da:
         by: Af
         sent: Sendt
         group: Gruppe
+        tags: Tags
+        winner:
+          "true": "Ja"
+          "false": "Nej"
+        image: "Billede"
+        see_image: "Se billede"
+        no_image: "Uden billede"
+        documents: "Dokumenter"
+      edit:
+        submit_button: Opdater
+        tags: Tags
+        tags_placeholder: "Tilføj tags adskilt med komma (,)"
+        user_groups: "Grupper"
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titel"
+        table_description: "Beskrivelse"
+        table_publication_date: "Dato for offentliggørelse"
+        table_status: Status
+        table_actions: "Handlinger"
+        image: "Billede"
+        show_image: "Vis billede"
+        documents: "Dokumenter"
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Titel"
+    legislation:
+      processes:
+        edit:
+          back: Tilbage
+          submit_button: Gem ændringer
+        errors:
+          form:
+            error: Fejl
+        form:
+          enabled: Aktiveret
+          process: Proces
+          debate_phase: Debatfase
+          start: Start
+          end: Slut
+        index:
+          create: Ny proces
+          delete: Slet
+          filters:
+            active: Aktive
+            all: Alle
+        new:
+          back: Tilbage
+          submit_button: Opret proces
+        proposals:
+          select_order: Sorter efter
+          orders:
+            id: Id
+            title: Titel
     system_emails:
       comment:
         title: "Kommentar"
