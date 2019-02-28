@@ -27,3 +27,15 @@ da:
       subject: "Dit investeringsprojekt '%{code}' er blevet vurderet som uigennemførligt"
     proposal_notification_digest:
       info: "Her er de nye notifikationer, der er blevet publiceret af forfatterne til de forslag, du har støttet op om i %{org_name}."
+      share: Del forslag
+      comment: Skriv en kommentar til forslaget
+      unsubscribe_account: Min konto
+    direct_message_for_receiver:
+      subject: "Du har modtaget en ny privat besked"
+      reply: Svar %{sender}
+      unsubscribe_account: Min konto
+    direct_message_for_sender:
+      subject: "Du har sendt en ny privat besked"
+      title_html: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
+    user_invite:
+      ignore: "Hvis du ikke har anmodet om denne invitation, skal du ikke bekymre dig. Du kan ignorere denne e-mail."
