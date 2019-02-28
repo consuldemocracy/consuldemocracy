@@ -73,7 +73,6 @@ da:
         back: "Gå tilbage til budgetter"
     budget_headings:
       name: "Navn"
-      no_headings: "Der er ingen overskrifter."
     system_emails:
       comment:
         title: "Kommentar"
