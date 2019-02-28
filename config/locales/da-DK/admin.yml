@@ -1,5 +1,13 @@
 da:
   admin:
+    header:
+      title: Administration
+    actions:
+      actions: Handlinger
+      confirm: Er du sikker?
+      confirm_hide: Bekræft moderation
+      hide: Skjul
+      hide_author: Skjul bruger
     system_emails:
       comment:
         title: "Kommentar"
