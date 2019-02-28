@@ -22,3 +22,6 @@ da:
       comment:
         one: "Kommentar"
         other: "Kommentarer"
+      debate:
+        one: "Debat"
+        other: "Debatter"
