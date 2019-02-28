@@ -9,7 +9,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
   let!(:administrator)          { create(:user) }
   let!(:user)                   { create(:user, :level_two) }
   let!(:arguments)              { {} }
-  let!(:documentable)           { create(documentable_factory_name, author: user) }
+  if documentable_factory_name == "dashboard_action"
+    let!(:documentable)           { create(documentable_factory_name) }
+  else
+    let!(:documentable)           { create(documentable_factory_name, author: user) }
+  end
   let!(:user_to_login)          { send(login_as_name)}
 
   before do
@@ -133,7 +137,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       documentable_attach_new_file(
-        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        Rails.root.join("spec/fixtures/files/logo_header.gif"),
         false
       )
 
@@ -154,7 +158,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       documentable_attach_new_file(
-        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        Rails.root.join("spec/fixtures/files/logo_header.gif"),
         false
       )
 
@@ -208,6 +212,9 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show new document after successful creation with one uploaded file", :js do
+      if documentable_factory_name == "dashboard_action"
+        skip("Not render Documents count on dashboard_actions")
+      end
       login_as user_to_login
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
@@ -227,6 +234,9 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     scenario "Should show resource with new document after successful creation with
               maximum allowed uploaded files", :js do
+      if documentable_factory_name == "dashboard_action"
+        skip("Not render Documents count on dashboard_actions")
+      end
       login_as user_to_login
       visit send(path, arguments)
       FILENAMES ||= %w(clippy empty logo).freeze
@@ -357,6 +367,11 @@ def documentable_fill_new_valid_proposal
   fill_in :proposal_summary, with: "Proposal summary"
   fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
+end
+
+def documentable_fill_new_valid_dashboard_action
+  fill_in :dashboard_action_title, with: "Dashboard title"
+  fill_in :dashboard_action_short_description, with: "Dashboard description"
 end
 
 def documentable_fill_new_valid_budget_investment
