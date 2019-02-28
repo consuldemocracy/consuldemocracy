@@ -1146,6 +1146,8 @@ en:
         author: Author
         milestones: Milestones
         no_proposals: There are no proposals.
+      show:
+        create_question: Create a voting with this proposal
     hidden_proposals:
       index:
         filter: Filter

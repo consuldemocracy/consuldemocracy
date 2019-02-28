@@ -1145,6 +1145,8 @@ es:
         author: Autor
         milestones: Hitos
         no_proposals: No hay propuestas.
+      show:
+        create_question: Crear una votación con esta propuesta
     hidden_proposals:
       index:
         filter: Filtro
