@@ -25,6 +25,55 @@ da:
         title: Titel
         description: Beskrivelse
         target_url: Link
+        post_started_at: Startdato
+        post_ended_at: Slutdato
+        sections_label: Sektioner, hvor banneren vil være synlig
+        sections:
+          homepage: Startside
+          debates: Debatforum
+          proposals: Forslag
+          budgets: Deltagerbudgetter
+          help_page: Hjælp
+        background_color: Baggrundsfarve
+        font_color: Skriftfarve
+      edit:
+        editing: Rediger banner
+        form:
+          submit_button: Gem ændringer
+      errors:
+        form:
+          error:
+            one: "noget forhindrede at denne banner blev gemt"
+            other: "noget forhindrede at denne banner blev gemt"
+      new:
+        creating: Opret banner
+    activity:
+      show:
+        action: Handlinger
+        actions:
+          block: Blokeret
+          hide: Skjult
+          restore: Gendannet
+        by: Modereret af
+        content: Indhold
+        filter: Vis
+        filters:
+          all: Alle
+          on_comments: Kommentarer
+          on_debates: Debatforum
+          on_proposals: Forslag
+          on_users: Brugere
+          on_system_emails: System e-mails
+    budget_groups:
+      form:
+        edit: "Rediger gruppe"
+        name: "Gruppenavn"
+        submit: "Gem gruppe"
+      index:
+        back: "Gå tilbage til budgetter"
+    budget_headings:
+      name: "Navn"
+      no_headings: "Der er ingen overskrifter."
     system_emails:
       comment:
         title: "Kommentar"
