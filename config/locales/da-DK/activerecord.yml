@@ -112,3 +112,28 @@ da:
           attributes:
             email:
               password_already_set: "Denne bruger har allerede en adgangskode"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags skal være mindre end eller lig med %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Du har nået det maksimale antal private beskeder på en dag"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Billedbredde skal være mindst %{required_min_width}px"
+              min_image_height: "Billedets højde skal være mindst %{required_min_height}px"
+        map_location:
+          attributes:
+            map:
+              invalid: Lokation må ikke være tom. Placer en markør på kortet eller sæt et kryds i afkrydsningsfeltet, hvis lokationsangivelse ikke er nødvendig
+        poll/voter:
+          attributes:
+            document_number:
+              has_voted: "Brugeren har allerede stemt"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: skal være på eller efter startdatoen
