@@ -10,3 +10,7 @@ da:
       manage_email_subscriptions: For at stoppe med at modtage disse e-mails skal du ændre dine indstillinger i
     email_verification:
       click_here_to_verify: dette link
+      instructions_2_html: Denne e-mail vil verificere din konto med <b>%{document_type} %{document_number}</b>. Hvis disse ikke tilhører dig, vær sød ikke at klikke på det tidligere link og ignorere denne e-mail.
+      instructions_html: For at færdiggøre verifikationen af din brugerkonto klik på %{verification_link}.
+      subject: Bekræft din e-mail
+      thanks: Mange tak.
