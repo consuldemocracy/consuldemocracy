@@ -14,7 +14,7 @@ tr:
       already_authenticated: "Zaten oturum açtınız."
       inactive: "Hesabınız henüz aktif değil."
       invalid: "Geçersiz %{authentication_keys} veya şifre."
-      locked: "Hesabınız kitlenmiştir."
+      locked: "Hesabınız kilitlenmiştir."
       last_attempt: "Hesabınız engellenmeden önce bir denemeniz daha var."
       not_found_in_database: "Geçersiz %{authentication_keys} veya şifre."
       timeout: "Oturumunuzun süresi doldu. Devam etmek için lütfen tekrar oturum açın."
