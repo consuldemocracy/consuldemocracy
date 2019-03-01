@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 if [[ -v CUSTOM_SET_NAME ]]; then
     bin/rake db:migrate
     bin/rake db:seed
