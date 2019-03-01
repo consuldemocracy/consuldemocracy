@@ -44,21 +44,52 @@ tr:
           password_confirmation_label: Şifreyi onaylı
           password_label: Şifre
           phone_number_label: Telefon numarası
-          responsible_name_label: Ortak işlerden sorumlu kişinin tam adı
-          responsible_name_note: Bu, önerileri adına sunulan dernek/kollektifi temsil eden kişi olacaktır
+          responsible_name_label: Topluluktan sorumlu kişinin tam adı
+          responsible_name_note: Bu, önerileri adına sunulan dernek/topluluğu temsil eden kişi olacaktır
           submit: Kayıt Ol
-          title: Bir organizasyon veya kollektif olarak kayıt ol
+          title: Bir organizasyon veya topluluk olarak kayıt ol
         success:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1_html: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
+          instructions_2_html: Sizin <strong>e-postanız incelenirken</strong> size <strong>hesabınızı onaylamanız için bir bağlantı</strong> gönderdik.
+          instructions_3_html: Onaylandıktan sonra doğrulanmamış bir topluluk olarak katılmaya başlayabilirsiniz.
+          thank_you_html: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. Şimdi <strong>doğrulama bekleniyor</strong>.
+          title: Organizasyonun/topluluğun kaydı
     passwords:
+      edit:
+        change_submit: Şifremi değiştir
+        password_confirmation_label: Yeni şifreyi onayla
+        password_label: Yeni şifre
+        title: Şifrenizi değiştirin
       new:
         email_label: E-posta
+        send_submit: Talimatları gönder
+        title: Şifrenizi mi unuttunuz?
+    sessions:
+      new:
+        login_label: E-posta veya kullanıcı adı
+        password_label: Şifre
+        remember_me: Beni hatırla
+        submit: Giriş
+        title: Oturum aç
+    shared:
+      links:
+        login: Giriş
+        new_confirmation: Hesabınızı etkinleştirmek için talimatları almadınız mı?
+        new_password: Şifrenizi mi unuttunuz?
+        new_unlock: Kilit kaldırma talimatlarını almadınız mı?
+        signin_with_provider: '%{provider} ile oturum aç'
+        signup: Bir hesabınız yok mu? %{signup_link}
+        signup_link: Kaydol
     unlocks:
       new:
         email_label: E-posta
+        submit: Kilit açma talimatlarını tekrar gönder
+        title: Kilit açma talimatları tekrar gönderildi
     users:
       registrations:
+        delete_form:
+          erase_reason_label: Sebep
         edit:
           edit: Düzenleme
           email_label: E-posta
