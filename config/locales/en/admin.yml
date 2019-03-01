@@ -1146,7 +1146,7 @@ en:
         milestones: Milestones
         no_proposals: There are no proposals.
       show:
-        create_question: Create a voting with this proposal
+        create_question: Add this proposal to a poll to be voted
     hidden_proposals:
       index:
         filter: Filter

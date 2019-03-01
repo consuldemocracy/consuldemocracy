@@ -69,7 +69,7 @@ feature "Admin poll questions" do
     visit admin_proposal_path(proposal)
 
     expect(page).not_to have_content("This proposal has reached the required supports")
-    click_link "Create a voting with this proposal"
+    click_link "Add this proposal to a poll to be voted"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field("Question", with: proposal.title)
@@ -89,7 +89,7 @@ feature "Admin poll questions" do
     visit admin_proposal_path(proposal)
 
     expect(page).to have_content("This proposal has reached the required supports")
-    click_link "Create a voting with this proposal"
+    click_link "Add this proposal to a poll to be voted"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field("Question", with: proposal.title)

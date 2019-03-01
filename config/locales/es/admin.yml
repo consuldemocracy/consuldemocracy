@@ -1145,7 +1145,7 @@ es:
         milestones: Hitos
         no_proposals: No hay propuestas.
       show:
-        create_question: Crear una votación con esta propuesta
+        create_question: Añadir esta propuesta a una votación para ser votada
     hidden_proposals:
       index:
         filter: Filtro
