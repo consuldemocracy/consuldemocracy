@@ -17,16 +17,18 @@ feature "Admin poll questions" do
     question1 = create(:poll_question, poll: poll1)
     question2 = create(:poll_question, poll: poll2)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll1)
+    expect(page).to have_content(poll1.name)
 
     within("#poll_question_#{question1.id}") do
       expect(page).to have_content(question1.title)
-      expect(page).to have_content(poll1.name)
     end
+
+    visit admin_poll_path(poll2)
+    expect(page).to have_content(poll2.name)
 
     within("#poll_question_#{question2.id}") do
       expect(page).to have_content(question2.title)
-      expect(page).to have_content(poll2.name)
     end
   end
 
@@ -35,7 +37,8 @@ feature "Admin poll questions" do
     poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
     question = create(:poll_question, poll: poll)
 
-    visit admin_question_path(question)
+    visit admin_poll_path(poll)
+    click_link "#{question.title}"
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.author.name)
@@ -56,10 +59,11 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(title)
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   scenario "Create from proposal" do
-    create(:poll, name: "Proposals")
+    poll = create(:poll, name: "Proposals")
     proposal = create(:proposal)
 
     visit admin_proposal_path(proposal)
@@ -75,12 +79,11 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(proposal.title)
-    expect(page).to have_link(proposal.title, href: proposal_path(proposal))
-    expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   scenario "Create from successful proposal" do
-    create(:poll, name: "Proposals")
+    poll = create(:poll, name: "Proposals")
     proposal = create(:proposal, :successful)
 
     visit admin_proposal_path(proposal)
@@ -96,14 +99,15 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(proposal.title)
-    expect(page).to have_link(proposal.title, href: proposal_path(proposal))
-    expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   scenario "Update" do
-    question1 = create(:poll_question)
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
+
     within("#poll_question_#{question1.id}") do
       click_link "Edit"
     end
@@ -116,18 +120,16 @@ feature "Admin poll questions" do
 
     expect(page).to have_content "Changes saved"
     expect(page).to have_content new_title
-
-    visit admin_questions_path
-
-    expect(page).to have_content(new_title)
+    expect(page).to have_current_path(admin_poll_path(poll))
     expect(page).not_to have_content(old_title)
   end
 
   scenario "Destroy" do
-    question1 = create(:poll_question)
-    question2 = create(:poll_question)
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
+    question2 = create(:poll_question, poll: poll)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
       click_link "Delete"
@@ -135,6 +137,7 @@ feature "Admin poll questions" do
 
     expect(page).not_to have_content(question1.title)
     expect(page).to have_content(question2.title)
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
