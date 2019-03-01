@@ -41,7 +41,7 @@ tr:
         new:
           email_label: E-posta
           organization_name_label: Organizasyonun adı
-          password_confirmation_label: Şifreyi onaylı
+          password_confirmation_label: Şifreyi onayla
           password_label: Şifre
           phone_number_label: Telefon numarası
           responsible_name_label: Topluluktan sorumlu kişinin tam adı
@@ -90,8 +90,38 @@ tr:
       registrations:
         delete_form:
           erase_reason_label: Sebep
+          info: Bu eylem geri alınamaz. Lütfen istediğin şeyin bu olduğundan emin ol.
+          info_reason: Eğer isterseniz, bize bir neden söyleyin (isteğe bağlı)
+          submit: Hesabımı sil
+          title: Hesap silme
         edit:
+          current_password_label: Mevcut şifre
           edit: Düzenleme
           email_label: E-posta
+          leave_blank: Değiştirmek istemiyorsanız boş bırakın
+          need_current: Değişiklikleri onaylamak için mevcut şifrenize ihtiyacımız var
+          password_confirmation_label: Yeni şifreyi onayla
+          password_label: Yeni şifre
+          update_submit: Güncelleme
+          waiting_for: 'Şunun onayı bekleniyor:'
         new:
+          cancel: Giriş iptali
           email_label: E-posta
+          organization_signup: Bir organizasyonu ya da topluluğu mu temsil ediyorsunuz? %{signup_link}
+          organization_signup_link: Buradan kaydolun
+          password_confirmation_label: Şifreyi onayla
+          password_label: Şifre
+          redeemable_code: Doğrulama kodu e-posta ile alındı (isteğe bağlı)
+          submit: Kayıt Ol
+          terms: Kayıt yaparak %{terms} kabul etmiş sayılırsınız
+          terms_link: şartlar ve kullanım koşulları
+          terms_title: Kayıt yaparak şartları ve kullanım koşullarını kabul etmiş sayılırsınız
+          title: Kayıt Ol
+          username_is_available: Kullanıcı adı kullanılabilir
+          username_is_not_available: Kullanıcı adı zaten kullanılıyor
+          username_label: Kullanıcı adı
+          username_note: Gönderilerinizin yanında görünen isim
+        success:
+          back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1_html: Lütfen <b>e-postanızı kontrol edin</b> - size <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
+          instructions_2_html: Onaylandıktan sonra katılmaya başlayabilirsiniz.
