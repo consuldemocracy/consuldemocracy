@@ -772,6 +772,35 @@ tr:
         description: "Bütçe yatırımı seçildiğinde yazara gönder."
       budget_investment_unfeasible:
         title: "Bütçe yatırımı uygulanamaz"
+        description: "Bütçe yatırımı uygulanamaz olarak işaretlendiğinde yazara gönder."
+      budget_investment_unselected:
+        title: "Bütçe yatırımı seçilmedi"
+        description: "Bütçe yatırımı oylama aşaması için seçilmediğinde yazara gönder."
+      comment:
+        title: "Yorum"
+        description: "Bir yorum aldığında yazara gönder."
+      reply:
+        title: "Yanıt"
+        description: "Bir cevap aldığında yorum yazarına gönder."
+      direct_message_for_receiver:
+        title: "Özel mesaj alıcısı"
+        description: "Özel mesaj alıcısına gönder."
+      direct_message_for_sender:
+        title: "Özel mesaj göndericisi"
+        description: "Özel mesaj göndericisine gönder."
+      email_verification:
+        title: "E-posta doğrulama"
+        description: "Yeni bir kullanıcıya hesabını doğrulaması için gönder."
+      user_invite:
+        title: "Kullanıcı Daveti"
+        description: "Bir hesap açması için davet edilen kişiye gönder."
+      edit_info: "Bu e-postayı şurda düzenleyebilirsiniz"
+      message_title: "Mesaj Başlığı"
+      message_body: "Bu mesajın içeriğinin bir örneğidir."
+      alert:
+        no_investments: "Hiç bütçe yatırımı oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
+        no_comments: "Hiç yorum oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
+        no_replies: "Hiç yanıt oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
     emails_download:
       index:
         title: E-postaları indirme
