@@ -125,3 +125,5 @@ tr:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1_html: Lütfen <b>e-postanızı kontrol edin</b> - size <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
           instructions_2_html: Onaylandıktan sonra katılmaya başlayabilirsiniz.
+          thank_you_html: Web sitesine kayıt olduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
+          title: E-posta adresinizi onaylayın
