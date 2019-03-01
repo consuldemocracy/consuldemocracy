@@ -40,7 +40,7 @@ docker-compose run prepare #install sample data
 
 **NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
 
-Prerequisites: install git, Ruby 2.3.7, `bundler` gem, Node.js and PostgreSQL (>=9.4).
+Prerequisites: install git, Ruby 2.3.8, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
 ```bash
 git clone https://github.com/consul/consul.git

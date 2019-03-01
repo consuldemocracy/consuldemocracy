@@ -1,9 +1,8 @@
-# Use Ruby 2.3.7 as base image
-FROM ruby:2.3.7
+# Use Ruby alpine 2.3.8 as base image
+FROM ruby:2.3.8-alpine3.8
 
 # Various environment variables that can be overruled
-ENV DEBIAN_FRONTEND noninteractive
-ENV RAILS_ENV development
+ENV RAILS_ENV production
 ENV DATABASE_ADAPTER postgresql
 ENV DATABASE_ENCODING unicode
 ENV DATABASE_HOST 127.0.0.1
@@ -23,18 +22,10 @@ ENV SMTP_STARTTLS_AUTO true
 ENV SECRET_TOKEN 56792feef405a59b18ea7db57b4777e855103882b926413d4afdfb8c0ea8aa86ea6649da4e729c5f5ae324c0ab9338f789174cf48c544173bc18fdc3b14262e4
 
 # Install essential Linux packages
-RUN apt-get update -qq
-RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached
+RUN apk --update add build-base nodejs tzdata postgresql-dev postgresql-client libxslt-dev libxml2-dev imagemagick unzip linux-headers
 
 # Files created inside the container repect the ownership
-RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
-  && adduser consul sudo \
-  && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-RUN echo 'Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bundle/bin"' > /etc/sudoers.d/secure_path
-RUN chmod 0440 /etc/sudoers.d/secure_path
-
-COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN adduser --shell /bin/sh --disabled-password --gecos "" consul
 
 # Define where our application will live inside the image
 ENV RAILS_ROOT /var/www/consul
@@ -54,16 +45,7 @@ COPY Gemfile* ./
 RUN gem install bundler
 
 # Finish establishing our Ruby environment
-RUN bundle install --full-index
-
-# Install Chromium and ChromeDriver for E2E integration tests
-#RUN apt-get update -qq && apt-get install -y chromium
-#RUN wget -N http://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
-#RUN unzip chromedriver_linux64.zip
-#RUN chmod +x chromedriver
-#RUN mv -f chromedriver /usr/local/share/chromedriver
-#RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-#RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+RUN if [[ "$RAILS_ENV" == "production" ]]; then bundle install --without development test; else bundle install; fi
 
 # Copy the Rails application into place
 COPY . .

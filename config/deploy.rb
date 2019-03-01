@@ -7,7 +7,7 @@ def deploysecret(key)
 end
 
 set :rails_env, fetch(:stage)
-set :rvm1_ruby_version, '2.3.7'
+set :rvm1_ruby_version, '2.3.8'
 
 set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
