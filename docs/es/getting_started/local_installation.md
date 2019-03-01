@@ -12,7 +12,7 @@ git clone https://github.com/consul/consul.git
 
 ```bash
 cd consul
-bundle install
+bundle
 ```
 
 3. Copia los archivos de configuración de ejemplo del entorno dentro de unos nuevos válidos:
@@ -27,22 +27,22 @@ Y configura los de tu usuario de base de datos `consul` en `database.yml`
 4. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para crear y rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
 
 ```bash
-bin/rake db:create
-bin/rake db:setup
-bin/rake db:dev_seed
-RAILS_ENV=test bin/rake db:setup
+rake db:create
+rake db:setup
+rake db:dev_seed
+rake db:test:prepare
 ```
 
-5. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que tardará unos cuantos minutos):
+5. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
 
 ```bash
-bundle exec rspec
+bin/rspec
 ```
 
 6. Ahora que ya está todo listo puedes ejecutar la aplicación:
 
 ```bash
-rails s
+bin/rails s
 ```
 
 ¡Felicidades! Tu aplicación Consul local estará corriendo en `http://localhost:3000`.
