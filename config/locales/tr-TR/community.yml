@@ -9,7 +9,46 @@ tr:
     show:
       title:
         proposal: Öneri topluluğu
+        investment: Bütçe Yatırımı topluluğu
+      description:
+        proposal: Bu önerinin topluluğuna katıl. Etkin bir topluluk, önerinin içeriğini geliştirmeye ve daha fazla destek almak için yayılmasını arttırmaya yardımcı olabilir.
+        investment: Bu bütçe yatırımının topluluğuna katıl. Etkin bir topluluk, bütçe yatırımının içeriğini geliştirmeye ve daha fazla destek almak için yayılmasını artırmaya yardımcı olabilir.
+      create_first_community_topic:
+        first_theme_not_logged_in: Sorun yok, ilki oluşturmaya katıl.
+        first_theme: İlk topluluk konusunu oluştur
+        sub_first_theme: "Bir tema oluşturmak için %{sign_in} veya %{sign_up}."
+        sign_in: "oturum aç"
+        sign_up: "kaydol"
+      tab:
+        participants: Katılımcılar
+      sidebar:
+        participate: Katıl
+        new_topic: Konu oluştur
+      topic:
+        edit: Konuyu düzenle
+        destroy: Konuyu yok et
+        comments:
+          zero: Yorum yok
+          one: 1 yorum
+          other: "%{count} yorumlar"
+      author: Yazar
+      back: '%{community} %{proposal} ''a geri dön'
     topic:
+      create: Bir konu oluştur
+      edit: Konuyu Düzenle
+      form:
+        topic_title: Başlık
+        topic_text: İlk metin
+        new:
+          submit_button: Konu oluştur
+        edit:
+          submit_button: Konuyu düzenle
+        create:
+          submit_button: Konu oluştur
+        update:
+          submit_button: Konuyu güncelle
       show:
         tab:
           comments_tab: Yorumlar
+      sidebar:
+        recommendations_title: Bir konu oluşturmak için öneriler
