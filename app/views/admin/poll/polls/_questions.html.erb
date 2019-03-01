@@ -12,6 +12,7 @@
     <thead>
       <tr>
         <th><%= t("admin.polls.show.table_title") %></th>
+        <th class="small-4"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <% @poll.questions.each do |question| %>
@@ -20,6 +21,17 @@
           <strong>
             <%= link_to question.title, admin_question_path(question) %>
           </strong>
+        </td>
+        <td>
+          <div class="small-6 column">
+            <%= link_to t("shared.edit"), edit_admin_question_path(question),
+                                          class: "button hollow expanded" %>
+          </div>
+          <div class="small-6 column">
+            <%= link_to t("shared.delete"), admin_question_path(question),
+                                            class: "button hollow alert expanded",
+                                            method: :delete %>
+          <div class="small-6 column">
         </td>
       </tr>
     <% end %>
