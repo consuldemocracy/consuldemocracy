@@ -30,10 +30,27 @@ tr:
         info_text: Fazla sayıda başarısız oturum açma denemesi nedeniyle hesabınız engellendi.
         instructions_text: 'Hesabınızın kilidini kaldırmak için lütfen bu bağlantıya tıklayın:'
         title: Hesabınız kilitlenmiştir
+        unlock_link: Hesabımın kilidini aç
+    menu:
+      login_items:
+        login: Oturum aç
+        logout: Oturumu kapat
+        signup: Kayıt ol
     organizations:
       registrations:
         new:
           email_label: E-posta
+          organization_name_label: Organizasyonun adı
+          password_confirmation_label: Şifreyi onaylı
+          password_label: Şifre
+          phone_number_label: Telefon numarası
+          responsible_name_label: Ortak işlerden sorumlu kişinin tam adı
+          responsible_name_note: Bu, önerileri adına sunulan dernek/kollektifi temsil eden kişi olacaktır
+          submit: Kayıt Ol
+          title: Bir organizasyon veya kollektif olarak kayıt ol
+        success:
+          back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1_html: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
     passwords:
       new:
         email_label: E-posta
