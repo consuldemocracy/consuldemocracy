@@ -45,4 +45,21 @@ tr:
       update_needs_confirmation: "Hesabınız başarıyla güncellendi; ancak yeni e-posta adresinizi doğrulamamız gerekiyor. Lütfen yeni e-posta adresinizin onayını tamamlamak için e-postanızı kontrol edin ve bağlantıya tıklayın."
       updated: "Hesabınız başarıyla güncellenmiştir."
     sessions:
-      signed_in: "Başarılı bir şekilde giriş yaptınız."
+      signed_in: "Başarılı şekilde giriş yaptınız."
+      signed_out: "Başarılı şekilde çıkış yaptınız."
+      already_signed_out: "Başarılı şekilde çıkış yaptınız."
+    unlocks:
+      send_instructions: "Birkaç dakika içinde, hesabınızın kilidinin açılmasıyla ilgili talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "Bir hesabınız varsa, birkaç dakika içinde hesabınızın kilidini açma talimatlarını içeren bir e-posta alacaksınız."
+      unlocked: "Hesabınızın kilidi açıldı. Devam etmek için lütfen giriş yapın."
+  errors:
+    messages:
+      already_confirmed: "Zaten doğruladınız; lütfen giriş yapmayı deneyin."
+      confirmation_period_expired: "Sizin %{period} içinde doğrulanmış olmanız gerekiyor; lütfen tekrar bir talepte bulunun."
+      expired: "süresi doldu; lütfen tekrar bir talepte bulunun."
+      not_found: "bulunamadı."
+      not_locked: "kilitlenmedi."
+      not_saved:
+        one: "1 hata, bu %{resource} 'un kaydedilmesini engelledi. Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+        other: "%{count} hatalar, bu %{resource} 'un kaydedilmesini engelledi. Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+      equal_to_current_password: "mevcut şifreden farklı olmalıdır."
