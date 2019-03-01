@@ -135,4 +135,4 @@ Para ejecutar los tests:
 bundle exec rspec
 ```
 
-> Ya estás listo para [instalar Consul](../installation.html)!!
+> Ya estás listo para [instalar Consul](../local_installation.html)!!
