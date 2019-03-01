@@ -764,6 +764,14 @@ tr:
         title: "Öneri bildirimi özeti"
         description: "Çok fazla e-posta almamak için bir kullanıcı için tüm öneri bildirimlerini tek bir mesajda toplar."
         preview_detail: "Kullanıcılar yalnızca takip ettikleri önerilerden bildirim alırlar"
+      budget_investment_created:
+        title: "Bütçe yatırımı oluşturuldu"
+        description: "Bir kullanıcı bir bütçe yatırımı oluşturduğunda gönder."
+      budget_investment_selected:
+        title: "Bütçe yatırımı seçildi"
+        description: "Bütçe yatırımı seçildiğinde yazara gönder."
+      budget_investment_unfeasible:
+        title: "Bütçe yatırımı uygulanamaz"
     emails_download:
       index:
         title: E-postaları indirme
