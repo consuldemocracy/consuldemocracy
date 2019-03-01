@@ -18,6 +18,16 @@
       <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @investment, f: f %>
+      </div>
+    <% end %>
+
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @investment, f: f %>
+    </div>
+
     <div class="small-12 column">
       <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
       <%= f.text_field :tag_list,
