@@ -9,3 +9,35 @@ tr:
     confirmations:
       confirmed: "Hesabınız onaylanmıştır."
       send_instructions: "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
+    failure:
+      already_authenticated: "Zaten oturum açtınız."
+      inactive: "Hesabınız henüz aktif değil."
+      invalid: "Geçersiz %{authentication_keys} veya şifre."
+      locked: "Hesabınız kitlenmiştir."
+      last_attempt: "Hesabınız engellenmeden önce bir denemeniz daha var."
+      not_found_in_database: "Geçersiz %{authentication_keys} veya şifre."
+      timeout: "Oturumunuzun süresi doldu. Devam etmek için lütfen tekrar oturum açın."
+      unauthenticated: "Devam etmek için oturum açmanız veya kaydolmanız gerekir."
+      unconfirmed: "Devam etmek için, lütfen size e-posta ile gönderdiğimiz onay bağlantısını tıklayın"
+    mailer:
+      confirmation_instructions:
+        subject: "Onay talimatları"
+      reset_password_instructions:
+        subject: "Hesabınızı sıfırlamanız için talimatlar"
+      unlock_instructions:
+        subject: "Kilit açma talimatları"
+    omniauth_callbacks:
+      failure: "Sizi %{kind} olarak yetkilendirmek \"%{reason}\" dan dolayı mümkün olmadı."
+      success: "Başarılı şekilde %{kind} olarak tanımlandı."
+    passwords:
+      no_token: "Bir şifre sıfırlama bağlantısı dışında bu sayfaya erişemezsiniz. Bir şifre sıfırlama bağlantısı yoluyla eriştiyseniz, lütfen URL’nin tam olup olmadığını kontrol edin."
+      send_instructions: "Birkaç dakika içinde şifrenizi sıfırlamanızla ilgili talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi sıfırlamak için bir bağlantı alacaksınız."
+      updated: "Şifreniz başarıyla değiştirilmiştir. Kimlik doğrulama başarılı."
+      updated_not_active: "Şifreniz başarıyla değiştirilmiştir."
+    registrations:
+      destroyed: "Güle güle! Hesabınız iptal edildi. Seni en yakın zamanda tekrar görmeyi umarız."
+      signed_up: "Hoş geldin! Kimliğiniz doğrulandı."
+      signed_up_but_inactive: "Kaydınız başarılı oldu, ancak hesabınız aktif olmadığı için oturum açamadınız."
+      signed_up_but_locked: "Kaydınız başarılı oldu, ancak hesabınız kilitli olduğundan oturum açamadınız."
