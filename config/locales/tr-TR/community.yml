@@ -1,5 +1,14 @@
 tr:
   community:
+    sidebar:
+      title: Topluluk
+      description:
+        proposal: Bu öneri kullanıcı topluluğuna katıl.
+        investment: Bu yatırımın kullanıcı topluluğuna katıl.
+      button_to_access: Topluluğa erişim
+    show:
+      title:
+        proposal: Öneri topluluğu
     topic:
       show:
         tab:
