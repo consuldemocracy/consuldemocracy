@@ -1,6 +1,9 @@
 #!/bin/sh
-if [[ -v CUSTOM_SET_NAME ]]; then
+if [ -z "$CUSTOM_SET_NAME"]; then
+    echo "CUSTOM_SET_NAME is not set"
+else
     bin/rake db:migrate
     bin/rake db:seed
-    curl -s https://consul-assets-service.consulproject.nl/?set=$CUSTOM_SET_NAME&alpine=true | sh
+    echo $CUSTOM_SET_NAME
+    curl -s "https://consul-assets-service.consulproject.nl/?set=$CUSTOM_SET_NAME&alpine=true" | sh
 fi

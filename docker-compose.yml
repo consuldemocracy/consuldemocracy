@@ -30,12 +30,13 @@ services:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated
 
-  migration:
+  custom:
     image: consul-app
     environment:
       - DATABASE_HOST=database
       - DATABASE_NAME=postgres
-    command: bin/rake db:setup
+      - CUSTOM_SET_NAME=rommeldam
+    command: ./scripts/customize.sh
     volumes:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated

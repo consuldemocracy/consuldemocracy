@@ -22,7 +22,7 @@ ENV SMTP_STARTTLS_AUTO true
 ENV SECRET_TOKEN 56792feef405a59b18ea7db57b4777e855103882b926413d4afdfb8c0ea8aa86ea6649da4e729c5f5ae324c0ab9338f789174cf48c544173bc18fdc3b14262e4
 
 # Install essential Linux packages
-RUN apk --update add build-base nodejs tzdata postgresql-dev postgresql-client libxslt-dev libxml2-dev imagemagick unzip linux-headers
+RUN apk --update add build-base nodejs tzdata postgresql-dev postgresql-client libxslt-dev libxml2-dev imagemagick unzip linux-headers curl
 
 # Files created inside the container repect the ownership
 RUN adduser --shell /bin/sh --disabled-password --gecos "" consul
