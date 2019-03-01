@@ -41,3 +41,8 @@ tr:
       signed_up: "Hoş geldin! Kimliğiniz doğrulandı."
       signed_up_but_inactive: "Kaydınız başarılı oldu, ancak hesabınız aktif olmadığı için oturum açamadınız."
       signed_up_but_locked: "Kaydınız başarılı oldu, ancak hesabınız kilitli olduğundan oturum açamadınız."
+      signed_up_but_unconfirmed: "Bir doğrulama bağlantısı içeren bir mesaj gönderdiniz. Hesabınızı etkinleştirmek için lütfen bu bağlantıya tıklayın."
+      update_needs_confirmation: "Hesabınız başarıyla güncellendi; ancak yeni e-posta adresinizi doğrulamamız gerekiyor. Lütfen yeni e-posta adresinizin onayını tamamlamak için e-postanızı kontrol edin ve bağlantıya tıklayın."
+      updated: "Hesabınız başarıyla güncellenmiştir."
+    sessions:
+      signed_in: "Başarılı bir şekilde giriş yaptınız."
