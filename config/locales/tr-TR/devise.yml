@@ -1,1 +1,11 @@
 tr:
+  devise:
+    password_expired:
+      expire_password: "Şifre süresi doldu"
+      change_required: "Şifrenizin süresi doldu"
+      change_password: "Şifrenizi değiştirin"
+      new_password: "Yeni şifre"
+      updated: "Şifre başarıyla güncellendi"
+    confirmations:
+      confirmed: "Hesabınız onaylanmıştır."
+      send_instructions: "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
