@@ -8,10 +8,12 @@ tr:
       attachment_label: Belge seç
       delete_button: Belgeyi kaldır
       cancel_button: İptal
+      note: "Aşağıdaki içerik türlerinden en fazla %{max_documents_allowed} belgelernii yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size}'a yükseltilebilir dosya başına MB."
       add_new_document: Yeni belge ekle
     actions:
       destroy:
         notice: Belge başarıyla silindi.
+        alert: Belge yok edilemez.
         confirm: Belgeyi silmek istediğnize emin misiniz? Bu işlem geri alınamaz!
     buttons:
       download_document: Dosyayı indir
@@ -19,3 +21,4 @@ tr:
     errors:
       messages:
         in_between: '%{min} ve %{max} arasında olması gereklidir'
+        wrong_content_type: içerik türü %{content_type} kabul edilen içerik türlerinin %{accepted_content_types} hiçbiriyle eşleşmiyor
