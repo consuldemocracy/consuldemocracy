@@ -1,1 +1,21 @@
 tr:
+  documents:
+    title: Belgeler
+    max_documents_allowed_reached_html: İzin verilen maksimum belge sayısına ulaştınız! <strong>Başka bir yükleme yapmadan önce birini silmelisiniz.</strong>
+    form:
+      title: Belgeler
+      title_placeholder: Belge için açıklayıcı bir başlık ekleyin
+      attachment_label: Belge seç
+      delete_button: Belgeyi kaldır
+      cancel_button: İptal
+      add_new_document: Yeni belge ekle
+    actions:
+      destroy:
+        notice: Belge başarıyla silindi.
+        confirm: Belgeyi silmek istediğnize emin misiniz? Bu işlem geri alınamaz!
+    buttons:
+      download_document: Dosyayı indir
+      destroy_document: Belgeyi yok et
+    errors:
+      messages:
+        in_between: '%{min} ve %{max} arasında olması gereklidir'
