@@ -89,6 +89,7 @@ group :development do
   gem "capistrano-bundler", "~> 1.2", require: false
   gem "capistrano-rails", "~> 1.4.0", require: false
   gem "capistrano3-delayed-job", "~> 1.7.3"
+  gem "erb_lint", require: false
   gem "mdl", "~> 0.5.0", require: false
   gem "rubocop", "~> 0.54.0", require: false
   gem "rubocop-rspec", "~> 1.26.0", require: false
