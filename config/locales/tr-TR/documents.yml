@@ -8,7 +8,7 @@ tr:
       attachment_label: Belge seç
       delete_button: Belgeyi kaldır
       cancel_button: İptal
-      note: "Aşağıdaki içerik türlerinden en fazla %{max_documents_allowed} belgelernii yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size}'a yükseltilebilir dosya başına MB."
+      note: "Aşağıdaki içerik türlerinden en fazla %{max_documents_allowed} belgelerini yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size}'a yükseltilebilir dosya başına MB."
       add_new_document: Yeni belge ekle
     actions:
       destroy:
