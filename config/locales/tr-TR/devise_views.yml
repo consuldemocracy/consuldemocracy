@@ -54,7 +54,7 @@ tr:
           instructions_2_html: Sizin <strong>e-postanız incelenirken</strong> size <strong>hesabınızı onaylamanız için bir bağlantı</strong> gönderdik.
           instructions_3_html: Onaylandıktan sonra doğrulanmamış bir topluluk olarak katılmaya başlayabilirsiniz.
           thank_you_html: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. Şimdi <strong>doğrulama bekleniyor</strong>.
-          title: Organizasyonun/topluluğun kaydı
+          title: Organizasyonun / topluluğun kaydı
     passwords:
       edit:
         change_submit: Şifremi değiştir
