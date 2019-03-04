@@ -20,4 +20,3 @@ App.TableSortable =
         table.append rows[i]
         i++
       return
-      
