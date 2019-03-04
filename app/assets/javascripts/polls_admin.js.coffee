@@ -5,8 +5,8 @@ App.PollsAdmin =
       change: ->
         switch ($(this).val())
           when 'vote_collection'
-            $("select[class='js-shift-vote-collection-dates']").show();
-            $("select[class='js-shift-recount-scrutiny-dates']").hide();
+            $("select[class='js-shift-vote-collection-dates']").show()
+            $("select[class='js-shift-recount-scrutiny-dates']").hide()
           when 'recount_scrutiny'
-            $("select[class='js-shift-recount-scrutiny-dates']").show();
-            $("select[class='js-shift-vote-collection-dates']").hide();
+            $("select[class='js-shift-recount-scrutiny-dates']").show()
+            $("select[class='js-shift-vote-collection-dates']").hide()
