@@ -17,16 +17,18 @@ feature "Admin poll questions" do
     question1 = create(:poll_question, poll: poll1)
     question2 = create(:poll_question, poll: poll2)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll1)
+    expect(page).to have_content(poll1.name)
 
     within("#poll_question_#{question1.id}") do
       expect(page).to have_content(question1.title)
-      expect(page).to have_content(poll1.name)
     end
+
+    visit admin_poll_path(poll2)
+    expect(page).to have_content(poll2.name)
 
     within("#poll_question_#{question2.id}") do
       expect(page).to have_content(question2.title)
-      expect(page).to have_content(poll2.name)
     end
   end
 
@@ -35,7 +37,8 @@ feature "Admin poll questions" do
     poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
     question = create(:poll_question, poll: poll)
 
-    visit admin_question_path(question)
+    visit admin_poll_path(poll)
+    click_link "#{question.title}"
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.author.name)
@@ -44,31 +47,29 @@ feature "Admin poll questions" do
   scenario "Create" do
     poll = create(:poll, name: "Movies")
     title = "Star Wars: Episode IV - A New Hope"
-    description = %{
-      During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station
-       with enough power to destroy an entire planet.
-      Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her
-       people and restore freedom to the galaxy....
-    }
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
     click_link "Create question"
 
-    select "Movies", from: "poll_question_poll_id"
+    expect(page).to have_content("Create question to poll Movies")
+    expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
+                                   visible: false)
     fill_in "Question", with: title
 
     click_button "Save"
 
     expect(page).to have_content(title)
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
-  scenario "Create from successful proposal" do
+  scenario "Create from proposal" do
     poll = create(:poll, name: "Proposals")
-    proposal = create(:proposal, :successful)
+    proposal = create(:proposal)
 
     visit admin_proposal_path(proposal)
 
-    click_link "Create question"
+    expect(page).not_to have_content("This proposal has reached the required supports")
+    click_link "Add this proposal to a poll to be voted"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field("Question", with: proposal.title)
@@ -78,14 +79,35 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(proposal.title)
-    expect(page).to have_link(proposal.title, href: proposal_path(proposal))
-    expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
+    expect(page).to have_current_path(admin_poll_path(poll))
+  end
+
+  scenario "Create from successful proposal" do
+    poll = create(:poll, name: "Proposals")
+    proposal = create(:proposal, :successful)
+
+    visit admin_proposal_path(proposal)
+
+    expect(page).to have_content("This proposal has reached the required supports")
+    click_link "Add this proposal to a poll to be voted"
+
+    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
+    expect(page).to have_field("Question", with: proposal.title)
+
+    select "Proposals", from: "poll_question_poll_id"
+
+    click_button "Save"
+
+    expect(page).to have_content(proposal.title)
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   scenario "Update" do
-    question1 = create(:poll_question)
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
+
     within("#poll_question_#{question1.id}") do
       click_link "Edit"
     end
@@ -98,18 +120,16 @@ feature "Admin poll questions" do
 
     expect(page).to have_content "Changes saved"
     expect(page).to have_content new_title
-
-    visit admin_questions_path
-
-    expect(page).to have_content(new_title)
+    expect(page).to have_current_path(admin_poll_path(poll))
     expect(page).not_to have_content(old_title)
   end
 
   scenario "Destroy" do
-    question1 = create(:poll_question)
-    question2 = create(:poll_question)
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
+    question2 = create(:poll_question, poll: poll)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
       click_link "Delete"
@@ -117,6 +137,7 @@ feature "Admin poll questions" do
 
     expect(page).not_to have_content(question1.title)
     expect(page).to have_content(question2.title)
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
@@ -134,12 +155,8 @@ feature "Admin poll questions" do
                                             title_en: "Question in English",
                                             title_es: "Pregunta en Español") }
 
-    before do
-      @edit_question_url = edit_admin_question_path(question)
-    end
-
     scenario "translates the poll name in options", :js do
-      visit @edit_question_url
+      visit edit_admin_question_path(question)
 
       expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
 
@@ -153,7 +170,7 @@ feature "Admin poll questions" do
         skip("Spec only useful when French falls back to Spanish")
       end
 
-      visit @edit_question_url
+      visit edit_admin_question_path(question)
 
       expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
 

@@ -4,9 +4,7 @@
     <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
       <span aria-hidden="true">&times;</span>
     </button>
-    <%= t("verification.residence.new.error_verifying_census",
-    offices: link_to( t("verification.residence.new.error_verifying_census_offices"),
-    setting['verification_offices_url'], title: t('shared.target_blank_html'), target: "_blank")).html_safe %>
+    <%= t("verification.residence.new.error_verifying_census") %>
   </div>
 
 <% else %>

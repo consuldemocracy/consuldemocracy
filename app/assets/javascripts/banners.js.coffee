@@ -24,20 +24,28 @@ App.Banners =
       change: ->
         App.Banners.update_banner("#js-banner-description", $(this).val())
 
-    $("#banner_background_color_picker").on
+    $("#background_color_input").on
       change: ->
-        App.Banners.update_background_color("#js-banner-background", "#banner_background_color", $(this).val());
+        App.Banners.update_background_color("#js-banner-background",
+                                            "#banner_background_color",
+                                            $(this).val())
 
     $("#banner_background_color").on
       change: ->
-        App.Banners.update_background_color("#js-banner-background", "#banner_background_color_picker", $(this).val());
+        App.Banners.update_background_color("#js-banner-background",
+                                            "#background_color_input",
+                                            $(this).val())
 
-    $("#banner_font_color_picker").on
+    $("#font_color_input").on
       change: ->
-        App.Banners.update_font_color("#js-banner-title", "#banner_font_color", $(this).val());
-        App.Banners.update_font_color("#js-banner-description", "#banner_font_color", $(this).val());
+        App.Banners.update_font_color("#js-banner-title",
+                                      "#banner_font_color", $(this).val())
+        App.Banners.update_font_color("#js-banner-description",
+                                      "#banner_font_color", $(this).val())
 
     $("#banner_font_color").on
       change: ->
-        App.Banners.update_font_color("#js-banner-title", "#banner_font_color_picker", $(this).val());
-        App.Banners.update_font_color("#js-banner-description", "#banner_font_color_picker", $(this).val());
+        App.Banners.update_font_color("#js-banner-title",
+                                      "#font_color_input", $(this).val())
+        App.Banners.update_font_color("#js-banner-description",
+                                      "#font_color_input", $(this).val())

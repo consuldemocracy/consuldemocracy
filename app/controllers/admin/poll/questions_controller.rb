@@ -24,7 +24,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     @question.author = @question.proposal.try(:author) || current_user
 
     if @question.save
-      redirect_to admin_question_path(@question)
+      redirect_to admin_poll_path(@question.poll)
     else
       render :new
     end
@@ -38,7 +38,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_question_path(@question), notice: t("flash.actions.save_changes.notice")
+      redirect_to admin_poll_path(@question.poll), notice: t("flash.actions.save_changes.notice")
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     else
       notice = t("flash.actions.destroy.error")
     end
-    redirect_to admin_questions_path, notice: notice
+    redirect_to admin_poll_path(@question.poll), notice: notice
   end
 
   private

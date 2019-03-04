@@ -10,21 +10,11 @@
     <% end %>
 
     <% if feature?(:polls) %>
-      <li class="section-title">
-        <a href="#">
+      <li class="section-title <%= "is-active" if menu_polls? %>">
+        <%= link_to admin_polls_path do %>
           <span class="icon-checkmark-circle"></span>
-          <strong><%= t("admin.menu.title_polls") %></strong>
-        </a>
-        <ul id="polls_menu" <%= "class=is-active" if menu_polls? || controller.class.parent == Admin::Poll::Questions::Answers %>>
-          <li <%= "class=is-active" if menu_poll? %>>
-            <%= link_to t("admin.menu.polls"), admin_polls_path %>
-          </li>
-
-          <li <%= "class=is-active" if %w(questions answers).include?(controller_name) ||
-                                    controller.class.parent == Admin::Poll::Questions::Answers %>>
-            <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
-          </li>
-        </ul>
+          <strong><%= t("admin.menu.polls") %></strong>
+        <% end %>
       </li>
     <% end %>
 
@@ -74,6 +64,15 @@
         </li>
       </ul>
     </li>
+
+    <% if feature?(:signature_sheets) %>
+      <li class="section-title <%= "is-active" if controller_name == "signature_sheets" %>">
+        <%= link_to admin_signature_sheets_path do %>
+          <span class="icon-file-text-o"></span>
+          <strong><%= t("admin.menu.signature_sheets") %></strong>
+        <% end %>
+      </li>
+    <% end %>
 
     <% if feature?(:spending_proposals) %>
       <li class="section-title">
@@ -137,15 +136,6 @@
         </li>
       </ul>
     </li>
-
-    <% if feature?(:signature_sheets) %>
-      <li class="section-title <%= "is-active" if controller_name == "signature_sheets" %>">
-        <%= link_to admin_signature_sheets_path do %>
-          <span class="icon-file-text-o"></span>
-          <strong><%= t("admin.menu.signature_sheets") %></strong>
-        <% end %>
-      </li>
-    <% end %>
 
     <li class="section-title">
       <a href="#">

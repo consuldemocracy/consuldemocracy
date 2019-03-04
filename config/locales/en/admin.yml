@@ -38,8 +38,6 @@ en:
           proposals: Proposals
           budgets: Participatory budgeting
           help_page: Help page
-        background_color: Background colour
-        font_color: Font colour
       edit:
         editing: Edit banner
         form:
@@ -434,7 +432,6 @@ en:
           homepage_description: Here you can explain the content of the process
           homepage_enabled: Homepage enabled
           banner_title: Header colors
-          color_help: Hexadecimal format
         index:
           create: New process
           delete: Delete
@@ -482,7 +479,7 @@ en:
           selected: Selected
         form:
           custom_categories: Categories
-          custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres by category.
+          custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres.
           custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
@@ -587,7 +584,6 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
-      poll_questions: Questions
       proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
@@ -639,7 +635,6 @@ en:
             update: "Update Block"
       title_moderated_content: Moderated content
       title_budgets: Budgets
-      title_polls: Polls
       title_profiles: Profiles
       title_settings: Settings
       title_site_customization: Site content
@@ -1001,7 +996,8 @@ en:
       edit:
         title: "Edit Question"
       new:
-        title: "Create Question"
+        title: "Create question to poll %{poll}"
+        title_proposal: "Create question"
         poll_label: "Poll"
       answers:
         images:
@@ -1149,6 +1145,8 @@ en:
         author: Author
         milestones: Milestones
         no_proposals: There are no proposals.
+      show:
+        create_question: Add this proposal to a poll to be voted
     hidden_proposals:
       index:
         filter: Filter
@@ -1227,6 +1225,7 @@ en:
       content: Content
       created_at: Created at
       delete: Delete
+      color_help: Hexadecimal format
     spending_proposals:
       index:
         geozone_filter_all: All zones
