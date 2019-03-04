@@ -11,7 +11,7 @@ App.TagAutocomplete =
       source: (request, response) ->
         $.ajax
           url: $('.tag-autocomplete').data('js-url'),
-          data: {search: App.TagAutocomplete.extractLast( request.term )},
+          data: { search: App.TagAutocomplete.extractLast( request.term ) },
           type: 'GET',
           dataType: 'json'
           success: ( data ) ->
