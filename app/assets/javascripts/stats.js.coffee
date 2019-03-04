@@ -3,7 +3,7 @@
 
 buildGraph = (el) ->
   url = $(el).data 'graph'
-  conf = bindto: el,  data: { x: 'x', url: url, mimeType: 'json' },  axis: { x: { type: 'timeseries',tick: { format: '%Y-%m-%d' } } }
+  conf = bindto: el,  data: { x: 'x', url: url, mimeType: 'json' },  axis: { x: { type: 'timeseries', tick: { format: '%Y-%m-%d' } } }
   graph = c3.generate conf
 
 App.Stats =
