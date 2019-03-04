@@ -41,4 +41,3 @@ App.Polls =
         $(answer).removeClass("answer-divider")
         unless $(answer).hasClass('first')
           $(answer).insertAfter($(answer).next('div.answer'))
-

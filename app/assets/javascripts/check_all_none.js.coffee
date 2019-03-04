@@ -8,6 +8,3 @@ App.CheckAllNone =
     $('[data-check-none]').on 'click', ->
       target_name = $(this).data('check-none')
       $("[name='" + target_name + "']").prop('checked', false)
-
-
-
