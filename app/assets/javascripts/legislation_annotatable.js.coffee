@@ -38,7 +38,7 @@ App.LegislationAnnotatable =
 
   renderAnnotationComments: (event) ->
     if event.offset
-      $("#comments-box").css({top: event.offset - $('.calc-comments').offset().top})
+      $("#comments-box").css({ top: event.offset - $('.calc-comments').offset().top })
 
     if App.LegislationAnnotatable.isMobile()
       return
@@ -105,7 +105,7 @@ App.LegislationAnnotatable =
       dataType: 'script').done (->
         $('#new_legislation_annotation #legislation_annotation_quote').val(@annotation.quote)
         $('#new_legislation_annotation #legislation_annotation_ranges').val(JSON.stringify(@annotation.ranges))
-        $('#comments-box').css({top: position.top - $('.calc-comments').offset().top})
+        $('#comments-box').css({ top: position.top - $('.calc-comments').offset().top })
 
         unless  $('[data-legislation-open-phase]').data('legislation-open-phase') == false
           App.LegislationAnnotatable.highlight('#7fff9a')
@@ -143,7 +143,7 @@ App.LegislationAnnotatable =
             el.addClass('current-annotation')
             $('#comments-box').html('')
             App.LegislationAllegations.show_comments()
-            $('html,body').animate({scrollTop: el.offset().top})
+            $('html,body').animate({ scrollTop: el.offset().top })
             $.event.trigger
               type: "renderLegislationAnnotation"
               annotation_id: ann_id

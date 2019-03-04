@@ -29,7 +29,7 @@ App.Tracks =
   track_proposal: ->
     page_title = App.Tracks.page_title()
     proposal_rank = $('#js-tracking').data('proposal-rank')
-    _paq.push(['trackPageView', page_title, {dimension6: proposal_rank}])
+    _paq.push(['trackPageView', page_title, { dimension6: proposal_rank }])
 
   track_user: ->
     tracking_data      = $("#tracking_data")
