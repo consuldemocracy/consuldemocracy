@@ -27,7 +27,7 @@ App.Map =
     removeMarkerSelector     = $(element).data('marker-remove-selector')
     addMarkerInvestments     = $(element).data('marker-investments-coordinates')
     editable                 = $(element).data('marker-editable')
-    marker                   = null;
+    marker                   = null
     markerIcon               = L.divIcon(
                                   className: 'map-marker'
                                   iconSize:     [30, 30]
@@ -46,7 +46,7 @@ App.Map =
       e.preventDefault()
       if marker
         map.removeLayer(marker)
-        marker = null;
+        marker = null
       clearFormfields()
       return
 
