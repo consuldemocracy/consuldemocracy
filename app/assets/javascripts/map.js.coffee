@@ -8,8 +8,8 @@ App.Map =
         App.Map.initializeMap map
 
     $('.js-toggle-map').on
-        click: ->
-          App.Map.toggleMap()
+      click: ->
+        App.Map.toggleMap()
 
   initializeMap: (element) ->
     App.Map.cleanInvestmentCoordinates(element)
@@ -29,10 +29,11 @@ App.Map =
     editable                 = $(element).data('marker-editable')
     marker                   = null
     markerIcon               = L.divIcon(
-                                  className: 'map-marker'
-                                  iconSize:     [30, 30]
-                                  iconAnchor:   [15, 40]
-                                  html: '<div class="map-icon"></div>')
+      className: 'map-marker'
+      iconSize:     [30, 30]
+      iconAnchor:   [15, 40]
+      html: '<div class="map-icon"></div>'
+    )
 
     createMarker = (latitude, longitude) ->
       markerLatLng  = new (L.LatLng)(latitude, longitude)
@@ -105,8 +106,8 @@ App.Map =
           marker.on 'click', openMarkerPopup
 
   toggleMap: ->
-      $('.map').toggle()
-      $('.js-location-map-remove-marker').toggle()
+    $('.map').toggle()
+    $('.js-location-map-remove-marker').toggle()
 
   cleanInvestmentCoordinates: (element) ->
     markers = $(element).attr('data-marker-investments-coordinates')
