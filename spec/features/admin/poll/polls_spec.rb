@@ -12,13 +12,10 @@ feature 'Admin polls' do
                   "edit_admin_poll_path",
                   %w[name summary description]
 
-  scenario 'Index empty', :js do
+  scenario "Index empty", :js do
     visit admin_root_path
 
     click_link "Polls"
-    within('#polls_menu') do
-      click_link "Polls"
-    end
 
     expect(page).to have_content "There are no polls"
   end
@@ -31,9 +28,6 @@ feature 'Admin polls' do
     visit admin_root_path
 
     click_link "Polls"
-    within("#polls_menu") do
-      click_link "Polls"
-    end
 
     expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
