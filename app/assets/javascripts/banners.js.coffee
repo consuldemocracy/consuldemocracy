@@ -8,19 +8,19 @@ App.Banners =
       .addClass(style, true)
 
   update_background_color: (selector, text_selector, background_color) ->
-    $(selector).css('background-color', background_color)
+    $(selector).css("background-color", background_color)
     $(text_selector).val(background_color)
 
   update_font_color: (selector, text_selector, font_color) ->
-    $(selector).css('color', font_color)
+    $(selector).css("color", font_color)
     $(text_selector).val(font_color)
 
   initialize: ->
-    $('[data-js-banner-title]').on
+    $("[data-js-banner-title]").on
       change: ->
         App.Banners.update_banner("#js-banner-title", $(this).val())
 
-    $('[data-js-banner-description]').on
+    $("[data-js-banner-description]").on
       change: ->
         App.Banners.update_banner("#js-banner-description", $(this).val())
 

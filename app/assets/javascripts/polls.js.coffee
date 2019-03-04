@@ -1,7 +1,7 @@
 App.Polls =
   generateToken: ->
-    token = ''
-    rand = ''
+    token = ""
+    rand = ""
     for n in [0..5]
       rand = Math.random().toString(36).substr(2) # remove `0.`
       token = token + rand
@@ -10,7 +10,7 @@ App.Polls =
     return token
 
   replaceToken: ->
-    for link in $('.js-question-answer')
+    for link in $(".js-question-answer")
       token_param = link.search.slice(-6)
       if token_param == "token="
         link.href = link.href + @token
@@ -22,22 +22,22 @@ App.Polls =
     $(".js-question-answer").on
       click: =>
         token_message = $(".js-token-message")
-        if !token_message.is(':visible')
+        if !token_message.is(":visible")
           token_message.html("#{token_message.html()}<br><strong>#{@token}</strong>")
           token_message.show()
     false
 
     $(".zoom-link").on "click", (event) ->
       element = event.target
-      answer = $(element).closest('div.answer')
+      answer = $(element).closest("div.answer")
 
-      if $(answer).hasClass('medium-6')
+      if $(answer).hasClass("medium-6")
         $(answer).removeClass("medium-6")
         $(answer).addClass("answer-divider")
-        unless $(answer).hasClass('first')
-          $(answer).insertBefore($(answer).prev('div.answer'))
+        unless $(answer).hasClass("first")
+          $(answer).insertBefore($(answer).prev("div.answer"))
       else
         $(answer).addClass("medium-6")
         $(answer).removeClass("answer-divider")
-        unless $(answer).hasClass('first')
-          $(answer).insertAfter($(answer).next('div.answer'))
+        unless $(answer).hasClass("first")
+          $(answer).insertAfter($(answer).next("div.answer"))

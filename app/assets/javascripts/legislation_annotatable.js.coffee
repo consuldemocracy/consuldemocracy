@@ -6,39 +6,39 @@ App.LegislationAnnotatable =
     sel = window.getSelection()
     if sel.rangeCount and sel.getRangeAt
       range = sel.getRangeAt(0)
-    document.designMode = 'on'
+    document.designMode = "on"
     if range
       sel.removeAllRanges()
       sel.addRange range
     # Use HiliteColor since some browsers apply BackColor to the whole block
-    if !document.execCommand('HiliteColor', false, colour)
-      document.execCommand 'BackColor', false, colour
-    document.designMode = 'off'
+    if !document.execCommand("HiliteColor", false, colour)
+      document.execCommand "BackColor", false, colour
+    document.designMode = "off"
     return
 
   highlight: (colour) ->
     if window.getSelection
       # IE9 and non-IE
       try
-        if !document.execCommand('BackColor', false, colour)
+        if !document.execCommand("BackColor", false, colour)
           App.LegislationAnnotatable.makeEditableAndHighlight colour
       catch ex
         App.LegislationAnnotatable.makeEditableAndHighlight colour
     else if document.selection and document.selection.createRange
       # IE <= 8 case
       range = document.selection.createRange()
-      range.execCommand 'BackColor', false, colour
+      range.execCommand "BackColor", false, colour
     return
 
   remove_highlight: ->
-    $('[data-legislation-draft-version-id] span[style]').replaceWith(->
+    $("[data-legislation-draft-version-id] span[style]").replaceWith(->
       return $(this).contents()
     )
     return
 
   renderAnnotationComments: (event) ->
     if event.offset
-      $("#comments-box").css({ top: event.offset - $('.calc-comments').offset().top })
+      $("#comments-box").css({ top: event.offset - $(".calc-comments").offset().top })
 
     if App.LegislationAnnotatable.isMobile()
       return
@@ -46,7 +46,7 @@ App.LegislationAnnotatable =
     $.ajax
       method: "GET"
       url: "#{event.annotation_url}/annotations/#{event.annotation_id}/comments"
-      dataType: 'script'
+      dataType: "script"
 
   onClick: (event) ->
     event.preventDefault()
@@ -54,21 +54,21 @@ App.LegislationAnnotatable =
 
     if App.LegislationAnnotatable.isMobile()
       annotation_url = $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-      window.location.href = "#{annotation_url}/annotations/#{$(this).data('annotation-id')}"
+      window.location.href = "#{annotation_url}/annotations/#{$(this).data("annotation-id")}"
       return
 
-    $('[data-annotation-id]').removeClass('current-annotation')
+    $("[data-annotation-id]").removeClass("current-annotation")
 
     target = $(this)
 
-    parents = target.parents('.annotator-hl')
+    parents = target.parents(".annotator-hl")
     parents_ids = parents.map (_, elem) ->
       $(elem).data("annotation-id")
 
-    annotation_id = target.data('annotation-id')
-    $("[data-annotation-id='#{annotation_id}']").addClass('current-annotation')
+    annotation_id = target.data("annotation-id")
+    $("[data-annotation-id='#{annotation_id}']").addClass("current-annotation")
 
-    $('#comments-box').html('')
+    $("#comments-box").html("")
     App.LegislationAllegations.show_comments()
     $("#comments-box").show()
 
@@ -92,24 +92,24 @@ App.LegislationAnnotatable =
       return
 
   customShow: (position) ->
-    $(@element).html ''
+    $(@element).html ""
     # Clean comments section and open it
-    $('#comments-box').html ''
+    $("#comments-box").html ""
     App.LegislationAllegations.show_comments()
-    $('#comments-box').show()
+    $("#comments-box").show()
 
-    annotation_url = $('[data-legislation-annotatable-base-url]').data('legislation-annotatable-base-url')
+    annotation_url = $("[data-legislation-annotatable-base-url]").data("legislation-annotatable-base-url")
     $.ajax(
-      method: 'GET'
+      method: "GET"
       url: "#{annotation_url}/annotations/new"
-      dataType: 'script').done (->
-        $('#new_legislation_annotation #legislation_annotation_quote').val(@annotation.quote)
-        $('#new_legislation_annotation #legislation_annotation_ranges').val(JSON.stringify(@annotation.ranges))
-        $('#comments-box').css({ top: position.top - $('.calc-comments').offset().top })
+      dataType: "script").done (->
+        $("#new_legislation_annotation #legislation_annotation_quote").val(@annotation.quote)
+        $("#new_legislation_annotation #legislation_annotation_ranges").val(JSON.stringify(@annotation.ranges))
+        $("#comments-box").css({ top: position.top - $(".calc-comments").offset().top })
 
-        unless  $('[data-legislation-open-phase]').data('legislation-open-phase') == false
-          App.LegislationAnnotatable.highlight('#7fff9a')
-          $('#comments-box textarea').focus()
+        unless  $("[data-legislation-open-phase]").data("legislation-open-phase") == false
+          App.LegislationAnnotatable.highlight("#7fff9a")
+          $("#comments-box textarea").focus()
 
           $("#new_legislation_annotation").on("ajax:complete", (e, data, status, xhr) ->
             App.LegislationAnnotatable.app.destroy()
@@ -119,10 +119,10 @@ App.LegislationAnnotatable =
               $.ajax
                 method: "GET"
                 url: "#{annotation_url}/annotations/#{data.responseJSON.id}/comments"
-                dataType: 'script'
+                dataType: "script"
             else
-              $(e.target).find('label').addClass('error')
-              $("<small class='error'>#{data.responseJSON[0]}</small>").insertAfter($(e.target).find('textarea'))
+              $(e.target).find("label").addClass("error")
+              $("<small class='error'>#{data.responseJSON[0]}</small>").insertAfter($(e.target).find("textarea"))
             return true
           )
         return
@@ -133,17 +133,17 @@ App.LegislationAnnotatable =
 
   scrollToAnchor: ->
     annotationsLoaded: (annotations) ->
-      anchor = $(location).attr('hash')
-      if anchor && anchor.startsWith('#annotation')
+      anchor = $(location).attr("hash")
+      if anchor && anchor.startsWith("#annotation")
         ann_id = anchor.split("-")[-1..]
 
         checkExist = setInterval((->
           if $("span[data-annotation-id='#{ann_id}']").length
             el = $("span[data-annotation-id='#{ann_id}']")
-            el.addClass('current-annotation')
-            $('#comments-box').html('')
+            el.addClass("current-annotation")
+            $("#comments-box").html("")
             App.LegislationAllegations.show_comments()
-            $('html,body').animate({ scrollTop: el.offset().top })
+            $("html,body").animate({ scrollTop: el.offset().top })
             $.event.trigger
               type: "renderLegislationAnnotation"
               annotation_id: ann_id
@@ -175,16 +175,16 @@ App.LegislationAnnotatable =
 
   initialize: ->
     $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
-    $(document).off('click', '[data-annotation-id]').on('click', '[data-annotation-id]', App.LegislationAnnotatable.onClick)
-    $(document).off('click', '[data-cancel-annotation]').on('click', '[data-cancel-annotation]', (e) ->
+    $(document).off("click", "[data-annotation-id]").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick)
+    $(document).off("click", "[data-cancel-annotation]").on("click", "[data-cancel-annotation]", (e) ->
       e.preventDefault()
-      $('#comments-box').html('')
-      $('#comments-box').hide()
+      $("#comments-box").html("")
+      $("#comments-box").hide()
       App.LegislationAnnotatable.remove_highlight()
       return
     )
 
-    current_user_id = $('html').data('current-user-id')
+    current_user_id = $("html").data("current-user-id")
 
     $(".legislation-annotatable").each ->
       $this          = $(this)
