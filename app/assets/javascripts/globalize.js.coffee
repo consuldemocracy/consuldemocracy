@@ -16,18 +16,18 @@ App.Globalize =
       else
         $(this).hide()
       $('.js-delete-language').hide()
-      $('#js_delete_' + locale).show()
+      $("#js_delete_#{locale}").show()
 
   highlight_locale: (element) ->
     $('.js-globalize-locale-link').removeClass('is-active')
     element.addClass('is-active')
 
   remove_language: (locale) ->
-    $(".js-globalize-attribute[data-locale=" + locale + "]").each ->
+    $(".js-globalize-attribute[data-locale=#{locale}]").each ->
       $(this).val('').hide()
       if CKEDITOR.instances[$(this).attr('id')]
         CKEDITOR.instances[$(this).attr('id')].setData('')
-    $(".js-globalize-locale-link[data-locale=" + locale + "]").hide()
+    $(".js-globalize-locale-link[data-locale=#{locale}]").hide()
     next = $(".js-globalize-locale-link:visible").first()
     App.Globalize.highlight_locale(next)
     App.Globalize.display_translations(next.data("locale"))
@@ -48,10 +48,10 @@ App.Globalize =
     )
 
   destroy_locale_field: (locale) ->
-    $("input[id$=_destroy][data-locale=" + locale + "]")
+    $("input[id$=_destroy][data-locale=#{locale}]")
 
   site_customization_enable_locale_field: (locale) ->
-    $("#enabled_translations_" + locale)
+    $("#enabled_translations_#{locale}")
 
   refresh_visible_translations: ->
     locale = $('.js-globalize-locale-link.is-active').data("locale")

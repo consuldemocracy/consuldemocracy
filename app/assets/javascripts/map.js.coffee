@@ -75,7 +75,7 @@ App.Map =
     openMarkerPopup = (e) ->
       marker = e.target
 
-      $.ajax '/investments/' + marker.options['id'] + '/json_data',
+      $.ajax "/investments/#{marker.options['id']}/json_data",
         type: 'GET'
         dataType: 'json'
         success: (data) ->

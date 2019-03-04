@@ -45,7 +45,7 @@ App.LegislationAnnotatable =
 
     $.ajax
       method: "GET"
-      url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments"
+      url: "#{event.annotation_url}/annotations/#{event.annotation_id}/comments"
       dataType: 'script'
 
   onClick: (event) ->
@@ -54,7 +54,7 @@ App.LegislationAnnotatable =
 
     if App.LegislationAnnotatable.isMobile()
       annotation_url = $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-      window.location.href = annotation_url + "/annotations/" + $(this).data('annotation-id')
+      window.location.href = "#{annotation_url}/annotations/#{$(this).data('annotation-id')}"
       return
 
     $('[data-annotation-id]').removeClass('current-annotation')
@@ -66,7 +66,7 @@ App.LegislationAnnotatable =
       $(elem).data("annotation-id")
 
     annotation_id = target.data('annotation-id')
-    $('[data-annotation-id="' + annotation_id + '"]').addClass('current-annotation')
+    $("[data-annotation-id='#{annotation_id}']").addClass('current-annotation')
 
     $('#comments-box').html('')
     App.LegislationAllegations.show_comments()
@@ -101,7 +101,7 @@ App.LegislationAnnotatable =
     annotation_url = $('[data-legislation-annotatable-base-url]').data('legislation-annotatable-base-url')
     $.ajax(
       method: 'GET'
-      url: annotation_url + '/annotations/new'
+      url: "#{annotation_url}/annotations/new"
       dataType: 'script').done (->
         $('#new_legislation_annotation #legislation_annotation_quote').val(@annotation.quote)
         $('#new_legislation_annotation #legislation_annotation_ranges').val(JSON.stringify(@annotation.ranges))
@@ -118,11 +118,11 @@ App.LegislationAnnotatable =
               $("#comments-box").html("").hide()
               $.ajax
                 method: "GET"
-                url: annotation_url + "/annotations/" + data.responseJSON.id + "/comments"
+                url: "#{annotation_url}/annotations/#{data.responseJSON.id}/comments"
                 dataType: 'script'
             else
               $(e.target).find('label').addClass('error')
-              $('<small class="error">' + data.responseJSON[0] + '</small>').insertAfter($(e.target).find('textarea'))
+              $("<small class='error'>#{data.responseJSON[0]}</small>").insertAfter($(e.target).find('textarea'))
             return true
           )
         return
@@ -138,8 +138,8 @@ App.LegislationAnnotatable =
         ann_id = anchor.split("-")[-1..]
 
         checkExist = setInterval((->
-          if $("span[data-annotation-id='" + ann_id + "']").length
-            el = $("span[data-annotation-id='" + ann_id + "']")
+          if $("span[data-annotation-id='#{ann_id}']").length
+            el = $("span[data-annotation-id='#{ann_id}']")
             el.addClass('current-annotation')
             $('#comments-box').html('')
             App.LegislationAllegations.show_comments()
@@ -164,11 +164,11 @@ App.LegislationAnnotatable =
       last_annotation = annotations[annotations.length - 1]
 
       checkExist = setInterval((->
-        if $("span[data-annotation-id='" + last_annotation.id + "']").length
+        if $("span[data-annotation-id='#{last_annotation.id}']").length
           for annotation in annotations
             ann_weight = App.LegislationAnnotatable.propotionalWeight(annotation.weight, max_weight)
-            el = $("span[data-annotation-id='" + annotation.id + "']")
-            el.addClass('weight-' + ann_weight)
+            el = $("span[data-annotation-id='#{annotation.id}']")
+            el.addClass("weight-#{ann_weight}")
           clearInterval checkExist
         return
       ), 100)

@@ -69,7 +69,7 @@ App.Documentable =
 
       progress: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
-        $(data.progressBar).find('.loading-bar').css 'width', progress + '%'
+        $(data.progressBar).find('.loading-bar').css 'width', "#{progress}%"
         return
 
   buildFileUploadData: (e, data) ->
@@ -112,7 +112,7 @@ App.Documentable =
       $(data.titleField).val(title)
 
   setInputErrors: (data) ->
-    errors = '<small class="error">' + data.jqXHR.responseJSON.errors + '</small>'
+    errors = "<small class='error'>#{data.jqXHR.responseJSON.errors}</small>"
     $(data.errorContainer).append(errors)
 
   lockUploads: ->
@@ -157,4 +157,4 @@ App.Documentable =
       App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)
 
   removeDocument: (id) ->
-    $('#' + id).remove()
+    $("##{id}").remove()

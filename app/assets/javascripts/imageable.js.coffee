@@ -70,7 +70,7 @@ App.Imageable =
 
       progress: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
-        $(data.progressBar).find('.loading-bar').css 'width', progress + '%'
+        $(data.progressBar).find('.loading-bar').css 'width', "#{progress}%"
         return
 
   buildFileUploadData: (e, data) ->
@@ -117,11 +117,11 @@ App.Imageable =
       $(data.titleField).val(title)
 
   setInputErrors: (data) ->
-    errors = '<small class="error">' + data.jqXHR.responseJSON.errors + '</small>'
+    errors = "<small class='error'>#{data.jqXHR.responseJSON.errors}</small>"
     $(data.errorContainer).append(errors)
 
   setPreview: (data) ->
-    image_preview = '<div class="small-12 column text-center image-preview"><figure><img src="' + data.result.attachment_url + '" class="cached-image"/></figure></div>'
+    image_preview = "<div class='small-12 column text-center image-preview'><figure><img src='#{data.result.attachment_url}' class='cached-image'></figure></div>"
     if $(data.preview).length > 0
       $(data.preview).replaceWith(image_preview)
     else
@@ -162,5 +162,5 @@ App.Imageable =
       App.Imageable.doDeleteCachedAttachmentRequest(this.href, data)
 
   removeImage: (id) ->
-    $('#' + id).remove()
+    $("##{id}").remove()
     $("#new_image_link").removeClass('hide')
