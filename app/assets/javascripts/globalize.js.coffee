@@ -26,7 +26,7 @@ App.Globalize =
     $(".js-globalize-attribute[data-locale=" + locale + "]").each ->
       $(this).val('').hide()
       if CKEDITOR.instances[$(this).attr('id')]
-          CKEDITOR.instances[$(this).attr('id')].setData('')
+        CKEDITOR.instances[$(this).attr('id')].setData('')
     $(".js-globalize-locale-link[data-locale=" + locale + "]").hide()
     next = $(".js-globalize-locale-link:visible").first()
     App.Globalize.highlight_locale(next)
