@@ -30,7 +30,7 @@ feature "Admin banners magement" do
                   font_color: "#FFFFFF")
 
       @banner3 = create(:banner, title: "Banner number three",
-                  description:  "This is the text of banner number three and has style banner-three",
+                  description:  "This is the text of banner number three",
                   target_url:  "http://www.url.com",
                   post_started_at: (Time.current - 1.day),
                   post_ended_at:   (Time.current + 10.days),
@@ -38,7 +38,7 @@ feature "Admin banners magement" do
                   font_color: "#FFFFFF")
 
       @banner4 = create(:banner, title: "Banner number four",
-                  description:  "This is the text of banner number four and has style banner-one",
+                  description:  "This is the text of banner number four",
                   target_url:  "http://www.url.com",
                   post_started_at: (DateTime.current - 10.days),
                   post_ended_at:   (DateTime.current + 10.days),
@@ -46,7 +46,7 @@ feature "Admin banners magement" do
                   font_color: "#FFFFFF")
 
       @banner5 = create(:banner, title: "Banner number five",
-                  description:  "This is the text of banner number five and has style banner-two",
+                  description:  "This is the text of banner number five",
                   target_url:  "http://www.url.com",
                   post_started_at: (DateTime.current - 10.days),
                   post_ended_at:   (DateTime.current + 10.days),
@@ -140,29 +140,22 @@ feature "Admin banners magement" do
   scenario "Update banner color when changing from color picker or text_field", :js do
     visit new_admin_banner_path
 
-    fill_in "banner_background_color", with: "#850000"
-    fill_in "banner_font_color", with: "#ffb2b2"
+    fill_in "background_color_input", with: "#850000"
+    fill_in "font_color_input", with: "#ffb2b2"
     fill_in "Title", with: "Fun with flags"
 
-    # This last step simulates the blur event on the page. The color pickers and the text_fields
-    # has onChange events that update each one when the other changes, but this is only fired when
-    # the text_field loses the focus (color picker update when text_field changes). The first one
-    # works because when the test fills in the second one, the first loses the focus
-    # (so the onChange is fired). The second one never loses the focus, so the onChange is not been fired.
-    # The `fill_in` action clicks out of the text_field and makes the field to lose the focus.
-
-    expect(find("#banner_background_color_picker").value).to eq("#850000")
-    expect(find("#banner_font_color_picker").value).to eq("#ffb2b2")
+    expect(find("#background_color_input").value).to eq("#850000")
+    expect(find("#font_color_input").value).to eq("#ffb2b2")
   end
 
   scenario "Edit banner with live refresh", :js do
-    banner1 = create(:banner, title: "Hello",
-                              description: "Wrong text",
-                              target_url:  "http://www.url.com",
-                              post_started_at: (Time.current + 4.days),
-                              post_ended_at:   (Time.current + 10.days),
-                              background_color: "#FF0000",
-                              font_color: "#FFFFFF")
+    create(:banner, title: "Hello",
+                    description: "Wrong text",
+                    target_url:  "http://www.url.com",
+                    post_started_at: (Time.current + 4.days),
+                    post_ended_at:   (Time.current + 10.days),
+                    background_color: "#FF0000",
+                    font_color: "#FFFFFF")
 
     visit admin_root_path
 
