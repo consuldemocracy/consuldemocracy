@@ -2,3 +2,5 @@ rubocop:
   config_file: .rubocop.yml
 scss:
   config_file: .scss-lint.yml
+coffeescript:
+  config_file: .coffeelint.json
