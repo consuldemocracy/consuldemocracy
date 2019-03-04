@@ -60,15 +60,14 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(title)
-  end
-
-  scenario "Create from successful proposal" do
+  scenario "Create from proposal" do
     poll = create(:poll, name: "Proposals")
-    proposal = create(:proposal, :successful)
+    proposal = create(:proposal)
 
     visit admin_proposal_path(proposal)
 
-    click_link "Create question"
+    expect(page).not_to have_content("This proposal has reached the required supports")
+    click_link "Add this proposal to a poll to be voted"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field("Question", with: proposal.title)
@@ -78,8 +77,27 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(proposal.title)
-    expect(page).to have_link(proposal.title, href: proposal_path(proposal))
-    expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
+    expect(page).to have_current_path(admin_poll_path(poll))
+  end
+
+  scenario "Create from successful proposal" do
+    poll = create(:poll, name: "Proposals")
+    proposal = create(:proposal, :successful)
+
+    visit admin_proposal_path(proposal)
+
+    expect(page).to have_content("This proposal has reached the required supports")
+    click_link "Add this proposal to a poll to be voted"
+
+    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
+    expect(page).to have_field("Question", with: proposal.title)
+
+    select "Proposals", from: "poll_question_poll_id"
+
+    click_button "Save"
+
+    expect(page).to have_content(proposal.title)
+    expect(page).to have_current_path(admin_poll_path(poll))
   end
 
   scenario "Update" do
