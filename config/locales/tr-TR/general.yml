@@ -113,6 +113,7 @@ tr:
       recommendations:
         without_results: İlgilendikleriniz ile alakalı tartışmalar yok
         without_interests: Önerileri takip et, böylece sana tavsiyelerde bulunabiliriz
+        disable: "Tartışma tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
         actions:
           success: "Bu hesap için tartışma önerileri artık devre dışı bırakıldı"
           error: "Bir hata oluştur. Lütfen tartışma önerilerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
@@ -186,15 +187,19 @@ tr:
     poll/question/answer: Cevap
     user: Hesap
     verification/sms: telefon
+    signature_sheet: İmza sayfası
     document: Belge
     topic: Konu
     image: Fotoğraf
   geozones:
     none: Tüm şehir
+    all: Tüm kapsamlar
   layouts:
     application:
       chrome: Google Chrome
       firefox: Firefox
+      ie: Internet Explorer ile taradığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} veya %{chrome} kullanmanızı öneririz.
+      ie_title: Bu web sitesi tarayıcınız için optimize edilmemiştir
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım şartları ve koşulları
@@ -202,6 +207,7 @@ tr:
       consul_url: https://github.com/consul/consul
       contact_us: Teknik yardım için ziyaret edin
       copyright: CONSUL, %{year}
+      description: Bu portal %{open_source} olan %{consul} kullanır.
       participation_title: Katılım
     header:
       administration: Yönetim
