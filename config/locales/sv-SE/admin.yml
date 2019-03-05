@@ -365,8 +365,6 @@ sv:
           process: Process
           debate_phase: Diskussionsfas
           proposals_phase: Förslagsfas
-          start: Start
-          end: Slut
           use_markdown: Använda Markdown för att formatera texten
           title_placeholder: Titel på processen
           summary_placeholder: Kort sammanfattning
