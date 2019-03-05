@@ -131,9 +131,42 @@ tr:
       unread: Okunmamış
     notification:
       mark_as_read: Okundu olarak işaretle
+      mark_as_unread: Okunmadı olarak işaretle
+      notifiable_hidden: Bu kaynak artık kullanılabilir değil.
   map:
     title: "İlçeler"
+    proposal_for_district: "Bölgeniz için bir öneri başlatın"
+    select_district: İşlem kapsamı
+    start_proposal: Bir öneri oluştur
+  omniauth:
+    facebook:
+      sign_in: Facebook ile oturum aç
+      sign_up: Facebook ile kaydol
+      name: Facebook
+    finish_signup:
+      title: "Ek detaylar"
+    google_oauth2:
+      sign_in: Google ile oturum aç
+      sign_up: Google ile kaydol
+      name: Google
+    twitter:
+      sign_in: Twitter ile oturum aç
+      sign_up: Twitter ile kaydol
+      name: Twitter
+    info_sign_in: "Şunla oturum aç:"
+    info_sign_up: "Şunla kaydol:"
+    or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
+    create:
+      form:
+        submit_button: Öneri oluştur
+    edit:
+      editing: Öneriyi düzenle
+      form:
+        submit_button: Değişiklikleri kaydet
+      show_link: Öneriyi göster
+    retire_form:
+      title: Öneriyi çek
     show:
       comments_tab: Yorumlar
       edit_proposal_link: Düzenleme
