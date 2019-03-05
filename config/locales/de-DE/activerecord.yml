@@ -29,8 +29,8 @@ de:
         one: "Tag"
         other: "Tags"
       user:
-        one: "Benutzer*innen"
-        other: "Benutzer"
+        one: "Benutzer*in"
+        other: "Benutzer*innen"
       moderator:
         one: "Moderator"
         other: "Moderator*innen"
