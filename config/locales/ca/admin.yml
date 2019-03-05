@@ -251,8 +251,6 @@ ca:
           enabled: activa
           process: procés
           debate_phase: fase prèvia
-          start: Inici
-          end: fi
           use_markdown: Fes servir Markdown per formatar el text
           title_placeholder: Escriu el títol del procés
           summary_placeholder: Resum curt de la descripció
