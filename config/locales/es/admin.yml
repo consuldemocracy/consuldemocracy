@@ -584,7 +584,7 @@ es:
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
-      geozones: Gestionar distritos
+      geozones: Gestionar zonas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -1093,6 +1093,7 @@ es:
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
+        help: Las cuentas de usuario marcadas como cargos públicos tendrán resaltadas sus intervenciones en la plataforma. Puedes definir la etiqueta que aparece al lado de los nombres de usuario de estas cuentas de mayor importancia (nivel 1) a menor (nivel 5).
         no_officials: No hay cargos públicos.
         name: Nombre
         official_position: Cargo público
@@ -1282,31 +1283,33 @@ es:
         cost_for_geozone: Coste total
     geozones:
       index:
-        title: Distritos
-        create: Crear un distrito
+        title: Zonas
+        create: Crear una zona
         edit: Editar
         delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
         census_code: Código del censo
+        code_help: Código de respuesta para esta zona en la API del censo
         coordinates: Coordenadas
+        coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
       errors:
         form:
           error:
-            one: "error impidió guardar el distrito"
-            other: 'errores impidieron guardar el distrito.'
+            one: "error impidió guardar la zona."
+            other: 'errores impidieron guardar la zona.'
       edit:
         form:
           submit_button: Guardar cambios
-        editing: Editando distrito
+        editing: Editando zona
         back: Volver
       new:
         back: Volver
-        creating: Crear distrito
+        creating: Crear zona
       delete:
-        success: Distrito borrado correctamente
-        error: No se puede borrar el distrito porque ya tiene elementos asociados
+        success: Zona borrada correctamente
+        error: No se puede borrar la zona porque ya tiene elementos asociados
     signature_sheets:
       author: Autor
       created_at: Fecha de creación

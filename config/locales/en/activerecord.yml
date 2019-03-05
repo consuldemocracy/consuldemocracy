@@ -131,6 +131,11 @@ en:
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
+      geozone:
+        name: Name
+        external_code: "External code (optional)"
+        census_code: "Census code (optional)"
+        html_map_coordinates: "HTML <map> Coordinates (optional)"
       milestone:
         status_id: "Current status (optional)"
         title: "Title"
