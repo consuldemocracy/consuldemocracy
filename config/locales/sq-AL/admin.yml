@@ -368,8 +368,6 @@ sq:
           draft_phase_description: Nëse kjo fazë është aktive, procesi nuk do të renditet në indeksin e proceseve. Lejoni të parashini procesin dhe të krijoni përmbajtjen para fillimit.
           allegations_phase: Faza e komenteve
           proposals_phase: Faza e propozimit
-          start: Fillo
-          end: Fund
           use_markdown: Përdorni Markdown për të formatuar tekstin
           title_placeholder: Titulli i procesit
           summary_placeholder: Përmbledhje e shkurtër e përshkrimit
