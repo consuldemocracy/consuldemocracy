@@ -20,6 +20,8 @@
 * [Heroku](getting_started/deploying-on-heroku.md)
 * [Digital Ocean VPS](getting_started/digital_ocean_vps.md)
 * [Docker](getting_started/docker.md)
+* [Basic configuration](getting_started/basic_configuration.md)
+* [CONSUL Documentation and guides](getting_started/documentation_and_guides.md)
 
 ### Customization
 * [Introduction](customization/introduction.md)
