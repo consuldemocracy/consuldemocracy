@@ -208,14 +208,58 @@ tr:
       contact_us: Teknik yardım için ziyaret edin
       copyright: CONSUL, %{year}
       description: Bu portal %{open_source} olan %{consul} kullanır.
+      open_source: açık kaynak yazılım
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Yaşamak istediğiniz şehri nasıl şekillendireceğinize karar verin.
       participation_title: Katılım
+      privacy: Gizlilik Politikası
     header:
+      administration_menu: Yönetici
       administration: Yönetim
+      available_locales: Mevcut diller
+      collaborative_legislation: Katılımcı mevzuat
+      debates: Tartışmalar
+      locale: 'Dil:'
+      logo: CONSUL logosu
+      management: Yönetim
+      moderation: Moderasyon
+      valuation: Değerlendirme
+      officing: Seçim memurları
+      help: Yardım
+      my_account_link: Hesabım
+      my_activity_link: Faaliyetim
+      open: açık
+      open_gov: Açık hükümet
+      proposals: Öneriler
+      poll_questions: Oylama
+      budgets: Katılımcı bütçeleme
+      spending_proposals: Harcama Önerileri
+      notification_item:
+        new_notifications:
+          one: Bir yeni bildiriminiz var
+          other: '%{count} yeni bildirimleriniz var'
+        notifications: Bildirimler
+        no_notifications: "Yeni bildiriminiz yok"
+    admin:
+      watch_form_message: 'Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?'
   notifications:
     index:
+      empty_notifications: Yeni bildiriminiz yok.
+      mark_all_as_read: Tümünü okundu olarak işaretle
+      read: Oku
       title: Bildirimler
       unread: Okunmamış
     notification:
+      action:
+        comments_on:
+          one: Biri şuna yorum yaptı
+          other: '%{count} şuna yorumlar yaptı'
+        proposal_notification:
+          one: Şunda bir yeni bildirim var
+          other: Şunda %{count} bildirimler var
+        replies_to:
+          one: Biri şundaki yorumunuza cevap verdi
+          other: Şundaki yorumunuza %{count} cevaplar bulunuyor
       mark_as_read: Okundu olarak işaretle
       mark_as_unread: Okunmadı olarak işaretle
       notifiable_hidden: Bu kaynak artık kullanılabilir değil.
@@ -253,6 +297,16 @@ tr:
       show_link: Öneriyi göster
     retire_form:
       title: Öneriyi çek
+    index:
+      retired_links:
+        all: Tüm
+        other: Diğer
+      search_form:
+        button: Ara
+        placeholder: Önerileri ara...
+        title: Ara
+      start_proposal: Bir öneri oluştur
+      title: Öneriler
     show:
       comments_tab: Yorumlar
       edit_proposal_link: Düzenleme
