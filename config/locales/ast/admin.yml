@@ -275,8 +275,6 @@ ast:
           enabled: Habilitáu
           process: Procesu
           debate_phase: Fase previa
-          start: Entamu
-          end: Fin
           use_markdown: Usa Markdown pa dar formatu al testu
           title_placeholder: Escribe'l títulu del procesu
           summary_placeholder: Resume curtiu de la descripción
