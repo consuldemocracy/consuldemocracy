@@ -336,8 +336,6 @@ fa:
           process: "روند\n"
           debate_phase: فاز بحث
           proposals_phase: ' فاز طرحها'
-          start: شروع
-          end: پایان
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
           title_placeholder: عنوان فرایند
           summary_placeholder: خلاصه توضیحات
