@@ -423,8 +423,6 @@ gl:
           draft_phase_description: Se esta fase está activa, o proceso non se amosará no listado de procesos. Amosa unha vista previa do proceso e crea contido antes de que comece.
           allegations_phase: Fase de alegaciones
           proposals_phase: Fase de propostas
-          start: Comezo
-          end: Remate
           use_markdown: Usar Markdown para formatear o texto
           title_placeholder: Escribe o título do proceso
           summary_placeholder: Resumo corto da descrición
