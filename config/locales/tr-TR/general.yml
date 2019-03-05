@@ -11,6 +11,8 @@ tr:
       organization_responsible_name_placeholder: Organizasyon/topluluk temsilcisi
       personal: Kişisel detaylar
       phone_number_label: Telefon numarası
+      public_interests_my_title_list: Takip ettiğiniz öğelerin etiketleri
+      public_interests_user_title_list: Bu kullanıcının takip ettiği öğelerin etiketleri
       save_changes_submit: Değişiklikleri kaydet
       title: Hesabım
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
