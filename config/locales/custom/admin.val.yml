@@ -5,8 +5,10 @@ val:
         buttons:
           search: Cercar
       edit:
-        selection_by_assembly: Seleccionada en reunió de districte
+        area: Àrea
         mark_as_selected_by_assembly: Marcar com a seleccionada en reunió de districte
+        selection_by_assembly: Seleccionada en reunió de districte
+        sub_area: Sub Àrea
     polls:
       new:
         kind_of_poll: 'Tipus de votació'

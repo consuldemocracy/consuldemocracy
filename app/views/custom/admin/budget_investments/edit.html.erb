@@ -18,6 +18,10 @@
       <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
+    <div class="small-12 column">
+      <%= f.grouped_collection_select(:sub_area_id, Area.all, :sub_areas, :name, :id, :name, label: t("admin.budget_investments.edit.sub_area")) %>
+    </div>
+
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render 'images/nested_image', imageable: @investment, f: f %>

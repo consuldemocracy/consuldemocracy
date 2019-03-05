@@ -86,7 +86,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :selected_by_assembly, :visible_to_valuators,
-                    :selected, image_attributes: [:id, :title, :attachment,
+                    :selected, :sub_area_id,
+                    image_attributes: [:id, :title, :attachment,
                                        :cached_attachment,
                                        :user_id, :_destroy],
                     documents_attributes: [:id, :title, :attachment,
