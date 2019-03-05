@@ -11,7 +11,7 @@
 ### Instalación
 * [Introducción](getting_started/introduction.md)
 * [Prerrequisitos](getting_started/prerequisites/README.md)
-  * [Linux](getting_started/prerequisites/linux.md)
+  * [Debian GNU/Linux](getting_started/prerequisites/debian.md)
   * [macOS](getting_started/prerequisites/macos.md)
   * [Windows](getting_started/prerequisites/windows.md)
 * [Instalación local](getting_started/local_installation.md)
