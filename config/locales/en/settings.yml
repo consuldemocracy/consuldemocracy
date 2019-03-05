@@ -78,7 +78,7 @@ en:
     direct_message_max_per_day_description: "Number max of direct messages one user can send per day"
     feature:
       budgets: "Participatory budgeting"
-      budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the municipal budget"
+      budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the budget"
       twitter_login: "Twitter login"
       twitter_login_description: "Allow users to sign up with their Twitter account"
       facebook_login: "Facebook login"
@@ -86,7 +86,7 @@ en:
       google_login: "Google login"
       google_login_description: "Allow users to sign up with their Google Account"
       proposals: "Proposals"
-      proposals_description: "Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote"
+      proposals_description: "Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their society to be, after getting sufficient support and submitting to a citizens' vote"
       featured_proposals: "Featured proposals"
       featured_proposals_description: "Shows featured proposals on index proposals page"
       debates: "Debates"
@@ -96,7 +96,7 @@ en:
       signature_sheets: "Signature sheets"
       signature_sheets_description: "It allows adding from the Administration panel signatures collected on-site to Proposals and investment projects of the Participative Budgets"
       legislation: "Legislation"
-      legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations that affect the city and to give their opinion on certain actions that are planned to be carried out"
+      legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations and to give their opinion on certain actions that are planned to be carried out"
       spending_proposals: "Spending proposals"
       spending_proposals_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
       spending_proposal_features:
