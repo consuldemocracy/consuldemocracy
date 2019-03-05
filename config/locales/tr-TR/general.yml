@@ -1,6 +1,14 @@
 tr:
   account:
     show:
+      change_credentials_link: Kimlik bilgilerimi değiştir
+      email_on_comment_label: Birisi önerilerim veya tartışmalarım hakkında yorum yaptığında bana e-posta ile bildir
+      email_on_comment_reply_label: Birisi yorumlarıma cevap verdiğinde bana e-posta ile bildir
+      erase_account_link: Hesabımı sil
+      finish_verification: Doğrulamayı tamamla
+      notifications: Bildirimler
+      organization_name_label: Organizasyonun adı
+      organization_responsible_name_placeholder: Organizasyon/topluluk temsilcisi
       user_permission_title: Katılım
   comments:
     comment:
