@@ -71,11 +71,19 @@ tr:
         title: Tartışmalar hakkında yardım
         description: Endişelendiğiniz konular hakkında görüşlerinizi başkalarıyla paylaşmak için bir tartışma başlatın.
         help_text_1: "Vatandaş tartışmaları alanı, endişelerini herkese gösterebilecek ve görüşlerini diğer insanlarla paylaşmak isteyenleri hedef alır."
+        help_text_2: 'Bir tartışma açmak için %{org} ''da kaydolmanız gerekir. Kullanıcılar ayrıca açık tartışmalar hakkında yorum yapabilir ve her birinde bulunan "katılıyorum" veya "katılmıyorum" düğmeleriyle değerlendirebilirler.'
     new:
       form:
         submit_button: Bir tartışma başlat
+      info: Eğer bir öneride bulunmak istiyorsanız, yanlış bölüm budur, %{info_link} ' e girin.
       info_link: yeni öneri oluştur
       more_info: Daha fazla bilgi
+      recommendation_four: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
+      recommendation_one: Tartışma başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
+      recommendation_three: Acımasız eleştiri hoş karşılanır. Bu kusur bulma için bir alandır. Fakat inceliğe ve anlayışa sadık kalmanızı öneriyoruz. Dünya bu erdemlerle daha iyi bir yerdir.
+      recommendation_two: Yasadışı eylemi öneren herhangi bir tartışma veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
+      recommendations_title: Bir tartışma oluşturmak için öneriler
+      start_new: Bir tartışma başlat
     show:
       author_deleted: Kullanıcı silindi
       comments:
