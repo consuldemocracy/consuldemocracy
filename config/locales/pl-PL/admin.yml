@@ -368,8 +368,6 @@ pl:
           debate_phase: Faza debaty
           allegations_phase: Faza Komentarzy
           proposals_phase: Etap składania wniosków
-          start: Początek
-          end: Koniec
           use_markdown: Sformatuj tekst za pomocą Markdown
           title_placeholder: Tytuł procesu
           summary_placeholder: Krótkie podsumowanie opisu
