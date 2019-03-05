@@ -423,8 +423,6 @@ tr:
           draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
           allegations_phase: Yorumlar aşaması
           proposals_phase: Öneriler aşaması
-          start: Başlat
-          end: Bitiş
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
           title_placeholder: İşlem başlığı
           summary_placeholder: Tanımlamanın kısa özeti
