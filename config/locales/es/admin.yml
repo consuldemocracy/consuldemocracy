@@ -423,8 +423,6 @@ es:
           draft_phase_description: Si esta fase está activa, el proceso no aparecerá en la página de procesos. Permite previsualizar el proceso y crear contenido antes del inicio.
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
-          start: Inicio
-          end: Fin
           use_markdown: Usa Markdown para formatear el texto
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
