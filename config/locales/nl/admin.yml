@@ -378,8 +378,6 @@ nl:
           process: Proces
           debate_phase: Debatfase
           proposals_phase: Voorstelfase
-          start: Start
-          end: Eind
           use_markdown: Gebruik Markdown om de tekst vorm te geven
           title_placeholder: De titel van het plan
           summary_placeholder: Korte samenvatting van de beschrijving
