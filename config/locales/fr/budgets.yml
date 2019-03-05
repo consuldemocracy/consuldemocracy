@@ -126,6 +126,7 @@ fr:
         project_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
         project_winner: 'Projet d''investissement gagnant'
         project_not_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
+        see_price_explanation: Voir les informations détaillés du prix
       wrong_price_format: Nombres entiers uniquement
       investment:
         add: Vote
@@ -176,6 +177,8 @@ fr:
       not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
     executions:
       link: "Jalons"
+      page_title: "%{budget} - jalons"
+      heading: "Jalons du budget participatif"
       heading_selection_title: "Par quartier"
     phases:
       errors:
