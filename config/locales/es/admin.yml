@@ -974,6 +974,7 @@ es:
         questions_title: "Listado de preguntas asignadas"
         table_title: "Título"
         edit_answers: Editar respuestas
+        see_proposal: "(Ver propuesta)"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
