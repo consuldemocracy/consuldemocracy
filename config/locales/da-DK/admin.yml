@@ -154,8 +154,6 @@ da:
           enabled: Aktiveret
           process: Proces
           debate_phase: Debatfase
-          start: Start
-          end: Slut
         index:
           create: Ny proces
           delete: Slet
