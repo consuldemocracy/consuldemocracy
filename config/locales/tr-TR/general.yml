@@ -275,6 +275,7 @@ tr:
       name: Facebook
     finish_signup:
       title: "Ek detaylar"
+      username_warning: "Sosyal ağlarla etkileşim biçimimizdeki bir değişiklik nedeniyle, kullanıcı adınızın şimdi 'zaten kullanımda' olarak görünmesi mümkündür."
     google_oauth2:
       sign_in: Google ile oturum aç
       sign_up: Google ile kaydol
@@ -297,6 +298,14 @@ tr:
       show_link: Öneriyi göster
     retire_form:
       title: Öneriyi çek
+      warning: "Öneriyi çekseniz bile yine de destekleri kabul eder ancak ana listeden kaldırılır ve yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten bir mesaj tüm kullanıcılar tarafından görülebilir"
+      retired_reason_label: Öneriyi çekme nedeni
+      retired_reason_blank: Bir seçenek seçin
+      retired_explanation_label: Açıklama
+      retired_explanation_placeholder: Bu önerinin neden daha fazla destek almaması gerektiğini düşündüğünüzü kısaca açıklayın
+      submit_button: Öneriyi çek
+    retire_options:
+      duplicated: Çoğaltılmış
     index:
       retired_links:
         all: Tüm
