@@ -345,8 +345,6 @@ ru:
           debate_phase: Фаза дебатов
           allegations_phase: Фаза комментирования
           proposals_phase: Фаза предложений
-          start: Начало
-          end: Окончание
           use_markdown: Форматируйте текст при помощи разметки Markdown
           title_placeholder: Заголовок процесса
           summary_placeholder: Краткая выжимка из описания
