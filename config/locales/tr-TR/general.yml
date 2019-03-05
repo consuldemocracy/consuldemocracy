@@ -69,6 +69,13 @@ tr:
         help: Tartışmalar hakkında yardım
       section_footer:
         title: Tartışmalar hakkında yardım
+        description: Endişelendiğiniz konular hakkında görüşlerinizi başkalarıyla paylaşmak için bir tartışma başlatın.
+        help_text_1: "Vatandaş tartışmaları alanı, endişelerini herkese gösterebilecek ve görüşlerini diğer insanlarla paylaşmak isteyenleri hedef alır."
+    new:
+      form:
+        submit_button: Bir tartışma başlat
+      info_link: yeni öneri oluştur
+      more_info: Daha fazla bilgi
     show:
       author_deleted: Kullanıcı silindi
       comments:
