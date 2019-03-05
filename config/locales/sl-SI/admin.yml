@@ -271,8 +271,6 @@ sl:
           debate_phase: Faza debate
           allegations_phase: Faza obtožb
           proposals_phase: Faza predlogov
-          start: Začetek
-          end: Konec
           use_markdown: Uporabi markdown za oblikovanje besedila
           title_placeholder: Naslov procesa
           summary_placeholder: Kratek povzetek opisa
