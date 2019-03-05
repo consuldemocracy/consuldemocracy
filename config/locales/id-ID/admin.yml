@@ -322,8 +322,6 @@ id:
           process: Proses
           debate_phase: Masa perdebatan
           proposals_phase: Masa proposal
-          start: Mulai
-          end: Berakhir
           use_markdown: Menggunakan Markdown untuk format teks
           title_placeholder: Judul didalam prosesnya
           summary_placeholder: Ringkasan singkat dari deskripsi
