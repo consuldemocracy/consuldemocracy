@@ -426,8 +426,6 @@ ar:
           draft_phase_description: إذا كانت هذه المرحلة نشطة، فلن يتم إدراج العملية في فهرس العمليات. اسمح بمعاينة العملية وإنشاء محتوى قبل البدء.
           allegations_phase: مرحلة التعليقات
           proposals_phase: مرحلة الاقتراحات
-          start: بداية
-          end: نهاية
           use_markdown: استخدم Markdown لتنسيق النص
           title_placeholder: عنوان العملية
           summary_placeholder: موجز قصير للوصف
