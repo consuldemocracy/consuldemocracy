@@ -59,11 +59,11 @@ de:
         one: "Wahlkabine"
         other: "Wahlkabinen"
       poll/officer:
-        one: "Wahlvorsteher*in"
-        other: "Wahlvorsteher*innen"
+        one: "Beamter/in"
+        other: "Beamte/innen"
       proposal:
-        one: "Bürger*innenvorschlag"
-        other: "Bürger*innenvorschläge"
+        one: "Bürgervorschlag"
+        other: "Bürgervorschläge"
       spending_proposal:
         one: "Investitionsprojekt"
         other: "Ausgabenvorschläge"
