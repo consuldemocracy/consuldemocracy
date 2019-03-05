@@ -11,11 +11,15 @@ tr:
       organization_responsible_name_placeholder: Organizasyon/topluluk temsilcisi
       personal: Kişisel detaylar
       phone_number_label: Telefon numarası
+      public_activity_label: Etkinlikler listemi herkese açık tut
+      public_interests_label: Herkese açık takip ettiğim öğelerin etiketlerini tut
       public_interests_my_title_list: Takip ettiğiniz öğelerin etiketleri
       public_interests_user_title_list: Bu kullanıcının takip ettiği öğelerin etiketleri
       save_changes_submit: Değişiklikleri kaydet
+      subscription_to_website_newsletter_label: Web site ile alakalı bilgileri e-postayla al
       email_on_direct_message_label: Doğrudan mesajlar ile ilgili e-postalar alın
       email_digest_label: Öneri bildirimlerinin bir özetini al
+      official_position_badge_label: Resmi pozisyon rozetini göster
       recommendations: Tavsiyeler
       show_debates_recommendations: Tartışma tavsiyelerini göster
       show_proposals_recommendations: Öneri tavsiyelerini göster
@@ -104,7 +108,11 @@ tr:
         created_at: en yeni
         hot_score: en aktif
         most_commented: en çok yorumlanan
+        relevance: alaka
+        recommendations: tavsiyeler
       recommendations:
+        without_results: İlgilendikleriniz ile alakalı tartışmalar yok
+        without_interests: Önerileri takip et, böylece sana tavsiyelerde bulunabiliriz
         actions:
           success: "Bu hesap için tartışma önerileri artık devre dışı bırakıldı"
           error: "Bir hata oluştur. Lütfen tartışma önerilerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
@@ -174,9 +182,26 @@ tr:
     budget/investment: yatırım
     budget/group: Bütçe Grubu
     budget/heading: Bütçe Başlığı
+    poll/shift: Vardiya
+    poll/question/answer: Cevap
+    user: Hesap
+    verification/sms: telefon
+    document: Belge
+    topic: Konu
     image: Fotoğraf
+  geozones:
+    none: Tüm şehir
   layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
     footer:
+      accessibility: Erişilebilirlik
+      conditions: Kullanım şartları ve koşulları
+      consul: CONSUL uygulaması
+      consul_url: https://github.com/consul/consul
+      contact_us: Teknik yardım için ziyaret edin
+      copyright: CONSUL, %{year}
       participation_title: Katılım
     header:
       administration: Yönetim
