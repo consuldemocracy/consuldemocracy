@@ -364,8 +364,6 @@ it:
           process: Procedimento
           debate_phase: Fase di dibattito
           proposals_phase: Fase delle proposte
-          start: Inizio
-          end: Fine
           use_markdown: Usa Markdown per formattare il testo
           title_placeholder: Il titolo del procedimento
           summary_placeholder: Breve riassunto della descrizione
