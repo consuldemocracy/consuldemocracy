@@ -78,7 +78,7 @@ de:
         other: Benutzer*definierte Inhaltsdatenblöcke
       legislation/process:
         one: "Beteiligungsverfahren"
-        other: "Gesetzgebungsverfahren"
+        other: "Beteiligungsverfahren"
       legislation/proposal:
         one: "Vorschlag"
         other: "Vorschläge"
@@ -126,7 +126,7 @@ de:
         title: "Titel"
         description: "Beschreibung"
         external_url: "Link zur weiteren Dokumentation"
-        administrator_id: "Administrator"
+        administrator_id: "Administrator*in"
         location: "Standort (optional)"
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
