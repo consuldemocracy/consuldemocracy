@@ -365,8 +365,6 @@ fr:
           process: Processus
           debate_phase: Phase de débat
           proposals_phase: Phase de propositions
-          start: Début
-          end: Fin
           use_markdown: Utilisez Markdown pour formater le text
           title_placeholder: Le titre du processus
           summary_placeholder: Bref résumé de la description
