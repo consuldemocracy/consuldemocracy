@@ -36,14 +36,58 @@ tr:
       user_deleted: Kullanıcı silindi
       votes:
         zero: Hiç oy yok
+        one: 1 oy
+        other: "%{count} oylar"
+    form:
+      comment_as_admin: Yönetici olarak yorum yap
+      comment_as_moderator: Moderatör olarak yorum yap
+      leave_comment: Yorumunuzu bırakın
+    orders:
+      most_voted: En çok oylanan
   comments_helper:
     comment_link: Yorum
     comments_title: Yorumlar
   debates:
+    index:
+      recommendations:
+        actions:
+          success: "Bu hesap için tartışma önerileri artık devre dışı bırakıldı"
+          error: "Bir hata oluştur. Lütfen tartışma önerilerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
+      search_form:
+        button: Ara
+        placeholder: Tartışmalarda ara...
+        title: Ara
+      search_results_html:
+        one: " şu terimi içeren<strong>'%{search_term}'</strong>"
+        other: " şu terimi içeren<strong>'%{search_term}'</strong>"
+      select_order: Şuna göre sırala
+      start_debate: Bir tartışma başlat
+      title: Tartışmalar
+      section_header:
+        icon_alt: Tartışmalar simgesi
+        title: Tartışmalar
+        help: Tartışmalar hakkında yardım
+      section_footer:
+        title: Tartışmalar hakkında yardım
     show:
+      author_deleted: Kullanıcı silindi
+      comments:
+        zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
       comments_title: Yorumlar
       edit_debate_link: Düzenleme
+      share: Paylaş
+      author: Yazar
+    update:
+      form:
+        submit_button: Değişiklikleri kaydet
+  errors:
+    messages:
+      user_not_found: Kullanıcı bulunamadı
   form:
+    error: hata
+    errors: hatalar
     budget/investment: yatırım
     image: Fotoğraf
   layouts:
