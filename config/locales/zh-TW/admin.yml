@@ -365,8 +365,6 @@ zh-TW:
           debate_phase: 辯論階段
           allegations_phase: 評論階段
           proposals_phase: 建議階段
-          start: 開始
-          end: 結束
           use_markdown: 使用Markdown格式化文本
           title_placeholder: 進程的標題
           summary_placeholder: 描述的簡短摘要
