@@ -108,15 +108,15 @@ tr:
         created_at: en yeni
         hot_score: en aktif
         most_commented: en çok yorumlanan
-        relevance: alaka
+        relevance: alakalı
         recommendations: tavsiyeler
       recommendations:
         without_results: İlgilendikleriniz ile alakalı tartışmalar yok
-        without_interests: Önerileri takip et, böylece sana tavsiyelerde bulunabiliriz
+        without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
         disable: "Tartışma tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
         actions:
           success: "Bu hesap için tartışma önerileri artık devre dışı bırakıldı"
-          error: "Bir hata oluştur. Lütfen tartışma önerilerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
+          error: "Bir hata oluştu. Lütfen tartışma tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
       search_form:
         button: Ara
         placeholder: Tartışmalarda ara...
@@ -306,7 +306,52 @@ tr:
       submit_button: Öneriyi çek
     retire_options:
       duplicated: Çoğaltılmış
+      started: Zaten yapım aşamasında
+      unfeasible: Uygulanamaz
+      done: Tamam
+      other: Diğer
+    form:
+      geozone: İşlem kapsamı
+      proposal_external_url: Ek belgelere bağlantı
+      proposal_question: Öneri sorusu
+      proposal_question_example_html: "Bir soruda bir Evet veya Hayır cevabı ile özetlenmelidir"
+      proposal_responsible_name: Öneriyi sunan kişinin tam adı
+      proposal_responsible_name_note: "(bireysel olarak veya bir topluluğun temsilcisi olarak; genel olarak gösterilmeyecek)"
+      proposal_summary: Öneri özeti
+      proposal_summary_note: "(maksimum 200 karakter)"
+      proposal_text: Öneri metni
+      proposal_title: Öneri başlığı
+      proposal_video_url: Harici videoya bağlantı
+      proposal_video_url_note: YouTube veya Vimeo'ya bir bağlantı ekleyebilirsiniz
+      tag_category_label: "Kategoriler"
+      tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendinizinkini ekleyebilirsiniz"
+      tags_label: Etiketler
+      tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
+      map_location: "Harita konumu"
+      map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
+      map_remove_marker: "Harita işaretçisini kaldır"
+      map_skip_checkbox: "Bu teklifin somut bir konumu yok veya ben farkında değilim."
     index:
+      featured_proposals: Öne Çıkan
+      filter_topic:
+        one: " başlık ile '%{topic}'"
+        other: " başlık ile '%{topic}'"
+      orders:
+        confidence_score: en yüksek puanlı
+        created_at: en yeni
+        hot_score: en aktif
+        most_commented: en çok yorumlanan
+        relevance: alakalı
+        archival_date: arşivlendi
+        recommendations: tavsiyeler
+      recommendations:
+        without_results: İlgilendikleriniz ile ilgili öneriler yok
+        without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
+        disable: "Öneri tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
+        actions:
+          success: "Bu hesap için öneri tavsiyeleri artık devre dışı bırakıldı"
+          error: "Bir hata oluştu. Lütfen öneri tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
+      retired_proposals: Çekilen öneriler
       retired_links:
         all: Tüm
         other: Diğer
