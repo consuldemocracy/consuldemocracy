@@ -105,6 +105,8 @@ fr:
           random: aléatoire
           confidence_score: la plus votée
           price: par coût
+      share:
+        message: "J’ai créé le projet de placement %{title} à %{handle}. Créez vous aussi un projet d’investissement!"
       show:
         author_deleted: Utilisateur effacé
         price_explanation: Informations sur le coût <small>(optionnel, données publiques)</small>
