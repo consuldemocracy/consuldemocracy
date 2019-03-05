@@ -368,8 +368,6 @@ zh-CN:
           draft_phase_description: 如果此阶段处于活动状态，该进程将不会列在进程索引上。允许在开始前预览进程并创建内容。
           allegations_phase: 评论阶段
           proposals_phase: 提议阶段
-          start: 开始
-          end: 结束
           use_markdown: 使用Markdown 来格式化文本
           title_placeholder: 进程的标题
           summary_placeholder: 描述的简短总结
