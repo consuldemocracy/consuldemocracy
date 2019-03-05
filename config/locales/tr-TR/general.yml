@@ -92,6 +92,8 @@ tr:
         other: "%{count} yorumlar"
       comments_title: Yorumlar
       edit_debate_link: Düzenleme
+      flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
+      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
       share: Paylaş
       author: Yazar
     update:
@@ -100,16 +102,35 @@ tr:
   errors:
     messages:
       user_not_found: Kullanıcı bulunamadı
+      invalid_date_range: "Geçersiz tarih aralığı"
   form:
+    accept_terms: Ben %{policy} ve %{conditions} 'ı kabul ediyorum
+    accept_terms_title: Gizlilik Politikasını ve Kullanım Şartlarını ve koşullarını kabul ediyorum
+    conditions: Kullanım şartları ve koşulları
+    debate: Tartışma
+    direct_message: özel mesaj
     error: hata
     errors: hatalar
+    not_saved_html: "bu %{resource} 'un kaydedilmesini engelledi. <br>Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+    policy: Gizlilik Politikası
+    proposal: Öneri
+    proposal_notification: "Bildirim"
+    spending_proposal: Harcama önerisi
     budget/investment: yatırım
+    budget/group: Bütçe Grubu
+    budget/heading: Bütçe Başlığı
     image: Fotoğraf
   layouts:
     footer:
       participation_title: Katılım
     header:
       administration: Yönetim
+  notifications:
+    index:
+      title: Bildirimler
+      unread: Okunmamış
+    notification:
+      mark_as_read: Okundu olarak işaretle
   map:
     title: "İlçeler"
   proposals:
