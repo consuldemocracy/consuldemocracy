@@ -78,7 +78,7 @@ es:
     direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
       budgets: "Presupuestos participativos"
-      budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal"
+      budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto"
       twitter_login: "Registro con Twitter"
       twitter_login_description: "Permitir que los usuarios se registren con su cuenta de Twitter"
       facebook_login: "Registro con Facebook"
@@ -86,7 +86,7 @@ es:
       google_login: "Registro con Google"
       google_login_description: "Permitir que los usuarios se registren con su cuenta de Google"
       proposals: "Propuestas"
-      proposals_description: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana"
+      proposals_description: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su sociedad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana"
       featured_proposals: "Propuestas destacadas"
       featured_proposals_description: "Muestra propuestas destacadas en la página principal de propuestas"
       debates: "Debates"
@@ -96,7 +96,7 @@ es:
       signature_sheets: "Hojas de firmas"
       signature_sheets_description: "Permite añadir desde el panel de Administración firmas recogidas de forma presencial a Propuestas y proyectos de gasto de los Presupuestos participativos"
       legislation: "Legislación"
-      legislation_description: "En los procesos participativos se ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la ciudad y de dar su opinión sobre ciertas actuaciones que se tiene previsto llevar a cabo"
+      legislation_description: "En los procesos participativos se ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa y de dar su opinión sobre ciertas actuaciones que se tiene previsto llevar a cabo"
       spending_proposals: "Propuestas de inversión"
       spending_proposals_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
       spending_proposal_features:

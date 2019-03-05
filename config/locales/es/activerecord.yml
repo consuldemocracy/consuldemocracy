@@ -234,15 +234,17 @@ es:
         summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
-        start_date: Fecha de inicio del proceso
-        end_date: Fecha de fin del proceso
-        debate_start_date: Fecha de inicio del debate
-        debate_end_date: Fecha de fin del debate
-        draft_start_date: Fecha de inicio del borrador
-        draft_end_date: Fecha de fin del borrador
+        start_date: Inicio
+        end_date: Fin
+        debate_start_date: Inicio
+        debate_end_date: Fin
+        draft_start_date: Inicio
+        draft_end_date: Fin
         draft_publication_date: Fecha de publicación del borrador
-        allegations_start_date: Fecha de inicio de alegaciones
-        allegations_end_date: Fecha de fin de alegaciones
+        allegations_start_date: Inicio
+        allegations_end_date: Fin
+        proposals_phase_start_date: Inicio
+        proposals_phase_end_date: Fin
         result_publication_date: Fecha de publicación del resultado final
         background_color: Color del fondo
         font_color: Color del texto
@@ -356,7 +358,7 @@ es:
             draft_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
-              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de los comentarios
         proposal:
           attributes:
             tag_list:

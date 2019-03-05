@@ -423,8 +423,6 @@ en:
           draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
           allegations_phase: Comments phase
           proposals_phase: Proposals phase
-          start: Start
-          end: End
           use_markdown: Use Markdown to format the text
           title_placeholder: The title of the process
           summary_placeholder: Short summary of the description
