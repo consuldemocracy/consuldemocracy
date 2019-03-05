@@ -352,15 +352,30 @@ tr:
           success: "Bu hesap için öneri tavsiyeleri artık devre dışı bırakıldı"
           error: "Bir hata oluştu. Lütfen öneri tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
       retired_proposals: Çekilen öneriler
+      retired_proposals_link: "Yazar tarafından çekilen öneriler"
       retired_links:
         all: Tüm
+        duplicated: Çoğaltılmış
+        started: Yapım aşamasında
+        unfeasible: Uygulanamaz
+        done: Tamam
         other: Diğer
       search_form:
         button: Ara
         placeholder: Önerileri ara...
         title: Ara
+      search_results_html:
+        one: " şu terimi içeren <strong>'%{search_term}'</strong>"
+        other: " şu terimi içeren <strong>'%{search_term}'</strong>"
+      select_order: Şuna göre sırala
+      select_order_long: 'Şuna göre önerileri görüntülüyorsunuz:'
       start_proposal: Bir öneri oluştur
       title: Öneriler
+      top: Haftalık en iyi
+      top_link_proposals: Kategoriye göre en çok desteklenen öneriler
+      section_header:
+        icon_alt: Önerilerin simgesi
+        title: Öneriler
     show:
       comments_tab: Yorumlar
       edit_proposal_link: Düzenleme
