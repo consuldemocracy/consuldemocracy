@@ -32,13 +32,13 @@ de:
         one: "Benutzer*in"
         other: "Benutzer*innen"
       moderator:
-        one: "Moderator"
+        one: "Moderator*in"
         other: "Moderator*innen"
       administrator:
-        one: "Administrator"
+        one: "Administrator*in"
         other: "Administrator*innen"
       valuator:
-        one: "Begutachter/in"
+        one: "Begutachter*in"
         other: "Begutachter*innen"
       valuator_group:
         one: "Begutachtungsgruppe"
