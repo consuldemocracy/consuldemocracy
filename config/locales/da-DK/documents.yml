@@ -15,3 +15,10 @@ da:
         notice: Filen blev slettet.
         alert: Kan ikke fjerne filen.
         confirm: Er du sikker på, du ønsker at fjerne filen? Denne handling kan ikke fortrydes!
+    buttons:
+      download_document: Download fil
+      destroy_document: Fjern fil
+    errors:
+      messages:
+        in_between: skal være mellem %{min} og %{max}
+        wrong_content_type: filformatet %{content_type} matcher ikke de accepterede formater %{accepted_content_types}
