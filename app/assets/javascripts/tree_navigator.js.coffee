@@ -34,4 +34,3 @@ App.TreeNavigator =
         link.parents('ul').each ->
           $(this).show()
           $(this).siblings('span').removeClass('closed').addClass('open')
-

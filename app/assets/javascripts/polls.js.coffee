@@ -4,7 +4,7 @@ App.Polls =
     rand = ''
     for n in [0..5]
       rand = Math.random().toString(36).substr(2) # remove `0.`
-      token = token + rand;
+      token = token + rand
 
     token = token.substring(0, 64)
     return token
@@ -23,7 +23,7 @@ App.Polls =
       click: =>
         token_message = $(".js-token-message")
         if !token_message.is(':visible')
-          token_message.html(token_message.html() + "<br><strong>" + @token + "</strong>");
+          token_message.html(token_message.html() + "<br><strong>" + @token + "</strong>")
           token_message.show()
     false
 
@@ -32,13 +32,12 @@ App.Polls =
       answer = $(element).closest('div.answer')
 
       if $(answer).hasClass('medium-6')
-        $(answer).removeClass("medium-6");
-        $(answer).addClass("answer-divider");
+        $(answer).removeClass("medium-6")
+        $(answer).addClass("answer-divider")
         unless $(answer).hasClass('first')
-          $(answer).insertBefore($(answer).prev('div.answer'));
+          $(answer).insertBefore($(answer).prev('div.answer'))
       else
-        $(answer).addClass("medium-6");
-        $(answer).removeClass("answer-divider");
+        $(answer).addClass("medium-6")
+        $(answer).removeClass("answer-divider")
         unless $(answer).hasClass('first')
-          $(answer).insertAfter($(answer).next('div.answer'));
-
+          $(answer).insertAfter($(answer).next('div.answer'))

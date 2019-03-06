@@ -6,7 +6,7 @@ App.Globalize =
       if $(this).data("locale") == locale
         $(this).show()
         App.Globalize.highlight_locale($(this))
-      $(".js-globalize-locale option:selected").removeAttr("selected");
+      $(".js-globalize-locale option:selected").removeAttr("selected")
       return
 
   display_translations: (locale) ->
@@ -19,14 +19,14 @@ App.Globalize =
       $('#js_delete_' + locale).show()
 
   highlight_locale: (element) ->
-    $('.js-globalize-locale-link').removeClass('is-active');
-    element.addClass('is-active');
+    $('.js-globalize-locale-link').removeClass('is-active')
+    element.addClass('is-active')
 
   remove_language: (locale) ->
     $(".js-globalize-attribute[data-locale=" + locale + "]").each ->
       $(this).val('').hide()
       if CKEDITOR.instances[$(this).attr('id')]
-          CKEDITOR.instances[$(this).attr('id')].setData('')
+        CKEDITOR.instances[$(this).attr('id')].setData('')
     $(".js-globalize-locale-link[data-locale=" + locale + "]").hide()
     next = $(".js-globalize-locale-link:visible").first()
     App.Globalize.highlight_locale(next)

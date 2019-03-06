@@ -8,5 +8,3 @@ App.CheckboxToggle =
         $target.show()
       else
         $target.hide()
-
-
