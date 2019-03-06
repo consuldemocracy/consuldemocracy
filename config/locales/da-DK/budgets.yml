@@ -58,3 +58,24 @@ da:
         tags_label: Tags
         tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
         map_location: "Lokation"
+        map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
+        map_remove_marker: "Fjern markøren"
+        location: "Yderligere information vedrørende lokation"
+        map_skip_checkbox: "Denne investering har ikke en konkret lokation, eller også kender jeg ikke til den."
+      index:
+        title: Deltagerbudgetter
+        unfeasible: Investeringer, der ikke er mulige at gennemføre
+        search_form:
+          button: Søg
+          placeholder: Søg investeringsprojekter...
+          title: Søg
+        sidebar:
+          my_ballot: Min stemme
+          voted_html:
+            one: "<strong>Du har stemt på et forslag med en værdi af %{amount_spent}</strong>"
+            other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
+          voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
+          voted_info_link: lav din stemme om
+          change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
+          zero: Du har ikke stemt på nogle investeringsprojekter i denne gruppe.
+          verified_only: "For at oprette en ny budget investering %{verify}."
