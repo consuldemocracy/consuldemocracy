@@ -20,3 +20,21 @@ da:
       timeout: "Din session er udløbet. Log ind igen for at fortsætte."
       unauthenticated: "Du skal logge ind eller oprette en bruger for at fortsætte."
       unconfirmed: "For at fortsætte skal du klikke på det bekræftelseslink, vi har sendt dig via e-mail"
+    mailer:
+      confirmation_instructions:
+        subject: "Bekræftelsesinstrukser"
+      reset_password_instructions:
+        subject: "Instruktioner i hvordan du nulstiller din adgangskode"
+    omniauth_callbacks:
+      failure: "Det har ikke været muligt at godkende dig %{kind} fordi \"%{reason}\"."
+      success: "Du er succesfuldt identificeret som %{kind}."
+    registrations:
+      updated: "Din konto er blevet opdateret."
+    sessions:
+      signed_in: "Du er nu logget ind."
+      signed_out: "Du er nu logget ud."
+      already_signed_out: "Du er nu logget ud."
+  errors:
+    messages:
+      already_confirmed: "Du er allerede blevet verificeret; gå til log ind."
+      not_found: "ikke fundet."
