@@ -189,3 +189,54 @@ da:
       user_invite:
         title: "Bruger invitation"
       message_title: "Meddelelses titel"
+    answers:
+      new:
+        title: Nyt svar
+      show:
+        title: Titel
+        description: Beskrivelse
+        images: Billeder
+        images_list: Billedliste
+        edit: Rediger svar
+      edit:
+        title: Rediger svar
+      videos:
+        index:
+          title: Videoer
+          add_video: Tilføj video
+          video_title: Titel
+          video_url: Ekstern video
+        new:
+          title: Ny video
+        edit:
+          title: Rediger video
+    recounts:
+      index:
+        title: "Omtælling"
+        no_recounts: "Der er ikke noget at omtælle"
+    results:
+      index:
+        title: "Resultater"
+    spending_proposals:
+      show:
+        back: Tilbage
+        classification: Klassificering
+        heading: "Investeringsprojekt %{id}"
+        edit: Rediger
+        edit_classification: Rediger klassificering
+        by: Af
+        sent: Sendt
+        tags: Tags
+        undefined: Udefineret
+      edit:
+        classification: Klassificering
+        assigned_valuators: Evaluatorer
+        submit_button: Opdater
+        tags: Tags
+        tags_placeholder: "Tilføj tags adskilt med komma (,)"
+        undefined: Udefineret
+    geozones:
+      edit:
+        back: Gå tilbage
+      new:
+        back: Gå tilbage
