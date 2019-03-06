@@ -23,3 +23,16 @@ da:
       show:
         unfeasible_title: Investeringer, der ikke er mulige at gennemføre
         unfeasible: Se ikke mulige investeringer
+        unselected_title: Investeringer, der ikke er udvalgt til afstemningsfasen
+        unselected: Se investeringer, der ikke er udvalgt til afstemningsfasen
+    phase:
+      drafting: Udkast (Ikke offentligt)
+      informing: Information
+      accepting: Modtagelse af projekteridéer
+      reviewing: Gennemgang af projekter
+      selecting: Projektudvælgelse
+      valuating: Vurdering af projekter
+      publishing_prices: Publicering af projekternes prisvurdering
+      balloting: Afstemning
+      reviewing_ballots: Gennemgang af afstemningsresultatet
+      finished: Budgettet er færdiggjort
