@@ -75,8 +75,74 @@ da:
       x_days:
         one: 1 dag
         other: "%{count} dage"
+      x_minutes:
+        one: 1 minut
+        other: "%{count} minutter"
+      x_months:
+        one: 1 måned
+        other: "%{count} måneder"
+      x_years:
+        one: 1 år
+        other: "%{count} år"
+      x_seconds:
+        one: 1 sekund
+        other: "%{count} sekunder"
+    prompts:
+      day: Dag
+      hour: Time
+      minute: Minut
+      month: Måned
+      second: Sekunder
+      year: År
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: skal accepteres
+      blank: kan ikke være tom
+      present: skal være tom
+      confirmation: matcher ikke %{attribute}
+      empty: kan ikke være tom
+      equal_to: skal være lig med %{count}
+      even: skal være lige
+      exclusion: er reserveret
+      greater_than: skal være større end %{count}
   number:
     human:
+      decimal_units:
+        units:
+          billion: Milliard
+          million: Million
+          quadrillion: Kvadrillion
+          thousand: Tusind
+          trillion: Billion
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", og "
+      two_words_connector: " og "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm
