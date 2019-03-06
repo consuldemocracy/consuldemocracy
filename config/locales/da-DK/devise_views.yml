@@ -33,7 +33,7 @@ da:
       login_items:
         login: Log ind
         logout: Log ud
-        signup: Registre
+        signup: Tilmeld
     organizations:
       registrations:
         new:
@@ -42,3 +42,11 @@ da:
           password_confirmation_label: Bekræft adgangskode
           password_label: Adgangskode
           phone_number_label: Telefonnummer
+          responsible_name_label: Fulde navn på den ansvarlige for gruppen
+          submit: Tilmeld
+          title: Tilmeld som organisation eller gruppe
+        success:
+          back_to_index: Jeg har forstået det; gå tilbage til min forside
+          instructions_1_html: "<strong>Vi vil kontakte dig snart</strong> for at verificere, at du reelt repræsenterer denne gruppe."
+          instructions_2_html: Vi har imens din <strong>e-mail kontrolleres</strong>, sendt dig et <strong>link, hvor du kan bekræfte din konto</strong>.
+          instructions_3_html: Når den er bekræftet, kan du begynde at deltage som en ikke-verificeret gruppe.
