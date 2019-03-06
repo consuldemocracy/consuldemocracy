@@ -1,33 +1,80 @@
 da:
   date:
+    abbr_day_names:
+      - Søn
+      - Man
+      - Tirs
+      - Ons
+      - Tors
+      - Fre
+      - Lør
     abbr_month_names:
       - 
       - Jan
       - Feb
       - Mar
       - Apr
-      - May
+      - Maj
       - Jun
       - Jul
       - Aug
       - Sep
-      - Oct
+      - Okt
       - Nov
       - Dec
+    day_names:
+      - Søndag
+      - Mandag
+      - Tirsdag
+      - Onsdag
+      - Torsdag
+      - Fredag
+      - Lørdag
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
+      - Januar
+      - Februar
+      - Marts
       - April
-      - May
-      - June
-      - July
+      - Maj
+      - Juni
+      - Juli
       - August
       - September
-      - October
+      - Oktober
       - November
       - December
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: omkring 1 time
+        other: omkring %{count} timer
+      about_x_months:
+        one: omkring 1 måned
+        other: omkring %{count} måneder
+      about_x_years:
+        one: omkring 1 år
+        other: omkring %{count} år
+      almost_x_years:
+        one: næsten 1 år
+        other: næsten %{count} år
+      half_a_minute: et halvt minut
+      less_than_x_minutes:
+        one: mindre end et minut
+        other: mindre end %{count} minutter
+      less_than_x_seconds:
+        one: mindre end 1 sekund
+        other: mindre end %{count} sekunder
+      over_x_years:
+        one: over 1 år
+        other: over %{count} år
+      x_days:
+        one: 1 dag
+        other: "%{count} dage"
   number:
     human:
       format:
