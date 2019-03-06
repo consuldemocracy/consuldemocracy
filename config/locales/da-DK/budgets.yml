@@ -1,1 +1,5 @@
 da:
+  budgets:
+    ballots:
+      show:
+        title: Din stemme
