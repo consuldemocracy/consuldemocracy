@@ -20,4 +20,25 @@ da:
         change_link: Skift min adgangskode
         hello: Hej
         ignore_text: Hvis du ikke har efterspurgt at ændre din adgangskode, kan du ignorere denne e-mail.
-        info_text: Din adgangskode vil kun blive ændret, hvis du følger linket og skifter det.
+        info_text: Din adgangskode vil kun blive ændret, hvis du følger linket.
+        text: 'Vi har modtaget din forespørgsel om at ændre din adgangskode. Du kan gøre det ved at trykke på følgende link:'
+        title: Skift din adgangskode
+      unlock_instructions:
+        hello: Hej
+        info_text: Din konto er blevet blokeret på grund af for mange fejlagtige login forsøg.
+        instructions_text: 'Vær venlig at klikke på dette link for at genåbne din konto:'
+        title: Din konto er blevet spærret
+        unlock_link: Spær min konto
+    menu:
+      login_items:
+        login: Log ind
+        logout: Log ud
+        signup: Registre
+    organizations:
+      registrations:
+        new:
+          email_label: E-mail
+          organization_name_label: Navn på organisation
+          password_confirmation_label: Bekræft adgangskode
+          password_label: Adgangskode
+          phone_number_label: Telefonnummer
