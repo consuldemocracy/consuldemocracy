@@ -1,1 +1,4 @@
 da:
+  milestones:
+    show:
+      publication_date: "Publiceret %{publication_date}"
