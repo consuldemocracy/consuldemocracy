@@ -7,6 +7,8 @@ da:
         title: Send bekræftelsesinstruktioner igen
       show:
         instructions_html: Bekræft kontoen med e-mail %{email}
+        new_password_confirmation_label: Gentag adgangskode
+        new_password_label: Ny adgangskode
         please_set_password: Vælg din nye adgangskode (den vil gøre det muligt for dig at logge ind med ovenstående e-mail)
         submit: Bekræft
         title: Bekræft min konto
@@ -86,6 +88,9 @@ da:
     users:
       registrations:
         delete_form:
+          erase_reason_label: Begrundelse
+          info: Denne handling kan ikke fortrydes. Er du sikker på, du vil fortsætte?
+          info_reason: Hvis du ønsker det, så angiv en begrundelse (valgfrit)
           submit: Slet min konto
           title: Slet konto
         edit:
@@ -108,6 +113,7 @@ da:
           submit: Tilmeld
           terms: Når du tilmelder dig, accepterer du %{terms}
           terms_link: brugervilkår og betingelser
+          terms_title: Når du tilmelder dig, accepterer du vores brugervilkår og betingelser
           title: Tilmeld
           username_is_available: Brugernavnet er tilgængeligt
           username_is_not_available: Brugernavnet er allerede taget af en anden bruger
@@ -115,5 +121,7 @@ da:
           username_note: Det navn, der vises i forbindelse med dine indlæg
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min startside
+          instructions_1_html: Vær venlig <b>at tjekke din e-mail</b> - vi har sendt dig et <b>link, så du kan bekræfte din konto</b>.
+          instructions_2_html: Når du har bekræftet din konto, kan du begynde at deltage.
           thank_you_html: Tak din tilmelding. Du skal nu <b>bekræfte din e-mail adresse</b>.
           title: Bekræft din e-mail adresse
