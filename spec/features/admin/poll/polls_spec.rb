@@ -104,59 +104,6 @@ feature 'Admin polls' do
     expect(page).to have_content I18n.l(end_date.to_date)
   end
 
-  scenario 'Enable stats and results' do
-    poll = create(:poll)
-
-    booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
-    booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
-    booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
-
-    question_1 = create(:poll_question, poll: poll)
-    create(:poll_question_answer, title: 'Oui', question: question_1)
-    create(:poll_question_answer, title: 'Non', question: question_1)
-
-    question_2 = create(:poll_question, poll: poll)
-    create(:poll_question_answer, title: "Aujourd'hui", question: question_2)
-    create(:poll_question_answer, title: 'Demain', question: question_2)
-
-    [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
-      create(:poll_partial_result,
-             booth_assignment: ba,
-             question: question_1,
-             answer: 'Oui',
-             amount: 11)
-
-      create(:poll_partial_result,
-             booth_assignment: ba,
-             question: question_2,
-             answer: 'Demain',
-             amount: 5)
-    end
-
-    create(:poll_recount,
-           booth_assignment: booth_assignment_1,
-           white_amount: 21,
-           null_amount: 44,
-           total_amount: 66)
-
-    visit admin_poll_results_path(poll)
-
-    expect(page).to have_field('poll_stats_enabled', checked: false)
-    expect(page).to have_field('poll_results_enabled', checked: false)
-
-    check 'poll_stats_enabled'
-    check 'poll_results_enabled'
-
-    click_button 'Update poll'
-
-    expect(page).to have_content('Poll updated successfully')
-
-    click_link 'Results'
-
-    expect(page).to have_field('poll_stats_enabled', checked: true)
-    expect(page).to have_field('poll_results_enabled', checked: true)
-  end
-
   scenario 'Edit from index' do
     poll = create(:poll)
     visit admin_polls_path
@@ -321,6 +268,63 @@ feature 'Admin polls' do
         click_link "Results"
 
         expect(page).to have_content "There are no results"
+      end
+
+      scenario 'Show partial results' do
+        poll = create(:poll)
+
+        booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
+
+        question_1 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Oui', question: question_1)
+        create(:poll_question_answer, title: 'Non', question: question_1)
+
+        question_2 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: "Aujourd'hui", question: question_2)
+        create(:poll_question_answer, title: 'Demain', question: question_2)
+
+        [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
+          create(:poll_partial_result,
+                 booth_assignment: ba,
+                 question: question_1,
+                 answer: 'Oui',
+                 amount: 11)
+
+          create(:poll_partial_result,
+                 booth_assignment: ba,
+                 question: question_2,
+                 answer: 'Demain',
+                 amount: 5)
+        end
+
+        create(:poll_recount,
+               booth_assignment: booth_assignment_1,
+               white_amount: 21,
+               null_amount: 44,
+               total_amount: 66)
+
+        visit admin_poll_results_path(poll)
+
+        expect(page).to have_content 'Results by booth'
+      end
+
+      scenario "Enable stats and results" do
+        poll = create(:poll)
+
+        visit admin_poll_results_path(poll)
+
+        expect(page).to have_content 'There are no results'
+        expect(page).not_to have_content 'Show results and stats'
+
+        poll_voter = create(:poll_voter)
+
+        visit admin_poll_results_path(poll_voter.poll)
+
+        expect(page).to have_content 'Show results and stats'
+        expect(page).not_to have_content 'There are no results'
+        expect(page).not_to have_content 'Results by booth'
       end
 
       scenario "Results by answer", :js do
