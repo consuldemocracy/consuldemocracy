@@ -7,13 +7,13 @@ App.TagAutocomplete =
     return (App.TagAutocomplete.split( term ).pop())
 
   init_autocomplete: ->
-    $('.tag-autocomplete').autocomplete
+    $(".tag-autocomplete").autocomplete
       source: (request, response) ->
         $.ajax
-          url: $('.tag-autocomplete').data('js-url'),
+          url: $(".tag-autocomplete").data("js-url"),
           data: { search: App.TagAutocomplete.extractLast( request.term ) },
-          type: 'GET',
-          dataType: 'json'
+          type: "GET",
+          dataType: "json"
           success: ( data ) ->
             response( data )
 
