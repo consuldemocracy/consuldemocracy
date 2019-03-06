@@ -179,10 +179,10 @@ de:
         name: "Name der Organisation"
         responsible_name: "Der/die* Gruppenverantwortliche"
       spending_proposal:
-        administrator_id: "Administrator"
+        administrator_id: "Administrator*in"
         association_name: "Vereinsname"
         description: "Beschreibung"
-        external_url: "Link zur weiteren Dokumentation"
+        external_url: "Link zu zusätzlicher Dokumentation"
         geozone_id: "Rahmenbedingungen"
         title: "Titel"
       poll:
