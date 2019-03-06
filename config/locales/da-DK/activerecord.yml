@@ -100,7 +100,25 @@ da:
         phone_number: "Telefonnummer"
         official_position: "Embedsposition"
         official_level: "Embedsniveau"
+        redeemable_code: "Verifikationskode modtaget via e-mail"
+      organization:
+        name: "Navn på organisation"
+        responsible_name: "Den ansvarlige for gruppen"
+      spending_proposal:
+        administrator_id: "Administrator"
+        association_name: "Navn på forening"
+        description: "Beskrivelse"
+        external_url: "Link til yderligere dokumentation"
+        title: "Titel"
+      poll:
+        name: "Navn"
+        starts_at: "Startdato"
+        ends_at: "Slutdato"
+        geozone_restricted: "Begrænset af geozone"
+        summary: "Resumé"
+        description: "Beskrivelse"
       poll/translation:
+        name: "Navn"
         summary: "Resumé"
         description: "Beskrivelse"
       poll/question:
@@ -110,6 +128,9 @@ da:
         external_url: "Link til yderligere dokumentation"
       poll/question/translation:
         title: "Spørgsmål"
+      signature_sheet:
+        signable_type: "Underskriftstype"
+        document_numbers: "Dokumentnummer"
       site_customization/page:
         content: Indhold
         subtitle: Undertitel
@@ -147,6 +168,11 @@ da:
         description: Beskrivelse
         additional_info: Yderligere information
         milestones_summary: Resumé
+      widget/card:
+        label: Mærke (valgfrit)
+        title: Titel
+        description: Beskrivelse
+        link_text: Link
       widget/card/translation:
         title: Titel
         description: Beskrivelse
