@@ -1305,16 +1305,16 @@ de:
           comments: Kommentare
           debate_votes: Stimmen in Diskussionen
           debates: Diskussionen
-          proposal_votes: Stimmen in Vorschlägen
+          proposal_votes: Bewertungen Vorschlag
           proposals: Vorschläge
           budgets: Offene Haushalte
           budget_investments: Ausgabenvorschläge
           spending_proposals: Ausgabenvorschläge
-          unverified_users: Benutzer nicht verifziert
+          unverified_users: Nicht verifizierte Benutzer*innen
           user_level_three: Benutzer*innen auf Stufe 3
           user_level_two: Benutzer*innen auf Stufe 2
           users: Benutzer*innen gesamt
-          verified_users: Verifizierte Benutzer
+          verified_users: Verifizierte Benutzer*innen
           verified_users_who_didnt_vote_proposals: Verifizierte Benutzer*innen, die nicht für Vorschläge abgestimmt haben
           visits: Besuche
           votes: Gesamtbewertung
@@ -1457,6 +1457,7 @@ de:
           description: Beschreibung
           link_text: Linktext
           link_url: URL des Links
+          columns_help: "Breite der Karte in Spaltenanzahl. Auf mobilen Bildschirmen beträgt die Breit immer 100%."
           create:
             notice: "Erfolg"
           update:
