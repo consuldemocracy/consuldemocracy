@@ -31,6 +31,7 @@ da:
       failure: "Det har ikke været muligt at godkende dig %{kind} fordi \"%{reason}\"."
       success: "Du er succesfuldt identificeret som %{kind}."
     passwords:
+      no_token: "Du kan kun tilgå denne side gennem et nulstil-adgangskode-link. Hvis du allerede har tilgået siden gennem et sådan link, så tjek venligst om websiteadressen er korrekt."
       send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
       send_paranoid_instructions: "Hvis din e-mail findes i vores database, vil du om få minutter modtage et link, som du kan anvende til at nulstille din adgangskode."
       updated: "Din adgangskode er blevet ændret."
@@ -54,6 +55,8 @@ da:
   errors:
     messages:
       already_confirmed: "Du er allerede blevet verificeret; gå til log ind."
+      confirmation_period_expired: "Du skal verificeres inden for denne %{period}; vær venlig at gentage anmodningen."
+      expired: "er udløbet; vær venlig at gentage anmodningen."
       not_found: "ikke fundet."
       not_locked: "var ikke spærret."
       not_saved:
