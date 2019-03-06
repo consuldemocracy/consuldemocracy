@@ -3,3 +3,5 @@ da:
     ballots:
       show:
         title: Din stemme
+        amount_spent: Opbrugt beløb
+        remaining: "Du har stadig <span>%{amount}</span> at investere for."
