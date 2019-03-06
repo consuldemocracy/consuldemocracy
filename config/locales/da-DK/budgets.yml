@@ -16,3 +16,10 @@ da:
         not_logged_in: Du skal %{signin} eller %{signup} for at kunne fortsætte.
         not_verified: Kun verificerede brugere kan stemme på investeringer; %{verify_account}.
         organization: Det er ikke tilladt for organisationer at stemme
+        not_enough_money_html: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
+        no_ballots_allowed: Udvælgelsesfasen er slut
+        change_ballot: Ønsker du at ændre din stemme?
+    groups:
+      show:
+        unfeasible_title: Investeringer, der ikke er mulige at gennemføre
+        unfeasible: Se ikke mulige investeringer
