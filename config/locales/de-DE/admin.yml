@@ -550,7 +550,7 @@ de:
           question_options: "Mögliche Antworten (optional, standardmäßig offene Antworten)"
         index:
           back: Zurück
-          title: Fragen im Zusammenhang mit diesem Beteiligungsverfahren
+          title: Fragen, die mit diesem Beteiligungsverfahren zusammenhängen
           create: Frage erstellen
           delete: Löschen
         new:
@@ -633,7 +633,7 @@ de:
           content_block:
             update: "Block aktualisieren"
       title_moderated_content: Moderierter Inhalt
-      title_budgets: Bürger*innenhaushalte
+      title_budgets: Bürgerhaushalte
       title_polls: Umfragen
       title_profiles: Profile
       title_settings: Einstellungen
@@ -745,8 +745,8 @@ de:
         body: Text
         link: Link
         segment_recipient: Empfänger*innen
-        preview_guide: "So wird die Benachrichtigung für Benutzer*innen aussehen:"
-        sent_guide: "So sieht die Benachrichtigung für Benutzer*innen aus:"
+        preview_guide: "So wird die Benachrichtigung für Benutzer*innen angezeigt:"
+        sent_guide: "So wird die Benachrichtigung für Benutzer*innen angezeigt:"
         send_alert: Sind Sie sicher, dass Sie diese Benachrichtigung an %{n} Benutzer*innen senden möchten?
     system_emails:
       preview_pending:
