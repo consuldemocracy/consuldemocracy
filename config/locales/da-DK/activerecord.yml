@@ -108,6 +108,8 @@ da:
         draft_start_date: Startdato for udkast
         draft_end_date: Slutdato for udkast
         draft_publication_date: Dato for offentliggørelse af udkast
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: Slut
         background_color: Baggrundsfarve
         font_color: Skriftfarve
       legislation/process/translation:
