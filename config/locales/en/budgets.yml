@@ -72,7 +72,7 @@ en:
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
-        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         by_heading: "Investment projects with scope: %{heading}"
         search_form:
           button: Search

@@ -51,10 +51,7 @@ namespace :settings do
     ]
 
     deprecated_keys.each do |key|
-      setting = Setting.where(key: key).first
-      if setting.present?
-        setting.destroy
-      end
+      Setting.where(key: key).first&.destroy
     end
   end
 

@@ -12,7 +12,7 @@
     <thead>
       <tr>
         <th><%= t("admin.polls.show.table_title") %></th>
-        <th class="small-4"><%= t("admin.actions.actions") %></th>
+        <th class="small-6"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <% @poll.questions.each do |question| %>
@@ -21,6 +21,28 @@
           <strong>
             <%= link_to question.title, admin_question_path(question) %>
           </strong>
+          <% if question.proposal_id.present? %>
+            <small>
+              <%= link_to t("admin.polls.show.see_proposal"),
+                          proposal_path(question.proposal_id),
+                          target: "_blank" %>
+            </small>
+          <% end %>
+        </td>
+        <td>
+          <div class="small-4 column">
+            <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
+                                                            class: "button hollow expanded" %>
+          </div>
+          <div class="small-4 column">
+            <%= link_to t("shared.edit"), edit_admin_question_path(question),
+                                          class: "button hollow expanded" %>
+          </div>
+          <div class="small-4 column">
+            <%= link_to t("shared.delete"), admin_question_path(question),
+                                            class: "button hollow alert expanded",
+                                            method: :delete %>
+          </div>
         </td>
         <td>
           <div class="small-6 column">

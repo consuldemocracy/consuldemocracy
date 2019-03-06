@@ -131,6 +131,11 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
+      geozone:
+        name: Nombre
+        external_code: "Código externo (opcional)"
+        census_code: "Código del censo (opcional)"
+        html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado actual (opcional)"
         title: "Título"
@@ -229,20 +234,25 @@ es:
         name: Nombre
         locale: Idioma
         body: Contenido
+      banner:
+        background_color: Color del fondo
+        font_color: Color del texto
       legislation/process:
         title: Título del proceso
         summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
-        start_date: Fecha de inicio del proceso
-        end_date: Fecha de fin del proceso
-        debate_start_date: Fecha de inicio del debate
-        debate_end_date: Fecha de fin del debate
-        draft_start_date: Fecha de inicio del borrador
-        draft_end_date: Fecha de fin del borrador
+        start_date: Inicio
+        end_date: Fin
+        debate_start_date: Inicio
+        debate_end_date: Fin
+        draft_start_date: Inicio
+        draft_end_date: Fin
         draft_publication_date: Fecha de publicación del borrador
-        allegations_start_date: Fecha de inicio de alegaciones
-        allegations_end_date: Fecha de fin de alegaciones
+        allegations_start_date: Inicio
+        allegations_end_date: Fin
+        proposals_phase_start_date: Inicio
+        proposals_phase_end_date: Fin
         result_publication_date: Fecha de publicación del resultado final
         background_color: Color del fondo
         font_color: Color del texto
@@ -356,7 +366,7 @@ es:
             draft_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
-              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de los comentarios
         proposal:
           attributes:
             tag_list:
