@@ -40,6 +40,9 @@ da:
     attributes:
       budget:
         name: "Navn"
+        description_accepting: "Synlig beskrivelse under accept fasen"
+        description_reviewing: "Synlig beskrivelse under gennemgangsfasen"
+        description_selecting: "Synlig beskrivelse under udvælgelsesfasen"
         phase: "Fase"
         currency_symbol: "Valuta"
       budget/investment:
