@@ -138,15 +138,15 @@ de:
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
-          one: 1 Unterstützer/in
-          other: "%{count} Unterstützer/innen"
+          one: 1 Unterstützer*in
+          other: "%{count} Unterstützer*innen"
         give_support: Unterstützung
       header:
         check_ballot: Meine Abstimmung überprüfen
         different_heading_assigned_html: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
-        check_ballot_link: "Meine Abstimmung überprüfen"
-        price: "Diese Rubrik verfügt über einen Haushalt von"
+        check_ballot_link: "Meine Abstimmungen überprüfen"
+        price: "Dieser Bereich verfügt über einen Haushalt von"
     progress_bar:
       assigned: "Sie haben zugeordnet: "
       available: "Verfügbare Haushaltsmittel: "
