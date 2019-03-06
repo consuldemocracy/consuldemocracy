@@ -113,9 +113,9 @@ de:
       recommendations:
         without_results: Es gibt keine Debatten, die Ihren Interessen entsprechen
         without_interests: Folgen Sie Vorschlägen, sodass wir Ihnen Empfehlungen geben können
-        disable: "Debatten-Empfehlungen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
+        disable: "Empfehlungen für Diskussionen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
         actions:
-          success: "Debatten-Empfehlungen sind jetzt für dieses Konto deaktiviert"
+          success: "Empfehlungen für Diskussionen sind jetzt für dieses Konto deaktiviert"
           error: "Ein Fehler ist aufgetreten. Bitte gehen Sie zur 'Ihr Benutzerkonto'-Seite um Debatten-Empfehlungen manuell abzuschalten"
       search_form:
         button: Suche
@@ -128,28 +128,28 @@ de:
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
       section_header:
-        icon_alt: Debattensymbol
+        icon_alt: Diskussionen-Symbol
         title: Diskussionen
         help: Hilfe zu Diskussionen
       section_footer:
         title: Hilfe zu Diskussionen
         description: Teilen Sie ihre Meinung mit anderen in einer Diskussion über Themen, die Sie interessieren.
-        help_text_1: "Der Raum für Bürgerdebatten richtet sich an alle, die ihr Anliegen darlegen können und sich mit anderen Menschen austauschen wollen."
-        help_text_2: 'Um eine Diskussion zu eröffnen, müssen Sie sich auf %{org} registrieren. Benutzer können auch offene Diskussionen kommentieren und sie über "Ich stimme zu" oder "Ich stimme nicht zu" Buttons bewerten.'
+        help_text_1: "Der Raum für Diskussionen richtet sich an alle, die ihr Anliegen darlegen können und sich mit anderen Menschen austauschen wollen."
+        help_text_2: 'Um eine Diskussion zu eröffnen, müssen Sie sich auf %{org} registrieren. Benutzer*innen können auch offene Diskussionen kommentieren und sie über "Ich stimme zu" oder "Ich stimme nicht zu" Buttons bewerten.'
     new:
       form:
-        submit_button: Starten Sie eine Diskussion
+        submit_button: Eine Diskussion starten
       info: Wenn Sie einen Vorschlag veröffentlichen möchten, sind Sie hier falsch, gehen Sie zu %{info_link}.
-      info_link: neuen Vorschlag erstellen
+      info_link: Neuen Vorschlag erstellen
       more_info: Weitere Informationen
       recommendation_four: Genießen Sie diesen Ort und die Stimmen, die ihn füllen. Er gehört auch Ihnen.
       recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand mächte angeschrien werden.
       recommendation_three: Kritik ist sehr willkommen. Denn dies ist ein Raum für unterschiedliche Betrachtungen. Aber wir empfehlen Ihnen, sich an sprachlicher Eleganz und Intelligenz zu halten. Die Welt ist ein besserer Ort mit diesen Tugenden.
       recommendation_two: Diskussionen oder Kommentare, die illegale Handlungen beinhalten, werden gelöscht sowie diejenigen, die die Diskussionen absichtlich sabotieren. Alles andere ist erlaubt.
       recommendations_title: Empfehlungen für die Erstellung einer Diskussion
-      start_new: Starten Sie eine Diskussion
+      start_new: Eine Diskussion starten
     show:
-      author_deleted: Benutzer gelöscht
+      author_deleted: Benutzer*in gelöscht
       comments:
         zero: Keine Kommentare
         one: 1 Kommentar
@@ -181,10 +181,10 @@ de:
     proposal_notification: "Benachrichtigung"
     spending_proposal: Ausgabenvorschlag
     budget/investment: Ausgabenvorschlag
-    budget/heading: Haushaltsrubrik
+    budget/heading: Haushaltsbereich
     poll/shift: Arbeitsschicht
     poll/question/answer: Antwort
-    user: Benutzerkonto
+    user: Konto
     verification/sms: Telefon
     signature_sheet: Unterschriftenblatt
     document: Dokument
@@ -345,7 +345,7 @@ de:
         recommendations: Empfehlungen
       recommendations:
         without_results: Es gibt keine Vorschläge, die Ihren Interessen entsprechen
-        without_interests: Vorschläge folgen, sodass wir Ihnen Empfehlungen geben können
+        without_interests: Folgen Sie Vorschlägen, sodass wir Ihnen Empfehlungen geben können
         disable: "Antrags-Empfehlungen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
         actions:
           success: "Antrags-Empfehlungen sind jetzt für dieses Benutzerkonto deaktiviert"
@@ -381,7 +381,7 @@ de:
     new:
       form:
         submit_button: Vorschlag erstellen
-      more_info: Wie funktionieren die Bürger Vorschläge?
+      more_info: Wie funktionieren die Bürgervorschläge?
       recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als Schreien und niemand möchte angeschrien werden.
       recommendation_three: Genießen Sie diesen Ort und die Stimmen, die ihn füllen. Er gehört auch Ihnen.
       recommendation_two: Diskussionen oder Kommentare, die illegale Handlungen beinhalten, werden gelöscht sowie diejenigen, die die Diskussionen absichtlich sabotieren. Alles andere ist erlaubt.
@@ -395,7 +395,7 @@ de:
         guide: "Nun können Sie ihren Vorschlag teilen, damit andere ihn unterstützen."
         edit: "Bevor Sie ihren Text teilen, können Sie ihn beliebig bearbeiten. "
         view_proposal: Nicht jetzt. Gehe zu meinem Vorschlag
-      already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie es!
+      already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie ihn!
       comments:
         zero: Keine Kommentare
         one: 1 Kommentar
