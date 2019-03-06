@@ -43,7 +43,7 @@ de:
     verified_only: Zur Teilnahme %{verify_account}
     verify_account: verifizieren Sie Ihr Konto
     comment:
-      admin: Administrator
+      admin: Administrator*in
       author: Verfasser*in
       deleted: Dieser Kommentar wurde gelöscht
       moderator: Moderator*in
@@ -115,7 +115,7 @@ de:
         without_interests: Folgen Sie Vorschlägen, sodass wir Ihnen Empfehlungen geben können
         disable: "Debatten-Empfehlungen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
         actions:
-          success: "Debatten-Empfehlungen sind jetzt für dieses Benutzerkonto deaktiviert"
+          success: "Debatten-Empfehlungen sind jetzt für dieses Konto deaktiviert"
           error: "Ein Fehler ist aufgetreten. Bitte gehen Sie zur 'Ihr Benutzerkonto'-Seite um Debatten-Empfehlungen manuell abzuschalten"
       search_form:
         button: Suche
