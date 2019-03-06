@@ -1,1 +1,22 @@
 da:
+  devise:
+    password_expired:
+      expire_password: "Adgangskode er udløbet"
+      change_required: "Din adgangskode er udløbet"
+      change_password: "Skift adgangskode"
+      new_password: "Ny adgangskode"
+      updated: "Din adgangskode blev opdateret"
+    confirmations:
+      confirmed: "Din brugerkonto er blevet bekræftet."
+      send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
+      send_paranoid_instructions: "Hvis din e-mail findes i vores database, vil du om få minutter modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
+    failure:
+      already_authenticated: "Du er allerede logget ind."
+      inactive: "Din konto er endnu ikke blevet aktiveret."
+      invalid: "Ugyldig %{authentication_keys} eller adgangskode."
+      locked: "Din konto er blevet spærret."
+      last_attempt: "Du har et sidste forsøg, inden din konto blokeres."
+      not_found_in_database: "Ugyldig %{authentication_keys} eller adgangskode."
+      timeout: "Din session er udløbet. Log ind igen for at fortsætte."
+      unauthenticated: "Du skal logge ind eller oprette en bruger for at fortsætte."
+      unconfirmed: "For at fortsætte skal du klikke på det bekræftelseslink, vi har sendt dig via e-mail"
