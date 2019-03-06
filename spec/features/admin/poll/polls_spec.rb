@@ -314,17 +314,38 @@ feature 'Admin polls' do
         expect(page).to have_content 'Results by booth'
       end
 
-      scenario "Enable stats and results" do
-        poll = create(:poll)
+      scenario "Enable stats and results for booth polls" do
+        unvoted_poll = create(:poll)
 
-        visit admin_poll_results_path(poll)
+        voted_poll = create(:poll)
+        booth_assignment = create(:poll_booth_assignment, poll: voted_poll)
+        create(:poll_voter, :from_booth, :valid_document,
+               booth_assignment: booth_assignment,
+               poll: voted_poll)
+
+        visit admin_poll_results_path(unvoted_poll)
+
+        expect(page).to have_content "There are no results"
+        expect(page).not_to have_content "Show results and stats"
+
+        visit admin_poll_results_path(voted_poll)
+
+        expect(page).to have_content "Show results and stats"
+        expect(page).not_to have_content "There are no results"
+      end
+
+      scenario "Enable stats and results for online polls" do
+        unvoted_poll = create(:poll)
+
+        voted_poll = create(:poll)
+        create(:poll_voter, poll: voted_poll)
+
+        visit admin_poll_results_path(unvoted_poll)
 
         expect(page).to have_content 'There are no results'
         expect(page).not_to have_content 'Show results and stats'
 
-        poll_voter = create(:poll_voter)
-
-        visit admin_poll_results_path(poll_voter.poll)
+        visit admin_poll_results_path(voted_poll)
 
         expect(page).to have_content 'Show results and stats'
         expect(page).not_to have_content 'There are no results'
