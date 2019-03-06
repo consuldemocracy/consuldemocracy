@@ -239,6 +239,16 @@ feature 'Admin polls' do
 
         click_link "Recounting"
 
+        within("#totals") do
+          within("#total_final") do
+            expect(page).to have_content("#{55555 + 63}")
+          end
+
+          within("#total_system") do
+            expect(page).to have_content("2")
+          end
+        end
+
         expect(page).to have_css ".booth_recounts", count: 3
 
         within("#poll_booth_assignment_#{booth_assignment.id}_recounts") do
