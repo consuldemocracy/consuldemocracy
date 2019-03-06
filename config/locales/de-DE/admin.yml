@@ -36,7 +36,7 @@ de:
           homepage: Homepage
           debates: Diskussionen
           proposals: Vorschläge
-          budgets: Partizipative Haushaltsplanung
+          budgets: Bürgerhaushalt
           help_page: Hilfeseite
         background_color: Hintergrundfarbe
         font_color: Schriftfarbe
@@ -134,7 +134,7 @@ de:
         name: "Name der Gruppe"
         submit: "Gruppe speichern"
       index:
-        back: "Zurück zu den Bürgerhaushalten"
+        back: "Zurück zu Bürgerhaushalten"
     budget_headings:
       name: "Name"
       no_headings: "Keine Rubriken vorhanden."
@@ -168,7 +168,7 @@ de:
         start_date: Anfangsdatum
         end_date: Enddatum des Verfahrens
         summary: Zusammenfassung
-        summary_help_text: Dieser Text informiert die Benutzer über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an.
+        summary_help_text: Dieser Text informiert die Benutzer*innen über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an
         description: Beschreibung
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         enabled: Phase aktiviert
@@ -252,7 +252,7 @@ de:
           "true": Ausgewählt
           "false": Nicht ausgewählt
         winner:
-          title: Gewinner*in
+          title: Bestbewerteter Vorschlag
           "true": "Ja"
           "false": "Nein"
         image: "Bild"
@@ -405,7 +405,7 @@ de:
           notice: 'Beteiligungsverfahren erfolgreich erstellt. <a href="%{link}">Jetzt besuchen</a>'
           error: Beteiligungsverfahren konnte nicht erstellt werden
         update:
-          notice: 'Verfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
+          notice: 'Beteiligungsverfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
           error: Beteiligungsverfahren konnte nicht aktualisiert werden
         destroy:
           notice: Beteiligungsverfahren erfolgreich gelöscht
