@@ -45,6 +45,7 @@ da:
           password_label: Adgangskode
           phone_number_label: Telefonnummer
           responsible_name_label: Fulde navn på den ansvarlige for gruppen
+          responsible_name_note: Dette vil være personen, der repræsenterer foreningen/gruppen
           submit: Tilmeld
           title: Tilmeld som organisation eller gruppe
         success:
@@ -97,6 +98,7 @@ da:
           current_password_label: Nuværende adgangskode
           edit: Rediger
           email_label: E-mail
+          leave_blank: Skal ikke udfyldes, hvis ikke du ønsker at ændre noget
           need_current: Vi behøver din nuværende adgangskode for at kunne bekræfte ændringerne
           password_confirmation_label: Bekræft ny adgangskode
           password_label: Ny adgangskode
