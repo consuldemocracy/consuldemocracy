@@ -70,7 +70,7 @@ de:
         location: "Weitere Ortsangaben"
         map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
-        title: Partizipative Haushaltsplanung
+        title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge
         unfeasible_text: "Der Ausgabenvorschlag muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Durchführbarkeit, im Aufgabenbereich der Stadt, innerhalb des Limits des Haushaltes) um für durchführbar erklärt werden zu können und das Stadium der finalen Abstimmung zu erreichen. Alle Ausgabenvorschläge, die diese Kriterien nicht erfüllen, sind als nicht durchführbar markiert und stehen in der folgenden Liste, zusammen mit einem Bericht zur Undurchführbarkeit."
         by_heading: "Ausgabenvorschläge im Bereich: %{heading}"
