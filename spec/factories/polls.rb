@@ -92,6 +92,7 @@ FactoryBot.define do
 
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
+      origin "booth"
     end
 
     trait :valid_document do
