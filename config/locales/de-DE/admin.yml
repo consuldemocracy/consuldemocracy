@@ -760,6 +760,11 @@ de:
         title: "Zusammenfassende Benachrichtigun zu einem Vorschlag"
         description: "Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden."
         preview_detail: "Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen"
+      comment:
+        title: "Kommentieren"
+      reply:
+        title: "Antworten"
+      message_title: "Titel der Nachricht"
     emails_download:
       index:
         title: E-Mails herunterladen
@@ -837,8 +842,8 @@ de:
       by_officer:
         date: "Datum"
         booth: "Wahlkabine"
-        assignments: "Amtswechsel in dieser Abstimmung"
-        no_assignments: "In dieser Abstimmung gibt es keinen Amtswechsel."
+        assignments: "Wechsel der Beamten/innen in dieser Abstimmung"
+        no_assignments: "In dieser Abstimmung gibt es keinen Schichtwechsel des/der Wahlvorsteher*in."
     poll_shifts:
       new:
         add_shift: "Arbeitsschicht hinzufügen"
@@ -863,6 +868,7 @@ de:
       flash:
         create: "Arbeitsschicht für Beamten/in hinzugefügt"
         destroy: "Arbeitsschicht für Beamten/in entfernt"
+        unable_to_destroy: "Schichten, denen Ergebnisse oder Nachzählungen zugeordnet sind, können nicht gelöscht werden"
         date_missing: "Es muss ein Datum gewählt werden"
       vote_collection: Stimmen einsammeln
       recount_scrutiny: Nachzählung & Kontrolle
@@ -886,7 +892,7 @@ de:
         error_destroy: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
         error_create: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
       show:
-        location: "Lage"
+        location: "Standort"
         officers: "Beamte/innen"
         officers_list: "Liste der Beamten/innen für diese Wahlurne"
         no_officers: "Es gibt keine Beamten/innen für diese Wahlurne"
@@ -1186,7 +1192,7 @@ de:
     spending_proposals:
       index:
         geozone_filter_all: Alle Bereiche
-        administrator_filter_all: Alle Administratoren
+        administrator_filter_all: Alle Administrator*innen
         valuator_filter_all: Alle Begutachter*innen
         tags_filter_all: Alle Tags
         filters:
