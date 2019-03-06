@@ -36,6 +36,11 @@ da:
       updated: "Din adgangskode er blevet ændret."
       updated_not_active: "Din adgangskode er blevet ændret."
     registrations:
+      destroyed: "Farvel! Din konto er blevet slettet. Vi håber, du kommer igen."
+      signed_up: "Velkommen! Du er blevet verificeret."
+      signed_up_but_inactive: "Du er registreret, men kan ikke logge ind, fordi din konto endnu ikke er aktiveret."
+      signed_up_but_locked: "Du er registreret, men kan ikke logge ind, fordi din konto er spærret."
+      signed_up_but_unconfirmed: "Du har fået tilsendt en besked med et bekræftelseslink. Klik på linket for at aktivere din konto."
       updated: "Din konto er blevet opdateret."
     sessions:
       signed_in: "Du er nu logget ind."
