@@ -36,3 +36,25 @@ da:
       balloting: Afstemning
       reviewing_ballots: Gennemgang af afstemningsresultatet
       finished: Budgettet er færdiggjort
+    index:
+      title: Deltagerbudgetter
+      empty_budgets: Der er ingen budgetter.
+      section_header:
+        icon_alt: Deltagerbudgetter ikon
+        title: Deltagerbudgetter
+        help: Hjælp med deltagerbudgetter
+        all_phases: Se alle faser
+      investment_proyects: Liste over alle investeringsprojekter
+      unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
+      not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
+      finished_budgets: Afsluttede deltagerbudetter
+      see_results: Se resultater
+      section_footer:
+        title: Hjælp med deltagerbudgetter
+    investments:
+      form:
+        tag_category_label: "Kategorier"
+        tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
+        tags_label: Tags
+        tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
+        map_location: "Lokation"
