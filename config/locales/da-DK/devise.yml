@@ -25,16 +25,31 @@ da:
         subject: "Bekræftelsesinstrukser"
       reset_password_instructions:
         subject: "Instruktioner i hvordan du nulstiller din adgangskode"
+      unlock_instructions:
+        subject: "Instruktioner vedrørende genåbning af konto"
     omniauth_callbacks:
       failure: "Det har ikke været muligt at godkende dig %{kind} fordi \"%{reason}\"."
       success: "Du er succesfuldt identificeret som %{kind}."
+    passwords:
+      send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
+      send_paranoid_instructions: "Hvis din e-mail findes i vores database, vil du om få minutter modtage et link, som du kan anvende til at nulstille din adgangskode."
+      updated: "Din adgangskode er blevet ændret."
+      updated_not_active: "Din adgangskode er blevet ændret."
     registrations:
       updated: "Din konto er blevet opdateret."
     sessions:
       signed_in: "Du er nu logget ind."
       signed_out: "Du er nu logget ud."
       already_signed_out: "Du er nu logget ud."
+    unlocks:
+      send_paranoid_instructions: "Hvis du har en brugerkonto, vil du om få minutter modtage en e-mail med instruktioner om, hvordan du genåbner din konto."
+      unlocked: "Din konto er blevet genåbnet. Log ind for at fortsætte."
   errors:
     messages:
       already_confirmed: "Du er allerede blevet verificeret; gå til log ind."
       not_found: "ikke fundet."
+      not_locked: "var ikke spærret."
+      not_saved:
+        one: "1 fejl forhindrede dette %{resource} i at blive gemt. Se de markerede felter for at vide, hvordan du retter dem:"
+        other: "%{count} fejl forhindrede dette %{resource} i at blive gemt. Se de markerede felter for at vide, hvordan du retter dem:"
+      equal_to_current_password: "må adskille sig fra den nuværende adgangskode."
