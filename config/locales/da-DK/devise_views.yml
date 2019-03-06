@@ -112,6 +112,8 @@ da:
           username_is_available: Brugernavnet er tilgængeligt
           username_is_not_available: Brugernavnet er allerede taget af en anden bruger
           username_label: Brugernavn
+          username_note: Det navn, der vises i forbindelse med dine indlæg
         success:
+          back_to_index: Jeg har forstået det; gå tilbage til min startside
           thank_you_html: Tak din tilmelding. Du skal nu <b>bekræfte din e-mail adresse</b>.
           title: Bekræft din e-mail adresse
