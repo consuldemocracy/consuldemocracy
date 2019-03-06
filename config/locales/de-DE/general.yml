@@ -413,8 +413,9 @@ de:
       supports_necessary: "%{number} Unterstützungen benötigt"
       total_percent: 100 %
       archived: "Dieser Vorschlag wurde archiviert und nicht mehr unterstützt werden."
+      successful: "Dieser Vorschlag hat die erforderliche Unterstützung erreicht."
     show:
-      author_deleted: Benutzer gelöscht
+      author_deleted: Benutzer*in gelöscht
       code: 'Antrags-Code:'
       comments:
         zero: Keine Kommentare
@@ -455,6 +456,8 @@ de:
       geozone_restricted: "Bezirke"
       geozone_info: "Können BürgerInnen an folgender Volkszählung teilnehmen: "
       already_answer: "Sie haben bereits an dieser Abstimmung teilgenommen"
+      not_logged_in: "Sie müssen sich anmelden oder registrieren, um teilnehmen zu können"
+      unverified: "Sie müssen ihr Konto bestätigen, um teilnehmen zu können"
       cant_answer: "Diese Umfrage ist nicht in ihrem Gebiet verfügbar"
       section_header:
         icon_alt: Wahlsymbol
@@ -499,7 +502,7 @@ de:
         null_votes: "Ungültig"
       results:
         title: "Fragen"
-        most_voted_answer: "Am meisten bewerteten Antworten: "
+        most_voted_answer: "Am meisten bewerteten Antwort: "
   poll_questions:
     create_question: "Frage erstellen"
     show:
@@ -524,12 +527,12 @@ de:
     "no": "Nein"
     search_results: "Suchergebnisse"
     advanced_search:
-      author_type: 'Nach Kategorie VerfasserIn'
+      author_type: 'Nach Kategorie Verfasser*in'
       author_type_blank: 'Kategorie auswählen'
       date: 'Nach Datum'
       date_placeholder: 'TT/MM/JJJJ'
       date_range_blank: 'Wählen Sie ein Datum'
-      date_1: 'Letzten 24 Stunden'
+      date_1: 'Letzte 24 Stunden'
       date_2: 'Letzte Woche'
       date_3: 'Vergangenen Monat'
       date_4: 'Letztes Jahr'
@@ -541,7 +544,7 @@ de:
       title: 'Erweiterte Suche'
       to: 'An'
     author_info:
-      author_deleted: Benutzer gelöscht
+      author_deleted: Benutzer*in gelöscht
     back: Zurück
     check: Auswählen
     check_all: Alle
@@ -587,17 +590,17 @@ de:
         message: "Sie sehen %{limit} %{count} Anträge mit dem Begriff \"%{query}\""
         see_all: "Alle anzeigen"
     tags_cloud:
-      tags: Trending
+      tags: Beliebt
       districts: "Bezirke"
       districts_list: "Liste der Bezirke"
       categories: "Kategorien"
     target_blank_html: " (Link öffnet im neuen Fenster)"
     you_are_in: "Sie befinden sich in"
-    unflag: Demarkieren
+    unflag: Markierung aufheben
     unfollow_entity: "Nicht länger folgen %{entity}"
     outline:
-      budget: partizipative Haushaltsmittel
-      searcher: Sucher
+      budget: Bürgerhaushalt
+      searcher: Suchende*r
     go_to_page: "Gehe zur Seite von "
     share: Teilen
     orbit:
@@ -610,7 +613,7 @@ de:
       list: Liste
     recommended_index:
       title: Empfehlungen
-      see_more: Weitere Empfehlungen
+      see_more: Weitere Empfehlungen anzeigen
       hide: Empfehlungen ausblenden
   social:
     facebook: "%{org} Facebook"
@@ -751,13 +754,13 @@ de:
       not_verified: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
       organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
-      not_voting_allowed: Die Abstimmungsphase ist geschlossen
+      not_voting_allowed: Die Abstimmungsphase ist beendet
     budget_investments:
       not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
       not_verified: Nur verifizierte Benutzer können über ein Investitionsprojekt abstimmen; %{verify_account}.
       organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
-      not_voting_allowed: Die Abstimmungsphase ist geschlossen
+      not_voting_allowed: Die Abstimmungsphase ist beendet
       different_heading_assigned:
         one: "Sie können nur Investitionsprojekte in %{count} Bezirk unterstützen"
         other: "Sie können nur Investitionsprojekte in %{count} Bezirken unterstützen"
@@ -769,9 +772,9 @@ de:
         processes: "Laufende Verfahren"
       see_all_debates: Alle Debatten anzeigen
       see_all_proposals: Alle Vorschläge anzeigen
-      see_all_processes: Alle Prozesse anzeigen
+      see_all_processes: Alle Beteiligungsverfahren anzeigen
       process_label: Beteiligungsverfahren
-      see_process: Prozess anzeigen
+      see_process: Beteiligungsverfahren anzeigen
     cards:
       title: Hervorgehoben
     recommended:
@@ -787,24 +790,24 @@ de:
         title: Empfohlene Investitionen
       slide: "%{title} anzeigen"
     verification:
-      i_dont_have_an_account: Ich habe kein Benutzerkonto
-      i_have_an_account: Ich habe bereits ein Benutzerkonto
-      question: Haben Sie bereits in Benutzerkonto bei %{org_name}?
-      title: Verifizierung Benutzerkonto
+      i_dont_have_an_account: Ich habe kein Konto
+      i_have_an_account: Ich habe bereits ein Konto
+      question: Haben Sie bereits in Konto bei %{org_name}?
+      title: Konto Verifizierung
     welcome:
       go_to_index: Vorschläge und Diskussionen anzeigen
       title: Teilnehmen
-      user_permission_debates: An Diskussion teilnehmen
+      user_permission_debates: An Diskussionen teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
       user_permission_proposal: Neue Vorschläge erstellen
       user_permission_support_proposal: Vorschläge unterstützen*
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
-      user_permission_verify_info: "* Nur für in der Volkszählung registrierte Benutzer."
+      user_permission_verify_info: "* Nur für Benutzer*innen im Melderegister."
       user_permission_verify_my_account: Mein Konto verifizieren
       user_permission_votes: An finaler Abstimmung teilnehmen
   invisible_captcha:
     sentence_for_humans: "Wenn Sie ein Mensch sind, ignorieren Sie dieses Feld"
-    timestamp_error_message: "Sorry, das war zu schnell! Bitte erneut senden."
+    timestamp_error_message: "Entschuldigung, das war zu schnell! Bitte erneut senden."
   related_content:
     title: "Verwandte Inhalte"
     add: "Verwandte Inhalte hinzufügen"
