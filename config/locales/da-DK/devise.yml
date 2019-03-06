@@ -41,12 +41,14 @@ da:
       signed_up_but_inactive: "Du er registreret, men kan ikke logge ind, fordi din konto endnu ikke er aktiveret."
       signed_up_but_locked: "Du er registreret, men kan ikke logge ind, fordi din konto er spærret."
       signed_up_but_unconfirmed: "Du har fået tilsendt en besked med et bekræftelseslink. Klik på linket for at aktivere din konto."
+      update_needs_confirmation: "Din konto er blevet opdateret; vi bliver dog nødt til at verificere din nye e-mail adresse. Tjek din e-mail og klik på linket for at bekræfte din nye e-mail adresse."
       updated: "Din konto er blevet opdateret."
     sessions:
       signed_in: "Du er nu logget ind."
       signed_out: "Du er nu logget ud."
       already_signed_out: "Du er nu logget ud."
     unlocks:
+      send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du genåbner din konto."
       send_paranoid_instructions: "Hvis du har en brugerkonto, vil du om få minutter modtage en e-mail med instruktioner om, hvordan du genåbner din konto."
       unlocked: "Din konto er blevet genåbnet. Log ind for at fortsætte."
   errors:
