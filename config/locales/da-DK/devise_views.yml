@@ -50,3 +50,68 @@ da:
           instructions_1_html: "<strong>Vi vil kontakte dig snart</strong> for at verificere, at du reelt repræsenterer denne gruppe."
           instructions_2_html: Vi har imens din <strong>e-mail kontrolleres</strong>, sendt dig et <strong>link, hvor du kan bekræfte din konto</strong>.
           instructions_3_html: Når den er bekræftet, kan du begynde at deltage som en ikke-verificeret gruppe.
+          thank_you_html: Tak fordi du registrerede dig som en gruppe på websitet. Registreringen er nu <strong>under behandling</strong>.
+          title: Registrering af organisation/gruppe
+    passwords:
+      edit:
+        change_submit: Skift min adgangskode
+        password_confirmation_label: Bekræft ny adgangskode
+        password_label: Ny adgangskode
+        title: Skift din adgangskode
+      new:
+        email_label: E-mail
+        send_submit: Send instruktioner
+        title: Glemt adgangskode?
+    sessions:
+      new:
+        login_label: E-mail eller brugernavn
+        password_label: Adgangskode
+        remember_me: Husk mig
+        submit: Log ind
+        title: Log ind
+    shared:
+      links:
+        login: Log ind
+        new_confirmation: Har du ikke modtaget instruktioner i, hvordan du aktiverer din konto?
+        new_password: Har du glemt din adgangskode?
+        new_unlock: Har du ikke modtaget instruktioner i at genåbne din konto?
+        signin_with_provider: Log ind med %{provider}
+        signup: Har du ikke en konto? %{signup_link}
+        signup_link: Tilmeld dig
+    unlocks:
+      new:
+        email_label: E-mail
+        submit: Send instruktioner vedrørende genåbning af min konto igen
+        title: Send instruktioner vedrørende genåbning af min konto igen
+    users:
+      registrations:
+        delete_form:
+          submit: Slet min konto
+          title: Slet konto
+        edit:
+          current_password_label: Nuværende adgangskode
+          edit: Rediger
+          email_label: E-mail
+          need_current: Vi behøver din nuværende adgangskode for at kunne bekræfte ændringerne
+          password_confirmation_label: Bekræft ny adgangskode
+          password_label: Ny adgangskode
+          update_submit: Opdater
+          waiting_for: 'Venter på bekræftelse af:'
+        new:
+          cancel: Annuller login
+          email_label: E-mail
+          organization_signup: Repræsenterer du en organisation eller en gruppe? %{signup_link}
+          organization_signup_link: Tilmeld dig her
+          password_confirmation_label: Bekræft adgangskode
+          password_label: Adgangskode
+          redeemable_code: Verifikationskode modtaget via e-mail (valgfrit)
+          submit: Tilmeld
+          terms: Når du tilmelder dig, accepterer du %{terms}
+          terms_link: brugervilkår og betingelser
+          title: Tilmeld
+          username_is_available: Brugernavnet er tilgængeligt
+          username_is_not_available: Brugernavnet er allerede taget af en anden bruger
+          username_label: Brugernavn
+        success:
+          thank_you_html: Tak din tilmelding. Du skal nu <b>bekræfte din e-mail adresse</b>.
+          title: Bekræft din e-mail adresse
