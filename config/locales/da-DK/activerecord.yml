@@ -18,7 +18,7 @@ da:
         other: "Status for milepæle"
       progress_bar:
         one: "Statusbar"
-        other: "Statuslinjer"
+        other: "Statusindikator"
       comment:
         one: "Kommentar"
         other: "Kommentarer"
@@ -133,11 +133,14 @@ da:
         document_numbers: "Dokumentnummer"
       site_customization/page:
         content: Indhold
+        created_at: Oprettet den
         subtitle: Undertitel
         slug: Signaturlinje
         status: Status
         title: Titel
         updated_at: Opdateret
+        more_info_flag: Vis i "hjælp"
+        print_content_flag: Udskriftsknap
         locale: Sprog
       site_customization/page/translation:
         title: Titel
@@ -149,6 +152,7 @@ da:
       site_customization/content_block:
         name: Navn
       legislation/process:
+        title: Titel på proces
         summary: Resumé
         description: Beskrivelse
         additional_info: Yderligere information
@@ -159,15 +163,62 @@ da:
         draft_start_date: Startdato for udkast
         draft_end_date: Slutdato for udkast
         draft_publication_date: Dato for offentliggørelse af udkast
+        allegations_start_date: Start
+        allegations_end_date: Slut
         proposals_phase_start_date: Start
         proposals_phase_end_date: Slut
+        result_publication_date: Dato for publicering af det endelige resultat
         background_color: Baggrundsfarve
         font_color: Skriftfarve
       legislation/process/translation:
+        title: Titel på proces
         summary: Resumé
         description: Beskrivelse
         additional_info: Yderligere information
         milestones_summary: Resumé
+      legislation/draft_version:
+        body: Tekst
+        changelog: Ændringer
+        status: Status
+        final_version: Den endelige version
+      legislation/draft_version/translation:
+        body: Tekst
+        changelog: Ændringer
+      legislation/question:
+        title: Titel
+        question_options: Indstillinger
+      legislation/question_option:
+        value: Værdi
+      legislation/annotation:
+        text: Kommentar
+      document:
+        title: Titel
+        attachment: Vedhæft fil
+      image:
+        title: Titel
+        attachment: Vedhæft fil
+      poll/question/answer:
+        title: Svar
+        description: Beskrivelse
+      poll/question/answer/translation:
+        title: Svar
+        description: Beskrivelse
+      poll/question/answer/video:
+        title: Titel
+        url: Ekstern video
+      newsletter:
+        segment_recipient: Modtagere
+        subject: Emne
+        from: Fra
+        body: Indhold af e-mail
+      admin_notification:
+        segment_recipient: Modtagere
+        title: Titel
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Titel
+        body: Tekst
       widget/card:
         label: Mærke (valgfrit)
         title: Titel
