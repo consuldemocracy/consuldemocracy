@@ -25,18 +25,69 @@ da:
       debate:
         one: "Debat"
         other: "Debatter"
+      user:
+        one: "Bruger"
+        other: "Brugere"
+      moderator:
+        one: "Moderator"
+        other: "Moderator"
+      administrator:
+        one: "Administrator"
+        other: "Administrator"
+      valuator:
+        one: "Evaluator"
+        other: "Evaluator"
+      valuator_group:
+        one: "Evaluator gruppe"
+        other: "Evaluatorgruppe"
+      manager:
+        one: "Manager"
+        other: "Manager"
+      newsletter:
+        one: "Nyhedsbrev"
+        other: "Nyhedsbreve"
+      vote:
+        one: "Stemmer"
+        other: "Stemmer"
+      organization:
+        one: "Organisationer"
+        other: "Organisationer"
+      proposal:
+        one: "Borgerforslag"
+        other: "Borgerforslag"
+      spending_proposal:
+        one: "Investeringsprojekter"
+        other: "Investeringsprojekter"
+      legislation/process:
+        one: "Proces"
+        other: "Processer"
       legislation/proposal:
         one: "Forslag"
         other: "Forslag"
       legislation/questions:
         one: "Spørgsmål"
         other: "Spørgsmål"
+      legislation/question_options:
+        one: "Spørgsmålsindstillinger"
+        other: "Spørgsmålsindstillinger"
       legislation/answers:
         one: "Svar"
         other: "Svar"
       documents:
         one: "Dokumenter"
         other: "Dokumenter"
+      images:
+        one: "Billede"
+        other: "Billeder"
+      topic:
+        one: "Emner"
+        other: "Emner"
+      poll:
+        one: "Meningsmålinger"
+        other: "Meningsmålinger"
+      proposal_notification:
+        one: "Notifikationer om forslag"
+        other: "Notifikationer om forslag"
     attributes:
       budget:
         name: "Navn"
@@ -262,6 +313,8 @@ da:
               invalid_date_range: skal være på eller efter startdatoen for debatten
             draft_end_date:
               invalid_date_range: skal være på eller efter startdatoen for udkastet
+            allegations_end_date:
+              invalid_date_range: skal være udført på eller efter startdatoen for kommentarer
         proposal:
           attributes:
             tag_list:
@@ -287,5 +340,9 @@ da:
             image:
               image_width: "Bredden skal være %{required_width}px"
               image_height: "Højde skal være %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Du kan ikke kommentere en værdisættelse'
       messages:
         record_invalid: "Valideringen mislykkedes: %{errors}"
