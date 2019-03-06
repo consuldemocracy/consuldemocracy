@@ -5,3 +5,14 @@ da:
         title: Din stemme
         amount_spent: Opbrugt beløb
         remaining: "Du har stadig <span>%{amount}</span> at investere for."
+        no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
+        remove: Fjern din stemme
+        voted_html:
+          one: "Du har stemt på <span>%{count}</span> investeringer."
+          other: "Du har stemt på <span>%{count}</span> investeringer."
+        voted_info_html: "Du kan til enhver tid ændre din stemme indtil denne fase slutter.<br> Det er ikke nødvendigt at investere alle de penge, der har til rådighed."
+        zero: Du har ikke stemt på et investeringsprojekt.
+      reasons_for_not_balloting:
+        not_logged_in: Du skal %{signin} eller %{signup} for at kunne fortsætte.
+        not_verified: Kun verificerede brugere kan stemme på investeringer; %{verify_account}.
+        organization: Det er ikke tilladt for organisationer at stemme
