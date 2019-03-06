@@ -56,10 +56,12 @@ da:
         administrator_id: "Administrator"
         location: "Placering (valgfri)"
         organization_name: "Hvis du fremsender et forslag på vegne af en gruppe/organisation, angiv navnet på denne"
+        image: "Et beskrivende billede"
         image_title: "Titel på billede"
       milestone:
         status_id: "Nuværende status (valgfri)"
         title: "Titel"
+        description: "Beskrivelse (valgfrit hvis en status er tildelt)"
         publication_date: "Dato for offentliggørelse"
       milestone/status:
         name: "Navn"
@@ -67,6 +69,16 @@ da:
       progress_bar:
         kind: "Type"
         title: "Titel"
+        percentage: "Aktuelle forløb"
+      progress_bar/kind:
+        primary: "Primære"
+        secondary: "Sekundære"
+      budget/heading:
+        price: "Pris"
+        population: "Population"
+      comment:
+        body: "Kommentar"
+        user: "Bruger"
       debate:
         author: "Forfatter"
         description: "Mening"
@@ -78,6 +90,16 @@ da:
         question: "Spørgsmål"
         description: "Beskrivelse"
         terms_of_service: "Servicevilkår"
+      user:
+        login: "E-mail eller brugernavn"
+        email: "E-mail"
+        username: "Brugernavn"
+        password_confirmation: "Bekræftelse af adgangskode"
+        password: "Adgangskode"
+        current_password: "Nuværende adgangskode"
+        phone_number: "Telefonnummer"
+        official_position: "Embedsposition"
+        official_level: "Embedsniveau"
       poll/translation:
         summary: "Resumé"
         description: "Beskrivelse"
