@@ -146,7 +146,7 @@
           <% end %>
         <% end %>
 
-        <% if investment.unfeasible? %>
+        <% if investment.unfeasible? && investment.valuation_finished? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
