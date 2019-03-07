@@ -53,6 +53,7 @@ nl:
       proposals:
         empty_proposals: Er zijn geen voorstellen
         filters:
+          random: Willekeurig
           winners: Geselecteerd
       debate:
         empty_questions: Er zijn geen vragen
