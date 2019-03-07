@@ -429,6 +429,7 @@ nl:
           description_placeholder: Voeg een beschrijving van het plan toe
           additional_info_placeholder: Voeg een aanvullende informatie toe
           homepage: Beschrijving
+          homepage_description: Hier kun je de stappen van het proces uitleggen
           homepage_enabled: Homepage ingeschakeld
           banner_title: Rubriekkleuren
           color_help: Hexadecimale notatie
@@ -735,6 +736,7 @@ nl:
         submit_button: Notificatie aanmaken
       edit:
         section_title: Bericht bewerken
+        submit_button: Notificatie bijwerken
       show:
         section_title: Voorbeeld van de kennisgeving
         send: Verzend notificatie
@@ -760,6 +762,18 @@ nl:
         title: "Voorgestelde melding verwerken"
         description: "Verzamelt alle meldingen van het voorstel voor een gebruiker in een enkel bericht, om te voorkomen dat er te veel e-mails worden verstuurd."
         preview_detail: "Gebruikers ontvangen alleen meldingen uit de voorstellen die ze volgen"
+      reply:
+        title: "Antwoord"
+      direct_message_for_receiver:
+        title: "Ontvanger"
+      email_verification:
+        title: "Verificatie email"
+        description: "Verzonden naar de aanmelder om het account te verifiëren."
+      user_invite:
+        title: "Uitnodiging"
+        description: "Verzonden naar de persoon die is uitgenodigd om zich te registreren."
+      edit_info: "Je kunt deze email bewerken in"
+      message_title: "Berichttitel"
     emails_download:
       index:
         title: E-mails download
@@ -947,6 +961,7 @@ nl:
         table_proposal: "Proposal"
         table_question: "Question"
         table_poll: "Poll"
+        poll_not_assigned: "Peiling niet toegewezen"
       edit:
         title: "Edit Question"
       new:
@@ -1100,6 +1115,7 @@ nl:
         id: ID
         author: Author
         milestones: Mijlpalen
+        no_proposals: Er zijn geen voorstellen.
     hidden_proposals:
       index:
         filter: Filter
@@ -1322,6 +1338,7 @@ nl:
         title: Voorstel notificaties
         total: Totaal
         proposals_with_notifications: Proposals with notifications
+        not_available: "Voorstel niet beschikbaar"
       polls:
         title: Peiling Stats
         all: Polls
@@ -1365,6 +1382,7 @@ nl:
       content_blocks:
         information: Information about content blocks
         about: "You can create HTML content blocks to be inserted in the header or the footer of your Consul."
+        html_format: "Een inhoudsblok is een groep van snelkoppelingen in het volgende formaat:"
         no_blocks: "Er zijn geen inhoudsblokken."
         create:
           notice: Content block created successfully
@@ -1437,12 +1455,22 @@ nl:
           title: Title
           slug: Bullet
           cards_title: Tegels
+          see_cards: Tegels bekijken
         cards:
+          cards_title: tegels
           create_card: Kaart aanmaken
+          no_cards: Er zijn geen tegels.
           title: Title
           description: Beschrijving
           link_text: Tekst link
           link_url: URL link
+          columns_help: "Breedte van de tegel in aantal kolommen. Op mobiele schermen worden tegels altijd op 100% breedte getoond."
+          create:
+            notice: "Tegel aangemaakt"
+          update:
+            notice: "Tegel bijgewerkt"
+          destroy:
+            notice: "Tegel verwijderd"
     homepage:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
