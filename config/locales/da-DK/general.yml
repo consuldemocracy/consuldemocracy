@@ -21,3 +21,41 @@ da:
       user_permission_title: Deltage
       user_permission_verify: Du skal verificere din konto for at kunne foretage disse handlinger.
       user_permission_verify_info: "* Kun for brugere af Census."
+      username_label: Brugernavn
+      verified_account: Konto verificeret
+      verify_my_account: Verificer min konto
+  application:
+    close: Luk
+    menu: Menu
+  comments:
+    verified_only: For at deltage %{verify_account}
+    verify_account: bekræft din konto
+    comment:
+      admin: Administrator
+      deleted: Kommentaren er blevet slettet
+      moderator: Moderator
+      responses:
+        zero: Ingen svar
+        one: 1 svar
+        other: "%{count} svar"
+      user_deleted: Bruger slettet
+      votes:
+        zero: Ingen stemmer
+        one: 1 stemme
+        other: "%{count} stemmer"
+    form:
+      comment_as_admin: Kommenter som administrator
+      comment_as_moderator: Kommenter som moderator
+  debates:
+    index:
+      recommendations:
+        actions:
+          error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger for debatter"
+      search_form:
+        button: Søg
+        placeholder: Søg debatindlæg...
+        title: Søg
+      start_debate: Start en debat
+      title: Debatforum
+      section_header:
+        icon_alt: Debat ikon
