@@ -75,6 +75,7 @@ nl:
     proposal_notification_minimum_interval_in_days: "Het minimum aantal dagen dat dient te worden gewacht voordat notificaties van voorstellen kunnen worden verstuurd"
     proposal_notification_minimum_interval_in_days_description: "Het minimum aantal dagen dat dient te worden gewacht voordat notificaties van voorstellen kunnen worden verstuurd"
     direct_message_max_per_day: "Maximaal aantal privé berichten per dag"
+    direct_message_max_per_day_description: "Maximum aantal privé berichten dat gebruikers per dag mogen versturen"
     feature:
       budgets: "Burgerbegrotingen"
       budgets_description: "Met burgerbegrotingen kunnen inwoners meebeslissen welke projecten onderdeel moeten zijn van de gemeentelijke begroting"
