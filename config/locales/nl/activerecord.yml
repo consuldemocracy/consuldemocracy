@@ -17,8 +17,8 @@ nl:
         one: "Mijlpaalstatus"
         other: "Mijlpaalstatussen"
       progress_bar:
-        one: "Voortgang"
-        other: "Voortgang"
+        one: "Voortgangsbalk"
+        other: "Voortgangsbalken"
       comment:
         one: "Reactie"
         other: "Reacties"
@@ -33,19 +33,19 @@ nl:
         other: "Gebruikers"
       moderator:
         one: "Moderator"
-        other: "Moderatoren"
+        other: "Moderators"
       administrator:
         one: "Beheerder"
         other: "Beheerders"
       valuator:
-        one: "beoordelaar"
-        other: "beoordelaars"
+        one: "Beoordelaar"
+        other: "Beoordelaars"
       valuator_group:
         one: "Beoordelaarsgroep"
         other: "Beoordelaarsgroepen"
       manager:
         one: "Manager"
-        other: "Managers"
+        other: "Beheerders"
       newsletter:
         one: "Nieuwsbrief"
         other: "Nieuwsbrieven"
@@ -75,10 +75,10 @@ nl:
         other: Aangepaste afbeeldingen
       site_customization/content_block:
         one: Aangepaste inhoud
-        other: Aangepaste inhoud
+        other: Custom content blocks
       legislation/process:
         one: "Proces"
-        other: "Processen"
+        other: "Plannen"
       legislation/proposal:
         one: "Proposal"
         other: "Proposals"
@@ -105,40 +105,40 @@ nl:
         other: "Onderwerpen"
       poll:
         one: "Peiling"
-        other: "Polls"
+        other: "Peilingen"
       proposal_notification:
         one: "Voorstelnotificatie"
         other: "Voorstelnotificaties"
     attributes:
       budget:
-        name: "Name"
+        name: "Naam"
         description_accepting: "Omschrijving in de acceptatiefase"
-        description_reviewing: "Omschrijving in de beoordelingsase"
+        description_reviewing: "Omschrijving in de beoordelingsfase"
         description_selecting: "Omschrijving in de selectiefase"
         description_valuating: "Omschrijving in de waarderingsfase"
         description_balloting: "Omschrijving in de stemfase"
         description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer het budget is afgerond"
-        phase: "Phase"
+        phase: "Fase"
         currency_symbol: "Valuta"
       budget/investment:
         heading_id: "Kop"
-        title: "Title"
-        description: "Beschrijving"
-        external_url: "Link naar meer informatie"
+        title: "Titel"
+        description: "Omschrijving"
+        external_url: "Link naar aanvullende informatie"
         administrator_id: "Beheerder"
         location: "Locatie (optioneel)"
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding bij het budget"
         image_title: "Naam van de afbeelding"
       milestone:
-        status_id: "Huidige investeringsstatus (optioneel)"
-        title: "Title"
+        status_id: "Huidige status (optioneel)"
+        title: "Titel"
         description: "Omschrijving"
         publication_date: "Publicatiedatum"
       milestone/status:
-        name: "Name"
-        description: "Beschrijving (optioneel)"
+        name: "Naam"
+        description: "Omschrijving (optioneel)"
       progress_bar:
         kind: "Type"
         title: "Titel"
@@ -310,7 +310,7 @@ nl:
         label: Term (optioneel)
         title: Titel
         description: Omschrijving
-        link_text: Tekst link
+        link_text: Link tekst
       widget/feed:
         limit: Aantal items
     errors:
@@ -356,7 +356,7 @@ nl:
             debate_end_date:
               invalid_date_range: moet op of na de begindatum zijn
             draft_end_date:
-              invalid_date_range: dient later te zijn dan de aanvangsdatum
+              invalid_date_range: dient later te zijn dan de begindatum
             allegations_end_date:
               invalid_date_range: moet op of na de begindatum zijn
         proposal:
@@ -375,11 +375,11 @@ nl:
           attributes:
             document_number:
               not_in_census: 'Niet geverifieerd'
-              already_voted: 'Heeft al gestemd over dit voorstel'
+              already_voted: 'Al gestemd over dit voorstel'
         site_customization/page:
           attributes:
             slug:
-              slug_format: "moeten letters, nummers, _ en - zijn"
+              slug_format: "moeten letter, nummers, _ en - zijn"
         site_customization/image:
           attributes:
             image:
