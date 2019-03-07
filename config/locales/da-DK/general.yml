@@ -150,3 +150,33 @@ da:
       consul_url: https://github.com/consul/consul
       contact_us: For teknisk assistance besøg
       copyright: CONSUL, %{year}
+      description: Denne portal anvender %{consul}, som er %{open_source}.
+      open_source: open-source software
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_title: Deltagelse
+      privacy: Persondatapolitik
+    header:
+      administration_menu: Admin
+      administration: Administration
+      available_locales: Sprog
+      debates: Debatforum
+      locale: 'Sprog:'
+      logo: CONSUL logo
+      management: Management
+      moderation: Moderation
+      valuation: Vurdering
+      help: Hjælp
+      my_account_link: Min konto
+      my_activity_link: Min aktivitet
+      open: åben
+      proposals: Forslag
+      poll_questions: Afstemning
+      budgets: Deltagerbudget
+      notification_item:
+        new_notifications:
+          one: Du har en ny notifikation
+          other: Du har %{count} nye notifikationer
+        notifications: Notifikationer
+        no_notifications: "Du har ingen nye notifikationer"
+    admin:
+      watch_form_message: 'Du har ændringer, der ikke er gemt. Ønsker du stadig at forlade denne side?'
