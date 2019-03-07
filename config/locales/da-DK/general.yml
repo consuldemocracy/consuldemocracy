@@ -1,1 +1,23 @@
 da:
+  account:
+    show:
+      change_credentials_link: Rediger brugeroplysninger
+      email_on_comment_label: Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg
+      email_on_comment_reply_label: Send mig en e-mail når nogen svarer på mine kommentarer
+      erase_account_link: Slet min konto
+      notifications: Notifikationer
+      organization_name_label: Navn på organisation
+      organization_responsible_name_placeholder: Repræsentant for organisationen/gruppen
+      personal: Personlige oplysninger
+      phone_number_label: Telefonnummer
+      save_changes_submit: Gem ændringer
+      subscription_to_website_newsletter_label: Modtag relevant information via e-mail
+      recommendations: Anbefalinger
+      title: Min konto
+      user_permission_debates: Deltag i debat
+      user_permission_info: Med din konto kan du...
+      user_permission_proposal: Oprette nye forslag
+      user_permission_support_proposal: Støtte op om forslag
+      user_permission_title: Deltage
+      user_permission_verify: Du skal verificere din konto for at kunne foretage disse handlinger.
+      user_permission_verify_info: "* Kun for brugere af Census."
