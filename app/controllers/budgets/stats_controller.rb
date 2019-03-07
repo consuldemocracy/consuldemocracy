@@ -7,6 +7,7 @@ module Budgets
     def show
       authorize! :read_stats, @budget
       @stats = load_stats
+      @headings = @budget.headings.sort_by_name
     end
 
     private

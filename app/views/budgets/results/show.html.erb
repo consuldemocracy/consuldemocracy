@@ -46,10 +46,8 @@
     <h3 class="margin-bottom">
       <%= t("budgets.results.heading_selection_title") %>
     </h3>
-    <ul class="menu vertical no-margin-top no-padding-top">
-
-
-      <% @budget.headings.order("id ASC").each do |heading| %>
+    <ul id="headings" class="menu vertical no-margin-top no-padding-top">
+      <% @headings.each do |heading| %>
         <li>
           <%= link_to heading.name,
                       budget_results_path(@budget, heading_id: heading.to_param),

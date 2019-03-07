@@ -199,8 +199,8 @@
               <th scope="col" class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
             </tr>
           </thead>
-          <tbody>
-            <% @budget.headings.order("id ASC").each do |heading| %>
+          <tbody id="headings">
+            <% @headings.each do |heading| %>
               <tr id="<%= heading.name.parameterize %>">
                 <td class="border-left">
                   <strong><%= heading.name %></strong>
