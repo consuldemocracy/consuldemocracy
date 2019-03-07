@@ -275,7 +275,7 @@ tr:
       name: Facebook
     finish_signup:
       title: "Ek detaylar"
-      username_warning: "Sosyal ağlarla etkileşim biçimimizdeki bir değişiklik nedeniyle, kullanıcı adınızın şimdi 'zaten kullanımda' olarak görünmesi mümkündür."
+      username_warning: "Sosyal ağlarla etkileşim biçimimizdeki bir değişiklik nedeniyle, kullanıcı adınızın şimdi 'zaten kullanımda' olarak görünmesi mümkündür. Bu durumdaysanız, lütfen farklı bir kullanıcı adı seçin."
     google_oauth2:
       sign_in: Google ile oturum aç
       sign_up: Google ile kaydol
