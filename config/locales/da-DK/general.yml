@@ -46,9 +46,52 @@ da:
     form:
       comment_as_admin: Kommenter som administrator
       comment_as_moderator: Kommenter som moderator
+    orders:
+      most_voted: Flest stemmer
+      newest: Nyeste først
+      oldest: Ældste først
+      most_commented: Flest kommentarer
+    select_order: Sorter efter
+    show:
+      return_to_commentable: 'Gå tilbage til '
+  comments_helper:
+    comment_button: Send kommentar
+    comment_link: Kommentar
+    comments_title: Kommentarer
+    reply_button: Send svar
+    reply_link: Svar
   debates:
+    create:
+      form:
+        submit_button: Start en debat
+    debate:
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      votes:
+        zero: Ingen stemmer
+        one: 1 stemme
+        other: "%{count} stemmer"
+    edit:
+      editing: Rediger debatindlæg
+      form:
+        submit_button: Gem ændringer
+      show_link: Se debatindlæg
+    form:
+      debate_title: Titel på debatindlæg
+      tags_instructions: Tag denne debat.
+      tags_label: Emner
+      tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
+      orders:
+        created_at: nyeste
+        hot_score: mest aktive
+        most_commented: flest kommentarer
+        relevance: relevans
+        recommendations: anbefalinger
       recommendations:
+        without_results: Der er ingen debatindlæg, der relatere sig til dit interesseområde
         actions:
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger for debatter"
       search_form:
@@ -89,3 +132,21 @@ da:
       invalid_date_range: "Ugyldigt datointerval"
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
+    accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
+    topic: Emne
+    image: Billede
+  geozones:
+    none: Hele byen
+    all: Alle felter
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Vi har opdaget, at du anvender Internet Explorer. For en bedre oplevelse anbefaler vi, at du anvender %{firefox} eller %{chrome}.
+      ie_title: Hjemmesiden fungerer ikke optimal sammen med din valgte browser
+    footer:
+      accessibility: Tilgængelighed
+      conditions: Brugervilkår og betingelser
+      consul_url: https://github.com/consul/consul
+      contact_us: For teknisk assistance besøg
+      copyright: CONSUL, %{year}
