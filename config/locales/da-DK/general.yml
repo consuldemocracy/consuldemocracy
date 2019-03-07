@@ -180,3 +180,45 @@ da:
         no_notifications: "Du har ingen nye notifikationer"
     admin:
       watch_form_message: 'Du har ændringer, der ikke er gemt. Ønsker du stadig at forlade denne side?'
+  notifications:
+    index:
+      empty_notifications: Du har ingen nye notifikationer.
+      mark_all_as_read: Marker alt som læst
+      read: Læs
+      title: Notifikationer
+      unread: Ulæst
+  proposals:
+    form:
+      proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
+      proposal_summary_note: "(max 200 anslag)"
+      proposal_text: Tekst
+      proposal_title: Forslagets titel
+      proposal_video_url: Link til video
+      proposal_video_url_note: Du kan tilføje et link til YouTube eller Vimeo
+      tag_category_label: "Kategorier"
+      tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
+      tags_label: Tags
+      tags_placeholder: "Tilføj tags og adskil dem med komma (',')"
+      map_location: "Lokation"
+      map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
+      map_remove_marker: "Flyt markøren"
+      map_skip_checkbox: "Dette forslag omhandler ikke en specifik lokation, eller også kender jeg ikke til den."
+    index:
+      orders:
+        created_at: nyeste
+        hot_score: mest aktive
+        most_commented: flest kommentarer
+        relevance: relevans
+        archival_date: arkiveret
+        recommendations: anbefalinger
+      recommendations:
+        without_results: Der er ingen forslag, der relaterer sig til dit interesseområde
+      retired_links:
+        all: Alle
+        duplicated: Kopieret
+        started: Undervejs
+    proposal:
+      votes:
+        one: 1 stemme
+        other: "%{count} stemmer"
+      total_percent: 100%
