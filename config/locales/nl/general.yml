@@ -181,6 +181,7 @@ nl:
     proposal_notification: "Melding"
     spending_proposal: Begrotingsvoorstel
     budget/investment: Investering
+    budget/group: Budgetgroep
     budget/heading: Budget onderdeel
     poll/shift: Dienst
     poll/question/answer: Antwoord
@@ -441,6 +442,8 @@ nl:
     update:
       form:
         submit_button: Bewaar wijzigingen
+    share:
+      message: "Ik heb het voorstel %{summary} in %{handle} gesteund. Steun dit voorstel ook!"
   polls:
     all: "All"
     no_dates: "nog geen datum"
@@ -458,6 +461,7 @@ nl:
       geozone_info: "Open voor deelnemers uit: "
       already_answer: "U heeft al deelgenomen aan deze ronde"
       not_logged_in: "U moet inloggen om deel te kunnen nemen"
+      unverified: "Je account moet zijn geverifieerd om te deel te kunnen nemen"
       cant_answer: "Deze stemronde is niet beschikbaar in uw regio"
       section_header:
         icon_alt: Stemmen icoon
