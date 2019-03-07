@@ -113,7 +113,11 @@ nl:
         recalculate: Herbereken gewonnen investeringen
     budget_groups:
       name: "Name"
+      headings_name: "Rubrieken"
+      headings_edit: "Rubrieken bewerken"
+      headings_manage: "Rubrieken beheren"
       max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
+      no_groups: "Er zijn geen groepen."
       amount:
         one: "Er is 1 groep"
         other: "Er zijn %{count} groepen"
@@ -129,8 +133,11 @@ nl:
         edit: "Bewerk groep"
         name: "Groepsnaam"
         submit: "Sla op"
+      index:
+        back: "Ga terug naar budgetten"
     budget_headings:
       name: "Name"
+      no_headings: "Er zijn geen rubrieken."
       form:
         name: "Kop naam"
         amount: "Bedrag"
@@ -941,6 +948,9 @@ nl:
       index:
         title: "Hertellingen"
         no_recounts: "There is nothing to be recounted"
+        all_booths_total: "Cumulatief totaal van alle stemlocaties:"
+        total_final: "Laatste telling"
+        total_system: "Stemmen (automatisch)"
         table_booth_name: "Stemhokje"
         table_total_recount: "Uiteindelijke hertelling (door beambte)"
         table_system_count: "Stemmen (automatisch)"
