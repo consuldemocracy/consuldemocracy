@@ -59,3 +59,12 @@ da:
       title: Debatforum
       section_header:
         icon_alt: Debat ikon
+    new:
+      form:
+        submit_button: Start en debat
+      info: Hvis du ønsker at oprette et forslag, befinder du dig i den forkerte sektion, klik på %{info_link}.
+      info_link: opret et forslag
+      more_info: Flere oplysninger
+      recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
+      recommendation_three: Hensynsløs kritik er velkommen. Her er der rum for refleksion. Men vi anbefaler, at du fastholder din elegance og intelligens. Verdenen er et bedre sted, når disse dyder er en del af den.
+      recommendation_two: Enhver debat eller kommentar, der foreslår en ulovlig handling eller søger at sabotere debatforummet vil blive slettet. Alt andet er tilladt.
