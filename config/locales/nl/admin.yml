@@ -762,10 +762,14 @@ nl:
         title: "Voorgestelde melding verwerken"
         description: "Verzamelt alle meldingen van het voorstel voor een gebruiker in een enkel bericht, om te voorkomen dat er te veel e-mails worden verstuurd."
         preview_detail: "Gebruikers ontvangen alleen meldingen uit de voorstellen die ze volgen"
+      comment:
+        title: "Reactie"
       reply:
         title: "Antwoord"
       direct_message_for_receiver:
         title: "Ontvanger"
+      direct_message_for_sender:
+        title: "Afzender"
       email_verification:
         title: "Verificatie email"
         description: "Verzonden naar de aanmelder om het account te verifiëren."
@@ -916,6 +920,12 @@ nl:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
+    active_polls:
+      edit:
+        title: "Omschrijving van de peiling"
+      form:
+        description:
+          text: "Omschrijving"
     polls:
       index:
         title: "List of polls"
