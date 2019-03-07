@@ -116,6 +116,7 @@ da:
       destroy:
         success_notice: "Gruppen blev slettet"
       form:
+        create: "Opret ny gruppe"
         edit: "Rediger gruppe"
         name: "Gruppenavn"
         submit: "Gem gruppe"
@@ -150,7 +151,13 @@ da:
           undecided: Ikke besluttet
           unfeasible: Uigennemførlig
           winners: Vindere
+        select: "Vælg"
         list:
+          id: ID
+          title: Titel
+          admin: Administrator
+          valuator: Evaluator
+          valuation_group: Evaluator gruppe
           incompatible: Uforenelig
         see_results: "Se resultat"
       show:
