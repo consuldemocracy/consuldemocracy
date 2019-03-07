@@ -267,3 +267,64 @@ da:
       title_label: "Titel"
       body_label: "Besked"
       submit_button: "Send besked"
+      info_about_receivers_html: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlige i %{proposal_page}. <br> Beskeder bliver ikke sendt med det samme. Brugere vil periodisk modtage en e-mail med alle forslagets notifikationer."
+    show:
+      back: "Gå tilbage til min aktivitet"
+  shared:
+    edit: 'Rediger'
+    save: 'Gem'
+    delete: Slet
+    "yes": "Ja"
+    "no": "Nej"
+    search_results: "Søgeresultater"
+    advanced_search:
+      author_type_blank: 'Vælg en kategori'
+      date: 'Efter dato'
+      date_placeholder: 'DD/MM/ÅÅÅÅ'
+      date_range_blank: 'Vælg en dato'
+      date_1: 'Sidste 24 timer'
+      date_2: 'Sidste uge'
+      date_3: 'Sidste måned'
+      date_4: 'Sidste år'
+      from: 'Fra'
+      general: 'Med teksten'
+      general_placeholder: 'Skriv tekst'
+      search: 'Filtre'
+      title: 'Avanceret søgning'
+      to: 'Til'
+    author_info:
+      author_deleted: Bruger slettet
+    back: Gå tilbage
+    check: Vælg
+    check_all: Alle
+    check_none: Ingen
+    collective: Grupper
+    flag: Marker som upassende
+    follow: "Følg"
+    follow_entity: "Følg %{entity}"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  spending_proposals:
+    form:
+      association_name_label: 'Hvis du opretter et forslag på vegne af en forening eller en gruppe, tilføj navnet på den her'
+      association_name: 'Navn på forening'
+      description: Beskrivelse
+      submit_buttons:
+        create: Opret
+        new: Opret
+    index:
+      search_form:
+        button: Søg
+        placeholder: Investeringsprojekter...
+        title: Søg
+      sidebar:
+        feasibility: Kan gennemføres
+        unfeasible: Kan ikke gennemføres
+      start_spending_proposal: Opret et investeringsprojekt
+    new:
+      more_info: Hvad fungerer deltagerbudgetter?
