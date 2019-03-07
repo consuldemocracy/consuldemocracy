@@ -68,3 +68,24 @@ da:
       recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
       recommendation_three: Hensynsløs kritik er velkommen. Her er der rum for refleksion. Men vi anbefaler, at du fastholder din elegance og intelligens. Verdenen er et bedre sted, når disse dyder er en del af den.
       recommendation_two: Enhver debat eller kommentar, der foreslår en ulovlig handling eller søger at sabotere debatforummet vil blive slettet. Alt andet er tilladt.
+      start_new: Start en debat
+    show:
+      author_deleted: Bruger slettet
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      comments_title: Kommentarer
+      edit_debate_link: Rediger
+      flag: Denne debat er blevet markeret som upassende af flere brugere.
+      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
+      share: Del
+    update:
+      form:
+        submit_button: Gem ændringer
+  errors:
+    messages:
+      user_not_found: Brugeren blev ikke fundet
+      invalid_date_range: "Ugyldigt datointerval"
+  form:
+    accept_terms: Jeg accepterer %{policy} og %{conditions}
