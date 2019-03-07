@@ -344,3 +344,40 @@ da:
         proposals:
           one: 1 Forslag
           other: "%{count} Forslag"
+        budget_investments:
+          one: 1 Investering
+          other: "%{count} Investeringer"
+        follows:
+          one: 1 Følger
+          other: "%{count} Følgere"
+      no_activity: Brugeren har ingen offentlig aktivitet
+      no_private_messages: "Denne bruger accepterer ikke private beskeder."
+      private_activity: Denne bruger har valgt at holde sine aktiviteter private.
+      send_private_message: "Send privat besked"
+      delete_alert: "Er du sikker på, du ønsker at slette dit investeringsprojekt? Denne handling kan ikke fortrydes"
+    proposals:
+      send_notification: "Send notifikation"
+      retire: "Tilbagekald"
+      see: "Se forslag"
+  votes:
+    agree: Jeg er enig
+    anonymous: For mange anonyme stemmer til at godkende stemme %{verify_account}.
+    comment_unauthenticated: Du skal %{signin} eller %{signup} for at stemme.
+    disagree: Jeg er uenig
+    organizations: Det er ikke tilladt for organisationer at stemme
+    signin: Log ind
+    signup: Tilmeld dig
+    unauthenticated: Du skal %{signin} eller %{signup} for at fortsætte.
+    verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
+    verify_account: verificer din konto
+    spending_proposals:
+      not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
+      not_verified: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
+      organization: Det er ikke tilladt for organisationer at stemme
+      unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
+      not_voting_allowed: Afstemningsfasen er afsluttet
+    budget_investments:
+      not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
+      not_verified: Kun verificerede brugere kan stemme på investeringsprojekter; %{verify_account}.
+      organization: Det er ikke tilladt for organisationer at stemme
+      unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
