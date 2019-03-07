@@ -7,15 +7,15 @@ nl:
     attributes:
       verification:
         residence:
-          document_type: "Documentsoort"
-          document_number: "Documentnummer (inclusief letters)"
-          date_of_birth: "Geboortedatum"
+          document_type: "Document soort"
+          document_number: "Document number (including letters)"
+          date_of_birth: "Date of birth"
           postal_code: "Postcode"
         sms:
           phone: "Telefoon"
           confirmation_code: "Bevestigingscode"
         email:
-          recipient: "Email"
+          recipient: "E-mail"
       officing/residence:
         document_type: "Documentsoort"
         document_number: "Documentnummer (inclusief letters)"
