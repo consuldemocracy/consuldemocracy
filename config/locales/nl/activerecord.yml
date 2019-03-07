@@ -243,6 +243,8 @@ nl:
         draft_publication_date: Publicatiedatum
         allegations_start_date: Startdatum
         allegations_end_date: Einddatum
+        proposals_phase_start_date: Begindatum
+        proposals_phase_end_date: Einddatum
         result_publication_date: Publicatiedatum eindresultaat
         background_color: Achtergrondkleur
         font_color: Tekstkleur
