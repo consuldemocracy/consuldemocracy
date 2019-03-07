@@ -45,7 +45,7 @@ nl:
         other: "Beoordelaarsgroepen"
       manager:
         one: "Manager"
-        other: "Beheerders"
+        other: "Managers"
       newsletter:
         one: "Nieuwsbrief"
         other: "Nieuwsbrieven"
@@ -75,10 +75,10 @@ nl:
         other: Aangepaste afbeeldingen
       site_customization/content_block:
         one: Aangepaste inhoud
-        other: Custom content blocks
+        other: Aangepaste inhoud
       legislation/process:
         one: "Proces"
-        other: "Plannen"
+        other: "Processen"
       legislation/proposal:
         one: "Proposal"
         other: "Proposals"
