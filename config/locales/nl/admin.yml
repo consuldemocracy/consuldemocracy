@@ -138,6 +138,16 @@ nl:
     budget_headings:
       name: "Name"
       no_headings: "Er zijn geen rubrieken."
+      amount:
+        one: "Er is 1 rubriek"
+        other: "Er zijn %{count} rubrieken"
+      create:
+        notice: "Rubriek aangemaakt"
+      update:
+        notice: "Rubriek gewijzigd"
+      destroy:
+        success_notice: "Rubriek verwijderd"
+        unable_notice: "Een rubriek met investeringen kan niet worden verwijderd"
       form:
         name: "Kop naam"
         amount: "Bedrag"
@@ -145,7 +155,14 @@ nl:
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
         latitude: "Breedte"
         longitude: "Lengte"
+        coordinates_info: "Als lengte- en breedtegraad zijn ingevuld, zal voor deze rubriek een kaart worden getoond. Deze kaart wordt gecentreerd met behulp van de opgegeven coördinaten."
+        allow_content_block: "Inhoudsblok toestaan"
+        content_blocks_info: "Als inhoudsblokken zijn toegestaan kan aangepaste inhoud gerelateerd aan deze rubriek worden geplaatst via de sectie Instellingen > aangepaste inhoud. De aangepaste inhoud wordt weergegeven op de pagina voor de rubriek."
+        create: "Nieuwe rubriek aanmaken"
+        edit: "Rubriek bewerken"
         submit: "Bewaar kop"
+      index:
+        back: "Terug naar groepen"
     budget_phases:
       edit:
         start_date: Startdatum
@@ -311,10 +328,28 @@ nl:
       delete:
         notice: Investeringsstatus succesvol verwijderd
     progress_bars:
+      manage: "Voortgangsbalken beheren"
       index:
+        title: "Voortgangsbalken"
+        no_progress_bars: "Er zijn geen voortgangsbalken"
+        new_progress_bar: "Nieuwe voortgangsbalk maken"
+        primary: "Primaire voortgangsbalk"
         table_id: "ID"
         table_kind: "Type"
         table_title: "Title"
+        table_percentage: "Huidige voortgang"
+      new:
+        creating: "Nieuwe voortgangsbalk maken"
+      edit:
+        title:
+          primary: "Primaire voortgangsbalk bewerken"
+          secondary: "Voortgangsbalk %{title} bewerken"
+      create:
+        notice: "Voortgangsbalk aangemaakt"
+      update:
+        notice: "Voortgangsbalk bijgewerkt"
+      delete:
+        notice: "Voortgangsbalk verwijderd"
     comments:
       index:
         filter: Filter
@@ -384,6 +419,9 @@ nl:
           enabled: Ingeschakeld
           process: Proces
           debate_phase: Debatfase
+          draft_phase: Ontwerpfase
+          draft_phase_description: Als deze fase actief is, zal het proces niet zichtbaar zijn in de procesindex. Sta het bekijken van het proces en het maken van inhoud vóór het begin toe.
+          allegations_phase: Opmerkingenfase
           proposals_phase: Voorstelfase
           use_markdown: Gebruik Markdown om de tekst vorm te geven
           title_placeholder: De titel van het plan
@@ -391,11 +429,15 @@ nl:
           description_placeholder: Voeg een beschrijving van het plan toe
           additional_info_placeholder: Voeg een aanvullende informatie toe
           homepage: Beschrijving
+          homepage_enabled: Homepage ingeschakeld
+          banner_title: Rubriekkleuren
+          color_help: Hexadecimale notatie
         index:
           create: Nieuw plan
           delete: Delete
           title: Plannen
           filters:
+            active: Actief
             all: All
         new:
           back: Terug
@@ -404,12 +446,15 @@ nl:
         proposals:
           select_order: Sorteer op
           orders:
+            id: Id
             title: Title
             supports: Steunt
         process:
           title: Proces
           comments: Comments
           status: Status
+          start_date: Begindatum
+          end_date: Einddatum
           status_open: Open
           status_closed: Gesloten
           status_planned: Gepland
@@ -420,10 +465,14 @@ nl:
           questions: Discussie
           proposals: Proposals
           milestones: Volgend
+      homepage:
+        edit:
+          title: Configureer de proces-pagina
       proposals:
         index:
           title: Title
           back: Terug
+          id: Id
           supports: Steunt
           select: Select
           selected: Geselecteerd
@@ -582,6 +631,8 @@ nl:
           welcome: "Welkom"
         buttons:
           save: "Save"
+          content_block:
+            update: "Blok bijwerken"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
@@ -596,6 +647,7 @@ nl:
         title: Admins
         name: Name
         email: E-mail
+        id: Beheerder ID
         no_administrators: Er zijn geen beheerders.
       administrator:
         add: Voeg toe
