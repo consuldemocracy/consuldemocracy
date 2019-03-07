@@ -328,3 +328,19 @@ da:
       start_spending_proposal: Opret et investeringsprojekt
     new:
       more_info: Hvad fungerer deltagerbudgetter?
+  users:
+    show:
+      proposals: Forslag
+      debates: Debatindlæg
+      comments: Kommentarer
+      actions: Handlinger
+      filters:
+        comments:
+          one: 1 kommentar
+          other: "%{count} kommentarer"
+        debates:
+          one: 1 debatindlæg
+          other: "%{count} Debatindlæg"
+        proposals:
+          one: 1 Forslag
+          other: "%{count} Forslag"
