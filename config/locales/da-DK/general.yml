@@ -222,3 +222,48 @@ da:
         one: 1 stemme
         other: "%{count} stemmer"
       total_percent: 100%
+    show:
+      author_deleted: Bruger slettet
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      comments_tab: Kommentarer
+      edit_proposal_link: Rediger
+      flag: Dette forslag er blevet markeret som upassende af flere brugere.
+      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
+      notifications_tab: Notifikationer
+      share: Del
+      send_notification: Send meddelelse
+      no_notifications: "Dette forslag har ingen notifikationer."
+      embed_video_title: "Video på %{proposal}"
+    update:
+      form:
+        submit_button: Gem ændringer
+    share:
+      message: "Jeg støttede op om dette forslag %{summary} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
+  polls:
+    all: "Alle"
+    dates: "Fra %{open_at} til %{closed_at}"
+    index:
+      filters:
+        current: "Åben"
+        expired: "Udløbet"
+      not_logged_in: "Du skal være logget ind eller oprette en bruger for at kunne deltage"
+      unverified: "Du skal bekræfte din konto for at kunne deltage"
+      section_header:
+        title: Afstemning
+        help: Hjælp til afstemning
+      section_footer:
+        title: Hjælp til afstemning
+  poll_questions:
+    create_question: "Opret spørgsmål"
+    show:
+      vote_answer: "Stem %{answer}"
+      voted: "Du har stemt %{answer}"
+  proposal_notifications:
+    new:
+      title: "Send besked"
+      title_label: "Titel"
+      body_label: "Besked"
+      submit_button: "Send besked"
