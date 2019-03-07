@@ -194,6 +194,12 @@ da:
         image: "Billede"
         show_image: "Vis billede"
         documents: "Dokumenter"
+    statuses:
+      index:
+        table_description: Beskrivelse
+        table_actions: Handlinger
+        delete: Slet
+        edit: Rediger
     progress_bars:
       index:
         table_id: "ID"
