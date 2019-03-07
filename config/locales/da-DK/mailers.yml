@@ -22,6 +22,7 @@ da:
       title: Nyt svar til din kommentar
     unfeasible_spending_proposal:
       hi: "Kære bruger,"
+      new_html: "Til trods for dette, opfordrer vi dig til at udform et <strong>nyt forslag</strong>, der er tilpasset forholdene i denne proces. Hvis du ønsker det klik på følgende link: %{url}."
       new_href: "nyt investeringsprojekt"
       sincerely: "Med venlig hilsen"
       sorry: "Undskyld ulejligheden og vi takker igen for din uvurderlige deltagelse."
@@ -59,6 +60,7 @@ da:
       share: "Del dit projekt"
     budget_investment_unfeasible:
       hi: "Kære bruger,"
+      new_html: "På trods af dette, opfordrer vi dig til at udforme en <strong>ny investering</strong>, der er tilpasset forholdene i denne proces. Hvis du ønsker det klik på følgende link:%{url}."
       new_href: "nyt investeringsprojekt"
       sincerely: "Med venlig hilsen"
       sorry: "Undskyld ulejligheden og vi takker endnu engang for din deltagelse."
