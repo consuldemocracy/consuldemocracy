@@ -46,6 +46,7 @@ da:
     form:
       comment_as_admin: Kommenter som administrator
       comment_as_moderator: Kommenter som moderator
+      leave_comment: Skriv en kommentar
     orders:
       most_voted: Flest stemmer
       newest: Nyeste først
@@ -79,6 +80,7 @@ da:
         submit_button: Gem ændringer
       show_link: Se debatindlæg
     form:
+      debate_text: Indledende tekst
       debate_title: Titel på debatindlæg
       tags_instructions: Tag denne debat.
       tags_label: Emner
@@ -133,6 +135,14 @@ da:
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
     accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
+    direct_message: privat besked
+    error: fejl
+    errors: fejl
+    proposal_notification: "Notifikation"
+    budget/group: Budget gruppe
+    poll/question/answer: Svar
+    user: Konto
+    verification/sms: telefon
     topic: Emne
     image: Billede
   geozones:
@@ -381,3 +391,19 @@ da:
       not_verified: Kun verificerede brugere kan stemme på investeringsprojekter; %{verify_account}.
       organization: Det er ikke tilladt for organisationer at stemme
       unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
+      not_voting_allowed: Afstemningsfasen er afsluttet
+      different_heading_assigned:
+        one: "Du kan kun støtte op om investeringsprojekter i %{count} distrikt. Du har allerede støttet investeringer i %{supported_headings}."
+        other: "Du kan kun støtte op om investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Mest aktive debatindlæg"
+        proposals: "Mest aktive forslag"
+      see_all_debates: Se alle debatindlæg
+      see_all_proposals: Se alle forslag
+  annotator:
+    help:
+      text_sign_in: log ind
+      text_sign_up: tilmeld
+      title: Hvordan kan jeg kommentere på dette?
