@@ -64,7 +64,57 @@ da:
           on_proposals: Forslag
           on_users: Brugere
           on_system_emails: System e-mails
+        title: Moderator aktivitet
+        type: Type
+        no_activity: Der er ingen moderator aktivitet.
+    budgets:
+      index:
+        title: Deltagerbudgetter
+        new_link: Opret nyt budget
+        filter: Filtre
+        filters:
+          open: Åben
+          finished: Færdig
+        budget_investments: Administrer projekter
+        table_name: Navn
+        table_phase: Fase
+        table_investments: Investeringer
+        table_edit_budget: Rediger
+        edit_budget: Rediger budget
+        no_budgets: "Der er ingen budgetter."
+      create:
+        notice: Det nye deltagerbudget blev oprettet!
+      update:
+        notice: Deltagerbudgettet blev opdateret
+      edit:
+        title: Rediger deltagerbudget
+        delete: Slet budget
+        phase: Fase
+        dates: Datoer
+        enabled: Aktiveret
+        actions: Handlinger
+        edit_phase: Rediger fase
+        active: Aktiv
+        blank_dates: Ingen datoer
+      destroy:
+        success_notice: Budgettet blev slettet
+        unable_notice: Du kan ikke slette et Budget, der har tilknyttede investeringer
+      new:
+        title: Nyt deltagerbudget
+      winners:
+        calculate: Beregn Vinder Investeringer
+        calculated: Udregner vinderne, det kan tage et minut.
     budget_groups:
+      name: "Navn"
+      amount:
+        one: "Der er 1 gruppe"
+        other: "Der er %{count} grupper"
+      create:
+        notice: "Gruppen blev oprettet!"
+      update:
+        notice: "Gruppen blev opdateret"
+      destroy:
+        success_notice: "Gruppen blev slettet"
       form:
         edit: "Rediger gruppe"
         name: "Gruppenavn"
