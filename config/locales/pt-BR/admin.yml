@@ -927,6 +927,8 @@ pt-BR:
       index:
         title: "Recontagens"
         no_recounts: "Não há nada para ser recontado"
+        total_final: "Recontagens finais"
+        total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Recontagem total (por presidente)"
         table_system_count: "Votos (automático)"
