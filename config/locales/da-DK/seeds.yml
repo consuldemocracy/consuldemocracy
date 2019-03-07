@@ -46,3 +46,6 @@ da:
         bidding: Afgiver et bud
         executing_project: Udfører projektet
         executed: Udført
+    polls:
+      current_poll: "Igangværende meningsmåling"
+      recounting_poll: "Omtæller afstemningen"
