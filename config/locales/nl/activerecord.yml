@@ -105,40 +105,40 @@ nl:
         other: "Onderwerpen"
       poll:
         one: "Peiling"
-        other: "Peilingen"
+        other: "Polls"
       proposal_notification:
-        one: "Notificatie"
-        other: "Notificaties"
+        one: "Voorstelnotificatie"
+        other: "Voorstelnotificaties"
     attributes:
       budget:
-        name: "Naam"
+        name: "Name"
         description_accepting: "Omschrijving in de acceptatiefase"
         description_reviewing: "Omschrijving in de beoordelingsase"
         description_selecting: "Omschrijving in de selectiefase"
         description_valuating: "Omschrijving in de waarderingsfase"
         description_balloting: "Omschrijving in de stemfase"
-        description_reviewing_ballots: "Omschrijving in de beoordeling van stemmen fase"
+        description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer het budget is afgerond"
-        phase: "Fase"
+        phase: "Phase"
         currency_symbol: "Valuta"
       budget/investment:
         heading_id: "Kop"
-        title: "Titel"
-        description: "Omschrijving"
-        external_url: "Link naar aanvullende informatie"
+        title: "Title"
+        description: "Beschrijving"
+        external_url: "Link naar meer informatie"
         administrator_id: "Beheerder"
         location: "Locatie (optioneel)"
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding bij het budget"
         image_title: "Naam van de afbeelding"
       milestone:
-        status_id: "Huidige status (optioneel)"
-        title: "Titel"
+        status_id: "Huidige investeringsstatus (optioneel)"
+        title: "Title"
         description: "Omschrijving"
         publication_date: "Publicatiedatum"
       milestone/status:
-        name: "Naam"
-        description: "Omschrijving (optioneel)"
+        name: "Name"
+        description: "Beschrijving (optioneel)"
       progress_bar:
         kind: "Type"
         title: "Titel"
@@ -180,7 +180,7 @@ nl:
         responsible_name: "Verantwoordelijke"
       spending_proposal:
         administrator_id: "Beheerder"
-        association_name: "Naam van de vereniging"
+        association_name: "Verenigingsnaam"
         description: "Omschrijving"
         external_url: "Link naar aanvullende informatie"
         geozone_id: "Reikwijdte van het werk"
@@ -215,7 +215,7 @@ nl:
         status: Status
         title: Titel
         updated_at: Bijgewerkt op
-        more_info_flag: Toon op de help pagina
+        more_info_flag: In de help-pagina weergeven
         print_content_flag: Print inhoud
         locale: Taal
       site_customization/page/translation:
@@ -228,7 +228,7 @@ nl:
       site_customization/content_block:
         name: Naam
         locale: taal
-        body: Tekst
+        body: Platte tekst
       legislation/process:
         title: Titel
         summary: Samenvatting
@@ -264,7 +264,7 @@ nl:
         changelog: Wijzigingen
       legislation/question:
         title: Titel
-        question_options: Instellingen
+        question_options: Opties
       legislation/question_option:
         value: Waarde
       legislation/annotation:
