@@ -87,7 +87,7 @@ nl:
         allegations_dates: Comments
         result_publication_date: Eindversie publicatie
         milestones_date: Volgend
-        proposals_dates: Proposals
+        proposals_dates: Voorstellen
     questions:
       comments:
         comment_button: Publiceer antwoord
