@@ -8,20 +8,20 @@ nl:
       title: "%{org} is een platform voor burgerparticipatie"
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
       menu:
-        debates: "Discussie"
+        debates: "Debatten"
         proposals: "Voorstellen"
         budgets: "Participatory budgets"
         polls: "Polls"
         other: "Verdere informatie"
         processes: "Proces"
       debates:
-        title: "Discussie"
-        description: "Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden."
-        link: "Discussies"
-        feature_html: "Je kunt discussies een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
+        title: "Debatten"
+        description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeën kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
+        link: "debatten"
+        feature_html: "Je kunt debatten openen en reageren en je waardering uitdrukken via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
-        image_alt: "Knoppen om een discussie te scoren"
-        figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
+        image_alt: "Knoppen om een debat te waarderen"
+        figcaption: '"Eens" en "Oneens" knoppen om debatten te waarderen.'
       proposals:
         title: "Voorstellen"
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
