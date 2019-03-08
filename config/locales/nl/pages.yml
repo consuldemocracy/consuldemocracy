@@ -9,7 +9,7 @@ nl:
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
       menu:
         debates: "Discussie"
-        proposals: "Proposals"
+        proposals: "Voorstellen"
         budgets: "Participatory budgets"
         polls: "Polls"
         other: "Verdere informatie"
@@ -23,7 +23,7 @@ nl:
         image_alt: "Knoppen om een discussie te scoren"
         figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
       proposals:
-        title: "Proposals"
+        title: "Voorstellen"
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
         link: "Voorstellen"
         image_alt: "Knop om een voorstel te steunen"
@@ -113,7 +113,7 @@ nl:
               page_column: Discussie
             - 
               key_column: 2
-              page_column: Proposals
+              page_column: Voorstellen
             - 
               key_column: 3
               page_column: Votes
