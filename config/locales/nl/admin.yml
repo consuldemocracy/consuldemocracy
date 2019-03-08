@@ -772,15 +772,20 @@ nl:
         title: "Onhaalbare budget investering"
         description: "Verzonden aan de auteur wanneer een budget investering als onhaalbaar is gemarkeerd."
       budget_investment_unselected:
-        title: "Budget investering gedeselecteerd"
+        title: "Budget investering geannuleerd"
+        description: "Verzonden aan de auteur wanneer een budget investering is geannuleerd."
       comment:
         title: "Reactie"
+        description: "Verzonden aan de auteur wanneer een reactie is gegeven."
       reply:
         title: "Antwoord"
+        description: "Verzonden aan de auteur van een als er een antwoord op de reactie is gekomen."
       direct_message_for_receiver:
         title: "Ontvanger"
+        description: "Verzonden aan de ontvanger van het privébericht."
       direct_message_for_sender:
         title: "Afzender"
+        description: "Verzonden aan de afzender van het privébericht."
       email_verification:
         title: "Verificatie email"
         description: "Verzonden naar de aanmelder om het account te verifiëren."
@@ -789,6 +794,11 @@ nl:
         description: "Verzonden naar de persoon die is uitgenodigd om zich te registreren."
       edit_info: "Je kunt deze email bewerken in"
       message_title: "Berichttitel"
+      message_body: "Dit is een voorbeeld van de inhoud van een bericht."
+      alert:
+        no_investments: "Er zijn geen budget investeringen aangemaakt. Er kan geen voorbeeld email worden getoond."
+        no_comments: "Er zijn nog geen reacties. Er kan geen voorbeeld email worden getoond."
+        no_replies: "Er zijn nog geen antwoorden. Er kan geen voorbeeld email worden getoond."
     emails_download:
       index:
         title: E-mails download
@@ -892,6 +902,7 @@ nl:
       flash:
         create: "Dienst toegevoegd"
         destroy: "Dienst verwijderd"
+        unable_to_destroy: "Piket met gekoppelde resultaten of tellingen kunnen niet worden verwijderd"
         date_missing: "Datum niet gekozen"
       vote_collection: Verzamel stemmen
       recount_scrutiny: Hertelling & onderzoek
@@ -937,6 +948,7 @@ nl:
       form:
         description:
           text: "Omschrijving"
+          help_text: "Deze tekst wordt weergegeven in de kop van de peilingen-pagina. Deze tekst kan worden gebruikt om context te plaatsen bij een open peiling."
     polls:
       index:
         title: "List of polls"
