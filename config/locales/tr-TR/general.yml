@@ -473,7 +473,40 @@ tr:
       no_polls: "Hiç açık oy yok."
     show:
       already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
+      already_voted_in_web: "Siz zaten bu ankete katıldınız. Yine oy verirseniz, üzerine yazılacaktır."
+      back: Oylamaya geri dön
+      cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
+      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+      signin: Oturum aç
+      signup: Kaydol
+      cant_answer_verify_html: "Cevaplamak için %{verify_link} yapmanız gerekir."
+      verify_link: "hesabınızı doğrulayın"
+      cant_answer_expired: "Bu anket bitti."
+      cant_answer_wrong_geozone: "Bu soru sizin coğrafi bölgenizde(geozone) mevcut değil."
+      more_info_title: "Daha fazla bilgi"
+      documents: Belgeler
+      zoom_plus: Resmi genişlet
+      read_more: "%{answer} ile ilgili daha fazlasını oku"
+      read_less: "%{answer} ile ilgili daha azını oku"
+      videos: "Harici video"
+      info_menu: "Bilgi"
+      stats_menu: "Katılma istatistikleri"
+      results_menu: "Anket sonuçları"
+      stats:
+        title: "Katılma verileri"
+        total_participation: "Toplam katılım"
+        total_votes: "Verilen oyların toplam miktarı"
+        votes: "OYLAR"
+        web: "WEB"
+        booth: "KABİN"
+        total: "TOPLUM"
+        valid: "Geçerli"
+        white: "Beyaz oylar"
+        null_votes: "Geçersiz"
+      results:
+        title: "Sorular"
+        most_voted_answer: "En çok oy alan cevap: "
   poll_questions:
     create_question: "Soru oluştur"
     show:
@@ -614,6 +647,23 @@ tr:
         comments:
           one: 1 Yorum
           other: "%{count} Yorumlar"
+        debates:
+          one: 1 Tartışma
+          other: "%{count} Tartışmalar"
+        proposals:
+          one: 1 Öneri
+          other: "%{count} Öneriler"
+        budget_investments:
+          one: 1 Yatırım
+          other: "%{count} Yatırımlar"
+        follows:
+          one: 1 Takip Etme
+          other: "%{count} Takip Etme"
+      no_activity: Kullanıcının genel etkinliği yok
+      no_private_messages: "Bu kullanıcı özel mesajları kabul etmiyor."
+      private_activity: Bu kullanıcı etkinlik listesini gizli tutmaya karar verdi.
+      send_private_message: "Özel mesaj gönder"
+      delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
   welcome:
     recommended:
       proposals:
