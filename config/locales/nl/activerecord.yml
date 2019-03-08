@@ -23,8 +23,8 @@ nl:
         one: "Reactie"
         other: "Reacties"
       debate:
-        one: "Discussie"
-        other: "Debatten"
+        one: "Debat"
+        other: "Discussie"
       tag:
         one: "Term"
         other: "Termen"
