@@ -6,13 +6,13 @@ App.Map =
    * @constructor
   ###
   initialize: ->
-    maps = $('*[data-map]')
+    maps = $("*[data-map]")
 
     if maps.length > 0
       $.each maps, (index, map) ->
         App.Map.initializeMap map
 
-    $('.js-toggle-map').on
+    $(".js-toggle-map").on
       click: ->
         App.Map.toggleMap()
 
@@ -57,7 +57,7 @@ App.Map =
       markerLatLng  = new (L.LatLng)(latitude, longitude)
       marker  = L.marker(markerLatLng, { icon: markerIcon, draggable: editable })
       if editable
-        marker.on 'dragend', updateFormfields
+        marker.on "dragend", updateFormfields
       marker.addTo(map)
       return marker
 
@@ -102,9 +102,9 @@ App.Map =
      * @void
     ###
     clearFormfields = ->
-      $(latitudeInputSelector).val ''
-      $(longitudeInputSelector).val ''
-      $(zoomInputSelector).val ''
+      $(latitudeInputSelector).val ""
+      $(longitudeInputSelector).val ""
+      $(zoomInputSelector).val ""
       return
     ###*
      * Open a marker popup when a user clicks a marker
@@ -113,9 +113,9 @@ App.Map =
     openMarkerPopup = (e) ->
       marker = e.target
 
-      $.ajax '/investments/' + marker.options['id'] + '/json_data',
-        type: 'GET'
-        dataType: 'json'
+      $.ajax "/investments/#{marker.options["id"]}/json_data",
+        type: "GET"
+        dataType: "json"
         success: (data) ->
           e.target.bindPopup(getPopupContent(data)).openPopup()
 
@@ -124,7 +124,7 @@ App.Map =
      * @void
     ###
     getPopupContent = (data) ->
-      content = "<a href='/budgets/#{data['budget_id']}/investments/#{data['investment_id']}'>#{data['investment_title']}</a>"
+      content = "<a href='/budgets/#{data["budget_id"]}/investments/#{data["investment_id"]}'>#{data["investment_title"]}</a>"
       return content
 
     ###*
@@ -141,16 +141,16 @@ App.Map =
       marker  = createMarker(markerLatitude, markerLongitude)
 
     if editable
-      $(removeMarkerSelector).on 'click', removeMarker
-      map.on    'zoomend', updateFormfields
-      map.on    'click',   moveOrPlaceMarker
+      $(removeMarkerSelector).on "click", removeMarker
+      map.on    "zoomend", updateFormfields
+      map.on    "click",   moveOrPlaceMarker
 
     if addMarkerInvestments
       markers = []
       for i in addMarkerInvestments
         if App.Map.validCoordinates(i)
           marker = createMarker(i.lat, i.long)
-          marker.options['id'] = i.investment_id
+          marker.options["id"] = i.investment_id
 
           marker.on 'click', openMarkerPopup
           markers.push(marker)
@@ -171,10 +171,10 @@ App.Map =
    * @returns array of valid coordinate pairs
   ###
   cleanInvestmentCoordinates: (element) ->
-    markers = $(element).attr('data-marker-investments-coordinates')
+    markers = $(element).attr("data-marker-investments-coordinates")
     if markers?
       clean_markers = markers.replace(/-?(\*+)/g, null)
-      $(element).attr('data-marker-investments-coordinates', clean_markers)
+      $(element).attr("data-marker-investments-coordinates", clean_markers)
 
   ###*
    * Check a coordinate datastructure to see if it is valid

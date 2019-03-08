@@ -423,8 +423,6 @@ es:
           draft_phase_description: Si esta fase está activa, el proceso no aparecerá en la página de procesos. Permite previsualizar el proceso y crear contenido antes del inicio.
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
-          start: Inicio
-          end: Fin
           use_markdown: Usa Markdown para formatear el texto
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
@@ -1050,6 +1048,9 @@ es:
       index:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
+        all_booths_total: "Acumulado en todas las urnas:"
+        total_final: "Recuentos finales"
+        total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Recuento total (presidente de mesa)"
         table_system_count: "Votos (automático)"
