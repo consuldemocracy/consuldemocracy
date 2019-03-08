@@ -400,10 +400,53 @@ tr:
       already_supported: Bu öneriyi zaten desteklediniz. Paylaşın!
       comments:
         zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
+      support: Destek
+      support_title: Bu öneriyi destekle
+      supports:
+        zero: Destek yok
+        one: 1 destek
+        other: "%{count} destekler"
+      votes:
+        zero: Hiç oy yok
+        one: 1 oy
+        other: "%{count} oylar"
+      supports_necessary: "%{number} destek gerekli"
+      total_percent: '%100'
+      archived: "Bu öneri arşivlendi ve destek toplayamaz."
+      successful: "Bu öneri gereken desteğe ulaştı."
     show:
+      author_deleted: Kullanıcı silindi
+      code: 'Öneri kodu:'
+      comments:
+        zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
       comments_tab: Yorumlar
       edit_proposal_link: Düzenleme
+      flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
+      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+      notifications_tab: Bildirimler
+      milestones_tab: Kilometre taşları
+      retired_warning: "Yazar bu önerinin daha fazla destek almaması gerektiğini düşünmektedir."
+      retired_warning_link_to_explanation: Bunun için oy vermeden önce açıklamayı okuyun.
+      retired: Öneri yazar tarafından çekildi
+      share: Paylaş
+      send_notification: Bildirim gönder
+      no_notifications: "Bu öneride bildirim yok."
+      embed_video_title: "%{proposal} ile ilgili video"
+      title_external_url: "Ek belge"
+      title_video_url: "Harici video"
+      author: Yazar
+    update:
+      form:
+        submit_button: Değişiklikleri kaydet
+    share:
+      message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
   polls:
+    all: "Tüm"
+    no_dates: "tarih atanmamış"
     index:
       filters:
         current: "Açık"
