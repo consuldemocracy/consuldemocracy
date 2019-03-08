@@ -22,13 +22,13 @@ nl:
           offices: Citizen Support Offices
           success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the %{offices}.
       edit:
-        see_all: See proposals
+        see_all: Voorstellen bekijken
         title: Letter requested
       errors:
         incorrect_code: De verificatiecode is onjuist
       new:
         explanation: 'For participate on final voting you can:'
-        go_to_index: See proposals
+        go_to_index: Voorstellen bekijken
         office: Verify in any %{office}
         offices: Ondersteuning
         send_letter: Send me a letter with the code
@@ -49,7 +49,7 @@ nl:
       new:
         accept_terms_text: I accept %{terms_url} of the Census
         accept_terms_text_title: I accept the terms and conditions of access of the Census
-        date_of_birth: Date of birth
+        date_of_birth: Geboortedatum
         document_number: Document nummer
         document_number_help_title: Help
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
@@ -97,7 +97,7 @@ nl:
     step_3: Final verification
     user_permission_debates: Neem deel aan discussies
     user_permission_info: Als u uw gegevens verifieert, kunt u...
-    user_permission_proposal: Create new proposals
+    user_permission_proposal: Nieuwe voorstellen maken
     user_permission_support_proposal: Voorstellen steunen*
     user_permission_votes: Participate on final voting*
     verified_user:
