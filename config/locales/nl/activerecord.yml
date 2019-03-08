@@ -80,8 +80,8 @@ nl:
         one: "Proces"
         other: "Processen"
       legislation/proposal:
-        one: "Proposal"
-        other: "Proposals"
+        one: "Voorstel"
+        other: "Voorstellen"
       legislation/draft_versions:
         one: "Concept"
         other: "Conceptem"
