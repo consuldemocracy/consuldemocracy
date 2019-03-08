@@ -453,8 +453,57 @@ tr:
       geozone_restricted: "İlçeler"
     show:
       comments_tab: Yorumlar
+  poll_questions:
+    create_question: "Soru oluştur"
+    show:
+      vote_answer: "Oy %{answer}"
+      voted: "%{answer} 'a oy verdiniz"
+      voted_token: "Final sonuçlarda oyunuzu kontrol etmek için bu oy tanımlayıcısını yazabilirsiniz:"
+  proposal_notifications:
+    new:
+      title: "Mesaj gönder"
+      title_label: "Başlık"
+      body_label: "Mesaj"
+      submit_button: "Mesaj gönder"
+      info_about_receivers_html: "Bu mesaj <strong>%{count} kişiler</strong> 'e gönderilecek ve %{proposal_page} 'da görünecektir.<br> Mesajlar hemen gönderilmez, kullanıcılar düzenli olarak tüm öneri bildirimlerini içeren bir e-posta alır."
+      proposal_page: "öneri'ler sayfası"
+    show:
+      back: "Faaliyetime geri dön"
   shared:
     edit: 'Düzenleme'
+    save: 'Kaydet'
+    delete: Sil
+    "yes": "Evet"
+    "no": "Hayır"
+    search_results: "Arama sonuçları"
+    advanced_search:
+      author_type: 'Yazar kategorisine göre'
+      author_type_blank: 'Bir kategori seç'
+      date: 'Tarihe göre'
+      date_placeholder: 'GG/AA/YYYY'
+      date_range_blank: 'Bir tarih seç'
+      date_1: 'Son 24 saat'
+      date_2: 'Geçen hafta'
+      date_3: 'Geçen ay'
+      date_4: 'Geçen yıl'
+      date_5: 'Özelleştirilmiş'
+      from: 'Kaynak'
+      general: 'Metin ile'
+      general_placeholder: 'Metni yaz'
+      search: 'Filtre'
+      title: 'Gelişmiş arama'
+      to: 'Şuna'
+    author_info:
+      author_deleted: Kullanıcı silindi
+    back: Geri git
+    check: Seç
+    check_all: Tüm
+    check_none: Yok
+    collective: Topluluk
+    flag: Uygunsuz olarak işaretle
+    follow: "Takip et"
+    following: "Takip ediliyor"
+    follow_entity: "Takip et %{entity}"
     tags_cloud:
       districts: "İlçeler"
   stats:
