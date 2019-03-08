@@ -26,8 +26,8 @@ nl:
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals
+      user_permission_proposal: Nieuwe voorstellen indienen
+      user_permission_support_proposal: Voorstellen steunen
       user_permission_title: Participatie
       user_permission_verify: Verifieer uw account om alles te kunnen.
       user_permission_verify_info: "* Alleen voor gebruikers in de regio."
@@ -230,10 +230,10 @@ nl:
       my_activity_link: Mijn bijdragen
       open: open
       open_gov: Open bestuur
-      proposals: Proposals
+      proposals: Voorstellen
       poll_questions: Stemmen
       budgets: Participatory budgeting
-      spending_proposals: Spending Proposals
+      spending_proposals: Begrotingsvoorstellen
       notification_item:
         new_notifications:
           one: U heeft een nieuwe melding
@@ -370,12 +370,12 @@ nl:
       select_order: Order by
       select_order_long: 'U ziet de voorstellen op:'
       start_proposal: Maak een nieuw voorstel
-      title: Proposals
+      title: Voorstellen
       top: Wekelijkse top
       top_link_proposals: De meest gesteunde voorstellen per categorie
       section_header:
         icon_alt: Voorgestelde pictogrammen
-        title: Proposals
+        title: Voorstellen
         help: Hulp over voorstellen
       section_footer:
         title: Hulp over voorstellen
@@ -678,7 +678,7 @@ nl:
     index:
       visits: Visits
       debates: Discussie
-      proposals: Proposals
+      proposals: Voorstellen
       comments: Comments
       proposal_votes: Stemmen op voorstellen
       debate_votes: Stemmen op discussies
@@ -710,7 +710,7 @@ nl:
       deleted_debate: Deze discussie is verwijderd
       deleted_proposal: Dit voorstel is verwijderd
       deleted_budget_investment: Dit begrotingsvoorstel is verwijderd
-      proposals: Proposals
+      proposals: Voorstellen
       debates: Discussie
       budget_investments: Begrotingsvoorstellen
       comments: Comments
@@ -803,8 +803,8 @@ nl:
       title: Deelnemen
       user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals*
+      user_permission_proposal: Nieuwe voorstellen maken
+      user_permission_support_proposal: Voorstellen steunen*
       user_permission_verify: Verifi
       user_permission_verify_info: "* Alleen voor locale deelnemers."
       user_permission_verify_my_account: Verifieer mijn account
