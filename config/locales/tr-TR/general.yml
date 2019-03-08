@@ -376,6 +376,30 @@ tr:
       section_header:
         icon_alt: Önerilerin simgesi
         title: Öneriler
+        help: Öneriler hakkında yardım
+      section_footer:
+        title: Öneriler hakkında yardım
+        description: Vatandaşların' önerileri komşular ve toplulukların şehirlerinin nasıl olmasını istediklerine doğrudan karar vermeleri için bir fırsattır, yeterli destek aldıktan ve vatandaşların oylamasına sunulduktan' sonra.
+    new:
+      form:
+        submit_button: Öneri oluştur
+      more_info: Vatandaş önerileri nasıl çalışır?
+      recommendation_one: Öneri başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
+      recommendation_three: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
+      recommendation_two: Yasadışı eylemi öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
+      recommendations_title: Bir öneri oluşturmak için tavsiyeler
+      start_new: Yeni öneri oluştur
+    notice:
+      retired: Öneri çekildi
+    proposal:
+      created: "Bir öneri oluşturdunuz!"
+      share:
+        guide: "Şimdi bunu paylaşabilirsiniz, böylece insanlar desteklemeye başlayabilir."
+        edit: "Paylaşılmadan önce, metni istediğiniz gibi değiştirebilirsiniz."
+        view_proposal: Şimdi değil, önerime git
+      already_supported: Bu öneriyi zaten desteklediniz. Paylaşın!
+      comments:
+        zero: Yorum yok
     show:
       comments_tab: Yorumlar
       edit_proposal_link: Düzenleme
