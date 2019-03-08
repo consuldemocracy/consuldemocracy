@@ -42,7 +42,7 @@ nl:
         feature_1_link: "registreren in %{org_name}"
       processes:
         title: "Proces"
-        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies."
+        description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
       faq:
         title: "Technische problemen?"
@@ -110,7 +110,7 @@ nl:
               page_column: Homepagina
             - 
               key_column: 1
-              page_column: Discussie
+              page_column: Debatten
             - 
               key_column: 2
               page_column: Voorstellen
