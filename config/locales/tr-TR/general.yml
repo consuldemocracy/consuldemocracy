@@ -576,12 +576,15 @@ tr:
     show: Göster
     suggest:
       debate:
+        found:
+          one: "'%{query}' terimi ile ilgili bir tartışma var, yeni bir tane açmak yerine buna katılabilirsiniz."
+          other: "'%{query}' terimi ile ilgili bir tartışmalar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
         see_all: "Hepsini gör"
       budget_investment:
         found:
           one: "'%{query}' terimi ile ilgili bir yatırım var, yeni bir tane açmak yerine buna katılabilirsiniz."
           other: "'%{query}' terimi ile ilgili bir yatırımlar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
-        message: "'%{query}' terimini içeren %{count} yatırımının %{limit} 'ini görüyorsunuz"
+        message: "'%{query}' terimini içeren %{count} yatırımların %{limit} 'ini görüyorsunuz"
         see_all: "Hepsini gör"
       proposal:
         found:
@@ -610,8 +613,40 @@ tr:
     view_mode:
       title: Görünüm modu
       cards: Kartlar
+      list: Liste
+    recommended_index:
+      title: Tavsiyeler
+      see_more: Daha fazla tavsiyeye bakın
+      hide: Tavsiyeleri gizle
+  social:
+    facebook: "Facebook %{org}"
+    twitter: "Twitter %{org}"
+    youtube: "YouTube %{org}"
+    whatsapp: WhatsApp
+    telegram: "Telegram %{org}"
+    instagram: "Instagram %{org}"
   spending_proposals:
+    form:
+      association_name_label: 'Eğer bir dernek veya topluluk adına önerirseniz, ismi buraya ekleyin'
+      association_name: 'Dernek adı'
+      description: Tanımlama
+      external_url: Ek belgeye bağlantı
+      geozone: İşlem kapsamı
+      submit_buttons:
+        create: Oluştur
+        new: Oluştur
+      title: Harcama önerisi başlığı
     index:
+      title: Katılımcı bütçeleme
+      unfeasible: Uygulanamaz yatırım projeleri
+      by_geozone: "Kapsam ile yatırım projeleri: %{geozone}"
+      search_form:
+        button: Ara
+        placeholder: Yatırım projeleri...
+        title: Ara
+      search_results:
+        one: " '%{search_term}' i içeren terim"
+        other: " '%{search_term}' i içeren terim"
       sidebar:
         geozones: İşlem kapsamı
         feasibility: Fizibilite
@@ -706,14 +741,31 @@ tr:
   votes:
     agree: Kabul ediyorum
     comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
+    disagree: Kabul etmiyorum
+    organizations: Organizasyonların oy kullanmalarına izin verilmez
+    signin: Oturum aç
+    signup: Kaydol
+    supports: Destekler
     unauthenticated: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+    verify_account: hesabınızı doğrulayın
     spending_proposals:
       not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
     budget_investments:
       not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
   welcome:
+    feed:
+      process_label: İşlem
+      see_process: İşlemi gör
+    cards:
+      title: Öne Çıkan
     recommended:
+      title: İlginizi çekebilecek tavsiyeler
+      help: "Bu tavsiyeler, sizin takip ettiğiniz tartışmaların ve önerilerin etiketleri ile oluşturulur."
+      debates:
+        title: Tavsiye edilen tartışmalar
+        btn_text_link: Tavsiye edilen tüm tartışmalar
       proposals:
+        title: Tavsiye edilen öneriler
         btn_text_link: Tavsiye edilen tüm öneriler
       budget_investments:
         title: Tavsiye edilen yatırımlar
