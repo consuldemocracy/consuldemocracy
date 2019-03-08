@@ -2,7 +2,7 @@ nl:
   account:
     show:
       change_credentials_link: Pas mijn toegangsgegevens aan
-      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen of discussie reageert
+      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen of debatten reageert
       email_on_comment_reply_label: Stuur me een email wanneer iemand op mijn voorstellen reageert
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
@@ -21,7 +21,7 @@ nl:
       email_digest_label: Stuur me een samenvatting van meldingen naar aanleiding van voorstellen
       official_position_badge_label: Toon officiële standpunt badge
       recommendations: Aanbevelingen
-      show_debates_recommendations: Laat discussie aanbevelingen zien
+      show_debates_recommendations: Aanbevolen debatten weergeven
       show_proposals_recommendations: Laat aanbevelingen van de voorstellen zien
       title: My account
       user_permission_debates: Participate on debates
@@ -77,7 +77,7 @@ nl:
   debates:
     create:
       form:
-        submit_button: Begin een debat
+        submit_button: Debat starten
     debate:
       comments:
         zero: Geen reacties
@@ -88,14 +88,14 @@ nl:
         one: 1 stem
         other: "%{count} stemmen"
     edit:
-      editing: Edit debat
+      editing: Debat bewerken
       form:
         submit_button: Bewaar wijzigingen
-      show_link: Bekijk debat
+      show_link: Debat bekijken
     form:
-      debate_text: Initiële tekst debat
-      debate_title: Titel debat
-      tags_instructions: Voeg labels toe.
+      debate_text: Omschrijving
+      debate_title: Onderwerp
+      tags_instructions: Voeg termen toe.
       tags_label: Onderwerpen
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
@@ -111,40 +111,40 @@ nl:
         relevance: relevantie
         recommendations: Aanbevelingen
       recommendations:
-        without_results: Er zijn geen discussies die aansluiten bij jouw interesses
+        without_results: Er zijn geen debatten gevonden
         without_interests: Volg voorstellen zodat we aanbevelingen kunnen doen
-        disable: "Aanbevelingen voor discussies worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
+        disable: "Aanbevelingen voor debatten worden verborgen als je dit aangeeft. Je kunt ze weer inschakelen op de pagina 'Mijn account'"
         actions:
           success: "Aanbevelingen voor debatten zijn nu uitgeschakeld voor dit account"
           error: "Er is een fout opgetreden. Ga naar de pagina 'Uw account' om aanbevelingen voor debatten handmatig uit te schakelen"
       search_form:
         button: Search
-        placeholder: Zoek in discussies...
+        placeholder: Debatten zoeken...
         title: Search
       search_results_html:
         one: " bevat de term <strong>'%{search_term}'</strong>"
         other: " bevat de term <strong>'%{search_term}'</strong>"
       select_order: Order by
-      start_debate: Discussie plaatsen
-      title: Debates
+      start_debate: Debat starten
+      title: Debatten
       section_header:
-        icon_alt: Discussie icon
-        title: Discussie
-        help: Hulp bij discussies
+        icon_alt: Debatten pictogram
+        title: Debatten
+        help: Hulp bij debatten
       section_footer:
-        title: Hulp bij discussies
-        description: Start een discussie om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
-        help_text_1: "Deze plek voor discussies is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die men belangrijk vindt in de gemeente."
-        help_text_2: '''Om een discussie te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande discussies en deze beoordelen met de knoppen ''Eens'' of ''Oneens'' die bij discussies staan.'
+        title: Hulp bij debatten
+        description: Start een debat om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
+        help_text_1: "De ruimte voor debatten is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die je belangrijk vindt."
+        help_text_2: '''Om een debat te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande debatten en deze waarderen met de knoppen ''Eens'' of ''Oneens''.'
     new:
       form:
-        submit_button: Discussie plaatsen
+        submit_button: Debat starten
       info: Dit is niet de juiste plek voor voorstellen; ga daarvoor naar %{info_link}.
       info_link: nieuw voorstel
       more_info: Meer informatie
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
-      recommendation_three: Stevige kritiek is welkom, dit is de plek daarvoor. Maar we raden u wel aan de discussie elegant en intelligent te voeren, dan blijft deze ruimte leefbaar.
+      recommendation_three: Stevige kritiek is welkom, dit is de plek daarvoor. Maar we raden je wel aan beleefd en intelligent te handelen, dan blijft deze ruimte leefbaar.
       recommendation_two: Iedere discussie of opmerking waarin een illegale activiteit wordt aanmoedigd zal worden verwijderd, en ook die welke de discussie saboteren. Verder is alles toegestaan.
       recommendations_title: Advies bij het beginnen van een debat
       start_new: Discussie plaatsen
