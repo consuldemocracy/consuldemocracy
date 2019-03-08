@@ -1471,6 +1471,7 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
+.button.button-google_oauth2,
 .button.button-telegram {
   background: #fff;
   color: $text;
@@ -1568,6 +1569,22 @@ table {
 }
 
 .button.button-google {
+  background: #fcedea;
+  border-left: 3px solid #de4c34;
+
+  &::before {
+    color: #de4c34;
+    content: "B";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height * 2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+.button.button-google_oauth2 {
   background: #fcedea;
   border-left: 3px solid #de4c34;
 
