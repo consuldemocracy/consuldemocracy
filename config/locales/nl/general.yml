@@ -145,9 +145,9 @@ nl:
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
       recommendation_three: Stevige kritiek is welkom, dit is de plek daarvoor. Maar we raden je wel aan beleefd en intelligent te handelen, dan blijft deze ruimte leefbaar.
-      recommendation_two: Iedere discussie of opmerking waarin een illegale activiteit wordt aanmoedigd zal worden verwijderd, en ook die welke de discussie saboteren. Verder is alles toegestaan.
-      recommendations_title: Advies bij het beginnen van een debat
-      start_new: Discussie plaatsen
+      recommendation_two: Ieder debat of reactie waarin een illegale activiteit wordt aanmoedigt zal worden verwijderd, en ook die welke het debat saboteren. Verder is alles toegestaan.
+      recommendations_title: Advies bij het starten van een debat
+      start_new: Debat starten
     show:
       author_deleted: Gebruiker verwijderd
       comments:
@@ -171,7 +171,7 @@ nl:
     accept_terms: Ik accepteer het %{policy} en de %{conditions}
     accept_terms_title: Ik ga akkoord met het privacybeleid en de gebruiksvoorwaarden
     conditions: Gebruiksvoorwaarden
-    debate: Debate
+    debate: Debat
     direct_message: privébericht
     error: fout
     errors: fouten
@@ -218,7 +218,7 @@ nl:
       administration: Administration
       available_locales: Beschikbare talen
       collaborative_legislation: Wetgevingsproces
-      debates: Discussie
+      debates: Debatten
       locale: 'Taal:'
       logo: Consul logo
       management: Beheer
@@ -386,7 +386,7 @@ nl:
       more_info: Hoe werken voorstellen?
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
       recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
-      recommendation_two: Ieder voorstel waarin een illegale activiteit wordt aanmoedigd zal worden verwijderd, en ook die welke de discussie saboteren. Verder is alles toegestaan.
+      recommendation_two: Ieder voorstel waarin een illegale activiteit wordt aanmoedigt zal worden verwijderd, en ook die welke het debat saboteren. Verder is alles toegestaan.
       recommendations_title: Aanbevelingen bij het doen van voorstellen
       start_new: Doe nieuw voorstel
     notice:
@@ -577,9 +577,9 @@ nl:
     suggest:
       debate:
         found:
-          one: "Er is een debat met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuwe discussie te openen."
+          one: "Er is een debat met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw debat te starten."
           other: "Er zijn discussies met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuwe discussie te openen."
-        message: "Er worden %{limit} uit %{count} discussies met de term '%{query}' getoond"
+        message: "Er worden %{limit} uit %{count} debatten met de term '%{query}' getoond"
         see_all: "Bekijk alle"
       budget_investment:
         found:
@@ -589,8 +589,8 @@ nl:
         see_all: "Bekijk alle"
       proposal:
         found:
-          one: "Er is een voorstel met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te doen."
-          other: "Er zijn voorstellen met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te doen."
+          one: "Er is een voorstel met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te starten"
+          other: "Er zijn voorstellen met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te starten"
         message: "Er worden %{limit} uit %{count} voorstellen met de term '%{query}' getoond"
         see_all: "Alles tonen"
     tags_cloud:
@@ -677,11 +677,11 @@ nl:
   stats:
     index:
       visits: Visits
-      debates: Discussie
+      debates: Debatten
       proposals: Voorstellen
       comments: Comments
       proposal_votes: Stemmen op voorstellen
-      debate_votes: Stemmen op discussies
+      debate_votes: Stemmen op debatten
       comment_votes: Stemmen op reacties
       votes: Total votes
       verified_users: Verified users
@@ -707,11 +707,11 @@ nl:
         receiver: Bericht gestuurd aan %{receiver}
     show:
       deleted: Verwijderd
-      deleted_debate: Deze discussie is verwijderd
+      deleted_debate: Dit debat is verwijderd
       deleted_proposal: Dit voorstel is verwijderd
       deleted_budget_investment: Dit begrotingsvoorstel is verwijderd
       proposals: Voorstellen
-      debates: Discussie
+      debates: Debatten
       budget_investments: Begrotingsvoorstellen
       comments: Comments
       actions: Activiteiten
@@ -720,8 +720,8 @@ nl:
           one: 1 Reactie
           other: "%{count} Reacties"
         debates:
-          one: 1 Discussie
-          other: "%{count} Discussies"
+          one: 1 debat
+          other: "%{count} debatten"
         proposals:
           one: 1 Voorstel
           other: "%{count} Voorstellen"
@@ -771,7 +771,7 @@ nl:
   welcome:
     feed:
       most_active:
-        debates: "Discussies"
+        debates: "Actieve debatten"
         proposals: "Voorstellen"
         processes: "Plannen"
       see_all_debates: Alle debatten
@@ -785,8 +785,8 @@ nl:
       title: Aanbevelingen die je wellicht interessant vindt
       help: "Deze aanbevelingen worden gegenereerd door de codes van de debatten en voorstellen die u volgen."
       debates:
-        title: Aanbevolen discussies
-        btn_text_link: Alle aanbevolen discussies
+        title: Aanbevolen debatten
+        btn_text_link: Alle aanbevolen debatten
       proposals:
         title: Aanbevolen voorstellen
         btn_text_link: Alle aanbevolen voorstellen
@@ -799,7 +799,7 @@ nl:
       question: Heeft u al een account bij %{org_name}?
       title: Account verificatie
     welcome:
-      go_to_index: Ga naar voorstellen en disucussies
+      go_to_index: Ga naar voorstellen en debatten
       title: Deelnemen
       user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
