@@ -762,6 +762,17 @@ nl:
         title: "Voorgestelde melding verwerken"
         description: "Verzamelt alle meldingen van het voorstel voor een gebruiker in een enkel bericht, om te voorkomen dat er te veel e-mails worden verstuurd."
         preview_detail: "Gebruikers ontvangen alleen meldingen uit de voorstellen die ze volgen"
+      budget_investment_created:
+        title: "Budget investering aangemaakt"
+        description: "Verzonden wanneer een gebruiker een budget investering maakt."
+      budget_investment_selected:
+        title: "Budget investering geselecteerd"
+        description: "Verzonden aan de auteur wanneer een budget investering is geselecteerd."
+      budget_investment_unfeasible:
+        title: "Onhaalbare budget investering"
+        description: "Verzonden aan de auteur wanneer een budget investering als onhaalbaar is gemarkeerd."
+      budget_investment_unselected:
+        title: "Budget investering gedeselecteerd"
       comment:
         title: "Reactie"
       reply:
