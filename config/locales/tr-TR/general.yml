@@ -504,15 +504,126 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Şimdi bu yatırım projesini takip ediyorsunuz! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+        destroy:
+          notice_html: "Bu yatırım projesini takip etmeyi bıraktınız! </br> Artık bu projeyle ilgili bildirimleri almayacaksınız."
+      proposal:
+        create:
+          notice_html: "Şimdi bu vatandaş önerisini takip ediyorsunuz! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+        destroy:
+          notice_html: "Bu vatandaş önerisini takip etmeyi bıraktınız! </br> Artık bu öneriyle ilgili bildirimleri almayacaksınız."
+    hide: Gizle
+    print:
+      print_button: Bu bilgiyi yazdır
+    search: Ara
+    show: Göster
     tags_cloud:
       districts: "İlçeler"
+  spending_proposals:
+    index:
+      sidebar:
+        geozones: İşlem kapsamı
+        feasibility: Fizibilite
+        unfeasible: Uygulanamaz
+      start_spending_proposal: Bir yatırım projesi oluştur
+    new:
+      more_info: Katılımcı bütçeleme nasıl çalışır?
+      recommendation_one: Önerinin bütçeye uygun bir eyleme göndermede bulunması zorunludur.
+      recommendation_three: Harcama önerinizi açıklarken ayrıntılara girmeyi deneyin, böylece gözden geçirme ekibi amaçlarınızı anlar.
+      recommendation_two: Yasadışı işlem öneren herhangi bir öneri veya yorum silinir.
+      recommendations_title: Harcama önerisi nasıl oluşturulur
+      start_new: Harcama önerisi oluştur
+    show:
+      author_deleted: Kullanıcı silindi
+      code: 'Öneri kodu:'
+      share: Paylaş
+    wrong_price_format: Sadece tam sayılar
+    spending_proposal:
+      spending_proposal: Yatırım projesi
+      already_supported: Bunu zaten desteklediniz. Paylaşın!
+      support: Destek
+      support_title: Bu projeyi destekle
+      supports:
+        zero: Destek yok
+        one: 1 destek
+        other: "%{count} destekler"
   stats:
     index:
+      visits: Ziyaretler
+      debates: Tartışmalar
+      proposals: Öneriler
       comments: Yorumlar
+      proposal_votes: Önerilerdeki oylar
+      debate_votes: Tartışmalardaki oylar
+      comment_votes: Yorumlardaki oylar
+      votes: Toplam oylar
+      verified_users: Doğrulanmış kullanıcılar
+      unverified_users: Doğrulanmamış kullanıcılar
+  unauthorized:
+    default: Bu sayfaya erişim izniniz yok.
   users:
+    direct_messages:
+      new:
+        body_label: Mesaj
+        direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
+        submit_button: Mesaj gönder
+        title: '%{receiver} ''a özel mesaj gönder'
+        title_label: Başlık
+        verified_only: Bir özel mesaj göndermek için %{verify_account}
+        verify_account: hesabınızı doğrulayın
+        authenticate: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+        signin: oturum aç
+        signup: kaydol
+      show:
+        receiver: Mesaj %{receiver} 'a gönderildi
     show:
+      deleted: Silindi
+      deleted_debate: Bu tartışma silindi
+      deleted_proposal: Bu öneri silindi
+      deleted_budget_investment: Bu yatırım projesi silindi
+      proposals: Öneriler
+      debates: Tartışmalar
+      budget_investments: Bütçe yatırımları
       comments: Yorumlar
       actions: Aksiyon
+      filters:
+        comments:
+          one: 1 Yorum
+          other: "%{count} Yorumlar"
+  welcome:
+    recommended:
+      proposals:
+        btn_text_link: Tavsiye edilen tüm öneriler
+      budget_investments:
+        title: Tavsiye edilen yatırımlar
+      slide: "Bak %{title}"
+    verification:
+      i_dont_have_an_account: Benim bir hesabım yok
+      i_have_an_account: Benim zaten bir hesabım var
+      question: Sizin zaten %{org_name} 'de bir hesabınız mı var?
+      title: Hesap doğrulama
+    welcome:
+      go_to_index: Önerileri ve tartışmaları gör
+      title: Katıl
+      user_permission_debates: Tartışmalara katıl
+      user_permission_info: Hesabınızla şunları yapabilirsiniz...
+      user_permission_proposal: Yeni öneriler oluştur
+      user_permission_support_proposal: Önerileri destekle*
+      user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
+      user_permission_verify_info: "* Sadece Census'taki kullanıcılar için."
+      user_permission_verify_my_account: Hesabımı doğrula
+      user_permission_votes: Son oylamaya katıl
+  invisible_captcha:
+    sentence_for_humans: "Eğer insansanız, bu alanı görmezden gelin"
+    timestamp_error_message: "Üzgünüm, bu çok hızlı oldu! Lütfen tekrar gönderin."
+  related_content:
+    title: "İlgili içerik"
+    add: "İlgili içerik ekle"
+    label: "İlgili içeriğe bağlantı"
+    placeholder: "%{url}"
   admin/widget:
     header:
       title: Yönetim
