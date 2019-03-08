@@ -579,6 +579,7 @@ tr:
         found:
           one: "'%{query}' terimi ile ilgili bir tartışma var, yeni bir tane açmak yerine buna katılabilirsiniz."
           other: "'%{query}' terimi ile ilgili bir tartışmalar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
+        message: "'%{query}' terimini içeren %{count} tartışmaların %{limit} 'ini görüyorsunuz"
         see_all: "Hepsini gör"
       budget_investment:
         found:
@@ -590,7 +591,7 @@ tr:
         found:
           one: "'%{query}' terimi ile ilgili bir öneri var, yeni bir tane açmak yerine buna katılabilirsiniz"
           other: "'%{query}' terimi ile ilgili bir öneriler var, yeni bir tane açmak yerine bunlara katılabilirsiniz"
-        message: "'%{query}' terimini içeren %{count} yatırımının %{limit} 'ini görüyorsunuz"
+        message: "'%{query}' terimini içeren %{count} önerilerin %{limit} 'ini görüyorsunuz"
         see_all: "Hepsini gör"
     tags_cloud:
       tags: Trend
@@ -687,6 +688,8 @@ tr:
       unverified_users: Doğrulanmamış kullanıcılar
   unauthorized:
     default: Bu sayfaya erişim izniniz yok.
+    manage:
+      all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
     direct_messages:
       new:
@@ -740,6 +743,7 @@ tr:
       see: "Öneriyi gör"
   votes:
     agree: Kabul ediyorum
+    anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
     comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
     disagree: Kabul etmiyorum
     organizations: Organizasyonların oy kullanmalarına izin verilmez
@@ -747,13 +751,32 @@ tr:
     signup: Kaydol
     supports: Destekler
     unauthenticated: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+    verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
     verify_account: hesabınızı doğrulayın
     spending_proposals:
       not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+      not_verified: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
+      organization: Organizasyonların oy kullanmalarına izin verilmez
+      unfeasible: Uygulanamaz yatırım projeleri desteklenemez
+      not_voting_allowed: Oy kullanma aşaması kapanmıştır
     budget_investments:
       not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+      not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
+      organization: Organizasyonların oy kullanmalarına izin verilmez
+      unfeasible: Uygulanamaz yatırım projeleri desteklenemez
+      not_voting_allowed: Oy kullanma aşaması kapanmıştır
+      different_heading_assigned:
+        one: "Yatırım projelerini yalnızca %{count} bölgesinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
+        other: "Yatırım projelerini yalnızca %{count} bölgelerinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
   welcome:
     feed:
+      most_active:
+        debates: "En aktif tartışmalar"
+        proposals: "En aktif öneriler"
+        processes: "Açık işlemler"
+      see_all_debates: Tüm tartışmaları göster
+      see_all_proposals: Tüm önerileri göster
+      see_all_processes: Tüm işlemleri göster
       process_label: İşlem
       see_process: İşlemi gör
     cards:
