@@ -47,7 +47,7 @@ nl:
       flagged_comments: Comments
       flagged_debates: Debatten
       flagged_investments: Begrotingsvoorstellen
-      proposals: Proposals
+      proposals: Voorstellen
       proposal_notifications: Voorgestelde notificaties
       users: Block users
     proposals:
@@ -62,13 +62,13 @@ nl:
         headers:
           moderate: Modereer
           proposal: Proposal
-        hide_proposals: Hide proposals
+        hide_proposals: Voorstellen verbergen
         ignore_flags: Markeer als gelezen
         order: Order by
         orders:
           created_at: Most recent
           flags: Meest gemarkeerd
-        title: Proposals
+        title: Voorstellen
     budget_investments:
       index:
         block_authors: Blokkeer auteurs
@@ -114,4 +114,4 @@ nl:
         search: Search
         search_placeholder: email or name of user
         title: Blokkeer deelnemers
-      notice_hide: User blocked. All of this user's debates and comments have been hidden.
+      notice_hide: De gebruiker is geblokkeerd. Discussies en reacties van deze gebruiker zijn verborgen.
