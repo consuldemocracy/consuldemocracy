@@ -624,6 +624,21 @@ tr:
     add: "İlgili içerik ekle"
     label: "İlgili içeriğe bağlantı"
     placeholder: "%{url}"
+    help: "Siz %{org} içinden %{models} bağlantıları ekleyebilirsiniz."
+    submit: "Ekle"
+    error: "Bağlantı geçerli değil. %{url} ile başlamayı unutmayın."
+    error_itself: "Bağlantı geçerli değil. Bir içeriği kendisiyle ilişkilendiremezsiniz."
+    success: "Yeni bir ilgili içerik eklediniz"
+    is_related: "Bu ilgili içerik mi?"
+    score_positive: "Evet"
+    score_negative: "Hayır"
+    content_title:
+      proposal: "Öneri"
+      debate: "Tartışma"
+      budget_investment: "Bütçe yatırımı"
   admin/widget:
     header:
       title: Yönetim
+  annotator:
+    help:
+      alt: Yorum yapmak istediğiniz metni seçin ve kalemle düğmeye basın.
