@@ -446,7 +446,7 @@ nl:
       message: "Ik heb het voorstel %{summary} in %{handle} gesteund. Steun dit voorstel ook!"
   polls:
     all: "All"
-    no_dates: "nog geen datum"
+    no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
     index:
