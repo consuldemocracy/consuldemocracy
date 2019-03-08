@@ -524,7 +524,7 @@ nl:
           published: Gepubliceerd
         table:
           title: Title
-          created_at: Created at
+          created_at: Aanmaakdatum
           comments: Comments
           final_version: Eindversie
           status: Status
@@ -874,7 +874,7 @@ nl:
         table_name: "Name"
         table_email: "E-mail"
       by_officer:
-        date: "Date"
+        date: "Datum"
         booth: "Booth"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
@@ -955,7 +955,7 @@ nl:
         no_polls: "Er zijn geen peilingen."
         create: "Create poll"
         name: "Name"
-        dates: "Dates"
+        dates: "Datums"
         start_date: "Begindatum"
         closing_date: "Einddatum"
         geozone_restricted: "Beperkt tot buurten"
@@ -1312,7 +1312,7 @@ nl:
         error: This geozone can't be deleted since there are elements attached to it
     signature_sheets:
       author: Author
-      created_at: Creation date
+      created_at: Aanmaakdatum
       name: Name
       no_signature_sheets: "There are not signature_sheets"
       index:
@@ -1323,7 +1323,7 @@ nl:
         document_numbers_note: "Write the numbers separated by commas (,)"
         submit: Create signature sheet
       show:
-        created_at: Created
+        created_at: Aangemaakt
         author: Author
         documents: Documents
         document_count: "Number of documents:"
@@ -1480,7 +1480,7 @@ nl:
         new:
           title: Create new custom page
         page:
-          created_at: Created at
+          created_at: Aanmaakdatum
           status: Status
           updated_at: Updated at
           status_draft: Concept
