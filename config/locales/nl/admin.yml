@@ -35,7 +35,7 @@ nl:
         sections:
           homepage: Homepage
           debates: Discussie
-          proposals: Proposals
+          proposals: Voorstellen
           budgets: Burgerbegrotingen
           help_page: Help-pagina
         background_color: Achtergrondkleur
@@ -65,7 +65,7 @@ nl:
           all: All
           on_comments: Comments
           on_debates: Discussie
-          on_proposals: Proposals
+          on_proposals: Voorstellen
           on_users: Deelnemer
           on_system_emails: Systeemberichten
         title: Moderator activity
@@ -165,7 +165,7 @@ nl:
         back: "Terug naar groepen"
     budget_phases:
       edit:
-        start_date: Startdatum
+        start_date: Begindatum
         end_date: Einddatum
         summary: Samenvatting
         summary_help_text: Deze tekst informeert de deelnemer over de fase. Om het te laten zien zelfs als de fase niet actief is, vinkt u het vakje aan
@@ -464,7 +464,7 @@ nl:
           homepage: Homepage
           draft_versions: Tekst
           questions: Discussie
-          proposals: Proposals
+          proposals: Voorstellen
           milestones: Volgend
       homepage:
         edit:
@@ -585,13 +585,13 @@ nl:
       admin: Admin menu
       banner: Manage banners
       poll_questions: Vragen
-      proposals: Proposals
-      proposals_topics: Proposals topics
+      proposals: Voorstellen
+      proposals_topics: Voorstelonderwerpen
       budgets: Participatory budgets
       geozones: Manage geozones
       hidden_comments: Verborgen commentaar
       hidden_debates: Verborgen debatten
-      hidden_proposals: Hidden proposals
+      hidden_proposals: Verborgen voorstellen
       hidden_budget_investments: Verborgen begrotingsinvesteringen
       hidden_proposal_notifications: Verborgen notificaties
       hidden_users: Hidden users
@@ -624,7 +624,7 @@ nl:
         information_texts_menu:
           debates: "Discussie"
           community: "Community"
-          proposals: "Proposals"
+          proposals: "Voorstellen"
           polls: "Polls"
           layouts: "Lay-outs"
           mailers: "Emails"
@@ -956,7 +956,7 @@ nl:
         create: "Create poll"
         name: "Name"
         dates: "Dates"
-        start_date: "Startdatum"
+        start_date: "Begindatum"
         closing_date: "Einddatum"
         geozone_restricted: "Beperkt tot buurten"
       new:
@@ -989,7 +989,7 @@ nl:
         filter_poll: Filter by Poll
         select_poll: Select Poll
         questions_tab: "Vragen"
-        successful_proposals_tab: "Successful proposals"
+        successful_proposals_tab: "Aangenomen voorstellen"
         create_question: "Stel een vraag"
         table_proposal: "Proposal"
         table_question: "Question"
@@ -1144,7 +1144,7 @@ nl:
         no_results: Geen organisaties gevonden.
     proposals:
       index:
-        title: Proposals
+        title: Voorstellen
         id: ID
         author: Author
         milestones: Mijlpalen
@@ -1206,10 +1206,10 @@ nl:
         placeholder: Search poll questions
       proposal_search:
         button: Search
-        placeholder: Search proposals by title, code, description or question
+        placeholder: Zoek voorstellen op titel, code, omschrijving of vraag
       spending_proposal_search:
         button: Search
-        placeholder: Search spending proposals by title or description
+        placeholder: zoek begrotingsvoorstellen op titel of beschrijving
       user_search:
         button: Search
         placeholder: Search user by name or email'
