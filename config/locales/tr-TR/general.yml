@@ -447,11 +447,32 @@ tr:
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
+    dates: "%{open_at} 'ten %{closed_at} 'e"
+    final_date: "Son yeniden sayımlar/Sonuçlar"
     index:
       filters:
         current: "Açık"
+        expired: "Süresi doldu"
+      title: "Anketler"
+      participate_button: "Bu ankete katıl"
+      participate_button_expired: "Anket sona erdi"
+      no_geozone_restricted: "Tüm şehir"
       geozone_restricted: "İlçeler"
+      geozone_info: "Census'taki kişiler katılabilir: "
+      already_answer: "Siz zaten bu ankete zaten katıldınız"
+      not_logged_in: "Katılmak için giriş yapmalı veya kayıt olmalısınız"
+      unverified: "Katılmak için hesabınızı doğrulamanız gerekir"
+      cant_answer: "Bu anket sizin coğrafi bölgenizde(geozone) mevcut değil"
+      section_header:
+        icon_alt: Oylama simgesi
+        title: Oylama
+        help: Oylama ile ilgili yardım
+      section_footer:
+        title: Oylama ile ilgili yardım
+        description: Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
+      no_polls: "Hiç açık oy yok."
     show:
+      already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
       comments_tab: Yorumlar
   poll_questions:
     create_question: "Soru oluştur"
@@ -642,3 +663,7 @@ tr:
   annotator:
     help:
       alt: Yorum yapmak istediğiniz metni seçin ve kalemle düğmeye basın.
+      text: Bu belgeye yorum yapmak için %{sign_in} veya %{sign_up} yapmalısınız. Ardından yorumlamak istediğiniz metni seçin ve kalemle düğmeye basın.
+      text_sign_in: oturum aç
+      text_sign_up: kaydol
+      title: Ben bu belgeye nasıl yorum yapabilirim?
