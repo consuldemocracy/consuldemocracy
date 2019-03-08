@@ -1,4 +1,9 @@
 tr:
   images:
+    remove_image: Resmi kaldır
     form:
+      title: Resmi tanımla
+      title_placeholder: Resim için açıklayıcı bir başlık ekleyin
+      attachment_label: Resim seç
+      delete_button: Resmi kaldır
       admin_title: "Fotoğraf"
