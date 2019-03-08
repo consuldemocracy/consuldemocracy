@@ -46,7 +46,7 @@ nl:
       under_age: "You don't have the required age to verify your account."
       verify: Verifieer
     email_label: E-mail
-    date_of_birth: Date of birth
+    date_of_birth: Geboortedatum
     email_verifications:
       already_verified: Dit gebruikersaccount is al geverifieerd.
       choose_options: 'Please choose one of the following options:'
