@@ -766,6 +766,17 @@ gl:
         title: "Comentario"
       reply:
         title: "Responder"
+      direct_message_for_receiver:
+        title: "Mensaxe privada para receptor"
+        description: "Enviar ao receptor da mensaxe privada."
+      direct_message_for_sender:
+        title: "Mensaxe privada para emisor"
+        description: "Enviar ao emisor da mensaxe privada."
+      email_verification:
+        title: "Verificación de correo"
+        description: "Enviar ao novo usuario para comprobar a súa conta."
+      user_invite:
+        title: "Convite de usuario"
     emails_download:
       index:
         title: Descarga de enderezos de correo
