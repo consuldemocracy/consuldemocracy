@@ -241,7 +241,7 @@ nl:
         draft_start_date: Begindatum
         draft_end_date: Einddatum
         draft_publication_date: Publicatiedatum
-        allegations_start_date: Startdatum
+        allegations_start_date: Begindatum
         allegations_end_date: Einddatum
         proposals_phase_start_date: Begindatum
         proposals_phase_end_date: Einddatum
