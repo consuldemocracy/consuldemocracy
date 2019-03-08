@@ -32,20 +32,20 @@ nl:
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Discussie
+          debate: Debat
           moderate: Modereer
-        hide_debates: Hide debates
+        hide_debates: Debatten verbergen
         ignore_flags: Markeer als gelezen
         order: order
         orders:
           created_at: Nieuwste
           flags: Meest gemarkeerd
-        title: Discussie
+        title: Debatten
     header:
       title: Moderation
     menu:
       flagged_comments: Comments
-      flagged_debates: Discussie
+      flagged_debates: Debatten
       flagged_investments: Begrotingsvoorstellen
       proposals: Proposals
       proposal_notifications: Voorgestelde notificaties
