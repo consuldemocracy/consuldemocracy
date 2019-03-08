@@ -574,8 +574,42 @@ tr:
       print_button: Bu bilgiyi yazdır
     search: Ara
     show: Göster
+    suggest:
+      debate:
+        see_all: "Hepsini gör"
+      budget_investment:
+        found:
+          one: "'%{query}' terimi ile ilgili bir yatırım var, yeni bir tane açmak yerine buna katılabilirsiniz."
+          other: "'%{query}' terimi ile ilgili bir yatırımlar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
+        message: "'%{query}' terimini içeren %{count} yatırımının %{limit} 'ini görüyorsunuz"
+        see_all: "Hepsini gör"
+      proposal:
+        found:
+          one: "'%{query}' terimi ile ilgili bir öneri var, yeni bir tane açmak yerine buna katılabilirsiniz"
+          other: "'%{query}' terimi ile ilgili bir öneriler var, yeni bir tane açmak yerine bunlara katılabilirsiniz"
+        message: "'%{query}' terimini içeren %{count} yatırımının %{limit} 'ini görüyorsunuz"
+        see_all: "Hepsini gör"
     tags_cloud:
+      tags: Trend
       districts: "İlçeler"
+      districts_list: "İlçeler listesi"
+      categories: "Kategoriler"
+    target_blank_html: " (bağlantı yeni pencerede açılır)"
+    you_are_in: "Şuradasınız"
+    unflag: İşaretini Kaldır
+    unfollow_entity: "Takibi bırak %{entity}"
+    outline:
+      budget: Katılımcı bütçe
+      searcher: Araştırmacı
+    go_to_page: "Sayfasına git "
+    share: Paylaş
+    orbit:
+      previous_slide: Önceki Slayt
+      next_slide: Sonraki Slayt
+    documentation: Ek belge
+    view_mode:
+      title: Görünüm modu
+      cards: Kartlar
   spending_proposals:
     index:
       sidebar:
@@ -664,6 +698,19 @@ tr:
       private_activity: Bu kullanıcı etkinlik listesini gizli tutmaya karar verdi.
       send_private_message: "Özel mesaj gönder"
       delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
+    proposals:
+      send_notification: "Bildirim gönder"
+      retire: "Çek"
+      retired: "Çekilen öneri"
+      see: "Öneriyi gör"
+  votes:
+    agree: Kabul ediyorum
+    comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
+    unauthenticated: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+    spending_proposals:
+      not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+    budget_investments:
+      not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
   welcome:
     recommended:
       proposals:
