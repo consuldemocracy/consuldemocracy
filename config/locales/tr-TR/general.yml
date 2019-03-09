@@ -500,7 +500,7 @@ tr:
         votes: "OYLAR"
         web: "WEB"
         booth: "KABİN"
-        total: "TOPLUM"
+        total: "TOPLAM"
         valid: "Geçerli"
         white: "Beyaz oylar"
         null_votes: "Geçersiz"
