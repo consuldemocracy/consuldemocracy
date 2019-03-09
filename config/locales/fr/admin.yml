@@ -114,18 +114,43 @@ fr:
     budget_groups:
       name: "Nom"
       headings_name: "Titres"
+      headings_edit: "Modifier les rubriques"
+      headings_manage: "Gérer les rubriques"
       max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
+      no_groups: "Il n'y a pas de groupes."
+      create:
+        notice: "Groupe créé avec succès !"
+      update:
+        notice: "Groupe mis à jour avec succès"
+      destroy:
+        success_notice: "Groupe supprimé avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer un groupe qui est associé à des rubriques"
       form:
+        create: "Créer un nouveau groupe"
         edit: "Modifier le groupe"
         name: "Nom du groupe"
         submit: "Sauvegarder le groupe"
+      index:
+        back: "Revenir aux budgets"
     budget_headings:
       name: "Nom"
+      no_headings: "Il n'y a pas de titre."
+      create:
+        notice: "Rubrique créée avec succès !"
+      update:
+        notice: "Mise à jour de rubrique réussie"
+      destroy:
+        success_notice: "Rubrique supprimée avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer une rubrique qui est associé à des investissements"
       form:
         name: "Nom du titre"
         amount: "Montant"
         population: "Population"
         population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
+        latitude: "Latitude (option)"
+        longitude: "Longitude (option)"
+        coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
+        allow_content_block: "Autoriser un bloc de contenu"
         submit: "Sauvegarder la rubrique"
     budget_phases:
       edit:
