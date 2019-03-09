@@ -113,6 +113,7 @@ fr:
         recalculate: Recalculer les investissements gagnant
     budget_groups:
       name: "Nom"
+      headings_name: "Titres"
       max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
       form:
         edit: "Modifier le groupe"
