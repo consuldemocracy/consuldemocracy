@@ -1,1 +1,24 @@
 bn:
+  activerecord:
+    models:
+      activity:
+        one: "সক্রিয়তা"
+        other: "সক্রিয়তা"
+      budget:
+        one: "আয়ব্যয়ক"
+        other: "বাজেট"
+      budget/investment:
+        one: "বিনিয়োগ"
+        other: "বিনিয়োগ"
+      milestone:
+        one: "মাইলফলক"
+        other: "মাইলফলক"
+      milestone/status:
+        one: "মাইলস্টোনের অবস্থা"
+        other: "মাইলস্টোনের অবস্থা"
+      progress_bar:
+        one: "অগ্রগতির ধাপ"
+        other: "অগ্রগতির ধাপ"
+      comment:
+        one: "মন্তব্য"
+        other: "মন্তব্য"
