@@ -277,6 +277,7 @@ da:
       index:
         title: "Omtælling"
         no_recounts: "Der er ikke noget at omtælle"
+        total_system: "Stemmer (automatisk)"
     results:
       index:
         title: "Resultater"
