@@ -2,7 +2,7 @@ bn:
   activemodel:
     models:
       verification:
-        residence: "বাসস্থান"
+        residence: "নিবাস"
         sms: "বার্তা"
     attributes:
       verification:
