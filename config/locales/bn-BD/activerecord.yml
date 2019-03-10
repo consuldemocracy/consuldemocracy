@@ -112,6 +112,7 @@ bn:
     attributes:
       budget:
         name: "নাম"
-        description_accepting: "বারবার ফেজ চলাকালীন বিবরণ"
-        description_reviewing: "সম্পাদনা ফেজ চলাকালীন বিবরণ"
-        description_selecting: "নির্বাচন ফেজ চলাকালীন বিবরণ"
+        description_accepting: "বারবার পর্ব চলাকালীন বিবরণ"
+        description_reviewing: "সম্পাদনা পর্ব চলাকালীন বিবরণ"
+        description_selecting: "নির্বাচন পর্ব চলাকালীন বিবরণ"
+        description_valuating: "মান নির্ধারণকারী পর্ব চলাকালীন বিবরণ"
