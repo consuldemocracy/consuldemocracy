@@ -22,3 +22,48 @@ bn:
       comment:
         one: "মন্তব্য"
         other: "মন্তব্য"
+      debate:
+        one: "বিতর্ক"
+        other: "বিতর্ক"
+      tag:
+        one: "সংযোজন করা"
+        other: "সংযোজন"
+      user:
+        one: "ব্যবহারকারী"
+        other: "ব্যবহারকারীদের"
+      moderator:
+        one: "নিয়ামক"
+        other: "নিয়ামকদের"
+      administrator:
+        one: "প্রশাসক"
+        other: "প্রশাসকরা"
+      valuator:
+        one: "মূল্যাবধারক"
+        other: "মূল্যাবধারকরা"
+      valuator_group:
+        one: "মূল্যাবধারক দল"
+        other: "মূল্যাবধারক দলগুলো"
+      manager:
+        one: "নিয়ন্ত্রনকারি"
+        other: "নিয়ন্ত্রনকারিরা"
+      newsletter:
+        one: "সংবাদবাহী পত্র"
+        other: "সংবাদবাহী পত্রগুলি"
+      vote:
+        one: "নির্বাচন করা"
+        other: "নির্বাচন গুলো"
+      organization:
+        one: "সংগঠন"
+        other: "বিভিন্ন সংস্থা"
+      poll/booth:
+        one: "চালাঘর"
+        other: "চালাঘরগুলো"
+      poll/officer:
+        one: "কর্মকর্তা"
+        other: "কর্মকর্তাগন"
+      proposal:
+        one: "নাগরিক প্রস্তাবনা"
+        other: "নাগরিক প্রস্তাবনা গুলো"
+      spending_proposal:
+        one: "বিনিয়োগ প্রকল্প"
+        other: "বিনিয়োগ প্রকল্প গুলো"
