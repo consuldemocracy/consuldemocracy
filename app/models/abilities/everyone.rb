@@ -7,7 +7,7 @@ module Abilities
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
 
-      can [:read, :welcome, :results, :stats, :progress_1, :progress_2, :progress_3], Budget
+      can [:read, :welcome, :results, :stats, :progress], Budget
       # can [:read, :welcome], Budget
       can :read, Budget::Investment
 

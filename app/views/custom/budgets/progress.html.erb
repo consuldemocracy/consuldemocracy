@@ -20,25 +20,18 @@
           <%= link_to t("stats.stats_link"), budget_stats_path(@budget) %>
         </li>
         <%# A eliminar, sacar documentos de estado por campaña de presupuestos. %>
-        <% if @budget.id == 1 %>
+        <% if @budget.finished? %>
           <li class="tabs-title">
-            <%= link_to t("progress.progress_1_link"), budget_progress_1_path(@budget) %>
-          </li>
-          <li class="tabs-title">
-            <%= link_to t("progress.progress_2_link"), budget_progress_2_path(@budget), class: "is-active" %>
-          </li>
-          <li class="tabs-title">
-            <%= link_to t("progress.progress_3_link"), budget_progress_3_path(@budget) %>
+            <%= link_to t("progress.progress_link"), budget_progress_path(@budget), class: "is-active" %>
           </li>
         <% end %>
       </ul>
     </div>
   </div>
-
-<div class="row">
-  <div class="col-md-12">
-    <%# image_tag "estat_presupostos_1_#{I18n.locale}.png" %>
-    <%= image_tag "diptic_2_2017_#{I18n.locale}.jpg" %>
+<% if @budget.finished? %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= image_tag "estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
+    </div>
   </div>
-
-</div>
+<% end %>

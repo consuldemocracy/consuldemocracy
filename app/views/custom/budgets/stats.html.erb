@@ -25,16 +25,9 @@
         <li class="tabs-title">
           <%= link_to t("stats.stats_link"), budget_stats_path(@budget), class: "is-active" %>
         </li>
-        <%# A eliminar, sacar documentos de estado por campaña de presupuestos. %>
-        <% if @budget.id == 1 %>
+        <% if @budget.finished? %>
           <li class="tabs-title">
-            <%= link_to t("progress.progress_1_link"), budget_progress_1_path(@budget) %>
-          </li>
-          <li class="tabs-title">
-            <%= link_to t("progress.progress_2_link"), budget_progress_2_path(@budget) %>
-          </li>
-          <li class="tabs-title">
-            <%= link_to t("progress.progress_3_link"), budget_progress_3_path(@budget) %>
+            <%= link_to t("progress.progress_link"), budget_progress_path(@budget) %>
           </li>
         <% end %>
       </ul>

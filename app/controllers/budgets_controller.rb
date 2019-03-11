@@ -55,15 +55,7 @@ class BudgetsController < ApplicationController
     @stats = stats
   end
 
-  def progress_1
-    @budget = Budget.find(params[:budget_id])
-  end
-
-  def progress_2
-    @budget = Budget.find(params[:budget_id])
-  end
-
-  def progress_3
+  def progress
     @budget = Budget.find(params[:budget_id])
   end
 

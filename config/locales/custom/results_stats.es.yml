@@ -39,6 +39,4 @@ es:
     title_html: "Seguimiento: "
 
   progress:
-    progress_1_link: 'Informe de estado nº 1'
-    progress_2_link: 'Informe de estado nº 2'
-    progress_3_link: 'Informe de estado nº 3'
+    progress_link: 'Informe de ejecución'

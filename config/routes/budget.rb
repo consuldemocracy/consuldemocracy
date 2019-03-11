@@ -18,9 +18,7 @@ resources :budgets, only: [:show, :index, :stats] do
 
 
   get :stats
-  get :progress_1
-  get :progress_2
-  get :progress_3
+  get :progress
 
   resource :executions, only: :show, controller: 'budgets/executions'
 end
