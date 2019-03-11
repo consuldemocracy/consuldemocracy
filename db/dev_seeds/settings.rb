@@ -41,12 +41,12 @@ section "Creating Settings" do
   Setting.create(key: "feature.user.recommendations", value: "true")
   Setting.create(key: "feature.user.recommendations_on_debates", value: "true")
   Setting.create(key: "feature.user.recommendations_on_proposals", value: "true")
+  Setting.create(key: "feature.user.skip_verification", value: "true")
   Setting.create(key: "feature.community", value: "true")
   Setting.create(key: "feature.map", value: "true")
   Setting.create(key: "feature.allow_images", value: "true")
   Setting.create(key: "feature.allow_attached_documents", value: "true")
   Setting.create(key: "feature.public_stats", value: "true")
-  Setting.create(key: "feature.user.skip_verification", value: "true")
   Setting.create(key: "feature.help_page", value: "true")
 
   Setting.create(key: "per_page_code_head", value: "")
