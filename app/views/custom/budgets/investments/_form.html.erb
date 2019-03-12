@@ -3,15 +3,6 @@
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
-    <div class="small-10 medium-7 large-7 columns">
-      <%= f.fields_for @area, index: @area.id do |area_f| %>
-        <%= area_f.text_field :name, disabled: true, label: t('budget.investments.form.area') %>
-      <% end %>
-    </div>
-    <div class="small-10 medium-7 large-7 columns">
-      <%= f.text_field :sub_area_name, disabled: true, value: @sub_area.name, label: t("budgets.investments.form.sub_area")  %>
-      <%= f.hidden_field :sub_area_id, value: params[:sub_area_id]%>
-    </div>
     <% if @investment.budget.only_heading.present? %>
       <%= f.hidden_field :heading_id, value: @investment.budget.only_heading.id %>
     <% else %>
@@ -41,6 +32,22 @@
     <div class="ckeditor small-12 column">
       <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
+
+    <% if !@area && !@sub_area %>
+      <div class="small-10 medium-7 large-7 columns">
+        <%= f.grouped_collection_select(:sub_area_id, Area.all, :sub_areas, :name, :id, :name, label: t("admin.budget_investments.edit.sub_area")) %>
+      </div>
+    <% else %>
+      <div class="small-10 medium-7 large-7 columns">
+        <%= f.fields_for @area, index: @area.id do |area_f| %>
+        <%= area_f.text_field :name, disabled: true, label: t('budget.investments.form.area') %>
+        <% end %>
+      </div>
+      <div class="small-10 medium-7 large-7 columns">
+        <%= f.text_field :sub_area_name, disabled: true, value: @sub_area.name, label: t("budgets.investments.form.sub_area")  %>
+        <%= f.hidden_field :sub_area_id, value: params[:sub_area_id]%>
+      </div>
+    <% end %>
 
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">

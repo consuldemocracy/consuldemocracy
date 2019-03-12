@@ -42,6 +42,13 @@ module Abilities
       can :confirm_hide, Budget::Investment
       cannot :confirm_hide, Budget::Investment, hidden_at: nil
 
+      if user.official_level == 1
+        can :suggest, Budget::Investment,              budget: { phase: "reviewing" }
+        can :create, Budget::Investment do |investment|
+          investment.budget.phase == "reviewing"
+        end
+      end
+
       can :confirm_hide, User
       cannot :confirm_hide, User, hidden_at: nil
 
