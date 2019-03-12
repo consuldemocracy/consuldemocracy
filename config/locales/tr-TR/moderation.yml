@@ -33,8 +33,10 @@ tr:
           with_ignored_flag: Görüldü olarak işaretlendi
         headers:
           debate: Tartışma
+          moderate: Yönet
         hide_debates: Tartışmaları gizle
         ignore_flags: Görüldü olarak işaretle
+        order: Düzen
         orders:
           created_at: En yeni
           flags: En çok işaretlenen
@@ -55,29 +57,61 @@ tr:
         filter: Filtre
         filters:
           all: Tüm
+          pending_flag_review: Bekleyen yeniden inceleme
           with_ignored_flag: Görüldü olarak işaretle
         headers:
+          moderate: Yönet
           proposal: Öneri
         hide_proposals: Önerileri gizle
         ignore_flags: Görüldü olarak işaretle
+        order: Şuna göre sırala
+        orders:
+          created_at: En son
+          flags: En çok işaretlenen
+        title: Öneriler
     budget_investments:
       index:
+        block_authors: Yazarları engelle
         confirm: Emin misiniz?
+        filter: Filtre
         filters:
           all: Tüm
           pending_flag_review: Beklemede
           with_ignored_flag: Görüldü olarak işaretlendi
+        headers:
+          moderate: Yönet
+          budget_investment: Bütçe yatırımı
+        hide_budget_investments: Bütçe yatırımlarını gizle
         ignore_flags: Görüldü olarak işaretle
+        order: Şuna göre sırala
+        orders:
+          created_at: En son
+          flags: En çok işaretlenen
+        title: Bütçe yatırımları
     proposal_notifications:
       index:
+        block_authors: Yazarları engelle
         confirm: Emin misiniz?
+        filter: Filtre
         filters:
+          all: Tüm
+          pending_review: Bekleyen yeniden inceleme
           ignored: Görüldü olarak işaretle
+        headers:
+          moderate: Yönet
+          proposal_notification: Öneri bildirimi
+        hide_proposal_notifications: Önerileri gizle
         ignore_flags: Görüldü olarak işaretle
+        order: Şuna göre sırala
+        orders:
+          created_at: En son
+          moderated: Denetlendi
+        title: Öneri bildirimleri
     users:
       index:
         hidden: Engellendi
         hide: Engelle
         search: Ara
         search_placeholder: e-posta veya kullanıcının adı
+        title: Kullanıcıları engelle
       notice_hide: Kullanıcı engellendi. Bu kullanıcının tüm tartışmaları ve yorumları gizlendi.
