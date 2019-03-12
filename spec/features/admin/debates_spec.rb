@@ -31,7 +31,7 @@ feature "Admin debates" do
 
   scenario "Confirm hide" do
     debate = create(:debate, :hidden)
-    visit admin_hidden_hidden_debates_path
+    visit admin_hidden_debates_path
 
     click_link "Confirm moderation"
 
