@@ -205,7 +205,42 @@ da:
       mark_as_unread: Marker som ulæst
   map:
     title: "Distrikter"
+    proposal_for_district: "Opret et forslag til dit distrikt"
+    start_proposal: Opret et borgerforslag
+  omniauth:
+    facebook:
+      sign_in: Log ind med Facebook
+      sign_up: Tilmeld dig via Facebook
+      name: Facebook
+    finish_signup:
+      title: "Yderligere detaljer"
+      username_warning: "På grund af forandringer i måden vi interagerer med sociale medier, er det muligt, at dit brugernavn nu fremstår som \"allerede i brug\". Hvis dette er tilfældet, skal du vælge et andet brugernavn."
+    google_oauth2:
+      sign_in: Log ind med Google
+      sign_up: Tilmeld dig via Google
+      name: Google
+    twitter:
+      sign_in: Log ind med Twitter
+      sign_up: Tilmeld dig via Twitter
+      name: Twitter
+    info_sign_in: "Log ind med:"
+    info_sign_up: "Tilmeld dig med:"
+    or_fill: "Eller udfyld nedenstående formular:"
   proposals:
+    create:
+      form:
+        submit_button: Opret borgerforslag
+    edit:
+      editing: Rediger forslag
+      form:
+        submit_button: Gem ændringer
+      show_link: Se forslag
+    retire_form:
+      retired_explanation_label: Forklaring
+      retired_explanation_placeholder: Forklar kort hvorfor du tænker, at dette forslag ikke bør modtage mere opbakning
+    retire_options:
+      done: Færdig
+      other: Andre
     form:
       proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
       proposal_summary_note: "(max 200 anslag)"
@@ -236,7 +271,24 @@ da:
         duplicated: Kopieret
         started: Undervejs
     proposal:
+      created: "Du oprettede et forslag!"
+      share:
+        guide: "Nu kan du dele det, så andre kan støtte op om forslaget."
+        edit: "Før forslaget deles har du mulighed for at ændre i teksten."
+        view_proposal: Ikke nu, gå til mit forslag
+      already_supported: Du har allerede støttet dette forslag. Del det!
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      support: Støt
+      support_title: Støt dette forslag
+      supports:
+        zero: Ingen støtte
+        one: 1 støtter op om dette forslag
+        other: "%{count} støtter op om dette forslag"
       votes:
+        zero: Ingen stemmer
         one: 1 stemme
         other: "%{count} stemmer"
       total_percent: 100%
@@ -267,6 +319,12 @@ da:
       filters:
         current: "Åben"
         expired: "Udløbet"
+      title: "Afstemning"
+      participate_button: "Deltag i afstemningen"
+      participate_button_expired: "Afstemningen slut"
+      no_geozone_restricted: "Hele byen"
+      geozone_restricted: "Distrikter"
+      already_answer: "Du har allerede deltaget i afstemningen"
       not_logged_in: "Du skal være logget ind eller oprette en bruger for at kunne deltage"
       unverified: "Du skal bekræfte din konto for at kunne deltage"
       section_header:
@@ -274,6 +332,9 @@ da:
         help: Hjælp til afstemning
       section_footer:
         title: Hjælp til afstemning
+      no_polls: "Der er ingen afstemninger åbne."
+    show:
+      already_voted_in_booth: "Du har allerede deltaget via en fysisk stemmeboks. Du kan ikke deltage igen."
   poll_questions:
     create_question: "Opret spørgsmål"
     show:
