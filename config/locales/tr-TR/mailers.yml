@@ -24,3 +24,11 @@ tr:
       hi: "Sevgili kullanıcı,"
       new_html: "Tüm bunlar için, sizi bu işlemin koşullarına uyan bir <strong>yeni teklif</strong> hazırlamaya davet ediyoruz. Bu bağlantıyı takip ederek yapabilirsiniz:%{url}."
       new_href: "yeni yatırım projesi"
+      sincerely: "İçtenlikle"
+      sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve paha biçilemez katılımınız için tekrar teşekkür ederiz."
+      subject: "Sizin yatırım projeniz '%{code}' uygulanamaz olarak işaretlendi"
+    proposal_notification_digest:
+      info: "İşte %{org_name}'de desteklediğin önerilerin yazarları tarafından yayınlanan yeni bildirimler."
+      title: "%{org_name}'deki önerinin bildirimleri"
+      share: Öneriyi paylaş
+      comment: Öneriye yorum yap
