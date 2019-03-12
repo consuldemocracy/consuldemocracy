@@ -11,14 +11,17 @@ ar:
         proposal: اقتراح المجتمع
         investment: مجتمع ميزانية الاستثمار
       create_first_community_topic:
+        sub_first_theme: "لانشاء موضوع يجب عليك %{sign_in} او %{sign_up}."
         sign_in: "تسجيل الدخول"
         sign_up: "انشاء حساب"
       tab:
         participants: المشاركون
       sidebar:
         participate: المشاركة
+        new_topic: إنشاء موضوع
       topic:
         edit: تحرير الموضوع
+        destroy: حذف الموضوع
         comments:
           zero: لا توجد تعليقات
           zero: "%{count} تعليق"
