@@ -642,6 +642,26 @@ da:
       new:
         add_shift: "Tilføj arbejdsplan"
         shift: "Opgave"
+        shifts: "Arbejdsplan for dette afstemningssted"
+        date: "Dato"
+        task: "Opgave"
+        edit_shifts: Rediger arbejdsplan
+        new_shift: "Ny arbejdsplan"
+        no_shifts: "Dette afstemningssted har ingen tilknyttet arbejdsplan"
+        remove_shift: "Fjern"
+        search_officer_button: Søg
+        search_officer_placeholder: Søg ansvarlig medarbejder
+        select_date: "Vælg dag"
+        no_voting_days: "Stemmedagene er afsluttet"
+        select_task: "Vælg opgave"
+        table_email: "E-mail"
+        table_name: "Navn"
+      flash:
+        date_missing: "Der skal vælges en dato"
+      vote_collection: Indsaml stemmer
+      recount_scrutiny: Omtælling & Eftersyn
+    booth_assignments:
+      manage_assignments: Administrer opgaver
     poll_booth_assignments:
       show:
         results: "Resultater"
@@ -693,6 +713,20 @@ da:
         table_proposal: "Borgerforslag"
         table_question: "Spørgsmål"
         table_poll: "Afstemning"
+      answers:
+        images:
+          add_image: "Tilføj billede"
+          save_image: "Gem billede"
+      show:
+        proposal: Originalt forslag
+        question: Spørgsmål
+        edit_question: Rediger spørgsmål
+        valid_answers: Gyldige svar
+        add_answer: Tilføj svar
+        video_url: Ekstern video
+        answers:
+          document_title: Titel
+          document_actions: Handlinger
     answers:
       new:
         title: Nyt svar
@@ -718,7 +752,9 @@ da:
       index:
         title: "Omtælling"
         no_recounts: "Der er ikke noget at omtælle"
+        total_final: "Endelig omtælling"
         total_system: "Stemmer (automatisk)"
+        table_booth_name: "Afstemningsområde"
     results:
       index:
         title: "Resultater"
