@@ -44,11 +44,15 @@ ar:
           password_confirmation_label: تأكيد كلمة المرور
           password_label: كلمة المرور
           phone_number_label: رقم الهاتف
+          responsible_name_label: الاسم الكامل للشخص المسؤول على الوحدة
           responsible_name_note: وسيكون هذا الشخص الذي يمثل الرابطة/الوحدة التي باسمها يتم عرض المقترحات
           submit: سجل 
           title: التسجيل كمنظمة أو وحدة
         success:
           back_to_index: العودة إلى الصفحة الرئيسية
+          instructions_1_html: "<strong>سوف نتواصل معك قريبا</strong> للتحقق من أن كنت في الواقع تمثل هذه الوحدة."
+          thank_you_html: شكرا على تسجيل وحدتك على الموقع. هي الآن <strong>في مرحلة التحقق</strong>.
+          title: تسجيل المنظمة / الوحدة
     passwords:
       edit:
         change_submit: تغيير كلمة المرور
