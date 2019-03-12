@@ -11,7 +11,7 @@ tr:
           one: "%{count} yanıt"
           other: "%{count} yanıtlar"
         cancel: İptal
-        publish_comment: Yorumu yayınla
+        publish_comment: Yorumu Yayınla
       form:
         phase_not_open: Bu aşama açık değil
         login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
@@ -28,7 +28,7 @@ tr:
         title: Yorum
       version_chooser:
         seeing_version: Sürüm için yorumlar
-        see_text: Taslak metni gör
+        see_text: Metin taslağını gör
     draft_versions:
       changes:
         title: Değişiklikler
@@ -56,7 +56,7 @@ tr:
           random: Rasgele
           winners: Seçilmiş
       debate:
-        empty_questions: Soru yok
+        empty_questions: Hiç soru yok
         participate: Tartışmaya katıl
       index:
         filter: Filtre
