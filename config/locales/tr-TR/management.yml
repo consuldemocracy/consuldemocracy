@@ -36,6 +36,7 @@ tr:
     document_type_label: Belge Türü
     document_verifications:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
+      has_no_account_html: Bir hesap oluşturmak için %{link}'e gidin ve ekranın sol üst kısmındaki <b>'Kayıt Ol</b>'a tıklayın.
       link: CONSUL
       in_census_has_following_permissions: 'Bu kullanıcı aşağıdaki izinlerle web sitesiye katılabilir:'
       not_in_census: Bu belge kayıtlı değil.
@@ -50,6 +51,8 @@ tr:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
       choose_options: 'Lütfen aşağıdaki seçeneklerden birini seçin:'
       document_found_in_census: Bu belge sayımda bulundu, ancak bunla alakalı bir kullanıcı hesabı yok.
+      if_no_existing_account: Eğer bu kişi henüz bir hesap oluşturmadıysa
+      introduce_email: 'Lütfen hesapta kullanılan e-postayı tanıtın:'
       send_email: Doğrulama e-postası gönder
     menu:
       create_proposal: Öneri oluştur
@@ -58,5 +61,60 @@ tr:
       create_spending_proposal: Harcama önerisi oluştur
       print_spending_proposals: Harcama önerilerini yazdır
       support_spending_proposals: Harcama önerilerini destekle
+      create_budget_investment: Bütçe yatırımı oluştur
+      print_budget_investments: Bütçe yatırımlarını yazdır
+      support_budget_investments: Bütçe yatırımlarını destekle
+      users: Kullanıcıların yönetimi
+      user_invites: Davetleri gönder
+      select_user: Kullanıcı seç
+    permissions:
+      create_proposals: Öneriler oluştur
+      support_proposals: Önerileri destekle
+      vote_proposals: Önerileri oyla
+    print:
+      proposals_title: 'Öneriler:'
+    print_info: Bu bilgiyi yazdır
+    proposals:
+      alert:
+        unverified_user: Kullanıcı doğrulanmadı
+      create_proposal: Öneri oluştur
+      print:
+        print_button: Yazdır
+      index:
+        title: Önerileri destekle
     budgets:
+      create_new_investment: Bütçe yatırımı oluştur
+      print_investments: Bütçe yatırımlarını yazdır
+      support_investments: Bütçe yatırımlarını destekle
+      table_name: İsim
+      table_phase: Aşama
       table_actions: Aksiyon
+    budget_investments:
+      alert:
+        unverified_user: Kullanıcı doğrulanmadı
+      create: Bir bütçe yatırımı oluştur
+      print:
+        print_button: Yazdır
+    spending_proposals:
+      alert:
+        unverified_user: Kullanıcı doğrulanmadı
+      print:
+        print_button: Yazdır
+    username_label: Kullanıcı adı
+    users:
+      email_optional_label: E-posta (isteğe bağlı)
+      erased_notice: Kullanıcı hesabı silindi.
+      erased_by_manager: "Yönetici tarafından silindi: %{manager}"
+      erase_account_link: Kullanıcıyı sil
+      erase_account_confirm: Hesabı silmek istediğinize emin misiniz? Bu eylem geri alınamaz
+      erase_warning: Bu eylem geri alınamaz. Lütfen bu hesabı silmek istediğinizden emin olun.
+      erase_submit: Hesabı sil
+    user_invites:
+      new:
+        label: E-postalar
+        info: "Virgülle ayrılmış e-postaları girin (',')"
+        submit: Davetleri gönder
+        title: Davetleri gönder
+      create:
+        success_html: <strong>%{count} davetler</strong> gönderildi.
+        title: Davetleri gönder
