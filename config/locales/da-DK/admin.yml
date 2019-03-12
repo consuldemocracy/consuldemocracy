@@ -225,7 +225,7 @@ da:
         table_title: "Titel"
     comments:
       index:
-        filter: Filtrer
+        filter: Filtrere
         filters:
           all: Alle
           with_confirmed_hide: Bekræftet
@@ -246,9 +246,23 @@ da:
     hidden_users:
       index:
         filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+        title: Skjulte brugere
+        user: Bruger
+        no_hidden_users: Der er ingen skjulte brugere.
+      show:
+        email: 'E-mail:'
+        title: Brugeraktivitet (%{user})
     hidden_budget_investments:
       index:
         filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+        title: Skjulte budgetinvesteringer
+        no_hidden_budget_investments: Der er ingen skjulte budgetinvesteringer
     legislation:
       processes:
         edit:
@@ -261,6 +275,12 @@ da:
           enabled: Aktiveret
           process: Proces
           debate_phase: Debatfase
+          title_placeholder: Titel på proces
+          summary_placeholder: Kort resumé af beskrivelsen
+          description_placeholder: Tilføj en beskrivelse af processen
+          additional_info_placeholder: Tilføj supplerende brugbar information
+          homepage: Beskrivelse
+          homepage_description: Her kan du forklare processens indhold
         index:
           create: Ny proces
           delete: Slet
@@ -286,6 +306,29 @@ da:
         subnav:
           info: Information
           homepage: Startside
+          questions: Debat
+          proposals: Forslag
+          milestones: Følger
+      draft_versions:
+        form:
+          close_text_editor: Luk tekstredigeringsenhed
+          hints:
+            status:
+              published: Synlig for alle
+        index:
+          delete: Slet
+        new:
+          back: Tilbage
+          title: Opret ny version
+          submit_button: Opret version
+        statuses:
+          published: Offentliggjort
+        table:
+          title: Titel
+          created_at: Oprettet den
+          comments: Kommentarer
+          final_version: Den endelige version
+          status: Status
     system_emails:
       comment:
         title: "Kommentar"
