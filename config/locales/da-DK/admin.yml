@@ -470,6 +470,97 @@ da:
     valuators:
       summary:
         cost: Pris
+      form:
+        edit_title: "Evaluator: Rediger evaluator"
+        update: "Opdater evaluator"
+        updated: "Evaluator blev opdateret"
+      show:
+        description: "Beskrivelse"
+        email: "E-mail"
+        group: "Gruppe"
+        no_description: "Ingen beskrivelse"
+        no_group: "Ingen gruppe"
+    valuator_groups:
+      index:
+        title: "Vurderingsgrupper"
+        new: "Opret vurderingsgruppe"
+        name: "Navn"
+        members: "Medlemmer"
+        no_groups: "Der er ingen vurderingsgrupper"
+      show:
+        title: "Vurderingsgruppe: %{group}"
+        no_valuators: "Der er ingen evaluatorer tilføjet til denne gruppe"
+      form:
+        name: "Gruppenavn"
+        new: "Opret vurderingsgruppe"
+        edit: "Gem vurderingsgruppe"
+    poll_officers:
+      officer:
+        add: Tilføj
+        delete: Slet position
+        name: Navn
+        email: E-mail
+      search:
+        email_placeholder: Søg bruger via e-mail
+        search: Søg
+        user_not_found: Brugeren blev ikke fundet
+    poll_officer_assignments:
+      index:
+        table_name: "Navn"
+        table_email: "E-mail"
+      by_officer:
+        date: "Dato"
+    poll_booth_assignments:
+      show:
+        results: "Resultater"
+        date: "Dato"
+      index:
+        table_name: "Navn"
+        table_location: "Lokation"
+    active_polls:
+      form:
+        description:
+          text: "Beskrivelse"
+    polls:
+      index:
+        create: "Opret afstemning"
+        name: "Navn"
+        dates: "Datoer"
+        start_date: "Startdato"
+        closing_date: "Slutdato"
+        geozone_restricted: "Kun distrikter"
+      new:
+        title: "Ny afstemning"
+        show_results_and_stats: "Vis resultater og statistik"
+        show_results: "Vis resultater"
+        show_stats: "Vis statistik"
+        results_and_stats_reminder: "Ved markering af disse afkrydsningsfelter vil resultaterne og/eller statistikkerne relateret til denne afstemning blive publicere, t og alle brugere vil kunne se dem."
+        submit_button: "Opret afstemning"
+      edit:
+        title: "Rediger afstemning"
+        submit_button: "Opdater afstemning"
+      show:
+        questions_tab: Spørgsmål
+        booths_tab: Stemmebokse
+        recounts_tab: Omtælling
+        results_tab: Resultater
+        no_questions: "Der er ingen spørgsmål til denne afstemning."
+        questions_title: "Spørgsmål"
+        table_title: "Titel"
+      flash:
+        question_added: "Spørgsmål til denne afstemning"
+        error_on_question_added: "Spørgsmålet kunne ikke stilles til denne afstemning"
+    questions:
+      index:
+        title: "Spørgsmål"
+        create: "Stil spørgsmål"
+        no_questions: "Der er ingen spørgsmål."
+        select_poll: Vælg afstemning
+        questions_tab: "Spørgsmål"
+        create_question: "Stil spørgsmål"
+        table_proposal: "Borgerforslag"
+        table_question: "Spørgsmål"
+        table_poll: "Afstemning"
     answers:
       new:
         title: Nyt svar
@@ -499,6 +590,27 @@ da:
     results:
       index:
         title: "Resultater"
+    booths:
+      index:
+        title: "Liste over aktive stemmebokse"
+        no_booths: "Der er ingen aktive stemmebokse til kommende afstemninger."
+        add_booth: "Tilføj stemmeboks"
+        name: "Navn"
+        location: "Lokation"
+        no_location: "Ingen lokation"
+      new:
+        title: "Ny stemmeboks"
+        name: "Navn"
+        location: "Lokation"
+        submit_button: "Opret stemmeboks"
+      edit:
+        title: "Rediger stemmeboks"
+        submit_button: "Opdater stemmeboks"
+      show:
+        location: "Lokation"
+      booth:
+        shifts: "Adiministrere arbejdsfordeling"
+        edit: "Rediger stemmeboks"
     spending_proposals:
       show:
         back: Tilbage
