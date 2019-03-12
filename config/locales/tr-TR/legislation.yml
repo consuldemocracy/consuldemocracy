@@ -118,3 +118,6 @@ tr:
         debate_phase_not_open: Tartışma aşaması bitti ve cevaplar artık kabul edilmiyor
     shared:
       share: Paylaş
+    proposals:
+      form:
+        tags_label: "Kategoriler"
