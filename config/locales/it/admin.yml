@@ -113,6 +113,8 @@ it:
         recalculate: Ricalcolare Investimenti Vincitori
     budget_groups:
       name: "Nominativo"
+      headings_name: "Intestazione"
+      headings_edit: "Modificare intestazioni"
       max_votable_headings: "Numero massimo di voci che un utente può votare"
       form:
         edit: "Modifica gruppo"
@@ -370,6 +372,7 @@ it:
           description_placeholder: Aggiungi una descrizione del procedimento
           additional_info_placeholder: Aggiungi ulteriori informazioni che ritieni utili
           homepage: Descrizione
+          color_help: Formato esadecimale
         index:
           create: Nuovo procedimento
           delete: Eliminare
