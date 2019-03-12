@@ -49,5 +49,58 @@ tr:
       header:
         additional_info: Ek bilgi
         description: Tanımlama
+        more_info: Daha fazla bilgi ve içerik
+      proposals:
+        empty_proposals: Hiç öneri yok
+        filters:
+          random: Rasgele
+          winners: Seçilmiş
+      debate:
+        empty_questions: Soru yok
+        participate: Tartışmaya katıl
+      index:
+        filter: Filtre
+        filters:
+          open: Açık işlemler
+          past: Geçmiş
+        no_open_processes: Açık işlemler bulunmuyor
+        no_past_processes: Geçmiş işlemler bulunmuyor
+        section_header:
+          icon_alt: Katılımcı mevzuat simgesi
+          title: Katılımcı mevzuat
+          help: Katılımcı mevzuat hakkında yardım
+        section_footer:
+          title: Katılımcı mevzuat hakkında yardım
+          description: Yeni yönetmeliklerin veya stratejilerin onaylanmasından önce tartışmalara ve işlemlere katılın. Fikriniz dikkate alınacaktır.
+      phase_not_open:
+        not_open: Bu aşama henüz açık değil
+      phase_empty:
+        empty: Henüz hiçbir şey yayınlanmadı
+      process:
+        see_latest_comments: Son yorumları gör
+        see_latest_comments_title: Bu işlemdeki yorum
       shared:
+        key_dates: Katılım aşamaları
+        homepage: Ana sayfa
+        debate_dates: Tartışma
+        draft_publication_date: Taslak yayın
         allegations_dates: Yorumlar
+        result_publication_date: Son sonuç yayını
+        milestones_date: Takip ediliyor
+        proposals_dates: Öneriler
+    questions:
+      comments:
+        comment_button: Cevabı yayınla
+        comments_title: Açık cevaplar
+        comments_closed: Kapalı aşama
+        form:
+          leave_comment: Cevabını bırak
+      question:
+        comments:
+          zero: Yorum yok
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+        debate: Tartışma
+      show:
+        answer_question: Cevabı gönder
+        next_question: Sonraki soru
