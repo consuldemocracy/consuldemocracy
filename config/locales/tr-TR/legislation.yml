@@ -19,7 +19,7 @@ tr:
         signup: Kaydol
       index:
         title: Yorumlar
-        comments_about: Hakkında yorumlar
+        comments_about: Yorumlar hakkında
         see_in_context: Bağlam içinde gör
         comments_count:
           one: "%{count} yorum"
