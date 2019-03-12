@@ -1344,26 +1344,42 @@ ar:
           unverified_users: مستخدمين غير متحقق منهم
           user_level_three: المستوى الثالث من المستخدمين
           user_level_two: المستوى الثني من المستخدمين
+          users: كل المستخدمين
           verified_users: مستخدمين تم التحقق منهم
+          visits: الزيارات
           votes: مجموع الأصوات
+        spending_proposals_title: مقترحات الانفاق
         budgets_title: الميزانية التشاركية
+        visits_title: الزيارات
+        direct_messages: الرسائل المباشرة
         proposal_notifications: إشعارات المقترح
+        incomplete_verifications: عملية التحقق غير مكتملة
         polls: استطلاعات
       direct_messages:
+        title: الرسائل المباشرة
         total: المجموع
+        users_who_have_sent_message: المستخدمين الذيت أرسلوا رسالة خاصة
       proposal_notifications:
         title: إشعارات المقترح
         total: المجموع
+        proposals_with_notifications: اقتراحات بإشعارات
+        not_available: "اقتراح غير متوفر"
       polls:
+        title: احصائيات الاستطلاع
         all: استطلاعات
         web_participants: المشاركون عبر ويب
+        total_participants: مجموع المشاركين
         table:
           poll_name: استطلاع
           question_name: سؤال
           origin_web: المشاركون عبر ويب
           origin_total: مجموع المشاركين
     tags:
+      create: إنشاء موضوع
+      destroy: حذف الموضوع
       index:
+        add_tag: إضافة موضوع اقتراح جديد
+        title: مواضيع المقترح
         topic: موضوع
       name:
         placeholder: اكتب اسم الموضوع
@@ -1390,10 +1406,21 @@ ar:
         about: "يمكنك إنشاء كتل محتوى HTML التي يمكن إدراجها في أماكن مختلفة من موقع الويب الخاص بك."
         html_format: "كتلة المحتوى هي مجموعة من الروابط، ويجب أن يكون لها التنسيق التالي:"
         no_blocks: "ليس هناك كتل محتوى."
+        create:
+          notice: تم إنشاء كتلة المحتوى بنجاح
+          error: لا يمكن إنشاء كتلة المحتوى
+        update:
+          notice: تم تحديث كتلة المحتوى بنجاح
+          error: لا يمكن تحديث كتلة المحتوى
+        destroy:
+          notice: تم حذف كتلة المحتوى بنجاح
+        edit:
+          title: تحرير كتلة المحتوى
         errors:
           form:
             error: خطأ
         index:
+          create: إنشاء كتلة محتوى جديدة
           delete: حذف الكتلة
           title: كتل المحتوى
         new:
