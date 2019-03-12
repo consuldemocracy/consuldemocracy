@@ -1,12 +1,22 @@
 tr:
   mailers:
+    no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
     comment:
-      hi: Selam
+      hi: Merhaba
+      new_comment_by_html: Orada <b>%{commenter}</b>'den bir yorum var
+      subject: Birisi sizin %{commentable} hakkında yorum yaptı
       title: Yeni yorum
+    config:
+      manage_email_subscriptions: Bu e-postaları almayı durdurmak için ayarlarınızı değiştirin
     email_verification:
       click_here_to_verify: bu bağlantı
+      instructions_2_html: Bu e-posta hesabınızı <b>%{document_type} %{document_number}</b> ile doğrulayacaktır. Bunlar size ait değilse, lütfen önceki bağlantıya tıklamayın ve bu e-postayı dikkate almayın.
+      instructions_html: Kullanıcı hesabınızın doğrulamasını tamamlamak için %{verification_link}'e tıklamanız gerekir.
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
       title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
     reply:
       hi: Merhaba
+    unfeasible_spending_proposal:
+      hi: "Sevgili kullanıcı,"
+      new_href: "yeni yatırım projesi"
