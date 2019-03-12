@@ -17,6 +17,10 @@ tr:
       title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
     reply:
       hi: Merhaba
+      new_reply_by_html: Sizin yorumunuza <b>%{commenter}</b>'dan yeni bir yanıt var
+      subject: Birisi sizin yorumunuza cevap verdi
+      title: Sizin yorumunuza yeni cevap
     unfeasible_spending_proposal:
       hi: "Sevgili kullanıcı,"
+      new_html: "Tüm bunlar için, sizi bu işlemin koşullarına uyan bir <strong>yeni teklif</strong> hazırlamaya davet ediyoruz. Bu bağlantıyı takip ederek yapabilirsiniz:%{url}."
       new_href: "yeni yatırım projesi"
