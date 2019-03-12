@@ -584,6 +584,13 @@ da:
       search:
         title: 'Evaluatorer: Søg bruger'
       summary:
+        title: Vurderingsresumé for investeringsprojekter
+        valuator_name: Evaluator
+        finished_and_feasible_count: Færdiggjort og kan gennemføres
+        finished_and_unfeasible_count: Færdiggjort og kan ikke gennemføres
+        finished_count: Færdiggjort
+        in_evaluation_count: I evaluering
+        total_count: Total
         cost: Pris
       form:
         edit_title: "Evaluator: Rediger evaluator"
@@ -610,21 +617,31 @@ da:
         new: "Opret vurderingsgruppe"
         edit: "Gem vurderingsgruppe"
     poll_officers:
+      index:
+        title: Ansvarlige medarbejdere for afstemning
       officer:
         add: Tilføj
         delete: Slet position
         name: Navn
         email: E-mail
+        entry_name: ansvarlig medarbejder
       search:
         email_placeholder: Søg bruger via e-mail
         search: Søg
         user_not_found: Brugeren blev ikke fundet
     poll_officer_assignments:
       index:
+        officers_title: "Liste over ansvarlige medarbejdere"
+        no_officers: "Der er ingen ansvarlig medarbejder tilknyttet denne afstemning."
         table_name: "Navn"
         table_email: "E-mail"
       by_officer:
         date: "Dato"
+        booth: "Stemmeboks"
+    poll_shifts:
+      new:
+        add_shift: "Tilføj arbejdsplan"
+        shift: "Opgave"
     poll_booth_assignments:
       show:
         results: "Resultater"
