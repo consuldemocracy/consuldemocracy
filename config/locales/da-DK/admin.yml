@@ -335,11 +335,43 @@ da:
           questions: Debat
           proposals: Forslag
           milestones: Følger
-      draft_versions:
+      proposals:
+        index:
+          title: Titel
+          back: Tilbage
+          id: ID
+          supports: Samlet støtte
+          select: Vælg
+          selected: Valgt
         form:
+          custom_categories: Kategorier
+          custom_categories_description: Kategorier, som brugere kan vælge ved oprettelse af borgerforslag. Max 160 tegn pr. kategori.
+          custom_categories_placeholder: Tilføj de tags du gerne vil anvende og adskil dem med komma (,) og mellem citater ("")
+      draft_versions:
+        create:
+          notice: 'Udkastet blev oprettet. <a href="%{link}">Klik for at gå til</a>'
+          error: Udkastet kunne ikke oprettes
+        update:
+          notice: 'Udkastet blev opdateret. <a href="%{link}">Klik for at gå til</a>'
+          error: Udkastet kunne ikke opdateres
+        destroy:
+          notice: Udkastet blev slettet
+        edit:
+          back: Tilbage
+          submit_button: Gem ændringer
+          warning: Du har redigeret teksten, husk at klikke på Gem for at gemme dine ændringer.
+        errors:
+          form:
+            error: Fejl
+        form:
+          title_html: 'Rediger <span class="strong">%{draft_version_title}</span> fra processen <span class="strong">%{process_title}</span>'
+          launch_text_editor: Start tekstredigering
           close_text_editor: Luk tekstredigeringsenhed
+          use_markdown: Anvend Markdown til at formatere teksten
           hints:
+            final_version: Denne version vil blive offentliggjort som det endelige resultat af denne proces. Kommentarer vil ikke være tilladte i denne version.
             status:
+              draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
               published: Synlig for alle
         index:
           delete: Slet
