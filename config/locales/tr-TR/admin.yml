@@ -1048,6 +1048,9 @@ tr:
       index:
         title: "Yeniden Sayma"
         no_recounts: "Yeniden sayılan bir şey yok"
+        all_booths_total: "Tüm kabinlerden kümülatif toplam:"
+        total_final: "Son sayılar"
+        total_system: "Oylar (otomatik)"
         table_booth_name: "Kabin"
         table_total_recount: "Toplam yeniden sayım (memur tarafından)"
         table_system_count: "Oylar (otomatik)"
