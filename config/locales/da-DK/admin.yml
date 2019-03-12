@@ -439,6 +439,7 @@ da:
           debates: "Debatindlæg"
           community: "Fællesskab"
           proposals: "Borgerforslag"
+          polls: "Afstemninger"
           layouts: "Layout"
           mailers: "E-mails"
           management: "Management"
@@ -449,9 +450,11 @@ da:
             update: "Opdater blokering"
       title_moderated_content: Modereret indhold
       title_budgets: Budgetter
+      title_polls: Afstemninger
       title_profiles: Profiler
       title_settings: Indstillinger
       title_site_customization: Sidens indhold
+      title_booths: Stemmebokse
       users: Brugere
     administrators:
       index:
@@ -480,6 +483,7 @@ da:
     segment_recipient:
       all_users: Alle brugere
       administrators: Administratorer
+      not_supported_on_current_budget: Brugere, der ikke har støttet op om investeringer i det nuværende budget
     admin_notifications:
       delete_success: Meddelelsen blev slettet
       index:
