@@ -709,3 +709,39 @@ da:
         back: Gå tilbage
       new:
         back: Gå tilbage
+    stats:
+      show:
+        stats_title: Statistikker
+        summary:
+          comments: Kommentarer
+    site_customization:
+      images:
+        index:
+          update: Opdater
+          delete: Slet
+          image: Billede
+        update:
+          notice: Billedet blev opdateret
+          error: Billedet kunne ikke opdateres
+        destroy:
+          notice: Billedet blev slettet
+          error: Billedet kunne ikke slettes
+      pages:
+        create:
+          notice: Siden blev oprettet
+        index:
+          delete: Slet side
+          see_page: Vis side
+        page:
+          created_at: Oprettet den
+          status: Status
+          updated_at: Opdateret den
+          status_published: Offentliggjort
+          title: Titel
+        cards:
+          title: Titel
+          description: Beskrivelse
+          link_text: Link tekst
+          link_url: Link URL
+    homepage:
+      title: Startside
