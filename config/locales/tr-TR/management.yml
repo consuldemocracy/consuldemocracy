@@ -51,6 +51,10 @@ tr:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
       choose_options: 'Lütfen aşağıdaki seçeneklerden birini seçin:'
       document_found_in_census: Bu belge sayımda bulundu, ancak bunla alakalı bir kullanıcı hesabı yok.
+      document_mismatch: 'Bu e-posta adresi, zaten bir ilişkilendirilmiş kimliği olan bir kullanıcıya aittir: %{document_number}(%{document_type})'
+      email_placeholder: Bu kişinin hesabını oluşturmak için kullandığı e-postayı yazın
+      email_sent_instructions: Bu kullanıcıyı tamamen doğrulamak için, kullanıcının yukarıdaki e-posta adresine gönderdiğimiz bir bağlantıyı tıklaması gerekir. Bu adım adresin kendisine ait olduğunu doğrulamak için gereklidir.
+      if_existing_account: Kişinin web sitesinde zaten oluşturulmuş bir kullanıcı hesabı varsa,
       if_no_existing_account: Eğer bu kişi henüz bir hesap oluşturmadıysa
       introduce_email: 'Lütfen hesapta kullanılan e-postayı tanıtın:'
       send_email: Doğrulama e-postası gönder
@@ -69,10 +73,13 @@ tr:
       select_user: Kullanıcı seç
     permissions:
       create_proposals: Öneriler oluştur
+      debates: Tartışmalarla uğraşın
       support_proposals: Önerileri destekle
       vote_proposals: Önerileri oyla
     print:
+      proposals_info: http://url.consul'da önerinizi oluşturun
       proposals_title: 'Öneriler:'
+      spending_proposals_info: http://url.consul'de katılın
     print_info: Bu bilgiyi yazdır
     proposals:
       alert:
@@ -89,19 +96,33 @@ tr:
       table_name: İsim
       table_phase: Aşama
       table_actions: Aksiyon
+      no_budgets: Aktif bir katılımcı bütçeler yok.
     budget_investments:
       alert:
         unverified_user: Kullanıcı doğrulanmadı
       create: Bir bütçe yatırımı oluştur
+      filters:
+        heading: Konsept
+        unfeasible: Uygulanamaz yatırım
       print:
         print_button: Yazdır
     spending_proposals:
       alert:
         unverified_user: Kullanıcı doğrulanmadı
+      create: Harcama önerisi oluştur
+      filters:
+        unfeasible: Uygulanamaz yatırım projeleri
+        by_geozone: "Kapsam ile yatırım projeleri: %{geozone}"
       print:
         print_button: Yazdır
+    sessions:
+      signed_out: Başarılı bir şekilde çıkış yaptınız.
+      signed_out_managed_user: Kullanıcı oturumu başarıyla kapatıldı.
     username_label: Kullanıcı adı
     users:
+      create_user: Yeni bir hesap oluştur
+      create_user_info: Aşağıdaki verilerle bir hesap oluşturacağız
+      create_user_submit: Kullanıcı oluştur
       email_optional_label: E-posta (isteğe bağlı)
       erased_notice: Kullanıcı hesabı silindi.
       erased_by_manager: "Yönetici tarafından silindi: %{manager}"
