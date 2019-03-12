@@ -95,8 +95,7 @@ feature "Welcome screen" do
     login_through_form_as(user)
 
     4.times do |i|
-      expect(page).to have_css ".user-permissions > ul:nth-child(2) >
-                                li:nth-child(#{i + 1}) > span:nth-child(1)"
+      expect(page).to have_css "li:nth-child(#{i + 1})"
     end
 
     Setting["feature.user.skip_verification"] = nil
