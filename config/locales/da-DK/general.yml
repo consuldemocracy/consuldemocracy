@@ -197,6 +197,14 @@ da:
       read: Læs
       title: Notifikationer
       unread: Ulæst
+    notification:
+      action:
+        replies_to:
+          one: Nogen svarede på din kommentar til
+          other: Der er %{count} nye svar til din kommentar til
+      mark_as_unread: Marker som ulæst
+  map:
+    title: "Distrikter"
   proposals:
     form:
       proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
