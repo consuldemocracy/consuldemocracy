@@ -1,1 +1,8 @@
 tr:
+  mailers:
+    comment:
+      hi: Selam
+      title: Yeni yorum
+    email_verification:
+      click_here_to_verify: bu bağlantı
+      subject: E-postanızı onaylayın
