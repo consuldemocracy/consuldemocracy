@@ -53,7 +53,7 @@ tr:
       proposals:
         empty_proposals: Hiç öneri yok
         filters:
-          random: Rasgele
+          random: Rastgele
           winners: Seçilmiş
       debate:
         empty_questions: Hiç soru yok
