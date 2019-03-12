@@ -617,7 +617,76 @@ da:
       level_3: Niveau 3
       level_4: Niveau 4
       level_5: Niveau 5
+    organizations:
+      index:
+        hidden_count_html:
+          one: Der er også <strong>en organisation</strong> uden brugere eller med skjulte brugere.
+          other: Der er også <strong>%{count} organisationer</strong> uden brugere eller med skjulte brugere.
+        name: Navn
+        email: E-mail
+        phone_number: Telefon
+        responsible_name: Ansvarlig
+        status: Status
+        no_organizations: Der er ingen organisationer.
+        reject: Afvis
+        rejected: Afvist
+        search: Søg
+        search_placeholder: Navn, e-mail eller telefonnummer
+    settings:
+      index:
+        map:
+          form:
+            submit: Opdater
+      setting_actions: Handlinger
+      setting_name: Indstillinger
+      setting_status: Status
+      setting_value: Værdi
+      no_description: "Ingen beskrivelse"
+    shared:
+      true_value: "Ja"
+      false_value: "Nej"
+      booths_search:
+        button: Søg
+        placeholder: Søg stemmeboks vis navn
+      poll_officers_search:
+        button: Søg
+      poll_questions_search:
+        button: Søg
+        placeholder: Søg spørgsmål til afstemning
+      proposal_search:
+        button: Søg
+        placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
+      spending_proposal_search:
+        button: Søg
+      user_search:
+        button: Søg
+        placeholder: Søg bruger vis navn eller e-mail
+      search_results: "Søgningsresultater"
+      no_search_results: "Ingen resultater fundet."
+      actions: Handlinger
+      title: Titel
+      description: Beskrivelser
+      image: Billede
+      show_image: Vis billede
+      view: Se
+      proposal: Borgerforslag
+      content: Indhold
+      created_at: Oprettet den
+      delete: Slet
     spending_proposals:
+      index:
+        geozone_filter_all: Alle zoner
+        administrator_filter_all: Alle administratorer
+        valuator_filter_all: Alle evaluatorer
+        tags_filter_all: Alle tags
+        filters:
+          valuation_open: Åben
+          without_admin: Ingen tildelt administrator
+          valuating: Under vurdering
+          valuation_finished: Vurderingen færdig
+          all: Alle
+        title: Investeringsprojekter for deltagerbudgettet
+        assigned_admin: Tilknyttet administrator
       show:
         back: Tilbage
         classification: Klassificering
