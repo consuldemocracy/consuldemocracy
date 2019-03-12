@@ -19,8 +19,44 @@ tr:
           random: Rastgele şifre oluştur
           save: Şifreyi kaydet
           print: Şifreyi yazdır
+          print_help: Şifreyi kaydedildiğinde yazdırabilirsiniz.
+    account_info:
+      change_user: Kullanıcı değiştir
+      document_number_label: 'Belge numarası:'
+      document_type_label: 'Belge türü:'
+      email_label: 'E-posta:'
+      identified_label: 'Olarak tanımlandı:'
+      username_label: 'Kullanıcı adı:'
+    check: Belgeyi kontrol et
+    dashboard:
+      index:
+        title: Yönetim
+        info: Burada, kullanıcıları sol menüde listelenen tüm eylemlerle yönetebilirsiniz.
+    document_number: Belge numarası
     document_type_label: Belge Türü
+    document_verifications:
+      already_verified: Bu kullanıcı hesabı zaten doğrulandı.
+      link: CONSUL
+      in_census_has_following_permissions: 'Bu kullanıcı aşağıdaki izinlerle web sitesiye katılabilir:'
+      not_in_census: Bu belge kayıtlı değil.
+      not_in_census_info: 'Census''ta bulunmayan vatandaşlar web sitesiye aşağıdaki izinlerle katılabilir:'
+      please_check_account_data: Lütfen yukarıdaki hesap verilerinin doğruluğunu kontrol edin.
+      title: Kullanıcı yönetimi
+      under_age: "Hesabınızı doğrulamak için gereken yaşta değilsiniz."
+      verify: Doğrula
     email_label: E-posta
     date_of_birth: Doğum tarihi
+    email_verifications:
+      already_verified: Bu kullanıcı hesabı zaten doğrulandı.
+      choose_options: 'Lütfen aşağıdaki seçeneklerden birini seçin:'
+      document_found_in_census: Bu belge sayımda bulundu, ancak bunla alakalı bir kullanıcı hesabı yok.
+      send_email: Doğrulama e-postası gönder
+    menu:
+      create_proposal: Öneri oluştur
+      print_proposals: Önerileri yazdır
+      support_proposals: Önerileri destekle
+      create_spending_proposal: Harcama önerisi oluştur
+      print_spending_proposals: Harcama önerilerini yazdır
+      support_spending_proposals: Harcama önerilerini destekle
     budgets:
       table_actions: Aksiyon
