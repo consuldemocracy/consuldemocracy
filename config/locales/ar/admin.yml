@@ -783,6 +783,22 @@ ar:
         description: "ترسل إلى الكاتب عندما يتلقى تعليق."
       reply:
         title: "الرد"
+        description: "ترسل إلى كاتب التعليق عندما يتلقى ردا."
+      direct_message_for_receiver:
+        title: "مستقبل الرسالة الخاصة"
+        description: "ترسل إلى مستقبل الرسالة الخاصة."
+      direct_message_for_sender:
+        title: "مرسل الرسالة الخاصة"
+        description: "ترسل إلى مرسل الرسالة الخاصة."
+      email_verification:
+        title: "التحقق من البريد الالكتروني"
+        description: "ترسل إلى مستخدم جديد للتحقق من حسابه."
+      user_invite:
+        title: "دعوة المستخدم"
+        description: "ترسل إلى من تمت دعوته لتسجيل حساب."
+      edit_info: "يمكنك تعديل هذا البريد الإلكتروني في"
+      message_title: "عنوان الرسالة"
+      message_body: "هذه عينة محتوى الرسالة."
     emails_download:
       index:
         title: تنزيل رسائل البريد الإلكتروني
@@ -886,6 +902,7 @@ ar:
       flash:
         create: "تمت إضافة المناوبة"
         destroy: "تمت إزالة المناوبة"
+        unable_to_destroy: "لا يمكن حذف التحولات ذات نتائج أو عمليات إعادة حساب مرتبطة"
         date_missing: "يجب تحديد تاريخ"
       vote_collection: جمع الاصوات
       recount_scrutiny: إعادة الفرز والتدقيق
