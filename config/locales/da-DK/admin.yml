@@ -611,6 +611,12 @@ da:
       booth:
         shifts: "Adiministrere arbejdsfordeling"
         edit: "Rediger stemmeboks"
+    officials:
+      level_1: Niavue 1
+      level_2: Niveau 2
+      level_3: Niveau 3
+      level_4: Niveau 4
+      level_5: Niveau 5
     spending_proposals:
       show:
         back: Tilbage
