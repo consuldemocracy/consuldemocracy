@@ -7,3 +7,6 @@ tr:
       click_here_to_verify: bu bağlantı
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
+      title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
+    reply:
+      hi: Merhaba
