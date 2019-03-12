@@ -247,17 +247,23 @@ da:
         filter: Filtrere
         filters:
           all: Alle
+          without_confirmed_hide: Under behandling
+        title: Skjulte debatindlæg
+        no_hidden_debates: Der er ingen skjulte debatindlæg.
     hidden_users:
       index:
         filter: Filtrere
         filters:
           all: Alle
           with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
         title: Skjulte brugere
         user: Bruger
         no_hidden_users: Der er ingen skjulte brugere.
       show:
         email: 'E-mail:'
+        hidden_at: 'Skjult den:'
+        registered_at: 'Registreret den:'
         title: Brugeraktivitet (%{user})
     hidden_budget_investments:
       index:
@@ -265,10 +271,19 @@ da:
         filters:
           all: Alle
           with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
         title: Skjulte budgetinvesteringer
         no_hidden_budget_investments: Der er ingen skjulte budgetinvesteringer
     legislation:
       processes:
+        create:
+          notice: 'Processen blev oprettet. <a href="%{link}">Klik for at gå til</a>'
+          error: Processen kunne ikke oprettes
+        update:
+          notice: 'Processen blev opdateret. <a href="%{link}">Klik for at gå til</a>'
+          error: Processen kunne ikke opdateres
+        destroy:
+          notice: Processen blev slettet
         edit:
           back: Tilbage
           submit_button: Gem ændringer
@@ -279,12 +294,17 @@ da:
           enabled: Aktiveret
           process: Proces
           debate_phase: Debatfase
+          draft_phase: Udkast fasen
+          use_markdown: Anvend Markdown til at formatere teksten
           title_placeholder: Titel på proces
           summary_placeholder: Kort resumé af beskrivelsen
           description_placeholder: Tilføj en beskrivelse af processen
           additional_info_placeholder: Tilføj supplerende brugbar information
           homepage: Beskrivelse
           homepage_description: Her kan du forklare processens indhold
+          homepage_enabled: Startside aktiveret
+          banner_title: Farve på overskrift
+          color_help: Hexadecimalt format
         index:
           create: Ny proces
           delete: Slet
@@ -299,6 +319,7 @@ da:
           orders:
             id: Id
             title: Titel
+            supports: Samlet støtte
         process:
           title: Proces
           comments: Kommentarer
@@ -307,6 +328,7 @@ da:
           end_date: Slutdato
           status_open: Åben
           status_closed: Lukket
+          status_planned: Planlagt
         subnav:
           info: Information
           homepage: Startside
