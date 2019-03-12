@@ -27,24 +27,53 @@ tr:
         block_authors: Yazarları engelle
         confirm: Emin misiniz?
         filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
         headers:
           debate: Tartışma
         hide_debates: Tartışmaları gizle
+        ignore_flags: Görüldü olarak işaretle
+        orders:
+          created_at: En yeni
+          flags: En çok işaretlenen
+        title: Tartışmalar
+    header:
+      title: Moderasyon
     menu:
       flagged_comments: Yorumlar
+      flagged_debates: Tartışmalar
       flagged_investments: Bütçe yatırımları
       proposals: Öneriler
       proposal_notifications: Öneri bildirimleri
       users: Kullanıcıları engelle
     proposals:
       index:
+        block_authors: Yazarları engelle
         confirm: Emin misiniz?
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_ignored_flag: Görüldü olarak işaretle
+        headers:
+          proposal: Öneri
+        hide_proposals: Önerileri gizle
+        ignore_flags: Görüldü olarak işaretle
     budget_investments:
       index:
         confirm: Emin misiniz?
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
+        ignore_flags: Görüldü olarak işaretle
     proposal_notifications:
       index:
         confirm: Emin misiniz?
+        filters:
+          ignored: Görüldü olarak işaretle
+        ignore_flags: Görüldü olarak işaretle
     users:
       index:
         hidden: Engellendi
