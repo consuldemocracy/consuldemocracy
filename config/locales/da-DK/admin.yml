@@ -484,7 +484,45 @@ da:
       all_users: Alle brugere
       administrators: Administratorer
       not_supported_on_current_budget: Brugere, der ikke har støttet op om investeringer i det nuværende budget
+      invalid_recipients_segment: "Modtagersegmentet er ugyldigt"
+    newsletters:
+      create_success: Nyhedsbrevet blev oprettet
+      update_success: Nyhedsbrevet blev opdateret
+      send_success: Nyhedsbrevet blev sendt
+      delete_success: Nyhedsbrevet blev slettet
+      index:
+        title: Nyhedsbreve
+        new_newsletter: Nyt nyhedsbrev
+        subject: Emne
+        segment_recipient: Modtagere
+        sent: Sendt
+        actions: Handlinger
+        draft: Udkast
+        edit: Rediger
+        delete: Slet
+        preview: Forhåndsvisning
+        empty_newsletters: Der er ingen nyhedsbreve at vise
+      new:
+        title: Nyt nyhedsbrev
+        from: E-mail adresse, som vil stå som afsender af nyhedsbrevet
+      edit:
+        title: Rediger nyhedsbrev
+      show:
+        title: Forhåndsvisning af nyhedsbrev
+        send: Send
+        affected_users: (%{n} involverede brugere)
+        sent_emails:
+          one: 1 e-mail sendt
+          other: "%{count} e-mails sendt"
+        sent_at: Sendt den
+        subject: Emne
+        segment_recipient: Modtagere
+        from: E-mail adresse, som vil stå som afsender af nyhedsbrevet
+        body: Indhold af e-mail
+        body_help_text: Sådan vil e-mailen se ud for modtagerne
+        send_alert: Er du sikker på, du vil sende nyhedsbrevet til %{n} brugere?
     admin_notifications:
+      create_success: Notifikation oprettet
       delete_success: Meddelelsen blev slettet
       index:
         section_title: Notifikationer
@@ -536,6 +574,15 @@ da:
         title: "Bruger invitation"
       message_title: "Meddelelses titel"
     valuators:
+      index:
+        valuator_groups: "Vurderingsgrupper"
+        group: "Gruppe"
+        no_group: "Ingen gruppe"
+      valuator:
+        add: Føj til evaluatorer
+        delete: Slet
+      search:
+        title: 'Evaluatorer: Søg bruger'
       summary:
         cost: Pris
       form:
