@@ -1330,14 +1330,20 @@ ar:
         documents: وثائق
         document_count: "عدد الوثائق:"
         unverified_error: (لم يتم التحقق من قبل التعداد)
+        loading: "لا تزال هناك تواقيع يتم التحقق منها بواسطة التعداد ، يرجى تحديث الصفحة بعد لحظات"
     stats:
       show:
+        stats_title: الإحصائيات
         summary:
           comments: تعليقات
           debates: النقاشات
           proposals: إقتراحات
+          budgets: الميزانيات المفتوحة
           budget_investments: مشاريع استثمارية
+          spending_proposals: مقترحات الانفاق
           unverified_users: مستخدمين غير متحقق منهم
+          user_level_three: المستوى الثالث من المستخدمين
+          user_level_two: المستوى الثني من المستخدمين
           verified_users: مستخدمين تم التحقق منهم
           votes: مجموع الأصوات
         budgets_title: الميزانية التشاركية
