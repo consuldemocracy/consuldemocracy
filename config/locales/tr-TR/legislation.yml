@@ -118,6 +118,8 @@ tr:
         debate_phase_not_open: Tartışma aşaması bitti ve cevaplar artık kabul edilmiyor
     shared:
       share: Paylaş
+      share_comment: İşlem taslağından %{process_name} %{version_name} yorum
     proposals:
       form:
         tags_label: "Kategoriler"
+      not_verified: "Önerileri oylamak için %{verify_account}."
