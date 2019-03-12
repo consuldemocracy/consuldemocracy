@@ -329,6 +329,72 @@ da:
           comments: Kommentarer
           final_version: Den endelige version
           status: Status
+      questions:
+        create:
+          notice: 'Spørgsmålet blev stillet. <a href="%{link}">Klik for at gå til</a>'
+          error: Spørgsmålet kunne ikke stilles
+        update:
+          notice: 'Spørgsmålet blev opdateret. <a href="%{link}">Klik for at gå til</a>'
+          error: Spørgsmålet kunne ikke opdateres
+        destroy:
+          notice: Spørgsmålet blev slettet
+        edit:
+          back: Tilbage
+          title: "Rediger \"%{question_title}\""
+          submit_button: Gem ændringer
+        errors:
+          form:
+            error: Fejl
+        form:
+          add_option: Tilføj valgmulighed
+          title: Spørgsmål
+          title_placeholder: Tilføj et spørgsmål
+        index:
+          back: Tilbage
+          title: Spørgsmål relateret til denne proces
+          create: Stil et spørgsmål
+          delete: Slet
+        new:
+          back: Tilbage
+          title: Stil et nyt spørgsmål
+          submit_button: Stil et spørgsmål
+        table:
+          title: Titel
+          question_options: Valgmuligheder
+        question_option_fields:
+          remove_option: Fjern valgmulighed
+    managers:
+      index:
+        title: Managers
+    menu:
+      organizations: Organisationer
+      settings: Globale indstillinger
+      stats: Statistikker
+      site_customization:
+        homepage: Startside
+        information_texts_menu:
+          debates: "Debatindlæg"
+          proposals: "Borgerforslag"
+          layouts: "Layout"
+          mailers: "E-mails"
+          management: "Management"
+          welcome: "Velkommen"
+        buttons:
+          save: "Gem"
+          content_block:
+            update: "Opdater blokering"
+      title_moderated_content: Modereret indhold
+      title_budgets: Budgetter
+      title_profiles: Profiler
+      title_settings: Indstillinger
+      title_site_customization: Sidens indhold
+      users: Brugere
+    administrators:
+      index:
+        title: Administratorer
+        name: Navn
+        email: E-mail
+        id: Administrator ID
     system_emails:
       comment:
         title: "Kommentar"
