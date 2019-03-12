@@ -395,16 +395,81 @@ da:
         name: Navn
         email: E-mail
         id: Administrator ID
+        no_administrators: Der er ingen administratorer.
+      administrator:
+        add: Tilføj
+        delete: Slet
+        restricted_removal: "Beklager, men du kan ikke fjerne dig selv som administrator"
+      search:
+        title: "Administratorer: Søg brugere"
+    moderators:
+      index:
+        title: Moderatorer
+        name: Navn
+        email: E-mail
+        no_moderators: Der er ingen moderatorer.
+      moderator:
+        add: Tilføj
+        delete: Slet
+      search:
+        title: 'Moderatorer: Søg brugere'
+    segment_recipient:
+      all_users: Alle brugere
+      administrators: Administratorer
+    admin_notifications:
+      delete_success: Meddelelsen blev slettet
+      index:
+        section_title: Notifikationer
+        new_notification: Ny meddelelse
+        title: Titel
+        segment_recipient: Modtagere
+        sent: Sendt
+        actions: Handlinger
+        edit: Rediger
+        delete: Slet
+        view: Se
+        empty_notifications: Der er ingen notifikationer at vise
+      new:
+        section_title: Ny meddelelse
+        submit_button: Opret meddelelse
+      edit:
+        section_title: Rediger meddelelse
+        submit_button: Opdater meddelelse
+      show:
+        send: Send meddelelse
+        will_get_notified: (%{n} brugere vil blive underrettet)
+        got_notified: (%{n} brugere blev underrettet)
+        sent_at: Sendt som
+        title: Titel
+        body: Tekst
+        link: Link
+        segment_recipient: Modtagere
+        preview_guide: "Sådan vil meddelelsen se ud for modtagerne:"
+        sent_guide: "Sådan vil meddelelsen se ud for modtagerne:"
+        send_alert: Er du sikker på, du vil sende meddelelsen til %{n} brugere?
     system_emails:
+      budget_investment_created:
+        title: "Budgetinvestering oprettet"
+        description: "Sendt når en bruger opretter en budgetinvestering."
+      budget_investment_selected:
+        title: "Budgetinvestering valgt"
+      budget_investment_unfeasible:
+        title: "Budgetinvesteringen kan ikke gennemføres"
       comment:
         title: "Kommentar"
       reply:
         title: "Svar"
+      direct_message_for_receiver:
+        title: "Private beskeder"
+        description: "Send privat besked."
       email_verification:
         title: "Bekræftelse af e-mail"
       user_invite:
         title: "Bruger invitation"
       message_title: "Meddelelses titel"
+    valuators:
+      summary:
+        cost: Pris
     answers:
       new:
         title: Nyt svar
