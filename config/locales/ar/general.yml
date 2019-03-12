@@ -3,9 +3,16 @@ ar:
     show:
       change_credentials_link: تغيير بيانات الاعتماد الخاصة بي
       email_on_comment_label: أبلغني عن طريق البريد الإلكتروني عندما شخص التعليقات على المقترحات أو المناقشات
+      email_on_comment_reply_label: أبلغني عن طريق البريد الإلكتروني عندما يرد شخص ما على تعليقاتي
       erase_account_link: مسح حسابي
+      finish_verification: عملية التحقق مكتملة
       notifications: إشعارات
+      organization_name_label: اسم المنظمة
+      organization_responsible_name_placeholder: ممثل المنظمة/الوحدة
+      personal: البيانات الشخصية
       phone_number_label: رقم الهاتف
+      public_activity_label: أترك قائمة الأنشطة الخاصة بي عامة
+      public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
       email_digest_label: استلام ملخص عن إشعارات مقترح
