@@ -71,7 +71,7 @@ da:
       index:
         title: Deltagerbudgetter
         new_link: Opret nyt budget
-        filter: Filtre
+        filter: Filtrere
         filters:
           open: Åben
           finished: Færdig
@@ -151,6 +151,8 @@ da:
           undecided: Ikke besluttet
           unfeasible: Uigennemførlig
           winners: Vindere
+        buttons:
+          filter: Filtrere
         feasibility:
           undecided: "Ikke besluttet"
         selected: "Valgt"
@@ -190,7 +192,10 @@ da:
         no_image: "Uden billede"
         documents: "Dokumenter"
         see_documents: "Se dokumenter (%{count})"
+        no_documents: "Uden dokumenter"
+        valuator_groups: "Vurderingsgrupper"
       edit:
+        classification: Klassificering
         submit_button: Opdater
         tags: Tags
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
@@ -208,6 +213,7 @@ da:
         documents: "Dokumenter"
     statuses:
       index:
+        table_name: Navn
         table_description: Beskrivelse
         table_actions: Handlinger
         delete: Slet
@@ -217,6 +223,32 @@ da:
         table_id: "ID"
         table_kind: "Type"
         table_title: "Titel"
+    comments:
+      index:
+        filter: Filtrer
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+        hidden_debate: Skjulte debatindlæg
+        hidden_proposal: Skjulte forslag
+        title: Skjulte kommentarer
+        no_hidden_comments: Der er ingen skjulte kommentarer.
+    dashboard:
+      index:
+        back: Gå tilbage til %{org}
+        title: Administration
+        description: Velkommen til %{org} administrations panelet.
+    debates:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+    hidden_users:
+      index:
+        filter: Filtrere
+    hidden_budget_investments:
+      index:
+        filter: Filtrere
     legislation:
       processes:
         edit:
