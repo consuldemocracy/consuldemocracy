@@ -44,6 +44,15 @@ ar:
         editing: تعديل لافتة
         form:
           submit_button: حفظ التغييرات
+      errors:
+        form:
+          error:
+            zero: "خطأ منع هاته اللافتة من الحفظ"
+            one: "خطأ منع هاته اللافتة من الحفظ"
+            two: "خطآن منعا هاته اللافتة من الحفظ"
+            few: "أخطاء منعت هاته اللافتة من الحفظ"
+            many: "أخطاء منعت هاته اللافتة من الحفظ"
+            other: "أخطاء منعت هاته اللافتة من الحفظ"
       new:
         creating: إنشاء لافتة
     activity:
@@ -1278,6 +1287,7 @@ ar:
         undefined: غير معرف
       summary:
         title: ملخص للمشاريع الاستثمارية
+        title_proposals_with_supports: ملخص للمشاريع الاستثمارية مع المستندات
         geozone_name: نطاق
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
@@ -1298,6 +1308,7 @@ ar:
         back: عودة
       new:
         back: عودة
+        creating: إنشاء منطقة
       delete:
         success: تم حذف المنطقة الجغرافية بنجاح
         error: لا يمكن حذف هذه المنطقة الجغرافية نظراً لوجود عناصر مرتبطة بها
@@ -1317,6 +1328,7 @@ ar:
         created_at: تم الإنشاء
         author: كاتب
         documents: وثائق
+        document_count: "عدد الوثائق:"
         unverified_error: (لم يتم التحقق من قبل التعداد)
     stats:
       show:
@@ -1375,6 +1387,11 @@ ar:
         errors:
           form:
             error: خطأ
+        index:
+          delete: حذف الكتلة
+          title: كتل المحتوى
+        new:
+          title: إنشاء كتلة محتوى جديدة
         content_block:
           body: الهيئة
           name: الإ سم
@@ -1384,12 +1401,35 @@ ar:
           update: تحديث
           delete: حذف
           image: صورة
+        update:
+          notice: تم تحديث الصورة بنجاح
+          error: لا يمكن تحديث الصورة
+        destroy:
+          notice: تم حذف الصورة الميزانية بنجاح
+          error: لا يمكن حذف الصورة
       pages:
+        create:
+          notice: تم إنشاء الصفحة بنجاح
+          error: لا يمكن إنشاء الصفحة
+        update:
+          notice: تم تحديث الصفحة بنجاح
+          error: لا يمكن تحديث الصفحة
+        destroy:
+          notice: تم حذف الصفحة بنجاح
+        edit:
+          title: تحرير %{page_title}
         errors:
           form:
             error: خطأ
         form:
           options: خيارات
+        index:
+          create: إنشاء الصفحة جديدة
+          delete: حذف الصفحة
+          title: صفحات مخصصة
+          see_page: رؤية الصفحة
+        new:
+          title: إنشاء صفحة مخصصة جديدة
         page:
           created_at: أنشئت في
           status: حالة
@@ -1398,13 +1438,29 @@ ar:
           status_published: منشورة
           title: عنوان
           slug: سبيكة
+          cards_title: بطاقات
+          see_cards: رؤية البطاقات
         cards:
+          cards_title: بطاقات
+          create_card: إنشاء بطاقة
+          no_cards: لا يوجد بطاقات.
           title: عنوان
           description: الوصف
           link_text: نص الرابط
           link_url: رابط URL
+          columns_help: "عرض البطاقة حسب عدد الأعمدة. على شاشات المحمول ، يكون العرض دائمًا 100٪."
+          create:
+            notice: "تم إنشاء البطاقة بنجاح!"
+          update:
+            notice: "تم تحديث البطاقة بنجاح"
+          destroy:
+            notice: "تم حذف البطاقة بنجاح"
     homepage:
       title: الصفحة الرئيسية
+      description: تظهر الوحدات النشطة في الصفحة الرئيسية بنفس الترتيب كما هو موضح هنا.
+      cards_title: بطاقات
+      create_card: إنشاء بطاقة
+      no_cards: لا يوجد بطاقات.
       cards:
         title: عنوان
         description: الوصف
@@ -1414,8 +1470,13 @@ ar:
         proposals: إقتراحات
         debates: النقاشات
         processes: عمليات
+      new:
+        card_title: بطاقة جديدة
+        submit_card: إنشاء بطاقة
       edit:
         submit_header: حفظ العنوان
+        card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
     translations:
+      remove_language: إزالة اللغة
       add_language: إضافة لغة
