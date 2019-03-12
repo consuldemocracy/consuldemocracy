@@ -9,6 +9,10 @@ da:
       hide: Skjul
       hide_author: Skjul bruger
       restore: Gendan
+      mark_featured: Fremhævet
+      unmark_featured: Fjern fremhævning
+      edit: Rediger
+      configure: Konfigurere
       delete: Slet
     banners:
       index:
