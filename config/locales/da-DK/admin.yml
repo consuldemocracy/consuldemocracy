@@ -373,6 +373,7 @@ da:
             status:
               draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
               published: Synlig for alle
+          title_placeholder: Skriv titlen på udkastet
         index:
           delete: Slet
         new:
@@ -425,13 +426,18 @@ da:
       index:
         title: Managers
     menu:
+      poll_shifts: Administrer arbejdsfordeling
+      officials: Embedsmænd
       organizations: Organisationer
       settings: Globale indstillinger
+      spending_proposals: Forslag til udgifter
       stats: Statistikker
+      signature_sheets: Signaturark
       site_customization:
         homepage: Startside
         information_texts_menu:
           debates: "Debatindlæg"
+          community: "Fællesskab"
           proposals: "Borgerforslag"
           layouts: "Layout"
           mailers: "E-mails"
@@ -667,7 +673,7 @@ da:
       show:
         location: "Lokation"
       booth:
-        shifts: "Adiministrere arbejdsfordeling"
+        shifts: "Administrer arbejdsfordeling"
         edit: "Rediger stemmeboks"
     officials:
       level_1: Niavue 1
