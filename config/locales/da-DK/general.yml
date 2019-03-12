@@ -394,6 +394,30 @@ da:
     print:
       print_button: Udskriv information
     search: Søg
+    show: Vis
+    suggest:
+      debate:
+        found:
+          one: "Der er allerede en debat benævnt som '%{query}'. Du kan deltage i den i stedet for at oprette en ny."
+          other: "Der er allerede flere debatindlæg benævnt som '%{query}'. Du kan deltage i dem i stedet for at oprette en ny."
+        see_all: "Se alle"
+      proposal:
+        see_all: "Se alle"
+    tags_cloud:
+      districts: "Distrikter"
+      districts_list: "Liste over distrikter"
+      categories: "Kategorier"
+    target_blank_html: " (linket åbner i et nyt vindue)"
+    you_are_in: "Du er inde"
+    unfollow_entity: "Følg ikke længere %{entity}"
+    outline:
+      budget: Deltagerbudget
+    go_to_page: "Gå til siden "
+    share: Del
+    recommended_index:
+      title: Anbefalinger
+      see_more: Se flere anbefalinger
+      hide: Skjul anbefalinger
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -406,10 +430,13 @@ da:
       association_name_label: 'Hvis du opretter et forslag på vegne af en forening eller en gruppe, tilføj navnet på den her'
       association_name: 'Navn på forening'
       description: Beskrivelse
+      external_url: Link til yderligere dokumentation
       submit_buttons:
         create: Opret
         new: Opret
     index:
+      title: Deltagerbudget
+      unfeasible: Ikke mulige investeringsprojekter
       search_form:
         button: Søg
         placeholder: Investeringsprojekter...
@@ -420,10 +447,26 @@ da:
       start_spending_proposal: Opret et investeringsprojekt
     new:
       more_info: Hvad fungerer deltagerbudgetter?
-  users:
     show:
+      share: Del
+    wrong_price_format: Kun hele tal
+  users:
+    direct_messages:
+      new:
+        verified_only: For at sende en privat besked %{verify_account}
+        authenticate: Du skal %{signin} eller %{signup} for at fortsætte.
+        signin: log ind
+        signup: tilmeld dig
+      show:
+        receiver: Beskeden blev sendt til %{receiver}
+    show:
+      deleted: Slettet
+      deleted_debate: Denne debat er blevet slettet
+      deleted_proposal: Dette forslag er blevet slettet
+      deleted_budget_investment: Dette investeringsprojekt er blevet slettet
       proposals: Forslag
       debates: Debatindlæg
+      budget_investments: Budgetinvesteringer
       comments: Kommentarer
       actions: Handlinger
       filters:
@@ -482,8 +525,44 @@ da:
       most_active:
         debates: "Mest aktive debatindlæg"
         proposals: "Mest aktive forslag"
+        processes: "Åbne processer"
       see_all_debates: Se alle debatindlæg
       see_all_proposals: Se alle forslag
+      see_all_processes: Se alle processer
+      process_label: Proces
+      see_process: Se proces
+    recommended:
+      debates:
+        title: Debatindlæg, der kunne have din interesse
+        btn_text_link: Alle debatindlæg, der kunne have din interesse
+      proposals:
+        title: Borgerforslag, der kunne have din interesse
+        btn_text_link: Alle borgerforslag, der kunne have din interesse
+      budget_investments:
+        title: Investeringer, der kunne have din interesse
+      slide: "Se %{title}"
+    verification:
+      i_dont_have_an_account: Jeg er ikke tilmeldt
+      i_have_an_account: Jeg er allerede tilmeldt
+      question: Har du allerede en konto i %{org_name}?
+    welcome:
+      go_to_index: Se borgerforslag og debatindlæg
+      title: Deltag
+      user_permission_debates: Deltag i debatten
+      user_permission_info: Med din konto kan du...
+      user_permission_proposal: Oprette nye borgerforslag
+      user_permission_support_proposal: Støtte op om borgerforslag*
+  invisible_captcha:
+    sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
+  related_content:
+    title: "Relateret indhold"
+    add: "Tilføj relateret indhold"
+    label: "Link til relateret indhold"
+    placeholder: "%{url}"
+    help: "Du kan tilføje links af %{models} inden for %{org}."
+    submit: "Tilføj"
+    error: "Linket er ikke gyldigt. Husk at begynde med %{url}."
+    error_itself: "Linket er ikke gyldigt. Du kan ikke relatere indholdet til sig selv."
   annotator:
     help:
       text_sign_in: log ind
