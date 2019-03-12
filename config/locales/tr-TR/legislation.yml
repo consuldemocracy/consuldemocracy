@@ -104,3 +104,17 @@ tr:
       show:
         answer_question: Cevabı gönder
         next_question: Sonraki soru
+        first_question: İlk soru
+        share: Paylaş
+        title: Katılımcı mevzuat işlemi
+      participation:
+        phase_not_open: Bu aşama açık değil
+        organizations: Organizasyonların tartışmaya katılmasına izin verilmemektedir
+        signin: Oturum aç
+        signup: Kaydol
+        unauthenticated: Katılmak için %{signin} veya %{signup} yapmalısınız.
+        verified_only: Yalnızca doğrulanan kullanıcılar katılabilir, %{verify_account}.
+        verify_account: hesabınızı doğrulayın
+        debate_phase_not_open: Tartışma aşaması bitti ve cevaplar artık kabul edilmiyor
+    shared:
+      share: Paylaş
