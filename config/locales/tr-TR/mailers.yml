@@ -32,3 +32,32 @@ tr:
       title: "%{org_name}'deki önerinin bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
+      unsubscribe: "Eğer önerinin bildirimini almak istemiyorsanız, %{account}'u ziyaret edin ve 'Öneri bildirimlerinin bir özetini al' seçeneğinin işaretini kaldırın."
+      unsubscribe_account: Hesabım
+    direct_message_for_receiver:
+      subject: "Yeni bir özel mesaj aldınız"
+      reply: '%{sender}''a yanıt'
+      unsubscribe: "Eğer doğrudan mesajlar almak istemiyorsanız, %{account}'u ziyaret edin ve 'Doğrudan mesajlar hakkında e-postalar al' seçeneğinin işaretini kaldırın."
+      unsubscribe_account: Hesabım
+    direct_message_for_sender:
+      subject: "Yeni bir özel mesaj gönderdiniz"
+      title_html: "Şu içerik ile <strong>%{receiver}</strong>'a yeni bir özel mesaj gönderdiniz:"
+    user_invite:
+      ignore: "Eğer bu daveti istemediyseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
+      text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
+      thanks: "Çok teşekkür ederiz."
+      title: "%{org}'a hoş geldiniz"
+      button: Tam kayıt
+      subject: "%{org_name}'e davet"
+    budget_investment_created:
+      subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
+      title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
+      intro_html: "Merhaba <strong>%{author}</strong>,"
+      follow_link: "Katılımcı Bütçeler"
+      sincerely: "İçtenlikle,"
+      share: "Projenizi paylaşın"
+    budget_investment_unfeasible:
+      hi: "Sevgili kullanıcı,"
+      new_html: "Tüm bunlar için, sizi bu işlemin koşullarına uyan bir <strong>yeni yatırım</strong> hazırlamaya davet ediyoruz. Bu bağlantıyı takip ederek yapabilirsiniz:%{url}."
+      new_href: "yeni yatırım projesi"
+      sincerely: "İçtenlikle"
