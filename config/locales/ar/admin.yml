@@ -964,6 +964,7 @@ ar:
         show_results_and_stats: "اظهار النتائج والإحصائيات"
         show_results: "إظهار النتائج"
         show_stats: "إظهار الإحصائيات"
+        results_and_stats_reminder: "عند تحديد خانات الاختيار كنتائج و / أو إحصائيات لهذا الاستطلاع ستكون متاحة للجميع وسيشاهدها كل مستخدم."
         submit_button: "إنشاء استطلاع"
       edit:
         title: "تحرير الاستطلاع"
@@ -1047,6 +1048,9 @@ ar:
       index:
         title: "اعادة الحساب"
         no_recounts: "لا يوجد شيء ليعاد حسابه"
+        all_booths_total: "المجموع التراكمي لجميع مكاتب الاقتراع:"
+        total_final: "إعادة فرز الأصوات النهائي"
+        total_system: "الأصوات (أوتوماتيكي)"
         table_booth_name: "مكتب الإقتراع"
         table_total_recount: "الحساب الإجمالي (من طرف الضابط)"
         table_system_count: "الأصوات (أوتوماتيكي)"
@@ -1243,6 +1247,8 @@ ar:
         assigned_admin: المشرف المعين
         no_admin_assigned: المشرف غير المعين
         no_valuators_assigned: لم يتم تعيين مقيّمين
+        summary_link: "ملخص مشروع الاستثمار"
+        valuator_summary_link: "ملخص المقيّم"
         feasibility:
           feasible: "مجدي (%{price})"
           not_feasible: "غير مجدي"
@@ -1252,6 +1258,7 @@ ar:
         assigned_valuators: المقيمين الذين تم تعيينهم
         back: عودة
         classification: تصنيف
+        heading: "مشروع الاستثمار %{id}"
         edit: تعديل
         edit_classification: تعديل التصنيف
         association_name: جمعية
@@ -1270,6 +1277,7 @@ ar:
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
       summary:
+        title: ملخص للمشاريع الاستثمارية
         geozone_name: نطاق
         finished_and_feasible_count: منتهي و مجدي
         finished_and_unfeasible_count: منتهي و غير مجدي
