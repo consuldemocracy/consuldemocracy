@@ -1,5 +1,24 @@
 tr:
   management:
+    account:
+      menu:
+        reset_password_email: Şifreyi e-posta ile sıfırla
+        reset_password_manually: Şifreyi elle sıfırla
+      alert:
+        unverified_user: Henüz doğrulanmış kullanıcı giriş yapmadı
+      show:
+        title: Kullanıcı hesabı
+      edit:
+        title: 'Kullanıcı hesabını düzenle: Şifreyi sıfırla'
+        back: Geri
+        password:
+          password: Şifre
+          send_email: Parola sıfırlama e-postası gönder
+          reset_email_send: E-posta doğru gönderildi.
+          reseted: Şifre başarıyla sıfırlandı
+          random: Rastgele şifre oluştur
+          save: Şifreyi kaydet
+          print: Şifreyi yazdır
     document_type_label: Belge Türü
     email_label: E-posta
     date_of_birth: Doğum tarihi
