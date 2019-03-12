@@ -355,7 +355,7 @@ de:
         notice: "Fortschrittsbalken erfolgreich aktualisiert"
       delete:
         notice: "Fortschrittsbalken erfolgreich gelöscht"
-    comments:
+    hidden_comments:
       index:
         filter: Filter
         filters:
@@ -371,7 +371,7 @@ de:
         back: Zurück zu %{org}
         title: Verwaltung
         description: Willkommen auf dem Admin-Panel für %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:

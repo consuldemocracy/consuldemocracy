@@ -236,7 +236,7 @@ es-PE:
       index:
         table_kind: "Tipo"
         table_title: "Título"
-    comments:
+    hidden_comments:
       index:
         filter: Filtrar
         filters:
@@ -252,7 +252,7 @@ es-PE:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtrar
         filters:

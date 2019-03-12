@@ -302,7 +302,7 @@ pl:
         table_id: "Numer ID"
         table_kind: "Typ"
         table_title: "Tytuł"
-    comments:
+    hidden_comments:
       index:
         filter: Filtr
         filters:
@@ -318,7 +318,7 @@ pl:
         back: Wróć do %{org}
         title: Administracja
         description: Witamy w panelu administracyjnym %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtr
         filters:

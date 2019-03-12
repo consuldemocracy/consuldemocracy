@@ -300,7 +300,7 @@ sv:
         table_id: "Legitimation"
         table_kind: "Typ"
         table_title: "Titel"
-    comments:
+    hidden_comments:
       index:
         filter: Filtrera
         filters:
@@ -316,7 +316,7 @@ sv:
         back: Gå tillbaka till %{org}
         title: Administration
         description: Välkommen till administrationspanelen för %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtrera
         filters:

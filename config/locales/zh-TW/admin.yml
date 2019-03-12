@@ -299,7 +299,7 @@ zh-TW:
         table_id: "ID"
         table_kind: "類型"
         table_title: "標題"
-    comments:
+    hidden_comments:
       index:
         filter: 篩選器
         filters:
@@ -315,7 +315,7 @@ zh-TW:
         back: 返回 %{org}
         title: 管理
         description: 歡迎使用 %{org} 管理面板。
-    debates:
+    hidden_debates:
       index:
         filter: 篩選器
         filters:

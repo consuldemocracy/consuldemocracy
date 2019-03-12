@@ -193,7 +193,7 @@ ca:
       index:
         table_kind: "tipus"
         table_title: "Títol"
-    comments:
+    hidden_comments:
       index:
         filter: Filtrar
         filters:
@@ -206,7 +206,7 @@ ca:
     dashboard:
       index:
         title: Administrar
-    debates:
+    hidden_debates:
       index:
         filter: Filtrar
         filters:

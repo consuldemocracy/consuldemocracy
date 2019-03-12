@@ -259,7 +259,7 @@ id:
         table_id: "ID"
         table_kind: "Tipe"
         table_title: "Judul"
-    comments:
+    hidden_comments:
       index:
         filter: Menyaring
         filters:
@@ -275,7 +275,7 @@ id:
         back: Kembali ke %{org}
         title: Administrasi
         description: Selamat datang di %{org} panel admin.
-    debates:
+    hidden_debates:
       index:
         filter: Penyaring
         filters:

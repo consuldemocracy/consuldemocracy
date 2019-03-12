@@ -339,7 +339,7 @@ val:
         table_kind: "Tipus"
         table_title: "Títol"
         table_percentage: "Progrés actual"
-    comments:
+    hidden_comments:
       index:
         filter: Filtre
         filters:
@@ -355,7 +355,7 @@ val:
         back: Tornar a %{org}
         title: Administració
         description: Benvingut al panell d'administració de %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtre
         filters:

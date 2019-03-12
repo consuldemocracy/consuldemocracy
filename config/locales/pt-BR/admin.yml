@@ -300,7 +300,7 @@ pt-BR:
         table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -316,7 +316,7 @@ pt-BR:
         back: Voltar para %{org}
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtro
         filters:

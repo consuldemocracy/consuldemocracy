@@ -199,7 +199,7 @@ cs:
         table_id: "ID"
         table_kind: "Typ"
         table_title: "Předmět"
-    comments:
+    hidden_comments:
       index:
         filter: Filtr
         filters:
@@ -209,7 +209,7 @@ cs:
       index:
         back: Přejít zpět na %{org}
         title: Administrace
-    debates:
+    hidden_debates:
       index:
         filter: Filtr
         filters:

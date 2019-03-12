@@ -358,7 +358,7 @@ ar:
         notice: "تم تحديث شريط التقدم بنجاح"
       delete:
         notice: "تم حذف شريط التقدم بنجاح"
-    comments:
+    hidden_comments:
       index:
         filter: ترشيح
         filters:
@@ -374,7 +374,7 @@ ar:
         back: العودة إلى %{org}
         title: الإدارة
         description: أهلا بك %{org} في لوحة الادارة.
-    debates:
+    hidden_debates:
       index:
         filter: ترشيح
         filters:

@@ -299,7 +299,7 @@ it:
         table_id: "ID"
         table_kind: "Tipo"
         table_title: "Titolo"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -315,7 +315,7 @@ it:
         back: Torna a %{org}
         title: Amministrazione
         description: Benvenuto nel pannello di amministrazione di %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtra
         filters:

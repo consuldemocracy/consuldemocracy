@@ -300,7 +300,7 @@ zh-CN:
         table_id: "ID"
         table_kind: "类型"
         table_title: "标题"
-    comments:
+    hidden_comments:
       index:
         filter: 过滤器
         filters:
@@ -316,7 +316,7 @@ zh-CN:
         back: 返回%{org}
         title: 管理
         description: 欢迎使用%{org} 管理面板。
-    debates:
+    hidden_debates:
       index:
         filter: 过滤器
         filters:

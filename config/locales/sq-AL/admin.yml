@@ -300,7 +300,7 @@ sq:
         table_id: "ID"
         table_kind: "Tipi"
         table_title: "Titull"
-    comments:
+    hidden_comments:
       index:
         filter: Filtër
         filters:
@@ -316,7 +316,7 @@ sq:
         back: Shko pas tek %{org}
         title: Administrim
         description: Mirë se erdhët në panelin %{org} të admin.
-    debates:
+    hidden_debates:
       index:
         filter: Filtër
         filters:

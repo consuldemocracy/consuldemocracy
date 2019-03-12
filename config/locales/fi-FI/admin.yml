@@ -210,7 +210,7 @@ fi:
       index:
         table_id: "ID"
         table_kind: "Tyyppi"
-    comments:
+    hidden_comments:
       index:
         filter: Suodatin
         filters:
@@ -224,7 +224,7 @@ fi:
       index:
         back: Mene takaisin %{org}
         title: Järjestelmänvalvonta
-    debates:
+    hidden_debates:
       index:
         filter: Suodatin
         filters:

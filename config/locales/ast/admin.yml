@@ -218,7 +218,7 @@ ast:
         table_id: "ID"
         table_kind: "Tipu"
         table_title: "Títulu"
-    comments:
+    hidden_comments:
       index:
         filter: Filtru
         filters:
@@ -231,7 +231,7 @@ ast:
     dashboard:
       index:
         title: Alministración
-    debates:
+    hidden_debates:
       index:
         filter: Filtru
         filters:

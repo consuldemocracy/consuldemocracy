@@ -355,7 +355,7 @@ gl:
         notice: "A barra de progreso actualizouse correctamente"
       delete:
         notice: "A barra de progreso foi eliminada correctamente"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -371,7 +371,7 @@ gl:
         back: Volver a %{org}
         title: Administración
         description: Benvido ao panel de administración de %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtro
         filters:

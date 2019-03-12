@@ -169,7 +169,7 @@ he:
         table_id: "ID"
         table_kind: "סוג"
         table_title: "שם"
-    comments:
+    hidden_comments:
       index:
         filter: מסנן
         filters:
@@ -181,7 +181,7 @@ he:
       index:
         back: Go back to
         title: ניהול
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:

@@ -279,7 +279,7 @@ ru:
     progress_bars:
       index:
         table_title: "Название"
-    comments:
+    hidden_comments:
       index:
         filter: Фильтр
         filters:
@@ -295,7 +295,7 @@ ru:
         back: Вернуться к %{org}
         title: Администрирование
         description: Добро пожаловать в панель администрирования %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Фильтр
         filters:

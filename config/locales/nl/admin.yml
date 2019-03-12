@@ -313,7 +313,7 @@ nl:
         table_id: "ID"
         table_kind: "Type"
         table_title: "Title"
-    comments:
+    hidden_comments:
       index:
         filter: Filter
         filters:
@@ -329,7 +329,7 @@ nl:
         back: Terug naar %{org}
         title: Administration
         description: Welkom op de %{org} beheers pagina.
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:

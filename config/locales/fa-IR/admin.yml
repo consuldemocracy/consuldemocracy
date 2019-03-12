@@ -273,7 +273,7 @@ fa:
         table_id: "شناسه"
         table_kind: "نوع"
         table_title: "عنوان"
-    comments:
+    hidden_comments:
       index:
         filter: فیلتر
         filters:
@@ -289,7 +289,7 @@ fa:
         back: بازگشت به %{org}
         title: مدیر
         description: خوش آمدید به پنل مدیریت %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: فیلتر
         filters:

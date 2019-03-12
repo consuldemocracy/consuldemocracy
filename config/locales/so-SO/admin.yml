@@ -300,7 +300,7 @@ so:
         table_id: "Aqoonsi"
         table_kind: "Noca"
         table_title: "Ciwaan"
-    comments:
+    hidden_comments:
       index:
         filter: Sifeeyee
         filters:
@@ -316,7 +316,7 @@ so:
         back: Dib ugu labo ilaa %{org}
         title: Mamul
         description: Kuso dhowow gudiga Mamulka %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Sifeeyee
         filters:

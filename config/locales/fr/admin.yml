@@ -300,7 +300,7 @@ fr:
         table_id: "ID"
         table_kind: "Type"
         table_title: "Titre"
-    comments:
+    hidden_comments:
       index:
         filter: Filtre
         filters:
@@ -316,7 +316,7 @@ fr:
         back: Revenir
         title: Administration
         description: Bienvenue sur le page d’administration de %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtre
         filters:
