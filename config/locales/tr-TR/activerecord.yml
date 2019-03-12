@@ -243,6 +243,8 @@ tr:
         draft_publication_date: Taslak yayın tarihi
         allegations_start_date: İddialar başlangıç tarihi
         allegations_end_date: İddialar bitiş tarihi
+        proposals_phase_start_date: Başlangıç
+        proposals_phase_end_date: Bitiş
         result_publication_date: Son sonuç yayın tarihi
         background_color: Arka plan rengi
         font_color: Yazı tipi rengi
