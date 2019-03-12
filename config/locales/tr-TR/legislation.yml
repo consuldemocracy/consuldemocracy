@@ -1,13 +1,53 @@
 tr:
   legislation:
     annotations:
+      comments:
+        see_all: Hepsini gör
+        see_complete: Tamamını gör
+        comments_count:
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+        replies_count:
+          one: "%{count} yanıt"
+          other: "%{count} yanıtlar"
+        cancel: İptal
+        publish_comment: Yorumu yayınla
+      form:
+        phase_not_open: Bu aşama açık değil
+        login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+        signin: Oturum aç
+        signup: Kaydol
       index:
         title: Yorumlar
+        comments_about: Hakkında yorumlar
+        see_in_context: Bağlam içinde gör
+        comments_count:
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
       show:
         title: Yorum
+      version_chooser:
+        seeing_version: Sürüm için yorumlar
+        see_text: Taslak metni gör
     draft_versions:
+      changes:
+        title: Değişiklikler
+        seeing_changelog_version: Revizyon değişiklikleri özeti
+        see_text: Taslak metni gör
       show:
+        loading_comments: Yorumlar yükleniyor
+        seeing_version: Taslak sürümü görüyorsunuz
+        select_draft_version: Taslak seç
+        select_version_submit: bakın
+        updated_at: '%{date} ''de güncellendi'
+        see_changes: değişikliklerin özetini gör
+        see_comments: Tüm yorumları gör
+        text_toc: İçindekiler
+        text_body: Metin
         text_comments: Yorumlar
     processes:
+      header:
+        additional_info: Ek bilgi
+        description: Tanımlama
       shared:
         allegations_dates: Yorumlar
