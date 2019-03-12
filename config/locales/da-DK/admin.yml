@@ -151,6 +151,9 @@ da:
           undecided: Ikke besluttet
           unfeasible: Uigennemførlig
           winners: Vindere
+        feasibility:
+          undecided: "Ikke besluttet"
+        selected: "Valgt"
         select: "Vælg"
         list:
           id: ID
@@ -158,6 +161,9 @@ da:
           admin: Administrator
           valuator: Evaluator
           valuation_group: Evaluator gruppe
+          valuation_finished: Færdig vurdering.
+          selected: Valgt
+          visible_to_valuators: Vis til evaluatorer
           incompatible: Uforenelig
         see_results: "Se resultat"
       show:
@@ -171,13 +177,19 @@ da:
         sent: Sendt
         group: Gruppe
         tags: Tags
+        user_tags: Bruger tags
+        undefined: Udefineret
+        selection:
+          "false": Ikke valgt
         winner:
+          title: Vinderen
           "true": "Ja"
           "false": "Nej"
         image: "Billede"
         see_image: "Se billede"
         no_image: "Uden billede"
         documents: "Dokumenter"
+        see_documents: "Se dokumenter (%{count})"
       edit:
         submit_button: Opdater
         tags: Tags
