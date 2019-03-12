@@ -25,7 +25,7 @@ module AdminHelper
   end
 
   def moderated_sections
-    ["hidden_proposals", "debates", "comments", "hidden_users", "activity",
+    ["hidden_proposals", "hidden_debates", "hidden_comments", "hidden_users", "activity",
      "hidden_budget_investments"]
   end
 

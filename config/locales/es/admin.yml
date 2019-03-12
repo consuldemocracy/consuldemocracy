@@ -350,7 +350,7 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -366,7 +366,7 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
-    debates:
+    hidden_debates:
       index:
         filter: Filtro
         filters:

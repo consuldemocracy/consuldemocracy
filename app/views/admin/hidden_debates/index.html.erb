@@ -1,7 +1,7 @@
-<h2><%= t("admin.debates.index.title") %></h2>
+<h2><%= t("admin.hidden_debates.index.title") %></h2>
 <p><%= t("admin.shared.moderated_content") %></p>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.debates.index" %>
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.hidden_debates.index" %>
 
 <% if @debates.any? %>
   <h3 class="margin"><%= page_entries_info @debates %></h3>
@@ -25,13 +25,13 @@
         </td>
         <td class="align-top">
           <%= link_to t("admin.actions.restore"),
-                restore_admin_debate_path(debate, request.query_parameters),
+                restore_admin_hidden_debate_path(debate, request.query_parameters),
                 method: :put,
                 data: { confirm: t("admin.actions.confirm") },
                 class: "button hollow warning" %>
           <% unless debate.confirmed_hide? %>
             <%= link_to t("admin.actions.confirm_hide"),
-                  confirm_hide_admin_debate_path(debate, request.query_parameters),
+                  confirm_hide_admin_hidden_debate_path(debate, request.query_parameters),
                   method: :put,
                   class: "button" %>
           <% end %>
@@ -44,6 +44,6 @@
   <%= paginate @debates %>
 <% else %>
   <div class="callout primary margin">
-    <%= t("admin.debates.index.no_hidden_debates") %>
+    <%= t("admin.hidden_debates.index.no_hidden_debates") %>
   </div>
 <% end %>

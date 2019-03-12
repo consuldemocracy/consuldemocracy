@@ -160,8 +160,8 @@
         <% end %>
 
         <% if feature?(:debates) %>
-          <li <%= "class=is-active" if controller_name == "debates" %>>
-            <%= link_to t("admin.menu.hidden_debates"), admin_debates_path %>
+          <li <%= "class=is-active" if controller_name == "hidden_debates" %>>
+            <%= link_to t("admin.menu.hidden_debates"), admin_hidden_debates_path %>
           </li>
         <% end %>
 
@@ -171,8 +171,8 @@
           </li>
         <% end %>
 
-        <li <%= "class=is-active" if controller_name == "comments" %>>
-          <%= link_to t("admin.menu.hidden_comments"), admin_comments_path %>
+        <li <%= "class=is-active" if controller_name == "hidden_comments" %>>
+          <%= link_to t("admin.menu.hidden_comments"), admin_hidden_comments_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "proposal_notifications" %>>

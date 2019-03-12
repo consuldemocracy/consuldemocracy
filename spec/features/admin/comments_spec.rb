@@ -12,7 +12,7 @@ feature "Admin comments" do
     proposal = create(:proposal, author: comment.author)
     create(:comment, commentable: proposal, user: comment.author, body: "Good Proposal!")
 
-    visit admin_comments_path
+    visit admin_hidden_comments_path
     expect(page).to have_content("SPAM from SPAMMER")
     expect(page).not_to have_content("Good Proposal!")
 
@@ -21,7 +21,7 @@ feature "Admin comments" do
       click_link "Hide author"
     end
 
-    visit admin_comments_path
+    visit admin_hidden_comments_path
     expect(page).not_to have_content("SPAM from SPAMMER")
     expect(page).not_to have_content("Good Proposal!")
   end
@@ -32,7 +32,7 @@ feature "Admin comments" do
     create(:comment, :hidden, commentable: debate, body: "This is SPAM comment on debate")
     create(:comment, :hidden, commentable: proposal, body: "This is SPAM comment on proposal")
 
-    visit admin_comments_path
+    visit admin_hidden_comments_path
 
     expect(page).to have_content("Debate with spam comment")
     expect(page).to have_content("Proposal with spam comment")
@@ -43,7 +43,7 @@ feature "Admin comments" do
     expect(page).to have_content("Debate with spam comment")
     expect(page).not_to have_content("This is SPAM comment on debate")
 
-    visit admin_comments_path
+    visit admin_hidden_comments_path
 
     click_link "Proposal with spam comment"
     expect(page).to have_content("Proposal with spam comment")
@@ -56,7 +56,7 @@ feature "Admin comments" do
     create(:comment, :hidden, commentable: debate, body: "This is SPAM comment on debate")
     create(:comment, :hidden, commentable: proposal, body: "This is SPAM comment on proposal")
 
-    visit admin_comments_path
+    visit admin_hidden_comments_path
 
     expect(page).to have_content("(Hidden proposal: Hidden proposal title)")
     expect(page).to have_content("(Hidden debate: Hidden debate title)")
@@ -67,7 +67,7 @@ feature "Admin comments" do
 
   scenario "Restore" do
     comment = create(:comment, :hidden, body: "Not really SPAM")
-    visit admin_comments_path
+    visit admin_hidden_comments_path
 
     click_link "Restore"
 
@@ -79,7 +79,7 @@ feature "Admin comments" do
 
   scenario "Confirm hide" do
     comment = create(:comment, :hidden, body: "SPAM")
-    visit admin_comments_path
+    visit admin_hidden_comments_path
 
     click_link "Confirm moderation"
 
@@ -91,22 +91,22 @@ feature "Admin comments" do
   end
 
   scenario "Current filter is properly highlighted" do
-    visit admin_comments_path
+    visit admin_hidden_comments_path
     expect(page).not_to have_link("Pending")
     expect(page).to have_link("All")
     expect(page).to have_link("Confirmed")
 
-    visit admin_comments_path(filter: "Pending")
+    visit admin_hidden_comments_path(filter: "Pending")
     expect(page).not_to have_link("Pending")
     expect(page).to have_link("All")
     expect(page).to have_link("Confirmed")
 
-    visit admin_comments_path(filter: "all")
+    visit admin_hidden_comments_path(filter: "all")
     expect(page).to have_link("Pending")
     expect(page).not_to have_link("All")
     expect(page).to have_link("Confirmed")
 
-    visit admin_comments_path(filter: "with_confirmed_hide")
+    visit admin_hidden_comments_path(filter: "with_confirmed_hide")
     expect(page).to have_link("Pending")
     expect(page).to have_link("All")
     expect(page).not_to have_link("Confirmed")
@@ -116,11 +116,11 @@ feature "Admin comments" do
     create(:comment, :hidden, body: "Unconfirmed comment")
     create(:comment, :hidden, :with_confirmed_hide, body: "Confirmed comment")
 
-    visit admin_comments_path(filter: "all")
+    visit admin_hidden_comments_path(filter: "all")
     expect(page).to have_content("Unconfirmed comment")
     expect(page).to have_content("Confirmed comment")
 
-    visit admin_comments_path(filter: "with_confirmed_hide")
+    visit admin_hidden_comments_path(filter: "with_confirmed_hide")
     expect(page).not_to have_content("Unconfirmed comment")
     expect(page).to have_content("Confirmed comment")
   end
@@ -129,7 +129,7 @@ feature "Admin comments" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:comment, :hidden, :with_confirmed_hide) }
 
-    visit admin_comments_path(filter: "with_confirmed_hide", page: 2)
+    visit admin_hidden_comments_path(filter: "with_confirmed_hide", page: 2)
 
     click_on("Restore", match: :first, exact: true)
 

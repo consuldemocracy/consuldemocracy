@@ -350,7 +350,7 @@ en:
         notice: "Progress bar updated successfully"
       delete:
         notice: "Progress bar deleted successfully"
-    comments:
+    hidden_comments:
       index:
         filter: Filter
         filters:
@@ -366,7 +366,7 @@ en:
         back: Go back to %{org}
         title: Administration
         description: Welcome to the %{org} admin panel.
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:
