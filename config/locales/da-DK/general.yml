@@ -335,6 +335,16 @@ da:
       no_polls: "Der er ingen afstemninger åbne."
     show:
       already_voted_in_booth: "Du har allerede deltaget via en fysisk stemmeboks. Du kan ikke deltage igen."
+      already_voted_in_web: "Du har allerede deltaget i afstemningen. Hvis du stemmer igen vil den blive overskrevet."
+      back: Tilbage til afstemningen
+      cant_answer_not_logged_in: "Du skal %{signin} eller %{signup} for at deltage."
+      comments_tab: Kommentarer
+      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
+      signin: Log ind
+      signup: Tilmeld dig
+      cant_answer_verify_html: "Du skal %{verify_link} for at kunne svare."
+      cant_answer_expired: "Afstemningen er slut."
+      more_info_title: "Mere information"
   poll_questions:
     create_question: "Opret spørgsmål"
     show:
@@ -381,6 +391,9 @@ da:
     flag: Marker som upassende
     follow: "Følg"
     follow_entity: "Følg %{entity}"
+    print:
+      print_button: Udskriv information
+    search: Søg
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
