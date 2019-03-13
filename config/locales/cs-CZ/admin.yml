@@ -38,8 +38,6 @@ cs:
           proposals: Návrhy
           budgets: Participativní rozpočtování
           help_page: Stránka nápovědy
-        background_color: Barva pozadí
-        font_color: Barva písma
       edit:
         editing: Upravit banner
         form:
@@ -421,7 +419,6 @@ cs:
           homepage_description: Zde můžete vysvětlit obsah procesu
           homepage_enabled: Úvodní stránka povolena
           banner_title: Barvy záhlaví
-          color_help: Hexadecimální formát
         index:
           create: Nový proces
           delete: Smazat
@@ -573,7 +570,6 @@ cs:
       activity: Aktivity moderátora
       admin: Admin menu
       banner: Správa bannerů
-      poll_questions: Otázky
       proposals: Návrhy
       proposals_topics: Témata návrhů
       budgets: Participativní rozpočty
@@ -625,7 +621,6 @@ cs:
             update: "Aktualizace bloku"
       title_moderated_content: Moderovaný obsah
       title_budgets: Rozpočty
-      title_polls: Průzkum
       title_profiles: Profily
       title_settings: Nastavení
       title_site_customization: Obsah webu
