@@ -31,7 +31,6 @@ sv:
     meta_description: "Webbplatsens beskrivning (SEO)"
     meta_keywords: "Nyckelord (SEO)"
     min_age_to_participate: Minimiålder för deltagande
-    verification_offices_url: Webbadress för verifieringskontor
     feature:
       budgets: "Medborgarbudgetar"
       twitter_login: "Twitter-inloggning"
