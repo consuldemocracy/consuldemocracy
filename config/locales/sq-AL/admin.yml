@@ -38,8 +38,6 @@ sq:
           proposals: Propozime
           budgets: Buxhetet  pjesëmarrës
           help_page: Faqja ndihmëse
-        background_color: Ngjyra e sfondit
-        font_color: Ngjyra e shkronjave
       edit:
         editing: Redakto banderol
         form:
@@ -519,7 +517,6 @@ sq:
       activity: Aktiviteti i moderatorit
       admin: Menuja e Administratorit
       banner: Menaxhoni banderolat
-      poll_questions: Pyetjet
       proposals: Propozime
       proposals_topics: Temat e propozimeve
       budgets: Buxhetet  pjesëmarrës
@@ -569,7 +566,6 @@ sq:
           save: "Ruaj"
       title_moderated_content: Përmbajtja e moderuar
       title_budgets: Buxhet
-      title_polls: Sondazhet
       title_profiles: Profilet
       title_settings: Opsione
       title_site_customization: Përmbajtja e faqes
