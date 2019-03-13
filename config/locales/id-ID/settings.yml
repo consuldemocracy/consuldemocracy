@@ -30,7 +30,6 @@ id:
     meta_description: "Deskripsi situs (SEO)"
     meta_keywords: "Kata kunci (SEO)"
     min_age_to_participate: Usia Minimum yang diperlukan untuk berpartisipasi
-    verification_offices_url: Verifikasi kantor URL
     feature:
       budgets: "Penganggaran partisipatif"
       twitter_login: "Twitter masuk"
