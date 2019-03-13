@@ -240,7 +240,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def send_new_actions_notification_on_create
-    new_actions = Dashboard::Action.detect_new_actions(self)
+    new_actions = Dashboard::Action.detect_new_actions_since(Date.yesterday, self)
 
     if new_actions.present?
       Dashboard::Mailer.new_actions_notification_on_create(self).deliver_later
@@ -248,7 +248,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def send_new_actions_notification_on_published
-    new_actions_ids = Dashboard::Action.detect_new_actions(self)
+    new_actions_ids = Dashboard::Action.detect_new_actions_since(Date.yesterday, self)
 
     if new_actions_ids.present?
       Dashboard::Mailer.new_actions_notification_on_published(self, new_actions_ids).deliver_later

@@ -89,14 +89,14 @@ class Dashboard::Action < ActiveRecord::Base
     course_for(proposal).first
   end
 
-  def self.detect_new_actions(proposal)
+  def self.detect_new_actions_since(date, proposal)
     actions_for_today = get_actions_for_today(proposal)
-    actions_for_yesterday = get_actions_for_yesterday(proposal)
+    actions_for_date = get_actions_for_date(proposal, date)
 
     actions_for_today_ids = actions_for_today.pluck(:id)
-    actions_for_yesterday_ids = actions_for_yesterday.pluck(:id)
+    actions_for_date_ids = actions_for_date.pluck(:id)
 
-    actions_for_today_ids - actions_for_yesterday_ids
+    actions_for_today_ids - actions_for_date_ids
   end
 
   private
@@ -107,9 +107,9 @@ class Dashboard::Action < ActiveRecord::Base
       calculate_actions(proposal_votes, day_offset, proposal)
     end
 
-    def self.get_actions_for_yesterday(proposal)
-      proposal_votes = calculate_votes(proposal)
-      day_offset = calculate_day_offset(proposal, Date.yesterday)
+    def self.get_actions_for_date(proposal, date)
+      proposal_votes = calculate_votes(proposal, date)
+      day_offset = calculate_day_offset(proposal, date)
 
       calculate_actions(proposal_votes, day_offset, proposal)
     end
@@ -125,7 +125,7 @@ class Dashboard::Action < ActiveRecord::Base
                               .by_published_proposal(proposal.published?)
     end
 
-    def self.calculate_votes(proposal)
-      Vote.where(votable: proposal).where("created_at <= ?", Date.yesterday).count
+    def self.calculate_votes(proposal, date)
+      Vote.where(votable: proposal).where("created_at <= ?", date).count
     end
 end

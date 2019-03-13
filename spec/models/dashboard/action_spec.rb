@@ -225,7 +225,7 @@ describe Dashboard::Action do
     end
   end
 
-  context "#detect_new_actions" do
+  context "#detect_new_actions_since" do
 
     describe "No detect new actions" do
 
@@ -237,7 +237,7 @@ describe Dashboard::Action do
         action.update(published_proposal: true)
         resource.update(published_proposal: true)
 
-        expect(described_class.detect_new_actions(proposal)).to eq []
+        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are news actions actived for draft_proposal but proposal is published" do
@@ -245,7 +245,7 @@ describe Dashboard::Action do
         action.update(published_proposal: false, day_offset: 0)
         resource.update(published_proposal: false, day_offset: 0)
 
-        expect(described_class.detect_new_actions(proposal)).to eq []
+        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are not news actions actived for draft proposals" do
@@ -253,7 +253,7 @@ describe Dashboard::Action do
         action.update(published_proposal: false)
         resource.update(published_proposal: false)
 
-        expect(described_class.detect_new_actions(proposal)).to eq []
+        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are news actions actived for published_proposal but proposal is draft" do
@@ -261,7 +261,7 @@ describe Dashboard::Action do
         action.update(published_proposal: true, day_offset: 0)
         resource.update(published_proposal: true, day_offset: 0)
 
-        expect(described_class.detect_new_actions(proposal)).to eq []
+        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
     end
@@ -275,8 +275,8 @@ describe Dashboard::Action do
         let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true) }
 
         it "when proposal has been created today and day_offset is valid only for today" do
-          expect(described_class.detect_new_actions(proposal)).to include(resource.id)
-          expect(described_class.detect_new_actions(proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -285,8 +285,8 @@ describe Dashboard::Action do
           resource.update(required_supports: 0)
           create(:vote, voter: proposal.author, votable: proposal)
 
-          expect(described_class.detect_new_actions(proposal)).to include(action.id)
-          expect(described_class.detect_new_actions(proposal)).not_to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).not_to include(resource.id)
         end
 
       end
@@ -298,8 +298,8 @@ describe Dashboard::Action do
         let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false) }
 
         it "when day_offset field is valid for today and invalid for yesterday" do
-          expect(described_class.detect_new_actions(proposal)).to include(resource.id)
-          expect(described_class.detect_new_actions(proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -308,8 +308,8 @@ describe Dashboard::Action do
           resource.update(required_supports: 2)
           create(:vote, voter: proposal.author, votable: proposal)
 
-          expect(described_class.detect_new_actions(proposal)).to include(action.id)
-          expect(described_class.detect_new_actions(proposal)).not_to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).not_to include(resource.id)
         end
 
       end
