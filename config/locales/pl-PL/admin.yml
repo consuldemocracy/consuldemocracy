@@ -38,8 +38,6 @@ pl:
           proposals: Wnioski
           budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
-        background_color: Kolor tła
-        font_color: Kolor czcionki
       edit:
         editing: Edytuj baner
         form:
@@ -147,11 +145,6 @@ pl:
         tags_filter_all: Wszystkie tagi
         advanced_filters: Zaawansowane filtry
         placeholder: Wyszukaj projekty
-        sort_by:
-          placeholder: Sortuj według
-          id: Numer ID
-          title: Tytuł
-          supports: Wsparcie
         filters:
           all: Wszystkie
           without_admin: Bez przypisanego administratora
@@ -373,8 +366,6 @@ pl:
           debate_phase: Faza debaty
           allegations_phase: Faza Komentarzy
           proposals_phase: Etap składania wniosków
-          start: Początek
-          end: Koniec
           use_markdown: Sformatuj tekst za pomocą Markdown
           title_placeholder: Tytuł procesu
           summary_placeholder: Krótkie podsumowanie opisu
@@ -386,7 +377,6 @@ pl:
           delete: Usuń
           title: Procesy legislacyjne
           filters:
-            open: Otwórz
             all: Wszystkie
         new:
           back: Wróć
@@ -401,7 +391,6 @@ pl:
           title: Proces
           comments: Komentarze
           status: Status
-          creation_date: Data utworzenia
           status_open: Otwórz
           status_closed: Zamknięty
           status_planned: Zaplanowany
@@ -526,7 +515,6 @@ pl:
       activity: Aktywność moderatora
       admin: Menu admina
       banner: Zarządzaj banerami
-      poll_questions: Pytania
       proposals: Wnioski
       proposals_topics: Tematy propozycji
       budgets: Budżety partycypacyjne
@@ -576,7 +564,6 @@ pl:
           save: "Zapisz"
       title_moderated_content: Zawartość moderowana
       title_budgets: Budżety
-      title_polls: Ankiety
       title_profiles: Profile
       title_settings: Ustawienia
       title_site_customization: Zawartość witryny
@@ -695,9 +682,9 @@ pl:
         send_pending: Wyślij oczekujące
         send_pending_notification: Oczekujące powiadomienia wysłane pomyślnie
       proposal_notification_digest:
-        title: Przegląd powiadomień o wnioskach
-        description: Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail.
-        preview_detail: Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują
+        title: "Przegląd powiadomień o wnioskach"
+        description: "Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail."
+        preview_detail: "Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują"
     emails_download:
       index:
         title: Pobieranie e-mail
@@ -1054,10 +1041,6 @@ pl:
       flash:
         updated: Wartość zaktualizowana
       index:
-        banners: Style banerów
-        banner_imgs: Obrazy banerów
-        no_banners_images: Brak obrazów banerów
-        no_banners_styles: Brak styli banerów
         title: Ustawienia konfiguracji
         update_setting: Zaktualizuj
         feature_flags: Funkcje
