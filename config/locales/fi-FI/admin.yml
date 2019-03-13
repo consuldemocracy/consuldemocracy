@@ -29,8 +29,6 @@ fi:
           homepage: Kotisivu
           proposals: Ehdotukset
           help_page: Ohje-sivu
-        background_color: Taustaväri
-        font_color: Fontin väri
       edit:
         editing: Muokkaa banneria
         form:
@@ -335,7 +333,6 @@ fi:
         add: Lisää
         delete: Poista
     menu:
-      poll_questions: Kysymykset
       proposals: Ehdotukset
       hidden_comments: Piilotetut kommentit
       hidden_proposals: Piilotetut ehdotukset
@@ -356,7 +353,6 @@ fi:
         buttons:
           save: "Tallenna"
       title_budgets: Budjetit
-      title_polls: Kyselyt
       users: Käyttäjät
     administrators:
       index:
