@@ -503,7 +503,6 @@ fr:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
   poll_questions:
-    create_question: "Créer une question"
     show:
       vote_answer: "Voter %{answer}"
       voted: "Vous avez voté %{answer}"
