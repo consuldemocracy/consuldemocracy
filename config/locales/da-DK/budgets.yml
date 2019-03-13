@@ -1,0 +1,81 @@
+da:
+  budgets:
+    ballots:
+      show:
+        title: Din stemme
+        amount_spent: Opbrugt beløb
+        remaining: "Du har stadig <span>%{amount}</span> at investere for."
+        no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
+        remove: Fjern din stemme
+        voted_html:
+          one: "Du har stemt på <span>%{count}</span> investeringer."
+          other: "Du har stemt på <span>%{count}</span> investeringer."
+        voted_info_html: "Du kan til enhver tid ændre din stemme indtil denne fase slutter.<br> Det er ikke nødvendigt at investere alle de penge, der har til rådighed."
+        zero: Du har ikke stemt på et investeringsprojekt.
+      reasons_for_not_balloting:
+        not_logged_in: Du skal %{signin} eller %{signup} for at kunne fortsætte.
+        not_verified: Kun verificerede brugere kan stemme på investeringer; %{verify_account}.
+        organization: Det er ikke tilladt for organisationer at stemme
+        not_enough_money_html: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
+        no_ballots_allowed: Udvælgelsesfasen er slut
+        change_ballot: Ønsker du at ændre din stemme?
+    groups:
+      show:
+        unfeasible_title: Investeringer, der ikke er mulige at gennemføre
+        unfeasible: Se ikke mulige investeringer
+        unselected_title: Investeringer, der ikke er udvalgt til afstemningsfasen
+        unselected: Se investeringer, der ikke er udvalgt til afstemningsfasen
+    phase:
+      drafting: Udkast (Ikke offentligt)
+      informing: Information
+      accepting: Modtagelse af projekteridéer
+      reviewing: Gennemgang af projekter
+      selecting: Projektudvælgelse
+      valuating: Vurdering af projekter
+      publishing_prices: Publicering af projekternes prisvurdering
+      balloting: Afstemning
+      reviewing_ballots: Gennemgang af afstemningsresultatet
+      finished: Budgettet er færdiggjort
+    index:
+      title: Deltagerbudgetter
+      empty_budgets: Der er ingen budgetter.
+      section_header:
+        icon_alt: Deltagerbudgetter ikon
+        title: Deltagerbudgetter
+        help: Hjælp med deltagerbudgetter
+        all_phases: Se alle faser
+      investment_proyects: Liste over alle investeringsprojekter
+      unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
+      not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
+      finished_budgets: Afsluttede deltagerbudetter
+      see_results: Se resultater
+      section_footer:
+        title: Hjælp med deltagerbudgetter
+    investments:
+      form:
+        tag_category_label: "Kategorier"
+        tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
+        tags_label: Tags
+        tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
+        map_location: "Lokation"
+        map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
+        map_remove_marker: "Fjern markøren"
+        location: "Yderligere information vedrørende lokation"
+        map_skip_checkbox: "Denne investering har ikke en konkret lokation, eller også kender jeg ikke til den."
+      index:
+        title: Deltagerbudgetter
+        unfeasible: Investeringer, der ikke er mulige at gennemføre
+        search_form:
+          button: Søg
+          placeholder: Søg investeringsprojekter...
+          title: Søg
+        sidebar:
+          my_ballot: Min stemme
+          voted_html:
+            one: "<strong>Du har stemt på et forslag med en værdi af %{amount_spent}</strong>"
+            other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
+          voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
+          voted_info_link: lav din stemme om
+          change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
+          zero: Du har ikke stemt på nogle investeringsprojekter i denne gruppe.
+          verified_only: "For at oprette en ny budget investering %{verify}."
