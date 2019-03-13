@@ -38,12 +38,17 @@ ru:
           proposals: Заявки
           budgets: Партисипаторное бюджетирование
           help_page: Страница помощи
-        background_color: Цвет фона
-        font_color: Цвет шрифта
       edit:
         editing: Редактировать баннер
         form:
           submit_button: Сохранить изменения
+      errors:
+        form:
+          error:
+            one: "не удалось сохранить этот баннер из-за ошибок"
+            few: "не удалось сохранить эти баннеры из-за ошибок"
+            many: "не удалось сохранить эти баннеры из-за ошибок"
+            other: "не удалось сохранить этот баннер из-за ошибок"
       new:
         creating: Создать баннер
     activity:
@@ -108,10 +113,49 @@ ru:
         recalculate: Пересчитать победившие инвестиции
     budget_groups:
       name: "Имя"
+      headings_name: "Заголовки"
+      headings_edit: "Редактировать заголовки"
+      headings_manage: "Управление заголовками"
+      max_votable_headings: "Максимальное число заголовков, по которым пользователь может голосовать"
+      no_groups: "Групп нет."
+      amount:
+        one: "Существует одна группа"
+        few: "Существует %{count} групп"
+        many: "Существует %{count} групп"
+        other: "Существует %{count} групп"
+      create:
+        notice: "Группа успешно создана!"
+      update:
+        notice: "Группа успешно создана"
+      destroy:
+        success_notice: "Группа успешно удалена"
+        unable_notice: "Вы не можете уничтожить группу, в которой есть ассоциированные заголовки"
+      form:
+        create: "Создать новую группу"
+        edit: "Редактировать группу"
+        name: "Название группы"
+        submit: "Сохранить группу"
+      index:
+        back: "Вернуться к бюджетам"
     budget_headings:
       name: "Имя"
+      no_headings: "Заголовков нет."
+      amount:
+        one: "Есть один заголовок"
+        few: "Есть %{count} заголовков"
+        many: "Есть %{count} заголовков"
+        other: "Есть %{count} заголовков"
+      create:
+        notice: "Заголовок успешно создан!"
+      update:
+        notice: "Заголовок успешно обновлен"
+      destroy:
+        success_notice: "Заголовок успешно удален"
+        unable_notice: "Вы не можете удалить заголовок, у которого есть ассоциированные инвестиции"
       form:
         name: "Название раздела"
+        amount: "Количество"
+        population: "Население (не обязательно)"
     budget_phases:
       edit:
         start_date: Дата начала
@@ -131,10 +175,6 @@ ru:
         tags_filter_all: Все метки
         advanced_filters: Расширенные фильтры
         placeholder: Искать в проектах
-        sort_by:
-          placeholder: Сортировать по
-          title: Название
-          supports: Поддержки
         filters:
           all: Все
           without_admin: Без назначенного администратора
@@ -349,8 +389,6 @@ ru:
           debate_phase: Фаза дебатов
           allegations_phase: Фаза комментирования
           proposals_phase: Фаза предложений
-          start: Начало
-          end: Окончание
           use_markdown: Форматируйте текст при помощи разметки Markdown
           title_placeholder: Заголовок процесса
           summary_placeholder: Краткая выжимка из описания
@@ -362,7 +400,6 @@ ru:
           delete: Удалить
           title: Процессы законотворчества
           filters:
-            open: Открыть
             all: Все
         new:
           back: Назад
@@ -377,7 +414,6 @@ ru:
           title: Процесс
           comments: Комментарии
           status: Статус
-          creation_date: Дата создания
           status_open: Открытый
           status_closed: Закрытый
           status_planned: Запланирован
@@ -496,7 +532,6 @@ ru:
       activity: Активность модератора
       admin: Меню администрирования
       banner: Управление баннерами
-      poll_questions: Вопросы
       proposals: Заявки
       proposals_topics: Темы предложений
       budgets: Партисипаторные бюджеты
@@ -546,7 +581,6 @@ ru:
           save: "Сохранить"
       title_moderated_content: Модерируемое содержимое
       title_budgets: Бюджеты
-      title_polls: Опросы
       title_profiles: Профили
       title_settings: Настройки
       title_site_customization: Содержимое сайта
@@ -665,9 +699,9 @@ ru:
         send_pending: Отправить ожидающие
         send_pending_notification: Ожидающие уведомления успешно отправлены
       proposal_notification_digest:
-        title: Сводка уведомлений по предложениям
-        description: Собирает все уведомления пользователя по предложениям в одном сообщении, чтобы избежать отправления большого количества email'ов.
-        preview_detail: Пользователи получат уведомления от только тех предложений, на которые они подписаны
+        title: "Сводка уведомлений по предложениям"
+        description: "Собирает все уведомления пользователя по предложениям в одном сообщении, чтобы избежать отправления большого количества email'ов."
+        preview_detail: "Пользователи получат уведомления от только тех предложений, на которые они подписаны"
     emails_download:
       index:
         title: Скачивание Email'ов
@@ -1014,10 +1048,6 @@ ru:
       flash:
         updated: Значение обновлено
       index:
-        banners: Стили баннеров
-        banner_imgs: Изображения баннеров
-        no_banners_images: Нет изображений баннеров
-        no_banners_styles: Нет стилей баннеров
         title: Настройки конфигурации
         update_setting: Обновить
         feature_flags: Функции
