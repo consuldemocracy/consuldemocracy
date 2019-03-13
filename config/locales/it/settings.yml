@@ -26,7 +26,6 @@ it:
     meta_description: "Descrizione del sito (SEO)"
     meta_keywords: "Parole chiave (SEO)"
     min_age_to_participate: Età minima necessaria per partecipare
-    verification_offices_url: URL dell'ufficio che verifica
     feature:
       budgets: "Bilancio partecipativo"
       twitter_login: "Accesso con Twitter"
