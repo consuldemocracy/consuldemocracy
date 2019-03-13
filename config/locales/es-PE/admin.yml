@@ -434,7 +434,6 @@ es-PE:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas ciudadanas
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
@@ -473,7 +472,6 @@ es-PE:
           save: "Guardar"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
-      title_polls: Votaciones
       title_profiles: Perfiles
       legislation: Legislación colaborativa
       users: Usuarios
