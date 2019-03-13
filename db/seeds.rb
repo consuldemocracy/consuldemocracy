@@ -115,9 +115,10 @@ Setting["map.zoom"] = 10
 # Related content
 Setting["related_content_score_threshold"] = -0.3
 
-Setting["feature.homepage.widgets.feeds.proposals"] = true
-Setting["feature.homepage.widgets.feeds.debates"] = true
-Setting["feature.homepage.widgets.feeds.processes"] = true
+# Homepage
+Setting["homepage.widgets.feeds.proposals"] = true
+Setting["homepage.widgets.feeds.debates"] = true
+Setting["homepage.widgets.feeds.processes"] = true
 
 # Votes hot_score configuration
 Setting["hot_score_period_in_days"] = 31
