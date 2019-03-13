@@ -38,8 +38,6 @@ ru:
           proposals: Заявки
           budgets: Партисипаторное бюджетирование
           help_page: Страница помощи
-        background_color: Цвет фона
-        font_color: Цвет шрифта
       edit:
         editing: Редактировать баннер
         form:
@@ -534,7 +532,6 @@ ru:
       activity: Активность модератора
       admin: Меню администрирования
       banner: Управление баннерами
-      poll_questions: Вопросы
       proposals: Заявки
       proposals_topics: Темы предложений
       budgets: Партисипаторные бюджеты
@@ -584,7 +581,6 @@ ru:
           save: "Сохранить"
       title_moderated_content: Модерируемое содержимое
       title_budgets: Бюджеты
-      title_polls: Опросы
       title_profiles: Профили
       title_settings: Настройки
       title_site_customization: Содержимое сайта
