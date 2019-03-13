@@ -218,7 +218,6 @@ sq:
       available_locales: Gjuhët në dispozicion
       collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
-      external_link_blog: Blog
       locale: 'Gjuha:'
       logo: Logoja
       management: Menaxhimi
@@ -397,8 +396,6 @@ sq:
         guide: "Tani mund ta shpërndani atë në mënyrë që njerëzit të fillojnë mbështetjen."
         edit: "Para se të shpërndahet, do të jeni në gjendje ta ndryshoni tekstin si ju pëlqen."
         view_proposal: Jo tani, shko tek propozimi im
-      improve_info: "Përmirësoni fushatën tuaj dhe merrni më shumë mbështetje"
-      improve_info_link: "Shiko më shumë informacion"
       already_supported: Ju e keni mbështetur tashmë këtë propozim. Shperndaje!
       comments:
         zero: Nuk ka komente
@@ -510,7 +507,6 @@ sq:
         title: "Pyetjet"
         most_voted_answer: "Përgjigja më e votuar:"
   poll_questions:
-    create_question: "Krijo pyetje"
     show:
       vote_answer: "Votim %{answer}"
       voted: "Ju keni votuar %{answer}"
@@ -622,7 +618,6 @@ sq:
       see_more: Shiko më shumë rekomandime
       hide: Fshih rekomandimet
   social:
-    blog: "Blogu %{org}"
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
