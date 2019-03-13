@@ -2655,6 +2655,17 @@ table {
   }
 }
 
+.leaflet-container {
+
+  .leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  a {
+    color: $link !important;
+  }
+}
+
 // 24. Homepage
 // ------------
 
