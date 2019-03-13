@@ -466,7 +466,6 @@ id:
       activity: Moderator kegiatan
       admin: Menu Admin
       banner: Mengelola spanduk
-      poll_questions: Pertanyaan
       proposals: Proposal
       proposals_topics: Tema proposal
       budgets: Anggaran partisipasif
@@ -507,7 +506,6 @@ id:
           save: "Simpan"
       title_moderated_content: Konten moderasi
       title_budgets: Anggaran
-      title_polls: Jajak pendapat
       title_profiles: Profil
       legislation: Undang-undang kolaboratif
       users: Pengguna
