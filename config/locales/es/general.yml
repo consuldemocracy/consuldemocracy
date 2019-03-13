@@ -443,7 +443,7 @@ es:
       form:
         submit_button: Guardar cambios
     share:
-      message: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
+      message: "He apoyado la propuesta %{title} en %{handle}. Si te interesa, ¡apoya tú también!"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
