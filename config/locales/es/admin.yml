@@ -435,7 +435,6 @@ es:
           delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
-            active: Activos
             all: Todos
         new:
           back: Volver
@@ -451,8 +450,6 @@ es:
           title: Proceso
           comments: Comentarios
           status: Estado
-          start_date: Fecha de apertura
-          end_date: Fecha de cierre
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -476,7 +473,7 @@ es:
           selected: Seleccionada
         form:
           custom_categories: Categorías
-          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta. Máximo 160 caracteres.
+          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
       draft_versions:
         create:
@@ -584,7 +581,7 @@ es:
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
-      geozones: Gestionar zonas
+      geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -754,46 +751,9 @@ es:
         send_pending: Enviar pendientes
         send_pending_notification: Notificaciones pendientes enviadas correctamente
       proposal_notification_digest:
-        title: "Resumen de notificationes de propuestas"
+        title: "Resumen de Notificationes de Propuestas"
         description: "Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails."
         preview_detail: "Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen."
-      budget_investment_created:
-        title: "Proyecto de gasto creado"
-        description: "Enviado cuando un usuario crea un proyecto de presupuestos participativos."
-      budget_investment_selected:
-        title: "Proyecto de gasto seleccionado"
-        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido seleccionado."
-      budget_investment_unfeasible:
-        title: "Proyecto de gasto inviable"
-        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como inviable."
-      budget_investment_unselected:
-        title: "Proyecto de gasto no seleccionado"
-        description: "Enviado al autor de un proyecto de presupuestos participativos que no ha sido seleccionado para la fase de votación."
-      comment:
-        title: "Comentario"
-        description: "Enviado al autor cuando recibe un comentario."
-      reply:
-        title: "Respuesta"
-        description: "Enviado al autor del comentario cuando recibe una respuesta."
-      direct_message_for_receiver:
-        title: "Mensaje privado recibido"
-        description: "Enviado al receptor de un mensaje privado."
-      direct_message_for_sender:
-        title: "Mensaje privado enviado"
-        description: "Enviado al remitente de un mensaje privado."
-      email_verification:
-        title: "Verificación por email"
-        description: "Enviado al nuevo usuario registrado para verificar su cuenta."
-      user_invite:
-        title: "Invitación de usuarios"
-        description: "Enviado a la persona que ha sido invitada a registrar una cuenta."
-      edit_info: "Puedes editar este email en"
-      message_title: "Título del mensaje"
-      message_body: "Este es un ejemplo de contenido de un mensaje."
-      alert:
-        no_investments: "No se ha creado ningún proyecto de gasto. Se necesita algún ejemplo para poder previsualizar el email."
-        no_comments: "No se ha creado ningún comentario. Se necesita algún ejemplo para poder previsualizar el email."
-        no_replies: "No se ha creado ninguna respuesta. Se necesita algún ejemplo para poder previsualizar el email."
     emails_download:
       index:
         title: Descarga de emails
@@ -897,7 +857,6 @@ es:
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
-        unable_to_destroy: "No se pueden eliminar turnos que tienen resultados o recuentos asociados"
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
@@ -937,13 +896,6 @@ es:
         no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
-    active_polls:
-      edit:
-        title: "Descripción general de votaciones"
-      form:
-        description:
-          text: "Descripción"
-          help_text: "Este texto aparecerá en la cabecera de la página de votaciones. Puedes usarlo para añadir un contexto a las votaciones abiertas"
     polls:
       index:
         title: "Listado de votaciones"
@@ -973,8 +925,6 @@ es:
         no_questions: "No hay preguntas asignadas a esta votación."
         questions_title: "Listado de preguntas asignadas"
         table_title: "Título"
-        edit_answers: Editar respuestas
-        see_proposal: "(Ver propuesta)"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
@@ -995,8 +945,7 @@ es:
       edit:
         title: "Editar pregunta ciudadana"
       new:
-        title: "Crear pregunta ciudadana para la votación %{poll}"
-        title_proposal: "Crear pregunta ciudadana"
+        title: "Crear pregunta ciudadana"
         poll_label: "Votación"
       answers:
         images:
@@ -1046,9 +995,6 @@ es:
       index:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
-        all_booths_total: "Acumulado en todas las urnas:"
-        total_final: "Recuentos finales"
-        total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Recuento total (presidente de mesa)"
         table_system_count: "Votos (automático)"
@@ -1097,7 +1043,6 @@ es:
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
-        help: Las cuentas de usuario marcadas como cargos públicos tendrán resaltadas sus intervenciones en la plataforma. Puedes definir la etiqueta que aparece al lado de los nombres de usuario de estas cuentas de mayor importancia (nivel 1) a menor (nivel 5).
         no_officials: No hay cargos públicos.
         name: Nombre
         official_position: Cargo público
@@ -1148,8 +1093,6 @@ es:
         author: Autor
         milestones: Hitos
         no_proposals: No hay propuestas.
-      show:
-        create_question: Añadir esta propuesta a una votación para ser votada
     hidden_proposals:
       index:
         filter: Filtro
@@ -1228,7 +1171,6 @@ es:
       content: Contenido
       created_at: Fecha de creación
       delete: Eliminar
-      color_help: Formato hexadecimal
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -1287,33 +1229,31 @@ es:
         cost_for_geozone: Coste total
     geozones:
       index:
-        title: Zonas
-        create: Crear una zona
+        title: Distritos
+        create: Crear un distrito
         edit: Editar
         delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
         census_code: Código del censo
-        code_help: Código de respuesta para esta zona en la API del censo
         coordinates: Coordenadas
-        coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
       errors:
         form:
           error:
-            one: "error impidió guardar la zona."
-            other: 'errores impidieron guardar la zona.'
+            one: "error impidió guardar el distrito"
+            other: 'errores impidieron guardar el distrito.'
       edit:
         form:
           submit_button: Guardar cambios
-        editing: Editando zona
+        editing: Editando distrito
         back: Volver
       new:
         back: Volver
-        creating: Crear zona
+        creating: Crear distrito
       delete:
-        success: Zona borrada correctamente
-        error: No se puede borrar la zona porque ya tiene elementos asociados
+        success: Distrito borrado correctamente
+        error: No se puede borrar el distrito porque ya tiene elementos asociados
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
