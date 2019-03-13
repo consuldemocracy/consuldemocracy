@@ -1143,6 +1143,8 @@ es:
         author: Autor
         milestones: Hitos
         no_proposals: No hay propuestas.
+      show:
+        create_question: Añadir esta propuesta a una votación para ser votada
     hidden_proposals:
       index:
         filter: Filtro
