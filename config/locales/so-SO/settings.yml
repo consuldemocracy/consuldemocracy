@@ -67,7 +67,6 @@ so:
     min_age_to_participate: Da'da ugu yar ee loo baahan yahay si looga qaybqaato
     min_age_to_participate_description: "Isticmaalayaasha da'adani way ka qaybqaadan karaan dhammaan hababka"
     analytics_url: "URLka falanqaynta"
-    verification_offices_url: Xaqiijinta Xafiisyada
     feature:
       budgets: "Misaaniyada kaqayb qadashada"
       budgets_description: "Miisaaniyadda ka qaybqaadashada, muwaadiniinta ayaa go'aaminaya mashaariicda ay soo bandhigeen deriskooda ay heli doonaan qayb ka mid ah miisaaniyadda degmada"
