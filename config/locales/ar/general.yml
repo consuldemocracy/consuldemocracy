@@ -299,8 +299,6 @@ ar:
         total_participation: "مجموع المشاركات"
       results:
         title: "أسئلة"
-  poll_questions:
-    create_question: "إنشاء سؤال"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
