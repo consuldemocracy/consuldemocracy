@@ -38,8 +38,6 @@ de:
           proposals: Vorschläge
           budgets: Bürgerhaushalt
           help_page: Hilfeseite
-        background_color: Hintergrundfarbe
-        font_color: Schriftfarbe
       edit:
         editing: Banner bearbeiten
         form:
@@ -582,7 +580,6 @@ de:
       activity: Aktivität der Moderator*innen
       admin: Admin-Menü
       banner: Banner verwalten
-      poll_questions: Fragen
       proposals: Vorschläge
       proposals_topics: Themen der Vorschläge
       budgets: Bürgerhaushalte
@@ -634,7 +631,6 @@ de:
             update: "Block aktualisieren"
       title_moderated_content: Moderierter Inhalt
       title_budgets: Bürgerhaushalte
-      title_polls: Umfragen
       title_profiles: Profile
       title_settings: Einstellungen
       title_site_customization: Seiteninhalt
