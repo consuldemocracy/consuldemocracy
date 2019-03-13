@@ -1,0 +1,34 @@
+da:
+  management:
+    account:
+      menu:
+        reset_password_email: Nulstil adgangskode via e-mail
+        reset_password_manually: Nulstil adgangskode manuelt
+      alert:
+        unverified_user: Ingen verificeret bruger er logget ind endnu
+      show:
+        title: Brugerkonto
+      edit:
+        title: 'Rediger konto: Nulstil adgangskode'
+        back: Tilbage
+        password:
+          password: Adgangskode
+          send_email: Send nulstil-adgangskode-mail
+          reset_email_send: E-mailen blev sendt.
+          reseted: Adgangskoden blev nulstillet
+          random: Generer tilfældig adgangskode
+          save: Gem adgangskode
+          print: Udskriv adgangskode
+          print_help: Du kan udskrive adgangskoden, når den er gemt.
+    account_info:
+      change_user: Skift bruger
+      document_number_label: 'Dokumentnummer:'
+      document_type_label: 'Dokumenttype:'
+      email_label: 'E-mail:'
+      identified_label: 'Identificeret som:'
+      username_label: 'Brugernavn:'
+    check: Kontroller dokument
+    dashboard:
+      index:
+        title: Management
+        info: Her kan du administrere brugere gennem de handlinger, der er angivet i menuen til venstre.
