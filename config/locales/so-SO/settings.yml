@@ -46,8 +46,6 @@ so:
     url_description: "URLka ugu muhiimsan ee URL ee boggaaga"
     org_name: "Urur"
     org_name_description: "Magaca Ururkaga"
-    place_name: "Mesha"
-    place_name_description: "Magaca Magaladada"
     related_content_score_threshold: "Heerka dhibcaha dhibcaha la xiriira"
     related_content_score_threshold_description: "Qarsoodi mowduuca kuwaas oo isticmaala calaamadee sida aan la xiriirin"
     map_latitude: "Lol"
@@ -69,11 +67,6 @@ so:
     min_age_to_participate: Da'da ugu yar ee loo baahan yahay si looga qaybqaato
     min_age_to_participate_description: "Isticmaalayaasha da'adani way ka qaybqaadan karaan dhammaan hababka"
     analytics_url: "URLka falanqaynta"
-    blog_url: "Blog URL"
-    transparency_url: "DahfurnantaURL"
-    opendata_url: "Tarikhada furanURL"
-    verification_offices_url: Xaqiijinta Xafiisyada
-    proposal_improvement_path: Soo-jeedinta is-wanaajinta macluumaadka bogga interneedka
     feature:
       budgets: "Misaaniyada kaqayb qadashada"
       budgets_description: "Miisaaniyadda ka qaybqaadashada, muwaadiniinta ayaa go'aaminaya mashaariicda ay soo bandhigeen deriskooda ay heli doonaan qayb ka mid ah miisaaniyadda degmada"
@@ -120,4 +113,4 @@ so:
       public_stats: "Tirooyinka guud"
       public_stats_description: "Muuji tirooyinka dadweynaha ee guddiga maamulka"
       help_page: "Bogga Caawinta"
-      help_page_description: "Waxay muujisaa maqaallada caawimaadda oo ku jira bog leh qaybta macluumaadka ee ku saabsan muuqaal kasta oo awood leh"
+      help_page_description: 'Waxay muujisaa maqaallada caawimaadda oo ku jira bog leh qaybta macluumaadka ee ku saabsan muuqaal kasta oo awood leh'
