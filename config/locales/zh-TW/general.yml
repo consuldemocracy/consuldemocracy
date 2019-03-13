@@ -211,7 +211,6 @@ zh-TW:
       available_locales: 可用語言
       collaborative_legislation: 立法進程
       debates: 辯論
-      external_link_blog: 博客
       locale: '語言：'
       logo: CONSUL 商標
       management: 管理
@@ -384,8 +383,6 @@ zh-TW:
         guide: "現在您可以把它分享，以便人們可以開始支持。"
         edit: "在分享之前，您可以隨意更改文本。"
         view_proposal: 不是現在，請轉到我的建議
-      improve_info: "改善您的推廣活動，並獲得更多支持"
-      improve_info_link: "查看更多資訊"
       already_supported: 您已經支持此建議。 把它分享吧！
       comments:
         zero: 沒有評論
@@ -491,7 +488,6 @@ zh-TW:
         title: "問題"
         most_voted_answer: "得最多投票的答案： "
   poll_questions:
-    create_question: "創建問題"
     show:
       vote_answer: "投票%{answer}"
       voted: "您已投票%{answer}"
@@ -600,7 +596,6 @@ zh-TW:
       see_more: 查看更多推薦
       hide: 隱藏推薦
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
