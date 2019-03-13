@@ -232,7 +232,6 @@ pl:
       available_locales: Dostępne wersje językowe
       collaborative_legislation: Procesy legislacyjne
       debates: Debaty
-      external_link_blog: Blog
       locale: 'Język:'
       logo: Logo CONSUL
       management: Zarządzanie
@@ -423,8 +422,6 @@ pl:
         guide: "Teraz możesz go udostępnić, aby inni mogli zacząć popierać."
         edit: "Zanim zostanie udostępniony, będziesz mógł zmieniać tekst według własnego uznania."
         view_proposal: Nie teraz, idź do mojego wniosku
-      improve_info: "Ulepsz swoją kampanię i uzyskaj więcej poparcia"
-      improve_info_link: "Zobacz więcej informacji"
       already_supported: Już poparłeś ten wniosek. Udostępnij go!
       comments:
         zero: Brak komentarzy
@@ -542,7 +539,6 @@ pl:
         title: "Pytania"
         most_voted_answer: "Najczęściej wybierana odpowiedź: "
   poll_questions:
-    create_question: "Utwórz pytanie"
     show:
       vote_answer: "Głosuj %{answer}"
       voted: "Głosowałeś %{answer}"
@@ -660,7 +656,6 @@ pl:
       see_more: Zobacz więcej rekomendacji
       hide: Ukryj rekomendacje
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
