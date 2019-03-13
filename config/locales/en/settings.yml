@@ -71,7 +71,6 @@ en:
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Users over this age can participate in all processes where a user verified account is needed"
     analytics_url: "Analytics URL"
-    verification_offices_url: Verification offices URL
     proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
     proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all supporters of their proposal"
     direct_message_max_per_day: "Direct Message max number per day"
@@ -95,7 +94,7 @@ en:
       polls_description:  "Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions"
       signature_sheets: "Signature sheets"
       signature_sheets_description: "It allows adding from the Administration panel signatures collected on-site to Proposals and investment projects of the Participative Budgets"
-      legislation: "Legislation"
+      legislation: "Collaborative Legislation"
       legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations and to give their opinion on certain actions that are planned to be carried out"
       spending_proposals: "Spending proposals"
       spending_proposals_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
