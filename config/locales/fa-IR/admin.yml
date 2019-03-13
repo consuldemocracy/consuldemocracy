@@ -477,7 +477,6 @@ fa:
       activity: فعالیت مدیر
       admin: منوی ادمین
       banner: مدیریت آگهی ها
-      poll_questions: سوالات
       proposals: طرح های پیشنهادی
       proposals_topics: موضوعات پیشنهادی
       budgets: بودجه مشارکتی
@@ -520,7 +519,6 @@ fa:
           save: "ذخیره کردن"
       title_moderated_content: کنترل محتویات
       title_budgets: بودجه ها
-      title_polls: نظر سنجی ها
       title_profiles: پروفایل
       legislation: قانون همکاری
       users: کاربران
