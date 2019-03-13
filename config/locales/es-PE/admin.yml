@@ -120,10 +120,6 @@ es-PE:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
-        sort_by:
-          placeholder: Ordenar por
-          title: Título
-          supports: Apoyos
         filters:
           all: Todas
           without_admin: Sin administrador
@@ -300,8 +296,6 @@ es-PE:
           process: Proceso
           debate_phase: Fase previa
           proposals_phase: Fase de propuestas
-          start: Inicio
-          end: Fin
           use_markdown: Usa Markdown para formatear el texto
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
@@ -313,7 +307,6 @@ es-PE:
           delete: Borrar
           title: Procesos legislativos
           filters:
-            open: Abierto
             all: Todas
         new:
           back: Volver
@@ -328,7 +321,6 @@ es-PE:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha de creación
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -442,7 +434,6 @@ es-PE:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas ciudadanas
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
@@ -481,7 +472,6 @@ es-PE:
           save: "Guardar"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
-      title_polls: Votaciones
       title_profiles: Perfiles
       legislation: Legislación colaborativa
       users: Usuarios
