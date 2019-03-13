@@ -19,7 +19,6 @@ id:
         unconfirmed_code: Anda belum memasukkan kode verifikasi
       create:
         flash:
-          offices: Warga Dukungan Kantor
           success_html: Terima kasih untuk meminta <b>kode pengamanan maksimum (hanya diperlukan untuk suara akhir)</b> anda. Dalam beberapa hari kami akan mengirimkannya ke alamat yang ditampilkan dalam data yang kami miliki di berkas. Harap diingat itu, jika anda lebih suka, anda dapat mengumpulkan kode anda dari setiap %{offices}.
       edit:
         see_all: Melihat proposal
@@ -30,7 +29,6 @@ id:
         explanation: 'Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:'
         go_to_index: Melihat proposal
         office: Verifikasi dalam setiap %{office}
-        offices: Warga Dukungan Kantor
         send_letter: Kirimkan saya sebuah surat dengan kode
         title: Selamat!
         user_permission_info: Dengan akun Anda, Anda dapat...
@@ -61,7 +59,6 @@ id:
         error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi
         error_not_allowed_postal_code: Supaya bisa diverifikasi, anda harus terdaftar.
         error_verifying_census: Sensus tidak mampu untuk memverifikasi informasi anda. Silahkan konfirmasikan bahwa rincian sensus anda adalah benar dengan cara menghubungi ke Dewan Kota atau kunjungi salah satu %{offices}.
-        error_verifying_census_offices: Kantor Dukungan Warga
         form_errors: mencegah verifikasi tempat tinggal anda
         postal_code: Kode Pos
         postal_code_note: Untuk memverifikasi akun anda harus terdaftar
