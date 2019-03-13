@@ -434,7 +434,6 @@ sl:
         title: "Vprašanja"
         most_voted_answer: "Najbolj izglasovan odgovor: "
   poll_questions:
-    create_question: "Ustvari vprašanje"
     show:
       vote_answer: "Glasuj %{answer}"
       voted: "Glasoval/-a si %{answer}"
