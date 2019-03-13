@@ -55,4 +55,24 @@ namespace :settings do
     end
   end
 
+  desc "Rename existing settings"
+  task rename_setting_keys: :environment do
+    Setting.rename_key from: "map_latitude",  to: "map.latitude"
+    Setting.rename_key from: "map_longitude", to: "map.longitude"
+    Setting.rename_key from: "map_zoom",      to: "map.zoom"
+
+    Setting.rename_key from: "feature.debates",     to: "process.debates"
+    Setting.rename_key from: "feature.proposals",   to: "process.proposals"
+    Setting.rename_key from: "feature.polls",       to: "process.polls"
+    Setting.rename_key from: "feature.budgets",     to: "process.budgets"
+    Setting.rename_key from: "feature.legislation", to: "process.legislation"
+
+    Setting.rename_key from: "per_page_code_head", to: "html.per_page_code_head"
+    Setting.rename_key from: "per_page_code_body", to: "html.per_page_code_body"
+
+    Setting.rename_key from: "feature.homepage.widgets.feeds.proposals", to: "homepage.widgets.feeds.proposals"
+    Setting.rename_key from: "feature.homepage.widgets.feeds.debates",   to: "homepage.widgets.feeds.debates"
+    Setting.rename_key from: "feature.homepage.widgets.feeds.processes", to: "homepage.widgets.feeds.processes"
+  end
+
 end
