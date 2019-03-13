@@ -24,16 +24,35 @@ cs:
         figcaption: 'Tlačítka "souhlasím" a "nesouhlasím" k vyhodnocení debat.'
       proposals:
         title: "Návrhy"
+        description: "V sekci %{link} můžete publikovat návrhy pro vedení města. Návrhy vyžadují podporu, a pokud dosáhnou dostatečné podpory, jsou zařazené k veřejnému hlasování. Návrhy schválené těmito hlasy občanů jsou přijímány vedením města k projednání."
+        link: "návrhy občanů"
+        image_alt: "Tlačítko pro podporu návrhu"
+        figcaption_html: 'Tlačítko "Podpořit" návrh.'
       budgets:
         title: "Participativní rozpočty"
+        description: "Sekce %{link} pomáhá lidem přímo rozhodovat o tom, na kterou část rozpočtu města vynakládá své finanční prostředky."
+        link: "participativní rozpočty"
+        image_alt: "Různé fáze participativního rozpočtu"
+        figcaption_html: 'Fáze "Podpora" a "Hlasování" participativního rozpočtu.'
       polls:
         title: "Průzkum"
+        description: "%{link} sekce je aktivována pokud návrh dosáhne 1% podpory a tím je zařazen do veřejného hlasování, a nebo když vedení města samo zveřejní tento návrh k veřejnému hlasování."
+        link: "průzkumy"
+        feature_1: "K účasti v hlasování využijte následující odkaz %{link} a ověřte svůj účet."
+        feature_1_link: "registrován na portále %{org_name}"
       processes:
         title: "Procesy"
+        description: "V části %{link} se občané podílejí na přípravě a úpravách předpisů, které mají vliv na město a mohou se vyjádřit např. k návrhům obecních vyhlášek v předchozích debatách."
+        link: "procesy"
       faq:
         title: "Technické problémy?"
+        description: "Přečtěte si časté otázky a řešit vaše dotazy."
+        button: "Zobrazit často kladené otázky"
         page:
           title: "Otázky a odpovědi"
+          description: "Tato stránka slouží k vyřešení běžné dotazy uživatelům webového portálu."
+          faq_1_title: "Otázka 1"
+          faq_1_description: "Toto je příklad popisu první otázky."
       other:
         title: "Další zajímavé informace"
         how_to_use: "Použijte %{org_name} ve vašem městě"
@@ -49,13 +68,48 @@ cs:
     privacy:
       title: Zásady ochrany osobních údajů
       subtitle: INFORMACE O OCHRANĚ ÚDAJŮ O DATECH
+      info_items:
+        - 
+          text: Navigace prostřednictvím informací dostupných na portálu Open Government Portal je anonymní.
+        - 
+          text: Chcete-li využívat služby obsažené na portálu Open Government, musí se uživatel zaregistrovat a předtím poskytnout osobní údaje podle konkrétních informací obsažených v každém typu registrace.
+        - 
+          text: 'Poskytnuté údaje budou zapracovány a zpracovány vedením města v souladu s popisem následujícího souboru:'
+        - 
+          subitems:
+            - 
+              field: 'Název souboru:'
+              description: NÁZEV SOUBORU
+            - 
+              field: 'Účel souboru:'
+              description: Spravovat participační procesy k využití zkušeností lidí zapojených do těchto procesů a numericky a statisticky přepočítávat výsledky z těchto procesů odvozených.
+            - 
+              field: 'Orgán zodpovědný za dokument:'
+              description: INSTITUCE, KTERÉ JSOU V SOULADU S TÍMTO DOKUMENTEM
     accessibility:
       title: Přístupnost
+      description: |-
+        Přístupnost webu se týká možnosti přístupu k internetu a jeho obsahu všemi lidmi, bez ohledu na postižení (fyzické, intelektuální nebo technické), které mohou vzniknout, nebo z těch, které vycházejí z kontextu použití (technologické nebo environmentální).
+
+        Pokud jsou webové stránky navrženy s ohledem na dostupnost, všichni uživatelé mohou přistupovat k obsahu za stejných podmínek, například:
+      examples:
+        - Poskytování alternativního textu k obrázkům pomáhá slepým nebo zrakově postiženým uživatelům, kteří mohou použít speciální čtečky k přístupu k informacím.
+        - Pokud mají videa titulky, mohou jim uživatelé s poruchami sluchu plně rozumět.
+        - Pokud je obsah napsán v jednoduchém a ilustrovaném jazyce, uživatelé s problémy s učením jsou lépe schopni mu porozumět.
+        - Pokud má uživatel problémy s mobilitou a je těžké používat myš, alternativy s klávesnicí pomáhají při navigaci.
       keyboard_shortcuts:
+        title: Klávesové zkratky
         navigation_table:
+          description: Na podporu přístupnosti webových stránek, byla naprogramována skupina rychlých klávesových zkratek, které zpřístupňují hlavní části sekcí, ve kterých je web organizován.
+          caption: Klávesové zkratky pro nabídky navigace
+          key_header: Klíč
+          page_header: Stránka
           rows:
             - 
+              key_column: 0
+              page_column: Úvod
             - 
+              key_column: 1
               page_column: Debaty
             - 
               key_column: 2
@@ -64,14 +118,76 @@ cs:
               key_column: 3
               page_column: Hlasů
             - 
+              key_column: 4
               page_column: Participativní rozpočty
             - 
+              key_column: 5
+              page_column: Legislativní procesy
+        browser_table:
+          description: 'V závislosti na operačním systému a použitém prohlížeči bude kombinace kláves následující:'
+          caption: Kombinace kláves závisí na operačním systému a prohlížeči
+          browser_header: Prohlížeč
+          key_header: Kombinace kláves
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + zkratka pak ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + zkratka
+            - 
+              browser_column: Chrome
+              key_column: ALT + zkratku (CTRL + ALT + klávesové zkratky pro MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + zkratku (CTRL + ALT + klávesové zkratky pro MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + zkratka
+      textsize:
+        title: Velikost textu
+        browser_settings_table:
+          description: Design tohoto webu podporující dostupnost umožňuje uživateli zvolit velikost textu, který mu vyhovuje. Tuto akci lze provést různými způsoby v závislosti na prohlížeč použitý.
+          browser_header: Prohlížeč
+          action_header: Opatření, které je třeba podniknout
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Zobrazit > Velikost textu
+            - 
+              browser_column: Firefox
+              action_column: Zobrazit > Velikost
+            - 
+              browser_column: Chrome
+              action_column: Nastavení (ikona) > možnosti > Rozšířené > Obsah webu > Velikost textu
+            - 
+              browser_column: Safari
+              action_column: Zobrazit > Přiblížit / Oddálit
+            - 
+              browser_column: Opera
+              action_column: Zobrazit > Měřítko
+        browser_shortcuts_table:
+          description: 'Další způsob, jak upravit velikost textu, je použít v prohlížečích, zejména kombinace kláves definované klávesové zkratky:'
+          rows:
+            - 
+              shortcut_column: CTRL + (CMD + pro počítače MAC)
+              description_column: Zvětší velikost textu
+            - 
+              shortcut_column: CTRL - (CMD - pro počítače MAC)
+              description_column: Zmenšit velikost textu
       compatibility:
+        title: Kompatibilita se standardy a vizuální design
         description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
     titles:
       accessibility: Přístupnost
+      conditions: Podmínky použití
+      help: "Co je %{org}? - Zapojování občanů"
       privacy: Zásady ochrany osobních údajů
     verify:
+      code: Kód, který jste obdrželi v dopise
       email: Email
+      info: 'Chcete-li ověřit svůj účet, zadejte své přístupové údaje:'
+      info_code: 'Nyní zadejte kód, který jste obdrželi v dopise:'
       password: Heslo
       submit: Ověřit můj účet
+      title: Ověřte svůj účet
