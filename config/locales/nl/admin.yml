@@ -38,8 +38,6 @@ nl:
           proposals: Voorstellen
           budgets: Burgerbegrotingen
           help_page: Help-pagina
-        background_color: Achtergrondkleur
-        font_color: Kleur van het lettertype
       edit:
         editing: Bewerk banier
         form:
@@ -432,7 +430,6 @@ nl:
           homepage_description: Hier kun je de stappen van het proces uitleggen
           homepage_enabled: Homepage ingeschakeld
           banner_title: Rubriekkleuren
-          color_help: Hexadecimale notatie
         index:
           create: Nieuw plan
           delete: Delete
@@ -584,7 +581,6 @@ nl:
       activity: Moderator activiteit
       admin: Admin menu
       banner: Manage banners
-      poll_questions: Vragen
       proposals: Voorstellen
       proposals_topics: Voorstelonderwerpen
       budgets: Participatory budgets
@@ -636,7 +632,6 @@ nl:
             update: "Blok bijwerken"
       title_moderated_content: Moderated content
       title_budgets: Budgets
-      title_polls: Polls
       title_profiles: Profiles
       title_settings: Instellingen
       title_site_customization: Aanpassing Site
