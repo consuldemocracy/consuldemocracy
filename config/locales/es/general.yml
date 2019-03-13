@@ -508,7 +508,6 @@ es:
         title: "Preguntas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
-    create_question: "Crear pregunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
