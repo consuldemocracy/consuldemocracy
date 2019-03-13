@@ -38,8 +38,6 @@ sq:
           proposals: Propozime
           budgets: Buxhetet  pjesëmarrës
           help_page: Faqja ndihmëse
-        background_color: Ngjyra e sfondit
-        font_color: Ngjyra e shkronjave
       edit:
         editing: Redakto banderol
         form:
@@ -145,11 +143,6 @@ sq:
         tags_filter_all: Të gjitha etiketat
         advanced_filters: Filtra të avancuar
         placeholder: Kërko projekte
-        sort_by:
-          placeholder: Ndaj sipas
-          id: ID
-          title: Titull
-          supports: Suporti
         filters:
           all: Të gjithë
           without_admin: Pa caktuar administratorin
@@ -373,8 +366,6 @@ sq:
           draft_phase_description: Nëse kjo fazë është aktive, procesi nuk do të renditet në indeksin e proceseve. Lejoni të parashini procesin dhe të krijoni përmbajtjen para fillimit.
           allegations_phase: Faza e komenteve
           proposals_phase: Faza e propozimit
-          start: Fillo
-          end: Fund
           use_markdown: Përdorni Markdown për të formatuar tekstin
           title_placeholder: Titulli i procesit
           summary_placeholder: Përmbledhje e shkurtër e përshkrimit
@@ -386,7 +377,6 @@ sq:
           delete: Fshi
           title: Legjislacion
           filters:
-            open: Hapur
             all: Të gjithë
         new:
           back: Pas
@@ -402,7 +392,6 @@ sq:
           title: Proçes
           comments: Komentet
           status: Statusi
-          creation_date: Data e krijimit
           status_open: Hapur
           status_closed: Mbyllur
           status_planned: Planifikuar
@@ -528,7 +517,6 @@ sq:
       activity: Aktiviteti i moderatorit
       admin: Menuja e Administratorit
       banner: Menaxhoni banderolat
-      poll_questions: Pyetjet
       proposals: Propozime
       proposals_topics: Temat e propozimeve
       budgets: Buxhetet  pjesëmarrës
@@ -578,7 +566,6 @@ sq:
           save: "Ruaj"
       title_moderated_content: Përmbajtja e moderuar
       title_budgets: Buxhet
-      title_polls: Sondazhet
       title_profiles: Profilet
       title_settings: Opsione
       title_site_customization: Përmbajtja e faqes
@@ -701,9 +688,9 @@ sq:
         send_pending: Dërgo në pritje
         send_pending_notification: Njoftimet në pritje janë dërguar me sukses
       proposal_notification_digest:
-        title: Përfundimi i njoftimeve të propozimeve
-        description: Mblidh të gjitha njoftimet e propozimeve për një përdorues në një mesazh të vetëm, për të shmangur shumë e-mail.
-        preview_detail: Përdoruesit do të marrin njoftime vetëm nga propozimet që po ndjekin
+        title: "Përfundimi i njoftimeve të propozimeve"
+        description: "Mblidh të gjitha njoftimet e propozimeve për një përdorues në një mesazh të vetëm, për të shmangur shumë e-mail."
+        preview_detail: "Përdoruesit do të marrin njoftime vetëm nga propozimet që po ndjekin"
     emails_download:
       index:
         title: Shkarkimi i emaileve
@@ -1063,10 +1050,6 @@ sq:
       flash:
         updated: Vlera e përditësuar
       index:
-        banners: Stili i banderolës
-        banner_imgs: Imazhet banderol
-        no_banners_images: Jo Imazhet banderol
-        no_banners_styles: Jo Stil i banderolës
         title: Cilësimet e konfigurimit
         update_setting: Përditëso
         feature_flags: Karakteristikat
