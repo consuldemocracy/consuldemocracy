@@ -218,7 +218,6 @@ sv:
       available_locales: Tillgängliga språk
       collaborative_legislation: Dialoger
       debates: Debatter
-      external_link_blog: Blogg
       locale: 'Språk:'
       logo: CONSULs logotyp
       management: Användarhantering
@@ -397,8 +396,6 @@ sv:
         guide: "Nu kan du dela förslaget så att folk kan börja stödja det."
         edit: "Du kan ändra texten fram tills att förslaget har delats."
         view_proposal: Inte nu, gå till mitt förslag
-      improve_info: "Få mer stöd genom att förbättra ditt förslag"
-      improve_info_link: "Visa mer information"
       already_supported: Du stöder redan det här förslaget. Dela det!
       comments:
         zero: Inga kommentarer
@@ -505,7 +502,6 @@ sv:
         title: "Frågor"
         most_voted_answer: "Högst rankade svar: "
   poll_questions:
-    create_question: "Skapa fråga"
     show:
       vote_answer: "Rösta på %{answer}"
       voted: "Du har röstat på %{answer}"
@@ -617,7 +613,6 @@ sv:
       see_more: Visa fler rekommendationer
       hide: Dölj rekommendationer
   social:
-    blog: "%{org} Blogg"
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
     youtube: "%{org} på YouTube"
