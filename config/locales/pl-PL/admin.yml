@@ -38,8 +38,6 @@ pl:
           proposals: Wnioski
           budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
-        background_color: Kolor tła
-        font_color: Kolor czcionki
       edit:
         editing: Edytuj baner
         form:
@@ -517,7 +515,6 @@ pl:
       activity: Aktywność moderatora
       admin: Menu admina
       banner: Zarządzaj banerami
-      poll_questions: Pytania
       proposals: Wnioski
       proposals_topics: Tematy propozycji
       budgets: Budżety partycypacyjne
@@ -567,7 +564,6 @@ pl:
           save: "Zapisz"
       title_moderated_content: Zawartość moderowana
       title_budgets: Budżety
-      title_polls: Ankiety
       title_profiles: Profile
       title_settings: Ustawienia
       title_site_customization: Zawartość witryny
