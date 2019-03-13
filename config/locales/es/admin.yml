@@ -973,6 +973,7 @@ es:
         no_questions: "No hay preguntas asignadas a esta votación."
         questions_title: "Listado de preguntas asignadas"
         table_title: "Título"
+        edit_answers: Editar respuestas
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
@@ -993,7 +994,8 @@ es:
       edit:
         title: "Editar pregunta ciudadana"
       new:
-        title: "Crear pregunta ciudadana"
+        title: "Crear pregunta ciudadana para la votación %{poll}"
+        title_proposal: "Crear pregunta ciudadana"
         poll_label: "Votación"
       answers:
         images:

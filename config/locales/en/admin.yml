@@ -974,6 +974,7 @@ en:
         no_questions: "There are no questions assigned to this poll."
         questions_title: "List of questions"
         table_title: "Title"
+        edit_answers: Edit answers
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
@@ -994,7 +995,8 @@ en:
       edit:
         title: "Edit Question"
       new:
-        title: "Create Question"
+        title: "Create question to poll %{poll}"
+        title_proposal: "Create question"
         poll_label: "Poll"
       answers:
         images:
