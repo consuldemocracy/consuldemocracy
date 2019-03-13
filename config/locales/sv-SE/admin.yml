@@ -38,8 +38,6 @@ sv:
           proposals: Förslag
           budgets: Medborgarbudgetar
           help_page: Hjälpsida
-        background_color: Bakgrundsfärg
-        font_color: Teckenfärg
       edit:
         editing: Redigera banner
         form:
@@ -145,11 +143,6 @@ sv:
         tags_filter_all: Alla taggar
         advanced_filters: Avancerade filter
         placeholder: Sök projekt
-        sort_by:
-          placeholder: Sortera efter
-          id: Legitimation
-          title: Titel
-          supports: Stöd
         filters:
           all: Alla
           without_admin: Utan ansvarig administratör
@@ -370,8 +363,6 @@ sv:
           process: Process
           debate_phase: Diskussionsfas
           proposals_phase: Förslagsfas
-          start: Start
-          end: Slut
           use_markdown: Använda Markdown för att formatera texten
           title_placeholder: Titel på processen
           summary_placeholder: Kort sammanfattning
@@ -383,7 +374,6 @@ sv:
           delete: Ta bort
           title: Dialoger
           filters:
-            open: Öppna
             all: Alla
         new:
           back: Tillbaka
@@ -398,7 +388,6 @@ sv:
           title: Process
           comments: Kommentarer
           status: Status
-          creation_date: Skapad den
           status_open: Öppna
           status_closed: Avslutad
           status_planned: Planerad
@@ -522,7 +511,6 @@ sv:
       activity: Moderatoraktivitet
       admin: Administrationsmeny
       banner: Hantera banners
-      poll_questions: Frågor
       proposals: Förslag
       proposals_topics: Förslag till ämnen
       budgets: Medborgarbudgetar
@@ -572,7 +560,6 @@ sv:
           save: "Spara"
       title_moderated_content: Modererat innehåll
       title_budgets: Budgetar
-      title_polls: Omröstningar
       title_profiles: Profiler
       title_settings: Inställningar
       title_site_customization: Webbplatsens innehåll
@@ -689,9 +676,9 @@ sv:
         send_pending: Väntar på att skicka
         send_pending_notification: Aviseringarna har skickats
       proposal_notification_digest:
-        title: Sammanfattande avisering om förslag
-        description: Samlar alla aviseringar om förslag till en användare i ett meddelande för att undvika för mycket e-post.
-        preview_detail: Användare kommer endast få aviseringar från förslag de följer
+        title: "Sammanfattande avisering om förslag"
+        description: "Samlar alla aviseringar om förslag till en användare i ett meddelande för att undvika för mycket e-post."
+        preview_detail: "Användare kommer endast få aviseringar från förslag de följer"
     emails_download:
       index:
         title: Hämta e-postadresser
@@ -1051,10 +1038,6 @@ sv:
       flash:
         updated: Uppdaterat
       index:
-        banners: Bannerformat
-        banner_imgs: Banner
-        no_banners_images: Ingen banner
-        no_banners_styles: Inga bannerformat
         title: Konfigurationsinställningar
         update_setting: Uppdatera
         feature_flags: Funktioner
