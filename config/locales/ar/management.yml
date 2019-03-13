@@ -8,6 +8,8 @@ ar:
         password:
           password: كلمة المرور
           reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
+          save: حفظ كلمة السر
+          print_help: سوف تكون قادراً على طباعة كلمة المرور بعد حفظها.
     account_info:
       email_label: 'ايمايل:'
     dashboard:
