@@ -38,8 +38,6 @@ zh-CN:
           proposals: 提议
           budgets: 参与性预算
           help_page: 帮助页面
-        background_color: 背景色
-        font_color: 字体颜色
       edit:
         editing: 编辑横幅
         form:
@@ -519,7 +517,6 @@ zh-CN:
       activity: 审核员活动
       admin: 管理菜单
       banner: 管理横幅
-      poll_questions: 问题
       proposals: 提议
       proposals_topics: 提议主题
       budgets: 参与性预算
@@ -571,7 +568,6 @@ zh-CN:
             update: "更新模块"
       title_moderated_content: 已审核的内容
       title_budgets: 预算
-      title_polls: 投票
       title_profiles: 个人资料
       title_settings: 设置
       title_site_customization: 站点内容
