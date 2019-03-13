@@ -229,6 +229,9 @@ en:
         name: Name
         locale: locale
         body: Body
+      banner:
+        background_color: Background color
+        font_color: Font color
       legislation/process:
         title: Process Title
         summary: Summary

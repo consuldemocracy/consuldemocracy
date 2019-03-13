@@ -38,8 +38,6 @@ es:
           proposals: Propuestas
           budgets: Presupuestos participativos
           help_page: Página de ayuda
-        background_color: Color de fondo
-        font_color: Color del texto
       edit:
         editing: Editar el banner
         form:
@@ -432,7 +430,6 @@ es:
           homepage_description: Aquí puedes explicar el contenido del proceso
           homepage_enabled: Homepage activada
           banner_title: Colores del encabezado
-          color_help: Formato hexadecimal
         index:
           create: Nuevo proceso
           delete: Borrar
@@ -1224,6 +1221,7 @@ es:
       content: Contenido
       created_at: Fecha de creación
       delete: Eliminar
+      color_help: Formato hexadecimal
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación

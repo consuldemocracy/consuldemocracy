@@ -229,6 +229,9 @@ es:
         name: Nombre
         locale: Idioma
         body: Contenido
+      banner:
+        background_color: Color del fondo
+        font_color: Color del texto
       legislation/process:
         title: Título del proceso
         summary: Resumen
