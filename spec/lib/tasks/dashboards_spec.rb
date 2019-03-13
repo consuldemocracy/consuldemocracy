@@ -80,4 +80,27 @@ describe "Dashboards Rake" do
 
   end
 
+  describe "#create_basic_dashboard_actions_template" do
+
+    before do
+      Rake.application.rake_require "tasks/dashboards"
+      Rake::Task.define_task(:environment)
+      ActionMailer::Base.deliveries.clear
+    end
+
+    let :run_rake_task do
+      Rake::Task["dashboards:create_basic_dashboard_actions_template"].reenable
+      Rake.application.invoke_task "dashboards:create_basic_dashboard_actions_template"
+    end
+
+    it "Create 34 basic dashboad actions template" do
+      expect(Dashboard::Action.count).to eq 0
+
+      run_rake_task
+
+      expect(Dashboard::Action.count).to eq 34
+    end
+
+  end
+
 end
