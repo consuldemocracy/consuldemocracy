@@ -539,7 +539,6 @@ pl:
         title: "Pytania"
         most_voted_answer: "Najczęściej wybierana odpowiedź: "
   poll_questions:
-    create_question: "Utwórz pytanie"
     show:
       vote_answer: "Głosuj %{answer}"
       voted: "Głosowałeś %{answer}"
