@@ -19,7 +19,6 @@ so:
         unconfirmed_code: Wali ma aadan soo gelin koodhka xaqiijinta
       create:
         flash:
-          offices: Xafiisyada Taageerada Muwaadiniinta
           success_html: Waad ku mahadsan tahay codsigaaga<b> ugu badnaan codsigaaga (kaliya oo looga baahan yahay codadka kama dambaysta ah) </b>. Maalmo gudahood waxaan u direynaa cinwaanka ku jira xogta aan ku hayno faylka. Fadlan xusuusnow, haddii aad doorbidayso, waxaad ka qaadi kartaa lambarkaaga mid ka mid ah%{offices}.
       edit:
         see_all: Fiiri soo jeedimaha
@@ -30,7 +29,6 @@ so:
         explanation: 'Ka qeyb qaadashada cod bixinta ugu dambeeya waxaad:'
         go_to_index: Fiiri soo jeedimaha
         office: Xaqiiji wixii%{office}
-        offices: Xafiisyada Taageerada Muwaadiniinta
         send_letter: Warqad kood wadata iso diir
         title: Hanbalayoyin!
         user_permission_info: Akoonkaga waad karta...
@@ -61,7 +59,6 @@ so:
         error_not_allowed_age: Ma haysatid da'da loo baahan yahay si aad uga qayb qaadato
         error_not_allowed_postal_code: Si loo xaqiijiyo, waa inaad diiwaan gashaa.
         error_verifying_census: Tirakoobku ma awoodin inuu xaqiijiyo macluumaadkaaga. Fadlan hubi in faahfaahintaada tirakoobku ay sax tahay adigoo wacaya Golaha Magaalada ama booqo hal xafiis%{offices}.
-        error_verifying_census_offices: XafiiskaTaageerada Muwaadiniinta
         form_errors: hortagaan xaqiijinta degaankaaga
         postal_code: Lambar ama Xarfo Kokoban oo qaybka ah Adareeska
         postal_code_note: Si aad u xaqiijiso koontadaada waa inaad diiwaan gashaa
