@@ -20,7 +20,6 @@ sl:
     telegram_handle: "Telegram uporabniško ime"
     instagram_handle: "Instagram uporabniško ime"
     org_name: "Organizacija"
-    place_name: "Mesto"
     map_latitude: "Zemljepisna širina"
     map_longitude: "Zemljepisna dolžina"
     map_zoom: "Povečava"
@@ -30,8 +29,6 @@ sl:
     meta_description: "Opis strani (SEO)"
     meta_keywords: "Ključne besede (SEO)"
     min_age_to_participate: Minimalna starost za sodelovanje
-    verification_offices_url: URL pisarne za preverjanje
-    proposal_improvement_path: Notranja povezava za informacije o izboljšanju predloga
     feature:
       budgets: "Participatorni proračun"
       twitter_login: "Prijava v Twitter"
