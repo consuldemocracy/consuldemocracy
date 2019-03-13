@@ -508,7 +508,6 @@ nl:
         title: "Vragen"
         most_voted_answer: "Antwoord met de meeste stemmen: "
   poll_questions:
-    create_question: "Create question"
     show:
       vote_answer: "Stem %{answer}"
       voted: "U heeft %{answer} gestemd"
