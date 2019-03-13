@@ -67,7 +67,6 @@ zh-TW:
     min_age_to_participate: 參與所需的最低年齡
     min_age_to_participate_description: "超過此年齡的用戶可以參與所有進程"
     analytics_url: "分析 URL"
-    verification_offices_url: 驗證辦公室 URL
     feature:
       budgets: "參與式預算編制"
       budgets_description: "通過參與性預算，公民決定其鄰居提交的哪些項目將獲得市政預算的一部分"
