@@ -488,7 +488,6 @@ zh-TW:
         title: "問題"
         most_voted_answer: "得最多投票的答案： "
   poll_questions:
-    create_question: "創建問題"
     show:
       vote_answer: "投票%{answer}"
       voted: "您已投票%{answer}"
