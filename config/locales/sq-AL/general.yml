@@ -507,7 +507,6 @@ sq:
         title: "Pyetjet"
         most_voted_answer: "Përgjigja më e votuar:"
   poll_questions:
-    create_question: "Krijo pyetje"
     show:
       vote_answer: "Votim %{answer}"
       voted: "Ju keni votuar %{answer}"
