@@ -467,7 +467,6 @@ es-PE:
         title: "Preguntas ciudadanas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
-    create_question: "Crear pregunta para votación"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
