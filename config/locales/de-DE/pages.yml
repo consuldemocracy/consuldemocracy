@@ -148,6 +148,7 @@ de:
         title: Textgröße
         browser_settings_table:
           browser_header: Browser
+          action_header: Aktion die gemacht werden muss
           rows:
             - 
               browser_column: Internet Explorer
@@ -159,6 +160,12 @@ de:
               browser_column: Safari
             - 
               browser_column: Opera
+        browser_shortcuts_table:
+          rows:
+            - 
+              description_column: Erhöhen sie die Textgröße
+            - 
+              description_column: Verringern sie die Textgröße
     titles:
       accessibility: Zugänglichkeit
       conditions: Nutzungsbedingungen
