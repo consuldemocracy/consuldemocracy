@@ -106,9 +106,9 @@ Setting["min_age_to_participate"] = 16
 Setting["featured_proposals_number"] = 3
 
 # City map feature default configuration (Greenwich)
-Setting["map_latitude"] = 51.48
-Setting["map_longitude"] = 0.0
-Setting["map_zoom"] = 10
+Setting["map.latitude"] = 51.48
+Setting["map.longitude"] = 0.0
+Setting["map.zoom"] = 10
 
 # Related content
 Setting["related_content_score_threshold"] = -0.3
