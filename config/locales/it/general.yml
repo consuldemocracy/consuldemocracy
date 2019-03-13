@@ -505,7 +505,6 @@ it:
         title: "Quesiti"
         most_voted_answer: "Risposta più votata: "
   poll_questions:
-    create_question: "Creare la domanda"
     show:
       vote_answer: "Voto %{answer}"
       voted: "Hai votato %{answer}"
