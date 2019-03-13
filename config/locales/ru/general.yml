@@ -485,7 +485,6 @@ ru:
         title: "Вопросы"
         most_voted_answer: "Самый голосуемый ответ: "
   poll_questions:
-    create_question: "Создать вопрос"
     show:
       vote_answer: "Голосовать по %{answer}"
       voted: "Вы проголосовали по %{answer}"
