@@ -17,9 +17,6 @@ ar:
     letter:
       alert:
         unconfirmed_code: لم تقم بادخال رمز التحقق
-      create:
-        flash:
-          offices: مكاتب دعم المواطنين
       edit:
         see_all: انظر جميع المقترحات
         title: أحرف مطلوبة
@@ -29,7 +26,6 @@ ar:
         explanation: 'للمشاركة في التصويت النهائي يمكن لك أن:'
         go_to_index: انظر جميع المقترحات
         office: التحقق من أي %{office}
-        offices: مكاتب دعم المواطنين
         send_letter: أرسل لي رسالة مع الرمز
         title: تهانينا!
         user_permission_info: من خلال حسابك يمكنك...
