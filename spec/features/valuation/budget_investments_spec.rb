@@ -16,8 +16,6 @@ feature "Valuation budget investments" do
     expect{
       visit valuation_budget_budget_investments_path(create(:budget))
     }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.budgets"] = true
   end
 
   scenario "Display link to valuation section" do

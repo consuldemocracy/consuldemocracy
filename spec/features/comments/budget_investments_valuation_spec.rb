@@ -10,13 +10,8 @@ feature "Internal valuation comments on Budget::Investments" do
   let(:investment) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
   background do
-    Setting["feature.budgets"] = true
     investment.valuators << valuator_user.valuator
     login_as(valuator_user)
-  end
-
-  after do
-    Setting["feature.budgets"] = nil
   end
 
   context "Show valuation comments" do

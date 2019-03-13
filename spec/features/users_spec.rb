@@ -416,9 +416,6 @@ feature "Users" do
       Setting["feature.budgets"] = nil
       visit user_path(user)
       expect(page).to have_content("4 Comments")
-
-      Setting["feature.debates"] = true
-      Setting["feature.budgets"] = true
     end
   end
 

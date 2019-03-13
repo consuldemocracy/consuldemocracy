@@ -16,8 +16,6 @@ feature "Moderate budget investments" do
     login_as(@mod.user)
 
     expect{ visit moderation_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.budgets"] = true
   end
 
   scenario "Hiding an investment", :js do
