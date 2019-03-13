@@ -3,9 +3,16 @@ ar:
     show:
       change_credentials_link: تغيير بيانات الاعتماد الخاصة بي
       email_on_comment_label: أبلغني عن طريق البريد الإلكتروني عندما شخص التعليقات على المقترحات أو المناقشات
+      email_on_comment_reply_label: أبلغني عن طريق البريد الإلكتروني عندما يرد شخص ما على تعليقاتي
       erase_account_link: مسح حسابي
+      finish_verification: عملية التحقق مكتملة
       notifications: إشعارات
+      organization_name_label: اسم المنظمة
+      organization_responsible_name_placeholder: ممثل المنظمة/الوحدة
+      personal: البيانات الشخصية
       phone_number_label: رقم الهاتف
+      public_activity_label: أترك قائمة الأنشطة الخاصة بي عامة
+      public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
       email_digest_label: استلام ملخص عن إشعارات مقترح
@@ -101,6 +108,7 @@ ar:
   form:
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
+    not_saved_html: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
@@ -136,6 +144,8 @@ ar:
       notification_item:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
+    admin:
+      watch_form_message: 'لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟'
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -289,8 +299,6 @@ ar:
         total_participation: "مجموع المشاركات"
       results:
         title: "أسئلة"
-  poll_questions:
-    create_question: "إنشاء سؤال"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
@@ -335,6 +343,13 @@ ar:
       categories: "فئات"
     you_are_in: "أنت في"
     share: مشاركة
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: واتساب
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
     form:
       association_name: 'اسم الرابطة'
