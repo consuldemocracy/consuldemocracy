@@ -5,117 +5,1528 @@ tr:
     actions:
       actions: Aksiyon
       confirm: Emin misiniz?
+      confirm_hide: Denetlemeyi onayla
+      hide: Gizle
+      hide_author: Yazarı gizle
+      restore: Onarma
+      mark_featured: Öne Çıkan
+      unmark_featured: Öne çıkan işareti kaldır
       edit: Düzenleme
+      configure: Yapılandırma
+      delete: Sil
+    banners:
+      index:
+        title: Bannerlar
+        create: Banner oluştur
+        edit: Banner düzenleme
+        delete: Banner silme
+        filters:
+          all: Tüm
+          with_active: Aktif
+          with_inactive: Pasif
+        preview: Önizleme
+      banner:
+        title: İsim
+        description: Tanımlama
+        target_url: Bağlantı
+        post_started_at: Yayın başladı
+        post_ended_at: Yayın bitti
+        sections_label: Görüneceği bölümler
+        sections:
+          homepage: Ana sayfa
+          debates: Tartışmalar
+          proposals: Öneriler
+          budgets: Katılımcı bütçeleme
+          help_page: Yardım sayfası
+      edit:
+        editing: Banner düzenleme
+        form:
+          submit_button: Değişiklikleri kaydet
+      errors:
+        form:
+          error:
+            one: "hata bu bannerın kaydedilmesini engelledi"
+            other: "hatalar bu bannerın kaydedilmesini engelledi"
+      new:
+        creating: Banner oluştur
     activity:
       show:
+        action: Eylem
+        actions:
+          block: Engellendi
+          hide: Gizlendi
+          restore: Onarıldı
+        by: Tarafından denetlendi
+        content: İçerik
+        filter: Göster
         filters:
+          all: Tüm
           on_comments: Yorumlar
+          on_debates: Tartışmalar
+          on_proposals: Öneriler
+          on_users: Kullanıcılar
+          on_system_emails: Sistem e-postaları
+        title: Moderatör faaliyeti
+        type: Tür
+        no_activity: Hiç moderatör faaliyeti yok.
     budgets:
       index:
+        title: Katılımcı bütçe
+        new_link: Yeni bütçe oluştur
+        filter: Filtre
         filters:
           open: Açık
+          finished: Bitmiş
+        budget_investments: Projeleri yönetme
+        table_name: Ad
+        table_phase: Aşama
         table_investments: Yatırımlar
+        table_edit_groups: Başlıklar grupları
         table_edit_budget: Düzenleme
+        edit_groups: Başlıklar gruplarını düzenle
+        edit_budget: Bütçe düzenleme
+        no_budgets: "Hiç bütçe yok."
+      create:
+        notice: Yeni katılımcı bütçe başarıyla oluşturuldu!
+      update:
+        notice: Katılımcı bütçe başarıyla güncellendi
       edit:
+        title: Katılımcı bütçeyi düzenle
+        delete: Bütçeyi sil
+        phase: Aşama
+        dates: Tarih
+        enabled: Etkinleştirildi
         actions: Aksiyon
+        edit_phase: Aşama düzenleme
+        active: Aktif
+        blank_dates: Tarihler boş
+      destroy:
+        success_notice: Bütçe başarıyla silindi
+        unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
+      new:
+        title: Yeni katılımcı bütçe
+      winners:
+        calculate: Kazanan Yatırımları Hesapla
+        calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
+        recalculate: Kazanan Yatırımları Yeniden Hesapla
+    budget_groups:
+      name: "Ad"
+      headings_name: "Başlıklar"
+      headings_edit: "Başlıkları Düzenle"
+      headings_manage: "Başlıkları yönet"
+      max_votable_headings: "Bir kullanıcının oy verebileceği maksimum başlık sayısı"
+      no_groups: "Hiç grup yok."
+      amount:
+        one: "1 grup var"
+        other: "%{count} gruplar var"
+      create:
+        notice: "Grup başarıyla oluşturuldu!"
+      update:
+        notice: "Grup başarıyla güncellendi"
+      destroy:
+        success_notice: "Grup başarıyla silindi"
+        unable_notice: "Başlıklarla ilişkili olan bir Grubu yok edemezsiniz"
+      form:
+        create: "Yeni grup oluştur"
+        edit: "Grup düzenle"
+        name: "Grup adı"
+        submit: "Grubu kaydet"
+      index:
+        back: "Bütçelere geri dön"
+    budget_headings:
+      name: "Ad"
+      no_headings: "Hiç başlık yok."
+      amount:
+        one: "1 başlık var"
+        other: "%{count} başlıklar var"
+      create:
+        notice: "Başlık başarıyla oluşturuldu!"
+      update:
+        notice: "Başlık başarıyla güncellendi"
+      destroy:
+        success_notice: "Başlık başarıyla silindi"
+        unable_notice: "Yatırımlarla ilişkili olan bir Başlığı yok edemezsiniz"
+      form:
+        name: "Başlık adı"
+        amount: "Miktar"
+        population: "Nüfus (isteğe bağlı)"
+        population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
+        latitude: "Enlem (isteğe bağlı)"
+        longitude: "Boylam (isteğe bağlı)"
+        coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir. Bu harita bu koordinatlar kullanılarak ortalanacaktır."
+        allow_content_block: "İçerik bloğuna izin ver"
+        content_blocks_info: "Eğer içerik bloğuna izin ver seçeneği işaretliyse, bu başlıkla ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz."
+        create: "Yeni başlık oluştur"
+        edit: "Başlığı düzenle"
+        submit: "Başlığı kaydet"
+      index:
+        back: "Gruplara geri dön"
+    budget_phases:
+      edit:
+        start_date: Başlangıç tarihi
+        end_date: Bitiş tarihi
+        summary: Özet
+        summary_help_text: Bu metin kullanıcıyı aşama hakkında bilgilendirecektir. Aşama etkin olmasa bile göstermek için aşağıdaki onay kutusunu seçin
+        description: Tanımlama
+        description_help_text: Aşama etkinken bu metin başlıkta görünecektir
+        enabled: Aşama etkinleştirildi
+        enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
+        save_changes: Değişiklikleri kaydet
     budget_investments:
       index:
+        heading_filter_all: Tüm başlıklar
+        administrator_filter_all: Tüm yöneticiler
+        valuator_filter_all: Tüm bilirkişiler
+        tags_filter_all: Tüm etiketler
+        advanced_filters: Gelişmiş filtreler
+        placeholder: Arama projeleri
+        filters:
+          all: Tüm
+          without_admin: Atanmış yönetici olmadan
+          without_valuator: Atanmış bilirkişi olmadan
+          under_valuation: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+          feasible: Uygulanabilir
+          selected: Seçilmiş
+          undecided: Kararsız
+          unfeasible: Uygulanamaz
+          min_total_supports: Minimum destek
+          winners: Kazananlar
+          one_filter_html: "Mevcut uygulanan filtreler: <b><em>%{filter}</em></b>"
+          two_filters_html: "Mevcut uygulanan filtreler: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtre
+        download_current_selection: "Mevcut seçimi indir"
+        no_budget_investments: "Hiç yatırım projesi yok."
+        title: Yatırım projeleri
+        assigned_admin: Atanmış yönetici
+        no_admin_assigned: Hiç yönetici atanmamış
+        no_valuators_assigned: Hiç bilirkişi atanmamış
+        no_valuation_groups: Hiç değerlendirme grupları atanmamış
+        feasibility:
+          feasible: "Uygulanabilir (%{price})"
+          unfeasible: "Uygulanamaz"
+          undecided: "Kararsız"
+        selected: "Seçilmiş"
+        select: "Seç"
         list:
+          id: KİMLİK
+          title: İsim
+          supports: Destekler
           admin: Yönetici
+          valuator: Bilirkişi
+          valuation_group: Değerlendirme Grubu
+          geozone: İşlem kapsamı
+          feasibility: Fizibilite
+          valuation_finished: Değ. Bit.
+          selected: Seçilmiş
+          visible_to_valuators: Bilirkişileri göster
+          author_username: Yazar kullanıcı adı
+          incompatible: Uyumsuz
+        cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
+        see_results: "Sonuçları gör"
       show:
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
+        classification: Sınıflandırma
+        info: "%{budget_name} - Grup: %{group_name} - Yatırım projesi %{id}"
         edit: Düzenleme
+        edit_classification: Sınıflandırmayı düzenle
+        by: Tarafından
+        sent: Gönderme
+        group: Grup
+        heading: Başlık
+        dossier: Dosya
+        edit_dossier: Dosya düzenleme
+        tags: Etiketler
+        user_tags: Kullanıcı etiketleri
+        undefined: Tanımsız
+        compatibility:
+          title: Uygunluk
+          "true": Uyumsuz
+          "false": Uyumlu
+        selection:
+          title: Seçim
+          "true": Seçilmiş
+          "false": Seçilmemiş
+        winner:
+          title: Kazanan
+          "true": "Evet"
+          "false": "Hayır"
         image: "Fotoğraf"
+        see_image: "Görüntüyü göster"
+        no_image: "Görüntü olmadan"
+        documents: "Belgeler"
+        see_documents: "Belgeleri göster (%{count})"
+        no_documents: "Belgeler olmadan"
+        valuator_groups: "Bilirkişi Grupları"
+      edit:
+        classification: Sınıflandırma
+        compatibility: Uygunluk
+        mark_as_incompatible: Uyumsuz olarak işaretle
+        selection: Seçim
+        mark_as_selected: Seçilmiş olarak işaretle
+        assigned_valuators: Bilirkişiler
+        select_heading: Başlık seç
+        submit_button: Güncelleme
+        user_tags: Kullanıcı etiketler atanmış
+        tags: Etiketler
+        tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
+        undefined: Tanımsız
+        user_groups: "Gruplar"
+      search_unfeasible: Arama uygulanamaz
     milestones:
       index:
+        table_id: "KİMLİK"
+        table_title: "İsim"
+        table_description: "Tanımlama"
+        table_publication_date: "Yayın tarihi"
+        table_status: Durum
         table_actions: "Aksiyon"
+        delete: "Kilometre taşı sil"
+        no_milestones: "Tanımlanmış kilometre taşları yok"
         image: "Fotoğraf"
+        show_image: "Resmi göster"
+        documents: "Belgeler"
+        milestone: Kilometre taşı
+        new_milestone: Yeni kilometre taşı oluştur
+      form:
+        admin_statuses: Durumları yönet
+        no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
+      new:
+        creating: Kilometre taşı oluştur
+        date: Tarih
+        description: Tanımlama
+      edit:
+        title: Kilometre taşı düzenle
+      create:
+        notice: Yeni kilometre taşı başarıyla oluşturuldu!
+      update:
+        notice: Kilometre taşı başarıyla güncellendi
+      delete:
+        notice: Kilometre taşı başarıyla silindi
     statuses:
       index:
+        title: Kilometre taşı durumları
+        empty_statuses: Hiç kilometre taşı durumları oluşturulmamış
+        new_status: Yeni kilometre taşı durumu oluştur
+        table_name: İsim
+        table_description: Tanımlama
         table_actions: Aksiyon
+        delete: Sil
         edit: Düzenleme
+      edit:
+        title: Kilometre taşı durumu düzenle
+      update:
+        notice: Kilometre taşı durumu başarıyla güncellendi
+      new:
+        title: Kilometre taşı durumu oluştur
+      create:
+        notice: Kilometre taşı durumu başarıyla oluşturuldu
+      delete:
+        notice: Kilometre taşı durumu başarıyla silindi
+    progress_bars:
+      manage: "İşlem çubuklarını yönet"
+      index:
+        title: "İşlem çubukları"
+        no_progress_bars: "İşlem çubukları yok"
+        new_progress_bar: "Yeni işlem çubuğu oluştur"
+        primary: "Birincil işlem çubuğu"
+        table_id: "KİMLİK"
+        table_kind: "Tür"
+        table_title: "İsim"
+        table_percentage: "Mevcut işlem"
+      new:
+        creating: "İşlem çubuğu oluştur"
+      edit:
+        title:
+          primary: "Birincil işlem çubuğunu düzenle"
+          secondary: "İşlem çubuğunu düzenle %{title}"
+      create:
+        notice: "İşlem çubuğu başarıyla oluşturuldu!"
+      update:
+        notice: "İşlem çubuğu başarıyla güncellendi"
+      delete:
+        notice: "İşlem çubuğu başarıyla silindi"
+    comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        hidden_debate: Gizli tartışma
+        hidden_proposal: Gizli öneri
+        title: Gizli yorumlar
+        no_hidden_comments: Hiç gizli yorumlar yok.
     dashboard:
       index:
+        back: Geri dön %{org}
         title: Yönetim
+        description: '%{org} yönetici paneline hoş geldiniz.'
+    debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli tartışmalar
+        no_hidden_debates: Hiç gizli tartışmalar yok.
+    hidden_users:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli kullanıcılar
+        user: Kullanıcı
+        no_hidden_users: Hiç gizli kullanıcılar yok.
+      show:
+        email: 'E-posta:'
+        hidden_at: 'Gizlenmiş:'
+        registered_at: 'Kayıtlı:'
+        title: Kullanıcının etkinliği (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli bütçeler yatırımları
+        no_hidden_budget_investments: Hiç gizli bütçe yatırımları yok
     legislation:
       processes:
+        create:
+          notice: 'İşlem başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: İşlem oluşturulamadı
+        update:
+          notice: 'İşlem başarıyla güncellendi. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: İşlem güncellenemedi
+        destroy:
+          notice: İşlem başarıyla silindi
+        edit:
+          back: Geri
+          submit_button: Değişiklikleri kaydet
+        errors:
+          form:
+            error: Hata
+        form:
+          enabled: Etkinleştirildi
+          process: İşlem
+          debate_phase: Tartışma aşaması
+          draft_phase: Taslak aşaması
+          draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
+          allegations_phase: Yorumlar aşaması
+          proposals_phase: Öneriler aşaması
+          use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
+          title_placeholder: İşlem başlığı
+          summary_placeholder: Tanımlamanın kısa özeti
+          description_placeholder: İşlemin bir tanımlamasını ekleyin
+          additional_info_placeholder: Yararlı olduğunu düşündüğünüz bir ek bilgi ekleyin
+          homepage: Tanımlama
+          homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
+          homepage_enabled: Ana sayfa etkinleştirildi
+          banner_title: Başlık renkleri
         index:
+          create: Yeni işlem
+          delete: Sil
+          title: Mevzuat işlemleri
           filters:
-            open: Açık
+            active: Aktif
+            all: Tüm
+        new:
+          back: Geri
+          title: Yeni katılımcı mevzuat süreci oluşturun
+          submit_button: İşlem oluşturma
+        proposals:
+          select_order: Sıralama ölçütü
+          orders:
+            id: Kimlik
+            title: İsim
+            supports: Tam destek
         process:
+          title: İşlem
           comments: Yorumlar
+          status: Durum
+          start_date: Başlangıç tarihi
+          end_date: Bitiş tarihi
           status_open: Açık
+          status_closed: Kapalı
+          status_planned: Planlanan
+        subnav:
+          info: Bilgi
+          homepage: Ana sayfa
+          draft_versions: Çizim
+          questions: Tartışma
+          proposals: Öneriler
+          milestones: Takip etme
+      homepage:
+        edit:
+          title: İşlem ana sayfanızı yapılandırın
+      proposals:
+        index:
+          title: İsim
+          back: Geri
+          id: Kimlik
+          supports: Tam destek
+          select: Seç
+          selected: Seçilmiş
+        form:
+          custom_categories: Kategoriler
+          custom_categories_description: Kullanıcıların öneri oluşturmayı seçebileceği kategoriler. Kategori başına maksimum 160 karakter.
+          custom_categories_placeholder: Kullanmak istediğiniz etiketleri, virgüller (,) ve tırnak işaretleri arasına ("") girin
       draft_versions:
+        create:
+          notice: 'Taslak başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Taslak oluşturulamadı
+        update:
+          notice: 'Taslak başarıyla güncellendi.<a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Taslak güncellenemedi
+        destroy:
+          notice: Taslak başarıyla silindi
+        edit:
+          back: Geri
+          submit_button: Değişiklikleri kaydet
+          warning: Metni düzenlediniz, değişiklikleri kalıcı olarak kaydetmek için Kaydet'e tıklamayı unutmayın.
+        errors:
+          form:
+            error: Hata
+        form:
+          title_html: 'Düzenleniyor <span class="strong">%{draft_version_title}</span> işlemden <span class="strong">%{process_title}</span>'
+          launch_text_editor: Metin düzenleyicisini başlatın
+          close_text_editor: Metin düzenleyiciyi kapatın
+          use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
+          hints:
+            final_version: Bu sürüm, bu işlem için Son Sonuç olarak yayınlanacaktır. Yorumlara bu sürümde izin verilmeyecektir.
+            status:
+              draft: Yönetici olarak önizleme yapabilirsiniz, başka kimse göremez
+              published: Herkes için görünür
+          title_placeholder: Taslak sürümün başlığını yaz
+          changelog_placeholder: Önceki sürümden ana değişiklikleri ekle
+          body_placeholder: Taslak metni yaz
+        index:
+          title: Taslak sürümler
+          create: Sürüm oluştur
+          delete: Sil
+          preview: Önizleme
+        new:
+          back: Geri
+          title: Yeni sürüm oluştur
+          submit_button: Sürüm oluştur
+        statuses:
+          draft: Taslak
+          published: Yayınlandı
         table:
+          title: Başlık
+          created_at: Oluşturuldu
           comments: Yorumlar
+          final_version: Son sürüm
+          status: Durum
+      questions:
+        create:
+          notice: 'Soru başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Soru oluşturulamadı
+        update:
+          notice: 'Soru başarıyla güncellendi. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Soru güncellenemedi
+        destroy:
+          notice: Soru başarıyla silindi
+        edit:
+          back: Geri
+          title: "Düzenle \"%{question_title}\""
+          submit_button: Değişiklikleri kaydet
+        errors:
+          form:
+            error: Hata
+        form:
+          add_option: Seçenek ekle
+          title: Soru
+          title_placeholder: Soru ekle
+          value_placeholder: Bir kapalı cevap ekle
+          question_options: "Olası yanıtlar (isteğe bağlı, varsayılan açık cevaplar tarafından)"
+        index:
+          back: Geri
+          title: Bu işlem ile ilgili sorular
+          create: Soru oluştur
+          delete: Sil
+        new:
+          back: Geri
+          title: Yeni soru oluştur
+          submit_button: Soru oluştur
+        table:
+          title: İsim
+          question_options: Soru seçenekleri
+          answers_count: Cevapların sayısı
+          comments_count: Yorumların sayısı
+        question_option_fields:
+          remove_option: Seçeneği kaldır
+      milestones:
+        index:
+          title: Takip
     managers:
       index:
+        title: Yöneticiler
+        name: Ad
         email: E-posta
+        no_managers: Hiç yönetici yok.
+      manager:
+        add: Ekle
+        delete: Sil
+      search:
+        title: 'Yöneticiler: Kullanıcı arama'
     menu:
+      activity: Moderatör faaliyeti
+      admin: Yönetici menüsü
+      banner: Bannerları yönet
+      proposals: Öneriler
+      proposals_topics: Öneri konuları
+      budgets: Katılımcı bütçeler
+      geozones: Geozone'ları yönet
+      hidden_comments: Gizli yorumlar
+      hidden_debates: Gizli tartışmalar
+      hidden_proposals: Gizli öneriler
+      hidden_budget_investments: Gizli bütçe yatırımları
+      hidden_proposal_notifications: Gizli öneri bildirimleri
+      hidden_users: Gizli kullanıcılar
       administrators: Yöneticiler
+      managers: Yöneticiler
+      moderators: Moderatörler
+      messaging_users: Kullanıcılara mesajlar
+      newsletters: Bültenler
+      admin_notifications: Bildirimler
+      system_emails: Sistem E-postaları
+      emails_download: E-postaları indirme
+      valuators: Bilirkişiler
+      poll_officers: Anket memurları
+      polls: Anketler
+      poll_booths: Kabinler konumu
+      poll_booth_assignments: Kabin Atamaları
+      poll_shifts: Vardiyaları yönet
+      officials: Yetkililer
+      organizations: Organizasyonlar
+      settings: Genel ayarlar
+      spending_proposals: Harcama önerileri
+      stats: İstatistikler
+      signature_sheets: İmza Sayfaları
+      site_customization:
+        homepage: Ana sayfa
+        pages: Özel sayfalar
+        images: Özel resimler
+        content_blocks: Özel içerik blokları
+        information_texts: Özel bilgi metinleri
+        information_texts_menu:
+          debates: "Tartışmalar"
+          community: "Topluluk"
+          proposals: "Öneriler"
+          polls: "Anketler"
+          layouts: "Düzenler"
+          mailers: "E-postalar"
+          management: "Yönetim"
+          welcome: "Hoş geldiniz"
+        buttons:
+          save: "Kaydet"
+          content_block:
+            update: "Bloğu Güncelle"
+      title_moderated_content: Denetlenen içerik
       title_budgets: Bütçeler
+      title_profiles: Profiller
+      title_settings: Ayarlar
+      title_site_customization: Site içeriği
+      title_booths: Oylama kabinleri
+      legislation: Katılımcı Mevzuat
+      users: Kullanıcılar
     administrators:
       index:
         title: Yöneticiler
+        name: İsim
         email: E-posta
+        id: Yönetici KİMLİĞİ
+        no_administrators: Hiç yönetici yok.
+      administrator:
+        add: Ekle
+        delete: Sil
+        restricted_removal: "Üzgünüm, kendinizi yöneticilerden kaldıramazsınız"
+      search:
+        title: "Yöneticiler: Kullanıcı ara"
     moderators:
       index:
+        title: Moderatörler
+        name: İsim
         email: E-posta
+        no_moderators: Hiç moderatör yok.
+      moderator:
+        add: Ekle
+        delete: Sil
+      search:
+        title: 'Moderatörler: Kullanıcı arama'
     segment_recipient:
+      all_users: Tüm kullanıcılar
       administrators: Yöneticiler
+      proposal_authors: Öneri yazarları
+      investment_authors: Cari bütçede yatırım yazarları
+      feasible_and_undecided_investment_authors: "Cari bütçeye uymayan bazı yatırımların yazarları: [değerleme imkansız sonuçlandı]"
+      selected_investment_authors: Cari bütçedeki seçilen yatırımların yazarları
+      winner_investment_authors: Cari bütçede kazanan yatırımların yazarları
+      not_supported_on_current_budget: Cari bütçeye yapılan yatırımları desteklemeyen kullanıcılar
+      invalid_recipients_segment: "Kullanıcı segmenti alıcıları geçersiz"
     newsletters:
+      create_success: Bülten başarıyla oluşturuldu
+      update_success: Bülten başarıyla güncellendi
+      send_success: Bülten başarıyla gönderildi
+      delete_success: Bülten başarıyla silindi
       index:
+        title: Bültenler
+        new_newsletter: Yeni bültenler
+        subject: Konu
+        segment_recipient: Alıcılar
+        sent: Gönder
         actions: Aksiyon
+        draft: Taslak
         edit: Düzenleme
+        delete: Sil
+        preview: Önizleme
+        empty_newsletters: Hiç gösterilecek bülten yok
+      new:
+        title: Yeni bülten
+        from: Bülten gönderirken görünecek e-posta adresi
+      edit:
+        title: Bülteni düzenle
+      show:
+        title: Bülten önizleme
+        send: Gönder
+        affected_users: (%{n} etkilenen kullanıcılar)
+        sent_emails:
+          one: 1 e-posta gönderildi
+          other: "%{count} e-postalar gönderildi"
+        sent_at: Gönderilen
+        subject: Konu
+        segment_recipient: Alıcılar
+        from: Bülten gönderirken görünecek e-posta adresi
+        body: E-posta içeriği
+        body_help_text: Kullanıcılar e-postayı bu şekilde görecekler
+        send_alert: Bu bülteni %{n} kullanıcılarına göndermek istediğinize emin misiniz?
     admin_notifications:
+      create_success: Bildirim başarıyla oluşturuldu
+      update_success: Bildirim başarıyla güncellendi
+      send_success: Bildirim başarıyla gönderildi
+      delete_success: Bildirim başarıyla silindi
       index:
+        section_title: Bildirimler
+        new_notification: Yeni bildirim
+        title: Başlık
+        segment_recipient: Alıcılar
+        sent: Gönder
         actions: Aksiyon
+        draft: Taslak
         edit: Düzenleme
+        delete: Sil
+        preview: Önizleme
+        view: Görünüm
+        empty_notifications: Hiç gösterilecek bildirim yok
+      new:
+        section_title: Yeni bildirim
+        submit_button: Bildirim oluştur
+      edit:
+        section_title: Bildirimi düzenle
+        submit_button: Bildirimi güncelle
+      show:
+        section_title: Bildirim önizleme
+        send: Bildirim gönder
+        will_get_notified: (%{n} kullanıcılara bildirilecek)
+        got_notified: (%{n} kullanıcılara bildirildi)
+        sent_at: Gönderildi
+        title: Başlık
+        body: Metin
+        link: Bağlantı
+        segment_recipient: Alıcılar
+        preview_guide: "Kullanıcılar bildirimi bu şekilde görecekler:"
+        sent_guide: "Kullanıcılar bildirimi bu şekilde görecekler:"
+        send_alert: Bu bildirimi %{n} kullanıcılarına göndermek istediğinize emin misiniz?
+    system_emails:
+      preview_pending:
+        action: Bekleyen Ön İzleme
+        preview_of: '%{name} ''in Ön İzlemesi'
+        pending_to_be_sent: Bu gönderilmeyi bekleyen içeriktir
+        moderate_pending: Bildirim göndermeyi denetle
+        send_pending: Gönderme beklemede
+        send_pending_notification: Bekleyen bildirimler başarıyla gönderildi
+      proposal_notification_digest:
+        title: "Öneri bildirimi özeti"
+        description: "Çok fazla e-posta almamak için bir kullanıcı için tüm öneri bildirimlerini tek bir mesajda toplar."
+        preview_detail: "Kullanıcılar yalnızca takip ettikleri önerilerden bildirim alırlar"
+      budget_investment_created:
+        title: "Bütçe yatırımı oluşturuldu"
+        description: "Bir kullanıcı bir bütçe yatırımı oluşturduğunda gönder."
+      budget_investment_selected:
+        title: "Bütçe yatırımı seçildi"
+        description: "Bütçe yatırımı seçildiğinde yazara gönder."
+      budget_investment_unfeasible:
+        title: "Bütçe yatırımı uygulanamaz"
+        description: "Bütçe yatırımı uygulanamaz olarak işaretlendiğinde yazara gönder."
+      budget_investment_unselected:
+        title: "Bütçe yatırımı seçilmedi"
+        description: "Bütçe yatırımı oylama aşaması için seçilmediğinde yazara gönder."
+      comment:
+        title: "Yorum"
+        description: "Bir yorum aldığında yazara gönder."
+      reply:
+        title: "Yanıt"
+        description: "Bir cevap aldığında yorum yazarına gönder."
+      direct_message_for_receiver:
+        title: "Özel mesaj alıcısı"
+        description: "Özel mesaj alıcısına gönder."
+      direct_message_for_sender:
+        title: "Özel mesaj göndericisi"
+        description: "Özel mesaj göndericisine gönder."
+      email_verification:
+        title: "E-posta doğrulama"
+        description: "Yeni bir kullanıcıya hesabını doğrulaması için gönder."
+      user_invite:
+        title: "Kullanıcı Daveti"
+        description: "Bir hesap açması için davet edilen kişiye gönder."
+      edit_info: "Bu e-postayı şurda düzenleyebilirsiniz"
+      message_title: "Mesaj Başlığı"
+      message_body: "Bu mesajın içeriğinin bir örneğidir."
+      alert:
+        no_investments: "Hiç bütçe yatırımı oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
+        no_comments: "Hiç yorum oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
+        no_replies: "Hiç yanıt oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
+    emails_download:
+      index:
+        title: E-postaları indirme
+        download_segment: E-posta adreslerini indir
+        download_segment_help_text: CSV formatında indirin
+        download_emails_button: E-postalar listesini indir
     valuators:
       index:
+        title: Bilirkişiler
+        name: İsim
         email: E-posta
+        description: Tanımlama
+        no_description: Tanımlama yok
+        no_valuators: Hiç bilirkişi yok.
+        valuator_groups: "Bilirkişi Grupları"
+        group: "Grup"
+        no_group: "Grup yok"
+      valuator:
+        add: Bilirkişilere ekle
+        delete: Sil
+      search:
+        title: 'Bilirkişiler: Kullanıcı arama'
+      summary:
+        title: Yatırım projeleri için bilirkişi özeti
+        valuator_name: Bilirkişi
+        finished_and_feasible_count: Bitmiş ve uygulanabilir
+        finished_and_unfeasible_count: Bitmiş ve uygulanamaz
+        finished_count: Bitmiş
+        in_evaluation_count: Değerlendirmede
+        total_count: Toplam
+        cost: Maliyet
+      form:
+        edit_title: "Bilirkişiler: Bilirkişi düzenle"
+        update: "Bilirkişi güncelle"
+        updated: "Bilirkişi başarıyla güncellendi"
       show:
+        description: "Tanımlama"
         email: "E-posta"
+        group: "Grup"
+        no_description: "Tanımlama olmadan"
+        no_group: "Grup olmadan"
+    valuator_groups:
+      index:
+        title: "Bilirkişi grupları"
+        new: "Bilirkişiler grubu oluştur"
+        name: "İsim"
+        members: "Üyeler"
+        no_groups: "Hiç bilirkişi grupları yok"
+      show:
+        title: "Bilirkişiler grubu: %{group}"
+        no_valuators: "Bu gruba atanmış hiç bilirkişi yok"
+      form:
+        name: "Grup adı"
+        new: "Bilirkişiler grubu oluştur"
+        edit: "Bilirkişiler grubunu kaydet"
     poll_officers:
+      index:
+        title: Anket memurları
       officer:
+        add: Ekle
+        delete: Pozisyonu sil
+        name: İsim
         email: E-posta
+        entry_name: memur
+      search:
+        email_placeholder: E-posta ile kullanıcı ara
+        search: Ara
+        user_not_found: Kullanıcı bulunamadı
     poll_officer_assignments:
       index:
+        officers_title: "Memurların listesi"
+        no_officers: "Bu ankete atanmış hiç memur yok."
+        table_name: "İsim"
         table_email: "E-posta"
+      by_officer:
+        date: "Tarih"
+        booth: "Kabin"
+        assignments: "Bu ankette ofis vardiyaları"
+        no_assignments: "Bu ankette bu kullanıcının ofis vardiyasi yok."
     poll_shifts:
       new:
+        add_shift: "Vardiya ekle"
+        shift: "Atama"
+        shifts: "Bu kabindeki vardiyalar"
+        date: "Tarih"
+        task: "Görev"
+        edit_shifts: Vardiyaları düzenle
+        new_shift: "Yeni vardiya"
+        no_shifts: "Bu kabinin vardiyası yok"
+        officer: "Memur"
+        remove_shift: "Kaldır"
+        search_officer_button: Ara
+        search_officer_placeholder: Memur ara
+        search_officer_text: Yeni bir vardiyaya atamak için bir memur arayın
+        select_date: "Gün seç"
+        no_voting_days: "Oylama günleri sona erdi"
+        select_task: "Görev seç"
+        table_shift: "Vardiya"
         table_email: "E-posta"
-    questions:
+        table_name: "İsim"
+      flash:
+        create: "Vardiya eklendi"
+        destroy: "Vardiya kaldırıldı"
+        unable_to_destroy: "Sonuçlar veya yeniden sayımlarla ilişkili vardiyalar silinemez"
+        date_missing: "Bir tarih seçilmelidir"
+      vote_collection: Oyları Toplamak
+      recount_scrutiny: Yeniden Sayım & Dikkatli İnceleme
+    booth_assignments:
+      manage_assignments: Atamaları yönetmek
+      manage:
+        assignments_list: "Anket için atamalar '%{poll}'"
+        status:
+          assign_status: Atama
+          assigned: Atanmış
+          unassigned: Atanmamış
+        actions:
+          assign: Kabin atama
+          unassign: Kabin atamayı kaldırma
+    poll_booth_assignments:
+      alert:
+        shifts: "Bu kabinle ilişkili vardiyalar var. Kabin atamayı kaldırırsanız, aynı zamanda vardiyalar silinecektir. Devam edilsin mi?"
+      flash:
+        destroy: "Kabin artık atanmış değil"
+        create: "Atanmış kabin"
+        error_destroy: "Kabin ataması kaldırılırken bir hata oluştu"
+        error_create: "Ankete kabin atanırken bir hata oluştu"
       show:
+        location: "Konum"
+        officers: "Memurlar"
+        officers_list: "Bu kabin için memur listesi"
+        no_officers: "Bu kabin için hiçbir memur yok"
+        recounts: "Yeniden Sayımlar"
+        recounts_list: "Bu kabin için yeniden sayım listesi"
+        results: "Sonuçlar"
+        date: "Tarih"
+        count_final: "Son yeniden sayım (memur tarafından)"
+        count_by_system: "Oylar (otomatik)"
+        total_system: Toplam oylar (otomatik)
+      index:
+        booths_title: "Kabinlerin listesi"
+        no_booths: "Bu ankete atanmış hiç kabin yok."
+        table_name: "İsim"
+        table_location: "Konum"
+    active_polls:
+      edit:
+        title: "Anketlerin tanımlaması"
+      form:
+        description:
+          text: "Tanımlama"
+          help_text: "Bu metin anket sayfasının başlığında görünecektir. Açık anketlere bir içerik eklemek için kullanılabilir."
+    polls:
+      index:
+        title: "Anketlerin listesi"
+        no_polls: "Yaklaşan hiç anket yok."
+        create: "Anket oluştur"
+        name: "İsim"
+        dates: "Tarihler"
+        start_date: "Başlangıç Tarihi"
+        closing_date: "Kapanış Tarihi"
+        geozone_restricted: "Bölgelerle sınırlıdır"
+      new:
+        title: "Yeni anket"
+        show_results_and_stats: "Sonuçları ve istatistikleri göster"
+        show_results: "Sonuçları göster"
+        show_stats: "İstatistikleri göster"
+        results_and_stats_reminder: "Bu onay kutularını işaretlemek, bu anketin sonuçlarını ve/veya istatistiklerini kamuya açık tutacak ve her kullanıcı bunları görecektir."
+        submit_button: "Anket oluştur"
+      edit:
+        title: "Anketi düzenle"
+        submit_button: "Anketi güncelle"
+      show:
+        questions_tab: Sorular
+        booths_tab: Kabinler
+        officers_tab: Memurlar
+        recounts_tab: Yeniden Sayımlar
+        results_tab: Sonuçlar
+        no_questions: "Bu ankete atanmış hiç soru yok."
+        questions_title: "Soruların listesi"
+        table_title: "Başlık"
+      flash:
+        question_added: "Bu ankete soru eklendi"
+        error_on_question_added: "Bu ankete soru atanamadı"
+    questions:
+      index:
+        title: "Sorular"
+        create: "Soru oluştur"
+        no_questions: "Soru yok."
+        filter_poll: Ankete göre filtrele
+        select_poll: Anket Seç
+        questions_tab: "Sorular"
+        successful_proposals_tab: "Başarılı öneriler"
+        create_question: "Soru oluştur"
+        table_proposal: "Öneri"
+        table_question: "Soru"
+        table_poll: "Anket"
+        poll_not_assigned: "Anket atanmamış"
+      edit:
+        title: "Soru Düzenle"
+      new:
+        title: "Soru Oluştur"
+        poll_label: "Anket"
+      answers:
+        images:
+          add_image: "Görüntü ekle"
+          save_image: "Görüntüyü kaydet"
+      show:
+        proposal: Orjinal teklif
+        author: Yazar
+        question: Soru
+        edit_question: Soru düzenle
+        valid_answers: Geçerli cevaplar
+        add_answer: Cevap ekle
+        video_url: Harici video
         answers:
+          title: Cevap
+          description: Tanımlama
+          videos: Videolar
+          video_list: Video listesi
+          images: Resimler
+          images_list: Resim listesi
+          documents: Belgeler
+          documents_list: Belgeler listesi
+          document_title: Başlık
           document_actions: Aksiyon
+    answers:
+      new:
+        title: Yeni cevap
+      show:
+        title: Başlık
+        description: Tanımlama
+        images: Resimler
+        images_list: Resim listesi
+        edit: Cevap düzenle
+      edit:
+        title: Cevap düzenle
+      videos:
+        index:
+          title: Videolar
+          add_video: Video ekle
+          video_title: Başlık
+          video_url: Harici video
+        new:
+          title: Yeni video
+        edit:
+          title: Video düzenle
+    recounts:
+      index:
+        title: "Yeniden Sayma"
+        no_recounts: "Yeniden sayılan bir şey yok"
+        all_booths_total: "Tüm kabinlerden kümülatif toplam:"
+        total_final: "Son sayılar"
+        total_system: "Oylar (otomatik)"
+        table_booth_name: "Kabin"
+        table_total_recount: "Toplam yeniden sayım (memur tarafından)"
+        table_system_count: "Oylar (otomatik)"
     results:
+      index:
+        title: "Sonuçlar"
+        no_results: "Hiç sonuç yok"
       result:
+        table_whites: "Tamamen boş oylar"
+        table_nulls: "Geçersiz oylar"
+        table_total: "Toplam oylar"
+        table_answer: Cevap
         table_votes: Oylar
+      results_by_booth:
+        booth: Kabin
+        results: Sonuçlar
+        see_results: Sonuçları gör
+        title: "Kabine göre sonuçlar"
+    booths:
+      index:
+        title: "Aktif kabinlerin listesi"
+        no_booths: "Yaklaşan herhangi bir anket için aktif kabin yok."
+        add_booth: "Kabin ekle"
+        name: "İsim"
+        location: "Konum"
+        no_location: "Konum Yok"
+      new:
+        title: "Yeni kabin"
+        name: "İsim"
+        location: "Konum"
+        submit_button: "Kabin oluştur"
+      edit:
+        title: "Kabin düzenle"
+        submit_button: "Kabini güncelle"
+      show:
+        location: "Konum"
+      booth:
+        shifts: "Vardiyaları yönet"
+        edit: "Kabin düzenle"
+    officials:
+      edit:
+        destroy: '''Yetkili'' durumunu kaldır'
+        title: 'Yetkililer: Kullanıcıyı düzenle'
+      flash:
+        official_destroyed: 'Ayrıntılar kaydedildi: kullanıcı artık bir yetkili değil'
+        official_updated: Yetkili detayları kaydedildi
+      index:
+        title: Yetkililer
+        no_officials: Hiç yetkili yok.
+        name: İsim
+        official_position: Resmi pozisyon
+        official_level: Seviye
+      level_0: Yetkili değil
+      level_1: Seviye 1
+      level_2: Seviye 2
+      level_3: Seviye 3
+      level_4: Seviye 4
+      level_5: Seviye 5
+      search:
+        edit_official: Yetkiliyi düzenle
+        make_official: Yetkili yap
+        title: 'Resmi pozisyonlar: Kullanıcı ara'
+        no_results: Resmi pozisyonlar bulunamadı.
     organizations:
       index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending: Beklemede
+          rejected: Reddedildi
+          verified: Doğrulandı
+        hidden_count_html:
+          one: Ayrıca kullanıcısı olmayan veya gizli bir kullanıcısı olan <strong>bir kuruluş</strong> vardır.
+          other: Ayrıca kullanıcısı olmayan veya gizli bir kullanıcısı olan <strong>%{count} kuruluşlar</strong> vardır.
+        name: İsim
         email: E-posta
+        phone_number: Telefon
+        responsible_name: Sorumlu
+        status: Durum
+        no_organizations: Hiç organizasyon yok.
+        reject: Reddet
+        rejected: Reddedildi
+        search: Ara
+        search_placeholder: İsim, e-posta veya telefon numarası
+        title: Organizasyonlar
+        verified: Doğrulandı
+        verify: Doğrula
+        pending: Beklemede
+      search:
+        title: Organizasyon Arama
+        no_results: Hiç organizasyon yok.
+    proposals:
+      index:
+        title: Öneriler
+        id: KİMLİK
+        author: Yazar
+        milestones: Kilometre taşı
+        no_proposals: Hiç öneri yok.
+    hidden_proposals:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli öneriler
+        no_hidden_proposals: Hiç gizli öneriler yok.
+    proposal_notifications:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli bildirimler
+        no_hidden_proposals: Hiç gizli bildirimler yok.
     settings:
+      flash:
+        updated: Değer güncellendi
+      index:
+        title: Yapılandırma ayarları
+        update_setting: Güncelleme
+        feature_flags: Özellikler
+        features:
+          enabled: "Özellik etkinleştirildi"
+          disabled: "Özellik devre dışı"
+          enable: "Etkinleştir"
+          disable: "Devre dışı bırakma"
+        map:
+          title: Harita yapılandırma
+          help: Burada haritanın kullanıcılara gösterilme şeklini kişiselleştirebilirsiniz. Harita işaretçisini sürükleyin veya haritanın herhangi bir yerine tıklayın, istediğiniz yakınlaştırmayı ayarlayın ve "Güncelle" düğmesine tıklayın.
+          flash:
+            update: Harita yapılandırma başarıyla güncellendi.
+          form:
+            submit: Güncelleme
+      setting: Özellik
       setting_actions: Aksiyon
+      setting_name: Ayar
+      setting_status: Durum
+      setting_value: Değer
+      no_description: "Tanımlama yok"
     shared:
+      true_value: "Evet"
+      false_value: "Hayır"
+      booths_search:
+        button: Ara
+        placeholder: İsme göre kabin ara
+      poll_officers_search:
+        button: Ara
+        placeholder: Anket memurlarını ara
+      poll_questions_search:
+        button: Ara
+        placeholder: Anket sorularını ara
+      proposal_search:
+        button: Ara
+        placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
+      spending_proposal_search:
+        button: Ara
+        placeholder: Bekleyen önerileri başlığa veya tanımlamaya göre ara
+      user_search:
+        button: Ara
+        placeholder: İsim veya e-posta ile kullanıcı ara
+      search_results: "Arama sonuçları"
+      no_search_results: "Hiç sonuç bulunamadı."
       actions: Aksiyon
+      title: Başlık
+      description: Tanımlama
       image: Fotoğraf
+      show_image: Resmi göster
+      moderated_content: "Moderatörler tarafından denetlenen içeriği kontrol edin ve denetlemenin doğru yapıldığını onaylayın."
+      view: Görünüm
+      proposal: Öneri
+      author: Yazar
+      content: İçerik
+      created_at: Oluşturuldu
+      delete: Sil
     spending_proposals:
       index:
+        geozone_filter_all: Tüm bölgeler
+        administrator_filter_all: Tüm yöneticiler
+        valuator_filter_all: Tüm bilirkişiler
+        tags_filter_all: Tüm etiketler
         filters:
           valuation_open: Açık
+          without_admin: Atanmış yönetici olmadan
+          managed: Yönetilen
+          valuating: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+          all: Tüm
+        title: Katılımcı bütçeleme için yatırım projeleri
+        assigned_admin: Atanmış yönetici
+        no_admin_assigned: Hiç yönetici atanmamış
+        no_valuators_assigned: Hiç bilirkişi atanmamış
+        summary_link: "Yatırım projesi özeti"
+        valuator_summary_link: "Bilirkişi özeti"
+        feasibility:
+          feasible: "Uygulanabilir (%{price})"
+          not_feasible: "Mümkün değil"
+          undefined: "Tanımsız"
       show:
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
+        back: Geri
+        classification: Sınıflandırma
+        heading: "Yatırım projesi %{id}"
         edit: Düzenleme
+        edit_classification: Sınıflandırmayı düzenle
+        association_name: Dernek
+        by: Tarafından
+        sent: Gönder
+        geozone: Kapsam
+        dossier: Dosya
+        edit_dossier: Dosyayı düzenle
+        tags: Etiketler
+        undefined: Tanımsız
+      edit:
+        classification: Sınıflandırma
+        assigned_valuators: Bilirkişiler
+        submit_button: Güncelleme
+        tags: Etiketler
+        tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
+        undefined: Tanımsız
+      summary:
+        title: Yatırım projelerinin özeti
+        title_proposals_with_supports: Desteklenen yatırım projeleri için özet
+        geozone_name: Kapsam
+        finished_and_feasible_count: Bitmiş ve uygulanabilir
+        finished_and_unfeasible_count: Bitmiş ve uygulanamaz
+        finished_count: Bitmiş
+        in_evaluation_count: Değerlendirmede
+        total_count: Toplam
+        cost_for_geozone: Maliyet
     geozones:
       index:
+        title: Coğrafi Bölge (Geozone)
+        create: Coğrafi bölge (Geozone) oluştur
         edit: Düzenleme
+        delete: Sil
+      geozone:
+        name: İsim
+        external_code: Harici kod
+        census_code: Census kodu
+        coordinates: Koordinatlar
+      errors:
+        form:
+          error:
+            one: "hata bu coğrafi bölgenin (geozone) kaydedilmesini engelledi"
+            other: 'hatalar bu coğrafi bölgenin (geozone) kaydedilmesini engelledi'
+      edit:
+        form:
+          submit_button: Değişiklikleri kaydet
+        editing: Coğrafi bölge (geozone) düzenleniyor
+        back: Geri git
+      new:
+        back: Geri git
+        creating: Bölge oluştur
+      delete:
+        success: Coğrafi bölge (Geozone) başarıyla silindi
+        error: Bu coğrafi bölge (geozone) kendisine eklenmiş öğeler olduğundan silinemez
+    signature_sheets:
+      author: Yazar
+      created_at: Oluşturma tarihi
+      name: İsim
+      no_signature_sheets: "İmza_sayfaları yok"
+      index:
+        title: İmza sayfaları
+        new: Yeni imza sayfaları
+      new:
+        title: Yeni imza sayfaları
+        document_numbers_note: "Virgül ile ayrılmış sayıları yazın (,)"
+        submit: İmza sayfası oluştur
+      show:
+        created_at: Oluşturuldu
+        author: Yazar
+        documents: Belgeler
+        document_count: "Belgelerin sayısı:"
+        verified:
+          one: "%{count} geçerli imza var"
+          other: "%{count} geçerli imzalar var"
+        unverified:
+          one: "%{count} geçersiz imza var"
+          other: "%{count} geçersiz imzalar var"
+        unverified_error: (Census tarafından doğrulanmadı)
+        loading: "Census tarafından doğrulanan imzalar var, lütfen sayfayı birkaç dakika içinde yenileyin"
     stats:
       show:
+        stats_title: İstatistikler
         summary:
+          comment_votes: Yorum oyları
           comments: Yorumlar
+          debate_votes: Tartışma oyları
+          debates: Tartışmalar
+          proposal_votes: Öneri oyları
+          proposals: Öneriler
+          budgets: Açık bütçeler
+          budget_investments: Yatırım projeleri
+          spending_proposals: Bekleyen Öneriler
+          unverified_users: Doğrulanmamış kullanıcılar
+          user_level_three: Üçüncü seviye kullanıcılar
+          user_level_two: İkinci seviye kullanıcılar
+          users: Toplam kullanıcılar
+          verified_users: Doğrulanan kullanıcılar
+          verified_users_who_didnt_vote_proposals: Teklifleri oylamayan doğrulanan kullanıcılar
+          visits: Ziyaretler
+          votes: Toplam oylar
+        spending_proposals_title: Bekleyen Öneriler
+        budgets_title: Katılımcı bütçeleme
+        visits_title: Ziyaretler
+        direct_messages: Doğrudan mesajlar
+        proposal_notifications: Öneri bildirimleri
+        incomplete_verifications: Tamamlanmamış doğrulamalar
+        polls: Anketler
+      direct_messages:
+        title: Doğrudan mesajlar
+        total: Toplam
+        users_who_have_sent_message: Bir özel mesaj gönderen kullanıcılar
+      proposal_notifications:
+        title: Öneri bildirimleri
+        total: Toplam
+        proposals_with_notifications: Bildirimler ile öneriler
+        not_available: "Öneri mevcut değil"
+      polls:
+        title: Anket İstatistikleri
+        all: Anketler
+        web_participants: Web katılımcıları
+        total_participants: Toplam Katılımcılar
+        poll_questions: "Anketten sorular: %{poll}"
+        table:
+          poll_name: Anket
+          question_name: Soru
+          origin_web: Web katılımcıları
+          origin_total: Toplam katılımcılar
+    tags:
+      create: Konu oluştur
+      destroy: Konuyu yok etmek
+      index:
+        add_tag: Yeni bir öneri konusu ekle
+        title: Öneri konuları
+        topic: Konu
+        help: "Bir kullanıcı bir öneri oluşturduğunda, aşağıdaki konular varsayılan etiketler olarak önerilir."
+      name:
+        placeholder: Konunun adını yazın
     users:
       columns:
+        name: İsim
         email: E-posta
+        document_number: Belge numarası
+        roles: Roller
+        verification_level: Doğrulama seviyesi
+      index:
+        title: Kullanıcı
+        no_users: Kullanıcı yok.
+      search:
+        placeholder: E-posta, isim veya belge numarasına göre kullanıcı ara
+        search: Ara
+    verifications:
+      index:
+        phone_not_given: Telefon verilmemiş
+        sms_code_not_confirmed: Sms kodunu onaylamadı
+        title: Tamamlanmamış doğrulamalar
     site_customization:
+      content_blocks:
+        information: İçerik blokları hakkında bilgi
+        about: "Web sitenizin farklı yerlerine eklenebilecek HTML içerik blokları oluşturabilirsiniz."
+        html_format: "Bir içerik bloğu bir bağlantı grubudur ve aşağıdaki biçimde olmalıdır:"
+        no_blocks: "İçerik blokları yok."
+        create:
+          notice: İçerik bloğu başarıyla oluşturuldu
+          error: İçerik bloğu oluşturulamadı
+        update:
+          notice: İçerik bloğu başarıyla güncellendi
+          error: İçerik bloğu güncellenemedi
+        destroy:
+          notice: İçerik bloğu başarıyla silindi
+        edit:
+          title: İçerik bloğu düzenleniyor
+        errors:
+          form:
+            error: Hata
+        index:
+          create: Yeni içerik bloğu oluştur
+          delete: Blok silme
+          title: İçerik blokları
+        new:
+          title: Yeni içerik bloğu oluştur
+        content_block:
+          body: Gövde
+          name: İsim
+          names:
+            top_links: En İyi Bağlantılar
+            footer: Altbilgi
+            subnavigation_left: Ana Navigasyon Sol
+            subnavigation_right: Ana Navigasyon Sağ
       images:
         index:
+          title: Özel resimler
+          update: Güncelleme
+          delete: Sil
           image: Fotoğraf
+        update:
+          notice: Resim başarıyla güncellendi
+          error: Resim güncellenemedi
+        destroy:
+          notice: Resim başarıyla silindi
+          error: Resim silinemedi
+      pages:
+        create:
+          notice: Sayfa başarıyla oluşturuldu
+          error: Sayfa oluşturulamadı
+        update:
+          notice: Sayfa başarıyla güncellendi
+          error: Sayfa güncellenemedi
+        destroy:
+          notice: Sayfa başarıyla silindi
+        edit:
+          title: Düzenleniyor %{page_title}
+        errors:
+          form:
+            error: Hata
+        form:
+          options: Seçenekler
+        index:
+          create: Yeni sayfa oluştur
+          delete: Sayfayı sil
+          title: Kişisel Sayfalar
+          see_page: Sayfayı göster
+        new:
+          title: Yeni kişisel sayfa oluştur
+        page:
+          created_at: Oluşturuldu
+          status: Durum
+          updated_at: Güncellendi
+          status_draft: Taslak
+          status_published: Yayınlandı
+          title: Başlık
+          slug: Parça
+          cards_title: Kartlar
+          see_cards: Kartları Gör
+        cards:
+          cards_title: kartlar
+          create_card: Kart oluştur
+          no_cards: Kart yok.
+          title: Başlık
+          description: Tanımlama
+          link_text: Bağlantı metni
+          link_url: Bağlantı Adresi
+          columns_help: "Sütün sayılarında kartın genişliği. Mobil ekranlarda her zaman %100 genişliğindedir."
+          create:
+            notice: "Kart başarıyla oluşturuldu!"
+          update:
+            notice: "Kart başarıyla güncellendi"
+          destroy:
+            notice: "Kart başarıyla kaldırıldı"
+    homepage:
+      title: Ana sayfa
+      description: Aktif modüller ana sayfada, buradakiyle aynı sırada görünür.
+      header_title: Üstbilgi
+      no_header: Üstbilgi yok.
+      create_header: Üstbilgi oluştur
+      cards_title: Kartlar
+      create_card: Kart oluştur
+      no_cards: Kart yok.
+      cards:
+        title: Başlık
+        description: Tanımlama
+        link_text: Bağlantı metni
+        link_url: Bağlantı Adresi
+      feeds:
+        proposals: Öneriler
+        debates: Tartışmalar
+        processes: İşlemler
+      new:
+        header_title: Yeni üstbilgi
+        submit_header: Üstbilgi oluştur
+        card_title: Yeni kart
+        submit_card: Kart oluştur
+      edit:
+        header_title: Üstbilgi düzenle
+        submit_header: Üstbilgiyi kaydet
+        card_title: Kart düzenle
+        submit_card: Kart kaydet
+    translations:
+      remove_language: Dil kaldır
+      add_language: Dil ekle
