@@ -13,25 +13,384 @@ tr:
       milestone:
         one: "kilometre taşı"
         other: "kilometre taşları"
+      milestone/status:
+        one: "Kilometre Taşı Durumu"
+        other: "Kilometre Taşı Durumları"
+      progress_bar:
+        one: "İlerleme çubuğu"
+        other: "İlerleme çubukları"
       comment:
         one: "Yorum"
         other: "Yorumlar"
+      debate:
+        one: "Tartışma"
+        other: "Tartışmalar"
+      tag:
+        one: "Etiket"
+        other: "Etiketler"
+      user:
+        one: "Kullanıcı"
+        other: "Kullanıcılar"
+      moderator:
+        one: "Moderatör"
+        other: "Moderatörler"
       administrator:
         one: "Yönetici"
         other: "Yöneticiler"
+      valuator:
+        one: "Bilirkişi"
+        other: "Bilirkişiler"
+      valuator_group:
+        one: "Bilirkişi grubu"
+        other: "Bilirkişi grupları"
+      manager:
+        one: "Yönetici"
+        other: "Yöneticiler"
+      newsletter:
+        one: "Bülten"
+        other: "Bültenler"
       vote:
         one: "Oy"
         other: "Oylar"
+      organization:
+        one: "Organizasyon"
+        other: "Organizasyonlar"
+      poll/booth:
+        one: "kabin"
+        other: "kabinler"
+      poll/officer:
+        one: "memur"
+        other: "memurlar"
+      proposal:
+        one: "Vatandaş teklifi"
+        other: "Vatandaş teklifleri"
+      spending_proposal:
+        one: "Yatırım projesi"
+        other: "Yatırım projeleri"
+      site_customization/page:
+        one: Özel sayfa
+        other: Özel sayfalar
+      site_customization/image:
+        one: Özel resim
+        other: Özel resimler
+      site_customization/content_block:
+        one: Özel içerik bloğu
+        other: Özel içerik blokları
+      legislation/process:
+        one: "İşlem"
+        other: "İşlemler"
+      legislation/proposal:
+        one: "Öneri"
+        other: "Öneriler"
+      legislation/draft_versions:
+        one: "Taslak versiyon"
+        other: "Taslak versiyonlar"
+      legislation/questions:
+        one: "Soru"
+        other: "Sorular"
+      legislation/question_options:
+        one: "Soru seçeneği"
+        other: "Soru seçenekleri"
+      legislation/answers:
+        one: "Cevap"
+        other: "Cevaplar"
+      documents:
+        one: "Belge"
+        other: "Belgeler"
+      images:
+        one: "Resim"
+        other: "Resimler"
+      topic:
+        one: "Konu"
+        other: "Konular"
+      poll:
+        one: "Anket"
+        other: "Anketler"
+      proposal_notification:
+        one: "Öneri bildirimi"
+        other: "Öneri bildirimleri"
     attributes:
+      budget:
+        name: "İsim"
+        description_accepting: "Kabul aşaması sırasında tanımlama"
+        description_reviewing: "Gözden Geçirme aşaması sırasında tanımlama"
+        description_selecting: "Seçim aşaması sırasında tanımlama"
+        description_valuating: "Değerlendirme aşaması sırasında tanımlama"
+        description_balloting: "Oylama aşamasında tanımlama"
+        description_reviewing_ballots: "Oyları Gözden Geçirme aşamasında tanımlama"
+        description_finished: "Bütçe bittiğinde tanımlama"
+        phase: "Aşama"
+        currency_symbol: "Para Birimi"
       budget/investment:
+        heading_id: "Başlık"
+        title: "İsim"
+        description: "Tanımlama"
+        external_url: "Ek belgelere bağlantı"
         administrator_id: "Yönetici"
+        location: "Konum (isteğe bağlı)"
+        organization_name: "Eğer bir ortaklık/organizasyon adına veya daha fazla kişi adına teklif ediyorsanız, ismini yazın"
+        image: "Teklif betimleyici resmi"
+        image_title: "Resim ismi"
+      milestone:
+        status_id: "Mevcut durum (isteğe bağlı)"
+        title: "İsim"
+        description: "Tanımlama ( isteğe bağlı eğer belirlenmiş bir durum varsa)"
+        publication_date: "Yayın tarihi"
+      milestone/status:
+        name: "İsim"
+        description: "Tanımlama (isteğe bağlı)"
+      progress_bar:
+        kind: "Tür"
+        title: "İsim"
+        percentage: "Mevcut ilerleme"
+      progress_bar/kind:
+        primary: "Birincil"
+        secondary: "İkincil"
+      budget/heading:
+        name: "Başlık adı"
+        price: "Fiyat"
+        population: "Nüfus"
       comment:
         body: "Yorum"
+        user: "Kullanıcı"
+      debate:
+        author: "Yazar"
+        description: "Fikir"
+        terms_of_service: "Hizmet şartları"
+        title: "İsim"
+      proposal:
+        author: "Yazar"
+        title: "İsim"
+        question: "Soru"
+        description: "Tanımlama"
+        terms_of_service: "Hizmet şartları"
       user:
+        login: "E-posta veya kullanıcı adı"
         email: "E-posta"
+        username: "Kullanıcı adı"
+        password_confirmation: "Şifre onayı"
+        password: "Şifre"
+        current_password: "Mevcut şifre"
+        phone_number: "Telefon numarası"
+        official_position: "Resmi pozisyon"
+        official_level: "Resmi düzey"
+        redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
+      organization:
+        name: "Organizasyon adı"
+        responsible_name: "Gruptan sorumlu kişi"
       spending_proposal:
         administrator_id: "Yönetici"
+        association_name: "İlişkilendirme adı"
+        description: "Tanımlama"
+        external_url: "Ek belgelere bağlantı"
+        geozone_id: "İşlem kapsamı"
+        title: "İsim"
+      poll:
+        name: "Ad"
+        starts_at: "Başlangıç Tarihi"
+        ends_at: "Kapanış Tarihi"
+        geozone_restricted: "Geozone tarafından kısıtlandırılmış"
+        summary: "Özet"
+        description: "Tanımlama"
+      poll/translation:
+        name: "Ad"
+        summary: "Özet"
+        description: "Tanımlama"
+      poll/question:
+        title: "Soru"
+        summary: "Özet"
+        description: "Tanımlama"
+        external_url: "Ek belgelere bağlantı"
+      poll/question/translation:
+        title: "Soru"
+      signature_sheet:
+        signable_type: "İmzalanır tür"
+        signable_id: "İmzalanır KİMLİK"
+        document_numbers: "Belgelerin numaraları"
+      site_customization/page:
+        content: İçerik
+        created_at: Oluşturuldu
+        subtitle: Altyazı
+        slug: Parça
+        status: Durum
+        title: İsim
+        updated_at: Güncellenmiş
+        more_info_flag: Yardım sayfasında göster
+        print_content_flag: İçerik yazdır düğmesi
+        locale: Dil
+      site_customization/page/translation:
+        title: İsim
+        subtitle: Altyazı
+        content: İçerik
       site_customization/image:
+        name: Ad
         image: Fotoğraf
+      site_customization/content_block:
+        name: Ad
+        locale: yer
+        body: Gövde
+      legislation/process:
+        title: İşlem Adı
+        summary: Özet
+        description: Tanımlama
+        additional_info: Ek bilgi
+        start_date: Başlangıç tarihi
+        end_date: Bitiş tarihi
+        debate_start_date: Tartışma başlangıç tarihi
+        debate_end_date: Tartışma bitiş tarihi
+        draft_start_date: Taslak başlangıç tarihi
+        draft_end_date: Taslak bitiş tarihi
+        draft_publication_date: Taslak yayın tarihi
+        allegations_start_date: İddialar başlangıç tarihi
+        allegations_end_date: İddialar bitiş tarihi
+        proposals_phase_start_date: Başlangıç
+        proposals_phase_end_date: Bitiş
+        result_publication_date: Son sonuç yayın tarihi
+        background_color: Arka plan rengi
+        font_color: Yazı tipi rengi
+      legislation/process/translation:
+        title: İşlem Adı
+        summary: Özet
+        description: Tanımlama
+        additional_info: Ek bilgi
+        milestones_summary: Özet
+      legislation/draft_version:
+        title: Sürüm adı
+        body: Metin
+        changelog: Değişiklikler
+        status: Durum
+        final_version: Son sürüm
+      legislation/draft_version/translation:
+        title: Sürüm adı
+        body: Metin
+        changelog: Değişiklikler
+      legislation/question:
+        title: İsim
+        question_options: Seçenekler
+      legislation/question_option:
+        value: Değer
       legislation/annotation:
         text: Yorum
+      document:
+        title: İsim
+        attachment: Ek dosya
+      image:
+        title: İsim
+        attachment: Ek dosya
+      poll/question/answer:
+        title: Cevap
+        description: Tanımlama
+      poll/question/answer/translation:
+        title: Cevap
+        description: Tanımlama
+      poll/question/answer/video:
+        title: İsim
+        url: Harici video
+      newsletter:
+        segment_recipient: Alıcılar
+        subject: Konu
+        from: Kaynak
+        body: E-posta içeriği
+      admin_notification:
+        segment_recipient: Alıcılar
+        title: İsim
+        link: Bağlantı
+        body: Metin
+      admin_notification/translation:
+        title: İsim
+        body: Metin
+      widget/card:
+        label: Etiket (isteğe bağlı)
+        title: İsim
+        description: Tanımlama
+        link_text: Bağlantı metni
+        link_url: Bağlantı Adresi
+        columns: Sütunların sayısı
+      widget/card/translation:
+        label: Etiket (isteğe bağlı)
+        title: İsim
+        description: Tanımlama
+        link_text: Bağlantı metni
+      widget/feed:
+        limit: Öğelerin sayısı
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Bu kullanıcının zaten bir şifresi var"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketler %{count} 'tan küçük veya ona eşit olmalıdır"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Günlük maksimum özel mesaj sayısına ulaştınız"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Görüntü Genişliği en az %{required_min_width}px olmalıdır"
+              min_image_height: "Görüntü Yüksekliği en az %{required_min_height}px olmalıdır"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Kullanıcı alıcıları bölümü geçersizdir"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Kullanıcı alıcıları bölümü geçersizdir"
+        map_location:
+          attributes:
+            map:
+              invalid: Harita konumu boş olamaz. Coğrafi konum belirleme gerekli değilse bir işaretleyici yerleştirin veya onay kutusunu işaretleyin
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Belge sayımda değil"
+              has_voted: "Kullanıcı zaten oylanmış"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: başlangıç tarihi sonrasında veya sırasında olmalıdır
+            debate_end_date:
+              invalid_date_range: tartışma başlangıç tarihi sonrasında veya sırasında olmalıdır
+            draft_end_date:
+              invalid_date_range: taslak başlangıç tarihi sonrasında veya sırasında olmalıdır
+            allegations_end_date:
+              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalı
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Bildirimler arasında en az %{interval} gün beklemeniz gerekir"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Census tarafından doğrulanmadı'
+              already_voted: 'Bu öneri zaten oylandı'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "harfler, sayılar, _ ve - olmalıdır"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Genişlik %{required_width}px olmalı"
+              image_height: "Yükseklik %{required_height}px olmalı"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: 'Bir değerlendirmeye yorum yapamazsınız'
+      messages:
+        record_invalid: "Onaylama başarısız: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Bir bağlı %{record} bulunduğundan kayıt silinemiyor"
+          has_many: "Bağlı %{record} bulunduğundan kayıt silinemiyor"
