@@ -465,7 +465,6 @@ id:
         title: "Pertanyaan"
         most_voted_answer: "Jawaban paling banyak suara: "
   poll_questions:
-    create_question: "Membuat pertanyaan"
     show:
       vote_answer: "Suara %{answer}"
       voted: "Anda telah suara %{answer}"
