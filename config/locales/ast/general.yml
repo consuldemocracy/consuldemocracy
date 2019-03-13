@@ -408,7 +408,6 @@ ast:
       results:
         title: "Entruges"
   poll_questions:
-    create_question: "Crear entruga pa votación"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
