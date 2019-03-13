@@ -385,7 +385,6 @@ ca:
       activity: Activitat de moderadors
       admin: Menú d'administració
       banner: Gestionar banners
-      poll_questions: Preguntes ciutadanes
       proposals: Propostes ciutadanes
       proposals_topics: Temes de propostes
       budgets: Pressupostos participatius
@@ -423,7 +422,6 @@ ca:
           save: "Desar"
       title_moderated_content: Contingut moderat
       title_budgets: Pressupostos
-      title_polls: votacions
       title_profiles: Perfils
       legislation: legislació col·laborativa
       users: usuaris
