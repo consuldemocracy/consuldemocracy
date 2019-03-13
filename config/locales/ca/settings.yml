@@ -22,7 +22,6 @@ ca:
     meta_description: "Descripció de la web (SEO)"
     meta_keywords: "Paraules clau (SEO)"
     min_age_to_participate: Edat mínima per participar
-    verification_offices_url: URL oficines verificació
     feature:
       budgets: "Pressupostos ciutadans"
       twitter_login: "Registre amb Twitter"
