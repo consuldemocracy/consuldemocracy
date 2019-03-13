@@ -4,6 +4,7 @@ class Admin::SettingsController < Admin::BaseController
     all_settings = Setting.all.group_by { |setting| setting.type }
     @configuration_settings = all_settings["configuration"]
     @feature_settings = all_settings["feature"]
+    @participation_processes_settings = all_settings["process"]
     @map_configuration_settings = all_settings["map"]
   end
 

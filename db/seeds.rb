@@ -65,19 +65,21 @@ Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
+# Processes
+Setting["process.debates"] = true
+Setting["process.proposals"] = true
+Setting["process.polls"] = true
+Setting["process.budgets"] = true
+Setting["process.legislation"] = true
+
 # Feature flags
-Setting["feature.debates"] = true
-Setting["feature.proposals"] = true
 Setting["feature.featured_proposals"] = nil
 Setting["feature.spending_proposals"] = nil
-Setting["feature.polls"] = true
 Setting["feature.twitter_login"] = true
 Setting["feature.facebook_login"] = true
 Setting["feature.google_login"] = true
 Setting["feature.public_stats"] = true
-Setting["feature.budgets"] = true
 Setting["feature.signature_sheets"] = true
-Setting["feature.legislation"] = true
 Setting["feature.user.recommendations"] = true
 Setting["feature.user.recommendations_on_debates"] = true
 Setting["feature.user.recommendations_on_proposals"] = true

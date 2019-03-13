@@ -3,13 +3,11 @@ require "rails_helper"
 feature "Moderate debates" do
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.debates"] = nil
+    Setting["process.debates"] = nil
     moderator = create(:moderator)
     login_as(moderator.user)
 
     expect{ visit moderation_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.debates"] = true
   end
 
   scenario "Hide", :js do

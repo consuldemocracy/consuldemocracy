@@ -4,9 +4,8 @@ require "rails_helper"
 feature "Debates" do
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.debates"] = nil
+    Setting["process.debates"] = nil
     expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    Setting["feature.debates"] = true
   end
 
   context "Concerns" do

@@ -1175,6 +1175,7 @@ en:
       index:
         title: Configuration settings
         update_setting: Update
+        participation_processes: "Participation processes"
         feature_flags: Features
         features:
           enabled: "Feature enabled"

@@ -8,9 +8,8 @@ feature "Proposals" do
                   "proposal_path"
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.proposals"] = nil
+    Setting["process.proposals"] = nil
     expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    Setting["feature.proposals"] = true
   end
 
   context "Concerns" do

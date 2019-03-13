@@ -1174,6 +1174,7 @@ es:
       index:
         title: Configuración global
         update_setting: Actualizar
+        participation_processes: "Procesos de participación"
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
