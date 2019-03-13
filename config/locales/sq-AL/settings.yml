@@ -67,7 +67,6 @@ sq:
     min_age_to_participate: Mosha minimale e nevojshme për të marrë pjesë
     min_age_to_participate_description: "Përdoruesit e kësaj moshe mund të marrin pjesë në të gjitha proceset"
     analytics_url: "URL e analitikës"
-    verification_offices_url: URL e Zyrave te verifikimit
     feature:
       budgets: "Buxhetet  pjesëmarrës"
       budgets_description: "\nMe buxhetet pjesëmarrëse, qytetarët vendosin se cilat projekte të paraqitura nga fqinjët e tyre do të marrin një pjesë të buxhetit komunal"
