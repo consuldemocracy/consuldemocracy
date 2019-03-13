@@ -29,7 +29,6 @@ sl:
     meta_description: "Opis strani (SEO)"
     meta_keywords: "Ključne besede (SEO)"
     min_age_to_participate: Minimalna starost za sodelovanje
-    verification_offices_url: URL pisarne za preverjanje
     feature:
       budgets: "Participatorni proračun"
       twitter_login: "Prijava v Twitter"
