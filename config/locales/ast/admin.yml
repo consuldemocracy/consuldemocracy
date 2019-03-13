@@ -411,7 +411,6 @@ ast:
       activity: Actividá de moderadores
       admin: Menú d'alministración
       banner: Xestionar banners
-      poll_questions: Entruges
       proposals: Propuestes
       proposals_topics: Temes de propuestes
       budgets: Presupuestu participativu
@@ -449,7 +448,6 @@ ast:
           save: "Guardar"
       title_moderated_content: Conteníu moderao
       title_budgets: Presupuestos
-      title_polls: Votaciones
       title_profiles: Perfiles
       legislation: Lexislación collaborativa
       users: Usuarios
