@@ -5,14 +5,14 @@ class Setting < ActiveRecord::Base
 
   def type
     if feature_flag?
-      'feature'
+      "feature"
     else
-      'common'
+      "common"
     end
   end
 
   def feature_flag?
-    key.start_with?('feature.')
+    key.start_with?("feature.")
   end
 
   def enabled?

@@ -29,7 +29,7 @@ class Proposal < ActiveRecord::Base
 
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
@@ -95,13 +95,13 @@ class Proposal < ActiveRecord::Base
   end
 
   def searchable_values
-    { title              => 'A',
-      question           => 'B',
-      author.username    => 'B',
-      tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
-      summary            => 'C',
-      description        => 'D'
+    { title              => "A",
+      question           => "B",
+      author.username    => "B",
+      tag_list.join(" ") => "B",
+      geozone.try(:name) => "B",
+      summary            => "C",
+      description        => "D"
     }
   end
 
@@ -179,15 +179,15 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
+    tags.each{ |t| t.decrement_custom_counter_for("Proposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for('Proposal') }
+    tags.each{ |t| t.increment_custom_counter_for("Proposal") }
   end
 
   def self.votes_needed_for_success
-    Setting['votes_for_proposal_success'].to_i
+    Setting["votes_for_proposal_success"].to_i
   end
 
   def successful?
@@ -208,7 +208,7 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    orders << "recommendations" if Setting['feature.user.recommendations_on_proposals'] && user&.recommended_proposals
+    orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
     return orders
   end
 

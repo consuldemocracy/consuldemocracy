@@ -18,8 +18,8 @@ class Poll
 
     before_validation :set_demographic_info, :set_document_info
 
-    scope :web,   -> { where(origin: 'web') }
-    scope :booth, -> { where(origin: 'booth') }
+    scope :web,   -> { where(origin: "web") }
+    scope :booth, -> { where(origin: "booth") }
 
     def set_demographic_info
       return if user.blank?

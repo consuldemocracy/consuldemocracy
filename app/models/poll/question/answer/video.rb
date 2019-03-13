@@ -1,5 +1,5 @@
 class Poll::Question::Answer::Video < ActiveRecord::Base
-  belongs_to :answer, class_name: 'Poll::Question::Answer', foreign_key: 'answer_id'
+  belongs_to :answer, class_name: "Poll::Question::Answer", foreign_key: "answer_id"
 
   VIMEO_REGEX = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
   YOUTUBE_REGEX = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/

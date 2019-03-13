@@ -11,8 +11,8 @@ class Poll::Question::Answer < ActiveRecord::Base
                accepted_content_types: [ "application/pdf" ]
   accepts_nested_attributes_for :documents, allow_destroy: true
 
-  belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
-  has_many :videos, class_name: 'Poll::Question::Answer::Video'
+  belongs_to :question, class_name: "Poll::Question", foreign_key: "question_id"
+  has_many :videos, class_name: "Poll::Question::Answer::Video"
 
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
@@ -34,7 +34,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def self.last_position(question_id)
-    where(question_id: question_id).maximum('given_order') || 0
+    where(question_id: question_id).maximum("given_order") || 0
   end
 
   def total_votes

@@ -13,7 +13,7 @@ module Mappable
       return true if skip_map?
 
       unless map_location.try(:available?)
-        skip_map_error = I18n.t('activerecord.errors.models.map_location.attributes.map.invalid')
+        skip_map_error = I18n.t("activerecord.errors.models.map_location.attributes.map.invalid")
         errors.add(:skip_map, skip_map_error)
       end
     end

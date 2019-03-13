@@ -22,15 +22,15 @@ class Poll < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   has_and_belongs_to_many :geozones
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
 
   validates_translation :name, presence: true
   validate :date_range
 
-  scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Date.current.beginning_of_day, Date.current.beginning_of_day) }
-  scope :expired,  -> { where('ends_at < ?', Date.current.beginning_of_day) }
+  scope :current,  -> { where("starts_at <= ? and ? <= ends_at", Date.current.beginning_of_day, Date.current.beginning_of_day) }
+  scope :expired,  -> { where("ends_at < ?", Date.current.beginning_of_day) }
   scope :recounting, -> { Poll.where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
-  scope :published, -> { where('published = ?', true) }
+  scope :published, -> { where("published = ?", true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
 
@@ -62,7 +62,7 @@ class Poll < ActiveRecord::Base
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
     current.joins('LEFT JOIN "geozones_polls" ON "geozones_polls"."poll_id" = "polls"."id"')
-           .where('geozone_restricted = ? OR geozones_polls.geozone_id = ?', false, user.geozone_id)
+           .where("geozone_restricted = ? OR geozones_polls.geozone_id = ?", false, user.geozone_id)
   end
 
   def self.votable_by(user)
@@ -103,7 +103,7 @@ class Poll < ActiveRecord::Base
 
   def date_range
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
-      errors.add(:starts_at, I18n.t('errors.messages.invalid_date_range'))
+      errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
     end
   end
 

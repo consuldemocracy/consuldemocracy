@@ -147,11 +147,11 @@ class Budget < ActiveRecord::Base
 
   def investments_orders
     case phase
-    when 'accepting', 'reviewing'
+    when "accepting", "reviewing"
       %w{random}
-    when 'publishing_prices', 'balloting', 'reviewing_ballots'
+    when "publishing_prices", "balloting", "reviewing_ballots"
       %w{random price}
-    when 'finished'
+    when "finished"
       %w{random}
     else
       %w{random confidence_score}

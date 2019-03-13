@@ -40,9 +40,9 @@ class Verification::Management::Email
     def validate_user
       return if errors.count > 0
       if !user?
-        errors.add(:email, I18n.t('errors.messages.user_not_found'))
+        errors.add(:email, I18n.t("errors.messages.user_not_found"))
       elsif user.level_three_verified?
-        errors.add(:email, I18n.t('management.email_verifications.already_verified'))
+        errors.add(:email, I18n.t("management.email_verifications.already_verified"))
       end
     end
 
@@ -50,7 +50,7 @@ class Verification::Management::Email
       return if errors.count > 0
       if document_number_mismatch?
         errors.add(:email,
-                   I18n.t('management.email_verifications.document_mismatch',
+                   I18n.t("management.email_verifications.document_mismatch",
                            document_type: ApplicationController.helpers.humanize_document_type(user.document_type),
                            document_number: user.document_number))
       end

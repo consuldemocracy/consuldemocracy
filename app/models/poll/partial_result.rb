@@ -3,7 +3,7 @@ class Poll::PartialResult < ActiveRecord::Base
   VALID_ORIGINS = %w{web booth}
 
   belongs_to :question, -> { with_hidden }
-  belongs_to :author, ->   { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, ->   { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :booth_assignment
   belongs_to :officer_assignment
 
