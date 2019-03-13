@@ -37,7 +37,6 @@ fr:
     meta_description: "Description du site (SEO)"
     meta_keywords: "Mots-clés (SEO)"
     min_age_to_participate: Âge minimum de participation
-    verification_offices_url: URL des bureaux de vérification
     feature:
       budgets: "Budget participatif"
       twitter_login: "Se connecter avec Twitter"
