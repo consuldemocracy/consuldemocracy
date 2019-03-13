@@ -67,7 +67,6 @@ pt-BR:
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Usuários acima dessa idade podem participar de todo o processo"
     analytics_url: "URL das análises"
-    verification_offices_url: URL dos escritórios de verificação
     feature:
       budgets: "Orçamento participativo"
       budgets_description: "Com o orçamento participativo, cidadãos decidem quais projetos apresentados pelos seus vizinhos receberão parte do orçamento do município"
