@@ -1,0 +1,6 @@
+da:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloker bruger
+        confirm: Er du sikker?
