@@ -502,7 +502,6 @@ sv:
         title: "Frågor"
         most_voted_answer: "Högst rankade svar: "
   poll_questions:
-    create_question: "Skapa fråga"
     show:
       vote_answer: "Rösta på %{answer}"
       voted: "Du har röstat på %{answer}"
