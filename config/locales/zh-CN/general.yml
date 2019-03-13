@@ -490,7 +490,6 @@ zh-CN:
         title: "问题"
         most_voted_answer: "得到最多投票的回答： "
   poll_questions:
-    create_question: "创建问题"
     show:
       vote_answer: "投票%{answer}"
       voted: "您已经投票%{answer}"
