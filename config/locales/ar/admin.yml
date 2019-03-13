@@ -38,8 +38,6 @@ ar:
           proposals: إقتراحات
           budgets: الميزانية التشاركية
           help_page: صفحة المساعدة
-        background_color: لون الخلفية
-        font_color: لون الخط
       edit:
         editing: تعديل لافتة
         form:
@@ -595,7 +593,6 @@ ar:
       activity: نشاط المشرف
       admin: قائمة المدير
       banner: إدارة اللافتات
-      poll_questions: أسئلة
       proposals: إقتراحات
       proposals_topics: مواضيع المقترحات
       budgets: الميزانيات المشاركة
@@ -647,7 +644,6 @@ ar:
             update: "تحديث الكتلة"
       title_moderated_content: محتوى خاضع للإشراف
       title_budgets: ميزانيات
-      title_polls: استطلاعات
       title_profiles: ملفات التعريف
       title_settings: إعدادات
       title_site_customization: محتوى الموقع
