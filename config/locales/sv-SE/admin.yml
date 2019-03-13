@@ -38,8 +38,6 @@ sv:
           proposals: Förslag
           budgets: Medborgarbudgetar
           help_page: Hjälpsida
-        background_color: Bakgrundsfärg
-        font_color: Teckenfärg
       edit:
         editing: Redigera banner
         form:
@@ -513,7 +511,6 @@ sv:
       activity: Moderatoraktivitet
       admin: Administrationsmeny
       banner: Hantera banners
-      poll_questions: Frågor
       proposals: Förslag
       proposals_topics: Förslag till ämnen
       budgets: Medborgarbudgetar
@@ -563,7 +560,6 @@ sv:
           save: "Spara"
       title_moderated_content: Modererat innehåll
       title_budgets: Budgetar
-      title_polls: Omröstningar
       title_profiles: Profiler
       title_settings: Inställningar
       title_site_customization: Webbplatsens innehåll
