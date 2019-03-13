@@ -286,8 +286,6 @@ fa:
         total_participation: "کل شرکت کنندگان"
       results:
         title: "سوالات"
-  poll_questions:
-    create_question: "ایجاد سوال"
   proposal_notifications:
     new:
       title: "ارسال پیام"
