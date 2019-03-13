@@ -1094,6 +1094,7 @@ en:
         official_updated: Details of official saved
       index:
         title: Officials
+        help: User accounts marked as officials will have their interventions on the platform highlighted. You can define the label that appears next to the user names of these accounts from most important (level 1) to least (level 5).
         no_officials: There are no officials.
         name: Name
         official_position: Official position
@@ -1291,7 +1292,9 @@ en:
         name: Name
         external_code: External code
         census_code: Census code
+        code_help: Response code for this geozone on the census API
         coordinates: Coordinates
+        coordinates_help: Coordinates that will generate a clickable area on an HTML image map
       errors:
         form:
           error:

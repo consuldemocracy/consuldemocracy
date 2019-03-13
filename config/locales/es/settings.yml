@@ -94,7 +94,7 @@ es:
       polls_description: "Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa"
       signature_sheets: "Hojas de firmas"
       signature_sheets_description: "Permite añadir desde el panel de Administración firmas recogidas de forma presencial a Propuestas y proyectos de gasto de los Presupuestos participativos"
-      legislation: "Legislación"
+      legislation: "Legislación colaborativa"
       legislation_description: "En los procesos participativos se ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa y de dar su opinión sobre ciertas actuaciones que se tiene previsto llevar a cabo"
       spending_proposals: "Propuestas de inversión"
       spending_proposals_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
