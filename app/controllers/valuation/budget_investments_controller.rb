@@ -33,7 +33,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       end
 
       Activity.log(current_user, :valuate, @investment)
-      notice = t('valuation.budget_investments.notice.valuate')
+      notice = t("valuation.budget_investments.notice.valuate")
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice
     else
       render action: :edit
@@ -61,7 +61,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def resource_name
-      resource_model.parameterize('_')
+      resource_model.parameterize("_")
     end
 
     def load_budget
@@ -81,7 +81,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
       all_headings_filter = [
                               {
-                                name: t('valuation.budget_investments.index.headings_filter_all'),
+                                name: t("valuation.budget_investments.index.headings_filter_all"),
                                 id: nil,
                                 count: investments.size
                               }
@@ -109,7 +109,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
     def restrict_access
       unless current_user.administrator? || current_budget.valuating?
-        raise CanCan::AccessDenied.new(I18n.t('valuation.budget_investments.not_in_valuating_phase'))
+        raise CanCan::AccessDenied.new(I18n.t("valuation.budget_investments.not_in_valuating_phase"))
       end
     end
 
@@ -117,16 +117,16 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       return if current_user.administrator? ||
                 Budget::ValuatorAssignment.exists?(investment_id: params[:id],
                                                    valuator_id: current_user.valuator.id)
-      raise ActionController::RoutingError.new('Not Found')
+      raise ActionController::RoutingError.new("Not Found")
     end
 
     def valid_price_params?
       if /\D/.match params[:budget_investment][:price]
-        @investment.errors.add(:price, I18n.t('budgets.investments.wrong_price_format'))
+        @investment.errors.add(:price, I18n.t("budgets.investments.wrong_price_format"))
       end
 
       if /\D/.match params[:budget_investment][:price_first_year]
-        @investment.errors.add(:price_first_year, I18n.t('budgets.investments.wrong_price_format'))
+        @investment.errors.add(:price_first_year, I18n.t("budgets.investments.wrong_price_format"))
       end
 
       @investment.errors.empty?

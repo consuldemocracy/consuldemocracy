@@ -11,7 +11,7 @@ class Admin::Api::StatsController < Admin::Api::BaseController
     ds = Ahoy::DataSource.new
 
     if params[:events].present?
-      event_types = params[:events].split ','
+      event_types = params[:events].split ","
       event_types.each do |event|
         ds.add event.titleize, Ahoy::Event.where(name: event).group_by_day(:time).count
       end

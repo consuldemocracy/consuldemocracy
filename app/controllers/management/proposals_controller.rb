@@ -20,7 +20,7 @@ class Management::ProposalsController < Management::BaseController
   end
 
   def vote
-    @proposal.register_vote(managed_user, 'yes')
+    @proposal.register_vote(managed_user, "yes")
     set_proposal_votes(@proposal)
   end
 

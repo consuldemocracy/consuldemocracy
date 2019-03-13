@@ -67,7 +67,7 @@ module Budgets
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
         redirect_to budget_investment_path(@budget, @investment),
-                    notice: t('flash.actions.create.budget_investment')
+                    notice: t("flash.actions.create.budget_investment")
       else
         render :new
       end
@@ -75,7 +75,7 @@ module Budgets
 
     def destroy
       @investment.destroy
-      redirect_to user_path(current_user, filter: 'budget_investments'), notice: t('flash.actions.destroy.budget_investment')
+      redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
     def vote
@@ -159,7 +159,7 @@ module Budgets
       end
 
       def investments
-        if @current_order == 'random'
+        if @current_order == "random"
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .sort_by_random(session[:random_seed])
         else

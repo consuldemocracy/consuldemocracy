@@ -57,7 +57,7 @@ class Officing::ResultsController < Officing::BaseController
           partial_result.officer_assignment_id = @officer_assignment.id
           partial_result.amount = count.to_i
           partial_result.author = current_user
-          partial_result.origin = 'booth'
+          partial_result.origin = "booth"
           @results << partial_result
         end
       end
@@ -70,7 +70,7 @@ class Officing::ResultsController < Officing::BaseController
                                                       date: Date.current)
       recount.officer_assignment_id = @officer_assignment.id
       recount.author = current_user
-      recount.origin = 'booth'
+      recount.origin = "booth"
       [:whites, :nulls, :total].each do |recount_type|
         if results_params[recount_type].present?
           recount["#{recount_type.to_s.singularize}_amount"] = results_params[recount_type].to_i

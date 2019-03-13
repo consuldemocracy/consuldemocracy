@@ -4,7 +4,7 @@ module FlagActions
   def flag
     Flag.flag(current_user, flaggable)
 
-    if controller_name == 'investments'
+    if controller_name == "investments"
       respond_with flaggable, template: "budgets/#{controller_name}/_refresh_flag_actions"
     else
       respond_with flaggable, template: "#{controller_name}/_refresh_flag_actions"
@@ -14,7 +14,7 @@ module FlagActions
   def unflag
     Flag.unflag(current_user, flaggable)
 
-    if controller_name == 'investments'
+    if controller_name == "investments"
       respond_with flaggable, template: "budgets/#{controller_name}/_refresh_flag_actions"
     else
       respond_with flaggable, template: "#{controller_name}/_refresh_flag_actions"
@@ -24,7 +24,7 @@ module FlagActions
   private
 
     def flaggable
-      if resource_model.to_s == 'Budget::Investment'
+      if resource_model.to_s == "Budget::Investment"
         instance_variable_get("@investment")
       else
         instance_variable_get("@#{resource_model.to_s.downcase}")

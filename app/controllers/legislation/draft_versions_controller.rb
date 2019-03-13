@@ -18,9 +18,9 @@ class Legislation::DraftVersionsController < Legislation::BaseController
   def go_to_version
     version = visible_draft_versions.find(params[:draft_version_id])
 
-    if params[:redirect_action] == 'changes'
+    if params[:redirect_action] == "changes"
       redirect_to legislation_process_draft_version_changes_path(@process, version)
-    elsif params[:redirect_action] == 'annotations'
+    elsif params[:redirect_action] == "annotations"
       redirect_to legislation_process_draft_version_annotations_path(@process, version)
     else
       redirect_to legislation_process_draft_version_path(@process, version)

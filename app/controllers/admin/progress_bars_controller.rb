@@ -26,7 +26,7 @@ class Admin::ProgressBarsController < Admin::BaseController
 
   def update
     if @progress_bar.update(progress_bar_params)
-      redirect_to progress_bars_index, notice: t('admin.progress_bars.update.notice')
+      redirect_to progress_bars_index, notice: t("admin.progress_bars.update.notice")
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::ProgressBarsController < Admin::BaseController
 
   def destroy
     @progress_bar.destroy
-    redirect_to progress_bars_index, notice: t('admin.progress_bars.delete.notice')
+    redirect_to progress_bars_index, notice: t("admin.progress_bars.delete.notice")
   end
 
   private

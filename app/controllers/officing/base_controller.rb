@@ -1,5 +1,5 @@
 class Officing::BaseController < ApplicationController
-  layout 'admin'
+  layout "admin"
 
   before_action :authenticate_user!
   before_action :verify_officer

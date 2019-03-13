@@ -33,7 +33,7 @@ class Legislation::ProposalsController < Legislation::BaseController
     @proposal = Legislation::Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
-      redirect_to legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t('flash.actions.create.proposal')
+      redirect_to legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
     end
@@ -64,7 +64,7 @@ class Legislation::ProposalsController < Legislation::BaseController
     end
 
     def resource_name
-      'proposal'
+      "proposal"
     end
 
     def load_successful_proposals

@@ -1,7 +1,7 @@
 class Polls::QuestionsController < ApplicationController
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'
+  load_and_authorize_resource :question, class: "Poll::Question"
 
   has_orders %w{most_voted newest oldest}, only: :show
 
