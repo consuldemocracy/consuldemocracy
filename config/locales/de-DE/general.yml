@@ -504,7 +504,6 @@ de:
         title: "Fragen"
         most_voted_answer: "Am meisten bewerteten Antwort: "
   poll_questions:
-    create_question: "Frage erstellen"
     show:
       vote_answer: "Für %{answer} abstimmen"
       voted: "Sie haben für %{answer} abgestimmt"
