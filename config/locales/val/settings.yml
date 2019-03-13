@@ -71,7 +71,6 @@ val:
     min_age_to_participate: Edat mínima per a participar
     min_age_to_participate_description: "Els usuaris majors d'edat podran participar en tots els processos"
     analytics_url: "URL d'estadístiques externes"
-    verification_offices_url: URL oficines verificació
     feature:
       budgets: "Pressupostos participatius"
       budgets_description: "Amb els pressupostos participatius la ciutadanía decideix a quins projectes presentats per els veins i veines va destinada una part del pressupost municipal"
