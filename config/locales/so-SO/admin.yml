@@ -38,8 +38,6 @@ so:
           proposals: Sojeedino
           budgets: Misaaniyada kaqayb qadashada
           help_page: Bogga Caawinta
-        background_color: Midaabka hore
-        font_color: Kalarka baaldiga kanisada laga isticmaalo
       edit:
         editing: Bedel baneer
         form:
@@ -517,7 +515,6 @@ so:
       activity: Waxqabadka Xeer ilaliyaha
       admin: Mamulka Warqada qiimo
       banner: Mamulka xayiraada
-      poll_questions: Sualo
       proposals: Sojeedino
       proposals_topics: Ciwaanka sojedinada
       budgets: Misaaniyadaha kaqayb qadashada
@@ -567,7 +564,6 @@ so:
           save: "Badbaado"
       title_moderated_content: Mawduuc dhexdhexaad ah
       title_budgets: Misaniyaado
-      title_polls: Doorashooyinka
       title_profiles: Aqoosi
       title_settings: Settings
       title_site_customization: Macluumaadka bogga
