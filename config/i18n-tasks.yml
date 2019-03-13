@@ -130,7 +130,7 @@ ignore_unused:
   - 'admin.officials.level_*'
   - 'admin.hidden_comments.index.filter*'
   - 'admin.banners.index.filters.*'
-  - 'admin.debates.index.filter*'
+  - 'admin.hidden_debates.index.filter*'
   - 'admin.hidden_proposals.index.filter*'
   - 'admin.proposal_notifications.index.filter*'
   - 'admin.budgets.index.filter*'
