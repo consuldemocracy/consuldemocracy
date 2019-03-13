@@ -218,7 +218,6 @@ fr:
       available_locales: Langues disponibles
       collaborative_legislation: Processus législatifs
       debates: Débats
-      external_link_blog: Blog
       locale: 'Langue :'
       logo: Consul logo
       management: Gestion
@@ -397,8 +396,6 @@ fr:
         guide: "Vous pouvez maintenant la partager pour qu'elle commence à recueillir des soutiens."
         edit: "Avant qu'elle soit partagée, vous pouvez changer le texte autant que vous le désirez."
         view_proposal: Pas maintenant, revenir à la proposition
-      improve_info: "Améliorez votre campagne et recueillez plus de soutiens"
-      improve_info_link: "Voir plus d’informations"
       already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
       comments:
         zero: Aucun commentaires
@@ -506,7 +503,6 @@ fr:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
   poll_questions:
-    create_question: "Créer une question"
     show:
       vote_answer: "Voter %{answer}"
       voted: "Vous avez voté %{answer}"
@@ -618,7 +614,6 @@ fr:
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
   social:
-    blog: "Blog"
     facebook: "Facebook"
     twitter: "Twitter"
     youtube: "YouTube"
