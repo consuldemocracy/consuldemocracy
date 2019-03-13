@@ -400,7 +400,6 @@ sl:
       activity: Aktivnost moderatorja
       admin: Admin meni
       banner: Upravljanje pasic
-      poll_questions: Vprašanja za glasovanje
       proposals_topics: Teme predlogov
       budgets: Participatorni proračuni
       geozones: Upravljanje geocone
@@ -432,7 +431,6 @@ sl:
         content_blocks: Bloki vsebine po meri
       title_moderated_content: Moderirana vsebina
       title_budgets: Proračuni
-      title_polls: Glasovanja
       title_profiles: Profili
       title_site_customization: Prilagajanje spletnega mesta
       legislation: Kolaborativna zakonodaja
