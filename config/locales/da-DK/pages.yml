@@ -1,0 +1,9 @@
+da:
+  pages:
+    conditions:
+      title: Vilkår og betingelser
+    help:
+      menu:
+        debates: "Debatforum"
+        proposals: "Forslag"
+        budgets: "Deltagerbudgetter"
