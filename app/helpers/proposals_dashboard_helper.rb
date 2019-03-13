@@ -83,4 +83,12 @@ module ProposalsDashboardHelper
     return t("dashboard.resource.resource_requested") if resource.requested_for?(proposal)
     t("dashboard.resource.request_resource")
   end
+
+  def is_new_action_since_last_login?(proposed_action, new_actions_since_last_login)
+    new_actions_since_last_login.include?(proposed_action.id) if new_actions_since_last_login.present?
+  end
+
+  def new_resources_since_last_login?(resources, new_actions_since_last_login)
+    resources.pluck(:id).any? {|id| new_actions_since_last_login.include?(id) } if resources.present?
+  end
 end

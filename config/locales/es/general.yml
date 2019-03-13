@@ -497,6 +497,7 @@ es:
       progress: Progreso acumulado
       supports: Apoyos
       success: Progreso ideal
+      new_action: Nuevo
     index:
       title: Edición
       edit_proposal_link: Editar propuesta

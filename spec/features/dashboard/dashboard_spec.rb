@@ -384,4 +384,74 @@ feature "Proposal's dashboard" do
     expect(page).to have_content("No recommended actions done")
   end
 
+  describe "detect_new_actions_after_last_login" do
+
+    before do
+      proposal.author.update(last_sign_in_at: Date.yesterday)
+    end
+
+    scenario "Display tag 'new' on resouce when it is new for author since last login" do
+      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+
+      visit progress_proposal_dashboard_path(proposal)
+
+      within "#dashboard_action_#{resource.id}" do
+        expect(page).to have_content('New')
+      end
+    end
+
+    scenario "Not display tag 'new' on resouce when there is not new resources since last login" do
+      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+      proposal.author.update(last_sign_in_at: Date.today)
+
+      visit progress_proposal_dashboard_path(proposal)
+
+      within "#dashboard_action_#{resource.id}" do
+        expect(page).not_to have_content('New')
+      end
+    end
+
+    scenario "Display tag 'new' on proposed_action when it is new for author since last login" do
+      proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+
+      visit progress_proposal_dashboard_path(proposal)
+
+      within "#dashboard_action_#{proposed_action.id}" do
+        expect(page).to have_content('New')
+      end
+    end
+
+    scenario "Not display tag 'new' on proposed_action when there is not new proposed_action since last login" do
+      proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+      proposal.author.update(last_sign_in_at: Date.today)
+
+      visit progress_proposal_dashboard_path(proposal)
+
+      within "#dashboard_action_#{proposed_action.id}" do
+        expect(page).not_to have_content('New')
+      end
+    end
+
+    scenario "Display tag 'new' on sidebar menu when there is a new resouce since last login" do
+      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+
+      visit progress_proposal_dashboard_path(proposal)
+
+      within "#side_menu" do
+        expect(page).to have_content('New')
+      end
+    end
+
+    scenario "Not display tag 'new' on sidebar menu when there is not a new resouce since last login" do
+      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+      proposal.author.update(last_sign_in_at: Date.today)
+
+      visit progress_proposal_dashboard_path(proposal)
+
+      within "#side_menu" do
+        expect(page).not_to have_content('New')
+      end
+    end
+
+  end
 end
