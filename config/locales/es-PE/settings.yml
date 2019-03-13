@@ -29,7 +29,6 @@ es-PE:
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     min_age_to_participate: Edad mínima para participar
-    verification_offices_url: URL oficinas verificación
     feature:
       budgets: "Presupuestos participativos"
       twitter_login: "Registro con Twitter"
