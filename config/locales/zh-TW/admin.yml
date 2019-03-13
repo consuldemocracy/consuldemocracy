@@ -38,8 +38,6 @@ zh-TW:
           proposals: 建議
           budgets: 參與式預算編制
           help_page: 説明頁
-        background_color: 背景色
-        font_color: 字體色
       edit:
         editing: 編輯橫幅
         form:
@@ -514,7 +512,6 @@ zh-TW:
       activity: 審核員活動
       admin: 管理菜單
       banner: 管理橫幅
-      poll_questions: 問題
       proposals: 建議
       proposals_topics: 建議主題
       budgets: 參與性預算
@@ -564,7 +561,6 @@ zh-TW:
           save: "儲存"
       title_moderated_content: 已審核的內容
       title_budgets: 預算
-      title_polls: 投票
       title_profiles: 配置檔
       title_settings: 設置
       title_site_customization: 網站內容
