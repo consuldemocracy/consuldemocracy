@@ -507,7 +507,6 @@ val:
         title: "Preguntes"
         most_voted_answer: "Resposta més votada: "
   poll_questions:
-    create_question: "Crear pregunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votat %{answer}"
