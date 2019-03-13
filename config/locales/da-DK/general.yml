@@ -346,7 +346,6 @@ da:
       cant_answer_expired: "Afstemningen er slut."
       more_info_title: "Mere information"
   poll_questions:
-    create_question: "Opret spørgsmål"
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
