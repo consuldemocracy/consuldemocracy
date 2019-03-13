@@ -38,8 +38,6 @@ tr:
           proposals: Öneriler
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
-        background_color: Arka plan rengi
-        font_color: Yazı tipi rengi
       edit:
         editing: Banner düzenleme
         form:
@@ -432,7 +430,6 @@ tr:
           homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
           homepage_enabled: Ana sayfa etkinleştirildi
           banner_title: Başlık renkleri
-          color_help: Onaltılık format
         index:
           create: Yeni işlem
           delete: Sil
@@ -584,7 +581,6 @@ tr:
       activity: Moderatör faaliyeti
       admin: Yönetici menüsü
       banner: Bannerları yönet
-      poll_questions: Sorular
       proposals: Öneriler
       proposals_topics: Öneri konuları
       budgets: Katılımcı bütçeler
@@ -636,7 +632,6 @@ tr:
             update: "Bloğu Güncelle"
       title_moderated_content: Denetlenen içerik
       title_budgets: Bütçeler
-      title_polls: Anketler
       title_profiles: Profiller
       title_settings: Ayarlar
       title_site_customization: Site içeriği
