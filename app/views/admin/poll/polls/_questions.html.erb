@@ -21,6 +21,14 @@
           <strong>
             <%= link_to question.title, admin_question_path(question) %>
           </strong>
+          <% if question.proposal.present? %>
+            <small>
+              <%= link_to t("admin.polls.show.see_proposal"),
+                          proposal_path(question.proposal),
+                          target: "_blank" %>
+            </small>
+          <% end %>
+        </td>
         <td>
           <div class="small-4 column">
             <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
