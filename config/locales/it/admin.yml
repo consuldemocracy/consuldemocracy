@@ -38,8 +38,6 @@ it:
           proposals: Proposte
           budgets: Bilancio partecipativo
           help_page: Guida
-        background_color: Colore sfondo
-        font_color: Colore caratteri
       edit:
         editing: Modifica banner
         form:
@@ -372,7 +370,6 @@ it:
           description_placeholder: Aggiungi una descrizione del procedimento
           additional_info_placeholder: Aggiungi ulteriori informazioni che ritieni utili
           homepage: Descrizione
-          color_help: Formato esadecimale
         index:
           create: Nuovo procedimento
           delete: Eliminare
@@ -516,7 +513,6 @@ it:
       activity: Attività del moderatore
       admin: Menu admin
       banner: Gestire i banner
-      poll_questions: Quesiti
       proposals: Proposte
       proposals_topics: Argomenti delle proposte
       budgets: Bilanci partecipativi
@@ -566,7 +562,6 @@ it:
           save: "Salva"
       title_moderated_content: Contenuto moderato
       title_budgets: Bilanci
-      title_polls: Votazioni
       title_profiles: Profili
       title_settings: Impostazioni
       title_site_customization: Contenuto del sito
