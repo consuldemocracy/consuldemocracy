@@ -465,7 +465,6 @@ cs:
         title: "Otázky"
         most_voted_answer: "Odpověď s nejvíce hlasy: "
   poll_questions:
-    create_question: "Vytvořit otázku"
     show:
       vote_answer: "Hlasování %{answer}"
       voted: "Hlasovali jste %{answer}"
