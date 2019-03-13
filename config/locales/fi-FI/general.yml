@@ -262,7 +262,6 @@ fi:
       results:
         title: "Kysymykset"
   poll_questions:
-    create_question: "Luo kysymys"
     show:
       vote_answer: "Äänestä %{answer}"
   proposal_notifications:
