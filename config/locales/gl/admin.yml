@@ -38,8 +38,6 @@ gl:
           proposals: Propostas cidadás
           budgets: Orzamentos participativos
           help_page: Páxina de axuda
-        background_color: Cor de fondo
-        font_color: Cor da letra
       edit:
         editing: Editar anuncio
         form:
@@ -432,7 +430,6 @@ gl:
           homepage_description: Aquí podes explicar o contido do proceso
           homepage_enabled: Páxina principal habilitada
           banner_title: Cores da cabeceira
-          color_help: Formato hexadecimal
         index:
           create: Novo proceso
           delete: Borrar
@@ -584,7 +581,6 @@ gl:
       activity: Actividade de moderador
       admin: Menú de administración
       banner: Xestionar anuncios
-      poll_questions: Preguntas
       proposals: Propostas cidadás
       proposals_topics: Temas das propostas
       budgets: Orzamentos participativos
@@ -636,7 +632,6 @@ gl:
             update: "Actualizar Bloque"
       title_moderated_content: Moderar contido
       title_budgets: Orzamentos participativos
-      title_polls: Votacións
       title_profiles: Perfís
       title_settings: Preferencias
       title_site_customization: Contido do sitio
