@@ -51,8 +51,9 @@ section "Creating Settings" do
   Setting.create(key: "feature.public_stats", value: "true")
   Setting.create(key: "feature.help_page", value: "true")
 
-  Setting.create(key: "per_page_code_head", value: "")
-  Setting.create(key: "per_page_code_body", value: "")
+  Setting.create(key: "html.per_page_code_head", value: "")
+  Setting.create(key: "html.per_page_code_body", value: "")
+
   Setting.create(key: "comments_body_max_length", value: "1000")
   Setting.create(key: "mailer_from_name", value: "CONSUL")
   Setting.create(key: "mailer_from_address", value: "noreply@consul.dev")
