@@ -180,6 +180,8 @@ fr:
       page_title: "%{budget} - jalons"
       heading: "Jalons du budget participatif"
       heading_selection_title: "Par quartier"
+      filters:
+        label: "État actuel du projet"
     phases:
       errors:
         dates_range_invalid: "La date de début ne peut pas être égale ou postérieure à la date de fin"
