@@ -71,7 +71,6 @@ cs:
     min_age_to_participate: Minimální věk potřebný k účasti
     min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
     analytics_url: "Adresa URL služby Analytics"
-    verification_offices_url: URL adresa pro ověření
     feature:
       budgets: "Participativní rozpočtování"
       budgets_description: "Participativními rozpočty občané rozhodují, které projekty předložené jejich sousedy obdrží část rozpočtu obce / města"
