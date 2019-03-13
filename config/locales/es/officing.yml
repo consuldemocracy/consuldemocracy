@@ -82,6 +82,7 @@ es:
         not_to_vote: La persona ha decidido no votar por el momento
       show:
         can_vote: Puede votar
+        cannot_vote: La persona no puede votar porque no está empadronada en el/los distrito/s en los que la votación tiene lugar.
         error_already_voted: Ya ha participado en esta votación.
         submit: Confirmar voto
         success: "¡Voto introducido!"
