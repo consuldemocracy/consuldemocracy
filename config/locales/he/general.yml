@@ -357,7 +357,6 @@ he:
       more_info_title: "מידע נוסף"
       documents: מסמכים
   poll_questions:
-    create_question: "יצירת שאלה חדשה"
     show:
       vote_answer: "הצבעה %{answer}"
       voted: "עליך להצביע %{answer}"
