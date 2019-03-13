@@ -394,7 +394,6 @@ ca:
       results:
         title: "Preguntes ciutadanes"
   poll_questions:
-    create_question: "Crear pregunta per a votació"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votat %{answer}"
