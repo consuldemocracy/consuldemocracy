@@ -1,0 +1,22 @@
+da:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Registreringer
+        one: Registrering
+        other: Registreringer
+      more_pages:
+        display_entries: Viser <strong>%{first}&nbsp;-&nbsp;%{last}</strong> af <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} kan ikke findes"
+          one: Der er <strong>1 %{entry_name}</strong>
+          other: Der er <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Du er på side
+      first: Første
+      last: Sidste
+      next: Næste
+      previous: Forrige
+      truncate: "&hellip;"
