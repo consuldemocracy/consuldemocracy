@@ -38,8 +38,6 @@ val:
           proposals: Propostes
           budgets: Pressupostos participatius
           help_page: Pàgina d'ajuda
-        background_color: Color de fons
-        font_color: Color de font
       edit:
         editing: Editar banner
         form:
@@ -416,7 +414,6 @@ val:
           homepage_description: Ací pots explicar el contingut del procés
           homepage_enabled: Pàgina principal habilitada
           banner_title: Colors de capçelera
-          color_help: Format hexadecimal
         index:
           create: Nou procés
           delete: Eliminar
@@ -565,7 +562,6 @@ val:
       activity: Activitat dels Moderadors
       admin: Menú d'administració
       banner: Gestionar banners
-      poll_questions: Preguntes
       proposals: Propostes
       proposals_topics: Temes de propostes
       budgets: Pressupostos participatius
@@ -617,7 +613,6 @@ val:
             update: "Actualitzar bloc"
       title_moderated_content: Contingut moderat
       title_budgets: Pressupostos
-      title_polls: Votacions
       title_profiles: Perfils
       title_settings: Configuració
       title_site_customization: Personalitzar lloc
