@@ -67,7 +67,6 @@ de:
     min_age_to_participate: erforderliches Mindestalter zur Teilnahme
     min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
     analytics_url: "Analytik-URL"
-    verification_offices_url: Bestätigungsbüro URL
     feature:
       budgets: "Partizipative Haushaltsplanung"
       budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Gemeindebudgets erhalten"
