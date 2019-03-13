@@ -67,7 +67,6 @@ pl:
     min_age_to_participate: Minimalny wiek wymagany do wzięcia udziału
     min_age_to_participate_description: "Użytkownicy powyżej tego wieku mogą uczestniczyć we wszystkich procesach"
     analytics_url: "Analityki adresu URL"
-    verification_offices_url: Adres URL biur weryfikujących
     feature:
       budgets: "Budżetowanie partycypacyjne"
       budgets_description: "Dzięki budżetom partycypacyjnym obywatele decydują, które projekty przedstawione przez ich sąsiadów otrzymają część budżetu gminy"
