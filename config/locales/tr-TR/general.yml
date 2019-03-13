@@ -508,7 +508,6 @@ tr:
         title: "Sorular"
         most_voted_answer: "En çok oy alan cevap: "
   poll_questions:
-    create_question: "Soru oluştur"
     show:
       vote_answer: "Oy %{answer}"
       voted: "%{answer} 'a oy verdiniz"
