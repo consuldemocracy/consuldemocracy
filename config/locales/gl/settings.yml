@@ -71,7 +71,6 @@ gl:
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Os usuarios maiores desta idade poden participar en todos os procesos"
     analytics_url: "URL de analytics"
-    verification_offices_url: URL oficinas de verificación
     feature:
       budgets: "Orzamentos participativos"
       budgets_description: "Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento municipal"
