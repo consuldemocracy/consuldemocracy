@@ -1,19 +1,30 @@
-<% if ["unfeasible", "unselected"].include?(@current_filter) %>
+<% if ['unselected'].include?(@current_filter) %>
 <% else %>
   <ul class="no-bullet submenu">
       <% @valid_orders.each do |order| %>
         <li class="inline-block">
-          <%= link_to current_path_with_query_params(order: order, filter: 'not_unfeasible', page: 1), class: (order == params[:order] && params[:filter] == 'not_unfeasible') ? 'active' : '' do %>
-            <%= content_tag(order == @current_order ? :h2 : :span) do %>
+          <%= link_to current_path_with_query_params(order: order, filter: 'not_unfeasible', page: 1), class: 'active' do %>
+            <%= content_tag(params[:filter] == 'not_unfeasible' ? :u : :span) do %>
               <%= t("#{i18n_namespace}.orders.#{order}") %>
             <% end %>
           <% end %>
         </li>
       <% end %>
+
+      <% if @budget.reviewing_or_later? %>
+        <li class="inline-block">
+          <%= link_to current_path_with_query_params(order: 'random', filter: 'unfeasible', page: 1), class: (params[:filter] == 'unfeasible') ? 'active' : '' do %>
+            <%= content_tag(params[:filter] == 'unfeasible' ? :u : :span) do %>
+              <%= t("budgets.investments.index.unfeasible_tab") %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+
       <% if !@budget.balloting? && !@budget.reviewing_ballots? && !@budget.finished? && @heading && @heading.group.name == 'Districtes' %>
         <li class="inline-block">
           <%= link_to current_path_with_query_params(filter: 'selected_by_assembly', page: 1), class: params[:filter] == 'selected_by_assembly' ? 'active' : '' do %>
-            <%= content_tag(true ? :h2 : :span) do %>
+            <%= content_tag(true ? :u : :span) do %>
               <%= t("#{i18n_namespace}.lista_seleccionadas") %>
             <% end %>
           <% end %>

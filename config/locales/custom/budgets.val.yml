@@ -33,6 +33,9 @@ val:
           budget: pressupostos
         lista_seleccionadas: Seleccionades per les reunions de districte
         link_lista_seleccionadas: Consulta aquí les propostes prioritzades d'aquest districte que passen directament a la fase de validació i estudi de viabilitat
+        unfeasible_tab: Inviables
+        unfeasible_text: Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, ser competència de l'Ajuntament, no superar el límit del pressupost;  %{definitions}) per a ser declarades viables i arribar fins la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat.
+        unfeasible_text_definitions: Propostes que se consideraran inviables
       investment:
         title: Proposta d'inversió
         already_added: Ja has afegit aquesta proposta

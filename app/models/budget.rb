@@ -63,6 +63,10 @@ class Budget < ActiveRecord::Base
     80
   end
 
+  def reviewing_or_later?
+    phase == ("reviewing" || "selecting") || valuating_or_later?
+  end
+
   def drafting?
     phase == "drafting"
   end

@@ -102,7 +102,7 @@ val:
           feasible: Veure les propostes d'inversió viables
           unfeasible: Veure les propostes d'inversió inviables
         orders:
-          random: aleatòries
+          random: Aleatòries
           confidence_score: millor valorades
           price: per cost
       share:

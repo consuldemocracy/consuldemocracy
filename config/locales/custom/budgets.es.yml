@@ -33,6 +33,11 @@ es:
         by_heading: 'Propuestas de inversión con ámbito: %{heading}'
         lista_seleccionadas: Seleccionadas por las reuniones de distrito
         link_lista_seleccionadas: Consulta aquí las propuestas priorizadas de este distrito que pasan directamente a la fase de validación y estudio de viabilidad
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
+        unfeasible_tab: Inviables
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
+        by_heading: "Proyectos de gasto con ámbito: %{heading}"
+        unfeasible_text_definitions: Propuestas que se considerarán inviables
       investment:
         title: Propuesta de inversión
         already_added: Ya has añadido esta propuesta
@@ -123,7 +128,7 @@ es:
       fase_5_timeline_body: |-
         Podrán votar todas las personas mayores de 16 años y empadronadas en el municipio de Castelló de la Plana.
 
-        Se podrán votar tantas propuestas como se estime oportuno hasta llegar a la cantidad de 1.650.000 euros. 
+        Se podrán votar tantas propuestas como se estime oportuno hasta llegar a la cantidad de 1.650.000 euros.
 
         La votación se realizará de forma telemática a través de la plataforma web: decicim.castello.es Se habilitará unos "puntos de votación", con acceso a internet donde se dará apoyo presencial a las personas que quieran votar. Se publicitará en la plataforma web el listado de sedes de "puntos de votación".
 

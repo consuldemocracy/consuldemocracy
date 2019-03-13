@@ -6,11 +6,11 @@
   <ul id="areas" class="vertical menu no-margin-top no-padding-top">
     <% Area.all.each do |area| %>
       <li class="<%= @area&.id == area.id ? "is-active-only" : nil%>">
-        <%= link_to area.name,  budget_investments_path(@budget, area_id: area.id) %>
+        <%= link_to area.name,  budget_investments_path(@budget, area_id: area.id, filter: @current_filter) %>
         <ul class="nested vertical menu">
           <% area.sub_areas.each do |sub_area| %>
             <li class="<%= @sub_area&.id == sub_area.id ? "is-active" : nil%>">
-              <%= link_to sub_area.name,  budget_investments_path(@budget, area_id: area.id, sub_area_id: sub_area.id) %>
+              <%= link_to sub_area.name,  budget_investments_path(@budget, area_id: area.id, sub_area_id: sub_area.id, filter: @current_filter) %>
             </li>
           <% end %>
 
@@ -29,7 +29,7 @@
     <% @categories.each do |category| %>
       <li class="inline-block">
         <%= link_to t(category.name),
-                    budget_investments_path(@budget, search: category.name, unfeasible: params[:unfeasible], area_id: @area&.id) %></li>
+                    budget_investments_path(@budget, search: category.name, filter: @current_filter, area_id: @area&.id) %></li>
     <% end %>
   </ul>
 <% end %>

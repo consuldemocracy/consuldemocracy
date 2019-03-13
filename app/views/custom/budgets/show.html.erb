@@ -92,7 +92,6 @@
         </li>
       </ul>
 
-
       <% if !@budget.only_heading %>
         <% @budget.groups.each do |group| %>
           <h2><%= group.name %></h2>
@@ -108,24 +107,24 @@
             </ul>
         <% end %>
       <% end %>
-
     </div>
   </div>
 </div>
 
-
-<% if @budget.balloting_or_later? %>
+<% if @budget.reviewing_or_later? %>
   <% unless @current_filter == "unfeasible" %>
     <div class="row">
       <div class="small-12 column">
         <small>
           <%= link_to t("budgets.show.unfeasible"),
-                      budget_path(@budget, filter: "unfeasible") %>
+                      budget_investments_path(@budget, filter: "unfeasible") %>
         </small>
       </div>
     </div>
   <% end %>
+<% end %>
 
+<% if @budget.balloting_or_later? %>
   <% unless @current_filter == "unselected" %>
     <div class="row">
       <div class="small-12 column">
