@@ -38,8 +38,6 @@ pt-BR:
           proposals: Propostas
           budgets: Orçamento participativo
           help_page: Página de ajuda
-        background_color: Cor de fundo
-        font_color: Cor da fonte
       edit:
         editing: Editar banner
         form:
@@ -515,7 +513,6 @@ pt-BR:
       activity: Atividade do moderador
       admin: Menu de admin
       banner: Gerenciar banners
-      poll_questions: Perguntas
       proposals: Propostas
       proposals_topics: Tópicos de propostas
       budgets: Orçamentos participativos
@@ -565,7 +562,6 @@ pt-BR:
           save: "Salvar"
       title_moderated_content: Conteúdo moderado
       title_budgets: Orçamentos
-      title_polls: Votações
       title_profiles: Perfis
       title_settings: Configurações
       title_site_customization: Conteúdo do site
