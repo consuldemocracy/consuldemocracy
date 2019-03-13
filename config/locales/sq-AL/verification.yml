@@ -19,7 +19,6 @@ sq:
         unconfirmed_code: Ju nuk keni futur ende kodin e konfirmimit
       create:
         flash:
-          offices: Zyrat e suportit për qytetarët
           success_html: Faleminderit që kërkuat<b>kodin maksimal të sigurisë (kërkohet vetëm për votat përfundimtare</b>.Pas disa ditësh ne do ta dërgojmë atë në adresën që shfaqet në të dhënat që kemi në dosje. Ju lutem mbani mend se, nëse preferoni, ju mund ta merni kodin tuaj nga ndonjë prej %{offices} 
       edit:
         see_all: Shiko propozimet
@@ -30,7 +29,6 @@ sq:
         explanation: 'Për të marrë pjesë në votimin përfundimtar ju mund të:'
         go_to_index: Shiko propozimet
         office: Verifiko në çdo %{office}
-        offices: Zyrat e suportit për qytetarët
         send_letter: Më dërgoni një letër me kodin
         title: Urime!
         user_permission_info: Me llogarinë tuaj ju mund të...
@@ -61,7 +59,6 @@ sq:
         error_not_allowed_age: Ju nuk keni moshën e kërkuar për të marrë pjesë
         error_not_allowed_postal_code: Që të verifikoheni, duhet të jeni i regjistruar.
         error_verifying_census: Regjistrimi nuk ishte në gjendje të verifikojë informacionin tuaj. Ju lutemi konfirmoni që detajet e regjistrimit tuaj janë të sakta duke telefonuar në Këshillin e Qytetit ose vizitoni një %{offices}
-        error_verifying_census_offices: Zyrat e suportit për qytetarët
         form_errors: pengoi verifikimin e vendbanimit tuaj
         postal_code: Kodi Postar
         postal_code_note: Për të verifikuar llogarinë tuaj ju duhet të jeni të regjistruar
