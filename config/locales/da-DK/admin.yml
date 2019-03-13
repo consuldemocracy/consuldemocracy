@@ -1,0 +1,911 @@
+da:
+  admin:
+    header:
+      title: Administration
+    actions:
+      actions: Handlinger
+      confirm: Er du sikker?
+      confirm_hide: Bekræft moderation
+      hide: Skjul
+      hide_author: Skjul bruger
+      restore: Gendan
+      mark_featured: Fremhævet
+      unmark_featured: Fjern fremhævning
+      edit: Rediger
+      configure: Konfigurere
+      delete: Slet
+    banners:
+      index:
+        title: Bannere
+        create: Opret banner
+        edit: Rediger banner
+        delete: Slet banner
+        filters:
+          all: Alle
+          with_active: Aktive
+          with_inactive: Inaktive
+        preview: Forhåndsvisning
+      banner:
+        title: Titel
+        description: Beskrivelse
+        target_url: Link
+        post_started_at: Startdato
+        post_ended_at: Slutdato
+        sections_label: Sektioner, hvor banneren vil være synlig
+        sections:
+          homepage: Startside
+          debates: Debatforum
+          proposals: Forslag
+          budgets: Deltagerbudgetter
+          help_page: Hjælp
+      edit:
+        editing: Rediger banner
+        form:
+          submit_button: Gem ændringer
+      errors:
+        form:
+          error:
+            one: "noget forhindrede at denne banner blev gemt"
+            other: "noget forhindrede at denne banner blev gemt"
+      new:
+        creating: Opret banner
+    activity:
+      show:
+        action: Handlinger
+        actions:
+          block: Blokeret
+          hide: Skjult
+          restore: Gendannet
+        by: Modereret af
+        content: Indhold
+        filter: Vis
+        filters:
+          all: Alle
+          on_comments: Kommentarer
+          on_debates: Debatforum
+          on_proposals: Forslag
+          on_users: Brugere
+          on_system_emails: System e-mails
+        title: Moderator aktivitet
+        type: Type
+        no_activity: Der er ingen moderator aktivitet.
+    budgets:
+      index:
+        title: Deltagerbudgetter
+        new_link: Opret nyt budget
+        filter: Filtrere
+        filters:
+          open: Åben
+          finished: Færdig
+        budget_investments: Administrer projekter
+        table_name: Navn
+        table_phase: Fase
+        table_investments: Investeringer
+        table_edit_budget: Rediger
+        edit_budget: Rediger budget
+        no_budgets: "Der er ingen budgetter."
+      create:
+        notice: Det nye deltagerbudget blev oprettet!
+      update:
+        notice: Deltagerbudgettet blev opdateret
+      edit:
+        title: Rediger deltagerbudget
+        delete: Slet budget
+        phase: Fase
+        dates: Datoer
+        enabled: Aktiveret
+        actions: Handlinger
+        edit_phase: Rediger fase
+        active: Aktiv
+        blank_dates: Ingen datoer
+      destroy:
+        success_notice: Budgettet blev slettet
+        unable_notice: Du kan ikke slette et Budget, der har tilknyttede investeringer
+      new:
+        title: Nyt deltagerbudget
+      winners:
+        calculate: Beregn Vinder Investeringer
+        calculated: Udregner vinderne, det kan tage et minut.
+    budget_groups:
+      name: "Navn"
+      amount:
+        one: "Der er 1 gruppe"
+        other: "Der er %{count} grupper"
+      create:
+        notice: "Gruppen blev oprettet!"
+      update:
+        notice: "Gruppen blev opdateret"
+      destroy:
+        success_notice: "Gruppen blev slettet"
+      form:
+        create: "Opret ny gruppe"
+        edit: "Rediger gruppe"
+        name: "Gruppenavn"
+        submit: "Gem gruppe"
+      index:
+        back: "Gå tilbage til budgetter"
+    budget_headings:
+      name: "Navn"
+      form:
+        latitude: "Breddegrad (valgfri)"
+        longitude: "Længdegrad (valgfri)"
+    budget_phases:
+      edit:
+        start_date: Startdato
+        end_date: Slutdato
+        summary: Resumé
+        summary_help_text: Denne tekst vil informere brugeren om fasen. For at vise informationen selvom fasen ikke er aktiv, skal du sætte kryds i feltet nedenfor
+        description: Beskrivelse
+        enabled: Fase aktiveret
+        save_changes: Gem ændringer
+    budget_investments:
+      index:
+        administrator_filter_all: Alle administratorer
+        valuator_filter_all: Alle evaluatorer
+        tags_filter_all: Alle tags
+        advanced_filters: Avancerede filtre
+        placeholder: Søg efter projekter
+        filters:
+          all: Alle
+          under_valuation: Under værdiansættelse
+          valuation_finished: Værdiansættelse færdig
+          selected: Vælg
+          undecided: Ikke besluttet
+          unfeasible: Uigennemførlig
+          winners: Vindere
+        buttons:
+          filter: Filtrere
+        feasibility:
+          undecided: "Ikke besluttet"
+        selected: "Valgt"
+        select: "Vælg"
+        list:
+          id: ID
+          title: Titel
+          admin: Administrator
+          valuator: Evaluator
+          valuation_group: Evaluator gruppe
+          valuation_finished: Færdig vurdering.
+          selected: Valgt
+          visible_to_valuators: Vis til evaluatorer
+          incompatible: Uforenelig
+        see_results: "Se resultat"
+      show:
+        assigned_admin: Tildelt administrator
+        assigned_valuators: Tildelt evaluatorer
+        classification: Klassificering
+        info: "%{budget_name} - Gruppe: %{group_name} - Investeringsprojekt %{id}"
+        edit: Rediger
+        edit_classification: Rediger klassificering
+        by: Af
+        sent: Sendt
+        group: Gruppe
+        tags: Tags
+        user_tags: Bruger tags
+        undefined: Udefineret
+        selection:
+          "false": Ikke valgt
+        winner:
+          title: Vinderen
+          "true": "Ja"
+          "false": "Nej"
+        image: "Billede"
+        see_image: "Se billede"
+        no_image: "Uden billede"
+        documents: "Dokumenter"
+        see_documents: "Se dokumenter (%{count})"
+        no_documents: "Uden dokumenter"
+        valuator_groups: "Vurderingsgrupper"
+      edit:
+        classification: Klassificering
+        submit_button: Opdater
+        tags: Tags
+        tags_placeholder: "Tilføj tags adskilt med komma (,)"
+        user_groups: "Grupper"
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titel"
+        table_description: "Beskrivelse"
+        table_publication_date: "Dato for offentliggørelse"
+        table_status: Status
+        table_actions: "Handlinger"
+        image: "Billede"
+        show_image: "Vis billede"
+        documents: "Dokumenter"
+    statuses:
+      index:
+        table_name: Navn
+        table_description: Beskrivelse
+        table_actions: Handlinger
+        delete: Slet
+        edit: Rediger
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Titel"
+    comments:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+        hidden_debate: Skjulte debatindlæg
+        hidden_proposal: Skjulte forslag
+        title: Skjulte kommentarer
+        no_hidden_comments: Der er ingen skjulte kommentarer.
+    dashboard:
+      index:
+        back: Gå tilbage til %{org}
+        title: Administration
+        description: Velkommen til %{org} administrations panelet.
+    debates:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+        title: Skjulte debatindlæg
+        no_hidden_debates: Der er ingen skjulte debatindlæg.
+    hidden_users:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte brugere
+        user: Bruger
+        no_hidden_users: Der er ingen skjulte brugere.
+      show:
+        email: 'E-mail:'
+        hidden_at: 'Skjult den:'
+        registered_at: 'Registreret den:'
+        title: Brugeraktivitet (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte budgetinvesteringer
+        no_hidden_budget_investments: Der er ingen skjulte budgetinvesteringer
+    legislation:
+      processes:
+        create:
+          notice: 'Processen blev oprettet. <a href="%{link}">Klik for at gå til</a>'
+          error: Processen kunne ikke oprettes
+        update:
+          notice: 'Processen blev opdateret. <a href="%{link}">Klik for at gå til</a>'
+          error: Processen kunne ikke opdateres
+        destroy:
+          notice: Processen blev slettet
+        edit:
+          back: Tilbage
+          submit_button: Gem ændringer
+        errors:
+          form:
+            error: Fejl
+        form:
+          enabled: Aktiveret
+          process: Proces
+          debate_phase: Debatfase
+          draft_phase: Udkast fasen
+          use_markdown: Anvend Markdown til at formatere teksten
+          title_placeholder: Titel på proces
+          summary_placeholder: Kort resumé af beskrivelsen
+          description_placeholder: Tilføj en beskrivelse af processen
+          additional_info_placeholder: Tilføj supplerende brugbar information
+          homepage: Beskrivelse
+          homepage_description: Her kan du forklare processens indhold
+          homepage_enabled: Startside aktiveret
+          banner_title: Farve på overskrift
+        index:
+          create: Ny proces
+          delete: Slet
+          filters:
+            active: Aktive
+            all: Alle
+        new:
+          back: Tilbage
+          submit_button: Opret proces
+        proposals:
+          select_order: Sorter efter
+          orders:
+            id: Id
+            title: Titel
+            supports: Samlet støtte
+        process:
+          title: Proces
+          comments: Kommentarer
+          status: Status
+          start_date: Startdato
+          end_date: Slutdato
+          status_open: Åben
+          status_closed: Lukket
+          status_planned: Planlagt
+        subnav:
+          info: Information
+          homepage: Startside
+          questions: Debat
+          proposals: Forslag
+          milestones: Følger
+      proposals:
+        index:
+          title: Titel
+          back: Tilbage
+          id: ID
+          supports: Samlet støtte
+          select: Vælg
+          selected: Valgt
+        form:
+          custom_categories: Kategorier
+          custom_categories_description: Kategorier, som brugere kan vælge ved oprettelse af borgerforslag. Max 160 tegn pr. kategori.
+          custom_categories_placeholder: Tilføj de tags du gerne vil anvende og adskil dem med komma (,) og mellem citater ("")
+      draft_versions:
+        create:
+          notice: 'Udkastet blev oprettet. <a href="%{link}">Klik for at gå til</a>'
+          error: Udkastet kunne ikke oprettes
+        update:
+          notice: 'Udkastet blev opdateret. <a href="%{link}">Klik for at gå til</a>'
+          error: Udkastet kunne ikke opdateres
+        destroy:
+          notice: Udkastet blev slettet
+        edit:
+          back: Tilbage
+          submit_button: Gem ændringer
+          warning: Du har redigeret teksten, husk at klikke på Gem for at gemme dine ændringer.
+        errors:
+          form:
+            error: Fejl
+        form:
+          title_html: 'Rediger <span class="strong">%{draft_version_title}</span> fra processen <span class="strong">%{process_title}</span>'
+          launch_text_editor: Start tekstredigering
+          close_text_editor: Luk tekstredigeringsenhed
+          use_markdown: Anvend Markdown til at formatere teksten
+          hints:
+            final_version: Denne version vil blive offentliggjort som det endelige resultat af denne proces. Kommentarer vil ikke være tilladte i denne version.
+            status:
+              draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
+              published: Synlig for alle
+          title_placeholder: Skriv titlen på udkastet
+        index:
+          delete: Slet
+        new:
+          back: Tilbage
+          title: Opret ny version
+          submit_button: Opret version
+        statuses:
+          published: Offentliggjort
+        table:
+          title: Titel
+          created_at: Oprettet den
+          comments: Kommentarer
+          final_version: Den endelige version
+          status: Status
+      questions:
+        create:
+          notice: 'Spørgsmålet blev stillet. <a href="%{link}">Klik for at gå til</a>'
+          error: Spørgsmålet kunne ikke stilles
+        update:
+          notice: 'Spørgsmålet blev opdateret. <a href="%{link}">Klik for at gå til</a>'
+          error: Spørgsmålet kunne ikke opdateres
+        destroy:
+          notice: Spørgsmålet blev slettet
+        edit:
+          back: Tilbage
+          title: "Rediger \"%{question_title}\""
+          submit_button: Gem ændringer
+        errors:
+          form:
+            error: Fejl
+        form:
+          add_option: Tilføj valgmulighed
+          title: Spørgsmål
+          title_placeholder: Tilføj et spørgsmål
+        index:
+          back: Tilbage
+          title: Spørgsmål relateret til denne proces
+          create: Stil et spørgsmål
+          delete: Slet
+        new:
+          back: Tilbage
+          title: Stil et nyt spørgsmål
+          submit_button: Stil et spørgsmål
+        table:
+          title: Titel
+          question_options: Valgmuligheder
+        question_option_fields:
+          remove_option: Fjern valgmulighed
+    managers:
+      index:
+        title: Managers
+    menu:
+      poll_shifts: Administrer arbejdsfordeling
+      officials: Embedsmænd
+      organizations: Organisationer
+      settings: Globale indstillinger
+      spending_proposals: Forslag til udgifter
+      stats: Statistikker
+      signature_sheets: Signaturark
+      site_customization:
+        homepage: Startside
+        information_texts_menu:
+          debates: "Debatindlæg"
+          community: "Fællesskab"
+          proposals: "Borgerforslag"
+          polls: "Afstemninger"
+          layouts: "Layout"
+          mailers: "E-mails"
+          management: "Management"
+          welcome: "Velkommen"
+        buttons:
+          save: "Gem"
+          content_block:
+            update: "Opdater blokering"
+      title_moderated_content: Modereret indhold
+      title_budgets: Budgetter
+      title_profiles: Profiler
+      title_settings: Indstillinger
+      title_site_customization: Sidens indhold
+      title_booths: Stemmebokse
+      users: Brugere
+    administrators:
+      index:
+        title: Administratorer
+        name: Navn
+        email: E-mail
+        id: Administrator ID
+        no_administrators: Der er ingen administratorer.
+      administrator:
+        add: Tilføj
+        delete: Slet
+        restricted_removal: "Beklager, men du kan ikke fjerne dig selv som administrator"
+      search:
+        title: "Administratorer: Søg brugere"
+    moderators:
+      index:
+        title: Moderatorer
+        name: Navn
+        email: E-mail
+        no_moderators: Der er ingen moderatorer.
+      moderator:
+        add: Tilføj
+        delete: Slet
+      search:
+        title: 'Moderatorer: Søg brugere'
+    segment_recipient:
+      all_users: Alle brugere
+      administrators: Administratorer
+      not_supported_on_current_budget: Brugere, der ikke har støttet op om investeringer i det nuværende budget
+      invalid_recipients_segment: "Modtagersegmentet er ugyldigt"
+    newsletters:
+      create_success: Nyhedsbrevet blev oprettet
+      update_success: Nyhedsbrevet blev opdateret
+      send_success: Nyhedsbrevet blev sendt
+      delete_success: Nyhedsbrevet blev slettet
+      index:
+        title: Nyhedsbreve
+        new_newsletter: Nyt nyhedsbrev
+        subject: Emne
+        segment_recipient: Modtagere
+        sent: Sendt
+        actions: Handlinger
+        draft: Udkast
+        edit: Rediger
+        delete: Slet
+        preview: Forhåndsvisning
+        empty_newsletters: Der er ingen nyhedsbreve at vise
+      new:
+        title: Nyt nyhedsbrev
+        from: E-mail adresse, som vil stå som afsender af nyhedsbrevet
+      edit:
+        title: Rediger nyhedsbrev
+      show:
+        title: Forhåndsvisning af nyhedsbrev
+        send: Send
+        affected_users: (%{n} involverede brugere)
+        sent_emails:
+          one: 1 e-mail sendt
+          other: "%{count} e-mails sendt"
+        sent_at: Sendt den
+        subject: Emne
+        segment_recipient: Modtagere
+        from: E-mail adresse, som vil stå som afsender af nyhedsbrevet
+        body: Indhold af e-mail
+        body_help_text: Sådan vil e-mailen se ud for modtagerne
+        send_alert: Er du sikker på, du vil sende nyhedsbrevet til %{n} brugere?
+    admin_notifications:
+      create_success: Notifikation oprettet
+      delete_success: Meddelelsen blev slettet
+      index:
+        section_title: Notifikationer
+        new_notification: Ny meddelelse
+        title: Titel
+        segment_recipient: Modtagere
+        sent: Sendt
+        actions: Handlinger
+        edit: Rediger
+        delete: Slet
+        view: Se
+        empty_notifications: Der er ingen notifikationer at vise
+      new:
+        section_title: Ny meddelelse
+        submit_button: Opret meddelelse
+      edit:
+        section_title: Rediger meddelelse
+        submit_button: Opdater meddelelse
+      show:
+        send: Send meddelelse
+        will_get_notified: (%{n} brugere vil blive underrettet)
+        got_notified: (%{n} brugere blev underrettet)
+        sent_at: Sendt som
+        title: Titel
+        body: Tekst
+        link: Link
+        segment_recipient: Modtagere
+        preview_guide: "Sådan vil meddelelsen se ud for modtagerne:"
+        sent_guide: "Sådan vil meddelelsen se ud for modtagerne:"
+        send_alert: Er du sikker på, du vil sende meddelelsen til %{n} brugere?
+    system_emails:
+      budget_investment_created:
+        title: "Budgetinvestering oprettet"
+        description: "Sendt når en bruger opretter en budgetinvestering."
+      budget_investment_selected:
+        title: "Budgetinvestering valgt"
+      budget_investment_unfeasible:
+        title: "Budgetinvesteringen kan ikke gennemføres"
+      comment:
+        title: "Kommentar"
+      reply:
+        title: "Svar"
+      direct_message_for_receiver:
+        title: "Private beskeder"
+        description: "Send privat besked."
+      email_verification:
+        title: "Bekræftelse af e-mail"
+      user_invite:
+        title: "Bruger invitation"
+      message_title: "Meddelelses titel"
+    valuators:
+      index:
+        valuator_groups: "Vurderingsgrupper"
+        group: "Gruppe"
+        no_group: "Ingen gruppe"
+      valuator:
+        add: Føj til evaluatorer
+        delete: Slet
+      search:
+        title: 'Evaluatorer: Søg bruger'
+      summary:
+        title: Vurderingsresumé for investeringsprojekter
+        valuator_name: Evaluator
+        finished_and_feasible_count: Færdiggjort og kan gennemføres
+        finished_and_unfeasible_count: Færdiggjort og kan ikke gennemføres
+        finished_count: Færdiggjort
+        in_evaluation_count: I evaluering
+        total_count: Total
+        cost: Pris
+      form:
+        edit_title: "Evaluator: Rediger evaluator"
+        update: "Opdater evaluator"
+        updated: "Evaluator blev opdateret"
+      show:
+        description: "Beskrivelse"
+        email: "E-mail"
+        group: "Gruppe"
+        no_description: "Ingen beskrivelse"
+        no_group: "Ingen gruppe"
+    valuator_groups:
+      index:
+        title: "Vurderingsgrupper"
+        new: "Opret vurderingsgruppe"
+        name: "Navn"
+        members: "Medlemmer"
+        no_groups: "Der er ingen vurderingsgrupper"
+      show:
+        title: "Vurderingsgruppe: %{group}"
+        no_valuators: "Der er ingen evaluatorer tilføjet til denne gruppe"
+      form:
+        name: "Gruppenavn"
+        new: "Opret vurderingsgruppe"
+        edit: "Gem vurderingsgruppe"
+    poll_officers:
+      index:
+        title: Ansvarlige medarbejdere for afstemning
+      officer:
+        add: Tilføj
+        delete: Slet position
+        name: Navn
+        email: E-mail
+        entry_name: ansvarlig medarbejder
+      search:
+        email_placeholder: Søg bruger via e-mail
+        search: Søg
+        user_not_found: Brugeren blev ikke fundet
+    poll_officer_assignments:
+      index:
+        officers_title: "Liste over ansvarlige medarbejdere"
+        no_officers: "Der er ingen ansvarlig medarbejder tilknyttet denne afstemning."
+        table_name: "Navn"
+        table_email: "E-mail"
+      by_officer:
+        date: "Dato"
+        booth: "Stemmeboks"
+    poll_shifts:
+      new:
+        add_shift: "Tilføj arbejdsplan"
+        shift: "Opgave"
+        shifts: "Arbejdsplan for dette afstemningssted"
+        date: "Dato"
+        task: "Opgave"
+        edit_shifts: Rediger arbejdsplan
+        new_shift: "Ny arbejdsplan"
+        no_shifts: "Dette afstemningssted har ingen tilknyttet arbejdsplan"
+        remove_shift: "Fjern"
+        search_officer_button: Søg
+        search_officer_placeholder: Søg ansvarlig medarbejder
+        select_date: "Vælg dag"
+        no_voting_days: "Stemmedagene er afsluttet"
+        select_task: "Vælg opgave"
+        table_email: "E-mail"
+        table_name: "Navn"
+      flash:
+        date_missing: "Der skal vælges en dato"
+      vote_collection: Indsaml stemmer
+      recount_scrutiny: Omtælling & Eftersyn
+    booth_assignments:
+      manage_assignments: Administrer opgaver
+    poll_booth_assignments:
+      show:
+        results: "Resultater"
+        date: "Dato"
+      index:
+        table_name: "Navn"
+        table_location: "Lokation"
+    active_polls:
+      form:
+        description:
+          text: "Beskrivelse"
+    polls:
+      index:
+        create: "Opret afstemning"
+        name: "Navn"
+        dates: "Datoer"
+        start_date: "Startdato"
+        closing_date: "Slutdato"
+        geozone_restricted: "Kun distrikter"
+      new:
+        title: "Ny afstemning"
+        show_results_and_stats: "Vis resultater og statistik"
+        show_results: "Vis resultater"
+        show_stats: "Vis statistik"
+        results_and_stats_reminder: "Ved markering af disse afkrydsningsfelter vil resultaterne og/eller statistikkerne relateret til denne afstemning blive publicere, t og alle brugere vil kunne se dem."
+        submit_button: "Opret afstemning"
+      edit:
+        title: "Rediger afstemning"
+        submit_button: "Opdater afstemning"
+      show:
+        questions_tab: Spørgsmål
+        booths_tab: Stemmebokse
+        recounts_tab: Omtælling
+        results_tab: Resultater
+        no_questions: "Der er ingen spørgsmål til denne afstemning."
+        questions_title: "Spørgsmål"
+        table_title: "Titel"
+      flash:
+        question_added: "Spørgsmål til denne afstemning"
+        error_on_question_added: "Spørgsmålet kunne ikke stilles til denne afstemning"
+    questions:
+      index:
+        title: "Spørgsmål"
+        create: "Stil spørgsmål"
+        no_questions: "Der er ingen spørgsmål."
+        select_poll: Vælg afstemning
+        questions_tab: "Spørgsmål"
+        create_question: "Stil spørgsmål"
+        table_proposal: "Borgerforslag"
+        table_question: "Spørgsmål"
+        table_poll: "Afstemning"
+      answers:
+        images:
+          add_image: "Tilføj billede"
+          save_image: "Gem billede"
+      show:
+        proposal: Originalt forslag
+        question: Spørgsmål
+        edit_question: Rediger spørgsmål
+        valid_answers: Gyldige svar
+        add_answer: Tilføj svar
+        video_url: Ekstern video
+        answers:
+          document_title: Titel
+          document_actions: Handlinger
+    answers:
+      new:
+        title: Nyt svar
+      show:
+        title: Titel
+        description: Beskrivelse
+        images: Billeder
+        images_list: Billedliste
+        edit: Rediger svar
+      edit:
+        title: Rediger svar
+      videos:
+        index:
+          title: Videoer
+          add_video: Tilføj video
+          video_title: Titel
+          video_url: Ekstern video
+        new:
+          title: Ny video
+        edit:
+          title: Rediger video
+    recounts:
+      index:
+        title: "Omtælling"
+        no_recounts: "Der er ikke noget at omtælle"
+        total_final: "Endelig omtælling"
+        total_system: "Stemmer (automatisk)"
+        table_booth_name: "Afstemningsområde"
+    results:
+      index:
+        title: "Resultater"
+    booths:
+      index:
+        title: "Liste over aktive stemmebokse"
+        no_booths: "Der er ingen aktive stemmebokse til kommende afstemninger."
+        add_booth: "Tilføj stemmeboks"
+        name: "Navn"
+        location: "Lokation"
+        no_location: "Ingen lokation"
+      new:
+        title: "Ny stemmeboks"
+        name: "Navn"
+        location: "Lokation"
+        submit_button: "Opret stemmeboks"
+      edit:
+        title: "Rediger stemmeboks"
+        submit_button: "Opdater stemmeboks"
+      show:
+        location: "Lokation"
+      booth:
+        shifts: "Administrer arbejdsfordeling"
+        edit: "Rediger stemmeboks"
+    officials:
+      level_1: Niavue 1
+      level_2: Niveau 2
+      level_3: Niveau 3
+      level_4: Niveau 4
+      level_5: Niveau 5
+    organizations:
+      index:
+        hidden_count_html:
+          one: Der er også <strong>en organisation</strong> uden brugere eller med skjulte brugere.
+          other: Der er også <strong>%{count} organisationer</strong> uden brugere eller med skjulte brugere.
+        name: Navn
+        email: E-mail
+        phone_number: Telefon
+        responsible_name: Ansvarlig
+        status: Status
+        no_organizations: Der er ingen organisationer.
+        reject: Afvis
+        rejected: Afvist
+        search: Søg
+        search_placeholder: Navn, e-mail eller telefonnummer
+    settings:
+      index:
+        map:
+          form:
+            submit: Opdater
+      setting_actions: Handlinger
+      setting_name: Indstillinger
+      setting_status: Status
+      setting_value: Værdi
+      no_description: "Ingen beskrivelse"
+    shared:
+      true_value: "Ja"
+      false_value: "Nej"
+      booths_search:
+        button: Søg
+        placeholder: Søg stemmeboks vis navn
+      poll_officers_search:
+        button: Søg
+      poll_questions_search:
+        button: Søg
+        placeholder: Søg spørgsmål til afstemning
+      proposal_search:
+        button: Søg
+        placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
+      spending_proposal_search:
+        button: Søg
+      user_search:
+        button: Søg
+        placeholder: Søg bruger vis navn eller e-mail
+      search_results: "Søgningsresultater"
+      no_search_results: "Ingen resultater fundet."
+      actions: Handlinger
+      title: Titel
+      description: Beskrivelser
+      image: Billede
+      show_image: Vis billede
+      view: Se
+      proposal: Borgerforslag
+      content: Indhold
+      created_at: Oprettet den
+      delete: Slet
+    spending_proposals:
+      index:
+        geozone_filter_all: Alle zoner
+        administrator_filter_all: Alle administratorer
+        valuator_filter_all: Alle evaluatorer
+        tags_filter_all: Alle tags
+        filters:
+          valuation_open: Åben
+          without_admin: Ingen tildelt administrator
+          valuating: Under vurdering
+          valuation_finished: Vurderingen færdig
+          all: Alle
+        title: Investeringsprojekter for deltagerbudgettet
+        assigned_admin: Tilknyttet administrator
+      show:
+        back: Tilbage
+        classification: Klassificering
+        heading: "Investeringsprojekt %{id}"
+        edit: Rediger
+        edit_classification: Rediger klassificering
+        by: Af
+        sent: Sendt
+        tags: Tags
+        undefined: Udefineret
+      edit:
+        classification: Klassificering
+        assigned_valuators: Evaluatorer
+        submit_button: Opdater
+        tags: Tags
+        tags_placeholder: "Tilføj tags adskilt med komma (,)"
+        undefined: Udefineret
+    geozones:
+      edit:
+        back: Gå tilbage
+      new:
+        back: Gå tilbage
+    stats:
+      show:
+        stats_title: Statistikker
+        summary:
+          comments: Kommentarer
+    site_customization:
+      images:
+        index:
+          update: Opdater
+          delete: Slet
+          image: Billede
+        update:
+          notice: Billedet blev opdateret
+          error: Billedet kunne ikke opdateres
+        destroy:
+          notice: Billedet blev slettet
+          error: Billedet kunne ikke slettes
+      pages:
+        create:
+          notice: Siden blev oprettet
+        index:
+          delete: Slet side
+          see_page: Vis side
+        page:
+          created_at: Oprettet den
+          status: Status
+          updated_at: Opdateret den
+          status_published: Offentliggjort
+          title: Titel
+        cards:
+          title: Titel
+          description: Beskrivelse
+          link_text: Link tekst
+          link_url: Link URL
+    homepage:
+      title: Startside
