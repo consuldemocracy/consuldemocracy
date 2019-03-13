@@ -38,8 +38,6 @@ fr:
           proposals: Propositions
           budgets: Budget participatif
           help_page: Page d'aide
-        background_color: Couleur de fond
-        font_color: Couleur de la police
       edit:
         editing: Modifier la bannière
         form:
@@ -542,7 +540,6 @@ fr:
       activity: Activité des modérateurs
       admin: Menu d'administration
       banner: Gérer les bannières
-      poll_questions: Questions
       proposals: Propositions
       proposals_topics: Sujets des propositions
       budgets: Budgets participatifs
@@ -592,7 +589,6 @@ fr:
           save: "Sauvegarder"
       title_moderated_content: Contenu modéré
       title_budgets: Budgets participatifs
-      title_polls: Votes
       title_profiles: Profils
       title_settings: Paramètres
       title_site_customization: Personnalisation du site
