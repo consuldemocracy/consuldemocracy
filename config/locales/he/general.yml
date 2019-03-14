@@ -562,7 +562,7 @@ he:
       user_permission_info: עם חשבונך תוכל/י ...
       user_permission_proposal: ליצור הצעות חדשות
       user_permission_support_proposal: לתמוך בהצעות
-      user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
+      user_permission_verify: "כדי לבצע את כל הפעולות, עליך לאמת את חשבונך"
       user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
       user_permission_verify_my_account: אמת את החשבון שלי
       user_permission_votes: השתתפות בהצבעה הסופית
