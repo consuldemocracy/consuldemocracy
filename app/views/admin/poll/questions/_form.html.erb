@@ -2,7 +2,7 @@
 
 <%= translatable_form_for(@question, url: form_url) do |f| %>
 
-  <%= render 'shared/errors', resource: @question %>
+  <%= render "shared/errors", resource: @question %>
 
   <%= f.hidden_field :proposal_id %>
 
