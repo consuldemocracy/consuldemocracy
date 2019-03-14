@@ -496,7 +496,7 @@ fa:
       user_permission_info: با حساب کاربریتان می توانید...
       user_permission_proposal: ایجاد طرح های جدید
       user_permission_support_proposal: '* پشتیبانی از طرح های پیشنهادی'
-      user_permission_verify: برای انجام همه اقدامات حساب خود را بررسی کنید.
+      user_permission_verify: "برای انجام همه اقدامات حساب خود را بررسی کنید."
       user_permission_verify_info: "* تنها برای کاربران در سرشماری."
       user_permission_verify_my_account: تأیید حساب کاربری
       user_permission_votes: شرکت در رای گیری نهایی *
