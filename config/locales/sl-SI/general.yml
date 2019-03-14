@@ -684,7 +684,7 @@ sl:
       user_permission_info: S svojim računom lahko ...
       user_permission_proposal: Ustvari nove predloge
       user_permission_support_proposal: Podpri predloge*
-      user_permission_verify: Za izvedbo vseh dejanj verificiraj svoj račun.
+      user_permission_verify: "Za izvedbo vseh dejanj verificiraj svoj račun."
       user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
       user_permission_verify_my_account: Preveri moj račun
       user_permission_votes: Sodeluj v končnem glasovanju
