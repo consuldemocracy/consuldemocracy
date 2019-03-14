@@ -13,7 +13,7 @@
         url: management_email_verifications_path do |f| %>
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
-      <%= f.text_field :email, label: false, placeholder: t('management.email_verifications.email_placeholder') %>
+      <%= f.text_field :email, label: false, placeholder: t("management.email_verifications.email_placeholder") %>
 
       <%= f.submit t("management.email_verifications.send_email"), class: "button hollow" %>
     <% end %>
@@ -23,7 +23,7 @@
     <strong><%= t("management.email_verifications.if_no_existing_account") %></strong>
 
     <p class="margin-top">
-      <%= link_to t('management.users.create_user'), new_management_user_path(user: params[:email_verification]), class: "button success" %>
+      <%= link_to t("management.users.create_user"), new_management_user_path(user: params[:email_verification]), class: "button success" %>
     </p>
   </li>
 </ul>

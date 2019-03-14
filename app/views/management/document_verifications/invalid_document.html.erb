@@ -6,11 +6,11 @@
   <% end %>
 </div>
 
-<%= render 'management/user_permissions',
+<%= render "management/user_permissions",
       message: t("management.document_verifications.not_in_census_info"),
       permissions: [:debates, :create_proposals] %>
 
 <p>
   <%= t("management.document_verifications.has_no_account_html",
-      link: link_to(t('management.document_verifications.link'), root_path, target: "_blank")).html_safe %>
+      link: link_to(t("management.document_verifications.link"), root_path, target: "_blank")).html_safe %>
 </p>
