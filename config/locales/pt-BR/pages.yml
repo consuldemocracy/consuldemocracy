@@ -51,8 +51,6 @@ pt-BR:
         page:
           title: "Perguntas frequentes"
           description: "Utilize essa página para resolver Perguntas Frequentes dos usuários do site."
-          faq_1_title: "Pergunta 1"
-          faq_1_description: "Este é um exemplo para a descrição da pergunta um."
       other:
         title: "Outras informações de interesse"
         how_to_use: "Use o %{org_name} em sua cidade"
@@ -67,25 +65,7 @@ pt-BR:
         how_to_use: Use-o em seu governo local
     privacy:
       title: Política de privacidade
-      subtitle: INFORMAÇÕES SOBRE PRIVACIDADE DE DADOS
-      info_items:
-        - 
-          text: A navegação através das informações disponíveis no Portal do governo aberto é anônima.
-        - 
-          text: Para utilizar os serviços contidos no Portal do governo aberto, o usuário deve se registrar e fornecer dados pessoais de acordo com as informações pedidas em cada tipo de registro.
-        - 
-          text: 'Os dados fornecidos serão incorporados e processados pelo Conselho da cidade, conforme a descrição no seguinte arquivo:'
-        - 
-          subitems:
-            - 
-              field: 'Nome do arquivo:'
-              description: NOME DO ARQUIVO
-            - 
-              field: 'Finalidade do arquivo:'
-              description: Gerenciamento dos processos participativos para controlar a qualificação das pessoas participando deles e recontagem meramente numérica e estatística dos resultados derivados de processos de participação de cidadãos.
-            - 
-              field: 'Instituição responsável pelo arquivo:'
-              description: INSTITUIÇÃO RESPONSÁVEL PELO ARQUIVO
+      subtitle: "INFORMAÇÕES SOBRE PRIVACIDADE DE DADOS"
     accessibility:
       title: Acessibilidade
       description: |-
@@ -179,10 +159,7 @@ pt-BR:
         title: Compatibilidade com padrões e design visual
         description_html: 'Todas as páginas deste site estão de acordo com <strong> Diretrizes de Acessibilidade </strong> ou com os Princípios gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > pertencentes a W3C.'
     titles:
-      accessibility: Acessibilidade
-      conditions: Termos de uso
       help: "O que é %{org}? -Participação cidadã"
-      privacy: Política de privacidade
     verify:
       code: Código que você recebeu na carta
       email: Email
