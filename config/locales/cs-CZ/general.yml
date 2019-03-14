@@ -728,7 +728,7 @@ cs:
       user_permission_info: S vaším účtem můžete...
       user_permission_proposal: Vytvořit nové návrhy
       user_permission_support_proposal: Podpora návrhů *
-      user_permission_verify: Chcete-li provést všechny akce, ověřte svůj účet.
+      user_permission_verify: "Chcete-li provést všechny akce, ověřte svůj účet."
       user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
       user_permission_verify_my_account: Ověřit můj účet
       user_permission_votes: Zapojit se do konečného hlasování
