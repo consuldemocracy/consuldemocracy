@@ -213,6 +213,9 @@ da:
         image: "Billede"
         show_image: "Vis billede"
         documents: "Dokumenter"
+      new:
+        date: Dato
+        description: Beskrivelse
     statuses:
       index:
         table_name: Navn
@@ -422,7 +425,19 @@ da:
     managers:
       index:
         title: Managers
+        name: Navn
+        email: E-mail
+      manager:
+        add: Tilføj
+        delete: Slet
+      search:
+        title: 'Managers: Søg bruger'
     menu:
+      activity: Moderator aktivitet
+      admin: Admin menu
+      banner: Administrer bannere
+      proposals: Borgerforslag
+      budgets: Deltagerbudgetter
       poll_shifts: Administrer arbejdsfordeling
       officials: Embedsmænd
       organizations: Organisationer
