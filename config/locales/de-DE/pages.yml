@@ -51,8 +51,6 @@ de:
         page:
           title: "Häufig gestellte Fragen"
           description: "Benutzen Sie diese Seite um die gemeinsamen FAQs für die Benutzer der Website zu beheben."
-          faq_1_title: "Frage 1"
-          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der Frage eins."
       other:
         title: "Weitere interessante Informationen"
         how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
@@ -67,25 +65,7 @@ de:
         how_to_use: Verwenden Sie es in Ihrer Kommunalverwaltung
     privacy:
       title: Datenschutzbestimmungen
-      subtitle: INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN
-      info_items:
-        - 
-          text: Die Navigation durch die Informationen auf dem Open Government Portal ist anonym.
-        - 
-          text: Um die im Open Government Portal angebotenen Dienste nutzen zu können, muss sich der/die Benutzer*in registrieren und persönliche Daten bereitstellen.
-        - 
-          text: 'Die bereitgestellten Daten werden von der lokalen Stadtverwaltung aufgenommen und verarbeitet. Dies folgt in Übereinstimmung mit den Bedingungen in der folgenden Datei:'
-        - 
-          subitems:
-            - 
-              field: 'Dateiname:'
-              description: NAME DER DATEI
-            - 
-              field: 'Verwendung der Datei:'
-              description: Steuert Beteiligungsverfahren, um die Qualifikation der an ihnen beteiligten Personen sowie numerische und statistische Nachzählungen der Ergebnisse von Bürgerbeteiligungsprozessen zu kontrollieren.
-            - 
-              field: 'Für die Datei verantwortliche Institution:'
-              description: FÜR DIE DATEI VERANTWORTLICHE INSTITUTION
+      subtitle: "INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN"
     accessibility:
       title: Zugänglichkeit
       description: |-
@@ -167,10 +147,7 @@ de:
             - 
               description_column: Verringern sie die Textgröße
     titles:
-      accessibility: Zugänglichkeit
-      conditions: Nutzungsbedingungen
       help: "Was ist %{org}? -Bürgerbeteiligung"
-      privacy: Datenschutzbestimmungen
     verify:
       code: Code, den Sie per Brief/SMS erhalten haben
       email: E-Mail
