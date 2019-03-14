@@ -804,7 +804,7 @@ nl:
       user_permission_info: Met je account kun je...
       user_permission_proposal: Nieuwe voorstellen maken
       user_permission_support_proposal: Voorstellen steunen*
-      user_permission_verify: Verifi
+      user_permission_verify: "Verifi"
       user_permission_verify_info: "* Alleen voor locale deelnemers."
       user_permission_verify_my_account: Verifieer mijn account
       user_permission_votes: Deelnemen aan laatste peilronde
