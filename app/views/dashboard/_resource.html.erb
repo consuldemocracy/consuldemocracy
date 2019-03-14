@@ -11,7 +11,7 @@
     </p>
 
     <div class="small-12 column small-centered margin-top">
-      <% if resource.executed_for?(proposal) %>
+      <% if resource.executed_for?(proposal) || (!resource.request_to_administrators && resource.active_for?(proposal)) %>
         <%= link_to t("dashboard.resource.view_resource"),
                     new_request_proposal_dashboard_action_path(proposal, resource),
                     class: "button" %>
