@@ -622,7 +622,7 @@ ca:
       user_permission_info: Amb el teu compte ja pots...
       user_permission_proposal: Crear noves propostes
       user_permission_support_proposal: Avalar propostes
-      user_permission_verify: Per a poder realitzar totes les accions, verifica el teu compte.
+      user_permission_verify: "Per a poder realitzar totes les accions, verifica el teu compte."
       user_permission_verify_info: "* Només usuaris empadronats."
       user_permission_verify_my_account: Verificar el meu compte
       user_permission_votes: Participar en les votacions finals*
