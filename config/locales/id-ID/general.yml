@@ -730,7 +730,7 @@ id:
       user_permission_info: Dengan akun Anda, Anda dapat...
       user_permission_proposal: Membuat proposal baru
       user_permission_support_proposal: Mendukung proposal*
-      user_permission_verify: Untuk melakukan semua tindakan memverifikasi rekening Anda.
+      user_permission_verify: "Untuk melakukan semua tindakan memverifikasi rekening Anda."
       user_permission_verify_info: "* Hanya untuk pengguna pada sensus."
       user_permission_verify_my_account: Memverifikasi account saya
       user_permission_votes: Berpartisipasi pada pemungutan suara akhir
