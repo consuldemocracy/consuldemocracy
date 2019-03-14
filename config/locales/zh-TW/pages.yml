@@ -51,8 +51,6 @@ zh-TW:
         page:
           title: "常見問題解答"
           description: "站點用戶可以使用此頁面解決一般常見問題。"
-          faq_1_title: "問題1"
-          faq_1_description: "這個例子是描述問題1的。"
       other:
         title: "其他感興趣的資訊"
         how_to_use: "在您的城市中使用%{org_name}"
@@ -67,25 +65,7 @@ zh-TW:
         how_to_use: 在您本地政府中使用它
     privacy:
       title: 隱私政策
-      subtitle: 有關數據隱私的資訊
-      info_items:
-        - 
-          text: 通過開放政府門戶網站提供的資訊進行導航是匿名的。
-        - 
-          text: 要使用開放政府門戶網站中包含的服務，用戶必須根據每種登記類型中的特定資訊登記並預先提供個人數據。
-        - 
-          text: '所提供的數據將由市議會根據以下文件的描述進行整合和處理：'
-        - 
-          subitems:
-            - 
-              field: '文件名稱：'
-              description: 該文件的名稱
-            - 
-              field: '該文件的目的：'
-              description: 管理參與過程是為了控制參與其中的人員的資格，並對公民參與過程產生的結果只進行數據和統計重新計算。
-            - 
-              field: '負責該文件的機構：'
-              description: 負責該文件的機構
+      subtitle: "有關數據隱私的資訊"
     accessibility:
       title: 無障礙功能
       description: |-
@@ -179,10 +159,7 @@ zh-TW:
         title: 兼容標準和視覺設計
         description_html: '本網站的所有頁面均符合<strong>輔助功能指南</strong>或由屬於W3C的<abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr>工作組建立的無障礙設計的一般原則。'
     titles:
-      accessibility: 無障礙功能
-      conditions: 使用條款
       help: "什麼是%{org}？ - 公民參與"
-      privacy: 隱私政策
     verify:
       code: 您在信中收到的代碼
       email: 電郵
