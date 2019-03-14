@@ -5,3 +5,43 @@ da:
         info: Her kan du erklære brugerens dokumenter for gyldige og gemme afstemningsresultater
     menu:
       voters: Erklær dokument gyldigt
+      total_recounts: Omtælling og resultater
+    polls:
+      final:
+        title: Afstemningen klar til den endelige fintælling
+        select_poll: Vælg afstemning
+        add_results: Tilføj resultater
+    results:
+      flash:
+        create: "Resultater gemt"
+        error_create: "Resultaterne blev IKKE gemt. Fejl i data."
+        error_wrong_booth: "Forkert stemmeboks. Resultaterne blev IKKE gemt."
+      new:
+        title: "%{poll} - Tilføj resultater"
+        not_allowed: "Du har ikke tilladelse til at tilføje resultaterne for denne afstemning"
+        booth: "Stemmeboks"
+        date: "Dato"
+        select_booth: "Vælg stemmeboks"
+        submit: "Gem"
+        results_list: "Dine resultater"
+        see_results: "Se resultater"
+      index:
+        no_results: "Ingen resultater"
+        results: Resultater
+        table_answer: Svar
+        table_votes: Stemmer
+    residence:
+      new:
+        title: Erklær dokument gyldigt
+        document_number: "Dokumentnummer (bogstaver inkluderet)"
+        submit: Erklær dokument gyldigt
+    voters:
+      new:
+        table_actions: Handlinger
+        not_to_vote: Denne person har besluttet ikke at stemme på dette tidspunkt
+      show:
+        can_vote: Kan stemme
+        error_already_voted: Har allerede deltaget i afstemningen
+        submit: Bekræft stemme
+      can_vote:
+        submit_disable_with: "Vent, bekræfter stemme..."
