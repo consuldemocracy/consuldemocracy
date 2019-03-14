@@ -59,16 +59,6 @@
 
         <%= safe_html_with_links @proposal.description %>
 
-        <% if @proposal.external_url.present? %>
-          <div class="document-link">
-            <p>
-              <span class="icon-document"></span>&nbsp;
-              <strong><%= t("proposals.show.title_external_url") %></strong>
-            </p>
-              <%= text_with_links @proposal.external_url %>
-          </div>
-        <% end %>
-
         <% if @proposal.video_url.present? %>
           <div class="video-link">
             <p>
@@ -79,8 +69,6 @@
           </div>
 
         <% end %>
-
-        <h4><%= @proposal.question %></h4>
 
         <% if feature?(:allow_attached_documents) %>
           <%= render "documents/documents",
