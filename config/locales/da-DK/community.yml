@@ -1,1 +1,42 @@
 da:
+  community:
+    show:
+      create_first_community_topic:
+        sign_in: "log ind"
+        sign_up: "tilmeld dig"
+      tab:
+        participants: Deltagere
+      sidebar:
+        participate: Deltag
+        new_topic: Opret emne
+      topic:
+        edit: Rediger emne
+        destroy: Fjern emne
+        comments:
+          zero: Ingen kommentarer
+          one: 1 kommentar
+          other: "%{count} kommentarer"
+      back: Tilbage til %{community} %{proposal}
+    topic:
+      create: Opret emne
+      edit: Rediger emne
+      form:
+        topic_title: Titel
+        topic_text: Indledende tekst
+        new:
+          submit_button: Opret emne
+        edit:
+          submit_button: Rediger emne
+        create:
+          submit_button: Opret emne
+        update:
+          submit_button: Opdater emne
+      show:
+        tab:
+          comments_tab: Kommentarer
+      sidebar:
+        recommendations_title: Anbefalinger til oprettelse af emne
+        recommendation_one: Skriv hverken emnetitlen eller hele sætninger med store bogstaver. På internettet anses det for at råbe. Og ingen kan lide at blive råbt af.
+  topics:
+    show:
+      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
