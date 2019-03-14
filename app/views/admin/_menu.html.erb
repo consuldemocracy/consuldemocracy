@@ -15,7 +15,7 @@
           <i class="fas fa-check-square fa-fw"></i> <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
         <ul id="polls_menu" <%= "class=is-active" if menu_polls? || controller.class.parent == Admin::Poll::Questions::Answers %>>
-          <li <%= "class=is-active" if menu_poll? %>>
+          <li <%= "class=is-active" if menu_polls? %>>
             <%= link_to t("admin.menu.polls"), admin_polls_path %>
           </li>
 
