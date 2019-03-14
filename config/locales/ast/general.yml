@@ -643,7 +643,7 @@ ast:
       user_permission_info: Cola to cuenta yá pues...
       user_permission_proposal: Crear nueves propuestes
       user_permission_support_proposal: Apoyar propuestas
-      user_permission_verify: Pa poder realizar toles acciones, verifica la to cuenta.
+      user_permission_verify: "Pa poder realizar toles acciones, verifica la to cuenta."
       user_permission_verify_info: "* Namás usuarios empadronaos."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar nes votaciones finales
