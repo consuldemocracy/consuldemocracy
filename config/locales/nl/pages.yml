@@ -51,8 +51,6 @@ nl:
         page:
           title: "Veel gestelde vragen"
           description: "Gebruik deze pagina veelgestelde vragen van de gebruikers van de site te beantwoorden."
-          faq_1_title: "Vraag 1"
-          faq_1_description: "Dit is een voorbeeld voor de beschrijving van de eerste vraag."
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
@@ -67,25 +65,7 @@ nl:
         how_to_use: Gebruik het in uw gemeente
     privacy:
       title: Privacy Verklaring
-      subtitle: INFORMATIE OVER GEGEVENSBESCHERMING
-      info_items:
-        - 
-          text: De navigatie door de informatie beschikbaar in de Open Overheid Portal is anoniem.
-        - 
-          text: Voor het gebruik van de diensten van de Open Overheid Portal moet de gebruiker zich registreren en persoonlijke gegevens verstrekken volgens de specifieke informatie die bij de registratie nodig is.
-        - 
-          text: 'De verstrekte gegevens zullen worden opgenomen en verwerkt door de gemeenteraad overeenkomstig de omschrijving van het volgende bestand:'
-        - 
-          subitems:
-            - 
-              field: 'Bestandsnaam:'
-              description: NAAM VAN HET BESTAND
-            - 
-              field: 'Doel van het bestand:'
-              description: Het beheer van participatie processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
-            - 
-              field: 'Instelling die belast is met het bestand:'
-              description: INSTELLING DIE BELAST IS MET HET BESTAND
+      subtitle: "INFORMATIE OVER GEGEVENSBESCHERMING"
     accessibility:
       title: Toegankelijkheid
       description: |-
@@ -179,10 +159,7 @@ nl:
         title: Compatibiliteit met standaarden en visuele vormgeving
         description_html: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
-      accessibility: Toegankelijkheid
-      conditions: Gebruiksvoorwaarden
       help: "Wat is %{org}? - Burgerparticipatie"
-      privacy: Privacy Verklaring
     verify:
       code: Code die u in een brief heeft ontvangen
       email: E-mail
