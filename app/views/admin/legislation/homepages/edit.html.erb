@@ -7,7 +7,7 @@
 
   <h2><%= @process.title %></h2>
 
-  <%= render 'admin/legislation/processes/subnav', process: @process, active: 'homepage' %>
+  <%= render "admin/legislation/processes/subnav", process: @process, active: "homepage" %>
 
-  <%= render 'form', url: admin_legislation_process_homepage_path(@process) %>
+  <%= render "form", url: admin_legislation_process_homepage_path(@process) %>
 </div>
