@@ -109,6 +109,10 @@ da:
         organization_name: "Hvis du fremsender et forslag på vegne af en gruppe/organisation, angiv navnet på denne"
         image: "Et beskrivende billede"
         image_title: "Titel på billede"
+      geozone:
+        name: Navn
+        external_code: "Ekstern kode (valgfri)"
+        html_map_coordinates: "HTML <map> Koordinater (valgfri)"
       milestone:
         status_id: "Nuværende status (valgfri)"
         title: "Titel"
@@ -202,6 +206,9 @@ da:
         image: Billede
       site_customization/content_block:
         name: Navn
+      banner:
+        background_color: Baggrundsfarve
+        font_color: Skriftfarve
       legislation/process:
         title: Titel på proces
         summary: Resumé
