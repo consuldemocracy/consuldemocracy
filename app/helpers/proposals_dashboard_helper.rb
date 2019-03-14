@@ -91,4 +91,14 @@ module ProposalsDashboardHelper
   def new_resources_since_last_login?(resources, new_actions_since_last_login)
     resources.pluck(:id).any? {|id| new_actions_since_last_login.include?(id) } if resources.present?
   end
+
+  def active_resources_for(proposal)
+    default_resources_count = 3 #resources: mail, poster, poll
+    Dashboard::Action.active.resources.active_for(proposal).count + default_resources_count
+  end
+
+  def active_resources_count(proposal)
+    default_resources_count = 3 #resources: mail, poster, poll
+    Dashboard::Action.active.resources.by_proposal(proposal).count + default_resources_count
+  end
 end
