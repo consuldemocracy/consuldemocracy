@@ -1,1 +1,26 @@
 da:
+  valuation:
+    header:
+      title: Vurdering
+    menu:
+      title: Vurdering
+      budgets: Deltagerbudgetter
+    budgets:
+      index:
+        title: Deltagerbudgetter
+        filters:
+          current: Åben
+          finished: Færdig
+        table_name: Navn
+        table_phase: Fase
+        table_actions: Handlinger
+        evaluate: Evaluere
+        no_budgets: "Der er ingen budgetter"
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Åben
+          valuating: Under vurdering
+          valuation_finished: Vurderingen er færdig
+        assigned_to: "Tildelt til %{valuator}"
+        title: Investeringsprojekter
