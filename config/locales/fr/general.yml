@@ -799,7 +799,7 @@ fr:
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_proposal: Créer des propositions
       user_permission_support_proposal: Soutenir des propositions
-      user_permission_verify: Réaliser toutes ces actions %{verify}.
+      user_permission_verify: "Réaliser toutes ces actions %{verify}."
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_verify_my_account: Vérifier mon compte
       user_permission_votes: Participer au vote final
