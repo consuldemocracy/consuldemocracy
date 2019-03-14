@@ -51,8 +51,6 @@ val:
         page:
           title: "Preguntes Freqüents"
           description: "Utilitza esta pàgina per a resoldre les Preguntes freqüents als usuaris del lloc."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Aquest es un exemple per a la descripció de la pregunta u."
       other:
         title: "Altra informació d'interés"
         how_to_use: "Utilitza %{org_name} en el teu municipi"
@@ -67,25 +65,7 @@ val:
         how_to_use: Utilítzal en el teu municipi
     privacy:
       title: Política de privacitat
-      subtitle: INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES
-      info_items:
-        - 
-          text: La navegació per la informació disponible en el Portal de Govern Obert es anònima.
-        - 
-          text: Per tal de poder utilitzar els serveis del Portal de Govern Obert, l'usuari ha de registrarse i proporcionar dades de caràcter personal d'acord amb les especificacions incloses en cada tipus de registre.
-        - 
-          text: 'Les dades oferides seran incorporades i processades per l''entitat local d''acord a les condicions establides en el següent arxiu:'
-        - 
-          subitems:
-            - 
-              field: 'Nom d''arxiu:'
-              description: NOM DE L'ARXIU
-            - 
-              field: 'Propòsit de l''arxiu:'
-              description: Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana.
-            - 
-              field: 'Organització responsable de l''arxiu:'
-              description: ORGANITZACIÓ RESPONSABLE DE L'ARXIU
+      subtitle: "INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES"
     accessibility:
       title: Accessibilitat
       description: |-
@@ -179,10 +159,7 @@ val:
         title: Compatibilitat amb estàndards i disseny visual
         description_html: 'Totes les pàgines d''aquest lloc web compleixen amb <strong>Guia d''Accessibilitat</strong> o els Principis Generals del Disseny Accessible establers per el Grup de Treball <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertanyent al W3C.'
     titles:
-      accessibility: Accessibilitat
-      conditions: Condicions d'us
       help: "Qué es %{org}? - Participació ciutadana"
-      privacy: Política de privacitat
     verify:
       code: Codi que has rebut en la teua carta
       email: Correu electrònic
