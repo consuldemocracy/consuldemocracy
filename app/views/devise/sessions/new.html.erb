@@ -1,7 +1,7 @@
 <% provide :title do %><%= t("devise_views.sessions.new.title") %><% end %>
 <h2><%= t("devise_views.sessions.new.title") %></h2>
 
-<%= render 'devise/omniauth_form' %>
+<%= render "devise/omniauth_form" %>
 
 <p>
   <%= t("devise_views.shared.links.signup",
@@ -22,7 +22,7 @@
     <% if devise_mapping.rememberable? -%>
       <div class="small-12 column">
         <%= f.label :remember_me do %>
-          <%= f.check_box :remember_me, title: t('devise_views.sessions.new.remember_me'), label: false %>
+          <%= f.check_box :remember_me, title: t("devise_views.sessions.new.remember_me"), label: false %>
           <span class="checkbox"><%= t("devise_views.sessions.new.remember_me") %></span>
         <% end %>
       </div>

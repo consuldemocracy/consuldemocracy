@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('spending_proposals.index.title') %><% end %>
+<% provide :title do %><%= t("spending_proposals.index.title") %><% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: spending_proposals_path(page: 1),
@@ -23,15 +23,15 @@
       </div>
 
       <div class="show-for-small-only">
-        <%= link_to t("spending_proposals.index.start_spending_proposal"), new_spending_proposal_path, class: 'button expanded' %>
+        <%= link_to t("spending_proposals.index.start_spending_proposal"), new_spending_proposal_path, class: "button expanded" %>
       </div>
-      <%= render partial: 'spending_proposals/spending_proposal', collection: @spending_proposals %>
+      <%= render partial: "spending_proposals/spending_proposal", collection: @spending_proposals %>
       <%= paginate @spending_proposals %>
     </div>
 
     <div class="small-12 medium-3 column">
       <aside id="sidebar" class="margin-bottom">
-        <%= render 'sidebar' %>
+        <%= render "sidebar" %>
       </aside>
     </div>
 

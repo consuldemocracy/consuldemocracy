@@ -6,23 +6,23 @@
 <%= form.fields_for :map_location, map_location do |m_l_fields| %>
   <%= m_l_fields.hidden_field :id,
                               value: map_location.id,
-                              id: map_location_input_id(parent_class, 'id') %>
+                              id: map_location_input_id(parent_class, "id") %>
   <%= m_l_fields.hidden_field :latitude,
                               value: map_location.latitude,
-                              id: map_location_input_id(parent_class, 'latitude') %>
+                              id: map_location_input_id(parent_class, "latitude") %>
   <%= m_l_fields.hidden_field :longitude,
                               value: map_location.longitude,
-                              id: map_location_input_id(parent_class, 'longitude') %>
+                              id: map_location_input_id(parent_class, "longitude") %>
   <%= m_l_fields.hidden_field :zoom,
                               value: map_location.zoom,
-                              id: map_location_input_id(parent_class, 'zoom') %>
+                              id: map_location_input_id(parent_class, "zoom") %>
 
   <div>
     <%= form.label :skip_map do %>
       <%= form.check_box :skip_map,
                          title: t("#{i18n_namespace}.form.map_skip_checkbox"),
                          label: false,
-                         class: 'js-toggle-map' %>
+                         class: "js-toggle-map" %>
       <span class="checkbox">
         <%= t("#{i18n_namespace}.form.map_skip_checkbox") %>
       </span>

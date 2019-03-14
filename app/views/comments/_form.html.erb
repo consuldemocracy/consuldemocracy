@@ -14,13 +14,13 @@
 
       <% if can? :comment_as_moderator, commentable %>
         <div class="float-right">
-          <%= f.check_box :as_moderator, title: t('comments.form.comment_as_moderator'), id: "comment-as-moderator-#{css_id}", label: false %>
+          <%= f.check_box :as_moderator, title: t("comments.form.comment_as_moderator"), id: "comment-as-moderator-#{css_id}", label: false %>
           <%= label_tag "comment-as-moderator-#{css_id}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
         </div>
       <% end %>
       <% if can? :comment_as_administrator, commentable %>
         <div class="float-right">
-          <%= f.check_box :as_administrator, title: t('comments.form.comment_as_admin'), id: "comment-as-administrator-#{css_id}",label: false %>
+          <%= f.check_box :as_administrator, title: t("comments.form.comment_as_admin"), id: "comment-as-administrator-#{css_id}",label: false %>
           <%= label_tag "comment-as-administrator-#{css_id}", t("comments.form.comment_as_admin"), class: "checkbox" %>
         </div>
       <% end %>
