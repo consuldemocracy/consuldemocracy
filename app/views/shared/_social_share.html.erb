@@ -1,5 +1,8 @@
 <% description = local_assigns.fetch(:description, '') %>
 <% description = truncate(ActionView::Base.full_sanitizer.sanitize(description), length: 140) %>
+<% mobile = local_assigns[:mobile] %>
+<% mobile_url = mobile.present? ? "#{mobile.gsub(/\s+/, '%20')}%20" : "" %>
+
 <% if local_assigns[:share_title].present? %>
   <div id="social-share" class="sidebar-divider"></div>
   <p class="sidebar-title"><%= share_title %></p>
@@ -11,7 +14,7 @@
                               desc: description,
                               'data-twitter-title': local_assigns[:mobile],
                               'data-telegram-title': local_assigns[:mobile])%>
-  <a href="whatsapp://send?text=<%= local_assigns[:mobile]%>&nbsp;<%= url %>"
+  <a href="whatsapp://send?text=<%= mobile_url %><%= url %>"
      class="show-for-small-only" data-action="share/whatsapp/share">
     <span class="fab fa-whatsapp fa-fw whatsapp"></span>
     <span class="show-for-sr"><%= t("social.whatsapp") %></span>

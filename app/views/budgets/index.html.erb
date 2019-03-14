@@ -128,15 +128,7 @@
     <% if @finished_budgets.present? %>
       <div class="row margin-top">
         <div class="small-12 medium-9 column">
-          <ul class="no-bullet submenu">
-            <li class="inline-block">
-              <%= link_to "#other_budgets", class: "is-active" do %>
-                <h2>
-                  <%= t("budgets.index.finished_budgets") %>
-                </h2>
-              <% end %>
-            </li>
-          </ul>
+          <h2><%= t("budgets.index.finished_budgets") %></h2>
 
           <div id="finished_budgets" class="budget-investments-list">
             <% @finished_budgets.each do |budget| %>
