@@ -1,1 +1,7 @@
 da:
+  officing:
+    dashboard:
+      index:
+        info: Her kan du erklære brugerens dokumenter for gyldige og gemme afstemningsresultater
+    menu:
+      voters: Erklær dokument gyldigt
