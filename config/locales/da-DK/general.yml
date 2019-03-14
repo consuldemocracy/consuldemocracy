@@ -138,11 +138,15 @@ da:
     direct_message: privat besked
     error: fejl
     errors: fejl
+    policy: Privatpolitik
+    proposal: Borgerforslag
     proposal_notification: "Notifikation"
+    budget/investment: Investering
     budget/group: Budget gruppe
     poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
+    document: Dokument
     topic: Emne
     image: Billede
   geozones:
@@ -202,6 +206,7 @@ da:
         replies_to:
           one: Nogen svarede på din kommentar til
           other: Der er %{count} nye svar til din kommentar til
+      mark_as_read: Markér som læst
       mark_as_unread: Marker som ulæst
   map:
     title: "Distrikter"
