@@ -7,3 +7,5 @@ da:
         debates: "Debatforum"
         proposals: "Forslag"
         budgets: "Deltagerbudgetter"
+      budgets:
+        title: "Deltagerbudget"
