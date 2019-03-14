@@ -126,3 +126,6 @@ WebSection.create(name: "debates")
 WebSection.create(name: "proposals")
 WebSection.create(name: "budgets")
 WebSection.create(name: "help_page")
+
+# Default custom pages
+load Rails.root.join("db", "pages.rb")

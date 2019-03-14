@@ -13,12 +13,33 @@ feature "Admin custom pages" do
                   %w[title subtitle],
                   { "content" => :ckeditor }
 
-  scenario "Index" do
-    custom_page = create(:site_customization_page)
-    visit admin_site_customization_pages_path
+  context "Index" do
 
-    expect(page).to have_content(custom_page.title)
-    expect(page).to have_content(custom_page.slug)
+    scenario "lists all created custom pages" do
+      custom_page = create(:site_customization_page)
+      visit admin_site_customization_pages_path
+
+      expect(page).to have_content(custom_page.title)
+      expect(page).to have_content(custom_page.slug)
+    end
+
+    scenario "should contain all default custom pages published populated by db:seeds" do
+      slugs = %w[accessibility conditions faq privacy welcome_not_verified
+                 welcome_level_two_verified welcome_level_three_verified]
+
+      visit admin_site_customization_pages_path
+
+      expect(SiteCustomization::Page.count).to be 7
+      slugs.each do |slug|
+        expect(SiteCustomization::Page.find_by_slug(slug).status).to eq "published"
+      end
+
+      expect(all("[id^='site_customization_page_']").count).to be 7
+      slugs.each do |slug|
+        expect(page).to have_content slug
+      end
+    end
+
   end
 
   context "Create" do

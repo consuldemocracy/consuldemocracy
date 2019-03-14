@@ -12,6 +12,13 @@ class WelcomeController < ApplicationController
   end
 
   def welcome
+    if current_user.level_three_verified?
+      redirect_to page_path("welcome_level_three_verified")
+    elsif current_user.level_two_or_three_verified?
+      redirect_to page_path("welcome_level_two_verified")
+    else
+      redirect_to page_path("welcome_not_verified")
+    end
   end
 
   def verification

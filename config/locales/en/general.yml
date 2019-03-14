@@ -799,13 +799,14 @@ en:
       question: Do you already have an account in %{org_name}?
       title: Account verification
     welcome:
-      go_to_index: See proposals and debates
+      go_to_index: Not now, go to index page
+      start_using_consul: Go to index page
       title: Participate
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
       user_permission_proposal: Create new proposals
       user_permission_support_proposal: Support proposals*
-      user_permission_verify: To perform all the actions verify your account.
+      user_permission_verify: "To perform the following actions verify your account."
       user_permission_verify_info: "* Only for users on Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting

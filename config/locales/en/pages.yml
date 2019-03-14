@@ -51,8 +51,6 @@ en:
         page:
           title: "Frequently Asked Questions"
           description: "Use this page to resolve the common FAQs to the users of site."
-          faq_1_title: "Question 1"
-          faq_1_description: "This is an example for the description of question one."
       other:
         title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"
@@ -67,18 +65,7 @@ en:
         how_to_use: Use it in your local government
     privacy:
       title: Privacy Policy
-      subtitle: INFORMATION REGARDING DATA PRIVACY
-      info_items:
-        - text: The navigation through the information available in the Open Government Portal is anonymous.
-        - text: To use the services contained in the Open Government Portal, the user must register and previously provide personal data according to the specific information included in each type of registration.
-        - text: 'The data provided will be incorporated and processed by the City Council in accordance with the description of the following file:'
-        - subitems:
-          - field: 'File name:'
-            description: NAME OF THE FILE
-          - field: 'Purpose of the file:'
-            description: Managing participatory processes to control the qualification of the people participating in them and merely numerical and statistical recount of the results derived from citizen participation processes.
-          - field: 'Institution in charge of the file:'
-            description: INSTITUTION IN CHARGE OF THE FILE
+      subtitle: "Information page on privacy"
     accessibility:
       title: Accessibility
       description: |-
@@ -148,16 +135,13 @@ en:
           rows:
             - shortcut_column: CTRL and + (CMD and + on MAC)
               description_column: Increases text size
-            - shortcut_column: CTRL and - (CMD  and - on MAC)
+            - shortcut_column: CTRL and - (CMD and - on MAC)
               description_column: Decreases text size
       compatibility:
         title: Compatibility with standards and visual design
         description_html: 'All pages of this website comply with the <strong>Accessibility Guidelines</strong> or General Principles of Accessible Design established by the Working Group <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> belonging to W3C.'
     titles:
-      accessibility: Accessibility
-      conditions: Terms of use
       help: "What is %{org}? - Citizen participation"
-      privacy: Privacy Policy
     verify:
       code: Code you received in letter
       email: Email
