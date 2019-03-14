@@ -804,7 +804,7 @@ tr:
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
       user_permission_proposal: Yeni öneriler oluştur
       user_permission_support_proposal: Önerileri destekle*
-      user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
+      user_permission_verify: "Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın."
       user_permission_verify_info: "* Sadece Census'taki kullanıcılar için."
       user_permission_verify_my_account: Hesabımı doğrula
       user_permission_votes: Son oylamaya katıl
