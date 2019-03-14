@@ -6,6 +6,7 @@ da:
         debate: "Debatindlægget blev oprettet."
         direct_message: "Din besked blev sendt."
         poll: "Meningsmålingen blev oprettet."
+        poll_question_answer: "Du har indsendt dit svar"
         poll_question_answer_image: "Billedet blev uploadet"
         proposal: "Forslaget blev oprettet."
         proposal_notification: "Din besked blev sendt korrekt."
