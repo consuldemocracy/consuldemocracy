@@ -49,7 +49,8 @@
         title: investment.title,
         image_url: image_absolute_url(investment.image, :thumb),
         url: budget_investment_url(investment.budget, investment),
-        description: investment.title
+        description: investment.title,
+        mobile: investment.title
       } %>
     </div>
   <% end %>

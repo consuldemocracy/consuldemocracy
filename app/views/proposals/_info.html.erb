@@ -60,10 +60,11 @@
     </p>
     <%= text_with_links @proposal.video_url %>
   </div>
-
 <% end %>
 
-<h4><%= @proposal.question %></h4>
+<% if @proposal.question.present? %>
+  <h4><%= @proposal.question %></h4>
+<% end %>
 
 <% if @proposal.retired? %>
   <div id="retired_explanation" class="callout">

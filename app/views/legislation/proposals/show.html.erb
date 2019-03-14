@@ -108,7 +108,8 @@
           share_title: t("proposals.show.share"),
           title: @proposal.title,
           url: legislation_process_proposal_url(process_id: @process),
-          description: @proposal.summary
+          description: @proposal.summary,
+          mobile: @proposal.title
         } %>
       </aside>
     </div>
