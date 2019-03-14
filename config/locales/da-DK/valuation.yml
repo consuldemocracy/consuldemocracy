@@ -58,6 +58,8 @@ da:
         valuation_finished_alert: "Er du sikker på, du vil markér rapporten som afsluttet? Hvis ja, kan du ikke længere foretage ændringer."
         duration_html: Tidsramme
         save: Gem ændringer
+      valuation_comments: Kommentarer på vurdering
+      not_in_valuating_phase: Investeringer kan kun vurderes, når budgettet befinder sig i vurderingsfasen
     spending_proposals:
       index:
         geozone_filter_all: Alle zoner
