@@ -803,7 +803,7 @@ sq:
       user_permission_info: Me llogarinë tuaj ju mund të...
       user_permission_proposal: Krijo propozime të reja
       user_permission_support_proposal: Përkrahni propozimet
-      user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
+      user_permission_verify: "Për të kryer të gjitha veprimet verifikoni llogarinë tuaj."
       user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
       user_permission_verify_my_account: Verifikoni llogarinë time
       user_permission_votes: Merrni pjesë në votimin përfundimtar
