@@ -804,7 +804,7 @@ gl:
       user_permission_info: Coa túa conta xa podes...
       user_permission_proposal: Crear novas propostas
       user_permission_support_proposal: Apoiar propostas*
-      user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
+      user_permission_verify: "Para poder realizar todas as accións, verifica a túa conta."
       user_permission_verify_info: "* Só persoas usuarias empadroadas no municipio de Madrid."
       user_permission_verify_my_account: Verificar a miña conta
       user_permission_votes: Participar nas votacións finais
