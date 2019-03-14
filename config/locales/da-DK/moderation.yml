@@ -6,6 +6,7 @@ da:
         confirm: Er du sikker?
         filters:
           all: Alle
+          pending_flag_review: Under behandling
           with_ignored_flag: Markér som set
         headers:
           comment: Kommentar
@@ -19,6 +20,7 @@ da:
         confirm: Er du sikker?
         filters:
           all: Alle
+          pending_flag_review: Under behandling
           with_ignored_flag: Markér som set
         headers:
           debate: Debat
@@ -26,6 +28,12 @@ da:
         ignore_flags: Markér som set
         orders:
           created_at: Nyeste
+        title: Debatindlæg
+    menu:
+      flagged_comments: Kommentarer
+      flagged_investments: Budgetinvesteringer
+      proposals: Borgerforslag
+      users: Bloker brugere
     proposals:
       index:
         confirm: Er du sikker?
@@ -42,12 +50,21 @@ da:
     budget_investments:
       index:
         confirm: Er du sikker?
+        filters:
+          all: Alle
+        headers:
+          budget_investment: Budgetinvestering
+        hide_budget_investments: Skjul budgetinvesteringer
         ignore_flags: Markér som set
         orders:
           created_at: Seneste
         title: Budgetinvesteringer
     proposal_notifications:
       index:
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+          ignored: Markér som set
         headers:
           proposal_notification: Notifikationer om forslag
         hide_proposal_notifications: Skjul forslag
