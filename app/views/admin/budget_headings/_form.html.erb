@@ -4,7 +4,7 @@
 
   <%= translatable_form_for [:admin, @budget, @group, @heading], url: path do |f| %>
 
-    <%= render 'shared/errors', resource: @heading %>
+    <%= render "shared/errors", resource: @heading %>
 
     <%= f.translatable_fields do |translations_form| %>
       <%= translations_form.text_field :name,

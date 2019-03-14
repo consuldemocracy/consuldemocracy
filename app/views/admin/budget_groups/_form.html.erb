@@ -3,7 +3,7 @@
 <div class="small-12 medium-6">
   <%= translatable_form_for [:admin, @budget, @group], url: path do |f| %>
 
-    <%= render 'shared/errors', resource: @group %>
+    <%= render "shared/errors", resource: @group %>
 
     <%= f.translatable_fields do |translations_form| %>
       <%= translations_form.text_field :name,
