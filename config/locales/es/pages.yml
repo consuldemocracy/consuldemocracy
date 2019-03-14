@@ -51,8 +51,6 @@ es:
         page:
           title: "Preguntas Frecuentes"
           description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
@@ -67,25 +65,7 @@ es:
         how_to_use: Utilízalo en tu municipio
     privacy:
       title: Política de privacidad
-      subtitle: AVISO DE PROTECCIÓN DE DATOS
-      info_items:
-        - 
-          text: La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.
-        - 
-          text: Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.
-        - 
-          text: 'Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:'
-        - 
-          subitems:
-            - 
-              field: 'Nombre del fichero/tratamiento:'
-              description: NOMBRE DEL FICHERO
-            - 
-              field: 'Finalidad del fichero/tratamiento:'
-              description: Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana.
-            - 
-              field: 'Órgano responsable:'
-              description: ÓRGANO RESPONSABLE
+      subtitle: "AVISO DE PROTECCIÓN DE DATOS"
     accessibility:
       title: Accesibilidad
       description: |-
@@ -179,10 +159,7 @@ es:
         title: Compatibilidad con estándares y diseño visual
         description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
-      accessibility: Accesibilidad
-      conditions: Condiciones de uso
       help: "¿Qué es %{org}? - Participación ciudadana"
-      privacy: Política de privacidad
     verify:
       code: Código que has recibido en tu carta
       email: Email
