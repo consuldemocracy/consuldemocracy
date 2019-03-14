@@ -51,8 +51,6 @@ cs:
         page:
           title: "Otázky a odpovědi"
           description: "Tato stránka slouží k vyřešení běžné dotazy uživatelům webového portálu."
-          faq_1_title: "Otázka 1"
-          faq_1_description: "Toto je příklad popisu první otázky."
       other:
         title: "Další zajímavé informace"
         how_to_use: "Použijte %{org_name} ve vašem městě"
@@ -67,25 +65,7 @@ cs:
         how_to_use: Doporučte tento program k využití veřejnou správou v místě Vašeho bydliště
     privacy:
       title: Zásady ochrany osobních údajů
-      subtitle: INFORMACE O OCHRANĚ ÚDAJŮ O DATECH
-      info_items:
-        - 
-          text: Navigace prostřednictvím informací dostupných na portálu Open Government Portal je anonymní.
-        - 
-          text: Chcete-li využívat služby obsažené na portálu Open Government, musí se uživatel zaregistrovat a předtím poskytnout osobní údaje podle konkrétních informací obsažených v každém typu registrace.
-        - 
-          text: 'Poskytnuté údaje budou zapracovány a zpracovány vedením města v souladu s popisem následujícího souboru:'
-        - 
-          subitems:
-            - 
-              field: 'Název souboru:'
-              description: NÁZEV SOUBORU
-            - 
-              field: 'Účel souboru:'
-              description: Spravovat participační procesy k využití zkušeností lidí zapojených do těchto procesů a numericky a statisticky přepočítávat výsledky z těchto procesů odvozených.
-            - 
-              field: 'Orgán zodpovědný za dokument:'
-              description: INSTITUCE, KTERÉ JSOU V SOULADU S TÍMTO DOKUMENTEM
+      subtitle: "INFORMACE O OCHRANĚ ÚDAJŮ O DATECH"
     accessibility:
       title: Přístupnost
       description: |-
@@ -179,10 +159,7 @@ cs:
         title: Kompatibilita se standardy a vizuální design
         description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
     titles:
-      accessibility: Přístupnost
-      conditions: Podmínky použití
       help: "Co je %{org}? - Zapojování občanů"
-      privacy: Zásady ochrany osobních údajů
     verify:
       code: Kód, který jste obdrželi v dopise
       email: Email
