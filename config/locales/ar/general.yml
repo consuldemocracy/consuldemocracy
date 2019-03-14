@@ -456,7 +456,7 @@ ar:
       user_permission_info: من خلال حسابك يمكنك...
       user_permission_proposal: انشاء مقترحات جديدة
       user_permission_support_proposal: دعم مقترحات *
-      user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
+      user_permission_verify: "لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك."
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_verify_my_account: التحقق من حسابي
       user_permission_votes: المشاركة في التصويت النهائي
