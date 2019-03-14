@@ -32,3 +32,10 @@ da:
       index:
         title: Management
         info: Her kan du administrere brugere gennem de handlinger, der er angivet i menuen til venstre.
+    document_verifications:
+      link: CONSUL
+    email_label: E-mail
+    date_of_birth: Fødselsdato
+    email_verifications:
+      already_verified: Brugerkontoen er allerede verificeret.
+      choose_options: 'Vær venlig at vælge en af de følgende valgmuligheder:'
