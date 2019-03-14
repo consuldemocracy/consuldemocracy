@@ -801,7 +801,7 @@ pt-BR:
       user_permission_info: Com sua conta, você pode...
       user_permission_proposal: Criar novas propostas
       user_permission_support_proposal: Apoiar propostas*
-      user_permission_verify: Para executar todas as ações %{verify}
+      user_permission_verify: "Para executar todas as ações %{verify}"
       user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar minha conta
       user_permission_votes: Participar na votação final
