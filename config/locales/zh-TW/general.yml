@@ -773,7 +773,7 @@ zh-TW:
       user_permission_info: 您可以用您的帳戶來......
       user_permission_proposal: 創建新建議
       user_permission_support_proposal: 支持建議*
-      user_permission_verify: 要執行所有操作，請核實您的帳戶。
+      user_permission_verify: "要執行所有操作，請核實您的帳戶。"
       user_permission_verify_info: "*僅適用於人口普查的用戶。"
       user_permission_verify_my_account: 核實我的帳戶
       user_permission_votes: 參與最終投票
