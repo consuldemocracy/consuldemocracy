@@ -800,7 +800,7 @@ de:
       user_permission_info: Mit Ihrem Konto können Sie...
       user_permission_proposal: Neue Vorschläge erstellen
       user_permission_support_proposal: Vorschläge unterstützen*
-      user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
+      user_permission_verify: "Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren."
       user_permission_verify_info: "* Nur für Benutzer*innen im Melderegister."
       user_permission_verify_my_account: Mein Konto verifizieren
       user_permission_votes: An finaler Abstimmung teilnehmen
