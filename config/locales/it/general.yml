@@ -801,7 +801,7 @@ it:
       user_permission_info: Con il tuo account puoi...
       user_permission_proposal: Creare nuove proposte
       user_permission_support_proposal: Appoggiare le proposte
-      user_permission_verify: Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza.
+      user_permission_verify: "Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza."
       user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
       user_permission_verify_my_account: Verifica il tuo account
       user_permission_votes: Partecipare al voto finale
