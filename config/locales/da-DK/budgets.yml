@@ -93,3 +93,31 @@ da:
         votes: Stemmer
         price: Pris
         comments_tab: Kommentarer
+        see_price_explanation: Se prisforklaring
+      investment:
+        add: Stem
+        already_supported: Du har allerede støttet dette forslag. Del det!
+        support_title: Støt forslaget
+        supports:
+          zero: Ingen støtte
+    results:
+      page_title: "%{budget} - Resultater"
+      heading: "Resultat af deltagerbudgettet"
+      spending_proposal: Titel på forslag
+      ballot_lines_count: Stemmer
+      show_all_link: Vis alle
+      price: Pris
+      amount_available: Tilgængeligt budget
+      investment_proyects: Liste over alle investeringsprojekter
+      unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
+      not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
+    executions:
+      link: "Milepæle"
+      page_title: "%{budget} - Milepæle"
+      filters:
+        all: "Alle (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Startdatoen kan ikke være den samme eller senere end slutdatoen"
+        prev_phase_dates_invalid: "Startdatoen skal være senere end startdatoen for den tidligere fase (%{phase_name})"
+        next_phase_dates_invalid: "Slutdatoen skal være før slutdatoen for den næste fase (%{phase_name})"
