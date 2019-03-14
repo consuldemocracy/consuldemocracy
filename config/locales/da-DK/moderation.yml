@@ -4,3 +4,49 @@ da:
       index:
         block_authors: Bloker bruger
         confirm: Er du sikker?
+        filters:
+          with_ignored_flag: Markér som set
+        headers:
+          comment: Kommentar
+        hide_comments: Skjul kommentarer
+        ignore_flags: Markér som set
+        orders:
+          newest: Nyeste
+        title: Kommentarer
+    debates:
+      index:
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+          with_ignored_flag: Markér som set
+        headers:
+          debate: Debat
+        hide_debates: Skjul debatindlæg
+        ignore_flags: Markér som set
+        orders:
+          created_at: Nyeste
+    proposals:
+      index:
+        confirm: Er du sikker?
+        filters:
+          with_ignored_flag: Markér som set
+        headers:
+          proposal: Borgerforslag
+        hide_proposals: Skjul forslag
+        ignore_flags: Markér som set
+    budget_investments:
+      index:
+        confirm: Er du sikker?
+    proposal_notifications:
+      index:
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+    users:
+      index:
+        hidden: Blokeret
+        hide: Bloker
+        search: Søg
+        search_placeholder: e-mail eller brugernavn
+        title: Bloker brugere
+      notice_hide: Bruger blokeret. Alle brugerens debatindlag og kommentarer er blevet skjult.
