@@ -695,6 +695,8 @@ da:
         no_questions: "Der er ingen spørgsmål til denne afstemning."
         questions_title: "Spørgsmål"
         table_title: "Titel"
+        edit_answers: Rediger svar
+        see_proposal: "(Se forslag)"
       flash:
         question_added: "Spørgsmål til denne afstemning"
         error_on_question_added: "Spørgsmålet kunne ikke stilles til denne afstemning"
@@ -709,6 +711,8 @@ da:
         table_proposal: "Borgerforslag"
         table_question: "Spørgsmål"
         table_poll: "Afstemning"
+      new:
+        title_proposal: "Stil et spørgsmål"
       answers:
         images:
           add_image: "Tilføj billede"
@@ -837,6 +841,7 @@ da:
       content: Indhold
       created_at: Oprettet den
       delete: Slet
+      color_help: Hexadecimalt format
     spending_proposals:
       index:
         geozone_filter_all: Alle zoner
@@ -869,6 +874,8 @@ da:
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
     geozones:
+      geozone:
+        coordinates_help: Koordinater, som vil generere et klikbart område på et HTML imagemap
       edit:
         back: Gå tilbage
       new:
