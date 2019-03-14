@@ -1,4 +1,4 @@
-<%= link_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)), class: 'back' do %>
+<%= link_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)), class: "back" do %>
   <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
@@ -52,7 +52,7 @@
       <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s,
                         label: false,
                         placeholder: t("admin.spending_proposals.edit.tags_placeholder"),
-                        class: 'js-tag-list' %>
+                        class: "js-tag-list" %>
     </div>
 
     <div class="small-12 column">
@@ -70,4 +70,4 @@
 <% end %>
 
 <hr>
-<%= render 'valuation/spending_proposals/written_by_valuators' %>
+<%= render "valuation/spending_proposals/written_by_valuators" %>

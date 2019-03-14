@@ -15,7 +15,7 @@
                         data-zoom-input-selector="#zoom">
     </div>
 
-    <%= form_tag admin_update_map_path, method: :put, id: 'map-form' do |f| %>
+    <%= form_tag admin_update_map_path, method: :put, id: "map-form" do |f| %>
 
       <%= hidden_field_tag :latitude,   Setting["map_latitude"] %>
       <%= hidden_field_tag :longitude,  Setting["map_longitude"] %>

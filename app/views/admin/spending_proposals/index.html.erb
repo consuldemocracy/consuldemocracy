@@ -44,7 +44,7 @@
   <% end %>
 </div>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.spending_proposals.index" %>
 
 <h3><%= page_entries_info @spending_proposals %></h3>
 
@@ -68,7 +68,7 @@
         <% if spending_proposal.valuators.size == 0 %>
           <%= t("admin.spending_proposals.index.no_valuators_assigned") %>
         <% else %>
-          <%= spending_proposal.valuators.collect(&:description_or_name).join(', ') %>
+          <%= spending_proposal.valuators.collect(&:description_or_name).join(", ") %>
         <% end %>
       </td>
       <td class="small">
