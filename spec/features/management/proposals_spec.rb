@@ -25,7 +25,6 @@ feature "Proposals" do
       fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
       fill_in "proposal_summary", with: "In summary, what we want is..."
       fill_in "proposal_description", with: "This is very important because..."
-      fill_in "proposal_external_url", with: "http://rescue.org/refugees"
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
       check "proposal_terms_of_service"
 
@@ -37,7 +36,6 @@ feature "Proposals" do
       expect(page).to have_content "¿Would you like to give assistance to war refugees?"
       expect(page).to have_content "In summary, what we want is..."
       expect(page).to have_content "This is very important because..."
-      expect(page).to have_content "http://rescue.org/refugees"
       expect(page).to have_content "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)

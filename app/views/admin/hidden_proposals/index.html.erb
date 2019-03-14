@@ -22,13 +22,9 @@
           <div class="moderation-description">
             <p><small><%= proposal.summary %></small></p>
             <%= proposal.description %>
-            <% if proposal.external_url.present? %>
-              <p><%= text_with_links proposal.external_url %></p>
-            <% end %>
             <% if proposal.video_url.present? %>
               <p><%= text_with_links proposal.video_url %></p>
             <% end %>
-            <p><%= proposal.question %></p>
           </div>
         </td>
         <td class="align-top">

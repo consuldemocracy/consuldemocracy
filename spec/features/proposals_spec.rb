@@ -127,7 +127,6 @@ feature "Proposals" do
     expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal question"
     expect(page).to have_content "Proposal description"
-    expect(page).to have_content "http://external_documention.es"
     expect(page).to have_content proposal.author.name
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_selector(avatar(proposal.author.name))
@@ -222,7 +221,6 @@ feature "Proposals" do
     fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
     fill_in "proposal_summary", with: "In summary, what we want is..."
     fill_in "proposal_description", with: "This is very important because..."
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Refugees, Solidarity"
@@ -243,7 +241,6 @@ feature "Proposals" do
     expect(page).to have_content "¿Would you like to give assistance to war refugees?"
     expect(page).to have_content "In summary, what we want is..."
     expect(page).to have_content "This is very important because..."
-    expect(page).to have_content "http://rescue.org/refugees"
     expect(page).to have_content "https://www.youtube.com/watch?v=yPQfcG-eimk"
     expect(page).to have_content author.name
     expect(page).to have_content "Refugees"
@@ -261,7 +258,6 @@ feature "Proposals" do
     fill_in "proposal_question", with: "This is a question"
     fill_in "proposal_summary", with: "This is the summary"
     fill_in "proposal_description", with: "This is the description"
-    fill_in "proposal_external_url", with: "http://google.com/robots.txt"
     fill_in "proposal_responsible_name", with: "Some other robot"
     check "proposal_terms_of_service"
 
@@ -328,7 +324,6 @@ feature "Proposals" do
     fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
     fill_in "proposal_summary", with: "In summary, what we want is..."
     fill_in "proposal_description", with: "This is very important because..."
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
@@ -442,10 +437,8 @@ feature "Proposals" do
       visit new_proposal_path
 
       fill_in "proposal_title", with: "Help refugees"
-      fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-      fill_in "proposal_summary", with: "In summary, what we want is..."
-      fill_in "proposal_description", with: "This is very important because..."
-      fill_in "proposal_external_url", with: "http://rescue.org/refugees"
+      fill_in "proposal_summary", with: "In summary what we want is..."
+      fill_in_ckeditor "proposal_description", with: "A description with enough characters"
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_responsible_name", with: "Isabel Garcia"
       check "proposal_terms_of_service"
@@ -632,7 +625,6 @@ feature "Proposals" do
     fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
     fill_in "proposal_summary", with: "Basically..."
     fill_in "proposal_description", with: "Let's do something to end child poverty"
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
 
     click_button "Save changes"
@@ -1835,7 +1827,6 @@ feature "Successful proposals" do
       fill_in "proposal_summary", with: "In summary what we want is..."
       fill_in "proposal_question", with: "Would you like to?"
       fill_in "proposal_description", with: "This is very important because..."
-      fill_in "proposal_external_url", with: "http://rescue.org/refugees"
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_tag_list", with: "Refugees, Solidarity"
       check "proposal_terms_of_service"

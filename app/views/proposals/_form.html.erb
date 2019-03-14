@@ -41,11 +41,6 @@
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
-      <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
-    </div>
-
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render "images/nested_image", imageable: @proposal, f: f %>
