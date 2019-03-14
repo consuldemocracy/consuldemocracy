@@ -1,14 +1,14 @@
 <% provide :title, t("budgets.executions.page_title", budget: @budget.name) %>
-<% content_for :meta_description do %><%= @budget.description_for_phase('finished') %><% end %>
+<% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
 <% provide :social_media_meta_tags do %>
-<%= render 'shared/social_media_meta_tags',
+<%= render "shared/social_media_meta_tags",
             social_url: budget_executions_url(@budget),
             social_title: @budget.name,
-            social_description: @budget.description_for_phase('finished') %>
+            social_description: @budget.description_for_phase("finished") %>
 <% end %>
 
 <% content_for :canonical do %>
-  <%= render 'shared/canonical', href: budget_executions_url(@budget) %>
+  <%= render "shared/canonical", href: budget_executions_url(@budget) %>
 <% end %>
 
 <div class="budgets-stats">
@@ -32,7 +32,7 @@
         <%= link_to t("budgets.results.link"), budget_results_path(@budget) %>
       </li>
       <li class="tabs-title is-active">
-        <%= link_to t("budgets.executions.link"), budget_executions_path(@budget), class: 'is-active' %>
+        <%= link_to t("budgets.executions.link"), budget_executions_path(@budget), class: "is-active" %>
       </li>
     </ul>
   </div>
@@ -67,7 +67,7 @@
     <% end %>
 
     <% if @investments_by_heading.any? %>
-      <%= render 'budgets/executions/investments' %>
+      <%= render "budgets/executions/investments" %>
     <% else %>
       <div class="callout primary clear">
         <%= t("budgets.executions.no_winner_investments") %>

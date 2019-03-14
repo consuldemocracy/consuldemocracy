@@ -45,7 +45,7 @@
         <% end %>
 
         <ul class="ballot-list">
-          <%= render partial: 'budgets/ballot/investment',
+          <%= render partial: "budgets/ballot/investment",
                      collection: @ballot.investments.by_group(group.id) %>
         </ul>
       </div>
