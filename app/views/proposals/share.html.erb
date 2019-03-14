@@ -21,7 +21,7 @@
           <%= t("proposals.proposal.share.edit") %>
         </p>
 
-        <%= render partial: 'shared/social_share', locals: {
+        <%= render partial: "shared/social_share", locals: {
           title: @proposal.title,
           url: proposal_url(@proposal),
           description: @proposal.summary,

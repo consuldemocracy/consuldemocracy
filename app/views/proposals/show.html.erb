@@ -38,11 +38,11 @@
         <% end %>
 
         <%= render "proposals/info", proposal: @proposal %>
-        <%= render 'shared/geozone', geozonable: @proposal %>
-        <%= render 'relationable/related_content', relationable: @proposal %>
+        <%= render "shared/geozone", geozonable: @proposal %>
+        <%= render "relationable/related_content", relationable: @proposal %>
 
         <div class="js-moderator-proposal-actions margin">
-          <%= render 'proposals/actions', proposal: @proposal %>
+          <%= render "proposals/actions", proposal: @proposal %>
         </div>
       </div>
 
@@ -53,7 +53,7 @@
           <div class="show-actions-menu">
 
             <% if current_editable?(@proposal) %>
-              <%= link_to edit_proposal_path(@proposal), class: 'button hollow expanded' do %>
+              <%= link_to edit_proposal_path(@proposal), class: "button hollow expanded" do %>
                           <span class="icon-edit"></span>
                           <%= t("proposals.show.edit_proposal_link") %>
               <% end %>
@@ -61,7 +61,7 @@
 
             <% if author_of_proposal?(@proposal) %>
               <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
-                          class: 'button hollow expanded' do %>
+                          class: "button hollow expanded" do %>
                           <span class="icon-no-notification"></span>
                           <%= t("proposals.show.send_notification") %>
               <% end %>
@@ -70,8 +70,8 @@
             <% if can_destroy_image?(@proposal) %>
               <%= link_to image_path(@proposal.image, from: request.url),
                           method: :delete,
-                          class: 'button hollow alert expanded',
-                          data: { confirm: t('images.actions.destroy.confirm') } do %>
+                          class: "button hollow alert expanded",
+                          data: { confirm: t("images.actions.destroy.confirm") } do %>
                           <span class="icon-image"></span>
                           <%= t("images.remove_image") %>
               <% end %>
@@ -96,21 +96,21 @@
               <p><%= t("proposals.proposal.archived") %></p>
             </div>
           <% else %>
-            <%= render 'votes',
-                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+            <%= render "votes",
+                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: "yes") } %>
           <% end %>
         </div>
 
-        <%= render 'proposals/social_share', proposal: @proposal, share_title: t("proposals.show.share") %>
+        <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
 
         <% if current_user %>
           <div class="sidebar-divider"></div>
           <p class="sidebar-title"><%= t("shared.follow") %></p>
 
-          <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
+          <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal)  %>
         <% end %>
 
-        <%= render 'communities/access_button', community: @proposal.community %>
+        <%= render "communities/access_button", community: @proposal.community %>
 
       </aside>
     </div>
