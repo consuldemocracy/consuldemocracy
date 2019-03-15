@@ -1,5 +1,5 @@
 namespace :locales do
-  desc 'Migrate all localization files to new structure for a given locale name as argument'
+  desc "Migrate all localization files to new structure for a given locale name as argument"
   task :migrate_structure, [:locale] => [:environment] do |_t, args|
     locale = args[:locale]
     puts "Moving files for locale: #{locale}"

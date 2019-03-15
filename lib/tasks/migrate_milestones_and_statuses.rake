@@ -1,11 +1,11 @@
 namespace :milestones do
 
   def generate_table_migration_sql(new_table:, old_table:, columns:)
-    from_cols = ['id', *columns.keys]
-    to_cols   = ['id', *columns.values]
+    from_cols = ["id", *columns.keys]
+    to_cols   = ["id", *columns.values]
     <<~SQL
-      INSERT INTO #{new_table} (#{to_cols.join(', ')})
-      SELECT #{from_cols.join(', ')} FROM #{old_table};
+      INSERT INTO #{new_table} (#{to_cols.join(", ")})
+      SELECT #{from_cols.join(", ")} FROM #{old_table};
     SQL
   end
 
@@ -48,36 +48,36 @@ namespace :milestones do
     start = Time.now
 
     ActiveRecord::Base.transaction do
-      migrate_table! old_table: 'budget_investment_statuses',
-                     new_table: 'milestone_statuses',
-                     columns: {'name'        => 'name',
-                               'description' => 'description',
-                               'hidden_at'   => 'hidden_at',
-                               'created_at'  => 'created_at',
-                               'updated_at'  => 'updated_at'}
+      migrate_table! old_table: "budget_investment_statuses",
+                     new_table: "milestone_statuses",
+                     columns: {"name"        => "name",
+                               "description" => "description",
+                               "hidden_at"   => "hidden_at",
+                               "created_at"  => "created_at",
+                               "updated_at"  => "updated_at"}
 
-      migrate_table! old_table: 'budget_investment_milestones',
-                     new_table: 'milestones',
-                     columns: {'investment_id' => 'milestoneable_id',
-                               'title'         => 'title',
-                               'description'   => 'description',
-                               'created_at'    => 'created_at',
-                               'updated_at'    => 'updated_at',
-                               'publication_date' => 'publication_date',
-                               'status_id'     => 'status_id'}
+      migrate_table! old_table: "budget_investment_milestones",
+                     new_table: "milestones",
+                     columns: {"investment_id" => "milestoneable_id",
+                               "title"         => "title",
+                               "description"   => "description",
+                               "created_at"    => "created_at",
+                               "updated_at"    => "updated_at",
+                               "publication_date" => "publication_date",
+                               "status_id"     => "status_id"}
 
-      populate_column! table:  'milestones',
-                       column: 'milestoneable_type',
-                       value:  'Budget::Investment'
+      populate_column! table:  "milestones",
+                       column: "milestoneable_type",
+                       value:  "Budget::Investment"
 
-      migrate_table! old_table: 'budget_investment_milestone_translations',
-                     new_table: 'milestone_translations',
-                     columns: {'budget_investment_milestone_id' => 'milestone_id',
-                               'locale'      => 'locale',
-                               'created_at'  => 'created_at',
-                               'updated_at'  => 'updated_at',
-                               'title'       => 'title',
-                               'description' => 'description'}
+      migrate_table! old_table: "budget_investment_milestone_translations",
+                     new_table: "milestone_translations",
+                     columns: {"budget_investment_milestone_id" => "milestone_id",
+                               "locale"      => "locale",
+                               "created_at"  => "created_at",
+                               "updated_at"  => "updated_at",
+                               "title"       => "title",
+                               "description" => "description"}
 
       Image.where(imageable_type: "Budget::Investment::Milestone").
             update_all(imageable_type: "Milestone")

@@ -1,4 +1,4 @@
-require 'graphql'
+require "graphql"
 
 module GraphQL
   class ApiTypesCreator
@@ -65,7 +65,7 @@ module GraphQL
         model = api_type_model.constantize
         fields = {}
 
-        api_type_info['fields'].each do |field_name, field_type|
+        api_type_info["fields"].each do |field_name, field_type|
           if field_type.is_a?(Array) # paginated association
             fields[field_name.to_sym] = [field_type.first.constantize]
           elsif SCALAR_TYPES[field_type.to_sym]
