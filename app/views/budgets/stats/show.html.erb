@@ -82,13 +82,9 @@
             <h4><%= t("stats.budgets.by_phase") %></h4>
 
             <%= number_with_info_tags(@stats[:total_participants_support_phase],
-                                      t("stats.budgets.participants")) %>
-
-            <%= number_with_info_tags(@stats[:total_supports], t("stats.budgets.supports")) %>
-            <%= number_with_info_tags(@stats[:total_participants_web],
-                                     t("stats.budgets.total_participants_web")) %>
-            <%= number_with_info_tags(@stats[:total_participants_booths],
-                                     t("stats.budgets.total_participants_booths")) %>
+                                      t("stats.budgets.participants_support_phase")) %>
+            <%= number_with_info_tags(@stats[:total_participants_vote_phase],
+                                     t("stats.budgets.participants_voting_phase")) %>
 
           </div>
 

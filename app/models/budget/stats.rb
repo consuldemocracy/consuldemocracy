@@ -6,8 +6,7 @@ class Budget::Stats
     super +
       %i[total_participants_support_phase total_participants_vote_phase
          total_budget_investments total_votes total_selected_investments
-         total_unfeasible_investments total_supports headings
-         total_participants_web total_participants_booths]
+         total_unfeasible_investments headings]
   end
 
   def participants
@@ -22,14 +21,6 @@ class Budget::Stats
 
     def total_participants_support_phase
       voters.uniq.count
-    end
-
-    def total_participants_web
-      (balloters - poll_ballot_voters).uniq.compact.count
-    end
-
-    def total_participants_booths
-      poll_ballot_voters.uniq.count
     end
 
     def total_participants_vote_phase
@@ -50,10 +41,6 @@ class Budget::Stats
 
     def total_unfeasible_investments
       budget.investments.unfeasible.count
-    end
-
-    def total_supports
-      supports(budget).count
     end
 
     def authors

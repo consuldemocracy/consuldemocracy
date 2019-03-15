@@ -94,24 +94,6 @@ describe Budget::Stats do
     end
   end
 
-  describe "#total_participants_web" do
-    it "returns the number of total participants in the votes phase via web" do
-      2.times { create(:budget_ballot_line, investment: investment) }
-      create(:poll_voter, :from_booth, budget: budget)
-
-      expect(stats.generate[:total_participants_web]).to be 2
-    end
-  end
-
-  describe "#total_participants_booths" do
-    it "returns the number of total participants in the votes phase in booths" do
-      2.times { create(:poll_voter, :from_booth, budget: budget) }
-      create(:budget_ballot_line, investment: investment)
-
-      expect(stats.generate[:total_participants_booths]).to be 2
-    end
-  end
-
   describe "#total_budget_investments" do
     it "returns the number of total budget investments" do
       2.times { create(:budget_investment, budget: budget) }
@@ -147,14 +129,6 @@ describe Budget::Stats do
       create(:budget_investment, :selected, budget: budget)
 
       expect(stats.generate[:total_unfeasible_investments]).to be 3
-    end
-  end
-
-  describe "#total_supports" do
-    it "returns the number of total supports" do
-      2.times { create(:vote, votable: investment) }
-
-      expect(stats.generate[:total_supports]).to be 2
     end
   end
 
