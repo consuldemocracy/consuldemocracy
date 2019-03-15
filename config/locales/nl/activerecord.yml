@@ -24,7 +24,7 @@ nl:
         other: "Reacties"
       debate:
         one: "Discussie"
-        other: "Discussie"
+        other: "Discussies"
       tag:
         one: "Term"
         other: "Termen"
@@ -62,8 +62,8 @@ nl:
         one: "coördinator"
         other: "coördinatoren"
       proposal:
-        one: "Idee"
-        other: "Ideeën"
+        one: "Voorstel"
+        other: "Voorstellen"
       spending_proposal:
         one: "Investment project"
         other: "Budget bestemmingen"
