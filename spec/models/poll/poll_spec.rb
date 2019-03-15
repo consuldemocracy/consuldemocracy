@@ -235,7 +235,7 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      create(:poll_voter, poll: poll, user: user, origin: "booth")
+      create(:poll_voter, :from_booth, poll: poll, user: user)
 
       expect(poll.voted_in_booth?(user)).to be
     end
@@ -251,7 +251,7 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      create(:poll_voter, poll: poll, user: user, origin: "web")
+      create(:poll_voter, :from_web, poll: poll, user: user)
 
       expect(poll.voted_in_booth?(user)).not_to be
     end

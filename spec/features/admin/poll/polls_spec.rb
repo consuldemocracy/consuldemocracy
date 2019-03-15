@@ -318,10 +318,7 @@ feature "Admin polls" do
         unvoted_poll = create(:poll)
 
         voted_poll = create(:poll)
-        booth_assignment = create(:poll_booth_assignment, poll: voted_poll)
-        create(:poll_voter, :from_booth, :valid_document,
-               booth_assignment: booth_assignment,
-               poll: voted_poll)
+        create(:poll_voter, :from_booth, :valid_document, poll: voted_poll)
 
         visit admin_poll_results_path(unvoted_poll)
 
