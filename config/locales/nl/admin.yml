@@ -973,6 +973,8 @@ nl:
         no_questions: "There are no questions assigned to this poll."
         questions_title: "List of questions"
         table_title: "Title"
+        edit_answers: Antwoorden bewerken
+        see_proposal: "(Bekijk voorstel)"
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
@@ -994,6 +996,7 @@ nl:
         title: "Edit Question"
       new:
         title: "Create Question"
+        title_proposal: "Stel een vraag"
         poll_label: "Poll"
       answers:
         images:
@@ -1094,6 +1097,7 @@ nl:
         official_updated: Details of official saved
       index:
         title: Beambten
+        help: Gebruikersaccounts gemarkeerd als ambtenaren zullen hun interventies op het platform gemarkeerd zien. Je kunt het label dat naast de gebruikersnamen van deze accounts verschijnt definiëren van belangrijk (niveau 1) tot minst belangrijk (niveau 5).
         no_officials: Er zijn geen officials.
         name: Name
         official_position: Positie
@@ -1144,6 +1148,8 @@ nl:
         author: Author
         milestones: Mijlpalen
         no_proposals: Er zijn geen voorstellen.
+      show:
+        create_question: Voeg dit voorstel toe aan de peiling om te kunnen stemmen
     hidden_proposals:
       index:
         filter: Filter
@@ -1222,6 +1228,7 @@ nl:
       content: Content
       created_at: Created at
       delete: Delete
+      color_help: Hexadecimale notatie
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1288,7 +1295,9 @@ nl:
         name: Name
         external_code: External code
         census_code: Census code
+        code_help: Responscode voor het gebied van de census API
         coordinates: Coordinates
+        coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeelding met hyperlinks genereert
       errors:
         form:
           error:
