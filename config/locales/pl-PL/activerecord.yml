@@ -199,6 +199,10 @@ pl:
       progress_bar:
         kind: "Typ"
         title: "Tytuł"
+        percentage: "Aktualny etap"
+      progress_bar/kind:
+        primary: "Główny"
+        secondary: "Dodatkowy"
       budget/heading:
         name: "Nazwa nagłówka"
         price: "Koszt"
@@ -282,6 +286,8 @@ pl:
         name: Nazwa
         locale: ustawienia regionalne
         body: Zawartość
+      banner:
+        font_color: Kolor czcionki
       legislation/process:
         title: Tytuł procesu
         summary: Podsumowanie
