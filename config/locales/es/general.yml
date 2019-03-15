@@ -658,6 +658,7 @@ es:
         votes: "VOTOS"
         web: "WEB"
         booth: "URNAS"
+        mail: "CORREO"
         total: "TOTAL"
         valid: "Válidos"
         white: "En blanco"
