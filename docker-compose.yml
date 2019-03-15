@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   # service configuration for our database
   database:
@@ -17,7 +17,7 @@ services:
     # use the Dockerfile next to this file
     build: .
     entrypoint: /usr/local/bin/entrypoint.sh
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bundle exec rails s -p 3000 -b "0.0.0.0"
     working_dir: /var/www/consul
 
     # rely on the RAILS_ENV value of the host machine

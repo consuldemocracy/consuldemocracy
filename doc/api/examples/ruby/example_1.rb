@@ -1,9 +1,9 @@
-require 'http'
+require "http"
 
-API_ENDPOINT = 'https://decide.madrid.es/graphql'.freeze
+API_ENDPOINT = "https://decide.madrid.es/graphql".freeze
 
 def make_request(query_string)
-  HTTP.headers('User-Agent' => 'Mozilla/5.0', accept: 'application/json')
+  HTTP.headers("User-Agent" => "Mozilla/5.0", accept: "application/json")
       .get(
         API_ENDPOINT,
         params: { query: query_string.delete("\n").delete(" ") }

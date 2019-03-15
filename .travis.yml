@@ -1,6 +1,6 @@
 language: ruby
 addons:
-  postgresql: '9.4'
+  postgresql: "9.4"
   chrome: stable
 rvm:
 - 2.3.2
