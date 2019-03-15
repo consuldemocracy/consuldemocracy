@@ -15,7 +15,7 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   config.action_mailer.asset_host = "http://localhost:3000"
 
   # Deliver emails to a development mailbox at /letter_opener
@@ -49,7 +49,7 @@ Rails.application.configure do
   config.after_initialize do
     Bullet.enable = true
     Bullet.bullet_logger = true
-    if ENV['BULLET']
+    if ENV["BULLET"]
       Bullet.rails_logger = true
       Bullet.add_footer = true
     end
