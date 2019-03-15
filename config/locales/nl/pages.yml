@@ -16,7 +16,7 @@ nl:
         processes: "Proces"
       debates:
         title: "Debatten"
-        description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeën kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
+        description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je voorstellen kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
         link: "debatten"
         feature_html: "Je kunt debatten openen en reageren en je waardering uitdrukken via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
