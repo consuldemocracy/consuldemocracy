@@ -193,6 +193,9 @@ pl:
         organization_name: "Jeśli wnioskujesz w imieniu zespołu/organizacji, lub w imieniu większej liczby osób, wpisz ich nazwę"
         image: "Opisowy obraz wniosku"
         image_title: "Tytuł obrazu"
+      geozone:
+        name: Nazwa
+        external_code: "Zewnętrzny kod (opcjonalnie)"
       milestone:
         status_id: "Bieżący stan inwestycji (opcjonalnie)"
         title: "Tytuł"
