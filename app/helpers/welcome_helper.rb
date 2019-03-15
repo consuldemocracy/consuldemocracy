@@ -15,7 +15,7 @@ module WelcomeHelper
     when "Proposal"
       proposal_path(recommended)
     else
-      '#'
+      "#"
     end
   end
 

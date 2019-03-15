@@ -14,10 +14,10 @@ module LegislationHelper
   def link_to_toggle_legislation_proposal_selection(proposal)
     if proposal.selected?
       button_text = t("admin.legislation.proposals.index.selected")
-      html_class = 'button expanded'
+      html_class = "button expanded"
     else
       button_text = t("admin.legislation.proposals.index.select")
-      html_class = 'button hollow expanded'
+      html_class = "button hollow expanded"
     end
 
     link_to button_text,
