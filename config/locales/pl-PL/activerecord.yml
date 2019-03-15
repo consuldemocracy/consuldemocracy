@@ -287,6 +287,7 @@ pl:
         locale: ustawienia regionalne
         body: Zawartość
       banner:
+        background_color: Kolor tła
         font_color: Kolor czcionki
       legislation/process:
         title: Tytuł procesu
@@ -297,6 +298,8 @@ pl:
         end_date: Data zakończenia
         debate_start_date: Data rozpoczęcia debaty
         debate_end_date: Data zakończenia debaty
+        draft_start_date: Początek
+        draft_end_date: Koniec
         draft_publication_date: Data publikacji projektu
         allegations_start_date: Data rozpoczęcia zarzutów
         allegations_end_date: Data zakończenia zarzutów
