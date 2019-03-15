@@ -29,10 +29,10 @@
         <p><%= t("verification.letter.new.user_permission_info") %></p>
 
         <ul>
-          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
-          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
-          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
-          <li><span class="icon-x"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
+          <li><span class="fas fa-check fa-fw"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
+          <li><span class="fas fa-check fa-fw"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
+          <li><span class="fas fa-check fa-fw"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
+          <li><span class="fas fa-times fa-fw"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
         </ul>
       </div>
 
@@ -40,15 +40,13 @@
     </div>
     <div class="small-12 medium-8 column final-votes-info">
 
-      <span class="icon-box"></span>
+      <span class="fas fa-person-booth"></span>
 
       <p><strong><%= t("verification.letter.new.explanation") %></strong></p>
 
       <ul>
         <li>
-          <%= t("verification.letter.new.office",
-          office: link_to(t("verification.letter.new.offices"), setting['verification_offices_url'],
-          target: "blank")).html_safe %>
+          <%= t("verification.letter.new.office") %>
         </li>
         <li>
           <%= link_to t("verification.letter.new.send_letter"), letter_path, method: :post %>

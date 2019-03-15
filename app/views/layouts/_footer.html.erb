@@ -1,30 +1,27 @@
 <footer>
   <div class="row">
     <div class="small-12 large-4 column">
-      <h1 class="logo">
-        <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-      </h1>
-
+      <%= t("layouts.header.open_gov") %>
       <p class="info">
         <%= t("layouts.footer.description",
           open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
           consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow")).html_safe
-        %>
+        %> 
         <%= t("layouts.footer.contact_us") %>
       </p>
     </div>
 
     <div class="footer-sections small-12 large-8 column">
       <div class="small-12 medium-4 column">
-        <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
+        <%= t("layouts.footer.participation_title") %>
         <p><%= t("layouts.footer.participation_text") %></p>
       </div>
     </div>
   </div>
 
   <div class="subfooter row">
-    <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+    <div class="small-12 medium-6 column">
+      &#169;&nbsp;<%= t("layouts.footer.copyright", year: Time.current.year) %> | <i><%= Rails.application.secrets.version || "unknown" %></i>&nbsp;<% if !Rails.env.production? then %>- <i><%= Rails.env %></i><% end %>&nbsp;
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|</li>
@@ -32,7 +29,7 @@
       </ul>
     </div>
 
-    <div class="small-12 medium-4 column social">
+    <div class="small-12 medium-6 column social">
       <div class="text-right">
         <ul>
           <% if setting['twitter_handle'] %>
@@ -40,7 +37,7 @@
               <%= link_to "https://twitter.com/#{setting['twitter_handle']}", target: "_blank",
                            title: t("shared.go_to_page") + t("social.twitter", org: setting['org_name']) + t('shared.target_blank_html') do %>
                               <span class="show-for-sr"><%= t("social.twitter", org: setting['org_name']) %></span>
-                              <span class="icon-twitter" aria-hidden="true"></span>
+                              <span class="fab fa-twitter fa-fw" aria-hidden="true"></span>
               <% end %>
             </li>
           <% end %>
@@ -49,7 +46,16 @@
               <%= link_to "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank",
                           title: t("shared.go_to_page") + t("social.facebook", org: setting['org_name']) + t('shared.target_blank_html') do %>
                           <span class="show-for-sr"><%= t("social.facebook", org: setting['org_name']) %></span>
-                          <span class="icon-facebook" aria-hidden="true"></span>
+                          <span class="fab fa-facebook-f fa-fw" aria-hidden="true"></span>
+              <% end %>
+            </li>
+          <% end %>
+          <%  if setting['blog_url'] %>
+            <li class="inline-block">
+              <%= link_to setting['blog_url'], target: "_blank",
+                          title: t("shared.go_to_page") + t("social.blog", org: setting['org_name']) + t('shared.target_blank_html') do %>
+                          <span class="show-for-sr"><%= t("social.blog", org: setting['org_name']) %></span>
+                          <span class="fab fa-wordpress fa-fw" aria-hidden="true"></span>
               <% end %>
             </li>
           <% end %>
@@ -58,7 +64,7 @@
               <%= link_to "https://www.youtube.com/#{setting['youtube_handle']}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.youtube", org: setting['org_name']) + t('shared.target_blank_html') do %>
                           <span class="show-for-sr"><%= t("social.youtube", org: setting['org_name']) %></span>
-                          <span class="icon-youtube" aria-hidden="true"></span>
+                          <span class="fab fa-youtube fa-fw" aria-hidden="true"></span>
               <% end %>
             </li>
           <% end %>
@@ -67,7 +73,7 @@
               <%= link_to "https://www.telegram.me/#{setting['telegram_handle']}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.telegram", org: setting['org_name']) + t('shared.target_blank_html') do %>
                           <span class="show-for-sr"><%= t("social.telegram", org: setting['org_name']) %></span>
-                          <span class="icon-telegram" aria-hidden="true"></span>
+                          <span class="fab fa-telegram fa-fw" aria-hidden="true"></span>
               <% end %>
             </li>
           <% end %>
@@ -76,7 +82,7 @@
               <%= link_to "https://www.instagram.com/#{setting['instagram_handle']}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.instagram", org: setting['org_name']) + t('shared.target_blank_html') do %>
                           <span class="show-for-sr"><%= t("social.instagram", org: setting['org_name']) %></span>
-                          <span class="icon-instagram" aria-hidden="true"></span>
+                          <span class="fab fa-instagram fa-fw" aria-hidden="true"></span>
               <% end %>
             </li>
           <% end %>

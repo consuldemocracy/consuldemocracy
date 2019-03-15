@@ -101,7 +101,7 @@
             <%= link_to image_path(investment.image, from: request.url),
                         method: :delete,
                         class: 'button hollow alert expanded' do %>
-                <span class="icon-image"></span>
+                <span class="fas fa-image fa-fw"></span>
                 <%= t("images.remove_image") %>
             <% end %>
           </div>
@@ -146,7 +146,7 @@
           <% end %>
         <% end %>
 
-        <% if investment.unfeasible? %>
+        <% if investment.unfeasible? && investment.valuation_finished? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
@@ -168,7 +168,7 @@
             <span class="label-budget-investment float-left">
               <%= t("budgets.investments.show.title") %>
             </span>
-            <span class="icon-budget"></span>
+            <span class="fas fa-hand-holding-usd fa-fw"></span>
           </div>
         <% end %>
         <% if investment.should_show_price? %>

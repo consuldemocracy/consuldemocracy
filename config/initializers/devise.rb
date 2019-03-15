@@ -13,7 +13,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   if Rails.env.test? || !ActiveRecord::Base.connection.table_exists?('settings')
-    config.mailer_sender = "noreply@consul.dev"
+    config.mailer_sender = ENV['SMTP_FROM'] || "noreply@consul.dev"
   else
     config.mailer_sender = "'#{Setting['mailer_from_name']}' <#{Setting['mailer_from_address']}>"
   end

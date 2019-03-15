@@ -22,7 +22,7 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @debate.created_at.to_date %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="icon-comments"></span>&nbsp;
+          <span class="far fa-comments fa-fw"></span>&nbsp;
           <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
@@ -46,7 +46,7 @@
           <div class="sidebar-divider"></div>
           <h2><%= t("debates.show.author") %></h2>
           <%= link_to edit_debate_path(@debate), class: 'button hollow expanded' do %>
-            <span class="icon-edit"></span>
+            <span class="fas fa-edit fa-fw"></span>
             <%= t("debates.show.edit_debate_link") %>
           <% end %>
         <% end %>
@@ -60,7 +60,8 @@
           share_title: t("debates.show.share"),
           title: @debate.title,
           url: debate_url(@debate),
-          description: @debate.title
+          description: @debate.title,
+          mobile: @debate.title
         } %>
       </aside>
     </div>

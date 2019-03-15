@@ -233,7 +233,7 @@ feature "Proposal Notifications" do
       visit root_path
       visit root_path
 
-      find(".icon-notification").click
+      find(".fa-bell").click
 
       notification_for_user1 = Notification.where(user: user1).first
       expect(page).to have_css ".notification", count: 1
@@ -245,7 +245,7 @@ feature "Proposal Notifications" do
       visit root_path
       visit root_path
 
-      find(".icon-notification").click
+      find(".fa-bell").click
 
       notification_for_user2 = Notification.where(user: user2).first
       expect(page).to have_css ".notification", count: 1
@@ -257,7 +257,7 @@ feature "Proposal Notifications" do
       visit root_path
       visit root_path
 
-      find(".icon-no-notification").click
+      find(".fa-bell-slash").click
 
       expect(page).to have_css ".notification", count: 0
     end
@@ -289,7 +289,7 @@ feature "Proposal Notifications" do
       login_as user1.reload
       visit root_path
 
-      find(".icon-notification").click
+      find(".fa-bell").click
 
       notification_for_user1 = Notification.where(user: user1).first
       expect(page).to have_css ".notification", count: 1
@@ -300,7 +300,7 @@ feature "Proposal Notifications" do
       login_as user2.reload
       visit root_path
 
-      find(".icon-notification").click
+      find(".fa-bell").click
 
       notification_for_user2 = Notification.where(user: user2).first
       expect(page).to have_css ".notification", count: 1
@@ -311,7 +311,7 @@ feature "Proposal Notifications" do
       login_as user3.reload
       visit root_path
 
-      find(".icon-no-notification").click
+      find(".fa-bell-slash").click
 
       expect(page).to have_css ".notification", count: 0
     end
@@ -342,7 +342,7 @@ feature "Proposal Notifications" do
       visit root_path
       visit root_path
 
-      find(".icon-notification").click
+      find(".fa-bell").click
 
       notification_for_user = Notification.where(user: user).first
       expect(page).to have_css ".notification", count: 1
@@ -399,7 +399,7 @@ feature "Proposal Notifications" do
         visit root_path
 
         within("#notifications") { expect(page).to have_content :all, "You have 3 new notifications" }
-        find(".icon-notification").click
+        find(".fa-bell").click
 
         expect(page).to have_css ".notification", count: 3
         expect(page).to have_content "There is one new notification on #{proposal.title}", count: 3

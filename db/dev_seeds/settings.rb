@@ -28,7 +28,7 @@ section "Creating Settings" do
 
   Setting.create(key: "feature.debates", value: "true")
   Setting.create(key: "feature.proposals", value: "true")
-  Setting.create(key: "feature.featured_proposals", value: "true")
+  Setting.create(key: "feature.featured_proposals", value: nil)
   Setting.create(key: "feature.polls", value: "true")
   Setting.create(key: "feature.spending_proposals", value: nil)
   Setting.create(key: "feature.spending_proposal_features.voting_allowed", value: nil)
@@ -58,7 +58,6 @@ section "Creating Settings" do
   Setting.create(key: "meta_description", value: "Citizen participation tool for an open, "\
                                                  "transparent and democratic government")
   Setting.create(key: "meta_keywords", value: "citizen participation, open government")
-  Setting.create(key: "verification_offices_url", value: "http://oficinas-atencion-ciudadano.url/")
   Setting.create(key: "min_age_to_participate", value: "16")
   Setting.create(key: "map_latitude", value: 40.41)
   Setting.create(key: "map_longitude", value: -3.7)

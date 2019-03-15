@@ -7,7 +7,7 @@
 
           <% cache [locale_and_user_status(spending_proposal), 'index', spending_proposal, spending_proposal.author] do %>
             <span class="label-investment-project float-left"><%= t("spending_proposals.spending_proposal.spending_proposal") %></span>
-            <span class="icon-budget"></span>
+            <span class="fas fa-hand-holding-usd fa-fw"></span>
             <h3><%= link_to spending_proposal.title, namespaced_spending_proposal_path(spending_proposal) %></h3>
             <p class="investment-project-info">
 

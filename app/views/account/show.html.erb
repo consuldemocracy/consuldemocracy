@@ -147,21 +147,21 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><i class="fas fa-check fa-fw"></i>&nbsp;<%= t("account.show.user_permission_debates") %></li>
+            <li><i class="fas fa-check fa-fw"></i>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
-                <span class="icon-check"></span>
+                <i class="fas fa-check fa-fw"></i>
               <% else %>
-                <span class="icon-x"></span>
+                <i class="fas fa-times fa-fw"></i>
               <% end %>
               <%= t("account.show.user_permission_support_proposal") %>
             </li>
             <li>
               <% if current_user.level_three_verified? %>
-                <span class="icon-check"></span>
+                <i class="fas fa-check fa-fw"></i>
               <% else %>
-                <span class="icon-x"></span>
+                <i class="fas fa-times fa-fw"></i>
               <% end %>
               <%= t("account.show.user_permission_votes") %>
             </li>
@@ -179,8 +179,7 @@
               <span class="verify-account">
                 <% if current_user.level_three_verified? %>
                   <p class="already-verified">
-                    <span class="icon-check"></span>
-                    <%= t("account.show.verified_account") %>
+                    <i class="fas fa-check fa-fw"></i> <%= t("account.show.verified_account") %>
                   </p>
                 <% elsif current_user.level_two_verified? %>
                   <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>

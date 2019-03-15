@@ -96,12 +96,12 @@ $sidebar-active: #f4fcd0;
         }
       }
 
-      [class^="icon-"] {
+      [class^="fa-"] {
         display: none;
       }
     }
 
-    [class^="icon-"]:not(.icon-circle) {
+    [class^="fa-"]:not(.fa-circle) {
       font-size: $base-font-size;
     }
   }
@@ -159,7 +159,7 @@ $sidebar-active: #f4fcd0;
     }
   }
 
-  .notifications .icon-circle {
+  .notifications .fa-circle {
     color: $admin-color;
   }
 
@@ -312,7 +312,7 @@ $sidebar-active: #f4fcd0;
 }
 
 .admin-content {
-  overflow: scroll;
+  overflow: auto;
   padding: $line-height !important;
 }
 
@@ -432,7 +432,7 @@ code {
     margin-left: 0;
     padding: 0;
 
-    [class^="icon-"] {
+    [class^="fa-"] {
       color: #fff;
       display: inline-block;
       font-size: rem-calc(24);
@@ -465,7 +465,6 @@ code {
     display: block;
     line-height: rem-calc(48);
     padding-left: rem-calc(12);
-    vertical-align: top;
 
     &:hover {
       background: $sidebar-hover;
@@ -475,15 +474,24 @@ code {
   }
 
   .is-accordion-submenu-parent {
-
     > a::after {
       border: 0;
-      content: "\61" !important;
-      font-family: "icons" !important;
+      font-style: normal;
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free" !important;
       height: auto;
       position: absolute !important;
-      right: 30px;
-      top: 6px !important;
+      right: 1em;
+    }
+  }
+  .is-accordion-submenu-parent[aria-expanded="true"] {
+    > a::after {
+      content: "\f0d7" !important;
+    }
+  }
+  .is-accordion-submenu-parent[aria-expanded="false"] {
+    > a::after {
+      content: "\f0d9" !important;
     }
   }
 
@@ -525,7 +533,7 @@ code {
   }
 }
 
-[class^="icon-"].delete {
+[class^="fa-"].delete {
   border: 0;
   font-size: $base-font-size;
 }
@@ -633,11 +641,11 @@ code {
       font-size: rem-calc(12);
     }
 
-    .icon-check {
+    .fa-check {
       color: $check;
     }
 
-    .icon-x {
+    .fa-times {
       color: $delete;
     }
   }
@@ -839,7 +847,7 @@ table {
 // --------------
 .cms-page-list {
 
-  [class^="icon-"] {
+  [class^="fa-"] {
     padding-right: $menu-icon-spacing;
     vertical-align: middle;
   }
@@ -921,7 +929,7 @@ table {
       text-decoration: underline;
     }
 
-    .icon-x {
+    .fa-times {
       vertical-align: sub;
       text-decoration: none;
       line-height: 0;
@@ -1050,7 +1058,7 @@ table {
       font-size: $small-font-size;
     }
 
-    .icon-expand {
+    .fa-expand {
       margin-left: 0.25rem;
       vertical-align: sub;
       text-decoration: none;
@@ -1220,7 +1228,6 @@ table {
 
   &.enabled::before,
   &.disabled::before {
-    font-family: "icons";
     left: 0;
     position: absolute;
   }

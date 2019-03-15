@@ -7,8 +7,8 @@
       </span>
 
       <% if current_user.notifications.unread.count > 0 %>
-        <span class="icon-circle" aria-hidden="true"></span>
-        <span class="icon-notification" aria-hidden="true"
+        <span class="fas fa-circle" aria-hidden="true"></span>
+        <span class="fas fa-bell fa-fw" aria-hidden="true"
               title="<%= t("layouts.header.notification_item.new_notifications",
                          count: current_user.notifications_count).html_safe %>">
         </span>
@@ -17,7 +17,7 @@
               count: current_user.notifications_count).html_safe %>
         </span>
       <% else %>
-        <span class="icon-no-notification" aria-hidden="true"
+        <span class="far fa-bell fa-fw" aria-hidden="true"
               title="<%= t("layouts.header.notification_item.no_notifications") %>">
         </span>
         <span class="show-for-small-only">

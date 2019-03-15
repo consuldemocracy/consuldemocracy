@@ -7,28 +7,34 @@
 <% if booth_assignment.present? %>
   <td>
     <span class="enabled">
-      <strong><%= t("admin.booth_assignments.manage.status.assigned") %></strong>
+      <strong><i class="fas fa-link" title="<%= t("admin.booth_assignments.manage.status.assigned") %>"></i></strong>
     </span>
   </td>
   <td>
-    <%= link_to t("admin.booth_assignments.manage.actions.unassign"),
-                admin_poll_booth_assignment_path(@poll, booth_assignment, booth_id: booth.id),
-                method: :delete,
-                remote: true,
-                title: t("admin.booth_assignments.manage.actions.unassign"),
-                class: "button hollow alert expanded",
-                data: (booth_assignment.shifts? ? {confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}"} : nil) if !@poll.expired? %>
+    <% if !@poll.expired?%>
+      <%= link_to admin_poll_booth_assignment_path(@poll, booth_assignment, booth_id: booth.id),
+        method: :delete,
+        remote: true,
+        title: t("admin.booth_assignments.manage.actions.unassign"),
+        class: "button alert",
+        data: (booth_assignment.shifts? ? {confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}"} : nil) do %>
+          <i class="fas fa-unlink"></i>
+        <% end %>
+    <% end %>
   </td>
 <% else %>
   <td>
-    <span class="disabled"><%= t("admin.booth_assignments.manage.status.unassigned") %></span>
+    <span class="disabled"><i class="fas fa-unlink" title="<%= t("admin.booth_assignments.manage.status.unassigned") %>"></i></span>
   </td>
   <td>
-    <%= link_to t("admin.booth_assignments.manage.actions.assign"),
-                admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
-                method: :post,
-                remote: true,
-                title: t("admin.booth_assignments.manage.actions.assign"),
-                class: "button hollow expanded" if !@poll.expired? %>
+    <% if !@poll.expired?%>
+      <%= link_to admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+        method: :post,
+        remote: true,
+        title: t("admin.booth_assignments.manage.actions.assign"),
+        class: "button" do %>
+          <i class="fas fa-link"></i>
+        <% end %>
+    <% end %>
   </td>
 <% end %>

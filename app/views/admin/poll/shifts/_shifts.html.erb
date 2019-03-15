@@ -15,10 +15,11 @@
         <td><%= shift.officer_name %></td>
         <td><%= t("admin.poll_shifts.#{shift.task}") %></td>
         <td>
-          <%= link_to t("admin.poll_shifts.new.remove_shift"),
-                      admin_booth_shift_path(@booth, shift),
+          <%= link_to admin_booth_shift_path(@booth, shift),
                       method: :delete,
-                      class: "button hollow alert expanded" %>
+                      class: "button alert" do %>
+                      <i class="fas fa-unlink" title="<%= t("admin.poll_shifts.new.remove_shift") %>"></i>
+                      <% end %>
         </td>
       </tr>
     <% end %>

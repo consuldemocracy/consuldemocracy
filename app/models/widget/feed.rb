@@ -4,7 +4,11 @@ class Widget::Feed < ActiveRecord::Base
   KINDS = %w(proposals debates processes)
 
   def active?
-    setting.value.present?
+    begin
+      setting.value.present?
+    rescue NoMethodError
+      false
+    end
   end
 
   def setting

@@ -1,40 +1,50 @@
 version: '3'
 services:
-  # service configuration for our database
   database:
-
-    # use the preferred version of the official Postgres image
-    # see https://hub.docker.com/_/postgres/
     image: postgres:9.4.5
-
-    # persist the database between containers by storing it in a volume
     volumes:
       - docker-example-postgres:/var/lib/postgresql/data
-
-  # service configuration for our dockerized Rails app
+    ports:
+      - "5432:5432"
   app:
-
-    # use the Dockerfile next to this file
     build: .
-    entrypoint: /usr/local/bin/entrypoint.sh
+    image: consul-app
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     working_dir: /var/www/consul
-
-    # rely on the RAILS_ENV value of the host machine
-    # environment:
-    #RAILS_ENV: $RAILS_ENV
-
-    # makes the app container aware of the DB container
+    environment:
+      - RAILS_ENV=production
+      - RAILS_SERVE_STATIC_FILES=true
+      - NEW_RELIC_AGENT_ENABLED=false
+      - DATABASE_HOST=database
+      - DATABASE_NAME=consul_production
+      - SMTP_DOMAIN=codefor.nl
+      - SMTP_HOST=smtp.mailgun.org
+      - SMTP_PASSWORD=a6d631757784f24beace64715c850781
+      - SMTP_USER=postmaster@codefor.nl
+      - SMTP_FROM=no-reply@codefor.nl
     depends_on:
       - database
-
-    # expose the port we configured Unicorn to bind to
     ports:
       - "3000:3000"
-    # map our application source code, in full, to the application root of our container
     volumes:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated
+
+  custom:
+    image: consul-app
+    environment:
+      - DATABASE_HOST=database
+      - DATABASE_NAME=postgres
+      - CUSTOM_SET_NAME=rommeldam
+    command: ./scripts/customize.sh
+    volumes:
+      - .:/var/www/consul:delegated
+      - bundle:/usr/local/bundle:delegated
+    depends_on:
+      - app
+      - database
+
 volumes:
   docker-example-postgres: {}
   bundle: {}
+

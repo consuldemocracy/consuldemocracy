@@ -41,10 +41,11 @@
 <% @feeds.each do |feed| %>
   <%= render "feed", feed: feed %>
 <% end %>
-
+<% if @recommendations.present? %>
 <div class="small-12 medium-6 large-4 column end">
   <div class="callout">
     <h3 class="inline-block"><%= t("settings.#{@recommendations.key}") %></h3>
     <%= render "setting", setting: @recommendations %>
   </div>
 </div>
+<% end %>

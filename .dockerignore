@@ -1,0 +1,5 @@
+.bundle/
+.vscode/
+tmp/
+.dockerignore
+.git/

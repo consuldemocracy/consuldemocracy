@@ -5,7 +5,6 @@ class Proposal < ActiveRecord::Base
   include Conflictable
   include Measurable
   include Sanitizable
-  include Searchable
   include Filterable
   include HasPublicAuthor
   include Graphqlable
@@ -106,6 +105,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search(terms)
+    include Searchable
     by_code = search_by_code(terms.strip)
     by_code.present? ? by_code : pg_search(terms)
   end

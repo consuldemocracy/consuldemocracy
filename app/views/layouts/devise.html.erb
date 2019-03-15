@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<%= I18n.locale %>">
   <head>
-    <%= render "layouts/common_head", default_title: "Gobierno abierto" %>
+    <%= render "layouts/common_head", default_title: t("devise_views.users.registrations.success.title") %>
     <%= render "layouts/meta_tags" %>
   </head>
 

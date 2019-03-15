@@ -3,8 +3,6 @@
             <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
   <div class="panel <%= 'with-image' if proposal.image.present? %>">
-    <div class="icon-successful"></div>
-
     <% if proposal.image.present? %>
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
@@ -21,7 +19,7 @@
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
-              <span class="icon-comments"></span>&nbsp;
+              <span class="far fa-comments fa-fw"></span>&nbsp;
               <%= link_to t("proposals.proposal.comments", count: proposal.comments_count),
                           namespaced_proposal_path(proposal, anchor: "comments") %>
 

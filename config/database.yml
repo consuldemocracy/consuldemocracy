@@ -1,0 +1,29 @@
+default: &default
+  adapter: <%= ENV['DATABASE_ADAPTER'] || "postgresql" %>
+  encoding: <%= ENV['DATABASE_ENCODING'] || "unicode" %>
+  host: <%= ENV['DATABASE_HOST'] || "localhost" %>
+  pool: <%= ENV['DATABASE_POOL'] || 5 %>
+  username: <%= ENV['DATABASE_USER'] || "postgres" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "postgres" %>
+
+development:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] || "consul_development" %>
+
+# The staging, preproduction and production dbs are only needed
+# for running rake assets:precompile locally before deploying
+staging:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] || "consul_staging" %> 
+
+preproduction:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] || "consul_preproduction" %> 
+
+production:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] || "consul_production" %> 
+
+test:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] || "consul_test" %>

@@ -1,5 +1,5 @@
 <%= link_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)), class: 'back' do %>
-  <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
+  <span class="fas fa-caret-left fa-fw"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
 <%= form_for @spending_proposal,

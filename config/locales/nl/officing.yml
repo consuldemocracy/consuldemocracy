@@ -1,68 +1,69 @@
+---
 nl:
   officing:
-    header:
-      title: Polling
     dashboard:
       index:
-        title: Poll officing
         info: Here you can validate user documents and store voting results
         no_shifts: Je hebt geen beheerdienst vandaag.
+        title: Poll officing
+    header:
+      title: Polling
     menu:
-      voters: Validate document
       total_recounts: Totaal aantal hertellingen en resultaten
+      voters: Validate document
     polls:
       final:
-        title: Polls ready for final recounting
+        add_results: Add results
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
-        add_results: Add results
-    results:
-      flash:
-        create: "Results saved"
-        error_create: "Results NOT saved. Error in data."
-        error_wrong_booth: "Wrong booth. Results NOT saved."
-      new:
-        title: "%{poll} - Add results"
-        not_allowed: "Voor deze peiling kun je resultaten toevoegen"
-        booth: "Stemhokje"
-        date: "Datum"
-        select_booth: "Select booth"
-        ballots_white: "Blanco stemmen"
-        ballots_null: "Invalid ballots"
-        ballots_total: "Totaal stemmen"
-        submit: "Save"
-        results_list: "Your results"
-        see_results: "Bekijk resultaten"
-      index:
-        no_results: "No results"
-        results: Resultaten
-        table_answer: Antwoord
-        table_votes: Votes
-        table_whites: "Blanco stemmen"
-        table_nulls: "Invalid ballots"
-        table_total: "Totaal stemmen"
+        title: Polls ready for final recounting
     residence:
       flash:
-        create: "Document verified with Census"
-        not_allowed: "You don't have officing shifts today"
+        create: Document verified with Census
+        not_allowed: You don't have officing shifts today
       new:
-        title: Valideer bestand
-        document_number: "Documentnummer (inclusief letters)"
-        submit: Valideer bestand
-        error_verifying_census: "The Census was unable to verify this document."
+        document_number: Documentnummer (inclusief letters)
+        error_verifying_census: The Census was unable to verify this document.
         form_errors: prevented the verification of this document
-        no_assignments: "Je hebt geen beheerdienst vandaag"
-    voters:
+        no_assignments: Je hebt geen beheerdienst vandaag
+        submit: Valideer bestand
+        title: Valideer bestand
+    results:
+      flash:
+        create: Resultaten opgeslagen
+        error_create: Foute gegevens, de resultaten konden niet worden opgeslagen.
+        error_wrong_booth: Verkeerde stemlocatie, de resultaten worden niet opgeslagen.
+      index:
+        no_results: Geen resultaten
+        results: Resultaten
+        table_answer: Antwoord
+        table_nulls: Invalid ballots
+        table_total: Totaal stemmen
+        table_votes: Votes
+        table_whites: Blanco stemmen
       new:
-        title: Polls
+        ballots_null: Invalid ballots
+        ballots_total: Totaal stemmen
+        ballots_white: Blanco stemmen
+        booth: Stemlocatie
+        date: Datum
+        not_allowed: Voor deze peiling kun je resultaten toevoegen
+        results_list: Your results
+        see_results: Bekijk resultaten
+        select_booth: Geselecteerde stemlocatie
+        submit: Save
+        title: "%{poll} - Voeg resultaten toe"
+    voters:
+      can_vote:
+        submit_disable_with: Een moment geduld a.u.b., stem wordt bevestigd...
+      new:
+        not_to_vote: De persoon heeft besloten niet te stemmen op dit moment
+        table_actions: Activiteiten
         table_poll: Poll
         table_status: Polls status
-        table_actions: Activiteiten
-        not_to_vote: De persoon heeft besloten niet te stemmen op dit moment
+        title: Polls
       show:
         can_vote: Can vote
         error_already_voted: Has already participated in this poll
         submit: Confirm vote
-        success: "Vote introduced!"
-      can_vote:
-        submit_disable_with: "Een moment geduld a.u.b., stem wordt bevestigd..."
+        success: Vote introduced!

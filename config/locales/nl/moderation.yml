@@ -1,8 +1,28 @@
+---
 nl:
   moderation:
+    budget_investments:
+      index:
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
+        filter: Filter
+        filters:
+          all: All
+          pending_flag_review: In afwachting
+          with_ignored_flag: Markeer als gelezen
+        headers:
+          budget_investment: Begrotingsvoorstel
+          moderate: Modereer
+        hide_budget_investments: Verbergen begrotingsinvesteringen
+        ignore_flags: Markeer als gelezen
+        order: Order by
+        orders:
+          created_at: Meest recent
+          flags: Meest gemarkeerd
+        title: Begrotingsvoorstellen
     comments:
       index:
-        block_authors: Block authors
+        block_authors: Blokkeer auteurs
         confirm: Bent u zeker?
         filter: Filter
         filters:
@@ -32,7 +52,7 @@ nl:
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Discussie
+          debate: Debat
           moderate: Modereer
         hide_debates: Hide debates
         ignore_flags: Markeer als gelezen
@@ -40,16 +60,35 @@ nl:
         orders:
           created_at: Nieuwste
           flags: Meest gemarkeerd
-        title: Discussie
+        title: Debat
     header:
       title: Moderation
     menu:
       flagged_comments: Comments
-      flagged_debates: Discussie
+      flagged_debates: Debat
       flagged_investments: Begrotingsvoorstellen
-      proposals: Proposals
       proposal_notifications: Voorgestelde notificaties
+      proposals: Proposals
       users: Block users
+    proposal_notifications:
+      index:
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
+        filter: Filter
+        filters:
+          all: All
+          ignored: Markeer als gelezen
+          pending_review: In afwachting van evaluatie
+        headers:
+          moderate: Modereer
+          proposal_notification: Voorstelnotificatie
+        hide_proposal_notifications: Ideeën verbergen
+        ignore_flags: Markeer als gelezen
+        order: Order by
+        orders:
+          created_at: Meest recent
+          moderated: Gemodereerd door
+        title: Voorstel notificaties
     proposals:
       index:
         block_authors: Blokkeer auteurs
@@ -69,49 +108,11 @@ nl:
           created_at: Most recent
           flags: Meest gemarkeerd
         title: Proposals
-    budget_investments:
-      index:
-        block_authors: Blokkeer auteurs
-        confirm: Bent u zeker?
-        filter: Filter
-        filters:
-          all: All
-          pending_flag_review: In afwachting
-          with_ignored_flag: Markeer als gelezen
-        headers:
-          moderate: Modereer
-          budget_investment: Begrotingsvoorstel
-        hide_budget_investments: Verbergen begrotingsinvesteringen
-        ignore_flags: Markeer als gelezen
-        order: Order by
-        orders:
-          created_at: Meest recent
-          flags: Meest gemarkeerd
-        title: Begrotingsvoorstellen
-    proposal_notifications:
-      index:
-        block_authors: Blokkeer auteurs
-        confirm: Bent u zeker?
-        filter: Filter
-        filters:
-          all: All
-          pending_review: In afwachting van evaluatie
-          ignored: Markeer als gelezen
-        headers:
-          moderate: Modereer
-          proposal_notification: Voorstelnotificatie
-        hide_proposal_notifications: Verberg voorstellen
-        ignore_flags: Markeer als gelezen
-        order: Order by
-        orders:
-          created_at: Meest recent
-          moderated: Gemodereerd door
-        title: Voorstel notificaties
     users:
       index:
-        hidden: Geblokkeerd
-        hide: Block
-        search: Search
-        search_placeholder: email or name of user
-        title: Blokkeer deelnemers
+        hidden: Verborgen
+        hide: Verbergen
+        search: Zoeken
+        search_placeholder: Persoon zoeken op naam
+        title: Verberg deelnemers
       notice_hide: User blocked. All of this user's debates and comments have been hidden.

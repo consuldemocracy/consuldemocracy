@@ -22,6 +22,7 @@ RSpec.describe BudgetInvestmentsHelper, type: :helper do
     let(:params)  { { sort_by: sort_by } }
 
     it "returns arrow down if current direction is ASC" do
+
       expect(set_sorting_icon("asc", sort_by)).to eq "asc"
     end
 

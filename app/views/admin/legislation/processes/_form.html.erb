@@ -193,7 +193,7 @@
 
   <div class="small-6 large-3 column">
     <%= f.label :background_color, nil, for: "background_color_input" %>
-    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
+    <p class="help-text"><%= t("admin.shared.color_help") %></p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
         <%= f.text_field :background_color, label: false, type: :color,
@@ -207,7 +207,7 @@
 
   <div class="small-6 large-3 column end">
     <%= f.label :font_color, nil, for: "font_color_input" %>
-    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
+    <p class="help-text"><%= t("admin.shared.color_help") %></p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
         <%= f.text_field :font_color, label: false, type: :color, value: font_color_or_default %>

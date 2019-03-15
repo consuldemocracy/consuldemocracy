@@ -228,7 +228,6 @@ en:
       help: Help
       my_account_link: My account
       my_activity_link: My activity
-      open: open
       open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
@@ -443,7 +442,7 @@ en:
       form:
         submit_button: Save changes
     share:
-      message: "I supported the proposal %{summary} in %{handle}. If you're interested, support it too!"
+      message: "I supported the proposal %{title} in %{handle}. If you're interested, support it too!"
   polls:
     all: "All"
     no_dates: "no date assigned"
@@ -508,7 +507,6 @@ en:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
   poll_questions:
-    create_question: "Create question"
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"

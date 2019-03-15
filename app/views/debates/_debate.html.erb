@@ -7,7 +7,7 @@
           <div class="debate-content">
             <h3><%= link_to debate.title, debate %></h3>
             <p class="debate-info">
-              <span class="icon-comments"></span>&nbsp;
+              <span class="far fa-comments fa-fw"></span>&nbsp;
               <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l debate.created_at.to_date %>

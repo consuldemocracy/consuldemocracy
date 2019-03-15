@@ -2,8 +2,24 @@ class Admin::SettingsController < Admin::BaseController
 
   def index
     all_settings = Setting.all.group_by { |s| s.type }
-    @settings = all_settings['common']
-    @feature_flags = all_settings['feature']
+    @settings = []
+    @feature_flags = []
+    @banner_styles = []
+    @banner_imgs = []
+    unless all_settings.nil?
+      unless all_settings['common'].nil?
+        @settings = all_settings['common']
+      end
+      unless all_settings['feature'].nil?
+        @feature_flags = all_settings['feature']
+      end
+      unless all_settings['banner-style'].nil?
+        @banner_styles = all_settings['banner-style']
+      end
+      unless all_settings['banner-img'].nil?
+        @banner_imgs = all_settings['banner-img']
+      end
+    end
   end
 
   def update

@@ -2,7 +2,7 @@
   <ul id="admin_menu" data-accordion-menu>
     <li class="section-title">
       <a href="#">
-        <span class="icon-user"></span>
+        <span class="fas fa-user fa-fw"></span>
         <strong><%= t("management.menu.users") %></strong>
       </a>
       <ul class="is-active">
@@ -45,7 +45,7 @@
     <% if Setting['feature.budgets'] %>
       <li <%= "class=is-active" if menu_print_investments? %>>
         <%= link_to print_investments_management_budgets_path do %>
-            <span class="icon-print"></span>
+            <span class="fas fa-print fa-fw"></span>
             <%= t("management.menu.print_budget_investments") %>
         <% end %>
       </li>
@@ -53,14 +53,14 @@
 
     <li <%= "class=is-active" if menu_print_proposals? %>>
       <%= link_to print_management_proposals_path do %>
-        <span class="icon-print"></span>
+        <span class="fas fa-print fa-fw"></span>
         <%= t("management.menu.print_proposals") %>
       <% end %>
     </li>
 
     <li <%= "class=is-active" if menu_user_invites? %>>
       <%= link_to new_management_user_invite_path do %>
-        <span class="icon-letter"></span>
+        <span class="fas fa-envelope fa-fw"></span>
         <%= t("management.menu.user_invites") %>
       <% end %>
     </li>
@@ -69,21 +69,21 @@
     <% if false %>
       <li <%= "class=is-active" if controller_name == "spending_proposals" && action_name == "new" %>>
         <%= link_to new_management_spending_proposal_path do %>
-          <span class="icon-budget"></span>
+          <span class="fas fa-hand-holding-usd fa-fw"></span>
           <%= t("management.menu.create_spending_proposal") %>
         <% end %>
       </li>
 
       <li <%= "class=is-active" if controller_name == "spending_proposals" && action_name == "index" %>>
         <%= link_to management_spending_proposals_path do %>
-          <span class="icon-like"></span>
+          <span class="fas fa-thumbs-up fa-fw"></span>
           <%= t("management.menu.support_spending_proposals") %>
         <% end %>
       </li>
 
       <li <%= "class=is-active" if controller_name == "spending_proposals" && action_name == "print" %>>
         <%= link_to print_management_spending_proposals_path do %>
-          <span class="icon-print"></span>
+          <span class="fas fa-print fa-fw"></span>
           <%= t("management.menu.print_spending_proposals") %>
         <% end %>
       </li>

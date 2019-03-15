@@ -33,10 +33,10 @@ App.Comments =
 
   toggle_arrow: (id) ->
     arrow = "span##{id}_arrow"
-    if $(arrow).hasClass("icon-arrow-right")
-      $(arrow).removeClass("icon-arrow-right").addClass("icon-arrow-down")
+    if $(arrow).hasClass("fa-arrow-right")
+      $(arrow).removeClass("fa-arrow-right").addClass("fa-arrow-down")
     else
-      $(arrow).removeClass("icon-arrow-down").addClass("icon-arrow-right")
+      $(arrow).removeClass("fa-arrow-down").addClass("fa-arrow-right")
 
   initialize: ->
     $("body .js-add-comment-link").each ->

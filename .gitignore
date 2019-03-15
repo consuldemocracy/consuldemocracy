@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-
+/.vscode
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -17,11 +17,9 @@
 /tmp
 
 /spec/examples.txt
-/config/database.yml
-/config/secrets.yml
 /config/deploy-secrets.yml
 /config/maintenance.yml
-
+/public/assets/
 /coverage
 
 /config/beta-testers.txt
@@ -34,4 +32,4 @@
 public/sitemap.xml
 public/system/
 /public/ckeditor_assets/
-
+/vendor/bundle

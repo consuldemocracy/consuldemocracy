@@ -4,7 +4,7 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= l @proposal.created_at.to_date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <span class="icon-comments"></span>&nbsp;
+  <span class="far fa-comments fa-fw"></span>&nbsp;
   <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
 
   <% if current_user %>
@@ -45,7 +45,7 @@
 <% if @proposal.external_url.present? %>
   <div class="document-link">
     <p>
-      <span class="icon-document"></span>&nbsp;
+      <span class="fas fa-file fa-fw"></span>&nbsp;
       <strong><%= t('proposals.show.title_external_url') %></strong>
     </p>
       <%= text_with_links @proposal.external_url %>
@@ -55,15 +55,16 @@
 <% if @proposal.video_url.present? %>
   <div class="video-link">
     <p>
-      <span class="icon-video"></span>&nbsp;
+      <span class="fas fa-file-video fa-fw"></span>&nbsp;
       <strong><%= t('proposals.show.title_video_url') %></strong>
     </p>
     <%= text_with_links @proposal.video_url %>
   </div>
-
 <% end %>
 
-<h4><%= @proposal.question %></h4>
+<% if @proposal.question.present? %>
+  <h4><%= @proposal.question %></h4>
+<% end %>
 
 <% if @proposal.retired? %>
   <div id="retired_explanation" class="callout">

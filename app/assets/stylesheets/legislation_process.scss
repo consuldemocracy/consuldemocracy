@@ -62,19 +62,9 @@
     margin: rem-calc(-1) 0;
     min-height: $line-height * 3;
     position: relative;
-    vertical-align: top;
 
     @include breakpoint(large down) {
 
-      &::after {
-        content: "\63";
-        font-family: "icons" !important;
-        font-size: rem-calc(24);
-        pointer-events: none;
-        position: absolute;
-        right: 12px;
-        top: 12px;
-      }
     }
 
     @include breakpoint(large) {
@@ -164,7 +154,7 @@
       font-weight: 700;
       font-size: $small-font-size;
 
-      .icon-debates {
+      .fa-comment-alt {
         margin-left: rem-calc(3);
       }
     }
@@ -179,7 +169,7 @@
     font-size: $small-font-size;
     color: #6d6d6d;
 
-    .icon-comments {
+    .fa-comments {
       margin-right: rem-calc(3);
     }
   }
@@ -248,7 +238,7 @@
       text-transform: uppercase;
       transition: background 0.25s ease-out, background 0.25s ease-out;
 
-      .icon-angle-right {
+      .fa-caret-right {
         vertical-align: middle;
       }
 
@@ -437,11 +427,11 @@
       background: #f2f2f2;
       font-size: $small-font-size;
 
-      .icon-comments {
+      .fa-comments {
         margin-right: rem-calc(4);
       }
 
-      .icon-banner {
+      .fa-bookmark {
         line-height: 0;
         color: $text-medium;
         vertical-align: sub;
@@ -459,29 +449,8 @@
 
       ul {
         list-style: none;
-
         li {
           margin-bottom: rem-calc(16);
-        }
-
-        .open::before {
-          cursor: pointer;
-          position: absolute;
-          margin-left: rem-calc(-20);
-          font-family: "icons";
-          content: "\58";
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-
-        .closed::before {
-          cursor: pointer;
-          position: absolute;
-          margin-left: rem-calc(-20);
-          font-family: "icons";
-          content: "\5a";
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
         }
       }
     }
@@ -654,11 +623,11 @@
             display: inline-block;
           }
 
-          .icon-comment {
+          .fa-comment {
             margin-right: rem-calc(8);
           }
 
-          a .icon-expand {
+          a .fa-expand {
             color: #838383;
             font-size: $small-font-size;
             float: right;
@@ -700,7 +669,7 @@
             font-size: $small-font-size;
             background: #dfdfdf;
 
-            .icon-proposals {
+            .fa-lightbulb {
               color: #838383;
             }
 
@@ -784,8 +753,8 @@
                 }
               }
 
-              .icon-like,
-              .icon-unlike {
+              .fa-thumbs-up,
+              .fa-thumbs-down {
                 cursor: pointer;
                 color: #c7c7c7;
 
@@ -796,7 +765,7 @@
                 }
               }
 
-              .icon-like {
+              .fa-thumbs-up {
                 margin-right: rem-calc(4);
               }
             }
@@ -850,7 +819,7 @@
         text-decoration: underline;
       }
 
-      .icon-external {
+      .fa-external-link-alt {
         text-decoration: none;
         color: #999;
         line-height: 0;
@@ -888,18 +857,18 @@
         text-decoration: underline;
       }
 
-      .icon-expand,
-      .icon-comments {
+      .fa-expand,
+      .fa-comments {
         text-decoration: none;
         color: #999;
         line-height: 0;
       }
 
-      .icon-expand {
+      .fa-expand {
         margin-left: rem-calc(4);
       }
 
-      .icon-comments {
+      .fa-comments {
         margin-right: rem-calc(4);
       }
 
@@ -936,18 +905,18 @@
         text-decoration: underline;
       }
 
-      .icon-expand,
-      .icon-comments {
+      .fa-expand,
+      .fa-comments {
         text-decoration: none;
         color: #999;
         line-height: 0;
       }
 
-      .icon-expand {
+      .fa-expand {
         margin-left: rem-calc(4);
       }
 
-      .icon-comments {
+      .fa-comments {
         margin-right: rem-calc(4);
       }
 

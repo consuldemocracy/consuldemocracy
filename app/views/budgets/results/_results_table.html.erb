@@ -33,13 +33,13 @@
               style="<%= investment.winner? ? '' : 'display: none' %>">
             <td>
               <% if investment.winner? %>
-                <span class="icon-check">
+                <span class="fas fa-check fa-fw">
                   <span class="show-for-sr">
                     <%= t("budgets.results.accepted") %>
                   </span>
                 </span>
               <% else %>
-                <span class="icon-x delete">
+                <span class="fas fa-times fa-fw delete">
                   <span class="show-for-sr">
                     <%= t("budgets.results.discarded") %>
                   </span>

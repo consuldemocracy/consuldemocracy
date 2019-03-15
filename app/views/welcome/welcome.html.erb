@@ -3,21 +3,21 @@
 <div class="user-permissions">
   <p><%= t("welcome.welcome.user_permission_info") %></p>
   <ul>
-    <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_debates") %></li>
-    <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_proposal") %></li>
+    <li><span class="fas fa-check fa-fw"></span>&nbsp;<%= t("welcome.welcome.user_permission_debates") %></li>
+    <li><span class="fas fa-check fa-fw"></span>&nbsp;<%= t("welcome.welcome.user_permission_proposal") %></li>
     <li>
       <% if current_user.level_two_or_three_verified? %>
-        <span class="icon-check"></span>
+        <span class="fas fa-check fa-fw"></span>
       <% else %>
-        <span class="icon-x"></span>
+        <span class="fas fa-times fa-fw"></span>
       <% end %>
       <%= t("welcome.welcome.user_permission_support_proposal") %>
     </li>
     <li>
       <% if current_user.level_three_verified? %>
-        <span class="icon-check"></span>
+        <span class="fas fa-check fa-fw"></span>
       <% else %>
-        <span class="icon-x"></span>
+        <span class="fas fa-times fa-fw"></span>
       <% end %>
       <%= t("welcome.welcome.user_permission_votes") %>
     </li>
@@ -33,7 +33,7 @@
 
   <% if current_user.level_three_verified? %>
     <p class="already-verified">
-      <span class="icon-check"></span>
+      <span class="fas fa-check fa-fw"></span>
       <%= t("account.show.verified_account") %>
     </p>
   <% else %>

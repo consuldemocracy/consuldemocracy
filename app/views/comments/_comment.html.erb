@@ -19,7 +19,7 @@
           <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar float-left") %>
         <% else %>
         <% if comment.user.hidden? || comment.user.erased? %>
-            <span class="icon-deleted user-deleted"></span>
+            <span class="fas fa-user-times fa-fw user-deleted"></span>
           <% elsif comment.user.organization? %>
             <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
           <% else %>
@@ -81,7 +81,7 @@
             <%= link_to "", class: "js-toggle-children relative", data: {'id': "#{dom_id(comment)}"} do %>
               <span class="show-for-sr js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
               <span class="show-for-sr js-child-toggle"><%= t("shared.hide") %></span>
-              <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
+              <span id="<%= dom_id(comment) %>_children_arrow" class="fas fa-arrow-down fa-fw"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
             <% end %>
           <% else %>
             <%= t("comments.comment.responses", count: 0) %>

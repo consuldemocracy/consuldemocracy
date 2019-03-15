@@ -23,11 +23,24 @@ This is the opensource code repository of the eParticipation website CONSUL, ori
 
 Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consulproject.org/) and future features at the [Roadmap](https://github.com/consul/consul/projects/6) and [open issues list](https://github.com/consul/consul/issues).
 
+## Development environment using Docker
+
+```bash
+git clone https://github.com/consul/consul.git
+cd consul
+docker-compose up -d app
+docker-compose run migration #bring the database in the correct state
+
+# Optional steps
+docker-compose run prepare #install sample data
+```
+
+
 ## Configuration for development and test environments
 
 **NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
 
-Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
+Prerequisites: install git, Ruby 2.3.8, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
 ```bash
 git clone https://github.com/consul/consul.git

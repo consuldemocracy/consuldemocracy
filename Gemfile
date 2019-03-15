@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.11'
+gem 'rails', '4.2.11.1'
 
 gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'acts_as_votable', '~> 0.11.1'
@@ -42,7 +42,7 @@ gem 'redcarpet', '~> 3.4.0'
 gem 'responders', '~> 2.4.0'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'rollbar', '~> 2.18.0'
-gem 'sass-rails', '~> 5.0', '>= 5.0.4'
+gem 'sassc-rails'
 gem 'savon', '~> 2.12.0'
 gem 'sitemap_generator', '~> 6.0.1'
 gem 'social-share-button', '~> 1.1'
@@ -55,6 +55,8 @@ gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
 gem 'recipient_interceptor', '~> 0.2.0'
+gem 'faker', '~> 1.8.7'
+gem 'font-awesome-sass', '~> 5.6.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
@@ -65,7 +67,6 @@ group :development, :test do
   gem 'bullet', '~> 5.7.0'
   gem 'byebug', '~> 10.0.0'
   gem 'factory_bot_rails', '~> 4.8.2'
-  gem 'faker', '~> 1.8.7'
   gem 'i18n-tasks', '~> 0.9.25'
   gem 'knapsack_pro', '~> 1.1.0'
   gem 'launchy', '~> 2.4.3'

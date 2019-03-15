@@ -9,11 +9,11 @@
         <%= t("proposals.new.more_info")%>
       <% end %>
     </div>
-    <%= render "proposals/form", form_url: proposals_url %>
+    <%= render "proposals/form", form_url: proposals_path %>
   </div>
 
   <div class="small-12 medium-3 column">
-    <span class="icon-proposals float-right"></span>
+    <span class="fas fa-lightbulb fa-fw float-right"></span>
     <h2><%= t("proposals.new.recommendations_title") %></h2>
     <ul class="recommendations">
       <li><%= t("proposals.new.recommendation_one") %></li>
