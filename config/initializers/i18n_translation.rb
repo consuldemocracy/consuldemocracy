@@ -1,5 +1,5 @@
-require 'i18n/exceptions'
-require 'action_view/helpers/tag_helper'
+require "i18n/exceptions"
+require "action_view/helpers/tag_helper"
 
 module ActionView
   module Helpers
