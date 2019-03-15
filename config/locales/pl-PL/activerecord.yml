@@ -1,6 +1,11 @@
 pl:
   activerecord:
     models:
+      activity:
+        one: "aktywność"
+        few: "aktywności"
+        many: "aktywności"
+        other: "aktywności"
       budget:
         one: "Budżet"
         few: "Budżety"
@@ -303,7 +308,11 @@ pl:
         draft_publication_date: Data publikacji projektu
         allegations_start_date: Data rozpoczęcia zarzutów
         allegations_end_date: Data zakończenia zarzutów
+        proposals_phase_start_date: Początek
+        proposals_phase_end_date: Koniec
         result_publication_date: Data publikacji wyniku końcowego
+        background_color: Kolor tła
+        font_color: Kolor czcionki
       legislation/process/translation:
         title: Tytuł procesu
         summary: Podsumowanie
@@ -361,6 +370,7 @@ pl:
         description: Opis
         link_text: Tekst łącza
         link_url: Łącze URL
+        columns: Liczba kolumn
       widget/card/translation:
         label: Etykieta (opcjonalnie)
         title: Tytuł
@@ -410,6 +420,8 @@ pl:
               invalid_date_range: musi być nie wcześniej niż data rozpoczęcia
             debate_end_date:
               invalid_date_range: musi być nie wcześniej niż data rozpoczęcia debaty
+            draft_end_date:
+              invalid_date_range: musi być w dniu lub po dacie rozpoczęcia draftu
             allegations_end_date:
               invalid_date_range: musi być w dniu lub po dacie rozpoczęcia zarzutów
         proposal:
