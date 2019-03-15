@@ -23,7 +23,7 @@ nl:
         one: "Reactie"
         other: "Reacties"
       debate:
-        one: "Debat"
+        one: "Discussie"
         other: "Discussie"
       tag:
         one: "Term"
@@ -131,6 +131,11 @@ nl:
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding bij het budget"
         image_title: "Naam van de afbeelding"
+      geozone:
+        name: Naam
+        external_code: "Externe code (optioneel)"
+        census_code: "Censuscode (optioneel)"
+        html_map_coordinates: "HTML <map> Coördinaten (optioneel)"
       milestone:
         status_id: "Huidige status (optioneel)"
         title: "Titel"
@@ -229,6 +234,9 @@ nl:
         name: Naam
         locale: taal
         body: Platte tekst
+      banner:
+        background_color: Achtergrondkleur
+        font_color: Tekstkleur
       legislation/process:
         title: Titel
         summary: Samenvatting
