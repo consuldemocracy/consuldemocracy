@@ -67,6 +67,8 @@ pl:
     min_age_to_participate: Minimalny wiek wymagany do wzięcia udziału
     min_age_to_participate_description: "Użytkownicy powyżej tego wieku mogą uczestniczyć we wszystkich procesach"
     analytics_url: "Analityki adresu URL"
+    direct_message_max_per_day: "Maksymalna liczba bezpośrednich wiadomości w ciągu jednego dnia"
+    direct_message_max_per_day_description: "Maksymalna liczba bezpośrednich wiadomości jaką jeden użytkownik może przesłać jednego dnia"
     feature:
       budgets: "Budżetowanie partycypacyjne"
       budgets_description: "Dzięki budżetom partycypacyjnym obywatele decydują, które projekty przedstawione przez ich sąsiadów otrzymają część budżetu gminy"
