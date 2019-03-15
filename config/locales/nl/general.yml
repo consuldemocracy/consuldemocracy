@@ -799,6 +799,7 @@ nl:
       title: Account verificatie
     welcome:
       go_to_index: Ga naar voorstellen en debatten
+      start_using_consul: Ga naar indexpagina
       title: Deelnemen
       user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
