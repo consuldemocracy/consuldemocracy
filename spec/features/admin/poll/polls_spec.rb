@@ -222,7 +222,9 @@ feature "Admin polls" do
                  total_amount: 21)
         end
 
-        2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
+        2.times do
+          create(:poll_voter, poll: poll, booth_assignment: booth_assignment_final_recounted)
+        end
 
         create(:poll_recount,
                booth_assignment: booth_assignment_final_recounted,
