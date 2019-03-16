@@ -799,6 +799,7 @@ tr:
       title: Hesap doğrulama
     welcome:
       go_to_index: Önerileri ve tartışmaları gör
+      start_using_consul: Dizin sayfasına git
       title: Katıl
       user_permission_debates: Tartışmalara katıl
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
