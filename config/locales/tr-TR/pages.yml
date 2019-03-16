@@ -16,6 +16,7 @@ tr:
         processes: "İşlemler"
       debates:
         title: "Tartışmalar"
+        description: "%{link} bölümünde, şehirle alakalı sizi ilgilendiren konularla ilgili görüşlerinizi sunabilir ve başkalarıyla paylaşabilirsiniz. Aynı zamanda, %{org}'un diğer bölümleri aracılığıyla Belediye Meclisi tarafından somut eylemlere yol açan fikirler üretmek için de bir yerdir."
         link: "vatandaş tartışmaları"
         feature_html: "Tartışmalar açabilir, bunları <strong>Katılıyorum</strong> veya <strong>Katılmıyorum</strong> ile yorumlayabilir ve değerlendirebilirsiniz. Bunun için %{link}'iniz var."
         feature_link: "%{org} içinde kaydol"
@@ -101,8 +102,12 @@ tr:
               page_column: Katılımcı bütçeler
             - 
               key_column: 5
+              page_column: Yasama işlemleri
         browser_table:
+          description: 'İşletim sistemine ve kullanılan tarayıcıya bağlı olarak, tuş kombinasyonu aşağıdaki şekilde olacaktır:'
+          caption: İşletim sistemine ve tarayıcıya bağlı olarak tuş kombinasyonu
           browser_header: Tarayıcı
+          key_header: Tuş kombinasyonu
           rows:
             - 
               browser_column: Explorer
@@ -131,14 +136,35 @@ tr:
               action_column: Görünüm > Metin boyutu
             - 
               browser_column: Firefox
+              action_column: Görünüm > Boyut
             - 
               browser_column: Chrome
+              action_column: Ayarlar (simge) > Seçenekler > Gelişmiş > Web İçeriği > Metin boyutu
             - 
               browser_column: Safari
+              action_column: Görünüm > Yakınlaştır/Uzaklaştır
             - 
               browser_column: Opera
+              action_column: Görünüm > ölçek
+        browser_shortcuts_table:
+          description: 'Metin boyutunu değiştirmenin başka bir yolu, tarayıcılarda tanımlanan klavye kısayollarını, özellikle de tuş kombinasyonunu kullanmaktır:'
+          rows:
+            - 
+              shortcut_column: CTRL ve + (CMD ve + MAC'te)
+              description_column: Metin boyutunu artırır
+            - 
+              shortcut_column: CTRL ve - (CMD ve - MAC'te)
+              description_column: Metin boyutunu küçültür
+      compatibility:
+        title: Standartlara ve görsel tasarıma uygunluk
+        description_html: 'Bu web sitesinin tüm sayfaları, W3C''nin <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> Çalışma Grubu tarafından kurulan <strong>Erişilebilirlik Yönergeleri</strong> veya Genel Erişilebilir Tasarım İlkeleri ile uyumludur.'
+    titles:
+      help: "%{org} nedir? - Vatandaş katılımı"
     verify:
+      code: Mektupla aldığınız kod
       email: E-posta
+      info: 'Hesabınızı doğrulamak için erişim verinizi tanıtın:'
+      info_code: 'Şimdi mektupta aldığınız kodu tanıtın:'
       password: Şifre
       submit: Hesabımı doğrula
       title: Hesabınızı doğrulayın
