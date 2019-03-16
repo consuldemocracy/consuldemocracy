@@ -75,10 +75,12 @@ tr:
         - Görüntülere alternatif metin sağlamak, görme engelli veya görsel bozukluğu olan kullanıcılar bilgiye erişmek için özel okuyucular kullanabilir.
         - Videoların altyazıları olduğunda, işitme güçlüğü çeken kullanıcılar bunları tam olarak anlayabilir.
         - Eğer içerikler basit ve resimli bir dilde yazılmışsa, öğrenme sorunu olan kullanıcılar onları daha iyi anlayabilir.
-        - Eğer kullanıcının hareketlilik sorunları varsa ve fareyi kullanmak zorsa, klavyedeki alternatifler navigasyonda yardımcı olur.
+        - Eğer kullanıcının hareketlilik sorunları varsa ve fareyi kullanmak zorsa, klavyedeki alternatifler gezintide yardımcı olur.
       keyboard_shortcuts:
         title: Klavye kısayolları
         navigation_table:
+          description: Bu web sitesinde erişilebilir bir şekilde gezinmek için sitenin düzenlendiği genel ilgi alanlarının ana bölümlerini toplayan bir grup hızlı erişim anahtarı programlanmıştır.
+          caption: Gezinti menüsü için klavye kısayolları
           key_header: Anahtar
           page_header: Sayfa
           rows:
@@ -103,19 +105,30 @@ tr:
           browser_header: Tarayıcı
           rows:
             - 
+              browser_column: Explorer
+              key_column: ALT + kısayol sonra ENTER
             - 
               browser_column: Firefox
+              key_column: ALT + CAPS + kısayol
             - 
               browser_column: Chrome
+              key_column: ALT + kısayol (CTRL + ALT + MAC için kısayolları)
             - 
               browser_column: Safari
+              key_column: ALT + kısayol (CMD + MAC için kısayol)
             - 
               browser_column: Opera
+              key_column: CAPS + ESC + kısayol
       textsize:
+        title: Metin boyutu
         browser_settings_table:
+          description: Bu web sitesinin erişilebilir tasarımı, kullanıcının kendisine uygun olan metnin boyutunu seçmesini sağlar. Bu eylem, kullanılan tarayıcıya bağlı olarak farklı şekillerde gerçekleştirilebilir.
           browser_header: Tarayıcı
+          action_header: Alınacak eylem
           rows:
             - 
+              browser_column: Explorer
+              action_column: Görünüm > Metin boyutu
             - 
               browser_column: Firefox
             - 
