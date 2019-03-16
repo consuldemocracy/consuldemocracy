@@ -161,7 +161,7 @@ tr:
     titles:
       help: "%{org} nedir? - Vatandaş katılımı"
     verify:
-      code: Mektupla aldığınız kod
+      code: Mektupta aldığınız kod
       email: E-posta
       info: 'Hesabınızı doğrulamak için erişim verinizi tanıtın:'
       info_code: 'Şimdi mektupta aldığınız kodu tanıtın:'
