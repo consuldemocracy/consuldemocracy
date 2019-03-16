@@ -17,16 +17,19 @@ tr:
       debates:
         title: "Tartışmalar"
         link: "vatandaş tartışmaları"
+        feature_html: "Tartışmalar açabilir, bunları <strong>Katılıyorum</strong> veya <strong>Katılmıyorum</strong> ile yorumlayabilir ve değerlendirebilirsiniz. Bunun için %{link}'iniz var."
         feature_link: "%{org} içinde kaydol"
         image_alt: "Tartışmaları değerlendirme düğmeleri"
         figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" düğmeleri.'
       proposals:
         title: "Öneriler"
+        description: "%{link} bölümünde, Belediye Meclisinin bunları yerine getirmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, bir halka açık oylama yapılır. Bu vatandaşların oylarında onaylanan teklifler Belediye Meclisi tarafından kabul edilir ve yerine getirilir."
         link: "vatandaş önerileri"
         image_alt: "Bir öneriyi destekleme düğmesi"
         figcaption_html: 'Bir "Öneri"yi destekleme düğmesi.'
       budgets:
         title: "Katılımcı Bütçeleme"
+        description: "%{link} bölümü, insanların belediye bütçesinin hangi bölümüne harcandığı konusunda doğrudan bir karar vermelerine yardımcı olur."
         image_alt: "Bir katılımcı bütçelemenin farklı aşamaları"
         figcaption_html: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
