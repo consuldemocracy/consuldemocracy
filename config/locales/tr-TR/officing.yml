@@ -50,7 +50,7 @@ tr:
         document_number: "Belge numarası (harfler de dahil)"
         submit: Belgeyi doğrula
         error_verifying_census: "Census bu belgeyi doğrulayamadı."
-        form_errors: bu belgenin doğrulanması engellendi
+        form_errors: bu belgenin doğrulanmasını engelledi
         no_assignments: "Bugün memur vardiyanız yok"
     voters:
       new:
