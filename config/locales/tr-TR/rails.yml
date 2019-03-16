@@ -73,7 +73,7 @@ tr:
         one: 1 yıldan fazla
         other: '%{count} yıldan fazla'
       x_days:
-        one: Bir gün
+        one: 1 gün
         other: "%{count} günler"
       x_minutes:
         one: Bir dakika
