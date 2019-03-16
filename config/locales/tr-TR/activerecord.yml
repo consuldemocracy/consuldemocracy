@@ -135,6 +135,7 @@ tr:
         name: İsim
         external_code: "Harici kod (isteğe bağlı)"
         census_code: "Census kodu (isteğe bağlı)"
+        html_map_coordinates: "HTML <map> Koordinatlar (isteğe bağlı)"
       milestone:
         status_id: "Mevcut durum (isteğe bağlı)"
         title: "İsim"
@@ -233,6 +234,9 @@ tr:
         name: Ad
         locale: yer
         body: Gövde
+      banner:
+        background_color: Arka plan rengi
+        font_color: Yazı tipi rengi
       legislation/process:
         title: İşlem Adı
         summary: Özet
