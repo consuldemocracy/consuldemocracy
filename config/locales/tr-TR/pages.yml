@@ -2,13 +2,17 @@ tr:
   pages:
     conditions:
       title: Kullanım şartları ve koşulları
-      subtitle: AÇIK HÜKÜMET PORTALİNİN GİZLİLİK VE KİŞİSEL VERİLERİNİN KORUNMASI HAKKINDA YASAL BİLDİRİM
+      subtitle: AÇIK HÜKÜMET PORTALİNİN KİŞİSEL VERİLERİNİN KULLANIMI, GİZLİLİK VE KORUNMASI HAKKINDA YASAL BİLDİRİMİ
+      description: Kişisel bilgilerin kullanım koşulları, gizliliği ve korunması hakkındaki bilgi sayfası.
     help:
+      title: "%{org} vatandaş katılımı için bir platformdur"
+      guide: "Bu rehber, her bir %{org}'un ne için olduğunu ve nasıl çalıştıklarını açıklar."
       menu:
         debates: "Tartışmalar"
         proposals: "Öneriler"
         budgets: "Katılımcı bütçeler"
         polls: "Anketler"
+        other: "İlgili diğer bilgi"
         processes: "İşlemler"
       debates:
         title: "Tartışmalar"
