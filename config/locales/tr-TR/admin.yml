@@ -1097,6 +1097,7 @@ tr:
         official_updated: Yetkili detayları kaydedildi
       index:
         title: Yetkililer
+        help: Memurlar olarak işaretlenen kullanıcı hesapları, vurgulanan platformda müdahalelerini gerçekleştirir. Bu hesapların kullanıcı adlarının yanında görünen etiketi en önemliden (seviye 1) en az seviyeye (seviye 5) tanımlayabilirsiniz.
         no_officials: Hiç yetkili yok.
         name: İsim
         official_position: Resmi pozisyon
@@ -1147,6 +1148,8 @@ tr:
         author: Yazar
         milestones: Kilometre taşı
         no_proposals: Hiç öneri yok.
+      show:
+        create_question: Bu teklifi oylanacak bir ankete ekleyin
     hidden_proposals:
       index:
         filter: Filtre
@@ -1292,7 +1295,9 @@ tr:
         name: İsim
         external_code: Harici kod
         census_code: Census kodu
+        code_help: Census API'sındaki bu coğrafi bölge için yanıt kodu
         coordinates: Koordinatlar
+        coordinates_help: Bir HTML resim haritasında tıklanabilir bir alan oluşturacak koordinatlar
       errors:
         form:
           error:
