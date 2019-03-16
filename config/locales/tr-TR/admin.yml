@@ -1097,7 +1097,7 @@ tr:
         official_updated: Yetkili detayları kaydedildi
       index:
         title: Yetkililer
-        help: Memurlar olarak işaretlenen kullanıcı hesapları, vurgulanan platformda müdahalelerini gerçekleştirir. Bu hesapların kullanıcı adlarının yanında görünen etiketi en önemliden (seviye 1) en az seviyeye (seviye 5) tanımlayabilirsiniz.
+        help: Yetkililer olarak işaretlenen kullanıcı hesapları, vurgulanan platformda müdahalelerini gerçekleştirir. Bu hesapların kullanıcı adlarının yanında görünen etiketi en önemliden (seviye 1) en az seviyeye (seviye 5) tanımlayabilirsiniz.
         no_officials: Hiç yetkili yok.
         name: İsim
         official_position: Resmi pozisyon
@@ -1149,7 +1149,7 @@ tr:
         milestones: Kilometre taşı
         no_proposals: Hiç öneri yok.
       show:
-        create_question: Bu teklifi oylanacak bir ankete ekleyin
+        create_question: Bu öneriyi oylanacak bir ankete ekleyin
     hidden_proposals:
       index:
         filter: Filtre
