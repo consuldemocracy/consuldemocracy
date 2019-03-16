@@ -973,6 +973,8 @@ tr:
         no_questions: "Bu ankete atanmış hiç soru yok."
         questions_title: "Soruların listesi"
         table_title: "Başlık"
+        edit_answers: Cevapları düzenle
+        see_proposal: "(Öneriyi gör)"
       flash:
         question_added: "Bu ankete soru eklendi"
         error_on_question_added: "Bu ankete soru atanamadı"
@@ -994,6 +996,7 @@ tr:
         title: "Soru Düzenle"
       new:
         title: "Soru Oluştur"
+        title_proposal: "Soru oluştur"
         poll_label: "Anket"
       answers:
         images:
@@ -1222,6 +1225,7 @@ tr:
       content: İçerik
       created_at: Oluşturuldu
       delete: Sil
+      color_help: Onaltılık format
     spending_proposals:
       index:
         geozone_filter_all: Tüm bölgeler
