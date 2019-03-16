@@ -131,6 +131,10 @@ tr:
         organization_name: "Eğer bir ortaklık/organizasyon adına veya daha fazla kişi adına teklif ediyorsanız, ismini yazın"
         image: "Teklif betimleyici resmi"
         image_title: "Resim ismi"
+      geozone:
+        name: İsim
+        external_code: "Harici kod (isteğe bağlı)"
+        census_code: "Census kodu (isteğe bağlı)"
       milestone:
         status_id: "Mevcut durum (isteğe bağlı)"
         title: "İsim"
