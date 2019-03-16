@@ -30,14 +30,18 @@ tr:
       budgets:
         title: "Katılımcı Bütçeleme"
         description: "%{link} bölümü, insanların belediye bütçesinin hangi bölümüne harcandığı konusunda doğrudan bir karar vermelerine yardımcı olur."
+        link: "katılımcı bütçeler"
         image_alt: "Bir katılımcı bütçelemenin farklı aşamaları"
         figcaption_html: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
         title: "Anketler"
+        description: "%{link} bölümü, bir teklif %1 desteğe her ulaştığında ve oylamaya gittiğinde veya Belediye Meclisinin insanların karar vermesi için bir konu önerisinde bulunduğunda etkinleşir."
         link: "anketler"
+        feature_1: "Oylamaya katılmak için %{link}'e sahip olmanız ve hesabınızı doğrulamanız gerekir."
         feature_1_link: "%{org_name} içinde kaydol"
       processes:
         title: "İşlemler"
+        description: "%{link} bölümünde, vatandaşlar şehri etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılır ve önceki tartışmalarda belediye politikaları hakkında fikirlerini verebilir."
         link: "işlemler"
       faq:
         title: "Teknik sorunlar?"
