@@ -1,15 +1,75 @@
 tr:
   pages:
+    conditions:
+      title: Kullanım şartları ve koşulları
+      subtitle: AÇIK HÜKÜMET PORTALİNİN GİZLİLİK VE KİŞİSEL VERİLERİNİN KORUNMASI HAKKINDA YASAL BİLDİRİM
+    help:
+      menu:
+        debates: "Tartışmalar"
+        proposals: "Öneriler"
+        budgets: "Katılımcı bütçeler"
+        polls: "Anketler"
+        processes: "İşlemler"
+      debates:
+        title: "Tartışmalar"
+        link: "vatandaş tartışmaları"
+      proposals:
+        title: "Öneriler"
+      polls:
+        title: "Anketler"
+        link: "anketler"
+      processes:
+        title: "İşlemler"
+        link: "işlemler"
+    privacy:
+      title: Gizlilik Politikası
     accessibility:
+      title: Erişilebilirlik
       keyboard_shortcuts:
         navigation_table:
           rows:
             - 
             - 
+              key_column: 1
+              page_column: Tartışmalar
             - 
+              key_column: 2
+              page_column: Öneriler
             - 
+              key_column: 3
               page_column: Oylar
             - 
+              key_column: 4
+              page_column: Katılımcı bütçeler
             - 
+              key_column: 5
+        browser_table:
+          browser_header: Tarayıcı
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+      textsize:
+        browser_settings_table:
+          browser_header: Tarayıcı
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
     verify:
       email: E-posta
+      password: Şifre
+      submit: Hesabımı doğrula
+      title: Hesabınızı doğrulayın
