@@ -1,5 +1,20 @@
 tr:
   officing:
+    header:
+      title: Seçim
+    dashboard:
+      index:
+        title: Anket memuru
+        info: Burada kullanıcı belgelerini doğrulayabilir ve oylama sonuçlarını saklayabilirsiniz
+        no_shifts: Bugün memur vardiyanız yok.
+    menu:
+      voters: Belgeyi doğrula
+      total_recounts: Toplam yeniden sayımlar ve sonuçlar
+    polls:
+      final:
+        title: Anketler son yeniden sayıma hazır
+        no_polls: Herhangi bir aktif ankette son sayımlarda memurluk yapmıyorsunuz
+        select_poll: Anket seç
     results:
       index:
         table_votes: Oylar
