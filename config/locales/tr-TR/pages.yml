@@ -53,13 +53,31 @@ tr:
       other:
         title: "İlgili diğer bilgi"
         how_to_use: "Şehriniz içinde %{org_name} kullanın"
+      how_to_use:
+        text: |-
+          Bunu yerel idarenizde kullanın ya da geliştirmemize yardım edin, bu özgür bir yazılımdır.
+
+          Bu Açık Hükümet Portalı, [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) ile ücretsiz bir yazılım olan [CONSUL uygulaması](https://github.com/consul/consul 'consul github') kullanır, bu basit bir deyişle, herkesin kodu serbestçe kullanabileceği, kopyalayabileceği, detaylı olarak görebileceği, değiştirebileceği ve istediği değişikliklerle dünyaya yeniden dağıtabileceği (başkalarının da aynı şeyi yapmasına izin veren) anlamına gelir. Çünkü biz kültürün, serbest bırakıldığında daha iyi ve zengin olduğunu düşünüyoruz.
+
+          Eğer bir programcıysanız, kodu görebilir ve [CONSUL uygulaması] 'nda (https://github.com/consul/consul 'consul github') geliştirmemize yardımcı olabilirsiniz.
       titles:
         how_to_use: Yerel yönetimde kullanın
     privacy:
       title: Gizlilik Politikası
+      subtitle: "Gizlilik ile ilgili bilgi sayfası"
     accessibility:
       title: Erişilebilirlik
+      description: |-
+        Web erişilebilirliği, doğabilecek engellerden (fiziksel, zihinsel veya teknik) bağımsız olarak veya kullanım bağlamından (teknolojik veya çevresel) elde edilenlerden bağımsız olarak, web'e ve içeriğine tüm insanlar tarafından erişilebilme olasılığını ifade eder.
+
+        Web siteleri erişilebilirliği göz önünde bulundurarak tasarlandığında, tüm kullanıcılar içeriğe eşit koşullarda erişebilir, örneğin:
+      examples:
+        - Görüntülere alternatif metin sağlamak, görme engelli veya görsel bozukluğu olan kullanıcılar bilgiye erişmek için özel okuyucular kullanabilir.
+        - Videoların altyazıları olduğunda, işitme güçlüğü çeken kullanıcılar bunları tam olarak anlayabilir.
+        - Eğer içerikler basit ve resimli bir dilde yazılmışsa, öğrenme sorunu olan kullanıcılar onları daha iyi anlayabilir.
+        - Eğer kullanıcının hareketlilik sorunları varsa ve fareyi kullanmak zorsa, klavyedeki alternatifler navigasyonda yardımcı olur.
       keyboard_shortcuts:
+        title: Klavye kısayolları
         navigation_table:
           key_header: Anahtar
           page_header: Sayfa
