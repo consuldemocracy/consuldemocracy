@@ -13,22 +13,49 @@ tr:
       debates:
         title: "Tartışmalar"
         link: "vatandaş tartışmaları"
+        feature_link: "%{org} içinde kaydol"
+        image_alt: "Tartışmaları değerlendirme düğmeleri"
+        figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" düğmeleri.'
       proposals:
         title: "Öneriler"
+        link: "vatandaş önerileri"
+        image_alt: "Bir öneriyi destekleme düğmesi"
+        figcaption_html: 'Bir "Öneri"yi destekleme düğmesi.'
+      budgets:
+        title: "Katılımcı Bütçeleme"
+        image_alt: "Bir katılımcı bütçelemenin farklı aşamaları"
+        figcaption_html: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
         title: "Anketler"
         link: "anketler"
+        feature_1_link: "%{org_name} içinde kaydol"
       processes:
         title: "İşlemler"
         link: "işlemler"
+      faq:
+        title: "Teknik sorunlar?"
+        description: "SSS bölümünü okuyun ve problemlerinizi çözümleyin."
+        button: "Sık sorulan soruları görüntüle"
+        page:
+          title: "Sık Sorulan Sorular"
+          description: "Site kullanıcılarının ortak SSS'lerini çözmek için bu sayfayı kullanın."
+      other:
+        title: "İlgili diğer bilgi"
+        how_to_use: "Şehriniz içinde %{org_name} kullanın"
+      titles:
+        how_to_use: Yerel yönetimde kullanın
     privacy:
       title: Gizlilik Politikası
     accessibility:
       title: Erişilebilirlik
       keyboard_shortcuts:
         navigation_table:
+          key_header: Anahtar
+          page_header: Sayfa
           rows:
             - 
+              key_column: 0
+              page_column: Ana Sayfa
             - 
               key_column: 1
               page_column: Tartışmalar
