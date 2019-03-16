@@ -44,6 +44,8 @@ tr:
       statuses:
         studying_project: Projenin incelenmesi
         bidding: Teklif verme
+        executing_project: Projeyi yürütmek
+        executed: Gerçekleştirilen
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
