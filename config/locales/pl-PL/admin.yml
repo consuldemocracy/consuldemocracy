@@ -117,6 +117,18 @@ pl:
       headings_edit: "Edytowanie nagłówków"
       headings_manage: "Zarządzanie nagłówkami"
       max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
+      amount:
+        one: "Istnieje 1 grupa"
+        few: "Istnieje %{count} grup"
+        many: "Istnieje %{count} grup"
+        other: "Istnieje %{count} grup"
+      create:
+        notice: "Pomyślnie utworzono grupę!"
+      update:
+        notice: "Grupa zaktualizowana"
+      destroy:
+        success_notice: "Grupa skasowana"
+        unable_notice: "Nie można zniszczyć grupy, która ma powiązanie z nagłówkiem"
       form:
         create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
