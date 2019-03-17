@@ -711,6 +711,11 @@ pl:
         description: "Wysłane do osoby, która została zaproszona do zarejestrowania konta."
       edit_info: "Można edytować ten e-mail w"
       message_title: "Tytuł wiadomości"
+      message_body: "Jest to próbka treści wiadomości."
+      alert:
+        no_investments: "Nie ma żadnych utworzonych inwestycji budżetowych. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
+        no_comments: "Nie ma żadnych utworzonych komentarzy. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
+        no_replies: "Nie ma żadnych udzielonych odpowiedzi. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
     emails_download:
       index:
         title: Pobieranie e-mail
@@ -814,6 +819,7 @@ pl:
       flash:
         create: "Zmiana dodana"
         destroy: "Zmiana usunięta"
+        unable_to_destroy: "Przesunięcia wraz z powiązanymi wynikami lub przeliczeniami nie mogą być usunięte"
         date_missing: "Data musi być zaznaczona"
       vote_collection: Zbierz Głosy
       recount_scrutiny: Przeliczenie & Kontrola
@@ -853,6 +859,13 @@ pl:
         no_booths: "Brak stanowisk przydzielonych do tego głosowania."
         table_name: "Nazwa"
         table_location: "Lokalizacja"
+    active_polls:
+      edit:
+        title: "Opis sondy"
+      form:
+        description:
+          text: "Opis"
+          help_text: "Ten tekst będzie wyświetlany w nagłówku strony sondy. Można go użyć do dodania kontekstu w stosunku do aktywnych sond."
     polls:
       index:
         title: "Lista aktywnych głosowań"
@@ -882,6 +895,8 @@ pl:
         no_questions: "Brak pytań przydzielonych do tego głosowania."
         questions_title: "Lista pytań"
         table_title: "Tytuł"
+        edit_answers: Edytowanie odpowiedzi
+        see_proposal: "(Zobacz wnioski)"
       flash:
         question_added: "Pytanie dodane do tego głosowania"
         error_on_question_added: "Pytanie nie mogło zostać przypisane do tego głosowania"
