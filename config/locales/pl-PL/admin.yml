@@ -913,10 +913,12 @@ pl:
         table_proposal: "Wniosek"
         table_question: "Pytanie"
         table_poll: "Głosowanie"
+        poll_not_assigned: "Punkt nie przypisany"
       edit:
         title: "Edytuj Pytanie"
       new:
         title: "Utwórz Pytanie"
+        title_proposal: "Stwórz pytanie"
         poll_label: "Ankieta"
       answers:
         images:
@@ -966,6 +968,9 @@ pl:
       index:
         title: "Przeliczenia"
         no_recounts: "Nie ma nic do przeliczenia"
+        all_booths_total: "Łączna suma z wszystkich kabin:"
+        total_final: "Wynik przeliczenia"
+        total_system: "Głosy (automatyczne)"
         table_booth_name: "Kabina wyborcza"
         table_total_recount: "Całkowite przeliczenie (przez urzędnika)"
         table_system_count: "Głosy (automatyczne)"
@@ -1014,6 +1019,7 @@ pl:
         official_updated: Szczegóły o urzędniku zapisane
       index:
         title: Urzędnicy
+        help: Konta użytkowników oznaczone jako urzędnicy na portalu, będą miały swoje podświetlenia. Można zdefiniować etykiety, które pojawią się obok nazwy użytkownika. Najwyższy poziom (poziom 1) a najniższy (poziom 5).
         no_officials: Brak urzędników.
         name: Nazwa
         official_position: Oficjalne stanowisko
@@ -1060,6 +1066,9 @@ pl:
         id: Numer ID
         author: Autor
         milestones: Kamienie milowe
+        no_proposals: Brak wniosków.
+      show:
+        create_question: Poddaj ten wniosek pod głosowanie w sondzie
     hidden_proposals:
       index:
         filter: Filtr
