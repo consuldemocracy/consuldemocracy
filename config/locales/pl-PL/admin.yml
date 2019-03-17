@@ -703,6 +703,14 @@ pl:
         title: "Przegląd powiadomień o wnioskach"
         description: "Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail."
         preview_detail: "Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują"
+      email_verification:
+        title: "Weryfikacja adresu e-mail"
+        description: "Wysłane do nowego użytkownika w celu weryfikacji jego konta."
+      user_invite:
+        title: "Zaproszenie użytkownika"
+        description: "Wysłane do osoby, która została zaproszona do zarejestrowania konta."
+      edit_info: "Można edytować ten e-mail w"
+      message_title: "Tytuł wiadomości"
     emails_download:
       index:
         title: Pobieranie e-mail
