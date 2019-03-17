@@ -176,6 +176,8 @@ pl:
       link: "Kamienie milowe"
       heading: "Kamienie milowe budżetu partycypacyjnego"
       heading_selection_title: "Przez powiat"
+      filters:
+        label: "Bieżący stan projektu"
     phases:
       errors:
         dates_range_invalid: "Data rozpoczęcia nie może być taka sama lub późniejsza od daty zakończenia"
