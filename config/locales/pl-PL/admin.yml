@@ -113,6 +113,9 @@ pl:
         recalculate: Przelicz inwestycje na zwycięzcę
     budget_groups:
       name: "Nazwa"
+      headings_name: "Nagłówki"
+      headings_edit: "Edytowanie nagłówków"
+      headings_manage: "Zarządzanie nagłówkami"
       max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
       form:
         edit: "Edytuj grupę"
