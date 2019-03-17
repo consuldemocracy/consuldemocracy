@@ -847,6 +847,7 @@ pl:
       title: Weryfikacja konta
     welcome:
       go_to_index: Zobacz propozycje i debaty
+      start_using_consul: Przejdź do strony indeksu
       title: Weź udział
       user_permission_debates: Uczestnicz w debatach
       user_permission_info: Z Twoim kontem możesz...
