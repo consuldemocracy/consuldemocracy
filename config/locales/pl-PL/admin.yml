@@ -118,6 +118,7 @@ pl:
       headings_manage: "Zarządzanie nagłówkami"
       max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
       form:
+        create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
         name: "Nazwa grupy"
         submit: "Zapisz grupę"
@@ -295,6 +296,8 @@ pl:
         notice: Status inwestycji został pomyślnie usunięty
     progress_bars:
       index:
+        title: "Pasek postępu"
+        no_progress_bars: "Nie ma paska postępów"
         table_id: "Numer ID"
         table_kind: "Typ"
         table_title: "Tytuł"
