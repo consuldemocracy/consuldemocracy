@@ -19,23 +19,10 @@ fi:
         title: "Teknisiä ongelmia?"
         page:
           title: "Usein Kysytyt Kysymykset"
-          faq_1_title: "Kysymys 1"
       other:
         title: "Muita kiinnostavia tietoja"
     privacy:
       title: Tietosuojakäytäntö
-      info_items:
-        - 
-        - 
-        - 
-        - 
-          subitems:
-            - 
-              field: 'Tiedoston nimi:'
-              description: TIEDOSTON NIMI
-            - 
-              field: 'Tiedoston tarkoitus:'
-            - 
     accessibility:
       keyboard_shortcuts:
         navigation_table:
@@ -86,9 +73,6 @@ fi:
               browser_column: Safari
             - 
               browser_column: Opera
-    titles:
-      conditions: Käyttöehdot
-      privacy: Tietosuojakäytäntö
     verify:
       email: Sähköposti
       password: Salasana
