@@ -48,8 +48,6 @@ zh-CN:
     url_description: "您网站的主URL"
     org_name: "组织"
     org_name_description: "您的组织名称"
-    place_name: "地方"
-    place_name_description: "您的城市名称"
     related_content_score_threshold: "相关内容评分阙值"
     related_content_score_threshold_description: "隐藏用户标记为不相关的内容"
     hot_score_period_in_days: "通过’最活跃‘来筛选的使用期间（天）"
@@ -73,11 +71,6 @@ zh-CN:
     min_age_to_participate: 参与需要的最低年龄
     min_age_to_participate_description: "超过此年龄的用户可以参与所有进程"
     analytics_url: "分析URL"
-    blog_url: "博客URL"
-    transparency_url: "透明度URL"
-    opendata_url: "公开数据URL"
-    verification_offices_url: 验证办公室URL
-    proposal_improvement_path: 提议改善资讯内部链接
     feature:
       budgets: "参与性预算"
       budgets_description: "通过参与性预算，公民决定其邻居提出的哪些项目将获得市政预算的一部分"
@@ -126,4 +119,4 @@ zh-CN:
       public_stats: "公众统计数据"
       public_stats_description: "在管理面板中显示公众统计数据"
       help_page: "帮助页面"
-      help_page_description: "显示帮助菜单，其中包含一个页面，它含有每个已启用功能的资讯"
+      help_page_description: '显示帮助菜单，其中包含一个页面，它含有每个已启用功能的资讯'
