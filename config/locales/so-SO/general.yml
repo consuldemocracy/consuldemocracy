@@ -218,7 +218,6 @@ so:
       available_locales: Luqadaha diyarka ah
       collaborative_legislation: Nidaamka Sharciga
       debates: Doodo
-      external_link_blog: Blog
       locale: 'Luqad:'
       logo: Logada qunsuliyada
       management: Maraynta
@@ -397,8 +396,6 @@ so:
         guide: "Hadda waxaad la wadaagi kartaa si dadka ay u bilaabi karaan taageerada."
         edit: "Ka hor inta aan la wadaagin waxaad awoodi doontaa inaad bedesho qoraalka sida aad jeceshahay."
         view_proposal: Hadda ma ahan, u gudbi dalabkayga
-      improve_info: "Hagaajinta ololahaaga iyo inaad hesho taageero dheeraad ah"
-      improve_info_link: "Fiiri macluumaad dheeraad ah"
       already_supported: Waxaad hore u taageertay qorshahaan. La wadaag!
       comments:
         zero: Falooyin majiraan
@@ -510,7 +507,6 @@ so:
         title: "Sualo"
         most_voted_answer: "Ita badan jawabah codayey: "
   poll_questions:
-    create_question: "Saame Sual"
     show:
       vote_answer: "Cod%{answer}"
       voted: "Wad codeysay%{answer}"
@@ -622,7 +618,6 @@ so:
       see_more: Eeg talooyin dheeraad ah
       hide: Qari talooyinka
   social:
-    blog: "%{org} bloga"
     facebook: "%{org} faysbuug"
     twitter: "%{org} tuwiitar"
     youtube: "%{org} yotuyuub"
@@ -808,7 +803,7 @@ so:
       user_permission_info: Akoonkaga waad karta...
       user_permission_proposal: Samee soo jeedino cusub
       user_permission_support_proposal: Tageer so jedinada*
-      user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
+      user_permission_verify: "Si aad u fuliso dhammaan ficilada hubi xisaabtaada."
       user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
       user_permission_verify_my_account: Hubi xisaabtayda
       user_permission_votes: Kayb galka codaynta ugu danbaysa
