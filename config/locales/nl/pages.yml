@@ -8,22 +8,22 @@ nl:
       title: "%{org} is een platform voor burgerparticipatie"
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
       menu:
-        debates: "Discussie"
-        proposals: "Proposals"
+        debates: "Debatten"
+        proposals: "Voorstellen"
         budgets: "Participatory budgets"
         polls: "Polls"
         other: "Verdere informatie"
         processes: "Proces"
       debates:
-        title: "Discussie"
-        description: "Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden."
-        link: "Discussies"
-        feature_html: "Je kunt discussies een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
+        title: "Debatten"
+        description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je voorstellen kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
+        link: "debatten"
+        feature_html: "Je kunt debatten openen en reageren en je waardering uitdrukken via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
-        image_alt: "Knoppen om een discussie te scoren"
-        figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
+        image_alt: "Knoppen om een debat te waarderen"
+        figcaption: '"Eens" en "Oneens" knoppen om debatten te waarderen.'
       proposals:
-        title: "Proposals"
+        title: "Voorstellen"
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
         link: "Voorstellen"
         image_alt: "Knop om een voorstel te steunen"
@@ -42,7 +42,7 @@ nl:
         feature_1_link: "registreren in %{org_name}"
       processes:
         title: "Proces"
-        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies."
+        description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
       faq:
         title: "Technische problemen?"
@@ -51,8 +51,6 @@ nl:
         page:
           title: "Veel gestelde vragen"
           description: "Gebruik deze pagina veelgestelde vragen van de gebruikers van de site te beantwoorden."
-          faq_1_title: "Vraag 1"
-          faq_1_description: "Dit is een voorbeeld voor de beschrijving van de eerste vraag."
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
@@ -67,25 +65,7 @@ nl:
         how_to_use: Gebruik het in uw gemeente
     privacy:
       title: Privacy Verklaring
-      subtitle: INFORMATIE OVER GEGEVENSBESCHERMING
-      info_items:
-        - 
-          text: De navigatie door de informatie beschikbaar in de Open Overheid Portal is anoniem.
-        - 
-          text: Voor het gebruik van de diensten van de Open Overheid Portal moet de gebruiker zich registreren en persoonlijke gegevens verstrekken volgens de specifieke informatie die bij de registratie nodig is.
-        - 
-          text: 'De verstrekte gegevens zullen worden opgenomen en verwerkt door de gemeenteraad overeenkomstig de omschrijving van het volgende bestand:'
-        - 
-          subitems:
-            - 
-              field: 'Bestandsnaam:'
-              description: NAAM VAN HET BESTAND
-            - 
-              field: 'Doel van het bestand:'
-              description: Het beheer van participatie processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
-            - 
-              field: 'Instelling die belast is met het bestand:'
-              description: INSTELLING DIE BELAST IS MET HET BESTAND
+      subtitle: "INFORMATIE OVER GEGEVENSBESCHERMING"
     accessibility:
       title: Toegankelijkheid
       description: |-
@@ -110,10 +90,10 @@ nl:
               page_column: Homepagina
             - 
               key_column: 1
-              page_column: Discussie
+              page_column: Debatten
             - 
               key_column: 2
-              page_column: Proposals
+              page_column: Voorstellen
             - 
               key_column: 3
               page_column: Votes
@@ -179,10 +159,7 @@ nl:
         title: Compatibiliteit met standaarden en visuele vormgeving
         description_html: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
-      accessibility: Toegankelijkheid
-      conditions: Gebruiksvoorwaarden
       help: "Wat is %{org}? - Burgerparticipatie"
-      privacy: Privacy Verklaring
     verify:
       code: Code die u in een brief heeft ontvangen
       email: E-mail
