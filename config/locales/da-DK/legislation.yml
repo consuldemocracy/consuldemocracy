@@ -23,3 +23,16 @@ da:
     draft_versions:
       changes:
         see_text: Se tekst udkast
+      show:
+        updated_at: opdateret på %{date}
+        text_body: Tekst
+        text_comments: Kommentar
+    processes:
+      proposals:
+        filters:
+          random: Tilfældige
+      index:
+        filter: Filtrere
+        filters:
+          open: Åbne processer
+          past: Fortid
