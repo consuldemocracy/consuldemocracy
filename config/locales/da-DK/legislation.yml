@@ -1,1 +1,25 @@
 da:
+  legislation:
+    annotations:
+      comments:
+        see_all: Se alle
+        see_complete: Se færdige
+        cancel: Annuller
+        publish_comment: Udgive kommentar
+      form:
+        phase_not_open: Denne fase er ikke åben
+        login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
+        signin: Log ind
+        signup: Tilmeld dig
+      index:
+        title: Kommentarer
+        comments_about: Kommentarer om
+        see_in_context: Se i context
+      show:
+        title: Kommentar
+      version_chooser:
+        seeing_version: Commments for version
+        see_text: Se tekst udkast
+    draft_versions:
+      changes:
+        see_text: Se tekst udkast
