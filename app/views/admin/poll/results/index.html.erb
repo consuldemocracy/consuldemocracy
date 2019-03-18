@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <% if !@partial_results.empty? %>
+  <% if @partial_results.present? %>
     <%= render "recount", resource: @poll %>
     <%= render "result" %>
     <%= render "results_by_booth" %>
   <% end %>
 
-  <% if !@poll.voters.empty? %>
+  <% if @poll.voters.any? %>
     <%= render "show_results", resource: @poll %>
   <% end %>
 </div>
