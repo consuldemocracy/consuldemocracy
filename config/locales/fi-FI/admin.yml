@@ -29,8 +29,6 @@ fi:
           homepage: Kotisivu
           proposals: Ehdotukset
           help_page: Ohje-sivu
-        background_color: Taustaväri
-        font_color: Fontin väri
       edit:
         editing: Muokkaa banneria
         form:
@@ -114,8 +112,6 @@ fi:
         tags_filter_all: Kaikki tunnisteet
         advanced_filters: Edistyneet suodattimet
         placeholder: Hae projekteja
-        sort_by:
-          id: ID
         filters:
           all: Kaikki
           selected: Valittu
@@ -266,7 +262,6 @@ fi:
           create: Uusi prosessi
           delete: Poista
           filters:
-            open: Avaa
             all: Kaikki
         new:
           back: Takaisin
@@ -338,7 +333,6 @@ fi:
         add: Lisää
         delete: Poista
     menu:
-      poll_questions: Kysymykset
       proposals: Ehdotukset
       hidden_comments: Piilotetut kommentit
       hidden_proposals: Piilotetut ehdotukset
@@ -359,7 +353,6 @@ fi:
         buttons:
           save: "Tallenna"
       title_budgets: Budjetit
-      title_polls: Kyselyt
       users: Käyttäjät
     administrators:
       index:
