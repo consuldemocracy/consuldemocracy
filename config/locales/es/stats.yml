@@ -38,4 +38,4 @@ es:
       vote_by_channel: "Votos emitidos por medio"
       web_percentage: "%{percentage} Web"
       booth_percentage: "%{percentage} Urnas"
-      mail_percentage: "%{percentage} Correo"
+      letter_percentage: "%{percentage} Correo"

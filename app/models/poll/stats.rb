@@ -2,19 +2,19 @@ class Poll::Stats
   include Statisticable
   alias_method :poll, :resource
 
-  CHANNELS = %i[web booth mail]
+  CHANNELS = Poll::Voter::VALID_ORIGINS
 
   def self.stats_methods
     super +
       %i[total_valid_votes total_white_votes total_null_votes
          total_participants_web total_web_valid total_web_white total_web_null
          total_participants_booth total_booth_valid total_booth_white total_booth_null
-         total_participants_mail total_mail_valid total_mail_white total_mail_null
+         total_participants_letter total_letter_valid total_letter_white total_letter_null
          total_participants_web_percentage total_participants_booth_percentage
-         total_participants_mail_percentage
-         valid_percentage_web valid_percentage_booth valid_percentage_mail total_valid_percentage
-         white_percentage_web white_percentage_booth white_percentage_mail total_white_percentage
-         null_percentage_web null_percentage_booth null_percentage_mail total_null_percentage]
+         total_participants_letter_percentage
+         valid_percentage_web valid_percentage_booth valid_percentage_letter total_valid_percentage
+         white_percentage_web white_percentage_booth white_percentage_letter total_white_percentage
+         null_percentage_web null_percentage_booth null_percentage_letter total_null_percentage]
   end
 
   def total_participants
@@ -57,15 +57,15 @@ class Poll::Stats
     recounts.sum(:null_amount)
   end
 
-  def total_mail_valid
+  def total_letter_valid
     0 # TODO
   end
 
-  def total_mail_white
+  def total_letter_white
     0 # TODO
   end
 
-  def total_mail_null
+  def total_letter_null
     0 # TODO
   end
 

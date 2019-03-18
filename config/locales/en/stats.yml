@@ -38,4 +38,4 @@ en:
       vote_by_channel: "Vote type by channel"
       web_percentage: "%{percentage} Web"
       booth_percentage: "%{percentage} Booths"
-      mail_percentage: "%{percentage} Mail"
+      letter_percentage: "%{percentage} Mail"
