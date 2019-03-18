@@ -33,7 +33,7 @@ describe Budget::Stats do
       expect(stats.participants).to match_array(
         [author, author_and_voter, voter, voter_and_balloter, balloter, poll_balloter]
       )
-      expect(stats.generate[:total_participants]).to be 6
+      expect(stats.total_participants).to be 6
     end
   end
 
@@ -42,7 +42,7 @@ describe Budget::Stats do
       2.times { create(:vote, votable: investment) }
       create(:budget_ballot_line, investment: investment)
 
-      expect(stats.generate[:total_participants_support_phase]).to be 2
+      expect(stats.total_participants_support_phase).to be 2
     end
 
     it "counts a user who is voter and balloter" do
@@ -50,7 +50,7 @@ describe Budget::Stats do
       create(:vote, votable: investment, voter: voter_and_balloter)
       create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
-      expect(stats.generate[:total_participants_support_phase]).to be 1
+      expect(stats.total_participants_support_phase).to be 1
     end
   end
 
@@ -59,7 +59,7 @@ describe Budget::Stats do
       2.times { create(:budget_ballot_line, investment: investment) }
       create(:vote, votable: investment)
 
-      expect(stats.generate[:total_participants_vote_phase]).to be 2
+      expect(stats.total_participants_vote_phase).to be 2
     end
 
     it "counts a user who is voter and balloter" do
@@ -67,14 +67,14 @@ describe Budget::Stats do
       create(:vote, votable: investment, voter: voter_and_balloter)
       create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
-      expect(stats.generate[:total_participants_vote_phase]).to be 1
+      expect(stats.total_participants_vote_phase).to be 1
     end
 
     it "includes balloters and poll balloters" do
       create(:budget_ballot_line, investment: investment)
       create(:poll_voter, :from_booth, budget: budget)
 
-      expect(stats.generate[:total_participants_vote_phase]).to be 2
+      expect(stats.total_participants_vote_phase).to be 2
     end
 
     it "counts once a user who is balloter and poll balloter" do
@@ -82,7 +82,7 @@ describe Budget::Stats do
       create(:budget_ballot_line, investment: investment, user: poller_and_balloter)
       create(:poll_voter, :from_booth, user: poller_and_balloter, budget: budget)
 
-      expect(stats.generate[:total_participants_vote_phase]).to be 1
+      expect(stats.total_participants_vote_phase).to be 1
     end
 
     it "doesn't count nil user ids" do
@@ -90,7 +90,7 @@ describe Budget::Stats do
         ballot: create(:budget_ballot, budget: budget, user: nil, physical: true)
       )
 
-      expect(stats.generate[:total_participants_vote_phase]).to be 0
+      expect(stats.total_participants_vote_phase).to be 0
     end
   end
 
@@ -99,7 +99,7 @@ describe Budget::Stats do
       2.times { create(:budget_investment, budget: budget) }
       create(:budget_investment, budget: create(:budget))
 
-      expect(stats.generate[:total_budget_investments]).to be 2
+      expect(stats.total_budget_investments).to be 2
     end
   end
 
@@ -108,7 +108,7 @@ describe Budget::Stats do
       create(:budget_ballot_line, investment: investment)
       create(:budget_ballot_line, investment: create(:budget_investment, :selected, budget: budget))
 
-      expect(stats.generate[:total_votes]).to be 2
+      expect(stats.total_votes).to be 2
     end
   end
 
@@ -118,7 +118,7 @@ describe Budget::Stats do
       create(:budget_investment, :selected, budget: create(:budget))
       create(:budget_investment, :unfeasible, budget: budget)
 
-      expect(stats.generate[:total_selected_investments]).to be 3
+      expect(stats.total_selected_investments).to be 3
     end
   end
 
@@ -128,7 +128,7 @@ describe Budget::Stats do
       create(:budget_investment, :unfeasible, budget: create(:budget))
       create(:budget_investment, :selected, budget: budget)
 
-      expect(stats.generate[:total_unfeasible_investments]).to be 3
+      expect(stats.total_unfeasible_investments).to be 3
     end
   end
 
@@ -143,31 +143,31 @@ describe Budget::Stats do
 
     describe "#total_male_participants" do
       it "returns the number of total male participants" do
-        expect(stats.generate[:total_male_participants]).to be 3
+        expect(stats.total_male_participants).to be 3
       end
     end
 
     describe "#total_female_participants" do
       it "returns the number of total female participants" do
-        expect(stats.generate[:total_female_participants]).to be 2
+        expect(stats.total_female_participants).to be 2
       end
     end
 
     describe "#total_unknown_gender_or_age" do
       it "returns the number of total unknown participants' gender or age" do
-        expect(stats.generate[:total_unknown_gender_or_age]).to be 1
+        expect(stats.total_unknown_gender_or_age).to be 1
       end
     end
 
     describe "#male_percentage" do
       it "returns the percentage of male participants" do
-        expect(stats.generate[:male_percentage]).to be 60.0
+        expect(stats.male_percentage).to be 60.0
       end
     end
 
     describe "#female_percentage" do
       it "returns the percentage of female participants" do
-        expect(stats.generate[:female_percentage]).to be 40.0
+        expect(stats.female_percentage).to be 40.0
       end
     end
   end
@@ -182,18 +182,18 @@ describe Budget::Stats do
     end
 
     it "returns the age groups hash" do
-      expect(stats.generate[:participants_by_age]["16 - 19"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["20 - 24"][:count]).to be 4
-      expect(stats.generate[:participants_by_age]["25 - 29"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["30 - 34"][:count]).to be 1
-      expect(stats.generate[:participants_by_age]["35 - 39"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["40 - 44"][:count]).to be 3
-      expect(stats.generate[:participants_by_age]["45 - 49"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["50 - 54"][:count]).to be 2
-      expect(stats.generate[:participants_by_age]["55 - 59"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["60 - 64"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["65 - 69"][:count]).to be 0
-      expect(stats.generate[:participants_by_age]["70 - 74"][:count]).to be 0
+      expect(stats.participants_by_age["16 - 19"][:count]).to be 0
+      expect(stats.participants_by_age["20 - 24"][:count]).to be 4
+      expect(stats.participants_by_age["25 - 29"][:count]).to be 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to be 1
+      expect(stats.participants_by_age["35 - 39"][:count]).to be 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to be 3
+      expect(stats.participants_by_age["45 - 49"][:count]).to be 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to be 2
+      expect(stats.participants_by_age["55 - 59"][:count]).to be 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to be 0
+      expect(stats.participants_by_age["65 - 69"][:count]).to be 0
+      expect(stats.participants_by_age["70 - 74"][:count]).to be 0
     end
   end
 
@@ -206,7 +206,7 @@ describe Budget::Stats do
     end
 
     it "returns headings data" do
-      heading_stats = stats.generate[:headings][investment.heading.id]
+      heading_stats = stats.headings[investment.heading.id]
       expect(heading_stats[:total_investments_count]).to be 2
       expect(heading_stats[:total_participants_support_phase]).to be 2
       expect(heading_stats[:total_participants_vote_phase]).to be 1

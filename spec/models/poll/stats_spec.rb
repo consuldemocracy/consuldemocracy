@@ -183,44 +183,4 @@ describe Poll::Stats do
       expect(stats.participants_by_geozone["Midgar"][:percentage]).to eq(33.333)
     end
   end
-
-  describe "#generate" do
-    it "generates the correct stats" do
-      poll = create(:poll)
-      2.times { create(:poll_voter, :from_web, poll: poll) }
-      3.times { create(:poll_voter, :from_booth, poll: poll) }
-      create(:poll_recount, :from_booth, poll: poll,
-             white_amount: 1, null_amount: 0, total_amount: 2)
-
-      stats = Poll::Stats.new(poll).generate
-
-      expect(stats[:total_participants]).to eq(5)
-      expect(stats[:total_participants_web]).to eq(2)
-      expect(stats[:total_participants_booth]).to eq(3)
-      expect(stats[:total_valid_votes]).to eq(4)
-      expect(stats[:total_white_votes]).to eq(1)
-      expect(stats[:total_null_votes]).to eq(0)
-
-      expect(stats[:total_web_valid]).to eq(2)
-      expect(stats[:total_web_white]).to eq(0)
-      expect(stats[:total_web_null]).to eq(0)
-
-      expect(stats[:total_booth_valid]).to eq(2)
-      expect(stats[:total_booth_white]).to eq(1)
-      expect(stats[:total_booth_null]).to eq(0)
-
-      expect(stats[:total_participants_web_percentage]).to eq(40)
-      expect(stats[:total_participants_booth_percentage]).to eq(60)
-      expect(stats[:valid_percentage_web]).to eq(50)
-      expect(stats[:white_percentage_web]).to eq(0)
-      expect(stats[:null_percentage_web]).to eq(0)
-      expect(stats[:valid_percentage_booth]).to eq(50)
-      expect(stats[:white_percentage_booth]).to eq(100)
-      expect(stats[:null_percentage_booth]).to eq(0)
-      expect(stats[:total_valid_percentage]).to eq(80)
-      expect(stats[:total_white_percentage]).to eq(20)
-      expect(stats[:total_null_percentage]).to eq(0)
-    end
-  end
-
 end

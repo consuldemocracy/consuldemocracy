@@ -9,7 +9,7 @@ module Statisticable
     end
 
     def generate
-      self.class.stats_methods.map { |stat_name| [stat_name, send(stat_name)] }.to_h
+      self.class.stats_methods.each { |stat_name| send(stat_name) }
     end
 
     def total_male_participants

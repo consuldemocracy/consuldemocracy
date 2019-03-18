@@ -5,7 +5,7 @@
     <h4><%= t("stats.total_participants") %></h4>
 
     <%= number_with_info_tags(
-      stats[:total_participants],
+      stats.total_participants,
       "",
       html_class: "participants total-participants"
     ) %>
@@ -15,14 +15,14 @@
     <h4><%= t("stats.by_gender") %></h4>
 
     <%= number_with_info_tags(
-      stats[:total_male_participants],
-      t("stats.men_percentage", percentage: number_to_stats_percentage(stats[:male_percentage])),
+      stats.total_male_participants,
+      t("stats.men_percentage", percentage: number_to_stats_percentage(stats.male_percentage)),
       html_class: "participants male"
     ) %>
 
     <%= number_with_info_tags(
-      stats[:total_female_participants],
-      t("stats.women_percentage", percentage: number_to_stats_percentage(stats[:female_percentage])),
+      stats.total_female_participants,
+      t("stats.women_percentage", percentage: number_to_stats_percentage(stats.female_percentage)),
       html_class: "participants female"
     ) %>
   </div>
@@ -39,7 +39,7 @@
       </thead>
 
       <tbody>
-        <% stats[:participants_by_age].values.each do |group| %>
+        <% stats.participants_by_age.values.each do |group| %>
           <tr>
             <td><%= group[:range] %></td>
             <td>
@@ -70,7 +70,7 @@
       </thead>
 
       <tbody>
-        <% stats[:participants_by_geozone].each do |geozone, participants| %>
+        <% stats.participants_by_geozone.each do |geozone, participants| %>
           <tr>
             <td><%= geozone %></td>
             <td><%= "#{participants[:total][:count]} (#{number_to_stats_percentage(participants[:total][:percentage])})" %></td>
