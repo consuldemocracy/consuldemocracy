@@ -38,8 +38,6 @@ gl:
           proposals: Propostas cidadás
           budgets: Orzamentos participativos
           help_page: Páxina de axuda
-        background_color: Cor de fondo
-        font_color: Cor da letra
       edit:
         editing: Editar anuncio
         form:
@@ -182,11 +180,6 @@ gl:
         tags_filter_all: Todas as etiquetas
         advanced_filters: Filtros avanzados
         placeholder: Buscar proxectos
-        sort_by:
-          placeholder: Ordenar por
-          id: ID
-          title: Título
-          supports: Apoios
         filters:
           all: Todo
           without_admin: Sen administrador
@@ -428,8 +421,6 @@ gl:
           draft_phase_description: Se esta fase está activa, o proceso non se amosará no listado de procesos. Amosa unha vista previa do proceso e crea contido antes de que comece.
           allegations_phase: Fase de alegaciones
           proposals_phase: Fase de propostas
-          start: Comezo
-          end: Remate
           use_markdown: Usar Markdown para formatear o texto
           title_placeholder: Escribe o título do proceso
           summary_placeholder: Resumo corto da descrición
@@ -439,13 +430,12 @@ gl:
           homepage_description: Aquí podes explicar o contido do proceso
           homepage_enabled: Páxina principal habilitada
           banner_title: Cores da cabeceira
-          color_help: Formato hexadecimal
         index:
           create: Novo proceso
           delete: Borrar
           title: Procesos lexislativos
           filters:
-            open: Abertas
+            active: Activo
             all: Todo
         new:
           back: Volver
@@ -461,7 +451,8 @@ gl:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Data de creación
+          start_date: Data de inicio
+          end_date: Data de peche
           status_open: Abertas
           status_closed: Pechado
           status_planned: Planificado
@@ -590,7 +581,6 @@ gl:
       activity: Actividade de moderador
       admin: Menú de administración
       banner: Xestionar anuncios
-      poll_questions: Preguntas
       proposals: Propostas cidadás
       proposals_topics: Temas das propostas
       budgets: Orzamentos participativos
@@ -642,7 +632,6 @@ gl:
             update: "Actualizar Bloque"
       title_moderated_content: Moderar contido
       title_budgets: Orzamentos participativos
-      title_polls: Votacións
       title_profiles: Perfís
       title_settings: Preferencias
       title_site_customization: Contido do sitio
@@ -765,9 +754,24 @@ gl:
         send_pending: Pendente de envío
         send_pending_notification: A notificación pendente foi enviada correctamente
       proposal_notification_digest:
-        title: Resumo de notificacións de propostas
-        description: Agrupa todas as notificacións de proposta para un usuario nunha única mensaxe, evitando o envío dun número elevado de mensaxes.
-        preview_detail: Os usuarios só recibirán as notificacións das propostas que están a seguir
+        title: "Resumo de notificacións de propostas"
+        description: "Agrupa todas as notificacións de proposta para un usuario nunha única mensaxe, evitando o envío dun número elevado de mensaxes."
+        preview_detail: "Os usuarios só recibirán as notificacións das propostas que están a seguir"
+      comment:
+        title: "Comentario"
+      reply:
+        title: "Responder"
+      direct_message_for_receiver:
+        title: "Mensaxe privada para receptor"
+        description: "Enviar ao receptor da mensaxe privada."
+      direct_message_for_sender:
+        title: "Mensaxe privada para emisor"
+        description: "Enviar ao emisor da mensaxe privada."
+      email_verification:
+        title: "Verificación de correo"
+        description: "Enviar ao novo usuario para comprobar a súa conta."
+      user_invite:
+        title: "Convite de usuario"
     emails_download:
       index:
         title: Descarga de enderezos de correo
@@ -871,6 +875,7 @@ gl:
       flash:
         create: "Engadiuse a quenda da presidencia"
         destroy: "Borrouse a quenda da presidencia"
+        unable_to_destroy: "As quendas con resultados asociados, ou os recontos, non se poden eliminar"
         date_missing: "Debe escoller unha data"
       vote_collection: Recoller votos
       recount_scrutiny: Reconto & escrutinio
@@ -910,6 +915,13 @@ gl:
         no_booths: "Non hai urnas asignadas a esta votación."
         table_name: "Nome"
         table_location: "Localización"
+    active_polls:
+      edit:
+        title: "Descrición de votacións"
+      form:
+        description:
+          text: "Descrición"
+          help_text: "Este texto amosarase na cabeceira da páxina das votacións. Pode usarse para engadir un contexto ás votacións abertas."
     polls:
       index:
         title: "Relación de votacións"
@@ -1129,10 +1141,6 @@ gl:
       flash:
         updated: Valor actualizado
       index:
-        banners: Estilos de anuncio
-        banner_imgs: Imaxes do anuncio
-        no_banners_images: Non hai imaxes de anuncio
-        no_banners_styles: Non hai estilo de anuncio
         title: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
