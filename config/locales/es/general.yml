@@ -799,6 +799,7 @@ es:
       title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ver propuestas
+      start_using_consul: Ir a la página de inicio
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
