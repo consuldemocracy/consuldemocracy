@@ -2,7 +2,7 @@ nl:
   account:
     show:
       change_credentials_link: Pas mijn toegangsgegevens aan
-      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen of discussie reageert
+      email_on_comment_label: Stuur me een email als iemand op mijn voorstellen of debatten reageert
       email_on_comment_reply_label: Stuur me een email wanneer iemand op mijn voorstellen reageert
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
@@ -21,13 +21,13 @@ nl:
       email_digest_label: Stuur me een samenvatting van meldingen naar aanleiding van voorstellen
       official_position_badge_label: Toon officiële standpunt badge
       recommendations: Aanbevelingen
-      show_debates_recommendations: Laat discussie aanbevelingen zien
+      show_debates_recommendations: Aanbevolen debatten weergeven
       show_proposals_recommendations: Laat aanbevelingen van de voorstellen zien
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals
+      user_permission_proposal: Nieuwe voorstellen indienen
+      user_permission_support_proposal: Voorstellen steunen
       user_permission_title: Participatie
       user_permission_verify: Verifieer uw account om alles te kunnen.
       user_permission_verify_info: "* Alleen voor gebruikers in de regio."
@@ -77,7 +77,7 @@ nl:
   debates:
     create:
       form:
-        submit_button: Begin een debat
+        submit_button: Debat starten
     debate:
       comments:
         zero: Geen reacties
@@ -88,14 +88,14 @@ nl:
         one: 1 stem
         other: "%{count} stemmen"
     edit:
-      editing: Edit debat
+      editing: Debat bewerken
       form:
         submit_button: Bewaar wijzigingen
-      show_link: Bekijk debat
+      show_link: Debat bekijken
     form:
-      debate_text: Initiële tekst debat
-      debate_title: Titel debat
-      tags_instructions: Voeg labels toe.
+      debate_text: Omschrijving
+      debate_title: Onderwerp
+      tags_instructions: Voeg termen toe.
       tags_label: Onderwerpen
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
@@ -111,43 +111,43 @@ nl:
         relevance: relevantie
         recommendations: Aanbevelingen
       recommendations:
-        without_results: Er zijn geen discussies die aansluiten bij jouw interesses
+        without_results: Er zijn geen debatten gevonden
         without_interests: Volg voorstellen zodat we aanbevelingen kunnen doen
-        disable: "Aanbevelingen voor discussies worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
+        disable: "Aanbevelingen voor debatten worden verborgen als je dit aangeeft. Je kunt ze weer inschakelen op de pagina 'Mijn account'"
         actions:
           success: "Aanbevelingen voor debatten zijn nu uitgeschakeld voor dit account"
           error: "Er is een fout opgetreden. Ga naar de pagina 'Uw account' om aanbevelingen voor debatten handmatig uit te schakelen"
       search_form:
         button: Search
-        placeholder: Zoek in discussies...
+        placeholder: Debatten zoeken...
         title: Search
       search_results_html:
         one: " bevat de term <strong>'%{search_term}'</strong>"
         other: " bevat de term <strong>'%{search_term}'</strong>"
       select_order: Order by
-      start_debate: Discussie plaatsen
-      title: Debates
+      start_debate: Debat starten
+      title: Debatten
       section_header:
-        icon_alt: Discussie icon
-        title: Discussie
-        help: Hulp bij discussies
+        icon_alt: Debatten pictogram
+        title: Debatten
+        help: Hulp bij debatten
       section_footer:
-        title: Hulp bij discussies
-        description: Start een discussie om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
-        help_text_1: "Deze plek voor discussies is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die men belangrijk vindt in de gemeente."
-        help_text_2: '''Om een discussie te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande discussies en deze beoordelen met de knoppen ''Eens'' of ''Oneens'' die bij discussies staan.'
+        title: Hulp bij debatten
+        description: Start een debat om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
+        help_text_1: "De ruimte voor debatten is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die je belangrijk vindt."
+        help_text_2: '''Om een debat te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande debatten en deze waarderen met de knoppen ''Eens'' of ''Oneens''.'
     new:
       form:
-        submit_button: Discussie plaatsen
+        submit_button: Debat starten
       info: Dit is niet de juiste plek voor voorstellen; ga daarvoor naar %{info_link}.
       info_link: nieuw voorstel
       more_info: Meer informatie
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
-      recommendation_three: Stevige kritiek is welkom, dit is de plek daarvoor. Maar we raden u wel aan de discussie elegant en intelligent te voeren, dan blijft deze ruimte leefbaar.
-      recommendation_two: Iedere discussie of opmerking waarin een illegale activiteit wordt aanmoedigd zal worden verwijderd, en ook die welke de discussie saboteren. Verder is alles toegestaan.
-      recommendations_title: Advies bij het beginnen van een debat
-      start_new: Discussie plaatsen
+      recommendation_three: Stevige kritiek is welkom, dit is de plek daarvoor. Maar we raden je wel aan beleefd en intelligent te handelen, dan blijft deze ruimte leefbaar.
+      recommendation_two: Ieder debat of reactie waarin een illegale activiteit wordt aanmoedigt zal worden verwijderd, en ook die welke het debat saboteren. Verder is alles toegestaan.
+      recommendations_title: Advies bij het starten van een debat
+      start_new: Debat starten
     show:
       author_deleted: Gebruiker verwijderd
       comments:
@@ -171,7 +171,7 @@ nl:
     accept_terms: Ik accepteer het %{policy} en de %{conditions}
     accept_terms_title: Ik ga akkoord met het privacybeleid en de gebruiksvoorwaarden
     conditions: Gebruiksvoorwaarden
-    debate: Debate
+    debate: Debat
     direct_message: privébericht
     error: fout
     errors: fouten
@@ -181,6 +181,7 @@ nl:
     proposal_notification: "Melding"
     spending_proposal: Begrotingsvoorstel
     budget/investment: Investering
+    budget/group: Budgetgroep
     budget/heading: Budget onderdeel
     poll/shift: Dienst
     poll/question/answer: Antwoord
@@ -217,8 +218,7 @@ nl:
       administration: Administration
       available_locales: Beschikbare talen
       collaborative_legislation: Wetgevingsproces
-      debates: Discussie
-      external_link_blog: Blog
+      debates: Debatten
       locale: 'Taal:'
       logo: Consul logo
       management: Beheer
@@ -230,10 +230,10 @@ nl:
       my_activity_link: Mijn bijdragen
       open: open
       open_gov: Open bestuur
-      proposals: Proposals
+      proposals: Voorstellen
       poll_questions: Stemmen
       budgets: Participatory budgeting
-      spending_proposals: Spending Proposals
+      spending_proposals: Begrotingsvoorstellen
       notification_item:
         new_notifications:
           one: U heeft een nieuwe melding
@@ -370,12 +370,12 @@ nl:
       select_order: Order by
       select_order_long: 'U ziet de voorstellen op:'
       start_proposal: Maak een nieuw voorstel
-      title: Proposals
+      title: Voorstellen
       top: Wekelijkse top
       top_link_proposals: De meest gesteunde voorstellen per categorie
       section_header:
         icon_alt: Voorgestelde pictogrammen
-        title: Proposals
+        title: Voorstellen
         help: Hulp over voorstellen
       section_footer:
         title: Hulp over voorstellen
@@ -386,7 +386,7 @@ nl:
       more_info: Hoe werken voorstellen?
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
       recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
-      recommendation_two: Ieder voorstel waarin een illegale activiteit wordt aanmoedigd zal worden verwijderd, en ook die welke de discussie saboteren. Verder is alles toegestaan.
+      recommendation_two: Ieder voorstel waarin een illegale activiteit wordt aanmoedigt zal worden verwijderd, en ook die welke het debat saboteren. Verder is alles toegestaan.
       recommendations_title: Aanbevelingen bij het doen van voorstellen
       start_new: Doe nieuw voorstel
     notice:
@@ -397,8 +397,6 @@ nl:
         guide: "Nu kun je jouw voorstel gaan delen zodat mensen het kunnen gaan steunen."
         edit: "Voordat het gedeeld gaat worden, kun je de tekst nog wijzigen."
         view_proposal: Niet nu, door naar mijn voorstel
-      improve_info: "Verbeter je campagne en krijg meer steun"
-      improve_info_link: "Bekijk meer informatie"
       already_supported: U steunt dit voorstel al. Deel het!
       comments:
         zero: Geen reacties
@@ -444,9 +442,11 @@ nl:
     update:
       form:
         submit_button: Bewaar wijzigingen
+    share:
+      message: "Ik heb het voorstel %{summary} in %{handle} gesteund. Steun dit voorstel ook!"
   polls:
     all: "All"
-    no_dates: "nog geen datum"
+    no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
     index:
@@ -461,6 +461,7 @@ nl:
       geozone_info: "Open voor deelnemers uit: "
       already_answer: "U heeft al deelgenomen aan deze ronde"
       not_logged_in: "U moet inloggen om deel te kunnen nemen"
+      unverified: "Je account moet zijn geverifieerd om te deel te kunnen nemen"
       cant_answer: "Deze stemronde is niet beschikbaar in uw regio"
       section_header:
         icon_alt: Stemmen icoon
@@ -507,7 +508,6 @@ nl:
         title: "Vragen"
         most_voted_answer: "Antwoord met de meeste stemmen: "
   poll_questions:
-    create_question: "Create question"
     show:
       vote_answer: "Stem %{answer}"
       voted: "U heeft %{answer} gestemd"
@@ -576,9 +576,9 @@ nl:
     suggest:
       debate:
         found:
-          one: "Er is een debat met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuwe discussie te openen."
+          one: "Er is een debat met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw debat te starten."
           other: "Er zijn discussies met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuwe discussie te openen."
-        message: "Er worden %{limit} uit %{count} discussies met de term '%{query}' getoond"
+        message: "Er worden %{limit} uit %{count} debatten met de term '%{query}' getoond"
         see_all: "Bekijk alle"
       budget_investment:
         found:
@@ -588,8 +588,8 @@ nl:
         see_all: "Bekijk alle"
       proposal:
         found:
-          one: "Er is een voorstel met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te doen."
-          other: "Er zijn voorstellen met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te doen."
+          one: "Er is een voorstel met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te starten"
+          other: "Er zijn voorstellen met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuw voorstel te starten"
         message: "Er worden %{limit} uit %{count} voorstellen met de term '%{query}' getoond"
         see_all: "Alles tonen"
     tags_cloud:
@@ -619,7 +619,6 @@ nl:
       see_more: Meer aanbevelingen bekijken
       hide: Verborgen aanbevelingen
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -677,11 +676,11 @@ nl:
   stats:
     index:
       visits: Visits
-      debates: Discussie
-      proposals: Proposals
+      debates: Debatten
+      proposals: Voorstellen
       comments: Comments
       proposal_votes: Stemmen op voorstellen
-      debate_votes: Stemmen op discussies
+      debate_votes: Stemmen op debatten
       comment_votes: Stemmen op reacties
       votes: Total votes
       verified_users: Verified users
@@ -707,11 +706,11 @@ nl:
         receiver: Bericht gestuurd aan %{receiver}
     show:
       deleted: Verwijderd
-      deleted_debate: Deze discussie is verwijderd
+      deleted_debate: Dit debat is verwijderd
       deleted_proposal: Dit voorstel is verwijderd
       deleted_budget_investment: Dit begrotingsvoorstel is verwijderd
-      proposals: Proposals
-      debates: Discussie
+      proposals: Voorstellen
+      debates: Debatten
       budget_investments: Begrotingsvoorstellen
       comments: Comments
       actions: Activiteiten
@@ -720,8 +719,8 @@ nl:
           one: 1 Reactie
           other: "%{count} Reacties"
         debates:
-          one: 1 Discussie
-          other: "%{count} Discussies"
+          one: 1 debat
+          other: "%{count} debatten"
         proposals:
           one: 1 Voorstel
           other: "%{count} Voorstellen"
@@ -771,7 +770,7 @@ nl:
   welcome:
     feed:
       most_active:
-        debates: "Discussies"
+        debates: "Actieve debatten"
         proposals: "Voorstellen"
         processes: "Plannen"
       see_all_debates: Alle debatten
@@ -785,8 +784,8 @@ nl:
       title: Aanbevelingen die je wellicht interessant vindt
       help: "Deze aanbevelingen worden gegenereerd door de codes van de debatten en voorstellen die u volgen."
       debates:
-        title: Aanbevolen discussies
-        btn_text_link: Alle aanbevolen discussies
+        title: Aanbevolen debatten
+        btn_text_link: Alle aanbevolen debatten
       proposals:
         title: Aanbevolen voorstellen
         btn_text_link: Alle aanbevolen voorstellen
@@ -799,13 +798,14 @@ nl:
       question: Heeft u al een account bij %{org_name}?
       title: Account verificatie
     welcome:
-      go_to_index: Ga naar voorstellen en disucussies
+      go_to_index: Ga naar voorstellen en debatten
+      start_using_consul: Ga naar indexpagina
       title: Deelnemen
       user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals*
-      user_permission_verify: Verifi
+      user_permission_proposal: Nieuwe voorstellen maken
+      user_permission_support_proposal: Voorstellen steunen*
+      user_permission_verify: "Verifi"
       user_permission_verify_info: "* Alleen voor locale deelnemers."
       user_permission_verify_my_account: Verifieer mijn account
       user_permission_votes: Deelnemen aan laatste peilronde
