@@ -30,6 +30,7 @@ cs:
         info_text: Váš účet byl zablokován kvůli nadměrnému počtu neúspěšných pokusů o přihlášení.
         instructions_text: 'Klepnutím na tento odkaz odemknete svůj účet:'
         title: Váš účet byl uzamčen
+        unlock_link: Odemknout účet
     menu:
       login_items:
         login: Přihlásit
@@ -83,6 +84,8 @@ cs:
     unlocks:
       new:
         email_label: Email
+        submit: Instrukce k odblokování byly odeslány
+        title: Znovu poslat instrukce k odblokování
     users:
       registrations:
         delete_form:
@@ -108,6 +111,7 @@ cs:
           organization_signup_link: Registrujte se zde
           password_confirmation_label: Potvrdit heslo
           password_label: Heslo
+          redeemable_code: Ověřovací kód získat e-mailem (volitelně)
           submit: Registrovat se
           terms: Registrováním souhlasíte se %{terms}
           terms_link: zpracováním osobních údajů a podmínkami používání portálu
