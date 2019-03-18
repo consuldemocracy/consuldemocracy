@@ -23,7 +23,6 @@ id:
     instagram_handle: "Instagram menangani"
     url: "URL Utama"
     org_name: "Organisasi"
-    place_name: "Tempat"
     map_latitude: "Garis lintang"
     map_longitude: "Garis bujur"
     map_zoom: "Zoom"
@@ -31,11 +30,6 @@ id:
     meta_description: "Deskripsi situs (SEO)"
     meta_keywords: "Kata kunci (SEO)"
     min_age_to_participate: Usia Minimum yang diperlukan untuk berpartisipasi
-    blog_url: "Blog URL"
-    transparency_url: "Transparansi URL"
-    opendata_url: "Buka Data URL"
-    verification_offices_url: Verifikasi kantor URL
-    proposal_improvement_path: Usulan perbaikan info link internal
     feature:
       budgets: "Penganggaran partisipatif"
       twitter_login: "Twitter masuk"
