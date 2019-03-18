@@ -51,8 +51,6 @@ sq:
         page:
           title: "Pyetjet e bëra shpesh"
           description: "Përdorni këtë faqe për të zgjidhur FAQ e përbashkët tek përdoruesit e faqes."
-          faq_1_title: "Pyetja 1"
-          faq_1_description: "Ky është një shembull për përshkrimin e pyetjes së parë."
       other:
         title: "Informacione të tjera me interes"
         how_to_use: "Përdorni %{org_name} në qytetin tuaj"
@@ -64,25 +62,7 @@ sq:
         how_to_use: Përdoreni atë në qeverinë tuaj lokale
     privacy:
       title: Politika e privatësisë
-      subtitle: INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE
-      info_items:
-        - 
-          text: Navigimi përmes informacionit që gjendet në Portalin e hapur të Qeverisë  është anonime.
-        - 
-          text: Për të përdorur shërbimet e përmbajtura në Portalin e hapur të Qeverisë përdoruesi duhet të regjistrohet më parë dhe të ofrojë të dhëna personale sipas informatave specifike të përfshira në çdo lloj regjistrimi.
-        - 
-          text: 'Të dhënat e siguruara do të përfshihen dhe përpunohen nga Këshilli i Qytetit në përputhje me përshkrimin e dokumentit të mëposhtëm:'
-        - 
-          subitems:
-            - 
-              field: 'Emri i skedarit:'
-              description: EMRI I DOKUMENTAVE
-            - 
-              field: 'Qëllimi i dokumentit:'
-              description: Menaxhimi i proceseve pjesëmarrëse për të kontrolluar kualifikimin e njerëzve që marrin pjesë në to dhe thjesht numërimin numerik dhe statistikor të rezultateve të nxjerra nga proceset e pjesëmarrjes qytetare.
-            - 
-              field: 'Institucioni përgjegjës për dokumentin:'
-              description: 'Institucioni përgjegjës për dosjen:'
+      subtitle: "INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE"
     accessibility:
       title: Aksesueshmëria
       description: |-
@@ -174,10 +154,7 @@ sq:
         title: Pajtueshmëria me standardet dhe dizajni vizual
         description_html: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> W3C.'
     titles:
-      accessibility: Aksesueshmëria
-      conditions: Kushtet e përdorimit
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
-      privacy: Politika e privatësisë
     verify:
       code: Kodi që keni marrë në letër
       email: Email
