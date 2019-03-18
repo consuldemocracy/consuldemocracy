@@ -234,6 +234,8 @@ fr:
         draft_publication_date: Date de publication de l'ébauche
         allegations_start_date: Date de début des allégations
         allegations_end_date: Date de fin des allégations
+        proposals_phase_start_date: Début
+        proposals_phase_end_date: Fin
         result_publication_date: Date de publication du résultat final
       legislation/process/translation:
         title: Titre du processus
