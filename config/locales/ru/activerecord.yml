@@ -1,31 +1,186 @@
 ru:
   activerecord:
     models:
+      activity:
+        one: "деятельность"
+        few: "активность"
+        many: "активность"
+        other: "деятельности"
+      budget:
+        one: "Бюджет"
+        few: "Бюджеты"
+        many: "Бюджеты"
+        other: "Бюджеты"
+      budget/investment:
+        one: "Инвестиция"
+        few: "Инвестиции"
+        many: "Инвестиции"
+        other: "Инвестиции"
       milestone:
         one: "этап"
         few: "этапы"
         many: "этапы"
         other: "этапы"
+      milestone/status:
+        one: "Статус этапа"
+        few: "Статусы этапов"
+        many: "Статусы этапов"
+        other: "Статусы этапов"
+      progress_bar:
+        one: "Индикатор выполнения"
+        few: "Индикаторы выполнения"
+        many: "Индикаторы выполнения"
+        other: "Индикатор выполнения"
       comment:
         one: "Отзыв"
         few: "Комментарии"
         many: "Комментарии"
         other: "Комментарии"
+      debate:
+        one: "Дебаты"
+        few: "Дебаты"
+        many: "Дебаты"
+        other: "Обсуждения проблем"
       tag:
         one: "Метка"
         few: "Метки"
         many: "Метки"
         other: "Метки"
+      user:
+        one: "Пользователь"
+        few: "Пользователи"
+        many: "Пользователи"
+        other: "Пользователи"
+      moderator:
+        one: "Модератор"
+        few: "Модераторы"
+        many: "Модераторы"
+        other: "Модераторы"
+      administrator:
+        one: "Администратор"
+        few: "Администраторы"
+        many: "Администраторы"
+        other: "Администраторы"
+      valuator:
+        one: "Оценщик"
+        few: "Оценщики"
+        many: "Оценщики"
+        other: "Оценщики"
+      valuator_group:
+        one: "Группа оценки"
+        few: "Группы оценки"
+        many: "Группы оценки"
+        other: "Экспертные группы"
+      manager:
+        one: "Менеджер"
+        few: "Менеджеры"
+        many: "Менеджеры"
+        other: "Менеджеры"
+      newsletter:
+        one: "Информационный бюллетень"
+        few: "Новостные рассылки"
+        many: "Новостные рассылки"
+        other: "Информационные бюллетени"
       vote:
         one: "Голос"
         few: "Голоса"
         many: "Голоса"
         other: "Голоса"
+      organization:
+        one: "Организация"
+        few: "Организации"
+        many: "Организации"
+        other: "Организации"
+      poll/booth:
+        one: "кабинка для голосования"
+        few: "кабинки для голосования"
+        many: "кабинки для голосования"
+        other: "кабинки для голосований"
+      poll/officer:
+        one: "офицер"
+        few: "сотрудники"
+        many: "сотрудники"
+        other: "офицеры"
+      proposal:
+        one: "Предложение гражданина"
+        few: "Предложения граждан"
+        many: "Предложения граждан"
+        other: "Предложения граждан"
+      spending_proposal:
+        one: "Инвестиционный проект"
+        few: "Инвестиционные проекты"
+        many: "Инвестиционные проекты"
+        other: "Инновационные проекты"
+      site_customization/page:
+        one: Пользовательская страница
+        few: Пользовательские страницы
+        many: Пользовательские страницы
+        other: Пользовательские страницы
+      site_customization/image:
+        one: Пользовательское изображение
+        few: Пользовательские изображения
+        many: Пользовательские изображения
+        other: Пользовательские изображения
+      site_customization/content_block:
+        one: Пользовательский блок содержимого
+        few: Пользовательские блоки содержимого
+        many: Пользовательские блоки содержимого
+        other: Пользовательские блоки содержимого
+      legislation/process:
+        one: "Процесс"
+        few: "Процессы"
+        many: "Процессы"
+        other: "Процессы"
+      legislation/proposal:
+        one: "Заявка"
+        few: "Предложения"
+        many: "Предложения"
+        other: "Заявки"
+      legislation/draft_versions:
+        one: "Предварительный вариант"
+        few: "Черновые варианты"
+        many: "Черновые варианты"
+        other: "Предварительные варианты"
+      legislation/questions:
+        one: "Вопрос"
+        few: "Вопросы"
+        many: "Вопросы"
+        other: "Вопросы"
+      legislation/question_options:
+        one: "Вариант вопроса"
+        few: "Варианты вопроса"
+        many: "Варианты вопроса"
+        other: "Варианты вопроса"
+      legislation/answers:
+        one: "Ответ"
+        few: "Ответы"
+        many: "Ответы"
+        other: "Ответы"
       documents:
         one: "Документ"
         few: "Документы"
         many: "Документы"
         other: "Документы"
+      images:
+        one: "Изображение"
+        few: "Изображения"
+        many: "Изображения"
+        other: "Изображения"
+      topic:
+        one: "Тема"
+        few: "Темы"
+        many: "Темы"
+        other: "Темы"
+      poll:
+        one: "Опрос"
+        few: "Опросы"
+        many: "Опросы"
+        other: "Опросы"
+      proposal_notification:
+        one: "Уведомление о предложении"
+        few: "Уведомления о предложениях"
+        many: "Уведомления о предложениях"
+        other: "Уведомления о предложениях"
     attributes:
       budget:
         name: "Имя"
@@ -49,6 +204,7 @@ ru:
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
       milestone:
+        status_id: "Текущий статус (необязательно)"
         title: "Название"
         description: "Описание (опционально, если присвоен статус)"
         publication_date: "Дата публикации"
@@ -56,7 +212,12 @@ ru:
         name: "Имя"
         description: "Описание (опционально)"
       progress_bar:
+        kind: "Тип"
         title: "Название"
+        percentage: "Ход выполнения"
+      progress_bar/kind:
+        primary: "Основной"
+        secondary: "Второстепенный"
       budget/heading:
         name: "Название раздела"
         price: "Цена"
@@ -149,10 +310,16 @@ ru:
         end_date: Дата окончания
         debate_start_date: Дата начала обсуждения
         debate_end_date: Дата окончания обсуждения
+        draft_start_date: Начало
+        draft_end_date: Окончание
         draft_publication_date: Дата публикации проекта
         allegations_start_date: Дата начала заявлений
         allegations_end_date: Дата окончания заявлений
+        proposals_phase_start_date: Начало
+        proposals_phase_end_date: Окончание
         result_publication_date: Дата публикации окончательного результата
+        background_color: Цвет фона
+        font_color: Цвет шрифта
       legislation/process/translation:
         title: Название процесса
         summary: Резюме
@@ -210,6 +377,7 @@ ru:
         description: Описание
         link_text: Текст ссылки
         link_url: Ссылка URL
+        columns: Количество колонок
       widget/card/translation:
         label: Метка (опционально)
         title: Название
@@ -259,6 +427,8 @@ ru:
               invalid_date_range: должна равняться или быть позже даты начала
             debate_end_date:
               invalid_date_range: должна равняться или быть позже даты начала дебатов
+            draft_end_date:
+              invalid_date_range: должна быть равна или следовать за датой начала черновика
             allegations_end_date:
               invalid_date_range: должна равняться или быть позже даты начала обвинений без оснований
         proposal:
