@@ -19,7 +19,6 @@ sv:
         unconfirmed_code: Du har inte angett bekräftelsekoden ännu
       create:
         flash:
-          offices: Medborgarkontor
           success_html: Tack för att du begärt din <b>säkerhetskod (krävs endast för slutomröstningar) </b>. Vi skickar koden inom några dagar till den adress som du registrerat. Kom ihåg att du även kan få din kod från något av %{offices}.
       edit:
         see_all: Visa förslag
@@ -30,7 +29,6 @@ sv:
         explanation: 'För att delta i slutomröstningen kan du:'
         go_to_index: Visa förslag
         office: Verifiera dig personligen på något %{office}
-        offices: Medborgarkontor
         send_letter: Skicka ett brev till mig med koden
         title: Grattis!
         user_permission_info: Med ditt konto kan du...
@@ -61,7 +59,6 @@ sv:
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
         error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett %{offices}.
-        error_verifying_census_offices: medborgarkontor
         form_errors: gjorde att din adress inte kunde bekräftas
         postal_code: Postnummer
         postal_code_note: För att verifiera ditt konto måste du vara registrerad
