@@ -1,1 +1,40 @@
 tr:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} başarıyla oluşturuldu."
+        debate: "Tartışma başarıyla oluşturuldu."
+        direct_message: "Mesajınız başarıyla gönderildi."
+        poll: "Anket başarıyla oluşturuldu."
+        poll_booth: "Kabin başarıyla oluşturuldu."
+        poll_question_answer: "Yanıt başarıyla oluşturuldu"
+        poll_question_answer_video: "Video başarıyla oluşturuldu"
+        poll_question_answer_image: "Resim başarıyla yüklendi"
+        proposal: "Öneri başarıyla oluşturuldu."
+        proposal_notification: "Mesajınız doğru şekilde gönderildi."
+        spending_proposal: "Harcama önerisi başarıyla oluşturuldu. Buna %{activity}'den erişebilirsiniz"
+        budget_investment: "Bütçe Yatırımı başarıyla oluşturuldu."
+        signature_sheet: "İmza sayfası başarıyla oluşturuldu"
+        topic: "Konu başarıyla oluşturuldu."
+        valuator_group: "Bilirkişi grubu başarıyla oluşturuldu"
+      save_changes:
+        notice: Değişiklikler kaydedildi
+      update:
+        notice: "%{resource_name} başarıyla güncellendi."
+        debate: "Tartışma başarıyla güncellendi."
+        poll: "Anket başarıyla güncellendi."
+        poll_booth: "Kabin başarıyla güncellendi."
+        active_poll: "Anket tanımı başarıyla güncellendi."
+        proposal: "Öneri başarıyla güncellendi."
+        spending_proposal: "Yatırım projesi başarıyla güncellendi."
+        budget_investment: "Yatırım projesi başarıyla güncellendi."
+        topic: "Konu başarıyla güncellendi."
+        valuator_group: "Bilirkişi grubu başarıyla güncellendi"
+        translation: "Çeviri başarıyla güncellendi"
+      destroy:
+        spending_proposal: "Harcama önerisi başarıyla silindi."
+        budget_investment: "Yatırım projesi başarıyla silindi."
+        error: "Silinemedi"
+        topic: "Konu başarıyla silindi."
+        poll_question_answer_video: "Yanıt videosu başarıyla silindi."
+        valuator_group: "Bilirkişi grubu başarıyla silindi"
