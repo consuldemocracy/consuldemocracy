@@ -19,7 +19,6 @@ pl:
         unconfirmed_code: Nie podałeś jeszcze kodu potwierdzenia
       create:
         flash:
-          offices: Biura wsparcia obywatelskiego
           success_html: Dziękujemy za przesłanie prośby o podanie <b>kodu maksymalnego bezpieczeństwa (wymaganego tylko dla ostatecznych głosów) </b>. Za kilka dni wyślemy go na adres podany w danych, które mamy w aktach. Pamiętaj, że jeśli wolisz, możesz odebrać swój kod z dowolnego %{offices}.
       edit:
         see_all: Zobacz wnioski
@@ -30,7 +29,6 @@ pl:
         explanation: 'Aby wziąć udział w ostatnim głosowaniu, możesz:'
         go_to_index: Zobacz wnioski
         office: Sprawdź w dowolnym %{office}
-        offices: Biura wsparcia obywatelskiego
         send_letter: Wyślij do mnie list z kodem
         title: Gratulacje!
         user_permission_info: Z Twoim kontem możesz...
@@ -61,7 +59,6 @@ pl:
         error_not_allowed_age: Nie masz wymaganego wieku, aby wziąć udział
         error_not_allowed_postal_code: Aby zostać zweryfikowanym, użytkownik musi być zarejestrowany.
         error_verifying_census: Spis statystyczny nie był w stanie zweryfikować podanych przez Ciebie informacji. Upewnij się, że Twoje dane w spisie są poprawne, dzwoniąc do Urzędu Miejskiego lub odwiedzając go %{offices}.
-        error_verifying_census_offices: Biura wsparcia obywatelskiego
         form_errors: uniemożliwił weryfikację twojego miejsca zamieszkania
         postal_code: Kod pocztowy
         postal_code_note: Aby zweryfikować swoje konto, musisz być zarejestrowany
