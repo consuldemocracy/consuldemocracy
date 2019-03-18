@@ -367,8 +367,6 @@ es-PE:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      improve_info: "Mejora tu campaña y consigue más apoyos"
-      improve_info_link: "Ver más información"
       already_supported: Você já apoiou esta proposta. Compartilhe!
       comments:
         zero: Sin comentarios
@@ -469,7 +467,6 @@ es-PE:
         title: "Preguntas ciudadanas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
-    create_question: "Crear pregunta para votación"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
@@ -572,7 +569,6 @@ es-PE:
       next_slide: Siguiente imagen
     documentation: Documentación adicional
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
@@ -740,7 +736,7 @@ es-PE:
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas
-      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
+      user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
       user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
