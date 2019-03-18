@@ -28,7 +28,7 @@ nl:
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
     proposal_notification_digest:
-      info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
+      info: "Dit zijn nieuwe meldingen die zijn gepubliceerd in relatie tot voorstellen die je hebt gesteund in %{org_name}."
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal
