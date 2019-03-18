@@ -232,6 +232,8 @@ it:
         debate_start_date: Data di inizio del dibattito
         debate_end_date: Data di fine del dibattito
         draft_publication_date: Data di pubblicazione della bozza
+        proposals_phase_start_date: Inizio
+        proposals_phase_end_date: Fine
         result_publication_date: Data di pubblicazione del risultato finale
       legislation/process/translation:
         title: Titolo del Procedimento
