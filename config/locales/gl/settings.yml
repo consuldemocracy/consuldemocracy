@@ -48,8 +48,6 @@ gl:
     url_description: "URL principal do sitio"
     org_name: "Organización"
     org_name_description: "Nome de organización"
-    place_name: "Lugar"
-    place_name_description: "Nome da túa cidade"
     related_content_score_threshold: "Límite de puntuación de contido relacionados"
     related_content_score_threshold_description: "Agocha o contido que os usuarios marcan como non relacionado"
     hot_score_period_in_days: "Período (en días) usado polo filtro 'máis activo'"
@@ -73,11 +71,6 @@ gl:
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Os usuarios maiores desta idade poden participar en todos os procesos"
     analytics_url: "URL de analytics"
-    blog_url: "URL do blog"
-    transparency_url: "URL de Transparency"
-    opendata_url: "URL de Open Data"
-    verification_offices_url: URL oficinas de verificación
-    proposal_improvement_path: Ligazón interna para mellorar propostas
     feature:
       budgets: "Orzamentos participativos"
       budgets_description: "Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento municipal"
@@ -126,4 +119,4 @@ gl:
       public_stats: "Estatísticas públicas"
       public_stats_description: "Amosa as estatísticas públicas no panel de administración"
       help_page: "Páxina de axuda"
-      help_page_description: "Amosa un menú de axuda que contén unha páxina con información sobre cada unha das características habilitadas"
+      help_page_description: 'Amosa un menú de axuda que contén unha páxina con información sobre cada unha das características habilitadas'
