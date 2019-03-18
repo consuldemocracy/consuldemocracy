@@ -111,10 +111,6 @@ sl:
         tags_filter_all: Vse oznake
         advanced_filters: Napredni filtri
         placeholder: Išči projekte
-        sort_by:
-          placeholder: Razvrsti po
-          title: Naslov
-          supports: Podpira
         filters:
           all: Vsi
           without_admin: Brez določenega administratorja
@@ -275,8 +271,6 @@ sl:
           debate_phase: Faza debate
           allegations_phase: Faza obtožb
           proposals_phase: Faza predlogov
-          start: Začetek
-          end: Konec
           use_markdown: Uporabi markdown za oblikovanje besedila
           title_placeholder: Naslov procesa
           summary_placeholder: Kratek povzetek opisa
@@ -287,7 +281,6 @@ sl:
           delete: Izbriši
           title: Procesi legislacije
           filters:
-            open: Odpri
             all: Vsi
         new:
           back: Nazaj
@@ -296,7 +289,6 @@ sl:
         process:
           title: Proces
           comments: Komentarji
-          creation_date: Ustvarjen na
           status_open: Odprt
           status_closed: Zaprt
           status_planned: Načrtovan
@@ -408,7 +400,6 @@ sl:
       activity: Aktivnost moderatorja
       admin: Admin meni
       banner: Upravljanje pasic
-      poll_questions: Vprašanja za glasovanje
       proposals_topics: Teme predlogov
       budgets: Participatorni proračuni
       geozones: Upravljanje geocone
@@ -440,7 +431,6 @@ sl:
         content_blocks: Bloki vsebine po meri
       title_moderated_content: Moderirana vsebina
       title_budgets: Proračuni
-      title_polls: Glasovanja
       title_profiles: Profili
       title_site_customization: Prilagajanje spletnega mesta
       legislation: Kolaborativna zakonodaja
@@ -840,10 +830,6 @@ sl:
       flash:
         updated: Vrednost posodobljena
       index:
-        banners: Slogi pasic
-        banner_imgs: Slike pasic
-        no_banners_images: Ni slik pasic
-        no_banners_styles: Ni slogov pasic
         title: Nastavitve konfiguracije
         update_setting: Posodobi
         feature_flags: Funkcije
