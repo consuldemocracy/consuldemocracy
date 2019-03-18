@@ -1,0 +1,23 @@
+da:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} blev oprettet."
+        debate: "Debatindlægget blev oprettet."
+        direct_message: "Din besked blev sendt."
+        poll: "Meningsmålingen blev oprettet."
+        poll_question_answer: "Du har indsendt dit svar"
+        poll_question_answer_image: "Billedet blev uploadet"
+        proposal: "Forslaget blev oprettet."
+        proposal_notification: "Din besked blev sendt korrekt."
+      save_changes:
+        notice: Ændringerne blev gemt
+      update:
+        notice: "%{resource_name} blev opdateret."
+        debate: "Debatindlægget blev opdateret."
+        spending_proposal: "Investeringsprojektet blev opdateret."
+        budget_investment: "Investeringsprojektet blev opdateret."
+      destroy:
+        error: "Kunne ikke slettes"
+        topic: "Emne blev slettet."
+        valuator_group: "Evaluatorgruppen blev slettet"
