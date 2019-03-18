@@ -127,8 +127,10 @@ da:
     budget_headings:
       name: "Navn"
       form:
+        amount: "Beløb"
         latitude: "Breddegrad (valgfri)"
         longitude: "Længdegrad (valgfri)"
+        submit: "Gem position"
     budget_phases:
       edit:
         start_date: Startdato
@@ -147,6 +149,7 @@ da:
         placeholder: Søg efter projekter
         filters:
           all: Alle
+          without_admin: Uden tildelte administrator
           under_valuation: Under værdiansættelse
           valuation_finished: Værdiansættelse færdig
           selected: Vælg
