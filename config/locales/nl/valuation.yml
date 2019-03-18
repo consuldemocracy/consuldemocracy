@@ -5,7 +5,7 @@ nl:
     menu:
       title: Evaluatie
       budgets: Participatory budgets
-      spending_proposals: Spending proposals
+      spending_proposals: Begrotingsvoorstellen
     budgets:
       index:
         title: Participatory budgets
@@ -17,6 +17,7 @@ nl:
         table_assigned_investments_valuation_open: Investment projects assigned with valuation open
         table_actions: Activiteiten
         evaluate: Evaluate
+        no_budgets: "Er zijn geen budgetten"
     budget_investments:
       index:
         headings_filter_all: Alle koppen
