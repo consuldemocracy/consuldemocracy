@@ -19,7 +19,6 @@ ca:
         unconfirmed_code: Encara no has introduït el codi de confirmació
       create:
         flash:
-          offices: Oficina d'Atenció al Ciutadà
           success_html: Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.Recorda que pots estalviar l'enviament verificant-te presencialment en qualsevol de les %{offices}.
       edit:
         see_all: Veure propostes
@@ -30,7 +29,6 @@ ca:
         explanation: 'Per a participar en les votacions finals pots:'
         go_to_index: Veure propostes
         office: Verificar-te presencialment en qualsevol %{office}
-        offices: Oficina d'Atenció al Ciutadà
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
@@ -58,7 +56,6 @@ ca:
           residence_card: Targeta de residència
         document_type_label: Tipus de document
         error_not_allowed_age: No tens l'edat mínima per a participar
-        error_verifying_census_offices: oficina d'Atenció al ciutadà
         form_errors: van evitar verificar la teua residència
         postal_code: Codi postal
         postal_code_note: Per a verificar les teues dades has d'estar empadronat
