@@ -23,15 +23,9 @@ it:
     instagram_handle: "Utente Instagram"
     url: "URL principale"
     org_name: "Organizzazione"
-    place_name: "Luogo"
     meta_description: "Descrizione del sito (SEO)"
     meta_keywords: "Parole chiave (SEO)"
     min_age_to_participate: Età minima necessaria per partecipare
-    blog_url: "URL del Blog"
-    transparency_url: "URL per la trasparenza"
-    opendata_url: "URL per Open Data"
-    verification_offices_url: URL dell'ufficio che verifica
-    proposal_improvement_path: Informazioni su come migliorare le proposte
     feature:
       budgets: "Bilancio partecipativo"
       twitter_login: "Accesso con Twitter"
