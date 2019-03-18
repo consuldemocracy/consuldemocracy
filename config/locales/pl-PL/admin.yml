@@ -38,8 +38,6 @@ pl:
           proposals: Wnioski
           budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
-        background_color: Kolor tła
-        font_color: Kolor czcionki
       edit:
         editing: Edytuj baner
         form:
@@ -115,8 +113,24 @@ pl:
         recalculate: Przelicz inwestycje na zwycięzcę
     budget_groups:
       name: "Nazwa"
+      headings_name: "Nagłówki"
+      headings_edit: "Edytowanie nagłówków"
+      headings_manage: "Zarządzanie nagłówkami"
       max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
+      amount:
+        one: "Istnieje 1 grupa"
+        few: "Istnieje %{count} grup"
+        many: "Istnieje %{count} grup"
+        other: "Istnieje %{count} grup"
+      create:
+        notice: "Pomyślnie utworzono grupę!"
+      update:
+        notice: "Grupa zaktualizowana"
+      destroy:
+        success_notice: "Grupa skasowana"
+        unable_notice: "Nie można zniszczyć grupy, która ma powiązanie z nagłówkiem"
       form:
+        create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
         name: "Nazwa grupy"
         submit: "Zapisz grupę"
@@ -147,11 +161,6 @@ pl:
         tags_filter_all: Wszystkie tagi
         advanced_filters: Zaawansowane filtry
         placeholder: Wyszukaj projekty
-        sort_by:
-          placeholder: Sortuj według
-          id: Numer ID
-          title: Tytuł
-          supports: Wsparcie
         filters:
           all: Wszystkie
           without_admin: Bez przypisanego administratora
@@ -299,6 +308,8 @@ pl:
         notice: Status inwestycji został pomyślnie usunięty
     progress_bars:
       index:
+        title: "Pasek postępu"
+        no_progress_bars: "Nie ma paska postępów"
         table_id: "Numer ID"
         table_kind: "Typ"
         table_title: "Tytuł"
@@ -373,8 +384,6 @@ pl:
           debate_phase: Faza debaty
           allegations_phase: Faza Komentarzy
           proposals_phase: Etap składania wniosków
-          start: Początek
-          end: Koniec
           use_markdown: Sformatuj tekst za pomocą Markdown
           title_placeholder: Tytuł procesu
           summary_placeholder: Krótkie podsumowanie opisu
@@ -386,7 +395,6 @@ pl:
           delete: Usuń
           title: Procesy legislacyjne
           filters:
-            open: Otwórz
             all: Wszystkie
         new:
           back: Wróć
@@ -401,7 +409,6 @@ pl:
           title: Proces
           comments: Komentarze
           status: Status
-          creation_date: Data utworzenia
           status_open: Otwórz
           status_closed: Zamknięty
           status_planned: Zaplanowany
@@ -526,7 +533,6 @@ pl:
       activity: Aktywność moderatora
       admin: Menu admina
       banner: Zarządzaj banerami
-      poll_questions: Pytania
       proposals: Wnioski
       proposals_topics: Tematy propozycji
       budgets: Budżety partycypacyjne
@@ -576,7 +582,6 @@ pl:
           save: "Zapisz"
       title_moderated_content: Zawartość moderowana
       title_budgets: Budżety
-      title_polls: Ankiety
       title_profiles: Profile
       title_settings: Ustawienia
       title_site_customization: Zawartość witryny
@@ -695,9 +700,22 @@ pl:
         send_pending: Wyślij oczekujące
         send_pending_notification: Oczekujące powiadomienia wysłane pomyślnie
       proposal_notification_digest:
-        title: Przegląd powiadomień o wnioskach
-        description: Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail.
-        preview_detail: Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują
+        title: "Przegląd powiadomień o wnioskach"
+        description: "Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail."
+        preview_detail: "Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują"
+      email_verification:
+        title: "Weryfikacja adresu e-mail"
+        description: "Wysłane do nowego użytkownika w celu weryfikacji jego konta."
+      user_invite:
+        title: "Zaproszenie użytkownika"
+        description: "Wysłane do osoby, która została zaproszona do zarejestrowania konta."
+      edit_info: "Można edytować ten e-mail w"
+      message_title: "Tytuł wiadomości"
+      message_body: "Jest to próbka treści wiadomości."
+      alert:
+        no_investments: "Nie ma żadnych utworzonych inwestycji budżetowych. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
+        no_comments: "Nie ma żadnych utworzonych komentarzy. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
+        no_replies: "Nie ma żadnych udzielonych odpowiedzi. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
     emails_download:
       index:
         title: Pobieranie e-mail
@@ -801,6 +819,7 @@ pl:
       flash:
         create: "Zmiana dodana"
         destroy: "Zmiana usunięta"
+        unable_to_destroy: "Przesunięcia wraz z powiązanymi wynikami lub przeliczeniami nie mogą być usunięte"
         date_missing: "Data musi być zaznaczona"
       vote_collection: Zbierz Głosy
       recount_scrutiny: Przeliczenie & Kontrola
@@ -840,6 +859,13 @@ pl:
         no_booths: "Brak stanowisk przydzielonych do tego głosowania."
         table_name: "Nazwa"
         table_location: "Lokalizacja"
+    active_polls:
+      edit:
+        title: "Opis sondy"
+      form:
+        description:
+          text: "Opis"
+          help_text: "Ten tekst będzie wyświetlany w nagłówku strony sondy. Można go użyć do dodania kontekstu w stosunku do aktywnych sond."
     polls:
       index:
         title: "Lista aktywnych głosowań"
@@ -869,6 +895,8 @@ pl:
         no_questions: "Brak pytań przydzielonych do tego głosowania."
         questions_title: "Lista pytań"
         table_title: "Tytuł"
+        edit_answers: Edytowanie odpowiedzi
+        see_proposal: "(Zobacz wnioski)"
       flash:
         question_added: "Pytanie dodane do tego głosowania"
         error_on_question_added: "Pytanie nie mogło zostać przypisane do tego głosowania"
@@ -885,10 +913,12 @@ pl:
         table_proposal: "Wniosek"
         table_question: "Pytanie"
         table_poll: "Głosowanie"
+        poll_not_assigned: "Punkt nie przypisany"
       edit:
         title: "Edytuj Pytanie"
       new:
         title: "Utwórz Pytanie"
+        title_proposal: "Stwórz pytanie"
         poll_label: "Ankieta"
       answers:
         images:
@@ -938,6 +968,9 @@ pl:
       index:
         title: "Przeliczenia"
         no_recounts: "Nie ma nic do przeliczenia"
+        all_booths_total: "Łączna suma z wszystkich kabin:"
+        total_final: "Wynik przeliczenia"
+        total_system: "Głosy (automatyczne)"
         table_booth_name: "Kabina wyborcza"
         table_total_recount: "Całkowite przeliczenie (przez urzędnika)"
         table_system_count: "Głosy (automatyczne)"
@@ -986,6 +1019,7 @@ pl:
         official_updated: Szczegóły o urzędniku zapisane
       index:
         title: Urzędnicy
+        help: Konta użytkowników oznaczone jako urzędnicy na portalu, będą miały swoje podświetlenia. Można zdefiniować etykiety, które pojawią się obok nazwy użytkownika. Najwyższy poziom (poziom 1) a najniższy (poziom 5).
         no_officials: Brak urzędników.
         name: Nazwa
         official_position: Oficjalne stanowisko
@@ -1032,6 +1066,9 @@ pl:
         id: Numer ID
         author: Autor
         milestones: Kamienie milowe
+        no_proposals: Brak wniosków.
+      show:
+        create_question: Poddaj ten wniosek pod głosowanie w sondzie
     hidden_proposals:
       index:
         filter: Filtr
@@ -1054,10 +1091,6 @@ pl:
       flash:
         updated: Wartość zaktualizowana
       index:
-        banners: Style banerów
-        banner_imgs: Obrazy banerów
-        no_banners_images: Brak obrazów banerów
-        no_banners_styles: Brak styli banerów
         title: Ustawienia konfiguracji
         update_setting: Zaktualizuj
         feature_flags: Funkcje
