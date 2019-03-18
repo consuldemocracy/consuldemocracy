@@ -1,0 +1,8 @@
+da:
+  milestones:
+    index:
+      no_milestones: Har ingen milepæle
+      progress: Forløb
+    show:
+      publication_date: "Publiceret %{publication_date}"
+      status_changed: Status er ændret til
