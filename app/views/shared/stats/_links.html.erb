@@ -3,13 +3,10 @@
   <li>
     <%= link_to t("stats.total_participants"), "#total_participants" %>
   </li>
-  <li>
-    <%= link_to t("stats.by_gender"), "#participants_by_gender" %>
-  </li>
-  <li>
-    <%= link_to t("stats.by_age"), "#participants_by_age" %>
-  </li>
-  <li>
-    <%= link_to t("stats.by_geozone"), "#participants_by_geozone" %>
-  </li>
+
+  <% stats.participations.each do |stat| %>
+    <li>
+      <%= link_to t("stats.by_#{stat}"), "#participants_by_#{stat}" %>
+    </li>
+  <% end %>
 </ul>

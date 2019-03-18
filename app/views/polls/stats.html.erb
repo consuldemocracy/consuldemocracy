@@ -7,7 +7,7 @@
 
   <div class="row margin">
     <div class="small-12 medium-3 column sidebar">
-      <%= render "shared/stats/links" %>
+      <%= render "shared/stats/links", stats: @stats %>
 
       <p><strong><%= link_to t("stats.advanced"), "#advanced_statistics" %></strong></p>
       <ul class="menu vertical">

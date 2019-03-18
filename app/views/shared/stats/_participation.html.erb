@@ -11,73 +11,7 @@
     ) %>
   </div>
 
-  <div id="participants_by_gender" class="stats-group">
-    <h4><%= t("stats.by_gender") %></h4>
-
-    <%= number_with_info_tags(
-      stats.total_male_participants,
-      t("stats.men_percentage", percentage: number_to_stats_percentage(stats.male_percentage)),
-      html_class: "participants male"
-    ) %>
-
-    <%= number_with_info_tags(
-      stats.total_female_participants,
-      t("stats.women_percentage", percentage: number_to_stats_percentage(stats.female_percentage)),
-      html_class: "participants female"
-    ) %>
-  </div>
-
-  <div id="participants_by_age" class="stats-group">
-    <h4><%= t("stats.by_age") %></h4>
-
-    <table>
-      <thead>
-        <tr>
-          <th class="small-4"><%= t("stats.age") %></th>
-          <th><%= t("stats.total") %></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% stats.participants_by_age.values.each do |group| %>
-          <tr>
-            <td><%= group[:range] %></td>
-            <td>
-              <strong>
-                <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
-              </strong>
-              <div class="progress" tabindex="0">
-                <span class="progress-meter" style="width: <%= group[:percentage] %>%">
-                </span>
-              </div>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-  <div id="participants_by_geozone" class="stats-group">
-    <h4><%= t("stats.by_geozone") %></h4>
-
-    <table>
-      <thead>
-        <tr>
-          <th><%= t("stats.geozone") %></th>
-          <th><%= t("stats.total") %></th>
-          <th><%= t("stats.geozone_participation") %></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% stats.participants_by_geozone.each do |geozone, participants| %>
-          <tr>
-            <td><%= geozone %></td>
-            <td><%= "#{participants[:total][:count]} (#{number_to_stats_percentage(participants[:total][:percentage])})" %></td>
-            <td><%= number_to_stats_percentage(participants[:percentage]) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <% stats.participations.each do |participation| %>
+    <%= render "shared/stats/#{participation}", stats: stats %>
+  <% end %>
 </div>

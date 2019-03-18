@@ -1,5 +1,6 @@
 module Statisticable
   extend ActiveSupport::Concern
+  PARTICIPATIONS = %w[gender age geozone]
 
   included do
     attr_reader :resource
@@ -9,7 +10,27 @@ module Statisticable
     end
 
     def generate
-      self.class.stats_methods.each { |stat_name| send(stat_name) }
+      stats_methods.each { |stat_name| send(stat_name) }
+    end
+
+    def stats_methods
+      base_stats_methods + participation_methods
+    end
+
+    def participations
+      PARTICIPATIONS.select { |participation| send("#{participation}?") }
+    end
+
+    def gender?
+      participants.male.any? || participants.female.any?
+    end
+
+    def age?
+      participants.between_ages(age_groups.flatten.min, age_groups.flatten.max).any?
+    end
+
+    def geozone?
+      participants.where(geozone: geozones).any?
     end
 
     def total_male_participants
@@ -66,6 +87,14 @@ module Statisticable
 
     private
 
+      def base_stats_methods
+        self.class.base_stats_methods
+      end
+
+      def participation_methods
+        participations.map { |participation| self.class.send("#{participation}_methods") }.flatten
+      end
+
       def total_participants_with_gender
         participants.where.not(gender: nil).distinct.count
       end
@@ -115,10 +144,28 @@ module Statisticable
 
   class_methods do
     def stats_methods
-      %i[total_participants
-         total_male_participants total_female_participants total_unknown_gender_or_age
-         male_percentage female_percentage
-         participants_by_age participants_by_geozone]
+      base_stats_methods + gender_methods + age_methods + geozone_methods
+    end
+
+    def base_stats_methods
+      %i[total_participants participations] + participation_check_methods
+    end
+
+    def participation_check_methods
+      PARTICIPATIONS.map { |participation| :"#{participation}?" }
+    end
+
+    def gender_methods
+      %i[total_male_participants total_female_participants total_unknown_gender_or_age
+         male_percentage female_percentage]
+    end
+
+    def age_methods
+      [:participants_by_age]
+    end
+
+    def geozone_methods
+      [:participants_by_geozone]
     end
 
     def stats_cache(*method_names)
