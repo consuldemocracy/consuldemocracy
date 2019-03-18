@@ -48,8 +48,6 @@ val:
     url_description: "URL principal de la web"
     org_name: "Nom de la organització"
     org_name_description: "Nom de l'organització"
-    place_name: "Nom del lloc"
-    place_name_description: "Nom de la teua ciutat"
     related_content_score_threshold: "Llindar de puntuació de contingut relacionat"
     related_content_score_threshold_description: "Oculta el contingut que els usuaris marquen com a no relacionat"
     hot_score_period_in_days: "Periode (en dies) usat pel filtre 'més actius'"
@@ -73,11 +71,6 @@ val:
     min_age_to_participate: Edat mínima per a participar
     min_age_to_participate_description: "Els usuaris majors d'edat podran participar en tots els processos"
     analytics_url: "URL d'estadístiques externes"
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparència"
-    opendata_url: "URL de open data"
-    verification_offices_url: URL oficines verificació
-    proposal_improvement_path: Enllaç a informació per a millorar propostes
     feature:
       budgets: "Pressupostos participatius"
       budgets_description: "Amb els pressupostos participatius la ciutadanía decideix a quins projectes presentats per els veins i veines va destinada una part del pressupost municipal"
@@ -126,4 +119,4 @@ val:
       public_stats: "Estadístiques públiques"
       public_stats_description: "Mostra les estadístiques públiques en el panell d'Administració"
       help_page: "Pàgina d'ajuda"
-      help_page_description: "Mostra un menú Ajuda que conté una pàgina amb una secció d'informació sobre cada funcionalitat habilitada"
+      help_page_description: 'Mostra un menú Ajuda que conté una pàgina amb una secció d''informació sobre cada funcionalitat habilitada'
