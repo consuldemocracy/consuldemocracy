@@ -1,0 +1,83 @@
+da:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloker bruger
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+          with_ignored_flag: Markér som set
+        headers:
+          comment: Kommentar
+        hide_comments: Skjul kommentarer
+        ignore_flags: Markér som set
+        orders:
+          newest: Nyeste
+        title: Kommentarer
+    debates:
+      index:
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+          with_ignored_flag: Markér som set
+        headers:
+          debate: Debat
+        hide_debates: Skjul debatindlæg
+        ignore_flags: Markér som set
+        orders:
+          created_at: Nyeste
+        title: Debatindlæg
+    menu:
+      flagged_comments: Kommentarer
+      flagged_investments: Budgetinvesteringer
+      proposals: Borgerforslag
+      users: Bloker brugere
+    proposals:
+      index:
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+          with_ignored_flag: Markér som set
+        headers:
+          proposal: Borgerforslag
+        hide_proposals: Skjul forslag
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+        title: Borgerforslag
+    budget_investments:
+      index:
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+        headers:
+          budget_investment: Budgetinvestering
+        hide_budget_investments: Skjul budgetinvesteringer
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+        title: Budgetinvesteringer
+    proposal_notifications:
+      index:
+        confirm: Er du sikker?
+        filters:
+          all: Alle
+          ignored: Markér som set
+        headers:
+          proposal_notification: Notifikationer om forslag
+        hide_proposal_notifications: Skjul forslag
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+          moderated: Modereret
+        title: Notifikationer om forslag
+    users:
+      index:
+        hidden: Blokeret
+        hide: Bloker
+        search: Søg
+        search_placeholder: e-mail eller brugernavn
+        title: Bloker brugere
+      notice_hide: Bruger blokeret. Alle brugerens debatindlag og kommentarer er blevet skjult.
