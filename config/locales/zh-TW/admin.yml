@@ -38,8 +38,6 @@ zh-TW:
           proposals: 建議
           budgets: 參與式預算編制
           help_page: 説明頁
-        background_color: 背景色
-        font_color: 字體色
       edit:
         editing: 編輯橫幅
         form:
@@ -144,11 +142,6 @@ zh-TW:
         tags_filter_all: 所有標籤
         advanced_filters: 高級篩選器
         placeholder: 搜索項目
-        sort_by:
-          placeholder: 排序依據
-          id: ID
-          title: 標題
-          supports: 支持
         filters:
           all: 所有
           without_admin: 沒有指定的管理員
@@ -370,8 +363,6 @@ zh-TW:
           debate_phase: 辯論階段
           allegations_phase: 評論階段
           proposals_phase: 建議階段
-          start: 開始
-          end: 結束
           use_markdown: 使用Markdown格式化文本
           title_placeholder: 進程的標題
           summary_placeholder: 描述的簡短摘要
@@ -383,7 +374,6 @@ zh-TW:
           delete: 刪除
           title: 立法進程
           filters:
-            open: 開
             all: 所有
         new:
           back: 返回
@@ -398,7 +388,6 @@ zh-TW:
           title: 進程
           comments: 評論
           status: 狀態
-          creation_date: 創建日期
           status_open: 開
           status_closed: 關
           status_planned: 計劃
@@ -523,7 +512,6 @@ zh-TW:
       activity: 審核員活動
       admin: 管理菜單
       banner: 管理橫幅
-      poll_questions: 問題
       proposals: 建議
       proposals_topics: 建議主題
       budgets: 參與性預算
@@ -573,7 +561,6 @@ zh-TW:
           save: "儲存"
       title_moderated_content: 已審核的內容
       title_budgets: 預算
-      title_polls: 投票
       title_profiles: 配置檔
       title_settings: 設置
       title_site_customization: 網站內容
@@ -692,9 +679,9 @@ zh-TW:
         send_pending: 有待發送
         send_pending_notification: 待處理通知已成功發送
       proposal_notification_digest:
-        title: 建議通知摘要
-        description: 在單個消息中收集用戶的所有建議通知，以避免過多的電子郵件。
-        preview_detail: 用戶將只收到他們所跟蹤的建議之通知
+        title: "建議通知摘要"
+        description: "在單個消息中收集用戶的所有建議通知，以避免過多的電子郵件。"
+        preview_detail: "用戶將只收到他們所跟蹤的建議之通知"
     emails_download:
       index:
         title: 電子郵件下載
@@ -1053,10 +1040,6 @@ zh-TW:
       flash:
         updated: 價值已更新
       index:
-        banners: 橫幅樣式
-        banner_imgs: 橫幅圖像
-        no_banners_images: 無橫幅圖像
-        no_banners_styles: 無橫幅樣式
         title: 配置設置
         update_setting: 更新
         feature_flags: 功能
