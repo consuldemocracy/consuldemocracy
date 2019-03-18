@@ -1,5 +1,11 @@
 tr:
   seeds:
+    settings:
+      official_level_1_name: Resmi pozisyon 1
+      official_level_2_name: Resmi pozisyon 2
+      official_level_3_name: Resmi pozisyon 3
+      official_level_4_name: Resmi pozisyon 4
+      official_level_5_name: Resmi pozisyon 5
     geozones:
       north_district: Kuzey Bölgesi
       west_district: Kuzey Bölgesi
@@ -30,6 +36,16 @@ tr:
       groups:
         all_city: Tüm şehir
         districts: İlçeler
+      valuator_groups:
+        culture_and_sports: Kültür & Spor
+        gender_and_diversity: Cinsiyet & Çeşitlilik Politikaları
+        urban_development: Sürdürülebilir Kentsel Gelişim
+        equity_and_employment: Eşitlik & İstihdam
+      statuses:
+        studying_project: Projenin incelenmesi
+        bidding: Teklif verme
+        executing_project: Projeyi yürütmek
+        executed: Gerçekleştirilen
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
