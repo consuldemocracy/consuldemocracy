@@ -183,4 +183,50 @@ describe Poll::Stats do
       expect(stats.participants_by_geozone["Midgar"][:percentage]).to eq(33.333)
     end
   end
+
+  describe "#channels" do
+    context "no participants" do
+      it "returns no channels" do
+        expect(stats.channels).to eq []
+      end
+    end
+
+    context "only participants from web" do
+      before { create(:poll_voter, :from_web, poll: poll) }
+
+      it "returns the web channel" do
+        expect(stats.channels).to eq ["web"]
+      end
+    end
+
+    context "only participants from booth" do
+      before do
+        create(:poll_recount, :from_booth, poll: poll, total_amount: 1)
+      end
+
+      it "returns the booth channel" do
+        expect(stats.channels).to eq ["booth"]
+      end
+    end
+
+    context "only participants from letter" do
+      before { create(:poll_voter, origin: "letter", poll: poll) }
+
+      it "returns the web channel" do
+        expect(stats.channels).to eq ["letter"]
+      end
+    end
+
+    context "participants from all channels" do
+      before do
+        create(:poll_voter, :from_web, poll: poll)
+        create(:poll_recount, :from_booth, poll: poll, total_amount: 1)
+        create(:poll_voter, origin: "letter", poll: poll)
+      end
+
+      it "returns all channels" do
+        expect(stats.channels).to eq %w[web booth letter]
+      end
+    end
+  end
 end

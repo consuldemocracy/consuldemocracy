@@ -21,6 +21,10 @@ class Poll::Stats
     total_participants_web + total_participants_booth
   end
 
+  def channels
+    CHANNELS.select { |channel| send(:"total_participants_#{channel}") > 0 }
+  end
+
   CHANNELS.each do |channel|
     define_method :"total_participants_#{channel}" do
       send(:"total_#{channel}_valid") +
@@ -58,7 +62,7 @@ class Poll::Stats
   end
 
   def total_letter_valid
-    0 # TODO
+    voters.where(origin: "letter").count # TODO: count only valid votes
   end
 
   def total_letter_white
