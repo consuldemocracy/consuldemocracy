@@ -19,7 +19,6 @@ zh-TW:
         unconfirmed_code: 您尚未輸入確認代碼
       create:
         flash:
-          offices: 公民支援辦公室
           success_html: 感謝您申請<b>最高安全代碼(僅用於最終投票)</b>。 過幾天，我們會將它發送到我們數據存檔中的地址。 請記住，如果您願意，可以到任何%{offices} 領取您的代碼。
       edit:
         see_all: 查看建議
@@ -30,7 +29,6 @@ zh-TW:
         explanation: '要參與最終投票，您可以：'
         go_to_index: 查看建議
         office: 在任何%{office} 中核實
-        offices: 公民支援辦公室
         send_letter: 給我發一封帶代碼的信
         title: 恭喜！
         user_permission_info: 您可以用您的帳戶來......
@@ -61,7 +59,6 @@ zh-TW:
         error_not_allowed_age: 您未到參與所需的年齡
         error_not_allowed_postal_code: 為了要被核實，您必須註冊。
         error_verifying_census: 人口普查不能核實您的信息。 請致電市議會或訪問%{offices}，確認您的人口普查詳細資料是正確的。
-        error_verifying_census_offices: 公民支援辦公室
         form_errors: 阻止了您居住地的核實
         postal_code: 郵政編碼
         postal_code_note: 要核實您的帳戶，您必須註冊
