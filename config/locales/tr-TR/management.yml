@@ -1,7 +1,150 @@
 tr:
   management:
+    account:
+      menu:
+        reset_password_email: Şifreyi e-posta ile sıfırla
+        reset_password_manually: Şifreyi elle sıfırla
+      alert:
+        unverified_user: Henüz doğrulanmış kullanıcı giriş yapmadı
+      show:
+        title: Kullanıcı hesabı
+      edit:
+        title: 'Kullanıcı hesabını düzenle: Şifreyi sıfırla'
+        back: Geri
+        password:
+          password: Şifre
+          send_email: Parola sıfırlama e-postası gönder
+          reset_email_send: E-posta doğru gönderildi.
+          reseted: Şifre başarıyla sıfırlandı
+          random: Rastgele şifre oluştur
+          save: Şifreyi kaydet
+          print: Şifreyi yazdır
+          print_help: Şifreyi kaydedildiğinde yazdırabilirsiniz.
+    account_info:
+      change_user: Kullanıcı değiştir
+      document_number_label: 'Belge numarası:'
+      document_type_label: 'Belge türü:'
+      email_label: 'E-posta:'
+      identified_label: 'Olarak tanımlandı:'
+      username_label: 'Kullanıcı adı:'
+    check: Belgeyi kontrol et
+    dashboard:
+      index:
+        title: Yönetim
+        info: Burada, kullanıcıları sol menüde listelenen tüm eylemlerle yönetebilirsiniz.
+    document_number: Belge numarası
     document_type_label: Belge Türü
+    document_verifications:
+      already_verified: Bu kullanıcı hesabı zaten doğrulandı.
+      has_no_account_html: Bir hesap oluşturmak için %{link}'e gidin ve ekranın sol üst kısmındaki <b>'Kayıt Ol</b>'a tıklayın.
+      link: CONSUL
+      in_census_has_following_permissions: 'Bu kullanıcı aşağıdaki izinlerle web sitesiye katılabilir:'
+      not_in_census: Bu belge kayıtlı değil.
+      not_in_census_info: 'Census''ta bulunmayan vatandaşlar web sitesiye aşağıdaki izinlerle katılabilir:'
+      please_check_account_data: Lütfen yukarıdaki hesap verilerinin doğruluğunu kontrol edin.
+      title: Kullanıcı yönetimi
+      under_age: "Hesabınızı doğrulamak için gereken yaşta değilsiniz."
+      verify: Doğrula
     email_label: E-posta
     date_of_birth: Doğum tarihi
+    email_verifications:
+      already_verified: Bu kullanıcı hesabı zaten doğrulandı.
+      choose_options: 'Lütfen aşağıdaki seçeneklerden birini seçin:'
+      document_found_in_census: Bu belge sayımda bulundu, ancak bunla alakalı bir kullanıcı hesabı yok.
+      document_mismatch: 'Bu e-posta adresi, zaten bir ilişkilendirilmiş kimliği olan bir kullanıcıya aittir: %{document_number}(%{document_type})'
+      email_placeholder: Bu kişinin hesabını oluşturmak için kullandığı e-postayı yazın
+      email_sent_instructions: Bu kullanıcıyı tamamen doğrulamak için, kullanıcının yukarıdaki e-posta adresine gönderdiğimiz bir bağlantıyı tıklaması gerekir. Bu adım adresin kendisine ait olduğunu doğrulamak için gereklidir.
+      if_existing_account: Kişinin web sitesinde zaten oluşturulmuş bir kullanıcı hesabı varsa,
+      if_no_existing_account: Eğer bu kişi henüz bir hesap oluşturmadıysa
+      introduce_email: 'Lütfen hesapta kullanılan e-postayı tanıtın:'
+      send_email: Doğrulama e-postası gönder
+    menu:
+      create_proposal: Öneri oluştur
+      print_proposals: Önerileri yazdır
+      support_proposals: Önerileri destekle
+      create_spending_proposal: Harcama önerisi oluştur
+      print_spending_proposals: Harcama önerilerini yazdır
+      support_spending_proposals: Harcama önerilerini destekle
+      create_budget_investment: Bütçe yatırımı oluştur
+      print_budget_investments: Bütçe yatırımlarını yazdır
+      support_budget_investments: Bütçe yatırımlarını destekle
+      users: Kullanıcıların yönetimi
+      user_invites: Davetleri gönder
+      select_user: Kullanıcı seç
+    permissions:
+      create_proposals: Öneriler oluştur
+      debates: Tartışmalarla uğraşın
+      support_proposals: Önerileri destekle
+      vote_proposals: Önerileri oyla
+    print:
+      proposals_info: http://url.consul'da önerinizi oluşturun
+      proposals_title: 'Öneriler:'
+      spending_proposals_info: http://url.consul'de katılın
+      budget_investments_info: http://url.consul'de katılın
+    print_info: Bu bilgiyi yazdır
+    proposals:
+      alert:
+        unverified_user: Kullanıcı doğrulanmadı
+      create_proposal: Öneri oluştur
+      print:
+        print_button: Yazdır
+      index:
+        title: Önerileri destekle
     budgets:
+      create_new_investment: Bütçe yatırımı oluştur
+      print_investments: Bütçe yatırımlarını yazdır
+      support_investments: Bütçe yatırımlarını destekle
+      table_name: İsim
+      table_phase: Aşama
       table_actions: Aksiyon
+      no_budgets: Aktif bir katılımcı bütçeler yok.
+    budget_investments:
+      alert:
+        unverified_user: Kullanıcı doğrulanmadı
+      create: Bir bütçe yatırımı oluştur
+      filters:
+        heading: Konsept
+        unfeasible: Uygulanamaz yatırım
+      print:
+        print_button: Yazdır
+      search_results:
+        one: " '%{search_term}'i içeren terim"
+        other: " '%{search_term}'i içeren terim"
+    spending_proposals:
+      alert:
+        unverified_user: Kullanıcı doğrulanmadı
+      create: Harcama önerisi oluştur
+      filters:
+        unfeasible: Uygulanamaz yatırım projeleri
+        by_geozone: "Kapsam ile yatırım projeleri: %{geozone}"
+      print:
+        print_button: Yazdır
+      search_results:
+        one: " '%{search_term}'i içeren terim"
+        other: " '%{search_term}'i içeren terim"
+    sessions:
+      signed_out: Başarılı bir şekilde çıkış yaptınız.
+      signed_out_managed_user: Kullanıcı oturumu başarıyla kapatıldı.
+    username_label: Kullanıcı adı
+    users:
+      create_user: Yeni bir hesap oluştur
+      create_user_info: Aşağıdaki verilerle bir hesap oluşturacağız
+      create_user_submit: Kullanıcı oluştur
+      create_user_success_html: Bu kullanıcıya ait olduğunu doğrulamak için e-posta adresine <b>%{email}</b> bir e-posta gönderdik. Tıklamaları gereken bir bağlantı içerir. Sonra web sitesine giriş yapmadan önce erişim şifresini ayarlamak zorunda kalacaklar
+      autogenerated_password_html: "Otomatik oluşturulmuş şifre <b>%{password}</b>'dur, web'in 'Benim Hesabım’ bölümünde değiştirebilirsiniz"
+      email_optional_label: E-posta (isteğe bağlı)
+      erased_notice: Kullanıcı hesabı silindi.
+      erased_by_manager: "Yönetici tarafından silindi: %{manager}"
+      erase_account_link: Kullanıcıyı sil
+      erase_account_confirm: Hesabı silmek istediğinize emin misiniz? Bu eylem geri alınamaz
+      erase_warning: Bu eylem geri alınamaz. Lütfen bu hesabı silmek istediğinizden emin olun.
+      erase_submit: Hesabı sil
+    user_invites:
+      new:
+        label: E-postalar
+        info: "Virgülle ayrılmış e-postaları girin (',')"
+        submit: Davetleri gönder
+        title: Davetleri gönder
+      create:
+        success_html: <strong>%{count} davetler</strong> gönderildi.
+        title: Davetleri gönder
