@@ -1,0 +1,74 @@
+da:
+  management:
+    account:
+      menu:
+        reset_password_email: Nulstil adgangskode via e-mail
+        reset_password_manually: Nulstil adgangskode manuelt
+      alert:
+        unverified_user: Ingen verificeret bruger er logget ind endnu
+      show:
+        title: Brugerkonto
+      edit:
+        title: 'Rediger konto: Nulstil adgangskode'
+        back: Tilbage
+        password:
+          password: Adgangskode
+          send_email: Send nulstil-adgangskode-mail
+          reset_email_send: E-mailen blev sendt.
+          reseted: Adgangskoden blev nulstillet
+          random: Generer tilfældig adgangskode
+          save: Gem adgangskode
+          print: Udskriv adgangskode
+          print_help: Du kan udskrive adgangskoden, når den er gemt.
+    account_info:
+      change_user: Skift bruger
+      document_number_label: 'Dokumentnummer:'
+      document_type_label: 'Dokumenttype:'
+      email_label: 'E-mail:'
+      identified_label: 'Identificeret som:'
+      username_label: 'Brugernavn:'
+    check: Kontroller dokument
+    dashboard:
+      index:
+        title: Management
+        info: Her kan du administrere brugere gennem de handlinger, der er angivet i menuen til venstre.
+    document_verifications:
+      link: CONSUL
+    email_label: E-mail
+    date_of_birth: Fødselsdato
+    email_verifications:
+      already_verified: Brugerkontoen er allerede verificeret.
+      choose_options: 'Vær venlig at vælge en af de følgende valgmuligheder:'
+      document_mismatch: 'Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}'
+      email_placeholder: Skriv den e-mail denne person anvendte til at oprette sin konto med
+    menu:
+      create_proposal: Opret borgerforslag
+      print_proposals: Udskriv forslag
+      support_proposals: Støt på om forslag
+    budgets:
+      table_name: Navn
+      table_phase: Fase
+      table_actions: Handlinger
+      no_budgets: Der er ingen aktive deltagerbudgetter.
+    budget_investments:
+      alert:
+        unverified_user: Brugeren er ikke verificeret
+      create: Opret budgetinvestering
+      filters:
+        heading: Koncept
+    username_label: Brugernavn
+    users:
+      email_optional_label: E-mail (valgfrit)
+      erased_notice: Brugerkonto slettet.
+      erased_by_manager: "Slettet af manager: %{manager}"
+      erase_account_link: Slet bruger
+      erase_submit: Slet konto
+    user_invites:
+      new:
+        label: E-mails
+        info: "Skriv e-mail adresserne adskilt med komma (',')"
+        submit: Send invitationer
+        title: Send invitationer
+      create:
+        success_html: <strong>%{count} invitationer</strong> er blevet sendt.
+        title: Send invitationer
