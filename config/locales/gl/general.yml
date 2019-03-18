@@ -219,7 +219,6 @@ gl:
       available_locales: Idiomas dispoñibles
       collaborative_legislation: Procesos lexislativos
       debates: Debates
-      external_link_blog: Blog
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Xestión
@@ -398,8 +397,6 @@ gl:
         guide: "Compártea para que a xente comece a apoiala."
         edit: "Antes de que se publique, poderás modificar o texto como queiras."
         view_proposal: Agora non, ir á miña proposta
-      improve_info: "Mellora a túa campaña e consegue máis apoios"
-      improve_info_link: "Ver máis información"
       already_supported: Xa apoiaches esta proposta, compártea!
       comments:
         zero: Ningún comentario
@@ -511,7 +508,6 @@ gl:
         title: "Preguntas"
         most_voted_answer: "Resposta máis votada: "
   poll_questions:
-    create_question: "Crear pregunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Votaches %{answer}"
@@ -623,7 +619,6 @@ gl:
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -809,7 +804,7 @@ gl:
       user_permission_info: Coa túa conta xa podes...
       user_permission_proposal: Crear novas propostas
       user_permission_support_proposal: Apoiar propostas*
-      user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
+      user_permission_verify: "Para poder realizar todas as accións, verifica a túa conta."
       user_permission_verify_info: "* Só persoas usuarias empadroadas no municipio de Madrid."
       user_permission_verify_my_account: Verificar a miña conta
       user_permission_votes: Participar nas votacións finais
