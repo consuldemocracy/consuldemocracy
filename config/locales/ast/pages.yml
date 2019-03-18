@@ -31,8 +31,6 @@ ast:
         page:
           title: "Preguntas Frecuentes"
           description: "Utiliza esta página para resolver las Preguntas frencuentes a los usuarios del sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
@@ -74,10 +72,6 @@ ast:
             - 
             - 
             - 
-    titles:
-      accessibility: Accesibilidad
-      conditions: Condiciones de uso
-      privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta
       email: Corréu electrónicu
