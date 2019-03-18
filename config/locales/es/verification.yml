@@ -19,7 +19,7 @@ es:
         unconfirmed_code: Todavía no has introducido el código de confirmación
       create:
         flash:
-          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las Oficinas de Atención al Ciudadano.
+          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
       edit:
         see_all: Ver propuestas
         title: Carta solicitada
@@ -28,7 +28,7 @@ es:
       new:
         explanation: 'Para participar en las votaciones finales puedes:'
         go_to_index: Ver propuestas
-        office: Verificarte presencialmente en cualquier Oficina de Atención al Ciudadano
+        office: Verificarte presencialmente en cualquier %{office}
         send_letter: Solicitar una carta por correo postal
         title: '¡Felicidades!'
         user_permission_info: Con tu cuenta ya puedes...
@@ -58,7 +58,7 @@ es:
         document_type_label: Tipo de documento
         error_not_allowed_age: No tienes la edad mínima para participar
         error_not_allowed_postal_code: Para verificarte debes estar empadronado.
-        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una Oficina de Atención al Ciudadano.
+        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
         form_errors: evitaron verificar tu residencia
         postal_code: Código postal
         postal_code_note: Para verificar tus datos debes estar empadronado
