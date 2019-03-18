@@ -46,8 +46,6 @@ de:
     url_description: "Haupt-URL Ihrer Website"
     org_name: "Name der Organisation"
     org_name_description: "Name Ihrer Organisation"
-    place_name: "Name des Ortes"
-    place_name_description: "Name Ihrer Stadt"
     related_content_score_threshold: "Punktzahl-Grenze für verwandte Inhalte"
     related_content_score_threshold_description: "Inhalte, die Benutzer als zusammenhangslos markiert haben"
     map_latitude: "Breitengrad"
@@ -69,11 +67,6 @@ de:
     min_age_to_participate: erforderliches Mindestalter zur Teilnahme
     min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
     analytics_url: "Analytik-URL"
-    blog_url: "Blog URL"
-    transparency_url: "Transparenz-URL"
-    opendata_url: "Offene-Daten-URL"
-    verification_offices_url: Bestätigungsbüro URL
-    proposal_improvement_path: Interner Link zur Antragsverbesserungsinformation
     feature:
       budgets: "Partizipative Haushaltsplanung"
       budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Gemeindebudgets erhalten"
@@ -119,4 +112,4 @@ de:
       public_stats: "Öffentliche Statistiken"
       public_stats_description: "Öffentliche Statistiken im Administrationsbereich anzeigen"
       help_page: "Hilfeseite"
-      help_page_description: "Zeigt ein \"Hilfe\"-Menü an, das eine Seite mit Informationen über die einzelnen aktivierten Funktionen enthält"
+      help_page_description: 'Zeigt ein "Hilfe"-Menü an, das eine Seite mit Informationen über die einzelnen aktivierten Funktionen enthält'
