@@ -210,7 +210,6 @@ ru:
       available_locales: Доступные языки
       collaborative_legislation: Процесс законотворчества
       debates: Обсуждения проблем
-      external_link_blog: Блог
       locale: 'Язык:'
       logo: CONSUL логотип
       management: Управление
@@ -372,8 +371,6 @@ ru:
         guide: "Теперь вы можете поделиться им, чтобы люди могли начать его поддерживать."
         edit: "Прежде чем им поделятся, вы сможете изменить текст так, как пожелаете."
         view_proposal: Не сейчас, перейти к моему предложению
-      improve_info: "Улучшите вашу кампанию и получите больше поддержки"
-      improve_info_link: "Получить больше информации"
       already_supported: Вы уже поддержали это предложение. Поделитесь им!
       comments:
         zero: Нет комментариев
@@ -488,7 +485,6 @@ ru:
         title: "Вопросы"
         most_voted_answer: "Самый голосуемый ответ: "
   poll_questions:
-    create_question: "Создать вопрос"
     show:
       vote_answer: "Голосовать по %{answer}"
       voted: "Вы проголосовали по %{answer}"
@@ -589,8 +585,6 @@ ru:
       title: Рекомендации
       see_more: Смотреть больше рекомендация
       hide: Скрыть рекомендации
-  social:
-    blog: "%{org} Блог"
   spending_proposals:
     form:
       association_name_label: 'Если вы предлагаете от имени ассоциации или коллектива, то добавьте имя здесь'
@@ -750,7 +744,7 @@ ru:
       user_permission_info: При помощи вашего аккаунта вы можете...
       user_permission_proposal: Создавать новые предложения
       user_permission_support_proposal: Поддерживать предложения*
-      user_permission_verify: Выполнять все действия верифицировать ваш аккаунт.
+      user_permission_verify: "Выполнять все действия верифицировать ваш аккаунт."
       user_permission_verify_info: "* Только для пользователей на Цензусе."
       user_permission_verify_my_account: Верифицировать мой аккаунт
       user_permission_votes: Участвовать в финальном голосовании
