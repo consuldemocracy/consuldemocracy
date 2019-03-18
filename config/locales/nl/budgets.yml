@@ -63,7 +63,7 @@ nl:
         tag_category_label: "Categorieen"
         tags_instructions: "Label dit voorstel. U kunt "
         tags_label: Tags
-        tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
+        tags_placeholder: "Voer de termen in die je wilt gebruiken, gescheiden door komma's (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
         map_remove_marker: "Locatie verwijderen"
@@ -126,6 +126,7 @@ nl:
         project_selected_html: 'Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase.'
         project_winner: 'Winnend investeringsproject'
         project_not_selected_html: 'Dit investeringsproject <strong> is niet geselecteerd </strong> voor beslissingsfase.'
+        see_price_explanation: Toelichting op de kosten
       wrong_price_format: Alleen hele cijfers
       investment:
         add: Voeg toe
@@ -185,6 +186,6 @@ nl:
         all: "Alle (%{count})"
     phases:
       errors:
-        dates_range_invalid: "Startdatum kan niet gelijk of later zijn dan de einddatum."
-        prev_phase_dates_invalid: "Startdatum moet later zijn dan de startdatum van de vorige fase(%{phase_name})"
+        dates_range_invalid: "De begindatum dient kleiner te zijn dan de einddatum"
+        prev_phase_dates_invalid: "Begindatum moet later zijn dan de begindatum van de vorige fase(%{phase_name})"
         next_phase_dates_invalid: "Einddatum moet eerder zijn dan de einddatum van de volgende fase(%{phase_name})"
