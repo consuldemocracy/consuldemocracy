@@ -46,8 +46,6 @@ zh-TW:
     url_description: "您網站的主要 URL"
     org_name: "組織"
     org_name_description: "您的組織的名稱"
-    place_name: "地方"
-    place_name_description: "城市名稱"
     related_content_score_threshold: "相關內容評分閾值"
     related_content_score_threshold_description: "隱藏用戶標記為無關的內容"
     map_latitude: "緯度"
@@ -69,11 +67,6 @@ zh-TW:
     min_age_to_participate: 參與所需的最低年齡
     min_age_to_participate_description: "超過此年齡的用戶可以參與所有進程"
     analytics_url: "分析 URL"
-    blog_url: "博客 URL"
-    transparency_url: "透明度 URL"
-    opendata_url: "公開數據 URL"
-    verification_offices_url: 驗證辦公室 URL
-    proposal_improvement_path: 建議改進資訊內部鏈接
     feature:
       budgets: "參與式預算編制"
       budgets_description: "通過參與性預算，公民決定其鄰居提交的哪些項目將獲得市政預算的一部分"
@@ -120,4 +113,4 @@ zh-TW:
       public_stats: "公眾統計數據"
       public_stats_description: "在管理面板中顯示公眾統計數據"
       help_page: "幫助頁"
-      help_page_description: "顯示説明菜單，其中包含一個頁面，內有每個已啟用功能的資訊"
+      help_page_description: '顯示説明菜單，其中包含一個頁面，內有每個已啟用功能的資訊'
