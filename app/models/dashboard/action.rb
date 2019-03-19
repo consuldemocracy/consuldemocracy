@@ -13,7 +13,7 @@ class Dashboard::Action < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  has_many :executed_actions, dependent: :restrict_with_error, class_name: 'Dashboard::ExecutedAction'
+  has_many :executed_actions, dependent: :restrict_with_error, class_name: "Dashboard::ExecutedAction"
   has_many :proposals, through: :executed_actions
 
   enum action_type: [:proposed_action, :resource]
@@ -50,15 +50,15 @@ class Dashboard::Action < ActiveRecord::Base
   def self.active_for(proposal)
     published_at = proposal.published_at&.to_date || Date.today
 
-    active.where('required_supports <= ?', proposal.cached_votes_up)
-          .where('day_offset <= ?', (Date.today - published_at).to_i)
+    active.where("required_supports <= ?", proposal.cached_votes_up)
+          .where("day_offset <= ?", (Date.today - published_at).to_i)
           .by_proposal(proposal)
   end
 
   def self.course_for(proposal)
     active
       .resources
-      .where('required_supports > ?', proposal.cached_votes_up)
+      .where("required_supports > ?", proposal.cached_votes_up)
       .order(required_supports: :asc)
   end
 
