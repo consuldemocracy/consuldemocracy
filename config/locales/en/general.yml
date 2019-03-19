@@ -575,12 +575,12 @@ en:
         title: Poster preview
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
-        intro_text:
-          <strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
-          necessary support to make Madrid the city we all want.
+        intro_text_html:
+          "<strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
+          necessary support to make the city we all want."
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal
-        footer: Visit %{link} and support this proposal. We need to be many. Decide your too. Thank you!
+        footer_html: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
       new:
         title: Poster feature
       options:
@@ -598,7 +598,7 @@ en:
         sent: The email has been sent
     mailer:
       forward:
-        subtitle: If you support me, <br>we will achieve it.
+        subtitle_html: "If you support me, <br>we will achieve it."
         support_button: Support this proposal
         share_in: Share in
         hi: "Hello!"
