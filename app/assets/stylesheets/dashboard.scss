@@ -99,6 +99,7 @@
   .action-content {
     display: inline-block;
     margin-left: $line-height / 4;
+    max-width: 90%;
 
     h4,
     p {

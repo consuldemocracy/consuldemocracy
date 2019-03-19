@@ -11,6 +11,10 @@ module ProposalsDashboardHelper
     is_proposed_action_request? || (controller_name == 'dashboard' && action_name == 'progress')
   end
 
+  def recommended_actions_menu_active?
+    controller_name == "dashboard" && action_name == "recommended_actions"
+  end
+
   def resources_menu_visible?(proposal, resources)
     can?(:manage_polls, proposal) || resources.any?
   end

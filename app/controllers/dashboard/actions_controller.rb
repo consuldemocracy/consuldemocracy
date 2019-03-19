@@ -1,4 +1,4 @@
-class Dashboard::ActionsController < Dashboard::BaseController 
+class Dashboard::ActionsController < Dashboard::BaseController
   helper_method :dashboard_action
 
   def new_request
@@ -10,8 +10,8 @@ class Dashboard::ActionsController < Dashboard::BaseController
     authorize! :dashboard, proposal
 
     source_params = {
-      proposal: proposal, 
-      action: dashboard_action, 
+      proposal: proposal,
+      action: dashboard_action,
       executed_at: Time.now
     }
 
@@ -30,7 +30,7 @@ class Dashboard::ActionsController < Dashboard::BaseController
     authorize! :dashboard, proposal
 
     Dashboard::ExecutedAction.create(proposal: proposal, action: dashboard_action, executed_at: Time.now)
-    redirect_to progress_proposal_dashboard_path(proposal.to_param)
+    redirect_to request.referer
   end
 
   private
@@ -39,4 +39,3 @@ class Dashboard::ActionsController < Dashboard::BaseController
     @dashboard_action ||= Dashboard::Action.find(params[:id])
   end
 end
-
