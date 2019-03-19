@@ -103,11 +103,11 @@ tr:
         voting_allowed_description: "⚠️ NOT: Bu işlevsellik Katılımcı Bütçeleme ile değiştirildi ve yeni sürümlerde kaybolacak"
       user:
         recommendations: "Tavsiyeler"
-        recommendations_description: "Kullanıcılara ana sayfada, aşağıdaki öğelerin etiketlerine dayalı tavsiyeleri gösterir"
+        recommendations_description: "Ana sayfada takip edilen öğelerin etiketlerine dayalı olarak kullanıcı tavsiyeleri gösterir"
         skip_verification: "Kullanıcı doğrulamasını atla"
         skip_verification_description: "Bu, kullanıcı doğrulamasını devre dışı bırakacak ve tüm kayıtlı kullanıcılar tüm işlemlere katılabilecek"
         recommendations_on_debates: "Tartışmalarla ilgili tavsiyeler"
-        recommendations_on_debates_description: "Kullanıcılara, takip edilen öğelerin etiketlerine dayalı olarak tartışmalar sayfasındaki kullanıcılara tavsiyeler gösterir"
+        recommendations_on_debates_description: "Kullanıcılara, takip edilen öğelerin etiketlerine dayalı olarak tartışmalar sayfasında kullanıcı tavsiyelerini gösterir"
         recommendations_on_proposals: "Önerilerle ilgili tavsiyeler"
         recommendations_on_proposals_description: "Kullanıcılara tavsiyeleri, takip edilen öğelerin etiketlerine göre öneriler sayfasında gösterir"
       community: "Öneriler ve yatırımlar topluluğu"
