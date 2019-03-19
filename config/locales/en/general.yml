@@ -210,9 +210,10 @@ en:
         show_proposal: Show proposal
         preview_proposal: Preview proposal
         current_goal: Current goal
-        support_count:
-          one: "%{count} support"
-          other: "%{count} supports"
+        supports:
+          zero: No supports
+          one: 1 Support
+          other: "Supports"
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
