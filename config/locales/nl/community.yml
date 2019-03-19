@@ -3,15 +3,15 @@ nl:
     sidebar:
       title: Gemeenschap
       description:
-        proposal: Participeer in de gebruikerscommunity van dit voorstel.
+        proposal: Doe mee met dit voorstel.
         investment: Participeer in de gebruikerscommunity van deze investering.
       button_to_access: Naar de community
     show:
       title:
-        proposal: Voorstellen community
+        proposal: Deelnemers aan dit voorstel
         investment: Inversteringsbudget community
       description:
-        proposal: Participeer in de community van dit voorstel. Een actieve community helpt de inhoud van het voorstel te verbeteren en draagt bij aan het verkrijgen van meer steun voor dit voorstel.
+        proposal: Doe mee met dit voorstel. Een actieve samenwerking helpt de inhoud te verbeteren en draagt bij aan het verkrijgen van meer steun.
         investment: Participeer in de community van dit investeringsbudget. Een actieve community helpt de inhoud van het investeringsbudget te verbeteren en draagt bij aan het verkrijgen van meer steun voor deze investering.
       create_first_community_topic:
         first_theme_not_logged_in: Er is nog niets geplaatst, wees de eerste die een onderwerp plaatst!
@@ -51,9 +51,9 @@ nl:
         tab:
           comments_tab: Comments
       sidebar:
-        recommendations_title: Advies bij het beginnen van een discussie.
+        recommendations_title: Advies bij het starten van een onderwerp
         recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
-        recommendation_two: Iedere discussie of opmerking waarin een illegale activiteit wordt aangemoedigd zal worden verwijderd, en ook die opmerkingen die de discussie saboteren. Verder is alles toegestaan.
+        recommendation_two: Ieder onderwerp of reactie waarin een illegale activiteit wordt aangemoedigd zal worden verwijderd, alsmede opmerkingen die het debat saboteren. Verder is alles toegestaan.
         recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
   topics:
     show:
