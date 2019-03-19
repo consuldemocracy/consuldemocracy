@@ -1,5 +1,12 @@
 tr:
   verification:
+    alert:
+      lock: Maksimum deneme sayısına ulaştınız. Lütfen daha sonra tekrar deneyiniz.
+    back: Hesabıma dön
+    email:
+      create:
+        alert:
+          failure: Hesabınıza bir e-posta gönderirken bir sorun oluştu
     residence:
       new:
         date_of_birth: Doğum tarihi
