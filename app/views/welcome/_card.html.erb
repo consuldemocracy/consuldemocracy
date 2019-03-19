@@ -3,7 +3,10 @@
   <%= link_to card.link_url do %>
     <figure class="figure-card">
       <div class="gradient"></div>
-      <% if card.image.present? %>
+      <% cards_demo = [3, 4] %>
+      <% if cards_demo.include?(card.id) %>
+        <%= image_tag("card_#{card.id}.jpg", class: "margin") %>
+      <% elsif card.image.present? %>
         <%= image_tag(card.image_url(:large), alt: card.image.title) %>
       <% end %>
       <figcaption>

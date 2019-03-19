@@ -60,7 +60,11 @@
             <h3><%= answer.title %></h3>
           <% end %>
 
-          <% if answer.images.any? %>
+          <% if answer.id == 3 %>
+            <%= render "demo_gallery_3", answer: answer %>
+          <% elsif answer.id == 4 %>
+            <%= render "demo_gallery_4", answer: answer %>
+          <% elsif answer.images.any? %>
             <%= render "gallery", answer: answer %>
           <% end %>
 

@@ -1,7 +1,18 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
   <div class="panel <%= ('with-image' if feature?(:allow_images) && investment.image.present?) %>">
 
-    <% if feature?(:allow_images) && investment.image.present? %>
+    <% investements_demo = [21, 22, 23, 24, 25] %>
+    <% if investements_demo.include?(investment.id) %>
+    <div class="row" data-equalizer>
+
+      <div class="small-12 medium-3 large-2 column text-center">
+        <div data-equalizer-watch>
+          <%= image_tag("investment_#{investment.id}.jpg") %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 large-7 column">
+    <% elsif feature?(:allow_images) && investment.image.present? %>
     <div class="row" data-equalizer>
 
       <div class="small-12 medium-3 large-2 column text-center">

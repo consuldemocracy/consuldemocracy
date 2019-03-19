@@ -22,7 +22,10 @@
     <div class="row" data-equalizer data-equalize-on="medium">
       <div class="small-12 medium-3 column">
         <div class="image-container" data-equalizer-watch>
-          <% if poll.image.present? %>
+          <% polls_demo = [1, 6, 8, 10, 13] %>
+          <% if polls_demo.include?(poll.id) %>
+            <%= image_tag("poll_#{poll.id}.jpg") %>
+          <% elsif poll.image.present? %>
             <%= image_tag poll.image_url(:large), alt: poll.image.title.unicode_normalize %>
           <% end %>
         </div>

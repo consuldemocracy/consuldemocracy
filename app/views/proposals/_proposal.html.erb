@@ -4,8 +4,14 @@
      data-type="proposal">
   <div class="panel <%= 'with-image' if proposal.image.present? %>">
     <div class="icon-successful"></div>
-
-    <% if proposal.image.present? %>
+    <% proposals_demo = [19, 20, 21] %>
+    <% if proposals_demo.include?(proposal.id) %>
+      <div class="row">
+        <div class="small-12 medium-3 large-2 column text-center">
+          <%= image_tag("proposal_#{proposal.id}.jpg") %>
+        </div>
+        <div class="small-12 medium-6 large-7 column">
+    <% elsif proposal.image.present? %>
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
           <%= image_tag proposal.image_url(:thumb),

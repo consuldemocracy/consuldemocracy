@@ -10,7 +10,11 @@
         </div>
       </div>
 
-      <% if header.image.present? %>
+      <% if header.id == 1 %>
+        <div class="small-12 medium-6 column">
+          <%= image_tag("homepage_card.jpg", class: "margin") %>
+        </div>
+      <% elsif header.image.present? %>
         <div class="small-12 medium-6 column">
           <%= image_tag(header.image_url(:large),
                         class: "margin",
