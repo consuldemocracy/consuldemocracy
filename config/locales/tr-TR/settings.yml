@@ -92,6 +92,7 @@ tr:
         skip_verification_description: "Bu, kullanıcı doğrulamasını devre dışı bırakacak ve tüm kayıtlı kullanıcılar tüm işlemlere katılabilecek"
         recommendations_on_debates: "Tartışmalarla ilgili tavsiyeler"
         recommendations_on_proposals: "Önerilerle ilgili tavsiyeler"
+      community: "Öneriler ve yatırımlar topluluğu"
       community_description: "Katılımcı Bütçelerin öneriler ve yatırım projelerinde topluluk bölümünü etkinleştirir"
       map: "Öneriler ve bütçe yatırımları coğrafi konumu"
       map_description: "Önerilerin ve yatırım projelerinin coğrafi konumunu etkinleştirir"
