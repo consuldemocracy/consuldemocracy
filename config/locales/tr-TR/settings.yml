@@ -71,10 +71,13 @@ tr:
     min_age_to_participate: Katılmak için gereken minimum yaş
     min_age_to_participate_description: "Bu yaşın üzerindeki kullanıcılar, bir kullanıcı tarafından doğrulanmış bir hesabın gerekli olduğu tüm işlemlere katılabilir"
     analytics_url: "Analitikler URL'si"
+    proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
+    proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
     direct_message_max_per_day: "Maksimum günlük Doğrudan Mesaj sayısı"
     direct_message_max_per_day_description: "Bir kullanıcının günlük olarak gönderebileceği maksimum doğrudan mesajların sayısı"
     feature:
       budgets: "Katılımcı bütçeleme"
+      budgets_description: "Katılımcı bütçeler ile vatandaşlar, komşuları tarafından sunulan hangi projelerin bütçenin bir parçası olacağına karar verir"
       twitter_login: "Twitter girişi"
       twitter_login_description: "Kullanıcıların Twitter hesapları ile kayıt olmalarına izin ver"
       facebook_login: "Facebook girişi"
