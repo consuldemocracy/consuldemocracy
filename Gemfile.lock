@@ -338,7 +338,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.11.1)
       sprockets-rails
-    rails-assets-leaflet (1.1.0)
+    rails-assets-leaflet (1.3.4)
     rails-assets-markdown-it (8.2.2)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
