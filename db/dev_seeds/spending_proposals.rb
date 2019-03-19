@@ -17,7 +17,7 @@ section "Creating Spending Proposals" do
                                                  feasible: feasible,
                                                  feasible_explanation: feasible_explanation,
                                                  valuation_finished: valuation_finished,
-                                                 tag_list: tags.sample(3).join(','),
+                                                 tag_list: tags.sample(3).join(","),
                                                  price: rand(1000000),
                                                  terms_of_service: "1")
   end

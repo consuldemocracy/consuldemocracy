@@ -4,7 +4,7 @@ class CommentTree
 
   attr_accessor :root_comments, :comments, :commentable, :page, :order
 
-  def initialize(commentable, page, order = 'confidence_score', valuations: false)
+  def initialize(commentable, page, order = "confidence_score", valuations: false)
     @commentable = commentable
     @page = page
     @order = order
@@ -17,7 +17,7 @@ class CommentTree
   end
 
   def base_comments
-    if @valuations && commentable.respond_to?('valuations')
+    if @valuations && commentable.respond_to?("valuations")
       commentable.valuations
     else
       commentable.comments
