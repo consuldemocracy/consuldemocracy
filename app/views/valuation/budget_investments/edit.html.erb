@@ -1,4 +1,4 @@
-<%= link_to valuation_budget_budget_investment_path(@budget, @investment), class: 'back' do %>
+<%= link_to valuation_budget_budget_investment_path(@budget, @investment), class: "back" do %>
   <span class="icon-angle-left"></span>
   <%= "#{t('valuation.budget_investments.show.title')} #{@investment.id}"%>
 <% end %>
@@ -6,29 +6,29 @@
 <h2><%= t("valuation.budget_investments.edit.dossier") %></h2>
 <% if can?(:valuate, @investment) %>
   <%= form_for(@investment, url: valuate_valuation_budget_budget_investment_path(@budget, @investment), html: {id: "valuation_budget_investment_edit_form"}) do |f| %>
-    <%= render 'shared/errors', resource: @investment %>
+    <%= render "shared/errors", resource: @investment %>
     <div class="row">
       <div class="small-12 column">
         <fieldset class="fieldset">
-          <legend><%= t('valuation.budget_investments.edit.feasibility') %></legend>
+          <legend><%= t("valuation.budget_investments.edit.feasibility") %></legend>
           <div class="small-4 column">
               <span class="radio">
-                <%= f.radio_button :feasibility, 'undecided', label: false %>
-                <%= f.label :feasibility_undecided, t('valuation.budget_investments.edit.undefined_feasible') %>
+                <%= f.radio_button :feasibility, "undecided", label: false %>
+                <%= f.label :feasibility_undecided, t("valuation.budget_investments.edit.undefined_feasible") %>
               </span>
           </div>
 
           <div class="small-4 column">
               <span class="radio">
-                <%= f.radio_button :feasibility, 'feasible', label: false %>
-                <%= f.label :feasibility_feasible, t('valuation.budget_investments.edit.feasible') %>
+                <%= f.radio_button :feasibility, "feasible", label: false %>
+                <%= f.label :feasibility_feasible, t("valuation.budget_investments.edit.feasible") %>
               </span>
           </div>
 
           <div class="small-4 column">
               <span class="radio">
-                <%= f.radio_button :feasibility, 'unfeasible', label: false %>
-                <%= f.label :feasibility_unfeasible, t('valuation.budget_investments.edit.unfeasible') %>
+                <%= f.radio_button :feasibility, "unfeasible", label: false %>
+                <%= f.label :feasibility_unfeasible, t("valuation.budget_investments.edit.unfeasible") %>
               </span>
           </div>
         </fieldset>
@@ -80,8 +80,8 @@
       <div class="small-12 medium-8 column">
         <%= f.label :valuation_finished do %>
           <%= f.check_box :valuation_finished,
-              title: t('valuation.budget_investments.edit.valuation_finished'),
-              label: false, id: 'js-investment-report-alert',
+              title: t("valuation.budget_investments.edit.valuation_finished"),
+              label: false, id: "js-investment-report-alert",
               "data-alert": t("valuation.budget_investments.edit.valuation_finished_alert"),
               "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
           <span class="checkbox"><%= t("valuation.budget_investments.edit.valuation_finished") %></span>
@@ -97,35 +97,35 @@
   <% end %>
 <% else %>
   <p>
-    <h3><%= t('valuation.budget_investments.edit.valuation_finished') %></h3>
+    <h3><%= t("valuation.budget_investments.edit.valuation_finished") %></h3>
   </p>
   <p>
-    <strong><%= t('valuation.budget_investments.edit.feasibility') %>:</strong>
+    <strong><%= t("valuation.budget_investments.edit.feasibility") %>:</strong>
     <%= t("admin.budget_investments.index.feasibility.#{@investment.feasibility}") %>
   </p>
   <p>
     <strong><%= t("valuation.budget_investments.edit.feasible_explanation_html") %>:</strong>
-    <%= @investment.unfeasibility_explanation.presence || '-' %>
+    <%= @investment.unfeasibility_explanation.presence || "-" %>
   </p>
   <p>
-    <strong><%= t('valuation.budget_investments.edit.price_html', currency: @budget.currency_symbol) %>:</strong>
-    <%= @investment.price.presence || '-' %>
+    <strong><%= t("valuation.budget_investments.edit.price_html", currency: @budget.currency_symbol) %>:</strong>
+    <%= @investment.price.presence || "-" %>
   </p>
   <p>
-    <strong><%= t('valuation.budget_investments.show.price_first_year', currency: @budget.currency_symbol) %>:</strong>
-    <%= @investment.price_first_year.presence || '-' %>
+    <strong><%= t("valuation.budget_investments.show.price_first_year", currency: @budget.currency_symbol) %>:</strong>
+    <%= @investment.price_first_year.presence || "-" %>
   </p>
   <p>
-    <strong><%= t('valuation.budget_investments.edit.price_explanation_html') %>:</strong>
-    <%= @investment.price_explanation.presence || '-'%>
+    <strong><%= t("valuation.budget_investments.edit.price_explanation_html") %>:</strong>
+    <%= @investment.price_explanation.presence || "-"%>
   </p>
   <p>
-    <strong><%= t('valuation.budget_investments.edit.duration_html') %>:</strong>
-    <%= @investment.duration.presence || '-' %>
+    <strong><%= t("valuation.budget_investments.edit.duration_html") %>:</strong>
+    <%= @investment.duration.presence || "-" %>
   </p>
 <% end %>
 
-<%= render 'valuation/budget_investments/valuation_comments' %>
+<%= render "valuation/budget_investments/valuation_comments" %>
 
 <h1><%= @investment.title %></h1>
 

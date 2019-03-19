@@ -4,7 +4,7 @@
             new_admin_budget_path,
             class: "button float-right" %>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.budgets.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
 <% if @budgets.any? %>
   <h3><%= page_entries_info @budgets %></h3>

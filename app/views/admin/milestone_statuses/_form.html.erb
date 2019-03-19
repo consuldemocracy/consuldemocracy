@@ -1,5 +1,5 @@
 <%= form_for [:admin, @status] do |f| %>
-  <%= render 'shared/errors', resource: @status %>
+  <%= render "shared/errors", resource: @status %>
 
   <%= f.text_field :name %>
   <%= f.text_area :description %>

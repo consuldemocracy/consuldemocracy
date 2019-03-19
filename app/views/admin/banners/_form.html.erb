@@ -2,7 +2,7 @@
 
 <%= translatable_form_for [:admin, @banner] do |f| %>
 
-  <%= render 'errors' %>
+  <%= render "errors" %>
 
   <div class="row">
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>

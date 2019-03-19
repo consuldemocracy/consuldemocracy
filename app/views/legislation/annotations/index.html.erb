@@ -1,31 +1,31 @@
 <% provide :title do %><%= "#{t('.title')} - #{@draft_version.title} - #{@process.title}" %><% end %>
 
-<%= render 'legislation/processes/header', process: @process, header: :small %>
+<%= render "legislation/processes/header", process: @process, header: :small %>
 
-<%= render 'legislation/processes/key_dates', process: @process, phase: :allegations_phase %>
+<%= render "legislation/processes/key_dates", process: @process, phase: :allegations_phase %>
 
 <div class="column row">
   <div class="draft-panels small-12 column row">
-    <%= render 'slim_version_chooser', process: @process, draft_version: @draft_version %>
+    <%= render "slim_version_chooser", process: @process, draft_version: @draft_version %>
   </div>
 
-  <%= render 'legislation/processes/help_gif' %>
+  <%= render "legislation/processes/help_gif" %>
 
   <div class="small-12 medium-8 column row legislation-comments end">
 
     <% @annotations.each do |annotation| %>
       <div class="comment">
-        <strong><%= t('.comments_about') %></strong>
+        <strong><%= t(".comments_about") %></strong>
         <span class="float-right">
           <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{annotation.id}") do %>
-            <span><%= t('.see_in_context') %></span> <span class="icon-expand" aria-hidden="true"></span>
+            <span><%= t(".see_in_context") %></span> <span class="icon-expand" aria-hidden="true"></span>
           <% end %>
         </span>
         <div class="comment-section">
           <%= annotation.context.try(:html_safe).presence || annotation.quote %>
         </div>
         <%= link_to legislation_process_draft_version_annotation_path(@process, @draft_version, annotation) do %>
-          <span class="icon-comments" aria-hidden="true"></span> <span><%= t('.comments_count', count: annotation.comments_count) %></span></a>
+          <span class="icon-comments" aria-hidden="true"></span> <span><%= t(".comments_count", count: annotation.comments_count) %></span></a>
         <% end %>
       </div>
     <% end %>

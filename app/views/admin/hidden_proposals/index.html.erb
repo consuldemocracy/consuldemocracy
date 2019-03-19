@@ -1,7 +1,7 @@
 <h2><%= t("admin.hidden_proposals.index.title") %></h2>
 <p><%= t("admin.shared.moderated_content") %></p>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.hidden_proposals.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.hidden_proposals.index" %>
 
 <% if @proposals.any? %>
   <h3 class="margin"><%= page_entries_info @proposals %></h3>

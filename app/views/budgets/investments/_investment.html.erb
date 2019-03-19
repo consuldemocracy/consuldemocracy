@@ -18,7 +18,7 @@
     <% end %>
         <div class="budget-investment-content">
 
-          <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
+          <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
             <p class="investment-project-info">
@@ -59,17 +59,17 @@
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center"
-               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-               <%= render partial: '/budgets/investments/votes', locals: {
+               <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
+               <%= render partial: "/budgets/investments/votes", locals: {
                  investment: investment,
                  investment_votes: investment_votes,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
+                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes")
                } %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center"
-               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
+               <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
             <div class="supports js-participation">
               <span class="total-supports no-button">
                 <%= t("budgets.investments.investment.supports",
@@ -80,8 +80,8 @@
         <% elsif investment.should_show_ballots? %>
           <div id="<%= dom_id(investment) %>_ballot"
                 class="small-12 medium-3 column text-center"
-                <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-                <%= render partial: '/budgets/investments/ballot', locals: {
+                <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
+                <%= render partial: "/budgets/investments/ballot", locals: {
                   investment: investment,
                   investment_ids: investment_ids,
                   ballot: ballot
@@ -90,7 +90,7 @@
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"
                class="supports small-12 medium-3 column text-center"
-               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
+               <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
             <div class="supports">
               <span class="total-supports no-button">
                 <%= investment.formatted_price %>
@@ -98,7 +98,7 @@
             </div>
           </div>
         <% else %>
-          <div <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>></div>
+          <div <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>></div>
         <% end %>
 
       <% end %>

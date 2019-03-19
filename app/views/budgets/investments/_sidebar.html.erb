@@ -22,13 +22,13 @@
 <% end %>
 
 <% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
-  <%= render 'budgets/investments/content_blocks' %>
+  <%= render "budgets/investments/content_blocks" %>
 <% end %>
 <% if @map_location&.available? %>
-  <%= render 'budgets/investments/map' %>
+  <%= render "budgets/investments/map" %>
 <% end %>
-<%= render "shared/tag_cloud", taggable: 'budget/investment' %>
-<%= render 'budgets/investments/categories' %>
+<%= render "shared/tag_cloud", taggable: "budget/investment" %>
+<%= render "budgets/investments/categories" %>
 
 <% if @heading && can?(:show, @ballot) %>
 
@@ -65,7 +65,7 @@
   <ul class="ballot-list">
     <% if @heading %>
       <% @ballot.investments.by_heading(@heading.id).each do |investment| %>
-        <%= render 'budgets/ballot/investment_for_sidebar',
+        <%= render "budgets/ballot/investment_for_sidebar",
                     investment: investment,
                     investment_ids: @investment_ids %>
       <% end %>

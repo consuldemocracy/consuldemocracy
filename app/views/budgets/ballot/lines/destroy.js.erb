@@ -6,7 +6,7 @@ $("#<%= dom_id(@investment) %>_ballot").html('<%= j render("/budgets/investments
                                                             investment: @investment,
                                                             investment_ids: @investment_ids,
                                                             ballot: @ballot) %>');
-<%= render 'refresh_ballots',
+<%= render "refresh_ballots",
             investment: @investment,
             investment_ids: @investment_ids,
             ballot: @ballot %>

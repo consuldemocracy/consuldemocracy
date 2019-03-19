@@ -3,19 +3,19 @@
   <% if @process.proposals_phase.open? %>
     <div class="in-favor inline-block">
       <% if user_signed_in? %>
-        <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: 'yes'),
-            class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
+        <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: "yes"),
+            class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
           <span class="icon-like">
-            <span class="show-for-sr"><%= t('votes.agree') %></span>
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
           </span>
-          <span class="percentage"><%= votes_percentage('likes', proposal) %></span>
+          <span class="percentage"><%= votes_percentage("likes", proposal) %></span>
         <% end %>
       <% else %>
         <div class="like">
           <span class="icon-like">
-            <span class="show-for-sr"><%= t('votes.agree') %></span>
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
           </span>
-          <span class="percentage"><%= votes_percentage('likes', proposal) %></span>
+          <span class="percentage"><%= votes_percentage("likes", proposal) %></span>
         </div>
       <% end %>
     </div>
@@ -24,18 +24,18 @@
 
     <div class="against inline-block">
       <% if user_signed_in? %>
-        <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: 'no'), class: "unlike #{voted_classes[:against]}", title: t('votes.disagree'), method: "post", remote: true do %>
+        <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
           <span class="icon-unlike">
-            <span class="show-for-sr"><%= t('votes.disagree') %></span>
+            <span class="show-for-sr"><%= t("votes.disagree") %></span>
           </span>
-          <span class="percentage"><%= votes_percentage('dislikes', proposal) %></span>
+          <span class="percentage"><%= votes_percentage("dislikes", proposal) %></span>
         <% end %>
       <% else %>
         <div class="unlike">
           <span class="icon-unlike">
-            <span class="show-for-sr"><%= t('votes.disagree') %></span>
+            <span class="show-for-sr"><%= t("votes.disagree") %></span>
           </span>
-          <span class="percentage"><%= votes_percentage('dislikes', proposal) %></span>
+          <span class="percentage"><%= votes_percentage("dislikes", proposal) %></span>
         </div>
       <% end %>
     </div>
@@ -46,13 +46,13 @@
   </span>
 
   <% if user_signed_in? && current_user.organization? %>
-    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.organizations") %>
       </p>
     </div>
   <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
-    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("legislation.proposals.not_verified",
             verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
@@ -60,7 +60,7 @@
     </div>
   <% elsif !user_signed_in? %>
     <div tabindex="0">
-      <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <%= t("votes.unauthenticated",
           signin: link_to(t("votes.signin"), new_user_session_path),
           signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
@@ -68,9 +68,9 @@
     </div>
   <% end %>
 
-  <% if voted_for?(@legislation_proposal_votes, proposal) && setting['twitter_handle'] %>
+  <% if voted_for?(@legislation_proposal_votes, proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
-      <%= render partial: 'shared/social_share', locals: {
+      <%= render partial: "shared/social_share", locals: {
           title: proposal.title,
           url: proposal_url(proposal),
           description: proposal.summary,

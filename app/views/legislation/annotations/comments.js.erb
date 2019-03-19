@@ -4,7 +4,7 @@ if ($(".comment").length == 0) {
   $("#comments-box #comments").append("<%= j render('comments', annotation: @annotation) %>");
 
   var current_annotation_link = $("#annotation-link a").attr("href")
-  var sub_annotation_ids = current_annotation_link.split('=')[1];
+  var sub_annotation_ids = current_annotation_link.split("=")[1];
   if (sub_annotation_ids.length == 0) {
     var new_annotation_link = current_annotation_link + <%= "#{@annotation.id}" %>
   }
@@ -21,4 +21,4 @@ if ($(".comment").length == 0) {
   $(".comment-number").text(new_comment_count_text)
 }
 
-<%= render 'comments_box_form', comment: @comment, annotation: @annotation %>
+<%= render "comments_box_form", comment: @comment, annotation: @annotation %>

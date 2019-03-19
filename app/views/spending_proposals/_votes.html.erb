@@ -16,7 +16,7 @@
     <% elsif voting_allowed %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
-          title: t('spending_proposals.spending_proposal.support_title'), method: "post", remote: true,
+          title: t("spending_proposals.spending_proposal.support_title"), method: "post", remote: true,
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("spending_proposals.spending_proposal.support") %>
       <% end %>
@@ -24,7 +24,7 @@
   </div>
 
   <% if reason.present? && !user_voted_for %>
-    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
           <%= t("votes.spending_proposals.#{reason}",
                 verify_account: link_to(t("votes.verify_account"), verification_path),
@@ -35,8 +35,8 @@
     </div>
   <% end %>
 
-  <% if user_voted_for && setting['twitter_handle'] %>
-    <%= render partial: 'shared/social_share', locals: {
+  <% if user_voted_for && setting["twitter_handle"] %>
+    <%= render partial: "shared/social_share", locals: {
       title: spending_proposal.title,
       url: spending_proposal_url(spending_proposal),
       description: spending_proposal.title
