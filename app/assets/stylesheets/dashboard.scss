@@ -101,6 +101,18 @@
     margin-left: $line-height / 4;
     max-width: 90%;
 
+    h4 {
+      display: inline-block;
+    }
+
+    .label {
+      margin-left: $line-height / 2;
+    }
+
+    a {
+      display: block;
+    }
+    
     h4,
     p {
       margin-bottom: 0;
@@ -168,6 +180,15 @@
     width: rem-calc(36);
   }
 
+  .label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+  }
+
+  h4 {
+    margin-top: $line-height;
+  }
   .resource-description {
     min-height: $line-height * 4;
   }
