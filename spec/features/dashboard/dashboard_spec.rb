@@ -377,12 +377,4 @@ feature "Proposal's dashboard" do
       expect(page).to have_content(action.title)
     end
   end
-
-  scenario "On recommended actions section contains no_results_text when there are
-            not proposed_actions pending" do
-    visit progress_proposal_dashboard_path(proposal)
-
-    expect(page).to have_content("No recommended actions done")
-  end
-
 end
