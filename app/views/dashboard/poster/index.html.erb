@@ -27,7 +27,7 @@
             <h3><%= proposal.title %></h3>
             <%= image_tag "quote_after_blue.png" %>
           <p class="poster-footer">
-            <%= t("dashboard.poster.index.footer", link: Setting["url"]).html_safe %>
+            <%= t("dashboard.poster.index.footer_html", link: proposal_url(proposal)) %>
           </p>
         </div>
       </div>

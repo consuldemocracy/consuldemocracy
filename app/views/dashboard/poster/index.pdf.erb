@@ -34,7 +34,7 @@
       <h3><strong><%= proposal.title %></strong></h3>
       <%= wicked_pdf_image_tag "quote_after_blue.png" %>
       <p class="poster-footer">
-        <%= t("dashboard.poster.index.footer", link: Setting["url"]).html_safe %>
+        <%= t("dashboard.poster.index.footer_html", link: proposal_url(proposal)) %>
       </p>
     </div>
   </div>
