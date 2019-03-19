@@ -19,7 +19,7 @@ tr:
         unconfirmed_code: Onay kodunu henüz girmediniz
       create:
         flash:
-          success_html: Kendi <b>maksimum güvenlik kodunuzu (yalnızca son oylar için gerekli)</b> istediğiniz için teşekkür ederiz. Birkaç gün içinde bunu, dosyada bulunan veride belirtilen adrese göndereceğiz. Lütfen şunu unutmayın, eğer tercih ederseniz, kodunuzu Vatandaş Destek Bürolarının herhangi birinden alabilirsiniz.
+          success_html: Kendi <b>maksimum güvenlik kodunuzu (yalnızca son oylar için gerekli)</b> istediğiniz için teşekkür ederiz. Birkaç gün içinde bunu, dosyada bulunan veride belirtilen adrese göndereceğiz. Lütfen şunu unutmayın, eğer tercih ederseniz, kodunuzu Vatandaş Destek Ofislerinin herhangi birinden alabilirsiniz.
       edit:
         see_all: Önerileri gör
         title: Evrak talep edildi
