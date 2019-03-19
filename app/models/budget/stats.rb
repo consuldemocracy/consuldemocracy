@@ -51,7 +51,7 @@ class Budget::Stats
     groups[:total][:total_investments_count] = groups.collect {|_k, v| v[:total_investments_count]}.sum
     groups[:total][:total_participants_support_phase] = groups.collect {|_k, v| v[:total_participants_support_phase]}.sum
     groups[:total][:total_participants_vote_phase] = groups.collect {|_k, v| v[:total_participants_vote_phase]}.sum
-    groups[:total][:total_participants_all_phase] = groups.collect {|_k, v| v[:total_participants_all_phase]}.sum
+    groups[:total][:total_participants_every_phase] = groups.collect {|_k, v| v[:total_participants_every_phase]}.sum
 
     budget.headings.each do |heading|
       groups[heading.id].merge!(calculate_heading_stats_with_totals(groups[heading.id], groups[:total], heading.population))
@@ -59,7 +59,7 @@ class Budget::Stats
 
     groups[:total][:percentage_participants_support_phase] = groups.collect {|_k, v| v[:percentage_participants_support_phase]}.sum
     groups[:total][:percentage_participants_vote_phase] = groups.collect {|_k, v| v[:percentage_participants_vote_phase]}.sum
-    groups[:total][:percentage_participants_all_phase] = groups.collect {|_k, v| v[:percentage_participants_all_phase]}.sum
+    groups[:total][:percentage_participants_every_phase] = groups.collect {|_k, v| v[:percentage_participants_every_phase]}.sum
 
     groups
   end
@@ -101,7 +101,7 @@ class Budget::Stats
         total_investments_count: heading.investments.count,
         total_participants_support_phase: voters_by_heading(heading).count,
         total_participants_vote_phase: balloters_by_heading(heading.id).count,
-        total_participants_all_phase: voters_and_balloters_by_heading(heading)
+        total_participants_every_phase: voters_and_balloters_by_heading(heading)
       }
     end
 
@@ -111,8 +111,8 @@ class Budget::Stats
         percentage_district_population_support_phase: population_percent(population, heading_totals[:total_participants_support_phase]),
         percentage_participants_vote_phase: participants_percent(heading_totals, groups_totals, :total_participants_vote_phase),
         percentage_district_population_vote_phase: population_percent(population, heading_totals[:total_participants_vote_phase]),
-        percentage_participants_all_phase: participants_percent(heading_totals, groups_totals, :total_participants_all_phase),
-        percentage_district_population_all_phase: population_percent(population, heading_totals[:total_participants_all_phase])
+        percentage_participants_every_phase: participants_percent(heading_totals, groups_totals, :total_participants_every_phase),
+        percentage_district_population_every_phase: population_percent(population, heading_totals[:total_participants_every_phase])
       }
     end
 

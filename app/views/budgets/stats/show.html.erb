@@ -122,7 +122,7 @@
                     <%= @stats.headings[heading.id][:total_investments_count] %>
                   </td>
 
-                  <% ["support", "vote", "all"].each do |phase| %>
+                  <% ["support", "vote", "every"].each do |phase| %>
                     <td id="total_participants_<%= phase %>_phase_heading_<%= heading.id %>"
                         class="border-left text-center">
                       <%= @stats.headings[heading.id]["total_participants_#{phase}_phase".to_sym] %>
