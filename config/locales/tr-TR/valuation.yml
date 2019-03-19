@@ -1,14 +1,31 @@
 tr:
   valuation:
+    header:
+      title: Değerlendirme
+    menu:
+      title: Değerlendirme
+      budgets: Katılımcı bütçeler
+      spending_proposals: Harcama önerileri
     budgets:
       index:
+        title: Katılımcı bütçeler
         filters:
           current: Açık
+          finished: Bitmiş
+        table_name: İsim
+        table_phase: Aşama
         table_actions: Aksiyon
+        evaluate: Değerlendirmek
+        no_budgets: "Bütçe yok"
     budget_investments:
       index:
+        headings_filter_all: Tüm başlıklar
         filters:
           valuation_open: Açık
+          valuating: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+        title: Yatırım projeleri
+        edit: Dosyayı düzenle
         table_actions: Aksiyon
       show:
         currency: "€"
