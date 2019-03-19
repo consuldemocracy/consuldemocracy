@@ -30,9 +30,9 @@
     </div>
     <div class="poster-content">
       <h2 class="text-center"><strong><%= t("dashboard.poster.index.support") %></strong></h2>
-      <%= wicked_pdf_image_tag 'quote-before-blue.png' %>
+      <%= wicked_pdf_image_tag "quote_before_blue.png" %>
       <h3><strong><%= proposal.title %></strong></h3>
-      <%= wicked_pdf_image_tag 'quote-after-blue.png' %>
+      <%= wicked_pdf_image_tag "quote_after_blue.png" %>
       <p class="poster-footer">
         <%= t("dashboard.poster.index.footer", link: Setting["url"]).html_safe %>
       </p>
