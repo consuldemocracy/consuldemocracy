@@ -6,7 +6,6 @@
       <tr>
         <th><%= t("stats.geozone") %></th>
         <th><%= t("stats.total") %></th>
-        <th><%= t("stats.geozone_participation") %></th>
       </tr>
     </thead>
 
@@ -14,8 +13,7 @@
       <% stats.participants_by_geozone.each do |geozone, participants| %>
         <tr>
           <td><%= geozone %></td>
-          <td><%= "#{participants[:total][:count]} (#{number_to_stats_percentage(participants[:total][:percentage])})" %></td>
-          <td><%= number_to_stats_percentage(participants[:percentage]) %></td>
+          <td><%= "#{participants[:count]} (#{number_to_stats_percentage(participants[:percentage])})" %></td>
         </tr>
       <% end %>
     </tbody>

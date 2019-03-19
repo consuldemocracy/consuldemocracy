@@ -13,7 +13,6 @@ en:
     age_range: "%{start} - %{finish} years old"
     total: "Total"
     geozone: "District"
-    geozone_participation: "% District population participants"
     budgets:
       link: "Stats"
       page_title: "%{budget} - Participation stats"

@@ -75,11 +75,8 @@ module Statisticable
         [
           geozone.name,
           {
-            total: {
-              count: count,
-              percentage: calculate_percentage(count, total_participants)
-            },
-            percentage: calculate_percentage(count, geozone.users.count)
+            count: count,
+            percentage: calculate_percentage(count, total_participants)
           }
         ]
       end.to_h

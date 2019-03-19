@@ -170,17 +170,10 @@ describe Poll::Stats do
       3.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: hobbiton) }
       2.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: rivendel) }
 
-      expect(stats.participants_by_geozone["Hobbiton"][:total]).to eq(count: 3, percentage: 60.0)
-      expect(stats.participants_by_geozone["Rivendel"][:total]).to eq(count: 2, percentage: 40.0)
-    end
-
-    it "calculates percentage relative to the geozone population" do
-      midgar = create(:geozone, name: "Midgar")
-
-      create(:poll_voter, poll: poll, user: create(:user, :level_two, geozone: midgar))
-      2.times { create :user, :level_two, geozone: midgar }
-
-      expect(stats.participants_by_geozone["Midgar"][:percentage]).to eq(33.333)
+      expect(stats.participants_by_geozone["Hobbiton"][:count]).to eq 3
+      expect(stats.participants_by_geozone["Hobbiton"][:percentage]).to eq 60.0
+      expect(stats.participants_by_geozone["Rivendel"][:count]).to eq 2
+      expect(stats.participants_by_geozone["Rivendel"][:percentage]).to eq 40.0
     end
   end
 
