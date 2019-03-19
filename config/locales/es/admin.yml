@@ -337,6 +337,7 @@ es:
           day_offset: Días necesarios
           action_active: Activo
           order: Orden
+          published_proposal: Propuesta publicada
         new:
           creating: Nueva acción para el dashboard de propuestas
           back: Volver a la lista
@@ -350,6 +351,8 @@ es:
           day_offset_help_text: Introduce 0 para que este valor no se tenga en cuenta
           required_supports_help_text: Introduce 0 para que este valor no se tenga en cuenta
           order_help_text: Orden para mostrar al usuario
+          published_proposal: ¿Para propuestas publicadas?
+          published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
         delete:
           success: Acción borrada con éxito
       administrator_tasks:

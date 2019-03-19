@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180924071722) do
+ActiveRecord::Schema.define(version: 20190108133246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -370,6 +370,7 @@ ActiveRecord::Schema.define(version: 20180924071722) do
     t.string   "short_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published_proposal",                   default: false
   end
 
   create_table "dashboard_administrator_tasks", force: :cascade do |t|

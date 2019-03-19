@@ -337,6 +337,7 @@ en:
           day_offset: Required days
           action_active: Active
           order: Order
+          published_proposal: Published proposal
         new:
           creating: New action for the proposals dashboard
           back: Back to list
@@ -352,6 +353,8 @@ en:
           day_offset_help_text: Enter 0 so that this value is not taken into account
           required_supports_help_text: Enter 0 so that this value is not taken into account
           order_help_text: Order to show to user
+          published_proposal: For published proposals?
+          published_proposal_help_text: Mark this checkbox to create the action only for published proposals
       administrator_tasks:
         index:
           title: Pending tasks
