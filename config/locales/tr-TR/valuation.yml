@@ -26,9 +26,43 @@ tr:
           valuation_finished: Değerlendirme bitti
         title: Yatırım projeleri
         edit: Dosyayı düzenle
+        valuators_assigned:
+          one: Atanan bilirkişi
+          other: "%{count} atanan bilirkişiler"
+        no_valuators_assigned: Bilirkişi atanmamış
+        table_id: KİMLİK
+        table_title: Başlık
+        table_heading_name: Başlık adı
         table_actions: Aksiyon
+        no_investments: "Yatırım projesi yok."
       show:
+        back: Geri
+        title: Yatırım projesi
+        info: Yazar bilgisi
+        by: Tarafından gönderildi
+        sent: Tarihinde gönderildi
+        heading: Başlık
+        dossier: Dosya
+        edit_dossier: Dosya düzenleme
+        price: Fiyat
+        price_first_year: İlk yıl sırasındaki maliyet
         currency: "€"
+        feasibility: Fizibilite
+        feasible: Uygulanabilir
+        unfeasible: Uygulanamaz
+        undefined: Tanımsız
+        valuation_finished: Değerlendirme bitti
+        duration: Zaman kapsamı
+        responsibles: Sorumlular
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
+      edit:
+        dossier: Dosya
+        price_html: "Fiyat (%{currency})"
+        price_first_year_html: "İlk yıl sırasındaki maliyet (%{currency})<small>(isteğe bağlı, veriler herkese açık değil)</small>"
+        price_explanation_html: Fiyat açıklama
+        feasibility: Fizibilite
+        feasible: Uygulanabilir
     spending_proposals:
       index:
         filters:
