@@ -67,11 +67,6 @@ describe Abilities::Administrator do
   it { should be_able_to(:comment_as_administrator, legislation_question) }
   it { should_not be_able_to(:comment_as_moderator, legislation_question) }
 
-  it { should be_able_to(:read, SpendingProposal) }
-  it { should be_able_to(:update, SpendingProposal) }
-  it { should be_able_to(:valuate, SpendingProposal) }
-  it { should be_able_to(:destroy, SpendingProposal) }
-
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }
   it { should be_able_to(:read_results, Budget) }

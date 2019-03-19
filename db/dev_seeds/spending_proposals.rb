@@ -22,9 +22,3 @@ section "Creating Spending Proposals" do
                                                  terms_of_service: "1")
   end
 end
-
-section "Creating Valuation Assignments" do
-  (1..17).to_a.sample.times do
-    SpendingProposal.all.sample.valuators << Valuator.first
-  end
-end

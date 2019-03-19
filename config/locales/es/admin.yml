@@ -905,15 +905,6 @@ es:
         delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
-      summary:
-        title: Resumen de evaluación de proyectos de gasto
-        valuator_name: Evaluador
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
-        in_evaluation_count: En evaluación
-        total_count: Total
-        cost: Coste total
       form:
         edit_title: "Evaluadores: Editar evaluador"
         update: "Actualizar evaluador"

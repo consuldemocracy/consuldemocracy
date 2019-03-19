@@ -715,7 +715,6 @@ en:
           content_block:
             update: "Update Block"
       title_moderated_content: Moderated content
-      title_budgets: Budgets
       title_profiles: Profiles
       title_settings: Settings
       title_site_customization: Site content
@@ -906,15 +905,6 @@ en:
         delete: Delete
       search:
         title: "Valuators: User search"
-      summary:
-        title: Valuator summary for investment projects
-        valuator_name: Valuator
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost: Cost
       form:
         edit_title: "Valuators: Edit valuator"
         update: "Update valuator"
@@ -1378,16 +1368,6 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
-      summary:
-        title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
-        geozone_name: Scope
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost_for_geozone: Cost
     geozones:
       index:
         title: Geozone

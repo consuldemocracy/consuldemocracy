@@ -168,7 +168,6 @@ ignore_unused:
   - "moderation.budget_investments.index.order*"
   - "moderation.proposal_notifications.index.filter*"
   - "moderation.proposal_notifications.index.order*"
-  - "valuation.spending_proposals.index.filter*"
   - "valuation.budgets.index.filter*"
   - "valuation.budget_investments.index.filter*"
   - "users.show.filters.*"

@@ -49,7 +49,6 @@
 //= require forms
 //= require tracks
 //= require valuation_budget_investment_form
-//= require valuation_spending_proposal_form
 //= require embed_video
 //= require fixed_bar
 //= require banners
@@ -105,7 +104,6 @@ var initialize_modules = function() {
   App.Forms.initialize();
   App.Tracks.initialize();
   App.ValuationBudgetInvestmentForm.initialize();
-  App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
