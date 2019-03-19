@@ -4,7 +4,6 @@ describe "Admin feature flags" do
 
   before do
     Setting["feature.spending_proposals"] = true
-    Setting["feature.spending_proposal_features.voting_allowed"] = true
     login_as(create(:administrator).user)
   end
 

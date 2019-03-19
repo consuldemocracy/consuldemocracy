@@ -377,7 +377,6 @@ describe "Votes" do
 
     after do
       Setting["feature.spending_proposals"] = nil
-      Setting["feature.spending_proposal_features.voting_allowed"] = nil
     end
 
     describe "Index" do

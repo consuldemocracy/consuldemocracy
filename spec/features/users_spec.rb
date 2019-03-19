@@ -231,7 +231,6 @@ describe "Users" do
       end
 
     end
-
   end
 
   describe "Public interests" do
