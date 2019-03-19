@@ -31,17 +31,29 @@
   border-radius: rem-calc(6);
   margin-bottom: $line-height;
   padding: $line-height / 2;
+  text-align: center;
 
-  .counter {
-    text-align: center;
+  @include breakpoint(medium only) {
+    .change-behaviour {
+      float: left;
+      margin-top: $line-height / 2;
+      padding: $line-height;
+      width: 100%;
+    }
   }
 
   .counter-divider {
-
     @include breakpoint(medium) {
       border-left: 2px solid $highlight;
+    }
+
+    @include breakpoint(large) {
       border-right: 2px solid $highlight;
     }
+  }
+
+  .supports .counter-label {
+    display: block;
   }
 
   .counter-value {
@@ -57,7 +69,7 @@
   .progress {
     background: #f0efea;
     border-radius: rem-calc(6);
-    height: $line-height;
+    height: $line-height / 2;
   }
 
   .progress-meter {
