@@ -1,6 +1,7 @@
 tr:
   settings:
     comments_body_max_length: "Yorumlar gövdesi maksimum uzunluğu"
+    comments_body_max_length_description: "Karakterler sayısı içinde"
     official_level_1_name: "1. seviye kamu memuru"
     official_level_1_name_description: "1. seviye resmi pozisyon olarak işaretlenmiş kullanıcılarda görünecek etiket"
     official_level_2_name: "2. seviye kamu memuru"
@@ -22,6 +23,7 @@ tr:
     months_to_archive_proposals: "Önerilerin arşivleneceği aylar"
     months_to_archive_proposals_description: "Bu aylardan sonra Öneriler arşivlenecek ve artık destek alamayacak"
     email_domain_for_officials: "Kamu memurları için e-posta alanı"
+    per_page_code_head: "Her sayfaya dahil edilecek kod (<head>)"
     per_page_code_body: "Her sayfaya dahil edilecek kod (<body>)"
     twitter_handle: "Twitter kolu"
     twitter_handle_description: "Doldurulursa alt bilgide görünecektir"
@@ -40,6 +42,8 @@ tr:
     org_name: "Site adı"
     related_content_score_threshold: "İlgili içerik puanı eşiği"
     related_content_score_threshold_description: "İlgili bir içerikteki oyların derecesine göre, kullanıcıların ilgisiz olarak işaretledikleri içeriği gizler"
+    hot_score_period_in_days: "'En aktif' filtresinin kullandığı süre (günler)"
+    hot_score_period_in_days_description: "Birden fazla bölümde kullanılan \"en aktif\" filtresi son X günlerindeki oylara göre belirlenir"
     map_latitude: "Enlem"
     map_latitude_description: "Harita konumunu göstermek için enlem"
     map_longitude: "Boylam"
@@ -58,6 +62,8 @@ tr:
     meta_keywords_description: 'Anahtar Kelimeler <meta name="keywords">, SEO’yu geliştirmek için kullanılır'
     min_age_to_participate: Katılmak için gereken minimum yaş
     analytics_url: "Mantıksal Analiz URL"
+    direct_message_max_per_day: "Maksimum günlük Doğrudan Mesaj sayısı"
+    direct_message_max_per_day_description: "Bir kullanıcının günlük olarak gönderebileceği maksimum doğrudan mesajların sayısı"
     feature:
       budgets: "Katılımcı bütçeleme"
       twitter_login: "Twitter girişi"
@@ -84,6 +90,7 @@ tr:
         skip_verification_description: "Bu, kullanıcı doğrulamasını devre dışı bırakacak ve tüm kayıtlı kullanıcılar tüm işlemlere katılabilecek"
         recommendations_on_debates: "Tartışmalarla ilgili tavsiyeler"
         recommendations_on_proposals: "Önerilerle ilgili tavsiyeler"
+      map: "Öneriler ve bütçe yatırımları coğrafi konumu"
       public_stats: "Kamu istatistikleri"
       public_stats_description: "Yönetim panelinde kamu istatistiklerini görüntüleme"
       help_page: "Yardım sayfası"
