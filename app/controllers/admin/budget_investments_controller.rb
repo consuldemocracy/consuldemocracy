@@ -21,7 +21,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.js
       format.csv do
         send_data Budget::Investment::Exporter.new(@investments).to_csv,
-                  filename: 'budget_investments.csv'
+                  filename: "budget_investments.csv"
       end
     end
   end
@@ -71,7 +71,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def resource_name
-      resource_model.parameterize('_')
+      resource_model.parameterize("_")
     end
 
     def load_investments

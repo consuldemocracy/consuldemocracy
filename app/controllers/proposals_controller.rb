@@ -36,7 +36,7 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
-      redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
+      redirect_to share_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
     end
@@ -49,13 +49,13 @@ class ProposalsController < ApplicationController
   end
 
   def vote
-    @proposal.register_vote(current_user, 'yes')
+    @proposal.register_vote(current_user, "yes")
     set_proposal_votes(@proposal)
   end
 
   def retire
     if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.current))
-      redirect_to proposal_path(@proposal), notice: t('proposals.notice.retired')
+      redirect_to proposal_path(@proposal), notice: t("proposals.notice.retired")
     else
       render action: :retire_form
     end
@@ -65,7 +65,7 @@ class ProposalsController < ApplicationController
   end
 
   def vote_featured
-    @proposal.register_vote(current_user, 'yes')
+    @proposal.register_vote(current_user, "yes")
     set_featured_proposal_votes(@proposal)
   end
 
@@ -76,9 +76,9 @@ class ProposalsController < ApplicationController
 
   def disable_recommendations
     if current_user.update(recommended_proposals: false)
-      redirect_to proposals_path, notice: t('proposals.index.recommendations.actions.success')
+      redirect_to proposals_path, notice: t("proposals.index.recommendations.actions.success")
     else
-      redirect_to proposals_path, error: t('proposals.index.recommendations.actions.error')
+      redirect_to proposals_path, error: t("proposals.index.recommendations.actions.error")
     end
   end
 
@@ -97,8 +97,8 @@ class ProposalsController < ApplicationController
     end
 
     def valid_retired_params?
-      @proposal.errors.add(:retired_reason, I18n.t('errors.messages.blank')) if params[:proposal][:retired_reason].blank?
-      @proposal.errors.add(:retired_explanation, I18n.t('errors.messages.blank')) if params[:proposal][:retired_explanation].blank?
+      @proposal.errors.add(:retired_reason, I18n.t("errors.messages.blank")) if params[:proposal][:retired_reason].blank?
+      @proposal.errors.add(:retired_explanation, I18n.t("errors.messages.blank")) if params[:proposal][:retired_explanation].blank?
       @proposal.errors.empty?
     end
 
@@ -125,12 +125,12 @@ class ProposalsController < ApplicationController
 
     def load_featured
       return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank? && @current_order != "recommendations"
-      if Setting['feature.featured_proposals']
+      if Setting["feature.featured_proposals"]
         @featured_proposals = Proposal.not_archived.unsuccessful
-                              .sort_by_confidence_score.limit(Setting['featured_proposals_number'])
+                              .sort_by_confidence_score.limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
           set_featured_proposal_votes(@featured_proposals)
-          @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+          @resources = @resources.where("proposals.id NOT IN (?)", @featured_proposals.map(&:id))
         end
       end
     end
@@ -147,7 +147,7 @@ class ProposalsController < ApplicationController
     end
 
     def proposals_recommendations
-      if Setting['feature.user.recommendations_on_proposals'] && current_user.recommended_proposals
+      if Setting["feature.user.recommendations_on_proposals"] && current_user.recommended_proposals
         @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
       end
     end

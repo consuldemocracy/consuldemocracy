@@ -14,10 +14,10 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   def create
     if @process.save
       link = legislation_process_path(@process).html_safe
-      notice = t('admin.legislation.processes.create.notice', link: link)
+      notice = t("admin.legislation.processes.create.notice", link: link)
       redirect_to edit_admin_legislation_process_path(@process), notice: notice
     else
-      flash.now[:error] = t('admin.legislation.processes.create.error')
+      flash.now[:error] = t("admin.legislation.processes.create.error")
       render :new
     end
   end
@@ -27,16 +27,16 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
       set_tag_list
 
       link = legislation_process_path(@process).html_safe
-      redirect_to :back, notice: t('admin.legislation.processes.update.notice', link: link)
+      redirect_to :back, notice: t("admin.legislation.processes.update.notice", link: link)
     else
-      flash.now[:error] = t('admin.legislation.processes.update.error')
+      flash.now[:error] = t("admin.legislation.processes.update.error")
       render :edit
     end
   end
 
   def destroy
     @process.destroy
-    notice = t('admin.legislation.processes.destroy.notice')
+    notice = t("admin.legislation.processes.destroy.notice")
     redirect_to admin_legislation_processes_path, notice: notice
   end
 

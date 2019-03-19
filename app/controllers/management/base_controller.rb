@@ -1,5 +1,5 @@
 class Management::BaseController < ActionController::Base
-  layout 'management'
+  layout "management"
 
   before_action :verify_manager
   before_action :set_locale
@@ -11,7 +11,7 @@ class Management::BaseController < ActionController::Base
   private
 
     def verify_manager
-      raise ActionController::RoutingError.new('Not Found') if current_manager.blank?
+      raise ActionController::RoutingError.new("Not Found") if current_manager.blank?
     end
 
     def current_manager

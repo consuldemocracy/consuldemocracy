@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
 
     def verify_lock
       if current_user.locked?
-        redirect_to account_path, alert: t('verification.alert.lock')
+        redirect_to account_path, alert: t("verification.alert.lock")
       end
     end
 
@@ -94,13 +94,13 @@ class ApplicationController < ActionController::Base
 
     def verify_resident!
       unless current_user.residence_verified?
-        redirect_to new_residence_path, alert: t('verification.residence.alert.unconfirmed_residency')
+        redirect_to new_residence_path, alert: t("verification.residence.alert.unconfirmed_residency")
       end
     end
 
     def verify_verified!
       if current_user.level_three_verified?
-        redirect_to(account_path, notice: t('verification.redirect_notices.already_verified'))
+        redirect_to(account_path, notice: t("verification.redirect_notices.already_verified"))
       end
     end
 
@@ -112,7 +112,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_return_url
-      if !devise_controller? && controller_name != 'welcome' && is_navigational_format?
+      if !devise_controller? && controller_name != "welcome" && is_navigational_format?
         store_location_for(:user, request.path)
       end
     end

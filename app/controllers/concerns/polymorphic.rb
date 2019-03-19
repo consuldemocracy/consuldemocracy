@@ -3,7 +3,7 @@ module Polymorphic
   private
 
     def resource
-      if resource_model.to_s == 'Budget::Investment'
+      if resource_model.to_s == "Budget::Investment"
         @resource ||= instance_variable_get("@investment")
       else
         @resource ||= instance_variable_get("@#{resource_name}")
