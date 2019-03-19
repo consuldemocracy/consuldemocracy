@@ -7,8 +7,40 @@ tr:
       create:
         alert:
           failure: Hesabınıza bir e-posta gönderirken bir sorun oluştu
-    residence:
+        flash:
+          success: 'Hesabınıza bir onay e-postası gönderdik: %{email}'
+      show:
+        alert:
+          failure: Doğrulama kodu yanlış
+        flash:
+          success: Siz doğrulanmış bir kullanıcısınız
+    letter:
+      alert:
+        unconfirmed_code: Onay kodunu henüz girmediniz
+      edit:
+        see_all: Önerileri gör
+      errors:
+        incorrect_code: Doğrulama kodu yanlış
       new:
+        explanation: 'Son oylamaya katılmak için şunları yapabilirsiniz:'
+        go_to_index: Önerileri gör
+        office: Herhangi bir Vatandaş Destek Ofisinde doğrulama
+        title: Tebrikler!
+        user_permission_info: Hesabınızla yapabilecekleriniz...
+      update:
+        flash:
+          success: Kod doğru. Hesabınız şimdi doğrulandı
+    redirect_notices:
+      already_verified: Hesabınız zaten doğrulandı
+      email_already_sent: Size bir onay bağlantısı içeren bir e-posta gönderdik. E-postayı bulamazsanız, buradanbir yeniden yayın talep edebilirsiniz
+    residence:
+      alert:
+        unconfirmed_residency: Siz henüz ikametinizi onaylamadınız
+      create:
+        flash:
+          success: İkamet doğrulandı
+      new:
+        accept_terms_text: Census'un %{terms_url}'sini kabul ediyorum
         date_of_birth: Doğum tarihi
         document_type_label: Belge Türü
         postal_code: Posta kodu
