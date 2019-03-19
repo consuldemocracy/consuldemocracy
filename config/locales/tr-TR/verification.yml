@@ -72,7 +72,7 @@ tr:
       edit:
         confirmation_code: Cep telefonunuza aldığınız kodu girin
         resend_sms_link: Tekrar göndermek için buraya tıklayın
-        resend_sms_text: Onay kodunu içeren bir metin alamadınız mı?
+        resend_sms_text: Onay kodunuzu içeren bir metin almadınız mı?
         submit_button: Gönder
         title: Güvenlik kodu onayı
       new:
