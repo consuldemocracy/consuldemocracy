@@ -31,12 +31,12 @@ tr:
         valuators_assigned:
           one: Atanan bilirkişi
           other: "%{count} atanan bilirkişiler"
-        no_valuators_assigned: Bilirkişi atanmamış
+        no_valuators_assigned: Hiç bilirkişi atanmadı
         table_id: KİMLİK
         table_title: Başlık
         table_heading_name: Başlık adı
         table_actions: Aksiyon
-        no_investments: "Yatırım projesi yok."
+        no_investments: "Hiç yatırım projesi yok."
       show:
         back: Geri
         title: Yatırım projesi
@@ -75,7 +75,7 @@ tr:
         save: Değişiklikleri kaydet
       notice:
         valuate: "Dosya güncellendi"
-      valuation_comments: Yorumları değerlendirme
+      valuation_comments: Değerlendirme yorumları
       not_in_valuating_phase: Yatırımlar sadece Bütçe değerlendirme aşamasındayken değerlendirilebilir
     spending_proposals:
       index:
