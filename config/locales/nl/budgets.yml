@@ -48,7 +48,7 @@ nl:
         help: Hulp bij burgerbegrotingen
         all_phases: Bekijk alle fases
       all_phases: Investeringsfases
-      map: Investeringsvoorstellen geografisch weergegeven
+      map: Investeringen geografisch weergegeven
       investment_proyects: Lijst van alle begrotingsvoorstellen
       unfeasible_investment_proyects: Lijst van alle onhaalbare begrotingsvoorstellen
       not_selected_investment_proyects: Lijst van alle begrotingsvoorstellen niet geschikt voor stemming
@@ -61,9 +61,9 @@ nl:
     investments:
       form:
         tag_category_label: "Categorieen"
-        tags_instructions: "Label dit voorstel. U kunt "
+        tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
         tags_label: Tags
-        tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
+        tags_placeholder: "Voer de termen in die je wilt gebruiken, gescheiden door komma's (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
         map_remove_marker: "Locatie verwijderen"
@@ -84,7 +84,7 @@ nl:
         sidebar:
           my_ballot: Mijn stemmen
           voted_html:
-            one: "<strong>U heeft gestemd op een voorstel dat %{amount_spent} kost</strong>"
+            one: "<strong>Je hebt gestemd op een voorstel dat %{amount_spent} kost</strong>"
             other: "<strong>U heeft gestemd op %{count} voorstellen met een prijs van %{amount_spent}</strong>"
           voted_info: Tot het einde van deze fase kun je %{link}. Het is niet nodig om al het geld te besteden.
           voted_info_link: uw stem wijzigen
@@ -106,7 +106,7 @@ nl:
           confidence_score: best gescored
           price: op bedrag
       share:
-        message: "Ik heb investeringsvoorstel %{title} gemaakt in %{org}. Jij kunt ook een investeringsvoorstel doen!"
+        message: "Ik heb investeringsvoorstel %{title} gemaakt in %{handle}. Jij kunt ook een investeringsvoorstel doen!"
       show:
         author_deleted: Gebruiker verwijderd
         price_explanation: Price explanation
@@ -126,6 +126,7 @@ nl:
         project_selected_html: 'Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase.'
         project_winner: 'Winnend investeringsproject'
         project_not_selected_html: 'Dit investeringsproject <strong> is niet geselecteerd </strong> voor beslissingsfase.'
+        see_price_explanation: Toelichting op de kosten
       wrong_price_format: Alleen hele cijfers
       investment:
         add: Voeg toe
@@ -162,14 +163,14 @@ nl:
       page_title: "%{budget} - resultaten"
       heading: "Resultaten burgerbegroting"
       heading_selection_title: "Per wijk"
-      spending_proposal: Titel van het voorstel
+      spending_proposal: Titel
       ballot_lines_count: Votes
       hide_discarded_link: Verberg verworpen voorstellen
       show_all_link: Toon alle
       price: Prijs
       amount_available: Beschikbare budget
-      accepted: "Aanvaard uitgavenvoorstel: "
-      discarded: "Verworpen uitgavenvoorstel: "
+      accepted: "Geaccepteerde budgetten: "
+      discarded: "Verworpen budgetten: "
       incompatibles: Niet compatibel
       investment_proyects: Lijst van alle investeringsvoorstellen
       unfeasible_investment_proyects: Lijst van alle niet haalbare investeringsvoorstellen
@@ -185,6 +186,6 @@ nl:
         all: "Alle (%{count})"
     phases:
       errors:
-        dates_range_invalid: "Startdatum kan niet gelijk of later zijn dan de einddatum."
-        prev_phase_dates_invalid: "Startdatum moet later zijn dan de startdatum van de vorige fase(%{phase_name})"
+        dates_range_invalid: "De begindatum dient kleiner te zijn dan de einddatum"
+        prev_phase_dates_invalid: "Begindatum moet later zijn dan de begindatum van de vorige fase(%{phase_name})"
         next_phase_dates_invalid: "Einddatum moet eerder zijn dan de einddatum van de volgende fase(%{phase_name})"
