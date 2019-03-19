@@ -4,33 +4,36 @@
   <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px;width: 100%;">
     <tbody>
       <tr>
-        <td style="background: #3700fd; padding: 20px; text-align: center;">
-          <h1 style="color: #fff;"><%= @proposal.title %></h1>
-          <h2 style="color: #fff;"><%= t("dashboard.mailer.forward.subtitle") %></h2>
+        <td style="background: #0300ff; padding: 50px; padding-top:40px; text-align: left;">
+          <%= image_tag 'quote-before-white.png', style: 'max-width: 40px; vertical-align: top;' %>
+          <h1 style="color: #fff; font-size: 60px; line-height: 90px; display: inline;"><%= @proposal.title %></h1>
+          <%= image_tag 'quote-after-white.png', style: 'max-width: 40px; vertical-align: top;' %>
+          <h2 style="color: #fff; font-size: 40px; line-height: 60px"><%= t("dashboard.mailer.forward.subtitle").html_safe %></h2>
         </td>
       </tr>
     </tbody>
   </table>
 
   <% if @proposal.image.present? %>
-    <%= image_tag @proposal.image.attachment.url(:large), style: "max-width: 100%;" %>
+    <%= image_tag @proposal.image.attachment.url(:large), style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% else %>
-    <%= image_tag "default_mailing.jpg", style: "max-width: 100%;" %>
+    <%= image_tag "default_mailing.jpg", style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% end %>
 
-  <p><%= t("dashboard.mailer.forward.hi")%></p>
-  <p><%= t("dashboard.mailer.forward.introduction", org: setting['org_name']) %></p>
-  <p><%= t("dashboard.mailer.forward.support") %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.hi")%></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.introduction", org: setting['org_name']) %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.support") %></p>
 
   <table style="width: 100%;">
     <tbody>
       <tr>
         <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
           <%= link_to proposal_url(@proposal),
-                      style: "font-family: 'Open Sans',arial,sans-serif; background: #3700fd;
+                      style: "font-family: 'Open Sans',arial,sans-serif; background: #064c86;
                       border-radius: 6px; color: #fff !important; font-weight: bold;
                       padding: 17px 20px; text-align: center; text-decoration: none;
-                      font-size: 20px; min-width: 200px; display: inline-block;",
+                      font-size: 20px; min-width: 200px; display: inline-block;
+                      box-shadow: -4px 18px 45px -19px rgba(0,0,0,0.75);",
                       target: "_blank" do %>
             <%= t("dashboard.mailer.forward.support_button") %>
           <% end %>
@@ -39,13 +42,13 @@
     </tbody>
   </table>
 
-  <p><%= t("dashboard.mailer.forward.share") %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.share") %></p>
 
   <table style="width: 100%; margin-top: 24px;">
     <tbody>
       <tr>
         <td style="text-align: center;">
-          <h3><%= t("dashboard.mailer.forward.share_in") %></h3>
+          <h3 style="font-size: 22px; line-height: 10px;"><%= t("dashboard.mailer.forward.share_in") %></h3>
         </td>
       </tr>
       <tr>
@@ -58,4 +61,5 @@
       </tr>
     </tbody>
   </table>
+  <%= image_tag("logo_header_black.png", style: "max-width: 120px; display: block; margin: 0 auto; margin-top: 30px") %>
 </td>

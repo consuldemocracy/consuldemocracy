@@ -563,14 +563,14 @@ es:
     poster:
       index:
         title: Previsualización del poster
-        poster_title: "No te quedes mirando"
+        poster_title: "No te quedes mirando,"
         poster_subtitle: "¡apóyame! ;)"
         intro_text:
-          Estoy participando en Decide Madrid con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el
+          <strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el
           apoyo necesario para hacer de madrid la ciudad que todos queremos.
         proposal_code: "Código de la propuesta: %{code}"
         support: Apoya mi propuesta
-        footer: Entra en decide.madrid.es y apoya esta propuesta. Necesitamos ser muchos. Decide tu también. ¡Gracias!
+        footer: <strong>Entra en %{link} y apoya esta propuesta.</strong> Necesitamos ser muchos. Decide tu también. ¡Gracias!
       new:
         title: Funcionalidad de póster
       options:
@@ -588,7 +588,7 @@ es:
         sent: El e-mail ha sido enviado
     mailer:
       forward:
-        subtitle: Si me apoyas, lo conseguiremos.
+        subtitle: Si me apoyas, <br>lo conseguiremos.
         support_button: Apoyar esta propuesta
         share_in: Compartir en
         hi: "¡Hola!"
