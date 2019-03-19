@@ -85,6 +85,7 @@ tr:
       google_login: "Google girişi"
       google_login_description: "Kullanıcıların Google Hesapları ile kayıt olmalarına izin ver"
       proposals: "Öneriler"
+      proposals_description: "Vatandaşların önerileri, komşuların ve toplulukların toplumlarının nasıl olmasını istediklerine doğrudan karar vermeleri için yeterli destek almalarını ve vatandaşların oylarına sunmalarını sağlayan bir fırsattır"
       featured_proposals: "Öne çıkan öneriler"
       featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
       debates: "Tartışmalar"
