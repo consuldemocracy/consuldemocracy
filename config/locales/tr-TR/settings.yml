@@ -1,1 +1,3 @@
 tr:
+  settings:
+    comments_body_max_length: "Yorumlar gövdesi maksimum uzunluğu"
