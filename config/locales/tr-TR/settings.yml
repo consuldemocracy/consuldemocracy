@@ -53,7 +53,23 @@ tr:
     meta_title: "Site başlığı (SEO)"
     meta_title_description: "Site başlığı <title>, SEO’yu geliştirmek için kullanılır"
     meta_description: "Site açıklaması (SEO)"
+    meta_description_description: 'Site tanımlaması <meta name="description">, SEO’yu geliştirmek için kullanılır'
+    meta_keywords: "Anahtar Kelimeler (SEO)"
+    meta_keywords_description: 'Anahtar Kelimeler <meta name="keywords">, SEO’yu geliştirmek için kullanılır'
+    min_age_to_participate: Katılmak için gereken minimum yaş
+    analytics_url: "Mantıksal Analiz URL"
     feature:
+      budgets: "Katılımcı bütçeleme"
+      twitter_login: "Twitter girişi"
+      twitter_login_description: "Kullanıcıların Twitter hesapları ile kayıt olmalarına izin ver"
+      facebook_login: "Facebook girişi"
+      facebook_login_description: "Kullanıcıların Facebook hesapları ile kayıt olmalarına izin ver"
+      google_login: "Google girişi"
+      google_login_description: "Kullanıcıların Google Hesapları ile kayıt olmalarına izin ver"
+      proposals: "Öneriler"
+      featured_proposals: "Öne çıkan öneriler"
+      featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
+      debates: "Tartışmalar"
       polls: "Anketler"
       signature_sheets: "İmza sayfaları"
       legislation: "Katılımcı Mevzuat"
@@ -68,3 +84,6 @@ tr:
         skip_verification_description: "Bu, kullanıcı doğrulamasını devre dışı bırakacak ve tüm kayıtlı kullanıcılar tüm işlemlere katılabilecek"
         recommendations_on_debates: "Tartışmalarla ilgili tavsiyeler"
         recommendations_on_proposals: "Önerilerle ilgili tavsiyeler"
+      public_stats: "Kamu istatistikleri"
+      public_stats_description: "Yönetim panelinde kamu istatistiklerini görüntüleme"
+      help_page: "Yardım sayfası"
