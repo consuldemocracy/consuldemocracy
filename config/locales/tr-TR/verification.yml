@@ -37,7 +37,7 @@ tr:
           success: Kod doğru. Hesabınız şimdi doğrulandı
     redirect_notices:
       already_verified: Hesabınız zaten doğrulandı
-      email_already_sent: Size bir onay bağlantısı içeren bir e-posta gönderdik. E-postayı bulamazsanız, buradanbir yeniden yayın talep edebilirsiniz
+      email_already_sent: Size bir onay bağlantısı içeren bir e-posta gönderdik. E-postayı bulamazsanız, buradan bir yeniden yayın talep edebilirsiniz
     residence:
       alert:
         unconfirmed_residency: Siz henüz ikametinizi onaylamadınız
@@ -46,7 +46,7 @@ tr:
           success: İkamet doğrulandı
       new:
         accept_terms_text: Census'un %{terms_url}'sini kabul ediyorum
-        accept_terms_text_title: Census'un erişim şartları ve koşulları kabul ediyorum
+        accept_terms_text_title: Census'un erişim şartlarını ve koşullarını kabul ediyorum
         date_of_birth: Doğum tarihi
         document_number: Belge numarası
         document_number_help_title: Yardım
