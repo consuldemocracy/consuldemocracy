@@ -278,6 +278,11 @@ da:
         all: Alle
         duplicated: Kopieret
         started: Undervejs
+        done: Færdig
+        other: Andre
+      search_form:
+        button: Søg
+        placeholder: Søg borgerforslag...
     proposal:
       created: "Du oprettede et forslag!"
       share:
