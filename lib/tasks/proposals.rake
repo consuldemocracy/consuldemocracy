@@ -13,7 +13,7 @@ namespace :proposals do
         if resource.external_url.present?
           resource.update_columns(description: "#{resource.description} "\
                                   "<p>#{text_with_links(resource.external_url)}</p>",
-                                  external_url: "")
+                                  external_url: "", updated_at: Time.current)
           print "."
         end
       end
