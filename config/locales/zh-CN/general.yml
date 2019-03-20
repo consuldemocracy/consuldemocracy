@@ -211,7 +211,6 @@ zh-CN:
       available_locales: 可用语言
       collaborative_legislation: 立法进程
       debates: 辩论
-      external_link_blog: 博客
       locale: '语言：'
       logo: CONSUL logo（商标）
       management: 管理
@@ -384,8 +383,6 @@ zh-CN:
         guide: "现在您可以把它分享，让人们可以开始支持。"
         edit: "在分享之前，您将可以随意更改文本。"
         view_proposal: 不是现在，返回我的提议
-      improve_info: "改善您的推广活动以便得到更多支持"
-      improve_info_link: "查看更多信息"
       already_supported: 您已经支持此提议。将它分享吧！
       comments:
         zero: 没有评论
@@ -493,7 +490,6 @@ zh-CN:
         title: "问题"
         most_voted_answer: "得到最多投票的回答： "
   poll_questions:
-    create_question: "创建问题"
     show:
       vote_answer: "投票%{answer}"
       voted: "您已经投票%{answer}"
@@ -602,7 +598,6 @@ zh-CN:
       see_more: 查看更多推荐
       hide: 隐藏推荐
   social:
-    blog: "%{org} 博客"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -780,7 +775,7 @@ zh-CN:
       user_permission_info: 您可以用您的帐号来...
       user_permission_proposal: 创建新的提议
       user_permission_support_proposal: 支持提议*
-      user_permission_verify: 要执行所有操作，请验证您的帐号。
+      user_permission_verify: "要执行所有操作，请验证您的帐号。"
       user_permission_verify_info: "＊仅适用于人口普查用户。"
       user_permission_verify_my_account: 验证我的帐号
       user_permission_votes: 参与最终投票
