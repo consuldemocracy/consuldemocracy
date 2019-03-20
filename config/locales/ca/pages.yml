@@ -31,8 +31,6 @@ ca:
         page:
           title: "Preguntes més freqüents"
           description: "Utilitza aquesta pàgina per resoldre les preguntes més frencuentes als usuaris del lloc."
-          faq_1_title: "pregunta 1"
-          faq_1_description: "Aquest és un exemple per a la descripció de la pregunta un."
       other:
         title: "Altra informació d'interès"
         how_to_use: "Utilitza %{org_name} al teu municipi"
@@ -56,10 +54,6 @@ ca:
             - 
               page_column: Pressupostos participatius
             - 
-    titles:
-      accessibility: Accessibilitat
-      conditions: Condicions d'ús
-      privacy: Política de Privacitat
     verify:
       code: Codi que has rebut a la teva carta
       email: El teu correu electrònic
