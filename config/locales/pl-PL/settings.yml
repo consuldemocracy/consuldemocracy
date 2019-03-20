@@ -104,6 +104,9 @@ pl:
       zoom_description: "Powiększ, aby wybrać odpowiednie miejsce na mapie"
     process:
       debates: "Debaty"
+      debates_description: "Przestrzeń debaty obywatelskiej jest skierowana do wszystkich osób, które mogą przedstawiać kwestie, które ich dotyczą i o których chcą podzielić się swoimi poglądami"
+      proposals: "Zrealizowane projekty"
+      proposals_description: "OPIS wniosków/proposali/BO dla Żoli to będzie opis czym są Zrealizowane projekty "
       legislation: "Tworzenie prawa"
       legislation_description: "W procesach partycypacyjnych obywatele mają możliwość uczestniczenia w opracowywaniu i modyfikowaniu przepisów, które mają wpływ na społeczność, oraz wyrażenia opinii lub zadecydowaniu o działaniach władz lokalnych, które mają być podjęte"
     html:
