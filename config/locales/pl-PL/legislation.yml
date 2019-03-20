@@ -59,6 +59,7 @@ pl:
       proposals:
         empty_proposals: Brak wniosków
         filters:
+          random: Losowo
           winners: Wybrany
       debate:
         empty_questions: Brak pytań
