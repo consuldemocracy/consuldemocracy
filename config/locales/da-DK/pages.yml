@@ -3,10 +3,14 @@ da:
     conditions:
       title: Vilkår og betingelser
     help:
+      title: "%{org} er en borgerdeltagelses platform"
+      guide: "Guiden forklarer hvad hver enkelt sektion %{org} er til, og hvordan den fungerer."
       menu:
         debates: "Debatforum"
         proposals: "Forslag"
         budgets: "Deltagerbudgetter"
+        polls: "Afstemninger"
+        other: "Andre oplysninger af interesse"
         processes: "Processer"
       debates:
         link: "borgerdebat"
@@ -53,6 +57,7 @@ da:
               browser_column: Safari
               key_column: ALT + genvej (CMD + genvej for MAC)
             - 
+              browser_column: Opera
               key_column: CAPS + ESC + genvej
       textsize:
         title: Tekststørrelse
@@ -67,5 +72,28 @@ da:
               action_column: Se > Størrelse
             - 
               browser_column: Chrome
+              action_column: Indstillinger (symbol) > Valgmuligheder > Avanceret > Web Indhold > Tekststørrelse
             - 
+              browser_column: Safari
+              action_column: Se > Zoom ind/Zoom ud
             - 
+              browser_column: Opera
+              action_column: Se > skala
+        browser_shortcuts_table:
+          rows:
+            - 
+              shortcut_column: CTRL og + (CMD og + på MAC)
+              description_column: Større tekststørrelse
+            - 
+              shortcut_column: CTRL og - (CMD og - på MAC)
+              description_column: Mindre tekststørrelse
+    titles:
+      help: "Hvad er %{org}? - Borgerdeltagelse"
+    verify:
+      code: Koden du modtog med brevet
+      email: E-mail
+      info: 'For at verificere din konto skal du indføre din dataadgang:'
+      info_code: 'Indfør den kode du modtog i brevet:'
+      password: Adgangskode
+      submit: Verificer min konto
+      title: Verificer din konto
