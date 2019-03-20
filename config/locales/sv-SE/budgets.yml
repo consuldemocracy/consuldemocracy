@@ -105,6 +105,8 @@ sv:
           random: slumpvis ordning
           confidence_score: populära
           price: efter pris
+      share:
+        message: "Jag skapade den investering projekt %{title} i %{handle}. Skapa ett investeringsprojekt också!"
       show:
         author_deleted: Användaren är borttagen
         price_explanation: Kostnadsförklaring
@@ -124,6 +126,7 @@ sv:
         project_selected_html: 'Det här budgetförslaget <strong>har gått vidare</strong> till omröstning.'
         project_winner: 'Vinnande budgetförslag'
         project_not_selected_html: 'Det här budgetförslaget <strong>har inte gått vidare</strong> till omröstning.'
+        see_price_explanation: Kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
         add: Röst
