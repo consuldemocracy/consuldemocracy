@@ -95,3 +95,5 @@ pl:
       public_stats: "Publiczne statystyki"
       public_stats_description: "Wyświetl publiczne statystyki w panelu administracyjnym"
       help_page: "Pomoc"
+    process:
+      legislation: "Tworzenie prawa"
