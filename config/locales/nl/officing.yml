@@ -8,7 +8,7 @@ nl:
         info: Here you can validate user documents and store voting results
         no_shifts: Je hebt geen beheerdienst vandaag.
     menu:
-      voters: Validate document
+      voters: Valideer bestand
       total_recounts: Totaal aantal hertellingen en resultaten
     polls:
       final:
