@@ -387,6 +387,8 @@ ar:
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
+        proposals_phase_start_date: بداية
+        proposals_phase_end_date: نهاية
         result_publication_date: تاريخ نشر النتيجة النهائية
         background_color: لون الخلفية
         font_color: لون الخط
