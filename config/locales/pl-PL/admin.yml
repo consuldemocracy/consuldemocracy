@@ -117,6 +117,7 @@ pl:
       headings_edit: "Edytowanie nagłówków"
       headings_manage: "Zarządzanie nagłówkami"
       max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
+      no_groups: "Brak grup."
       amount:
         one: "Istnieje 1 grupa"
         few: "Istnieje %{count} grup"
@@ -134,8 +135,11 @@ pl:
         edit: "Edytuj grupę"
         name: "Nazwa grupy"
         submit: "Zapisz grupę"
+      index:
+        back: "Wróć do budżetów"
     budget_headings:
       name: "Nazwa"
+      no_headings: "Nie ma nagłówków."
       form:
         name: "Nazwa nagłówka"
         amount: "Ilość"
@@ -703,6 +707,17 @@ pl:
         title: "Przegląd powiadomień o wnioskach"
         description: "Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail."
         preview_detail: "Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują"
+      budget_investment_created:
+        title: "Budżet inwestycji stworzony"
+        description: "Wysyłane, gdy użytkownik tworzy budżet inwestycji."
+      budget_investment_selected:
+        title: "Budżet inwestycji wybrany"
+        description: "Wysyłane do autora, po wybraniu budżetu inwestycji."
+      budget_investment_unfeasible:
+        title: "Budżet inwestycji niewykonalny"
+      comment:
+        title: "Komentarz"
+        description: "Wysyłane do autora, gdy otrzymuje komentarz."
       email_verification:
         title: "Weryfikacja adresu e-mail"
         description: "Wysłane do nowego użytkownika w celu weryfikacji jego konta."
@@ -1093,6 +1108,7 @@ pl:
       index:
         title: Ustawienia konfiguracji
         update_setting: Zaktualizuj
+        participation_processes: "Procesy partycypacyjne"
         feature_flags: Funkcje
         features:
           enabled: "Funkcja włączona"
