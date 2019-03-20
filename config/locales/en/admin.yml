@@ -1346,6 +1346,7 @@ en:
         label:
           booths: "Search booth by name or location"
           budget_investments: "Search investments by title, description or heading"
+          comments: "Search comments"
           debates: "Search debates by title or description"
           legislation_processes: "Search processes by title or description"
           legislation_proposals: "Search proposals by title or description"
@@ -1355,6 +1356,7 @@ en:
           poll_questions: "Search poll questions"
           polls: "Search polls by name or description"
           proposals: "Search proposals by title, code, description or question"
+          proposal_notifications: "Search notifications by title or description"
           users: "Search user by name or email"
         search: "Search"
       search_results: "Search results"
