@@ -20,9 +20,12 @@ da:
         link: "borgerdebat"
         feature_html: "Du kan åbne debatter, kommentere og evaluere dem ved at erklære dig <strong>Enig</strong> eller <strong>Uenig</strong>. Gå til debatforum %{link}."
         feature_link: "registrer i %{org}"
+        image_alt: "Knapper til at rangere debatindlæg"
+        figcaption: '"Enig" og "Uenig" knapper til at rangere debatindlæggene.'
       proposals:
         title: "Forslag"
         link: "borgerforslag"
+        image_alt: "Knap til at støtte op om et forslag"
         figcaption_html: 'Knap til at "Støtte" et forslag.'
       budgets:
         title: "Deltagerbudget"
@@ -32,6 +35,7 @@ da:
         figcaption_html: 'Deltagerbudgetternes "Støtte"- og "Afstemnings"-faser.'
       polls:
         title: "Afstemninger"
+        feature_1: "For at deltage i afstemningen skal du gå til %{link} og bekræfte din konto."
         feature_1_link: "registrer med %{org_name}"
       processes:
         title: "Processer"
@@ -50,6 +54,11 @@ da:
       subtitle: "Informationsside om beskyttelse af personlige oplysninger"
     accessibility:
       title: Tilgængelighed
+      examples:
+        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - Når videoer har undertekster, sikrer det også brugere med hørebesvær en fuldstændig forståelse af videoens indhold.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       keyboard_shortcuts:
         title: Tastatur genveje
         navigation_table:
