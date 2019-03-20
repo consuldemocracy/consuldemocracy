@@ -104,6 +104,8 @@ da:
       title: Debatforum
       section_header:
         icon_alt: Debat ikon
+      section_footer:
+        description: Start en debat for at dele dine meninger vedrørende et bestemt emne med andre.
     new:
       form:
         submit_button: Start en debat
@@ -135,6 +137,7 @@ da:
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
     accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
+    debate: Debat
     direct_message: privat besked
     error: fejl
     errors: fejl
