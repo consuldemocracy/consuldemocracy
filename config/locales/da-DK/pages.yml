@@ -36,10 +36,13 @@ da:
         figcaption_html: 'Deltagerbudgetternes "Støtte"- og "Afstemnings"-faser.'
       polls:
         title: "Afstemninger"
+        description: "Sektionen %{link} aktiveres hver gang et forslag opnår 1 % støtte og dermed skal stemmes om, eller når Byrådet selv fremsætter et anliggende, som borgerne skal være med til at beslutte."
+        link: "afstemninger"
         feature_1: "For at deltage i afstemningen skal du gå til %{link} og bekræfte din konto."
         feature_1_link: "registrer med %{org_name}"
       processes:
         title: "Processer"
+        description: "I sektionen %{link} deltager borgerne i udarbejdelsen og ændringer af bestemmelser, der har indflydelse på byen, og de kan tilkendegive deres mening vedrørende kommunalpolitik, der tidligere har været til debat."
         link: "processer"
       faq:
         title: "Tekniske problemer?"
@@ -47,6 +50,7 @@ da:
         button: "Se ofte stillede spørgsmål"
         page:
           title: "Ofte Stillede Spørgsmål"
+          description: "Anvend siden til at løse brugernes ofte stillede spørgsmål."
       other:
         title: "Andre oplysninger af interesse"
         how_to_use: "Anvend %{org_name} i din by"
