@@ -1,0 +1,22 @@
+da:
+  pages:
+    conditions:
+      title: Vilkår og betingelser
+    help:
+      menu:
+        debates: "Debatforum"
+        proposals: "Forslag"
+        budgets: "Deltagerbudgetter"
+        processes: "Processer"
+      debates:
+        link: "borgerdebat"
+        feature_link: "registrer i %{org}"
+      proposals:
+        title: "Forslag"
+        link: "borgerforslag"
+        figcaption_html: 'Knap til at "Støtte" et forslag.'
+      budgets:
+        title: "Deltagerbudget"
+        description: "Sektionen %{link} hjælper borgerne med at have direkte indflydelse på, hvad det kommunale budget skal bruges på."
+        link: "deltagerbudgetter"
+        image_alt: "Deltagerbudgettets forskellige faser"
