@@ -87,16 +87,24 @@ FactoryBot.define do
   factory :poll_voter, class: "Poll::Voter" do
     poll
     association :user, :level_two
-    association :officer, factory: :poll_officer
-    origin "web"
+    from_web
+
+    trait :from_web do
+      origin "web"
+      token SecureRandom.hex(32)
+    end
 
     trait :from_booth do
-      association :booth_assignment, factory: :poll_booth_assignment
       origin "booth"
-      before :create do |voter|
-        voter.officer_assignment = create(:poll_officer_assignment,
-                                          officer: voter.officer,
-                                          booth_assignment: voter.booth_assignment)
+
+      booth_assignment do
+        association :poll_booth_assignment, poll: poll
+      end
+
+      officer_assignment do
+        association :poll_officer_assignment,
+          booth_assignment: booth_assignment,
+          officer: officer || association(:poll_officer)
       end
     end
 
@@ -127,6 +135,16 @@ FactoryBot.define do
   factory :poll_recount, class: "Poll::Recount" do
     association :author, factory: :user
     origin "web"
+
+    trait :from_booth do
+      origin "booth"
+
+      transient { poll nil }
+
+      booth_assignment do
+        association :poll_booth_assignment, poll: poll
+      end
+    end
   end
 
   factory :officing_residence, class: "Officing::Residence" do

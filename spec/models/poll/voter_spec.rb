@@ -76,7 +76,7 @@ describe Poll::Voter do
 
     it "is not valid if the user has voted via web" do
       answer = create(:poll_answer)
-      answer.record_voter_participation("token")
+      create(:poll_voter, :from_web, user: answer.author, poll: answer.poll)
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).not_to be_valid
@@ -113,9 +113,9 @@ describe Poll::Voter do
 
     describe "#web" do
       it "returns voters with a web origin" do
-        voter1 = create(:poll_voter, origin: "web")
-        voter2 = create(:poll_voter, origin: "web")
-        voter3 = create(:poll_voter, origin: "booth")
+        voter1 = create(:poll_voter, :from_web)
+        voter2 = create(:poll_voter, :from_web)
+        voter3 = create(:poll_voter, :from_booth)
 
         web_voters = described_class.web
 
@@ -128,9 +128,9 @@ describe Poll::Voter do
 
     describe "#booth" do
       it "returns voters with a booth origin" do
-        voter1 = create(:poll_voter, origin: "booth")
-        voter2 = create(:poll_voter, origin: "booth")
-        voter3 = create(:poll_voter, origin: "web")
+        voter1 = create(:poll_voter, :from_booth)
+        voter2 = create(:poll_voter, :from_booth)
+        voter3 = create(:poll_voter, :from_web)
 
         booth_voters = described_class.booth
 
