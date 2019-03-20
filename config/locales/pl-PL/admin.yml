@@ -311,6 +311,7 @@ pl:
       delete:
         notice: Status inwestycji został pomyślnie usunięty
     progress_bars:
+      manage: "Zarządzaj paskami postępu"
       index:
         title: "Pasek postępu"
         no_progress_bars: "Nie ma paska postępów"
@@ -718,6 +719,9 @@ pl:
       comment:
         title: "Komentarz"
         description: "Wysyłane do autora, gdy otrzymuje komentarz."
+      direct_message_for_sender:
+        title: "Nadawcy wiadomości prywatnej"
+        description: "Wysyłane do nadawcy wiadomości prywatnej."
       email_verification:
         title: "Weryfikacja adresu e-mail"
         description: "Wysłane do nowego użytkownika w celu weryfikacji jego konta."
@@ -1164,6 +1168,7 @@ pl:
       content: Zawartość
       created_at: Utworzony w
       delete: Usuń
+      color_help: Format szesnastkowy
     spending_proposals:
       index:
         geozone_filter_all: Wszystkie strefy
@@ -1231,6 +1236,7 @@ pl:
         external_code: Kod zewnętrzny
         census_code: Kod spisu ludności
         coordinates: Współrzędne
+        coordinates_help: Współrzędne, które będą generować klikalny obszar na mapie obrazu HTML
       errors:
         form:
           error:
@@ -1304,6 +1310,7 @@ pl:
         title: Powiadomienie o wnioskach
         total: Łączny
         proposals_with_notifications: Wnioski z powiadomieniami
+        not_available: "Wniosek nie jest dostępny"
       polls:
         title: Statystyki ankiet
         all: Ankiety
@@ -1425,6 +1432,12 @@ pl:
           description: Opis
           link_text: Tekst łącza
           link_url: Łącze URL
+          create:
+            notice: "Strona utworzona pomyślnie!"
+          update:
+            notice: "Strona pomyślnie zaktualizowana"
+          destroy:
+            notice: "Strona pomyślnie usunięta"
     homepage:
       title: Strona główna
       description: Aktywne moduły pojawiają się na stronie głównej w tej samej kolejności co tutaj.
