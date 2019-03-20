@@ -68,6 +68,14 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
+    better_html (1.0.13)
+      actionview (>= 4.0)
+      activesupport (>= 4.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      html_tokenizer (~> 0.0.6)
+      parser (>= 2.4)
+      smart_properties
     browser (2.5.3)
     builder (3.2.3)
     bullet (5.7.1)
@@ -148,6 +156,13 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.6)
+    erb_lint (0.0.28)
+      activesupport
+      better_html (~> 1.0.7)
+      html_tokenizer
+      rainbow
+      rubocop (~> 0.51)
+      smart_properties
     errbase (0.0.3)
     erubi (1.7.1)
     erubis (2.7.0)
@@ -189,6 +204,7 @@ GEM
       builder (>= 2.1.2)
     hashie (3.5.7)
     highline (2.0.0)
+    html_tokenizer (0.0.7)
     htmlentities (4.3.4)
     httpi (2.4.4)
       rack
@@ -428,6 +444,7 @@ GEM
     simplecov-html (0.10.2)
     sitemap_generator (6.0.1)
       builder (~> 3.0)
+    smart_properties (1.13.1)
     social-share-button (1.1.0)
       coffee-rails
     socksify (1.7.1)
@@ -520,6 +537,7 @@ DEPENDENCIES
   devise-async (~> 0.10.2)
   devise_security_extension (~> 0.10.0)
   email_spec (~> 2.1.0)
+  erb_lint
   factory_bot_rails (~> 4.8.2)
   faker (~> 1.8.7)
   foundation-rails (~> 6.4.3.0)
