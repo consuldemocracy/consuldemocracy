@@ -315,9 +315,24 @@ pl:
       index:
         title: "Pasek postępu"
         no_progress_bars: "Nie ma paska postępów"
+        new_progress_bar: "Stwórz nowy pasek postępu"
+        primary: "Główny pasek postępu"
         table_id: "Numer ID"
         table_kind: "Typ"
         table_title: "Tytuł"
+        table_percentage: "Aktualny etap"
+      new:
+        creating: "Stwórz pasek postępów"
+      edit:
+        title:
+          primary: "Edytuj główny pasek postępu"
+          secondary: "Edytuj pasek postępu %{title}"
+      create:
+        notice: "Pasek postępu utworzony."
+      update:
+        notice: "Pasek postępu pomyśle zaktualizowany"
+      delete:
+        notice: "Pasek postępu usunięty"
     comments:
       index:
         filter: Filtr
@@ -387,6 +402,8 @@ pl:
           enabled: Włączone
           process: Proces
           debate_phase: Faza debaty
+          draft_phase: Faza robocza
+          draft_phase_description: Jeśli faza ta jest aktywna, proces nie będzie wyświetlany na indeksie procesów. Pozwala na podgląd procesu i tworzenie treści przed jego rozpoczęciem.
           allegations_phase: Faza Komentarzy
           proposals_phase: Etap składania wniosków
           use_markdown: Sformatuj tekst za pomocą Markdown
@@ -395,6 +412,8 @@ pl:
           description_placeholder: Dodaj opis procesu
           additional_info_placeholder: Dodaj dodatkowe informacje, które uważasz za przydatne
           homepage: Opis
+          homepage_description: Tutaj można wyjaśnić kontekst procesu
+          homepage_enabled: Strona domowa włączona
         index:
           create: Nowy proces
           delete: Usuń
@@ -414,6 +433,8 @@ pl:
           title: Proces
           comments: Komentarze
           status: Status
+          start_date: Data rozpoczęcia
+          end_date: Data zakończenia
           status_open: Otwórz
           status_closed: Zamknięty
           status_planned: Zaplanowany
