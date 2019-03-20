@@ -47,6 +47,14 @@ class Budget
       end
     end
 
+    def publishing_prices_or_later?
+      in_phase_or_later?("publishing_prices")
+    end
+
+    def balloting_or_later?
+      in_phase_or_later?("balloting")
+    end
+
     private
 
       def adjust_date_ranges
@@ -82,6 +90,10 @@ class Budget
             errors.add(:ends_at, error)
           end
         end
+      end
+
+      def in_phase_or_later?(phase)
+        PHASE_KINDS.index(kind) >= PHASE_KINDS.index(phase)
       end
 
   end
