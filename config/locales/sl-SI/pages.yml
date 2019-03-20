@@ -46,8 +46,6 @@ sl:
         page:
           title: "Pogosto zastavljena vprašanja (FAQ)"
           description: "Uporabi to stran, da razrešiš najpogostejše dileme uporabnikov tega spletnega mesta."
-          faq_1_title: "1. Vprašanje"
-          faq_1_description: "Primer vprašanja."
       other:
         title: "Druge relevantne informacije"
         how_to_use: "Uporabi %{org_name} v svojem mestu/občini"
@@ -61,10 +59,7 @@ sl:
       titles:
         how_to_use: Uporabi orodje v svojem lokalnem okolju
     titles:
-      accessibility: Dostopnosti
-      conditions: Pogoji uporabe
       help: "Kaj je %{org}? - državljanska participacija"
-      privacy: Zasebnostna politika
     verify:
       code: Koda, ki si jo prejel/-a po e-pošti
       email: E-naslov
