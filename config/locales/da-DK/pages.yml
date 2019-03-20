@@ -55,10 +55,10 @@ da:
     accessibility:
       title: Tilgængelighed
       examples:
-        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
+        - Ved at sørge for en alternativ tekst til billeder, blinde og svagtseende brugere kan anvende speciallavede oplæsningsredskaber og dermed også få adgang til informationen.
         - Når videoer har undertekster, sikrer det også brugere med hørebesvær en fuldstændig forståelse af videoens indhold.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - Hvis indholdet er skrevet i et simpelt og illustrativt sprog, sikrer det, at brugere med indlæringsproblemer kan opnå en bedre forståelse af det.
+        - Hvis brugeren er bevægelseshæmmet og derfor har svært at anvende en mus, hjælper tastatur-alternativerne med navigationen.
       keyboard_shortcuts:
         title: Tastatur genveje
         navigation_table:
@@ -105,6 +105,7 @@ da:
         title: Tekststørrelse
         browser_settings_table:
           browser_header: Browser
+          action_header: Handlingsplan
           rows:
             - 
               browser_column: Explorer
@@ -122,6 +123,7 @@ da:
               browser_column: Opera
               action_column: Se > skala
         browser_shortcuts_table:
+          description: 'En anden måde at ændre tekststørrelsen på er at anvende tastaturgenvejene defineret i browseren, specifikt denne tastaturkombinationen:'
           rows:
             - 
               shortcut_column: CTRL og + (CMD og + på MAC)
@@ -129,6 +131,9 @@ da:
             - 
               shortcut_column: CTRL og - (CMD og - på MAC)
               description_column: Mindre tekststørrelse
+      compatibility:
+        title: Kompatibilitet med standarder og visuelt design
+        description_html: 'Alle sider på websitet retter sig efter <strong> Accessibility Guidelines</strong> eller General Principles of Accessible Design fastslået af Arbejdsgruppen <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> tilhørende W3C.'
     titles:
       help: "Hvad er %{org}? - Borgerdeltagelse"
     verify:
