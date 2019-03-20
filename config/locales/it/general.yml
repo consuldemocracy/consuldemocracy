@@ -218,7 +218,6 @@ it:
       available_locales: Lingue disponibili
       collaborative_legislation: Procedimenti legislativi
       debates: Dibattiti
-      external_link_blog: Blog
       locale: 'Lingua:'
       logo: CONSUL logo
       management: Gestione
@@ -397,8 +396,6 @@ it:
         guide: "Ora puoi condividerlo in modo che le persone possano iniziare a supportare."
         edit: "Prima che venga condiviso, potrai modificare il testo come preferisci."
         view_proposal: Non ora, vai alla mia proposta
-      improve_info: "Migliora la tua campagna e ottieni più supporti"
-      improve_info_link: "Visualizza ulteriori informazioni"
       already_supported: Hai già sostenuto questa proposta. Condividila!
       comments:
         zero: Non ci sono commenti
@@ -508,7 +505,6 @@ it:
         title: "Quesiti"
         most_voted_answer: "Risposta più votata: "
   poll_questions:
-    create_question: "Creare la domanda"
     show:
       vote_answer: "Voto %{answer}"
       voted: "Hai votato %{answer}"
@@ -620,7 +616,6 @@ it:
       see_more: Visualizza ulteriori raccomandazioni
       hide: Nascondi raccomandazioni
   social:
-    blog: "Blog di %{org}"
     facebook: "Facebook di %{org}"
     twitter: "Twitter di %{org}"
     youtube: "YouTube di %{org}"
@@ -806,7 +801,7 @@ it:
       user_permission_info: Con il tuo account puoi...
       user_permission_proposal: Creare nuove proposte
       user_permission_support_proposal: Appoggiare le proposte
-      user_permission_verify: Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza.
+      user_permission_verify: "Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza."
       user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
       user_permission_verify_my_account: Verifica il tuo account
       user_permission_votes: Partecipare al voto finale
