@@ -476,7 +476,7 @@ es:
           selected: Seleccionada
         form:
           custom_categories: Categorías
-          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta. Máximo 160 caracteres.
+          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
       draft_versions:
         create:
@@ -584,7 +584,7 @@ es:
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
-      geozones: Gestionar zonas
+      geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -754,7 +754,7 @@ es:
         send_pending: Enviar pendientes
         send_pending_notification: Notificaciones pendientes enviadas correctamente
       proposal_notification_digest:
-        title: "Resumen de notificationes de propuestas"
+        title: "Resumen de Notificationes de Propuestas"
         description: "Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails."
         preview_detail: "Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen."
       budget_investment_created:
@@ -995,7 +995,7 @@ es:
       edit:
         title: "Editar pregunta ciudadana"
       new:
-        title: "Crear pregunta ciudadana para la votación %{poll}"
+        title: "Crear pregunta ciudadana"
         title_proposal: "Crear pregunta ciudadana"
         poll_label: "Votación"
       answers:
@@ -1287,8 +1287,8 @@ es:
         cost_for_geozone: Coste total
     geozones:
       index:
-        title: Zonas
-        create: Crear una zona
+        title: Distritos
+        create: Crear un distrito
         edit: Editar
         delete: Borrar
       geozone:
@@ -1301,19 +1301,19 @@ es:
       errors:
         form:
           error:
-            one: "error impidió guardar la zona."
-            other: 'errores impidieron guardar la zona.'
+            one: "error impidió guardar el distrito"
+            other: 'errores impidieron guardar el distrito.'
       edit:
         form:
           submit_button: Guardar cambios
-        editing: Editando zona
+        editing: Editando distrito
         back: Volver
       new:
         back: Volver
-        creating: Crear zona
+        creating: Crear distrito
       delete:
-        success: Zona borrada correctamente
-        error: No se puede borrar la zona porque ya tiene elementos asociados
+        success: Distrito borrado correctamente
+        error: No se puede borrar el distrito porque ya tiene elementos asociados
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
