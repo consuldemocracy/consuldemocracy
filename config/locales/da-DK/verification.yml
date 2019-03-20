@@ -1,1 +1,9 @@
 da:
+  verification:
+    sms:
+      new:
+        phone_placeholder: "Eksempel: 612345678 eller +45612345678"
+        submit_button: Send
+        title: Send bekræftelseskode
+      update:
+        error: Forkert bekræftelseskode
