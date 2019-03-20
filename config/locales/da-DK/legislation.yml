@@ -4,6 +4,12 @@ da:
       comments:
         see_all: Se alle
         see_complete: Se færdige
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
+        replies_count:
+          one: "%{count} svar"
+          other: "%{count} svar"
         cancel: Annuller
         publish_comment: Udgive kommentar
       form:
@@ -15,6 +21,9 @@ da:
         title: Kommentarer
         comments_about: Kommentarer om
         see_in_context: Se i context
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
       show:
         title: Kommentar
       version_chooser:
@@ -22,17 +31,57 @@ da:
         see_text: Se tekst udkast
     draft_versions:
       changes:
+        title: Ændringer
         see_text: Se tekst udkast
       show:
+        loading_comments: Indlæser kommentarer
+        select_version_submit: se
         updated_at: opdateret på %{date}
+        see_comments: Se alle kommentarer
         text_body: Tekst
         text_comments: Kommentar
     processes:
+      header:
+        description: Beskrivelse
       proposals:
+        empty_proposals: Der er ingen forslag
         filters:
           random: Tilfældige
+      debate:
+        empty_questions: Der er ingen spørgsmål
+        participate: Deltag i debatten
       index:
         filter: Filtrere
         filters:
           open: Åbne processer
           past: Fortid
+      phase_not_open:
+        not_open: Denne fase er ikke igangsat endnu
+      phase_empty:
+        empty: Intet er offentliggjort endnu
+      process:
+        see_latest_comments: Se seneste kommentarer
+        see_latest_comments_title: Kommenter processen
+      shared:
+        homepage: Startside
+        debate_dates: Debat
+        proposals_dates: Forslag
+    questions:
+      comments:
+        comment_button: Offentliggør svar
+        comments_title: Åben svar
+        comments_closed: Afsluttet fase
+      question:
+        comments:
+          zero: Ingen kommentarer
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
+        debate: Debat
+      show:
+        answer_question: Afgiv svar
+        next_question: Næste spørgsmål
+        first_question: Første spørgsmål
+        share: Del
+      participation:
+        signin: Log ind
+        signup: Tilmeld dig
