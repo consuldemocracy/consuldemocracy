@@ -130,7 +130,7 @@ class Budget::Stats
     end
 
     def supports(supportable)
-      ActsAsVotable::Vote.where(votable_type: "Budget::Investment", votable_id: supportable.investments.pluck(:id))
+      Vote.where(votable: supportable.investments)
     end
 
     stats_cache(*stats_methods)
