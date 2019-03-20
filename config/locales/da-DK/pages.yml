@@ -21,8 +21,10 @@ da:
         description: "Sektionen %{link} hjælper borgerne med at have direkte indflydelse på, hvad det kommunale budget skal bruges på."
         link: "deltagerbudgetter"
         image_alt: "Deltagerbudgettets forskellige faser"
+        figcaption_html: 'Deltagerbudgetternes "Støtte"- og "Afstemnings"-faser.'
       polls:
         title: "Afstemninger"
+        feature_1_link: "registrer med %{org_name}"
       processes:
         title: "Processer"
         link: "processer"
@@ -40,3 +42,30 @@ da:
       subtitle: "Informationsside om beskyttelse af personlige oplysninger"
     accessibility:
       title: Tilgængelighed
+      keyboard_shortcuts:
+        browser_table:
+          rows:
+            - 
+            - 
+            - 
+              key_column: ALT + genvej (CTRL + ALT + genvej for MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + genvej (CMD + genvej for MAC)
+            - 
+              key_column: CAPS + ESC + genvej
+      textsize:
+        title: Tekststørrelse
+        browser_settings_table:
+          browser_header: Browser
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Se > Tekststørrelse
+            - 
+              browser_column: Firefox
+              action_column: Se > Størrelse
+            - 
+              browser_column: Chrome
+            - 
+            - 
