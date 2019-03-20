@@ -51,8 +51,6 @@ gl:
         page:
           title: "Preguntas frecuentes"
           description: "Emprega esta páxina para resolveres as preguntas frecuentes ás persoas usuarias do sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este é un exemplo para a descrición da primeira pregunta."
       other:
         title: "Outra información de interese"
         how_to_use: "Emprega %{org_name} no teu concello"
@@ -67,25 +65,7 @@ gl:
         how_to_use: Emprégao no teu concello
     privacy:
       title: Política de privacidade
-      subtitle: INFORMACIÓN RELACIONADA COA PRIVACIDADE DOS DATOS
-      info_items:
-        - 
-          text: A navegación a través da información dispoñible no Portal de Goberno Aberto é anónima.
-        - 
-          text: Para poder usar os servizos ofrecidos no Portal de Goberno Aberto, o usuario debe rexistrarse e proporcionar datos de carácter persoal de acordo coas especificacións incluídas en cada tipo de rexistro.
-        - 
-          text: 'Os datos proporcionados serán incorporados e procesados pola entidade local de acordo coas condicións estabelecidas no seguinte ficheiro:'
-        - 
-          subitems:
-            - 
-              field: 'Nome de ficheiro:'
-              description: NOME DO FICHEIRO
-            - 
-              field: 'Uso do ficheiro:'
-              description: A xestión dos procesos participativos para controlar a cualificación das persoas que participan nel, basease en fontes numéricas e en recontos estatísticos dos resultados que se derivan dos procesos participativos.
-            - 
-              field: 'Organismo responsable do ficheiro:'
-              description: ORGANISMO RESPONSABLE DO FICHEIRO
+      subtitle: "INFORMACIÓN RELACIONADA COA PRIVACIDADE DOS DATOS"
     accessibility:
       title: Accesibilidade
       description: |-
@@ -179,10 +159,7 @@ gl:
         title: Compatibilidade cos estándares e o deseño visual
         description_html: 'Todas as páxinas deste sitio web cumpren coa <strong>Guía de Accesibilidade</strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title="Web Accessibility Initiative" lang="en"> WAI </abbr> pertencente ao W3C.'
     titles:
-      accessibility: Accesibilidade
-      conditions: Condicións de uso
       help: "Que é %{org}? - Participación cidadá"
-      privacy: Política de privacidade
     verify:
       code: Código que recibiches na túa carta
       email: O teu correo electrónico
