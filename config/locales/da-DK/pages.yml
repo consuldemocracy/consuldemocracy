@@ -10,6 +10,7 @@ da:
         processes: "Processer"
       debates:
         link: "borgerdebat"
+        feature_html: "Du kan åbne debatter, kommentere og evaluere dem ved at erklære dig <strong>Enig</strong> eller <strong>Uenig</strong>. Gå til debatforum %{link}."
         feature_link: "registrer i %{org}"
       proposals:
         title: "Forslag"
@@ -20,3 +21,22 @@ da:
         description: "Sektionen %{link} hjælper borgerne med at have direkte indflydelse på, hvad det kommunale budget skal bruges på."
         link: "deltagerbudgetter"
         image_alt: "Deltagerbudgettets forskellige faser"
+      polls:
+        title: "Afstemninger"
+      processes:
+        title: "Processer"
+        link: "processer"
+      faq:
+        title: "Tekniske problemer?"
+        description: "Læs de ofte stillede spørgsmål og find svar på dine egne."
+        button: "Se ofte stillede spørgsmål"
+        page:
+          title: "Ofte Stillede Spørgsmål"
+      other:
+        title: "Andre oplysninger af interesse"
+        how_to_use: "Anvend %{org_name} i din by"
+    privacy:
+      title: Privatpolitik
+      subtitle: "Informationsside om beskyttelse af personlige oplysninger"
+    accessibility:
+      title: Tilgængelighed
