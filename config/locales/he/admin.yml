@@ -88,11 +88,6 @@ he:
         administrator_filter_all: כל מנהלי המערכת
         valuator_filter_all: כל המעריכים
         tags_filter_all: כל התגיות
-        sort_by:
-          placeholder: סדר לפי
-          id: ID
-          title: שם
-          supports: לחיצה לתמיכה
         filters:
           all: כולם
           without_admin: מבלי להקצות מנהל/ת
@@ -217,7 +212,6 @@ he:
         index:
           delete: מחיקה
           filters:
-            open: Open
             all: כולם
         new:
           back: חזרה
@@ -228,7 +222,6 @@ he:
             supports: לחיצה לתמיכה
         process:
           comments: הערות
-          creation_date: תאריך יצירה
           status_open: Open
         subnav:
           questions: דיון
@@ -301,7 +294,6 @@ he:
           welcome: "ברוכים/ות הבאים/ות"
         buttons:
           save: "שמירה"
-      title_polls: סקרים
       users: משתמשים
     administrators:
       index:
@@ -472,8 +464,6 @@ he:
           without_confirmed_hide: Pending
     settings:
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
         title: Configuration settings
         update_setting: עודכן
         feature_flags: מאפיינים
