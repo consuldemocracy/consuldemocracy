@@ -1,9 +1,61 @@
 da:
   verification:
+    alert:
+      lock: Du har forsøgt for mange gange. Prøv igen senere.
+    back: Tilbage til min konto
+    email:
+      create:
+        flash:
+          success: 'Vi har sendt en bekræftelsesmail til din konto: %{email}'
+      show:
+        alert:
+          failure: Bekræftelseskoden er forkert
+        flash:
+          success: Du er en verificeret bruger
+    letter:
+      edit:
+        see_all: Se forslag
+      new:
+        go_to_index: Se forslag
+        title: Tillykke!
+        user_permission_info: Som bruger kan du...
+    residence:
+      new:
+        date_of_birth: Fødselsdato
+        document_type:
+          passport: Pas
+        document_type_label: Dokumenttype
+        error_not_allowed_age: Du er ikke gammel nok til at deltage
+        error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
+        postal_code: Postnummer
     sms:
+      edit:
+        resend_sms_link: Klik her for at sende igen
+        resend_sms_text: Modtog du ikke en besked med din bekræftelseskode?
+        submit_button: Send
       new:
         phone_placeholder: "Eksempel: 612345678 eller +45612345678"
         submit_button: Send
         title: Send bekræftelseskode
       update:
         error: Forkert bekræftelseskode
+        flash:
+          level_three:
+            success: Koden er korrekt. Din konto er nu verificeret
+          level_two:
+            success: Koden er korrekt
+    step_1: Adresse
+    step_2: Bekræftelseskode
+    step_3: Endelig verifikation
+    user_permission_debates: Deltag i debat
+    user_permission_proposal: Opret nye forslag
+    user_permission_support_proposal: Støt forslag*
+    user_permission_votes: Deltag i den endelige afstemning*
+    verified_user:
+      form:
+        submit_button: Send kode
+      show:
+        email_title: E-mails
+        phone_title: Telefonnumre
+        title: Tilgængelige oplysninger
+        use_another_phone: Brug anden telefon
