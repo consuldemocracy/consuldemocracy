@@ -1,49 +1,841 @@
 tr:
   account:
     show:
+      change_credentials_link: Kimlik bilgilerimi değiştir
+      email_on_comment_label: Birisi önerilerim veya tartışmalarım hakkında yorum yaptığında bana e-posta ile bildir
+      email_on_comment_reply_label: Birisi yorumlarıma cevap verdiğinde bana e-posta ile bildir
+      erase_account_link: Hesabımı sil
+      finish_verification: Doğrulamayı tamamla
+      notifications: Bildirimler
+      organization_name_label: Organizasyonun adı
+      organization_responsible_name_placeholder: Organizasyon/topluluk temsilcisi
+      personal: Kişisel detaylar
+      phone_number_label: Telefon numarası
+      public_activity_label: Etkinlikler listemi herkese açık tut
+      public_interests_label: Herkese açık takip ettiğim öğelerin etiketlerini tut
+      public_interests_my_title_list: Takip ettiğiniz öğelerin etiketleri
+      public_interests_user_title_list: Bu kullanıcının takip ettiği öğelerin etiketleri
+      save_changes_submit: Değişiklikleri kaydet
+      subscription_to_website_newsletter_label: Web site ile alakalı bilgileri e-postayla al
+      email_on_direct_message_label: Doğrudan mesajlar ile ilgili e-postalar alın
+      email_digest_label: Öneri bildirimlerinin bir özetini al
+      official_position_badge_label: Resmi pozisyon rozetini göster
+      recommendations: Tavsiyeler
+      show_debates_recommendations: Tartışma tavsiyelerini göster
+      show_proposals_recommendations: Öneri tavsiyelerini göster
+      title: Hesabım
+      user_permission_debates: Tartışmalara katıl
+      user_permission_info: Hesabınızla şunları yapabilirsiniz...
+      user_permission_proposal: Yeni öneriler oluştur
+      user_permission_support_proposal: Önerileri destekle
       user_permission_title: Katılım
+      user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
+      user_permission_verify_info: "* Sadece Census'taki kullanıcılar için."
+      user_permission_votes: Son oylamaya katıl
+      username_label: Kullanıcı adı
+      verified_account: Hesap doğrulandı
+      verify_my_account: Hesabımı doğrula
+  application:
+    close: Kapalı
+    menu: Menü
   comments:
+    comments_closed: Yorumlar kapalıdır
+    verified_only: Katılmak için %{verify_account}
+    verify_account: hesabınızı doğrulayın
     comment:
       admin: Yönetici
+      author: Yazar
+      deleted: Bu yorum silindi
+      moderator: Moderatör
+      responses:
+        zero: Hiç yanıt yok
+        one: 1 yanıt
+        other: "%{count} yanıtlar"
+      user_deleted: Kullanıcı silindi
+      votes:
+        zero: Hiç oy yok
+        one: 1 oy
+        other: "%{count} oylar"
+    form:
+      comment_as_admin: Yönetici olarak yorum yap
+      comment_as_moderator: Moderatör olarak yorum yap
+      leave_comment: Yorumunuzu bırakın
+    orders:
+      most_voted: En çok oylanan
+      newest: Önce en yeniler
+      oldest: Önce en eskiler
+      most_commented: En çok yorumlanan
+    select_order: Sıralama ölçütü
+    show:
+      return_to_commentable: 'Şuna geri dön '
   comments_helper:
+    comment_button: Yorumu yayınla
     comment_link: Yorum
     comments_title: Yorumlar
+    reply_button: Yanıtı yayınla
+    reply_link: Yanıt
   debates:
+    create:
+      form:
+        submit_button: Bir tartışma başlat
+    debate:
+      comments:
+        zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
+      votes:
+        zero: Hiç oy yok
+        one: 1 oy
+        other: "%{count} oylar"
+    edit:
+      editing: Tartışmayı düzenle
+      form:
+        submit_button: Değişiklikleri kaydet
+      show_link: Tartışmayı göster
+    form:
+      debate_text: İlk tartışma metni
+      debate_title: Tartışma başlığı
+      tags_instructions: Bu tartışmayı etiketle.
+      tags_label: Konular
+      tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
+    index:
+      featured_debates: Öne Çıkan
+      filter_topic:
+        one: " başlık ile '%{topic}'"
+        other: " başlık ile '%{topic}'"
+      orders:
+        confidence_score: en yüksek puanlı
+        created_at: en yeni
+        hot_score: en aktif
+        most_commented: en çok yorumlanan
+        relevance: alakalı
+        recommendations: tavsiyeler
+      recommendations:
+        without_results: İlgilendikleriniz ile alakalı tartışmalar yok
+        without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
+        disable: "Tartışma tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
+        actions:
+          success: "Bu hesap için tartışma önerileri artık devre dışı bırakıldı"
+          error: "Bir hata oluştu. Lütfen tartışma tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
+      search_form:
+        button: Ara
+        placeholder: Tartışmalarda ara...
+        title: Ara
+      search_results_html:
+        one: " şu terimi içeren<strong>'%{search_term}'</strong>"
+        other: " şu terimi içeren<strong>'%{search_term}'</strong>"
+      select_order: Şuna göre sırala
+      start_debate: Bir tartışma başlat
+      title: Tartışmalar
+      section_header:
+        icon_alt: Tartışmalar simgesi
+        title: Tartışmalar
+        help: Tartışmalar hakkında yardım
+      section_footer:
+        title: Tartışmalar hakkında yardım
+        description: Endişelendiğiniz konular hakkında görüşlerinizi başkalarıyla paylaşmak için bir tartışma başlatın.
+        help_text_1: "Vatandaş tartışmaları alanı, endişelerini herkese gösterebilecek ve görüşlerini diğer insanlarla paylaşmak isteyenleri hedef alır."
+        help_text_2: 'Bir tartışma açmak için %{org} ''da kaydolmanız gerekir. Kullanıcılar ayrıca açık tartışmalar hakkında yorum yapabilir ve her birinde bulunan "katılıyorum" veya "katılmıyorum" düğmeleriyle değerlendirebilirler.'
+    new:
+      form:
+        submit_button: Bir tartışma başlat
+      info: Eğer bir öneride bulunmak istiyorsanız, yanlış bölüm budur, %{info_link} ' e girin.
+      info_link: yeni öneri oluştur
+      more_info: Daha fazla bilgi
+      recommendation_four: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
+      recommendation_one: Tartışma başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
+      recommendation_three: Acımasız eleştiri hoş karşılanır. Bu kusur bulma için bir alandır. Fakat inceliğe ve anlayışa sadık kalmanızı öneriyoruz. Dünya bu erdemlerle daha iyi bir yerdir.
+      recommendation_two: Yasadışı eylemi öneren herhangi bir tartışma veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
+      recommendations_title: Bir tartışma oluşturmak için öneriler
+      start_new: Bir tartışma başlat
     show:
+      author_deleted: Kullanıcı silindi
+      comments:
+        zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
       comments_title: Yorumlar
       edit_debate_link: Düzenleme
+      flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
+      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+      share: Paylaş
+      author: Yazar
+    update:
+      form:
+        submit_button: Değişiklikleri kaydet
+  errors:
+    messages:
+      user_not_found: Kullanıcı bulunamadı
+      invalid_date_range: "Geçersiz tarih aralığı"
   form:
+    accept_terms: Ben %{policy} ve %{conditions} 'ı kabul ediyorum
+    accept_terms_title: Gizlilik Politikasını ve Kullanım Şartlarını ve koşullarını kabul ediyorum
+    conditions: Kullanım şartları ve koşulları
+    debate: Tartışma
+    direct_message: özel mesaj
+    error: hata
+    errors: hatalar
+    not_saved_html: "bu %{resource} 'un kaydedilmesini engelledi. <br>Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+    policy: Gizlilik Politikası
+    proposal: Öneri
+    proposal_notification: "Bildirim"
+    spending_proposal: Harcama önerisi
     budget/investment: yatırım
+    budget/group: Bütçe Grubu
+    budget/heading: Bütçe Başlığı
+    poll/shift: Vardiya
+    poll/question/answer: Cevap
+    user: Hesap
+    verification/sms: telefon
+    signature_sheet: İmza sayfası
+    document: Belge
+    topic: Konu
     image: Fotoğraf
+  geozones:
+    none: Tüm şehir
+    all: Tüm kapsamlar
   layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Internet Explorer ile taradığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} veya %{chrome} kullanmanızı öneririz.
+      ie_title: Bu web sitesi tarayıcınız için optimize edilmemiştir
     footer:
+      accessibility: Erişilebilirlik
+      conditions: Kullanım şartları ve koşulları
+      consul: CONSUL uygulaması
+      consul_url: https://github.com/consul/consul
+      contact_us: Teknik yardım için ziyaret edin
+      copyright: CONSUL, %{year}
+      description: Bu portal %{open_source} olan %{consul} kullanır.
+      open_source: açık kaynak yazılım
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Yaşamak istediğiniz şehri nasıl şekillendireceğinize karar verin.
       participation_title: Katılım
+      privacy: Gizlilik Politikası
     header:
+      administration_menu: Yönetici
       administration: Yönetim
+      available_locales: Mevcut diller
+      collaborative_legislation: Katılımcı mevzuat
+      debates: Tartışmalar
+      locale: 'Dil:'
+      logo: CONSUL logosu
+      management: Yönetim
+      moderation: Moderasyon
+      valuation: Değerlendirme
+      officing: Seçim memurları
+      help: Yardım
+      my_account_link: Hesabım
+      my_activity_link: Faaliyetim
+      open: açık
+      open_gov: Açık hükümet
+      proposals: Öneriler
+      poll_questions: Oylama
+      budgets: Katılımcı bütçeleme
+      spending_proposals: Harcama Önerileri
+      notification_item:
+        new_notifications:
+          one: Bir yeni bildiriminiz var
+          other: '%{count} yeni bildirimleriniz var'
+        notifications: Bildirimler
+        no_notifications: "Yeni bildiriminiz yok"
+    admin:
+      watch_form_message: 'Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?'
+  notifications:
+    index:
+      empty_notifications: Yeni bildiriminiz yok.
+      mark_all_as_read: Tümünü okundu olarak işaretle
+      read: Oku
+      title: Bildirimler
+      unread: Okunmamış
+    notification:
+      action:
+        comments_on:
+          one: Biri şuna yorum yaptı
+          other: '%{count} şuna yorumlar yaptı'
+        proposal_notification:
+          one: Şunda bir yeni bildirim var
+          other: Şunda %{count} bildirimler var
+        replies_to:
+          one: Biri şundaki yorumunuza cevap verdi
+          other: Şundaki yorumunuza %{count} cevaplar bulunuyor
+      mark_as_read: Okundu olarak işaretle
+      mark_as_unread: Okunmadı olarak işaretle
+      notifiable_hidden: Bu kaynak artık kullanılabilir değil.
   map:
     title: "İlçeler"
+    proposal_for_district: "Bölgeniz için bir öneri başlatın"
+    select_district: İşlem kapsamı
+    start_proposal: Bir öneri oluştur
+  omniauth:
+    facebook:
+      sign_in: Facebook ile oturum aç
+      sign_up: Facebook ile kaydol
+      name: Facebook
+    finish_signup:
+      title: "Ek detaylar"
+      username_warning: "Sosyal ağlarla etkileşim biçimimizdeki bir değişiklik nedeniyle, kullanıcı adınızın şimdi 'zaten kullanımda' olarak görünmesi mümkündür. Bu durumdaysanız, lütfen farklı bir kullanıcı adı seçin."
+    google_oauth2:
+      sign_in: Google ile oturum aç
+      sign_up: Google ile kaydol
+      name: Google
+    twitter:
+      sign_in: Twitter ile oturum aç
+      sign_up: Twitter ile kaydol
+      name: Twitter
+    info_sign_in: "Şunla oturum aç:"
+    info_sign_up: "Şunla kaydol:"
+    or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
+    create:
+      form:
+        submit_button: Öneri oluştur
+    edit:
+      editing: Öneriyi düzenle
+      form:
+        submit_button: Değişiklikleri kaydet
+      show_link: Öneriyi göster
+    retire_form:
+      title: Öneriyi çek
+      warning: "Öneriyi çekseniz bile yine de destekleri kabul eder ancak ana listeden kaldırılır ve yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten bir mesaj tüm kullanıcılar tarafından görülebilir"
+      retired_reason_label: Öneriyi çekme nedeni
+      retired_reason_blank: Bir seçenek seçin
+      retired_explanation_label: Açıklama
+      retired_explanation_placeholder: Bu önerinin neden daha fazla destek almaması gerektiğini düşündüğünüzü kısaca açıklayın
+      submit_button: Öneriyi çek
+    retire_options:
+      duplicated: Çoğaltılmış
+      started: Zaten yapım aşamasında
+      unfeasible: Uygulanamaz
+      done: Tamam
+      other: Diğer
+    form:
+      geozone: İşlem kapsamı
+      proposal_external_url: Ek belgelere bağlantı
+      proposal_question: Öneri sorusu
+      proposal_question_example_html: "Bir soruda bir Evet veya Hayır cevabı ile özetlenmelidir"
+      proposal_responsible_name: Öneriyi sunan kişinin tam adı
+      proposal_responsible_name_note: "(bireysel olarak veya bir topluluğun temsilcisi olarak; genel olarak gösterilmeyecek)"
+      proposal_summary: Öneri özeti
+      proposal_summary_note: "(maksimum 200 karakter)"
+      proposal_text: Öneri metni
+      proposal_title: Öneri başlığı
+      proposal_video_url: Harici videoya bağlantı
+      proposal_video_url_note: YouTube veya Vimeo'ya bir bağlantı ekleyebilirsiniz
+      tag_category_label: "Kategoriler"
+      tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendinizinkini ekleyebilirsiniz"
+      tags_label: Etiketler
+      tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
+      map_location: "Harita konumu"
+      map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
+      map_remove_marker: "Harita işaretçisini kaldır"
+      map_skip_checkbox: "Bu teklifin somut bir konumu yok veya ben farkında değilim."
+    index:
+      featured_proposals: Öne Çıkan
+      filter_topic:
+        one: " başlık ile '%{topic}'"
+        other: " başlık ile '%{topic}'"
+      orders:
+        confidence_score: en yüksek puanlı
+        created_at: en yeni
+        hot_score: en aktif
+        most_commented: en çok yorumlanan
+        relevance: alakalı
+        archival_date: arşivlendi
+        recommendations: tavsiyeler
+      recommendations:
+        without_results: İlgilendikleriniz ile ilgili öneriler yok
+        without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
+        disable: "Öneri tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
+        actions:
+          success: "Bu hesap için öneri tavsiyeleri artık devre dışı bırakıldı"
+          error: "Bir hata oluştu. Lütfen öneri tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
+      retired_proposals: Çekilen öneriler
+      retired_proposals_link: "Yazar tarafından çekilen öneriler"
+      retired_links:
+        all: Tüm
+        duplicated: Çoğaltılmış
+        started: Yapım aşamasında
+        unfeasible: Uygulanamaz
+        done: Tamam
+        other: Diğer
+      search_form:
+        button: Ara
+        placeholder: Önerileri ara...
+        title: Ara
+      search_results_html:
+        one: " şu terimi içeren <strong>'%{search_term}'</strong>"
+        other: " şu terimi içeren <strong>'%{search_term}'</strong>"
+      select_order: Şuna göre sırala
+      select_order_long: 'Şuna göre önerileri görüntülüyorsunuz:'
+      start_proposal: Bir öneri oluştur
+      title: Öneriler
+      top: Haftalık en iyi
+      top_link_proposals: Kategoriye göre en çok desteklenen öneriler
+      section_header:
+        icon_alt: Önerilerin simgesi
+        title: Öneriler
+        help: Öneriler hakkında yardım
+      section_footer:
+        title: Öneriler hakkında yardım
+        description: Vatandaşların' önerileri komşular ve toplulukların şehirlerinin nasıl olmasını istediklerine doğrudan karar vermeleri için bir fırsattır, yeterli destek aldıktan ve vatandaşların oylamasına sunulduktan' sonra.
+    new:
+      form:
+        submit_button: Öneri oluştur
+      more_info: Vatandaş önerileri nasıl çalışır?
+      recommendation_one: Öneri başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
+      recommendation_three: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
+      recommendation_two: Yasadışı eylemi öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
+      recommendations_title: Bir öneri oluşturmak için tavsiyeler
+      start_new: Yeni öneri oluştur
+    notice:
+      retired: Öneri çekildi
+    proposal:
+      created: "Bir öneri oluşturdunuz!"
+      share:
+        guide: "Şimdi bunu paylaşabilirsiniz, böylece insanlar desteklemeye başlayabilir."
+        edit: "Paylaşılmadan önce, metni istediğiniz gibi değiştirebilirsiniz."
+        view_proposal: Şimdi değil, önerime git
+      already_supported: Bu öneriyi zaten desteklediniz. Paylaşın!
+      comments:
+        zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
+      support: Destek
+      support_title: Bu öneriyi destekle
+      supports:
+        zero: Destek yok
+        one: 1 destek
+        other: "%{count} destekler"
+      votes:
+        zero: Hiç oy yok
+        one: 1 oy
+        other: "%{count} oylar"
+      supports_necessary: "%{number} destek gerekli"
+      total_percent: '%100'
+      archived: "Bu öneri arşivlendi ve destek toplayamaz."
+      successful: "Bu öneri gereken desteğe ulaştı."
     show:
+      author_deleted: Kullanıcı silindi
+      code: 'Öneri kodu:'
+      comments:
+        zero: Yorum yok
+        one: 1 yorum
+        other: "%{count} yorumlar"
       comments_tab: Yorumlar
       edit_proposal_link: Düzenleme
+      flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
+      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+      notifications_tab: Bildirimler
+      milestones_tab: Kilometre taşları
+      retired_warning: "Yazar bu önerinin daha fazla destek almaması gerektiğini düşünmektedir."
+      retired_warning_link_to_explanation: Bunun için oy vermeden önce açıklamayı okuyun.
+      retired: Öneri yazar tarafından çekildi
+      share: Paylaş
+      send_notification: Bildirim gönder
+      no_notifications: "Bu öneride bildirim yok."
+      embed_video_title: "%{proposal} ile ilgili video"
+      title_external_url: "Ek belge"
+      title_video_url: "Harici video"
+      author: Yazar
+    update:
+      form:
+        submit_button: Değişiklikleri kaydet
+    share:
+      message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
   polls:
+    all: "Tüm"
+    no_dates: "tarih atanmamış"
+    dates: "%{open_at} 'ten %{closed_at} 'e"
+    final_date: "Son yeniden sayımlar/Sonuçlar"
     index:
       filters:
         current: "Açık"
+        expired: "Süresi doldu"
+      title: "Anketler"
+      participate_button: "Bu ankete katıl"
+      participate_button_expired: "Anket sona erdi"
+      no_geozone_restricted: "Tüm şehir"
       geozone_restricted: "İlçeler"
+      geozone_info: "Census'taki kişiler katılabilir: "
+      already_answer: "Siz zaten bu ankete zaten katıldınız"
+      not_logged_in: "Katılmak için giriş yapmalı veya kayıt olmalısınız"
+      unverified: "Katılmak için hesabınızı doğrulamanız gerekir"
+      cant_answer: "Bu anket sizin coğrafi bölgenizde(geozone) mevcut değil"
+      section_header:
+        icon_alt: Oylama simgesi
+        title: Oylama
+        help: Oylama ile ilgili yardım
+      section_footer:
+        title: Oylama ile ilgili yardım
+        description: Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
+      no_polls: "Hiç açık oy yok."
     show:
+      already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
+      already_voted_in_web: "Siz zaten bu ankete katıldınız. Yine oy verirseniz, üzerine yazılacaktır."
+      back: Oylamaya geri dön
+      cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
+      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+      signin: Oturum aç
+      signup: Kaydol
+      cant_answer_verify_html: "Cevaplamak için %{verify_link} yapmanız gerekir."
+      verify_link: "hesabınızı doğrulayın"
+      cant_answer_expired: "Bu anket bitti."
+      cant_answer_wrong_geozone: "Bu soru sizin coğrafi bölgenizde(geozone) mevcut değil."
+      more_info_title: "Daha fazla bilgi"
+      documents: Belgeler
+      zoom_plus: Resmi genişlet
+      read_more: "%{answer} ile ilgili daha fazlasını oku"
+      read_less: "%{answer} ile ilgili daha azını oku"
+      videos: "Harici video"
+      info_menu: "Bilgi"
+      stats_menu: "Katılma istatistikleri"
+      results_menu: "Anket sonuçları"
+      stats:
+        title: "Katılma verileri"
+        total_participation: "Toplam katılım"
+        total_votes: "Verilen oyların toplam miktarı"
+        votes: "OYLAR"
+        web: "WEB"
+        booth: "KABİN"
+        total: "TOPLAM"
+        valid: "Geçerli"
+        white: "Beyaz oylar"
+        null_votes: "Geçersiz"
+      results:
+        title: "Sorular"
+        most_voted_answer: "En çok oy alan cevap: "
+  poll_questions:
+    show:
+      vote_answer: "Oy %{answer}"
+      voted: "%{answer} 'a oy verdiniz"
+      voted_token: "Final sonuçlarda oyunuzu kontrol etmek için bu oy tanımlayıcısını yazabilirsiniz:"
+  proposal_notifications:
+    new:
+      title: "Mesaj gönder"
+      title_label: "Başlık"
+      body_label: "Mesaj"
+      submit_button: "Mesaj gönder"
+      info_about_receivers_html: "Bu mesaj <strong>%{count} kişiler</strong> 'e gönderilecek ve %{proposal_page} 'da görünecektir.<br> Mesajlar hemen gönderilmez, kullanıcılar düzenli olarak tüm öneri bildirimlerini içeren bir e-posta alır."
+      proposal_page: "öneri'ler sayfası"
+    show:
+      back: "Faaliyetime geri dön"
   shared:
     edit: 'Düzenleme'
+    save: 'Kaydet'
+    delete: Sil
+    "yes": "Evet"
+    "no": "Hayır"
+    search_results: "Arama sonuçları"
+    advanced_search:
+      author_type: 'Yazar kategorisine göre'
+      author_type_blank: 'Bir kategori seç'
+      date: 'Tarihe göre'
+      date_placeholder: 'GG/AA/YYYY'
+      date_range_blank: 'Bir tarih seç'
+      date_1: 'Son 24 saat'
+      date_2: 'Geçen hafta'
+      date_3: 'Geçen ay'
+      date_4: 'Geçen yıl'
+      date_5: 'Özelleştirilmiş'
+      from: 'Kaynak'
+      general: 'Metin ile'
+      general_placeholder: 'Metni yaz'
+      search: 'Filtre'
+      title: 'Gelişmiş arama'
+      to: 'Şuna'
+    author_info:
+      author_deleted: Kullanıcı silindi
+    back: Geri git
+    check: Seç
+    check_all: Tüm
+    check_none: Yok
+    collective: Topluluk
+    flag: Uygunsuz olarak işaretle
+    follow: "Takip et"
+    following: "Takip ediliyor"
+    follow_entity: "Takip et %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Şimdi bu yatırım projesini takip ediyorsunuz! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+        destroy:
+          notice_html: "Bu yatırım projesini takip etmeyi bıraktınız! </br> Artık bu projeyle ilgili bildirimleri almayacaksınız."
+      proposal:
+        create:
+          notice_html: "Şimdi bu vatandaş önerisini takip ediyorsunuz! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+        destroy:
+          notice_html: "Bu vatandaş önerisini takip etmeyi bıraktınız! </br> Artık bu öneriyle ilgili bildirimleri almayacaksınız."
+    hide: Gizle
+    print:
+      print_button: Bu bilgiyi yazdır
+    search: Ara
+    show: Göster
+    suggest:
+      debate:
+        found:
+          one: "'%{query}' terimi ile ilgili bir tartışma var, yeni bir tane açmak yerine buna katılabilirsiniz."
+          other: "'%{query}' terimi ile ilgili bir tartışmalar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
+        message: "'%{query}' terimini içeren %{count} tartışmaların %{limit} 'ini görüyorsunuz"
+        see_all: "Hepsini gör"
+      budget_investment:
+        found:
+          one: "'%{query}' terimi ile ilgili bir yatırım var, yeni bir tane açmak yerine buna katılabilirsiniz."
+          other: "'%{query}' terimi ile ilgili bir yatırımlar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
+        message: "'%{query}' terimini içeren %{count} yatırımların %{limit} 'ini görüyorsunuz"
+        see_all: "Hepsini gör"
+      proposal:
+        found:
+          one: "'%{query}' terimi ile ilgili bir öneri var, yeni bir tane açmak yerine buna katılabilirsiniz"
+          other: "'%{query}' terimi ile ilgili bir öneriler var, yeni bir tane açmak yerine bunlara katılabilirsiniz"
+        message: "'%{query}' terimini içeren %{count} önerilerin %{limit} 'ini görüyorsunuz"
+        see_all: "Hepsini gör"
     tags_cloud:
+      tags: Trend
       districts: "İlçeler"
+      districts_list: "İlçeler listesi"
+      categories: "Kategoriler"
+    target_blank_html: " (bağlantı yeni pencerede açılır)"
+    you_are_in: "Şuradasınız"
+    unflag: İşaretini Kaldır
+    unfollow_entity: "Takibi bırak %{entity}"
+    outline:
+      budget: Katılımcı bütçe
+      searcher: Araştırmacı
+    go_to_page: "Sayfasına git "
+    share: Paylaş
+    orbit:
+      previous_slide: Önceki Slayt
+      next_slide: Sonraki Slayt
+    documentation: Ek belge
+    view_mode:
+      title: Görünüm modu
+      cards: Kartlar
+      list: Liste
+    recommended_index:
+      title: Tavsiyeler
+      see_more: Daha fazla tavsiyeye bakın
+      hide: Tavsiyeleri gizle
+  social:
+    facebook: "Facebook %{org}"
+    twitter: "Twitter %{org}"
+    youtube: "YouTube %{org}"
+    whatsapp: WhatsApp
+    telegram: "Telegram %{org}"
+    instagram: "Instagram %{org}"
+  spending_proposals:
+    form:
+      association_name_label: 'Eğer bir dernek veya topluluk adına önerirseniz, ismi buraya ekleyin'
+      association_name: 'Dernek adı'
+      description: Tanımlama
+      external_url: Ek belgeye bağlantı
+      geozone: İşlem kapsamı
+      submit_buttons:
+        create: Oluştur
+        new: Oluştur
+      title: Harcama önerisi başlığı
+    index:
+      title: Katılımcı bütçeleme
+      unfeasible: Uygulanamaz yatırım projeleri
+      by_geozone: "Kapsam ile yatırım projeleri: %{geozone}"
+      search_form:
+        button: Ara
+        placeholder: Yatırım projeleri...
+        title: Ara
+      search_results:
+        one: " '%{search_term}' i içeren terim"
+        other: " '%{search_term}' i içeren terim"
+      sidebar:
+        geozones: İşlem kapsamı
+        feasibility: Fizibilite
+        unfeasible: Uygulanamaz
+      start_spending_proposal: Bir yatırım projesi oluştur
+    new:
+      more_info: Katılımcı bütçeleme nasıl çalışır?
+      recommendation_one: Önerinin bütçeye uygun bir eyleme göndermede bulunması zorunludur.
+      recommendation_three: Harcama önerinizi açıklarken ayrıntılara girmeyi deneyin, böylece gözden geçirme ekibi amaçlarınızı anlar.
+      recommendation_two: Yasadışı işlem öneren herhangi bir öneri veya yorum silinir.
+      recommendations_title: Harcama önerisi nasıl oluşturulur
+      start_new: Harcama önerisi oluştur
+    show:
+      author_deleted: Kullanıcı silindi
+      code: 'Öneri kodu:'
+      share: Paylaş
+    wrong_price_format: Sadece tam sayılar
+    spending_proposal:
+      spending_proposal: Yatırım projesi
+      already_supported: Bunu zaten desteklediniz. Paylaşın!
+      support: Destek
+      support_title: Bu projeyi destekle
+      supports:
+        zero: Destek yok
+        one: 1 destek
+        other: "%{count} destekler"
   stats:
     index:
+      visits: Ziyaretler
+      debates: Tartışmalar
+      proposals: Öneriler
       comments: Yorumlar
+      proposal_votes: Önerilerdeki oylar
+      debate_votes: Tartışmalardaki oylar
+      comment_votes: Yorumlardaki oylar
+      votes: Toplam oylar
+      verified_users: Doğrulanmış kullanıcılar
+      unverified_users: Doğrulanmamış kullanıcılar
+  unauthorized:
+    default: Bu sayfaya erişim izniniz yok.
+    manage:
+      all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
+    direct_messages:
+      new:
+        body_label: Mesaj
+        direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
+        submit_button: Mesaj gönder
+        title: '%{receiver} ''a özel mesaj gönder'
+        title_label: Başlık
+        verified_only: Bir özel mesaj göndermek için %{verify_account}
+        verify_account: hesabınızı doğrulayın
+        authenticate: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+        signin: oturum aç
+        signup: kaydol
+      show:
+        receiver: Mesaj %{receiver} 'a gönderildi
     show:
+      deleted: Silindi
+      deleted_debate: Bu tartışma silindi
+      deleted_proposal: Bu öneri silindi
+      deleted_budget_investment: Bu yatırım projesi silindi
+      proposals: Öneriler
+      debates: Tartışmalar
+      budget_investments: Bütçe yatırımları
       comments: Yorumlar
       actions: Aksiyon
+      filters:
+        comments:
+          one: 1 Yorum
+          other: "%{count} Yorumlar"
+        debates:
+          one: 1 Tartışma
+          other: "%{count} Tartışmalar"
+        proposals:
+          one: 1 Öneri
+          other: "%{count} Öneriler"
+        budget_investments:
+          one: 1 Yatırım
+          other: "%{count} Yatırımlar"
+        follows:
+          one: 1 Takip Etme
+          other: "%{count} Takip Etme"
+      no_activity: Kullanıcının genel etkinliği yok
+      no_private_messages: "Bu kullanıcı özel mesajları kabul etmiyor."
+      private_activity: Bu kullanıcı etkinlik listesini gizli tutmaya karar verdi.
+      send_private_message: "Özel mesaj gönder"
+      delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
+    proposals:
+      send_notification: "Bildirim gönder"
+      retire: "Çek"
+      retired: "Çekilen öneri"
+      see: "Öneriyi gör"
+  votes:
+    agree: Kabul ediyorum
+    anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
+    comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
+    disagree: Kabul etmiyorum
+    organizations: Organizasyonların oy kullanmalarına izin verilmez
+    signin: Oturum aç
+    signup: Kaydol
+    supports: Destekler
+    unauthenticated: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+    verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
+    verify_account: hesabınızı doğrulayın
+    spending_proposals:
+      not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+      not_verified: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
+      organization: Organizasyonların oy kullanmalarına izin verilmez
+      unfeasible: Uygulanamaz yatırım projeleri desteklenemez
+      not_voting_allowed: Oy kullanma aşaması kapanmıştır
+    budget_investments:
+      not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
+      not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
+      organization: Organizasyonların oy kullanmalarına izin verilmez
+      unfeasible: Uygulanamaz yatırım projeleri desteklenemez
+      not_voting_allowed: Oy kullanma aşaması kapanmıştır
+      different_heading_assigned:
+        one: "Yatırım projelerini yalnızca %{count} bölgesinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
+        other: "Yatırım projelerini yalnızca %{count} bölgelerinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
+  welcome:
+    feed:
+      most_active:
+        debates: "En aktif tartışmalar"
+        proposals: "En aktif öneriler"
+        processes: "Açık işlemler"
+      see_all_debates: Tüm tartışmaları göster
+      see_all_proposals: Tüm önerileri göster
+      see_all_processes: Tüm işlemleri göster
+      process_label: İşlem
+      see_process: İşlemi gör
+    cards:
+      title: Öne Çıkan
+    recommended:
+      title: İlginizi çekebilecek tavsiyeler
+      help: "Bu tavsiyeler, sizin takip ettiğiniz tartışmaların ve önerilerin etiketleri ile oluşturulur."
+      debates:
+        title: Tavsiye edilen tartışmalar
+        btn_text_link: Tavsiye edilen tüm tartışmalar
+      proposals:
+        title: Tavsiye edilen öneriler
+        btn_text_link: Tavsiye edilen tüm öneriler
+      budget_investments:
+        title: Tavsiye edilen yatırımlar
+      slide: "Bak %{title}"
+    verification:
+      i_dont_have_an_account: Benim bir hesabım yok
+      i_have_an_account: Benim zaten bir hesabım var
+      question: Sizin zaten %{org_name} 'de bir hesabınız mı var?
+      title: Hesap doğrulama
+    welcome:
+      go_to_index: Önerileri ve tartışmaları gör
+      start_using_consul: Dizin sayfasına git
+      title: Katıl
+      user_permission_debates: Tartışmalara katıl
+      user_permission_info: Hesabınızla şunları yapabilirsiniz...
+      user_permission_proposal: Yeni öneriler oluştur
+      user_permission_support_proposal: Önerileri destekle*
+      user_permission_verify: "Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın."
+      user_permission_verify_info: "* Sadece Census'taki kullanıcılar için."
+      user_permission_verify_my_account: Hesabımı doğrula
+      user_permission_votes: Son oylamaya katıl
+  invisible_captcha:
+    sentence_for_humans: "Eğer insansanız, bu alanı görmezden gelin"
+    timestamp_error_message: "Üzgünüm, bu çok hızlı oldu! Lütfen tekrar gönderin."
+  related_content:
+    title: "İlgili içerik"
+    add: "İlgili içerik ekle"
+    label: "İlgili içeriğe bağlantı"
+    placeholder: "%{url}"
+    help: "Siz %{org} içinden %{models} bağlantıları ekleyebilirsiniz."
+    submit: "Ekle"
+    error: "Bağlantı geçerli değil. %{url} ile başlamayı unutmayın."
+    error_itself: "Bağlantı geçerli değil. Bir içeriği kendisiyle ilişkilendiremezsiniz."
+    success: "Yeni bir ilgili içerik eklediniz"
+    is_related: "Bu ilgili içerik mi?"
+    score_positive: "Evet"
+    score_negative: "Hayır"
+    content_title:
+      proposal: "Öneri"
+      debate: "Tartışma"
+      budget_investment: "Bütçe yatırımı"
   admin/widget:
     header:
       title: Yönetim
+  annotator:
+    help:
+      alt: Yorum yapmak istediğiniz metni seçin ve kalemle düğmeye basın.
+      text: Bu belgeye yorum yapmak için %{sign_in} veya %{sign_up} yapmalısınız. Ardından yorumlamak istediğiniz metni seçin ve kalemle düğmeye basın.
+      text_sign_in: oturum aç
+      text_sign_up: kaydol
+      title: Ben bu belgeye nasıl yorum yapabilirim?
