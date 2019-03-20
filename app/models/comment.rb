@@ -3,6 +3,7 @@ class Comment < ApplicationRecord
   include HasPublicAuthor
   include Graphqlable
   include Notifiable
+  include Searchable
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
                         Legislation::Question Legislation::Annotation
@@ -129,6 +130,17 @@ class Comment < ApplicationRecord
 
   def votes_score
     cached_votes_up - cached_votes_down
+  end
+
+  def searchable_values
+    {
+      body               => "A",
+      commentable&.title => "B"
+    }
+  end
+
+  def self.search(terms)
+    pg_search(terms)
   end
 
   private
