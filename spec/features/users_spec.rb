@@ -409,16 +409,13 @@ feature "Users" do
       visit user_path(user)
       expect(page).to have_content("7 Comments")
 
-      Setting["feature.debates"] = nil
+      Setting["process.debates"] = nil
       visit user_path(user)
       expect(page).to have_content("6 Comments")
 
-      Setting["feature.budgets"] = nil
+      Setting["process.budgets"] = nil
       visit user_path(user)
       expect(page).to have_content("4 Comments")
-
-      Setting["feature.debates"] = true
-      Setting["feature.budgets"] = true
     end
   end
 

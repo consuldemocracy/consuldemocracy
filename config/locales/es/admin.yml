@@ -1174,6 +1174,7 @@ es:
       index:
         title: Configuración global
         update_setting: Actualizar
+        participation_processes: "Procesos de participación"
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
@@ -1187,6 +1188,7 @@ es:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
+          how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración

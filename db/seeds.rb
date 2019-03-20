@@ -41,10 +41,10 @@ Setting["months_to_archive_proposals"] = 12
 Setting["email_domain_for_officials"] = ""
 
 # Code to be included at the top (inside <head>) of every page (useful for tracking)
-Setting["per_page_code_head"] = ""
+Setting["html.per_page_code_head"] = ""
 
 # Code to be included at the top (inside <body>) of every page
-Setting["per_page_code_body"] = ""
+Setting["html.per_page_code_body"] = ""
 
 # Social settings
 Setting["twitter_handle"] = nil
@@ -65,22 +65,25 @@ Setting["meta_title"] = nil
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
+# Processes
+Setting["process.debates"] = true
+Setting["process.proposals"] = true
+Setting["process.polls"] = true
+Setting["process.budgets"] = true
+Setting["process.legislation"] = true
+
 # Feature flags
-Setting["feature.debates"] = true
-Setting["feature.proposals"] = true
 Setting["feature.featured_proposals"] = nil
 Setting["feature.spending_proposals"] = nil
-Setting["feature.polls"] = true
 Setting["feature.twitter_login"] = true
 Setting["feature.facebook_login"] = true
 Setting["feature.google_login"] = true
 Setting["feature.public_stats"] = true
-Setting["feature.budgets"] = true
 Setting["feature.signature_sheets"] = true
-Setting["feature.legislation"] = true
 Setting["feature.user.recommendations"] = true
 Setting["feature.user.recommendations_on_debates"] = true
 Setting["feature.user.recommendations_on_proposals"] = true
+Setting["feature.user.skip_verification"] = "true"
 Setting["feature.community"] = true
 Setting["feature.map"] = nil
 Setting["feature.allow_images"] = true
@@ -105,18 +108,17 @@ Setting["min_age_to_participate"] = 16
 Setting["featured_proposals_number"] = 3
 
 # City map feature default configuration (Greenwich)
-Setting["map_latitude"] = 51.48
-Setting["map_longitude"] = 0.0
-Setting["map_zoom"] = 10
+Setting["map.latitude"] = 51.48
+Setting["map.longitude"] = 0.0
+Setting["map.zoom"] = 10
 
 # Related content
 Setting["related_content_score_threshold"] = -0.3
 
-Setting["feature.user.skip_verification"] = "true"
-
-Setting["feature.homepage.widgets.feeds.proposals"] = true
-Setting["feature.homepage.widgets.feeds.debates"] = true
-Setting["feature.homepage.widgets.feeds.processes"] = true
+# Homepage
+Setting["homepage.widgets.feeds.proposals"] = true
+Setting["homepage.widgets.feeds.debates"] = true
+Setting["homepage.widgets.feeds.processes"] = true
 
 # Votes hot_score configuration
 Setting["hot_score_period_in_days"] = 31

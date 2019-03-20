@@ -1,9 +1,11 @@
 class Admin::SettingsController < Admin::BaseController
 
   def index
-    all_settings = Setting.all.group_by { |s| s.type }
-    @settings = all_settings["common"]
-    @feature_flags = all_settings["feature"]
+    all_settings = Setting.all.group_by { |setting| setting.type }
+    @configuration_settings = all_settings["configuration"]
+    @feature_settings = all_settings["feature"]
+    @participation_processes_settings = all_settings["process"]
+    @map_configuration_settings = all_settings["map"]
   end
 
   def update
@@ -13,9 +15,9 @@ class Admin::SettingsController < Admin::BaseController
   end
 
   def update_map
-    Setting["map_latitude"] = params[:latitude].to_f
-    Setting["map_longitude"] = params[:longitude].to_f
-    Setting["map_zoom"] = params[:zoom].to_i
+    Setting["map.latitude"] = params[:latitude].to_f
+    Setting["map.longitude"] = params[:longitude].to_f
+    Setting["map.zoom"] = params[:zoom].to_i
     redirect_to admin_settings_path, notice: t("admin.settings.index.map.flash.update")
   end
 

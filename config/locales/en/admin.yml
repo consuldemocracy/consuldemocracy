@@ -1175,6 +1175,7 @@ en:
       index:
         title: Configuration settings
         update_setting: Update
+        participation_processes: "Participation processes"
         feature_flags: Features
         features:
           enabled: "Feature enabled"
@@ -1188,6 +1189,7 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+          how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
       setting: Feature
       setting_actions: Actions
       setting_name: Setting
