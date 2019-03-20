@@ -195,6 +195,7 @@ pl:
     proposal_notification: "Powiadomienie"
     spending_proposal: Wniosek wydatkowy
     budget/investment: Inwestycja
+    budget/group: Grupa budżetowa
     budget/heading: Nagłówek budżetu
     poll/shift: Zmiana
     poll/question/answer: Odpowiedź
