@@ -36,10 +36,8 @@ de:
           homepage: Homepage
           debates: Diskussionen
           proposals: Vorschläge
-          budgets: Partizipative Haushaltsplanung
+          budgets: Bürgerhaushalt
           help_page: Hilfeseite
-        background_color: Hintergrundfarbe
-        font_color: Schriftfarbe
       edit:
         editing: Banner bearbeiten
         form:
@@ -134,7 +132,7 @@ de:
         name: "Name der Gruppe"
         submit: "Gruppe speichern"
       index:
-        back: "Zurück zu den Bürgerhaushalten"
+        back: "Zurück zu Bürgerhaushalten"
     budget_headings:
       name: "Name"
       no_headings: "Keine Rubriken vorhanden."
@@ -168,7 +166,7 @@ de:
         start_date: Anfangsdatum
         end_date: Enddatum des Verfahrens
         summary: Zusammenfassung
-        summary_help_text: Dieser Text informiert die Benutzer über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an.
+        summary_help_text: Dieser Text informiert die Benutzer*innen über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an
         description: Beschreibung
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         enabled: Phase aktiviert
@@ -182,11 +180,6 @@ de:
         tags_filter_all: Alle Tags
         advanced_filters: Erweiterte Filter
         placeholder: Suche Projekte
-        sort_by:
-          placeholder: Sortieren nach
-          id: ID
-          title: Titel
-          supports: Unterstützung
         filters:
           all: Alle
           without_admin: Ohne zugewiesene*n Administrator*in
@@ -257,7 +250,7 @@ de:
           "true": Ausgewählt
           "false": Nicht ausgewählt
         winner:
-          title: Gewinner*in
+          title: Bestbewerteter Vorschlag
           "true": "Ja"
           "false": "Nein"
         image: "Bild"
@@ -410,7 +403,7 @@ de:
           notice: 'Beteiligungsverfahren erfolgreich erstellt. <a href="%{link}">Jetzt besuchen</a>'
           error: Beteiligungsverfahren konnte nicht erstellt werden
         update:
-          notice: 'Verfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
+          notice: 'Beteiligungsverfahren erfolgreich aktualisiert. <a href="%{link}"> Jetzt besuchen </a>'
           error: Beteiligungsverfahren konnte nicht aktualisiert werden
         destroy:
           notice: Beteiligungsverfahren erfolgreich gelöscht
@@ -428,8 +421,6 @@ de:
           draft_phase_description: Wenn diese Phase aktiv ist, wird dieses Beteiligungsverfahren nicht in der Liste aller Verfahren angezeigt. Lassen Sie sich eine Vorschau des Verfahrens anzeigen und erstellen Sie Inhalte vor dem Start.
           allegations_phase: Kommentierphase
           proposals_phase: Vorschlagsphase
-          start: Anfang
-          end: Ende
           use_markdown: Verwenden Sie Markdown, um den Text zu formationen
           title_placeholder: Titel des Beteiligungsverfahrens
           summary_placeholder: Kurze Zusammenfassung der Beschreibung
@@ -443,7 +434,7 @@ de:
           delete: Löschen
           title: Gesetzgebungsverfahren
           filters:
-            open: Offen
+            active: Aktiv
             all: Alle
         new:
           back: Zurück
@@ -459,7 +450,8 @@ de:
           title: Beteiligungsverfahren
           comments: Kommentare
           status: Status
-          creation_date: Erstellungsdatum
+          start_date: Anfangsdatum
+          end_date: Enddatum
           status_open: Offen
           status_closed: Abgeschlossen
           status_planned: Geplant
@@ -556,7 +548,7 @@ de:
           question_options: "Mögliche Antworten (optional, standardmäßig offene Antworten)"
         index:
           back: Zurück
-          title: Fragen im Zusammenhang mit diesem Beteiligungsverfahren
+          title: Fragen, die mit diesem Beteiligungsverfahren zusammenhängen
           create: Frage erstellen
           delete: Löschen
         new:
@@ -588,7 +580,6 @@ de:
       activity: Aktivität der Moderator*innen
       admin: Admin-Menü
       banner: Banner verwalten
-      poll_questions: Fragen
       proposals: Vorschläge
       proposals_topics: Themen der Vorschläge
       budgets: Bürgerhaushalte
@@ -639,8 +630,7 @@ de:
           content_block:
             update: "Block aktualisieren"
       title_moderated_content: Moderierter Inhalt
-      title_budgets: Bürger*innenhaushalte
-      title_polls: Umfragen
+      title_budgets: Bürgerhaushalte
       title_profiles: Profile
       title_settings: Einstellungen
       title_site_customization: Seiteninhalt
@@ -751,8 +741,8 @@ de:
         body: Text
         link: Link
         segment_recipient: Empfänger*innen
-        preview_guide: "So wird die Benachrichtigung für Benutzer*innen aussehen:"
-        sent_guide: "So sieht die Benachrichtigung für Benutzer*innen aus:"
+        preview_guide: "So wird die Benachrichtigung für Benutzer*innen angezeigt:"
+        sent_guide: "So wird die Benachrichtigung für Benutzer*innen angezeigt:"
         send_alert: Sind Sie sicher, dass Sie diese Benachrichtigung an %{n} Benutzer*innen senden möchten?
     system_emails:
       preview_pending:
@@ -763,9 +753,14 @@ de:
         send_pending: Ausstehendes senden
         send_pending_notification: Ausstehende Benachrichtigungen erfolgreich gesendet
       proposal_notification_digest:
-        title: Zusammenfassende Benachrichtigun zu einem Vorschlag
-        description: Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden.
-        preview_detail: Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen
+        title: "Zusammenfassende Benachrichtigun zu einem Vorschlag"
+        description: "Sammelt alle Benachrichtigungen über Vorschläge für eine*n Benutzer*in in einer Nachricht, um mehrfache E-Mails zu vermeiden."
+        preview_detail: "Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen"
+      comment:
+        title: "Kommentieren"
+      reply:
+        title: "Antworten"
+      message_title: "Titel der Nachricht"
     emails_download:
       index:
         title: E-Mails herunterladen
@@ -843,8 +838,8 @@ de:
       by_officer:
         date: "Datum"
         booth: "Wahlkabine"
-        assignments: "Amtswechsel in dieser Abstimmung"
-        no_assignments: "In dieser Abstimmung gibt es keinen Amtswechsel."
+        assignments: "Wechsel der Beamten/innen in dieser Abstimmung"
+        no_assignments: "In dieser Abstimmung gibt es keinen Schichtwechsel des/der Wahlvorsteher*in."
     poll_shifts:
       new:
         add_shift: "Arbeitsschicht hinzufügen"
@@ -869,6 +864,7 @@ de:
       flash:
         create: "Arbeitsschicht für Beamten/in hinzugefügt"
         destroy: "Arbeitsschicht für Beamten/in entfernt"
+        unable_to_destroy: "Schichten, denen Ergebnisse oder Nachzählungen zugeordnet sind, können nicht gelöscht werden"
         date_missing: "Es muss ein Datum gewählt werden"
       vote_collection: Stimmen einsammeln
       recount_scrutiny: Nachzählung & Kontrolle
@@ -892,7 +888,7 @@ de:
         error_destroy: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
         error_create: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
       show:
-        location: "Lage"
+        location: "Standort"
         officers: "Beamte/innen"
         officers_list: "Liste der Beamten/innen für diese Wahlurne"
         no_officers: "Es gibt keine Beamten/innen für diese Wahlurne"
@@ -908,6 +904,12 @@ de:
         no_booths: "Dieser Abstimmung sind keine Wahlvorsteher*innen zugeordnet."
         table_name: "Name"
         table_location: "Lage"
+    active_polls:
+      edit:
+        title: "Umfragen Beschreibung"
+      form:
+        description:
+          text: "Beschreibung"
     polls:
       index:
         title: "Liste der Umfragen"
@@ -1127,10 +1129,6 @@ de:
       flash:
         updated: Wert aktualisiert
       index:
-        banners: Stil des Banners
-        banner_imgs: Banner-Bilder
-        no_banners_images: Keine Banner-Bilder
-        no_banners_styles: Keine Banner-Stile
         title: Konfigurationseinstellungen
         update_setting: Aktualisieren
         feature_flags: Funktionen
@@ -1190,7 +1188,7 @@ de:
     spending_proposals:
       index:
         geozone_filter_all: Alle Bereiche
-        administrator_filter_all: Alle Administratoren
+        administrator_filter_all: Alle Administrator*innen
         valuator_filter_all: Alle Begutachter*innen
         tags_filter_all: Alle Tags
         filters:
@@ -1303,16 +1301,16 @@ de:
           comments: Kommentare
           debate_votes: Stimmen in Diskussionen
           debates: Diskussionen
-          proposal_votes: Stimmen in Vorschlägen
+          proposal_votes: Bewertungen Vorschlag
           proposals: Vorschläge
           budgets: Offene Haushalte
           budget_investments: Ausgabenvorschläge
           spending_proposals: Ausgabenvorschläge
-          unverified_users: Benutzer nicht verifziert
+          unverified_users: Nicht verifizierte Benutzer*innen
           user_level_three: Benutzer*innen auf Stufe 3
           user_level_two: Benutzer*innen auf Stufe 2
           users: Benutzer*innen gesamt
-          verified_users: Verifizierte Benutzer
+          verified_users: Verifizierte Benutzer*innen
           verified_users_who_didnt_vote_proposals: Verifizierte Benutzer*innen, die nicht für Vorschläge abgestimmt haben
           visits: Besuche
           votes: Gesamtbewertung
@@ -1455,6 +1453,7 @@ de:
           description: Beschreibung
           link_text: Linktext
           link_url: URL des Links
+          columns_help: "Breite der Karte in Spaltenanzahl. Auf mobilen Bildschirmen beträgt die Breit immer 100%."
           create:
             notice: "Erfolg"
           update:
