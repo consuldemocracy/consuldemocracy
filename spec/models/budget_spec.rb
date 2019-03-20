@@ -97,6 +97,23 @@ describe Budget do
       expect(budget).to be_finished
     end
 
+    describe "#valuating_or_later?" do
+      it "returns false before valuating" do
+        budget.phase = "selecting"
+        expect(budget).not_to be_valuating_or_later
+      end
+
+      it "returns true while valuating" do
+        budget.phase = "valuating"
+        expect(budget).to be_valuating_or_later
+      end
+
+      it "returns true after valuating" do
+        budget.phase = "publishing_prices"
+        expect(budget).to be_valuating_or_later
+      end
+    end
+
     describe "#publishing_prices_or_later?" do
       it "returns false before publishing prices" do
         budget.phase = "valuating"
