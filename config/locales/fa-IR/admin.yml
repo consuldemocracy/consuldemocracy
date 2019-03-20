@@ -136,11 +136,6 @@ fa:
         tags_filter_all: همه برچسب ها
         advanced_filters: فیلترهای پیشرفته
         placeholder: جستجو در پروژه ها
-        sort_by:
-          placeholder: مرتب سازی بر اساس
-          id: شناسه
-          title: عنوان
-          supports: پشتیبانی ها
         filters:
           all: همه
           without_admin: بدون تعیین مدیر
@@ -341,8 +336,6 @@ fa:
           process: "روند\n"
           debate_phase: فاز بحث
           proposals_phase: ' فاز طرحها'
-          start: شروع
-          end: پایان
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
           title_placeholder: عنوان فرایند
           summary_placeholder: خلاصه توضیحات
@@ -354,7 +347,6 @@ fa:
           delete: حذف
           title: فرآیندهای قانونی
           filters:
-            open: بازکردن
             all: همه
         new:
           back: برگشت
@@ -369,7 +361,6 @@ fa:
           title: "روند\n"
           comments: توضیحات
           status: وضعیت ها
-          creation_date: ' ایجاد تاریخ'
           status_open: بازکردن
           status_closed: بسته
           status_planned: برنامه ریزی شده
@@ -486,7 +477,6 @@ fa:
       activity: فعالیت مدیر
       admin: منوی ادمین
       banner: مدیریت آگهی ها
-      poll_questions: سوالات
       proposals: طرح های پیشنهادی
       proposals_topics: موضوعات پیشنهادی
       budgets: بودجه مشارکتی
@@ -529,7 +519,6 @@ fa:
           save: "ذخیره کردن"
       title_moderated_content: کنترل محتویات
       title_budgets: بودجه ها
-      title_polls: نظر سنجی ها
       title_profiles: پروفایل
       legislation: قانون همکاری
       users: کاربران
@@ -968,10 +957,6 @@ fa:
       flash:
         updated: ارزش به روز شد
       index:
-        banners: سبک بنر
-        banner_imgs: تصاویر بنر
-        no_banners_images: ' بنربدون تصویر'
-        no_banners_styles: هیچ سبک بنری نیست
         title: تنظیمات پیکربندی
         update_setting: به روز رسانی
         feature_flags: ویژگی ها
