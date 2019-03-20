@@ -38,8 +38,6 @@ zh-CN:
           proposals: 提议
           budgets: 参与性预算
           help_page: 帮助页面
-        background_color: 背景色
-        font_color: 字体颜色
       edit:
         editing: 编辑横幅
         form:
@@ -145,11 +143,6 @@ zh-CN:
         tags_filter_all: 所有标签
         advanced_filters: 高级过滤器
         placeholder: 搜索项目
-        sort_by:
-          placeholder: 排序依据
-          id: ID
-          title: 标题
-          supports: 支持
         filters:
           all: 所有
           without_admin: 没有指定的管理员
@@ -373,8 +366,6 @@ zh-CN:
           draft_phase_description: 如果此阶段处于活动状态，该进程将不会列在进程索引上。允许在开始前预览进程并创建内容。
           allegations_phase: 评论阶段
           proposals_phase: 提议阶段
-          start: 开始
-          end: 结束
           use_markdown: 使用Markdown 来格式化文本
           title_placeholder: 进程的标题
           summary_placeholder: 描述的简短总结
@@ -386,7 +377,6 @@ zh-CN:
           delete: 删除
           title: 立法进程
           filters:
-            open: 打开
             all: 所有
         new:
           back: 返回
@@ -402,7 +392,6 @@ zh-CN:
           title: 进程
           comments: 评论
           status: 状态
-          creation_date: 创建日期
           status_open: 打开
           status_closed: 关闭
           status_planned: 计划
@@ -528,7 +517,6 @@ zh-CN:
       activity: 审核员活动
       admin: 管理菜单
       banner: 管理横幅
-      poll_questions: 问题
       proposals: 提议
       proposals_topics: 提议主题
       budgets: 参与性预算
@@ -580,7 +568,6 @@ zh-CN:
             update: "更新模块"
       title_moderated_content: 已审核的内容
       title_budgets: 预算
-      title_polls: 投票
       title_profiles: 个人资料
       title_settings: 设置
       title_site_customization: 站点内容
@@ -702,9 +689,9 @@ zh-CN:
         send_pending: 有待发送
         send_pending_notification: 待发送通知已经成功发送
       proposal_notification_digest:
-        title: 提议通知摘要
-        description: 在单个信息中收集给用户的所有提议通知，避免太多电子邮件。
-        preview_detail: 用户将只接收到他们跟随提议的通知
+        title: "提议通知摘要"
+        description: "在单个信息中收集给用户的所有提议通知，避免太多电子邮件。"
+        preview_detail: "用户将只接收到他们跟随提议的通知"
     emails_download:
       index:
         title: 电子邮件下载
@@ -1064,10 +1051,6 @@ zh-CN:
       flash:
         updated: 价值已更新
       index:
-        banners: 横幅样式
-        banner_imgs: 横幅图像
-        no_banners_images: 没有横幅图像
-        no_banners_styles: 没有横幅样式
         title: 配置设置
         update_setting: 更新
         feature_flags: 功能
