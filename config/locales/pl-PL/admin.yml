@@ -1106,6 +1106,7 @@ pl:
             update: Aktualizacja mapy została pomyślnie zaktualizowana.
           form:
             submit: Zaktualizuj
+          how_to_enable: 'Aby pokazać mapę użytkownikom musisz włączyć opcję "Propozycje i geolokalizacja inwestycji budżetowych" w zakładce Ustawienia -> Ustawienia globalne'
       setting: Funkcja
       setting_actions: Akcje
       setting_name: Ustawienie
