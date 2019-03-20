@@ -106,6 +106,8 @@ pl:
           random: losowe
           confidence_score: najwyżej oceniane
           price: według ceny
+      share:
+        message: "Stworzyłem projekt inwestycji %{title} w %{handle}. Utwórz także projekt inwestycyjny!"
       show:
         author_deleted: Użytkownik usunięty
         price_explanation: Wyjaśnienie ceny
@@ -125,6 +127,7 @@ pl:
         project_selected_html: 'Ten projekt inwestycyjny <strong>został wybrany</strong> do fazy głosowania.'
         project_winner: 'Zwycięski projekt inwestycyjny'
         project_not_selected_html: 'Ten projekt inwestycyjny <strong>nie został wybrany</strong> do fazy głosowania.'
+        see_price_explanation: Wyjaśnienie cen
       wrong_price_format: Tylko liczby całkowite
       investment:
         add: Głos
@@ -174,6 +177,7 @@ pl:
       not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania
     executions:
       link: "Kamienie milowe"
+      page_title: "%{budget} - Kamienie Milowe"
       heading: "Kamienie milowe budżetu partycypacyjnego"
       heading_selection_title: "Przez powiat"
       filters:
