@@ -19,7 +19,6 @@ pt-BR:
         unconfirmed_code: Você ainda não inseriu o código de confirmação.
       create:
         flash:
-          offices: Escritórios de apoio ao cidadão
           success_html: Obrigada por solicitar seu <b> código de segurança máxima (necessário apenas para as votações finais) </b>. Em alguns dias, nós o enviaremos para o endereço que temos nos registros. Por favor, lembre que, se preferir, você pode retirar seu código em qualquer um dos %{offices}.
       edit:
         see_all: Ver propostas
@@ -30,7 +29,6 @@ pt-BR:
         explanation: 'Para participar da votação final, você pode:'
         go_to_index: Ver propostas
         office: Verifique em qualquer %{office}
-        offices: Escritórios de apoio ao cidadão
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
         user_permission_info: Com sua conta, você pode...
@@ -61,7 +59,6 @@ pt-BR:
         error_not_allowed_age: Você não tem a idade mínima para participar
         error_not_allowed_postal_code: Para ser verificado, você deve estar registrado.
         error_verifying_census: O Censo não foi capaz de verificar suas informações. Por favor confirme que os seus detalhes do Censo estão corretos ligando para a Prefeitura ou visitando um %{offices}.
-        error_verifying_census_offices: Escritório de apoio ao cidadão
         form_errors: impediu a verificação da sua residência
         postal_code: Código postal
         postal_code_note: Para verificar sua conta, você deve estar registrado
