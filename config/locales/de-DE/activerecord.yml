@@ -29,16 +29,16 @@ de:
         one: "Tag"
         other: "Tags"
       user:
-        one: "Benutzer*innen"
-        other: "Benutzer"
+        one: "Benutzer*in"
+        other: "Benutzer*innen"
       moderator:
-        one: "Moderator"
+        one: "Moderator*in"
         other: "Moderator*innen"
       administrator:
-        one: "Administrator"
+        one: "Administrator*in"
         other: "Administrator*innen"
       valuator:
-        one: "Begutachter/in"
+        one: "Begutachter*in"
         other: "Begutachter*innen"
       valuator_group:
         one: "Begutachtungsgruppe"
@@ -59,11 +59,11 @@ de:
         one: "Wahlkabine"
         other: "Wahlkabinen"
       poll/officer:
-        one: "Wahlvorsteher*in"
-        other: "Wahlvorsteher*innen"
+        one: "Beamter/in"
+        other: "Beamte/innen"
       proposal:
-        one: "Bürger*innenvorschlag"
-        other: "Bürger*innenvorschläge"
+        one: "Bürgervorschlag"
+        other: "Bürgervorschläge"
       spending_proposal:
         one: "Investitionsprojekt"
         other: "Ausgabenvorschläge"
@@ -78,7 +78,7 @@ de:
         other: Benutzer*definierte Inhaltsdatenblöcke
       legislation/process:
         one: "Beteiligungsverfahren"
-        other: "Gesetzgebungsverfahren"
+        other: "Beteiligungsverfahren"
       legislation/proposal:
         one: "Vorschlag"
         other: "Vorschläge"
@@ -126,7 +126,7 @@ de:
         title: "Titel"
         description: "Beschreibung"
         external_url: "Link zur weiteren Dokumentation"
-        administrator_id: "Administrator"
+        administrator_id: "Administrator*in"
         location: "Standort (optional)"
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
@@ -179,10 +179,10 @@ de:
         name: "Name der Organisation"
         responsible_name: "Der/die* Gruppenverantwortliche"
       spending_proposal:
-        administrator_id: "Administrator"
+        administrator_id: "Administrator*in"
         association_name: "Vereinsname"
         description: "Beschreibung"
-        external_url: "Link zur weiteren Dokumentation"
+        external_url: "Link zu zusätzlicher Dokumentation"
         geozone_id: "Rahmenbedingungen"
         title: "Titel"
       poll:
@@ -200,7 +200,7 @@ de:
         title: "Frage"
         summary: "Zusammenfassung"
         description: "Beschreibung"
-        external_url: "Link zur weiteren Dokumentation"
+        external_url: "Link zu zusätzlicher Dokumentation"
       poll/question/translation:
         title: "Frage"
       signature_sheet:
@@ -243,9 +243,13 @@ de:
         draft_publication_date: Veröffentlichungsdatum des Entwurfs
         allegations_start_date: Anfangsdatum Überprüfung
         allegations_end_date: Enddatum Überprüfung
+        proposals_phase_start_date: Anfang
+        proposals_phase_end_date: Ende
         result_publication_date: Veröffentlichungsdatum Endergebnis
+        background_color: Hintergrundfarbe
+        font_color: Schriftfarbe
       legislation/process/translation:
-        title: Titel des Verfahrens
+        title: Titel des Beteiligungsverfahrens
         summary: Zusammenfassung
         description: Beschreibung
         additional_info: Zusätzliche Information
@@ -262,7 +266,7 @@ de:
         changelog: Änderungen
       legislation/question:
         title: Titel
-        question_options: Optionen
+        question_options: Antwortmöglichkeiten
       legislation/question_option:
         value: Wert
       legislation/annotation:
@@ -301,6 +305,7 @@ de:
         description: Beschreibung
         link_text: Linktext
         link_url: URL des Links
+        columns: Anzahl der Spalten
       widget/card/translation:
         label: Tag (optional)
         title: Titel
