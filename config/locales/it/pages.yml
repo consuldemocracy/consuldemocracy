@@ -51,8 +51,6 @@ it:
         page:
           title: "Domande frequenti (FAQ)"
           description: "Usate questa pagina per risolvere le domande frequenti (FAQ) degli utenti del sito."
-          faq_1_title: "Domanda 1"
-          faq_1_description: "Questo è un esempio di descrizione della domanda 1."
       other:
         title: "Altre informazioni di interesse"
         how_to_use: "Usa %{org_name} nella tua città"
@@ -67,25 +65,7 @@ it:
         how_to_use: Utilizzalo nel tuo comune
     privacy:
       title: Informativa sulla privacy
-      subtitle: INFORMATIVA SULLA PRIVACY DEI DATI
-      info_items:
-        - 
-          text: La navigazione attraverso le informazioni disponibili nel Portale Governo Aperto è anonima.
-        - 
-          text: Per utilizzare i servizi contenuti nel Portale Governo Aperto, l'utente deve registrarsi e fornire anticipatamente i dati personali relativi alle specifiche informazioni incluse in ogni tipo di registrazione.
-        - 
-          text: 'I dati forniti saranno incorporati ed elaborati dal Consiglio Comunale in conformità alla descrizione del seguente file:'
-        - 
-          subitems:
-            - 
-              field: 'Nome file:'
-              description: NOME DEL FILE
-            - 
-              field: 'Scopo del file:'
-              description: Gestione dei processi partecipativi per controllare la qualifica delle persone che vi partecipano e valutazione meramente numerica e statistica dei risultati derivati dai processi di partecipazione dei cittadini.
-            - 
-              field: 'Ente responsabile del documento:'
-              description: ENTE RESPONSABILE DEL DOCUMENTO
+      subtitle: "INFORMATIVA SULLA PRIVACY DEI DATI"
     accessibility:
       title: Accessibilità
       description: |-
@@ -174,10 +154,7 @@ it:
               description_column: Aumenta le dimensioni del testo
             - 
     titles:
-      accessibility: Accessibilità
-      conditions: Termini di utilizzo
       help: "Cos’é %{org}? - Partecipazione cittadina"
-      privacy: Informativa sulla privacy
     verify:
       code: Codice che hai ricevuto nella lettera
       email: Email
