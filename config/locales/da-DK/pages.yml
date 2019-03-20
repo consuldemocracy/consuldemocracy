@@ -2,6 +2,8 @@ da:
   pages:
     conditions:
       title: Vilkår og betingelser
+      subtitle: JURIDISK MEDDELELSE OM BRUGERBETINGELSER, PRIVATPOLITIK OG BESKYTTELSE AF PERSONOPLYSNINGER PÅ OPEN GOVERNMENT PORTALEN
+      description: Information vedrørende brugerbetingelser, privatpolitik og beskyttelse af personlige oplysninger.
     help:
       title: "%{org} er en borgerdeltagelses platform"
       guide: "Guiden forklarer hvad hver enkelt sektion %{org} er til, og hvordan den fungerer."
@@ -13,6 +15,8 @@ da:
         other: "Andre oplysninger af interesse"
         processes: "Processer"
       debates:
+        title: "Debatforum"
+        description: "I sektionen %{link} kan du præsentere og dele din mening vedrørende emner relateret til din by. Det er også stedet, hvor idéer genereres og gennem de øvrige sektioner %{org} kan lede til konkrete handlinger fra kommunens side."
         link: "borgerdebat"
         feature_html: "Du kan åbne debatter, kommentere og evaluere dem ved at erklære dig <strong>Enig</strong> eller <strong>Uenig</strong>. Gå til debatforum %{link}."
         feature_link: "registrer i %{org}"
