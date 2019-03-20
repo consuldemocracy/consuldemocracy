@@ -95,5 +95,19 @@ pl:
       public_stats: "Publiczne statystyki"
       public_stats_description: "Wyświetl publiczne statystyki w panelu administracyjnym"
       help_page: "Pomoc"
+    map:
+      latitude: "Szerokość geograficzna"
+      latitude_description: "Szerokość geograficzna, aby wyświetlić położenie na mapie"
+      longitude: "Długość geograficzna"
+      longitude_description: "Długość geograficzna, aby wyświetlić położenie na mapie"
+      zoom: "Powiększenie"
+      zoom_description: "Powiększ, aby wybrać odpowiednie miejsce na mapie"
     process:
+      debates: "Debaty"
       legislation: "Tworzenie prawa"
+      legislation_description: "W procesach partycypacyjnych obywatele mają możliwość uczestniczenia w opracowywaniu i modyfikowaniu przepisów, które mają wpływ na społeczność, oraz wyrażenia opinii lub zadecydowaniu o działaniach władz lokalnych, które mają być podjęte"
+    html:
+      per_page_code_head: "Kod, który ma być zamieszczony na każdej stronie (<head>)"
+      per_page_code_head_description: "Kod ten pojawi się wewnątrz etykiety <head>. Przydatny do wprowadzania własnych skryptów, analiz..."
+      per_page_code_body: "Kod, który ma być zamieszczony na każdej stronie (<body>)"
+      per_page_code_body_description: "Kod ten pojawi się wewnątrz etykiety <body> Przydatny do wprowadzania własnych skryptów, analiz..."
