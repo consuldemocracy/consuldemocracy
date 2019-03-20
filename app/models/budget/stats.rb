@@ -18,7 +18,7 @@ class Budget::Stats
   end
 
   def total_participants_support_phase
-    voters.uniq.count
+    voters.count
   end
 
   def total_participants_vote_phase
@@ -71,11 +71,11 @@ class Budget::Stats
     end
 
     def voters
-      supports(budget).pluck(:voter_id)
+      supports(budget).distinct.pluck(:voter_id)
     end
 
     def balloters
-      budget.ballots.where("ballot_lines_count > ?", 0).pluck(:user_id).compact
+      budget.ballots.where("ballot_lines_count > ?", 0).distinct.pluck(:user_id).compact
     end
 
     def poll_ballot_voters
@@ -84,21 +84,23 @@ class Budget::Stats
 
     def balloters_by_heading(heading_id)
       stats_cache("balloters_by_heading_#{heading_id}") do
-        budget.ballots.joins(:lines).where(budget_ballot_lines: {heading_id: heading_id}).pluck(:user_id)
+        budget.ballots.joins(:lines)
+                      .where(budget_ballot_lines: { heading_id: heading_id} )
+                      .distinct.pluck(:user_id)
       end
     end
 
     def voters_by_heading(heading)
       stats_cache("voters_by_heading_#{heading.id}") do
-        supports(heading).pluck(:voter_id)
+        supports(heading).distinct.pluck(:voter_id)
       end
     end
 
     def calculate_heading_totals(heading)
       {
         total_investments_count: heading.investments.count,
-        total_participants_support_phase: voters_by_heading(heading).uniq.count,
-        total_participants_vote_phase: balloters_by_heading(heading.id).uniq.count,
+        total_participants_support_phase: voters_by_heading(heading).count,
+        total_participants_vote_phase: balloters_by_heading(heading.id).count,
         total_participants_all_phase: voters_and_balloters_by_heading(heading)
       }
     end
