@@ -5,6 +5,8 @@ da:
     back: Tilbage til min konto
     email:
       create:
+        alert:
+          failure: Vi kunne ikke sende en email til din konto
         flash:
           success: 'Vi har sendt en bekræftelsesmail til din konto: %{email}'
       show:
@@ -13,8 +15,12 @@ da:
         flash:
           success: Du er en verificeret bruger
     letter:
+      alert:
+        unconfirmed_code: Du har endnu ikke indtastet bekræftelseskoden
       edit:
         see_all: Se forslag
+      errors:
+        incorrect_code: Bekræftelseskoden er forkert
       new:
         go_to_index: Se forslag
         title: Tillykke!
