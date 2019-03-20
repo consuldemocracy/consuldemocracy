@@ -51,8 +51,6 @@ so:
         page:
           title: "Su'aalaha badanaa la isweydiiyo"
           description: "Isticmaal boggan si aad u xaliso su'aalaha caadiga ah ee dadka isticmaala bogga."
-          faq_1_title: "Sual1"
-          faq_1_description: "Tani waa tusaale loogu talagalay sharaxaadda su'aal mid."
       other:
         title: "Macluumaadka kale ee xiisaha"
         how_to_use: "Isticmaal %{org_name} Magaladada"
@@ -67,25 +65,7 @@ so:
         how_to_use: U adeegso dawladaada hoose
     privacy:
       title: Qaanuunka Arrimaha Khaaska ah
-      subtitle: Macluumaadka ku saabsan macluumaadka asturnaanta
-      info_items:
-        - 
-          text: Marin-hawleedka iyada oo la adeegsanayo macluumaadka laga heli karo Mashruuca Furan ee Open.
-        - 
-          text: Si aad u isticmaasho adeegyadda ku jira Diiwaanka Dawladda ee furan, isticmaaluhu waa inuu diiwaan-geliyaa oo horay u bixiyaa xog shakhsi ah sida ku xusan macluumaadka gaarka ah ee ku jira nooc kasta oo diiwaangelin ah.
-        - 
-          text: 'Xogta la bixiyay waxaa lagu dari doonaa oo ay ka baaraandegi doontaa Golaha Magaalada iyada oo la raacayo sharaxaadda faylka soo socda:'
-        - 
-          subitems:
-            - 
-              field: 'Magaca faylka:'
-              description: Faylka Magaciisa
-            - 
-              field: 'Ujeedka faylka:'
-              description: Maareynta geedi socodka ka qaybqaadashada si loo xakameeyo aqoonta dadka ka qayb galaya iyaga oo keliya tirinta tirooyinka iyo tirakoobka natiijooyinka ka soo baxay habka ka qaybgalka muwaadiniinta.
-            - 
-              field: 'Hay''ad masuul ka ah feylka:'
-              description: Hay'ad u xil saaran faylka
+      subtitle: "Macluumaadka ku saabsan macluumaadka asturnaanta"
     accessibility:
       title: Helitaanka
       description: |-
@@ -179,10 +159,7 @@ so:
         title: U hoggaansanaanta jaangooyooyinka iyo qaabka muuqaalka
         description_html: 'Dhammaan boggaga shabakadani waxay raacayaan "Tilmaamaha Habboonaanta" </ strong> ama Mabaadi''da Guud ee Habboonaanta La Isticmaali karo oo ay aasaaseen Kooxda Shaqada <abbr title = "Websaytka ''Accessibility Initiative'' lang =" en "> WAI </ abbr> W3C.'
     titles:
-      accessibility: Helitaanka
-      conditions: Shuruudaha isticmaalka
       help: "Wamaxy %{org}- kaqayb galka muwadinka"
-      privacy: Qaanuunka Arrimaha Khaaska ah
     verify:
       code: Waraq Kodh ah oo ad heshay
       email: Email
