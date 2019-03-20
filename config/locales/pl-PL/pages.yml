@@ -51,8 +51,6 @@ pl:
         page:
           title: "FAQ - najczęściej zadawane pytania"
           description: "Użyj tej strony, aby odpowiadać na często zadawane pytania użytkownikom serwisu."
-          faq_1_title: "Pytanie 1"
-          faq_1_description: "To jest przykład opisu pytania pierwszego."
       other:
         title: "Inne przydatne informacje"
         how_to_use: "Użyj %{org_name} w Twoim mieście"
@@ -67,25 +65,7 @@ pl:
         how_to_use: Użyj go w swoim lokalnym rządzie
     privacy:
       title: Polityka prywatności
-      subtitle: INFORMACJA DOTYCZĄCA PRYWATNOŚCI DANYCH
-      info_items:
-        - 
-          text: Nawigacja poprzez informacje dostępne w Otwartym Portalu Rządowym jest anonimowa.
-        - 
-          text: Aby skorzystać z usług zawartych w Portalu Otwartego Rządu, użytkownik musi się zarejestrować i wcześniej podać dane osobowe zgodnie z konkretnymi informacjami zawartymi w każdym typie rejestracji.
-        - 
-          text: 'Dostarczone dane zostaną włączone i przetworzone przez Radę Miejską zgodnie z opisem poniższego pliku:'
-        - 
-          subitems:
-            - 
-              field: 'Nazwa pliku:'
-              description: NAZWA PLIKU
-            - 
-              field: 'Przeznaczenie pliku:'
-              description: Zarządzanie procesami uczestniczącymi w celu kontrolowania kwalifikacji uczestniczących w nich osób oraz jedynie numeryczne i statystyczne przeliczanie wyników uzyskanych w wyniku procesów uczestnictwa obywateli.
-            - 
-              field: 'Instytucja odpowiedzialna za plik:'
-              description: INSTYTUCJA ODPOWIEDZIALNA ZA PLIK
+      subtitle: "INFORMACJA DOTYCZĄCA PRYWATNOŚCI DANYCH"
     accessibility:
       title: Dostępność
       description: |-
@@ -177,10 +157,7 @@ pl:
         title: Zgodność z normami i projektowaniem wizualnym
         description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
     titles:
-      accessibility: Dostępność
-      conditions: Warunki użytkowania
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
-      privacy: Polityka prywatności
     verify:
       code: Kod, który otrzymałeś w liście
       email: E-mail
