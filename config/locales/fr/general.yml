@@ -218,7 +218,6 @@ fr:
       available_locales: Langues disponibles
       collaborative_legislation: Processus législatifs
       debates: Débats
-      external_link_blog: Blog
       locale: 'Langue :'
       logo: Consul logo
       management: Gestion
@@ -397,8 +396,6 @@ fr:
         guide: "Vous pouvez maintenant la partager pour qu'elle commence à recueillir des soutiens."
         edit: "Avant qu'elle soit partagée, vous pouvez changer le texte autant que vous le désirez."
         view_proposal: Pas maintenant, revenir à la proposition
-      improve_info: "Améliorez votre campagne et recueillez plus de soutiens"
-      improve_info_link: "Voir plus d’informations"
       already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
       comments:
         zero: Aucun commentaires
@@ -506,7 +503,6 @@ fr:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
   poll_questions:
-    create_question: "Créer une question"
     show:
       vote_answer: "Voter %{answer}"
       voted: "Vous avez voté %{answer}"
@@ -618,7 +614,6 @@ fr:
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
   social:
-    blog: "Blog"
     facebook: "Facebook"
     twitter: "Twitter"
     youtube: "YouTube"
@@ -804,7 +799,7 @@ fr:
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_proposal: Créer des propositions
       user_permission_support_proposal: Soutenir des propositions
-      user_permission_verify: Réaliser toutes ces actions %{verify}.
+      user_permission_verify: "Réaliser toutes ces actions %{verify}."
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_verify_my_account: Vérifier mon compte
       user_permission_votes: Participer au vote final
