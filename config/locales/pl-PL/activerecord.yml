@@ -196,6 +196,7 @@ pl:
       geozone:
         name: Nazwa
         external_code: "Zewnętrzny kod (opcjonalnie)"
+        census_code: "Kod ze spisu (opcjonalnie)"
       milestone:
         status_id: "Bieżący stan inwestycji (opcjonalnie)"
         title: "Tytuł"
