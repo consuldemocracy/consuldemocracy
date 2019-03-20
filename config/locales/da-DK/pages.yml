@@ -47,11 +47,40 @@ da:
     accessibility:
       title: Tilgængelighed
       keyboard_shortcuts:
-        browser_table:
+        title: Tastatur genveje
+        navigation_table:
+          key_header: Tast
+          page_header: Side
           rows:
             - 
+              key_column: 0
+              page_column: Hjem
             - 
+              key_column: 1
             - 
+              key_column: 2
+              page_column: Forslag
+            - 
+              key_column: 3
+              page_column: Stemmer
+            - 
+              key_column: 4
+              page_column: Deltagerbudgetter
+            - 
+              key_column: 5
+              page_column: Lovgivningsprocesser
+        browser_table:
+          browser_header: Browser
+          key_header: Tastkombination
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + genvej og så ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + genvej
+            - 
+              browser_column: Chrome
               key_column: ALT + genvej (CTRL + ALT + genvej for MAC)
             - 
               browser_column: Safari
