@@ -75,6 +75,7 @@ da:
               page_column: Hjem
             - 
               key_column: 1
+              page_column: Debatforum
             - 
               key_column: 2
               page_column: Forslag
