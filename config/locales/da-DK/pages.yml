@@ -24,6 +24,7 @@ da:
         figcaption: '"Enig" og "Uenig" knapper til at rangere debatindlæggene.'
       proposals:
         title: "Forslag"
+        description: "I sektion %{link} kan du oprette forslag, som Aarhus Byråd kan føre ud i livet. Forslagene kræver opbakning, og hvis de opnår tilstrækkelig støtte, videreføres de til en offentlig afstemning. De forslag, der opnår flest stemmer og er mulige at gennemføre bliver derefter til virkelighed."
         link: "borgerforslag"
         image_alt: "Knap til at støtte op om et forslag"
         figcaption_html: 'Knap til at "Støtte" et forslag.'
