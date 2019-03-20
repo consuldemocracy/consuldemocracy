@@ -49,8 +49,6 @@ sv:
         page:
           title: "Vanliga frågor"
           description: "Använd den här sidan för att hjälpa dina användare med deras vanligaste frågor."
-          faq_1_title: "Fråga 1"
-          faq_1_description: "Detta är ett exempel på beskrivning till fråga ett."
       other:
         title: "Andra intresseområden"
         how_to_use: "Använd %{org_name} i din stad"
@@ -100,10 +98,7 @@ sv:
             - 
             - 
     titles:
-      accessibility: Tillgänglighet
-      conditions: Användarvillkor
       help: "Vad är %{org}? - Medborgardeltagande"
-      privacy: sekretesspolicyn
     verify:
       code: Koden du fick i ett brev
       email: E-post
