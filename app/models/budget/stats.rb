@@ -3,14 +3,42 @@ class Budget::Stats
   alias_method :budget, :resource
 
   def self.stats_methods
-    super +
-      %i[total_participants_support_phase total_participants_vote_phase
-         total_budget_investments total_votes total_selected_investments
-         total_unfeasible_investments headings]
+    super + support_phase_methods + vote_phase_methods
+  end
+
+  def self.support_phase_methods
+    %i[total_participants_support_phase total_budget_investments
+       total_selected_investments total_unfeasible_investments headings]
+  end
+
+  def self.vote_phase_methods
+    %i[total_votes total_participants_vote_phase]
+  end
+
+  def stats_methods
+    base_stats_methods + participation_methods + phase_methods
+  end
+
+  def phases
+    %w[support vote].select { |phase| send("#{phase}_phase_finished?") }
+  end
+
+  def all_phases
+    return phases unless phases.many?
+
+    [*phases, "every"]
+  end
+
+  def support_phase_finished?
+    budget.valuating_or_later?
+  end
+
+  def vote_phase_finished?
+    budget.finished?
   end
 
   def participants
-    User.where(id: (authors + voters + balloters + poll_ballot_voters).uniq.compact)
+    User.where(id: phases.map { |phase| send("participant_ids_#{phase}_phase") }.flatten.uniq)
   end
 
   def total_participants
@@ -65,6 +93,18 @@ class Budget::Stats
   end
 
   private
+
+    def phase_methods
+      phases.map { |phase| self.class.send("#{phase}_phase_methods") }.flatten
+    end
+
+    def participant_ids_support_phase
+      (authors + voters).uniq
+    end
+
+    def participant_ids_vote_phase
+      (balloters + poll_ballot_voters).uniq
+    end
 
     def authors
       budget.investments.pluck(:author_id)

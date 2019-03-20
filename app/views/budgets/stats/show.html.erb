@@ -80,11 +80,12 @@
         <div id="stats_by_phase" class="stats-group">
           <h4><%= t("stats.budgets.by_phase") %></h4>
 
-          <%= number_with_info_tags(@stats.total_participants_support_phase,
-                                    t("stats.budgets.participants_support_phase")) %>
-          <%= number_with_info_tags(@stats.total_participants_vote_phase,
-                                   t("stats.budgets.participants_voting_phase")) %>
-
+          <% @stats.phases.each do |phase| %>
+            <%= number_with_info_tags(
+              @stats.send("total_participants_#{phase}_phase"),
+              t("stats.budgets.participants_#{phase}_phase")
+            ) %>
+          <% end %>
         </div>
 
         <div id="stats_by_heading" class="stats-group">
@@ -95,20 +96,19 @@
               <tr>
                 <th scope="col" rowspan="2"><%= t("stats.budgets.heading") %></th>
                 <th scope="col" rowspan="2"><%= t("stats.budgets.investments_sent_html") %></th>
-                <th scope="col" colspan="3"><%= t("stats.budgets.participants_support_phase") %></th>
-                <th scope="col" colspan="3"><%= t("stats.budgets.participants_voting_phase") %></th>
-                <th scope="col" colspan="3"><%= t("stats.budgets.participants_total") %></th>
+
+                <% @stats.all_phases.each do |phase| %>
+                  <th scope="col" colspan="3">
+                    <%= t("stats.budgets.participants_#{phase}_phase") %>
+                  </th>
+                <% end %>
               </tr>
               <tr>
-                <th scope="col" class="tiny"><%= t("stats.budgets.total") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.percent_total_participants_html") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.percent_heading_census_html") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.total") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.percent_total_participants_html") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.percent_heading_census_html") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.total") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.percent_total_participants_html") %></th>
-                <th scope="col" class="tiny"><%= t("stats.budgets.percent_heading_census_html") %></th>
+                <% @stats.all_phases.each do %>
+                  <th scope="col" class="phase-subheader"><%= t("stats.budgets.total") %></th>
+                  <th scope="col" class="phase-subheader"><%= t("stats.budgets.percent_total_participants") %></th>
+                  <th scope="col" class="phase-subheader"><%= t("stats.budgets.percent_heading_census") %></th>
+                <% end %>
               </tr>
             </thead>
             <tbody id="headings">
@@ -122,7 +122,7 @@
                     <%= @stats.headings[heading.id][:total_investments_count] %>
                   </td>
 
-                  <% ["support", "vote", "every"].each do |phase| %>
+                  <% @stats.all_phases.each do |phase| %>
                     <td id="total_participants_<%= phase %>_phase_heading_<%= heading.id %>"
                         class="border-left text-center">
                       <%= @stats.headings[heading.id]["total_participants_#{phase}_phase".to_sym] %>

@@ -8,25 +8,16 @@ feature "Stats" do
 
   describe "Show" do
 
-    it "is not accessible to normal users if phase is not 'finished'" do
-      budget.update(phase: "reviewing_ballots")
+    it "is not accessible if supports phase is not finished" do
+      budget.update(phase: "selecting")
 
       visit budget_stats_path(budget.id)
       expect(page).to have_content "You do not have permission to carry out the action "\
                                    "'read_stats' on budget."
     end
 
-    it "is accessible to normal users if phase is 'finished'" do
-      budget.update(phase: "finished")
-
-      visit budget_stats_path(budget.id)
-      expect(page).to have_content "Stats"
-    end
-
-    it "is accessible to administrators when budget has phase 'reviewing_ballots'" do
-      budget.update(phase: "reviewing_ballots")
-
-      login_as(create(:administrator).user)
+    it "is accessible if supports phase is finished" do
+      budget.update(phase: "valuating")
 
       visit budget_stats_path(budget.id)
       expect(page).to have_content "Stats"

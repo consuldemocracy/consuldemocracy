@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Budget::Stats do
-  let(:budget) { create(:budget) }
+  let(:budget) { create(:budget, :finished) }
   let(:stats) { Budget::Stats.new(budget) }
   let(:investment) { create(:budget_investment, :selected, budget: budget) }
 
@@ -211,6 +211,77 @@ describe Budget::Stats do
       expect(heading_stats[:percentage_district_population_vote_phase]).to be 0.081
       expect(heading_stats[:percentage_participants_every_phase]).to be 100.0
       expect(heading_stats[:percentage_district_population_every_phase]).to be 0.243
+    end
+  end
+
+  describe "#support_phase_finished?" do
+    context "support phase isn't finished" do
+      before { budget.phase = "selecting" }
+
+      it "is false" do
+        expect(stats.support_phase_finished?).to be false
+      end
+    end
+
+    context "support phase is finished" do
+      before { budget.phase = "valuating" }
+
+      it "is false" do
+        expect(stats.support_phase_finished?).to be true
+      end
+    end
+  end
+
+  describe "#vote_phase_finished" do
+    context "support phase isn't finished" do
+      before { budget.phase = "reviewing_ballots" }
+
+      it "is false" do
+        expect(stats.vote_phase_finished?).to be false
+      end
+    end
+
+    context "vote phase is finished" do
+      before { budget.phase = "finished" }
+
+      it "is false" do
+        expect(stats.vote_phase_finished?).to be true
+      end
+    end
+  end
+
+  describe "#all_phases" do
+    context "no phases are finished" do
+      before do
+        allow(stats).to receive(:support_phase_finished?).and_return(false)
+        allow(stats).to receive(:vote_phase_finished?).and_return(false)
+      end
+
+      it "returns an empty array" do
+        expect(stats.all_phases).to eq []
+      end
+    end
+
+    context "one phase is finished" do
+      before do
+        allow(stats).to receive(:support_phase_finished?).and_return(true)
+        allow(stats).to receive(:vote_phase_finished?).and_return(false)
+      end
+
+      it "returns the finished phase" do
+        expect(stats.all_phases).to eq ["support"]
+      end
+    end
+
+    context "all phases are finished" do
+      before do
+        allow(stats).to receive(:support_phase_finished?).and_return(true)
+        allow(stats).to receive(:vote_phase_finished?).and_return(true)
+      end
+
+      it "returns the finished phases and a total phase" do
+        expect(stats.all_phases).to eq ["support", "vote", "every"]
+      end
     end
   end
 end

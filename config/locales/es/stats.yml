@@ -29,10 +29,10 @@ es:
       heading: "Distrito"
       investments_sent_html: "Propuestas<br>enviadas"
       participants_support_phase: Participantes fase apoyos
-      participants_voting_phase: Participantes fase votación
-      participants_total: Total de participantes
-      percent_total_participants_html: "% <br>Total<br>Participantes"
-      percent_heading_census_html: "% <br>Censo<br>Distrito"
+      participants_vote_phase: Participantes fase votación
+      participants_every_phase: Total de participantes
+      percent_total_participants: "% Total Participantes"
+      percent_heading_census: "% Censo Distrito"
       participatory_disclaimer: "** Las cifras de total de participantes se refieren a personas que han creado, apoyado o votado propuestas."
       heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
     polls:

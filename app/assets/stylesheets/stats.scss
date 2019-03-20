@@ -190,12 +190,10 @@ table {
 
     tr th {
       border: 1px solid $border;
-      padding-left: 0;
-      padding-right: 0;
       text-align: center;
     }
 
-    .tiny {
+    .phase-subheader {
       font-size: rem-calc(11);
       font-weight: normal;
     }
