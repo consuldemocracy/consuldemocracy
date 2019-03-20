@@ -19,7 +19,6 @@ de:
         unconfirmed_code: Sie haben den Bestätigungscode noch nicht eingegeben
       create:
         flash:
-          offices: Bürgerbüros
           success_html: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem der %{offices} verifizieren zu können.
       edit:
         see_all: Vorschläge anzeigen
@@ -30,7 +29,6 @@ de:
         explanation: 'Um an der finalen Abstimmungen teilzunehmen, können Sie:'
         go_to_index: Vorschläge anzeigen
         office: Verifiziere dich persönlich in jedem %{office}
-        offices: Bürgerbüros
         send_letter: Schicken Sie mir einen Brief mit dem Code
         title: Glückwunsch!
         user_permission_info: Mit Ihrem Konto können Sie...
@@ -61,7 +59,6 @@ de:
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
         error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
-        error_verifying_census_offices: Bürgerbüros
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
         postal_code: Postleitzahl
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
