@@ -28,16 +28,10 @@ class Budget
 
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: "drafting") }
-    scope :drafting,          -> { find_by_kind("drafting") }
-    scope :informing,         -> { find_by_kind("informing") }
-    scope :accepting,         -> { find_by_kind("accepting")}
-    scope :reviewing,         -> { find_by_kind("reviewing")}
-    scope :selecting,         -> { find_by_kind("selecting")}
-    scope :valuating,         -> { find_by_kind("valuating")}
-    scope :publishing_prices, -> { find_by_kind("publishing_prices")}
-    scope :balloting,         -> { find_by_kind("balloting")}
-    scope :reviewing_ballots, -> { find_by_kind("reviewing_ballots")}
-    scope :finished,          -> { find_by_kind("finished")}
+
+    PHASE_KINDS.each do |phase|
+      define_singleton_method(phase) { find_by_kind(phase) }
+    end
 
     def next_enabled_phase
       next_phase&.enabled? ? next_phase : next_phase&.next_enabled_phase
