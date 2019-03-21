@@ -155,6 +155,7 @@ pl:
         latitude: "Szerokość geograficzna (opcjonalnie)"
         longitude: "Długość geograficzna (opcjonalnie)"
         coordinates_info: "Jeśli podane są szerokość i długość geograficzna, strony inwestycji dla tego nagłówka będzie zawierać mapę. Mapa będzie wyśrodkowany przy użyciu tych współrzędnych."
+        allow_content_block: "Pozwól na załączenie treści"
         create: "Utwórz nowy nagłówek"
         edit: "Edytuj nagłówek"
         submit: "Zapisz nagłówek"
