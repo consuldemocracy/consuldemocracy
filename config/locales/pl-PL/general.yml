@@ -773,7 +773,7 @@ pl:
           one: 1 Wniosek
           few: "%{count} Wnioski"
           many: "%{count} Wniosków"
-          other: "%{count} Wniosków"
+          other: "%{count} wniosków"
         budget_investments:
           one: 1 Inwestycja
           few: "%{count} Inwestycje"
