@@ -476,6 +476,8 @@ pl:
     update:
       form:
         submit_button: Zapisz zmiany
+    share:
+      message: "Poparłem/am wniosek %{title} w %{handle}. Poprzyj go!"
   polls:
     all: "Wszystkie"
     no_dates: "brak przypisanej daty"
