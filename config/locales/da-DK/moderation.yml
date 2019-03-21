@@ -4,19 +4,27 @@ da:
       index:
         block_authors: Bloker bruger
         confirm: Er du sikker?
+        filter: Filter
         filters:
           all: Alle
           pending_flag_review: Under behandling
           with_ignored_flag: Markér som set
         headers:
           comment: Kommentar
+          moderate: Moderer
         hide_comments: Skjul kommentarer
         ignore_flags: Markér som set
+        order: Orden
         orders:
+          flags: Mest markeret
           newest: Nyeste
         title: Kommentarer
+    dashboard:
+      index:
+        title: Moderation
     debates:
       index:
+        block_authors: Bloker forfattere
         confirm: Er du sikker?
         filters:
           all: Alle
