@@ -142,12 +142,23 @@ pl:
       no_headings: "Nie ma nagłówków."
       create:
         notice: "Pomyślnie utworzono nagłówek!"
+      update:
+        notice: "Nagłówek pomyślnie zaktualizowany"
+      destroy:
+        success_notice: "Nagłówek pomyślnie usunięty"
+        unable_notice: "Nie można zniszczyć nagłówek, który jest skojarzony z inwestycją"
       form:
         name: "Nazwa nagłówka"
         amount: "Ilość"
         population: "Populacja (opcjonalnie)"
         population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
+        latitude: "Szerokość geograficzna (opcjonalnie)"
+        longitude: "Długość geograficzna (opcjonalnie)"
+        create: "Utwórz nowy nagłówek"
+        edit: "Edytuj nagłówek"
         submit: "Zapisz nagłówek"
+      index:
+        back: "Powrót do grup"
     budget_phases:
       edit:
         start_date: Data rozpoczęcia
@@ -416,11 +427,13 @@ pl:
           homepage: Opis
           homepage_description: Tutaj można wyjaśnić kontekst procesu
           homepage_enabled: Strona domowa włączona
+          banner_title: Kolory nagłówków
         index:
           create: Nowy proces
           delete: Usuń
           title: Procesy legislacyjne
           filters:
+            active: Aktywne
             all: Wszystkie
         new:
           back: Wróć
@@ -429,6 +442,7 @@ pl:
         proposals:
           select_order: Sortuj według
           orders:
+            id: Identyfikator
             title: Tytuł
             supports: Wsparcie
         process:
@@ -447,6 +461,9 @@ pl:
           questions: Debata
           proposals: Wnioski
           milestones: Obserwowane
+      homepage:
+        edit:
+          title: Konfigurowanie procesów strony głównej
       proposals:
         index:
           title: Tytuł
