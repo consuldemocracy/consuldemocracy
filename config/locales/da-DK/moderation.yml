@@ -48,6 +48,7 @@ da:
       flagged_debates: Debatter
       flagged_investments: Budgetinvesteringer
       proposals: Borgerforslag
+      proposal_notifications: Notifikationer om forslag
       users: Bloker brugere
     proposals:
       index:
