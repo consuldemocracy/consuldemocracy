@@ -197,7 +197,7 @@ pl:
         name: Nazwa
         external_code: "Zewnętrzny kod (opcjonalnie)"
         census_code: "Kod ze spisu (opcjonalnie)"
-        html_map_coordinates: "HTML <map> współrzędne (opcjonalnie)"
+        html_map_coordinates: "współrzędne (opcjonalnie) HTML <map>"
       milestone:
         status_id: "Bieżący stan inwestycji (opcjonalnie)"
         title: "Tytuł"
