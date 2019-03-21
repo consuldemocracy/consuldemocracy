@@ -11,7 +11,7 @@ describe "Admin feature flags" do
     visit admin_root_path
 
     within("#side_menu") do
-      expect(page).to have_link "Spending proposals"
+      expect(page).to have_link "Participatory budgets"
       expect(page).to have_link "Hidden debates"
     end
   end
@@ -66,7 +66,7 @@ describe "Admin feature flags" do
   end
 
   scenario "Disable a feature" do
-    setting = Setting.find_by(key: "feature.spending_proposals")
+    setting = Setting.find_by(key: "feature.twitter_login")
 
     visit admin_settings_path
 

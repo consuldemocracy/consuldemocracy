@@ -296,7 +296,7 @@ describe "Consul Schema" do
       proposal_comment          = create(:comment, commentable: create(:proposal))
       debate_comment            = create(:comment, commentable: create(:debate))
       poll_comment              = create(:comment, commentable: create(:poll))
-      spending_proposal_comment = build(:comment, commentable: create(:spending_proposal)).save(skip_validation: true)
+      budget_investment_comment = build(:comment, commentable: create(:budget_investment)).save(skip_validation: true)
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")
@@ -584,12 +584,12 @@ describe "Consul Schema" do
       proposal = create(:proposal)
       debate   = create(:debate)
       comment  = create(:comment)
-      spending_proposal = create(:spending_proposal)
+      budget_investment = create(:budget_investment)
 
       proposal_vote = create(:vote, votable: proposal)
       debate_vote   = create(:vote, votable: debate)
       comment_vote  = create(:vote, votable: comment)
-      spending_proposal_vote = create(:vote, votable: spending_proposal)
+      budget_investment_vote = create(:vote, votable: budget_investment)
 
       response = execute("{ votes { edges { node { votable_type } } } }")
       received_votables = extract_fields(response, "votes", "votable_type")

@@ -14,7 +14,7 @@ describe SignatureSheet do
       signature_sheet.signable = create(:proposal)
       expect(signature_sheet).to be_valid
 
-      signature_sheet.signable = create(:spending_proposal)
+      signature_sheet.signable = create(:budget_investment)
       expect(signature_sheet).to be_valid
     end
 

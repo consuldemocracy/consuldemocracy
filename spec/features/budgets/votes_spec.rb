@@ -38,7 +38,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from spending proposal index", :js do
+      scenario "Create from investments' index", :js do
         create(:budget_investment, heading: heading, budget: budget)
 
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -53,7 +53,7 @@ describe "Votes" do
       end
     end
 
-    describe "Single spending proposal" do
+    describe "Single investment" do
       let(:investment) { create(:budget_investment, budget: budget, heading: heading)}
 
       scenario "Show no votes" do
@@ -72,7 +72,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from proposal show", :js do
+      scenario "Create from investment show", :js do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
@@ -85,7 +85,7 @@ describe "Votes" do
       end
     end
 
-    scenario "Disable voting on spending proposals", :js do
+    scenario "Disable voting on investments", :js do
       manuela = create(:user, verified_at: Time.current)
 
       login_as(manuela)

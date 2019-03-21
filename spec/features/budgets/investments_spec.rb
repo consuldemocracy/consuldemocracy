@@ -1297,13 +1297,13 @@ describe "Budget Investments" do
 
     scenario "Author can destroy while on the accepting phase" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, heading: heading, price: 10000, author: user)
+      investment1 = create(:budget_investment, heading: heading, price: 10000, author: user)
 
       login_as(user)
       visit user_path(user, tab: :budget_investments)
 
-      within("#budget_investment_#{sp1.id}") do
-        expect(page).to have_content(sp1.title)
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content(investment1.title)
         click_link("Delete")
       end
 
@@ -1466,8 +1466,8 @@ describe "Budget Investments" do
 
     scenario "Index" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :selected, heading: heading, price: 10000)
-      sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
+      investment1 = create(:budget_investment, :selected, heading: heading, price: 10000)
+      investment2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
       login_as(user)
       visit root_path
@@ -1476,13 +1476,13 @@ describe "Budget Investments" do
 
       click_link "More hospitals €666,666"
 
-      within("#budget_investment_#{sp1.id}") do
-        expect(page).to have_content sp1.title
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content investment1.title
         expect(page).to have_content "€10,000"
       end
 
-      within("#budget_investment_#{sp2.id}") do
-        expect(page).to have_content sp2.title
+      within("#budget_investment_#{investment2.id}") do
+        expect(page).to have_content investment2.title
         expect(page).to have_content "€20,000"
       end
     end
@@ -1510,12 +1510,12 @@ describe "Budget Investments" do
 
     scenario "Show" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :selected, heading: heading, price: 10000)
+      investment = create(:budget_investment, :selected, heading: heading, price: 10000)
 
       login_as(user)
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      click_link sp1.title
+      click_link investment.title
 
       expect(page).to have_content "€10,000"
     end
@@ -1541,12 +1541,12 @@ describe "Budget Investments" do
       new_york_heading    = create(:budget_heading, group: group, name: "New York",
                                    latitude: -43.223412, longitude: 12.009423)
 
-      sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
-      sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
-      sp3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
-      sp4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
-      sp6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
+      investment1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
+      investment2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
+      investment3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
+      investment4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
+      investment5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
+      investment6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
 
       login_as(user)
       visit budget_path(budget)
@@ -1555,16 +1555,16 @@ describe "Budget Investments" do
       # No need to click_link "Global Heading" because the link of a group with a single heading
       # points to the list of investments directly
 
-      add_to_ballot(sp1)
-      add_to_ballot(sp2)
+      add_to_ballot(investment1)
+      add_to_ballot(investment2)
 
       visit budget_path(budget)
 
       click_link "Health"
       click_link "Carabanchel"
 
-      add_to_ballot(sp4)
-      add_to_ballot(sp5)
+      add_to_ballot(investment4)
+      add_to_ballot(investment5)
 
       visit budget_ballot_path(budget)
 
@@ -1572,24 +1572,24 @@ describe "Budget Investments" do
                                    "until this phase is closed."
 
       within("#budget_group_#{global_group.id}") do
-        expect(page).to have_content sp1.title
-        expect(page).to have_content "€#{sp1.price}"
+        expect(page).to have_content investment1.title
+        expect(page).to have_content "€#{investment1.price}"
 
-        expect(page).to have_content sp2.title
-        expect(page).to have_content "€#{sp2.price}"
+        expect(page).to have_content investment2.title
+        expect(page).to have_content "€#{investment2.price}"
 
-        expect(page).not_to have_content sp3.title
-        expect(page).not_to have_content "€#{sp3.price}"
+        expect(page).not_to have_content investment3.title
+        expect(page).not_to have_content "€#{investment3.price}"
       end
 
       within("#budget_group_#{group.id}") do
-        expect(page).to have_content sp4.title
+        expect(page).to have_content investment4.title
         expect(page).to have_content "€1,000"
 
-        expect(page).to have_content sp5.title
+        expect(page).to have_content investment5.title
         expect(page).to have_content "€10,000"
 
-        expect(page).not_to have_content sp6.title
+        expect(page).not_to have_content investment6.title
         expect(page).not_to have_content "€100,000"
       end
     end
