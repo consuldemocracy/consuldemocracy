@@ -104,51 +104,51 @@ feature 'Polls' do
     end
   end
 
-  scenario 'Edit poll should allow to remove questions', :js do
+  scenario "Edit poll should allow to remove questions", :js do
     poll = create(:poll, :incoming, related: proposal)
-    question1 = create(:poll_question, poll: poll)
-    question2 = create(:poll_question, poll: poll)
+    create(:poll_question, poll: poll)
+    create(:poll_question, poll: poll)
     visit proposal_dashboard_polls_path(proposal)
     within "div#poll_#{poll.id}" do
-      click_link 'Edit survey'
+      click_link "Edit survey"
     end
 
-    within "#questions" do
+    within ".js-questions" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
-        find('a.delete').click
+        find("a.delete").click
       end
       expect(page).to have_css ".nested-fields", count: 1
     end
 
-    click_button 'Update poll'
+    click_button "Update poll"
     visit edit_proposal_dashboard_poll_path(proposal, poll)
 
     expect(page).to have_css ".nested-fields", count: 1
   end
 
-  scenario 'Edit poll should allow to remove answers', :js do
+  scenario "Edit poll should allow to remove answers", :js do
     poll = create(:poll, :incoming, related: proposal)
     question = create(:poll_question, poll: poll)
-    answer1 = create(:poll_question_answer, question: question)
-    answer2 = create(:poll_question_answer, question: question)
+    create(:poll_question_answer, question: question)
+    create(:poll_question_answer, question: question)
     visit proposal_dashboard_polls_path(proposal)
     within "div#poll_#{poll.id}" do
-      click_link 'Edit survey'
+      click_link "Edit survey"
     end
 
-    within "#questions #answers" do
+    within ".js-questions .js-answers" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
-        find('a.delete').click
+        find("a.delete").click
       end
       expect(page).to have_css ".nested-fields", count: 1
     end
 
-    click_button 'Update poll'
+    click_button "Update poll"
     visit edit_proposal_dashboard_poll_path(proposal, poll)
 
-    within "#questions #answers" do
+    within ".js-questions .js-answers" do
       expect(page).to have_css ".nested-fields", count: 1
     end
   end
