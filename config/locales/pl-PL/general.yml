@@ -26,7 +26,7 @@ pl:
       title: Moje konto
       user_permission_debates: Uczestnicz w debatach
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Stwórz nowe propozycje
+      user_permission_proposal: Stwórz nowy zrealizowany projekt
       user_permission_support_proposal: Poprzyj wnioski
       user_permission_title: Partycypacja
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
@@ -244,7 +244,7 @@ pl:
       my_activity_link: Moja aktywność
       open: otwórz
       open_gov: Otwarty rząd
-      proposals: Wnioski
+      proposals: Zrealizowane projekty
       poll_questions: Głosowanie
       budgets: Budżetowanie Partycypacyjne
       spending_proposals: Wnioski wydatkowe
@@ -312,7 +312,7 @@ pl:
   proposals:
     create:
       form:
-        submit_button: Stwórz wniosek
+        submit_button: Stwórz zrealizowany projekt
     edit:
       editing: Edytuj wniosek
       form:
@@ -396,15 +396,15 @@ pl:
       select_order: Uporządkuj według
       select_order_long: 'Przeglądasz wnioski według:'
       start_proposal: Stwórz wniosek
-      title: Wnioski
+      title: Zrealizowane projekty
       top: Najwyższe tygodniowo
       top_link_proposals: Najbardziej wspierane propozycje według kategorii
       section_header:
         icon_alt: Ikona wniosków
-        title: Wnioski
-        help: Pomoc na temat wniosków
+        title: Zrealizowane projekty
+        help: Pomoc na temat zrealizowanych projektów
       section_footer:
-        title: Pomoc na temat wniosków
+        title: Pomoc na temat zrealizowanych projektów
         description: Wnioski obywatelskie są okazją dla sąsiadów i grup do bezpośredniego decydowania, w jaki sposób chcą, by wyglądało ich miasto, po uzyskaniu wystarczającego wsparcia i poddaniu się głosowaniu obywateli.
     new:
       form:
@@ -477,7 +477,7 @@ pl:
       form:
         submit_button: Zapisz zmiany
     share:
-      message: "Poparłem/am wniosek %{title} w %{handle}. Poprzyj go!"
+      message: "Poparłem/am wniosek %{title} w %{handle}. Dołącz do mnie i także go poprzyj!"
   polls:
     all: "Wszystkie"
     no_dates: "brak przypisanej daty"
@@ -721,7 +721,7 @@ pl:
     index:
       visits: Odwiedziny
       debates: Debaty
-      proposals: Wnioski
+      proposals: Zrealizowane projekty
       comments: Komentarze
       proposal_votes: Głosy na propozycje
       debate_votes: Głosy na debaty
@@ -753,7 +753,7 @@ pl:
       deleted_debate: Ta debata została usunięta
       deleted_proposal: Ta propozycja została usunięta
       deleted_budget_investment: Ten projekt inwestycyjny został usunięty
-      proposals: Wnioski
+      proposals: Zrealizowane projekty
       debates: Debaty
       budget_investments: Inwestycje budżetowe
       comments: Komentarze
@@ -825,7 +825,7 @@ pl:
         proposals: "Najbardziej aktywne propozycje"
         processes: "Otwarte procesy"
       see_all_debates: Zobacz wszystkie debaty
-      see_all_proposals: Zobacz wszystkie propozycje
+      see_all_proposals: Zobacz wszystkie zrealizowane projekty
       see_all_processes: Zobacz wszystkie procesy
       process_label: Proces
       see_process: Zobacz proces
@@ -838,7 +838,7 @@ pl:
         title: Rekomendowane debaty
         btn_text_link: Wszystkie rekomendowane debaty
       proposals:
-        title: Rekomendowane propozycje
+        title: Rekomendowane zrealizowane projekty
         btn_text_link: Wszystkie rekomendowane propozycje
       budget_investments:
         title: Rekomendowane inwestycje
