@@ -11,7 +11,7 @@ da:
           with_ignored_flag: Markér som set
         headers:
           comment: Kommentar
-          moderate: Moderer
+          moderate: Moderér
         hide_comments: Skjul kommentarer
         ignore_flags: Markér som set
         order: Orden
@@ -26,37 +26,49 @@ da:
       index:
         block_authors: Bloker forfattere
         confirm: Er du sikker?
+        filter: Filter
         filters:
           all: Alle
           pending_flag_review: Under behandling
           with_ignored_flag: Markér som set
         headers:
           debate: Debat
+          moderate: Moderér
         hide_debates: Skjul debatindlæg
         ignore_flags: Markér som set
+        order: Orden
         orders:
           created_at: Nyeste
+          flags: Mest markeret
         title: Debatindlæg
+    header:
+      title: Moderation
     menu:
       flagged_comments: Kommentarer
+      flagged_debates: Debatter
       flagged_investments: Budgetinvesteringer
       proposals: Borgerforslag
       users: Bloker brugere
     proposals:
       index:
+        block_authors: Bloker forfattere
         confirm: Er du sikker?
+        filter: Filter
         filters:
           all: Alle
           with_ignored_flag: Markér som set
         headers:
+          moderate: Moderér
           proposal: Borgerforslag
         hide_proposals: Skjul forslag
         ignore_flags: Markér som set
         orders:
           created_at: Seneste
+          flags: Mest markeret
         title: Borgerforslag
     budget_investments:
       index:
+        block_authors: Bloker forfattere
         confirm: Er du sikker?
         filters:
           all: Alle
