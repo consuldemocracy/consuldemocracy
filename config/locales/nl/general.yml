@@ -443,7 +443,7 @@ nl:
       form:
         submit_button: Bewaar wijzigingen
     share:
-      message: "Ik heb het voorstel %{summary} in %{handle} gesteund. Steun dit voorstel ook!"
+      message: "Ik heb op het voorstel %{title} in %{handle} gestemd. Stem ook!"
   polls:
     all: "All"
     no_dates: "geen datum toegewezen"
