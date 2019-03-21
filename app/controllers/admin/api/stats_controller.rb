@@ -3,7 +3,6 @@ class Admin::Api::StatsController < Admin::Api::BaseController
   def show
     unless params[:event].present? ||
            params[:visits].present? ||
-           params[:spending_proposals].present? ||
            params[:budget_investments].present? ||
            params[:user_supported_budgets].present?
       return render json: {}, status: :bad_request
@@ -17,10 +16,6 @@ class Admin::Api::StatsController < Admin::Api::BaseController
 
     if params[:visits].present?
       ds.add "Visits", Visit.group_by_day(:started_at).count
-    end
-
-    if params[:spending_proposals].present?
-      ds.add "Spending proposals", SpendingProposal.group_by_day(:created_at).count
     end
 
     if params[:budget_investments].present?

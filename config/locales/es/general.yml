@@ -179,7 +179,6 @@ es:
     policy: Política de privacidad
     proposal: la propuesta
     proposal_notification: "la notificación"
-    spending_proposal: la propuesta de gasto
     budget/investment: el proyecto de gasto
     budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
@@ -193,7 +192,6 @@ es:
     image: Imagen
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -248,7 +246,6 @@ es:
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
-      spending_proposals: Propuestas de inversión
       notification_item:
         new_notifications:
           one: Tienes una nueva notificación
@@ -762,7 +759,6 @@ es:
     unflag: Deshacer denuncia
     unfollow_entity: "Dejar de seguir %{entity}"
     outline:
-      budget: Presupuestos participativos
       searcher: Buscador
     go_to_page: "Ir a la página de "
     share: Compartir
@@ -785,54 +781,6 @@ es:
     whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
-      association_name: "Nombre de la asociación"
-      description: Descripción detallada
-      external_url: Enlace a documentación adicional
-      geozone: Ámbito de actuación
-      submit_buttons:
-        create: Crear
-        new: Crear
-      title: Título de la propuesta de gasto
-    index:
-      title: Presupuestos participativos
-      unfeasible: Propuestas de inversión no viables
-      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
-      search_form:
-        button: Buscar
-        placeholder: Propuestas de inversión...
-        title: Buscar
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
-      sidebar:
-        geozones: Ámbitos de actuación
-        feasibility: Viabilidad
-        unfeasible: No viables
-      start_spending_proposal: Crea una propuesta de inversión
-    new:
-      more_info: '¿Cómo funcionan los presupuestos participativos?'
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
-      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
-    show:
-      author_deleted: Usuario eliminado
-      code: "Código de la propuesta:"
-      share: Compartir
-    wrong_price_format: Solo puede incluir caracteres numéricos
-    spending_proposal:
-      spending_proposal: Propuesta de inversión
-      already_supported: Ya has apoyado este proyecto. ¡Compártelo!
-      support: Apoyar
-      support_title: Apoyar este proyecto
-      supports:
-        zero: Sin apoyos
-        one: 1 apoyo
-        other: "%{count} apoyos"
   stats:
     index:
       visits: Visitas
@@ -915,12 +863,6 @@ es:
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
-    spending_proposals:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
-      unfeasible: No se pueden votar propuestas inviables.
-      not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.

@@ -111,7 +111,6 @@ search:
 ignore_missing:
   - "unauthorized.*"
   - "activerecord.models.proposal"
-  - "activerecord.models.spending_proposal"
   - "activerecord.errors.models.proposal_notification.*"
   - "activerecord.errors.models.direct_message.*"
   - "errors.messages.blank"
@@ -138,7 +137,6 @@ ignore_unused:
   - "admin.proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
   - "admin.budget_investments.index.filter*"
-  - "admin.spending_proposals.index.filter*"
   - "admin.organizations.index.filter*"
   - "admin.hidden_users.index.filter*"
   - "admin.hidden_budget_investments.index.filter*"
@@ -181,7 +179,6 @@ ignore_unused:
   - "proposals.index.select_order"
   - "proposals.index.orders.*"
   - "proposals.index.section_header.*"
-  - "spending_proposals.index.search_form.*"
   - "*.index.search_form.*"
   - "notifications.notification.action.*"
   - "legislation.processes.index.filter*"
@@ -201,9 +198,6 @@ ignore_unused:
 # - "simple_form.{yes,no}"
 # - "simple_form.{placeholders,hints,labels}.*"
 # - "simple_form.{error_notification,required}.:"
-#### Review unused keys after merge with Budgest (both en and es)
-  - users.show.confirm_deletion_spending_proposal
-  - users.show.delete_spending_proposal
   - verification.letter.create.flash.offices_url
   - verification.letter.new.offices_url
   - votes.budget_investments.different_heading_assigned*

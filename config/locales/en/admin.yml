@@ -690,7 +690,6 @@ en:
       officials: Officials
       organizations: Organisations
       settings: Global settings
-      spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
@@ -1299,9 +1298,6 @@ en:
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
-      spending_proposal_search:
-        button: Search
-        placeholder: Search spending proposals by title or description
       user_search:
         button: Search
         placeholder: Search user by name or email
@@ -1322,52 +1318,6 @@ en:
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
-    spending_proposals:
-      index:
-        geozone_filter_all: All zones
-        administrator_filter_all: All administrators
-        valuator_filter_all: All valuators
-        tags_filter_all: All tags
-        filters:
-          valuation_open: Open
-          without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-          all: All
-        title: Investment projects for participatory budgeting
-        assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
-        no_valuators_assigned: No valuators assigned
-        summary_link: "Investment project summary"
-        valuator_summary_link: "Valuator summary"
-        feasibility:
-          feasible: "Feasible (%{price})"
-          not_feasible: "Not feasible"
-          undefined: "Undefined"
-      show:
-        assigned_admin: Assigned administrator
-        assigned_valuators: Assigned valuators
-        back: Back
-        classification: Classification
-        heading: "Investment project %{id}"
-        edit: Edit
-        edit_classification: Edit classification
-        association_name: Association
-        by: By
-        sent: Sent
-        geozone: Scope
-        dossier: Dossier
-        edit_dossier: Edit dossier
-        tags: Tags
-        undefined: Undefined
-      edit:
-        classification: Classification
-        assigned_valuators: Valuators
-        submit_button: Update
-        tags: Tags
-        tags_placeholder: "Write the tags you want separated by commas (,)"
-        undefined: Undefined
     geozones:
       index:
         title: Geozone
@@ -1438,7 +1388,6 @@ en:
           proposals: Proposals
           budgets: Open budgets
           budget_investments: Investment projects
-          spending_proposals: Spending Proposals
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users
@@ -1455,7 +1404,6 @@ en:
         polls: Polls
       graph:
         debate_created: Debates
-        spending_proposals: Investment projects
         visit: Visits
         level_2_user: Level 2 users
         proposal_created: Citizen proposals

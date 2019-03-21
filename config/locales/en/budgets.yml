@@ -165,15 +165,15 @@ en:
       page_title: "%{budget} - Results"
       heading: "Participatory budget results"
       heading_selection_title: "By district"
-      spending_proposal: Proposal title
       ballot_lines_count: Votes
       hide_discarded_link: Hide discarded
       show_all_link: Show all
       price: Price
       amount_available: Available budget
-      accepted: "Accepted spending proposal: "
-      discarded: "Discarded spending proposal: "
+      accepted: "Accepted investment: "
+      discarded: "Discarded investment: "
       incompatibles: Incompatibles
+      investment_title: Project title
       investment_proyects: List of all investment projects
       unfeasible_investment_proyects: List of all unfeasible investment projects
       not_selected_investment_proyects: List of all investment projects not selected for balloting

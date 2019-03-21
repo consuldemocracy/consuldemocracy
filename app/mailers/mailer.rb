@@ -37,16 +37,6 @@ class Mailer < ApplicationMailer
     end
   end
 
-  def unfeasible_spending_proposal(spending_proposal)
-    @spending_proposal = spending_proposal
-    @author = spending_proposal.author
-    @email_to = @author.email
-
-    with_user(@author) do
-      mail(to: @email_to, subject: t("mailers.unfeasible_spending_proposal.subject", code: @spending_proposal.code))
-    end
-  end
-
   def direct_message_for_receiver(direct_message)
     @direct_message = direct_message
     @receiver = @direct_message.receiver

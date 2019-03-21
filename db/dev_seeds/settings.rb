@@ -33,8 +33,6 @@ section "Creating Settings" do
   Setting.create(key: "process.legislation", value: "true")
 
   Setting.create(key: "feature.featured_proposals", value: "true")
-  Setting.create(key: "feature.spending_proposals", value: nil)
-  Setting.create(key: "feature.spending_proposal_features.voting_allowed", value: nil)
 
   Setting.create(key: "feature.twitter_login", value: "true")
   Setting.create(key: "feature.facebook_login", value: "true")
@@ -65,6 +63,7 @@ section "Creating Settings" do
   Setting.create(key: "map.latitude", value: 40.4332002)
   Setting.create(key: "map.longitude", value: -3.7009591)
   Setting.create(key: "map.zoom", value: 10)
+
   Setting.create(key: "featured_proposals_number", value: 3)
   Setting.create(key: "proposal_notification_minimum_interval_in_days", value: 0)
   Setting.create(key: "direct_message_max_per_day", value: 3)

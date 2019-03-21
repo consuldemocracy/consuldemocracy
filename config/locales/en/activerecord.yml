@@ -71,9 +71,6 @@ en:
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
-      spending_proposal:
-        one: "Investment project"
-        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -203,13 +200,6 @@ en:
       organization:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
       poll:
         name: "Name"
         starts_at: "Start Date"

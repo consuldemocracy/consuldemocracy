@@ -73,10 +73,6 @@ class ApplicationController < ActionController::Base
       @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
-    def set_spending_proposal_votes(spending_proposals)
-      @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
-    end
-
     def set_comment_flags(comments)
       @comment_flags = current_user ? current_user.comment_flags(comments) : {}
     end

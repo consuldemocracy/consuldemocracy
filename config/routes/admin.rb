@@ -42,15 +42,6 @@ namespace :admin do
     end
   end
 
-  resources :spending_proposals, only: [:index, :show, :edit, :update] do
-    member do
-      patch :assign_admin
-      patch :assign_valuators
-    end
-
-    get :summary, on: :collection
-  end
-
   resources :proposal_notifications, only: :index do
     member do
       put :restore

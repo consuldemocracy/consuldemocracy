@@ -62,9 +62,6 @@ es:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear una propuesta de gasto
-      print_spending_proposals: Imprimir propts. de inversión
-      support_spending_proposals: Apoyar propts. de inversión
       create_budget_investment: Crear proyectos de gasto
       print_budget_investments: Imprimir proyectos de gasto
       support_budget_investments: Apoyar proyectos de gasto
@@ -79,7 +76,6 @@ es:
     print:
       proposals_info: Haz tu propuesta en http://url.consul
       proposals_title: "Propuestas:"
-      spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta información
     proposals:
@@ -105,18 +101,6 @@ es:
       filters:
         heading: Concepto
         unfeasible: Proyectos no factibles
-      print:
-        print_button: Imprimir
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Usuario no verificado
-      create: Crear una propuesta de gasto
-      filters:
-        unfeasible: Propuestas de inversión no viables
-        by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       print:
         print_button: Imprimir
       search_results:

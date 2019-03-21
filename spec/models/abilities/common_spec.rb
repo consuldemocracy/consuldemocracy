@@ -73,10 +73,6 @@ describe Abilities::Common do
   it { should_not be_able_to(:vote, Proposal) }
   it { should_not be_able_to(:vote_featured, Proposal) }
 
-  it { should     be_able_to(:index, SpendingProposal)   }
-  it { should_not be_able_to(:create, SpendingProposal)  }
-  it { should_not be_able_to(:destroy, SpendingProposal) }
-
   it { should_not be_able_to(:comment_as_administrator, debate)   }
   it { should_not be_able_to(:comment_as_moderator, debate)       }
   it { should_not be_able_to(:comment_as_administrator, proposal) }
@@ -189,8 +185,6 @@ describe Abilities::Common do
   end
 
   describe "when level 2 verified" do
-    let(:own_spending_proposal) { create(:spending_proposal, author: user) }
-
     let(:own_direct_message) { create(:direct_message, sender: user) }
 
     before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
@@ -198,12 +192,6 @@ describe Abilities::Common do
     describe "Proposal" do
       it { should be_able_to(:vote, Proposal) }
       it { should be_able_to(:vote_featured, Proposal) }
-    end
-
-    describe "Spending Proposal" do
-      it { should be_able_to(:create, SpendingProposal)                }
-      it { should_not be_able_to(:destroy, create(:spending_proposal)) }
-      it { should_not be_able_to(:destroy, own_spending_proposal)      }
     end
 
     describe "Direct Message" do
@@ -270,17 +258,12 @@ describe Abilities::Common do
   end
 
   describe "when level 3 verified" do
-    let(:own_spending_proposal) { create(:spending_proposal, author: user) }
     let(:own_direct_message) { create(:direct_message, sender: user) }
 
     before{ user.update(verified_at: Time.current) }
 
     it { should be_able_to(:vote, Proposal)          }
     it { should be_able_to(:vote_featured, Proposal) }
-
-    it { should     be_able_to(:create, SpendingProposal) }
-    it { should_not be_able_to(:destroy, create(:spending_proposal)) }
-    it { should_not be_able_to(:destroy, own_spending_proposal)      }
 
     it { should     be_able_to(:new, DirectMessage)            }
     it { should     be_able_to(:create, DirectMessage)         }

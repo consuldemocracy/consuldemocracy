@@ -73,13 +73,6 @@ module ActsAsTaggableOn
       Tag.category.pluck(:name)
     end
 
-    def self.spending_proposal_tags
-      ActsAsTaggableOn::Tag.where("taggings.taggable_type" => "SpendingProposal")
-                           .includes(:taggings)
-                           .order(:name)
-                           .distinct
-    end
-
     def self.graphql_field_name
       :tag
     end
@@ -97,6 +90,6 @@ module ActsAsTaggableOn
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"
       end
-  end
 
+  end
 end

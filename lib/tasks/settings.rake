@@ -10,7 +10,15 @@ namespace :settings do
       "banner-img.banner-img-one",
       "banner-img.banner-img-two",
       "banner-img.banner-img-three",
-      "verification_offices_url"
+      "verification_offices_url",
+      "feature.spending_proposals",
+      "feature.spending_proposal_features.phase1",
+      "feature.spending_proposal_features.phase2",
+      "feature.spending_proposal_features.phase3",
+      "feature.spending_proposal_features.voting_allowed",
+      "feature.spending_proposal_features.final_voting_allowed",
+      "feature.spending_proposal_features.open_results_page",
+      "feature.spending_proposal_features.valuation_allowed"
     ]
 
     deprecated_keys.each do |key|
