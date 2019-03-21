@@ -103,6 +103,7 @@ pl:
       public_stats: "Publiczne statystyki"
       public_stats_description: "Wyświetl publiczne statystyki w panelu administracyjnym"
       help_page: "Pomoc"
+      help_page_description: 'Wyświetlaj menu "help", które zabiera strony z informacjami o każdej włączonej funkcji. Zamiera także niestandardowe strony i menu, które można utworzyć w "Ustawienia" > "Zawartość witryny" > "Niestandardowych stron"'
     map:
       latitude: "Szerokość geograficzna"
       latitude_description: "Szerokość geograficzna, aby wyświetlić położenie na mapie"
