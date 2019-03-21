@@ -1,0 +1,3 @@
+en:
+  demo:
+    login_info: "Login as administrator: admin@consul.dev, password: 12345678 | Login as verified user: user1@consul.dev, password: 12345678"
