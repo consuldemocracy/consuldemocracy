@@ -20,6 +20,7 @@ pl:
     max_votes_for_debate_edit_description: "Powyżej tej liczby głosów autor Debaty nie może już jej edytować"
     proposal_code_prefix: "Prefiks dla kodów Wniosków"
     proposal_code_prefix_description: "Ten prefiks pojawi się we Wnioskach przed datą utworzenia i jego identyfikatorem"
+    featured_proposals_number: "Liczba wyróżnionych wniosków"
     votes_for_proposal_success: "Liczba głosów niezbędnych do zatwierdzenia wniosku"
     votes_for_proposal_success_description: "Gdy wniosek osiągnie taką liczbę wsparcia, nie będzie już mógł otrzymać więcej wsparcia i zostanie uznany za pomyślny"
     months_to_archive_proposals: "Miesiące do archiwizacji Wniosków"
