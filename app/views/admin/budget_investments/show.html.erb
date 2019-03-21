@@ -3,7 +3,7 @@
   <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
-<%= render 'written_by_author' %>
+<%= render "written_by_author" %>
 
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
@@ -20,13 +20,13 @@
 <p id="tags">
   <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
 
-  <%= @investment.tags_on(:valuation).pluck(:name).sort.join(', ') %>
+  <%= @investment.tags_on(:valuation).pluck(:name).sort.join(", ") %>
 </p>
 
 <p id="assigned_valuator_groups">
   <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
   <% if @investment.valuator_groups.any? %>
-    <%= @investment.valuator_groups.collect(&:name).join(', ') %>
+    <%= @investment.valuator_groups.collect(&:name).join(", ") %>
   <% else %>
     <%= t("admin.budget_investments.show.undefined") %>
   <% end %>
@@ -35,7 +35,7 @@
 <p id="assigned_valuators">
   <strong><%= t("admin.budget_investments.show.assigned_valuators") %>:</strong>
   <% if @investment.valuators.any? %>
-    <%= @investment.valuators.collect(&:name_and_email).join(', ') %>
+    <%= @investment.valuators.collect(&:name_and_email).join(", ") %>
   <% else %>
     <%= t("admin.budget_investments.show.undefined") %>
   <% end %>
@@ -44,17 +44,17 @@
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) unless @budget.finished? %>
+                                                  {anchor: "classification"}.merge(Budget::Investment.filter_params(params))) unless @budget.finished? %>
 </p>
 
 <hr>
 
 <h2><%= t("admin.budget_investments.show.dossier") %></h2>
-<%= render 'valuation/budget_investments/dossier' %>
+<%= render "valuation/budget_investments/dossier" %>
 <p>
   <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) unless @budget.finished? %>
 </p>
 
-<%= render 'valuation/budget_investments/valuation_comments' %>
+<%= render "valuation/budget_investments/valuation_comments" %>
 
 <%= render "admin/milestones/milestones", milestoneable: @investment %>

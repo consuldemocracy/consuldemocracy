@@ -1,5 +1,3 @@
-<h2><%= t("admin.settings.index.title") %></h2>
-
 <table>
   <thead>
     <tr>
@@ -8,7 +6,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @settings.each do |setting| %>
+    <% settings.each do |setting| %>
       <tr>
         <td class="small-6">
           <strong><%= t("settings.#{setting.key}") %></strong>
@@ -23,7 +21,7 @@
               <%= f.text_area :value, label: false, id: dom_id(setting), lines: 1 %>
             </div>
             <div class="small-12 medium-6 large-4 column">
-              <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
+              <%= f.submit(t("admin.settings.index.update_setting"), class: "button hollow expanded") %>
             </div>
           <% end %>
         </td>

@@ -1,7 +1,7 @@
 <h2><%= t("admin.comments.index.title") %></h2>
 <p><%= t("admin.shared.moderated_content") %></p>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.comments.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.comments.index" %>
 
 <% if @comments.any? %>
   <h3 class="margin"><%= page_entries_info @comments %></h3>

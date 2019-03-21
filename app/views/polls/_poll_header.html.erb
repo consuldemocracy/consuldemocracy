@@ -17,11 +17,12 @@
     </div>
 
     <aside class="small-12 medium-3 column margin-top">
-      <%= render partial: 'shared/social_share', locals: {
+      <%= render partial: "shared/social_share", locals: {
         share_title: t("shared.share"),
         title: @poll.name,
         url: poll_url(@poll),
-        description: @poll.name
+        description: @poll.name,
+        mobile: @poll.name
       } %>
     </aside>
   </div>

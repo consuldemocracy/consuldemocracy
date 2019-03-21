@@ -1,26 +1,26 @@
 <% provide :title do %><%= t("devise_views.confirmations.show.title") %><% end %>
 <h1 class="text-center"><%= t("devise_views.confirmations.show.title") %></h1>
 
-<p><%= t('devise_views.confirmations.show.instructions_html', email: resource.email) %></p>
+<p><%= t("devise_views.confirmations.show.instructions_html", email: resource.email) %></p>
 
 <%= form_for(resource,
              as: resource_name,
              url: update_user_confirmation_path,
              html: { method: :patch }) do |f| %>
 
-  <p><%= t('devise_views.confirmations.show.please_set_password') %></p>
+  <p><%= t("devise_views.confirmations.show.please_set_password") %></p>
 
-  <%= render 'shared/errors', resource: resource %>
+  <%= render "shared/errors", resource: resource %>
 
   <div class="row">
     <div class="small-12 columns">
       <%= f.password_field :password,
         autofocus: true,
-        label: t('devise_views.confirmations.show.new_password_label') %>
+        label: t("devise_views.confirmations.show.new_password_label") %>
     </div>
     <div class="small-12 columns">
       <%= f.password_field :password_confirmation,
-        label: t('devise_views.confirmations.show.new_password_confirmation_label') %>
+        label: t("devise_views.confirmations.show.new_password_confirmation_label") %>
     </div>
   </div>
 

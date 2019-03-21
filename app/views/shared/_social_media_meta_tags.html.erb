@@ -1,4 +1,4 @@
-<% description = local_assigns[:social_description] || setting['meta_description']%>
+<% description = local_assigns[:social_description] || setting["meta_description"]%>
 <% description = truncate(ActionView::Base.full_sanitizer.sanitize(description), length: 140) %>
 <!-- Twitter -->
 <meta name="twitter:card" content="summary"/>
@@ -8,10 +8,10 @@
 <meta name="twitter:image" content="<%= root_url + (local_assigns[:twitter_image_url] || 'social_media_icon_twitter.png') %>"/>
 <!-- Facebook OG -->
 <meta id="ogtitle" property="og:title" content="<%= local_assigns[:social_title] || setting['meta_title'] %>"/>
-<% if setting['url'] %>
+<% if setting["url"] %>
   <meta property="article:publisher" content="<%= setting['url'] %>"/>
 <% end %>
-<% if setting['facebook_handle'] %>
+<% if setting["facebook_handle"] %>
   <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
 <% end %>
 <meta property="og:type" content="article"/>

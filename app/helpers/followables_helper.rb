@@ -6,8 +6,8 @@ module FollowablesHelper
 
   def followable_icon(followable)
     {
-      proposals: 'Proposal',
-      budget: 'Budget::Investment'
+      proposals: "Proposal",
+      budget: "Budget::Investment"
     }.invert[followable]
   end
 

@@ -19,11 +19,11 @@ feature "Admin budget investments" do
   context "Feature flag" do
 
     background do
-      Setting["feature.budgets"] = nil
+      Setting["process.budgets"] = nil
     end
 
     after do
-      Setting["feature.budgets"] = true
+      Setting["process.budgets"] = true
     end
 
     scenario "Disabled with a feature flag" do

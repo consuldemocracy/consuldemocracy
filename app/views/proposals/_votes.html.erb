@@ -24,7 +24,7 @@
     <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
-          title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
+          title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
     <% else %>
@@ -35,14 +35,14 @@
   </div>
 
   <% if user_signed_in? && current_user.organization? %>
-    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.organizations") %>
       </p>
     </div>
   <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
     <div tabindex="0">
-      <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <p>
           <%= t("votes.verified_only",
               verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
@@ -51,7 +51,7 @@
     </div>
   <% elsif !user_signed_in? %>
     <div tabindex="0">
-      <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <%= t("votes.unauthenticated",
           signin: link_to(t("votes.signin"), new_user_session_path),
           signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
@@ -59,9 +59,9 @@
     </div>
   <% end %>
 
-  <% if voted_for?(@proposal_votes, proposal) && setting['twitter_handle'] %>
+  <% if voted_for?(@proposal_votes, proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
-      <%= render 'proposals/social_share', proposal: proposal, share_title: false %>
+      <%= render "proposals/social_share", proposal: proposal, share_title: false %>
     </div>
   <% end %>
 </div>

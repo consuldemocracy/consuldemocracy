@@ -1,50 +1,50 @@
 <% provide :title do %><%= "#{@draft_version.title} - #{@process.title}" %><% end %>
 
-<%= render 'legislation/processes/header', process: @process, header: :small %>
+<%= render "legislation/processes/header", process: @process, header: :small %>
 
-<%= render 'documents/additional_documents', documents: @process.documents %>
+<%= render "documents/additional_documents", documents: @process.documents %>
 
-<%= render 'legislation/processes/key_dates', process: @process, phase: :allegations_phase %>
+<%= render "legislation/processes/key_dates", process: @process, phase: :allegations_phase %>
 
 <div class="column row">
   <div class="draft-panels small-12 column row">
     <div class="row draft-chooser">
       <div class="small-12 medium-9 column">
-        <h3><%= t('.seeing_version') %></h3>
+        <h3><%= t(".seeing_version") %></h3>
         <div class="select-box">
           <%= form_tag go_to_version_legislation_process_draft_versions_path(@process), method: :get, id: "draft_version_go_to_version" do %>
-            <%= select_tag "draft_version_id", options_from_collection_for_select(@draft_versions_list, 'id', 'display_title', @draft_version.id), "aria-label": t('.select_draft_version') %>
-            <%= submit_tag t('.select_version_submit'), class: "button" %>
+            <%= select_tag "draft_version_id", options_from_collection_for_select(@draft_versions_list, "id", "display_title", @draft_version.id), "aria-label": t(".select_draft_version") %>
+            <%= submit_tag t(".select_version_submit"), class: "button" %>
           <% end %>
           <% if @draft_version.changelog.present? %>
-            <span><%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version), class: "see-changes" %></span>
+            <span><%= link_to t(".see_changes"), legislation_process_draft_version_changes_path(@process, @draft_version), class: "see-changes" %></span>
           <% end %>
         </div>
-        <span><%= t('.updated_at', date: format_date(@draft_version.updated_at)) %></span>
+        <span><%= t(".updated_at", date: format_date(@draft_version.updated_at)) %></span>
       </div>
 
       <% unless @draft_version.final_version? %>
         <div class="small-12 medium-3 column">
-          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t('.see_comments'), class: "button expanded" do %>
-            <strong><%= t('.see_comments') %></strong>
+          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t(".see_comments"), class: "button expanded" do %>
+            <strong><%= t(".see_comments") %></strong>
           <% end %>
         </div>
       <% end %>
 
     </div>
 
-    <%= render 'legislation/processes/help_gif' %>
+    <%= render "legislation/processes/help_gif" %>
 
     <div class="row draft-allegation medium-collapse comments-on">
       <div class="small-12 calc-index column <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
         <div class="draft-panel">
           <div>
-            <span class="icon-banner" aria-hidden="true"></span> <span class="panel-title"><%= t('.text_toc') %></span>
+            <span class="icon-banner" aria-hidden="true"></span> <span class="panel-title"><%= t(".text_toc") %></span>
           </div>
         </div>
 
         <div class="draft-index-rotated text-center">
-          <span class="panel-title"><%= t('.text_toc') %></span>
+          <span class="panel-title"><%= t(".text_toc") %></span>
         </div>
 
         <div data-sticky-container>
@@ -55,7 +55,7 @@
       </div>
       <div class="small-12 calc-text column border-right border-left">
         <div class="draft-panel">
-          <div><span class="panel-title"><%= t('.text_body') %></span></div>
+          <div><span class="panel-title"><%= t(".text_body") %></span></div>
         </div>
         <div id="sticky-panel" class="draft-text">
           <% if @draft_version.final_version? %>
@@ -75,7 +75,7 @@
       <% if @draft_version.final_version? %>
         <div class="small-12 calc-comments end column"></div>
       <% else %>
-        <%= render 'comments_panel', draft_version: @draft_version %>
+        <%= render "comments_panel", draft_version: @draft_version %>
       <% end %>
 
     </div>

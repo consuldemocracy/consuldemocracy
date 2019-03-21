@@ -4,7 +4,7 @@
   <p><%= t("management.users.create_user_success_html", email: @user.email) %></p>
 <% end %>
 
-<%= render 'management/user_permissions',
+<%= render "management/user_permissions",
       message: t("management.document_verifications.in_census_has_following_permissions"),
       permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
 

@@ -18,7 +18,7 @@ feature "Admin poll questions" do
     proposal = create(:proposal)
     question1 = create(:poll_question, poll: poll1)
     question2 = create(:poll_question, poll: poll2)
-    question3 = create(:poll_question, poll: poll3, proposal_id: proposal.id)
+    question3 = create(:poll_question, poll: poll3, proposal: proposal)
 
     visit admin_poll_path(poll1)
     expect(page).to have_content(poll1.name)
@@ -45,7 +45,7 @@ feature "Admin poll questions" do
 
     within("#poll_question_#{question3.id}") do
       expect(page).to have_content(question3.title)
-      expect(page).to have_link("(See proposal)", href: proposal_path(question3.proposal_id))
+      expect(page).to have_link("(See proposal)", href: proposal_path(question3.proposal))
       expect(page).to have_content("Edit answers")
       expect(page).to have_content("Edit")
       expect(page).to have_content("Delete")
@@ -79,26 +79,6 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(title)
-    expect(page).to have_current_path(admin_poll_path(poll))
-  end
-
-  scenario "Create from proposal" do
-    poll = create(:poll, name: "Proposals")
-    proposal = create(:proposal)
-
-    visit admin_proposal_path(proposal)
-
-    expect(page).not_to have_content("This proposal has reached the required supports")
-    click_link "Add this proposal to a poll to be voted"
-
-    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
-    expect(page).to have_field("Question", with: proposal.title)
-
-    select "Proposals", from: "poll_question_poll_id"
-
-    click_button "Save"
-
-    expect(page).to have_content(proposal.title)
     expect(page).to have_current_path(admin_poll_path(poll))
   end
 
@@ -181,25 +161,20 @@ feature "Admin poll questions" do
 
   context "Poll select box" do
 
-    let(:poll) { create(:poll, name_en: "Name in English",
-                               name_es: "Nombre en Español",
-                               summary_en: "Summary in English",
-                               summary_es: "Resumen en Español",
-                               description_en: "Description in English",
-                               description_es: "Descripción en Español") }
-
-    let(:question) { create(:poll_question, poll: poll,
-                                            title_en: "Question in English",
-                                            title_es: "Pregunta en Español") }
-
     scenario "translates the poll name in options", :js do
-      visit edit_admin_question_path(question)
 
-      expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
+      poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
+      proposal = create(:proposal)
+
+      visit admin_proposal_path(proposal)
+      click_link "Add this proposal to a poll to be voted"
+
+      expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
 
       select("Español", from: "locale-switcher")
 
-      expect(page).to have_select("poll_question_poll_id", options: [poll.name_es])
+      expect(page).to have_select("poll_question_poll_id",
+                                  options: ["Seleccionar votación", poll.name_es])
     end
 
     scenario "uses fallback if name is not translated to current locale", :js do
@@ -207,13 +182,18 @@ feature "Admin poll questions" do
         skip("Spec only useful when French falls back to Spanish")
       end
 
-      visit edit_admin_question_path(question)
+      poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
+      proposal = create(:proposal)
 
-      expect(page).to have_select("poll_question_poll_id", options: [poll.name_en])
+      visit admin_proposal_path(proposal)
+      click_link "Add this proposal to a poll to be voted"
+
+      expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
 
       select("Français", from: "locale-switcher")
 
-      expect(page).to have_select("poll_question_poll_id", options: [poll.name_es])
+      expect(page).to have_select("poll_question_poll_id",
+                                  options: ["Sélectionner un vote", poll.name_es])
     end
   end
 

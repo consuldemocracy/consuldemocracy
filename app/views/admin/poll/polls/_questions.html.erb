@@ -21,10 +21,10 @@
           <strong>
             <%= link_to question.title, admin_question_path(question) %>
           </strong>
-          <% if question.proposal_id.present? %>
+          <% if question.proposal.present? %>
             <small>
               <%= link_to t("admin.polls.show.see_proposal"),
-                          proposal_path(question.proposal_id),
+                          proposal_path(question.proposal),
                           target: "_blank" %>
             </small>
           <% end %>

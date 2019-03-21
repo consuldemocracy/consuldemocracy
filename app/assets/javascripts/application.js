@@ -81,6 +81,7 @@
 //= require managers
 //= require globalize
 //= require send_admin_notification_alert
+//= require settings
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -127,12 +128,13 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
+  App.Settings.initialize();
 };
 
 $(function(){
   Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);
-  $(document).on('page:load', initialize_modules);
-  $(document).on('ajax:complete', initialize_modules);
+  $(document).on("page:load", initialize_modules);
+  $(document).on("ajax:complete", initialize_modules);
 });

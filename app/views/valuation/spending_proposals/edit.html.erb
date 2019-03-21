@@ -1,30 +1,30 @@
-<%= link_to "#{t('valuation.spending_proposals.show.heading')} #{@spending_proposal.id}", valuation_spending_proposal_path(@spending_proposal), class: 'back' %>
+<%= link_to "#{t('valuation.spending_proposals.show.heading')} #{@spending_proposal.id}", valuation_spending_proposal_path(@spending_proposal), class: "back" %>
 <h2><%= t("valuation.spending_proposals.edit.dossier") %></h2>
 
 <%= form_for(@spending_proposal, url: valuate_valuation_spending_proposal_path(@spending_proposal), html: {id: "valuation_spending_proposal_edit_form"}) do |f| %>
-  <%= render 'shared/errors', resource: @spending_proposal %>
+  <%= render "shared/errors", resource: @spending_proposal %>
   <div class="row">
     <div class="small-12 medium-8 column">
       <fieldset class="fieldset">
-        <legend><%= t('valuation.spending_proposals.edit.feasibility') %></legend>
+        <legend><%= t("valuation.spending_proposals.edit.feasibility") %></legend>
         <div class="small-4 column">
             <span class="radio">
               <%= f.radio_button :feasible, :nil, label: false, checked: @spending_proposal.feasible.nil? %>
-              <%= f.label :feasible_nil, t('valuation.spending_proposals.edit.undefined_feasible') %>
+              <%= f.label :feasible_nil, t("valuation.spending_proposals.edit.undefined_feasible") %>
             </span>
         </div>
 
         <div class="small-4 column">
             <span class="radio">
               <%= f.radio_button :feasible, true, value: true, label: false %>
-              <%= f.label :feasible_true, t('valuation.spending_proposals.edit.feasible') %>
+              <%= f.label :feasible_true, t("valuation.spending_proposals.edit.feasible") %>
             </span>
         </div>
 
         <div class="small-4 column">
             <span class="radio">
               <%= f.radio_button :feasible, false, value: false, label: false %>
-              <%= f.label :feasible_false, t('valuation.spending_proposals.edit.not_feasible') %>
+              <%= f.label :feasible_false, t("valuation.spending_proposals.edit.not_feasible") %>
             </span>
         </div>
       </fieldset>
@@ -75,7 +75,7 @@
   <div class="row">
     <div class="small-12 medium-8 column">
       <%= f.label :valuation_finished do %>
-        <%= f.check_box :valuation_finished, title: t('valuation.spending_proposals.edit.valuation_finished'), label: false %>
+        <%= f.check_box :valuation_finished, title: t("valuation.spending_proposals.edit.valuation_finished"), label: false %>
         <span class="checkbox"><%= t("valuation.spending_proposals.edit.valuation_finished") %></span>
       <% end %>
     </div>

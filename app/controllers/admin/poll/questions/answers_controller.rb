@@ -39,7 +39,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   def documents
     @documents = @answer.documents
 
-    render 'admin/poll/questions/answers/documents'
+    render "admin/poll/questions/answers/documents"
   end
 
   def order_answers

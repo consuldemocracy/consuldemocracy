@@ -8,7 +8,7 @@ class Widget::Feed < ActiveRecord::Base
   end
 
   def setting
-    Setting.where(key: "feature.homepage.widgets.feeds.#{kind}").first
+    Setting.where(key: "homepage.widgets.feeds.#{kind}").first
   end
 
   def self.active

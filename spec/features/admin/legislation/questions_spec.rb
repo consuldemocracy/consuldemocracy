@@ -17,11 +17,7 @@ feature "Admin legislation questions" do
   context "Feature flag" do
 
     background do
-      Setting["feature.legislation"] = nil
-    end
-
-    after do
-      Setting["feature.legislation"] = true
+      Setting["process.legislation"] = nil
     end
 
     scenario "Disabled with a feature flag" do

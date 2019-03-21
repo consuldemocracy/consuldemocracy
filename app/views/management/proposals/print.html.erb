@@ -2,7 +2,7 @@
   <div class="row">
     <div class="proposals-list">
       <a id="print_link" href="javascript:window.print();" class="button warning float-right">
-        <%= t('management.proposals.print.print_button') %>
+        <%= t("management.proposals.print.print_button") %>
       </a>
 
       <%= image_tag "header_print_proposals.jpg", class: "for-print-only" %>
@@ -14,7 +14,7 @@
           <span class="not-print"><%= t("proposals.index.select_order_long") %></span>
           <span class="for-print-only"><%= t("management.print.proposals_title") %></span>
         </h2>
-        <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
+        <%= render "shared/order_selector", i18n_namespace: "proposals.index" %>
       </div>
 
       <%= render @proposals %>

@@ -1,4 +1,4 @@
-<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)), class: 'back' do %>
+<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)), class: "back" do %>
   <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
 
@@ -21,7 +21,7 @@
     <div class="small-12 column">
       <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
       <%= f.text_field :tag_list,
-                       value: @investment.tag_list.sort.join(','),
+                       value: @investment.tag_list.sort.join(","),
                        label: false %>
     </div>
 
@@ -57,10 +57,10 @@
         <% end %>
       </div>
       <%= f.text_field :valuation_tag_list,
-                        value: @investment.valuation_tag_list.sort.join(','),
+                        value: @investment.valuation_tag_list.sort.join(","),
                         label: false,
                         placeholder: t("admin.budget_investments.edit.tags_placeholder"),
-                        class: 'js-tag-list' %>
+                        class: "js-tag-list" %>
     </div>
 
     <div class="small-12 column margin-top">
@@ -88,7 +88,7 @@
     <div class="small-12 medium-3 column">
       <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
       <%= f.label :incompatible do %>
-        <%= f.check_box :incompatible, title: t('admin.budget_investments.edit.compatibility'), label: false %>
+        <%= f.check_box :incompatible, title: t("admin.budget_investments.edit.compatibility"), label: false %>
         <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
       <% end %>
     </div>
@@ -96,7 +96,7 @@
     <div class="small-12 medium-3 column float-left">
       <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
       <%= f.label :selected do %>
-        <%= f.check_box :selected, title: t('admin.budget_investments.edit.selection'), label: false %>
+        <%= f.check_box :selected, title: t("admin.budget_investments.edit.selection"), label: false %>
         <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_selected") %></span>
       <% end %>
     </div>

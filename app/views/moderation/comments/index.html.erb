@@ -1,19 +1,19 @@
 <h2><%= t("moderation.comments.index.title") %></h2>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "moderation.comments.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "moderation.comments.index" %>
 
 <h3 class="inline-block"><%= page_entries_info @comments %></h3>
 <div class="float-right">
   <%= t("moderation.comments.index.order") %>
-  <%= render 'shared/order_selector', i18n_namespace: "moderation.comments.index" %>
+  <%= render "shared/order_selector", i18n_namespace: "moderation.comments.index" %>
 </div>
 
 <%= form_tag moderate_moderation_comments_path(request.query_parameters), method: :put do %>
   <p class="float-left js-check">
-    <%= t('shared.check') %>:
-    <%= link_to t('shared.check_all'), '#', data: { check_all: "comment_ids[]" } %>
+    <%= t("shared.check") %>:
+    <%= link_to t("shared.check_all"), "#", data: { check_all: "comment_ids[]" } %>
     |
-    <%= link_to t('shared.check_none'), '#', data: { check_none: "comment_ids[]" } %>
+    <%= link_to t("shared.check_none"), "#", data: { check_none: "comment_ids[]" } %>
   </p>
 
   <table class="clear">
@@ -49,21 +49,21 @@
     </tbody>
   </table>
 
-  <%= submit_tag t('moderation.comments.index.block_authors'),
+  <%= submit_tag t("moderation.comments.index.block_authors"),
                  name: "block_authors",
                  class: "button hollow alert",
-                 data: { confirm: t('moderation.comments.index.confirm') } %>
+                 data: { confirm: t("moderation.comments.index.confirm") } %>
 
   <div class="float-right">
-    <%= submit_tag t('moderation.comments.index.hide_comments'),
+    <%= submit_tag t("moderation.comments.index.hide_comments"),
                    name: "hide_comments",
                    class: "button hollow alert",
-                   data: { confirm: t('moderation.comments.index.confirm') } %>
+                   data: { confirm: t("moderation.comments.index.confirm") } %>
 
-    <%= submit_tag t('moderation.comments.index.ignore_flags'),
+    <%= submit_tag t("moderation.comments.index.ignore_flags"),
                    name: "ignore_flags",
                    class: "button hollow",
-                   data: { confirm: t('moderation.comments.index.confirm') } %>
+                   data: { confirm: t("moderation.comments.index.confirm") } %>
   </div>
 
   <%= paginate @comments %>

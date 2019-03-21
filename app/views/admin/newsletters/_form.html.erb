@@ -1,5 +1,5 @@
 <%= form_for [:admin, @newsletter] do |f| %>
-  <%= render 'shared/errors', resource: @newsletter %>
+  <%= render "shared/errors", resource: @newsletter %>
 
   <%= f.select :segment_recipient, options_for_select(user_segments_options,
                                                       @newsletter[:segment_recipient]) %>

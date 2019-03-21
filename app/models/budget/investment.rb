@@ -27,7 +27,7 @@ class Budget
     include Milestoneable
     include Randomizable
 
-    belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+    belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
     belongs_to :heading
     belongs_to :group
     belongs_to :budget
@@ -39,8 +39,8 @@ class Budget
     has_many :valuator_group_assignments, dependent: :destroy
     has_many :valuator_groups, through: :valuator_group_assignments
 
-    has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
-    has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
+    has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: "Comment"
+    has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: "Comment"
 
     validates :title, presence: true
     validates :author, presence: true
@@ -75,7 +75,7 @@ class Budget
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
-    scope :with_supports,               -> { where('cached_votes_up > 0') }
+    scope :with_supports,               -> { where("cached_votes_up > 0") }
     scope :selected,                    -> { feasible.where(selected: true) }
     scope :compatible,                  -> { where(incompatible: false) }
     scope :incompatible,                -> { where(incompatible: true) }
@@ -133,10 +133,10 @@ class Budget
 
     def self.advanced_filters(params, results)
       ids = []
-      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?('feasible')
-      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
-      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
-      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
+      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?("feasible")
+      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
+      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
+      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
       results.where("budget_investments.id IN (?)", ids)
     end
 
@@ -173,11 +173,11 @@ class Budget
     end
 
     def searchable_values
-      { title              => 'A',
-        author.username    => 'B',
-        heading.try(:name) => 'B',
-        tag_list.join(' ') => 'B',
-        description        => 'C'
+      { title              => "A",
+        author.username    => "B",
+        heading.try(:name) => "B",
+        tag_list.join(" ") => "B",
+        description        => "C"
       }
     end
 
@@ -186,7 +186,7 @@ class Budget
     end
 
     def self.by_heading(heading)
-      where(heading_id: heading == 'all' ? nil : heading.presence)
+      where(heading_id: heading == "all" ? nil : heading.presence)
     end
 
     def undecided?
@@ -283,7 +283,7 @@ class Budget
     end
 
     def register_selection(user)
-      vote_by(voter: user, vote: 'yes') if selectable_by?(user)
+      vote_by(voter: user, vote: "yes") if selectable_by?(user)
     end
 
     def calculate_confidence_score
@@ -342,11 +342,11 @@ class Budget
     end
 
     def assigned_valuators
-      self.valuators.collect(&:description_or_name).compact.join(', ').presence
+      self.valuators.collect(&:description_or_name).compact.join(", ").presence
     end
 
     def assigned_valuation_groups
-      self.valuator_groups.collect(&:name).compact.join(', ').presence
+      self.valuator_groups.collect(&:name).compact.join(", ").presence
     end
 
     def valuation_tag_list

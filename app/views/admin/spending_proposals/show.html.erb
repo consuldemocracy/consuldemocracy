@@ -2,7 +2,7 @@
   <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
-<%= render 'written_by_author' %>
+<%= render "written_by_author" %>
 
 <%= link_to t("admin.spending_proposals.show.edit"),
               edit_admin_spending_proposal_path(@spending_proposal,
@@ -19,13 +19,13 @@
 <p id="tags">
   <strong><%= t("admin.spending_proposals.show.tags") %>:</strong>
 
-  <%= @spending_proposal.tags.pluck(:name).join(', ') %>
+  <%= @spending_proposal.tags.pluck(:name).join(", ") %>
 </p>
 
 <p id="assigned_valuators">
   <strong><%= t("admin.spending_proposals.show.assigned_valuators") %>:</strong>
   <% if @spending_proposal.valuators.any? %>
-    <%= @spending_proposal.valuators.collect(&:name_and_email).join(', ') %>
+    <%= @spending_proposal.valuators.collect(&:name_and_email).join(", ") %>
   <% else %>
     <%= t("admin.spending_proposals.show.undefined") %>
   <% end %>
@@ -34,14 +34,14 @@
 <p>
   <%= link_to t("admin.spending_proposals.show.edit_classification"),
                 edit_admin_spending_proposal_path(@spending_proposal,
-                                                  {anchor: 'classification'}.merge(SpendingProposal.filter_params(params))) %>
+                                                  {anchor: "classification"}.merge(SpendingProposal.filter_params(params))) %>
 </p>
 
 <hr>
 
 <h2><%= t("admin.spending_proposals.show.dossier") %></h2>
 
-<%= render 'valuation/spending_proposals/written_by_valuators' %>
+<%= render "valuation/spending_proposals/written_by_valuators" %>
 
 <p>
   <%= link_to t("admin.spending_proposals.show.edit_dossier"), edit_valuation_spending_proposal_path(@spending_proposal) %>

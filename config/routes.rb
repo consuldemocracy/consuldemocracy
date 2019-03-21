@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => "/ckeditor"
 
   if Rails.env.development? || Rails.env.staging?
-    get '/sandbox' => 'sandbox#index'
-    get '/sandbox/*template' => 'sandbox#show'
+    get "/sandbox" => "sandbox#index"
+    get "/sandbox/*template" => "sandbox#show"
   end
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
@@ -33,9 +33,9 @@ Rails.application.routes.draw do
   draw :valuation
   draw :verification
 
-  root 'welcome#index'
-  get '/welcome', to: 'welcome#welcome'
-  get '/consul.json', to: "installation#details"
+  root "welcome#index"
+  get "/welcome", to: "welcome#welcome"
+  get "/consul.json", to: "installation#details"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]
@@ -43,10 +43,10 @@ Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
 
   # More info pages
-  get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'
-  get 'help/how-to-use',  to: 'pages#show', id: 'help/how_to_use/index',  as: 'how_to_use'
-  get 'help/faq',         to: 'pages#show', id: 'help/faq/index',         as: 'faq'
+  get "help",             to: "pages#show", id: "help/index",             as: "help"
+  get "help/how-to-use",  to: "pages#show", id: "help/how_to_use/index",  as: "how_to_use"
+  get "help/faq",         to: "pages#show", id: "faq",                    as: "faq"
 
   # Static pages
-  resources :pages, path: '/', only: [:show]
+  resources :pages, path: "/", only: [:show]
 end

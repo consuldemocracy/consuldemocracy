@@ -164,6 +164,48 @@ feature "Voter" do
       expect(Poll::Voter.count).to eq(1)
     end
 
-  end
+    context "Side menu" do
+      scenario "'Validate document' menu item with votable polls", :js do
+        login_through_form_as_officer(officer.user)
 
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+
+        within("#side_menu") do
+          expect(page).not_to have_content("Validate document")
+        end
+
+        within("#poll_#{poll.id}") do
+          click_button("Confirm vote")
+          expect(page).to have_content "Vote introduced!"
+        end
+
+        within("#side_menu") do
+          expect(page).to have_content("Validate document")
+        end
+      end
+
+      scenario "'Validate document' menu item without votable polls", :js do
+        create(:poll_voter, poll: poll, user: create(:user, :in_census))
+
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+
+        within("#poll_#{poll.id}") do
+          expect(page).to have_content "Has already participated in this poll"
+        end
+
+        within("#side_menu") do
+          expect(page).to have_content("Validate document")
+        end
+      end
+
+    end
+  end
 end

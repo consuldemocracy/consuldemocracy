@@ -4,7 +4,7 @@
   <div class="quiz-header row small-collapse">
     <div class="small-12 medium-9 column">
       <div class="quiz-title">
-        <p class="quiz-header-title"><%= t('.title') %></p>
+        <p class="quiz-header-title"><%= t(".title") %></p>
         <h4><%= link_to @process.title, @process %></h4>
       </div>
     </div>
@@ -12,14 +12,14 @@
       <% if @question.next_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.next_question_id), class: "quiz-next-link" do %>
           <%= content_tag :div, class: "quiz-next" do %>
-            <%= t('.next_question') %>
+            <%= t(".next_question") %>
             <span class="icon-angle-right" aria-hidden="true">
           <% end %>
         <% end %>
       <% elsif @question.first_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.first_question_id), class: "quiz-next-link" do %>
           <%= content_tag :div, class: "quiz-next" do %>
-            <%= t('.first_question') %>
+            <%= t(".first_question") %>
             <span class="icon-angle-right" aria-hidden="true">
           <% end %>
         <% end %>
@@ -30,19 +30,19 @@
     <div class="small-12 medium-9 column">
       <h3 class="quiz-question"><%= @question.title %></h3>
       <div class="debate-questions" id="legislation-answer-form">
-        <%= render 'answer_form', process: @process, question: @question, answer: @answer %>
-        <%= render 'participation_not_allowed' %>
+        <%= render "answer_form", process: @process, question: @question, answer: @answer %>
+        <%= render "participation_not_allowed" %>
       </div>
     </div>
 
     <aside class="small-12 medium-3 column">
       <div id="social-share" class="sidebar-divider"></div>
-      <h3><%= t('.share') %></h3>
-      <%= render '/shared/social_share', title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
+      <h3><%= t(".share") %></h3>
+      <%= render "/shared/social_share", title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
     </aside>
   </div>
 
-  <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
+  <%= render partial: "/comments/comment_tree", locals: { comment_tree: @comment_tree,
                                                           comment_flags: @comment_flags,
                                                           display_comments_count: true } %>
 </section>

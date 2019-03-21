@@ -6,9 +6,9 @@ feature "Homepage" do
     admin = create(:administrator).user
     login_as(admin)
 
-    Setting["feature.homepage.widgets.feeds.proposals"] = false
-    Setting["feature.homepage.widgets.feeds.debates"] = false
-    Setting["feature.homepage.widgets.feeds.processes"] = false
+    Setting["homepage.widgets.feeds.proposals"] = false
+    Setting["homepage.widgets.feeds.debates"] = false
+    Setting["homepage.widgets.feeds.processes"] = false
     Setting["feature.user.recommendations"] = false
   end
 

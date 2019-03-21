@@ -2,7 +2,7 @@
             admin_budget_budget_investments_path(csv_params),
             class: "float-right small clear" %>
 
-<% if params[:filter] == 'winners' %>
+<% if params[:filter] == "winners" %>
   <% if display_calculate_winners_button?(@budget) %>
     <%= link_to calculate_winner_button_text(@budget),
                 calculate_winners_admin_budget_path(@budget),
@@ -48,7 +48,7 @@
     <tbody>
       <% @investments.each do |investment| %>
         <tr id="<%= dom_id(investment) %>" class="budget_investment">
-          <%= render '/admin/budget_investments/select_investment', investment: investment %>
+          <%= render "/admin/budget_investments/select_investment", investment: investment %>
         </tr>
       <% end %>
     </tbody>

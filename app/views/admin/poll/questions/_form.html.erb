@@ -2,13 +2,15 @@
 
 <%= translatable_form_for(@question, url: form_url) do |f| %>
 
-  <%= render 'shared/errors', resource: @question %>
+  <%= render "shared/errors", resource: @question %>
 
   <%= f.hidden_field :proposal_id %>
 
   <div class="small-12">
     <% if @poll.present? %>
       <%= f.hidden_field :poll_id, value: @poll.id %>
+    <% elsif @question.poll.present? %>
+      <%= f.hidden_field :poll_id, value: @question.poll.id %>
     <% else %>
       <div class="small-12 medium-6 large-4">
         <% select_options = Poll.all.map { |p| [p.name, p.id] } %>

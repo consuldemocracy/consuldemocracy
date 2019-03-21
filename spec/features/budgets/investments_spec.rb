@@ -1097,23 +1097,38 @@ feature 'Budget Investments' do
 
   end
 
-  scenario "Show (unfeasible budget investment)" do
+  scenario "Show (unfeasible budget investment) only when valuation finished" do
     user = create(:user)
     login_as(user)
 
     investment = create(:budget_investment,
                         :unfeasible,
+                        budget: budget,
+                        group: group,
+                        heading: heading,
+                        unfeasibility_explanation: "Local government is not competent in this")
+
+    investment_2 = create(:budget_investment,
+                        :unfeasible,
                         :finished,
                         budget: budget,
                         group: group,
                         heading: heading,
-                        unfeasibility_explanation: 'Local government is not competent in this matter')
+                        unfeasibility_explanation: "The unfeasible explanation")
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
+    expect(page).not_to have_content("Unfeasibility explanation")
+    expect(page).not_to have_content("Local government is not competent in this")
+    expect(page).not_to have_content("This investment project has been marked as not feasible "\
+                                     "and will not go to balloting phase")
+
+    visit budget_investment_path(budget_id: budget.id, id: investment_2.id)
+
     expect(page).to have_content("Unfeasibility explanation")
-    expect(page).to have_content("Local government is not competent in this matter")
-    expect(page).to have_content("This investment project has been marked as not feasible and will not go to balloting phase")
+    expect(page).to have_content("The unfeasible explanation")
+    expect(page).to have_content("This investment project has been marked as not feasible "\
+                                 "and will not go to balloting phase")
   end
 
   scenario "Show (selected budget investment)" do

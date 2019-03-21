@@ -3,14 +3,18 @@
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-configuration">
-    <%= render "configuration" %>
+    <%= render "configuration_settings_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-participation-processes">
+    <%= render "participation_processes_tab" %>
   </div>
 
   <div class="tabs-panel" id="tab-feature-flags">
-    <%= render "feature_flags" %>
+    <%= render "features_tab" %>
   </div>
 
   <div class="tabs-panel" id="tab-map-configuration">
-    <%= render "map_configuration" %>
+    <%= render "map_configuration_tab" %>
   </div>
 </div>
