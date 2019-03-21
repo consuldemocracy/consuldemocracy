@@ -140,6 +140,11 @@ pl:
     budget_headings:
       name: "Nazwa"
       no_headings: "Nie ma nagłówków."
+      amount:
+        one: "Jest 1 nagłówek"
+        few: "Jest %{count} nagłówków"
+        many: "Jest %{count} nagłówków"
+        other: "Jest %{count} nagłówków"
       create:
         notice: "Pomyślnie utworzono nagłówek!"
       update:
@@ -470,6 +475,7 @@ pl:
         index:
           title: Tytuł
           back: Wróć
+          id: Identyfikator
           supports: Wsparcie
           select: Wybierz
           selected: Wybrany
@@ -627,6 +633,8 @@ pl:
           welcome: "Witaj"
         buttons:
           save: "Zapisz"
+          content_block:
+            update: "Aktualizacja bloku"
       title_moderated_content: Zawartość moderowana
       title_budgets: Budżety
       title_profiles: Profile
@@ -640,6 +648,7 @@ pl:
         title: Administratorów
         name: Nazwa
         email: E-mail
+        id: Identyfikator administratora
         no_administrators: Brak administratorów.
       administrator:
         add: Dodaj
@@ -758,9 +767,19 @@ pl:
         description: "Wysyłane do autora, po wybraniu budżetu inwestycji."
       budget_investment_unfeasible:
         title: "Budżet inwestycji niewykonalny"
+        description: "Wysyłane do autora,/ki jeśli jego/jej budżet uzyskał status \"niewykonalny\"."
+      budget_investment_unselected:
+        title: "Budżet inwestycji niewybrany"
+        description: "Wysyłane do autora/ki, jeśli jej/jego wniosek inwestycyjny nie został wybrany do fazy głosowania."
       comment:
         title: "Komentarz"
         description: "Wysyłane do autora, gdy otrzymuje komentarz."
+      reply:
+        title: "Odpowiedz"
+        description: "Wysyłane do autora/ki komentarza, gdy autor otrzyma odpowiedź."
+      direct_message_for_receiver:
+        title: "Odbiorca wiadomości prywatnej"
+        description: "Wysłane do odbiorcy wiadomości prywatnej."
       direct_message_for_sender:
         title: "Nadawcy wiadomości prywatnej"
         description: "Wysyłane do nadawcy wiadomości prywatnej."
@@ -1277,6 +1296,7 @@ pl:
         name: Nazwa
         external_code: Kod zewnętrzny
         census_code: Kod spisu ludności
+        code_help: Kod odpowiedzi dla tej strefy zgodnie ze spisem API
         coordinates: Współrzędne
         coordinates_help: Współrzędne, które będą generować klikalny obszar na mapie obrazu HTML
       errors:
@@ -1396,6 +1416,7 @@ pl:
       content_blocks:
         information: Informacje dotyczące bloków zawartości
         about: "Możesz tworzyć bloki zawartości HTML, które będą wstawiane do nagłówka lub stopki twojego CONSUL."
+        html_format: "Zawartość bloku jest grupą linków, i musi mieć następujący format:"
         no_blocks: "Nie ma bloków treści."
         create:
           notice: Zawartość bloku została pomyślnie utworzona
@@ -1468,12 +1489,16 @@ pl:
           title: Tytuł
           slug: Ścieżka
           cards_title: Karty
+          see_cards: Zobacz karty
         cards:
+          cards_title: karty
           create_card: Utwórz kartę
+          no_cards: Nie ma kart.
           title: Tytuł
           description: Opis
           link_text: Tekst łącza
           link_url: Łącze URL
+          columns_help: "Szerokość karty w liczbie kolumn. Na smartfonie screeny są zawsze o szerokości 100%."
           create:
             notice: "Strona utworzona pomyślnie!"
           update:
