@@ -161,6 +161,7 @@ pl:
         longitude: "Długość geograficzna (opcjonalnie)"
         coordinates_info: "Jeśli podane są szerokość i długość geograficzna, strony inwestycji dla tego nagłówka będzie zawierać mapę. Mapa będzie wyśrodkowany przy użyciu tych współrzędnych."
         allow_content_block: "Pozwól na załączenie treści"
+        content_blocks_info: "Jeśli załączanie treści jest zaznaczone, będzie mógł/a stworzyć treści związane z tym Nagłówkiem: Ustawienia > Niestandardowe bloki Zawartość pojawi się na stronie inwestycji dla tego nagłówka."
         create: "Utwórz nowy nagłówek"
         edit: "Edytuj nagłówek"
         submit: "Zapisz nagłówek"
