@@ -140,6 +140,8 @@ pl:
     budget_headings:
       name: "Nazwa"
       no_headings: "Nie ma nagłówków."
+      create:
+        notice: "Pomyślnie utworzono nagłówek!"
       form:
         name: "Nazwa nagłówka"
         amount: "Ilość"
