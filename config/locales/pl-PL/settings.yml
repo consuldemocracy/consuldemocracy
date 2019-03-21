@@ -46,6 +46,8 @@ pl:
     org_name_description: "Nazwa Twojej organizacji"
     related_content_score_threshold: "Próg wyniku powiązanej treści"
     related_content_score_threshold_description: "Ukrywa zawartość oznaczoną przez użytkowników jako niepowiązaną"
+    hot_score_period_in_days: "Liczba dni jaka jest brana pod uwagę w filtrze \"najbardziej aktywne\""
+    hot_score_period_in_days_description: "Filtr \"najbardziej aktywne\" użyty w wielu sekcjach będzie bazował na głosowaniach w ciągu ostatnich X dni"
     mailer_from_name: "Nazwa e-maila nadawcy"
     mailer_from_name_description: "Ta nazwa pojawi się w wiadomościach e-mail wysłanych z aplikacji"
     mailer_from_address: "Adres e-mail nadawcy"
@@ -59,6 +61,8 @@ pl:
     min_age_to_participate: Minimalny wiek wymagany do wzięcia udziału
     min_age_to_participate_description: "Użytkownicy powyżej tego wieku mogą uczestniczyć we wszystkich procesach"
     analytics_url: "Analityki adresu URL"
+    proposal_notification_minimum_interval_in_days: "Minimalna liczba dni jaka musi upłynąć, zanim autor/ka wniosku może przesłać nowe powiadomienie o wniosku"
+    proposal_notification_minimum_interval_in_days_description: "Minimalna liczba dni jaka musi upłynąć, zanim autor/ka wniosku wyśle powiadomienie wszystkim popierającym"
     direct_message_max_per_day: "Maksymalna liczba bezpośrednich wiadomości w ciągu jednego dnia"
     direct_message_max_per_day_description: "Maksymalna liczba bezpośrednich wiadomości jaką jeden użytkownik może przesłać jednego dnia"
     feature:
@@ -68,6 +72,8 @@ pl:
       facebook_login_description: "Zezwalaj użytkownikom na rejestrację za pomocą konta na Facebooku"
       google_login: "Login do Google"
       google_login_description: "Zezwalaj użytkownikom na rejestrację za pomocą konta Google"
+      featured_proposals: "Wnioski rekomendowane"
+      featured_proposals_description: "Pokazuje rekomendowane wnioski na stronie ze spisem wniosków"
       signature_sheets: "Arkusze podpisu"
       signature_sheets_description: "Umożliwia dodawanie podpisów z panelu administracyjnego zgromadzonych na miejscu do wniosków i projektów inwestycyjnych budżetów partycypacyjnych"
       spending_proposals: "Wnioski wydatkowe"
