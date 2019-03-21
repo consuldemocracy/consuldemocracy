@@ -154,6 +154,7 @@ pl:
         population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
         latitude: "Szerokość geograficzna (opcjonalnie)"
         longitude: "Długość geograficzna (opcjonalnie)"
+        coordinates_info: "Jeśli podane są szerokość i długość geograficzna, strony inwestycji dla tego nagłówka będzie zawierać mapę. Mapa będzie wyśrodkowany przy użyciu tych współrzędnych."
         create: "Utwórz nowy nagłówek"
         edit: "Edytuj nagłówek"
         submit: "Zapisz nagłówek"
