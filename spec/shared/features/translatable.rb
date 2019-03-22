@@ -36,8 +36,8 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
   let(:translatable) do
     if factory_name == "budget_phase"
       budget = create(:budget)
-      budget.phases.first.update attributes
-      budget.phases.first
+      budget.phases.last.update attributes
+      budget.phases.last
     else
       create(factory_name, attributes)
     end
@@ -57,7 +57,7 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
     end
 
     scenario "should show first available fallback when current locale translation does not exist", :js do
-      if translatable_class.name == "ActivePoll"
+      if translatable_class.name == "ActivePoll" || translatable_class.name == "Budget::Phase"
         skip("Skip because after updating it doesn't render the description")
       end
       attributes = fields.product(%i[fr]).map do |field, locale|
@@ -71,6 +71,26 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       select "Español", from: :translation_locale
       click_link "Remove language"
       click_button update_button_text
+
+      expect(page).to have_content "en Français"
+    end
+
+    scenario "should show first available fallback when current locale translation does not exist", :js do
+      if translatable_class.name != "Budget::Phase"
+        skip("Skip because force visit budgets_path after update")
+      end
+      attributes = fields.product(%i[fr]).map do |field, locale|
+        [:"#{field}_#{locale}", text_for(field, locale)]
+      end.to_h
+      translatable.update(attributes)
+      visit path
+
+      select "English", from: :translation_locale
+      click_link "Remove language"
+      select "Español", from: :translation_locale
+      click_link "Remove language"
+      click_button update_button_text
+      visit budgets_path
 
       expect(page).to have_content "en Français"
     end
