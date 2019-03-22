@@ -56,63 +56,67 @@ shared_examples "translatable" do |factory_name, path_name, input_fields, textar
       end
     end
 
-    scenario "should show first available fallback when current locale translation does not exist", :js do
-      if translatable_class.name == "ActivePoll" || translatable_class.name == "Budget::Phase"
-        skip("Skip because after updating it doesn't render the description")
+    describe "Should show first available fallback when current locale translation does not exist" do
+
+      scenario "For all translatable except ActivePoll and Budget::Phase", :js do
+        if translatable_class.name == "ActivePoll" || translatable_class.name == "Budget::Phase"
+          skip("Skip because after updating it doesn't render the description")
+        end
+        attributes = fields.product(%i[fr]).map do |field, locale|
+          [:"#{field}_#{locale}", text_for(field, locale)]
+        end.to_h
+        translatable.update(attributes)
+        visit path
+
+        select "English", from: :translation_locale
+        click_link "Remove language"
+        select "Español", from: :translation_locale
+        click_link "Remove language"
+        click_button update_button_text
+
+        expect(page).to have_content "en Français"
       end
-      attributes = fields.product(%i[fr]).map do |field, locale|
-        [:"#{field}_#{locale}", text_for(field, locale)]
-      end.to_h
-      translatable.update(attributes)
-      visit path
 
-      select "English", from: :translation_locale
-      click_link "Remove language"
-      select "Español", from: :translation_locale
-      click_link "Remove language"
-      click_button update_button_text
+      scenario "For Budget::Phase", :js do
+        if translatable_class.name != "Budget::Phase"
+          skip("Skip because force visit budgets_path after update")
+        end
+        attributes = fields.product(%i[fr]).map do |field, locale|
+          [:"#{field}_#{locale}", text_for(field, locale)]
+        end.to_h
+        translatable.update(attributes)
+        visit path
 
-      expect(page).to have_content "en Français"
-    end
+        select "English", from: :translation_locale
+        click_link "Remove language"
+        select "Español", from: :translation_locale
+        click_link "Remove language"
+        click_button update_button_text
+        visit budgets_path
 
-    scenario "should show first available fallback when current locale translation does not exist", :js do
-      if translatable_class.name != "Budget::Phase"
-        skip("Skip because force visit budgets_path after update")
+        expect(page).to have_content "en Français"
       end
-      attributes = fields.product(%i[fr]).map do |field, locale|
-        [:"#{field}_#{locale}", text_for(field, locale)]
-      end.to_h
-      translatable.update(attributes)
-      visit path
 
-      select "English", from: :translation_locale
-      click_link "Remove language"
-      select "Español", from: :translation_locale
-      click_link "Remove language"
-      click_button update_button_text
-      visit budgets_path
+      scenario "For ActivePoll", :js do
+        if translatable_class.name != "ActivePoll"
+          skip("Skip because force visit polls_path after update")
+        end
+        attributes = fields.product(%i[fr]).map do |field, locale|
+          [:"#{field}_#{locale}", text_for(field, locale)]
+        end.to_h
+        translatable.update(attributes)
+        visit path
 
-      expect(page).to have_content "en Français"
-    end
+        select "English", from: :translation_locale
+        click_link "Remove language"
+        select "Español", from: :translation_locale
+        click_link "Remove language"
+        click_button update_button_text
+        visit polls_path
 
-    scenario "should show first available fallback when current locale translation does not exist for active polls", :js do
-      if translatable_class.name != "ActivePoll"
-        skip("Skip because force visit polls_path after update")
+        expect(page).to have_content "en Français"
       end
-      attributes = fields.product(%i[fr]).map do |field, locale|
-        [:"#{field}_#{locale}", text_for(field, locale)]
-      end.to_h
-      translatable.update(attributes)
-      visit path
 
-      select "English", from: :translation_locale
-      click_link "Remove language"
-      select "Español", from: :translation_locale
-      click_link "Remove language"
-      click_button update_button_text
-      visit polls_path
-
-      expect(page).to have_content "en Français"
     end
 
     scenario "Add a translation", :js do
