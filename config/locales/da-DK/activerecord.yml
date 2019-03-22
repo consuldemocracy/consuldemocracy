@@ -67,6 +67,9 @@ da:
       legislation/proposal:
         one: "Forslag"
         other: "Forslag"
+      legislation/draft_versions:
+        one: "Kladde"
+        other: "Versioner af udkast"
       legislation/questions:
         one: "Spørgsmål"
         other: "Spørgsmål"
