@@ -58,6 +58,9 @@ da:
       spending_proposal:
         one: "Investeringsprojekter"
         other: "Investeringsprojekter"
+      site_customization/page:
+        one: Brugerdefineret side
+        other: Brugerdefinerede sider
       legislation/process:
         one: "Proces"
         other: "Processer"
