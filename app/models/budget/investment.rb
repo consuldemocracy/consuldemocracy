@@ -175,7 +175,7 @@ class Budget
     def searchable_values
       { title              => "A",
         author.username    => "B",
-        heading.try(:name) => "B",
+        heading.name       => "B",
         tag_list.join(" ") => "B",
         description        => "C"
       }
