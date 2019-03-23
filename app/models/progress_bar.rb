@@ -1,4 +1,4 @@
-class ProgressBar < ActiveRecord::Base
+class ProgressBar < ApplicationRecord
   self.inheritance_column = nil
   RANGE = 0..100
 
