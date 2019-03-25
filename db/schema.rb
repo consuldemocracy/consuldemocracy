@@ -167,9 +167,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
-    t.string  "name",                 limit: 50
     t.string  "slug"
-    t.integer "max_votable_headings",            default: 1
+    t.integer "max_votable_headings", default: 1
     t.index ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
   end
 
