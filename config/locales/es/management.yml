@@ -9,7 +9,7 @@ es:
       show:
         title: Cuenta de usuario
       edit:
-        title: 'Editar cuenta de usuario: Restablecer contraseña'
+        title: "Editar cuenta de usuario: Restablecer contraseña"
         back: Volver
         password:
           password: Contraseña
@@ -22,11 +22,11 @@ es:
           print_help: Podrás imprimir la contraseña cuando se haya guardado.
     account_info:
       change_user: Cambiar usuario
-      document_number_label: 'Número de documento:'
-      document_type_label: 'Tipo de documento:'
-      email_label: 'Email:'
-      identified_label: 'Identificado como:'
-      username_label: 'Usuario:'
+      document_number_label: "Número de documento:"
+      document_type_label: "Tipo de documento:"
+      email_label: "Email:"
+      identified_label: "Identificado como:"
+      username_label: "Usuario:"
     check: Comprobar documento
     dashboard:
       index:
@@ -36,11 +36,11 @@ es:
     document_type_label: Tipo de documento
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
-      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
+      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>"Registrarse"</b> en la parte superior derecha de la pantalla.
       link: CONSUL
-      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      in_census_has_following_permissions: "Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:"
       not_in_census: Este documento no está registrado.
-      not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      not_in_census_info: "Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:"
       please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
       title: Gestión de usuarios
       under_age: "No tienes edad suficiente para verificar tu cuenta."
@@ -49,14 +49,14 @@ es:
     date_of_birth: Fecha de nacimiento
     email_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
-      choose_options: 'Elige una de las opciones siguientes:'
+      choose_options: "Elige una de las opciones siguientes:"
       document_found_in_census: Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada.
-      document_mismatch: 'Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})'
+      document_mismatch: "Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})"
       email_placeholder: Introduce el email de registro
       email_sent_instructions: Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya.
       if_existing_account: Si la persona ya ha creado una cuenta de usuario en la web
       if_no_existing_account: Si la persona todavía no ha creado una cuenta de usuario en la web
-      introduce_email: 'Introduce el email con el que creó la cuenta:'
+      introduce_email: "Introduce el email con el que creó la cuenta:"
       send_email: Enviar email de verificación
     menu:
       create_proposal: Crear propuesta
@@ -78,7 +78,7 @@ es:
       vote_proposals: Participar en las votaciones finales
     print:
       proposals_info: Haz tu propuesta en http://url.consul
-      proposals_title: 'Propuestas:'
+      proposals_title: "Propuestas:"
       spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta información
@@ -136,7 +136,7 @@ es:
       erased_notice: Cuenta de usuario borrada.
       erased_by_manager: "Borrada por el manager: %{manager}"
       erase_account_link: Borrar cuenta
-      erase_account_confirm: '¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer'
+      erase_account_confirm: "¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer"
       erase_warning: Esta acción no se puede deshacer. Por favor asegúrese de que quiere eliminar esta cuenta.
       erase_submit: Borrar cuenta
     user_invites:

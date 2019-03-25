@@ -98,7 +98,7 @@ en:
             - key_column: 5
               page_column: Legislative processes
         browser_table:
-          description: 'Depending on the operating system and the browser used, the key combination will be as follows:'
+          description: "Depending on the operating system and the browser used, the key combination will be as follows:"
           caption: Key combination depending on the operating system and browser
           browser_header: Browser
           key_header: Key combination
@@ -131,7 +131,7 @@ en:
             - browser_column: Opera
               action_column: View > scale
         browser_shortcuts_table:
-          description: 'Another way to modify the text size is to use the keyboard shortcuts defined in browsers, in particular the key combination:'
+          description: "Another way to modify the text size is to use the keyboard shortcuts defined in browsers, in particular the key combination:"
           rows:
             - shortcut_column: CTRL and + (CMD and + on MAC)
               description_column: Increases text size
@@ -145,8 +145,8 @@ en:
     verify:
       code: Code you received in letter
       email: Email
-      info: 'To verify your account introduce your access data:'
-      info_code: 'Now introduce the code you received in letter:'
+      info: "To verify your account introduce your access data:"
+      info_code: "Now introduce the code you received in letter:"
       password: Password
       submit: Verify my account
       title: Verify your account
