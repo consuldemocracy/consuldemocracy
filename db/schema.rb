@@ -279,12 +279,12 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   create_table "budget_phases", force: :cascade do |t|
     t.integer  "budget_id"
     t.integer  "next_phase_id"
-    t.string   "kind",                         null: false
-    t.text     "summary"
-    t.text     "description"
+    t.string   "kind",                                  null: false
+    t.text     "deprecated_summary"
+    t.text     "deprecated_description"
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.boolean  "enabled",       default: true
+    t.boolean  "enabled",                default: true
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at", using: :btree
     t.index ["kind"], name: "index_budget_phases_on_kind", using: :btree
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id", using: :btree
