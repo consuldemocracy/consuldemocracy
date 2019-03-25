@@ -1,17 +1,17 @@
 FactoryBot.define do
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
-    description          'Spend money on this'
-    feasible_explanation 'This proposal is not viable because...'
-    external_url         'http://external_documention.org'
-    terms_of_service     '1'
+    description          "Spend money on this"
+    feasible_explanation "This proposal is not viable because..."
+    external_url         "http://external_documention.org"
+    terms_of_service     "1"
     association :author, factory: :user
   end
 
   factory :budget do
     sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol "€"
-    phase 'accepting'
+    phase "accepting"
     description_drafting  "This budget is drafting"
     description_informing "This budget is informing"
     description_accepting "This budget is accepting"
@@ -24,47 +24,47 @@ FactoryBot.define do
     description_finished "This budget is finished"
 
     trait :drafting do
-      phase 'drafting'
+      phase "drafting"
     end
 
     trait :informing do
-      phase 'informing'
+      phase "informing"
     end
 
     trait :accepting do
-      phase 'accepting'
+      phase "accepting"
     end
 
     trait :reviewing do
-      phase 'reviewing'
+      phase "reviewing"
     end
 
     trait :selecting do
-      phase 'selecting'
+      phase "selecting"
     end
 
     trait :valuating do
-      phase 'valuating'
+      phase "valuating"
     end
 
     trait :publishing_prices do
-      phase 'publishing_prices'
+      phase "publishing_prices"
     end
 
     trait :balloting do
-      phase 'balloting'
+      phase "balloting"
     end
 
     trait :reviewing_ballots do
-      phase 'reviewing_ballots'
+      phase "reviewing_ballots"
     end
 
     trait :finished do
-      phase 'finished'
+      phase "finished"
     end
   end
 
-  factory :budget_group, class: 'Budget::Group' do
+  factory :budget_group, class: "Budget::Group" do
     budget
     sequence(:name) { |n| "Group #{n}" }
 
@@ -73,28 +73,28 @@ FactoryBot.define do
     end
   end
 
-  factory :budget_heading, class: 'Budget::Heading' do
+  factory :budget_heading, class: "Budget::Heading" do
     association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
-    latitude '40.416775'
-    longitude '-3.703790'
+    latitude "40.416775"
+    longitude "-3.703790"
 
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
     end
   end
 
-  factory :budget_investment, class: 'Budget::Investment' do
+  factory :budget_investment, class: "Budget::Investment" do
     sequence(:title) { |n| "Budget Investment #{n} title" }
     association :heading, factory: :budget_heading
     association :author, factory: :user
-    description          'Spend money on this'
+    description          "Spend money on this"
     price                10
-    unfeasibility_explanation ''
-    skip_map             '1'
-    terms_of_service     '1'
+    unfeasibility_explanation ""
+    skip_map             "1"
+    terms_of_service     "1"
     incompatible          false
 
     trait :with_confidence_score do
@@ -141,7 +141,7 @@ FactoryBot.define do
     trait :selected_with_price do
       selected
       price 1000
-      price_explanation 'Because of reasons'
+      price_explanation "Because of reasons"
     end
 
     trait :unselected do
@@ -169,7 +169,7 @@ FactoryBot.define do
      end
   end
 
-  factory :budget_phase, class: 'Budget::Phase' do
+  factory :budget_phase, class: "Budget::Phase" do
     budget
     kind        :balloting
     summary     Faker::Lorem.sentence(3)
@@ -179,17 +179,17 @@ FactoryBot.define do
     enabled     true
   end
 
-  factory :budget_ballot, class: 'Budget::Ballot' do
+  factory :budget_ballot, class: "Budget::Ballot" do
     association :user, factory: :user
     budget
   end
 
-  factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
+  factory :budget_ballot_line, class: "Budget::Ballot::Line" do
     association :ballot, factory: :budget_ballot
     association :investment, factory: :budget_investment
   end
 
-  factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
+  factory :budget_reclassified_vote, class: "Budget::ReclassifiedVote" do
     user
     association :investment, factory: :budget_investment
     reason "unfeasible"
@@ -199,9 +199,9 @@ FactoryBot.define do
     sequence(:name) { |n| "Valuator Group #{n}" }
   end
 
-  factory :heading_content_block, class: 'Budget::ContentBlock' do
+  factory :heading_content_block, class: "Budget::ContentBlock" do
     association :heading, factory: :budget_heading
-    locale 'en'
-    body 'Some heading contents'
+    locale "en"
+    body "Some heading contents"
   end
 end
