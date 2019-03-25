@@ -38,6 +38,7 @@
     &::before {
       display: inline-block;
       margin-right: $line-height / 2;
+      vertical-align: top;
     }
 
     &.total-participants::before {
@@ -75,14 +76,23 @@
 
     .number {
       display: block;
-      font-size: rem-calc(60);
+      font-size: rem-calc(36);
       font-weight: bold;
-      line-height: rem-calc(60);
+      line-height: rem-calc(36);
     }
 
     .info {
       color: $text-medium;
+      font-size: $small-font-size;
       font-style: italic;
+    }
+
+    &.total-participants {
+
+      .number {
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
     }
   }
 
