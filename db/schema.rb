@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",                 limit: 50
+    t.string  "deprecated_name",      limit: 50
     t.bigint  "price"
     t.integer "population"
     t.string  "slug"
