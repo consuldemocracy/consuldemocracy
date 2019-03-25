@@ -9,6 +9,7 @@ class Budget
     translates :summary, touch: true
     translates :description, touch: true
     include Globalizable
+    include Sanitizable
 
     belongs_to :budget
     belongs_to :next_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
