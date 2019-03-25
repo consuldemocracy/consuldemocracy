@@ -1,4 +1,4 @@
-class Dashboard::PollsController < Dashboard::BaseController 
+class Dashboard::PollsController < Dashboard::BaseController
   helper_method :poll
 
   def index
@@ -62,7 +62,8 @@ class Dashboard::PollsController < Dashboard::BaseController
   end
 
   def question_answers_attributes
-    [:id, :_destroy, :title, :description, :question_id, documents_attributes: documents_attributes]
+    [:id, :_destroy, :title, :description, :given_order, :question_id,
+     documents_attributes: documents_attributes]
   end
 
   def documents_attributes
