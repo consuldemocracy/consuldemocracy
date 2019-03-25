@@ -42,31 +42,31 @@
     }
 
     &.total-participants::before {
-      content: image-url('stats_users.png');
+      content: image-url("stats_users.png");
     }
 
     &.male::before {
-      content: image-url('stats_man.png');
+      content: image-url("stats_man.png");
     }
 
     &.female::before {
-      content: image-url('stats_woman.png');
+      content: image-url("stats_woman.png");
     }
 
     &.total-investments::before {
-      content: image-url('stats_investments.png');
+      content: image-url("stats_investments.png");
     }
 
     &.web::before {
-      content: image-url('stats_web.png');
+      content: image-url("stats_web.png");
     }
 
     &.booth::before {
-      content: image-url('stats_booth.png');
+      content: image-url("stats_booth.png");
     }
 
     &.mail::before {
-      content: image-url('stats_mail.png');
+      content: image-url("stats_mail.png");
     }
 
     .content {
@@ -142,15 +142,15 @@
       }
 
       &.web::before {
-        content: image-url('stats_web.png');
+        content: image-url("stats_web.png");
       }
 
       &.booth::before {
-        content: image-url('stats_booth.png');
+        content: image-url("stats_booth.png");
       }
 
       &.mail::before {
-        content: image-url('stats_mail.png');
+        content: image-url("stats_mail.png");
       }
     }
 
@@ -163,11 +163,11 @@
       }
 
       &.male::before {
-        content: image-url('stats_man.png');
+        content: image-url("stats_man.png");
       }
 
       &.female::before {
-        content: image-url('stats_woman.png');
+        content: image-url("stats_woman.png");
       }
     }
   }
