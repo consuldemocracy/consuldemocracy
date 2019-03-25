@@ -8,6 +8,7 @@ class ProgressBar < ActiveRecord::Base
 
   translates :title, touch: true
   include Globalizable
+  translation_class_delegate :primary?
 
   validates :progressable, presence: true
   validates :kind, presence: true,
