@@ -3,14 +3,14 @@
 
     <% if feed_proposals?(feed) %>
       <div id="feed_proposals" class="small-12 column margin-top
-                                      <%= 'medium-8' if feed_debates_and_proposals_enabled? %>">
+                                      <%= "medium-8" if feed_debates_and_proposals_enabled? %>">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <% feed.items.each do |item| %>
-            <div class="<%= item.class.to_s.parameterize('_') %> row">
+            <div class="<%= item.class.to_s.parameterize("_") %> row">
               <div class="feed-description small-12 column
-                         <%= 'medium-6 large-9' if item.image.present? %>">
+                         <%= "medium-6 large-9" if item.image.present? %>">
                 <strong><%= link_to item.title, url_for(item) %></strong><br>
                 <p><%= item.summary %></p>
               </div>
@@ -32,12 +32,12 @@
 
     <% if feed_debates?(feed) %>
       <div id="feed_debates" class="small-12 column margin-top
-                                    <%= 'medium-4' if feed_debates_and_proposals_enabled? %>">
+                                    <%= "medium-4" if feed_debates_and_proposals_enabled? %>">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
           <% feed.items.each do |item| %>
-            <div class="<%= item.class.to_s.parameterize('_') %>">
+            <div class="<%= item.class.to_s.parameterize("_") %>">
               <strong><%= link_to item.title, url_for(item) %></strong>
             </div>
           <% end %>
