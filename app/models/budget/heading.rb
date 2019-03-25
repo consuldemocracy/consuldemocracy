@@ -27,7 +27,7 @@ class Budget
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
     scope :i18n,                  -> { includes(:translations) }
-    scope :allow_custom_content,  -> { i18n.where(allow_custom_content: true).order(:name) }
+    scope :allow_custom_content,  -> { i18n.where(allow_custom_content: true).order("budget_heading_translations.name") }
 
     def self.sort_by_name
       all.sort do |heading, other_heading|
