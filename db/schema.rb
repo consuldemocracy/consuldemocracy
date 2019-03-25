@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190325184500) do
+ActiveRecord::Schema.define(version: 20190325185046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,7 +165,6 @@ ActiveRecord::Schema.define(version: 20190325184500) do
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
-    t.string  "name",                 limit: 50
     t.string  "slug"
     t.integer "max_votable_headings",            default: 1
   end
