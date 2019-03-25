@@ -379,7 +379,6 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "budgets", force: :cascade do |t|
-    t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10
     t.string   "phase",                         limit: 40, default: "accepting"
     t.datetime "created_at",                                                     null: false
