@@ -16,7 +16,7 @@ class Community < ActiveRecord::Base
 
   def latest_activity
     activity = []
-  
+
     most_recent_comment = Comment.where(commentable: topics).order(updated_at: :desc).take(1).first
     activity << most_recent_comment.updated_at unless most_recent_comment.nil?
 

@@ -42,7 +42,7 @@ class Poll < ActiveRecord::Base
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
   def self.overlaping_with(poll)
-    where('? < ends_at and ? >= starts_at', poll.starts_at.beginning_of_day, poll.ends_at.end_of_day)
+    where("? < ends_at and ? >= starts_at", poll.starts_at.beginning_of_day, poll.ends_at.end_of_day)
       .where.not(id: poll.id)
       .where(related: poll.related)
   end
@@ -122,7 +122,7 @@ class Poll < ActiveRecord::Base
     return unless starts_at.present?
     return unless ends_at.present?
     return unless Poll.overlaping_with(self).any?
-    errors.add(:starts_at, I18n.t('activerecord.errors.messages.another_poll_active'))
+    errors.add(:starts_at, I18n.t("activerecord.errors.messages.another_poll_active"))
   end
 
   def public?

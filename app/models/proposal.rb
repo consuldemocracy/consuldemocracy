@@ -27,14 +27,14 @@ class Proposal < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
+  RETIRE_OPTIONS = %w[duplicated started unfeasible done other]
 
   belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
-  has_many :dashboard_executed_actions, dependent: :destroy, class_name: 'Dashboard::ExecutedAction'
-  has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: 'Dashboard::Action'
+  has_many :dashboard_executed_actions, dependent: :destroy, class_name: "Dashboard::ExecutedAction"
+  has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
   has_many :polls, as: :related
 
   validates :title, presence: true
@@ -228,7 +228,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.proposals_orders(user)
-    orders = %w{hot_score confidence_score created_at relevance archival_date}
+    orders = %w[hot_score confidence_score created_at relevance archival_date]
     orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
     return orders
   end
