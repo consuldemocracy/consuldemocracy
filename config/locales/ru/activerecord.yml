@@ -203,6 +203,10 @@ ru:
         organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
+      geozone:
+        name: Название
+        external_code: "Внешний код (опционально)"
+        census_code: "Код цензуса (опционально)"
       milestone:
         status_id: "Текущий статус (необязательно)"
         title: "Название"
@@ -301,6 +305,9 @@ ru:
         name: Имя
         locale: Язык
         body: Тело
+      banner:
+        background_color: Цвет фона
+        font_color: Цвет шрифта
       legislation/process:
         title: Название процесса
         summary: Резюме
