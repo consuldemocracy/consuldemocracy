@@ -30,9 +30,9 @@ en:
       investments_sent_html: "Investment proposals sent"
       participants_support_phase: "Participants support phase"
       participants_vote_phase: "Participants voting phase"
-      participants_every_phase: "Total Participants"
-      percent_total_participants: "% Total Participants"
-      percent_heading_census: "% Heading Census"
+      participants_every_phase: "Total participants"
+      percent_total_participants: "% Total participants"
+      percent_heading_census: "% Heading census"
       participatory_disclaimer: "** The numbers of total participants refer to persons that created, supported or voted investment proposals."
       heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
     polls:

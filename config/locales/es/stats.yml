@@ -31,8 +31,8 @@ es:
       participants_support_phase: Participantes fase apoyos
       participants_vote_phase: Participantes fase votación
       participants_every_phase: Total de participantes
-      percent_total_participants: "% Total Participantes"
-      percent_heading_census: "% Censo Distrito"
+      percent_total_participants: "% Total participantes"
+      percent_heading_census: "% Censo distrito"
       participatory_disclaimer: "** Las cifras de total de participantes se refieren a personas que han creado, apoyado o votado propuestas."
       heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
     polls:
