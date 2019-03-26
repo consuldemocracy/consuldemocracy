@@ -61,7 +61,7 @@ describe "Dashboards Rake" do
 
         expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
         expect(email).to deliver_to(proposal.author)
-        expect(email).to have_subject("More news about your citizen proposal in Decide Madrid")
+        expect(email).to have_subject("More news about your citizen proposal")
       end
 
       it "when there are news actions actived for draft proposals" do
@@ -74,7 +74,7 @@ describe "Dashboards Rake" do
 
         expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
         expect(email).to deliver_to(proposal.author)
-        expect(email).to have_subject("More news about your citizen proposal in Decide Madrid")
+        expect(email).to have_subject("More news about your citizen proposal")
       end
     end
 
