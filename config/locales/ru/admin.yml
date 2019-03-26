@@ -158,6 +158,12 @@ ru:
         population: "Население (не обязательно)"
         latitude: "Широта (опционально)"
         longitude: "Долгота (опционально)"
+        allow_content_block: "Разрешить блок содержимого"
+        create: "Создайте новый заголовок"
+        edit: "Изменить заголовок"
+        submit: "Сохранить заголовок"
+      index:
+        back: "Вернуться к группам"
     budget_phases:
       edit:
         start_date: Дата начала
@@ -207,6 +213,7 @@ ru:
         selected: "Выбранная"
         select: "Выбрать"
         list:
+          id: ID
           title: Название
           supports: Поддержки
           admin: Администратор
@@ -273,6 +280,7 @@ ru:
       search_unfeasible: Поиск невыполним
     milestones:
       index:
+        table_id: "ID"
         table_title: "Название"
         table_description: "Описание"
         table_publication_date: "Дата публикации"
@@ -283,6 +291,8 @@ ru:
         image: "Изображение"
         show_image: "Показать изображение"
         documents: "Документы"
+        milestone: Этап
+        new_milestone: Создать этап
       form:
         admin_statuses: Администрировать статусы инвестиций
         no_statuses_defined: Пока что нет определенных статусов инвестиций
@@ -320,6 +330,8 @@ ru:
         notice: Статус инвестиции успешно удален
     progress_bars:
       index:
+        table_id: "ID"
+        table_kind: "Тип"
         table_title: "Название"
     comments:
       index:
@@ -357,6 +369,7 @@ ru:
         user: Пользователь
         no_hidden_users: Нет скрытых пользователей.
       show:
+        email: 'Email:'
         hidden_at: 'Скрыто в:'
         registered_at: 'Зарегистрировано в:'
         title: Активность пользователя (%{user})
@@ -416,11 +429,14 @@ ru:
           title: Процесс
           comments: Комментарии
           status: Статус
+          start_date: Дата начала
+          end_date: Дата окончания
           status_open: Открытый
           status_closed: Закрытый
           status_planned: Запланирован
         subnav:
           info: Информация
+          homepage: Главная страница
           questions: Обсуждение
           proposals: Заявки
       proposals:
@@ -648,6 +664,11 @@ ru:
         title: Предпросмотр новостного письма
         send: Отправить
         affected_users: (%{n} затронутых пользователей)
+        sent_emails:
+          one: 1 сообщение отправлено
+          few: "отправлено %{count} сообщений"
+          many: "отправлено %{count} сообщений"
+          other: "отправлено %{count} сообщений"
         sent_at: Отправлено в
         subject: Тема
         segment_recipient: Получатели
@@ -704,6 +725,10 @@ ru:
         title: "Сводка уведомлений по предложениям"
         description: "Собирает все уведомления пользователя по предложениям в одном сообщении, чтобы избежать отправления большого количества email'ов."
         preview_detail: "Пользователи получат уведомления от только тех предложений, на которые они подписаны"
+      budget_investment_created:
+        title: "Создано бюджетное инвестирование"
+      budget_investment_selected:
+        title: "Выбрано бюджетное инвестирование"
     emails_download:
       index:
         title: Скачивание Email'ов
@@ -846,6 +871,12 @@ ru:
         no_booths: "Нет кабинок, назначенных на это голосование."
         table_name: "Имя"
         table_location: "Место"
+    active_polls:
+      edit:
+        title: "Описание опросов"
+      form:
+        description:
+          text: "Описание"
     polls:
       index:
         title: "Список активных голосований"
@@ -875,6 +906,8 @@ ru:
         no_questions: "Нет вопросов, назначенных на это голосование."
         questions_title: "Список вопросов"
         table_title: "Название"
+        edit_answers: Редактировать ответы
+        see_proposal: "(См. предложение)"
       flash:
         question_added: "Вопрос добавлен в это голосование"
         error_on_question_added: "Не удалось назначить вопрос для этого голосования"
@@ -891,10 +924,12 @@ ru:
         table_proposal: "Заявка"
         table_question: "Вопрос"
         table_poll: "Опрос"
+        poll_not_assigned: "Опрос не назначен"
       edit:
         title: "Редактировать вопрос"
       new:
         title: "Создать вопрос"
+        title_proposal: "Создать вопрос"
         poll_label: "Опрос"
       answers:
         images:
@@ -944,6 +979,8 @@ ru:
       index:
         title: "Пересчеты"
         no_recounts: "Нечего пересчитывать"
+        total_final: "Окончательный пересчет"
+        total_system: "Голоса (автоматические)"
         table_booth_name: "Кабинка"
         table_total_recount: "Общий пересчет (сотрудником)"
         table_system_count: "Голоса (автоматически)"
@@ -1035,8 +1072,19 @@ ru:
     proposals:
       index:
         title: Заявки
+        id: ID
         author: Автор
         milestones: Основные этапы
+        no_proposals: Предложений нет.
+    hidden_proposals:
+      index:
+        filter: Фильтровать
+        filters:
+          all: Все
+          with_confirmed_hide: Подтвержденные
+          without_confirmed_hide: На рассмотрении
+        title: Скрытые предложения
+        no_hidden_proposals: Нет скрытых предложений.
     proposal_notifications:
       index:
         filter: Фильтровать
@@ -1052,6 +1100,7 @@ ru:
       index:
         title: Настройки конфигурации
         update_setting: Обновить
+        participation_processes: "Процессы участия"
         feature_flags: Функции
         features:
           enabled: "Функция включена"
@@ -1072,6 +1121,8 @@ ru:
       setting_value: Значение
       no_description: "Нет описания"
     shared:
+      true_value: "Да"
+      false_value: "Нет"
       booths_search:
         button: Поиск
         placeholder: Искать кабинку по имени
@@ -1103,6 +1154,8 @@ ru:
       author: Автор
       content: Содержание
       created_at: Создано в
+      delete: Удалить
+      color_help: Шестнадцатеричный формат
     spending_proposals:
       index:
         geozone_filter_all: Все зоны
@@ -1236,6 +1289,7 @@ ru:
         title: Уведомления о предложениях
         total: Всего
         proposals_with_notifications: Предложения с уведомлениями
+        not_available: "Предложение не доступно"
       polls:
         title: Статистика голосований
         all: Опросы
@@ -1350,11 +1404,22 @@ ru:
           status_published: Опубликовано
           title: Название
           slug: Slug URL
+          cards_title: Карты
+          see_cards: Смотреть Карты
         cards:
+          cards_title: карты
+          create_card: Создать карту
+          no_cards: Нет карт.
           title: Название
           description: Описание
           link_text: Текст ссылки
           link_url: Ссылка URL
+          create:
+            notice: "Карта успешно создана!"
+          update:
+            notice: "Карта успешно обновлена"
+          destroy:
+            notice: "Карта успешно удалена"
     homepage:
       title: Главная страница
       description: Активные модули появляются на главной странице в том же порядке как и здесь.
