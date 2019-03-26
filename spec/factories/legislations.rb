@@ -1,21 +1,9 @@
 FactoryBot.define do
-  factory :legacy_legislation do
-    sequence(:title) { |n| "Legacy Legislation #{n}" }
-    body "In order to achieve this..."
-  end
-
-  factory :annotation do
-    quote "ipsum"
-    text "Loremp ipsum dolor"
-    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
-    legacy_legislation
-    user
-  end
-
-  factory :legislation_process, class: 'Legislation::Process' do
+  factory :legislation_process, class: "Legislation::Process" do
     title "A collaborative legislation process"
     description "Description of the process"
     summary "Summary of the process"
+
     start_date { Date.current - 5.days }
     end_date { Date.current + 5.days }
     debate_start_date { Date.current - 5.days }
@@ -33,17 +21,6 @@ FactoryBot.define do
     result_publication_enabled true
     published true
 
-    trait :next do
-      start_date { Date.current + 2.days }
-      end_date { Date.current + 8.days }
-      debate_start_date { Date.current + 2.days }
-      debate_end_date { Date.current + 4.days }
-      draft_publication_date { Date.current + 5.days }
-      allegations_start_date { Date.current + 5.days }
-      allegations_end_date { Date.current + 7.days }
-      result_publication_date { Date.current + 8.days }
-    end
-
     trait :past do
       start_date { Date.current - 12.days }
       end_date { Date.current - 2.days }
@@ -53,6 +30,14 @@ FactoryBot.define do
       allegations_start_date { Date.current - 8.days }
       allegations_end_date { Date.current - 4.days }
       result_publication_date { Date.current - 2.days }
+    end
+
+    trait :in_draft_phase do
+      start_date { Date.current - 5.days }
+      end_date { Date.current + 5.days }
+      draft_start_date { Date.current - 2.days }
+      draft_end_date { Date.current + 2.days }
+      draft_phase_enabled true
     end
 
     trait :in_debate_phase do
@@ -87,13 +72,32 @@ FactoryBot.define do
     end
 
     trait :open do
-      start_date 1.week.ago
-      end_date   1.week.from_now
+      start_date { 1.week.ago }
+      end_date   { 1.week.from_now }
+    end
+
+    trait :empty do
+      start_date { Date.current - 5.days }
+      end_date { Date.current + 5.days }
+      debate_start_date nil
+      debate_end_date nil
+      draft_publication_date nil
+      allegations_start_date nil
+      allegations_end_date nil
+      proposals_phase_start_date nil
+      proposals_phase_end_date nil
+      result_publication_date nil
+      debate_phase_enabled false
+      allegations_phase_enabled false
+      proposals_phase_enabled false
+      draft_publication_enabled false
+      result_publication_enabled false
+      published true
     end
 
   end
 
-  factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
+  factory :legislation_draft_version, class: "Legislation::DraftVersion" do
     process factory: :legislation_process
     title "Version 1"
     changelog "What changed in this version"
@@ -122,7 +126,7 @@ LOREM_IPSUM
     end
   end
 
-  factory :legislation_annotation, class: 'Legislation::Annotation' do
+  factory :legislation_annotation, class: "Legislation::Annotation" do
     draft_version factory: :legislation_draft_version
     author factory: :user
     quote "ipsum"
@@ -134,27 +138,27 @@ LOREM_IPSUM
     range_end_offset 11
   end
 
-  factory :legislation_question, class: 'Legislation::Question' do
+  factory :legislation_question, class: "Legislation::Question" do
     process factory: :legislation_process
     title "Question text"
     author factory: :user
   end
 
-  factory :legislation_question_option, class: 'Legislation::QuestionOption' do
+  factory :legislation_question_option, class: "Legislation::QuestionOption" do
     question factory: :legislation_question
     sequence(:value) { |n| "Option #{n}" }
   end
 
-  factory :legislation_answer, class: 'Legislation::Answer' do
+  factory :legislation_answer, class: "Legislation::Answer" do
     question factory: :legislation_question
     question_option factory: :legislation_question_option
     user
   end
 
-  factory :legislation_proposal, class: 'Legislation::Proposal' do
+  factory :legislation_proposal, class: "Legislation::Proposal" do
     sequence(:title) { |n| "Proposal #{n} for a legislation" }
     summary "This law should include..."
-    terms_of_service '1'
+    terms_of_service "1"
     process factory: :legislation_process
     author factory: :user
   end

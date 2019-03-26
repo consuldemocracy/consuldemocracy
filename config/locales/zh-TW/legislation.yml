@@ -28,7 +28,7 @@ zh-TW:
         see_text: 查看文字草稿
     draft_versions:
       changes:
-        title: 更改
+        title: 變化
         seeing_changelog_version: 修訂更改摘要
         see_text: 查看文字草稿
       show:
@@ -49,17 +49,17 @@ zh-TW:
         more_info: 更多資訊和上下文
       proposals:
         empty_proposals: 沒有建議
+        filters:
+          winners: 已選擇
       debate:
         empty_questions: 沒有任何問題
         participate: 參與辯論
       index:
         filter: 篩選器
         filters:
-          open: 開啟進程
-          next: 下一個
+          open: 開放進程
           past: 過去的
         no_open_processes: 沒有已開啟的進程
-        no_next_processes: 沒有已計劃的進程
         no_past_processes: 沒有過去的進程
         section_header:
           icon_alt: 立法進程圖標
@@ -77,10 +77,12 @@ zh-TW:
         see_latest_comments_title: 對此進程的評論
       shared:
         key_dates: 關鍵日期
+        homepage: 主頁
         debate_dates: 辯論
         draft_publication_date: 發佈草稿
         allegations_dates: 評論
         result_publication_date: 最終結果發佈
+        milestones_date: 跟隨中
         proposals_dates: 建議
     questions:
       comments:
@@ -98,7 +100,7 @@ zh-TW:
         answer_question: 提交答案
         next_question: 下一個問題
         first_question: 第一個問題
-        share: 分享
+        share: 共用
         title: 合作立法進程
       participation:
         phase_not_open: 此階段未開啟
@@ -110,7 +112,7 @@ zh-TW:
         verify_account: 核實您的帳戶
         debate_phase_not_open: 辯論階段已經結束，不再接受答案
     shared:
-      share: 分享
+      share: 共用
       share_comment: 從進程草稿%{process_name} 中對%{version_name} 的評論
     proposals:
       form:

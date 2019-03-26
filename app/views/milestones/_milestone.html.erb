@@ -1,0 +1,54 @@
+<li>
+  <div class="milestone-content">
+
+    <% if milestone.publication_date.present? %>
+      <span class="milestone-date">
+        <strong>
+          <%= t("milestones.show.publication_date",
+                publication_date: l(milestone.publication_date.to_date)) %>
+        </strong>
+      </span>
+    <% end %>
+
+    <% if milestone.status.present? %>
+      <p>
+        <strong>
+          <%= t("milestones.show.status_changed") %>
+        </strong>
+        <br>
+        <span class="milestone-status">
+          <%= milestone.status.name %>
+        </span>
+      </p>
+    <% end %>
+
+    <%= image_tag(milestone.image_url(:large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
+
+    <p>
+      <%= text_with_links milestone.description %>
+    </p>
+
+    <% if milestone.documents.present? %>
+      <div class="documents">
+        <div class="document-link text-left small">
+          <p>
+            <strong><%= t("shared.documentation") %></strong>
+          </p>
+
+          <% milestone.documents.each do |document| %>
+              <%= link_to document.title,
+                      document.attachment.url,
+                      target: "_blank",
+                      rel: "nofollow" %><br>
+              <small>
+                <%= document.humanized_content_type %>&nbsp;|&nbsp;
+                <%= number_to_human_size(document.attachment_file_size, precision: 2) %>
+              </small>
+              <br>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</li>

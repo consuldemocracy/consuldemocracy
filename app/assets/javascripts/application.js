@@ -87,6 +87,7 @@
 //= require clipboard_button
 //= require best_in_place_initialize
 //= require send_admin_notification_alert
+//= require settings
 
 var initialize_modules = function() {
   App.Answers.initialize();
@@ -137,12 +138,13 @@ var initialize_modules = function() {
   App.ClipboardButton.initialize();
   App.BestInPlace.initialize();
   App.SendAdminNotificationAlert.initialize();
+  App.Settings.initialize();
 };
 
 $(function(){
   Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);
-  $(document).on('page:load', initialize_modules);
-  $(document).on('ajax:complete', initialize_modules);
+  $(document).on("page:load", initialize_modules);
+  $(document).on("ajax:complete", initialize_modules);
 });

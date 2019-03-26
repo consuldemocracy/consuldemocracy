@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe DirectUpload do
 
@@ -43,7 +43,7 @@ describe DirectUpload do
       proposal_document_direct_upload.save_attachment
 
       expect(File.exist?(proposal_document_direct_upload.relation.attachment.path)).to eq(true)
-      expect(proposal_document_direct_upload.relation.attachment.path).to include('cached_attachments')
+      expect(proposal_document_direct_upload.relation.attachment.path).to include("cached_attachments")
     end
 
   end

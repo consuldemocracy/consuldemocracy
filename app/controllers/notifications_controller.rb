@@ -36,6 +36,7 @@ class NotificationsController < ApplicationController
   end
 
   private
+
     def linkable_resource_path(notification)
       if notification.linkable_resource.is_a?(AdminNotification)
         notification.linkable_resource.link || notifications_path

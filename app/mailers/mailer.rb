@@ -11,20 +11,17 @@ class Mailer < ApplicationMailer
     @email_to = @commentable.author.email
 
     with_user(@commentable.author) do
-      subject = t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
+      subject = t("mailers.comment.subject", commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
       mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present?
     end
   end
 
   def reply(reply)
-    @reply = reply
-    @commentable = @reply.commentable
-    parent = Comment.find(@reply.parent_id)
-    @recipient = parent.author
-    @email_to = @recipient.email
+    @email = ReplyEmail.new(reply)
+    @email_to = @email.to
 
-    with_user(@recipient) do
-      mail(to: @email_to, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+    with_user(@email.recipient) do
+      mail(to: @email_to, subject: @email.subject) if @email.can_be_sent?
     end
   end
 
@@ -36,7 +33,7 @@ class Mailer < ApplicationMailer
     @document_number = document_number
 
     with_user(user) do
-      mail(to: @email_to, subject: t('mailers.email_verification.subject'))
+      mail(to: @email_to, subject: t("mailers.email_verification.subject"))
     end
   end
 
@@ -46,7 +43,7 @@ class Mailer < ApplicationMailer
     @email_to = @author.email
 
     with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.unfeasible_spending_proposal.subject', code: @spending_proposal.code))
+      mail(to: @email_to, subject: t("mailers.unfeasible_spending_proposal.subject", code: @spending_proposal.code))
     end
   end
 
@@ -56,7 +53,7 @@ class Mailer < ApplicationMailer
     @email_to = @receiver.email
 
     with_user(@receiver) do
-      mail(to: @email_to, subject: t('mailers.direct_message_for_receiver.subject'))
+      mail(to: @email_to, subject: t("mailers.direct_message_for_receiver.subject"))
     end
   end
 
@@ -66,7 +63,7 @@ class Mailer < ApplicationMailer
     @email_to = @sender.email
 
     with_user(@sender) do
-      mail(to: @email_to, subject: t('mailers.direct_message_for_sender.subject'))
+      mail(to: @email_to, subject: t("mailers.direct_message_for_sender.subject"))
     end
   end
 
@@ -75,7 +72,7 @@ class Mailer < ApplicationMailer
     @email_to = user.email
 
     with_user(user) do
-      mail(to: @email_to, subject: t('mailers.proposal_notification_digest.title', org_name: Setting['org_name']))
+      mail(to: @email_to, subject: t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"]))
     end
   end
 
@@ -83,7 +80,7 @@ class Mailer < ApplicationMailer
     @email_to = email
 
     I18n.with_locale(I18n.default_locale) do
-      mail(to: @email_to, subject: t('mailers.user_invite.subject', org_name: Setting["org_name"]))
+      mail(to: @email_to, subject: t("mailers.user_invite.subject", org_name: Setting["org_name"]))
     end
   end
 
@@ -92,7 +89,7 @@ class Mailer < ApplicationMailer
     @email_to = @investment.author.email
 
     with_user(@investment.author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_created.subject'))
+      mail(to: @email_to, subject: t("mailers.budget_investment_created.subject"))
     end
   end
 
@@ -102,7 +99,7 @@ class Mailer < ApplicationMailer
     @email_to = @author.email
 
     with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_unfeasible.subject', code: @investment.code))
+      mail(to: @email_to, subject: t("mailers.budget_investment_unfeasible.subject", code: @investment.code))
     end
   end
 
@@ -112,7 +109,7 @@ class Mailer < ApplicationMailer
     @email_to = @author.email
 
     with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_selected.subject', code: @investment.code))
+      mail(to: @email_to, subject: t("mailers.budget_investment_selected.subject", code: @investment.code))
     end
   end
 
@@ -122,7 +119,7 @@ class Mailer < ApplicationMailer
     @email_to = @author.email
 
     with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_unselected.subject', code: @investment.code))
+      mail(to: @email_to, subject: t("mailers.budget_investment_unselected.subject", code: @investment.code))
     end
   end
 

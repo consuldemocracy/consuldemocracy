@@ -1,18 +1,18 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Communities' do
+feature "Communities" do
 
   background do
-    Setting['feature.community'] = true
+    Setting["feature.community"] = true
   end
 
   after do
-    Setting['feature.community'] = nil
+    Setting["feature.community"] = nil
   end
 
-  context 'Show' do
+  context "Show" do
 
-    scenario 'Should display default content' do
+    scenario "Should display default content" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -26,7 +26,7 @@ feature 'Communities' do
       expect(page).to have_link("Create topic", href: new_community_topic_path(community))
     end
 
-    scenario 'Should display without_topics_text and participants when there are not topics' do
+    scenario "Should display without_topics_text and participants when there are not topics" do
       proposal = create(:proposal)
       community = proposal.community
 
@@ -36,7 +36,7 @@ feature 'Communities' do
       expect(page).to have_content "Participants (1)"
     end
 
-    scenario 'Should display order selector and topic content when there are topics' do
+    scenario "Should display order selector and topic content when there are topics" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -90,7 +90,7 @@ feature 'Communities' do
       expect(topic2.title).to appear_before(topic1.title)
     end
 
-    scenario 'Should display topic edit button on topic show when author is logged' do
+    scenario "Should display topic edit button on topic show when author is logged" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -105,7 +105,7 @@ feature 'Communities' do
       expect(page).not_to have_link("Edit topic", href: edit_community_topic_path(community, topic2))
     end
 
-    scenario 'Should display participant when there is topics' do
+    scenario "Should display participant when there is topics" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -119,7 +119,7 @@ feature 'Communities' do
       end
     end
 
-    scenario 'Should display participants when there are topics and comments' do
+    scenario "Should display participants when there are topics and comments" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -135,8 +135,8 @@ feature 'Communities' do
       end
     end
 
-    scenario 'Should redirect root path when communities are disabled' do
-      Setting['feature.community'] = nil
+    scenario "Should redirect root path when communities are disabled" do
+      Setting["feature.community"] = nil
       proposal = create(:proposal)
       community = proposal.community
 

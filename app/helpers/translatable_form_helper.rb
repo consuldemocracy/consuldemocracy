@@ -1,66 +1,93 @@
 module TranslatableFormHelper
-  def translatable_form_for(record_or_record_path, options = {})
-    object = record_or_record_path.is_a?(Array) ? record_or_record_path.last : record_or_record_path
-
-    form_for(record_or_record_path, options.merge(builder: TranslatableFormBuilder)) do |f|
-
-      object.globalize_locales.each do |locale|
-        concat translation_enabled_tag(locale, enable_locale?(object, locale))
-      end
-
+  def translatable_form_for(record, options = {})
+    form_for(record, options.merge(builder: TranslatableFormBuilder)) do |f|
       yield(f)
     end
   end
 
-  def merge_translatable_field_options(options, locale)
-    options.merge(
-      class: "#{options[:class]} js-globalize-attribute".strip,
-      style: "#{options[:style]} #{display_translation?(locale)}".strip,
-      data:  options.fetch(:data, {}).merge(locale: locale),
-      label_options: {
-        class: "#{options.dig(:label_options, :class)} js-globalize-attribute".strip,
-        style: "#{options.dig(:label_options, :style)} #{display_translation?(locale)}".strip,
-        data:  (options.dig(:label_options, :data) || {}) .merge(locale: locale)
-      }
-    )
-  end
-
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
-
-    def translatable_text_field(method, options = {})
-      translatable_field(:text_field, method, options)
-    end
-
-    def translatable_text_area(method, options = {})
-      translatable_field(:text_area, method, options)
-    end
-
-    def translatable_cktext_area(method, options = {})
-      translatable_field(:cktext_area, method, options)
+    def translatable_fields(&block)
+      @object.globalize_locales.map do |locale|
+        Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
+      end.join.html_safe
     end
 
     private
 
-      def translatable_field(field_type, method, options = {})
-        @template.capture do
-          @object.globalize_locales.each do |locale|
-            Globalize.with_locale(locale) do
-              localized_attr_name = @object.localized_attr_name_for(method, locale)
+      def fields_for_locale(locale, &block)
+        fields_for_translation(translation_for(locale)) do |translations_form|
+          @template.content_tag :div, translations_options(translations_form.object, locale) do
+            @template.concat translations_form.hidden_field(
+              :_destroy,
+              data: { locale: locale }
+            )
 
-              label_without_locale = @object.class.human_attribute_name(method)
-              final_options = @template.merge_translatable_field_options(options, locale)
-                                       .reverse_merge(label: label_without_locale)
+            @template.concat translations_form.hidden_field(:locale, value: locale)
 
-              if field_type == :cktext_area
-                @template.concat content_tag :div, send(field_type, localized_attr_name, final_options),
-                                             class: "js-globalize-attribute",
-                                             style: @template.display_translation?(locale),
-                                             data: { locale: locale }
-              else
-                @template.concat send(field_type, localized_attr_name, final_options)
-              end
-            end
+            yield translations_form
           end
+        end
+      end
+
+      def fields_for_translation(translation, &block)
+        fields_for(:translations, translation, builder: TranslationsFieldsBuilder) do |f|
+          yield f
+        end
+      end
+
+      def translation_for(locale)
+        existing_translation_for(locale) || new_translation_for(locale)
+      end
+
+      def existing_translation_for(locale)
+        @object.translations.detect { |translation| translation.locale == locale }
+      end
+
+      def new_translation_for(locale)
+        @object.translations.new(locale: locale).tap do |translation|
+          unless locale == I18n.locale && no_other_translations?(translation)
+            translation.mark_for_destruction
+          end
+        end
+      end
+
+      def translations_options(resource, locale)
+        {
+          class: "translatable-fields js-globalize-attribute",
+          style: @template.display_translation_style(resource.globalized_model, locale),
+          data:  { locale: locale }
+        }
+      end
+
+      def no_other_translations?(translation)
+        (@object.translations - [translation]).reject(&:_destroy).empty?
+      end
+  end
+
+  class TranslationsFieldsBuilder < FoundationRailsHelper::FormBuilder
+    %i[text_field text_area cktext_area].each do |field|
+      define_method field do |attribute, options = {}|
+        custom_label(attribute, options[:label], options[:label_options]) +
+          help_text(options[:hint]) +
+          super(attribute, options.merge(label: false, hint: false))
+      end
+    end
+
+    def locale
+      @object.locale
+    end
+
+    def label(attribute, text = nil, options = {})
+      label_options = options.dup
+      hint = label_options.delete(:hint)
+
+      super(attribute, text, label_options) + help_text(hint)
+    end
+
+    private
+      def help_text(text)
+        if text
+          content_tag :span, text, class: "help-text"
         end
       end
   end

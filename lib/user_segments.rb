@@ -41,16 +41,16 @@ class UserSegments
   def self.not_supported_on_current_budget
     author_ids(
       User.where(
-                  'id NOT IN (SELECT DISTINCT(voter_id) FROM votes'\
-                  ' WHERE votable_type = ? AND votes.votable_id IN (?))',
-                  'Budget::Investment',
+                  "id NOT IN (SELECT DISTINCT(voter_id) FROM votes"\
+                  " WHERE votable_type = ? AND votes.votable_id IN (?))",
+                  "Budget::Investment",
                   current_budget_investments.pluck(:id)
                 )
     )
   end
 
   def self.user_segment_emails(users_segment)
-    UserSegments.send(users_segment).newsletter.pluck(:email).compact
+    UserSegments.send(users_segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
   private

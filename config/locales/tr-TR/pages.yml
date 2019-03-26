@@ -1,1 +1,15 @@
 tr:
+  pages:
+    accessibility:
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+            - 
+            - 
+              page_column: Oylar
+            - 
+            - 
+    verify:
+      email: E-posta

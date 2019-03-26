@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Notifications" do
 
@@ -20,7 +20,7 @@ feature "Notifications" do
     expect(page).to have_css(".notification", count: 2)
     expect(page).to have_content(read1.notifiable_title)
     expect(page).to have_content(read2.notifiable_title)
-    expect(page).to_not have_content(unread.notifiable_title)
+    expect(page).not_to have_content(unread.notifiable_title)
   end
 
   scenario "View unread" do
@@ -34,7 +34,7 @@ feature "Notifications" do
     expect(page).to have_css(".notification", count: 2)
     expect(page).to have_content(unread1.notifiable_title)
     expect(page).to have_content(unread2.notifiable_title)
-    expect(page).to_not have_content(read.notifiable_title)
+    expect(page).not_to have_content(read.notifiable_title)
   end
 
   scenario "View single notification" do
@@ -65,7 +65,7 @@ feature "Notifications" do
 
     expect(page).to have_css(".notification", count: 1)
     expect(page).to have_content(notification2.notifiable_title)
-    expect(page).to_not have_content(notification1.notifiable_title)
+    expect(page).not_to have_content(notification1.notifiable_title)
   end
 
   scenario "Mark all as read" do
@@ -112,7 +112,7 @@ feature "Notifications" do
     first(".notification a").click
 
     within("#notifications") do
-      expect(page).to_not have_css(".icon-circle")
+      expect(page).not_to have_css(".icon-circle")
     end
   end
 
@@ -125,7 +125,7 @@ feature "Notifications" do
     logout
     visit root_path
 
-    expect(page).to_not have_css("#notifications")
+    expect(page).not_to have_css("#notifications")
   end
 
   scenario "Notification's notifiable model no longer includes Notifiable module" do
@@ -133,15 +133,15 @@ feature "Notifications" do
     create(:notification, notifiable: create(:poll_question), user: user)
 
     click_notifications_icon
-    expect(page).to have_content('This resource is not available anymore.', count: 2)
+    expect(page).to have_content("This resource is not available anymore.", count: 2)
   end
 
   context "Admin Notifications" do
     let(:admin_notification) do
-      create(:admin_notification, title: 'Notification title',
-                                  body: 'Notification body',
-                                  link: 'https://www.external.link.dev/',
-                                  segment_recipient: 'all_users')
+      create(:admin_notification, title: "Notification title",
+                                  body: "Notification body",
+                                  link: "https://www.external.link.dev/",
+                                  segment_recipient: "all_users")
     end
 
     let!(:notification) do
@@ -154,30 +154,30 @@ feature "Notifications" do
 
     scenario "With external link" do
       visit notifications_path
-      expect(page).to have_content('Notification title')
-      expect(page).to have_content('Notification body')
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
 
       first("#notification_#{notification.id} a").click
-      expect(page.current_url).to eq('https://www.external.link.dev/')
+      expect(page.current_url).to eq("https://www.external.link.dev/")
     end
 
     scenario "With internal link" do
-      admin_notification.update_attributes(link: '/stats')
+      admin_notification.update_attributes(link: "/stats")
 
       visit notifications_path
-      expect(page).to have_content('Notification title')
-      expect(page).to have_content('Notification body')
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
 
       first("#notification_#{notification.id} a").click
-      expect(page).to have_current_path('/stats')
+      expect(page).to have_current_path("/stats")
     end
 
     scenario "Without a link" do
-      admin_notification.update_attributes(link: '/stats')
+      admin_notification.update_attributes(link: "/stats")
 
       visit notifications_path
-      expect(page).to have_content('Notification title')
-      expect(page).to have_content('Notification body')
+      expect(page).to have_content("Notification title")
+      expect(page).to have_content("Notification body")
       expect(page).not_to have_link(notification_path(notification), visible: false)
     end
   end
@@ -242,7 +242,7 @@ feature "Notifications" do
 
   def users_without_notifications
     User.all.select { |user| user.notifications.not_emailed
-                             .where(notifiable_type: 'ProposalNotification').blank? }
+                             .where(notifiable_type: "ProposalNotification").blank? }
   end
 
 end

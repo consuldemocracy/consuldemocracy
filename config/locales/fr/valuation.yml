@@ -13,9 +13,9 @@ fr:
           current: Ouvert
           finished: Terminé
         table_name: Nom
-        table_phase: Phase de
+        table_phase: Phase
         table_assigned_investments_valuation_open: Propositions d'investissement assignées avec une évaluation ouverte
-        table_actions: Statut des votes
+        table_actions: Actions
         evaluate: Évaluer
     budget_investments:
       index:
@@ -30,12 +30,12 @@ fr:
         valuators_assigned:
           one: Évaluateur assigné
           other: "%{count} évaluateurs assignés"
-        no_valuators_assigned: Pas d'évaluateur assigné
+        no_valuators_assigned: Aucun évaluateur affecté
         table_id: ID
         table_title: Titre
         table_heading_name: Nom du titre
-        table_actions: Statut des votes
-        no_investments: "Il n’y a pas de projet d’investissement."
+        table_actions: Actions
+        no_investments: "Il n’y a aucun projet d’investissement."
       show:
         back: Retour
         title: Propositions d'investissement
@@ -53,13 +53,13 @@ fr:
         unfeasible: Infaisable
         undefined: Indéfini
         valuation_finished: Évaluation terminée
-        duration: Délai d'exécution
+        duration: Durée d'exécution
         responsibles: Responsables
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateurs assignés
       edit:
         dossier: Rapport
-        price_html: "Coût (%{currency})"
+        price_html: "Coût (%{currency}) <small>(données publiques)</small>"
         price_first_year_html: "Coût durant la première année (%{currency}) <small>(optionnel, données non publiques)</small>"
         price_explanation_html: Informations sur le coût <small>(optionnel, données publiques)</small>
         feasibility: Faisabilité
@@ -70,10 +70,10 @@ fr:
         valuation_finished: Évaluation terminée
         valuation_finished_alert: "Êtes-vous sûr de vouloir marquer ce rapport comme étant achevé ? Si vous le faites, il nne pourra plus être modifié."
         not_feasible_alert: "Un courriel sera envoyé immédiatement à l’auteur du projet avec le rapport de non-faisabilité."
-        duration_html: Délai d'exécution <small>(optionnel, données non publiques)</small>
-        save: Enregistrer les changements
+        duration_html: Durée d'exécution
+        save: Sauvegarder des changements
       notice:
-        valuate: "Rapport mis-à-jour"
+        valuate: "Informations actualisées"
       valuation_comments: Commentaires de l’évaluation
       not_in_valuating_phase: Les investissements ne peuvent être évalués que lorsque le Budget est en phase de valorisation
     spending_proposals:
@@ -83,11 +83,11 @@ fr:
           valuation_open: Ouvert
           valuating: En cours d'évaluation
           valuation_finished: Évaluation terminée
-        title: Propositions d'investissement pour les budgets participatifs
+        title: Projets d'investissement du budget participatif
         edit: Éditer
       show:
         back: Retour
-        heading: Proposition d'investissement
+        heading: Propositions d'investissement
         info: Données d'envoi
         association_name: Association
         by: Envoyé par
@@ -104,7 +104,7 @@ fr:
         undefined: Indéfini
         valuation_finished: Évaluation terminée
         time_scope: Durée d'exécution
-        internal_comments: Commentaires internes
+        internal_comments: Commentaires et observations <small>(pour les responsables internes, données non publiques)</small>
         responsibles: Responsables
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateurs assignés
@@ -120,8 +120,8 @@ fr:
         undefined_feasible: Indécis
         feasible_explanation_html: Informations sur la non-viabilité <small>(le cas échéant, données publiques)</small>
         valuation_finished: Évaluation terminée
-        time_scope_html: Délai d'exécution <small>(optionnel, données non publiques)</small>
+        time_scope_html: Durée d'exécution
         internal_comments_html: Commentaires et observations <small>(pour les responsables internes, données non publiques)</small>
-        save: Enregistrer les changements
+        save: Sauvegarder des changements
       notice:
         valuate: "Informations actualisées"

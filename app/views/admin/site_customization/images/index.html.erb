@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <% @images.each do |image| %>
-      <tr class="<%= image.name %>">
+      <tr id="image_<%= image.name %>">
         <td class="small-12 medium-4">
           <strong><%= image.name %></strong> (<%= image.required_width %>x<%= image.required_height %>)
         </td>
@@ -20,8 +20,8 @@
               <%= f.file_field :image, label: false %>
             </div>
             <div class="small-12 medium-6 large-6 column">
-              <%= f.submit(t('admin.site_customization.images.index.update'), class: "button hollow") %>
-              <%= link_to t('admin.site_customization.images.index.delete'), admin_site_customization_image_path(image), method: :delete, class: "button hollow alert" if image.image.exists? %>
+              <%= f.submit(t("admin.site_customization.images.index.update"), class: "button hollow") %>
+              <%= link_to t("admin.site_customization.images.index.delete"), admin_site_customization_image_path(image), method: :delete, class: "button hollow alert" if image.image.exists? %>
             </div>
           <% end %>
         </td>

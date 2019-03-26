@@ -1,11 +1,13 @@
 id:
   documents:
+    title: Dokumen
     max_documents_allowed_reached_html: Anda telah mencapai jumlah maksimum dari dokumen-dokumen yang diperbolehkan! <strong>Anda harus menghapus satu sebelum anda dapat meng-upload yang lain.</strong>
     form:
       title: Dokumen
       title_placeholder: Tambahkan judul deskriptif untuk dokumen
       attachment_label: Pilih dokumen
       delete_button: Hapus dokumen
+      cancel_button: Batal
       note: "Anda dapat mengunggah sampai dengan maksimum %{max_documents_allowed} dokumen jenis konten berikut: %{accepted_content_types}, hingga %{max_file_size} MB per berkas."
       add_new_document: Tambahkan dokumen baru
     actions:
@@ -17,5 +19,5 @@ id:
       download_document: Unduh file
     errors:
       messages:
-        in_between: harus di antara %{min} dan %{max}
-        wrong_content_type: konten jenis %{content_type} tidak sesuai yang diterima konten jenis %{accepted_content_types}
+        in_between: harus di antara keduanya %{min} dan %{max}
+        wrong_content_type: jenis konten %{content_type} tidak cocok dengan jenis konten yang diterima%{accepted_content_types}

@@ -70,7 +70,7 @@
 
   ProposalGraph.prototype.parseData = function(data) {
     var key;
-    
+
     this.xColumnValues = [ ];
     this.progressColumnValues =  [ this.progressLabel ];
 
@@ -101,7 +101,7 @@
 
   ProposalGraph.prototype.parseSuccessfulProposalData = function(data) {
     var key;
-    
+
     this.successfulColumnValues = [ this.successLabel ];
 
     for (key in data) {
@@ -152,7 +152,7 @@
         maximumValue = this.maximumValue === 0 ? this.proposalSuccess : Math.round(this.maximumValue * 1.10);
 
     this.formatXColumnValues();
-    
+
     colors[this.progressColumnValues[0]] = '#004a83';
     colors[this.successfulColumnValues[0]] = '#ff7f0e';
 
@@ -191,7 +191,7 @@
           },
           min: (this.maximumValue === 0 ? Math.round(this.proposalSuccess * 0.10) : 0),
           max: maximumValue,
-          label: { 
+          label: {
             text: this.supportsLabel,
             position: 'outer-middle'
           }
@@ -214,7 +214,7 @@
       },
       tooltip: {
         format: {
-          title: function (d) { 
+          title: function (d) {
             var achievement = this.achievements.find(function (element) {
               return element.value === this.xColumnValues[d + 1];
             }.bind(this));
@@ -283,10 +283,10 @@
     }
 
     return group;
-  }
+  };
 
   ProposalGraph.prototype.isDailyGrouped = function() {
-    return this.groupBy === undefined || this.groupBy === '' || this.groupBy === null
+    return this.groupBy === undefined || this.groupBy === '' || this.groupBy === null;
   };
 
   $(document).ready(function () {

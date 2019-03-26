@@ -4,19 +4,19 @@
       <%= link_to poll.name, admin_poll_path(poll) %>
     </strong>
   </td>
-  <td>
-    <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>
+  <td class="text-center">
+    <%= l poll.starts_at.to_date %>
   </td>
-  <td class="text-right">
-    <div class="small-6 column">
+  <td class="text-center">
+    <%= l poll.ends_at.to_date %>
+  </td>
+  <td>
     <%= link_to t("admin.actions.edit"),
                 edit_admin_poll_path(poll),
-                class: "button hollow expanded" %>
-    </div>
-    <div class="small-6 column">
+                class: "button hollow" %>
+
     <%= link_to t("admin.actions.configure"),
                 admin_poll_path(poll),
-                class: "button hollow expanded" %>
-    </div>
+                class: "button hollow " %>
   </td>
 </tr>

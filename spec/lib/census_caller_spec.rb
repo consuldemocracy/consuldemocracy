@@ -1,10 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe CensusCaller do
   let(:api) { described_class.new }
 
-  describe '#call' do
-    it 'returns data from local_census_records if census API is not available' do
+  describe "#call" do
+    it "returns data from local_census_records if census API is not available" do
       census_api_response = CensusApi::Response.new(get_habita_datos_response: {
           get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {} }
         }

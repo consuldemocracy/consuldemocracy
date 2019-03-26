@@ -36,7 +36,7 @@ fr:
         user_permission_info: Avec votre compte, vous pouvez...
       update:
         flash:
-          success: Votre compte est vérifié
+          success: Code correct. Votre compte est maintenant vérifié.
     redirect_notices:
       already_verified: Votre compte est déjà vérifié
       email_already_sent: Nous vous avons envoyé un courriel avec un lien de confirmation. Si vous ne l'avez pas reçu, vous pouvez demander qu'on vous le renvoie ici.
@@ -95,9 +95,9 @@ fr:
     step_1: Résidence
     step_2: Code de confirmation
     step_3: Vérification finale
-    user_permission_debates: Participer aux débats
+    user_permission_debates: Participez aux débats !
     user_permission_info: En vérifiant votre compte vous pourrez...
-    user_permission_proposal: Créer de nouvelles propositions
+    user_permission_proposal: Créer des propositions
     user_permission_support_proposal: Soutenir des propositions
     user_permission_votes: Participer au vote final*
     verified_user:

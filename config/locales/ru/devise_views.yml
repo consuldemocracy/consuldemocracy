@@ -1,1 +1,129 @@
 ru:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Электронный адрес
+        submit: Повторно отправить инструкции
+        title: Повторно отправить ниструкции подтверждения
+      show:
+        instructions_html: Подтверждение аккаунта по email %{email}
+        new_password_confirmation_label: Повторить пароль доступа
+        new_password_label: Новый пароль доступа
+        please_set_password: Пожалуйста выберите ваш новый пароль (он позволит вам войти с email'ом выше)
+        submit: Подтвердить
+        title: Подтвердить мой аккаунт
+    mailer:
+      confirmation_instructions:
+        confirm_link: Подтвердить мой аккаунт
+        text: 'Вы можете подтвердить ваш аккаунт email по следующей ссылке:'
+        title: Добро пожаловать
+        welcome: Добро пожаловать
+      reset_password_instructions:
+        change_link: Изменить мой пароль
+        hello: Здравствуйте
+        ignore_text: Если вы не запрашивали смену пароля, то можете проигнорировать этот email.
+        info_text: Ваш пароль не будет изменен, если вы не перейдете по ссылке и не отредактируете его.
+        text: 'Мы получили запрос на смену вашего пароля. Вы можете сделать это по следующей ссылке:'
+        title: Измените ваш пароль
+      unlock_instructions:
+        hello: Здравствуйте
+        info_text: Ваш аккаунт заблокирован вслествие чрезмерного количества неудачных попыток входа.
+        instructions_text: 'Пожалуйста нажмите на эту ссылку, чтобы разблокировать ваш аккаунт:'
+        title: Ваш аккаунт заблокирован
+        unlock_link: Разблокировать мой аккаунт
+    menu:
+      login_items:
+        login: Войти
+        logout: Выйти
+        signup: Регистрация
+    organizations:
+      registrations:
+        new:
+          email_label: Электронный адрес
+          organization_name_label: Название организации
+          password_confirmation_label: Подтвердить пароль
+          password_label: Пароль
+          phone_number_label: Номер телефона
+          responsible_name_label: Полное имя лица, ответственного за коллектив
+          responsible_name_note: Это будет лицо, представляющее ассоциацию/коллектив, от чьего имени презставляются предложения
+          submit: Регистрация
+          title: Зарегистрировать организацию или коллектив
+        success:
+          back_to_index: Я понимаю; вернуться на главную страницу
+          instructions_1_html: "<b>Мы скоро свяжемся с вами</b>, чтобы проверить, что вы действительно представляете этот коллектив."
+          instructions_2_html: Пока ваш <b>email проверяется</b>, мы отправили вам <b>ссылку на подтверждение вашего аккаунта</b>.
+          instructions_3_html: Когда он будет подтвержден, вы можете начать участвовать в качестве непроверенного коллектива.
+          thank_you_html: Спасибо, что зарегистрировали ваш коллектив на вебсайте. Сейчас он <b>ожидает верификации</b>.
+          title: Регистрация организации / коллектива
+    passwords:
+      edit:
+        change_submit: Сменить мой пароль
+        password_confirmation_label: Подтвердить мой пароль
+        password_label: Новый пароль
+        title: Измените ваш пароль
+      new:
+        email_label: Электронный адрес
+        send_submit: Отправить инструкции
+        title: Забыли пароль?
+    sessions:
+      new:
+        login_label: Электронный адрес или имя пользователя
+        password_label: Пароль
+        remember_me: Запомнить меня
+        submit: Войти
+        title: Вход
+    shared:
+      links:
+        login: Войти
+        new_confirmation: Не поличали инструкции по активации вашего аккаунта?
+        new_password: Забыли ваш пароль?
+        new_unlock: Не получали инструкции по разблокировке?
+        signin_with_provider: Войти при помощи %{provider}
+        signup: У вас есть аккаунт? %{signup_link}
+        signup_link: Регистрация
+    unlocks:
+      new:
+        email_label: Электронный адрес
+        submit: Повторно отправить инструкции по разблокировке
+        title: Повторно отправить инструкции по разблокировке
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Причина
+          info: Это действие нельзя отменить. Пожалуйста убедитесь, что это то, что вы хотите.
+          info_reason: Если желаете, сообщите нам причину (не обязательно)
+          submit: Стереть мой аккаунт
+          title: Стереть аккаунт
+        edit:
+          current_password_label: Текущий пароль
+          edit: Редактировать
+          email_label: Электронный адрес
+          leave_blank: Оставьте пустым, если не желаете менять
+          need_current: Нам нужен ваш пароль от аккаунта, чтобы подтвердить изменения
+          password_confirmation_label: Подтвердить новый пароль
+          password_label: Новый пароль
+          update_submit: Обновить
+          waiting_for: 'Ожидаем подтверждение:'
+        new:
+          cancel: Отменить вход
+          email_label: Электронный адрес
+          organization_signup: Представляете ли вы организацию или коллектив? %{signup_link}
+          organization_signup_link: Зарегистрироваться здесь
+          password_confirmation_label: Подтвердить пароль
+          password_label: Пароль
+          redeemable_code: Код верификации, полученный по email (не обязательно)
+          submit: Зарегистрироваться
+          terms: Регистрируясь, вы принимаете %{terms}
+          terms_link: положения и условия пользования
+          terms_title: Регистрируясь, вы принимаете положения и условия пользования
+          title: Регистрация
+          username_is_available: Имя пользователя доступно
+          username_is_not_available: Имя пользователя уже используется
+          username_label: Имя пользователя
+          username_note: Имя, которое появится рядом с вашими постами
+        success:
+          back_to_index: Я понимаю; вернуться на главную страницу
+          instructions_1_html: Пожалуйста <b>проверьте ваш email</b> - мы отправили вам <b>ссылку на подтверждение вашего аккаунта</b>.
+          instructions_2_html: После подтверждения вы сможете начать участвовать.
+          thank_you_html: Спасибо за регистрацию на вебсайте. Теперь вы должны <b>подтвердить ваш адрес email</b>.
+          title: Изменить ваш email

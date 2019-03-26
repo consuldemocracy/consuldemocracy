@@ -1,1 +1,21 @@
 so:
+  images:
+    remove_image: Kasaar sawirk
+    form:
+      title: Sawirka sharaxada
+      title_placeholder: Ku dar cidnka sharaxada sawirka
+      attachment_label: Dooro Sawirka
+      delete_button: Kasaar sawirk
+      note: "Waxaad soo dejin kartaa sawir ka mid ah noocyada mawduucyada soo socda:%{accepted_content_types} ilaa %{max_file_size} MB."
+      add_new_image: Sawiir kudar
+      admin_title: "Sawiir"
+      admin_alt_text: "Qoraal kale oo sawir ah"
+    actions:
+      destroy:
+        notice: Sawirka siguul ah ayaa loo tirtiraay.
+        alert: Sawirkka lama bur burin karo.
+        confirm: Ma hubtaa inaad rabto inaad tirtirto Sawirka? Ficilkan looma diidi karo!
+    errors:
+      messages:
+        in_between: waa inuu u dhexeeya %{min} iyo%{max}
+        wrong_content_type: qaybaha Noocayada %{content_type} ma waafaqsanaan noocyada noocyada la aqbalo%{accepted_content_types}

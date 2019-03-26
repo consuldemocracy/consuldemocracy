@@ -1,4 +1,20 @@
 ca:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: entrades
+        one: entrada
+        other: entrades
+      more_pages:
+        display_entries: Mostrant <b>%{first}&nbsp;-&nbsp;%{last}</b> de un total de <b>%{total}</b> %{entry_name}
+      one_page:
+        display_entries:
+          one: Hi ha <b>1</b> %{entry_name}
+          other: Hi ha <b> %{count}</b> %{entry_name}
   views:
     pagination:
-      next: Properament
+      current: Estàs en la pàgina
+      first: Primera
+      last: Última
+      next: Seguent
+      previous: Anterior

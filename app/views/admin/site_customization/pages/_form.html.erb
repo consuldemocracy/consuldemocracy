@@ -38,12 +38,15 @@
   </div>
   <div class="small-12 column">
     <hr>
-    <%= f.translatable_text_field :title %>
-    <%= f.translatable_text_field :subtitle %>
-    <div class="ckeditor">
-      <%= f.translatable_cktext_area :content,
-                                     ckeditor: { language: I18n.locale, toolbar: "admin" } %>
-    </div>
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_field :title %>
+      <%= translations_form.text_field :subtitle %>
+      <div class="ckeditor">
+        <%= translations_form.cktext_area :content,
+                                          ckeditor: { language: I18n.locale, toolbar: "admin" } %>
+      </div>
+    <% end %>
+
     <div class="small-12 medium-6 large-3 margin-top">
       <%= f.submit class: "button success expanded" %>
     </div>

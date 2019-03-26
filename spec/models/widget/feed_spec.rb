@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Widget::Feed do
 
@@ -15,16 +15,16 @@ describe Widget::Feed do
     describe "#proposals" do
 
       it "returns the most active proposals" do
-        best_proposal = create(:proposal, title: 'Best proposal')
+        best_proposal = create(:proposal, title: "Best proposal")
         best_proposal.update_column(:hot_score, 10)
 
-        worst_proposal = create(:proposal, title: 'Worst proposal')
+        worst_proposal = create(:proposal, title: "Worst proposal")
         worst_proposal.update_column(:hot_score, 2)
 
-        even_worst_proposal = create(:proposal, title: 'Worst proposal')
+        even_worst_proposal = create(:proposal, title: "Worst proposal")
         even_worst_proposal.update_column(:hot_score, 1)
 
-        medium_proposal = create(:proposal, title: 'Medium proposal')
+        medium_proposal = create(:proposal, title: "Medium proposal")
         medium_proposal.update_column(:hot_score, 5)
 
         feed = build(:widget_feed, kind: "proposals")
@@ -37,16 +37,16 @@ describe Widget::Feed do
     describe "#debates" do
 
       it "returns the most active debates" do
-        best_debate = create(:debate, title: 'Best debate')
+        best_debate = create(:debate, title: "Best debate")
         best_debate.update_column(:hot_score, 10)
 
-        worst_debate = create(:debate, title: 'Worst debate')
+        worst_debate = create(:debate, title: "Worst debate")
         worst_debate.update_column(:hot_score, 2)
 
-        even_worst_debate = create(:debate, title: 'Worst debate')
+        even_worst_debate = create(:debate, title: "Worst debate")
         even_worst_debate.update_column(:hot_score, 1)
 
-        medium_debate = create(:debate, title: 'Medium debate')
+        medium_debate = create(:debate, title: "Medium debate")
         medium_debate.update_column(:hot_score, 5)
 
         feed = build(:widget_feed, kind: "debates")

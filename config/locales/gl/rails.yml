@@ -10,18 +10,18 @@ gl:
       - sáb
     abbr_month_names:
       - 
-      - Xan
-      - Feb
-      - Mar
-      - Abr
-      - Mai
-      - Xuñ
-      - Xul
-      - Ago
-      - Set
-      - Out
-      - Nov
-      - Dec
+      - xan
+      - feb
+      - mar
+      - abr
+      - maio
+      - xuñ
+      - xul
+      - ago
+      - set
+      - out
+      - nov
+      - dec
     day_names:
       - domingo
       - luns
@@ -36,22 +36,18 @@ gl:
       short: "%d de %b"
     month_names:
       - 
-      - Xaneiro
-      - Febreiro
-      - Marzo
-      - Abril
-      - Maio
-      - Xuño
-      - Xullo
-      - Agosto
-      - Setembro
-      - Outubro
-      - Novembro
-      - Decembro
-    order:
-      - :day
-      - :month
-      - :year
+      - xaneiro
+      - febreiro
+      - marzo
+      - abril
+      - Mai
+      - xuño
+      - xullo
+      - agosto
+      - setembro
+      - outubro
+      - novembro
+      - decembro
   datetime:
     distance_in_words:
       about_x_hours:
@@ -104,7 +100,7 @@ gl:
       accepted: debe ser aceptado
       blank: non pode estar en branco
       present: debe estar en branco
-      confirmation: non coincide
+      confirmation: non coincide %{attribute}
       empty: non pode estar baleiro
       equal_to: debe ser igual a %{count}
       even: debe ser par
@@ -154,8 +150,8 @@ gl:
         strip_insignificant_zeros: false
         unit: "€"
     format:
-      delimiter: ","
-      precision: 3
+      delimiter: "."
+      precision: 1
       separator: ","
       significant: false
       strip_insignificant_zeros: false
@@ -187,8 +183,8 @@ gl:
         format: "%n%"
   support:
     array:
-      last_word_connector: ", e"
-      two_words_connector: "e"
+      last_word_connector: " e "
+      two_words_connector: " e "
       words_connector: ", "
   time:
     am: am

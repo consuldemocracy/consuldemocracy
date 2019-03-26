@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget do
 
@@ -8,11 +8,20 @@ describe Budget do
 
   describe "name" do
     before do
-      create(:budget, name: 'object name')
+      budget.update(name_en: "object name")
     end
 
-    it "is validated for uniqueness" do
-      expect(build(:budget, name: 'object name')).not_to be_valid
+    it "must not be repeated for a different budget and same locale" do
+      expect(build(:budget, name_en: "object name")).not_to be_valid
+    end
+
+    it "must not be repeated for a different budget and a different locale" do
+      expect(build(:budget, name_fr: "object name")).not_to be_valid
+    end
+
+    it "may be repeated for the same budget and a different locale" do
+      budget.update(name_fr: "object name")
+      expect(budget.translations.last).to be_valid
     end
   end
 
@@ -55,7 +64,7 @@ describe Budget do
         expect(budget).to be_valid
       end
 
-      budget.phase = 'inexisting'
+      budget.phase = "inexisting"
       expect(budget).not_to be_valid
     end
 
@@ -169,35 +178,35 @@ describe Budget do
 
   describe "investments_orders" do
     it "is random when accepting and reviewing" do
-      budget.phase = 'accepting'
-      expect(budget.investments_orders).to eq(['random'])
-      budget.phase = 'reviewing'
-      expect(budget.investments_orders).to eq(['random'])
+      budget.phase = "accepting"
+      expect(budget.investments_orders).to eq(["random"])
+      budget.phase = "reviewing"
+      expect(budget.investments_orders).to eq(["random"])
     end
     it "is random and price when ballotting and reviewing ballots" do
-      budget.phase = 'publishing_prices'
-      expect(budget.investments_orders).to eq(['random', 'price'])
-      budget.phase = 'balloting'
-      expect(budget.investments_orders).to eq(['random', 'price'])
-      budget.phase = 'reviewing_ballots'
-      expect(budget.investments_orders).to eq(['random', 'price'])
+      budget.phase = "publishing_prices"
+      expect(budget.investments_orders).to eq(["random", "price"])
+      budget.phase = "balloting"
+      expect(budget.investments_orders).to eq(["random", "price"])
+      budget.phase = "reviewing_ballots"
+      expect(budget.investments_orders).to eq(["random", "price"])
     end
     it "is random and confidence_score in all other cases" do
-      budget.phase = 'selecting'
-      expect(budget.investments_orders).to eq(['random', 'confidence_score'])
-      budget.phase = 'valuating'
-      expect(budget.investments_orders).to eq(['random', 'confidence_score'])
+      budget.phase = "selecting"
+      expect(budget.investments_orders).to eq(["random", "confidence_score"])
+      budget.phase = "valuating"
+      expect(budget.investments_orders).to eq(["random", "confidence_score"])
     end
   end
 
-  describe '#has_winning_investments?' do
-    it 'should return true if there is a winner investment' do
+  describe "#has_winning_investments?" do
+    it "should return true if there is a winner investment" do
       budget.investments << build(:budget_investment, :winner, price: 3, ballot_lines_count: 2)
 
       expect(budget.has_winning_investments?).to eq true
     end
 
-    it 'hould return false if there is not a winner investment' do
+    it "hould return false if there is not a winner investment" do
       expect(budget.has_winning_investments?).to eq false
     end
   end
@@ -247,31 +256,31 @@ describe Budget do
     end
 
     it "correctly formats Euros with Spanish" do
-      budget.update(currency_symbol: '€')
+      budget.update(currency_symbol: "€")
       I18n.locale = :es
 
-      expect(budget.formatted_amount(1000.00)).to eq ('1.000 €')
+      expect(budget.formatted_amount(1000.00)).to eq ("1.000 €")
     end
 
     it "correctly formats Dollars with Spanish" do
-      budget.update(currency_symbol: '$')
+      budget.update(currency_symbol: "$")
       I18n.locale = :es
 
-      expect(budget.formatted_amount(1000.00)).to eq ('1.000 $')
+      expect(budget.formatted_amount(1000.00)).to eq ("1.000 $")
     end
 
     it "correctly formats Dollars with English" do
-      budget.update(currency_symbol: '$')
+      budget.update(currency_symbol: "$")
       I18n.locale = :en
 
-      expect(budget.formatted_amount(1000.00)).to eq ('$1,000')
+      expect(budget.formatted_amount(1000.00)).to eq ("$1,000")
     end
 
     it "correctly formats Euros with English" do
-      budget.update(currency_symbol: '€')
+      budget.update(currency_symbol: "€")
       I18n.locale = :en
 
-      expect(budget.formatted_amount(1000.00)).to eq ('€1,000')
+      expect(budget.formatted_amount(1000.00)).to eq ("€1,000")
     end
   end
 end

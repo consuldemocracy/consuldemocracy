@@ -17,5 +17,5 @@ ar:
         confirm: هل أنت متأكد من أنك تريد حذف الصورة؟ لا يمكن التراجع عن هذه الخطوة!
     errors:
       messages:
-        in_between: يجب أن تكون بين %{min} و %{max}
-        wrong_content_type: الإمتداد %{content_type} لا يتطابق مع الإمتداد المسموح بها %{accepted_content_types}
+        in_between: يجب ان تكون بين %{min} و %{max}
+        wrong_content_type: نوع المحتوى%{content_type} لا يطابق اي من المحتويات المقبولة %{accepted_content_types}

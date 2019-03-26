@@ -5,6 +5,10 @@ es-PE:
         unverified_user: Solo se pueden editar cuentas de usuarios verificados
       show:
         title: Cuenta de usuario
+      edit:
+        back: Volver
+        password:
+          password: Contraseña que utilizarás para acceder a este sitio web
     account_info:
       change_user: Cambiar usuario
       document_number_label: 'Número de documento:'
@@ -27,6 +31,7 @@ es-PE:
       title: Gestión de usuarios
       under_age: "No tienes edad suficiente para verificar tu cuenta."
       verify: Verificar usuario
+    email_label: Tu correo electrónico
     date_of_birth: Fecha de nacimiento
     email_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
@@ -42,15 +47,15 @@ es-PE:
     menu:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
-      support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear propuesta de inversión
+      support_proposals: Apoyar propuestas*
+      create_spending_proposal: Crear una propuesta de gasto
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear proyectos de inversión
+      create_budget_investment: Crear nuevo proyecto
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates
-      support_proposals: Apoyar propuestas
+      support_proposals: Apoyar propuestas*
       vote_proposals: Participar en las votaciones finales
     print:
       proposals_info: Haz tu propuesta en http://url.consul
@@ -60,32 +65,39 @@ es-PE:
     print_info: Imprimir esta información
     proposals:
       alert:
-        unverified_user: Este usuario no está verificado
+        unverified_user: Usuario no verificado
       create_proposal: Crear propuesta
       print:
         print_button: Imprimir
+      index:
+        title: Apoyar propuestas*
+    budgets:
+      create_new_investment: Crear nuevo proyecto
+      table_name: Nombre
+      table_phase: Fase
+      table_actions: Acciones
     budget_investments:
       alert:
         unverified_user: Usuario no verificado
-      create: Crear nuevo proyecto
+      create: Crear proyecto de gasto
       filters:
         unfeasible: Proyectos no factibles
       print:
         print_button: Imprimir
       search_results:
-        one: " contiene el término '%{search_term}'"
-        other: " contienen el término '%{search_term}'"
+        one: " que contienen '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Este usuario no está verificado
-      create: Crear propuesta de inversión
+        unverified_user: Usuario no verificado
+      create: Crear una propuesta de gasto
       filters:
         unfeasible: Propuestas de inversión no viables
         by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       print:
         print_button: Imprimir
       search_results:
-        one: " que contiene '%{search_term}'"
+        one: " que contienen '%{search_term}'"
         other: " que contienen '%{search_term}'"
     sessions:
       signed_out: Has cerrado la sesión correctamente.
@@ -101,10 +113,10 @@ es-PE:
       erased_by_manager: "Borrada por el manager: %{manager}"
       erase_account_link: Borrar cuenta
       erase_account_confirm: '¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer'
-      erase_warning: Esta acción no se puede deshacer. Por favor asegúrese de que quiere eliminar esta cuenta.
+      erase_warning: Esta acción no se puede deshacer. Por favor asegurese de que quiere eliminar esta cuenta.
       erase_submit: Borrar cuenta
     user_invites:
       new:
-        info: "Introduce los emails separados por comas (',')"
+        info: "Introduce los emails separados por ','"
       create:
         success_html: Se han enviado <strong>%{count} invitaciones</strong>.

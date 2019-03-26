@@ -6,7 +6,10 @@ class CreateI18nContentTranslations < ActiveRecord::Migration
 
     reversible do |dir|
       dir.up do
-        I18nContent.create_translation_table! :value => :text
+        I18nContent.create_translation_table!(
+          { value: :text },
+          { migrate_data: true }
+        )
       end
 
       dir.down do

@@ -11,9 +11,10 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def create
     @answer = ::Poll::Question::Answer.new(answer_params)
+    @question = @answer.question
 
     if @answer.save
-      redirect_to admin_question_path(@answer.question),
+      redirect_to admin_question_path(@question),
                notice: t("flash.actions.create.poll_question_answer")
     else
       render :new
@@ -31,14 +32,14 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
       redirect_to admin_question_path(@answer.question),
                notice: t("flash.actions.save_changes.notice")
     else
-      redirect_to :back
+      render :edit
     end
   end
 
   def documents
     @documents = @answer.documents
 
-    render 'admin/poll/questions/answers/documents'
+    render "admin/poll/questions/answers/documents"
   end
 
   def order_answers
@@ -52,7 +53,10 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
       documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       attributes = [:title, :description, :given_order, :question_id,
         documents_attributes: documents_attributes]
-      params.require(:poll_question_answer).permit(*attributes, *translation_params(Poll::Question::Answer))
+
+      params.require(:poll_question_answer).permit(
+        *attributes, translation_params(Poll::Question::Answer)
+      )
     end
 
     def load_answer

@@ -20,6 +20,8 @@ class Proposal < ActiveRecord::Base
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
   include Relationable
+  include Milestoneable
+  include Randomizable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -27,7 +29,7 @@ class Proposal < ActiveRecord::Base
 
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
@@ -62,7 +64,6 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
-  scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
@@ -115,13 +116,13 @@ class Proposal < ActiveRecord::Base
   end
 
   def searchable_values
-    { title              => 'A',
-      question           => 'B',
-      author.username    => 'B',
-      tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
-      summary            => 'C',
-      description        => 'D'
+    { title              => "A",
+      question           => "B",
+      author.username    => "B",
+      tag_list.join(" ") => "B",
+      geozone.try(:name) => "B",
+      summary            => "C",
+      description        => "D"
     }
   end
 
@@ -187,14 +188,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates the hot_score because there is a before_save
+    save # update cache when it has a new comment
   end
 
   def calculate_hot_score
-    self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               total_votes,
-                                               total_votes,
-                                               comments_count)
+    self.hot_score = ScoreCalculator.hot_score(self)
   end
 
   def calculate_confidence_score
@@ -202,15 +200,15 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
+    tags.each{ |t| t.decrement_custom_counter_for("Proposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for('Proposal') }
+    tags.each{ |t| t.increment_custom_counter_for("Proposal") }
   end
 
   def self.votes_needed_for_success
-    Setting['votes_for_proposal_success'].to_i
+    Setting["votes_for_proposal_success"].to_i
   end
 
   def successful?
@@ -231,7 +229,7 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    orders << "recommendations" if Setting['feature.user.recommendations_on_proposals'] && user&.recommended_proposals
+    orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
     return orders
   end
 

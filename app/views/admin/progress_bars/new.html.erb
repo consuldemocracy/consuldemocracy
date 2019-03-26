@@ -1,0 +1,9 @@
+<% provide :title do %>
+  <%= "#{t("admin.header.title")} - #{t("admin.progress_bars.new.creating")}" %>
+<% end %>
+
+<%= back_link_to progress_bars_index %>
+
+<h2><%= t("admin.progress_bars.new.creating") %></h2>
+
+<%= render "form" %>

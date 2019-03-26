@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe 'Cache flow' do
+describe "Cache flow" do
 
-  describe 'Tag destroy' do
-    it 'invalidates Debate cache keys' do
+  describe "Tag destroy" do
+    it "invalidates Debate cache keys" do
       debate = create(:debate, tag_list: "Good, Bad")
       tag = ActsAsTaggableOn::Tag.find_by(name: "Bad")
 

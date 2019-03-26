@@ -19,3 +19,31 @@ eu:
     attributes:
       budget:
         name: "Izena"
+      milestone/status:
+        name: "Izena"
+      comment:
+        body: "Iruzkin"
+        user: "Erabiltzailea"
+      proposal:
+        question: "Galdera"
+      user:
+        email: "E-mail"
+      poll:
+        name: "Izena"
+      poll/translation:
+        name: "Izena"
+      poll/question:
+        title: "Galdera"
+      poll/question/translation:
+        title: "Galdera"
+      site_customization/image:
+        name: Izena
+        image: Irudia
+      site_customization/content_block:
+        name: Izena
+      legislation/annotation:
+        text: Iruzkin
+      poll/question/answer:
+        title: Erantzuna
+      poll/question/answer/translation:
+        title: Erantzuna

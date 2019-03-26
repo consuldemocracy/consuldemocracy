@@ -4,17 +4,17 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   translates :title,       touch: true
   translates :description, touch: true
-  globalize_accessors
+  include Globalizable
 
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
   accepts_nested_attributes_for :documents, allow_destroy: true
 
-  belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
-  has_many :videos, class_name: 'Poll::Question::Answer::Video'
+  belongs_to :question, class_name: "Poll::Question", foreign_key: "question_id"
+  has_many :videos, class_name: "Poll::Question::Answer::Video"
 
-  validates :title, presence: true
+  validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
   def description
@@ -28,7 +28,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def self.last_position(question_id)
-    where(question_id: question_id).maximum('given_order') || 0
+    where(question_id: question_id).maximum("given_order") || 0
   end
 
   def total_votes
@@ -40,7 +40,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def total_votes_percentage
-    question.answers_total_votes.zero? ? 0 : (total_votes * 100) / question.answers_total_votes
+    question.answers_total_votes.zero? ? 0 : (total_votes * 100.0) / question.answers_total_votes
   end
 
   def set_most_voted

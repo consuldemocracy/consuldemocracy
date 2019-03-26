@@ -8,15 +8,15 @@ it:
       verification:
         residence:
           document_type: "Tipo Documento di identità"
-          document_number: "N. Documento"
+          document_number: "Numero del documento (lettere incluse)"
           date_of_birth: "Data di nascita"
-          postal_code: "CAP"
+          postal_code: "Cap"
         sms:
           phone: "Telefono"
-          confirmation_code: "Codice di conferma"
+          confirmation_code: "SMS di conferma"
         email:
           recipient: "E-mail"
       officing/residence:
-        document_type: "Tipo Documento di identità"
+        document_type: "Tipo di documento"
         document_number: "Numero del documento (lettere incluse)"
         year_of_birth: "Anno di nascita"

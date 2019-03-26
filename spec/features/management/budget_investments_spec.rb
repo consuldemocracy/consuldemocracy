@@ -9,6 +9,15 @@ feature 'Budget Investments' do
     @heading = create(:budget_heading, group: @group, name: "Health")
   end
 
+  it_behaves_like "mappable",
+                  "budget_investment",
+                  "investment",
+                  "new_management_budget_investment_path",
+                  "",
+                  "management_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  management = true
+
   context "Create" do
     before { @budget.update(phase: 'accepting') }
 
@@ -215,7 +224,7 @@ feature 'Budget Investments' do
       expect(page).to have_content(budget_investment.title)
 
       within("#budget-investments") do
-        accept_confirm { find('.js-in-favor a').click }
+        find(".js-in-favor a").click
 
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"

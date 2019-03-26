@@ -1,5 +1,5 @@
 <%= form_for(@spending_proposal, url: form_url) do |f| %>
-  <%= render 'shared/errors', resource: @spending_proposal %>
+  <%= render "shared/errors", resource: @spending_proposal %>
 
   <div class="row">
     <div class="small-12 column">
@@ -32,7 +32,7 @@
     <div class="small-12 column">
       <% if @spending_proposal.new_record? %>
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
           <span class="checkbox">
             <%= t("form.accept_terms",
                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),

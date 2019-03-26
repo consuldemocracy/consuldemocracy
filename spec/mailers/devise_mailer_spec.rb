@@ -1,5 +1,5 @@
 # coding: utf-8
-require 'rails_helper'
+require "rails_helper"
 
 describe DeviseMailer do
   describe "#confirmation_instructions" do

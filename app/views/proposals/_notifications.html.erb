@@ -3,7 +3,7 @@
     <div id="proposal_notifications" class="small-12 column notification-body">
       <% if @notifications.blank? %>
         <div class="callout primary text-center">
-          <%= t('proposals.show.no_notifications') %>
+          <%= t("proposals.show.no_notifications") %>
         </div>
       <% end %>
 
@@ -14,7 +14,7 @@
           <%= simple_format text_with_links(notification.body), {}, sanitize: false %>
 
           <span class="js-flag-actions">
-            <%= render 'proposal_notifications/actions', notification: notification %>
+            <%= render "proposal_notifications/actions", notification: notification %>
           </span>
         </div>
       <% end %>

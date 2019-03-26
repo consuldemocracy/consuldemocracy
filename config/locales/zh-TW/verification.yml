@@ -33,7 +33,7 @@ zh-TW:
         offices: 公民支援辦公室
         send_letter: 給我發一封帶代碼的信
         title: 恭喜！
-        user_permission_info: 您可以用您的帳戶來...
+        user_permission_info: 您可以用您的帳戶來......
       update:
         flash:
           success: 代碼正確。 您的帳戶現已被核實
@@ -92,8 +92,8 @@ zh-TW:
             success: 代碼正確。 您的帳戶現已被核實
           level_two:
             success: 代碼正確
-    step_1: 居住地
-    step_2: 確認代碼
+    step_1: 住址
+    step_2: 確認碼
     step_3: 最終核實
     user_permission_debates: 參與辯論
     user_permission_info: 您的信息一經核實，您便能夠...

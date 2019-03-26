@@ -57,6 +57,7 @@ en:
       section_footer:
         title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects is destined a part of the budget.
+      milestones: Milestones
     investments:
       form:
         tag_category_label: "Categories"
@@ -71,7 +72,7 @@ en:
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
-        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         by_heading: "Investment projects with scope: %{heading}"
         search_form:
           button: Search
@@ -104,6 +105,8 @@ en:
           random: random
           confidence_score: highest rated
           price: by price
+      share:
+        message: "I created the investment project %{title} in %{handle}. Create an investment project too!"
       show:
         author_deleted: User deleted
         price_explanation: Price explanation
@@ -118,14 +121,12 @@ en:
         price: Price
         comments_tab: Comments
         milestones_tab: Milestones
-        no_milestones: Don't have defined milestones
-        milestone_publication_date: "Published %{publication_date}"
-        milestone_status_changed: Investment status changed to
         author: Author
         project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
         project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
         project_winner: 'Winning investment project'
         project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
+        see_price_explanation: See price explanation
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
@@ -145,7 +146,7 @@ en:
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "check my ballot"
-        price: "This heading have a budget of"
+        price: "This heading has a budget of"
     progress_bar:
       assigned: "You have assigned: "
       available: "Available budget: "
@@ -163,7 +164,7 @@ en:
       heading: "Participatory budget results"
       heading_selection_title: "By district"
       spending_proposal: Proposal title
-      ballot_lines_count: Times selected
+      ballot_lines_count: Votes
       hide_discarded_link: Hide discarded
       show_all_link: Show all
       price: Price
@@ -174,6 +175,15 @@ en:
       investment_proyects: List of all investment projects
       unfeasible_investment_proyects: List of all unfeasible investment projects
       not_selected_investment_proyects: List of all investment projects not selected for balloting
+    executions:
+      link: "Milestones"
+      page_title: "%{budget} - Milestones"
+      heading: "Participatory budget Milestones"
+      heading_selection_title: "By district"
+      no_winner_investments: "No winner investments in this state"
+      filters:
+        label: "Project's current state"
+        all: "All (%{count})"
     phases:
       errors:
         dates_range_invalid: "Start date can't be equal or later than End date"

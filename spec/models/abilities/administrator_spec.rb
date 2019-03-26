@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'cancan/matchers'
+require "rails_helper"
+require "cancan/matchers"
 
 describe Abilities::Administrator do
   subject(:ability) { Ability.new(user) }
@@ -67,8 +67,6 @@ describe Abilities::Administrator do
   it { should be_able_to(:comment_as_administrator, legislation_question) }
   it { should_not be_able_to(:comment_as_moderator, legislation_question) }
 
-  it { should be_able_to(:manage, Annotation) }
-
   it { should be_able_to(:read, SpendingProposal) }
   it { should be_able_to(:update, SpendingProposal) }
   it { should be_able_to(:valuate, SpendingProposal) }
@@ -83,8 +81,8 @@ describe Abilities::Administrator do
   it { should be_able_to(:update, Budget::Investment) }
   it { should be_able_to(:hide,   Budget::Investment) }
 
-  it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: 'valuating'))) }
-  it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: 'finished'))) }
+  it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: "valuating"))) }
+  it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: "finished"))) }
 
   it { should be_able_to(:destroy, proposal_image) }
   it { should be_able_to(:destroy, proposal_document) }

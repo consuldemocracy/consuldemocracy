@@ -57,7 +57,6 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Manager
       can [:search, :index], ::User
 
-      can :manage, Annotation
       can :manage, Dashboard::Action
 
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
@@ -94,6 +93,7 @@ module Abilities
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
       can [:create], Document
+      can [:destroy], Document, documentable_type: "Poll::Question::Answer"
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil

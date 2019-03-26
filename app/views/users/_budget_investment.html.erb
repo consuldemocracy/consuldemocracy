@@ -4,7 +4,7 @@
   </td>
   <td>
     <% if can? :destroy, budget_investment %>
-      <%= link_to t('shared.delete'), budget_investment_path(budget_investment.budget, budget_investment),
+      <%= link_to t("shared.delete"), budget_investment_path(budget_investment.budget, budget_investment),
                   method: :delete, class: "button hollow alert expanded",
                   data: {confirm: "#{t('users.show.delete_alert')}"} %>
     <% end %>

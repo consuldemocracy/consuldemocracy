@@ -1,0 +1,7 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.active_polls.edit.title") %></h2>
+
+<div class="polls-form">
+  <%= render "form", form_url: admin_active_polls_url(@active_poll) %>
+</div>

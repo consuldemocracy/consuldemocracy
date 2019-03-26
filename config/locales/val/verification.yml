@@ -19,7 +19,7 @@ val:
         unconfirmed_code: Encara no has introduït el codi de confirmació
       create:
         flash:
-          offices: Oficines d'atenció al ciutadà
+          offices: Oficines d'atenció al ciutada
           success_html: Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.<br> Recorda que pots estalviarte l'enviament verificante presencialment en quansevol de les %{offices}.
       edit:
         see_all: Vore propostes
@@ -30,13 +30,13 @@ val:
         explanation: 'Per a participar en les votacions finals pots:'
         go_to_index: Vore propostes
         office: Verificarte presencialment en quansevol %{office}
-        offices: Oficines d'atenció al ciutada
+        offices: Oficines d'atenció al ciutadà
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
       update:
         flash:
-          success: Codi correcte. El teu compte ja està verificat
+          success: Codi correcte. El teu compte ja esta verificat
     redirect_notices:
       already_verified: El teu compte ja està verificat
       email_already_sent: Hem enviat un email amb un enllaç de confirmació. Si no trobes el email, pots demanar el reenviament ací
@@ -89,16 +89,16 @@ val:
         error: Codi de confirmació incorrecte
         flash:
           level_three:
-            success: Codi correcte. El teu compte ja esta verificat
+            success: Codi correcte. El teu compte ja està verificat
           level_two:
             success: Códi correcte
     step_1: Residència
-    step_2: SMS de confirmació
+    step_2: Codi de confirmació
     step_3: Verificació final
     user_permission_debates: Participar en debats
     user_permission_info: Al verificar les teues dades podràs...
     user_permission_proposal: Crear noves propostes
-    user_permission_support_proposal: Avalar propostes
+    user_permission_support_proposal: Avalar propostes*
     user_permission_votes: Participar en les votacions finals*
     verified_user:
       form:

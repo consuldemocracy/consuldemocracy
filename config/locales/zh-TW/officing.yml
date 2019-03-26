@@ -8,7 +8,7 @@ zh-TW:
         info: 您可以在此驗證用戶文檔和存儲投票結果
         no_shifts: 你今天沒有辦公室輪班。
     menu:
-      voters: 驗證文檔
+      voters: 驗證文件
       total_recounts: 總計重新計票和結果
     polls:
       final:
@@ -29,26 +29,26 @@ zh-TW:
         select_booth: "選擇投票亭"
         ballots_white: "完全空白的選票"
         ballots_null: "無效選票"
-        ballots_total: "總投票數"
+        ballots_total: "選票總數"
         submit: "儲存"
         results_list: "您的結果"
         see_results: "查看結果"
       index:
         no_results: "沒有結果"
         results: 結果
-        table_answer: 回答
-        table_votes: 投票數
+        table_answer: 答案
+        table_votes: 票
         table_whites: "完全空白的選票"
         table_nulls: "無效選票"
-        table_total: "總投票數"
+        table_total: "選票總數"
     residence:
       flash:
         create: "通過人口普查核實的文件"
         not_allowed: "你今天沒有辦公室輪班"
       new:
-        title: 驗證文件
-        document_number: "文件編號 (包括字母)"
-        submit: 驗證文件
+        title: 驗證文檔
+        document_number: "文檔編號 (包括字母)"
+        submit: 驗證文檔
         error_verifying_census: "人口普查無法核實此文件。"
         form_errors: 阻止了對此文件的核實
         no_assignments: "你今天沒有辦公室輪班"

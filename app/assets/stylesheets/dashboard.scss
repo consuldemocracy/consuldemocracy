@@ -108,7 +108,7 @@
     a {
       display: block;
     }
-    
+
     h4,
     p {
       margin-bottom: 0;
@@ -158,7 +158,7 @@
     &::before {
       border: 2px solid #fb9497;
       color: #fb9497;
-      content: '\74';
+      content: "\74";
     }
   }
 
@@ -166,8 +166,8 @@
     border: 2px solid #00cb96;
     border-radius: rem-calc(40);
     color: #00cb96;
-    content: '\6c';
-    font-family: 'icons';
+    content: "\6c";
+    font-family: "icons";
     font-size: rem-calc(20);
     height: rem-calc(36);
     position: absolute;
@@ -185,6 +185,7 @@
   h4 {
     margin-top: $line-height;
   }
+
   .resource-description {
     min-height: $line-height * 4;
   }
@@ -212,8 +213,8 @@
     border: 1px solid $border;
     border-radius: rem-calc(36);
     color: #000;
-    content: '\77';
-    font-family: 'icons';
+    content: "\77";
+    font-family: "icons";
     font-size: rem-calc(24);
     height: rem-calc(36);
     left: -18px;
@@ -239,7 +240,7 @@
 
   &::before {
     color: #000;
-    font-family: 'icons';
+    font-family: "icons";
     font-size: rem-calc(24);
     left: 6px;
     position: absolute;
@@ -250,21 +251,21 @@
 .goal-supports {
 
   &::before {
-    content: '\77';
+    content: "\77";
   }
 }
 
 .goal-resource {
 
   &::before {
-    content: '\74';
+    content: "\74";
   }
 }
 
 .goal-days {
 
   &::before {
-    content: '\67';
+    content: "\67";
   }
 }
 
@@ -313,7 +314,7 @@
     &::before {
       background: linear-gradient(to right, rgba(231, 236, 240, 1) 0%, rgba(251, 251, 251, 1) 90%);
       border-left: 4px solid $brand;
-      content: '';
+      content: "";
       height: rem-calc(48);
       left: 0;
       padding-left: rem-calc(20);
@@ -431,8 +432,8 @@
 
     &::before {
       color: $brand;
-      content: '\6d';
-      font-family: 'icons';
+      content: "\6d";
+      font-family: "icons";
       left: 6px;
       position: absolute;
     }
@@ -527,7 +528,7 @@
 
     &::before {
       background: $pdf-secondary;
-      content: '';
+      content: "";
       position: absolute;
     }
 

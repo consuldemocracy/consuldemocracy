@@ -20,5 +20,5 @@ gl:
       destroy_document: Eliminar o documento
     errors:
       messages:
-        in_between: debe estar entre %{min} e %{max}
-        wrong_content_type: O tipo %{content_type} do ficheiro non coincide con ningún dos tipos de contido aceptados, %{accepted_content_types}
+        in_between: debe ter ente %{min} e %{max}
+        wrong_content_type: o tipo de contido da imaxe, %{content_type}, non coincide con ningún dos que se aceptan, %{accepted_content_types}

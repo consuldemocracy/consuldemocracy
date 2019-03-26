@@ -16,7 +16,7 @@ en:
       create_first_community_topic:
         first_theme_not_logged_in: No issue available, participate creating the first one.
         first_theme: Create the first community topic
-        sub_first_theme: "To create a theme you must to %{sign_in} o %{sign_up}."
+        sub_first_theme: "To create a theme you must %{sign_in} or %{sign_up}."
         sign_in: "sign in"
         sign_up: "sign up"
       tab:

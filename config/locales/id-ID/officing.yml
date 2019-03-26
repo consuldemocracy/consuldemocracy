@@ -7,7 +7,7 @@ id:
         title: Jajak pendapat officing
         info: Di sini anda dapat memvalidasi pengguna, dan menyimpan dokumen hasil pemungutan suara
     menu:
-      voters: Mengesahkan dokumen
+      voters: Memvalidasi dokumen
       total_recounts: Total menceritakan dan hasil
     polls:
       final:
@@ -23,7 +23,7 @@ id:
       new:
         title: "%{poll} - Tambahkan hasil"
         not_allowed: "Anda diperbolehkan untuk menambah hasil jajak pendapat ini"
-        booth: "Booth"
+        booth: "Bilik"
         date: "Tanggal"
         select_booth: "Pilih booth"
         ballots_white: "Benar-benar kosong surat suara"
@@ -45,9 +45,9 @@ id:
         create: "Dokumen yang diverifikasi dengan Sensus"
         not_allowed: "Anda tidak memiliki officing pergeseran hari ini"
       new:
-        title: Memvalidasi dokumen
-        document_number: "Nomor dokumen (termasuk surat-surat)"
-        submit: Memvalidasi dokumen
+        title: Mengesahkan dokumen
+        document_number: "Nomor dokumen (termasuk huruf)"
+        submit: Mengesahkan dokumen
         error_verifying_census: "Sensus itu dapat memverifikasi dokumen ini."
         form_errors: mencegah verifikasi dari dokumen ini
         no_assignments: "Anda tidak memiliki officing pergeseran hari ini"

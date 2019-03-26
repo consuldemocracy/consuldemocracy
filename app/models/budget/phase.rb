@@ -6,35 +6,37 @@ class Budget
     SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
-    belongs_to :budget
-    belongs_to :next_phase, class_name: 'Budget::Phase', foreign_key: :next_phase_id
-    has_one :prev_phase, class_name: 'Budget::Phase', foreign_key: :next_phase_id
+    translates :summary, touch: true
+    translates :description, touch: true
+    include Globalizable
 
+    belongs_to :budget
+    belongs_to :next_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
+    has_one :prev_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
+
+    validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
+    validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
-    validates :summary, length: { maximum: SUMMARY_MAX_LENGTH }
-    validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validate :invalid_dates_range?
     validate :prev_phase_dates_valid?
     validate :next_phase_dates_valid?
-
-    before_validation :sanitize_description
 
     after_save :adjust_date_ranges
     after_save :touch_budget
 
     scope :enabled,           -> { where(enabled: true) }
-    scope :published,         -> { enabled.where.not(kind: 'drafting') }
-    scope :drafting,          -> { find_by_kind('drafting') }
-    scope :informing,         -> { find_by_kind('informing') }
-    scope :accepting,         -> { find_by_kind('accepting')}
-    scope :reviewing,         -> { find_by_kind('reviewing')}
-    scope :selecting,         -> { find_by_kind('selecting')}
-    scope :valuating,         -> { find_by_kind('valuating')}
-    scope :publishing_prices, -> { find_by_kind('publishing_prices')}
-    scope :balloting,         -> { find_by_kind('balloting')}
-    scope :reviewing_ballots, -> { find_by_kind('reviewing_ballots')}
-    scope :finished,          -> { find_by_kind('finished')}
+    scope :published,         -> { enabled.where.not(kind: "drafting") }
+    scope :drafting,          -> { find_by_kind("drafting") }
+    scope :informing,         -> { find_by_kind("informing") }
+    scope :accepting,         -> { find_by_kind("accepting")}
+    scope :reviewing,         -> { find_by_kind("reviewing")}
+    scope :selecting,         -> { find_by_kind("selecting")}
+    scope :valuating,         -> { find_by_kind("valuating")}
+    scope :publishing_prices, -> { find_by_kind("publishing_prices")}
+    scope :balloting,         -> { find_by_kind("balloting")}
+    scope :reviewing_ballots, -> { find_by_kind("reviewing_ballots")}
+    scope :finished,          -> { find_by_kind("finished")}
 
     def next_enabled_phase
       next_phase&.enabled? ? next_phase : next_phase&.next_enabled_phase
@@ -46,7 +48,7 @@ class Budget
 
     def invalid_dates_range?
       if starts_at.present? && ends_at.present? && starts_at >= ends_at
-        errors.add(:starts_at, I18n.t('budgets.phases.errors.dates_range_invalid'))
+        errors.add(:starts_at, I18n.t("budgets.phases.errors.dates_range_invalid"))
       end
     end
 
@@ -70,7 +72,7 @@ class Budget
         prev_enabled_phase.assign_attributes(ends_at: starts_at)
         if prev_enabled_phase.invalid_dates_range?
           phase_name = I18n.t("budgets.phase.#{prev_enabled_phase.kind}")
-          error = I18n.t('budgets.phases.errors.prev_phase_dates_invalid', phase_name: phase_name)
+          error = I18n.t("budgets.phases.errors.prev_phase_dates_invalid", phase_name: phase_name)
           errors.add(:starts_at, error)
         end
       end
@@ -81,14 +83,11 @@ class Budget
         next_enabled_phase.assign_attributes(starts_at: ends_at)
         if next_enabled_phase.invalid_dates_range?
           phase_name = I18n.t("budgets.phase.#{next_enabled_phase.kind}")
-          error = I18n.t('budgets.phases.errors.next_phase_dates_invalid', phase_name: phase_name)
+          error = I18n.t("budgets.phases.errors.next_phase_dates_invalid", phase_name: phase_name)
           errors.add(:ends_at, error)
         end
       end
     end
 
-    def sanitize_description
-      self.description = WYSIWYGSanitizer.new.sanitize(description)
-    end
   end
 end

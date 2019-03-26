@@ -1,5 +1,5 @@
 section "Voting Debates, Proposals & Comments" do
-  not_org_users = User.where(['users.id NOT IN(?)', User.organizations.pluck(:id)])
+  not_org_users = User.where(["users.id NOT IN(?)", User.organizations.pluck(:id)])
   100.times do
     voter  = not_org_users.level_two_or_three_verified.all.sample
     vote   = [true, false].sample

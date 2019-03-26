@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Geozone do
   let(:geozone) { build(:geozone) }

@@ -16,6 +16,7 @@ id:
       confirmation_instructions:
         confirm_link: Konfirmasikan akun saya
         text: 'Anda bisa mengkonfirmasi akun email anda di link berikut:'
+        title: Selamat Datang
         welcome: Selamat Datang
       reset_password_instructions:
         change_link: Ubah kata sandi saya
@@ -40,8 +41,8 @@ id:
         new:
           email_label: Email
           organization_name_label: Nama organisasi
-          password_confirmation_label: Konfirmasi sandi
-          password_label: Kata Sandi
+          password_confirmation_label: Konfirmasi kata sandi
+          password_label: Kata sandi
           phone_number_label: Nomor telepon
           responsible_name_label: Nama lengkap orang yang bertanggung jawab atas kolektif
           responsible_name_note: Ini akan menjadi orang yang mewakili asosiasi / kolektif dalam yang namanya proposal disajikan
@@ -57,7 +58,7 @@ id:
     passwords:
       edit:
         change_submit: Ubah kata sandi saya
-        password_confirmation_label: Konfirmasi password baru
+        password_confirmation_label: Konfirmasi kata sandi baru
         password_label: Kata sandi baru
         title: Ubah kata sandi anda
       new:
@@ -66,20 +67,20 @@ id:
         title: Lupa kata sandi?
     sessions:
       new:
-        login_label: Email atau nama pengguna
-        password_label: Kata sandi
+        login_label: Surel atau nama pengguna
+        password_label: Kata Sandi
         remember_me: Ingat saya
-        submit: Masukkan
+        submit: Masukan
         title: Masuk
     shared:
       links:
-        login: Masukan
+        login: Masukkan
         new_confirmation: Belum menerima instruksi untuk bisa mengatifkan akun anda?
         new_password: Lupa kata sandi anda?
         new_unlock: Belum menerima instruksi untuk membuka kunci?
         signin_with_provider: Masuk dengan %{provider}
         signup: Belum punya akun? %{signup_link}
-        signup_link: Keluar
+        signup_link: Daftar
     unlocks:
       new:
         email_label: Email
@@ -99,17 +100,17 @@ id:
           email_label: Email
           leave_blank: Biarkan kosong jika anda tidak ingin memodifikasinya
           need_current: Kami membutuhkan kata sandi anda saat ini untuk mengkonfirmasi perubahannya
-          password_confirmation_label: Konfirmasi kata sandi baru
+          password_confirmation_label: Konfirmasi password baru
           password_label: Kata sandi baru
-          update_submit: Perbarui
+          update_submit: Memperbaharui
           waiting_for: 'Menunggu konfirmasi dari:'
         new:
           cancel: Batalkan masuk
           email_label: Email
           organization_signup: Apakah Anda mewakili sebuah organisasi atau kolektif? %{signup_link}
           organization_signup_link: Daftar disini
-          password_confirmation_label: Konfirmasi kata sandi
-          password_label: Kata sandi
+          password_confirmation_label: Konfirmasi sandi
+          password_label: Kata Sandi
           redeemable_code: Kode verifikasi akan diterima melalui email (opsional)
           submit: Daftar
           terms: Dengan mendaftarkan anda akan menerima %{terms}

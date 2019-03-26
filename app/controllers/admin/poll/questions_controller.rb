@@ -3,7 +3,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   include Translatable
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'
+  load_and_authorize_resource :question, class: "Poll::Question"
 
   def index
     @polls = Poll.all
@@ -56,8 +56,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   private
 
     def question_params
-      attributes = [:poll_id, :title, :question, :proposal_id]
-      params.require(:poll_question).permit(*attributes, *translation_params(Poll::Question))
+      attributes = [:poll_id, :question, :proposal_id]
+      params.require(:poll_question).permit(*attributes, translation_params(Poll::Question))
     end
 
     def search_params

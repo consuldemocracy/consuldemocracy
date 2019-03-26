@@ -1,1 +1,7 @@
 sv-FI:
+  activerecord:
+    attributes:
+      comment:
+        body: "Kommentit"
+      legislation/annotation:
+        text: Kommentit

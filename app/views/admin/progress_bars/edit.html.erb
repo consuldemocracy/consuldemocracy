@@ -1,0 +1,15 @@
+<% if @progress_bar.primary? %>
+  <% bar_title = t("admin.progress_bars.edit.title.primary") %>
+<% else %>
+  <% bar_title = t("admin.progress_bars.edit.title.secondary", title: @progress_bar.title) %>
+<% end %>
+
+<% provide :title do %>
+  <%= "#{t("admin.header.title")} - #{bar_title}" %>
+<% end %>
+
+<%= back_link_to progress_bars_index %>
+
+<h2><%= bar_title %></h2>
+
+<%= render "form" %>

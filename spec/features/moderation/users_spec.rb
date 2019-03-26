@@ -1,15 +1,15 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Moderate users' do
+feature "Moderate users" do
 
-  scenario 'Hide' do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 
     debate1 = create(:debate, author: citizen)
     debate2 = create(:debate, author: citizen)
     debate3 = create(:debate)
-    comment3 = create(:comment, user: citizen, commentable: debate3, body: 'SPAMMER')
+    comment3 = create(:comment, user: citizen, commentable: debate3, body: "SPAMMER")
 
     login_as(moderator.user)
     visit debates_path
@@ -25,7 +25,7 @@ feature 'Moderate users' do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      click_link 'Hide author'
+      click_link "Hide author"
     end
 
     expect(page).to have_current_path(debates_path)
@@ -41,17 +41,17 @@ feature 'Moderate users' do
 
     visit root_path
 
-    click_link 'Sign in'
-    fill_in 'user_login',    with: citizen.email
-    fill_in 'user_password', with: citizen.password
-    click_button 'Enter'
+    click_link "Sign in"
+    fill_in "user_login",    with: citizen.email
+    fill_in "user_password", with: citizen.password
+    click_button "Enter"
 
-    expect(page).to have_content 'Invalid login or password'
+    expect(page).to have_content "Invalid login or password"
     expect(page).to have_current_path(new_user_session_path)
   end
 
-  scenario 'Search and ban users' do
-    citizen = create(:user, username: 'Wanda Maximoff')
+  scenario "Search and ban users" do
+    citizen = create(:user, username: "Wanda Maximoff")
     moderator = create(:moderator)
 
     login_as(moderator.user)
@@ -59,13 +59,13 @@ feature 'Moderate users' do
     visit moderation_users_path
 
     expect(page).not_to have_content citizen.name
-    fill_in 'name_or_email', with: 'Wanda'
-    click_button 'Search'
+    fill_in "name_or_email", with: "Wanda"
+    click_button "Search"
 
     within("#moderation_users") do
         expect(page).to have_content citizen.name
         expect(page).not_to have_content "Blocked"
-        click_link 'Block'
+        click_link "Block"
     end
 
     within("#moderation_users") do

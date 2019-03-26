@@ -21,4 +21,4 @@ pt-BR:
     errors:
       messages:
         in_between: deve estar entre %{min} e %{max}
-        wrong_content_type: '%{content_type} tipo de conteúdo não coincide com qualquer um dos tipos de conteúdo aceitos %{accepted_content_types}'
+        wrong_content_type: tipo de conteúdo %{content_type} não coincide com qualquer um dos tipos de conteúdo aceitos %{accepted_content_types}

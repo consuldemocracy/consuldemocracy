@@ -22,15 +22,15 @@ val:
       tab:
         participants: Participants
       sidebar:
-        participate: Participa
-        new_topic: Crea un tema
+        participate: Participar
+        new_topic: Crear tema
       topic:
         edit: Editar tema
         destroy: Eliminar tema
         comments:
           zero: Sense comentaris
           one: 1 Comentari
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
       author: Autor
       back: Tornar a %{community} %{proposal}
     topic:
@@ -40,11 +40,11 @@ val:
         topic_title: Títol
         topic_text: Text inicial
         new:
-          submit_button: Crear tema
+          submit_button: Crea un tema
         edit:
           submit_button: Editar tema
         create:
-          submit_button: Crear tema
+          submit_button: Crea un tema
         update:
           submit_button: Actualitzar tema
       show:
@@ -57,4 +57,4 @@ val:
         recommendation_three: Gaudeix d'aquest espai, de les veus que l'omplin, també es teu.
   topics:
     show:
-      login_to_comment: Necessites %{signin} o %{signup} per comentar.
+      login_to_comment: Necessites %{signin} o %{signup} per a comentar.

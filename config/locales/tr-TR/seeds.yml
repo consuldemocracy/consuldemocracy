@@ -33,7 +33,6 @@ tr:
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
-      incoming_poll: "Gelen anket"
       recounting_poll: "Anket anlatırken"
       expired_poll_without_stats: "İstatistikler ve sonuçları olmadan anket süresi"
       expired_poll_with_stats: "İstatistikler ve sonuçları olmadan anket süresi"

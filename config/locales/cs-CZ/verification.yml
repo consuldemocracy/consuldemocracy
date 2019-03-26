@@ -1,0 +1,18 @@
+cs:
+  verification:
+    letter:
+      new:
+        user_permission_info: S vaším účtem můžete...
+    residence:
+      new:
+        date_of_birth: Datum narození
+        document_number_help_title: Nápověda
+        document_type_label: Typ dokumentu
+        postal_code: PSČ
+    step_1: Bydliště
+    step_2: Potvrzující kód
+    user_permission_debates: Zapojte se do debat
+    user_permission_proposal: Vytvořit nové návrhy
+    verified_user:
+      show:
+        phone_title: Telefonní čísla

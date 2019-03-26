@@ -29,7 +29,7 @@ en:
       unlock_instructions:
         subject: "Unlocking instructions"
     omniauth_callbacks:
-      failure: "It has not been possible to authorise you as %{kind} because \"%{reason}\"."
+      failure: "It has not been possible to authorize you as %{kind} because \"%{reason}\"."
       success: "Successfully identified as %{kind}."
     passwords:
       no_token: "You cannot access this page except through a password reset link. If you have accessed it through a password reset link, please check that the URL is complete."

@@ -37,7 +37,7 @@
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
-  <% if feature?('user.recommendations') && @recommended_proposals.present? %>
+  <% if feature?("user.recommendations") && @recommended_proposals.present? %>
     <%= render "shared/recommended_index", recommended: @recommended_proposals,
                                            disable_recommendations_path: recommendations_disable_proposals_path,
                                            namespace: "proposals" %>
@@ -71,23 +71,23 @@
 
       <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
 
-      <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
+      <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
 
       <% if @proposals.any? %>
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
                       new_proposal_path,
-                      class: 'button expanded' %>
+                      class: "button expanded" %>
         </div>
       <% end %>
 
       <div id="proposals-list">
         <% if @proposals.any? || current_user.blank? %>
           <% if proposals_default_view? %>
-            <%= render partial: 'proposals/proposal', collection: @proposals %>
+            <%= render partial: "proposals/proposal", collection: @proposals %>
           <% else %>
             <% @proposals.each do |proposal| %>
-              <%= render partial: '/proposals/proposal_minimal', locals: { proposal: proposal } %>
+              <%= render partial: "/proposals/proposal_minimal", locals: { proposal: proposal } %>
             <% end %>
           <% end %>
         <% else %>
@@ -110,14 +110,14 @@
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_path,
-                    class: 'button expanded' %>
+                    class: "button expanded" %>
         <% if params[:retired].blank? %>
-          <%= render 'categories' %>
-          <%= render "shared/tag_cloud", taggable: 'proposal' %>
-          <%= render 'geozones' %>
-          <%= render 'popular' %>
+          <%= render "categories" %>
+          <%= render "shared/tag_cloud", taggable: "proposal" %>
+          <%= render "geozones" %>
+          <%= render "popular" %>
         <% end %>
-        <%= render 'retired' %>
+        <%= render "retired" %>
       </aside>
     </div>
 

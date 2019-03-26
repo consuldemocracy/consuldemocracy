@@ -1,1 +1,7 @@
 tr:
+  management:
+    document_type_label: Belge Türü
+    email_label: E-posta
+    date_of_birth: Doğum tarihi
+    budgets:
+      table_actions: Aksiyon

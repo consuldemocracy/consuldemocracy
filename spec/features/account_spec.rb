@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Account' do
+feature "Account" do
 
   background do
     @user = create(:user, username: "Manuela Colau")
     login_as(@user)
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     visit root_path
 
     click_link "My account"
@@ -15,10 +15,10 @@ feature 'Account' do
     expect(page).to have_current_path(account_path, ignore_query: true)
 
     expect(page).to have_selector("input[value='Manuela Colau']")
-    expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
+    expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
   end
 
-  scenario 'Show organization' do
+  scenario "Show organization" do
     create(:organization, user: @user, name: "Manuela Corp")
 
     visit account_path
@@ -26,18 +26,18 @@ feature 'Account' do
     expect(page).to have_selector("input[value='Manuela Corp']")
     expect(page).not_to have_selector("input[value='Manuela Colau']")
 
-    expect(page).to have_selector(avatar('Manuela Corp'), count: 1)
+    expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
   end
 
-  scenario 'Edit' do
+  scenario "Edit" do
     visit account_path
 
-    fill_in 'account_username', with: 'Larry Bird'
-    check 'account_email_on_comment'
-    check 'account_email_on_comment_reply'
-    uncheck 'account_email_digest'
-    uncheck 'account_email_on_direct_message'
-    click_button 'Save changes'
+    fill_in "account_username", with: "Larry Bird"
+    check "account_email_on_comment"
+    check "account_email_on_comment_reply"
+    uncheck "account_email_digest"
+    uncheck "account_email_on_direct_message"
+    click_button "Save changes"
 
     expect(page).to have_content "Changes saved"
 
@@ -50,7 +50,7 @@ feature 'Account' do
     expect(find("#account_email_on_direct_message")).not_to be_checked
   end
 
-  scenario 'Edit email address' do
+  scenario "Edit email address" do
     visit account_path
 
     click_link "Change my credentials"
@@ -61,10 +61,10 @@ feature 'Account' do
 
     click_button "Update"
 
-    notice = 'Your account has been updated successfully;'\
-             ' however, we need to verify your new email address.'\
-             ' Please check your email and click on the link to'\
-             ' complete the confirmation of your new email address.'
+    notice = "Your account has been updated successfully;"\
+             " however, we need to verify your new email address."\
+             " Please check your email and click on the link to"\
+             " complete the confirmation of your new email address."
     expect(page).to have_content notice
 
     email = open_last_email
@@ -84,15 +84,15 @@ feature 'Account' do
     expect(page).to have_selector("input[value='new_user_email@example.com']")
   end
 
-  scenario 'Edit Organization' do
+  scenario "Edit Organization" do
     create(:organization, user: @user, name: "Manuela Corp")
     visit account_path
 
-    fill_in 'account_organization_attributes_name', with: 'Google'
-    check 'account_email_on_comment'
-    check 'account_email_on_comment_reply'
+    fill_in "account_organization_attributes_name", with: "Google"
+    check "account_email_on_comment"
+    check "account_email_on_comment_reply"
 
-    click_button 'Save changes'
+    click_button "Save changes"
 
     expect(page).to have_content "Changes saved"
 
@@ -111,8 +111,8 @@ feature 'Account' do
       login_as(official_user)
       visit account_path
 
-      check 'account_official_position_badge'
-      click_button 'Save changes'
+      check "account_official_position_badge"
+      click_button "Save changes"
       expect(page).to have_content "Changes saved"
 
       visit account_path
@@ -126,12 +126,12 @@ feature 'Account' do
       login_as(official_user2)
       visit account_path
 
-      expect(page).not_to have_css '#account_official_position_badge'
+      expect(page).not_to have_css "#account_official_position_badge"
 
       login_as(official_user3)
       visit account_path
 
-      expect(page).not_to have_css '#account_official_position_badge'
+      expect(page).not_to have_css "#account_official_position_badge"
     end
 
   end
@@ -139,34 +139,34 @@ feature 'Account' do
   scenario "Errors on edit" do
     visit account_path
 
-    fill_in 'account_username', with: ''
-    click_button 'Save changes'
+    fill_in "account_username", with: ""
+    click_button "Save changes"
 
     expect(page).to have_content error_message
   end
 
-  scenario 'Errors editing credentials' do
+  scenario "Errors editing credentials" do
     visit root_path
 
-    click_link 'My account'
+    click_link "My account"
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    expect(page).to have_link('Change my credentials')
-    click_link 'Change my credentials'
-    click_button 'Update'
+    expect(page).to have_link("Change my credentials")
+    click_link "Change my credentials"
+    click_button "Update"
 
     expect(page).to have_content error_message
   end
 
-  scenario 'Erasing account' do
+  scenario "Erasing account" do
     visit account_path
 
-    click_link 'Erase my account'
+    click_link "Erase my account"
 
-    fill_in 'user_erase_reason', with: 'a test'
+    fill_in "user_erase_reason", with: "a test"
 
-    click_button 'Erase my account'
+    click_button "Erase my account"
 
     expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
 
@@ -175,26 +175,26 @@ feature 'Account' do
     expect(page).to have_content "Invalid login or password"
   end
 
-  context 'Recommendations' do
+  context "Recommendations" do
 
     background do
-      Setting['feature.user.recommendations'] = true
-      Setting['feature.user.recommendations_on_debates'] = true
-      Setting['feature.user.recommendations_on_proposals'] = true
+      Setting["feature.user.recommendations"] = true
+      Setting["feature.user.recommendations_on_debates"] = true
+      Setting["feature.user.recommendations_on_proposals"] = true
     end
 
     after do
-      Setting['feature.user.recommendations'] = nil
-      Setting['feature.user.recommendations_on_debates'] = nil
-      Setting['feature.user.recommendations_on_proposals'] = nil
+      Setting["feature.user.recommendations"] = nil
+      Setting["feature.user.recommendations_on_debates"] = nil
+      Setting["feature.user.recommendations_on_proposals"] = nil
     end
 
-    scenario 'are enabled by default' do
+    scenario "are enabled by default" do
       visit account_path
 
-      expect(page).to have_content('Recommendations')
-      expect(page).to have_content('Show debates recommendations')
-      expect(page).to have_content('Show proposals recommendations')
+      expect(page).to have_content("Recommendations")
+      expect(page).to have_content("Show debates recommendations")
+      expect(page).to have_content("Show proposals recommendations")
       expect(find("#account_recommended_debates")).to be_checked
       expect(find("#account_recommended_proposals")).to be_checked
     end
@@ -202,16 +202,16 @@ feature 'Account' do
     scenario "can be disabled through 'My account' page" do
       visit account_path
 
-      expect(page).to have_content('Recommendations')
-      expect(page).to have_content('Show debates recommendations')
-      expect(page).to have_content('Show proposals recommendations')
+      expect(page).to have_content("Recommendations")
+      expect(page).to have_content("Show debates recommendations")
+      expect(page).to have_content("Show proposals recommendations")
       expect(find("#account_recommended_debates")).to be_checked
       expect(find("#account_recommended_proposals")).to be_checked
 
-      uncheck 'account_recommended_debates'
-      uncheck 'account_recommended_proposals'
+      uncheck "account_recommended_debates"
+      uncheck "account_recommended_proposals"
 
-      click_button 'Save changes'
+      click_button "Save changes"
 
       expect(find("#account_recommended_debates")).not_to be_checked
       expect(find("#account_recommended_proposals")).not_to be_checked

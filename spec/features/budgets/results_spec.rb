@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Results' do
+feature "Results" do
 
   let(:budget)  { create(:budget, phase: "finished") }
   let(:group)   { create(:budget_group, budget: budget) }
@@ -21,7 +21,7 @@ feature 'Results' do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_selector('a.is-active', text: budget.headings.first.name)
+    expect(page).to have_selector("a.is-active", text: budget.headings.first.name)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
@@ -65,7 +65,7 @@ feature 'Results' do
   end
 
   scenario "If budget is in a phase different from finished results can't be accessed" do
-    budget.update(phase: (Budget::Phase::PHASE_KINDS - ['drafting', 'finished']).sample)
+    budget.update(phase: (Budget::Phase::PHASE_KINDS - ["drafting", "finished"]).sample)
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
 

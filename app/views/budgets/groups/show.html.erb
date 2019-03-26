@@ -26,9 +26,9 @@
 <% end %>
 
 <div class="row margin">
-  <div id="select-district" class="small-12 medium-7 column select-district">
+  <div id="headings" class="small-12 medium-7 column select-district">
     <div class="row">
-      <% @group.headings.order_by_group_name.each_slice(7) do |slice| %>
+      <% @group.headings.sort_by_name.each_slice(7) do |slice| %>
         <div class="small-6 medium-4 column end">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"

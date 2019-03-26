@@ -10,7 +10,7 @@ module I18n
         return entry unless entry.is_a?(Hash) && count
 
         key = pluralization_key(entry, count)
-        return count unless entry.has_key?(key)
+        return "#{count}" unless entry.has_key?(key)
         entry[key]
       end
 

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Dashboard::Action do
   subject do
@@ -274,8 +274,11 @@ describe Dashboard::Action do
       context "for published proposals" do
 
         let!(:proposal) { create(:proposal) }
-        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true) }
-        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true) }
+        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
+                                                     published_proposal: true) }
+        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
+                                                     published_proposal: true) }
+
 
         it "when proposal has been created today and day_offset is valid only for today" do
           expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(resource.id)
@@ -297,8 +300,10 @@ describe Dashboard::Action do
       context "for draft proposals" do
 
         let!(:proposal) { create(:proposal, :draft) }
-        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false) }
-        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false) }
+        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
+                                                     published_proposal: false) }
+        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
+                                                     published_proposal: false) }
 
         it "when day_offset field is valid for today and invalid for yesterday" do
           expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(resource.id)

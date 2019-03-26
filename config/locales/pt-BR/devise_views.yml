@@ -19,7 +19,7 @@ pt-BR:
         title: Bem-vindo
         welcome: Bem-vindo
       reset_password_instructions:
-        change_link: Altere minha senha
+        change_link: Alterar minha senha
         hello: Olá
         ignore_text: Se você não pediu uma mudança de senha, você pode ignorar este e-mail.
         info_text: Sua senha não será alterada a menos que você acesse o link e a edite.
@@ -43,7 +43,7 @@ pt-BR:
           organization_name_label: Nome da organização
           password_confirmation_label: Confirmar senha
           password_label: Senha
-          phone_number_label: Número de Telefone
+          phone_number_label: Números de telefone
           responsible_name_label: Nome completo da pessoa responsável pelo coletivo
           responsible_name_note: Esta seria a pessoa que representa a associação/coletivo em nome de quem as propostas são apresentadas
           submit: Registre-se
@@ -57,7 +57,7 @@ pt-BR:
           title: Registro de organização / coletivo
     passwords:
       edit:
-        change_submit: Alterar minha senha
+        change_submit: Altere minha senha
         password_confirmation_label: Confirmar nova senha
         password_label: Nova senha
         title: Altere sua senha
@@ -80,7 +80,7 @@ pt-BR:
         new_unlock: Ainda não recebeu as instruções de desbloqueio?
         signin_with_provider: Conecte-se com %{provider}
         signup: Não tem uma conta? %{signup_link}
-        signup_link: Inscreva-se
+        signup_link: Inscrever
     unlocks:
       new:
         email_label: Email
@@ -102,7 +102,7 @@ pt-BR:
           need_current: Precisamos de sua senha atual para confirmar as alterações
           password_confirmation_label: Confirmar nova senha
           password_label: Nova senha
-          update_submit: Atualizar
+          update_submit: Atualização
           waiting_for: 'Aguardando confirmação de:'
         new:
           cancel: Cancelar o login

@@ -1,0 +1,6 @@
+so:
+  milestones:
+    index:
+      no_milestones: An lahayn yool qeexaan
+    show:
+      publication_date: "Labahiyey%{publication_date}"

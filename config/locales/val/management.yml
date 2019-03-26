@@ -10,7 +10,7 @@ val:
         title: Compte d'usuari
       edit:
         title: 'Editar compte d''usuari: Restablir contrasenya'
-        back: Arrere
+        back: Tornar
         password:
           password: Contrasenya
           send_email: Enviar email per a restablir contrasenya
@@ -35,7 +35,7 @@ val:
     document_number: Número de document
     document_type_label: Tipus de document
     document_verifications:
-      already_verified: Aquest usuari ja està verificat.
+      already_verified: Este compte d'usuari ja està verificat.
       has_no_account_html: Per a crear un usuari entra %{link} i fes clic en la opció <strong>'Registrar-se'</strong> en la part superior dreta de la pantalla.
       link: CONSUL
       in_census_has_following_permissions: 'Este usuari pot participar en el Portal de Govern Obert amb les següents posibilitats:'
@@ -48,7 +48,7 @@ val:
     email_label: Correu electrònic
     date_of_birth: Data de naixement
     email_verifications:
-      already_verified: Este compte d'usuari ja està verificat.
+      already_verified: Aquest usuari ja està verificat.
       choose_options: 'Eligeix una de les opcions següents:'
       document_found_in_census: Este document està en el registre del padró municipal, però encara no te un compte d'usuari associat.
       document_mismatch: 'Este correu electrònic correspon a un usuari que ya te associat el document %{document_number}(%{document_type})'
@@ -65,11 +65,11 @@ val:
       create_spending_proposal: Crear proposta d'inversió
       print_spending_proposals: Imprimir propostes d'inversió
       support_spending_proposals: Avalar propostes d'inversió
-      create_budget_investment: Crear projectes d'inversió
+      create_budget_investment: Crear nou projecte
       print_budget_investments: Imprimir projectes d'inversió
       support_budget_investments: Avalar projectes d'inversió
       users: Gestió d'usuaris
-      user_invites: Invitacions per a usuaris
+      user_invites: Enviar invitacions
       select_user: Seleccionar usuari
     permissions:
       create_proposals: Crear noves propostes
@@ -77,21 +77,21 @@ val:
       support_proposals: Avalar propostes
       vote_proposals: Participar en les votacions finals
     print:
-      proposals_info: Fes la teua proposta en http://url.consul
+      proposals_info: Crea la teua proposta en http://url.consul
       proposals_title: 'Propostes:'
       spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta informació
     proposals:
       alert:
-        unverified_user: Este usuari no està verificat
-      create_proposal: Crear una proposta
+        unverified_user: Usuari no verificat
+      create_proposal: Crear proposta
       print:
         print_button: Imprimir
       index:
         title: Avalar propostes
     budgets:
-      create_new_investment: Crear projecte d'inversió
+      create_new_investment: Crear projectes d'inversió
       print_investments: Imprimir projectes d'inversió
       support_investments: Avalar projectes d'inversió
       table_name: Nom
@@ -100,19 +100,19 @@ val:
       no_budgets: No hi ha pressupostos participatius actius.
     budget_investments:
       alert:
-        unverified_user: Usuari no verificat
-      create: Crear nou projecte
+        unverified_user: Este usuari no està verificat
+      create: Crear proposta d'inversió
       filters:
         heading: Concepte
         unfeasible: Projectes no factibles
       print:
         print_button: Imprimir
       search_results:
-        one: " que conté '%{search_term}'"
+        one: " que contenen '%{search_term}'"
         other: " que contenen '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Usuari no verificat
+        unverified_user: Este usuari no està verificat
       create: Crear proposta d'inversió
       filters:
         unfeasible: Propostes d'inversió no viables
@@ -120,7 +120,7 @@ val:
       print:
         print_button: Imprimir
       search_results:
-        one: " que conté '%{search_term}'"
+        one: " que contenen '%{search_term}'"
         other: " que contenen '%{search_term}'"
     sessions:
       signed_out: Has tancat la sessió correctament.
@@ -143,7 +143,7 @@ val:
       new:
         label: Correus electrònics
         info: "Introdueix els correus electrònics separats per comes (',')"
-        submit: Enviar invitacions
+        submit: Invitacions per a usuaris
         title: Invitacions per a usuaris
       create:
         success_html: S'han enviat <strong>%{count} invitacions</strong>.

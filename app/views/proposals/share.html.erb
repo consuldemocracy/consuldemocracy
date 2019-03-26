@@ -21,10 +21,11 @@
           <%= t("proposals.proposal.share.edit") %>
         </p>
 
-        <%= render partial: 'shared/social_share', locals: {
+        <%= render partial: "shared/social_share", locals: {
           title: @proposal.title,
           url: proposal_url(@proposal),
-          description: @proposal.summary
+          description: @proposal.summary,
+          mobile: @proposal.title
         } %>
 
         <% if can?(:dashboard, @proposal) %>
@@ -36,14 +37,6 @@
               <%= link_to t("proposals.share.dashboard"),
                           progress_proposal_dashboard_path(@proposal), class: "button expanded" %>
             </div>
-          </div>
-        <% end %>
-
-        <% if @proposal_improvement_path.present? %>
-          <div class="callout highlight margin-top text-center">
-            <p class="lead"><strong><%= t("proposals.proposal.improve_info") %></strong></p>
-            <%= link_to t("proposals.proposal.improve_info_link"),
-                        @proposal_improvement_path, class: "button" %>
           </div>
         <% end %>
 

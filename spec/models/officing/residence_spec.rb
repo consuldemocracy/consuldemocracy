@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Officing::Residence do
 
@@ -60,12 +60,12 @@ describe Officing::Residence do
       residence.save
       user = residence.user
 
-      expect(user.document_number).to eq('12345678Z')
+      expect(user.document_number).to eq("12345678Z")
       expect(user.document_type).to eq("1")
       expect(user.date_of_birth.year).to eq(1980)
       expect(user.date_of_birth.month).to eq(12)
       expect(user.date_of_birth.day).to eq(31)
-      expect(user.gender).to eq('male')
+      expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
     end
 
@@ -74,7 +74,7 @@ describe Officing::Residence do
       create(:user, document_number: "12345678Z",
                     document_type: "1",
                     date_of_birth: Date.new(1981, 11, 30),
-                    gender: 'female',
+                    gender: "female",
                     geozone: geozone)
 
       residence = build(:officing_residence,
@@ -84,12 +84,12 @@ describe Officing::Residence do
       residence.save
       user = residence.user
 
-      expect(user.document_number).to eq('12345678Z')
+      expect(user.document_number).to eq("12345678Z")
       expect(user.document_type).to eq("1")
       expect(user.date_of_birth.year).to eq(1981)
       expect(user.date_of_birth.month).to eq(11)
       expect(user.date_of_birth.day).to eq(30)
-      expect(user.gender).to eq('female')
+      expect(user.gender).to eq("female")
       expect(user.geozone).to eq(geozone)
     end
 

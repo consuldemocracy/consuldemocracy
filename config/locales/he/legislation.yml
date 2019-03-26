@@ -1,1 +1,45 @@
 he:
+  legislation:
+    annotations:
+      comments:
+        see_all: הצג הכל
+      form:
+        login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
+        signin: התחברות
+        signup: הרשמה
+      index:
+        title: הערות
+      show:
+        title: הערות
+    draft_versions:
+      show:
+        text_comments: הערות
+    processes:
+      header:
+        description: תיאור
+      proposals:
+        filters:
+          winners: Selected
+      index:
+        filter: Filter
+      shared:
+        debate_dates: דיון
+        allegations_dates: הערות
+        proposals_dates: הצעות
+    questions:
+      question:
+        comments:
+          zero: אין תגובות
+        debate: דיון
+      show:
+        share: שיתוף
+      participation:
+        signin: התחברות
+        signup: הרשמה
+        unauthenticated: נדרשת %{signin} או %{signup} בכדי להשתתף
+        verify_account: לאמת את החשבון
+    shared:
+      share: שיתוף
+    proposals:
+      form:
+        tags_label: "תחומים"

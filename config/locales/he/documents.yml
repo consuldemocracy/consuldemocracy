@@ -1,1 +1,9 @@
 he:
+  documents:
+    title: מסמכים
+    form:
+      title: מסמכים
+    errors:
+      messages:
+        in_between: חייב להיות בין %{min} ו %{max}
+        wrong_content_type: סוג תוכן %{content_type} אינו תואם לאף של סוגי תוכן המקובלים %{accepted_content_types}

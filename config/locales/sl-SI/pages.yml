@@ -1,1 +1,75 @@
 sl:
+  pages:
+    help:
+      title: "%{org} je platforma državljanske participacije"
+      menu:
+        debates: "Razprave"
+        proposals: "Predlogi"
+        budgets: "Participatorni proračuni"
+        polls: "Glasovanja"
+        other: "Druge relevantne informacije"
+        processes: "Procesi"
+      debates:
+        title: "Razprave"
+        description: "V sekciji %{link} lahko predstavljaš in deliš svoje mnenje o temah, ki se tičejo občine, z drugimi zainteresiranimi. Prav tako je to prostor za generiranje idej, ki skozi druge sekcije %{org} vodijo v konkretna dejanja občinskih svetov."
+        link: "Državljanske razprave"
+        feature_html: "Lahko odpiraš razprave, jih komentiraš in ocenjuješ s <strong>Strinjam se</strong> ali <strong>Ne strinjam se</strong>. Za to se moraš %{link}."
+        feature_link: "registrirati v %{org}"
+        image_alt: "Gumbi za ocenjevanje razprav"
+        figcaption: '"Strinjam se" in "Ne strinjam se" gumba za ocenjevanje razprav.'
+      proposals:
+        title: "Predlogi"
+        description: "V sekciji %{link} lahko oddajaš predloge za občinski svet. Ti predlogi potrebujejo podporo in če je dobijo dovolj, gredo na javno glasovanje. Predlogi, ki na glasovanju uspejo, so sprejeti s strani občinskega sveta in tudi izvedeni."
+        link: "Državljanski predlogi"
+        image_alt: "Gumb za podporo predloga"
+        figcaption_html: 'Gumb "Podpri" predlog.<br>Ko doseže potrebno število podpornikov, gre v glasovanje.'
+      budgets:
+        title: "Participatorni proračun"
+        description: "Sekcija %{link} pomaga ljudem sprejemati direktne odločitve o tem, za kaj se porabi del občinskega proračuna."
+        link: "Participatorni proračuni"
+        image_alt: "Različne faze participatornega proračuna"
+        figcaption_html: '"Podpora" and "Glasovanje" fazi participatornega proračuna.'
+      polls:
+        title: "Glasovanje"
+        description: "Sekcija %{link} se aktivira vsakič, ko predlog dobi 1 % podporo in gre na glasovanje ali ko občinski svet ljudem postavi vprašanje, glede katerega želi, da se opredelijo."
+        link: "Glasovanja"
+        feature_1: "Za sodelovanje na glasovanju moraš obiskati %{link} in verificirati svoj račun."
+        feature_1_link: "registriraj se v %{org_name}"
+      processes:
+        title: "Procesi"
+        description: "V sekciji %{link}, državljani sodelujejo v pisanju osnutkov in popravkov regulacij, ki se tičejo mesta oz. občine, in lahko podajajo mnenja o občinskih politikah."
+        link: "Procesi"
+      faq:
+        title: "Tehnične težave?"
+        description: "Preberi FAQ in najdi odgovore na svoja vprašanja."
+        button: "Oglej si pogosto zastavljena vprašanja"
+        page:
+          title: "Pogosto zastavljena vprašanja (FAQ)"
+          description: "Uporabi to stran, da razrešiš najpogostejše dileme uporabnikov tega spletnega mesta."
+          faq_1_title: "1. Vprašanje"
+          faq_1_description: "Primer vprašanja."
+      other:
+        title: "Druge relevantne informacije"
+        how_to_use: "Uporabi %{org_name} v svojem mestu/občini"
+      how_to_use:
+        text: |-
+          Uporabi orodje v svojem lokalnem okolju ali pa nam ga pomagaj nadgraditi, gre za zastonjsko programsko opremo.
+
+          Ta Open Government Portal uporablja [CONSUL app](https://github.com/consul/consul 'consul github'), ki je zastonj in ima [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ki preprosto pomeni, da lahko vsakdo prosto uporablja, kopira, si ogleduje, modificira in redistribuira kodo, dokler to počne pod istimi pogoji.
+
+          Če si programer/-ka, si lahko kodo ogledaš tukaj: [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Uporabi orodje v svojem lokalnem okolju
+    titles:
+      accessibility: Dostopnosti
+      conditions: Pogoji uporabe
+      help: "Kaj je %{org}? - državljanska participacija"
+      privacy: Zasebnostna politika
+    verify:
+      code: Koda, ki si jo prejel/-a po e-pošti
+      email: E-naslov
+      info: 'Za preverjanje svojega računa vnesi svoje podatke o dostopu:'
+      info_code: 'Zdaj vnesi kodo, ki si jo prejel/-a po e-pošti:'
+      password: Geslo
+      submit: Verificiraj moj račun
+      title: Verificiraj svoj račun

@@ -16,7 +16,7 @@
         <div class="small-12 medium-9 column">
     <% end %>
         <div class="proposal-content">
-          <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
+          <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %></h3>
             <p class="proposal-info">
               <span class="icon-comments"></span>&nbsp;
@@ -60,8 +60,8 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-        <%= render 'legislation/proposals/votes',
-                  { proposal: proposal, vote_url: vote_legislation_process_proposal_path(proposal.legislation_process_id, proposal, value: 'yes') } %>
+        <%= render "legislation/proposals/votes",
+                  { proposal: proposal, vote_url: vote_legislation_process_proposal_path(proposal.legislation_process_id, proposal, value: "yes") } %>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin officials' do
+feature "Admin officials" do
 
   background do
     @citizen = create(:user, username: "Citizen Kane")
@@ -9,7 +9,7 @@ feature 'Admin officials' do
     login_as(@admin.user)
   end
 
-  scenario 'Index' do
+  scenario "Index" do
     visit admin_officials_path
 
     expect(page).to have_content @official.name
@@ -18,7 +18,7 @@ feature 'Admin officials' do
     expect(page).to have_content @official.official_level
   end
 
-  scenario 'Edit an official' do
+  scenario "Edit an official" do
     visit admin_officials_path
     click_link @official.name
 
@@ -28,49 +28,49 @@ feature 'Admin officials' do
     expect(page).to have_content @official.name
     expect(page).to have_content @official.email
 
-    fill_in 'user_official_position', with: 'School Teacher'
-    select '3', from: 'user_official_level', exact: false
-    click_button 'Update User'
+    fill_in "user_official_position", with: "School Teacher"
+    select "3", from: "user_official_level", exact: false
+    click_button "Update User"
 
-    expect(page).to have_content 'Details of official saved'
+    expect(page).to have_content "Details of official saved"
 
     visit admin_officials_path
 
     expect(page).to have_content @official.name
-    expect(page).to have_content 'School Teacher'
-    expect(page).to have_content '3'
+    expect(page).to have_content "School Teacher"
+    expect(page).to have_content "3"
   end
 
-  scenario 'Create an official' do
+  scenario "Create an official" do
     visit admin_officials_path
-    fill_in 'name_or_email', with: @citizen.email
-    click_button 'Search'
+    fill_in "name_or_email", with: @citizen.email
+    click_button "Search"
 
     expect(page).to have_current_path(search_admin_officials_path, ignore_query: true)
     expect(page).not_to have_content @official.name
 
     click_link @citizen.name
 
-    fill_in 'user_official_position', with: 'Hospital manager'
-    select '4', from: 'user_official_level', exact: false
-    click_button 'Update User'
+    fill_in "user_official_position", with: "Hospital manager"
+    select "4", from: "user_official_level", exact: false
+    click_button "Update User"
 
-    expect(page).to have_content 'Details of official saved'
+    expect(page).to have_content "Details of official saved"
 
     visit admin_officials_path
 
     expect(page).to have_content @official.name
     expect(page).to have_content @citizen.name
-    expect(page).to have_content 'Hospital manager'
-    expect(page).to have_content '4'
+    expect(page).to have_content "Hospital manager"
+    expect(page).to have_content "4"
   end
 
-  scenario 'Destroy' do
+  scenario "Destroy" do
     visit edit_admin_official_path(@official)
 
     click_link "Remove 'Official' status"
 
-    expect(page).to have_content 'Details saved: the user is no longer an official'
+    expect(page).to have_content "Details saved: the user is no longer an official"
     expect(page).to have_current_path(admin_officials_path, ignore_query: true)
     expect(page).not_to have_content @citizen.name
     expect(page).not_to have_content @official.name

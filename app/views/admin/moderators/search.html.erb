@@ -1,6 +1,6 @@
 <h2><%= t("admin.moderators.search.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_moderators_path %>
+<%= render "admin/shared/user_search", url: search_admin_moderators_path %>
 
 <div id="moderators">
   <% if @users.any? %>
@@ -19,12 +19,12 @@
           <td><%= user.email %></td>
           <td>
             <% if user.moderator? && user.moderator.persisted? %>
-              <%= link_to t('admin.moderators.moderator.delete'),
+              <%= link_to t("admin.moderators.moderator.delete"),
                           admin_moderator_path(user),
                           method: :delete,
                           class: "button hollow alert expanded" %>
             <% else %>
-              <%= link_to t('admin.moderators.moderator.add'),
+              <%= link_to t("admin.moderators.moderator.add"),
                           { controller: "admin/moderators",
                             action: :create,
                             user_id: user },

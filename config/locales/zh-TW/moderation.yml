@@ -3,7 +3,7 @@ zh-TW:
     comments:
       index:
         block_authors: 封鎖作者
-        confirm: 您確定？
+        confirm: 您是否確定？
         filter: 篩選器
         filters:
           all: 所有
@@ -25,7 +25,7 @@ zh-TW:
     debates:
       index:
         block_authors: 封鎖作者
-        confirm: 您確定？
+        confirm: 您是否確定？
         filter: 篩選器
         filters:
           all: 所有
@@ -53,7 +53,7 @@ zh-TW:
     proposals:
       index:
         block_authors: 封鎖作者
-        confirm: 您確定？
+        confirm: 您是否確定？
         filter: 篩選器
         filters:
           all: 所有
@@ -72,7 +72,7 @@ zh-TW:
     budget_investments:
       index:
         block_authors: 封鎖作者
-        confirm: 您確定？
+        confirm: 您是否確定？
         filter: 篩選器
         filters:
           all: 所有
@@ -91,7 +91,7 @@ zh-TW:
     proposal_notifications:
       index:
         block_authors: 封鎖作者
-        confirm: 您確定？
+        confirm: 您是否確定？
         filter: 篩選器
         filters:
           all: 所有
@@ -109,7 +109,7 @@ zh-TW:
         title: 建議通知
     users:
       index:
-        hidden: 已被封鎖
+        hidden: 禁用
         hide: 封鎖
         search: 搜尋
         search_placeholder: 電郵或用戶名

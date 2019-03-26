@@ -9,10 +9,10 @@
           <span class="js-comments-count">(<%= @investment.comments_count %>)</span>
         </h2>
 
-        <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
+        <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
 
         <% if user_signed_in? && allow_comments %>
-          <%= render 'comments/form', { commentable: @investment,
+          <%= render "comments/form", { commentable: @investment,
                                         parent_id: nil,
                                         toggeable: false,
                                         valuation: valuation } %>
@@ -27,7 +27,7 @@
         <% end %>
 
         <% @comment_tree.root_comments.each do |comment| %>
-          <%= render 'comments/comment', { comment: comment,
+          <%= render "comments/comment", { comment: comment,
                                            valuation: valuation,
                                            allow_comments: allow_comments }  %>
         <% end %>

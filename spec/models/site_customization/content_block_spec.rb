@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe SiteCustomization::ContentBlock, type: :model do
   let(:block) { build(:site_customization_content_block) }

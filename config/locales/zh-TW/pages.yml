@@ -4,7 +4,6 @@ zh-TW:
       title: 使用條款及條件
       subtitle: 關於開放政府門戶網站個人數據使用，隱私和保護條件的法律聲明
       description: 使用條件，隱私和個人數據保護的資訊頁面。
-    general_terms: 條款及條件
     help:
       title: "%{org} 是公民參與的平台"
       guide: "本指南解釋了每個%{org} 部分的用途以及它們的操作原理。"
@@ -60,9 +59,9 @@ zh-TW:
       how_to_use:
         text: |-
           在您本地政府中使用它，或幫助我們改進它，這是免費軟件。
-          
+
           這個開放政府門戶網站使用 [CONSUL app](https://github.com/consul/consul 'consul github') ，這是一個免費軟件，使用 [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。簡單來說，就是說任何人都可以自由地使用原始碼，複製它，詳細查看，修改它，並將他想要的修改重新發送到全球 (並允許其他人也可同樣做) 。 因為我們認為文化在發佈後會更好，更豐富。
-          
+
           如果您是程序員，您可以在 [CONSUL app](https://github.com/consul/consul 'consul github')查看原始碼，並幫助我們改進它。
       titles:
         how_to_use: 在您本地政府中使用它
@@ -87,15 +86,11 @@ zh-TW:
             - 
               field: '負責該文件的機構：'
               description: 負責該文件的機構
-        - 
-          text: 有關方可以在負責機構指示之前行使獲取、糾正、取消和反對的權利，所有這些權利都是根據12月13日第15/1999號組織法第5條關於個人數據保護的條款。
-        - 
-          text: 作為一般原則，本網站不會共享或披露所獲得的信息，除非經用戶授權，或根據司法機關、檢察官辦公室或司法警察要求提供信息，或受 12月13日第15/1999號組織法第11條關於個人數據保護的管制。
     accessibility:
       title: 無障礙功能
       description: |-
         網絡無障礙功能是指所有人都可以訪問網絡及其內容，以克服可能出現的殘疾障礙 (物理，智力或技術)，還是來自使用環境 (技術或環境) 的障礙。
-        
+
         當網站設計時已考慮了無障礙功能，所有用戶都可以在相同條件下訪問內容，例如：
       examples:
         - 為圖像提供替代文本，盲人或視障用戶可以使用特殊閱讀器來取得資訊。
@@ -121,7 +116,7 @@ zh-TW:
               page_column: 建議
             - 
               key_column: 3
-              page_column: 投票
+              page_column: 票
             - 
               key_column: 4
               page_column: 參與性預算

@@ -1,25 +1,34 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Homepage' do
+feature "Homepage" do
 
   background do
     admin = create(:administrator).user
     login_as(admin)
 
-    Setting['feature.homepage.widgets.feeds.proposals'] = false
-    Setting['feature.homepage.widgets.feeds.debates'] = false
-    Setting['feature.homepage.widgets.feeds.processes'] = false
-    Setting['feature.user.recommendations'] = false
+    Setting["homepage.widgets.feeds.proposals"] = false
+    Setting["homepage.widgets.feeds.debates"] = false
+    Setting["homepage.widgets.feeds.processes"] = false
+    Setting["feature.user.recommendations"] = false
   end
 
   let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
   let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
   let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
 
-  let(:user_recommendations) { Setting.where(key: 'feature.user.recommendations').first }
+  let(:user_recommendations) { Setting.where(key: "feature.user.recommendations").first }
   let(:user)                 { create(:user) }
 
-  scenario "Header" do
+  context "Header" do
+
+    scenario "Admin menu links to homepage path" do
+
+      visit new_admin_widget_card_path(header_card: true)
+
+      click_link Setting["org_name"] + " Administration"
+
+      expect(page).to have_current_path(admin_root_path)
+    end
   end
 
   context "Feeds" do
@@ -30,14 +39,18 @@ feature 'Homepage' do
       visit admin_homepage_path
 
       within("#widget_feed_#{proposals_feed.id}") do
-        select '1', from: 'widget_feed_limit'
+        select "1", from: "widget_feed_limit"
         accept_confirm { click_button "Enable" }
       end
 
       visit root_path
 
-      expect(page).to have_content "Most active proposals"
-      expect(page).to have_css(".proposal", count: 1)
+      within("#feed_proposals") do
+        expect(page).to have_content "Most active proposals"
+        expect(page).to have_css(".proposal", count: 1)
+      end
+
+      expect(page).not_to have_css("#feed_proposals.medium-8")
     end
 
     scenario "Debates", :js do
@@ -45,14 +58,50 @@ feature 'Homepage' do
 
       visit admin_homepage_path
       within("#widget_feed_#{debates_feed.id}") do
-        select '2', from: 'widget_feed_limit'
+        select "2", from: "widget_feed_limit"
         accept_confirm { click_button "Enable" }
       end
 
       visit root_path
 
-      expect(page).to have_content "Most active debates"
-      expect(page).to have_css(".debate", count: 2)
+      within("#feed_debates") do
+        expect(page).to have_content "Most active debates"
+        expect(page).to have_css(".debate", count: 2)
+      end
+
+      expect(page).not_to have_css("#feed_debates.medium-4")
+    end
+
+    scenario "Proposals and debates", :js do
+      3.times { create(:proposal) }
+      3.times { create(:debate) }
+
+      visit admin_homepage_path
+
+      within("#widget_feed_#{proposals_feed.id}") do
+        select "3", from: "widget_feed_limit"
+        accept_confirm { click_button "Enable" }
+      end
+
+      within("#widget_feed_#{debates_feed.id}") do
+        select "3", from: "widget_feed_limit"
+        accept_confirm { click_button "Enable" }
+      end
+
+      visit root_path
+
+      within("#feed_proposals") do
+        expect(page).to have_content "Most active proposals"
+        expect(page).to have_css(".proposal", count: 3)
+      end
+
+      within("#feed_debates") do
+        expect(page).to have_content "Most active debates"
+        expect(page).to have_css(".debate", count: 3)
+      end
+
+      expect(page).to have_css("#feed_proposals.medium-8")
+      expect(page).to have_css("#feed_debates.medium-4")
     end
 
     scenario "Processes", :js do
@@ -60,7 +109,7 @@ feature 'Homepage' do
 
       visit admin_homepage_path
       within("#widget_feed_#{processes_feed.id}") do
-        select '3', from: 'widget_feed_limit'
+        select "3", from: "widget_feed_limit"
         accept_confirm { click_button "Enable" }
       end
 

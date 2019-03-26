@@ -1,1 +1,21 @@
 en-US:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+    passwords:
+      new:
+        email_label: Email
+    unlocks:
+      new:
+        email_label: Email
+    users:
+      registrations:
+        edit:
+          email_label: Email
+        new:
+          email_label: Email

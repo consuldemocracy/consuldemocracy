@@ -10,12 +10,15 @@ en:
       budget/investment:
         one: "Investment"
         other: "Investments"
-      budget/investment/milestone:
+      milestone:
         one: "milestone"
         other: "milestones"
-      budget/investment/status:
-        one: "Investment status"
-        other: "Investment statuses"
+      milestone/status:
+        one: "Milestone Status"
+        other: "Milestone Statuses"
+      progress_bar:
+        one: "Progress bar"
+        other: "Progress bars"
       comment:
         one: "Comment"
         other: "Comments"
@@ -82,9 +85,6 @@ en:
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
-      legislation/draft_texts:
-          one: "Draft"
-          other: "Drafts"
       legislation/questions:
         one: "Question"
         other: "Questions"
@@ -140,14 +140,26 @@ en:
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
-      budget/investment/milestone:
-        status_id: "Current investment status (optional)"
+      geozone:
+        name: Name
+        external_code: "External code (optional)"
+        census_code: "Census code (optional)"
+        html_map_coordinates: "HTML <map> Coordinates (optional)"
+      milestone:
+        status_id: "Current status (optional)"
         title: "Title"
         description: "Description (optional if there's an status assigned)"
         publication_date: "Publication date"
-      budget/investment/status:
+      milestone/status:
         name: "Name"
         description: "Description (optional)"
+      progress_bar:
+        kind: "Type"
+        title: "Title"
+        percentage: "Current progress"
+      progress_bar/kind:
+        primary: "Primary"
+        secondary: "Secondary"
       budget/heading:
         name: "Heading name"
         price: "Price"
@@ -194,11 +206,17 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+      poll/translation:
+        name: "Name"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
+      poll/question/translation:
+        title: "Question"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -214,6 +232,10 @@ en:
         more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
+      site_customization/page/translation:
+        title: Title
+        subtitle: Subtitle
+        content: Content
       site_customization/image:
         name: Name
         image: Image
@@ -221,25 +243,44 @@ en:
         name: Name
         locale: locale
         body: Body
+      banner:
+        background_color: Background color
+        font_color: Font color
       legislation/process:
         title: Process Title
         summary: Summary
         description: Description
         additional_info: Additional info
-        start_date: Start date
-        end_date: End date
-        debate_start_date: Debate start date
-        debate_end_date: Debate end date
+        start_date: Start
+        end_date: End
+        debate_start_date: Start
+        debate_end_date: End
+        draft_start_date: Start
+        draft_end_date: End
         draft_publication_date: Draft publication date
-        allegations_start_date: Allegations start date
-        allegations_end_date: Allegations end date
+        allegations_start_date: Start
+        allegations_end_date: End
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: End
         result_publication_date: Final result publication date
+        background_color: Background color
+        font_color: Font color
+      legislation/process/translation:
+        title: Process Title
+        summary: Summary
+        description: Description
+        additional_info: Additional info
+        milestones_summary: Summary
       legislation/draft_version:
         title: Version title
         body: Text
         changelog: Changes
         status: Status
         final_version: Final version
+      legislation/draft_version/translation:
+        title: Version title
+        body: Text
+        changelog: Changes
       legislation/question:
         title: Title
         question_options: Options
@@ -256,6 +297,10 @@ en:
       poll/question/answer:
         title: Answer
         description: Description
+      poll/question/answer/translation:
+        title: Answer
+        description: Description
+      poll/question/answer/video:
         title: Title
         url: External video
       newsletter:
@@ -263,12 +308,26 @@ en:
         subject: Subject
         from: From
         body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Title
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Title
+        body: Text
       widget/card:
         label: Label (optional)
         title: Title
         description: Description
         link_text: Link text
         link_url: Link URL
+        columns: Number of columns
+      widget/card/translation:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
       widget/feed:
         limit: Number of items
       dashboard/action:
@@ -331,8 +390,10 @@ en:
               invalid_date_range: must be on or after the start date
             debate_end_date:
               invalid_date_range: must be on or after the debate start date
+            draft_end_date:
+              invalid_date_range: must be on or after the draft start date
             allegations_end_date:
-              invalid_date_range: must be on or after the allegations start date
+              invalid_date_range: must be on or after the comments start date
         proposal:
           attributes:
             tag_list:
@@ -344,7 +405,7 @@ en:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "You have to wait a minimum of %{interval} days between notifications"
         signature:
           attributes:
             document_number:

@@ -20,7 +20,7 @@ es-PE:
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"
@@ -57,7 +57,7 @@ es-PE:
       sincerely: "Atentamente,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"

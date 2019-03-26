@@ -1,8 +1,3 @@
-def in_browser(name)
-  old_session = Capybara.session_name
-
-  Capybara.session_name = name
-  yield
-
-  Capybara.session_name = old_session
+def in_browser(name, &block)
+  Capybara.using_session(name, &block)
 end

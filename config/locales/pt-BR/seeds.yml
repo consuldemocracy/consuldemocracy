@@ -49,7 +49,6 @@ pt-BR:
     polls:
       current_poll: "Votação atual"
       current_poll_geozone_restricted: "Votação atual restrita por geozona"
-      incoming_poll: "Votação próxima"
       recounting_poll: "Votação em recontagem"
       expired_poll_without_stats: "Votação expirada sem estatísticas e resultados"
       expired_poll_with_stats: "Votação expirada com estatísticas e resultados"

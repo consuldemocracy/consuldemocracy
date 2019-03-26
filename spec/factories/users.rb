@@ -3,8 +3,8 @@ FactoryBot.define do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 
-    password            'judgmentday'
-    terms_of_service    '1'
+    password            "judgmentday"
+    terms_of_service    "1"
     confirmed_at        { Time.current }
     public_activity     true
 
@@ -74,7 +74,7 @@ FactoryBot.define do
     user
   end
 
-  factory :poll_officer, class: 'Poll::Officer' do
+  factory :poll_officer, class: "Poll::Officer" do
     user
   end
 

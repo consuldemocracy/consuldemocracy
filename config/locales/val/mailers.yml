@@ -11,6 +11,7 @@ val:
     email_verification:
       click_here_to_verify: en aquest enllaç
       instructions_2_html: Aquest email es per verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si estes no son les teues dades, si us plau no pulses l'enllaç anterior i ignora aquest email.
+      instructions_html: Per acabar de verificar el teu compte d'usuari has de polsar %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
       title: Verifica el teu compte amb el següent enllaç
@@ -43,6 +44,7 @@ val:
       title_html: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
+      text: "Gracies per sol·licitar unirte a %{org}! En uns segons podras començar a participar, sols tens que omplir el següent formulari:"
       thanks: "Moltes gràcies."
       title: "Benvingut a %{org}"
       button: Completar registre
@@ -72,6 +74,6 @@ val:
       sincerely: "Atentament"
     budget_investment_unselected:
       subject: "La teua proposta d'inversió '%{code}' no ha sigut seleccionada"
-      hi: "Benvollgut/da usuari/a,"
+      hi: "Estimat usuari,"
       thanks: "Gràcies de nou per la teua participació."
       sincerely: "Atentament"

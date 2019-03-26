@@ -21,7 +21,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.js
       format.csv do
         send_data Budget::Investment::Exporter.new(@investments).to_csv,
-                  filename: 'budget_investments.csv'
+                  filename: "budget_investments.csv"
       end
     end
   end
@@ -38,7 +38,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def update
-    set_valuation_tags
     if @investment.update(budget_investment_params)
       redirect_to admin_budget_budget_investment_path(@budget,
                                                       @investment,
@@ -72,12 +71,13 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def resource_name
-      resource_model.parameterize('_')
+      resource_model.parameterize("_")
     end
 
     def load_investments
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
-      @investments = @investments.order_filter(params[:sort_by]) if params[:sort_by].present?
+                                       .order_filter(params)
+
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
@@ -117,11 +117,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
     end
 
-    def set_valuation_tags
-      @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
-      params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
-    end
-
     def parse_valuation_filters
       if params[:valuator_or_group_id]
         model, id = params[:valuator_or_group_id].split("_")
@@ -133,5 +128,4 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
         end
       end
     end
-
 end

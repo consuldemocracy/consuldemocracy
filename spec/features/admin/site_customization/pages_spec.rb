@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Admin custom pages" do
 
@@ -7,12 +7,39 @@ feature "Admin custom pages" do
     login_as(admin.user)
   end
 
-  scenario "Index" do
-    custom_page = create(:site_customization_page)
-    visit admin_site_customization_pages_path
+  it_behaves_like "translatable",
+                  "site_customization_page",
+                  "edit_admin_site_customization_page_path",
+                  %w[title subtitle],
+                  { "content" => :ckeditor }
 
-    expect(page).to have_content(custom_page.title)
-    expect(page).to have_content(custom_page.slug)
+  context "Index" do
+
+    scenario "lists all created custom pages" do
+      custom_page = create(:site_customization_page)
+      visit admin_site_customization_pages_path
+
+      expect(page).to have_content(custom_page.title)
+      expect(page).to have_content(custom_page.slug)
+    end
+
+    scenario "should contain all default custom pages published populated by db:seeds" do
+      slugs = %w[accessibility conditions faq privacy welcome_not_verified
+                 welcome_level_two_verified welcome_level_three_verified]
+
+      visit admin_site_customization_pages_path
+
+      expect(SiteCustomization::Page.count).to be 7
+      slugs.each do |slug|
+        expect(SiteCustomization::Page.find_by_slug(slug).status).to eq "published"
+      end
+
+      expect(all("[id^='site_customization_page_']").count).to be 7
+      slugs.each do |slug|
+        expect(page).to have_content slug
+      end
+    end
+
   end
 
   context "Create" do
@@ -28,10 +55,10 @@ feature "Admin custom pages" do
 
       click_link "Create new page"
 
-      fill_in "site_customization_page_title_en", with: "An example custom page"
-      fill_in "site_customization_page_subtitle_en", with: "Page subtitle"
+      fill_in "Title", with: "An example custom page"
+      fill_in "Subtitle", with: "Page subtitle"
       fill_in "site_customization_page_slug", with: "example-page"
-      fill_in "site_customization_page_content_en", with: "This page is about..."
+      fill_in "Content", with: "This page is about..."
 
       click_button "Create Custom page"
 
@@ -57,7 +84,7 @@ feature "Admin custom pages" do
       expect(page).to have_selector("h2", text: "An example custom page")
       expect(page).to have_selector("input[value='custom-example-page']")
 
-      fill_in "site_customization_page_title_en", with: "Another example custom page"
+      fill_in "Title", with: "Another example custom page"
       fill_in "site_customization_page_slug", with: "another-custom-example-page"
       click_button "Update Custom page"
 

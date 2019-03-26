@@ -1,5 +1,7 @@
 class Legislation::ProcessesController < Legislation::BaseController
-  has_filters %w[open next past], only: :index
+  include RandomSeed
+
+  has_filters %w[open past], only: :index
   has_filters %w[random winners], only: :proposals
 
   load_and_authorize_resource
@@ -7,14 +9,18 @@ class Legislation::ProcessesController < Legislation::BaseController
   before_action :set_random_seed, only: :proposals
 
   def index
-    @current_filter ||= 'open'
-    @processes = ::Legislation::Process.send(@current_filter).published.page(params[:page])
+    @current_filter ||= "open"
+    @processes = ::Legislation::Process.send(@current_filter).published
+                 .not_in_draft.order(start_date: :desc).page(params[:page])
   end
 
   def show
     draft_version = @process.draft_versions.published.last
+    allegations_phase = @process.allegations_phase
 
-    if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version.present?
+    if @process.homepage_enabled? && @process.homepage.present?
+      render :show
+    elsif  allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to debate_legislation_process_path(@process)
@@ -87,6 +93,10 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
   end
 
+  def milestones
+    @phase = :milestones
+  end
+
   def proposals
     set_process
     @phase = :proposals_phase
@@ -95,7 +105,12 @@ class Legislation::ProcessesController < Legislation::BaseController
     @proposals = @proposals.search(params[:search]) if params[:search].present?
 
     @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
-    @proposals = @proposals.send(@current_filter).page(params[:page])
+
+    if @current_filter == "random"
+      @proposals = @proposals.sort_by_random(session[:random_seed]).page(params[:page])
+    else
+      @proposals = @proposals.send(@current_filter).page(params[:page])
+    end
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       legislation_proposal_votes(@proposals)
@@ -114,16 +129,5 @@ class Legislation::ProcessesController < Legislation::BaseController
     def set_process
       return if member_method?
       @process = ::Legislation::Process.find(params[:process_id])
-    end
-
-    def set_random_seed
-      seed = begin
-               Float(params[:random_seed] || session[:random_seed] || (rand(99) / 100.0))
-             rescue
-               0
-             end
-      session[:random_seed], params[:random_seed] = seed
-      seed = (-1..1).cover?(seed) ? seed : 1
-      ::Legislation::Proposal.connection.execute "select setseed(#{seed})"
     end
 end

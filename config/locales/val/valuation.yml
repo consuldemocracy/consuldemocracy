@@ -17,20 +17,21 @@ val:
         table_assigned_investments_valuation_open: Propostes d'inversió asignades en avaluació
         table_actions: Accions
         evaluate: Avaluar
+        no_budgets: "No hi ha pressupostos"
     budget_investments:
       index:
         headings_filter_all: Totes les partides
         filters:
-          valuation_open: Obertes
+          valuation_open: Oberts
           valuating: En avaluació
           valuation_finished: Avaluació finalitzada
         assigned_to: "Asignades a %{valuator}"
         title: Propostes d'inversió
-        edit: Edita informe
+        edit: Editar informe
         valuators_assigned:
           one: Avaluador asignat
           other: "%{count} avaluadors asignats"
-        no_valuators_assigned: Sense avaluador asignat
+        no_valuators_assigned: Sense avaluador
         table_id: ID
         table_title: Títol
         table_heading_name: Nom de la partida
@@ -42,7 +43,7 @@ val:
         info: Dades d'enviament
         by: Enviada per
         sent: Data de creació
-        heading: Partida
+        heading: Partida pressupostària
         dossier: Informe
         edit_dossier: Editar informe
         price: Cost
@@ -52,20 +53,20 @@ val:
         feasible: Viable
         unfeasible: Inviable
         undefined: Sense definir
-        valuation_finished: Informe finalitzat
+        valuation_finished: Avaluació finalitzada
         duration: Plaç d'execució
         responsibles: Responsables
         assigned_admin: Administrador asignat
-        assigned_valuators: Avaluadors assignats
+        assigned_valuators: Evaluadors asignats
       edit:
         dossier: Informe
-        price_html: "Cost (%{currency}) (dada pública)"
+        price_html: "Cost (%{currency})"
         price_first_year_html: "Cost en el primer any (%{currency}) <small>(opcional, dada no pública)</small>"
         price_explanation_html: Informe de cost
         feasibility: Viabilitat
         feasible: Viable
         unfeasible: Inviable
-        undefined_feasible: Sense decidir
+        undefined_feasible: Pendents
         feasible_explanation_html: Informe de viabilitat
         valuation_finished: Avaluació finalitzada
         valuation_finished_alert: "Segur que vols marcar este informe com a finalitzat? Si ho fas, no podràs modificarlo més."
@@ -80,7 +81,7 @@ val:
       index:
         geozone_filter_all: Tots els àmbits d'actuació
         filters:
-          valuation_open: Obertes
+          valuation_open: Oberts
           valuating: En avaluació
           valuation_finished: Avaluació finalitzada
         title: Propostes d'inversió per a pressupostos participatius
@@ -107,17 +108,17 @@ val:
         internal_comments: Comentaris interns
         responsibles: Responsables
         assigned_admin: Administrador asignat
-        assigned_valuators: Avaluadors asignats
+        assigned_valuators: Evaluadors asignats
       edit:
         dossier: Informe
-        price_html: "Cost (%{currency})"
+        price_html: "Cost (%{currency}) (dada pública)"
         price_first_year_html: "Cost en el primer any (%{currency})"
         currency: "€"
         price_explanation_html: Informe de cost
         feasibility: Viabilitat
         feasible: Viable
         not_feasible: Inviable
-        undefined_feasible: Sense decidir
+        undefined_feasible: Pendents
         feasible_explanation_html: Informe de viabilitat
         valuation_finished: Avaluació finalitzada
         time_scope_html: Plaç d'execució

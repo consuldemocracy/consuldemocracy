@@ -22,7 +22,7 @@ en:
       title: New response to your comment
     unfeasible_spending_proposal:
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
       sincerely: "Sincerely"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
@@ -32,16 +32,16 @@ en:
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal
-      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and unckeck 'Receive a summary of proposal notifications'."
+      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
       unsubscribe_account: My account
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
-      unsubscribe: "If you don't want receive direct messages, visit %{account} and unckeck 'Receive emails about direct messages'."
+      unsubscribe: "If you don't want receive direct messages, visit %{account} and uncheck 'Receive emails about direct messages'."
       unsubscribe_account: My account
     direct_message_for_sender:
-      subject: "You have send a new private message"
-      title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
+      subject: "You have sent a new private message"
+      title_html: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Thank you for applying to join %{org}! In seconds you can start to participate, just fill the form below:"
@@ -60,7 +60,7 @@ en:
       share: "Share your project"
     budget_investment_unfeasible:
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
       sincerely: "Sincerely"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."

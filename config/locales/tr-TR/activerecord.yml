@@ -10,7 +10,7 @@ tr:
       budget/investment:
         one: "yatırım"
         other: "Yatırımlar"
-      budget/investment/milestone:
+      milestone:
         one: "kilometre taşı"
         other: "kilometre taşları"
       comment:
@@ -22,3 +22,16 @@ tr:
       vote:
         one: "Oy"
         other: "Oylar"
+    attributes:
+      budget/investment:
+        administrator_id: "Yönetici"
+      comment:
+        body: "Yorum"
+      user:
+        email: "E-posta"
+      spending_proposal:
+        administrator_id: "Yönetici"
+      site_customization/image:
+        image: Fotoğraf
+      legislation/annotation:
+        text: Yorum

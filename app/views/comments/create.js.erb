@@ -1,7 +1,7 @@
 var comment_html = "<%= j(render @comment) %>"
 
 <% if @comment.root? -%>
-  var commentable_id = '<%= dom_id(@commentable) %>';
+  var commentable_id = "<%= dom_id(@commentable) %>";
   App.Comments.reset_form(commentable_id);
   App.Comments.add_comment(commentable_id, comment_html);
 <% else -%>
