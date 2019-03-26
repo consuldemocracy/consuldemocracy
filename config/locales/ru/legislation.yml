@@ -4,6 +4,11 @@ ru:
       comments:
         see_all: Просмотреть все
         see_complete: Посмотреть целиком
+        replies_count:
+          one: "%{count} ответ"
+          few: "%{count} ответа"
+          many: "%{count} ответов"
+          other: "%{count} ответов"
         cancel: Отмена
         publish_comment: Опубликовать комментарий
       form:
@@ -72,10 +77,12 @@ ru:
         see_latest_comments_title: Прокомментировать этот процесс
       shared:
         key_dates: Ключевые даты
+        homepage: Главная страница
         debate_dates: Обсуждение
         draft_publication_date: Публикация черновика
         allegations_dates: Комментарии
         result_publication_date: Публикация конечного результата
+        milestones_date: Подписки
         proposals_dates: Заявки
     questions:
       comments:
