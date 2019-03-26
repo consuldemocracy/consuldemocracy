@@ -16,6 +16,9 @@ ar:
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
       email_digest_label: استلام ملخص عن إشعارات مقترح
+      recommendations: التوصيات
+      show_debates_recommendations: إظهار توصيات المناقشات
+      show_proposals_recommendations: إظهار توصيات المقترحات
       title: حسابي
       user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
@@ -26,16 +29,43 @@ ar:
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_votes: المشاركة في التصويت النهائي
       username_label: اسم المستخدم
+      verified_account: تم التحقق من الحساب
       verify_my_account: التحقق من حسابي
+  application:
+    close: غلق
   comments:
+    comments_closed: التعليقات مغلقة
+    verified_only: للمشاركة %{verify_account}
     verify_account: التحقق من حسابك
     comment:
       admin: مدير
       author: كاتب
+      deleted: تم حذف هذا التعليق
       moderator: المشرف
+      responses:
+        zero: لا توجد ردود
+        zero: "%{count} ردود"
+        one: ردّ واحد
+        two: "ردّان %{count}"
+        few: "%{count} ردود"
+        many: "%{count} ردود"
+        other: "%{count} ردود"
       user_deleted: حذف المستخدم
+      votes:
+        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
+        one: صوت واحد
+        two: "صوتان %{count}"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
+    form:
+      comment_as_admin: تعليق كمشرف
+      leave_comment: اترك تعليقك
     orders:
+      most_voted: الأكثر تصويتا
       newest: الأحدث أولاً
+      oldest: الأقدم أولاً
       most_commented: الأكثر تعليقات
     select_order: ترتيب حسب
     show:
@@ -47,6 +77,9 @@ ar:
     reply_button: نشر الرد
     reply_link: الرد
   debates:
+    create:
+      form:
+        submit_button: بدء مناقشة
     debate:
       comments:
         zero: لا توجد تعليقات
@@ -56,10 +89,22 @@ ar:
         few: "%{count} تعليقات"
         many: "%{count} تعليقات"
         other: "%{count} تعليقات"
+      votes:
+        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
+        one: صوت واحد
+        two: "%{count} أصوات"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
     edit:
+      editing: تحرير المناقشة
       form:
         submit_button: حفظ التغييرات
+      show_link: عرض المناقشة
     form:
+      debate_text: نص المناقشة الأوّلي
+      debate_title: عنوان المناقشة
       tags_label: مواضبع
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
@@ -67,6 +112,10 @@ ar:
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
+        hot_score: الأكثر نشاطا
+        most_commented: الأكثر تعليقات
+        relevance: الأهمية
+        recommendations: التوصيات
       search_form:
         button: بحث
         title: بحث
