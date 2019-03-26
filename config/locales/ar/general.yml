@@ -135,8 +135,14 @@ ar:
       start_debate: بدء مناقشة
       title: النقاشات
       section_header:
+        icon_alt: رمز المناقشات
         title: النقاشات
+        help: تعليمات حول المناقشات
+      section_footer:
+        title: تعليمات حول المناقشات
     new:
+      form:
+        submit_button: بدء مناقشة
       info_link: انشاء مقترح جديدة
       more_info: مزيد من المعلومات
     show:
@@ -193,9 +199,12 @@ ar:
       moderation: الإشراف
       help: المساعدة
       my_account_link: حسابي
+      my_activity_link: نشاطي
+      open: فتح
       proposals: إقتراحات
       poll_questions: التصويت
       budgets: الميزانية التشاركية
+      spending_proposals: مقترحات الانفاق
       notification_item:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
@@ -214,12 +223,21 @@ ar:
       notifiable_hidden: هذ المصدر عم يعد متاح.
   map:
     title: "مقاطعات"
+    proposal_for_district: "بدء اقتراحا لمقاطعة الخاصة بك"
     select_district: نطاق العملية
+    start_proposal: إنشاء مقترح
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
+      name: Facebook
     finish_signup:
+      title: "تفاصيل إضافية"
       username_warning: "بسبب تغييرات في طريقة التفاعل مع الشبكات الاجتماعية، فمن الممكن أن يكون اسم المستخدم الخاص بك 'مستخدم من قبل '. إذا كان هذا هو الحالة ، الرجاء اختيار اسم مستخدم مختلف."
+    google_oauth2:
+      sign_in: تسجيل الدخول باستخدام Google
+      name: Google
+    twitter:
+      sign_in: تسجيل الدخول باستخدام Twitter
   proposals:
     create:
       form:
@@ -259,13 +277,30 @@ ar:
         many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
         other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
+      start_proposal: إنشاء مقترح
       title: إقتراحات
+      top_link_proposals: المقترحات الأكثر تأييدا حسب الفئة
       section_header:
+        icon_alt: رمز المقترحات
         title: إقتراحات
+        help: تعليمات حول المقترحات
+      section_footer:
+        title: تعليمات حول المقترحات
+        description: تمثل مقترحات المواطنين فرصة للجيران والجماعات ليقرّروا بشكل مباشر كيف يريدون أن تكون مدينتهم ، بعد الحصول على الدعم الكافي وتقديمها لتصويت المواطنين.
     new:
       form:
         submit_button: إنشاء مقترح
+      more_info: كيف تعمل مقترحات المواطنين؟
+      recommendation_one: لا تستخدم الأحرف الكبيرة للعنوان المقترح أو لجمل كاملة. على شبكة الإنترنت، هذا يعتبر الصراخ. ولا أحد يحب أن يصرخ عليه.
+      recommendation_three: استمتع بهذه المساحة والأصوات التي تملأها. إنها ملكك أيضًا.
+      recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني ، وكذلك أولئك الذين يعتزمون تخريب أماكن النقاش. أي شيء آخر مسموح به.
+      recommendations_title: توصيات لإنشاء إقتراح
+      start_new: انشاء مقترح جديد
     proposal:
+      created: "قمت بإنشاء اقتراح!"
+      share:
+        view_proposal: ليس الآن، انتقل إلى اقتراحي
+      already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
       comments:
         zero: لا توجد تعليقات
         zero: "%{count} تعليق"
@@ -275,6 +310,7 @@ ar:
         many: "%{count} تعليق"
         other: "%{count} تعليق"
       support: دعم
+      support_title: ادعم هذا المقترح
       supports:
         zero: لا يوجد دعم
         zero: "%{count} يدعم"
@@ -283,6 +319,16 @@ ar:
         few: "%{count} يدعم"
         many: "%{count} يدعم"
         other: "%{count} يدعم"
+      votes:
+        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
+        one: صوت واحد
+        two: "%{count} أصوات"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
+      archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع دعم."
+      successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
     show:
       author_deleted: تم حذف المستخدم
       comments:
