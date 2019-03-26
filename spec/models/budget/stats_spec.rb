@@ -4,8 +4,7 @@ describe Budget::Stats do
 
   before do
     @budget = create(:budget)
-    @group = create(:budget_group, budget: @budget)
-    @heading = create(:budget_heading, group: @group, price: 1000)
+    @heading = create(:budget_heading, budget: @budget, price: 1000)
 
     @investment1 = create(:budget_investment, :selected, author: create(:user, gender: "female"),
                           heading: @heading, price: 200, ballot_lines_count: 900, winner: true)
@@ -22,20 +21,15 @@ describe Budget::Stats do
     @support1 = create(:vote, votable: @investment1, voter: create(:user, gender: "male"))
     @support2 = create(:vote, votable: @investment2, voter: create(:user))
 
-    @budget_ballot1 = create(:budget_ballot, budget: @budget, user: create(:user, gender: "female",
-                             date_of_birth: 54.years.ago))
-    @budget_ballot2 = create(:budget_ballot, budget: @budget, user: create(:user, gender: "female"))
-    @budget_ballot3 = create(:budget_ballot, budget: @budget, user: create(:user, gender: "male"))
-
-    @budget_ballot_line1 = create(:budget_ballot_line, ballot: @budget_ballot1,
+    @budget_ballot_line1 = create(:budget_ballot_line,
+                                  user: create(:user, gender: "female", date_of_birth: 54.years.ago),
                                   investment: @investment1)
-    @budget_ballot_line2 = create(:budget_ballot_line, ballot: @budget_ballot2,
+    @budget_ballot_line2 = create(:budget_ballot_line, user: create(:user, gender: "female"),
                                   investment: @investment2)
-    @budget_ballot_line3 = create(:budget_ballot_line, ballot: @budget_ballot3,
+    @budget_ballot_line3 = create(:budget_ballot_line, user: create(:user, gender: "male"),
                                   investment: @investment3)
 
-    @poll = create(:poll, budget: @budget)
-    @poll_voter = create(:poll_voter, :from_booth, poll: @poll)
+    @poll_voter = create(:poll_voter, :from_booth, budget: @budget)
 
     @budget_ballot4 = create(:budget_ballot, budget: @budget, physical: true, user: nil)
     @budget_ballot_line4 = create(:budget_ballot_line, ballot: @budget_ballot4,
