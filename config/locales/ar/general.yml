@@ -116,8 +116,13 @@ ar:
         most_commented: الأكثر تعليقات
         relevance: الأهمية
         recommendations: التوصيات
+      recommendations:
+        actions:
+          success: "التّوصيات من أجل المناقشات معطلة الآن لهذا الحساب"
+          error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل التوصيات للمناقشات يدوياً"
       search_form:
         button: بحث
+        placeholder: البحث في المناقشات...
         title: بحث
       search_results_html:
         zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
@@ -127,6 +132,7 @@ ar:
         many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
         other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
+      start_debate: بدء مناقشة
       title: النقاشات
       section_header:
         title: النقاشات
