@@ -49,9 +49,17 @@ ru:
       moderator: Модератор
       responses:
         zero: Нет ответов
+        one: 1 ответ
+        few: "%{count} ответа"
+        many: "%{count} ответов"
+        other: "%{count} ответов"
       user_deleted: Пользователь удален
       votes:
         zero: Нет голосов
+        one: 1 голос
+        few: "%{count} голоса"
+        many: "%{count} голосов"
+        other: "%{count} голосов"
     form:
       comment_as_admin: Прокомментировать от имени администратора
       comment_as_moderator: Прокомментировать от имени модератора
@@ -83,6 +91,10 @@ ru:
         other: "%{count} комментария(иев)"
       votes:
         zero: Нет голосов
+        one: 1 голос
+        few: "%{count} голоса"
+        many: "%{count} голосов"
+        other: "%{count} голосов"
     edit:
       editing: Редактировать дебаты
       form:
@@ -388,7 +400,12 @@ ru:
         other: "поддерживает %{count}"
       votes:
         zero: Нет голосов
+        one: 1 голос
+        few: "%{count} голосов"
+        many: "%{count} голосов"
+        other: "%{count} голосов"
       supports_necessary: "%{number} поддержек требуется"
+      total_percent: 100%
       archived: "Это предложение перенесено в архив и не может получать поддержки."
       successful: "Это предложение достигло требуемого уровня поддержки."
     show:
@@ -510,6 +527,7 @@ ru:
       author_type: 'По категории автора'
       author_type_blank: 'Выбрать категорию'
       date: 'По дате'
+      date_placeholder: 'DD.MM.YYYY'
       date_range_blank: 'Выберите дату'
       date_1: 'Последние 24 часа'
       date_2: 'Последняя неделя'
@@ -673,6 +691,12 @@ ru:
       budget_investments: Инвестиции бюджета
       comments: Комментарии
       actions: Действия
+      filters:
+        comments:
+          one: 1 комментарий
+          few: "%{count} комментария(иев)"
+          many: "%{count} комментария(иев)"
+          other: "%{count} комментария(иев)"
       no_activity: У пользователя нет публичной активности
       no_private_messages: "Этот пользователь не принимает личные сообщения."
       private_activity: Этот пользователь решил скрыть список активности.
