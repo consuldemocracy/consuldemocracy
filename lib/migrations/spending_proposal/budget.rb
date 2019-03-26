@@ -7,6 +7,7 @@ class Migrations::SpendingProposal::Budget
     setup
     migrate_data
     expire_caches
+    destroy_associated
   end
 
   def setup
@@ -103,6 +104,10 @@ class Migrations::SpendingProposal::Budget
       budget.headings.each do |heading|
         Budget::Result.new(budget, heading).calculate_winners
       end
+    end
+
+    def destroy_associated
+      Migrations::SpendingProposal::Investments.new.destroy_associated
     end
 
 end

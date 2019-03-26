@@ -47,4 +47,39 @@ describe Migrations::SpendingProposal::BudgetInvestments do
       expect(budget_investment2.unfeasibility_explanation).to eq(explanation2)
     end
   end
+
+  describe "#destroy_associated" do
+
+    it "destroys spending proposals votes" do
+      investment = create(:budget_investment)
+      spending_proposal = create(:spending_proposal)
+
+      investment_vote = create(:vote, votable: investment)
+      spending_proposal_vote = create(:vote, votable: spending_proposal)
+
+      migration = Migrations::SpendingProposal::BudgetInvestments.new
+      migration.destroy_associated
+
+      expect(Vote.count).to eq(1)
+      expect(Vote.first).to eq(investment_vote)
+    end
+
+    it "destroys spending proposals taggings" do
+      investment = create(:budget_investment)
+      spending_proposal = create(:spending_proposal)
+
+      health_tag = create(:tag, name: "Health")
+      investment_tagging = create(:tagging, taggable: investment, tag: health_tag)
+      spending_proposal_tagging = create(:tagging, taggable: spending_proposal, tag: health_tag)
+
+      migration = Migrations::SpendingProposal::BudgetInvestments.new
+      migration.destroy_associated
+
+      expect(ActsAsTaggableOn::Tagging.count).to eq(1)
+      expect(ActsAsTaggableOn::Tagging.first).to eq(investment_tagging)
+
+      expect(Tag.count).to eq(1)
+      expect(Tag.first).to eq(health_tag)
+    end
+  end
 end

@@ -134,7 +134,6 @@ describe Migrations::SpendingProposal::Budget do
       budget_investment_ballot2 = Budget::Ballot.second
       expect(budget_investment_ballot2.investments).to eq([investment])
     end
-
   end
 
   describe "#expire_caches" do
@@ -195,6 +194,23 @@ describe Migrations::SpendingProposal::Budget do
       migration.expire_caches
 
       expect(results.winners.count).to eq(3)
+    end
+  end
+
+  describe "#destroy_associated" do
+
+    it "destroys associated spending proposal records" do
+      investment = create(:budget_investment)
+      spending_proposal = create(:spending_proposal)
+
+      investment_vote = create(:vote, votable: investment)
+      spending_proposal_vote = create(:vote, votable: spending_proposal)
+
+      migration = Migrations::SpendingProposal::BudgetInvestments.new
+      migration.destroy_associated
+
+      expect(Vote.count).to eq(1)
+      expect(Vote.first).to eq(investment_vote)
     end
 
   end
