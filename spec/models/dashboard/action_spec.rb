@@ -16,88 +16,88 @@ describe Dashboard::Action do
   let(:day_offset) { 0 }
   let(:required_supports) { 0 }
   let(:request_to_administrators) { true }
-  let(:action_type) { 'resource' }
+  let(:action_type) { "resource" }
 
-  it 'is invalid when title is blank' do
-    action = build(:dashboard_action, title: '')
+  it "is invalid when title is blank" do
+    action = build(:dashboard_action, title: "")
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when title is too short' do
-    action = build(:dashboard_action, title: 'abc')
+  it "is invalid when title is too short" do
+    action = build(:dashboard_action, title: "abc")
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when title is too long' do
-    action = build(:dashboard_action, title: 'a' * 81)
+  it "is invalid when title is too long" do
+    action = build(:dashboard_action, title: "a" * 81)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when day_offset is not defined' do
+  it "is invalid when day_offset is not defined" do
     action = build(:dashboard_action, day_offset: nil)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when day_offset is negative' do
+  it "is invalid when day_offset is negative" do
     action = build(:dashboard_action, day_offset: -1)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when day_offset not an integer' do
+  it "is invalid when day_offset not an integer" do
     action = build(:dashboard_action, day_offset: 1.23)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when required_supports is nil' do
+  it "is invalid when required_supports is nil" do
     action = build(:dashboard_action, required_supports: nil)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when required_supports is negative' do
+  it "is invalid when required_supports is negative" do
     action = build(:dashboard_action, required_supports: -1)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when required_supports is not an integer' do
+  it "is invalid when required_supports is not an integer" do
     action = build(:dashboard_action, required_supports: 1.23)
     expect(action).not_to be_valid
   end
 
-  it 'is invalid when action_type is nil' do
+  it "is invalid when action_type is nil" do
     action = build(:dashboard_action, action_type: nil)
     expect(action).not_to be_valid
   end
 
-  context '#active_for?' do
-    it 'is active when required supports is 0 and day_offset is 0' do
+  context "#active_for?" do
+    it "is active when required supports is 0 and day_offset is 0" do
       action = build(:dashboard_action, required_supports: 0, day_offset: 0)
       proposal = build(:proposal)
 
       expect(action).to be_active_for(proposal)
     end
 
-    it 'is active when published after day_offset' do
+    it "is active when published after day_offset" do
       action = build(:dashboard_action, required_supports: 0, day_offset: 10)
       proposal = build(:proposal, published_at: Time.current - 10.days)
 
       expect(action).to be_active_for(proposal)
     end
 
-    it 'is active when have enough supports' do
+    it "is active when have enough supports" do
       action = build(:dashboard_action, required_supports: 10, day_offset: 0)
       proposal = build(:proposal, cached_votes_up: 10)
 
       expect(action).to be_active_for(proposal)
     end
 
-    it 'is not active when not enough time published' do
+    it "is not active when not enough time published" do
       action = build(:dashboard_action, required_supports: 0, day_offset: 10)
       proposal = build(:proposal, published_at: Time.current - 9.days)
 
       expect(action).not_to be_active_for(proposal)
     end
 
-    it 'is not active when not enough supports' do
+    it "is not active when not enough supports" do
       action = build(:dashboard_action, required_supports: 10, day_offset: 0)
       proposal = build(:proposal, cached_votes_up: 9)
 
@@ -105,15 +105,15 @@ describe Dashboard::Action do
     end
   end
 
-  context '#requested_for?' do
-    it 'is not requested when no administrator task' do
+  context "#requested_for?" do
+    it "is not requested when no administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
 
       expect(action).not_to be_requested_for(proposal)
     end
 
-    it 'is requested when administrator task' do
+    it "is requested when administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
       executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
@@ -123,15 +123,15 @@ describe Dashboard::Action do
     end
   end
 
-  context '#executed_for?' do
-    it 'is not executed when no administrator task' do
+  context "#executed_for?" do
+    it "is not executed when no administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
 
       expect(action).not_to be_executed_for(proposal)
     end
 
-    it 'is not executed when pending administrator task' do
+    it "is not executed when pending administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
       executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
@@ -140,7 +140,7 @@ describe Dashboard::Action do
       expect(action).not_to be_executed_for(proposal)
     end
 
-    it 'is executed when done administrator task' do
+    it "is executed when done administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
       executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
@@ -150,12 +150,14 @@ describe Dashboard::Action do
     end
   end
 
-  context '#active_for' do
+  context "#active_for" do
     let!(:active_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 0 }
-    let!(:not_enough_supports_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 10_000 }
+    let!(:not_enough_supports_action) { create :dashboard_action, :active, day_offset: 0,
+                                                                  required_supports: 10_000 }
     let!(:inactive_action) { create :dashboard_action, :inactive }
-    let!(:future_action) { create :dashboard_action, :active, day_offset: 300, required_supports: 0 }
-    let!(:action_for_published_proposal) { create :dashboard_action,
+    let!(:future_action) { create :dashboard_action, :active, day_offset: 300,
+                                                     required_supports: 0 }
+    let!(:action_published_proposal) { create :dashboard_action,
                                                   :active,
                                                   day_offset: 0,
                                                   required_supports: 0,
@@ -185,11 +187,11 @@ describe Dashboard::Action do
     end
 
     it "actions with published_proposal: true, are not included on draft proposal" do
-      expect(described_class.active_for(draft_proposal)).not_to include(action_for_published_proposal)
+      expect(described_class.active_for(draft_proposal)).not_to include(action_published_proposal)
     end
 
     it "actions with published_proposal: true, are included on published proposal" do
-      expect(described_class.active_for(proposal)).to include(action_for_published_proposal)
+      expect(described_class.active_for(proposal)).to include(action_published_proposal)
     end
 
     it "actions with published_proposal: false, are included on draft proposal" do
@@ -201,9 +203,10 @@ describe Dashboard::Action do
     end
   end
 
-  context '#course_for' do
+  context "#course_for" do
     let!(:proposed_action) { create :dashboard_action, :active, required_supports: 0 }
-    let!(:inactive_resource) { create :dashboard_action, :inactive, :resource, required_supports: 0 }
+    let!(:inactive_resource) { create :dashboard_action, :inactive, :resource,
+                                                         required_supports: 0 }
     let!(:resource) { create :dashboard_action, :active, :resource, required_supports: 10_000 }
     let!(:achieved_resource) { create :dashboard_action, :active, :resource, required_supports: 0 }
     let(:proposal) { create :proposal }

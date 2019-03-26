@@ -299,7 +299,7 @@
   display: block;
   width: 60px;
   height: 60px;
-  background-image: url(quote-before.svg);
+  background-image: url("quote_before_blue.png");
   background-repeat: no-repeat;
 }
 
@@ -309,10 +309,9 @@
   display: block;
   width: 60px;
   height: 60px;
-  background-image: url(quote-after.svg);
+  background-image: url("quote_after_blue.png");
   background-repeat: no-repeat;
 }
-
 
 .icon-finger::before {
   content: '';
@@ -320,6 +319,6 @@
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-image: url(finger.svg);
+  background-image: url("finger.png");
   background-repeat: no-repeat;
 }

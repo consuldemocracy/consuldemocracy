@@ -24,9 +24,13 @@
           <div class="counter-value">
             <%= number_with_delimiter(proposal.votes_for.size, delimiter: '.') %>
             /
-            <%= t("layouts.dashboard.proposal_totals.support_count", count: number_with_delimiter(next_goal_supports, delimiter: '.')).html_safe %>
+            <%= number_with_delimiter(next_goal_supports, delimiter: '.') %>
           </div>
-          <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.current_goal") %></span>
+          <div class="counter-label">
+            <%= t("layouts.dashboard.proposal_totals.supports", count: proposal.votes_for.size) %>
+            <br>
+            <%= t("layouts.dashboard.proposal_totals.current_goal") %>
+          </div>
         </div>
 
         <div class="next-goal-progress">
@@ -40,11 +44,7 @@
 
       <div class="small-12 medium-6 large-4 column">
         <div class="row">
-          <div class="small-12 medium-12 column">
-
-          </div>
-
-          <div class="small-12 medium-12 column">
+          <div class="small-12 column">
             <div class="proposal-link">
               <% if proposal.draft? %>
                 <%= link_to t('layouts.dashboard.proposal_totals.preview_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
