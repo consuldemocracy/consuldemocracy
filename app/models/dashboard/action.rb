@@ -46,6 +46,9 @@ class Dashboard::Action < ActiveRecord::Base
   scope :by_proposal, lambda { |proposal|
     return where(published_proposal: false) if proposal.draft?
   }
+  scope :by_published_proposal, lambda { |published|
+    return where(published_proposal: published)
+  }
 
   def self.active_for(proposal)
     published_at = proposal.published_at&.to_date || Date.today
@@ -85,4 +88,44 @@ class Dashboard::Action < ActiveRecord::Base
   def self.next_goal_for(proposal)
     course_for(proposal).first
   end
+
+  def self.detect_new_actions_since(date, proposal)
+    actions_for_today = get_actions_for_today(proposal)
+    actions_for_date = get_actions_for_date(proposal, date)
+
+    actions_for_today_ids = actions_for_today.pluck(:id)
+    actions_for_date_ids = actions_for_date.pluck(:id)
+
+    actions_for_today_ids - actions_for_date_ids
+  end
+
+  private
+    def self.get_actions_for_today(proposal)
+      proposal_votes = proposal.cached_votes_up
+      day_offset = calculate_day_offset(proposal, Date.today)
+
+      calculate_actions(proposal_votes, day_offset, proposal)
+    end
+
+    def self.get_actions_for_date(proposal, date)
+      proposal_votes = calculate_votes(proposal, date)
+      day_offset = calculate_day_offset(proposal, date)
+
+      calculate_actions(proposal_votes, day_offset, proposal)
+    end
+
+    def self.calculate_day_offset(proposal, date)
+      start_date = proposal.published? ? proposal.published_at : proposal.created_at
+      (date - start_date.to_date).to_i
+    end
+
+    def self.calculate_actions(proposal_votes, day_offset, proposal)
+      Dashboard::Action.active.where("required_supports <= ?", proposal_votes)
+                              .where("day_offset <= ?", day_offset)
+                              .by_published_proposal(proposal.published?)
+    end
+
+    def self.calculate_votes(proposal, date)
+      Vote.where(votable: proposal).where("created_at <= ?", date).count
+    end
 end

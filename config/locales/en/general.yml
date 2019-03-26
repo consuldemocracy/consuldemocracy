@@ -497,6 +497,7 @@ en:
       progress: Acumulated progress
       supports: Supports
       success: Ideal progress
+      new_action: New
     index:
       title: Edition
       edit_proposal_link: Edit proposal
