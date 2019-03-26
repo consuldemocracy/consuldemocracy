@@ -108,6 +108,11 @@ ru:
       tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
     index:
       featured_debates: Особенные
+      filter_topic:
+        one: " с темой '%{topic}'"
+        few: " с темой '%{topic}'"
+        many: " с темой '%{topic}'"
+        other: " с темой '%{topic}'"
       orders:
         confidence_score: наивысший рейтинг
         created_at: самые свежие
@@ -697,6 +702,26 @@ ru:
           few: "%{count} комментария(иев)"
           many: "%{count} комментария(иев)"
           other: "%{count} комментария(иев)"
+        debates:
+          one: 1 дебаты
+          few: "%{count} дебатов"
+          many: "%{count} дебатов"
+          other: "%{count} дебатов"
+        proposals:
+          one: 1 предложение
+          few: "%{count} предложений"
+          many: "%{count} предложений"
+          other: "%{count} предложений"
+        budget_investments:
+          one: 1 инвестиция
+          few: "%{count} инвестиций"
+          many: "%{count} инвестиций"
+          other: "%{count} инвестиций"
+        follows:
+          one: 1 подписчик
+          few: "%{count} подписчиков"
+          many: "%{count} подписчиков"
+          other: "%{count} подписчиков"
       no_activity: У пользователя нет публичной активности
       no_private_messages: "Этот пользователь не принимает личные сообщения."
       private_activity: Этот пользователь решил скрыть список активности.
@@ -763,6 +788,7 @@ ru:
       title: Верификация аккаунта
     welcome:
       go_to_index: Просмотреть предложения и дебаты
+      start_using_consul: Перейти на страницу индекса
       title: Участвовать
       user_permission_debates: Участвовать в дебатах
       user_permission_info: При помощи вашего аккаунта вы можете...
@@ -779,6 +805,7 @@ ru:
     title: "Соответствующее содержимое"
     add: "Все соответствующее содержимое"
     label: "Ссылка на соответствующее содержимое"
+    placeholder: "%{url}"
     help: "Вы можете добавить ссылки %{models} внутри %{org}."
     submit: "Добавить"
     error: "Неверная ссылка. Не забудьте начинать с %{url}."
