@@ -10,6 +10,10 @@ class Budget::Stats
          total_participants_web total_participants_booths]
   end
 
+  def participants
+    User.where(id: (authors + voters + balloters + poll_ballot_voters).uniq.compact)
+  end
+
   private
 
     def total_participants
@@ -50,10 +54,6 @@ class Budget::Stats
 
     def total_supports
       supports(budget).count
-    end
-
-    def participants
-      User.where(id: (authors + voters + balloters + poll_ballot_voters).uniq.compact)
     end
 
     def authors
