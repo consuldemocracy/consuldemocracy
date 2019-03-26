@@ -156,6 +156,8 @@ ru:
         name: "Название раздела"
         amount: "Количество"
         population: "Население (не обязательно)"
+        latitude: "Широта (опционально)"
+        longitude: "Долгота (опционально)"
     budget_phases:
       edit:
         start_date: Дата начала
