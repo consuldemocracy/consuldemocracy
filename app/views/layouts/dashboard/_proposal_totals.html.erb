@@ -3,9 +3,9 @@
     <div class="small-12 medium-6 large-2 column">
       <div class="counter">
         <div class="counter-value">
-          <%= Dashboard::Action.active.resources.active_for(proposal).count %>
+          <%= active_resources_for(proposal) %>
           /
-          <%= Dashboard::Action.active.resources.count %>
+          <%= active_resources_count(proposal) %>
         </div>
         <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.active_resources") %></span>
       </div>

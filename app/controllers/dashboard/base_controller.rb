@@ -1,5 +1,5 @@
 class Dashboard::BaseController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :detect_new_actions_after_last_login
 
   include Dashboard::HasProposal
 
@@ -34,5 +34,10 @@ class Dashboard::BaseController < ApplicationController
 
   def next_goal
     @next_goal ||= Dashboard::Action.next_goal_for(proposal)
+  end
+
+  def detect_new_actions_after_last_login
+    author_last_login = proposal.author.last_sign_in_at.to_date
+    @new_actions_since_last_login = Dashboard::Action.detect_new_actions_since(author_last_login, proposal)
   end
 end

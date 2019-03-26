@@ -59,6 +59,8 @@
 //= require markdown-it
 //= require markdown_editor
 //= require cocoon
+//= require answers
+//= require questions
 //= require legislation_admin
 //= require legislation
 //= require legislation_allegations
@@ -87,6 +89,8 @@
 //= require send_admin_notification_alert
 
 var initialize_modules = function() {
+  App.Answers.initialize();
+  App.Questions.initialize();
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
