@@ -50,8 +50,8 @@ feature "Polls" do
     expect(page).to have_content("New poll")
   end
 
-    poll = create(:poll, :incoming, related: proposal)
   scenario "Edit poll is allowed for upcoming polls" do
+    poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
 
     visit proposal_dashboard_polls_path(proposal)
 
@@ -66,8 +66,8 @@ feature "Polls" do
     expect(page).to have_content "Poll updated successfully"
   end
 
-    poll = create(:poll, :incoming, related: proposal)
   scenario "Edit poll redirects back when invalid data", js: true do
+    poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
 
     visit proposal_dashboard_polls_path(proposal)
 
@@ -105,7 +105,7 @@ feature "Polls" do
   end
 
   scenario "Edit poll should allow to remove questions", :js do
-    poll = create(:poll, :incoming, related: proposal)
+    poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
     create(:poll_question, poll: poll)
     create(:poll_question, poll: poll)
     visit proposal_dashboard_polls_path(proposal)
@@ -128,7 +128,7 @@ feature "Polls" do
   end
 
   scenario "Edit poll should allow to remove answers", :js do
-    poll = create(:poll, :incoming, related: proposal)
+    poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
     question = create(:poll_question, poll: poll)
     create(:poll_question_answer, question: question)
     create(:poll_question_answer, question: question)
@@ -153,8 +153,8 @@ feature "Polls" do
     end
   end
 
-    poll = create(:poll, :incoming, related: proposal)
   scenario "View results not available for upcoming polls" do
+    poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
 
     visit proposal_dashboard_polls_path(proposal)
 

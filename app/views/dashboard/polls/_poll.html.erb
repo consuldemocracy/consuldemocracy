@@ -14,7 +14,7 @@
     </p>
 
     <div class="small-12 column small-centered margin-top">
-      <% if poll.incoming? %>
+      <% if poll.starts_at.to_date >= Date.current %>
         <%= link_to t("dashboard.polls.poll.edit_poll"),
                     edit_proposal_dashboard_poll_path(proposal, poll), class: "button hollow" %>
       <% else %>
