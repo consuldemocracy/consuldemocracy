@@ -65,7 +65,7 @@ class Budget::Stats
     end
 
     def balloters
-      budget.ballots.where("ballot_lines_count > ?", 0).pluck(:user_id)
+      budget.ballots.where("ballot_lines_count > ?", 0).pluck(:user_id).compact
     end
 
     def poll_ballot_voters

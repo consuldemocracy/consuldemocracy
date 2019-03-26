@@ -69,6 +69,14 @@ describe Budget::Stats do
 
       expect(stats.generate[:total_participants_vote_phase]).to be 1
     end
+
+    it "doesn't count nil user ids" do
+      create(:budget_ballot_line, investment: investment,
+        ballot: create(:budget_ballot, budget: budget, user: nil, physical: true)
+      )
+
+      expect(stats.generate[:total_participants_vote_phase]).to be 0
+    end
   end
 
   describe "#total_participants_web" do
