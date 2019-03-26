@@ -70,6 +70,21 @@ describe Budget::Stats do
       expect(stats.generate[:total_participants_vote_phase]).to be 1
     end
 
+    it "includes balloters and poll balloters" do
+      create(:budget_ballot_line, investment: investment)
+      create(:poll_voter, :from_booth, budget: budget)
+
+      expect(stats.generate[:total_participants_vote_phase]).to be 2
+    end
+
+    it "counts once a user who is balloter and poll balloter" do
+      poller_and_balloter = create(:user, :level_two)
+      create(:budget_ballot_line, investment: investment, user: poller_and_balloter)
+      create(:poll_voter, :from_booth, user: poller_and_balloter, budget: budget)
+
+      expect(stats.generate[:total_participants_vote_phase]).to be 1
+    end
+
     it "doesn't count nil user ids" do
       create(:budget_ballot_line, investment: investment,
         ballot: create(:budget_ballot, budget: budget, user: nil, physical: true)

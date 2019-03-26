@@ -33,7 +33,7 @@ class Budget::Stats
     end
 
     def total_participants_vote_phase
-      balloters.uniq.count
+      (balloters + poll_ballot_voters).uniq.count
     end
 
     def total_budget_investments
