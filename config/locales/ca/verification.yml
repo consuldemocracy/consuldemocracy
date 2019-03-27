@@ -8,7 +8,7 @@ ca:
         alert:
           failure: Va haver-hi un problema enviant-te un email al teu compte
         flash:
-          success: 'T''hem enviat un email de confirmació al teu compte: %{email}'
+          success: "T'hem enviat un email de confirmació al teu compte: %{email}"
       show:
         alert:
           failure: Codi de verificació incorrecte
@@ -26,7 +26,7 @@ ca:
       errors:
         incorrect_code: Codi de verificació incorrecte
       new:
-        explanation: 'Per a participar en les votacions finals pots:'
+        explanation: "Per a participar en les votacions finals pots:"
         go_to_index: Veure propostes
         office: Verificar-te presencialment en qualsevol %{office}
         send_letter: Sol·licitar una carta per correu postal
@@ -50,7 +50,7 @@ ca:
         date_of_birth: Data de naixement
         document_number: Número de document
         document_number_help_title: Ajuda
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P"
         document_type:
           passport: Passaport
           residence_card: Targeta de residència
