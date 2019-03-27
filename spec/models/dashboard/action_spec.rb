@@ -281,8 +281,10 @@ describe Dashboard::Action do
 
 
         it "when proposal has been created today and day_offset is valid only for today" do
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(resource.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -291,8 +293,10 @@ describe Dashboard::Action do
           resource.update(required_supports: 0)
           create(:vote, voter: proposal.author, votable: proposal)
 
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).not_to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).not_to include(resource.id)
         end
 
       end
@@ -306,8 +310,10 @@ describe Dashboard::Action do
                                                      published_proposal: false) }
 
         it "when day_offset field is valid for today and invalid for yesterday" do
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(resource.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -316,8 +322,10 @@ describe Dashboard::Action do
           resource.update(required_supports: 2)
           create(:vote, voter: proposal.author, votable: proposal)
 
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to include(action.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).not_to include(resource.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).to include(action.id)
+          expect(described_class.detect_new_actions_since(Date.yesterday,
+                                                          proposal)).not_to include(resource.id)
         end
 
       end

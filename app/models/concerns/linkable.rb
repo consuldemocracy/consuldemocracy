@@ -6,4 +6,3 @@ module Linkable
     accepts_nested_attributes_for :links, allow_destroy: true
   end
 end
-

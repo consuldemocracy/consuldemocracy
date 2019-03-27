@@ -1,5 +1,5 @@
 namespace :proposal_actions do
-  desc 'Move link attribute to links collection'
+  desc "Move link attribute to links collection"
   task migrate_links: :environment do
     ProposalDashboardAction.where.not(link: nil).each do |action|
       next if action.link.blank?
@@ -11,9 +11,9 @@ namespace :proposal_actions do
         linkable: action
       )
     end
-  end 
+  end
 
-  desc 'Initialize proposal settings'
+  desc "Initialize proposal settings"
   task initialize_settings: :environment do
     %w[
       proposals.successful_proposal_id
@@ -29,14 +29,14 @@ namespace :proposal_actions do
     end
   end
 
-  desc 'Publish all proposals'
+  desc "Publish all proposals"
   task publish_all: :environment do
     Proposal.draft.find_each do |proposal|
       proposal.update(published_at: proposal.created_at)
     end
   end
 
-  desc 'Simulate successful proposal'
+  desc "Simulate successful proposal"
   task create_successful_proposal: :environment do
     expected_supports = [
       1049,
@@ -409,7 +409,7 @@ namespace :proposal_actions do
     ]
 
     votes_count = expected_supports.inject(0.0) { |sum, x| sum + x }
-    goal_votes = Setting['votes_for_proposal_success'].to_f
+    goal_votes = Setting["votes_for_proposal_success"].to_f
     cached_votes_up = 0
 
     tags = Faker::Lorem.words(25)
@@ -423,7 +423,7 @@ namespace :proposal_actions do
                                 external_url: Faker::Internet.url,
                                 description: description,
                                 created_at: Time.now - expected_supports.length.days,
-                                tag_list: tags.sample(3).join(','),
+                                tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
@@ -438,27 +438,27 @@ namespace :proposal_actions do
         user = User.create!(
           username: "user_#{proposal.id}_#{day_offset}_#{i}",
           email: "user_#{proposal.id}_#{day_offset}_#{i}@consul.dev",
-          password: '12345678',
-          password_confirmation: '12345678',
+          password: "12345678",
+          password_confirmation: "12345678",
           confirmed_at: Time.current - expected_supports.length.days,
-          terms_of_service: '1',
-          gender: ['Male', 'Female'].sample,
+          terms_of_service: "1",
+          gender: ["Male", "Female"].sample,
           date_of_birth: rand((Time.current - 80.years)..(Time.current - 16.years)),
           public_activity: (rand(1..100) > 30)
         )
 
         Vote.create!(
-          votable: proposal, 
-          voter: user, 
-          vote_flag: false, 
-          vote_weight: 1, 
+          votable: proposal,
+          voter: user,
+          vote_flag: false,
+          vote_weight: 1,
           created_at: proposal.published_at + day_offset.days,
           updated_at: proposal.published_at + day_offset.days
         )
       end
     end
 
-    Setting['proposals.successful_proposal_id'] = proposal.id
+    Setting["proposals.successful_proposal_id"] = proposal.id
     proposal.update(cached_votes_up: cached_votes_up)
   end
 end

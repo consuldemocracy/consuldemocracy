@@ -20,7 +20,7 @@
           <% if proposal.image.present? %>
             <div class="overflow-image" style="background-image: url(<%= asset_url proposal.image.attachment.url(:large) %>);"></div>
           <% else %>
-            <div class="overflow-image" style="background-image: url(<%= asset_url "default_mailing.jpg"%>);"></div>
+            <div class="overflow-image" style="background-image: url(<%= asset_url "default_mailing.jpg" %>);"></div>
           <% end %>
         </div>
         <div class="poster-content">
@@ -36,5 +36,5 @@
     </div>
   </div>
 
-  <%= render 'poster_options' %>
+  <%= render "poster_options" %>
 </div>

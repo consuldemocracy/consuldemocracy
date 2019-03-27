@@ -107,7 +107,7 @@ FactoryBot.define do
     association :actionable, factory: :proposal
   end
 
-  factory :dashboard_action, class: 'Dashboard::Action' do
+  factory :dashboard_action, class: "Dashboard::Action" do
     title { Faker::Lorem.sentence[0..79] }
     description { Faker::Lorem.sentence }
     link nil
@@ -117,7 +117,7 @@ FactoryBot.define do
     order 0
     active true
     hidden_at nil
-    action_type 'proposed_action'
+    action_type "proposed_action"
 
     trait :admin_request do
       request_to_administrators true
@@ -140,21 +140,21 @@ FactoryBot.define do
     end
 
     trait :proposed_action do
-      action_type 'proposed_action'
+      action_type "proposed_action"
     end
 
     trait :resource do
-      action_type 'resource'
+      action_type "resource"
     end
   end
 
-  factory :dashboard_executed_action, class: 'Dashboard::ExecutedAction' do
+  factory :dashboard_executed_action, class: "Dashboard::ExecutedAction" do
     proposal
     action { |s| s.association(:dashboard_action) }
     executed_at { Time.current }
   end
 
-  factory :dashboard_administrator_task, class: 'Dashboard::AdministratorTask' do
+  factory :dashboard_administrator_task, class: "Dashboard::AdministratorTask" do
     source { |s| s.association(:dashboard_executed_action) }
     user
     executed_at { Time.current }

@@ -1,5 +1,5 @@
 module Dashboard
   def self.table_name_prefix
-    'dashboard_'
+    "dashboard_"
   end
 end

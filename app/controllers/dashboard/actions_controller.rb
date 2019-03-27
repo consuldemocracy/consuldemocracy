@@ -19,9 +19,10 @@ class Dashboard::ActionsController < Dashboard::BaseController
     if @dashboard_executed_action.save
       Dashboard::AdministratorTask.create(source: @dashboard_executed_action)
 
-      redirect_to progress_proposal_dashboard_path(proposal.to_param), { flash: { info: t('dashboard.create_request.success') } }
+      redirect_to progress_proposal_dashboard_path(proposal.to_param),
+                  { flash: { info: t("dashboard.create_request.success") } }
     else
-      flash.now[:alert] = @dashboard_executed_action.errors.full_messages.join('<br>')
+      flash.now[:alert] = @dashboard_executed_action.errors.full_messages.join("<br>")
       render :new_request
     end
   end
@@ -29,13 +30,14 @@ class Dashboard::ActionsController < Dashboard::BaseController
   def execute
     authorize! :dashboard, proposal
 
-    Dashboard::ExecutedAction.create(proposal: proposal, action: dashboard_action, executed_at: Time.now)
+    Dashboard::ExecutedAction.create(proposal: proposal, action: dashboard_action,
+                                                         executed_at: Time.now)
     redirect_to request.referer
   end
 
   private
 
-  def dashboard_action
-    @dashboard_action ||= Dashboard::Action.find(params[:id])
-  end
+    def dashboard_action
+      @dashboard_action ||= Dashboard::Action.find(params[:id])
+    end
 end

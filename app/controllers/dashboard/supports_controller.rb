@@ -9,16 +9,17 @@ class Dashboard::SupportsController < Dashboard::BaseController
 
   private
 
-  def accumulated_supports
-    grouped_votes = grouped_supports(:created_at)
-    grouped_votes = fill_holes(grouped_votes)
-    accumulate_supports(grouped_votes)
-  end
+    def accumulated_supports
+      grouped_votes = grouped_supports(:created_at)
+      grouped_votes = fill_holes(grouped_votes)
+      accumulate_supports(grouped_votes)
+    end
 
-  
-  def supports
-    @supports ||= Vote
-                    .where(votable: proposal, created_at: start_date.beginning_of_day..end_date.end_of_day)
+
+    def supports
+      @supports ||= Vote
+                    .where(votable: proposal,
+                           created_at: start_date.beginning_of_day..end_date.end_of_day)
                     .order(created_at: :asc)
-  end
+    end
 end

@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe "Retrieves achievements for a proposal" do
+describe Dashboard::AchievementsController do
   let(:created_at) { DateTime.parse("2018-01-01 12:00:00") }
   let(:proposal) { create(:proposal, created_at: created_at) }
   let(:executed_actions) { create_list(:dashboard_action, 8, :active, :proposed_action) }
@@ -10,7 +10,8 @@ describe "Retrieves achievements for a proposal" do
     sign_in(proposal.author)
 
     executed_actions.each_with_index do |action, index|
-      create(:dashboard_executed_action, proposal: proposal, action: action, executed_at: proposal.created_at + index.days)
+      create(:dashboard_executed_action, proposal: proposal, action: action,
+                                         executed_at: proposal.created_at + index.days)
     end
   end
 
@@ -32,7 +33,7 @@ describe "Retrieves achievements for a proposal" do
   end
 
   it "returns a list of most recent executed achievements grouped by week" do
-    get proposal_dashboard_achievements_path(proposal, group_by: 'week', format: :json)
+    get proposal_dashboard_achievements_path(proposal, group_by: "week", format: :json)
 
     json = JSON.parse(response.body, symbolize_names: true)
 
@@ -41,7 +42,7 @@ describe "Retrieves achievements for a proposal" do
   end
 
   it "returns a list of most recent executed achievements grouped by month" do
-    get proposal_dashboard_achievements_path(proposal, group_by: 'month', format: :json)
+    get proposal_dashboard_achievements_path(proposal, group_by: "month", format: :json)
 
     json = JSON.parse(response.body, symbolize_names: true)
 

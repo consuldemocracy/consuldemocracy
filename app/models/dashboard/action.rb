@@ -13,7 +13,8 @@ class Dashboard::Action < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  has_many :executed_actions, dependent: :restrict_with_error, class_name: "Dashboard::ExecutedAction"
+  has_many :executed_actions, dependent: :restrict_with_error,
+                              class_name: "Dashboard::ExecutedAction"
   has_many :proposals, through: :executed_actions
 
   enum action_type: [:proposed_action, :resource]

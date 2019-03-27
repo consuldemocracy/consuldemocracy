@@ -5,11 +5,11 @@ class Dashboard::PosterController < Dashboard::BaseController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'poster',
-               page_size: 'A4',
+        render pdf: "poster",
+               page_size: "A4",
                dpi: 300,
                zoom: 0.32,
-               show_as_html: Rails.env.test? || params.key?('debug'),
+               show_as_html: Rails.env.test? || params.key?("debug"),
                margin:  { top: 0 }
       end
     end

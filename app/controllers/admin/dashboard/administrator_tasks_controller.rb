@@ -20,7 +20,7 @@ class Admin::Dashboard::AdministratorTasksController < Admin::Dashboard::BaseCon
 
   private
 
-  def administrator_task
-    @administrator_task ||= ::Dashboard::AdministratorTask.find(params[:id])
-  end
+    def administrator_task
+      @administrator_task ||= ::Dashboard::AdministratorTask.find(params[:id])
+    end
 end
