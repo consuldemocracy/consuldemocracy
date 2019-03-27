@@ -67,7 +67,7 @@ so:
       most_commented: Inta badan faallooyin ah
     select_order: Kala saar
     show:
-      return_to_commentable: 'Ku noqo '
+      return_to_commentable: "Ku noqo "
   comments_helper:
     comment_button: Dabaac falada
     comment_link: Faalo
@@ -218,7 +218,7 @@ so:
       available_locales: Luqadaha diyarka ah
       collaborative_legislation: Nidaamka Sharciga
       debates: Doodo
-      locale: 'Luqad:'
+      locale: "Luqad:"
       logo: Logada qunsuliyada
       management: Maraynta
       moderation: Dhexdhexaadinta
@@ -240,7 +240,7 @@ so:
         notifications: Ogaysiisyo
         no_notifications: "Ma haysatid wargelin cusub"
     admin:
-      watch_form_message: 'Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?'
+      watch_form_message: "Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?"
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
@@ -367,7 +367,7 @@ so:
         one: " an ku jirin ereyga<strong>%{search_term}</strong>"
         other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       select_order: Dalbaday
-      select_order_long: 'Waxaad daawaneysaa soo jeedinada sida:'
+      select_order_long: "Waxaad daawaneysaa soo jeedinada sida:"
       start_proposal: Abuur soo jeedin
       title: Sojeedino
       top: Usbuuca ugu sarreeya
@@ -417,7 +417,7 @@ so:
       successful: "Hindisahani wuxuu gaadhay taageerooyinka loo baahan yahay."
     show:
       author_deleted: Isticmalaha la tirtiray
-      code: 'Talo soo jeedin:'
+      code: "Talo soo jeedin:"
       comments:
         zero: Falooyin majiraan
         one: 1 faalo
@@ -522,29 +522,29 @@ so:
     show:
       back: "Ku noqo hawlahayga"
   shared:
-    edit: 'Isbedel'
-    save: 'Badbaado'
+    edit: "Isbedel"
+    save: "Badbaado"
     delete: Titiriid
     "yes": "Haa"
     "no": "Maya"
     search_results: "Raadi natiijada"
     advanced_search:
-      author_type: 'Qeybta qoraaga'
-      author_type_blank: 'Xuulo qaybta'
-      date: 'Taariikhda'
-      date_placeholder: 'M/B/S'
-      date_range_blank: 'Dooro taariikh'
-      date_1: '24saac ee ugu dabyey'
-      date_2: 'Isbuucii hore'
-      date_3: 'Bishi hore'
-      date_4: 'Snadkii hore'
-      date_5: 'La isku habeeyey'
-      from: 'Ka'
-      general: 'Qoraalka'
-      general_placeholder: 'Qor Qoraal'
-      search: 'Sifeeyee'
-      title: 'Raadinta sare'
-      to: 'Ku'
+      author_type: "Qeybta qoraaga"
+      author_type_blank: "Xuulo qaybta"
+      date: "Taariikhda"
+      date_placeholder: "M/B/S"
+      date_range_blank: "Dooro taariikh"
+      date_1: "24saac ee ugu dabyey"
+      date_2: "Isbuucii hore"
+      date_3: "Bishi hore"
+      date_4: "Snadkii hore"
+      date_5: "La isku habeeyey"
+      from: "Ka"
+      general: "Qoraalka"
+      general_placeholder: "Qor Qoraal"
+      search: "Sifeeyee"
+      title: "Raadinta sare"
+      to: "Ku"
     author_info:
       author_deleted: Isticmalaha la tirtiray
     back: Dib ulaabo
@@ -626,8 +626,8 @@ so:
     instagram: "%{org} istigraam"
   spending_proposals:
     form:
-      association_name_label: 'Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan'
-      association_name: 'Magaca ururka'
+      association_name_label: "Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan"
+      association_name: "Magaca ururka"
       description: Sharaxaad
       external_url: Isku xirka dukumentiyada dheeraadka ah
       geozone: Baxada Hawlgalka
@@ -660,7 +660,7 @@ so:
       start_new: Samee qorshaha kharashad
     show:
       author_deleted: Isticmalaha la tirtiray
-      code: 'Talo soo jeedin:'
+      code: "Talo soo jeedin:"
       share: Lawadag
     wrong_price_format: Tirooyinka keliya e isku dhafka ah
     spending_proposal:
