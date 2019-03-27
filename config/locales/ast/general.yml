@@ -58,7 +58,7 @@ ast:
       oldest: Más antiguos primero
     select_order: Ordenar por
     show:
-      return_to_commentable: 'Volver a '
+      return_to_commentable: "Volver a "
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentario
@@ -182,7 +182,7 @@ ast:
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
       debates: Alderique
-      locale: 'Idioma:'
+      locale: "Idioma:"
       management: Gestión
       moderation: Moderación
       valuation: Evaluación
@@ -203,7 +203,7 @@ ast:
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
     admin:
-      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
+      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -311,7 +311,7 @@ ast:
         one: " que contien <strong>'%{search_term}'</strong>"
         other: " que contien <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
-      select_order_long: 'Estas viendo las propuestas'
+      select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestes
       top: Top semanal
@@ -352,7 +352,7 @@ ast:
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
       author_deleted: Usuariu esaniciáu
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       comments:
         one: 1 Comentario
         other: "%{count} comentarios"
@@ -421,29 +421,29 @@ ast:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar propuesta'
-    save: 'Guardar'
+    edit: "Editar propuesta"
+    save: "Guardar"
     delete: Borrar
     "yes": "Sí"
     "no": "Non"
     search_results: "Resultados de búsqueda"
     advanced_search:
-      author_type: 'Por categoría de autor'
-      author_type_blank: 'Elige una categoría'
-      date: 'Por fecha'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Elige una fecha'
-      date_1: 'Últimas 24 horas'
-      date_2: 'Última semana'
-      date_3: 'Último mes'
-      date_4: 'Último año'
-      date_5: 'Personalizada'
-      from: 'Desde'
-      general: 'Con el texto'
-      general_placeholder: 'Escribe el texto'
-      search: 'Filtru'
-      title: 'Búsqueda avanzada'
-      to: 'Hasta'
+      author_type: "Por categoría de autor"
+      author_type_blank: "Elige una categoría"
+      date: "Por fecha"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Elige una fecha"
+      date_1: "Últimas 24 horas"
+      date_2: "Última semana"
+      date_3: "Último mes"
+      date_4: "Último año"
+      date_5: "Personalizada"
+      from: "Desde"
+      general: "Con el texto"
+      general_placeholder: "Escribe el texto"
+      search: "Filtru"
+      title: "Búsqueda avanzada"
+      to: "Hasta"
     author_info:
       author_deleted: Usuariu esaniciáu
     back: Volver
@@ -498,8 +498,8 @@ ast:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
-      association_name: 'Nome de l''asociación'
+      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
+      association_name: "Nome de l'asociación"
       description: Descripción detallada
       external_url: Enllaz a documentación adicional
       geozone: Ámbitu d'actuación
@@ -532,7 +532,7 @@ ast:
       start_new: Crear propuesta de inversión
     show:
       author_deleted: Usuariu esaniciáu
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       share: Compartir
     wrong_price_format: Solo pue incluyir calteres numbéricos
     spending_proposal:
