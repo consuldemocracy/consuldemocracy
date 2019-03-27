@@ -18,6 +18,7 @@
   * [Servidor local de correo](getting_started/dev_mailserver.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
   * [Digital Ocean](getting_started/digital_ocean.md)
+  * [Crear usuario](getting_started/create_deploy_user.md)
   * [Generación de claves SSH](getting_started/generating_ssh_key.md)
 * [Heroku](getting_started/deploying-on-heroku.md)
 * [Docker](getting_started/docker.md)

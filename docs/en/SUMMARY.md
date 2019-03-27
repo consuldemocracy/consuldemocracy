@@ -18,6 +18,7 @@
   * [Development Mail Server](getting_started/dev_mailserver.md)
 * [Production and Staging servers](getting_started/servers.md)
   * [Digital Ocean](getting_started/digital_ocean.md)
+  * [Create a deploy user](getting_started/create_deploy_user.md)
   * [Generating SSH Key](getting_started/generating_ssh_key.md)
 * [Heroku](getting_started/deploying-on-heroku.md)
 * [Docker](getting_started/docker.md)
