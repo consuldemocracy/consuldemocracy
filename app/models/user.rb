@@ -238,7 +238,7 @@ class User < ActiveRecord::Base
     Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
-    data_log = "id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}"
+    data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
     update(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
 

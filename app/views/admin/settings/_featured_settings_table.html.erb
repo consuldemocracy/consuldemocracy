@@ -35,8 +35,8 @@
           <%= form_for(feature, url: admin_setting_path(feature), html: { id: "edit_#{dom_id(feature)}"}) do |f| %>
 
             <%= f.hidden_field :value, id: dom_id(feature), value: (feature.enabled? ? "" : "active") %>
-            <%= f.submit(t("admin.settings.index.features.#{feature.enabled? ? 'disable' : 'enable'}"),
-                        class: "button expanded #{feature.enabled? ? 'hollow alert' : 'success'}",
+            <%= f.submit(t("admin.settings.index.features.#{feature.enabled? ? "disable" : "enable"}"),
+                        class: "button expanded #{feature.enabled? ? "hollow alert" : "success"}",
                         data: {confirm: t("admin.actions.confirm")}) %>
           <% end %>
         </td>

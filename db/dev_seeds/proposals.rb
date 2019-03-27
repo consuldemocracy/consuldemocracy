@@ -25,7 +25,7 @@ section "Creating Proposals" do
   tags = Faker::Lorem.words(25)
   30.times do
     author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3) + "?",
@@ -46,7 +46,7 @@ section "Creating Archived Proposals" do
   tags = Faker::Lorem.words(25)
   5.times do
     author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3) + "?",
@@ -67,7 +67,7 @@ section "Creating Successful Proposals" do
   tags = Faker::Lorem.words(25)
   10.times do
     author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3) + "?",

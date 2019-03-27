@@ -4,7 +4,7 @@ es:
       title: Administración
     actions:
       actions: Acciones
-      confirm: '¿Estás seguro?'
+      confirm: "¿Estás seguro?"
       confirm_hide: Confirmar moderación
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -87,7 +87,7 @@ es:
         edit_budget: Editar presupuesto
         no_budgets: "No hay presupuestos participativos."
       create:
-        notice: '¡Presupuestos participativos creados con éxito!'
+        notice: "¡Presupuestos participativos creados con éxito!"
       update:
         notice: Presupuestos participativos actualizados
       edit:
@@ -300,7 +300,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: '¡Nuevo hito creado con éxito!'
+        notice: "¡Nuevo hito creado con éxito!"
       update:
         notice: Hito actualizado
       delete:
@@ -384,9 +384,9 @@ es:
         user: Usuario
         no_hidden_users: No hay usuarios bloqueados.
       show:
-        email: 'Email:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
+        email: "Email:"
+        hidden_at: "Bloqueado:"
+        registered_at: "Fecha de alta:"
         title: Actividad del usuario (%{user})
     hidden_budget_investments:
       index:
@@ -576,7 +576,7 @@ es:
         add: Añadir como gestor
         delete: Borrar
       search:
-        title: 'Gestores: Búsqueda de usuarios'
+        title: "Gestores: Búsqueda de usuarios"
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -661,7 +661,7 @@ es:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        title: 'Moderadores: Búsqueda de usuarios'
+        title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
       all_users: Todos los usuarios
       administrators: Administradores
@@ -707,7 +707,7 @@ es:
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
-        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
+        send_alert: "¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?"
     admin_notifications:
       create_success: Notificación creada correctamente
       update_success: Notificación actualizada correctamente
@@ -744,7 +744,7 @@ es:
         segment_recipient: Destinatarios
         preview_guide: "Así es como los usuarios verán la notificación:"
         sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: '¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?'
+        send_alert: "¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?"
     system_emails:
       preview_pending:
         action: Previsualizar pendientes
@@ -815,7 +815,7 @@ es:
         add: Añadir como evaluador
         delete: Borrar
       search:
-        title: 'Evaluadores: Búsqueda de usuarios'
+        title: "Evaluadores: Búsqueda de usuarios"
       summary:
         title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
@@ -1090,10 +1090,10 @@ es:
         edit: "Editar urna"
     officials:
       edit:
-        destroy: Eliminar condición de 'Cargo Público'
-        title: 'Cargos Públicos: Editar usuario'
+        destroy: Eliminar condición de "Cargo Público"
+        title: "Cargos Públicos: Editar usuario"
       flash:
-        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+        official_destroyed: "Datos guardados: el usuario ya no es cargo público"
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
@@ -1111,7 +1111,7 @@ es:
       search:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
     organizations:
       index:
@@ -1183,7 +1183,7 @@ es:
           disable: "Desactivar"
         map:
           title: Configuración del mapa
-          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón "Actualizar".
           flash:
             update: La configuración del mapa se ha guardado correctamente.
           form:
@@ -1304,7 +1304,7 @@ es:
         form:
           error:
             one: "error impidió guardar la zona."
-            other: 'errores impidieron guardar la zona.'
+            other: "errores impidieron guardar la zona."
       edit:
         form:
           submit_button: Guardar cambios

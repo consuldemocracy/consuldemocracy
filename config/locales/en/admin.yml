@@ -384,9 +384,9 @@ en:
         user: User
         no_hidden_users: There are no hidden users.
       show:
-        email: 'Email:'
-        hidden_at: 'Hidden at:'
-        registered_at: 'Registered at:'
+        email: "Email:"
+        hidden_at: "Hidden at:"
+        registered_at: "Registered at:"
         title: Activity of user (%{user})
     hidden_budget_investments:
       index:
@@ -577,7 +577,7 @@ en:
         add: Add
         delete: Delete
       search:
-        title: 'Managers: User search'
+        title: "Managers: User search"
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -662,7 +662,7 @@ en:
         add: Add
         delete: Delete
       search:
-        title: 'Moderators: User search'
+        title: "Moderators: User search"
     segment_recipient:
       all_users: All users
       administrators: Administrators
@@ -816,7 +816,7 @@ en:
         add: Add to valuators
         delete: Delete
       search:
-        title: 'Valuators: User search'
+        title: "Valuators: User search"
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator
@@ -1091,10 +1091,10 @@ en:
         edit: "Edit booth"
     officials:
       edit:
-        destroy: Remove 'Official' status
-        title: 'Officials: Edit user'
+        destroy: Remove "Official" status
+        title: "Officials: Edit user"
       flash:
-        official_destroyed: 'Details saved: the user is no longer an official'
+        official_destroyed: "Details saved: the user is no longer an official"
         official_updated: Details of official saved
       index:
         title: Officials
@@ -1112,7 +1112,7 @@ en:
       search:
         edit_official: Edit official
         make_official: Make official
-        title: 'Official positions: User search'
+        title: "Official positions: User search"
         no_results: Official positions not found.
     organizations:
       index:
@@ -1305,7 +1305,7 @@ en:
         form:
           error:
             one: "error prevented this geozone from being saved"
-            other: 'errors prevented this geozone from being saved'
+            other: "errors prevented this geozone from being saved"
       edit:
         form:
           submit_button: Save changes

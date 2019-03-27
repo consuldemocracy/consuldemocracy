@@ -1,7 +1,7 @@
 es:
   documents:
     title: Documentos
-    max_documents_allowed_reached_html: '¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>'
+    max_documents_allowed_reached_html: "¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>"
     form:
       title: Documentos
       title_placeholder: Añade un título descriptivo para el documento
@@ -14,7 +14,7 @@ es:
       destroy:
         notice: El documento se ha eliminado correctamente.
         alert: El documento no se ha podido eliminar.
-        confirm: '¿Está seguro de que desea eliminar el documento? Esta acción no se puede deshacer!'
+        confirm: "¿Está seguro de que desea eliminar el documento? Esta acción no se puede deshacer!"
     buttons:
       download_document: Descargar archivo
       destroy_document: Eliminar documento

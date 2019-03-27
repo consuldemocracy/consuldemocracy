@@ -18,7 +18,7 @@ module DocumentablesHelper
 
   def accepted_content_types_extensions(documentable_class)
     documentable_class.accepted_content_types
-                      .collect{ |content_type| ".#{content_type.split('/').last}" }
+                      .collect{ |content_type| ".#{content_type.split("/").last}" }
                       .join(",")
   end
 

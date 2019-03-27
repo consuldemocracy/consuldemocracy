@@ -68,7 +68,7 @@ feature "Admin officials" do
   scenario "Destroy" do
     visit edit_admin_official_path(@official)
 
-    click_link "Remove 'Official' status"
+    click_link 'Remove "Official" status'
 
     expect(page).to have_content "Details saved: the user is no longer an official"
     expect(page).to have_current_path(admin_officials_path, ignore_query: true)

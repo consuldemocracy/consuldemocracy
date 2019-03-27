@@ -10,11 +10,11 @@ describe HasOrders do
     has_orders ->(c) { ["votes_count", "flags_count"] }, only: :new
 
     def index
-      render text: "#{@current_order} (#{@valid_orders.join(' ')})"
+      render text: "#{@current_order} (#{@valid_orders.join(" ")})"
     end
 
     def new
-      render text: "#{@current_order} (#{@valid_orders.join(' ')})"
+      render text: "#{@current_order} (#{@valid_orders.join(" ")})"
     end
   end
 

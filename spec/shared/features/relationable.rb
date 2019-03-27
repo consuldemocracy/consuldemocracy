@@ -48,7 +48,7 @@ shared_examples "relationable" do |relationable_model_name|
     end
 
     within("#related_content") do
-      fill_in 'url', with: "#{Setting['url'] + related2.url}"
+      fill_in "url", with: "#{Setting["url"] + related2.url}"
       click_button "Add"
     end
 
@@ -78,7 +78,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_on("Add related content")
 
     within("#related_content") do
-      fill_in 'url', with: Setting[:url] + relationable.url.to_s
+      fill_in "url", with: Setting[:url] + relationable.url.to_s
       click_button "Add"
     end
 

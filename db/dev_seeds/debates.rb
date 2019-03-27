@@ -2,7 +2,7 @@ section "Creating Debates" do
   tags = Faker::Lorem.words(25)
   30.times do
     author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     Debate.create!(author: author,
                    title: Faker::Lorem.sentence(3).truncate(60),
                    created_at: rand((Time.current - 1.week)..Time.current),
@@ -15,7 +15,7 @@ section "Creating Debates" do
   tags = ActsAsTaggableOn::Tag.where(kind: "category")
   30.times do
     author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     Debate.create!(author: author,
                    title: Faker::Lorem.sentence(3).truncate(60),
                    created_at: rand((Time.current - 1.week)..Time.current),

@@ -18,7 +18,7 @@ module ValuationHelper
     when 0
       t("valuation.budget_investments.index.no_valuators_assigned")
     when 1
-      "<span title=\"#{t('valuation.budget_investments.index.valuators_assigned', count: 1)}\">".html_safe +
+      "<span title=\"#{t("valuation.budget_investments.index.valuators_assigned", count: 1)}\">".html_safe +
         valuators.first.name +
       "</span>".html_safe
     else

@@ -67,7 +67,7 @@ es:
       most_commented: Más comentados
     select_order: Ordenar por
     show:
-      return_to_commentable: 'Volver a '
+      return_to_commentable: "Volver a "
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
@@ -219,7 +219,7 @@ es:
       available_locales: Idiomas disponibles
       collaborative_legislation: Legislación colaborativa
       debates: Debates
-      locale: 'Idioma:'
+      locale: "Idioma:"
       logo: Logo de CONSUL
       management: Gestión
       moderation: Moderar
@@ -241,7 +241,7 @@ es:
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
     admin:
-      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
+      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -368,7 +368,7 @@ es:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
-      select_order_long: 'Estas viendo las propuestas'
+      select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
       top: Top semanal
@@ -383,7 +383,7 @@ es:
     new:
       form:
         submit_button: Crear propuesta
-      more_info: '¿Cómo funcionan las propuestas ciudadanas?'
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -397,7 +397,7 @@ es:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      already_supported: '¡Ya has apoyado esta propuesta, compártela!'
+      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
         zero: Sin comentarios
         one: 1 Comentario
@@ -418,7 +418,7 @@ es:
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
     show:
       author_deleted: Usuario eliminado
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       comments:
         zero: Sin comentarios
         one: 1 Comentario
@@ -523,29 +523,29 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar'
-    save: 'Guardar'
+    edit: "Editar"
+    save: "Guardar"
     delete: Borrar
     "yes": "Si"
     "no": "No"
     search_results: "Resultados de la búsqueda"
     advanced_search:
-      author_type: 'Por categoría de autor'
-      author_type_blank: 'Elige una categoría'
-      date: 'Por fecha'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Elige una fecha'
-      date_1: 'Últimas 24 horas'
-      date_2: 'Última semana'
-      date_3: 'Último mes'
-      date_4: 'Último año'
-      date_5: 'Personalizada'
-      from: 'Desde'
-      general: 'Con el texto'
-      general_placeholder: 'Escribe el texto'
-      search: 'Filtrar'
-      title: 'Búsqueda avanzada'
-      to: 'Hasta'
+      author_type: "Por categoría de autor"
+      author_type_blank: "Elige una categoría"
+      date: "Por fecha"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Elige una fecha"
+      date_1: "Últimas 24 horas"
+      date_2: "Última semana"
+      date_3: "Último mes"
+      date_4: "Último año"
+      date_5: "Personalizada"
+      from: "Desde"
+      general: "Con el texto"
+      general_placeholder: "Escribe el texto"
+      search: "Filtrar"
+      title: "Búsqueda avanzada"
+      to: "Hasta"
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
@@ -627,8 +627,8 @@ es:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
-      association_name: 'Nombre de la asociación'
+      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
+      association_name: "Nombre de la asociación"
       description: Descripción detallada
       external_url: Enlace a documentación adicional
       geozone: Ámbito de actuación
@@ -653,7 +653,7 @@ es:
         unfeasible: No viables
       start_spending_proposal: Crea una propuesta de inversión
     new:
-      more_info: '¿Cómo funcionan los presupuestos participativos?'
+      more_info: "¿Cómo funcionan los presupuestos participativos?"
       recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
@@ -661,7 +661,7 @@ es:
       start_new: Crear una propuesta de gasto
     show:
       author_deleted: Usuario eliminado
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       share: Compartir
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
@@ -795,7 +795,7 @@ es:
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: '¿Tienes ya una cuenta en %{org_name}?'
+      question: "¿Tienes ya una cuenta en %{org_name}?"
       title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ir a la página de inicio
@@ -838,4 +838,4 @@ es:
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
-      title: '¿Cómo puedo comentar este documento?'
+      title: "¿Cómo puedo comentar este documento?"

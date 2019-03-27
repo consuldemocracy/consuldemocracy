@@ -15,7 +15,7 @@ Devise.setup do |config|
   if Rails.env.test? || !ActiveRecord::Base.connection.table_exists?("settings")
     config.mailer_sender = "noreply@consul.dev"
   else
-    config.mailer_sender = "'#{Setting['mailer_from_name']}' <#{Setting['mailer_from_address']}>"
+    config.mailer_sender = "'#{Setting["mailer_from_name"]}' <#{Setting["mailer_from_address"]}>"
   end
 
   # Configure the class responsible to send e-mails.

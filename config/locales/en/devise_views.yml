@@ -15,7 +15,7 @@ en:
     mailer:
       confirmation_instructions:
         confirm_link: Confirm my account
-        text: 'You can confirm your email account at the following link:'
+        text: "You can confirm your email account at the following link:"
         title: Welcome
         welcome: Welcome
       reset_password_instructions:
@@ -23,12 +23,12 @@ en:
         hello: Hello
         ignore_text: If you did not request a password change, you can ignore this email.
         info_text: Your password will not be changed unless you access the link and edit it.
-        text: 'We have received a request to change your password. You can do this at the following link:'
+        text: "We have received a request to change your password. You can do this at the following link:"
         title: Change your password
       unlock_instructions:
         hello: Hello
         info_text: Your account has been blocked due to an excessive number of failed sign-in attempts.
-        instructions_text: 'Please click on this link to unlock your account:'
+        instructions_text: "Please click on this link to unlock your account:"
         title: Your account has been locked
         unlock_link: Unlock my account
     menu:
@@ -103,7 +103,7 @@ en:
           password_confirmation_label: Confirm new password
           password_label: New password
           update_submit: Update
-          waiting_for: 'Awaiting confirmation of:'
+          waiting_for: "Awaiting confirmation of:"
         new:
           cancel: Cancel login
           email_label: Email

@@ -3,8 +3,8 @@ section "Creating Spending Proposals" do
   60.times do
     geozone = Geozone.all.sample
     author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
+    feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     valuation_finished = [true, false].sample
     feasible = [true, false].sample
     created_at = rand((Time.current - 1.week)..Time.current)
