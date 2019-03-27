@@ -374,8 +374,8 @@ de:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Nicht durch das Melderegister überprüft'
-              already_voted: 'Hat bereits für diesen Vorschlag abgestimmt'
+              not_in_census: "Nicht durch das Melderegister überprüft"
+              already_voted: "Hat bereits für diesen Vorschlag abgestimmt"
         site_customization/page:
           attributes:
             slug:
@@ -388,7 +388,7 @@ de:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Eine Überprüfung kann nicht kommentiert werden'
+              cannot_comment_valuation: "Eine Überprüfung kann nicht kommentiert werden"
       messages:
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
         restrict_dependent_destroy:
