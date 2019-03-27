@@ -329,9 +329,9 @@ pt-BR:
         user: Usuário
         no_hidden_users: Não há usuários ocultos.
       show:
-        email: 'Email:'
-        hidden_at: 'Oculto em:'
-        registered_at: 'Registrado em:'
+        email: "Email:"
+        hidden_at: "Oculto em:"
+        registered_at: "Registrado em:"
         title: Atividade do usuário (%{user})
     hidden_budget_investments:
       index:
@@ -508,7 +508,7 @@ pt-BR:
         add: Adicionar
         delete: Apagar
       search:
-        title: 'Gerentes: Pesquisa de usuário'
+        title: "Gerentes: Pesquisa de usuário"
     menu:
       activity: Atividade do moderador
       admin: Menu de admin
@@ -590,7 +590,7 @@ pt-BR:
         add: Adicionar
         delete: Apagar
       search:
-        title: 'Moderadores: Pesquisa de usuário'
+        title: "Moderadores: Pesquisa de usuário"
     segment_recipient:
       all_users: Todos os usuários
       administrators: Administradores
@@ -704,7 +704,7 @@ pt-BR:
         add: Adicionar aos avaliadores
         delete: Apagar
       search:
-        title: 'Avaliadores: Pesquisa de usuário'
+        title: "Avaliadores: Pesquisa de usuário"
       summary:
         title: Resumo do avaliador para projetos de investimento
         valuator_name: Avaliador
@@ -967,9 +967,9 @@ pt-BR:
     officials:
       edit:
         destroy: Remover condição de 'Cargo Público'
-        title: 'Cargos públicos: Editar usuário'
+        title: "Cargos públicos: Editar usuário"
       flash:
-        official_destroyed: 'Detalhes salvos: o usuário não possui mais cargo público'
+        official_destroyed: "Detalhes salvos: o usuário não possui mais cargo público"
         official_updated: Detalhes do cargo público salvos
       index:
         title: Cargos públicos
@@ -986,7 +986,7 @@ pt-BR:
       search:
         edit_official: Editar cargo público
         make_official: Converter em cargo público
-        title: 'Cargos públicos: Busca de usuários'
+        title: "Cargos públicos: Busca de usuários"
         no_results: Cargos públicos não encontrados.
     organizations:
       index:
@@ -1171,7 +1171,7 @@ pt-BR:
         form:
           error:
             one: "erro impediu esta geozona de ser salva"
-            other: 'erros impediram esta geozona de ser salva'
+            other: "erros impediram esta geozona de ser salva"
       edit:
         form:
           submit_button: Salvar alterações
