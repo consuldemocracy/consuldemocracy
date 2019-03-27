@@ -104,7 +104,7 @@ tr:
               key_column: 5
               page_column: Yasama işlemleri
         browser_table:
-          description: 'İşletim sistemine ve kullanılan tarayıcıya bağlı olarak, tuş kombinasyonu aşağıdaki şekilde olacaktır:'
+          description: "İşletim sistemine ve kullanılan tarayıcıya bağlı olarak, tuş kombinasyonu aşağıdaki şekilde olacaktır:"
           caption: İşletim sistemine ve tarayıcıya bağlı olarak tuş kombinasyonu
           browser_header: Tarayıcı
           key_header: Tuş kombinasyonu
@@ -147,7 +147,7 @@ tr:
               browser_column: Opera
               action_column: Görünüm > ölçek
         browser_shortcuts_table:
-          description: 'Metin boyutunu değiştirmenin başka bir yolu, tarayıcılarda tanımlanan klavye kısayollarını, özellikle de tuş kombinasyonunu kullanmaktır:'
+          description: "Metin boyutunu değiştirmenin başka bir yolu, tarayıcılarda tanımlanan klavye kısayollarını, özellikle de tuş kombinasyonunu kullanmaktır:"
           rows:
             - 
               shortcut_column: CTRL ve + (CMD ve + MAC'te)
@@ -163,8 +163,8 @@ tr:
     verify:
       code: Mektupta aldığınız kod
       email: E-posta
-      info: 'Hesabınızı doğrulamak için erişim verinizi tanıtın:'
-      info_code: 'Şimdi mektupta aldığınız kodu tanıtın:'
+      info: "Hesabınızı doğrulamak için erişim verinizi tanıtın:"
+      info_code: "Şimdi mektupta aldığınız kodu tanıtın:"
       password: Şifre
       submit: Hesabımı doğrula
       title: Hesabınızı doğrulayın
