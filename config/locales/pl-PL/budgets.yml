@@ -112,9 +112,9 @@ pl:
         author_deleted: Użytkownik usunięty
         price_explanation: Wyjaśnienie ceny
         unfeasibility_explanation: Wyjaśnienie niewykonalności
-        code_html: 'Kod projektu inwestycyjnego: <strong>%{code}</strong>'
-        location_html: 'Lokalizacja <strong>%{location}</strong>'
-        organization_name_html: 'Zawnioskowano w imieniu: <strong>%{name}</strong>'
+        code_html: "Kod projektu inwestycyjnego: <strong>%{code}</strong>"
+        location_html: "Lokalizacja <strong>%{location}</strong>"
+        organization_name_html: "Zawnioskowano w imieniu: <strong>%{name}</strong>"
         share: Udostępnij
         title: Projekt inwestycyjny
         supports: Wsparcie
@@ -123,10 +123,10 @@ pl:
         comments_tab: Komentarze
         milestones_tab: Kamienie milowe
         author: Autor
-        project_unfeasible_html: 'Ten projekt inwestycyjny <strong>został oznaczony jako niewykonalny</strong> i nie przejdzie do fazy głosowania.'
-        project_selected_html: 'Ten projekt inwestycyjny <strong>został wybrany</strong> do fazy głosowania.'
-        project_winner: 'Zwycięski projekt inwestycyjny'
-        project_not_selected_html: 'Ten projekt inwestycyjny <strong>nie został wybrany</strong> do fazy głosowania.'
+        project_unfeasible_html: "Ten projekt inwestycyjny <strong>został oznaczony jako niewykonalny</strong> i nie przejdzie do fazy głosowania."
+        project_selected_html: "Ten projekt inwestycyjny <strong>został wybrany</strong> do fazy głosowania."
+        project_winner: "Zwycięski projekt inwestycyjny"
+        project_not_selected_html: "Ten projekt inwestycyjny <strong>nie został wybrany</strong> do fazy głosowania."
         see_price_explanation: Wyjaśnienie cen
       wrong_price_format: Tylko liczby całkowite
       investment:
