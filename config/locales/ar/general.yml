@@ -299,7 +299,7 @@ ar:
     proposal:
       created: "قمت بإنشاء اقتراح!"
       share:
-        view_proposal: ليس الآن، انتقل إلى اقتراحي
+        view_proposal: ليس الآن، انتقل إلى مقترحي
       already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
       comments:
         zero: لا توجد تعليقات
@@ -310,7 +310,7 @@ ar:
         many: "%{count} تعليق"
         other: "%{count} تعليق"
       support: دعم
-      support_title: ادعم هذا المقترح
+      support_title: دعم هذا المقترح
       supports:
         zero: لا يوجد دعم
         zero: "%{count} يدعم"
@@ -327,7 +327,7 @@ ar:
         few: "%{count} أصوات"
         many: "%{count} أصوات"
         other: "%{count} أصوات"
-      archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع دعم."
+      archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع الدعم."
       successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
     show:
       author_deleted: تم حذف المستخدم
