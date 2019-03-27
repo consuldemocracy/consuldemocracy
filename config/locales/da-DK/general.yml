@@ -5,6 +5,7 @@ da:
       email_on_comment_label: Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg
       email_on_comment_reply_label: Send mig en e-mail når nogen svarer på mine kommentarer
       erase_account_link: Slet min konto
+      finish_verification: Færdiggør verificering
       notifications: Notifikationer
       organization_name_label: Navn på organisation
       organization_responsible_name_placeholder: Repræsentant for organisationen/gruppen
@@ -281,12 +282,17 @@ da:
         all: Alle
         duplicated: Kopieret
         started: Undervejs
+        unfeasible: Kan ikke gennemføres
         done: Færdig
         other: Andre
       search_form:
         button: Søg
         placeholder: Søg borgerforslag...
+        title: Søg
+      start_proposal: Opret et borgerforslag
+      title: Borgerforslag
       section_header:
+        title: Borgerforslag
         help: Hjælp til borgerforslag
       section_footer:
         title: Hjælp til borgerforslag
@@ -295,6 +301,8 @@ da:
         submit_button: Opret borgerforslag
       more_info: Hvordan fungerer borgerforslag?
       recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
+      recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling eller søger at sabotere debatforummet vil blive slettet. Alt andet er tilladt.
+      recommendations_title: Anbefalinger, hvis du vil oprette et borgerforslag
       start_new: Opret nyt borgerforslag
     proposal:
       created: "Du oprettede et forslag!"
@@ -330,6 +338,8 @@ da:
       flag: Dette forslag er blevet markeret som upassende af flere brugere.
       login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       notifications_tab: Notifikationer
+      milestones_tab: Proces
+      retired_warning_link_to_explanation: Læs forklaringen før du stemmer.
       share: Del
       send_notification: Send meddelelse
       no_notifications: "Dette forslag har ingen notifikationer."
@@ -341,6 +351,7 @@ da:
       message: "Jeg støttede op om dette forslag %{summary} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
   polls:
     all: "Alle"
+    no_dates: "der er ikke angivet nogen dato"
     dates: "Fra %{open_at} til %{closed_at}"
     index:
       filters:
@@ -476,10 +487,33 @@ da:
     show:
       share: Del
     wrong_price_format: Kun hele tal
+    spending_proposal:
+      support: Støt
+      support_title: Støt projektet
+      supports:
+        zero: Ingen opbakning
+        one: 1 støtter forslaget
+        other: "%{count} støtter forslaget"
+  stats:
+    index:
+      visits: Besøg
+      debates: Debatindlæg
+      proposals: Borgerforslag
+      comments: Kommentarer
+  unauthorized:
+    default: Du har ikke tilladelse til at tilgå denne side.
+    manage:
+      all: "Du har ikke tilladelse til at udføre denne handling %{action} på %{subject}."
   users:
     direct_messages:
       new:
+        body_label: Besked
+        direct_messages_bloqued: "Denne bruger har besluttet ikke at kunne modtage direkte beskeder"
+        submit_button: Send besked
+        title: Send privatbesked til %{receiver}
+        title_label: Titel
         verified_only: For at sende en privat besked %{verify_account}
+        verify_account: verificer din konto
         authenticate: Du skal %{signin} eller %{signup} for at fortsætte.
         signin: log ind
         signup: tilmeld dig
@@ -578,6 +612,7 @@ da:
       user_permission_info: Med din konto kan du...
       user_permission_proposal: Oprette nye borgerforslag
       user_permission_support_proposal: Støtte op om borgerforslag*
+      user_permission_verify_my_account: Verificer min konto
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
   related_content:
@@ -589,8 +624,19 @@ da:
     submit: "Tilføj"
     error: "Linket er ikke gyldigt. Husk at begynde med %{url}."
     error_itself: "Linket er ikke gyldigt. Du kan ikke relatere indholdet til sig selv."
+    score_positive: "Ja"
+    score_negative: "Nej"
+    content_title:
+      proposal: "Borgerforslag"
+      debate: "Debatindlæg"
+      budget_investment: "Budgetinvestering"
+  admin/widget:
+    header:
+      title: Administration
   annotator:
     help:
+      alt: Vælg den tekst, du ønsker at kommentere, og tryk derefter på knappen med skriveredskabet.
+      text: For at kunne kommentere dokumentet, skal du være %{sign_in} eller %{sign_up}. Derefter vælger du den tekst, du ønsker at kommentere, og trykker på knappen med skriveredskabet.
       text_sign_in: log ind
       text_sign_up: tilmeld
       title: Hvordan kan jeg kommentere på dette?
