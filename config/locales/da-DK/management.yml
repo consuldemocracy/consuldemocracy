@@ -9,7 +9,7 @@ da:
       show:
         title: Brugerkonto
       edit:
-        title: 'Rediger konto: Nulstil adgangskode'
+        title: "Rediger konto: Nulstil adgangskode"
         back: Tilbage
         password:
           password: Adgangskode
@@ -22,11 +22,11 @@ da:
           print_help: Du kan udskrive adgangskoden, når den er gemt.
     account_info:
       change_user: Skift bruger
-      document_number_label: 'Dokumentnummer:'
-      document_type_label: 'Dokumenttype:'
-      email_label: 'E-mail:'
-      identified_label: 'Identificeret som:'
-      username_label: 'Brugernavn:'
+      document_number_label: "Dokumentnummer:"
+      document_type_label: "Dokumenttype:"
+      email_label: "E-mail:"
+      identified_label: "Identificeret som:"
+      username_label: "Brugernavn:"
     check: Kontroller dokument
     dashboard:
       index:
@@ -38,8 +38,8 @@ da:
     date_of_birth: Fødselsdato
     email_verifications:
       already_verified: Brugerkontoen er allerede verificeret.
-      choose_options: 'Vær venlig at vælge en af de følgende valgmuligheder:'
-      document_mismatch: 'Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}'
+      choose_options: "Vær venlig at vælge en af de følgende valgmuligheder:"
+      document_mismatch: "Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}"
       email_placeholder: Skriv den e-mail denne person anvendte til at oprette sin konto med
     menu:
       create_proposal: Opret borgerforslag
