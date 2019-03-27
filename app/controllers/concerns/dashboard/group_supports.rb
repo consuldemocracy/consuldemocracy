@@ -45,11 +45,12 @@ module Dashboard::GroupSupports
     end
 
     def interval
-      return 1.week if params[:group_by] == 'week'
-      return 1.month if params[:group_by] == 'month'
+      return 1.week if params[:group_by] == "week"
+      return 1.month if params[:group_by] == "month"
       1.day
     end
   end
+
   private
 
     def calculate_week(date)

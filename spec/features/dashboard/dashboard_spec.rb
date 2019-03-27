@@ -68,7 +68,7 @@ feature "Proposal's dashboard" do
   scenario "Dashboard progress display link to new page for proposed actions when
             there are more than four proposed actions", js: true do
     create_list(:dashboard_action, 4, :proposed_action, :active)
-    action_5 = create(:dashboard_action, :proposed_action, :active)
+    create(:dashboard_action, :proposed_action, :active)
 
     visit progress_proposal_dashboard_path(proposal)
 
@@ -110,12 +110,6 @@ feature "Proposal's dashboard" do
     within "#proposed_actions_done" do
       expect(page).to have_content(action.title)
     end
-  end
-
-  scenario "Display no results text when there are not proposed_actions done" do
-    visit progress_proposal_dashboard_path(proposal)
-
-    expect(page).to have_content("No recommended actions done")
   end
 
   scenario "Dashboard progress can execute proposed action" do
@@ -334,7 +328,7 @@ feature "Proposal's dashboard" do
   scenario "On recommended actions section display link for toggle when there are
             more than four proposed actions", js: true do
     create_list(:dashboard_action, 4, :proposed_action, :active)
-    action_5 = create(:dashboard_action, :proposed_action, :active)
+    create(:dashboard_action, :proposed_action, :active)
 
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
 
@@ -360,8 +354,7 @@ feature "Proposal's dashboard" do
     end
   end
 
-  scenario "On recommended actions section contains no results text when there are
-            not proposed_actions pending" do
+  scenario "No recommended actions pending" do
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
 
     expect(page).to have_content("No recommended actions pending")
@@ -378,8 +371,7 @@ feature "Proposal's dashboard" do
     end
   end
 
-  scenario "On recommended actions section contains no_results_text when there are
-            not proposed_actions pending" do
+  scenario "No recommended actions done" do
     visit progress_proposal_dashboard_path(proposal)
 
     expect(page).to have_content("No recommended actions done")
@@ -392,65 +384,69 @@ feature "Proposal's dashboard" do
     end
 
     scenario "Display tag 'new' on resouce when it is new for author since last login" do
-      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+      resource = create(:dashboard_action, :resource, :active, day_offset: 0,
+                                                               published_proposal: false)
 
       visit progress_proposal_dashboard_path(proposal)
 
       within "#dashboard_action_#{resource.id}" do
-        expect(page).to have_content('New')
+        expect(page).to have_content("New")
       end
     end
 
     scenario "Not display tag 'new' on resouce when there is not new resources since last login" do
-      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+      resource = create(:dashboard_action, :resource, :active, day_offset: 0,
+                                                               published_proposal: false)
       proposal.author.update(last_sign_in_at: Date.today)
 
       visit progress_proposal_dashboard_path(proposal)
 
       within "#dashboard_action_#{resource.id}" do
-        expect(page).not_to have_content('New')
+        expect(page).not_to have_content("New")
       end
     end
 
     scenario "Display tag 'new' on proposed_action when it is new for author since last login" do
-      proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+      proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
+                                                                     published_proposal: false)
 
       visit progress_proposal_dashboard_path(proposal)
 
       within "#dashboard_action_#{proposed_action.id}" do
-        expect(page).to have_content('New')
+        expect(page).to have_content("New")
       end
     end
 
-    scenario "Not display tag 'new' on proposed_action when there is not new proposed_action since last login" do
-      proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+    scenario "Not display tag 'new' on proposed_action when there is not new since last login" do
+      proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
+                                                                     published_proposal: false)
       proposal.author.update(last_sign_in_at: Date.today)
 
       visit progress_proposal_dashboard_path(proposal)
 
       within "#dashboard_action_#{proposed_action.id}" do
-        expect(page).not_to have_content('New')
+        expect(page).not_to have_content("New")
       end
     end
 
     scenario "Display tag 'new' on sidebar menu when there is a new resouce since last login" do
-      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
 
       visit progress_proposal_dashboard_path(proposal)
 
       within "#side_menu" do
-        expect(page).to have_content('New')
+        expect(page).to have_content("New")
       end
     end
 
-    scenario "Not display tag 'new' on sidebar menu when there is not a new resouce since last login" do
-      resource = create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+    scenario "Not display tag 'new' on sidebar when there is not a new resouce since last login" do
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
       proposal.author.update(last_sign_in_at: Date.today)
 
       visit progress_proposal_dashboard_path(proposal)
 
       within "#side_menu" do
-        expect(page).not_to have_content('New')
+        expect(page).not_to have_content("New")
       end
     end
 

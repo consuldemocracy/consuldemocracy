@@ -3,7 +3,7 @@ class Admin::Dashboard::BaseController < Admin::BaseController
 
   private
 
-  def namespace
-    'admin'
-  end
+    def namespace
+      "admin"
+    end
 end

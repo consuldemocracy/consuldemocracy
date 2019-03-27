@@ -92,7 +92,7 @@
             <div class="sidebar-divider"></div>
             <p class="sidebar-title"><%= t("shared.follow") %></p>
 
-            <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal)  %>
+            <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
           <% end %>
 
           <%= render "communities/access_button", community: @proposal.community %>

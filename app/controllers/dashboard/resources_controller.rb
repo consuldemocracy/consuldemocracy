@@ -1,11 +1,11 @@
-class Dashboard::ResourcesController < Dashboard::BaseController 
+class Dashboard::ResourcesController < Dashboard::BaseController
   skip_authorization_check
 
   def index
     @resources = Dashboard::Action
                  .active
                  .resources
-                 .where('required_supports > 0')
+                 .where("required_supports > 0")
                  .order(required_supports: :asc)
 
     render json: @resources.map { |resource|

@@ -153,13 +153,13 @@ describe Abilities::Common do
     it { should_not be_able_to(:destroy, proposal_image)         }
     it { should_not be_able_to(:destroy, proposal_document)      }
   end
-  
-  describe 'proposals dashboard' do
+
+  describe "proposals dashboard" do
     it { should be_able_to(:dashboard, own_proposal) }
     it { should_not be_able_to(:dashboard, proposal) }
   end
 
-  describe 'proposal polls' do
+  describe "proposal polls" do
     let(:poll) { create(:poll, related: own_proposal) }
 
     it { should be_able_to(:manage_polls, own_proposal) }
@@ -168,17 +168,17 @@ describe Abilities::Common do
     it { should be_able_to(:results, poll) }
   end
 
-  describe 'proposal mailing' do
+  describe "proposal mailing" do
     it { should be_able_to(:manage_mailing, own_proposal) }
     it { should_not be_able_to(:manage_mailing, proposal) }
   end
 
-  describe 'proposal poster' do
+  describe "proposal poster" do
     it { should be_able_to(:manage_poster, own_proposal) }
     it { should_not be_able_to(:manage_poster, proposal) }
   end
 
-  describe 'publishing proposals' do
+  describe "publishing proposals" do
     let(:draft_own_proposal) { create(:proposal, :draft, author: user) }
     let(:retired_proposal) { create(:proposal, :draft, :retired, author: user) }
 
