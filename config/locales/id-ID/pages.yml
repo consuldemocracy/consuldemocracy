@@ -100,7 +100,7 @@ id:
     verify:
       code: Kode yang anda terima di surat
       email: Email
-      info_code: 'Sekarang memperkenalkan kode yang anda terima di surat:'
+      info_code: "Sekarang memperkenalkan kode yang anda terima di surat:"
       password: Kata Sandi
       submit: Memverifikasi account saya
       title: Verifikasi akun anda
