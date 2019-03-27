@@ -1218,4 +1218,31 @@ describe Budget::Investment do
       end
     end
   end
+
+  describe "admin_and_valuator_users_associated" do
+    let(:investment) { create(:budget_investment) }
+    let(:valuator_group) { create(:valuator_group) }
+    let(:valuator) { create(:valuator) }
+    let(:administrator) { create(:administrator) }
+
+    it "returns empty array if not valuators or administrator assigned" do
+      expect(investment.admin_and_valuator_users_associated).to eq([])
+    end
+
+    it "returns all valuator and administrator users" do
+      valuator_group.valuators << valuator
+      investment.valuator_groups << valuator_group
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator])
+      investment.administrator = administrator
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator, administrator])
+    end
+
+    it "returns uniq valuators or administrator users" do
+      valuator_group.valuators << valuator
+      investment.valuator_groups << valuator_group
+      investment.valuators << valuator
+      investment.administrator = administrator
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator, administrator])
+    end
+  end
 end

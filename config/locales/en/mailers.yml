@@ -70,6 +70,12 @@ en:
       hi: "Dear user,"
       thanks: "Thank you again for participating."
       sincerely: "Sincererly"
+    evaluation_comment:
+      subject: "New evaluation comment"
+      title: New evaluation comment for %{investment}
+      hi: Hi
+      new_comment_by_html: There is a new evaluation comment from <b>%{commenter}</b> to the budget investment %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "More news about your citizen proposal"
       hi: "Hello %{name},"

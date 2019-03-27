@@ -875,6 +875,9 @@ en:
       user_invite:
         title: "User Invitation"
         description: "Sent to the person that has been invited to register an account."
+      evaluation_comment:
+        title: "New evaluation comment"
+        description: "Sent to administrators and evaluators related to commented investment"
       edit_info: "You can edit this email in"
       message_title: "Message's Title"
       message_body: "This is a sample of message's content."
@@ -882,6 +885,7 @@ en:
         no_investments: "There aren't any budget investment created. Some example data is needed in order to preview the email."
         no_comments: "There aren't any comments created. Some example data is needed in order to preview the email."
         no_replies: "There aren't any replies created. Some example data is needed in order to preview the email."
+        no_evaluation_comments: "There aren't any evaluation comments created. Some example data is needed in order to preview the email."
     emails_download:
       index:
         title: Emails download
