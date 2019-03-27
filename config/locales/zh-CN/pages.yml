@@ -104,7 +104,7 @@ zh-CN:
               key_column: 5
               page_column: 立法进程
         browser_table:
-          description: '根据操作系统和使用的浏览器，组合键如下所示：'
+          description: "根据操作系统和使用的浏览器，组合键如下所示："
           caption: 组合键根据所使用的操作系统和浏览器而不同
           browser_header: 浏览器
           key_header: 组合键
@@ -147,7 +147,7 @@ zh-CN:
               browser_column: Opera
               action_column: 查看>比例
         browser_shortcuts_table:
-          description: '另一种修改字体大小的方法是使用浏览器中定义的键盘快捷键，尤其是组合键：'
+          description: "另一种修改字体大小的方法是使用浏览器中定义的键盘快捷键，尤其是组合键："
           rows:
             - 
               shortcut_column: CTRL 和 + (在MAC上用CMD 和 +)
@@ -163,8 +163,8 @@ zh-CN:
     verify:
       code: 您在信中收到的代码
       email: 电子邮件地址
-      info: '要核实您的账户，请输入您的访问数据：'
-      info_code: '现在请输入您在信里收到的代码：'
+      info: "要核实您的账户，请输入您的访问数据："
+      info_code: "现在请输入您在信里收到的代码："
       password: 密码
       submit: 验证我的帐号
       title: 核实您的账户
