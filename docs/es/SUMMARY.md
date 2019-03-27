@@ -17,6 +17,7 @@
 * [Instalación local](getting_started/local_installation.md)
   * [Servidor local de correo](getting_started/dev_mailserver.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
+  * [Digital Ocean](getting_started/digital_ocean.md)
 * [Heroku](getting_started/deploying-on-heroku.md)
 * [Docker](getting_started/docker.md)
 * [Configuración básica](getting_started/basic_configuration.md)
