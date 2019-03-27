@@ -304,9 +304,9 @@ fa:
         user: کاربر
         no_hidden_users: هیچ کاربر پنهانی وجود ندارد
       show:
-        email: 'پست الکترونیکی:'
-        hidden_at: 'پنهان در:'
-        registered_at: 'ثبت در:'
+        email: "پست الکترونیکی:"
+        hidden_at: "پنهان در:"
+        registered_at: "ثبت در:"
         title: فعالیت های کاربر (%{user})
     hidden_budget_investments:
       index:
@@ -472,7 +472,7 @@ fa:
         add: اضافه کردن
         delete: حذف
       search:
-        title: 'مدیران: جستجوی کاربر'
+        title: "مدیران: جستجوی کاربر"
     menu:
       activity: فعالیت مدیر
       admin: منوی ادمین
@@ -544,7 +544,7 @@ fa:
         add: اضافه کردن
         delete: حذف
       search:
-        title: 'مدیران: جستجوی کاربر'
+        title: "مدیران: جستجوی کاربر"
     segment_recipient:
       all_users: "تمام کاربران\n"
       administrators: مدیران
@@ -625,7 +625,7 @@ fa:
         add: افزودن به ارزیابان
         delete: حذف
       search:
-        title: 'ارزیابی کنندگان: جستجوی کاربر'
+        title: "ارزیابی کنندگان: جستجوی کاربر"
       summary:
         title: خلاصه ارزشیابی برای پروژه های سرمایه گذاری
         valuator_name: ارزیابی
@@ -882,9 +882,9 @@ fa:
     officials:
       edit:
         destroy: حذف وضعیت 'رسمی'
-        title: 'مقام: ویرایش کاربر'
+        title: "مقام: ویرایش کاربر"
       flash:
-        official_destroyed: 'جزئیات ذخیره شده: کاربر دیگر رسمی نیست'
+        official_destroyed: "جزئیات ذخیره شده: کاربر دیگر رسمی نیست"
         official_updated: جزئیات رسمی ذخیره شده
       index:
         title: مقامات
@@ -901,7 +901,7 @@ fa:
       search:
         edit_official: ویرایش رسمی
         make_official: رسمی
-        title: 'موقعیت های رسمی: جستجوی کاربر'
+        title: "موقعیت های رسمی: جستجوی کاربر"
         no_results: موقعیت های رسمی یافت نشد
     organizations:
       index:
@@ -1080,7 +1080,7 @@ fa:
         form:
           error:
             one: "خطا باعث می شود که این geozone نجات یابد"
-            other: 'خطاها باعث می شود که این geozone نجات یابد'
+            other: "خطاها باعث می شود که این geozone نجات یابد"
       edit:
         form:
           submit_button: ذخیره تغییرات
