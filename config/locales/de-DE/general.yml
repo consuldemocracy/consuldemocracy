@@ -67,7 +67,7 @@ de:
       most_commented: meist kommentiert
     select_order: Sortieren nach
     show:
-      return_to_commentable: 'Zurück zu'
+      return_to_commentable: "Zurück zu"
   comments_helper:
     comment_button: Kommentar veröffentlichen
     comment_link: Kommentar
@@ -218,7 +218,7 @@ de:
       available_locales: Verfügbare Sprachen
       collaborative_legislation: Gesetzgebungsverfahren
       debates: Diskussionen
-      locale: 'Sprache:'
+      locale: "Sprache:"
       logo: Consul-Logo
       management: Verwaltung
       moderation: Moderation
@@ -240,7 +240,7 @@ de:
         notifications: Benachrichtigungen
         no_notifications: "Sie haben keine neuen Benachrichtigungen"
     admin:
-      watch_form_message: 'Sie haben die Änderungen nicht gespeichert. Möchten Sie die Seite dennoch verlassen?'
+      watch_form_message: "Sie haben die Änderungen nicht gespeichert. Möchten Sie die Seite dennoch verlassen?"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
@@ -367,7 +367,7 @@ de:
         one: " enthält den Begriff <strong>'%{search_term}'</strong>"
         other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       select_order: Sortieren nach
-      select_order_long: 'Sie sehen Vorschläge nach:'
+      select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
       title: Vorschläge
       top: Tops der Woche
@@ -416,7 +416,7 @@ de:
       successful: "Dieser Vorschlag hat die erforderliche Unterstützung erreicht."
     show:
       author_deleted: Benutzer*in gelöscht
-      code: 'Antrags-Code:'
+      code: "Antrags-Code:"
       comments:
         zero: Keine Kommentare
         one: 1 Kommentar
@@ -519,29 +519,29 @@ de:
     show:
       back: "Zurück zu meiner Aktivität"
   shared:
-    edit: 'Bearbeiten'
-    save: 'Speichern'
+    edit: "Bearbeiten"
+    save: "Speichern"
     delete: Löschen
     "yes": "Ja"
     "no": "Nein"
     search_results: "Suchergebnisse"
     advanced_search:
-      author_type: 'Nach Kategorie Verfasser*in'
-      author_type_blank: 'Kategorie auswählen'
-      date: 'Nach Datum'
-      date_placeholder: 'TT/MM/JJJJ'
-      date_range_blank: 'Wählen Sie ein Datum'
-      date_1: 'Letzte 24 Stunden'
-      date_2: 'Letzte Woche'
-      date_3: 'Vergangenen Monat'
-      date_4: 'Letztes Jahr'
-      date_5: 'Angepasst'
-      from: 'Von'
-      general: 'Mit dem Text'
-      general_placeholder: 'Text verfassen'
-      search: 'Filter'
-      title: 'Erweiterte Suche'
-      to: 'An'
+      author_type: "Nach Kategorie Verfasser*in"
+      author_type_blank: "Kategorie auswählen"
+      date: "Nach Datum"
+      date_placeholder: "TT/MM/JJJJ"
+      date_range_blank: "Wählen Sie ein Datum"
+      date_1: "Letzte 24 Stunden"
+      date_2: "Letzte Woche"
+      date_3: "Vergangenen Monat"
+      date_4: "Letztes Jahr"
+      date_5: "Angepasst"
+      from: "Von"
+      general: "Mit dem Text"
+      general_placeholder: "Text verfassen"
+      search: "Filter"
+      title: "Erweiterte Suche"
+      to: "An"
     author_info:
       author_deleted: Benutzer*in gelöscht
     back: Zurück
@@ -623,8 +623,8 @@ de:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Wenn Sie einen Vorschlag im Namen eines Vereins oder Verbands äußern, fügen Sie bitte den Namen hinzu'
-      association_name: 'Name des Vereins'
+      association_name_label: "Wenn Sie einen Vorschlag im Namen eines Vereins oder Verbands äußern, fügen Sie bitte den Namen hinzu"
+      association_name: "Name des Vereins"
       description: Beschreibung
       external_url: Link zur weiteren Dokumentation
       geozone: Rahmenbedingungen
@@ -657,7 +657,7 @@ de:
       start_new: Ausgabenvorschlag erstellen
     show:
       author_deleted: Benutzer gelöscht
-      code: 'Antrags-Code:'
+      code: "Antrags-Code:"
       share: Teilen
     wrong_price_format: Nur ganze Zahlen
     spending_proposal:
