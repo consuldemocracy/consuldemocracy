@@ -396,9 +396,9 @@ ar:
         user: المستخدم
         no_hidden_users: لا يوجد أي مستخدمين مخفيين.
       show:
-        email: 'ايمايل:'
-        hidden_at: 'مخفي في:'
-        registered_at: 'تم الحفظ في:'
+        email: "ايمايل:"
+        hidden_at: "مخفي في:"
+        registered_at: "تم الحفظ في:"
         title: نشاط المستخدم (%{user})
     hidden_budget_investments:
       index:
@@ -588,7 +588,7 @@ ar:
         add: إضافة
         delete: حذف
       search:
-        title: 'المدراء: البحث عن المستخدم'
+        title: "المدراء: البحث عن المستخدم"
     menu:
       activity: نشاط المشرف
       admin: قائمة المدير
@@ -673,7 +673,7 @@ ar:
         add: إضافة
         delete: حذف
       search:
-        title: 'المشرفون: البحث عن مستخدم'
+        title: "المشرفون: البحث عن مستخدم"
     segment_recipient:
       all_users: كل المستخدمين
       administrators: مدراء
@@ -825,7 +825,7 @@ ar:
         add: أضف إلى المقيمين
         delete: حذف
       search:
-        title: 'المقيمون: البحث عن مستخدم'
+        title: "المقيمون: البحث عن مستخدم"
       summary:
         title: ملخص المقيمين للمشاريع الاستثمارية
         valuator_name: مقيّم
@@ -1098,9 +1098,9 @@ ar:
     officials:
       edit:
         destroy: إزالة حالة 'رسمي'
-        title: 'المسؤولون: تعديل المستخدم'
+        title: "المسؤولون: تعديل المستخدم"
       flash:
-        official_destroyed: 'تم حفظ التفاصيل: لم يعد المستخدم من المسؤولين'
+        official_destroyed: "تم حفظ التفاصيل: لم يعد المستخدم من المسؤولين"
         official_updated: تم حفض تفاصيل المسؤول
       index:
         title: المسؤولين
@@ -1117,7 +1117,7 @@ ar:
       search:
         edit_official: تعديل مسؤول
         make_official: تعيين مسؤول
-        title: 'المناصب الرسمية: البحث عن مستخدم'
+        title: "المناصب الرسمية: البحث عن مستخدم"
         no_results: لم يتم العثور على مناصب رسمية.
     organizations:
       index:
