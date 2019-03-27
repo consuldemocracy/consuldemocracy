@@ -111,9 +111,9 @@ de:
         author_deleted: Benutzer gelöscht
         price_explanation: Preiserklärung
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
-        code_html: 'Code des Ausgabenvorschlags: <strong>%{code}</strong>'
-        location_html: 'Standort: <strong>%{location}</strong>'
-        organization_name_html: 'Vorgeschlagen von: <strong>%{name}</strong>'
+        code_html: "Code des Ausgabenvorschlags: <strong>%{code}</strong>"
+        location_html: "Standort: <strong>%{location}</strong>"
+        organization_name_html: "Vorgeschlagen von: <strong>%{name}</strong>"
         share: Teilen
         title: Investitionsprojekt
         supports: Unterstützung
@@ -122,10 +122,10 @@ de:
         comments_tab: Kommentare
         milestones_tab: Meilensteine
         author: Autor
-        project_unfeasible_html: 'Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
-        project_selected_html: 'Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
-        project_winner: 'Best bewerteter Ausgabenvorschlag'
-        project_not_selected_html: 'Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt.'
+        project_unfeasible_html: "Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen."
+        project_selected_html: "Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>."
+        project_winner: "Best bewerteter Ausgabenvorschlag"
+        project_not_selected_html: "Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt."
         see_price_explanation: Erläuterung der Kosten anzeigen
       wrong_price_format: Nur ganze Zahlen
       investment:
