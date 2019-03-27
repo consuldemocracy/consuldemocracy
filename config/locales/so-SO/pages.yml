@@ -104,7 +104,7 @@ so:
               key_column: 5
               page_column: Nidaamka sharci dejinta
         browser_table:
-          description: 'Iyada oo ku xidhan nidaamka hirgelinta iyo daaqada loo isticmaalo, isku-dhafka muhiimka ah wuxuu noqon doonaa sidan soo socota:'
+          description: "Iyada oo ku xidhan nidaamka hirgelinta iyo daaqada loo isticmaalo, isku-dhafka muhiimka ah wuxuu noqon doonaa sidan soo socota:"
           caption: Isku-geynta muhiimka ah waxay ku xiran tahay nidaamka hawlgalka iyo shabakadda
           browser_header: Barowsar
           key_header: Wadajirta muhiimka ah
@@ -147,7 +147,7 @@ so:
               browser_column: Faan muusik
               action_column: Muuqaal> cabbir
         browser_shortcuts_table:
-          description: 'Hab kale oo wax looga beddelo qiyaasta qoraalka waa in la isticmaalo gaabnaanta gaaban ee lagu qeexay daalacayaasha, gaar ahaan isugeynta muhiimka ah:'
+          description: "Hab kale oo wax looga beddelo qiyaasta qoraalka waa in la isticmaalo gaabnaanta gaaban ee lagu qeexay daalacayaasha, gaar ahaan isugeynta muhiimka ah:"
           rows:
             - 
               shortcut_column: CTRL iyo + (CMD iyo + MAC)
@@ -163,8 +163,8 @@ so:
     verify:
       code: Waraq Kodh ah oo ad heshay
       email: Email
-      info: 'Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:'
-      info_code: 'Hadda ku baro kodhka aad heshay warqad:'
+      info: "Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:"
+      info_code: "Hadda ku baro kodhka aad heshay warqad:"
       password: Furaha sirta ah
       submit: Hubi xisaabtayda
       title: Hubi xisaabtaada
