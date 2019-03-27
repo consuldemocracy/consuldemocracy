@@ -1,7 +1,25 @@
 da:
   settings:
+    twitter_handle: "Twitter"
+    twitter_handle_description: "Hvis udfyldt, vil twitter-ikonet være synligt nederst på siden"
     twitter_hashtag: "Twitter hashtag"
     twitter_hashtag_description: "Hashtag, der vil vises, når indholdet deles på Twitter"
+    facebook_handle: "Facebook"
+    facebook_handle_description: "Hvis udfyldt, vil facebook-ikonet være synligt nederst på siden"
+    youtube_handle: "Youtube"
+    youtube_handle_description: "Hvis udfyldt, vil youtube-ikonet være synligt nederst på siden"
+    telegram_handle: "Telegram"
+    telegram_handle_description: "Hvis udfyldt, vil telegram-ikonet være synligt nederst på siden"
+    instagram_handle: "Instagram"
+    instagram_handle_description: "Hvis udfyldt, vil instagram-ikonet være synligt nederst på siden"
+    org_name: "Sidens navn"
     meta_keywords: "Søgeord (SEO)"
+    feature:
+      twitter_login: "Twitter login"
+      twitter_login_description: "Tillad brugere at registrere sig med Twitter"
+      facebook_login: "Facebook login"
+      facebook_login_description: "Tillad brugere at registrere sig med Facebook"
+      google_login: "Google login"
+      google_login_description: "Tillad brugere at registrere sig med Google"
     map:
       zoom: "Zoom"
