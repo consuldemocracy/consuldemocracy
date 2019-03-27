@@ -384,9 +384,9 @@ tr:
         user: Kullanıcı
         no_hidden_users: Hiç gizli kullanıcılar yok.
       show:
-        email: 'E-posta:'
-        hidden_at: 'Gizlenmiş:'
-        registered_at: 'Kayıtlı:'
+        email: "E-posta:"
+        hidden_at: "Gizlenmiş:"
+        registered_at: "Kayıtlı:"
         title: Kullanıcının etkinliği (%{user})
     hidden_budget_investments:
       index:
@@ -576,7 +576,7 @@ tr:
         add: Ekle
         delete: Sil
       search:
-        title: 'Yöneticiler: Kullanıcı arama'
+        title: "Yöneticiler: Kullanıcı arama"
     menu:
       activity: Moderatör faaliyeti
       admin: Yönetici menüsü
@@ -661,7 +661,7 @@ tr:
         add: Ekle
         delete: Sil
       search:
-        title: 'Moderatörler: Kullanıcı arama'
+        title: "Moderatörler: Kullanıcı arama"
     segment_recipient:
       all_users: Tüm kullanıcılar
       administrators: Yöneticiler
@@ -815,7 +815,7 @@ tr:
         add: Bilirkişilere ekle
         delete: Sil
       search:
-        title: 'Bilirkişiler: Kullanıcı arama'
+        title: "Bilirkişiler: Kullanıcı arama"
       summary:
         title: Yatırım projeleri için bilirkişi özeti
         valuator_name: Bilirkişi
@@ -1091,9 +1091,9 @@ tr:
     officials:
       edit:
         destroy: '''Yetkili'' durumunu kaldır'
-        title: 'Yetkililer: Kullanıcıyı düzenle'
+        title: "Yetkililer: Kullanıcıyı düzenle"
       flash:
-        official_destroyed: 'Ayrıntılar kaydedildi: kullanıcı artık bir yetkili değil'
+        official_destroyed: "Ayrıntılar kaydedildi: kullanıcı artık bir yetkili değil"
         official_updated: Yetkili detayları kaydedildi
       index:
         title: Yetkililer
@@ -1111,7 +1111,7 @@ tr:
       search:
         edit_official: Yetkiliyi düzenle
         make_official: Yetkili yap
-        title: 'Resmi pozisyonlar: Kullanıcı ara'
+        title: "Resmi pozisyonlar: Kullanıcı ara"
         no_results: Resmi pozisyonlar bulunamadı.
     organizations:
       index:
@@ -1302,7 +1302,7 @@ tr:
         form:
           error:
             one: "hata bu coğrafi bölgenin (geozone) kaydedilmesini engelledi"
-            other: 'hatalar bu coğrafi bölgenin (geozone) kaydedilmesini engelledi'
+            other: "hatalar bu coğrafi bölgenin (geozone) kaydedilmesini engelledi"
       edit:
         form:
           submit_button: Değişiklikleri kaydet
