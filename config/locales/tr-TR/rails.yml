@@ -128,7 +128,7 @@ tr:
         other: hatalı uzunluk (%{count} karakter olmalı)
       other_than: '%{count}''dan farklı olmalıdır'
     template:
-      body: 'Aşağıdaki alanlar ile ilgili sorunlar vardır:'
+      body: "Aşağıdaki alanlar ile ilgili sorunlar vardır:"
       header:
         one: 1 hata bu %{model}'in kaydedilmesini engelledi
         other: "%{count} hatalar bu %{model}'in kaydedilmesini engelledi"
