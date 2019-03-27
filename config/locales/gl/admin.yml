@@ -384,9 +384,9 @@ gl:
         user: Usuario/a
         no_hidden_users: Non hai usuarios agochados.
       show:
-        email: 'Correo electrónico:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Data de alta:'
+        email: "Correo electrónico:"
+        hidden_at: "Bloqueado:"
+        registered_at: "Data de alta:"
         title: Actividade do usuario (%{user})
     hidden_budget_investments:
       index:
@@ -576,7 +576,7 @@ gl:
         add: Engadir
         delete: Borrar
       search:
-        title: 'Xestores: busca de usuarios'
+        title: "Xestores: busca de usuarios"
     menu:
       activity: Actividade de moderador
       admin: Menú de administración
@@ -661,7 +661,7 @@ gl:
         add: Engadir
         delete: Borrar
       search:
-        title: 'Moderadores: busca de usuarios'
+        title: "Moderadores: busca de usuarios"
     segment_recipient:
       all_users: Todos os usuarios
       administrators: Administradores
@@ -793,7 +793,7 @@ gl:
         add: Engadir como avaliador
         delete: Borrar
       search:
-        title: 'Avaliadores: busca de usuarios'
+        title: "Avaliadores: busca de usuarios"
       summary:
         title: Resumo de avaliación das propostas de investimento
         valuator_name: Avaliador
@@ -1063,9 +1063,9 @@ gl:
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo público'
-        title: 'Cargos públicos: editar usuario'
+        title: "Cargos públicos: editar usuario"
       flash:
-        official_destroyed: 'Datos gardados: o usuario xa non é cargo público'
+        official_destroyed: "Datos gardados: o usuario xa non é cargo público"
         official_updated: Datos do cargo público gardados
       index:
         title: Cargos
@@ -1082,7 +1082,7 @@ gl:
       search:
         edit_official: Editar cargo público
         make_official: Converter en cargo público
-        title: 'Cargos públicos: busca de usuarios'
+        title: "Cargos públicos: busca de usuarios"
         no_results: Non se atopou ningún cargo público.
     organizations:
       index:
@@ -1268,7 +1268,7 @@ gl:
         form:
           error:
             one: "un erro impediu gardar a zona"
-            other: 'varios erros impediron gardar a zona'
+            other: "varios erros impediron gardar a zona"
       edit:
         form:
           submit_button: Gardar so cambios
