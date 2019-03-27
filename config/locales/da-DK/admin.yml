@@ -798,6 +798,8 @@ da:
         shifts: "Administrer arbejdsfordeling"
         edit: "Rediger stemmeboks"
     officials:
+      index:
+        name: Navn
       level_1: Niavue 1
       level_2: Niveau 2
       level_3: Niveau 3
@@ -805,6 +807,11 @@ da:
       level_5: Niveau 5
     organizations:
       index:
+        filters:
+          all: Alle
+          pending: Under behandling
+          rejected: Afvist
+          verified: Verificeret
         hidden_count_html:
           one: Der er også <strong>en organisation</strong> uden brugere eller med skjulte brugere.
           other: Der er også <strong>%{count} organisationer</strong> uden brugere eller med skjulte brugere.
@@ -818,8 +825,47 @@ da:
         rejected: Afvist
         search: Søg
         search_placeholder: Navn, e-mail eller telefonnummer
-    settings:
+        title: Organisationer
+        verified: Verificeret
+        verify: Verificer
+        pending: Afventer
+      search:
+        title: Søg Organisationer
+        no_results: Ingen organisationer blev fundet.
+    proposals:
       index:
+        title: Borgerforslag
+        id: ID
+        milestones: Proces
+        no_proposals: Der er ingen forslag.
+    hidden_proposals:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte forslag
+        no_hidden_proposals: Der er ingen skjulte forslag.
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte notifikationer
+        no_hidden_proposals: Der er ingen skjulte notifikationer.
+    settings:
+      flash:
+        updated: Pris opdateret
+      index:
+        title: Konfigurationsindstillinger
+        update_setting: Opdater
+        participation_processes: "Deltagelsesprocesser"
+        features:
+          enable: "Aktiver"
+          disable: "Deaktiver"
         map:
           form:
             submit: Opdater
@@ -892,18 +938,53 @@ da:
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
     geozones:
+      index:
+        edit: Rediger
+        delete: Slet
       geozone:
+        name: Navn
+        coordinates: Koordinater
         coordinates_help: Koordinater, som vil generere et klikbart område på et HTML imagemap
       edit:
+        form:
+          submit_button: Gem ændringer
         back: Gå tilbage
       new:
         back: Gå tilbage
+        creating: Opret distrikt
+    signature_sheets:
+      created_at: Oprettelsesdato
+      name: Navn
+      show:
+        created_at: Oprettet
+        documents: Dokumenter
+        document_count: "Antal dokumenter:"
+        verified:
+          one: "Der er %{count} gyldig underskrift"
+          other: "Der er %{count} gyldige underskrifter"
+        unverified:
+          one: "Der er %{count} ugyldig underskrift"
+          other: "Der er %{count} ugyldige underskrifter"
     stats:
       show:
         stats_title: Statistikker
         summary:
           comments: Kommentarer
+          users: Total antal brugere
+          verified_users: Verificerede brugere
+          verified_users_who_didnt_vote_proposals: Verificerede brugere, der ikke stemte på nogle forslag
+          visits: Besøg
+          votes: Sammenlagt antal stemmer
+        budgets_title: Deltagerbudget
+        visits_title: Besøg
+    tags:
+      create: Opret emne
+      destroy: Fjern emne
     site_customization:
+      content_blocks:
+        errors:
+          form:
+            error: Fejl
       images:
         index:
           update: Opdater
