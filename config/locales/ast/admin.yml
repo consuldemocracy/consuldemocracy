@@ -244,9 +244,9 @@ ast:
         title: Usuarios bloquiaos
         user: Usuariu
       show:
-        email: 'Email:'
-        hidden_at: 'Bloqueao:'
-        registered_at: 'Fecha d''alta:'
+        email: "Email:"
+        hidden_at: "Bloqueao:"
+        registered_at: "Fecha d'alta:"
         title: Actividá del usuariu (%{user})
     hidden_budget_investments:
       index:
@@ -689,9 +689,9 @@ ast:
     officials:
       edit:
         destroy: Esaniciar condición de 'Cargu Públicu'
-        title: 'Cargos Públicos: Editar usuariu'
+        title: "Cargos Públicos: Editar usuariu"
       flash:
-        official_destroyed: 'Datos guardaos: l''usuariu yá nun ye cargu públicu'
+        official_destroyed: "Datos guardaos: l'usuariu yá nun ye cargu públicu"
         official_updated: Datos del cargu públicu guardaos
       index:
         title: Cargos Públicos
@@ -706,7 +706,7 @@ ast:
       search:
         edit_official: Editar cargu públicu
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: "Cargos Públicos: Búsqueda de usuarios"
     organizations:
       index:
         filter: Filtru
