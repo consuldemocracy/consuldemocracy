@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190205131722) do
+ActiveRecord::Schema.define(version: 20190325185550) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "unaccent"
@@ -58,8 +59,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "admin_notification_translations", ["locale"], name: "index_admin_notification_translations_on_locale", using: :btree
 
   create_table "admin_notifications", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
     t.string   "link"
     t.string   "segment_recipient"
     t.integer  "recipients_count"
@@ -110,8 +109,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "banner_translations", ["locale"], name: "index_banner_translations_on_locale", using: :btree
 
   create_table "banners", force: :cascade do |t|
-    t.string   "title",            limit: 80
-    t.string   "description"
     t.string   "target_url"
     t.date     "post_started_at"
     t.date     "post_ended_at"
@@ -168,7 +165,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
-    t.string  "name",                 limit: 50
     t.string  "slug"
     t.integer "max_votable_headings",            default: 1
   end
@@ -188,7 +184,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",                 limit: 50
     t.integer "price",                limit: 8
     t.integer "population"
     t.string  "slug"
@@ -297,8 +292,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.integer  "budget_id"
     t.integer  "next_phase_id"
     t.string   "kind",                         null: false
-    t.text     "summary"
-    t.text     "description"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "enabled",       default: true
@@ -343,7 +336,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   create_table "budgets", force: :cascade do |t|
-    t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10
     t.string   "phase",                         limit: 40, default: "accepting"
     t.datetime "created_at",                                                     null: false
@@ -649,16 +641,11 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "legislation_draft_versions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.string   "title"
-    t.text     "changelog"
     t.string   "status",                 default: "draft"
     t.boolean  "final_version",          default: false
-    t.text     "body"
     t.datetime "hidden_at"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.text     "body_html"
-    t.text     "toc_html"
   end
 
   add_index "legislation_draft_versions", ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
@@ -684,9 +671,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "legislation_process_translations", ["locale"], name: "index_legislation_process_translations_on_locale", using: :btree
 
   create_table "legislation_processes", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.text     "additional_info"
     t.date     "start_date"
     t.date     "end_date"
     t.date     "debate_start_date"
@@ -698,7 +682,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "hidden_at"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.text     "summary"
     t.boolean  "debate_phase_enabled",       default: false
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
@@ -778,7 +761,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
-    t.string   "value"
     t.integer  "answers_count",           default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                          null: false
@@ -803,7 +785,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "legislation_questions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.text     "title"
     t.integer  "answers_count",          default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                         null: false
@@ -876,8 +857,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   create_table "milestones", force: :cascade do |t|
     t.integer  "milestoneable_id"
     t.string   "milestoneable_type"
-    t.string   "title",              limit: 80
-    t.text     "description"
     t.datetime "publication_date"
     t.integer  "status_id"
     t.datetime "created_at",                    null: false
@@ -1012,8 +991,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "poll_question_answer_videos", ["answer_id"], name: "index_poll_question_answer_videos_on_answer_id", using: :btree
 
   create_table "poll_question_answers", force: :cascade do |t|
-    t.string  "title"
-    t.text    "description"
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted",  default: false
@@ -1039,7 +1016,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.integer  "poll_id"
     t.integer  "author_id"
     t.string   "author_visible_name"
-    t.string   "title"
     t.integer  "comments_count"
     t.datetime "hidden_at"
     t.datetime "created_at"
@@ -1128,13 +1104,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "poll_voters", ["user_id"], name: "index_poll_voters_on_user_id", using: :btree
 
   create_table "polls", force: :cascade do |t|
-    t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
-    t.text     "summary"
-    t.text     "description"
     t.integer  "comments_count",     default: 0
     t.integer  "author_id"
     t.datetime "hidden_at"
@@ -1311,9 +1284,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "site_customization_pages", force: :cascade do |t|
     t.string   "slug",                                 null: false
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "content"
     t.boolean  "more_info_flag"
     t.boolean  "print_content_flag"
     t.string   "status",             default: "draft"
@@ -1573,11 +1543,7 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "widget_card_translations", ["widget_card_id"], name: "index_widget_card_translations_on_widget_card_id", using: :btree
 
   create_table "widget_cards", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "link_text"
     t.string   "link_url"
-    t.string   "label"
     t.boolean  "header",                     default: false
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
