@@ -453,8 +453,8 @@ ru:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Не проверено переписью'
-              already_voted: 'Этому предложению уже поставлен голос'
+              not_in_census: "Не проверено переписью"
+              already_voted: "Этому предложению уже поставлен голос"
         site_customization/page:
           attributes:
             slug:
@@ -467,7 +467,7 @@ ru:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Вы не можете комментировать оценку'
+              cannot_comment_valuation: "Вы не можете комментировать оценку"
       messages:
         record_invalid: "Ошибка проверки: %{errors}"
         restrict_dependent_destroy:
