@@ -67,7 +67,7 @@ val:
       most_commented: Més comentats
     select_order: Ordenar per
     show:
-      return_to_commentable: 'Tornar a '
+      return_to_commentable: "Tornar a "
   comments_helper:
     comment_button: Publicar comentari
     comment_link: Comentari
@@ -218,7 +218,7 @@ val:
       available_locales: Idiomes disponibles
       collaborative_legislation: Processos legislatius
       debates: Debats
-      locale: 'Idioma:'
+      locale: "Idioma:"
       logo: Logo de CONSUL
       management: Gestió
       moderation: Moderació
@@ -240,7 +240,7 @@ val:
         notifications: Notificacions
         no_notifications: "No tens noves notificacions"
     admin:
-      watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
+      watch_form_message: "Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?"
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
@@ -367,7 +367,7 @@ val:
         one: " que conté <strong>'%{search_term}'</strong>"
         other: " que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
-      select_order_long: 'Estas veient les propostes en funció de:'
+      select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
       title: Propostes
       top: Top semanal
@@ -417,7 +417,7 @@ val:
       successful: "Aquesta proposta ha asolit els avals necesaris."
     show:
       author_deleted: Usuari eliminat
-      code: 'Codi de la proposta:'
+      code: "Codi de la proposta:"
       comments:
         zero: Sense comentaris
         one: 1 Comentari
@@ -522,29 +522,29 @@ val:
     show:
       back: "Tornar a la meua activitat"
   shared:
-    edit: 'Editar'
-    save: 'Guardar'
+    edit: "Editar"
+    save: "Guardar"
     delete: Eliminar
     "yes": "Si"
     "no": "No"
     search_results: "Resultats de la cerca"
     advanced_search:
-      author_type: 'Per categoria d''autor'
-      author_type_blank: 'Eligeix una categoria'
-      date: 'Per data'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Eligeix una data'
-      date_1: 'Últimes 24 hores'
-      date_2: 'Última setmana'
-      date_3: 'Últim mes'
-      date_4: 'Últim any'
-      date_5: 'Personalitzada'
-      from: 'De'
-      general: 'Amb el text'
-      general_placeholder: 'Escriu el text'
-      search: 'Filtre'
-      title: 'Cerca avançada'
-      to: 'Fins'
+      author_type: "Per categoria d'autor"
+      author_type_blank: "Eligeix una categoria"
+      date: "Per data"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Eligeix una data"
+      date_1: "Últimes 24 hores"
+      date_2: "Última setmana"
+      date_3: "Últim mes"
+      date_4: "Últim any"
+      date_5: "Personalitzada"
+      from: "De"
+      general: "Amb el text"
+      general_placeholder: "Escriu el text"
+      search: "Filtre"
+      title: "Cerca avançada"
+      to: "Fins"
     author_info:
       author_deleted: Usuari eliminat
     back: Tornar
@@ -626,8 +626,8 @@ val:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Si proposes en nom d''una associació o col·lectiu afegeix el nom ací'
-      association_name: 'Nom de l''associació'
+      association_name_label: "Si proposes en nom d'una associació o col·lectiu afegeix el nom ací"
+      association_name: "Nom de l'associació"
       description: En qué consisteix
       external_url: Enllaç a documentació adicional
       geozone: Ámbit d'actuació
@@ -660,7 +660,7 @@ val:
       start_new: Crear proposta d'inversió
     show:
       author_deleted: Usuari eliminat
-      code: 'Codi de la proposta:'
+      code: "Codi de la proposta:"
       share: Compartir
     wrong_price_format: Solament pot incloure caràcters numèrics
     spending_proposal:
