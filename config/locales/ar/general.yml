@@ -69,7 +69,7 @@ ar:
       most_commented: الأكثر تعليقات
     select_order: ترتيب حسب
     show:
-      return_to_commentable: 'العودة إلى '
+      return_to_commentable: "العودة إلى "
   comments_helper:
     comment_button: نشر التعليق
     comment_link: تعليق
@@ -209,7 +209,7 @@ ar:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
     admin:
-      watch_form_message: 'لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟'
+      watch_form_message: "لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟"
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -410,16 +410,16 @@ ar:
     show:
       back: "عودة"
   shared:
-    edit: 'تعديل'
-    save: 'حفظ'
+    edit: "تعديل"
+    save: "حفظ"
     delete: حذف
     "yes": "نعم"
     "no": "لا"
     search_results: "نتائج البحث"
     advanced_search:
-      date_3: 'الشهر الماضي'
-      from: 'من'
-      search: 'ترشيح'
+      date_3: "الشهر الماضي"
+      from: "من"
+      search: "ترشيح"
     author_info:
       author_deleted: تم حذف المستخدم
     check: حدّد
@@ -453,7 +453,7 @@ ar:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name: 'اسم الرابطة'
+      association_name: "اسم الرابطة"
       description: الوصف
       external_url: رابط لوثائق إضافية
       geozone: نطاق العملية
