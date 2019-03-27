@@ -67,7 +67,7 @@ fr:
       most_commented: Plus commentés
     select_order: Trier par
     show:
-      return_to_commentable: 'Revenir à'
+      return_to_commentable: "Revenir à"
   comments_helper:
     comment_button: Publier un commentaire
     comment_link: Commentaire
@@ -218,7 +218,7 @@ fr:
       available_locales: Langues disponibles
       collaborative_legislation: Processus législatifs
       debates: Débats
-      locale: 'Langue :'
+      locale: "Langue :"
       logo: Consul logo
       management: Gestion
       moderation: Modération
@@ -240,7 +240,7 @@ fr:
         notifications: Notifications
         no_notifications: "Vous n'avez pas de nouvelles notifications"
     admin:
-      watch_form_message: 'Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?'
+      watch_form_message: "Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -367,7 +367,7 @@ fr:
         one: " contenant le terme <strong>'%{search_term}'</strong>"
         other: " contenant le terme <strong>'%{search_term}'</strong>"
       select_order: Trier par
-      select_order_long: 'Vous êtes en train de voir les propositions en fonction de'
+      select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
       top: Top de la semaine
@@ -417,7 +417,7 @@ fr:
       successful: "Cette proposition a atteint les soutiens requis."
     show:
       author_deleted: Utilisateur effacé
-      code: 'Code de la proposition'
+      code: "Code de la proposition"
       comments:
         zero: Aucun commentaires
         one: 1 commentaire
@@ -518,29 +518,29 @@ fr:
     show:
       back: "Retour à mon activité"
   shared:
-    edit: 'Éditer'
-    save: 'Sauvegarder'
+    edit: "Éditer"
+    save: "Sauvegarder"
     delete: Supprimer
     "yes": "Oui"
     "no": "Non"
     search_results: "Résultats de recherche"
     advanced_search:
-      author_type: 'Par catégorie d''auteur'
-      author_type_blank: 'Sélectionner une catégorie'
-      date: 'Par date'
-      date_placeholder: 'JJ/MM/AAAA'
-      date_range_blank: 'Choisir une date'
-      date_1: 'Dernières 24 heures'
-      date_2: 'La semaine passée'
-      date_3: 'Le mois passé'
-      date_4: 'L''année passée'
-      date_5: 'La période de votre choix'
-      from: 'Depuis'
-      general: 'Avec le texte'
-      general_placeholder: 'Écrire le texte'
-      search: 'Filtre'
-      title: 'Recherche avancée'
-      to: 'Pour'
+      author_type: "Par catégorie d'auteur"
+      author_type_blank: "Sélectionner une catégorie"
+      date: "Par date"
+      date_placeholder: "JJ/MM/AAAA"
+      date_range_blank: "Choisir une date"
+      date_1: "Dernières 24 heures"
+      date_2: "La semaine passée"
+      date_3: "Le mois passé"
+      date_4: "L'année passée"
+      date_5: "La période de votre choix"
+      from: "Depuis"
+      general: "Avec le texte"
+      general_placeholder: "Écrire le texte"
+      search: "Filtre"
+      title: "Recherche avancée"
+      to: "Pour"
     author_info:
       author_deleted: Utilisateur effacé
     back: Revenir
@@ -622,8 +622,8 @@ fr:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Si vous proposez au nom d’une association ou un collectif, ajoutez le nom ici'
-      association_name: 'Nom de l''association'
+      association_name_label: "Si vous proposez au nom d’une association ou un collectif, ajoutez le nom ici"
+      association_name: "Nom de l'association"
       description: Description
       external_url: Lien vers de la documentation supplémentaire
       geozone: Portée de l'opération
@@ -656,7 +656,7 @@ fr:
       start_new: Créer la proposition de dépenses
     show:
       author_deleted: Utilisateur effacé
-      code: 'Code de la proposition'
+      code: "Code de la proposition"
       share: Partager
     wrong_price_format: Nombres entiers uniquement
     spending_proposal:
