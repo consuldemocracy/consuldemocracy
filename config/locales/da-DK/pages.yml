@@ -91,7 +91,7 @@ da:
               key_column: 5
               page_column: Lovgivningsprocesser
         browser_table:
-          description: 'Afhængig af styresystem og den anvendte browser vil tastkombinationen se ud som følgende:'
+          description: "Afhængig af styresystem og den anvendte browser vil tastkombinationen se ud som følgende:"
           caption: Tastkombinationen afhængig af styresystem og browser
           browser_header: Browser
           key_header: Tastkombination
@@ -133,7 +133,7 @@ da:
               browser_column: Opera
               action_column: Se > skala
         browser_shortcuts_table:
-          description: 'En anden måde at ændre tekststørrelsen på er at anvende tastaturgenvejene defineret i browseren, specifikt denne tastaturkombinationen:'
+          description: "En anden måde at ændre tekststørrelsen på er at anvende tastaturgenvejene defineret i browseren, specifikt denne tastaturkombinationen:"
           rows:
             - 
               shortcut_column: CTRL og + (CMD og + på MAC)
@@ -149,8 +149,8 @@ da:
     verify:
       code: Koden du modtog med brevet
       email: E-mail
-      info: 'For at verificere din konto skal du indføre din dataadgang:'
-      info_code: 'Indfør den kode du modtog i brevet:'
+      info: "For at verificere din konto skal du indføre din dataadgang:"
+      info_code: "Indfør den kode du modtog i brevet:"
       password: Adgangskode
       submit: Verificer min konto
       title: Verificer din konto
