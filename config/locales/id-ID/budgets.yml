@@ -97,9 +97,9 @@ id:
         author_deleted: Pengguna dihapus
         price_explanation: Harga penjelasan
         unfeasibility_explanation: Unfeasibility penjelasan
-        code_html: 'Kode proyek investasi: <strong>%{code}</strong>'
-        location_html: 'Lokasi: <strong>%{location}</strong>'
-        organization_name_html: 'Diusulkan atas nama: <strong>%{name}</strong>'
+        code_html: "Kode proyek investasi: <strong>%{code}</strong>"
+        location_html: "Lokasi: <strong>%{location}</strong>"
+        organization_name_html: "Diusulkan atas nama: <strong>%{name}</strong>"
         share: Berbagi
         title: Investasi proyek
         supports: Mendukung
