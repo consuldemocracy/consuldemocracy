@@ -67,7 +67,7 @@ tr:
       most_commented: En çok yorumlanan
     select_order: Sıralama ölçütü
     show:
-      return_to_commentable: 'Şuna geri dön '
+      return_to_commentable: "Şuna geri dön "
   comments_helper:
     comment_button: Yorumu yayınla
     comment_link: Yorum
@@ -219,7 +219,7 @@ tr:
       available_locales: Mevcut diller
       collaborative_legislation: Katılımcı mevzuat
       debates: Tartışmalar
-      locale: 'Dil:'
+      locale: "Dil:"
       logo: CONSUL logosu
       management: Yönetim
       moderation: Moderasyon
@@ -241,7 +241,7 @@ tr:
         notifications: Bildirimler
         no_notifications: "Yeni bildiriminiz yok"
     admin:
-      watch_form_message: 'Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?'
+      watch_form_message: "Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
@@ -368,7 +368,7 @@ tr:
         one: " şu terimi içeren <strong>'%{search_term}'</strong>"
         other: " şu terimi içeren <strong>'%{search_term}'</strong>"
       select_order: Şuna göre sırala
-      select_order_long: 'Şuna göre önerileri görüntülüyorsunuz:'
+      select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
       start_proposal: Bir öneri oluştur
       title: Öneriler
       top: Haftalık en iyi
@@ -418,7 +418,7 @@ tr:
       successful: "Bu öneri gereken desteğe ulaştı."
     show:
       author_deleted: Kullanıcı silindi
-      code: 'Öneri kodu:'
+      code: "Öneri kodu:"
       comments:
         zero: Yorum yok
         one: 1 yorum
@@ -523,29 +523,29 @@ tr:
     show:
       back: "Faaliyetime geri dön"
   shared:
-    edit: 'Düzenleme'
-    save: 'Kaydet'
+    edit: "Düzenleme"
+    save: "Kaydet"
     delete: Sil
     "yes": "Evet"
     "no": "Hayır"
     search_results: "Arama sonuçları"
     advanced_search:
-      author_type: 'Yazar kategorisine göre'
-      author_type_blank: 'Bir kategori seç'
-      date: 'Tarihe göre'
-      date_placeholder: 'GG/AA/YYYY'
-      date_range_blank: 'Bir tarih seç'
-      date_1: 'Son 24 saat'
-      date_2: 'Geçen hafta'
-      date_3: 'Geçen ay'
-      date_4: 'Geçen yıl'
-      date_5: 'Özelleştirilmiş'
-      from: 'Kaynak'
-      general: 'Metin ile'
-      general_placeholder: 'Metni yaz'
-      search: 'Filtre'
-      title: 'Gelişmiş arama'
-      to: 'Şuna'
+      author_type: "Yazar kategorisine göre"
+      author_type_blank: "Bir kategori seç"
+      date: "Tarihe göre"
+      date_placeholder: "GG/AA/YYYY"
+      date_range_blank: "Bir tarih seç"
+      date_1: "Son 24 saat"
+      date_2: "Geçen hafta"
+      date_3: "Geçen ay"
+      date_4: "Geçen yıl"
+      date_5: "Özelleştirilmiş"
+      from: "Kaynak"
+      general: "Metin ile"
+      general_placeholder: "Metni yaz"
+      search: "Filtre"
+      title: "Gelişmiş arama"
+      to: "Şuna"
     author_info:
       author_deleted: Kullanıcı silindi
     back: Geri git
@@ -627,8 +627,8 @@ tr:
     instagram: "Instagram %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Eğer bir dernek veya topluluk adına önerirseniz, ismi buraya ekleyin'
-      association_name: 'Dernek adı'
+      association_name_label: "Eğer bir dernek veya topluluk adına önerirseniz, ismi buraya ekleyin"
+      association_name: "Dernek adı"
       description: Tanımlama
       external_url: Ek belgeye bağlantı
       geozone: İşlem kapsamı
@@ -661,7 +661,7 @@ tr:
       start_new: Harcama önerisi oluştur
     show:
       author_deleted: Kullanıcı silindi
-      code: 'Öneri kodu:'
+      code: "Öneri kodu:"
       share: Paylaş
     wrong_price_format: Sadece tam sayılar
     spending_proposal:
