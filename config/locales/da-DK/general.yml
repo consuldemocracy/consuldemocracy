@@ -286,6 +286,16 @@ da:
       search_form:
         button: Søg
         placeholder: Søg borgerforslag...
+      section_header:
+        help: Hjælp til borgerforslag
+      section_footer:
+        title: Hjælp til borgerforslag
+    new:
+      form:
+        submit_button: Opret borgerforslag
+      more_info: Hvordan fungerer borgerforslag?
+      recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
+      start_new: Opret nyt borgerforslag
     proposal:
       created: "Du oprettede et forslag!"
       share:
@@ -307,6 +317,7 @@ da:
         zero: Ingen stemmer
         one: 1 stemme
         other: "%{count} stemmer"
+      supports_necessary: "Skal have %{number} brugere, der bakker forslaget op"
       total_percent: 100%
     show:
       author_deleted: Bruger slettet
