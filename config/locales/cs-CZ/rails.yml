@@ -83,7 +83,7 @@ cs:
       taken: již byla přijata
       other_than: musí být jiný než %{count}
     template:
-      body: 'Došlo k problémům s následujícími poli:'
+      body: "Došlo k problémům s následujícími poli:"
   helpers:
     select:
       prompt: Prosím vyberte
