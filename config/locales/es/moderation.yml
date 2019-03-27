@@ -3,7 +3,7 @@ es:
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todos
@@ -25,7 +25,7 @@ es:
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtrar
         filters:
           all: Todos
@@ -53,7 +53,7 @@ es:
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todas
@@ -72,7 +72,7 @@ es:
     budget_investments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todos
@@ -91,7 +91,7 @@ es:
     proposal_notifications:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todas

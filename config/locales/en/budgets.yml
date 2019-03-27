@@ -111,9 +111,9 @@ en:
         author_deleted: User deleted
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
-        code_html: 'Investment project code: <strong>%{code}</strong>'
-        location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
+        code_html: "Investment project code: <strong>%{code}</strong>"
+        location_html: "Location: <strong>%{location}</strong>"
+        organization_name_html: "Proposed on behalf of: <strong>%{name}</strong>"
         share: Share
         title: Investment project
         supports: Supports
@@ -122,10 +122,10 @@ en:
         comments_tab: Comments
         milestones_tab: Milestones
         author: Author
-        project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
-        project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
-        project_winner: 'Winning investment project'
-        project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
+        project_unfeasible_html: "This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase."
+        project_selected_html: "This investment project <strong>has been selected</strong> for balloting phase."
+        project_winner: "Winning investment project"
+        project_not_selected_html: "This investment project <strong>has not been selected</strong> for balloting phase."
         see_price_explanation: See price explanation
       wrong_price_format: Only integer numbers
       investment:

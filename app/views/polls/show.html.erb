@@ -54,7 +54,7 @@
     <div class="row padding">
 
       <% @poll_questions_answers.each do |answer| %>
-        <div class="small-12 medium-6 column end answer <%= cycle('first', '') %>" id="answer_<%= answer.id %>">
+        <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
 
           <% if answer.description.present? %>
             <h3><%= answer.title %></h3>

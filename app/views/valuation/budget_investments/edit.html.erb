@@ -1,6 +1,6 @@
 <%= link_to valuation_budget_budget_investment_path(@budget, @investment), class: "back" do %>
   <span class="icon-angle-left"></span>
-  <%= "#{t('valuation.budget_investments.show.title')} #{@investment.id}"%>
+  <%= "#{t("valuation.budget_investments.show.title")} #{@investment.id}"%>
 <% end %>
 
 <h2><%= t("valuation.budget_investments.edit.dossier") %></h2>
@@ -50,12 +50,12 @@
 
       <div class="row">
         <div class="small-12 medium-6 column">
-          <%= f.label :price, "#{t('valuation.budget_investments.edit.price_html', currency: @budget.currency_symbol)}" %>
+          <%= f.label :price, "#{t("valuation.budget_investments.edit.price_html", currency: @budget.currency_symbol)}" %>
           <%= f.number_field :price, label: false, max: 1000000000000000 %>
         </div>
 
         <div class="small-12 medium-6 column end">
-          <%= f.label :price_first_year, "#{t('valuation.budget_investments.edit.price_first_year_html', currency:  @budget.currency_symbol)}" %>
+          <%= f.label :price_first_year, "#{t("valuation.budget_investments.edit.price_first_year_html", currency:  @budget.currency_symbol)}" %>
           <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
         </div>
       </div>

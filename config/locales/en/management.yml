@@ -9,7 +9,7 @@ en:
       show:
         title: User account
       edit:
-        title: 'Edit user account: Reset password'
+        title: "Edit user account: Reset password"
         back: Back
         password:
           password: Password
@@ -22,11 +22,11 @@ en:
           print_help: You will be able to print the password when it is saved.
     account_info:
       change_user: Change user
-      document_number_label: 'Document number:'
-      document_type_label: 'Document type:'
-      email_label: 'Email:'
-      identified_label: 'Identified as:'
-      username_label: 'Username:'
+      document_number_label: "Document number:"
+      document_type_label: "Document type:"
+      email_label: "Email:"
+      identified_label: "Identified as:"
+      username_label: "Username:"
     check: Check document
     dashboard:
       index:
@@ -36,11 +36,11 @@ en:
     document_type_label: Document type
     document_verifications:
       already_verified: This user account is already verified.
-      has_no_account_html: In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen.
+      has_no_account_html: In order to create an account, go to %{link} and click in <b>"Register"</b> in the upper-left part of the screen.
       link: CONSUL
-      in_census_has_following_permissions: 'This user can participate in the website with the following permissions:'
+      in_census_has_following_permissions: "This user can participate in the website with the following permissions:"
       not_in_census: This document is not registered.
-      not_in_census_info: 'Citizens not in the Census can participate in the website with the following permissions:'
+      not_in_census_info: "Citizens not in the Census can participate in the website with the following permissions:"
       please_check_account_data: Please check that the account data above are correct.
       title: User management
       under_age: "You don't have the required age to verify your account."
@@ -49,14 +49,14 @@ en:
     date_of_birth: Date of birth
     email_verifications:
       already_verified: This user account is already verified.
-      choose_options: 'Please choose one of the following options:'
+      choose_options: "Please choose one of the following options:"
       document_found_in_census: This document was found in the census, but it has no user account associated to it.
-      document_mismatch: 'This email belongs to a user which already has an associated id: %{document_number}(%{document_type})'
+      document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
       email_placeholder: Write the email this person used to create his or her account
       email_sent_instructions: In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him.
       if_existing_account: If the person has already a user account created in the website,
       if_no_existing_account: If this person has not created an account yet
-      introduce_email: 'Please introduce the email used on the account:'
+      introduce_email: "Please introduce the email used on the account:"
       send_email: Send verification email
     menu:
       create_proposal: Create proposal
@@ -78,7 +78,7 @@ en:
       vote_proposals: Vote proposals
     print:
       proposals_info: Create your proposal on http://url.consul
-      proposals_title: 'Proposals:'
+      proposals_title: "Proposals:"
       spending_proposals_info: Participate at http://url.consul
       budget_investments_info: Participate at http://url.consul
     print_info: Print this info

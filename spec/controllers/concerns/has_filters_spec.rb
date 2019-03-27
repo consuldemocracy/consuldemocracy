@@ -9,7 +9,7 @@ describe HasFilters do
     has_filters ["all", "pending", "reviewed"], only: :index
 
     def index
-      render text: "#{@current_filter} (#{@valid_filters.join(' ')})"
+      render text: "#{@current_filter} (#{@valid_filters.join(" ")})"
     end
   end
 

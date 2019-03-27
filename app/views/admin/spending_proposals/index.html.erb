@@ -59,7 +59,7 @@
       </td>
       <td class="small">
         <% if spending_proposal.administrator.present? %>
-          <span title="<%= t('admin.spending_proposals.index.assigned_admin') %>"><%= spending_proposal.administrator.name %></span>
+          <span title="<%= t("admin.spending_proposals.index.assigned_admin") %>"><%= spending_proposal.administrator.name %></span>
         <% else %>
           <%= t("admin.spending_proposals.index.no_admin_assigned") %>
         <% end %>
