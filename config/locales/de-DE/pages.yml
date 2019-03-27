@@ -104,7 +104,7 @@ de:
               key_column: 5
               page_column: Gesetzgebungsverfahren
         browser_table:
-          description: 'Abhängig vom Betriebssystem und dem verwendeten Browser lautet die Tastenkombination wie folgt:'
+          description: "Abhängig vom Betriebssystem und dem verwendeten Browser lautet die Tastenkombination wie folgt:"
           caption: Tastenkombination je nach Betriebssystem und Browser
           browser_header: Browser
           key_header: Tastenkombination
@@ -151,8 +151,8 @@ de:
     verify:
       code: Code, den Sie per Brief/SMS erhalten haben
       email: E-Mail
-      info: 'Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:'
-      info_code: 'Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:'
+      info: "Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:"
+      info_code: "Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:"
       password: Passwort
       submit: Mein Konto verifizieren
       title: Verifizieren Sie Ihr Benutzerkonto
