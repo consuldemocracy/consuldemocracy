@@ -368,9 +368,9 @@ val:
         user: Usuari
         no_hidden_users: No hi ha usuaris ocults.
       show:
-        email: 'Correu electrònic:'
-        hidden_at: 'Bloquejat:'
-        registered_at: 'Data d''alta:'
+        email: "Correu electrònic:"
+        hidden_at: "Bloquejat:"
+        registered_at: "Data d'alta:"
         title: Activitat de l'usuari (%{user})
     hidden_budget_investments:
       index:
@@ -557,7 +557,7 @@ val:
         add: Afegir com a moderador
         delete: Eliminar
       search:
-        title: 'Gestors: Cerca d''usuaris'
+        title: "Gestors: Cerca d'usuaris"
     menu:
       activity: Activitat dels Moderadors
       admin: Menú d'administració
@@ -642,7 +642,7 @@ val:
         add: Afegir com a Gestor
         delete: Eliminar
       search:
-        title: 'Moderadors: Cerca d''usuaris'
+        title: "Moderadors: Cerca d'usuaris"
     segment_recipient:
       all_users: Tots els usuaris
       administrators: Administradors
@@ -759,7 +759,7 @@ val:
         add: Afegir com a avaluador
         delete: Eliminar
       search:
-        title: 'Avaluadors: Cerca d''usuaris'
+        title: "Avaluadors: Cerca d'usuaris"
       summary:
         title: Resum d'avaluació de propostes d'inversió
         valuator_name: Avaluador
@@ -1021,9 +1021,9 @@ val:
     officials:
       edit:
         destroy: Eliminar condició de 'Càrrec Públic'
-        title: 'Càrrecs Públics: Edita usuari'
+        title: "Càrrecs Públics: Edita usuari"
       flash:
-        official_destroyed: 'Dades guardades: l''usuari ja no és càrrec públic'
+        official_destroyed: "Dades guardades: l'usuari ja no és càrrec públic"
         official_updated: Dades del càrrec públic guardades
       index:
         title: Càrrecs públics
@@ -1040,7 +1040,7 @@ val:
       search:
         edit_official: Edita càrrec públic
         make_official: Convertir a càrrec públic
-        title: 'Càrrecs Públics: Cerca d''usuaris'
+        title: "Càrrecs Públics: Cerca d'usuaris"
         no_results: No s'han trobat càrrecs públics.
     organizations:
       index:
@@ -1226,7 +1226,7 @@ val:
         form:
           error:
             one: "error va impedir guardar el districte"
-            other: 'errors van impedir guardar el districte'
+            other: "errors van impedir guardar el districte"
       edit:
         form:
           submit_button: Guardar canvis
