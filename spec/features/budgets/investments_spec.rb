@@ -583,10 +583,10 @@ feature "Budget Investments" do
 
   context "Orders" do
     before { budget.update(phase: "selecting") }
+    let(:per_page) { Budgets::InvestmentsController::PER_PAGE }
 
     scenario "Default order is random" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 100).times { create(:budget_investment) }
+      (per_page + 2).times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect {|i| i.text }
@@ -598,7 +598,6 @@ feature "Budget Investments" do
     end
 
     scenario "Random order after another order" do
-      per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -614,7 +613,6 @@ feature "Budget Investments" do
     end
 
     scenario "Random order maintained with pagination" do
-      per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -632,7 +630,7 @@ feature "Budget Investments" do
     end
 
     scenario "Random order maintained when going back from show" do
-      10.times { |i| create(:budget_investment, heading: heading) }
+      per_page.times { |i| create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -646,8 +644,7 @@ feature "Budget Investments" do
     end
 
     scenario "Investments are not repeated with random order" do
-      12.times { create(:budget_investment, heading: heading) }
-      # 12 instead of per_page + 2 because in each page there are 10 (in this case), not 25
+      (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, order: "random")
 
@@ -661,7 +658,6 @@ feature "Budget Investments" do
       common_values = first_page_investments & second_page_investments
 
       expect(common_values.length).to eq(0)
-
     end
 
     scenario "Proposals are ordered by confidence_score" do
@@ -686,7 +682,7 @@ feature "Budget Investments" do
     end
 
     scenario "Each user has a different and consistent random budget investment order" do
-      (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
+      (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading)
@@ -722,7 +718,7 @@ feature "Budget Investments" do
     end
 
     scenario "Each user has a equal and consistent budget investment order when the random_seed is equal" do
-      (Kaminari.config.default_per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
+      (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
@@ -741,10 +737,10 @@ feature "Budget Investments" do
       voter = create(:user, :level_two)
       login_as(voter)
 
-      10.times { create(:budget_investment, heading: heading) }
+      per_page.times { create(:budget_investment, heading: heading) }
 
       voted_investments = []
-      10.times do
+      per_page.times do
         investment = create(:budget_investment, heading: heading)
         create(:vote, votable: investment, voter: voter)
         voted_investments << investment
@@ -762,7 +758,7 @@ feature "Budget Investments" do
     end
 
     scenario "Order is random if budget is finished" do
-      10.times { create(:budget_investment) }
+      per_page.times { create(:budget_investment) }
 
       budget.update(phase: "finished")
 
