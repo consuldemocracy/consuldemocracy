@@ -104,7 +104,7 @@ val:
               key_column: 5
               page_column: Processos legislatius
         browser_table:
-          description: 'Depenent del sistema operatiu i del navegador que s''utilitze, la combinació de tecles sera la següent:'
+          description: "Depenent del sistema operatiu i del navegador que s'utilitze, la combinació de tecles sera la següent:"
           caption: Combinació de tecles depenent del sistema operatiu i del navegador
           browser_header: Navegador
           key_header: Combinació de tecles
@@ -147,7 +147,7 @@ val:
               browser_column: Opera
               action_column: Veure > escala
         browser_shortcuts_table:
-          description: 'Un altra forma de modificar el tamany del text es utilitzar els atalls de teclat definits en els navegadors, en particular la combinació de tecles:'
+          description: "Un altra forma de modificar el tamany del text es utilitzar els atalls de teclat definits en els navegadors, en particular la combinació de tecles:"
           rows:
             - 
               shortcut_column: CTRL i + (CMD i + en MAC)
@@ -163,8 +163,8 @@ val:
     verify:
       code: Codi que has rebut en la teua carta
       email: Correu electrònic
-      info: 'Per a verificar el teu compte introdueix les dades amb les que et vas registrar:'
-      info_code: 'Ara introdueix el codi que has rebut en la teua carta:'
+      info: "Per a verificar el teu compte introdueix les dades amb les que et vas registrar:"
+      info_code: "Ara introdueix el codi que has rebut en la teua carta:"
       password: Contrasenya
       submit: Verificar el meu compte
       title: Verifica el teu compte
