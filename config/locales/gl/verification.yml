@@ -8,7 +8,7 @@ gl:
         alert:
           failure: Houbo un problema enviándoche un correo electrónico á túa conta
         flash:
-          success: 'Enviámosche un correo electrónico de confirmación á túa conta: %{email}'
+          success: "Enviámosche un correo electrónico de confirmación á túa conta: %{email}"
       show:
         alert:
           failure: Código de verificación incorrecto
@@ -26,7 +26,7 @@ gl:
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        explanation: 'Para participar nas votacións finais podes:'
+        explanation: "Para participar nas votacións finais podes:"
         go_to_index: Ver propostas
         office: Verificarte presencialmente en calquera %{office}
         send_letter: Solicitar unha carta por correo postal
@@ -50,7 +50,7 @@ gl:
         date_of_birth: Data de nacemento
         document_number: Número de documento
         document_number_help_title: Axuda
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarxeta de residencia</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarxeta de residencia</strong>: X1234567P"
         document_type:
           passport: Pasaporte
           residence_card: Tarxeta de residencia
