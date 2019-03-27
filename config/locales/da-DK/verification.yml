@@ -8,7 +8,7 @@ da:
         alert:
           failure: Vi kunne ikke sende en email til din konto
         flash:
-          success: 'Vi har sendt en bekræftelsesmail til din konto: %{email}'
+          success: "Vi har sendt en bekræftelsesmail til din konto: %{email}"
       show:
         alert:
           failure: Bekræftelseskoden er forkert
