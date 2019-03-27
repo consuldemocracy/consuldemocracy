@@ -106,9 +106,9 @@ zh-TW:
         author_deleted: 用戶已刪除
         price_explanation: 價格說明
         unfeasibility_explanation: 不可行的解釋
-        code_html: '投資項目代碼： <strong>%{code}</strong>'
-        location_html: '位置： <strong>%{location}</strong>'
-        organization_name_html: '代表 <strong>%{name}</strong>提出建議'
+        code_html: "投資項目代碼： <strong>%{code}</strong>"
+        location_html: "位置： <strong>%{location}</strong>"
+        organization_name_html: "代表 <strong>%{name}</strong>提出建議"
         share: 共用
         title: 投資項目
         supports: 支持
@@ -117,10 +117,10 @@ zh-TW:
         comments_tab: 評論
         milestones_tab: 里程碑
         author: 作者
-        project_unfeasible_html: '此投資項目 <strong>已被標記為不可行</strong>，不會進入投票階段。'
-        project_selected_html: '此投資項目 <strong>已被選入</strong>投票階段。'
-        project_winner: '勝出的投資項目'
-        project_not_selected_html: '此投資項目 <strong>未被選入</strong>投票階段。'
+        project_unfeasible_html: "此投資項目 <strong>已被標記為不可行</strong>，不會進入投票階段。"
+        project_selected_html: "此投資項目 <strong>已被選入</strong>投票階段。"
+        project_winner: "勝出的投資項目"
+        project_not_selected_html: "此投資項目 <strong>未被選入</strong>投票階段。"
       wrong_price_format: 只供整數
       investment:
         add: 票
