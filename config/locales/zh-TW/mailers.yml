@@ -3,7 +3,7 @@ zh-TW:
     no_reply: "此郵件是從一個不接受回覆的電郵地址發送的。"
     comment:
       hi: 您好
-      new_comment_by_html: <b>%{commenter}</b>發表了新評論
+      new_comment_by_html: <strong>%{commenter}</strong>發表了新評論
       subject: 有人評論了您的%{commentable}
       title: 新評論
     config:
@@ -17,7 +17,7 @@ zh-TW:
       title: 使用以下鏈接確認您的帳戶
     reply:
       hi: 您好
-      new_reply_by_html: <b>%{commenter}</b>對您的評論有新的回覆
+      new_reply_by_html: <strong>%{commenter}</strong>對您的評論有新的回覆
       subject: 有人回覆了您的評論
       title: 對您的評論的新回覆
     unfeasible_spending_proposal:

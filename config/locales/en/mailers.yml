@@ -3,7 +3,7 @@ en:
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
-      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
+      new_comment_by_html: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
@@ -17,7 +17,7 @@ en:
       title: Confirm your account using the following link
     reply:
       hi: Hi
-      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
+      new_reply_by_html: There is a new response from <strong>%{commenter}</strong> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
     proposal_notification_digest:
@@ -74,7 +74,7 @@ en:
       subject: "New evaluation comment"
       title: New evaluation comment for %{investment}
       hi: Hi
-      new_comment_by_html: There is a new evaluation comment from <b>%{commenter}</b> to the budget investment %{investment}
+      new_comment_by_html: There is a new evaluation comment from <strong>%{commenter}</strong> to the budget investment %{investment}
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "More news about your citizen proposal"

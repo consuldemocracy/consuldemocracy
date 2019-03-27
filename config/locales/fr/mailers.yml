@@ -3,7 +3,7 @@ fr:
     no_reply: "Ce message a été envoyé d'une adresse qui n'accepte pas les réponses."
     comment:
       hi: Bonjour
-      new_comment_by_html: Il y a un nouveau commentaire de <b>%{commenter}</b>
+      new_comment_by_html: Il y a un nouveau commentaire de <strong>%{commenter}</strong>
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
     config:
@@ -17,7 +17,7 @@ fr:
       title: Confirmer votre compte en utilisant le lien suivant
     reply:
       hi: Bonjour
-      new_reply_by_html: Il y a une nouvelle réponse de <b>%{commenter}</b> à votre commentaire sur
+      new_reply_by_html: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
       subject: Quelqu'un a répondu à votre commentaire
       title: Nouvelle réponse à votre commentaire
     unfeasible_spending_proposal:

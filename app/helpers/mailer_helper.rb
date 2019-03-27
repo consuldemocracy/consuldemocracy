@@ -9,7 +9,7 @@ module MailerHelper
   end
 
   def valuation_comments_url(commentable)
-    admin_budget_budget_investment_url( commentable.budget, commentable, anchor: "comments")
+    admin_budget_budget_investment_url(commentable.budget, commentable, anchor: "comments")
   end
 
   def valuation_comments_link(commentable)
