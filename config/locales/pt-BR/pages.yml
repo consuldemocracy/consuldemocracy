@@ -104,7 +104,7 @@ pt-BR:
               key_column: 5
               page_column: Processos legislativos
         browser_table:
-          description: 'Dependendo do sistema operacional e do navegador usado, a combinação de teclas será a seguinte:'
+          description: "Dependendo do sistema operacional e do navegador usado, a combinação de teclas será a seguinte:"
           caption: Combinação de teclas, depende do sistema operacional e navegador
           browser_header: Navegador
           key_header: Combinação de teclas
@@ -147,7 +147,7 @@ pt-BR:
               browser_column: Opera
               action_column: Exibir > escala
         browser_shortcuts_table:
-          description: 'Outra maneira de modificar o tamanho do texto é utilizar os atalhos de teclado definidos em navegadores, em especial a combinação de teclas:'
+          description: "Outra maneira de modificar o tamanho do texto é utilizar os atalhos de teclado definidos em navegadores, em especial a combinação de teclas:"
           rows:
             - 
               shortcut_column: CTRL e + (CMD e + no MAC)
@@ -163,8 +163,8 @@ pt-BR:
     verify:
       code: Código que você recebeu na carta
       email: Email
-      info: 'Para verificar sua conta introduza seus dados de acesso:'
-      info_code: 'Agora introduza o código recebido na carta:'
+      info: "Para verificar sua conta introduza seus dados de acesso:"
+      info_code: "Agora introduza o código recebido na carta:"
       password: Senha
       submit: Verificar minha conta
       title: Verifique sua conta
