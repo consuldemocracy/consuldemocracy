@@ -78,7 +78,7 @@ he:
       odd: חייב להיות אי זוגי
       taken: כבר בשימוש
     template:
-      body: 'אנא בדוק את השדות הבאים:'
+      body: "אנא בדוק את השדות הבאים:"
   helpers:
     select:
       prompt: נא לבחור
