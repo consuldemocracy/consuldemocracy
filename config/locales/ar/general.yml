@@ -118,11 +118,11 @@ ar:
         recommendations: التوصيات
       recommendations:
         actions:
-          success: "التّوصيات من أجل المناقشات معطلة الآن لهذا الحساب"
-          error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل التوصيات للمناقشات يدوياً"
+          success: "تّوصيات المناقشات معطلة الآن لهذا الحساب"
+          error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المناقشات يدوياً"
       search_form:
         button: بحث
-        placeholder: البحث في المناقشات...
+        placeholder: البحث عن مناقشات...
         title: بحث
       search_results_html:
         zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
@@ -135,7 +135,7 @@ ar:
       start_debate: بدء مناقشة
       title: النقاشات
       section_header:
-        icon_alt: رمز المناقشات
+        icon_alt: إيقونة المناقشات
         title: النقاشات
         help: تعليمات حول المناقشات
       section_footer:
@@ -281,7 +281,7 @@ ar:
       title: إقتراحات
       top_link_proposals: المقترحات الأكثر تأييدا حسب الفئة
       section_header:
-        icon_alt: رمز المقترحات
+        icon_alt: إيقونة المقترحات
         title: إقتراحات
         help: تعليمات حول المقترحات
       section_footer:
@@ -297,7 +297,7 @@ ar:
       recommendations_title: توصيات لإنشاء إقتراح
       start_new: انشاء مقترح جديد
     proposal:
-      created: "قمت بإنشاء اقتراح!"
+      created: "لقد قمت بإنشاء مقترح!"
       share:
         view_proposal: ليس الآن، انتقل إلى مقترحي
       already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
