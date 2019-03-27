@@ -265,9 +265,9 @@ da:
         user: Bruger
         no_hidden_users: Der er ingen skjulte brugere.
       show:
-        email: 'E-mail:'
-        hidden_at: 'Skjult den:'
-        registered_at: 'Registreret den:'
+        email: "E-mail:"
+        hidden_at: "Skjult den:"
+        registered_at: "Registreret den:"
         title: Brugeraktivitet (%{user})
     hidden_budget_investments:
       index:
@@ -434,7 +434,7 @@ da:
         add: Tilføj
         delete: Slet
       search:
-        title: 'Managers: Søg bruger'
+        title: "Managers: Søg bruger"
     menu:
       activity: Moderator aktivitet
       admin: Admin menu
@@ -493,7 +493,7 @@ da:
         add: Tilføj
         delete: Slet
       search:
-        title: 'Moderatorer: Søg brugere'
+        title: "Moderatorer: Søg brugere"
     segment_recipient:
       all_users: Alle brugere
       administrators: Administratorer
@@ -596,7 +596,7 @@ da:
         add: Føj til evaluatorer
         delete: Slet
       search:
-        title: 'Evaluatorer: Søg bruger'
+        title: "Evaluatorer: Søg bruger"
       summary:
         title: Vurderingsresumé for investeringsprojekter
         valuator_name: Evaluator
