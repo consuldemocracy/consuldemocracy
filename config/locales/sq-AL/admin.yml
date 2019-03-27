@@ -329,9 +329,9 @@ sq:
         user: Përdorues
         no_hidden_users: Nuk ka përdorues të fshehura.
       show:
-        email: 'Email:'
-        hidden_at: 'Fshehur në:'
-        registered_at: 'Regjistruar në:'
+        email: "Email:"
+        hidden_at: "Fshehur në:"
+        registered_at: "Regjistruar në:"
         title: Aktiviteti i përdoruesit (%{user})
     hidden_budget_investments:
       index:
@@ -512,7 +512,7 @@ sq:
         add: Shto
         delete: Fshi
       search:
-        title: 'Menaxherët: Kërkimi i përdoruesit'
+        title: "Menaxherët: Kërkimi i përdoruesit"
     menu:
       activity: Aktiviteti i moderatorit
       admin: Menuja e Administratorit
@@ -595,7 +595,7 @@ sq:
         add: Shto
         delete: Fshi
       search:
-        title: 'Moderatorët: Kërkimi i përdoruesit'
+        title: "Moderatorët: Kërkimi i përdoruesit"
     segment_recipient:
       all_users: Te gjithe perdoruesit
       administrators: Administrator
@@ -712,7 +712,7 @@ sq:
         add: Shto tek vlerësuesit
         delete: Fshi
       search:
-        title: 'Vlerësuesit: Kërkimi i përdoruesit'
+        title: "Vlerësuesit: Kërkimi i përdoruesit"
       summary:
         title: Përmbledhja e vlerësuesit për projektet e investimeve
         valuator_name: Vlerësues
@@ -973,9 +973,9 @@ sq:
     officials:
       edit:
         destroy: Hiq statusin 'Zyrtar'
-        title: 'Zyrtarët: Ndryshoni përdoruesin'
+        title: "Zyrtarët: Ndryshoni përdoruesin"
       flash:
-        official_destroyed: 'Detajet e ruajtura: përdoruesi nuk është më zyrtar'
+        official_destroyed: "Detajet e ruajtura: përdoruesi nuk është më zyrtar"
         official_updated: Detajet e zyrtarëve të ruajtur
       index:
         title: Zyrtarët
@@ -992,7 +992,7 @@ sq:
       search:
         edit_official: Ndrysho zyrtar
         make_official: Bëni zyrtar
-        title: 'Pozicionet zyrtare: Kërkimi i përdoruesit'
+        title: "Pozicionet zyrtare: Kërkimi i përdoruesit"
         no_results: Pozitat zyrtare nuk u gjetën.
     organizations:
       index:
@@ -1177,7 +1177,7 @@ sq:
         form:
           error:
             one: "gabimi e pengoi këtë gjeozonë të ruhej"
-            other: 'gabimet e penguan këtë gjeozonë të ruhej'
+            other: "gabimet e penguan këtë gjeozonë të ruhej"
       edit:
         form:
           submit_button: Ruaj ndryshimet
