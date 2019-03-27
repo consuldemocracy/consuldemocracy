@@ -63,7 +63,7 @@ cs:
       most_commented: Podle počtu komentářů
     select_order: Třídit podle
     show:
-      return_to_commentable: 'Jít zpět na '
+      return_to_commentable: "Jít zpět na "
   comments_helper:
     comment_button: Zveřejnit komentář
     comment_link: Komentář
@@ -203,7 +203,7 @@ cs:
       available_locales: Dostupné jazyky
       collaborative_legislation: Legislativní procesy
       debates: Debaty
-      locale: 'Jazyk:'
+      locale: "Jazyk:"
       logo: CONSUL logo
       management: Správa
       moderation: Moderování
@@ -222,7 +222,7 @@ cs:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
     admin:
-      watch_form_message: 'Máte neuložené změny. Potvrdíte opuštění stránky?'
+      watch_form_message: "Máte neuložené změny. Potvrdíte opuštění stránky?"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
@@ -333,7 +333,7 @@ cs:
         placeholder: Prohledat návrhy...
         title: Vyhledat
       select_order: Seřadit podle
-      select_order_long: 'Zobrazit návrhy podle:'
+      select_order_long: "Zobrazit návrhy podle:"
       start_proposal: Vytvořit návrh
       title: Návrhy
       top: Top týden
@@ -377,7 +377,7 @@ cs:
       successful: "Tento návrh dosáhl požadované podpory."
     show:
       author_deleted: Uživatel
-      code: 'Kód návrhu:'
+      code: "Kód návrhu:"
       comments:
         zero: Žádné komentáře
       comments_tab: Komentáře
@@ -480,29 +480,29 @@ cs:
     show:
       back: "Jít zpět na své aktivity"
   shared:
-    edit: 'Upravit'
-    save: 'Uložit'
+    edit: "Upravit"
+    save: "Uložit"
     delete: Smazat
     "yes": "Ano"
     "no": "Ne"
     search_results: "Výsledky vyhledávání"
     advanced_search:
-      author_type: 'Podle kategorie autora'
-      author_type_blank: 'Zvolte kategorii'
-      date: 'Podle stáří'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: 'Zvolte období'
-      date_1: 'Posledních 24 hodin'
-      date_2: 'Poslední týden'
-      date_3: 'Poslední měsíc'
-      date_4: 'Poslední rok'
-      date_5: 'Vlastní nastavení'
-      from: 'From'
-      general: 'Obsahující text'
-      general_placeholder: 'Napište text'
-      search: 'Filtr'
-      title: 'Pokročilé vyhledávání'
-      to: 'do'
+      author_type: "Podle kategorie autora"
+      author_type_blank: "Zvolte kategorii"
+      date: "Podle stáří"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "Zvolte období"
+      date_1: "Posledních 24 hodin"
+      date_2: "Poslední týden"
+      date_3: "Poslední měsíc"
+      date_4: "Poslední rok"
+      date_5: "Vlastní nastavení"
+      from: "From"
+      general: "Obsahující text"
+      general_placeholder: "Napište text"
+      search: "Filtr"
+      title: "Pokročilé vyhledávání"
+      to: "do"
     author_info:
       author_deleted: Uživatel
     back: Jít zpět
@@ -575,8 +575,8 @@ cs:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Pokud navrhujete jménem sdružení nebo kolektivu, přidejte zde jméno'
-      association_name: 'Association name'
+      association_name_label: "Pokud navrhujete jménem sdružení nebo kolektivu, přidejte zde jméno"
+      association_name: "Association name"
       description: Description
       external_url: Odkaz na další dokumenty
       geozone: Vymezení oblasti města
@@ -606,7 +606,7 @@ cs:
       start_new: Vytvořit výdaje návrhu
     show:
       author_deleted: Uživatel
-      code: 'Kód návrhu:'
+      code: "Kód návrhu:"
       share: Sdílet
     wrong_price_format: Pouze celá čísla
     spending_proposal:
