@@ -28,7 +28,11 @@ da:
       user:
         recommendations: "Anbefalinger"
         skip_verification: "Spring brugerverificering over"
-      allow_images: "Tillad uploads og vis billeder"
+      allow_images: "Tillad overførsler og vis billeder"
+      allow_images_description: "Tillad brugere at overføre billeder, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
+      allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
+      allow_attached_documents_description: "Tillad brugere at overføre filer, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
+      guides: "Guide til oprettelse af forslag eller investeringsprojekter"
     map:
       latitude: "Breddegrad"
       longitude: "Længdegrad"
