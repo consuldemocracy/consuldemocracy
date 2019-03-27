@@ -63,8 +63,8 @@ sl:
     verify:
       code: Koda, ki si jo prejel/-a po e-pošti
       email: E-naslov
-      info: 'Za preverjanje svojega računa vnesi svoje podatke o dostopu:'
-      info_code: 'Zdaj vnesi kodo, ki si jo prejel/-a po e-pošti:'
+      info: "Za preverjanje svojega računa vnesi svoje podatke o dostopu:"
+      info_code: "Zdaj vnesi kodo, ki si jo prejel/-a po e-pošti:"
       password: Geslo
       submit: Verificiraj moj račun
       title: Verificiraj svoj račun
