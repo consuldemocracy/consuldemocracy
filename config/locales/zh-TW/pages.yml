@@ -104,7 +104,7 @@ zh-TW:
               key_column: 5
               page_column: 立法進程
         browser_table:
-          description: '根據所使用的操作系統和瀏覽器，組合鍵如下所示：'
+          description: "根據所使用的操作系統和瀏覽器，組合鍵如下所示："
           caption: 組合鍵是基於所使用的操作系統和瀏覽器
           browser_header: 瀏覽器
           key_header: 組合鍵
@@ -147,7 +147,7 @@ zh-TW:
               browser_column: Opera
               action_column: 查看 > 比例
         browser_shortcuts_table:
-          description: '另一種修改字體大小的方法是使用瀏覽器中定義的鍵盤快捷鍵，尤其是組合鍵：'
+          description: "另一種修改字體大小的方法是使用瀏覽器中定義的鍵盤快捷鍵，尤其是組合鍵："
           rows:
             - 
               shortcut_column: CTRL 和 + (MAC機上的 CMD 和 +)
@@ -163,8 +163,8 @@ zh-TW:
     verify:
       code: 您在信中收到的代碼
       email: 電郵
-      info: '為核實您的帳戶，請輸入您的訪問數據：'
-      info_code: '現在輸入您在信中收到的代碼：'
+      info: "為核實您的帳戶，請輸入您的訪問數據："
+      info_code: "現在輸入您在信中收到的代碼："
       password: 密碼
       submit: 核實我的帳戶
       title: 核實您的帳戶
