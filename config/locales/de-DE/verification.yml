@@ -8,7 +8,7 @@ de:
         alert:
           failure: Beim Versenden einer E-Mail an Ihr Benutzerkonto ist ein Problem aufgetreten
         flash:
-          success: 'Wir haben einen Bestätigungslink an Sie geschickt: %{email}'
+          success: "Wir haben einen Bestätigungslink an Sie geschickt: %{email}"
       show:
         alert:
           failure: Der Bestätigungscode ist falsch
@@ -26,7 +26,7 @@ de:
       errors:
         incorrect_code: Der Bestätigungscode ist falsch
       new:
-        explanation: 'Um an der finalen Abstimmungen teilzunehmen, können Sie:'
+        explanation: "Um an der finalen Abstimmungen teilzunehmen, können Sie:"
         go_to_index: Vorschläge anzeigen
         office: Verifiziere dich persönlich in jedem %{office}
         send_letter: Schicken Sie mir einen Brief mit dem Code
@@ -50,7 +50,7 @@ de:
         date_of_birth: Geburtsdatum
         document_number: Dokumentennummern
         document_number_help_title: Hilfe
-        document_number_help_text_html: '<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P'
+        document_number_help_text_html: "<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P"
         document_type:
           passport: Pass
           residence_card: Aufenthaltsbescheinigung
