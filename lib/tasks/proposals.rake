@@ -11,10 +11,14 @@ namespace :proposals do
       print "Move external_url to description for #{model}s"
       model.find_each do |resource|
         if resource.external_url.present?
-          resource.update_columns(description: "#{resource.description} "\
-                                  "<p>#{text_with_links(resource.external_url)}</p>",
-                                  external_url: "", updated_at: Time.current)
-          print "."
+          Globalize.with_locale(I18n.default_locale) do
+            new_description = "#{resource.description} <p>#{text_with_links(resource.external_url)}</p>"
+            resource.description = new_description
+            resource.external_url = ""
+            resource.updated_at = Time.current
+            resource.save(validate: false)
+            print "."
+          end
         end
       end
       puts " ✅ "
