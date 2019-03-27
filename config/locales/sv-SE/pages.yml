@@ -102,8 +102,8 @@ sv:
     verify:
       code: Koden du fick i ett brev
       email: E-post
-      info: 'För att verifiera ditt konto måste du fylla i dina uppgifter:'
-      info_code: 'Nu kan du skriva in koden du fick i ett brev:'
+      info: "För att verifiera ditt konto måste du fylla i dina uppgifter:"
+      info_code: "Nu kan du skriva in koden du fick i ett brev:"
       password: Lösenord
       submit: Verifiera mitt konto
       title: Verifiera ditt konto
