@@ -102,9 +102,9 @@ cs:
         author_deleted: Uživatel
         price_explanation: Vysvětlení nákladů
         unfeasibility_explanation: Vysvětlení neproveditelnosti
-        code_html: 'Kód investiční projektu: <strong>%{code}</strong>'
-        location_html: 'Umístění: <strong>%{location}</strong>'
-        organization_name_html: 'Navrhované jménem: <strong>%{name}</strong>'
+        code_html: "Kód investiční projektu: <strong>%{code}</strong>"
+        location_html: "Umístění: <strong>%{location}</strong>"
+        organization_name_html: "Navrhované jménem: <strong>%{name}</strong>"
         share: Sdílet
         title: Investiční projekt
         supports: Podpora
@@ -113,10 +113,10 @@ cs:
         comments_tab: Komentáře
         milestones_tab: Milníky
         author: Autor
-        project_unfeasible_html: 'Tento investiční projekt <strong>byla označen jako neuskutečnitelný</strong> a nepůjde do fáze závěrečného hlasování.'
-        project_selected_html: 'Tento investiční projekt <strong>byl zařazen</strong> do fáze závěrečného hlasování.'
-        project_winner: 'Vítězný investiční projekt'
-        project_not_selected_html: 'Tento investiční projekt <strong>nebyl zařazen</strong> do fáze závěrečného hlasování.'
+        project_unfeasible_html: "Tento investiční projekt <strong>byla označen jako neuskutečnitelný</strong> a nepůjde do fáze závěrečného hlasování."
+        project_selected_html: "Tento investiční projekt <strong>byl zařazen</strong> do fáze závěrečného hlasování."
+        project_winner: "Vítězný investiční projekt"
+        project_not_selected_html: "Tento investiční projekt <strong>nebyl zařazen</strong> do fáze závěrečného hlasování."
         see_price_explanation: Viz vysvětlení nákladů
       wrong_price_format: Pouze celá čísla
       investment:
