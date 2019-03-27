@@ -67,7 +67,7 @@ sv:
       most_commented: Mest kommenterade
     select_order: Sortera efter
     show:
-      return_to_commentable: 'Gå tillbaka till '
+      return_to_commentable: "Gå tillbaka till "
   comments_helper:
     comment_button: Publicera kommentar
     comment_link: Kommentera
@@ -218,7 +218,7 @@ sv:
       available_locales: Tillgängliga språk
       collaborative_legislation: Dialoger
       debates: Debatter
-      locale: 'Språk:'
+      locale: "Språk:"
       logo: CONSULs logotyp
       management: Användarhantering
       moderation: Moderering
@@ -240,7 +240,7 @@ sv:
         notifications: Aviseringar
         no_notifications: "Du har inga nya aviseringar"
     admin:
-      watch_form_message: 'Du har inte sparat dina ändringar. Vill du verkligen lämna sidan?'
+      watch_form_message: "Du har inte sparat dina ändringar. Vill du verkligen lämna sidan?"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
@@ -367,7 +367,7 @@ sv:
         one: " som innehåller <strong>'%{search_term}'</strong>"
         other: " som innehåller <strong>'%{search_term}'</strong>"
       select_order: Sortera efter
-      select_order_long: 'Du visar förslag enligt:'
+      select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
       title: Förslag
       top: Veckans populäraste förslag
@@ -417,7 +417,7 @@ sv:
       successful: "Förslaget har fått tillräckligt med stöd."
     show:
       author_deleted: Användaren är borttagen
-      code: 'Förslagskod:'
+      code: "Förslagskod:"
       comments:
         zero: Inga kommentarer
         one: 1 kommentar
@@ -517,29 +517,29 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
-    edit: 'Redigera'
-    save: 'Spara'
+    edit: "Redigera"
+    save: "Spara"
     delete: Ta bort
     "yes": "Ja"
     "no": "Nej"
     search_results: "Sökresultat"
     advanced_search:
-      author_type: 'Efter kategori av förslagslämnare'
-      author_type_blank: 'Välj en kategori'
-      date: 'Efter datum'
-      date_placeholder: 'DD/MM/ÅÅÅÅ'
-      date_range_blank: 'Välj ett datum'
-      date_1: 'Det senaste dygnet'
-      date_2: 'Senaste veckan'
-      date_3: 'Senaste månaden'
-      date_4: 'Senaste året'
-      date_5: 'Anpassad'
-      from: 'Från'
-      general: 'Med texten'
-      general_placeholder: 'Fyll i texten'
-      search: 'Filtrera'
-      title: 'Avancerad sökning'
-      to: 'Till'
+      author_type: "Efter kategori av förslagslämnare"
+      author_type_blank: "Välj en kategori"
+      date: "Efter datum"
+      date_placeholder: "DD/MM/ÅÅÅÅ"
+      date_range_blank: "Välj ett datum"
+      date_1: "Det senaste dygnet"
+      date_2: "Senaste veckan"
+      date_3: "Senaste månaden"
+      date_4: "Senaste året"
+      date_5: "Anpassad"
+      from: "Från"
+      general: "Med texten"
+      general_placeholder: "Fyll i texten"
+      search: "Filtrera"
+      title: "Avancerad sökning"
+      to: "Till"
     author_info:
       author_deleted: Användaren är borttagen
     back: Gå tillbaka
@@ -621,8 +621,8 @@ sv:
     instagram: "%{org} på Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Namn på grupp eller organisation som förslaget kommer från'
-      association_name: 'Föreningens namn'
+      association_name_label: "Namn på grupp eller organisation som förslaget kommer från"
+      association_name: "Föreningens namn"
       description: Beskrivning
       external_url: Länk till ytterligare dokumentation
       geozone: Område
@@ -655,7 +655,7 @@ sv:
       start_new: Skapa budgetförslag
     show:
       author_deleted: Användaren är borttagen
-      code: 'Förslagskod:'
+      code: "Förslagskod:"
       share: Dela
     wrong_price_format: Endast heltal
     spending_proposal:
