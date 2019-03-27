@@ -71,7 +71,7 @@ ru:
       most_commented: Самое комментируемое
     select_order: Сортировать по
     show:
-      return_to_commentable: 'Вернуться к '
+      return_to_commentable: "Вернуться к "
   comments_helper:
     comment_button: Опубликовать комментарий
     comment_link: Отзыв
@@ -227,7 +227,7 @@ ru:
       available_locales: Доступные языки
       collaborative_legislation: Процесс законотворчества
       debates: Обсуждения проблем
-      locale: 'Язык:'
+      locale: "Язык:"
       logo: CONSUL логотип
       management: Управление
       moderation: Модерирование
@@ -246,7 +246,7 @@ ru:
         notifications: Уведомления
         no_notifications: "У вас нет новых уведомлений"
     admin:
-      watch_form_message: 'У вас есть не сохраненные изменения. Вы подтверждаете, что хотите покинуть страницу?'
+      watch_form_message: "У вас есть не сохраненные изменения. Вы подтверждаете, что хотите покинуть страницу?"
   notifications:
     index:
       empty_notifications: У вас нет новых уведомлений.
@@ -359,7 +359,7 @@ ru:
         many: " содержащие термин <strong>'%{search_term}'</strong>"
         other: " содержащие термин <strong>'%{search_term}'</strong>"
       select_order: Упорядочить по
-      select_order_long: 'Вы просматриваете предложения в соответствии с:'
+      select_order_long: "Вы просматриваете предложения в соответствии с:"
       start_proposal: Создать предложение
       title: Заявки
       top: Лучшие за неделю
@@ -415,7 +415,7 @@ ru:
       successful: "Это предложение достигло требуемого уровня поддержки."
     show:
       author_deleted: Пользователь удален
-      code: 'Код предложения:'
+      code: "Код предложения:"
       comments:
         zero: Нет комментариев
         one: 1 комментарий
@@ -522,29 +522,29 @@ ru:
     show:
       back: "Вернуться в мою активность"
   shared:
-    edit: 'Редактировать'
-    save: 'Сохранить'
+    edit: "Редактировать"
+    save: "Сохранить"
     delete: Удалить
     "yes": "Да"
     "no": "Нет"
     search_results: "Результаты поиска"
     advanced_search:
-      author_type: 'По категории автора'
-      author_type_blank: 'Выбрать категорию'
-      date: 'По дате'
-      date_placeholder: 'DD.MM.YYYY'
-      date_range_blank: 'Выберите дату'
-      date_1: 'Последние 24 часа'
-      date_2: 'Последняя неделя'
-      date_3: 'Последний месяц'
-      date_4: 'Последний год'
-      date_5: 'Настраиваемая'
-      from: 'От'
-      general: 'С текстом'
-      general_placeholder: 'Записать текст'
-      search: 'Фильтровать'
-      title: 'Расширенный поиск'
-      to: 'Для'
+      author_type: "По категории автора"
+      author_type_blank: "Выбрать категорию"
+      date: "По дате"
+      date_placeholder: "DD.MM.YYYY"
+      date_range_blank: "Выберите дату"
+      date_1: "Последние 24 часа"
+      date_2: "Последняя неделя"
+      date_3: "Последний месяц"
+      date_4: "Последний год"
+      date_5: "Настраиваемая"
+      from: "От"
+      general: "С текстом"
+      general_placeholder: "Записать текст"
+      search: "Фильтровать"
+      title: "Расширенный поиск"
+      to: "Для"
     author_info:
       author_deleted: Пользователь удален
     back: Вернуться
@@ -610,8 +610,8 @@ ru:
       hide: Скрыть рекомендации
   spending_proposals:
     form:
-      association_name_label: 'Если вы предлагаете от имени ассоциации или коллектива, то добавьте имя здесь'
-      association_name: 'Название ассоциации'
+      association_name_label: "Если вы предлагаете от имени ассоциации или коллектива, то добавьте имя здесь"
+      association_name: "Название ассоциации"
       description: Описание
       external_url: Ссылка на дополнительную документацию
       geozone: Сфера деятельности
@@ -641,7 +641,7 @@ ru:
       start_new: Создать предложение трат
     show:
       author_deleted: Пользователь удален
-      code: 'Код предложения:'
+      code: "Код предложения:"
       share: Доля
     wrong_price_format: Только целые числа
     spending_proposal:
