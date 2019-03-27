@@ -15,7 +15,7 @@ da:
     mailer:
       confirmation_instructions:
         confirm_link: Bekræft min konto
-        text: 'Du kan bekræfte din e-mail med følgende link:'
+        text: "Du kan bekræfte din e-mail med følgende link:"
         title: Velkommen
         welcome: Velkommen
       reset_password_instructions:
@@ -23,12 +23,12 @@ da:
         hello: Hej
         ignore_text: Hvis du ikke har efterspurgt at ændre din adgangskode, kan du ignorere denne e-mail.
         info_text: Din adgangskode vil kun blive ændret, hvis du følger linket.
-        text: 'Vi har modtaget din forespørgsel om at ændre din adgangskode. Du kan gøre det ved at trykke på følgende link:'
+        text: "Vi har modtaget din forespørgsel om at ændre din adgangskode. Du kan gøre det ved at trykke på følgende link:"
         title: Skift din adgangskode
       unlock_instructions:
         hello: Hej
         info_text: Din konto er blevet blokeret på grund af for mange fejlagtige login forsøg.
-        instructions_text: 'Vær venlig at klikke på dette link for at genåbne din konto:'
+        instructions_text: "Vær venlig at klikke på dette link for at genåbne din konto:"
         title: Din konto er blevet spærret
         unlock_link: Spær min konto
     menu:
@@ -103,7 +103,7 @@ da:
           password_confirmation_label: Bekræft ny adgangskode
           password_label: Ny adgangskode
           update_submit: Opdater
-          waiting_for: 'Venter på bekræftelse af:'
+          waiting_for: "Venter på bekræftelse af:"
         new:
           cancel: Annuller login
           email_label: E-mail
