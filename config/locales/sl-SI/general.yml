@@ -58,7 +58,7 @@ sl:
       most_commented: Največ komentarjev
     select_order: Uredi po
     show:
-      return_to_commentable: 'Pojdi nazaj na '
+      return_to_commentable: "Pojdi nazaj na "
   comments_helper:
     comment_button: Objavi komentar
     comment_link: Komentiraj
@@ -186,7 +186,7 @@ sl:
       available_locales: Razpoložljivi jeziki
       collaborative_legislation: Zakonodajni procesi
       debates: Razprave
-      locale: 'Jezik:'
+      locale: "Jezik:"
       management: Upravljanje
       moderation: Moderacija
       valuation: Vrednotenje
@@ -204,7 +204,7 @@ sl:
         notifications: Obvestila
         no_notifications: "Nimaš novih obvestil"
     admin:
-      watch_form_message: 'Imaš neshranjene spremembe. Res želiš zapustiti to stran?'
+      watch_form_message: "Imaš neshranjene spremembe. Res želiš zapustiti to stran?"
   notifications:
     index:
       empty_notifications: Nimaš novih obvestil.
@@ -308,7 +308,7 @@ sl:
         placeholder: Išči predloge...
         title: Išči
       select_order: Razvrsti po
-      select_order_long: 'Predloge si ogleduješ glede na:'
+      select_order_long: "Predloge si ogleduješ glede na:"
       start_proposal: Ustvari predlog
       title: Predlogi
       top: Najboljši tega tedna
@@ -352,7 +352,7 @@ sl:
       successful: "Ta predlog je dosegel zahtevano število podpornikov in bo na voljo v %{voting}."
     show:
       author_deleted: Uporabnik izbrisan
-      code: 'Koda predloga:'
+      code: "Koda predloga:"
       comments:
         zero: Brez komentarjev
       comments_tab: Komentarji
@@ -449,28 +449,28 @@ sl:
     show:
       back: "Vrni se na mojo aktivnost"
   shared:
-    edit: 'Uredi'
-    save: 'Shrani'
+    edit: "Uredi"
+    save: "Shrani"
     delete: Izbriši
     "yes": "Da"
     "no": "Ne"
     search_results: "Rezultati iskanja"
     advanced_search:
-      author_type: 'Po kategoriji avtorja'
-      author_type_blank: 'Izberi kategorijo'
-      date: 'Po datumu'
-      date_range_blank: 'Izberi datum'
-      date_1: 'Zadnjih 24 ur'
-      date_2: 'Zadnji teden'
-      date_3: 'Zadnji mesec'
-      date_4: 'Zadnje leto'
-      date_5: 'Po meri'
-      from: 'Od'
-      general: 'Z besedilom'
-      general_placeholder: 'napiši besedilo'
-      search: 'Filtriraj'
-      title: 'Napredno iskanje'
-      to: 'Za'
+      author_type: "Po kategoriji avtorja"
+      author_type_blank: "Izberi kategorijo"
+      date: "Po datumu"
+      date_range_blank: "Izberi datum"
+      date_1: "Zadnjih 24 ur"
+      date_2: "Zadnji teden"
+      date_3: "Zadnji mesec"
+      date_4: "Zadnje leto"
+      date_5: "Po meri"
+      from: "Od"
+      general: "Z besedilom"
+      general_placeholder: "napiši besedilo"
+      search: "Filtriraj"
+      title: "Napredno iskanje"
+      to: "Za"
     author_info:
       author_deleted: Uporabnik izbrisan
     back: Pojdi nazaj
@@ -531,8 +531,8 @@ sl:
       list: Seznam
   spending_proposals:
     form:
-      association_name_label: 'Če predlagaš v imenu organizacije, društva ali kolektiva, tukaj dodaj ime'
-      association_name: 'Ime organizacije'
+      association_name_label: "Če predlagaš v imenu organizacije, društva ali kolektiva, tukaj dodaj ime"
+      association_name: "Ime organizacije"
       description: Opis
       external_url: Povezava do dodatne dokumentacije
       geozone: Področje uporabe
@@ -562,7 +562,7 @@ sl:
       start_new: Ustvari predlog porabe
     show:
       author_deleted: Uporabnik izbrisan
-      code: 'Koda predloga:'
+      code: "Koda predloga:"
       share: Deli
     wrong_price_format: Samo cela števila
     spending_proposal:
