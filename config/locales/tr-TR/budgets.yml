@@ -111,9 +111,9 @@ tr:
         author_deleted: Kullanıcı silindi
         price_explanation: Fiyat açıklama
         unfeasibility_explanation: Uygun değildir açıklaması
-        code_html: 'Yatırım projesi kodu: <strong>%{code}</strong>'
-        location_html: 'Konum: <strong>%{location}</strong>'
-        organization_name_html: 'Adına önerilen: <strong>%{name}</strong>'
+        code_html: "Yatırım projesi kodu: <strong>%{code}</strong>"
+        location_html: "Konum: <strong>%{location}</strong>"
+        organization_name_html: "Adına önerilen: <strong>%{name}</strong>"
         share: Paylaş
         title: Yatırım projesi
         supports: Destekler
@@ -122,10 +122,10 @@ tr:
         comments_tab: Yorumlar
         milestones_tab: Kilometre taşları
         author: Yazar
-        project_unfeasible_html: 'Bu yatırım projesi <strong>uygun değil olarak işaretlendi</strong> ve oy kullanma aşamasına geçmeyecek.'
-        project_selected_html: 'Bu yatırım projesi, oy aşaması için <strong>seçildi</strong>.'
-        project_winner: 'Kazanan yatırım projesi'
-        project_not_selected_html: 'Bu yatırım projesi, oy aşaması için <strong>seçilmemiş</strong>.'
+        project_unfeasible_html: "Bu yatırım projesi <strong>uygun değil olarak işaretlendi</strong> ve oy kullanma aşamasına geçmeyecek."
+        project_selected_html: "Bu yatırım projesi, oy aşaması için <strong>seçildi</strong>."
+        project_winner: "Kazanan yatırım projesi"
+        project_not_selected_html: "Bu yatırım projesi, oy aşaması için <strong>seçilmemiş</strong>."
         see_price_explanation: Fiyat açıklamasını gör
       wrong_price_format: Sadece tam sayılar
       investment:
