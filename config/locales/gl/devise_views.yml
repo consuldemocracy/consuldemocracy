@@ -15,7 +15,7 @@ gl:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar a miña conta
-        text: 'Podes confirmar a túa conta de correo electrónico no seguinte enlace:'
+        text: "Podes confirmar a túa conta de correo electrónico no seguinte enlace:"
         title: Benvida
         welcome: Benvido/a
       reset_password_instructions:
@@ -23,12 +23,12 @@ gl:
         hello: Ola
         ignore_text: Se ti non o solicitaches, podes ignorar este correo electrónico.
         info_text: O teu contrasinal non cambiará ata que non accedas ao enlace e o modifiques.
-        text: 'Solicitouse cambiar o teu contrasinal, pódelo facer no seguinte enlace:'
+        text: "Solicitouse cambiar o teu contrasinal, pódelo facer no seguinte enlace:"
         title: Cambia o teu contrasinal
       unlock_instructions:
         hello: Ola
         info_text: A túa conta foi bloqueada debido a un excesivo número de intentos fallidos de alta.
-        instructions_text: 'Sigue o seguinte enlace para desbloquear a túa conta:'
+        instructions_text: "Sigue o seguinte enlace para desbloquear a túa conta:"
         title: A túa conta foi bloqueada
         unlock_link: Desbloquear a miña conta
     menu:
@@ -103,7 +103,7 @@ gl:
           password_confirmation_label: Confirmar o novo contrasinal
           password_label: Contrasinal novo
           update_submit: Actualizar
-          waiting_for: 'Esperando confirmación de:'
+          waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
           email_label: O teu correo electrónico
