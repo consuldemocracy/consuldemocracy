@@ -18,7 +18,6 @@
   * [Servidor local de correo](getting_started/dev_mailserver.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
 * [Heroku](getting_started/deploying-on-heroku.md)
-* [Digital Ocean VPS](getting_started/digital_ocean_vps.md)
 * [Docker](getting_started/docker.md)
 * [Configuración básica](getting_started/basic_configuration.md)
 * [Documentación y guías sobre CONSUL](getting_started/documentation_and_guides.md)
