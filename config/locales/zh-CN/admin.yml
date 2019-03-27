@@ -329,9 +329,9 @@ zh-CN:
         user: 用户
         no_hidden_users: 没有隐藏的用户。
       show:
-        email: '电子邮件：'
-        hidden_at: '隐藏于：'
-        registered_at: '注册于：'
+        email: "电子邮件："
+        hidden_at: "隐藏于："
+        registered_at: "注册于："
         title: 用户的活动 (%{user})
     hidden_budget_investments:
       index:
@@ -512,7 +512,7 @@ zh-CN:
         add: 添加
         delete: 删除
       search:
-        title: '经理：用户搜索'
+        title: "经理：用户搜索"
     menu:
       activity: 审核员活动
       admin: 管理菜单
@@ -597,7 +597,7 @@ zh-CN:
         add: 添加
         delete: 删除
       search:
-        title: '审核员：用户搜索'
+        title: "审核员：用户搜索"
     segment_recipient:
       all_users: 所有用户
       administrators: 管理员
@@ -713,7 +713,7 @@ zh-CN:
         add: 添加到评估员
         delete: 删除
       search:
-        title: '评估员：用户搜索'
+        title: "评估员：用户搜索"
       summary:
         title: 投资项目的评估员总结
         valuator_name: 评估员
@@ -974,9 +974,9 @@ zh-CN:
     officials:
       edit:
         destroy: 删除‘官方’状态
-        title: '官员：编辑用户'
+        title: "官员：编辑用户"
       flash:
-        official_destroyed: '保存的详细信息：用户不再是官员'
+        official_destroyed: "保存的详细信息：用户不再是官员"
         official_updated: 官员详细信息已保存
       index:
         title: 官员
@@ -993,7 +993,7 @@ zh-CN:
       search:
         edit_official: 编辑官员
         make_official: 成为官员
-        title: '官方职位：用户搜索'
+        title: "官方职位：用户搜索"
         no_results: 未找到官方职位。
     organizations:
       index:
@@ -1177,7 +1177,7 @@ zh-CN:
       errors:
         form:
           error:
-            other: '阻止这个地理区域被保存的错误'
+            other: "阻止这个地理区域被保存的错误"
       edit:
         form:
           submit_button: 保存更改
