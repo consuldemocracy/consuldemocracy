@@ -355,9 +355,9 @@ fr:
         user: Utilisateurs masqués
         no_hidden_users: Il n’y a aucun utilisateur masqué.
       show:
-        email: 'Courriel :'
-        hidden_at: 'Masqué le :'
-        registered_at: 'Inscrit le :'
+        email: "Courriel :"
+        hidden_at: "Masqué le :"
+        registered_at: "Inscrit le :"
         title: Activité de l'utilisateur (%{user})
     hidden_budget_investments:
       index:
@@ -535,7 +535,7 @@ fr:
         add: Ajouter en tant que président
         delete: Supprimer
       search:
-        title: 'Gestionnaires : Recherche d''utilisateur'
+        title: "Gestionnaires : Recherche d'utilisateur"
     menu:
       activity: Activité des modérateurs
       admin: Menu d'administration
@@ -617,7 +617,7 @@ fr:
         add: Ajouter en tant que président
         delete: Supprimer
       search:
-        title: 'Modérateurs : Recherche d''utilisateur'
+        title: "Modérateurs : Recherche d'utilisateur"
     segment_recipient:
       all_users: Tous les utilisateurs
       administrators: Administrateurs
@@ -731,7 +731,7 @@ fr:
         add: Ajouter un évaluateur
         delete: Supprimer
       search:
-        title: 'Évaluateurs : Recherche d''utilisateur'
+        title: "Évaluateurs : Recherche d'utilisateur"
       summary:
         title: Résumé de l'évaluateur pour les projets d'investissement
         valuator_name: Évaluateur
@@ -992,9 +992,9 @@ fr:
     officials:
       edit:
         destroy: Supprimer le statut de fonctionnaire
-        title: 'Fonctionnaire: Modifier l''utilisateur'
+        title: "Fonctionnaire: Modifier l'utilisateur"
       flash:
-        official_destroyed: 'Informations sauvegardées : l''utilisateur n''est plus un fonctionnaire.'
+        official_destroyed: "Informations sauvegardées : l'utilisateur n'est plus un fonctionnaire."
         official_updated: Informations du fonctionnaire sauvegardées
       index:
         title: Fonctionnaires
@@ -1011,7 +1011,7 @@ fr:
       search:
         edit_official: Modifier le fonctionnaire
         make_official: Convertir en fonctionnaire
-        title: 'Positions de fonctionnaire: recherche utilisateur'
+        title: "Positions de fonctionnaire: recherche utilisateur"
         no_results: Positions officielles introuvables.
     organizations:
       index:
@@ -1196,7 +1196,7 @@ fr:
         form:
           error:
             one: "a empêché ce district d'être sauvegardé"
-            other: 'a empêché ce district d''être sauvegardé'
+            other: "a empêché ce district d'être sauvegardé"
       edit:
         form:
           submit_button: Sauvegarder des changements
