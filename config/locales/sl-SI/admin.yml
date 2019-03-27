@@ -245,9 +245,9 @@ sl:
         user: Uporabnik
         no_hidden_users: Ni skritih uporabnikov.
       show:
-        email: 'E-naslov:'
-        hidden_at: 'Skrit na:'
-        registered_at: 'Registriran na:'
+        email: "E-naslov:"
+        hidden_at: "Skrit na:"
+        registered_at: "Registriran na:"
         title: Aktivnost uporabnika (%{user})
     legislation:
       processes:
@@ -395,7 +395,7 @@ sl:
         add: Dodaj
         delete: Izbriši
       search:
-        title: 'Upravljalci: iskanje uporabnika'
+        title: "Upravljalci: iskanje uporabnika"
     menu:
       activity: Aktivnost moderatorja
       admin: Admin meni
@@ -457,7 +457,7 @@ sl:
         add: Dodaj
         delete: Izbriši
       search:
-        title: 'Moderatorji: Iskanje uporabnika/-ce'
+        title: "Moderatorji: Iskanje uporabnika/-ce"
     segment_recipient:
       all_users: Vsi uporabniki
       administrators: Administratorji
@@ -520,7 +520,7 @@ sl:
         add: Dodaj k cenilcem
         delete: Izbriši
       search:
-        title: 'Cenilci: Išči uporabnika/-co'
+        title: "Cenilci: Išči uporabnika/-co"
       summary:
         title: Povzetek vrednotenja naložbenih projektov
         valuator_name: Cenilec
@@ -778,9 +778,9 @@ sl:
     officials:
       edit:
         destroy: Odstrani 'uraden' status
-        title: 'Uradniki: uredi uporabnika'
+        title: "Uradniki: uredi uporabnika"
       flash:
-        official_destroyed: 'Podrobnosti shranjene: uporabnik ni več uradnik'
+        official_destroyed: "Podrobnosti shranjene: uporabnik ni več uradnik"
         official_updated: Podrobnosti uradnika shranjene
       index:
         title: Uradniki
@@ -797,7 +797,7 @@ sl:
       search:
         edit_official: Uredi uradnika
         make_official: Naredi za uradnika
-        title: 'Uradni položaji: iskanje uporabnika/-ce'
+        title: "Uradni položaji: iskanje uporabnika/-ce"
         no_results: Ni bilo mogoče najti uradnih položajev.
     organizations:
       index:
