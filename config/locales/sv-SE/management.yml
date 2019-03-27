@@ -9,7 +9,7 @@ sv:
       show:
         title: Användarkonto
       edit:
-        title: 'Redigera användarkonto: Återställ lösenord'
+        title: "Redigera användarkonto: Återställ lösenord"
         back: Tillbaka
         password:
           password: Lösenord
@@ -22,11 +22,11 @@ sv:
           print_help: Du kommer kunna skriva ut lösenordet när det har sparats.
     account_info:
       change_user: Byt användare
-      document_number_label: 'Dokumentnummer:'
-      document_type_label: 'Identitetshandling:'
-      email_label: 'E-post:'
-      identified_label: 'Identifierad som:'
-      username_label: 'Användarnamn:'
+      document_number_label: "Dokumentnummer:"
+      document_type_label: "Identitetshandling:"
+      email_label: "E-post:"
+      identified_label: "Identifierad som:"
+      username_label: "Användarnamn:"
     check: Kontrollera dokument
     dashboard:
       index:
@@ -38,9 +38,9 @@ sv:
       already_verified: Användarkontot är redan verifierat.
       has_no_account_html: För att skapa ett konto, gå till %{link} och klicka <b>'Registrera'</b> i övre vänstra hörnet.
       link: CONSUL
-      in_census_has_following_permissions: 'Den här användaren har följande rättigheter på webbplatsen:'
+      in_census_has_following_permissions: "Den här användaren har följande rättigheter på webbplatsen:"
       not_in_census: Identitetshandlingen är inte registrerad.
-      not_in_census_info: 'De som inte är invånare i staden kan ändå göra det här på webbplatsen:'
+      not_in_census_info: "De som inte är invånare i staden kan ändå göra det här på webbplatsen:"
       please_check_account_data: Var vänlig kontrollera att uppgifterna ovan stämmer.
       title: Användarhantering
       under_age: "Du är inte tillräckligt gammal för att kunna verifiera ditt konto."
@@ -49,14 +49,14 @@ sv:
     date_of_birth: Födelsedatum
     email_verifications:
       already_verified: Användarkontot är redan verifierat.
-      choose_options: 'Välj ett av följande alternativ:'
+      choose_options: "Välj ett av följande alternativ:"
       document_found_in_census: Identitetshandlingen är registrerad, men är inte kopplad till något användarkonto.
-      document_mismatch: 'Den här e-postadressen tillhör en användare som redan har ett id-nummer: %{document_number} (%{document_type})'
+      document_mismatch: "Den här e-postadressen tillhör en användare som redan har ett id-nummer: %{document_number} (%{document_type})"
       email_placeholder: Fyll i e-postadressen för personen som skapade kontot
       email_sent_instructions: För att kunna verifiera användaren och bekräfta att det är rätt e-postadress, behöver användaren klicka på länken som skickats till e-postadressen som angavs ovan.
       if_existing_account: Om personen redan har ett användarkonto på webbplatsen,
       if_no_existing_account: Om personen ännu inte skapat ett användarkonto
-      introduce_email: 'Fyll i e-postadressen för användarkontot:'
+      introduce_email: "Fyll i e-postadressen för användarkontot:"
       send_email: Skicka e-postmeddelande för verifiering
     menu:
       create_proposal: Skapa förslag
@@ -78,7 +78,7 @@ sv:
       vote_proposals: Rösta på förslag
     print:
       proposals_info: Skapa ditt förslag på http://url.consul
-      proposals_title: 'Förslag:'
+      proposals_title: "Förslag:"
       spending_proposals_info: Delta på http://url.consul
       budget_investments_info: Delta på http://url.consul
     print_info: Skriv ut informationen
