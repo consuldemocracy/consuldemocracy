@@ -980,11 +980,37 @@ da:
     tags:
       create: Opret emne
       destroy: Fjern emne
+      index:
+        topic: Emne
+      name:
+        placeholder: Skriv emnets navn
+    users:
+      columns:
+        name: Navn
+        email: E-mail
+        document_number: Dokumentnummer
+        roles: Roller
+        verification_level: Verifikationsniveau
+      index:
+        title: Bruger
+        no_users: Der er ingen brugere.
+      search:
+        placeholder: Søg bruger via e-mail, navn eller dokumentnummer
+        search: Søg
+    verifications:
+      index:
+        phone_not_given: Telefon ikke angivet
+        sms_code_not_confirmed: Har ikke bekræftet sms koden
+        title: Ufærdige verificeringer
     site_customization:
       content_blocks:
         errors:
           form:
             error: Fejl
+        content_block:
+          name: Navn
+          names:
+            footer: Nederst på siden
       images:
         index:
           update: Opdater
@@ -999,7 +1025,21 @@ da:
       pages:
         create:
           notice: Siden blev oprettet
+          error: Siden kunne ikke oprettes
+        update:
+          notice: Siden blev opdateret
+          error: Siden kunne ikke opdateres
+        destroy:
+          notice: Siden blev slettet
+        edit:
+          title: Rediger %{page_title}
+        errors:
+          form:
+            error: Fejl
+        form:
+          options: Indstillinger
         index:
+          create: Opret ny side
           delete: Slet side
           see_page: Vis side
         page:
@@ -1015,3 +1055,6 @@ da:
           link_url: Link URL
     homepage:
       title: Startside
+    translations:
+      remove_language: Fjern sprog
+      add_language: Tilføj sprog
