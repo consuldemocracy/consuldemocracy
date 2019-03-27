@@ -298,8 +298,8 @@ ast:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non verificáu por Padrón'
-              already_voted: 'Yá votó esta propuesta'
+              not_in_census: "Non verificáu por Padrón"
+              already_voted: "Yá votó esta propuesta"
         site_customization/page:
           attributes:
             slug:
