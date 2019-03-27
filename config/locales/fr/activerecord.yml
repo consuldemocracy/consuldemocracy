@@ -360,8 +360,8 @@ fr:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non vérifié par recensement'
-              already_voted: 'Cette proposition a déjà été votée'
+              not_in_census: "Non vérifié par recensement"
+              already_voted: "Cette proposition a déjà été votée"
         site_customization/page:
           attributes:
             slug:
@@ -374,7 +374,7 @@ fr:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Vous ne pouvez pas commenter une évaluation'
+              cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
       messages:
         record_invalid: "La validation omise : %{errors}"
         restrict_dependent_destroy:
