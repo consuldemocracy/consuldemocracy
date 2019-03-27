@@ -11,11 +11,11 @@ ca:
           password: Clau
     account_info:
       change_user: canviar usuari
-      document_number_label: 'Nombre de document:'
-      document_type_label: 'Tipus de document:'
-      email_label: 'E-mail:'
-      identified_label: 'Identificat com:'
-      username_label: 'Usuari:'
+      document_number_label: "Nombre de document:"
+      document_type_label: "Tipus de document:"
+      email_label: "E-mail:"
+      identified_label: "Identificat com:"
+      username_label: "Usuari:"
     dashboard:
       index:
         title: gestió
@@ -25,9 +25,9 @@ ca:
     document_verifications:
       already_verified: Aquest compte d'usuari ja està verificada.
       has_no_account_html: Per crear un usuari entri %{link} i feu clic a l'opció <b>'Crear'</b> a la part superior dreta de la pantalla.
-      in_census_has_following_permissions: 'Aquest usuari pot participar al Portal de Govern Obert amb les següents possibilitats:'
+      in_census_has_following_permissions: "Aquest usuari pot participar al Portal de Govern Obert amb les següents possibilitats:"
       not_in_census: Aquest document no està registrat.
-      not_in_census_info: 'Les persones no empadronades poden participar al Portal de Govern Obert amb les següents possibilitats:'
+      not_in_census_info: "Les persones no empadronades poden participar al Portal de Govern Obert amb les següents possibilitats:"
       please_check_account_data: Comproveu que les dades anteriors són correctes per procedir a verificar el compte completament.
       title: Gestió d'usuaris
       under_age: "No tens edat suficient per verificar el teu compte."
@@ -36,14 +36,14 @@ ca:
     date_of_birth: Data de naixement
     email_verifications:
       already_verified: Aquest compte d'usuari ja està verificada.
-      choose_options: 'Tria una de les opcions següents:'
+      choose_options: "Tria una de les opcions següents:"
       document_found_in_census: Aquest document està en el registre del padró municipal, però encara no té un compte d'usuari associat.
-      document_mismatch: 'Aquest email correspon a un usuari que ja té associat el document %{document_number} (%{document_type})'
+      document_mismatch: "Aquest email correspon a un usuari que ja té associat el document %{document_number} (%{document_type})"
       email_placeholder: Introdueix el correu electrònic de registre
       email_sent_instructions: Per acabar d'verificar aquest compte cal que feu clic a l'enllaç que li hem enviat a l'adreça de correu que figura a dalt. Aquest pas és necessari per confirmar que aquest compte d'usuari és seva.
       if_existing_account: Si la persona ja ha creat un compte d'usuari al web
       if_no_existing_account: Si la persona encara no ha creat un compte d'usuari al web
-      introduce_email: 'Introdueix el correu electrònic amb el que va crear el compte:'
+      introduce_email: "Introdueix el correu electrònic amb el que va crear el compte:"
       send_email: Enviar correu electrònic de verificació
     menu:
       create_proposal: crear proposta
@@ -59,7 +59,7 @@ ca:
       support_proposals: Donar suport propostes
       vote_proposals: Participar en les votacions finals
     print:
-      proposals_title: 'propostes:'
+      proposals_title: "propostes:"
       spending_proposals_info: 'Participa a http: //url.consul'
       budget_investments_info: 'Participa a http: //url.consul'
     print_info: Imprimir aquesta informació
