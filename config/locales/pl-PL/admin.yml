@@ -390,9 +390,9 @@ pl:
         user: Użytkownik
         no_hidden_users: Nie ma żadnych ukrytych użytkowników.
       show:
-        email: 'Email:'
-        hidden_at: 'Ukryte w:'
-        registered_at: 'Zarejestrowany:'
+        email: "Email:"
+        hidden_at: "Ukryte w:"
+        registered_at: "Zarejestrowany:"
         title: Aktywność użytkownika (%{user})
     hidden_budget_investments:
       index:
@@ -582,7 +582,7 @@ pl:
         add: Dodaj
         delete: Usuń
       search:
-        title: 'Menedżerowie: wyszukiwanie użytkowników'
+        title: "Menedżerowie: wyszukiwanie użytkowników"
     menu:
       activity: Aktywność moderatora
       admin: Menu admina
@@ -667,7 +667,7 @@ pl:
         add: Dodaj
         delete: Usuń
       search:
-        title: 'Moderatorzy: Wyszukiwanie użytkownika'
+        title: "Moderatorzy: Wyszukiwanie użytkownika"
     segment_recipient:
       all_users: Wszyscy użytkownicy
       administrators: Administratorów
@@ -818,7 +818,7 @@ pl:
         add: Dodaj do wyceniających
         delete: Usuń
       search:
-        title: 'Wyceniający: wyszukiwanie użytkowników'
+        title: "Wyceniający: wyszukiwanie użytkowników"
       summary:
         title: Podsumowanie Wyceniającego dla projektów inwestycyjnych
         valuator_name: Osoba weryfikująca
@@ -1094,9 +1094,9 @@ pl:
     officials:
       edit:
         destroy: Usuń status 'Oficjalny'
-        title: 'Urzędnicy: Edytuj użytkownika'
+        title: "Urzędnicy: Edytuj użytkownika"
       flash:
-        official_destroyed: 'Szczegóły zapisane: użytkownik nie jest już oficjalny'
+        official_destroyed: "Szczegóły zapisane: użytkownik nie jest już oficjalny"
         official_updated: Szczegóły o urzędniku zapisane
       index:
         title: Urzędnicy
@@ -1114,7 +1114,7 @@ pl:
       search:
         edit_official: Edytuj urzędnika
         make_official: Uczyń urzędowym
-        title: 'Oficjalne stanowiska: Szukaj użytkownika'
+        title: "Oficjalne stanowiska: Szukaj użytkownika"
         no_results: Oficjalne stanowiska nie znalezione.
     organizations:
       index:
@@ -1304,9 +1304,9 @@ pl:
         form:
           error:
             one: "błąd uniemożliwił zapisanie tej geostrefy"
-            few: 'błędy uniemożliwiły zapisanie tej geostrefy'
-            many: 'błędy uniemożliwiły zapisanie tej geostrefy'
-            other: 'błędy uniemożliwiły zapisanie tej geostrefy'
+            few: "błędy uniemożliwiły zapisanie tej geostrefy"
+            many: "błędy uniemożliwiły zapisanie tej geostrefy"
+            other: "błędy uniemożliwiły zapisanie tej geostrefy"
       edit:
         form:
           submit_button: Zapisz zmiany
