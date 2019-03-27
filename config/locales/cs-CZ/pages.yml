@@ -104,7 +104,7 @@ cs:
               key_column: 5
               page_column: Legislativní procesy
         browser_table:
-          description: 'V závislosti na operačním systému a použitém prohlížeči bude kombinace kláves následující:'
+          description: "V závislosti na operačním systému a použitém prohlížeči bude kombinace kláves následující:"
           caption: Kombinace kláves závisí na operačním systému a prohlížeči
           browser_header: Prohlížeč
           key_header: Kombinace kláves
@@ -147,7 +147,7 @@ cs:
               browser_column: Opera
               action_column: Zobrazit > Měřítko
         browser_shortcuts_table:
-          description: 'Další způsob, jak upravit velikost textu, je použít v prohlížečích, zejména kombinace kláves definované klávesové zkratky:'
+          description: "Další způsob, jak upravit velikost textu, je použít v prohlížečích, zejména kombinace kláves definované klávesové zkratky:"
           rows:
             - 
               shortcut_column: CTRL + (CMD + pro počítače MAC)
@@ -163,8 +163,8 @@ cs:
     verify:
       code: Kód, který jste obdrželi v dopise
       email: Email
-      info: 'Chcete-li ověřit svůj účet, zadejte své přístupové údaje:'
-      info_code: 'Nyní zadejte kód, který jste obdrželi v dopise:'
+      info: "Chcete-li ověřit svůj účet, zadejte své přístupové údaje:"
+      info_code: "Nyní zadejte kód, který jste obdrželi v dopise:"
       password: Heslo
       submit: Ověřit můj účet
       title: Ověřte svůj účet
