@@ -444,8 +444,8 @@ pl:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Niezweryfikowane z rejestrem mieszkańców'
-              already_voted: 'Już zagłosowano na tę propozycję'
+              not_in_census: "Niezweryfikowane z rejestrem mieszkańców"
+              already_voted: "Już zagłosowano na tę propozycję"
         site_customization/page:
           attributes:
             slug:
@@ -458,7 +458,7 @@ pl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Nie możesz komentować wyceny'
+              cannot_comment_valuation: "Nie możesz komentować wyceny"
       messages:
         record_invalid: "Sprawdzanie poprawności nie powiodło się: %{errors}"
         restrict_dependent_destroy:
