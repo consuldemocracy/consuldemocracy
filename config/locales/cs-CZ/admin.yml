@@ -373,9 +373,9 @@ cs:
         user: User
         no_hidden_users: Nemáte žádné skryté uživatele.
       show:
-        email: 'Email:'
-        hidden_at: 'Skryté v:'
-        registered_at: 'Registrace v:'
+        email: "Email:"
+        hidden_at: "Skryté v:"
+        registered_at: "Registrace v:"
         title: Aktivita uživatele (%{user})
     hidden_budget_investments:
       index:
@@ -565,7 +565,7 @@ cs:
         add: Přidat
         delete: Smazat
       search:
-        title: 'Manažeři: Vyhledávání uživatelů'
+        title: "Manažeři: Vyhledávání uživatelů"
     menu:
       activity: Aktivity moderátora
       admin: Admin menu
@@ -650,7 +650,7 @@ cs:
         add: Přidat
         delete: Smazat
       search:
-        title: 'Moderátoři: Vyhledávání uživatelů'
+        title: "Moderátoři: Vyhledávání uživatelů"
     segment_recipient:
       all_users: Všichni uživatelé
       administrators: Administrátoři
@@ -764,7 +764,7 @@ cs:
         add: Přidat k hodnotitelům
         delete: Smazat
       search:
-        title: 'Hodnotitelé: Vyhledávání uživatelů'
+        title: "Hodnotitelé: Vyhledávání uživatelů"
       summary:
         title: Přehled o vyhodnocení investičních projektů
         valuator_name: Hodnotitel
@@ -1034,9 +1034,9 @@ cs:
     officials:
       edit:
         destroy: Odebrat status 'Úředníka'
-        title: 'Úředníci: Upravit uživatele'
+        title: "Úředníci: Upravit uživatele"
       flash:
-        official_destroyed: 'Podrobnosti uložené: uživatel již nadále není úředník'
+        official_destroyed: "Podrobnosti uložené: uživatel již nadále není úředník"
         official_updated: Podrobnosti o úředníkovi uložené
       index:
         title: Úředníci
@@ -1053,7 +1053,7 @@ cs:
       search:
         edit_official: Upravit úředníka
         make_official: Učinit úředníkem
-        title: 'Úřednické pozice: Vyhledávání uživatelů'
+        title: "Úřednické pozice: Vyhledávání uživatelů"
         no_results: Nebyly nalezeny žádné úřednické pozice.
     organizations:
       index:
@@ -1236,9 +1236,9 @@ cs:
         form:
           error:
             one: "chyba zabránila uložení této geozóny"
-            few: 'chyba zabránila uložení této geozóny'
-            many: 'chyba zabránila uložení této geozóny'
-            other: 'chyby zabránily uložení této geozóny'
+            few: "chyba zabránila uložení této geozóny"
+            many: "chyba zabránila uložení této geozóny"
+            other: "chyby zabránily uložení této geozóny"
       edit:
         form:
           submit_button: Uložit změny
