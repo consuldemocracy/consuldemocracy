@@ -128,7 +128,7 @@ da:
         other: har den forkerte længde (skal have %{count} tegn)
       other_than: skal være noget andet end %{count}
     template:
-      body: 'Der var problemer med følgende områder:'
+      body: "Der var problemer med følgende områder:"
       header:
         one: 1 fejl forhindrede %{model} i at blive gemt
         other: "%{count} fejl forhindrede %{model} i at blive gemt"
