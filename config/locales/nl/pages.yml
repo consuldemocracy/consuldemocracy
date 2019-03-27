@@ -104,7 +104,7 @@ nl:
               key_column: 5
               page_column: Plannen
         browser_table:
-          description: 'Afhankelijk van het besturingssysteem en de browser die je gebruikt, zullen de toetsencombinaties als volgt zijn:'
+          description: "Afhankelijk van het besturingssysteem en de browser die je gebruikt, zullen de toetsencombinaties als volgt zijn:"
           caption: Toetsencombinatie afhankelijk van het besturingssysteem en browser
           browser_header: Browser
           key_header: Toetsencombinatie
@@ -147,7 +147,7 @@ nl:
               browser_column: Opera
               action_column: Weergave > schaal
         browser_shortcuts_table:
-          description: 'Een andere manier om de tekst te wijzigen is om sneltoetsen van je toetsenbord te gebruiken zoals gedefinieerd in browsers, in het bijzonder de toetsencombinatie:'
+          description: "Een andere manier om de tekst te wijzigen is om sneltoetsen van je toetsenbord te gebruiken zoals gedefinieerd in browsers, in het bijzonder de toetsencombinatie:"
           rows:
             - 
               shortcut_column: CTRL en + (CMD en + bij MAC)
@@ -163,8 +163,8 @@ nl:
     verify:
       code: Code die u in een brief heeft ontvangen
       email: E-mail
-      info: 'Geef hier je contactgegevens op om je account te verifieren:'
-      info_code: 'en de code die u heeft ontvangen:'
+      info: "Geef hier je contactgegevens op om je account te verifieren:"
+      info_code: "en de code die u heeft ontvangen:"
       password: Wachtwoord
       submit: Verifieer mijn account
       title: Verifieer uw account
