@@ -8,7 +8,7 @@ cs:
         alert:
           failure: Došlo k potížím s odesíláním e-mailu na váš účet
         flash:
-          success: 'Odeslali jsem potvrzovací e-mail k účtu: %{email}'
+          success: "Odeslali jsem potvrzovací e-mail k účtu: %{email}"
       show:
         alert:
           failure: Ověřovací kód je nesprávný
@@ -26,7 +26,7 @@ cs:
       errors:
         incorrect_code: Ověřovací kód je nesprávný
       new:
-        explanation: 'Pro účast na finálním hlasování může:'
+        explanation: "Pro účast na finálním hlasování může:"
         go_to_index: Zobrazit návrhy
         office: 'Ověřit v jakékoliv z uvedených subjektů: %{office}'
         send_letter: Pošlete mi dopis s kódem
@@ -50,7 +50,7 @@ cs:
         date_of_birth: Datum narození
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
-        document_number_help_text_html: '<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P'
+        document_number_help_text_html: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
         document_type:
           passport: Cestovní pas
           residence_card: Občanský průkaz
