@@ -59,8 +59,8 @@ he:
         author_deleted: משתמש/ת זה/ו נמחק/ה
         price_explanation: פירוט למחיר
         unfeasibility_explanation: אין סבירות שניתן לביצוע
-        code_html: 'קוד פרויקט ההשקעה: <strong>%{code}</strong>'
-        location_html: 'מיקום: <strong>%{location}</strong>'
+        code_html: "קוד פרויקט ההשקעה: <strong>%{code}</strong>"
+        location_html: "מיקום: <strong>%{location}</strong>"
         share: שיתוף
         title: פרויקט להשקעה
         supports: לחיצה לתמיכה
