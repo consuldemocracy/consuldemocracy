@@ -54,7 +54,7 @@ he:
       oldest: הכי מוקדמות
     select_order: סדר לפי
     show:
-      return_to_commentable: 'בחזרה אל'
+      return_to_commentable: "בחזרה אל"
   comments_helper:
     comment_button: פרסום התגובה
     comment_link: הערות
@@ -167,7 +167,7 @@ he:
       administration: ניהול
       available_locales: שפות לבחירה
       debates: דיונים
-      locale: 'שפה:'
+      locale: "שפה:"
       logo: Consul logo לוגו
       management: הנהלה
       moderation: הנחייה
@@ -274,7 +274,7 @@ he:
         placeholder: חיפוש הצעות ...
         title: חיפוש
       select_order: הזמנה באמצעות
-      select_order_long: 'ההצעות מוצגות לך על-פי סדר:'
+      select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
       title: הצעות
       top: בראש סדר-היום השבוע
@@ -306,7 +306,7 @@ he:
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
-      code: 'קוד ההצעה:'
+      code: "קוד ההצעה:"
       comments:
         zero: אין תגובות
       comments_tab: הערות
@@ -371,28 +371,28 @@ he:
     show:
       back: "חזרה לפעילות שלי"
   shared:
-    edit: 'ערוך'
-    save: 'שמירה'
+    edit: "ערוך"
+    save: "שמירה"
     delete: מחיקה
     "yes": "כן"
     "no": "לא"
     advanced_search:
-      author_type: 'לפי סוג המחבר/ת'
-      author_type_blank: 'בחר/י סוג'
-      date: 'בחירת תאריך'
-      date_placeholder: 'יום/חודש/שנה'
-      date_range_blank: 'בחירת תאריך'
-      date_1: '24 השעות האחרונות'
-      date_2: 'בשבוע האחרון'
-      date_3: 'בחודש האחרון'
-      date_4: 'בשנה האחרונה'
-      date_5: 'התאמה אישית'
-      from: 'מאת'
-      general: 'כולל את המלל'
-      general_placeholder: 'נא להקליד את המלל'
-      search: 'Filter'
-      title: 'חיפוש מתקדם'
-      to: 'אל'
+      author_type: "לפי סוג המחבר/ת"
+      author_type_blank: "בחר/י סוג"
+      date: "בחירת תאריך"
+      date_placeholder: "יום/חודש/שנה"
+      date_range_blank: "בחירת תאריך"
+      date_1: "24 השעות האחרונות"
+      date_2: "בשבוע האחרון"
+      date_3: "בחודש האחרון"
+      date_4: "בשנה האחרונה"
+      date_5: "התאמה אישית"
+      from: "מאת"
+      general: "כולל את המלל"
+      general_placeholder: "נא להקליד את המלל"
+      search: "Filter"
+      title: "חיפוש מתקדם"
+      to: "אל"
     author_info:
       author_deleted: משתמש/ת זה/ו נמחק/ה
     back: חזרה
@@ -436,8 +436,8 @@ he:
     instagram: "אינסטגרם Instagram"
   spending_proposals:
     form:
-      association_name_label: 'אם הצעתך היא בשם ארגון או התאגדות, נא לרשום את שם הארגון/ההתאגדות פה'
-      association_name: 'שם הארגון/התאגדות'
+      association_name_label: "אם הצעתך היא בשם ארגון או התאגדות, נא לרשום את שם הארגון/ההתאגדות פה"
+      association_name: "שם הארגון/התאגדות"
       description: תיאור
       external_url: קישור למידע נוסף
       geozone: היקף הפעילות
@@ -467,7 +467,7 @@ he:
       start_new: יצירת הצעה תקציב
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
-      code: 'קוד ההצעה:'
+      code: "קוד ההצעה:"
       share: שיתוף
     wrong_price_format: נא לרשום סכום בשקלים שלמים
     spending_proposal:
