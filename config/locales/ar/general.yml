@@ -60,7 +60,7 @@ ar:
         many: "%{count} أصوات"
         other: "%{count} أصوات"
     form:
-      comment_as_admin: تعليق كمشرف
+      comment_as_admin: التعليق كمدير
       leave_comment: اترك تعليقك
     orders:
       most_voted: الأكثر تصويتا
@@ -98,7 +98,7 @@ ar:
         many: "%{count} أصوات"
         other: "%{count} أصوات"
     edit:
-      editing: تحرير المناقشة
+      editing: تعديل المناقشة
       form:
         submit_button: حفظ التغييرات
       show_link: عرض المناقشة
@@ -113,7 +113,7 @@ ar:
         confidence_score: اعلى تقييم
         created_at: أحدث
         hot_score: الأكثر نشاطا
-        most_commented: الأكثر تعليقات
+        most_commented: الأكثر تعليقا
         relevance: الأهمية
         recommendations: التوصيات
       recommendations:
