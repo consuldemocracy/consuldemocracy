@@ -111,9 +111,9 @@ es:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
-        code_html: 'Código proyecto de gasto: <strong>%{code}</strong>'
-        location_html: 'Ubicación: <strong>%{location}</strong>'
-        organization_name_html: 'Propuesto en nombre de: <strong>%{name}</strong>'
+        code_html: "Código proyecto de gasto: <strong>%{code}</strong>"
+        location_html: "Ubicación: <strong>%{location}</strong>"
+        organization_name_html: "Propuesto en nombre de: <strong>%{name}</strong>"
         share: Compartir
         title: Proyecto de gasto
         supports: Apoyos
@@ -122,10 +122,10 @@ es:
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         author: Autor
-        project_unfeasible_html: 'Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
-        project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
-        project_winner: 'Proyecto de gasto ganador'
-        project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
+        project_unfeasible_html: "Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación."
+        project_selected_html: "Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación."
+        project_winner: "Proyecto de gasto ganador"
+        project_not_selected_html: "Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación."
         see_price_explanation: Ver informe de coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
