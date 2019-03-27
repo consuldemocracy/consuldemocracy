@@ -220,9 +220,9 @@ ca:
         title: Usuaris bloquejats
         user: usuaris bloquejats
       show:
-        email: 'E-mail:'
-        hidden_at: 'Bloquejat:'
-        registered_at: 'Data d''alta:'
+        email: "E-mail:"
+        hidden_at: "Bloquejat:"
+        registered_at: "Data d'alta:"
         title: Activitat de l'usuari (%{user})
     hidden_budget_investments:
       index:
@@ -666,9 +666,9 @@ ca:
     officials:
       edit:
         destroy: Eliminar condició de 'Càrrec Público'
-        title: 'Càrrecs Públics: Edita usuari'
+        title: "Càrrecs Públics: Edita usuari"
       flash:
-        official_destroyed: 'Dades guardats: l''usuari ja no és càrrec públic'
+        official_destroyed: "Dades guardats: l'usuari ja no és càrrec públic"
         official_updated: Dades del càrrec públic guardats
       index:
         title: Càrrecs Públics
@@ -683,7 +683,7 @@ ca:
       search:
         edit_official: Edita càrrec públic
         make_official: Convertir a càrrec públic
-        title: 'Càrrecs Públics: Cerca d''usuaris'
+        title: "Càrrecs Públics: Cerca d'usuaris"
     organizations:
       index:
         filter: Filtrar
