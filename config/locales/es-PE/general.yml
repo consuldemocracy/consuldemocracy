@@ -64,7 +64,7 @@ es-PE:
       most_commented: Más comentados
     select_order: Organizado por
     show:
-      return_to_commentable: 'Voltar para'
+      return_to_commentable: "Voltar para"
   comments_helper:
     comment_button: Publicar comentário
     comment_link: Comentario
@@ -202,7 +202,7 @@ es-PE:
       administration: Administración
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
-      locale: 'Idioma:'
+      locale: "Idioma:"
       logo: Logo de CONSUL
       management: Gestión
       moderation: Moderación
@@ -224,7 +224,7 @@ es-PE:
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
     admin:
-      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
+      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
@@ -339,7 +339,7 @@ es-PE:
         one: " que contienen <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
-      select_order_long: 'Você está vendo propostas de acordo para:'
+      select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Crea una propuesta
       title: Propuestas
       top: Top semanal
@@ -386,7 +386,7 @@ es-PE:
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
       author_deleted: Usuario eliminado
-      code: 'Código da proposta:'
+      code: "Código da proposta:"
       comments:
         zero: Sin comentarios
         one: 1 Comentario
@@ -482,28 +482,28 @@ es-PE:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar propuesta'
-    save: 'Guardar'
+    edit: "Editar propuesta"
+    save: "Guardar"
     delete: Borrar
     "yes": "Si"
     search_results: "Resultados de la búsqueda"
     advanced_search:
-      author_type: 'Por categoria de autor'
-      author_type_blank: 'Selecione um categoria'
-      date: 'Por data'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Escolha uma data'
-      date_1: 'Últimas 24 horas'
-      date_2: 'Última semana'
-      date_3: 'Último mês'
-      date_4: 'Último ano'
-      date_5: 'Personalizado'
-      from: 'De'
-      general: 'Com o texto'
-      general_placeholder: 'Escrever o texto'
-      search: 'Filtrar'
-      title: 'Busca avançada'
-      to: 'Para'
+      author_type: "Por categoria de autor"
+      author_type_blank: "Selecione um categoria"
+      date: "Por data"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Escolha uma data"
+      date_1: "Últimas 24 horas"
+      date_2: "Última semana"
+      date_3: "Último mês"
+      date_4: "Último ano"
+      date_5: "Personalizado"
+      from: "De"
+      general: "Com o texto"
+      general_placeholder: "Escrever o texto"
+      search: "Filtrar"
+      title: "Busca avançada"
+      to: "Para"
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
@@ -576,8 +576,8 @@ es-PE:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
-      association_name: 'Nombre de la asociación'
+      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
+      association_name: "Nombre de la asociación"
       description: En qué consiste
       external_url: Enlace a documentación adicional
       geozone: Ámbito de actuación
@@ -610,7 +610,7 @@ es-PE:
       start_new: Crear propuesta de inversión
     show:
       author_deleted: Usuario eliminado
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       share: Compartir
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
