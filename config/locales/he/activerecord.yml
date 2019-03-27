@@ -199,5 +199,5 @@ he:
         signature:
           attributes:
             document_number:
-              not_in_census: 'לא זוהה במאגר הנתונים'
-              already_voted: 'כבר הצביע/ה על הצעה זו'
+              not_in_census: "לא זוהה במאגר הנתונים"
+              already_voted: "כבר הצביע/ה על הצעה זו"
