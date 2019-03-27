@@ -206,6 +206,9 @@ da:
       unread: Ulæst
     notification:
       action:
+        comments_on:
+          one: En kommenterede på
+          other: Der er %{count} nye kommentarer på
         replies_to:
           one: Nogen svarede på din kommentar til
           other: Der er %{count} nye svar til din kommentar til
