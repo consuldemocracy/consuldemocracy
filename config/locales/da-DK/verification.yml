@@ -43,12 +43,18 @@ da:
         error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
         postal_code: Postnummer
         postal_code_note: For at verificere din konto skal du være registreret
+        terms: adgangsvilkår og betingelser
     sms:
       edit:
+        confirmation_code: Skriv den kode du modtog på SMS
         resend_sms_link: Klik her for at sende igen
         resend_sms_text: Modtog du ikke en besked med din bekræftelseskode?
         submit_button: Send
+        title: Bekræftelse af sikkerhedskode
       new:
+        phone: Skriv dit telefonnummer for at modtage koden
+        phone_format_html: "<strong><em>(Eksempel: 612345678 eller +34612345678)</em></strong>"
+        phone_note: Vi bruger kun dit telefonnummer til at sende dig en kode. Vi vil aldrig kontakte dig.
         phone_placeholder: "Eksempel: 612345678 eller +45612345678"
         submit_button: Send
         title: Send bekræftelseskode
