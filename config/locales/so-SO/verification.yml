@@ -8,7 +8,7 @@ so:
         alert:
           failure: Dhibaato ayaa ku dhacday in email loo diro koontadaada
         flash:
-          success: 'Waxaan soo dirnay email caddaynta xisaabtaada:%{email}'
+          success: "Waxaan soo dirnay email caddaynta xisaabtaada:%{email}"
       show:
         alert:
           failure: Xaqiijinta xaqiijinta khalad
@@ -26,7 +26,7 @@ so:
       errors:
         incorrect_code: Xaqiijinta xaqiijinta khalad
       new:
-        explanation: 'Ka qeyb qaadashada cod bixinta ugu dambeeya waxaad:'
+        explanation: "Ka qeyb qaadashada cod bixinta ugu dambeeya waxaad:"
         go_to_index: Fiiri soo jeedimaha
         office: Xaqiiji wixii%{office}
         send_letter: Warqad kood wadata iso diir
