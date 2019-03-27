@@ -8,7 +8,7 @@ fr:
         alert:
           failure: Un problème est survenu dans l'envoi de courriel à votre adresse.
         flash:
-          success: 'Nous avons envoyé un courriel de confirmation à votre adresse %{email}'
+          success: "Nous avons envoyé un courriel de confirmation à votre adresse %{email}"
       show:
         alert:
           failure: Code de vérification incorrect
@@ -26,7 +26,7 @@ fr:
       errors:
         incorrect_code: Code de vérification incorrect
       new:
-        explanation: 'Pour participer au vote final, vous pouvez :'
+        explanation: "Pour participer au vote final, vous pouvez :"
         go_to_index: Voir les propositions
         office: Vérifier dans n'importe quel %{office}
         send_letter: Envoyer une lettre avec le code
@@ -50,7 +50,7 @@ fr:
         date_of_birth: Date de naissance
         document_number: Numéro de document
         document_number_help_title: Aide
-        document_number_help_text_html: '<strong>Carte d''identité</strong>: 12345678A<br> <strong>Passeport</strong>: AAA000001<br> <strong>Carte de résident</strong>: X1234567P'
+        document_number_help_text_html: "<strong>Carte d'identité</strong>: 12345678A<br> <strong>Passeport</strong>: AAA000001<br> <strong>Carte de résident</strong>: X1234567P"
         document_type:
           passport: Passeport
           residence_card: Carte de résident
