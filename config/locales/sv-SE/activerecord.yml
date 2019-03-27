@@ -358,8 +358,8 @@ sv:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Ej verifierad adress'
-              already_voted: 'Har redan röstat om förslaget'
+              not_in_census: "Ej verifierad adress"
+              already_voted: "Har redan röstat om förslaget"
         site_customization/page:
           attributes:
             slug:
@@ -372,7 +372,7 @@ sv:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Du kan inte kommentera en kostnadsberäkning'
+              cannot_comment_valuation: "Du kan inte kommentera en kostnadsberäkning"
       messages:
         record_invalid: "Felmeddelanden: %{errors}"
         restrict_dependent_destroy:
