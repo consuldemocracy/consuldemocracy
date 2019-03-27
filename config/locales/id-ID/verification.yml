@@ -8,7 +8,7 @@ id:
         alert:
           failure: Ada sebuah masalah dengan mengirimkan sebuah surel ke akun anda
         flash:
-          success: 'Kami telah mengirimkan sebuah surel konfirmasi ke akun anda: %{email}'
+          success: "Kami telah mengirimkan sebuah surel konfirmasi ke akun anda: %{email}"
       show:
         alert:
           failure: Kode verifikasi salah
@@ -26,7 +26,7 @@ id:
       errors:
         incorrect_code: Kode verifikasi salah
       new:
-        explanation: 'Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:'
+        explanation: "Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:"
         go_to_index: Melihat proposal
         office: Verifikasi dalam setiap %{office}
         send_letter: Kirimkan saya sebuah surat dengan kode
@@ -50,7 +50,7 @@ id:
         date_of_birth: Tanggal lahir
         document_number: Nomor Dokumen
         document_number_help_title: Bantuan
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P"
         document_type:
           passport: Paspor
           residence_card: Kartu kediaman
