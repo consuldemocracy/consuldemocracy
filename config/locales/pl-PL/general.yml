@@ -71,7 +71,7 @@ pl:
       most_commented: Najczęściej komentowane
     select_order: Sortuj według
     show:
-      return_to_commentable: 'Wróć do '
+      return_to_commentable: "Wróć do "
   comments_helper:
     comment_button: Opublikuj komentarz
     comment_link: Komentarz
@@ -233,7 +233,7 @@ pl:
       available_locales: Dostępne wersje językowe
       collaborative_legislation: Procesy legislacyjne
       debates: Debaty
-      locale: 'Język:'
+      locale: "Język:"
       logo: Logo CONSUL
       management: Zarządzanie
       moderation: Moderacja
@@ -257,7 +257,7 @@ pl:
         notifications: Powiadomienia
         no_notifications: "Nie masz nowych powiadomień"
     admin:
-      watch_form_message: 'Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?'
+      watch_form_message: "Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
@@ -394,7 +394,7 @@ pl:
         many: " zawierające termin <strong>%{search_term}</strong>"
         other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
-      select_order_long: 'Przeglądasz wnioski według:'
+      select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Stwórz wniosek
       title: Zrealizowane projekty
       top: Najwyższe tygodniowo
@@ -450,7 +450,7 @@ pl:
       successful: "Ten wniosek osiągnął wymagane poparcie."
     show:
       author_deleted: Użytkownik usunięty
-      code: 'Kod wniosku:'
+      code: "Kod wniosku:"
       comments:
         zero: Brak komentarzy
         one: 1 komentarz
@@ -557,29 +557,29 @@ pl:
     show:
       back: "Wróć do mojej aktywności"
   shared:
-    edit: 'Edytuj'
-    save: 'Zapisz'
+    edit: "Edytuj"
+    save: "Zapisz"
     delete: Usuń
     "yes": "Tak"
     "no": "Nie"
     search_results: "Szukaj wyników"
     advanced_search:
-      author_type: 'Wg kategorii autora'
-      author_type_blank: 'Wybierz kategorię'
-      date: 'Według daty'
-      date_placeholder: 'DD/MM/RRRR'
-      date_range_blank: 'Wybierz datę'
-      date_1: 'Ostatnie 24 godziny'
-      date_2: 'Ostatni tydzień'
-      date_3: 'Ostatni miesiąc'
-      date_4: 'Ostatni rok'
-      date_5: 'Dostosowane'
-      from: 'Od'
-      general: 'Z tekstem'
-      general_placeholder: 'Pisz tekst'
-      search: 'Filtr'
-      title: 'Wyszukiwanie zaawansowane'
-      to: 'Do'
+      author_type: "Wg kategorii autora"
+      author_type_blank: "Wybierz kategorię"
+      date: "Według daty"
+      date_placeholder: "DD/MM/RRRR"
+      date_range_blank: "Wybierz datę"
+      date_1: "Ostatnie 24 godziny"
+      date_2: "Ostatni tydzień"
+      date_3: "Ostatni miesiąc"
+      date_4: "Ostatni rok"
+      date_5: "Dostosowane"
+      from: "Od"
+      general: "Z tekstem"
+      general_placeholder: "Pisz tekst"
+      search: "Filtr"
+      title: "Wyszukiwanie zaawansowane"
+      to: "Do"
     author_info:
       author_deleted: Użytkownik usunięty
     back: Wróć
@@ -667,8 +667,8 @@ pl:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Jeśli proponujesz nazwę stowarzyszenia lub zespołu, dodaj tutaj tę nazwę'
-      association_name: 'Nazwa stowarzyszenia'
+      association_name_label: "Jeśli proponujesz nazwę stowarzyszenia lub zespołu, dodaj tutaj tę nazwę"
+      association_name: "Nazwa stowarzyszenia"
       description: Opis
       external_url: Link do dodatkowej dokumentacji
       geozone: Zakres operacji
@@ -703,7 +703,7 @@ pl:
       start_new: Utwórz wniosek wydatkowy
     show:
       author_deleted: Użytkownik usunięty
-      code: 'Kod wniosku:'
+      code: "Kod wniosku:"
       share: Udostępnij
     wrong_price_format: Tylko liczby całkowite
     spending_proposal:
