@@ -104,7 +104,7 @@ fr:
               key_column: 5
               page_column: Processus législatifs
         browser_table:
-          description: 'Selon le système d''exploitation et le navigateur utilisé, la combinaison de touches sera la suivante :'
+          description: "Selon le système d'exploitation et le navigateur utilisé, la combinaison de touches sera la suivante :"
           caption: Combinaison de touches selon le système d’exploitation et le navigateur
           browser_header: Navigateur
           key_header: Combinaison de touches
@@ -147,7 +147,7 @@ fr:
               browser_column: Opera
               action_column: Affichage > échelle
         browser_shortcuts_table:
-          description: 'Une autre manière de modifier la taille du texte est d''utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :'
+          description: "Une autre manière de modifier la taille du texte est d'utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :"
           rows:
             - 
               shortcut_column: CTRL et + (CMD et + sur Mac)
@@ -163,8 +163,8 @@ fr:
     verify:
       code: Code que vous avez reçu par lettre
       email: Email
-      info: 'Pour vérifier votre compte saisissez vos données d''accès :'
-      info_code: 'Saisissez maintenant le code reçu par lettre :'
+      info: "Pour vérifier votre compte saisissez vos données d'accès :"
+      info_code: "Saisissez maintenant le code reçu par lettre :"
       password: Mot de passe
       submit: Vérifier mon compte
       title: Confirmer mon compte
