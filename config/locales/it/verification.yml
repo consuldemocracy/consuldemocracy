@@ -8,7 +8,7 @@ it:
         alert:
           failure: C'è stato un problema nell'invio di un'e-mail di conferma al tuo account
         flash:
-          success: 'Abbiamo inviato una email di conferma al tuo account: %{email}'
+          success: "Abbiamo inviato una email di conferma al tuo account: %{email}"
       show:
         alert:
           failure: Codice di verifica non corretto
@@ -23,7 +23,7 @@ it:
       errors:
         incorrect_code: Codice di verifica non corretto
       new:
-        explanation: 'Per partecipare alla votazione finale puoi:'
+        explanation: "Per partecipare alla votazione finale puoi:"
         go_to_index: Vedere le proposte
         send_letter: Inviatemi una lettera con il codice
         title: Congratulazioni!
