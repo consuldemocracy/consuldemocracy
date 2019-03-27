@@ -8,7 +8,7 @@ zh-CN:
         alert:
           failure: 向您的账户发送电子邮件时出现问题
         flash:
-          success: '我们已经发送确认电子邮件到您的账户：%{email}'
+          success: "我们已经发送确认电子邮件到您的账户：%{email}"
       show:
         alert:
           failure: 验证码不正确
@@ -26,7 +26,7 @@ zh-CN:
       errors:
         incorrect_code: 验证码不正确
       new:
-        explanation: '要参与最终投票，您可以：'
+        explanation: "要参与最终投票，您可以："
         go_to_index: 查看提议
         office: 在任何%{office} 进行核实
         send_letter: 请给我发送一封带有代码的信
@@ -50,7 +50,7 @@ zh-CN:
         date_of_birth: 出生日期
         document_number: 文档编号
         document_number_help_title: 帮助
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P"
         document_type:
           passport: 护照
           residence_card: 居留证
