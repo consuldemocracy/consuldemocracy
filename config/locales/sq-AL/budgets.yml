@@ -111,9 +111,9 @@ sq:
         author_deleted: Përdoruesi u fshi
         price_explanation: Shpjegimi i çmimit
         unfeasibility_explanation: Shpjegim i parealizuar
-        code_html: 'Kodi i projekteve të investimeve: <strong>%{code}</strong>'
-        location_html: 'Vendodhja:<strong>%{location}</strong>'
-        organization_name_html: 'Propozuar në emër të: <strong>%{name}</strong>'
+        code_html: "Kodi i projekteve të investimeve: <strong>%{code}</strong>"
+        location_html: "Vendodhja:<strong>%{location}</strong>"
+        organization_name_html: "Propozuar në emër të: <strong>%{name}</strong>"
         share: Shpërndaj
         title: Projekt investimi
         supports: Suporti
@@ -122,10 +122,10 @@ sq:
         comments_tab: Komentet
         milestones_tab: Pikëarritje
         author: Autor
-        project_unfeasible_html: 'Ky projekt investimi <strong> është shënuar si jo e realizueshme </strong> dhe nuk do të shkojë në fazën e votimit.'
-        project_selected_html: 'Ky projekt investimi <strong> është përzgjedhur</strong>  për fazën e votimit.'
-        project_winner: 'Projekti fitues i investimeve'
-        project_not_selected_html: 'Ky projekt investimi <strong>  nuk eshte selektuar </strong> për fazën e votimit.'
+        project_unfeasible_html: "Ky projekt investimi <strong> është shënuar si jo e realizueshme </strong> dhe nuk do të shkojë në fazën e votimit."
+        project_selected_html: "Ky projekt investimi <strong> është përzgjedhur</strong>  për fazën e votimit."
+        project_winner: "Projekti fitues i investimeve"
+        project_not_selected_html: "Ky projekt investimi <strong>  nuk eshte selektuar </strong> për fazën e votimit."
       wrong_price_format: Vetëm numra të plotë
       investment:
         add: Votim
