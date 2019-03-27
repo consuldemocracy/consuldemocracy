@@ -238,7 +238,7 @@ fi:
         user: Käyttäjä
         no_hidden_users: Ei piilotettuja käyttäjiä.
       show:
-        email: 'Sähköposti:'
+        email: "Sähköposti:"
     hidden_budget_investments:
       index:
         filter: Suodatin
