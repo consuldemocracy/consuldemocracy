@@ -25,15 +25,24 @@ da:
         go_to_index: Se forslag
         title: Tillykke!
         user_permission_info: Som bruger kan du...
+      update:
+        flash:
+          success: Koden er korrekt. Din konto er nu verificeret
+    redirect_notices:
+      already_verified: Din konto er allerede verificeret
+      email_already_sent: Vi har allerede sendt dig en e-mail med et bekræftelseslink. Hvis du ikke kan finde e-mailen, kan du anmode om en ny her (husk at tjekke dit spamfilter)
     residence:
       new:
         date_of_birth: Fødselsdato
+        document_number_help_title: Hjælp
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
         document_type:
           passport: Pas
         document_type_label: Dokumenttype
         error_not_allowed_age: Du er ikke gammel nok til at deltage
         error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
         postal_code: Postnummer
+        postal_code_note: For at verificere din konto skal du være registreret
     sms:
       edit:
         resend_sms_link: Klik her for at sende igen
