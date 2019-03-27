@@ -329,9 +329,9 @@ so:
         user: Istimale
         no_hidden_users: Majiraan Isticmalayaal Qarsoon.
       show:
-        email: 'Email:'
-        hidden_at: 'Qarsoon ag:'
-        registered_at: 'Kadiwaan gashan ag:'
+        email: "Email:"
+        hidden_at: "Qarsoon ag:"
+        registered_at: "Kadiwaan gashan ag:"
         title: Wax qabadka Isticmalaha%{user}
     hidden_budget_investments:
       index:
@@ -510,7 +510,7 @@ so:
         add: Kudar
         delete: Titiriid
       search:
-        title: 'Mamulayasha isticmaala raadinta'
+        title: "Mamulayasha isticmaala raadinta"
     menu:
       activity: Waxqabadka Xeer ilaliyaha
       admin: Mamulka Warqada qiimo
@@ -593,7 +593,7 @@ so:
         add: Kudar
         delete: Titiriid
       search:
-        title: 'Dhexdhexadiyasha radinaya isticmalyaal'
+        title: "Dhexdhexadiyasha radinaya isticmalyaal"
     segment_recipient:
       all_users: Dhamaan isticamalayasha
       administrators: Mamulayal
@@ -710,7 +710,7 @@ so:
         add: Kudaar qimeyayasha
         delete: Titiriid
       search:
-        title: 'Raadi isticmalka qimeyayasha'
+        title: "Raadi isticmalka qimeyayasha"
       summary:
         title: Qimeeyn ta kooban mal gelinta mashariicda
         valuator_name: Qimeeye
@@ -971,9 +971,9 @@ so:
     officials:
       edit:
         destroy: Ka saar 'Aqoonsiga'
-        title: 'Tafatiir Sarakiisha isticmaalsha'
+        title: "Tafatiir Sarakiisha isticmaalsha"
       flash:
-        official_destroyed: 'Faahfaahinta la keydiyay: istimalka aha mid rasmi ah'
+        official_destroyed: "Faahfaahinta la keydiyay: istimalka aha mid rasmi ah"
         official_updated: Faahfaahinta rasmiga ah lakeydiyey
       index:
         title: Saraakiisha
@@ -990,7 +990,7 @@ so:
       search:
         edit_official: Tafatirida rasmiga ah
         make_official: Sameyso rasmi ah
-        title: 'Meelaha rasmiga ah: Raadinta qofka'
+        title: "Meelaha rasmiga ah: Raadinta qofka"
         no_results: Meelo rasmi ah oo aan la helin.
     organizations:
       index:
@@ -1175,7 +1175,7 @@ so:
         form:
           error:
             one: "khaladka ayaa hortaagan in galkaan ka badbaado"
-            other: 'khaladka ayaa hortaagan in galkaan ka badbaado'
+            other: "khaladka ayaa hortaagan in galkaan ka badbaado"
       edit:
         form:
           submit_button: Badbaadi beddelka
