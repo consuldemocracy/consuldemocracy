@@ -384,9 +384,9 @@ nl:
         user: Hidden users
         no_hidden_users: Er zijn geen verborgen deelnemers.
       show:
-        email: 'E-mail:'
-        hidden_at: 'Verborgen op:'
-        registered_at: 'Geregistreerd op:'
+        email: "E-mail:"
+        hidden_at: "Verborgen op:"
+        registered_at: "Geregistreerd op:"
         title: Activiteit van deelnemer (%{user})
     hidden_budget_investments:
       index:
@@ -576,7 +576,7 @@ nl:
         add: Add
         delete: Delete
       search:
-        title: 'Managers: zoek deelnemers'
+        title: "Managers: zoek deelnemers"
     menu:
       activity: Moderator activiteit
       admin: Admin menu
@@ -661,7 +661,7 @@ nl:
         add: Voeg toe
         delete: Delete
       search:
-        title: 'Moderators: zoek deelnemers'
+        title: "Moderators: zoek deelnemers"
     segment_recipient:
       all_users: Alle deelnemers
       administrators: Admins
@@ -815,7 +815,7 @@ nl:
         add: Add to valuators
         delete: Delete
       search:
-        title: 'Beoordelaars: zoek deelnemers'
+        title: "Beoordelaars: zoek deelnemers"
       summary:
         title: Valuator summary for investment projects
         valuator_name: beoordelaar
@@ -1091,9 +1091,9 @@ nl:
     officials:
       edit:
         destroy: Remove 'Official' status
-        title: 'Officials: Edit user'
+        title: "Officials: Edit user"
       flash:
-        official_destroyed: 'Details saved: the user is no longer an official'
+        official_destroyed: "Details saved: the user is no longer an official"
         official_updated: Details of official saved
       index:
         title: Beambten
@@ -1111,7 +1111,7 @@ nl:
       search:
         edit_official: Edit official
         make_official: Make official
-        title: 'Official positions: User search'
+        title: "Official positions: User search"
         no_results: Geen officials gevonden.
     organizations:
       index:
@@ -1302,7 +1302,7 @@ nl:
         form:
           error:
             one: "verhinderde dat deze geozone werd opgeslagen"
-            other: 'verhinderde dat deze geozone werd opgeslagen'
+            other: "verhinderde dat deze geozone werd opgeslagen"
       edit:
         form:
           submit_button: Bewaar wijzigingen
