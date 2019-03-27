@@ -374,8 +374,8 @@ gl:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non verificado por Padrón'
-              already_voted: 'Xa votaches esta proposta'
+              not_in_census: "Non verificado por Padrón"
+              already_voted: "Xa votaches esta proposta"
         site_customization/page:
           attributes:
             slug:
@@ -388,7 +388,7 @@ gl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Non podes comentar unha avaliación'
+              cannot_comment_valuation: "Non podes comentar unha avaliación"
       messages:
         record_invalid: "Erro de validación: %{errors}"
         restrict_dependent_destroy:
