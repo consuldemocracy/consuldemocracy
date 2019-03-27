@@ -15,7 +15,7 @@ pl:
     mailer:
       confirmation_instructions:
         confirm_link: Potwierdź moje konto
-        text: 'Możesz potwierdzić Twoje konto emailowe pod następującym linkiem:'
+        text: "Możesz potwierdzić Twoje konto emailowe pod następującym linkiem:"
         title: Witaj
         welcome: Witaj
       reset_password_instructions:
@@ -23,12 +23,12 @@ pl:
         hello: Witaj
         ignore_text: Jeżeli nie zażądałeś zmiany hasła, możesz zignorować ten e-mail.
         info_text: Twoje hasło nie zostanie zmienione dopóki nie wejdziesz w link i nie dokonasz jego edycji.
-        text: 'Otrzymaliśmy prośbę o zmianę Twojego hasła. Możesz jej dokonać pod następującym linkiem:'
+        text: "Otrzymaliśmy prośbę o zmianę Twojego hasła. Możesz jej dokonać pod następującym linkiem:"
         title: Zmień hasło
       unlock_instructions:
         hello: Witaj
         info_text: Twoje konto zostało zablokowane z powodu nadmiernej liczby nieudanych prób zalogowania.
-        instructions_text: 'Kliknij w ten link, aby odblokować swoje konto:'
+        instructions_text: "Kliknij w ten link, aby odblokować swoje konto:"
         title: Twoje konto zostało zablokowane
         unlock_link: Odblokuj moje konto
     menu:
@@ -103,7 +103,7 @@ pl:
           password_confirmation_label: Potwierdź nowe hasło
           password_label: Nowe hasło
           update_submit: Zaktualizuj
-          waiting_for: 'Oczekiwanie na potwierdzenie:'
+          waiting_for: "Oczekiwanie na potwierdzenie:"
         new:
           cancel: Anuluj logowanie
           email_label: E-mail
