@@ -15,7 +15,7 @@ tr:
     mailer:
       confirmation_instructions:
         confirm_link: Hesabımı onayla
-        text: 'E-posta hesabınızı aşağıdaki bağlantıdan onaylayabilirsiniz:'
+        text: "E-posta hesabınızı aşağıdaki bağlantıdan onaylayabilirsiniz:"
         title: Hoş geldiniz
         welcome: Hoş geldiniz
       reset_password_instructions:
@@ -23,12 +23,12 @@ tr:
         hello: Merhaba
         ignore_text: Eğer bir şifre değişikliği istemediyseniz, bu e-postayı dikkate almayın.
         info_text: Bağlantıya erişir ve düzenlemezseniz şifreniz değişmez.
-        text: 'Şifrenizi değiştirmeniz için bir talep aldık. Bunu aşağıdaki bağlantıdan yapabilirsiniz:'
+        text: "Şifrenizi değiştirmeniz için bir talep aldık. Bunu aşağıdaki bağlantıdan yapabilirsiniz:"
         title: Şifrenizi değiştirin
       unlock_instructions:
         hello: Merhaba
         info_text: Fazla sayıda başarısız oturum açma denemesi nedeniyle hesabınız engellendi.
-        instructions_text: 'Hesabınızın kilidini kaldırmak için lütfen bu bağlantıya tıklayın:'
+        instructions_text: "Hesabınızın kilidini kaldırmak için lütfen bu bağlantıya tıklayın:"
         title: Hesabınız kilitlenmiştir
         unlock_link: Hesabımın kilidini aç
     menu:
@@ -103,7 +103,7 @@ tr:
           password_confirmation_label: Yeni şifreyi onayla
           password_label: Yeni şifre
           update_submit: Güncelleme
-          waiting_for: 'Şunun onayı bekleniyor:'
+          waiting_for: "Şunun onayı bekleniyor:"
         new:
           cancel: Giriş iptali
           email_label: E-posta
