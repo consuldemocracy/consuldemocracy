@@ -330,9 +330,9 @@ it:
         user: Utente
         no_hidden_users: Non ci sono utenti nascosti.
       show:
-        email: 'Email:'
-        hidden_at: 'Nascosto:'
-        registered_at: 'Data di registrazione:'
+        email: "Email:"
+        hidden_at: "Nascosto:"
+        registered_at: "Data di registrazione:"
         title: Attività dell'utente (%{user})
     hidden_budget_investments:
       index:
@@ -508,7 +508,7 @@ it:
         add: Aggiungere
         delete: Eliminare
       search:
-        title: 'Dirigenti: Ricerca utenti'
+        title: "Dirigenti: Ricerca utenti"
     menu:
       activity: Attività del moderatore
       admin: Menu admin
@@ -590,7 +590,7 @@ it:
         add: Aggiungi
         delete: Eliminare
       search:
-        title: 'Moderatori: Ricerca utenti'
+        title: "Moderatori: Ricerca utenti"
     segment_recipient:
       all_users: Tutti gli utenti
       administrators: Amministratori
@@ -702,7 +702,7 @@ it:
         add: Aggiungere ai valutatori
         delete: Eliminare
       search:
-        title: 'Stimatori: Ricerca utenti'
+        title: "Stimatori: Ricerca utenti"
       summary:
         title: Riassunto della valutazione dei progetti di investimento
         valuator_name: Valutatore
@@ -963,9 +963,9 @@ it:
     officials:
       edit:
         destroy: Eliminare lo stato di pubblico ufficiale
-        title: 'Pubblici ufficiali: modificare l''utente'
+        title: "Pubblici ufficiali: modificare l'utente"
       flash:
-        official_destroyed: 'Dettagli salvati: l''utente non è più pubblico ufficiale'
+        official_destroyed: "Dettagli salvati: l'utente non è più pubblico ufficiale"
         official_updated: Dettagli del pubblico ufficiale salvati
       index:
         title: Funzionari
@@ -982,7 +982,7 @@ it:
       search:
         edit_official: Modifica pubblico ufficiale
         make_official: Convertire in pubblico ufficiale
-        title: 'Pubblici ufficiali: ricerca utente'
+        title: "Pubblici ufficiali: ricerca utente"
         no_results: Incarichi da funzionario non trovati.
     organizations:
       index:
@@ -1167,7 +1167,7 @@ it:
         form:
           error:
             one: "errore ha impedito il salvataggio di questo distretto"
-            other: 'errori hanno impedito il salvataggio di questo distretto'
+            other: "errori hanno impedito il salvataggio di questo distretto"
       edit:
         form:
           submit_button: Salva modifiche
