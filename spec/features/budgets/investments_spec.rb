@@ -586,30 +586,34 @@ feature "Budget Investments" do
     let(:per_page) { Budgets::InvestmentsController::PER_PAGE }
 
     scenario "Default order is random" do
-      (per_page + 2).times { create(:budget_investment) }
+      (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      order = all(".budget-investment h3").collect {|i| i.text }
+
+      within(".submenu .is-active") { expect(page).to have_content "random" }
+      order = all(".budget-investment h3").collect { |i| i.text }
+      expect(order).not_to be_empty
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      new_order = eq(all(".budget-investment h3").collect {|i| i.text })
+      new_order = all(".budget-investment h3").collect { |i| i.text }
 
-      expect(order).not_to eq(new_order)
+      expect(order).to eq(new_order)
     end
 
     scenario "Random order after another order" do
-      (per_page + 2).times { create(:budget_investment) }
+      (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
+      order = all(".budget-investment h3").collect { |i| i.text }
+      expect(order).not_to be_empty
+
       click_link "highest rated"
       click_link "random"
 
-      order = all(".budget-investment h3").collect {|i| i.text }
-
       visit budget_investments_path(budget, heading_id: heading.id)
-      new_order = eq(all(".budget-investment h3").collect {|i| i.text })
+      new_order = all(".budget-investment h3").collect { |i| i.text }
 
-      expect(order).not_to eq(new_order)
+      expect(order).to eq(new_order)
     end
 
     scenario "Random order maintained with pagination" do
@@ -617,7 +621,8 @@ feature "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      order = all(".budget-investment h3").collect {|i| i.text }
+      order = all(".budget-investment h3").collect { |i| i.text }
+      expect(order).not_to be_empty
 
       click_link "Next"
       expect(page).to have_content "You're on page 2"
@@ -625,7 +630,7 @@ feature "Budget Investments" do
       click_link "Previous"
       expect(page).to have_content "You're on page 1"
 
-      new_order = all(".budget-investment h3").collect {|i| i.text }
+      new_order = all(".budget-investment h3").collect { |i| i.text }
       expect(order).to eq(new_order)
     end
 
@@ -634,12 +639,13 @@ feature "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      order = all(".budget-investment h3").collect {|i| i.text }
+      order = all(".budget-investment h3").collect { |i| i.text }
+      expect(order).not_to be_empty
 
       click_link Budget::Investment.first.title
       click_link "Go back"
 
-      new_order = all(".budget-investment h3").collect {|i| i.text }
+      new_order = all(".budget-investment h3").collect { |i| i.text }
       expect(order).to eq(new_order)
     end
 
@@ -758,17 +764,18 @@ feature "Budget Investments" do
     end
 
     scenario "Order is random if budget is finished" do
-      per_page.times { create(:budget_investment) }
+      per_page.times { create(:budget_investment, :winner, heading: heading) }
 
       budget.update(phase: "finished")
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      order = all(".budget-investment h3").collect {|i| i.text }
+      order = all(".budget-investment h3").collect { |i| i.text }
+      expect(order).not_to be_empty
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      new_order = eq(all(".budget-investment h3").collect {|i| i.text })
+      new_order = all(".budget-investment h3").collect { |i| i.text }
 
-      expect(order).not_to eq(new_order)
+      expect(order).to eq(new_order)
     end
 
     scenario "Order always is random for unfeasible and unselected investments" do
