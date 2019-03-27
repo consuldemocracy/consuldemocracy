@@ -382,8 +382,8 @@ es:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificado por Padrón'
-              already_voted: 'Ya ha votado esta propuesta'
+              not_in_census: "No verificado por Padrón"
+              already_voted: "Ya ha votado esta propuesta"
         site_customization/page:
           attributes:
             slug:
@@ -396,7 +396,7 @@ es:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'No puedes comentar una evaluación'
+              cannot_comment_valuation: "No puedes comentar una evaluación"
       messages:
         record_invalid: "Error de validación: %{errors}"
         restrict_dependent_destroy:
