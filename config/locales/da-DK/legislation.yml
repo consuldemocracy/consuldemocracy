@@ -32,11 +32,15 @@ da:
     draft_versions:
       changes:
         title: Ændringer
+        seeing_changelog_version: Revider ændret procedure
         see_text: Se tekst udkast
       show:
         loading_comments: Indlæser kommentarer
+        seeing_version: Du ser kladdeversionen
+        select_draft_version: Vælg kladde
         select_version_submit: se
         updated_at: opdateret på %{date}
+        see_changes: se ændret procedure
         see_comments: Se alle kommentarer
         text_toc: Indholdsfortegnelse
         text_body: Tekst
@@ -45,6 +49,7 @@ da:
       header:
         additional_info: Yderligere oplysninger
         description: Beskrivelse
+        more_info: Mere information og kontekst
       proposals:
         empty_proposals: Der er ingen forslag
         filters:
@@ -58,6 +63,10 @@ da:
         filters:
           open: Åbne processer
           past: Fortid
+        no_open_processes: Ingen åbne processer
+        no_past_processes: Ingen tidligere processer
+        section_footer:
+          description: Deltag i debat om og processer forud for godkendelsen af nye reglementer eller strategier. Din mening vil blive taget i betragtning.
       phase_not_open:
         not_open: Denne fase er ikke igangsat endnu
       phase_empty:
@@ -66,15 +75,20 @@ da:
         see_latest_comments: Se seneste kommentarer
         see_latest_comments_title: Kommenter processen
       shared:
+        key_dates: Deltagelsesfaser
         homepage: Startside
         debate_dates: Debat
         allegations_dates: Kommentarer
+        result_publication_date: Offentliggørelse af endeligt resultat
+        milestones_date: Følger
         proposals_dates: Forslag
     questions:
       comments:
         comment_button: Offentliggør svar
         comments_title: Åben svar
         comments_closed: Afsluttet fase
+        form:
+          leave_comment: Svar
       question:
         comments:
           zero: Ingen kommentarer
@@ -94,6 +108,7 @@ da:
         unauthenticated: Du skal %{signin} eller %{signup} for at deltage.
         verified_only: Kun verificerede brugere kan deltage, %{verify_account}.
         verify_account: verificer din konto
+        debate_phase_not_open: Debatfasen er slut og du kan ikke længere angive svar
     shared:
       share: Del
     proposals:
