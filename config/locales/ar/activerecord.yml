@@ -518,8 +518,8 @@ ar:
         signature:
           attributes:
             document_number:
-              not_in_census: 'لم يتم التحقق من التعداد'
-              already_voted: 'بالفعل صوت هذا الاقتراح'
+              not_in_census: "لم يتم التحقق من التعداد"
+              already_voted: "بالفعل صوت هذا الاقتراح"
         site_customization/page:
           attributes:
             slug:
@@ -532,7 +532,7 @@ ar:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'لا يمكنك التعليق على التقييم'
+              cannot_comment_valuation: "لا يمكنك التعليق على التقييم"
       messages:
         record_invalid: "فشل التحقق: %{errors}"
         restrict_dependent_destroy:
