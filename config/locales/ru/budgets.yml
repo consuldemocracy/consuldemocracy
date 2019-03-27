@@ -100,9 +100,9 @@ ru:
         author_deleted: Пользователь удален
         price_explanation: Описание цены
         unfeasibility_explanation: Объяснение невозможности
-        code_html: 'Код инвестиционного проекта: <strong>%{code}</strong>'
-        location_html: 'Местоположение: <strong>%{location}</strong>'
-        organization_name_html: 'Предлагается от имени: <strong>%{name}</strong>'
+        code_html: "Код инвестиционного проекта: <strong>%{code}</strong>"
+        location_html: "Местоположение: <strong>%{location}</strong>"
+        organization_name_html: "Предлагается от имени: <strong>%{name}</strong>"
         share: Доля
         title: Инвестиционный проект
         supports: Поддержки
@@ -111,10 +111,10 @@ ru:
         comments_tab: Комментарии
         milestones_tab: Основные этапы
         author: Автор
-        project_unfeasible_html: 'Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования.'
-        project_selected_html: 'Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования.'
-        project_winner: 'Победный инвестиционный проект'
-        project_not_selected_html: 'Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования.'
+        project_unfeasible_html: "Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования."
+        project_selected_html: "Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования."
+        project_winner: "Победный инвестиционный проект"
+        project_not_selected_html: "Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования."
       wrong_price_format: Только целые числа
       investment:
         add: Голос
