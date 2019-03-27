@@ -384,9 +384,9 @@ es:
         user: Usuario
         no_hidden_users: No hay usuarios bloqueados.
       show:
-        email: 'Email:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
+        email: "Email:"
+        hidden_at: "Bloqueado:"
+        registered_at: "Fecha de alta:"
         title: Actividad del usuario (%{user})
     hidden_budget_investments:
       index:
@@ -576,7 +576,7 @@ es:
         add: Añadir como gestor
         delete: Borrar
       search:
-        title: 'Gestores: Búsqueda de usuarios'
+        title: "Gestores: Búsqueda de usuarios"
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -661,7 +661,7 @@ es:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        title: 'Moderadores: Búsqueda de usuarios'
+        title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
       all_users: Todos los usuarios
       administrators: Administradores
@@ -815,7 +815,7 @@ es:
         add: Añadir como evaluador
         delete: Borrar
       search:
-        title: 'Evaluadores: Búsqueda de usuarios'
+        title: "Evaluadores: Búsqueda de usuarios"
       summary:
         title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
@@ -1091,9 +1091,9 @@ es:
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
-        title: 'Cargos Públicos: Editar usuario'
+        title: "Cargos Públicos: Editar usuario"
       flash:
-        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+        official_destroyed: "Datos guardados: el usuario ya no es cargo público"
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
@@ -1111,7 +1111,7 @@ es:
       search:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
     organizations:
       index:
@@ -1302,7 +1302,7 @@ es:
         form:
           error:
             one: "error impidió guardar el distrito"
-            other: 'errores impidieron guardar el distrito.'
+            other: "errores impidieron guardar el distrito."
       edit:
         form:
           submit_button: Guardar cambios
