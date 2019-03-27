@@ -52,7 +52,7 @@ fa:
       comment_as_moderator: نظر به عنوان ناظر
     select_order: مرتب سازی بر اساس
     show:
-      return_to_commentable: 'بازگشت به '
+      return_to_commentable: "بازگشت به "
   comments_helper:
     comment_button: نشر نظر
     comment_link: توضیح
@@ -244,7 +244,7 @@ fa:
         other: "%{count} رای"
     show:
       author_deleted: کاربر حذف شد
-      code: 'کد طرح:'
+      code: "کد طرح:"
       comments:
         zero: بدون نظر
         one: 1 نظر
@@ -293,15 +293,15 @@ fa:
       body_label: "پیام"
       submit_button: "ارسال پیام"
   shared:
-    edit: 'ویرایش'
-    save: 'ذخیره کردن'
+    edit: "ویرایش"
+    save: "ذخیره کردن"
     delete: حذف
     "yes": "بله"
     "no": "نه"
     search_results: "جستجو نتایج "
     advanced_search:
       from: "از \n"
-      search: 'فیلتر'
+      search: "فیلتر"
     author_info:
       author_deleted: کاربر حذف شد
     back: برگرد
@@ -329,7 +329,7 @@ fa:
       title: توصیه ها
   spending_proposals:
     form:
-      association_name: 'نام انجمن'
+      association_name: "نام انجمن"
       description: توضیحات
       external_url: لینک به مدارک اضافی
       geozone: حوزه عملیات
@@ -358,7 +358,7 @@ fa:
       start_new: ایجاد  هزینه پیشنهاد
     show:
       author_deleted: کاربر حذف شد
-      code: 'کد طرح:'
+      code: "کد طرح:"
       share: "اشتراک گذاری\n"
     wrong_price_format: فقط اعداد صحیح 
     spending_proposal:
