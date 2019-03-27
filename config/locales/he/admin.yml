@@ -194,7 +194,7 @@ he:
         title: Hidden users
         user: משתמשיםות מוסתריםות
       show:
-        email: 'דואר אלקטרוני'
+        email: "דואר אלקטרוני"
     hidden_budget_investments:
       index:
         filter: Filter
