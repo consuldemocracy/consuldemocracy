@@ -55,7 +55,7 @@ es-PE:
     verify:
       code: Código que has recibido en tu carta
       email: Tu correo electrónico
-      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
       password: Contraseña que utilizarás para acceder a este sitio web
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
