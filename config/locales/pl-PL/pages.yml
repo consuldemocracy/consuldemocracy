@@ -102,7 +102,7 @@ pl:
               key_column: 5
               page_column: Procesy legislacyjne
         browser_table:
-          description: 'W zależności od używanego systemu operacyjnego i przeglądarki, kombinacja klawiszy będzie następująca:'
+          description: "W zależności od używanego systemu operacyjnego i przeglądarki, kombinacja klawiszy będzie następująca:"
           caption: Kombinacja klawiszy w zależności od systemu operacyjnego i przeglądarki
           browser_header: Przeglądarka
           key_header: Kombinacje kluczy
@@ -145,7 +145,7 @@ pl:
               browser_column: Opera
               action_column: Widok > skala
         browser_shortcuts_table:
-          description: 'Innym sposobem na modyfikację rozmiar tekstu jest użycie skrótów klawiaturowych zdefiniowanych w przeglądarkach, w szczególności kombinacji klawiszy:'
+          description: "Innym sposobem na modyfikację rozmiar tekstu jest użycie skrótów klawiaturowych zdefiniowanych w przeglądarkach, w szczególności kombinacji klawiszy:"
           rows:
             - 
               shortcut_column: CTRL i + (CMD i + Mac)
@@ -161,8 +161,8 @@ pl:
     verify:
       code: Kod, który otrzymałeś w liście
       email: E-mail
-      info: 'Aby zweryfikować konto, wprowadź swoje dane dostępu:'
-      info_code: 'Teraz wprowadź kod otrzymany w liście:'
+      info: "Aby zweryfikować konto, wprowadź swoje dane dostępu:"
+      info_code: "Teraz wprowadź kod otrzymany w liście:"
       password: Hasło
       submit: Zweryfikuj swoje konto
       title: Zweryfikuj swoje konto
