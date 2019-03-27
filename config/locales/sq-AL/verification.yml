@@ -8,7 +8,7 @@ sq:
         alert:
           failure: Kishte një problem me dërgimin e një email-i në llogarinë tënde
         flash:
-          success: 'Ne kemi dërguar një email konfirmimi në llogarinë tuaj: %{email}'
+          success: "Ne kemi dërguar një email konfirmimi në llogarinë tuaj: %{email}"
       show:
         alert:
           failure: Kodi i verifikimit është i pasaktë
@@ -26,7 +26,7 @@ sq:
       errors:
         incorrect_code: Kodi i verifikimit është i pasaktë
       new:
-        explanation: 'Për të marrë pjesë në votimin përfundimtar ju mund të:'
+        explanation: "Për të marrë pjesë në votimin përfundimtar ju mund të:"
         go_to_index: Shiko propozimet
         office: Verifiko në çdo %{office}
         send_letter: Më dërgoni një letër me kodin
@@ -50,7 +50,7 @@ sq:
         date_of_birth: Data e lindjes
         document_number: Numri i dokumentit
         document_number_help_title: Ndihmë
-        document_number_help_text_html: '<strong>Dni</strong>: 12345678A<br><strong>Pashaport</strong>: AAA000001<br><strong>Residence card</strong>: X1234567P'
+        document_number_help_text_html: "<strong>Dni</strong>: 12345678A<br><strong>Pashaport</strong>: AAA000001<br><strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Pashaport
           residence_card: Karta rezidences
