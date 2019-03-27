@@ -343,7 +343,7 @@ da:
         signature:
           attributes:
             document_number:
-              already_voted: 'Der er allerede stemt på dette forslag'
+              already_voted: "Der er allerede stemt på dette forslag"
         site_customization/page:
           attributes:
             slug:
@@ -356,6 +356,6 @@ da:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Du kan ikke kommentere en værdisættelse'
+              cannot_comment_valuation: "Du kan ikke kommentere en værdisættelse"
       messages:
         record_invalid: "Valideringen mislykkedes: %{errors}"
