@@ -37,6 +37,7 @@ da:
       already_verified: Brugerkontoen er allerede verificeret.
       has_no_account_html: For at oprette en konto følg %{link} og klik på <b>"Tilmeld dig"</b>.
       link: CONSUL
+      title: Brugeradministration
       verify: Verificer
     email_label: E-mail
     date_of_birth: Fødselsdato
@@ -45,13 +46,36 @@ da:
       choose_options: "Vær venlig at vælge en af de følgende valgmuligheder:"
       document_mismatch: "Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}"
       email_placeholder: Skriv den e-mail denne person anvendte til at oprette sin konto med
+      send_email: Send bekræftelsesmail
     menu:
       create_proposal: Opret borgerforslag
       print_proposals: Udskriv forslag
       support_proposals: Støt på om forslag
+      create_budget_investment: Opret budgetinvestering
+      print_budget_investments: Udskriv budgetinvesteringer
+      support_budget_investments: Støt budgetinvesteringer
     permissions:
       debates: Deltag i debat
+      support_proposals: Støt op om forslag
+      vote_proposals: Stem på forslag
+    print:
+      proposals_info: Opret dit forslag på https://deltagbudget.aarhus.dk/
+      proposals_title: "Borgerforslag:"
+      spending_proposals_info: Deltag på https://deltagbudget.aarhus.dk/
+      budget_investments_info: Deltag på https://deltagbudget.aarhus.dk/
+    print_info: Udskriv information
+    proposals:
+      alert:
+        unverified_user: Brugeren er ikke verificeret
+      create_proposal: Opret borgerforslag
+      print:
+        print_button: Udskriv
+      index:
+        title: Støt op om forslag
     budgets:
+      create_new_investment: Opret budgetinvestering
+      print_investments: Udskriv budgetinvesteringer
+      support_investments: Støt budgetinvesteringer
       table_name: Navn
       table_phase: Fase
       table_actions: Handlinger
@@ -62,6 +86,14 @@ da:
       create: Opret budgetinvestering
       filters:
         heading: Koncept
+        unfeasible: Uigennemførligt projekt
+      print:
+        print_button: Udskriv
+    spending_proposals:
+      alert:
+        unverified_user: Brugeren er ikke verificeret
+      print:
+        print_button: Udskriv
     username_label: Brugernavn
     users:
       email_optional_label: E-mail (valgfrit)
