@@ -328,9 +328,9 @@ zh-TW:
         user: 用戶
         no_hidden_users: 沒有隱藏的用戶。
       show:
-        email: '電郵：'
-        hidden_at: '隱藏於:'
-        registered_at: '註冊於:'
+        email: "電郵："
+        hidden_at: "隱藏於:"
+        registered_at: "註冊於:"
         title: 用戶的活動 (%{user})
     hidden_budget_investments:
       index:
@@ -507,7 +507,7 @@ zh-TW:
         add: 添加
         delete: 刪除
       search:
-        title: '經理：用戶搜索'
+        title: "經理：用戶搜索"
     menu:
       activity: 審核員活動
       admin: 管理菜單
@@ -589,7 +589,7 @@ zh-TW:
         add: 添加
         delete: 刪除
       search:
-        title: '審核員：用戶搜索'
+        title: "審核員：用戶搜索"
     segment_recipient:
       all_users: 所有用戶
       administrators: 管理員
@@ -703,7 +703,7 @@ zh-TW:
         add: 添加到評估組
         delete: 刪除
       search:
-        title: '評估員：用戶搜索'
+        title: "評估員：用戶搜索"
       summary:
         title: 評估員為投資項目作出的總結
         valuator_name: 評估員
@@ -964,9 +964,9 @@ zh-TW:
     officials:
       edit:
         destroy: 刪除 "官方" 狀態
-        title: '官員: 編輯用戶'
+        title: "官員: 編輯用戶"
       flash:
-        official_destroyed: '儲存詳細信息：用戶不再是官員'
+        official_destroyed: "儲存詳細信息：用戶不再是官員"
         official_updated: 官員的詳細信息已儲存
       index:
         title: 官員
@@ -983,7 +983,7 @@ zh-TW:
       search:
         edit_official: 編輯官員
         make_official: 成為官員
-        title: '官員職位: 用戶搜尋'
+        title: "官員職位: 用戶搜尋"
         no_results: 找不到官員職位。
     organizations:
       index:
@@ -1166,7 +1166,7 @@ zh-TW:
       errors:
         form:
           error:
-            other: '有錯誤阻止此地理區域被儲存'
+            other: "有錯誤阻止此地理區域被儲存"
       edit:
         form:
           submit_button: 儲存更改
