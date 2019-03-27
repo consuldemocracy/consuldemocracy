@@ -21,5 +21,17 @@ da:
       facebook_login_description: "Tillad brugere at registrere sig med Facebook"
       google_login: "Google login"
       google_login_description: "Tillad brugere at registrere sig med Google"
+      spending_proposals_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
+      spending_proposal_features:
+        voting_allowed: Stem på investeringsprojekter - forhåndsudvælgelsesfase
+        voting_allowed_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
+      user:
+        recommendations: "Anbefalinger"
+        skip_verification: "Spring brugerverificering over"
+      allow_images: "Tillad uploads og vis billeder"
     map:
+      latitude: "Breddegrad"
+      longitude: "Længdegrad"
       zoom: "Zoom"
+    process:
+      polls: "Afstemninger"
