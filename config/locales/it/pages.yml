@@ -104,7 +104,7 @@ it:
               key_column: 5
               page_column: Procedimenti legislativi
         browser_table:
-          description: 'A seconda del sistema operativo e del browser utilizzato, la combinazione di tasti sarà la seguente:'
+          description: "A seconda del sistema operativo e del browser utilizzato, la combinazione di tasti sarà la seguente:"
           caption: Combinazione di tasti a seconda del sistema operativo e del browser
           browser_header: Browser
           key_header: Combinazione di tasti
@@ -147,7 +147,7 @@ it:
               browser_column: Opera
               action_column: Visualizza > scala
         browser_shortcuts_table:
-          description: 'Un altro modo per modificare la dimensione del testo consiste nell''utilizzare le scorciatoie da tastiera definite dai browser, in particolare la combinazione di tasti:'
+          description: "Un altro modo per modificare la dimensione del testo consiste nell'utilizzare le scorciatoie da tastiera definite dai browser, in particolare la combinazione di tasti:"
           rows:
             - 
               shortcut_column: CTRL e + (CMD e + su MAC)
@@ -158,8 +158,8 @@ it:
     verify:
       code: Codice che hai ricevuto nella lettera
       email: Email
-      info: 'Per verificare il tuo account inserisci i dati di accesso:'
-      info_code: 'Ora introduci il codice che hai ricevuto nella lettera:'
+      info: "Per verificare il tuo account inserisci i dati di accesso:"
+      info_code: "Ora introduci il codice che hai ricevuto nella lettera:"
       password: Password
       submit: Verifica il tuo account
       title: Verifica il tuo account
