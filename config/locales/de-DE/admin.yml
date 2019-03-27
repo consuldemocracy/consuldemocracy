@@ -384,9 +384,9 @@ de:
         user: Benutzer*in
         no_hidden_users: Keine verborgenen Benutzer*innen vorhanden.
       show:
-        email: 'E-Mail:'
-        hidden_at: 'Verborgen am:'
-        registered_at: 'Registriert am:'
+        email: "E-Mail:"
+        hidden_at: "Verborgen am:"
+        registered_at: "Registriert am:"
         title: Aktivität des/der Benutzer*in (%{user})
     hidden_budget_investments:
       index:
@@ -575,7 +575,7 @@ de:
         add: Hinzufügen
         delete: Löschen
       search:
-        title: 'Manager*innen: Benutzer*innensuche'
+        title: "Manager*innen: Benutzer*innensuche"
     menu:
       activity: Aktivität der Moderator*innen
       admin: Admin-Menü
@@ -660,7 +660,7 @@ de:
         add: Hinzufügen
         delete: Löschen
       search:
-        title: 'Moderator*innen: Benutzer*innensuche'
+        title: "Moderator*innen: Benutzer*innensuche"
     segment_recipient:
       all_users: Alle Benutzer*innen
       administrators: Administrator*innen
@@ -782,7 +782,7 @@ de:
         add: Als Begutachter*in hinzufügen
         delete: Löschen
       search:
-        title: 'Begutachter*innen: Benutzer*innensuche'
+        title: "Begutachter*innen: Benutzer*innensuche"
       summary:
         title: Begutachter*innen-Zusammenfassung der Ausgabenvorschläge
         valuator_name: Begutachter/in
@@ -1051,9 +1051,9 @@ de:
     officials:
       edit:
         destroy: Status "Beamter/in" entfernen
-        title: 'Beamte/innen: Benutzer*in bearbeiten'
+        title: "Beamte/innen: Benutzer*in bearbeiten"
       flash:
-        official_destroyed: 'Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamte/r'
+        official_destroyed: "Daten gespeichert: Der/Die Benutzer*in ist nicht länger ein/e Beamte/r"
         official_updated: Details des/r Beamten* gespeichert
       index:
         title: Öffentliche Ämter
@@ -1070,7 +1070,7 @@ de:
       search:
         edit_official: Beamte*n bearbeiten
         make_official: Beamten/in erstellen
-        title: 'Beamte/innen: Benutzer*innensuche'
+        title: "Beamte/innen: Benutzer*innensuche"
         no_results: Keine Beamten/innen gefunden.
     organizations:
       index:
@@ -1256,7 +1256,7 @@ de:
         form:
           error:
             one: "Aufgrund eines Fehlers konnte dieser Bezirk nicht gespeichert werden"
-            other: 'Aufgrund von Fehlern konnte dieser Bezirk nicht gespeichert werden'
+            other: "Aufgrund von Fehlern konnte dieser Bezirk nicht gespeichert werden"
       edit:
         form:
           submit_button: Änderungen speichern
