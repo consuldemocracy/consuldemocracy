@@ -67,7 +67,7 @@ it:
       most_commented: Più commentati
     select_order: Ordina per
     show:
-      return_to_commentable: 'Torna indietro a '
+      return_to_commentable: "Torna indietro a "
   comments_helper:
     comment_button: Pubblica il commento
     comment_link: Commentare
@@ -218,7 +218,7 @@ it:
       available_locales: Lingue disponibili
       collaborative_legislation: Procedimenti legislativi
       debates: Dibattiti
-      locale: 'Lingua:'
+      locale: "Lingua:"
       logo: CONSUL logo
       management: Gestione
       moderation: Moderare
@@ -240,7 +240,7 @@ it:
         notifications: Notifiche
         no_notifications: "Non hai nuove notifiche"
     admin:
-      watch_form_message: 'Non sono state salvate le modifiche. Confermate per uscire dalla pagina?'
+      watch_form_message: "Non sono state salvate le modifiche. Confermate per uscire dalla pagina?"
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
@@ -367,7 +367,7 @@ it:
         one: " contenenti il termine <strong>'%{search_term}'</strong>"
         other: " contenenti il termine <strong>'%{search_term}'</strong>"
       select_order: Ordinare per
-      select_order_long: 'Stai visualizzando le proposte in base a:'
+      select_order_long: "Stai visualizzando le proposte in base a:"
       start_proposal: Crea una proposta
       title: Proposte
       top: Top settimanale
@@ -417,7 +417,7 @@ it:
       successful: "Questa proposta ha raggiunto gli appoggi richiesti."
     show:
       author_deleted: Utente cancellato
-      code: 'Codice proposta:'
+      code: "Codice proposta:"
       comments:
         zero: Non ci sono commenti
         one: 1 commento
@@ -520,29 +520,29 @@ it:
     show:
       back: "Torna alle mie attività"
   shared:
-    edit: 'Modificare'
-    save: 'Salvare'
+    edit: "Modificare"
+    save: "Salvare"
     delete: Eliminare
     "yes": "Sì"
     "no": "No"
     search_results: "Risultati della ricerca"
     advanced_search:
-      author_type: 'Per categoria di autore'
-      author_type_blank: 'Seleziona una categoria'
-      date: 'Per data'
-      date_placeholder: 'GG/MM/AAAA'
-      date_range_blank: 'Scegli una data'
-      date_1: 'Ultime 24 ore'
-      date_2: 'Settimana scorsa'
-      date_3: 'Mese scorso'
-      date_4: 'Anno scorso'
-      date_5: 'Personalizzata'
-      from: 'Da'
-      general: 'Con il testo'
-      general_placeholder: 'Scrivi il testo'
-      search: 'Filtra'
-      title: 'Ricerca avanzata'
-      to: 'A'
+      author_type: "Per categoria di autore"
+      author_type_blank: "Seleziona una categoria"
+      date: "Per data"
+      date_placeholder: "GG/MM/AAAA"
+      date_range_blank: "Scegli una data"
+      date_1: "Ultime 24 ore"
+      date_2: "Settimana scorsa"
+      date_3: "Mese scorso"
+      date_4: "Anno scorso"
+      date_5: "Personalizzata"
+      from: "Da"
+      general: "Con il testo"
+      general_placeholder: "Scrivi il testo"
+      search: "Filtra"
+      title: "Ricerca avanzata"
+      to: "A"
     author_info:
       author_deleted: Utente cancellato
     back: Indietro
@@ -624,8 +624,8 @@ it:
     instagram: "Instagram di %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Se proponete in nome di un''associazione o altro gruppo aggiungete qui il nome'
-      association_name: 'Nome Associazione'
+      association_name_label: "Se proponete in nome di un'associazione o altro gruppo aggiungete qui il nome"
+      association_name: "Nome Associazione"
       description: Descrizione
       external_url: Link alla documentazione integrativa
       geozone: Ambito operativo
@@ -658,7 +658,7 @@ it:
       start_new: Creare una proposta di spesa
     show:
       author_deleted: Utente cancellato
-      code: 'Codice proposta:'
+      code: "Codice proposta:"
       share: Condividere
     wrong_price_format: Solo numeri interi
     spending_proposal:
