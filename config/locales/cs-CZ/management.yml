@@ -9,7 +9,7 @@ cs:
       show:
         title: Uživatelský účet
       edit:
-        title: 'Upravit uživatelský účet: obnovení hesla'
+        title: "Upravit uživatelský účet: obnovení hesla"
         back: Zpět
         password:
           password: Heslo
@@ -22,11 +22,11 @@ cs:
           print_help: Když je heslo uložené, můžete ho vytisknout.
     account_info:
       change_user: Změnit uživatele
-      document_number_label: 'Číslo dokladu:'
-      document_type_label: 'Typ dokladu:'
-      email_label: 'E-mail:'
-      identified_label: 'Identifikován jako:'
-      username_label: 'Uživatelské jméno:'
+      document_number_label: "Číslo dokladu:"
+      document_type_label: "Typ dokladu:"
+      email_label: "E-mail:"
+      identified_label: "Identifikován jako:"
+      username_label: "Uživatelské jméno:"
     check: Zkontrolovat doklad
     dashboard:
       index:
@@ -38,9 +38,9 @@ cs:
       already_verified: Tento uživatelský účet je již ověřen.
       has_no_account_html: Chcete-li vytvořit účet, přejděte na %{link} a klepněte na tlačítko <b>'Registrace'</b> v levé horní části obrazovky.
       link: CONSUL
-      in_census_has_following_permissions: 'Tento uživatel se může zapojovat s následujícími oprávněními:'
+      in_census_has_following_permissions: "Tento uživatel se může zapojovat s následujícími oprávněními:"
       not_in_census: Tento doklad není registrován.
-      not_in_census_info: 'Občané neověření v základních registrech se mohou zapojovat s následujícími oprávněními:'
+      not_in_census_info: "Občané neověření v základních registrech se mohou zapojovat s následujícími oprávněními:"
       please_check_account_data: Zkontrolujte prosím správnost výše uvedených údajů účtu.
       title: Správa uživatelů
       under_age: "Nemáte požadovaný věk pro ověření účtu."
@@ -49,14 +49,14 @@ cs:
     date_of_birth: Datum narození
     email_verifications:
       already_verified: Tento uživatelský účet již ověřen.
-      choose_options: 'Vyberte jednu z následujících možností:'
+      choose_options: "Vyberte jednu z následujících možností:"
       document_found_in_census: Tento doklad byl úspěšně ověřen v základních registrech, ale nemá přidružený žádný uživatelský účet.
-      document_mismatch: 'Tento e-mail patří uživateli, který již má přidružené Id: %{document_number} (%{document_type})'
+      document_mismatch: "Tento e-mail patří uživateli, který již má přidružené Id: %{document_number} (%{document_type})"
       email_placeholder: Napište e-mail, který tato osoba použila při vytváření svého účtu
       email_sent_instructions: Za účelem úplného ověření tohoto uživatele je nutné, aby uživatel kliknul na odkaz, který jsme odeslali na výše uvedenou e-mailovou adresu. Tento krok je nutný k potvrzení, že mu emailová adresa patří.
       if_existing_account: Pokud má uživatel již vytvořen uživatelský účet na webu,
       if_no_existing_account: Pokud tato osoba dosud nevytvořila účet
-      introduce_email: 'Vložte e-mail, používaný účtem:'
+      introduce_email: "Vložte e-mail, používaný účtem:"
       send_email: Odeslat ověřovací e-mail
     menu:
       create_proposal: Vytvořit návrh
@@ -78,7 +78,7 @@ cs:
       vote_proposals: Hlasujte o návrzích
     print:
       proposals_info: Vytvořte svůj návrh na http://url.consul
-      proposals_title: 'Návrhy:'
+      proposals_title: "Návrhy:"
       spending_proposals_info: Zapojte se na http://url.consul
       budget_investments_info: Zapojte se na http://url.consul
     print_info: Vytisknout tuto informaci
