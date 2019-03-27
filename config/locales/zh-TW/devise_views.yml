@@ -15,7 +15,7 @@ zh-TW:
     mailer:
       confirmation_instructions:
         confirm_link: 確認我的帳戶
-        text: '您可以通過以下鏈接確認您的電郵帳戶：'
+        text: "您可以通過以下鏈接確認您的電郵帳戶："
         title: 歡迎
         welcome: 歡迎
       reset_password_instructions:
@@ -23,12 +23,12 @@ zh-TW:
         hello: 您好
         ignore_text: 如果您沒有請求更改密碼，您可以忽略此電郵。
         info_text: 您的密碼將不會更改，除非您訪問該鏈接並進行編輯。
-        text: '我們收到更改密碼的請求。 您可以通過以下鏈接來執行此操作：'
+        text: "我們收到更改密碼的請求。 您可以通過以下鏈接來執行此操作："
         title: 更改您的密碼
       unlock_instructions:
         hello: 您好
         info_text: 您的帳戶已被禁用，因為登錄失敗嘗試次數過多。
-        instructions_text: '請點擊此鏈接以解鎖您的帳戶：'
+        instructions_text: "請點擊此鏈接以解鎖您的帳戶："
         title: 你的賬戶被鎖了
         unlock_link: 解鎖我的帳戶
     menu:
@@ -103,7 +103,7 @@ zh-TW:
           password_confirmation_label: 確認新密碼
           password_label: 新密碼
           update_submit: 更新
-          waiting_for: '等待確認：'
+          waiting_for: "等待確認："
         new:
           cancel: 取消登錄
           email_label: 電郵
