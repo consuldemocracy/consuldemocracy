@@ -8,7 +8,7 @@ he:
         alert:
           failure: שליחת הודעה לדואר האלקטרוני שלך נכשלה
         flash:
-          success: 'שלחנו הודעת אישור לדואר האלקטרוני הרשום בחשבונך: %{email}'
+          success: "שלחנו הודעת אישור לדואר האלקטרוני הרשום בחשבונך: %{email}"
       show:
         alert:
           failure: קוד אימות שגוי
@@ -26,7 +26,7 @@ he:
       errors:
         incorrect_code: קוד אימות שגוי
       new:
-        explanation: 'כדי להשתתף בהצבעות הסופיות עליך:'
+        explanation: "כדי להשתתף בהצבעות הסופיות עליך:"
         go_to_index: ראה/י הצעות
         office: אשר/י בכל %{office}
         send_letter: שלח לי הודעת דואר אלקטרוני עם הקוד
@@ -50,7 +50,7 @@ he:
         date_of_birth: תאריך לידה
         document_number: מספר תעודה מזהה
         document_number_help_title: עזרה
-        document_number_help_text_html: '<strong>תעודת זהות</strong>: 12345678A<br> <strong>דרכון</strong>: AAA000001<br> <strong>כרטיס תושב</strong>: X1234567P'
+        document_number_help_text_html: "<strong>תעודת זהות</strong>: 12345678A<br> <strong>דרכון</strong>: AAA000001<br> <strong>כרטיס תושב</strong>: X1234567P"
         document_type:
           passport: דרכון
           residence_card: כרטיס תושב
