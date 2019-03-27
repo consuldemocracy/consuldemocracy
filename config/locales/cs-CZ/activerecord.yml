@@ -339,8 +339,8 @@ cs:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: "Not verified by Census"
+              already_voted: "Already voted this proposal"
         site_customization/page:
           attributes:
             slug:
@@ -353,7 +353,7 @@ cs:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'You cannot comment a valuation'
+              cannot_comment_valuation: "You cannot comment a valuation"
       messages:
         record_invalid: "Validation failed: %{errors}"
         restrict_dependent_destroy:
