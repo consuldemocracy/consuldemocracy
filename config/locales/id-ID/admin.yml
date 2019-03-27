@@ -290,9 +290,9 @@ id:
         user: Pengguna
         no_hidden_users: Disana tidak ada pengguna yang disembunyikan.
       show:
-        email: 'Email:'
-        hidden_at: 'Tersembunyi di:'
-        registered_at: 'Terdaftar di:'
+        email: "Email:"
+        hidden_at: "Tersembunyi di:"
+        registered_at: "Terdaftar di:"
         title: Aktifitas dari pengguna (%{user})
     hidden_budget_investments:
       index:
@@ -461,7 +461,7 @@ id:
         add: Tambahkan
         delete: Hapus
       search:
-        title: 'Pengelola: Pencarian pengguna'
+        title: "Pengelola: Pencarian pengguna"
     menu:
       activity: Moderator kegiatan
       admin: Menu Admin
@@ -531,7 +531,7 @@ id:
         add: Tambahkan
         delete: Hapus
       search:
-        title: 'Moderator: pencarian Pengguna'
+        title: "Moderator: pencarian Pengguna"
     segment_recipient:
       administrators: Administrasi
     newsletters:
@@ -575,7 +575,7 @@ id:
         add: Tambahkan ke penilai
         delete: Hapus
       search:
-        title: 'Penilai: Pencarian pengguna'
+        title: "Penilai: Pencarian pengguna"
       summary:
         title: Ringkasan rujukan untuk proyek investasi
         valuator_name: Penilai
@@ -811,9 +811,9 @@ id:
     officials:
       edit:
         destroy: Hapus status 'Resmi'
-        title: 'Pejabat: Sunting pengguna'
+        title: "Pejabat: Sunting pengguna"
       flash:
-        official_destroyed: 'Rincian disimpan: pengguna tidak lagi resmi'
+        official_destroyed: "Rincian disimpan: pengguna tidak lagi resmi"
         official_updated: Rincian resmi disimpan
       index:
         title: Pejabat
@@ -829,7 +829,7 @@ id:
       level_5: Tingkat 5
       search:
         make_official: Membuat resmi
-        title: 'Posisi resmi: cari Pengguna'
+        title: "Posisi resmi: cari Pengguna"
         no_results: Posisi resmi tidak ditemukan.
     organizations:
       index:
@@ -1003,7 +1003,7 @@ id:
       errors:
         form:
           error:
-            other: 'kesalahan dicegah ini geozone diselamatkan'
+            other: "kesalahan dicegah ini geozone diselamatkan"
       edit:
         form:
           submit_button: Simpan perubahan
