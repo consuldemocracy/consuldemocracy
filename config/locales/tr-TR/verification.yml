@@ -8,7 +8,7 @@ tr:
         alert:
           failure: Hesabınıza bir e-posta gönderirken bir sorun oluştu
         flash:
-          success: 'Hesabınıza bir onay e-postası gönderdik: %{email}'
+          success: "Hesabınıza bir onay e-postası gönderdik: %{email}"
       show:
         alert:
           failure: Doğrulama kodu yanlış
@@ -26,7 +26,7 @@ tr:
       errors:
         incorrect_code: Doğrulama kodu yanlış
       new:
-        explanation: 'Son oylamaya katılmak için şunları yapabilirsiniz:'
+        explanation: "Son oylamaya katılmak için şunları yapabilirsiniz:"
         go_to_index: Önerileri gör
         office: Herhangi bir Vatandaş Destek Ofisinde doğrulama
         send_letter: Bana kod ile bir evrak gönder
@@ -50,7 +50,7 @@ tr:
         date_of_birth: Doğum tarihi
         document_number: Belge numarası
         document_number_help_title: Yardım
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Ev kartı</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Ev kartı</strong>: X1234567P"
         document_type:
           passport: Pasaport
           residence_card: Ev kartı
