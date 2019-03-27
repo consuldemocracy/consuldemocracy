@@ -99,7 +99,7 @@ sq:
               key_column: 5
               page_column: Proceset legjislative
         browser_table:
-          description: 'Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:'
+          description: "Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:"
           caption: Kombinimi kyç në varësi të sistemit operativ dhe shfletuesit
           browser_header: Shfletues
           key_header: Kombinim i celsave
@@ -142,7 +142,7 @@ sq:
               browser_column: Opera
               action_column: Shiko> masë
         browser_shortcuts_table:
-          description: 'Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:'
+          description: "Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:"
           rows:
             - 
               shortcut_column: CTRL dhe + (CMD dhe + në MAC)
@@ -158,8 +158,8 @@ sq:
     verify:
       code: Kodi që keni marrë në letër
       email: Email
-      info: 'Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:'
-      info_code: 'Tani futni kodin që keni marrë në letër:'
+      info: "Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:"
+      info_code: "Tani futni kodin që keni marrë në letër:"
       password: Fjalëkalim
       submit: Verifikoni llogarinë time
       title: verifikoni llogarinë tuaj
