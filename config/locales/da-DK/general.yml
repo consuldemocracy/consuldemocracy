@@ -13,7 +13,11 @@ da:
       phone_number_label: Telefonnummer
       save_changes_submit: Gem ændringer
       subscription_to_website_newsletter_label: Modtag relevant information via e-mail
+      email_on_direct_message_label: Modtag e-mails vedrørende direkte beskeder
+      email_digest_label: Modtag et resumé af forslagsnotifikationer
       recommendations: Anbefalinger
+      show_debates_recommendations: Se anbefalede debatindlæg
+      show_proposals_recommendations: Se anbefalede borgerforslag
       title: Min konto
       user_permission_debates: Deltag i debat
       user_permission_info: Med din konto kan du...
@@ -22,6 +26,7 @@ da:
       user_permission_title: Deltage
       user_permission_verify: Du skal verificere din konto for at kunne foretage disse handlinger.
       user_permission_verify_info: "* Kun for brugere af Census."
+      user_permission_votes: Deltag i den endelige afstemning
       username_label: Brugernavn
       verified_account: Konto verificeret
       verify_my_account: Verificer min konto
@@ -29,6 +34,7 @@ da:
     close: Luk
     menu: Menu
   comments:
+    comments_closed: Lukket for kommentarer
     verified_only: For at deltage %{verify_account}
     verify_account: bekræft din konto
     comment:
@@ -87,7 +93,11 @@ da:
       tags_label: Emner
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
+      filter_topic:
+        one: " med emnet '%{topic}'"
+        other: " med emnerne '%{topic}'"
       orders:
+        confidence_score: højest rangeret
         created_at: nyeste
         hot_score: mest aktive
         most_commented: flest kommentarer
@@ -95,6 +105,8 @@ da:
         recommendations: anbefalinger
       recommendations:
         without_results: Der er ingen debatindlæg, der relatere sig til dit interesseområde
+        without_interests: Følg forslagene så vi kan give dig anbefalinger
+        disable: "Anbefalede debatindlæg vil forsvinde, hvis du afviser dem. Du kan aktivere dem igen under \"Min konto\""
         actions:
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger for debatter"
       search_form:
