@@ -14,6 +14,7 @@ da:
     official_level_5_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 5"
     max_ratio_anon_votes_on_debates: "Maksimalt antal anonyme stemmer pr. debat"
     max_ratio_anon_votes_on_debates_description: "Anonyme stemmer er dem, der foretages af brugere med en registreret, men ikke verificeret, brugerkonto"
+    max_votes_for_proposal_edit: "Forslaget kan ikke længere redigeres, når dette antal personer støtter op om det:"
     twitter_handle: "Twitter"
     twitter_handle_description: "Hvis udfyldt, vil twitter-ikonet være synligt nederst på siden"
     twitter_hashtag: "Twitter hashtag"
