@@ -443,13 +443,18 @@ da:
               draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
               published: Synlig for alle
           title_placeholder: Skriv titlen på udkastet
+          body_placeholder: Skriv udkast
         index:
+          title: Kladdeversion
+          create: Opret version
           delete: Slet
+          preview: Forhåndsvisning
         new:
           back: Tilbage
           title: Opret ny version
           submit_button: Opret version
         statuses:
+          draft: Udkast
           published: Offentliggjort
         table:
           title: Titel
@@ -477,6 +482,7 @@ da:
           add_option: Tilføj valgmulighed
           title: Spørgsmål
           title_placeholder: Tilføj et spørgsmål
+          value_placeholder: Tilføj et lukket svar
         index:
           back: Tilbage
           title: Spørgsmål relateret til denne proces
@@ -507,9 +513,19 @@ da:
       banner: Administrer bannere
       proposals: Borgerforslag
       budgets: Deltagerbudgetter
+      hidden_comments: Skjulte kommentarer
+      hidden_debates: Skjulte debatindlæg
+      hidden_proposals: Skjulte forslag
+      hidden_budget_investments: Skjulte budgetinvesteringer
+      hidden_proposal_notifications: Skjulte notifikationer vedrørende forslag
+      hidden_users: Skjulte brugere
+      administrators: Administratorer
+      managers: Managere
+      moderators: Moderatorer
       messaging_users: Beskeder til brugere
       newsletters: Nyhedsbreve
       admin_notifications: Notifikationer
+      valuators: Evaluatorer
       poll_shifts: Administrer arbejdsfordeling
       officials: Embedsmænd
       organizations: Organisationer
