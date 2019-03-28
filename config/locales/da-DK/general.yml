@@ -108,26 +108,38 @@ da:
         without_interests: Følg forslagene så vi kan give dig anbefalinger
         disable: "Anbefalede debatindlæg vil forsvinde, hvis du afviser dem. Du kan aktivere dem igen under \"Min konto\""
         actions:
+          success: "Modtagelse af anbefalede debatindlæg er nu deaktiveret"
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger for debatter"
       search_form:
         button: Søg
         placeholder: Søg debatindlæg...
         title: Søg
+      search_results_html:
+        one: " indeholder betegnelsen <strong>'%{search_term}'</strong>"
+        other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
+      select_order: Sorter efter
       start_debate: Start en debat
       title: Debatforum
       section_header:
         icon_alt: Debat ikon
+        title: Debatindlæg
+        help: Hjælp til debatindlæg
       section_footer:
+        title: Hjælp til debatindlæg
         description: Start en debat for at dele dine meninger vedrørende et bestemt emne med andre.
+        help_text_1: "Debatforummet er til for, at enhver kan åbne op for diskussion af forskellige emner, og at enhver kan dele sin mening med andre."
+        help_text_2: 'For at tilgå et debatindlæg skal du registrere dig på %{org}. Brugere kan også skrive kommentarer til debatindlæggene og rangere dem ved at erklære sig "Enig" eller "Uenig".'
     new:
       form:
         submit_button: Start en debat
       info: Hvis du ønsker at oprette et forslag, befinder du dig i den forkerte sektion, klik på %{info_link}.
       info_link: opret et forslag
       more_info: Flere oplysninger
+      recommendation_four: Tag del i debatten. Den tilhører også dig.
       recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
       recommendation_three: Hensynsløs kritik er velkommen. Her er der rum for refleksion. Men vi anbefaler, at du fastholder din elegance og intelligens. Verdenen er et bedre sted, når disse dyder er en del af den.
       recommendation_two: Enhver debat eller kommentar, der foreslår en ulovlig handling eller søger at sabotere debatforummet vil blive slettet. Alt andet er tilladt.
+      recommendations_title: Anbefalinger til oprettelse af debatindlæg
       start_new: Start en debat
     show:
       author_deleted: Bruger slettet
@@ -150,10 +162,12 @@ da:
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
     accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
+    conditions: Brugervilkår og betingelser
     debate: Debat
     direct_message: privat besked
     error: fejl
     errors: fejl
+    not_saved_html: "forhindrede dette %{resource} i at blive gemt. <br>Se de markerede felter for at rette op på fejlen:"
     policy: Privatpolitik
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
