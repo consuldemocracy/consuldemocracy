@@ -173,6 +173,7 @@ da:
     proposal_notification: "Notifikation"
     budget/investment: Investering
     budget/group: Budget gruppe
+    poll/shift: Skift
     poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
@@ -236,11 +237,15 @@ da:
         comments_on:
           one: En kommenterede på
           other: Der er %{count} nye kommentarer på
+        proposal_notification:
+          one: Du har en ny notifikation vedrørende
+          other: Du har %{count} nye notifikation vedrørende
         replies_to:
           one: Nogen svarede på din kommentar til
           other: Der er %{count} nye svar til din kommentar til
       mark_as_read: Markér som læst
       mark_as_unread: Marker som ulæst
+      notifiable_hidden: Ikke længere tilgængelig.
   map:
     title: "Distrikter"
     proposal_for_district: "Opret et forslag til dit distrikt"
@@ -274,9 +279,15 @@ da:
         submit_button: Gem ændringer
       show_link: Se forslag
     retire_form:
+      title: Træk forslaget tilbage
+      retired_reason_label: Begrundelse for at trække forslaget tilbage
+      retired_reason_blank: Vælg en mulighed
       retired_explanation_label: Forklaring
       retired_explanation_placeholder: Forklar kort hvorfor du tænker, at dette forslag ikke bør modtage mere opbakning
+      submit_button: Træk forslaget tilbage
     retire_options:
+      duplicated: Kopieret
+      started: Allerede i gang
       done: Færdig
       other: Andre
     form:
@@ -370,6 +381,7 @@ da:
       send_notification: Send meddelelse
       no_notifications: "Dette forslag har ingen notifikationer."
       embed_video_title: "Video på %{proposal}"
+      title_video_url: "Ekstern video"
     update:
       form:
         submit_button: Gem ændringer
