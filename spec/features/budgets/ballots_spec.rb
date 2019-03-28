@@ -117,6 +117,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment1.title
           expect(page).to have_content "€10,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
 
         add_to_ballot(investment2)
@@ -127,6 +128,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment2.title
           expect(page).to have_content "€20,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
       end
 
@@ -146,6 +148,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment.title
           expect(page).to have_content "€10,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
 
         within("#budget_investment_#{investment.id}") do
@@ -158,6 +161,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).not_to have_content investment.title
           expect(page).not_to have_content "€10,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
       end
 
@@ -454,7 +458,9 @@ feature "Ballots" do
     visit budget_investments_path(budget, heading_id: new_york.id)
     add_to_ballot(investment)
 
-    click_link "Check my ballot"
+    within(".budget-heading") do
+      click_link "Check and confirm my ballot"
+    end
 
     expect(page).to have_content("You have voted one investment")
 
