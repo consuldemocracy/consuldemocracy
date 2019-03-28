@@ -1,5 +1,7 @@
 da:
   settings:
+    comments_body_max_length: "Maksimal længde af kommentarfeltet"
+    comments_body_max_length_description: "Angivet i antal tegn"
     twitter_handle: "Twitter"
     twitter_handle_description: "Hvis udfyldt, vil twitter-ikonet være synligt nederst på siden"
     twitter_hashtag: "Twitter hashtag"
@@ -14,6 +16,8 @@ da:
     instagram_handle_description: "Hvis udfyldt, vil instagram-ikonet være synligt nederst på siden"
     org_name: "Sidens navn"
     meta_keywords: "Søgeord (SEO)"
+    min_age_to_participate: Minimumsalder for deltagelse
+    min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
     direct_message_max_per_day_description: "Det maksimale antal direkte beskeder en bruger kan sende om dagen"
     feature:
       twitter_login: "Twitter login"
