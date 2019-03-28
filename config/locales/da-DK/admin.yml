@@ -187,6 +187,8 @@ da:
         user_tags: Bruger tags
         undefined: Udefineret
         selection:
+          title: Udvælgelse
+          "true": Valgt
           "false": Ikke valgt
         winner:
           title: Vinderen
@@ -201,9 +203,13 @@ da:
         valuator_groups: "Vurderingsgrupper"
       edit:
         classification: Klassificering
+        selection: Udvælgelse
+        mark_as_selected: Markeret som valgt
+        assigned_valuators: Evaluatorer
         submit_button: Opdater
         tags: Tags
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
+        undefined: Udefineret
         user_groups: "Grupper"
     milestones:
       index:
@@ -213,30 +219,78 @@ da:
         table_publication_date: "Dato for offentliggørelse"
         table_status: Status
         table_actions: "Handlinger"
+        delete: "Slet proces"
+        no_milestones: "Har ingen definerede processer"
         image: "Billede"
         show_image: "Vis billede"
         documents: "Dokumenter"
+        milestone: Processer
+        new_milestone: Opret ny proces
+      form:
+        admin_statuses: Administrer statusser
+        no_statuses_defined: Der er endnu ingen definerede statusser
       new:
+        creating: Opret proces
         date: Dato
         description: Beskrivelse
+      edit:
+        title: Rediger proces
+      create:
+        notice: Processen blev oprettet!
+      update:
+        notice: Processen blev opdateret
+      delete:
+        notice: Processen blev slettet
     statuses:
       index:
+        title: Processtatus
+        empty_statuses: Der er endnu ingen oprettet statusser over proces
+        new_status: Opret processtatus
         table_name: Navn
         table_description: Beskrivelse
         table_actions: Handlinger
         delete: Slet
         edit: Rediger
+      edit:
+        title: Rediger processtatus
+      update:
+        notice: Processtatussen blev opdateret
+      new:
+        title: Opret processtatus
+      create:
+        notice: Processtatussen blev oprettet
+      delete:
+        notice: Processtatussen blev slettet
     progress_bars:
+      manage: "Administrer statuslinje"
       index:
+        title: "Statuslinjer"
+        no_progress_bars: "Der er ingen statuslinjer"
+        new_progress_bar: "Opret ny statuslinje"
+        primary: "Primære statuslinje"
         table_id: "ID"
         table_kind: "Type"
         table_title: "Titel"
+        table_percentage: "Aktuelle forløb"
+      new:
+        creating: "Opret statuslinje"
+      edit:
+        title:
+          primary: "Rediger primær statuslinje"
+          secondary: "Rediger statuslinje %{title}"
+      create:
+        notice: "Statuslinjen blev oprettet!"
+      update:
+        notice: "Statuslinjen blev opdateret"
+      delete:
+        notice: "Statuslinjen blev slettet"
     comments:
       index:
         filter: Filtrere
         filters:
           all: Alle
           with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
         hidden_debate: Skjulte debatindlæg
         hidden_proposal: Skjulte forslag
         title: Skjulte kommentarer
@@ -251,6 +305,7 @@ da:
         filter: Filtrere
         filters:
           all: Alle
+          with_confirmed_hide: Bekræftet
           without_confirmed_hide: Under behandling
         title: Skjulte debatindlæg
         no_hidden_debates: Der er ingen skjulte debatindlæg.
@@ -587,8 +642,17 @@ da:
       user_invite:
         title: "Bruger invitation"
       message_title: "Meddelelses titel"
+    emails_download:
+      index:
+        download_emails_button: Download liste over e-mails
     valuators:
       index:
+        title: Evaluatorer
+        name: Navn
+        email: E-mail
+        description: Beskrivelse
+        no_description: Ingen beskrivelse
+        no_valuators: Der er ingen evaluatorer.
         valuator_groups: "Vurderingsgrupper"
         group: "Gruppe"
         no_group: "Ingen gruppe"
@@ -668,9 +732,11 @@ da:
         select_date: "Vælg dag"
         no_voting_days: "Stemmedagene er afsluttet"
         select_task: "Vælg opgave"
+        table_shift: "Arbejdsopgave"
         table_email: "E-mail"
         table_name: "Navn"
       flash:
+        create: "Arbejdsopgave tilføjet"
         date_missing: "Der skal vælges en dato"
       vote_collection: Indsaml stemmer
       recount_scrutiny: Omtælling & Eftersyn
@@ -678,6 +744,7 @@ da:
       manage_assignments: Administrer opgaver
     poll_booth_assignments:
       show:
+        location: "Lokation"
         results: "Resultater"
         date: "Dato"
       index:
@@ -729,6 +796,8 @@ da:
         table_proposal: "Borgerforslag"
         table_question: "Spørgsmål"
         table_poll: "Afstemning"
+      edit:
+        title: "Rediger Spørgsmål"
       new:
         title_proposal: "Stil et spørgsmål"
       answers:
