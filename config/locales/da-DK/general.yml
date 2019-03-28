@@ -288,6 +288,7 @@ da:
     retire_options:
       duplicated: Kopieret
       started: Allerede i gang
+      unfeasible: Kan ikke gennemføres
       done: Færdig
       other: Andre
     form:
@@ -679,6 +680,7 @@ da:
       title: Vis
     recommended:
       title: Anbefalinger, der måske har din interesse
+      help: "Anbefalingerne er baseret på de tags, der er føjet til de debatindlæg og borgerforslag, du følger."
       debates:
         title: Debatindlæg, der kunne have din interesse
         btn_text_link: Alle debatindlæg, der kunne have din interesse
