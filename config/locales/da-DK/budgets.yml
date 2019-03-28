@@ -119,6 +119,9 @@ da:
         already_added: Du har allerede tilføjet investeringsprojektet
         already_supported: Du har allerede støttet dette forslag. Del det!
         support_title: Støt forslaget
+        confirm_group:
+          one: "Du kan kun støtte op om investeringsforslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+          other: "Du kan kun støtte op om investeringsforslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
         supports:
           zero: Ingen støtte
           one: 1 støtter op om projektet
