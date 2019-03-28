@@ -2,6 +2,7 @@ da:
   settings:
     comments_body_max_length: "Maksimal længde af kommentarfeltet"
     comments_body_max_length_description: "Angivet i antal tegn"
+    official_level_1_name: "Myndighedsperson/embedsmand, niveau 1"
     twitter_handle: "Twitter"
     twitter_handle_description: "Hvis udfyldt, vil twitter-ikonet være synligt nederst på siden"
     twitter_hashtag: "Twitter hashtag"
