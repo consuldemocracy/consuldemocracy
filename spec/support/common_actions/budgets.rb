@@ -10,4 +10,13 @@ module Budgets
       expect(page).to have_content "Remove"
     end
   end
+
+  def budget_invesment_for(spending_proposal, options={})
+    attributes = {
+      original_spending_proposal_id: spending_proposal.id,
+      selected: true
+    }.merge(options)
+
+    create(:budget_investment, attributes)
+  end
 end

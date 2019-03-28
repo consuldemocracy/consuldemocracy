@@ -208,4 +208,13 @@ FactoryBot.define do
     locale "en"
     body "Some heading contents"
   end
+
+  factory :ballot do
+    user
+  end
+
+  factory :ballot_line do
+    ballot
+    spending_proposal { build(:spending_proposal, feasible: true) }
+  end
 end
