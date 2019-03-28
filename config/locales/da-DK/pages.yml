@@ -68,6 +68,10 @@ da:
       subtitle: "Informationsside om beskyttelse af personlige oplysninger"
     accessibility:
       title: Tilgængelighed
+      description: |-
+        Webtilgængelighed refererer til alle menneskers mulighed for at få adgang til internettet og dets indhold, uanset de handicaps (fysisk, mentalt eller teknisk), der måtte opstå, eller fra dem, der udledes af brugskonteksten (teknologisk eller miljømæssig).
+
+        Når hjemmesider er designet med henblik på tilgængelighed, kan alle brugere på lige vilkår få adgang til indholdet. For eksempel:
       examples:
         - Ved at sørge for en alternativ tekst til billeder, blinde og svagtseende brugere kan anvende speciallavede oplæsningsredskaber og dermed også få adgang til informationen.
         - Når videoer har undertekster, sikrer det også brugere med hørebesvær en fuldstændig forståelse af videoens indhold.
@@ -76,6 +80,8 @@ da:
       keyboard_shortcuts:
         title: Tastatur genveje
         navigation_table:
+          description: For at gøre det lettilgængeligt at navigere rundt på hjemmesiden, er der programmeret en gruppe adgangstaster, der samler de vigtigste sektioner af almen interesse, som siden er organiseret op omkring.
+          caption: Tastaturgenveje for navigationsmenuen
           key_header: Tast
           page_header: Side
           rows:
@@ -121,6 +127,7 @@ da:
       textsize:
         title: Tekststørrelse
         browser_settings_table:
+          description: Det lettilgængelige design af hjemmesiden gør det muligt for brugeren at vælge den tekststørrelse, der passer bedst til ham eller hende. Handlingen kan udføres på forskellige måder afhængig af, hvilken browser brugeren anvender.
           browser_header: Browser
           action_header: Handlingsplan
           rows:
