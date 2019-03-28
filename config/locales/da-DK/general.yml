@@ -382,6 +382,7 @@ da:
       no_notifications: "Dette forslag har ingen notifikationer."
       embed_video_title: "Video på %{proposal}"
       title_video_url: "Ekstern video"
+      author: Oprettet af
     update:
       form:
         submit_button: Gem ændringer
@@ -391,6 +392,7 @@ da:
     all: "Alle"
     no_dates: "der er ikke angivet nogen dato"
     dates: "Fra %{open_at} til %{closed_at}"
+    final_date: "Endelig opregning/Resultater"
     index:
       filters:
         current: "Åben"
@@ -419,8 +421,30 @@ da:
       signin: Log ind
       signup: Tilmeld dig
       cant_answer_verify_html: "Du skal %{verify_link} for at kunne svare."
+      verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
       more_info_title: "Mere information"
+      documents: Dokumenter
+      zoom_plus: Udvid billede
+      read_more: "Læs mere om %{answer}"
+      read_less: "Læs minde om %{answer}"
+      videos: "Ekstern video"
+      info_menu: "Information"
+      stats_menu: "Deltagelsesstatistik"
+      results_menu: "Afstemningsresultater"
+      stats:
+        title: "Data over deltagelse"
+        total_participation: "Samlet deltagelse"
+        total_votes: "Samlet antal stemmer"
+        votes: "STEMMER"
+        web: "WEB"
+        booth: "STEMMEBOKS"
+        total: "I ALT"
+        valid: "Gyldig"
+        white: "Hvide stemmer"
+        null_votes: "Ugyldig"
+      results:
+        title: "Spørgsmål"
   poll_questions:
     show:
       vote_answer: "Stem %{answer}"
@@ -466,15 +490,26 @@ da:
     flag: Marker som upassende
     follow: "Følg"
     follow_entity: "Følg %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Du følger nu investeringsprojektet! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+        destroy:
+          notice_html: "Du er stoppet med at følge investeringsprojektet! </br> Du vil ikke længere modtage notifikationer relateret til projektet."
+      proposal:
+        create:
+          notice_html: "Du følger nu borgerforslaget! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+        destroy:
+          notice_html: "Du er stoppet med at følge borgerforslaget! </br> Du vil ikke længere modtage notifikationer relateret til forslaget."
+    hide: Skjul
     print:
       print_button: Udskriv information
     search: Søg
     show: Vis
     suggest:
       debate:
-        found:
-          one: "Der er allerede en debat benævnt som '%{query}'. Du kan deltage i den i stedet for at oprette en ny."
-          other: "Der er allerede flere debatindlæg benævnt som '%{query}'. Du kan deltage i dem i stedet for at oprette en ny."
+        see_all: "Se alle"
+      budget_investment:
         see_all: "Se alle"
       proposal:
         see_all: "Se alle"
@@ -523,9 +558,12 @@ da:
     new:
       more_info: Hvad fungerer deltagerbudgetter?
     show:
+      author_deleted: Bruger slettet
       share: Del
     wrong_price_format: Kun hele tal
     spending_proposal:
+      spending_proposal: Investeringsprojekt
+      already_supported: Du har allerede støttet forslaget. Del det!
       support: Støt
       support_title: Støt projektet
       supports:
@@ -538,6 +576,12 @@ da:
       debates: Debatindlæg
       proposals: Borgerforslag
       comments: Kommentarer
+      proposal_votes: Stemmer på forslag
+      debate_votes: Stemmer på debatindlæg
+      comment_votes: Stemmer på kommentarer
+      votes: Sammenlagt antal stemmer
+      verified_users: Verificerede brugere
+      unverified_users: Ikke verificerede brugere
   unauthorized:
     default: Du har ikke tilladelse til at tilgå denne side.
     manage:
@@ -591,6 +635,7 @@ da:
     proposals:
       send_notification: "Send notifikation"
       retire: "Tilbagekald"
+      retired: "Tilbagetrukket borgerforslag"
       see: "Se forslag"
   votes:
     agree: Jeg er enig
@@ -600,6 +645,7 @@ da:
     organizations: Det er ikke tilladt for organisationer at stemme
     signin: Log ind
     signup: Tilmeld dig
+    supports: Støtte
     unauthenticated: Du skal %{signin} eller %{signup} for at fortsætte.
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
     verify_account: verificer din konto
@@ -629,7 +675,10 @@ da:
       see_all_processes: Se alle processer
       process_label: Proces
       see_process: Se proces
+    cards:
+      title: Vis
     recommended:
+      title: Anbefalinger, der måske har din interesse
       debates:
         title: Debatindlæg, der kunne have din interesse
         btn_text_link: Alle debatindlæg, der kunne have din interesse
