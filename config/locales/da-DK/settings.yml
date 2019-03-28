@@ -15,6 +15,8 @@ da:
     max_ratio_anon_votes_on_debates: "Maksimalt antal anonyme stemmer pr. debat"
     max_ratio_anon_votes_on_debates_description: "Anonyme stemmer er dem, der foretages af brugere med en registreret, men ikke verificeret, brugerkonto"
     max_votes_for_proposal_edit: "Forslaget kan ikke længere redigeres, når dette antal personer støtter op om det:"
+    max_votes_for_proposal_edit_description: "Når dette antal personer støtter op om forslaget, kan brugeren, der oprettede forslaget, ikke længere redigere det"
+    max_votes_for_debate_edit: "Debatindlægget kan ikke længere redigeres, når dette antal personer har stemt på det:"
     twitter_handle: "Twitter"
     twitter_handle_description: "Hvis udfyldt, vil twitter-ikonet være synligt nederst på siden"
     twitter_hashtag: "Twitter hashtag"
