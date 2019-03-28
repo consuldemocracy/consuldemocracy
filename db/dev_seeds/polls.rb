@@ -52,8 +52,8 @@ section "Creating Poll Questions & Answers" do
         end
       end
       question.save!
-      Faker::Lorem.words((2..4).to_a.sample).each do |title|
-        description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
+      Faker::Lorem.words((2..4).to_a.sample).each_with_index do |title, index|
+        description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
         answer = Poll::Question::Answer.new(question: question,
                                             title: title.capitalize,
                                             description: description,
