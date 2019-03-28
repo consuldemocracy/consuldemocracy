@@ -32,6 +32,7 @@ da:
       index:
         title: Management
         info: Her kan du administrere brugere gennem de handlinger, der er angivet i menuen til venstre.
+    document_number: Dokumentnummer
     document_type_label: Dokumenttype
     document_verifications:
       already_verified: Brugerkontoen er allerede verificeret.
