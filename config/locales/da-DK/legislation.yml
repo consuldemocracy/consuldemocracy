@@ -65,7 +65,12 @@ da:
           past: Fortid
         no_open_processes: Ingen åbne processer
         no_past_processes: Ingen tidligere processer
+        section_header:
+          icon_alt: Skærmikon for lovgivningssamarbejde
+          title: Lovgivningssamarbejde
+          help: Hjælp til lovgivningssamarbejde
         section_footer:
+          title: Hjælp til lovgivningssamarbejde
           description: Deltag i debat om og processer forud for godkendelsen af nye reglementer eller strategier. Din mening vil blive taget i betragtning.
       phase_not_open:
         not_open: Denne fase er ikke igangsat endnu
@@ -78,6 +83,7 @@ da:
         key_dates: Deltagelsesfaser
         homepage: Startside
         debate_dates: Debat
+        draft_publication_date: Udkast til publikation
         allegations_dates: Kommentarer
         result_publication_date: Offentliggørelse af endeligt resultat
         milestones_date: Følger
