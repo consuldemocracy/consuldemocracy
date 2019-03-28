@@ -45,6 +45,7 @@ da:
         title: Deltagerbudgetter
         help: Hjælp med deltagerbudgetter
         all_phases: Se alle faser
+      all_phases: Deltagerbudgettets faseforløb
       investment_proyects: Liste over alle investeringsprojekter
       unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
       not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
@@ -52,6 +53,7 @@ da:
       see_results: Se resultater
       section_footer:
         title: Hjælp med deltagerbudgetter
+      milestones: Proces
     investments:
       form:
         tag_category_label: "Kategorier"
@@ -66,6 +68,7 @@ da:
       index:
         title: Deltagerbudgetter
         unfeasible: Investeringer, der ikke er mulige at gennemføre
+        by_heading: "Investeringsprojekter tilknyttet et område: %{heading}"
         search_form:
           button: Søg
           placeholder: Søg investeringsprojekter...
@@ -80,27 +83,60 @@ da:
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           zero: Du har ikke stemt på nogle investeringsprojekter i denne gruppe.
           verified_only: "For at oprette en ny budget investering %{verify}."
+          verify_account: "verificer din konto"
           create: "Opret en budgetinvestering"
           not_logged_in: "For at oprette en budgetinvestering skal du %{sign_in} eller %{sign_up}."
           sign_in: "log ind"
           sign_up: "tilmeld dig"
+          feasible: Mulige projekter
+          unfeasible: Umulige projekter
         orders:
           random: random
+          price: pris
+      share:
+        message: "Jeg har oprettet et investeringsprojekt %{title} i %{handle}. Du kan gøre det samme!"
       show:
         author_deleted: Bruger slettet
         price_explanation: Prisforklaring
         unfeasibility_explanation: Forklaring på, hvorfor projektet ikke kan gennemføres
+        code_html: "Kode for investeringsprojekt: <strong>%{code}</strong>"
+        location_html: "Lokation: <strong>%{location}</strong>"
+        organization_name_html: "Oprettet på vegne af: <strong>%{name}</strong>"
+        share: Del
+        title: Investeringsprojekt
+        supports: Støtte
         votes: Stemmer
         price: Pris
         comments_tab: Kommentarer
+        milestones_tab: Processer
+        project_unfeasible_html: "Investeringsprojektet <strong>er blevet vurderet til ikke at kunne gennemføres</strong> og vil derfor ikke gå videre til afstemningsfasen."
+        project_selected_html: "Investeringsprojektet <strong>er blevet valgt</strong> til afstemningsfasen."
+        project_not_selected_html: "Investeringsprojektet <strong>er ikke blevet valgt</strong> til afstemningsfasen."
         see_price_explanation: Se prisforklaring
+      wrong_price_format: Kun hele tal
       investment:
         add: Stem
+        already_added: Du har allerede tilføjet investeringsprojektet
         already_supported: Du har allerede støttet dette forslag. Del det!
         support_title: Støt forslaget
         supports:
           zero: Ingen støtte
+          one: 1 støtter op om projektet
+          other: "%{count} støtter op om projektet"
+        give_support: Støt
+      header:
+        check_ballot: Tjek min afstemning
+        change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
+    show:
+      group: Gruppe
+      phase: Aktuelle fase
+      unfeasible_title: Ikke mulige investeringsforslag
+      unfeasible: Se ikke mulige investeringsforslag
+      unselected_title: Investeringsforslag, der ikke er udvalgt til afstemningsfasen
+      unselected: Se investeringsforslag, der ikke er udvalgt til afstemningsfasen
+      see_results: Se resultater
     results:
+      link: Resultater
       page_title: "%{budget} - Resultater"
       heading: "Resultat af deltagerbudgettet"
       spending_proposal: Titel på forslag
