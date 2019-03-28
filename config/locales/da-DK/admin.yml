@@ -150,21 +150,32 @@ da:
         filters:
           all: Alle
           without_admin: Uden tildelte administrator
+          without_valuator: Uden tilknyttet evaluator
           under_valuation: Under værdiansættelse
           valuation_finished: Værdiansættelse færdig
           selected: Vælg
           undecided: Ikke besluttet
           unfeasible: Uigennemførlig
+          min_total_supports: Minimum støtte
           winners: Vindere
         buttons:
           filter: Filtrere
+        no_budget_investments: "Der er ingen investeringsprojekter."
+        title: Investeringsprojekter
+        assigned_admin: Tilknyttet administrator
+        no_admin_assigned: Der er ikke tilknyttet en administrator
+        no_valuators_assigned: Der er ikke tilknyttet nogle evaluatorer
+        no_valuation_groups: Der er ikke tilknyttet en vurderingsgruppe
         feasibility:
+          feasible: "Kan gennemføres (%{price})"
+          unfeasible: "Kan ikke gennemføres"
           undecided: "Ikke besluttet"
         selected: "Valgt"
         select: "Vælg"
         list:
           id: ID
           title: Titel
+          supports: Støtte
           admin: Administrator
           valuator: Evaluator
           valuation_group: Evaluator gruppe
@@ -496,6 +507,9 @@ da:
       banner: Administrer bannere
       proposals: Borgerforslag
       budgets: Deltagerbudgetter
+      messaging_users: Beskeder til brugere
+      newsletters: Nyhedsbreve
+      admin_notifications: Notifikationer
       poll_shifts: Administrer arbejdsfordeling
       officials: Embedsmænd
       organizations: Organisationer
