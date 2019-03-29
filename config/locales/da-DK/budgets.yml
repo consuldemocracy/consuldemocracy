@@ -22,6 +22,7 @@ da:
         change_ballot: Ønsker du at ændre din stemme?
     groups:
       show:
+        title: Vælg en mulighed
         unfeasible_title: Investeringer, der ikke er mulige at gennemføre
         unfeasible: Se ikke mulige investeringer
         unselected_title: Investeringer, der ikke er udvalgt til afstemningsfasen
@@ -46,6 +47,7 @@ da:
         help: Hjælp med deltagerbudgetter
         all_phases: Se alle faser
       all_phases: Deltagerbudgettets faseforløb
+      map: Forslag til budget investeringer geografisk placeret
       investment_proyects: Liste over alle investeringsprojekter
       unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
       not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
@@ -53,6 +55,7 @@ da:
       see_results: Se resultater
       section_footer:
         title: Hjælp med deltagerbudgetter
+        description: Med deltagerbudgetter beslutter borgerne, hvilke projekter der skal have del i budgettet.
       milestones: Proces
     investments:
       form:
