@@ -14,7 +14,7 @@ class Admin::HiddenCommentsController < Admin::BaseController
   end
 
   def restore
-    @comment.restore
+    @comment.restore(recursive: true)
     @comment.ignore_flag
     Activity.log(current_user, :restore, @comment)
     redirect_to request.query_parameters.merge(action: :index)
