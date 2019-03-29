@@ -17,7 +17,6 @@ class ProgressBar < ActiveRecord::Base
             }
   validates :percentage, presence: true, inclusion: RANGE, numericality: { only_integer: true }
 
-  before_validation :assign_model_to_translations
   validates_translation :title, presence: true, unless: :primary?
 
 end

@@ -9,8 +9,6 @@ class Budget
 
     has_many :headings, dependent: :destroy
 
-    before_validation :assign_model_to_translations
-
     validates_translation :name, presence: true
     validates :budget_id, presence: true
     validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/

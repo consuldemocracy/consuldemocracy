@@ -9,10 +9,6 @@ module Globalizable
       translations.reject(&:_destroy).map(&:locale)
     end
 
-    def assign_model_to_translations
-      translations.each { |translation| translation.globalized_model = self }
-    end
-
     def description
       self.read_attribute(:description).try :html_safe
     end
