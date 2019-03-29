@@ -61,6 +61,9 @@ da:
       site_customization/page:
         one: Brugerdefineret side
         other: Brugerdefinerede sider
+      site_customization/image:
+        one: Brugerdefineret billede
+        other: Tilpassede billeder
       legislation/process:
         one: "Proces"
         other: "Processer"
