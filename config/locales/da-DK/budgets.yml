@@ -71,11 +71,15 @@ da:
       index:
         title: Deltagerbudgetter
         unfeasible: Investeringer, der ikke er mulige at gennemføre
+        unfeasible_text: "Investeringerne skal imødekomme en række kriterier (lovlighed, konkrethed, overholdelse af budgettet) for at blive erklæret egnet til at nå den endelige afstemningsfase. Alle investeringer der ikke opfylder kriterierne bliver markeret som uegnet og bliver på publiceret på følgende liste sammen en rapport omkring, hvorfor den er uegnet."
         by_heading: "Investeringsprojekter tilknyttet et område: %{heading}"
         search_form:
           button: Søg
           placeholder: Søg investeringsprojekter...
           title: Søg
+        search_results_html:
+          one: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
+          other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Min stemme
           voted_html:
