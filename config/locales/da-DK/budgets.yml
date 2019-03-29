@@ -146,6 +146,11 @@ da:
         check_ballot: Tjek min afstemning
         different_heading_assigned_html: "Du har aktive stemmer i en anden post: %{heading_link}"
         change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
+        check_ballot_link: "kontroller og bekræft min afstemning"
+        price: "Denne post har et budget på"
+    progress_bar:
+      assigned: "Du har tildelt: "
+      available: "Tilgængeligt budget: "
     show:
       group: Gruppe
       phase: Aktuelle fase
@@ -158,8 +163,10 @@ da:
       link: Resultater
       page_title: "%{budget} - Resultater"
       heading: "Resultat af deltagerbudgettet"
+      heading_selection_title: "Efter distrikt"
       spending_proposal: Titel på forslag
       ballot_lines_count: Stemmer
+      hide_discarded_link: Skjule kasserede
       show_all_link: Vis alle
       price: Pris
       amount_available: Tilgængeligt budget
