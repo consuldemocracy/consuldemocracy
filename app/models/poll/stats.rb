@@ -14,15 +14,8 @@ class Poll::Stats
          total_participants_mail_percentage
          valid_percentage_web valid_percentage_booth valid_percentage_mail total_valid_percentage
          white_percentage_web white_percentage_booth white_percentage_mail total_white_percentage
-         null_percentage_web null_percentage_booth null_percentage_mail total_null_percentage
-         total_male_web total_male_booth total_male_mail
-         total_female_web total_female_booth total_female_mail
-         male_web_percentage male_booth_percentage male_mail_percentage
-         female_web_percentage female_booth_percentage female_mail_percentage
-         web_participants_by_age booth_participants_by_age mail_participants_by_age
-         web_participants_by_geozone booth_participants_by_geozone mail_participants_by_geozone]
+         null_percentage_web null_percentage_booth null_percentage_mail total_null_percentage]
   end
-
 
   def total_participants
     total_participants_web + total_participants_booth
@@ -37,41 +30,6 @@ class Poll::Stats
 
     define_method :"total_participants_#{channel}_percentage" do
       calculate_percentage(send(:"total_participants_#{channel}"), total_participants)
-    end
-
-    define_method :"#{channel}_participants" do
-      User.where(id: voters.where(origin: channel).pluck(:user_id))
-    end
-
-    define_method :"#{channel}_participants_by_age" do
-      participants_by_age_for(send(:"#{channel}_participants"),
-                              relative_to: :participants_between_ages)
-    end
-
-    define_method :"#{channel}_participants_by_geozone" do
-      geozones.map do |geozone|
-        count = send(:"#{channel}_participants").where(geozone: geozone).count
-        [
-          geozone.name,
-          {
-            count: count,
-            percentage: calculate_percentage(count, participants.where(geozone: geozone).count)
-          }
-        ]
-      end.to_h
-    end
-
-    %i[male female].each do |gender|
-      define_method :"total_#{gender}_#{channel}" do
-        send(:"#{channel}_participants").public_send(gender).count
-      end
-
-      define_method :"#{gender}_#{channel}_percentage" do
-        calculate_percentage(
-          send(:"total_#{gender}_#{channel}"),
-          send(:"total_#{gender}_participants")
-        )
-      end
     end
   end
 
