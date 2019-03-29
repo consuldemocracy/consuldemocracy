@@ -11,7 +11,7 @@ Setting["official_level_1_name"] = "Empleados públicos"
 Setting["official_level_2_name"] = "Organización Municipal"
 Setting["official_level_3_name"] = "Directores generales"
 Setting["official_level_4_name"] = "Concejales"
-Setting["official_level_5_name"] = "Alcaldesa"
+Setting["official_level_5_name"] = "Alcaldes"
 
 # Max percentage of allowed anonymous votes on a debate
 Setting["max_ratio_anon_votes_on_debates"] = 50
@@ -26,7 +26,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal_code_prefix"] = 'VA'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -45,24 +45,24 @@ Setting['per_page_code_head'] = ''
 Setting['per_page_code_body'] = ''
 
 # Social settings
-Setting["twitter_handle"] = nil
+Setting["twitter_handle"] = "dip_va"
 Setting["twitter_hashtag"] = nil
-Setting["facebook_handle"] = nil
-Setting["youtube_handle"] = nil
+Setting["facebook_handle"] = "Diputación-de-Valladolid-526627137352056"
+Setting["youtube_handle"] = "ProvinciaValladolid"
 Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
 Setting["blog_url"] = nil
 Setting["transparency_url"] = nil
-Setting["opendata_url"] = "/opendata"
+Setting["opendata_url"] = nil
 
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
 
 # CONSUL installation's organization name
-Setting["org_name"] = "CONSUL"
+Setting["org_name"] = "Participa Diputación de Valladolid"
 
 # CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
+Setting["place_name"] = "Valladolid"
 
 # Meta tags for SEO
 Setting["meta_title"] = nil
@@ -74,9 +74,9 @@ Setting['feature.debates'] = true
 Setting['feature.proposals'] = true
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
-Setting['feature.twitter_login'] = true
-Setting['feature.facebook_login'] = true
-Setting['feature.google_login'] = true
+Setting['feature.twitter_login'] = nil
+Setting['feature.facebook_login'] = nil
+Setting['feature.google_login'] = nil
 Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
@@ -106,22 +106,22 @@ Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
 
 # Email settings
-Setting['mailer_from_name'] = 'CONSUL'
-Setting['mailer_from_address'] = 'noreply@consul.dev'
+Setting['mailer_from_name'] = 'Participa Diputación de Valladolid'
+Setting['mailer_from_address'] = 'no-reply@dipvalladolid.es'
 
 # Verification settings
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
-Setting['min_age_to_participate'] = 16
+Setting['min_age_to_participate'] = 14
 
 # Proposal improvement url path ('/help/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
 
 # City map feature default configuration (Greenwich)
-Setting['map_latitude'] = 51.48
-Setting['map_longitude'] = 0.0
+Setting['map_latitude'] = 41.583333
+Setting['map_longitude'] = -4.666667
 Setting['map_zoom'] = 10
 
 # Related content
 Setting['related_content_score_threshold'] = -0.3
 
-Setting["feature.user.skip_verification"] = 'true'
+Setting["feature.user.skip_verification"] = nil

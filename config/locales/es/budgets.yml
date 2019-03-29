@@ -61,6 +61,7 @@ es:
         help_text_2: "Los proyectos más votados se evalúan y pasan a una votación final en la que se deciden las actuaciones que llevará a cabo el Ayuntamiento una vez se aprueben los presupuestos municipales del año próximo."
         help_text_3: "La presentación de proyectos de presupuestos participativos se lleva a cabo desde enero y a lo largo de un periodo de mes y medio, aproximadamente. Para participar y plantear propuestas para toda la ciudad y/ los distritos hay que registrarse en %{org} y verificar la cuenta."
         help_text_4: "Para conseguir el mayor número de apoyos y votos posible, elige un titular descriptivo y comprensible de tu proyecto. Después tienes un espacio para desarrollar el planteamiento de tu propuesta. Aporta todos los datos y explicaciones, e incluso documentos e imágenes, para ayudar a otras personas participantes a entender mejor lo que planteas."
+        help_text_5: "Todas las personas que viven en la provincia pueden presentar propuestas y decidir el destino de 1.200.000 € del presupuesto provincial. Si quieres saber más, pincha aquí"
     investments:
       form:
         tag_category_label: "Categorías"

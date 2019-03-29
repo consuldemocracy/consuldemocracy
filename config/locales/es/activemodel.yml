@@ -19,4 +19,4 @@ es:
       officing/residence:
         document_type: "Tipo documento"
         document_number: "Numero de documento (incluida letra)"
-        year_of_birth: "Año de nacimiento"
+        year_of_birth: "Código postal"

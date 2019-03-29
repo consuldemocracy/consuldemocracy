@@ -22,24 +22,21 @@ es:
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      new_html: 'Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}.'
-      new_href: "nueva propuesta de inversión"
-      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
+      new_html: 'Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019.'
+      reconsider_html: "Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019. Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo participa@dipvalladolid.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
       sincerely: "Atentamente"
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
+      unfeasible_html: "Desde la Diputación queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
-      new_html: 'Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}.'
-      new_href: "nuevo proyecto de gasto"
-      reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
+      reconsider_html: "Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019. Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, por favor, escribe lo antes posible a participa@dipvalladolid.es para que la Mesa Técnica pueda valorarlo. Indica claramente el título de tu propuesta y el código correspondiente a tu proyecto: %{code} como asunto del correo."
       sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
+      signatory: "DIPUTACIÓN DE VALLADOLID"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu proyecto <strong>'%{title}'</strong> quedará excluido de este proceso participativo por el siguiente motivo:"
+      unfeasible_html: "Desde la Diputación queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Tu propuesta <strong>'%{title}'</strong> ha sido evaluada por el personal técnico de la Diputación, que ha considerado que es inviable, o bien ha propuesto su reformulación para recoger tu idea. A continuación, puedes leer el informe de evaluación:"
     proposal_notification_digest:
       info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
       title: "Notificaciones de propuestas en %{org_name}"

@@ -8,7 +8,7 @@ class Officing::Residence
 
   validates :document_number, presence: true
   validates :document_type, presence: true
-  validates :year_of_birth, presence: true
+  #validates :year_of_birth, presence: true
 
   validate :allowed_age
   validate :residence_in_madrid
@@ -29,8 +29,8 @@ class Officing::Residence
         document_number:       document_number,
         document_type:         document_type,
         geozone:               geozone,
-        date_of_birth:         date_of_birth.in_time_zone.to_datetime,
-        gender:                gender,
+        #date_of_birth:         date_of_birth.in_time_zone.to_datetime,
+        #gender:                gender,
         residence_verified_at: Time.current,
         verified_at:           Time.current,
         erased_at:             Time.current,
@@ -75,12 +75,12 @@ class Officing::Residence
     return unless @census_api_response.valid?
 
     unless allowed_age?
-      errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
+      #errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
     end
   end
 
   def allowed_age?
-    Age.in_years(date_of_birth) >= User.minimum_required_age
+   # Age.in_years(date_of_birth) >= User.minimum_required_age
   end
 
   def geozone
@@ -88,30 +88,29 @@ class Officing::Residence
   end
 
   def district_code
-    @census_api_response.district_code
+   # @census_api_response.district_code
   end
 
   def gender
-    @census_api_response.gender
+   # @census_api_response.gender
   end
 
   def date_of_birth
-    @census_api_response.date_of_birth
+    #@census_api_response.date_of_birth
   end
 
   private
 
     def retrieve_census_data
-      @census_api_response = CensusCaller.new.call(document_type, document_number)
+      @census_api_response = CensusCaller.new.call(document_type, document_number, year_of_birth)
     end
 
     def residency_valid?
-      @census_api_response.valid? &&
-        @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
+      @census_api_response.valid? 
     end
 
     def census_year_of_birth
-      @census_api_response.date_of_birth.year
+      #@census_api_response.date_of_birth.year
     end
 
     def clean_document_number

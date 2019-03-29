@@ -4,9 +4,9 @@ es:
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
     help:
-      title: "%{org} es una plataforma de participación ciudadana"
-      subtitle: "En %{org} se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, decidir la normativa municipal y abrir debates para intercambiar opiniones con otras personas."
-      guide: 'Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}.'
+      title: "¿Qué es la Plataforma de Participación Ciudadana de la Diputación de Valladolid?"
+      subtitle: "Es una herramienta al servicio de la participación en la que se pueden hacer propuestas, votar en consultas ciudadanas, plantear proyectos de presupuestos participativos, opinar sobre normativa y abrir debates para intercambiar opiniones con otras personas. Navegando descubrirás cuáles de estas opciones están disponibles en cada momento."
+      guide: 'Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de esta Plataforma.'
       menu:
         debates: "Debates"
         proposals: "Propuestas"
