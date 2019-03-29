@@ -166,6 +166,10 @@ FactoryBot.define do
      trait :with_confirmed_hide do
        confirmed_hide_at { Time.current }
      end
+
+    trait :with_milestone_tags do
+      after(:create) { |investment| investment.milestone_tags << create(:tag, :milestone) }
+    end
   end
 
   factory :budget_phase, class: "Budget::Phase" do

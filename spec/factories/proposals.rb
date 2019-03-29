@@ -66,6 +66,9 @@ FactoryBot.define do
 
     trait :published do
       published_at { Time.current }
+
+    trait :with_milestone_tags do
+      after(:create) { |proposal| proposal.milestone_tags << create(:tag, :milestone) }
     end
   end
 

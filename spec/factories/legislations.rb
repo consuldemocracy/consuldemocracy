@@ -112,6 +112,10 @@ FactoryBot.define do
       result_publication_enabled false
       published true
     end
+
+    trait :with_milestone_tags do
+      after(:create) { |legislation| legislation.milestone_tags << create(:tag, :milestone) }
+    end
   end
 
   factory :legislation_draft_version, class: "Legislation::DraftVersion" do
