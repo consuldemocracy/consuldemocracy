@@ -11,6 +11,7 @@ nl:
           one: "U heeft op <span>één</span> voorstel gestemd."
           other: "U heeft op <span>%{count}</span> voorstellen gestemd."
         voted_info_html: "U te allen tijde uw stem wijzigen, tot de sluiting van deze fase.<br> U hoeft niet het héle bedrag uit te geven."
+        voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten."
         zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
         not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
