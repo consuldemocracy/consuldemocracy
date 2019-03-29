@@ -104,3 +104,26 @@ nl:
       public_stats_description: "De openbare statistieken weergeven in het beheerderspaneel"
       help_page: "Help-pagina"
       help_page_description: 'Toont informatie over alle beschikbare functionaliteit'
+    map:
+      latitude: "Breedte"
+      latitude_description: "Breedtegraad om de kaartpositie te tonen"
+      longitude: "Lengte"
+      longitude_description: "Lengtegraad om de positie van de kaart te tonen"
+      zoom: "Zoom"
+      zoom_description: "Zoom om de kaartpositie te tonen"
+    process:
+      debates: "Discussies"
+      debates_description: "De debatruimte van de burger is bedoeld voor iedereen die kwesties wil presenteren die hen aangaan en waarover zij hun mening met anderen willen afstemmen"
+      proposals: "Voorstellen"
+      proposals_description: "Voorstellen bieden mensen een kans om te helpen beslissen en, na het ontvangen van voldoende steun, in stemming te brengen"
+      polls: "Peilingen"
+      polls_description: "Peilingen bieden een mechanisme om mensen met stemrecht invloed te laten uitoefenen op beslissingen"
+      budgets: "Budgetten"
+      budgets_description: "Met budgetten kunnen mensen helpen bepalen welke projecten in aanmerking komen voor uitvoering"
+      legislation: "Wetgeving"
+      legislation_description: "In processen wordt mensen de mogelijkheid geboden om deel te nemen aan het opstellen en wijzigen van formele stukken en om je mening te geven over bepaalde activiteiten die gepland worden"
+    html:
+      per_page_code_head: "Code die ingevoegd wordt op elke pagina(<head>)"
+      per_page_code_head_description: "Deze code verschijnt in het <head> -label. Handig voor het invoeren van aangepaste scripts en analyses."
+      per_page_code_body: "Code die ingevoegd wordt op elke pagina(<body>)"
+      per_page_code_body_description: "Deze code verschijnt in het <body> -label. Dit kan handig zijn voor het invoeren van aangepaste scripts en analyses."
