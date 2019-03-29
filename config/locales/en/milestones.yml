@@ -3,6 +3,7 @@ en:
     index:
       no_milestones: Don't have defined milestones
       progress: Progress
+      milestone_tags: Milestone Tags
     show:
       publication_date: "Published %{publication_date}"
       status_changed: Status changed to

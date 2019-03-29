@@ -1331,6 +1331,22 @@ describe "Admin budget investments" do
       expect(page).to have_content "can't be blank"
     end
 
+    scenario "Add milestone tags" do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      expect(page).not_to have_content("Milestone Tags:")
+
+      click_link "Edit classification"
+
+      fill_in "budget_investment_milestone_tag_list", with: "tag1, tag2"
+
+      click_button "Update"
+
+      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content("Milestone Tags: tag1, tag2")
+    end
+
   end
 
   context "Selecting" do
