@@ -125,6 +125,7 @@ da:
         author: Forfatter
         project_unfeasible_html: "Investeringsprojektet <strong>er blevet vurderet til ikke at kunne gennemføres</strong> og vil derfor ikke gå videre til afstemningsfasen."
         project_selected_html: "Investeringsprojektet <strong>er blevet valgt</strong> til afstemningsfasen."
+        project_winner: "Vindende investeringsprojekt"
         project_not_selected_html: "Investeringsprojektet <strong>er ikke blevet valgt</strong> til afstemningsfasen."
         see_price_explanation: Se prisforklaring
       wrong_price_format: Kun hele tal
@@ -143,6 +144,7 @@ da:
         give_support: Støt
       header:
         check_ballot: Tjek min afstemning
+        different_heading_assigned_html: "Du har aktive stemmer i en anden post: %{heading_link}"
         change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
     show:
       group: Gruppe
