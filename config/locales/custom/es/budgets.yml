@@ -44,7 +44,7 @@ es:
       section_header:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
-        help: ¿Qué son los presupuestos participativos? 
+        help: ¿Qué son los presupuestos participativos?
         all_phases: Ver todas las fases
       all_phases: Fases de los presupuestos participativos
       map: Proyectos localizables geográficamente
@@ -54,7 +54,7 @@ es:
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       section_footer:
-        title: ¿Qué son los presupuestos participativos? 
+        title: ¿Qué son los presupuestos participativos?
         description: Los Presupuestos Participativos son un mecanismo por el que la ciudadanía decide el destino de una parte de los recursos provinciales elevando propuestas y seleccionando entre ellas las que considera prioritarias.
         help_text_titulo1: "¿Qué cantidad destina la Diputación de Valladolid a los Presupuestos Participativos?"
         help_text_1: "La Diputación de Valladolid destinará 1,2 millones de euros a Presupuestos Participativos para el ejercicio de 2019 , repartidos en 240.000 € para cada una de las cinco zonas geográficas en que se ha dividido la provincia."
@@ -119,10 +119,10 @@ es:
         help_text_6_2_2_3 : "- Deberás limitarte al espacio que aparece en el formulario. Cuanto más detallada sea, se podrá evaluar mejor por el equipo técnico, además de ser fácilmente entendible para la ciudadanía en la votación final."
         help_text_6: "¿Qué zona te corresponde?"
         help_text_7: "Encuentra tu localidad en el mapa y podrás identificar a qué zona perteneces."
-        help_text_8: "Más Información: Reglamento de los Presupuestos Participativos."   
-        help_text_9: "¿Ya lo tienes claro? ¡Regístrate!"   
+        help_text_8: "Más Información: Reglamento de los Presupuestos Participativos."
+        help_text_9: "¿Ya lo tienes claro? ¡Regístrate!"
         help_text_10: "Consulta a qué zona pertenece tu municipio"
-        sign_up2: "registrarte"  
+        sign_up2: "registrarte"
     investments:
       form:
         tag_category_label: "Categorías"
@@ -138,7 +138,7 @@ es:
         unfeasible: Proyectos de gasto no viables
         unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
         unfeasible_text_definitions: ver definiciones aquí
-        by_heading: 'Proyectos de gasto con ámbito: %{heading}'      
+        by_heading: 'Proyectos de gasto con ámbito: %{heading}'
         search_form:
           button: Buscar
           placeholder: Buscar proyectos de gasto...
