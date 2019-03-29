@@ -22,8 +22,6 @@ class Budget < ApplicationRecord
 
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
-  before_validation :assign_model_to_translations
-
   validates_translation :name, presence: true
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
