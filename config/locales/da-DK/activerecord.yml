@@ -64,6 +64,9 @@ da:
       site_customization/image:
         one: Brugerdefineret billede
         other: Tilpassede billeder
+      site_customization/content_block:
+        one: Tilpassede indholdsblok
+        other: Tilpassede indholdsblokke
       legislation/process:
         one: "Proces"
         other: "Processer"
