@@ -27,7 +27,8 @@ module Sanitizable
     end
 
     def translatable_description?
-      self.class.included_modules.include?(Globalizable) && self.class.translated_attribute_names.include?(:description)
+      self.class.included_modules.include?(Globalizable) &&
+      self.class.translated_attribute_names.include?(:description)
     end
 
     def sanitize_description_translations

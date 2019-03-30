@@ -87,9 +87,10 @@ class Image < ApplicationRecord
 
     def validate_attachment_content_type
       if imageable_class && !attachment_of_valid_content_type?
-        errors.add(:attachment, I18n.t("images.errors.messages.wrong_content_type",
-                                     content_type: attachment_content_type,
-                                     accepted_content_types: imageable_humanized_accepted_content_types))
+        message = I18n.t("images.errors.messages.wrong_content_type",
+                         content_type: attachment_content_type,
+                         accepted_content_types: imageable_humanized_accepted_content_types)
+        errors.add(:attachment, message)
       end
     end
 

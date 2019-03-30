@@ -128,7 +128,9 @@ class User < ApplicationRecord
   end
 
   def headings_voted_within_group(group)
-    Budget::Heading.joins(:translations).order("name").where(id: voted_investments.by_group(group).pluck(:heading_id))
+    Budget::Heading.joins(:translations)
+                   .order("name")
+                   .where(id: voted_investments.by_group(group).pluck(:heading_id))
   end
 
   def voted_investments

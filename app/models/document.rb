@@ -89,9 +89,11 @@ class Document < ApplicationRecord
     def validate_attachment_content_type
       if documentable_class &&
          !accepted_content_types(documentable_class).include?(attachment_content_type)
-        errors.add(:attachment, I18n.t("documents.errors.messages.wrong_content_type",
-                                   content_type: attachment_content_type,
-                                   accepted_content_types: documentable_humanized_accepted_content_types(documentable_class)))
+        accepted_content_types = documentable_humanized_accepted_content_types(documentable_class)
+        message = I18n.t("documents.errors.messages.wrong_content_type",
+                         content_type: attachment_content_type,
+                         accepted_content_types: accepted_content_types)
+        errors.add(:attachment, message)
       end
     end
 

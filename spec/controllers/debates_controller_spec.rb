@@ -15,7 +15,13 @@ describe DebatesController do
 
       sign_in create(:user)
 
-      post :create, params: { debate: { title: "A sample debate", description: "this is a sample debate", terms_of_service: 1 }}
+      post :create, params: {
+                      debate: {
+                        title: "A sample debate",
+                        description: "this is a sample debate",
+                        terms_of_service: 1
+                      }
+                    }
       expect(Ahoy::Event.where(name: :debate_created).count).to eq 1
       expect(Ahoy::Event.last.properties["debate_id"]).to eq Debate.last.id
     end

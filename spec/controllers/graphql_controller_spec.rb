@@ -38,7 +38,8 @@ describe GraphqlController, type: :request do
     let(:json_headers) { { "CONTENT_TYPE" => "application/json" } }
 
     specify "with json-encoded query string inside body" do
-      post "/graphql", params: { query: "{ proposal(id: #{proposal.id}) { title } }" }.to_json, headers: json_headers
+      post "/graphql", params: { query: "{ proposal(id: #{proposal.id}) { title } }" }.to_json,
+                       headers: json_headers
 
       expect(response).to have_http_status(:ok)
       expect(JSON.parse(response.body)["data"]["proposal"]["title"]).to eq(proposal.title)
@@ -46,7 +47,8 @@ describe GraphqlController, type: :request do
 
     specify "with raw query string inside body" do
       graphql_headers = { "CONTENT_TYPE" => "application/graphql" }
-      post "/graphql", params: "{ proposal(id: #{proposal.id}) { title } }", headers: graphql_headers
+      post "/graphql", params: "{ proposal(id: #{proposal.id}) { title } }",
+                       headers: graphql_headers
 
       expect(response).to have_http_status(:ok)
       expect(JSON.parse(response.body)["data"]["proposal"]["title"]).to eq(proposal.title)
