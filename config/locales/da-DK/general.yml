@@ -466,6 +466,7 @@ da:
         help: Hjælp til afstemning
       section_footer:
         title: Hjælp til afstemning
+        description: Borgerafstemningerne er en deltagelsesproces, hvor stemmeberettigede borgere kan få direkte indflydelse og være med til at træffe lokalpolitiske beslutninger
       no_polls: "Der er ingen afstemninger åbne."
     show:
       already_voted_in_booth: "Du har allerede deltaget via en fysisk stemmeboks. Du kan ikke deltage igen."
@@ -479,6 +480,7 @@ da:
       cant_answer_verify_html: "Du skal %{verify_link} for at kunne svare."
       verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
+      cant_answer_wrong_geozone: "Spørgsmålet er ikke tilgængeligt i dit geografiske område."
       more_info_title: "Mere information"
       documents: Dokumenter
       zoom_plus: Udvid billede
@@ -501,10 +503,12 @@ da:
         null_votes: "Ugyldig"
       results:
         title: "Spørgsmål"
+        most_voted_answer: "Mest populære svar: "
   poll_questions:
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
+      voted_token: "Skriv verificeringskoden ned så du kan tjekke din stemme i slutresultatet:"
   proposal_notifications:
     new:
       title: "Send besked"
@@ -531,6 +535,7 @@ da:
       date_2: "Sidste uge"
       date_3: "Sidste måned"
       date_4: "Sidste år"
+      date_5: "Brugertilpasset"
       from: "Fra"
       general: "Med teksten"
       general_placeholder: "Skriv tekst"
@@ -546,6 +551,7 @@ da:
     collective: Grupper
     flag: Marker som upassende
     follow: "Følg"
+    following: "Følger"
     follow_entity: "Følg %{entity}"
     followable:
       budget_investment:
