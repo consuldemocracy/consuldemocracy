@@ -14,6 +14,7 @@ da:
           finished: Færdig
         table_name: Navn
         table_phase: Fase
+        table_assigned_investments_valuation_open: Investeringsprojekter åbne for vurdering
         table_actions: Handlinger
         evaluate: Evaluere
         no_budgets: "Der er ingen budgetter"
@@ -33,6 +34,7 @@ da:
         no_valuators_assigned: Ingen evaluatorer tilknyttet
         table_id: ID
         table_title: Titel
+        table_heading_name: Område
         table_actions: Handlinger
         no_investments: "Der er ingen investeringsprojekter."
       show:
@@ -41,6 +43,7 @@ da:
         info: Brugerinformation
         by: Sendt af
         sent: Sendt den
+        heading: Område
         dossier: Rapport
         edit_dossier: Rediger rapport
         price: Pris
@@ -67,6 +70,7 @@ da:
         feasible_explanation_html: Forklaring på, hvorfor projektet kan gennemføres
         valuation_finished: Vurderingen er færdig
         valuation_finished_alert: "Er du sikker på, du vil markér rapporten som afsluttet? Hvis ja, kan du ikke længere foretage ændringer."
+        not_feasible_alert: "Brugeren, der oprettede projektforslaget, vil straks modtage en e-mail med den vedhæftede rapport, der forklarer, hvorfor projektet ikke kan gennemføres."
         duration_html: Tidsramme
         save: Gem ændringer
       notice:
@@ -80,10 +84,12 @@ da:
           valuation_open: Åben
           valuating: Under vurdering
           valuation_finished: Vurderingen er færdig
+        title: Investeringsprojekter til deltagerbudgettet
         edit: Rediger
       show:
         back: Tilbage
         heading: Investeringsprojekt
+        info: Brugerinformation
         association_name: Forening
         by: Sendt af
         sent: Sendt den
