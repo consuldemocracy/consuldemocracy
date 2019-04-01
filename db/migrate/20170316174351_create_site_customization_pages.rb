@@ -1,4 +1,4 @@
-class CreateSiteCustomizationPages < ActiveRecord::Migration
+class CreateSiteCustomizationPages < ActiveRecord::Migration[4.2]
   def change
     create_table :site_customization_pages do |t|
       t.string :slug, null: false

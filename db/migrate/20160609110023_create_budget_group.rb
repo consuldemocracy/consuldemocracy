@@ -1,4 +1,4 @@
-class CreateBudgetGroup < ActiveRecord::Migration
+class CreateBudgetGroup < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_groups do |t|
       t.references :budget

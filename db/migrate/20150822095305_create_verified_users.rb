@@ -1,4 +1,4 @@
-class CreateVerifiedUsers < ActiveRecord::Migration
+class CreateVerifiedUsers < ActiveRecord::Migration[4.2]
   def change
     unless ActiveRecord::Base.connection.data_source_exists?("verified_users")
       create_table :verified_users do |t|

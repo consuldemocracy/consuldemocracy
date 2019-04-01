@@ -1,4 +1,4 @@
-class DropAddressesTable < ActiveRecord::Migration
+class DropAddressesTable < ActiveRecord::Migration[4.2]
   def self.up
     drop_table :addresses
   end
