@@ -361,8 +361,10 @@ da:
         button: Søg
         placeholder: Søg borgerforslag...
         title: Søg
+      select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
       title: Borgerforslag
+      top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         title: Borgerforslag
         help: Hjælp til borgerforslag
