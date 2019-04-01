@@ -17,6 +17,7 @@ da:
           zero: Ingen kommentarer
           one: 1 kommentar
           other: "%{count} kommentarer"
+      author: Oprettet af
       back: Tilbage til %{community} %{proposal}
     topic:
       create: Opret emne
