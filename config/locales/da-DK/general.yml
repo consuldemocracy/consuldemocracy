@@ -12,10 +12,14 @@ da:
       personal: Personlige oplysninger
       phone_number_label: Telefonnummer
       public_activity_label: Lad min aktivitetsliste være offentlig
+      public_interests_label: Andre brugere kan se de tags, jeg følger
+      public_interests_my_title_list: Tags jeg følger
+      public_interests_user_title_list: Tags denne bruger følger
       save_changes_submit: Gem ændringer
       subscription_to_website_newsletter_label: Modtag relevant information via e-mail
       email_on_direct_message_label: Modtag e-mails vedrørende direkte beskeder
       email_digest_label: Modtag et resumé af forslagsnotifikationer
+      official_position_badge_label: Vis embedsmandens position
       recommendations: Anbefalinger
       show_debates_recommendations: Se anbefalede debatindlæg
       show_proposals_recommendations: Se anbefalede borgerforslag
