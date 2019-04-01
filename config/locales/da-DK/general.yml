@@ -415,7 +415,7 @@ da:
       successful: "Forslaget har opnået den nødvendige støtte."
     show:
       author_deleted: Bruger slettet
-      code: "Forslagets kode:"
+      code: "Forslagskode:"
       comments:
         zero: Ingen kommentarer
         one: 1 kommentar
@@ -574,28 +574,41 @@ da:
         found:
           one: "Der findes allerede en debat vedrørende '%{query}'. Du kan deltage i den i stedet for at oprette et nyt debatindlæg."
           other: "Der er allerede flere debatindlæg benævnt som '%{query}'. Du kan deltage i dem i stedet for at oprette en ny."
+        message: "Du ser %{limit} ud af %{count} debatindlæg, som indeholder '%{query}'"
         see_all: "Se alle"
       budget_investment:
         found:
           one: "Der findes allerede et investeringsforslag vedrørende '%{query}'. Du kan deltage i det i stedet for at oprette et nyt."
           other: "Der findes allerede flere investeringsforslag vedrørende '%{query}'. Du kan deltage i dem i stedet for at oprette et nyt."
+        message: "Du ser %{limit} ud af %{count} investeringsforslag, som indeholder '%{query}'"
         see_all: "Se alle"
       proposal:
         found:
           one: "Der findes allerede et forslag vedrørende '%{query}'. Du kan deltage i det i stedet for at oprette et nyt"
           other: "Der findes allerede flere forslag vedrørende '%{query}'. Du kan deltage i dem i stedet for at oprette et nyt"
+        message: "Du ser %{limit} ud af %{count} borgerforslag, som indeholder '%{query}'"
         see_all: "Se alle"
     tags_cloud:
+      tags: Populær
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
     target_blank_html: " (linket åbner i et nyt vindue)"
     you_are_in: "Du er inde"
+    unflag: Fjern flag
     unfollow_entity: "Følg ikke længere %{entity}"
     outline:
       budget: Deltagerbudget
+      searcher: Søgemaskine
     go_to_page: "Gå til siden "
     share: Del
+    orbit:
+      previous_slide: Forrige side
+      next_slide: Næste side
+    documentation: Yderligere dokumentation
+    view_mode:
+      title: Visning
+      list: Liste
     recommended_index:
       title: Anbefalinger
       see_more: Se flere anbefalinger
@@ -613,17 +626,24 @@ da:
       association_name: "Navn på forening"
       description: Beskrivelse
       external_url: Link til yderligere dokumentation
+      geozone: Område
       submit_buttons:
         create: Opret
         new: Opret
+      title: Titel på udgiftsforslag
     index:
       title: Deltagerbudget
       unfeasible: Ikke mulige investeringsprojekter
+      by_geozone: "Investeringsprojekter tilknyttet et område: %{geozone}"
       search_form:
         button: Søg
         placeholder: Investeringsprojekter...
         title: Søg
+      search_results:
+        one: " indeholder '%{search_term}'"
+        other: " indeholder '%{search_term}'"
       sidebar:
+        geozones: Område
         feasibility: Kan gennemføres
         unfeasible: Kan ikke gennemføres
       start_spending_proposal: Opret et investeringsprojekt
@@ -633,8 +653,10 @@ da:
       recommendation_three: Forsøg at beskrive dit udgiftsforslag med så mange detaljer som muligt, så den professionelle vurderingsgruppe forstår, hvad du mener.
       recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling, vil blive slettet.
       recommendations_title: Hvordan opretter jeg et udgiftsforslag?
+      start_new: Opret udgiftsforslag
     show:
       author_deleted: Bruger slettet
+      code: "Forslagskode:"
       share: Del
     wrong_price_format: Kun hele tal
     spending_proposal:
@@ -769,6 +791,7 @@ da:
       i_dont_have_an_account: Jeg er ikke tilmeldt
       i_have_an_account: Jeg er allerede tilmeldt
       question: Har du allerede en konto i %{org_name}?
+      title: Kontoverificering
     welcome:
       go_to_index: Se borgerforslag og debatindlæg
       title: Deltag
@@ -776,9 +799,13 @@ da:
       user_permission_info: Med din konto kan du...
       user_permission_proposal: Oprette nye borgerforslag
       user_permission_support_proposal: Støtte op om borgerforslag*
+      user_permission_verify: "Du skal verificere din konto for at kunne foretage handlingerne."
+      user_permission_verify_info: "* Kun for byens beboere."
       user_permission_verify_my_account: Verificer min konto
+      user_permission_votes: Deltag i den endelige afstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
+    timestamp_error_message: "Åh, det gik lidt for hurtigt! Prøv igen."
   related_content:
     title: "Relateret indhold"
     add: "Tilføj relateret indhold"
@@ -788,6 +815,8 @@ da:
     submit: "Tilføj"
     error: "Linket er ikke gyldigt. Husk at begynde med %{url}."
     error_itself: "Linket er ikke gyldigt. Du kan ikke relatere indholdet til sig selv."
+    success: "Du har tilføjet nyt relateret indhold"
+    is_related: "Er det relateret indhold?"
     score_positive: "Ja"
     score_negative: "Nej"
     content_title:
