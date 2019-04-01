@@ -90,4 +90,4 @@ sudo apt install chromium-chromedriver
 sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/local/bin/
 ```
 
-Now you're ready to go [get CONSUL installed](../local_installation.html)!
+Now you're ready to go [get CONSUL installed](local_installation.md)!

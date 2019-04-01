@@ -143,4 +143,4 @@ chromedriver --version
 
 You should receive an output with the latest version of ChromeDriver. If that's the case, you're good to go!
 
-> Now you're ready to go get Consul [installed](../local_installation.html)!!
+> Now you're ready to go get Consul [installed](local_installation.md)!!

@@ -1,4 +1,4 @@
-# Servidores de prueba y producción
+# Servidores de producción y pruebas
 
 ## Requisitos de sistema mínimos recomendados:
 
@@ -17,6 +17,3 @@
   - Database: Postgres
 
 Si tu ciudad tiene una población superior a 1.000.000, considera añadir un balanceador de carga y usar 2-3 servidores de producción, además de un servidor de base de datos dedicado.
-
-## Instrucciones de instalación
-Se encuentran en el [repositorio del instalador](https://github.com/consul/installer)

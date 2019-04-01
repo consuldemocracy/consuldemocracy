@@ -1,6 +1,6 @@
 # Instalación local
 
-Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisitos](prerequisites) correctamente instalados.
+Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisitos](prerequisites.md) correctamente instalados.
 
 1. Primero, clona el [repositorio de Consul en Github](https://github.com/consul/consul/):
 
