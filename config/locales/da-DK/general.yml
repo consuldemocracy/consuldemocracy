@@ -115,7 +115,7 @@ da:
         disable: "Anbefalede debatindlæg vil ikke længere blive vist, hvis du deaktiverer dem. Du kan genaktivere dem under \"Min konto\""
         actions:
           success: "Modtagelse af anbefalede debatindlæg er nu deaktiveret"
-          error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger for debatter"
+          error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger af debatindlæg"
       search_form:
         button: Søg
         placeholder: Søg debatindlæg...
@@ -348,6 +348,8 @@ da:
         actions:
           success: "Modtagelse af anbefalede forslag er nu deaktiveret"
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger af forslag"
+      retired_proposals: Tilbagetrukket forslag
+      retired_proposals_link: "Forslag trukket tilbage af brugere, der oprettede det"
       retired_links:
         all: Alle
         duplicated: Kopieret
@@ -371,6 +373,7 @@ da:
         submit_button: Opret borgerforslag
       more_info: Hvordan fungerer borgerforslag?
       recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
+      recommendation_three: Dette sted tilhører også dig.
       recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling eller søger at sabotere debatforummet vil blive slettet. Alt andet er tilladt.
       recommendations_title: Anbefalinger, hvis du vil oprette et borgerforslag
       start_new: Opret nyt borgerforslag
@@ -590,6 +593,10 @@ da:
       start_spending_proposal: Opret et investeringsprojekt
     new:
       more_info: Hvad fungerer deltagerbudgetter?
+      recommendation_one: Forslaget skal henvise til faktiske omkostninger.
+      recommendation_three: Forsøg at beskrive dit udgiftsforslag med så mange detaljer som muligt, så den professionelle vurderingsgruppe forstår, hvad du mener.
+      recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling, vil blive slettet.
+      recommendations_title: Hvordan opretter jeg et udgiftsforslag?
     show:
       author_deleted: Bruger slettet
       share: Del
