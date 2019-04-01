@@ -406,8 +406,11 @@ da:
         other: "%{count} stemmer"
       supports_necessary: "Skal have %{number} brugere, der bakker forslaget op"
       total_percent: 100%
+      archived: "Forslaget er blevet arkiveret og kan derfor ikke længere modtage støtte."
+      successful: "Forslaget har opnået den nødvendige støtte."
     show:
       author_deleted: Bruger slettet
+      code: "Forslagets kode:"
       comments:
         zero: Ingen kommentarer
         one: 1 kommentar
@@ -418,7 +421,9 @@ da:
       login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       notifications_tab: Notifikationer
       milestones_tab: Proces
+      retired_warning: "Brugeren, der har oprettet forslaget, mener ikke længere, at det bør understøttes."
       retired_warning_link_to_explanation: Læs forklaringen før du stemmer.
+      retired: Forslag trukket tilbage af dets opretter
       share: Del
       send_notification: Send meddelelse
       no_notifications: "Dette forslag har ingen notifikationer."
@@ -498,6 +503,7 @@ da:
       body_label: "Besked"
       submit_button: "Send besked"
       info_about_receivers_html: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlige i %{proposal_page}. <br> Beskeder bliver ikke sendt med det samme. Brugere vil periodisk modtage en e-mail med alle forslagets notifikationer."
+      proposal_page: "forslagets side"
     show:
       back: "Gå tilbage til min aktivitet"
   shared:
@@ -550,10 +556,16 @@ da:
     show: Vis
     suggest:
       debate:
+        found:
+          one: "Der findes allerede en debat vedrørende '%{query}'. Du kan deltage i den i stedet for at oprette et nyt debatindlæg."
+          other: "Der er allerede flere debatindlæg benævnt som '%{query}'. Du kan deltage i dem i stedet for at oprette en ny."
         see_all: "Se alle"
       budget_investment:
         see_all: "Se alle"
       proposal:
+        found:
+          one: "Der findes allerede et forslag vedrørende '%{query}'. Du kan deltage i det i stedet for at oprette et nyt"
+          other: "Der findes allerede flere forslag vedrørende '%{query}'. Du kan deltage i dem i stedet for at oprette et nyt"
         see_all: "Se alle"
     tags_cloud:
       districts: "Distrikter"
