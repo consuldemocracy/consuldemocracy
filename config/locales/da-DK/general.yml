@@ -181,6 +181,7 @@ da:
     spending_proposal: Udgiftsforslag
     budget/investment: Investering
     budget/group: Budget gruppe
+    budget/heading: Budget Rubrik
     poll/shift: Skift
     poll/question/answer: Svar
     user: Konto
@@ -295,6 +296,7 @@ da:
       show_link: Se forslag
     retire_form:
       title: Træk forslaget tilbage
+      warning: "Hvis du trækker dit forslag tilbage, kan andre brugere fortsat støtte op om det. Forslaget fjernes dog fra den primære liste, og andre brugere vil blive informeret om, at du ikke længere mener, at forslaget skal understøttes"
       retired_reason_label: Begrundelse for at trække forslaget tilbage
       retired_reason_blank: Vælg en mulighed
       retired_explanation_label: Forklaring
@@ -307,6 +309,8 @@ da:
       done: Færdig
       other: Andre
     form:
+      geozone: Område
+      proposal_external_url: Link til yderligere dokumentation
       proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
       proposal_summary_note: "(max 200 anslag)"
       proposal_text: Tekst
