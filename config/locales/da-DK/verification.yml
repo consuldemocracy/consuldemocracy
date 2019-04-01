@@ -32,8 +32,14 @@ da:
       already_verified: Din konto er allerede verificeret
       email_already_sent: Vi har allerede sendt dig en e-mail med et bekræftelseslink. Hvis du ikke kan finde e-mailen, kan du anmode om en ny her (husk at tjekke dit spamfilter)
     residence:
+      alert:
+        unconfirmed_residency: Du har endnu ikke bekræftet din bopæl
+      create:
+        flash:
+          success: Bopæl verificeret
       new:
         date_of_birth: Fødselsdato
+        document_number: Dokumentnummer
         document_number_help_title: Hjælp
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
         document_type:
