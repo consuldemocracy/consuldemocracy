@@ -311,6 +311,7 @@ da:
     form:
       geozone: Område
       proposal_external_url: Link til yderligere dokumentation
+      proposal_question: Spørgsmål
       proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
       proposal_summary_note: "(max 200 anslag)"
       proposal_text: Tekst
