@@ -40,6 +40,7 @@ da:
       link: CONSUL
       in_census_has_following_permissions: "Med følgende tilladelse kan denne bruger deltage på hjemmesiden:"
       not_in_census: Persondokumentet er ikke registreret.
+      not_in_census_info: "Borgere, der ikke er bosiddende i byen, kan stadig deltage på følgende måde:"
       please_check_account_data: Vær venlig at tjekke om kontooplysningerne ovenfor er angivet korrekt.
       title: Brugeradministration
       under_age: "Du er ikke gammel nok til at deltage."
@@ -49,6 +50,7 @@ da:
     email_verifications:
       already_verified: Brugerkontoen er allerede verificeret.
       choose_options: "Vær venlig at vælge en af de følgende valgmuligheder:"
+      document_found_in_census: Identitetsdokumentet er registreret, men er ikke knyttet til en brugerkonto.
       document_mismatch: "Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}"
       email_placeholder: Skriv den e-mail denne person anvendte til at oprette sin konto med
       email_sent_instructions: For at kunne færdiggøre verificeringen af brugeren, er det nødvendigt, at vedkommende klikker på det link, vi har sendt til den angivede e-mail ovenfor. Dette for at sikre, at mailen faktisk tilhører vedkommende.
