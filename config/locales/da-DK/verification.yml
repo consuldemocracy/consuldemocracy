@@ -17,12 +17,19 @@ da:
     letter:
       alert:
         unconfirmed_code: Du har endnu ikke indtastet bekræftelseskoden
+      create:
+        flash:
+          success_html: Tak fordi du anmodede om din <b> sikkerhedskode (kun påkrævet ved endelige afstemninger)</b>. Om få dage vil koden blive sendt til den angivede adresse. Husk du også kan afhente adgangskoden hos ethvert borgerservicecenter, hvis du foretrækker det i stedet for.
       edit:
         see_all: Se forslag
+        title: Brev anmodet
       errors:
         incorrect_code: Bekræftelseskoden er forkert
       new:
+        explanation: "Ved deltagelse i den endelige afstemning, kan du:"
         go_to_index: Se forslag
+        office: Verificer i ethvert borgerservicecenter
+        send_letter: Send mig koden via brev
         title: Tillykke!
         user_permission_info: Som bruger kan du...
       update:
@@ -44,13 +51,20 @@ da:
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
         document_type:
           passport: Pas
+          spanish_id: DNI
         document_type_label: Dokumenttype
         error_not_allowed_age: Du er ikke gammel nok til at deltage
         error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
+        form_errors: forhindrede verificeringen af din bopæl
         postal_code: Postnummer
         postal_code_note: For at verificere din konto skal du være registreret
         terms: adgangsvilkår og betingelser
+        title: Verificer bopæl
+        verify_residence: Verificer bopæl
     sms:
+      create:
+        flash:
+          success: Angiv den bekræftelseskode, der er blevet sendt til dig som tekstbesked
       edit:
         confirmation_code: Skriv den kode du modtog på SMS
         resend_sms_link: Klik her for at sende igen
@@ -75,6 +89,7 @@ da:
     step_2: Bekræftelseskode
     step_3: Endelig verifikation
     user_permission_debates: Deltag i debat
+    user_permission_info: Verificer dine oplysninger og du vil have mulighed for at...
     user_permission_proposal: Opret nye forslag
     user_permission_support_proposal: Støt forslag*
     user_permission_votes: Deltag i den endelige afstemning*
@@ -83,6 +98,7 @@ da:
         submit_button: Send kode
       show:
         email_title: E-mails
+        explanation: Vi har i øjeblikket registreret følgende oplysninger; Vælg hvordan du vil modtage din bekræftelseskode.
         phone_title: Telefonnumre
         title: Tilgængelige oplysninger
         use_another_phone: Brug anden telefon
