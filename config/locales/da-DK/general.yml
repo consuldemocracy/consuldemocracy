@@ -366,10 +366,12 @@ da:
       title: Borgerforslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
+        icon_alt: Forslagsikon
         title: Borgerforslag
         help: Hjælp til borgerforslag
       section_footer:
         title: Hjælp til borgerforslag
+        description: Borgerforslag muliggør, at byens borgere og foreninger kan få direkte indflydelse på, hvordan deres by skal være. Det sker ved, at forslagene opnår støtte fra andre brugere og dermed videregår til en offentlig afstemning.
     new:
       form:
         submit_button: Opret borgerforslag
@@ -379,6 +381,8 @@ da:
       recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling eller søger at sabotere debatforummet vil blive slettet. Alt andet er tilladt.
       recommendations_title: Anbefalinger, hvis du vil oprette et borgerforslag
       start_new: Opret nyt borgerforslag
+    notice:
+      retired: Forslaget er trukket tilbage
     proposal:
       created: "Du oprettede et forslag!"
       share:
