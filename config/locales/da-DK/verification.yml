@@ -40,27 +40,31 @@ da:
       email_already_sent: Vi har allerede sendt dig en e-mail med et bekræftelseslink. Hvis du ikke kan finde e-mailen, kan du anmode om en ny her (husk at tjekke dit spamfilter)
     residence:
       alert:
-        unconfirmed_residency: Du har endnu ikke bekræftet din bopæl
+        unconfirmed_residency: Du har endnu ikke bekræftet din adresse
       create:
         flash:
-          success: Bopæl verificeret
+          success: Adresse verificeret
       new:
+        accept_terms_text: Jeg accepterer %{terms_url} for adresseregistret
+        accept_terms_text_title: Jeg accepterer vilkår og betingelser for adgangen til adresseregistret
         date_of_birth: Fødselsdato
         document_number: Dokumentnummer
         document_number_help_title: Hjælp
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
         document_type:
           passport: Pas
+          residence_card: Øvrig identitetsdokument
           spanish_id: DNI
         document_type_label: Dokumenttype
         error_not_allowed_age: Du er ikke gammel nok til at deltage
         error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
-        form_errors: forhindrede verificeringen af din bopæl
+        error_verifying_census: Din adresse stemmer ikke overens med adresseregistret. Vær venlig at kontrollere dine adresseoplysninger ved at ringe til Aarhus Kommune eller besøge et af vores borgerservicecentre.
+        form_errors: forhindrede verificeringen af din adresse
         postal_code: Postnummer
         postal_code_note: For at verificere din konto skal du være registreret
         terms: adgangsvilkår og betingelser
-        title: Verificer bopæl
-        verify_residence: Verificer bopæl
+        title: Bekræft din adresse
+        verify_residence: Bekræft din adresse
     sms:
       create:
         flash:
