@@ -100,5 +100,14 @@ class Budget
         PHASE_KINDS.index(kind) >= PHASE_KINDS.index(phase)
       end
 
+    class Translation < Globalize::ActiveRecord::Translation
+      before_validation :sanitize_description
+
+      private
+
+        def sanitize_description
+          self.description = WYSIWYGSanitizer.new.sanitize(description)
+        end
+    end
   end
 end
