@@ -48,6 +48,7 @@ da:
         executed: Udført
     polls:
       current_poll: "Igangværende meningsmåling"
+      current_poll_geozone_restricted: "Afstemningen er begrænset til et geografisk område"
       recounting_poll: "Omtæller afstemningen"
-      expired_poll_without_stats: "Udløbet Afstemning uden Statistikker & Resultater"
-      expired_poll_with_stats: "Udløbet Afstemning med Statistikker & Resultater"
+      expired_poll_without_stats: "Afsluttet afstemning (uden statistik og resultat)"
+      expired_poll_with_stats: "Afsluttet afstemning (med statistik og resultat)"
