@@ -40,6 +40,7 @@ da:
     verify_account: bekræft din konto
     comment:
       admin: Administrator
+      author: Oprettet af
       deleted: Kommentaren er blevet slettet
       moderator: Moderator
       responses:
@@ -153,6 +154,7 @@ da:
       flag: Denne debat er blevet markeret som upassende af flere brugere.
       login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       share: Del
+      author: Oprettet af
     update:
       form:
         submit_button: Gem ændringer
@@ -172,12 +174,14 @@ da:
     policy: Privatpolitik
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
+    spending_proposal: Udgiftsforslag
     budget/investment: Investering
     budget/group: Budget gruppe
     poll/shift: Skift
     poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
+    signature_sheet: Signaturark
     document: Dokument
     topic: Emne
     image: Billede
@@ -193,12 +197,14 @@ da:
     footer:
       accessibility: Tilgængelighed
       conditions: Brugervilkår og betingelser
+      consul: Consul programmet
       consul_url: https://github.com/consul/consul
       contact_us: For teknisk assistance besøg
       copyright: CONSUL, %{year}
       description: Denne portal anvender %{consul}, som er %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Vær med til at forme den by du gerne vil bo i.
       participation_title: Deltagelse
       privacy: Persondatapolitik
     header:
@@ -211,13 +217,16 @@ da:
       management: Management
       moderation: Moderation
       valuation: Vurdering
+      officing: Ansvarlige medarbejdere for afstemning
       help: Hjælp
       my_account_link: Min konto
       my_activity_link: Min aktivitet
       open: åben
+      open_gov: Open government
       proposals: Forslag
       poll_questions: Afstemning
       budgets: Deltagerbudget
+      spending_proposals: Udgiftsforslag
       notification_item:
         new_notifications:
           one: Du har en ny notifikation
@@ -250,6 +259,7 @@ da:
   map:
     title: "Distrikter"
     proposal_for_district: "Opret et forslag til dit distrikt"
+    select_district: Område
     start_proposal: Opret et borgerforslag
   omniauth:
     facebook:
