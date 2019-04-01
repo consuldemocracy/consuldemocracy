@@ -112,7 +112,7 @@ da:
       recommendations:
         without_results: Der er ingen debatindlæg, der relatere sig til dit interesseområde
         without_interests: Følg forslagene så vi kan give dig anbefalinger
-        disable: "Anbefalede debatindlæg vil forsvinde, hvis du afviser dem. Du kan aktivere dem igen under \"Min konto\""
+        disable: "Anbefalede debatindlæg vil ikke længere blive vist, hvis du deaktiverer dem. Du kan genaktivere dem under \"Min konto\""
         actions:
           success: "Modtagelse af anbefalede debatindlæg er nu deaktiveret"
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger for debatter"
@@ -312,7 +312,10 @@ da:
       geozone: Område
       proposal_external_url: Link til yderligere dokumentation
       proposal_question: Spørgsmål
+      proposal_question_example_html: "Skal sammenfattes til ét spørgsmål, hvortil der kun kan svares \"Ja\" eller \"Nej\""
       proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
+      proposal_responsible_name_note: "(individuelt eller som repræsentant for en gruppe; vises ikke offentligt)"
+      proposal_summary: Resumé
       proposal_summary_note: "(max 200 anslag)"
       proposal_text: Tekst
       proposal_title: Forslagets titel
@@ -327,7 +330,11 @@ da:
       map_remove_marker: "Flyt markøren"
       map_skip_checkbox: "Dette forslag omhandler ikke en specifik lokation, eller også kender jeg ikke til den."
     index:
+      filter_topic:
+        one: " med emnet '%{topic}'"
+        other: " med emnerne '%{topic}'"
       orders:
+        confidence_score: mest populære
         created_at: nyeste
         hot_score: mest aktive
         most_commented: flest kommentarer
@@ -336,6 +343,11 @@ da:
         recommendations: anbefalinger
       recommendations:
         without_results: Der er ingen forslag, der relaterer sig til dit interesseområde
+        without_interests: Følg forslaget så vi kan give dig anbefalinger
+        disable: "Anbefalede forslag vil ikke længere blive vist, hvis du deaktiverer dem. Du kan genaktivere dem under \"Min konto\""
+        actions:
+          success: "Modtagelse af anbefalede forslag er nu deaktiveret"
+          error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger af forslag"
       retired_links:
         all: Alle
         duplicated: Kopieret
