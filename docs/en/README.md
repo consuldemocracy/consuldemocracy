@@ -1,4 +1,4 @@
-![Logo of CONSUL](../consul_logo.png)
+![Logo of CONSUL](../img/consul_logo.png)
 
 # CONSUL
 
@@ -71,7 +71,7 @@ You can find this project documentation at https://github.com/consul/docs
 
 ## License
 
-Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
+Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](open_source/license.md))
 
 ## Contributions
 
