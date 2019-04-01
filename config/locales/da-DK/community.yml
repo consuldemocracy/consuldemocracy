@@ -2,7 +2,17 @@ da:
   community:
     sidebar:
       title: Fællesskab
+      description:
+        proposal: Deltag i brugerfællesskabet omkring dette forslag.
+        investment: Deltag i brugerfællesskabet omkring denne investering.
+      button_to_access: Deltag i fællesskabet
     show:
+      title:
+        proposal: Fællesskabet omkring forslaget
+        investment: Fællesskabet omkring budgetinvesteringen
+      description:
+        proposal: Deltag i fællesskabet omkring dette forslag. Et aktivt fællesskab kan bidrage til at forbedre forslagets indhold og øge dets udbredelse. Det skaber mulighed for, at flere brugere kan støtte op om forslaget.
+        investment: Deltag i fællesskabet omkring denne budgetinvestering. Et aktivt fællesskab kan bidrage til at forbedre budgetinvesteringens indhold og øge dens udbredelse. Det skaber mulighed for, at flere brugere kan støtte op om investeringsforslaget.
       create_first_community_topic:
         sub_first_theme: "For at oprette et tema skal du %{sign_in} eller %{sign_up}."
         sign_in: "log ind"
