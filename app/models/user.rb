@@ -217,8 +217,8 @@ class User < ActiveRecord::Base
       reset_password_token: nil,
       email_verification_token: nil,
       confirmed_phone: nil,
-      unconfirmed_phone: nil,
-      document_number: (self.document_number || 'nodn') + Time.now.strftime("%Y%m%d%H%M%S")
+      unconfirmed_phone: nil#,
+      #document_number: (self.document_number || 'nodn') + Time.now.strftime("%Y%m%d%H%M%S")
     )
     identities.destroy_all
   end
