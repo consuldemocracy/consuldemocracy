@@ -1,5 +1,7 @@
 da:
   community:
+    sidebar:
+      title: Fællesskab
     show:
       create_first_community_topic:
         sub_first_theme: "For at oprette et tema skal du %{sign_in} eller %{sign_up}."
