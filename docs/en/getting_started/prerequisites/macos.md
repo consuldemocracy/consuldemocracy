@@ -106,4 +106,4 @@ brew install chromedriver
 brew install imagemagick
 ```
 
-> Now you're ready to go get Consul [installed](../installation.html)!!
+> Now you're ready to go get Consul [installed](../local_installation.html)!!
