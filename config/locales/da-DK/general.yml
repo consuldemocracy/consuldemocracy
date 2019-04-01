@@ -361,9 +361,14 @@ da:
         button: Søg
         placeholder: Søg borgerforslag...
         title: Søg
+      search_results_html:
+        one: " som indeholder <strong>'%{search_term}'</strong>"
+        other: " som indeholder <strong>'%{search_term}'</strong>"
+      select_order: Sorter efter
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
       title: Borgerforslag
+      top: Ugens mest populære forslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         icon_alt: Forslagsikon
@@ -428,6 +433,7 @@ da:
       send_notification: Send meddelelse
       no_notifications: "Dette forslag har ingen notifikationer."
       embed_video_title: "Video på %{proposal}"
+      title_external_url: "Yderligere dokumentation"
       title_video_url: "Ekstern video"
       author: Oprettet af
     update:
@@ -449,10 +455,13 @@ da:
       participate_button_expired: "Afstemningen slut"
       no_geozone_restricted: "Hele byen"
       geozone_restricted: "Distrikter"
+      geozone_info: "Åben for beboere fra: "
       already_answer: "Du har allerede deltaget i afstemningen"
       not_logged_in: "Du skal være logget ind eller oprette en bruger for at kunne deltage"
       unverified: "Du skal bekræfte din konto for at kunne deltage"
+      cant_answer: "Afstemningen er ikke tilgængelig i dit geografiske område"
       section_header:
+        icon_alt: Afstemningsikon
         title: Afstemning
         help: Hjælp til afstemning
       section_footer:
@@ -561,6 +570,9 @@ da:
           other: "Der er allerede flere debatindlæg benævnt som '%{query}'. Du kan deltage i dem i stedet for at oprette en ny."
         see_all: "Se alle"
       budget_investment:
+        found:
+          one: "Der findes allerede et investeringsforslag vedrørende '%{query}'. Du kan deltage i det i stedet for at oprette et nyt."
+          other: "Der findes allerede flere investeringsforslag vedrørende '%{query}'. Du kan deltage i dem i stedet for at oprette et nyt."
         see_all: "Se alle"
       proposal:
         found:
