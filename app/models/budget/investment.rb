@@ -118,6 +118,8 @@ class Budget
 
       results = results.where("cached_votes_up + physical_votes >= ?",
                               params[:min_total_supports])                    if params[:min_total_supports].present?
+      results = results.where("cached_votes_up + physical_votes <= ?",
+                              params[:max_total_supports])                 if params[:max_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?

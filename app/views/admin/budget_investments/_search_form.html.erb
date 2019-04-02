@@ -17,8 +17,15 @@
             <%= t("admin.budget_investments.index.filters.#{option}") %>
           </div>
         <% end %>
-        <div class="filter">
-          <%= text_field_tag :min_total_supports, params["min_total_supports"], placeholder: t("admin.budget_investments.index.filters.min_total_supports") %>
+        <div>
+          <div class="filter">
+            <%= label_tag :min_total_supports, t("admin.budget_investments.index.filters.min_total_supports") %>
+            <%= text_field_tag :min_total_supports, params["min_total_supports"] %>
+          </div>
+          <div class="filter">
+            <%= label_tag :max_total_supports, t("admin.budget_investments.index.filters.max_total_supports") %>
+            <%= text_field_tag :max_total_supports, params["max_total_supports"] %>
+          </div>
         </div>
       </div>
     </div>

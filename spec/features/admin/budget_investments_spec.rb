@@ -439,6 +439,42 @@ feature "Admin budget investments" do
       expect(page).not_to have_link("Road 100 supports")
     end
 
+    scenario "Filtering by maximum number of votes", :js do
+      group_1 = create(:budget_group, budget: budget)
+      group_2 = create(:budget_group, budget: budget)
+      parks   = create(:budget_heading, group: group_1)
+      roads   = create(:budget_heading, group: group_2)
+      streets = create(:budget_heading, group: group_2)
+
+      create(:budget_investment, heading: parks, cached_votes_up: 40, title: "Park 40 supports")
+      create(:budget_investment, heading: parks, cached_votes_up: 99, title: "Park 99 supports")
+      create(:budget_investment, heading: roads, cached_votes_up: 100, title: "Road 100 supports")
+      create(:budget_investment, heading: roads, cached_votes_up: 199, title: "Road 199 supports")
+      create(:budget_investment, heading: streets, cached_votes_up: 200, title: "St. 200 supports")
+      create(:budget_investment, heading: streets, cached_votes_up: 300, title: "St. 300 supports")
+
+      visit admin_budget_budget_investments_path(budget)
+
+      expect(page).to have_link("Park 40 supports")
+      expect(page).to have_link("Park 99 supports")
+      expect(page).to have_link("Road 100 supports")
+      expect(page).to have_link("Road 199 supports")
+      expect(page).to have_link("St. 200 supports")
+      expect(page).to have_link("St. 300 supports")
+
+      click_link "Advanced filters"
+      fill_in "max_total_supports", with: 180
+      click_button "Filter"
+
+      expect(page).to have_content("There are 3 investments")
+      expect(page).not_to have_link("Road 199 supports")
+      expect(page).not_to have_link("St. 200 supports")
+      expect(page).not_to have_link("St. 300 supports")
+      expect(page).to have_link("Park 40 supports")
+      expect(page).to have_link("Park 99 supports")
+      expect(page).to have_link("Road 100 supports")
+    end
+
     scenario "Combination of checkbox with text search", :js do
       user = create(:user, username: "Admin 1")
       administrator = create(:administrator, user: user)
