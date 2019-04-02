@@ -404,6 +404,14 @@ class Budget
       sub_area.area
     end
 
+    # def self.user_investment_ids(investment_ids, user)
+    #   investment_ids.select do |investment_id|
+    #     ActsAsVotable::Vote.all.where(votable_type: 'Budget::Investment',
+    #                                   votable_id: investment_id,
+    #                                   voter_id: user.id).empty?
+    #   end
+    # end
+
     private
 
     def self.regenerate_cached_ballots_up
