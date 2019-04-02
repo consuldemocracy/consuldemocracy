@@ -34,7 +34,7 @@ Puedes acceder a la página principal del proyecto en [http://consulproject.org]
 
 ## Configuración para desarrollo y tests
 
-**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/docs/tree/master/es/getting_started/prerequisites)
+**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consulproject.org)
 
 Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
 
