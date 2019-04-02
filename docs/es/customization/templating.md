@@ -1,1 +1,0 @@
-# Interfaz y diseño

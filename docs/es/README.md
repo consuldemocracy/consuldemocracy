@@ -1,4 +1,4 @@
-![Logotipo de CONSUL](../consul_logo.png)
+![Logotipo de CONSUL](../img/consul_logo.png)
 
 # CONSUL
 
@@ -72,7 +72,7 @@ La documentación de este proyecto se encuentra en https://github.com/consul/doc
 
 ## Licencia
 
-El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
+El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver [LICENSE-AGPLv3.txt](open_source/license.md))
 
 ## Contribuciones
 

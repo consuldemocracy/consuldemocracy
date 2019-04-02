@@ -1,1 +1,0 @@
-# Linters y convenciones

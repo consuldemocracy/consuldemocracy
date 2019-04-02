@@ -151,4 +151,4 @@ También tienes la opción de solo instalar ChromeDriver desde AUR. Si usas `pac
 pacaur -S chromedriver
 ```
 
-> Ya estás listo para [instalar Consul](../local_installation.html)!!
+> Ya estás listo para [instalar Consul](local_installation.md)!!

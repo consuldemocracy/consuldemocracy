@@ -1,1 +1,0 @@
-# Linters and conventions

@@ -1,6 +1,6 @@
 # Local installation
 
-Before installing Consul and having it up and running make sure you all [prerequisites](prerequisites) installed.
+Before installing Consul and having it up and running make sure you all [prerequisites](prerequisites.md) installed.
 
 1. First, clone the [Consul Github repository](https://github.com/consul/consul/):
 
