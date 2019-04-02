@@ -275,6 +275,10 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+      geozone:
+        name: الإسم
+        external_code: "الرّمز الخارجي (اختياري)"
+        census_code: "رمز التعداد (اختياري)"
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "عنوان"
@@ -373,6 +377,9 @@ ar:
         name: الإ سم
         locale: الإعدادات المحلية
         body: الهيئة
+      banner:
+        background_color: لون الخلفية
+        font_color: لون الخط
       legislation/process:
         title: عنوان العملية
         summary: ملخص
