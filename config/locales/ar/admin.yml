@@ -1187,6 +1187,7 @@ ar:
         updated: تم تحديث القيمة
       index:
         update_setting: تحديث
+        participation_processes: "عمليات المشاركة"
         feature_flags: المميزات
         features:
           enabled: "تم تفعيل الميزة"
@@ -1303,6 +1304,8 @@ ar:
         delete: حذف
       geozone:
         name: الإ سم
+        external_code: الرّمز الخارجي
+        census_code: رمز التعداد
         coordinates: إحداثيات
       edit:
         form:
@@ -1337,7 +1340,9 @@ ar:
       show:
         stats_title: الإحصائيات
         summary:
+          comment_votes: التّعليق على الأصوات
           comments: تعليقات
+          debate_votes: مناقشة الأصوات
           debates: النقاشات
           proposals: إقتراحات
           budgets: الميزانيات المفتوحة
