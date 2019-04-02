@@ -679,6 +679,7 @@ ar:
       administrators: مدراء
       proposal_authors: كتّاب الاقتراحات
       investment_authors: مؤلفو الاستثمار في الميزانية الحالية
+      feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
       selected_investment_authors: مؤلفو الاستثمارات المحددة في الميزانية الحالية
       winner_investment_authors: مؤلفو الاستثمارات الفائزة في الميزانية الحالية
       not_supported_on_current_budget: المستخدميون الذين لم يدعمو استثمارات في الميزانية الحالية
@@ -983,6 +984,8 @@ ar:
         no_questions: "لا توجد أسئلة مخصصة لهذا الاستطلاع."
         questions_title: "قائمة الأسئلة"
         table_title: "عنوان"
+        edit_answers: تعديل الإجابات
+        see_proposal: "(انظر الاقتراح)"
       flash:
         question_added: "تمت إضافة السؤال إلى هذا الاستطلاع"
         error_on_question_added: "لا يمكن إضافة السؤال إلى هذا الاستطلاع"
@@ -1004,6 +1007,7 @@ ar:
         title: "تحرير سؤال"
       new:
         title: "إنشاء سؤال"
+        title_proposal: "إنشاء سؤال"
         poll_label: "استطلاع"
       answers:
         images:
@@ -1158,6 +1162,8 @@ ar:
         author: كاتب
         milestones: معالم
         no_proposals: لا توجد مقترحات.
+      show:
+        create_question: أضف هذا الاقتراح إلى استطلاع للتصويت
     hidden_proposals:
       index:
         filter: ترشيح
@@ -1365,6 +1371,7 @@ ar:
         all: استطلاعات
         web_participants: المشاركون عبر ويب
         total_participants: مجموع المشاركين
+        poll_questions: "أسئلة الاستطلاع: %{poll}"
         table:
           poll_name: استطلاع
           question_name: سؤال
@@ -1395,6 +1402,7 @@ ar:
     verifications:
       index:
         phone_not_given: الهاتف غير معطى
+        sms_code_not_confirmed: لم يؤكد رمز الرسائل القصيرة
         title: عملية التحقق غير مكتملة
     site_customization:
       content_blocks:
