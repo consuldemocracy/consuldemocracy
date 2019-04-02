@@ -35,7 +35,7 @@ You can access the main website of the project at [http://consulproject.org](htt
 
 ## Configuration for development and test environments
 
-**NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
+**NOTE**: For more detailed instructions check the [docs](https://docs.consulproject.org)
 
 Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
