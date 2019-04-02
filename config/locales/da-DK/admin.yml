@@ -108,6 +108,7 @@ da:
       winners:
         calculate: Beregn Vinder Investeringer
         calculated: Udregner vinderne, det kan tage et minut.
+        recalculate: Genberegn vinder investeringer
     budget_groups:
       name: "Navn"
       headings_name: "Områder"
