@@ -1424,6 +1424,9 @@ ar:
         content_block:
           body: الهيئة
           name: الإ سم
+          names:
+            top_links: أهم الروابط
+            footer: ذيل الصفحة
       images:
         index:
           title: صور مخصصة
@@ -1487,6 +1490,8 @@ ar:
     homepage:
       title: الصفحة الرئيسية
       description: تظهر الوحدات النشطة في الصفحة الرئيسية بنفس الترتيب كما هو موضح هنا.
+      header_title: رأس الصفحة
+      create_header: إنشاء رأس الصفحة
       cards_title: بطاقات
       create_card: إنشاء بطاقة
       no_cards: لا يوجد بطاقات.
@@ -1500,9 +1505,12 @@ ar:
         debates: النقاشات
         processes: عمليات
       new:
+        header_title: رأس صفحة جديد
+        submit_header: إنشاء رأس الصفحة
         card_title: بطاقة جديدة
         submit_card: إنشاء بطاقة
       edit:
+        header_title: تعديل رأس الصفحة
         submit_header: حفظ العنوان
         card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
