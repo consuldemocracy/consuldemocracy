@@ -141,14 +141,14 @@ feature "Admin budgets" do
       expect(page).to have_content("There are no budgets.")
     end
 
-    scenario "Try to destroy a budget with investments" do
+    scenario "Try to delete a budget with investments" do
       create(:budget_investment, heading: heading)
 
       visit admin_budgets_path
       click_link "Edit budget"
       click_link "Delete budget"
 
-      expect(page).to have_content("You cannot destroy a Budget that has associated investments")
+      expect(page).to have_content("You cannot delete a Budget that has associated investments")
       expect(page).to have_content("There is 1 budget")
     end
   end

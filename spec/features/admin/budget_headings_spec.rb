@@ -94,7 +94,7 @@ feature "Admin budget headings" do
       visit admin_budget_group_headings_path(budget, group)
       within("#budget_heading_#{heading.id}") { click_link "Delete" }
 
-      expect(page).to have_content "You cannot destroy a Heading that has associated investments"
+      expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_selector "#budget_heading_#{heading.id}"
     end
 
