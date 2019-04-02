@@ -297,9 +297,12 @@ da:
         title: Titel
         description: Beskrivelse
         link_text: Link
+        columns: Antal kolonner
       widget/card/translation:
+        label: Mærkat (valgfrit)
         title: Titel
         description: Beskrivelse
+        link_text: Link tekst
     errors:
       models:
         user:
