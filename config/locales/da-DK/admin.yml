@@ -81,7 +81,9 @@ da:
         table_name: Navn
         table_phase: Fase
         table_investments: Investeringer
+        table_edit_groups: Område grupper
         table_edit_budget: Rediger
+        edit_groups: Rediger område grupper
         edit_budget: Rediger budget
         no_budgets: "Der er ingen budgetter."
       create:
