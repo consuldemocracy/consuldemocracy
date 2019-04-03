@@ -221,6 +221,8 @@ da:
         tags: Tags
         user_tags: Bruger tags
         undefined: Udefineret
+        compatibility:
+          "true": Uforenelig
         selection:
           title: Udvælgelse
           "true": Valgt
