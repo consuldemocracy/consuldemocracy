@@ -51,7 +51,6 @@ cs:
         submit: Ověřit doklad
         error_verifying_census: "Tento doklad se nepodařilo ověřit pomocí datových registrů."
         form_errors: došlo k zabránění ověření tohoto dokladu
-        no_assignments: "Dnes nemáte žádnou službu na informačním stánku"
     voters:
       new:
         title: Průzkum
