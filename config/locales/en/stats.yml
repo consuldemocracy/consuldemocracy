@@ -13,6 +13,7 @@ en:
     age_range: "%{start} - %{finish} years old"
     total: "Total"
     geozone: "District"
+    no_demographic_data: "* There is no demographic data for %{total} participants."
     budgets:
       link: "Stats"
       page_title: "%{budget} - Participation stats"
@@ -29,7 +30,6 @@ en:
       participants_total: "Total Participants"
       percent_total_participants_html: "% <br>Total<br>Participants"
       percent_heading_census_html: "% <br>Heading<br>Census"
-      no_demographic_data: "* There is no demographic data for %{total} participants."
       participatory_disclaimer: "** The numbers of total participants refer to persons that created, supported or voted investment proposals."
       heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
     polls:

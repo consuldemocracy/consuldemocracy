@@ -102,6 +102,38 @@ describe Statisticable do
     end
   end
 
+  describe "#total_no_demographic_data" do
+    it "returns users with no defined gender" do
+      create(:user, gender: nil)
+
+      expect(stats.total_no_demographic_data).to be 1
+    end
+
+    it "returns users with no defined age" do
+      create(:user, gender: "female", date_of_birth: nil)
+
+      expect(stats.total_no_demographic_data).to be 1
+    end
+
+    it "returns users with no defined geozone" do
+      create(:user, gender: "female", geozone: nil)
+
+      expect(stats.total_no_demographic_data).to be 1
+    end
+
+    it "returns users with no defined gender, age nor geozone" do
+      create(:user, gender: nil, date_of_birth: nil, geozone: nil)
+
+      expect(stats.total_no_demographic_data).to be 1
+    end
+
+    it "doesn't return users with defined gender, age and geozone" do
+      create(:user, gender: "male", date_of_birth: 20.years.ago, geozone: create(:geozone))
+
+      expect(stats.total_no_demographic_data).to be 0
+    end
+  end
+
   describe "#stats_methods" do
     it "includes total participants" do
       expect(stats.stats_methods).to include(:total_participants)

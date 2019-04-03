@@ -13,6 +13,7 @@ es:
     age_range: "De %{start} a %{finish} años"
     total: "Total"
     geozone: "Distrito"
+    no_demographic_data: "* No se dispone de los datos demográficos de %{total} participantes."
     budgets:
       link: "Estadísticas"
       page_title: "%{budget} - Estadísticas de participación"
@@ -29,7 +30,6 @@ es:
       participants_total: Total de participantes
       percent_total_participants_html: "% <br>Total<br>Participantes"
       percent_heading_census_html: "% <br>Censo<br>Distrito"
-      no_demographic_data: "* No se dispone de los datos demográficos de %{total} participantes."
       participatory_disclaimer: "** Las cifras de total de participantes se refieren a personas que han creado, apoyado o votado propuestas."
       heading_disclaimer: "*** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado."
     polls:

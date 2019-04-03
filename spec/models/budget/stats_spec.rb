@@ -153,12 +153,6 @@ describe Budget::Stats do
       end
     end
 
-    describe "#total_unknown_gender_or_age" do
-      it "returns the number of total unknown participants' gender or age" do
-        expect(stats.total_unknown_gender_or_age).to be 1
-      end
-    end
-
     describe "#male_percentage" do
       it "returns the percentage of male participants" do
         expect(stats.male_percentage).to be 60.0

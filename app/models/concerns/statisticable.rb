@@ -41,8 +41,8 @@ module Statisticable
       participants.female.count
     end
 
-    def total_unknown_gender_or_age
-      participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
+    def total_no_demographic_data
+      participants.where("gender IS NULL OR date_of_birth IS NULL OR geozone_id IS NULL").count
     end
 
     def male_percentage
@@ -153,8 +153,7 @@ module Statisticable
     end
 
     def gender_methods
-      %i[total_male_participants total_female_participants total_unknown_gender_or_age
-         male_percentage female_percentage]
+      %i[total_male_participants total_female_participants male_percentage female_percentage]
     end
 
     def age_methods
@@ -162,7 +161,7 @@ module Statisticable
     end
 
     def geozone_methods
-      [:participants_by_geozone]
+      %i[participants_by_geozone total_no_demographic_data]
     end
 
     def stats_cache(*method_names)
