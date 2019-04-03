@@ -170,13 +170,20 @@ da:
       show_all_link: Vis alle
       price: Pris
       amount_available: Tilgængeligt budget
+      accepted: "Accepterede udgiftsforslag: "
+      discarded: "Kasserede udgiftsforslag: "
+      incompatibles: Uforeneligede
       investment_proyects: Liste over alle investeringsprojekter
       unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
       not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
     executions:
       link: "Milepæle"
       page_title: "%{budget} - Milepæle"
+      heading: "Milepæle i deltagerbudgettet"
+      heading_selection_title: "Efter distrikt"
+      no_winner_investments: "Ingen vinder investeringer i denne tilstand"
       filters:
+        label: "Projektets aktuelle tilstand"
         all: "Alle (%{count})"
     phases:
       errors:
