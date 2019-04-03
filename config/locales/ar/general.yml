@@ -156,6 +156,10 @@ ar:
       more_info: مزيد من المعلومات
       recommendation_four: استمتع بهذه المساحة والأصوات التي تملأها. إنها ملكك أيضًا.
       recommendation_one: لا تكتب عنوان المناقشة أو الجمل الكاملة بأحرف كبيرة فذلك يعتبر صراخا على شبكة الإنترنت ولا أحد يحب أن يُصرخ عليه.
+      recommendation_three: النقد الحاد مرحب به. هذا فضاء للتفكير. لكننا نوصيك بالتمسك بالأناقة والذكاء. العالم مكان أفضل بوجود هذه الفضائل.
+      recommendation_two: سيتم حذف أي نقاش أو تعليق يشير إلى اتخاذ إجراء غير قانوني ، وكذلك أولئك الذين يعتزمون تخريب أماكن النقاش. أي شيء آخر مسموح به.
+      recommendations_title: توصيات لإنشاء مناقشة
+      start_new: بدء مناقشة
     show:
       author_deleted: تم حذف المستخدم
       comments:
@@ -178,28 +182,42 @@ ar:
     messages:
       user_not_found: لم يتم العثور على المستخدم
   form:
+    accept_terms: أوافق على %{policy} و٪%{conditions}
+    accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
+    direct_message: رسالة خاصة
+    error: خطأ
+    errors: أخطاء
     not_saved_html: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
+    spending_proposal: مقترح الانفاق
     budget/investment: إستثمار
+    budget/group: مجموعة الميزانية
+    budget/heading: عنوان الميزانية
     poll/shift: المناوبة
     poll/question/answer: الإجابة
     user: الحساب
+    verification/sms: الهاتف
+    signature_sheet: ورقة التوقيع
     document: وثيقة
     topic: موضوع
     image: صورة
   geozones:
     none: جميع المدن
+    all: جميع النطاقات
   layouts:
     application:
+      chrome: Google Chrome
       firefox: فايرفوكس
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
+      consul: تطبيق CONSUL
+      consul_url: https://github.com/consul/consul
       participation_title: المشاركة
       privacy: سياسة الخصوصية
     header:
