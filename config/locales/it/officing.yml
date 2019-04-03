@@ -51,7 +51,6 @@ it:
         submit: Convalida documento
         error_verifying_census: "L’Anagrafe non ha potuto verificare questo documento."
         form_errors: non hanno consentito di verificare il documento
-        no_assignments: "Oggi non hai turni da scrutatore"
     voters:
       new:
         title: Votazioni
