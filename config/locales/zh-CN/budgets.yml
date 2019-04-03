@@ -176,8 +176,9 @@ zh-CN:
       heading_selection_title: "按区域"
       no_winner_investments: "这个州里没有胜出的投资"
       filters:
-        label: "项目的当前状态"
-        all: "所有(%{count})"
+        status:
+          label: "项目的当前状态"
+          all: "所有(%{count})"
     phases:
       errors:
         dates_range_invalid: "开始日期不能等于或晚于结束日期"

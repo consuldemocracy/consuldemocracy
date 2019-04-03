@@ -3,7 +3,6 @@ es:
     index:
       no_milestones: No hay hitos definidos
       progress: Progreso
-      milestone_tags: Etiquetas de Seguimiento
     show:
       publication_date: "Publicado el %{publication_date}"
       status_changed: El proyecto ha cambiado al estado

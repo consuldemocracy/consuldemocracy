@@ -6,7 +6,9 @@
 
 <% if milestoneable.milestone_tag_list.any? %>
   <div>
-    <b><%= t("admin.milestones.index.milestone_tags") %>:</b> <%= milestoneable.milestone_tag_list.sort.join(", ") %>
+    <strong>
+      <%= t("admin.milestones.index.milestone_tags") %>:
+    </strong> <%= milestoneable.milestone_tag_list.sort.join(", ") %>
   </div>
 <% end %>
 

@@ -1274,17 +1274,22 @@ describe Budget::Investment do
   describe "milestone_tags" do
     context "without milestone_tags" do
       let(:investment) {create(:budget_investment)}
+
       it "do not have milestone_tags" do
         expect(investment.milestone_tag_list).to eq([])
         expect(investment.milestone_tags).to eq([])
       end
+
       it "add a new milestone_tag" do
         investment.milestone_tag_list = "tag1,tag2"
+
         expect(investment.milestone_tag_list).to eq(["tag1", "tag2"])
       end
     end
+
     context "with milestone_tags" do
       let(:investment) {create(:budget_investment, :with_milestone_tags)}
+
       it "has milestone_tags" do
         expect(investment.milestone_tag_list.count).to eq(1)
       end

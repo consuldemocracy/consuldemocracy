@@ -168,8 +168,9 @@ ar:
       heading_selection_title: "جسب المنطقة"
       no_winner_investments: "لا يوجد استثمارات فائزة"
       filters:
-        label: "حالة المشروع الحالية"
-        all: "الكل (%{count})"
+        status:
+          label: "حالة المشروع الحالية"
+          all: "الكل (%{count})"
     phases:
       errors:
         dates_range_invalid: "تاريخ البدأ لا يمكن ان يكون مساو او يتجاوز تاريخ الانتهاء"

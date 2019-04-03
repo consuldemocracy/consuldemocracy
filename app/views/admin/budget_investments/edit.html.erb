@@ -106,10 +106,9 @@
   </div>
 
   <div class="small-12 column">
-    <%= f.label :milestone_tag_list, t("admin.budget_investments.edit.milestone_tags") %>
     <%= f.text_field :milestone_tag_list,
                    value: @investment.milestone_tag_list.sort.join(", "),
-                   label: false %>
+                   label: t("admin.budget_investments.edit.milestone_tags") %>
   </div>
 
 

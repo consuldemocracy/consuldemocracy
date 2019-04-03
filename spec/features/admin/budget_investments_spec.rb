@@ -1335,6 +1335,7 @@ describe "Admin budget investments" do
       budget_investment = create(:budget_investment)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
       expect(page).not_to have_content("Milestone Tags:")
 
       click_link "Edit classification"

@@ -49,7 +49,7 @@ sq:
         all_phases: Shihni të gjitha fazat
       all_phases: Fazat e investimeve buxhetore
       map: Propozimet e investimeve buxhetore të vendosura gjeografikisht
-      investment_proyects: Lista e të gjitha projekteve të investimeve 
+      investment_proyects: Lista e të gjitha projekteve të investimeve
       unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
       not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
       finished_budgets: Përfunduan buxhetet pjesëmarrëse.
@@ -171,7 +171,7 @@ sq:
       accepted: "Propozimi i pranuar i shpenzimeve:"
       discarded: "Propozimi i hedhur poshtë i shpenzimeve:"
       incompatibles: I papajtueshëm
-      investment_proyects: Lista e të gjitha projekteve të investimeve 
+      investment_proyects: Lista e të gjitha projekteve të investimeve
       unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
       not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
     executions:
@@ -181,8 +181,9 @@ sq:
       heading_selection_title: "Nga rrethi"
       no_winner_investments: "Asnjë investim fitues në këtë gjendje"
       filters:
-        label: "Gjendja aktuale e projektit"
-        all: "Të gjitha (%{count})"
+        status:
+          label: "Gjendja aktuale e projektit"
+          all: "Të gjitha (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data e fillimit nuk mund të jetë e barabartë ose më vonë se data e përfundimit"
