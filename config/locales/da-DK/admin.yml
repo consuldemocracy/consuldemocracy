@@ -427,6 +427,7 @@ da:
         subnav:
           info: Information
           homepage: Startside
+          draft_versions: Udarbejdelse
           questions: Debat
           proposals: Forslag
           milestones: Følger
