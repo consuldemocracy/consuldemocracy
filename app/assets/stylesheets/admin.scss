@@ -1205,6 +1205,11 @@ table {
   .filter {
     display: inline-block;
     margin: 0 $line-height / 2;
+
+    label {
+      font-weight: normal;
+      margin: 0;
+    }
   }
 
   .button {
