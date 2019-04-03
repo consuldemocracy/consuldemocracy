@@ -179,6 +179,7 @@ da:
         association_name: "Navn på forening"
         description: "Beskrivelse"
         external_url: "Link til yderligere dokumentation"
+        geozone_id: "Projektets omfang"
         title: "Titel"
       poll:
         name: "Navn"
