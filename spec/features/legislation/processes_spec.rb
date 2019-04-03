@@ -201,6 +201,16 @@ feature "Legislation" do
         visit legislation_process_path(process)
         expect(page).to have_content("Français")
       end
+
+      scenario "Shows Create a Proposal button when process is in draft phase" do
+        process = create(:legislation_process,
+                         :in_draft_phase,
+                         start_date: Date.current + 5.days,
+                         end_date: Date.current + 10.days)
+
+        visit legislation_process_proposals_path(process)
+        expect(page).to have_content("Create a proposal")
+      end
     end
 
     context "homepage" do
