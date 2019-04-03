@@ -206,7 +206,7 @@ es:
         no_valuators_assigned: Sin evaluador
         no_valuation_groups: Sin grupos evaluadores
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
@@ -225,6 +225,7 @@ es:
           visible_to_valuators: Mostrar a evaluadores
           author_username: Usuario autor
           incompatible: Incompatible
+          price: Precio
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:
