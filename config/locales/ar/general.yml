@@ -218,6 +218,8 @@ ar:
       conditions: قوانين وشروط الاستخدام
       consul: تطبيق CONSUL
       consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
+      description: تستخدم هذه البوابة %{consul} وهو%{open_source}.
       participation_title: المشاركة
       privacy: سياسة الخصوصية
     header:
