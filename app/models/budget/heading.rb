@@ -12,8 +12,6 @@ class Budget
     has_many :investments
     has_many :content_blocks
 
-    before_validation :assign_model_to_translations
-
     validates_translation :name, presence: true
     validates :group_id, presence: true
     validates :price, presence: true
@@ -49,5 +47,19 @@ class Budget
       slug.nil? || budget.drafting?
     end
 
+    class Translation < Globalize::ActiveRecord::Translation
+      delegate :budget, to: :globalized_model
+
+      validate :name_uniqueness_by_budget
+
+      def name_uniqueness_by_budget
+        if budget.headings
+                 .joins(:translations)
+                 .where(name: name)
+                 .where.not("budget_heading_translations.budget_heading_id": budget_heading_id).any?
+          errors.add(:name, I18n.t("errors.messages.taken"))
+        end
+      end
+    end
   end
 end
