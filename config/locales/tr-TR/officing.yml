@@ -51,7 +51,6 @@ tr:
         submit: Belgeyi doğrula
         error_verifying_census: "Census bu belgeyi doğrulayamadı."
         form_errors: bu belgenin doğrulanmasını engelledi
-        no_assignments: "Bugün memur vardiyanız yok"
     voters:
       new:
         title: Anketler
