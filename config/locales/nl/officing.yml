@@ -51,7 +51,6 @@ nl:
         submit: Valideer bestand
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
-        no_assignments: "Je hebt geen beheerdienst vandaag"
     voters:
       new:
         title: Polls
