@@ -19,10 +19,10 @@ class Verification::Residence
   def save
     return false unless valid?
 
-    if User.with_hidden.where(document_number: document_number).any?
+    old_user = User.with_hidden.where(document_number: document_number).first
+    if old_user.present?
       user.move(document_number)
-      old_user = User.with_hidden.where(document_number: document_number).first
-      old_user.update(document_number: "DELETE#{document_number}")
+      old_user.really_destroy!
     end
     user.update(document_number:       document_number,
                 document_type:         document_type,
@@ -38,10 +38,6 @@ class Verification::Residence
       errors.add(:document_number, I18n.t('users.errors.document_in_use'))
       return false
     end
-    changed_old_user = User.with_hidden
-                           .where(document_number: "DELETE#{document_number}")
-                           .first
-    changed_old_user.really_destroy! if changed_old_user.present?
   end
 
   private
