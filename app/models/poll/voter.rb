@@ -32,8 +32,13 @@ class Poll
     def set_document_info
       return if user.blank?
 
-      self.document_type   = user.document_type
-      self.document_number = user.document_number
+      current_user = User.with_hidden
+                         .where(document_number: self.document_number)
+                         .first
+      unless current_user&.paranoia_destroyed?
+        self.document_type   = user.document_type
+        self.document_number = user.document_number
+      end
     end
 
     private
