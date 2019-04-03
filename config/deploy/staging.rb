@@ -5,5 +5,6 @@ set :branch, ENV['branch'] || :development
 set :ssh_options, port: deploysecret(:ssh_port)
 set :stage, :staging
 set :rails_env, :staging
+set :keep_releases, 2
 
 server deploysecret(:server), user: deploysecret(:user), roles: %w(web app db importer cron background)
