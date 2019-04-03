@@ -16,6 +16,9 @@ es:
         no_polls: No tienes permiso para recuento final en ninguna votación reciente
         select_poll: Selecciona votación
         add_results: Añadir resultados
+    booth:
+      new:
+        title: "Escoge tu urna"
     results:
       flash:
         create: "Datos guardados"
@@ -51,7 +54,6 @@ es:
         submit: Validar documento
         error_verifying_census: "El Padrón no pudo verificar este documento."
         form_errors: evitaron verificar este documento
-        no_assignments: "Hoy no tienes turno de presidente de mesa"
     voters:
       new:
         title: Votaciones

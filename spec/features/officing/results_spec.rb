@@ -5,6 +5,7 @@ feature "Officing Results", :with_frozen_time do
   background do
     @poll_officer = create(:poll_officer)
     @officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
+    create(:poll_shift, officer: @poll_officer, booth: @officer_assignment.booth, date: Date.current)
     @poll = @officer_assignment.booth_assignment.poll
     @poll.update(ends_at: 1.day.ago)
     @question_1 = create(:poll_question, poll: @poll)
@@ -15,6 +16,7 @@ feature "Officing Results", :with_frozen_time do
     create(:poll_question_answer, title: "Tomorrow", question: @question_2)
 
     login_as(@poll_officer.user)
+    set_officing_booth(@officer_assignment.booth)
   end
 
   scenario "Only polls where user is officer for results are accessible" do
@@ -30,6 +32,7 @@ feature "Officing Results", :with_frozen_time do
     click_link "Polling officers"
 
     expect(page).to have_content("Poll officing")
+
     within("#side_menu") do
       click_link "Total recounts and results"
     end

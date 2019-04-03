@@ -8,6 +8,7 @@ feature "Voter" do
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
+    let(:admin) { create(:administrator) }
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
@@ -71,6 +72,56 @@ feature "Voter" do
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("booth")
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
+    end
+
+    context "The person has decided not to vote at this time" do
+      let!(:user) { create(:user, :in_census) }
+
+      scenario "Show not to vote at this time button" do
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+        expect(page).to have_button "Confirm vote"
+        expect(page).to have_content "Can vote"
+        expect(page).to have_link "The person has decided not to vote at this time"
+      end
+
+      scenario "Hides not to vote at this time button if already voted", :js do
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        within("#poll_#{poll.id}") do
+          click_button("Confirm vote")
+          expect(page).not_to have_button("Confirm vote")
+          expect(page).to have_content "Vote introduced!"
+          expect(page).not_to have_content "The person has decided not to vote at this time"
+        end
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content "Has already participated in this poll"
+        expect(page).not_to have_content "The person has decided not to vote at this time"
+      end
+
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -107,6 +158,19 @@ feature "Voter" do
         expect(page).not_to have_link(answer_yes.title)
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
+
+        visit root_path
+        click_link "Sign out"
+        login_as(admin.user)
+        visit admin_poll_recounts_path(poll)
+
+        within("#total_system") do
+          expect(page).to have_content "1"
+        end
+
+        within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+          expect(page).to have_content "1"
+        end
       end
 
       scenario "Trying to vote in web again", :js do
@@ -162,6 +226,19 @@ feature "Voter" do
       expect(page).not_to have_link(answer_yes.title)
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
       expect(Poll::Voter.count).to eq(1)
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
     end
 
     context "Side menu" do

@@ -4,6 +4,7 @@ namespace :officing do
     resources :results, only: [:new, :create, :index]
   end
 
+  resource :booth, controller: "booth", only: [:new, :create]
   resource :residence, controller: "residence", only: [:new, :create]
   resources :voters, only: [:new, :create]
   root to: "dashboard#index"
