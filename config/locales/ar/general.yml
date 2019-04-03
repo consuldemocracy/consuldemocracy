@@ -15,6 +15,7 @@ ar:
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
+      email_on_direct_message_label: تلقي رسائل البريد الإلكتروني حول الرسائل المباشرة
       email_digest_label: استلام ملخص عن إشعارات مقترح
       recommendations: التوصيات
       show_debates_recommendations: إظهار توصيات المناقشات
@@ -33,6 +34,7 @@ ar:
       verify_my_account: التحقق من حسابي
   application:
     close: غلق
+    menu: القائمة
   comments:
     comments_closed: التعليقات مغلقة
     verified_only: للمشاركة %{verify_account}
@@ -61,6 +63,7 @@ ar:
         other: "%{count} أصوات"
     form:
       comment_as_admin: التعليق كمدير
+      comment_as_moderator: التعليق كمشرف
       leave_comment: اترك تعليقك
     orders:
       most_voted: الأكثر تصويتا
@@ -105,6 +108,7 @@ ar:
     form:
       debate_text: نص المناقشة الأوّلي
       debate_title: عنوان المناقشة
+      tags_instructions: ضع علامة على هذا النقاش.
       tags_label: مواضبع
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
