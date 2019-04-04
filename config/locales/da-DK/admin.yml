@@ -164,6 +164,7 @@ da:
         summary: Resumé
         summary_help_text: Denne tekst vil informere brugeren om fasen. For at vise informationen selvom fasen ikke er aktiv, skal du sætte kryds i feltet nedenfor
         description: Beskrivelse
+        description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
         enabled: Fase aktiveret
         save_changes: Gem ændringer
     budget_investments:
@@ -1257,6 +1258,18 @@ da:
           link_url: Link URL
     homepage:
       title: Startside
+      header_title: Sidehoved
+      no_header: Der findes ingen sidehoveder.
+      create_header: Opret sidehoved
+      cards:
+        title: Titel
+        description: Beskrivelse
+        link_text: Link
+        link_url: Link URL
+      feeds:
+        proposals: Borgerforslag
+        debates: Debatforum
+        processes: Processer
     translations:
       remove_language: Fjern sprog
       add_language: Tilføj sprog
