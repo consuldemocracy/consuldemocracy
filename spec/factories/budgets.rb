@@ -150,13 +150,17 @@ FactoryBot.define do
       valuation_finished true
     end
 
-     trait :hidden do
-       hidden_at { Time.current }
-     end
+    trait :hidden do
+      hidden_at { Time.current }
+    end
 
-     trait :with_ignored_flag do
-       ignored_flag_at { Time.current }
-     end
+    trait :with_ignored_flag do
+      ignored_flag_at { Time.current }
+    end
+
+    trait :with_administrator do
+      administrator
+    end
 
     trait :flagged do
        after :create do |investment|

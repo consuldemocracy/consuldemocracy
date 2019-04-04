@@ -6,6 +6,7 @@ describe Poll::Voter do
   let(:booth) { create(:poll_booth) }
   let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
   let(:voter) { create(:poll_voter) }
+  let(:officer_assignment) { create(:poll_officer_assignment) }
 
   describe "validations" do
 
@@ -97,6 +98,7 @@ describe Poll::Voter do
 
       it "is valid with a booth origin" do
         voter.origin = "booth"
+        voter.officer_assignment = officer_assignment
         expect(voter).to be_valid
       end
 
@@ -104,7 +106,27 @@ describe Poll::Voter do
         voter.origin = "web"
         expect(voter).to be_valid
       end
+    end
 
+    context "assignments" do
+      it "should not be valid without a booth_assignment_id when origin is booth" do
+        voter.origin = "booth"
+        voter.booth_assignment_id = nil
+        expect(voter).not_to be_valid
+      end
+
+      it "should not be valid without an officer_assignment_id when origin is booth" do
+        voter.origin = "booth"
+        voter.officer_assignment_id = nil
+        expect(voter).not_to be_valid
+      end
+
+      it "should be valid without assignments when origin is web" do
+        voter.origin = "web"
+        voter.booth_assignment_id = nil
+        voter.officer_assignment_id = nil
+        expect(voter).to be_valid
+      end
     end
 
   end

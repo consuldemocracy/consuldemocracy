@@ -14,6 +14,8 @@ en:
       edit: Edit
       configure: Configure
       delete: Delete
+    officing_booth:
+      title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
       index:
         title: Banners
@@ -191,6 +193,7 @@ en:
           undecided: Undecided
           unfeasible: Unfeasible
           min_total_supports: Minimum supports
+          max_total_supports: Maximum supports
           winners: Winners
           one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -204,7 +207,7 @@ en:
         no_valuators_assigned: No valuators assigned
         no_valuation_groups: No valuation groups assigned
         feasibility:
-          feasible: "Feasible (%{price})"
+          feasible: "Feasible"
           unfeasible: "Unfeasible"
           undecided: "Undecided"
         selected: "Selected"
@@ -223,6 +226,7 @@ en:
           visible_to_valuators: Show to valuators
           author_username: Author username
           incompatible: Incompatible
+          price: Price
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
       show:

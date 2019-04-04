@@ -117,7 +117,9 @@ class Budget
       results = Investment.by_budget(budget)
 
       results = results.where("cached_votes_up + physical_votes >= ?",
-                              params[:min_total_supports])                    if params[:min_total_supports].present?
+                              params[:min_total_supports])                 if params[:min_total_supports].present?
+      results = results.where("cached_votes_up + physical_votes <= ?",
+                              params[:max_total_supports])                 if params[:max_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
@@ -132,12 +134,19 @@ class Budget
     end
 
     def self.advanced_filters(params, results)
+      results = results.without_admin      if params[:advanced_filters].include?("without_admin")
+      results = results.without_valuator   if params[:advanced_filters].include?("without_valuator")
+      results = results.under_valuation    if params[:advanced_filters].include?("under_valuation")
+      results = results.valuation_finished if params[:advanced_filters].include?("valuation_finished")
+      results = results.winners            if params[:advanced_filters].include?("winners")
+
       ids = []
       ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?("feasible")
       ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
-      results.where("budget_investments.id IN (?)", ids)
+      results = results.where("budget_investments.id IN (?)", ids) if ids.any?
+      results
     end
 
     def self.order_filter(params)

@@ -10,7 +10,8 @@ en:
         voted_html:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
-        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+        voted_info_html: "Your ballot is confirmed!"
+        voted_info_2: "But you can change your vote at any time until this phase is closed."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
         not_logged_in: You must %{signin} or %{signup} to continue.
@@ -90,7 +91,7 @@ en:
           voted_info_link: change your vote
           different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-          check_ballot_link: "check my ballot"
+          check_ballot_link: "check and confirm my ballot"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
@@ -142,10 +143,10 @@ en:
           zero: No supports
         give_support: Support
       header:
-        check_ballot: Check my ballot
+        check_ballot: Check and confirm my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-        check_ballot_link: "check my ballot"
+        check_ballot_link: "check and confirm my ballot"
         price: "This heading has a budget of"
     progress_bar:
       assigned: "You have assigned: "

@@ -14,6 +14,8 @@ es:
       edit: Editar
       configure: Configurar
       delete: Borrar
+    officing_booth:
+      title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
       index:
         title: Banners
@@ -191,6 +193,7 @@ es:
           undecided: Sin decidir
           unfeasible: Inviables
           min_total_supports: Apoyos mínimos
+          max_total_supports: Apoyos máximos
           winners: Ganadores
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -204,7 +207,7 @@ es:
         no_valuators_assigned: Sin evaluador
         no_valuation_groups: Sin grupos evaluadores
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
@@ -223,6 +226,7 @@ es:
           visible_to_valuators: Mostrar a evaluadores
           author_username: Usuario autor
           incompatible: Incompatible
+          price: Precio
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:

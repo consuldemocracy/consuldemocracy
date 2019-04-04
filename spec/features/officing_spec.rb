@@ -97,6 +97,7 @@ feature "Poll Officing" do
   end
 
   scenario "Poll officer access links" do
+    create(:poll)
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path

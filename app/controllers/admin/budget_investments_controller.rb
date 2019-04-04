@@ -4,10 +4,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   feature_flag :budgets
 
-  has_orders %w{oldest}, only: [:show, :edit]
-  has_filters(%w{all without_admin without_valuator under_valuation
-                 valuation_finished winners},
-                 only: [:index, :toggle_selection])
+  has_orders %w[oldest], only: [:show, :edit]
+  has_filters %w[all], only: [:index, :toggle_selection]
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]

@@ -16,6 +16,9 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_results: Add results
+    booth:
+      new:
+        title: "Choose your booth"
     results:
       flash:
         create: "Results saved"
@@ -51,7 +54,6 @@ en:
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
-        no_assignments: "You don't have officing shifts today"
     voters:
       new:
         title: Polls
