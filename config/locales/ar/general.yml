@@ -220,14 +220,21 @@ ar:
       consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: تستخدم هذه البوابة %{consul} وهو%{open_source}.
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_title: المشاركة
       privacy: سياسة الخصوصية
     header:
+      administration_menu: مشرف
       administration: الإدارة
+      available_locales: اللغات المتوفرة
       collaborative_legislation: العمليات التشريعية
       debates: النقاشات
+      locale: "لغة:"
+      logo: شعار CONSUL
       management: الإدارة
       moderation: الإشراف
+      valuation: التقييم
+      officing: ضباط الاستطلاع
       help: المساعدة
       my_account_link: حسابي
       my_activity_link: نشاطي
@@ -294,6 +301,11 @@ ar:
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
+      recommendations:
+        without_interests: تابع المقترحات حتى نتمكن من تقديم توصيات لك
+        actions:
+          success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
+          error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
       retired_links:
         all: الكل
         unfeasible: غير مجدي
