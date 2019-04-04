@@ -1165,10 +1165,27 @@ ActiveRecord::Schema.define(version: 20190325185550) do
     t.datetime "confirmed_hide_at"
   end
 
-  create_table "proposals", force: :cascade do |t|
-    t.string   "title",               limit: 80
+  create_table "proposal_translations", force: :cascade do |t|
+    t.integer  "proposal_id",         null: false
+    t.string   "locale",              null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "title"
     t.text     "description"
     t.string   "question"
+    t.text     "summary"
+    t.text     "retired_explanation"
+    t.datetime "hidden_at"
+  end
+
+  add_index "proposal_translations", ["hidden_at"], name: "index_proposal_translations_on_hidden_at", using: :btree
+  add_index "proposal_translations", ["locale"], name: "index_proposal_translations_on_locale", using: :btree
+  add_index "proposal_translations", ["proposal_id"], name: "index_proposal_translations_on_proposal_id", using: :btree
+
+  create_table "proposals", force: :cascade do |t|
+    t.string   "deprecated_title",               limit: 80
+    t.text     "deprecated_description"
+    t.string   "deprecated_question"
     t.string   "external_url"
     t.integer  "author_id"
     t.datetime "hidden_at"
@@ -1182,13 +1199,13 @@ ActiveRecord::Schema.define(version: 20190325185550) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.string   "responsible_name",    limit: 60
-    t.text     "summary"
+    t.text     "deprecated_summary"
     t.string   "video_url"
     t.tsvector "tsv"
     t.integer  "geozone_id"
     t.datetime "retired_at"
     t.string   "retired_reason"
-    t.text     "retired_explanation"
+    t.text     "deprecated_retired_explanation"
     t.integer  "community_id"
   end
 
@@ -1200,9 +1217,6 @@ ActiveRecord::Schema.define(version: 20190325185550) do
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
-  add_index "proposals", ["question"], name: "index_proposals_on_question", using: :btree
-  add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
-  add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
   create_table "related_content_scores", force: :cascade do |t|

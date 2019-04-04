@@ -64,4 +64,12 @@ module ProposalsHelper
     proposals_current_view == "default" ? "minimal" : "default"
   end
 
+  def question_help_text_id(translations_form)
+    "question-help-text-#{translations_form.locale}"
+  end
+
+  def summary_help_text_id(translations_form)
+    "summary-help-text-#{translations_form.locale}"
+  end
+
 end

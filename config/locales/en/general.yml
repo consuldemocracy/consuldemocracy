@@ -301,7 +301,6 @@ en:
       warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
       retired_reason_label: Reason to retire the proposal
       retired_reason_blank: Choose an option
-      retired_explanation_label: Explanation
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
       submit_button: Retire proposal
     retire_options:

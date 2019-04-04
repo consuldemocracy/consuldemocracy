@@ -15,6 +15,11 @@ feature "Proposals" do
   context "Concerns" do
     it_behaves_like "notifiable in-app", Proposal
     it_behaves_like "relationable", Proposal
+    it_behaves_like "translatable",
+                    "proposal",
+                    "edit_proposal_path",
+                    %w[title question summary],
+                    { "description" => :ckeditor }
   end
 
   context "Index" do
@@ -217,14 +222,14 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "Help refugees"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "This is very important because..."
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
-    fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
+    fill_in "Proposal title", with: "Help refugees"
+    fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+    fill_in "Proposal summary", with: "In summary, what we want is..."
+    fill_in "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Refugees, Solidarity"
+    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
+    fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
@@ -252,12 +257,12 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "I am a bot"
+    fill_in "Proposal title", with: "I am a bot"
     fill_in "proposal_subtitle", with: "This is the honeypot field"
-    fill_in "proposal_question", with: "This is a question"
-    fill_in "proposal_summary", with: "This is the summary"
-    fill_in "proposal_description", with: "This is the description"
     fill_in "proposal_external_url", with: "http://google.com/robots.txt"
+    fill_in "Proposal question", with: "This is a question"
+    fill_in "Proposal summary", with: "This is the summary"
+    fill_in "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
     check "proposal_terms_of_service"
 
@@ -275,12 +280,12 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "I am a bot"
-    fill_in "proposal_question", with: "This is a question"
-    fill_in "proposal_summary", with: "This is the summary"
-    fill_in "proposal_description", with: "This is the description"
-    fill_in "proposal_external_url", with: "http://google.com/robots.txt"
+    fill_in "Proposal title", with: "I am a bot"
+    fill_in "Proposal question", with: "This is a question"
+    fill_in "Proposal summary", with: "This is the summary"
+    fill_in "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
+    fill_in "proposal_external_url", with: "http://google.com/robots.txt"
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
@@ -295,13 +300,14 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "Help refugees"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "This is very important because..."
+
+    fill_in "Proposal title", with: "Help refugees"
+    fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+    fill_in "Proposal summary", with: "In summary, what we want is..."
+    fill_in "Proposal text", with: "This is very important because..."
+    fill_in "proposal_responsible_name", with: "Isabel Garcia"
+    fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_external_url", with: "http://rescue.org/refugees"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
@@ -320,10 +326,10 @@ feature "Proposals" do
     visit new_proposal_path
     expect(page).not_to have_selector("#proposal_responsible_name")
 
-    fill_in "proposal_title", with: "Help refugees"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "This is very important because..."
+    fill_in "Proposal title", with: "Help refugees"
+    fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+    fill_in "Proposal summary", with: "In summary, what we want is..."
+    fill_in "Proposal text", with: "This is very important because..."
     fill_in "proposal_external_url", with: "http://rescue.org/refugees"
     check "proposal_terms_of_service"
 
@@ -350,12 +356,12 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "Testing an attack"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "<p>This is <script>alert('an attack');</script></p>"
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
+    fill_in "Proposal title", with: "Testing an attack"
+    fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+    fill_in "Proposal summary", with: "In summary, what we want is..."
+    fill_in "Proposal text", with: "<p>This is <script>alert('an attack');</script></p>"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
+    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
@@ -375,10 +381,10 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "Testing auto link"
-    fill_in "proposal_question", with: "Should I stay or should I go?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "<p>This is a link www.example.org</p>"
+    fill_in "Proposal title", with: "Testing auto link"
+    fill_in "Proposal question", with: "Should I stay or should I go?"
+    fill_in "Proposal summary", with: "In summary, what we want is..."
+    fill_in "Proposal text", with: "<p>This is a link www.example.org</p>"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 
@@ -398,10 +404,10 @@ feature "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "proposal_title", with: "Testing auto link"
-    fill_in "proposal_question", with: "Should I stay or should I go?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: js_injection_string
+    fill_in "Proposal title", with: "Testing auto link"
+    fill_in "Proposal question", with: "Should I stay or should I go?"
+    fill_in "Proposal summary", with: "In summary, what we want is..."
+    fill_in "Proposal text", with: js_injection_string
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 
@@ -431,13 +437,13 @@ feature "Proposals" do
 
       visit new_proposal_path
 
-      fill_in "proposal_title", with: "Help refugees"
-      fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-      fill_in "proposal_summary", with: "In summary, what we want is..."
-      fill_in "proposal_description", with: "This is very important because..."
+      fill_in "Proposal title", with: "Help refugees"
+      fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+      fill_in "Proposal summary", with: "In summary, what we want is..."
+      fill_in "Proposal text", with: "This is very important because..."
+      fill_in "proposal_responsible_name", with: "Isabel Garcia"
       fill_in "proposal_external_url", with: "http://rescue.org/refugees"
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-      fill_in "proposal_responsible_name", with: "Isabel Garcia"
       check "proposal_terms_of_service"
 
       click_button "Create proposal"
@@ -459,13 +465,13 @@ feature "Proposals" do
 
       visit new_proposal_path
 
-      fill_in "proposal_title", with: "Help refugees"
-      fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-      fill_in "proposal_summary", with: "In summary, what we want is..."
-      fill_in "proposal_description", with: "This is very important because..."
+      fill_in "Proposal title", with: "Help refugees"
+      fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+      fill_in "Proposal summary", with: "In summary, what we want is..."
+      fill_in "Proposal text", with: "This is very important because..."
+      fill_in "proposal_responsible_name", with: "Isabel Garcia"
       fill_in "proposal_external_url", with: "http://rescue.org/refugees"
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-      fill_in "proposal_responsible_name", with: "Isabel Garcia"
       check "proposal_terms_of_service"
 
       select("California", from: "proposal_geozone_id")
@@ -494,7 +500,7 @@ feature "Proposals" do
       expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select "Duplicated", from: "proposal_retired_reason"
-      fill_in "proposal_retired_explanation", with: "There are three other better proposals with the same subject"
+      fill_in "Explanation", with: "There are three other better proposals with the same subject"
       click_button "Retire proposal"
 
       expect(page).to have_content "Proposal retired"
@@ -507,7 +513,7 @@ feature "Proposals" do
       expect(page).to have_content "There are three other better proposals with the same subject"
     end
 
-    scenario "Fields are mandatory" do
+    scenario "Fields are mandatory", :js do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -523,7 +529,7 @@ feature "Proposals" do
       Setting["feature.featured_proposals"] = true
       create_featured_proposals
       not_retired = create(:proposal)
-      retired = create(:proposal, retired_at: Time.current)
+      retired = create(:proposal, :retired)
 
       visit proposals_path
 
@@ -537,7 +543,7 @@ feature "Proposals" do
     scenario "Index has a link to retired proposals list" do
       create_featured_proposals
       not_retired = create(:proposal)
-      retired = create(:proposal, retired_at: Time.current)
+      retired = create(:proposal, :retired)
 
       visit proposals_path
 
@@ -557,8 +563,8 @@ feature "Proposals" do
     end
 
     scenario "Retired proposals index has links to filter by retired_reason" do
-      unfeasible = create(:proposal, retired_at: Time.current, retired_reason: "unfeasible")
-      duplicated = create(:proposal, retired_at: Time.current, retired_reason: "duplicated")
+      unfeasible = create(:proposal, :retired, retired_reason: "unfeasible")
+      duplicated = create(:proposal, :retired, retired_reason: "duplicated")
 
       visit proposals_path(retired: "all")
 
@@ -611,12 +617,12 @@ feature "Proposals" do
     visit edit_proposal_path(proposal)
     expect(page).to have_current_path(edit_proposal_path(proposal))
 
-    fill_in "proposal_title", with: "End child poverty"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "Basically..."
-    fill_in "proposal_description", with: "Let's do something to end child poverty"
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
+    fill_in "Proposal title", with: "End child poverty"
+    fill_in "Proposal question", with: "¿Would you like to give assistance to war refugees?"
+    fill_in "Proposal summary", with: "Basically..."
+    fill_in "Proposal text", with: "Let's do something to end child poverty"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
+    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
 
     click_button "Save changes"
 
@@ -631,7 +637,7 @@ feature "Proposals" do
     login_as(proposal.author)
 
     visit edit_proposal_path(proposal)
-    fill_in "proposal_title", with: ""
+    fill_in "Proposal title", with: ""
     click_button "Save changes"
 
     expect(page).to have_content error_message
@@ -1620,10 +1626,10 @@ feature "Proposals" do
       create(:proposal, title: "Seventh proposal, has search term")
 
       visit new_proposal_path
-      fill_in "proposal_title", with: "search"
+      fill_in "Proposal title", with: "search"
       check "proposal_terms_of_service"
 
-      within("div#js-suggest") do
+      within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
       end
     end
@@ -1636,10 +1642,10 @@ feature "Proposals" do
       create(:proposal, title: "Second proposal").update_column(:confidence_score, 8)
 
       visit new_proposal_path
-      fill_in "proposal_title", with: "debate"
+      fill_in "Proposal title", with: "debate"
       check "proposal_terms_of_service"
 
-      within("div#js-suggest") do
+      within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"
       end
     end
@@ -1814,13 +1820,13 @@ feature "Successful proposals" do
 
       expect(current_path).to eq(new_proposal_path)
 
-      fill_in "proposal_title", with: "Help refugees"
-      fill_in "proposal_summary", with: "In summary what we want is..."
-      fill_in "proposal_question", with: "Would you like to?"
-      fill_in "proposal_description", with: "This is very important because..."
+      fill_in "Proposal title", with: "Help refugees"
+      fill_in "Proposal question", with: "Would you like to?"
+      fill_in "Proposal summary", with: "In summary what we want is..."
+      fill_in "Proposal text", with: "This is very important because..."
+      fill_in "proposal_tag_list", with: "Refugees, Solidarity"
       fill_in "proposal_external_url", with: "http://rescue.org/refugees"
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-      fill_in "proposal_tag_list", with: "Refugees, Solidarity"
       check "proposal_terms_of_service"
 
       click_button "Create proposal"
