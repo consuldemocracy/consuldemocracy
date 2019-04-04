@@ -20,7 +20,7 @@ class Verification::Residence
     return false unless valid?
 
     old_user = User.with_hidden.where(document_number: document_number).first
-    if old_user.present?
+    if old_user&.paranoia_destroyed?
       user.move(document_number)
       old_user.really_destroy!
     end
@@ -38,6 +38,7 @@ class Verification::Residence
       errors.add(:document_number, I18n.t('users.errors.document_in_use'))
       return false
     end
+    true
   end
 
   private
