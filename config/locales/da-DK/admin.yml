@@ -217,6 +217,7 @@ da:
           author_username: Brugernavn
           incompatible: Uforenelig
           price: Pris
+        cannot_calculate_winners: Budgettet skal enten være i "Afstemningsfasen", "Gennemgangsfasen" eller "Afslutningsfasen" for at kunne beregne, hvilke projekter, der har fået flest stemmer
         see_results: "Se resultat"
       show:
         assigned_admin: Tildelt administrator
@@ -228,11 +229,16 @@ da:
         by: Af
         sent: Sendt
         group: Gruppe
+        heading: Område
+        dossier: Rapport
+        edit_dossier: Rediger rapport
         tags: Tags
         user_tags: Bruger tags
         undefined: Udefineret
         compatibility:
+          title: Kompatibilitet
           "true": Uforenelig
+          "false": Forenelig
         selection:
           title: Udvælgelse
           "true": Valgt
@@ -250,14 +256,19 @@ da:
         valuator_groups: "Vurderingsgrupper"
       edit:
         classification: Klassificering
+        compatibility: Kompatibilitet
+        mark_as_incompatible: Marker som inkompatibel
         selection: Udvælgelse
         mark_as_selected: Markeret som valgt
         assigned_valuators: Evaluatorer
+        select_heading: Vælg område
         submit_button: Opdater
+        user_tags: Brugertilføjede tags
         tags: Tags
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
         user_groups: "Grupper"
+      search_unfeasible: Søg uigennemførlige projekter
     milestones:
       index:
         table_id: "ID"
@@ -401,6 +412,8 @@ da:
           process: Proces
           debate_phase: Debatfase
           draft_phase: Udkast fasen
+          allegations_phase: Kommentarfasen
+          proposals_phase: Forslagsfasen
           use_markdown: Anvend Markdown til at formatere teksten
           title_placeholder: Titel på proces
           summary_placeholder: Kort resumé af beskrivelsen
