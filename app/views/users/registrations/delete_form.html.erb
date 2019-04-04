@@ -5,7 +5,7 @@
 <%= form_for(resource, as: resource_name,
              url: users_registrations_path,
              html: { method: :delete }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render "shared/errors", resource: resource %>
 
   <div data-alert class="callout alert">
     <%= t("devise_views.users.registrations.delete_form.info") %>
