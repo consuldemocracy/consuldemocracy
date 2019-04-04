@@ -1,8 +1,12 @@
 da:
   officing:
+    header:
+      title: Afstemning
     dashboard:
       index:
+        title: Valgsteder
         info: Her kan du erklære brugerens dokumenter for gyldige og gemme afstemningsresultater
+        no_shifts: Du har ingen arbejdsopgaver i dag.
     menu:
       voters: Erklær dokument gyldigt
       total_recounts: Omtælling og resultater
@@ -11,6 +15,9 @@ da:
         title: Afstemningen klar til den endelige fintælling
         select_poll: Vælg afstemning
         add_results: Tilføj resultater
+    booth:
+      new:
+        title: "Vælg dit valgsted"
     results:
       flash:
         create: "Resultater gemt"
@@ -22,6 +29,8 @@ da:
         booth: "Stemmeboks"
         date: "Dato"
         select_booth: "Vælg stemmeboks"
+        ballots_null: "Ugyldige stemmer"
+        ballots_total: "Samlet antal stemmer"
         submit: "Gem"
         results_list: "Dine resultater"
         see_results: "Se resultater"
@@ -30,18 +39,29 @@ da:
         results: Resultater
         table_answer: Svar
         table_votes: Stemmer
+        table_nulls: "Ugyldige stemmer"
+        table_total: "Samlet antal stemmer"
     residence:
+      flash:
+        create: "Verificeret ID"
+        not_allowed: "Du har ingen arbejdsopgaver i dag"
       new:
         title: Erklær dokument gyldigt
         document_number: "Dokumentnummer (bogstaver inkluderet)"
         submit: Erklær dokument gyldigt
+        error_verifying_census: "Dit identitetsdokument kunne ikke verificeres."
+        form_errors: forhindrede verificeringen af dit identitetsdokument
     voters:
       new:
+        title: Afstemninger
+        table_poll: Afstemning
+        table_status: Afstemningsstatus
         table_actions: Handlinger
         not_to_vote: Denne person har besluttet ikke at stemme på dette tidspunkt
       show:
         can_vote: Kan stemme
         error_already_voted: Har allerede deltaget i afstemningen
         submit: Bekræft stemme
+        success: "Du har stemt!"
       can_vote:
         submit_disable_with: "Vent, bekræfter stemme..."
