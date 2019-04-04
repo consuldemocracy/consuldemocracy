@@ -166,6 +166,7 @@ da:
         description: Beskrivelse
         description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
         enabled: Fase aktiveret
+        enabled_help_text: Fasen vil være synlig i budgettets tidslinje
         save_changes: Gem ændringer
     budget_investments:
       index:
@@ -181,6 +182,7 @@ da:
           without_valuator: Uden tilknyttet evaluator
           under_valuation: Under værdiansættelse
           valuation_finished: Værdiansættelse færdig
+          feasible: Kan gennemføres
           selected: Vælg
           undecided: Ikke besluttet
           unfeasible: Uigennemførlig
@@ -212,6 +214,7 @@ da:
           valuator: Evaluator
           valuation_group: Evaluator gruppe
           geozone: Område
+          feasibility: Gennemførlighed
           valuation_finished: Færdig vurdering.
           selected: Valgt
           visible_to_valuators: Vis til evaluatorer
