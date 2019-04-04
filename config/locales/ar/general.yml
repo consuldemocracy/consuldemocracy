@@ -308,9 +308,12 @@ ar:
           error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
       retired_links:
         all: الكل
+        started: جارية
         unfeasible: غير مجدي
+        other: أخرى
       search_form:
         button: بحث
+        placeholder: البحث عن مقترحات...
         title: بحث
       search_results_html:
         zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
@@ -342,6 +345,7 @@ ar:
     proposal:
       created: "لقد قمت بإنشاء مقترح!"
       share:
+        edit: "ستتمكن من تغيير النص كما تريد قبل أن يتم مشاركته."
         view_proposal: ليس الآن، انتقل إلى مقترحي
       already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
       comments:
@@ -370,10 +374,13 @@ ar:
         few: "%{count} أصوات"
         many: "%{count} أصوات"
         other: "%{count} أصوات"
+      supports_necessary: "بحاجة إلى %{number} دعم"
+      total_percent: 100 ٪
       archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع الدعم."
       successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
     show:
       author_deleted: تم حذف المستخدم
+      code: "رمز الاقتراح:"
       comments:
         zero: لا توجد تعليقات
         zero: "%{count} تعليق"
@@ -387,6 +394,8 @@ ar:
       login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       notifications_tab: إشعارات
       milestones_tab: معالم
+      retired_warning: "يرى المؤلف أن هذا الاقتراح يجب ألا يتلقى المزيد من الدعم."
+      retired_warning_link_to_explanation: اقرأ الشرح قبل التصويت عليه.
       share: مشاركة
       send_notification: إرسال إشعار
       no_notifications: "هذا المقترح لا يحوي إشعارات."
