@@ -7,10 +7,10 @@ describe Budget::Stats do
 
   describe "#participants" do
     let(:author) { investment.author }
-    let(:author_and_voter) { create(:user) }
+    let(:author_and_voter) { create(:user, hidden_at: Time.current) }
     let(:voter) { create(:user) }
     let(:voter_and_balloter) { create(:user) }
-    let(:balloter) { create(:user) }
+    let(:balloter) { create(:user, hidden_at: Time.current) }
     let(:poll_balloter) { create(:user, :level_two) }
     let(:non_participant) { create(:user, :level_two) }
 
@@ -29,7 +29,7 @@ describe Budget::Stats do
       create(:poll_voter, :from_booth, user: non_participant, budget: create(:budget))
     end
 
-    it "returns unique participants, including authors" do
+    it "returns unique participants, including authors and hidden users" do
       expect(stats.participants).to match_array(
         [author, author_and_voter, voter, voter_and_balloter, balloter, poll_balloter]
       )

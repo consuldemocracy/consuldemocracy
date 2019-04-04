@@ -34,7 +34,7 @@ module Statisticable
     end
 
     def participants
-      User.where(id: participant_ids)
+      User.unscoped.where(id: participant_ids)
     end
 
     def total_male_participants

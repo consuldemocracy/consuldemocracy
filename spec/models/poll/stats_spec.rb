@@ -4,6 +4,15 @@ describe Poll::Stats do
   let(:poll) { create(:poll) }
   let(:stats) { Poll::Stats.new(poll) }
 
+  describe "#participants" do
+    it "includes hidden users" do
+      create(:poll_voter, poll: poll)
+      create(:poll_voter, poll: poll, user: create(:user, :level_two, hidden_at: Time.current))
+
+      expect(stats.participants.count).to eq(2)
+    end
+  end
+
   describe "total participants" do
     before { allow(stats).to receive(:total_web_white).and_return(1) }
 
