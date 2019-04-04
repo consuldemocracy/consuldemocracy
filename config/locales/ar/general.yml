@@ -436,6 +436,7 @@ ar:
       no_polls: "جميع الاستبيانات منتهية."
     show:
       already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
+      already_voted_in_web: "لقد شاركت سابقا في هذا الاستطلاع. إذا قمت بالتصويت مرة أخرى ، سيتم استبدال التصويت السّابق."
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
@@ -444,6 +445,7 @@ ar:
       signup: تسجيل
       cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
       verify_link: "تحقق من حسابك"
+      cant_answer_expired: "انتهى هذا الاستطلاع."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
       more_info_title: "مزيد من المعلومات"
       documents: الوثائق
@@ -453,11 +455,24 @@ ar:
       videos: "فيديو خارجي"
       info_menu: "معلومات"
       stats_menu: "إحصائيات المشاركة"
+      results_menu: "نتائج الاستطلاع"
       stats:
         title: "بيانات المشاركة"
         total_participation: "مجموع المشاركات"
+        votes: "الأصوات"
+        booth: "مكتب الإقتراع"
+        total: "المجموع"
+        valid: "محتسبة"
+        white: "الأصوات البيضاء"
+        null_votes: "ملغات"
       results:
         title: "أسئلة"
+        most_voted_answer: "الإجابة الأكثر تصويتًا:"
+  poll_questions:
+    show:
+      vote_answer: "صوّت ل%{answer}"
+      voted: "لقد قمت بالتصويت ل%{answer}"
+      voted_token: "يمكنك تسجبل معرف التصويت هذا ، للتحقق من تصويتك على النتائج النهائية:"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
@@ -475,6 +490,8 @@ ar:
     "no": "لا"
     search_results: "نتائج البحث"
     advanced_search:
+      author_type_blank: "اختيار فئة"
+      date: "حسب التاريخ"
       date_3: "الشهر الماضي"
       from: "من"
       search: "ترشيح"
