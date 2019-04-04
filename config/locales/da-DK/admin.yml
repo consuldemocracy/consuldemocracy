@@ -493,6 +493,7 @@ da:
               draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
               published: Synlig for alle
           title_placeholder: Skriv titlen på udkastet
+          changelog_placeholder: Tilføj de vigtigste ændringer fra den tidligere version
           body_placeholder: Skriv udkast
         index:
           title: Kladdeversion
@@ -533,6 +534,7 @@ da:
           title: Spørgsmål
           title_placeholder: Tilføj et spørgsmål
           value_placeholder: Tilføj et lukket svar
+          question_options: "Mulige svar (valgfrit, åben svar som standard)"
         index:
           back: Tilbage
           title: Spørgsmål relateret til denne proces
@@ -545,13 +547,19 @@ da:
         table:
           title: Titel
           question_options: Valgmuligheder
+          answers_count: Antal svar
+          comments_count: Antal kommentarer
         question_option_fields:
           remove_option: Fjern valgmulighed
+      milestones:
+        index:
+          title: Følger
     managers:
       index:
         title: Managers
         name: Navn
         email: E-mail
+        no_managers: Der findes ingen managere.
       manager:
         add: Tilføj
         delete: Slet
@@ -562,7 +570,9 @@ da:
       admin: Admin menu
       banner: Administrer bannere
       proposals: Borgerforslag
+      proposals_topics: Foreslåede emner
       budgets: Deltagerbudgetter
+      geozones: Administrer geografiske områder
       hidden_comments: Skjulte kommentarer
       hidden_debates: Skjulte debatindlæg
       hidden_proposals: Skjulte forslag
@@ -575,7 +585,13 @@ da:
       messaging_users: Beskeder til brugere
       newsletters: Nyhedsbreve
       admin_notifications: Notifikationer
+      system_emails: E-mails fra systemet
+      emails_download: Hent e-mails
       valuators: Evaluatorer
+      poll_officers: Embedsmænd
+      polls: Afstemninger
+      poll_booths: Her findes valgstederne
+      poll_booth_assignments: Tildel valgsted
       poll_shifts: Administrer arbejdsfordeling
       officials: Embedsmænd
       organizations: Organisationer
@@ -822,6 +838,9 @@ da:
       recount_scrutiny: Omtælling & Eftersyn
     booth_assignments:
       manage_assignments: Administrer opgaver
+      manage:
+        actions:
+          assign: Tildel stemmestation
     poll_booth_assignments:
       show:
         location: "Lokation"
