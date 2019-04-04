@@ -37,10 +37,6 @@ class Budget::Stats
     budget.finished?
   end
 
-  def participants
-    User.where(id: phases.map { |phase| send("participant_ids_#{phase}_phase") }.flatten.uniq)
-  end
-
   def total_participants
     participants.distinct.count
   end
@@ -96,6 +92,10 @@ class Budget::Stats
 
     def phase_methods
       phases.map { |phase| self.class.send("#{phase}_phase_methods") }.flatten
+    end
+
+    def participant_ids
+      phases.map { |phase| send("participant_ids_#{phase}_phase") }.flatten.uniq
     end
 
     def participant_ids_support_phase

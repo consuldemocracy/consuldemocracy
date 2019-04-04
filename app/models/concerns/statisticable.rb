@@ -33,6 +33,10 @@ module Statisticable
       participants.where(geozone: geozones).any?
     end
 
+    def participants
+      User.where(id: participant_ids)
+    end
+
     def total_male_participants
       participants.male.count
     end

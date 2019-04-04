@@ -91,8 +91,8 @@ class Poll::Stats
 
   private
 
-    def participants
-      User.where(id: voters.pluck(:user_id))
+    def participant_ids
+      voters.pluck(:user_id)
     end
 
     def voters
