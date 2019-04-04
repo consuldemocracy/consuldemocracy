@@ -186,8 +186,11 @@ da:
           min_total_supports: Minimum støtte
           max_total_supports: Maksimal støtte
           winners: Vindere
+          one_filter_html: "Aktive filtre: <b><em>%{filter}</em></b>"
+          two_filters_html: "Aktive filtre: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtrere
+        download_current_selection: "Download aktuel markering"
         no_budget_investments: "Der er ingen investeringsprojekter."
         title: Investeringsprojekter
         assigned_admin: Tilknyttet administrator
@@ -207,10 +210,13 @@ da:
           admin: Administrator
           valuator: Evaluator
           valuation_group: Evaluator gruppe
+          geozone: Område
           valuation_finished: Færdig vurdering.
           selected: Valgt
           visible_to_valuators: Vis til evaluatorer
+          author_username: Brugernavn
           incompatible: Uforenelig
+          price: Pris
         see_results: "Se resultat"
       show:
         assigned_admin: Tildelt administrator
