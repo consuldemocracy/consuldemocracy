@@ -168,6 +168,7 @@ da:
         save_changes: Gem ændringer
     budget_investments:
       index:
+        heading_filter_all: Alle områder
         administrator_filter_all: Alle administratorer
         valuator_filter_all: Alle evaluatorer
         tags_filter_all: Alle tags
@@ -183,6 +184,7 @@ da:
           undecided: Ikke besluttet
           unfeasible: Uigennemførlig
           min_total_supports: Minimum støtte
+          max_total_supports: Maksimal støtte
           winners: Vindere
         buttons:
           filter: Filtrere
