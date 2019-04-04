@@ -207,6 +207,7 @@ ru:
         name: Название
         external_code: "Внешний код (опционально)"
         census_code: "Код цензуса (опционально)"
+        html_map_coordinates: "HTML координаты <map> (необязательно)"
       milestone:
         status_id: "Текущий статус (необязательно)"
         title: "Название"
