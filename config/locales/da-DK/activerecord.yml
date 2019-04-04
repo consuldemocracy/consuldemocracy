@@ -207,6 +207,7 @@ da:
         title: "Spørgsmål"
       signature_sheet:
         signable_type: "Underskriftstype"
+        signable_id: "ID"
         document_numbers: "Dokumentnummer"
       site_customization/page:
         content: Indhold
@@ -315,6 +316,8 @@ da:
         title: Titel
         description: Beskrivelse
         link_text: Link tekst
+      widget/feed:
+        limit: Antal postes
     errors:
       models:
         user:
