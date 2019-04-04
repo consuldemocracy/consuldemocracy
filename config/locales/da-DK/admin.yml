@@ -912,6 +912,7 @@ da:
       edit:
         title: "Rediger Spørgsmål"
       new:
+        title: "Opret et spørgsmål, der skal stemmes om %{poll}"
         title_proposal: "Stil et spørgsmål"
       answers:
         images:
@@ -1162,6 +1163,8 @@ da:
       created_at: Oprettelsesdato
       name: Navn
       no_signature_sheets: "Der er ingen signaturark"
+      new:
+        submit: Opret signaturark
       show:
         created_at: Oprettet
         documents: Dokumenter
@@ -1189,6 +1192,7 @@ da:
       destroy: Fjern emne
       index:
         topic: Emne
+        help: "Når en bruger opretter et forslag vil følgende standard tags blive foreslået."
       name:
         placeholder: Skriv emnets navn
     users:
@@ -1274,6 +1278,8 @@ da:
         proposals: Borgerforslag
         debates: Debatforum
         processes: Processer
+      new:
+        submit_header: Opret sidehoved
     translations:
       remove_language: Fjern sprog
       add_language: Tilføj sprog
