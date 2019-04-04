@@ -25,6 +25,9 @@ da:
       debate:
         one: "Debat"
         other: "Debatter"
+      tag:
+        one: "Hashtag"
+        other: "Hashtags"
       user:
         one: "Bruger"
         other: "Brugere"
@@ -52,6 +55,9 @@ da:
       organization:
         one: "Organisationer"
         other: "Organisationer"
+      poll/booth:
+        one: "valgsted"
+        other: "valgsteder"
       proposal:
         one: "Borgerforslag"
         other: "Borgerforslag"
@@ -222,6 +228,8 @@ da:
         image: Billede
       site_customization/content_block:
         name: Navn
+        locale: baggrund
+        body: Indhold
       banner:
         background_color: Baggrundsfarve
         font_color: Skriftfarve
@@ -251,11 +259,13 @@ da:
         additional_info: Yderligere information
         milestones_summary: Resumé
       legislation/draft_version:
+        title: Titel på version
         body: Tekst
         changelog: Ændringer
         status: Status
         final_version: Den endelige version
       legislation/draft_version/translation:
+        title: Titel på version
         body: Tekst
         changelog: Ændringer
       legislation/question:
@@ -298,6 +308,7 @@ da:
         title: Titel
         description: Beskrivelse
         link_text: Link
+        link_url: Link URL
         columns: Antal kolonner
       widget/card/translation:
         label: Mærkat (valgfrit)
@@ -323,6 +334,14 @@ da:
             attachment:
               min_image_width: "Billedbredde skal være mindst %{required_min_width}px"
               min_image_height: "Billedets højde skal være mindst %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Modtagersektionen indeholder fejl"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Modtagersektionen indeholder fejl"
         map_location:
           attributes:
             map:
@@ -330,6 +349,7 @@ da:
         poll/voter:
           attributes:
             document_number:
+              not_in_census: "Findes ikke i adresseregistret"
               has_voted: "Brugeren har allerede stemt"
         legislation/process:
           attributes:
@@ -356,6 +376,7 @@ da:
         signature:
           attributes:
             document_number:
+              not_in_census: "Ikke verificeret adresse"
               already_voted: "Der er allerede stemt på dette forslag"
         site_customization/page:
           attributes:
@@ -372,3 +393,6 @@ da:
               cannot_comment_valuation: "Du kan ikke kommentere en værdisættelse"
       messages:
         record_invalid: "Valideringen mislykkedes: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Indlægget kan ikke slettes, fordi det er tilknyttet %{record}"
+          has_many: "Indlægget kan ikke slettes, fordi det er tilknyttet %{record}"
