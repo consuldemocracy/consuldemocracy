@@ -721,6 +721,13 @@ da:
         sent_guide: "Sådan vil meddelelsen se ud for modtagerne:"
         send_alert: Er du sikker på, du vil sende meddelelsen til %{n} brugere?
     system_emails:
+      preview_pending:
+        action: Venter på publicering
+        preview_of: Forhåndsvisning af %{name}
+        pending_to_be_sent: Her er indholdet, der vil blive sendt
+        moderate_pending: Send modereret meddelelse
+        send_pending: Venter på at sende
+        send_pending_notification: Meddelelserne blev sendt
       budget_investment_created:
         title: "Budgetinvestering oprettet"
         description: "Sendt når en bruger opretter en budgetinvestering."
@@ -739,6 +746,7 @@ da:
         title: "Bekræftelse af e-mail"
       user_invite:
         title: "Bruger invitation"
+      edit_info: "Du kan redigere e-mailen i"
       message_title: "Meddelelses titel"
     emails_download:
       index:
@@ -946,6 +954,11 @@ da:
     results:
       index:
         title: "Resultater"
+      results_by_booth:
+        booth: Valgsted
+        results: Resultater
+        see_results: Se resultater
+        title: "Resultater for valgsted"
     booths:
       index:
         title: "Liste over aktive stemmebokse"
@@ -968,6 +981,8 @@ da:
         shifts: "Administrer arbejdsfordeling"
         edit: "Rediger stemmeboks"
     officials:
+      edit:
+        destroy: Fjern "Embedsmand"-status
       index:
         name: Navn
       level_1: Niavue 1
@@ -1098,6 +1113,8 @@ da:
         edit_classification: Rediger klassificering
         by: Af
         sent: Sendt
+        dossier: Rapport
+        edit_dossier: Rediger rapport
         tags: Tags
         undefined: Udefineret
       edit:
