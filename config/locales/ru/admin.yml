@@ -331,10 +331,28 @@ ru:
       delete:
         notice: Статус инвестиции успешно удален
     progress_bars:
+      manage: "Управление индикаторами выполнения"
       index:
+        title: "Индикаторы выполнения"
+        no_progress_bars: "Нет индикаторов выполнения"
+        new_progress_bar: "Создать индикатор выполнения"
+        primary: "Основной индикатор выполнения"
         table_id: "ID"
         table_kind: "Тип"
         table_title: "Название"
+        table_percentage: "Ход выполнения"
+      new:
+        creating: "Создать индикатор выполнения"
+      edit:
+        title:
+          primary: "Редактировать основной индикатор выполнения"
+          secondary: "Редактировать индикатор выполнения %{title}"
+      create:
+        notice: "Индикатор выполнения успешно создан!"
+      update:
+        notice: "Индикатор выполнения успешно обновлен"
+      delete:
+        notice: "Индикатор выполнения успешно удален"
     comments:
       index:
         filter: Фильтр
@@ -404,6 +422,8 @@ ru:
           enabled: Включено
           process: Процесс
           debate_phase: Фаза дебатов
+          draft_phase: Стадия черновика
+          draft_phase_description: Если эта фаза активна, то процесс не будет отображаться на индексной странице процессов. Позволяет предварительно просмотреть процесс и создать содержимое перед началом.
           allegations_phase: Фаза комментирования
           proposals_phase: Фаза предложений
           use_markdown: Форматируйте текст при помощи разметки Markdown
@@ -412,11 +432,15 @@ ru:
           description_placeholder: Добавить описание процесса
           additional_info_placeholder: Добавить информацию, которую вы считаете полезной
           homepage: Описание
+          homepage_description: Здесь вы можете описать содержимое процесса
+          homepage_enabled: Домашняя страница включена
+          banner_title: Цвета заголовка
         index:
           create: Новый процесс
           delete: Удалить
           title: Процессы законотворчества
           filters:
+            active: Активные
             all: Все
         new:
           back: Назад
@@ -439,8 +463,13 @@ ru:
         subnav:
           info: Информация
           homepage: Главная страница
+          draft_versions: Черновики
           questions: Обсуждение
           proposals: Заявки
+          milestones: Подписчики
+      homepage:
+        edit:
+          title: Настроить домашнюю страницу вашего процесса
       proposals:
         index:
           title: Название
@@ -537,6 +566,9 @@ ru:
           comments_count: Количество комментариев
         question_option_fields:
           remove_option: Убрать вариант
+      milestones:
+        index:
+          title: Подписчики
     managers:
       index:
         title: Менеджеры
@@ -599,6 +631,8 @@ ru:
           welcome: "Добро пожаловать"
         buttons:
           save: "Сохранить"
+          content_block:
+            update: "Обновить блок"
       title_moderated_content: Модерируемое содержимое
       title_budgets: Бюджеты
       title_profiles: Профили
@@ -612,6 +646,7 @@ ru:
         title: Администраторы
         name: Имя
         email: Электронный адрес
+        id: ID администратора
         no_administrators: Нет администраторов.
       administrator:
         add: Добавить
@@ -731,6 +766,23 @@ ru:
         title: "Создано бюджетное инвестирование"
       budget_investment_selected:
         title: "Выбрано бюджетное инвестирование"
+      budget_investment_unfeasible:
+        title: "Бюджетное инвестирование нецелесообразно"
+      budget_investment_unselected:
+        title: "Выбор бюджетного инвестирования отменен"
+      comment:
+        title: "Комментировать"
+      reply:
+        title: "Ответить"
+      direct_message_for_receiver:
+        title: "Получатель личного сообщения"
+      direct_message_for_sender:
+        title: "Отправитель личного сообщения"
+      email_verification:
+        title: "Проверка Email"
+      user_invite:
+        title: "Приглашение пользователя"
+      message_title: "Заголовок сообщения"
     emails_download:
       index:
         title: Скачивание Email'ов
@@ -1078,6 +1130,8 @@ ru:
         author: Автор
         milestones: Основные этапы
         no_proposals: Предложений нет.
+      show:
+        create_question: Добавить это предложение к опросу для голосования
     hidden_proposals:
       index:
         filter: Фильтровать
@@ -1253,6 +1307,16 @@ ru:
         author: Автор
         documents: Документы
         document_count: "Количество документов:"
+        verified:
+          one: "Найдена %{count} верная подпись"
+          few: "Найдено %{count} верных подписей"
+          many: "Найдено %{count} верных подписей"
+          other: "Найдено %{count} верных подписей"
+        unverified:
+          one: "Найдена %{count} неверная подпись"
+          few: "Найдено %{count} неверных подписей"
+          many: "Найдено %{count} неверных подписей"
+          other: "Найдено %{count} неверных подписей"
         unverified_error: (Не верифицировано Цензусом)
         loading: "Еще есть подписи, находящиеся на проверке у Цензуса, пожалуйста обновите страницу чуть позже"
     stats:
@@ -1416,6 +1480,7 @@ ru:
           description: Описание
           link_text: Текст ссылки
           link_url: Ссылка URL
+          columns_help: "Ширина карточки в виде количества колонок. На мобильных экранах - это всегда 100% ширина."
           create:
             notice: "Карта успешно создана!"
           update:
