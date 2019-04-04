@@ -399,11 +399,14 @@ ar:
       share: مشاركة
       send_notification: إرسال إشعار
       no_notifications: "هذا المقترح لا يحوي إشعارات."
+      title_external_url: "وثائق إضافية"
       title_video_url: "فيديو خارجي"
       author: كاتب
     update:
       form:
         submit_button: حفظ التغييرات
+    share:
+      message: "لقد دعمت الاقتراح %{title} في %{handle}. إذا كنت مهتمًا ، ادعمها أيضًا!"
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
@@ -419,14 +422,17 @@ ar:
       no_geozone_restricted: "جميع المدن"
       geozone_restricted: "مقاطعات"
       geozone_info: "يمكن أن يشارك الناس في التعداد السكاني: "
+      already_answer: "لقد شاركت سابقا في هذا الاستطلاع"
       not_logged_in: "يجب تسجيل الدخول أو انشاء حساب جديد للمشاركة"
       unverified: "يجب عليك التحقق من الحساب الخاص بك على المشاركة"
+      cant_answer: "هذا الاستطلاع غير متوفر في منطقتك الجغرافية"
       section_header:
         icon_alt: رمز التصويت
         title: التصويت
         help: تعليمات حول التصويت
       section_footer:
         title: تعليمات حول التصويت
+        description: استطلاعات المواطنين هي آلية تشاركية يمكن من خلالها للمواطنين الذين يتمتعون بحقوق التصويت اتخاذ قرارات مباشرة
       no_polls: "جميع الاستبيانات منتهية."
     show:
       already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
