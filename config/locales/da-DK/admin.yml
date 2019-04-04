@@ -155,6 +155,8 @@ da:
         coordinates_info: "Hvis du angiver breddegrad og længdegrad, så vil investeringssiden inkludere et kort centreret omkring de angivne koordinator."
         allow_content_block: "Tillad indholdsblok"
         submit: "Gem position"
+      index:
+        back: "Gå tilbage til grupper"
     budget_phases:
       edit:
         start_date: Startdato
