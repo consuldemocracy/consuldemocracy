@@ -41,6 +41,7 @@ da:
     url_description: "Angiv URL for din hjemmeside"
     org_name: "Sidens navn"
     org_name_description: "Dette navn vil fremgå i emnefeltet (e-mails), hjælpesider..."
+    mailer_from_name: "Afsenderens e-mail"
     meta_title: "Sidens titel (SEO)"
     meta_title_description: "Titel til siden <titel>, anvendt til at øge SEO"
     meta_description: "Beskrivelse af siden (SEO)"
@@ -72,4 +73,7 @@ da:
       longitude: "Længdegrad"
       zoom: "Zoom"
     process:
+      proposals: "Forslag"
       polls: "Afstemninger"
+      polls_description: "Borgerafstemningerne er en deltagelsesproces, hvor stemmeberettigede borgere kan få direkte indflydelse og være med til at træffe lokalpolitiske beslutninger"
+      budgets: "Deltagerbudgetter"
