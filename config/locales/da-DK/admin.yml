@@ -696,8 +696,10 @@ da:
         segment_recipient: Modtagere
         sent: Sendt
         actions: Handlinger
+        draft: Udkast
         edit: Rediger
         delete: Slet
+        preview: Forhåndsvisning
         view: Se
         empty_notifications: Der er ingen notifikationer at vise
       new:
