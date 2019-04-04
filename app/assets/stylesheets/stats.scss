@@ -172,3 +172,46 @@
     }
   }
 }
+
+table {
+
+  &.survey-districts {
+
+    @include breakpoint(medium down) {
+      thead {
+        font-size: rem-calc(12);
+
+        th {
+          width: 25%;
+          word-break: break-all;
+        }
+      }
+    }
+
+    tr th {
+      border: 1px solid $border;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .tiny {
+      font-size: rem-calc(11);
+      font-weight: normal;
+    }
+
+    .success {
+      background: #c1fdd2;
+    }
+
+    .border-left-success {
+      background: #c1fdd2;
+      border-left: 2px solid #58ff87;
+    }
+
+    .border-right-success {
+      background: #c1fdd2;
+      border-right: 2px solid #58ff87;
+    }
+  }
+}
