@@ -1133,6 +1133,7 @@ da:
         geozone_name: Område
     geozones:
       index:
+        create: Opret gegrafisk område
         edit: Rediger
         delete: Slet
       geozone:
