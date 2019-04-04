@@ -1113,6 +1113,7 @@ da:
         edit_classification: Rediger klassificering
         by: Af
         sent: Sendt
+        geozone: Område
         dossier: Rapport
         edit_dossier: Rediger rapport
         tags: Tags
@@ -1124,24 +1125,38 @@ da:
         tags: Tags
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
+      summary:
+        geozone_name: Område
     geozones:
       index:
         edit: Rediger
         delete: Slet
       geozone:
         name: Navn
+        census_code: Postnummer
         coordinates: Koordinater
         coordinates_help: Koordinater, som vil generere et klikbart område på et HTML imagemap
+      errors:
+        form:
+          error:
+            one: "en fejl forhindrede det geografiske område i at blive gemt"
+            other: "flere fejl forhindrede det geografiske område i at blive gemt"
       edit:
         form:
           submit_button: Gem ændringer
+        editing: Rediger geografisk område
         back: Gå tilbage
       new:
         back: Gå tilbage
         creating: Opret distrikt
+      delete:
+        success: Geografisk område slettet
+        error: Det geografiske område kan ikke slettes, fordi flere elementer er tilknyttet til det
     signature_sheets:
+      author: Bruger
       created_at: Oprettelsesdato
       name: Navn
+      no_signature_sheets: "Der er ingen signaturark"
       show:
         created_at: Oprettet
         documents: Dokumenter
