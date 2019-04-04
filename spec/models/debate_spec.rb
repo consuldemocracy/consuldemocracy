@@ -4,9 +4,13 @@ require "rails_helper"
 describe Debate do
   let(:debate) { build(:debate) }
 
+  it_behaves_like "globalizable", :debate
+
   describe "Concerns" do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
+    it_behaves_like "sanitizable"
+    it_behaves_like "acts as paranoid", :debate
   end
 
   it "is valid" do
@@ -41,17 +45,6 @@ describe Debate do
       expect(debate).not_to be_valid
     end
 
-    it "is sanitized" do
-      debate.description = "<script>alert('danger');</script>"
-      debate.valid?
-      expect(debate.description).to eq("alert('danger');")
-    end
-
-    it "is html_safe" do
-      debate.description = "<script>alert('danger');</script>"
-      expect(debate.description).to be_html_safe
-    end
-
     it "is not valid when very short" do
       debate.description = "abc"
       expect(debate).not_to be_valid
@@ -64,12 +57,6 @@ describe Debate do
   end
 
   describe "#tag_list" do
-    it "sanitizes the tag list" do
-      debate.tag_list = "user_id=1"
-      debate.valid?
-      expect(debate.tag_list).to eq(["user_id1"])
-    end
-
     it "is not valid with a tag list of more than 6 elements" do
       debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
       expect(debate).not_to be_valid
@@ -479,15 +466,32 @@ describe Debate do
 
     context "attributes" do
 
+      let(:attributes) { { title: "save the world",
+                           description: "in order to save the world one must think about...",
+                           title_es: "para salvar el mundo uno debe pensar en...",
+                           description_es: "uno debe pensar" } }
+
       it "searches by title" do
-        debate = create(:debate, title: "save the world")
+        debate = create(:debate, attributes)
         results = described_class.search("save the world")
         expect(results).to eq([debate])
       end
 
+      it "searches by title across all languages translations" do
+        debate = create(:debate, attributes)
+        results = described_class.search("salvar el mundo")
+        expect(results).to eq([debate])
+      end
+
       it "searches by description" do
-        debate = create(:debate, description: "in order to save the world one must think about...")
+        debate = create(:debate, attributes)
         results = described_class.search("one must think")
+        expect(results).to eq([debate])
+      end
+
+      it "searches by description across all languages translations" do
+        debate = create(:debate, attributes)
+        results = described_class.search("uno debe pensar")
         expect(results).to eq([debate])
       end
 

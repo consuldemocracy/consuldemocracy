@@ -93,7 +93,6 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_text: Texto inicial del debate
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
       tags_label: Temas

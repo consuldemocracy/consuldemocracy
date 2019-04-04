@@ -93,7 +93,6 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
-      debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_label: Topics

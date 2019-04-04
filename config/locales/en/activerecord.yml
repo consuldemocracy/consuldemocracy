@@ -163,6 +163,9 @@ en:
         description: "Opinion"
         terms_of_service: "Terms of service"
         title: "Title"
+      debate/translation:
+        title: "Debate title"
+        description: "Initial debate text"
       proposal:
         author: "Author"
         title: "Title"
