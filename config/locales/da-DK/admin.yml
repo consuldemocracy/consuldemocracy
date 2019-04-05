@@ -754,6 +754,8 @@ da:
       message_title: "Meddelelses titel"
     emails_download:
       index:
+        download_segment: Download e-mails
+        download_segment_help_text: Download som CSV-format
         download_emails_button: Download liste over e-mails
     valuators:
       index:
@@ -826,6 +828,7 @@ da:
       by_officer:
         date: "Dato"
         booth: "Stemmeboks"
+        assignments: "Arbejdsopgaver til afstemningen"
     poll_shifts:
       new:
         add_shift: "Tilføj arbejdsplan"
@@ -926,6 +929,14 @@ da:
         add_answer: Tilføj svar
         video_url: Ekstern video
         answers:
+          title: Svar
+          description: Beskrivelse
+          videos: Videoer
+          video_list: Liste over videoer
+          images: Billeder
+          images_list: Liste over billeder
+          documents: Dokumenter
+          documents_list: Liste over dokumenter
           document_title: Titel
           document_actions: Handlinger
     answers:
@@ -959,6 +970,9 @@ da:
     results:
       index:
         title: "Resultater"
+      result:
+        table_answer: Svar
+        table_votes: Stemmer
       results_by_booth:
         booth: Valgsted
         results: Resultater
@@ -1134,6 +1148,7 @@ da:
         geozone_name: Område
     geozones:
       index:
+        title: Geografisk område
         create: Opret gegrafisk område
         edit: Rediger
         delete: Slet
@@ -1180,6 +1195,7 @@ da:
         stats_title: Statistikker
         summary:
           comments: Kommentarer
+          unverified_users: Ikke verificerede brugere
           users: Total antal brugere
           verified_users: Verificerede brugere
           verified_users_who_didnt_vote_proposals: Verificerede brugere, der ikke stemte på nogle forslag
@@ -1187,6 +1203,18 @@ da:
           votes: Sammenlagt antal stemmer
         budgets_title: Deltagerbudget
         visits_title: Besøg
+        polls: Afstemninger
+      direct_messages:
+        title: Direkte beskeder
+        total: Total
+        users_who_have_sent_message: Brugere, der har sendt en privatbesked
+      proposal_notifications:
+        title: Forslagsnotifikationer
+        total: Total
+      polls:
+        all: Afstemninger
+        table:
+          question_name: Spørgsmål
     tags:
       create: Opret emne
       destroy: Fjern emne
