@@ -1,4 +1,5 @@
 class Management::BaseController < ActionController::Base
+  include GlobalizeFallbacks
   layout "management"
 
   before_action :verify_manager
