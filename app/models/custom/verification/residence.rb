@@ -19,8 +19,8 @@ class Verification::Residence
   def save
     return false unless valid?
 
-    old_user = User.with_hidden.where(document_number: document_number).first
-    if old_user&.paranoia_destroyed?
+    old_user = User.old_version(document_number)
+    if old_user
       user.move(document_number)
       old_user.really_destroy!
     end

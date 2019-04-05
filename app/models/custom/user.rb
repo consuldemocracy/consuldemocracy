@@ -368,6 +368,10 @@ class User < ActiveRecord::Base
     budget_headings != user_headings
   end
 
+  def self.old_version(document_number)
+    where(document_number: document_number, email: nil).first
+  end
+
   def move(document_number)
     return false unless document_number.present?
 
