@@ -42,12 +42,15 @@ da:
     org_name: "Sidens navn"
     org_name_description: "Dette navn vil fremgå i emnefeltet (e-mails), hjælpesider..."
     mailer_from_name: "Afsenderens e-mail"
+    mailer_from_address: "Afsenderens e-mail"
     meta_title: "Sidens titel (SEO)"
     meta_title_description: "Titel til siden <titel>, anvendt til at øge SEO"
     meta_description: "Beskrivelse af siden (SEO)"
+    meta_description_description: 'Beskrivelse af siden <meta name="description" >, anvendes til forbedring af SEO'
     meta_keywords: "Søgeord (SEO)"
     min_age_to_participate: Minimumsalder for deltagelse
     min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
+    direct_message_max_per_day: "Max antal direkte beskeder pr. dag"
     direct_message_max_per_day_description: "Det maksimale antal direkte beskeder en bruger kan sende om dagen"
     feature:
       twitter_login: "Twitter login"
@@ -68,6 +71,8 @@ da:
       allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
       allow_attached_documents_description: "Tillad brugere at overføre filer, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
       guides: "Guide til oprettelse af forslag eller investeringsprojekter"
+      public_stats: "Offentlig statistik"
+      help_page: "Hjælp"
     map:
       latitude: "Breddegrad"
       longitude: "Længdegrad"
