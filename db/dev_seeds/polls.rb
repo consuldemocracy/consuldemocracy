@@ -1,3 +1,6 @@
+require_dependency "poll/answer"
+require_dependency "poll/question/answer"
+
 section "Creating polls" do
 
   Poll.create(name: I18n.t("seeds.polls.current_poll"),
