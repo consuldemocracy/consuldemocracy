@@ -1,6 +1,7 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+  include GlobalizeFallbacks
   include HasFilters
   include HasOrders
   include AccessDeniedHandler
@@ -13,7 +14,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
-  before_action :set_fallbacks_to_all_available_locales
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -118,9 +118,5 @@ class ApplicationController < ActionController::Base
 
     def current_budget
       Budget.current
-    end
-
-    def set_fallbacks_to_all_available_locales
-      Globalize.set_fallbacks_to_all_available_locales
     end
 end
