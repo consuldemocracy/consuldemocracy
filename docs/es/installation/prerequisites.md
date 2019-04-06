@@ -1,7 +1,7 @@
 # Instalación de Prerrequisitos
 
-* [Ubuntu](ubuntu.md)
-* [Debian](debian.md)
+* [Ubuntu Linux](ubuntu.md)
+* [Debian Linux](debian.md)
 * [MacOS](macos.md)
 * [Windows](windows.md)
 
