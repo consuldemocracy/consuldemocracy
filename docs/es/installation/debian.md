@@ -8,6 +8,11 @@ El programa 'sudo' no viene instalado en Debian por defecto. Su instalación y c
 su
 ```
 
+> Para [Vagrant](/es/installation/vagrant.md) ejecutar:
+> ```
+> sudo su -
+> ```
+
 ## Git
 
 Git es mantenido oficialmente en Debian:
