@@ -106,10 +106,35 @@ he:
         blank_dates: התאריכים ריקים
       destroy:
         success_notice: התקציב נמחק בהצלחה
+        unable_notice: אינך יכול להסיר תקציב הקשור להשקעות קיימות
+      new:
+        title: תקציב השתתפותי חדש
+      winners:
+        calculate: מחשב את ההשקעות הנבחרות
+        calculated: ההשקעות הזוכות בתהליך חישוב, עלול להיערך זמן מה.
+        recalculate: חישוב מחדש של ההשקעות הזוכות
     budget_groups:
       name: "Name"
+      headings_name: "כותרות"
+      headings_edit: "עריכת כותרות"
+      headings_manage: "ניהול כותרות"
+      max_votable_headings: "מספר הכותרות המקסימלי שתושב יכול להצביע עבורן"
+      no_groups: "לא נמצאו קבוצות."
+      amount:
+        one: "יש קבוצה 1"
+        two: "ישנן %{count} קבוצות"
+        many: "ישנן %{count} קבוצות"
+        other: "ישנן %{count} קבוצות"
+      create:
+        notice: "הקבוצה נוצרה בהצלחה!"
+      update:
+        notice: "הקבוצה עודכנה בהצלחה"
+      destroy:
+        success_notice: "הקבוצה נמחקה בהצלחה"
+        unable_notice: "אינך יכול להסיר קבוצה המקושרת להשקעות קיימות"
       form:
-        create: "צור קבוצה"
+        create: "צור קבוצה חדשה"
+        edit: "ערוך קבוצה"
         name: "Group name"
         submit: "שמירת קבוצה"
       index:
