@@ -224,13 +224,22 @@ he:
           supports: לחיצה לתמיכה
           admin: מנהל/ת
           valuator: Valuator
+          valuation_group: קבוצת מעריכים
           geozone: היקף הפעילות
           feasibility: סבירות לביצוע
           valuation_finished: Val. Fin.
           selected: Selected
+          visible_to_valuators: הצג למעריכים
+          author_username: שם העורך
+          incompatible: אינו תואם
+          price: מחיר
+        cannot_calculate_winners: התקציב צריך להישאר על שלב "הצבעה לפרויקטים", "סקירת הצבעות" או "סיים תקציב" על מנת לחשב את הפרויקטים הזוכים
+        see_results: "ראו תוצאות"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: הוקצו מעריכים
+        classification: סיווג
+        info: "%{budget_name} - קבוצה: %{group_name} - השקעה פרוייקט %{id}"
         edit: ערוך
         edit_classification: עריכת הסיווג
         by: מאת
@@ -240,37 +249,88 @@ he:
         dossier: מסמכים נלווים
         edit_dossier: עריכת מסמכים נלווים
         tags: תגיות
+        user_tags: תגיות משתמשים
         undefined: לא מוגדר
+        compatibility:
+          title: תאימות
+          "true": אינו תואם
+          "false": תואם
         selection:
           title: Selection
           "true": Selected
+          "false": לא נבחר
         winner:
+          title: זוכה
           "true": "כן"
           "false": "לא"
         image: "תמונה"
+        see_image: "ראה תמונה"
+        no_image: "ללא תמונה"
         documents: "מסמכים"
+        see_documents: "ראה את המסמכים (%{count})"
+        no_documents: "ללא מסמכים"
+        valuator_groups: "קבוצת המעריכים"
       edit:
+        classification: סיווג
+        compatibility: תאימות
+        mark_as_incompatible: סמן כלא תואם
         selection: Selection
+        mark_as_selected: סמן כנבחר
         assigned_valuators: מעריכים
+        select_heading: בחר כותרת
         submit_button: עודכן
+        user_tags: המשתמש הקצה תגיות
         tags: תגיות
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
         undefined: Undefined
+        user_groups: "קבוצות"
+      search_unfeasible: חיפוש אינו ישים
     milestones:
       index:
         table_id: "ID"
         table_title: "שם"
         table_description: "תיאור"
+        table_publication_date: "תאריך פרסום"
+        table_status: מצב
+        table_actions: "פעולות"
+        delete: "מחיקת אבני דרך"
+        no_milestones: "לא הגדרו אבני דרך"
         image: "תמונה"
+        show_image: "הצג תמונה"
         documents: "מסמכים"
+        milestone: אבני דרך
+        new_milestone: יצירת אבן דרך חדשה
+      form:
+        admin_statuses: ניהול קצב התקדמות
+        no_statuses_defined: טרם הוגדר קצב התקדמות
       new:
+        creating: צור אבני דרך
+        date: תאריך
         description: תיאור
+      edit:
+        title: ערוך אבן דרך
+      create:
+        notice: אבן דרך חדשה נוצרה בהצלחה!
+      update:
+        notice: אבן דרך חדשה עודכנה בהצלחה
+      delete:
+        notice: אבן דרך הוסרה בהצלחה
     statuses:
       index:
+        title: קצב התקדמות באבני הדרך
+        empty_statuses: לא נוצרו סטטוסים לאבני הדרך
+        new_status: יצירת סטטוס לאבן דרך חדשה
         table_name: Name
         table_description: תיאור
+        table_actions: פעולות
         delete: מחיקה
         edit: ערוך
+      edit:
+        title: עריכת סטטוס אבן הדרך
+      update:
+        notice: סטטוס אבן דרך חדשה עודכנה בהצלחה
+      new:
+        title: יצירת סטטוס לאבן הדרך
     progress_bars:
       index:
         table_id: "ID"
