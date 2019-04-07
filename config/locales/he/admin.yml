@@ -12,6 +12,8 @@ he:
       unmark_featured: לא מקודם
       edit: ערוך
       delete: מחיקה
+    officing_booth:
+      title: "אתה עובד על התא שממוקם ב %{booth}. אם זה אינו נכון, אל תמשיך ופנה לעזרה טלפונית תודה."
     banners:
       index:
         title: באנרים
@@ -36,6 +38,13 @@ he:
         editing: ערוך באנר
         form:
           submit_button: שמירת שינויים
+      errors:
+        form:
+          error:
+            one: "שגיאה מנעה מהבאנר להישמר"
+            two: "שגיאות מנעו את שמירת הבאנר"
+            many: "שגיאות מנעו את שמירת הבאנר"
+            other: "שגיאות מנעו את שמירת הבאנר"
       new:
         creating: צור באנר
     activity:
@@ -55,6 +64,7 @@ he:
           on_users: משתמשים
         title: Moderator activity
         type: סוג
+        no_activity: אין פעילות מנהלים.
     budgets:
       index:
         title: תקציבים השתתפותיים
@@ -65,13 +75,16 @@ he:
         budget_investments: See budget investments
         table_name: Name
         table_phase: שלב
+        table_edit_groups: קבוצת כותרות
         table_edit_budget: ערוך
+        edit_groups: עריכת קבוצות כותרות
       edit:
         phase: שלב
         active: פעיל
     budget_groups:
       name: "Name"
       form:
+        create: "צור קבוצה"
         name: "Group name"
         submit: "שמירת קבוצה"
       index:
@@ -79,6 +92,8 @@ he:
     budget_headings:
       name: "Name"
       no_headings: "אין כותרות."
+      create:
+        notice: "כותרת נוצרו בהצלחה!"
       form:
         name: "Heading name"
         amount: "Amount"
