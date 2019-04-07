@@ -94,10 +94,14 @@ he:
             many: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
             other: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
           voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב
+          voted_info_link: שנה את הצבעתך
           different_heading_assigned_html: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
+          change_ballot: "אם שיניתם את דעתכם, באפשרותכם להסיר את ההצבעותכם ב- %{check_ballot} ולהתחיל שוב."
+          check_ballot_link: "בדוק ואשר את ההצבעה שלי"
           zero: לא נעשתה הצבעה עבור פרויקט השקעה.
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
           verify_account: "לאמת את החשבון"
+          create: "יצירת תקציב להשקעה"
           not_logged_in: "חובה נדרשת ליצירת תקציב, השקעה של%{sign_in} או%{sign_up}."
           sign_in: "התחברות"
           sign_up: "הרשמה"
@@ -108,17 +112,22 @@ he:
           random: אקראי
           confidence_score: הכי נתמכת
           price: לפי מחיר
+      share:
+        message: "יצרתי את פרויקט השקעה %{title} %{handle}. צור פרויקט השקעה גם!"
       show:
         author_deleted: משתמש/ת זה/ו נמחק/ה
         price_explanation: פירוט למחיר
         unfeasibility_explanation: אין סבירות שניתן לביצוע
         code_html: "קוד פרויקט ההשקעה: <strong>%{code}</strong>"
         location_html: "מיקום: <strong>%{location}</strong>"
+        organization_name_html: "מוצע בשם: <strong>%{name}</strong>"
         share: שיתוף
         title: פרויקט להשקעה
         supports: לחיצה לתמיכה
         votes: הצבעות
+        price: מחיר
         comments_tab: הערות
+        milestones_tab: אבני דרך
         author: מחבר/ת
         project_unfeasible_html: "פרויקט השקעה זה <strong> סומן כבלתי ניתן ליישום </ strong> ולא יתקדם לשלב ההצבעה."
         project_selected_html: "פרויקט ההשקעה זה<strong> נבחר </ strong> לעבור לשלב ההצבעה."
