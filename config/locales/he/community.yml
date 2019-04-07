@@ -1,5 +1,7 @@
 he:
   community:
+    sidebar:
+      title: קהילה
     show:
       create_first_community_topic:
         sign_in: "התחברות"
