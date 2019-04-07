@@ -4,17 +4,22 @@ he:
       create_first_community_topic:
         sign_in: "התחברות"
         sign_up: "הרשמה"
+      tab:
+        participants: משתתפים
       sidebar:
         participate: רוצה להשתתף בזה
         new_topic: יצירת נושא
       topic:
+        edit: ערוך נושא
         destroy: מחיקת הנושא
         comments:
           zero: אין תגובות
       author: מחבר/ת
     topic:
+      edit: ערוך נושא
       form:
         topic_title: שם
+        topic_text: טקסט ראשוני
         new:
           submit_button: יצירת נושא
         create:
