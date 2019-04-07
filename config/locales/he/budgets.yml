@@ -93,17 +93,37 @@ he:
         already_added: כבר הוספת את פרויקט ההשקעות הזה
         already_supported: כבר תומכת בפרויקט השקעה זה.. שתף עם אחרים!
         support_title: תמיכה בפרויקט זה
+        confirm_group:
+          one: "תוכל לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא תוכל לתמוך ברובע אחר. האם את/ה בטוח/ה?"
+          two: "תוכל לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא תוכל לתמוך ברובע אחר. האם את/ה בטוח/ה?"
+          many: "ניתן לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא ניתן לתמוך ברובע אחר. האם את/ה בטוח/ה?"
+          other: "ניתן לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא ניתן לתמוך ברובע אחר. האם את/ה בטוח/ה?"
         supports:
           zero: אין תמיכה
+          one: תמיכה 1
+          two: "%{count} תומכים"
+          many: "%{count} תומכים"
+          other: "%{count} תומכים"
         give_support: בעד
       header:
         check_ballot: בדוק את מצב ההצבעות
         different_heading_assigned_html: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
+        change_ballot: "אם את משנה את דעתך, באפשרותך להסיר את ההצבעות שלכם ב- %{check_ballot} ולהתחיל שוב."
+        check_ballot_link: "בדוק ואשר את ההצבעה שלי"
+        price: "לנושא זה יש תקציב של"
+    progress_bar:
+      assigned: "הקצית: "
+      available: "תקציב זמין: "
     show:
       group: קבוצה
       phase: שלב נוכחי
       unfeasible_title: השקעות שאינן ברות ביצוע
       unfeasible: צפיה בהשקעות שאינן ברות ביצוע
+      unselected_title: השקעות שלא נבחרו לשלב ההצבעות
+      unselected: ראו את ההשקעות שלא נבחרו לשלב ההצבעות
+      see_results: ראו תוצאות
     results:
+      link: תוצאות
+      page_title: "%{budget} - תוצאות"
       spending_proposal: כותרת ההצעה
       ballot_lines_count: הצבעות
