@@ -22,6 +22,8 @@ he:
         topic_text: טקסט ראשוני
         new:
           submit_button: יצירת נושא
+        edit:
+          submit_button: ערוך נושא
         create:
           submit_button: יצירת נושא
       show:
