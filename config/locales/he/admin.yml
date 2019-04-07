@@ -178,28 +178,44 @@ he:
         description: תיאור
         description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
         enabled: השלב מופעל
+        enabled_help_text: שלב זה יהיה ציבורי בציר הזמן של שלבי התקציב, וכן פעיל לכל מטרה אחרת
         save_changes: שמירת שינויים
     budget_investments:
       index:
+        heading_filter_all: כל הכותרות
         administrator_filter_all: כל מנהלי המערכת
         valuator_filter_all: כל המעריכים
         tags_filter_all: כל התגיות
+        advanced_filters: סינון מתקדם
+        placeholder: חיפוש פרויקטים
         filters:
           all: כולם
           without_admin: מבלי להקצות מנהל/ת
+          without_valuator: ללא הקצאת מעריכים
           under_valuation: Under valuation
           valuation_finished: הערכה הסתיימה
+          feasible: בר ביצוע
           selected: Selected
           undecided: Undecided
           unfeasible: אינו בר-ביצוע
+          min_total_supports: תמיכה מינימלית
+          max_total_supports: תמיכה מקסימלית
+          winners: זוכים
+          one_filter_html: "הסינון אשר הופעל: <b><em>%{filter}</em></b>"
+          two_filters_html: "המסננים שהופעלו:<b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filter
+        download_current_selection: "הורדת הבחירה הנוכחית"
+        no_budget_investments: "אין פרויקטי השקעה זמינים."
+        title: פרויקטי השקעה
         assigned_admin: הוקצה מנהל לפרוייקט
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
+        no_valuation_groups: לא הוקצו קבוצות מעריכים
         feasibility:
           feasible: "בר ביצוע (%{price})"
           unfeasible: "אינו בר-ביצוע"
+          undecided: "טרם הוחלט"
         selected: "Selected"
         select: "בחר"
         list:
