@@ -82,10 +82,16 @@ he:
         votes: הצבעות
         comments_tab: הערות
         author: מחבר/ת
+        project_unfeasible_html: "פרויקט השקעה זה <strong> סומן כבלתי ניתן ליישום </ strong> ולא יתקדם לשלב ההצבעה."
+        project_selected_html: "פרויקט ההשקעה זה<strong> נבחר </ strong> לעבור לשלב ההצבעה."
+        project_winner: "הפרויקט שנבחר"
+        project_not_selected_html: "פרויקט זה<strong> לא נבחר </ strong> לעבור לשלב ההצבעה."
+        see_price_explanation: ראה הסבר תמחור
       wrong_price_format: נא לרשום סכום בשקלים שלמים
       investment:
         add: Add
         already_added: כבר הוספת את פרויקט ההשקעות הזה
+        already_supported: כבר תומכת בפרויקט השקעה זה.. שתף עם אחרים!
         support_title: תמיכה בפרויקט זה
         supports:
           zero: אין תמיכה
