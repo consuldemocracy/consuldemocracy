@@ -20,7 +20,9 @@ he:
       reviewing: reviewing proposals  צפייה בהצעות
       selecting: בחירת ההצעות
       valuating: הערכת ההצעות
-      publishing_prices: פרסום עלויות פרוייקטים
+      publishing_prices: פרסום עלויות פרויקטים
+      balloting: הצבעה לפרויקטים
+      reviewing_ballots: בחינת ההצבעות
       finished: תקציב סגור
     index:
       title: תקציבים השתתפותיים
