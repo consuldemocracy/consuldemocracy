@@ -73,8 +73,12 @@ he:
       name: "Name"
       form:
         name: "Group name"
+        submit: "שמירת קבוצה"
+      index:
+        back: "לחזור לתקציבים"
     budget_headings:
       name: "Name"
+      no_headings: "אין כותרות."
       form:
         name: "Heading name"
         amount: "Amount"
