@@ -50,12 +50,28 @@ he:
         title: תקציבים השתתפותיים
         help: עזרה עם תקציבים השתתפותיים
         all_phases: ראה את כל השלבים
+      all_phases: שלבי השקעות בתקציב
+      map: הצעות השקעות התקציב על פי מיקום גאוגרפי
+      investment_proyects: רשימת כל פרויקטי ההשקעה
+      unfeasible_investment_proyects: רשימת כל הפרויקטים אשר אינם ישימים
+      not_selected_investment_proyects: רשימת כל הפרויקטים שלא עברו לשלב ההצבעות
+      finished_budgets: תקציבים השתתפותיים אשר הסתיימו
+      see_results: ראו תוצאות
+      section_footer:
+        title: עזרה עם תקציבים השתתפותיים
+        description: בתקציבים השתתפותיים תושבי העיר מחליטים לאילו פרויקטים יוקצה התקציב.
+      milestones: אבני דרך
     investments:
       form:
         tag_category_label: "תחומים"
         tags_instructions: "תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
         tags_label: תגיות
         tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
+        map_location: "מפת מיקום"
+        map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
+        map_remove_marker: "הסר סמן מפה"
+        location: "פרטים נוספים על המיקום"
+        map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
       index:
         title: מימון השתתפותי
         unfeasible: פרויקטים להשקעה אינם ברי ביצוע
