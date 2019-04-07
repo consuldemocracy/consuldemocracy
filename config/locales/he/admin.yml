@@ -142,17 +142,42 @@ he:
     budget_headings:
       name: "Name"
       no_headings: "אין כותרות."
+      amount:
+        one: "יש כותרת 1"
+        two: "ישנן %{count} כותרות"
+        many: "ישנן %{count} כותרות"
+        other: "ישנן %{count} כותרות"
       create:
         notice: "כותרת נוצרו בהצלחה!"
+      update:
+        notice: "כותרת עודכנה בהצלחה"
+      destroy:
+        success_notice: "כותרת הוסרה בהצלחה"
+        unable_notice: "אינך יכול להסיר כותרת המקושרת להשקעות קיימות"
       form:
         name: "Heading name"
         amount: "Amount"
+        population: "אוכלוסיה (אופציונלי)"
+        population_info: "תקציב כותרת האוכלוסייה תחום משמש למטרות סטטיסטית בסוף התקציב להראות עבור כל כותרת שמייצג אזור עם אוכלוסייה ומה אחוז המצביעים. השדה הוא אופציונלי, כך שתוכל להשאיר אותו ריק אם הוא אינו רלונטי."
+        latitude: "קו רוחב (אופציונלי)"
+        longitude: "קו רוחב (אופציונלי)"
+        coordinates_info: "אם קווי אורך ורוחב מסופקים, דף ההשקעות עבור כותרת זו יכלול מפה. מפה זו תמורכז על פי קואורדינטות אלה."
+        allow_content_block: "אפשר חסימת תוכן"
+        content_blocks_info: "אם תבחר את האפשרות לחסום תוכן, תוכל ליצור תוכן מותאם אישית הקשור לכותרת זו מתוך קטע ההגדרות > קובצי תוכן מותאמים אישית. תוכן זה יופיע בדף ההשקעות עבור כותרת זו."
+        create: "צור כותרת חדשה"
+        edit: "ערוך כותרת"
         submit: "Save heading"
       index:
-        back: "חזור אל"
+        back: "חזור אל הקבוצות"
     budget_phases:
       edit:
+        start_date: תאריך פתיחה
+        end_date: תאריך סיום
+        summary: תקציר
+        summary_help_text: טקסט זה יודיע למשתמש על השלב. כדי להציג אותו גם אם השלב אינו פעיל, בחר בתיבת הסימון שבהמשך
         description: תיאור
+        description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
+        enabled: השלב מופעל
         save_changes: שמירת שינויים
     budget_investments:
       index:
