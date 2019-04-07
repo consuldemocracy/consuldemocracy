@@ -20,12 +20,19 @@ he:
         not_verified: רק משתמשים שרישומם אומת יכולים להצביע על ההצעות; %{verify_account}.
         organization: ארגונים אינם רשאים להצביע
         not_selected: לא ניתן לתמוך/להשקיע בפרויקטים שלא נבחרו
+        not_enough_money_html: "כבר הקצית את התקציב הזמין.<br><small>זכור כי %{change_ballot} בכל עת</small>"
         no_ballots_allowed: שלב הבחירה נסגר
+        different_heading_assigned_html: "כבר הצבעת בנושאים אחרים: %{heading_link}"
+        change_ballot: שנה את הצבעתך
     groups:
       show:
+        title: בחר באפשרות
         unfeasible_title: השקעות שאינן ברות ביצוע
         unfeasible: צפיה בהשקעות שאינן ברות ביצוע
+        unselected_title: השקעות שלא נבחרו לשלב ההצבעות
+        unselected: ראו את ההשקעות שלא נבחרו לשלב ההצבעות
     phase:
+      drafting: טיוטה(אינה גלויה לציבור)
       informing: מידע
       accepting: קבלת ההצעות
       reviewing: reviewing proposals  צפייה בהצעות
@@ -37,8 +44,12 @@ he:
       finished: תקציב סגור
     index:
       title: תקציבים השתתפותיים
+      empty_budgets: לא נמצאו תקציבים.
       section_header:
+        icon_alt: סמל תקציבים השתתפותיים
         title: תקציבים השתתפותיים
+        help: עזרה עם תקציבים השתתפותיים
+        all_phases: ראה את כל השלבים
     investments:
       form:
         tag_category_label: "תחומים"
