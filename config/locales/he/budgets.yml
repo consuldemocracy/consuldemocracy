@@ -4,6 +4,17 @@ he:
       show:
         title: בחר/י אפשרות
         amount_spent: סכום ההוצאה
+        remaining: "נותר לך סכום של <span>%{amount}</span> שניתן להשקיע."
+        no_balloted_group_yet: "טרם הצבעת לקבוצה הזאת, גש להצביע!"
+        remove: הסרת הצבעה
+        voted_html:
+          one: "הצבעת להשקעה <span>אחת</span>."
+          two: "הצבעת ל- <span>%{count}</span>השקעות."
+          many: "הצבעת ל- <span>%{count}</span>השקעות."
+          other: "הצבעת ל- <span>%{count}</span>השקעות."
+        voted_info_html: "ההצבעה שלך מאושרת!"
+        voted_info_2: "אבל אתה יכול לשנות את ההצבעה שלך בכל עת עד שלב זה יסגר."
+        zero: טרם הצבעת לפרויקט כלשהו.
       reasons_for_not_balloting:
         not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
         not_verified: רק משתמשים שרישומם אומת יכולים להצביע על ההצעות; %{verify_account}.
