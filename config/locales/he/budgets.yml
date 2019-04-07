@@ -75,13 +75,24 @@ he:
       index:
         title: מימון השתתפותי
         unfeasible: פרויקטים להשקעה אינם ברי ביצוע
+        unfeasible_text: "ההשקעות צריכות לעמוד במספר קריטריונים (חוקיות, קונקרטיות, שלא יעלו על תקרת התקציב) להכרזה בת קיימא ולהגיע לשלב ההצבעה הסופי. כל ההשקעות שאינן עומדות בקריטריונים אלה מסומנות כבלתי אפשריות ויפורסמו ברשימה הבאה, יחד עם הדיווח על אי כדאיותכן."
         by_heading: "הקפי השקעה בפרויקטים:%{heading}"
         search_form:
           button: חיפוש
           placeholder: חיפוש פרויקטים להשקעה...
           title: חיפוש
+        search_results_html:
+          one: " המכיל את המונח <strong>'%{search_term}'</strong>"
+          two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+          many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+          other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: ההצבעה שלי
+          voted_html:
+            one: "<strong>הצבעת להצעה אחת בעלות של %{amount_spent}</strong>"
+            two: "<strong>הצבעת להצעות %{count} בעלויות של %{amount_spent}</strong>"
+            many: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
+            other: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
           voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב
           different_heading_assigned_html: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
           zero: לא נעשתה הצבעה עבור פרויקט השקעה.
