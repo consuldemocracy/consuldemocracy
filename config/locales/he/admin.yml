@@ -98,6 +98,8 @@ he:
         name: "Heading name"
         amount: "Amount"
         submit: "Save heading"
+      index:
+        back: "חזור אל"
     budget_phases:
       edit:
         description: תיאור
@@ -258,6 +260,9 @@ he:
         edit:
           back: חזרה
           submit_button: שמירת שינויים
+        form:
+          hints:
+            final_version: גרסה זו תפורסם כגרסה סופית של תהליך זה. לא ניתן להוסיף תגובות בגרסה זו.
         index:
           delete: מחיקה
         new:
