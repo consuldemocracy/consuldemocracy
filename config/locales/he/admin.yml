@@ -3,6 +3,7 @@ he:
     header:
       title: ניהול
     actions:
+      actions: פעולות
       confirm: האם את/ה בטוח/ה?
       confirm_hide: אשר
       hide: הסתר
@@ -11,6 +12,7 @@ he:
       mark_featured: מוצע
       unmark_featured: לא מקודם
       edit: ערוך
+      configure: קביעת תצורה
       delete: מחיקה
     officing_booth:
       title: "אתה עובד על התא שממוקם ב %{booth}. אם זה אינו נכון, אל תמשיך ופנה לעזרה טלפונית תודה."
@@ -24,16 +26,20 @@ he:
           all: כולם
           with_active: פעיל
           with_inactive: לא פעיל
+        preview: תצוגה מקדימה
       banner:
         title: שם
         description: תיאור
         target_url: קישור
         post_started_at: החל מ
         post_ended_at: עד
+        sections_label: בחירת מיקום התצוגה
         sections:
+          homepage: דף הבית
           debates: דיונים
           proposals: הצעות
           budgets: מימון השתתפותי
+          help_page: דף עזרה
       edit:
         editing: ערוך באנר
         form:
@@ -54,6 +60,7 @@ he:
           block: מוסתרים
           hide: מוחבא
           restore: משוחזר
+        by: נוהל על ידי
         content: תוכן
         filter: הצג
         filters:
@@ -62,12 +69,14 @@ he:
           on_debates: דיונים
           on_proposals: הצעות
           on_users: משתמשים
+          on_system_emails: רשימת תפוצה
         title: Moderator activity
         type: סוג
         no_activity: אין פעילות מנהלים.
     budgets:
       index:
         title: תקציבים השתתפותיים
+        new_link: צור תקציב חדש
         filter: Filter
         filters:
           open: Open
@@ -75,12 +84,28 @@ he:
         budget_investments: See budget investments
         table_name: Name
         table_phase: שלב
+        table_investments: השקעות
         table_edit_groups: קבוצת כותרות
         table_edit_budget: ערוך
         edit_groups: עריכת קבוצות כותרות
+        edit_budget: ערוך תקציב
+        no_budgets: "לא נמצאו תקציבים."
+      create:
+        notice: תקציב השתתפותי חדש נוצר בהצלחה!
+      update:
+        notice: תקציב השתתפותי עודכן בהצלחה
       edit:
+        title: ערוך תקציב השתתפותי
+        delete: מחיקת התקציב
         phase: שלב
+        dates: תאריכים
+        enabled: מופעל
+        actions: פעולות
+        edit_phase: ערוך שלב
         active: פעיל
+        blank_dates: התאריכים ריקים
+      destroy:
+        success_notice: התקציב נמחק בהצלחה
     budget_groups:
       name: "Name"
       form:
