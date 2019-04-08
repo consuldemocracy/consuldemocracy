@@ -988,18 +988,31 @@ he:
         edit_answers: ערוך תשובה
       flash:
         question_added: "שאלות שנוספו לסקר זה"
+        error_on_question_added: "לא ניתן לשייך שאלות לסקר זה"
     questions:
       index:
+        title: "שאלות"
         create: "יצירת שאלה חדשה"
+        no_questions: "לא נמצאו שאלות."
+        filter_poll: סנן לפי סקר
+        select_poll: בחר סקר
+        questions_tab: "שאלות"
+        successful_proposals_tab: "הצעות מוצלחות"
         create_question: "יצירת שאלה חדשה"
         table_proposal: "הצעה"
         table_question: "שאלה"
         table_poll: "הצבעה"
+        poll_not_assigned: "לא הוקצה סקר"
+      edit:
+        title: "ערוך שאלה"
       new:
+        title: "צור שאלה לסקר%{poll}"
+        title_proposal: "צור שאלה"
         poll_label: "הצבעה"
       answers:
         images:
           add_image: "הוספת תמונה"
+          save_image: "שמור תמונה"
       show:
         proposal: ההצעה המקורית
         author: מחבר/ת
