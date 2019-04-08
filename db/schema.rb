@@ -1339,6 +1339,14 @@ ActiveRecord::Schema.define(version: 20190411090023) do
     t.index ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
   end
 
+  create_table "stats_versions", force: :cascade do |t|
+    t.string   "process_type"
+    t.integer  "process_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["process_type", "process_id"], name: "index_stats_versions_on_process_type_and_process_id", using: :btree
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"

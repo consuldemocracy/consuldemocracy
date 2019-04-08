@@ -88,6 +88,10 @@ module Statisticable
       PercentageCalculator.calculate(fraction, total)
     end
 
+    def version
+      "v#{resource.find_or_create_stats_version.updated_at.to_i}"
+    end
+
     private
 
       def base_stats_methods

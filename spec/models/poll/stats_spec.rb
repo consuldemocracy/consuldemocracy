@@ -231,4 +231,30 @@ describe Poll::Stats do
       end
     end
   end
+
+  describe "#version", :with_frozen_time do
+    context "record with no stats" do
+      it "returns a string based on the current time" do
+        expect(stats.version).to eq "v#{Time.current.to_i}"
+      end
+
+      it "doesn't overwrite the timestamp when called multiple times" do
+        time = Time.current
+
+        expect(stats.version).to eq "v#{time.to_i}"
+
+        travel_to 2.seconds.from_now do
+          expect(stats.version).to eq "v#{time.to_i}"
+        end
+      end
+    end
+
+    context "record with stats" do
+      before { poll.create_stats_version(updated_at: 1.day.ago) }
+
+      it "returns the version of the existing stats" do
+        expect(stats.version).to eq "v#{1.day.ago.to_i}"
+      end
+    end
+  end
 end

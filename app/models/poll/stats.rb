@@ -107,7 +107,7 @@ class Poll::Stats
     stats_cache :participants, :voters, :recounts
 
     def stats_cache(key, &block)
-      Rails.cache.fetch("polls_stats/#{poll.id}/#{key}/v12", &block)
+      Rails.cache.fetch("polls_stats/#{poll.id}/#{key}/#{version}", &block)
     end
 
 end
