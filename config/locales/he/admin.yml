@@ -676,24 +676,94 @@ he:
       all_users: כל המשתמשים
       administrators: מנהלי מערכת
       proposal_authors: מחברי ההצעות
+      investment_authors: מחברי ההשקעות בתקציב הנוכחי
+      feasible_and_undecided_investment_authors: "מחברי השקעות בתקציב הנוכחית שאינם מקיימים: [הערכת אי ישימות]"
+      selected_investment_authors: מחברי השקעות נבחרות בתקציב הנוכחי
+      winner_investment_authors: מחברי השקעות נבחרות זוכות בתקציב הנוכחי
+      not_supported_on_current_budget: משתמשים שאינם תומכים בהשקעות בתקציב הנוכחי
+      invalid_recipients_segment: "פלח משתמשי הנמענים שאינו חוקי"
     newsletters:
+      create_success: הידיעון נוצר בהצלחה
+      update_success: הידיעון עודכן בהצלחה
+      send_success: הידיעון נשלח בהצלחה
+      delete_success: הידיעון נמחק בהצלחה
       index:
+        title: ידיעון
+        new_newsletter: ידיעון חדש
+        subject: נושא
+        segment_recipient: נמענים
         sent: Sent
+        actions: פעולות
+        draft: טיוטה
         edit: ערוך
         delete: מחיקה
+        preview: תצוגה מקדימה
+        empty_newsletters: אין ידיעונים להצגה
+      new:
+        title: ידיעון חדש
+        from: כתובת האימייל אשר תוצג לנמעני הידיעון
+      edit:
+        title: עריכת ידיעון
       show:
+        title: תצוגה מקדימה של הידיעון
         send: הקש/י לשליחה
+        affected_users: (%{n} נמענים)
+        sent_emails:
+          one: אימייל אחד נשלח
+          two: "%{count} אימיילים נשלחו"
+          many: "%{count} אימיילים נשלחו"
+          other: "%{count} אימיילים נשלחו"
+        sent_at: נשלח ב
+        subject: נושא
+        segment_recipient: נמענים
+        from: כתובת האימייל אשר תוצג לנמעני הידיעון
+        body: תוכן האימייל
+        body_help_text: כך המשתמשים יראו את הדוא"ל
+        send_alert: האם אתה בטוח שברצונך לשלוח את הידיעון הזה אל %{n} משתמשים?
     admin_notifications:
+      create_success: ההודעה נוצרה בהצלחה
+      update_success: ההודעה עודכנה בהצלחה
+      send_success: ההודעה נשלחה בהצלחה
+      delete_success: ההודעה נמחקה בהצלחה
       index:
         section_title: התראות
+        new_notification: התראה חדשה
         title: שם
+        segment_recipient: נמענים
         sent: Sent
+        actions: פעולות
+        draft: טיוטה
         edit: ערוך
         delete: מחיקה
+        preview: תצוגה מקדימה
+        view: הצג
+        empty_notifications: אין התראות להצגה
+      new:
+        section_title: התראה חדשה
+        submit_button: יצירת התראה
+      edit:
+        section_title: ערוך התראה
+        submit_button: עדכן התראה
       show:
+        section_title: תצוגה מקדימה של ההודעה
         send: שליחת הודעה
+        will_get_notified: (%{n} משתמשים יקבלו הודעה)
+        got_notified: ( %{n} משתמשים קיבלו הודעה)
+        sent_at: נשלח ב
         title: שם
+        body: טקסט
         link: קישור
+        segment_recipient: נמענים
+        preview_guide: "כך המשתמשים יראו את הדוא\"ל:"
+        sent_guide: "כך המשתמשים יראו את הדוא\"ל:"
+        send_alert: האם אתה בטוח שברצונך לשלוח את הידיעון הזה אל %{n} משתמשים?
+    system_emails:
+      preview_pending:
+        action: תצוגה מקדימה ממתינה לאישור
+        preview_of: תצוגה מקדימה של %{name}
+        pending_to_be_sent: זהו התוכן הממתין להישלח
+        moderate_pending: נשלחה התראה למנחים
+        send_pending: ממתין לשליחלה
     valuators:
       index:
         title: Valuators
