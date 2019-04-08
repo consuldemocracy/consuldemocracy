@@ -1,6 +1,8 @@
 he:
   devise:
     password_expired:
+      expire_password: "הסיסמא פגה"
+      change_required: "תוקף סיסמתך פג"
       change_password: "שנה את הסיסמה"
       new_password: "סיסמה חדשה"
     confirmations:
@@ -31,3 +33,4 @@ he:
         two: "%{count} שגיאות מנעו את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
         many: "%{count} שגיאות מנעו את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
         other: "%{count} שגיאות מנעו את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
+      equal_to_current_password: "צריכה להיות שונה מהסיסמא הנוכחית."
