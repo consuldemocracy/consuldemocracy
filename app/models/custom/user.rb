@@ -369,7 +369,7 @@ class User < ActiveRecord::Base
   end
 
   def self.old_version(document_number)
-    where(document_number: document_number, email: nil).first
+    with_hidden.where(document_number: document_number, email: nil).first
   end
 
   def move(document_number)
