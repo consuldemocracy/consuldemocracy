@@ -203,6 +203,7 @@ ar:
           undecided: غير مقرر
           unfeasible: غير مجدي
           min_total_supports: الحد الأدنى من الدعم
+          max_total_supports: الحد الأقصى من الدعم
           winners: الفائزين
           one_filter_html: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
           two_filters_html: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -235,6 +236,7 @@ ar:
           visible_to_valuators: العرض على المقيمين
           author_username: اسم الكاتب
           incompatible: غير متوافق
+          price: السعر
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
       show:
