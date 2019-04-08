@@ -883,22 +883,111 @@ he:
       by_officer:
         date: "תאריך"
         booth: "דוכן"
+        assignments: "נושאי משרה המשויכים לסקר זה"
+        no_assignments: "נושא משרה זה לא משויך לסקר פעיל."
     poll_shifts:
       new:
+        add_shift: "הוספת משמרת"
+        shift: "משימה"
+        shifts: "משימה בדוכן זה"
+        date: "תאריך"
+        task: "משימה"
+        edit_shifts: ערוך משמרת
+        new_shift: "משמרת חדשה"
+        no_shifts: "בדוכן זה לא נמצאה משמרת פעילה"
+        officer: "נושא משרה"
+        remove_shift: "הסר"
         search_officer_button: חיפוש
+        search_officer_placeholder: חיפוש נושא משרה
+        search_officer_text: חיפוש של נושא משרה לצורך הקצאה למשמרת חדשה
+        select_date: "בחר יום"
+        no_voting_days: "ימי ההצבעה הסתיימה"
+        select_task: "בחר משימה"
+        table_shift: "משמרת"
         table_email: "דואר אלקטרוני"
         table_name: "Name"
+      flash:
+        create: "משמרת נוספה"
+        destroy: "משמרת הוסרה"
+        unable_to_destroy: "לא ניתן למחוק משמרות עם תוצאות או תוצאות משויכות"
+        date_missing: "יש לבחור תאריך"
+      vote_collection: איסוף הצבעות
+      recount_scrutiny: ספירה מחדש, ואו, בדיקה קפדנית
+    booth_assignments:
+      manage_assignments: ניהול משימות
+      manage:
+        assignments_list: "משימות עבור סקר '%{poll} '"
+        status:
+          assign_status: משימה
+          assigned: מוקצה
+          unassigned: שלא הוקצו
+        actions:
+          assign: הקצה דוכן
+          unassign: ביטול הקצאת דוכן
     poll_booth_assignments:
+      alert:
+        shifts: "יש משמרות הקשורים דוכן זה. אם תסיר את הקצאת הדוכנים, המשמרות יימחקו גם הם. להמשיך?"
+      flash:
+        destroy: "הדוכן לא הוקצה עוד"
+        create: "הדוכן הוקצה"
+        error_destroy: "אירעה שגיאה בעת הסרת הקצאת דוכן"
+        error_create: "אירעה שגיאה בעת הקצאת דוכן לסקר"
       show:
         location: "מקום"
+        officers: "נושאי משרה"
+        officers_list: "נושאי משרה בדוכן זה"
+        no_officers: "לא נמצאו נושאי משרה בדוכן זה"
+        recounts: "ספירה מחדש"
+        recounts_list: "ספירה מחדש לדוכן זה"
+        results: "תוצאות"
+        date: "תאריך"
+        count_final: "סיכום סופי (על ידי נושא המשרה)"
+        count_by_system: "הצבעות (אוטומטית)"
+        total_system: סה"כ הצבעות (אוטומטית)
       index:
+        booths_title: "רשימת דוכנים"
+        no_booths: "אין דוכנים המשויכים לסקר זה."
         table_name: "Name"
         table_location: "מקום"
+    active_polls:
+      edit:
+        title: "תיאור הסקר"
+      form:
+        description:
+          text: "תיאור"
+          help_text: "טקסט זה יופיע בכותרת של דף הסקרים. ניתן להשתמש בה כדי להוסיף הקשר לקלפיות הפתוחות."
     polls:
       index:
+        title: "רשימת סקרים"
+        no_polls: "אין סקרים בקרוב."
+        create: "יצירת סקר"
         name: "Name"
+        dates: "תאריכים"
+        start_date: "תאריך פתיחה"
+        closing_date: "תאריך סיום"
+        geozone_restricted: "מוגבל לרובעים"
+      new:
+        title: "סקר חדש"
+        show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
+        show_results: "הצג תוצאות"
+        show_stats: "הצג נתונים סטטיסטיים"
+        results_and_stats_reminder: "סימון תיבות הסימון הללו יהיה זמין ופורסם ו / או נתונים סטטיסטיים של סקר זה, וכל משתמש יראה אותן."
+        submit_button: "יצירת סקר"
+      edit:
+        title: "ערוך סקר"
+        submit_button: "עדכן סקר"
       show:
+        questions_tab: שאלות
+        booths_tab: דוכנים
+        officers_tab: נושאי משרה
+        recounts_tab: ספירה מחדש
+        results_tab: תוצאות
+        no_questions: "אין שאלות המשויכות לסקר זה."
+        questions_title: "רשימת שאלות"
         table_title: "שם"
+        edit_answers: ערוך תשובה
+      flash:
+        question_added: "שאלות שנוספו לסקר זה"
     questions:
       index:
         create: "יצירת שאלה חדשה"
