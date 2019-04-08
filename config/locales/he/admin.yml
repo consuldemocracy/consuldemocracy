@@ -432,44 +432,103 @@ he:
           allegations_phase: שלב ההערות
           proposals_phase: שלב ההצעות
           use_markdown: השתמש ב- סמן למטה כדי לעצב את הטקסט
+          title_placeholder: כותרת התהליך
+          summary_placeholder: סיכום קצר של התיאור
+          description_placeholder: הוסף תיאור של התהליך
+          additional_info_placeholder: הוסף מידע נוסף שיכול להיות מועיל
           homepage: תיאור
+          homepage_description: כאן תוכל להסביר את תוכן התהליך
+          homepage_enabled: דף הבית מאופשר
+          banner_title: צבעי כותרת
         index:
+          create: תהליך חדש
           delete: מחיקה
+          title: חקיקה שיתופית
           filters:
+            active: פעיל
             all: כולם
         new:
           back: חזרה
+          title: צור תהליך חקיקה שיתופית חדשה
+          submit_button: יצירת תהליך
         proposals:
           select_order: סדר לפי
           orders:
+            id: מזהה
             title: שם
             supports: לחיצה לתמיכה
         process:
+          title: תהליכים
           comments: הערות
+          status: סטטוס
+          start_date: תאריך פתיחה
+          end_date: תאריך סיום
           status_open: Open
+          status_closed: סגור
+          status_planned: מתוכנן
         subnav:
+          info: מידע
+          homepage: דף הבית
+          draft_versions: טיוטות
           questions: דיון
           proposals: הצעות
+          milestones: הבא
+      homepage:
+        edit:
+          title: הגדר תהליכים בדף הבית
       proposals:
         index:
           title: שם
           back: חזרה
+          id: מזהה
           supports: לחיצה לתמיכה
           select: בחר
           selected: Selected
         form:
           custom_categories: תחומים
+          custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
+          custom_categories_placeholder: הזן את התגים שבהם ברצונך להשתמש, מופרד באמצעות פסיקים (,) ובין ציטוטים ("")
       draft_versions:
+        create:
+          notice: 'הטיוטה נוצרה בהצלחה. <a href="%{link}"> לחץ כדי לבקר </a>'
+          error: לא ניתן ליצור את הטיוטה
+        update:
+          notice: 'הטיוטה עודכנה בהצלחה. <a href="%{link}"> לחץ כדי לבקר </a>'
+          error: לא ניתן לעדכן את הטיוטה
+        destroy:
+          notice: הטיוטה נמחקה בהצלחה
         edit:
           back: חזרה
           submit_button: שמירת שינויים
+          warning: ערכת את הטקסט, אל תשכח ללחוץ על שמור כדי לשמור את השינויים לצמיתות.
+        errors:
+          form:
+            error: שגיאה
         form:
+          title_html: 'עריכת <span class = "strong">%{draft_version_title} </ span> מהתהליך <span class = "strong">%{process_title} </ span>'
+          launch_text_editor: הפעל את עורך הטקס
+          close_text_editor: סגור את עורך הטקסט
+          use_markdown: השתמש בסימון כדי לעצב את הטקסט
           hints:
             final_version: גרסה זו תפורסם כגרסה סופית של תהליך זה. לא ניתן להוסיף תגובות בגרסה זו.
+            status:
+              draft: אתה יכול לצפות בתצוגה מקדימה כמנהל, אף אחד אחר לא יכול לראות את זה
+              published: גלוי לכולם
+          title_placeholder: כתוב את הכותרת של גירסת הטיוטה
+          changelog_placeholder: הוסף את השינויים העיקריים מהגירסה הקודמת
+          body_placeholder: כתוב את הטקסט טיוטה
         index:
+          title: גירסת הטיוטה
+          create: יצירת גירסה
           delete: מחיקה
+          preview: תצוגה מקדימה
         new:
           back: חזרה
+          title: יצירת גירסה חדשה
+          submit_button: יצירת גירסה
+        statuses:
+          draft: טיוטה
+          published: פורסם
         table:
           title: שם
           comments: הערות
