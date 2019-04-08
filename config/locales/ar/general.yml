@@ -528,7 +528,9 @@ ar:
     check: حدّد
     check_all: الكل
     check_none: لا شيء
+    follow: "تابع"
     following: "التالية"
+    follow_entity: "تابع %{entity}"
     followable:
       budget_investment:
         create:
@@ -541,8 +543,14 @@ ar:
         destroy:
           notice_html: "لقد توقفت الآن من متابعة مقترح هذا المواطن! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المقترح."
     hide: إخفاء
+    print:
+      print_button: طباعة هذه المعلومات
     search: بحث
     show: إظهار
+    suggest:
+      debate:
+        message: "كنت ترى %{limit} من %{count} مناقشات تحتوي على مصطلح '%{query}'"
+        see_all: "اظهار الكل"
     tags_cloud:
       districts: "مقاطعات"
       categories: "فئات"
