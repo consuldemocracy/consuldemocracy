@@ -46,7 +46,9 @@ he:
     menu:
       flagged_comments: הערות
       flagged_debates: דיונים
+      flagged_investments: השקעות בתקציב
       proposals: הצעות
+      proposal_notifications: התראות להצעות
       users: חסימת משתמשים
     proposals:
       index:
@@ -78,6 +80,7 @@ he:
           with_ignored_flag: סומנו שנראו
         headers:
           moderate: מנחה
+          budget_investment: השקעות בתקציב
         ignore_flags: סימון כמסמך שנצפה
         order: הזמנה באמצעות
         orders:
