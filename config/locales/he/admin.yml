@@ -764,6 +764,9 @@ he:
         pending_to_be_sent: זהו התוכן הממתין להישלח
         moderate_pending: נשלחה התראה למנחים
         send_pending: ממתין לשליחלה
+        send_pending_notification: ההודעה שהמתינה לאישור נשלחה בהצלחה
+      proposal_notification_digest:
+        title: "התראות להצעות"
     valuators:
       index:
         title: Valuators
