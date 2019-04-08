@@ -331,11 +331,33 @@ he:
         notice: סטטוס אבן דרך חדשה עודכנה בהצלחה
       new:
         title: יצירת סטטוס לאבן הדרך
+      create:
+        notice: סטטוס לאבן דרך נוצר בהצלחה
+      delete:
+        notice: סטטוס אבן דרך נמחק בהצלחה
     progress_bars:
+      manage: "ניהול סרגל התקדמות"
       index:
+        title: "סרגל התקדמות"
+        no_progress_bars: "אין סרגלי התקדמות"
+        new_progress_bar: "יצירת סרגל התקדמות חדש"
+        primary: "סרגל התקדמות ראשי"
         table_id: "ID"
         table_kind: "סוג"
         table_title: "שם"
+        table_percentage: "ההתקדמות הנוכחית"
+      new:
+        creating: "יצירת סרגל התקדמות"
+      edit:
+        title:
+          primary: "עריכת סרגל התקדמות ראשי"
+          secondary: "עריכת סרגל התקדמות %{title}"
+      create:
+        notice: "סרגל ההתקדמות נוצר בהצלחה!"
+      update:
+        notice: "סרגל ההתקדמות עודכן בהצלחה"
+      delete:
+        notice: "סרגל ההתקדמות הוסר בהצלחה"
     comments:
       index:
         filter: מסנן
@@ -343,6 +365,7 @@ he:
           all: כולם
           with_confirmed_hide: Confirmed
           without_confirmed_hide: ממתין לאישור
+        hidden_debate: דיון מוסתר
         title: Hidden comments
     dashboard:
       index:
