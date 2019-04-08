@@ -531,10 +531,22 @@ he:
           published: פורסם
         table:
           title: שם
+          created_at: נוצרה ב
           comments: הערות
+          final_version: גירסה סופית
+          status: סטטוס
       questions:
+        create:
+          notice: 'השאלה נוצרה בהצלחה. <a href="%{link}">לחץ כדי לבקר</a>'
+          error: לא ניתן ליצור את השאלה
+        update:
+          notice: 'השאלה עודכנה בהצלחה. <a href="%{link}"> לחץ כדי לבקר </a>'
+          error: לא ניתן לעדכן את השאלה
+        destroy:
+          notice: השאלה נמחקה בהצלחה
         edit:
           back: חזרה
+          title: "עריכת \"%{question_title}\""
           submit_button: שמירת שינויים
         form:
           title: שאלה
