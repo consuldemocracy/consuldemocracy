@@ -125,6 +125,8 @@ it:
         amount: "Importo"
         population: "Popolazione (facoltativo)"
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
+        latitude: "Latitudine (opzionale)"
+        longitude: "Longitudine (Opzionale)"
         submit: "Salvare voce di bilancio"
     budget_phases:
       edit:
@@ -188,6 +190,7 @@ it:
           visible_to_valuators: Mostrare agli stimatori
           author_username: Username dell’autore
           incompatible: Incompatibile
+          price: Costo
         cannot_calculate_winners: Il bilancio deve rimanere nella fase “Progetti in votazione”, “Revisione Schede” o “Bilancio concluso” percalcolare i progetti vincitori
         see_results: "Vedi risultati"
       show:
