@@ -767,6 +767,10 @@ he:
         send_pending_notification: ההודעה שהמתינה לאישור נשלחה בהצלחה
       proposal_notification_digest:
         title: "התראות להצעות"
+        description: "אוסף את כל הודעות ההצעות עבור המשתמש בהודעה אחת, כדי למנוע הודעות דוא\"ל רבות מדי."
+        preview_detail: "משתמשים יקבלו רק הודעות מהצעות שהם עוקבים אחריהם"
+      budget_investment_created:
+        title: "תקציב להשקעה נוצר"
     valuators:
       index:
         title: Valuators
