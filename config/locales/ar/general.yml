@@ -390,6 +390,7 @@ ar:
     proposal:
       created: "لقد قمت بإنشاء مقترح!"
       share:
+        guide: "يمكنك الآن مشاركتها حتى يبدأ الأشخاص بدعمها."
         edit: "ستتمكن من تغيير النص كما تريد قبل أن يتم مشاركته."
         view_proposal: ليس الآن، انتقل إلى مقترحي
       already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
@@ -441,9 +442,11 @@ ar:
       milestones_tab: معالم
       retired_warning: "يرى المؤلف أن هذا الاقتراح يجب ألا يتلقى المزيد من الدعم."
       retired_warning_link_to_explanation: اقرأ الشرح قبل التصويت عليه.
+      retired: تم سحب الاقتراح من قبل المؤلف
       share: مشاركة
       send_notification: إرسال إشعار
       no_notifications: "هذا المقترح لا يحوي إشعارات."
+      embed_video_title: "فيديو حول %{proposal}"
       title_external_url: "وثائق إضافية"
       title_video_url: "فيديو خارجي"
       author: كاتب
@@ -504,7 +507,9 @@ ar:
       stats:
         title: "بيانات المشاركة"
         total_participation: "مجموع المشاركات"
+        total_votes: "مجموع الأصوات المعطاة"
         votes: "الأصوات"
+        web: "WEB"
         booth: "مكتب الإقتراع"
         total: "المجموع"
         valid: "محتسبة"
@@ -535,14 +540,22 @@ ar:
     "no": "لا"
     search_results: "نتائج البحث"
     advanced_search:
+      author_type: "حسب فئة المؤلف"
       author_type_blank: "حدد فئة"
       date: "حسب التاريخ"
       date_range_blank: "اختر التاريخ"
+      date_1: "ال 24 ساعة الماضية"
+      date_2: "الأسبوع الماضي"
       date_3: "الشهر الماضي"
+      date_4: "العام الماضي"
       from: "من"
+      general_placeholder: "اكتب النص"
       search: "ترشيح"
+      title: "البحث المتقدم"
+      to: "إلى"
     author_info:
       author_deleted: تم حذف المستخدم
+    back: عودة
     check: حدّد
     check_all: الكل
     check_none: لا شيء
@@ -710,6 +723,7 @@ ar:
   welcome:
     feed:
       most_active:
+        proposals: "المقترحات الأكثر نشاطا"
         processes: "إجراءات مفتوحة"
       see_all_debates: انظر جميع الحوارات
       see_all_proposals: انظر جميع المقترحات
@@ -718,8 +732,14 @@ ar:
       see_process: انظر الإجرائية
     cards:
       title: مميز
+    recommended:
+      title: التوصيات التي قد تهمك
+      help: "يتم إنشاء هذه التوصيات بواسطة علامات المناقشات والمقترحات التي تتابعها."
+      slide: "انظر %{title}"
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
+      i_have_an_account: لدي حساب بالفعل
+      title: التحقق من الحساب
     welcome:
       title: المشاركة
       user_permission_debates: المشاركة بالحوارات
