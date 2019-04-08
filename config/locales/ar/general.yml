@@ -549,13 +549,36 @@ ar:
     show: إظهار
     suggest:
       debate:
-        message: "كنت ترى %{limit} من %{count} مناقشات تحتوي على مصطلح '%{query}'"
+        message: "أنت تشاهد %{limit} من %{count} مناقشات تحتوي على مصطلح '%{query}'"
+        see_all: "اظهار الكل"
+      budget_investment:
+        message: "أنت تشاهد %{limit} من %{count} استثمارات تحتوي على المصطلح '%{query}'"
+        see_all: "اظهار الكل"
+      proposal:
+        message: "أنت تشاهد %{limit} من %{count} مقترحات تحتوي على المصطلح '%{query}'"
         see_all: "اظهار الكل"
     tags_cloud:
+      tags: الشائع
       districts: "مقاطعات"
+      districts_list: "قائمة المناطق"
       categories: "فئات"
+    target_blank_html: " (يفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
+    unfollow_entity: "توقف عن متابعة %{entity}"
+    outline:
+      budget: الميزانية التشاركية
+      searcher: باحث
+    go_to_page: "انتقل إلى صفحة "
     share: مشاركة
+    documentation: وثائق إضافية
+    view_mode:
+      title: نمط العرض
+      cards: بطاقات
+      list: قائمة
+    recommended_index:
+      title: التوصيات
+      see_more: رؤية المزيد من التوصيات
+      hide: إخفاء التوصيات
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -569,18 +592,31 @@ ar:
       description: الوصف
       external_url: رابط لوثائق إضافية
       geozone: نطاق العملية
+      submit_buttons:
+        create: إنشاء
+        new: إنشاء
+      title: عنوان مقترح الانفاق
     index:
       title: الميزانية التشاركية
       unfeasible: مشاريع استثمارات الغير مجدية
+      by_geozone: "المشاريع الاستثمارية ذات النطاق: %{geozone}"
       search_form:
         button: بحث
+        placeholder: مشاريع استثمارية...
         title: بحث
       sidebar:
         geozones: نطاق العملية
         feasibility: الجدوى
         unfeasible: غير مجدي
+      start_spending_proposal: إنشاء مشروع استثماري
+    new:
+      recommendation_one: من الضروري أن يشير الاقتراح إلى إجراء ذي ميزانية.
+      recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني.
+      recommendations_title: كيفية إنشاء اقتراح الإنفاق
+      start_new: إنشاء إقتراح إنفاق
     show:
       author_deleted: تم حذف المستخدم
+      code: "رمز الاقتراح:"
       share: مشاركة
     wrong_price_format: الاعداد الصحيحة فقط
     spending_proposal:
