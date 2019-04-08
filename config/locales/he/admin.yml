@@ -771,16 +771,65 @@ he:
         preview_detail: "משתמשים יקבלו רק הודעות מהצעות שהם עוקבים אחריהם"
       budget_investment_created:
         title: "תקציב להשקעה נוצר"
+        description: "נשלח כאשר משתמש יוצר תקציב להשקעה."
+      budget_investment_selected:
+        title: "תקציב להשקעה נבחר"
+        description: "נשלח אל מחבר התקציב, כאשר נבחרת ההשקעה שלו."
+      budget_investment_unfeasible:
+        title: "תקציב להשקעה אינו ישים"
+        description: "נשלח אל מחבר התקציב, כאשר ההשקעה שלו סומנה כלא ישימה."
+      budget_investment_unselected:
+        title: "תקציב להשקעה לא נבחר"
+        description: "נשלח אל מחבר התקציב, כאשר ההשקעה שלו לא עברה לשלב ההצבעות."
+      comment:
+        title: "הערות"
+        description: "נשלח אל המחבר כאשר מתקבלת תגובה."
+      reply:
+        title: "מענה לתגובה"
+        description: "נשלח אל המחבר של תגובה כאשר מקבל תשובה."
+      direct_message_for_receiver:
+        title: "מערכת הודעות פרטיות"
+        description: "נשלח את מערכת ההודעות הפרטיות."
+      direct_message_for_sender:
+        title: "שולח ההודעה פרטים"
+        description: "שלח אל השולח בהודעה פרטית."
+      email_verification:
+        title: "אימות כתובת האימייל"
+        description: "נשלח למשתמש חדש לאימות החשבון."
+      user_invite:
+        title: "הזמנת משתמש"
+        description: "נשלח לאדם אשר הוזמן לפתוח חשבון."
+      edit_info: "תוכל לערוך אימייל זה ב"
+      message_title: "כותרת ההודעה"
+      message_body: "זהו תוכן לדוגמא של הודעה."
+      alert:
+        no_investments: "לא נוצרת כל השקעה בתקציב. יש צורך בנתוני דוגמה כדי להציג את האימייל."
+        no_comments: "אין תגובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
+        no_replies: "אין תשובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
+    emails_download:
+      index:
+        title: הורדת אימיילים
+        download_segment: הורדת כתובות האימייל
+        download_segment_help_text: הורד בפורמט CSV
+        download_emails_button: הורד רשימת מיילים
     valuators:
       index:
         title: Valuators
         name: Name
         email: דואר אלקטרוני
         description: תיאור
+        no_description: אין תיאור
+        no_valuators: לא נמצאו מעריכים.
+        valuator_groups: "קבוצת המעריכים"
         group: "קבוצה"
+        no_group: "אין קבוצה"
       valuator:
+        add: הוסף למעריכים
         delete: מחיקה
+      search:
+        title: "מעריכים: חיפוש משתמשים"
       summary:
+        title: סיכום מעריך לפרויקטים להשקעה
         valuator_name: Valuator
         finished_and_feasible_count: הסתיים ובר ביצוע
         finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
@@ -788,18 +837,36 @@ he:
         in_evaluation_count: עדיין בשלב הערכה
         total_count: סך הכל
         cost: עלות הפרויקט
+      form:
+        edit_title: "מעריכים: עריכת מעריך"
+        update: "עדכון מעריך"
+        updated: "המעריך עודכן בהצלחה"
       show:
         description: "תיאור"
         email: "דואר אלקטרוני"
         group: "קבוצה"
+        no_description: "ללא תיאור"
+        no_group: "ללא קבוצה"
     valuator_groups:
       index:
+        title: "קבוצת המעריכים"
+        new: "ליצור קבוצה מעריכים"
         name: "Name"
+        members: "חברים"
+        no_groups: "אין קבוצות מעריכים"
+      show:
+        title: "קבוצת מעריכים: %{group}"
+        no_valuators: "אין מעריכים שהוקצו לקבוצה זו"
       form:
         name: "Group name"
+        new: "יצירת קבוצה מעריכים"
+        edit: "שמירת קבוצה מעריכים"
     poll_officers:
+      index:
+        title: בודקי סקרים
       officer:
         add: Add
+        delete: מחיקת מיקום
         name: Name
         email: דואר אלקטרוני
       search:
