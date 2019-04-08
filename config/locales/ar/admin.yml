@@ -255,7 +255,6 @@ ar:
         dossier: إضبارة
         edit_dossier: تحرير إضبارة
         tags: علامات
-        user_tags: علامات المستخدم
         undefined: غير معرف
         compatibility:
           title: التوافق
@@ -269,12 +268,6 @@ ar:
           title: الفائز
           "true": "نعم"
           "false": "لا"
-        image: "صورة"
-        see_image: "رؤية الصورة"
-        no_image: "بدون صورة"
-        documents: "الوثائق"
-        see_documents: "رؤية الوثائق (%{count})"
-        no_documents: "بدون وثائق"
         valuator_groups: "مجموعات المقيمين"
       edit:
         classification: تصنيف

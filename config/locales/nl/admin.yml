@@ -245,7 +245,6 @@ nl:
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
-        user_tags: Deelnemerslabels
         undefined: Undefined
         compatibility:
           title: Compatibiliteit
@@ -259,12 +258,6 @@ nl:
           title: Winnaar
           "true": "Ja"
           "false": "Nee"
-        image: "Afbeelding"
-        see_image: "Zie afbeelding"
-        no_image: "Zonder afbeelding"
-        documents: "Documenten"
-        see_documents: "zie documenten (%{count})"
-        no_documents: "Zonder documenten"
         valuator_groups: "Beoordelingsgroepen"
       edit:
         classification: Clasificatie

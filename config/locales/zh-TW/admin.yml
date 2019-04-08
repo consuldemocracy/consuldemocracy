@@ -201,7 +201,6 @@ zh-TW:
         dossier: 檔案
         edit_dossier: 編輯檔案
         tags: 標籤
-        user_tags: 用戶標籤
         undefined: 未定義
         compatibility:
           title: 相容性
@@ -215,12 +214,6 @@ zh-TW:
           title: 勝出者
           "true": "是"
           "false": "否"
-        image: "圖像"
-        see_image: "請參閱圖像"
-        no_image: "沒有圖像"
-        documents: "文檔"
-        see_documents: "請參閱文檔 (%{count})"
-        no_documents: "沒有文檔"
         valuator_groups: "評估組"
       edit:
         classification: 分類

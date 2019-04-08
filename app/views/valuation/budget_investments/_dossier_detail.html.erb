@@ -1,0 +1,28 @@
+<% budget = investment.budget %>
+<p>
+  <h3><%= t("valuation.budget_investments.edit.valuation_finished") %></h3>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.edit.feasibility") %>:</strong>
+  <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.edit.feasible_explanation_html") %>:</strong>
+  <%= investment.unfeasibility_explanation.presence || "-" %>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.edit.price_html", currency: budget.currency_symbol) %>:</strong>
+  <%= investment.price.presence || "-" %>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.show.price_first_year", currency: budget.currency_symbol) %>:</strong>
+  <%= investment.price_first_year.presence || "-" %>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.edit.price_explanation_html") %>:</strong>
+  <%= investment.price_explanation.presence || "-" %>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.edit.duration_html") %>:</strong>
+  <%= investment.duration.presence || "-" %>
+</p>

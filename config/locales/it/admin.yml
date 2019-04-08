@@ -207,7 +207,6 @@ it:
         dossier: Dossier
         edit_dossier: Modificare il dossier
         tags: Etichette
-        user_tags: Etichette utente
         undefined: Non definito
         compatibility:
           title: Compatibilità
@@ -221,12 +220,6 @@ it:
           title: Vincitore
           "true": "Sì"
           "false": "No"
-        image: "Immagine"
-        see_image: "Vedi immagine"
-        no_image: "Senza immagine"
-        documents: "Documenti"
-        see_documents: "Vedi documenti (%{count})"
-        no_documents: "Senza documenti"
         valuator_groups: "Gruppi di stimatori"
       edit:
         classification: Classificazione

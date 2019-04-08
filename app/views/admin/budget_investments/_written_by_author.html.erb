@@ -6,7 +6,6 @@
 </div>
 
 <br>
-<h1 class="inline-block"><%= @investment.title %></h1>
 
 <div class="admin-budget-investment-info">
   <div class="row expanded">
@@ -59,35 +58,3 @@
     <%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span>
   </p>
 <% end %>
-
-<%= safe_html_with_links @investment.description %>
-
-<p>
-  <strong><%= t("admin.budget_investments.show.image") %></strong>:
-
-  <% if @investment.image.present? %>
-    <%= link_to t("admin.budget_investments.show.see_image"),
-                   namespaced_budget_investment_path(@investment, {anchor: "image"}),
-                   target: "blank" %>
-  <% else %>
-    <%= t("admin.budget_investments.show.no_image") %>
-  <% end %>
-</p>
-
-<p>
-  <strong><%= t("admin.budget_investments.show.documents") %></strong>:
-
-  <% if @investment.documents.present? %>
-    <%= link_to t("admin.budget_investments.show.see_documents",
-                   count: @investment.documents.count),
-                   namespaced_budget_investment_path(@investment, {anchor: "documents"}),
-                   target: "blank" %>
-  <% else %>
-    <%= t("admin.budget_investments.show.no_documents") %>
-  <% end %>
-</p>
-
-<p id="user-tags">
-  <strong><%= t("admin.budget_investments.show.user_tags") %>: </strong>
-  <%= @investment.tag_list.sort.join(", ") %>
-</p>

@@ -266,13 +266,6 @@ he:
           title: זוכה
           "true": "כן"
           "false": "לא"
-        image: "תמונה"
-        see_image: "ראה תמונה"
-        no_image: "ללא תמונה"
-        documents: "מסמכים"
-        see_documents: "ראה את המסמכים (%{count})"
-        no_documents: "ללא מסמכים"
-        valuator_groups: "קבוצת המעריכים"
       edit:
         classification: סיווג
         compatibility: תאימות

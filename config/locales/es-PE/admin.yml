@@ -168,7 +168,6 @@ es-PE:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
-        user_tags: Etiquetas del usuario
         undefined: Sin definir
         compatibility:
           title: Compatibilidad
@@ -179,8 +178,6 @@ es-PE:
         winner:
           title: Ganadora
           "true": "Si"
-        image: "Imagen"
-        documents: "Documentos"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad

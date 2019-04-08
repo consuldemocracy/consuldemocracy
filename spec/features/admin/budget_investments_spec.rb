@@ -962,12 +962,11 @@ describe "Admin budget investments" do
 
       click_link budget_investment.title
 
+      expect(page).to have_content("Investment preview")
       expect(page).to have_content(budget_investment.title)
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("Without image")
-      expect(page).to have_content("Without documents")
       expect(page).to have_content("1234")
       expect(page).to have_content("1000")
       expect(page).to have_content("Unfeasible")
@@ -999,13 +998,32 @@ describe "Admin budget investments" do
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("See image")
-      expect(page).to have_content("See documents (1)")
+      expect(page).to have_content("Investment preview")
+      expect(page).to have_content(budget_investment.image.title)
+      expect(page).to have_content("Documents (1)")
+      expect(page).to have_content(document.title)
+      expect(page).to have_content("Download file")
       expect(page).to have_content("1234")
       expect(page).to have_content("1000")
       expect(page).to have_content("Unfeasible")
       expect(page).to have_content("It is impossible")
       expect(page).to have_content("Ana (ana@admins.org)")
+    end
+
+    scenario "Not show related content or hide links on preview" do
+      budget_investment = create(:budget_investment,
+                                  price: 1234,
+                                  price_first_year: 1000,
+                                  feasibility: "unfeasible",
+                                  unfeasibility_explanation: "It is impossible",
+                                  administrator: administrator)
+
+      visit admin_budget_budget_investments_path(budget_investment.budget)
+
+      click_link budget_investment.title
+
+      expect(page).not_to have_content("Add related content")
+      expect(page).not_to have_content("Hide")
     end
 
     scenario "If budget is finished, investment cannot be edited or valuation comments created" do
@@ -1200,7 +1218,7 @@ describe "Admin budget investments" do
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
-      within("#user-tags") do
+      within("#tags_budget_investment_#{budget_investment.id}") do
         expect(page).not_to have_content "Education"
         expect(page).to have_content "Park"
       end
@@ -1213,10 +1231,11 @@ describe "Admin budget investments" do
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
-      within("#user-tags") do
+      within("#tags_budget_investment_#{budget_investment.id}") do
         expect(page).not_to have_content "Education"
         expect(page).not_to have_content "Environment"
-        expect(page).to have_content "Park, Trees"
+        expect(page).to have_content "Park"
+        expect(page).to have_content "Trees"
       end
 
       within("#tags") do

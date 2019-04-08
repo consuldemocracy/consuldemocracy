@@ -7,9 +7,11 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <span class="js-flag-actions">
-    <%= render "budgets/investments/flag_actions", investment: investment %>
-  </span>
+  <% if local_assigns[:preview].nil? %>
+    <span class="js-flag-actions">
+      <%= render "budgets/investments/flag_actions", investment: investment %>
+    </span>
+  <% end %>
 </div>
 
 <br>
@@ -66,8 +68,10 @@
   <p><%= investment.price_explanation %></p>
 <% end %>
 
-<%= render "relationable/related_content", relationable: investment %>
+<% if local_assigns[:preview].nil? %>
+  <%= render "relationable/related_content", relationable: investment %>
 
-<div class="js-moderator-investment-actions margin">
-  <%= render "budgets/investments/actions", investment: investment %>
-</div>
+  <div class="js-moderator-investment-actions margin">
+    <%= render "budgets/investments/actions", investment: investment %>
+  </div>
+<% end %>

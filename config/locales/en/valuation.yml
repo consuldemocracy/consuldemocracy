@@ -57,6 +57,7 @@ en:
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
+        preview: Investment preview
       edit:
         dossier: Dossier
         price_html: "Price (%{currency})"
