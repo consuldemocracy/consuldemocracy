@@ -1209,6 +1209,7 @@ ar:
             update: تم تحديث تعديلات الخريطة بنجاح.
           form:
             submit: تحديث
+          how_to_enable: 'لإظهار الخريطة للمستخدمين ، يجب تمكين "الموقع الجغرافي للمقترحات والاستثمارات في الميزانية" في علامة التبويب "الميزات".'
       setting: الميزة
       setting_actions: الإجراءات
       setting_name: إعداد
@@ -1250,6 +1251,7 @@ ar:
       content: المحتوى
       created_at: أنشئت في
       delete: حذف
+      color_help: تنسيق Hexadecimal
     spending_proposals:
       index:
         geozone_filter_all: كل المناطق
