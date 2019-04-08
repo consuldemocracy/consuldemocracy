@@ -741,6 +741,8 @@ ar:
       i_have_an_account: لدي حساب بالفعل
       title: التحقق من الحساب
     welcome:
+      go_to_index: ليس الآن ، انتقل إلى صفحة الفهرس
+      start_using_consul: انتقل إلى صفحة الفهرس
       title: المشاركة
       user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
@@ -751,6 +753,10 @@ ar:
       user_permission_verify_my_account: التحقق من حسابي
       user_permission_votes: المشاركة في التصويت النهائي
   related_content:
+    title: "محتوى مرتبط"
+    add: "إضافة محتوى مرتبط"
+    label: "رابط للمحتوى المرتبط"
+    placeholder: "%{url}"
     help: "يمكنك إضافة روابط %{models} داخل %{org}."
     submit: "إضافة"
     error: "الرابط غير صالح. تذكر أن تبدأ بـ %{url}."
