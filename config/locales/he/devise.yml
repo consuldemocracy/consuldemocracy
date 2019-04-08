@@ -19,3 +19,7 @@ he:
     unlocks:
       send_instructions: "בדקות הקרובות יישלח אליך אימייל עם הנחיות כיצד להסיר את הנעילה מחשבונך."
       unlocked: "הנעילה הוסרה בהצלחה. כעת הנך מחובר/ת."
+  errors:
+    messages:
+      already_confirmed: "החשבון כבר אומת; נסה להיכנס."
+      confirmation_period_expired: "עליך לאמת את החשבון בתוך %{period}; אנא חזור על הבקשה."
