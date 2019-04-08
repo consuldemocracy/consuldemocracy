@@ -409,10 +409,29 @@ he:
         no_hidden_budget_investments: לא נמצאו השקעות תקציב מוסתרות
     legislation:
       processes:
+        create:
+          notice: 'התהליך נוצר בהצלחה. <a href="%{link}"> לחץ כדי לבקר </a>'
+          error: לא ניתן היה ליצור את התהליך
+        update:
+          notice: 'התהליך עודכן בהצלחה. <a href="%{link}"> לחץ כדי לבקר </a>'
+          error: לא ניתן היה לעדכן את התהליך
+        destroy:
+          notice: התהליך נמחק בהצלחה
         edit:
           back: חזרה
           submit_button: שמירת שינויים
+        errors:
+          form:
+            error: שגיאה
         form:
+          enabled: מאופשר
+          process: תהליכים
+          debate_phase: שלב הדיון
+          draft_phase: שלב הטיוטא
+          draft_phase_description: אם שלב זה פעיל, התהליך לא יירשם ברשימת התהליכים. יש לאפשר הצגת התהליך בתצוגה מקדימה וליצור תוכן לפני שתתחיל.
+          allegations_phase: שלב ההערות
+          proposals_phase: שלב ההצעות
+          use_markdown: השתמש ב- סמן למטה כדי לעצב את הטקסט
           homepage: תיאור
         index:
           delete: מחיקה
