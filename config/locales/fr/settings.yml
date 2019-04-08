@@ -32,10 +32,20 @@ fr:
     related_content_score_threshold: "Seuil de score pour le contenu associé"
     hot_score_period_in_days: "Période (jours) utilisée par le filtre « plus actifs »"
     hot_score_period_in_days_description: "Le filtre « plus actif », utilisé dans plusieurs sections, s’appuiera sur les votes au cours des X dernières jours"
+    mailer_from_name_description: "Ce nom apparaîtra comme nom de l’expéditeur dans les e-mails envoyés depuis l’application"
+    mailer_from_address: "E-mail de l'expéditeur"
+    mailer_from_address_description: "Cette adresse e-mail s’affichera dans les e-mails envoyés depuis l’application"
     meta_title: "Titre du site (SEO)"
+    meta_title_description: "Titre du site <title>, utilisé pour améliorer le SEO"
     meta_description: "Description du site (SEO)"
+    meta_description_description: 'Description du site <meta name="description">, utilisé pour améliorer le SEO'
     meta_keywords: "Mots-clés (SEO)"
+    meta_keywords_description: 'Mots-clés <meta name="keywords">, utilisés pour améliorer le SEO'
     min_age_to_participate: Âge minimum de participation
+    min_age_to_participate_description: "Les utilisateurs au dessus de cet âge peuvent participer à tous les opérations où un compte d'utilisateur vérifié est nécéssaire"
+    proposal_notification_minimum_interval_in_days: "Intervalle minimal (en jours) pour les auteurs de propositions visant à envoyer de nouvelles notifications de proposition"
+    proposal_notification_minimum_interval_in_days_description: "Le nombre de jours où utilisateur peut envoyer une notification pour tous les supporters de leur proposition"
+    direct_message_max_per_day: "Nombre maximum de messages directs par jour"
     feature:
       twitter_login: "Se connecter avec Twitter"
       twitter_login_description: "Autoriser les utilisateurs à s’inscrire avec leur compte Twitter"
