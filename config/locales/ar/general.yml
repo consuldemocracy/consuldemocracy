@@ -276,10 +276,15 @@ ar:
       username_warning: "بسبب تغييرات في طريقة التفاعل مع الشبكات الاجتماعية، فمن الممكن أن يكون اسم المستخدم الخاص بك 'مستخدم من قبل '. إذا كان هذا هو الحالة ، الرجاء اختيار اسم مستخدم مختلف."
     google_oauth2:
       sign_in: تسجيل الدخول باستخدام Google
+      sign_up: تسجيل باستخدام Google
       name: Google
     twitter:
       sign_in: تسجيل الدخول باستخدام Twitter
+      sign_up: تسجيل باستخدام Twitter
+      name: Twitter
     info_sign_in: "تسجيل الدخول باستخدام:"
+    info_sign_up: "تسجيل باستخدام:"
+    or_fill: "أو املأ النموذج التالي:"
   proposals:
     create:
       form:
@@ -299,6 +304,7 @@ ar:
       submit_button: سحب الاقتراح
     retire_options:
       duplicated: مكرّر
+      started: جارية بالفعل
       unfeasible: غير مجدي
       done: منتهي
       other: أخرى
@@ -337,10 +343,14 @@ ar:
         actions:
           success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
           error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
+      retired_proposals: الإقتراحات المسحوبة
+      retired_proposals_link: "الإقتراحات المسحوبة من قبل المؤلف"
       retired_links:
         all: الكل
+        duplicated: مكرّر
         started: جارية
         unfeasible: غير مجدي
+        done: منتهي
         other: أخرى
       search_form:
         button: بحث
@@ -354,8 +364,10 @@ ar:
         many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
         other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
+      select_order_long: "أنت تشاهد المقترحات وفقًا ل:"
       start_proposal: إنشاء مقترح
       title: إقتراحات
+      top: الأعلى أسبوعيا
       top_link_proposals: المقترحات الأكثر تأييدا حسب الفئة
       section_header:
         icon_alt: إيقونة المقترحات
@@ -373,6 +385,8 @@ ar:
       recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني ، وكذلك أولئك الذين يعتزمون تخريب أماكن النقاش. أي شيء آخر مسموح به.
       recommendations_title: توصيات لإنشاء مقترح
       start_new: انشاء مقترح جديد
+    notice:
+      retired: تم سحب الاقتراح
     proposal:
       created: "لقد قمت بإنشاء مقترح!"
       share:
