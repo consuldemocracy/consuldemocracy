@@ -14,6 +14,8 @@ ar:
       edit: تعديل
       configure: تهيئة
       delete: حذف
+    officing_booth:
+      title: "أنت تشغل مكتب الإقتراع الموجود في %{booth}. إذا لم يكن هذا صحيحًا ، فلا تقم بالمتابعة واتصل برقم هاتف المساعدة. شكرا."
     banners:
       index:
         title: لافتات
