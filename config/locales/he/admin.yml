@@ -1017,25 +1017,77 @@ he:
         proposal: ההצעה המקורית
         author: מחבר/ת
         question: שאלה
+        edit_question: ערוך שאלה
+        valid_answers: תשובות חוקיות
+        add_answer: הוסף שאלה
+        video_url: מקור וידאו חיצוני
         answers:
+          title: תשובה
           description: תיאור
+          videos: וידאו
+          video_list: רשימת סרטוני וידאו
+          images: תמונות
+          images_list: רשימת תמונות
           documents: מסמכים
+          documents_list: רשימת מסמכים
           document_title: שם
+          document_actions: פעולות
     answers:
+      new:
+        title: תשובה חדשה
       show:
         title: שם
         description: תיאור
+        images: תמונות
+        images_list: רשימת תמונות
+        edit: ערוך תשובה
+      edit:
+        title: ערוך תשובה
       videos:
         index:
+          title: וידאו
+          add_video: הוסף וידאו
           video_title: שם
+          video_url: מקור וידאו חיצוני
+        new:
+          title: וידאו חדש
+        edit:
+          title: ערוך וידאו
+    recounts:
+      index:
+        title: "ספירה מחדש"
+        no_recounts: "לא נמצאה סיבה לספירה מחדש"
+        all_booths_total: "סך הכל מצטבר מכל הדוכנים:"
+        total_final: "ספירה סופית"
+        total_system: "הצבעות (אוטומטית)"
+        table_booth_name: "דוכן"
+        table_total_recount: "סיכום סופי (על ידי נושא המשרה)"
+        table_system_count: "הצבעות (אוטומטית)"
     results:
+      index:
+        title: "תוצאות"
+        no_results: "לא נמצאו תוצאות"
       result:
+        table_whites: "הצבעות ריקות לחלוטין"
+        table_nulls: "הצבעות לא חוקיות"
+        table_total: "סך כל ההצבעות"
+        table_answer: תשובה
         table_votes: הצבעות
+      results_by_booth:
+        booth: דוכן
+        results: תוצאות
+        see_results: הצג תוצאות
+        title: "תוצאות לפי דוכן"
     booths:
       index:
+        title: "רשימה של דוכנים פעילים"
+        no_booths: "אין דוכנים פעילים עבור הסקרים הקרובים."
+        add_booth: "הוסף דוכן"
         name: "Name"
         location: "מקום"
+        no_location: "אין מיקום"
       new:
+        title: "דוכן חדש"
         name: "Name"
         location: "מקום"
       show:
