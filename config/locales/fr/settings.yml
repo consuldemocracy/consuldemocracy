@@ -46,6 +46,7 @@ fr:
     proposal_notification_minimum_interval_in_days: "Intervalle minimal (en jours) pour les auteurs de propositions visant à envoyer de nouvelles notifications de proposition"
     proposal_notification_minimum_interval_in_days_description: "Le nombre de jours où utilisateur peut envoyer une notification pour tous les supporters de leur proposition"
     direct_message_max_per_day: "Nombre maximum de messages directs par jour"
+    direct_message_max_per_day_description: "Nombre maximum de messages directs qu'un utilisateur peut envoyer par jour"
     feature:
       twitter_login: "Se connecter avec Twitter"
       twitter_login_description: "Autoriser les utilisateurs à s’inscrire avec leur compte Twitter"
@@ -53,11 +54,19 @@ fr:
       facebook_login_description: "Autoriser les utilisateurs à s'inscrire avec leur compte Facebook"
       google_login: "Se connecter avec Google"
       google_login_description: "Autoriser les utilisateurs à s’inscrire avec leur compte Google"
+      featured_proposals: "Propositions en vedette"
+      featured_proposals_description: "Affiche les propositions en vedette sur la page d'index des propositions"
       signature_sheets: "Feuilles de signature"
       spending_proposals: "Propositions d'investissement"
+      spending_proposals_description: "⚠️ REMARQUE: cette fonctionnalité a été remplacée par la budgétisation participative et disparaîtra dans les nouvelles versions"
+      spending_proposal_features:
+        voting_allowed: Vote sur les projets d’investissement - phase de présélection
+        voting_allowed_description: "⚠️ REMARQUE: cette fonctionnalité a été remplacée par la budgétisation participative et disparaîtra dans les nouvelles versions"
       user:
         recommendations: "Recommandations"
+        recommendations_description: "Affiche les recommandations des utilisateurs sur la page d’accueil en fonction des mots-clés des éléments suivants"
         skip_verification: "Passer la vérification de l'utilisateur"
+        skip_verification_description: "Cela désactivera la vérification de l'utilisateur et tous les utilisateurs enregistrés pourront participer à tous les processus"
         recommendations_on_debates: "Recommandations sur les discussions"
         recommendations_on_proposals: "Recommandations sur les propositions"
       community: "Communauté sur les propositions et les investissements"
