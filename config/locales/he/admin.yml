@@ -1090,13 +1090,40 @@ he:
         title: "דוכן חדש"
         name: "Name"
         location: "מקום"
+        submit_button: "צור דוכן"
+      edit:
+        title: "ערוך דוכן"
+        submit_button: "עדכן דוכן"
       show:
         location: "מקום"
+      booth:
+        shifts: "ניהול משמרות"
+        edit: "ערוך דוכן"
     officials:
+      edit:
+        destroy: הסר סטאטוס של נושא המשרה
+        title: "נושאי משרה: עריכת משתמש"
+      flash:
+        official_destroyed: "פרטים שנשמרו: המשתמש כבר אינו רשמי"
+        official_updated: הפרטים של נושא המשרה הרשמי נשמרו
       index:
         title: Officials
+        help: חשבונות משתמש המסומנים כנושאי משרה, ההתערבויות שלהם בתהליכים יהיו מודגשים. באפשרותך להגדיר את התווית שמופיעה לצד שמות המשתמשים של חשבונות אלה מהחשובים ביותר (רמה 1) עד לרמה (רמה 5).
+        no_officials: לא נמצא ונושאי משרה.
         name: Name
         official_position: תפקיד
+        official_level: רמה
+      level_0: אינו רשמי
+      level_1: רמה 1
+      level_2: רמה 2
+      level_3: רמה 3
+      level_4: רמה 4
+      level_5: רמה 5
+      search:
+        edit_official: עריכת נושא המשרה
+        make_official: הפוך לנושא משרה רשמי
+        title: "רמת נושא המשרה: חיפוש משתמש"
+        no_results: רמת נושא המשרה לא נמצאה.
     organizations:
       index:
         filter: Filter
@@ -1105,19 +1132,37 @@ he:
           pending: Pending
           rejected: Rejected
           verified: Verified
+        hidden_count_html:
+          one: יש גם <strong> ארגון אחד </strong> ללא משתמשים או עם משתמש מוסתר.
+          two: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
+          many: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
+          other: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
         name: Name
         email: דואר אלקטרוני
+        phone_number: מספר טלפון
+        responsible_name: אחראי
+        status: סטטוס
+        no_organizations: לא נמצאו ארגונים.
+        reject: דחה
         rejected: Rejected
         search: חיפוש
+        search_placeholder: שם, דוא"ל או מספר טלפון
         title: Organisations
         verified: Verified
         verify: נא לאשר
         pending: Pending
+      search:
+        title: חיפוש אירגונים
+        no_results: לא נמצאו ארגונים.
     proposals:
       index:
         title: הצעות
         id: ID
         author: מחבר/ת
+        milestones: אבני דרך
+        no_proposals: לא נמצאו הצעות.
+      show:
+        create_question: להוסיף הצעה זו לסקר בכדי לאפשר הצבעות
     hidden_proposals:
       index:
         filter: Filter
@@ -1126,6 +1171,7 @@ he:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+        no_hidden_proposals: לא נמצאו הצעות מוסתרות.
     proposal_notifications:
       index:
         filter: Filter
@@ -1133,7 +1179,11 @@ he:
           all: כולם
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
+        title: התראות מוסתרות
+        no_hidden_proposals: אין התראות מוסתרות.
     settings:
+      flash:
+        updated: הערך מעודכן
       index:
         title: Configuration settings
         update_setting: עודכן
