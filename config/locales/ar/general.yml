@@ -281,13 +281,32 @@ ar:
       form:
         submit_button: إنشاء مقترح
     edit:
+      editing: تعديل المقترح
       form:
         submit_button: حفظ التغييرات
+      show_link: عرض الاقتراح
+    retire_form:
+      title: سحب الاقتراح
+      warning: "إذا قمت بسحب الاقتراح ، فسيظل يقبل الدعم ، ولكن ستتم إزالته من القائمة الرئيسية وستظهر رسالة لجميع المستخدمين تفيد بأن المؤلف يرى أنه لا ينبغي دعم الاقتراح بعد الآن"
+      retired_reason_label: سبب سحب الاقتراح
+      retired_reason_blank: إختر خيار
+      retired_explanation_label: تفسير
+      retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا الاقتراح يجب ألا يحصل على المزيد من الدعم
+      submit_button: سحب الاقتراح
     retire_options:
+      duplicated: مكرّر
       unfeasible: غير مجدي
+      done: منتهي
+      other: أخرى
     form:
       geozone: نطاق العملية
       proposal_external_url: رابط لوثائق إضافية
+      proposal_question: سؤال الاقتراح
+      proposal_question_example_html: "يجب تلخيصها في سؤال واحد بإجابة نعم أو لا"
+      proposal_responsible_name: الاسم الكامل للشخص الذي قدم الاقتراح
+      proposal_summary: ملخص الاقتراح
+      proposal_summary_note: "(200 حرف كحد أقصى)"
+      proposal_text: نص الاقتراح
       proposal_title: عنوان الاقتراح
       tag_category_label: "فئات"
       tags_instructions: "علم على هذا الاقتراح. تستطيع الاختيار من بين الفئات المقترحة او اضافة الخاصة بك"
