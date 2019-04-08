@@ -869,13 +869,20 @@ he:
         delete: מחיקת מיקום
         name: Name
         email: דואר אלקטרוני
+        entry_name: נושא משרה
       search:
+        email_placeholder: חיפוש משתמש/ת לפי דואר אלקטרוני
         search: חיפוש
         user_not_found: משתמש/ת לא נמצא/ה
     poll_officer_assignments:
       index:
+        officers_title: "רשימת נושאי משרה"
+        no_officers: "אין נושאי משרה שהוקצו לסקר זה."
         table_name: "Name"
         table_email: "דואר אלקטרוני"
+      by_officer:
+        date: "תאריך"
+        booth: "דוכן"
     poll_shifts:
       new:
         search_officer_button: חיפוש
