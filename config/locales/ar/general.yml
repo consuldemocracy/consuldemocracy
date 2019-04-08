@@ -308,6 +308,8 @@ ar:
       proposal_summary_note: "(200 حرف كحد أقصى)"
       proposal_text: نص الاقتراح
       proposal_title: عنوان الاقتراح
+      proposal_video_url: رابط للفيديو الخارجي
+      proposal_video_url_note: يمكنك إضافة رابط إلى YouTube أو Vimeo
       tag_category_label: "فئات"
       tags_instructions: "علم على هذا الاقتراح. تستطيع الاختيار من بين الفئات المقترحة او اضافة الخاصة بك"
       tags_label: علامات
@@ -315,12 +317,18 @@ ar:
       map_location: "موقع الخريطة"
       map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
       map_remove_marker: "ازل علامة الخريطة"
+      map_skip_checkbox: "هذا الاقتراح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
+        hot_score: الأكثر نشاطا
+        most_commented: الأكثر تعليقات
+        relevance: الأهمية
+        recommendations: التوصيات
       recommendations:
+        without_results: لا توجد اقتراحات تتعلق باهتماماتك
         without_interests: تابع المقترحات حتى نتمكن من تقديم توصيات لك
         actions:
           success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
@@ -519,6 +527,7 @@ ar:
       author_deleted: تم حذف المستخدم
     check: حدّد
     check_all: الكل
+    check_none: لا شيء
     following: "التالية"
     followable:
       budget_investment:
