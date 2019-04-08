@@ -366,11 +366,14 @@ he:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: ממתין לאישור
         hidden_debate: דיון מוסתר
+        hidden_proposal: הצעה מוסתרת
         title: Hidden comments
+        no_hidden_comments: לא נמצאו תגובות מוסתרות.
     dashboard:
       index:
         back: Go back to
         title: ניהול
+        description: ברוך הבא אל%{org} פאנל הניהול.
     debates:
       index:
         filter: Filter
@@ -379,6 +382,7 @@ he:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+        no_hidden_debates: לא נמצאו דיונים מוסתרים.
     hidden_users:
       index:
         filter: Filter
@@ -388,8 +392,12 @@ he:
           without_confirmed_hide: Pending
         title: Hidden users
         user: משתמשיםות מוסתריםות
+        no_hidden_users: לא נמצאו משתמשים מוסתרים.
       show:
         email: "דואר אלקטרוני"
+        hidden_at: "מוסתר ב:"
+        registered_at: "נרשם ב:"
+        title: פעילות המשתמש (%{user})
     hidden_budget_investments:
       index:
         filter: Filter
@@ -397,6 +405,8 @@ he:
           all: כולם
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
+        title: השקעות תקציב מוסתרות
+        no_hidden_budget_investments: לא נמצאו השקעות תקציב מוסתרות
     legislation:
       processes:
         edit:
