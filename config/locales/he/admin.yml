@@ -548,66 +548,134 @@ he:
           back: חזרה
           title: "עריכת \"%{question_title}\""
           submit_button: שמירת שינויים
+        errors:
+          form:
+            error: שגיאה
         form:
+          add_option: הוסף אפשרות
           title: שאלה
+          title_placeholder: הוספת שאלה
+          value_placeholder: הוספת תשובה סגורה
+          question_options: "תשובות אפשריות (אופציונלי, תשובות פתוחות כברירת מחדל)"
         index:
           back: חזרה
+          title: שאלות הקשורות לתהליך זה
           create: יצירת שאלה חדשה
           delete: מחיקה
         new:
           back: חזרה
+          title: יצירת שאלה חדשה
           submit_button: יצירת שאלה חדשה
         table:
           title: שם
+          question_options: אפשרויות שאלה
+          answers_count: התשובות נחשבות
+          comments_count: ההערות נחשבות
+        question_option_fields:
+          remove_option: הסר אפשרות
+      milestones:
+        index:
+          title: בעקבות
     managers:
       index:
         title: Managers
         name: Name
         email: דואר אלקטרוני
+        no_managers: לא נמצאו מנהלים.
       manager:
         add: Add
         delete: מחיקה
+      search:
+        title: "מנהלים: חיפוש משתמשים"
     menu:
       activity: Moderator activity
+      admin: תפריט מנהל
+      banner: נהל באנרים
       proposals: הצעות
+      proposals_topics: כותרות הצעות
       budgets: תקציבים השתתפותיים
+      geozones: ניהול אזורים גיאוגרפים
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_budget_investments: תקציבי השקעות מוסתרים
+      hidden_proposal_notifications: התראות הצעות מוסתרות
+      hidden_users: משתמשים מוסתרים
+      administrators: מנהלים
       managers: Managers
       moderators: Moderators
+      messaging_users: הודעות למשתמשים
+      newsletters: ידיעונים
       admin_notifications: התראות
+      system_emails: רשימת תפוצה
+      emails_download: הורדת אימיילים
       valuators: Valuators
+      poll_officers: בודקי סקרים
       polls: סקרים
+      poll_booths: מיקום דוכנים
+      poll_booth_assignments: דוכנים מוקצים
+      poll_shifts: ניהול משמרות
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
+      spending_proposals: הצעות להוצאת כספים
+      stats: סטטיסטיקה
+      signature_sheets: דפי חתימות
       site_customization:
+        homepage: דף הבית
+        pages: דפים מותאמים אישית
+        images: תמונות מותאמות אישית
+        content_blocks: בלוקי תוכן מותאם אישית
+        information_texts: טקסט מידע מותאם אישית
         information_texts_menu:
           debates: "דיונים"
+          community: "קהילה"
           proposals: "הצעות"
           polls: "סקרים"
+          layouts: "פריסות"
           mailers: "הודעה בדואר אלקטרוני"
           management: "הנהלה"
           welcome: "ברוכים/ות הבאים/ות"
         buttons:
           save: "שמירה"
+          content_block:
+            update: "עדכן בלוק"
+      title_moderated_content: תוכן מונחה
+      title_budgets: תקציבים
+      title_profiles: פרופילים
+      title_settings: הגדרות
+      title_site_customization: תוכן האתר
+      title_booths: דוכן הצבעות
+      legislation: חקיקה שיתופית
       users: משתמשים
     administrators:
       index:
+        title: מנהלים
         name: Name
         email: דואר אלקטרוני
+        id: מזהה מנהל
+        no_administrators: אין מנהלי מערכת.
       administrator:
         add: Add
         delete: מחיקה
+        restricted_removal: "מצטערים, אין באפשרותך להסיר את עצמך ממנהלי המערכת"
+      search:
+        title: "מנהלי מערכת: חיפוש משתמשים"
     moderators:
       index:
         title: Moderators
         name: Name
         email: דואר אלקטרוני
+        no_moderators: לא נמצאו מנחים.
       moderator:
         add: Add
         delete: מחיקה
+      search:
+        title: "מנחים: חיפוש משתמשים"
+    segment_recipient:
+      all_users: כל המשתמשים
+      administrators: מנהלי מערכת
+      proposal_authors: מחברי ההצעות
     newsletters:
       index:
         sent: Sent
