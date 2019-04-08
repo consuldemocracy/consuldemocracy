@@ -181,6 +181,7 @@ ar:
   errors:
     messages:
       user_not_found: لم يتم العثور على المستخدم
+      invalid_date_range: "نطاق التاريخ غير صالح"
   form:
     accept_terms: أوافق على %{policy} و٪%{conditions}
     accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
@@ -218,6 +219,7 @@ ar:
       conditions: قوانين وشروط الاستخدام
       consul: تطبيق CONSUL
       consul_url: https://github.com/consul/consul
+      contact_us: لزيارة المساعدة الفنية
       copyright: CONSUL, %{year}
       description: تستخدم هذه البوابة %{consul} وهو%{open_source}.
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -267,6 +269,7 @@ ar:
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
+      sign_up: تسجيل باستخدام Facebook
       name: Facebook
     finish_signup:
       title: "تفاصيل إضافية"
@@ -276,6 +279,7 @@ ar:
       name: Google
     twitter:
       sign_in: تسجيل الدخول باستخدام Twitter
+    info_sign_in: "تسجيل الدخول باستخدام:"
   proposals:
     create:
       form:
@@ -621,6 +625,7 @@ ar:
     wrong_price_format: الاعداد الصحيحة فقط
     spending_proposal:
       spending_proposal: مشروع استثماري
+      already_supported: لقد دعمت هذا بالفعل. شاركه!
       support: دعم
       support_title: ادعم هذا المشروع
       supports:
@@ -633,9 +638,11 @@ ar:
         other: "%{count} يدعم"
   stats:
     index:
+      visits: الزيارات
       debates: النقاشات
       proposals: إقتراحات
       comments: تعليقات
+      proposal_votes: الأصوات على المقترحات
       votes: مجموع الأصوات
       verified_users: مستخدمين تم التحقق منهم
       unverified_users: مستخدمين غير متحقق منهم
@@ -710,7 +717,12 @@ ar:
       user_permission_verify_my_account: التحقق من حسابي
       user_permission_votes: المشاركة في التصويت النهائي
   related_content:
+    help: "يمكنك إضافة روابط %{models} داخل %{org}."
     submit: "إضافة"
+    error: "الرابط غير صالح. تذكر أن تبدأ بـ %{url}."
+    error_itself: "الرابط غير صالح. لا يمكنك ربط المحتوى بنفسه."
+    success: "لقد قمت بإضافة محتوى مرتبط جديد"
+    is_related: "هل هو محتوى مرتبط؟"
     score_positive: "نعم"
     score_negative: "لا"
     content_title:
@@ -722,4 +734,8 @@ ar:
       title: الإدارة
   annotator:
     help:
+      alt: حدد النص الذي ترغب في التعليق عليه واضغط على الزر بالقلم.
+      text: للتعليق على هذه الوثيقة ، يجب عليك %{sign_in} أو %{sign_up}. ثم حدد النص الذي تريد التعليق عليه واضغط على الزر بالقلم.
+      text_sign_in: تسجيل الدخول
       text_sign_up: انشاء حساب
+      title: كيف يمكنني التعليق على هذه الوثيقة؟
