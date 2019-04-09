@@ -96,4 +96,16 @@ module BudgetsHelper
     !current_user.voted_in_group?(investment.group) &&
     investment.group.headings.count > 1
   end
+
+  def link_to_create_budget_poll(budget)
+    balloting_phase = budget.phases.where(kind: "balloting").first
+
+    link_to t("admin.budgets.index.admin_ballots"),
+            admin_polls_path(poll: {
+                              name:      budget.name,
+                              budget_id: budget.id,
+                              starts_at: balloting_phase.starts_at,
+                              ends_at:   balloting_phase.ends_at }),
+            method: :post
+  end
 end
