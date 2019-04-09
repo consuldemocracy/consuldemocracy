@@ -145,6 +145,7 @@ he:
         help: עזרה בנושא דיונים
       section_footer:
         title: עזרה בנושא דיונים
+        description: התחל דיון, ושתף דעות עם אחרים בנושאים שאתה מוטרד לגביהם.
     new:
       form:
         submit_button: פתיחת דיון חדש
