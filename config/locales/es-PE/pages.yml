@@ -31,8 +31,10 @@ es-PE:
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
+        link: "encuentas"
       processes:
         title: "Procesos"
+        link: "procesos"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
@@ -51,21 +53,46 @@ es-PE:
       title: Accesibilidad
       keyboard_shortcuts:
         navigation_table:
+          key_header: Tecla
+          page_header: Página
           rows:
             - 
+              key_column: 0
+              page_column: Inicio
             - 
+              key_column: 1
+              page_column: Discusiones
             - 
+              key_column: 2
               page_column: Propuestas
             - 
               key_column: 1
               page_column: Votos
             - 
+              key_column: 4
               page_column: Presupuestos participativos
             - 
-      textsize:
-        browser_settings_table:
+              key_column: 5
+        browser_table:
           rows:
             - 
+            - 
+            - 
+              browser_column: Chrome
+              key_column: ALT + atajo (CTRL + ALT + atajos para MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + atajo (CMD + atajo para MAC)
+            - 
+              browser_column: Opera
+              key_column: MAYÚSCULAS + ESC + atajo
+      textsize:
+        title: Tamaño del texto
+        browser_settings_table:
+          browser_header: Navegador
+          rows:
+            - 
+              browser_column: Explorer
               action_column: Ver > Tamaño del texto
             - 
               browser_column: Firefox
@@ -88,9 +115,15 @@ es-PE:
             - 
               shortcut_column: CTRL y - (CMD y - en MAC)
               description_column: Para reducir el tamaño del texto
+      compatibility:
+        title: Compatibilidad con estándares y diseño visual
+        description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
+    titles:
+      help: "¿Qué es %{org}? - Participación ciudadana"
     verify:
       code: Código que has recibido en tu carta
       email: Tu correo electrónico
+      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
       info_code: "Ahora introduce el código que has recibido en tu carta:"
       password: Contraseña que utilizarás para acceder a este sitio web
       submit: Verificar mi cuenta
