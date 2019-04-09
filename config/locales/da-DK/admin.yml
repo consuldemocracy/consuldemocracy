@@ -945,8 +945,11 @@ da:
       form:
         description:
           text: "Beskrivelse"
+          help_text: "Denne tekst vil være synlig i sidehovedet på afstemningens webside. Teksten kan anvendes til at sætte en kontekst for afstemningen."
     polls:
       index:
+        title: "Liste over afstemninger"
+        no_polls: "Der er ingen kommende afstemninger."
         create: "Opret afstemning"
         name: "Navn"
         dates: "Datoer"
@@ -966,6 +969,7 @@ da:
       show:
         questions_tab: Spørgsmål
         booths_tab: Stemmebokse
+        officers_tab: Ledende medarbejdere
         recounts_tab: Omtælling
         results_tab: Resultater
         no_questions: "Der er ingen spørgsmål til denne afstemning."
@@ -981,23 +985,28 @@ da:
         title: "Spørgsmål"
         create: "Stil spørgsmål"
         no_questions: "Der er ingen spørgsmål."
+        filter_poll: Filtrer efter Afstemning
         select_poll: Vælg afstemning
         questions_tab: "Spørgsmål"
+        successful_proposals_tab: "Forslag, der har modtaget tilstrækkelig støtte"
         create_question: "Stil spørgsmål"
         table_proposal: "Borgerforslag"
         table_question: "Spørgsmål"
         table_poll: "Afstemning"
+        poll_not_assigned: "Afstemning ikke tildelt"
       edit:
         title: "Rediger Spørgsmål"
       new:
         title: "Opret et spørgsmål, der skal stemmes om %{poll}"
         title_proposal: "Stil et spørgsmål"
+        poll_label: "Afstemning"
       answers:
         images:
           add_image: "Tilføj billede"
           save_image: "Gem billede"
       show:
         proposal: Originalt forslag
+        author: Oprettet af
         question: Spørgsmål
         edit_question: Rediger spørgsmål
         valid_answers: Gyldige svar
@@ -1039,12 +1048,16 @@ da:
       index:
         title: "Omtælling"
         no_recounts: "Der er ikke noget at omtælle"
+        all_booths_total: "Kumulativ samlet antal stemmer fra alle valgsteder:"
         total_final: "Endelig omtælling"
         total_system: "Stemmer (automatisk)"
         table_booth_name: "Afstemningsområde"
+        table_total_recount: "Samlet antal stemmer (af ledende medarbejder)"
+        table_system_count: "Stemmer (automatisk)"
     results:
       index:
         title: "Resultater"
+        no_results: "Der er ingen resultater"
       result:
         table_answer: Svar
         table_votes: Stemmer
