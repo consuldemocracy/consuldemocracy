@@ -1271,6 +1271,7 @@ he:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
         back: חזרה
+        classification: סיווג
         heading: "השקעה כספית בפרוייקט %{id}"
         edit: ערוך
         edit_classification: Edit classification
