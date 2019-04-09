@@ -44,8 +44,7 @@ module Users
     visit new_officing_residence_path
   end
 
-  def login_as_manager
-    manager = create(:manager)
+  def login_as_manager(manager = create(:manager))
     login_as(manager.user)
     visit management_sign_in_path
   end
