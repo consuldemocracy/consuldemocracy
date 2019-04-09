@@ -24,6 +24,7 @@ he:
         no_ballots_allowed: שלב הבחירה נסגר
         different_heading_assigned_html: "כבר הצבעת בנושאים אחרים: %{heading_link}"
         change_ballot: שנה את הצבעתך
+        casted_offline: כבר השתתפת במצב לא מקוון
     groups:
       show:
         title: בחר באפשרות
