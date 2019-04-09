@@ -49,9 +49,17 @@ he:
       moderator: מנחה דיון
       responses:
         zero: אין תגובות
+        one: תגובה אחת
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
       user_deleted: משתמש/ת זה/ו נמחק/ה
       votes:
         zero: אין הצבעות
+        one: הצבעה אחת
+        two: "%{count} הצבעות"
+        many: "%{count} הצבעות"
+        other: "%{count} הצבעות"
     form:
       comment_as_admin: הגב/י כמנהל/ת
       comment_as_moderator: הגב/י כמנה/ת הדיון
@@ -60,6 +68,7 @@ he:
       most_voted: הכי הרבה הצבעות
       newest: הכי חדשות
       oldest: הכי מוקדמות
+      most_commented: עם הכי הרבה תגובות
     select_order: סדר לפי
     show:
       return_to_commentable: "בחזרה אל"
@@ -76,8 +85,16 @@ he:
     debate:
       comments:
         zero: אין תגובות
+        one: תגובה אחת
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
       votes:
         zero: אין הצבעות
+        one: הצבעה אחת
+        two: "%{count} הצבעות"
+        many: "%{count} הצבעות"
+        other: "%{count} הצבעות"
     edit:
       editing: עריכת הדיון
       form:
@@ -91,21 +108,43 @@ he:
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
       featured_debates: מוצע
+      filter_topic:
+        one: " הכולל נושא '%{topic}'"
+        two: " הכולל את הנושאים '%{topic}'"
+        many: " הכולל את הנושאים '%{topic}'"
+        other: " הכולל את הנושאים '%{topic}'"
       orders:
         confidence_score: הכי נתמכת
         created_at: הכי חדשה
         hot_score: הכי פעילה
         most_commented: עם הכי הרבה תגובות
         relevance: נוגעת לעניין
+        recommendations: המלצות
+      recommendations:
+        without_results: אין דיונים הקשורים לתחומי העניין שלך
+        without_interests: עקוב אחר הצעות בכדי שנוכל לתת לך המלצות
+        disable: "המלצות לדיונים יפסיקו להופיע אם תבטל אותן. תוכל להפעיל אותם שוב בדף 'החשבון שלי'"
+        actions:
+          success: "המלצות לדיונים מושבתות כעת עבור חשבון זה"
+          error: "ארעה שגיאה. עבור אל דף 'החשבון שלי' בכדי להשבית באופן ידני את ההמלצות לדיונים"
       search_form:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
+      search_results_html:
+        one: " המכיל את המונח <strong>\"%{search_term}' </strong>"
+        two: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
+        many: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
+        other: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
       select_order: הזמנה באמצעות
       start_debate: פתיחת דיון חדש
       title: דיונים
       section_header:
+        icon_alt: סמל הדיון
         title: דיונים
+        help: עזרה בנושא דיונים
+      section_footer:
+        title: עזרה בנושא דיונים
     new:
       form:
         submit_button: פתיחת דיון חדש
