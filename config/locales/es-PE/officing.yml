@@ -6,6 +6,7 @@ es-PE:
       index:
         title: Presidir mesa de votaciones
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+        no_shifts: No te toca desempeñar labores de personero hoy.
     menu:
       voters: Validar documento
       total_recounts: Recuento total y escrutinio
