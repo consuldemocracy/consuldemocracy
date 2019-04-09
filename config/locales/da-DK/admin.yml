@@ -1172,7 +1172,10 @@ da:
         title: Konfigurationsindstillinger
         update_setting: Opdater
         participation_processes: "Deltagelsesprocesser"
+        feature_flags: Funktioner
         features:
+          enabled: "Funktion aktiveret"
+          disabled: "Funktion deaktiveret"
           enable: "Aktiver"
           disable: "Deaktiver"
         map:
@@ -1182,6 +1185,8 @@ da:
             update: Kortinstillingen blev opdateret.
           form:
             submit: Opdater
+          how_to_enable: 'For at gøre kortet synligt for brugerne skal du aktivere "Borger- og budgetforslags geografiske område" under fanebladet "Funktioner".'
+      setting: Funktioner
       setting_actions: Handlinger
       setting_name: Indstillinger
       setting_status: Status
@@ -1313,6 +1318,7 @@ da:
           votes: Sammenlagt antal stemmer
         budgets_title: Deltagerbudget
         visits_title: Besøg
+        incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
       direct_messages:
         title: Direkte beskeder
@@ -1323,8 +1329,12 @@ da:
         total: Total
       polls:
         all: Afstemninger
+        poll_questions: "Spørgsmål fra afstemningen: %{poll}"
         table:
+          poll_name: Afstemning
           question_name: Spørgsmål
+          origin_web: Webdeltagere
+          origin_total: Samlet antal deltagere
     tags:
       create: Opret emne
       destroy: Fjern emne
