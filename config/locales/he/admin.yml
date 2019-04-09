@@ -87,8 +87,10 @@ he:
         table_investments: השקעות
         table_edit_groups: קבוצת כותרות
         table_edit_budget: ערוך
+        table_admin_ballots: הצבעות
         edit_groups: עריכת קבוצות כותרות
         edit_budget: ערוך תקציב
+        admin_ballots: הצבעת מנהל מערכת
         no_budgets: "לא נמצאו תקציבים."
       create:
         notice: תקציב השתתפותי חדש נוצר בהצלחה!
