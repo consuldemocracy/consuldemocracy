@@ -260,54 +260,115 @@ he:
         association_name: "שם הארגון/ההתאגדות"
         description: "תיאור"
         external_url: "קישור למידע נוסף"
-        geozone_id: "היקף הפעילות"
-        title: "שם"
+        geozone_id: "היקף הפעולה"
+        title: "כותרת"
       poll:
-        name: "Name"
+        name: "שם"
+        starts_at: "תאריך פתיחה"
+        ends_at: "תאריך סיום"
+        geozone_restricted: "מוגבל על ידי האזור הגיאוגרפי"
+        summary: "תקציר"
         description: "תיאור"
       poll/translation:
-        name: "Name"
+        name: "שם"
+        summary: "תקציר"
         description: "תיאור"
       poll/question:
         title: "שאלה"
+        summary: "תקציר"
         description: "תיאור"
         external_url: "קישור למידע נוסף"
       poll/question/translation:
         title: "שאלה"
       signature_sheet:
-        signable_type: "סוג חתימה"
-        signable_id: "מזהה רשום"
+        signable_type: "סוג החתימה"
+        signable_id: "סוג מזהה"
         document_numbers: "מספרי המסמכים"
       site_customization/page:
         content: תוכן
-        title: שם
+        created_at: נוצר ב
+        subtitle: תת כותרת
+        slug: אסימון
+        status: סטטוס
+        title: כותרת
+        updated_at: עודכן ב
+        more_info_flag: הצג בדף העזרה
+        print_content_flag: כפתור הדפסת תוכן
+        locale: שפה
       site_customization/page/translation:
-        title: שם
+        title: כותרת
+        subtitle: תת כותרת
         content: תוכן
       site_customization/image:
-        name: Name
+        name: שם
         image: תמונה
       site_customization/content_block:
-        name: Name
+        name: שם
+        locale: אזור
+        body: גוף
+      banner:
+        background_color: צבע הרקע
+        font_color: צבע גופן
       legislation/process:
+        title: כותרת התהליך
+        summary: תקציר
         description: תיאור
+        additional_info: מידע נוסף
+        start_date: התחלה
+        end_date: סיום
+        debate_start_date: התחלה
+        debate_end_date: סיום
+        draft_start_date: התחלה
+        draft_end_date: סיום
+        draft_publication_date: טיוטת תאריך פרסום
+        allegations_start_date: התחלה
+        allegations_end_date: סיום
+        proposals_phase_start_date: התחלה
+        proposals_phase_end_date: סיום
+        result_publication_date: תאריך פרסום סופי לתוצאות
+        background_color: צבע הרקע
+        font_color: צבע גופן
       legislation/process/translation:
+        title: כותרת התהליך
+        summary: תקציר
         description: תיאור
+        additional_info: מידע נוסף
+        milestones_summary: תקציר
+      legislation/draft_version:
+        title: גרסת כותרת
+        body: טקסט
+        changelog: שינויים
+        status: סטטוס
+        final_version: גרסה סופית
+      legislation/draft_version/translation:
+        title: גרסת כותרת
+        body: טקסט
+        changelog: שינויים
       legislation/question:
-        title: שם
+        title: כותרת
+        question_options: אפשרויות
+      legislation/question_option:
+        value: ערך
       legislation/annotation:
         text: הערות
       document:
-        title: שם
+        title: כותרת
+        attachment: צרופה
       image:
-        title: שם
+        title: כותרת
+        attachment: צרופה
       poll/question/answer:
+        title: תשובה
         description: תיאור
       poll/question/answer/translation:
+        title: תשובה
         description: תיאור
       poll/question/answer/video:
-        title: שם
+        title: כותרת
+        url: מקור וידאו חיצוני
       newsletter:
+        segment_recipient: נמענים
+        subject: נושא
         from: מאת
       admin_notification:
         title: שם
