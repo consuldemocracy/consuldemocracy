@@ -6,13 +6,20 @@ es-PE:
       description: Página de información sobre las condiciones de uso, privacidad y protección de información personal.
     help:
       title: "%{org} es una plataforma para la participación ciudadana"
+      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
       menu:
+        debates: "Discusiones"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
         polls: "Votaciones"
         other: "Otra información de interés"
         processes: "Procesos"
       debates:
+        title: "Discusiones"
+        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas de tu interés relacionados con la ciudad. También es un lugar para generar ideas que a través de las otras secciones de %{org} conducen a acciones concretas por parte del Consejo Municipal."
+        link: "discusiones ciudadanas"
+        feature_html: "Puedes abrir discusiones, comentarlas y valorarlas con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
+        feature_link: "regístrate en %{org}"
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
@@ -55,6 +62,32 @@ es-PE:
             - 
               page_column: Presupuestos participativos
             - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+              action_column: Ver > Tamaño del texto
+            - 
+              browser_column: Firefox
+              action_column: Ver > Tamaño
+            - 
+              browser_column: Chrome
+              action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
+            - 
+              browser_column: Safari
+              action_column: Vista > ampliar/reducir
+            - 
+              browser_column: Opera
+              action_column: Vista > escala
+        browser_shortcuts_table:
+          description: "Otra manera de cambiar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:"
+          rows:
+            - 
+              shortcut_column: CTRL y + (CMD y + en MAC)
+              description_column: Para aumentar el tamaño del texto
+            - 
+              shortcut_column: CTRL y - (CMD y - en MAC)
+              description_column: Para reducir el tamaño del texto
     verify:
       code: Código que has recibido en tu carta
       email: Tu correo electrónico
