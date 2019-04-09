@@ -590,7 +590,7 @@ da:
       hidden_comments: Skjulte kommentarer
       hidden_debates: Skjulte debatindlæg
       hidden_proposals: Skjulte forslag
-      hidden_budget_investments: Skjulte budgetinvesteringer
+      hidden_budget_investments: Skjulte budgetforslag
       hidden_proposal_notifications: Skjulte notifikationer vedrørende forslag
       hidden_users: Skjulte brugere
       administrators: Administratorer
@@ -668,7 +668,7 @@ da:
       all_users: Alle brugere
       administrators: Administratorer
       proposal_authors: Brugere der har oprettet et forslag
-      investment_authors: Brugere der har oprettet en investering i det aktuelle budget
+      investment_authors: Brugere der har oprettet et investeringsforslag i det aktuelle budget
       feasible_and_undecided_investment_authors: "Brugere der har oprettet investeringsforslag til det aktuelle budget, men som ikke svarer til: [valuation finished unfesasible]"
       selected_investment_authors: Brugere hvis forslag er udvalgt i det aktuelle budget
       winner_investment_authors: Brugere hvis investeringsforslag har opnået flest stemmer i det aktuelle budget
@@ -764,13 +764,13 @@ da:
         description: "Sendt når en bruger opretter en budgetinvestering."
       budget_investment_selected:
         title: "Budgetinvestering valgt"
-        description: "Sendt til brugeren, hvis vedkommendes budgetinvestering er blevet udvalgt."
+        description: "Sendt til brugeren, hvis vedkommendes budgetforslag er blevet udvalgt."
       budget_investment_unfeasible:
         title: "Budgetinvesteringen kan ikke gennemføres"
-        description: "Sendt til brugeren, hvis vedkommendes budgetinvestering er markeret som uigennemførlig."
+        description: "Sendt til brugeren, hvis vedkommendes budgetforslag er markeret som uigennemførlig."
       budget_investment_unselected:
-        title: "Budgetinvestering ikke valgt"
-        description: "Sendt til brugeren, hvis vedkommendes budgetinvestering ikke er blevet valgt til afstemningsfasen."
+        title: "Budgetforslag ikke valgt"
+        description: "Sendt til brugeren, hvis vedkommendes budgetforslag ikke er blevet valgt til afstemningsfasen."
       comment:
         title: "Kommentar"
         description: "Sendt til brugeren, når vedkommende modtager en kommentar."
@@ -791,6 +791,7 @@ da:
         description: "Sendt til personen, der er blevet inviteret til at registrere sin brugerkonto."
       edit_info: "Du kan redigere e-mailen i"
       message_title: "Meddelelses titel"
+      message_body: "Dette er et udkast til beskedens indhold."
     emails_download:
       index:
         title: E-mails blev downloadet
