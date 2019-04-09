@@ -14,6 +14,8 @@ da:
       edit: Rediger
       configure: Konfigurere
       delete: Slet
+    officing_booth:
+      title: "Du er medansvarlig for valgstedet på %{booth}. Hvis det ikke er korrekt, skal du ikke fortsætte, men ringe efter hjælp på hjælpetelefonen. Tak."
     banners:
       index:
         title: Bannere
@@ -150,6 +152,7 @@ da:
         name: "Navn på post"
         amount: "Beløb"
         population: "Befolkning (valgfri)"
+        population_info: "Feltet over befolkningsantallet inden for et område anvendes til at holde statistikker over, hvor stor en andel af befolkningen, der deltog i afstemningen. Feltet er valgfrit."
         latitude: "Breddegrad (valgfri)"
         longitude: "Længdegrad (valgfri)"
         coordinates_info: "Hvis du angiver breddegrad og længdegrad, så vil investeringssiden inkludere et kort centreret omkring de angivne koordinator."
