@@ -1327,8 +1327,12 @@ da:
       proposal_notifications:
         title: Forslagsnotifikationer
         total: Total
+        not_available: "Afstemning ikke tilgængelig"
       polls:
+        title: Statistik over afstemning
         all: Afstemninger
+        web_participants: Webdeltagere
+        total_participants: Samlet antal deltagere
         poll_questions: "Spørgsmål fra afstemningen: %{poll}"
         table:
           poll_name: Afstemning
@@ -1339,6 +1343,8 @@ da:
       create: Opret emne
       destroy: Fjern emne
       index:
+        add_tag: Tilføj et nyt emne
+        title: Emner
         topic: Emne
         help: "Når en bruger opretter et forslag vil følgende standard tags blive foreslået."
       name:
@@ -1363,9 +1369,23 @@ da:
         title: Ufærdige verificeringer
     site_customization:
       content_blocks:
+        information: Infomation vedrørende indholdsblokke
+        no_blocks: "Der er ingen indholdsblokke."
+        create:
+          notice: Indholdblokken blev oprettet
+          error: Indholdsblokken kunne ikke oprettes
+        update:
+          notice: Indholdsblokken blev opdateret
+          error: Indholdsblokken kunne ikke opdateres
+        destroy:
+          notice: Indholdsblokken blev slettet
+        edit:
+          title: Rediger indholdsblok
         errors:
           form:
             error: Fejl
+        index:
+          create: Opret ny indholdsblok
         content_block:
           name: Navn
           names:
