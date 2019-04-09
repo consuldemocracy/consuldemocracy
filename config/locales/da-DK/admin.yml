@@ -1090,6 +1090,9 @@ da:
     officials:
       edit:
         destroy: Fjern "Embedsmand"-status
+      flash:
+        official_destroyed: "Detaljer gemt: brugeren er ikke længere verificeret som embedsmand"
+        official_updated: Detaljer om embedsmand gemt
       index:
         name: Navn
       level_1: Niavue 1
