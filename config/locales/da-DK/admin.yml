@@ -670,6 +670,8 @@ da:
       proposal_authors: Brugere der har oprettet et forslag
       investment_authors: Brugere der har oprettet en investering i det aktuelle budget
       feasible_and_undecided_investment_authors: "Brugere der har oprettet investeringsforslag til det aktuelle budget, men som ikke svarer til: [valuation finished unfesasible]"
+      selected_investment_authors: Brugere hvis forslag er udvalgt i det aktuelle budget
+      winner_investment_authors: Brugere hvis investeringsforslag har opnået flest stemmer i det aktuelle budget
       not_supported_on_current_budget: Brugere, der ikke har støttet op om investeringer i det nuværende budget
       invalid_recipients_segment: "Modtagersegmentet er ugyldigt"
     newsletters:
@@ -710,6 +712,8 @@ da:
         send_alert: Er du sikker på, du vil sende nyhedsbrevet til %{n} brugere?
     admin_notifications:
       create_success: Notifikation oprettet
+      update_success: Notifikationer blev opdateret
+      send_success: Meddelelsen blev sendt
       delete_success: Meddelelsen blev slettet
       index:
         section_title: Notifikationer
@@ -731,6 +735,7 @@ da:
         section_title: Rediger meddelelse
         submit_button: Opdater meddelelse
       show:
+        section_title: Forhåndsvisning af notifikation
         send: Send meddelelse
         will_get_notified: (%{n} brugere vil blive underrettet)
         got_notified: (%{n} brugere blev underrettet)
