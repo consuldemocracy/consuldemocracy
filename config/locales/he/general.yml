@@ -12,11 +12,17 @@ he:
       personal: פרטים אישיים
       phone_number_label: מספר טלפון
       public_activity_label: השאר את פירוט הפעילויות שלי גלוי לציבור
+      public_interests_label: שמור את התוויות של האלמנטים שאחריהם אני עוקב ציבורית
+      public_interests_my_title_list: תגיות של אלמנטים אחריהם אתה עוקב
+      public_interests_user_title_list: תגיות של אלמנטים שמשתמש זה עוקב אחריהן
       save_changes_submit: שמירת שינויים
       subscription_to_website_newsletter_label: ארצה לקבל בדואר אלקטרוני מידע מהאתר
       email_on_direct_message_label: לקבל בדואר אלקטרוני על פניות אישיות
       email_digest_label: לקבל סיכום של ההודעות על הצעות חדשות
       official_position_badge_label: הצג את אות הדירוג הרשמי שלי
+      recommendations: המלצות
+      show_debates_recommendations: הצג המלצות לדיונים
+      show_proposals_recommendations: הצג המלצות להצעות
       title: החשבון שלי
       user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
@@ -33,6 +39,8 @@ he:
     close: סגירה
     menu: תפריט
   comments:
+    comments_closed: לא ניתן להגיב
+    verified_only: בכדי להשתתף %{verify_account}
     verify_account: לאמת את החשבון
     comment:
       admin: מנהל/ת
