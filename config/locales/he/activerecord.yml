@@ -90,31 +90,106 @@ he:
         one: "ארגון"
         two: "ארגונים"
         many: "ארגונים"
-        other: "Organisations"
+        other: "ארגונים"
+      poll/booth:
+        one: "דוכן"
+        two: "דוכנים"
+        many: "דוכנים"
+        other: "דוכנים"
+      poll/officer:
+        one: "נושא משרה"
+        two: "נושאי משרות"
+        many: "נושאי משרות"
+        other: "נושאי משרות"
+      proposal:
+        one: "הצעת תושב"
+        two: "הצעת תושבים"
+        many: "הצעת תושבים"
+        other: "הצעת תושבים"
       spending_proposal:
         one: "פרויקט להשקעה"
-        two: "Investment projects"
-        many: "Investment projects"
-        other: "Investment projects"
+        two: "פרויקטים להשקעה"
+        many: "פרויקטים להשקעה"
+        other: "פרויקטים להשקעה"
+      site_customization/page:
+        one: דף מותאם אישית
+        two: דפים מותאמים אישית
+        many: דפים מותאמים אישית
+        other: דפים מותאמים אישית
+      site_customization/image:
+        one: תמונה מותאמת אישית
+        two: תמונות מותאמות אישית
+        many: תמונות מותאמות אישית
+        other: תמונות מותאמות אישית
+      site_customization/content_block:
+        one: תוכן בלוק מותאם אישית
+        two: תוכני בלוקים מותאמים אישית
+        many: תוכני בלוקים מותאמים אישית
+        other: תוכני בלוקים מותאמים אישית
+      legislation/process:
+        one: "תהליך"
+        two: "תהליכים"
+        many: "תהליכים"
+        other: "תהליכים"
       legislation/proposal:
         one: "הצעה"
         two: "הצעות"
         many: "הצעות"
         other: "הצעות"
+      legislation/draft_versions:
+        one: "גרסת טיוטה"
+        two: "גרסאות טיוטה"
+        many: "גרסאות טיוטה"
+        other: "גרסאות טיוטה"
+      legislation/questions:
+        one: "שאלה"
+        two: "שאלות"
+        many: "שאלות"
+        other: "שאלות"
+      legislation/question_options:
+        one: "אפשרויות שאלה"
+        two: "אפשרויות שאלות"
+        many: "אפשרויות שאלות"
+        other: "אפשרויות שאלות"
+      legislation/answers:
+        one: "תשובה"
+        two: "תשובות"
+        many: "תשובות"
+        other: "תשובות"
+      documents:
+        one: "מסמך"
+        two: "מסמכים"
+        many: "מסמכים"
+        other: "מסמכים"
+      images:
+        one: "תמונה"
+        two: "תמונות"
+        many: "תמונות"
+        other: "תמונות"
+      topic:
+        one: "נושא"
+        two: "נושאים"
+        many: "נושאים"
+        other: "נושאים"
       poll:
-        one: "הצבעה"
+        one: "סקר"
         two: "סקרים"
         many: "סקרים"
         other: "סקרים"
+      proposal_notification:
+        one: "התראת הצעה"
+        two: "התראת הצעות"
+        many: "הצעת התראות"
+        other: "הצעת התראות"
     attributes:
       budget:
         name: "שם"
-        description_accepting: "תיאור בשלב הקבלה"
-        description_reviewing: "תיאור בשלב ההערות"
-        description_selecting: "תיאור בשלב הבחירה"
-        description_valuating: "תיאור בשלב ההערכה"
+        description_accepting: "תיאור במהלך קבלת שלב"
+        description_reviewing: "תיאור במהלך בדיקת שלב"
+        description_selecting: "תיאור במהלך בחירת שלב"
+        description_valuating: "תיאור במהלך שלב ההערכה"
         description_balloting: "תיאור במהלך שלב ההצבעה"
-        description_reviewing_ballots: "תיאור בשלב ההצבעה"
+        description_reviewing_ballots: "תיאור במהלך סקירת שלב ההצבעה"
         description_finished: "תיאור כאשר התקציב נגמר"
         phase: "שלב"
         currency_symbol: "מטבע"
