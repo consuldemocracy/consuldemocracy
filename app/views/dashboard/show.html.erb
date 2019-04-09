@@ -7,14 +7,6 @@
               class: "button hollow" %>
 <% end %>
 
-<% if can_destroy_image?(proposal) %>
-  <%= link_to t("images.remove_image"),
-              image_path(proposal.image, from: request.url),
-              method: :delete,
-              class: "button hollow alert",
-              data: { confirm: t("images.actions.destroy.confirm") } %>
-<% end %>
-
 <% unless proposal.retired? %>
   <%= link_to t("dashboard.index.retire"),
               retire_form_proposal_path(proposal),
