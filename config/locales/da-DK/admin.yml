@@ -792,6 +792,10 @@ da:
       edit_info: "Du kan redigere e-mailen i"
       message_title: "Meddelelses titel"
       message_body: "Dette er et udkast til beskedens indhold."
+      alert:
+        no_investments: "Der er ikke oprettet nogle investeringsforslag. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
+        no_comments: "Der er ikke oprettet nogle kommentarer. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
+        no_replies: "Der er ikke oprette nogle tilbagesvar. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
     emails_download:
       index:
         title: E-mails blev downloadet
@@ -870,6 +874,7 @@ da:
         date: "Dato"
         booth: "Stemmeboks"
         assignments: "Arbejdsopgaver til afstemningen"
+        no_assignments: "Brugeren har ingen arbejdsopgaver under denne afstemning."
     poll_shifts:
       new:
         add_shift: "Tilføj arbejdsplan"
@@ -880,26 +885,38 @@ da:
         edit_shifts: Rediger arbejdsplan
         new_shift: "Ny arbejdsplan"
         no_shifts: "Dette afstemningssted har ingen tilknyttet arbejdsplan"
+        officer: "Ledende medarbejder"
         remove_shift: "Fjern"
         search_officer_button: Søg
         search_officer_placeholder: Søg ansvarlig medarbejder
+        search_officer_text: Søg medarbejder til ny arbejdsplan
         select_date: "Vælg dag"
         no_voting_days: "Stemmedagene er afsluttet"
         select_task: "Vælg opgave"
-        table_shift: "Arbejdsopgave"
+        table_shift: "Arbejdsplan"
         table_email: "E-mail"
         table_name: "Navn"
       flash:
-        create: "Arbejdsopgave tilføjet"
+        create: "Arbejdsplan tilføjet"
+        destroy: "Arbejdsplan fjernet"
+        unable_to_destroy: "Arbejdsopgaver associeret til resultater eller omtællinger kan ikke slettes"
         date_missing: "Der skal vælges en dato"
       vote_collection: Indsaml stemmer
       recount_scrutiny: Omtælling & Eftersyn
     booth_assignments:
       manage_assignments: Administrer opgaver
       manage:
+        assignments_list: "Opgaver til afstemningen '%{poll}'"
+        status:
+          assign_status: Opgave
+          assigned: Tildelt
+          unassigned: Ikke tildelt
         actions:
           assign: Tildel stemmestation
+          unassign: Annuller valgsted
     poll_booth_assignments:
+      alert:
+        shifts: "Der er tilknyttet en arbejdsplan til valgstedet. Hvis du sletter valgstedet, sletter du også arbejdsplanen. Ønsker du at fortsætte?"
       show:
         location: "Lokation"
         results: "Resultater"
@@ -1236,6 +1253,7 @@ da:
         stats_title: Statistikker
         summary:
           comments: Kommentarer
+          budget_investments: Investeringsforslag
           unverified_users: Ikke verificerede brugere
           users: Total antal brugere
           verified_users: Verificerede brugere
