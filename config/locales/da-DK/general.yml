@@ -609,6 +609,7 @@ da:
     documentation: Yderligere dokumentation
     view_mode:
       title: Visning
+      cards: Informationsbokse
       list: Liste
     recommended_index:
       title: Anbefalinger
