@@ -207,7 +207,7 @@ en:
         retired: Retired
       proposal_totals:
         active_resources: Active resources
-        community: Community
+        community: Participants in your community
         show_proposal: Show proposal
         preview_proposal: Preview proposal
         current_goal: Current goal
@@ -308,8 +308,8 @@ en:
         submit_button: Create proposal
     created:
       title: Congratulations! You have taken the first step.
-      motivation:  "It is important to have at least 100 supports on the first day of the campaign to be able to boost your proposal."
-      motivation_2_html: "<strong>Do you think you need help to achieve this goal?</strong><br>If so, leave your proposal as a draft and we will guide you."
+      motivation: "It is important to prepare the launch campaign for your proposal to be successful. The first few days are decisive."
+      motivation_2_html: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
       publish: No, I want to publish the proposal
       dashboard: Yes, I want help and I'll publish later
       preview_title: This is how your proposal will look when you publish it
@@ -465,13 +465,13 @@ en:
       title_external_url: "Additional documentation"
       title_video_url: "External video"
       author: Author
-      draft: Proposal in draft
+      draft: Proposal in draft. Cannot yet get supports, nor does it appear in the list of proposals.
     update:
       form:
         submit_button: Save changes
   dashboard:
     menu:
-      my_proposal: My proposal
+      my_proposal: Edit my proposal
       progress: Progress
       resources: Resources
       community: Community
@@ -548,6 +548,9 @@ en:
           other: You have created %{count} polls.
         links: Links
         additiontal_information: Additional information
+      new:
+        title: New poll
+        submit: Create poll
       poll:
         copy_link: Copy link
         responses:
@@ -576,7 +579,7 @@ en:
         support: Support my proposal
         footer_html: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
       new:
-        title: Poster feature
+        title: Poster of your proposal
       options:
         preview: Preview
         download: Download
@@ -584,7 +587,7 @@ en:
       index:
         title: E-mail preview
       new:
-        title: E-mail feature
+        title: E-mail model to share
       mailing_options:
         send: Send to %{address}
         preview: Preview
@@ -597,8 +600,8 @@ en:
         share_in: Share in
         hi: "Hello!"
         introduction: I am writing to let you know that I am participating in %{org}, the platform we can decide which city we want. And for that, I created my own citizen proposal and now, I'm going to need your support! But do not worry because It is very simple.
-        support: "You just have to click on the button that you will see below 'Support this proposal' and you can directly inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by our City Council, and I thought that you, I'm sure you help me achieve it!"
-        share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be the bomb! Can do it next from the social network that you want or from your email."
+        support: "You just have to click on the button that you will see below 'Support this proposal' and you can inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by the City Council, and I thought that you, I'm sure you help me achieve it!"
+        share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
   polls:
     all: "All"
     no_dates: "no date assigned"

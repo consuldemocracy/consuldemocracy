@@ -207,7 +207,7 @@ es:
         retired: Retirada
       proposal_totals:
         active_resources: Recursos activos
-        community: Comunidad
+        community: Participantes en tu comunidad
         show_proposal: Ver propuesta
         preview_proposal: Previsualizar propuesta
         current_goal: Meta actual
@@ -308,8 +308,8 @@ es:
         submit_button: Crear propuesta
     created:
       title: ¡Enhorabuena! Has dado el primer paso.
-      motivation: "Es importante contar al menos con 100 apoyos el primer día de campaña para poder impulsar tu propuesta."
-      motivation_2_html: "<strong>¿Crees que necesitas ayuda para alcanzar esta meta?</strong><br>Si es así, deja tu propuesta como borrador y te guiaremos."
+      motivation: "Es importante preparar la campaña de lanzamiento de tu propuesta para que tenga éxito. Los primeros días son decisivos."
+      motivation_2_html: "<strong>Si quieres recomendaciones para preparar la publicación deja tu propuesta como borrador y te guiaremos.</strong>"
       publish: No, quiero publicar la propuesta ya
       dashboard: Si, quiero ayuda y publicaré mas tarde
       preview_title: Así es como quedará tu propuesta cuando la publiques
@@ -465,13 +465,13 @@ es:
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
       author: Autor
-      draft: Propuesta en borrador
+      draft: Propuesta en borrador. Todavía no puede recoger apoyos, ni aparece en la lista de propuestas.
     update:
       form:
         submit_button: Guardar cambios
   dashboard:
     menu:
-      my_proposal: Mi propuesta
+      my_proposal: Editar mi propuesta
       progress: Progreso
       resources: Recursos
       community: Comunidad
@@ -548,6 +548,9 @@ es:
           other: Has creado %{count} encuestas.
         links: Enlaces
         additiontal_information: Información adicional
+      new:
+        title: Nueva encuesta
+        submit: Crear encuesta
       poll:
         copy_link: Copiar enlace
         responses:
@@ -576,7 +579,7 @@ es:
         support: Apoya mi propuesta
         footer_html: "<strong>Entra en %{link} y apoya esta propuesta.</strong> Necesitamos ser muchos. Decide tu también. ¡Gracias!"
       new:
-        title: Funcionalidad de póster
+        title: Póster de tu propuesta
       options:
         preview: Previsualizar
         download: Descargar
@@ -584,7 +587,7 @@ es:
       index:
         title: Previsualización del correo electrónico
       new:
-        title: Funcionalidad de correo electrónico
+        title: Modelo de correo electrónico para compartir
       mailing_options:
         send: Enviar a %{address}
         preview: Previsualizar
@@ -597,8 +600,8 @@ es:
         share_in: Compartir en
         hi: "¡Hola!"
         introduction: "Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué ciudad queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo."
-        support: "Tan sólo tienes que hacer clic en el botón que verás a continuación 'Apoyar esta propuesta' y directamente podrás informarte acerca de ella antes de impulsarla. Sólo las propuestas que consigan el máximo apoyo se llevarán a cabo por parte de nuestro Ayuntamiento, y he pensado que tú, ¡seguro que me ayudas a lograrlo!"
-        share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos, ¡ya sería la bomba! Puedes hacerlo a continuación desde la red social que tú quieras o desde tu correo electrónico."
+        support: "Tan sólo tienes que hacer clic en el botón que verás a continuación 'Apoyar esta propuesta' y directamente podrás informarte acerca de ella antes de impulsarla. Sólo las propuestas que consigan el máximo apoyo se llevarán a cabo por parte del Ayuntamiento, y he pensado que tú ¡seguro que me ayudas a lograrlo!"
+        share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

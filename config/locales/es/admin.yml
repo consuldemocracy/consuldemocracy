@@ -375,6 +375,7 @@ es:
           proposed_action: Acción propuesta
           resource: Recurso
         index:
+          description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
           edit: Editar
           delete: Borrar
@@ -399,16 +400,15 @@ es:
           back: Volver a la lista
         form:
           submit_button: Guardar
-          day_offset_help_text: Introduce 0 para que este valor no se tenga en cuenta
-          required_supports_help_text: Introduce 0 para que este valor no se tenga en cuenta
-          order_help_text: Orden para mostrar al usuario
+          help_text: Introduce 0 para que este valor no se tenga en cuenta
           published_proposal: ¿Para propuestas publicadas?
           published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
         delete:
           success: Acción borrada con éxito
       administrator_tasks:
         index:
-          title: Tareas pendientes
+          description: "Los recursos publicados en el panel de progreso de las propuestas pueden incluir un botón para ser solicitados a los administradores. A continuación se muestran las solicitudes de los usuarios."
+          title: Recursos solicitados pendientes
           solve: Resolver
           no_records: No hay tareas pendientes
           source: Propuesta
@@ -696,8 +696,8 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
-      dashboard: Panel de control de propuestas
-      administrator_tasks: Tareas pendientes
+      dashboard: Panel de progreso de propuestas
+      administrator_tasks: Recursos solicitados pendientes
       dashboard_actions: Recursos y acciones
     administrators:
       index:
@@ -1251,7 +1251,7 @@ es:
             submit: Actualizar
           how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
         dashboard:
-          title: Panel de control de propuestas
+          title: Panel de progreso de propuestas
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración

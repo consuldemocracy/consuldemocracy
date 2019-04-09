@@ -342,10 +342,10 @@ en:
         short_description: Short description
         description: Description
         link: External link
-        request_to_administrators: Admin request
-        day_offset: Required days for the activation
-        required_supports: Required supports for the activation
-        order: Order
+        request_to_administrators: Include in the resource a button to request the resource from administrators
+        day_offset: How many days after the creation of the proposal do you want it to be activated?
+        required_supports: How much supports does the proposal have to get in order to be activated?
+        order: You can enter the position where this action will be shown to the user in the list of actions
         active: Active
         action_type: Type
       dashboard/administrator_task:

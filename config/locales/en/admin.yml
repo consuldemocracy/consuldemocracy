@@ -375,6 +375,7 @@ en:
           proposed_action: Proposed action
           resource: Resource
         index:
+          description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
           edit: Edit
           delete: Delete
@@ -401,14 +402,13 @@ en:
           success: Action successfully deleted
         form:
           submit_button: Save
-          day_offset_help_text: Enter 0 so that this value is not taken into account
-          required_supports_help_text: Enter 0 so that this value is not taken into account
-          order_help_text: Order to show to user
+          help_text: Enter 0 so that this value is not taken into account
           published_proposal: For published proposals?
           published_proposal_help_text: Mark this checkbox to create the action only for published proposals
       administrator_tasks:
         index:
-          title: Pending tasks
+          description: "Resources published in the dashboard of proposals may include a button to be requested to administrators. User requests are shown below."
+          title: Resources requested pending
           solve: Solve
           no_records: There are no pending tasks
           source: Source
@@ -698,7 +698,7 @@ en:
       legislation: Collaborative Legislation
       users: Users
       dashboard: Proposals dashboard
-      administrator_tasks: Pending tasks
+      administrator_tasks: Resources requested pending
       dashboard_actions: Resources and actions
     administrators:
       index:
