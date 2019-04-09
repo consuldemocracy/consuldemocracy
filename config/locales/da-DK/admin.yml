@@ -928,12 +928,20 @@ da:
         officers_list: "Liste over medarbejdere til dette valgsted"
         no_officers: "Der er ingen medarbejdere tilknyttet dette valgsted"
         recounts: "Stemmeoptællinger"
+        recounts_list: "Liste over stemmeoptælling for dette valgsted"
         results: "Resultater"
         date: "Dato"
+        count_final: "Endelig fintælling (af ledende medarbejder)"
+        count_by_system: "Stemmer (automatisk)"
+        total_system: Samlet antal stemmer (automatisk)
       index:
+        booths_title: "Liste over valgsteder"
+        no_booths: "Der er ikke tilknyttet valgsteder til denne afstemning."
         table_name: "Navn"
         table_location: "Lokation"
     active_polls:
+      edit:
+        title: "Beskrivelse af afstemning"
       form:
         description:
           text: "Beskrivelse"
