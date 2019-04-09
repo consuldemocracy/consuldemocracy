@@ -1094,14 +1094,25 @@ da:
         official_destroyed: "Detaljer gemt: brugeren er ikke længere verificeret som embedsmand"
         official_updated: Detaljer om embedsmand gemt
       index:
+        title: Embedsmænd
+        no_officials: Der er ingen embedsmænd.
         name: Navn
+        official_position: Titel
+        official_level: Niveau
+      level_0: Ikke embedsmand
       level_1: Niavue 1
       level_2: Niveau 2
       level_3: Niveau 3
       level_4: Niveau 4
       level_5: Niveau 5
+      search:
+        edit_official: Rediger embedsmand
+        make_official: Gør til embedsmand
+        title: "Funktionærposition: Søg bruger"
+        no_results: Funktionærposition ikke fundet.
     organizations:
       index:
+        filter: Filter
         filters:
           all: Alle
           pending: Under behandling
@@ -1131,6 +1142,7 @@ da:
       index:
         title: Borgerforslag
         id: ID
+        author: Oprettet af
         milestones: Proces
         no_proposals: Der er ingen forslag.
     hidden_proposals:
