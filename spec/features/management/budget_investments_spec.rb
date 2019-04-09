@@ -285,6 +285,23 @@ feature "Budget Investments" do
       expect(page).to have_link("Print", href: "javascript:window.print();")
     end
 
+    scenario "Printing voted budget investments in balloting phase" do
+      budget.update(phase: "balloting")
+
+      voted_investment = create(:budget_investment, :selected, heading: heading)
+      ballot = create(:budget_ballot, user: create(:user, :level_two), budget: budget)
+      ballot.investments << voted_investment
+
+      click_link "Print budget investments"
+
+      within "#budget_#{budget.id}" do
+        click_link "Print budget investments"
+      end
+
+      expect(page).to have_content voted_investment.title
+      expect(page).to have_link("Print", href: "javascript:window.print();")
+    end
+
     scenario "Filtering budget investments by heading to be printed", :js do
       district_9 = create(:budget_heading, group: group, name: "District Nine")
       another_heading = create(:budget_heading, group: group)
