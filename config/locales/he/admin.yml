@@ -1447,20 +1447,96 @@ he:
           error: לא ניתן היה ליצור את בלוק התוכן
         update:
           notice: בלוק התוכן עודכן בהצלחה
+          error: לא ניתן לעדכן את בלוק התוכן
+        destroy:
+          notice: בלוק התוכן נמחק בהצלחה
+        edit:
+          title: עריכת תוכן הבלוק
+        errors:
+          form:
+            error: שגיאה
+        index:
+          create: יצירת בלוק תוכן חדש
+          delete: מחיקת הבלוק
+          title: בלוקי תוכן
+        new:
+          title: יצירת בלוק תוכן חדש
         content_block:
+          body: גוף
           name: Name
+          names:
+            top_links: קישורים עליונים
+            footer: כותרת תחתונה
+            subnavigation_left: ניווט ראשי בצד שמאל
+            subnavigation_right: ניווט ראשי בצד ימין
       images:
         index:
+          title: תמונות מותאמות אישית
           update: עודכן
           delete: מחיקה
           image: תמונה
+        update:
+          notice: התמונה עודכנה בהצלחה
+          error: לא ניתן היה לעדכן את התמונה
+        destroy:
+          notice: התמונה נמחקה בהצלחה
+          error: לא ניתן היה למחוק את התמונה
       pages:
+        create:
+          notice: הדף נוצר בהצלחה
+          error: לא ניתן ליצור את הדף
+        update:
+          notice: הדף עודכן בהצלחה
+          error: לא ניתן לעדכן את דף
+        destroy:
+          notice: הדף נמחק בהצלחה
+        edit:
+          title: עריכת %{page_title}
+        errors:
+          form:
+            error: שגיאה
+        form:
+          options: אפשרויות
+        index:
+          create: יצירת דף חדש
+          delete: מחיקת דף
+          title: דפים מותאמים אישית
+          see_page: תצוגה מקדימה של הדף
+        new:
+          title: יצירת דף מותאם אישית חדש
         page:
+          created_at: נוצר ב
+          status: סטטוס
+          updated_at: עודכן ב
+          status_draft: טיוטה
+          status_published: פורסם
           title: שם
+          slug: אסימון
+          cards_title: כרטיס
+          see_cards: ראה כרטיסים
         cards:
+          cards_title: כרטיסים
+          create_card: יצירת כרטיס
+          no_cards: לא נמצאו כרטיסים.
           title: שם
           description: תיאור
+          link_text: טקסט הקישור
+          link_url: כתובת url של קישור
+          columns_help: "רוחב של הכרטיס במספר עמודות. על המסכים ניידים זה תמיד ברוחב של 100%."
+          create:
+            notice: "כרטיס נוצר בהצלחה!"
+          update:
+            notice: "כרטיס עודכן בהצלחה"
+          destroy:
+            notice: "כרטיס הוסר בהצלחה"
     homepage:
+      title: דף הבית
+      description: המודולים פעיל מופיעים בדף הבית באותו סדר כמו כאן.
+      header_title: כותרת הדף
+      no_header: אין כותרות דפים.
+      create_header: יצירת כותרת דף
+      cards_title: כרטיסים
+      create_card: יצירת כרטיס
       cards:
         title: שם
         description: תיאור
