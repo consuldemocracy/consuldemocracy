@@ -986,6 +986,7 @@ he:
         questions_title: "רשימת שאלות"
         table_title: "שם"
         edit_answers: ערוך תשובה
+        see_proposal: "ראה/י הצעות"
       flash:
         question_added: "שאלות שנוספו לסקר זה"
         error_on_question_added: "לא ניתן לשייך שאלות לסקר זה"
@@ -1537,9 +1538,26 @@ he:
       create_header: יצירת כותרת דף
       cards_title: כרטיסים
       create_card: יצירת כרטיס
+      no_cards: לא נמצאו כרטיסים.
       cards:
         title: שם
         description: תיאור
+        link_text: טקסט הקישור
+        link_url: כתובת url של קישור
       feeds:
         proposals: הצעות
         debates: דיונים
+        processes: תהליכים
+      new:
+        header_title: כותרת דף חדשה
+        submit_header: יצירת כותרת דף
+        card_title: כרטיס חדש
+        submit_card: יצירת כרטיס
+      edit:
+        header_title: עריכת כותרת דף
+        submit_header: שמירה כותרת דף עליונה
+        card_title: עריכת כרטיס
+        submit_card: שמור כרטיס
+    translations:
+      remove_language: הסרת שפה
+      add_language: הוספת שפה
