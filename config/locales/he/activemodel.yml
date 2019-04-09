@@ -2,7 +2,7 @@ he:
   activemodel:
     models:
       verification:
-        residence: "כתובת מגורים"
+        residence: "מקום מגורים"
         sms: "מסרון"
     attributes:
       verification:
