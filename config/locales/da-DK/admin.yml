@@ -1145,6 +1145,8 @@ da:
         author: Oprettet af
         milestones: Proces
         no_proposals: Der er ingen forslag.
+      show:
+        create_question: Send forslaget til afstemning, så der kan stemmes om det
     hidden_proposals:
       index:
         filter: Filter
@@ -1174,6 +1176,10 @@ da:
           enable: "Aktiver"
           disable: "Deaktiver"
         map:
+          title: Kortindstillinger
+          help: Her kan du indstille, hvordan kortet vises til brugerne. Træk kortmarkøren eller klik på kortet, indstil den ønskede zoom og klik på knappen "Opdater".
+          flash:
+            update: Kortinstillingen blev opdateret.
           form:
             submit: Opdater
       setting_actions: Handlinger
