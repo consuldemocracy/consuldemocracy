@@ -1284,6 +1284,7 @@ he:
         tags: תגיות
         undefined: Undefined
       edit:
+        classification: סיווג
         assigned_valuators: Valuators
         submit_button: עודכן
         tags: תגיות
@@ -1301,16 +1302,34 @@ he:
         cost_for_geozone: Cost
     geozones:
       index:
+        title: איזור גיאוגרפי
+        create: צור איזור גיאוגרפי
         edit: ערוך
         delete: מחיקה
       geozone:
         name: Name
+        external_code: קוד חיצוני
+        census_code: קוד מיפקד
+        code_help: קוד תגובה עבור האיזור הגיאוגרפי זה ב- API של המיפקד
+        coordinates: נקודות ציון
+        coordinates_help: קואורדינטות שתפיק אזור ללחיצה על מפת תמונה HTML
+      errors:
+        form:
+          error:
+            one: "השגיאה הזו מנעה שמירה של איזור גיאוגרפי זה"
+            two: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
+            many: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
+            other: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
       edit:
         form:
           submit_button: שמירת שינויים
+        editing: עריכת איזור גיאוגרפי
         back: חזרה
       new:
         back: חזרה
+        creating: יצירת רובע
+      delete:
+        success: איזור גיאוגרפי נמחק בהצלחה
     signature_sheets:
       author: מחבר/ת
       created_at: תאריך יצירה
