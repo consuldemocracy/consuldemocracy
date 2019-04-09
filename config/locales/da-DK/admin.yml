@@ -157,6 +157,7 @@ da:
         longitude: "Længdegrad (valgfri)"
         coordinates_info: "Hvis du angiver breddegrad og længdegrad, så vil investeringssiden inkludere et kort centreret omkring de angivne koordinator."
         allow_content_block: "Tillad indholdsblok"
+        content_blocks_info: "Hvis indholdsblokke er tilladt, kan du oprette brugerdefineret indhold relateret til dette område. Det gøres via Indstillinger > Brugerdefinerede indholdsblokke. Indholdet vil være synligt på websiden for investeringsforslag til dette område."
         create: "Opret nyt område"
         edit: "Rediger område"
         submit: "Gem position"
@@ -1220,6 +1221,7 @@ da:
       show_image: Vis billede
       view: Se
       proposal: Borgerforslag
+      author: Oprettet af
       content: Indhold
       created_at: Oprettet den
       delete: Slet
@@ -1233,17 +1235,29 @@ da:
         filters:
           valuation_open: Åben
           without_admin: Ingen tildelt administrator
+          managed: Administrer
           valuating: Under vurdering
           valuation_finished: Vurderingen færdig
           all: Alle
         title: Investeringsprojekter for deltagerbudgettet
         assigned_admin: Tilknyttet administrator
+        no_admin_assigned: Ingen administrator tildelt
+        no_valuators_assigned: Ingen evaluator tildelt
+        summary_link: "Resumé af budgetforslag"
+        valuator_summary_link: "Resumé af evaluering"
+        feasibility:
+          feasible: "Kan gennemføres (%{price})"
+          not_feasible: "Kan ikke gennemføres"
+          undefined: "Uafklaret"
       show:
+        assigned_admin: Tildelt administrator
+        assigned_valuators: Tildelte evaluatorer
         back: Tilbage
         classification: Klassificering
         heading: "Investeringsprojekt %{id}"
         edit: Rediger
         edit_classification: Rediger klassificering
+        association_name: Forening
         by: Af
         sent: Sendt
         geozone: Område
@@ -1259,7 +1273,14 @@ da:
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
       summary:
+        title: Resumé over budgetforslag
         geozone_name: Område
+        finished_and_feasible_count: Afsluttet og kan gennemføres
+        finished_and_unfeasible_count: Afsluttet og kan ikke gennemføres
+        finished_count: Afsluttet
+        in_evaluation_count: Under evaluering
+        total_count: I alt
+        cost_for_geozone: Pris
     geozones:
       index:
         title: Geografisk område
@@ -1268,6 +1289,7 @@ da:
         delete: Slet
       geozone:
         name: Navn
+        external_code: Ekstern kode
         census_code: Postnummer
         coordinates: Koordinater
         coordinates_help: Koordinater, som vil generere et klikbart område på et HTML imagemap
@@ -1292,10 +1314,15 @@ da:
       created_at: Oprettelsesdato
       name: Navn
       no_signature_sheets: "Der er ingen signaturark"
+      index:
+        new: Nye signaturark
       new:
+        title: Nye signaturark
+        document_numbers_note: "Skriv tallene adskilt med komma (,)"
         submit: Opret signaturark
       show:
         created_at: Oprettet
+        author: Oprettet af
         documents: Dokumenter
         document_count: "Antal dokumenter:"
         verified:
@@ -1304,6 +1331,8 @@ da:
         unverified:
           one: "Der er %{count} ugyldig underskrift"
           other: "Der er %{count} ugyldige underskrifter"
+        unverified_error: (Ikke verificeret adresse)
+        loading: "Der er fortsat underskrifter, der verificeres via adressekartoteket. Opdater siden om et øjeblik"
     stats:
       show:
         stats_title: Statistikker
@@ -1318,6 +1347,7 @@ da:
           votes: Sammenlagt antal stemmer
         budgets_title: Deltagerbudget
         visits_title: Besøg
+        direct_messages: Direkte beskeder
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
       direct_messages:
@@ -1371,6 +1401,7 @@ da:
       content_blocks:
         information: Infomation vedrørende indholdsblokke
         about: "Du kan oprette indholdsblokke i HTML, der kan indsættes i overskriften eller sidefoden af ​​din CONSUL-installation."
+        html_format: "En indholdsblok er en samling af links, og den skal have følgende format:"
         no_blocks: "Der er ingen indholdsblokke."
         create:
           notice: Indholdblokken blev oprettet
@@ -1387,12 +1418,19 @@ da:
             error: Fejl
         index:
           create: Opret ny indholdsblok
+          delete: Slet blok
+          title: Indholdsblokke
+        new:
+          title: Opret ny indholdsblok
         content_block:
+          body: Indhold
           name: Navn
           names:
+            top_links: Top Links
             footer: Nederst på siden
       images:
         index:
+          title: Brugerdefinerede billeder
           update: Opdater
           delete: Slet
           image: Billede
@@ -1421,23 +1459,43 @@ da:
         index:
           create: Opret ny side
           delete: Slet side
+          title: Brugerdefinerede sider
           see_page: Vis side
+        new:
+          title: Opret ny brugerdefineret side
         page:
           created_at: Oprettet den
           status: Status
           updated_at: Opdateret den
+          status_draft: Udkast
           status_published: Offentliggjort
           title: Titel
+          slug: Signaturlinje
+          cards_title: Informationsbokse
+          see_cards: Se Informationsbokse
         cards:
+          cards_title: informationsbokse
+          create_card: Opret informationsboks
+          no_cards: Der er ingen informationsbokse.
           title: Titel
           description: Beskrivelse
           link_text: Link tekst
           link_url: Link URL
+          columns_help: "Informationsboksens bredde i antal kolonner. På mobilskærmen har den altid en bredde på 100 %."
+          create:
+            notice: "Informationsboksen blev oprettet!"
+          update:
+            notice: "Informationsboks blev opdateret"
+          destroy:
+            notice: "Informationsboksen blev slettet"
     homepage:
       title: Startside
       header_title: Sidehoved
       no_header: Der findes ingen sidehoveder.
       create_header: Opret sidehoved
+      cards_title: Informationsbokse
+      create_card: Opret informationsboks
+      no_cards: Der er ingen informationsbokse.
       cards:
         title: Titel
         description: Beskrivelse
@@ -1448,7 +1506,15 @@ da:
         debates: Debatforum
         processes: Processer
       new:
+        header_title: Ny topmargintekst
         submit_header: Opret sidehoved
+        card_title: Ny informationsboks
+        submit_card: Opret informationsboks
+      edit:
+        header_title: Rediger topmargintekst
+        submit_header: Gem topmargintekst
+        card_title: Rediger informationsboks
+        submit_card: Gem informationsboks
     translations:
       remove_language: Fjern sprog
       add_language: Tilføj sprog
