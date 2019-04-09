@@ -370,31 +370,73 @@ he:
         segment_recipient: נמענים
         subject: נושא
         from: מאת
+        body: תוכן האימייל
       admin_notification:
-        title: שם
+        segment_recipient: נמענים
+        title: כותרת
         link: קישור
+        body: טקסט
       admin_notification/translation:
-        title: שם
+        title: כותרת
+        body: טקסט
       widget/card:
-        title: שם
+        label: תווית (אופציונלי)
+        title: כותרת
         description: תיאור
+        link_text: טקסט הקישור
+        link_url: כתובת url של קישור
+        columns: מספר העמודות
       widget/card/translation:
-        title: שם
+        label: תווית (אופציונלי)
+        title: כותרת
         description: תיאור
+        link_text: טקסט הקישור
+      widget/feed:
+        limit: מספר פריטים
     errors:
       models:
         user:
           attributes:
             email:
-              password_already_set: "למשתמש/ת יש כבר סיסמה"
+              password_already_set: "למשתמש זה יש כבר סיסמה"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות מ- או שוות ל %{count}"
         direct_message:
           attributes:
             max_per_day:
               invalid: "הגעת למקסימום ההודעות הפרטיות ליום"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "רוחב התמונה חייב להיות לפחות%{required_min_width} פיקסלים"
+              min_image_height: "גובה התמונה חייב להיות לפחות%{required_min_height} פיקסלים"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "מקטע הנמענים אינו חוקי"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "מקטע הנמענים אינו חוקי"
+        map_location:
+          attributes:
+            map:
+              invalid: מיקום המפה אינו יכול להיות ריק. הנח סמן או בחר את תיבת הסימון במידה והאזור הגאוגרפי אינו נחוץ
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "המסמך לא במפקד האוכלוסין"
+              has_voted: "המשתמש כבר הצביע"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: חייב להיות בתאריך ההתחלה או לאחריו
+            debate_end_date:
+              invalid_date_range: חייב להיות בתאריך תחילת הדיון או לאחריו
+            draft_end_date:
+              invalid_date_range: חייב להיות בתאריך ההתחלה או לאחר התחלת הטיוטה
         proposal:
           attributes:
             tag_list:
