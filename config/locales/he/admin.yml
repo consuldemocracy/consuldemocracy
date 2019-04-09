@@ -1330,6 +1330,7 @@ he:
         creating: יצירת רובע
       delete:
         success: איזור גיאוגרפי נמחק בהצלחה
+        error: אין אפשרות למחוק את איזור גיאוגרפי זה כיוון שישנם אלמנטים מוצמדים אליו
     signature_sheets:
       author: מחבר/ת
       created_at: תאריך יצירה
@@ -1347,6 +1348,16 @@ he:
         author: מחבר/ת
         documents: מסמכים
         document_count: "מספר המסמכים:"
+        verified:
+          one: "יש %{count} חתימה חוקית"
+          two: "ישנן %{count} חתימות חוקיות"
+          many: "ישנן %{count} חתימות חוקיות"
+          other: "ישנן %{count} חתימות חוקיות"
+        unverified:
+          one: "יש %{count} חתימה לא חוקית"
+          two: "ישנן %{count} חתימות לא חוקית"
+          many: "ישנן %{count} חתימות לא חוקית"
+          other: "ישנן %{count} חתימות לא חוקית"
         unverified_error: (לא מאומת על ידי מפקד האוכלוסין)
         loading: "עדיין נערך אימות חתימות על ידי מפקד האוכלוסין, בבקשה לרענן את הדף בעוד כמה רגעים"
     stats:
@@ -1359,6 +1370,7 @@ he:
           debates: דיונים
           proposal_votes: הצבעות להצעה
           proposals: הצעות
+          budgets: תקציבים פתוחים
           budget_investments: Investment projects
           spending_proposals: הצעות להוצאת כספים
           unverified_users: משתמשים שלא נבדקו
@@ -1384,17 +1396,26 @@ he:
         title: הצעת התראות
         total: Total
         proposals_with_notifications: הצעות המאפשרות הודעות
+        not_available: "לא ניתן להעלות הצעות"
       polls:
+        title: סטטיסטיקת סקר
         all: סקרים
+        web_participants: משתתפים ברשת
+        total_participants: סה"כ משתתפים
+        poll_questions: "שאלות מהסקר:%{poll}"
         table:
           poll_name: הצבעה
           question_name: שאלה
+          origin_web: משתתפים ברשת
+          origin_total: סה"כ משתתפים
     tags:
       create: יצירת נושא
       destroy: מחיקת הנושא
       index:
         add_tag: הצעה לנושא לדיון חדש
         title: נושאים לדיון
+        topic: נושא
+        help: "כאשר משתמש יוצר הצעה, הנושאים הבאים מוצעים כתוויות ברירת מחדל."
       name:
         placeholder: הקלד/י את שם הנושא
     users:
@@ -1402,9 +1423,13 @@ he:
         name: Name
         email: דואר אלקטרוני
         document_number: מספר תעודה מזהה
+        roles: תפקידים
+        verification_level: רמת אימות
       index:
         title: משתמשיםות מוסתריםות
+        no_users: לא נמצאו משתמשים.
       search:
+        placeholder: חפש משתמש על פי דוא"ל, שם או מספר מסמך מזהה
         search: חיפוש
     verifications:
       index:
