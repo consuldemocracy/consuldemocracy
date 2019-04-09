@@ -1370,6 +1370,7 @@ da:
     site_customization:
       content_blocks:
         information: Infomation vedrørende indholdsblokke
+        about: "Du kan oprette indholdsblokke i HTML, der kan indsættes i overskriften eller sidefoden af ​​din CONSUL-installation."
         no_blocks: "Der er ingen indholdsblokke."
         create:
           notice: Indholdblokken blev oprettet
