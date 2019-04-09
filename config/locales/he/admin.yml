@@ -1187,6 +1187,7 @@ he:
       index:
         title: Configuration settings
         update_setting: עודכן
+        participation_processes: "השתתפות בתהליכים"
         feature_flags: מאפיינים
         features:
           enabled: "אפשרת איפיון"
@@ -1194,17 +1195,31 @@ he:
           enable: "לאפשר"
           disable: "להשבית"
         map:
+          title: תצורת מפה
+          help: כאן באפשרותך להתאים אישית את הדרך שהמפה מוצגת למשתמשים. גרור סמן מפה או לחץ במקום כלשהו על המפה, להגדיר זום הרצוי ולחץ על כפתור "עדכון".
+          flash:
+            update: תצורת המפה עודכנה בהצלחה.
           form:
             submit: עודכן
+          how_to_enable: 'כדי להציג את המפה למשתמשים עליך לאפשר "הצעות, תקציב השקעות איזורים גאוגרפיים" בכרטיסיה "תכונות".'
+      setting: מאפיינים
+      setting_actions: פעולות
+      setting_name: הגדרות
+      setting_status: סטטוס
+      setting_value: ערך
+      no_description: "אין תיאור"
     shared:
       true_value: "כן"
       false_value: "לא"
       booths_search:
         button: חיפוש
+        placeholder: חיפוש דוכן לפי שם
       poll_officers_search:
         button: חיפוש
+        placeholder: חפש סקר לפי נושא משרה
       poll_questions_search:
         button: חיפוש
+        placeholder: חפש שאלות סקר
       proposal_search:
         button: חיפוש
         placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
@@ -1214,13 +1229,21 @@ he:
       user_search:
         button: חיפוש
         placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
+      search_results: "תוצאות החיפוש"
+      no_search_results: "לא נמצאו תוצאות."
+      actions: פעולות
       title: שם
       description: תיאור
       image: תמונה
+      show_image: הצג תמונה
+      moderated_content: "בדוק את התוכן של המנחים, ואשר אם העריכה נעשתה כראוי."
+      view: הצג
       proposal: הצעה
       author: מחבר/ת
       content: תוכן
+      created_at: נוצרה ב
       delete: מחיקה
+      color_help: בתבנית הקסדצימאלית
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
