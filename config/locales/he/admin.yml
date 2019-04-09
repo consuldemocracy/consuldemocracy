@@ -1438,6 +1438,15 @@ he:
         title: כל אימותים מלאים
     site_customization:
       content_blocks:
+        information: מידע על בלוקי תוכן
+        about: "באפשרותך ליצור בלוקי תוכן HTML שניתן להוסיף במקומות שונים של אתר האינטרנט שלך."
+        html_format: "בלוק תוכן הוא קבוצה של קישורים, זה חייב להיות בתבנית הבאה:"
+        no_blocks: "אין בלוקי תוכן."
+        create:
+          notice: בלוק התוכן נוצר בהצלחה
+          error: לא ניתן היה ליצור את בלוק התוכן
+        update:
+          notice: בלוק התוכן עודכן בהצלחה
         content_block:
           name: Name
       images:
