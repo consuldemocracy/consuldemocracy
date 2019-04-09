@@ -1,13 +1,38 @@
 he:
   activerecord:
     models:
+      activity:
+        one: "פעילות"
+        two: "פעילויות"
+        many: "פעילויות"
+        other: "פעילויות"
+      budget:
+        one: "תקציב"
+        two: "תקציבים"
+        many: "תקציבים"
+        other: "תקציבים"
       budget/investment:
         one: "השקעה"
-        two: "Investments"
-        many: "Investments"
-        other: "Investments"
+        two: "השקעות"
+        many: "השקעות"
+        other: "השקעות"
+      milestone:
+        one: "אבן דרך"
+        two: "אבני דרך"
+        many: "אבני דרך"
+        other: "אבני דרך"
+      milestone/status:
+        one: "סטטוס אבן דרך"
+        two: "סטטוס אבני הדרך"
+        many: "סטטוס אבני הדרך"
+        other: "סטטוס אבני הדרך"
+      progress_bar:
+        one: "סרגל התקדמות"
+        two: "סרגלי התקדמות"
+        many: "סרגלי התקדמות"
+        other: "סרגלי התקדמות"
       comment:
-        one: "הערות"
+        one: "הערה"
         two: "הערות"
         many: "הערות"
         other: "הערות"
@@ -16,26 +41,56 @@ he:
         two: "דיונים"
         many: "דיונים"
         other: "דיונים"
+      tag:
+        one: "תגית"
+        two: "תגיות"
+        many: "תגיות"
+        other: "תגיות"
       user:
-        one: "משתמשיםות מוסתריםות"
+        one: "משתמש"
         two: "משתמשים"
         many: "משתמשים"
         other: "משתמשים"
       moderator:
-        one: "מנחה דיון"
-        two: "Moderators"
-        many: "Moderators"
-        other: "Moderators"
+        one: "מנחה"
+        two: "מנחים"
+        many: "מנחים"
+        other: "מנחים"
+      administrator:
+        one: "מנהל מערכת"
+        two: "מנהלי מערכת"
+        many: "מנהלי מערכת"
+        other: "מנהלי מערכת"
       valuator:
-        one: "Valuator"
-        two: "Valuators"
-        many: "Valuators"
-        other: "Valuators"
+        one: "מעריך"
+        two: "מעריכים"
+        many: "מעריכים"
+        other: "מעריכים"
+      valuator_group:
+        one: "קבוצת מעריך"
+        two: "קבוצות מעריכים"
+        many: "קבוצות מעריכים"
+        other: "קבוצות מעריכים"
+      manager:
+        one: "מנהל"
+        two: "מנהלים"
+        many: "מנהלים"
+        other: "מנהלים"
+      newsletter:
+        one: "ידיעון"
+        two: "ידיעונים"
+        many: "ידיעונים"
+        other: "ידיעונים"
       vote:
-        one: "Add"
+        one: "הצבעה"
         two: "הצבעות"
         many: "הצבעות"
         other: "הצבעות"
+      organization:
+        one: "ארגון"
+        two: "ארגונים"
+        many: "ארגונים"
+        other: "Organisations"
       spending_proposal:
         one: "פרויקט להשקעה"
         two: "Investment projects"
