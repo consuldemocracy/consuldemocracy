@@ -899,7 +899,7 @@ da:
       flash:
         create: "Arbejdsplan tilføjet"
         destroy: "Arbejdsplan fjernet"
-        unable_to_destroy: "Arbejdsopgaver associeret til resultater eller omtællinger kan ikke slettes"
+        unable_to_destroy: "Arbejdsopgaver associeret til resultater eller optælling af stemmer kan ikke slettes"
         date_missing: "Der skal vælges en dato"
       vote_collection: Indsaml stemmer
       recount_scrutiny: Omtælling & Eftersyn
@@ -917,8 +917,17 @@ da:
     poll_booth_assignments:
       alert:
         shifts: "Der er tilknyttet en arbejdsplan til valgstedet. Hvis du sletter valgstedet, sletter du også arbejdsplanen. Ønsker du at fortsætte?"
+      flash:
+        destroy: "Valgstedet er ikke længere aktivt"
+        create: "Valgsted tildelt"
+        error_destroy: "Der opstod en fejl"
+        error_create: "Der opstod en fejl"
       show:
         location: "Lokation"
+        officers: "Ledende medarbejdere"
+        officers_list: "Liste over medarbejdere til dette valgsted"
+        no_officers: "Der er ingen medarbejdere tilknyttet dette valgsted"
+        recounts: "Stemmeoptællinger"
         results: "Resultater"
         date: "Dato"
       index:
