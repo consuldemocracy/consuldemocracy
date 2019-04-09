@@ -91,8 +91,9 @@ feature "Budget Investments" do
         expect(page).to have_css(".budget-investment", count: 1)
         expect(page).to have_content(budget_investment1.title)
         expect(page).not_to have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(budget, budget_investment1)}']",
-                                 text: budget_investment1.title)
+
+        investment1_path = management_budget_investment_path(budget, budget_investment1)
+        expect(page).to have_link(budget_investment1.title, href: investment1_path)
       end
     end
 
@@ -118,8 +119,9 @@ feature "Budget Investments" do
         expect(page).to have_css(".budget-investment", count: 1)
         expect(page).not_to have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(budget, budget_investment2)}']",
-                                 text: budget_investment2.title)
+
+        investment2_path = management_budget_investment_path(budget, budget_investment2)
+        expect(page).to have_link(budget_investment2.title, href: investment2_path)
       end
     end
   end
@@ -146,10 +148,12 @@ feature "Budget Investments" do
 
     within("#budget-investments") do
       expect(page).to have_css(".budget-investment", count: 2)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(budget, budget_investment1)}']",
-                               text: budget_investment1.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(budget, budget_investment2)}']",
-                               text: budget_investment2.title)
+
+      investment1_path = management_budget_investment_path(budget, budget_investment1)
+      expect(page).to have_link(budget_investment1.title, href: investment1_path)
+
+      investment2_path = management_budget_investment_path(budget, budget_investment2)
+      expect(page).to have_link(budget_investment2.title, href: investment2_path)
     end
   end
 
@@ -278,16 +282,31 @@ feature "Budget Investments" do
       end
 
       expect(page).to have_css(".budget-investment", count: 15)
-      expect(page).to have_css("a[href='javascript:window.print();']", text: "Print")
+      expect(page).to have_link("Print", href: "javascript:window.print();")
     end
 
     scenario "Filtering budget investments by heading to be printed", :js do
       district_9 = create(:budget_heading, group: group, name: "District Nine")
       another_heading = create(:budget_heading, group: group)
-      low_investment = create(:budget_investment, budget: budget, title: "Nuke district 9", heading: district_9, cached_votes_up: 1)
-      mid_investment = create(:budget_investment, budget: budget, title: "Change district 9", heading: district_9, cached_votes_up: 10)
-      top_investment = create(:budget_investment, budget: budget, title: "Destroy district 9", heading: district_9, cached_votes_up: 100)
-      unvoted_investment = create(:budget_investment, budget: budget, heading: another_heading, title: "Add new districts to the city")
+      low_investment = create(:budget_investment,
+                              budget: budget,
+                              title: "Nuke district 9",
+                              heading: district_9,
+                              cached_votes_up: 1)
+      mid_investment = create(:budget_investment,
+                              budget: budget,
+                              title: "Change district 9",
+                              heading: district_9,
+                              cached_votes_up: 10)
+      top_investment = create(:budget_investment,
+                              budget: budget,
+                              title: "Destroy district 9",
+                              heading: district_9,
+                              cached_votes_up: 100)
+      unvoted_investment = create(:budget_investment,
+                                  budget: budget,
+                                  heading: another_heading,
+                                  title: "Add new districts to the city")
 
       user = create(:user, :level_two)
       login_managed_user(user)
