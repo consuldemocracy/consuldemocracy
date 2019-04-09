@@ -157,6 +157,8 @@ da:
         longitude: "Længdegrad (valgfri)"
         coordinates_info: "Hvis du angiver breddegrad og længdegrad, så vil investeringssiden inkludere et kort centreret omkring de angivne koordinator."
         allow_content_block: "Tillad indholdsblok"
+        create: "Opret nyt område"
+        edit: "Rediger område"
         submit: "Gem position"
       index:
         back: "Gå tilbage til grupper"
@@ -433,11 +435,13 @@ da:
         index:
           create: Ny proces
           delete: Slet
+          title: Medborgerdialog
           filters:
             active: Aktive
             all: Alle
         new:
           back: Tilbage
+          title: Opret ny medborgerdialog
           submit_button: Opret proces
         proposals:
           select_order: Sorter efter
@@ -461,6 +465,9 @@ da:
           questions: Debat
           proposals: Forslag
           milestones: Følger
+      homepage:
+        edit:
+          title: Konfigurer din hjemmeside
       proposals:
         index:
           title: Titel
@@ -608,6 +615,10 @@ da:
       signature_sheets: Signaturark
       site_customization:
         homepage: Startside
+        pages: Brugerdefinerede sider
+        images: Brugerdefinerede billeder
+        content_blocks: Brugerdefinerede indholdsblokke
+        information_texts: Brugerdefinerede informationstekster
         information_texts_menu:
           debates: "Debatindlæg"
           community: "Fællesskab"
@@ -627,6 +638,7 @@ da:
       title_settings: Indstillinger
       title_site_customization: Sidens indhold
       title_booths: Stemmebokse
+      legislation: Medborgerdialog
       users: Brugere
     administrators:
       index:
@@ -655,6 +667,9 @@ da:
     segment_recipient:
       all_users: Alle brugere
       administrators: Administratorer
+      proposal_authors: Brugere der har oprettet et forslag
+      investment_authors: Brugere der har oprettet en investering i det aktuelle budget
+      feasible_and_undecided_investment_authors: "Brugere der har oprettet investeringsforslag til det aktuelle budget, men som ikke svarer til: [valuation finished unfesasible]"
       not_supported_on_current_budget: Brugere, der ikke har støttet op om investeringer i det nuværende budget
       invalid_recipients_segment: "Modtagersegmentet er ugyldigt"
     newsletters:
