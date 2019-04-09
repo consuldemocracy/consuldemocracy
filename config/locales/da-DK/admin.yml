@@ -755,28 +755,45 @@ da:
         moderate_pending: Send modereret meddelelse
         send_pending: Venter på at sende
         send_pending_notification: Meddelelserne blev sendt
+      proposal_notification_digest:
+        title: "Samlet liste over notifikationer vedrørende borgerforslag"
+        description: "Samler alle notifikationer vedrørende borgerforslag i én besked til brugeren for at undgå for mange e-mails."
+        preview_detail: "Brugerne vil kun modtage notifikation om de forslag, de følger"
       budget_investment_created:
         title: "Budgetinvestering oprettet"
         description: "Sendt når en bruger opretter en budgetinvestering."
       budget_investment_selected:
         title: "Budgetinvestering valgt"
+        description: "Sendt til brugeren, hvis vedkommendes budgetinvestering er blevet udvalgt."
       budget_investment_unfeasible:
         title: "Budgetinvesteringen kan ikke gennemføres"
+        description: "Sendt til brugeren, hvis vedkommendes budgetinvestering er markeret som uigennemførlig."
+      budget_investment_unselected:
+        title: "Budgetinvestering ikke valgt"
+        description: "Sendt til brugeren, hvis vedkommendes budgetinvestering ikke er blevet valgt til afstemningsfasen."
       comment:
         title: "Kommentar"
+        description: "Sendt til brugeren, når vedkommende modtager en kommentar."
       reply:
         title: "Svar"
+        description: "Sendt til brugeren, hvis vedkommendes kommentar modtager et tilbagesvar."
       direct_message_for_receiver:
         title: "Private beskeder"
         description: "Send privat besked."
+      direct_message_for_sender:
+        title: "Afsender af privatbesked"
+        description: "Sendt til afsenderen af privatbeskeden."
       email_verification:
         title: "Bekræftelse af e-mail"
+        description: "Sendt til den nye bruger for at verificere vedkommendes brugerkonto."
       user_invite:
         title: "Bruger invitation"
+        description: "Sendt til personen, der er blevet inviteret til at registrere sin brugerkonto."
       edit_info: "Du kan redigere e-mailen i"
       message_title: "Meddelelses titel"
     emails_download:
       index:
+        title: E-mails blev downloadet
         download_segment: Download e-mails
         download_segment_help_text: Download som CSV-format
         download_emails_button: Download liste over e-mails
