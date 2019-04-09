@@ -437,6 +437,8 @@ he:
               invalid_date_range: חייב להיות בתאריך תחילת הדיון או לאחריו
             draft_end_date:
               invalid_date_range: חייב להיות בתאריך ההתחלה או לאחר התחלת הטיוטה
+            allegations_end_date:
+              invalid_date_range: חייב להיות בתאריך ההתחלה או לאחר תחילת התגובות
         proposal:
           attributes:
             tag_list:
@@ -448,9 +450,27 @@ he:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "עליך לחכות לפחות %{interval} ימים בין הודעות"
+              invalid: "עליך לחכות לפחות %{interval} ימים בין התרעות"
         signature:
           attributes:
             document_number:
-              not_in_census: "לא זוהה במאגר הנתונים"
+              not_in_census: "לא זוהה במאגר מפקד האוכלוסין"
               already_voted: "כבר הצביע/ה על הצעה זו"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "חייב להיות אותיות, מספרים, _ ו -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "רוחב חייב להיות%{required_width} פיקסלים"
+              image_height: "הגובה חייב להיות%{required_height} פיקסלים"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "אינך כול להגיב על הערכה"
+      messages:
+        record_invalid: "האימות נכשל:%{errors}"
+        restrict_dependent_destroy:
+          has_one: "לא ניתן למחוק רשומה מכיוון שקיימת%{record} תלויה"
+          has_many: "לא ניתן למחוק את הרשומה כי תלויות%{record} קיימות"
