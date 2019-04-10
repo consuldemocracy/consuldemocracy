@@ -23,7 +23,7 @@ class Admin::SettingsController < Admin::BaseController
   def update
     @setting = Setting.find(params[:id])
     @setting.update(settings_params)
-    redirect_to request.referer, notice: t("admin.settings.flash.updated")
+    redirect_to request_referer, notice: t("admin.settings.flash.updated")
   end
 
   def update_map
@@ -53,4 +53,8 @@ class Admin::SettingsController < Admin::BaseController
       params.permit(:jpg, :png, :gif, :pdf, :doc, :docx, :xls, :xlsx, :csv, :zip)
     end
 
+    def request_referer
+      return request.referer + params[:setting][:tab] if params[:setting][:tab]
+      request.referer
+    end
 end

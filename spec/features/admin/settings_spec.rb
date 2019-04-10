@@ -162,6 +162,39 @@ describe "Admin settings" do
       Setting["feature.remote_census"] = nil
     end
 
+    scenario "Should redirect to #tab-remote-census-configuration after update any remote census setting", :js do
+      setting_remote_census = create(:setting, key: "remote_census.general.any_remote_census_general_setting")
+      Setting["feature.remote_census"] = true
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#remote-census-tab").click
+
+      within("#edit_setting_#{setting_remote_census.id}") do
+        fill_in "setting_#{setting_remote_census.id}", with: "New value"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-remote-census-configuration.is-active")
+      Setting["feature.remote_census"] = nil
+    end
+
+    scenario "Should not redirect to #tab-remote-census-configuration after do not update any remote census setting", :js do
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+
+      within("#edit_setting_#{@setting1.id}") do
+        fill_in "setting_#{@setting1.id}", with: "New value"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-configuration.is-active")
+      expect(page).not_to have_css("div#tab-remote-census-configuration.is-active")
+    end
+
   end
 
   describe "Skip verification" do
