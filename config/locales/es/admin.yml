@@ -1195,6 +1195,8 @@ es:
           form:
             submit: Actualizar
           how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
+        remote_census:
+          title: Configuración del Censo Remoto
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración
