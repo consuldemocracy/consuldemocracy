@@ -754,7 +754,7 @@ ar:
       user_permission_votes: المشاركة في التصويت النهائي
   related_content:
     title: "محتوى مرتبط"
-    add: "إضافة محتوى مرتبط"
+    add: "إضافة محتوى ذات الصلة"
     label: "رابط للمحتوى المرتبط"
     placeholder: "%{url}"
     help: "يمكنك إضافة روابط %{models} داخل %{org}."
