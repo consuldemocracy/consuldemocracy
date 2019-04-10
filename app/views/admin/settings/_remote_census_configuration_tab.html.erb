@@ -1,0 +1,5 @@
+  <h2><%= t("admin.settings.index.remote_census.title") %></h2>
+
+  <%= render "settings_table", settings: @remote_census_general_settings %>
+  <%= render "settings_table", settings: @remote_census_request_settings %>
+  <%= render "settings_table", settings: @remote_census_response_settings %>
