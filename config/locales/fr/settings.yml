@@ -23,8 +23,11 @@ fr:
     featured_proposals_number: "Nombre de propositions mises en avant"
     featured_proposals_number_description: "Nombre de propositions mises en avant qui seront affichées si la fonctionnalité Propositions mises en avant est active"
     votes_for_proposal_success: "Nombre de votes nécessaires pour l'approbation d'une proposition"
+    votes_for_proposal_success_description: "Quand une proposition atteint ce nombre d’appuis elle ne sera plus en mesure de recevoir plus d'appuis et sera considérée comme fructueuse"
     months_to_archive_proposals: "Mois pour archiver les propositions"
+    months_to_archive_proposals_description: "Après ce nombre de mois, les Propositions seront archivées et ne pourront plus recevoir d'appuis"
     email_domain_for_officials: "Domaine du courriel pour les personnes officielles"
+    email_domain_for_officials_description: "Tous les utilisateurs inscrits via ce domaine veront leur compte vérifié à l'enregistrement"
     twitter_handle: "Nom d'utilisateur Twitter"
     twitter_handle_description: "S’il est rempli, il apparaîtra dans le pied de page"
     twitter_hashtag: "Hashtag Twitter"
@@ -42,6 +45,7 @@ fr:
     org_name: "Nom de l'organisation"
     org_name_description: "Ce nom apparaîtra sur le sujet des expéditeurs du mail, des pages d'aides..."
     related_content_score_threshold: "Seuil de score pour le contenu associé"
+    related_content_score_threshold_description: "Selon la valeur nominale des votes dans un contenu relatif, masque le contenu qui marque les utilisateurs comme non apparenté"
     hot_score_period_in_days: "Période (jours) utilisée par le filtre « plus actifs »"
     hot_score_period_in_days_description: "Le filtre « plus actif », utilisé dans plusieurs sections, s’appuiera sur les votes au cours des X dernières jours"
     mailer_from_name: "E-mail de l'expéditeur"
@@ -56,6 +60,7 @@ fr:
     meta_keywords_description: 'Mots-clés <meta name="keywords">, utilisés pour améliorer le SEO'
     min_age_to_participate: Âge minimum de participation
     min_age_to_participate_description: "Les utilisateurs au dessus de cet âge peuvent participer à tous les opérations où un compte d'utilisateur vérifié est nécéssaire"
+    analytics_url: "URL d'Analyse"
     proposal_notification_minimum_interval_in_days: "Intervalle minimal (en jours) pour les auteurs de propositions visant à envoyer de nouvelles notifications de proposition"
     proposal_notification_minimum_interval_in_days_description: "Le nombre de jours où utilisateur peut envoyer une notification pour tous les supporters de leur proposition"
     direct_message_max_per_day: "Nombre maximum de messages directs par jour"
@@ -70,6 +75,7 @@ fr:
       featured_proposals: "Propositions en vedette"
       featured_proposals_description: "Affiche les propositions en vedette sur la page d'index des propositions"
       signature_sheets: "Feuilles de signature"
+      signature_sheets_description: "Permet d'ajouter depuis le panneau d'Administrations les signatures recueillies sur place aux Propositions et projets d'investissement des Budgets Participatifs"
       spending_proposals: "Propositions d'investissement"
       spending_proposals_description: "⚠️ REMARQUE: cette fonctionnalité a été remplacée par la budgétisation participative et disparaîtra dans les nouvelles versions"
       spending_proposal_features:
@@ -107,6 +113,7 @@ fr:
       zoom_description: "Zoomer pour afficher la position de la carte"
     process:
       debates: "Débats"
+      debates_description: "L'espace de débat des citoyens s’adresse à tous ceux qui peuvent présenter des problèmes qui les concernent et sur lesquels ils veulent partager leurs points de vue avec les d’autres"
       proposals: "Propositions"
       polls: "Votes"
       budgets: "Budget participatif"
