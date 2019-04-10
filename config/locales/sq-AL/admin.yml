@@ -165,7 +165,6 @@ sq:
         assigned_admin: Administrator i caktuar
         no_admin_assigned: Asnjë admin i caktuar
         no_valuators_assigned: Asnjë vlerësues nuk është caktuar
-        no_valuation_groups: Asnjë grup vlerësimi nuk është caktuar
         feasibility:
           feasible: "I mundshëm%{price}"
           unfeasible: "Parealizueshme"

@@ -170,7 +170,6 @@ sv:
         assigned_admin: Ansvarig administratör
         no_admin_assigned: Saknar ansvarig administratör
         no_valuators_assigned: Inga ansvariga bedömare
-        no_valuation_groups: Inga ansvariga bedömningsgrupper
         feasibility:
           feasible: "Genomförbart (%{price})"
           unfeasible: "Ej genomförbart"

@@ -83,6 +83,8 @@
 //= require globalize
 //= require send_admin_notification_alert
 //= require settings
+//= require cookies
+//= require columns_selector
 
 var initialize_modules = function() {
   App.Answers.initialize();
@@ -131,6 +133,9 @@ var initialize_modules = function() {
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
   App.Settings.initialize();
+  App.Cookies.initialize();
+  if ( $('#js-columns-selector').length )
+    App.ColumnsSelector.initialize();
 };
 
 $(function(){

@@ -208,7 +208,6 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
-        no_valuation_groups: Sin grupos evaluadores
         feasibility:
           feasible: "Viable"
           unfeasible: "Inviable"
@@ -230,6 +229,7 @@ es:
           author_username: Usuario autor
           incompatible: Incompatible
           price: Precio
+          author: Autor
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:

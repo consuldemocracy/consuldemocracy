@@ -208,7 +208,6 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        no_valuation_groups: No valuation groups assigned
         feasibility:
           feasible: "Feasible"
           unfeasible: "Unfeasible"
@@ -230,6 +229,7 @@ en:
           author_username: Author username
           incompatible: Incompatible
           price: Price
+          author: Author
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
       show:

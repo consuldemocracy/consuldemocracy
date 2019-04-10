@@ -165,7 +165,6 @@ pt-BR:
         assigned_admin: Administrador designado
         no_admin_assigned: Não há administrador designado
         no_valuators_assigned: Não há avaliadores designados
-        no_valuation_groups: Não há grupos de avaliação atribuídos
         feasibility:
           feasible: "Factível (%{price})"
           unfeasible: "Inviável"
