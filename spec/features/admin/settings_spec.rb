@@ -163,15 +163,15 @@ describe "Admin settings" do
     end
 
     scenario "Should redirect to #tab-remote-census-configuration after update any remote census setting", :js do
-      setting_remote_census = create(:setting, key: "remote_census.general.any_remote_census_general_setting")
+      remote_census_setting = create(:setting, key: "remote_census.general.any_remote_census_general_setting")
       Setting["feature.remote_census"] = true
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
       find("#remote-census-tab").click
 
-      within("#edit_setting_#{setting_remote_census.id}") do
-        fill_in "setting_#{setting_remote_census.id}", with: "New value"
+      within("#edit_setting_#{remote_census_setting.id}") do
+        fill_in "setting_#{remote_census_setting.id}", with: "New value"
         click_button "Update"
       end
 
@@ -180,21 +180,85 @@ describe "Admin settings" do
       Setting["feature.remote_census"] = nil
     end
 
-    scenario "Should not redirect to #tab-remote-census-configuration after do not update any remote census setting", :js do
+    scenario "Should redirect to #tab-configuration after update any configuration setting", :js do
+      configuration_setting = Setting.create(key: "whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
+      find("#tab-configuration").click
 
-      within("#edit_setting_#{@setting1.id}") do
-        fill_in "setting_#{@setting1.id}", with: "New value"
+      within("#edit_setting_#{configuration_setting.id}") do
+        fill_in "setting_#{configuration_setting.id}", with: "New value"
         click_button "Update"
       end
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-configuration.is-active")
-      expect(page).not_to have_css("div#tab-remote-census-configuration.is-active")
     end
 
+    scenario "Should redirect to #tab-map-configuration after update any map configuration setting", :js do
+      map_setting = Setting.create(key: "map.whatever")
+      Setting["feature.map"] = true
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#map-tab").click
+
+      within("#edit_setting_#{map_setting.id}") do
+        fill_in "setting_#{map_setting.id}", with: "New value"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-map-configuration.is-active")
+      Setting["feature.map"] = nil
+    end
+
+    scenario "Should redirect to #tab-proposals after update any proposal dashboard setting", :js do
+      proposal_dashboard_setting = Setting.create(key: "proposals.whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#proposals-tab").click
+
+      within("#edit_setting_#{proposal_dashboard_setting.id}") do
+        fill_in "setting_#{proposal_dashboard_setting.id}", with: "New value"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-proposals.is-active")
+    end
+
+    scenario "Should redirect to #tab-participation-processes after update any participation_processes setting", :js do
+      process_setting = Setting.create(key: "process.whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#participation-processes-tab").click
+
+      accept_alert do
+        find("#edit_setting_#{process_setting.id} .button").click
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-participation-processes.is-active")
+    end
+
+    scenario "Should redirect to #tab-feature-flags after update any feature flag setting", :js do
+      feature_setting = Setting.create(key: "feature.whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#features-tab").click
+
+      accept_alert do
+        find("#edit_setting_#{feature_setting.id} .button").click
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-feature-flags.is-active")
+    end
   end
 
   describe "Skip verification" do
