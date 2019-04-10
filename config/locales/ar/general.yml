@@ -226,7 +226,7 @@ ar:
       participation_title: المشاركة
       privacy: سياسة الخصوصية
     header:
-      administration_menu: مشرف
+      administration_menu: المدير
       administration: الإدارة
       available_locales: اللغات المتوفرة
       collaborative_legislation: العمليات التشريعية
@@ -593,12 +593,12 @@ ar:
       districts: "مقاطعات"
       districts_list: "قائمة المناطق"
       categories: "فئات"
-    target_blank_html: " (يفتح الرابط في نافذة جديدة)"
+    target_blank_html: " (سيفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
     unfollow_entity: "توقف عن متابعة %{entity}"
     outline:
       budget: الميزانية التشاركية
-      searcher: باحث
+      searcher: محرك البحث
     go_to_page: "انتقل إلى صفحة "
     share: مشاركة
     documentation: وثائق إضافية
