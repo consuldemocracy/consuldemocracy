@@ -15,7 +15,7 @@ ar:
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
-      email_on_direct_message_label: تلقي رسائل البريد الإلكتروني حول الرسائل المباشرة
+      email_on_direct_message_label: تلقي رسائل البريد الإلكتروني عند الحصول على الرسائل المباشرة
       email_digest_label: استلام ملخص عن إشعارات مقترح
       recommendations: التوصيات
       show_debates_recommendations: إظهار توصيات المناقشات
@@ -219,7 +219,7 @@ ar:
       conditions: قوانين وشروط الاستخدام
       consul: تطبيق CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: لزيارة المساعدة الفنية
+      contact_us: للحصول على المساعدة الفنية، قم بزيارة
       copyright: CONSUL, %{year}
       description: تستخدم هذه البوابة %{consul} وهو%{open_source}.
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -263,7 +263,7 @@ ar:
       notifiable_hidden: هذ المصدر عم يعد متاح.
   map:
     title: "مقاطعات"
-    proposal_for_district: "بدء اقتراحا لمقاطعة الخاصة بك"
+    proposal_for_district: "إبدأ مقترحا لمقاطعتك"
     select_district: نطاق العملية
     start_proposal: إنشاء مقترح
   omniauth:
@@ -297,7 +297,7 @@ ar:
     retire_form:
       title: سحب المقترح
       warning: "إذا قمت بسحب الاقتراح ، فسيظل يقبل الدعم ، ولكن ستتم إزالته من القائمة الرئيسية وستظهر رسالة لجميع المستخدمين تفيد بأن المؤلف يرى أنه لا ينبغي دعم الاقتراح بعد الآن"
-      retired_reason_label: سبب سحب الاقتراح
+      retired_reason_label: سبب سحب المقترح
       retired_reason_blank: إختر خيار
       retired_explanation_label: تفسير
       retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا الاقتراح يجب ألا يحصل على المزيد من الدعم
@@ -344,7 +344,7 @@ ar:
           success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
           error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
       retired_proposals: المقترحات المسحوبة
-      retired_proposals_link: "الإقتراحات المسحوبة من قبل المؤلف"
+      retired_proposals_link: "المقترحات المسحوبة من قبل المؤلف"
       retired_links:
         all: الكل
         duplicated: مكرّر
@@ -442,7 +442,7 @@ ar:
       milestones_tab: معالم
       retired_warning: "يرى المؤلف أن هذا الاقتراح يجب ألا يتلقى المزيد من الدعم."
       retired_warning_link_to_explanation: اقرأ الشرح قبل التصويت عليه.
-      retired: تم سحب الاقتراح من قبل المؤلف
+      retired: تم سحب المقترح من قبل المؤلف
       share: مشاركة
       send_notification: إرسال إشعار
       no_notifications: "هذا المقترح لا يحوي إشعارات."
@@ -520,8 +520,8 @@ ar:
         most_voted_answer: "الإجابة الأكثر تصويتًا:"
   poll_questions:
     show:
-      vote_answer: "صوّت ل%{answer}"
-      voted: "لقد قمت بالتصويت ل%{answer}"
+      vote_answer: "صوّت على %{answer}"
+      voted: "لقد قمت بالتصويت على %{answer}"
       voted_token: "يمكنك تسجبل معرف التصويت هذا ، للتحقق من تصويتك على النتائج النهائية:"
   proposal_notifications:
     new:
@@ -643,8 +643,8 @@ ar:
     new:
       recommendation_one: من الضروري أن يشير الاقتراح إلى إجراء ذي ميزانية.
       recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني.
-      recommendations_title: كيفية إنشاء اقتراح الإنفاق
-      start_new: إنشاء إقتراح إنفاق
+      recommendations_title: كيفية إنشاء مقترح الإنفاق
+      start_new: إنشاء مقترح إنفاق
     show:
       author_deleted: تم حذف المستخدم
       code: "رمز الاقتراح:"
@@ -741,7 +741,7 @@ ar:
       i_have_an_account: لدي حساب بالفعل
       title: التحقق من الحساب
     welcome:
-      go_to_index: ليس الآن ، انتقل إلى صفحة الفهرس
+      go_to_index: ليس الآن، انتقل إلى صفحة الفهرس
       start_using_consul: انتقل إلى صفحة الفهرس
       title: المشاركة
       user_permission_debates: المشاركة بالحوارات
@@ -755,14 +755,14 @@ ar:
   related_content:
     title: "محتوى ذات الصلة"
     add: "إضافة محتوى ذات الصلة"
-    label: "رابط للمحتوى المرتبط"
+    label: "رابط للمحتوى ذات الصلة"
     placeholder: "%{url}"
     help: "يمكنك إضافة روابط %{models} داخل %{org}."
     submit: "إضافة"
     error: "الرابط غير صالح. تذكر أن تبدأ بـ %{url}."
     error_itself: "الرابط غير صالح. لا يمكنك ربط المحتوى بنفسه."
-    success: "لقد قمت بإضافة محتوى مرتبط جديد"
-    is_related: "هل هو محتوى مرتبط؟"
+    success: "لقد قمت بإضافة محتوى ذات صلة جديد"
+    is_related: "هل هذا المحتوى ذات صلة؟"
     score_positive: "نعم"
     score_negative: "لا"
     content_title:
