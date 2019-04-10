@@ -24,6 +24,17 @@ fr:
         ballot_sheet_name: Nom
         ballot_sheet_author: Auteur
         ballot_sheet_creation_date: Date de création
+        empty_results: Il n’y a pas encore de feuille de bulletins de vote pour ce sondage
+      new:
+        title: "%{poll_budget} - Nouvelle feuille de bulletins de vote"
+        booth: Bureau de vote
+        select_booth: Sélectionner un bureau de vote
+        csv_data: Données CSV
+        submit: Sauvegarder
+      show:
+        created_at: Date de création
+        author: Auteur
+        data: Données CSV
     results:
       flash:
         create: "Résultats sauvegardés"
