@@ -33,5 +33,9 @@
 <% end %>
 
 <%= render 'next_goal' %>
-<%= render 'summary_recommended_actions' %>
+
+<% if @pending_actions.any? || @done_actions.any? %>
+  <%= render 'summary_recommended_actions' %>
+<% end %>
+
 <%= render 'resources' %>
