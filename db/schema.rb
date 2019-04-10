@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "updated_at",                     null: false
     t.boolean  "physical",       default: false
     t.integer  "poll_ballot_id"
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_content_blocks", force: :cascade do |t|
