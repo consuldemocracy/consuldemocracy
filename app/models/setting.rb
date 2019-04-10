@@ -95,6 +95,7 @@ class Setting < ApplicationRecord
         "feature.help_page": true,
         "feature.remote_translations": nil,
         "feature.translation_interface": nil,
+        "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
