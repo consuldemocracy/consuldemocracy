@@ -124,6 +124,26 @@ Setting["homepage.widgets.feeds.processes"] = true
 # Votes hot_score configuration
 Setting["hot_score_period_in_days"] = 31
 
+# Remote Census configuration
+# General
+Setting["remote_census_general.endpoint"] = nil
+# Request
+Setting["remote_census_request.method_name"] = nil
+Setting["remote_census_request.structure"] = nil
+Setting["remote_census_request.alias_document_type"] = nil
+Setting["remote_census_request.alias_document_number"] = nil
+Setting["remote_census_request.alias_date_of_birth"] = nil
+Setting["remote_census_request.alias_postal_code"] = nil
+# Response
+Setting["remote_census_response.date_of_birth"] = nil
+Setting["remote_census_response.postal_code"] = nil
+Setting["remote_census_response.district"] = nil
+Setting["remote_census_response.gender"] = nil
+Setting["remote_census_response.name"] = nil
+Setting["remote_census_response.surname"] = nil
+Setting["remote_census_response.valid"] = nil
+
+
 WebSection.create(name: "homepage")
 WebSection.create(name: "debates")
 WebSection.create(name: "proposals")

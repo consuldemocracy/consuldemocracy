@@ -106,6 +106,37 @@ es:
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
       remote_census: "Configurar conexión al censo remoto (SOAP)"
       remote_census_description: "Permite configurar la conexión al censo remoto de cada institución"
+    remote_census_general:
+      endpoint: "Endpoint"
+      endpoint_description: "Nombre del host donde se encuentra el servicio del censo (wsdl)"
+    remote_census_request:
+      method_name: "Nombre del método de la petición"
+      method_name_description: "Nombre del método qe acepta el WebService del Censo del Ayuntamiento."
+      structure: "Estructura de la petición"
+      structure_description: 'Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionado con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse en blanco.'
+      alias_document_type: "Alias para Tipo de Documento"
+      alias_document_type_description: "Nombre del campo en la estructura de la petición que envia el Tipo de Documento. NO RELLENAR en caso de que el WebService no requiera el Tipo de Documento para verificar un usuario."
+      alias_document_number: "Alias para Número de Documento"
+      alias_document_number_description: "Nombre del campo en la estructura de la petición que envia el Número de Documento. NO RELLENAR en caso de que el WebService no requiera el Número de Documento para verificar un usuario."
+      alias_date_of_birth: "Alias para Fecha de Nacimiento"
+      alias_date_of_birth_description: "Nombre del campo en la estructura de la petición que envia la Fecha de Nacimiento. NO RELLENAR en caso de que el WebService no requiera la Fecha de Nacimiento para verificar un usuario."
+      alias_postal_code: "Alias para Código Postal."
+      alias_postal_code_description: "Nombre del campo en la estructura de la petición que envia el Código Postal. NO RELLENAR en caso de que el WebService no requiera el Código Postal para verificar un usuario."
+    remote_census_response:
+      date_of_birth: "Alias para la Fecha de Nacimiento"
+      date_of_birth_description: "En que campo de la respuesta se encuentra la Fecha de Nacimiento"
+      postal_code: "Alias para el Código Postal"
+      postal_code_description: "En que campo de la respuesta se encuentra el Código Postal"
+      district: "Alias para el Distrito"
+      district_description: "En que campo de la respuesta se encuentra el Distrito"
+      gender: "Alias para el Género"
+      gender_description: "En que campo de la respuesta se encuentra el Género"
+      name: "Alias para el Nombre"
+      name_description: "En que campo de la respuesta se encuentra Nombre"
+      surname: "Alias para el Apellido"
+      surname_description: "En que campo de la respuesta se encuentra el Apellido"
+      valid: "Condición para detectar una respuesta válida"
+      valid_description: "Que campo de la respuesta tiene que venir informado para considerarse una respuesta válida"
     map:
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"

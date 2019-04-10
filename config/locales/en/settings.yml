@@ -106,6 +106,37 @@ en:
       help_page_description: 'Displays a Help menu that contains a page with an info section about each enabled feature. Also custom pages and menus can be created in the "Custom pages" and  "Custom content blocks" sections'
       remote_census: "Configure connection to remote census (SOAP)"
       remote_census_description: "Allows to configure the connection to the remote census of each institution"
+    remote_census_general:
+      endpoint: "Endpoint"
+      endpoint_description: "Host name where the census service is available (wsdl)"
+    remote_census_request:
+      method_name: "Request method name"
+      method_name_description: "Request method name accepted by the City Census WebService."
+      structure: "Request Structure"
+      structure_description: 'Request Structure that receives the Census WebService of the City council. The "static" values of this request should be filled. Values related to Document Type, Document Number, Date of Birth and Postal Code should be blank.'
+      alias_document_type: "Alias for Document Type"
+      alias_document_type_description: "Name of the field in the request structure that sends the Document Type. DO NOT FILL IN if the WebService does not require the Document Type to verify a user."
+      alias_document_number: "Alias for Document Number"
+      alias_document_number_description: "Name of the field in the request structure that sends the Document Number. DO NOT FILL IN if the WebService does not require the Document Number to verify a user."
+      alias_date_of_birth: "Alias for Date of Birth"
+      alias_date_of_birth_description: "Name of the field in the request structure that sends the Date of Birth. DO NOT FILL IN if the WebService does not require the Date of Birth to verify a user."
+      alias_postal_code: "Alias for Postal Code"
+      alias_postal_code_description: "Name of the field in the request structure that sends the Postal Code. DO NOT FILL IN if the WebService does not require the Postal Code to verify a user."
+    remote_census_response:
+      date_of_birth: "Alias for Date of Birth"
+      date_of_birth_description: "In what field of the response is the user's Date of Birth?"
+      postal_code: "Alias for Postal Code"
+      postal_code_description: "In what field of the response is the user's Postal Code?"
+      district: "Alias for District"
+      district_description: "In what field of the response is the user's District?"
+      gender: "Alias for Gender"
+      gender_description: "In what field of response is the user's Gender?"
+      name: "Alias for Name"
+      name_description: "In what field of the response is the user's Name?"
+      surname: "Alias for the Last Name"
+      surname_description: "In what field of the response is the user's Last Name?"
+      valid: "Condition for detecting a valid response"
+      valid_description: "What response field has to come informed to be considered a valid response and user verified"
     map:
       latitude: "Latitude"
       latitude_description: "Latitude to show the map position"
