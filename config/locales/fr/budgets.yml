@@ -21,6 +21,7 @@ fr:
         no_ballots_allowed: La phase de sélection est terminée.
         different_heading_assigned_html: "Vous avez déjà voté pour une autre section : %{heading_link}"
         change_ballot: modifier votre vote
+        casted_offline: Vous avez déjà participé en mode hors connexion
     groups:
       show:
         title: Sélectionner une option
