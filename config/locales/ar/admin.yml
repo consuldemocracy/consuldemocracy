@@ -1171,7 +1171,7 @@ ar:
         milestones: معالم
         no_proposals: لا توجد مقترحات.
       show:
-        create_question: أضف هذا الاقتراح إلى استطلاع للتصويت
+        create_question: أضف هذا المقترح إلى استطلاع للتصويت
     hidden_proposals:
       index:
         filter: ترشيح
@@ -1354,7 +1354,7 @@ ar:
           comments: تعليقات
           debate_votes: مناقشة الأصوات
           debates: النقاشات
-          proposal_votes: أصوات الاقتراح
+          proposal_votes: أصوات المقترح
           proposals: إقتراحات
           budgets: الميزانيات المفتوحة
           budget_investments: مشاريع استثمارية
