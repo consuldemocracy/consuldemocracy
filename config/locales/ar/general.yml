@@ -300,7 +300,7 @@ ar:
       retired_reason_label: سبب سحب المقترح
       retired_reason_blank: إختر خيار
       retired_explanation_label: تفسير
-      retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا الاقتراح يجب ألا يحصل على المزيد من الدعم
+      retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا القترح يجب ألا يحصل على المزيد من الدعم
       submit_button: سحب المقترح
     retire_options:
       duplicated: مكرّر
@@ -327,7 +327,7 @@ ar:
       map_location: "موقع الخريطة"
       map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
       map_remove_marker: "ازل علامة الخريطة"
-      map_skip_checkbox: "هذا الاقتراح لا يملك موقع ملموس أو لست على دراية به."
+      map_skip_checkbox: "هذا المقترح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
       orders:
@@ -641,7 +641,7 @@ ar:
         unfeasible: غير مجدي
       start_spending_proposal: إنشاء مشروع استثماري
     new:
-      recommendation_one: من الضروري أن يشير الاقتراح إلى إجراء ذي ميزانية.
+      recommendation_one: من الضروري أن يشير المقترح إلى إجراء ذي ميزانية.
       recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني.
       recommendations_title: كيفية إنشاء مقترح الإنفاق
       start_new: إنشاء مقترح إنفاق
