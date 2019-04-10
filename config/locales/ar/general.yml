@@ -753,7 +753,7 @@ ar:
       user_permission_verify_my_account: التحقق من حسابي
       user_permission_votes: المشاركة في التصويت النهائي
   related_content:
-    title: "محتوى مرتبط"
+    title: "محتوى ذات الصلة"
     add: "إضافة محتوى ذات الصلة"
     label: "رابط للمحتوى المرتبط"
     placeholder: "%{url}"
