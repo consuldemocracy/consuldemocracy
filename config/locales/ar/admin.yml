@@ -993,7 +993,7 @@ ar:
         questions_title: "قائمة الأسئلة"
         table_title: "عنوان"
         edit_answers: تعديل الإجابات
-        see_proposal: "(انظر الاقتراح)"
+        see_proposal: "(الإطلاع على المقترح)"
       flash:
         question_added: "تمت إضافة السؤال إلى هذا الاستطلاع"
         error_on_question_added: "لا يمكن إضافة السؤال إلى هذا الاستطلاع"
