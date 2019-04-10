@@ -221,7 +221,7 @@ ar:
       consul_url: https://github.com/consul/consul
       contact_us: للحصول على المساعدة الفنية، قم بزيارة
       copyright: CONSUL, %{year}
-      description: تستخدم هذه البوابة %{consul} وهو%{open_source}.
+      description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_title: المشاركة
       privacy: سياسة الخصوصية
@@ -440,7 +440,7 @@ ar:
       login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       notifications_tab: إشعارات
       milestones_tab: معالم
-      retired_warning: "يرى المؤلف أن هذا الاقتراح يجب ألا يتلقى المزيد من الدعم."
+      retired_warning: "يرى المؤلف أن هذا المقترح يجب ألا يتلقى المزيد من الدعم."
       retired_warning_link_to_explanation: اقرأ الشرح قبل التصويت عليه.
       retired: تم سحب المقترح من قبل المؤلف
       share: مشاركة
