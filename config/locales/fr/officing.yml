@@ -16,6 +16,14 @@ fr:
         no_polls: Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs
         select_poll: Sélectionner un vote
         add_results: Ajouter les résultats
+    poll_budgets:
+      see_ballot_sheets: Voir la liste de feuilles de bulletin de vote
+      index:
+        title: "%{poll_budget} - liste des feuilles de bulletin de vote"
+        ballot_sheet: "Bulletin de vote %{id}"
+        ballot_sheet_name: Nom
+        ballot_sheet_author: Auteur
+        ballot_sheet_creation_date: Date de création
     results:
       flash:
         create: "Résultats sauvegardés"
