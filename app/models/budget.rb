@@ -20,6 +20,7 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
   has_many :phases, class_name: Budget::Phase
+  has_many :lines, through: :ballots, class_name: "Budget::Ballot::Line"
 
   has_one :poll
 
