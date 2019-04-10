@@ -6,6 +6,22 @@ FactoryBot.define do
     external_url         "http://external_documention.org"
     terms_of_service     "1"
     association :author, factory: :user
+
+    trait :feasible do
+      feasible true
+    end
+
+    trait :unfeasible do
+      feasible false
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+
+    trait :unfinished do
+      valuation_finished false
+    end
   end
 
   factory :budget do
