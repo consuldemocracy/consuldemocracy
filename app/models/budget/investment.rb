@@ -32,6 +32,7 @@ class Budget
     belongs_to :group
     belongs_to :budget
     belongs_to :administrator
+    belongs_to :spending_proposal, foreign_key: "original_spending_proposal_id"
 
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
