@@ -283,7 +283,7 @@ ar:
       sign_up: تسجيل باستخدام Twitter
       name: Twitter
     info_sign_in: "تسجيل الدخول باستخدام:"
-    info_sign_up: "تسجيل باستخدام:"
+    info_sign_up: "تسجيل الدخول باستخدام:"
     or_fill: "أو املأ النموذج التالي:"
   proposals:
     create:
@@ -293,15 +293,15 @@ ar:
       editing: تعديل المقترح
       form:
         submit_button: حفظ التغييرات
-      show_link: عرض الاقتراح
+      show_link: عرض المقترح
     retire_form:
-      title: سحب الاقتراح
+      title: سحب المقترح
       warning: "إذا قمت بسحب الاقتراح ، فسيظل يقبل الدعم ، ولكن ستتم إزالته من القائمة الرئيسية وستظهر رسالة لجميع المستخدمين تفيد بأن المؤلف يرى أنه لا ينبغي دعم الاقتراح بعد الآن"
       retired_reason_label: سبب سحب الاقتراح
       retired_reason_blank: إختر خيار
       retired_explanation_label: تفسير
       retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا الاقتراح يجب ألا يحصل على المزيد من الدعم
-      submit_button: سحب الاقتراح
+      submit_button: سحب المقترح
     retire_options:
       duplicated: مكرّر
       started: جارية بالفعل
@@ -311,12 +311,12 @@ ar:
     form:
       geozone: نطاق العملية
       proposal_external_url: رابط لوثائق إضافية
-      proposal_question: سؤال الاقتراح
+      proposal_question: سؤال المقترح
       proposal_question_example_html: "يجب تلخيصها في سؤال واحد بإجابة نعم أو لا"
       proposal_responsible_name: الاسم الكامل للشخص الذي قدم الاقتراح
-      proposal_summary: ملخص الاقتراح
+      proposal_summary: ملخص المقترح
       proposal_summary_note: "(200 حرف كحد أقصى)"
-      proposal_text: نص الاقتراح
+      proposal_text: نص المقترح
       proposal_title: عنوان الاقتراح
       proposal_video_url: رابط للفيديو الخارجي
       proposal_video_url_note: يمكنك إضافة رابط إلى YouTube أو Vimeo
@@ -343,7 +343,7 @@ ar:
         actions:
           success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
           error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
-      retired_proposals: الإقتراحات المسحوبة
+      retired_proposals: المقترحات المسحوبة
       retired_proposals_link: "الإقتراحات المسحوبة من قبل المؤلف"
       retired_links:
         all: الكل
@@ -364,7 +364,7 @@ ar:
         many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
         other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
-      select_order_long: "أنت تشاهد المقترحات وفقًا ل:"
+      select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
       start_proposal: إنشاء مقترح
       title: إقتراحات
       top: الأعلى أسبوعيا
@@ -386,7 +386,7 @@ ar:
       recommendations_title: توصيات لإنشاء مقترح
       start_new: انشاء مقترح جديد
     notice:
-      retired: تم سحب الاقتراح
+      retired: تم سحب المقترح
     proposal:
       created: "لقد قمت بإنشاء مقترح!"
       share:
@@ -544,7 +544,7 @@ ar:
       author_type_blank: "حدد فئة"
       date: "حسب التاريخ"
       date_range_blank: "اختر التاريخ"
-      date_1: "ال 24 ساعة الماضية"
+      date_1: "الـ 24 ساعة الماضية"
       date_2: "الأسبوع الماضي"
       date_3: "الشهر الماضي"
       date_4: "العام الماضي"
