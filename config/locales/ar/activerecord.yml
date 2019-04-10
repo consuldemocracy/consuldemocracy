@@ -278,7 +278,7 @@ ar:
       geozone:
         name: الإسم
         external_code: "الرّمز الخارجي (اختياري)"
-        census_code: "رمز التعداد (اختياري)"
+        census_code: "رمز مكتب التعداد (اختياري)"
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "عنوان"
