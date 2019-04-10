@@ -4,6 +4,8 @@ class Migrations::SpendingProposal::Budget
   include Migrations::SpendingProposal::Common
 
   def migrate
+    return false unless budget
+
     setup
     migrate_data
     expire_caches
