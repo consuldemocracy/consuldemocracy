@@ -83,8 +83,10 @@ fr:
         table_investments: Propositions d'investissement
         table_edit_groups: Groupes de rubriques
         table_edit_budget: Éditer
+        table_admin_ballots: Bulletins
         edit_groups: Modifier les groupes de rubriques
         edit_budget: Modifier le budget
+        admin_ballots: Bulletins de l’admin
         no_budgets: "Il n'y a pas de budgets."
       create:
         notice: Nouveau budget participatif créé avec succès !
