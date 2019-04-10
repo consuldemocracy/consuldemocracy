@@ -81,11 +81,13 @@ he:
         headers:
           moderate: מנחה
           budget_investment: השקעות בתקציב
+        hide_budget_investments: הסתר השקעות תקציביות
         ignore_flags: סימון כמסמך שנצפה
         order: הזמנה באמצעות
         orders:
           created_at: האחרון
           flags: הנצפה ביותר
+        title: השקעות בתקציב
     proposal_notifications:
       index:
         block_authors: חסימת הכותב/ת
@@ -97,11 +99,13 @@ he:
           ignored: סימון כמסמך שנצפה
         headers:
           moderate: מנחה
+          proposal_notification: התראות להצעות
         hide_proposal_notifications: הסתרת הצעות
         ignore_flags: סימון כמסמך שנצפה
         order: הזמנה באמצעות
         orders:
           created_at: האחרון
+          moderated: מונחה
         title: הצעת התראות
     users:
       index:
