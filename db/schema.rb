@@ -363,6 +363,19 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.text     "description_informing"
   end
 
+  create_table "ballot_lines", force: :cascade do |t|
+    t.integer  "ballot_id"
+    t.integer  "spending_proposal_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "ballots", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
     t.string   "track_id"
