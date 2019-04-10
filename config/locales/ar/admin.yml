@@ -1315,7 +1315,7 @@ ar:
       geozone:
         name: الإ سم
         external_code: الرّمز الخارجي
-        census_code: رمز التعداد
+        census_code: رمز مكتب التعداد
         coordinates: إحداثيات
       edit:
         form:
