@@ -11,13 +11,14 @@
     <% end %>
   </div>
 
-  <div class="small-12 medium-4 column margin-top">
+  <div class="small-12 column margin-top">
+    <%= f.check_box :active, label: ::Dashboard::Action.human_attribute_name(:active) %>
+  </div>
+
+  <div class="small-12 column margin-bottom">
     <%= f.check_box :request_to_administrators, label: ::Dashboard::Action.human_attribute_name(:request_to_administrators) %>
   </div>
 
-  <div class="small-12 medium-4 column margin-top">
-    <%= f.check_box :active, label: ::Dashboard::Action.human_attribute_name(:active) %>
-  </div>
 </div>
 
 <div class="row expanded">
