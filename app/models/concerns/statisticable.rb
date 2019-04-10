@@ -34,7 +34,7 @@ module Statisticable
     end
 
     def participants
-      User.unscoped.where(id: participant_ids)
+      @participants ||= User.unscoped.where(id: participant_ids)
     end
 
     def total_male_participants
@@ -103,7 +103,7 @@ module Statisticable
       end
 
       def total_participants_with_gender
-        participants.where.not(gender: nil).distinct.count
+        @total_participants_with_gender ||= participants.where.not(gender: nil).distinct.count
       end
 
       def age_groups

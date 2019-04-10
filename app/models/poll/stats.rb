@@ -96,15 +96,14 @@ class Poll::Stats
     end
 
     def voters
-      poll.voters
+      @voters ||= poll.voters
     end
 
     def recounts
-      poll.recounts
+      @recounts ||= poll.recounts
     end
 
     stats_cache(*stats_methods)
-    stats_cache :participants, :voters, :recounts
 
     def stats_cache(key, &block)
       Rails.cache.fetch("polls_stats/#{poll.id}/#{key}/#{version}", &block)

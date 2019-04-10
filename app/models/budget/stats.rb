@@ -107,19 +107,19 @@ class Budget::Stats
     end
 
     def authors
-      budget.investments.pluck(:author_id)
+      @authors ||= budget.investments.pluck(:author_id)
     end
 
     def voters
-      supports(budget).distinct.pluck(:voter_id)
+      @voters ||= supports(budget).distinct.pluck(:voter_id)
     end
 
     def balloters
-      budget.ballots.where("ballot_lines_count > ?", 0).distinct.pluck(:user_id).compact
+      @balloters ||= budget.ballots.where("ballot_lines_count > ?", 0).distinct.pluck(:user_id).compact
     end
 
     def poll_ballot_voters
-      budget&.poll ? budget.poll.voters.pluck(:user_id) : []
+      @poll_ballot_voters ||= budget.poll ? budget.poll.voters.pluck(:user_id) : []
     end
 
     def balloters_by_heading(heading_id)
@@ -174,8 +174,6 @@ class Budget::Stats
     end
 
     stats_cache(*stats_methods)
-    stats_cache :total_participants_with_gender
-    stats_cache :voters, :participants, :authors, :balloters, :poll_ballot_voters
 
     def stats_cache(key, &block)
       Rails.cache.fetch("budgets_stats/#{budget.id}/#{phases.join}/#{key}/#{version}", &block)
