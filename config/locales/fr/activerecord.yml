@@ -196,6 +196,9 @@ fr:
         external_url: "Lien vers de la documentation supplémentaire"
       poll/question/translation:
         title: "Question"
+      poll/ballot_sheet:
+        data: Données CSV
+        poll_id: Votes
       signature_sheet:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
