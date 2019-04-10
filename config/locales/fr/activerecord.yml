@@ -198,7 +198,8 @@ fr:
         title: "Question"
       poll/ballot_sheet:
         data: Données CSV
-        poll_id: Votes
+        poll_id: Sondage
+        officer_assignment_id: Affectation de l’agent
       signature_sheet:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
