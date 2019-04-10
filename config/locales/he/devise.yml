@@ -1,7 +1,7 @@
 he:
   devise:
     password_expired:
-      expire_password: "הסיסמא פגה"
+      expire_password: "הסיסמה פגה"
       change_required: "תוקף סיסמתך פג"
       change_password: "שנה את הסיסמה"
       new_password: "סיסמה חדשה"
