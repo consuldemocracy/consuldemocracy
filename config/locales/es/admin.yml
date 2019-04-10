@@ -1314,6 +1314,7 @@ es:
           title: Panel de progreso de propuestas
         remote_census:
           title: Configuración del Censo Remoto
+          how_to_enable: 'Para configurar la conexión con el Censo Remoto (SOAP) se debe activar "Configurar la conexión al censo remoto (SOAP)" en la pestaña "Funcionalidades".'
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración
