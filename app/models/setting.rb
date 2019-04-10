@@ -5,7 +5,7 @@ class Setting < ActiveRecord::Base
 
   def type
     prefix = key.split(".").first
-    if %w[feature process map html homepage].include? prefix
+    if %w[feature process map html homepage remote_census_general remote_census_request remote_census_response].include? prefix
       prefix
     else
       "configuration"

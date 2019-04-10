@@ -6,6 +6,9 @@ class Admin::SettingsController < Admin::BaseController
     @feature_settings = all_settings["feature"]
     @participation_processes_settings = all_settings["process"]
     @map_configuration_settings = all_settings["map"]
+    @remote_census_general_settings = all_settings["remote_census_general"]
+    @remote_census_request_settings = all_settings["remote_census_request"]
+    @remote_census_response_settings = all_settings["remote_census_response"]
   end
 
   def update
