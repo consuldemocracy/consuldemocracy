@@ -1313,6 +1313,7 @@ en:
           title: Proposals dashboard
         remote_census:
           title: Remote Census configuration
+          how_to_enable: 'To configure remote census (SOAP) you must enable "Configure connection to remote census (SOAP)" on "Features" tab.'
       setting: Feature
       setting_actions: Actions
       setting_name: Setting
