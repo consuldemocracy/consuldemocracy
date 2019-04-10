@@ -50,6 +50,7 @@ section "Creating Settings" do
   Setting.create(key: "feature.allow_attached_documents", value: "true")
   Setting.create(key: "feature.public_stats", value: "true")
   Setting.create(key: "feature.help_page", value: "true")
+  Setting.create(key: "feature.remote_census", value: "")
 
   Setting.create(key: "html.per_page_code_head", value: "")
   Setting.create(key: "html.per_page_code_body", value: "")
