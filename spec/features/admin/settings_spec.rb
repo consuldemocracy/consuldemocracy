@@ -98,6 +98,35 @@ feature "Admin settings" do
 
   end
 
+  describe "Update Remote Census Configuration" do
+
+    scenario "Should not be able when remote census feature deactivated" do
+      Setting["feature.remote_census"] = nil
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#remote-census-tab").click
+
+      expect(page).to have_content 'To configure remote census (SOAP) you must enable ' \
+                                   '"Configure connection to remote census (SOAP)" ' \
+                                   'on "Features" tab.'
+    end
+
+    scenario "Should be able when remote census feature activated" do
+      Setting["feature.remote_census"] = true
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#remote-census-tab").click
+
+      expect(page).not_to have_content 'To configure remote census (SOAP) you must enable ' \
+                                       '"Configure connection to remote census (SOAP)" ' \
+                                       'on "Features" tab.'
+      Setting["feature.remote_census"] = nil
+    end
+
+  end
+
   describe "Skip verification" do
 
     scenario "deactivate skip verification", :js do
