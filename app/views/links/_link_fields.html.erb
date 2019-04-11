@@ -1,16 +1,12 @@
-<div id="<%= dom_id(f.object) %>">
-  <div class="small-12 column">
+<div id="<%= dom_id(f.object) %>" class="nested-fields">
+  <div class="small-12 column attachment-actions">
     <%= f.text_field :label, placeholder: t("links.link_fields.label_placeholder") %>
 
     <%= f.text_field :url, placeholder: t("links.link_fields.url_placeholder") %>
-  </div>
 
-  <div class="small-6 column">
-    <%= f.check_box :open_in_new_tab, label: Link.human_attribute_name(:open_in_new_tab) %>
-  </div>
-
-  <div class="small-6 column action-remove text-right">
-    <%= render_destroy_element_link(f, f.object) %>
+    <div class="action-remove text-right">
+      <%= render_destroy_element_link(f, f.object) %>
+    </div>
   </div>
 
   <hr>
