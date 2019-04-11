@@ -92,11 +92,11 @@ class Poll::Stats
   private
 
     def participant_ids
-      voters.pluck(:user_id)
+      voters
     end
 
     def voters
-      @voters ||= poll.voters
+      @voters ||= poll.voters.select(:user_id)
     end
 
     def recounts
