@@ -83,6 +83,36 @@ Para el correcto funcionamiento de CONSUL, necesitas confgurar un usuario para t
 sudo -u postgres createuser consul --createdb --superuser --pwprompt
 ```
 
+Para asegurarse que se utiliza la codificación con UTF-8, crea un archivo:
+
+```
+sudo nano /etc/profile.d/lang.sh
+```
+
+Añade las siguientes líneas:
+
+```
+export LANGUAGE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+```
+
+Reconfigura Postgres para utilizar la codificación UTF-8:
+
+`````
+sudo su - postgres
+psql
+
+update pg_database set datistemplate=false where datname='template1';
+drop database Template1;
+create database template1 with owner=postgres encoding='UTF-8'
+lc_collate='en_US.utf8' lc_ctype='en_US.utf8' template template0;
+update pg_database set datistemplate=true where datname='template1';
+
+\q
+exit
+`````
+
 ## Imagemagick
 
 Instala Imagemagick:
