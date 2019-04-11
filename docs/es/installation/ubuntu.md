@@ -1,5 +1,13 @@
 ## Configuración para los entornos de desarrollo y pruebas (Ubuntu 18.04)
 
+## Actualización de sistema
+
+Ejecuta una actualización general de las librerías de sistema:
+
+```bash
+sudo apt update
+```
+
 ## Git
 
 Git es mantenido oficialmente en Ubuntu:
@@ -77,6 +85,14 @@ Para el correcto funcionamiento de CONSUL, necesitas confgurar un usuario para t
 
 ```bash
 sudo -u postgres createuser consul --createdb --superuser --pwprompt
+```
+
+## Imagemagick
+
+Instala Imagemagick:
+
+```bash
+sudo apt install imagemagick
 ```
 
 ## ChromeDriver

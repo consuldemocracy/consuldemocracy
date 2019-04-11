@@ -1,5 +1,13 @@
 ## Configuration for development and test environments (Ubuntu 18.04)
 
+## Actualización de sistema
+
+Ejecute una actualización general de las librerías de sistema:
+
+```bash
+sudo apt update
+```
+
 ## Git
 
 Git is officially maintained in Ubuntu:
@@ -77,6 +85,14 @@ You also need to configure a user for your database. As an example, we'll choose
 
 ```bash
 sudo -u postgres createuser consul --createdb --superuser --pwprompt
+```
+
+## Imagemagick
+
+Install Imagemagick:
+
+```bash
+sudo apt install imagemagick
 ```
 
 ## ChromeDriver
