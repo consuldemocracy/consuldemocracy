@@ -61,17 +61,13 @@ gem install bundler
 
 ## Node.js
 
-To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option. As with Ruby, we don't recommend installing Node from your distro's repositories.
-
-To install it, you can use [n](https://github.com/tj/n)
+To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option.
 
 Run the following command on your terminal:
 
 ```bash
-wget -L https://git.io/n-install | bash -s -- -y lts
+sudo apt install nodejs
 ```
-
-It will install the latest LTS (Long Term Support) Node version on your `$HOME` folder automatically (using [n-install](https://github.com/mklement0/n-install))
 
 ## PostgreSQL
 

@@ -61,17 +61,13 @@ gem install bundler
 
 ## Node.js
 
-Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. Al igual que como ocurre con Ruby, no es recomendable instalar Node directamente de los repositorios de tu distribución Linux.
-
-Para instalar Node, puedes usar [n](https://github.com/tj/n)
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. 
 
 Ejecuta en tu terminal:
 
 ```bash
-wget -L https://git.io/n-install | bash -s -- -y lts
+sudo apt install nodejs
 ```
-
-Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés para "Soporte a largo plazo") más reciente de Node en tu directorio `$HOME` (usando [n-install](https://github.com/mklement0/n-install))
 
 ## PostgreSQL
 
