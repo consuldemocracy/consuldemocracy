@@ -62,8 +62,8 @@ nl:
         one: "coördinator"
         other: "coördinatoren"
       poll/ballot_sheet:
-        one: Stemformulier
-        other: Stemformulieren
+        one: Stembiljet
+        other: Stembiljetten
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
