@@ -88,6 +88,14 @@ module ProposalsDashboardHelper
     t("dashboard.resource.request_resource")
   end
 
+  def proposed_action_description(proposed_action)
+    raw proposed_action.description.truncate(200)
+  end
+
+  def proposed_action_long_description?(proposed_action)
+    proposed_action.description.length > 200
+  end
+
   def is_new_action_since_last_login?(proposed_action, new_actions_since_last_login)
     if new_actions_since_last_login.present?
       new_actions_since_last_login.include?(proposed_action.id)

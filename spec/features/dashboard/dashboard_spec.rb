@@ -56,6 +56,22 @@ feature "Proposal's dashboard" do
     expect(page).to have_content(action.title)
   end
 
+  scenario "Dashboard progress show proposed actions truncated description" do
+    action = create(:dashboard_action, :proposed_action, :active, description: "One short action")
+    action_long = create(:dashboard_action, :proposed_action, :active,
+                          description: "This is a really very long description for a proposed "\
+                                       "action on progress dashboard section, so this description "\
+                                       "should be appear truncated and shows the show description "\
+                                       "link to show the complete description to the users.")
+
+    visit progress_proposal_dashboard_path(proposal)
+
+    expect(page).to have_content(action.description)
+    expect(page).to have_content("This is a really very long description for a proposed")
+    expect(page).to have_selector("#truncated_description_dashboard_action_#{action_long.id}")
+    expect(page).to have_selector("a", text: "Show description")
+  end
+
   scenario "Dashboard progress do not display from the fourth proposed actions", js: true do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
