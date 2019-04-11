@@ -1,5 +1,24 @@
 he:
   officing:
+    poll_budgets:
+      see_ballot_sheets: ראה רשימת גיליון ההצבעות
+      index:
+        title: "%{poll_budget} - רשימת גיליון ההצבעות"
+        ballot_sheet: "גיליונות הצבעה %{id}"
+        ballot_sheet_name: שם
+        ballot_sheet_author: מחבר/ת
+        ballot_sheet_creation_date: תאריך יצירה
+        empty_results: אין עדין גליונות הצבעה לסקר זה
+      new:
+        title: "%{poll_budget} - גיליון הצבעה חדש"
+        booth: דוכן
+        select_booth: בחר דוכן
+        csv_data: נתוני ה-CSV
+        submit: שמור
+      show:
+        created_at: תאריך יצירה
+        author: מחבר/ת
+        data: נתוני ה-CSV
     results:
       new:
         submit: "שמירה"
