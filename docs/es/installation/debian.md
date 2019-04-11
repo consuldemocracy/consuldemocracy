@@ -13,6 +13,14 @@ su
 > sudo su -
 > ```
 
+## Actualización de sistema
+
+Ejecute una actualización general de las librerías de sistema:
+
+```bash
+apt-get update
+```
+
 ## Git
 
 Git es mantenido oficialmente en Debian:
@@ -127,6 +135,14 @@ su - postgres
 createuser consul --createdb --superuser --pwprompt
 
 exit
+```
+
+## Imagemagick
+
+Instale Imagemagick:
+
+```bash
+apt-get install imagemagick
 ```
 
 ## ChromeDriver

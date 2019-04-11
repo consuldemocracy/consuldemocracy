@@ -8,10 +8,19 @@ Note that 'sudo' is not installed by default in Debian. It's possible to install
 su
 ```
 
+
 > For [Vagrant](/en/installation/vagrant.md) run:
 > ```
 > sudo su -
 > ```
+
+## System update
+
+Run a general system update:
+
+```bash
+apt-get update
+```
 
 ## Git
 
@@ -127,6 +136,14 @@ su - postgres
 createuser consul --createdb --superuser --pwprompt
 
 exit
+```
+
+## Imagemagick
+
+Install Imagemagick:
+
+```bash
+apt-get install imagemagick
 ```
 
 ## ChromeDriver
