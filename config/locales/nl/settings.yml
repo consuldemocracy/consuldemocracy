@@ -113,7 +113,7 @@ nl:
       zoom_description: "Zoom om de kaartpositie te tonen"
     process:
       debates: "Discussies"
-      debates_description: "De debatruimte van de burger is bedoeld voor iedereen die kwesties wil presenteren die hen aangaan en waarover zij hun mening met anderen willen afstemmen"
+      debates_description: "De debatruimte is bedoeld voor iedereen die kwesties wil presenteren die hen aangaan en waarover zij hun mening met anderen willen afstemmen"
       proposals: "Voorstellen"
       proposals_description: "Voorstellen bieden mensen een kans om te helpen beslissen en, na het ontvangen van voldoende steun, in stemming te brengen"
       polls: "Peilingen"
