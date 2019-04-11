@@ -61,6 +61,9 @@ nl:
       poll/officer:
         one: "coördinator"
         other: "coördinatoren"
+      poll/ballot_sheet:
+        one: Stemformulier
+        other: Stemformulieren
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
@@ -208,6 +211,10 @@ nl:
         external_url: "Link naar aanvullende informatie"
       poll/question/translation:
         title: "Vraag"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Peiling
+        officer_assignment_id: Toewijzing
       signature_sheet:
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
