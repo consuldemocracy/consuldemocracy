@@ -1,4 +1,4 @@
-# Configuración para los entornos de desarrollo y pruebas (Ubuntu 18.04)
+## Configuración para los entornos de desarrollo y pruebas (Ubuntu 18.04)
 
 ## Git
 
