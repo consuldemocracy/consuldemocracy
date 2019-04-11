@@ -1,3 +1,9 @@
+<% if dashboard_action.requested_for?(proposal) %>
+  <div class="callout success">
+    <strong><%= t("dashboard.create_request.success") %></strong>
+  </div>
+<% end %>
+
 <% if dashboard_action.request_to_administrators && !dashboard_action.requested_for?(proposal) %>
   <%= form_for @dashboard_executed_action,
                url: create_request_proposal_dashboard_action_url(proposal,

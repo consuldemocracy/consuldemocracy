@@ -482,7 +482,7 @@ en:
     form:
       request: Request
     create_request:
-      success: The request for the administrator has been successfully sent.
+      success: The request has been successfully sent. We will contact you as soon as possible to inform you about it.
     progress:
       title: Graphic
       group_by_month: Monthly

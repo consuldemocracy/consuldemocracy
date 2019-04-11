@@ -482,7 +482,7 @@ es:
     form:
       request: Solicitar
     create_request:
-      success: La petición ha sido correctamente enviada al administrador.
+      success: La petición ha sido correctamente enviada. Te contactaremos lo antes posible para informarte al respecto.
     progress:
       title: Gráfico
       group_by_month: Mensual
