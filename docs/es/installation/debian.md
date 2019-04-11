@@ -15,7 +15,7 @@ su
 
 ## Actualización de sistema
 
-Ejecute una actualización general de las librerías de sistema:
+Ejecuta una actualización general de las librerías de sistema:
 
 ```bash
 apt-get update
@@ -139,7 +139,7 @@ exit
 
 ## Imagemagick
 
-Instale Imagemagick:
+Instala Imagemagick:
 
 ```bash
 apt-get install imagemagick
