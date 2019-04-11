@@ -1,4 +1,4 @@
 # Open Source project
 
-* [Code of conduct](code_of_conduct.md)
-* [Contributing](contributing.md)
+* [Código de conducta](code_of_conduct.md)
+* [Contribuciones](contributing.md)

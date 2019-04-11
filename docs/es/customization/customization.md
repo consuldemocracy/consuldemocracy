@@ -1,10 +1,10 @@
 # Customization
 
-* [Introduction](introduction.md)
-* [Texts & Translations](translations.md)
-* [Images](images.md)
-* [Views & Styles](views_and_styles.md)
+* [Introducción](introduction.md)
+* [Textos & Traducciones](translations.md)
+* [Imágenes](images.md)
+* [Vistas & Estilos](views_and_styles.md)
 * [Javascript](javascript.md)
-* [Models](models.md)
-* [Gems](gems.md)
-* [Overwritting Application](overwritting.md)
+* [Modelos](models.md)
+* [Gemas](gems.md)
+* [Adaptar la aplicación](overwritting.md)
