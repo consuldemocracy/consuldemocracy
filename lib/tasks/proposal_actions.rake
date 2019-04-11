@@ -7,7 +7,6 @@ namespace :proposal_actions do
       Link.create!(
         label: action.title,
         url: action.link,
-        open_in_new_tab: true,
         linkable: action
       )
     end

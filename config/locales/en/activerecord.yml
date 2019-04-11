@@ -354,7 +354,6 @@ en:
       link:
         label: Title
         url: Link
-        open_in_new_tab: Open in new tab
     errors:
       models:
         user:

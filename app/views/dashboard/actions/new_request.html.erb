@@ -13,11 +13,7 @@
       <div class="margin-top">
         <h4><%= t("dashboard.new_request.links") %></h4>
         <% dashboard_action.links.each do |link| %>
-          <% if link.open_in_new_tab %>
-            <p><%= link_to link.label, link.url, target: "_blank" %></p>
-          <% else %>
-            <p><%= link_to link.label, link.url %></p>
-          <% end %>
+          <p><%= link_to link.label, link.url, target: "_blank" %></p>
         <% end %>
       </div>
     <% end %>

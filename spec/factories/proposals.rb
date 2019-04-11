@@ -174,10 +174,5 @@ FactoryBot.define do
     linkable { |s| s.association(:action) }
     label { Faker::Lorem.sentence }
     url { Faker::Internet.url }
-    open_in_new_tab false
-
-    trait :open_in_new_tab do
-      open_in_new_tab true
-    end
   end
 end

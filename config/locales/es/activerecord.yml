@@ -355,7 +355,6 @@ es:
       link:
         label: Título
         url: Enlace
-        open_in_new_tab: Abrir en ventana nueva
     errors:
       models:
         user:

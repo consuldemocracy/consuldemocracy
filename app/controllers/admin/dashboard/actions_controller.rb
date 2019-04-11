@@ -57,7 +57,7 @@ class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
           :title, :description, :short_description, :request_to_administrators, :day_offset,
           :required_supports, :order, :active, :action_type, :published_proposal,
           documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-          links_attributes: [:id, :label, :url, :open_in_new_tab, :_destroy]
+          links_attributes: [:id, :label, :url, :_destroy]
         )
     end
 
