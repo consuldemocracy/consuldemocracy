@@ -140,8 +140,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "physical",       default: false
+    t.integer  "poll_ballot_id"
   end
 
   create_table "budget_content_blocks", force: :cascade do |t|
@@ -938,6 +940,14 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "poll_ballot_sheets", ["officer_assignment_id"], name: "index_poll_ballot_sheets_on_officer_assignment_id", using: :btree
   add_index "poll_ballot_sheets", ["poll_id"], name: "index_poll_ballot_sheets_on_poll_id", using: :btree
 
+  create_table "poll_ballots", force: :cascade do |t|
+    t.integer  "ballot_sheet_id"
+    t.text     "data"
+    t.integer  "external_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "poll_booth_assignments", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "poll_id"
@@ -1456,6 +1466,7 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
+    t.integer  "balloted_heading_id"
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
