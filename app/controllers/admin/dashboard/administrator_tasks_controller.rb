@@ -1,9 +1,11 @@
 class Admin::Dashboard::AdministratorTasksController < Admin::Dashboard::BaseController
+  has_filters %w[pending done]
+
   helper_method :administrator_task
 
   def index
     authorize! :index, ::Dashboard::AdministratorTask
-    @administrator_tasks = ::Dashboard::AdministratorTask.pending
+    @administrator_tasks = ::Dashboard::AdministratorTask.send(@current_filter)
   end
 
   def edit

@@ -408,11 +408,15 @@ en:
       administrator_tasks:
         index:
           description: "Resources published in the dashboard of proposals may include a button to be requested to administrators. User requests are shown below."
-          title: Resources requested pending
+          title: Resources requested
           solve: Solve
-          no_records: There are no pending tasks
+          no_records: There are no resources requested
           source: Source
           resource: Requested resource
+          filter: Filter
+          filters:
+            pending: Pending
+            done: Solved
         edit:
           back: Back to pending tasks list
           solving: Solve pending task
@@ -698,7 +702,7 @@ en:
       legislation: Collaborative Legislation
       users: Users
       dashboard: Proposals dashboard
-      administrator_tasks: Resources requested pending
+      administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
     administrators:
       index:

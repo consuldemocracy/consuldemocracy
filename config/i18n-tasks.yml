@@ -153,6 +153,7 @@ ignore_unused:
   - "admin.booths.*.submit_button"
   - "admin.admin_notifications.*.submit_button"
   - "admin.homepage.*"
+  - "admin.dashboard.administrator_tasks.index.filter*"
   - "moderation.comments.index.filter*"
   - "moderation.comments.index.order*"
   - "moderation.debates.index.filter*"

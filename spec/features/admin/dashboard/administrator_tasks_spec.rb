@@ -14,7 +14,7 @@ feature "Admin administrator tasks" do
       end
 
       scenario "shows that there are no records available" do
-        expect(page).to have_content("There are no pending tasks")
+        expect(page).to have_content("There are no resources requested")
       end
     end
 
@@ -54,12 +54,20 @@ feature "Admin administrator tasks" do
       expect(page).to have_button("Mark as solved")
     end
 
-    scenario "After it is solved dissapears from the list" do
+    scenario "After it is solved appears on solved filter" do
       click_button "Mark as solved"
 
       expect(page).not_to have_link(task.source.proposal.title)
       expect(page).not_to have_content(task.source.action.title)
       expect(page).to have_content("The task has been marked as solved")
+
+      within("#filter-subnav") do
+        click_link "Solved"
+      end
+
+      expect(page).to have_content(task.source.proposal.title)
+      expect(page).to have_content(task.source.action.title)
+      expect(page).not_to have_link("Solve")
     end
   end
 end

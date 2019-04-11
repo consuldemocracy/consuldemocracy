@@ -408,11 +408,15 @@ es:
       administrator_tasks:
         index:
           description: "Los recursos publicados en el panel de progreso de las propuestas pueden incluir un botón para ser solicitados a los administradores. A continuación se muestran las solicitudes de los usuarios."
-          title: Recursos solicitados pendientes
+          title: Recursos solicitados
           solve: Resolver
-          no_records: No hay tareas pendientes
+          no_records: No hay recursos solicitados
           source: Propuesta
           resource: Recurso solicitado
+          filter: Filtro
+          filters:
+            pending: Pendientes
+            done: Resueltos
         edit:
           back: Volver a la lista de tareas pendientes
           solving: Resolver tarea pendiente
@@ -697,7 +701,7 @@ es:
       legislation: Legislación colaborativa
       users: Usuarios
       dashboard: Panel de progreso de propuestas
-      administrator_tasks: Recursos solicitados pendientes
+      administrator_tasks: Recursos solicitados
       dashboard_actions: Recursos y acciones
     administrators:
       index:
