@@ -101,6 +101,11 @@ he:
         two: "נושאי משרות"
         many: "נושאי משרות"
         other: "נושאי משרות"
+      poll/ballot_sheet:
+        one: גליון הצבעה
+        two: גיליון הצבעות
+        many: גיליון הצבעות
+        other: גיליון הצבעות
       proposal:
         one: "הצעת תושב"
         two: "הצעת תושבים"
@@ -280,6 +285,10 @@ he:
         external_url: "קישור למידע נוסף"
       poll/question/translation:
         title: "שאלה"
+      poll/ballot_sheet:
+        data: נתוני ה-CSV
+        poll_id: סקר
+        officer_assignment_id: משימת בעל המשרה
       signature_sheet:
         signable_type: "סוג החתימה"
         signable_id: "סוג מזהה"
