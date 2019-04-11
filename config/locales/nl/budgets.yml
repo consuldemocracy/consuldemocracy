@@ -22,6 +22,7 @@ nl:
         no_ballots_allowed: De selectiefase is voorbij
         different_heading_assigned_html: "Je hebt al gestemd in een andere rubriek: %{heading_link}"
         change_ballot: wijzig uw stem
+        casted_offline: Je hebt al offline deelgenomen
     groups:
       show:
         title: Kies een mogelijkheid
