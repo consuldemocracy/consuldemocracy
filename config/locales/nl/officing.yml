@@ -16,6 +16,28 @@ nl:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_results: Add results
+    poll_budgets:
+      see_ballot_sheets: Stembiljettenoverzicht
+      index:
+        title: "%{poll_budget} - Stembiljettenoverzicht"
+        ballot_sheet: "Stembiljet %{id}"
+        ballot_sheet_name: Naam
+        ballot_sheet_author: Auteur
+        ballot_sheet_creation_date: Aanmaakdatum
+        empty_results: Er zijn nog geen stembiljetten voor deze peiling
+      new:
+        title: "%{poll_budget} - Nieuw stembiljet"
+        booth: Stemlocatie
+        select_booth: Selecteer stemlocatie
+        csv_data: CSV data
+        submit: Opslaan
+      show:
+        created_at: Aanmaakdatum
+        author: Auteur
+        data: CSV data
+    booth:
+      new:
+        title: "Kies de stemlocatie"
     results:
       flash:
         create: "Results saved"
