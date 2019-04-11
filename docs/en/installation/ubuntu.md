@@ -1,8 +1,8 @@
 ## Configuration for development and test environments (Ubuntu 18.04)
 
-## Actualización de sistema
+## System update
 
-Ejecute una actualización general de las librerías de sistema:
+Run a general system update:
 
 ```bash
 sudo apt update
