@@ -44,4 +44,18 @@ describe Abilities::Valuator do
 
   it { should_not be_able_to(:update, finished_assigned_investment) }
   it { should_not be_able_to(:valuate, finished_assigned_investment) }
+
+  it "can update dossier information if not set can_edit_dossier attribute" do
+    should be_able_to(:edit_dossier, assigned_investment)
+    allow(valuator).to receive(:can_edit_dossier?).and_return(false)
+    ability = Ability.new(user)
+    expect(ability.can?(:edit_dossier, assigned_investment)).to be_falsey
+  end
+
+  it "cannot create valuation comments if not set not can_comment attribute" do
+    should be_able_to(:comment_valuation, assigned_investment)
+    allow(valuator).to receive(:can_comment?).and_return(false)
+    ability = Ability.new(user)
+    expect(ability.can?(:comment_valuation, assigned_investment)).to be_falsey
+  end
 end

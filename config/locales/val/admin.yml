@@ -764,7 +764,6 @@ val:
         cost: Cost total
       form:
         edit_title: "Avaluadors: Editar avaluador"
-        update: "Actualitzar avaluador"
         updated: "Avaluador actualitzat correctament"
       show:
         description: "Descripció"

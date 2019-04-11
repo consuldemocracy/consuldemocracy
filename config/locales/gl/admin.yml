@@ -798,7 +798,6 @@ gl:
         cost: Custo total
       form:
         edit_title: "Avaliadores: Editar avaliador"
-        update: "Actualizar avaliador"
         updated: "Avaliador actualizado correctamente"
       show:
         description: "Descrición"

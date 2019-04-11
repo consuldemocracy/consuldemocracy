@@ -823,7 +823,6 @@ pl:
         cost: Koszt
       form:
         edit_title: "Wyceniający: Edytuj wyceniającego"
-        update: "Aktualizuj wyceniającego"
         updated: "Wyceniający zaktualizowany pomyślnie"
       show:
         description: "Opis"

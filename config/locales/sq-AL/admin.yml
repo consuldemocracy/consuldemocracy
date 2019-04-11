@@ -717,7 +717,6 @@ sq:
         cost: Kosto
       form:
         edit_title: "Vlerësuesit: Ndrysho vlerësuesin"
-        update: "Përditëso vlerësuesin"
         updated: "Vlerësuesi u përditësua me sukses"
       show:
         description: "Përshkrimi"

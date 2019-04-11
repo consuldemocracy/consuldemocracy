@@ -354,6 +354,11 @@ es:
       link:
         label: Título
         url: Enlace
+      valuator:
+        description: Descripción
+        valuator_group_id: Grupo de evaluación
+        can_comment: Puede comentar
+        can_edit_dossier: Puede editar informes
     errors:
       models:
         user:

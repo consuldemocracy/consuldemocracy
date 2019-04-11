@@ -903,6 +903,9 @@ en:
         valuator_groups: "Valuator Groups"
         group: "Group"
         no_group: "No group"
+        abilities: "Abilities"
+        can_comment: "Can comment"
+        can_edit_dossier: "Can edit dossier"
       valuator:
         add: Add to valuators
         delete: Delete
@@ -910,14 +913,15 @@ en:
         title: "Valuators: User search"
       form:
         edit_title: "Valuators: Edit valuator"
-        update: "Update valuator"
         updated: "Valuator updated successfully"
       show:
         description: "Description"
         email: "Email"
         group: "Group"
+        abilities: "Abilities"
         no_description: "Without description"
         no_group: "Without group"
+        no_abilities: "Without abilities"
     valuator_groups:
       index:
         title: "Valuator groups"

@@ -868,7 +868,6 @@ fr:
         cost: Coût
       form:
         edit_title: "Évaluateurs : modifier l'évaluateur"
-        update: "Modifier l'évaluateur"
         updated: "L'évaluateur a bien été modifié"
       show:
         description: "Description"

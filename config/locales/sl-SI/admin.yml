@@ -525,7 +525,6 @@ sl:
         cost: Cena
       form:
         edit_title: "Cenilci: Uredi cenilce"
-        update: "Posodobi cenilca"
         updated: "Cenilec uspešno posodobljen"
       show:
         description: "Opis"

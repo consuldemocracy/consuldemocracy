@@ -352,6 +352,11 @@ en:
       link:
         label: Title
         url: Link
+      valuator:
+        description: Description
+        valuator_group_id: Valuator group
+        can_comment: Can create comments
+        can_edit_dossier: Can edit dossiers
     errors:
       models:
         user:

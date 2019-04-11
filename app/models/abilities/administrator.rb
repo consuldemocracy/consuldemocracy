@@ -65,6 +65,7 @@ module Abilities
       can [:hide, :update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
       can :create, Budget::ValuatorAssignment
+      can [:edit_dossier], Budget::Investment
 
       can(:read_admin_stats, Budget) { |budget| budget.balloting_or_later? }
 

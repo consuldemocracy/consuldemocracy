@@ -826,7 +826,6 @@ nl:
         cost: Kosten
       form:
         edit_title: "Beoordelaars: Bewerk Beoordelaar"
-        update: "Sla op"
         updated: "Beoordelaar aangepast"
       show:
         description: "Beschrijving"

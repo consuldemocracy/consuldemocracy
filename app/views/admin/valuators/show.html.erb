@@ -27,4 +27,13 @@
       <%= t("admin.valuators.show.no_group") %>
     <% end %>
   </p>
+
+  <p>
+    <strong><%= t("admin.valuators.show.abilities") %></strong><br>
+    <% if valuator_abilities(@valuator).present? %>
+      <%= valuator_abilities(@valuator) %>
+    <% else %>
+      <%= t("admin.valuators.show.no_abilities") %>
+    <% end %>
+  </p>
 </div>

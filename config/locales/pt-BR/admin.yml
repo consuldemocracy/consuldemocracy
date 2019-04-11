@@ -709,7 +709,6 @@ pt-BR:
         cost: Custo
       form:
         edit_title: "Avaliadores: editar avaliador"
-        update: "Atualizar avaliador"
         updated: "Avalaiador atualizado com sucesso"
       show:
         description: "Descrição"

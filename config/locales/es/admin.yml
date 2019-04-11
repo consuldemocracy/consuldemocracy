@@ -902,6 +902,9 @@ es:
         valuator_groups: "Grupo de evaluadores"
         group: "Grupo"
         no_group: "Sin grupo"
+        abilities: "Habilidades"
+        can_comment: "Puede comentar"
+        can_edit_dossier: "Puede editar informes"
       valuator:
         add: Añadir como evaluador
         delete: Borrar
@@ -909,14 +912,15 @@ es:
         title: "Evaluadores: Búsqueda de usuarios"
       form:
         edit_title: "Evaluadores: Editar evaluador"
-        update: "Actualizar evaluador"
         updated: "Evaluador actualizado correctamente"
       show:
         description: "Descripción"
         email: "Email"
         group: "Grupo"
+        abilities: "Habilidades"
         no_description: "Sin descripción"
         no_group: "Sin grupo"
+        no_abilities: "Sin habilidades"
     valuator_groups:
       index:
         title: "Grupos de evaluadores"
