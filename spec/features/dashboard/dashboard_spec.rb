@@ -9,7 +9,7 @@ feature "Proposal's dashboard" do
   end
 
   scenario "Dashboard has a link to my proposal" do
-    expect(page).to have_link("My proposal")
+    expect(page).to have_link("Edit my proposal")
   end
 
   scenario "My proposal has a link to edit the proposal" do
@@ -108,13 +108,6 @@ feature "Proposal's dashboard" do
     within "#proposed_actions_pending" do
       expect(page).to have_content(action.title)
     end
-  end
-
-  scenario "Dashboard progress display contains no results text when there are not
-            proposed_actions pending" do
-    visit progress_proposal_dashboard_path(proposal)
-
-    expect(page).to have_content("No recommended actions pending")
   end
 
   scenario "Dashboard progress display proposed_action done on his section" do
@@ -326,11 +319,14 @@ feature "Proposal's dashboard" do
     expect(page).to have_link("Access the community")
   end
 
-  scenario "Dashboard has a link to recommended_actions", js: true do
-    expect(page).to have_link("Recommended actions")
-    click_link "Recommended actions"
+  scenario "Dashboard has a link to recommended_actions if there is any", js: true do
+    expect(page).not_to have_link("Recommended actions")
 
-    expect(page).to have_content("Recommended actions")
+    create_list(:dashboard_action, 3, :proposed_action, :active)
+    visit recommended_actions_proposal_dashboard_path(proposal.to_param)
+
+    expect(page).to have_link("Recommended actions")
+    expect(page).to have_selector("h2", text: "Recommended actions")
     expect(page).to have_content("Pending")
     expect(page).to have_content("Done")
   end
@@ -401,10 +397,10 @@ feature "Proposal's dashboard" do
     end
   end
 
-  scenario "No recommended actions done" do
+  scenario "No recommended actions pending or done" do
     visit progress_proposal_dashboard_path(proposal)
 
-    expect(page).to have_content("No recommended actions done")
+    expect(page).not_to have_content("Recommended actions")
   end
 
   describe "detect_new_actions_after_last_login" do

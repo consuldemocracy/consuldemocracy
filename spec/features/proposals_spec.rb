@@ -423,7 +423,7 @@ feature "Proposals" do
     click_link "Dashboard"
 
     within "#side_menu" do
-      click_link "My proposal"
+      click_link "Edit my proposal"
     end
 
     click_link "Edit proposal"
@@ -503,7 +503,7 @@ feature "Proposals" do
       end
 
       within "#side_menu" do
-        click_link "My proposal"
+        click_link "Edit my proposal"
       end
 
       click_link "Retire proposal"
