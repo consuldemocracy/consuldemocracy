@@ -186,6 +186,34 @@ describe Poll::Stats do
     end
   end
 
+  describe "#total_no_demographic_data" do
+    before do
+      create(:poll_voter, :from_web, poll: poll, user: create(:user, :level_two, gender: nil))
+    end
+
+    context "more registered participants than participants in recounts" do
+      before do
+        create(:poll_recount, :from_booth, poll: poll, total_amount: 1)
+        2.times { create(:poll_voter, :from_booth, poll: poll) }
+      end
+
+      it "returns registered users with no demographic data" do
+        expect(stats.total_no_demographic_data).to eq 1
+      end
+    end
+
+    context "more participants in recounts than registered participants" do
+      before do
+        create(:poll_recount, :from_booth, poll: poll, total_amount: 3)
+        2.times { create(:poll_voter, :from_booth, poll: poll) }
+      end
+
+      it "returns registered users with no demographic data plus users not registered" do
+        expect(stats.total_no_demographic_data).to eq 2
+      end
+    end
+  end
+
   describe "#channels" do
     context "no participants" do
       it "returns no channels" do
