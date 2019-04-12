@@ -96,14 +96,19 @@ da:
       guides: "Guide til oprettelse af forslag eller investeringsprojekter"
       guides_description: "Viser en guide, der forklarer forskellen på et borgerforslag og et investeringsforslag, hvis et deltagerbudget er aktivt"
       public_stats: "Offentlig statistik"
+      public_stats_description: "Viser offentlig statistik i Administrationspanelet"
       help_page: "Hjælp"
+      help_page_description: 'Viser en Hjælpeside, der indeholder en informationssektion omkring enhver aktiveret funktion. Derudover kan brugerdefinerede sider og sektioner oprettes under "Brugerdefinerede sider" og "Brugerdefinerede indholdsblokke"'
     map:
       latitude: "Breddegrad"
+      latitude_description: "Breddegrader"
       longitude: "Længdegrad"
+      longitude_description: "Længdegrader"
       zoom: "Zoom"
       zoom_description: "Zoom for at vise lokationen"
     process:
       debates: "Debatforum"
+      debates_description: "Borgernes debatforum er tilegnet enhver, der ønsker at præsentere og dele deres mening om en eller flere problematikker af interesse"
       proposals: "Forslag"
       polls: "Afstemninger"
       polls_description: "Borgerafstemningerne er en deltagelsesproces, hvor stemmeberettigede borgere kan få direkte indflydelse og være med til at træffe lokalpolitiske beslutninger"
