@@ -22,6 +22,7 @@ da:
         no_ballots_allowed: Udvælgelsesfasen er slut
         different_heading_assigned_html: "Du har allerede stemt i en anden post: %{heading_link}"
         change_ballot: Ønsker du at ændre din stemme?
+        casted_offline: Du har allerede deltaget, da du var offline
     groups:
       show:
         title: Vælg en mulighed
