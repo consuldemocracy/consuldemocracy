@@ -106,6 +106,7 @@ da:
         next_question: Næste spørgsmål
         first_question: Første spørgsmål
         share: Del
+        title: Høringsproces
       participation:
         phase_not_open: Fasen er ikke åben
         organizations: Organisationer har ikke tilladelse til at deltage i debatten
