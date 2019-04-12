@@ -13,8 +13,23 @@ da:
     polls:
       final:
         title: Afstemningen klar til den endelige fintælling
+        no_polls: Du har ingen afstemninger klar til tælling
         select_poll: Vælg afstemning
         add_results: Tilføj resultater
+    poll_budgets:
+      index:
+        ballot_sheet_name: Navn
+        ballot_sheet_author: Oprettet af
+        ballot_sheet_creation_date: Oprettelsesdato
+      new:
+        booth: Valgsted
+        select_booth: Vælg valgsted
+        csv_data: CSV data
+        submit: Gem
+      show:
+        created_at: Oprettelsesdato
+        author: Oprettet af
+        data: CSV data
     booth:
       new:
         title: "Vælg dit valgsted"
