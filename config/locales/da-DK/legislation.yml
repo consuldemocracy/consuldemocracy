@@ -66,11 +66,11 @@ da:
         no_open_processes: Ingen åbne processer
         no_past_processes: Ingen tidligere processer
         section_header:
-          icon_alt: Skærmikon for lovgivningssamarbejde
-          title: Lovgivningssamarbejde
-          help: Hjælp til lovgivningssamarbejde
+          icon_alt: Skærmikon for høringer
+          title: Høringsportal
+          help: Hjælp til høringer
         section_footer:
-          title: Hjælp til lovgivningssamarbejde
+          title: Hjælp til høringer
           description: Deltag i debat om og processer forud for godkendelsen af nye reglementer eller strategier. Din mening vil blive taget i betragtning.
       phase_not_open:
         not_open: Denne fase er ikke igangsat endnu
@@ -118,6 +118,7 @@ da:
         debate_phase_not_open: Debatfasen er slut og du kan ikke længere angive svar
     shared:
       share: Del
+      share_comment: Kommenter på %{version_name} fra processen %{process_name}
     proposals:
       form:
         tags_label: "Kategorier"
