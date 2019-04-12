@@ -1351,7 +1351,9 @@ da:
       show:
         stats_title: Statistikker
         summary:
+          comment_votes: Kommentarstemmer
           comments: Kommentarer
+          debate_votes: Debatstemmer
           debates: Debatindlæg
           proposal_votes: Stemmer på forslag
           proposals: Borgerforslag
