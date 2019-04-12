@@ -99,6 +99,7 @@ da:
       tags_label: Emner
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
+      featured_debates: Vist
       filter_topic:
         one: " med emnet '%{topic}'"
         other: " med emnerne '%{topic}'"
@@ -331,6 +332,7 @@ da:
       map_remove_marker: "Flyt markøren"
       map_skip_checkbox: "Dette forslag omhandler ikke en specifik lokation, eller også kender jeg ikke til den."
     index:
+      featured_proposals: Vist
       filter_topic:
         one: " med emnet '%{topic}'"
         other: " med emnerne '%{topic}'"
@@ -528,6 +530,7 @@ da:
     "no": "Nej"
     search_results: "Søgeresultater"
     advanced_search:
+      author_type: "Sorteret efter brugere"
       author_type_blank: "Vælg en kategori"
       date: "Efter dato"
       date_placeholder: "DD/MM/ÅÅÅÅ"
@@ -796,6 +799,7 @@ da:
       title: Kontoverificering
     welcome:
       go_to_index: Se borgerforslag og debatindlæg
+      start_using_consul: Gå til indekssiden
       title: Deltag
       user_permission_debates: Deltag i debatten
       user_permission_info: Med din konto kan du...
