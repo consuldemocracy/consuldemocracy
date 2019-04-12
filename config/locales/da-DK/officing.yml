@@ -17,11 +17,16 @@ da:
         select_poll: Vælg afstemning
         add_results: Tilføj resultater
     poll_budgets:
+      see_ballot_sheets: Se lister over stemmesedler
       index:
+        title: "%{poll_budget} - Liste over stemmesedler"
+        ballot_sheet: "Stemmesedler %{id}"
         ballot_sheet_name: Navn
         ballot_sheet_author: Oprettet af
         ballot_sheet_creation_date: Oprettelsesdato
+        empty_results: Der er ingen stemmesedler til denne afstemning endnu
       new:
+        title: "%{poll_budget} - Ny stemmeseddel"
         booth: Valgsted
         select_booth: Vælg valgsted
         csv_data: CSV data
@@ -44,6 +49,7 @@ da:
         booth: "Stemmeboks"
         date: "Dato"
         select_booth: "Vælg stemmeboks"
+        ballots_white: "Ingen stemmer"
         ballots_null: "Ugyldige stemmer"
         ballots_total: "Samlet antal stemmer"
         submit: "Gem"
@@ -54,6 +60,7 @@ da:
         results: Resultater
         table_answer: Svar
         table_votes: Stemmer
+        table_whites: "Ingen stemmer"
         table_nulls: "Ugyldige stemmer"
         table_total: "Samlet antal stemmer"
     residence:
