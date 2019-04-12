@@ -1103,6 +1103,7 @@ da:
         official_updated: Detaljer om embedsmand gemt
       index:
         title: Embedsmænd
+        help: Brugere markeret som embedsmænd vil have deres position fremhævet ved siden af deres brugernavn. Du kan definere positionen på en skala fra 1 (mest vigtig) til 5 (mindst vigtig).
         no_officials: Der er ingen embedsmænd.
         name: Navn
         official_position: Titel
@@ -1208,6 +1209,7 @@ da:
         placeholder: Søg stemmeboks vis navn
       poll_officers_search:
         button: Søg
+        placeholder: Søg ansvarlig medarbejder
       poll_questions_search:
         button: Søg
         placeholder: Søg spørgsmål til afstemning
@@ -1216,6 +1218,7 @@ da:
         placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
       spending_proposal_search:
         button: Søg
+        placeholder: Søg efter udgiftsforslag via titel eller beskrivelse
       user_search:
         button: Søg
         placeholder: Søg bruger vis navn eller e-mail
@@ -1226,6 +1229,7 @@ da:
       description: Beskrivelser
       image: Billede
       show_image: Vis billede
+      moderated_content: "Tjek og bekræft at moderatorernes modificering af indhold er udført korrekt."
       view: Se
       proposal: Borgerforslag
       author: Oprettet af
@@ -1281,6 +1285,7 @@ da:
         undefined: Udefineret
       summary:
         title: Resumé over budgetforslag
+        title_proposals_with_supports: Oversigt over investeringsforslag, der har modtaget støtte
         geozone_name: Område
         finished_and_feasible_count: Afsluttet og kan gennemføres
         finished_and_unfeasible_count: Afsluttet og kan ikke gennemføres
@@ -1298,6 +1303,7 @@ da:
         name: Navn
         external_code: Ekstern kode
         census_code: Postnummer
+        code_help: Svarkode for dette geografiske område på API (Application Programming Interface)
         coordinates: Koordinater
         coordinates_help: Koordinater, som vil generere et klikbart område på et HTML imagemap
       errors:
@@ -1322,6 +1328,7 @@ da:
       name: Navn
       no_signature_sheets: "Der er ingen signaturark"
       index:
+        title: Signaturark
         new: Nye signaturark
       new:
         title: Nye signaturark
