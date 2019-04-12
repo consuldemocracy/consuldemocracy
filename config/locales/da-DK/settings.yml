@@ -71,14 +71,19 @@ da:
       google_login: "Google login"
       google_login_description: "Tillad brugere at registrere sig med Google"
       featured_proposals: "Udvalgte forslag"
+      featured_proposals_description: "Viser udvalgte forslag på indeks"
       signature_sheets: "Signaturark"
+      signature_sheets_description: "Det giver mulighed for at tilføje underskrifter fra Administrationspanelet indsamlet fysisk i forbindelse med Borgerforslag og investeringsforslag til deltagerbudgetter"
+      spending_proposals: "Udgiftsforslag"
       spending_proposals_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
       spending_proposal_features:
         voting_allowed: Stem på investeringsprojekter - forhåndsudvælgelsesfase
         voting_allowed_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
       user:
         recommendations: "Anbefalinger"
+        recommendations_description: "Viser brugeranbefalinger på startsiden baseret på hashtags og følgere"
         skip_verification: "Spring brugerverificering over"
+        skip_verification_description: "This will disable user verification and all registered users will be able to participate in all processes"
         recommendations_on_debates: "Anbefalinger på debatindlæg"
       map: "Forslagets og investeringsprojektets geografiske område"
       map_description: "Aktiver geografisk område for forslag og investeringsprojekter"
@@ -101,3 +106,5 @@ da:
       polls_description: "Borgerafstemningerne er en deltagelsesproces, hvor stemmeberettigede borgere kan få direkte indflydelse og være med til at træffe lokalpolitiske beslutninger"
       budgets: "Deltagerbudgetter"
       budgets_description: "Med deltagerbudgetter beslutter borgerne hvilke projekter, der vil blive en del af det kommunale budget"
+    html:
+      per_page_code_head: "Kode inkluderet på alle sidesektioner (<head>)"
