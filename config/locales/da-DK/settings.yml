@@ -49,15 +49,18 @@ da:
     mailer_from_name: "Afsenderens e-mail"
     mailer_from_name_description: "Dette navn vil fremstå som afsenderen, når brugere modtager e-mails fra programmet"
     mailer_from_address: "Afsenderens e-mail"
+    mailer_from_address_description: "Dette er e-mailen, brugerne kan se, når de modtager e-mails fra programmet"
     meta_title: "Sidens titel (SEO)"
     meta_title_description: "Titel til siden <titel>, anvendt til at øge SEO"
     meta_description: "Beskrivelse af siden (SEO)"
     meta_description_description: 'Beskrivelse af siden <meta name="description" >, anvendes til forbedring af SEO'
     meta_keywords: "Søgeord (SEO)"
+    meta_keywords_description: 'Nøgleord <meta name="keywords">, anvendes til at forbedre SEO'
     min_age_to_participate: Minimumsalder for deltagelse
     min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
     analytics_url: "Analytisk URL"
     proposal_notification_minimum_interval_in_days: "Minimum interval (i dage) hvor brugere kan sende nye meddelelse vedrørende deres oprettede forslag"
+    proposal_notification_minimum_interval_in_days_description: "Antal dage brugere kan sende beskeder til de brugere, der støtter deres forslag"
     direct_message_max_per_day: "Max antal direkte beskeder pr. dag"
     direct_message_max_per_day_description: "Det maksimale antal direkte beskeder en bruger kan sende om dagen"
     feature:
@@ -67,6 +70,7 @@ da:
       facebook_login_description: "Tillad brugere at registrere sig med Facebook"
       google_login: "Google login"
       google_login_description: "Tillad brugere at registrere sig med Google"
+      featured_proposals: "Udvalgte forslag"
       signature_sheets: "Signaturark"
       spending_proposals_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
       spending_proposal_features:
