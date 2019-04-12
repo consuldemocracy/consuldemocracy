@@ -41,6 +41,8 @@ da:
     url_description: "Angiv URL for din hjemmeside"
     org_name: "Sidens navn"
     org_name_description: "Dette navn vil fremgå i emnefeltet (e-mails), hjælpesider..."
+    hot_score_period_in_days: "Tidsperiode (dage) anvendt af filtreret 'mest aktiv'"
+    hot_score_period_in_days_description: "Filtret 'mest aktiv', der anvendes i flere sektioner, vil være baseret på stemmer modtaget de seneste X dage"
     mailer_from_name: "Afsenderens e-mail"
     mailer_from_address: "Afsenderens e-mail"
     meta_title: "Sidens titel (SEO)"
@@ -59,6 +61,7 @@ da:
       facebook_login_description: "Tillad brugere at registrere sig med Facebook"
       google_login: "Google login"
       google_login_description: "Tillad brugere at registrere sig med Google"
+      signature_sheets: "Signaturark"
       spending_proposals_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
       spending_proposal_features:
         voting_allowed: Stem på investeringsprojekter - forhåndsudvælgelsesfase
