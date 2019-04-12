@@ -53,6 +53,7 @@ da:
     min_age_to_participate: Minimumsalder for deltagelse
     min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
     analytics_url: "Analytisk URL"
+    proposal_notification_minimum_interval_in_days: "Minimum interval (i dage) hvor brugere kan sende nye meddelelse vedrørende deres oprettede forslag"
     direct_message_max_per_day: "Max antal direkte beskeder pr. dag"
     direct_message_max_per_day_description: "Det maksimale antal direkte beskeder en bruger kan sende om dagen"
     feature:
@@ -71,6 +72,8 @@ da:
         recommendations: "Anbefalinger"
         skip_verification: "Spring brugerverificering over"
         recommendations_on_debates: "Anbefalinger på debatindlæg"
+      map: "Forslagets og investeringsprojektets geografiske område"
+      map_description: "Aktiver geografisk område for forslag og investeringsprojekter"
       allow_images: "Tillad overførsler og vis billeder"
       allow_images_description: "Tillad brugere at overføre billeder, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
       allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
