@@ -58,6 +58,12 @@ da:
       poll/booth:
         one: "valgsted"
         other: "valgsteder"
+      poll/officer:
+        one: "ansvarlig medarbejder"
+        other: "ansvarlig medarbejdere"
+      poll/ballot_sheet:
+        one: Stemmeseddel
+        other: Stemmesedler
       proposal:
         one: "Borgerforslag"
         other: "Borgerforslag"
@@ -205,6 +211,10 @@ da:
         external_url: "Link til yderligere dokumentation"
       poll/question/translation:
         title: "Spørgsmål"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Afstemning
+        officer_assignment_id: Tilknyttet medarbejder
       signature_sheet:
         signable_type: "Underskriftstype"
         signable_id: "ID"
