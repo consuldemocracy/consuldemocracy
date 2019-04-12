@@ -52,6 +52,7 @@ da:
     meta_keywords: "Søgeord (SEO)"
     min_age_to_participate: Minimumsalder for deltagelse
     min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
+    analytics_url: "Analytisk URL"
     direct_message_max_per_day: "Max antal direkte beskeder pr. dag"
     direct_message_max_per_day_description: "Det maksimale antal direkte beskeder en bruger kan sende om dagen"
     feature:
@@ -69,6 +70,7 @@ da:
       user:
         recommendations: "Anbefalinger"
         skip_verification: "Spring brugerverificering over"
+        recommendations_on_debates: "Anbefalinger på debatindlæg"
       allow_images: "Tillad overførsler og vis billeder"
       allow_images_description: "Tillad brugere at overføre billeder, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
       allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
