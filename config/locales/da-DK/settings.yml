@@ -110,10 +110,13 @@ da:
       debates: "Debatforum"
       debates_description: "Borgernes debatforum er tilegnet enhver, der ønsker at præsentere og dele deres mening om en eller flere problematikker af interesse"
       proposals: "Forslag"
+      proposals_description: "Borgerforslag åbner muligheden for, at borgere og foreninger kan være med til direkte at beslutte, hvordan de ønsker deres samfund skal være"
       polls: "Afstemninger"
       polls_description: "Borgerafstemningerne er en deltagelsesproces, hvor stemmeberettigede borgere kan få direkte indflydelse og være med til at træffe lokalpolitiske beslutninger"
       budgets: "Deltagerbudgetter"
       budgets_description: "Med deltagerbudgetter beslutter borgerne hvilke projekter, der vil blive en del af det kommunale budget"
+      legislation: "Lovgivning"
+      legislation_description: "I deltagelsesprocesserne får borgerne mulighed for at deltage i udarbejdelse og ændring af forordninger, der påvirker samfundet, og give deres mening i forhold til de foranstaltninger, der skal gennemføres"
     html:
       per_page_code_head: "Kode inkluderet på alle sidesektioner (<head>)"
       per_page_code_head_description: "Denne kode vises i <head>. Brugbar i forhold til indlæsning af brugerdefinerede fremstillinger, analyser..."
