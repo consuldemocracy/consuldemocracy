@@ -85,6 +85,8 @@ da:
         skip_verification: "Spring brugerverificering over"
         skip_verification_description: "This will disable user verification and all registered users will be able to participate in all processes"
         recommendations_on_debates: "Anbefalinger på debatindlæg"
+      community: "Fællesskab for forslag og investeringer"
+      community_description: "Aktiver 'Fællesskab' knyttet til borgerforslag og investeringsprojekter i deltagerbudgetter"
       map: "Forslagets og investeringsprojektets geografiske område"
       map_description: "Aktiver geografisk område for forslag og investeringsprojekter"
       allow_images: "Tillad overførsler og vis billeder"
@@ -92,6 +94,7 @@ da:
       allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
       allow_attached_documents_description: "Tillad brugere at overføre filer, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
       guides: "Guide til oprettelse af forslag eller investeringsprojekter"
+      guides_description: "Viser en guide, der forklarer forskellen på et borgerforslag og et investeringsforslag, hvis et deltagerbudget er aktivt"
       public_stats: "Offentlig statistik"
       help_page: "Hjælp"
     map:
@@ -108,3 +111,6 @@ da:
       budgets_description: "Med deltagerbudgetter beslutter borgerne hvilke projekter, der vil blive en del af det kommunale budget"
     html:
       per_page_code_head: "Kode inkluderet på alle sidesektioner (<head>)"
+      per_page_code_head_description: "Denne kode vises i <head>. Brugbar i forhold til indlæsning af brugerdefinerede fremstillinger, analyser..."
+      per_page_code_body: "Kode inkluderet på alle sidesektioner (<body>)"
+      per_page_code_body_description: "Denne kode vises i <body>. Brugbar i forhold til indlæsning af brugerdefinerede fremsitllinger, analyser..."
