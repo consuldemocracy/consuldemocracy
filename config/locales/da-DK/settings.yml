@@ -21,6 +21,7 @@ da:
     proposal_code_prefix: "Foranstillet titel for Forslag koder"
     proposal_code_prefix_description: "Denne foranstillede titel vil være synlig i Borgerslagene før oprettelsesdatoen og dens ID"
     featured_proposals_number: "Antal viste forslag"
+    featured_proposals_number_description: "Antal forslag, der vil være synlige, hvis Vis Forslag er slået til"
     votes_for_proposal_success: "Det nødvendige antal brugere, der støtter op om et forslag, før forslaget kan godkendes"
     votes_for_proposal_success_description: "Når et forslag støttes af dette antal brugere, vil det betragtes som succesfuldt og derfor ikke længere kunne støttes af øvrige brugere"
     months_to_archive_proposals: "Måneder til at arkivere Borgerforslagene"
