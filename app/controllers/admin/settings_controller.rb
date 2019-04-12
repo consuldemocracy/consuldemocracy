@@ -13,6 +13,7 @@ class Admin::SettingsController < Admin::BaseController
     @feature_settings = all_settings["feature"]
     @participation_processes_settings = all_settings["process"]
     @map_configuration_settings = all_settings["map"]
+    @proposals_settings = all_settings["proposals"]
   end
 
   def update
