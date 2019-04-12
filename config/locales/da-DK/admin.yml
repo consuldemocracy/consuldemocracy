@@ -85,8 +85,10 @@ da:
         table_investments: Investeringer
         table_edit_groups: Område grupper
         table_edit_budget: Rediger
+        table_admin_ballots: Stemmesedler
         edit_groups: Rediger område grupper
         edit_budget: Rediger budget
+        admin_ballots: Administrer stemmesedler
         no_budgets: "Der er ingen budgetter."
       create:
         notice: Det nye deltagerbudget blev oprettet!
@@ -422,6 +424,7 @@ da:
           process: Proces
           debate_phase: Debatfase
           draft_phase: Udkast fasen
+          draft_phase_description: Hvis fasen er aktiv, vil processen ikke fremgå i procesindekset. Tillad forhåndsvisning af processen og opret indhold før igangsættelsen.
           allegations_phase: Kommentarfasen
           proposals_phase: Forslagsfasen
           use_markdown: Anvend Markdown til at formatere teksten
@@ -1060,6 +1063,9 @@ da:
         title: "Resultater"
         no_results: "Der er ingen resultater"
       result:
+        table_whites: "Ingen stemmer"
+        table_nulls: "Ugyldige stemmer"
+        table_total: "Samlet antal stemmer"
         table_answer: Svar
         table_votes: Stemmer
       results_by_booth:
@@ -1091,6 +1097,7 @@ da:
     officials:
       edit:
         destroy: Fjern "Embedsmand"-status
+        title: "Embedsmænd: Rediger bruger"
       flash:
         official_destroyed: "Detaljer gemt: brugeren er ikke længere verificeret som embedsmand"
         official_updated: Detaljer om embedsmand gemt
@@ -1338,16 +1345,25 @@ da:
         stats_title: Statistikker
         summary:
           comments: Kommentarer
+          debates: Debatindlæg
+          proposal_votes: Stemmer på forslag
+          proposals: Borgerforslag
+          budgets: Åbne budgetter
           budget_investments: Investeringsforslag
+          spending_proposals: Udgiftsforslag
           unverified_users: Ikke verificerede brugere
+          user_level_three: Niveau tre brugere
+          user_level_two: Niveau to brugere
           users: Total antal brugere
           verified_users: Verificerede brugere
           verified_users_who_didnt_vote_proposals: Verificerede brugere, der ikke stemte på nogle forslag
           visits: Besøg
           votes: Sammenlagt antal stemmer
+        spending_proposals_title: Udgiftsforslag
         budgets_title: Deltagerbudget
         visits_title: Besøg
         direct_messages: Direkte beskeder
+        proposal_notifications: Underretning om forslag
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
       direct_messages:
@@ -1357,6 +1373,7 @@ da:
       proposal_notifications:
         title: Forslagsnotifikationer
         total: Total
+        proposals_with_notifications: Forslag med notifikationer
         not_available: "Afstemning ikke tilgængelig"
       polls:
         title: Statistik over afstemning
@@ -1428,6 +1445,8 @@ da:
           names:
             top_links: Top Links
             footer: Nederst på siden
+            subnavigation_left: Naviger til venstre
+            subnavigation_right: Naviger til højre
       images:
         index:
           title: Brugerdefinerede billeder
@@ -1490,6 +1509,7 @@ da:
             notice: "Informationsboksen blev slettet"
     homepage:
       title: Startside
+      description: De aktive moduler vil vises på startsiden i den samme rækkefølge som her.
       header_title: Sidehoved
       no_header: Der findes ingen sidehoveder.
       create_header: Opret sidehoved
