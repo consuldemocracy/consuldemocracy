@@ -1,9 +1,5 @@
 <div id="<%= dom_id(poll) %>" class="small-12 medium-6 large-4 column end">
   <div class="poll-card" data-equalizer-watch="poll-cards">
-    <a href="#" class="clipboard js-clipboard" data-clipboard-text="<%= poll_url(poll) %>">
-      <%= t("dashboard.polls.poll.copy_link") %>
-    </a>
-
     <h4><%= link_to poll.title, poll, target: "_blank" %></h4>
     <span class="small">
       <%= l(poll.starts_at.to_date) %> - <%= l(poll.ends_at.to_date) %>

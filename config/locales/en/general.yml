@@ -552,7 +552,6 @@ en:
         title: New poll
         submit: Create poll
       poll:
-        copy_link: Copy link
         responses:
           one: "%{count} response"
           other: "%{count} responses"

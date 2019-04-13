@@ -552,7 +552,6 @@ es:
         title: Nueva encuesta
         submit: Crear encuesta
       poll:
-        copy_link: Copiar enlace
         responses:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
