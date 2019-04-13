@@ -551,6 +551,8 @@ es:
       new:
         title: Nueva encuesta
         submit: Crear encuesta
+      edit:
+        submit: Actualizar encuesta
       poll:
         responses:
           one: "%{count} respuesta"

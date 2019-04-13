@@ -551,6 +551,8 @@ en:
       new:
         title: New poll
         submit: Create poll
+      edit:
+        submit: Update poll
       poll:
         responses:
           one: "%{count} response"
