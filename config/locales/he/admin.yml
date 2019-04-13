@@ -429,7 +429,7 @@ he:
           enabled: מאופשר
           process: תהליכים
           debate_phase: שלב הדיון
-          draft_phase: שלב הטיוטא
+          draft_phase: שלב הטיוטה
           draft_phase_description: אם שלב זה פעיל, התהליך לא יירשם ברשימת התהליכים. יש לאפשר הצגת התהליך בתצוגה מקדימה וליצור תוכן לפני שתתחיל.
           allegations_phase: שלב ההערות
           proposals_phase: שלב ההצעות
