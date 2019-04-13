@@ -371,7 +371,7 @@ end
 
 def documentable_fill_new_valid_dashboard_action
   fill_in :dashboard_action_title, with: "Dashboard title"
-  fill_in :dashboard_action_short_description, with: "Dashboard description"
+  fill_in_ckeditor :dashboard_action_description, with: "Dashboard description"
 end
 
 def documentable_fill_new_valid_budget_investment

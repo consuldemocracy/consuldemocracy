@@ -5,7 +5,8 @@
     <%= f.label :action_type %>
     <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
       <span class="margin-right">
-        <%= f.radio_button :action_type, action_type_value, label: false %>
+        <%= f.radio_button :action_type, action_type_value, label: false,
+                            data: {toggle: "request_to_administrators short_description"} %>
         <%= f.label "action_type_#{action_type_value}", t("admin.dashboard.actions.action_type.#{action_type_value}") %>
       </span>
     <% end %>
@@ -15,7 +16,8 @@
     <%= f.check_box :active, label: ::Dashboard::Action.human_attribute_name(:active) %>
   </div>
 
-  <div class="small-12 column margin-bottom">
+  <div id="request_to_administrators" class="small-12 column margin-bottom hide"
+                                      data-toggler=".hide">
     <%= f.check_box :request_to_administrators, label: ::Dashboard::Action.human_attribute_name(:request_to_administrators) %>
   </div>
 
@@ -26,11 +28,12 @@
     <%= f.label :title %>
     <%= f.text_field :title, label: false %>
 
-    <%= f.label :short_description %>
-    <%= f.text_field :short_description, label: false %>
+    <div id="short_description" class="hide">
+      <%= f.label :short_description %>
+      <%= f.text_field :short_description, label: false %>
+    </div>
 
-    <%= f.cktext_area :description,
-                      ckeditor: { language: I18n.locale } %>
+    <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
   </div>
 </div>
 
