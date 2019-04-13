@@ -77,11 +77,11 @@ he:
       index:
         title: תקציבים השתתפותיים
         new_link: צור תקציב חדש
-        filter: Filter
+        filter: מסנן
         filters:
           open: Open
           finished: הסתיים
-        budget_investments: See budget investments
+        budget_investments: נהל פרויקטים
         table_name: Name
         table_phase: שלב
         table_investments: השקעות
