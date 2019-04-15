@@ -476,6 +476,8 @@ he:
     update:
       form:
         submit_button: שמירת שינויים
+    share:
+      message: "אני תומך את בהצעה %{title} ב %{handle}. אם אתה מעוניין, תמוך בה גם!"
   polls:
     all: "כולם"
     no_dates: "לא הוקצה תאריך"
@@ -493,10 +495,20 @@ he:
       geozone_info: "יכולים להשתתף אזרחים מ: "
       already_answer: "השתתפת כבר בהצבעה זו"
       not_logged_in: "נדרשת התחברות או הרשמה בכדי להשתתף"
+      unverified: "אתה חייב לאמת את החשבון שלך בכדי להשתתף"
       cant_answer: "הצבעה זו אינה זמינה באזור מגוריך"
       section_header:
+        icon_alt: סמל ההצבעה
         title: הצבעות
+        help: עזרה לגבי הצבעה
+      section_footer:
+        title: עזרה לגבי הצבעה
+        description: סקרי האזרחים הם מנגנון שיתופי שבו האזרחים עם זכויות הצבעה יכולים להחליט החלטות ישירות
+      no_polls: "אין הצבעות פתוחות."
     show:
+      already_voted_in_booth: "כבר השתתפת בדוכן פיזי. אתה לא יכול להשתתף שוב."
+      already_voted_in_web: "כבר השתתפת בסקר זה. אם תצביע שוב הצבעתך תדרוס את הקודמת."
+      back: חזרה להצבעה
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
       comments_tab: הערות
       login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
@@ -508,10 +520,32 @@ he:
       cant_answer_wrong_geozone: "הצבעה זו אינה זמינה לאזור הגאוגרפי שלך"
       more_info_title: "מידע נוסף"
       documents: מסמכים
+      zoom_plus: הרחב את התמונה
+      read_more: "קרא עוד על %{answer}"
+      read_less: "קרא פחות על %{answer}"
+      videos: "מקור וידאו חיצוני"
+      info_menu: "מידע"
+      stats_menu: "סטטיסטיקת השתתפות"
+      results_menu: "תוצאות סקר"
+      stats:
+        title: "נתוני השתתפות"
+        total_participation: "סה\"כ משתתפים"
+        total_votes: "סך כל ההצבעות הנתונות"
+        votes: "הצבעות"
+        web: "אינטרנט"
+        booth: "דוכן"
+        total: "סך הכל"
+        valid: "חוקי"
+        white: "הצבעות לבנות"
+        null_votes: "לא חוקי"
+      results:
+        title: "שאלות"
+        most_voted_answer: "התשובות הכי מוצבעות: "
   poll_questions:
     show:
       vote_answer: "הצבעה %{answer}"
       voted: "עליך להצביע %{answer}"
+      voted_token: "אתה יכול לכתוב את מזהה ההצבעה הזה, בכדי לבדוק את הצבעתך בתוצאות הסופיות:"
   proposal_notifications:
     new:
       title: "שליחה"
@@ -528,6 +562,7 @@ he:
     delete: מחיקה
     "yes": "כן"
     "no": "לא"
+    search_results: "תוצאות החיפוש"
     advanced_search:
       author_type: "לפי סוג המחבר/ת"
       author_type_blank: "בחר/י סוג"
@@ -553,6 +588,9 @@ he:
     check_none: שום דבר
     collective: קבוצתי
     flag: סמן כתוכן לא-ראוי
+    follow: "עקוב"
+    following: "עוקבים"
+    follow_entity: "עקוב %{entity}"
     hide: הסתר
     print:
       print_button: הדפסת מידע זה
