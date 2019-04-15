@@ -164,6 +164,10 @@ he:
       author_deleted: משתמש/ת זה/ו נמחק/ה
       comments:
         zero: אין תגובות
+        one: תגובה אחת
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
       comments_title: הערות
       edit_debate_link: ערוך
       flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
@@ -216,6 +220,7 @@ he:
     header:
       administration: ניהול
       available_locales: שפות לבחירה
+      collaborative_legislation: חקיקה שיתופית
       debates: דיונים
       locale: "שפה:"
       logo: Consul logo לוגו
