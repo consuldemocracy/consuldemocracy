@@ -400,7 +400,12 @@ he:
       top: בראש סדר-היום השבוע
       top_link_proposals: ההצעות שצברו הכי הרבה תמיכה, לפי נושא
       section_header:
+        icon_alt: סמל הצעה
         title: הצעות
+        help: עזרה בנושאי הצעות
+      section_footer:
+        title: עזרה בנושאי הצעות
+        description: הצעותיהם של האזרחים הן הזדמנות לשכנים ולקולקטיבים להחליט באופן ישיר כיצד הם רוצים את שהעיר תיראה, לאחר קבלת תמיכה מספקת והגשתה להצבעת אזרחים.
     new:
       form:
         submit_button: יצירת הצעה חדשה
@@ -413,17 +418,36 @@ he:
     notice:
       retired: ההצעה הוסרה
     proposal:
+      created: "יצרת הצעה!"
+      share:
+        guide: "עכשיו אתה יכול לחלוק את זה כך שאנשים יכולים להתחיל לתמוך."
+        edit: "לפני שאתה משתף תוכל לשנות את הטקסט כרצונך."
+        view_proposal: לא עכשיו, גש אל ההצעה שלי
       already_supported: תודה שתמכת בהצעה זו. תוכל/י לשתף
       comments:
         zero: אין תגובות
+        one: תגובה אחת
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
       support: בעד
       support_title: לתמיכה בהצעה זו
       supports:
         zero: אין תומכים
+        one: תמיכה 1
+        two: "%{count} תומכים"
+        many: "%{count} תומכים"
+        other: "%{count} תומכים"
       votes:
         zero: אין הצבעות
+        one: הצבעה אחת
+        two: "%{count} הצבעות"
+        many: "%{count} הצבעות"
+        other: "%{count} הצבעות"
       supports_necessary: "“נדרשים %{number} תומכים\""
+      total_percent: מאה אחוז
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
+      successful: "הצעה זו הגיעה לתמיכה הנדרשת."
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
       code: "קוד ההצעה:"
@@ -547,6 +571,17 @@ he:
       budget: מימון השתתפותי
       searcher: חיפוש
     share: שיתוף
+    orbit:
+      next_slide: השקופית הבאה
+    documentation: קישור למידע נוסף
+    view_mode:
+      title: מצב תצוגה
+      cards: כרטיסים
+      list: רשימה
+    recommended_index:
+      title: המלצות
+      see_more: ראה עוד המלצות
+      hide: הסתר המלצות
   social:
     facebook: "פייסבוק"
     twitter: "טוויטר"
@@ -573,6 +608,11 @@ he:
         button: חיפוש
         placeholder: פרויקטים להשקעה...
         title: חיפוש
+      search_results:
+        one: " המכיל את המונח '%{search_term}'"
+        two: " המכיל את המונחים '%{search_term}'"
+        many: " המכיל את המונחים '%{search_term}'"
+        other: " המכיל את המונחים '%{search_term}'"
       sidebar:
         geozones: היקף הפעילות
         feasibility: סבירות לביצוע
@@ -597,6 +637,10 @@ he:
       support_title: תמיכה בפרויקט זה
       supports:
         zero: אין תמיכה
+        one: תמיכה 1
+        two: "%{count} תומכים"
+        many: "%{count} תומכים"
+        other: "%{count} תומכים"
   stats:
     index:
       visits: ביקורים
@@ -635,15 +679,45 @@ he:
       deleted_budget_investment: השקעה זו נמחקה
       proposals: הצעות
       debates: דיונים
+      budget_investments: השקעות בתקציב
       comments: הערות
+      actions: פעולות
+      filters:
+        comments:
+          one: תגובה אחת
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
+        debates:
+          one: דיון אחד
+          two: "%{count} דיונים"
+          many: "%{count} דיונים"
+          other: "%{count} דיונים"
+        proposals:
+          one: הצעה אחת
+          two: "%{count} הצעות"
+          many: "%{count} הצעות"
+          other: "%{count} הצעות"
+        budget_investments:
+          one: השקעה אחת
+          two: "%{count} השקעות"
+          many: "%{count} השקעות"
+          other: "%{count} השקעות"
+        follows:
+          one: עוקב אחד
+          two: "%{count} עוקבים"
+          many: "%{count} עוקבים"
+          other: "%{count} עוקבים"
       no_activity: למשתמש/ת זה/ו אין פעילות ציבורית
       no_private_messages: "משתמש/ת זה/זו אינו/ה מקבל/ת הודעות פרטיות"
       private_activity: משתמש/ת זה/ו בחר/ה לשמור בסוד את רשימת הפעילויות שלו/ה
       send_private_message: "שליחת הודעה פרטית"
+      delete_alert: "בטוח שברצונך למחוק את פרויקט ההשקעה שלך? לא ניתן לשחזר פעולה זו"
     proposals:
       send_notification: "שליחת הודעה"
       retire: "לפרוש"
       retired: "פרשת מזה"
+      see: "ראה/י הצעות"
   votes:
     agree: הסכמה
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
@@ -664,10 +738,26 @@ he:
       not_voting_allowed: שלב ההצבעות נסגר
     budget_investments:
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
+      not_verified: רק משתמשים שאומת חשבונם יכולים להצביע על ההצעות; %{verify_account}.
       organization: ארגונים אינם רשאים להצביע
       unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
       not_voting_allowed: שלב ההצבעות נסגר
+      different_heading_assigned:
+        one: "תוכל לתמוך רק בפרויקט להשקעה ברובע %{count}. כבר תמכת בהשקעות ב-%{supported_headings}."
+        two: "תוכל לתמוך רק בפרויקטים להשקעה ברובעים %{count}. כבר תמכת בהשקעות ב-%{supported_headings}."
+        many: "תוכל לתמוך רק בפרויקטים להשקעה ברובעים %{count}. כבר תמכת בהשקעות ב-%{supported_headings}."
+        other: "תוכל לתמוך רק בפרויקטים להשקעה ברובעים %{count}. כבר תמכת בהשקעות ב-%{supported_headings}."
   welcome:
+    feed:
+      most_active:
+        debates: "הדיונים הכי פעילים"
+        proposals: "ההצעות הכי פעילות"
+        processes: "תהליכים פתוחים"
+      see_all_debates: ראה את כל הדיונים
+      see_all_proposals: ראה/י את כל ההצעות
+      see_all_processes: ראה את כל התהליכים
+      process_label: תהליים
+      see_process: ראה תהליכים
     cards:
       title: מוצע
     verification:
