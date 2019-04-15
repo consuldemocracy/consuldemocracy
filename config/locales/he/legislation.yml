@@ -22,6 +22,9 @@ he:
           winners: Selected
       index:
         filter: Filter
+        section_header:
+          icon_alt: סמל חקיקה שיתופית
+          title: חקיקה שיתופית
       shared:
         debate_dates: דיון
         allegations_dates: הערות
