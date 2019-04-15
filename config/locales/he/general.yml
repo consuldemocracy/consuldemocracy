@@ -180,6 +180,7 @@ he:
   errors:
     messages:
       user_not_found: משתמש/ת לא נמצא/ה
+      invalid_date_range: "טווח תאריכים לא חוקי"
   form:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
     accept_terms_title: אני מאשר/ת שקראתי והסכמתי למדיניות הפרטיות, לכללים ותנאי השימוש
@@ -188,14 +189,21 @@ he:
     direct_message: פנייה פרטית
     error: שגיאה זו מונעת
     errors: שגיאות אלו מונעות
+    not_saved_html: "מנעו מ %{resource} להישמר. <br>בדוק את השדות המסומנים בכדי לתקן אותם:"
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
     spending_proposal: הצעה להוצאות כספים
     budget/investment: השקעה
+    budget/group: תקציב הקבוצה
+    budget/heading: כותרת התקציב
+    poll/shift: משמרת
+    poll/question/answer: תשובה
     user: חשבון משתמש/ת
     verification/sms: מספר טלפון
     signature_sheet: גיליון חתימה
+    document: מסמך
+    topic: נושא
     image: תמונה
   geozones:
     none: בכל הערים/הרשויות
@@ -210,14 +218,17 @@ he:
       accessibility: נגישות
       conditions: כללים ותנאי שימוש
       consul: מערכת ההצבעות של קול העם
+      consul_url: https://github.com/consul/consul
       contact_us: לתמיכה טכנית עברו אל
       copyright: Consul, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: אתם/ן קובעים/ות איך תתנהל המדינה בה אתם/ן גרים/ות
       participation_title: השתתפות
       privacy: מדיניות הפרטיות
     header:
+      administration_menu: מנהל מערכת
       administration: ניהול
       available_locales: שפות לבחירה
       collaborative_legislation: חקיקה שיתופית
@@ -227,6 +238,7 @@ he:
       management: הנהלה
       moderation: הנחייה
       valuation: הערכה
+      officing: בודקי סקרים
       help: עזרה
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
@@ -237,13 +249,42 @@ he:
       budgets: מימון השתתפותי
       spending_proposals: הצעות להוצאת כספים
       notification_item:
+        new_notifications:
+          one: . יש לך התרעה חדשה
+          two: יש לך %{count} התרעות חדשות
+          many: יש לך %{count} התרעות חדשות
+          other: יש לך %{count} התרעות חדשות
         notifications: התראות
         no_notifications: "אין לך התראות חדשות"
+    admin:
+      watch_form_message: "יש שינויים שלא נשמרו. האם אתה מאשר לעזוב את הדף?"
   notifications:
     index:
       empty_notifications: אין לך תגובות חדשות
       mark_all_as_read: סימון נקראו על כל התגובות
+      read: נקרא
       title: התראות
+      unread: לא נקרא
+    notification:
+      action:
+        comments_on:
+          one: מישהו הגיב על
+          two: ישנם %{count} תגובות חדשות על
+          many: ישנם %{count} תגובות חדשות על
+          other: ישנם %{count} תגובות חדשות על
+        proposal_notification:
+          one: יש התרעה חדשה אחת על
+          two: ישנם %{count} התרעות חדשות על
+          many: ישנם %{count} התרעות חדשות על
+          other: ישנם %{count} התרעות חדשות על
+        replies_to:
+          one: מישהו הגיב על ההערה שלך
+          two: ישנם %{count} תגובות חדשות על ההערה שלך
+          many: ישנם %{count} תגובות חדשות על ההערה שלך
+          other: ישנם %{count} תגובות חדשות על ההערה שלך
+      mark_as_read: סמן כנקרא
+      mark_as_unread: סמן כהודעה שלא נקראה
+      notifiable_hidden: משאב זה אינו זמין יותר.
   map:
     title: "באזור הגאוגרפי שלי"
     proposal_for_district: "העלאת הצעה בקשר לשכונה שלך"
@@ -295,6 +336,7 @@ he:
       geozone: היקף הפעילות
       proposal_external_url: קישור למידע נוסף
       proposal_question: השאלה המוצעת
+      proposal_question_example_html: "חייב להיות מסוכם בשאלה אחת לפחות עם תשובה של כן או לא"
       proposal_responsible_name: שם ושם משפחה מלא של מציע/ת ההצעה
       proposal_responsible_name_note: "“(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם יישמר חסוי מפני שאר המשתמשים)\""
       proposal_summary: תקציר ההצעה
@@ -307,14 +349,32 @@ he:
       tags_instructions: "תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
       tags_label: תגיות
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
+      map_location: "מיקום מפה"
+      map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
+      map_remove_marker: "הסר סמן מפה"
+      map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
     index:
       featured_proposals: מוצע
+      filter_topic:
+        one: " הכולל את הנושא '%{topic}'"
+        two: " הכולל את הנושאים '%{topic}'"
+        many: " הכולל את הנושאים '%{topic}'"
+        other: " הכולל את הנושאים '%{topic}'"
       orders:
         confidence_score: הכי נתמכת
         created_at: הכי חדשה
         hot_score: הכי פעילה
         most_commented: עם הכי הרבה תגובות
         relevance: נוגעת לעניין
+        archival_date: הועבר לארכיון
+        recommendations: המלצות
+      recommendations:
+        without_results: אין הצעות הקשורות לתחומי העניין שלך
+        without_interests: עקוב אחר הצעות בכדי שנוכל לתת לך המלצות
+        disable: "המלצות לדיונים יפסיקו להופיע אם תבטל אותן. תוכל להפעיל אותם שוב בדף 'החשבון שלי'"
+        actions:
+          success: "המלצות לדיונים מושבתות כעת עבור חשבון זה"
+          error: "ארעה שגיאה. עבור אל דף 'החשבון שלי' בכדי להשבית באופן ידני את ההמלצות לדיונים"
       retired_proposals: הצעות שהוסרו
       retired_proposals_link: "הצעות שהוסרו על-ידי המחבר/ת"
       retired_links:
@@ -328,6 +388,11 @@ he:
         button: חיפוש
         placeholder: חיפוש הצעות ...
         title: חיפוש
+      search_results_html:
+        one: " המכיל את המונח <strong>'%{search_term}'</strong>"
+        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       select_order: הזמנה באמצעות
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
