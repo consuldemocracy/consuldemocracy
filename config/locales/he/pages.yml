@@ -154,6 +154,8 @@ he:
       compatibility:
         title: תאימות עם סטנדרטים ועיצוב חזותי
         description_html: 'כל הדפים באתר זה מצייתים ל <strong> הנחיות נגישות </strong> או עקרונות כלליים של עיצוב נגיש, שהוקמה על ידי קבוצת העבודה <abbr title = "Web Accessibility Initiative" lang = "he"> WAI </abbr> השייך ל W3C.'
+    titles:
+      help: "מהו%{org}? - ההשתתפות האזרחית"
     verify:
       code: הקוד אותו קיבלת בדואר אלקטרוני
       email: דואר אלקטרוני
