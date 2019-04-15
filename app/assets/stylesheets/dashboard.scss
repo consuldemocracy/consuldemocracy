@@ -96,6 +96,7 @@
     display: inline-block;
     margin-left: $line-height / 4;
     max-width: 90%;
+    word-break: break-all;
 
     h4 {
       display: inline-block;
