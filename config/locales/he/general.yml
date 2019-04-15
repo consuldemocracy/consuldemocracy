@@ -453,17 +453,25 @@ he:
       code: "קוד ההצעה:"
       comments:
         zero: אין תגובות
+        one: תגובה אחת
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
       comments_tab: הערות
       edit_proposal_link: ערוך
       flag: הצעה זו סומנה כבלתי-ראויה בידי מספר משתמשים
       login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       notifications_tab: התראות
+      milestones_tab: אבני דרך
       retired_warning: "מחבר/ת ההצעה הזו הסיר/ה את ההצעה ומבקש/ת שלא לתמוך בה יותר."
       retired_warning_link_to_explanation: נא לקרוא את ההסבר לפני ההצבעה
       retired: ההצעה הוסרה על-ידי המחבר/ת
       share: שיתוף
       send_notification: שליחת הודעה
       no_notifications: "להצעה זו אין התראות."
+      embed_video_title: "וידאו על %{proposal}"
+      title_external_url: "תיעוד נוסף"
+      title_video_url: "מקור וידאו חיצוני"
       author: מחבר/ת
     update:
       form:
@@ -760,6 +768,18 @@ he:
       see_process: ראה תהליכים
     cards:
       title: מוצע
+    recommended:
+      title: המלצות שעשויות לעניין אותך
+      help: "המלצות אלה נוצרות על ידי תגי הדיונים וההצעות שאתה עוקב אחריהם."
+      debates:
+        title: דיונים מומלצים
+        btn_text_link: כל הדיונים המומלצים
+      proposals:
+        title: הצעות מומלצות
+        btn_text_link: כל ההצעות המומלצות
+      budget_investments:
+        title: השקעות מומלצות
+      slide: "ראה %{title}"
     verification:
       i_dont_have_an_account: אין לי חשבון
       i_have_an_account: כבר יש לי חשבון
@@ -767,6 +787,7 @@ he:
       title: אימות החשבון
     welcome:
       go_to_index: לצפייה בהצעות ובדיונים
+      start_using_consul: גש לדף הבית
       title: רוצה להשתתף בזה
       user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
@@ -780,15 +801,29 @@ he:
     sentence_for_humans: "אם אינך רובוט/ית, אפשר בבקשה להתעלם מהשדה הזה"
     timestamp_error_message: "מצטערים, זה היה מהיר מדי, נא לשלוח שוב"
   related_content:
+    title: "תוכן רלוונטי"
+    add: "הוסף תוכן רלוונטי"
+    label: "קישור לתוכן רלוונטי"
+    placeholder: "%{url}"
+    help: "ניתן להוסיף קישורים של%{models} בתוך%{org}."
     submit: "Add"
+    error: "הקישור אינו חוקי. זכור להתחיל עם%{url}."
+    error_itself: "הקישור אינו חוקי. אתה לא יכול לקשר תוכן לעצמו."
+    success: "הוספת תוכן קשור חדש"
+    is_related: "האם זה תוכן רלוונטי?"
     score_positive: "כן"
     score_negative: "לא"
     content_title:
       proposal: "הצעה"
       debate: "דיון"
+      budget_investment: "השקעת תקציב"
   admin/widget:
     header:
       title: ניהול
   annotator:
     help:
+      alt: בחר את הטקסט שברצונך להגיב עליו ולחץ על הלחצן עם העיפרון.
+      text: כדי להגיב על מסמך זה עליך%{sign_in} או%{sign_up}. לאחר מכן בחר את הטקסט שברצונך להגיב ולחץ על הלחצן עם העיפרון.
+      text_sign_in: כניסה
       text_sign_up: הרשמה
+      title: איך אני יכול להגיב על מסמך זה?
