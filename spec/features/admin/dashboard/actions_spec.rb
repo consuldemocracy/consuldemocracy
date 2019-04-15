@@ -22,8 +22,12 @@ feature "Admin dashboard actions" do
         visit admin_dashboard_actions_path
       end
 
-      scenario "shows that there are no records available" do
-        expect(page).to have_content("No records found")
+      scenario "shows only default actions" do
+        expect(page).to have_content("Polls")
+        expect(page).to have_content("Email")
+        expect(page).to have_content("Poster")
+
+        expect(page).to have_selector("a", text: "Edit", count: 3)
       end
     end
 
@@ -69,7 +73,9 @@ feature "Admin dashboard actions" do
 
     before do
       visit admin_dashboard_actions_path
-      click_link "Edit"
+      within ("#dashboard_action_#{action.id}") do
+        click_link "Edit"
+      end
     end
 
     scenario "Updates the action" do

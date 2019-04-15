@@ -379,7 +379,6 @@ es:
           create: Crear recurso o acción
           edit: Editar
           delete: Borrar
-          no_records: No se encontraron registros
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
@@ -390,6 +389,10 @@ es:
           action_active: Activo
           order: Orden
           published_proposal: Propuesta publicada
+          default:
+            email: Correo electrónico
+            polls: Encuestas
+            poster: Póster
         new:
           creating: Nueva acción para el dashboard de propuestas
           back: Volver a la lista

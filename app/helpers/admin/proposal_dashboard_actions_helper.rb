@@ -3,4 +3,8 @@ module Admin::ProposalDashboardActionsHelper
     return t("admin.dashboard.actions.index.active") if active
     t("admin.dashboard.actions.index.inactive")
   end
+
+  def default_actions
+    %w[polls email poster]
+  end
 end

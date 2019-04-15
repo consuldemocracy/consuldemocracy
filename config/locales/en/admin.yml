@@ -379,7 +379,6 @@ en:
           create: Create resource or action
           edit: Edit
           delete: Delete
-          no_records: No records found
           active: 'Yes'
           inactive: 'No'
           title: Resources and actions
@@ -390,6 +389,10 @@ en:
           action_active: Active
           order: Order
           published_proposal: Published proposal
+          default:
+            email: Email
+            polls: Polls
+            poster: Poster
         new:
           creating: New action for the proposals dashboard
           back: Back to list

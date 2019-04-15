@@ -22,12 +22,6 @@
   </thead>
 
   <tbody>
-    <% if @dashboard_actions.empty? %>
-      <tr>
-        <td colspan="100%"><%= t("admin.dashboard.actions.index.no_records") %></td>
-      </tr>
-    <% end %>
-
     <% @dashboard_actions.each do |action| %>
       <tr id="<%= dom_id(action) %>">
         <td><%= action.title %></td>
@@ -49,5 +43,7 @@
         </td>
       </tr>
     <% end %>
+
+    <%= render "default_actions" %>
   </tbody>
 </table>
