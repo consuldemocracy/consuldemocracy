@@ -25,6 +25,9 @@ he:
         section_header:
           icon_alt: סמל חקיקה שיתופית
           title: חקיקה שיתופית
+          help: עזרה בנושא חקיקה שיתופית
+        section_footer:
+          title: עזרה בנושא חקיקה שיתופית
       shared:
         debate_dates: דיון
         allegations_dates: הערות
@@ -36,6 +39,7 @@ he:
         debate: דיון
       show:
         share: שיתוף
+        title: תהליך חקיקה שיתופית
       participation:
         signin: התחברות
         signup: הרשמה
