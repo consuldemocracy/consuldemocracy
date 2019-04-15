@@ -68,11 +68,24 @@ he:
         נגישות באינטרנט מתייחס לאפשרות של גישה אל האינטרנט והתוכן שלה על ידי כל האנשים, ללא קשר מגבלות (פיזי, רוחני או טכני) שעלולות להתעורר או מאלה אשר נובעות בהקשר של שימוש (טכנולוגית או הסביבה).
 
         כאשר אתרי אינטרנט נועדו עם נגישות בראש, כל המשתמשים יכולים לגשת לתוכן בתנאים שווים, לדוגמה:
+      examples:
+        - מתן טקסט חלופי לתמונות, משתמשים עיוורים או לקויי ראייה יכולים להשתמש בקוראים מיוחדים כדי לגשת למידע.
+        - כאשר קטעי וידאו יש כתוביות, משתמשים עם קשיי שמיעה יכול להבין אותם באופן מלא.
+        - אם התוכן נכתב בשפה פשוטה ומאוירת, משתמשים עם בעיות למידה מסוגלים להבין אותם טוב יותר.
+        - אם למשתמש יש בעיות ניידות וקשה להשתמש בעכבר, החלופות עם המקלדת מסייעות בניווט.
       keyboard_shortcuts:
+        title: קיצורי מקלדת
         navigation_table:
+          description: כדי להיות מסוגל לנווט דרך אתר זה באופן נגיש, קבוצה של מקשי גישה מהירה כבר מתוכנת כי לרכז את החלקים העיקריים שבו האתר מאורגן.
+          caption: קיצורי מקשים עבור תפריט הניווט
+          key_header: מקש
+          page_header: דף
           rows:
             - 
+              key_column: 0
+              page_column: דף בית
             - 
+              key_column: 0
               page_column: דיונים
             - 
               key_column: 2
@@ -81,25 +94,66 @@ he:
               key_column: 3
               page_column: הצבעות
             - 
+              key_column: 0
               page_column: תקציבים השתתפותיים
             - 
+              key_column: 0
+              page_column: תהליכי חקיקה
         browser_table:
+          description: "בהתאם למערכת ההפעלה ולדפדפן שבו נעשה שימוש, צירוף המקשים יהיה כדלקמן:"
+          caption: צירוף מקשים בהתאם למערכת ההפעלה ולדפדפן
+          browser_header: דפדפן
+          key_header: צירוף מקשים
           rows:
             - 
+              browser_column: אקספלורר
+              key_column: ALT + קיצור דרך ואז ENTER
             - 
               browser_column: Firefox פיירפוקס
+              key_column: ALT + CAPS + קיצור דרך
             - 
+              browser_column: כרום
+              key_column: ALT + קיצור דרך (CTRL + ALT + קיצור דרך ב MAC)
             - 
+              browser_column: ספארי
+              key_column: ALT + קיצור דרך (CMD + קיצור דרך ב MAC)
             - 
+              browser_column: אופרה
+              key_column: CAPS + ESC + קיצור דרך
       textsize:
+        title: גודל טקסט
         browser_settings_table:
+          description: עיצוב נגיש של אתר זה מאפשר למשתמש לבחור את גודל הטקסט שמתאים לו. פעולה זו יכולה להתבצע בדרכים שונות בהתאם לדפדפן בשימוש.
+          browser_header: דפדפן
+          action_header: פעולה שיש לנקוט
           rows:
             - 
+              browser_column: אקספלורר
+              action_column: תצוגה> גודל טקסט
             - 
               browser_column: Firefox פיירפוקס
+              action_column: תצוגה > גודל
             - 
+              browser_column: כרום
+              action_column: הגדרות (סמל) > אפשרויות > מתקדם > תוכן אינטרנט > גודל טקסט
             - 
+              browser_column: ספארי
+              action_column: תצוגה > הגדלה / הקטנה של התצוגה
             - 
+              browser_column: אופרה
+              action_column: הצג > קנה מידה
+        browser_shortcuts_table:
+          description: "דרך נוספת לשנות את גודל הטקסט היא להשתמש בקיצורי המקשים המוגדרים בדפדפנים, ובמיוחד בשילוב המפתח:"
+          rows:
+            - 
+              shortcut_column: CTRL ו- + (CMD ו- + ב- MAC)
+              description_column: הגדל גודל טקסט
+            - 
+              shortcut_column: CTRL ו- (CMD ו- MAC)
+              description_column: הקטן גודל טקסט
+      compatibility:
+        title: תאימות עם סטנדרטים ועיצוב חזותי
+        description_html: 'כל הדפים באתר זה מצייתים ל <strong> הנחיות נגישות </strong> או עקרונות כלליים של עיצוב נגיש, שהוקמה על ידי קבוצת העבודה <abbr title = "Web Accessibility Initiative" lang = "he"> WAI </abbr> השייך ל W3C.'
     verify:
       code: הקוד אותו קיבלת בדואר אלקטרוני
       email: דואר אלקטרוני
