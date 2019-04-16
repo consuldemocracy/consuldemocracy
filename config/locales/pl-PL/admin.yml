@@ -222,7 +222,7 @@ pl:
           admin: Administrator
           valuator: Wyceniający
           valuation_group: Grupa Wyceniająca
-          geozone: Zakres operacji
+          geozone: Część dzielnicy, której dotyczy pomysł
           feasibility: Wykonalność
           valuation_finished: Val. Fin.
           selected: Wybrany
