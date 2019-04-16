@@ -75,7 +75,7 @@ pl:
       index:
         title: Budżety partycypacyjne
         new_link: Utwórz nowy budżet
-        filter: Filtr
+        filter: Filtruj
         filters:
           open: Otwórz
           finished: Zakończone
