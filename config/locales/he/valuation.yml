@@ -10,36 +10,60 @@ he:
       index:
         title: תקציבים השתתפותיים
         filters:
-          current: Open
-          finished: Finished
-        table_name: Name
+          current: פתוח
+          finished: הסתיים
+        table_name: שם
         table_phase: שלב
+        table_assigned_investments_valuation_open: פרויקטים להשקעה שהוקצו עם תקציב מוערך פתוח
+        table_actions: פעולות
+        evaluate: להעריך
+        no_budgets: "לא נמצאו תקציבים"
     budget_investments:
       index:
-        headings_filter_all: All headings
+        headings_filter_all: כל הכותרות
         filters:
-          valuation_open: Open
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-        title: Investment projects
-        edit: Edit dossier
-        no_valuators_assigned: No valuators assigned
-        table_id: ID
+          valuation_open: פתוח
+          valuating: תחת הערכה
+          valuation_finished: ההערכה הסתיימה
+        assigned_to: "שהוקצה ל- %{valuator}"
+        title: פרויקטי השקעה
+        edit: עריכת מסמכים
+        valuators_assigned:
+          one: מעריך שהוקצה
+          two: "%{count} מעריכים שהוקצו"
+          many: "%{count} מעריכים שהוקצו"
+          other: "%{count} מעריכים שהוקצו"
+        no_valuators_assigned: לא הוקצו מעריכים
+        table_id: מזהה
         table_title: שם
-        table_heading_name: Heading name
+        table_heading_name: שם כותרת
+        table_actions: פעולות
+        no_investments: "אין פרויקטי השקעה זמינים."
       show:
         back: חזרה
         title: פרויקט להשקעה
+        info: פרטי המחבר
+        by: נשלח על ידי
+        sent: נשלח ב
         heading: כותרת
-        dossier: Dossier
-        edit_dossier: Edit dossier
+        dossier: תיק
+        edit_dossier: ערוך תיק
+        price: מחיר
+        price_first_year: עלות במהלך השנה הראשונה
+        currency: "יורו"
         feasibility: סבירות לביצוע
+        feasible: בר ביצוע
         unfeasible: אינו בר-ביצוע
-        undefined: Undefined
-        valuation_finished: Valuation finished
-        assigned_valuators: Assigned valuators
+        undefined: לא מוגדר
+        valuation_finished: ההערכה הסתיימה
+        duration: טווח זמן
+        responsibles: אחראים
+        assigned_admin: מנהל מערכת אשר הוקצה
+        assigned_valuators: מעריכים שהוקצו
       edit:
-        dossier: Dossier
+        dossier: תיק
+        price_html: "מחיר (%{currency})"
+        price_first_year_html: "עלות במהלך השנה הראשונה (%{currency}) <small>(אופציונלי, הנתונים אינם ציבורים)</small>"
         price_explanation_html: פירוט למחיר
         feasibility: סבירות לביצוע
         unfeasible: אינו בר ביצוע
