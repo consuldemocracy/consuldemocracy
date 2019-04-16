@@ -65,7 +65,7 @@ pl:
         empty_questions: Brak pytań
         participate: Uczestniczyć w debacie
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           open: Otwarte procesy
           past: Ubiegły
