@@ -96,7 +96,7 @@ pl:
     user_permission_info: Weryfikując swoje dane, będziesz w stanie...
     user_permission_proposal: Twórz i dołączaj do pomysłów
     user_permission_support_proposal: Popieraj propozycje*
-    user_permission_votes: Uczestniczyć w głosowaniu końcowym*
+    user_permission_votes: ' '
     verified_user:
       form:
         submit_button: Wyślij kod
