@@ -119,8 +119,4 @@ class CensusApi
       {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}
     end
 
-    def dni?(document_type)
-      document_type.to_s == "1"
-    end
-
 end

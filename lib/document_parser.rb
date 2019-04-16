@@ -57,4 +57,9 @@ module DocumentParser
     end
     variants
   end
+
+  def dni?(document_type)
+    document_type.to_s == "1"
+  end
+
 end
