@@ -206,7 +206,7 @@ pl:
     topic: Temat
     image: Obraz
   geozones:
-    none: Wszystkie miasta
+    none: Cała dzielnica
     all: Wszystkie zakresy
   layouts:
     application:
@@ -287,8 +287,8 @@ pl:
       notifiable_hidden: Ten zasób nie jest już dostępny.
   map:
     title: "Podział dzielnicy"
-    proposal_for_district: "Zacznij wniosek dla Twojej dzielnicy"
-    select_district: Zakres operacji
+    proposal_for_district: " "
+    select_district: Część dzielnicy, której dotyczy pomysł
     start_proposal: Zaproponuj swój pomysł
   omniauth:
     facebook:
@@ -333,7 +333,7 @@ pl:
       done: Gotowe
       other: Inne
     form:
-      geozone: Zakres operacji
+      geozone: Część dzielnicy, której dotyczy pomysł
       proposal_external_url: Link do dodatkowej dokumentacji
       proposal_question: Pytanie dotyczące wniosku
       proposal_question_example_html: "Musi zostać podsumowany w jednym pytaniu z odpowiedzią Tak lub Nie"
@@ -490,7 +490,7 @@ pl:
       title: "Głosowania"
       participate_button: "Weź udział w tej sondzie"
       participate_button_expired: "Sonda zakończyła się"
-      no_geozone_restricted: "Całe miasto"
+      no_geozone_restricted: "Cała dzielnica"
       geozone_restricted: "Podział dzielnicy"
       geozone_info: "Mogą brać udział osoby w Census: "
       already_answer: "Brałeś już udział w tej sondzie"
@@ -599,7 +599,7 @@ pl:
           notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
       proposal:
         create:
-          notice_html: "Obserwujesz teraz ten wniosek obywatelski! </br> Powiadomimy Cię o zaistniałych zmianach, abyś był na bieżąco."
+          notice_html: "Obserwujesz teraz ten pomysł! </br> Powiadomimy Cię o zmianach, abyś był/a na bieżąco."
         destroy:
           notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
     hide: Ukryj
@@ -671,7 +671,7 @@ pl:
       association_name: "Nazwa stowarzyszenia"
       description: Opis
       external_url: Link do dodatkowej dokumentacji
-      geozone: Zakres operacji
+      geozone: Część dzielnicy, której dotyczy pomysł
       submit_buttons:
         create: Utwórz
         new: Utwórz
@@ -690,7 +690,7 @@ pl:
         many: " zawierające termin '%{search_term}'"
         other: " zawierające termin '%{search_term}'"
       sidebar:
-        geozones: Zakres operacji
+        geozones: Część dzielnicy, której dotyczy pomysł
         feasibility: Wykonalność
         unfeasible: Niewykonalne
       start_spending_proposal: Utwórz projekt inwestycyjny
