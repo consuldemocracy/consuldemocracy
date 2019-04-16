@@ -77,25 +77,57 @@ he:
           help: עזרה בנושא חקיקה שיתופית
         section_footer:
           title: עזרה בנושא חקיקה שיתופית
+          description: השתתפות בדיונים ובתהליכים לפני אישור תקנות או אסטרטגיות חדשות. דעתך תילקח בחשבון.
+      phase_not_open:
+        not_open: שלב זה אינו פתוח עדיין
+      phase_empty:
+        empty: טרם פורסם דבר
+      process:
+        see_latest_comments: ראה תגובות אחרונות
+        see_latest_comments_title: הגב על תהליך זה
       shared:
+        key_dates: שלבים בהשתתפות
+        homepage: דף הבית
         debate_dates: דיון
+        draft_publication_date: פרסום טיוטה
         allegations_dates: הערות
+        result_publication_date: פרסום תוצאות סופיות
+        milestones_date: הבא
         proposals_dates: הצעות
     questions:
+      comments:
+        comment_button: פרסום תשובה
+        comments_title: תשובות פתוחות
+        comments_closed: שלב סגור
+        form:
+          leave_comment: השאר את תשובתך
       question:
         comments:
           zero: אין תגובות
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
         debate: דיון
       show:
-        share: שיתוף
+        answer_question: פרסם תשובה
+        next_question: השאלה הבאה
+        first_question: השאלה הראשונה
+        share: שתף
         title: תהליך חקיקה שיתופית
       participation:
+        phase_not_open: שלב זה אינו פתוח
+        organizations: ארגונים אינם מורשים להשתתף בדיון
         signin: התחברות
         signup: הרשמה
         unauthenticated: נדרשת %{signin} או %{signup} בכדי להשתתף
+        verified_only: רק משתמשים מאומתים יכולים להשתתף %{verify_account}.
         verify_account: לאמת את החשבון
+        debate_phase_not_open: שלב הדיון הסתיים, תשובות לא יתקבלו יותר
     shared:
-      share: שיתוף
+      share: שתף
+      share_comment: תגובה על %{version_name} מתהליך הטיוטות %{process_name}
     proposals:
       form:
-        tags_label: "תחומים"
+        tags_label: "קטגוריות"
+      not_verified: "עבור הצבעה להצעות %{verify_account}."
