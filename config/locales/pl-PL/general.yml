@@ -286,10 +286,10 @@ pl:
       mark_as_unread: Oznacz jako nieprzeczytane
       notifiable_hidden: Ten zasób nie jest już dostępny.
   map:
-    title: "Dzielnice"
+    title: "Podział dzielnicy"
     proposal_for_district: "Zacznij wniosek dla Twojej dzielnicy"
     select_district: Zakres operacji
-    start_proposal: Stwórz wniosek
+    start_proposal: Zaproponuj swój pomysł
   omniauth:
     facebook:
       sign_in: Zaloguj się przez Facebook
@@ -395,7 +395,7 @@ pl:
         other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
       select_order_long: "Przeglądasz wnioski według:"
-      start_proposal: Stwórz wniosek
+      start_proposal: Zaproponuj swój pomysł
       title: Zrealizowane projekty
       top: Najwyższe tygodniowo
       top_link_proposals: Najbardziej wspierane propozycje według kategorii
@@ -408,13 +408,13 @@ pl:
         description: Wnioski obywatelskie są okazją dla sąsiadów i grup do bezpośredniego decydowania, w jaki sposób chcą, by wyglądało ich miasto, po uzyskaniu wystarczającego wsparcia i poddaniu się głosowaniu obywateli.
     new:
       form:
-        submit_button: Stwórz wniosek
+        submit_button: Zaproponuj swój pomysł
       more_info: Jak działają wnioski obywatelskie?
       recommendation_one: Nie należy używać wielkich liter dla tytuł wniosku lub całych zdań. W Internecie uznawane jest to za krzyk. I nikt nie lubi jak się na niego krzyczy.
       recommendation_three: Ciesz się tą przestrzenią oraz głosami, które ją wypełniają. Należy również do Ciebie.
       recommendation_two: Wszelkie wnioski lub komentarze sugerujące nielegalne działania zostaną usunięte, a także te, które zamierzają sabotować przestrzenie debaty. Wszystko inne jest dozwolone.
       recommendations_title: Rekomendacje do utworzenia wniosku
-      start_new: Stwórz nowy wniosek
+      start_new: Zaproponuj swój pomysł
     notice:
       retired: Wniosek wycofany
     proposal:
@@ -491,7 +491,7 @@ pl:
       participate_button: "Weź udział w tej sondzie"
       participate_button_expired: "Sonda zakończyła się"
       no_geozone_restricted: "Całe miasto"
-      geozone_restricted: "Dzielnice"
+      geozone_restricted: "Podział dzielnicy"
       geozone_info: "Mogą brać udział osoby w Census: "
       already_answer: "Brałeś już udział w tej sondzie"
       not_logged_in: "Musisz się zalogować lub zarejestrować, by wziąć udział"
@@ -633,8 +633,8 @@ pl:
         message: "Widzisz %{limit} z %{count} wniosków zawierających termin %{query}"
         see_all: "Zobacz wszystkie"
     tags_cloud:
-      tags: Dążenie
-      districts: "Dzielnice"
+      tags: Popularne
+      districts: "Podział dzielnicy"
       districts_list: "Lista dzielnic"
       categories: "Kategorie"
     target_blank_html: " (link otwiera się w nowym oknie)"
@@ -780,10 +780,10 @@ pl:
           many: "%{count} Inwestycji"
           other: "%{count} Inwestycji"
         follows:
-          one: 1 Obserwujący
-          few: "%{count} Obserwujących"
-          many: "%{count} Obserwujących"
-          other: "%{count} Obserwujących"
+          one: 1 obserwowany
+          few: "%{count} obserwowane"
+          many: "%{count} obserwowanych"
+          other: "%{count} obserwowanych"
       no_activity: Użytkownik nie ma publicznej aktywności
       no_private_messages: "Ten użytkownik nie przyjmuje wiadomości prywatnych."
       private_activity: Ten użytkownik postanowił zachować listę aktywności jako prywatną.
