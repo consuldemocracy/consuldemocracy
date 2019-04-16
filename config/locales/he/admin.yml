@@ -28,7 +28,7 @@ he:
           with_inactive: לא פעיל
         preview: תצוגה מקדימה
       banner:
-        title: שם
+        title: כותרת
         description: תיאור
         target_url: קישור
         post_started_at: החל מ
@@ -82,7 +82,7 @@ he:
           open: Open
           finished: הסתיים
         budget_investments: נהל פרויקטים
-        table_name: Name
+        table_name: שם
         table_phase: שלב
         table_investments: השקעות
         table_edit_groups: קבוצת כותרות
@@ -116,7 +116,7 @@ he:
         calculated: ההשקעות הזוכות בתהליך חישוב, עלול להיערך זמן מה.
         recalculate: חישוב מחדש של ההשקעות הזוכות
     budget_groups:
-      name: "Name"
+      name: "שם"
       headings_name: "כותרות"
       headings_edit: "עריכת כותרות"
       headings_manage: "ניהול כותרות"
@@ -137,12 +137,12 @@ he:
       form:
         create: "צור קבוצה חדשה"
         edit: "ערוך קבוצה"
-        name: "Group name"
+        name: "שם קבוצה"
         submit: "שמירת קבוצה"
       index:
         back: "לחזור לתקציבים"
     budget_headings:
-      name: "Name"
+      name: "שם"
       no_headings: "אין כותרות."
       amount:
         one: "יש כותרת 1"
@@ -157,7 +157,7 @@ he:
         success_notice: "כותרת הוסרה בהצלחה"
         unable_notice: "אינך יכול להסיר כותרת המקושרת להשקעות קיימות"
       form:
-        name: "Heading name"
+        name: "שם הכותרת"
         amount: "Amount"
         population: "אוכלוסיה (אופציונלי)"
         population_info: "תקציב כותרת האוכלוסייה תחום משמש למטרות סטטיסטית בסוף התקציב להראות עבור כל כותרת שמייצג אזור עם אוכלוסייה ומה אחוז המצביעים. השדה הוא אופציונלי, כך שתוכל להשאיר אותו ריק אם הוא אינו רלונטי."
@@ -222,7 +222,7 @@ he:
         select: "בחר"
         list:
           id: ID
-          title: שם
+          title: כותרת
           supports: לחיצה לתמיכה
           admin: מנהל/ת
           valuator: Valuator
@@ -290,7 +290,7 @@ he:
     milestones:
       index:
         table_id: "ID"
-        table_title: "שם"
+        table_title: "כותרת"
         table_description: "תיאור"
         table_publication_date: "תאריך פרסום"
         table_status: מצב
@@ -322,7 +322,7 @@ he:
         title: קצב התקדמות באבני הדרך
         empty_statuses: לא נוצרו סטטוסים לאבני הדרך
         new_status: יצירת סטטוס לאבן דרך חדשה
-        table_name: Name
+        table_name: שם
         table_description: תיאור
         table_actions: פעולות
         delete: מחיקה
@@ -346,7 +346,7 @@ he:
         primary: "סרגל התקדמות ראשי"
         table_id: "ID"
         table_kind: "סוג"
-        table_title: "שם"
+        table_title: "כותרת"
         table_percentage: "ההתקדמות הנוכחית"
       new:
         creating: "יצירת סרגל התקדמות"
@@ -457,7 +457,7 @@ he:
           select_order: סדר לפי
           orders:
             id: מזהה
-            title: שם
+            title: כותרת
             supports: לחיצה לתמיכה
         process:
           title: תהליכים
@@ -480,7 +480,7 @@ he:
           title: הגדר תהליכים בדף הבית
       proposals:
         index:
-          title: שם
+          title: כותרת
           back: חזרה
           id: מזהה
           supports: לחיצה לתמיכה
@@ -532,7 +532,7 @@ he:
           draft: טיוטה
           published: פורסם
         table:
-          title: שם
+          title: כותרת
           created_at: נוצרה ב
           comments: הערות
           final_version: גירסה סופית
@@ -569,7 +569,7 @@ he:
           title: יצירת שאלה חדשה
           submit_button: יצירת שאלה חדשה
         table:
-          title: שם
+          title: כותרת
           question_options: אפשרויות שאלה
           answers_count: התשובות נחשבות
           comments_count: ההערות נחשבות
@@ -581,7 +581,7 @@ he:
     managers:
       index:
         title: Managers
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         no_managers: לא נמצאו מנהלים.
       manager:
@@ -653,7 +653,7 @@ he:
     administrators:
       index:
         title: מנהלים
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         id: מזהה מנהל
         no_administrators: אין מנהלי מערכת.
@@ -666,7 +666,7 @@ he:
     moderators:
       index:
         title: Moderators
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         no_moderators: לא נמצאו מנחים.
       moderator:
@@ -730,7 +730,7 @@ he:
       index:
         section_title: התראות
         new_notification: התראה חדשה
-        title: שם
+        title: כותרת
         segment_recipient: נמענים
         sent: Sent
         actions: פעולות
@@ -752,7 +752,7 @@ he:
         will_get_notified: (%{n} משתמשים יקבלו הודעה)
         got_notified: ( %{n} משתמשים קיבלו הודעה)
         sent_at: נשלח ב
-        title: שם
+        title: כותרת
         body: טקסט
         link: קישור
         segment_recipient: נמענים
@@ -817,7 +817,7 @@ he:
     valuators:
       index:
         title: Valuators
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         description: תיאור
         no_description: אין תיאור
@@ -860,7 +860,7 @@ he:
         title: "קבוצת מעריכים: %{group}"
         no_valuators: "אין מעריכים שהוקצו לקבוצה זו"
       form:
-        name: "Group name"
+        name: "שם קבוצה"
         new: "יצירת קבוצה מעריכים"
         edit: "שמירת קבוצה מעריכים"
     poll_officers:
@@ -869,7 +869,7 @@ he:
       officer:
         add: Add
         delete: מחיקת מיקום
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         entry_name: נושאי משרה
       search:
