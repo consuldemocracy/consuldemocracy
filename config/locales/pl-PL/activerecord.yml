@@ -250,7 +250,7 @@ pl:
         association_name: "Nazwa stowarzyszenia"
         description: "Opis"
         external_url: "Link do dodatkowej dokumentacji"
-        geozone_id: "Zakres operacji"
+        geozone_id: "Część dzielnicy, której dotyczy pomysł"
         title: "Tytuł"
       poll:
         name: "Nazwa"
