@@ -397,8 +397,8 @@ pl:
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
       title: Zrealizowane projekty
-      top: Najwyższe tygodniowo
-      top_link_proposals: Najbardziej wspierane propozycje według kategorii
+      top: TOP w tym tygodniu
+      top_link_proposals: Najbardziej popularne propozycje według kategorii
       section_header:
         icon_alt: Ikona wniosków
         title: Zrealizowane projekty
