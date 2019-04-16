@@ -237,7 +237,7 @@ pl:
         username: "Nazwa użytkownika"
         password_confirmation: "Potwierdzenie hasła"
         password: "Hasło"
-        current_password: "Obecne hasło"
+        current_password: "Stare hasło"
         phone_number: "Numer telefonu"
         official_position: "Oficjalne stanowisko"
         official_level: "Oficjalny poziom"
