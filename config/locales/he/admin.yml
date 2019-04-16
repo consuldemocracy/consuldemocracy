@@ -229,7 +229,7 @@ he:
           valuation_group: קבוצת מעריכים
           geozone: היקף הפעילות
           feasibility: סבירות לביצוע
-          valuation_finished: Val. Fin.
+          valuation_finished: ההערכה הסתיימה.
           selected: Selected
           visible_to_valuators: הצג למעריכים
           author_username: שם העורך
@@ -1258,7 +1258,7 @@ he:
           without_admin: Without assigned admin
           managed: Managed
           valuating: Under valuation
-          valuation_finished: Valuation finished
+          valuation_finished: הערכה הסתיימה
           all: כולם
         title: פרויקטים להשקעה בתקצוב השתתפותי
         assigned_admin: Assigned administrator
