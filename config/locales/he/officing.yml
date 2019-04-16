@@ -72,7 +72,18 @@ he:
         document_number: "מספר מסמך (כולל אותיות)"
         submit: אמת את המסמך
         error_verifying_census: "מפקד האוכלוסין לא הצליח לאמת את המסמך הזה."
+        form_errors: מונע את אימות המסמך הזה
     voters:
       new:
         title: סקרים
-        table_poll: הצבעה
+        table_poll: סקר
+        table_status: סטטיסטיקת סקר
+        table_actions: פעולות
+        not_to_vote: האדם החליט לא להצביע בשלב זה
+      show:
+        can_vote: יכול להצביע
+        error_already_voted: השתתפת כבר בהצבעה זו
+        submit: אשר הצבעה
+        success: "ההצבעה מוצגת!"
+      can_vote:
+        submit_disable_with: "המתן, מאשר את ההצבעה..."
