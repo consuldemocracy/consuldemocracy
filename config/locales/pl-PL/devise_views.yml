@@ -95,11 +95,11 @@ pl:
           submit: Usuń moje konto
           title: Usuń konto
         edit:
-          current_password_label: Obecne hasło
+          current_password_label: Stare hasło
           edit: Edytuj
           email_label: E-mail
-          leave_blank: Należy pozostawić puste, jeśli nie chcesz zmodyfikować
-          need_current: Potrzebujemy Twojego obecnego hasła, aby potwierdzić zmiany
+          leave_blank: Należy pozostawić puste, jeśli nie chcesz zmieniać hasła
+          need_current: Potrzebujemy Twojego starego hasła, aby potwierdzić zmiany
           password_confirmation_label: Potwierdź nowe hasło
           password_label: Nowe hasło
           update_submit: Zaktualizuj
