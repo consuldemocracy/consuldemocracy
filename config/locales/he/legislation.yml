@@ -9,25 +9,67 @@ he:
           two: "%{count} תגובות"
           many: "%{count} תגובות"
           other: "%{count} תגובות"
+        replies_count:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
+        cancel: ביטול
+        publish_comment: פרסם תגובה
       form:
+        phase_not_open: שלב זה אינו פתוח
         login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
         signin: התחברות
         signup: הרשמה
       index:
         title: הערות
+        comments_about: תגובות לגבי
+        see_in_context: ראה בהקשר של
+        comments_count:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
       show:
-        title: הערות
+        title: תגובה
+      version_chooser:
+        seeing_version: תגובות עבור גירסה
+        see_text: ראה טיוטת טקסט
     draft_versions:
+      changes:
+        title: שינויים
+        seeing_changelog_version: סיכום השינויים בתיקונים
+        see_text: ראה טיוטת טקסט
       show:
-        text_comments: הערות
+        loading_comments: טעינת תגובות
+        seeing_version: אתה צופה בגרסת הטיוטה
+        select_draft_version: בחר טיוטה
+        select_version_submit: ראה
+        updated_at: עודכן ב %{date}
+        see_changes: ראה סיכום שינויים
+        see_comments: ראה את כל התגובות
+        text_toc: תוכן עניינים
+        text_body: טקסט
+        text_comments: תגובות
     processes:
       header:
+        additional_info: מידע נוסף
         description: תיאור
+        more_info: למידע נוסף, והקשר
       proposals:
+        empty_proposals: לא נמצאו הצעות
         filters:
-          winners: Selected
+          random: אקראי
+          winners: נבחר
+      debate:
+        empty_questions: לא נמצאו שאלות
+        participate: השתתף בדיון
       index:
-        filter: Filter
+        filter: מסנן
+        filters:
+          open: תהליכים פתוחים
+          past: עבר
+        no_open_processes: אין תהליכים פתוחים
         section_header:
           icon_alt: סמל חקיקה שיתופית
           title: חקיקה שיתופית
