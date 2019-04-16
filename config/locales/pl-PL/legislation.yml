@@ -18,7 +18,7 @@ pl:
         publish_comment: Opublikuj Komentarz
       form:
         phase_not_open: Ten etap nie jest otwarty
-        login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+        login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
         signin: Zaloguj się
         signup: Zarejestruj się
       index:
