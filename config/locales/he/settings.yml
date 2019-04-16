@@ -27,6 +27,7 @@ he:
     months_to_archive_proposals: "מספר החודשים לאחסון ההצעות בארכיון"
     months_to_archive_proposals_description: "לאחר מספר חודשים ההצעות יאוחסנו בארכיון, כבר לא תהיה אפשרות לקבלת הצבעות תמיכה"
     email_domain_for_officials: "דומיין דוא\"ל עבור נושאי משרה ציבורית"
+    email_domain_for_officials_description: "כל המשתמשים הרשומים עם שם מתחם זה החשבון שלהם יאומת במועד ההרשמה"
     feature:
       signature_sheets: "דפי חתימות"
       spending_proposals: "Spending proposals"
