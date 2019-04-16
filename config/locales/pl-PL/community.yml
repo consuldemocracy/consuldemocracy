@@ -59,4 +59,4 @@ pl:
         recommendation_three: Ciesz się tą przestrzenią oraz głosami, które ją wypełniają, jest także twoja.
   topics:
     show:
-      login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
