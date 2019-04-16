@@ -2,14 +2,20 @@ he:
   community:
     sidebar:
       title: קהילה
+      description:
+        proposal: השתתפות בקהילת המשתמשים של הצעה זו.
+        investment: השתתפות בקהילת המשתמשים של השקעה זו.
+      button_to_access: הצטרפות לקהילה
     show:
+      title:
+        proposal: הצעת הקהילה
       create_first_community_topic:
         sign_in: "התחברות"
         sign_up: "הרשמה"
       tab:
         participants: משתתפים
       sidebar:
-        participate: רוצה להשתתף בזה
+        participate: משתתף
         new_topic: יצירת נושא
       topic:
         edit: ערוך נושא
@@ -20,7 +26,7 @@ he:
     topic:
       edit: ערוך נושא
       form:
-        topic_title: שם
+        topic_title: כותרת
         topic_text: טקסט ראשוני
         new:
           submit_button: יצירת נושא
