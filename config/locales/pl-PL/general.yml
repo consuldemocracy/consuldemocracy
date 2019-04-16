@@ -851,10 +851,10 @@ pl:
     welcome:
       go_to_index: Zobacz propozycje i debaty
       start_using_consul: Przejdź do strony indeksu
-      title: Weź udział
-      user_permission_debates: Uczestnicz w debatach
+      title: Twoje konto zostało poprawnie zweryfikowane
+      user_permission_debates: ' '
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Stwórz nowe wnioski
+      user_permission_proposal: Twórz i dołączaj do pomysłów
       user_permission_support_proposal: Popieraj propozycje*
       user_permission_verify: "Aby wykonać wszystkie czynności, zweryfikuj swoje konto."
       user_permission_verify_info: "* Tylko dla użytkowników Census."
