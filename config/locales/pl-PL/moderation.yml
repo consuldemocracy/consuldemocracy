@@ -4,7 +4,7 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
