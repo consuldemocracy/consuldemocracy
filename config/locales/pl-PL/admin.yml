@@ -201,7 +201,7 @@ pl:
           one_filter_html: "Bieżące zastosowane filtry: <b><em>%{filter}</em></b>"
           two_filters_html: "Bieżące zastosowane filtry: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: Filtr
+          filter: Filtruj
         download_current_selection: "Pobierz bieżący wybór"
         no_budget_investments: "Brak projektów inwestycyjnych."
         title: Projekty inwestycyjne
@@ -356,7 +356,7 @@ pl:
         notice: "Pasek postępu usunięty"
     comments:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -372,7 +372,7 @@ pl:
         description: Witamy w panelu administracyjnym %{org}.
     debates:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -381,7 +381,7 @@ pl:
         no_hidden_debates: Nie ma ukrytych debat.
     hidden_users:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -396,7 +396,7 @@ pl:
         title: Aktywność użytkownika (%{user})
     hidden_budget_investments:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -986,7 +986,7 @@ pl:
         title: "Pytania"
         create: "Utwórz pytanie"
         no_questions: "Nie ma pytań."
-        filter_poll: Filtruj według ankiety
+        filter_poll: Filtruj według głosowania
         select_poll: Wybierz ankietę
         questions_tab: "Pytania"
         successful_proposals_tab: "Udane wnioski"
@@ -1118,7 +1118,7 @@ pl:
         no_results: Oficjalne stanowiska nie znalezione.
     organizations:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending: Oczekujące
@@ -1152,7 +1152,7 @@ pl:
         create_question: Poddaj ten wniosek pod głosowanie w sondzie
     hidden_proposals:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -1161,7 +1161,7 @@ pl:
         no_hidden_proposals: Brak ukrytych wniosków.
     proposal_notifications:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
