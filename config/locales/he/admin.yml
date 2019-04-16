@@ -880,7 +880,7 @@ he:
       index:
         officers_title: "רשימת נושאי משרה"
         no_officers: "אין נושאי משרה שהוקצו לסקר זה."
-        table_name: "Name"
+        table_name: "שם"
         table_email: "דואר אלקטרוני"
       by_officer:
         date: "תאריך"
@@ -949,7 +949,7 @@ he:
       index:
         booths_title: "רשימת דוכנים"
         no_booths: "אין דוכנים המשויכים לסקר זה."
-        table_name: "Name"
+        table_name: "שם"
         table_location: "מקום"
     active_polls:
       edit:
@@ -963,7 +963,7 @@ he:
         title: "רשימת סקרים"
         no_polls: "אין סקרים בקרוב."
         create: "יצירת סקר"
-        name: "Name"
+        name: "שם"
         dates: "תאריכים"
         start_date: "תאריך פתיחה"
         closing_date: "תאריך סיום"
@@ -986,7 +986,7 @@ he:
         results_tab: תוצאות
         no_questions: "אין שאלות המשויכות לסקר זה."
         questions_title: "רשימת שאלות"
-        table_title: "שם"
+        table_title: "כותרת"
         edit_answers: ערוך תשובה
         see_proposal: "ראה/י הצעות"
       flash:
@@ -1033,13 +1033,13 @@ he:
           images_list: רשימת תמונות
           documents: מסמכים
           documents_list: רשימת מסמכים
-          document_title: שם
+          document_title: כותרת
           document_actions: פעולות
     answers:
       new:
         title: תשובה חדשה
       show:
-        title: שם
+        title: כותרת
         description: תיאור
         images: תמונות
         images_list: רשימת תמונות
@@ -1050,7 +1050,7 @@ he:
         index:
           title: וידאו
           add_video: הוסף וידאו
-          video_title: שם
+          video_title: כותרת
           video_url: מקור וידאו חיצוני
         new:
           title: וידאו חדש
@@ -1086,12 +1086,12 @@ he:
         title: "רשימה של דוכנים פעילים"
         no_booths: "אין דוכנים פעילים עבור הסקרים הקרובים."
         add_booth: "הוסף דוכן"
-        name: "Name"
+        name: "שם"
         location: "מקום"
         no_location: "אין מיקום"
       new:
         title: "דוכן חדש"
-        name: "Name"
+        name: "שם"
         location: "מקום"
         submit_button: "צור דוכן"
       edit:
@@ -1113,7 +1113,7 @@ he:
         title: רשמיים
         help: חשבונות משתמש המסומנים כנושאי משרה, ההתערבויות שלהם בתהליכים יהיו מודגשים. באפשרותך להגדיר את התווית שמופיעה לצד שמות המשתמשים של חשבונות אלה מהחשובים ביותר (רמה 1) עד לרמה (רמה 5).
         no_officials: לא נמצא ונושאי משרה.
-        name: Name
+        name: שם
         official_position: תפקיד
         official_level: רמה
       level_0: אינו רשמי
@@ -1140,7 +1140,7 @@ he:
           two: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
           many: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
           other: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         phone_number: מספר טלפון
         responsible_name: אחראי
@@ -1235,7 +1235,7 @@ he:
       search_results: "תוצאות החיפוש"
       no_search_results: "לא נמצאו תוצאות."
       actions: פעולות
-      title: שם
+      title: כותרת
       description: תיאור
       image: תמונה
       show_image: הצג תמונה
@@ -1337,7 +1337,7 @@ he:
     signature_sheets:
       author: מחבר/ת
       created_at: תאריך יצירה
-      name: Name
+      name: שם
       no_signature_sheets: "חסר דפים לחתימה"
       index:
         title: דפי חתימות
@@ -1423,7 +1423,7 @@ he:
         placeholder: הקלד/י את שם הנושא
     users:
       columns:
-        name: Name
+        name: שם
         email: דואר אלקטרוני
         document_number: מספר תעודה מזהה
         roles: תפקידים
@@ -1466,7 +1466,7 @@ he:
           title: יצירת בלוק תוכן חדש
         content_block:
           body: גוף
-          name: Name
+          name: שם
           names:
             top_links: קישורים עליונים
             footer: כותרת תחתונה
@@ -1513,7 +1513,7 @@ he:
           updated_at: עודכן ב
           status_draft: טיוטה
           status_published: פורסם
-          title: שם
+          title: כותרת
           slug: אסימון
           cards_title: כרטיס
           see_cards: ראה כרטיסים
@@ -1521,7 +1521,7 @@ he:
           cards_title: כרטיסים
           create_card: יצירת כרטיס
           no_cards: לא נמצאו כרטיסים.
-          title: שם
+          title: כותרת
           description: תיאור
           link_text: טקסט הקישור
           link_url: כתובת url של קישור
@@ -1542,7 +1542,7 @@ he:
       create_card: יצירת כרטיס
       no_cards: לא נמצאו כרטיסים.
       cards:
-        title: שם
+        title: כותרת
         description: תיאור
         link_text: טקסט הקישור
         link_url: כתובת url של קישור
