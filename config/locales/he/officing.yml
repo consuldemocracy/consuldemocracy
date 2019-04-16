@@ -1,5 +1,15 @@
 he:
   officing:
+    header:
+      title: הסקרים
+    dashboard:
+      index:
+        title: בודקי סקרים
+        info: כאן אתה יכול לבצע אימות למסמכי משתמש ולשמור את תוצאות ההצבעה
+        no_shifts: אין לך משמרות היום.
+    menu:
+      voters: אמת את המסמך
+      total_recounts: סה"כ ספירה חוזרת ותוצאות
     poll_budgets:
       see_ballot_sheets: ראה רשימת גיליון ההצבעות
       index:
