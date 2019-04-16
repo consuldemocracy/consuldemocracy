@@ -171,7 +171,7 @@ pl:
       comments_title: Komentarze
       edit_debate_link: Edytuj
       flag: Ta debata została oznaczona jako nieodpowiednia przez kilku użytkowników.
-      login_to_comment: Musisz się %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       share: Udostępnij
       author: Autor
     update:
@@ -460,7 +460,7 @@ pl:
       comments_tab: Komentarze
       edit_proposal_link: Edytuj
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
-      login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       notifications_tab: Powiadomienia
       milestones_tab: Kamienie milowe
       retired_warning: "Autor uważa, że niniejszy wniosek nie powinien otrzymywać więcej poparcia."
@@ -509,9 +509,9 @@ pl:
       already_voted_in_booth: "Wziąłeś już udział w fizycznym stanowisku. Nie możesz wziąć udziału ponownie."
       already_voted_in_web: "Brałeś już udział w tej sondzie. Jeśli zagłosujesz ponownie, zostanie to nadpisane."
       back: Wróć do głosowania
-      cant_answer_not_logged_in: "Muszą być %{signin} lub %{signup} do udziału."
+      cant_answer_not_logged_in: "%{signin} lub %{signup} aby wziąć udział."
       comments_tab: Komentarze
-      login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       signin: Zaloguj się
       signup: Zarejestruj się
       cant_answer_verify_html: "Aby odpowiedzieć, musisz %{verify_link}."
@@ -575,9 +575,9 @@ pl:
       date_4: "Ostatni rok"
       date_5: "Dostosowane"
       from: "Od"
-      general: "Z tekstem"
-      general_placeholder: "Pisz tekst"
-      search: "Filtr"
+      general: "Wyszukaj tekst w treści"
+      general_placeholder: "Tu wpisz szukaną frazę..."
+      search: "Filtruj"
       title: "Wyszukiwanie zaawansowane"
       to: "Do"
     author_info:
