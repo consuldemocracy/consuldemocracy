@@ -951,22 +951,22 @@ pl:
       index:
         title: "Lista aktywnych głosowań"
         no_polls: "Brak nadchodzących głosowań."
-        create: "Utwórz głosowanie"
+        create: "Utwórz sondaż"
         name: "Nazwa"
         dates: "Daty"
         start_date: "Data Rozpoczęcia"
         closing_date: "Data Zakończenia"
         geozone_restricted: "Ograniczone do dzielnic"
       new:
-        title: "Nowe głosowanie"
+        title: "Nowy sondaż"
         show_results_and_stats: "Pokaż wyniki i statystyki"
         show_results: "Pokaż wyniki"
         show_stats: "Pokaż statystyki"
         results_and_stats_reminder: "Zaznaczenie tych pól wyboru wyników i / lub statystyk tego głosowania udostępni je publicznie i każdy użytkownik je zobaczy."
-        submit_button: "Utwórz głosowanie"
+        submit_button: "Utwórz sondę"
       edit:
-        title: "Edytuj głosowanie"
-        submit_button: "Aktualizuj głosowanie"
+        title: "Edytuj sondę"
+        submit_button: "Aktualizuj sondę"
       show:
         questions_tab: Pytania
         booths_tab: Stanowiska
@@ -993,14 +993,14 @@ pl:
         create_question: "Utwórz pytanie"
         table_proposal: "Wniosek"
         table_question: "Pytanie"
-        table_poll: "Głosowanie"
+        table_poll: "Sondaż"
         poll_not_assigned: "Punkt nie przypisany"
       edit:
         title: "Edytuj Pytanie"
       new:
         title: "Utwórz Pytanie"
         title_proposal: "Stwórz pytanie"
-        poll_label: "Ankieta"
+        poll_label: "Sondaż"
       answers:
         images:
           add_image: "Dodaj obraz"
@@ -1149,7 +1149,7 @@ pl:
         milestones: Kamienie milowe
         no_proposals: Brak wniosków.
       show:
-        create_question: Poddaj ten wniosek pod głosowanie w sondzie
+        create_question: Poddaj ten pomysł pod głosowanie w sondzie
     hidden_proposals:
       index:
         filter: Filtruj
@@ -1381,7 +1381,7 @@ pl:
         total_participants: Wszystkich uczestników
         poll_questions: "Pytania z ankiety: %{poll}"
         table:
-          poll_name: Głosowanie
+          poll_name: Sondaż
           question_name: Pytanie
           origin_web: Uczestnicy sieci
           origin_total: Całkowity udział
