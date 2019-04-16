@@ -309,6 +309,21 @@ feature "Proposal's dashboard" do
     expect(page).not_to have_button("Request")
   end
 
+  scenario "Resource admin request button do not appear on archived proposals" do
+    feature = create(:dashboard_action, :resource, :active)
+    archived = Setting["months_to_archive_proposals"].to_i.months.ago
+    archived_proposal = create(:proposal, created_at: archived)
+
+    login_as(archived_proposal.author)
+    visit proposal_dashboard_path(archived_proposal)
+
+    within("#side_menu") do
+      click_link(feature.title)
+    end
+
+    expect(page).not_to have_button("Request")
+  end
+
   scenario "Dashboard has a link to dashboard community", js: true do
     expect(page).to have_link("Community")
     click_link "Community"
