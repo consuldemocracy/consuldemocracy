@@ -198,7 +198,7 @@ he:
           valuation_finished: הערכה הסתיימה
           feasible: בר ביצוע
           selected: Selected
-          undecided: Undecided
+          undecided: לא התקבלה החלטה בנושא
           unfeasible: אינו בר-ביצוע
           min_total_supports: תמיכה מינימלית
           max_total_supports: תמיכה מקסימלית
@@ -871,7 +871,7 @@ he:
         delete: מחיקת מיקום
         name: Name
         email: דואר אלקטרוני
-        entry_name: נושא משרה
+        entry_name: נושאי משרה
       search:
         email_placeholder: חיפוש משתמש/ת לפי דואר אלקטרוני
         search: חיפוש
