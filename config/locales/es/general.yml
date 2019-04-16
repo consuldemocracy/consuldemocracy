@@ -377,6 +377,8 @@ es:
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       selected_proposals: Propuestas seleccionadas
+      archived_proposals: Propuestas archivadas
+      proposals_lists: Listas de propuestas
       retired_links:
         all: Todas
         duplicated: Duplicadas
