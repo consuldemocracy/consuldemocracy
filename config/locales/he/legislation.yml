@@ -70,6 +70,7 @@ he:
           open: תהליכים פתוחים
           past: עבר
         no_open_processes: אין תהליכים פתוחים
+        no_past_processes: אין תהליכים בעבר
         section_header:
           icon_alt: סמל חקיקה שיתופית
           title: חקיקה שיתופית
