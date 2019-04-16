@@ -5,7 +5,7 @@ he:
     menu:
       title: הערכה
       budgets: תקציבים השתתפותיים
-      spending_proposals: Spending proposals
+      spending_proposals: תקציב להצעה
     budgets:
       index:
         title: תקציבים השתתפותיים
