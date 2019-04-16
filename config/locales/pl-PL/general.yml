@@ -499,7 +499,7 @@ pl:
       cant_answer: "To głosowanie nie jest dostępne w Twojej geostrefie"
       section_header:
         icon_alt: Ikona głosowania
-        title: Głosowanie
+        title: Sondaż
         help: Pomóż w głosowaniu
       section_footer:
         title: Pomóż w głosowaniu
