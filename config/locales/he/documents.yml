@@ -1,8 +1,13 @@
 he:
   documents:
     title: מסמכים
+    max_documents_allowed_reached_html: הגעת למספר המרבי המותר של מסמכים! <strong> עליך למחוק אחד לפני שתוכל להעלות קובץ אחר. </strong>
     form:
       title: מסמכים
+      title_placeholder: הוספת כותרת המתארת את המסמך
+      attachment_label: בחר מסמך
+      delete_button: הסר מסמך
+      cancel_button: ביטול
     errors:
       messages:
         in_between: חייב להיות בין %{min} ו %{max}
