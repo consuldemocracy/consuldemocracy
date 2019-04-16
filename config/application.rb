@@ -71,4 +71,14 @@ module Consul
   end
 end
 
+class Rails::Engine
+  initializer :prepend_custom_assets_path, group: :all do |app|
+    if self.class.name == "Consul::Application"
+      %w[images fonts javascripts].each do |asset|
+        app.config.assets.paths.unshift(Rails.root.join("app", "assets", asset, "custom").to_s)
+      end
+    end
+  end
+end
+
 require "./config/application_custom.rb"
