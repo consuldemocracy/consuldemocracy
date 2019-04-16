@@ -68,7 +68,7 @@ he:
         filter: מסנן
         filters:
           open: תהליכים פתוחים
-          past: עבר
+          past: תהליכים שהסתיימו
         no_open_processes: אין תהליכים פתוחים
         no_past_processes: אין תהליכים בעבר
         section_header:
