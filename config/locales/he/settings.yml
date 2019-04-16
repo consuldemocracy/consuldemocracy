@@ -25,6 +25,8 @@ he:
     votes_for_proposal_success: "מספר תומכים הדרושים לאישור הצעה"
     votes_for_proposal_success_description: "כאשר הצעה מגיעה למספר תומכים מסוים, לא ניתן להוסיף תמיכות נוספות בהצעה והיא תחשב כהצעה מוצלחת"
     months_to_archive_proposals: "מספר החודשים לאחסון ההצעות בארכיון"
+    months_to_archive_proposals_description: "לאחר מספר חודשים ההצעות יאוחסנו בארכיון, כבר לא תהיה אפשרות לקבלת הצבעות תמיכה"
+    email_domain_for_officials: "דומיין דוא\"ל עבור נושאי משרה ציבורית"
     feature:
       signature_sheets: "דפי חתימות"
       spending_proposals: "Spending proposals"
