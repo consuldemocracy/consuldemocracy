@@ -1,24 +1,24 @@
 pl:
   account:
     show:
-      change_credentials_link: Zmień moje referencje
-      email_on_comment_label: Powiadom mnie drogą mailową, gdy ktoś skomentuje moje propozycje lub debaty
-      email_on_comment_reply_label: Powiadom mnie drogą mailową, gdy ktoś odpowie na moje komentarze
+      change_credentials_link: Zmień moje dane logowania
+      email_on_comment_label: gdy ktoś skomentuje moje pomysły
+      email_on_comment_reply_label: gdy ktoś odpowie na mój komentarz
       erase_account_link: Usuń moje konto
       finish_verification: Zakończ weryfikację
-      notifications: Powiadomienia
+      notifications: 'Informuj mnie drogą mailową:'
       organization_name_label: Nazwa organizacji
       organization_responsible_name_placeholder: Reprezentant organizacji/kolektywu
       personal: Dane osobowe
       phone_number_label: Numer telefonu
-      public_activity_label: Utrzymaj moją listę aktywności publiczną
-      public_interests_label: Utrzymaj etykiety elementów, które obserwuję, publicznymi
+      public_activity_label: Pokazuj publicznie moją listę aktywności
+      public_interests_label: Pokaż publicznie etykiety elementów, które obserwuję
       public_interests_my_title_list: Tagi elementów, które obserwuję
       public_interests_user_title_list: Tagi elementów, które obserwuje ten użytkownik
       save_changes_submit: Zapisz zmiany
-      subscription_to_website_newsletter_label: Otrzymuj informacje dotyczące strony drogą mailową
-      email_on_direct_message_label: Otrzymuj e-maile o wiadomościach bezpośrednich
-      email_digest_label: Otrzymuj podsumowanie powiadomień dotyczących propozycji
+      subscription_to_website_newsletter_label: o innych, ważnych informacjach dotyczących portalu
+      email_on_direct_message_label: gdy ktoś wyśle mi wiadomość bezpośrednią
+      email_digest_label: o podsumowaniu powiadomień dotyczących pomysłów
       official_position_badge_label: Pokaż odznakę oficjalnej pozycji
       recommendations: Rekomendacje
       show_debates_recommendations: Pokaż zalecenia debat
