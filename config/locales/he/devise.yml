@@ -5,9 +5,31 @@ he:
       change_required: "תוקף סיסמתך פג"
       change_password: "שנה את הסיסמה"
       new_password: "סיסמה חדשה"
+      updated: "הסיסמה עודכנה בהצלחה"
     confirmations:
       confirmed: "חשבונך אושר בהצלחה. כעת הנך מחובר/ת."
       send_instructions: "בדקות הקרובות יגיע אליך אימייל עם הנחיות כיצד לאשר את הרשמתך."
+      send_paranoid_instructions: "אם כתובת הדואר האלקטרוני שלך נמצאת במאגר שלנו, בעוד כמה דקות תקבל הודעת דוא\"ל המכילה הוראות כיצד לאפס את סיסמתך."
+    failure:
+      already_authenticated: "אתה כבר מחובר."
+      inactive: "חשבונך טרם הופעל."
+      invalid: "שגוי %{authentication_keys} או סיסמה."
+      locked: "חשבונך נחסם."
+      last_attempt: "יש עוד ניסיון אחד לפני שהחשבון שלך יחסם."
+      not_found_in_database: "שגוי %{authentication_keys} או סיסמה."
+      timeout: "זמן החיבור שלך תם, התחבר שוב בכדי להמשיך."
+      unauthenticated: "עליך ל- %{signin} או %{signup} בכדי להמשיך."
+      unconfirmed: "כדי להמשיך, לחץ על קישור האישור ששלחנו אליך בדוא\"ל"
+    mailer:
+      confirmation_instructions:
+        subject: "הסבר להוראות האישור"
+      reset_password_instructions:
+        subject: "הוראות לאיפוס סיסמתך"
+      unlock_instructions:
+        subject: "הסבר לשחרור מנעילה"
+    omniauth_callbacks:
+      failure: "לא ניתן היה לאשר אותך בתור%{kind} מכיוון ש-%{reason}."
+      success: "זוהה בהצלחה כ-%{kind}."
     passwords:
       send_instructions: "בדקות הקרובות יגיע אליך אימייל עם הנחיות כיצד לאפס את סיסמתך."
       updated: "סיסמתך שונתה בהצלחה. כעת הנך מחובר/ת."
