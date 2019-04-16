@@ -5,6 +5,7 @@ he:
         notice: "%{resource_name} נוצר בהצלחה"
         debate: "הדיון נוסף בהצלחה"
         direct_message: "הודעתך נשלחה בהצלחה"
+        poll: "הסקר נוצר בהצלחה."
         proposal: "הצעתך נוספה בהצלחה"
         proposal_notification: "הודעתך נשלחה כראוי"
         spending_proposal: "הצעתך לתקצוב נוצרה בהצלחה. ניתן לגשת אליה ב %{activity}"
