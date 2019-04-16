@@ -3,6 +3,12 @@ he:
     annotations:
       comments:
         see_all: הצג הכל
+        see_complete: ראה כולל
+        comments_count:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
       form:
         login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
         signin: התחברות
