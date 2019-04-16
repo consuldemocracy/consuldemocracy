@@ -59,7 +59,7 @@ pl:
       introduce_email: "Wprowadź adres e-mail użyty dla konta:"
       send_email: Wyślij email weryfikacyjny
     menu:
-      create_proposal: Stwórz wniosek
+      create_proposal: Zaproponuj swój pomysł
       print_proposals: Drukuj wnioski
       support_proposals: Popieraj propozycje
       create_spending_proposal: Utwórz propozycję wydatków
@@ -85,7 +85,7 @@ pl:
     proposals:
       alert:
         unverified_user: Użytkownik nie jest zweryfikowany
-      create_proposal: Stwórz wniosek
+      create_proposal: Zaproponuj swój pomysł
       print:
         print_button: Drukuj
       index:
