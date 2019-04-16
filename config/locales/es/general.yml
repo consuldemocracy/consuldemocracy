@@ -376,6 +376,7 @@ es:
           error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
+      selected_proposals: Propuestas seleccionadas
       retired_links:
         all: Todas
         duplicated: Duplicadas

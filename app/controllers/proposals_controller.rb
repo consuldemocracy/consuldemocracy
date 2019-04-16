@@ -51,6 +51,7 @@ class ProposalsController < ApplicationController
     discard_draft
     discard_archived
     load_retired
+    load_selected
     load_featured
   end
 
@@ -137,6 +138,10 @@ class ProposalsController < ApplicationController
       else
         @resources = @resources.not_retired
       end
+    end
+
+    def load_selected
+      @resources = @resources.selected if params[:selected].present?
     end
 
     def load_featured

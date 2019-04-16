@@ -376,6 +376,7 @@ en:
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
+      selected_proposals: Selected proposals
       retired_links:
         all: All
         duplicated: Duplicated

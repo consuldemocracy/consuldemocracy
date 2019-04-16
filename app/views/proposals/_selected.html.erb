@@ -1,0 +1,8 @@
+<% if params[:selected].blank? %>
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
+
+  <p>
+    <%= link_to t("proposals.index.selected_proposals"), proposals_path(selected: "all"), class: "small" %>
+  </p>
+<% end %>

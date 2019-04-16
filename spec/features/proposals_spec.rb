@@ -118,6 +118,25 @@ feature "Proposals" do
     end
   end
 
+  context "Index" do
+    scenario "Lists selected proposals" do
+      selected_proposal = create(:proposal, :selected)
+      unselected_proposal = create(:proposal)
+
+      visit proposals_path
+
+      expect(page).to have_selector("#proposals .proposal", count: 2)
+      expect(page).to have_content selected_proposal.title
+      expect(page).to have_content unselected_proposal.title
+
+      click_link "Selected proposals"
+
+      expect(page).to have_selector("#proposals .proposal", count: 1)
+      expect(page).to have_content selected_proposal.title
+      expect(page).not_to have_content unselected_proposal.title
+    end
+  end
+
   scenario "Show" do
     proposal = create(:proposal)
 

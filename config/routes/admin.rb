@@ -29,7 +29,8 @@ namespace :admin do
     end
   end
 
-  resources :proposals, only: [:index, :show] do
+  resources :proposals, only: [:index, :show, :update] do
+    member { patch :toggle_selection }
     resources :milestones, controller: "proposal_milestones"
     resources :progress_bars, except: :show, controller: "proposal_progress_bars"
   end

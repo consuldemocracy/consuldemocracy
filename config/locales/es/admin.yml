@@ -1239,9 +1239,15 @@ es:
         id: ID
         author: Autor
         milestones: Hitos
+        select: Seleccionar
+        selected: Seleccionada
         no_proposals: No hay propuestas.
       show:
         create_question: Añadir esta propuesta a una votación para ser votada
+      form:
+        update: Actualizar propuesta ciudadana
+      update:
+        notice: Propuesta actualizada correctamente
     hidden_proposals:
       index:
         filter: Filtro

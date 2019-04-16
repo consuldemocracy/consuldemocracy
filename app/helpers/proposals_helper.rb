@@ -64,4 +64,39 @@ module ProposalsHelper
     proposals_current_view == "default" ? "minimal" : "default"
   end
 
+  def link_to_toggle_proposal_selection(proposal)
+    if proposal.selected?
+      button_text = t("admin.proposals.index.selected")
+      html_class = "button expanded"
+    else
+      button_text = t("admin.proposals.index.select")
+      html_class = "button hollow expanded"
+    end
+
+    link_to button_text,
+      toggle_selection_admin_proposal_path(proposal),
+      remote: true,
+      method: :patch,
+      class:  html_class
+  end
+
+  def css_for_proposal_info_row
+    if feature?(:allow_images)
+      if params[:selected].present?
+        "small-12 medium-9 column"
+      else
+        "small-12 medium-6 large-7 column"
+      end
+    else
+      if params[:selected].present?
+        "small-12 column"
+      else
+        "small-12 medium-9 column"
+      end
+    end
+  end
+
+  def show_proposal_votes?
+    params[:selected].blank?
+  end
 end

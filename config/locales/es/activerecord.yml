@@ -187,6 +187,7 @@ es:
         title: "Título"
         question: "Pregunta"
         description: "Descripción"
+        selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
