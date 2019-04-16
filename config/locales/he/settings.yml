@@ -18,6 +18,13 @@ he:
     max_votes_for_proposal_edit_description: "מהמספר הזה של ההצבעות מחבר ההצעה לא יכול לערוך אותה יותר"
     max_votes_for_debate_edit: "מספר ההצבעות שממנה לא ניתן עוד לערוך את הדיון"
     max_votes_for_debate_edit_description: "מהמספר הזה של הצבעות, המחבר של הדיון כבר לא יכול לערוך אותו"
+    proposal_code_prefix: "קידומת עבור קודי הצעה"
+    proposal_code_prefix_description: "קידומת זו תופיעו בהצעות לפני תאריך יצירה ו- ID שלה"
+    featured_proposals_number: "מספר ההצעות המוצעות"
+    featured_proposals_number_description: "ממספר ההצעות המוצעות אשר יוצגו אם הפעלת התכונה במצב פעיל"
+    votes_for_proposal_success: "מספר תומכים הדרושים לאישור הצעה"
+    votes_for_proposal_success_description: "כאשר הצעה מגיעה למספר תומכים מסוים, לא ניתן להוסיף תמיכות נוספות בהצעה והיא תחשב כהצעה מוצלחת"
+    months_to_archive_proposals: "מספר החודשים לאחסון ההצעות בארכיון"
     feature:
       signature_sheets: "דפי חתימות"
       spending_proposals: "Spending proposals"
