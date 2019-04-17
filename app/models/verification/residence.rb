@@ -71,7 +71,7 @@ class Verification::Residence
   private
 
     def retrieve_census_data
-      @census_data = CensusCaller.new.call(document_type, document_number)
+      @census_data = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
     end
 
     def residency_valid?
