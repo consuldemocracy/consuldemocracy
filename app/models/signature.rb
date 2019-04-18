@@ -69,7 +69,7 @@ class Signature < ApplicationRecord
 
   def in_census?
     document_types.detect do |document_type|
-      response = CensusCaller.new.call(document_type, document_number)
+      response = CensusCaller.new.call(document_type, document_number, nil, nil)
       if response.valid?
         @census_api_response = response
         true
