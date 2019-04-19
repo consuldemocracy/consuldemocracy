@@ -37,7 +37,7 @@ pl:
       polls:
         title: "Sondaże"
         description: "Sekcja %{link} jest aktywowana za każdym razem, gdy propozycja osiąga 1% poparcia i przechodzi do głosowania lub gdy Rada Miejska przedkłada kwestię, w której sprawie ludzie mają zadecydować."
-        link: "ankiety"
+        link: "sondaże"
         feature_1: "Aby uczestniczyć w głosowaniu, musisz %{link} i zweryfikować swoje konto."
         feature_1_link: "zarejestruj się w %{org_name}"
       processes:
