@@ -31,7 +31,7 @@ pl:
       user_permission_title: Partycypacja
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
       user_permission_verify_info: "* Tylko dla użytkowników Census."
-      user_permission_votes: ' '
+      user_permission_votes: Weź udział w głosowaniu ostatecznym
       username_label: Nazwa użytkownika
       verified_account: Konto zweryfikowane
       verify_my_account: Zweryfikuj moje konto
@@ -312,7 +312,7 @@ pl:
   proposals:
     create:
       form:
-        submit_button: Stwórz zrealizowany projekt
+        submit_button: Stwórz pomysł
     edit:
       editing: Edytuj wniosek
       form:
