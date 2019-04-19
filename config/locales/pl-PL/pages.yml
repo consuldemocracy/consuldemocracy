@@ -35,9 +35,9 @@ pl:
         image_alt: "Różne fazy budżetu partycypacyjnego"
         figcaption_html: 'Fazy "Poparcie" i "Głosowanie" budżetów partycypacyjnych.'
       polls:
-        title: "Sondaże"
+        title: "Sondy"
         description: "Sekcja %{link} jest aktywowana za każdym razem, gdy propozycja osiąga 1% poparcia i przechodzi do głosowania lub gdy Rada Miejska przedkłada kwestię, w której sprawie ludzie mają zadecydować."
-        link: "sondaże"
+        link: "sondy"
         feature_1: "Aby uczestniczyć w głosowaniu, musisz %{link} i zweryfikować swoje konto."
         feature_1_link: "zarejestruj się w %{org_name}"
       processes:
