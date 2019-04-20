@@ -3,43 +3,131 @@ he:
     annotations:
       comments:
         see_all: הצג הכל
+        see_complete: ראה כולל
+        comments_count:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
+        replies_count:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
+        cancel: ביטול
+        publish_comment: פרסם תגובה
       form:
+        phase_not_open: שלב זה אינו פתוח
         login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
         signin: התחברות
         signup: הרשמה
       index:
         title: הערות
+        comments_about: תגובות לגבי
+        see_in_context: ראה בהקשר של
+        comments_count:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
       show:
-        title: הערות
+        title: תגובה
+      version_chooser:
+        seeing_version: תגובות עבור גירסה
+        see_text: ראה טיוטת טקסט
     draft_versions:
+      changes:
+        title: שינויים
+        seeing_changelog_version: סיכום השינויים בתיקונים
+        see_text: ראה טיוטת טקסט
       show:
-        text_comments: הערות
+        loading_comments: טעינת תגובות
+        seeing_version: אתה צופה בגרסת הטיוטה
+        select_draft_version: בחר טיוטה
+        select_version_submit: ראה
+        updated_at: עודכן ב %{date}
+        see_changes: ראה סיכום שינויים
+        see_comments: ראה את כל התגובות
+        text_toc: תוכן עניינים
+        text_body: טקסט
+        text_comments: תגובות
     processes:
       header:
+        additional_info: מידע נוסף
         description: תיאור
+        more_info: למידע נוסף, והקשר
       proposals:
+        empty_proposals: לא נמצאו הצעות
         filters:
-          winners: Selected
+          random: אקראי
+          winners: נבחר
+      debate:
+        empty_questions: לא נמצאו שאלות
+        participate: השתתף בדיון
       index:
-        filter: Filter
+        filter: מסנן
+        filters:
+          open: תהליכים פתוחים
+          past: תהליכים שהסתיימו
+        no_open_processes: אין תהליכים פתוחים
+        no_past_processes: אין תהליכים בעבר
+        section_header:
+          icon_alt: סמל חקיקה שיתופית
+          title: חקיקה שיתופית
+          help: עזרה בנושא חקיקה שיתופית
+        section_footer:
+          title: עזרה בנושא חקיקה שיתופית
+          description: השתתפות בדיונים ובתהליכים לפני אישור תקנות או אסטרטגיות חדשות. דעתך תילקח בחשבון.
+      phase_not_open:
+        not_open: שלב זה אינו פתוח עדיין
+      phase_empty:
+        empty: טרם פורסם דבר
+      process:
+        see_latest_comments: ראה תגובות אחרונות
+        see_latest_comments_title: הגב על תהליך זה
       shared:
+        key_dates: שלבים בהשתתפות
+        homepage: דף הבית
         debate_dates: דיון
+        draft_publication_date: פרסום טיוטה
         allegations_dates: הערות
+        result_publication_date: פרסום תוצאות סופיות
+        milestones_date: הבא
         proposals_dates: הצעות
     questions:
+      comments:
+        comment_button: פרסום תשובה
+        comments_title: תשובות פתוחות
+        comments_closed: שלב סגור
+        form:
+          leave_comment: השאר את תשובתך
       question:
         comments:
           zero: אין תגובות
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
         debate: דיון
       show:
-        share: שיתוף
+        answer_question: פרסם תשובה
+        next_question: השאלה הבאה
+        first_question: השאלה הראשונה
+        share: שתף
+        title: תהליך חקיקה שיתופית
       participation:
+        phase_not_open: שלב זה אינו פתוח
+        organizations: ארגונים אינם מורשים להשתתף בדיון
         signin: התחברות
         signup: הרשמה
         unauthenticated: נדרשת %{signin} או %{signup} בכדי להשתתף
+        verified_only: רק משתמשים מאומתים יכולים להשתתף %{verify_account}.
         verify_account: לאמת את החשבון
+        debate_phase_not_open: שלב הדיון הסתיים, תשובות לא יתקבלו יותר
     shared:
-      share: שיתוף
+      share: שתף
+      share_comment: תגובה על %{version_name} מתהליך הטיוטות %{process_name}
     proposals:
       form:
-        tags_label: "תחומים"
+        tags_label: "קטגוריות"
+      not_verified: "עבור הצבעה להצעות %{verify_account}."
