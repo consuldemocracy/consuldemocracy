@@ -18,7 +18,7 @@ he:
       last_attempt: "יש עוד ניסיון אחד לפני שהחשבון שלך יחסם."
       not_found_in_database: "שגוי %{authentication_keys} או סיסמה."
       timeout: "זמן החיבור שלך תם, התחבר שוב בכדי להמשיך."
-      unauthenticated: "עליך ל- %{signin} או %{signup} בכדי להמשיך."
+      unauthenticated: "עליך להתחבר או להירשם כדי להמשיך."
       unconfirmed: "כדי להמשיך, לחץ על קישור האישור ששלחנו אליך בדוא\"ל"
     mailer:
       confirmation_instructions:
