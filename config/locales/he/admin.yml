@@ -197,7 +197,7 @@ he:
           under_valuation: נמצא בשלב ההערכה
           valuation_finished: הערכה הסתיימה
           feasible: בר ביצוע
-          selected: Selected
+          selected: נבחר
           undecided: לא התקבלה החלטה בנושא
           unfeasible: אינו בר-ביצוע
           min_total_supports: תמיכה מינימלית
@@ -218,7 +218,7 @@ he:
           feasible: "בר ביצוע (%{price})"
           unfeasible: "אינו בר-ביצוע"
           undecided: "טרם הוחלט"
-        selected: "Selected"
+        selected: "נבחר"
         select: "בחר"
         list:
           id: ID
@@ -230,7 +230,7 @@ he:
           geozone: היקף הפעילות
           feasibility: סבירות לביצוע
           valuation_finished: ההערכה הסתיימה.
-          selected: Selected
+          selected: נבחר
           visible_to_valuators: הצג למעריכים
           author_username: שם העורך
           incompatible: אינו תואם
@@ -258,8 +258,8 @@ he:
           "true": אינו תואם
           "false": תואם
         selection:
-          title: Selection
-          "true": Selected
+          title: בחירה
+          "true": נבחר
           "false": לא נבחר
         winner:
           title: זוכה
@@ -276,7 +276,7 @@ he:
         classification: סיווג
         compatibility: תאימות
         mark_as_incompatible: סמן כלא תואם
-        selection: Selection
+        selection: בחירה
         mark_as_selected: סמן כנבחר
         assigned_valuators: מעריכים
         select_heading: בחר כותרת
@@ -485,7 +485,7 @@ he:
           id: מזהה
           supports: לחיצה לתמיכה
           select: בחר
-          selected: Selected
+          selected: נבחר
         form:
           custom_categories: תחומים
           custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
