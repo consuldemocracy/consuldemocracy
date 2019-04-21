@@ -58,8 +58,8 @@ he:
         action: פעולה
         actions:
           block: מוסתרים
-          hide: מוחבא
-          restore: משוחזר
+          hide: מוסתר
+          restore: שוחזר
         by: נוהל על ידי
         content: תוכן
         filter: הצג
@@ -70,7 +70,7 @@ he:
           on_proposals: הצעות
           on_users: משתמשים
           on_system_emails: רשימת תפוצה
-        title: Moderator activity
+        title: פעילות מנחה
         type: סוג
         no_activity: אין פעילות מנהלים.
     budgets:
@@ -194,7 +194,7 @@ he:
           all: כולם
           without_admin: מבלי להקצות מנהל/ת
           without_valuator: ללא הקצאת מעריכים
-          under_valuation: Under valuation
+          under_valuation: נמצא בשלב ההערכה
           valuation_finished: הערכה הסתיימה
           feasible: בר ביצוע
           selected: Selected
@@ -225,7 +225,7 @@ he:
           title: כותרת
           supports: לחיצה לתמיכה
           admin: מנהל/ת
-          valuator: Valuator
+          valuator: מעריך
           valuation_group: קבוצת מעריכים
           geozone: היקף הפעילות
           feasibility: סבירות לביצוע
@@ -392,7 +392,7 @@ he:
           all: כולם
           with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
-        title: Hidden users
+        title: משתמשים מוסתרים
         user: משתמשיםות מוסתריםות
         no_hidden_users: לא נמצאו משתמשים מוסתרים.
       show:
@@ -580,45 +580,45 @@ he:
           title: בעקבות
     managers:
       index:
-        title: Managers
+        title: מנהלים
         name: שם
         email: דואר אלקטרוני
         no_managers: לא נמצאו מנהלים.
       manager:
-        add: Add
+        add: הוסף
         delete: מחיקה
       search:
         title: "מנהלים: חיפוש משתמשים"
     menu:
-      activity: Moderator activity
+      activity: פעילות מנחה
       admin: תפריט מנהל
       banner: נהל באנרים
       proposals: הצעות
       proposals_topics: כותרות הצעות
       budgets: תקציבים השתתפותיים
       geozones: ניהול אזורים גיאוגרפים
-      hidden_comments: Hidden comments
-      hidden_debates: Hidden debates
-      hidden_proposals: Hidden proposals
+      hidden_comments: הערות מוסתרות
+      hidden_debates: דיונים מוסתרים
+      hidden_proposals: הצעות מוסתרות
       hidden_budget_investments: תקציבי השקעות מוסתרים
       hidden_proposal_notifications: התראות הצעות מוסתרות
       hidden_users: משתמשים מוסתרים
       administrators: מנהלים
-      managers: Managers
-      moderators: Moderators
+      managers: מנהלים
+      moderators: מנחים
       messaging_users: הודעות למשתמשים
       newsletters: ידיעונים
       admin_notifications: התראות
       system_emails: רשימת תפוצה
       emails_download: הורדת אימיילים
-      valuators: Valuators
+      valuators: מעריכים
       poll_officers: בודקי סקרים
       polls: סקרים
       poll_booths: מיקום דוכנים
       poll_booth_assignments: דוכנים מוקצים
       poll_shifts: ניהול משמרות
-      officials: Officials
-      organizations: Organisations
+      officials: גורמים רשמיים
+      organizations: ארגונים
       settings: Configuration settings
       spending_proposals: הצעות להוצאת כספים
       stats: סטטיסטיקה
@@ -665,12 +665,12 @@ he:
         title: "מנהלי מערכת: חיפוש משתמשים"
     moderators:
       index:
-        title: Moderators
+        title: מנחים
         name: שם
         email: דואר אלקטרוני
         no_moderators: לא נמצאו מנחים.
       moderator:
-        add: Add
+        add: הוסף
         delete: מחיקה
       search:
         title: "מנחים: חיפוש משתמשים"
@@ -816,7 +816,7 @@ he:
         download_emails_button: הורד רשימת מיילים
     valuators:
       index:
-        title: Valuators
+        title: מעריכים
         name: שם
         email: דואר אלקטרוני
         description: תיאור
@@ -832,7 +832,7 @@ he:
         title: "מעריכים: חיפוש משתמשים"
       summary:
         title: סיכום מעריך לפרויקטים להשקעה
-        valuator_name: Valuator
+        valuator_name: מעריך
         finished_and_feasible_count: הסתיים ובר ביצוע
         finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
         finished_count: Finished
@@ -867,7 +867,7 @@ he:
       index:
         title: בודקי סקרים
       officer:
-        add: Add
+        add: הוסף
         delete: מחיקת מיקום
         name: שם
         email: דואר אלקטרוני
@@ -1110,7 +1110,7 @@ he:
         official_destroyed: "פרטים שנשמרו: המשתמש כבר אינו רשמי"
         official_updated: הפרטים של נושא המשרה הרשמי נשמרו
       index:
-        title: רשמיים
+        title: גורמים רשמיים
         help: חשבונות משתמש המסומנים כנושאי משרה, ההתערבויות שלהם בתהליכים יהיו מודגשים. באפשרותך להגדיר את התווית שמופיעה לצד שמות המשתמשים של חשבונות אלה מהחשובים ביותר (רמה 1) עד לרמה (רמה 5).
         no_officials: לא נמצא ונושאי משרה.
         name: שם
@@ -1129,12 +1129,12 @@ he:
         no_results: רמת נושא המשרה לא נמצאה.
     organizations:
       index:
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           pending: ממתין לאישור
-          rejected: Rejected
-          verified: Verified
+          rejected: נדחה
+          verified: אומת ואושר
         hidden_count_html:
           one: יש גם <strong> ארגון אחד </strong> ללא משתמשים או עם משתמש מוסתר.
           two: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
@@ -1147,12 +1147,12 @@ he:
         status: סטטוס
         no_organizations: לא נמצאו ארגונים.
         reject: דחה
-        rejected: Rejected
+        rejected: נדחה
         search: חיפוש
         search_placeholder: שם, דוא"ל או מספר טלפון
-        title: Organisations
-        verified: Verified
-        verify: נא לאשר
+        title: ארגונים
+        verified: אומת ואושר
+        verify: אישור
         pending: ממתין לאישור
       search:
         title: חיפוש אירגונים
@@ -1173,14 +1173,14 @@ he:
           all: כולם
           with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
-        title: Hidden proposals
+        title: הצעות מוסתרות
         no_hidden_proposals: לא נמצאו הצעות מוסתרות.
     proposal_notifications:
       index:
         filter: Filter
         filters:
           all: כולם
-          with_confirmed_hide: Confirmed
+          with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
         title: התראות מוסתרות
         no_hidden_proposals: אין התראות מוסתרות.
@@ -1251,19 +1251,19 @@ he:
       index:
         geozone_filter_all: כל האזורים
         administrator_filter_all: All administrators
-        valuator_filter_all: All valuators
+        valuator_filter_all: כל המעריכים
         tags_filter_all: All tags
         filters:
           valuation_open: פתוח
           without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
+          managed: מנוהל
+          valuating: תחת הערכה
           valuation_finished: הערכה הסתיימה
           all: כולם
         title: פרויקטים להשקעה בתקצוב השתתפותי
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
-        no_valuators_assigned: No valuators assigned
+        no_valuators_assigned: לא הוקצו מעריכים
         summary_link: "סיכום השקעות בפרויקט"
         valuator_summary_link: "סיכום הערכה"
         feasibility:
@@ -1272,7 +1272,7 @@ he:
           undefined: "Undefined"
       show:
         assigned_admin: Assigned administrator
-        assigned_valuators: Assigned valuators
+        assigned_valuators: מעריכים שהוקצו
         back: חזרה
         classification: סיווג
         heading: "השקעה כספית בפרוייקט %{id}"
@@ -1288,7 +1288,7 @@ he:
         undefined: Undefined
       edit:
         classification: סיווג
-        assigned_valuators: Valuators
+        assigned_valuators: מעריכים
         submit_button: עודכן
         tags: תגיות
         tags_placeholder: "Write the tags you want separated by commas (,)"
@@ -1300,7 +1300,7 @@ he:
         finished_and_feasible_count: Finished and feasible
         finished_and_unfeasible_count: Finished and unfeasible
         finished_count: Finished
-        in_evaluation_count: In evaluation
+        in_evaluation_count: עדיין בשלב הערכה
         total_count: Total
         cost_for_geozone: Cost
     geozones:
@@ -1374,7 +1374,7 @@ he:
           proposal_votes: הצבעות להצעה
           proposals: הצעות
           budgets: תקציבים פתוחים
-          budget_investments: Investment projects
+          budget_investments: פרויקטי השקעה
           spending_proposals: הצעות להוצאת כספים
           unverified_users: משתמשים שלא נבדקו
           user_level_three: רמה של שלושה משתמשים
