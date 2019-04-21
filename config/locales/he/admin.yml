@@ -206,7 +206,7 @@ he:
           one_filter_html: "הסינון אשר הופעל: <b><em>%{filter}</em></b>"
           two_filters_html: "המסננים שהופעלו:<b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: Filter
+          filter: מסנן
         download_current_selection: "הורדת הבחירה הנוכחית"
         no_budget_investments: "אין פרויקטי השקעה זמינים."
         title: פרויקטי השקעה
