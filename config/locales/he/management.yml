@@ -94,7 +94,7 @@ he:
       create_new_investment: יצירת תקציב להשקעה
       print_investments: הדפסת תקציב השקעות
       support_investments: תמוך בתקציב השקעות
-      table_name: Name
+      table_name: שם
       table_phase: שלב
       table_actions: פעולות
       no_budgets: אין תקציבים השתתפותים פעילים.
