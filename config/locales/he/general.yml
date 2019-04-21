@@ -217,7 +217,7 @@ he:
     footer:
       accessibility: נגישות
       conditions: כללים ותנאי שימוש
-      consul: מערכת ההצבעות של קול העם
+      consul: מערכת ההצבעות לשיתוף תושבים
       consul_url: https://github.com/consul/consul
       contact_us: לתמיכה טכנית עברו אל
       copyright: Consul, %{year}
