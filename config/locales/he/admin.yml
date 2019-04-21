@@ -79,7 +79,7 @@ he:
         new_link: צור תקציב חדש
         filter: מסנן
         filters:
-          open: Open
+          open: פתוח
           finished: הסתיים
         budget_investments: נהל פרויקטים
         table_name: שם
@@ -465,7 +465,7 @@ he:
           status: סטטוס
           start_date: תאריך פתיחה
           end_date: תאריך סיום
-          status_open: Open
+          status_open: פתוח
           status_closed: סגור
           status_planned: מתוכנן
         subnav:
@@ -1254,7 +1254,7 @@ he:
         valuator_filter_all: All valuators
         tags_filter_all: All tags
         filters:
-          valuation_open: Open
+          valuation_open: פתוח
           without_admin: Without assigned admin
           managed: Managed
           valuating: Under valuation
