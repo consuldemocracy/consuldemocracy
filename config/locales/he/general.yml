@@ -71,7 +71,7 @@ he:
       most_commented: עם הכי הרבה תגובות
     select_order: סדר לפי
     show:
-      return_to_commentable: "בחזרה אל"
+      return_to_commentable: "חזור אל "
   comments_helper:
     comment_button: פרסום התגובה
     comment_link: הערות
