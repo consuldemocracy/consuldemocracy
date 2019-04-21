@@ -373,7 +373,7 @@ he:
         no_hidden_comments: לא נמצאו תגובות מוסתרות.
     dashboard:
       index:
-        back: Go back to
+        back: חזור אל %{org}
         title: ניהול
         description: ברוך הבא אל%{org} פאנל הניהול.
     debates:
@@ -1301,7 +1301,7 @@ he:
         finished_and_unfeasible_count: Finished and unfeasible
         finished_count: Finished
         in_evaluation_count: עדיין בשלב הערכה
-        total_count: Total
+        total_count: סך הכל
         cost_for_geozone: Cost
     geozones:
       index:
@@ -1393,11 +1393,11 @@ he:
         polls: סקרים
       direct_messages:
         title: הודעות ישירות
-        total: Total
+        total: סך הכל
         users_who_have_sent_message: משתמשים/ות ששלחו הודעות פרטיות
       proposal_notifications:
         title: הצעת התראות
-        total: Total
+        total: סך הכל
         proposals_with_notifications: הצעות המאפשרות הודעות
         not_available: "לא ניתן להעלות הצעות"
       polls:
