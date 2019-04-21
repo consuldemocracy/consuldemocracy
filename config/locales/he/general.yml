@@ -485,7 +485,7 @@ he:
     final_date: "סיכום תוצאות סופיות"
     index:
       filters:
-        current: "Open"
+        current: "פתוח"
         expired: "לא בתוקף"
       title: "סקרים"
       participate_button: "השתתפות בהצבעה זו"
