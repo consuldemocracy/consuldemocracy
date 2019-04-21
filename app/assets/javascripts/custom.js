@@ -4,4 +4,6 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#javascript
 //
 //
-
+//  $(function(){
+//  alert('עריית תל-אביב יפו מזמינה אתכם התושבים להשפיע כיצד תיראה העיר, התחברו והתחילו להשפיע!');
+//  });

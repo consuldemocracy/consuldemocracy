@@ -3,3 +3,404 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+// 01. Global styles
+// -----------------
+
+$admin-color:    #245b80;
+$sidebar:        #245b80;
+$sidebar-hover:  #25597c;
+$sidebar-active: #f4fcd0;
+
+.admin {
+
+  h2 {
+    font-weight: 100;
+    margin-bottom: $line-height;
+
+    small {
+      color: $text-medium;
+    }
+
+    &.title {
+      text-transform: uppercase;
+    }
+  }
+
+  .back {
+    float: none;
+  }
+
+  .header {
+    border: 0;
+  }
+
+  .top-links {
+    background: #000;
+
+    a {
+      line-height: rem-calc($line-height * 1.5);
+    }
+  }
+
+  .admin-top-bar {
+    background: #fff;
+  }
+
+  .top-bar {
+    background: #fff !important;
+    border-bottom: 1px solid #eee;
+    color: #000;
+    height: auto;
+
+    @include breakpoint(medium) {
+      box-shadow: 0 2px 2px #eee;
+    }
+
+    @include breakpoint(small only) {
+
+      .top-bar-left ul {
+        display: inline-block;
+      }
+
+      .top-bar-right {
+
+        .submenu {
+          border: 0;
+          display: block;
+          margin-top: 0;
+          position: initial;
+          width: 100%;
+        }
+
+        .is-active {
+          font-weight: normal;
+          text-decoration: none;
+        }
+
+        .is-submenu-item {
+          padding: $line-height / 2 0;
+        }
+
+        a {
+          font-weight: normal !important;
+        }
+      }
+
+      [class^="icon-"] {
+        display: none;
+      }
+    }
+
+    [class^="icon-"]:not(.icon-circle) {
+      font-size: $base-font-size;
+    }
+  }
+
+  .menu .menu-text {
+
+    h1 {
+      margin-top: $line-height / 2;
+      margin-bottom: 0;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height / 2;
+        margin-top: 0;
+      }
+
+      small {
+        color: #000;
+        text-transform: uppercase;
+      }
+    }
+
+    a {
+      color: #000 !important;
+      line-height: $line-height !important;
+
+      @include breakpoint(medium) {
+        line-height: $line-height !important;
+      }
+    }
+  }
+
+  .top-bar .menu > li {
+
+    @include breakpoint(medium) {
+      height: auto !important;
+      padding-top: $line-height / 2;
+    }
+
+    a {
+      color: #000 !important;
+    }
+  }
+
+  .title-bar {
+    color: #000;
+    position: absolute;
+    right: 12px;
+  }
+
+  .menu-icon {
+
+    &::after {
+      background: #000;
+      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+    }
+  }
+
+  .notifications .icon-circle {
+    color: $admin-color;
+  }
+
+  .dropdown.menu > .is-dropdown-submenu-parent > a::after {
+    border-color: #000 transparent transparent;
+  }
+
+  .fieldset {
+
+    select {
+      height: $line-height * 2;
+    }
+
+    [type="text"] {
+      border-radius: 0;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  th,
+  td {
+    text-align: right;
+
+    &.text-center {
+      text-align: center;
+    }
+
+    &.text-right {
+      padding-right: $line-height;
+      text-align: right;
+    }
+
+    &.with-button {
+      line-height: $line-height * 2;
+
+      .button {
+        background: #fff;
+        color: $brand;
+      }
+    }
+  }
+
+  tr {
+    background: #fff;
+    border: 1px solid $border;
+
+    &:hover {
+      background: #f3f6f7;
+    }
+  }
+
+  table {
+
+    thead {
+      color: #fff;
+    }
+
+    th {
+      background: $brand;
+      color: #fff;
+
+      label {
+        color: #fff;
+      }
+
+      a {
+        color: inherit;
+        white-space: nowrap;
+      }
+    }
+
+    .break {
+      word-break: break-word;
+    }
+
+    &.fixed {
+      table-layout: fixed;
+    }
+
+    [type="submit"] ~ a,
+    a ~ a {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: $line-height / 2;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height / 2;
+        margin-top: 0;
+      }
+    }
+  }
+
+  hr {
+    max-width: none;
+  }
+
+  form {
+
+    .input-group-label {
+      height: $line-height * 2;
+    }
+  }
+
+  .menu.simple {
+    margin-bottom: $line-height / 2;
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: $line-height / 3;
+    }
+
+    .is-active {
+      border-bottom: 2px solid $admin-color;
+      color: $admin-color;
+      font-weight: bold;
+    }
+  }
+
+  .tabs-panel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .accordion-title {
+    font-size: $base-font-size;
+  }
+
+  .button.secondary {
+    margin-right: rem-calc(12);
+  }
+
+  .admin-content {
+
+    .proposal-form {
+      padding-top: 0;
+    }
+  }
+
+  .is-featured {
+    margin-top: rem-calc(36);
+  }
+
+  .select-order {
+    min-width: rem-calc(160);
+  }
+}
+
+.for-print-only {
+  display: none;
+}
+
+.admin-content {
+  overflow: scroll;
+  padding: $line-height !important;
+}
+
+@include breakpoint(medium) {
+
+  tr {
+
+    .on-hover-block {
+      display: none;
+    }
+
+    &:hover .on-hover-block {
+      display: block;
+      margin: 0;
+      margin-top: $line-height / 2;
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+
+  tr {
+
+    .on-hover {
+      display: none;
+    }
+
+    &:hover .on-hover {
+      display: inline;
+    }
+  }
+}
+
+.input-group {
+
+  .input-group-button {
+    padding-bottom: rem-calc(16);
+    vertical-align: top;
+  }
+}
+
+.sortable thead th:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.enabled {
+  color: $color-success;
+}
+
+.disabled {
+  color: $text-medium;
+}
+
+.icon-sortable {
+  font-family: "icons";
+  font-size: $small-font-size;
+  padding-right: $line-height / 2;
+  position: relative;
+
+  &::before,
+  &::after {
+    left: 6px;
+    opacity: 0.25;
+    position: absolute;
+  }
+
+  &::before {
+    content: "\57";
+    top: -2px;
+  }
+
+  &::after {
+    content: "\52";
+    bottom: -10px;
+  }
+
+  &.asc {
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.desc {
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+code {
+  word-break: break-all;
+}
+

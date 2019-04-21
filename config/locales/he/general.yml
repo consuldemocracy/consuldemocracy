@@ -485,7 +485,7 @@ he:
     final_date: "סיכום תוצאות סופיות"
     index:
       filters:
-        current: "Open"
+        current: "פתוח"
         expired: "לא בתוקף"
       title: "סקרים"
       participate_button: "השתתפות בהצבעה זו"
@@ -832,7 +832,7 @@ he:
       see_all_debates: ראה את כל הדיונים
       see_all_proposals: ראה/י את כל ההצעות
       see_all_processes: ראה את כל התהליכים
-      process_label: תהליים
+      process_label: תהליכים
       see_process: ראה תהליכים
     cards:
       title: מוצע
