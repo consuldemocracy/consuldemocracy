@@ -197,7 +197,7 @@ he:
           under_valuation: נמצא בשלב ההערכה
           valuation_finished: הערכה הסתיימה
           feasible: בר ביצוע
-          selected: Selected
+          selected: נבחר
           undecided: לא התקבלה החלטה בנושא
           unfeasible: אינו בר-ביצוע
           min_total_supports: תמיכה מינימלית
@@ -206,11 +206,11 @@ he:
           one_filter_html: "הסינון אשר הופעל: <b><em>%{filter}</em></b>"
           two_filters_html: "המסננים שהופעלו:<b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: Filter
+          filter: מסנן
         download_current_selection: "הורדת הבחירה הנוכחית"
         no_budget_investments: "אין פרויקטי השקעה זמינים."
         title: פרויקטי השקעה
-        assigned_admin: הוקצה מנהל לפרוייקט
+        assigned_admin: הוקצה מנהל לפרויקט
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
         no_valuation_groups: לא הוקצו קבוצות מעריכים
@@ -218,7 +218,7 @@ he:
           feasible: "בר ביצוע (%{price})"
           unfeasible: "אינו בר-ביצוע"
           undecided: "טרם הוחלט"
-        selected: "Selected"
+        selected: "נבחר"
         select: "בחר"
         list:
           id: ID
@@ -230,7 +230,7 @@ he:
           geozone: היקף הפעילות
           feasibility: סבירות לביצוע
           valuation_finished: ההערכה הסתיימה.
-          selected: Selected
+          selected: נבחר
           visible_to_valuators: הצג למעריכים
           author_username: שם העורך
           incompatible: אינו תואם
@@ -258,8 +258,8 @@ he:
           "true": אינו תואם
           "false": תואם
         selection:
-          title: Selection
-          "true": Selected
+          title: בחירה
+          "true": נבחר
           "false": לא נבחר
         winner:
           title: זוכה
@@ -276,7 +276,7 @@ he:
         classification: סיווג
         compatibility: תאימות
         mark_as_incompatible: סמן כלא תואם
-        selection: Selection
+        selection: בחירה
         mark_as_selected: סמן כנבחר
         assigned_valuators: מעריכים
         select_heading: בחר כותרת
@@ -373,7 +373,7 @@ he:
         no_hidden_comments: לא נמצאו תגובות מוסתרות.
     dashboard:
       index:
-        back: Go back to
+        back: חזור אל %{org}
         title: ניהול
         description: ברוך הבא אל%{org} פאנל הניהול.
     debates:
@@ -485,7 +485,7 @@ he:
           id: מזהה
           supports: לחיצה לתמיכה
           select: בחר
-          selected: Selected
+          selected: נבחר
         form:
           custom_categories: תחומים
           custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
@@ -1177,7 +1177,7 @@ he:
         no_hidden_proposals: לא נמצאו הצעות מוסתרות.
     proposal_notifications:
       index:
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -1262,7 +1262,7 @@ he:
           all: כולם
         title: פרויקטים להשקעה בתקצוב השתתפותי
         assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
+        no_admin_assigned: אין מנהל מערכת שהוקצה
         no_valuators_assigned: לא הוקצו מעריכים
         summary_link: "סיכום השקעות בפרויקט"
         valuator_summary_link: "סיכום הערכה"
@@ -1301,7 +1301,7 @@ he:
         finished_and_unfeasible_count: Finished and unfeasible
         finished_count: Finished
         in_evaluation_count: עדיין בשלב הערכה
-        total_count: Total
+        total_count: סך הכל
         cost_for_geozone: Cost
     geozones:
       index:
@@ -1388,16 +1388,16 @@ he:
         budgets_title: מימון השתתפותי
         visits_title: ביקורים
         direct_messages: הודעות ישירות
-        proposal_notifications: הצעת התראות
+        proposal_notifications: התראות להצעות
         incomplete_verifications: כל אימותים מלאים
         polls: סקרים
       direct_messages:
         title: הודעות ישירות
-        total: Total
+        total: סך הכל
         users_who_have_sent_message: משתמשים/ות ששלחו הודעות פרטיות
       proposal_notifications:
-        title: הצעת התראות
-        total: Total
+        title: התראות להצעות
+        total: סך הכל
         proposals_with_notifications: הצעות המאפשרות הודעות
         not_available: "לא ניתן להעלות הצעות"
       polls:

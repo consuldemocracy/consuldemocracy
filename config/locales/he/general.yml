@@ -71,7 +71,7 @@ he:
       most_commented: עם הכי הרבה תגובות
     select_order: סדר לפי
     show:
-      return_to_commentable: "בחזרה אל"
+      return_to_commentable: "חזור אל "
   comments_helper:
     comment_button: פרסום התגובה
     comment_link: הערות
@@ -219,7 +219,7 @@ he:
       conditions: כללים ותנאי שימוש
       consul: מערכת ההצבעות לשיתוף תושבים
       consul_url: https://github.com/consul/consul
-      contact_us: לתמיכה טכנית עברו אל
+      contact_us: תמיכה טכנית באתר הפרויקט
       copyright: Consul, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
