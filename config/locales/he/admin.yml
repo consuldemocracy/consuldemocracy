@@ -378,12 +378,12 @@ he:
         description: ברוך הבא אל%{org} פאנל הניהול.
     debates:
       index:
-        filter: Filter
+        filter: מסנן
         filters:
           all: כולם
           with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
-        title: Hidden debates
+        title: דיונים מוסתרים
         no_hidden_debates: לא נמצאו דיונים מוסתרים.
     hidden_users:
       index:
@@ -619,7 +619,7 @@ he:
       poll_shifts: ניהול משמרות
       officials: גורמים רשמיים
       organizations: ארגונים
-      settings: Configuration settings
+      settings: הגדרות כלליות
       spending_proposals: הצעות להוצאת כספים
       stats: סטטיסטיקה
       signature_sheets: דפי חתימות
@@ -1188,7 +1188,7 @@ he:
       flash:
         updated: הערך מעודכן
       index:
-        title: Configuration settings
+        title: הגדרות תצורה
         update_setting: עודכן
         participation_processes: "השתתפות בתהליכים"
         feature_flags: מאפיינים
