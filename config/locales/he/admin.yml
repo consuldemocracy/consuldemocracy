@@ -1262,7 +1262,7 @@ he:
           all: כולם
         title: פרויקטים להשקעה בתקצוב השתתפותי
         assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
+        no_admin_assigned: אין מנהל מערכת שהוקצה
         no_valuators_assigned: לא הוקצו מעריכים
         summary_link: "סיכום השקעות בפרויקט"
         valuator_summary_link: "סיכום הערכה"
