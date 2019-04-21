@@ -210,7 +210,7 @@ he:
         download_current_selection: "הורדת הבחירה הנוכחית"
         no_budget_investments: "אין פרויקטי השקעה זמינים."
         title: פרויקטי השקעה
-        assigned_admin: הוקצה מנהל לפרוייקט
+        assigned_admin: הוקצה מנהל לפרויקט
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
         no_valuation_groups: לא הוקצו קבוצות מעריכים
@@ -1177,7 +1177,7 @@ he:
         no_hidden_proposals: לא נמצאו הצעות מוסתרות.
     proposal_notifications:
       index:
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -1388,7 +1388,7 @@ he:
         budgets_title: מימון השתתפותי
         visits_title: ביקורים
         direct_messages: הודעות ישירות
-        proposal_notifications: הצעת התראות
+        proposal_notifications: התראות להצעות
         incomplete_verifications: כל אימותים מלאים
         polls: סקרים
       direct_messages:
@@ -1396,7 +1396,7 @@ he:
         total: סך הכל
         users_who_have_sent_message: משתמשים/ות ששלחו הודעות פרטיות
       proposal_notifications:
-        title: הצעת התראות
+        title: התראות להצעות
         total: סך הכל
         proposals_with_notifications: הצעות המאפשרות הודעות
         not_available: "לא ניתן להעלות הצעות"
