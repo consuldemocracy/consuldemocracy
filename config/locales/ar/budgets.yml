@@ -97,7 +97,7 @@ ar:
           confidence_score: اعلى تقييم
           price: حسب السعر
       share:
-        message: "لقد أنشأت مشروع استثماري %{title} في %{org}. أنشىء مشروع الاستثماري أنت أيضاً!"
+        message: "لقد أنشأت مشروع استثماري %{title} في %{handle}. أنشىء مشروع الاستثماري أنت أيضاً!"
       show:
         author_deleted: تم حذف المستخدم
         price_explanation: توضيح الاسعار

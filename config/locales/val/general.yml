@@ -445,7 +445,7 @@ val:
       form:
         submit_button: Guardar canvis
     share:
-      message: "He avalat la proposta %{summary} en %{handle}. Si t'interessa, avala tu també!"
+      message: "He avalat la proposta %{title} en %{handle}. Si t'interessa, avala tu també!"
   polls:
     all: "Totes"
     no_dates: "sense data asignada"

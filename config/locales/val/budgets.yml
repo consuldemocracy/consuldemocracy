@@ -106,7 +106,7 @@ val:
           confidence_score: millor valorats
           price: per cost
       share:
-        message: "Acabe de crear una proposta %{title} en %{org}. Crea una tu també!"
+        message: "Acabe de crear una proposta %{title} en %{handle}. Crea una tu també!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost

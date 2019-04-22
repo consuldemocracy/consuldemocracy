@@ -428,7 +428,7 @@ zh-CN:
       form:
         submit_button: 保存更改
     share:
-      message: "我支持%{handle} 中的提议%{summary}。如果您感兴趣，也请支持它！"
+      message: "我支持%{handle} 中的提议%{title}。如果您感兴趣，也请支持它！"
   polls:
     all: "所有"
     no_dates: "没指定日期"
