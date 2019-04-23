@@ -38,8 +38,6 @@ fr:
           proposals: Propositions
           budgets: Budget participatif
           help_page: Page d'aide
-        background_color: Couleur de fond
-        font_color: Couleur de la police
       edit:
         editing: Modifier la bannière
         form:
@@ -85,8 +83,10 @@ fr:
         table_investments: Propositions d'investissement
         table_edit_groups: Groupes de rubriques
         table_edit_budget: Éditer
+        table_admin_ballots: Bulletins
         edit_groups: Modifier les groupes de rubriques
         edit_budget: Modifier le budget
+        admin_ballots: Bulletins de l’admin
         no_budgets: "Il n'y a pas de budgets."
       create:
         notice: Nouveau budget participatif créé avec succès !
@@ -113,18 +113,44 @@ fr:
         recalculate: Recalculer les investissements gagnant
     budget_groups:
       name: "Nom"
+      headings_name: "Titres"
+      headings_edit: "Modifier les rubriques"
+      headings_manage: "Gérer les rubriques"
       max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
+      no_groups: "Il n'y a pas de groupes."
+      create:
+        notice: "Groupe créé avec succès !"
+      update:
+        notice: "Groupe mis à jour avec succès"
+      destroy:
+        success_notice: "Groupe supprimé avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer un groupe qui est associé à des rubriques"
       form:
+        create: "Créer un nouveau groupe"
         edit: "Modifier le groupe"
         name: "Nom du groupe"
         submit: "Sauvegarder le groupe"
+      index:
+        back: "Revenir aux budgets"
     budget_headings:
       name: "Nom"
+      no_headings: "Il n'y a pas de titre."
+      create:
+        notice: "Rubrique créée avec succès !"
+      update:
+        notice: "Mise à jour de rubrique réussie"
+      destroy:
+        success_notice: "Rubrique supprimée avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer une rubrique qui est associé à des investissements"
       form:
         name: "Nom du titre"
         amount: "Montant"
         population: "Population"
         population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
+        latitude: "Latitude (option)"
+        longitude: "Longitude (option)"
+        coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
+        allow_content_block: "Autoriser un bloc de contenu"
         submit: "Sauvegarder la rubrique"
     budget_phases:
       edit:
@@ -145,11 +171,6 @@ fr:
         tags_filter_all: Toutes les étiquettes
         advanced_filters: Filtres avancés
         placeholder: Chercher des projets
-        sort_by:
-          placeholder: Trier par
-          id: ID
-          title: Titre
-          supports: Soutiens
         filters:
           all: Toutes
           without_admin: Sans administrateur affecté
@@ -336,9 +357,9 @@ fr:
         user: Utilisateurs masqués
         no_hidden_users: Il n’y a aucun utilisateur masqué.
       show:
-        email: 'Courriel :'
-        hidden_at: 'Masqué le :'
-        registered_at: 'Inscrit le :'
+        email: "Courriel :"
+        hidden_at: "Masqué le :"
+        registered_at: "Inscrit le :"
         title: Activité de l'utilisateur (%{user})
     hidden_budget_investments:
       index:
@@ -370,8 +391,6 @@ fr:
           process: Processus
           debate_phase: Phase de débat
           proposals_phase: Phase de propositions
-          start: Début
-          end: Fin
           use_markdown: Utilisez Markdown pour formater le text
           title_placeholder: Le titre du processus
           summary_placeholder: Bref résumé de la description
@@ -383,7 +402,6 @@ fr:
           delete: Supprimer
           title: Processus législatifs
           filters:
-            open: Ouvert
             all: Toutes
         new:
           back: Retour
@@ -399,7 +417,6 @@ fr:
           title: Processus
           comments: Commentaires
           status: Statut
-          creation_date: Date de création
           status_open: Ouvert
           status_closed: Fermé
           status_planned: Planifié
@@ -520,12 +537,11 @@ fr:
         add: Ajouter en tant que président
         delete: Supprimer
       search:
-        title: 'Gestionnaires : Recherche d''utilisateur'
+        title: "Gestionnaires : Recherche d'utilisateur"
     menu:
       activity: Activité des modérateurs
       admin: Menu d'administration
       banner: Gérer les bannières
-      poll_questions: Questions
       proposals: Propositions
       proposals_topics: Sujets des propositions
       budgets: Budgets participatifs
@@ -575,7 +591,6 @@ fr:
           save: "Sauvegarder"
       title_moderated_content: Contenu modéré
       title_budgets: Budgets participatifs
-      title_polls: Votes
       title_profiles: Profils
       title_settings: Paramètres
       title_site_customization: Personnalisation du site
@@ -604,7 +619,7 @@ fr:
         add: Ajouter en tant que président
         delete: Supprimer
       search:
-        title: 'Modérateurs : Recherche d''utilisateur'
+        title: "Modérateurs : Recherche d'utilisateur"
     segment_recipient:
       all_users: Tous les utilisateurs
       administrators: Administrateurs
@@ -694,9 +709,9 @@ fr:
         send_pending: Envoi en attente
         send_pending_notification: Les notifications en attente ont été envoyées avec succès
       proposal_notification_digest:
-        title: Résumé des notifications des propositions
-        description: Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails.
-        preview_detail: Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent
+        title: "Résumé des notifications des propositions"
+        description: "Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails."
+        preview_detail: "Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent"
     emails_download:
       index:
         title: Téléchargement des courriels
@@ -718,7 +733,7 @@ fr:
         add: Ajouter un évaluateur
         delete: Supprimer
       search:
-        title: 'Évaluateurs : Recherche d''utilisateur'
+        title: "Évaluateurs : Recherche d'utilisateur"
       summary:
         title: Résumé de l'évaluateur pour les projets d'investissement
         valuator_name: Évaluateur
@@ -979,9 +994,9 @@ fr:
     officials:
       edit:
         destroy: Supprimer le statut de fonctionnaire
-        title: 'Fonctionnaire: Modifier l''utilisateur'
+        title: "Fonctionnaire: Modifier l'utilisateur"
       flash:
-        official_destroyed: 'Informations sauvegardées : l''utilisateur n''est plus un fonctionnaire.'
+        official_destroyed: "Informations sauvegardées : l'utilisateur n'est plus un fonctionnaire."
         official_updated: Informations du fonctionnaire sauvegardées
       index:
         title: Fonctionnaires
@@ -998,7 +1013,7 @@ fr:
       search:
         edit_official: Modifier le fonctionnaire
         make_official: Convertir en fonctionnaire
-        title: 'Positions de fonctionnaire: recherche utilisateur'
+        title: "Positions de fonctionnaire: recherche utilisateur"
         no_results: Positions officielles introuvables.
     organizations:
       index:
@@ -1056,10 +1071,6 @@ fr:
       flash:
         updated: Valeur mise-à-jour
       index:
-        banners: Style des bannières
-        banner_imgs: Images des bannières
-        no_banners_images: Aucune image de bannière
-        no_banners_styles: Aucun style de bannière
         title: Paramètres
         update_setting: Mettre-à-jour
         feature_flags: Fonctionnalités
@@ -1187,7 +1198,7 @@ fr:
         form:
           error:
             one: "a empêché ce district d'être sauvegardé"
-            other: 'a empêché ce district d''être sauvegardé'
+            other: "a empêché ce district d'être sauvegardé"
       edit:
         form:
           submit_button: Sauvegarder des changements
