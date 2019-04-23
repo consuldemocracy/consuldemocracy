@@ -8,7 +8,7 @@ fa:
         alert:
           failure: در ارسال ایمیل به حسابتان مشکلی وجود دارد.
         flash:
-          success: 'ایمیل تایید به حساب شما ارسال شده است: %{email}'
+          success: "ایمیل تایید به حساب شما ارسال شده است: %{email}"
       show:
         alert:
           failure: کد تأیید نادرست است.
@@ -19,7 +19,6 @@ fa:
         unconfirmed_code: شما هنوز کد تأیید را وارد نکرده اید.
       create:
         flash:
-          offices: دفاتر پشتیبانی شهروند
           success_html: از شما به خاطر درخواستتان <b>حداکثر کد امنیت (فقط برای رای نهایی مورد نیاز است)</b> تشکر میکنیم. در چند روز آینده ما آن را به آدرس شما ارسال خواهیم کرد. همچنین شما می توانید کد خود را از هر یک از %{offices} دریافت کنید.
       edit:
         see_all: مشاهده طرح ها
@@ -27,10 +26,9 @@ fa:
       errors:
         incorrect_code: کد تأیید نادرست است.
       new:
-        explanation: 'برای شرکت در رای گیری نهایی شما می توانید:'
+        explanation: "برای شرکت در رای گیری نهایی شما می توانید:"
         go_to_index: مشاهده طرح ها
         office: تأیید در %{office}
-        offices: دفاتر پشتیبانی شهروند
         send_letter: یک نامه با کد ارسال کنید.
         title: تبریک میگم!
         user_permission_info: با حساب کاربریتان می توانید...
@@ -52,7 +50,7 @@ fa:
         date_of_birth: تاریخ تولد
         document_number: شماره سند
         document_number_help_title: کمک
-        document_number_help_text_html: 'DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P'
+        document_number_help_text_html: "DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P"
         document_type:
           passport: گذرنامه
           residence_card: کارت اقامت
@@ -61,7 +59,6 @@ fa:
         error_not_allowed_age: سن مورد نیاز برای شرکت را ندارید.
         error_not_allowed_postal_code: به منظور تایید، شما باید ثبت نام کنید.
         error_verifying_census: سرشماری قادر به تأیید اطلاعات شما نبود. لطفا با  تماس با شورای شهر، جزئیات مربوط به سرشماری خود را اصلاح کنید%{offices}.
-        error_verifying_census_offices: دفاتر پشتیبانی شهروند
         form_errors: مانع تایید محل اقامت شما شد.
         postal_code: کد پستی
         postal_code_note: برای تایید حساب شما باید ثبت نام کنید.
