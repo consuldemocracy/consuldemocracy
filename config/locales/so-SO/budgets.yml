@@ -111,9 +111,9 @@ so:
         author_deleted: Isticmalaha la tirtiray
         price_explanation: Faahfaahinta qiimaha
         unfeasibility_explanation: Sharaxaad aan macquul ahayn
-        code_html: 'Koodka mashruuca malgashiga<strong>%{code}</strong>'
-        location_html: 'Goobta<strong>%{location}</strong>'
-        organization_name_html: 'Lagu soo bandhigay: <strong>%{name}</strong>'
+        code_html: "Koodka mashruuca malgashiga<strong>%{code}</strong>"
+        location_html: "Goobta<strong>%{location}</strong>"
+        organization_name_html: "Lagu soo bandhigay: <strong>%{name}</strong>"
         share: Lawadag
         title: Mashruuca Malgelinta
         supports: Tageerayaal
@@ -122,10 +122,10 @@ so:
         comments_tab: Faalo
         milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
         author: Qoraa
-        project_unfeasible_html: 'Mashruucan maalgashiga <strong> ayaa loo calaamadeeyay sida aan suurtagal ahayn </ strong> oo uma tagi doono wajiga ballanka.'
-        project_selected_html: 'Mashruucan maalgashiga <strong> ayaa loo xushay </ strong> muddada ballanka.'
-        project_winner: 'Ku guuleysiga mashruuca maalgashiga'
-        project_not_selected_html: 'Mashruucan maalgashiga <strong> ayaan la xusalan </ strong> muddada ballanka.'
+        project_unfeasible_html: "Mashruucan maalgashiga <strong> ayaa loo calaamadeeyay sida aan suurtagal ahayn </ strong> oo uma tagi doono wajiga ballanka."
+        project_selected_html: "Mashruucan maalgashiga <strong> ayaa loo xushay </ strong> muddada ballanka."
+        project_winner: "Ku guuleysiga mashruuca maalgashiga"
+        project_not_selected_html: "Mashruucan maalgashiga <strong> ayaan la xusalan </ strong> muddada ballanka."
       wrong_price_format: Tirooyinka keliya e isku dhafka ah
       investment:
         add: Codeyn
