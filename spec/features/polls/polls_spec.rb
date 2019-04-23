@@ -114,7 +114,7 @@ feature "Polls" do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
+      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
     end
 
     scenario "Poll title link to results if enabled" do
@@ -122,7 +122,7 @@ feature "Polls" do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with results", href: results_poll_path(poll))
+      expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
     end
   end
 
