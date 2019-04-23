@@ -1,0 +1,197 @@
+da:
+  date:
+    abbr_day_names:
+      - Søn
+      - Man
+      - Tirs
+      - Ons
+      - Tors
+      - Fre
+      - Lør
+    abbr_month_names:
+      - 
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - Maj
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dec
+    day_names:
+      - Søndag
+      - Mandag
+      - Tirsdag
+      - Onsdag
+      - Torsdag
+      - Fredag
+      - Lørdag
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - Januar
+      - Februar
+      - Marts
+      - April
+      - Maj
+      - Juni
+      - Juli
+      - August
+      - September
+      - Oktober
+      - November
+      - December
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: omkring 1 time
+        other: omkring %{count} timer
+      about_x_months:
+        one: omkring 1 måned
+        other: omkring %{count} måneder
+      about_x_years:
+        one: omkring 1 år
+        other: omkring %{count} år
+      almost_x_years:
+        one: næsten 1 år
+        other: næsten %{count} år
+      half_a_minute: et halvt minut
+      less_than_x_minutes:
+        one: mindre end et minut
+        other: mindre end %{count} minutter
+      less_than_x_seconds:
+        one: mindre end 1 sekund
+        other: mindre end %{count} sekunder
+      over_x_years:
+        one: over 1 år
+        other: over %{count} år
+      x_days:
+        one: 1 dag
+        other: "%{count} dage"
+      x_minutes:
+        one: 1 minut
+        other: "%{count} minutter"
+      x_months:
+        one: 1 måned
+        other: "%{count} måneder"
+      x_years:
+        one: 1 år
+        other: "%{count} år"
+      x_seconds:
+        one: 1 sekund
+        other: "%{count} sekunder"
+    prompts:
+      day: Dag
+      hour: Time
+      minute: Minut
+      month: Måned
+      second: Sekunder
+      year: År
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: skal accepteres
+      blank: kan ikke være tom
+      present: skal være tom
+      confirmation: matcher ikke %{attribute}
+      empty: kan ikke være tom
+      equal_to: skal være lig med %{count}
+      even: skal være lige
+      exclusion: er reserveret
+      greater_than: skal være større end %{count}
+      greater_than_or_equal_to: skal være større end eller lig med %{count}
+      inclusion: er ikke inkluderet på listen
+      invalid: er ugyldigt
+      less_than: skal være mindre end %{count}
+      less_than_or_equal_to: skal være mindre end eller lig med %{count}
+      model_invalid: "Valideringen mislykkedes: %{errors}"
+      not_a_number: er ikke et tal
+      not_an_integer: skal være et helt tal
+      odd: skal være ulige
+      required: skal eksistere
+      taken: er allerede taget
+      too_long:
+        one: er for langt (højst 1 tegn)
+        other: er for langt (højst %{count} tegn)
+      too_short:
+        one: er for kort (minimum 1 tegn)
+        other: er for kort (minimum %{count} tegn)
+      wrong_length:
+        one: har den forkerte længde (skal have 1 tegn)
+        other: har den forkerte længde (skal have %{count} tegn)
+      other_than: skal være noget andet end %{count}
+    template:
+      body: "Der var problemer med følgende områder:"
+      header:
+        one: 1 fejl forhindrede %{model} i at blive gemt
+        other: "%{count} fejl forhindrede %{model} i at blive gemt"
+  helpers:
+    select:
+      prompt: Vælg venligst
+    submit:
+      create: Opret %{model}
+      submit: Gem %{model}
+      update: Opdater %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milliard
+          million: Million
+          quadrillion: Kvadrillion
+          thousand: Tusind
+          trillion: Billion
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", og "
+      two_words_connector: " og "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm
