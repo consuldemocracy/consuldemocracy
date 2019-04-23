@@ -29,14 +29,13 @@
       </div>
       <div class="small-12 medium-6 column" data-equalizer-watch>
         <div class="dates"></div>
-        <% if poll.questions.count == 1 %>
-          <% poll.questions.each do |question| %>
-            <h4><%= link_to_poll question.title, poll %></h4>
-            <%= poll_dates(poll) %>
-          <% end %>
+        <% if poll.questions.one? %>
+          <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
+          <%= poll_dates(poll) %>
         <% else %>
           <h4><%= link_to_poll poll.name, poll %></h4>
           <%= poll_dates(poll) %>
+
           <ul class="margin-top">
             <% poll.questions.each do |question| %>
               <li><%= question.title %></li>
