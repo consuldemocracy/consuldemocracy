@@ -327,8 +327,8 @@ zh-CN:
         signature:
           attributes:
             document_number:
-              not_in_census: '未通过人口普查核实'
-              already_voted: '这个提案已经被投票'
+              not_in_census: "未通过人口普查核实"
+              already_voted: "这个提案已经被投票"
         site_customization/page:
           attributes:
             slug:
@@ -341,7 +341,7 @@ zh-CN:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: '您不能对评估做评论'
+              cannot_comment_valuation: "您不能对评估做评论"
       messages:
         record_invalid: "验证失败：%{errors}"
         restrict_dependent_destroy:
