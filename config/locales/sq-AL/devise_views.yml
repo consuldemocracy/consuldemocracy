@@ -15,7 +15,7 @@ sq:
     mailer:
       confirmation_instructions:
         confirm_link: Konfirmo llogarinë time
-        text: 'Ju mund të konfirmoni llogarinë tuaj të postës elektronike në lidhjen e mëposhtme:'
+        text: "Ju mund të konfirmoni llogarinë tuaj të postës elektronike në lidhjen e mëposhtme:"
         title: Mirësevini
         welcome: Mirësevini
       reset_password_instructions:
@@ -23,12 +23,12 @@ sq:
         hello: Përshëndetje
         ignore_text: Nëse nuk keni kërkuar ndryshim të fjalëkalimit, mund ta injoroni këtë email.
         info_text: Fjalëkalimi juaj nuk do të ndryshohet nëse nuk e përdorni lidhjen dhe ta redaktoni.
-        text: 'Ne kemi marrë një kërkesë për të ndryshuar fjalëkalimin tuaj. Këtë mund ta bëni në lidhjen e mëposhtme:'
+        text: "Ne kemi marrë një kërkesë për të ndryshuar fjalëkalimin tuaj. Këtë mund ta bëni në lidhjen e mëposhtme:"
         title: Ndrysho fjalëkalimin tënd
       unlock_instructions:
         hello: Përshëndetje
         info_text: Llogaria juaj është bllokuar për shkak të një numri të tepërt të përpjekjeve të dështuara identifikimi.
-        instructions_text: 'Ju lutemi klikoni në këtë link për të zhbllokuar llogarinë tuaj:'
+        instructions_text: "Ju lutemi klikoni në këtë link për të zhbllokuar llogarinë tuaj:"
         title: Llogaria juaj është bllokuar.
         unlock_link: Zhblloko llogarinë time
     menu:
@@ -103,7 +103,7 @@ sq:
           password_confirmation_label: Konfirmo fjalëkalimin
           password_label: Fjalëkalim i ri
           update_submit: Përditëso
-          waiting_for: 'Duke pritur konfirmimin e:'
+          waiting_for: "Duke pritur konfirmimin e:"
         new:
           cancel: Anulo hyrjen
           email_label: Email
