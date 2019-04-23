@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe RemoteTranslation do
 
@@ -28,9 +28,9 @@ describe RemoteTranslation do
     expect(remote_translation).not_to be_valid
   end
 
-  describe '#enqueue_remote_translation' do
+  describe "#enqueue_remote_translation" do
 
-    it 'after create enqueue Delayed Job' do
+    it "after create enqueue Delayed Job" do
       Delayed::Worker.delay_jobs = true
 
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
