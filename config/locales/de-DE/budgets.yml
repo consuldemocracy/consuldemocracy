@@ -70,7 +70,7 @@ de:
         location: "Weitere Ortsangaben"
         map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
-        title: Partizipative Haushaltsplanung
+        title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge
         unfeasible_text: "Der Ausgabenvorschlag muss eine gewisse Anzahl von Anforderungen erfüllen, (Legalität, Durchführbarkeit, im Aufgabenbereich der Stadt, innerhalb des Limits des Haushaltes) um für durchführbar erklärt werden zu können und das Stadium der finalen Abstimmung zu erreichen. Alle Ausgabenvorschläge, die diese Kriterien nicht erfüllen, sind als nicht durchführbar markiert und stehen in der folgenden Liste, zusammen mit einem Bericht zur Undurchführbarkeit."
         by_heading: "Ausgabenvorschläge im Bereich: %{heading}"
@@ -111,9 +111,9 @@ de:
         author_deleted: Benutzer gelöscht
         price_explanation: Preiserklärung
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
-        code_html: 'Code des Ausgabenvorschlags: <strong>%{code}</strong>'
-        location_html: 'Standort: <strong>%{location}</strong>'
-        organization_name_html: 'Vorgeschlagen von: <strong>%{name}</strong>'
+        code_html: "Code des Ausgabenvorschlags: <strong>%{code}</strong>"
+        location_html: "Standort: <strong>%{location}</strong>"
+        organization_name_html: "Vorgeschlagen von: <strong>%{name}</strong>"
         share: Teilen
         title: Investitionsprojekt
         supports: Unterstützung
@@ -122,10 +122,10 @@ de:
         comments_tab: Kommentare
         milestones_tab: Meilensteine
         author: Autor
-        project_unfeasible_html: 'Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen.'
-        project_selected_html: 'Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>.'
-        project_winner: 'Best bewerteter Ausgabenvorschlag'
-        project_not_selected_html: 'Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt.'
+        project_unfeasible_html: "Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen."
+        project_selected_html: "Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>."
+        project_winner: "Best bewerteter Ausgabenvorschlag"
+        project_not_selected_html: "Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt."
         see_price_explanation: Erläuterung der Kosten anzeigen
       wrong_price_format: Nur ganze Zahlen
       investment:
@@ -138,15 +138,15 @@ de:
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
-          one: 1 Unterstützer/in
-          other: "%{count} Unterstützer/innen"
+          one: 1 Unterstützer*in
+          other: "%{count} Unterstützer*innen"
         give_support: Unterstützung
       header:
         check_ballot: Meine Abstimmung überprüfen
         different_heading_assigned_html: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
-        check_ballot_link: "Meine Abstimmung überprüfen"
-        price: "Diese Rubrik verfügt über einen Haushalt von"
+        check_ballot_link: "Meine Abstimmungen überprüfen"
+        price: "Dieser Bereich verfügt über einen Haushalt von"
     progress_bar:
       assigned: "Sie haben zugeordnet: "
       available: "Verfügbare Haushaltsmittel: "
