@@ -67,7 +67,7 @@ sq:
       most_commented: Më të komentuarit
     select_order: Ndaj sipas
     show:
-      return_to_commentable: 'Shko prapa ne '
+      return_to_commentable: "Shko prapa ne "
   comments_helper:
     comment_button: Publiko komentin
     comment_link: Koment
@@ -218,8 +218,7 @@ sq:
       available_locales: Gjuhët në dispozicion
       collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
-      external_link_blog: Blog
-      locale: 'Gjuha:'
+      locale: "Gjuha:"
       logo: Logoja
       management: Menaxhimi
       moderation: Moderim
@@ -241,7 +240,7 @@ sq:
         notifications: Njoftimet
         no_notifications: "Ju nuk keni njoftime të reja"
     admin:
-      watch_form_message: 'Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?'
+      watch_form_message: "Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?"
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
@@ -368,7 +367,7 @@ sq:
         one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
         other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
-      select_order_long: 'Ju shikoni propozime sipas:'
+      select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
       title: Propozime
       top: Top javore
@@ -397,8 +396,6 @@ sq:
         guide: "Tani mund ta shpërndani atë në mënyrë që njerëzit të fillojnë mbështetjen."
         edit: "Para se të shpërndahet, do të jeni në gjendje ta ndryshoni tekstin si ju pëlqen."
         view_proposal: Jo tani, shko tek propozimi im
-      improve_info: "Përmirësoni fushatën tuaj dhe merrni më shumë mbështetje"
-      improve_info_link: "Shiko më shumë informacion"
       already_supported: Ju e keni mbështetur tashmë këtë propozim. Shperndaje!
       comments:
         zero: Nuk ka komente
@@ -420,7 +417,7 @@ sq:
       successful: "Ky propozim ka arritur mbështetjen e kërkuar."
     show:
       author_deleted: Përdoruesi u fshi
-      code: 'Kodi Propozimit'
+      code: "Kodi Propozimit"
       comments:
         zero: Nuk ka komente
         one: 1 koment
@@ -510,7 +507,6 @@ sq:
         title: "Pyetjet"
         most_voted_answer: "Përgjigja më e votuar:"
   poll_questions:
-    create_question: "Krijo pyetje"
     show:
       vote_answer: "Votim %{answer}"
       voted: "Ju keni votuar %{answer}"
@@ -526,29 +522,29 @@ sq:
     show:
       back: "Kthehu te aktiviteti im"
   shared:
-    edit: 'Ndrysho'
-    save: 'Ruaj'
+    edit: "Ndrysho"
+    save: "Ruaj"
     delete: Fshi
     "yes": "Po"
     "no": "Jo"
     search_results: "Kërko rezultatet"
     advanced_search:
-      author_type: 'Nga kategoria e autorit'
-      author_type_blank: 'Zgjidh nje kategori'
-      date: 'Nga data'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: 'Zgjidhni një datë'
-      date_1: 'Zgjidhni një datë'
-      date_2: 'Javën e shkuar'
-      date_3: 'Muajin e kaluar'
-      date_4: 'Vitin e kaluar'
-      date_5: 'E personalizuar'
-      from: 'Nga'
-      general: 'Me tekstin'
-      general_placeholder: 'Shkruani tekstin'
-      search: 'Filtër'
-      title: 'Kërkim i avancuar'
-      to: 'Në'
+      author_type: "Nga kategoria e autorit"
+      author_type_blank: "Zgjidh nje kategori"
+      date: "Nga data"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "Zgjidhni një datë"
+      date_1: "Zgjidhni një datë"
+      date_2: "Javën e shkuar"
+      date_3: "Muajin e kaluar"
+      date_4: "Vitin e kaluar"
+      date_5: "E personalizuar"
+      from: "Nga"
+      general: "Me tekstin"
+      general_placeholder: "Shkruani tekstin"
+      search: "Filtër"
+      title: "Kërkim i avancuar"
+      to: "Në"
     author_info:
       author_deleted: Përdoruesi u fshi
     back: Kthehu pas
@@ -622,7 +618,6 @@ sq:
       see_more: Shiko më shumë rekomandime
       hide: Fshih rekomandimet
   social:
-    blog: "Blogu %{org}"
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
@@ -631,8 +626,8 @@ sq:
     instagram: " Instagram %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Nëse propozoni në emër të një shoqate apo kolektivi shtoni emrin këtu'
-      association_name: 'Emri i shoqatës'
+      association_name_label: "Nëse propozoni në emër të një shoqate apo kolektivi shtoni emrin këtu"
+      association_name: "Emri i shoqatës"
       description: Përshkrimi
       external_url: Lidhje me dokumentacionin shtesë
       geozone: Fusha e veprimit
@@ -665,7 +660,7 @@ sq:
       start_new: Krijo propozimin e shpenzimeve
     show:
       author_deleted: Përdoruesi u fshi
-      code: 'Kodi Propozimit'
+      code: "Kodi Propozimit"
       share: Shpërndaj
     wrong_price_format: Vetëm numra të plotë
     spending_proposal:
@@ -808,7 +803,7 @@ sq:
       user_permission_info: Me llogarinë tuaj ju mund të...
       user_permission_proposal: Krijo propozime të reja
       user_permission_support_proposal: Përkrahni propozimet
-      user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
+      user_permission_verify: "Për të kryer të gjitha veprimet verifikoni llogarinë tuaj."
       user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
       user_permission_verify_my_account: Verifikoni llogarinë time
       user_permission_votes: Merrni pjesë në votimin përfundimtar
