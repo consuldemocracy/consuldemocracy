@@ -217,7 +217,7 @@ es:
       administration_menu: Admin
       administration: Administración
       available_locales: Idiomas disponibles
-      collaborative_legislation: Legislación colaborativa
+      collaborative_legislation: Procesos legislativos
       debates: Debates
       locale: "Idioma:"
       logo: Logo de CONSUL
@@ -383,7 +383,7 @@ es:
     new:
       form:
         submit_button: Crear propuesta
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      more_info: '¿Cómo funcionan las propuestas ciudadanas?'
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -397,7 +397,7 @@ es:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
+      already_supported: '¡Ya has apoyado esta propuesta, compártela!'
       comments:
         zero: Sin comentarios
         one: 1 Comentario
@@ -443,7 +443,7 @@ es:
       form:
         submit_button: Guardar cambios
     share:
-      message: "He apoyado la propuesta %{title} en %{handle}. Si te interesa, ¡apoya tú también!"
+      message: "He apoyado la propuesta %{summary} en %{handle}. Si te interesa, ¡apoya tú también!"
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -653,7 +653,7 @@ es:
         unfeasible: No viables
       start_spending_proposal: Crea una propuesta de inversión
     new:
-      more_info: "¿Cómo funcionan los presupuestos participativos?"
+      more_info: '¿Cómo funcionan los presupuestos participativos?'
       recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
@@ -795,17 +795,17 @@ es:
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: "¿Tienes ya una cuenta en %{org_name}?"
+      question: '¿Tienes ya una cuenta en %{org_name}?'
       title: Verificación de cuenta
     welcome:
-      go_to_index: Ahora no, ir a la página de inicio
+      go_to_index: Ahora no, ver propuestas
       start_using_consul: Ir a la página de inicio
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
-      user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta."
+      user_permission_verify: "Para poder realizar todas las acciones, verifica tu cuenta."
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
@@ -838,4 +838,4 @@ es:
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
+      title: '¿Cómo puedo comentar este documento?'
