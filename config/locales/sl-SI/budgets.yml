@@ -99,9 +99,9 @@ sl:
         author_deleted: Uporabnik izbrisan
         price_explanation: Razlaga cene
         unfeasibility_explanation: Razlaga neizvedljivosti
-        code_html: 'Koda naložbenega projekta: <strong>%{code}</strong>'
-        location_html: 'Lokacija: <strong>%{location}</strong>'
-        organization_name_html: 'Predlagan v imenu: <strong>%{name}</strong>'
+        code_html: "Koda naložbenega projekta: <strong>%{code}</strong>"
+        location_html: "Lokacija: <strong>%{location}</strong>"
+        organization_name_html: "Predlagan v imenu: <strong>%{name}</strong>"
         share: Deli
         title: Investicijski projekt
         supports: Podpore
@@ -110,8 +110,8 @@ sl:
         comments_tab: Komentarji
         milestones_tab: Mejniki
         author: Avtor
-        project_unfeasible_html: 'Ta naložbeni projekt <strong>je bil označen kot neizvedljiv</strong> in ni dosegel faze glasovanja.'
-        project_not_selected_html: 'Ta naložbeni projekt <strong>ni bil izbran</strong> za fazo glasovanja.'
+        project_unfeasible_html: "Ta naložbeni projekt <strong>je bil označen kot neizvedljiv</strong> in ni dosegel faze glasovanja."
+        project_not_selected_html: "Ta naložbeni projekt <strong>ni bil izbran</strong> za fazo glasovanja."
       wrong_price_format: Samo cela števila
       investment:
         add: Glasuj
