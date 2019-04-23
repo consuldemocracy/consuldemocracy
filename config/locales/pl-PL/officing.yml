@@ -51,7 +51,6 @@ pl:
         submit: Uprawomocnij dokument
         error_verifying_census: "Spis powszechny nie był w stanie zweryfikować tego dokumentu."
         form_errors: uniemożliwił weryfikację tego dokumentu
-        no_assignments: "Nie masz dziś uoficjalniających zmian"
     voters:
       new:
         title: Ankiety
