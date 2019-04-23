@@ -128,7 +128,7 @@ sv:
         other: är fel längd (måste vara %{count} tecken långt)
       other_than: får inte vara %{count}
     template:
-      body: 'Det finns problem med följande fält:'
+      body: "Det finns problem med följande fält:"
       header:
         one: ett fel hindrade den här %{model} att sparas
         other: "%{count} fel hindrade den här %{model} att sparas"
