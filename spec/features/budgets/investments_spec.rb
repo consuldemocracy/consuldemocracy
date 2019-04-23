@@ -811,9 +811,9 @@ feature 'Budget Investments' do
       visit new_budget_investment_path(budget_id: budget.id)
 
       select  heading.name, from: 'budget_investment_heading_id'
-      fill_in 'budget_investment_title', with: 'I am a bot'
+      fill_in "Title", with: "I am a bot"
       fill_in 'budget_investment_subtitle', with: 'This is the honeypot'
-      fill_in 'budget_investment_description', with: 'This is the description'
+      fill_in "Description", with: "This is the description"
       check   'budget_investment_terms_of_service'
 
       click_button 'Create Investment'
@@ -830,8 +830,8 @@ feature 'Budget Investments' do
       visit new_budget_investment_path(budget_id: budget.id)
 
       select  heading.name, from: 'budget_investment_heading_id'
-      fill_in 'budget_investment_title', with: 'I am a bot'
-      fill_in 'budget_investment_description', with: 'This is the description'
+      fill_in "Title", with: "I am a bot"
+      fill_in "Description", with: "This is the description"
       check   'budget_investment_terms_of_service'
 
       click_button 'Create Investment'
@@ -846,8 +846,8 @@ feature 'Budget Investments' do
       visit new_budget_investment_path(budget_id: budget.id)
 
       select  heading.name, from: 'budget_investment_heading_id'
-      fill_in 'budget_investment_title', with: 'Build a skyscraper'
-      fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+      fill_in "Title", with: "Build a skyscraper"
+      fill_in "Description", with: "I want to live in a high tower over the clouds"
       fill_in 'budget_investment_location', with: 'City center'
       fill_in 'budget_investment_organization_name', with: 'T.I.A.'
       fill_in 'budget_investment_tag_list', with: 'Towers'
@@ -887,9 +887,9 @@ feature 'Budget Investments' do
         create(factory, title: "This is the last #{factory}", budget: budget)
 
         visit new_budget_investment_path(budget)
-        fill_in "budget_investment_title", with: "search"
+        fill_in "Title", with: "search"
 
-        within("div#js-suggest") do
+        within("div.js-suggest") do
           expect(page).to have_content "You are seeing 5 of 6 investments containing the term 'search'"
         end
       end
@@ -902,9 +902,9 @@ feature 'Budget Investments' do
         end
 
         visit new_budget_investment_path(budget)
-        fill_in "budget_investment_title", with: "item"
+        fill_in "Title", with: "item"
 
-        within('div#js-suggest') do
+        within("div.js-suggest") do
           expect(page).not_to have_content 'You are seeing'
         end
       end
@@ -917,9 +917,9 @@ feature 'Budget Investments' do
         end
 
         visit new_budget_investment_path(other_budget)
-        fill_in "budget_investment_title", with: "search"
+        fill_in "Title", with: "search"
 
-        within('div#js-suggest') do
+        within("div.js-suggest") do
           expect(page).not_to have_content 'You are seeing'
         end
       end

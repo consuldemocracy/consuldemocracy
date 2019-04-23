@@ -131,6 +131,9 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
+      budget/investment/translation:
+        title: "Título"
+        description: "Descripción"
       geozone:
         name: Nombre
         external_code: "Código externo (opcional)"
