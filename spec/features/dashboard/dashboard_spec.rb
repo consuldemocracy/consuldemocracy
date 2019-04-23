@@ -131,6 +131,17 @@ feature "Proposal's dashboard" do
     expect(page).not_to have_selector(:css, "#dashboard_action_#{action.id}_execute")
   end
 
+  scenario "Dashboard progress can unexecute proposed action" do
+    action = create(:dashboard_action, :proposed_action, :active)
+    executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
+
+    visit progress_proposal_dashboard_path(proposal)
+    expect(page).to have_content(action.title)
+
+    find(:css, "#dashboard_action_#{action.id}_unexecute").click
+    expect(page).to have_selector(:css, "#dashboard_action_#{action.id}_execute")
+  end
+
   scenario "Dashboard progress dont show proposed actions with published_proposal: true" do
     action = create(:dashboard_action, :proposed_action, :active, published_proposal: true)
 

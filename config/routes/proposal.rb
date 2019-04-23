@@ -17,6 +17,7 @@ resources :proposals do
     resources :actions, only: [], controller: "dashboard/actions" do
       member do
         post :execute
+        post :unexecute
         get :new_request
         post :create_request
       end

@@ -1,7 +1,12 @@
 <div id="<%= dom_id(proposed_action) %>">
   <div class="action">
     <% if proposed_action.proposals.where(id: proposal.id).any? %>
-      <span class="icon-check"></span>
+      <%= link_to unexecute_proposal_dashboard_action_path(proposal, proposed_action),
+                  id: "#{dom_id(proposed_action)}_unexecute",
+                  method: :post,
+                  class: "checked-link" do %>
+        <span class="icon-check"></span>
+      <% end %>
     <% else %>
       <%= link_to execute_proposal_dashboard_action_path(proposal, proposed_action),
                   id: "#{dom_id(proposed_action)}_execute",

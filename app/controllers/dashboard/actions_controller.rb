@@ -35,6 +35,14 @@ class Dashboard::ActionsController < Dashboard::BaseController
     redirect_to request.referer
   end
 
+  def unexecute
+    authorize! :dashboard, proposal
+
+    Dashboard::ExecutedAction.where(proposal: proposal, action: dashboard_action).first.destroy
+
+    redirect_to request.referer
+  end
+
   private
 
     def dashboard_action
