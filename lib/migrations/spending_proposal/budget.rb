@@ -109,7 +109,7 @@ class Migrations::SpendingProposal::Budget
     end
 
     def destroy_associated
-      Migrations::SpendingProposal::Investments.new.destroy_associated
+      Migrations::SpendingProposal::BudgetInvestments.new.destroy_associated
     end
 
 end
