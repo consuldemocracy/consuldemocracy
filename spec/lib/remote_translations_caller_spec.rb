@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe RemoteTranslationsCaller do
 
@@ -6,18 +6,18 @@ describe RemoteTranslationsCaller do
     RemoteTranslation.skip_callback(:create, :after, :enqueue_remote_translation)
   end
 
-  describe '#call' do
+  describe "#call" do
 
-    context 'Debates' do
+    context "Debates" do
 
       let(:debate)             { create(:debate) }
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: debate, locale: :es) }
       let(:remote_translation_caller) { described_class.new(remote_translation) }
 
-      it 'returns the resource with new translation persisted' do
-        microsoft_translate_client_response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+      it "returns the resource with new translation persisted" do
+        response = ["Título traducido", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -25,8 +25,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale skip length validations" do
-        microsoft_translate_client_response = ["TT", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["TT", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -36,8 +36,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
-        microsoft_translate_client_response = ["", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -47,8 +47,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "destroy remote translation instance" do
-        microsoft_translate_client_response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["Título traducido", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -56,16 +56,17 @@ describe RemoteTranslationsCaller do
       end
     end
 
-    context 'Proposals' do
+    context "Proposals" do
 
       let!(:proposal)          { create(:proposal) }
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: proposal, locale: :es) }
       let(:remote_translation_caller) { described_class.new(remote_translation) }
 
-      it 'returns the resource with new translation persisted' do
-        microsoft_translate_client_response = ["Título traducido", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+      it "returns the resource with new translation persisted" do
+        response = ["Título traducido", "Descripción traducida", "Pregunta traducida",
+                    "Resumen traducido", nil]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -73,8 +74,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
-        microsoft_translate_client_response = ["TT", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["TT", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -84,8 +85,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale do not skip presence validations" do
-        microsoft_translate_client_response = ["", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -95,8 +96,9 @@ describe RemoteTranslationsCaller do
       end
 
       it "destroy remote translation instance" do
-        microsoft_translate_client_response = ["Título traducido", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["Título traducido", "Descripción traducida", "Pregunta traducida",
+                    "Resumen traducido", nil]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -104,7 +106,7 @@ describe RemoteTranslationsCaller do
       end
     end
 
-    context 'Budget Investments' do
+    context "Budget Investments" do
 
       let(:budget_investment)  { create(:budget_investment) }
       let(:remote_translation) { create(:remote_translation,
@@ -112,9 +114,9 @@ describe RemoteTranslationsCaller do
                                         locale: :es) }
       let(:remote_translation_caller) { described_class.new(remote_translation) }
 
-      it 'returns the resource with new translation persisted' do
-        microsoft_translate_client_response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+      it "returns the resource with new translation persisted" do
+        response = ["Título traducido", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -122,8 +124,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
-        microsoft_translate_client_response = ["TT", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["TT", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -133,8 +135,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
-        microsoft_translate_client_response = ["", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -144,8 +146,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "destroy remote translation instance" do
-        microsoft_translate_client_response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["Título traducido", "Descripción traducida"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -153,16 +155,16 @@ describe RemoteTranslationsCaller do
       end
     end
 
-    context 'Comments' do
+    context "Comments" do
 
       let(:comment)            { create(:comment) }
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: comment, locale: :es) }
       let(:remote_translation_caller) { described_class.new(remote_translation) }
 
-      it 'returns the resource with new translation persisted' do
-        microsoft_translate_client_response = ["Body traducido"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+      it "returns the resource with new translation persisted" do
+        response = ["Body traducido"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -170,8 +172,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
-        microsoft_translate_client_response = ["BT"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["BT"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -181,8 +183,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
-        microsoft_translate_client_response = [""]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = [""]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
@@ -192,8 +194,8 @@ describe RemoteTranslationsCaller do
       end
 
       it "destroy remote translation instance" do
-        microsoft_translate_client_response = ["Body traducido"]
-        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(microsoft_translate_client_response)
+        response = ["Body traducido"]
+        expect_any_instance_of(MicrosoftTranslateClient).to receive(:call).and_return(response)
 
         remote_translation_caller.call
 
