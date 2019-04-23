@@ -1,6 +1,11 @@
 pl:
   activerecord:
     models:
+      activity:
+        one: "aktywność"
+        few: "aktywności"
+        many: "aktywności"
+        other: "aktywności"
       budget:
         one: "Budżet"
         few: "Budżety"
@@ -188,6 +193,11 @@ pl:
         organization_name: "Jeśli wnioskujesz w imieniu zespołu/organizacji, lub w imieniu większej liczby osób, wpisz ich nazwę"
         image: "Opisowy obraz wniosku"
         image_title: "Tytuł obrazu"
+      geozone:
+        name: Nazwa
+        external_code: "Zewnętrzny kod (opcjonalnie)"
+        census_code: "Kod ze spisu (opcjonalnie)"
+        html_map_coordinates: "współrzędne (opcjonalnie) HTML <map>"
       milestone:
         status_id: "Bieżący stan inwestycji (opcjonalnie)"
         title: "Tytuł"
@@ -199,6 +209,10 @@ pl:
       progress_bar:
         kind: "Typ"
         title: "Tytuł"
+        percentage: "Aktualny etap"
+      progress_bar/kind:
+        primary: "Główny"
+        secondary: "Dodatkowy"
       budget/heading:
         name: "Nazwa nagłówka"
         price: "Koszt"
@@ -223,7 +237,7 @@ pl:
         username: "Nazwa użytkownika"
         password_confirmation: "Potwierdzenie hasła"
         password: "Hasło"
-        current_password: "Obecne hasło"
+        current_password: "Stare hasło"
         phone_number: "Numer telefonu"
         official_position: "Oficjalne stanowisko"
         official_level: "Oficjalny poziom"
@@ -236,7 +250,7 @@ pl:
         association_name: "Nazwa stowarzyszenia"
         description: "Opis"
         external_url: "Link do dodatkowej dokumentacji"
-        geozone_id: "Zakres operacji"
+        geozone_id: "Część dzielnicy, której dotyczy pomysł"
         title: "Tytuł"
       poll:
         name: "Nazwa"
@@ -282,6 +296,9 @@ pl:
         name: Nazwa
         locale: ustawienia regionalne
         body: Zawartość
+      banner:
+        background_color: Kolor tła
+        font_color: Kolor czcionki
       legislation/process:
         title: Tytuł procesu
         summary: Podsumowanie
@@ -291,10 +308,16 @@ pl:
         end_date: Data zakończenia
         debate_start_date: Data rozpoczęcia debaty
         debate_end_date: Data zakończenia debaty
+        draft_start_date: Początek
+        draft_end_date: Koniec
         draft_publication_date: Data publikacji projektu
         allegations_start_date: Data rozpoczęcia zarzutów
         allegations_end_date: Data zakończenia zarzutów
+        proposals_phase_start_date: Początek
+        proposals_phase_end_date: Koniec
         result_publication_date: Data publikacji wyniku końcowego
+        background_color: Kolor tła
+        font_color: Kolor czcionki
       legislation/process/translation:
         title: Tytuł procesu
         summary: Podsumowanie
@@ -352,6 +375,7 @@ pl:
         description: Opis
         link_text: Tekst łącza
         link_url: Łącze URL
+        columns: Liczba kolumn
       widget/card/translation:
         label: Etykieta (opcjonalnie)
         title: Tytuł
@@ -401,6 +425,8 @@ pl:
               invalid_date_range: musi być nie wcześniej niż data rozpoczęcia
             debate_end_date:
               invalid_date_range: musi być nie wcześniej niż data rozpoczęcia debaty
+            draft_end_date:
+              invalid_date_range: musi być w dniu lub po dacie rozpoczęcia draftu
             allegations_end_date:
               invalid_date_range: musi być w dniu lub po dacie rozpoczęcia zarzutów
         proposal:
@@ -418,8 +444,8 @@ pl:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Niezweryfikowane z rejestrem mieszkańców'
-              already_voted: 'Już zagłosowano na tę propozycję'
+              not_in_census: "Niezweryfikowane z rejestrem mieszkańców"
+              already_voted: "Już zagłosowano na tę propozycję"
         site_customization/page:
           attributes:
             slug:
@@ -432,7 +458,7 @@ pl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Nie możesz komentować wyceny'
+              cannot_comment_valuation: "Nie możesz komentować wyceny"
       messages:
         record_invalid: "Sprawdzanie poprawności nie powiodło się: %{errors}"
         restrict_dependent_destroy:
