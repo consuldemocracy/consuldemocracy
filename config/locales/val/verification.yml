@@ -8,7 +8,7 @@ val:
         alert:
           failure: Va haver-hi un problema enviant-te un email al teu compte
         flash:
-          success: 'Hem enviat un email de confirmació al teu compte %{email}'
+          success: "Hem enviat un email de confirmació al teu compte %{email}"
       show:
         alert:
           failure: Codi de verificació incorrecte
@@ -19,7 +19,6 @@ val:
         unconfirmed_code: Encara no has introduït el codi de confirmació
       create:
         flash:
-          offices: Oficines d'atenció al ciutada
           success_html: Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.<br> Recorda que pots estalviarte l'enviament verificante presencialment en quansevol de les %{offices}.
       edit:
         see_all: Vore propostes
@@ -27,10 +26,9 @@ val:
       errors:
         incorrect_code: Codi de verificació incorrecte
       new:
-        explanation: 'Per a participar en les votacions finals pots:'
+        explanation: "Per a participar en les votacions finals pots:"
         go_to_index: Vore propostes
         office: Verificarte presencialment en quansevol %{office}
-        offices: Oficines d'atenció al ciutadà
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
@@ -52,7 +50,7 @@ val:
         date_of_birth: Data de naixement
         document_number: Número de document
         document_number_help_title: Ajuda
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Tarjeta de residència</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Tarjeta de residència</strong>: X1234567P"
         document_type:
           passport: Passaport
           residence_card: Tarjeta de residència
@@ -61,7 +59,6 @@ val:
         error_not_allowed_age: No tens l'edat mínima per a participar
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
         error_verifying_census: El Padró no ha pogut verificar la teua informació. Si us plaur, confirma que les teues dades d'empadronament siguen correctes cridant a l'Ajuntament o visitant una %{offices}.
-        error_verifying_census_offices: Oficina d'Atenció al ciutadà
         form_errors: evitaren verificar la teua residència
         postal_code: Codi postal
         postal_code_note: Per a verificar el teu compte has d'estar empadronat
