@@ -9,7 +9,7 @@ zh-TW:
       show:
         title: 用戶帳戶
       edit:
-        title: '編輯用戶帳戶：重設密碼'
+        title: "編輯用戶帳戶：重設密碼"
         back: 返回
         password:
           password: 密碼
@@ -22,11 +22,11 @@ zh-TW:
           print_help: 您可以打印已儲存的密碼。
     account_info:
       change_user: 更改用戶
-      document_number_label: '文檔編號：'
-      document_type_label: '文檔類型：'
-      email_label: '電郵:'
-      identified_label: '確定為：'
-      username_label: '用戶名：'
+      document_number_label: "文檔編號："
+      document_type_label: "文檔類型："
+      email_label: "電郵:"
+      identified_label: "確定為："
+      username_label: "用戶名："
     check: 檢查文檔
     dashboard:
       index:
@@ -38,9 +38,9 @@ zh-TW:
       already_verified: 此用戶帳戶已被核實。
       has_no_account_html: 要創建帳戶，請轉到%{link}，然後點擊屏幕左上角的<b>'註冊'</b>。
       link: CONSUL
-      in_census_has_following_permissions: '此用戶可以使用以下權限參與網站：'
+      in_census_has_following_permissions: "此用戶可以使用以下權限參與網站："
       not_in_census: 此文檔尚未註冊。
-      not_in_census_info: '不在人口普查中的公民可以使用以下權限參與網站：'
+      not_in_census_info: "不在人口普查中的公民可以使用以下權限參與網站："
       please_check_account_data: 請檢查上面的帳戶數據是否正確。
       title: 用戶管理
       under_age: "您未到核實您的帳戶所需的年齡。"
@@ -49,14 +49,14 @@ zh-TW:
     date_of_birth: 出生日期
     email_verifications:
       already_verified: 此用戶帳戶已被核實。
-      choose_options: '請選擇以下選項之一：'
+      choose_options: "請選擇以下選項之一："
       document_found_in_census: 此文件是在人口普查中找到的，但沒有與之關聯的用戶帳戶。
-      document_mismatch: '此電郵屬於已具有關聯ID的用戶：%{document_number}(%{document_type})'
+      document_mismatch: "此電郵屬於已具有關聯ID的用戶：%{document_number}(%{document_type})"
       email_placeholder: 寫下此人用於創建其帳戶的電郵
       email_sent_instructions: 為了完全核實此用戶，用戶必須點擊我們發送到上述電郵地址的鏈接。 需要此步驟以確認該地址屬於他。
       if_existing_account: 若此人已在網站中創建了用戶帳戶，
       if_no_existing_account: 若此人尚未創建帳戶
-      introduce_email: '請介紹帳戶中使用的電郵：'
+      introduce_email: "請介紹帳戶中使用的電郵："
       send_email: 發送核實電郵
     menu:
       create_proposal: 創建建議
@@ -78,7 +78,7 @@ zh-TW:
       vote_proposals: 投票建議
     print:
       proposals_info: 在http://url.consul 上創建您的建議
-      proposals_title: '建議：'
+      proposals_title: "建議："
       spending_proposals_info: 在 http://url.consul 上參與
       budget_investments_info: 在 http://url.consul 上參與
     print_info: 列印此信息
