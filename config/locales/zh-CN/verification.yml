@@ -8,7 +8,7 @@ zh-CN:
         alert:
           failure: 向您的账户发送电子邮件时出现问题
         flash:
-          success: '我们已经发送确认电子邮件到您的账户：%{email}'
+          success: "我们已经发送确认电子邮件到您的账户：%{email}"
       show:
         alert:
           failure: 验证码不正确
@@ -19,7 +19,6 @@ zh-CN:
         unconfirmed_code: 您尚未输入确认代码
       create:
         flash:
-          offices: 公民支援办公室
           success_html: 感谢您申请<b>最高安全代码（仅用于最终投票）</b>。几天后，我们会把它发送到我们数据存档中的地址。请记住，如果您愿意，可以到任何%{offices} 领取您的代码。
       edit:
         see_all: 查看提议
@@ -27,10 +26,9 @@ zh-CN:
       errors:
         incorrect_code: 验证码不正确
       new:
-        explanation: '要参与最终投票，您可以：'
+        explanation: "要参与最终投票，您可以："
         go_to_index: 查看提议
         office: 在任何%{office} 进行核实
-        offices: 公民支援办公室
         send_letter: 请给我发送一封带有代码的信
         title: 恭喜！
         user_permission_info: 您可以用您的帐号来...
@@ -52,7 +50,7 @@ zh-CN:
         date_of_birth: 出生日期
         document_number: 文档编号
         document_number_help_title: 帮助
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P"
         document_type:
           passport: 护照
           residence_card: 居留证
@@ -61,7 +59,6 @@ zh-CN:
         error_not_allowed_age: 您未到参与所需的年龄
         error_not_allowed_postal_code: 为了被核实，您必须注册。
         error_verifying_census: 人口普查无法核实您的信息。请拨打市议会或访问%{offices}，确认您的人口普查详细资料是正确的。
-        error_verifying_census_offices: 公民支援办公室
         form_errors: 阻止了您的居住地核实
         postal_code: 邮政编码
         postal_code_note: 要核实您的账户，您必须注册
