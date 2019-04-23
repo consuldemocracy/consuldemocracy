@@ -51,7 +51,6 @@ val:
         submit: Validar document i votar
         error_verifying_census: "El Padró no ha pogut verificar aquest document."
         form_errors: evitaren verificar aquest document
-        no_assignments: "Hui no tens torn de president de taula"
     voters:
       new:
         title: Votacions
