@@ -65,7 +65,7 @@ zh-CN:
       most_commented: 最多评论
     select_order: 排序依据
     show:
-      return_to_commentable: '返回 '
+      return_to_commentable: "返回 "
   comments_helper:
     comment_button: 发表评论
     comment_link: 评论
@@ -211,8 +211,7 @@ zh-CN:
       available_locales: 可用语言
       collaborative_legislation: 立法进程
       debates: 辩论
-      external_link_blog: 博客
-      locale: '语言：'
+      locale: "语言："
       logo: CONSUL logo（商标）
       management: 管理
       moderation: 审核
@@ -233,7 +232,7 @@ zh-CN:
         notifications: 通知
         no_notifications: "您没有新的通知"
     admin:
-      watch_form_message: '您有未保存的更改。是否确认要离开此页面？'
+      watch_form_message: "您有未保存的更改。是否确认要离开此页面？"
   notifications:
     index:
       empty_notifications: 您没有新的通知。
@@ -355,7 +354,7 @@ zh-CN:
       search_results_html:
         other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order: 排序依据
-      select_order_long: '您正在查看的提议是依据：'
+      select_order_long: "您正在查看的提议是依据："
       start_proposal: 创建提议
       title: 提议
       top: 每周热门
@@ -384,8 +383,6 @@ zh-CN:
         guide: "现在您可以把它分享，让人们可以开始支持。"
         edit: "在分享之前，您将可以随意更改文本。"
         view_proposal: 不是现在，返回我的提议
-      improve_info: "改善您的推广活动以便得到更多支持"
-      improve_info_link: "查看更多信息"
       already_supported: 您已经支持此提议。将它分享吧！
       comments:
         zero: 没有评论
@@ -404,7 +401,7 @@ zh-CN:
       successful: "此提议已达到所需要的支持。"
     show:
       author_deleted: 已删除的用户
-      code: '提议编码：'
+      code: "提议编码："
       comments:
         zero: 没有评论
         other: "%{count} 个评论"
@@ -493,7 +490,6 @@ zh-CN:
         title: "问题"
         most_voted_answer: "得到最多投票的回答： "
   poll_questions:
-    create_question: "创建问题"
     show:
       vote_answer: "投票%{answer}"
       voted: "您已经投票%{answer}"
@@ -509,29 +505,29 @@ zh-CN:
     show:
       back: "返回我的活动"
   shared:
-    edit: '编辑'
-    save: '保存'
+    edit: "编辑"
+    save: "保存"
     delete: 删除
     "yes": "是"
     "no": "不是"
     search_results: "搜索结果"
     advanced_search:
-      author_type: '按作者类别'
-      author_type_blank: '选择类别'
-      date: '按日期'
-      date_placeholder: 'DD/MM/YYYY（日／月／年）'
-      date_range_blank: '选择日期'
-      date_1: '过去24 小时'
-      date_2: '上周'
-      date_3: '上个月'
-      date_4: '去年'
-      date_5: '自定义'
-      from: '从'
-      general: '随着文本'
-      general_placeholder: '编写文本'
-      search: '过滤器'
-      title: '高级搜索'
-      to: '至'
+      author_type: "按作者类别"
+      author_type_blank: "选择类别"
+      date: "按日期"
+      date_placeholder: "DD/MM/YYYY（日／月／年）"
+      date_range_blank: "选择日期"
+      date_1: "过去24 小时"
+      date_2: "上周"
+      date_3: "上个月"
+      date_4: "去年"
+      date_5: "自定义"
+      from: "从"
+      general: "随着文本"
+      general_placeholder: "编写文本"
+      search: "过滤器"
+      title: "高级搜索"
+      to: "至"
     author_info:
       author_deleted: 已删除的用户
     back: 返回
@@ -602,7 +598,6 @@ zh-CN:
       see_more: 查看更多推荐
       hide: 隐藏推荐
   social:
-    blog: "%{org} 博客"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -611,8 +606,8 @@ zh-CN:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: '如果您以协会或集体的名义提出提议，请在此添加名称'
-      association_name: '协会名称'
+      association_name_label: "如果您以协会或集体的名义提出提议，请在此添加名称"
+      association_name: "协会名称"
       description: 说明
       external_url: 链接到其他文档
       geozone: 经营范围
@@ -644,7 +639,7 @@ zh-CN:
       start_new: 创建支出提议
     show:
       author_deleted: 已删除的用户
-      code: '提议编号：'
+      code: "提议编号："
       share: 共用
     wrong_price_format: 仅限整数
     spending_proposal:
@@ -780,7 +775,7 @@ zh-CN:
       user_permission_info: 您可以用您的帐号来...
       user_permission_proposal: 创建新的提议
       user_permission_support_proposal: 支持提议*
-      user_permission_verify: 要执行所有操作，请验证您的帐号。
+      user_permission_verify: "要执行所有操作，请验证您的帐号。"
       user_permission_verify_info: "＊仅适用于人口普查用户。"
       user_permission_verify_my_account: 验证我的帐号
       user_permission_votes: 参与最终投票
