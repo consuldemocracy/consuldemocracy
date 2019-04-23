@@ -207,6 +207,7 @@ feature "Polls" do
       expect(page).to have_content(I18n.l(poll.ends_at.to_date))
       expect(page).to have_link(poll.title)
       expect(page).to have_link(poll.title, href: proposal_poll_path(proposal, poll))
+      expect(page).to have_link("View results", href: proposal_poll_results_path(proposal, poll))
     end
   end
 end
