@@ -298,8 +298,8 @@ id:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Tidak diverifikasi oleh sensus'
-              already_voted: 'Sudah memilih proposal ini'
+              not_in_census: "Tidak diverifikasi oleh sensus"
+              already_voted: "Sudah memilih proposal ini"
         site_customization/page:
           attributes:
             slug:
@@ -312,7 +312,7 @@ id:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Anda tidak bisa komentar sebuah penilaian'
+              cannot_comment_valuation: "Anda tidak bisa komentar sebuah penilaian"
       messages:
         record_invalid: "Pengesahan gagal: %{errors}"
         restrict_dependent_destroy:
