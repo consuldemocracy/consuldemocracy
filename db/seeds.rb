@@ -139,5 +139,8 @@ Setting["proposals.email_description"] = nil
 Setting["proposals.poster_short_title"] = nil
 Setting["proposals.poster_description"] = nil
 
+# Dashboard
+Setting["dashboard.emails"] = nil
+
 # Default custom pages
 load Rails.root.join("db", "pages.rb")

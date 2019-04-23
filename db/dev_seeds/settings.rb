@@ -82,4 +82,6 @@ section "Creating Settings" do
   Setting.create(key: "proposals.poll_link", value: nil)
   Setting.create(key: "proposals.email_short_title", value: nil)
   Setting.create(key: "proposals.email_description", value: nil)
+
+  Setting.create(key: "dashboard.emails", value: nil)
 end

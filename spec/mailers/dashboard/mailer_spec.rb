@@ -9,6 +9,44 @@ describe Dashboard::Mailer do
                             day_offset: 0,
                             published_proposal: true) }
 
+  before do
+    Setting["dashboard.emails"] = true
+  end
+
+  after do
+    Setting["dashboard.emails"] = nil
+  end
+
+  describe "#forward" do
+    let!(:proposal) { create(:proposal) }
+
+    before do
+      ActionMailer::Base.deliveries.clear
+    end
+
+    it "Disables email delivery using setting" do
+      Setting["dashboard.emails"] = nil
+
+      Dashboard::Mailer.forward(proposal).deliver_now
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
+    end
+
+    it "sends forward email" do
+      Dashboard::Mailer.forward(proposal).deliver_now
+
+      email = open_last_email
+
+      expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
+      expect(email).to deliver_to(proposal.author)
+      expect(email).to have_subject(proposal.title)
+      expect(email).to have_body_text("Support this proposal")
+      expect(email).to have_body_text("Share in")
+      expect(email).to have_body_text(proposal_path(proposal))
+    end
+
+  end
+
   describe "#new_actions_notification rake task" do
 
     before do
@@ -24,6 +62,16 @@ describe Dashboard::Mailer do
 
     describe "#new_actions_notification_rake_created" do
       let!(:proposal) { create(:proposal, :draft) }
+
+      it "Disables email delivery using setting" do
+        Setting["dashboard.emails"] = nil
+
+        action.update(published_proposal: false)
+        resource.update(published_proposal: false)
+        run_rake_task
+
+        expect(ActionMailer::Base.deliveries.count).to eq(0)
+      end
 
       it "sends emails when detect new actions for draft proposal" do
         action.update(published_proposal: false)
@@ -59,6 +107,15 @@ describe Dashboard::Mailer do
 
     describe "#new_actions_notification_rake_published" do
       let!(:proposal) { create(:proposal) }
+
+      it "Disables email delivery using setting" do
+        Setting["dashboard.emails"] = nil
+        ActionMailer::Base.deliveries.clear
+
+        run_rake_task
+
+        expect(ActionMailer::Base.deliveries.count).to eq(0)
+      end
 
       it "sends emails when detect new actions for proposal" do
         run_rake_task
@@ -104,7 +161,17 @@ describe Dashboard::Mailer do
 
     let!(:proposal) { build(:proposal, :draft) }
 
-    it "sends emails when detect new actions when create a proposal" do
+    it "Disables email delivery using setting" do
+      Setting["dashboard.emails"] = nil
+
+      action.update(published_proposal: false)
+      resource.update(published_proposal: false)
+      proposal.save
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
+    end
+
+    it "sends emails if new actions detected when creating a proposal" do
       action.update(published_proposal: false)
       resource.update(published_proposal: false)
       proposal.save
@@ -162,6 +229,15 @@ describe Dashboard::Mailer do
     let!(:proposed_action) { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
                                                         published_proposal: true) }
 
+    it "Disables email delivery using setting" do
+      Setting["dashboard.emails"] = nil
+
+      proposal.save
+      proposal.publish
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
+    end
+
     it "sends emails when detect new actions when publish a proposal" do
       proposal.save
       proposal.publish
@@ -202,4 +278,5 @@ describe Dashboard::Mailer do
       expect(email).to have_body_text("Go ahead, discover them!")
     end
   end
+
 end

@@ -1,5 +1,6 @@
 class Dashboard::Mailer < ApplicationMailer
   layout "mailer"
+  after_action :check_deliverability
 
   def forward(proposal)
     @proposal = proposal
@@ -38,4 +39,9 @@ class Dashboard::Mailer < ApplicationMailer
     def get_new_actions(new_actions_ids)
       Dashboard::Action.where(id: new_actions_ids)
     end
+
+    def check_deliverability
+      mail.perform_deliveries = false unless Setting["dashboard.emails"]
+    end
+
 end
