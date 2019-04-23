@@ -15,16 +15,22 @@ ar:
     mailer:
       confirmation_instructions:
         confirm_link: تأكيد حسابي
-        text: 'يمكنك تأكيد حساب البريد الإلكتروني الخاص بك من خلال الرابط التالي:'
+        text: "يمكنك تأكيد حساب البريد الإلكتروني الخاص بك من خلال الرابط التالي:"
         title: اهلاً وسهلاً
         welcome: أهلا بك
       reset_password_instructions:
+        change_link: تغيير كلمة المرور
         hello: مرحبا
         ignore_text: إذا لم تطلب تغيير كلمة المرور، فيمكنك تجاهل هذا البريد الإلكتروني.
-        text: 'لقد تلقينا طلبك من أجل تغيير كلمة المرور. يمكنك القيام بذلك عبر الرابط التالي:'
+        info_text: لن يتم تغيير كلمة المرور ما لم تدخل إلى الرابط وتقوم بتحريرها.
+        text: "لقد تلقينا طلبك من أجل تغيير كلمة المرور. يمكنك القيام بذلك عبر الرابط التالي:"
         title: تغيير كلمة المرور
       unlock_instructions:
         hello: مرحبا
+        info_text: تم إغلاق حسابك ، بعد تجاوز عدد المحاولات الخاطئة في الدخول.
+        instructions_text: "الرجاء الضعط على الرابط لإعادة تفعيل الحساب الخاص بك:"
+        title: حسابك مغلق مؤقتا
+        unlock_link: إعادة تفعيل \ فتح الحساب
     menu:
       login_items:
         login: تسجيل الدخول
@@ -38,13 +44,18 @@ ar:
           password_confirmation_label: تأكيد كلمة المرور
           password_label: كلمة المرور
           phone_number_label: رقم الهاتف
+          responsible_name_label: الاسم الكامل للشخص المسؤول على الوحدة
           responsible_name_note: وسيكون هذا الشخص الذي يمثل الرابطة/الوحدة التي باسمها يتم عرض المقترحات
           submit: سجل 
           title: التسجيل كمنظمة أو وحدة
         success:
           back_to_index: العودة إلى الصفحة الرئيسية
+          instructions_1_html: "<strong>سوف نتواصل معك قريبا</strong> للتحقق من أن كنت في الواقع تمثل هذه الوحدة."
+          thank_you_html: شكرا على تسجيل وحدتك على الموقع. هي الآن <strong>في مرحلة التحقق</strong>.
+          title: تسجيل المنظمة / الوحدة
     passwords:
       edit:
+        change_submit: تغيير كلمة المرور
         password_confirmation_label: تأكيد كلمة المرور الجديدة
         password_label: كلمة المرور الجديدة
         title: تغيير كلمة المرور
@@ -90,7 +101,7 @@ ar:
           password_confirmation_label: تأكيد كلمة المرور الجديدة
           password_label: كلمة مرور جديدة
           update_submit: تحديث
-          waiting_for: 'في انتظار التأكيد:'
+          waiting_for: "في انتظار التأكيد:"
         new:
           cancel: الغاء الدخول
           email_label: البريد الإلكتروني
