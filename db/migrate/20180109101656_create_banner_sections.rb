@@ -1,4 +1,4 @@
-class CreateBannerSections < ActiveRecord::Migration
+class CreateBannerSections < ActiveRecord::Migration[4.2]
   def change
     create_table :banner_sections do |t|
       t.integer :banner_id

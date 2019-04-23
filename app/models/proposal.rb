@@ -1,4 +1,4 @@
-class Proposal < ActiveRecord::Base
+class Proposal < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable

@@ -1,4 +1,4 @@
-class Poll::Recount < ActiveRecord::Base
+class Poll::Recount < ApplicationRecord
 
   VALID_ORIGINS = %w{web booth letter}.freeze
 

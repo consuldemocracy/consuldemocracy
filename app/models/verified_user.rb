@@ -1,4 +1,4 @@
-class VerifiedUser < ActiveRecord::Base
+class VerifiedUser < ApplicationRecord
   scope :by_user,  ->(user)  { where(document_number: user.document_number) }
 
   scope :by_email, ->(email) { where(email: email) }

@@ -1,11 +1,11 @@
-<%= link_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)), class: "back" do %>
+<%= link_to admin_spending_proposal_path(@spending_proposal, @filter_params.to_h), class: 'back' do %>
   <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
 <%= form_for @spending_proposal,
              url: admin_spending_proposal_path(@spending_proposal) do |f| %>
 
-  <% SpendingProposal.filter_params(params).each do |filter_name, filter_value| %>
+  <% @filter_params.to_h.each do |filter_name, filter_value| %>
    <%= hidden_field_tag filter_name, filter_value %>
   <% end %>
 
@@ -15,7 +15,9 @@
     </div>
 
     <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area :description,
+                         maxlength: SpendingProposal.description_max_length,
+                         ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">

@@ -1,4 +1,4 @@
-class Poll::Question::Answer::Video < ActiveRecord::Base
+class Poll::Question::Answer::Video < ApplicationRecord
   belongs_to :answer, class_name: "Poll::Question::Answer", foreign_key: "answer_id"
 
   VIMEO_REGEX = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/

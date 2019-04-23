@@ -1,5 +1,5 @@
 class Budget
-  class Investment < ActiveRecord::Base
+  class Investment < ApplicationRecord
     SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
     include Rails.application.routes.url_helpers
@@ -109,7 +109,7 @@ class Budget
     end
 
     def self.filter_params(params)
-      params.select{ |x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include?(x.to_s) }
+      params.permit(%i[heading_id group_id administrator_id tag_name valuator_id])
     end
 
     def self.scoped_filter(params, current_filter)
@@ -368,7 +368,7 @@ class Budget
     end
 
     def self.with_milestone_status_id(status_id)
-      joins(:milestones).includes(:milestones).select do |investment|
+      includes(milestones: :translations).select do |investment|
         investment.milestone_status_id == status_id.to_i
       end
     end

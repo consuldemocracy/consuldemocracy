@@ -1,6 +1,6 @@
 shared_examples "relationable" do |relationable_model_name|
 
-  let(:relationable) { create(relationable_model_name.name.parameterize("_").to_sym) }
+  let(:relationable) { create(relationable_model_name.name.parameterize(separator: "_").to_sym) }
   let(:related1) { create([:proposal, :debate, :budget_investment].sample) }
   let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }

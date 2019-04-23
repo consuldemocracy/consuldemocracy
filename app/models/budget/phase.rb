@@ -1,5 +1,5 @@
 class Budget
-  class Phase < ActiveRecord::Base
+  class Phase < ApplicationRecord
     PHASE_KINDS = %w(drafting informing accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished).freeze
     PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
@@ -9,6 +9,7 @@ class Budget
     translates :summary, touch: true
     translates :description, touch: true
     include Globalizable
+    include Sanitizable
 
     belongs_to :budget
     belongs_to :next_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id

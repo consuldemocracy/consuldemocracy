@@ -23,7 +23,11 @@
     <strong><%= t("management.email_verifications.if_no_existing_account") %></strong>
 
     <p class="margin-top">
-      <%= link_to t("management.users.create_user"), new_management_user_path(user: params[:email_verification]), class: "button success" %>
+      <%= link_to t("management.users.create_user"),
+                  new_management_user_path(user: {
+                      document_number: @email_verification.document_number,
+                      document_type:   @email_verification.document_type }),
+                  class: "button success" %>
     </p>
   </li>
 </ul>

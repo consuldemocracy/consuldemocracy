@@ -1,4 +1,4 @@
-class AddConfirmableToDeviseForUsers < ActiveRecord::Migration
+class AddConfirmableToDeviseForUsers < ActiveRecord::Migration[4.2]
   def change
     # Confirmable
     add_column :users, :confirmation_token, :string

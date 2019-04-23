@@ -1,4 +1,4 @@
-class ProgressBar < ActiveRecord::Base
+class ProgressBar < ApplicationRecord
   self.inheritance_column = nil
   RANGE = 0..100
 
@@ -8,6 +8,7 @@ class ProgressBar < ActiveRecord::Base
 
   translates :title, touch: true
   include Globalizable
+  translation_class_delegate :primary?
 
   validates :progressable, presence: true
   validates :kind, presence: true,
