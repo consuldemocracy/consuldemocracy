@@ -148,6 +148,17 @@ FactoryBot.define do
     end
   end
 
+  factory :poll_ballot_sheet, class: "Poll::BallotSheet" do
+    association :poll
+    association :officer_assignment, factory: :poll_officer_assignment
+    data "1234;9876;5678\n1000;2000;3000;9999"
+  end
+
+  factory :poll_ballot, class: "Poll::Ballot" do
+    association :ballot_sheet, factory: :poll_ballot_sheet
+    data "1,2,3"
+  end
+
   factory :officing_residence, class: "Officing::Residence" do
     user
     association :officer, factory: :poll_officer

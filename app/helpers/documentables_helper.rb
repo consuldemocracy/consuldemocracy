@@ -1,7 +1,7 @@
 module DocumentablesHelper
 
   def documentable_class(documentable)
-    documentable.class.name.parameterize("_")
+    documentable.class.name.parameterize(separator: "_")
   end
 
   def max_documents_allowed(documentable)

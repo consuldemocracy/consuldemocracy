@@ -1,4 +1,4 @@
-class CreateSiteCustomizationImages < ActiveRecord::Migration
+class CreateSiteCustomizationImages < ActiveRecord::Migration[4.2]
   def change
     create_table :site_customization_images do |t|
       t.string :name, null: false

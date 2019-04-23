@@ -1,11 +1,11 @@
-<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)), class: "back" do %>
+<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params).to_h), class: "back" do %>
   <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
 
 <%= form_for @investment,
              url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
 
-  <% Budget::Investment.filter_params(params).each do |filter_name, filter_value| %>
+  <% Budget::Investment.filter_params(params).to_h.each do |filter_name, filter_value| %>
    <%= hidden_field_tag filter_name, filter_value %>
   <% end %>
 

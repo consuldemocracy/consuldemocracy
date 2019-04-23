@@ -337,4 +337,25 @@ describe Poll do
       expect(Poll.overlaping_with(poll)).not_to include(overlaping_poll_2)
     end
   end
+
+  context "scopes" do
+
+    describe "#not_budget" do
+
+      it "returns polls not associated to a budget" do
+        budget = create(:budget)
+
+        poll1 = create(:poll)
+        poll2 = create(:poll)
+        poll3 = create(:poll, budget: budget)
+
+        expect(Poll.not_budget).to include(poll1)
+        expect(Poll.not_budget).to include(poll2)
+        expect(Poll.not_budget).not_to include(poll3)
+      end
+
+    end
+
+  end
+
 end

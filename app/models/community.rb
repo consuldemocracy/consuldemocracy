@@ -1,4 +1,4 @@
-class Community < ActiveRecord::Base
+class Community < ApplicationRecord
   has_one :proposal
   has_one :investment, class_name: Budget::Investment
   has_many :topics

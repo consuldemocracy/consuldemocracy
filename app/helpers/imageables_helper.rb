@@ -5,7 +5,7 @@ module ImageablesHelper
   end
 
   def imageable_class(imageable)
-    imageable.class.name.parameterize("_")
+    imageable.class.name.parameterize(separator: "_")
   end
 
   def imageable_max_file_size

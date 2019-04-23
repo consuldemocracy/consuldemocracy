@@ -8,7 +8,7 @@
 
           <% feed.items.each do |item| %>
             <%= link_to url_for(item) do %>
-              <figure class="figure-card <%= item.class.to_s.parameterize("_") %>">
+              <figure class="figure-card <%= item.class.to_s.parameterize(separator: "_") %>">
                 <%= image_tag("welcome_process.png", alt: "") %>
                 <figcaption>
                   <span><%= t("welcome.feed.process_label") %></span><br>

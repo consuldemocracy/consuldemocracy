@@ -67,7 +67,7 @@ describe Legislation::Proposal do
       newer_proposal = create(:legislation_proposal, created_at: now)
       5.times { newer_proposal.vote_by(voter: create(:user), vote: "yes") }
 
-      older_proposal = create(:legislation_proposal, created_at: 1.day.ago)
+      older_proposal = create(:legislation_proposal, created_at: 2.day.ago)
       5.times { older_proposal.vote_by(voter: create(:user), vote: "yes") }
 
       expect(newer_proposal.hot_score).to be > older_proposal.hot_score

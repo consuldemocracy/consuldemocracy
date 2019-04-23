@@ -1,4 +1,4 @@
-class ChangeBudgetName < ActiveRecord::Migration
+class ChangeBudgetName < ActiveRecord::Migration[4.2]
   def up
     change_column :budgets, :name, :string, limit: 80
   end

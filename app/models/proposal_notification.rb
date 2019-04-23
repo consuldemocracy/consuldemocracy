@@ -1,4 +1,4 @@
-class ProposalNotification < ActiveRecord::Base
+class ProposalNotification < ApplicationRecord
   include Graphqlable
   include Notifiable
 

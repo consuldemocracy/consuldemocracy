@@ -88,7 +88,7 @@ feature "Users" do
         click_button "Enter"
 
         expect(page).not_to have_content "You have been signed in successfully."
-        expect(page).to have_content "Invalid login or password."
+        expect(page).to have_content "Invalid Email or username or password."
 
         fill_in "user_login",    with: "venom@nyc.dev"
         fill_in "user_password", with: "symbiote"

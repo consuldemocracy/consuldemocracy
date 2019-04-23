@@ -1,4 +1,4 @@
-class AddPgTrgmExtension < ActiveRecord::Migration
+class AddPgTrgmExtension < ActiveRecord::Migration[4.2]
   def change
     return if extension_enabled?('pg_trgm')
 

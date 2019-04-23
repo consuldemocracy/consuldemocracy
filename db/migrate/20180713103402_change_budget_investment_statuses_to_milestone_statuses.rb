@@ -1,4 +1,4 @@
-class ChangeBudgetInvestmentStatusesToMilestoneStatuses < ActiveRecord::Migration
+class ChangeBudgetInvestmentStatusesToMilestoneStatuses < ActiveRecord::Migration[4.2]
   def change
     create_table :milestone_statuses do |t|
       t.string :name

@@ -1,10 +1,22 @@
-class Budget < ActiveRecord::Base
+class Budget < ApplicationRecord
 
   include Measurable
   include Sluggable
 
   translates :name, touch: true
   include Globalizable
+
+  class Translation
+    validate :name_uniqueness_by_budget
+
+    def name_uniqueness_by_budget
+      if Budget.joins(:translations)
+               .where(name: name)
+               .where.not("budget_translations.budget_id": budget_id).any?
+        errors.add(:name, I18n.t("errors.messages.taken"))
+      end
+    end
+  end
 
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
@@ -20,6 +32,8 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
   has_many :phases, class_name: Budget::Phase
+
+  has_one :poll
 
   before_validation :sanitize_descriptions
 

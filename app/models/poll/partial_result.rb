@@ -1,4 +1,4 @@
-class Poll::PartialResult < ActiveRecord::Base
+class Poll::PartialResult < ApplicationRecord
 
   VALID_ORIGINS = %w{web booth}
 
