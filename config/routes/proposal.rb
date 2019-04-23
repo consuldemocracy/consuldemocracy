@@ -23,6 +23,12 @@ resources :proposals do
     end
   end
 
+  resources :polls, only: [:show, :results], controller: "polls" do
+    member do
+      get :results
+    end
+  end
+
   member do
     post :vote
     post :vote_featured
