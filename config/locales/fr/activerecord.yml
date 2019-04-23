@@ -196,6 +196,10 @@ fr:
         external_url: "Lien vers de la documentation supplémentaire"
       poll/question/translation:
         title: "Question"
+      poll/ballot_sheet:
+        data: Données CSV
+        poll_id: Sondage
+        officer_assignment_id: Affectation de l’agent
       signature_sheet:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
@@ -234,6 +238,8 @@ fr:
         draft_publication_date: Date de publication de l'ébauche
         allegations_start_date: Date de début des allégations
         allegations_end_date: Date de fin des allégations
+        proposals_phase_start_date: Début
+        proposals_phase_end_date: Fin
         result_publication_date: Date de publication du résultat final
       legislation/process/translation:
         title: Titre du processus
@@ -358,8 +364,8 @@ fr:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non vérifié par recensement'
-              already_voted: 'Cette proposition a déjà été votée'
+              not_in_census: "Non vérifié par recensement"
+              already_voted: "Cette proposition a déjà été votée"
         site_customization/page:
           attributes:
             slug:
@@ -372,7 +378,7 @@ fr:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Vous ne pouvez pas commenter une évaluation'
+              cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
       messages:
         record_invalid: "La validation omise : %{errors}"
         restrict_dependent_destroy:
