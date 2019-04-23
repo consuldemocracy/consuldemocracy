@@ -1,1 +1,5 @@
 el:
+  social_share_button:
+    share_to: "??????????? ??? %{name}"
+    google_bookmark: "Google Bookmarks"
+    email: "E-Mail"
