@@ -9,7 +9,7 @@ fr:
       show:
         title: Compte utilisateur
       edit:
-        title: 'Modifier le compte d’utilisateur : réinitialiser le mot de passe'
+        title: "Modifier le compte d’utilisateur : réinitialiser le mot de passe"
         back: Retour
         password:
           password: Mot de passe
@@ -22,11 +22,11 @@ fr:
           print_help: Vous serez en mesure d’imprimer le mot de passe lorsqu’il sera enregistré.
     account_info:
       change_user: Changer l'utilisateur
-      document_number_label: 'Numéro de document :'
-      document_type_label: 'Type de document :'
-      email_label: 'Courriel:'
-      identified_label: 'Identifié en tant que :'
-      username_label: 'Nom d''utilisateur :'
+      document_number_label: "Numéro de document :"
+      document_type_label: "Type de document :"
+      email_label: "Courriel:"
+      identified_label: "Identifié en tant que :"
+      username_label: "Nom d'utilisateur :"
     check: Vérifier le document
     dashboard:
       index:
@@ -38,9 +38,9 @@ fr:
       already_verified: Ce compte utilisateur est déjà vérifié.
       has_no_account_html: Afin de créer un compte, aller sur %{link} et cliquer sur <b>'S'enregistrer'</b> dans la partie en haut à gauche de l'écran.
       link: Consul
-      in_census_has_following_permissions: 'Cet utilisateur peut participer à la plateforme avec les permissions suivantes :'
+      in_census_has_following_permissions: "Cet utilisateur peut participer à la plateforme avec les permissions suivantes :"
       not_in_census: Ce document n'est pas enregistré.
-      not_in_census_info: 'Les citoyens non recensés peuvent participer avec les permissions suivantes :'
+      not_in_census_info: "Les citoyens non recensés peuvent participer avec les permissions suivantes :"
       please_check_account_data: Veuillez vérifier que les données du compte ci-dessus sont correctes.
       title: Gestion des utilisateurs
       under_age: "Vous n'avez pas l'âge requis pour avoir un compte vérifié."
@@ -49,14 +49,14 @@ fr:
     date_of_birth: Date de naissance
     email_verifications:
       already_verified: Ce compte utilisateur est déjà vérifié.
-      choose_options: 'Veuillez choisir une des options suivantes :'
+      choose_options: "Veuillez choisir une des options suivantes :"
       document_found_in_census: Ce document a été trouvé dans le recensement, mais il n'a pas de compte utilisateur associé.
-      document_mismatch: 'Ce courriel appartient à un utilisateur qui posséde déjà un identifiant associé: %{document_number}(%{document_type})'
+      document_mismatch: "Ce courriel appartient à un utilisateur qui posséde déjà un identifiant associé: %{document_number}(%{document_type})"
       email_placeholder: Saisissez le courriel que cette personne a utilisé pour créer son compte
       email_sent_instructions: Afin de terminer la vérification de cet utilisateur, il est nécessaire que l'utilisateur clique sur le lien envoyé à l'adresse ci-dessus. Cette étape est requise pour confirmer que l'adresse lui appartient.
       if_existing_account: Si cette personne a déjà créé un compte sur la plateforme,
       if_no_existing_account: Si cette personne n'a pas déjà créé de compte sur la plateforme,
-      introduce_email: 'Veuillez saisir le courriel utilisé par le compte :'
+      introduce_email: "Veuillez saisir le courriel utilisé par le compte :"
       send_email: Envoyer le courriel de vérification
     menu:
       create_proposal: Créer la proposition
@@ -78,7 +78,7 @@ fr:
       vote_proposals: Voter sur des propositions
     print:
       proposals_info: Faites votre proposition sur http://url.consul
-      proposals_title: 'Propositions :'
+      proposals_title: "Propositions :"
       spending_proposals_info: Participer sur http://url.consul
       budget_investments_info: Participer sur http://url.consul
     print_info: Imprimer cette info
