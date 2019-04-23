@@ -51,7 +51,6 @@ so:
         submit: Ansixinta dukumentiga
         error_verifying_census: "Tirakoobku ma awoodin inuu caddeeyo dokumentigan."
         form_errors: hortaagan xaqiijinta dukumintigan
-        no_assignments: "Adigu ma haysid wax isbeddel ah maanta"
     voters:
       new:
         title: Doorashooyinka
