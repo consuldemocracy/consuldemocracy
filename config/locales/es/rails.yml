@@ -82,7 +82,7 @@ es:
         one: 1 mes
         other: "%{count} meses"
       x_years:
-        one: "%{count} año"
+        one: '%{count} año'
         other: "%{count} años"
       x_seconds:
         one: 1 segundo
