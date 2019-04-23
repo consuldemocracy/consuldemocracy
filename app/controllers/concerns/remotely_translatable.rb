@@ -11,9 +11,9 @@ module RemotelyTranslatable
     end
 
     def remote_translation_for(resource)
-      { 'remote_translatable_id' => resource.id.to_s,
-        'remote_translatable_type' => resource.class.to_s,
-        'locale' => I18n.locale }
+      { "remote_translatable_id" => resource.id.to_s,
+        "remote_translatable_type" => resource.class.to_s,
+        "locale" => I18n.locale }
     end
 
     def translation_empty?(resource)

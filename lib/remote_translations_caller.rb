@@ -27,6 +27,7 @@ class RemoteTranslationsCaller
       else
         remote_translation.update(error_message: resource.errors.messages)
       end
+      resource.save
     end
 
     def resource
