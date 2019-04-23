@@ -3,11 +3,12 @@ require "rails_helper"
 describe RemoteTranslationsController do
 
   describe "POST create" do
+    let(:debate)             { create(:debate) }
+
     before do
-      @debate = create(:debate)
-      @remote_translations_params = [{ remote_translatable_id: @debate.id.to_s,
-                                      remote_translatable_type: @debate.class.to_s,
-                                      locale: :es }].to_json
+      @remote_translations_params = [{ remote_translatable_id: debate.id.to_s,
+                                       remote_translatable_type: debate.class.to_s,
+                                       locale: :es }].to_json
       allow(controller.request).to receive(:referer).and_return("any_path")
       Delayed::Worker.delay_jobs = true
     end
@@ -23,7 +24,7 @@ describe RemoteTranslationsController do
     end
 
     it "create remote translation when same remote translation with error_message is enqueued" do
-      create(:remote_translation, remote_translatable: @debate, locale: :es, error_message: "Has errors")
+      create(:remote_translation, remote_translatable: debate, locale: :es, error_message: "Has errors")
 
       post :create, remote_translations: @remote_translations_params
 
@@ -31,7 +32,7 @@ describe RemoteTranslationsController do
     end
 
     it "not create remote translation when same remote translation is enqueued" do
-      create(:remote_translation, remote_translatable: @debate, locale: :es)
+      create(:remote_translation, remote_translatable: debate, locale: :es)
 
       post :create, remote_translations: @remote_translations_params
 
