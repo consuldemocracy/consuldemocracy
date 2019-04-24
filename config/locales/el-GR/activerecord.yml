@@ -128,6 +128,14 @@ el:
         heading_id: "Επικεφαλίδα"
         title: "Τίτλος"
         description: "Περιγραφή"
+        external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
+        administrator_id: "Διαχειριστής"
+        location: "Τοποθεσία (προαιρετικά)"
+        organization_name: "Εάν υποβάλετε μια πρόταση εξ ονόματος ομάδας, οργανισμού ή πολλών ατόμων, παρακαλείσθε να αναφέρετε το όνομά τους"
+        image: "Περιγραφική εικόνα της πρότασης"
+        image_title: "Τίτλος εικόνας"
+      geozone:
+        name: Όνομα
       spending_proposal:
         external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
         geozone_id: "Εμβέλεια λειτουργίας"
@@ -266,3 +274,21 @@ el:
             document_number:
               not_in_census: "Μη εγκεκριμένο από το Census"
               already_voted: "Έχετε ήδη ψηφίσει αυτήν την πρόταση"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "πρέπει να είναι γράμματα, αριθμοί, _ και -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Το πλάτος πρέπει να είναι %{required_width}px"
+              image_height: "Το ύψος πρέπει να είναι %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
+      messages:
+        record_invalid: "Η επικύρωση απέτυχε: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Δεν μπορείτε να σβήσετε την εγγραφή επειδή μία εξαρτημένη %{record} υπάρχει"
+          has_many: "Δεν μπορείτε να σβήσετε την εγγραφή επειδή μία εξαρτημένη %{record} υπάρχει"
