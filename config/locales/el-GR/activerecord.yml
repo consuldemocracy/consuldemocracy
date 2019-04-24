@@ -3,4 +3,103 @@ el:
     models:
       activity:
         one: "δραστηριότητα"
-        other: "δραστηριότητα"
+        other: "δραστηριότητες"
+      budget:
+        one: "Προϋπολογισμός"
+        other: "Προϋπολογισμοί"
+      budget/investment:
+        one: "Επένδυση"
+        other: "Επενδύσεις"
+      milestone:
+        one: "ορόσημο"
+        other: "ορόσημα"
+      milestone/status:
+        one: "Κατάσταση ορόσημου"
+        other: "Κατάσταση ορόσημων"
+      progress_bar:
+        one: "Γραμμή προόδου"
+        other: "Γραμμές προόδου"
+      comment:
+        one: "Σχόλιο"
+        other: "Σχόλια"
+      debate:
+        one: "Συζήτηση"
+        other: "Συζητήσεις"
+      tag:
+        one: "Ετικέτα"
+        other: "Ετικέτες"
+      user:
+        one: "Χρήστης"
+        other: "Χρήστες"
+      moderator:
+        one: "Συντονιστής"
+        other: "Συντονιστές"
+      administrator:
+        one: "Διαχειριστής"
+        other: "Διαχειριστές"
+      valuator:
+        one: "Αξιολογητής"
+        other: "Αξιολογητές"
+      valuator_group:
+        one: "Ομάδα αξιολογητών"
+        other: "Ομάδες αξιολογητών"
+      manager:
+        one: "Διευθυντής"
+        other: "Διευθυντές"
+      newsletter:
+        one: "Ενημερωτικό δελτίο"
+        other: "Ενημερωτικά δελτία"
+      vote:
+        one: "Ψηφος"
+        other: "Ψήφοι"
+      organization:
+        one: "Οργανισμός"
+        other: "Οργανισμοί"
+      poll/booth:
+        one: "περίπτερο"
+        other: "περίπτερα"
+      poll/officer:
+        one: "λειτουργός"
+        other: "λειτουργοί"
+      poll/ballot_sheet:
+        one: Φύλλο ψηφοφορίας
+        other: Φύλλα ψηφοφορίας
+      proposal:
+        one: "Πρόταση πολίτη"
+        other: "Προτάσεις πολίτη"
+      spending_proposal:
+        one: "Επενδυτικό έργο"
+        other: "Επενδυτικά έργα"
+      site_customization/page:
+        one: Προσαρμοσμένη σελίδα
+        other: Προσαρμοσμένες σελίδες
+      site_customization/image:
+        one: Προσαρμοσμένη εικόνα
+        other: Προσαρμοσμένες εικόνες
+      site_customization/content_block:
+        one: Προσαρμοσμένο περιεχόμενο μπλοκ
+        other: Προσαρμοσμένο περιεχόμενο μπλοκς
+      legislation/process:
+        one: "Διαδικασία"
+        other: "Διαδικασίες"
+      legislation/proposal:
+        one: "Πρόταση"
+        other: "Προτάσεις"
+      legislation/draft_versions:
+        one: "Εκδοχή του σχεδίου"
+        other: "Εκδοχές του σχεδίου"
+      legislation/questions:
+        one: "Ερώτηση"
+        other: "Ερωτήσεις"
+      legislation/question_options:
+        one: "Ερώτημα επιλογής"
+        other: "Ερώτημα επιλογών"
+      legislation/answers:
+        one: "Απάντηση"
+        other: "Απαντήσεις"
+      documents:
+        one: "Έγγραφο"
+        other: "Έγγραφα"
+      images:
+        one: "Εικόνα"
+        other: "Εικόνες"
