@@ -136,6 +136,41 @@ el:
         image_title: "Τίτλος εικόνας"
       geozone:
         name: Όνομα
+        external_code: "Εξωτερικός κώδικας (προαιρετικά)"
+        census_code: "Κωδικός απογραφής (προαιρετικά)"
+        html_map_coordinates: "HTML <map> Συντεταγμένες (προαιρετικά)"
+      milestone:
+        status_id: "Τρέχουσα κατάσταση (προαιρετικά)"
+        title: "Τίτλος"
+        description: "Περιγραφή (προαιρετική έαν έχει ανατεθεί μια κατάσταση)"
+        publication_date: "Ημερομηνία δημοσίευσης"
+      milestone/status:
+        name: "Όνομα"
+        description: "Περιγραφή (προαιρετικά)"
+      progress_bar:
+        kind: "Τύπος"
+        title: "Τίτλος"
+        percentage: "Τρέχουσα πρόοδος"
+      progress_bar/kind:
+        primary: "Στοιχειώδης"
+        secondary: "Δευτερεύουσα"
+      budget/heading:
+        name: "Όνομα επικεφαλίδας"
+        price: "Τιμή"
+        population: "Πληθυσμός"
+      comment:
+        body: "Σχόλιο"
+        user: "Χρήστης"
+      debate:
+        author: "Συγγραφέας"
+        description: "Γνώμη"
+        terms_of_service: "Όροι υπηρεσίας"
+        title: "Τίτλος"
+      proposal:
+        author: "Συγγραφέας"
+        title: "Τίτλος"
+        question: "Ερώτηση"
+        description: "Περιγραφή"
       spending_proposal:
         external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
         geozone_id: "Εμβέλεια λειτουργίας"
