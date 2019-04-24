@@ -51,3 +51,98 @@ el:
       already_verified: Αυτός ο λογαριασμός χρήστη έχει ήδη επαληθευτεί.
       choose_options: "Παρακαλώ επιλέξτε μία από τις ακόλουθες επιλογές:"
       document_found_in_census: Το έγγραφο αυτό βρέθηκε στην απογραφή, αλλά δεν έχει συνδεδεμένο λογαριασμό χρήστη με αυτό.
+      document_mismatch: "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου ανήκει σε ένα χρήστη που έχει ήδη συσχετισμένο id: %{document_number}(%{document_type})"
+      email_placeholder: Γράψτε το email που χρησιμοποιήθηκε για τη δημιουργία του λογαριασμού χρήστη
+      email_sent_instructions: Για την πλήρη επαλήθευση αυτού του χρήστη, είναι απαραίτητο ο χρήστης να κάνει κλικ σε έναν σύνδεσμο που έχουμε στείλει στην παραπάνω ηλεκτρονική διεύθυνση. Αυτό το βήμα απαιτείται για να διασφαλιστεί ότι η διεύθυνση ανήκει σε αυτόν.
+      if_existing_account: Αν το άτομο έχει ήδη δημιουργήσει έναν λογαριασμό χρήστη στον ιστότοπο,
+      if_no_existing_account: Αν το άτομο δεν έχει δημιουργήσει ακόμα λογαριασμό
+      introduce_email: "Παρακαλώ εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που χρησιμοποιήσατε για το λογαριασμό:"
+      send_email: Αποστολή επαλήθευσης ηλεκτρονικού ταχυδρομείου
+    menu:
+      create_proposal: Δημιουργήστε μια πρόταση
+      print_proposals: Εκτύπωση προτάσεων
+      support_proposals: Υποστήριξη προτάσεων
+      create_spending_proposal: Δημιουργία πρότασης δαπανών
+      print_spending_proposals: Εκτύπωση προτάσεων δαπανών
+      support_spending_proposals: Υποστήριξε τις προτάσεις δαπανών
+      create_budget_investment: Δημιουργία προϋπολογισμού επενδύσεων
+      print_budget_investments: Εκτύπωση προϋπολογισμού επενδύσεων
+      support_budget_investments: Υποστήριξη προϋπολογισμού επενδύσεων
+      users: Διαχείριση χρηστών
+      user_invites: Αποστολή προσκλήσεων
+      select_user: Επιλέξτε χρήστη
+    permissions:
+      create_proposals: Δημιουργήστε προτάσεις
+      debates: Συμμετάσχουν σε συζητήσεις
+      support_proposals: Υποστήριξη προτάσεων
+      vote_proposals: Ψήφισε προτάσεις
+    print:
+      proposals_info: Δημιουργήστε την πρότασή σας στο http://url.consul
+      proposals_title: "Προτάσεις:"
+      spending_proposals_info: Συμμετάσχετε στο http://url.consul
+      budget_investments_info: Συμμετάσχετε στο http://url.consul
+    print_info: Εκτυπώστε αυτές τις πληροφορίες
+    proposals:
+      alert:
+        unverified_user: Χρήστης δεν επαληθεύεται
+      create_proposal: Δημιουργία πρότασης
+      print:
+        print_button: Εκτύπωση
+      index:
+        title: Υποστήριξη προτάσεων
+    budgets:
+      create_new_investment: Δημιουργία προϋπολογισμού επενδύσεων
+      print_investments: Εκτύπωση προϋπολογισμού επενδύσεων
+      support_investments: Υποστήριξη προϋπολογισμού επενδύσεων
+      table_name: Όνομα
+      table_phase: Φάση
+      table_actions: Δράσεις
+      no_budgets: Δεν υπάρχουν ενεργοί συμμετοχικοί προϋπολογισμοί.
+    budget_investments:
+      alert:
+        unverified_user: Χρήστης δεν επαληθεύεται
+      create: Δημιουργία ενός προϋπολογισμού επενδύσεων
+      filters:
+        heading: Έννοια
+        unfeasible: Ανέφικτη επένδυση
+      print:
+        print_button: Εκτύπωση
+      search_results:
+        one: " που περιέχουν τον όρο '%{search_term} '"
+        other: " που περιέχουν τον όρο '%{search_term} '"
+    spending_proposals:
+      alert:
+        unverified_user: Χρήστης δεν επαληθεύεται
+      create: Δημιουργία πρότασης δαπανών
+      filters:
+        unfeasible: Ανέφικτα επενδυτικά έργα
+        by_geozone: "Επενδυτικά σχέδια με πεδίο εφαρμογής: %{geozone}"
+      print:
+        print_button: Εκτύπωση
+      search_results:
+        one: " που περιέχουν τον όρο '%{search_term} '"
+        other: " που περιέχουν τον όρο '%{search_term} '"
+    sessions:
+      signed_out: Αποσύνδεση με επιτυχία.
+      signed_out_managed_user: Το πεδίο χρήστη αποσυνδέθηκε με επιτυχία.
+    username_label: Όνομα χρήστη
+    users:
+      create_user: Δημιουργήστε ένα νέο λογαριασμό
+      create_user_info: Θα δημιουργήσουμε έναν λογαριασμό με τα ακόλουθα δεδομένα
+      create_user_submit: Δημιουργία χρήστη
+      create_user_success_html: Έχουμε στείλει ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη διεύθυνση <b>%{email}</b> προκειμένου να επαληθεύσουμε ότι ανήκει σε αυτόν το χρήστη. Περιέχει έναν σύνδεσμο που πρέπει να κάνουν κλικ. Στη συνέχεια θα πρέπει να ορίσουν τον κωδικό πρόσβασης πριν να είναι σε θέση να συνδεθούν στην ιστοσελίδα
+      erased_notice: Διαγραφή του λογαριασμού χρήστη.
+      erased_by_manager: "Διαγραφή από διαχειριστή: %{manager}"
+      erase_account_link: Διαγραφή χρήστη
+      erase_account_confirm: Είστε βέβαιοι ότι θέλετε να διαγράψετε το λογαριασμό; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί
+      erase_warning: Αυτή η ενέργεια δεν μπορεί να αναιρεθεί. Παρακαλώ βεβαιωθείτε ότι θέλετε να διαγράψετε αυτόν το λογαριασμό.
+      erase_submit: Διαγραφή λογαριασμού
+    user_invites:
+      new:
+        label: E-Mails
+        info: "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου διαχωρισμένα με κόμματα (',')"
+        submit: Αποστολή προσκλήσεων
+        title: Αποστολή προσκλήσεων
+      create:
+        success_html: <strong>%{count} προσκλήσεις</strong> έχουν αποσταλεί.
+        title: Αποστολή προσκλήσεων
