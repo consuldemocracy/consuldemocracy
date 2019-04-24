@@ -63,6 +63,11 @@ el:
     investments:
       form:
         tag_category_label: "Κατηγορίες"
+        tags_instructions: "Πρόσθεσε ετικέτα σε αυτήν την πρόταση. Μπορείς να επιλέξεις από τις προτεινόμενες κατηγορίες ή να προσθέσεις τη δική σου"
+        tags_label: Ετικέτες
+        tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
+        map_location: "Χάρτης τοποθεσίας"
+        map_location_instructions: "Περιηγηθείτε στο χάρτη προς την τοποθεσία και τοποθετήστε το δείκτη."
       show:
         author: Συγγραφέας
         project_unfeasible_html: "Αυτό το σχέδιο επενδύσεων <strong>έχει επισημανθεί ως μη εφικτό</strong> και δεν θα πάει σε φάση ψηφοφορίας."
@@ -87,3 +92,40 @@ el:
       header:
         check_ballot: Ελέγξτε και επιβεβαιώστε το ψηφοδέλτιό μου
         different_heading_assigned_html: "Έχετε ενεργές ψήφους σε άλλη επικεφαλίδα: %{heading_link}"
+        change_ballot: "Εάν αλλάξετε γνώμη, μπορείτε να αφαιρέσετε τις ψήφους σας στο %{check_ballot} και να ξεκινήσετε πάλι."
+        check_ballot_link: "ελέγξτε και επιβεβαιώστε το ψηφοδέλτιό μου"
+        price: "Ο τίτλος αυτός έχει έναν προϋπολογισμό της τάξεως"
+    progress_bar:
+      assigned: "Έχετε αναθέσει: "
+      available: "Διαθέσιμος προϋπολογισμός: "
+    show:
+      group: Ομάδα
+      phase: Πραγματική φάση
+      unfeasible_title: Ανέφικτες επενδύσεις
+      unfeasible: Δείτε τις ανέφικτες επενδύσεις
+      unselected_title: Επενδύσεις που δεν είχαν επιλεγεί για την φάση ψηφοφορίας
+      unselected: Δείτε τις επενδύσεις που δεν είχαν επιλεγεί για την φάση ψηφοφορίας
+      see_results: Δείτε τα αποτελέσματα
+    results:
+      link: Αποτελέσματα
+      page_title: "%{budget} - αποτελέσματα"
+      heading: "Αποτελέσματα συμμετοχικού προϋπολογισμού"
+      heading_selection_title: "Κατά περιοχή"
+      spending_proposal: Τίτλος πρότασης
+      ballot_lines_count: Ψήφοι
+      hide_discarded_link: Η απόκρυψη απορρίπτεται
+      show_all_link: Εμφάνιση όλων
+      price: Τιμή
+      amount_available: Διαθέσιμος προϋπολογισμός
+      accepted: "Αποδεκτή πρόταση δαπανών: "
+      discarded: "Απορριφθείσα πρόταση δαπανών: "
+      incompatibles: Ασυμβίβαστα
+      investment_proyects: Λίστα με όλα τα επενδυτικά έργα
+      unfeasible_investment_proyects: Λίστα με όλα τα ανέφικτα επενδυτικά έργα
+      not_selected_investment_proyects: Λίστα με όλα τα επενδυτικά έργα που δεν είχαν επιλεγεί για ψηφοφορία
+    executions:
+      link: "Ορόσημα"
+      page_title: "%{budget} - Oρόσημα"
+      heading: "Ορόσημα συμμετοχικού προϋπολογισμού"
+      heading_selection_title: "Κατά περιοχή"
+      no_winner_investments: "Χωρίς νικητήριες επενδύσεις σε αυτή την κατάσταση"
