@@ -6,6 +6,10 @@ describe RemoteTranslationsCaller do
     RemoteTranslation.skip_callback(:create, :after, :enqueue_remote_translation)
   end
 
+  after do
+    RemoteTranslation.set_callback(:create, :after, :enqueue_remote_translation)
+  end
+
   describe "#call" do
 
     context "Debates" do

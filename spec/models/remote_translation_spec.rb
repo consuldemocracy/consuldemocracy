@@ -30,12 +30,16 @@ describe RemoteTranslation do
 
   describe "#enqueue_remote_translation" do
 
-    it "after create enqueue Delayed Job" do
+    before do
       Delayed::Worker.delay_jobs = true
+    end
 
-      expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
-
+    after do
       Delayed::Worker.delay_jobs = false
+    end
+
+    it "after create enqueue Delayed Job" do
+      expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
     end
 
   end
