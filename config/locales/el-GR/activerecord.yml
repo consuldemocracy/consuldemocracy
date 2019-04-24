@@ -103,3 +103,22 @@ el:
       images:
         one: "Εικόνα"
         other: "Εικόνες"
+      topic:
+        one: "Θέμα"
+        other: "Θέματα"
+      poll:
+        one: "Δημοσκόπηση"
+        other: "Δημοσκοπήσεις"
+      proposal_notification:
+        one: "Κοινοποίηση της πρότασης"
+        other: "Κοινοποιήσεις της πρότασης"
+    attributes:
+      budget:
+        name: "Όνομα"
+        description_accepting: "Περιγραφή κατά τη φάση αποδοχής"
+        description_reviewing: "Περιγραφή κατά τη φάση αναθεώρησης"
+        description_selecting: "Περιγραφή κατά τη φάση επιλογής"
+        description_valuating: "Περιγραφή κατά τη φάση αξιολόγησης"
+        description_balloting: "Περιγραφή κατά τη φάση που διεξάγεται η ψηφοφορία"
+        description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης αναθεώρησης ψηφοδελτίων"
+        description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
