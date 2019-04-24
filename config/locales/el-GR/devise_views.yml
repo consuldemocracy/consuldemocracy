@@ -1,1 +1,7 @@
 el:
+  devise_views:
+    confirmations:
+      new:
+        email_label: E-Mail
+        submit: Στείλει ξανά τις οδηγίες
+        title: Στείλτε ξανά οδηγίες για επιβεβαίωση
