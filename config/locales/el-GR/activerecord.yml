@@ -217,3 +217,52 @@ el:
           attributes:
             max_per_day:
               invalid: "Έχετε φτάσει το μέγιστο αριθμό προσωπικών μηνυμάτων ανά ημέρα"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Το πλάτος της εικόνας πρέπει να είναι τουλάχιστον %{required_min_width}px"
+              min_image_height: "Το ύψος της εικόνας πρέπει να είναι τουλάχιστον %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
+        map_location:
+          attributes:
+            map:
+              invalid: Ο χάρτης τοποθεσίας δεν μπορεί να είναι κενός. Τοποθετήστε ένα δείκτη ή επιλέξτε το πλαίσιο ελέγχου εάν δεν είναι απαραίτητος ο εντοπισµός
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Έγγραφο που δεν βρίσκεται σε απογραφή"
+              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης
+            debate_end_date:
+              invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης της συζήτησης
+            draft_end_date:
+              invalid_date_range: πρέπει να είναι πάνω ή μετά την αρχική ημερομηνία έναρξης της συζήτησης
+            allegations_end_date:
+              invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης των σχολίων
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Πρέπει να περιμένετε το λιγότερο %{interval} ημέρες μεταξύ των ειδοποιήσεων"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Μη εγκεκριμένο από το Census"
+              already_voted: "Έχετε ήδη ψηφίσει αυτήν την πρόταση"
