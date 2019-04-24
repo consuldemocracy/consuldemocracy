@@ -1,5 +1,6 @@
 el:
   social_share_button:
-    share_to: "??????????? ??? %{name}"
+    share_to: "Μοιραστείτε στο %{name}"
     google_bookmark: "Google Bookmarks"
     email: "E-Mail"
+    telegram: "Telegram"
