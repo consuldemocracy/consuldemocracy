@@ -42,6 +42,11 @@ describe PagesController do
       get :show, params: { id: "nonExistentPage" }
       expect(response).to be_missing
     end
+
+    it "returns a 404 message for a JavaScript request" do
+      get :show, params: { id: "nonExistentJavaScript.js" }
+      expect(response).to be_missing
+    end
   end
 
 end
