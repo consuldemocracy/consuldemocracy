@@ -1,1 +1,30 @@
 el:
+  officing:
+    header:
+      title: Δημοσκόπηση
+    dashboard:
+      index:
+        title: Πρόεδρος της ψηφοφορίας
+        info: Εδώ μπορείτε να ελέγξετε τα έγγραφα των χρηστών και να αποθηκεύσετε τα αποτελέσματα των ψηφοφοριών
+        no_shifts: Δεν έχετε καμία αλλαγή σήμερα.
+    menu:
+      voters: Επιβεβαιώστε το έγγραφο
+      total_recounts: Πλήρης καταμέτρηση και αποτελέσματα
+    polls:
+      final:
+        title: Κατάλογος ολοκληρωμένων ψήφων
+        no_polls: Δεν διοργανώνετε τελικές αναφορές σε οποιαδήποτε ενεργή δημοσκόπηση
+        select_poll: Επιλέξτε ψηφοφορία
+        add_results: Προσθέστε αποτελέσματα
+    poll_budgets:
+      see_ballot_sheets: Βλέπε λίστα ψηφοδελτίων
+      index:
+        title: "%{poll_budget} - Λίστα ψηφοδελτίων"
+        ballot_sheet: "Λίστα ψηφοδελτίων %{id}"
+        ballot_sheet_name: Όνομα
+        ballot_sheet_author: Συγγραφέας
+        ballot_sheet_creation_date: Ημερομηνία δημιουργίας
+        empty_results: Δεν υπάρχουν ακόμα ψηφοδέλτια για αυτή τη δημοσκόπηση
+      new:
+        title: "%{poll_budget} - Νέο φύλλο ψηφοφορίας"
+        booth: Περίπτερο
