@@ -61,6 +61,8 @@ FactoryBot.define do
 
     trait :finished do
       phase "finished"
+      results_enabled true
+      stats_enabled true
     end
   end
 

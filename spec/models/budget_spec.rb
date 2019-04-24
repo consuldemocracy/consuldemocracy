@@ -5,6 +5,7 @@ describe Budget do
   let(:budget) { create(:budget) }
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
+  it_behaves_like "reportable"
 
   describe "name" do
     before do

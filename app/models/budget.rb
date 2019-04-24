@@ -3,6 +3,7 @@ class Budget < ApplicationRecord
   include Measurable
   include Sluggable
   include StatsVersionable
+  include Reportable
 
   translates :name, touch: true
   include Globalizable

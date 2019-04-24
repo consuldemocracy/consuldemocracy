@@ -29,6 +29,8 @@ shared_examples "reportable" do
     end
 
     it "uses the `has_one` relation instead of the original column" do
+      skip "there's no original column" unless reportable.has_attribute?(:results_enabled)
+
       reportable.update(results_enabled: true)
 
       expect(reportable.read_attribute(:results_enabled)).to be false
@@ -63,6 +65,8 @@ shared_examples "reportable" do
     end
 
     it "uses the `has_one` relation instead of the original column" do
+      skip "there's no original column" unless reportable.has_attribute?(:stats_enabled)
+
       reportable.update(stats_enabled: true)
 
       expect(reportable.read_attribute(:stats_enabled)).to be false

@@ -1,4 +1,7 @@
 en:
+  attributes:
+    results_enabled: "Show results"
+    stats_enabled: "Show stats"
   activerecord:
     models:
       activity:
@@ -212,8 +215,6 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
-        results_enabled: "Show results"
-        stats_enabled: "Show stats"
       poll/translation:
         name: "Name"
         summary: "Summary"

@@ -8,9 +8,6 @@ describe Abilities::Everyone do
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
 
-  let(:reviewing_ballot_budget) { create(:budget, phase: "reviewing_ballots") }
-  let(:finished_budget) { create(:budget, phase: "finished") }
-
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should_not be_able_to(:edit, Debate) }
@@ -32,8 +29,6 @@ describe Abilities::Everyone do
 
   it { should be_able_to(:index, Budget) }
 
-  it { should be_able_to(:read_results, finished_budget) }
-  it { should_not be_able_to(:read_results, reviewing_ballot_budget) }
   it { should_not be_able_to(:manage, Dashboard::Action) }
 
   context "when accessing poll results" do
@@ -74,17 +69,43 @@ describe Abilities::Everyone do
     end
   end
 
+  context "when accessing budget results" do
+    context "budget is not finished" do
+      let(:budget) { create(:budget, phase: "reviewing_ballots", results_enabled: true) }
+
+      it { should_not be_able_to(:read_results, budget) }
+    end
+
+    context "budget is finished" do
+      let(:budget) { create(:budget, :finished) }
+
+      it { should be_able_to(:read_results, budget) }
+    end
+
+    context "results disabled" do
+      let(:budget) { create(:budget, :finished, results_enabled: false) }
+
+      it { should_not be_able_to(:read_results, budget) }
+    end
+  end
+
   context "when accessing budget stats" do
     context "supports phase is not finished" do
-      let(:budget) { create(:budget, phase: "selecting") }
+      let(:budget) { create(:budget, phase: "selecting", stats_enabled: true) }
 
       it { should_not be_able_to(:read_stats, budget) }
     end
 
     context "supports phase is finished" do
-      let(:budget) { create(:budget, phase: "valuating") }
+      let(:budget) { create(:budget, phase: "valuating", stats_enabled: true) }
 
       it { should be_able_to(:read_stats, budget) }
+    end
+
+    context "stats disabled" do
+      let(:budget) { create(:budget, phase: "valuating", stats_enabled: false) }
+
+      it { should_not be_able_to(:read_stats, budget) }
     end
   end
 end
