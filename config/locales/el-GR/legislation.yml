@@ -118,3 +118,8 @@ el:
         debate_phase_not_open: Η φάση συζήτησης έχει τελειώσει και οι απαντήσεις δεν γίνονται πλέον αποδεκτές
     shared:
       share: Μοιραστείτε
+      share_comment: Σχόλιο στο %{version_name} από το σχεδιασμό διαδικασίας %{process_name}
+    proposals:
+      form:
+        tags_label: "Κατηγορίες"
+      not_verified: "Για υποψηφιότητες %{verify_account}."
