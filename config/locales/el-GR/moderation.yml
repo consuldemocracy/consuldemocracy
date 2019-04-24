@@ -88,3 +88,30 @@ el:
           created_at: Τα νεότερα
           flags: Οι πιο σημαντικές
         title: Επενδύσεις προϋπολογισμού
+    proposal_notifications:
+      index:
+        block_authors: Αποκλεισμός συγγραφέων
+        confirm: Είστε βέβαιοι;
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          pending_review: Σε εκκρεμότητα αναθεώρησης
+          ignored: Μαρκάρετε ως αναγνωσμένο
+        headers:
+          moderate: Συντονίζω
+          proposal_notification: Ειδοποιήσεις προτάσεων
+        hide_proposal_notifications: Απόκρυψη προτάσεων
+        ignore_flags: Μαρκάρετε ως αναγνωσμένο
+        order: Ταξινόμηση κατά
+        orders:
+          created_at: Το πιο πρόσφατο
+          moderated: Συντονισμένο
+        title: Ειδοποιήσεις προτάσεων
+    users:
+      index:
+        hidden: Αποκλεισμένο
+        hide: Αποκλείω
+        search: Αναζήτηση
+        search_placeholder: email ή όνομα χρήστη
+        title: Αποκλεισμός χρηστών
+      notice_hide: Ο χρήστης είναι αποκλεισμένος. Όλες οι συζητήσεις και τα σχόλια αυτού του χρήστη έχουν κρυφτεί.
