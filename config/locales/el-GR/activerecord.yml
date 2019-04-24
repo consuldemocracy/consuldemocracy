@@ -256,6 +256,27 @@ el:
         draft_start_date: Έναρξη
         draft_end_date: Τέλος
         draft_publication_date: Ημερομηνία δημοσίευσης σχεδίου
+        allegations_start_date: Έναρξη
+        allegations_end_date: Τέλος
+        proposals_phase_start_date: Έναρξη
+        proposals_phase_end_date: Τέλος
+        result_publication_date: Ημερομηνία δημοσίευσης του τελικού αποτελέσματος
+        background_color: Χρώμα φόντου
+        font_color: Χρώμα γραμματοσειράς
+      legislation/process/translation:
+        title: Τίτλος διαδικασίας
+        summary: Περίληψη
+        description: Περιγραφή
+        additional_info: Πρόσθετες πληροφορίες
+        milestones_summary: Περίληψη
+      legislation/draft_version:
+        title: Τίτλος έκδοσης
+        body: Κείμενο
+        changelog: Αλλαγές
+        status: Κατάσταση
+        final_version: Τελική έκδοση
+      legislation/draft_version/translation:
+        title: Τίτλος έκδοσης
       widget/card:
         description: Περιγραφή
         link_text: Σύνδεσμος κειμένου
