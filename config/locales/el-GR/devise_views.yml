@@ -36,3 +36,11 @@ el:
         login: Σύνδεση
         logout: Αποσύνδεση
         signup: Εγγραφή
+    organizations:
+      registrations:
+        new:
+          email_label: E-Mail
+          organization_name_label: Όνομα του οργανισμού
+          password_confirmation_label: Επιβεβαίωση κωδικού πρόσβασης
+          password_label: Κωδικός πρόσβασης
+          phone_number_label: Αριθμός τηλεφώνου
