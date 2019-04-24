@@ -80,3 +80,11 @@ el:
           with_ignored_flag: Μαρκάρετε ως αναγνωσμένο
         headers:
           moderate: Συντονίζω
+          budget_investment: Επενδύσεις προϋπολογισμού
+        hide_budget_investments: Απόκρυψη επενδύσεων προϋπολογισμού
+        ignore_flags: Μαρκάρετε ως αναγνωσμένο
+        order: Ταξινόμηση κατά
+        orders:
+          created_at: Τα νεότερα
+          flags: Οι πιο σημαντικές
+        title: Επενδύσεις προϋπολογισμού
