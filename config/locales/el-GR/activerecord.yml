@@ -277,7 +277,46 @@ el:
         final_version: Τελική έκδοση
       legislation/draft_version/translation:
         title: Τίτλος έκδοσης
+        body: Κείμενο
+        changelog: Αλλαγές
+      legislation/question:
+        title: Τίτλος
+        question_options: Επιλογές
+      legislation/question_option:
+        value: Τιμή
+      legislation/annotation:
+        text: Σχόλιο
+      document:
+        title: Τίτλος
+        attachment: Συνημμένο
+      image:
+        title: Τίτλος
+        attachment: Συνημμένο
+      poll/question/answer:
+        title: Απάντηση
+        description: Περιγραφή
+      poll/question/answer/translation:
+        title: Απάντηση
+        description: Περιγραφή
+      poll/question/answer/video:
+        title: Τίτλος
+        url: Εξωτερικό βίντεο
+      newsletter:
+        segment_recipient: Παραλήπτες
+        subject: Θέμα
+        from: Από
+        body: Περιεχόμενο μηνύματος ηλεκτρονικού ταχυδρομείου
+      admin_notification:
+        segment_recipient: Παραλήπτες
+        title: Τίτλος
+        link: Σύνδεσμος
+        body: Κείμενο
+      admin_notification/translation:
+        title: Τίτλος
+        body: Κείμενο
       widget/card:
+        label: Ετικέτα (προαιρετικά)
+        title: Τίτλος
         description: Περιγραφή
         link_text: Σύνδεσμος κειμένου
         link_url: Σύνδεσμος URL
