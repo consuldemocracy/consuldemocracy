@@ -122,3 +122,98 @@ el:
         description_balloting: "Περιγραφή κατά τη φάση που διεξάγεται η ψηφοφορία"
         description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης αναθεώρησης ψηφοδελτίων"
         description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
+        phase: "Φάση"
+        currency_symbol: "Νόμισμα"
+      budget/investment:
+        heading_id: "Επικεφαλίδα"
+        title: "Τίτλος"
+        description: "Περιγραφή"
+      spending_proposal:
+        external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
+        geozone_id: "Εμβέλεια λειτουργίας"
+        title: "Τίτλος"
+      poll:
+        name: "Όνομα"
+        starts_at: "Ημερομηνία έναρξης"
+        ends_at: "Καταληκτική ημερομηνία"
+        geozone_restricted: "Περιορίζεται από το geozone"
+        summary: "Περίληψη"
+        description: "Περιγραφή"
+      poll/translation:
+        name: "Όνομα"
+        summary: "Περίληψη"
+        description: "Περιγραφή"
+      poll/question:
+        title: "Ερώτηση"
+        summary: "Περίληψη"
+        description: "Περιγραφή"
+        external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
+      poll/question/translation:
+        title: "Ερώτηση"
+      poll/ballot_sheet:
+        data: CSV στοιχεία
+        poll_id: Δημοσκόπηση
+        officer_assignment_id: Λειτουργός ανάθεσης
+      signature_sheet:
+        signable_type: "Τύπου με δυνατότητα υπογραφής"
+        signable_id: "Με δυνατότητα υπογραφής ID"
+        document_numbers: "Αριθμούς εγγράφων"
+      site_customization/page:
+        content: Περιεχόμενο
+        created_at: Δημιουργήθηκε στις
+        subtitle: Υπότιτλος
+        slug: Χτυπώ δυνατά
+        status: Κατάσταση
+        title: Τίτλος
+        updated_at: Ενημερώθηκε στις
+        more_info_flag: Εμφάνιση στη σελίδα βοήθειας
+        print_content_flag: Κουμπί εκτύπωσης περιεχομένου
+        locale: Γλώσσα
+      site_customization/page/translation:
+        title: Τίτλος
+        subtitle: Υπότιτλος
+        content: Περιεχόμενο
+      site_customization/image:
+        name: Όνομα
+        image: Εικόνα
+      site_customization/content_block:
+        name: Όνομα
+        locale: τοπικές ρυθμίσεις
+        body: Σώμα
+      banner:
+        background_color: Χρώμα φόντου
+        font_color: Χρώμα γραμματοσειράς
+      legislation/process:
+        title: Τίτλος διαδικασίας
+        summary: Περίληψη
+        description: Περιγραφή
+        additional_info: Πρόσθετες πληροφορίες
+        start_date: Έναρξη
+        end_date: Τέλος
+        debate_start_date: Έναρξη
+      widget/card:
+        description: Περιγραφή
+        link_text: Σύνδεσμος κειμένου
+        link_url: Σύνδεσμος URL
+        columns: Αριθμός στηλών
+      widget/card/translation:
+        label: Ετικέτα (προαιρετικά)
+        title: Τίτλος
+        description: Περιγραφή
+        link_text: Σύνδεσμος κειμένου
+      widget/feed:
+        limit: Αριθμός στοιχείων
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Αυτός ο χρήστης έχει ήδη έναν κωδικό πρόσβασης"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Έχετε φτάσει το μέγιστο αριθμό προσωπικών μηνυμάτων ανά ημέρα"
