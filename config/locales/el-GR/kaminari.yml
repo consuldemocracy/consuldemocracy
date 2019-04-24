@@ -1,1 +1,7 @@
 el:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Καταχωρήσεις
+        one: Καταχώρηση
+        other: Καταχωρήσεις
