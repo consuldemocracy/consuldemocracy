@@ -171,7 +171,25 @@ el:
         title: "Τίτλος"
         question: "Ερώτηση"
         description: "Περιγραφή"
+        terms_of_service: "Όροι υπηρεσίας"
+      user:
+        login: "E-mail ή όνομα χρήστη"
+        email: "E-Mail"
+        username: "Όνομα χρήστη"
+        password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
+        password: "Κωδικό πρόσβασης"
+        current_password: "Τρέχων κωδικός πρόσβασης"
+        phone_number: "Αριθμός τηλεφώνου"
+        official_position: "Επίσημη θέση"
+        official_level: "Επίσημο επίπεδο"
+        redeemable_code: "Κωδικό επαλήθευσης που λάβατε μέσω email"
+      organization:
+        name: "Επωνυμία του οργανισμού"
+        responsible_name: "Πρόσωπο που είναι υπεύθυνο για την ομάδα"
       spending_proposal:
+        administrator_id: "Διαχειριστής"
+        association_name: "Όνομα σύνδεσης"
+        description: "Περιγραφή"
         external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
         geozone_id: "Εμβέλεια λειτουργίας"
         title: "Τίτλος"
@@ -234,6 +252,10 @@ el:
         start_date: Έναρξη
         end_date: Τέλος
         debate_start_date: Έναρξη
+        debate_end_date: Τέλος
+        draft_start_date: Έναρξη
+        draft_end_date: Τέλος
+        draft_publication_date: Ημερομηνία δημοσίευσης σχεδίου
       widget/card:
         description: Περιγραφή
         link_text: Σύνδεσμος κειμένου
