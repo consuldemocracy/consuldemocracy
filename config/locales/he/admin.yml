@@ -199,7 +199,7 @@ he:
           feasible: בר ביצוע
           selected: נבחר
           undecided: לא התקבלה החלטה בנושא
-          unfeasible: אינו בר-ביצוע
+          unfeasible: אינו בר ביצוע
           min_total_supports: תמיכה מינימלית
           max_total_supports: תמיכה מקסימלית
           winners: זוכים
@@ -216,14 +216,14 @@ he:
         no_valuation_groups: לא הוקצו קבוצות מעריכים
         feasibility:
           feasible: "בר ביצוע (%{price})"
-          unfeasible: "אינו בר-ביצוע"
+          unfeasible: "אינו בר ביצוע"
           undecided: "טרם הוחלט"
         selected: "נבחר"
         select: "בחר"
         list:
           id: ID
           title: כותרת
-          supports: לחיצה לתמיכה
+          supports: תמיכה
           admin: מנהל/ת
           valuator: מעריך
           valuation_group: קבוצת מעריכים
@@ -1398,7 +1398,7 @@ he:
       proposal_notifications:
         title: התראות להצעות
         total: סך הכל
-        proposals_with_notifications: הצעות המאפשרות הודעות
+        proposals_with_notifications: הצעות הכוללות התראות
         not_available: "לא ניתן להעלות הצעות"
       polls:
         title: סטטיסטיקת סקר
@@ -1429,7 +1429,7 @@ he:
         roles: תפקידים
         verification_level: רמת אימות
       index:
-        title: משתמשיםות מוסתריםות
+        title: משתמש
         no_users: לא נמצאו משתמשים.
       search:
         placeholder: חפש משתמש על פי דוא"ל, שם או מספר מסמך מזהה
@@ -1438,7 +1438,7 @@ he:
       index:
         phone_not_given: לא ניתן מספר טלפון
         sms_code_not_confirmed: לא אושר קוד המסרון
-        title: כל אימותים מלאים
+        title: אימותים מלאים
     site_customization:
       content_blocks:
         information: מידע על בלוקי תוכן
