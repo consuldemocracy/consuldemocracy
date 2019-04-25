@@ -113,13 +113,13 @@ describe Officing::Residence do
 
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
-        allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(15.years.ago)
+        allow_any_instance_of(described_class).to receive(:response_date_of_birth).and_return(15.years.ago)
         expect(residence).not_to be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
       it "is valid if user is above allowed age" do
-        allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(16.years.ago)
+        allow_any_instance_of(described_class).to receive(:response_date_of_birth).and_return(16.years.ago)
         expect(residence).to be_valid
         expect(residence.errors[:year_of_birth]).to be_empty
       end

@@ -35,7 +35,7 @@ class Officing::Residence
         document_number:       document_number,
         document_type:         document_type,
         geozone:               geozone,
-        date_of_birth:         date_of_birth.in_time_zone.to_datetime,
+        date_of_birth:         response_date_of_birth.in_time_zone.to_datetime,
         gender:                gender,
         residence_verified_at: Time.current,
         verified_at:           Time.current,
@@ -86,7 +86,7 @@ class Officing::Residence
   end
 
   def allowed_age?
-    Age.in_years(date_of_birth) >= User.minimum_required_age
+    Age.in_years(response_date_of_birth) >= User.minimum_required_age
   end
 
   def geozone
@@ -101,7 +101,7 @@ class Officing::Residence
     @census_api_response.gender
   end
 
-  def date_of_birth
+  def response_date_of_birth
     @census_api_response.date_of_birth
   end
 
