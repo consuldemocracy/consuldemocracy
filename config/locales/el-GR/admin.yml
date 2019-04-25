@@ -655,3 +655,21 @@ el:
       actions: Ενέργειες
       title: Τίτλος
       description: Περιγραφή
+      image: Εικόνα
+      show_image: Δείξε την εικόνα
+      moderated_content: "Ελέγξτε το περιεχόμενο που συντονίζεται από τους συντονιστές και επιβεβαιώστε εάν ο συντονισμός έγινε σωστά."
+      view: Όψη
+      proposal: Πρόταση
+      author: Συγγραφέας
+      content: Περιεχόμενο
+      created_at: Δημιουργήθηκε στις
+      delete: Διαγραφή
+      color_help: Δεκαεξαδική μορφή
+    spending_proposals:
+      index:
+        geozone_filter_all: Όλες οι ζώνες
+        administrator_filter_all: Όλους τους διαχειριστές
+        valuator_filter_all: Όλοι οι εκτιμητές
+        tags_filter_all: Όλες οι ετικέτες
+        filters:
+          valuation_open: Ανοιχτό
