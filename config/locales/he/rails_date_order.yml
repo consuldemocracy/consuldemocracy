@@ -1,6 +1,0 @@
-he:
-  date:
-    order:
-      - :year
-      - :month
-      - :day
