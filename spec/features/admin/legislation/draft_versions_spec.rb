@@ -7,7 +7,7 @@ describe "Admin legislation draft versions" do
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "legislation_draft_version",
                   "edit_admin_legislation_process_draft_version_path",
                   %w[title changelog],

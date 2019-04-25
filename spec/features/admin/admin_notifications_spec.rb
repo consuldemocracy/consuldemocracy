@@ -8,7 +8,7 @@ describe "Admin Notifications" do
     create(:budget)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "admin_notification",
                   "edit_admin_admin_notification_path",
                   %w[title body]

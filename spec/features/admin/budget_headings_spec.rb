@@ -10,7 +10,7 @@ describe "Admin budget headings" do
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "budget_heading",
                   "edit_admin_budget_group_heading_path",
                   %w[name]
