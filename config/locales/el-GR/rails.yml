@@ -38,18 +38,63 @@ el:
       - 
       - Ιανουάριος
       - Φεβρουάριος
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Μάρτιος
+      - Απρίλιος
+      - Μάιος
+      - Ιούνιος
+      - Ιούλιος
+      - Αύγουστος
+      - Σεπτέμβριος
+      - Οκτώβριος
+      - Νοέμβριος
+      - Δεκέμβριος
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: περίπου 1 ώρα
+        other: περίπου %{count} ώρες
+      about_x_months:
+        one: περίπου 1 μήνας
+        other: περίπου %{count} μήνες
+      about_x_years:
+        one: περίπου 1 έτος
+        other: περίπου %{count} έτη
+      almost_x_years:
+        one: σχεδόν 1 έτος
+        other: σχεδόν %{count} έτη
+      half_a_minute: μισό λεπτό
+      less_than_x_minutes:
+        one: λιγότερο από λεπτό
+        other: λιγότερο από %{count} λεπτά
+      less_than_x_seconds:
+        one: λιγότερο από δευτερόλεπτο
+        other: λιγότερο από %{count} δευτερόλεπτα
+      over_x_years:
+        one: πάνω από 1 έτος
+        other: πάνω από %{count} έτη
+      x_days:
+        one: 1 ημέρα
+        other: "%{count} ημέρες"
   number:
     human:
+      decimal_units:
+        units:
+          billion: Δισεκατομμύριο
+          million: Εκατομμύριο
+          quadrillion: Τετρακισεκατομμύριο
+          thousand: Χίλια
+          trillion: Τρισεκατομμύριο
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
