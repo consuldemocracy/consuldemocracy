@@ -375,7 +375,7 @@ he:
       index:
         back: חזור אל %{org}
         title: ניהול
-        description: ברוך הבא אל%{org} פאנל הניהול.
+        description: ברוך הבא אל %{org} פאנל הניהול.
     debates:
       index:
         filter: מסנן
@@ -427,7 +427,7 @@ he:
             error: שגיאה
         form:
           enabled: מאופשר
-          process: תהליכים
+          process: תהליך
           debate_phase: שלב הדיון
           draft_phase: שלב הטיוטה
           draft_phase_description: אם שלב זה פעיל, התהליך לא יירשם ברשימת התהליכים. יש לאפשר הצגת התהליך בתצוגה מקדימה וליצור תוכן לפני שתתחיל.
@@ -460,7 +460,7 @@ he:
             title: כותרת
             supports: לחיצה לתמיכה
         process:
-          title: תהליכים
+          title: תהליך
           comments: הערות
           status: סטטוס
           start_date: תאריך פתיחה
