@@ -26,6 +26,16 @@ describe Officing::Residence do
       expect(residence).not_to be_valid
     end
 
+    it "is valid without a date of birth" do
+      residence.date_of_birth = nil
+      expect(residence).to be_valid
+    end
+
+    it "is valid without a postal code" do
+      residence.postal_code = nil
+      expect(residence).to be_valid
+    end
+
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
         allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(15.years.ago)
