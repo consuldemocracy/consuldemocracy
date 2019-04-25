@@ -252,3 +252,75 @@ el:
             all: Όλα
         new:
           back: Πίσω
+          title: Δημιουργήστε νέα διαδικασία συνεργατικής νομοθεσίας
+          submit_button: Δημιουργία διαδικασίας
+        proposals:
+          select_order: Ταξινόμηση κατά
+          orders:
+            id: Id
+            title: Τίτλος
+            supports: Όλες οι υποστηρίξεις
+        process:
+          title: Διαδικασία
+          comments: Σχόλια
+          status: Κατάσταση
+          start_date: Ημερομηνία έναρξης
+          end_date: Ημερομηνία λήξης
+          status_open: Ανοιχτό
+      draft_versions:
+        table:
+          status: Κατάσταση
+      questions:
+        create:
+          notice: 'Ερώτημα που δημιουργήθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Ερώτηση δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: 'Ερώτηση ενημερώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Ερώτηση δεν μπόρεσε να ενημερωθεί
+        destroy:
+          notice: Ερώτηση διαγράφηκε επιτυχώς
+        edit:
+          back: Πίσω
+          title: "Επεξεργαστείτε “%{question_title}”"
+          submit_button: Αποθηκεύστε τις αλλαγές
+        errors:
+          form:
+            error: Σφάλμα
+        form:
+          add_option: Προσθήκη επιλογής
+          title: Ερώτηση
+          title_placeholder: Προσθέστε ερώτηση
+          value_placeholder: Προσθέστε μια κλειστή απάντηση
+          question_options: "Πιθανές απαντήσεις (προαιρετικά, από προεπιλογή ανοικτές απαντήσεις)"
+        index:
+          back: Πίσω
+          title: Ερωτήσεις που σχετίζονται με αυτήν τη διαδικασία
+          create: Δημιουργήστε ερώτηση
+          delete: Διαγραφή
+        new:
+          back: Πίσω
+          title: Δημιουργήστε νέας ερώτησης
+          submit_button: Δημιουργήστε ερώτηση
+        table:
+          title: Τίτλος
+          question_options: Επιλογές ερώτησης
+          answers_count: Καταμέτρηση απαντήσεων
+          comments_count: Καταμέτρηση σχολίων
+        question_option_fields:
+          remove_option: Κατάργηση επιλογής
+      milestones:
+        index:
+          title: Ακολουθεί
+    managers:
+      index:
+        title: Διευθυντές
+        name: Όνομα
+        email: E-Mail
+        no_managers: Δεν υπάρχουν διευθυντές.
+      manager:
+        add: Προσθέστε
+        delete: Διαγραφή
+      search:
+        title: "Διευθυντές: Αναζήτηση χρήστη"
+    menu:
+      activity: Δραστηριότητα συντονιστή
