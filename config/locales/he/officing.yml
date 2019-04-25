@@ -17,7 +17,7 @@ he:
         select_poll: בחר סקר
         add_results: הוסף תוצאות
     poll_budgets:
-      see_ballot_sheets: ראה רשימת גיליונות הספירה
+      see_ballot_sheets: ראה רשימת גיליונות ההצבעה
       index:
         title: "%{poll_budget} - רשימת גיליון ההצבעות"
         ballot_sheet: "גיליונות הצבעה %{id}"
