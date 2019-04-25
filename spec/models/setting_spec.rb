@@ -236,4 +236,50 @@ describe Setting do
       end
     end
   end
+
+  describe ".force_presence_date_of_birth?" do
+
+    it "return false when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(Setting.force_presence_date_of_birth?).to eq false
+    end
+
+    it "return false when feature remote_census is active and date_of_birth is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census.request.date_of_birth"] = nil
+
+      expect(Setting.force_presence_date_of_birth?).to eq false
+    end
+
+    it "return true when feature remote_census is active and date_of_birth is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census.request.date_of_birth"] = "some.value"
+
+      expect(Setting.force_presence_date_of_birth?).to eq true
+    end
+  end
+
+  describe ".force_presence_postal_code?" do
+
+    it "return false when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(Setting.force_presence_postal_code?).to eq false
+    end
+
+    it "return false when feature remote_census is active and postal_code is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census.request.postal_code"] = nil
+
+      expect(Setting.force_presence_postal_code?).to eq false
+    end
+
+    it "return true when feature remote_census is active and postal_code is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census.request.postal_code"] = "some.value"
+
+      expect(Setting.force_presence_postal_code?).to eq true
+    end
+  end
 end

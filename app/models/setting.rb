@@ -197,5 +197,15 @@ class Setting < ApplicationRecord
         self[name] = value unless find_by(key: name)
       end
     end
+
+    def force_presence_date_of_birth?
+      Setting["feature.remote_census"].present? &&
+        Setting["remote_census.request.date_of_birth"].present?
+    end
+
+    def force_presence_postal_code?
+      Setting["feature.remote_census"].present? &&
+        Setting["remote_census.request.postal_code"].present?
+    end
   end
 end
