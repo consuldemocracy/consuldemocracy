@@ -32,7 +32,7 @@ he:
         description: תיאור
         target_url: קישור
         post_started_at: החל מ
-        post_ended_at: עד
+        post_ended_at: ההודעה הסתיימה ב
         sections_label: בחירת מיקום התצוגה
         sections:
           homepage: דף הבית
@@ -393,7 +393,7 @@ he:
           with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
         title: משתמשים מוסתרים
-        user: משתמשיםות מוסתריםות
+        user: משתמש
         no_hidden_users: לא נמצאו משתמשים מוסתרים.
       show:
         email: "דואר אלקטרוני"
@@ -708,7 +708,7 @@ he:
         title: עריכת ידיעון
       show:
         title: תצוגה מקדימה של הידיעון
-        send: הקש/י לשליחה
+        send: לחץ/י לשליחה
         affected_users: (%{n} נמענים)
         sent_emails:
           one: אימייל אחד נשלח
@@ -757,7 +757,7 @@ he:
         link: קישור
         segment_recipient: נמענים
         preview_guide: "כך המשתמשים יראו את הדוא\"ל:"
-        sent_guide: "כך המשתמשים יראו את הדוא\"ל:"
+        sent_guide: "כך המשתמשים יראו את התראה:"
         send_alert: האם אתה בטוח שברצונך לשלוח את הידיעון הזה אל %{n} משתמשים?
     system_emails:
       preview_pending:
@@ -835,7 +835,7 @@ he:
         valuator_name: מעריך
         finished_and_feasible_count: הסתיים ובר ביצוע
         finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
-        finished_count: Finished
+        finished_count: הסתיים
         in_evaluation_count: עדיין בשלב הערכה
         total_count: סך הכל
         cost: עלות הפרויקט
