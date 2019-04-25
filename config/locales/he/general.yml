@@ -63,7 +63,7 @@ he:
     form:
       comment_as_admin: הגב/י כמנהל/ת
       comment_as_moderator: הגב/י כמנה/ת הדיון
-      leave_comment: להשארת תגובה
+      leave_comment: השאר תגובה
     orders:
       most_voted: הכי הרבה הצבעות
       newest: הכי חדשות
@@ -99,7 +99,7 @@ he:
       editing: עריכת הדיון
       form:
         submit_button: שמירת שינויים
-      show_link: לצפייה בדיון
+      show_link: צפייה בדיון
     form:
       debate_text: מלל הדיון
       debate_title: כותרת הדיון
@@ -587,7 +587,7 @@ he:
     check_all: כולם
     check_none: שום דבר
     collective: קבוצתי
-    flag: סמן כתוכן לא-ראוי
+    flag: סמן כתוכן לא ראוי
     follow: "עקוב"
     following: "עוקבים"
     follow_entity: "עקוב %{entity}"
