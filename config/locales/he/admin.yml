@@ -158,7 +158,7 @@ he:
         unable_notice: "אינך יכול להסיר כותרת המקושרת להשקעות קיימות"
       form:
         name: "שם הכותרת"
-        amount: "Amount"
+        amount: "סכום"
         population: "אוכלוסיה (אופציונלי)"
         population_info: "תקציב כותרת האוכלוסייה תחום משמש למטרות סטטיסטית בסוף התקציב להראות עבור כל כותרת שמייצג אזור עם אוכלוסייה ומה אחוז המצביעים. השדה הוא אופציונלי, כך שתוכל להשאיר אותו ריק אם הוא אינו רלונטי."
         latitude: "קו רוחב (אופציונלי)"
@@ -168,7 +168,7 @@ he:
         content_blocks_info: "אם תבחר את האפשרות לחסום תוכן, תוכל ליצור תוכן מותאם אישית הקשור לכותרת זו מתוך קטע ההגדרות > קובצי תוכן מותאמים אישית. תוכן זה יופיע בדף ההשקעות עבור כותרת זו."
         create: "צור כותרת חדשה"
         edit: "ערוך כותרת"
-        submit: "Save heading"
+        submit: "שמור כותרת"
       index:
         back: "חזור אל הקבוצות"
     budget_phases:
@@ -1283,26 +1283,26 @@ he:
         sent: Sent
         geozone: הקף הפרויקט
         dossier: Dossier
-        edit_dossier: Edit dossier
+        edit_dossier: ערוך מסמך
         tags: תגיות
-        undefined: Undefined
+        undefined: לא מוגדר
       edit:
         classification: סיווג
         assigned_valuators: מעריכים
         submit_button: עודכן
         tags: תגיות
         tags_placeholder: "Write the tags you want separated by commas (,)"
-        undefined: Undefined
+        undefined: לא מוגדר
       summary:
         title: סיכום פרויקטים להשקעה
         title_proposals_with_supports: סיכום פרויקטים להשקעה שזכו בתמיכה
         geozone_name: הקף הפרויקט
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
+        finished_and_feasible_count: הסתיים ובר ביצוע
+        finished_and_unfeasible_count: הסתיים ולא בר ביצוע
+        finished_count: הסתיים
         in_evaluation_count: עדיין בשלב הערכה
         total_count: סך הכל
-        cost_for_geozone: Cost
+        cost_for_geozone: עלות
     geozones:
       index:
         title: איזור גיאוגרפי
@@ -1341,9 +1341,9 @@ he:
       no_signature_sheets: "חסר דפים לחתימה"
       index:
         title: דפי חתימות
-        new: New  דף חדש לחתימות
+        new: דף חדש לחתימות
       new:
-        title: New  דף חדש לחתימות
+        title: דף חדש לחתימות
         document_numbers_note: "נא לכתוב את המספרים מופרדים באמצעות פסיקים (,)"
         submit: יצירת דף לחתימות
       show:
