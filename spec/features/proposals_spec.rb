@@ -20,7 +20,7 @@ feature "Proposals" do
                     "new_proposal_path",
                     %w[title question summary],
                     { "description" => :ckeditor }
-    it_behaves_like "translatable",
+    it_behaves_like "edit_translatable",
                     "proposal",
                     "edit_proposal_path",
                     %w[title question summary],

@@ -1,4 +1,4 @@
-shared_examples "translatable" do |factory_name, path_name, input_fields, textarea_fields = {}|
+shared_examples "edit_translatable" do |factory_name, path_name, input_fields, textarea_fields = {}|
   let(:language_texts) do
     {
       es:      "en español",
