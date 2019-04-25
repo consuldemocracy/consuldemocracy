@@ -2,11 +2,11 @@ he:
   moderation:
     comments:
       index:
-        block_authors: חסימת הכותב/ת
+        block_authors: חסימת כותבים
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: ממתין לאישור
           with_ignored_flag: סומנו שנראו
         headers:
