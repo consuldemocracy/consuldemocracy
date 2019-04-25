@@ -1024,7 +1024,12 @@ describe Proposal do
   describe "#send_new_actions_notification_on_create" do
 
     before do
+      Setting["dashboard.emails"] = true
       ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
     end
 
     it "send notification after create when there are new actived actions" do
@@ -1050,7 +1055,12 @@ describe Proposal do
   describe "#send_new_actions_notification_on_published" do
 
     before do
+      Setting["dashboard.emails"] = true
       ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
     end
 
     it "send notification after published when there are new actived actions" do

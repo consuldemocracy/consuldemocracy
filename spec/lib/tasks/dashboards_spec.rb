@@ -8,7 +8,12 @@ describe "Dashboards Rake" do
     before do
       Rake.application.rake_require "tasks/dashboards"
       Rake::Task.define_task(:environment)
+      Setting["dashboard.emails"] = true
       ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
     end
 
     let :run_rake_task do

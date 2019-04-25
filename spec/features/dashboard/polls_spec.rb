@@ -193,7 +193,7 @@ feature "Polls" do
     end
 
     page.driver.browser.switch_to.window page.driver.browser.window_handles.last do
-      expect(page).to have_current_path(results_poll_path(poll))
+      expect(page).to have_current_path(results_proposal_poll_path(proposal, poll))
     end
   end
 
