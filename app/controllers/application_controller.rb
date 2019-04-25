@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
 
+  protect_from_forgery with: :exception
+
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
   before_action :ensure_signup_complete
@@ -14,8 +16,6 @@ class ApplicationController < ActionController::Base
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
-
-  protect_from_forgery with: :exception
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
