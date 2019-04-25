@@ -91,3 +91,18 @@ el:
             success: Ο σωστός κωδικός
     step_1: Κατοικία
     step_2: Κωδικός επιβεβαίωσης
+    step_3: Τελική επιβεβαίωση
+    user_permission_debates: Συμμετοχή στις συζητήσεις
+    user_permission_info: Με την επαλήθευση των δεδομένων σας, μπορείτε...
+    user_permission_proposal: Δημιουργία νέων προτάσεων
+    user_permission_support_proposal: Υποστήριξη προτάσεων
+    user_permission_votes: Συμμετοχή στην τελική ψηφοφορία*
+    verified_user:
+      form:
+        submit_button: Αποστολή κωδικού
+      show:
+        email_title: E-Mails
+        explanation: 'Ο κατάλογος περιέχει τις ακόλουθες λεπτομέρειες: επιλέξτε μια μέθοδο για να λάβετε τον κωδικό επαλήθευσης.'
+        phone_title: Αριθμοί τηλεφώνου
+        title: Διαθέσιμες πληροφορίες
+        use_another_phone: Χρησιμοποιήστε άλλο τηλέφωνο
