@@ -620,7 +620,7 @@ he:
       officials: גורמים רשמיים
       organizations: ארגונים
       settings: הגדרות כלליות
-      spending_proposals: הצעות להוצאת כספים
+      spending_proposals: הצעות למסגרת תקציב
       stats: סטטיסטיקה
       signature_sheets: דפי חתימות
       site_customization:
@@ -765,7 +765,7 @@ he:
         preview_of: תצוגה מקדימה של %{name}
         pending_to_be_sent: זהו התוכן הממתין להישלח
         moderate_pending: נשלחה התראה למנחים
-        send_pending: ממתין לשליחלה
+        send_pending: ממתין לשליחה
         send_pending_notification: ההודעה שהמתינה לאישור נשלחה בהצלחה
       proposal_notification_digest:
         title: "התראות להצעות"
@@ -1375,7 +1375,7 @@ he:
           proposals: הצעות
           budgets: תקציבים פתוחים
           budget_investments: פרויקטי השקעה
-          spending_proposals: הצעות להוצאת כספים
+          spending_proposals: הצעות למסגרת תקציב
           unverified_users: משתמשים שלא אושרו
           user_level_three: רמה של שלושה משתמשים
           user_level_two: רמה של שני משתמשים
@@ -1384,7 +1384,7 @@ he:
           verified_users_who_didnt_vote_proposals: משתמשים מאומתים שלא הצביעו על הצעות
           visits: ביקורים
           votes: סך הכל הצבעות
-        spending_proposals_title: הצעות להוצאת כספים
+        spending_proposals_title: הצעות למסגרת תקציב
         budgets_title: מימון השתתפותי
         visits_title: ביקורים
         direct_messages: הודעות ישירות
