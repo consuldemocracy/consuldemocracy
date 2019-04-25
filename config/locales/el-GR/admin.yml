@@ -324,3 +324,57 @@ el:
         title: "Διευθυντές: Αναζήτηση χρήστη"
     menu:
       activity: Δραστηριότητα συντονιστή
+      admin: Μενού διαχειριστή
+      banner: Banners διευθυντών
+      proposals: Προτάσεις
+      proposals_topics: Θέματα προτάσεων
+      budgets: Συμμετοχικοί προϋπολογισμοί
+      geozones: Διαχείριση geozones
+      hidden_comments: Κρυφά σχόλια
+      hidden_debates: Κρυφές συζητήσεις
+      hidden_proposals: Κρυφές προτάσεις
+      hidden_budget_investments: Κρυφές επενδύσεις προϋπολογισμού
+      hidden_proposal_notifications: Κρυφές ειδοποιήσεις πρότασης
+      hidden_users: Κρυφοί χρήστες
+      administrators: Διαχειριστές
+      managers: Διευθυντές
+    moderators:
+      index:
+        title: Συντονιστές
+        name: Όνομα
+        email: E-Mail
+        no_moderators: Δεν υπάρχουν συντονιστές.
+      moderator:
+        add: Προσθέστε
+        delete: Διαγραφή
+      search:
+        title: "Συντονιστές: Αναζήτηση χρήστη"
+    segment_recipient:
+      all_users: Όλοι οι χρήστες
+      administrators: Διαχειριστές
+      proposal_authors: Συγγραφείς πρότασης
+      investment_authors: Συγγραφείς επενδύσεων στον παρών προϋπολογισμό
+      feasible_and_undecided_investment_authors: "Συγγραφείς ορισμένων επενδύσεων στον τρέχοντα προϋπολογισμό που δεν συμμορφώνονται με: [η αποτίμηση τελείωσε ανέφικτη]"
+      selected_investment_authors: Συγγραφείς επιλεγμένων επενδύσεων στον τρέχοντα προϋπολογισμό
+      winner_investment_authors: Συγγραφείς των επενδύσεων που κέρδισαν στον τρέχοντα προϋπολογισμό
+      not_supported_on_current_budget: Χρήστες που δεν έχουν υποστηρίξει επενδύσεις στον τρέχοντα προϋπολογισμό
+      invalid_recipients_segment: "Το τμήμα χρήστη των παραληπτών δεν είναι έγκυρο"
+    newsletters:
+      create_success: Το ενημερωτικό δελτίο δημιουργήθηκε με επιτυχία
+      update_success: Το ενημερωτικό δελτίο ανανεώθηκε με επιτυχία
+      send_success: Το ενημερωτικό δελτίο εστάλλη με επιτυχία
+      delete_success: Το ενημερωτικό δελτίο διαγράφηκε με επιτυχία
+      index:
+        title: Ενημερωτικά δελτία
+        new_newsletter: Νέο ενημερωτικό δελτίο
+        subject: Θέμα
+        segment_recipient: Παραλήπτες
+        sent: Απεσταλμένα
+        actions: Ενέργειες
+        draft: Προσχέδιο
+        edit: Επεξεργασία
+        delete: Διαγραφή
+        preview: Προεπισκόπηση
+        empty_newsletters: Δεν υπάρχουν ενημερωτικά δελτία για προβολή
+      new:
+        title: Νέο ενημερωτικό δελτίο
