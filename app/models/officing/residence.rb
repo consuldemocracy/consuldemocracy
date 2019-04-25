@@ -2,7 +2,8 @@ class Officing::Residence
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth
+  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth,
+                :date_of_birth, :postal_code
 
   before_validation :retrieve_census_data
 
@@ -102,7 +103,10 @@ class Officing::Residence
   private
 
     def retrieve_census_data
-      @census_api_response = CensusCaller.new.call(document_type, document_number, nil, nil)
+      @census_api_response = CensusCaller.new.call(document_type,
+                                                   document_number,
+                                                   date_of_birth,
+                                                   postal_code)
     end
 
     def residency_valid?
