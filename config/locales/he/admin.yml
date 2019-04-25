@@ -1193,8 +1193,8 @@ he:
         participation_processes: "השתתפות בתהליכים"
         feature_flags: מאפיינים
         features:
-          enabled: "אפשרת איפיון"
-          disabled: "השבתת איפיון"
+          enabled: "התכונה מופעלת"
+          disabled: "התכונה מושבתת"
           enable: "לאפשר"
           disable: "להשבית"
         map:
@@ -1291,7 +1291,7 @@ he:
         assigned_valuators: מעריכים
         submit_button: עודכן
         tags: תגיות
-        tags_placeholder: "Write the tags you want separated by commas (,)"
+        tags_placeholder: "הכנס תגים מופרדים בפסיק (,)"
         undefined: לא מוגדר
       summary:
         title: סיכום פרויקטים להשקעה
