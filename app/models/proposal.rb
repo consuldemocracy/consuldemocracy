@@ -241,7 +241,7 @@ class Proposal < ApplicationRecord
     new_actions = Dashboard::Action.detect_new_actions_since(Date.yesterday, self)
 
     if new_actions.present?
-      Dashboard::Mailer.new_actions_notification_on_create(self).deliver_later
+      Dashboard::Mailer.delay.new_actions_notification_on_create(self)
     end
   end
 
@@ -249,7 +249,7 @@ class Proposal < ApplicationRecord
     new_actions_ids = Dashboard::Action.detect_new_actions_since(Date.yesterday, self)
 
     if new_actions_ids.present?
-      Dashboard::Mailer.new_actions_notification_on_published(self, new_actions_ids).deliver_later
+      Dashboard::Mailer.delay.new_actions_notification_on_published(self, new_actions_ids)
     end
   end
 

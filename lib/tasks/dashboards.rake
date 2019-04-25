@@ -7,11 +7,11 @@ namespace :dashboards do
 
       if new_actions_ids.present?
         if proposal.published?
-          Dashboard::Mailer.new_actions_notification_rake_published(proposal,
-                                                                    new_actions_ids).deliver_later
+          Dashboard::Mailer.delay.new_actions_notification_rake_published(proposal,
+                                                                    new_actions_ids)
         else
-          Dashboard::Mailer.new_actions_notification_rake_created(proposal,
-                                                                  new_actions_ids).deliver_later
+          Dashboard::Mailer.delay.new_actions_notification_rake_created(proposal,
+                                                                  new_actions_ids)
         end
       end
     end
