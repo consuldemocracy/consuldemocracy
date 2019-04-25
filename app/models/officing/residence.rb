@@ -1,5 +1,6 @@
 class Officing::Residence
   include ActiveModel::Model
+  include ActiveModel::Dates
   include ActiveModel::Validations::Callbacks
 
   attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth,
@@ -15,6 +16,8 @@ class Officing::Residence
   validate :residence_in_madrid
 
   def initialize(attrs = {})
+    self.date_of_birth = parse_date("date_of_birth", attrs)
+    attrs = remove_date("date_of_birth", attrs)
     super
     clean_document_number
   end
