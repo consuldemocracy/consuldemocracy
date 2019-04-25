@@ -53,6 +53,8 @@ class Officing::Residence
       user: user,
       document_number: document_number,
       document_type: document_type,
+      date_of_birth: date_of_birth,
+      postal_code: postal_code,
       year_of_birth: year_of_birth,
       poll_officer: officer
     )
