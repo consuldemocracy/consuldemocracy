@@ -109,7 +109,7 @@ he:
               browser_column: אקספלורר
               key_column: ALT + קיצור דרך ואז ENTER
             - 
-              browser_column: Firefox פיירפוקס
+              browser_column: פיירפוקס
               key_column: ALT + CAPS + קיצור דרך
             - 
               browser_column: כרום
@@ -131,7 +131,7 @@ he:
               browser_column: אקספלורר
               action_column: תצוגה> גודל טקסט
             - 
-              browser_column: Firefox פיירפוקס
+              browser_column: פיירפוקס
               action_column: תצוגה > גודל
             - 
               browser_column: כרום
