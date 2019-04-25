@@ -124,7 +124,7 @@ he:
       accepted: חייב באישור
       blank: לא יכול להיות ריק
       present: חייב להיות ריק
-      confirmation: לא תואם לאישורו
+      confirmation: אינו תואם %{attribute}
       empty: לא יכול להיות ריק
       equal_to: חייב להיות שווה ל- %{count}
       even: חייב להיות זוגי
