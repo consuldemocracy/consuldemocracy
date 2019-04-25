@@ -1,23 +1,43 @@
 el:
   date:
+    abbr_day_names:
+      - Κυρ
+      - Δευ
+      - Τρι
+      - Τετ
+      - Πεμ
+      - Παρ
+      - Σαβ
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Γεν
+      - Φεβ
+      - Μαρ
+      - Απρ
+      - Μαϊ
+      - Ιουν
+      - Ιουλ
+      - Αυγ
+      - Σεπ
+      - Οκτ
+      - Νοε
+      - Δεκ
+    day_names:
+      - Κυριακή
+      - Δευτέρα
+      - Τρίτη
+      - Τετάρτη
+      - Πέμπτη
+      - Παρασκευή
+      - Σάββατο
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
+      - Ιανουάριος
+      - Φεβρουάριος
       - March
       - April
       - May
