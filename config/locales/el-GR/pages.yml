@@ -117,12 +117,40 @@ el:
               key_column: ALT + CAPS + συντόμευση
             - 
               browser_column: Chrome
+              key_column: ALT + συντόμευση (CTRL + ALT + συντομεύσεις για MAC)
             - 
+              browser_column: Safari
+              key_column: ALT + συντόμευση (CMD + συντόμευση για MAC)
             - 
+              browser_column: Opera
+              key_column: CAPS + ESC + συντόμευση
       textsize:
-        browser_shortcuts_table:
+        title: Μέγεθος κειμένου
+        browser_settings_table:
+          description: Ο προσιτός σχεδιασμός αυτού του δικτυακού τόπου επιτρέπει στο χρήστη να επιλέξει το μέγεθος του κειμένου που τον εξυπηρετεί. Αυτή η ενέργεια μπορεί να πραγματοποιηθεί με διάφορους τρόπους ανάλογα με το πρόγραμμα περιήγησης που χρησιμοποιείται.
+          browser_header: Πρόγραμμα περιήγησης
+          action_header: Δράση που θα αναληφθεί
           rows:
             - 
+              browser_column: Explorer
+              action_column: Προβολή > μέγεθος κειμένου
+            - 
+              browser_column: Firefox
+              action_column: Προβολή > μέγεθος
+            - 
+              browser_column: Chrome
+              action_column: Ρυθμίσεις (εικονίδιο) > Επιλογές > Για προχωρημένους > Περιεχόμενο Ιστού > Μέγεθος κειμένου
+            - 
+              browser_column: Safari
+              action_column: Προβολή > μεγέθυνση / σμίκρυνση
+            - 
+              browser_column: Opera
+              action_column: Προβολή > κλίμακα
+        browser_shortcuts_table:
+          description: "Ένας άλλος τρόπος για να τροποποιήσετε το μέγεθος του κειμένου είναι να χρησιμοποιήσετε τις συντομεύσεις πληκτρολογίου που ορίζονται στους περιηγητές, ιδίως το συνδυασμό πλήκτρων:"
+          rows:
+            - 
+              shortcut_column: CTRL και + (CMD και + σε MAC)
               description_column: Αυξάνει το μέγεθος του κειμένου
             - 
               shortcut_column: CTRL και - (CMD και - σε MAC)
