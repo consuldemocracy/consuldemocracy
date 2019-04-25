@@ -514,7 +514,7 @@ he:
       login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       signin: התחברות
       signup: הרשמה
-      cant_answer_verify_html: "נדרש %{verify_link}על מנת לענות תשובה."
+      cant_answer_verify_html: "נדרש %{verify_link} על מנת לענות תשובה."
       verify_link: "לאמת את החשבון"
       cant_answer_expired: "הצבעה זו הסתיימה"
       cant_answer_wrong_geozone: "הצבעה זו אינה זמינה לאזור הגאוגרפי שלך"
@@ -548,10 +548,10 @@ he:
       voted_token: "אתה יכול לכתוב את מזהה ההצבעה הזה, בכדי לבדוק את הצבעתך בתוצאות הסופיות:"
   proposal_notifications:
     new:
-      title: "שליחה"
+      title: "שלח הודעה"
       title_label: "שם"
-      body_label: "תוכן ההודעה"
-      submit_button: "שליחה"
+      body_label: "הודעה"
+      submit_button: "שלח הודעה"
       info_about_receivers_html: "“הודעה זו תישלח אל <strong> %{count} אנשים</strong> ותוצג ב %{proposal_page} <br> ההודעות אינן מתקבלות מיד, אלא נשלחות למשתמשים בדואר אלקטרוני תקופתי ובו סיכום כל ההתרעות על ההצעות שהם עוקבים אחריהן\""
       proposal_page: "דף ההצעה"
     show:
@@ -585,7 +585,7 @@ he:
     back: חזרה
     check: בחר
     check_all: כולם
-    check_none: שום דבר
+    check_none: כלום
     collective: קבוצתי
     flag: סמן כתוכן לא ראוי
     follow: "עקוב"
@@ -639,7 +639,7 @@ he:
       categories: "תחומים"
     target_blank_html: " (הקישור יפתח בחלון חדש)"
     you_are_in: "את/ה נמצא/ת ב-"
-    unflag: הסרת הסימן
+    unflag: הסרת דגל
     unfollow_entity: "הפסק לעקוב אחר %{entity}"
     outline:
       budget: מימון השתתפותי
@@ -662,7 +662,7 @@ he:
     facebook: "פייסבוק"
     twitter: "טוויטר"
     youtube: "יוטיוב YouTube"
-    whatsapp: מהנשמע WhatsApp
+    whatsapp: ווטסאפ
     telegram: "טלגרם Telegram"
     instagram: "אינסטגרם Instagram"
   spending_proposals:
@@ -673,8 +673,8 @@ he:
       external_url: קישור למידע נוסף
       geozone: היקף הפעילות
       submit_buttons:
-        create: חדש
-        new: חדש
+        create: צור
+        new: צור
       title: כותרת הצעה לתקציב כספי
     index:
       title: מימון השתתפותי
@@ -692,7 +692,7 @@ he:
       sidebar:
         geozones: היקף הפעילות
         feasibility: סבירות לביצוע
-        unfeasible: אינו בר-ביצוע
+        unfeasible: אינו בר ביצוע
       start_spending_proposal: התחל/י פרוייקט השקעה
     new:
       more_info: איך עובד מימון השתתפותי?
@@ -708,7 +708,7 @@ he:
     wrong_price_format: נא לרשום סכום בשקלים שלמים
     spending_proposal:
       spending_proposal: פרויקט להשקעה
-      already_supported: כבר תמכת בהצעה זו. תוכל/י לשתף
+      already_supported: כבר תמכת בהצעה זו. שתף אותה!
       support: בעד
       support_title: תמיכה בפרויקט זה
       supports:
@@ -736,13 +736,13 @@ he:
   users:
     direct_messages:
       new:
-        body_label: תוכן ההודעה
+        body_label: הודעה
         direct_messages_bloqued: "משתמש/ת זה/ו בחר/ה שלא לקבל הודעות ופניות ישירות"
         submit_button: שליחה
         title: שליחת הודעה פרטית אל %{receiver}
-        title_label: שם
+        title_label: כותרת
         verified_only: כדי שתוכל/י לשלוח הודעה פרטית %{verify_account}
-        verify_account: לאמת את החשבון
+        verify_account: אמת את חשבונך
         authenticate: נדרשת %{signin} או %{signup} בכדי להמשיך
         signin: התחברות
         signup: הרשמה
@@ -790,12 +790,12 @@ he:
       send_private_message: "שליחת הודעה פרטית"
       delete_alert: "בטוח שברצונך למחוק את פרויקט ההשקעה שלך? לא ניתן לשחזר פעולה זו"
     proposals:
-      send_notification: "שליחת הודעה"
-      retire: "לפרוש"
+      send_notification: "שלח התראה"
+      retire: "פרישה"
       retired: "פרשת מזה"
       see: "ראה/י הצעות"
   votes:
-    agree: הסכמה
+    agree: מסכים
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
     comment_unauthenticated: נדרשת %{signin} או %{signup} בכדי להצביע
     disagree: אני מסתייג
@@ -866,7 +866,7 @@ he:
       user_permission_verify_my_account: אמת את החשבון שלי
       user_permission_votes: השתתפות בהצבעה הסופית
   invisible_captcha:
-    sentence_for_humans: "אם אינך רובוט/ית, אפשר בבקשה להתעלם מהשדה הזה"
+    sentence_for_humans: "אם אינך רובוט, נא התעלם משדה זה"
     timestamp_error_message: "מצטערים, זה היה מהיר מדי, נא לשלוח שוב"
   related_content:
     title: "תוכן רלוונטי"
@@ -874,7 +874,7 @@ he:
     label: "קישור לתוכן רלוונטי"
     placeholder: "%{url}"
     help: "ניתן להוסיף קישורים של%{models} בתוך%{org}."
-    submit: "Add"
+    submit: "הוסף"
     error: "הקישור אינו חוקי. זכור להתחיל עם%{url}."
     error_itself: "הקישור אינו חוקי. אתה לא יכול לקשר תוכן לעצמו."
     success: "הוספת תוכן קשור חדש"
