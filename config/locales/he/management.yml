@@ -31,7 +31,7 @@ he:
     dashboard:
       index:
         title: הנהלה
-        info: כאן ניתן לנהל משתמשים לפי כל הנושאים המופיעים בתפריט משמאל
+        info: כאן ניתן לנהל משתמשים לפי כל הפעולות המופיעות בתפריט משמאל.
     document_number: מספר תעודה מזהה
     document_type_label: סוג תעודה מזהה
     document_verifications:
@@ -115,7 +115,7 @@ he:
     spending_proposals:
       alert:
         unverified_user: המשתמש אינו מאומת
-      create: יצירת הצעה תקציב
+      create: צור מסגרת תקציב
       filters:
         unfeasible: פרויקטים להשקעה אינם ברי ביצוע
         by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
@@ -128,8 +128,8 @@ he:
         other: " המכיל את המונחים '%{search_term}'"
     sessions:
       signed_out: יצאת בהצלחה
-      signed_out_managed_user: יצאת בהצלחה משם המשתמש/ת
-    username_label: שם המשתמש/ת
+      signed_out_managed_user: התנתקת בהצלחה משם המשתמש/ת.
+    username_label: שם משתמש/ת
     users:
       create_user: יצירת חשבון חדש
       create_user_info: אנו ניצור חשבון עם הנתונים הבאים
