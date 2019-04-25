@@ -109,6 +109,27 @@ describe Officing::Residence do
         end
       end
 
+      it "stores failed census calls and set postal_code attribute" do
+        Setting["remote_census.request.date_of_birth"] = ""
+
+        residence = build(:officing_residence,
+                          :invalid,
+                          document_number: "12345678Z",
+                          postal_code: "00001")
+        residence.save
+
+        expect(FailedCensusCall.count).to eq(1)
+        expect(FailedCensusCall.first).to have_attributes(
+          user_id:         residence.user.id,
+          poll_officer_id: residence.officer.id,
+          document_number: "12345678Z",
+          document_type:   "1",
+          date_of_birth: nil,
+          postal_code: "00001",
+          year_of_birth: Time.current.year
+        )
+      end
+
     end
 
     describe "allowed age" do
@@ -198,6 +219,8 @@ describe Officing::Residence do
         poll_officer_id: residence.officer.id,
         document_number: "12345678Z",
         document_type:   "1",
+        date_of_birth: nil,
+        postal_code: nil,
         year_of_birth:   Time.current.year
       )
     end
