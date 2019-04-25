@@ -111,6 +111,13 @@ el:
         assigned_valuators: Εκχωρημένοι αξιολογητές
       edit:
         dossier: Φάκελος
+        price_html: "Τιμή (%{currency})"
+        price_first_year_html: "Κόστος πρώτου έτους (%{currency})"
+        currency: "€"
+        price_explanation_html: Επεξήγηση τιμής
+        feasibility: Σκοπιμότητα
+        feasible: Εφικτό
+        not_feasible: Δεν είναι εφικτό
         undefined_feasible: Σε εκκρεμότητα
         feasible_explanation_html: Εξήγηση της σκοπιμότητας
         valuation_finished: Η αξιολόγηση ολοκληρώθηκε
