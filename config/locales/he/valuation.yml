@@ -27,7 +27,7 @@ he:
           valuation_finished: ההערכה הסתיימה
         assigned_to: "שהוקצה ל- %{valuator}"
         title: פרויקטי השקעה
-        edit: עריכת מסמכים
+        edit: עריכת תיקים
         valuators_assigned:
           one: מעריך שהוקצה
           two: "%{count} מעריכים שהוקצו"
