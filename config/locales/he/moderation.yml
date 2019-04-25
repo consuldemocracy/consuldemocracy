@@ -92,7 +92,7 @@ he:
       index:
         block_authors: חסימת הכותב/ת
         confirm: האם את/ה בטוח/ה?
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           pending_review: צפיות בהמתנה
@@ -112,6 +112,6 @@ he:
         hidden: מוסתרים
         hide: הסתרה
         search: חיפוש
-        search_placeholder: חיפוש דואר אלקטרוני או שם המשתמש
+        search_placeholder: דוא"ל או שם משתמש
         title: חסימת משתמשים
       notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.
