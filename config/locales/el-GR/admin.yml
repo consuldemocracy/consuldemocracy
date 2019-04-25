@@ -419,3 +419,66 @@ el:
         no_investments: "Δεν επενδύσεις προϋπολογισμού δημιουργημένες. Ορισμένα παραδείγματα δεδομένων είναι απαραίτητα για την προεπισκόπηση του μηνύματος ηλεκτρονικού ταχυδρομείου."
         no_comments: "Δεν δημιουργήθηκαν σχόλια. Ορισμένα παραδείγματα δεδομένων είναι απαραίτητα για την προεπισκόπηση του μηνύματος ηλεκτρονικού ταχυδρομείου."
         no_replies: "Δεν έχουν δημιουργηθεί απαντήσεις. Ορισμένα παραδείγματα δεδομένων είναι απαραίτητα για την προεπισκόπηση του μηνύματος ηλεκτρονικού ταχυδρομείου."
+    emails_download:
+      index:
+        title: Λήψη email
+        download_segment: Λήψη διευθύνσεων email
+        download_segment_help_text: Λήψη σε μορφή CSV
+        download_emails_button: Λήψη λίστας email
+    valuators:
+      index:
+        title: Αξιολογητές
+        name: Όνομα
+        email: E-Mail
+        description: Περιγραφή
+        no_description: Δεν υπάρχει περιγραφή
+        no_valuators: Δεν υπάρχουν αξιολογητές.
+        valuator_groups: "Ομάδα αξιολογητών"
+        group: "Ομάδα"
+        no_group: "Δεν υπάρχει ομάδα"
+      valuator:
+        add: Προσθέστε στους εκτιμητές
+        delete: Διαγραφή
+      search:
+        title: "Εκτιμητές: Αναζήτηση χρήστη"
+      summary:
+        title: Περίληψη του εκτιμητή για επενδυτικά σχέδια
+        valuator_name: Αξιολογητής
+        finished_and_feasible_count: Τελειωμένο και εφικτό
+        finished_and_unfeasible_count: Τελειωμένο και ανέφικτο
+        finished_count: Τελείωσε
+        in_evaluation_count: Σε αξιολόγηση
+        total_count: Όλα
+        cost: Κόστος
+      form:
+        edit_title: "Εκτιμητές: Επεξεργασία εκτιμητή"
+        update: "Ανανέωση εκτιμητή"
+        updated: "Ο εκτιμητής ανανεώθηκε με επιτυχία"
+      show:
+        description: "Περιγραφή"
+        email: "E-Mail"
+        group: "Ομάδα"
+        no_description: "Χωρίς περιγραφή"
+        no_group: "Χωρίς ομάδα"
+    valuator_groups:
+      index:
+        title: "Ομάδες αξιολογητών"
+        new: "Δημιουργήστε ομάδα εκτιμητών"
+        name: "Όνομα"
+        members: "Μέλη"
+        no_groups: "Δεν υπάρχουν ομάδες αξιολογητών"
+      show:
+        title: "Ομάδα εκτιμητών: %{group}"
+    booth_assignments:
+      manage:
+        status:
+          unassigned: Δεν έχει ανατεθεί
+        actions:
+          assign: Περίπτερο ανάθεσης
+          unassign: Περίπτερο μη ανάθεσης
+    poll_booth_assignments:
+      alert:
+        shifts: "Υπάρχουν μετατοπίσεις που σχετίζονται με αυτό το περίπτερο. Εάν αφαιρέσετε την ανάθεση του θαλάμου, οι μετατοπίσεις θα διαγραφούν επίσης. Να συνεχίσει;"
+      flash:
+        destroy: "Το περίπτερο δεν έχει ανατεθεί πια"
+        create: "Εκχωρήθηκε περίπτερο"
