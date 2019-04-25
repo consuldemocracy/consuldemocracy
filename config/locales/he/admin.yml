@@ -238,7 +238,7 @@ he:
         cannot_calculate_winners: התקציב צריך להישאר על שלב "הצבעה לפרויקטים", "סקירת הצבעות" או "סיים תקציב" על מנת לחשב את הפרויקטים הזוכים
         see_results: "ראו תוצאות"
       show:
-        assigned_admin: Assigned administrator
+        assigned_admin: מנהל מערכת שהוקצה
         assigned_valuators: הוקצו מעריכים
         classification: סיווג
         info: "%{budget_name} - קבוצה: %{group_name} - השקעה פרוייקט %{id}"
@@ -284,7 +284,7 @@ he:
         user_tags: המשתמש הקצה תגיות
         tags: תגיות
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
-        undefined: Undefined
+        undefined: לא מוגדר
         user_groups: "קבוצות"
       search_unfeasible: חיפוש אינו ישים
     milestones:
@@ -369,7 +369,7 @@ he:
           without_confirmed_hide: ממתין לאישור
         hidden_debate: דיון מוסתר
         hidden_proposal: הצעה מוסתרת
-        title: Hidden comments
+        title: הערות מוסתרות
         no_hidden_comments: לא נמצאו תגובות מוסתרות.
     dashboard:
       index:
@@ -387,7 +387,7 @@ he:
         no_hidden_debates: לא נמצאו דיונים מוסתרים.
     hidden_users:
       index:
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -402,7 +402,7 @@ he:
         title: פעילות המשתמש (%{user})
     hidden_budget_investments:
       index:
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -658,7 +658,7 @@ he:
         id: מזהה מנהל
         no_administrators: אין מנהלי מערכת.
       administrator:
-        add: Add
+        add: הוסף
         delete: מחיקה
         restricted_removal: "מצטערים, אין באפשרותך להסיר את עצמך ממנהלי המערכת"
       search:
@@ -694,7 +694,7 @@ he:
         new_newsletter: ידיעון חדש
         subject: נושא
         segment_recipient: נמענים
-        sent: Sent
+        sent: נשלח
         actions: פעולות
         draft: טיוטה
         edit: ערוך
@@ -732,7 +732,7 @@ he:
         new_notification: התראה חדשה
         title: כותרת
         segment_recipient: נמענים
-        sent: Sent
+        sent: נשלח
         actions: פעולות
         draft: טיוטה
         edit: ערוך
@@ -853,7 +853,7 @@ he:
       index:
         title: "קבוצת המעריכים"
         new: "ליצור קבוצה מעריכים"
-        name: "Name"
+        name: "שם"
         members: "חברים"
         no_groups: "אין קבוצות מעריכים"
       show:
@@ -1011,7 +1011,7 @@ he:
       new:
         title: "צור שאלה לסקר%{poll}"
         title_proposal: "צור שאלה"
-        poll_label: "הצבעה"
+        poll_label: "סקר"
       answers:
         images:
           add_image: "הוספת תמונה"
@@ -1168,7 +1168,7 @@ he:
         create_question: להוסיף הצעה זו לסקר בכדי לאפשר הצבעות
     hidden_proposals:
       index:
-        filter: Filter
+        filter: סינון
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -1250,39 +1250,39 @@ he:
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
-        administrator_filter_all: All administrators
+        administrator_filter_all: כל מנהלי המערכת
         valuator_filter_all: כל המעריכים
-        tags_filter_all: All tags
+        tags_filter_all: כל התגים
         filters:
           valuation_open: פתוח
-          without_admin: Without assigned admin
+          without_admin: ללא מנהל מערכת מוקצה
           managed: מנוהל
           valuating: תחת הערכה
           valuation_finished: הערכה הסתיימה
           all: כולם
         title: פרויקטים להשקעה בתקצוב השתתפותי
-        assigned_admin: Assigned administrator
+        assigned_admin: מנהל מערכת מוקצה
         no_admin_assigned: אין מנהל מערכת שהוקצה
         no_valuators_assigned: לא הוקצו מעריכים
         summary_link: "סיכום השקעות בפרויקט"
         valuator_summary_link: "סיכום הערכה"
         feasibility:
-          feasible: "Feasible (%{price})"
+          feasible: "בר ביצוע (%{price})"
           not_feasible: "אינו בר ביצוע"
-          undefined: "Undefined"
+          undefined: "לא מוגדר"
       show:
-        assigned_admin: Assigned administrator
+        assigned_admin: מנהל מערכת שהוקצה
         assigned_valuators: מעריכים שהוקצו
         back: חזרה
         classification: סיווג
         heading: "השקעה כספית בפרוייקט %{id}"
         edit: ערוך
-        edit_classification: Edit classification
+        edit_classification: ערוך קטגוריות
         association_name: שם הארגון/עמותה
-        by: By
-        sent: Sent
+        by: מאת
+        sent: נשלח
         geozone: הקף הפרויקט
-        dossier: Dossier
+        dossier: מסמך
         edit_dossier: ערוך מסמך
         tags: תגיות
         undefined: לא מוגדר
@@ -1389,7 +1389,7 @@ he:
         visits_title: ביקורים
         direct_messages: הודעות ישירות
         proposal_notifications: התראות להצעות
-        incomplete_verifications: כל אימותים מלאים
+        incomplete_verifications: אימותים מלאים
         polls: סקרים
       direct_messages:
         title: הודעות ישירות
