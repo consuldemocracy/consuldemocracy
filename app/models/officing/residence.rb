@@ -10,7 +10,9 @@ class Officing::Residence
 
   validates :document_number, presence: true
   validates :document_type, presence: true
-  validates :year_of_birth, presence: true
+  validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
+  validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
+  validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
 
   validate :allowed_age
   validate :residence_in_madrid
