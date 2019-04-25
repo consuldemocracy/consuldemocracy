@@ -68,9 +68,9 @@ he:
     feature:
       twitter_login: "טוויטר כניסה"
       twitter_login_description: "לאפשר למשתמשים להירשם עם חשבון הטוויטר שלהם"
-      facebook_login: "פייסבוק כניסה"
+      facebook_login: "כניסה עם חשבון פייסבוק"
       facebook_login_description: "לאפשר למשתמשים להירשם עם חשבון הפייסבוק שלהם"
-      google_login: "גוגל כניסה"
+      google_login: "כניסה עם חשבון גוגל"
       google_login_description: "לאפשר למשתמשים להירשם עם חשבון הגוגל שלהם"
       featured_proposals: "הצעות מוצעות"
       featured_proposals_description: "מציג הצעות מובלטות בדף הבית של ההצעות"
