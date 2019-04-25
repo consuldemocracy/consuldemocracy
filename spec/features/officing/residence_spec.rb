@@ -141,6 +141,21 @@ feature "Residence", :with_frozen_time do
         expect(page).not_to have_css("#residence_postal_code")
       end
 
+      scenario "with all custom census not display year_of_birth" do
+        Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+        Setting["remote_census_request.alias_postal_code"] = "some.value"
+
+        within("#side_menu") do
+          click_link "Validate document"
+        end
+
+        expect(page).to have_css("#residence_document_type")
+        expect(page).to have_css("#residence_document_number")
+        expect(page).to have_content("Date of birth")
+        expect(page).to have_css("#residence_postal_code")
+        expect(page).not_to have_css("#residence_year_of_birth")
+      end
+
     end
 
     scenario "can verify voter with date_of_birth and postal_code fields" do
