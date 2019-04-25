@@ -798,14 +798,14 @@ he:
     agree: הסכמה
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
     comment_unauthenticated: נדרשת %{signin} או %{signup} בכדי להצביע
-    disagree: התנגדות
+    disagree: אני מסתייג
     organizations: ארגונים אינם רשאים להצביע
     signin: התחברות
     signup: הרשמה
     supports: לחיצה לתמיכה
     unauthenticated: נדרשת %{signin} או %{signup} בכדי להמשיך
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
-    verify_account: לאמת את החשבון
+    verify_account: אמת את החשבון
     spending_proposals:
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
       not_verified: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
