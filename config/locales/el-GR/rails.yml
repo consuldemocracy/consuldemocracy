@@ -75,6 +75,44 @@ el:
       x_days:
         one: 1 ημέρα
         other: "%{count} ημέρες"
+      x_minutes:
+        one: 1 λεπτό
+        other: "%{count} λεπτά"
+      x_months:
+        one: 1 μήνας
+        other: "%{count} μήνες"
+      x_years:
+        one: 1 χρόνος
+        other: "%{count} έτη"
+      x_seconds:
+        one: 1 δευτερόλεπτο
+        other: "%{count} δευτερόλεπτα"
+    prompts:
+      day: Ημέρα
+      hour: Ώρα
+      minute: Λεπτό
+      month: Μήνας
+      second: Δευτερόλεπτα
+      year: Έτος
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: πρέπει να γίνει αποδεκτή
+      blank: δεν μπορεί να είναι άδειο
+      present: πρέπει να είναι άδειο
+      confirmation: δεν ταιριάζει με το %{attribute}
+      empty: δεν μπορεί να είναι άδειο
+      equal_to: πρέπει να είναι ίση με το %{count}
+      even: πρέπει να είναι έστω και
+      exclusion: είναι δεσμευμένο
+      greater_than: πρέπει να είναι μεγαλύτερη από %{count}
+      greater_than_or_equal_to: πρέπει να είναι μεγαλύτερη ή ίση με %{count}
+      inclusion: δεν περιλαμβάνεται στη λίστα
+      invalid: δεν είναι έγκυρο
+      less_than: πρέπει να είναι μικρότερη από %{count}
+      less_than_or_equal_to: πρέπει να είναι μικρότερη ή ίση με %{count}
+      model_invalid: "Η επικύρωση απέτυχε: %{errors}"
+      not_a_number: δεν είναι αριθμός
   number:
     human:
       decimal_units:
@@ -98,3 +136,6 @@ el:
           kb: KB
           mb: MB
           tb: TB
+    percentage:
+      format:
+        format: "%n%"
