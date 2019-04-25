@@ -907,7 +907,7 @@ he:
         select_task: "בחר משימה"
         table_shift: "משמרת"
         table_email: "דואר אלקטרוני"
-        table_name: "Name"
+        table_name: "שם"
       flash:
         create: "משמרת נוספה"
         destroy: "משמרת הוסרה"
@@ -1278,7 +1278,7 @@ he:
         heading: "השקעה כספית בפרוייקט %{id}"
         edit: ערוך
         edit_classification: ערוך קטגוריות
-        association_name: שם הארגון/עמותה
+        association_name: ארגון/עמותה
         by: מאת
         sent: נשלח
         geozone: הקף הפרויקט
@@ -1310,7 +1310,7 @@ he:
         edit: ערוך
         delete: מחיקה
       geozone:
-        name: Name
+        name: שם
         external_code: קוד חיצוני
         census_code: קוד מיפקד
         code_help: קוד תגובה עבור האיזור הגיאוגרפי זה ב- API של המיפקד
@@ -1376,7 +1376,7 @@ he:
           budgets: תקציבים פתוחים
           budget_investments: פרויקטי השקעה
           spending_proposals: הצעות להוצאת כספים
-          unverified_users: משתמשים שלא נבדקו
+          unverified_users: משתמשים שלא אושרו
           user_level_three: רמה של שלושה משתמשים
           user_level_two: רמה של שני משתמשים
           users: סך משתמשים
@@ -1534,7 +1534,7 @@ he:
             notice: "כרטיס הוסר בהצלחה"
     homepage:
       title: דף הבית
-      description: המודולים פעיל מופיעים בדף הבית באותו סדר כמו כאן.
+      description: המודולים הפעילים מופיעים בדף הבית באותו סדר כמו כאן.
       header_title: כותרת הדף
       no_header: אין כותרות דפים.
       create_header: יצירת כותרת דף
