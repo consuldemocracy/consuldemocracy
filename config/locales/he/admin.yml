@@ -248,8 +248,8 @@ he:
         sent: נשלח
         group: קבוצה
         heading: כותרת
-        dossier: מסמכים נלווים
-        edit_dossier: עריכת מסמכים נלווים
+        dossier: תיק
+        edit_dossier: עריכת תיק
         tags: תגיות
         user_tags: תגיות משתמשים
         undefined: לא מוגדר
@@ -1282,8 +1282,8 @@ he:
         by: מאת
         sent: נשלח
         geozone: הקף הפרויקט
-        dossier: מסמך
-        edit_dossier: ערוך מסמך
+        dossier: תיק
+        edit_dossier: ערוך תיק
         tags: תגיות
         undefined: לא מוגדר
       edit:
