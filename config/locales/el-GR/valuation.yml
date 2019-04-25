@@ -1,1 +1,54 @@
 el:
+  valuation:
+    header:
+      title: Αξιολόγηση
+    menu:
+      title: Αξιολόγηση
+      budgets: Συμμετοχικοί προϋπολογισμοί
+      spending_proposals: Προτάσεις δαπανών
+    budgets:
+      index:
+        title: Συμμετοχικοί προϋπολογισμοί
+        filters:
+          current: Ανοιχτό
+          finished: Τελείωσε
+        table_name: Όνομα
+        table_phase: Φάση
+        table_assigned_investments_valuation_open: Επενδυτικά σχέδια που έχουν ανατεθεί με αποτίμηση ανοίξτε
+        table_actions: Ενέργειες
+        evaluate: Αξιολογώ
+        no_budgets: "Δεν υπάρχουν προϋπολογισμοί"
+    budget_investments:
+      index:
+        headings_filter_all: Όλες οι κατηγορίες
+        filters:
+          valuation_open: Ανοιχτό
+          valuating: Υπό αξιολόγηση
+          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
+        assigned_to: "Έχει εκχωρηθεί στον %{valuator}"
+        title: Επενδυτικά έργα
+        edit: Επεξεργασία φακέλου
+        valuators_assigned:
+          one: Αξιολογητής που έχει ανατεθεί
+          other: "%{count} αξιολογητές που έχει ανατεθεί"
+        no_valuators_assigned: Δεν έχει ανατεθεί σε αξιολογητές
+        table_id: ID
+        table_title: Τίτλος
+        table_heading_name: Όνομα επικεφαλίδας
+        table_actions: Ενέργειες
+        no_investments: "Δεν υπάρχουν επενδυτικά έργα."
+      show:
+        back: Πίσω
+        title: Επενδυτικό έργο
+        info: Πληροφορίες συγγραφέα
+        by: Αποστολή από
+        sent: Αποστολή σε
+        heading: Επικεφαλίδα
+        dossier: Φάκελος
+        edit_dossier: Επεξεργασία φακέλου
+        price: Τιμή
+        price_first_year: Κόστος κατά το πρώτο έτος
+        currency: "€"
+        feasibility: Σκοπιμότητα
+        feasible: Εφικτό
+        unfeasible: Δεν είναι εφικτό
