@@ -117,12 +117,12 @@ class Officing::Residence
     end
 
     def residency_valid?
-      @census_api_response.valid? &&
-        @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
+      @census_api_response.valid? && valid_year_of_birth?
     end
 
-    def census_year_of_birth
-      @census_api_response.date_of_birth.year
+    def valid_year_of_birth?
+      return true if Setting.force_presence_date_of_birth?
+      @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
     end
 
     def clean_document_number
