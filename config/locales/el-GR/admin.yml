@@ -195,3 +195,60 @@ el:
       index:
         title: Καταστάσεις ορόσημου
         empty_statuses: Δεν υπάρχουν καταστάσεις ορόσημου δημιουργημένες
+        new_status: Δημιουργία νέας κατάστασης οροσήμου
+        table_name: Όνομα
+    hidden_users:
+      show:
+        registered_at: "Εγγεγραμμένος στο:"
+        title: Δραστηριότητα του χρήστη (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφοί προϋπολογισμοί επενδύσεων
+        no_hidden_budget_investments: Δεν υπάρχουν κρυφοί προϋπολογισμοί επενδύσεων
+    legislation:
+      processes:
+        create:
+          notice: 'Η διαδικασία δημιουργήθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η διαδικασία δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: 'Διαδικασία ενημερώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η διαδικασία δεν μπόρεσε να ενημερωθεί
+        destroy:
+          notice: Η διαδικασία διαγράφηκε με επιτυχία
+        edit:
+          back: Πίσω
+          submit_button: Αποθηκεύστε τις αλλαγές
+        errors:
+          form:
+            error: Σφάλμα
+        form:
+          enabled: Ενεργοποιημένη
+          process: Διαδικασία
+          debate_phase: Φάση συζήτησης
+          draft_phase: Φάση του σχεδίου
+          draft_phase_description: Εάν αυτή η φάση είναι ενεργή, η διαδικασία δεν θα εμφανίζεται στον δείκτη των διεργασιών. Επιτρέψτε προεπισκόπηση της διαδικασίας και δημιουργήστε περιεχόμενο πριν από την έναρξη.
+          allegations_phase: Φάση σχολίων
+          proposals_phase: Φάση προτάσεων
+          use_markdown: Χρησιμοποιήστε Markdown να μορφοποιήσετε το κείμενο
+          title_placeholder: Τον τίτλο της διαδικασίας
+          summary_placeholder: Σύντομη περίληψη της περιγραφής
+          description_placeholder: Προσθέσετε μια περιγραφή της διαδικασίας
+          additional_info_placeholder: Προσθέστε επιπλέον πληροφορίες που θεωρείτε χρήσιμες
+          homepage: Περιγραφή
+          homepage_description: Εδώ μπορείτε να εξηγήσετε το περιεχόμενο της διαδικασίας
+          homepage_enabled: Αρχική σελίδα ενεργοποιημένη
+          banner_title: Χρώματα επικεφαλίδας
+        index:
+          create: Νέα διαδικασία
+          delete: Διαγραφή
+          title: Συνεργατική νομοθεσία
+          filters:
+            active: Ενεργό
+            all: Όλα
+        new:
+          back: Πίσω
