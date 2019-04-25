@@ -100,6 +100,16 @@ class Officing::Residence
     @census_api_response.date_of_birth
   end
 
+  def force_presence_date_of_birth?
+    Setting["feature.remote_census"].present? &&
+      Setting["remote_census_request.alias_date_of_birth"].present?
+  end
+
+  def force_presence_postal_code?
+    Setting["feature.remote_census"].present? &&
+      Setting["remote_census_request.alias_postal_code"].present?
+  end
+
   private
 
     def retrieve_census_data

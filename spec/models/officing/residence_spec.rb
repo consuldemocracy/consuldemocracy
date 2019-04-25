@@ -128,4 +128,50 @@ describe Officing::Residence do
     end
 
   end
+
+  describe "#force_presence_date_of_birth? return expected value" do
+
+    it "when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(residence.force_presence_date_of_birth?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_date_of_birth is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = nil
+
+      expect(residence.force_presence_date_of_birth?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_date_of_birth is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+
+      expect(residence.force_presence_date_of_birth?).to eq true
+    end
+  end
+
+  describe "#force_presence_postal_code? return expected value" do
+
+    it "when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(residence.force_presence_postal_code?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_postal_code is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_postal_code"] = nil
+
+      expect(residence.force_presence_postal_code?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_postal_code is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_postal_code"] = "some.value"
+
+      expect(residence.force_presence_postal_code?).to eq true
+    end
+  end
 end
