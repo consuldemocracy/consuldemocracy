@@ -31,8 +31,8 @@ he:
         title: כותרת
         description: תיאור
         target_url: קישור
-        post_started_at: החל מ
-        post_ended_at: ההודעה הסתיימה ב
+        post_started_at: מתאריך
+        post_ended_at: תאריך תפוגה
         sections_label: בחירת מיקום התצוגה
         sections:
           homepage: דף הבית
