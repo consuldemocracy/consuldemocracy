@@ -4,7 +4,10 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 // 01. Global styles
-// -----------------
+// 02. Sidebar
+// ---------------------
+
+// 01. Global styles
 
 $admin-color:    #245b80;
 $sidebar:        #245b80;
@@ -402,5 +405,101 @@ $sidebar-active: #f4fcd0;
 
 code {
   word-break: break-all;
+}
+// 02. Sidebar
+// -----------
+
+.admin-sidebar {
+  background: $sidebar;
+  background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
+  border-right: 1px solid $border;
+
+  @include breakpoint(medium) {
+    min-height: rem-calc(1100);
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+
+    [class^="icon-"] {
+      color: #fff;
+      display: inline-block;
+      font-size: rem-calc(24);
+      line-height: $line-height;
+      padding: $line-height / 2 $line-height / 4;
+      padding-left: 0;
+      vertical-align: middle;
+    }
+  }
+
+  li {
+    margin: 0;
+    outline: 0;
+
+    ul {
+      margin-left: $line-height / 1.5;
+      border-left: 1px solid $sidebar-hover;
+      padding-left: $line-height / 2;
+    }
+
+    &.is-active a {
+      text-align: right;
+      background: $sidebar-hover;
+      border-left: 2px solid $sidebar-active;
+      font-weight: bold;
+    }
+  }
+
+  li a {
+    text-align: right;
+    color: #fff;
+    display: block;
+    line-height: rem-calc(48);
+    padding-left: rem-calc(12);
+    vertical-align: top;
+
+    &:hover {
+      background: $sidebar-hover;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .is-accordion-submenu-parent {
+
+    > a::after {
+      border: 0;
+      content: "\61" !important;
+      font-family: "icons" !important;
+      height: auto;
+      position: absolute !important;
+      right: 30px;
+      top: 6px !important;
+    }
+  }
+
+  .submenu {
+    border-bottom: 0;
+    margin-left: $line-height;
+
+    li:first-child {
+      padding-top: $line-height / 2;
+    }
+
+    li:last-child {
+      padding-bottom: $line-height / 2;
+    }
+
+    a {
+      font-weight: normal;
+    }
+
+    .is-active {
+      border-bottom: 0;
+    }
+  }
 }
 
