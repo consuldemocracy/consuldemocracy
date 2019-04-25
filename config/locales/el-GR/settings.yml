@@ -1,1 +1,13 @@
 el:
+  settings:
+    comments_body_max_length: "Μέγιστο μήκος σχολίων"
+    comments_body_max_length_description: "Αριθμός χαρακτήρων"
+    official_level_1_name: "Επίπεδο 1 δημόσιος υπάλληλος"
+    official_level_1_name_description: "Ετικέτα που θα εμφανίζεται στους χρήστες που έχουν επισημανθεί ως επίσημη θέση του επιπέδου 1"
+    official_level_2_name: "Επίπεδο 2 δημόσιος υπάλληλος"
+    official_level_2_name_description: "Ετικέτα που θα εμφανίζεται στους χρήστες που έχουν επισημανθεί ως επίσημη θέση του επιπέδου 2"
+    official_level_3_name: "Επίπεδο 3 δημόσιος υπάλληλος"
+    official_level_3_name_description: "Ετικέτα που θα εμφανίζεται στους χρήστες που έχουν επισημανθεί ως επίσημη θέση του επιπέδου 3"
+    official_level_4_name: "Επίπεδο 4 δημόσιος υπάλληλος"
+    official_level_4_name_description: "Ετικέτα που θα εμφανίζεται στους χρήστες που έχουν επισημανθεί ως επίσημη θέση του επιπέδου 4"
+    official_level_5_name: "Επίπεδο 5 δημόσιος υπάλληλος"
