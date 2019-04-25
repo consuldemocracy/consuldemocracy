@@ -40,11 +40,11 @@ he:
       link: מנהל מערכת
       in_census_has_following_permissions: "משתמשים/ות אלו יכולים/ות להשתתף במערכת עם ההרשאות הבאות"
       not_in_census: תעודה מזהה זו לא רשומה
-      not_in_census_info: " אזרחים/ות שאינם/ן מתפקדים/ות יכולים/ות להשתתף באתר עם ההרשאות הבאות :"
+      not_in_census_info: "תושבים/ות שאינם/ן נמצאים ברשומות יכולים/ות להשתתף באתר עם ההרשאות הבאות:"
       please_check_account_data: נא לבדוק בבקשה שהנתונים מעל מדויקים
       title: ' ניהול חשבון'
       under_age: "אינך בגיל המאפשר רישומך באתר"
-      verify: Verify
+      verify: אמת
     email_label: דואר אלקטרוני
     date_of_birth: תאריך לידה
     email_verifications:
@@ -54,8 +54,8 @@ he:
       document_mismatch: "דואר אלקטרוני זה שייך למשתמש/ת מזוהה: %{document_number}(%{document_type})"
       email_placeholder: נא להכניס את כתובת הדואר אלקטרוני בו השתמשת ליצירת החשבון 
       email_sent_instructions: כדי לזהותך בוודאות, עליך ללחוץ על קישור שנשלח לכתובת הדואר אלקטרוני שהכנסת למערכת. צעד זה נחוץ כדי לוודא שכתובת הדואר אלקטרוני שייכת לך
-      if_existing_account: אם יש לך כבר חשבון באתר זה
-      if_no_existing_account: אם לא יצרת עדין חשבון
+      if_existing_account: באם לתושב יש כבר חשבון משתמש באתר זה
+      if_no_existing_account: באם התושב טרם יצר חשבון משתמש
       introduce_email: "נא להכניס את הדואר אלקטרוני בו השתמשת בפתיחת החשבון"
       send_email: שליחת דואר אלקטרוני לאימות
     menu:
