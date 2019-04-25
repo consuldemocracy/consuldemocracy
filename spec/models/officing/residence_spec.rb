@@ -36,6 +36,76 @@ describe Officing::Residence do
       expect(residence).to be_valid
     end
 
+    describe "custom validations" do
+
+      let(:custom_residence) { build(:officing_residence,
+                                     document_number: "12345678Z",
+                                     date_of_birth: "01/01/1980",
+                                     postal_code: "28001") }
+
+      before do
+        Setting["feature.remote_census"] = true
+        Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+        Setting["remote_census_request.alias_postal_code"] = "some.value"
+      end
+
+      after do
+        Setting["feature.remote_census"] = nil
+        Setting["remote_census_request.alias_date_of_birth"] = nil
+        Setting["remote_census_request.alias_postal_code"] = nil
+      end
+
+      it "is valid" do
+        expect(custom_residence).to be_valid
+      end
+
+      it "is not valid without a document number" do
+        custom_residence.document_number = nil
+        expect(custom_residence).not_to be_valid
+      end
+
+      it "is not valid without a document type" do
+        custom_residence.document_type = nil
+        expect(custom_residence).not_to be_valid
+      end
+
+      it "is valid without a year of birth when date_of_birth is present" do
+        custom_residence.year_of_birth = nil
+
+        expect(custom_residence).to be_valid
+      end
+
+      it "is not valid without a date of birth" do
+        custom_residence.date_of_birth = nil
+
+        expect(custom_residence).not_to be_valid
+      end
+
+      it "is not valid without a postal_code" do
+        custom_residence.postal_code = nil
+
+        expect(custom_residence).not_to be_valid
+      end
+
+      describe "dates" do
+        it "is valid with a valid date of birth" do
+          custom_residence = described_class.new("date_of_birth(3i)" => "1",
+                                                 "date_of_birth(2i)" => "1",
+                                                 "date_of_birth(1i)" => "1980")
+          expect(custom_residence.errors[:date_of_birth].size).to eq(0)
+        end
+
+        it "is not valid without a date of birth" do
+          custom_residence = described_class.new("date_of_birth(3i)" => "",
+                                                 "date_of_birth(2i)" => "",
+                                                 "date_of_birth(1i)" => "")
+          expect(custom_residence).not_to be_valid
+          expect(custom_residence.errors[:date_of_birth]).to include("can't be blank")
+        end
+      end
+
+    end
+
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
         allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(15.years.ago)
