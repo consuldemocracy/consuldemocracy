@@ -106,7 +106,7 @@ gl:
           confidence_score: Máis apoiados
           price: por custo
       share:
-        message: "Acabo de crear o proxecto de investimento %{title} en %{org}. Anímote a crear o teu proxecto de investimento!"
+        message: "Acabo de crear o proxecto de investimento %{title} en %{handle}. Anímote a crear o teu proxecto de investimento!"
       show:
         author_deleted: Usuario/a borrado/a
         price_explanation: Informe de custo <small>(opcional, dato público)</small>

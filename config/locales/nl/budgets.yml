@@ -106,7 +106,7 @@ nl:
           confidence_score: best gescored
           price: op bedrag
       share:
-        message: "Ik heb investeringsvoorstel %{title} gemaakt in %{org}. Jij kunt ook een investeringsvoorstel doen!"
+        message: "Ik heb investeringsvoorstel %{title} gemaakt in %{handle}. Jij kunt ook een investeringsvoorstel doen!"
       show:
         author_deleted: Gebruiker verwijderd
         price_explanation: Price explanation

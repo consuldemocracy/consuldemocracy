@@ -445,7 +445,7 @@ sq:
       form:
         submit_button: Ruaj ndryshimet
     share:
-      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
+      message: "Kam përkrahur propozimin %{title} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
   polls:
     all: "Të gjithë"
     no_dates: "Asnjë datë e caktuar"
