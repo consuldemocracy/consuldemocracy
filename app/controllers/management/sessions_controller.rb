@@ -1,6 +1,7 @@
 require "manager_authenticator"
 
 class Management::SessionsController < ActionController::Base
+  include AccessDeniedHandler
 
   def create
     destroy_session
