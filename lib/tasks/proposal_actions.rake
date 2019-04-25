@@ -31,7 +31,7 @@ namespace :proposal_actions do
   desc "Publish all proposals"
   task publish_all: :environment do
     Proposal.draft.find_each do |proposal|
-      proposal.update(published_at: proposal.created_at)
+      proposal.update_columns(published_at: proposal.created_at, updated_at: Time.current)
     end
   end
 
