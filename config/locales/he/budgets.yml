@@ -101,7 +101,7 @@ he:
           check_ballot_link: "בדוק ואשר את ההצבעה שלי"
           zero: לא נעשתה הצבעה עבור פרויקט השקעה.
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
-          verify_account: "לאמת את החשבון"
+          verify_account: "אמת את החשבון"
           create: "יצירת תקציב להשקעה"
           not_logged_in: "חובה נדרשת ליצירת תקציב, השקעה של%{sign_in} או%{sign_up}."
           sign_in: "התחברות"
@@ -137,7 +137,7 @@ he:
         see_price_explanation: ראה הסבר תמחור
       wrong_price_format: נא לרשום סכום בשקלים שלמים
       investment:
-        add: Add
+        add: הצבע
         already_added: כבר הוספת את פרויקט ההשקעות הזה
         already_supported: כבר תומכת בפרויקט השקעה זה.. שתף עם אחרים!
         support_title: תמיכה בפרויקט זה
