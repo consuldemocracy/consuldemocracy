@@ -6,7 +6,7 @@ describe "Admin banners magement" do
     login_as(create(:administrator).user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "banner",
                   "edit_admin_banner_path",
                   %w[title description]

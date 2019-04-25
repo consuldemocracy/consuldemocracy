@@ -16,7 +16,7 @@ describe "Debates" do
                     "new_debate_path",
                     %w[title],
                     { "description" => :ckeditor }
-    it_behaves_like "translatable",
+    it_behaves_like "edit_translatable",
                     "debate",
                     "edit_debate_path",
                     %w[title],
