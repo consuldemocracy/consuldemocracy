@@ -15,6 +15,6 @@ class PagesController < ApplicationController
       render action: params[:id]
     end
   rescue ActionView::MissingTemplate
-    head 404
+    head 404, content_type: "text/html"
   end
 end
