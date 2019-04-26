@@ -24,15 +24,12 @@
       <% end %>
     </div>
 
-    <%= best_in_place poll,
-                      :results_enabled,
-                      as: :checkbox,
-                      url: proposal_dashboard_poll_url(proposal, poll),
-                      collection: {
-                        false: raw('<input type="checkbox">'),
-                        true: raw('<input type="checkbox" checked>')
-                      } %>
-    <strong><%= t("dashboard.polls.poll.show_results") %></strong>
+    <%= form_for poll, remote: true, data: { type: :json },
+      url: proposal_dashboard_poll_path(proposal, poll) do |f| %>
+      <%= f.check_box :results_enabled,
+        label: t("dashboard.polls.poll.show_results"),
+        class: "js-submit-on-change" %>
+    <% end %>
     <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
   </div>
 </div>
