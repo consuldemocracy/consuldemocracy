@@ -21,8 +21,8 @@ class Poll::Recount < ApplicationRecord
     amounts_changed = false
 
     [:white, :null, :total].each do |amount|
-      next unless send("#{amount}_amount_changed?") && send("#{amount}_amount_was").present?
-      self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_was")}"
+      next unless send("will_save_change_to_#{amount}_amount?") && send("#{amount}_amount_in_database").present?
+      self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_in_database")}"
       amounts_changed = true
     end
 
@@ -30,7 +30,7 @@ class Poll::Recount < ApplicationRecord
   end
 
   def update_officer_author
-    self.officer_assignment_id_log += ":#{officer_assignment_id_was}"
-    self.author_id_log += ":#{author_id_was}"
+    self.officer_assignment_id_log += ":#{officer_assignment_id_in_database}"
+    self.author_id_log += ":#{author_id_in_database}"
   end
 end
