@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "5.0.7.2"
+gem "rails", "5.1.7"
 
 gem "acts-as-taggable-on", "~> 5.0.0"
 gem "acts_as_votable", "~> 0.11.1"
@@ -66,7 +66,7 @@ source "https://rails-assets.org" do
 end
 
 group :development, :test do
-  gem "bullet", "~> 5.7.0"
+  gem "bullet", "~> 5.9.0"
   gem "byebug", "~> 10.0.0"
   gem "factory_bot_rails", "~> 4.8.2"
   gem "faker", "~> 1.8.7"
