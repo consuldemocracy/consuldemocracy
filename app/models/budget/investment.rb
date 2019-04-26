@@ -319,7 +319,7 @@ class Budget
     end
 
     def recalculate_heading_winners
-      Budget::Result.new(budget, heading).calculate_winners if incompatible_changed?
+      Budget::Result.new(budget, heading).calculate_winners if saved_change_to_incompatible?
     end
 
     def set_responsible_name
