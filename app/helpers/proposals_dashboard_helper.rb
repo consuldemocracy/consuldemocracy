@@ -48,7 +48,7 @@ module ProposalsDashboardHelper
     controller_name == "dashboard" && action_name == "new_request" && dashboard_action&.id == id
   end
 
-  def resoure_availability_label(resource)
+  def resource_availability_label(resource)
     label = []
 
     label << t("dashboard.resource.required_days",
