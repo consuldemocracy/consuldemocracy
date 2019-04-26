@@ -20,8 +20,8 @@
     <td class="help-text"><%= t("users.proposals.retired_help_text") %></td>
   <% elsif can?(:dashboard, proposal) %>
     <td>
-        <%= link_to t("proposals.show.dashboard_proposal_link"),
-                    progress_proposal_dashboard_path(proposal), class: "button hollow expanded" %>
+      <%= link_to t("proposals.show.dashboard_proposal_link"),
+                  progress_proposal_dashboard_path(proposal), class: "button hollow expanded" %>
     </td>
   <% else %>
     <td class="text-center">
