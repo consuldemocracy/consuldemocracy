@@ -1364,7 +1364,7 @@ form {
   position: inherit;
 
   @include breakpoint(medium) {
-    float: right;
+    float: left;
     margin-bottom: 0;
     margin-top: $line-height / 4;
     position: absolute;

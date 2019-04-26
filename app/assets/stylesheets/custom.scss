@@ -503,3 +503,352 @@ code {
   }
 }
 
+// 02. Header / layout.scss
+// ----------
+
+header {
+  background: $brand;
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height;
+
+  .selected {
+    border-bottom: 1px solid #fff;
+  }
+
+  .locale {
+    float: left;
+    height: $line-height * 1.5;
+    margin-left: $line-height / 2;
+    position: relative;
+
+    &::after {
+      color: #808080;
+      content: "\61";
+      font-family: "icons" !important;
+      font-size: $small-font-size;
+      pointer-events: none;
+      position: absolute;
+      right: 2px;
+      top: 9px;
+    }
+  }
+
+  .external-links {
+    float: none;
+    padding: rem-calc(6) 0;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      float: right;
+    }
+  }
+}
+
+.top-bar {
+  background: $brand !important;
+  color: #fff;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+
+  ul {
+    background: none;
+    padding-right: rem-calc(15);
+  }
+
+  .menu .menu-text {
+    padding: 0;
+
+    a {
+      color: #fff;
+      display: inline-block;
+      font-family: "Lato" !important;
+      font-size: rem-calc(24);
+      font-weight: lighter;
+      line-height: $line-height * 2;
+      padding: 0;
+
+      @include breakpoint(medium) {
+        line-height: rem-calc(80);
+        margin-top: 0;
+      }
+
+      img {
+
+        @include breakpoint(medium) {
+          margin-right: $line-height / 2;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .menu > li {
+    display: block;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: auto;
+    }
+
+    a {
+      color: #fff;
+      padding-left: 0;
+
+      @include breakpoint(medium) {
+        font-size: $small-font-size;
+        padding: rem-calc(11) rem-calc(16);
+      }
+    }
+
+    .button {
+      background: none;
+      text-align: left;
+
+      @include breakpoint(medium) {
+        background: #fff;
+        color: $brand;
+        text-align: center;
+      }
+    }
+  }
+
+  .has-submenu {
+
+    &.is-active a {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  .menu {
+
+    &.is-dropdown-submenu {
+      background: #fff;
+      margin: 0;
+      margin-top: rem-calc(-12);
+      padding: 0;
+      z-index: 9;
+    }
+
+    .is-submenu-item {
+      display: block;
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        color: $text;
+      }
+    }
+  }
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.menu-icon {
+
+  &.dark {
+
+    &:hover::after,
+    &::after {
+      background: #fff;
+      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    }
+  }
+}
+
+.title-bar {
+  background: none;
+  float: right;
+}
+
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-color: #fff transparent transparent;
+  }
+}
+
+.top-links {
+  background: $dark;
+  color: #fff;
+  font-size: $small-font-size;
+  padding-right: $line-height / 2;
+
+  a {
+    color: #fff;
+    margin: 0 rem-calc(6);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    display: block;
+
+    @include breakpoint(medium) {
+      display: inline-block;
+
+      &::after {
+        content: "|";
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.subnavigation {
+
+  @include breakpoint(medium) {
+    background: #fff;
+    padding-bottom: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      @include breakpoint(medium) {
+        display: inline-block;
+        margin-right: rem-calc(20);
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    display: inline-block;
+    line-height: $line-height * 2;
+    position: relative;
+    text-align: right;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      color: $text;
+      display: block;
+      font-weight: bold;
+      width: auto;
+
+      &:hover {
+        color: $link;
+      }
+    }
+
+    &.is-active {
+      color: #fff;
+
+      @include breakpoint(medium) {
+        border-bottom: 2px solid $brand;
+        color: $brand;
+      }
+    }
+  }
+
+  .input-group {
+    padding-top: $line-height / 4;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
+
+  .input-group-field {
+    margin-bottom: 0 !important;
+  }
+
+  .input-group-button {
+    line-height: $line-height * 1.5;
+    padding-bottom: 0;
+
+    button {
+      background: $border;
+      border: 1px solid #ccc;
+      border-left: 0;
+      color: $text;
+      height: $line-height * 1.5;
+      line-height: $line-height * 1.5;
+      padding-top: 0;
+    }
+  }
+
+  input {
+    height: $line-height * 1.5 !important;
+    margin-bottom: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.top-bar-right {
+
+  .is-active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+.submenu {
+  border-bottom: 1px solid $border;
+  clear: both;
+  margin-bottom: $line-height / 2;
+
+  a {
+    color: $text;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: $line-height / 2;
+    position: relative;
+    text-align: left;
+
+    @include breakpoint(medium) {
+      margin-right: $line-height;
+    }
+
+    &:hover {
+      color: $link;
+    }
+  }
+
+  .is-active {
+    border-bottom: 2px solid $brand;
+    color: $brand;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
+  }
+}
+
+.search-form-header [type=text] {
+  max-width: none;
+}
+
+
