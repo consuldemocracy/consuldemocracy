@@ -396,7 +396,7 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id = heading&.group_id if heading_id_changed?
+        self.group_id = heading&.group_id if will_save_change_to_heading_id?
         self.budget_id ||= heading&.group&.budget_id
       end
 
