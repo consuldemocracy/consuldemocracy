@@ -1,4 +1,4 @@
-class Dashboard::ExecutedAction < ActiveRecord::Base
+class Dashboard::ExecutedAction < ApplicationRecord
   belongs_to :proposal
   belongs_to :action, class_name: "Dashboard::Action"
 

@@ -1,4 +1,4 @@
-class CreateProposalDashboardActions < ActiveRecord::Migration
+class CreateProposalDashboardActions < ActiveRecord::Migration[4.2]
   def change
     create_table :proposal_dashboard_actions do |t|
       t.string :title, limit: 80
