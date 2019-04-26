@@ -589,7 +589,6 @@
 
     p {
       font-size: rem-calc(18);
-      max-width: 60%;
       margin: 0 auto;
     }
 
@@ -655,7 +654,7 @@
     font-size: rem-calc(19);
     margin-top: rem-calc(50);
     padding-left: rem-calc(40);
-    width: 50%;
+    width: 75%;
   }
 }
 
@@ -740,9 +739,9 @@
 
   .poster-footer {
     display: block;
-    margin-left: 15cm;
+    margin-left: 10cm;
     margin-top: 2cm;
-    max-width: 55%;
+    max-width: 75%;
     padding-left: 4cm;
   }
 }
