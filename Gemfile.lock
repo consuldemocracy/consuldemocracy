@@ -345,6 +345,7 @@ GEM
       arel (>= 6)
     powerpack (0.1.2)
     public_suffix (3.0.3)
+    puma (3.12.1)
     rack (2.0.6)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -581,6 +582,7 @@ DEPENDENCIES
   paranoia (~> 2.4.1)
   pg (~> 0.21.0)
   pg_search (~> 2.0.1)
+  puma (~> 3.12.1)
   rails (= 5.0.7.2)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 8.2.1)!
