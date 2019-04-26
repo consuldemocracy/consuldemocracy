@@ -16,9 +16,10 @@
     <%= f.check_box :active, label: ::Dashboard::Action.human_attribute_name(:active) %>
   </div>
 
-  <div id="request_to_administrators" class="small-12 column margin-bottom hide"
-                                      data-toggler=".hide">
-    <%= f.check_box :request_to_administrators, label: ::Dashboard::Action.human_attribute_name(:request_to_administrators) %>
+  <div id="request_to_administrators"
+       class="small-12 column margin-bottom <%= css_for_resource(@dashboard_action.action_type) %>"
+       data-toggler=".hide">
+    <%= f.check_box :request_to_administrators %>
   </div>
 
 </div>

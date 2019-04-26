@@ -24,7 +24,9 @@ class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
     end
   end
 
-  def edit; end
+  def edit
+    dashboard_action
+  end
 
   def update
     if dashboard_action.update(dashboard_action_params)
