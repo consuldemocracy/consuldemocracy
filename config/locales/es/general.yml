@@ -530,7 +530,7 @@ es:
       days:
         one: "%{count} día"
         other: "%{count} días"
-      unlocked_resource: Recurso desbloqueado
+      locked_resource: Recurso bloqueado
       ideal_time: Tiempo ideal
     community:
       access_community: Acceder a la comunidad
