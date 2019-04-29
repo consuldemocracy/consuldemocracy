@@ -14,7 +14,6 @@ tr:
       destroy:
         notice: Resim başarıyla silindi.
         alert: Resim yok edilemez.
-        confirm: Resimi silmek istediğnize emin misiniz? Bu işlem geri alınamaz!
     errors:
       messages:
         in_between: '%{min} ve %{max} arasında olması gereklidir'
