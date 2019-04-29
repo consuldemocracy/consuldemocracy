@@ -262,6 +262,8 @@ cs:
     create:
       form:
         submit_button: Vytvořit návrh
+    share:
+      message: "Podpořil jsem návrh %{summary} v %{handle}. Pokud máte zájem, podporují jej také!"
     edit:
       editing: Upravit návrh
       form:
@@ -381,7 +383,6 @@ cs:
       comments:
         zero: Žádné komentáře
       comments_tab: Komentáře
-      edit_proposal_link: Upravit
       flag: Tento návrh byl více uživateli označen jako nevhodný.
       login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
       notifications_tab: Upozornění
@@ -390,7 +391,6 @@ cs:
       retired_warning_link_to_explanation: Přečtěte si vysvětlení před vlastním hlasováním.
       retired: Zrušené návrhy tříděné podle autorů
       share: Sdílet
-      send_notification: Poslat upozornění
       no_notifications: "Tento návrh nemá žádné oznámení."
       embed_video_title: "Video v návrhu %{proposal}"
       title_external_url: "Dodatečná dokumentace"
@@ -399,8 +399,6 @@ cs:
     update:
       form:
         submit_button: Uložit změny
-    share:
-      message: "Podpořil jsem návrh %{summary} v %{handle}. Pokud máte zájem, podporují jej také!"
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"
@@ -482,7 +480,7 @@ cs:
   shared:
     edit: "Upravit"
     save: "Uložit"
-    delete: Smazat
+    delete: "Smazat"
     "yes": "Ano"
     "no": "Ne"
     search_results: "Výsledky vyhledávání"
@@ -663,8 +661,6 @@ cs:
       send_private_message: "Poslat soukromou zprávu"
       delete_alert: "Opravdu chcete smazat svůj investiční projekt? Tuto akci nelze vrátit zpět"
     proposals:
-      send_notification: "Odeslat upozornění"
-      retire: "Pozastavit"
       retired: "Pozastavené návrhy"
       see: "Zobrazit návrh"
   votes:
