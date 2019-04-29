@@ -423,7 +423,6 @@ pt-BR:
         one: 1 comentário
         other: "%{count} comentários"
       comments_tab: Comentários
-      edit_proposal_link: Editar
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
       login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
       notifications_tab: Notificações
@@ -432,7 +431,6 @@ pt-BR:
       retired_warning_link_to_explanation: Leia a explicação antes de votar.
       retired: Proposta retirada pelo autor
       share: Compartilhar
-      send_notification: Enviar notificação
       no_notifications: "Esta proposta não tem notificações."
       embed_video_title: "Vídeo em %{proposal}"
       title_external_url: "Documentação adicional"
@@ -522,7 +520,7 @@ pt-BR:
   shared:
     edit: "Editar"
     save: "Salvar"
-    delete: Excluir
+    delete: "Excluir"
     "yes": "Sim"
     "no": "Não"
     search_results: "Buscar resultados"
@@ -733,8 +731,6 @@ pt-BR:
       send_private_message: "Enviar mensagem privada"
       delete_alert: "Tem certeza que deseja excluir seu projeto de investimento? Esta ação não pode ser desfeita"
     proposals:
-      send_notification: "Enviar notificação"
-      retire: "Retirar"
       retired: "Proposta retirada"
       see: "Ver proposta"
   votes:
