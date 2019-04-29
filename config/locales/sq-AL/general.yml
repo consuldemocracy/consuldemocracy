@@ -290,6 +290,8 @@ sq:
     create:
       form:
         submit_button: Krijo propozim
+    share:
+      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
     edit:
       editing: Ndrysho propozimin
       form:
@@ -423,7 +425,6 @@ sq:
         one: 1 koment
         other: "%{count} komente"
       comments_tab: Komentet
-      edit_proposal_link: Ndrysho
       flag: Ky propozim është shënuar si i papërshtatshëm nga disa përdorues.
       login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
       notifications_tab: Njoftimet
@@ -432,7 +433,6 @@ sq:
       retired_warning_link_to_explanation: Lexoni shpjegimin para se të votoni për të.
       retired: Propozimet e vecuara nga autori
       share: Shpërndaj
-      send_notification: Dërgo njoftimin
       no_notifications: "Ky propozim ka  njoftime."
       embed_video_title: "Video në %{proposal}"
       title_external_url: "Dokumentacion shtesë"
@@ -441,8 +441,6 @@ sq:
     update:
       form:
         submit_button: Ruaj ndryshimet
-    share:
-      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
   polls:
     all: "Të gjithë"
     no_dates: "Asnjë datë e caktuar"
@@ -524,7 +522,7 @@ sq:
   shared:
     edit: "Ndrysho"
     save: "Ruaj"
-    delete: Fshi
+    delete: "Fshi"
     "yes": "Po"
     "no": "Jo"
     search_results: "Kërko rezultatet"
@@ -735,8 +733,6 @@ sq:
       send_private_message: "Dërgo mesazh privat"
       delete_alert: "Jeni i sigurt që doni të fshini projektin tuaj të investimeve? Ky veprim nuk mund të zhbëhet"
     proposals:
-      send_notification: "Dërgo njoftimin"
-      retire: "I vecuar"
       retired: "Propozimet e vecuara"
       see: "Shiko propozimin"
   votes:
