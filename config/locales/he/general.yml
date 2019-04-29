@@ -214,6 +214,23 @@ he:
       firefox: פיירפוקס
       ie: שמנו לב שהדפדפן שלך הוא אינטרנט אקפלורר. למען חוויה טובה יותר, אנו ממליצים להשתמש בגוגל כרום -%{chrome} או בפיירפוקס %{firefox}
       ie_title: אתר זה אינו מותאם לדפדפן שלך
+    dashboard:
+      proposal_header:
+        published: פורסם
+        draft: טיוטה
+        retired: פרש
+      proposal_totals:
+        active_resources: משאבים פעילים
+        community: משתתפים בקהילה שלך
+        show_proposal: הצג הצעה
+        preview_proposal: תצוגה מקדימה להצעה
+        current_goal: מטרה נוכחית
+        supports:
+          zero: אין תומכים
+          one: תומך אחד
+          two: "תומכים"
+          many: "תומכים"
+          other: "תומכים"
     footer:
       accessibility: נגישות
       conditions: כללים ותנאי שימוש
@@ -313,6 +330,17 @@ he:
     create:
       form:
         submit_button: יצירת הצעה חדשה
+    created:
+      title: ברכות! עשית את הצעד הראשון.
+      motivation: "חשוב להכין את קמפיין ההשקה עבור ההצעה שלך לצורך הצלחתה. הימים הראשונים הם המכריעים."
+      motivation_2_html: "<strong>אם את רוצה המלצות בהכנת הפרסום. השאר את הצעתך כטיוטה ואנו נדריך אותך כיצד לעשות זאת.</strong>"
+      publish: . לא, אני רוצה לפרסם את ההצעה
+      dashboard: . כן, אני רוצה עזרה, ואפרסם זאת מאוחר יותר
+      preview_title: כך תיראה הצעתך כאשר תפרסם אותה
+    share:
+      improve_it: שפר את הקמפיין שלך וקבל יותר תומכים.
+      dashboard: ראה מידע נוסף
+      message: "אני תומך את בהצעה %{title} ב %{handle}. אם אתה מעוניין, תמוך בה גם!"
     edit:
       editing: עריכת ההצעה
       form:
@@ -417,6 +445,7 @@ he:
       start_new: צור הצעה חדשה
     notice:
       retired: ההצעה הוסרה
+      published: ההצעה פורסמה
     proposal:
       created: "יצרת הצעה!"
       share:
@@ -458,7 +487,7 @@ he:
         many: "%{count} תגובות"
         other: "%{count} תגובות"
       comments_tab: הערות
-      edit_proposal_link: ערוך
+      dashboard_proposal_link: לוח ניהול
       flag: הצעה זו סומנה כבלתי-ראויה בידי מספר משתמשים
       login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       notifications_tab: התראות
@@ -467,17 +496,156 @@ he:
       retired_warning_link_to_explanation: נא לקרוא את ההסבר לפני ההצבעה
       retired: ההצעה הופסקה על-ידי המחבר/ת
       share: שיתוף
-      send_notification: שליחת הודעה
       no_notifications: "להצעה זו אין התראות."
       embed_video_title: "וידאו על %{proposal}"
       title_external_url: "תיעוד נוסף"
       title_video_url: "מקור וידאו חיצוני"
       author: מחבר/ת
+      draft: הצעה כטיוטה. אינה יכולה לקבל תמיכה עדיין, וגם אינה מופיעה ברשימת ההצעות.
     update:
       form:
         submit_button: שמירת שינויים
-    share:
-      message: "אני תומך את בהצעה %{title} ב %{handle}. אם אתה מעוניין, תמוך בה גם!"
+  dashboard:
+    menu:
+      my_proposal: ערוך את ההצעה שלי
+      progress: התקדמות
+      resources: משאבים
+      community: קהילה
+      polls: סקרים
+      mailing: דואר אלקטרוני
+      poster: פוסטר
+      recommended_actions: פעולות מומלצות
+    form:
+      request: בקשה
+    create_request:
+      success: הבקשה נשלחה בהצלחה. אנו ניצור קשר בהקדם האפשרי בכדי לעדכנך בנושא.
+      archived: הצעה זו נמצאת בארכיון, ולא ניתן לבקש משאבים.
+    progress:
+      title: גרפיקה
+      group_by_month: חודשי
+      group_by_week: שבועי
+      group_by_date: יומי
+      progress: התקדמות מצטברת
+      supports: תומכים
+      success: התקדמות אידיאלית
+      new_action: חדש
+    index:
+      title: מהדורה
+      edit_proposal_link: ערוך הצעה
+      publish: פרסם הצעה
+      retire: פרוש מההצעה
+    new_request:
+      links: קישורים
+    resources:
+      available_resources: משאבים זמינים
+    resource:
+      required_days: "%{days} ימים נדרשים"
+      required_supports: "%{supports} תומכים נדרשים"
+      and: ו
+      view_resource: ראה משאבים
+      resource_requested: כבר נעשתה בקשה למשאב
+      request_resource: בקשת משאב
+      resource_locked: משאב נעול
+    recommended_actions:
+      title: פעולות מומלצות
+      goto_proposed_actions: גש לפעולות מומלצות
+      see_proposed_actions: בדוק פעולות מומלצות
+      hide_proposed_actions: הסתר פעולות מומלצות
+      pending_title: ממתין לאישור
+      show_description: הצג תיאור
+      without_pending_actions: אין פעולות מומלצות ממתינות
+      done_title: גמור
+      without_done_actions: אין פעולות מומלצות גמורות
+    next_goal:
+      title: מטרה
+      see_complete_course: בדוק את המסלול המלא
+      hide_course: הסתר את המסלול
+    goal:
+      target_supports:
+        one: קבל %{count} תמיכה בהצעה שלך
+        two: קבל %{count} תמיכות בהצעה שלך
+        many: קבל %{count} תמיכות בהצעה שלך
+        other: קבל %{count} תמיכות בהצעה שלך
+      days:
+        one: "%{count} יום"
+        two: "%{count} ימים"
+        many: "%{count} ימים"
+        other: "%{count} ימים"
+      locked_resource: משאב נעול
+      ideal_time: זמן אידיאלי
+    community:
+      access_community: הצטרפות לקהילה
+      latest_activity: "הפעילות האחרונה של הקהילה: %{at}"
+      participants: משתתפים
+      debates: דיונים
+      comments: הערות
+      latest_comments: הודעות אחרונות
+    polls:
+      index:
+        title: סקרים
+        create: יצירת סקר
+        count:
+          one: יצרת %{count} סקר.
+          two: יצרת %{count} סקרים.
+          many: יצרת %{count} סקרים.
+          other: יצרת %{count} סקרים.
+        links: קישורים
+        additiontal_information: מידע נוסף
+      new:
+        title: סקר חדש
+        submit: צור סקר
+      edit:
+        submit: עדכן סקר
+      poll:
+        responses:
+          one: "%{count} תגובה"
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
+        view_results: הצג תוצאות
+        edit_poll: ערוך סקר
+        show_results: הצג תוצאות
+        show_results_help: אם תבחר בתיבת סימון זו התוצאות יהיו ציבוריות, כל המשתמשים יוכלו לראות אותם
+      form:
+        add_question: הוסף שאלה
+      question_fields:
+        remove_question: הסר שאלה
+        add_answer: הוסף תשובה
+      question_answer_fields:
+        remove_answer: הסר תשובה
+    poster:
+      index:
+        title: תצוגה מקדימה של הפוסטר
+        poster_title: "אל תמשיך לחפש"
+        poster_subtitle: "תמוך בי!;)"
+        intro_text_html: "<strong>אני משתתף ב %{org}</strong> עם הצעת התושב שלי, במידה ואתה מוסיף תוכל לסייע לי להשיג את התמיכה הדרושה בכדי להפוך את העיר למקום שכולנו רוצים."
+        proposal_code: "הקוד של ההצעה: %{code}"
+        support: תמוך בהצעה שלי
+        footer_html: "<strong>בקר %{link}, ותמוך בהצעה זו.</strong>. אנו צריכים להיות רבים. תחליט גם אתה. תודה!"
+      new:
+        title: פוסטר ההצעה שלך
+      options:
+        preview: תצוגה מקדימה
+        download: הורדה
+    mailing:
+      index:
+        title: תצוגה מקדימה של דואר אלקטרוני
+      new:
+        title: דואר אלקטרוני לשיתוף
+      mailing_options:
+        send: שלח ל- %{address}
+        preview: תצוגה מקדימה
+      create:
+        sent: האימייל נשלח
+    mailer:
+      forward:
+        subtitle_html: "אם אתה תומך בי, <br>נגיע לזה."
+        support_button: תמיכה בהצעה זו
+        share_in: שתף ב
+        hi: "שלום!"
+        introduction: אני כותב בכדי ליידע אותך כי אני משתתף ב %{org}, זו הפלטפורמה בה אנו יכולים להחליט איזו עיר אנחנו רוצים. ובשביל זה, יצרתי את ההצעת התושב שלי ועכשיו, אני אצטרך את התמיכה שלך! אבל אל תדאג כי זה מאוד פשוט.
+        support: "עליך פשוט ללחוץ על הכפתור למטה 'תמוך בהצעה זו', אתה יכול לדווח לעצמך. לפני קידום. רק ההצעות שישיגו את התמיכה המרבית יקודמו על ידי מועצת העיר, וחשבתי עליך, אני בטוח. שאתה תעזור לי לקדם אותה!"
+        share: "ואם תסייע לי לשתף את ההצעה שלי עם חברים, משפחה ואנשי קשר, זה יהיה מושלם!"
   polls:
     all: "כולם"
     no_dates: "לא הוקצה תאריך"
@@ -541,6 +709,8 @@ he:
       results:
         title: "שאלות"
         most_voted_answer: "התשובות הכי מוצבעות: "
+    poll_header:
+      back_to_proposal: חזור להצעה
   poll_questions:
     show:
       vote_answer: "הצבעה %{answer}"
@@ -559,7 +729,7 @@ he:
   shared:
     edit: "ערוך"
     save: "שמירה"
-    delete: מחיקה
+    delete: "מחיקה"
     "yes": "כן"
     "no": "לא"
     search_results: "תוצאות החיפוש"
@@ -754,6 +924,7 @@ he:
       deleted_proposal: הצעה זו נמחקה
       deleted_budget_investment: השקעה זו נמחקה
       proposals: הצעות
+      proposals_status: מצב
       debates: דיונים
       budget_investments: השקעות בתקציב
       comments: הערות
@@ -790,10 +961,12 @@ he:
       send_private_message: "שליחת הודעה פרטית"
       delete_alert: "בטוח שברצונך למחוק את פרויקט ההשקעה שלך? לא ניתן לשחזר פעולה זו"
     proposals:
-      send_notification: "שלח התראה"
-      retire: "פרישה"
       retired: "פרשת מזה"
+      draft: טיוטה
+      published: פורסם
       see: "ראה/י הצעות"
+      actions: פעולות
+      retired_help_text: לוח הניהול אינו זמין להצגת הצעות שננטשו
   votes:
     agree: מסכים
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
@@ -895,3 +1068,24 @@ he:
       text_sign_in: כניסה
       text_sign_up: הרשמה
       title: איך אני יכול להגיב על מסמך זה?
+  links:
+    form:
+      delete_button: מחיקה
+      cancel_button: ביטול
+    nested_links:
+      title: קישורים
+      note: הוסף את הקישורים בעלי עניין רלוונטי
+      add_new_link: הוסף קישור חדש
+    link_fields:
+      label_placeholder: כותרת הקישור
+      url_placeholder: כתובת הקישור
+  communities:
+    show:
+      send_notification: שלח מסר לקהילה
+      author: מחבר/ת
+      surveys: סקרים
+      complete_survey: השלם את הסקר
+    subnav:
+      surveys: סקרים
+    poll:
+      take_part: קח חלק מ- %{from} ל- %{to}
