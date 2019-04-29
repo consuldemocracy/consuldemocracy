@@ -1049,8 +1049,6 @@ en:
       new:
         title: "New poll"
         show_results_and_stats: "Show results and stats"
-        show_results: "Show results"
-        show_stats: "Show stats"
         results_and_stats_reminder: "Marking these checkboxes the results and/or stats of this poll will be publicly available and every user will see them."
         submit_button: "Create poll"
       edit:
