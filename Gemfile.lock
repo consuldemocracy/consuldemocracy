@@ -366,7 +366,7 @@ GEM
       railties (= 5.0.7.2)
       sprockets-rails (>= 2.0.0)
     rails-assets-leaflet (1.2.0)
-    rails-assets-markdown-it (8.2.2)
+    rails-assets-markdown-it (8.4.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -585,7 +585,7 @@ DEPENDENCIES
   puma (~> 3.12.1)
   rails (= 5.0.7.2)
   rails-assets-leaflet!
-  rails-assets-markdown-it (~> 8.2.1)!
+  rails-assets-markdown-it (~> 8.4.2)!
   recipient_interceptor (~> 0.2.0)
   redcarpet (~> 3.4.0)
   responders (~> 2.4.0)
