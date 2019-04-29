@@ -14,7 +14,6 @@ da:
       destroy:
         notice: Billedet blev slettet.
         alert: Kan ikke fjerne billedet.
-        confirm: Er du sikker på du vil slette billedet? Handlingen kan ikke fortrydes!
     errors:
       messages:
         in_between: skal være mellem %{min} og %{max}
