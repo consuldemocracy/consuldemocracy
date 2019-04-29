@@ -291,6 +291,8 @@ nl:
     create:
       form:
         submit_button: Voorstel indienen
+    share:
+      message: "Ik heb op het voorstel %{title} in %{handle} gestemd. Stem ook!"
     edit:
       editing: Bewerk voorstel
       form:
@@ -424,7 +426,6 @@ nl:
         one: 1 opmerking
         other: "%{count} opmerkingen"
       comments_tab: Comments
-      edit_proposal_link: Edit
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
       login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
       notifications_tab: Notificaties
@@ -433,7 +434,6 @@ nl:
       retired_warning_link_to_explanation: Lees de uitleg vóór u er voor stemt.
       retired: Voorstel teruggetrokken door de auteur
       share: Deel
-      send_notification: Stuur melding
       no_notifications: "Dit voorstel heeft geen meldingen."
       embed_video_title: "Video voor %{proposal}"
       title_external_url: "Aanvullende documentatie"
@@ -442,8 +442,6 @@ nl:
     update:
       form:
         submit_button: Bewaar wijzigingen
-    share:
-      message: "Ik heb op het voorstel %{title} in %{handle} gestemd. Stem ook!"
   polls:
     all: "All"
     no_dates: "geen datum toegewezen"
@@ -525,7 +523,7 @@ nl:
   shared:
     edit: "Edit"
     save: "Save"
-    delete: Delete
+    delete: "Delete"
     "yes": "Ja"
     "no": "Nee"
     search_results: "Zoek resultaten"
@@ -736,8 +734,6 @@ nl:
       send_private_message: "Stuur privé bericht"
       delete_alert: "Weet je zeker dat je jouw investeringsproject wilt verwijderen? Dit kan niet ongedaan gemaakt worden."
     proposals:
-      send_notification: "Verzend notificatie"
-      retire: "Terugtrekken"
       retired: "Teruggetrokken"
       see: "Bekijk voorstel"
   votes:
