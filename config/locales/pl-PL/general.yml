@@ -313,6 +313,8 @@ pl:
     create:
       form:
         submit_button: Stwórz pomysł
+    share:
+      message: "Poparłem/am wniosek %{title} w %{handle}. Dołącz do mnie i także go poprzyj!"
     edit:
       editing: Edytuj wniosek
       form:
@@ -458,7 +460,6 @@ pl:
         many: "%{count} komentarzy"
         other: "%{count} komentarzy"
       comments_tab: Komentarze
-      edit_proposal_link: Edytuj
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
       login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       notifications_tab: Powiadomienia
@@ -467,7 +468,6 @@ pl:
       retired_warning_link_to_explanation: Przed głosowaniem przeczytaj wyjaśnienie.
       retired: Wniosek wycofany przez autora
       share: Udostępnij
-      send_notification: Wyślij powiadomienie
       no_notifications: "Niniejszy wniosek ma żadnych powiadomień."
       embed_video_title: "Wideo na %{proposal}"
       title_external_url: "Dodatkowa dokumentacja"
@@ -476,8 +476,6 @@ pl:
     update:
       form:
         submit_button: Zapisz zmiany
-    share:
-      message: "Poparłem/am wniosek %{title} w %{handle}. Dołącz do mnie i także go poprzyj!"
   polls:
     all: "Wszystkie"
     no_dates: "brak przypisanej daty"
@@ -559,7 +557,7 @@ pl:
   shared:
     edit: "Edytuj"
     save: "Zapisz"
-    delete: Usuń
+    delete: "Usuń"
     "yes": "Tak"
     "no": "Nie"
     search_results: "Szukaj wyników"
@@ -790,8 +788,6 @@ pl:
       send_private_message: "Wyślij prywatną wiadomość"
       delete_alert: "Czy na pewno chcesz usunąć swój projekt inwestycyjny? Tego działania nie można cofnąć"
     proposals:
-      send_notification: "Wyślij powiadomienie"
-      retire: "Wycofać"
       retired: "Wniosek wycofany"
       see: "Zobacz wniosek"
   votes:
