@@ -117,6 +117,10 @@ feature "Admin poll questions" do
     click_button "Save"
 
     expect(page).to have_content(proposal.title)
+
+    visit admin_questions_path
+
+    expect(page).to have_content(proposal.title)
   end
 
   scenario "Update" do
