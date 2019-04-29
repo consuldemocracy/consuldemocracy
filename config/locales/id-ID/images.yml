@@ -14,7 +14,6 @@ id:
       destroy:
         notice: Gambar telah berhasil dihapus.
         alert: Tidak bisa menghancurkan gambar.
-        confirm: Apakah Anda yakin ingin menghapus gambar? Tindakan ini tidak dapat dibatalkan!
     errors:
       messages:
         in_between: harus di antara %{min} dan %{max}
