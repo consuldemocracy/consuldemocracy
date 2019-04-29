@@ -376,6 +376,24 @@ he:
         back: חזור אל %{org}
         title: ניהול
         description: ברוך הבא אל %{org} פאנל הניהול.
+      actions:
+        action_type:
+          proposed_action: פעולה מוצעת
+          resource: משאב
+        index:
+          description: "כאשר משתמשים יוצרים הצעות הם יכולים לגשת למרכז השליטה של ​​ההצעה שלהם, היכן שניתן להציע משאבים והמלצות כדי לקבל תמיכה עבור הרעיון שלהם."
+          create: צור משאב או פעולה
+          edit: ערוך
+          delete: מחיקה
+          active: 'כן'
+          inactive: 'לא'
+          title: משאבים ופעולות
+          action_title: כותרת
+          action_type: סוג
+          required_supports: תומכים נדרשים
+          day_offset: ימים נדרשים
+          action_active: פעיל
+          order: ממוין
     debates:
       index:
         filter: מסנן
