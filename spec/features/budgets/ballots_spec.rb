@@ -307,6 +307,7 @@ feature "Ballots" do
 
       within("#budget_investment_#{investment1.id}") do
         find(".remove a").click
+        expect(page).to have_link "Vote"
       end
 
       visit budget_investments_path(budget, heading_id: new_york.id)

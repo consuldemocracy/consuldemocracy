@@ -445,7 +445,7 @@ so:
       form:
         submit_button: Badbaadi beddelka
     share:
-      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
+      message: "Waxaan taageeray hindisaha%{title} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
   polls:
     all: "Dhamaan"
     no_dates: "tirada taariikhda la magacaabay"

@@ -1,4 +1,4 @@
-class CreatePollBallot < ActiveRecord::Migration
+class CreatePollBallot < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_ballots do |t|
       t.integer :ballot_sheet_id

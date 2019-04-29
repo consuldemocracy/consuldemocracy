@@ -1,4 +1,4 @@
-class CreatePollBallotSheets < ActiveRecord::Migration
+class CreatePollBallotSheets < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_ballot_sheets do |t|
       t.text :data

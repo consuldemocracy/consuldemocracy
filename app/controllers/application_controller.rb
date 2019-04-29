@@ -3,6 +3,9 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
+  include AccessDeniedHandler
+
+  protect_from_forgery with: :exception
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -14,15 +17,6 @@ class ApplicationController < ActionController::Base
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
-
-  protect_from_forgery with: :exception
-
-  rescue_from CanCan::AccessDenied do |exception|
-    respond_to do |format|
-      format.html { redirect_to main_app.root_url, alert: exception.message }
-      format.json { render json: {error: exception.message}, status: :forbidden }
-    end
-  end
 
   layout :set_layout
   respond_to :html

@@ -3,11 +3,13 @@ require "rails_helper"
 describe Management::SessionsController do
 
   describe "Sign in" do
+
     it "denies access if wrong manager credentials" do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(false)
-      expect {
-        get :create, params: { login: "nonexistent", clave_usuario: "wrong" }
-      }.to raise_error CanCan::AccessDenied
+      get :create, params: { login: "nonexistent", clave_usuario: "wrong" }
+
+      expect(response).to redirect_to "/"
+      expect(flash[:alert]).to eq "You do not have permission to access this page."
       expect(session[:manager]).to be_nil
     end
 
@@ -42,7 +44,10 @@ describe Management::SessionsController do
 
     it "denies access if user is not admin or manager" do
       sign_in create(:user)
-      expect { get :create}.to raise_error CanCan::AccessDenied
+      get :create
+
+      expect(response).to redirect_to "/"
+      expect(flash[:alert]).to eq "You do not have permission to access this page."
       expect(session[:manager]).to be_nil
     end
   end
