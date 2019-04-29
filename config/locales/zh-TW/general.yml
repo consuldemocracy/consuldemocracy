@@ -406,7 +406,6 @@ zh-TW:
         zero: 沒有評論
         other: "%{count} 個評論"
       comments_tab: 評論
-      edit_proposal_link: 編輯
       flag: 此建議已被一些用戶標記為不適當。
       login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
       notifications_tab: 通知
@@ -415,7 +414,6 @@ zh-TW:
       retired_warning_link_to_explanation: 投票前請閱讀其說明。
       retired: 建議已被作者撤回
       share: 共用
-      send_notification: 發送通知
       no_notifications: "此建議沒有任何通知。"
       embed_video_title: "%{proposal} 上的視頻"
       title_external_url: "額外文檔"
@@ -505,7 +503,7 @@ zh-TW:
   shared:
     edit: "編輯"
     save: "儲存"
-    delete: 刪除
+    delete: "刪除"
     "yes": "是的"
     "no": "否"
     search_results: "搜尋結果"
@@ -706,8 +704,6 @@ zh-TW:
       send_private_message: "發送私人消息"
       delete_alert: "您確定要刪除您的投資項目嗎？ 此操作將無法撤消"
     proposals:
-      send_notification: "發送通知"
-      retire: "撤回"
       retired: "已撤回建議"
       see: "查看建議"
   votes:
