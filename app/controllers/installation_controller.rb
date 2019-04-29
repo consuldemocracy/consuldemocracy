@@ -12,7 +12,7 @@ class InstallationController < ApplicationController
 
   def consul_installation_details
    {
-     release: "v0.19"
+     release: "1.0.0-beta"
    }.merge(features: settings_feature_flags)
   end
 
