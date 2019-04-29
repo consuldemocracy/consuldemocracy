@@ -388,7 +388,6 @@ id:
         zero: Tidak ada komentar
         other: "%{count} komentar"
       comments_tab: Komentar
-      edit_proposal_link: Sunting
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
       login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
       notifications_tab: Pemberitahuan
@@ -397,7 +396,6 @@ id:
       retired_warning_link_to_explanation: Baca penjelasan sebelum pemungutan suara untuk itu.
       retired: Proposal pensiun oleh penulis
       share: Berbagi
-      send_notification: Mengirim pemberitahuan
       no_notifications: "Proposal ini memiliki pemberitahuan."
       embed_video_title: "Video pada %{proposal}"
       title_external_url: "Dokumentasi tambahan"
@@ -482,7 +480,7 @@ id:
   shared:
     edit: "Sunting"
     save: "Simpan"
-    delete: Hapus
+    delete: "Hapus"
     "yes": "Ya"
     "no": "Tidak"
     search_results: "Hasil pencarian"
@@ -673,8 +671,6 @@ id:
       private_activity: Pengguna ini memutuskan untuk membuat daftar kegiatan pribadi.
       send_private_message: "Kirim pesan pribadi"
     proposals:
-      send_notification: "Kirim pemberitahuan"
-      retire: "Pensiun"
       retired: "Pensiun proposal"
       see: "Melihat proposal"
   votes:
