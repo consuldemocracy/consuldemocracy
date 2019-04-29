@@ -93,6 +93,10 @@ module Statisticable
     "v#{resource.find_or_create_stats_version.updated_at.to_i}"
   end
 
+  def advanced?
+    resource.advanced_stats_enabled?
+  end
+
   private
 
     def base_stats_methods

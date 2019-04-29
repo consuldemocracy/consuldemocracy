@@ -7,6 +7,22 @@ feature "Stats" do
   let(:heading) { create(:budget_heading, group: group, price: 1000) }
 
   describe "Show" do
-  end
+    describe "advanced stats" do
+      let(:budget) { create(:budget, :finished) }
 
+      scenario "advanced stats enabled" do
+        budget.update(advanced_stats_enabled: true)
+
+        visit budget_stats_path(budget)
+
+        expect(page).to have_content "Advanced statistics"
+      end
+
+      scenario "advanced stats disabled" do
+        visit budget_stats_path(budget)
+
+        expect(page).not_to have_content "Advanced statistics"
+      end
+    end
+  end
 end

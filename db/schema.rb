@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190424114803) do
+ActiveRecord::Schema.define(version: 20190429125842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1239,8 +1239,9 @@ ActiveRecord::Schema.define(version: 20190424114803) do
     t.boolean  "results"
     t.string   "process_type"
     t.integer  "process_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.boolean  "advanced_stats"
     t.index ["process_type", "process_id"], name: "index_reports_on_process_type_and_process_id", using: :btree
   end
 

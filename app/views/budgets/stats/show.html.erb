@@ -41,12 +41,12 @@
   <div class="row margin">
     <div class="small-12 medium-3 column sidebar">
       <%= render "shared/stats/links", stats: @stats %>
-      <%= render "advanced_stats_links" %>
+      <%= render "advanced_stats_links" if @stats.advanced? %>
     </div>
 
     <div class="small-12 medium-9 column stats-content">
       <%= render "shared/stats/participation", stats: @stats %>
-      <%= render "advanced_stats", stats: @stats %>
+      <%= render "advanced_stats", stats: @stats if @stats.advanced? %>
 
       <div class="row margin">
         <div class="small-12 column">

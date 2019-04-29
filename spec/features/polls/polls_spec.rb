@@ -432,7 +432,18 @@ feature "Polls" do
       expect(page).to have_content("Questions")
 
       visit stats_poll_path(poll)
+
       expect(page).to have_content("Participation data")
+      expect(page).not_to have_content "Advanced statistics"
+    end
+
+    scenario "Advanced stats enabled" do
+      poll = create(:poll, :expired, stats_enabled: true, advanced_stats_enabled: true)
+
+      visit stats_poll_path(poll)
+
+      expect(page).to have_content "Participation data"
+      expect(page).to have_content "Advanced statistics"
     end
 
     scenario "Don't show poll results and stats if not enabled" do
