@@ -422,7 +422,6 @@ de:
         one: 1 Kommentar
         other: "%{count} Kommentare"
       comments_tab: Kommentare
-      edit_proposal_link: Bearbeiten
       flag: Dieser Vorschlag wurde von verschiedenen Benutzern als unangebracht gemeldet.
       login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
       notifications_tab: Benachrichtigungen
@@ -431,7 +430,6 @@ de:
       retired_warning_link_to_explanation: Lesen Sie die Erläuterung, bevor Sie abstimmen.
       retired: Vorschlag vom Autor zurückgezogen
       share: Teilen
-      send_notification: Benachrichtigung senden
       no_notifications: "Dieser Vorschlag enthält keine Benachrichtigungen."
       embed_video_title: "Video über %{proposal}"
       title_external_url: "Zusätzliche Dokumentation"
@@ -521,7 +519,7 @@ de:
   shared:
     edit: "Bearbeiten"
     save: "Speichern"
-    delete: Löschen
+    delete: "Löschen"
     "yes": "Ja"
     "no": "Nein"
     search_results: "Suchergebnisse"
@@ -732,8 +730,6 @@ de:
       send_private_message: "Private Nachricht senden"
       delete_alert: "Sind Sie sicher, dass Sie Ihr Investitionsprojekt löschen wollen? Diese Aktion kann nicht widerrufen werden!"
     proposals:
-      send_notification: "Benachrichtigung senden"
-      retire: "Ruhezustand"
       retired: "Vorschlag im Ruhezustand"
       see: "Vorschlag anzeigen"
   votes:
