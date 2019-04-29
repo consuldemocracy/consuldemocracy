@@ -1,4 +1,4 @@
-class ActivePoll < ActiveRecord::Base
+class ActivePoll < ApplicationRecord
   include Measurable
 
   translates :description, touch: true

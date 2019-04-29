@@ -5,7 +5,7 @@
   <%= link_to investment.title,
               admin_budget_budget_investment_path(budget_id: @budget.id,
                                                   id: investment.id,
-                                                  params: Budget::Investment.filter_params(params)),
+                                                  params: Budget::Investment.filter_params(params).to_h),
               target: "_blank" %>
 </td>
 <td class="text-center">
@@ -31,8 +31,10 @@
   <%= investment.heading.name %>
 </td>
 <td class="small">
-  <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}",
-        price: investment.formatted_price) %>
+  <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
+</td>
+<td class="small">
+  <%= investment.formatted_price %>
 </td>
 <td class="small text-center">
   <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
@@ -54,6 +56,7 @@
                                                                               filter: params[:filter],
                                                                               sort_by: params[:sort_by],
                                                                               min_total_supports: params[:min_total_supports],
+                                                                              max_total_supports: params[:max_total_supports],
                                                                               advanced_filters: params[:advanced_filters],
                                                                               page: params[:page]),
                          method: :patch,
@@ -67,6 +70,7 @@
                                                                               filter: params[:filter],
                                                                               sort_by: params[:sort_by],
                                                                               min_total_supports: params[:min_total_supports],
+                                                                              max_total_supports: params[:max_total_supports],
                                                                               advanced_filters: params[:advanced_filters],
                                                                               page: params[:page]),
                          method: :patch,

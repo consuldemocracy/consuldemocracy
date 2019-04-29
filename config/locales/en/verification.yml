@@ -8,7 +8,7 @@ en:
         alert:
           failure: There was a problem with sending an email to your account
         flash:
-          success: 'We have sent a confirmation email to your account: %{email}'
+          success: "We have sent a confirmation email to your account: %{email}"
       show:
         alert:
           failure: Verification code incorrect
@@ -26,7 +26,7 @@ en:
       errors:
         incorrect_code: Verification code incorrect
       new:
-        explanation: 'For participate on final voting you can:'
+        explanation: "For participate on final voting you can:"
         go_to_index: See proposals
         office: Verify in any Citizen Support Offices
         send_letter: Send me a letter with the code
@@ -50,7 +50,7 @@ en:
         date_of_birth: Date of birth
         document_number: Document number
         document_number_help_title: Help
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Passport
           residence_card: Residence card

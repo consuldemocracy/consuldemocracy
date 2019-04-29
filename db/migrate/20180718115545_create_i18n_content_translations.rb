@@ -1,4 +1,4 @@
-class CreateI18nContentTranslations < ActiveRecord::Migration
+class CreateI18nContentTranslations < ActiveRecord::Migration[4.2]
   def change
     create_table :i18n_contents do |t|
       t.string :key

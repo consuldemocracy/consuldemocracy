@@ -17,7 +17,7 @@ class ProposalsController < ApplicationController
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders ->(c) { Proposal.proposals_orders(c.current_user) }, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   load_and_authorize_resource
   helper_method :resource_model, :resource_name
@@ -27,22 +27,28 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     @notifications = @proposal.notifications.not_moderated
-    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents)
+                                .page(params[:page]).per(5)
 
-    redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+    if request.path != proposal_path(@proposal)
+      redirect_to proposal_path(@proposal), status: :moved_permanently
+    end
   end
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
-      redirect_to share_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
+      redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
     end
   end
 
+  def created; end
+
   def index_customization
+    discard_draft
     discard_archived
     load_retired
     load_featured
@@ -82,13 +88,19 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def publish
+    @proposal.publish
+    redirect_to share_proposal_path(@proposal), notice: t("proposals.notice.published")
+  end
+
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map,
-                                       image_attributes: image_attributes,
-                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url,
+                                       :video_url, :responsible_name, :tag_list, :terms_of_service,
+                                       :geozone_id, :skip_map, image_attributes: image_attributes,
+                                       documents_attributes: [:id, :title, :attachment,
+                                       :cached_attachment, :user_id, :_destroy],
                                        map_location_attributes: [:latitude, :longitude, :zoom])
     end
 
@@ -108,6 +120,10 @@ class ProposalsController < ApplicationController
 
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    end
+
+    def discard_draft
+      @resources = @resources.published
     end
 
     def discard_archived
@@ -151,5 +167,4 @@ class ProposalsController < ApplicationController
         @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
       end
     end
-
 end

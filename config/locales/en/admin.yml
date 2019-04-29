@@ -14,6 +14,8 @@ en:
       edit: Edit
       configure: Configure
       delete: Delete
+    officing_booth:
+      title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
       index:
         title: Banners
@@ -83,8 +85,10 @@ en:
         table_investments: Investments
         table_edit_groups: Headings groups
         table_edit_budget: Edit
+        table_admin_ballots: Ballots
         edit_groups: Edit headings groups
         edit_budget: Edit budget
+        admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
       create:
         notice: New participatory budget created successfully!
@@ -191,6 +195,7 @@ en:
           undecided: Undecided
           unfeasible: Unfeasible
           min_total_supports: Minimum supports
+          max_total_supports: Maximum supports
           winners: Winners
           one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -204,7 +209,7 @@ en:
         no_valuators_assigned: No valuators assigned
         no_valuation_groups: No valuation groups assigned
         feasibility:
-          feasible: "Feasible (%{price})"
+          feasible: "Feasible"
           unfeasible: "Unfeasible"
           undecided: "Undecided"
         selected: "Selected"
@@ -223,6 +228,7 @@ en:
           visible_to_valuators: Show to valuators
           author_username: Author username
           incompatible: Incompatible
+          price: Price
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
       show:
@@ -364,6 +370,65 @@ en:
         back: Go back to %{org}
         title: Administration
         description: Welcome to the %{org} admin panel.
+      actions:
+        action_type:
+          proposed_action: Proposed action
+          resource: Resource
+        index:
+          description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
+          create: Create resource or action
+          edit: Edit
+          delete: Delete
+          active: 'Yes'
+          inactive: 'No'
+          title: Resources and actions
+          action_title: Title
+          action_type: Type
+          required_supports: Required supports
+          day_offset: Required days
+          action_active: Active
+          order: Order
+          published_proposal: Published proposal
+          default:
+            email: Email
+            polls: Polls
+            poster: Poster
+        new:
+          creating: New action for the proposals dashboard
+          back: Back to list
+        create:
+          notice: Action created successfully
+        edit:
+          editing: Edit action for the proposals dashboard
+          back: Back to list
+        delete:
+          success: Action successfully deleted
+        form:
+          submit_button: Save
+          help_text: Enter 0 so that this value is not taken into account
+          published_proposal: For published proposals?
+          published_proposal_help_text: Mark this checkbox to create the action only for published proposals
+      administrator_tasks:
+        index:
+          description: "Resources published in the dashboard of proposals may include a button to be requested to administrators. User requests are shown below."
+          title: Resources requested
+          solve: Solve
+          no_records: There are no resources requested
+          source: Source
+          resource: Requested resource
+          filter: Filter
+          filters:
+            pending: Pending
+            done: Solved
+        edit:
+          back: Back to pending tasks list
+          solving: Solve pending task
+        form:
+          solve: Mark as solved
+          proposal: Proposal
+          request: Requested resource
+        update:
+          success: The task has been marked as solved.
     debates:
       index:
         filter: Filter
@@ -384,9 +449,9 @@ en:
         user: User
         no_hidden_users: There are no hidden users.
       show:
-        email: 'Email:'
-        hidden_at: 'Hidden at:'
-        registered_at: 'Registered at:'
+        email: "Email:"
+        hidden_at: "Hidden at:"
+        registered_at: "Registered at:"
         title: Activity of user (%{user})
     hidden_budget_investments:
       index:
@@ -577,7 +642,7 @@ en:
         add: Add
         delete: Delete
       search:
-        title: 'Managers: User search'
+        title: "Managers: User search"
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -639,6 +704,9 @@ en:
       title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
+      dashboard: Proposals dashboard
+      administrator_tasks: Resources requested
+      dashboard_actions: Resources and actions
     administrators:
       index:
         title: Administrators
@@ -662,7 +730,7 @@ en:
         add: Add
         delete: Delete
       search:
-        title: 'Moderators: User search'
+        title: "Moderators: User search"
     segment_recipient:
       all_users: All users
       administrators: Administrators
@@ -816,7 +884,7 @@ en:
         add: Add to valuators
         delete: Delete
       search:
-        title: 'Valuators: User search'
+        title: "Valuators: User search"
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator
@@ -1091,10 +1159,10 @@ en:
         edit: "Edit booth"
     officials:
       edit:
-        destroy: Remove 'Official' status
-        title: 'Officials: Edit user'
+        destroy: Remove "Official" status
+        title: "Officials: Edit user"
       flash:
-        official_destroyed: 'Details saved: the user is no longer an official'
+        official_destroyed: "Details saved: the user is no longer an official"
         official_updated: Details of official saved
       index:
         title: Officials
@@ -1112,7 +1180,7 @@ en:
       search:
         edit_official: Edit official
         make_official: Make official
-        title: 'Official positions: User search'
+        title: "Official positions: User search"
         no_results: Official positions not found.
     organizations:
       index:
@@ -1190,6 +1258,8 @@ en:
           form:
             submit: Update
           how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
+        dashboard:
+          title: Proposals dashboard
       setting: Feature
       setting_actions: Actions
       setting_name: Setting
@@ -1305,7 +1375,7 @@ en:
         form:
           error:
             one: "error prevented this geozone from being saved"
-            other: 'errors prevented this geozone from being saved'
+            other: "errors prevented this geozone from being saved"
       edit:
         form:
           submit_button: Save changes

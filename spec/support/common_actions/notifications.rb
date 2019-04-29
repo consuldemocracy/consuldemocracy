@@ -10,7 +10,7 @@ module Notifications
   end
 
   def comment_body(resource)
-    "comment-body-#{resource.class.name.parameterize("_").to_sym}_#{resource.id}"
+    "comment-body-#{resource.class.name.parameterize(separator: "_").to_sym}_#{resource.id}"
   end
 
   def create_proposal_notification(proposal)
@@ -20,8 +20,11 @@ module Notifications
     click_link "My activity"
 
     within("#proposal_#{proposal.id}") do
-      click_link "Send notification"
+      click_link proposal.title
     end
+
+    click_link "Access the community"
+    click_link "Send message to the community"
 
     fill_in "proposal_notification_title", with: "Thanks for supporting proposal: #{proposal.title}"
     fill_in "proposal_notification_body", with: "Please share it with others! #{proposal.summary}"

@@ -35,6 +35,9 @@ services:
     volumes:
       - .:/var/www/consul:delegated
       - bundle:/usr/local/bundle:delegated
+      - "$SSH_AUTH_SOCK:/tmp/agent.sock"
+    environment:
+      - SSH_AUTH_SOCK=/tmp/agent.sock
 volumes:
   docker-example-postgres: {}
   bundle: {}

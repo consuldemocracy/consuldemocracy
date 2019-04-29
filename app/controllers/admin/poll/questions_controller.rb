@@ -6,7 +6,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   load_and_authorize_resource :question, class: "Poll::Question"
 
   def index
-    @polls = Poll.all
+    @polls = Poll.not_budget
     @search = search_params[:search]
 
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")

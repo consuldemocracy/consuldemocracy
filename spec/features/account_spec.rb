@@ -172,7 +172,7 @@ feature "Account" do
 
     login_through_form_as(@user)
 
-    expect(page).to have_content "Invalid login or password"
+    expect(page).to have_content "Invalid Email or username or password"
   end
 
   context "Recommendations" do

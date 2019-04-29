@@ -153,6 +153,8 @@ ignore_unused:
   - "admin.booths.*.submit_button"
   - "admin.admin_notifications.*.submit_button"
   - "admin.homepage.*"
+  - "admin.dashboard.administrator_tasks.index.filter*"
+  - "admin.dashboard.actions.index.default.*"
   - "moderation.comments.index.filter*"
   - "moderation.comments.index.order*"
   - "moderation.debates.index.filter*"
@@ -171,6 +173,7 @@ ignore_unused:
   - "polls.index.filters.*"
   - "polls.index.section_header.*"
   - "polls.index.orders.*"
+  - "dashboard.recommended_actions.*"
   - "debates.index.select_order"
   - "debates.index.orders.*"
   - "debates.index.section_header.*"
@@ -196,6 +199,20 @@ ignore_unused:
 # - "simple_form.{yes,no}"
 # - "simple_form.{placeholders,hints,labels}.*"
 # - "simple_form.{error_notification,required}.:"
+#### Review unused keys after merge with Budgest (both en and es)
+  - users.show.confirm_deletion_spending_proposal
+  - users.show.delete_spending_proposal
+  - verification.letter.create.flash.offices_url
+  - verification.letter.new.offices_url
+  - votes.budget_investments.different_heading_assigned*
+  - layouts.header.open_city_title
+  - admin.stats.polls.current
+  - admin.stats.polls.expired
+  - "stats.polls.*_percentage"
+  - landings.cambia_tu_ciudad.*
+  - 'seeds.settings.*'
+  - "dashboard.polls.*.submit"
+####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:
 #   all:

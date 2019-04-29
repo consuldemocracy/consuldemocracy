@@ -1,5 +1,5 @@
 class Poll
-  class Voter < ActiveRecord::Base
+  class Voter < ApplicationRecord
 
     VALID_ORIGINS = %w{web booth}.freeze
 
@@ -12,11 +12,13 @@ class Poll
 
     validates :poll_id, presence: true
     validates :user_id, presence: true
+    validates :booth_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
+    validates :officer_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
     validates :origin, inclusion: { in: VALID_ORIGINS }
 
-    before_validation :set_demographic_info, :set_document_info
+    before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
 
     scope :web,   -> { where(origin: "web") }
     scope :booth, -> { where(origin: "booth") }
@@ -37,6 +39,10 @@ class Poll
     end
 
     private
+
+      def set_denormalized_booth_assignment_id
+        self.booth_assignment_id ||= officer_assignment.try(:booth_assignment_id)
+      end
 
       def in_census?
         census_api_response.valid?

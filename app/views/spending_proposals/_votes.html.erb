@@ -4,7 +4,7 @@
   <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
   <% user_voted_for = voted_for?(@spending_proposal_votes, spending_proposal) %>
 
-  <span class="total-supports <%= 'no-button' unless voting_allowed || user_voted_for %>">
+  <span class="total-supports <%= "no-button" unless voting_allowed || user_voted_for %>">
     <%= t("spending_proposals.spending_proposal.supports", count: spending_proposal.total_votes) %>
   </span>
 

@@ -5,6 +5,9 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
+
+  config.forcePasteAsPlainText = true;
+
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
   config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
   config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";

@@ -57,9 +57,9 @@ module MapLocationsHelper
       map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
       marker_editable: editable,
       marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
-      latitude_input_selector: "##{map_location_input_id(parent_class, 'latitude')}",
-      longitude_input_selector: "##{map_location_input_id(parent_class, 'longitude')}",
-      zoom_input_selector: "##{map_location_input_id(parent_class, 'zoom')}",
+      latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
+      longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
+      zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
       marker_investments_coordinates: investments_coordinates
     }
     options[:marker_latitude] = map_location.latitude if map_location.latitude.present?

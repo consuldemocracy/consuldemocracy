@@ -57,6 +57,8 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Manager
       can [:search, :index], ::User
 
+      can :manage, Dashboard::Action
+
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
       can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
       can [:read, :create, :update, :destroy], Budget::Group
@@ -95,6 +97,7 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
+      can [:manage], Dashboard::AdministratorTask
     end
   end
 end

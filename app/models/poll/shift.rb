@@ -1,5 +1,5 @@
 class Poll
-  class Shift < ActiveRecord::Base
+  class Shift < ApplicationRecord
     belongs_to :booth
     belongs_to :officer
 

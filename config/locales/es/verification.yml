@@ -8,7 +8,7 @@ es:
         alert:
           failure: Hubo un problema enviándote un email a tu cuenta
         flash:
-          success: 'Te hemos enviado un email de confirmación a tu cuenta: %{email}'
+          success: "Te hemos enviado un email de confirmación a tu cuenta: %{email}"
       show:
         alert:
           failure: Código de verificación incorrecto
@@ -26,11 +26,11 @@ es:
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        explanation: 'Para participar en las votaciones finales puedes:'
+        explanation: "Para participar en las votaciones finales puedes:"
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier Oficina de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
-        title: '¡Felicidades!'
+        title: "¡Felicidades!"
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
@@ -50,7 +50,7 @@ es:
         date_of_birth: Fecha de nacimiento
         document_number: Número de documento
         document_number_help_title: Ayuda
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P"
         document_type:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
@@ -72,7 +72,7 @@ es:
       edit:
         confirmation_code: Introduce el código que has recibido en tu móvil
         resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
+        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
         submit_button: Enviar
         title: SMS de confirmación
       new:

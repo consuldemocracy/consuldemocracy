@@ -281,7 +281,9 @@ feature "Admin budgets" do
       expect(page).not_to have_content "Calculate Winner Investments"
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Winners"
+      click_link "Advanced filters"
+      check "Winners"
+      click_button "Filter"
 
       expect(page).to have_content "Recalculate Winner Investments"
       expect(page).not_to have_content "Calculate Winner Investments"

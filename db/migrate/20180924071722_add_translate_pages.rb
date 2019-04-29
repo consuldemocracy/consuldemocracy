@@ -1,4 +1,4 @@
-class AddTranslatePages < ActiveRecord::Migration
+class AddTranslatePages < ActiveRecord::Migration[4.2]
   def self.up
     SiteCustomization::Page.create_translation_table!(
       {

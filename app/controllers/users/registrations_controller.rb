@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
-  before_filter :configure_permitted_parameters
+  before_action :configure_permitted_parameters
 
   invisible_captcha only: [:create], honeypot: :address, scope: :user
 
@@ -66,7 +66,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:account_update).push(:email)
+      devise_parameter_sanitizer.permit(:account_update, keys: [:email])
     end
 
     def erase_params

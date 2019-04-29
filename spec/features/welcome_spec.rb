@@ -4,6 +4,11 @@ feature "Welcome screen" do
 
   let(:budget) { create(:budget) }
 
+  scenario "requires a logged in user" do
+    visit welcome_path
+    expect(page).to have_content "You must sign in or register to continue."
+  end
+
   scenario "for a not verified user" do
     user = create(:user)
     login_through_form_as(user)

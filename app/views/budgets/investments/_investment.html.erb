@@ -1,5 +1,5 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel <%= ('with-image' if feature?(:allow_images) && investment.image.present?) %>">
+  <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
 
     <% investements_demo = [21, 22, 23, 24, 25] %>
     <% if investements_demo.include?(investment.id) %>
@@ -88,7 +88,7 @@
               </span>
             </div>
           </div>
-        <% elsif investment.should_show_ballots? %>
+        <% elsif investment.should_show_ballots? && !management_controller? %>
           <div id="<%= dom_id(investment) %>_ballot"
                 class="small-12 medium-3 column text-center"
                 <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>

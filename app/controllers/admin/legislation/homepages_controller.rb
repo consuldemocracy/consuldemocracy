@@ -9,7 +9,8 @@ class Admin::Legislation::HomepagesController < Admin::Legislation::BaseControll
   def update
     if @process.update(process_params)
       link = legislation_process_path(@process).html_safe
-      redirect_to :back, notice: t("admin.legislation.processes.update.notice", link: link)
+      redirect_back(fallback_location: (request.referrer || root_path),
+                    notice: t("admin.legislation.processes.update.notice", link: link))
     else
       flash.now[:error] = t("admin.legislation.processes.update.error")
       render :edit

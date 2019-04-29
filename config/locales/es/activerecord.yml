@@ -61,6 +61,9 @@ es:
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      poll/ballot_sheet:
+        one: Papeleta de votación
+        other: Papeletas de votación
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
@@ -108,7 +111,16 @@ es:
         other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
-        other: "Notificaciones de propuesta"
+        other: "Notificaciones de propuestas"
+      dashboard/action:
+        one: Acción del panel de control de propuestas
+        other: Acciones del panel de control de propuestas
+      dashboard/administrator_task:
+        one: Tarea
+        other: Tareas
+      link:
+        one: Enlace
+        other: Enlaces
     attributes:
       budget:
         name: "Nombre"
@@ -208,6 +220,10 @@ es:
         external_url: "Enlace a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
+      poll/ballot_sheet:
+        data: Datos de CSV
+        poll_id: Votación
+        officer_assignment_id: Turno
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
@@ -321,6 +337,24 @@ es:
         link_text: Texto del enlace
       widget/feed:
         limit: Número de elementos
+      dashboard/action:
+        title: Título
+        short_description: Descripción corta
+        description: Descripción
+        link: Enlace externo
+        request_to_administrators: Incluir en el recurso un botón para solicitar el recurso a los administradores
+        day_offset: ¿En cuántos días tras la creación de la propuesta quieres que se active?
+        required_supports: ¿Cuántos apoyos tiene que conseguir la propuesta para que se active?
+        order: Puedes introducir la posición en la que se mostrará al usuario esta acción en la lista de acciones
+        active: Activa
+        action_type: Tipo
+      dashboard/administrator_task:
+        source: Fuente
+        user: Ejecutado por
+        executed_at: Ejecutado el
+      link:
+        label: Título
+        url: Enlace
     errors:
       models:
         user:
@@ -382,8 +416,8 @@ es:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificado por Padrón'
-              already_voted: 'Ya ha votado esta propuesta'
+              not_in_census: "No verificado por Padrón"
+              already_voted: "Ya ha votado esta propuesta"
         site_customization/page:
           attributes:
             slug:
@@ -396,9 +430,10 @@ es:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'No puedes comentar una evaluación'
+              cannot_comment_valuation: "No puedes comentar una evaluación"
       messages:
         record_invalid: "Error de validación: %{errors}"
+        another_poll_active: Hay otra encuesta activa para este periodo.
         restrict_dependent_destroy:
           has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
           has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

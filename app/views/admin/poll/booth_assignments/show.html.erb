@@ -83,7 +83,7 @@
       <tbody>
       <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
         <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
-        <tr id="recounting_<%= voting_date.strftime('%Y%m%d') %>">
+        <tr id="recounting_<%= voting_date.strftime("%Y%m%d") %>">
           <td><%= l voting_date %></td>
           <td class="text-center"><%= system_count %></td>
         </tr>

@@ -4,7 +4,7 @@ es:
       title: Administración
     actions:
       actions: Acciones
-      confirm: '¿Estás seguro?'
+      confirm: "¿Estás seguro?"
       confirm_hide: Confirmar moderación
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -14,6 +14,8 @@ es:
       edit: Editar
       configure: Configurar
       delete: Borrar
+    officing_booth:
+      title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
       index:
         title: Banners
@@ -83,11 +85,13 @@ es:
         table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
+        table_admin_ballots: Urnas
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
+        admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
-        notice: '¡Presupuestos participativos creados con éxito!'
+        notice: "¡Presupuestos participativos creados con éxito!"
       update:
         notice: Presupuestos participativos actualizados
       edit:
@@ -191,6 +195,7 @@ es:
           undecided: Sin decidir
           unfeasible: Inviables
           min_total_supports: Apoyos mínimos
+          max_total_supports: Apoyos máximos
           winners: Ganadores
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
           two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -204,7 +209,7 @@ es:
         no_valuators_assigned: Sin evaluador
         no_valuation_groups: Sin grupos evaluadores
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
@@ -223,6 +228,7 @@ es:
           visible_to_valuators: Mostrar a evaluadores
           author_username: Usuario autor
           incompatible: Incompatible
+          price: Precio
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
       show:
@@ -300,7 +306,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: '¡Nuevo hito creado con éxito!'
+        notice: "¡Nuevo hito creado con éxito!"
       update:
         notice: Hito actualizado
       delete:
@@ -364,6 +370,65 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+      actions:
+        action_type:
+          proposed_action: Acción propuesta
+          resource: Recurso
+        index:
+          description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
+          create: Crear recurso o acción
+          edit: Editar
+          delete: Borrar
+          active: 'Si'
+          inactive: 'No'
+          title: Recursos y acciones
+          action_title: Título
+          action_type: Tipo
+          required_supports: Apoyos necesarios
+          day_offset: Días necesarios
+          action_active: Activo
+          order: Orden
+          published_proposal: Propuesta publicada
+          default:
+            email: Correo electrónico
+            polls: Encuestas
+            poster: Póster
+        new:
+          creating: Nueva acción para el dashboard de propuestas
+          back: Volver a la lista
+        create:
+          notice: Acción creada con éxito
+        edit:
+          editing: Editar acción para el dashboard de propuestas
+          back: Volver a la lista
+        form:
+          submit_button: Guardar
+          help_text: Introduce 0 para que este valor no se tenga en cuenta
+          published_proposal: ¿Para propuestas publicadas?
+          published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
+        delete:
+          success: Acción borrada con éxito
+      administrator_tasks:
+        index:
+          description: "Los recursos publicados en el panel de progreso de las propuestas pueden incluir un botón para ser solicitados a los administradores. A continuación se muestran las solicitudes de los usuarios."
+          title: Recursos solicitados
+          solve: Resolver
+          no_records: No hay recursos solicitados
+          source: Propuesta
+          resource: Recurso solicitado
+          filter: Filtro
+          filters:
+            pending: Pendientes
+            done: Resueltos
+        edit:
+          back: Volver a la lista de tareas pendientes
+          solving: Resolver tarea pendiente
+        form:
+          solve: Marcar como resuelta
+          proposal: Propuesta
+          request: Recurso solicitado
+        update:
+          success: La tarea ha sido marcada como resuelta
     debates:
       index:
         filter: Filtro
@@ -384,9 +449,9 @@ es:
         user: Usuario
         no_hidden_users: No hay usuarios bloqueados.
       show:
-        email: 'Email:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
+        email: "Email:"
+        hidden_at: "Bloqueado:"
+        registered_at: "Fecha de alta:"
         title: Actividad del usuario (%{user})
     hidden_budget_investments:
       index:
@@ -576,7 +641,7 @@ es:
         add: Añadir como gestor
         delete: Borrar
       search:
-        title: 'Gestores: Búsqueda de usuarios'
+        title: "Gestores: Búsqueda de usuarios"
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -638,6 +703,9 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
+      dashboard: Panel de progreso de propuestas
+      administrator_tasks: Recursos solicitados
+      dashboard_actions: Recursos y acciones
     administrators:
       index:
         title: Administradores
@@ -661,7 +729,7 @@ es:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        title: 'Moderadores: Búsqueda de usuarios'
+        title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
       all_users: Todos los usuarios
       administrators: Administradores
@@ -707,7 +775,7 @@ es:
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
-        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
+        send_alert: "¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?"
     admin_notifications:
       create_success: Notificación creada correctamente
       update_success: Notificación actualizada correctamente
@@ -744,7 +812,7 @@ es:
         segment_recipient: Destinatarios
         preview_guide: "Así es como los usuarios verán la notificación:"
         sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: '¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?'
+        send_alert: "¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?"
     system_emails:
       preview_pending:
         action: Previsualizar pendientes
@@ -815,7 +883,7 @@ es:
         add: Añadir como evaluador
         delete: Borrar
       search:
-        title: 'Evaluadores: Búsqueda de usuarios'
+        title: "Evaluadores: Búsqueda de usuarios"
       summary:
         title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
@@ -1090,10 +1158,10 @@ es:
         edit: "Editar urna"
     officials:
       edit:
-        destroy: Eliminar condición de 'Cargo Público'
-        title: 'Cargos Públicos: Editar usuario'
+        destroy: Eliminar condición de "Cargo Público"
+        title: "Cargos Públicos: Editar usuario"
       flash:
-        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+        official_destroyed: "Datos guardados: el usuario ya no es cargo público"
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
@@ -1111,7 +1179,7 @@ es:
       search:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
     organizations:
       index:
@@ -1183,12 +1251,14 @@ es:
           disable: "Desactivar"
         map:
           title: Configuración del mapa
-          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón "Actualizar".
           flash:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
           how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
+        dashboard:
+          title: Panel de progreso de propuestas
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración
@@ -1304,7 +1374,7 @@ es:
         form:
           error:
             one: "error impidió guardar la zona."
-            other: 'errores impidieron guardar la zona.'
+            other: "errores impidieron guardar la zona."
       edit:
         form:
           submit_button: Guardar cambios

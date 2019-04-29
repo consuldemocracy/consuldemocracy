@@ -67,7 +67,7 @@
       <%= f.label t("verification.residence.new.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: 16.years.ago.year,
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year,
                         label: false %>
       </div>
 

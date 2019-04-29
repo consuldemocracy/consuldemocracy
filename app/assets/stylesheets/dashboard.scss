@@ -1,0 +1,747 @@
+// Table of Contents
+//
+// 01. Dashboard global
+// 02. Actions
+// 03. Resources
+// 04. Goals
+// 05. Sidebar
+// 06. Community
+// 07. Graph
+// 08. Polls
+// 09. Email preview
+// 10. Poster preview
+// 11. Poster PDF
+//
+
+// 01. Dashboard global
+// --------------------
+
+.proposal-title {
+  display: inline-block;
+
+  .label {
+    display: inline-block;
+    margin-left: $line-height / 2;
+    vertical-align: top;
+  }
+}
+
+.dashboard-proposals-stats {
+  border: 2px solid $highlight;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height;
+  padding: $line-height / 2;
+  text-align: center;
+
+  @include breakpoint(medium only) {
+    .change-behaviour {
+      float: left;
+      margin-top: $line-height / 2;
+      padding: $line-height;
+      width: 100%;
+    }
+  }
+
+  .counter-divider {
+    @include breakpoint(medium) {
+      border-left: 2px solid $highlight;
+    }
+
+    @include breakpoint(large) {
+      border-right: 2px solid $highlight;
+    }
+  }
+
+  .counter-value {
+    font-size: rem-calc(20);
+    font-weight: bold;
+  }
+
+  .counter-label {
+    color: $text-medium;
+    font-weight: bold;
+  }
+
+  .progress {
+    background: #f0efea;
+    border-radius: rem-calc(6);
+    height: $line-height / 2;
+  }
+
+  .progress-meter {
+    background: #ffad33;
+    border-bottom-right-radius: rem-calc(3);
+    border-top-right-radius: rem-calc(3);
+  }
+
+  .next-goal-progress {
+    font-size: $small-font-size;
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+.title {
+  border-bottom: 1px solid $border;
+  margin: $line-height 0;
+}
+
+// 02. Actions
+// -----------
+
+.action {
+  margin-top: $line-height;
+
+  .action-content {
+    display: inline-block;
+    margin-left: $line-height / 4;
+    max-width: 90%;
+    word-break: break-all;
+
+    h4 {
+      display: inline-block;
+    }
+
+    .label {
+      margin-left: $line-height / 2;
+    }
+
+    a {
+      display: block;
+    }
+
+    h4,
+    p {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: $small-font-size;
+    }
+  }
+
+  .icon-check {
+    display: inline-block;
+    font-size: rem-calc(24);
+    vertical-align: top;
+  }
+
+  .unchecked-link {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .unchecked {
+    border: 1px solid $border;
+    border-radius: rem-calc(4);
+    display: inline-block;
+    height: rem-calc(20);
+    margin-top: $line-height / 6;
+    width: rem-calc(20);
+  }
+}
+
+// 03. Resources
+// -------------
+
+.resource-card {
+  background: #d1f5eb;
+  border-radius: rem-calc(4);
+  margin-bottom: $line-height;
+  min-height: $line-height * 9;
+  padding: $line-height * 2 $line-height $line-height;
+  position: relative;
+  text-align: center;
+
+  &.alert {
+    background: #feeaeb;
+
+    &::before {
+      border: 2px solid #fb9497;
+      color: #fb9497;
+      content: "\74";
+    }
+  }
+
+  &::before {
+    border: 2px solid #00cb96;
+    border-radius: rem-calc(40);
+    color: #00cb96;
+    content: "\6c";
+    font-family: "icons";
+    font-size: rem-calc(20);
+    height: rem-calc(36);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: rem-calc(36);
+  }
+
+  .label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+  }
+
+  h4 {
+    margin-top: $line-height;
+  }
+
+  .resource-description {
+    min-height: $line-height * 4;
+  }
+
+  .button {
+    background: #00cb96;
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+// 04. Goals
+// ---------
+
+.next-goal {
+  border-left: 2px solid $border;
+  margin-left: $line-height;
+  margin-top: rem-calc(-24);
+  padding-left: $line-height;
+  padding-top: $line-height;
+  position: relative;
+
+  &::before {
+    background: #fff;
+    border: 1px solid $border;
+    border-radius: rem-calc(36);
+    color: #000;
+    content: "\77";
+    font-family: "icons";
+    font-size: rem-calc(24);
+    height: rem-calc(36);
+    left: -18px;
+    padding: 0 rem-calc(6) rem-calc(6);
+    position: absolute;
+    top: 18px;
+    width: rem-calc(36);
+  }
+
+  .help-text {
+    color: $text-medium;
+    display: block;
+    padding-top: $line-height / 4;
+  }
+}
+
+.goal-supports,
+.goal-resource,
+.goal-days {
+  margin-bottom: $line-height;
+  padding-left: $line-height * 1.5;
+  position: relative;
+
+  &::before {
+    color: #000;
+    font-family: "icons";
+    font-size: rem-calc(24);
+    left: 6px;
+    position: absolute;
+    top: -6px;
+  }
+}
+
+.goal-supports {
+
+  &::before {
+    content: "\77";
+  }
+}
+
+.goal-resource {
+
+  &::before {
+    content: "\74";
+  }
+}
+
+.goal-days {
+
+  &::before {
+    content: "\67";
+  }
+}
+
+// 05. Sidebar
+// -----------
+
+.dashboard-sidebar {
+  background: #fbfbfb;
+  border-right: 1px solid $border;
+
+  @include breakpoint(medium) {
+    min-height: $line-height * 45;
+  }
+
+  [class^="icon-"] {
+    color: $text;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    padding: $line-height / 2 $line-height / 4;
+    padding-left: 0;
+    vertical-align: middle;
+  }
+
+  ul {
+
+    li {
+      line-height: $line-height * 2;
+      padding-left: $line-height;
+    }
+
+    &.resources {
+      border-left: 1px solid $border;
+      margin-left: $line-height / 2;
+    }
+  }
+
+  a {
+    color: $text;
+  }
+
+  .is-active {
+    color: $brand;
+    position: relative;
+
+    &::before {
+      background: linear-gradient(to right, rgba(231, 236, 240, 1) 0%, rgba(251, 251, 251, 1) 90%);
+      border-left: 4px solid $brand;
+      content: "";
+      height: rem-calc(48);
+      left: 0;
+      padding-left: rem-calc(20);
+      position: absolute;
+      width: rem-calc(24);
+    }
+
+    a {
+      color: $brand;
+
+      ~ a {
+        color: $text;
+      }
+    }
+
+    [class^="icon-"] {
+      color: $brand;
+    }
+  }
+
+  .has-tip {
+    border-bottom: 0;
+    color: $text;
+    cursor: auto;
+    font-weight: normal;
+  }
+
+  .submenu-active {
+    border-bottom: 2px solid $brand;
+
+    .has-tip {
+      color: $brand;
+      font-weight: bold;
+    }
+  }
+}
+
+// 06. Community
+// -------------
+
+.dashboard-community {
+
+  .community-number {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
+
+  [class^="icon-"] {
+    color: $text-medium;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    vertical-align: middle;
+  }
+
+  .community-info {
+    color: $text-medium;
+  }
+
+  .community-info {
+    font-size: $small-font-size;
+  }
+}
+
+// 07. Graph
+// ---------
+
+.proposal-graph {
+
+  .c3-ygrid-lines {
+
+    line {
+      stroke: #005c92;
+    }
+
+    text {
+      fill: #005c92;
+    }
+  }
+}
+
+// 08. Polls
+// ---------
+
+.question-fields {
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height;
+}
+
+.answer-fields {
+  background: #fbfbfb;
+  border: 1px solid $border;
+  margin-bottom: $line-height;
+  padding: $line-height;
+}
+
+.poll-card {
+  background: #e7f3fd;
+  border-radius: rem-calc(4);
+  margin-bottom: $line-height;
+  min-height: $line-height * 9;
+  padding: $line-height;
+  position: relative;
+  text-align: center;
+
+  .clipboard {
+    border: 1px solid $brand;
+    border-radius: rem-calc(20);
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: $line-height;
+    padding: $line-height / 4 $line-height / 2;
+    padding-left: rem-calc(30);
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+      color: $brand;
+      content: "\6d";
+      font-family: "icons";
+      left: 6px;
+      position: absolute;
+    }
+  }
+
+  .button {
+    font-weight: bold;
+  }
+}
+
+.community-poll {
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height;
+  padding-bottom: $line-height / 2;
+}
+
+// 09. Email preview
+// -----------------
+
+.dashboard-mail-preview {
+
+  max-width: rem-calc(600);
+
+  .mail-header {
+    background: $pdf-primary;
+    color: #fff;
+    padding: $line-height * 2;
+
+    img {
+      max-width: rem-calc(40);
+      vertical-align: top;
+    }
+
+    h1 {
+      font-size: rem-calc(60);
+    }
+
+    h2 {
+      margin-top: $line-height;
+    }
+  }
+
+  .margin-bottom {
+    img {
+      box-shadow: -16px 61px 49px -19px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+  }
+
+  .mail-body {
+    color: $text-medium;
+    padding: $line-height * 2;
+    text-align: left;
+
+    .button {
+      background: #064c86;
+      box-shadow: -4px 18px 45px -19px rgba(0, 0, 0, 0.75);
+      margin-bottom: $line-height * 2;
+      margin-top: $line-height;
+    }
+
+    img {
+      margin-top: $line-height;
+      max-width: rem-calc(120);
+    }
+
+    p {
+      font-size: rem-calc(24);
+      line-height: rem-calc(30);
+    }
+  }
+}
+
+// 10. Poster preview
+// ------------------
+
+.dashboard-poster-preview,
+.dashboard-poster-pdf {
+  .poster-header {
+    background: $pdf-primary;
+    color: #fff;
+
+    h1 {
+      color: #fff;
+      text-align: left;
+    }
+  }
+
+  .proposal-image {
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      background: $pdf-secondary;
+      content: "";
+      position: absolute;
+    }
+
+    .overflow-image {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+
+  .poster-content {
+    max-width: 90%;
+    margin: 0 auto;
+
+    h2 {
+      color: $text-medium;
+      text-align: left;
+    }
+
+    h3 {
+      color: $pdf-primary;
+      display: inline;
+    }
+
+    .title-quote {
+      display: inline-block;
+    }
+
+    .poster-footer {
+      border-left: 2px solid $border;
+      color: $text-medium;
+    }
+  }
+}
+
+.dashboard-poster-preview {
+
+  .preview-width {
+    width: rem-calc(661);
+  }
+
+  .poster-header {
+    height: rem-calc(600);
+    padding: $line-height * 2 $line-height;
+
+    h1 {
+      font-size: rem-calc(60);
+      line-height: rem-calc(80);
+
+      img {
+        max-width: rem-calc(50);
+      }
+    }
+
+    p {
+      font-size: rem-calc(18);
+      margin: 0 auto;
+    }
+
+    .intro {
+      margin: $line-height * 2 auto;
+      max-width: 60%;
+      text-align: justify;
+    }
+  }
+
+  .proposal-image {
+    margin: 0 auto;
+    max-width: 90%;
+    position: relative;
+
+    .overflow-image {
+      height: 400px;
+    }
+
+    &::before {
+      height: rem-calc(120);
+      left: -30px;
+      top: -20px;
+      width: rem-calc(120);
+    }
+
+    img {
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+      margin-top: rem-calc(10);
+      position: relative;
+      width: 100%;
+    }
+
+    h2 {
+      margin: $line-height 0;
+    }
+  }
+
+  .poster-content {
+
+    img {
+      max-width: rem-calc(40);
+      vertical-align: top;
+    }
+
+    h2 {
+      font-size: rem-calc(28);
+      margin: $line-height 0;
+    }
+
+    h3 {
+      font-size: rem-calc(45);
+      margin-bottom: $line-height * 2;
+    }
+
+    .title-quote {
+      display: inline-block;
+      font-size: rem-calc(50);
+    }
+  }
+
+  .poster-footer {
+    font-size: rem-calc(19);
+    margin-top: rem-calc(50);
+    padding-left: rem-calc(40);
+    width: 75%;
+  }
+}
+
+// 11. Poster PDF
+// --------------
+
+
+.dashboard-poster-pdf {
+
+  .poster-header {
+    font-weight: normal;
+    height: 60cm;
+    padding: 5cm;
+
+    h1 {
+      font-size: 6cm;
+      font-weight: bold;
+      line-height: rem-calc(250);
+
+      img {
+        max-width: rem-calc(150);
+      }
+    }
+
+    p {
+      color: #fff;
+      font-size: rem-calc(80);
+      line-height: rem-calc(100);
+
+      &.intro {
+        margin: rem-calc(160) auto;
+        max-width: 70%;
+        text-align: justify;
+      }
+
+      &.proposal-code {
+        font-size: 1.7cm;
+      }
+    }
+  }
+
+  .proposal-image {
+    margin: 0 auto;
+    max-width: 90%;
+    position: relative;
+
+    &::before {
+      height: rem-calc(420);
+      left: rem-calc(-130);
+      top: rem-calc(-130);
+      width: rem-calc(420);
+    }
+
+    .overflow-image {
+      height: 37cm;
+    }
+
+    h2 {
+      margin: $line-height 0;
+    }
+  }
+
+  .poster-content {
+    img {
+      height: 3cm;
+      vertical-align: top;
+      width: 3cm;
+    }
+
+    h2 {
+      font-size: 3cm;
+      margin: $line-height 0;
+    }
+
+    h3 {
+      font-size: 4.7cm;
+      line-height: 5.5cm;
+      margin-top: $line-height;
+      max-width: 80%;
+    }
+  }
+
+  .poster-footer {
+    display: block;
+    margin-left: 10cm;
+    margin-top: 2cm;
+    max-width: 75%;
+    padding-left: 4cm;
+  }
+}

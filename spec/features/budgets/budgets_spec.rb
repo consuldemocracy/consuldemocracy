@@ -1,40 +1,40 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Budgets' do
+feature "Budgets" do
 
   let(:budget)             { create(:budget) }
   let(:level_two_user)     { create(:user, :level_two) }
-  let(:allowed_phase_list) { ['balloting', 'reviewing_ballots', 'finished'] }
+  let(:allowed_phase_list) { ["balloting", "reviewing_ballots", "finished"] }
 
-  context 'Index' do
+  context "Index" do
 
-    scenario 'Show normal index with links' do
+    scenario "Show normal index with links" do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
       heading1 = create(:budget_heading, group: group1)
       heading2 = create(:budget_heading, group: group2)
 
-      budget.update_attributes(phase: 'informing')
+      budget.update_attributes(phase: "informing")
 
       visit budgets_path
 
       within("#budget_heading") do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
-        expect(page).to have_content('Actual phase')
-        expect(page).to have_content('Information')
-        expect(page).to have_link('Help with participatory budgets')
-        expect(page).to have_link('See all phases')
+        expect(page).to have_content("Actual phase")
+        expect(page).to have_content("Information")
+        expect(page).to have_link("Help with participatory budgets")
+        expect(page).to have_link("See all phases")
       end
 
-      budget.update_attributes(phase: 'publishing_prices')
+      budget.update_attributes(phase: "publishing_prices")
       visit budgets_path
 
       within("#budget_heading") do
-        expect(page).to have_content('Publishing projects prices')
+        expect(page).to have_content("Publishing projects prices")
       end
 
-      within('#budget_info') do
+      within("#budget_info") do
         expect(page).to have_content(group1.name)
         expect(page).to have_content(group2.name)
         expect(page).to have_content(heading1.name)
@@ -46,7 +46,7 @@ feature 'Budgets' do
       expect(page).not_to have_content("#finished_budgets")
     end
 
-    scenario 'Show finished budgets list' do
+    scenario "Show finished budgets list" do
       finished_budget_1 = create(:budget, :finished)
       finished_budget_2 = create(:budget, :finished)
       drafting_budget = create(:budget, :drafting)
@@ -132,7 +132,7 @@ feature 'Budgets' do
       end
     end
 
-    scenario 'Show investment links only on balloting or later' do
+    scenario "Show investment links only on balloting or later" do
 
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
@@ -149,12 +149,12 @@ feature 'Budgets' do
       end
     end
 
-    scenario 'Not show investment links earlier of balloting ' do
+    scenario "Not show investment links earlier of balloting " do
 
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
-      phases_without_links = ['drafting','informing']
+      phases_without_links = ["drafting", "informing"]
       not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
                                phases_without_links -
                                allowed_phase_list
@@ -188,45 +188,45 @@ feature 'Budgets' do
     end
   end
 
-  scenario 'Index shows only published phases' do
+  scenario "Index shows only published phases" do
 
     budget.update(phase: :finished)
     phases = budget.phases
-    phases.drafting.update(starts_at: '30-12-2017', ends_at: '31-12-2017', enabled: true,
-                           description: 'Description of drafting phase',
-                           summary: '<p>This is the summary for drafting phase</p>')
+    phases.drafting.update(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
+                           description: "Description of drafting phase",
+                           summary: "<p>This is the summary for drafting phase</p>")
 
-    phases.accepting.update(starts_at: '01-01-2018', ends_at: '10-01-2018', enabled: true,
-                            description: 'Description of accepting phase',
-                            summary: 'This is the summary for accepting phase')
+    phases.accepting.update(starts_at: "01-01-2018", ends_at: "10-01-2018", enabled: true,
+                            description: "Description of accepting phase",
+                            summary: "This is the summary for accepting phase")
 
-    phases.reviewing.update(starts_at: '11-01-2018', ends_at: '20-01-2018', enabled: false,
-                            description: 'Description of reviewing phase',
-                            summary: 'This is the summary for reviewing phase')
+    phases.reviewing.update(starts_at: "11-01-2018", ends_at: "20-01-2018", enabled: false,
+                            description: "Description of reviewing phase",
+                            summary: "This is the summary for reviewing phase")
 
-    phases.selecting.update(starts_at: '21-01-2018', ends_at: '01-02-2018', enabled: true,
-                            description: 'Description of selecting phase',
-                            summary: 'This is the summary for selecting phase')
+    phases.selecting.update(starts_at: "21-01-2018", ends_at: "01-02-2018", enabled: true,
+                            description: "Description of selecting phase",
+                            summary: "This is the summary for selecting phase")
 
-    phases.valuating.update(starts_at: '10-02-2018', ends_at: '20-02-2018', enabled: false,
-                            description: 'Description of valuating phase',
-                            summary: 'This is the summary for valuating phase')
+    phases.valuating.update(starts_at: "10-02-2018", ends_at: "20-02-2018", enabled: false,
+                            description: "Description of valuating phase",
+                            summary: "This is the summary for valuating phase")
 
-    phases.publishing_prices.update(starts_at: '21-02-2018', ends_at: '01-03-2018', enabled: false,
-                                    description: 'Description of publishing prices phase',
-                                    summary: 'This is the summary for publishing_prices phase')
+    phases.publishing_prices.update(starts_at: "21-02-2018", ends_at: "01-03-2018", enabled: false,
+                                    description: "Description of publishing prices phase",
+                                    summary: "This is the summary for publishing_prices phase")
 
-    phases.balloting.update(starts_at: '02-03-2018', ends_at: '10-03-2018', enabled: true,
-                            description: 'Description of balloting phase',
-                            summary: 'This is the summary for balloting phase')
+    phases.balloting.update(starts_at: "02-03-2018", ends_at: "10-03-2018", enabled: true,
+                            description: "Description of balloting phase",
+                            summary: "This is the summary for balloting phase")
 
-    phases.reviewing_ballots.update(starts_at: '11-03-2018', ends_at: '20-03-2018', enabled: false,
-                                    description: 'Description of reviewing ballots phase',
-                                    summary: 'This is the summary for reviewing_ballots phase')
+    phases.reviewing_ballots.update(starts_at: "11-03-2018", ends_at: "20-03-2018", enabled: false,
+                                    description: "Description of reviewing ballots phase",
+                                    summary: "This is the summary for reviewing_ballots phase")
 
-    phases.finished.update(starts_at: '21-03-2018', ends_at: '30-03-2018', enabled: true,
-                           description: 'Description of finished phase',
-                           summary: 'This is the summary for finished phase')
+    phases.finished.update(starts_at: "21-03-2018", ends_at: "30-03-2018", enabled: true,
+                           description: "Description of finished phase",
+                           summary: "This is the summary for finished phase")
 
     visit budgets_path
 
@@ -239,7 +239,7 @@ feature 'Budgets' do
     expect(page).not_to have_content "This is the summary for publishing_prices phase"
     expect(page).not_to have_content "February 21, 2018 - March 01, 2018"
     expect(page).not_to have_content "This is the summary for reviewing_ballots phase"
-    expect(page).not_to have_content "March 11, 2018 - March 20, 2018'"
+    expect(page).not_to have_content "March 11, 2018 - March 20, 2018"
 
     expect(page).to have_content "This is the summary for accepting phase"
     expect(page).to have_content "January 01, 2018 - January 20, 2018"
@@ -348,7 +348,7 @@ feature 'Budgets' do
     end
   end
 
-  context 'Show' do
+  context "Show" do
 
     scenario "List all groups" do
       group1 = create(:budget_group, budget: budget)
@@ -470,7 +470,7 @@ feature 'Budgets' do
 
     background do
       logout
-      budget.update(phase: 'drafting')
+      budget.update(phase: "drafting")
       create(:budget)
     end
 
@@ -503,10 +503,10 @@ feature 'Budgets' do
 
   end
 
-  context 'Accepting' do
+  context "Accepting" do
 
     background do
-      budget.update(phase: 'accepting')
+      budget.update(phase: "accepting")
     end
 
     context "Permissions" do

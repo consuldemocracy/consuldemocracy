@@ -1,4 +1,4 @@
-<%= link_to "#{t('valuation.spending_proposals.show.heading')} #{@spending_proposal.id}", valuation_spending_proposal_path(@spending_proposal), class: "back" %>
+<%= link_to "#{t("valuation.spending_proposals.show.heading")} #{@spending_proposal.id}", valuation_spending_proposal_path(@spending_proposal), class: "back" %>
 <h2><%= t("valuation.spending_proposals.edit.dossier") %></h2>
 
 <%= form_for(@spending_proposal, url: valuate_valuation_spending_proposal_path(@spending_proposal), html: {id: "valuation_spending_proposal_edit_form"}) do |f| %>
@@ -46,12 +46,12 @@
 
     <div class="row">
       <div class="small-12 medium-4 column">
-        <%= f.label :price, "#{t('valuation.spending_proposals.edit.price_html', currency: t('valuation.spending_proposals.edit.currency'))}" %>
+        <%= f.label :price, "#{t("valuation.spending_proposals.edit.price_html", currency: t("valuation.spending_proposals.edit.currency"))}" %>
         <%= f.number_field :price, label: false, max: 1000000000000000 %>
       </div>
 
       <div class="small-12 medium-4 column end">
-        <%= f.label :price_first_year, "#{t('valuation.spending_proposals.edit.price_first_year_html', currency: t('valuation.spending_proposals.edit.currency'))}" %>
+        <%= f.label :price_first_year, "#{t("valuation.spending_proposals.edit.price_first_year_html", currency: t("valuation.spending_proposals.edit.currency"))}" %>
         <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
       </div>
     </div>

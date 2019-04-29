@@ -46,7 +46,7 @@ feature "Moderate users" do
     fill_in "user_password", with: citizen.password
     click_button "Enter"
 
-    expect(page).to have_content "Invalid login or password"
+    expect(page).to have_content "Invalid Email or username or password"
     expect(page).to have_current_path(new_user_session_path)
   end
 

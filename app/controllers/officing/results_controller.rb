@@ -7,6 +7,7 @@ class Officing::ResultsController < Officing::BaseController
   before_action :load_officer_assignment, only: :create
   before_action :check_officer_assignment, only: :create
   before_action :build_results, only: :create
+  before_action :verify_booth
 
   def new
   end
@@ -31,12 +32,6 @@ class Officing::ResultsController < Officing::BaseController
   end
 
   private
-
-    def check_officer_assignment
-      if @officer_assignment.blank?
-        go_back_to_new(t("officing.results.flash.error_wrong_booth"))
-      end
-    end
 
     def build_results
       @results = []

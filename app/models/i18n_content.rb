@@ -1,4 +1,4 @@
-class I18nContent < ActiveRecord::Base
+class I18nContent < ApplicationRecord
 
   scope :by_key,          ->(key) { where(key: key) }
   scope :begins_with_key, ->(key) { where("key ILIKE ?", "#{key}%") }

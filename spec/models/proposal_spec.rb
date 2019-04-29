@@ -291,7 +291,7 @@ describe Proposal do
       newer_proposal = create(:proposal, created_at: now)
       5.times { newer_proposal.vote_by(voter: create(:user), vote: "yes") }
 
-      older_proposal = create(:proposal, created_at: 1.day.ago)
+      older_proposal = create(:proposal, created_at: 2.days.ago)
       5.times { older_proposal.vote_by(voter: create(:user), vote: "yes") }
 
       expect(newer_proposal.hot_score).to be > older_proposal.hot_score
@@ -1017,6 +1017,70 @@ describe Proposal do
       result = described_class.recommendations(user)
       expect(result.size).to eq(1)
       expect(result).to eq([proposal3])
+    end
+
+  end
+
+  describe "#send_new_actions_notification_on_create" do
+
+    before do
+      Setting["dashboard.emails"] = true
+      ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
+    end
+
+    it "send notification after create when there are new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+
+      create(:proposal, :draft)
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+    end
+
+    it "Not send notification after create when there are not new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 1, published_proposal: false)
+      create(:dashboard_action, :resource, :active, day_offset: 1, published_proposal: false)
+
+      create(:proposal, :draft)
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
+    end
+
+  end
+
+  describe "#send_new_actions_notification_on_published" do
+
+    before do
+      Setting["dashboard.emails"] = true
+      ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
+    end
+
+    it "send notification after published when there are new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+
+      proposal = create(:proposal, :draft)
+      proposal.publish
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+    end
+
+    it "Not send notification after published when there are not new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 1, published_proposal: true)
+      create(:dashboard_action, :resource, :active, day_offset: 1, published_proposal: true)
+
+      proposal = create(:proposal, :draft)
+      proposal.publish
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
   end

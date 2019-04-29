@@ -1,7 +1,7 @@
 if ($(".comment").length == 0) {
-  $("#comments-box").append("<%= j render('comments_box', annotation: @annotation) %>").show();
+  $("#comments-box").append("<%= j render("comments_box", annotation: @annotation) %>").show();
 } else {
-  $("#comments-box #comments").append("<%= j render('comments', annotation: @annotation) %>");
+  $("#comments-box #comments").append("<%= j render("comments", annotation: @annotation) %>");
 
   var current_annotation_link = $("#annotation-link a").attr("href")
   var sub_annotation_ids = current_annotation_link.split("=")[1];

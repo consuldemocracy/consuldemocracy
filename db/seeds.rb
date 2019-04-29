@@ -129,5 +129,18 @@ WebSection.create(name: "proposals")
 WebSection.create(name: "budgets")
 WebSection.create(name: "help_page")
 
+# Proposals
+Setting["proposals.successful_proposal_id"] = nil
+Setting["proposals.poll_short_title"] = nil
+Setting["proposals.poll_description"] = nil
+Setting["proposals.poll_link"] = nil
+Setting["proposals.email_short_title"] = nil
+Setting["proposals.email_description"] = nil
+Setting["proposals.poster_short_title"] = nil
+Setting["proposals.poster_description"] = nil
+
+# Dashboard
+Setting["dashboard.emails"] = nil
+
 # Default custom pages
 load Rails.root.join("db", "pages.rb")

@@ -1,11 +1,11 @@
-class Setting < ActiveRecord::Base
+class Setting < ApplicationRecord
   validates :key, presence: true, uniqueness: true
 
   default_scope { order(id: :asc) }
 
   def type
     prefix = key.split(".").first
-    if %w[feature process map html homepage].include? prefix
+    if %w[feature process proposals map html homepage].include? prefix
       prefix
     else
       "configuration"
