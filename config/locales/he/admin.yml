@@ -394,6 +394,47 @@ he:
           day_offset: ימים נדרשים
           action_active: פעיל
           order: ממוין
+          published_proposal: הצעות שפורסמו
+          default:
+            email: דואר אלקטרוני
+            polls: סקרים
+            poster: פוסטר
+        new:
+          creating: פעולה חדשה בלוח המחוונים של ההצעות
+          back: חזרה לרשימה
+        create:
+          notice: הפעולה נוצרה בהצלחה
+        edit:
+          editing: ערוך את הפעולה עבור לוח המחוונים
+          back: חזרה לרשימה
+        delete:
+          success: הפעולה נמחקה בהצלחה
+        form:
+          submit_button: שמור
+          help_text: הכנס את הספרה 0 בכדי שערך זה לא יילקח בחשבון
+          published_proposal: עבור הצעות שפורסמו?
+          published_proposal_help_text: סמן תיבה זו כדי ליצור את הפעולה רק להצעות שפורסמו
+      administrator_tasks:
+        index:
+          description: "משאבים שפורסמו בלוח המחוונים של ​​ההצעות עשויים לכלול לחצן שנידרש למנהלים. בקשות המשתמשים מוצגות למטה."
+          title: בקשת משאבים
+          solve: נפתר
+          no_records: אין בקשות משאבים
+          source: מקור
+          resource: משאב מבוקש
+          filter: סינון
+          filters:
+            pending: ממתין לאישור
+            done: נפתר
+        edit:
+          back: חזרה לרשימת הממתינים לאישור
+          solving: פתור את המשימה בהמתנה
+        form:
+          solve: סמן כנפתר
+          proposal: הצעה
+          request: משאב מבוקש
+        update:
+          success: המשימה סומנה כנפתרה.
     debates:
       index:
         filter: מסנן
@@ -668,6 +709,9 @@ he:
       title_booths: דוכן הצבעות
       legislation: חקיקה שיתופית
       users: משתמשים
+      dashboard: לוח מחוונים להצעות
+      administrator_tasks: בקשת משאבים
+      dashboard_actions: משאבים ופעולות
     administrators:
       index:
         title: מנהלים
@@ -1223,6 +1267,8 @@ he:
           form:
             submit: עודכן
           how_to_enable: 'כדי להציג את המפה למשתמשים עליך לאפשר "הצעות, תקציב השקעות איזורים גאוגרפיים" בכרטיסיה "תכונות".'
+        dashboard:
+          title: לוח מחוונים להצעות
       setting: מאפיינים
       setting_actions: פעולות
       setting_name: הגדרות
