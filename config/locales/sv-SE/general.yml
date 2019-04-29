@@ -423,7 +423,6 @@ sv:
         one: 1 kommentar
         other: "%{count} kommentarer"
       comments_tab: Kommentarer
-      edit_proposal_link: Redigera
       flag: Förslaget har markerats som olämpligt av flera användare.
       login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
       notifications_tab: Aviseringar
@@ -432,7 +431,6 @@ sv:
       retired_warning_link_to_explanation: Läs beskrivningen innan du röstar på förslaget.
       retired: Förslag som dragits tillbaka av förslagslämnaren
       share: Dela
-      send_notification: Skicka aviseringar
       no_notifications: "Förslaget har inte några aviseringar."
       embed_video_title: "Video om %{proposal}"
       title_external_url: "Ytterligare dokumentation"
@@ -519,7 +517,7 @@ sv:
   shared:
     edit: "Redigera"
     save: "Spara"
-    delete: Ta bort
+    delete: "Ta bort"
     "yes": "Ja"
     "no": "Nej"
     search_results: "Sökresultat"
@@ -730,8 +728,6 @@ sv:
       send_private_message: "Skicka privat meddelande"
       delete_alert: "Är du säker på att du vill ta bort budgetförslaget? Åtgärden kan inte ångras"
     proposals:
-      send_notification: "Skicka avisering"
-      retire: "Dra tillbaka"
       retired: "Förslag som dragits tillbaka"
       see: "Visa förslag"
   votes:
