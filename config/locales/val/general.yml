@@ -290,6 +290,8 @@ val:
     create:
       form:
         submit_button: Crear proposta
+    share:
+      message: "He avalat la proposta %{summary} en %{handle}. Si t'interessa, avala tu també!"
     edit:
       editing: Editar proposta
       form:
@@ -423,7 +425,6 @@ val:
         one: 1 Comentari
         other: "%{count} Comentaris"
       comments_tab: Comentaris
-      edit_proposal_link: Editar
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       notifications_tab: Notificacions
@@ -432,7 +433,6 @@ val:
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
       retired: Proposta retirada per l'autor
       share: Compartir
-      send_notification: Enviar notificació
       no_notifications: "Aquesta proposta no te notificacions."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentació adicional"
@@ -441,8 +441,6 @@ val:
     update:
       form:
         submit_button: Guardar canvis
-    share:
-      message: "He avalat la proposta %{summary} en %{handle}. Si t'interessa, avala tu també!"
   polls:
     all: "Totes"
     no_dates: "sense data asignada"
@@ -524,7 +522,7 @@ val:
   shared:
     edit: "Editar"
     save: "Guardar"
-    delete: Eliminar
+    delete: "Eliminar"
     "yes": "Si"
     "no": "No"
     search_results: "Resultats de la cerca"
@@ -735,8 +733,6 @@ val:
       send_private_message: "Enviar un missatge privat"
       delete_alert: "Segur que desitges eliminar aquesta proposta? Aquesta acció no es pot desfer"
     proposals:
-      send_notification: "Enviar notificació"
-      retire: "Retirar"
       retired: "Proposta retirada"
       see: "Vore proposta"
   votes:
