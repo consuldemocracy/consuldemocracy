@@ -249,5 +249,22 @@
         </li>
       </ul>
     </li>
+    <li class="section-title">
+      <a href="#">
+        <span class="icon-check"></span>
+        <strong><%= t("admin.menu.dashboard") %></strong>
+      </a>
+      <ul <%= "class=is-active" if menu_dashboard? %>>
+        <li <%= "class=is-active" if controller_name == "actions" %>>
+          <%= link_to t("admin.menu.dashboard_actions"), admin_dashboard_actions_path %>
+        </li>
+
+        <li <%= "class=is-active" if controller_name == "administrator_tasks" %>>
+          <%= link_to admin_dashboard_administrator_tasks_path do %>
+            <%= t("admin.menu.administrator_tasks") %>
+          <% end %>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>

@@ -14,6 +14,34 @@ class Community < ApplicationRecord
     proposal.present?
   end
 
+  def latest_activity
+    activity = []
+
+    most_recent_comment = Comment.where(commentable: topics).order(updated_at: :desc).take(1).first
+    activity << most_recent_comment.updated_at unless most_recent_comment.nil?
+
+    most_recent_topic = topics.order(updated_at: :desc).take(1).first
+    activity << most_recent_topic.updated_at unless most_recent_topic.nil?
+
+    activity.max
+  end
+
+  def comments_count
+    comments.count
+  end
+
+  def comments
+    Comment.where(commentable: topics)
+  end
+
+  def debates_count
+    topics.count
+  end
+
+  def participants_count
+    participants.count
+  end
+
   private
 
   def users_who_commented
@@ -30,5 +58,4 @@ class Community < ApplicationRecord
   def author_from_community
     from_proposal? ? User.where(id: proposal&.author_id) : User.where(id: investment&.author_id)
   end
-
 end

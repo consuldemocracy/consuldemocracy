@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     end
 
     def load_proposals
-      @proposals = Proposal.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+      @proposals = Proposal.created_by(@user).order(created_at: :desc).page(params[:page])
     end
 
     def load_debates

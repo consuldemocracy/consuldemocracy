@@ -20,8 +20,11 @@ module Notifications
     click_link "My activity"
 
     within("#proposal_#{proposal.id}") do
-      click_link "Send notification"
+      click_link proposal.title
     end
+
+    click_link "Access the community"
+    click_link "Send message to the community"
 
     fill_in "proposal_notification_title", with: "Thanks for supporting proposal: #{proposal.title}"
     fill_in "proposal_notification_body", with: "Please share it with others! #{proposal.summary}"

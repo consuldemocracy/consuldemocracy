@@ -17,8 +17,6 @@ class Poll::Question::Answer < ApplicationRecord
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
-  before_validation :set_order, on: :create
-
   def description
     self[:description].try :html_safe
   end
@@ -27,10 +25,6 @@ class Poll::Question::Answer < ApplicationRecord
     ordered_array.each_with_index do |answer_id, order|
       find(answer_id).update_attribute(:given_order, (order + 1))
     end
-  end
-
-  def set_order
-    self.given_order = self.class.last_position(question_id) + 1
   end
 
   def self.last_position(question_id)

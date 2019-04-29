@@ -9,11 +9,11 @@ feature "Officing Results", :with_frozen_time do
     @poll = @officer_assignment.booth_assignment.poll
     @poll.update(ends_at: 1.day.ago)
     @question_1 = create(:poll_question, poll: @poll)
-    create(:poll_question_answer, title: "Yes", question: @question_1)
-    create(:poll_question_answer, title: "No", question: @question_1)
+    create(:poll_question_answer, title: "Yes", question: @question_1, given_order: 1)
+    create(:poll_question_answer, title: "No", question: @question_1, given_order: 2)
     @question_2 = create(:poll_question, poll: @poll)
-    create(:poll_question_answer, title: "Today", question: @question_2)
-    create(:poll_question_answer, title: "Tomorrow", question: @question_2)
+    create(:poll_question_answer, title: "Today", question: @question_2, given_order: 1)
+    create(:poll_question_answer, title: "Tomorrow", question: @question_2, given_order: 2)
 
     login_as(@poll_officer.user)
     set_officing_booth(@officer_assignment.booth)

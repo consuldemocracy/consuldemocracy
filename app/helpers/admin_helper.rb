@@ -68,6 +68,10 @@ module AdminHelper
     ["pages", "cards"].include?(controller_name) && params[:page_id].present?
   end
 
+  def menu_dashboard?
+    ["actions", "administrator_tasks"].include?(controller_name)
+  end
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|

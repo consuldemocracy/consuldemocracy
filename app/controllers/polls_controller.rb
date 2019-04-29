@@ -6,18 +6,20 @@ class PollsController < ApplicationController
   load_and_authorize_resource
 
   has_filters %w[current expired]
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   ::Poll::Answer # trigger autoload
 
   def index
-    @polls = @polls.not_budget.send(@current_filter).sort_for_list.page(params[:page])
+    @polls = @polls.not_budget.public_polls.send(@current_filter).includes(:geozones)
+                              .sort_for_list.page(params[:page])
   end
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)
-    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions).where.not(description: "").order(:given_order)
+    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
+                                                    .where.not(description: "").order(:given_order)
 
     @answers_by_question_id = {}
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))

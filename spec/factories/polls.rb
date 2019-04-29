@@ -42,6 +42,7 @@ FactoryBot.define do
     association :question, factory: :poll_question
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
+    sequence(:given_order) { |n| n }
   end
 
   factory :poll_answer_video, class: "Poll::Question::Answer::Video" do

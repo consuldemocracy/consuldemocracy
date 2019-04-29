@@ -54,6 +54,7 @@ module Consul
     config.after_initialize { Globalize.set_fallbacks_to_all_available_locales }
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
 
     # Add lib to the autoload path
     config.autoload_paths << Rails.root.join("lib")

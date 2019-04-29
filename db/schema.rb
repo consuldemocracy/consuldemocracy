@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190205131722) do
+ActiveRecord::Schema.define(version: 20190411090023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "action"
-    t.string   "actionable_type"
     t.integer  "actionable_id"
+    t.string   "actionable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
@@ -395,6 +395,44 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dashboard_actions", force: :cascade do |t|
+    t.string   "title",                     limit: 80
+    t.text     "description"
+    t.string   "link"
+    t.boolean  "request_to_administrators",            default: false
+    t.integer  "day_offset",                           default: 0
+    t.integer  "required_supports",                    default: 0
+    t.integer  "order",                                default: 0
+    t.boolean  "active",                               default: true
+    t.datetime "hidden_at"
+    t.integer  "action_type",                          default: 0,     null: false
+    t.string   "short_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "published_proposal",                   default: false
+  end
+
+  create_table "dashboard_administrator_tasks", force: :cascade do |t|
+    t.string   "source_type"
+    t.integer  "source_id"
+    t.integer  "user_id"
+    t.datetime "executed_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["source_type", "source_id"], name: "index_dashboard_administrator_tasks_on_source", using: :btree
+    t.index ["user_id"], name: "index_dashboard_administrator_tasks_on_user_id", using: :btree
+  end
+
+  create_table "dashboard_executed_actions", force: :cascade do |t|
+    t.integer  "proposal_id"
+    t.integer  "action_id"
+    t.datetime "executed_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["action_id"], name: "index_proposal_action", using: :btree
+    t.index ["proposal_id"], name: "index_dashboard_executed_actions_on_proposal_id", using: :btree
+  end
+
   create_table "debates", force: :cascade do |t|
     t.string   "title",                        limit: 80
     t.text     "description"
@@ -462,8 +500,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "user_id"
-    t.string   "documentable_type"
     t.integer  "documentable_id"
+    t.string   "documentable_type"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["documentable_type", "documentable_id"], name: "index_documents_on_documentable_type_and_documentable_id", using: :btree
@@ -498,8 +536,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "follows", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "followable_type"
     t.integer  "followable_id"
+    t.string   "followable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id", using: :btree
@@ -547,8 +585,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string   "imageable_type"
     t.integer  "imageable_id"
+    t.string   "imageable_type"
     t.string   "title",                   limit: 80
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
@@ -763,6 +801,16 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.index ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
   end
 
+  create_table "links", force: :cascade do |t|
+    t.string   "label"
+    t.string   "url"
+    t.string   "linkable_type"
+    t.integer  "linkable_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id", using: :btree
+  end
+
   create_table "local_census_records", force: :cascade do |t|
     t.string   "document_number", null: false
     t.string   "document_type",   null: false
@@ -817,8 +865,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   create_table "milestones", force: :cascade do |t|
-    t.string   "milestoneable_type"
     t.integer  "milestoneable_id"
+    t.string   "milestoneable_type"
     t.string   "title",              limit: 80
     t.text     "description"
     t.datetime "publication_date"
@@ -846,8 +894,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "notifiable_type"
     t.integer  "notifiable_id"
+    t.string   "notifiable_type"
     t.integer  "counter",         default: 1
     t.datetime "emailed_at"
     t.datetime "read_at"
@@ -1082,7 +1130,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "budget_id"
+    t.string   "related_type"
+    t.integer  "related_id"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true, using: :btree
+    t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id", using: :btree
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
   end
 
@@ -1099,8 +1150,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   create_table "progress_bars", force: :cascade do |t|
     t.integer  "kind"
     t.integer  "percentage"
-    t.string   "progressable_type"
     t.integer  "progressable_id"
+    t.string   "progressable_type"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -1143,6 +1194,7 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.string   "retired_reason"
     t.text     "retired_explanation"
     t.integer  "community_id"
+    t.datetime "published_at"
     t.index ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
     t.index ["author_id"], name: "index_proposals_on_author_id", using: :btree
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
@@ -1167,10 +1219,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   create_table "related_contents", force: :cascade do |t|
-    t.string   "parent_relationable_type"
     t.integer  "parent_relationable_id"
-    t.string   "child_relationable_type"
+    t.string   "parent_relationable_type"
     t.integer  "child_relationable_id"
+    t.string   "child_relationable_type"
     t.integer  "related_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -1191,8 +1243,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   create_table "signature_sheets", force: :cascade do |t|
-    t.string   "signable_type"
     t.integer  "signable_id"
+    t.string   "signable_type"
     t.text     "document_numbers"
     t.boolean  "processed",        default: false
     t.integer  "author_id"
@@ -1286,10 +1338,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
-    t.string   "taggable_type"
     t.integer  "taggable_id"
-    t.string   "tagger_type"
+    t.string   "taggable_type"
     t.integer  "tagger_id"
+    t.string   "tagger_type"
     t.string   "context",       limit: 128
     t.datetime "created_at"
     t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
@@ -1461,10 +1513,10 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.string   "votable_type"
     t.integer  "votable_id"
-    t.string   "voter_type"
+    t.string   "votable_type"
     t.integer  "voter_id"
+    t.string   "voter_type"
     t.boolean  "vote_flag"
     t.string   "vote_scope"
     t.integer  "vote_weight"
@@ -1518,6 +1570,9 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   add_foreign_key "administrators", "users"
   add_foreign_key "budget_investments", "communities"
+  add_foreign_key "dashboard_administrator_tasks", "users"
+  add_foreign_key "dashboard_executed_actions", "dashboard_actions", column: "action_id"
+  add_foreign_key "dashboard_executed_actions", "proposals"
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"

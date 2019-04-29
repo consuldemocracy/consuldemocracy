@@ -75,4 +75,13 @@ section "Creating Settings" do
   Setting.create(key: "homepage.widgets.feeds.proposals", value: "true")
   Setting.create(key: "homepage.widgets.feeds.debates", value: "true")
   Setting.create(key: "homepage.widgets.feeds.processes", value: "true")
+
+  Setting.create(key: "proposals.successful_proposal_id", value: nil)
+  Setting.create(key: "proposals.poll_short_title", value: nil)
+  Setting.create(key: "proposals.poll_description", value: nil)
+  Setting.create(key: "proposals.poll_link", value: nil)
+  Setting.create(key: "proposals.email_short_title", value: nil)
+  Setting.create(key: "proposals.email_description", value: nil)
+
+  Setting.create(key: "dashboard.emails", value: nil)
 end

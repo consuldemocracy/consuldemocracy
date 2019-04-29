@@ -8,7 +8,8 @@ module ApplicationHelper
   end
 
   # if current path is /debates current_path_with_query_params(foo: "bar") returns /debates?foo=bar
-  # notice: if query_params have a param which also exist in current path, it "overrides" (query_params is merged last)
+  # notice: if query_params have a param which also exist in current path,
+  # it "overrides" (query_params is merged last)
   def current_path_with_query_params(query_parameters)
     url_for(request.query_parameters.merge(query_parameters))
   end
@@ -55,6 +56,14 @@ module ApplicationHelper
 
   def kaminari_path(url)
     "#{root_url.chomp("\/")}#{url}"
+  end
+
+  def self.asset_data_base64(path)
+    asset = (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application))
+                                                             .find_asset(path)
+    throw "Could not find asset '#{path}'" if asset.nil?
+    base64 = Base64.encode64(asset.to_s).gsub(/\s+/, "")
+    "data:#{asset.content_type};base64,#{Rack::Utils.escape(base64)}"
   end
 
   def render_custom_partial(partial_name)

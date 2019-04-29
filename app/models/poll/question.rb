@@ -19,7 +19,9 @@ class Poll::Question < ApplicationRecord
 
   validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
-  validates :poll_id, presence: true
+  validates :poll_id, presence: true, if: Proc.new { |question| question.poll.nil? }
+
+  accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 

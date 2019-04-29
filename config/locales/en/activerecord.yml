@@ -112,6 +112,15 @@ en:
       proposal_notification:
         one: "Proposal notification"
         other: "Proposal notifications"
+      dashboard/action:
+        one: Proposal dashboard action
+        other: Proposal dashboard actions
+      dashboard/administrator_task:
+        one: Task
+        other: Tasks
+      link:
+        one: Link
+        other: Links
     attributes:
       budget:
         name: "Name"
@@ -328,6 +337,23 @@ en:
         link_text: Link text
       widget/feed:
         limit: Number of items
+      dashboard/action:
+        title: Title
+        short_description: Short description
+        description: Description
+        link: External link
+        request_to_administrators: Include in the resource a button to request the resource from administrators
+        day_offset: How many days after the creation of the proposal do you want it to be activated?
+        required_supports: How much supports does the proposal have to get in order to be activated?
+        order: You can enter the position where this action will be shown to the user in the list of actions
+        active: Active
+        action_type: Type
+      dashboard/administrator_task:
+        source: Source
+        user: Executed by
+      link:
+        label: Title
+        url: Link
     errors:
       models:
         user:
@@ -406,6 +432,7 @@ en:
               cannot_comment_valuation: "You cannot comment a valuation"
       messages:
         record_invalid: "Validation failed: %{errors}"
+        another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"

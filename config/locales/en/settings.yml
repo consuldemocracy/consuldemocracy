@@ -60,6 +60,23 @@ en:
     meta_keywords_description: 'Keywords <meta name="keywords">, used to improve SEO'
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Users over this age can participate in all processes where a user verified account is needed"
+    proposals:
+      successful_proposal_id: Successful proposal
+      successful_proposal_id_description: This proposal is used as a reference for a successful proposal in supports number and will be displayed in the dashboard graph.
+      poll_short_title: Polls
+      poll_short_title_description: Short description of the survey feature. Allows users to create surveys on a proposal
+      poll_description: Polls description
+      poll_description_description: Detailed description of the survey feature
+      poll_link: Additional information link
+      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
+      email_short_title: Email
+      email_short_title_description: Short description of the email feature. Allows users to send an email to promote their proposal
+      email_description: Email description
+      email_description_description: Detailed description of the email feature
+      poster_short_title: Poster
+      poster_short_title_description: Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal
+      poster_description: Poster description
+      poster_description_description: Detailed description of the poster feature
     analytics_url: "Analytics URL"
     proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
     proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all supporters of their proposal"
