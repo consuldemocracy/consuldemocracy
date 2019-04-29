@@ -10,21 +10,14 @@ module Reportable
     super || build_report
   end
 
-  def results_enabled?
-    report&.results?
-  end
-  alias_method :results_enabled, :results_enabled?
+  Report::KINDS.each do |kind|
+    define_method "#{kind}_enabled?" do
+      report.send(kind)
+    end
+    alias_method "#{kind}_enabled", "#{kind}_enabled?"
 
-  def stats_enabled?
-    report&.stats?
-  end
-  alias_method :stats_enabled, :stats_enabled?
-
-  def results_enabled=(enabled)
-    report.results = enabled
-  end
-
-  def stats_enabled=(enabled)
-    report.stats = enabled
+    define_method "#{kind}_enabled=" do |enabled|
+      report.send("#{kind}=", enabled)
+    end
   end
 end
