@@ -290,6 +290,8 @@ so:
     create:
       form:
         submit_button: Abuur soo jeedin
+    share:
+      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
     edit:
       editing: Tafatiir soojedinta
       form:
@@ -423,7 +425,6 @@ so:
         one: 1 faalo
         other: "%{count} falooyinka"
       comments_tab: Faalo
-      edit_proposal_link: Isbedel
       flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.
       login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
       notifications_tab: Ogaysiisyo
@@ -432,7 +433,6 @@ so:
       retired_warning_link_to_explanation: Akhri sharraxa kahor intaadan codeynin.
       retired: Soo-jeedinta ay ka fariisteen qoraaga
       share: Lawadag
-      send_notification: Diir Ogaysiin
       no_notifications: "Soo jeedintaasi ma leh ogeysiisyo."
       embed_video_title: "Fidyowga%{proposal}"
       title_external_url: "Dukumentiyo dheeraad ah"
@@ -441,8 +441,6 @@ so:
     update:
       form:
         submit_button: Badbaadi beddelka
-    share:
-      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
   polls:
     all: "Dhamaan"
     no_dates: "tirada taariikhda la magacaabay"
@@ -524,7 +522,7 @@ so:
   shared:
     edit: "Isbedel"
     save: "Badbaado"
-    delete: Titiriid
+    delete: "Titiriid"
     "yes": "Haa"
     "no": "Maya"
     search_results: "Raadi natiijada"
@@ -735,8 +733,6 @@ so:
       send_private_message: "U dir fariin gaar ah"
       delete_alert: "Ma hubtaa inaad rabto inaad tirtirto mashruuca maalgalinta? Ficilkan lama tirtiri karo"
     proposals:
-      send_notification: "Diir Ogaysiin"
-      retire: "Hawl gab"
       retired: "Soo jeedinta hawlgabka"
       see: "Fiiri soo jeedinta"
   votes:
