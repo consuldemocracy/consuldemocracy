@@ -291,6 +291,8 @@ tr:
     create:
       form:
         submit_button: Öneri oluştur
+    share:
+      message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
     edit:
       editing: Öneriyi düzenle
       form:
@@ -424,7 +426,6 @@ tr:
         one: 1 yorum
         other: "%{count} yorumlar"
       comments_tab: Yorumlar
-      edit_proposal_link: Düzenleme
       flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
       login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
       notifications_tab: Bildirimler
@@ -433,7 +434,6 @@ tr:
       retired_warning_link_to_explanation: Bunun için oy vermeden önce açıklamayı okuyun.
       retired: Öneri yazar tarafından çekildi
       share: Paylaş
-      send_notification: Bildirim gönder
       no_notifications: "Bu öneride bildirim yok."
       embed_video_title: "%{proposal} ile ilgili video"
       title_external_url: "Ek belge"
@@ -442,8 +442,6 @@ tr:
     update:
       form:
         submit_button: Değişiklikleri kaydet
-    share:
-      message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
@@ -525,7 +523,7 @@ tr:
   shared:
     edit: "Düzenleme"
     save: "Kaydet"
-    delete: Sil
+    delete: "Sil"
     "yes": "Evet"
     "no": "Hayır"
     search_results: "Arama sonuçları"
@@ -736,8 +734,6 @@ tr:
       send_private_message: "Özel mesaj gönder"
       delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
     proposals:
-      send_notification: "Bildirim gönder"
-      retire: "Çek"
       retired: "Çekilen öneri"
       see: "Öneriyi gör"
   votes:
