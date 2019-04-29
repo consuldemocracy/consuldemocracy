@@ -1,5 +1,5 @@
 class Poll::Ballot < ApplicationRecord
-  belongs_to :ballot_sheet, class_name: Poll::BallotSheet
+  belongs_to :ballot_sheet, class_name: "Poll::BallotSheet"
 
   validates :ballot_sheet_id, presence: true
 
