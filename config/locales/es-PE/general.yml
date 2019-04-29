@@ -392,7 +392,6 @@ es-PE:
         one: 1 Comentario
         other: "%{count} Comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar propuesta
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
@@ -401,7 +400,6 @@ es-PE:
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
       share: Compartir
-      send_notification: Enviar notificación
       no_notifications: "Esta propuesta no tiene notificaciones."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
@@ -484,7 +482,7 @@ es-PE:
   shared:
     edit: "Editar propuesta"
     save: "Guardar"
-    delete: Borrar
+    delete: "Borrar"
     "yes": "Si"
     search_results: "Resultados de la búsqueda"
     advanced_search:
@@ -679,8 +677,6 @@ es-PE:
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
     proposals:
-      send_notification: "Enviar notificación"
-      retire: "Retirar"
       retired: "Propuesta retirada"
       see: "Ver propuesta"
   votes:
