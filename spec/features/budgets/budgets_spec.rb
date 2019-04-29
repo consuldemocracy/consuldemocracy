@@ -120,13 +120,13 @@ describe "Budgets" do
         expect(page).to have_content "#{heading.name} €1,000,000"
 
         expect(page).to have_link "List of all investment projects",
-                                   href: budget_url(budget)
+                                   href: budget_path(budget)
 
         expect(page).to have_link "List of all unfeasible investment projects",
-                                   href: budget_url(budget, filter: "unfeasible")
+                                   href: budget_path(budget, filter: "unfeasible")
 
         expect(page).to have_link "List of all investment projects not selected for balloting",
-                                   href: budget_url(budget, filter: "unselected")
+                                   href: budget_path(budget, filter: "unselected")
 
         expect(page).to have_css("div.map")
       end
