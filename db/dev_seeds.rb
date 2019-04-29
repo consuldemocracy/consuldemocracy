@@ -1,5 +1,3 @@
-require "database_cleaner"
-DatabaseCleaner.clean_with :truncation
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
                       msg unless @avoid_log
