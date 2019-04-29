@@ -424,6 +424,16 @@ he:
         link: קישור חיצוני
         request_to_administrators: כלול לחצן במשאב בכדי לבקש את המשאב ממנהל המערכת
         day_offset: כמה ימים לאחר יצירת ההצעה אתה רוצה שהיא תופעל?
+        required_supports: כמה תומכים ההצעה צריכה בכדי להיות פעילה?
+        order: באפשרותך להזין את המיקום שבה פעולה זו תוצג למשתמש ברשימת הפעולות
+        active: פעיל
+        action_type: סוג
+      dashboard/administrator_task:
+        source: מקור
+        user: בוצע על ידי
+      link:
+        label: כותרת
+        url: קישור
     errors:
       models:
         user:
@@ -502,6 +512,7 @@ he:
               cannot_comment_valuation: "אינך כול להגיב על הערכה"
       messages:
         record_invalid: "האימות נכשל:%{errors}"
+        another_poll_active: יש עוד סקר פעיל לתקופה הנתונה
         restrict_dependent_destroy:
           has_one: "לא ניתן למחוק רשומה מכיוון שקיימת%{record} תלויה"
           has_many: "לא ניתן למחוק את הרשומה כי תלויות%{record} קיימות"
