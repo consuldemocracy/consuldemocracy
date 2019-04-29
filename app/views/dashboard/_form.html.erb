@@ -4,7 +4,11 @@
   </div>
 <% end %>
 
-<% unless proposal.archived? %>
+<% if proposal.archived? %>
+  <div class="callout primary">
+    <p><%= t("dashboard.create_request.archived") %></p>
+  </div>
+<% else %>
   <% if dashboard_action.request_to_administrators && !dashboard_action.requested_for?(proposal) %>
     <%= form_for @dashboard_executed_action,
                  url: create_request_proposal_dashboard_action_url(proposal,

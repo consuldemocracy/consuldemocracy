@@ -333,6 +333,7 @@ feature "Proposal's dashboard" do
     end
 
     expect(page).not_to have_button("Request")
+    expect(page).to have_content("This proposal is archived and can not request resources.")
   end
 
   scenario "Dashboard has a link to dashboard community", js: true do

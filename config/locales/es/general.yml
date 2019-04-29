@@ -483,6 +483,7 @@ es:
       request: Solicitar
     create_request:
       success: La petición ha sido correctamente enviada. Te contactaremos lo antes posible para informarte al respecto.
+      archived: Esta propuesta está archivada y no puede solicitar recursos.
     progress:
       title: Gráfico
       group_by_month: Mensual

@@ -483,6 +483,7 @@ en:
       request: Request
     create_request:
       success: The request has been successfully sent. We will contact you as soon as possible to inform you about it.
+      archived: This proposal is archived and can not request resources.
     progress:
       title: Graphic
       group_by_month: Monthly
