@@ -345,7 +345,6 @@ ca:
         one: 1 Comentari
         other: "%{count} comentaris"
       comments_tab: Comentarios
-      edit_proposal_link: Editar proposta
       flag: Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris.
       login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
       notifications_tab: Notificacions
@@ -353,7 +352,6 @@ ca:
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
       retired: Proposta retirada per l'autor
       share: compartir
-      send_notification: Enviar notificació
       embed_video_title: "Video en %{proposal}"
       author: Autor
     update:
@@ -409,7 +407,7 @@ ca:
   shared:
     edit: "Editar proposta"
     save: "Desar"
-    delete: Borrar
+    delete: "Borrar"
     "yes": "Sí"
     search_results: "Resultats de cerca"
     advanced_search:
@@ -577,9 +575,6 @@ ca:
       no_activity: Usuari sense activitat pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       send_private_message: "Enviar un missatge privat"
-    proposals:
-      send_notification: "Enviar notificació"
-      retire: "Retirar"
   votes:
     agree: Estic d'acord
     anonymous: Massa vots anònims, per a poder votar %{verify_account}.
