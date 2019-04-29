@@ -356,7 +356,6 @@ sl:
       comments:
         zero: Brez komentarjev
       comments_tab: Komentarji
-      edit_proposal_link: Uredi
       flag: Ta predlog je več uporabnikov označilo kot neprimeren.
       login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
       notifications_tab: Obvestila
@@ -364,7 +363,6 @@ sl:
       retired_warning_link_to_explanation: Preberi razlago, preden glasuješ zanj.
       retired: Predlog upokojen s strani avtorja
       share: Deli
-      send_notification: Pošlji obvestilo
       no_notifications: "Ta predlog nima obvestil."
       embed_video_title: "Video o %{proposal}"
       title_external_url: "Dodatna dokumentacija"
@@ -451,7 +449,7 @@ sl:
   shared:
     edit: "Uredi"
     save: "Shrani"
-    delete: Izbriši
+    delete: "Izbriši"
     "yes": "Da"
     "no": "Ne"
     search_results: "Rezultati iskanja"
@@ -619,8 +617,6 @@ sl:
       send_private_message: "Pošlji zasebno sporočilo"
       delete_alert: "Si prepričan/-a, da želiš izbrisati svoj naložbeni projekt? Tega ni mogoče razveljaviti."
     proposals:
-      send_notification: "Pošlji obvestilo"
-      retire: "Upokojitev"
       retired: "Upokoji predlog"
       see: "Poglej predlog"
   votes:
