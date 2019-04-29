@@ -73,4 +73,18 @@ describe Abilities::Everyone do
       it { should_not be_able_to(:stats, poll) }
     end
   end
+
+  context "when accessing budget stats" do
+    context "supports phase is not finished" do
+      let(:budget) { create(:budget, phase: "selecting") }
+
+      it { should_not be_able_to(:read_stats, budget) }
+    end
+
+    context "supports phase is finished" do
+      let(:budget) { create(:budget, phase: "valuating") }
+
+      it { should be_able_to(:read_stats, budget) }
+    end
+  end
 end
