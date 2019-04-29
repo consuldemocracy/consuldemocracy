@@ -279,6 +279,8 @@ zh-CN:
     create:
       form:
         submit_button: 创建提议
+    share:
+      message: "我支持%{handle} 中的提议%{summary}。如果您感兴趣，也请支持它！"
     edit:
       editing: 编辑提议
       form:
@@ -406,7 +408,6 @@ zh-CN:
         zero: 没有评论
         other: "%{count} 个评论"
       comments_tab: 评论
-      edit_proposal_link: 编辑
       flag: 此提议已被几个用户标记为不恰当。
       login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
       notifications_tab: 通知
@@ -415,7 +416,6 @@ zh-CN:
       retired_warning_link_to_explanation: 投票前请先阅读说明。
       retired: 被作者撤回的提议
       share: 共用
-      send_notification: 发送通知
       no_notifications: "此提议没有通知。"
       embed_video_title: "%{proposal} 的视频"
       title_external_url: "其他文档"
@@ -424,8 +424,6 @@ zh-CN:
     update:
       form:
         submit_button: 保存更改
-    share:
-      message: "我支持%{handle} 中的提议%{summary}。如果您感兴趣，也请支持它！"
   polls:
     all: "所有"
     no_dates: "没指定日期"
@@ -507,7 +505,7 @@ zh-CN:
   shared:
     edit: "编辑"
     save: "保存"
-    delete: 删除
+    delete: "删除"
     "yes": "是"
     "no": "不是"
     search_results: "搜索结果"
@@ -708,8 +706,6 @@ zh-CN:
       send_private_message: "发送私人消息"
       delete_alert: "确定要删除您的投资项目吗？此操作将无法被撤销"
     proposals:
-      send_notification: "发送通知"
-      retire: "撤回"
       retired: "已撤回提议"
       see: "查看提议"
   votes:
