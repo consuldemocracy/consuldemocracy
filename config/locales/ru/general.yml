@@ -304,6 +304,8 @@ ru:
     create:
       form:
         submit_button: Отменить предложение
+    share:
+      message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
     edit:
       editing: Редактировать предложение
       form:
@@ -444,7 +446,6 @@ ru:
         many: "%{count} комментария(иев)"
         other: "%{count} комментария(иев)"
       comments_tab: Комментарии
-      edit_proposal_link: Редактировать
       flag: Это предложение было помечено несколькими пользователями как неуместное.
       login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
       notifications_tab: Уведомления
@@ -453,7 +454,6 @@ ru:
       retired_warning_link_to_explanation: Читайте пояснение, прежде чем голосовать за него.
       retired: Предложение отозвано автором
       share: Доля
-      send_notification: Отправить ведомление
       no_notifications: "По этому предложению нет уведомлений."
       embed_video_title: "Видео по %{proposal}"
       title_external_url: "Дополнительная документация"
@@ -462,8 +462,6 @@ ru:
     update:
       form:
         submit_button: Сохранить изменения
-    share:
-      message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
   polls:
     all: "Все"
     no_dates: "дата не назначена"
@@ -545,7 +543,7 @@ ru:
   shared:
     edit: "Редактировать"
     save: "Сохранить"
-    delete: Удалить
+    delete: "Удалить"
     "yes": "Да"
     "no": "Нет"
     search_results: "Результаты поиска"
@@ -769,8 +767,6 @@ ru:
       send_private_message: "Отправить личное сообщение"
       delete_alert: "Вы уверены, что хотите удалить ваш проект инвестирования? Это действие необратимо"
     proposals:
-      send_notification: "Отправить уведомление"
-      retire: "Снять"
       retired: "Снятое предложение"
       see: "Просмотреть предложение"
   votes:
