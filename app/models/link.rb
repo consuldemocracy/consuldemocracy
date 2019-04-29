@@ -1,4 +1,4 @@
-class Link < ActiveRecord::Base
+class Link < ApplicationRecord
   belongs_to :linkable, polymorphic: true
 
   validates :label, presence: true

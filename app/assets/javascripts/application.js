@@ -17,7 +17,6 @@
 //= require jquery-ui/widgets/autocomplete
 //= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
-//= require best_in_place
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -83,7 +82,6 @@
 //= require send_newsletter_alert
 //= require managers
 //= require globalize
-//= require best_in_place_initialize
 //= require send_admin_notification_alert
 //= require settings
 
@@ -133,7 +131,6 @@ var initialize_modules = function() {
   App.SendNewsletterAlert.initialize();
   App.Managers.initialize();
   App.Globalize.initialize();
-  App.BestInPlace.initialize();
   App.SendAdminNotificationAlert.initialize();
   App.Settings.initialize();
 };
