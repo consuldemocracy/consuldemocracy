@@ -187,20 +187,16 @@ describe "Voter" do
           expect(page).not_to have_link(answer_yes.title)
         end
 
+        travel_back
+
         click_link "Sign out"
 
-        # Time needs to pass between the moment we vote and the moment
-        # we log in; otherwise the link to vote won't be available.
-        # It's safe to advance one second because this test isn't
-        # affected by possible date changes.
-        travel 1.second do
-          login_as user
-          visit poll_path(poll)
+        login_as user
+        visit poll_path(poll)
 
-          within("#poll_question_#{question.id}_answers") do
-            expect(page).to have_link(answer_yes.title)
-            expect(page).to have_link(answer_no.title)
-          end
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).to have_link(answer_yes.title)
+          expect(page).to have_link(answer_no.title)
         end
       end
     end
