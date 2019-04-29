@@ -186,6 +186,21 @@ he:
         two: "התראת הצעות"
         many: "הצעת התראות"
         other: "הצעת התראות"
+      dashboard/action:
+        one: פעולת לוח המחוונים להצעה
+        two: פעולת לוח המחוונים להצעות
+        many: פעולת לוח המחוונים להצעות
+        other: פעולת לוח המחוונים להצעות
+      dashboard/administrator_task:
+        one: משימה
+        two: משימות
+        many: משימות
+        other: משימות
+      link:
+        one: קישור
+        two: קישורים
+        many: קישורים
+        other: קישורים
     attributes:
       budget:
         name: "שם"
@@ -402,6 +417,13 @@ he:
         link_text: טקסט הקישור
       widget/feed:
         limit: מספר פריטים
+      dashboard/action:
+        title: כותרת
+        short_description: תיאור קצר
+        description: תיאור
+        link: קישור חיצוני
+        request_to_administrators: כלול לחצן במשאב בכדי לבקש את המשאב ממנהל המערכת
+        day_offset: כמה ימים לאחר יצירת ההצעה אתה רוצה שהיא תופעל?
     errors:
       models:
         user:
