@@ -1,4 +1,4 @@
-class Dashboard::AdministratorTask < ActiveRecord::Base
+class Dashboard::AdministratorTask < ApplicationRecord
   belongs_to :source, polymorphic: true
   belongs_to :user
 

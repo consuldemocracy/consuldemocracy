@@ -1,4 +1,4 @@
-class CreateProposalExecutedDashboardActions < ActiveRecord::Migration
+class CreateProposalExecutedDashboardActions < ActiveRecord::Migration[4.2]
   def change
     create_table :proposal_executed_dashboard_actions do |t|
       t.references :proposal, index: true, foreign_key: true
