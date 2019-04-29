@@ -291,6 +291,8 @@ gl:
     create:
       form:
         submit_button: Crear proposta
+    share:
+      message: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
     edit:
       editing: Editar proposta
       form:
@@ -424,7 +426,6 @@ gl:
         one: 1 comentario
         other: "%{count} comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar proposta
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
       login_to_comment: Precisas %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
@@ -433,7 +434,6 @@ gl:
       retired_warning_link_to_explanation: Revisa a súa explicación antes de apoiala.
       retired: Proposta retirada polo autor
       share: Compartir
-      send_notification: Enviar notificación
       no_notifications: "A proposta non ten notificacións."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
@@ -442,8 +442,6 @@ gl:
     update:
       form:
         submit_button: Gardar so cambios
-    share:
-      message: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
   polls:
     all: "Todo"
     no_dates: "sen data asignada"
@@ -525,7 +523,7 @@ gl:
   shared:
     edit: "Editar proposta"
     save: "Guardar"
-    delete: Borrar
+    delete: "Borrar"
     "yes": "Si"
     "no": "Non"
     search_results: "Resultados da busca"
@@ -736,8 +734,6 @@ gl:
       send_private_message: "Enviar unha mensaxe privada"
       delete_alert: "Tes a certeza de que desexas borrar o proxecto de investimento? Está acción non se pode desfacer"
     proposals:
-      send_notification: "Enviar notificación"
-      retire: "Retirar"
       retired: "Proposta retirada"
       see: "Ver proposta"
   votes:
