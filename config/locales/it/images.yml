@@ -14,7 +14,6 @@ it:
       destroy:
         notice: Immagine cancellata con successo.
         alert: Non è possibile distruggere l’immagine.
-        confirm: Sei sicuro di voler cancellare l’immagine? Questa azione non può essere annullata!
     errors:
       messages:
         in_between: deve essere tra %{min} e %{max}
