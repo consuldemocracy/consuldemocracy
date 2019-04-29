@@ -60,6 +60,23 @@ he:
     meta_keywords_description: 'מילות מפתח <meta name="keywords">, משמשים בכדי לשפר SEO'
     min_age_to_participate: הגיל המינימלי הדרוש בכדי להשתתף
     min_age_to_participate_description: "משתמשים מעל גיל זה יכול להשתתף בכל התהליכים שבהם נדרש חשבון משתמש מאומת"
+    proposals:
+      successful_proposal_id: הצעת מוצלחת
+      successful_proposal_id_description: הצעה זו משמשת כדוגמא להצעה מוצלחת במספרי התמיכה בה ותוצג בתרשים לוח המחוונים.
+      poll_short_title: סקרים
+      poll_short_title_description: תיאור קצר של תכונות הסקר. מאפשר למשתמשים ליצור סקרים על הצעות
+      poll_description: תיאור הסקרים
+      poll_description_description: תיאור מפורט של תכונת הסקר
+      poll_link: קישור למידע נוסף
+      poll_link_description: הוספת קישור למידע נוסף לפונקציונליות הסקר של לוח הבקרה
+      email_short_title: דואר אלקטרוני
+      email_short_title_description: תיאור קצר של תכונות הדוא"ל. מאפשר למשתמשים לשלוח דוא"ל כדי לקדם את ההצעה שלהם
+      email_description: תיאור הדוא"ל
+      email_description_description: תיאור מפורט של תכונות הדוא"ל
+      poster_short_title: פוסטר
+      poster_short_title_description: תיאור קצר של תכונות הפוסטר. מאפשר למשתמשים להוריד את הפוסטר ב - PDF כדי לקדם את ההצעה שלהם
+      poster_description: תיאור הפוסטר
+      poster_description_description: תיאור מפורט של תכונות הפוסטר
     analytics_url: "ניתוח כתובת URL"
     proposal_notification_minimum_interval_in_days: "מרווח מינימלי (בימים) עבור מחברי הצעות בכדי לשלוח הצעה חדשה"
     proposal_notification_minimum_interval_in_days_description: "מספר הימים בהם משתמש יכול לשלוח הודעה לכל התומכים בהצעות"
