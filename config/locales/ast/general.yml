@@ -357,7 +357,6 @@ ast:
         one: 1 Comentario
         other: "%{count} comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
@@ -366,7 +365,6 @@ ast:
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
       share: Compartir
-      send_notification: Enviar notificación
       embed_video_title: "Vídeo en %{proposal}"
       author: Autor
     update:
@@ -423,7 +421,7 @@ ast:
   shared:
     edit: "Editar propuesta"
     save: "Guardar"
-    delete: Borrar
+    delete: "Borrar"
     "yes": "Sí"
     "no": "Non"
     search_results: "Resultados de búsqueda"
@@ -598,9 +596,6 @@ ast:
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       send_private_message: "Enviar un mensaje privado"
-    proposals:
-      send_notification: "Enviar notificación"
-      retire: "Retirar"
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
