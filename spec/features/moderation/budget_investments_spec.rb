@@ -1,12 +1,12 @@
 require "rails_helper"
 
-feature "Moderate budget investments" do
+describe "Moderate budget investments" do
 
   let(:budget)  { create(:budget) }
   let(:group)   { create(:budget_group, name: "Culture", budget: budget) }
   let(:heading) { create(:budget_heading, name: "More libraries", price: 666666, group: group) }
 
-  background do
+  before do
     @mod        = create(:moderator)
     @investment = create(:budget_investment, heading: heading, author: create(:user))
   end
@@ -56,16 +56,16 @@ feature "Moderate budget investments" do
     end
   end
 
-  feature "/moderation/ screen" do
+  describe "/moderation/ screen" do
 
-    background do
+    before do
       login_as(@mod.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When an investment has been selected for moderation" do
+    describe "moderate in bulk" do
+      describe "When an investment has been selected for moderation" do
 
-        background do
+        before do
           visit moderation_budget_investments_path
 
           within(".menu.simple") do

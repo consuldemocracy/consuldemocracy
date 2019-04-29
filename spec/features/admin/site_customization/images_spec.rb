@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin custom images" do
+describe "Admin custom images" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

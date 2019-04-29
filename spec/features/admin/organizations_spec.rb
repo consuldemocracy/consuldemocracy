@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin::Organizations" do
+describe "Admin::Organizations" do
 
-  background do
+  before do
     administrator = create(:user)
     create(:administrator, user: administrator)
 
@@ -28,7 +28,7 @@ feature "Admin::Organizations" do
 
   context "Search" do
 
-    background do
+    before do
       @user = create(:user, email: "marley@humanrights.com", phone_number: "6764440002")
       create(:organization, user: @user, name: "Get up, Stand up")
     end

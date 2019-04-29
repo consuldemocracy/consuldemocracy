@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting polls" do
+describe "Commenting polls" do
   let(:user) { create :user }
   let(:poll) { create(:poll, author: create(:user)) }
 
@@ -155,7 +155,7 @@ feature "Commenting polls" do
     expect(page).to have_css(".comment", count: 2)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: poll)
       visit poll_path(poll)
@@ -307,7 +307,7 @@ feature "Commenting polls" do
     end
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
 
     scenario "can create comment as a moderator", :js do
       skip "Feature not implemented yet, review soon"
@@ -370,7 +370,7 @@ feature "Commenting polls" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       skip "Feature not implemented yet, review soon"
 
@@ -432,9 +432,9 @@ feature "Commenting polls" do
     end
   end
 
-  feature "Voting comments" do
+  describe "Voting comments" do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @poll = create(:poll)

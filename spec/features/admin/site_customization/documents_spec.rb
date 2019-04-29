@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Documents" do
+describe "Documents" do
 
   before do
     admin = create(:administrator)

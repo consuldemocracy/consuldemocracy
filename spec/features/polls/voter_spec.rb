@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Voter" do
+describe "Voter" do
 
   context "Origin", :with_frozen_time do
 
@@ -12,7 +12,7 @@ feature "Voter" do
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
-    background do
+    before do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)

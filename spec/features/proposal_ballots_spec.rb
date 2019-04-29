@@ -1,7 +1,7 @@
 # coding: utf-8
 require "rails_helper"
 
-feature "Proposal ballots" do
+describe "Proposal ballots" do
 
   scenario "Successful proposals do not show support buttons in index" do
     successful_proposals = create_successful_proposals

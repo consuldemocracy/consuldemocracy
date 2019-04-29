@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Proposal's dashboard" do
+describe "Proposal's dashboard" do
   let!(:proposal) { create(:proposal, :draft) }
 
   before do

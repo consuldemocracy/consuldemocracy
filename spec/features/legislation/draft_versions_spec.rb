@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Legislation Draft Versions" do
+describe "Legislation Draft Versions" do
   let(:user) { create(:user) }
   let(:administrator) do
     create(:administrator, user: user)
@@ -143,7 +143,7 @@ feature "Legislation Draft Versions" do
   context "Annotations", :js do
     let(:user) { create(:user) }
 
-    background { login_as user }
+    before { login_as user }
 
     scenario "Visit as anonymous" do
       logout
@@ -222,7 +222,7 @@ feature "Legislation Draft Versions" do
 
     let(:user) { create(:user) }
 
-    background { login_as user }
+    before { login_as user }
 
     scenario "View annotations and comments in an included range" do
       draft_version = create(:legislation_draft_version, :published)
@@ -246,7 +246,7 @@ feature "Legislation Draft Versions" do
   end
 
   context "Annotations page" do
-    background do
+    before do
       @draft_version = create(:legislation_draft_version, :published)
       create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "ipsum",
                                       ranges: [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}])
@@ -262,7 +262,7 @@ feature "Legislation Draft Versions" do
     end
 
     context "switching versions" do
-      background do
+      before do
         @process = create(:legislation_process)
         @draft_version_1 = create(:legislation_draft_version, :published, process: @process,
                                                                           title: "Version 1", body: "Text with quote for version 1")
@@ -298,7 +298,7 @@ feature "Legislation Draft Versions" do
   end
 
   context "Annotation comments page" do
-    background do
+    before do
       @draft_version = create(:legislation_draft_version, :published)
       create(:legislation_annotation, draft_version: @draft_version, text: "my annotation", quote: "ipsum",
                                       ranges: [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}])

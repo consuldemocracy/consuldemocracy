@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "BudgetPolls", :with_frozen_time do
+describe "BudgetPolls", :with_frozen_time do
   let(:budget) { create(:budget, :balloting) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group) }
@@ -11,7 +11,7 @@ feature "BudgetPolls", :with_frozen_time do
   let(:admin) { create(:administrator) }
   let!(:user) { create(:user, :in_census) }
 
-  background do
+  before do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Verification path" do
+describe "Verification path" do
 
   scenario "User is an organization" do
     user = create(:user, verified_at: Time.current)

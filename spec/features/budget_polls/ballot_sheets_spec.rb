@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Poll budget ballot sheets" do
+describe "Poll budget ballot sheets" do
   let(:budget) { create(:budget) }
   let(:poll) { create(:poll, budget: budget, ends_at: 1.day.ago) }
   let(:booth) { create(:poll_booth) }
@@ -8,7 +8,7 @@ feature "Poll budget ballot sheets" do
 
   context "Officing recounts and results view" do
 
-    background do
+    before do
       create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -80,7 +80,7 @@ feature "Poll budget ballot sheets" do
 
   context "Index" do
 
-    background do
+    before do
       create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -102,7 +102,7 @@ feature "Poll budget ballot sheets" do
 
   context "New" do
 
-    background do
+    before do
       create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -150,7 +150,7 @@ feature "Poll budget ballot sheets" do
 
   context "Show" do
 
-    background do
+    before do
       create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)

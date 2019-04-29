@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Polls" do
+describe "Polls" do
   let!(:proposal) { create(:proposal, :draft) }
 
   before do

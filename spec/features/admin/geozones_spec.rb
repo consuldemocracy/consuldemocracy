@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin geozones" do
+describe "Admin geozones" do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 

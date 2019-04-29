@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin banners magement" do
+describe "Admin banners magement" do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 
@@ -12,7 +12,7 @@ feature "Admin banners magement" do
                   %w[title description]
 
   context "Index" do
-    background do
+    before do
       @banner1 = create(:banner, title: "Banner number one",
                   description:  "This is the text of banner number one and is not active yet",
                   target_url:  "http://www.url.com",

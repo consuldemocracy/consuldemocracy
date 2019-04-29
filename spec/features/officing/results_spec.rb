@@ -1,11 +1,11 @@
 require "rails_helper"
 
-feature "Officing Results", :with_frozen_time do
+describe "Officing Results", :with_frozen_time do
   let(:poll) { create(:poll, ends_at: 1.day.ago) }
   let(:booth) { create(:poll_booth) }
   let(:poll_officer) { create(:poll_officer) }
 
-  background do
+  before do
     create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
     @question_1 = create(:poll_question, poll: poll)

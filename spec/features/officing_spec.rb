@@ -1,7 +1,7 @@
 require "rails_helper"
 require "sessions_helper"
 
-feature "Poll Officing" do
+describe "Poll Officing" do
   let(:user) { create(:user) }
 
   scenario "Access as regular user is not authorized" do

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Users" do
+describe "Users" do
 
   context "Regular authentication" do
     context "Sign up" do

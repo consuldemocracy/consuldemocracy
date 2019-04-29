@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin feature flags" do
+describe "Admin feature flags" do
 
-  background do
+  before do
     Setting["feature.spending_proposals"] = true
     Setting["feature.spending_proposal_features.voting_allowed"] = true
     login_as(create(:administrator).user)

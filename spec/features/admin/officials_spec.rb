@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin officials" do
+describe "Admin officials" do
 
-  background do
+  before do
     @citizen = create(:user, username: "Citizen Kane")
     @official = create(:user, official_position: "Mayor", official_level: 5)
     @admin = create(:administrator)

@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin valuators" do
+describe "Admin valuators" do
 
-  background do
+  before do
     @admin    = create(:administrator)
     @user     = create(:user, username: "Jose Luis Balbin")
     @valuator = create(:valuator)
@@ -57,7 +57,7 @@ feature "Admin valuators" do
 
   context "Search" do
 
-    background do
+    before do
       user  = create(:user, username: "David Foster Wallace", email: "david@wallace.com")
       user2 = create(:user, username: "Steven Erikson", email: "steven@erikson.com")
       @valuator1 = create(:valuator, user: user)

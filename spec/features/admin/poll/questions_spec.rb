@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin poll questions" do
+describe "Admin poll questions" do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 

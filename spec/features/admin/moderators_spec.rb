@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature "Admin moderators" do
-  background do
+describe "Admin moderators" do
+  before do
     @admin = create(:administrator)
     @user  = create(:user, username: "Jose Luis Balbin")
     @moderator = create(:moderator)
@@ -36,7 +36,7 @@ feature "Admin moderators" do
 
   context "Search" do
 
-    background do
+    before do
       user  = create(:user, username: "Elizabeth Bathory", email: "elizabeth@bathory.com")
       user2 = create(:user, username: "Ada Lovelace", email: "ada@lovelace.com")
       @moderator1 = create(:moderator, user: user)

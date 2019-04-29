@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Notifications" do
+describe "Notifications" do
 
   let(:user) { create :user }
 
-  background do
+  before do
     login_as(user)
     visit root_path
   end

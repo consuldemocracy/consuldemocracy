@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin dashboard actions" do
+describe "Admin dashboard actions" do
   let(:admin) { create :administrator }
 
   before do

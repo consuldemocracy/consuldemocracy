@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "rake sitemap:create" do
+describe "rake sitemap:create", type: :feature do
   before do
     @file ||= Rails.root.join("public", "sitemap.xml")
 

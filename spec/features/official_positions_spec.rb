@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Official positions" do
+describe "Official positions" do
 
   context "Badge" do
 
-    background do
+    before do
       @user1 = create(:user, official_level: 1, official_position: "Employee", official_position_badge: true)
       @user2 = create(:user, official_level: 0, official_position: "")
     end
@@ -22,7 +22,7 @@ feature "Official positions" do
 
     context "Debates" do
 
-      background do
+      before do
         @debate1 = create(:debate, author: @user1)
         @debate2 = create(:debate, author: @user2)
       end
@@ -46,7 +46,7 @@ feature "Official positions" do
 
     context "Proposals" do
 
-      background do
+      before do
         @proposal1 = create(:proposal, author: @user1)
         @proposal2 = create(:proposal, author: @user2)
 
@@ -72,7 +72,7 @@ feature "Official positions" do
 
     context "Spending proposals" do
 
-      background do
+      before do
         Setting["feature.spending_proposals"] = true
         @spending_proposal1 = create(:spending_proposal, author: @user1)
         @spending_proposal2 = create(:spending_proposal, author: @user2)

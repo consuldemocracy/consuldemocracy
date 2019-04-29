@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Budget Investments" do
+describe "Budget Investments" do
 
   let(:manager) { create(:manager) }
   let(:budget)  { create(:budget, phase: "selecting", name: "2033") }

@@ -22,7 +22,7 @@ shared_examples "imageable destroy" do |imageable_factory_name,
 
   context "Destroy" do
 
-    background do
+    before do
       create(:image, imageable: imageable, user: imageable.author)
     end
 

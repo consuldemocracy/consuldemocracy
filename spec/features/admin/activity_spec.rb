@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin activity" do
+describe "Admin activity" do
 
-  background do
+  before do
     @admin = create(:administrator)
     login_as(@admin.user)
   end

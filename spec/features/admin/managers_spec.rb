@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature "Admin managers" do
-  background do
+describe "Admin managers" do
+  before do
     @admin = create(:administrator)
     @user  = create(:user)
     @manager = create(:manager)
@@ -36,7 +36,7 @@ feature "Admin managers" do
 
   context "Search" do
 
-    background do
+    before do
       user  = create(:user, username: "Taylor Swift", email: "taylor@swift.com")
       user2 = create(:user, username: "Stephanie Corneliussen", email: "steph@mrrobot.com")
       @manager1 = create(:manager, user: user)

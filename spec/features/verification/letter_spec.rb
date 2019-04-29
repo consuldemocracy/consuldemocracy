@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Verify Letter" do
+describe "Verify Letter" do
 
   scenario "Request a letter" do
     user = create(:user, residence_verified_at: Time.current,

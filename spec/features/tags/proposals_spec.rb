@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Tags" do
+describe "Tags" do
 
   scenario "Index" do
     create_featured_proposals

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Verified users" do
+describe "Verified users" do
 
   scenario "Verified emails" do
     user = create(:user,

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Moderate proposal notifications" do
+describe "Moderate proposal notifications" do
 
   scenario "Hide", :js do
     citizen   = create(:user)
@@ -39,16 +39,16 @@ feature "Moderate proposal notifications" do
     end
   end
 
-  feature "/moderation/ screen" do
+  describe "/moderation/ screen" do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When a proposal has been selected for moderation" do
-        background do
+    describe "moderate in bulk" do
+      describe "When a proposal has been selected for moderation" do
+        before do
           proposal = create(:proposal)
           @proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
           visit moderation_proposal_notifications_path

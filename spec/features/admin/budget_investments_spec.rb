@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin budget investments" do
+describe "Admin budget investments" do
 
   let(:budget) { create(:budget) }
   let(:administrator) do
@@ -11,14 +11,14 @@ feature "Admin budget investments" do
                   :budget_investment,
                   "admin_budget_budget_investment_path"
 
-  background do
+  before do
     @admin = create(:administrator)
     login_as(@admin.user)
   end
 
   context "Feature flag" do
 
-    background do
+    before do
       Setting["process.budgets"] = nil
     end
 
@@ -788,7 +788,7 @@ feature "Admin budget investments" do
       create(:budget_investment, title: "Some other investment", budget: budget)
     end
 
-    background do
+    before do
       create(:budget_investment, title: "Some investment", budget: budget)
     end
 
@@ -820,7 +820,7 @@ feature "Admin budget investments" do
   end
 
   context "Sorting" do
-    background do
+    before do
       create(:budget_investment, title: "B First Investment", budget: budget, cached_votes_up: 50)
       create(:budget_investment, title: "A Second Investment", budget: budget, cached_votes_up: 25)
       create(:budget_investment, title: "C Third Investment", budget: budget, cached_votes_up: 10)
@@ -1477,8 +1477,8 @@ feature "Admin budget investments" do
       end
     end
 
-    feature "Pagination" do
-      background { selected_bi.update(cached_votes_up: 50) }
+    describe "Pagination" do
+      before { selected_bi.update(cached_votes_up: 50) }
 
       scenario "After unselecting an investment", :js do
         create_list(:budget_investment, 30, budget: budget)

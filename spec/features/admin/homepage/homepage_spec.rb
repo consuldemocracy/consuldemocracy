@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Homepage" do
+describe "Homepage" do
 
-  background do
+  before do
     admin = create(:administrator).user
     login_as(admin)
 

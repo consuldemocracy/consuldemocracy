@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Results" do
+describe "Results" do
 
   let(:budget)  { create(:budget, :finished) }
   let(:group)   { create(:budget_group, budget: budget) }
@@ -11,7 +11,7 @@ feature "Results" do
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700) }
   let!(:investment4) { create(:budget_investment, :selected, heading: heading, price: 600, ballot_lines_count: 600) }
 
-  background do
+  before do
     Budget::Result.new(budget, heading).calculate_winners
   end
 

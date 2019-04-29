@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Welcome screen" do
+describe "Welcome screen" do
 
   let(:budget) { create(:budget) }
 
