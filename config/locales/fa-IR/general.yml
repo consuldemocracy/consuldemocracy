@@ -250,12 +250,10 @@ fa:
         one: 1 نظر
         other: "%{count} نظرات"
       comments_tab: توضیحات
-      edit_proposal_link: ویرایش
       login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
       notifications_tab: اطلاعیه ها
       milestones_tab: نقطه عطف
       share: "اشتراک گذاری\n"
-      send_notification: ارسال اعلان
       title_video_url: "ویدیوهای خارجی"
       author: نویسنده
     update:
@@ -295,7 +293,7 @@ fa:
   shared:
     edit: "ویرایش"
     save: "ذخیره کردن"
-    delete: حذف
+    delete: "حذف"
     "yes": "بله"
     "no": "نه"
     search_results: "جستجو نتایج "
@@ -430,8 +428,6 @@ fa:
       send_private_message: "ارسال پیام خصوصی"
       delete_alert: "آیا مطمئن هستید که می خواهید  پروژه سرمایه گذاری را حذف کنید؟ این دستور قابل بازگشت نیست"
     proposals:
-      send_notification: "ارسال اعلان"
-      retire: "بازنشسته"
       retired: "پیشنهاد بازنشسته"
       see: "دیدن پیشنهاد"
   votes:
