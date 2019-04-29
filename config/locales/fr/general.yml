@@ -423,7 +423,6 @@ fr:
         one: 1 commentaire
         other: "%{count} commentaires"
       comments_tab: Commentaires
-      edit_proposal_link: Éditer
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
       login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
       notifications_tab: Notifications
@@ -432,7 +431,6 @@ fr:
       retired_warning_link_to_explanation: Lisez l'explication avant de la soutenir.
       retired: Proposition retirée par l'auteur
       share: Partager
-      send_notification: Envoyer une notification
       no_notifications: "Cette proposition n'a pas de notification."
       embed_video_title: "Vidéo de %{proposal}"
       title_external_url: "Documentation supplémentaire"
@@ -520,7 +518,7 @@ fr:
   shared:
     edit: "Éditer"
     save: "Sauvegarder"
-    delete: Supprimer
+    delete: "Supprimer"
     "yes": "Oui"
     "no": "Non"
     search_results: "Résultats de recherche"
@@ -731,8 +729,6 @@ fr:
       send_private_message: "Envoyer un message privé"
       delete_alert: "Êtes-vous sûr. e de vouloir supprimer votre projet d'investissement ? Cette action est irréversible"
     proposals:
-      send_notification: "Envoyer une notification"
-      retire: "Retirer"
       retired: "Proposition retirée"
       see: "Voir la proposition"
   votes:
