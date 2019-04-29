@@ -228,12 +228,10 @@ fi:
         one: 1 kommentti
         other: "%{count} kommenttia"
       comments_tab: Kommentit
-      edit_proposal_link: Muokkaa
       login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet
       share: Jaa
-      send_notification: Lähetä ilmoitus
       title_video_url: "Ulkoinen video"
       author: Tekijä
     update:
@@ -272,7 +270,7 @@ fi:
   shared:
     edit: "Muokkaa"
     save: "Tallenna"
-    delete: Poista
+    delete: "Poista"
     "yes": "Kyllä"
     "no": "Ei"
     advanced_search:
@@ -354,7 +352,6 @@ fi:
       actions: Toiminnot
       send_private_message: "Lähetä yksityisviesti"
     proposals:
-      send_notification: "Lähetä ilmoitus"
       see: "Näytä ehdotus"
   votes:
     agree: Hyväksyn
