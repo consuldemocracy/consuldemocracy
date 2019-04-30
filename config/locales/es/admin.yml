@@ -727,6 +727,7 @@ es:
         title: Administradores
         name: Nombre
         email: Email
+        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
@@ -735,6 +736,9 @@ es:
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
+      form:
+        edit_title: "Editar administrador"
+        updated: "Administrador actualizado correctamente"
     moderators:
       index:
         title: Moderadores

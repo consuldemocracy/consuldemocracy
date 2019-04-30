@@ -149,8 +149,9 @@ describe "Admin budget investments" do
 
     scenario "Filtering by admin", :js do
       user = create(:user, username: "Admin 1")
+      user2 = create(:user, username: "Admin 2")
       administrator = create(:administrator, user: user)
-
+      create(:administrator, user: user2, description: "Alias")
       create(:budget_investment, title: "Realocate visitors", budget: budget,
                                                               administrator: administrator)
       create(:budget_investment, title: "Destroy the city", budget: budget)
@@ -165,6 +166,13 @@ describe "Admin budget investments" do
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
+
+      select "Alias", from: "administrator_id"
+      click_button "Filter"
+
+      expect(page).to have_content("There are no investment projects")
+      expect(page).not_to have_link("Destroy the city")
+      expect(page).not_to have_link("Realocate visitors")
 
       select "All administrators", from: "administrator_id"
       click_button "Filter"
@@ -1066,12 +1074,12 @@ describe "Admin budget investments" do
     scenario "Add administrator" do
       budget_investment = create(:budget_investment)
       user = create(:user, username: "Marta", email: "marta@admins.org")
-      create(:administrator, user: user)
+      create(:administrator, user: user, description: "Marta desc")
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
-      select "Marta (marta@admins.org)", from: "budget_investment[administrator_id]"
+      select "Marta desc (marta@admins.org)", from: "budget_investment[administrator_id]"
       click_button "Update"
 
       expect(page).to have_content "Investment project updated succesfully."
