@@ -77,3 +77,6 @@ he:
       hi: "משתמש/ת יקר/ה,"
       thanks: "תודה שוב על השתתפותך."
       sincerely: "בברכה,"
+    new_actions_notification_rake_created:
+      subject: "עוד חדשות על הצעת התושב שלך"
+      hi: "שלום %{name},"
