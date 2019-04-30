@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Documents' do
+feature "Documents" do
 
   before do
     admin = create(:administrator)
@@ -37,22 +37,22 @@ feature 'Documents' do
     expect(page).to have_content "There are no documents."
   end
 
-  scenario 'Index (pagination)' do
+  scenario "Index (pagination)" do
     per_page = Kaminari.config.default_per_page
     (per_page + 5).times { create(:document, :admin) }
 
     visit admin_site_customization_documents_path
 
-    expect(page).to have_selector('#documents .document', count: per_page)
+    expect(page).to have_selector("#documents .document", count: per_page)
 
     within("ul.pagination") do
       expect(page).to have_content("1")
-      expect(page).to have_link('2', href: admin_site_customization_documents_url(page: 2))
+      expect(page).to have_link("2", href: admin_site_customization_documents_url(page: 2))
       expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
-    expect(page).to have_selector('#documents .document', count: 5)
+    expect(page).to have_selector("#documents .document", count: 5)
   end
 
   scenario "Create" do
