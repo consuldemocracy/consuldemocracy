@@ -54,7 +54,6 @@
 
     <%= render file: "app/views/layouts/_mailer_footer.html.erb" %>
   </div>
-</div>
 
 <% if @newsletter.draft? && @newsletter.valid_segment_recipient? %>
   <%= link_to t("admin.newsletters.show.send"),
