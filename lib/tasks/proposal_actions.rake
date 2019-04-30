@@ -415,10 +415,8 @@ namespace :proposal_actions do
     description = "<p>This is an example of a successful proposal with an ideal progress.</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
-                                question: Faker::Lorem.sentence(3) + "?",
                                 summary: Faker::Lorem.sentence(3),
                                 responsible_name: Faker::Name.name,
-                                external_url: Faker::Internet.url,
                                 description: description,
                                 created_at: Time.now - expected_supports.length.days,
                                 tag_list: "Example",
