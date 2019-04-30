@@ -61,7 +61,7 @@ he:
     min_age_to_participate: הגיל המינימלי הדרוש בכדי להשתתף
     min_age_to_participate_description: "משתמשים מעל גיל זה יכול להשתתף בכל התהליכים שבהם נדרש חשבון משתמש מאומת"
     proposals:
-      successful_proposal_id: הצעת מוצלחת
+      successful_proposal_id: הצעה מוצלחת
       successful_proposal_id_description: הצעה זו משמשת כדוגמא להצעה מוצלחת במספרי התמיכה בה ותוצג בתרשים לוח המחוונים.
       poll_short_title: סקרים
       poll_short_title_description: תיאור קצר של תכונות הסקר. מאפשר למשתמשים ליצור סקרים על הצעות
