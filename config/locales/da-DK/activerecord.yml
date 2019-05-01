@@ -112,6 +112,12 @@ da:
       proposal_notification:
         one: "Notifikationer om forslag"
         other: "Notifikationer om forslag"
+      dashboard/administrator_task:
+        one: Opgave
+        other: Opgaver
+      link:
+        one: Link
+        other: Links
     attributes:
       budget:
         name: "Navn"
@@ -328,6 +334,11 @@ da:
         link_text: Link tekst
       widget/feed:
         limit: Antal postes
+      dashboard/action:
+        title: Titel
+        short_description: Kort beskrivelse
+        description: Beskrivelse
+        link: Ekstern link
     errors:
       models:
         user:
