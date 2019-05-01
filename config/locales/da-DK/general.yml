@@ -561,8 +561,21 @@ da:
         view_results: Se resultater
         edit_poll: Rediger survey
         show_results: Se resultater
+        show_results_help: Hvis du markerer afkrydsningsfeltet vil resultaterne offentliggøres, og alle brugere vil kunne se dem
+      form:
+        add_question: Tilføj et spørgsmål
+      question_fields:
+        remove_question: Slet spørgsmål
+        add_answer: Svar
+      question_answer_fields:
+        remove_answer: Slet svar
     poster:
       index:
+        title: Forhåndsvisning af plakat
+        poster_title: "Stop med at lede,"
+        poster_subtitle: "støt mig! :-)"
+        intro_text_html: "<strong>Jeg deltager i %{org}</strong> med mit eget borgerforslag, og kun hvis du også til opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
+        proposal_code: "Forslagets kode: %{code}"
         support: Støt mit forslag
     mailing:
       create:
