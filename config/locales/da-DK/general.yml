@@ -309,7 +309,13 @@ da:
     created:
       title: Tillykke! Du har taget det første skridt.
       motivation: "Det er vigtigt at forberede introduktionskampagnen, så dit forslag kan opnå succes. De første dage er afgørende."
+      motivation_2_html: "<strong>Hvis du ønsker anbefalinger til forberedelserne, inden du offentliggør dit forslag, så lad dit forslag forblive en udkastversion, og vi vil guide dig.</strong>"
+      publish: Nej, jeg ønsker at offentliggøre mit forslag
+      dashboard: Ja, jeg ønsker hjælp og vil offentliggøre forslaget senere
+      preview_title: Sådan vil dit forslag se ud, når du offentliggør det
     share:
+      improve_it: Gør din kampagne bedre og få større opbakning.
+      dashboard: Flere oplysninger
       message: "Jeg støttede op om dette forslag %{summary} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
     edit:
       editing: Rediger forslag
@@ -411,6 +417,7 @@ da:
       start_new: Opret nyt borgerforslag
     notice:
       retired: Forslaget er trukket tilbage
+      published: Forslaget blev offentliggjort
     proposal:
       created: "Du oprettede et forslag!"
       share:
@@ -444,6 +451,7 @@ da:
         one: 1 kommentar
         other: "%{count} kommentarer"
       comments_tab: Kommentarer
+      dashboard_proposal_link: Dashboard
       flag: Dette forslag er blevet markeret som upassende af flere brugere.
       login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       notifications_tab: Notifikationer
@@ -457,11 +465,30 @@ da:
       title_external_url: "Yderligere dokumentation"
       title_video_url: "Ekstern video"
       author: Oprettet af
+      draft: Forslaget er stadig i udkastversionen. Det kan derfor ikke modtage støtte eller blive vist i listen over borgerforslag endnu.
     update:
       form:
         submit_button: Gem ændringer
   dashboard:
+    menu:
+      my_proposal: Rediger mit forslag
+      progress: Forløb
+      resources: Funktioner
+      community: Fællesskab
+      polls: Afstemninger
+      mailing: E-mail
+      poster: Plakat
+      recommended_actions: Anbefalede handlinger
+    form:
+      request: Anmod
+    create_request:
+      success: Anmodningen blev sendt. Vi vil kontakte dig så hurtigt som muligt.
+      archived: Forslaget er arkiveret, og du kan derfor ikke efterspørge funktioner.
     progress:
+      title: Grafik
+      group_by_month: Månedlig
+      group_by_week: Ugentlig
+      group_by_date: Daglig
       supports: Støtte
     resource:
       required_supports: "%{supports} antal nødvendige brugere, der støtter op om forslaget"
