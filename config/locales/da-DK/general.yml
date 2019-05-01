@@ -512,10 +512,55 @@ da:
       resource_locked: Låst funktion
     recommended_actions:
       title: Anbefalede handlinger
+      goto_proposed_actions: Gå til anbefalede handlinger
+      see_proposed_actions: Tjek anbefalede handlinger
+      hide_proposed_actions: Skjul anbefalede handlinger
+      pending_title: Under behandling
+      show_description: Vis beskrivelse
+      without_pending_actions: Ingen anbefalede handlinger
+      done_title: Færdig
+      without_done_actions: Ingen anbefalede handlinger udført
+    next_goal:
+      title: Mål
+      see_complete_course: Tjek det komplette forløb
+      hide_course: Skjul forløb
     goal:
       target_supports:
         one: Få %{count} antal brugere, der støtter op om dit forslag
         other: Få %{count} antal brugere, der støtter op om dit forslag
+      days:
+        one: "%{count} dag"
+        other: "%{count} dage"
+      locked_resource: Låst funktion
+      ideal_time: Ideelt tidspunkt
+    community:
+      access_community: Gå til Fællesskabet
+      latest_activity: "Seneste aktivitet i Fællesskabet: %{at}"
+      participants: Deltagere
+      debates: Debatindlæg
+      comments: Kommentarer
+      latest_comments: Seneste beskeder
+    polls:
+      index:
+        title: Afstemninger
+        create: Opret afstemning
+        count:
+          one: Du har oprettet %{count} afstemning.
+          other: Du har oprettet %{count} afstemninger.
+        links: Links
+        additiontal_information: Yderligere information
+      new:
+        title: Ny afstemning
+        submit: Opret afstemning
+      edit:
+        submit: Opdater afstemning
+      poll:
+        responses:
+          one: "%{count} svar"
+          other: "%{count} svar"
+        view_results: Se resultater
+        edit_poll: Rediger survey
+        show_results: Se resultater
     poster:
       index:
         support: Støt mit forslag
@@ -831,6 +876,7 @@ da:
       published: Offentliggjort
       see: "Se forslag"
       actions: Handlinger
+      retired_help_text: Dashboardet er ikke tilgængeligt for forslag, der er trukket tilbage
   votes:
     agree: Jeg er enig
     anonymous: For mange anonyme stemmer til at godkende stemme %{verify_account}.
@@ -930,3 +976,24 @@ da:
       text_sign_in: log ind
       text_sign_up: tilmeld
       title: Hvordan kan jeg kommentere på dette?
+  links:
+    form:
+      delete_button: Slet
+      cancel_button: Annuller
+    nested_links:
+      title: Links
+      note: Tilføj de links. der kan have interesse
+      add_new_link: Tilføj nyt link
+    link_fields:
+      label_placeholder: Titel på link
+      url_placeholder: Link
+  communities:
+    show:
+      send_notification: Send besked til Fællesskabet
+      author: Bruger
+      surveys: Undersøgelser
+      complete_survey: Gennemfør undersøgelsen
+    subnav:
+      surveys: Undersøgelser
+    poll:
+      take_part: Forløber fra %{from} til %{to}
