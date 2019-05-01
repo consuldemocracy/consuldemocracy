@@ -77,3 +77,9 @@ da:
       hi: "Kære bruger,"
       thanks: "Endnu engang tak for din deltagelse."
       sincerely: "Med venlig hilsen"
+    new_actions_notification_rake_created:
+      subject: "Flere nyheder vedrørende dit borgerforslag"
+      hi: "Hej %{name},"
+      new_resource: "NY ULÅST RESSOURCE"
+      introduction: "Som du ved, oprettede du den %{created_at_day} %{created_at_month} udkastet til et borgerforslag %{title}."
+      text_1: "Du kan altid offentliggøre det ved at følge dette link: %{link_to_published}. Hvis du stadig ikke er sikker..."
