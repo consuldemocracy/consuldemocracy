@@ -489,9 +489,29 @@ da:
       group_by_month: Månedlig
       group_by_week: Ugentlig
       group_by_date: Daglig
+      progress: Akkumuleret udviklingsforløb
       supports: Støtte
+      success: Ideel udvikling
+      new_action: Ny
+    index:
+      title: Udgave
+      edit_proposal_link: Rediger forslag
+      publish: Offentliggør forslag
+      retire: Træk forslaget tilbage
+    new_request:
+      links: Links
+    resources:
+      available_resources: Tilgængelige funktioner
     resource:
+      required_days: "%{days} dage kræves"
       required_supports: "%{supports} antal nødvendige brugere, der støtter op om forslaget"
+      and: og
+      view_resource: Se funktion
+      resource_requested: Funktionen er allerede efterspurgt
+      request_resource: Anmod om funktion
+      resource_locked: Låst funktion
+    recommended_actions:
+      title: Anbefalede handlinger
     goal:
       target_supports:
         one: Få %{count} antal brugere, der støtter op om dit forslag
@@ -499,9 +519,15 @@ da:
     poster:
       index:
         support: Støt mit forslag
+    mailing:
+      create:
+        sent: E-mailen blev sendt
     mailer:
       forward:
+        subtitle_html: "Hvis du støtter mig, <br> vil vi opnå det."
         support_button: Støt forslaget
+        share_in: Del i
+        hi: "Hej!"
   polls:
     all: "Alle"
     no_dates: "der er ikke angivet nogen dato"
