@@ -84,3 +84,12 @@ da:
       introduction: "Som du ved, oprettede du den %{created_at_day} %{created_at_month} udkastet til et borgerforslag %{title}."
       text_1: "Du kan altid offentliggøre det ved at følge dette link: %{link_to_published}. Hvis du stadig ikke er sikker..."
       text_2: "Grib øjeblikket! Lær, tilføj andre mennesker med de samme interesser og forbered dig på udbredelsen af din idé, når du definitivt vælger at offentliggøre dit forslag."
+      text_3: "For at ledsage dig i udfordringen, får du her nyhederne..."
+      text_4: "Tag et kig på denne NYE anbefalede HANDLING:"
+      text_5: "Det næste vi anbefaler dig at gøre er:"
+      footer_text: "Som altid kan du gå til Forslagspanelet, hvor vi vil fortælle dig i detaljer, hvordan du kan bruge disse ressourcer, og hvordan du får mest ud af dem."
+      dashboard_button: "Værsgo, opdag dem!"
+    new_actions_notification_rake_published:
+      subject: "Flere nyheder vedrørende dit borgerforslag"
+      hi: "Hej %{name},"
+      new_resource: "NY ULÅST RESSOURCE"
