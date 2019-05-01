@@ -370,6 +370,28 @@ da:
         back: Gå tilbage til %{org}
         title: Administration
         description: Velkommen til %{org} administrations panelet.
+      actions:
+        action_type:
+          proposed_action: Foreslået handling
+          resource: Funktion
+        index:
+          description: "Når brugere opretter borgerforslag, kan de tilgå dashboardet for deres forslag, hvor du kan foreslå funktioner og anbefale, hvordan de bedst muligt får opbakning til deres idéer."
+          create: Opret funktion eller handling
+          edit: Rediger
+          delete: Slet
+          active: 'Ja'
+          inactive: 'Nej'
+          title: Funktioner og handlinger
+          action_title: Titel
+          action_type: Type
+          required_supports: Nødvendig støtte
+          day_offset: Obligatoriske dage
+          action_active: Aktiv
+          order: Rækkefølge
+          published_proposal: Offentliggjort forslag
+          default:
+            email: E-mail
+            polls: Afstemninger
     debates:
       index:
         filter: Filtrere
