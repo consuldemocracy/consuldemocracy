@@ -62,6 +62,8 @@ da:
     min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
     proposals:
       successful_proposal_id: Succesfulde borgerforslag
+      successful_proposal_id_description: Forslaget anvendes som reference til succesfulde borgerforslag rangeret efter antal støtte og vil blive vist på instrumentbrættets graf.
+      poll_short_title: Afstemninger
     analytics_url: "Analytisk URL"
     proposal_notification_minimum_interval_in_days: "Minimum interval (i dage) hvor brugere kan sende nye meddelelse vedrørende deres oprettede forslag"
     proposal_notification_minimum_interval_in_days_description: "Antal dage brugere kan sende beskeder til de brugere, der støtter deres forslag"
