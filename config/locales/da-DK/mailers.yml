@@ -121,3 +121,6 @@ da:
       hi: "Tillykke %{name}! Dit forslag %{title} er blevet oprettet."
       text_1: "Nu skal du bare forsøge at få 100 stemmer!"
       text_2: "Hvorfor 100?"
+      text_3: "Vores erfaring siger os, at den første dag er vigtig, da et nyt publiceret forslag vil være mere synligt på platformen."
+      text_4: "Få 100 stemmer på den første dag og du vil have det første fællesskab, der bakker dig op."
+      text_5: "Det er derfor, vi opfordrer dig til at få det, men selvfølgelig ikke uden en masse hjælp!"
