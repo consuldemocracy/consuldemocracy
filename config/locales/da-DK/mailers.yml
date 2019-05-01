@@ -112,3 +112,12 @@ da:
       list_1: "Panelet kan anvendes hver dag, hvor du kan modtage tips til funktioner, der kan hjælpe dig i processen."
       list_2: "Disse tips og funktioner vil give dig forskellige idéer, men også praktiske løsninger i forhold til at modtage flere stemmer. Glem dem ikke!"
       list_3: "Efterhånden som du får flere stemmer, vil det låse op for, at du får adgang til nye og bedre funktioner. I øjeblikket kan du via din e-mail sende besked ud til alle dine kontakter, udskrive plakater, men også adgang til andre funktioner, som du vil opdage. Bliv ved med at søge opbakning, og vi vil blive ved med at belønne og hjælpe dig!"
+      list_4: "Du har %{max_month} måneder fra du offentliggjorde dit forslag til at få %{max_votes} stemmer, så dit forslag kan blive en realitet. De første dage er dog de mest vigtige dage. Det er en udfordring. Gør dig klar!"
+      text_5: "For at finde din motivation,"
+      text_6: "her har du forskellige funktioner og en liste over tips, som du vil modtage hver dag, så du kan gøre dit forslag endnu bedre!"
+      dashboard_button: "Værsgo, opdag dem!"
+    new_actions_notification_on_published:
+      subject: "Dit borgerforslag er allerede offentliggjort. Stop ikke med at dele det!"
+      hi: "Tillykke %{name}! Dit forslag %{title} er blevet oprettet."
+      text_1: "Nu skal du bare forsøge at få 100 stemmer!"
+      text_2: "Hvorfor 100?"
