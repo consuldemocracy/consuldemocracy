@@ -339,6 +339,7 @@ da:
         short_description: Kort beskrivelse
         description: Beskrivelse
         link: Ekstern link
+        required_supports: Hvor meget støtte skal mit forslag modtage for at blive aktiveret?
     errors:
       models:
         user:
