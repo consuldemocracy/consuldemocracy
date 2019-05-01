@@ -201,7 +201,16 @@ da:
       ie: Vi har opdaget, at du anvender Internet Explorer. For en bedre oplevelse anbefaler vi, at du anvender %{firefox} eller %{chrome}.
       ie_title: Hjemmesiden fungerer ikke optimal sammen med din valgte browser
     dashboard:
+      proposal_header:
+        published: Offentliggjort
+        draft: Udkast
+        retired: Tilbagekaldt
       proposal_totals:
+        active_resources: Aktive funktioner
+        community: Deltagere i dit fællesskab
+        show_proposal: Vis forslag
+        preview_proposal: Forhåndsvisning af forslag
+        current_goal: Nuværende mål
         supports:
           zero: Ingen støtte
           one: 1 støtter op om forslaget
@@ -297,6 +306,9 @@ da:
     create:
       form:
         submit_button: Opret borgerforslag
+    created:
+      title: Tillykke! Du har taget det første skridt.
+      motivation: "Det er vigtigt at forberede introduktionskampagnen, så dit forslag kan opnå succes. De første dage er afgørende."
     share:
       message: "Jeg støttede op om dette forslag %{summary} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
     edit:
