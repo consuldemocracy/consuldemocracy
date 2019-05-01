@@ -408,6 +408,27 @@ da:
           help_text: Tast 0 så denne værdi ikke medregnes
           published_proposal: For offentlige forslag?
           published_proposal_help_text: Marker afkrydsningsfeltet for at oprette handlingen, så den kun vedrører offentlige forslag
+      administrator_tasks:
+        index:
+          description: "Funktioner publiceret på dashboardet for forslag kan inkludere en knap, hvor brugere kan fremsætte anmodninger til administratorene. Brugernes anmodninger kan ses nedenfor."
+          title: Efterspurgte funktioner
+          solve: Løs
+          no_records: Der er ingen efterspurgte funktioner
+          source: Kilde
+          resource: Efterspurgt funktion
+          filter: Filter
+          filters:
+            pending: Under behandling
+            done: Løst
+        edit:
+          back: Tilbage til listen over uløste opgaver
+          solving: Løs uløste opgave
+        form:
+          solve: Marker som løst
+          proposal: Borgerforslag
+          request: Efterspurgt funktion
+        update:
+          success: Opgaven blev markeret som løst.
     debates:
       index:
         filter: Filtrere
@@ -682,6 +703,9 @@ da:
       title_booths: Stemmebokse
       legislation: Medborgerdialog
       users: Brugere
+      dashboard: Dashboard for forslag
+      administrator_tasks: Efterspurgte funktioner
+      dashboard_actions: Funktioner og handlinger
     administrators:
       index:
         title: Administratorer
@@ -1233,6 +1257,8 @@ da:
           form:
             submit: Opdater
           how_to_enable: 'For at gøre kortet synligt for brugerne skal du aktivere "Borger- og budgetforslags geografiske område" under fanebladet "Funktioner".'
+        dashboard:
+          title: Dashboard for forslag
       setting: Funktioner
       setting_actions: Handlinger
       setting_name: Indstillinger
