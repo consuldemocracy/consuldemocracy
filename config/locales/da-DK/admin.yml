@@ -392,6 +392,22 @@ da:
           default:
             email: E-mail
             polls: Afstemninger
+            poster: Plakat
+        new:
+          creating: Nye funktioner i forbindelse med borgerforslag
+          back: Tilbage til liste
+        create:
+          notice: Handling blev oprettet
+        edit:
+          editing: Rediger handling
+          back: Tilbage til liste
+        delete:
+          success: Handlingen blev slettet
+        form:
+          submit_button: Gem
+          help_text: Tast 0 så denne værdi ikke medregnes
+          published_proposal: For offentlige forslag?
+          published_proposal_help_text: Marker afkrydsningsfeltet for at oprette handlingen, så den kun vedrører offentlige forslag
     debates:
       index:
         filter: Filtrere
