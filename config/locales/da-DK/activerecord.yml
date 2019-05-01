@@ -112,6 +112,9 @@ da:
       proposal_notification:
         one: "Notifikationer om forslag"
         other: "Notifikationer om forslag"
+      dashboard/action:
+        one: Handling
+        other: Handlinger
       dashboard/administrator_task:
         one: Opgave
         other: Opgaver
@@ -339,6 +342,8 @@ da:
         short_description: Kort beskrivelse
         description: Beskrivelse
         link: Ekstern link
+        request_to_administrators: Inkluder en knap i funktionen til at anmode administratorene om adgang til funktionen
+        day_offset: Hvor mange dag efter oprettelsen af forslaget ønsker du, at det skal være aktivt?
         required_supports: Hvor meget støtte skal mit forslag modtage for at blive aktiveret?
         active: Aktiv
         action_type: Type
