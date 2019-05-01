@@ -345,6 +345,7 @@ da:
         request_to_administrators: Inkluder en knap i funktionen til at anmode administratorene om adgang til funktionen
         day_offset: Hvor mange dag efter oprettelsen af forslaget ønsker du, at det skal være aktivt?
         required_supports: Hvor meget støtte skal mit forslag modtage for at blive aktiveret?
+        order: Du kan angive den position, hvor denne handling vil blive vist til brugeren på listen over handlinger
         active: Aktiv
         action_type: Type
       dashboard/administrator_task:
