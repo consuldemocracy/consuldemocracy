@@ -340,6 +340,14 @@ da:
         description: Beskrivelse
         link: Ekstern link
         required_supports: Hvor meget støtte skal mit forslag modtage for at blive aktiveret?
+        active: Aktiv
+        action_type: Type
+      dashboard/administrator_task:
+        source: Kilde
+        user: Udført af
+      link:
+        label: Titel
+        url: Link
     errors:
       models:
         user:
@@ -418,6 +426,7 @@ da:
               cannot_comment_valuation: "Du kan ikke kommentere en værdisættelse"
       messages:
         record_invalid: "Valideringen mislykkedes: %{errors}"
+        another_poll_active: Der er en anden afstemning aktiv i den angivet periode
         restrict_dependent_destroy:
           has_one: "Indlægget kan ikke slettes, fordi det er tilknyttet %{record}"
           has_many: "Indlægget kan ikke slettes, fordi det er tilknyttet %{record}"
