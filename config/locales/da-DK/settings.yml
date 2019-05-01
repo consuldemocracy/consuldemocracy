@@ -62,7 +62,7 @@ da:
     min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
     proposals:
       successful_proposal_id: Succesfulde borgerforslag
-      successful_proposal_id_description: Forslaget anvendes som reference til succesfulde borgerforslag rangeret efter antal støtte og vil blive vist på instrumentbrættets graf.
+      successful_proposal_id_description: Forslaget anvendes som reference til succesfulde borgerforslag rangeret efter mængden af støtte og vil blive vist på instrumentbrættets graf.
       poll_short_title: Afstemninger
       poll_short_title_description: Kort beskrivelse af undersøgelsen. Tillader brugere at oprette undersøgelser vedrørende et borgerforslag
       poll_description: Beskrivelse af afstemning
