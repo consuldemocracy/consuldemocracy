@@ -107,3 +107,7 @@ da:
       introduction: "Dit %{title} forslag er blevet oprettet."
       text_1: "Udnyt at dit forslag ikke er offentliggjort og gør dig klar til at kontakte en masse mennesker."
       text_2: "Når du er klar, kan du offentliggøre dit borgerforslag på <a href='%{link}'>link</a>."
+      text_3: "Vi ved, at det kan virke kompliceret at oprette et borgerforslag, der får opmærksomhed og modtager det nødvendige antal stemmer. Derfor vil vi gerne hjælpe dig!"
+      text_4: "Din nye, bedste allierede er: Forslagspanelet."
+      list_1: "Panelet kan anvendes hver dag, hvor du kan modtage tips til funktioner, der kan hjælpe dig i processen."
+      list_2: "Disse tips og funktioner vil give dig forskellige idéer, men også praktiske løsninger i forhold til at modtage flere stemmer. Glem dem ikke!"
