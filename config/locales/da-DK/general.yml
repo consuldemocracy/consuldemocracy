@@ -200,6 +200,12 @@ da:
       firefox: Firefox
       ie: Vi har opdaget, at du anvender Internet Explorer. For en bedre oplevelse anbefaler vi, at du anvender %{firefox} eller %{chrome}.
       ie_title: Hjemmesiden fungerer ikke optimal sammen med din valgte browser
+    dashboard:
+      proposal_totals:
+        supports:
+          zero: Ingen støtte
+          one: 1 støtter op om forslaget
+          other: "Flere støtter op om forslaget"
     footer:
       accessibility: Tilgængelighed
       conditions: Brugervilkår og betingelser
@@ -442,6 +448,21 @@ da:
     update:
       form:
         submit_button: Gem ændringer
+  dashboard:
+    progress:
+      supports: Støtte
+    resource:
+      required_supports: "%{supports} antal nødvendige brugere, der støtter op om forslaget"
+    goal:
+      target_supports:
+        one: Få %{count} antal brugere, der støtter op om dit forslag
+        other: Få %{count} antal brugere, der støtter op om dit forslag
+    poster:
+      index:
+        support: Støt mit forslag
+    mailer:
+      forward:
+        support_button: Støt forslaget
   polls:
     all: "Alle"
     no_dates: "der er ikke angivet nogen dato"
