@@ -83,3 +83,4 @@ da:
       new_resource: "NY ULÅST RESSOURCE"
       introduction: "Som du ved, oprettede du den %{created_at_day} %{created_at_month} udkastet til et borgerforslag %{title}."
       text_1: "Du kan altid offentliggøre det ved at følge dette link: %{link_to_published}. Hvis du stadig ikke er sikker..."
+      text_2: "Grib øjeblikket! Lær, tilføj andre mennesker med de samme interesser og forbered dig på udbredelsen af din idé, når du definitivt vælger at offentliggøre dit forslag."
