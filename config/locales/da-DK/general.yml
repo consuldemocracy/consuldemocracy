@@ -528,6 +528,9 @@ da:
         support_button: Støt forslaget
         share_in: Del i
         hi: "Hej!"
+        introduction: Jeg skriver til dig for at fortælle dig, at jeg deltager på %{org}, platformen hvor vi kan beslutte, hvordan vores by skal være. Derfor har jeg nu oprettet mit eget borgerforslag, hvor jeg har brug for din støtte! Men fortvivl ikke, det er meget simpelt.
+        support: "Alt du skal gøre er at klikke på knappen 'Støt forslag'. Kun forslag, der modtager den maksimale støtte, vil blive udført af Byrådet, og jeg er sikker på, at du kan hjælpe mig med at nå det!"
+        share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
     all: "Alle"
     no_dates: "der er ikke angivet nogen dato"
@@ -591,6 +594,8 @@ da:
       results:
         title: "Spørgsmål"
         most_voted_answer: "Mest populære svar: "
+    poll_header:
+      back_to_proposal: Tilbage til forslag
   poll_questions:
     show:
       vote_answer: "Stem %{answer}"
@@ -794,6 +799,7 @@ da:
       deleted_proposal: Dette forslag er blevet slettet
       deleted_budget_investment: Dette investeringsprojekt er blevet slettet
       proposals: Forslag
+      proposals_status: Status
       debates: Debatindlæg
       budget_investments: Budgetinvesteringer
       comments: Kommentarer
@@ -821,7 +827,10 @@ da:
       delete_alert: "Er du sikker på, du ønsker at slette dit investeringsprojekt? Denne handling kan ikke fortrydes"
     proposals:
       retired: "Tilbagetrukket borgerforslag"
+      draft: Udkast
+      published: Offentliggjort
       see: "Se forslag"
+      actions: Handlinger
   votes:
     agree: Jeg er enig
     anonymous: For mange anonyme stemmer til at godkende stemme %{verify_account}.
