@@ -388,6 +388,26 @@ el:
           day_offset: Απαιτούμενες ημέρες
           action_active: Ενεργό
           order: Παραγγελία
+          published_proposal: Δημοσιευμένη πρόταση
+          default:
+            email: E-Mail
+            polls: Δημοσκοπήσεις
+            poster: Αφίσα
+        new:
+          creating: Νέα ενέργεια για τον πίνακα ελέγχου προτάσεων
+          back: Πίσω στη λίστα
+        create:
+          notice: Η ενέργεια δημιουργήθηκε με επιτυχία
+        edit:
+          editing: Επεξεργασία ενέργειας για τον πίνακα ελέγχου προτάσεων
+          back: Πίσω στη λίστα
+        delete:
+          success: Η ενέργεια διαγράφηκε με επιτυχία
+        form:
+          submit_button: Αποθήκευση
+          help_text: Εισαγάγετε 0 για να μην ληφθεί υπόψη αυτή η τιμή
+          published_proposal: Για δημοσιευμένες προτάσεις;
+          published_proposal_help_text: Σημειώστε αυτό το πλαίσιο ελέγχου για να δημιουργήσετε την ενέργεια μόνο για δημοσιευμένες προτάσεις
     hidden_users:
       show:
         registered_at: "Εγγεγραμμένος στο:"
