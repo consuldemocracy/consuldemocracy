@@ -1010,3 +1010,98 @@ el:
         title: Επενδυτικά σχέδια για συμμετοχικό προϋπολογισμό
         assigned_admin: Διαχειριστής που έχει ανατεθεί
         no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
+        no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
+        summary_link: "Περίληψη επενδυτικών έργων"
+        valuator_summary_link: "Περίληψη του αξιολογητή"
+        feasibility:
+          feasible: "Εφικτή (%{price})"
+          not_feasible: "Δεν είναι εφικτό"
+          undefined: "Απροσδιόριστο"
+      show:
+        assigned_admin: Διαχειριστής που έχει ανατεθεί
+        assigned_valuators: Εκχωρημένοι αξιολογητές
+        back: Πίσω
+        classification: Ταξινόμηση
+        heading: "Επενδυτικό έργο %{id}"
+        edit: Επεξεργασία
+        edit_classification: Επεξεργασία ταξινόμησης
+        association_name: Ένωση
+        by: Από
+        sent: Απεσταλμένα
+        geozone: Εμβέλεια
+        dossier: Φάκελος
+        edit_dossier: Επεξεργασία φακέλου
+        tags: Ετικέτες
+        undefined: Απροσδιόριστο
+      edit:
+        classification: Ταξινόμηση
+        assigned_valuators: Αξιολογητές
+        submit_button: Ενημέρωση
+        tags: Ετικέτες
+        tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρισμένες με κόμματα (,)"
+        undefined: Απροσδιόριστο
+      summary:
+        title: Περίληψη για επενδυτικά έργα
+        title_proposals_with_supports: Περίληψη για επενδυτικά έργα με υποστηρίξεις
+        geozone_name: Εμβέλεια
+        finished_and_feasible_count: Τελειωμένο και εφικτό
+        finished_and_unfeasible_count: Τελειωμένο και ανέφικτο
+        finished_count: Τελείωσε
+        in_evaluation_count: Σε αξιολόγηση
+        total_count: Όλα
+        cost_for_geozone: Κόστος
+    geozones:
+      index:
+        title: Γεωζώνη
+        create: Δημιουργία γεωζώνης
+        edit: Επεξεργασία
+        delete: Διαγραφή
+      geozone:
+        name: Όνομα
+        external_code: Εξωτερικός κωδικός
+        census_code: Κωδικός απογραφής
+        code_help: Κωδικός απόκρισης για αυτήν τη γεωζώνη στο API της απογραφής
+    stats:
+      show:
+        incomplete_verifications: Ελλιπής επαληθεύσεις
+        polls: Δημοσκοπήσεις
+      direct_messages:
+        title: Άμεσα μηνύματα
+        total: Όλα
+        users_who_have_sent_message: Οι χρήστες που έχουν στείλει ένα ιδιωτικό μήνυμα
+      proposal_notifications:
+        title: Ειδοποιήσεις προτάσεων
+        total: Όλα
+        proposals_with_notifications: Προτάσεις με ειδοποιήσεις
+        not_available: "Πρόταση δεν είναι διαθέσιμη"
+      polls:
+        title: Στατιστικά δημοσκόπησης
+        all: Δημοσκοπήσεις
+        web_participants: Οι συμμετέχοντες στο Web
+        total_participants: Σύνολο συμμετεχόντων
+        poll_questions: "Ερωτήσεις από th δημοσκόπηση: %{poll}"
+        table:
+          poll_name: Δημοσκόπηση
+          question_name: Ερώτηση
+          origin_web: Οι συμμετέχοντες στο Web
+          origin_total: Σύνολο συμμετεχόντων
+    tags:
+      create: Δημιουργία θέματος
+      destroy: Διαγραφή θέματος
+      index:
+        add_tag: Προσθέστε ένα νέο θέμα πρότασης
+        title: Θέματα προτάσεων
+        topic: Θέμα
+        help: "Όταν ένας χρήστης δημιουργεί μια πρόταση, προτείνονται τα ακόλουθα θέματα ως προεπιλεγμένες ετικέτες."
+      name:
+        placeholder: Πληκτρολογήστε το όνομα του θέματος
+    users:
+      columns:
+        name: Όνομα
+        email: E-Mail
+        document_number: Αριθμός εγγράφου
+        roles: Ρόλοι
+        verification_level: Επίπεδο επαλήθευσης
+      index:
+        title: Χρήστης
+        no_users: Δεν υπάρχουν χρήστες.
