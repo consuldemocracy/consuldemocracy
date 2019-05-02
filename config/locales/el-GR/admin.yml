@@ -965,9 +965,17 @@ el:
       flash:
         create: "Μετατόπιση που πρόσθεσαν"
         destroy: "Μετατόπιση που αφαιρέθηκε"
+        unable_to_destroy: "Μετατοπίσεις με σχετικά αποτελέσματα ή επανυπολογισμούς δεν μπορούν να διαγραφούν"
+        date_missing: "Μία ημερομηνία πρέπει να επιλεγεί"
+      vote_collection: Συλλογή ψήφων
+      recount_scrutiny: Καταμέτρηση και έλεγχος
     booth_assignments:
+      manage_assignments: Διαχείριση αναθέσεων
       manage:
+        assignments_list: "Αναθέσεις για την ψηφοφορία '%{poll}'"
         status:
+          assign_status: Ανάθεση
+          assigned: Που έχουν ανατεθεί
           unassigned: Δεν έχει ανατεθεί
         actions:
           assign: Περίπτερο ανάθεσης
@@ -1033,7 +1041,10 @@ el:
         no_questions: "Δεν υπάρχουν ερωτήσεις που να έχουν ανατεθεί σε αυτήν τη δημοσκόπηση."
         questions_title: "Λίστα ερωτήσεων"
         table_title: "Τίτλος"
+        edit_answers: Επεξεργασία απαντήσεων
+        see_proposal: "(Βλ. πρόταση)"
       flash:
+        question_added: "Ερώτηση που έχει προστεθεί σε αυτήν τη δημοσκόπηση"
         error_on_question_added: "Η ερώτηση δεν μπόρεσε να ανατεθεί σε αυτή την ψηφοφορία"
     questions:
       index:
