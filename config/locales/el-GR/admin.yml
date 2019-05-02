@@ -433,7 +433,40 @@ el:
         edit:
           back: Πίσω
           submit_button: Αποθηκεύστε τις αλλαγές
+          warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να κάνετε κλικ στο "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
+        errors:
+          form:
+            error: Σφάλμα
+        form:
+          title_html: 'Επεξεργασία <span class="strong">%{draft_version_title}</span> από τη διαδικασία <span class="strong">%{process_title}</span>'
+          launch_text_editor: Ανοίξτε τον επεξεργαστή κειμένου
+          close_text_editor: Κλείστε τον επεξεργαστή κειμένου
+          use_markdown: Χρησιμοποιήστε το Markdown για να μορφοποιήσετε το κείμενο
+          hints:
+            final_version: Αυτή η έκδοση θα δημοσιευθεί ως τελικό αποτέλεσμα για αυτήν τη διαδικασία. Τα σχόλια δεν θα επιτρέπονται σε αυτή την έκδοση.
+            status:
+              draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν μπορεί να το δει
+              published: Ορατές για όλους
+          title_placeholder: Γράψτε τον τίτλο της έκδοσης του προσχεδίου
+          changelog_placeholder: Προσθέστε τις κύριες αλλαγές από την προηγούμενη έκδοση
+          body_placeholder: Γράψτε το κείμενο του προσχεδίου
+        index:
+          title: Εκδόσεις προσχεδίου
+          create: Δημιουργία έκδοσης
+          delete: Διαγραφή
+          preview: Προεπισκόπηση
+        new:
+          back: Πίσω
+          title: Δημιουργήστε νέα έκδοση
+          submit_button: Δημιουργία έκδοσης
+        statuses:
+          draft: Προσχέδιο
+          published: Δημοσιεύθηκε
         table:
+          title: Τίτλος
+          created_at: Δημιουργήθηκε στις
+          comments: Σχόλια
+          final_version: Τελική έκδοση
           status: Κατάσταση
       questions:
         create:
@@ -503,6 +536,12 @@ el:
       hidden_users: Κρυφοί χρήστες
       administrators: Διαχειριστές
       managers: Διευθυντές
+      moderators: Συντονιστές
+      messaging_users: Μηνύματα προς τους χρήστες
+      newsletters: Ενημερωτικά δελτία
+      admin_notifications: Ειδοποιήσεις
+      system_emails: Τα μηνύματα του συστήματος
+      emails_download: Λήψη email
     moderators:
       index:
         title: Συντονιστές
@@ -567,6 +606,20 @@ el:
       delete_success: Η ειδοποίηση διεγράφη με επιτυχία
       index:
         section_title: Ειδοποιήσεις
+        sent: Απεσταλμένα
+        actions: Ενέργειες
+        draft: Προσχέδιο
+        edit: Επεξεργασία
+        delete: Διαγραφή
+        preview: Προεπισκόπηση
+        view: Προβολή
+        empty_notifications: Δεν υπάρχουν ειδοποιήσεις για προβολή
+      new:
+        section_title: Νέα ειδοποίηση
+        submit_button: Δημιουργία ειδοποίησης
+      edit:
+        section_title: Επεξεργασία ειδοποίησης
+        submit_button: Ενημέρωση ειδοποίησης
     system_emails:
       direct_message_for_sender:
         title: "Αποστολέας ιδιωτικού μηνύματος"
