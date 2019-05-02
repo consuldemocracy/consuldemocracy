@@ -103,9 +103,9 @@ he:
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
           verify_account: "אמת את החשבון"
           create: "יצירת תקציב להשקעה"
-          not_logged_in: "חובה נדרשת ליצירת תקציב, השקעה של%{sign_in} או%{sign_up}."
-          sign_in: "התחברות"
-          sign_up: "הרשמה"
+          not_logged_in: "כדי ליצור תקציב השקעה חדש עליך ל- %{sign_in} או ל - %{sign_up}."
+          sign_in: "התחבר"
+          sign_up: "צור חשבון"
           by_feasibility: על פי ההיתכנות
           feasible: פרויקטים ברי ביצוע
           unfeasible: פרויקטים שאינם ברי ביצוע
