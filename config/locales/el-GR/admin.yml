@@ -626,6 +626,32 @@ el:
           welcome: "Καλώς ήλθατε"
         buttons:
           save: "Αποθήκευση"
+          content_block:
+            update: "Ενημερωμένη έκδοση μπλοκ"
+      title_moderated_content: Ελεγχόμενο περιεχόμενο
+      title_budgets: Προϋπολογισμοί
+      title_profiles: Προφίλ
+      title_settings: Ρυθμίσεις
+      title_site_customization: Περιεχόμενο δικτυακού τόπου
+      title_booths: Θάλαμοι ψηφοφορίας
+      legislation: Συνεργατική νομοθεσία
+      users: Χρήστες
+      dashboard: Πίνακας εργαλείων προτάσεων
+      administrator_tasks: Απαιτούνται πόροι
+      dashboard_actions: Πόροι και δράσεις
+    administrators:
+      index:
+        title: Διαχειριστές
+        name: Όνομα
+        email: E-Mail
+        id: ID διαχειριστή
+        no_administrators: Δεν υπάρχουν διαχειριστές.
+      administrator:
+        add: Προσθέστε
+        delete: Διαγραφή
+        restricted_removal: "Συγνώμη, δεν μπορείτε να αφαιρέσετε τον εαυτό σας από τους διαχειριστές"
+      search:
+        title: "Διαχειριστές: Αναζήτηση χρήστη"
     moderators:
       index:
         title: Συντονιστές
@@ -690,6 +716,9 @@ el:
       delete_success: Η ειδοποίηση διεγράφη με επιτυχία
       index:
         section_title: Ειδοποιήσεις
+        new_notification: Νέα ειδοποίηση
+        title: Τίτλος
+        segment_recipient: Παραλήπτες
         sent: Απεσταλμένα
         actions: Ενέργειες
         draft: Προσχέδιο
@@ -1022,6 +1051,64 @@ el:
       level_5: Επίπεδο 5
       search:
         edit_official: Επεξεργασία επισήμου
+        make_official: Φτιάξε επίσημο
+        title: "Επίσημες θέσεις: Αναζήτηση χρήστη"
+        no_results: Δεν βρέθηκαν επίσημες θέσεις.
+    organizations:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          pending: Σε εκκρεμότητα
+          rejected: Απερρίφθη
+          verified: Επιβεβαιωμένο
+        hidden_count_html:
+          one: Υπάρχει επίσης <strong>ένας οργανισμός</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
+          other: Υπάρχουν <strong>%{count} οργανισμοί</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
+        name: Όνομα
+        email: E-Mail
+        phone_number: Τηλέφωνο
+        responsible_name: Υπεύθυνος
+        status: Κατάσταση
+        no_organizations: Δεν υπάρχουν οργανισμοί.
+        reject: Απερρίφθη
+        rejected: Απερρίφθη
+        search: Αναζήτηση
+        search_placeholder: Όνομα, email ή τηλεφωνικός αριθμός
+        title: Οργανισμοί
+        verified: Επιβεβαιωμένο
+        verify: Βεβαιωθείτε
+        pending: Σε εκκρεμότητα
+      search:
+        title: Αναζητήστε οργανισμούς
+        no_results: Δεν βρέθηκαν οργανισμοί.
+    proposals:
+      index:
+        title: Προτάσεις
+        id: ID
+        author: Συγγραφέας
+        milestones: Ορόσημα
+        no_proposals: Δεν υπάρχουν προτάσεις.
+      show:
+        create_question: Πρόσθεσε αυτήν την πρόταση σε ένα δημοψήφισμα για να ψηφιστεί
+    hidden_proposals:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές προτάσεις
+        no_hidden_proposals: Δεν υπάρχουν κρυφές προτάσεις.
+    proposal_notifications:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές ειδοποιήσεις
+        no_hidden_proposals: Δεν υπάρχουν κρυφές ειδοποιήσεις.
     settings:
       index:
         feature_flags: Χαρακτηριστικά
