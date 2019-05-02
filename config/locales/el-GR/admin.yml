@@ -199,7 +199,62 @@ el:
           winners: Νικητές
           one_filter_html: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}</em></b>"
           two_filters_html: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Φίλτρο
+        download_current_selection: "Κατεβάστε την τρέχουσα επιλογή"
+        no_budget_investments: "Δεν υπάρχουν επενδυτικά έργα."
+        title: Επενδυτικά έργα
+        assigned_admin: Διαχειριστής που έχει ανατεθεί
+        no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
+        no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
+        no_valuation_groups: Δεν έχουν ανατεθεί ομάδες αξιολόγησης
+        feasibility:
+          feasible: "Εφικτό"
+          unfeasible: "Ανέφικτο"
+          undecided: "Αναποφάσιστο"
+        selected: "Επιλεγμένο"
+        select: "Επιλέξτε"
+        list:
+          id: ID
+          title: Τίτλος
+          supports: Υποστηρίξεις
+          admin: Διαχειριστής
+          valuator: Αξιολογητής
+          valuation_group: Ομάδα αξιολογητών
+          geozone: Εμβέλεια λειτουργίας
+          feasibility: Σκοπιμότητα
+          valuation_finished: Val. Fin.
+          selected: Επιλεγμένο
+          visible_to_valuators: Δείξε στους εκτιμητές
+          author_username: Όνομα χρήστη του συγγραφέα
+          incompatible: Ασυμβίβαστα
+          price: Τιμή
+        cannot_calculate_winners: Ο προϋπολογισμός πρέπει να μείνει σε φάση «Έργα ψηφοφορίας», «Επανεξέταση των ψηφοδελτίων» ή «Τελικού προϋπολογισμού» προκειμένου να υπολογιστούν τα νικητήρια έργα
+        see_results: "Εμφάνιση αποτελεσμάτων"
       show:
+        assigned_admin: Διαχειριστής που έχει ανατεθεί
+        assigned_valuators: Εκχωρημένοι αξιολογητές
+        classification: Ταξινόμηση
+        info: "%{budget_name} - ομάδα: %{group_name} - επενδυτικό project %{id}"
+        edit: Επεξεργασία
+        edit_classification: Επεξεργασία ταξινόμησης
+        by: Από
+        sent: Απεσταλμένα
+        group: Ομάδα
+        heading: Επικεφαλίδα
+        dossier: Φάκελος
+        edit_dossier: Επεξεργασία φακέλου
+        tags: Ετικέτες
+        user_tags: Ετικέτες χρήστη
+        undefined: Απροσδιόριστο
+        compatibility:
+          title: Συμβατότητα
+          "true": Ασυμβίβαστα
+          "false": Συμβατό
+        selection:
+          title: Επιλογή
+          "true": Επιλεγμένο
+          "false": Δεν είναι επιλεγμένο
         winner:
           title: Νικητής
           "true": "Ναι"
@@ -542,6 +597,35 @@ el:
       admin_notifications: Ειδοποιήσεις
       system_emails: Τα μηνύματα του συστήματος
       emails_download: Λήψη email
+      valuators: Αξιολογητές
+      poll_officers: Επίσημοι της ψηφοφορίας
+      polls: Δημοσκοπήσεις
+      poll_booths: Τοποθεσία θαλάμων
+      poll_booth_assignments: Αναθέσεις θαλάμων
+      poll_shifts: Διαχείριση μετατοπίσεων
+      officials: Επίσημοι
+      organizations: Οργανισμοί
+      settings: Καθολικές ρυθμίσεις
+      spending_proposals: Προτάσεις δαπανών
+      stats: Στατιστικά στοιχεία
+      signature_sheets: Φύλλα υπογραφών
+      site_customization:
+        homepage: Αρχική σελίδα
+        pages: Προσαρμοσμένες σελίδες
+        images: Προσαρμοσμένες εικόνες
+        content_blocks: Προσαρμοσμένα μπλοκ περιεχομένου
+        information_texts: Προσαρμοσμένα κείμενα πληροφοριών
+        information_texts_menu:
+          debates: "Συζητήσεις"
+          community: "Κοινότητα"
+          proposals: "Προτάσεις"
+          polls: "Δημοσκοπήσεις"
+          layouts: "Σχεδιαγράμματα"
+          mailers: "E-Mails"
+          management: "Διαχείριση"
+          welcome: "Καλώς ήλθατε"
+        buttons:
+          save: "Αποθήκευση"
     moderators:
       index:
         title: Συντονιστές
@@ -1124,3 +1208,44 @@ el:
           error: Το μπλοκ περιεχομένου δεν μπόρεσε να δημιουργηθεί
         update:
           notice: Το μπλοκ περιεχομένου ενημερώθηκε με επιτυχία
+          error: Το μπλοκ περιεχομένου δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Το μπλοκ περιεχομένου διαγράφηκε με επιτυχία
+        edit:
+          title: Επεξεργασία μπλοκ περιεχομένου
+        errors:
+          form:
+            error: Σφάλμα
+        index:
+          create: Δημιουργήστε νέο μπλοκ περιεχομένου
+          delete: Διαγραφή του μπλοκ
+    homepage:
+      description: Οι ενεργές ενότητες εμφανίζονται στην αρχική σελίδα με την ίδια σειρά όπως εδώ.
+      header_title: Κεφαλίδα
+      no_header: Δεν υπάρχουν επικεφαλίδες.
+      create_header: Δημιουργήστε την κεφαλίδα
+      cards_title: Κάρτες
+      create_card: Δημιουργία κάρτας
+      no_cards: Δεν υπάρχουν κάρτες.
+      cards:
+        title: Τίτλος
+        description: Περιγραφή
+        link_text: Σύνδεσμος κειμένου
+        link_url: Σύνδεσμος URL
+      feeds:
+        proposals: Προτάσεις
+        debates: Συζητήσεις
+        processes: Διαδικασίες
+      new:
+        header_title: Νέα επικεφαλίδα
+        submit_header: Δημιουργήστε την κεφαλίδα
+        card_title: Νέα κάρτα
+        submit_card: Δημιουργία κάρτας
+      edit:
+        header_title: Επεξεργασία της κεφαλίδας
+        submit_header: Αποθήκευση επικεφαλίδας
+        card_title: Επεξεργασία καρτών
+        submit_card: Αποθήκευση καρτών
+    translations:
+      remove_language: Κατάργηση γλώσσας
+      add_language: Προσθήκη γλώσσας
