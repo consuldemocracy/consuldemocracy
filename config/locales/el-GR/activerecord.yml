@@ -112,6 +112,15 @@ el:
       proposal_notification:
         one: "Κοινοποίηση της πρότασης"
         other: "Κοινοποιήσεις της πρότασης"
+      dashboard/action:
+        one: Πίνακας εργαλείων προτάσεων
+        other: Πίνακας εργαλείων προτάσεων
+      dashboard/administrator_task:
+        one: Εργασία
+        other: Εργασίες
+      link:
+        one: Σύνδεσμος
+        other: Σύνδεσμοι
     attributes:
       budget:
         name: "Όνομα"
@@ -328,6 +337,23 @@ el:
         link_text: Σύνδεσμος κειμένου
       widget/feed:
         limit: Αριθμός στοιχείων
+      dashboard/action:
+        title: Τίτλος
+        short_description: Σύντομη περιγραφή
+        description: Περιγραφή
+        link: Εξωτερικός σύνδεσμος
+        request_to_administrators: Συμπεριλάβετε στον πόρο ένα κουμπί για να ζητήσετε τον πόρο από τους διαχειριστές
+        day_offset: Πόσες ημέρες μετά τη δημιουργία της πρότασης θέλετε να ενεργοποιηθεί;
+        required_supports: Πόση υποστήριξη πρέπει να λάβει η πρόταση προκειμένου να ενεργοποιηθεί;
+        order: Μπορείτε να εισαγάγετε τη θέση όπου η δράση αυτή θα εμφανιστεί στο χρήστη στη λίστα των δράσεων
+        active: Ενεργό
+        action_type: Τύπος
+      dashboard/administrator_task:
+        source: Πηγή
+        user: Εκτελούνται από
+      link:
+        label: Τίτλος
+        url: Σύνδεσμος
     errors:
       models:
         user:
@@ -406,6 +432,7 @@ el:
               cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
       messages:
         record_invalid: "Η επικύρωση απέτυχε: %{errors}"
+        another_poll_active: Υπάρχει μια άλλη δημοσκόπηση ενεργή για την δεδομένη περίοδο
         restrict_dependent_destroy:
           has_one: "Δεν μπορείτε να σβήσετε την εγγραφή επειδή μία εξαρτημένη %{record} υπάρχει"
           has_many: "Δεν μπορείτε να σβήσετε την εγγραφή επειδή μία εξαρτημένη %{record} υπάρχει"
