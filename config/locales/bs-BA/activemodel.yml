@@ -1,1 +1,5 @@
 bs:
+  activemodel:
+    models:
+      verification:
+        residence: "Residence"
