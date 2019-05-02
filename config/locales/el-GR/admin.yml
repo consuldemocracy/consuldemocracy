@@ -957,6 +957,14 @@ el:
         search_officer_placeholder: Αναζήτηση λειτουργού
         search_officer_text: Αναζητήστε έναν αξιωματικό να αναθέσει μια νέα μετατόπιση
         select_date: "Επιλέξτε ημέρα"
+        no_voting_days: "Οι ημέρες ψηφοφορίας τέλιωσαν"
+        select_task: "Επιλέξτε καθήκον"
+        table_shift: "Μετατόπιση"
+        table_email: "E-Mail"
+        table_name: "Όνομα"
+      flash:
+        create: "Μετατόπιση που πρόσθεσαν"
+        destroy: "Μετατόπιση που αφαιρέθηκε"
     booth_assignments:
       manage:
         status:
