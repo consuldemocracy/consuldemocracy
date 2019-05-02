@@ -665,6 +665,7 @@ el:
         description: "Αποστέλλονται στον συγγραφέα του σχολίου όταν λαμβάνει μια απάντηση."
       direct_message_for_receiver:
         title: "Δέκτης ιδιωτικού μηνύματος"
+        description: "Εστάλη στον δέκτη ιδιωτικού μηνύματος."
       direct_message_for_sender:
         title: "Αποστολέας ιδιωτικού μηνύματος"
         description: "Στείλτε στον αποστολέα του ιδιωτικού μηνύματος."
@@ -731,6 +732,10 @@ el:
         no_groups: "Δεν υπάρχουν ομάδες αξιολογητών"
       show:
         title: "Ομάδα εκτιμητών: %{group}"
+        no_valuators: "Δεν υπάρχουν αξιολογητές που να έχουν ανατεθεί σε αυτήν την ομάδα"
+      form:
+        name: "Όνομα ομάδας"
+        new: "Δημιουργήστε ομάδα εκτιμητών"
     booth_assignments:
       manage:
         status:
@@ -799,8 +804,68 @@ el:
         no_questions: "Δεν υπάρχουν ερωτήσεις που να έχουν ανατεθεί σε αυτήν τη δημοσκόπηση."
         questions_title: "Λίστα ερωτήσεων"
         table_title: "Τίτλος"
+      flash:
+        error_on_question_added: "Η ερώτηση δεν μπόρεσε να ανατεθεί σε αυτή την ψηφοφορία"
+    questions:
+      index:
+        title: "Ερωτήσεις"
+        create: "Δημιουργήστε ερώτηση"
+        no_questions: "Δεν υπάρχουν ερωτήσεις."
+        filter_poll: Φίλτρο βάσει της ψηφοφορίας
+        select_poll: Επιλέξτε ψηφοφορία
+        questions_tab: "Ερωτήσεις"
+        successful_proposals_tab: "Επιτυχείς προτάσεις"
+        create_question: "Δημιουργήστε ερώτηση"
+        table_proposal: "Πρόταση"
+        table_question: "Ερώτηση"
+        table_poll: "Δημοσκόπηση"
+        poll_not_assigned: "Η ψηφοφορία δεν ανατέθηκε"
+      edit:
+        title: "Επεξεργασία ερώτησης"
+      new:
+        title: "Δημουργήστε ερώτηση στην ψηφοφορία %{poll}"
+        title_proposal: "Δημιουργήστε ερώτηση"
+        poll_label: "Δημοσκόπηση"
+      answers:
+        images:
+          add_image: "Προσθέστε εικόνα"
+          save_image: "Αποθηκεύστε την εικόνα"
+      show:
+        proposal: Αυθεντική πρόταση
+        author: Συγγραφέας
+        question: Ερώτηση
+        edit_question: Επεξεργασία ερώτησης
+        valid_answers: Έγκυρες ερωτήσεις
+        add_answer: Πρόσθεσε ερώτηση
+        video_url: Εξωτερικό βίντεο
+        answers:
+          title: Απάντηση
+          description: Περιγραφή
+          videos: Βίντεο
+          video_list: Λίστα βίντεο
+          images: Εικόνες
+          images_list: Λίστα εικόνων
+          documents: Έγγραφα
+          documents_list: Λίστα εγγράφων
+          document_title: Τίτλος
+          document_actions: Ενέργειες
     answers:
+      new:
+        title: Νέα ερώτηση
+      show:
+        title: Τίτλος
+        description: Περιγραφή
+        images: Εικόνες
+        images_list: Λίστα εικόνων
+        edit: Επεξεργασία απάντησης
+      edit:
+        title: Επεξεργασία απάντησης
       videos:
+        index:
+          title: Βίντεο
+          add_video: Προσθήκη βίντεο
+          video_title: Τίτλος
+          video_url: Εξωτερικό βίντεο
         new:
           title: Νέο βίντεο
         edit:
@@ -869,6 +934,10 @@ el:
       level_1: Επίπεδο
       level_2: Επίπεδο 2
       level_3: Επίπεδο 3
+      level_4: Επίπεδο 4
+      level_5: Επίπεδο 5
+      search:
+        edit_official: Επεξεργασία επισήμου
     settings:
       index:
         feature_flags: Χαρακτηριστικά
@@ -935,3 +1004,9 @@ el:
         tags_filter_all: Όλες οι ετικέτες
         filters:
           valuation_open: Ανοιχτό
+          valuating: Υπό αξιολόγηση
+          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
+          all: Όλα
+        title: Επενδυτικά σχέδια για συμμετοχικό προϋπολογισμό
+        assigned_admin: Διαχειριστής που έχει ανατεθεί
+        no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
