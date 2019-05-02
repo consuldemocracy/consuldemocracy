@@ -1110,7 +1110,12 @@ el:
         title: Κρυφές ειδοποιήσεις
         no_hidden_proposals: Δεν υπάρχουν κρυφές ειδοποιήσεις.
     settings:
+      flash:
+        updated: Η αξία ανανεώθηκε
       index:
+        title: Ρυθμίσεις διαμόρφωσης
+        update_setting: Ενημέρωση
+        participation_processes: "Διαδικασίες συμμετοχής"
         feature_flags: Χαρακτηριστικά
         features:
           enabled: "Χαρακτηριστικό ενεργοποιημένο"
@@ -1125,6 +1130,8 @@ el:
           form:
             submit: Ενημέρωση
           how_to_enable: 'Για να δείξετε το χάρτη σε χρήστες πρέπει να ενεργοποιήσετε το «Προτάσεις και γεωτοποθεσία προϋπολογισμού επενδύσεων » στην καρτέλα «Χαρακτηριστικά».'
+        dashboard:
+          title: Πίνακας εργαλείων προτάσεων
       setting: Χαρακτηριστικό
       setting_actions: Ενέργειες
       setting_name: Ρύθμιση
@@ -1175,6 +1182,8 @@ el:
         tags_filter_all: Όλες οι ετικέτες
         filters:
           valuation_open: Ανοιχτό
+          without_admin: Χωρίς να ανατεθεί διαχειριστής
+          managed: Διευθετημένο
           valuating: Υπό αξιολόγηση
           valuation_finished: Η αξιολόγηση ολοκληρώθηκε
           all: Όλα
@@ -1306,7 +1315,79 @@ el:
         index:
           create: Δημιουργήστε νέο μπλοκ περιεχομένου
           delete: Διαγραφή του μπλοκ
+          title: Μπλοκ περιεχομένου
+        new:
+          title: Δημιουργήστε νέο μπλοκ περιεχομένου
+        content_block:
+          body: Σώμα
+          name: Όνομα
+          names:
+            top_links: Κορυφαίοι σύνδεσμοι
+            footer: Υποσέλιδο
+            subnavigation_left: Κύρια πλοήγηση αριστερά
+            subnavigation_right: Κύρια πλοήγηση δεξιά
+      images:
+        index:
+          title: Προσαρμοσμένες εικόνες
+          update: Ενημέρωση
+          delete: Διαγραφή
+          image: Εικόνα
+        update:
+          notice: Η εικόνα ενημερώθηκε με επιτυχία
+          error: Η εικόνα δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Η εικόνα έχει διαγραφεί με επιτυχία
+          error: Η εικόνα δεν μπόρεσε να διαγραφεί
+      pages:
+        create:
+          notice: Η σελίδα δημιουργήθηκε με επιτυχία
+          error: Η σελίδα δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: Η σελίδα ανανεώθηκε με επιτυχία
+          error: Η σελίδα δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Η σελίδα διαγράφηκε επιτυχώς
+        edit:
+          title: Επεξεργασία %{page_title}
+        errors:
+          form:
+            error: Σφάλμα
+        form:
+          options: Επιλογές
+        index:
+          create: Δημιουργήστε νέα σελίδα
+          delete: Διαγραφή σελίδας
+          title: Προσαρμοσμένες σελίδες
+          see_page: Δες την σελίδα
+        new:
+          title: Δημιουργία νέας προσαρμοσμένης σελίδας
+        page:
+          created_at: Δημιουργήθηκε στις
+          status: Κατάσταση
+          updated_at: Ενημερώθηκε στις
+          status_draft: Προσχέδιο
+          status_published: Δημοσιεύθηκε
+          title: Τίτλος
+          slug: Χτυπώ δυνατά
+          cards_title: Κάρτες
+          see_cards: Δες τις κάρτες
+        cards:
+          cards_title: κάρτες
+          create_card: Δημιουργία κάρτας
+          no_cards: Δεν υπάρχουν κάρτες.
+          title: Τίτλος
+          description: Περιγραφή
+          link_text: Σύνδεσμος κειμένου
+          link_url: Σύνδεσμος URL
+          columns_help: "Πλάτος της κάρτας σε αριθμό στηλών. Σε οθόνες κινητών είναι πάντα πλάτος 100%."
+          create:
+            notice: "Η κάρτα δημιουργήθηκε με επιτυχία!"
+          update:
+            notice: "Η κάρτα ανανεώθηκε με επιτυχία"
+          destroy:
+            notice: "Η κάρτα διαγράφηκε με επιτυχία"
     homepage:
+      title: Αρχική σελίδα
       description: Οι ενεργές ενότητες εμφανίζονται στην αρχική σελίδα με την ίδια σειρά όπως εδώ.
       header_title: Κεφαλίδα
       no_header: Δεν υπάρχουν επικεφαλίδες.
