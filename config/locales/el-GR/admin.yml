@@ -129,6 +129,12 @@ el:
         notice: "Η ομάδα ενημερώθηκε με επιτυχία"
       destroy:
         success_notice: "Η ομάδα διαγράφηκε επιτυχώς"
+        unable_notice: "Δεν μπορείτε να καταστρέψετε μια ομάδα που έχει συσχετισμένες επικεφαλίδες"
+      form:
+        create: "Δημιουργία νέας ομάδας"
+        edit: "Επεξεργασία ομάδας"
+        name: "Όνομα ομάδας"
+        submit: "Αποθήκευση ομάδας"
       index:
         back: "Πάμε πίσω στους προϋπολογισμούς"
     budget_headings:
@@ -256,6 +262,77 @@ el:
         empty_statuses: Δεν υπάρχουν καταστάσεις ορόσημου δημιουργημένες
         new_status: Δημιουργία νέας κατάστασης οροσήμου
         table_name: Όνομα
+        table_description: Περιγραφή
+        table_actions: Ενέργειες
+        delete: Διαγραφή
+        edit: Επεξεργασία
+      edit:
+        title: Επεξεργαστείτε την κατάσταση του οροσήμου
+      update:
+        notice: Η κατάσταση του οροσήμου ενημερώθηκε με επιτυχία
+      new:
+        title: Δημιουργία κατάστασης οροσήμου
+      create:
+        notice: Η κατάσταση του οροσήμου δημιουργήθηκε με επιτυχία
+      delete:
+        notice: Η κατάσταση του οροσήμου διαγράφηκε επιτυχώς
+    progress_bars:
+      manage: "Διαχειριστείτε τις μπάρες προόδου"
+      index:
+        title: "Οι γραμμές προόδου"
+        no_progress_bars: "Δεν υπάρχουν γραμμές προόδου"
+        new_progress_bar: "Δημιουργήστε νέες γραμμές προόδου"
+        primary: "Η πρωτογενής γραμμή προόδου"
+        table_id: "ID"
+        table_kind: "Τύπος"
+        table_title: "Τίτλος"
+        table_percentage: "Τρέχουσα πρόοδος"
+      new:
+        creating: "Δημιουργία γραμμή προόδου"
+      edit:
+        title:
+          primary: "Επεξεργαστείτε την πρωτογενή γραμμή προόδου"
+          secondary: "Επεξεργαστείτε τη γραμμή προόδου %{title}"
+      create:
+        notice: "Η γραμμή προόδου δημιουργήθηκε με επιτυχία!"
+      update:
+        notice: "Η γραμμή προόδου ενημερώθηκε με επιτυχία"
+      delete:
+        notice: "Η γραμμή προόδου διαγράφηκε επιτυχώς"
+    comments:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        hidden_debate: Κρυφή συζήτηση
+        hidden_proposal: Κρυφή πρόταση
+        title: Κρυφά σχόλια
+        no_hidden_comments: Δεν υπάρχουν κρυφά σχόλια.
+    dashboard:
+      index:
+        back: Πηγαίνετε πίσω στο %{org}
+        title: Διαχείριση
+        description: Καλώς ήλθατε στο πάνελ διαχειριστή του %{org}.
+      actions:
+        action_type:
+          proposed_action: Προτεινόμενη δράση
+          resource: Πόρος
+        index:
+          description: "Όταν οι χρήστες δημιουργούν προτάσεις μπορούν να έχουν πρόσβαση σε ένα ταμπλό της πρότασής τους, όπου μπορείτε να προτείνετε πόρους και συστάσεις για να λάβετε υποστήριξη για την ιδέα τους."
+          create: Δημιουργία πόρων ή δράσης
+          edit: Επεξεργασία
+          delete: Διαγραφή
+          active: 'Ναι'
+          inactive: 'Όχι'
+          title: Πόροι και δράσεις
+          action_title: Τίτλος
+          action_type: Τύπος
+          required_supports: Απαιτείται υποστήριξη
+          day_offset: Απαιτούμενες ημέρες
+          action_active: Ενεργό
+          order: Παραγγελία
     hidden_users:
       show:
         registered_at: "Εγγεγραμμένος στο:"
@@ -326,7 +403,36 @@ el:
           start_date: Ημερομηνία έναρξης
           end_date: Ημερομηνία λήξης
           status_open: Ανοιχτό
+        subnav:
+          proposals: Προτάσεις
+          milestones: Ακολουθεί
+      homepage:
+        edit:
+          title: Να ρυθμίσετε την αρχική σελίδα της διαδικασίας
+      proposals:
+        index:
+          title: Τίτλος
+          back: Πίσω
+          id: Id
+          supports: Όλες οι υποστηρίξεις
+          select: Επιλέξτε
+          selected: Επιλεγμένο
+        form:
+          custom_categories: Κατηγορίες
+          custom_categories_description: Κατηγορίες που μπορούν να επιλέξουν οι χρήστες δημιουργώντας την πρόταση. Μαξ 160 χαρακτήρες.
+          custom_categories_placeholder: Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (,) και μεταξύ εισαγωγικών ("")
       draft_versions:
+        create:
+          notice: 'Το προσχέδιο δημιουργήθηκε με επιτυχία. <a href="%{link}">Κάντε κλικ για να επισκεφθείτε</a>'
+          error: Το προσχέδιο δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: 'Το προσχέδιο ανανεώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Το προσχέδιο δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Το προσχέδιο διαγράφηκε επιτυχώς
+        edit:
+          back: Πίσω
+          submit_button: Αποθηκεύστε τις αλλαγές
         table:
           status: Κατάσταση
       questions:
