@@ -69,6 +69,7 @@ el:
           on_users: Χρήστες
           on_system_emails: Τα μηνύματα του συστήματος
         title: Δραστηριότητα συντονιστή
+        type: Τύπος
     budget_groups:
       index:
         back: "Πάμε πίσω στους προϋπολογισμούς"
