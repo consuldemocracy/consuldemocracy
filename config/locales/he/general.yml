@@ -649,7 +649,7 @@ he:
   polls:
     all: "כולם"
     no_dates: "לא הוקצה תאריך"
-    dates: "מ %{open_at} ל %{closed_at}"
+    dates: "מ %{open_at} עד %{closed_at}"
     final_date: "סיכום תוצאות סופיות"
     index:
       filters:
