@@ -109,3 +109,70 @@ el:
     proposal_notification: "Ειδοποιήσεις"
     spending_proposal: Προτάσεις δαπανών
     budget/investment: Επένδυση
+    budget/group: Ομάδα προϋπολογισμού
+    budget/heading: Επικεφαλίδα προϋπολογισμού
+    poll/shift: Μετατόπιση
+    poll/question/answer: Απάντηση
+    user: Λογαριασμός
+    verification/sms: τηλέφωνο
+    signature_sheet: Φύλλα υπογραφών
+    document: Έγγραφο
+    topic: Θέμα
+    image: Εικόνα
+  geozones:
+    none: Όλη την πόλη
+    all: Όλες οι ζώνες
+  layouts:
+    application:
+      chrome: Google Chrome
+  notifications:
+    index:
+      mark_all_as_read: Σημειώστε όλα αυτά ως αναγνωσμένα
+      read: Διαβασμένο
+      title: Ειδοποιήσεις
+      unread: Αδιάβαστο
+    notification:
+      action:
+        comments_on:
+          one: Κάποιος σχολίασε στο
+          other: Υπάρχουν %{count} νέα σχόλια στο
+        proposal_notification:
+          one: Υπάρχει νέα ειδοποίηση στο
+          other: Υπάρχουν %{count} νέες ειδοποιήσεις στο
+        replies_to:
+          one: Κάποιος απάντησε στο σχόλιό σας
+          other: Υπάρχουν %{count} νέες απαντήσεις στο σχόλιό σας στο
+      mark_as_read: Μαρκάρετε ως αναγνωσμένο
+      mark_as_unread: Μαρκάρετε ως μη αναγνωσμένο
+      notifiable_hidden: Αυτός ο πόρος δεν είναι διαθέσιμος πια.
+  map:
+    title: "Συνοικίες"
+    proposal_for_district: "Ξεκινήστε μια πρόταση για την περιοχή σας"
+    select_district: Εμβέλεια λειτουργίας
+    start_proposal: Δημιουργία πρότασης
+  omniauth:
+    facebook:
+      sign_in: Σύνδεση μέσω Facebook
+      sign_up: Εγγραφή μέσω Facebook
+      name: Facebook
+    finish_signup:
+      title: "Επιπρόσθετες πληροφορίες"
+      username_warning: "Λόγω αλλαγής στον τρόπο με τον οποίο αλληλεπιδράμε με κοινωνικά δίκτυα, είναι πιθανό ότι το όνομα χρήστη σας εμφανίζεται τώρα ως \"ήδη σε χρήση\". Εάν συμβαίνει αυτό, επιλέξτε ένα διαφορετικό όνομα χρήστη."
+    google_oauth2:
+      sign_in: Σύνδεση με Google
+      sign_up: Εγγραφή με Google
+      name: Google
+    twitter:
+      sign_in: Σύνδεση μέσω Twitter
+      sign_up: Εγγραφή μέσω Twitter
+      name: Twitter
+    info_sign_in: "Σύνδεση με:"
+    info_sign_up: "Εγγραφή με:"
+    or_fill: "Ή συμπληρώστε την παρακάτω φόρμα:"
+  proposals:
+    create:
+      form:
+        submit_button: Δημιουργήστε μια πρόταση
+    created:
+      title: Συγχαρητήρια! Έχετε κάνει το πρώτο βήμα.
+      motivation: "Είναι σημαντικό να προετοιμάσετε την εκστρατεία εκκίνησης ώστε η πρότασή σας να είναι επιτυχής. Οι πρώτες μέρες είναι καθοριστικές."
