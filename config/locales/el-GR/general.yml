@@ -270,3 +270,79 @@ el:
   dashboard:
     next_goal:
       hide_course: Απόκρυψη μαθημάτων
+    goal:
+      target_supports:
+        one: Πάρτε %{count} υποστήριξη για την πρότασή σας
+        other: Πάρτε %{count} υποστηρίξεις για την πρότασή σας
+      days:
+        one: "%{count} ημέρα"
+        other: "%{count} ημέρες"
+      locked_resource: Πόρος κλειδωμένος
+      ideal_time: Ιδανικός χρόνος
+    community:
+      access_community: Πρόσβαση στην κοινότητα
+      latest_activity: "Τελευταία δραστηριότητα της κοινότητας: %{at}"
+      participants: Συμμετέχοντες
+      debates: Συζητήσεις
+      comments: Σχόλια
+      latest_comments: Τελευταία μηνύματα
+    polls:
+      index:
+        title: Δημοσκοπήσεις
+        create: Δημιουργία δημοσκόπησης
+        count:
+          one: Έχετε δημιουργήσει την %{count} δημοσκόπηση.
+          other: Έχετε δημιουργήσει τις %{count} δημοσκοπήσεις.
+        links: Σύνδεσμοι
+        additiontal_information: Πρόσθετες πληροφορίες
+      new:
+        title: Νέα δημοσκόπηση
+        submit: Δημιουργία δημοσκόπησης
+      edit:
+        submit: Ενημέρωση δημοσκόπησης
+      poll:
+        responses:
+          one: "%{count} απάντηση"
+          other: "%{count} απαντήσεις"
+        view_results: Δείτε τα αποτελέσματα
+        edit_poll: Επεξεργασία έρευνας
+        show_results: Εμφάνιση αποτελεσμάτων
+        show_results_help: Εάν επιλέξετε αυτό το πλαίσιο, τα αποτελέσματα θα είναι δημόσια και όλοι οι χρήστες θα μπορούν να τα δουν
+      form:
+        add_question: Προσθέστε ερώτηση
+      question_fields:
+        remove_question: Κατάργηση ερώτησης
+        add_answer: Πρόσθεσε απάντηση
+      question_answer_fields:
+        remove_answer: Κατάργηση απάντησης
+    poster:
+      index:
+        title: Προεπισκόπηση αφίσας
+        poster_title: "Μη συνεχίσετε να ψάχνετε,"
+        poster_subtitle: "καλυψε με! ·)"
+        intro_text_html: "<strong> Συμμετέχω στο %{org}</strong> με την πρότασή μου για τους πολίτες και μόνο αν προσθέσετε μπορείτε να επιτύχετε την απαραίτητη υποστήριξη για να φτιάξετε την πόλη που όλοι θέλουμε."
+        proposal_code: "Κωδικός της πρότασης: %{code}"
+        support: Στηρίξτε την πρότασή μου
+        footer_html: "<strong> Επισκεφτείτε το %{link} και υποστηρίξτε αυτήν την πρόταση. </strong> Πρέπει να είμαστε πολλοί. Αποφασίστε επίσης. Ευχαριστώ!"
+      new:
+        title: Αφίσα της πρότασής σας
+      options:
+        preview: Προεπισκόπηση
+        download: Κατεβάζω
+    mailing:
+      index:
+        title: Προεπισκόπηση email
+      new:
+        title: Μοντέλο ηλεκτρονικού ταχυδρομείου για κοινή χρήση
+      mailing_options:
+        send: Αποστολή σε %{address}
+        preview: Προεπισκόπηση
+      create:
+        sent: Το email έχει αποσταλεί
+    mailer:
+      forward:
+        subtitle_html: "Αν με υποστηρίξετε, <br> θα το πετύχουμε."
+        support_button: Στηρίζουμε αυτή την πρόταση
+        share_in: Μοιραστείτε σε
+        hi: "Γεια σας!"
+        introduction: Σας γράφω για να σας ενημερώσω ότι συμμετέχω στο %{org}, στην πλατφόρμα που μπορούμε να αποφασίσουμε ποια πόλη θέλουμε. Και γι 'αυτό, δημιούργησα την δική μου πρόταση για τους πολίτες και τώρα, θα χρειαστώ την υποστήριξή σας! Αλλά μην ανησυχείτε γιατί είναι πολύ απλό.
