@@ -408,8 +408,49 @@ el:
           help_text: Εισαγάγετε 0 για να μην ληφθεί υπόψη αυτή η τιμή
           published_proposal: Για δημοσιευμένες προτάσεις;
           published_proposal_help_text: Σημειώστε αυτό το πλαίσιο ελέγχου για να δημιουργήσετε την ενέργεια μόνο για δημοσιευμένες προτάσεις
+      administrator_tasks:
+        index:
+          description: "Οι πόροι που δημοσιεύονται στον πίνακα ελέγχου των προτάσεων ενδέχεται να περιλαμβάνουν ένα κουμπί που θα ζητηθεί από τους διαχειριστές. Τα αιτήματα των χρηστών εμφανίζονται παρακάτω."
+          title: Απαιτούνται πόροι
+          solve: Επίλυση
+          no_records: Δεν απαιτούνται πόροι
+          source: Πηγή
+          resource: Απαιτούμενος πόρος
+          filter: Φίλτρο
+          filters:
+            pending: Σε εκκρεμότητα
+            done: Επίλυση
+        edit:
+          back: Πίσω στη λίστα καθηκόντων που είναι σε εκκρεμότητα
+          solving: Λύσε το καθήκον σε εκκρεμότητα
+        form:
+          solve: Σημείωσε ως επιλυμένο
+          proposal: Πρόταση
+          request: Απαιτούμενος πόρος
+        update:
+          success: Η εργασία έχει επισημανθεί ως επίλυμένη.
+    debates:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές συζητήσεις
+        no_hidden_debates: Δεν υπάρχουν κρυφές συζητήσεις.
     hidden_users:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφοί χρήστες
+        user: Χρήστης
+        no_hidden_users: Δεν υπάρχουν κρυφοί χρήστες.
       show:
+        email: "E-Mail:"
+        hidden_at: "Κρύφτηκε στις:"
         registered_at: "Εγγεγραμμένος στο:"
         title: Δραστηριότητα του χρήστη (%{user})
     hidden_budget_investments:
@@ -478,7 +519,13 @@ el:
           start_date: Ημερομηνία έναρξης
           end_date: Ημερομηνία λήξης
           status_open: Ανοιχτό
+          status_closed: Κλεισμένο
+          status_planned: Σχεδιασμένο
         subnav:
+          info: Πληροφορίες
+          homepage: Αρχική σελίδα
+          draft_versions: Σχεδίαση
+          questions: Συζήτηση
           proposals: Προτάσεις
           milestones: Ακολουθεί
       homepage:
@@ -869,6 +916,47 @@ el:
       form:
         name: "Όνομα ομάδας"
         new: "Δημιουργήστε ομάδα εκτιμητών"
+        edit: "Αποθήκευση ομάδας αποτίµησης"
+    poll_officers:
+      index:
+        title: Επίσημοι της ψηφοφορίας
+      officer:
+        add: Προσθέστε
+        delete: Διαγραφή της θέσης
+        name: Όνομα
+        email: E-Mail
+        entry_name: λειτουργός
+      search:
+        email_placeholder: Αναζήτηση χρήστη μέσω ηλεκτρονικού ταχυδρομείου
+        search: Αναζήτηση
+        user_not_found: Ο χρήστης δεν βρέθηκε
+    poll_officer_assignments:
+      index:
+        officers_title: "Λίστα λειτουργών"
+        no_officers: "Δεν υπάρχουν λειτουργοί που να έχουν ανατεθεί σε αυτήν τη δημοσκόπηση."
+        table_name: "Όνομα"
+        table_email: "E-Mail"
+      by_officer:
+        date: "Ημερομηνία"
+        booth: "Περίπτερο"
+        assignments: "Οι μετατοπίσεις σε αυτή τη δημοσκόπηση"
+        no_assignments: "Αυτός ο χρήστης δεν έχει αξιόλογες αλλαγές στη δημοσκόπηση."
+    poll_shifts:
+      new:
+        add_shift: "Πρόσθεσε μετατόπιση"
+        shift: "Ανάθεση"
+        shifts: "Μετατοπίσεις σε αυτό το περίπτερο"
+        date: "Ημερομηνία"
+        task: "Καθήκον"
+        edit_shifts: Επεξεργαστείτε τις μετατοπίσεις
+        new_shift: "Νέα μετατόπιση"
+        no_shifts: "Αυτό το περίπτερο δεν έχει μετατοπίσεις"
+        officer: "Λειτουργός"
+        remove_shift: "Κατάργηση"
+        search_officer_button: Αναζήτηση
+        search_officer_placeholder: Αναζήτηση λειτουργού
+        search_officer_text: Αναζητήστε έναν αξιωματικό να αναθέσει μια νέα μετατόπιση
+        select_date: "Επιλέξτε ημέρα"
     booth_assignments:
       manage:
         status:
@@ -1261,8 +1349,75 @@ el:
         external_code: Εξωτερικός κωδικός
         census_code: Κωδικός απογραφής
         code_help: Κωδικός απόκρισης για αυτήν τη γεωζώνη στο API της απογραφής
+        coordinates: Συντεταγμένες
+        coordinates_help: Συντεταγμένες που θα δημιουργούν μια περιοχή με δυνατότητα κλικ σε έναν χάρτη εικόνων HTML
+      errors:
+        form:
+          error:
+            one: "σφάλμα απέτρεψε αυτήν τη γεωζώνη από το να αποθηκευτεί"
+            other: "σφάλματα απέτρεψαν αυτήν τη γεωζώνη από το να αποθηκευτεί"
+      edit:
+        form:
+          submit_button: Αποθηκεύστε τις αλλαγές
+        editing: Επεξεργασία γεωζώνης
+        back: Πήγαινε πίσω
+      new:
+        back: Πήγαινε πίσω
+        creating: Δημιούργησε περιοχή
+      delete:
+        success: Η γεωζώνη διαγράφηκε με επιτυχία
+        error: Αυτή η γεωζώνη δεν μπορεί να διαγραφεί αφού υπάρχουν στοιχεία που είναι προσαρτημένα σε αυτήν
+    signature_sheets:
+      author: Συγγραφέας
+      created_at: Ημερομηνία δημιουργίας
+      name: Όνομα
+      no_signature_sheets: "Δεν υπάρχουν φύλλα υπογραφής"
+      index:
+        title: Φύλλα υπογραφών
+        new: Νέα φύλλα υπογραφών
+      new:
+        title: Νέα φύλλα υπογραφών
+        document_numbers_note: "Γράψτε τους αριθμούς χωρισμένους με κόμματα (,)"
+        submit: Δημιουργία φύλλου υπογραφών
+      show:
+        created_at: Δημιουργήθηκε
+        author: Συγγραφέας
+        documents: Έγγραφα
+        document_count: "Αριθμός εγγράφων:"
+        verified:
+          one: "Υπάρχει %{count} έγκυρη υπογραφή"
+          other: "Υπάρχουν %{count} έγκυρες υπογραφές"
+        unverified:
+          one: "Υπάρχει %{count} άκυρη υπογραφή"
+          other: "Υπάρχουν %{count} άκυρες υπογραφές"
+        unverified_error: (Μη εγκεκριμένο από την απογραφή)
+        loading: "Υπάρχουν ακόμη υπογραφές που επαληθεύονται από την Απογραφή, ανανεώστε τη σελίδα σε λίγα λεπτά"
     stats:
       show:
+        stats_title: Στατιστικά
+        summary:
+          comment_votes: Σχολίασε τις ψήφους
+          comments: Σχόλια
+          debate_votes: Συζήτηση ψήφων
+          debates: Συζητήσεις
+          proposal_votes: Ψήφοι προτάσεων
+          proposals: Προτάσεις
+          budgets: Άνοιξε προϋπολογισμούς
+          budget_investments: Επενδυτικά έργα
+          spending_proposals: Προτάσεις δαπανών
+          unverified_users: Μη επαληθευμένοι χρήστες
+          user_level_three: Χρήστες τρίτου επιπέδου
+          user_level_two: Χρήστες δεύτερου επιπέδου
+          users: Συνολικοί χρήστες
+          verified_users: Επαληθευμένοι χρήστες
+          verified_users_who_didnt_vote_proposals: Επαληθευμένοι χρήστες που δεν ψήφισαν προτάσεις
+          visits: Επισκέψεις
+          votes: Συνολικοί ψήφοι
+        spending_proposals_title: Προτάσεις δαπανών
+        budgets_title: Συμμετοχικός προϋπολογισμός
+        visits_title: Επισκέψεις
+        direct_messages: Άμεσα μηνύματα
+        proposal_notifications: Ειδοποιήσεις προτάσεων
         incomplete_verifications: Ελλιπής επαληθεύσεις
         polls: Δημοσκοπήσεις
       direct_messages:
