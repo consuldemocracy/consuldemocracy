@@ -497,3 +497,57 @@ el:
       title: Προτεινόμενα
     recommended:
       title: Συστάσεις που μπορεί να σας ενδιαφέρουν
+      help: "Αυτές οι συστάσεις δημιουργούνται από τις ετικέτες των συζητήσεων και των προτάσεων που ακολουθείτε."
+      debates:
+        title: Συνιστώμενες συζητήσεις
+        btn_text_link: Όλες οι συνιστώμενες συζητήσεις
+      proposals:
+        title: Προτεινόμενες προτάσεις
+        btn_text_link: Όλες οι προτεινόμενες προτάσεις
+      budget_investments:
+        title: Συνιστώμενες επενδύσεις
+      slide: "Δες %{title}"
+    verification:
+      i_dont_have_an_account: Δεν έχω λογαριασμό
+      i_have_an_account: Έχω ήδη λογαριασμό
+      question: Έχετε ήδη λογαριασμό στο %{org_name};
+      title: Επιβεβαίωση λογαριασμού
+    welcome:
+      go_to_index: Όχι τώρα, μεταβείτε στη σελίδα ευρετηρίου
+      start_using_consul: Μεταβείτε στη σελίδα ευρετηρίου
+      title: Συμμετέχουν
+      user_permission_debates: Συμμετοχή στις συζητήσεις
+      user_permission_info: Με το λογαριασμό σας, μπορείτε να...
+      user_permission_proposal: Δημιουργία νέων προτάσεων
+      user_permission_support_proposal: Υποστήριξη προτάσεων*
+      user_permission_verify: "Για να εκτελέσετε τις ακόλουθες ενέργειες, επαληθεύστε το λογαριασμό σας."
+      user_permission_verify_info: "* Μόνο για τους χρήστες στην απογραφή."
+      user_permission_verify_my_account: Επαληθεύσω το λογαριασμό μου
+      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
+  invisible_captcha:
+    sentence_for_humans: "Εάν είστε άνθρωπος, αγνοήστε αυτό το πεδίο"
+    timestamp_error_message: "Λυπούμαστε, αυτό ήταν πολύ γρήγορο! Υποβάλετε ξανά."
+  related_content:
+    title: "Σχετικό περιεχόμενο"
+    add: "Πρόσθεσε σχετικό περιεχόμενο"
+    label: "Σύνδεσμος για σχετικό περιεχόμενο"
+    placeholder: "%{url}"
+    help: "Μπορείτε να προσθέσετε συνδέσμους %{models} μέσα στο %{org}."
+    submit: "Προσθέστε"
+    error: "Ο σύνδεσμος δεν είναι έγκυρος. Θυμηθείτε να ξεκινήσετε με %{url}."
+    error_itself: "Ο σύνδεσμος δεν είναι έγκυρος. Δεν μπορείτε να συσχετίσετε ένα περιεχόμενο με τον εαυτό του."
+    success: "Προσθέσατε ένα νέο σχετικό περιεχόμενο"
+    is_related: "Είναι σχετικό περιεχόμενο;"
+    score_positive: "Ναι"
+    score_negative: "Όχι"
+    content_title:
+      proposal: "Πρόταση"
+      debate: "Συζήτηση"
+      budget_investment: "Επενδύσεις προϋπολογισμού"
+  admin/widget:
+    header:
+      title: Διαχείριση
+  annotator:
+    help:
+      alt: Επιλέξτε το κείμενο που θέλετε να σχολιάσετε και πατήστε το κουμπί με το μολύβι.
+      text: Για να σχολιάσετε αυτό το έγγραφο, πρέπει να %{sign_in} ή %{sign_up}. Στη συνέχεια, επιλέξτε το κείμενο που θέλετε να σχολιάσετε και πατήστε το κουμπί με το μολύβι.
