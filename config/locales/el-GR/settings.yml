@@ -76,6 +76,7 @@ el:
       poster_short_title: Αφίσα
       poster_short_title_description: Σύντομη περιγραφή της δυνατότητας αφίσας. Επιτρέπει στους χρήστες να κατεβάσουν μία αφίσα σε PDF μορφή για να προωθήσουν την πρότασή τους
       poster_description: Περιγραφή αφίσας
+      poster_description_description: Λεπτομερής περιγραφή της δυνατότητας αφίσας
     analytics_url: "Διεύθυνση URL του Analytics"
     proposal_notification_minimum_interval_in_days: "Ελάχιστο χρονικό διάστημα (σε ημέρες) για τους συντάκτες των προτάσεων για την αποστολή νέων ειδοποιήσεων προτάσεων"
     proposal_notification_minimum_interval_in_days_description: "Ο αριθμός των ημερών που ο χρήστης μπορεί να στείλει μια ειδοποίηση για όλους τους υποστηρικτές της πρότασής τους"
