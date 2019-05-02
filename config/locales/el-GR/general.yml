@@ -1,1 +1,61 @@
 el:
+  account:
+    show:
+      change_credentials_link: Αλλαγή διαπιστευτηρίων μου
+      email_on_comment_label: Ειδοποίηση μέσω email όταν κάποιος σχολιάζει προτάσεις ή συζητήσεις μου
+      email_on_comment_reply_label: Ειδοποίηση μέσω email όταν κάποιος απαντά σε σχόλια μου
+      erase_account_link: Διαγράψτε το λογαριασμό μου
+      finish_verification: Ολοκλήρωση επιβεβαίωσης
+      notifications: Ειδοποιήσεις
+      organization_name_label: Όνομα οργανισμού
+      organization_responsible_name_placeholder: Εκπρόσωπος της οργάνωσης/συλλόγου
+      personal: Προσωπικά στοιχεία
+      phone_number_label: Αριθμός τηλεφώνου
+      public_activity_label: Κρατήστε τη λίστα των δραστηριοτήτων μου δημόσια
+      public_interests_label: Κρατήστε τις ετικέτες από τα στοιχεία που θα ακολουθώ δημόσια
+      public_interests_my_title_list: Ετικέτες στοιχείων που ακολουθείτε
+      public_interests_user_title_list: Ετικέτες στοιχείων που ακολουθεί αυτός ο χρήστης
+      save_changes_submit: Αποθηκεύστε τις αλλαγές
+      subscription_to_website_newsletter_label: Λάβετε με email σχετικές πληροφορίες για την ιστοσελίδα
+      email_on_direct_message_label: Λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου σχετικά με άμεσα μηνύματα
+      email_digest_label: Λάβετε μια περίληψη των ειδοποιήσεων της πρότασης
+      official_position_badge_label: Εμφάνιση σήματος επίσημης θέσης
+      recommendations: Συστάσεις
+      show_debates_recommendations: Προβολή συστάσεων για συζητήσεις
+      show_proposals_recommendations: Προβολή συστάσεων για προτάσεις
+      title: Ο λογαριασμός μου
+      user_permission_debates: Συμμετοχή στις συζητήσεις
+      user_permission_info: Με το λογαριασμό σας, μπορείτε να...
+      user_permission_proposal: Δημιουργία νέων προτάσεων
+      user_permission_support_proposal: Υποστήριξη προτάσεων
+      user_permission_title: Συμμετοχή
+      user_permission_verify: Για να εκτελέσετε όλες αυτές τις ενέργειες, επαληθεύστε το λογαριασμό σας.
+      user_permission_verify_info: "* Μόνο για τους χρήστες στην απογραφή."
+      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
+      username_label: Όνομα χρήστη
+      verified_account: Λογαριασμός επαληθευμένος
+      verify_my_account: Επαληθεύσω το λογαριασμό μου
+  application:
+    close: Κλεισμένο
+    menu: Μενού
+  comments:
+    comments_closed: Τα σχόλια είναι κλειστά
+    verified_only: Να συμμετάσχουν %{verify_account}
+    verify_account: επαλήθευση του λογαριασμού σας
+    comment:
+      admin: Διαχειριστής
+      author: Συγγραφέας
+      deleted: Αυτό το σχόλιο έχει διαγραφεί
+      moderator: Συντονιστής
+      responses:
+        zero: Δεν υπάρχουν απαντήσεις
+        one: 1 απάντηση
+        other: "%{count} απαντήσεις"
+      user_deleted: Χρήστης διεγραμμένος
+      votes:
+        zero: Δεν υπάρχουν ψήφοι
+        one: 1 ψήφος
+        other: "%{count} ψήφοι"
+    form:
+      comment_as_admin: Σχόλιο ως διαχειριστής
+      comment_as_moderator: Σχόλιο ως συντονιστής
