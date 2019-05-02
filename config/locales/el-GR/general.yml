@@ -409,3 +409,91 @@ el:
     follow: "Ακολούθησε"
     following: "Ακολουθεί"
     follow_entity: "Ακολούθησε %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Παρακολουθείτε τώρα αυτό το επενδυτικό σχέδιο! </br> Θα σας ειδοποιήσουμε για τις αλλαγές που συμβαίνουν, ώστε να είστε ενημερωμένοι."
+        destroy:
+          notice_html: "Έχετε σταματήσει να ακολουθείτε αυτό το επενδυτικό σχέδιο! </br> Δεν θα λαμβάνετε πλέον ειδοποιήσεις σχετικά με αυτό το έργο."
+  spending_proposals:
+    index:
+      title: Συμμετοχικός προϋπολογισμός
+      unfeasible: Ανέφικτα επενδυτικά έργα
+      by_geozone: "Επενδυτικά σχέδια με πεδίο εφαρμογής: %{geozone}"
+      search_form:
+        button: Αναζήτηση
+        placeholder: Επενδυτικά έργα...
+        title: Αναζήτηση
+      search_results:
+        one: " που περιέχουν τον όρο '%{search_term} '"
+        other: " που περιέχουν τον όρο '%{search_term} '"
+      sidebar:
+        geozones: Εμβέλεια λειτουργίας
+        feasibility: Σκοπιμότητα
+        unfeasible: Δεν είναι εφικτό
+      start_spending_proposal: Δημιουργείστε ένα επενδυτικό έργο
+    new:
+      more_info: Πώς λειτουργεί ο συμμετοχικός προϋπολογισμός;
+      recommendation_one: Είναι υποχρεωτική η πρόταση να αναφέρεται σε μια δράση με δυνατότητα προϋπολογισμού.
+      recommendation_three: Προσπαθήστε να μπείτε σε λεπτομέρειες όταν περιγράφετε την πρότασή σας για δαπάνες, έτσι ώστε η ομάδα αναθεώρησης να κατανοεί τις θέσεις σας.
+      recommendation_two: Κάθε πρόταση ή σχόλιο που υποδηλώνει παράνομη δράση θα διαγραφεί.
+      recommendations_title: Πώς να δημιουργήσετε μια πρόταση δαπανών
+      start_new: Δημιουργία πρότασης δαπανών
+    show:
+      author_deleted: Χρήστης διεγραμμένος
+      code: "Κωδικός πρότασης:"
+      share: Μοιραστείτε
+    wrong_price_format: Μόνο ακέραιους αριθμούς
+    spending_proposal:
+      spending_proposal: Επενδυτικό έργο
+      already_supported: Έχετε ήδη υποστηρίξει αυτή την πρόταση. Μοιραστείτε τη!
+      support: Υποστήριξη
+      support_title: Υποστήριξη του έργου αυτού
+      supports:
+        zero: Καθόλου υποστηρίξεις
+        one: 1 υποστήριξη
+        other: "%{count} υποστηρίξεις"
+  stats:
+    index:
+      visits: Επισκέψεις
+      debates: Συζητήσεις
+      proposals: Προτάσεις
+      comments: Σχόλια
+      proposal_votes: Ψήφισε προτάσεις
+      debate_votes: Ψήφισε συζητήσεις
+      comment_votes: Ψήφισε σχόλια
+      votes: Συνολικοί ψήφοι
+      verified_users: Επαληθευμένοι χρήστες
+      unverified_users: Μη επαληθευμένοι χρήστες
+  unauthorized:
+    default: Δεν έχετε δικαίωμα πρόσβασης σε αυτήν τη σελίδα.
+    manage:
+      all: "Δεν έχετε άδεια εκτέλεσης της ενέργειας '%{action}' στο %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Μήνυμα
+        direct_messages_bloqued: "Αυτός ο χρήστης αποφάσισε να μην λάβει άμεσα μηνύματα"
+        submit_button: Αποστολή μηνύματος
+        title: Αποστολή ιδιωτικού μηνύματος στον %{receiver}
+        title_label: Τίτλος
+        verified_only: Για να στείλετε ένα προσωπικό μήνυμα %{verify_account}
+        verify_account: επαλήθευση του λογαριασμού σας
+        authenticate: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+        signin: είσοδος
+        signup: εγγραφή
+      show:
+        receiver: Μήνυμα αποστέλλεται στο %{receiver}
+  welcome:
+    feed:
+      most_active:
+        processes: "Ανοικτές διαδικασίες"
+      see_all_debates: Δείτε όλες τις συζητήσεις
+      see_all_proposals: Δείτε όλες τις προτάσεις
+      see_all_processes: Δείτε όλες τις διαδικασίες
+      process_label: Διαδικασία
+      see_process: Δείτε τη διαδικασία
+    cards:
+      title: Προτεινόμενα
+    recommended:
+      title: Συστάσεις που μπορεί να σας ενδιαφέρουν
