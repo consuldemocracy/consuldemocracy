@@ -460,7 +460,53 @@ el:
       retired_warning_link_to_explanation: Διαβάστε την εξήγηση πριν ψηφίσετε.
       retired: Η πρόταση αποσύρθηκε από τον συντάκτη
       share: Μοιραστείτε
+      no_notifications: "Η παρούσα πρόταση δεν έχει ειδοποιήσεις."
+      embed_video_title: "Βίντεο στην %{proposal}"
+      title_external_url: "Πρόσθετη τεκμηρίωση"
+      title_video_url: "Εξωτερικό βίντεο"
+      author: Συγγραφέας
+      draft: Προσχέδιο πρότασης. Δεν είναι ακόμα δυνατή η υποστήριξη, ούτε εμφανίζεται στη λίστα των προτάσεων.
+    update:
+      form:
+        submit_button: Αποθηκεύστε τις αλλαγές
   dashboard:
+    menu:
+      my_proposal: Επεξεργασία πρότασης
+      progress: Πρόοδος
+      resources: Πόροι
+      community: Κοινότητα
+      polls: Δημοσκοπήσεις
+      mailing: E-mail
+      poster: Αφίσα
+      recommended_actions: Συνιστώμενες ενέργειες
+    form:
+      request: Αίτημα
+    create_request:
+      success: Το αίτημα απεστάλη με επιτυχία. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό για να σας ενημερώσουμε.
+      archived: Αυτή η πρόταση αρχειοθετείται και δεν μπορεί να ζητήσει πόρους.
+    progress:
+      title: Γραφικό
+      group_by_month: Μηνιαίως
+      group_by_week: Εβδομαδιαίως
+      group_by_date: Ημερησίως
+      progress: Συσσωρευμένη πρόοδος
+      supports: Υποστηρίξεις
+      success: Ιδανική πρόοδος
+      new_action: Νέα
+    index:
+      title: Έκδοση
+      edit_proposal_link: Επεξεργασία πρότασης
+      publish: Δημοσίευση της πρότασης
+      retire: Απόκρυψη πρότασης
+    new_request:
+      links: Σύνδεσμοι
+    resources:
+      available_resources: Διαθέσιμοι πόροι
+    resource:
+      required_days: "%{days} ημέρες που απαιτούνται"
+      required_supports: "%{supports} υποστηρίξεις απαιτούνται"
+      and: και
+      view_resource: Δείτε τον πόρο
     next_goal:
       hide_course: Απόκρυψη μαθημάτων
     goal:
