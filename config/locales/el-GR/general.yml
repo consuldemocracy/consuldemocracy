@@ -505,8 +505,38 @@ el:
         help: Βοήθεια σχετικά με την ψηφοφορία
       section_footer:
         title: Βοήθεια σχετικά με την ψηφοφορία
+        description: Οι δημοσκοπήσεις των πολιτών είναι ένας συμμετοχικός μηχανισμός με τον οποίο οι πολίτες με δικαίωμα ψήφου μπορούν να λάβουν άμεσες αποφάσεις
+      no_polls: "Δεν υπάρχουν ανοιχτές ψηφοφορίες."
     show:
+      already_voted_in_booth: "Έχετε ήδη συμμετάσχει σε ένα φυσικό περίπτερο. Δεν μπορείτε να συμμετάσχετε ξανά."
+      already_voted_in_web: "Έχετε ήδη συμμετάσχει σε αυτή τη δημοσκόπηση. Εάν ψηφίσετε ξανά θα αντικατασταθεί."
+      back: Πίσω στην ψηφοφορία
+      cant_answer_not_logged_in: "Θα πρέπει να %{signin} ή %{signup} για να συμμετάσχετε."
+      comments_tab: Σχόλια
+      login_to_comment: Πρέπει να %{signin} ή %{signup} για να αφήσετε ένα σχόλιο.
+      signin: Συνδεθείτε
+      signup: Εγγραφή
+      cant_answer_verify_html: "Θα πρέπει να %{verify_link} προκειμένου να απαντήσετε."
+      verify_link: "επαλήθευση του λογαριασμού σας"
+      cant_answer_expired: "Αυτή τη δημοσκόπηση έχει τελειώσει."
+      cant_answer_wrong_geozone: "Αυτή η ερώτηση δεν είναι διαθέσιμη στη γεωζώνη σας."
+      more_info_title: "Περισσότερες πληροφορίες"
+      documents: Έγγραφα
+      zoom_plus: Επεκτείνετε την εικόνα
+      read_more: "Διαβάστε περισσότερα για %{answer}"
+      read_less: "Διαβάστε λιγότερα σχετικά με %{answer}"
+      videos: "Εξωτερικό βίντεο"
+      info_menu: "Πληροφορίες"
+      stats_menu: "Στατιστικά συμμετοχής"
+      results_menu: "Αποτελέσματα δημοσκόπησης"
       stats:
+        title: "Δεδομένα για τη συμμετοχή"
+        total_participation: "Συνολική συμμετοχή"
+        total_votes: "Συνολικοί ψήφοι των δεδομένων ψήφων"
+        votes: "ΨΉΦΟΙ"
+        web: "WEB"
+        booth: "ΠΕΡΊΠΤΕΡΟ"
+        total: "ΣΎΝΟΛΟ"
         valid: "Έγκυρο"
         white: "Λευκές ψήφοι"
         null_votes: "Μη έγκυρες"
@@ -640,6 +670,47 @@ el:
         signup: εγγραφή
       show:
         receiver: Μήνυμα αποστέλλεται στο %{receiver}
+    show:
+      deleted: Διαγραφή
+      deleted_debate: Αυτή η συζήτηση έχει διαγραφεί
+      deleted_proposal: Αυτή η πρόταση έχει διαγραφεί
+      deleted_budget_investment: Το επενδυτικό σχέδιο έχει διαγραφεί
+      proposals: Προτάσεις
+      proposals_status: Κατάσταση
+      debates: Συζητήσεις
+      budget_investments: Επενδύσεις προϋπολογισμού
+      comments: Σχόλια
+      actions: Ενέργειες
+      filters:
+        comments:
+          one: 1 σχόλιο
+          other: "%{count} σχόλια"
+        debates:
+          one: 1 συζήτηση
+          other: "%{count} συζητήσεις"
+        proposals:
+          one: 1 πρόταση
+          other: "%{count} πρότάσεις"
+        budget_investments:
+          one: 1 επένδυση
+          other: "%{count} επενδύσεις"
+        follows:
+          one: 1 ακόλουθος
+          other: "%{count} ακόλουθοι"
+      no_activity: Χρήστης δεν έχει καμία δημόσια δραστηριότητα
+      no_private_messages: "Αυτός ο χρήστης δεν δέχεται ιδιωτικά μηνύματα."
+      private_activity: Αυτός ο χρήστης αποφάσισε να κρατήσει τη λίστα δραστηριοτήτων ιδιωτική.
+      send_private_message: "Στείλτε προσωπικό μήνυμα"
+      delete_alert: "Είστε βέβαιοι ότι θέλετε να διαγράψετε το επενδυτικό σας έργο; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί"
+    proposals:
+      retired: "Πρόταση που έχει αποσυρθεί"
+      draft: Προσχέδιο
+      published: Δημοσιεύθηκε
+      see: "Δείτε την πρόταση"
+      actions: Ενέργειες
+      retired_help_text: Ταμπλό δεν είναι διαθέσιμο για προτάσεις που έχουν αποσυρθεί
+  votes:
+    agree: Συμφωνώ
   welcome:
     feed:
       most_active:
