@@ -59,7 +59,28 @@ el:
     form:
       comment_as_admin: Σχόλιο ως διαχειριστής
       comment_as_moderator: Σχόλιο ως συντονιστής
+      leave_comment: Σχολιάστε
+    orders:
+      most_voted: Πιο ψηφισμένα
+      newest: Τα νεότερα πρώτα
+      oldest: Τα παλιότερα πρώτα
+      most_commented: Περισσότερο σχολιασμένα
+    select_order: Ταξινόμηση κατά
+    show:
+      return_to_commentable: "Πήγαινε πίσω στο "
+  comments_helper:
+    comment_button: Δημοσίευση σχολίου
+    comment_link: Σχόλιο
+    comments_title: Σχόλια
+    reply_button: Δημοσίευση απάντησης
+    reply_link: Απάντηση
   debates:
+    create:
+      form:
+        submit_button: Ξεκινήστε μια συζήτηση
+    debate:
+      comments:
+        zero: Δεν υπάρχουν σχόλια
     index:
       section_footer:
         help_text_1: "Ο χώρος για συζητήσεις των πολιτών απευθύνεται σε όποιον μπορεί να εκθέσει τα θέματα που τους αφορούν και όσους θέλουν να μοιραστούν απόψεις με άλλους ανθρώπους."
