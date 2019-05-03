@@ -197,6 +197,40 @@ el:
   layouts:
     application:
       chrome: Google Chrome
+      firefox: Firefox
+      ie: Διαπιστώσαμε ότι κάνετε περιήγηση με τον Internet Explorer. Για μια βελτιωμένη εμπειρία, συνιστούμε τη χρήση %{firefox} ή %{chrome}.
+      ie_title: Αυτή η ιστοσελίδα δεν είναι βελτιστοποιημένη για το πρόγραμμα περιήγησής σας
+    dashboard:
+      proposal_header:
+        published: Δημοσιεύθηκε
+        draft: Προσχέδιο
+        retired: Αποσύρθηκε
+      proposal_totals:
+        active_resources: Ενεργοί πόροι
+        community: Συμμετέχοντες στην κοινότητά σας
+        show_proposal: Δείτε την πρόταση
+        preview_proposal: Προεπισκόπηση πρότασης
+        current_goal: Τρέχων στόχος
+        supports:
+          zero: Καθόλου υποστηρίξεις
+          one: 1 υποστήριξη
+          other: "Υποστηρίξεις"
+    footer:
+      accessibility: Προσβασιμότητα
+      conditions: Όροι και προϋποθέσεις χρήσης
+      consul: Εφαρμογή CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: Για τεχνική βοήθεια επισκεφτείτε
+      copyright: CONSUL, %{year}
+      description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
+      open_source: λογισμικό ανοικτού κώδικα
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Αποφασίστε πώς θα διαμορφώσετε την πόλη που θέλετε να ζήσετε.
+      participation_title: Συμμετοχή
+      privacy: Πολιτική Απορρήτου
+    header:
+      administration_menu: Διαχειριστής
+      administration: Διαχείριση
   notifications:
     index:
       mark_all_as_read: Σημειώστε όλα αυτά ως αναγνωσμένα
@@ -729,9 +763,18 @@ el:
       not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
     budget_investments:
       not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+      not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν επενδυτικά έργα; %{verify_account}.
+      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
+      unfeasible: Ανέφικτα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
+      not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
+      different_heading_assigned:
+        one: "Μπορείτε να υποστηρίξετε επενδυτικά έργα μόνο σε %{count} περιοχή. Έχετε ήδη υποστηρίξει τις επενδύσεις στο \n%{supported_headings}."
+        other: "Μπορείτε να υποστηρίξετε επενδυτικά έργα μόνο σε %{count} περιοχές. Έχετε ήδη υποστηρίξει τις επενδύσεις στο \n%{supported_headings}."
   welcome:
     feed:
       most_active:
+        debates: "Πιο ενεργές συζητήσεις"
+        proposals: "Πιο ενεργές προτάσεις"
         processes: "Ανοικτές διαδικασίες"
       see_all_debates: Δείτε όλες τις συζητήσεις
       see_all_proposals: Δείτε όλες τις προτάσεις
