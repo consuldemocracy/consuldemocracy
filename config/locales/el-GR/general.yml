@@ -489,6 +489,22 @@ el:
       filters:
         current: "Ανοιχτό"
         expired: "Έχει λήξει"
+      title: "Δημοσκοπήσεις"
+      participate_button: "Συμμετάσχουν σε αυτήν τη δημοσκόπηση"
+      participate_button_expired: "Έληξε η δημοσκόπηση"
+      no_geozone_restricted: "Όλη την πόλη"
+      geozone_restricted: "Συνοικίες"
+      geozone_info: "Μπορούν να συμμετάσχουν άτομα στην απογραφή του: "
+      already_answer: "Έχετε ήδη συμμετάσχει σε αυτή τη δημοσκόπηση"
+      not_logged_in: "Πρέπει να συνδεθείτε ή να εγγραφείτε για να συμμετάσχετε"
+      unverified: "Πρέπει να επαληθεύσετε το λογαριασμό σας για να συμμετάσχετε"
+      cant_answer: "Αυτή τη δημοσκόπηση δεν είναι διαθέσιμη στη γεωζώνη σας"
+      section_header:
+        icon_alt: Εικονίδιο ψηφοφορίας
+        title: Δικαίωμα ψήφου
+        help: Βοήθεια σχετικά με την ψηφοφορία
+      section_footer:
+        title: Βοήθεια σχετικά με την ψηφοφορία
     show:
       stats:
         valid: "Έγκυρο"
