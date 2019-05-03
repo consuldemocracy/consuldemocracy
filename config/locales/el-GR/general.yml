@@ -507,7 +507,22 @@ el:
       required_supports: "%{supports} υποστηρίξεις απαιτούνται"
       and: και
       view_resource: Δείτε τον πόρο
+      resource_requested: Πόρow που έχει ήδη ζητηθεί
+      request_resource: Αίτηση πόρων
+      resource_locked: Πόρος κλειδωμένος
+    recommended_actions:
+      title: Συνιστώμενες ενέργειες
+      goto_proposed_actions: Πηγαίνετε στις συνιστώμενες ενέργειες
+      see_proposed_actions: Ελέγξτε τις συνιστώμενες ενέργειες
+      hide_proposed_actions: Κρύψτε τις συνιστώμενες ενέργειες
+      pending_title: Σε εκκρεμότητα
+      show_description: Εμφάνιση περιγραφής
+      without_pending_actions: Δεν υπάρχουν συνιστώμενες ενέργειες σε εκκρεμότητα
+      done_title: Έγινε
+      without_done_actions: Δεν υπάρχουν συνιστώμενες ενέργειες που να έχουν γίνει
     next_goal:
+      title: Στόχος
+      see_complete_course: Ελέγξτε την πλήρη πορεία
       hide_course: Απόκρυψη μαθημάτων
     goal:
       target_supports:
@@ -984,3 +999,27 @@ el:
     help:
       alt: Επιλέξτε το κείμενο που θέλετε να σχολιάσετε και πατήστε το κουμπί με το μολύβι.
       text: Για να σχολιάσετε αυτό το έγγραφο, πρέπει να %{sign_in} ή %{sign_up}. Στη συνέχεια, επιλέξτε το κείμενο που θέλετε να σχολιάσετε και πατήστε το κουμπί με το μολύβι.
+      text_sign_in: σύνδεση
+      text_sign_up: εγγραφή
+      title: Πώς μπορώ να σχολιάσω αυτό το έγγραφο;
+  links:
+    form:
+      delete_button: Διαγραφή
+      cancel_button: Άκυρο
+    nested_links:
+      title: Σύνδεσμοι
+      note: Προσθέστε τους συνδέσμους που σας ενδιαφέρουν
+      add_new_link: Πρόσθήκη νέου συνδέσμου
+    link_fields:
+      label_placeholder: Τίτλος συνδέσμου
+      url_placeholder: Διεύθυνση συνδέσμου
+  communities:
+    show:
+      send_notification: Αποστολή μηνύματος στην κοινότητα
+      author: Συγγραφέας
+      surveys: Έρευνες
+      complete_survey: Ολοκληρώστε την έρευνα
+    subnav:
+      surveys: Έρευνες
+    poll:
+      take_part: Πάρτε μέρος από %{from} έως %{to}
