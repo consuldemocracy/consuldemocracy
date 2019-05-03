@@ -711,6 +711,24 @@ el:
       retired_help_text: Ταμπλό δεν είναι διαθέσιμο για προτάσεις που έχουν αποσυρθεί
   votes:
     agree: Συμφωνώ
+    anonymous: Πάρα πολλές ανώνυμες ψήφους για να παραδεχτούμε την ψηφοφορία %{verify_account}.
+    comment_unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να ψηφίσουν.
+    disagree: Διαφωνώ
+    organizations: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
+    signin: Συνδεθείτε
+    signup: Εγγραφή
+    supports: Υποστηρίξεις
+    unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+    verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
+    verify_account: επαλήθευση του λογαριασμού σας
+    spending_proposals:
+      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+      not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
+      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
+      unfeasible: Δεν μπορούν να υποστηριχθούν ανέφικτα επενδυτικά σχέδια
+      not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
+    budget_investments:
+      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
   welcome:
     feed:
       most_active:
