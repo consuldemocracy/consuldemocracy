@@ -672,7 +672,69 @@ el:
       print_button: Εκτυπώστε αυτές τις πληροφορίες
     search: Αναζήτηση
     show: Εμφάνιση
+    suggest:
+      debate:
+        found:
+          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+          other: "Υπάρχουν συζητήσεις με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+        message: "Βλέπετε %{limit} από %{count} συζητήσεις που περιέχουν τον όρο '%{query} '"
+        see_all: "Εμφάνιση όλων"
+      budget_investment:
+        found:
+          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+          other: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+        message: "Βλέπετε %{limit} από %{count} επενδύσεις που περιέχουν τον όρο '%{query} '"
+        see_all: "Εμφάνιση όλων"
+      proposal:
+        found:
+          one: "Υπάρχει μια πρόταση με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτές αντί να δημιουργήσετε νέα"
+          other: "Υπάρχουν προτάσεις με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτές αντί να δημιουργήσετε νέα"
+        message: "Βλέπετε %{limit} από %{count} προτάσεις που περιέχουν τον όρο '%{query} '"
+        see_all: "Εμφάνιση όλων"
+    tags_cloud:
+      tags: Δημοφιλή θέματα
+      districts: "Συνοικίες"
+      districts_list: "Λίστα περιοχών"
+      categories: "Κατηγορίες"
+    target_blank_html: " (οι σύνδεσμοι ανοίγουν σε νέο παράθυρο)"
+    you_are_in: "Είστε στο"
+    unflag: Αφαίρεση σημαίας
+    unfollow_entity: "Σταματήστε να ακολουθείτε %{entity}"
+    outline:
+      budget: Συμμετοχικοί προϋπολογισμοί
+      searcher: Ερευνητής
+    go_to_page: "Πηγαίνετε στη σελίδα του "
+    share: Μοιραστείτε
+    orbit:
+      previous_slide: Προηγούμενη διαφάνεια
+      next_slide: Επόμενη διαφάνεια
+    documentation: Πρόσθετη τεκμηρίωση
+    view_mode:
+      title: Λειτουργία προβολής
+      cards: Κάρτες
+      list: Λίστα
+    recommended_index:
+      title: Συστάσεις
+      see_more: Δείτε περισσότερες προτάσεις
+      hide: Κρύψτε τις συστάσεις
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
+    form:
+      association_name_label: "Εάν προτείνετε στο όνομα μιας ένωσης ή μιας συλλογικής ομάδας, προσθέστε το όνομα εδώ"
+      association_name: "Όνομα ένωσης"
+      description: Περιγραφή
+      external_url: Σύνδεσμος σε πρόσθετη τεκμηρίωση
+      geozone: Εμβέλεια λειτουργίας
+      submit_buttons:
+        create: Δημιουργήθηκε
+        new: Δημιουργήθηκε
+      title: Τίτλος πρότασης δαπανών
     index:
       title: Συμμετοχικός προϋπολογισμός
       unfeasible: Ανέφικτα επενδυτικά έργα
