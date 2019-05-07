@@ -1,33 +1,53 @@
 hr:
   date:
+    abbr_day_names:
+      - Ned
+      - Pon
+      - Uto
+      - Sri
+      - Čet
+      - Pet
+      - Sub
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Siječ
+      - Velj
+      - Ožuj
+      - Trav
+      - Svib
+      - Lip
+      - Srp
+      - Kol
+      - Ruj
+      - List
+      - Stud
+      - Pro
+    day_names:
+      - Nedjelja
+      - Ponedjeljak
+      - Utorak
+      - Srijeda
+      - Četvrtak
+      - Petak
+      - Subota
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B%d%Y"
+      short: "%b%d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Siječanj
+      - Veljača
+      - Ožujak
+      - Travanj
+      - Svibanj
+      - Lipanj
+      - Srpanj
+      - Kolovoz
+      - Rujan
+      - Listopad
+      - Studeni
+      - Prosinac
   number:
     human:
       format:
