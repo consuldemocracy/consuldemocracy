@@ -39,7 +39,9 @@ feature "Admin custom images" do
     expect(page).to have_css("img[src*='custom_map.jpg']", count: 1)
   end
 
-  scenario "Image is replaced on front view" do
+  scenario "Image is replaced on front views" do
+    budget = create(:budget)
+    group = create(:budget_group, budget: budget)
     visit admin_root_path
 
     within("#side_menu") do
@@ -54,6 +56,18 @@ feature "Admin custom images" do
     visit proposals_path
 
     within("#map") do
+      expect(page).to have_css("img[src*='custom_map.jpg']")
+    end
+
+    visit map_proposals_path
+
+    within(".show-for-medium") do
+      expect(page).to have_css("img[src*='custom_map.jpg']")
+    end
+
+    visit budget_group_path(budget, group)
+
+    within(".show-for-medium") do
       expect(page).to have_css("img[src*='custom_map.jpg']")
     end
   end
