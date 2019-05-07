@@ -48,6 +48,9 @@ hr:
       - Listopad
       - Studeni
       - Prosinac
+  datetime:
+    distance_in_words:
+      half_a_minute: pola minute
   number:
     human:
       format:
