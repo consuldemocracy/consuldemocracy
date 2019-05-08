@@ -44,6 +44,17 @@ describe "Admin polls" do
     expect(page).not_to have_content "There are no polls"
   end
 
+  scenario "Index do not show polls created by users from proposals dashboard" do
+    create(:poll, name: "Poll created by admin")
+    create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
+
+    visit admin_polls_path
+
+    expect(page).to have_css ".poll", count: 1
+    expect(page).to have_content "Poll created by admin"
+    expect(page).not_to have_content "Poll from user's proposal"
+  end
+
   scenario "Show" do
     poll = create(:poll)
 

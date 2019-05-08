@@ -8,7 +8,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
-    @polls = Poll.not_budget.order(starts_at: :desc)
+    @polls = Poll.not_budget.created_by_admin.order(starts_at: :desc)
   end
 
   def show

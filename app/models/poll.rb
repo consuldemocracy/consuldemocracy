@@ -47,6 +47,7 @@ class Poll < ApplicationRecord
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
   scope :public_for_api, -> { all }
   scope :not_budget,    -> { where(budget_id: nil) }
+  scope :created_by_admin, -> { where(related_type: nil) }
 
   scope :sort_for_list, -> { joins(:translations).order(:geozone_restricted, :starts_at, "poll_translations.name") }
 
