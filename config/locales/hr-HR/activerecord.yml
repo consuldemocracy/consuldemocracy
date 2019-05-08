@@ -1,6 +1,10 @@
 hr:
   activerecord:
     models:
+      valuator_group:
+        one: "Grupa procjenitelja"
+        few: "Grupa procjenitelja"
+        other: "Grupa procjenitelja"
       vote:
         one: "Glas"
         few: "Glasovi"
