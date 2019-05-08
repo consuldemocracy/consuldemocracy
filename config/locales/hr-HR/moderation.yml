@@ -1,1 +1,13 @@
 hr:
+  moderation:
+    comments:
+      index:
+        block_authors: Blokirani autori
+        confirm: Jeste li sigurni?
+        filter: Filter
+        filters:
+          all: Svi
+          pending_flag_review: U tijeku
+          with_ignored_flag: Označeno za pregled
+        headers:
+          comment: Komentar
