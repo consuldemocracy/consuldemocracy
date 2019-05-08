@@ -742,6 +742,7 @@ en:
         budget_investments_milestones: "Participatory budgeting (Milestones)"
       debates: "Debates"
       comments: "Comments"
+      local_census_records: Manage local census
     administrators:
       index:
         title: Administrators
