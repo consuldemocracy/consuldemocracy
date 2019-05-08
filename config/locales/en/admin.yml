@@ -707,6 +707,7 @@ en:
       dashboard: Proposals dashboard
       administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
+      local_census_records: Manage local census
     administrators:
       index:
         title: Administrators
