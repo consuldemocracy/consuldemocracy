@@ -70,3 +70,4 @@ hr:
         map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ja nisam toga svijestan."
       index:
         title: Participativno budžetiranje
+        unfeasible: Neizvedive investicije za projekte
