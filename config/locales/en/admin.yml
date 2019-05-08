@@ -1682,3 +1682,7 @@ en:
         creating: Creating new local census record
       create:
         notice: New local census record created successfully!
+      edit:
+        editing: Editing local census record
+      update:
+        notice: Local census record updated successfully!

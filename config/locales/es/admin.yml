@@ -1680,3 +1680,7 @@ es:
         creating: Creando nuevo registro de censo local
       create:
         notice: ¡Nuevo registro de censo local creado correctamente!
+      edit:
+        editing: Editando registro del censo local
+      update:
+        notice: ¡Registro del censo local actualizado correctamente!
