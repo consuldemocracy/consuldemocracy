@@ -144,8 +144,28 @@ hr:
       available: "Dostupan budžet: "
     show:
       group: Grupa
+      phase: Stvarna faza
+      unfeasible_title: Neizvedive investicije
+      unfeasible: Pregledaj neizvedive investicije
+      unselected_title: Investicije koje nisu odabrane za fazu izglasavanja
+      unselected: Pogledaj investicije koje nisu odabrane za fazu izglasavanja
+      see_results: Pogledaj rezultate
     results:
+      link: Rezultati
+      page_title: "%{budget} - Rezultati"
+      heading: "Rezultati participativnog budžetiranja"
+      heading_selection_title: "Po distriktu"
+      spending_proposal: Naslov prijedloga
       ballot_lines_count: Glasovi
+      hide_discarded_link: Sakrij odbačene
+      show_all_link: Pokaži sve
+      price: Cijena
+      amount_available: Dostupan budžet
+      accepted: "Prihvati prijedlog potrošnje: "
+      discarded: "Odbaci prijedlog potrošnje: "
+      incompatibles: Nekompatabilni
+      investment_proyects: Lista svih investicijskih projekata
+      unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
     executions:
       link: "Ključni ciljevi"
       page_title: "%{budget} - Ključni ciljevi"
