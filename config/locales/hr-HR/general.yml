@@ -1,4 +1,19 @@
 hr:
+  comments:
+    comment:
+      author: Autor
+  debates:
+    show:
+      author: Autor
   proposals:
+    index:
+      retired_proposals_link: "Prijedlozi stvoreni od strane autora"
     show:
       milestones_tab: Ključni ciljevi
+      author: Autor
+  shared:
+    advanced_search:
+      author_type: "Po kategoriji autora"
+  communities:
+    show:
+      author: Autor
