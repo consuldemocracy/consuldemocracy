@@ -1664,3 +1664,19 @@ en:
     progress_bars:
       index:
         title: "Progress bars"
+    local_census_records:
+      index:
+        title: Manage local census
+        create: Create new local census record
+        no_local_census_records: There are no local census records.
+        document_type: Document type
+        document_number: Document number
+        date_of_birth: Date of birth
+        postal_code: Postal code
+        search:
+          placeholder: Search by document number
+          search: Search
+      new:
+        creating: Creating new local census record
+      create:
+        notice: New local census record created successfully!
