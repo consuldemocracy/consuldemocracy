@@ -1674,6 +1674,8 @@ es:
         search:
           placeholder: Búsqueda por número de documento
           search: Buscar
+      form:
+        date_of_birth: Fecha de nacimiento
       new:
         creating: Creando nuevo registro de censo local
       create:

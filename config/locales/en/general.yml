@@ -197,6 +197,7 @@ en:
     document: Document
     topic: Topic
     image: Image
+    local_census_record: Local Census Record
   geozones:
     none: All city
   layouts:
