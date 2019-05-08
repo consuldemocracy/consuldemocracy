@@ -35,6 +35,7 @@ describe Abilities::Everyone do
   it { should be_able_to(:read_results, finished_budget) }
   it { should_not be_able_to(:read_results, reviewing_ballot_budget) }
   it { should_not be_able_to(:manage, Dashboard::Action) }
+  it { should_not be_able_to(:manage, LocalCensusRecord) }
 
   context "when accessing poll results" do
     let(:results_enabled) { true }
