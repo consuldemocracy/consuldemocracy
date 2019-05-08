@@ -5,6 +5,24 @@ hr:
         table_edit_groups: Tematska grupa
     budget_groups:
       no_groups: "Nema grupa."
+      amount:
+        one: "Postoji 1 grupa"
+        few: "Postoje %{count} grupa"
+        other: "Postoje %{count} grupa"
+      create:
+        notice: "Grupa je uspješno stvorena!"
+      update:
+        notice: "Grupa je ažurirana uspješno"
+      destroy:
+        success_notice: "Grupa je uspješno obrisana"
+      form:
+        create: "Stvori novu grupu"
+        edit: "Uredi grupu"
+        name: "Ime grupe"
+        submit: "Spremi grupu"
+    budget_headings:
+      index:
+        back: "Idi nazad na grupu"
     budget_investments:
       index:
         filters:
@@ -12,7 +30,13 @@ hr:
           max_total_supports: Maksimalna potpora
         list:
           supports: Potpore
+          valuation_group: Grupa procjenitelja
           author_username: Korisničko ime autora
+      show:
+        group: Grupa
+        valuator_groups: "Grupa procjenitelja"
+      edit:
+        user_groups: "Grupe"
     milestones:
       index:
         no_milestones: "Nemate definirane ključne ciljeve"
@@ -42,6 +66,26 @@ hr:
           supports: Ukupne potpore
     segment_recipient:
       proposal_authors: Prijedlozi autora
+    valuators:
+      index:
+        valuator_groups: "Grupe procjenitelja"
+        group: "Grupa"
+        no_group: "Nema grupe"
+      show:
+        group: "Grupa"
+        no_group: "Bez grupe"
+    valuator_groups:
+      index:
+        title: "Grupa procjenitelja"
+        new: "Stvori grupu procjenitelja"
+        no_groups: "Ne postoji grupa procjenitelja"
+      show:
+        title: "Grupa procjenitelja: %{group}"
+        no_valuators: "Ne postoje procjenitelji koji su dio ove grupe"
+      form:
+        name: "Ime grupe"
+        new: "Stvori grupu procjenitelja"
+        edit: "Spremi grupu procjenitelja"
     questions:
       show:
         author: Autor
