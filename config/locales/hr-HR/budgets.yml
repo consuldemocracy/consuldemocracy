@@ -71,3 +71,50 @@ hr:
       index:
         title: Participativno budžetiranje
         unfeasible: Neizvedive investicije za projekte
+        unfeasible_text: "Ove investicije moraju zadovoljiti različite kriterije (zakonitost, konkretnost, ne smije premašiti limit budžeta) kako bi zadovoljile uvjete i ušle u krug do krajnjeg glasanja. Sve investicije koje ne zadovoljavaju kriterije označuju se nezadovoljavajućim i objavljuju se na sljedećoj listi, zajedno s izvještajem zašto nisu pogodne."
+        by_heading: "Investicijski projekti s ciljem: %{heading}"
+        search_form:
+          button: Pretraga
+          placeholder: Pretraga investicijskih projekata...
+          title: Pretraga
+        sidebar:
+          my_ballot: Moj glas
+          voted_info: Vi možete %{link} u bilo koje vrijeme dok se ne završi ova faza. Nema potrebe da se potroši sav dostupan novac.
+          voted_info_link: izmjeni svoj glas
+          different_heading_assigned_html: "Imate aktivne glasove u drugoj temi: %{heading_link}"
+          change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
+          check_ballot_link: "provjeri i potvrdi moj glas"
+          zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
+          verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
+          verify_account: "potvrdi svoj račun"
+          create: "Stvori investicijski budžet"
+          not_logged_in: "Kako bi stvorili novi investicijski budžet morate %{sign_in} ili %{sign_up}."
+          sign_in: "prijavi se"
+          sign_up: "registriraj se"
+          by_feasibility: Po izvedivosti
+          feasible: Izvedivi projekti
+          unfeasible: Neizvedivi projekti
+        orders:
+          random: nasumično
+          confidence_score: najbolje ocijenjeni
+          price: po cijeni
+      share:
+        message: "Ja sam storio investicijski projekt%{title} u %{handle}. Stvori i ti investicijski projekt!"
+      show:
+        author_deleted: Korisnik obrisan
+        price_explanation: Objašnjenje cijene
+        unfeasibility_explanation: Objašnjenje neizvedivosti
+        code_html: "Šifra investicijskog koda:<strong>%{code}</strong>"
+        location_html: "Lokacija: <strong>%{location}</strong>"
+        organization_name_html: "Predloženo od strane: <strong>%{name}</strong>"
+        share: Podijeli
+        title: Investicijski projekt
+        supports: Potpora
+        votes: Glasovi
+        price: Cijena
+        comments_tab: Komentari
+        milestones_tab: Ključni ciljevi
+    executions:
+      link: "Ključni ciljevi"
+      page_title: "%{budget} - Ključni ciljevi"
+      heading: "Ključni ciljevi participativnog budžetiranja"
