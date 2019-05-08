@@ -166,7 +166,18 @@ hr:
       incompatibles: Nekompatabilni
       investment_proyects: Lista svih investicijskih projekata
       unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
+      not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za izglasavanje
     executions:
       link: "Ključni ciljevi"
       page_title: "%{budget} - Ključni ciljevi"
       heading: "Ključni ciljevi participativnog budžetiranja"
+      heading_selection_title: "Po distriktu"
+      no_winner_investments: "Nema pobjedničkih investicija u ovom stadiju"
+      filters:
+        label: "Trenutno stanje projekta"
+        all: "Svi (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Datum početka ne može biti jedank ili kasnije od Datuma završetka"
+        prev_phase_dates_invalid: "Početni datum mora biti kasnije od početnog datuma prošle omogućene faze (%{phase_name})"
+        next_phase_dates_invalid: "Završni datum mora biti ranije od datuma zvršetka sljedeće omogućene faze (%{phase_name})"
