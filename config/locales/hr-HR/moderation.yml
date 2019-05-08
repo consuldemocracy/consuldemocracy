@@ -99,3 +99,10 @@ hr:
           ignored: Označi kao pogledano
         headers:
           moderate: Uredi
+          proposal_notification: Obavijest o prijedlogu
+        hide_proposal_notifications: Sakrij prijedloge
+        ignore_flags: Označi kao pogledano
+        order: Poredaj po
+        orders:
+          created_at: Posljednje
+          moderated: Uređeno
