@@ -65,3 +65,37 @@ hr:
         hide_proposals: Sakrij prijedloge
         ignore_flags: Označi kao pogledano
         order: Poredaj po
+        orders:
+          created_at: Posljednje
+          flags: Najviše označeno
+        title: Prijedlozi
+    budget_investments:
+      index:
+        block_authors: Blok autora
+        confirm: Jeste li sigurni?
+        filter: Filter
+        filters:
+          all: Svi
+          pending_flag_review: U tijeku
+          with_ignored_flag: Označite kao pogledano
+        headers:
+          moderate: Uredite
+          budget_investment: Budžet investicija
+        hide_budget_investments: Sakrij budžet investicije
+        ignore_flags: Označi kao pogledano
+        order: Poredaj po
+        orders:
+          created_at: Posljednje
+          flags: Najviše označeno
+        title: Budžet investicije
+    proposal_notifications:
+      index:
+        block_authors: Blok autora
+        confirm: Jeste li sigurni?
+        filter: Filter
+        filters:
+          all: Svi
+          pending_review: Čeka pregled
+          ignored: Označi kao pogledano
+        headers:
+          moderate: Uredi
