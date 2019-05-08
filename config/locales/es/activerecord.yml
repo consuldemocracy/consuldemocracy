@@ -125,6 +125,9 @@ es:
       link:
         one: Enlace
         other: Enlaces
+      local_census_record:
+        one: Registro del censo local
+        other: Registros del censo local
     attributes:
       administrator:
         description: Descripción
@@ -373,6 +376,11 @@ es:
         valuator_group_id: Grupo de evaluación
         can_comment: Puede comentar
         can_edit_dossier: Puede editar informes
+      local_census_record:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Fecha de nacimiento
+        postal_code: Código postal
     errors:
       models:
         user:
