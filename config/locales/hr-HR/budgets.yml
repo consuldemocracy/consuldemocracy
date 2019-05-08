@@ -115,6 +115,13 @@ hr:
         comments_tab: Komentari
         milestones_tab: Ključni ciljevi
         author: Autor
+        project_unfeasible_html: "Ovaj investicijski projekt <strong> je obilježen kao neizvediv</strong> i neće moći ići u fazu izglasavanja."
+        project_selected_html: "Ovaj investicijski projekt <strong>je odabran</strong> za fazu izglasavanja."
+        project_winner: "Pobjednički investicijski projekti"
+      investment:
+        add: Glas
+    results:
+      ballot_lines_count: Glasovi
     executions:
       link: "Ključni ciljevi"
       page_title: "%{budget} - Ključni ciljevi"
