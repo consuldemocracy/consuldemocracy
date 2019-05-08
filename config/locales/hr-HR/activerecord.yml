@@ -1,1 +1,7 @@
 hr:
+  activerecord:
+    attributes:
+      debate:
+        author: "Autor"
+      proposal:
+        author: "Autor"
