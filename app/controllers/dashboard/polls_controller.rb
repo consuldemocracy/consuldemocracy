@@ -35,10 +35,10 @@ class Dashboard::PollsController < Dashboard::BaseController
       if poll.update(poll_params)
         format.html { redirect_to proposal_dashboard_polls_path(proposal),
                                   notice: t("flash.actions.update.poll") }
-        format.json { respond_with_bip(poll) }
+        format.json { head :no_content }
       else
         format.html { render :edit }
-        format.json { respond_with_bip(poll) }
+        format.json { render json: poll.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
