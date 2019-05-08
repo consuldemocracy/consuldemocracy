@@ -103,6 +103,8 @@ module Abilities
       can [:manage], Dashboard::AdministratorTask
 
       can [:edit, :update], DownloadSetting
+
+      can :manage, LocalCensusRecord
     end
   end
 end
