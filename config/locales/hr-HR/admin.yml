@@ -1,5 +1,36 @@
 hr:
   admin:
+    budget_investments:
+      index:
+        list:
+          author_username: Korisničko ime autora
     milestones:
+      index:
+        no_milestones: "Nemate definirane ključne ciljeve"
+        milestone: Ključni ciljevi
+        new_milestone: Stvori novi ključni cilj
+      new:
+        creating: Stvori ključni cilj
+      edit:
+        title: Uredi ključne ciljeve
+      create:
+        notice: Novi ključni ciljevi stvoreni su uspješno!
+      update:
+        notice: Ključni ciljevi uspješno ažurirani
       delete:
         notice: Ključni ciljevi uspješno obrisani
+    segment_recipient:
+      proposal_authors: Prijedlozi autora
+    questions:
+      show:
+        author: Autor
+    proposals:
+      index:
+        author: Autor
+        milestones: Ključni ciljevi
+    shared:
+      author: Autor
+    signature_sheets:
+      author: Autor
+      show:
+        author: Autor
