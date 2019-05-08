@@ -114,6 +114,7 @@ hr:
         price: Cijena
         comments_tab: Komentari
         milestones_tab: Ključni ciljevi
+        author: Autor
     executions:
       link: "Ključni ciljevi"
       page_title: "%{budget} - Ključni ciljevi"
