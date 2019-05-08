@@ -1,8 +1,17 @@
 hr:
   admin:
+    budgets:
+      index:
+        table_edit_groups: Tematska grupa
+    budget_groups:
+      no_groups: "Nema grupa."
     budget_investments:
       index:
+        filters:
+          min_total_supports: Minimalna potpora
+          max_total_supports: Maksimalna potpora
         list:
+          supports: Potpore
           author_username: Korisničko ime autora
     milestones:
       index:
@@ -19,6 +28,18 @@ hr:
         notice: Ključni ciljevi uspješno ažurirani
       delete:
         notice: Ključni ciljevi uspješno obrisani
+    dashboard:
+      actions:
+        index:
+          required_supports: Potrebne potpore
+    legislation:
+      processes:
+        proposals:
+          orders:
+            supports: Ukupne potpore
+      proposals:
+        index:
+          supports: Ukupne potpore
     segment_recipient:
       proposal_authors: Prijedlozi autora
     questions:
