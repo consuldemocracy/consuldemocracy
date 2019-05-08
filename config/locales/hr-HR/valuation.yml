@@ -1,1 +1,8 @@
 hr:
+  valuation:
+    budget_investments:
+      show:
+        info: Informacije o autoru
+    spending_proposals:
+      show:
+        info: Informacije o autoru
