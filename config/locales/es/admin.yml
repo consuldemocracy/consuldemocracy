@@ -1612,3 +1612,19 @@ es:
     translations:
       remove_language: Eliminar idioma
       add_language: Añadir idioma
+    local_census_records:
+      index:
+        title: Gestionar censo local
+        create: Crear nuevo registro en el censo local
+        no_local_census_records: No hay registros de censo local
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Fecha de nacimiento
+        postal_code: Código postal
+        search:
+          placeholder: Búsqueda por número de documento
+          search: Buscar
+      new:
+        creating: Creando nuevo registro de censo local
+      create:
+        notice: ¡Nuevo registro de censo local creado correctamente!

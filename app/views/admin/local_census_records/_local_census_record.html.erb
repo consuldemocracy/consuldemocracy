@@ -1,0 +1,25 @@
+<tr id="<%= dom_id(local_census_record) %>" class="local_census_record">
+  <td>
+    <%= local_census_record.document_type %>
+  </td>
+  <td>
+    <%= local_census_record.document_number %>
+  </td>
+  <td>
+    <%= l local_census_record.date_of_birth %>
+  </td>
+  <td>
+    <%= local_census_record.postal_code %>
+  </td>
+  <td>
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_local_census_record_path(local_census_record),
+                class: "button hollow" %>
+
+    <%= link_to t("admin.actions.delete"),
+                admin_local_census_record_path(local_census_record),
+                method: :delete,
+                class: "button hollow alert",
+                data: { confirm: t("admin.actions.confirm") } %>
+  </td>
+</tr>
