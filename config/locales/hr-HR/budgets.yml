@@ -1,1 +1,9 @@
 hr:
+  budgets:
+    ballots:
+      show:
+        title: Vaš glasački listić
+        amount_spent: Potrošena količina
+        remaining: "Vi još morate<span>%{amount}</span> investirati."
+        no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
+        remove: Ukloni glas
