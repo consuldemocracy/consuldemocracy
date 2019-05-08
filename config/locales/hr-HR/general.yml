@@ -1,4 +1,7 @@
 hr:
+  account:
+    show:
+      user_permission_support_proposal: Podupri prijedlog
   comments:
     comment:
       author: Autor
@@ -12,15 +15,38 @@ hr:
         zero: Nema glasova
     show:
       author: Autor
+  form:
+    budget/group: Grupa za budžet
+  layouts:
+    dashboard:
+      proposal_totals:
+        supports:
+          zero: Nema potpore
   proposals:
     index:
       retired_proposals_link: "Prijedlozi stvoreni od strane autora"
     proposal:
+      support: Potpora
+      support_title: Podupri ovaj prijedlog
+      supports:
+        zero: Nema potpore
       votes:
         zero: Nema glasova
+      supports_necessary: "%{number} potpora je potrebno"
     show:
       milestones_tab: Ključni ciljevi
       author: Autor
+  dashboard:
+    progress:
+      supports: Potpora
+    resource:
+      required_supports: "%{supports} potpora je potrebno"
+    poster:
+      index:
+        support: Podupri moj prijedlog
+    mailer:
+      forward:
+        support_button: Podupri ovaj prijedlog
   polls:
     show:
       stats:
@@ -34,6 +60,12 @@ hr:
   shared:
     advanced_search:
       author_type: "Po kategoriji autora"
+  spending_proposals:
+    spending_proposal:
+      support: Potpora
+      support_title: Podupri ovaj projekt
+      supports:
+        zero: Nema potpore
   stats:
     index:
       proposal_votes: Glasovi za prijedlog
@@ -43,7 +75,11 @@ hr:
   votes:
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
     organizations: Organizacijama nije dopušteno glasanje
+    supports: Potpore
     verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
+  welcome:
+    welcome:
+      user_permission_support_proposal: Potpora prijedloga*
   communities:
     show:
       author: Autor
