@@ -1684,3 +1684,5 @@ es:
         editing: Editando registro del censo local
       update:
         notice: ¡Registro del censo local actualizado correctamente!
+      destroy:
+        notice: ¡Registro del censo local eliminado correctamente!

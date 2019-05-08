@@ -1686,3 +1686,5 @@ en:
         editing: Editing local census record
       update:
         notice: Local census record updated successfully!
+      destroy:
+        notice: Local census record removed successfully!
