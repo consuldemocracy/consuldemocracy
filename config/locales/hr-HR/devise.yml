@@ -1,1 +1,19 @@
 hr:
+  devise:
+    password_expired:
+      expire_password: "Istekla zaporka"
+      change_required: "Vaša zaporka je istekla"
+      change_password: "Izmjenite zaporku"
+      new_password: "Nova zaporka"
+      updated: "Zaporka je uspješno ažurirana"
+    confirmations:
+      confirmed: "Vaš račun je potvrđen."
+      send_instructions: "U nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje zaporke."
+      send_paranoid_instructions: "Ako vaša email adresa nije u našoj bazi podataka u nekoliko minuta ćete zaprimiti email koji sadrži upute za ponovno postavljanje zaporke."
+    failure:
+      already_authenticated: "Već ste prijavljeni."
+      inactive: "Vaš račun još nije aktiviran."
+      invalid: "Nevažeć %{authentication_keys} ili zaporka."
+      locked: "Vaš račun je zaključan."
+      last_attempt: "Preostao vam je još jedan pokušaj prije nego što se račun blokira."
+      not_found_in_database: "Nevažeć %{authentication_keys} ili zaporka."
