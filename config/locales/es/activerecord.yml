@@ -121,6 +121,9 @@ es:
       link:
         one: Enlace
         other: Enlaces
+      local_census_record:
+        one: Registro del censo local
+        other: Registros del censo local
     attributes:
       budget:
         name: "Nombre"
@@ -355,6 +358,11 @@ es:
       link:
         label: Título
         url: Enlace
+      local_census_record:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Fecha de nacimiento
+        postal_code: Código postal
     errors:
       models:
         user:

@@ -1625,6 +1625,8 @@ en:
         search:
           placeholder: Search by document number
           search: Search
+      form:
+        date_of_birth: Date of birth
       new:
         creating: Creating new local census record
       create:

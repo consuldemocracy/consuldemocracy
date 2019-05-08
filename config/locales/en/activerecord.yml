@@ -121,6 +121,9 @@ en:
       link:
         one: Link
         other: Links
+      local_census_record:
+        one: Local census record
+        other: Local census records
     attributes:
       budget:
         name: "Name"
@@ -354,6 +357,11 @@ en:
       link:
         label: Title
         url: Link
+      local_census_record:
+        document_type: Document type
+        document_number: Document number
+        date_of_birth: Date of birth
+        postal_code: Postal code
     errors:
       models:
         user:
