@@ -1,7 +1,22 @@
 hr:
   activerecord:
+    models:
+      vote:
+        one: "Glas"
+        few: "Glasovi"
+        other: "Glasovi"
     attributes:
       debate:
         author: "Autor"
       proposal:
         author: "Autor"
+    errors:
+      models:
+        poll/voter:
+          attributes:
+            document_number:
+              has_voted: "Korisnik je već glasao"
+        signature:
+          attributes:
+            document_number:
+              already_voted: "Već je glasano za ovaj prijedlog"
