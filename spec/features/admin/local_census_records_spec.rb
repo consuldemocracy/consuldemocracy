@@ -101,4 +101,36 @@ feature "Admin local census records" do
       expect(page).to have_content "07003"
     end
   end
+
+  context "Update" do
+    let!(:local_census_record) { create(:local_census_record) }
+
+    scenario "Should show validation errors" do
+      visit edit_admin_local_census_record_path(local_census_record)
+
+      fill_in :local_census_record_document_number, with: ""
+      click_on "Save"
+
+      expect(page).to have_content "1 error prevented this Local Census Record from being saved."
+      expect(page).to have_content "can't be blank", count: 1
+    end
+
+    scenario "Should show successful notice after valid update" do
+      visit edit_admin_local_census_record_path(local_census_record)
+
+      fill_in :local_census_record_document_type, with: "NIE"
+      fill_in :local_census_record_document_number, with: "#NIE_NUMBER"
+      select "1982" , from: :local_census_record_date_of_birth_1i
+      select "August" , from: :local_census_record_date_of_birth_2i
+      select "8" , from: :local_census_record_date_of_birth_3i
+      fill_in :local_census_record_postal_code, with: "07007"
+      click_on "Save"
+
+      expect(page).to have_content "Local census record updated successfully!"
+      expect(page).to have_content "NIE"
+      expect(page).to have_content "#NIE_NUMBER"
+      expect(page).to have_content "1982-08-08"
+      expect(page).to have_content "07007"
+    end
+  end
 end
