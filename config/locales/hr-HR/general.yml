@@ -2,18 +2,48 @@ hr:
   comments:
     comment:
       author: Autor
+      votes:
+        zero: Nema glasova
+    orders:
+      most_voted: Najviše izlasano
   debates:
+    debate:
+      votes:
+        zero: Nema glasova
     show:
       author: Autor
   proposals:
     index:
       retired_proposals_link: "Prijedlozi stvoreni od strane autora"
+    proposal:
+      votes:
+        zero: Nema glasova
     show:
       milestones_tab: Ključni ciljevi
       author: Autor
+  polls:
+    show:
+      stats:
+        votes: "GLASOVI"
+      results:
+        most_voted_answer: "Najviše izglasan odgovor: "
+  poll_questions:
+    show:
+      vote_answer: "Glas %{answer}"
+      voted: "Vi ste glasali %{answer}"
   shared:
     advanced_search:
       author_type: "Po kategoriji autora"
+  stats:
+    index:
+      proposal_votes: Glasovi za prijedlog
+      debate_votes: Glasovi za debate
+      comment_votes: Glasovi za komentare
+      votes: Totalno glasova
+  votes:
+    anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
+    organizations: Organizacijama nije dopušteno glasanje
+    verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
   communities:
     show:
       author: Autor
