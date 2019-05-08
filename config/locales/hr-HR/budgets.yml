@@ -47,3 +47,26 @@ hr:
         help: Pomogni s participativnim budžetima
         all_phases: Pogledaj sve faze
       all_phases: Investicijkse faze budžeta
+      map: Prijedlozi investiranja budžeta prema geografskoj lokaciji
+      investment_proyects: Lista svih investicijskih projekata
+      unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
+      not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za glasovanje
+      finished_budgets: Dovršeni participativni budžeti
+      see_results: Pogledaj rezultate
+      section_footer:
+        title: Pomogni s participativnim budžetima
+        description: S participativnim budžetom građani odlučuju koji dio budžeta će se utrošiti na pojedini projekt.
+      milestones: Ključni ciljevi
+    investments:
+      form:
+        tag_category_label: "Kategorije"
+        tags_instructions: "Označi ovaj prijedlog. Možeš birati iz predloženih kategorija ili dodati svoju"
+        tags_label: Oznake
+        tags_placeholder: "Unesite svoje oznake koje želite koristiti, odvojenu s navodnim znakovima (\",\")"
+        map_location: "Lokacija na mapi"
+        map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
+        map_remove_marker: "Ukloni marker na mapi"
+        location: "Dodatne informacije o lokaciji"
+        map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ja nisam toga svijestan."
+      index:
+        title: Participativno budžetiranje
