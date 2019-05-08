@@ -2,8 +2,48 @@ hr:
   budgets:
     ballots:
       show:
-        title: Vaš glasački listić
+        title: Vaš glas
         amount_spent: Potrošena količina
         remaining: "Vi još morate<span>%{amount}</span> investirati."
         no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
         remove: Ukloni glas
+        voted_info_html: "Vaše glasanje je potvrđeno!"
+        voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
+        zero: Vi niste glasali niti za jedan projetk.
+      reasons_for_not_balloting:
+        not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
+        not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
+        organization: Organizacijama nije dozvoljeno glasanje
+        not_selected: Projekti koji nisu odabrani ne mogu dobiti podršku
+        not_enough_money_html: "Vi ste već odabrali dostupan budžet. <br><small> Možete %{change_ballot} u bilo koje vrijeme</small>"
+        no_ballots_allowed: Faza odabira je zatvorena
+        different_heading_assigned_html: "Vi ste već glasali za drugu temu: %{heading_link}"
+        change_ballot: promjeni svoj glas
+        casted_offline: Vi ste sudjelovali offline
+    groups:
+      show:
+        title: Odaberite opciju
+        unfeasible_title: Neizvediva investicija
+        unfeasible: Pregledajte neizvedive investicije
+        unselected_title: Investicije nisu odabrane za glasačku fazu
+        unselected: Pregledajte investicije koje nisu odabrane za fazu glasanja
+    phase:
+      drafting: Draf (Nije vidljiv javnosti)
+      informing: Informacija
+      accepting: Prihvaćanje projekta
+      reviewing: Pregled projekta
+      selecting: Odabir projekta
+      valuating: Vrednovanje projekta
+      publishing_prices: Objavljivanje cijena projekata
+      balloting: Izglasavanje projekta
+      reviewing_ballots: Pregled glasanja
+      finished: Finaliziran budžet
+    index:
+      title: Participativni budžet
+      empty_budgets: Ne postoji budžeti.
+      section_header:
+        icon_alt: Participativni budžeti ikona
+        title: Participativni budžeti
+        help: Pomogni s participativnim budžetima
+        all_phases: Pogledaj sve faze
+      all_phases: Investicijkse faze budžeta
