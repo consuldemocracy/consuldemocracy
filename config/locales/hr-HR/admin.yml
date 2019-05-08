@@ -1,1 +1,5 @@
 hr:
+  admin:
+    milestones:
+      delete:
+        notice: Ključni ciljevi uspješno obrisani
