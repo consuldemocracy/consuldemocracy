@@ -95,6 +95,8 @@ describe Abilities::Common do
   it { should_not be_able_to(:destroy, budget_investment_image) }
   it { should_not be_able_to(:manage, Dashboard::Action) }
 
+  it { should_not be_able_to(:manage, LocalCensusRecord) }
+
   describe "flagging content" do
     it { should be_able_to(:flag, debate)   }
     it { should be_able_to(:unflag, debate) }
