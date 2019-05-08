@@ -743,6 +743,7 @@ es:
         budget_investments_milestones: "Pressupuestos participativos (Seguimiento)"
       debates: "Debates"
       comments: "Comentarios"
+      local_census_records: Gestionar censo local
     administrators:
       index:
         title: Administradores
