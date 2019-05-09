@@ -69,20 +69,28 @@ describe "Legislation" do
     end
 
     scenario "Participation phases are displayed on current locale" do
-      process = create(:legislation_process, proposals_phase_start_date: Date.new(2018, 01, 01),
-                                             proposals_phase_end_date: Date.new(2018, 12, 01))
+      process = create(:legislation_process,
+                          proposals_phase_start_date: Date.new(2018, 01, 01),
+                          proposals_phase_end_date: Date.new(2018, 12, 01),
+                          people_proposals_phase_enabled: true,
+                          people_proposals_phase_start_date: Date.new(2018, 01, 02),
+                          people_proposals_phase_end_date: Date.new(2018, 12, 02))
 
       visit legislation_process_path(process)
 
       expect(page).to have_content("Participation phases")
       expect(page).to have_content("Proposals")
       expect(page).to have_content("01 Jan 2018 - 01 Dec 2018")
+      expect(page).to have_content("People proposals")
+      expect(page).to have_content("02 Jan 2018 - 02 Dec 2018")
 
       visit legislation_process_path(process, locale: "es")
 
       expect(page).to have_content("Fases de participación")
       expect(page).to have_content("Propuestas")
       expect(page).to have_content("01 ene 2018 - 01 dic 2018")
+      expect(page).to have_content("Personas propuestas")
+      expect(page).to have_content("02 ene 2018 - 02 dic 2018")
     end
 
     scenario "Filtering processes" do
