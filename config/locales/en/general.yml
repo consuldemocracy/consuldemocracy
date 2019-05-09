@@ -620,6 +620,24 @@ en:
         introduction: I am writing to let you know that I am participating in %{org}, the platform we can decide which city we want. And for that, I created my own citizen proposal and now, I'm going to need your support! But do not worry because It is very simple.
         support: "You just have to click on the button that you will see below 'Support this proposal' and you can inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by the City Council, and I thought that you, I'm sure you help me achieve it!"
         share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
+  people_proposals:
+    create:
+      form:
+        submit_button: Create proposal
+    edit:
+      form:
+        submit_button: Save changes
+    index:
+      search_form:
+        button: Search
+        placeholder: Search proposals...
+        title: Search
+    new:
+      form:
+        submit_button: Create proposal
+    update:
+      form:
+        submit_button: Save changes
   polls:
     all: "All"
     no_dates: "no date assigned"

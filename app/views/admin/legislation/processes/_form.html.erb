@@ -119,6 +119,31 @@
   </div>
 
   <div class="small-12 medium-4 column">
+    <label><%= t("admin.legislation.processes.form.people_proposals_phase") %></label>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= f.text_field :people_proposals_phase_start_date,
+                      value: format_date_for_calendar_form(@process.people_proposals_phase_start_date),
+                      class: "js-calendar-full",
+                      id: "people_proposals_phase_start_date" %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= f.text_field :people_proposals_phase_end_date,
+                      value: format_date_for_calendar_form(@process.people_proposals_phase_end_date),
+                      class: "js-calendar-full",
+                      id: "people_proposals_phase_end_date" %>
+  </div>
+  <div class="small-12 medium-2 column margin-top">
+    <%= f.check_box :people_proposals_phase_enabled, checked: @process.people_proposals_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+  </div>
+
+  <div class="small-12 column">
+    <hr>
+  </div>
+
+  <div class="small-12 medium-4 column">
     <label><%= t("admin.legislation.processes.form.allegations_phase") %></label>
   </div>
 

@@ -89,6 +89,9 @@ en:
       legislation/proposal:
         one: "Proposal"
         other: "Proposals"
+      legislation/people_proposal:
+        one: "People proposal"
+        other: "People proposals"
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
@@ -267,6 +270,8 @@ en:
         allegations_end_date: End
         proposals_phase_start_date: Start
         proposals_phase_end_date: End
+        people_proposals_phase_start_date: Start
+        people_proposals_phase_end_date: End
         result_publication_date: Final result publication date
         background_color: Background color
         font_color: Font color
@@ -293,6 +298,22 @@ en:
         value: Value
       legislation/annotation:
         text: Comment
+      legislation/people_proposal:
+        author: Author
+        title: Name
+        question: Question
+        description: Description
+        phone: Phone
+        email: Email
+        twitter: Twitter
+        facebook: Facebook
+        instagram: Instagram
+        youtube: Youtube
+        website: Website
+        summary: Proposal summary
+        video_url: Link to external video
+        external_url: Link to additional documentation
+        terms_of_service: Terms of service
       document:
         title: Title
         attachment: Attachment

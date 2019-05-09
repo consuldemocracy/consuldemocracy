@@ -504,6 +504,7 @@ es:
           draft_phase_description: Si esta fase está activa, el proceso no aparecerá en la página de procesos. Permite previsualizar el proceso y crear contenido antes del inicio.
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
+          people_proposals_phase: Fase de personas y grupos
           use_markdown: Usa Markdown para formatear el texto
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
@@ -530,6 +531,12 @@ es:
             id: Id
             title: Título
             supports: Apoyos totales
+        people_proposal:
+          select_order: Ordenar por
+          orders:
+            id: Id
+            title: Name
+            supports: Apoyos totales
         process:
           title: Proceso
           comments: Comentarios
@@ -545,6 +552,7 @@ es:
           draft_versions: Redacción
           questions: Debate
           proposals: Propuestas
+          people_proposals: Personas y Grupos
           milestones: Seguimiento
       homepage:
         edit:
@@ -559,6 +567,34 @@ es:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta. Máximo 160 caracteres.
           custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
+      people_proposals:
+        index:
+          create: Nueva propuesta de Personas y grupos
+          title: Título
+          back: Volver
+          id: Id
+          supports: Apoyos totales
+          title: Nombre
+          contact: Contacto
+          verification: Verificación
+          actions: Acciones
+          select: Seleccionar
+          selected: Seleccionada
+          validate: Validar
+          validated: Validada
+          show: Ver
+          no_proposals: No hay propuestas
+        form:
+          contact_info:
+            title: Información de contacto
+          question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
+          summary_note: "(máximo 200 caracteres)"
+          video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+          custom_categories: Categorías
+          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuestade personas y grupos. Máximo 160 caracteres.
+          custom_categories_placeholder: Escribe las etiquetas que desees separadas por una coma (,) y entrecomilladas ("")
+        new:
+          title: Nueva propuesta de Personas y grupos
       draft_versions:
         create:
           notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
