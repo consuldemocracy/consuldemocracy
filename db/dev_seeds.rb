@@ -39,6 +39,7 @@ require_relative "dev_seeds/notifications"
 require_relative "dev_seeds/widgets"
 require_relative "dev_seeds/admin_notifications"
 require_relative "dev_seeds/legislation_proposals"
+require_relative "dev_seeds/legislation_people_proposals"
 require_relative "dev_seeds/milestones"
 require_relative "dev_seeds/pages"
 
