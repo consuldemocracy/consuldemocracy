@@ -187,6 +187,7 @@ LOREM_IPSUM
     process factory: :legislation_process
     author factory: :user
     validated false
+    description "Description of the people proposal"
 
     trait :with_contact_info do
       email "proposal@test.com"
