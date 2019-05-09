@@ -47,7 +47,11 @@ en-US:
         external_url: "Veza za dodatnu dokumentaciju"
         administrator_id: "Administrator(in),Verwaltungsleiter(in)"
         location: "Lokacija (po izboru)"
+        organization_name: "Ako podnosite prijedlog u ime kolektiva ili organizacije, ili za više ljudi, navedite njen naziv"
+        image: "Opisna slika prijedloga"
+        image_title: "Naziv slike"
       geozone:
+        name: Ime
         external_code: "Eksterni kod (po izboru)"
         census_code: "Kod za cenzus (po izboru)"
         html_map_coordinates: "HTML <map> Koordinate (po izboru)"
@@ -184,3 +188,30 @@ en-US:
         title: Naslov
         short_description: Kratki opis
         description: Opis
+        link: Vanjski link
+        request_to_administrators: Uvesti u resurs dugme za traženje resursa od administratora
+        day_offset: Nakon koliko dana po kreiranju želite da aktivirate prijedlog?
+        required_supports: Koliko prijedlog treba dobiti klikova podrške da bi se aktivirao?
+        order: Možete navesti mjesto na kojem će radnja biti pokazana korisniku na spisku radnji
+        active: Aktivno
+        action_type: Vrsta
+      dashboard/administrator_task:
+        source: Izvor
+        user: Uradio/la
+      link:
+        label: Naziv
+        url: Link
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Korisnik već ima lozinku"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagovi moraju biti manji od ili jednaki %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ispunili ste maksimalni broj privatnih poruka po danu"
