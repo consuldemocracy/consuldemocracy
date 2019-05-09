@@ -43,6 +43,7 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
   end
 
   before do
+    Setting["feature.translation_interface"] = true
     login_as(user)
   end
 
