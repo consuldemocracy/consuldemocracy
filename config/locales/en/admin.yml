@@ -107,6 +107,7 @@ en:
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot destroy a budget that has associated investments
+        unable_notice_polls: You cannot destroy a budget that has an associated poll
       new:
         title: New participatory budget
       winners:
