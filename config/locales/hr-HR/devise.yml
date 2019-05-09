@@ -17,3 +17,5 @@ hr:
       locked: "Vaš račun je zaključan."
       last_attempt: "Preostao vam je još jedan pokušaj prije nego što se račun blokira."
       not_found_in_database: "Nevažeć %{authentication_keys} ili zaporka."
+      timeout: "Vaša sesija je istekla. Molimo vas da se ponovno prijavite."
+      unauthenticated: "Morate se prijaviti ili registirati kako biste nastavili."
