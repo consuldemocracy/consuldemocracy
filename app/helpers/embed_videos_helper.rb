@@ -3,9 +3,9 @@ module EmbedVideosHelper
   VIMEO_REGEX = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
   YOUTUBE_REGEX = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
 
-  def embedded_video_code
-    link = @proposal.video_url
-    title = t("proposals.show.embed_video_title", proposal: @proposal.title)
+  def embedded_video_code(resource)
+    link = resource.video_url
+    title = t("proposals.show.embed_video_title", proposal: resource.title)
     if link =~ /vimeo.*/
       server = "Vimeo"
     elsif link =~ /youtu*.*/
