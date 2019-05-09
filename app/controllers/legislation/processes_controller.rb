@@ -2,11 +2,11 @@ class Legislation::ProcessesController < Legislation::BaseController
   include RandomSeed
 
   has_filters %w[open past], only: :index
-  has_filters %w[random winners], only: :proposals
+  has_filters %w[random winners], only: [:proposals, :people_proposals]
 
   load_and_authorize_resource
 
-  before_action :set_random_seed, only: :proposals
+  before_action :set_random_seed, only: [:proposals, :people_proposals]
 
   def index
     @current_filter ||= "open"
@@ -26,6 +26,8 @@ class Legislation::ProcessesController < Legislation::BaseController
       redirect_to debate_legislation_process_path(@process)
     elsif @process.proposals_phase.enabled?
       redirect_to proposals_legislation_process_path(@process)
+    elsif @process.people_proposals_phase.enabled?
+      redirect_to people_proposals_legislation_process_path(@process)
     else
       redirect_to allegations_legislation_process_path(@process)
     end
@@ -115,6 +117,29 @@ class Legislation::ProcessesController < Legislation::BaseController
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       legislation_proposal_votes(@proposals)
       render :proposals
+    else
+      render :phase_not_open
+    end
+  end
+
+  def people_proposals
+    set_process
+    @phase = :people_proposals_phase
+
+    @proposals = @process.people_proposals.validated
+    @proposals = @proposals.search(params[:search]) if params[:search].present?
+
+    @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
+
+    if @current_filter == "random"
+      @proposals = @proposals.sort_by_random(session[:random_seed]).page(params[:page])
+    else
+      @proposals = @proposals.send(@current_filter).page(params[:page])
+    end
+
+    if @process.people_proposals_phase.started? || current_user&.administrator?
+      legislation_people_proposal_votes(@proposals)
+      render :people_proposals
     else
       render :phase_not_open
     end

@@ -1,0 +1,68 @@
+<div id="<%= dom_id(people_proposal) %>"
+     class="proposal clear <%= ("successful" if people_proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     data-type="proposal">
+  <div class="panel <%= ("with-image" if people_proposal.image.present?) %>">
+    <div class="icon-successful"></div>
+
+    <% if people_proposal.image.present? %>
+      <div class="row">
+        <div class="small-12 medium-3 large-2 column text-center">
+          <%= image_tag people_proposal.image_url(:thumb),
+                        alt: people_proposal.image.title.unicode_normalize %>
+        </div>
+        <div class="small-12 medium-6 large-7 column margin-top">
+    <% else %>
+      <div class="row">
+        <div class="small-12 medium-9 column">
+    <% end %>
+        <div class="proposal-content">
+          <% cache [locale_and_user_status(people_proposal), "index", people_proposal, people_proposal.author] do %>
+            <h3><%= link_to people_proposal.title, legislation_process_people_proposal_path(people_proposal.legislation_process_id, people_proposal) %></h3>
+            <p class="proposal-info">
+              <span class="icon-comments"></span>&nbsp;
+              <%= link_to t("legislation.people_proposals.proposal.comments", count: people_proposal.comments_count), legislation_process_people_proposal_path(people_proposal.legislation_process_id, people_proposal, anchor: "comments") %>
+
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= l people_proposal.created_at.to_date %>
+
+              <% if people_proposal.author.hidden? || people_proposal.author.erased? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= t("legislation.people_proposals.show.author_deleted") %>
+                </span>
+              <% else %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= people_proposal.author.name %>
+                </span>
+                <% if people_proposal.author.display_official_position_badge? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-<%= proposal.author.official_level %>">
+                    <%= people_proposal.author.official_position %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <% if people_proposal.author.verified_organization? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round is-association">
+                  <%= t("shared.collective") %>
+                </span>
+              <% end %>
+            </p>
+            <div class="proposal-description">
+              <p><%= people_proposal.summary %></p>
+              <div class="truncate"></div>
+            </div>
+            <%= render "shared/tags", taggable: people_proposal, limit: 5 %>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="<%= dom_id(people_proposal) %>_votes" class="small-12 medium-3 column">
+        <%= render "legislation/people_proposals/votes",
+                  { people_proposal: people_proposal, vote_url: vote_legislation_process_people_proposal_path(people_proposal.legislation_process_id, people_proposal, value: "yes") } %>
+      </div>
+    </div>
+  </div>
+</div>

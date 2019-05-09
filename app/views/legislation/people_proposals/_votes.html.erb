@@ -1,0 +1,81 @@
+<% voted_classes = css_classes_for_vote(@legislation_proposal_votes, people_proposal) %>
+<div class="votes">
+  <% if @process.people_proposals_phase.open? %>
+    <div class="in-favor inline-block">
+      <% if user_signed_in? %>
+        <%= link_to vote_legislation_process_people_proposal_path(process_id: people_proposal.process, id: people_proposal, value: "yes"),
+            class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
+          <span class="icon-like">
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
+          </span>
+          <span class="percentage"><%= votes_percentage("likes", people_proposal) %></span>
+        <% end %>
+      <% else %>
+        <div class="like">
+          <span class="icon-like">
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
+          </span>
+          <span class="percentage"><%= votes_percentage("likes", people_proposal) %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <span class="divider"></span>
+
+    <div class="against inline-block">
+      <% if user_signed_in? %>
+        <%= link_to vote_legislation_process_people_proposal_path(process_id: people_proposal.process, id: people_proposal, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
+          <span class="icon-unlike">
+            <span class="show-for-sr"><%= t("votes.disagree") %></span>
+          </span>
+          <span class="percentage"><%= votes_percentage("dislikes", people_proposal) %></span>
+        <% end %>
+      <% else %>
+        <div class="unlike">
+          <span class="icon-unlike">
+            <span class="show-for-sr"><%= t("votes.disagree") %></span>
+          </span>
+          <span class="percentage"><%= votes_percentage("dislikes", people_proposal) %></span>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <span class="total-votes">
+    <%= t("legislation.people_proposals.proposal.votes", count: people_proposal.votes_score) %>
+  </span>
+
+  <% if user_signed_in? && current_user.organization? %>
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+      <p>
+        <%= t("votes.organizations") %>
+      </p>
+    </div>
+  <% elsif user_signed_in? && !people_proposal.votable_by?(current_user) %>
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+      <p>
+        <%= t("legislation.people_proposals.not_verified",
+            verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+      </p>
+    </div>
+  <% elsif !user_signed_in? %>
+    <div tabindex="0">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+        <%= t("votes.unauthenticated",
+          signin: link_to(t("votes.signin"), new_user_session_path),
+          signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if voted_for?(@legislation_proposal_votes, people_proposal) && setting["twitter_handle"] %>
+    <div class="share-supported">
+      <%= render partial: "shared/social_share", locals: {
+          title: people_proposal.title,
+          url: legislation_process_people_proposal_url(people_proposal.process, people_proposal),
+          description: people_proposal.summary,
+          mobile: people_proposal.title
+      } %>
+    </div>
+  <% end %>
+</div>
