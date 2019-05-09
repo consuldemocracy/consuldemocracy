@@ -1,0 +1,41 @@
+<% if people_proposals.any? %>
+  <h3><%= page_entries_info people_proposals %></h3>
+
+  <%= render "shared/wide_order_selector", i18n_namespace: "admin.legislation.processes.people_proposals" %>
+
+  <table class="stack" id="legislation_people_proposals_list">
+    <thead>
+      <tr>
+        <th class="text-center"><%= t("admin.legislation.people_proposals.index.id") %></th>
+        <th><%= t("admin.legislation.people_proposals.index.title") %></th>
+        <th class="medium-2"><%= t("admin.legislation.people_proposals.index.contact") %></th>
+        <th class="text-center"><%= t("admin.legislation.people_proposals.index.supports") %></th>
+        <th class="text-center"><%= t("admin.legislation.people_proposals.index.verification") %></th>
+        <th class="medium-4 text-center"><%= t("admin.legislation.people_proposals.index.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% people_proposals.each do |people_proposal| %>
+        <tr id="<%= dom_id(people_proposal) %>" class="legislation_people_proposal">
+          <td class="text-center"><%= people_proposal.id %></td>
+          <td class="medium-2"><%= people_proposal.title %></td>
+          <td><%= people_proposal.contact_info.join(", ") %></td>
+          <td class="text-center"><%= people_proposal.votes_score %></td>
+          <td class="text-center validate">
+            <%= render "validate_people_proposal", people_proposal: people_proposal %>
+          </td>
+          <td class="select">
+            <%= render "select_people_proposal", people_proposal: people_proposal %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate people_proposals %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.legislation.people_proposals.index.no_proposals") %>
+  </div>
+<% end %>
