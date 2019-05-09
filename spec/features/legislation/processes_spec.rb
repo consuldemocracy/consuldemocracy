@@ -147,7 +147,7 @@ describe "Legislation" do
       scenario "show view has document present on all phases" do
         process = create(:legislation_process)
         document = create(:document, documentable: process)
-        phases = ["Debate", "Proposals", "Comments"]
+        phases = ["Debate", "Proposals", "People proposals", "Comments"]
 
         visit legislation_process_path(process)
 
