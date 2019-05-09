@@ -11,6 +11,44 @@ module LegislationHelper
     t("proposals.index.start_proposal")
   end
 
+  def link_to_toggle_legislation_people_proposal_selection(people_proposal)
+    if people_proposal.selected?
+      button_text = t("admin.legislation.people_proposals.index.selected")
+      html_class = "button"
+    else
+      button_text = t("admin.legislation.people_proposals.index.select")
+      html_class = "button hollow"
+    end
+
+    link_to button_text,
+      toggle_selection_admin_legislation_process_people_proposal_path(
+        people_proposal.process,
+        people_proposal
+      ),
+      remote: true,
+      method: :patch,
+      class:  html_class
+  end
+
+  def link_to_toggle_legislation_people_proposal_validation(people_proposal)
+    if people_proposal.validated?
+      button_text = t("admin.legislation.people_proposals.index.validated")
+      html_class = "button"
+    else
+      button_text = t("admin.legislation.people_proposals.index.validate")
+      html_class = "button hollow"
+    end
+
+    link_to button_text,
+      toggle_validation_admin_legislation_process_people_proposal_path(
+        people_proposal.process,
+        people_proposal
+      ),
+      remote: true,
+      method: :patch,
+      class:  html_class
+  end
+
   def legislation_process_tabs(process)
     {
       "info"           => edit_admin_legislation_process_path(process),
