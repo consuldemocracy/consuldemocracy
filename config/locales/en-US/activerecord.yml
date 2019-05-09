@@ -1,12 +1,18 @@
 en-US:
   activerecord:
     models:
+      budget:
+        one: "Budžet"
+        other: "Budžeti"
       milestone:
         one: "Meilenstein"
         other: "Meilensteine"
       milestone/status:
         one: "Investitionsstatus, Anlagenstatus"
         other: "Investitionsstatus, Anlagenstatus"
+      progress_bar:
+        one: "Grafički indikator"
+        other: "Grafički indikatori"
       comment:
         one: "Kommentar"
         other: "Kommentare"
@@ -87,5 +93,78 @@ en-US:
         name: "Ime"
         starts_at: "Početni datum"
         ends_at: "Krajnji datum"
+        geozone_restricted: "Ograničeno zbog geozone"
+        summary: "Sažetak"
+        description: "Opis"
+      poll/translation:
+        name: "Ime"
+        summary: "Sažetak"
+      legislation/process/translation:
+        title: Naziv procesa
+        summary: Sažetak
+        description: Opis
+        additional_info: Dodatne informacije
+        milestones_summary: Sažetak
+      legislation/draft_version:
+        title: Naziv verzije
+        body: Tekst
+        changelog: Izmjene
+        status: Status
+        final_version: Konačna verzija
+      legislation/draft_version/translation:
+        title: Naziv verzije
+        body: Tekst
+        changelog: Izmjene
+      legislation/question:
+        title: Naslov
+        question_options: Opcije
+      legislation/question_option:
+        value: Vrijednost
       legislation/annotation:
         text: Kommentar
+      document:
+        title: Naslov
+        attachment: Prilog
+      image:
+        title: Naslov
+        attachment: Prilog
+      poll/question/answer:
+        title: Odgovor
+        description: Opis
+      poll/question/answer/translation:
+        title: Odgovor
+        description: Opis
+      poll/question/answer/video:
+        title: Naslov
+        url: Eksterni video
+      newsletter:
+        segment_recipient: Primaoci
+        subject: Predmet
+        from: Od
+        body: Sadržaj emaila
+      admin_notification:
+        segment_recipient: Primaoci
+        title: Naslov
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Naslov
+        body: Tekst
+      widget/card:
+        label: Oznaka (po izboru)
+        title: Naslov
+        description: Opis
+        link_text: Link za tekst
+        link_url: Link za URL
+        columns: Broj stupaca
+      widget/card/translation:
+        label: Oznaka (po izboru)
+        title: Naslov
+        description: Opis
+        link_text: Link za tekst
+      widget/feed:
+        limit: Broj artikala
+      dashboard/action:
+        title: Naslov
+        short_description: Kratki opis
+        description: Opis
