@@ -4,8 +4,9 @@ class Comment < ApplicationRecord
   include Graphqlable
   include Notifiable
 
-  COMMENTABLE_TYPES = %w(Debate Proposal Budget::Investment Poll Topic Legislation::Question
-                        Legislation::Annotation Legislation::Proposal).freeze
+  COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
+                        Legislation::Question Legislation::Annotation
+                        Legislation::Proposal Legislation::PeopleProposal].freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
