@@ -10,6 +10,32 @@ hr:
       menu:
         debates: "Rasprave"
         proposals: "Prijedlozi"
+        budgets: "Participativni budžeti"
+        polls: "Ankete"
+        other: "Ostale informacije o interesima"
+        processes: "Procesi"
+      debates:
+        title: "Rasprave"
+        description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
+        link: "rasprave građana"
+        feature_html: "Možete otvoriti raspravu, komentirati i evaluirati ih sa <strong> ja se slažem</strong> ili <strong> ja se ne slažem</strong>. Za to trebate %{link}."
+        feature_link: "registrirajte se u %{org}"
+        image_alt: "Gumbi za rangiranje rasprava"
+        figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
+      proposals:
+        title: "Prijedlozi"
+        description: "U %{link} sekciji možete napraviti prijedlog za tijelo javne vlasti kako bi ih izvršila. Prijedlozima treba potpora te ukoliko zadobe dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i sprovesti."
+        link: "prijedlozi građana"
+        image_alt: "Gumb za potporu prijedloga"
+        figcaption_html: 'Gumb za "Potporu" prijedloga.'
+      budgets:
+        title: "Participativno Budžetiranje"
+        description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
+        link: "participativni budžeti"
+        image_alt: "Različite faze participativnog budžetiranja"
+        figcaption_html: '"Potpora" i "Glasanje" su faze participativnog budžetiranja.'
+      polls:
+        title: "Ankete"
     accessibility:
       keyboard_shortcuts:
         navigation_table:
