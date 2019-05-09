@@ -75,9 +75,9 @@ namespace :settings do
     Setting.rename_key from: "feature.homepage.widgets.feeds.processes", to: "homepage.widgets.feeds.processes"
   end
 
-  desc "Enable translation interface for translatable database contents"
-  task enable_translation_interface: :environment do
-    Setting["feature.translation_interface"] = true
+  desc "Create new translation interface feature setting with default value"
+  task create_translation_interface_setting: :environment do
+    Setting["feature.translation_interface"] = nil
   end
 
 end
