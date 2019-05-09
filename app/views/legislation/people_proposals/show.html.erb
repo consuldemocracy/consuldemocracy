@@ -82,8 +82,6 @@
 
         <% end %>
 
-        <h4><%= @people_proposal.question %></h4>
-
         <% if feature?(:allow_attached_documents) %>
           <%= render "documents/documents",
                       documents: @people_proposal.documents,

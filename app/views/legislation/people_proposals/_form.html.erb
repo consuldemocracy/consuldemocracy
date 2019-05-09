@@ -6,13 +6,15 @@
   <div>
     <div class="small-12 column">
       <%= f.label :title %>
-      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path} %>
     </div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <label><%=t("legislation.people_proposals.form.contact_info.title")%></label>
+      <label>
+        <%= t("legislation.people_proposals.form.contact_info.title") %>
+      </label>
 
       <div class="small-12 column">
         <div class="small-12 column medium-3">
@@ -37,17 +39,6 @@
           <%= f.text_field :website, placeholder: true %>
         </div>
       </div>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :question %>
-      <p class="help-text" id="question-help-text">
-        <%= t("legislation.people_proposals.form.question_example_html") %>
-      </p>
-      <%= f.text_field :question, maxlength: Legislation::PeopleProposal.question_max_length,
-                                  placeholder: true,
-                                  label: false,
-                                  aria: {describedby: "question-help-text"} %>
     </div>
 
     <div class="small-12 column">

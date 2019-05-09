@@ -112,8 +112,13 @@ feature "Legislation PeopleProposals" do
     end
 
     scenario "filters correctly" do
-      proposal1 = create(:legislation_people_proposal, :validated, legislation_process_id: process.id)
-      proposal2 = create(:legislation_people_proposal, :validated, legislation_process_id: process.id, selected: true)
+      proposal1 = create(:legislation_people_proposal,
+        :validated,
+        legislation_process_id: process.id)
+      proposal2 = create(:legislation_people_proposal,
+        :validated,
+        legislation_process_id: process.id,
+        selected: true)
 
       visit legislation_process_people_proposals_path(process, filter: "random")
       click_link "Selected"
@@ -220,7 +225,6 @@ feature "Legislation PeopleProposals" do
       fill_in "Facebook", with: "@facebook"
       fill_in "Instagram", with: "@instagram"
       fill_in "Youtube", with: "@youtube"
-      fill_in "Question", with: "question"
       fill_in "Proposal summary", with: "Proposal summary"
       fill_in "Link to external video", with: "http://video.com"
 

@@ -25,6 +25,10 @@ ActsAsVotable::Vote.class_eval do
     where(votable_type: "Legislation::Proposal", votable_id: proposals)
   end
 
+  def self.for_legislation_people_proposals(people_proposals)
+    where(votable_type: "Legislation::PeopleProposal", votable_id: people_proposals)
+  end
+
   def self.for_budget_investments(budget_investments=Budget::Investment.all)
     where(votable_type: "Budget::Investment", votable_id: budget_investments)
   end
