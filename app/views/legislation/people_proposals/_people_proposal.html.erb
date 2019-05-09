@@ -37,7 +37,7 @@
                 </span>
                 <% if people_proposal.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= proposal.author.official_level %>">
+                  <span class="label round level-<%= people_proposal.author.official_level %>">
                     <%= people_proposal.author.official_position %>
                   </span>
                 <% end %>

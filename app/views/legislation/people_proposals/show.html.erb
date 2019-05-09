@@ -1,0 +1,133 @@
+<% provide :title do %><%= @people_proposal.title %><% end %>
+<% content_for :meta_description do %><%= @people_proposal.summary %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: legislation_process_people_proposal_url(process_id: @process),
+            social_title: @people_proposal.title,
+            social_description: @people_proposal.summary %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: legislation_process_people_proposal_url(process_id: @process) %>
+<% end %>
+
+<% cache [locale_and_user_status(@people_proposal), @people_proposal, @people_proposal.author, Flag.flagged?(current_user, @people_proposal), @legislation_people_proposal_votes] do %>
+  <div class="proposal-show legislation-people-proposal-show">
+    <div id="<%= dom_id(@people_proposal) %>" class="row">
+      <div class="small-12 medium-9 column">
+        <div class="margin">
+          <%= back_link_to legislation_process_people_proposals_path(process_id: @process) %>
+        </div>
+
+        <% if @people_proposal.conflictive? %>
+          <div data-alert class="callout alert margin-top">
+            <strong><%= t("legislation.people_proposals.show.flag") %></strong>
+          </div>
+        <% end %>
+
+        <div class="proposal-info small-12 row">
+          <% if @people_proposal.image.present? %>
+            <div class="small-12 medium-4 column">
+              <%= render_image(@people_proposal.image, :medium, false) %>
+            </div>
+          <% end %>
+          <div class="small-12 medium-8 column">
+
+            <h1><%= @people_proposal.title %></h1>
+
+            <div class="margin-bottom">
+
+              <%= l @people_proposal.created_at.to_date %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <span class="icon-comments"></span>&nbsp;
+
+              <%= link_to t("legislation.people_proposals.show.comments", count: @people_proposal.comments_count), "#comments" %>
+
+              <% if current_user %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <%= render "legislation/people_proposals/flag_actions", proposal: @people_proposal %>
+              <% end %>
+
+              <span class="proposal_code">
+                <%= t("legislation.people_proposals.show.code") %>
+                <strong><%= @people_proposal.code %></strong>
+              </span>
+            </div>
+
+            <p><%= @people_proposal.summary %></p>
+
+            <%= render "legislation/people_proposals/social_contacts" %>
+          </div>
+        </div>
+
+        <hr>
+
+        <%= safe_html_with_links @people_proposal.description %>
+
+        <% if @people_proposal.video_url.present? %>
+          <div class="small-12 medium-7 small-centered">
+            <div class="flex-video">
+              <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@people_proposal) %>"></div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @people_proposal.video_url.present? %>
+          <div class="video-link">
+            <p>
+              <span class="icon-video"></span>&nbsp;
+              <strong><%= t("legislation.people_proposals.show.title_video_url") %></strong>
+            </p>
+            <%= text_with_links @people_proposal.video_url %>
+          </div>
+
+        <% end %>
+
+        <h4><%= @people_proposal.question %></h4>
+
+        <% if feature?(:allow_attached_documents) %>
+          <%= render "documents/documents",
+                      documents: @people_proposal.documents,
+                      max_documents_allowed: Proposal.max_documents_allowed %>
+        <% end %>
+
+        <%= render "shared/tags", taggable: @people_proposal %>
+
+        <div class="js-moderator-proposal-actions margin">
+          <%= render "legislation/people_proposals/actions", proposal: @people_proposal %>
+        </div>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h2><%= t("votes.supports") %></h2>
+        <div id="<%= dom_id(@people_proposal) %>_votes">
+          <%= render "votes",
+                    { people_proposal: @people_proposal, vote_url: vote_legislation_process_people_proposal_path(@people_proposal.legislation_process_id, @people_proposal, value: "yes") } %>
+        </div>
+        <%= render partial: "shared/social_share", locals: {
+          share_title: t("legislation.people_proposals.show.share"),
+          title: @people_proposal.title,
+          url: legislation_process_proposal_url(process_id: @process),
+          description: @people_proposal.summary,
+          mobile: @people_proposal.title
+        } %>
+      </aside>
+    </div>
+  </div>
+<% end %>
+
+<div class="additional-content">
+  <div class="filter-subnav">
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "legislation/people_proposals/filter_subnav" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-content" data-tabs-content="legislation_proposals_tabs">
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render "legislation/people_proposals/comments" %>
+  </div>
+</div>

@@ -618,6 +618,24 @@ es:
         introduction: Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué ciudad queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo.
         support: "Tan sólo tienes que hacer clic en el botón que verás a continuación 'Apoyar esta propuesta' y directamente podrás informarte acerca de ella antes de impulsarla. Sólo las propuestas que consigan el máximo apoyo se llevarán a cabo por parte del Ayuntamiento, y he pensado que tú ¡seguro que me ayudas a lograrlo!"
         share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
+  people_proposals:
+    create:
+      form:
+        submit_button: Crear propuesta
+    edit:
+      form:
+        submit_button: Guardar cambios
+    index:
+      search_form:
+        button: Buscar
+        placeholder: Buscar propuestas...
+        title: Buscar
+    new:
+      form:
+        submit_button: Crear propuesta
+    update:
+      form:
+        submit_button: Guardar cambios
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"

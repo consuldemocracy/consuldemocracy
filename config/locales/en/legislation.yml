@@ -55,6 +55,11 @@ en:
         filters:
           random: Random
           winners: Selected
+      people_proposals:
+        empty_proposals: There are no proposals
+        filters:
+          random: Random
+          winners: Selected
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
@@ -130,11 +135,8 @@ en:
       create:
         form:
           submit_button: Create proposal
-      edit:
-        editing: Edit proposal
         form:
           submit_button: Save changes
-        show_link: View proposal
       form:
         contact_info:
           title: Contact info
