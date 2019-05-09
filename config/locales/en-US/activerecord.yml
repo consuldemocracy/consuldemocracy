@@ -215,3 +215,20 @@ en-US:
           attributes:
             max_per_day:
               invalid: "Ispunili ste maksimalni broj privatnih poruka po danu"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Širina slike mora biti najmanje %(obavezna minimalna širina)px %{required_min_width}px"
+              min_image_height: "Visina slike mora biti najmanje %(obavezna minimalna visina) px %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Segment korisnika primatelja je nevažeći"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Segment korisnika primatelja je nevažeći"
+        map_location:
+          attributes:
+            map:
+              invalid: Mora se navesti lokacija na mapi. Stavite marker ili označite kockicu ako geolokalizacija nije potrebna
