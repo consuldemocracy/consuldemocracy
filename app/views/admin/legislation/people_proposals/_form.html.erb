@@ -1,0 +1,107 @@
+<%= form_for(@people_proposal, url: form_url) do |f| %>
+  <%= render "shared/errors", resource: @people_proposal %>
+
+  <div class="wapper" id="<%= dom_id(@people_proposal) %>">
+    <div>Status: <%= t("admin.legislation.people_proposals.form.status.#{ "not_" unless @people_proposal.validated? }validated") %>
+      <% if @people_proposal.persisted? %>
+        <span class="validate">
+          <%= link_to_toggle_legislation_people_proposal_validation(@people_proposal) %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <div class="small-12 column">
+      <%= f.label :title %>
+      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path} %>
+    </div>
+    <div id="js-suggest"></div>
+
+    <div class="small-12 column">
+      <label><%= t("admin.legislation.people_proposals.form.contact_info.title") %></label>
+      <div class="small-12 column">
+        <div class="small-12 column medium-3">
+          <%= f.text_field :phone, placeholder: true %>
+        </div>
+        <div class="small-12 column medium-3">
+          <%= f.text_field :email, placeholder: true %>
+        </div>
+        <div class="small-12 column medium-3">
+          <%= f.text_field :twitter, placeholder: true %>
+        </div>
+        <div class="small-12 column medium-3">
+          <%= f.text_field :facebook, placeholder: true %>
+        </div>
+        <div class="small-12 column medium-3">
+          <%= f.text_field :instagram, placeholder: true %>
+        </div>
+        <div class="small-12 column medium-3">
+          <%= f.text_field :youtube, placeholder: true %>
+        </div>
+        <div class="small-12 column">
+          <%= f.text_field :website, placeholder: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :question %>
+      <p class="help-text" id="question-help-text">
+        <%= t("admin.legislation.people_proposals.form.question_example_html") %>
+      </p>
+      <%= f.text_field :question, maxlength: Legislation::PeopleProposal.question_max_length,
+                                  placeholder: true,
+                                  label: false,
+                                  aria: {describedby: "question-help-text"} %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :summary %>
+      <p class="help-text" id="summary-help-text"><%= t("admin.legislation.people_proposals.form.summary_note") %></p>
+      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
+                      placeholder: true,
+                      aria: {describedby: "summary-help-text"} %>
+    </div>
+
+    <div class="ckeditor small-12 column">
+      <%= f.label :description %>
+      <%= f.cktext_area :description, maxlength: Legislation::PeopleProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :video_url %>
+      <p class="help-text" id="video-url-help-text"><%= t("admin.legislation.people_proposals.form.video_url_note") %></p>
+      <%= f.text_field :video_url, placeholder: true, label: false, aria: {describedby: "video-url-help-text"} %>
+    </div>
+
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render "images/nested_image", imageable: @people_proposal, f: f %>
+      </div>
+    <% end %>
+
+    <% if feature?(:allow_attached_documents) %>
+      <div class="documents small-12 column">
+        <%= render "documents/nested_documents", documentable: @people_proposal, f: f %>
+      </div>
+    <% end %>
+
+    <div class="small-12 column">
+      <% if @people_proposal.new_record? %>
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, label: false %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("people_proposals.#{action_name}.form.submit_button")) %>
+    </div>
+  </div>
+<% end %>

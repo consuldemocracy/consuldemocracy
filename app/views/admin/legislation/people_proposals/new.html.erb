@@ -1,0 +1,14 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.people_proposals.index.title") %>
+<% end %>
+
+<div class="legislation-admin legislation-draft-versions-index">
+
+  <%= back_link_to admin_legislation_process_people_proposals_path(process: @people_proposal.process), t("admin.legislation.people_proposals.index.back") %>
+
+  <h2><%= @people_proposal.process.title %> - <%= t("admin.legislation.people_proposals.new.title") %></h2>
+
+  <%= render "admin/legislation/processes/subnav", process: @people_proposal.process, active: "people_proposals" %>
+
+  <%= render 'form', form_url: admin_legislation_process_people_proposals_url(process: @people_proposal.process) %>
+</div>

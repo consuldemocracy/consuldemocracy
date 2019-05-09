@@ -1,0 +1,8 @@
+<%= link_to t("admin.legislation.people_proposals.index.show"),
+              admin_legislation_process_people_proposal_path(people_proposal.process, people_proposal),
+              class: "button hollow" %>
+<%= link_to t("admin.actions.edit"),
+              edit_admin_legislation_process_people_proposal_path(people_proposal.process, people_proposal),
+              class: "button hollow" %>
+
+<%= link_to_toggle_legislation_people_proposal_selection(people_proposal) %>

@@ -89,6 +89,9 @@ es:
       legislation/proposal:
         one: "Propuesta"
         other: "Propuestas"
+      legislation/people_proposal:
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
         one: "Versión del borrador"
         other: "Versiones del borrador"
@@ -269,6 +272,8 @@ es:
         allegations_end_date: Fin
         proposals_phase_start_date: Inicio
         proposals_phase_end_date: Fin
+        people_proposals_phase_start_date: Inicio
+        people_proposals_phase_end_date: Fin
         result_publication_date: Fecha de publicación del resultado final
         background_color: Color del fondo
         font_color: Color del texto
@@ -295,6 +300,21 @@ es:
         value: Valor
       legislation/annotation:
         text: Comentario
+      legislation/people_proposal:
+        author: Autor
+        title: Nombre
+        question: Pregunta
+        description: Descripción
+        phone: Teléfono
+        email: Email
+        twitter: Twitter
+        facebook: Facebook
+        instagram: Instagram
+        youtube: Yuotube
+        website: Página Web
+        summary: Resumen de la propuesta
+        video_url: Enlace a vídeo externo
+        terms_of_service: Términos de servicio
       document:
         title: Título
         attachment: Archivo adjunto

@@ -504,6 +504,7 @@ en:
           draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
           allegations_phase: Comments phase
           proposals_phase: Proposals phase
+          people_proposals_phase: People and Groups phase
           use_markdown: Use Markdown to format the text
           title_placeholder: The title of the process
           summary_placeholder: Short summary of the description
@@ -530,6 +531,12 @@ en:
             id: Id
             title: Title
             supports: Total supports
+        people_proposals:
+          select_order: Sort by
+          orders:
+            id: Id
+            title: Name
+            supports: Total supports
         process:
           title: Process
           comments: Comments
@@ -545,6 +552,7 @@ en:
           draft_versions: Drafting
           questions: Debate
           proposals: Proposals
+          people_proposals: People and Groups
           milestones: Following
       homepage:
         edit:
@@ -560,6 +568,37 @@ en:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres.
           custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
+      people_proposals:
+        index:
+          create: New People and Group proposal
+          title: People and Groups
+          back: Back
+          id: Id
+          title: Name
+          contact: Contact
+          verification: Verification
+          supports: Total supports
+          actions: Actions
+          select: Select
+          selected: Selected
+          validate: Validate
+          validated: Validated
+          show: Show
+          no_proposals: There are no proposals
+        form:
+          contact_info:
+            title: Contact info
+          question_example_html: "Must be summarised in one question with a Yes or No answer"
+          summary_note: (maximum 200 characters)
+          video_url_note: You may add a link to YouTube or Vimeo
+          custom_categories: Categories
+          custom_categories_description: Categories that users can select creating the proposal of people and groups. Max 160 characteres.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
+          status:
+            validated: Validated
+            not_validated: Not validated
+        new:
+          title: New People and Group proposal
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'

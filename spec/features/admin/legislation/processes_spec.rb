@@ -205,6 +205,20 @@ describe "Admin collaborative legislation" do
              description: "Description of the process")
     end
 
+    scenario "Navigation tabs are visibles", :js do
+      visit edit_admin_legislation_process_path(process)
+      within(".legislation-process-edit ul.menu") do
+        expect(page).to have_link "Homepage"
+        expect(page).to have_link "Debate"
+        expect(page).to have_link "Proposals"
+        expect(page).to have_link "People and Groups"
+        expect(page).to have_link "Drafting"
+        expect(page).to have_link "Following"
+        expect(page).to have_content "Information"
+        expect(page).not_to have_link "Information"
+      end
+    end
+
     scenario "Remove summary text" do
       visit admin_root_path
 
