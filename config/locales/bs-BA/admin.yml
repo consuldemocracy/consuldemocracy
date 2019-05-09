@@ -29,3 +29,7 @@ bs:
         preview: Pregled
       banner:
         title: Naslov
+        description: Opis
+        target_url: Link
+        post_started_at: 'Objava započeta u:'
+        post_ended_at: 'Objava završena u:'
