@@ -11,6 +11,8 @@ describe Abilities::Everyone do
   let(:reviewing_ballot_budget) { create(:budget, phase: "reviewing_ballots") }
   let(:finished_budget) { create(:budget, phase: "finished") }
 
+  let(:legislation_people_proposal) { build(:legislation_people_proposal) }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should_not be_able_to(:edit, Debate) }
@@ -73,4 +75,12 @@ describe Abilities::Everyone do
       it { should_not be_able_to(:stats, poll) }
     end
   end
+
+  describe "#Legislation::PeopleProposal" do
+    it { should be_able_to(:read, Legislation::PeopleProposal) }
+    it { should be_able_to(:share, Legislation::PeopleProposal) }
+    it { should_not be_able_to(:create, Legislation::PeopleProposal) }
+    it { should_not be_able_to(:vote, Legislation::PeopleProposal) }
+  end
+
 end
