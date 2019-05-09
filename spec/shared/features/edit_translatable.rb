@@ -46,7 +46,11 @@ shared_examples "edit_translatable" do |factory_name, path_name, input_fields, t
 
   before do
     login_as(user)
-    translatable.update(author: user) if front_end_path_to_visit?(path_name)
+
+    if front_end_path_to_visit?(path_name)
+      Setting["feature.translation_interface"] = true
+      translatable.update(author: user)
+    end
   end
 
   context "Manage translations" do
