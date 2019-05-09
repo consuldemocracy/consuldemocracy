@@ -88,6 +88,7 @@ es:
         result_publication_date: Publicación resultados
         milestones_date: Seguimiento
         proposals_dates: Propuestas
+        people_proposals_dates: Personas propuestas
     questions:
       comments:
         comment_button: Publicar respuesta
