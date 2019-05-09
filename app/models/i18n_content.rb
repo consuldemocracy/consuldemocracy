@@ -1,7 +1,6 @@
 class I18nContent < ApplicationRecord
 
   scope :by_key,          ->(key) { where(key: key) }
-  scope :begins_with_key, ->(key) { where("key ILIKE ?", "#{key}%") }
 
   validates :key, uniqueness: true
 
@@ -46,4 +45,17 @@ class I18nContent < ApplicationRecord
     return output
   end
 
+  def self.content_for(tab)
+    flat_hash(translations_for(tab)).keys.map do |string|
+      I18nContent.find_or_initialize_by(key: string)
+    end
+  end
+
+  def self.translations_for(tab)
+    I18n.backend.send(:init_translations) unless I18n.backend.initialized?
+
+    I18n.backend.send(:translations)[I18n.locale].select do |key, _translations|
+      key.to_s == tab.to_s
+    end
+  end
 end
