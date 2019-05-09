@@ -1,0 +1,10 @@
+<div class="row margin-top">
+  <% %w[ twitter facebook instagram youtube].each do |social| %>
+    <% if @people_proposal.send(social).present? %>
+      <a class="small-12 medium-6 column" href="<%= social_link(social, @people_proposal.send(social)) %>" target="_blank">
+        <span class="icon-<%= social %>" aria-hidden="true"></span>
+        <%= @people_proposal.send(social).gsub('@@', '@') %>
+      </a>
+    <% end %>
+  <% end %>
+</div>
