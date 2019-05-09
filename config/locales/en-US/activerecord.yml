@@ -29,6 +29,10 @@ en-US:
         one: "Administrator(in),Verwaltungsleiter(in)"
         other: "Administrator(in),Verwaltungsleiter(in)"
     attributes:
+      budget:
+        name: "Ime"
+        description_accepting: "Opis u toku prihvatne faze"
+        description_reviewing: "Opis tokom faze pregleda"
       budget/investment:
         administrator_id: "Administrator(in),Verwaltungsleiter(in)"
       geozone:
