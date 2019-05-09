@@ -117,6 +117,11 @@ class User < ApplicationRecord
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def legislation_people_proposal_votes(people_proposals)
+    voted = votes.for_legislation_people_proposals(people_proposals)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def budget_investment_votes(budget_investments)
     voted = votes.for_budget_investments(budget_investments)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
