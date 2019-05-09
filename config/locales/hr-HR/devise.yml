@@ -43,3 +43,20 @@ hr:
       signed_up_but_locked: "Vaša registracija je uspješna, ali ne možete se prijaviti zato što je Vaš račnun zaključan."
       signed_up_but_unconfirmed: "Poslana Vam je poruka s verifikacijskom poveznicom. Molim Vas da pronađete poveznicu kako biste aktivirali Vaš račun."
       update_needs_confirmation: "Vaš račun je uspješno ažuriran; sada još moramo potvrditi Vašu novu email adresu. Molimo Vas da provjerite email i krenete na poveznicu kako biste potvrdili novu emial adresu."
+      updated: "Vaš račun je uspješno ažuriran."
+    sessions:
+      signed_in: "Uspješno ste se prijavili."
+      signed_out: "Uspješno ste odjevljeni."
+      already_signed_out: "Uspješno ste odjevljeni."
+    unlocks:
+      send_instructions: "U nekoliko minuta zaprimiti ćete email koji sadrži upute za otključavanje Vašeg računa."
+      send_paranoid_instructions: "Ukoliko imate račun u nekoliko minuta ćete zaprimiti email koji sadrži upute za otključavanje vašeg računa."
+      unlocked: "Vaš račun je otključan. Ponovno se ulogirajte kako bi nastavili."
+  errors:
+    messages:
+      already_confirmed: "Vaš račun je potvrđen; molimo vas da se ponovno prijavite."
+      confirmation_period_expired: "Potrebno je potvrditi Vaš račun s %{period}; molimo vas da ponovite zahtjev za prijavu."
+      expired: "je istekao; molimo vas da ponovno pošaljete zahtjev."
+      not_found: "nije pronađeno."
+      not_locked: "nije zaključano."
+      equal_to_current_password: "mora biti različita od trenutne zaporke."
