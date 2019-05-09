@@ -11,6 +11,8 @@ section "Creating collaborative legislation" do
                                  debate_end_date: Date.current + (i - 5).days,
                                  proposals_phase_start_date: Date.current + (i - 7).days,
                                  proposals_phase_end_date: Date.current + (i - 5).days,
+                                 people_proposals_phase_start_date: Date.current + (i - 7).days,
+                                 people_proposals_phase_end_date: Date.current + (i - 5).days,
                                  draft_publication_date: Date.current + (i - 3).days,
                                  allegations_start_date: Date.current + (i - 2).days,
                                  allegations_end_date: Date.current + (i - 1).days,
@@ -20,6 +22,7 @@ section "Creating collaborative legislation" do
                                  draft_publication_enabled: true,
                                  result_publication_enabled: true,
                                  proposals_phase_enabled: true,
+                                 people_proposals_phase_enabled: true,
                                  published: true)
   end
 
