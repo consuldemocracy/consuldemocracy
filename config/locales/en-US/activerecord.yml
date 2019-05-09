@@ -119,6 +119,12 @@ en-US:
       poll/translation:
         name: "Ime"
         summary: "Sažetak"
+        description: "Opis"
+      poll/question:
+        title: "Pitanje"
+        summary: "Sažetak"
+        description: "Opis"
+        external_url: "Link za dodatnu dokumentaciju"
       legislation/process/translation:
         title: Naziv procesa
         summary: Sažetak
@@ -279,3 +285,7 @@ en-US:
               cannot_comment_valuation: "Ne možete dati komentar na ocjenu"
       messages:
         record_invalid: "Potvrda nije uspjela: %(greške) %{errors}"
+        another_poll_active: Postoji druga aktivna anketa za navedeni period
+        restrict_dependent_destroy:
+          has_one: "Ne može se obrisati dokument zbog postojanja vezanog dokumenta %{record}"
+          has_many: "Ne može se obrisati dokument zbog postojanja vezanog dokumenta %{record}"
