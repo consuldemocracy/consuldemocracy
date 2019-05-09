@@ -2,18 +2,18 @@ en-US:
   activemodel:
     models:
       verification:
-        residence: "Residence"
+        residence: "Mjesto boravka"
         sms: "SMS"
     attributes:
       verification:
         residence:
           document_type: "Document type"
           document_number: "Document number (including letters)"
-          date_of_birth: "Date of birth"
-          postal_code: "Postcode"
+          date_of_birth: "Datum rođenja"
+          postal_code: "Poštanski broj"
         sms:
-          phone: "Telephone"
-          confirmation_code: "Confirmation code"
+          phone: "Telefon"
+          confirmation_code: "Kod za potvrdu"
         email:
           recipient: "Email"
       officing/residence:
