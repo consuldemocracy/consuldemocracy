@@ -370,6 +370,50 @@ describe "Legislation" do
       include_examples "not published permissions", :legislation_process_proposals_path
     end
 
+    context "people proposals phase" do
+      scenario "not open", :with_frozen_time do
+        process = create(:legislation_process, :upcoming_people_proposals_phase)
+
+        visit legislation_process_people_proposals_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario "open" do
+        process = create(:legislation_process, :in_people_proposals_phase)
+
+        visit legislation_process_people_proposals_path(process)
+
+        expect(page).to have_content("There are no proposals")
+      end
+
+      scenario "create proposal button redirects to register path if user is not logged in" do
+        process = create(:legislation_process, :in_people_proposals_phase)
+
+        visit legislation_process_people_proposals_path(process)
+        click_link "Create a proposal"
+
+        expect(page).to have_current_path new_user_session_path
+        expect(page).to have_content "You must sign in or register to continue"
+      end
+
+      include_examples "not published permissions", :legislation_process_people_proposals_path
+
+      scenario "display only validated people proposals" do
+        process = create(:legislation_process, :in_people_proposals_phase)
+        people_proposal_not_valuated = create(:legislation_people_proposal,
+                                                process: process)
+        people_proposal_valuated = create(:legislation_people_proposal,
+                                                :validated,
+                                                process: process)
+
+        visit legislation_process_people_proposals_path(process)
+        expect(page).not_to have_content("There are no proposals")
+        expect(page).not_to have_content(people_proposal_not_valuated.title)
+        expect(page).to have_content(people_proposal_valuated.title)
+      end
+    end
+
     context "Milestones" do
       let(:process) { create(:legislation_process, :upcoming_proposals_phase) }
 

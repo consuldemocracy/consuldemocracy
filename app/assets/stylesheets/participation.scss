@@ -328,6 +328,7 @@
 
 .debate-show,
 .proposal-show,
+.people-proposal-show,
 .poll-question-show,
 .investment-project-show,
 .budget-investment-show,
@@ -523,6 +524,17 @@
   }
 }
 
+.legislation-people-proposal-show {
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .people-proposal-social a {
+    padding-left: 0;
+  }
+}
+
 .show-actions-menu {
 
   [class^="icon-"] {
@@ -582,7 +594,8 @@
 
 .budget-investments-list .budget-investment,
 .proposals-list .proposal,
-.legislation-proposals .proposal {
+.legislation-proposals .proposal,
+.legislation-people-proposals .proposal {
 
   @include breakpoint(medium) {
 
@@ -619,6 +632,7 @@
 
 .debate,
 .proposal,
+.people_proposal,
 .investment-project,
 .budget-investment,
 .legislation,
@@ -772,7 +786,8 @@
 .debate,
 .debate-show,
 .proposal-show,
-.legislation-proposals {
+.legislation-proposals,
+.legislation-people-proposals {
 
   .votes {
     @include votes;
@@ -787,7 +802,8 @@
   }
 }
 
-.legislation-proposals {
+.legislation-proposals,
+.legislation-people-proposals {
 
   .votes {
     min-height: $line-height * 8;
