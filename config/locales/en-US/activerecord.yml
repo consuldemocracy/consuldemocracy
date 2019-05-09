@@ -44,12 +44,48 @@ en-US:
       progress_bar/kind:
         primary: "Primarno"
         secondary: "Sekundarno"
+      budget/heading:
+        name: "Zaglavlje"
+        price: "Cijena"
+        population: "Stanovništvo"
       comment:
         body: "Kommentar"
         user: "Benutzer"
+      debate:
+        author: "Autor"
+        description: "Mišljenje"
+        terms_of_service: "Uslovi za pružanje usluga"
+        title: "Naslov"
+      proposal:
+        author: "Autor"
+        title: "Naslov"
+        question: "Pitanje"
+        description: "Opis"
+        terms_of_service: "Uslovi za pružanje usluga"
       user:
+        login: "Email ili korisničko ime"
         email: "Email"
+        username: "Korisničko ime"
+        password_confirmation: "Potvrda lozinke"
+        password: "Lozinka"
+        current_password: "Sadašnja lozinka"
+        phone_number: "Broj telefona"
+        official_position: "Službena funkcija"
+        official_level: "Nivo funkcije"
+        redeemable_code: "Verifikacioni kod primljen u emailu"
+      organization:
+        name: "Naziv organizacije"
+        responsible_name: "Osoba zadužena za grupu"
       spending_proposal:
         administrator_id: "Administrator(in),Verwaltungsleiter(in)"
+        association_name: "Naziv udruženja"
+        description: "Opis"
+        external_url: "Link za dodatnu dokumentaciju"
+        geozone_id: "Nadležnost"
+        title: "Naslov"
+      poll:
+        name: "Ime"
+        starts_at: "Početni datum"
+        ends_at: "Krajnji datum"
       legislation/annotation:
         text: Kommentar
