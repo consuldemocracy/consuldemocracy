@@ -202,6 +202,10 @@ namespace :admin do
       resources :proposals do
         member { patch :toggle_selection }
       end
+      resources :people_proposals, except: :destroy do
+        member { patch :toggle_validation }
+        member { patch :toggle_selection }
+      end
       resources :draft_versions
       resources :milestones
       resources :progress_bars, except: :show
