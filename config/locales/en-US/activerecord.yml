@@ -125,6 +125,60 @@ en-US:
         summary: "Sažetak"
         description: "Opis"
         external_url: "Link za dodatnu dokumentaciju"
+      poll/question/translation:
+        title: "Pitanje"
+      poll/ballot_sheet:
+        data: CSV podaci
+        poll_id: Anketa
+        officer_assignment_id: Dodijeljeno službeno lice
+      signature_sheet:
+        signable_type: "Vrsta s potpisom"
+        signable_id: "Lični podaci s potpisom"
+        document_numbers: "Brojevi dokumenata"
+      site_customization/page:
+        content: Sadržaj
+        created_at: Napravljen
+        subtitle: Podnaslov
+        slug: Slug
+        status: Status
+        title: Naslov
+        updated_at: Ažurirano
+        more_info_flag: Pokaži na stranici za pomoć
+        print_content_flag: Dugme za štampanje sadržaja
+        locale: Jezik
+      site_customization/page/translation:
+        title: Naslov
+        subtitle: Podnaslov
+        content: Sadržaj
+      site_customization/image:
+        name: Ime
+        image: Slika
+      site_customization/content_block:
+        name: Ime
+        locale: mjesto
+        body: Tekst
+      banner:
+        background_color: Boja pozadine
+        font_color: Boja fonta
+      legislation/process:
+        title: Naziv procesa
+        summary: Sažetak
+        description: Opis
+        additional_info: Dodatne informacije
+        start_date: Početak
+        end_date: Kraj
+        debate_start_date: Početak
+        debate_end_date: Kraj
+        draft_start_date: Početak
+        draft_end_date: Kraj
+        draft_publication_date: Datum objavljivanja nacrta
+        allegations_start_date: Početak
+        allegations_end_date: Kraj
+        proposals_phase_start_date: Početak
+        proposals_phase_end_date: Kraj
+        result_publication_date: Datum objavljivanja konačnih rezultata
+        background_color: Boja pozadine
+        font_color: Boja fonta
       legislation/process/translation:
         title: Naziv procesa
         summary: Sažetak
@@ -287,5 +341,5 @@ en-US:
         record_invalid: "Potvrda nije uspjela: %(greške) %{errors}"
         another_poll_active: Postoji druga aktivna anketa za navedeni period
         restrict_dependent_destroy:
-          has_one: "Ne može se obrisati dokument zbog postojanja vezanog dokumenta %{record}"
-          has_many: "Ne može se obrisati dokument zbog postojanja vezanog dokumenta %{record}"
+          has_one: "Ne može se obrisati zapis zbog postojanja vezanog zapisa %{record}"
+          has_many: "Ne može se obrisati zapis zbog postojanja vezanog zapisa %{record}"
