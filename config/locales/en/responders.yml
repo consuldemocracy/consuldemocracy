@@ -12,6 +12,7 @@ en:
         poll_question_answer_image: "Image uploaded successfully"
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
+        people_proposal: "Thanks!, your proposal was created successfully. An admin will validate it before be published"
         budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
         topic: "Topic created successfully."

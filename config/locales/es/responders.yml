@@ -12,6 +12,7 @@ es:
         poll_question_answer_image: "Imagen cargada correctamente"
         proposal: "Propuesta creada correctamente."
         proposal_notification: "Tu mensaje ha sido enviado correctamente."
+        people_proposal: "¡Gracias!, Tú propuesta ha sido creada correctamente. Un administrador la validará antes de ser publicada"
         budget_investment: "Proyecto de gasto creado correctamente."
         signature_sheet: "Hoja de firmas creada correctamente"
         topic: "Tema creado correctamente."
