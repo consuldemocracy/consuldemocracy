@@ -232,3 +232,50 @@ en-US:
           attributes:
             map:
               invalid: Mora se navesti lokacija na mapi. Stavite marker ili označite kockicu ako geolokalizacija nije potrebna
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dokumenta nema u popisu"
+              has_voted: "Korisnik je već glasao"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: obavezno na početni datum ili poslije
+            debate_end_date:
+              invalid_date_range: obavezno na datum početka održavanja debate ili poslije
+            draft_end_date:
+              invalid_date_range: obavezno na početni datum izrade nacrta ili poslije
+            allegations_end_date:
+              invalid_date_range: obavezno na početni datum davanja komentara ili poslije
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagovi moraju biti manji od ili jednaki % (broj) %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tagovi moraju biti manji od ili jednaki % (broj) %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Morate čekati najmanje %(interval) %{interval} dana između obavijesti"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Nije verifikovano popisom"
+              already_voted: "Već se glasalo za ovaj prijedlog"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "moraju biti slova, brojke, _ i -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Širina mora biti %(obavezna širina) px %{required_width}px"
+              image_height: "Visina mora biti %(obavezna visina) px %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Ne možete dati komentar na ocjenu"
+      messages:
+        record_invalid: "Potvrda nije uspjela: %(greške) %{errors}"
