@@ -25,6 +25,25 @@ en-US:
     attributes:
       budget/investment:
         administrator_id: "Administrator(in),Verwaltungsleiter(in)"
+      geozone:
+        external_code: "Eksterni kod (po izboru)"
+        census_code: "Kod za cenzus (po izboru)"
+        html_map_coordinates: "HTML <map> Koordinate (po izboru)"
+      milestone:
+        status_id: "Trenutni status (po izboru)"
+        title: "Naziv"
+        description: "Opis (po izboru, ako se dodijeli status)"
+        publication_date: "Datum objavljivanja"
+      milestone/status:
+        name: "Ime"
+        description: "Opis (po izboru)"
+      progress_bar:
+        kind: "Vrsta"
+        title: "Naziv"
+        percentage: "Dosadašnji napredak"
+      progress_bar/kind:
+        primary: "Primarno"
+        secondary: "Sekundarno"
       comment:
         body: "Kommentar"
         user: "Benutzer"
