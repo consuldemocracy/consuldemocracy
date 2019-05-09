@@ -15,8 +15,8 @@ en-US:
           phone: "Telefon"
           confirmation_code: "Kod za potvrdu"
         email:
-          recipient: "Email"
+          recipient: "Email adresa"
       officing/residence:
         document_type: "Document type"
         document_number: "Document number (including letters)"
-        year_of_birth: "Year born"
+        year_of_birth: "Godina rođenja"
