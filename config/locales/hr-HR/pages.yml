@@ -1,5 +1,15 @@
 hr:
   pages:
+    conditions:
+      title: Odredbe i uvjeti korištenja
+      subtitle: PRAVNA OBAVIJEST O UVJETIMA UPORABE, PRIVATNOSTI I ZAŠTITE OSOBNIH PODATAKA O PORTALU OTVORENE VLADE
+      description: Informativna strana za uvjete korištenja, privatnost i zaštitu osobnih podataka.
+    help:
+      title: "%{org} je platforma za građansko sudjelovanje"
+      guide: "Ovaj vodič objašnjava što je pojedina sekcija i kako %{org} sekcija funkcionira."
+      menu:
+        debates: "Rasprave"
+        proposals: "Prijedlozi"
     accessibility:
       keyboard_shortcuts:
         navigation_table:
