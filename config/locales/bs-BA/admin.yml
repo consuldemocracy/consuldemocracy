@@ -1,1 +1,31 @@
 bs:
+  admin:
+    header:
+      title: Administracija
+    actions:
+      actions: Radnje
+      confirm: Jeste sigurni?
+      confirm_hide: Potvrdi moderiranje
+      hide: Sakrij
+      hide_author: Sakrij ime autora
+      restore: Vrati
+      mark_featured: Glavno
+      unmark_featured: Glavno neobilježeno
+      edit: Editovanje
+      configure: Konfigurisanje
+      delete: Obriši
+    officing_booth:
+      title: "Koristite kabinu koja se nalazi na %{booth}. Ako se radi o grešci, prekinite s korištenjem i nazovite telefonski broj za pomoć. Hvala."
+    banners:
+      index:
+        title: Baneri
+        create: Napravi baner
+        edit: Edituj baner
+        delete: Obriši baner
+        filters:
+          all: Sve
+          with_active: Aktivno
+          with_inactive: Neaktivno
+        preview: Pregled
+      banner:
+        title: Naslov
