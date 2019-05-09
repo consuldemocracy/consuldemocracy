@@ -6,6 +6,7 @@ namespace :legislation do
       get :allegations
       get :result_publication
       get :proposals
+      get :people_proposals
       get :milestones
     end
 
@@ -21,6 +22,17 @@ namespace :legislation do
       end
       collection do
         get :map
+        get :suggest
+      end
+    end
+
+    resources :people_proposals do
+      member do
+        post :vote
+        put :flag
+        put :unflag
+      end
+      collection do
         get :suggest
       end
     end
