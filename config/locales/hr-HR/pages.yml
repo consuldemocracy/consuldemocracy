@@ -51,6 +51,9 @@ hr:
         page:
           title: "Često postavljana pitanja"
           description: "Koristite ovu stranicu kako biste riješili učestala FAQ korisnika ove stranice."
+      other:
+        title: "Ostale zanimljive informacije"
+        how_to_use: "Koristi %{org_name} u tvojem gradu"
     accessibility:
       keyboard_shortcuts:
         navigation_table:
