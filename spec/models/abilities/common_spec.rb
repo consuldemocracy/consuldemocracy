@@ -58,6 +58,9 @@ describe Abilities::Common do
   let(:own_budget_investment_image) { build(:image, imageable: own_investment_in_accepting_budget) }
   let(:budget_investment_image)     { build(:image, imageable: investment_in_accepting_budget) }
 
+  let(:legislation_people_proposal) { build(:legislation_people_proposal) }
+  let(:own_legislation_people_proposal) { build(:legislation_people_proposal, author: user) }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }
   it { should be_able_to(:vote, debate)  }
@@ -105,6 +108,9 @@ describe Abilities::Common do
     it { should be_able_to(:flag, proposal)   }
     it { should be_able_to(:unflag, proposal) }
 
+    it { should be_able_to(:flag, legislation_people_proposal) }
+    it { should be_able_to(:unflag, legislation_people_proposal) }
+
     describe "own content" do
       it { should_not be_able_to(:flag, own_comment)   }
       it { should_not be_able_to(:unflag, own_comment) }
@@ -114,6 +120,9 @@ describe Abilities::Common do
 
       it { should_not be_able_to(:flag, own_proposal)   }
       it { should_not be_able_to(:unflag, own_proposal) }
+
+      it { should_not be_able_to(:flag, own_legislation_people_proposal)   }
+      it { should_not be_able_to(:unflag, own_legislation_people_proposal) }
     end
   end
 
@@ -255,6 +264,11 @@ describe Abilities::Common do
       it { should_not be_able_to(:destroy, budget_investment_image) }
       it { should_not be_able_to(:destroy, budget_investment_document) }
     end
+
+    describe "Legislation::PeopleProposal" do
+      it { should be_able_to(:vote, legislation_people_proposal) }
+      it { should be_able_to(:vote_featured, legislation_people_proposal) }
+    end
   end
 
   describe "when level 3 verified" do
@@ -291,11 +305,21 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
     end
+
+    describe "Legislation::PeopleProposal" do
+      it { should be_able_to(:vote, legislation_people_proposal) }
+      it { should be_able_to(:vote_featured, legislation_people_proposal) }
+    end
   end
 
   describe "#disable_recommendations" do
     it { should be_able_to(:disable_recommendations, Debate) }
     it { should be_able_to(:disable_recommendations, Proposal) }
+  end
+
+  describe "#Legislation::PeopleProposal" do
+    it { should be_able_to(:read, Legislation::PeopleProposal) }
+    it { should be_able_to(:create, Legislation::PeopleProposal) }
   end
 
 end

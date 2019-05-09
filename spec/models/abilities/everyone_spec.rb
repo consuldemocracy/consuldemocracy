@@ -7,6 +7,7 @@ describe Abilities::Everyone do
   let(:user) { nil }
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
+  let(:legislation_people_proposal) { build(:legislation_people_proposal) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
@@ -104,5 +105,12 @@ describe Abilities::Everyone do
 
       it { should_not be_able_to(:read_stats, budget) }
     end
+  end
+
+  describe "#Legislation::PeopleProposal" do
+    it { should be_able_to(:read, Legislation::PeopleProposal) }
+    it { should be_able_to(:share, Legislation::PeopleProposal) }
+    it { should_not be_able_to(:create, Legislation::PeopleProposal) }
+    it { should_not be_able_to(:vote, Legislation::PeopleProposal) }
   end
 end
