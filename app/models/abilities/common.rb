@@ -44,10 +44,13 @@ module Abilities
       end
       can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
 
+      can :read, Legislation::PeopleProposal, validated: true
+
       can :create, Comment
       can :create, Debate
       can [:create, :created], Proposal
       can :create, Legislation::Proposal
+      can :create, Legislation::PeopleProposal
 
       can :suggest, Debate
       can :suggest, Proposal
@@ -65,6 +68,8 @@ module Abilities
 
       can [:flag, :unflag], Legislation::Proposal
       cannot [:flag, :unflag], Legislation::Proposal, author_id: user.id
+      can [:flag, :unflag], Legislation::PeopleProposal
+      cannot [:flag, :unflag], Legislation::PeopleProposal, author_id: user.id
 
       can [:flag, :unflag], Budget::Investment
       cannot [:flag, :unflag], Budget::Investment, author_id: user.id
@@ -92,6 +97,8 @@ module Abilities
 
         can :vote, Legislation::Proposal
         can :vote_featured, Legislation::Proposal
+        can :vote, Legislation::PeopleProposal
+        can :vote_featured, Legislation::PeopleProposal
         can :create, Legislation::Answer
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
