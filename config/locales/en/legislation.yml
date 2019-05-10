@@ -134,11 +134,6 @@ en:
       create:
         form:
           submit_button: Create proposal
-      edit:
-        editing: Edit proposal
-        form:
-          submit_button: Save changes
-        show_link: View proposal
       form:
         contact_info:
           title: Contact info

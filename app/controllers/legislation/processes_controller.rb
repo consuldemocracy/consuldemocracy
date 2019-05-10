@@ -126,21 +126,23 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :people_proposals_phase
 
-    render :phase_not_open unless @process.people_proposals_phase.started? || current_user&.administrator?
-
-    @proposals = @process.people_proposals.validated
-    @proposals = @proposals.search(params[:search]) if params[:search].present?
-
-    @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
-
-    if @current_filter == "random"
-      @proposals = @proposals.sort_by_random(session[:random_seed]).page(params[:page]).per(10)
+    unless @process.people_proposals_phase.started? || current_user&.administrator?
+      render :phase_not_open
     else
-      @proposals = @proposals.send(@current_filter).page(params[:page]).per(10)
-    end
+      @proposals = @process.people_proposals.validated
+      @proposals = @proposals.search(params[:search]) if params[:search].present?
 
-    legislation_people_proposal_votes(@proposals)
-    render :people_proposals
+      @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
+
+      if @current_filter == "random"
+        @proposals = @proposals.sort_by_random(session[:random_seed]).page(params[:page]).per(10)
+      else
+        @proposals = @proposals.send(@current_filter).page(params[:page]).per(10)
+      end
+
+      legislation_people_proposal_votes(@proposals)
+      render :people_proposals
+    end
   end
 
   private

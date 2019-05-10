@@ -14,12 +14,12 @@
   <div>
     <div class="small-12 column">
       <%= f.label :title %>
-      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path} %>
     </div>
     <div id="js-suggest"></div>
 
     <div class="small-12 column">
-      <label><%=t("admin.legislation.people_proposals.form.contact_info.title")%></label>
+      <label><%=t("admin.legislation.people_proposals.form.contact_info.title") %></label>
       <div class="small-12 column">
         <div class="small-12 column medium-3">
           <%= f.text_field :phone, placeholder: true %>

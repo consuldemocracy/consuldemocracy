@@ -1,0 +1,71 @@
+<div class="proposal-info small-12 row">
+  <% if @people_proposal.image.present? %>
+    <div class="small-12 medium-4 column">
+      <%= render_image(@people_proposal.image, :medium, false) %>
+    </div>
+  <% end %>
+  <div class="small-12 medium-8 column">
+
+    <h1><%= @people_proposal.title %></h1>
+
+    <div class="margin-bottom">
+
+      <%= l @people_proposal.created_at.to_date %>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <span class="icon-comments"></span>&nbsp;
+
+      <%= link_to t("legislation.people_proposals.show.comments", count: @people_proposal.comments_count), "#comments" %>
+
+      <% if current_user %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= render "legislation/people_proposals/flag_actions", proposal: @people_proposal %>
+      <% end %>
+
+      <span class="proposal_code">
+        <%= t("legislation.people_proposals.show.code") %>
+        <strong><%= @people_proposal.code %></strong>
+      </span>
+    </div>
+
+    <p><%= @people_proposal.summary %></p>
+
+    <%= render "legislation/people_proposals/social_contacts" %>
+  </div>
+</div>
+
+<hr>
+
+<%= safe_html_with_links @people_proposal.description %>
+
+<% if @people_proposal.video_url.present? %>
+  <div class="small-12 medium-7 small-centered">
+    <div class="flex-video">
+      <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@people_proposal) %>"></div>
+    </div>
+  </div>
+<% end %>
+
+<% if @people_proposal.video_url.present? %>
+  <div class="video-link">
+    <p>
+      <span class="icon-video"></span>&nbsp;
+      <strong><%= t("legislation.people_proposals.show.title_video_url") %></strong>
+    </p>
+    <%= text_with_links @people_proposal.video_url %>
+  </div>
+
+<% end %>
+
+<h4><%= @people_proposal.question %></h4>
+
+<% if feature?(:allow_attached_documents) %>
+  <%= render "documents/documents",
+              documents: @people_proposal.documents,
+              max_documents_allowed: Proposal.max_documents_allowed %>
+<% end %>
+
+<%= render "shared/tags", taggable: @people_proposal %>
+
+<div class="js-moderator-proposal-actions margin">
+  <%= render "legislation/people_proposals/actions", proposal: @people_proposal %>
+</div>

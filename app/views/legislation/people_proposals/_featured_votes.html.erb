@@ -19,7 +19,7 @@
         <%= t("votes.organizations") %>
       </p>
     </div>
-  <% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
+  <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.verified_only",

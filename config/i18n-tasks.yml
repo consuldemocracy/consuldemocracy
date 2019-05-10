@@ -189,6 +189,7 @@ ignore_unused:
   - "legislation.processes.index.filter*"
   - "legislation.processes.index.section_header.*"
   - "legislation.processes.proposals.filters.*"
+  - "legislation.processes.people_proposals.filters.*"
   - "legislation.people_proposals.*.form.submit_button"
   - "helpers.page_entries_info.*" # kaminari
   - "views.pagination.*" # kaminari

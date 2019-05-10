@@ -6,13 +6,13 @@
   <div>
     <div class="small-12 column">
       <%= f.label :title %>
-      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+      <%= f.text_field :title, maxlength: Legislation::PeopleProposal.title_max_length, placeholder: true, label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path} %>
     </div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <label><%=t("legislation.people_proposals.form.contact_info.title")%></label>
+      <label><%=t("legislation.people_proposals.form.contact_info.title") %></label>
 
       <div class="small-12 column">
         <div class="small-12 column medium-3">
@@ -59,8 +59,7 @@
     </div>
 
     <div class="ckeditor small-12 column">
-      <%= f.label :description %>
-      <%= f.cktext_area :description, maxlength: Legislation::PeopleProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+      <%= f.cktext_area :description, maxlength: Legislation::PeopleProposal.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">

@@ -10,5 +10,9 @@
 
   <%= render "admin/legislation/processes/subnav", process: @people_proposal.process, active: "people_proposals" %>
 
-  <%= render 'form', form_url: admin_legislation_process_people_proposal_path(process: @people_proposal.process, people_proposal: @people_proposal) %>
+  <%= link_to t("admin.actions.edit"),
+              edit_admin_legislation_process_people_proposal_path(@people_proposal.process, @people_proposal),
+              class: "button hollow" %>
+
+  <%= render "legislation/people_proposals/people_proposal_detail",people_proposal: @people_proposal %>
 </div>
