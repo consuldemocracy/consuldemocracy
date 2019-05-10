@@ -110,10 +110,10 @@ bs:
         recalculate: Ponovo izračunaj pobjedničke invesiticije
     budget_groups:
       name: "Ime"
-      headings_name: "Zaglavlja"
-      headings_edit: "Edituj zaglavlja"
-      headings_manage: "Sredi zaglavlja"
-      max_votable_headings: "Maksimalni broj zaglavlja u kojim korisnik može glasati"
+      headings_name: "Stavke"
+      headings_edit: "Edituj stavke"
+      headings_manage: "Sredi stavke"
+      max_votable_headings: "Maksimalni broj stavki u kojim korisnik može glasati"
       no_groups: "Nema grupa."
       create:
         notice: "Grupa uspješno napravljena!"
@@ -121,7 +121,7 @@ bs:
         notice: "Grupa uspješno ažurirana"
       destroy:
         success_notice: "Grupa uspješno obrisana"
-        unable_notice: "Ne možete ukinuti grupu koja ima vezana zaglavlja"
+        unable_notice: "Ne možete ukinuti grupu koja ima vezane stavke"
       form:
         create: "Napravi novu grupu"
         edit: "Edituj grupu"
@@ -131,6 +131,18 @@ bs:
         back: "Vrati se na budžete"
     budget_headings:
       name: "Ime"
+      no_headings: "Nema stavki."
+      create:
+        notice: "Stavka uspješno napravljena!"
+      update:
+        notice: "Stavka uspješno ažurirana"
+      destroy:
+        success_notice: "Stavka uspješno obrisana"
+        unable_notice: "Ne možete ukinuti stavku koji ima vezane investicije"
+      form:
+        name: "Ime stavke"
+        amount: "Iznos"
+        population: "Stanovništvo (po izboru)"
     budget_phases:
       edit:
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
