@@ -123,3 +123,40 @@ bs:
           min_total_supports: Minimalna podrška
           max_total_supports: Maksimalna podrška
           winners: Pobjednici
+          one_filter_html: "Trenutno primjenjeni filteri: <b><em>%{filter}</em></b>"
+          two_filters_html: "Trenutno primjenjeni filteri: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filter
+        download_current_selection: "Preuzmi odabranu selekciju"
+        no_budget_investments: "Nema investicionih projekata."
+        title: Investicioni projekti
+        assigned_admin: Dodijeljeni administrator
+        no_admin_assigned: Nema dodijeljenih administratora
+        no_valuators_assigned: Nema dodijeljenih ocjenitelja
+        no_valuation_groups: Nema dodijeljenih grupa za ocjenjivanje
+        feasibility:
+          feasible: "Izvodivo"
+          unfeasible: "Nije izvodivo"
+          undecided: "Nije odlučeno"
+        selected: "Odabrano"
+        select: "Odaberi"
+        list:
+          id: Identitet
+          title: Naziv
+          supports: Podržava
+          admin: Administrator
+          valuator: Ocjenitelj
+          valuation_group: Grupa za ocjenjivanje
+          geozone: Mandat
+          feasibility: Izvodivost
+          valuation_finished: Fin. vrijednost
+          selected: Odabrano
+          visible_to_valuators: Pokaži ocjeniteljima
+          author_username: Korisničko ime autora
+          incompatible: Nije kompatibilno
+    milestones:
+      index:
+        table_description: "Opis"
+        table_publication_date: "Datum objave"
+        table_status: Status
+        table_actions: "Radnje"
