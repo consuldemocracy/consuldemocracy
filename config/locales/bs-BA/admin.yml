@@ -160,3 +160,56 @@ bs:
         table_publication_date: "Datum objave"
         table_status: Status
         table_actions: "Radnje"
+        delete: "Obriši rok"
+        no_milestones: "Nema utvrđenih rokova"
+        image: "Slika"
+        show_image: "Pokaži sliku"
+        documents: "Dokumenti"
+        milestone: Rok
+        new_milestone: Odredi novi rok
+      form:
+        admin_statuses: Vodi statuse
+        no_statuses_defined: Još uvijek nema utvrđenih statusa
+      new:
+        creating: Odredi rok
+        date: Datum
+        description: Opis
+      edit:
+        title: Izmjeni rok
+      create:
+        notice: Novi rok uspješno postavljen!
+      update:
+        notice: Rok uspješno ažuriran
+      delete:
+        notice: Rok uspješno obrisan
+    statuses:
+      index:
+        title: Statusi za utvrđeni rok
+        empty_statuses: Nisu napravljeni statusi za utvrđeni rok
+        new_status: Napravi novi status za utvrđeni rok
+        table_name: Ime
+        table_description: Opis
+        table_actions: Radnje
+        delete: Obriši
+        edit: Edituj
+      edit:
+        title: Edituj status za utvrđeni rok
+      update:
+        notice: Status za utvrđeni rok uspješno ažuriran
+      new:
+        title: Napravi status za utvrđeni rok
+      create:
+        notice: Status za utvrđeni rok uspješno napravljen
+      delete:
+        notice: Status za utvrđeni rok uspješno obrisan
+    progress_bars:
+      manage: "Vodi trake za praćenje napretka"
+      index:
+        title: "Trake za praćenje napretka"
+        no_progress_bars: "Nema traka za praćenje napretka"
+        new_progress_bar: "Napravi novu traku za praćenje napretka"
+        primary: "Primarna traka za praćenje napretka"
+        table_id: "Identitet"
+        table_kind: "Vrsta"
+        table_title: "Naziv"
+        table_percentage: "Trenutni napredak"
