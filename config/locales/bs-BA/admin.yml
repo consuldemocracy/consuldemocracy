@@ -213,3 +213,67 @@ bs:
         table_kind: "Vrsta"
         table_title: "Naziv"
         table_percentage: "Trenutni napredak"
+      new:
+        creating: "Napravi traku za praćenje napretka"
+      edit:
+        title:
+          primary: "Edituj primarnu traku za praćenje napretka"
+          secondary: "Edituj traku za praćenje napretka %{title}"
+      create:
+        notice: "Traka za praćenje napretka uspješno napravljena!"
+      update:
+        notice: "Traka za praćenje napretka uspješno ažurirana"
+      delete:
+        notice: "Traka za praćenje napretka uspješno obrisana"
+    comments:
+      index:
+        filter: Filter
+        filters:
+          all: Sve
+    dashboard:
+      administrator_tasks:
+        form:
+          proposal: Prijedlog
+          request: Zatraženi resurs
+        update:
+          success: Zadatak označen kao riješen.
+    debates:
+      index:
+        filter: Filter
+        filters:
+          all: Sve
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U toku
+        title: Skrivene debate
+        no_hidden_debates: Nema skrivenih debata.
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: Sve
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U toku
+        title: Skriveni korisnici
+        user: Korisnik
+        no_hidden_users: Nema skrivenih korisnika.
+      show:
+        email: "Email:"
+        hidden_at: "Sakriveno:"
+        registered_at: "Registrovano:"
+        title: Korisnička radnja (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: Sve
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U toku
+        title: Sakrivene budžetske investicije
+        no_hidden_budget_investments: Nema sakrivenih budžetskih investicija
+    legislation:
+      processes:
+        create:
+          notice: 'Process uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
+          error: Proces se ne može napraviti
+        update:
+          notice: 'Process uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
