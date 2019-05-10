@@ -89,12 +89,43 @@ hr:
               key_column: 0
               page_column: Home
             - 
+              key_column: 1
+              page_column: Rasprave
             - 
+              key_column: 2
+              page_column: Prijedlozi
             - 
+              key_column: 3
               page_column: Glas
             - 
+              key_column: 4
+              page_column: Participativni budžeti
             - 
+              key_column: 5
+              page_column: Zakonski procesi
+        browser_table:
+          description: "Ovisno o operativnom sustavu i korištenom pregledniku, kombinacija tipki bit će slijedeća:"
+          caption: Kombinacija tipki ovisi o operativnom sustavu i pregledniku
+          browser_header: Preglednik
+          key_header: Kombinacija tipki
+          rows:
+            - 
+              browser_column: Pretraživač
+              key_column: ALT + prečac nako čega treba pritisnuti ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT+ CAPS + prečac
+            - 
+              browser_column: Chrome
+              key_column: ALT + prečac (CTRL + ALT + prečac za MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + prečac (CMD + prečac za MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + prečac
       textsize:
+        title: Veličina teksta
         browser_settings_table:
           rows:
             - 
