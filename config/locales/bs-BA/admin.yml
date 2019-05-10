@@ -44,3 +44,46 @@ bs:
         editing: Baner za editovanje
         form:
           submit_button: Spasi izmjene
+      new:
+        creating: Napravi baner
+    activity:
+      show:
+        action: Radnja
+        actions:
+          block: Blokirano
+          hide: Sakriveno
+          restore: Vraćeno
+        by: 'Moderator:'
+        content: Sadržaj
+        filter: Pokaži
+        filters:
+          all: Sve
+          on_comments: Komentari
+          on_debates: Debate
+          on_proposals: Prijedlozi
+          on_users: Korisnici
+          on_system_emails: Sistemski emailovi
+        title: Moderatorove radnje
+        type: Vrsta
+        no_activity: Nema radnji moderatora.
+    budgets:
+      index:
+        title: Participativni budžeti
+        new_link: Napravi novi budžet
+        filter: Filter
+        filters:
+          open: Otvori
+          finished: Završeno
+        budget_investments: Vođenje projekata
+        table_name: Ime
+        table_phase: Faza
+        table_investments: Investicije
+        table_edit_groups: Grupe nadnaslova
+        table_edit_budget: Editovanje
+        table_admin_ballots: Glasački listići
+        edit_groups: Edituj grupe nadnaslova
+        edit_budget: Edituj budžet
+        admin_ballots: Administracija u vezi glasačkih listića
+        no_budgets: "Nema budžeta."
+      create:
+        notice: Novi participativni budžet uspješno napravljen!
