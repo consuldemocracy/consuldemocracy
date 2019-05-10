@@ -24,6 +24,8 @@ class Document < ApplicationRecord
   before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
   after_save :remove_cached_attachment,               if: -> { cached_attachment.present? }
 
+  scope :admin, -> { where(admin: true) }
+
   def set_cached_attachment_from_attachment
     self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                                attachment.path
