@@ -96,6 +96,8 @@ bs:
         dates: Datumi
         enabled: Pokrenuto
         actions: Radnje
+        edit_phase: Edituj fazu
+        active: Aktivno
     budget_phases:
       edit:
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
@@ -276,4 +278,30 @@ bs:
           notice: 'Process uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
           error: Proces se ne može napraviti
         update:
-          notice: 'Process uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
+          notice: 'Process uspješno ažuriran. <a href="%{link}">Klikni za posjetu</a>'
+          error: Proces se ne može ažurirati
+        destroy:
+          notice: Proces uspješno obrisan
+        edit:
+          back: Nazad
+          submit_button: Spasi izmjene
+        errors:
+          form:
+            error: Greška
+        form:
+          enabled: Pokrenuto
+          process: Proces
+          debate_phase: Debatna faza
+          draft_phase: Nacrtna faza
+          draft_phase_description: Ako je ova faza aktivna, proces neće biti naveden na procesnom indeksu. Omogućite pregled procesa i napravite sadržaj prije početka.
+          allegations_phase: Faza za podnošenje komentara
+          proposals_phase: Faza za podnošenje prijedloga
+          use_markdown: Koristi obilježavanje za formatiranje teksta
+          title_placeholder: Naziv procesa
+          summary_placeholder: Kratki sažetak opisa
+          description_placeholder: Dodaj opis procesa
+          additional_info_placeholder: Dodatne informacije koje smatrate korisnim
+          homepage: Opis
+          homepage_description: Ovdje možete objasniti sadržaj procesa
+          homepage_enabled: Pokrenuta početna stranica
+          banner_title: Boje za zaglavlje
