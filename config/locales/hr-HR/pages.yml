@@ -68,10 +68,26 @@ hr:
       subtitle: "Informacijska stranica o privatnosti"
     accessibility:
       title: Dostupnost
+      description: |-
+        Dostubnost internetu se odnosi na mogućnost pristupu internetu i sadržaju svim ljudima, bez obzira na moguće smenje (fizičke, intelektualne i tehničke) koji mogu nastati ili od onih koji proizlaze iz konteksta uporabe (tehnološke ili okolišne).
+
+        Kada su web-mjesta osmišljena s obzirom na pristupačnost, svi korisnici mogu pristupiti sadržaju pod jednakim uvjetima, na primjer:
+      examples:
+        - Pružanjem alternativni tekst da zamijene slike, slijepi ili slabovidni korisnici mogu koristiti posebne čitače za pristup informacijama.
+        - Kada videozapisi imaju titlove, korisnici s poteškoćama u slušanju mogu u potpunosti razumjeti video.
+        - Ako su sadržaji pisani jednostavnim i ilustriranim jezikom, korisnicima s problemima u učenju se omogućava bolje razumijevanje.
+        - Ako korisnici s problemima s pokretljivošću imaju poteškoća s korištenjem miša, postoje alternativni načini korištenja tipkovnice u navigaciji.
       keyboard_shortcuts:
+        title: Prečaci na tipkovnici
         navigation_table:
+          description: Kako bi se na ovoj web stranici mogli kretati na pristupačan način, programirana je grupa tipki za brzi pristup, koja okuplja glavne dijelove od općeg interesa u kojima je stranica organizirana.
+          caption: Prečaci tipkovnice za navigacijski izbornik
+          key_header: Tipka
+          page_header: Stranica
           rows:
             - 
+              key_column: 0
+              page_column: Home
             - 
             - 
             - 
