@@ -87,3 +87,39 @@ bs:
         no_budgets: "Nema budžeta."
       create:
         notice: Novi participativni budžet uspješno napravljen!
+      update:
+        notice: Participativni budžet uspješno ažuriran
+      edit:
+        title: Edituj participativni budžet
+        delete: Obriši budžet
+        phase: Faza
+        dates: Datumi
+        enabled: Pokrenuto
+        actions: Radnje
+    budget_phases:
+      edit:
+        description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
+        enabled: Faza pokrenuta
+        enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna u bilo koju drugu svrhu
+        save_changes: Spasi izmjene
+    budget_investments:
+      index:
+        heading_filter_all: Sva zaglavlja
+        administrator_filter_all: Svi administratori
+        valuator_filter_all: Svi ocjenitelji
+        tags_filter_all: Svi tagovi
+        advanced_filters: Napredni filteri
+        placeholder: Nađi projekte
+        filters:
+          all: Sve
+          without_admin: Bez dodijeljenog administratora
+          without_valuator: Bez dodijeljenog ocjenitelja
+          under_valuation: Ocjenjuje se
+          valuation_finished: Ocjena završena
+          feasible: Izvodivo
+          selected: Odabrano
+          undecided: Nije odlučeno
+          unfeasible: Nije izvodivo
+          min_total_supports: Minimalna podrška
+          max_total_supports: Maksimalna podrška
+          winners: Pobjednici
