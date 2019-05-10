@@ -28,3 +28,54 @@ hr:
       unlock_instructions:
         hello: Pozdrav
         info_text: Vaš račun je blokiran zbog višestrukih neuspješnih prijava.
+        instructions_text: "Molimo Vas idite na ovu poveznicu kako biste otključali svoj račun:"
+        title: Vaš račun je zaključan
+        unlock_link: Otključaj moj račun
+    menu:
+      login_items:
+        login: Prijavi me
+        logout: Odjavi me
+        signup: Registriraj se
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Ime organizacije
+          password_confirmation_label: Potvrdi zaporku
+          password_label: Zaporka
+          phone_number_label: Broj telefona
+          responsible_name_label: Puno ime osobe odgovorne za skupinu
+          responsible_name_note: To bi bila osoba koja predstavlja udrugu / kolektiv u čije ime su predstavljeni prijedlozi
+          submit: Registriraj se
+          title: Registriraj organizaciju ili kolektiv
+        success:
+          back_to_index: Razumijem; idi natrag na glavnu stranicu
+          instructions_1_html: "<strong>Mi ćemo vas uskoro kontaktirati</strong> kako bismo provjerili da ste zastupnik ovog kolektiva."
+          instructions_2_html: Za vrijeme dok se Vaš <strong>email provjerava</strong>, poslali smo Vam <strong>poveznicu da potvrdite svoj račun</strong>.
+          instructions_3_html: Jednom kada dobijete potvrdu možete započeti sudjelovati kao neprovjeren kolektiv.
+          thank_you_html: Hvala vam na registraciji vašeg kolektiva na stranici. Sada se <strong>vrši verifikacija</strong>.
+          title: Registracija organizacije / kolektiva
+    passwords:
+      edit:
+        change_submit: Izmjeni moju zaporku
+        password_confirmation_label: Potvrdi novu zaporku
+        password_label: Nova zaporka
+        title: Izmijeni vašu zaporku
+      new:
+        email_label: Email
+        send_submit: Pošalji upute
+        title: Zaboravnjena zaporka?
+    sessions:
+      new:
+        login_label: Email ili korisničko ime
+        password_label: Zaporka
+        remember_me: Zapamti me
+        submit: Unesi
+        title: Prijavi
+    shared:
+      links:
+        login: Unesi
+        new_confirmation: Niste primili upute za aktivaciju vašeg računa?
+        new_password: Jeste li zaboravili vašu zaporku?
+        new_unlock: Jeste li primili upute za otključavanje?
+        signin_with_provider: Prijavi se s %{provider}
