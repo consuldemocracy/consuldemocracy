@@ -440,6 +440,7 @@ es:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoyos necesarios"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."

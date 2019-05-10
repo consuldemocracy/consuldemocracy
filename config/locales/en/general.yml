@@ -440,6 +440,7 @@ en:
         other: "%{count} votes"
         zero: No votes
       supports_necessary: "%{number} supports needed"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
       successful: "This proposal has reached the required supports."
