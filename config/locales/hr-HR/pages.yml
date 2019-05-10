@@ -127,10 +127,40 @@ hr:
       textsize:
         title: Veličina teksta
         browser_settings_table:
+          description: Web dizajn stranice omogućuje korisniku da odabere veličinu teksta koja mu odgovara. Ova radnja može se izvršiti na različite načine, ovisno o pregledniku koji se koristi.
+          browser_header: Preglednik
+          action_header: Potrebno je provesti sljedeću radnju
           rows:
             - 
+              browser_column: Explorer
+              action_column: Pregled > Veličina teksta
             - 
               browser_column: Firefox
+              action_column: Pregeled > Veličina
             - 
+              browser_column: Chrome
+              action_column: Postavke (ikona) > Opcije > Napredno > Web Sadržaj > Veličina teksta
             - 
+              browser_column: Safari
+              action_column: Pregled > Povećaj/Umanji
             - 
+              browser_column: Opera
+              action_column: Pregled > skala
+        browser_shortcuts_table:
+          description: "Drugi način za izmjenu veličine teksta je korištenje prečaca na tipkovnici koji su definirani u preglednicima, posebice kombinacije tipki:"
+          rows:
+            - 
+              shortcut_column: CTRL i + (CMD i + na MAC)
+              description_column: Povećava veličinu teksta
+            - 
+              shortcut_column: CTRL i - (CMD i - na MAC)
+              description_column: Umanjuje veličinu teksta
+      compatibility:
+        title: Kompatibilno sa standardima i vizualnim dizajnom
+        description_html: 'Sve stranice webstranice su u skladu s <strong> Smjernicama za Pristupačnost</strong> ili Generalnim Prinicipima Pristupa Dizajnu uspostavljenog od strane Radne Skupine <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pripada W3C.'
+    titles:
+      help: "Što je %{org}? - Građansko sudjelovanje"
+    verify:
+      code: Šifra koju ste zaprimili u pismu
+      email: Email
+      info: "Kako biste potvrdili svoju adresu koristite svoje podatke za pristup:"
