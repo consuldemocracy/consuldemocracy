@@ -1,9 +1,7 @@
 <div class="row">
   <div class="small-12 column margin-top">
-    <%= link_to commentable_path(@comment), class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("comments.show.return_to_commentable") + @comment.commentable.title %>
-    <% end %>
+    <%= back_link_to commentable_path(@comment),
+                     t("comments.show.return_to_commentable") + @comment.commentable.title unless @commentable.class == Poll %>
   </div>
 </div>
 

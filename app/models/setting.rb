@@ -1,36 +1,19 @@
-class Setting < ActiveRecord::Base
+class Setting < ApplicationRecord
   validates :key, presence: true, uniqueness: true
 
   default_scope { order(id: :asc) }
-  scope :banner_style, -> { where("key ilike ?", "banner-style.%")}
-  scope :banner_img, -> { where("key ilike ?", "banner-img.%")}
 
   def type
-    if feature_flag?
-      'feature'
-    elsif banner_style?
-      'banner-style'
-    elsif banner_img?
-      'banner-img'
+    prefix = key.split(".").first
+    if %w[feature process proposals map html homepage].include? prefix
+      prefix
     else
-      'common'
+      "configuration"
     end
   end
 
-  def feature_flag?
-    key.start_with?('feature.')
-  end
-
   def enabled?
-    feature_flag? && value.present?
-  end
-
-  def banner_style?
-    key.start_with?('banner-style.')
-  end
-
-  def banner_img?
-    key.start_with?('banner-img.')
+    value.present?
   end
 
   class << self
@@ -43,6 +26,19 @@ class Setting < ActiveRecord::Base
       setting.value = value.presence
       setting.save!
       value
+    end
+
+    def rename_key(from:, to:)
+      if where(key: to).empty?
+        value = where(key: from).pluck(:value).first.presence
+        create!(key: to, value: value)
+      end
+      remove(from)
+    end
+
+    def remove(key)
+      setting = where(key: key).first
+      setting.destroy if setting.present?
     end
   end
 end

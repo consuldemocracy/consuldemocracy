@@ -1,26 +1,39 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Signature sheets' do
+feature "Signature sheets" do
 
   background do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario "Index" do
-    3.times { create(:signature_sheet) }
+  context "Index" do
+    scenario "Lists all signature_sheets" do
+      3.times { create(:signature_sheet) }
 
-    visit admin_signature_sheets_path
+      visit admin_signature_sheets_path
 
-    expect(page).to have_css(".signature_sheet", count: 3)
+      expect(page).to have_css(".signature_sheet", count: 3)
 
-    SignatureSheet.all.each do |signature_sheet|
-      expect(page).to have_content signature_sheet.name
+      SignatureSheet.find_each do |signature_sheet|
+        expect(page).to have_content signature_sheet.name
+      end
+    end
+
+    scenario "Orders signature_sheets by created_at DESC" do
+      signature_sheet1 = create(:signature_sheet)
+      signature_sheet2 = create(:signature_sheet)
+      signature_sheet3 = create(:signature_sheet)
+
+      visit admin_signature_sheets_path
+
+      expect(signature_sheet3.name).to appear_before(signature_sheet2.name)
+      expect(signature_sheet2.name).to appear_before(signature_sheet1.name)
     end
   end
 
-  context 'Create' do
-    scenario 'Proposal' do
+  context "Create" do
+    scenario "Proposal" do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path
 
@@ -36,10 +49,10 @@ feature 'Signature sheets' do
       expect(page).to have_content "1 support"
     end
 
-    scenario 'Budget Investment' do
+    scenario "Budget Investment" do
       investment = create(:budget_investment)
       budget = investment.budget
-      budget.update(phase: 'selecting')
+      budget.update(phase: "selecting")
 
       visit new_admin_signature_sheet_path
 
@@ -57,7 +70,7 @@ feature 'Signature sheets' do
 
   end
 
-  scenario 'Errors on create' do
+  scenario "Errors on create" do
     visit new_admin_signature_sheet_path
 
     click_button "Create signature sheet"
@@ -65,7 +78,7 @@ feature 'Signature sheets' do
     expect(page).to have_content error_message
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     proposal = create(:proposal)
     user = Administrator.first.user
     signature_sheet = create(:signature_sheet,
@@ -78,7 +91,7 @@ feature 'Signature sheets' do
 
     expect(page).to have_content "Citizen proposal #{proposal.id}"
     expect(page).to have_content "12345678Z, 123A, 123B"
-    expect(page).to have_content signature_sheet.created_at.strftime("%d %b %H:%M")
+    expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 
     within("#document_count") do

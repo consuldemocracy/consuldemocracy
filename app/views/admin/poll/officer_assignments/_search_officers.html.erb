@@ -1,16 +1,14 @@
-<div class="row">
-  <div class="small-12 medium-6 column">
-    <%= form_tag(search_officers_admin_poll_officer_assignments_path(@poll), method: :get, remote: true) do |f| %>
-      <div class="input-group">
-        <%= text_field_tag :search,
-                           @search,
-                           placeholder: t("admin.shared.poll_officers_search.placeholder"), id: "search-officers" %>
-        <div class="input-group-button">
-          <%= submit_tag t("admin.shared.poll_officers_search.button"), class: "button" %>
-        </div>
+<div class="small-12 medium-6 margin-top">
+  <%= form_tag(search_officers_admin_poll_officer_assignments_path(@poll), method: :get, remote: true) do |f| %>
+    <div class="input-group">
+      <%= text_field_tag :search,
+                         @search,
+                         placeholder: t("admin.shared.poll_officers_search.placeholder"), id: "search-officers" %>
+      <div class="input-group-button">
+        <%= submit_tag t("admin.shared.poll_officers_search.button"), class: "button" %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 <div id="search-officers-results"></div>

@@ -8,17 +8,35 @@ class Management::ProposalsController < Management::BaseController
   before_action :load_categories, only: [:new, :edit]
   before_action :load_geozones, only: [:edit]
 
-  has_orders %w{confidence_score hot_score created_at most_commented random}, only: [:index, :print]
-  has_orders %w{most_voted newest}, only: :show
+  has_orders %w[confidence_score hot_score created_at most_commented random], only: [:index, :print]
+  has_orders %w[most_voted newest], only: :show
+
+  def create
+    @resource = resource_model.new(strong_params.merge(author: current_user,
+                                                       published_at: Time.now))
+
+    if @resource.save
+      track_event
+      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
+      redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
+    else
+      load_categories
+      load_geozones
+      set_resource_instance
+      render :new
+    end
+  end
 
   def show
     super
     @notifications = @proposal.notifications
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
+
     redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
   end
 
   def vote
-    @proposal.register_vote(managed_user, 'yes')
+    @proposal.register_vote(managed_user, "yes")
     set_proposal_votes(@proposal)
   end
 
@@ -34,7 +52,10 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url,
+                                       :video_url, :responsible_name, :tag_list, :terms_of_service,
+                                       :geozone_id, :skip_map,
+                                       map_location_attributes: [:latitude, :longitude, :zoom])
     end
 
     def resource_model

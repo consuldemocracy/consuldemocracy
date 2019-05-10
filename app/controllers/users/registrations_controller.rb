@@ -1,7 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
+  before_action :configure_permitted_parameters
 
-  invisible_captcha only: [:create], honeypot: :family_name, scope: :user
+  invisible_captcha only: [:create], honeypot: :address, scope: :user
 
   def new
     super do |user|
@@ -48,7 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def check_username
-    if User.find_by_username params[:username]
+    if User.find_by username: params[:username]
       render json: {available: false, message: t("devise_views.users.registrations.new.username_is_not_available")}
     else
       render json: {available: true, message: t("devise_views.users.registrations.new.username_is_available")}
@@ -62,6 +63,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params.require(:user).permit(:username, :email, :password,
                                    :password_confirmation, :terms_of_service, :locale,
                                    :redeemable_code)
+    end
+
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:account_update, keys: [:email])
     end
 
     def erase_params

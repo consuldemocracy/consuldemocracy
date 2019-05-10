@@ -1,17 +1,27 @@
 class Poll
-  class Voter < ActiveRecord::Base
+  class Voter < ApplicationRecord
+
+    VALID_ORIGINS = %w{web booth}.freeze
+
     belongs_to :poll
     belongs_to :user
     belongs_to :geozone
     belongs_to :booth_assignment
     belongs_to :officer_assignment
+    belongs_to :officer
 
     validates :poll_id, presence: true
     validates :user_id, presence: true
+    validates :booth_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
+    validates :officer_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
+    validates :origin, inclusion: { in: VALID_ORIGINS }
 
-    before_validation :set_demographic_info, :set_document_info
+    before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
+
+    scope :web,   -> { where(origin: "web") }
+    scope :booth, -> { where(origin: "booth") }
 
     def set_demographic_info
       return if user.blank?
@@ -30,12 +40,16 @@ class Poll
 
     private
 
+      def set_denormalized_booth_assignment_id
+        self.booth_assignment_id ||= officer_assignment.try(:booth_assignment_id)
+      end
+
       def in_census?
         census_api_response.valid?
       end
 
       def census_api_response
-        @census_api_response ||= CensusApi.new.call(document_type, document_number)
+        @census_api_response ||= CensusCaller.new.call(document_type, document_number)
       end
 
       def fill_stats_fields

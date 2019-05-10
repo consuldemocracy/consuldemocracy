@@ -1,0 +1,6 @@
+en-GB:
+  date:
+    order:
+      - :year
+      - :month
+      - :day

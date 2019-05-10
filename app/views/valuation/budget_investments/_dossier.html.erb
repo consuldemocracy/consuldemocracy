@@ -1,0 +1,48 @@
+<p id="price">
+  <strong>
+    <%= t("valuation.budget_investments.show.price") %>
+   (<%= t("valuation.budget_investments.show.currency") %>):
+  </strong>
+  <% if @investment.price.present? %>
+    <%= @investment.price %>
+  <% else %>
+   <%= t("valuation.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<p id="price_first_year">
+  <strong>
+    <%= t("valuation.budget_investments.show.price_first_year") %>
+    (<%= t("valuation.budget_investments.show.currency") %>):
+  </strong>
+
+  <% if @investment.price_first_year.present? %>
+    <%= @investment.price_first_year %>
+  <% else %>
+   <%= t("valuation.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<%= explanation_field @investment.price_explanation %>
+
+<p id="duration">
+  <strong><%= t("valuation.budget_investments.show.duration") %>:</strong>
+  <% if @investment.duration.present? %>
+    <%= @investment.duration %>
+  <% else %>
+    <%= t("valuation.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<p id="feasibility">
+  <strong><%= t("valuation.budget_investments.show.feasibility") %>:</strong>
+  <%= t("valuation.budget_investments.show.#{@investment.feasibility}") %>
+</p>
+
+<%= explanation_field @investment.unfeasibility_explanation %>
+
+<% if @investment.valuation_finished %>
+  <p id="valuation">
+    <strong><%= t("valuation.budget_investments.show.valuation_finished") %></strong>
+  </p>
+<% end %>

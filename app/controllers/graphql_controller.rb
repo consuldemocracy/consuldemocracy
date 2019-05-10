@@ -3,7 +3,8 @@ class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token
   skip_authorization_check
 
-  class QueryStringError < StandardError; end
+  class QueryStringError < StandardError
+  end
 
   def query
     begin
@@ -11,11 +12,11 @@ class GraphqlController < ApplicationController
       response = consul_schema.execute query_string, variables: query_variables
       render json: response, status: :ok
     rescue GraphqlController::QueryStringError
-      render json: { message: 'Query string not present' }, status: :bad_request
+      render json: { message: "Query string not present" }, status: :bad_request
     rescue JSON::ParserError
-      render json: { message: 'Error parsing JSON' }, status: :bad_request
+      render json: { message: "Error parsing JSON" }, status: :bad_request
     rescue GraphQL::ParseError
-      render json: { message: 'Query string is not valid JSON' }, status: :bad_request
+      render json: { message: "Query string is not valid JSON" }, status: :bad_request
     rescue
       unless Rails.env.production? then raise end
     end
@@ -35,7 +36,7 @@ class GraphqlController < ApplicationController
     end
 
     def query_string
-      if request.headers["CONTENT_TYPE"] == 'application/graphql'
+      if request.headers["CONTENT_TYPE"] == "application/graphql"
         request.body.string # request.body.class => StringIO
       else
         params[:query]
@@ -43,7 +44,7 @@ class GraphqlController < ApplicationController
     end
 
     def query_variables
-      if params[:variables].blank? || params[:variables] == 'null'
+      if params[:variables].blank? || params[:variables] == "null"
         {}
       else
         JSON.parse(params[:variables])

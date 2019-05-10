@@ -3,7 +3,7 @@
   <div class="small-12 column">
 
     <div class="text-center">
-      <div class="small-4 column verification-step active">
+      <div class="small-4 column verification-step is-active">
         <span class="number">1</span> <%= t("verification.step_1") %>
       </div>
       <div class="small-4 column verification-step">
@@ -18,10 +18,7 @@
       <span class="meter" style="width: 33%"></span>
     </div>
 
-    <%= link_to account_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("verification.back") %>
-    <% end %>
+    <%= back_link_to account_path, t("verification.back") %>
 
     <h1><%= t("verification.residence.new.title") %></h1>
 
@@ -70,7 +67,7 @@
       <%= f.label t("verification.residence.new.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: 16.years.ago.year,
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year,
                         label: false %>
       </div>
 
@@ -84,11 +81,11 @@
 
       <div class="small-12">
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('verification.residence.new.accept_terms_text_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t("verification.residence.new.accept_terms_text_title"), label: false %>
           <span class="checkbox">
             <%= t("verification.residence.new.accept_terms_text",
                 terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
-                title: t('shared.target_blank_html'),
+                title: t("shared.target_blank_html"),
                 target: "_blank")).html_safe
             %>
           </span>
@@ -96,7 +93,9 @@
       </div>
 
       <div class="small-12 medium-3 clear">
-        <%= f.submit t("verification.residence.new.verify_residence"), class: "button success expanded" %>
+        <%= f.submit t("verification.residence.new.verify_residence"),
+                     id: "new_residence_submit",
+                     class: "button success expanded" %>
       </div>
     <% end %>
   </div>

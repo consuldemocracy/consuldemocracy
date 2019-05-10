@@ -1,9 +1,0 @@
-<div class="social-share-full">
-  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}") %>
-  <% if browser.device.mobile? %>
-    <a href="whatsapp://send?text=<%= title %> <%= url %>" data-action="share/whatsapp/share">
-      <span class="icon-whatsapp whatsapp"></span>
-      <span class="show-for-sr"><%= t("social.whatsapp") %></span>
-    </a>
-  <% end %>
-</div>

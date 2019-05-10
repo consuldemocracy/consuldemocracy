@@ -1,36 +1,32 @@
-<%= form_for(@question, url: form_url) do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @question %>
 
-  <%= render 'shared/errors', resource: @question %>
+<%= translatable_form_for(@question, url: form_url) do |f| %>
+
+  <%= render "shared/errors", resource: @question %>
 
   <%= f.hidden_field :proposal_id %>
 
-  <div class="row">
-
-    <div class="small-12 column">
+  <div class="small-12">
+    <% if @poll.present? %>
+      <%= f.hidden_field :poll_id, value: @poll.id %>
+    <% elsif @question.poll.present? %>
+      <%= f.hidden_field :poll_id, value: @question.poll.id %>
+    <% else %>
       <div class="small-12 medium-6 large-4">
+        <% select_options = Poll.all.map { |p| [p.name, p.id] } %>
         <%= f.select :poll_id,
-                      options_for_select(Poll.pluck(:name, :id)),
+                      options_for_select(select_options),
                       prompt: t("admin.questions.index.select_poll"),
                       label: t("admin.questions.new.poll_label") %>
       </div>
+    <% end %>
 
-      <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>
+    <%= f.translatable_fields do |translations_form| %>
+      <%= translations_form.text_field :title %>
+    <% end %>
 
-      <%= f.label :valid_answers %>
-      <p class="help-text" id="valid-answers-help-text"><%= t("admin.questions.new.valid_answers_note") %></p>
-      <%= f.text_field :valid_answers, label: false, aria: {describedby: "valid-answers-help-text"} %>
-
-      <div class="ckeditor">
-        <%= f.cktext_area :description,
-                          maxlength: Poll::Question.description_max_length,
-                          ckeditor: { language: I18n.locale } %>
-      </div>
-
-      <div class="row">
-        <div class="actions small-12 medium-4 column margin-top">
-          <%= f.submit(class: "button expanded", value: t("shared.save")) %>
-        </div>
-      </div>
+    <div class="small-12 medium-4 large-2 margin-top">
+      <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
     </div>
   </div>
 

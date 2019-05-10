@@ -1,0 +1,111 @@
+es-PE:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todas
+          pending_flag_review: Sin decidir
+          with_ignored_flag: Marcados como revisados
+        headers:
+          comment: Comentario
+          moderate: Moderar
+        hide_comments: Ocultar comentarios
+        ignore_flags: Marcar como revisadas
+        order: Orden
+        orders:
+          flags: Más denunciadas
+          newest: Más nuevos
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderar
+    debates:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todas
+          pending_flag_review: Sin decidir
+          with_ignored_flag: Marcados como revisados
+        headers:
+          debate: el debate
+          moderate: Moderar
+        hide_debates: Ocultar debates
+        ignore_flags: Marcar como revisadas
+        order: Orden
+        orders:
+          created_at: Más nuevos
+          flags: Más denunciadas
+    header:
+      title: Moderar
+    menu:
+      flagged_comments: Comentarios
+      flagged_investments: Proyectos de presupuestos participativos
+      proposals: Propuestas
+      users: Bloquear usuarios
+    proposals:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todas
+          pending_flag_review: Pendientes de revisión
+          with_ignored_flag: Marcar como revisadas
+        headers:
+          moderate: Moderar
+          proposal: la propuesta
+        hide_proposals: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenado por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Propuestas
+    budget_investments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todas
+          pending_flag_review: Sin decidir
+          with_ignored_flag: Marcados como revisados
+        headers:
+          moderate: Moderar
+          budget_investment: Propuesta de inversión
+        ignore_flags: Marcar como revisadas
+        order: Ordenado por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Proyectos de presupuestos participativos
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todas
+          pending_review: Pendientes de revisión
+          ignored: Marcar como revisadas
+        headers:
+          moderate: Moderar
+        hide_proposal_notifications: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenado por
+        orders:
+          created_at: Más recientes
+        title: Notificaciones de propuestas
+    users:
+      index:
+        hidden: Bloqueado
+        hide: Bloquear
+        search: Buscar
+        search_placeholder: email o nombre de usuario
+        title: Bloquear usuarios
+      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.

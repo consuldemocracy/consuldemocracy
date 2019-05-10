@@ -1,0 +1,37 @@
+cs:
+  mailers:
+    comment:
+      hi: Dobrý den
+      title: Nový komentář
+    email_verification:
+      click_here_to_verify: tento odkaz
+      subject: Potvrďte svoji emailovou adresu
+      thanks: Mockrát děkujeme.
+    reply:
+      hi: Dobrý den
+      title: Nová odpověď na váš komentář
+    unfeasible_spending_proposal:
+      hi: "Vážený uživateli,"
+      new_href: "nový investiční projekt"
+      sincerely: "S pozdravem"
+    proposal_notification_digest:
+      comment: Připomínky k návrhu
+      unsubscribe_account: Můj účet
+    direct_message_for_receiver:
+      unsubscribe_account: Můj účet
+    user_invite:
+      thanks: "Mockrát děkujeme."
+    budget_investment_created:
+      sincerely: "S pozdravem,"
+    budget_investment_unfeasible:
+      hi: "Vážený uživateli,"
+      new_href: "nový investiční projekt"
+      sincerely: "S pozdravem"
+    budget_investment_selected:
+      hi: "Vážený uživateli,"
+      thanks: "Ještě jednou děkujeme za vaši účast."
+      sincerely: "S pozdravem"
+    budget_investment_unselected:
+      hi: "Vážený uživateli,"
+      thanks: "Ještě jednou děkujeme za vaši účast."
+      sincerely: "S pozdravem"

@@ -1,0 +1,6 @@
+ca:
+  documents:
+    errors:
+      messages:
+        in_between: ha de ser entre %{min} i %{max}
+        wrong_content_type: el tipus de contingut %{content_type} no coincideix amb cap dels tipus de contingut acceptat %{accepted_content_types}

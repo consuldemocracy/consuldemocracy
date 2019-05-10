@@ -3,7 +3,9 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      if !verifying_via_email? && resource.show_welcome_screen?
+      if current_user.poll_officer?
+        new_officing_booth_path
+      elsif !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
         super
@@ -11,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def after_sign_out_path_for(resource)
-      request.referer.present? ? request.referer : super
+      request.referer.present? && !request.referer.match("management") ? request.referer : super
     end
 
     def verifying_via_email?

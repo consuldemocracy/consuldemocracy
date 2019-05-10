@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="small-12 column">
+    <div class="float-right">
+      <a class="button hollow" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+  </div>
+</div>

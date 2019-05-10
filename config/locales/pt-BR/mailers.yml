@@ -1,0 +1,79 @@
+pt-BR:
+  mailers:
+    no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
+    comment:
+      hi: Oi
+      new_comment_by_html: Há um novo comentário de <b>%{commenter}</b>
+      subject: Alguém comentou sobre seu %{commentable}
+      title: Novo comentário
+    config:
+      manage_email_subscriptions: Para parar de receber esses e-mails altere suas configurações no
+    email_verification:
+      click_here_to_verify: este link
+      instructions_2_html: Este e-mail irá verificar sua conta com <b>%{document_type} %{document_number}</b>. Se isto não lhe pertence, por favor, não clique no link anterior e ignore este e-mail.
+      instructions_html: Para completar a verificação da sua conta de usuário, você deve clicar em %{verification_link}.
+      subject: Confirme seu email
+      thanks: Muito Obrigado.
+      title: Confirme sua conta usando o seguinte link
+    reply:
+      hi: Oi
+      new_reply_by_html: Há uma nova resposta de <b>%{commenter}</b> ao seu comentário sobre
+      subject: Alguém respondeu ao seu comentário
+      title: Nova resposta ao seu comentário
+    unfeasible_spending_proposal:
+      hi: "Caro usuário,"
+      new_html: "Por tudo isso, nós convidamos você a elaborar uma <strong>nova proposta</strong> que se ajuste às condições deste processo. Você pode fazê-lo seguindo este link: %{url}."
+      new_href: "novo projeto de investimento"
+      sincerely: "Atenciosamente"
+      sorry: "Desculpe o inconveniente e nós mais uma vez agradecemos pela sua valiosa participação."
+      subject: "Seu projeto de investimento '%{code}' foi marcado como inviável"
+    proposal_notification_digest:
+      info: "Aqui estão as novas notificações que foram publicadas pelos autores das propostas que você apoiou em %{org_name}."
+      title: "Notificações de proposta em %{org_name}"
+      share: Compartilhar proposta
+      comment: Comentar proposta
+      unsubscribe: "Se você não quiser receber uma notificação de proposta, acesse %{account} e desmarque \"Receber um resumo das notificações da proposta\"."
+      unsubscribe_account: Minha conta
+    direct_message_for_receiver:
+      subject: "Você recebeu uma nova mensagem privada"
+      reply: Responder para %{sender}
+      unsubscribe: "Se você não quiser receber mensagens diretas, acesse %{account} e desmarque \"Receber e-mails sobre mensagens diretas\"."
+      unsubscribe_account: Minha conta
+    direct_message_for_sender:
+      subject: "Você recebeu uma nova mensagem privada"
+      title_html: "Você enviou uma nova mensagem particular para <strong>%{receiver}</strong> com o conteúdo:"
+    user_invite:
+      ignore: "Se você não solicitou este convite, não se preocupe, você pode ignorar este e-mail."
+      text: "Obrigado por se inscrever para participar do %{org}! Em segundos você pode começar a participar das decisões de sua cidade, basta preencher o formulário abaixo:"
+      thanks: "Muito Obrigado."
+      title: "Bem-vindo a %{org}"
+      button: Completar registro
+      subject: "Convite para %{org_name}"
+    budget_investment_created:
+      subject: "Obrigado por criar um investimento!"
+      title: "Obrigado por criar um investimento!"
+      intro_html: "Olá <strong>%{author}</strong>,"
+      text_html: "Obrigado por criar o seu investimento <strong>%{investment}</strong> para Orçamentos Participativos <strong>%{budget}</strong>."
+      follow_html: "Informaremos você sobre como o processo avança, o que você também pode acompanhar em <strong>%{link}</strong>."
+      follow_link: "Orçamentos participativos"
+      sincerely: "Atenciosamente"
+      share: "Compartilhe seu projeto"
+    budget_investment_unfeasible:
+      hi: "Caro usuário,"
+      new_html: "Por tudo isso, nós convidamos você a elaborar uma <strong>novo investimento</strong> que se ajuste às condições deste processo. Você pode fazê-lo seguindo este link: %{url}."
+      new_href: "novo projeto de investimento"
+      sincerely: "Atenciosamente"
+      sorry: "Desculpe o inconveniente e nós mais uma vez agradecemos pela sua valiosa participação."
+      subject: "Seu projeto de investimento '%{code}' foi marcado como inviável"
+    budget_investment_selected:
+      subject: "Seu projeto de investimento '%{code}' foi selecionado"
+      hi: "Caro usuário,"
+      share: "Comece a receber votos, compartilhe seu projeto de investimento em redes sociais. Compartilhar é essencial para torná-lo realidade."
+      share_button: "Compartihle seu projeto de investimento"
+      thanks: "Obrigada novamente por participar."
+      sincerely: "Atenciosamente"
+    budget_investment_unselected:
+      subject: "Seu projeto de investimento '%{code}' não foi selecionado"
+      hi: "Caro usuário,"
+      thanks: "Obrigada novamente por participar."
+      sincerely: "Atenciosamente"

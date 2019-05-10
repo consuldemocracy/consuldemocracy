@@ -1,0 +1,9 @@
+eu:
+  verification:
+    residence:
+      new:
+        date_of_birth: Jaiotze data
+        document_type_label: Agiri mota
+        postal_code: Posta-kodea
+    step_1: Bizilekua
+    step_2: Konfirmazio kodea

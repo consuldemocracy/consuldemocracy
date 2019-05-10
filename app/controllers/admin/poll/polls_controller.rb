@@ -1,24 +1,31 @@
-class Admin::Poll::PollsController < Admin::BaseController
+class Admin::Poll::PollsController < Admin::Poll::BaseController
+  include Translatable
+  include ImageAttributes
   load_and_authorize_resource
 
-  before_action :load_search, only: [:search_booths, :search_questions, :search_officers]
+  before_action :load_search, only: [:search_booths, :search_officers]
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
+    @polls = Poll.not_budget.order(starts_at: :desc)
   end
 
   def show
-    @poll = Poll.includes(:questions).
-                          order('poll_questions.title').
-                          find(params[:id])
+    @poll = Poll.find(params[:id])
   end
 
   def new
   end
 
   def create
+    @poll = Poll.new(poll_params.merge(author: current_user))
     if @poll.save
-      redirect_to [:admin, @poll], notice: t("flash.actions.create.poll")
+      notice = t("flash.actions.create.poll")
+      if @poll.budget.present?
+        redirect_to admin_poll_booth_assignments_path(@poll), notice: notice
+      else
+        redirect_to [:admin, @poll], notice: notice
+      end
     else
       render :new
     end
@@ -47,23 +54,8 @@ class Admin::Poll::PollsController < Admin::BaseController
     redirect_to admin_poll_path(@poll), notice: notice
   end
 
-  def remove_question
-    question = ::Poll::Question.find(params[:question_id])
-
-    if @poll.questions.include? question
-      @poll.questions.delete(question)
-      notice = t("admin.polls.flash.question_removed")
-    else
-      notice = t("admin.polls.flash.error_on_question_removed")
-    end
-    redirect_to admin_poll_path(@poll), notice: notice
-  end
-
-  def search_questions
-    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search(search: @search).order(title: :asc)
-    respond_to do |format|
-      format.js
-    end
+  def booth_assignments
+    @polls = Poll.current
   end
 
   private
@@ -73,7 +65,11 @@ class Admin::Poll::PollsController < Admin::BaseController
     end
 
     def poll_params
-      params.require(:poll).permit(:name, :starts_at, :ends_at, :geozone_restricted, geozone_ids: [])
+      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+      attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :results_enabled,
+                    :stats_enabled, :budget_id, geozone_ids: [],
+                    image_attributes: image_attributes]
+      params.require(:poll).permit(*attributes, translation_params(Poll))
     end
 
     def search_params
@@ -84,4 +80,7 @@ class Admin::Poll::PollsController < Admin::BaseController
       @search = search_params[:search]
     end
 
+    def resource
+      @poll ||= Poll.find(params[:id])
+    end
 end

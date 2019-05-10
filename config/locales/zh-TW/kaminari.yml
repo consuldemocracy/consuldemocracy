@@ -1,0 +1,20 @@
+zh-TW:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: 條目
+        other: 條目
+      more_pages:
+        display_entries: 顯示<strong>%{first}&nbsp;-&nbsp;%{last}</strong> 於<strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "找不到%{entry_name}"
+          other: 有 <strong>%{count} 個%{entry_name}</strong>
+  views:
+    pagination:
+      current: 您在頁面
+      first: 最前
+      last: 最後
+      next: 下一個
+      previous: 上一頁
+      truncate: "&hellip;"

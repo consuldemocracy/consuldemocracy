@@ -1,0 +1,4 @@
+cs:
+  social_share_button:
+    share_to: "Sdílet službou %{name}"
+    email: "Email"

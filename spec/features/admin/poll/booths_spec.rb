@@ -1,28 +1,28 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin booths' do
+feature "Admin booths" do
 
   background do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index empty' do
+  scenario "Index empty" do
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Booths location"
     end
 
-    expect(page).to have_content "There are no booths"
+    expect(page).to have_content "There are no active booths for any upcoming poll."
   end
 
-  scenario 'Index' do
+  scenario "Index" do
     3.times { create(:poll_booth) }
 
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Booths location"
     end
 
@@ -33,10 +33,33 @@ feature 'Admin booths' do
         expect(page).to have_content booth.location
       end
     end
-    expect(page).to_not have_content "There are no booths"
+    expect(page).not_to have_content "There are no booths"
   end
 
-  scenario 'Show' do
+  scenario "Available" do
+    booth_for_current_poll  = create(:poll_booth)
+    booth_for_expired_poll  = create(:poll_booth)
+
+    current_poll  = create(:poll, :current)
+    expired_poll  = create(:poll, :expired)
+
+    create(:poll_booth_assignment, poll: current_poll,  booth: booth_for_current_poll)
+    create(:poll_booth_assignment, poll: expired_poll,  booth: booth_for_expired_poll)
+
+    visit admin_root_path
+
+    within("#side_menu") do
+      click_link "Manage shifts"
+    end
+
+    expect(page).to have_css(".booth", count: 1)
+
+    expect(page).to have_content booth_for_current_poll.name
+    expect(page).not_to have_content booth_for_expired_poll.name
+    expect(page).not_to have_link "Edit booth"
+  end
+
+  scenario "Show" do
     booth = create(:poll_booth)
 
     visit admin_booths_path
@@ -61,12 +84,15 @@ feature 'Admin booths' do
   end
 
   scenario "Edit" do
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
     visit admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Edit"
+      expect(page).not_to have_link "Manage shifts"
+      click_link "Edit booth"
     end
 
     fill_in "poll_booth_name", with: "Next booth"
@@ -83,4 +109,18 @@ feature 'Admin booths' do
     end
   end
 
+  scenario "Back link go back to available list when manage shifts" do
+    poll = create(:poll, :current)
+    booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    click_link "Go back"
+    expect(page).to have_current_path(available_admin_booths_path)
+  end
 end

@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin activity' do
+feature "Admin activity" do
 
   background do
     @admin = create(:administrator)
@@ -14,8 +14,9 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link "Hide" }
       end
+      expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
 
@@ -31,7 +32,7 @@ feature 'Admin activity' do
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
 
-      visit moderation_proposals_path(filter: 'all')
+      visit moderation_proposals_path(filter: "all")
 
       within("#proposal_#{proposal1.id}") do
         check "proposal_#{proposal1.id}_check"
@@ -46,14 +47,14 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       expect(page).to have_content(proposal1.title)
-      expect(page).to_not have_content(proposal2.title)
+      expect(page).not_to have_content(proposal2.title)
       expect(page).to have_content(proposal3.title)
     end
 
     scenario "Shows admin restores" do
       proposal = create(:proposal, :hidden)
 
-      visit admin_proposals_path
+      visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
         click_on "Restore"
@@ -76,8 +77,9 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link "Hide" }
       end
+      expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path
 
@@ -93,7 +95,7 @@ feature 'Admin activity' do
       debate2 = create(:debate)
       debate3 = create(:debate)
 
-      visit moderation_debates_path(filter: 'all')
+      visit moderation_debates_path(filter: "all")
 
       within("#debate_#{debate1.id}") do
         check "debate_#{debate1.id}_check"
@@ -108,7 +110,7 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       expect(page).to have_content(debate1.title)
-      expect(page).to_not have_content(debate2.title)
+      expect(page).not_to have_content(debate2.title)
       expect(page).to have_content(debate3.title)
     end
 
@@ -139,7 +141,8 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        click_link 'Hide'
+        accept_confirm { click_link "Hide" }
+        expect(page).to have_css(".faded")
       end
 
       visit admin_activity_path
@@ -156,7 +159,7 @@ feature 'Admin activity' do
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
 
-      visit moderation_comments_path(filter: 'all')
+      visit moderation_comments_path(filter: "all")
 
       within("#comment_#{comment1.id}") do
         check "comment_#{comment1.id}_check"
@@ -171,7 +174,7 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       expect(page).to have_content(comment1.body)
-      expect(page).to_not have_content(comment2.body)
+      expect(page).not_to have_content(comment2.body)
       expect(page).to have_content(comment3.body)
     end
 
@@ -201,7 +204,8 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link 'Hide author'
+        click_link "Hide author"
+        expect(current_path).to eq(debates_path)
       end
 
       visit admin_activity_path
@@ -221,7 +225,7 @@ feature 'Admin activity' do
       visit moderation_users_path(name_or_email: user.username)
 
       within("#moderation_users") do
-        click_link 'Block'
+        click_link "Block"
       end
 
       visit admin_activity_path
@@ -238,7 +242,7 @@ feature 'Admin activity' do
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
 
-      visit moderation_proposals_path(filter: 'all')
+      visit moderation_proposals_path(filter: "all")
 
       within("#proposal_#{proposal1.id}") do
         check "proposal_#{proposal1.id}_check"
@@ -256,7 +260,7 @@ feature 'Admin activity' do
       expect(page).to have_content(proposal1.author.email)
       expect(page).to have_content(proposal3.author.username)
       expect(page).to have_content(proposal3.author.email)
-      expect(page).to_not have_content(proposal2.author.username)
+      expect(page).not_to have_content(proposal2.author.username)
     end
 
     scenario "Shows moderation activity from debates moderation screen" do
@@ -264,7 +268,7 @@ feature 'Admin activity' do
       debate2 = create(:debate)
       debate3 = create(:debate)
 
-      visit moderation_debates_path(filter: 'all')
+      visit moderation_debates_path(filter: "all")
 
       within("#debate_#{debate1.id}") do
         check "debate_#{debate1.id}_check"
@@ -282,7 +286,7 @@ feature 'Admin activity' do
       expect(page).to have_content(debate1.author.email)
       expect(page).to have_content(debate3.author.username)
       expect(page).to have_content(debate3.author.email)
-      expect(page).to_not have_content(debate2.author.username)
+      expect(page).not_to have_content(debate2.author.username)
     end
 
     scenario "Shows moderation activity from comments moderation screen" do
@@ -290,7 +294,7 @@ feature 'Admin activity' do
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
 
-      visit moderation_comments_path(filter: 'all')
+      visit moderation_comments_path(filter: "all")
 
       within("#comment_#{comment1.id}") do
         check "comment_#{comment1.id}_check"
@@ -308,7 +312,7 @@ feature 'Admin activity' do
       expect(page).to have_content(comment1.author.email)
       expect(page).to have_content(comment3.author.username)
       expect(page).to have_content(comment3.author.email)
-      expect(page).to_not have_content(comment2.author.username)
+      expect(page).not_to have_content(comment2.author.username)
     end
 
     scenario "Shows admin restores" do
@@ -326,6 +330,24 @@ feature 'Admin activity' do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+  end
+
+  context "System emails" do
+    scenario "Shows moderation activity on system emails" do
+      proposal = create(:proposal, title: "Proposal A")
+      proposal_notification = create(:proposal_notification, proposal: proposal,
+                                                               title: "Proposal A Title",
+                                                               body: "Proposal A Notification Body")
+      proposal_notification.moderate_system_email(@admin.user)
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(proposal_notification.title)
+        expect(page).to have_content("Hidden")
         expect(page).to have_content(@admin.user.username)
       end
     end

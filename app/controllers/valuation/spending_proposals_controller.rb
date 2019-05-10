@@ -10,11 +10,13 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
   def index
     @geozone_filters = geozone_filters
-    if current_user.valuator?
-      @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(cached_votes_up: :desc).page(params[:page])
-    else
-      @spending_proposals = SpendingProposal.none.page(params[:page])
-    end
+    @spending_proposals = if current_user.valuator?
+                            SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter)
+                                            .order(cached_votes_up: :desc)
+                                            .page(params[:page])
+                          else
+                            SpendingProposal.none.page(params[:page])
+                          end
   end
 
   def valuate
@@ -24,7 +26,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
         @spending_proposal.send_unfeasible_email
       end
 
-      redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t('valuation.spending_proposals.notice.valuate')
+      redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t("valuation.spending_proposals.notice.valuate")
     else
       render action: :edit
     end
@@ -35,12 +37,12 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
     def geozone_filters
       spending_proposals = SpendingProposal.by_valuator(current_user.valuator.try(:id)).valuation_open.all.to_a
 
-      [ { name: t('valuation.spending_proposals.index.geozone_filter_all'),
+      [ { name: t("valuation.spending_proposals.index.geozone_filter_all"),
           id: nil,
           pending_count: spending_proposals.size
         },
-        { name: t('geozones.none'),
-          id: 'all',
+        { name: t("geozones.none"),
+          id: "all",
           pending_count: spending_proposals.count{|x| x.geozone_id.nil?}
         }
       ] + Geozone.all.order(name: :asc).collect do |g|
@@ -52,9 +54,10 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
     end
 
     def valuation_params
-      params[:spending_proposal][:feasible] = nil if params[:spending_proposal][:feasible] == 'nil'
+      params[:spending_proposal][:feasible] = nil if params[:spending_proposal][:feasible] == "nil"
 
-      params.require(:spending_proposal).permit(:price, :price_first_year, :price_explanation, :feasible, :feasible_explanation, :time_scope, :valuation_finished, :internal_comments)
+      params.require(:spending_proposal).permit(:price, :price_first_year, :price_explanation, :feasible, :feasible_explanation,
+                                                :time_scope, :valuation_finished, :internal_comments)
     end
 
     def params_for_current_valuator
@@ -62,16 +65,18 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
     end
 
     def restrict_access_to_assigned_items
-      raise ActionController::RoutingError.new('Not Found') unless current_user.administrator? || ValuationAssignment.exists?(spending_proposal_id: params[:id], valuator_id: current_user.valuator.id)
+      return if current_user.administrator? ||
+                ValuationAssignment.exists?(spending_proposal_id: params[:id], valuator_id: current_user.valuator.id)
+      raise ActionController::RoutingError.new("Not Found")
     end
 
     def valid_price_params?
       if /\D/.match params[:spending_proposal][:price]
-        @spending_proposal.errors.add(:price, I18n.t('spending_proposals.wrong_price_format'))
+        @spending_proposal.errors.add(:price, I18n.t("spending_proposals.wrong_price_format"))
       end
 
       if /\D/.match params[:spending_proposal][:price_first_year]
-        @spending_proposal.errors.add(:price_first_year, I18n.t('spending_proposals.wrong_price_format'))
+        @spending_proposal.errors.add(:price_first_year, I18n.t("spending_proposals.wrong_price_format"))
       end
 
       @spending_proposal.errors.empty?

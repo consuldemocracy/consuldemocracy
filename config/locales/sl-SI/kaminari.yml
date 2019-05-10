@@ -1,0 +1,17 @@
+sl:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Vnososv
+      more_pages:
+        display_entries: Prikazujem <strong>%{first}&nbsp;-&nbsp;%{last}</strong> od <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} ni mogoče najti"
+  views:
+    pagination:
+      current: Si na strani
+      first: Prva
+      last: Zadnja
+      next: Naslednja
+      previous: Prejšnja

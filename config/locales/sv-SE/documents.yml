@@ -1,0 +1,24 @@
+sv:
+  documents:
+    title: Dokument
+    max_documents_allowed_reached_html: Du har nått gränsen för uppladdade dokument! <strong>Du måste radera ett dokument innan du kan ladda upp ett nytt.</strong>
+    form:
+      title: Dokument
+      title_placeholder: Lägg till en titel för dokumentet
+      attachment_label: Välj dokument
+      delete_button: Radera dokument
+      cancel_button: Avbryt
+      note: "Du kan maximalt ladda upp %{max_documents_allowed} dokument av de följande innehållstyperna: %{accepted_content_types}, upp till %{max_file_size} MB per fil."
+      add_new_document: Lägg till ett nytt dokument
+    actions:
+      destroy:
+        notice: Dokumentet har raderats.
+        alert: Dokumentet kunde inte raderas.
+        confirm: Är du säker på att du vill radera dokumentet? Åtgärden kan inte ångras!
+    buttons:
+      download_document: Ladda ner fil
+      destroy_document: Radera dokument
+    errors:
+      messages:
+        in_between: måste vara mellan %{min} och %{max}
+        wrong_content_type: innehållstypen %{content_type} finns inte bland de tillåtna innehållstyperna %{accepted_content_types}

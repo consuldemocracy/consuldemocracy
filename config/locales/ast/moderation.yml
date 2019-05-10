@@ -1,0 +1,110 @@
+ast:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
+        filter: Filtru
+        filters:
+          all: Toes
+          pending_flag_review: Pindios
+          with_ignored_flag: Marcados como revisados
+        headers:
+          comment: Comentario
+          moderate: Moderar
+        hide_comments: Ocultar comentarios
+        ignore_flags: Marcar como revisadas
+        order: Orden
+        orders:
+          flags: Más denunciadas
+          newest: Más nuevos
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderación
+    debates:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
+        filter: Filtru
+        filters:
+          all: Toes
+          pending_flag_review: Pindios
+          with_ignored_flag: Marcados como revisados
+        headers:
+          debate: Alderique
+          moderate: Moderar
+        hide_debates: Ocultar debates
+        ignore_flags: Marcar como revisadas
+        order: Orden
+        orders:
+          created_at: Más nuevos
+          flags: Más denunciadas
+        title: Alderique
+    header:
+      title: Moderación
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: Alderique
+      proposals: Propuestes
+      users: Bloquear usuarios
+    proposals:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
+        filter: Filtru
+        filters:
+          all: Toes
+          pending_flag_review: Pendientes de revisión
+          with_ignored_flag: Marcar como revisadas
+        headers:
+          moderate: Moderar
+          proposal: la propuesta
+        hide_proposals: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Propuestes
+    budget_investments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
+        filter: Filtru
+        filters:
+          all: Toes
+          pending_flag_review: Pindios
+          with_ignored_flag: Marcados como revisados
+        headers:
+          moderate: Moderar
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Tas seguru?'
+        filter: Filtru
+        filters:
+          all: Toes
+          pending_review: Pendientes de revisión
+          ignored: Marcar como revisadas
+        headers:
+          moderate: Moderar
+        hide_proposal_notifications: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+        title: Notificaciones de propuestas
+    users:
+      index:
+        hidden: Bloquiáu
+        hide: Bloquear
+        search: Atopar
+        search_placeholder: email o nombre de usuario
+        title: Bloquear usuarios
+      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.

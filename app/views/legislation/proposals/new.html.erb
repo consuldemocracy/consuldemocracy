@@ -1,0 +1,10 @@
+<div class="proposal-form row">
+
+  <div class="small-12 column">
+    <%= back_link_to %>
+
+    <h1><%= t("proposals.new.start_new") %></h1>
+
+    <%= render "legislation/proposals/form", form_url: legislation_process_proposals_url, id: @proposal.id %>
+  </div>
+</div>

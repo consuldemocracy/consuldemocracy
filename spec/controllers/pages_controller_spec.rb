@@ -1,55 +1,50 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe PagesController do
 
-  describe 'Static pages' do
-    it 'should include a privacy page' do
-      get :show, id: :privacy
+  describe "Static pages" do
+    it "includes a privacy page" do
+      get :show, params: { id: :privacy }
       expect(response).to be_ok
     end
 
-    it 'should include a conditions page' do
-      get :show, id: :conditions
+    it "includes a conditions page" do
+      get :show, params: { id: :conditions }
       expect(response).to be_ok
     end
 
-    it 'should include a general terms page' do
-      get :show, id: :general_terms
-      expect(response).to be_ok
-    end
-
-    it 'should include a terms page' do
-      get :show, id: :census_terms
-      expect(response).to be_ok
-    end
-
-    it 'should include a accessibility page' do
-      get :show, id: :accessibility
+    it "includes a accessibility page" do
+      get :show, params: { id: :accessibility }
       expect(response).to be_ok
     end
   end
 
-  describe 'More info pages' do
+  describe "More info pages" do
 
-    it 'should include a more info page' do
-      get :show, id: 'more_info/index'
+    it "includes a more info page" do
+      get :show, params: { id: "help/index" }
       expect(response).to be_ok
     end
 
-    it 'should include a how_to_use page' do
-      get :show, id: 'more_info/how_to_use/index'
+    it "includes a how_to_use page" do
+      get :show, params: { id: "help/how_to_use/index" }
       expect(response).to be_ok
     end
 
-    it 'should include a faq page' do
-      get :show, id: 'more_info/faq/index'
+    it "includes a faq page" do
+      get :show, params: { id: :faq }
       expect(response).to be_ok
     end
   end
 
-  describe 'Not found pages' do
-    it 'should return a 404 message' do
-      get :show, id: "nonExistentPage"
+  describe "Not found pages" do
+    it "returns a 404 message" do
+      get :show, params: { id: "nonExistentPage" }
+      expect(response).to be_missing
+    end
+
+    it "returns a 404 message for a JavaScript request" do
+      get :show, params: { id: "nonExistentJavaScript.js" }
       expect(response).to be_missing
     end
   end

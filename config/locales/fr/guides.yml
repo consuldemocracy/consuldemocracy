@@ -1,0 +1,18 @@
+fr:
+  guides:
+    title: "Vous avez une idée pour %{org} ?"
+    subtitle: "Choisissez ce que vous souhaitez créer"
+    budget_investment:
+      title: "Un projet d'investissement"
+      feature_1_html: "Idées sur la façon de dépenser une partie du <strong>budget municipal</strong>"
+      feature_2_html: "Les projets d'investissement sont acceptés <strong>entre janvier et mars</strong>"
+      feature_3_html: "S'il est soutenu, viable et du ressort de la municipalité, il est soumis au vote"
+      feature_4_html: "Si les citoyens approuvent les projets, ils deviennent réalité"
+      new_button: Je veux créer un investissement
+    proposal:
+      title: "Une proposition citoyenne"
+      feature_1_html: "Idées au sujet de n'importe quelle action du ressort du conseil municipal"
+      feature_2_html: "Besoin de <strong>%{votes} soutiens</strong> au sein de %{org} pour être soumis au vote"
+      feature_3_html: "Activez à tout moment, vous avez <strong>un an</strong> pour recueillir les soutiens"
+      feature_4_html: "Si elle est approuvée par un vote, le conseil municipal valide la proposition"
+      new_button: Je veux créer une proposition

@@ -1,0 +1,22 @@
+cs:
+  activemodel:
+    models:
+      verification:
+        residence: "Bydliště"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Typ dokumentu"
+          document_number: "Identifikátor dokumentu (včetně písmen)"
+          date_of_birth: "Datum narození"
+          postal_code: "PSČ"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Potvrzující kód"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Typ dokumentu"
+        document_number: "Identifikátor dokumentu (včetně písmen)"
+        year_of_birth: "Rok narození"

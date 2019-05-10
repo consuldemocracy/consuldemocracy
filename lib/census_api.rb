@@ -23,7 +23,7 @@ class CensusApi
       str = data[:datos_habitante][:item][:fecha_nacimiento_string]
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
-      Date.new(year.to_i, month.to_i, day.to_i)
+      Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end
 
     def postal_code
@@ -84,7 +84,7 @@ class CensusApi
     end
 
     def stubbed_response(document_type, document_number)
-      if document_number == "12345678Z" && document_type == "1"
+      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
         stubbed_valid_response
       else
         stubbed_invalid_response
@@ -92,14 +92,34 @@ class CensusApi
     end
 
     def stubbed_valid_response
-      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678Z", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
+      {
+        get_habita_datos_response: {
+          get_habita_datos_return: {
+            datos_habitante: {
+              item: {
+                fecha_nacimiento_string: "31-12-1980",
+                identificador_documento: "12345678Z",
+                descripcion_sexo: "Varón",
+                nombre: "José",
+                apellido1: "García"
+              }
+            },
+            datos_vivienda: {
+              item: {
+                codigo_postal: "28013",
+                codigo_distrito: "01"
+              }
+            }
+          }
+        }
+      }
     end
 
     def stubbed_invalid_response
       {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}
     end
 
-    def is_dni?(document_type)
+    def dni?(document_type)
       document_type.to_s == "1"
     end
 

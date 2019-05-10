@@ -1,0 +1,39 @@
+de:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} erfolgreich erstellt."
+        debate: "Diskussion erfolgreich erstellt."
+        direct_message: "Ihre Nachricht wurde erfolgreich versendet."
+        poll: "Umfrage erfolgreich erstellt."
+        poll_booth: "Wahlkabine erfolgreich erstellt."
+        poll_question_answer: "Antwort erfolgreich erstellt"
+        poll_question_answer_video: "Video erfolgreich erstellt"
+        poll_question_answer_image: "Bild erfolgreich hochgeladen"
+        proposal: "Vorschlag erfolgreich erstellt."
+        proposal_notification: "Ihre Nachricht wurde versendet."
+        spending_proposal: "Ausgabenvorschlag erfolgreich erstellt. Sie können über %{activity} darauf zugreifen"
+        budget_investment: "Budgetinvestition wurde erfolgreich erstellt."
+        signature_sheet: "Unterschriftenblatt wurde erfolgreich erstellt"
+        topic: "Thema erfolgreich erstellt."
+        valuator_group: "Gutachtergruppe wurde erfolgreich erstellt"
+      save_changes:
+        notice: Änderungen gespeichert
+      update:
+        notice: "%{resource_name} erfolgreich aktualisiert."
+        debate: "Diskussion erfolgreich akutalisiert."
+        poll: "Umfrage erfolgreich akutalisiert."
+        poll_booth: "Wahlkabine wurde erfolgreich aktualisiert."
+        proposal: "Vorschlag erfolgreich aktualisiert."
+        spending_proposal: "Investitionsprojekt wurde erfolgreich aktualisiert."
+        budget_investment: "Investitionsprojekt wurde erfolgreich aktualisiert."
+        topic: "Thema erfolgreich aktualisiert."
+        valuator_group: "Gutachtergruppe wurde erfolgreich aktualisiert"
+        translation: "Übersetzung erfolgreich hochgeladen"
+      destroy:
+        spending_proposal: "Ausgabenvorschlag erfolgreich gelöscht."
+        budget_investment: "Investitionsprojekt erfolgreich gelöscht."
+        error: "Konnte nicht gelöscht werden"
+        topic: "Thema erfolgreich gelöscht."
+        poll_question_answer_video: "Video-Antwort erfolgreich gelöscht."
+        valuator_group: "Gutachtergruppe erfolgreich gelöscht"

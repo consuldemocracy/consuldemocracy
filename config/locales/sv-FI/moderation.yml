@@ -1,0 +1,6 @@
+sv-FI:
+  moderation:
+    comments:
+      index:
+        headers:
+          comment: Kommentit

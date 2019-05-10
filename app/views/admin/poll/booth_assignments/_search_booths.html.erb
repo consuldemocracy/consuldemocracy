@@ -1,16 +1,14 @@
-<div class="row">
-  <div class="small-12 medium-6 column">
-    <%= form_tag(search_booths_admin_poll_booth_assignments_path(@poll), method: :get, remote: true) do |f| %>
-      <div class="input-group">
-        <%= text_field_tag :search,
-                           @search,
-                           placeholder: t("admin.shared.booths_search.placeholder"), id: "search-booths" %>
-        <div class="input-group-button">
-          <%= submit_tag t("admin.shared.booths_search.button"), class: "button" %>
-        </div>
+<div class="small-12 medium-6 margin-top">
+  <%= form_tag(search_booths_admin_poll_booth_assignments_path(@poll), method: :get, remote: true) do |f| %>
+    <div class="input-group">
+      <%= text_field_tag :search,
+                         @search,
+                         placeholder: t("admin.shared.booths_search.placeholder"), id: "search-booths" %>
+      <div class="input-group-button">
+        <%= submit_tag t("admin.shared.booths_search.button"), class: "button" %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 <div id="search-booths-results"></div>

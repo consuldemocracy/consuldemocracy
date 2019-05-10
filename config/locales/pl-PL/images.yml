@@ -1,0 +1,21 @@
+pl:
+  images:
+    remove_image: Usuń obraz
+    form:
+      title: Obraz opisujący
+      title_placeholder: Dodaj opisowy tytuł obrazu
+      attachment_label: Wybierz obraz
+      delete_button: Usuń obraz
+      note: "Możesz przesłać jeden obraz następujących typów treści: %{accepted_content_types}, do %{max_file_size} MB."
+      add_new_image: Dodaj obraz
+      admin_title: "Obraz"
+      admin_alt_text: "Alternatywny tekst dla obrazu"
+    actions:
+      destroy:
+        notice: Obraz został pomyślnie usunięty.
+        alert: Nie można zniszczyć obrazu.
+        confirm: Czy na pewno chcesz usunąć obraz? Tego działania nie można cofnąć!
+    errors:
+      messages:
+        in_between: musi być pomiędzy %{min} i %{max}
+        wrong_content_type: typ treści %{content_type} nie pasuje do żadnego z akceptowanych typów treści %{accepted_content_types}

@@ -1,5 +1,5 @@
 # coding: utf-8
-require 'rails_helper'
+require "rails_helper"
 
 describe DeviseMailer do
   describe "#confirmation_instructions" do
@@ -7,7 +7,7 @@ describe DeviseMailer do
       user = create(:user, locale: "es")
 
       email = I18n.with_locale :en do
-        DeviseMailer.confirmation_instructions(user, "ABC")
+        described_class.confirmation_instructions(user, "ABC")
       end
 
       expect(email.subject).to include("confirmación")

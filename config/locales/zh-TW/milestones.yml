@@ -1,0 +1,7 @@
+zh-TW:
+  milestones:
+    index:
+      no_milestones: 沒有定義里程碑
+    show:
+      publication_date: "發佈於 %{publication_date}"
+      status_changed: 投資狀態改為

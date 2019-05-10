@@ -1,0 +1,123 @@
+it:
+  valuation:
+    header:
+      title: Valutazione
+    menu:
+      title: Valutazione
+      budgets: Bilanci partecipativi
+      spending_proposals: Proposte di spesa
+    budgets:
+      index:
+        title: Bilanci partecipativi
+        filters:
+          current: Aperti
+          finished: Terminati
+        table_name: Nominativo
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Proposte di investimento assegnate in valutazione
+        table_actions: Azioni
+        evaluate: Valutare
+    budget_investments:
+      index:
+        headings_filter_all: Tutte le voci
+        filters:
+          valuation_open: Aperti
+          valuating: Valutazione in corso
+          valuation_finished: Stima conclusa
+        assigned_to: "Assegnate a %{valuator}"
+        title: Progetti di investimento
+        edit: Modificare il dossier
+        valuators_assigned:
+          one: Valutatore assegnato
+          other: "%{count} valutatori assegnati"
+        no_valuators_assigned: Nessuno stimatore assegnato
+        table_id: ID
+        table_title: Titolo
+        table_heading_name: Denominazione della voce di bilancio
+        table_actions: Azioni
+        no_investments: "Non esistono progetti d'investimento."
+      show:
+        back: Indietro
+        title: Progetto di investimento
+        info: Info sull'autore
+        by: Inviato da
+        sent: Inviato alle
+        heading: Intestazione
+        dossier: Dossier
+        edit_dossier: Modificare il dossier
+        price: Costi
+        price_first_year: Costo del primo anno
+        currency: "€"
+        feasibility: Fattibilità
+        feasible: Fattibile
+        unfeasible: Irrealizzabile
+        undefined: Non definito
+        valuation_finished: Stima conclusa
+        duration: Tempo massimo di esecuzione
+        responsibles: Responsabili
+        assigned_admin: Admin assegnato
+        assigned_valuators: Stimatori assegnati
+      edit:
+        dossier: Dossier
+        price_html: "Prezzo (%{currency})"
+        price_first_year_html: "Costo durante il primo anno (%{currency}) <small>(dati facoltativi, non pubblici)</small>"
+        price_explanation_html: Spiegazione dei costi
+        feasibility: Fattibilità
+        feasible: Fattibile
+        unfeasible: Irrealizzabile
+        undefined_feasible: In sospeso
+        feasible_explanation_html: Informazioni sulla fattibilità
+        valuation_finished: Stima conclusa
+        duration_html: Tempo massimo di esecuzione
+        save: Salva modifiche
+      notice:
+        valuate: "Dossier aggiornato"
+    spending_proposals:
+      index:
+        geozone_filter_all: Tutti i distretti
+        filters:
+          valuation_open: Aperti
+          valuating: Valutazione in corso
+          valuation_finished: Stima conclusa
+        title: Progetti di investimento per bilancio partecipativo
+        edit: Modificare
+      show:
+        back: Indietro
+        heading: Progetto di investimento
+        info: Info sull'autore
+        association_name: Associazione
+        by: Inviato da
+        sent: Inviato alle
+        geozone: Ambito
+        dossier: Dossier
+        edit_dossier: Modificare il dossier
+        price: Costi
+        price_first_year: Costo del primo anno
+        currency: "€"
+        feasibility: Fattibilità
+        feasible: Fattibile
+        not_feasible: Irrealizzabile
+        undefined: Non definito
+        valuation_finished: Stima conclusa
+        time_scope: Tempo massimo di esecuzione
+        internal_comments: Commenti ad uso interno
+        responsibles: Responsabili
+        assigned_admin: Admin assegnato
+        assigned_valuators: Stimatori assegnati
+      edit:
+        dossier: Dossier
+        price_html: "Prezzo (%{currency})"
+        price_first_year_html: "Costo del primo anno (%{currency})"
+        currency: "€"
+        price_explanation_html: Spiegazione dei costi
+        feasibility: Fattibilità
+        feasible: Fattibile
+        not_feasible: Irrealizzabile
+        undefined_feasible: In sospeso
+        feasible_explanation_html: Informazioni sulla fattibilità
+        valuation_finished: Stima conclusa
+        time_scope_html: Tempo massimo di esecuzione
+        internal_comments_html: Commenti ad uso interno
+        save: Salva modifiche
+      notice:
+        valuate: "Dossier aggiornato"

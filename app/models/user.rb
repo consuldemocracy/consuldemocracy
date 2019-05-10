@@ -1,9 +1,9 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
 
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
+         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
 
   acts_as_voter
@@ -23,14 +23,15 @@ class User < ActiveRecord::Base
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
-  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
+  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: "Budget::Investment"
   has_many :comments, -> { with_hidden }
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
-  has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
-  has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
-  has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
+  has_many :direct_messages_sent,     class_name: "DirectMessage", foreign_key: :sender_id
+  has_many :direct_messages_received, class_name: "DirectMessage", foreign_key: :receiver_id
+  has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
+  has_many :follows
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
@@ -50,17 +51,25 @@ class User < ActiveRecord::Base
   attr_accessor :use_redeemable_code
   attr_accessor :login
 
-  scope :administrators, -> { joins(:administrators) }
+  scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
-  scope :by_document,    ->(document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :by_document,    ->(document_type, document_number) do
+    where(document_type: document_type, document_number: document_number)
+  end
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
+  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).distinct }
+  scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
+  scope :by_username_email_or_document_number, ->(search_string) do
+    string = "%#{search_string}%"
+    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+  end
 
   before_validation :clean_document_number
 
@@ -75,7 +84,7 @@ class User < ActiveRecord::Base
       email: oauth_email,
       oauth_email: oauth_email,
       password: Devise.friendly_token[0, 20],
-      terms_of_service: '1',
+      terms_of_service: "1",
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
   end
@@ -85,12 +94,17 @@ class User < ActiveRecord::Base
   end
 
   def debate_votes(debates)
-    voted = votes.for_debates(debates)
+    voted = votes.for_debates(Array(debates).map(&:id))
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
   def proposal_votes(proposals)
-    voted = votes.for_proposals(proposals)
+    voted = votes.for_proposals(Array(proposals).map(&:id))
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
+  def legislation_proposal_votes(proposals)
+    voted = votes.for_legislation_proposals(proposals)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
@@ -111,6 +125,16 @@ class User < ActiveRecord::Base
 
   def voted_in_group?(group)
     votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+  end
+
+  def headings_voted_within_group(group)
+    Budget::Heading.joins(:translations)
+                   .order("name")
+                   .where(id: voted_investments.by_group(group).pluck(:heading_id))
+  end
+
+  def voted_investments
+    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
   end
 
   def administrator?
@@ -155,7 +179,7 @@ class User < ActiveRecord::Base
   end
 
   def has_official_email?
-    domain = Setting['email_domain_for_officials']
+    domain = Setting["email_domain_for_officials"]
     email.present? && ((email.end_with? "@#{domain}") || (email.end_with? ".#{domain}"))
   end
 
@@ -168,12 +192,16 @@ class User < ActiveRecord::Base
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
     proposal_ids = Proposal.where(author_id: id).pluck(:id)
+    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
+    proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
 
     hide
 
     Debate.hide_all debates_ids
     Comment.hide_all comments_ids
     Proposal.hide_all proposal_ids
+    Budget::Investment.hide_all investment_ids
+    ProposalNotification.hide_all proposal_notification_ids
   end
 
   def erase(erase_reason = nil)
@@ -199,7 +227,8 @@ class User < ActiveRecord::Base
   end
 
   def take_votes_if_erased_document(document_number, document_type)
-    erased_user = User.erased.where(document_number: document_number).where(document_type: document_type).first
+    erased_user = User.erased.where(document_number: document_number)
+                             .where(document_type: document_type).first
     if erased_user.present?
       take_votes_from(erased_user)
       erased_user.update(document_number: nil, document_type: nil)
@@ -211,7 +240,8 @@ class User < ActiveRecord::Base
     Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
-    update(former_users_data_log: "#{former_users_data_log} | id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}")
+    data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
+    update(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
 
   def locked?
@@ -223,15 +253,16 @@ class User < ActiveRecord::Base
   end
 
   def self.username_max_length
-    @@username_max_length ||= columns.find { |c| c.name == 'username' }.limit || 60
+    @@username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
   end
 
   def self.minimum_required_age
-    (Setting['min_age_to_participate'] || 16).to_i
+    (Setting["min_age_to_participate"] || 16).to_i
   end
 
   def show_welcome_screen?
-    sign_in_count == 1 && unverified? && !organization && !administrator?
+    verification = Setting["feature.user.skip_verification"].present? ? true : unverified?
+    sign_in_count == 1 && verification && !organization && !administrator?
   end
 
   def password_required?
@@ -308,10 +339,24 @@ class User < ActiveRecord::Base
     where(conditions.to_hash).where(["username = ?", login]).first
   end
 
+  def self.find_by_manager_login(manager_login)
+    find_by(id: manager_login.split("_").last)
+  end
+
+  def interests
+    followables = follows.map(&:followable)
+    followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
   private
 
     def clean_document_number
-      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
+      return unless document_number.present?
+      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
     end
 
     def validate_username_length

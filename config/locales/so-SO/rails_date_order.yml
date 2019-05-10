@@ -1,0 +1,6 @@
+so:
+  date:
+    order:
+      - :year
+      - :month
+      - :day

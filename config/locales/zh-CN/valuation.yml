@@ -1,0 +1,126 @@
+zh-CN:
+  valuation:
+    header:
+      title: 评估
+    menu:
+      title: 评估
+      budgets: 参与性预算
+      spending_proposals: 支出建议
+    budgets:
+      index:
+        title: 参与性预算
+        filters:
+          current: 打开
+          finished: 已完成
+        table_name: 名字
+        table_phase: 阶段
+        table_assigned_investments_valuation_open: 投资项目被分配为评估开放
+        table_actions: 行动
+        evaluate: 评估
+    budget_investments:
+      index:
+        headings_filter_all: 所有标题
+        filters:
+          valuation_open: 打开
+          valuating: 评估中
+          valuation_finished: 评估已完成
+        assigned_to: "已分配给%{valuator}"
+        title: 投资项目
+        edit: 编辑档案
+        valuators_assigned:
+          other: "已分配%{count}位评估员"
+        no_valuators_assigned: 没有指定评估员
+        table_id: ID
+        table_title: 标题
+        table_heading_name: 标题名称
+        table_actions: 行动
+        no_investments: "没有投资项目"
+      show:
+        back: 返回
+        title: 投资项目
+        info: 作者资讯
+        by: 发送人
+        sent: 发送于
+        heading: 标题
+        dossier: 档案
+        edit_dossier: 编辑档案
+        price: 价格
+        price_first_year: 第一年的成本
+        currency: "€"
+        feasibility: 可行性
+        feasible: 可行
+        unfeasible: 不可行
+        undefined: 未定义
+        valuation_finished: 评估已完成
+        duration: 时间范围
+        responsibles: 责任
+        assigned_admin: 已分配管理员
+        assigned_valuators: 指定的评估员
+      edit:
+        dossier: 档案
+        price_html: "价格 (%{currency})"
+        price_first_year_html: "第一年的成本 (%{currency}) <small>(可选, 数据不公开)</small>"
+        price_explanation_html: 价格说明
+        feasibility: 可行性
+        feasible: 可行
+        unfeasible: 不可行
+        undefined_feasible: 有待
+        feasible_explanation_html: 可行性说明
+        valuation_finished: 评估已完成
+        valuation_finished_alert: "您确定要把此报告标记为已完成吗？如果您这样做了，将无法再修改。"
+        not_feasible_alert: "立即发送电子邮件给项目的作者，并附有不可行的报告。"
+        duration_html: 时间范围
+        save: 保存更改
+      notice:
+        valuate: "档案已更新"
+      valuation_comments: 评估的评论
+      not_in_valuating_phase: 只有预算处于评估阶段，才可以对投资进行评估
+    spending_proposals:
+      index:
+        geozone_filter_all: 所有区域
+        filters:
+          valuation_open: 打开
+          valuating: 评估中
+          valuation_finished: 评估已完成
+        title: 参与性预算的投资项目
+        edit: 编辑
+      show:
+        back: 返回
+        heading: 投资项目
+        info: 作者资讯
+        association_name: 协会
+        by: 发送人
+        sent: 发送于
+        geozone: 范围
+        dossier: 档案
+        edit_dossier: 编辑档案
+        price: 价格
+        price_first_year: 第一年的成本
+        currency: "€"
+        feasibility: 可行性
+        feasible: 可行
+        not_feasible: 不可行
+        undefined: 未定义
+        valuation_finished: 评估已完成
+        time_scope: 时间范围
+        internal_comments: 内部评论
+        responsibles: 责任
+        assigned_admin: 已分配管理员
+        assigned_valuators: 指定的评估员
+      edit:
+        dossier: 档案
+        price_html: "价格 (%{currency})"
+        price_first_year_html: "第一年的成本 (%{currency})"
+        currency: "€"
+        price_explanation_html: 价格说明
+        feasibility: 可行性
+        feasible: 可行
+        not_feasible: 不可行
+        undefined_feasible: 有待
+        feasible_explanation_html: 可行性说明
+        valuation_finished: 评估已完成
+        time_scope_html: 时间范围
+        internal_comments_html: 内部评论
+        save: 保存更改
+      notice:
+        valuate: "档案已更新"

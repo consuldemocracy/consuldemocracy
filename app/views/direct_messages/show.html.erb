@@ -1,9 +1,6 @@
 <div class="row">
   <div class="small-12 medium-9 column">
-    <%= link_to user_path(@direct_message.receiver), class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("shared.back") %>
-    <% end %>
+    <%= back_link_to user_path(@direct_message.receiver) %>
 
     <div class="clear"></div>
 

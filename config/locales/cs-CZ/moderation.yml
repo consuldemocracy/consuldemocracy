@@ -1,0 +1,67 @@
+cs:
+  moderation:
+    comments:
+      index:
+        confirm: Jste si jisti?
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Nevyřízený
+        headers:
+          comment: Komentář
+          moderate: Moderovat
+        order: Pořadí
+        title: Komentáře
+    dashboard:
+      index:
+        title: Moderování
+    debates:
+      index:
+        confirm: Jste si jisti?
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Nevyřízený
+        headers:
+          debate: Debata
+          moderate: Moderovat
+        order: Pořadí
+        title: Debaty
+    header:
+      title: Moderování
+    menu:
+      flagged_comments: Komentáře
+      flagged_debates: Debaty
+      proposals: Návrhy
+    proposals:
+      index:
+        confirm: Jste si jisti?
+        filter: Filtr
+        filters:
+          all: Vše
+        headers:
+          moderate: Moderovat
+          proposal: Návrhy
+        title: Návrhy
+    budget_investments:
+      index:
+        confirm: Jste si jisti?
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Nevyřízený
+        headers:
+          moderate: Moderovat
+          budget_investment: Rozpočet
+    proposal_notifications:
+      index:
+        confirm: Jste si jisti?
+        filter: Filtr
+        filters:
+          all: Vše
+        headers:
+          moderate: Moderovat
+        title: Upozornění k návrhům
+    users:
+      index:
+        search: Vyhledat

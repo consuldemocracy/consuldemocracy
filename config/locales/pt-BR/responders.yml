@@ -1,0 +1,39 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} criado com sucesso."
+        debate: "Debate criado com sucesso."
+        direct_message: "Sua mensagem foi enviada com sucesso."
+        poll: "Votação criada com sucesso."
+        poll_booth: "Urna criada com sucesso."
+        poll_question_answer: "Resposta criada com sucesso"
+        poll_question_answer_video: "Vídeo criado com sucesso"
+        poll_question_answer_image: "Upload da imagem feito com sucesso"
+        proposal: "Proposta criada com sucesso."
+        proposal_notification: "Sua mensagem foi enviada corretamente."
+        spending_proposal: "Proposta de gasto criada com sucesso. Você pode acessá-la em %{activity}"
+        budget_investment: "Proposta de investimento criada com sucesso."
+        signature_sheet: "Folha de assinatura criada com sucesso"
+        topic: "Tópico criado com êxito."
+        valuator_group: "Grupo avaliador criado com sucesso"
+      save_changes:
+        notice: Alterações salvas
+      update:
+        notice: "%{resource_name} atualizado com êxito."
+        debate: "Debate atualizado com êxito."
+        poll: "Votação atualizada com sucesso."
+        poll_booth: "Urna atualizada com sucesso."
+        proposal: "Proposta atualizada com sucesso."
+        spending_proposal: "Projeto de investimento atualizado com sucesso."
+        budget_investment: "Projeto de investimento atualizado com sucesso."
+        topic: "Tópico atualizado com êxito."
+        valuator_group: "Grupo avaliador atualizado com sucesso"
+        translation: "Tradução atualizada com sucesso"
+      destroy:
+        spending_proposal: "Proposta de gasto excluída com sucesso."
+        budget_investment: "Projeto de investimento excluído com sucesso."
+        error: "Não foi possível excluir"
+        topic: "Tópico excluído com sucesso."
+        poll_question_answer_video: "Vídeo de resposta excluído com sucesso."
+        valuator_group: "Grupo avaliador apagado com sucesso"

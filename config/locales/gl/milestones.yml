@@ -1,0 +1,8 @@
+gl:
+  milestones:
+    index:
+      no_milestones: Non hai fitos definidos
+      progress: Progreso
+    show:
+      publication_date: "Publicouse o %{publication_date}"
+      status_changed: O investimento mudou de estado a

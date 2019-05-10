@@ -1,13 +1,19 @@
 module Budgets
   class InvestmentsController < ApplicationController
+
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include RandomSeed
+    include ImageAttributes
 
-    before_action :authenticate_user!, except: [:index, :show]
+    PER_PAGE = 10
 
-    load_and_authorize_resource :budget
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
+    before_action :authenticate_user!, except: [:index, :show, :json_data]
+
+    load_and_authorize_resource :budget, except: :json_data
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
+                                except: :json_data
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
@@ -15,12 +21,18 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+    before_action :set_view, only: :index
+    before_action :load_content_blocks, only: :index
+
+    skip_authorization_check only: :json_data
 
     feature_flag :budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show, :suggest]
+
+    valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners]
+    has_filters valid_filters, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -28,8 +40,11 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
+
       @investment_ids = @investments.pluck(:id)
+      @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
+
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
     end
@@ -40,6 +55,7 @@ module Budgets
     def show
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+      @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
@@ -51,7 +67,7 @@ module Budgets
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
         redirect_to budget_investment_path(@budget, @investment),
-                    notice: t('flash.actions.create.budget_investment')
+                    notice: t("flash.actions.create.budget_investment")
       else
         render :new
       end
@@ -59,7 +75,7 @@ module Budgets
 
     def destroy
       @investment.destroy
-      redirect_to user_path(current_user, filter: 'budget_investments'), notice: t('flash.actions.destroy.budget_investment')
+      redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
     def vote
@@ -77,6 +93,19 @@ module Budgets
       super
     end
 
+    def json_data
+      investment =  Budget::Investment.find(params[:id])
+      data = {
+        investment_id: investment.id,
+        investment_title: investment.title,
+        budget_id: investment.budget.id
+      }.to_json
+
+      respond_to do |format|
+        format.json { render json: data }
+      end
+    end
+
     private
 
       def resource_model
@@ -91,18 +120,13 @@ module Budgets
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
-      def set_random_seed
-        if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99) / 100.0
-          seed = Float(params[:random_seed]) rescue 0
-          Budget::Investment.connection.execute("select setseed(#{seed})")
-        else
-          params[:random_seed] = nil
-        end
-      end
-
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
+        params.require(:budget_investment)
+              .permit(:title, :description, :heading_id, :tag_list,
+                      :organization_name, :location, :terms_of_service, :skip_map,
+                      image_attributes: image_attributes,
+                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      map_location_attributes: [:latitude, :longitude, :zoom])
       end
 
       def load_ballot
@@ -114,6 +138,7 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find(params[:heading_id])
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          load_map
         end
       end
 
@@ -121,8 +146,30 @@ module Budgets
         @categories = ActsAsTaggableOn::Tag.category.order(:name)
       end
 
+      def load_content_blocks
+        @heading_content_blocks = @heading.content_blocks.where(locale: I18n.locale) if @heading
+      end
+
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def set_view
+        @view = (params[:view] == "minimal") ? "minimal" : "default"
+      end
+
+      def investments
+        if @current_order == "random"
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .sort_by_random(session[:random_seed])
+        else
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}")
+        end
+      end
+
+      def load_map
+        @map_location = MapLocation.load_from_heading(@heading)
       end
 
   end

@@ -1,116 +1,201 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin poll questions' do
+feature "Admin poll questions" do
 
   background do
     login_as(create(:administrator).user)
   end
 
-  scenario 'Index' do
-    question1 = create(:poll_question)
-    question2 = create(:poll_question)
+  it_behaves_like "translatable",
+                  "poll_question",
+                  "edit_admin_question_path",
+                  %w[title]
 
-    visit admin_questions_path
+  scenario "Index" do
+    poll1 = create(:poll)
+    poll2 = create(:poll)
+    poll3 = create(:poll)
+    proposal = create(:proposal)
+    question1 = create(:poll_question, poll: poll1)
+    question2 = create(:poll_question, poll: poll2)
+    question3 = create(:poll_question, poll: poll3, proposal: proposal)
 
-    expect(page).to have_content(question1.title)
-    expect(page).to have_content(question2.title)
+    visit admin_poll_path(poll1)
+    expect(page).to have_content(poll1.name)
+
+    within("#poll_question_#{question1.id}") do
+      expect(page).to have_content(question1.title)
+      expect(page).to have_content("Edit answers")
+      expect(page).to have_content("Edit")
+      expect(page).to have_content("Delete")
+    end
+
+    visit admin_poll_path(poll2)
+    expect(page).to have_content(poll2.name)
+
+    within("#poll_question_#{question2.id}") do
+      expect(page).to have_content(question2.title)
+      expect(page).to have_content("Edit answers")
+      expect(page).to have_content("Edit")
+      expect(page).to have_content("Delete")
+    end
+
+    visit admin_poll_path(poll3)
+    expect(page).to have_content(poll3.name)
+
+    within("#poll_question_#{question3.id}") do
+      expect(page).to have_content(question3.title)
+      expect(page).to have_link("(See proposal)", href: proposal_path(question3.proposal))
+      expect(page).to have_content("Edit answers")
+      expect(page).to have_content("Edit")
+      expect(page).to have_content("Delete")
+    end
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     geozone = create(:geozone)
     poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
     question = create(:poll_question, poll: poll)
 
-    visit admin_question_path(question)
+    visit admin_poll_path(poll)
+    click_link "#{question.title}"
 
     expect(page).to have_content(question.title)
-    expect(page).to have_content(question.description)
     expect(page).to have_content(question.author.name)
-    expect(page).to have_content(question.valid_answers.join(" "))
   end
 
-  scenario 'Create' do
-    poll = create(:poll, name: 'Movies')
+  scenario "Create" do
+    poll = create(:poll, name: "Movies")
     title = "Star Wars: Episode IV - A New Hope"
-    description = %{
-      During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
-      Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....
-    }
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
     click_link "Create question"
 
-    select 'Movies', from: 'poll_question_poll_id'
-    fill_in 'poll_question_title', with: title
-    fill_in 'poll_question_description', with: description
+    expect(page).to have_content("Create question to poll Movies")
+    expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
+                                   visible: false)
+    fill_in "Question", with: title
 
-    click_button 'Save'
+    click_button "Save"
 
     expect(page).to have_content(title)
-    expect(page).to have_content(description)
   end
 
-  scenario 'Create from successful proposal index' do
-    poll = create(:poll, name: 'Proposals')
-    proposal = create(:proposal, :successful)
+  scenario "Create from proposal" do
+    create(:poll, name: "Proposals")
+    proposal = create(:proposal)
 
-    visit proposals_path
-    click_link "Create question"
+    visit admin_proposal_path(proposal)
 
-    expect(current_path).to eq(new_admin_question_path)
-    expect(page).to have_field('poll_question_title', with: proposal.title)
-    expect(page).to have_field('poll_question_description', with: proposal.description)
-    expect(page).to have_field('poll_question_valid_answers', with: "Yes, No")
+    expect(page).not_to have_content("This proposal has reached the required supports")
+    click_link "Add this proposal to a poll to be voted"
 
-    select 'Proposals', from: 'poll_question_poll_id'
+    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
+    expect(page).to have_field("Question", with: proposal.title)
 
-    click_button 'Save'
+    select "Proposals", from: "poll_question_poll_id"
+
+    click_button "Save"
 
     expect(page).to have_content(proposal.title)
-    expect(page).to have_content(proposal.description)
-    expect(page).to have_link(proposal.title, href: proposal_path(proposal))
-    expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
   end
 
-  pending "Create from successul proposal show"
+  scenario "Create from successful proposal" do
+    create(:poll, name: "Proposals")
+    proposal = create(:proposal, :successful)
 
-  scenario 'Update' do
-    question1 = create(:poll_question)
+    visit admin_proposal_path(proposal)
 
-    visit admin_questions_path
+    expect(page).to have_content("This proposal has reached the required supports")
+    click_link "Add this proposal to a poll to be voted"
+
+    expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
+    expect(page).to have_field("Question", with: proposal.title)
+
+    select "Proposals", from: "poll_question_poll_id"
+
+    click_button "Save"
+
+    expect(page).to have_content(proposal.title)
+  end
+
+  scenario "Update" do
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
+
+    visit admin_poll_path(poll)
+
     within("#poll_question_#{question1.id}") do
       click_link "Edit"
     end
 
     old_title = question1.title
     new_title = "Potatoes are great and everyone should have one"
-    fill_in 'poll_question_title', with: new_title
+    fill_in "Question", with: new_title
 
-    click_button 'Save'
+    click_button "Save"
 
     expect(page).to have_content "Changes saved"
     expect(page).to have_content new_title
-
-    visit admin_questions_path
-
-    expect(page).to have_content(new_title)
-    expect(page).to_not have_content(old_title)
+    expect(page).not_to have_content(old_title)
   end
 
-  scenario 'Destroy' do
-    question1 = create(:poll_question)
-    question2 = create(:poll_question)
+  scenario "Destroy" do
+    poll = create(:poll)
+    question1 = create(:poll_question, poll: poll)
+    question2 = create(:poll_question, poll: poll)
 
-    visit admin_questions_path
+    visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
       click_link "Delete"
     end
 
-    expect(page).to_not have_content(question1.title)
+    expect(page).not_to have_content(question1.title)
     expect(page).to have_content(question2.title)
   end
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
 
+  context "Poll select box" do
+
+    scenario "translates the poll name in options", :js do
+
+      poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
+      proposal = create(:proposal)
+
+      visit admin_proposal_path(proposal)
+      click_link "Add this proposal to a poll to be voted"
+
+      expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
+
+      select("Español", from: "locale-switcher")
+
+      expect(page).to have_select("poll_question_poll_id",
+                                  options: ["Seleccionar votación", poll.name_es])
+    end
+
+    scenario "uses fallback if name is not translated to current locale", :js do
+      unless globalize_french_fallbacks.first == :es
+        skip("Spec only useful when French falls back to Spanish")
+      end
+
+      poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
+      proposal = create(:proposal)
+
+      visit admin_proposal_path(proposal)
+      click_link "Add this proposal to a poll to be voted"
+
+      expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
+
+      select("Français", from: "locale-switcher")
+
+      expect(page).to have_select("poll_question_poll_id",
+                                  options: ["Sélectionner un vote", poll.name_es])
+    end
+  end
+
+  def globalize_french_fallbacks
+    Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }
+  end
 end

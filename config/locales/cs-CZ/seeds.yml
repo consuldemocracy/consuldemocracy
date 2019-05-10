@@ -1,0 +1,40 @@
+cs:
+  seeds:
+    organizations:
+      human_rights: Lidská práva
+      neighborhood_association: Sdružování
+    categories:
+      associations: Sdružení
+      culture: Kultura
+      sports: Sport
+      social_rights: Sociální práva
+      economy: Ekonomika
+      employment: Zaměstnanost
+      equity: Spravedlnost
+      sustainability: Udržitelnosti
+      participation: Participace
+      mobility: Mobilita
+      media: Média
+      health: Zdraví
+      transparency: Transparentnost
+      security_emergencies: Bezpečnost a nouzové situace
+      environment: Životní prostředí
+    budgets:
+      budget: Participativní rozpočet
+      currency: Kč
+      groups:
+        all_city: Celé město
+        districts: Městské části
+      valuator_groups:
+        culture_and_sports: Kultura & Sport
+        gender_and_diversity: Politiky v oblasti rovnosti žen a mužů
+        urban_development: Udržitelný urbání rozboj
+      statuses:
+        studying_project: Studium projektu
+        bidding: Nabídka
+        executing_project: Realizace projektu
+        executed: Realizováno
+    polls:
+      current_poll: "Aktuální průzkum"
+      expired_poll_without_stats: "Prošlé průzkumy bez statistiky a výsledků"
+      expired_poll_with_stats: "Prošle průzkum se statistikou a výsledky"

@@ -1,9 +1,12 @@
-class Admin::Poll::QuestionsController < Admin::BaseController
+class Admin::Poll::QuestionsController < Admin::Poll::BaseController
+  include CommentableActions
+  include Translatable
+
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'
+  load_and_authorize_resource :question, class: "Poll::Question"
 
   def index
-    @polls = Poll.all
+    @polls = Poll.not_budget
     @search = search_params[:search]
 
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
@@ -13,7 +16,6 @@ class Admin::Poll::QuestionsController < Admin::BaseController
 
   def new
     @polls = Poll.all
-    @question.valid_answers = I18n.t('poll_questions.default_valid_answers')
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
   end
@@ -54,11 +56,15 @@ class Admin::Poll::QuestionsController < Admin::BaseController
   private
 
     def question_params
-      params.require(:poll_question).permit(:poll_id, :title, :question, :description, :proposal_id, :valid_answers)
+      attributes = [:poll_id, :question, :proposal_id]
+      params.require(:poll_question).permit(*attributes, translation_params(Poll::Question))
     end
 
     def search_params
       params.permit(:poll_id, :search)
     end
 
+    def resource
+      @poll_question ||= Poll::Question.find(params[:id])
+    end
 end

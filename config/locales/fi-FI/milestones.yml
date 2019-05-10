@@ -1,0 +1,8 @@
+fi:
+  milestones:
+    index:
+      no_milestones: Ei määritettyjä tavoitteita
+      progress: Edistyminen
+    show:
+      publication_date: "Julkaistu %{publication_date}"
+      status_changed: Tila vaihdettu

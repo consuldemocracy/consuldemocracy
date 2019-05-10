@@ -1,0 +1,71 @@
+fi:
+  legislation:
+    annotations:
+      comments:
+        see_all: Näytä kaikki
+        comments_count:
+          one: "%{count} kommentti"
+          other: "%{count} kommenttia"
+        replies_count:
+          one: "%{count} vastaus"
+          other: "%{count} vastausta"
+        cancel: Peruuta
+        publish_comment: Julkaise kommentti
+      form:
+        login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
+        signin: Kirjaudu sisään
+        signup: Rekisteröidy
+      index:
+        title: Kommentit
+        comments_count:
+          one: "%{count} kommentti"
+          other: "%{count} kommenttia"
+      show:
+        title: Kommentti
+    draft_versions:
+      changes:
+        title: Muutokset
+      show:
+        see_comments: Näytä kaikki kommentit
+        text_toc: Sisällysluettelo
+        text_body: Teksti
+        text_comments: Kommentit
+    processes:
+      header:
+        additional_info: Lisätiedot
+        description: Kuvaus
+      proposals:
+        filters:
+          random: Satunnainen
+          winners: Valittu
+      index:
+        filter: Suodatin
+      shared:
+        homepage: Kotisivu
+        allegations_dates: Kommentit
+        proposals_dates: Ehdotukset
+    questions:
+      comments:
+        comment_button: Julkaise vastaus
+        comments_title: Avaa vastaukset
+        comments_closed: Suljettu vaihe
+        form:
+          leave_comment: Jätä vastauksesi
+      question:
+        comments:
+          zero: Ei kommentteja
+          one: "%{count} kommentti"
+          other: "%{count} kommenttia"
+      show:
+        next_question: Seuraava kysymys
+        first_question: Ensimmäinen kysymys
+        share: Jaa
+      participation:
+        signin: Kirjaudu sisään
+        signup: Rekisteröidy
+        verify_account: vahvista tilisi
+    shared:
+      share: Jaa
+    proposals:
+      form:
+        tags_label: "Kategoriat"

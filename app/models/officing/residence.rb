@@ -4,7 +4,7 @@ class Officing::Residence
 
   attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth
 
-  before_validation :call_census_api
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -29,13 +29,13 @@ class Officing::Residence
         document_number:       document_number,
         document_type:         document_type,
         geozone:               geozone,
-        date_of_birth:         date_of_birth.to_datetime,
+        date_of_birth:         date_of_birth.in_time_zone.to_datetime,
         gender:                gender,
         residence_verified_at: Time.current,
         verified_at:           Time.current,
         erased_at:             Time.current,
         password:              random_password,
-        terms_of_service:      '1',
+        terms_of_service:      "1",
         email:                 nil
       }
       self.user = User.create!(user_params)
@@ -75,7 +75,7 @@ class Officing::Residence
     return unless @census_api_response.valid?
 
     unless allowed_age?
-      errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
+      errors.add(:year_of_birth, I18n.t("verification.residence.new.error_not_allowed_age"))
     end
   end
 
@@ -101,8 +101,8 @@ class Officing::Residence
 
   private
 
-    def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
+    def retrieve_census_data
+      @census_api_response = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
@@ -119,7 +119,7 @@ class Officing::Residence
     end
 
     def random_password
-      (0...20).map { ('a'..'z').to_a[rand(26)] }.join
+      (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
 
 end

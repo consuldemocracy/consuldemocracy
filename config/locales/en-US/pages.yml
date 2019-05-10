@@ -1,0 +1,20 @@
+en-US:
+  pages:
+    help:
+      menu:
+        debates: "Debatten"
+      debates:
+        title: "Debatten"
+    accessibility:
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Debatten
+            - 
+            - 
+            - 
+            - 
+    verify:
+      email: Email

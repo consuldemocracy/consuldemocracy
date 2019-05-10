@@ -1,0 +1,24 @@
+val:
+  documents:
+    title: Documents
+    max_documents_allowed_reached_html: Has arribat al número màxim de documents permesos! <strong>Has d'eliminar un abans de poder pujar un altre.</strong>
+    form:
+      title: Documents
+      title_placeholder: Afegeix un títol descriptiu al document
+      attachment_label: Selecciona un document
+      delete_button: Eliminar document
+      cancel_button: Cancel·lar
+      note: "Pots pujar fins un màxim de %{max_documents_allowed} documents en els formats: %{accepted_content_types}, y de fins %{max_file_size} MB per arxiu."
+      add_new_document: Afegeix un nou document
+    actions:
+      destroy:
+        notice: El document s'ha eliminat correctament.
+        alert: El document no s'ha pogut eliminar.
+        confirm: Està segur que desitja eliminar aquest document? Aquesta acció no es pot desfer!
+    buttons:
+      download_document: Descarregar fitxer
+      destroy_document: Eliminar document
+    errors:
+      messages:
+        in_between: ha d'estar entre %{min} i %{max}
+        wrong_content_type: el tipus de contingut %{content_type} del fitxer no coincideix en cap dels tipus de contingut acceptats %{accepted_content_types}

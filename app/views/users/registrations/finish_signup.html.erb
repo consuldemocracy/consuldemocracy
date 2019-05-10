@@ -1,9 +1,9 @@
-<h2><%= t('omniauth.finish_signup.title') %></h2>
+<h2><%= t("omniauth.finish_signup.title") %></h2>
 
-<%= form_for current_user, as: :user, url: do_finish_signup_path, html: { role: 'form'} do |f| %>
-  <%= render 'shared/errors', resource: current_user %>
+<%= form_for current_user, as: :user, url: do_finish_signup_path, html: { role: "form"} do |f| %>
+  <%= render "shared/errors", resource: current_user %>
 
-  <div class='callout primary'>
+  <div class="callout primary">
     <%= t("omniauth.finish_signup.username_warning") %>
   </div>
 
@@ -19,8 +19,8 @@
     <%= f.hidden_field :email %>
   <% end %>
 
-  <%= f.submit t("devise_views.users.registrations.new.submit"), class: 'button expanded' %>
+  <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
   <div class="text-center">
-    <%= link_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: 'delete', method: :delete %>
+    <%= link_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: "delete", method: :delete %>
   </div>
 <% end %>

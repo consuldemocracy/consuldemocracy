@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin::Organizations' do
+feature "Admin::Organizations" do
 
   background do
     administrator = create(:user)
@@ -20,8 +20,8 @@ feature 'Admin::Organizations' do
 
       expect(page).to have_content("Human Rights")
       expect(page).to have_content(org.user.email)
-      expect(page).to_not have_content("Greentroll")
-      expect(page).to_not have_content("trol@troller.com")
+      expect(page).not_to have_content("Greentroll")
+      expect(page).not_to have_content("trol@troller.com")
       expect(page).to have_content("There is also one organisation with no users or with a hidden user")
     end
   end
@@ -40,15 +40,15 @@ feature 'Admin::Organizations' do
       fill_in "term", with: "      "
       click_button "Search"
 
-      expect(current_path).to eq(search_admin_organizations_path)
+      expect(page).to have_current_path(search_admin_organizations_path, ignore_query: true)
       within("#search-results") do
-        expect(page).to_not have_content("Get up, Stand up")
+        expect(page).not_to have_content("Get up, Stand up")
       end
     end
 
     scenario "finds by name" do
       visit search_admin_organizations_path
-      expect(page).to_not have_content("Get up, Stand up")
+      expect(page).not_to have_content("Get up, Stand up")
 
       fill_in "term", with: "Up, sta"
       click_button "Search"
@@ -60,7 +60,7 @@ feature 'Admin::Organizations' do
 
     scenario "finds by users email" do
       visit search_admin_organizations_path
-      expect(page).to_not have_content("Get up, Stand up")
+      expect(page).not_to have_content("Get up, Stand up")
 
       fill_in "term", with: @user.email
       click_button "Search"
@@ -72,7 +72,7 @@ feature 'Admin::Organizations' do
 
     scenario "finds by users phone number" do
       visit search_admin_organizations_path
-      expect(page).to_not have_content("Get up, Stand up")
+      expect(page).not_to have_content("Get up, Stand up")
 
       fill_in "term", with: @user.phone_number
       click_button "Search"
@@ -88,14 +88,14 @@ feature 'Admin::Organizations' do
 
     visit admin_organizations_path
     within("#organization_#{organization.id}") do
-      expect(current_path).to eq(admin_organizations_path)
-      expect(page).to have_link('Verify')
-      expect(page).to have_link('Reject')
+      expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
+      expect(page).to have_link("Verify")
+      expect(page).to have_link("Reject")
 
-      click_on 'Verify'
+      click_on "Verify"
     end
-    expect(current_path).to eq(admin_organizations_path)
-    expect(page).to have_content ('Verified')
+    expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
+    expect(page).to have_content "Verified"
 
     expect(organization.reload.verified?).to eq(true)
   end
@@ -108,18 +108,18 @@ feature 'Admin::Organizations' do
     click_on "Verified"
 
     within("#organization_#{organization.id}") do
-      expect(page).to have_content ('Verified')
-      expect(page).to_not have_link('Verify')
-      expect(page).to have_link('Reject')
+      expect(page).to have_content "Verified"
+      expect(page).not_to have_link("Verify")
+      expect(page).to have_link("Reject")
 
-      click_on 'Reject'
+      click_on "Reject"
     end
-    expect(current_path).to eq(admin_organizations_path)
-    expect(page).to_not have_content (organization.name)
+    expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
+    expect(page).not_to have_content organization.name
 
-    click_on 'Rejected'
-    expect(page).to have_content ('Rejected')
-    expect(page).to have_content (organization.name)
+    click_on "Rejected"
+    expect(page).to have_content "Rejected"
+    expect(page).to have_content organization.name
 
     expect(organization.reload.rejected?).to eq(true)
   end
@@ -131,50 +131,50 @@ feature 'Admin::Organizations' do
     click_on "Rejected"
 
     within("#organization_#{organization.id}") do
-      expect(page).to have_link('Verify')
-      expect(page).to_not have_link('Reject', exact: true)
+      expect(page).to have_link("Verify")
+      expect(page).not_to have_link("Reject", exact: true)
 
-      click_on 'Verify'
+      click_on "Verify"
     end
-    expect(current_path).to eq(admin_organizations_path)
-    expect(page).to_not have_content (organization.name)
-    click_on('Verified')
+    expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
+    expect(page).not_to have_content organization.name
+    click_on("Verified")
 
-    expect(page).to have_content (organization.name)
+    expect(page).to have_content organization.name
 
     expect(organization.reload.verified?).to eq(true)
   end
 
   scenario "Current filter is properly highlighted" do
     visit admin_organizations_path
-    expect(page).to_not have_link('Pending')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Verified')
-    expect(page).to have_link('Rejected')
+    expect(page).not_to have_link("Pending")
+    expect(page).to have_link("All")
+    expect(page).to have_link("Verified")
+    expect(page).to have_link("Rejected")
 
-    visit admin_organizations_path(filter: 'all')
-    expect(page).to_not have_link('All')
-    expect(page).to have_link('Pending')
-    expect(page).to have_link('Verified')
-    expect(page).to have_link('Rejected')
+    visit admin_organizations_path(filter: "all")
+    expect(page).not_to have_link("All")
+    expect(page).to have_link("Pending")
+    expect(page).to have_link("Verified")
+    expect(page).to have_link("Rejected")
 
-    visit admin_organizations_path(filter: 'pending')
-    expect(page).to have_link('All')
-    expect(page).to_not have_link('Pending')
-    expect(page).to have_link('Verified')
-    expect(page).to have_link('Rejected')
+    visit admin_organizations_path(filter: "pending")
+    expect(page).to have_link("All")
+    expect(page).not_to have_link("Pending")
+    expect(page).to have_link("Verified")
+    expect(page).to have_link("Rejected")
 
-    visit admin_organizations_path(filter: 'verified')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Pending')
-    expect(page).to_not have_link('Verified')
-    expect(page).to have_link('Rejected')
+    visit admin_organizations_path(filter: "verified")
+    expect(page).to have_link("All")
+    expect(page).to have_link("Pending")
+    expect(page).not_to have_link("Verified")
+    expect(page).to have_link("Rejected")
 
-    visit admin_organizations_path(filter: 'rejected')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Pending')
-    expect(page).to have_link('Verified')
-    expect(page).to_not have_link('Rejected')
+    visit admin_organizations_path(filter: "rejected")
+    expect(page).to have_link("All")
+    expect(page).to have_link("Pending")
+    expect(page).to have_link("Verified")
+    expect(page).not_to have_link("Rejected")
   end
 
   scenario "Filtering organizations" do
@@ -182,37 +182,37 @@ feature 'Admin::Organizations' do
     create(:organization, :rejected, name: "Rejected Organization")
     create(:organization, :verified, name: "Verified Organization")
 
-    visit admin_organizations_path(filter: 'all')
-    expect(page).to have_content('Pending Organization')
-    expect(page).to have_content('Rejected Organization')
-    expect(page).to have_content('Verified Organization')
+    visit admin_organizations_path(filter: "all")
+    expect(page).to have_content("Pending Organization")
+    expect(page).to have_content("Rejected Organization")
+    expect(page).to have_content("Verified Organization")
 
-    visit admin_organizations_path(filter: 'pending')
-    expect(page).to have_content('Pending Organization')
-    expect(page).to_not have_content('Rejected Organization')
-    expect(page).to_not have_content('Verified Organization')
+    visit admin_organizations_path(filter: "pending")
+    expect(page).to have_content("Pending Organization")
+    expect(page).not_to have_content("Rejected Organization")
+    expect(page).not_to have_content("Verified Organization")
 
-    visit admin_organizations_path(filter: 'verified')
-    expect(page).to_not have_content('Pending Organization')
-    expect(page).to_not have_content('Rejected Organization')
-    expect(page).to have_content('Verified Organization')
+    visit admin_organizations_path(filter: "verified")
+    expect(page).not_to have_content("Pending Organization")
+    expect(page).not_to have_content("Rejected Organization")
+    expect(page).to have_content("Verified Organization")
 
-    visit admin_organizations_path(filter: 'rejected')
-    expect(page).to_not have_content('Pending Organization')
-    expect(page).to have_content('Rejected Organization')
-    expect(page).to_not have_content('Verified Organization')
+    visit admin_organizations_path(filter: "rejected")
+    expect(page).not_to have_content("Pending Organization")
+    expect(page).to have_content("Rejected Organization")
+    expect(page).not_to have_content("Verified Organization")
   end
 
   scenario "Verifying organization links remember the pagination setting and the filter" do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:organization) }
 
-    visit admin_organizations_path(filter: 'pending', page: 2)
+    visit admin_organizations_path(filter: "pending", page: 2)
 
-    click_on('Verify', match: :first)
+    click_on("Verify", match: :first)
 
-    expect(current_url).to include('filter=pending')
-    expect(current_url).to include('page=2')
+    expect(current_url).to include("filter=pending")
+    expect(current_url).to include("page=2")
   end
 
 end

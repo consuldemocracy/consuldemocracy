@@ -1,0 +1,20 @@
+zh-CN:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: 条目
+        other: 条目
+      more_pages:
+        display_entries: 显示<strong>%{total} %{entry_name}</strong>的<strong>%{first}&nbsp;-&nbsp;%{last}</strong>
+      one_page:
+        display_entries:
+          zero: "未找到%{entry_name}"
+          other: 有<strong>%{count} 个 %{entry_name}</strong>
+  views:
+    pagination:
+      current: 您在页面
+      first: 最先
+      last: 最后
+      next: 下一个
+      previous: 前一页
+      truncate: "&hellip;"

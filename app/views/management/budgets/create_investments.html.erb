@@ -1,12 +1,30 @@
-<table>
-<% @budgets.each do |budget| %>
-  <tr id="<%= dom_id(budget) %>">
-    <td><%= budget.name %></td>
-    <td><%= budget.translated_phase %></td>
-    <td align="right">
-      <%= link_to t("management.budgets.create_new_investment"),
-                  new_management_budget_investment_path(budget) %>
-    </td>
-  </tr>
+<h2><%= t("management.budgets.create_new_investment") %></h2>
+
+<% if @budgets.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("management.budgets.table_name") %></th>
+        <th><%= t("management.budgets.table_phase") %></th>
+        <th><%= t("management.budgets.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @budgets.each do |budget| %>
+        <tr id="<%= dom_id(budget) %>">
+          <td><%= budget.name %></td>
+          <td><%= budget.translated_phase %></td>
+          <td align="right">
+            <%= link_to t("management.budgets.create_new_investment"),
+                        new_management_budget_investment_path(budget),
+                        class: "button hollow" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("management.budgets.no_budgets") %>
+  </div>
 <% end %>
-</table>

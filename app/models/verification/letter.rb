@@ -22,14 +22,14 @@ class Verification::Letter
 
   def validate_existing_user
     unless user
-      errors.add(:email, I18n.t('devise.failure.invalid', authentication_keys: 'email'))
+      errors.add(:email, I18n.t("devise.failure.invalid", authentication_keys: "email"))
     end
   end
 
   def validate_correct_code
     return if errors.include?(:verification_code)
     if user.try(:letter_verification_code).to_i != verification_code.to_i
-      errors.add(:verification_code, I18n.t('verification.letter.errors.incorrect_code'))
+      errors.add(:verification_code, I18n.t("verification.letter.errors.incorrect_code"))
     end
   end
 

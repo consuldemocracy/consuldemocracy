@@ -1,0 +1,21 @@
+eu:
+  devise_views:
+    confirmations:
+      new:
+        email_label: E-mail
+    organizations:
+      registrations:
+        new:
+          email_label: E-mail
+    passwords:
+      new:
+        email_label: E-mail
+    unlocks:
+      new:
+        email_label: E-mail
+    users:
+      registrations:
+        edit:
+          email_label: E-mail
+        new:
+          email_label: E-mail

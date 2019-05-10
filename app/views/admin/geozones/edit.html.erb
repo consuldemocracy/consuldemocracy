@@ -1,13 +1,7 @@
-<div class="row">
+<%= back_link_to admin_geozones_path, t("admin.geozones.edit.back") %>
 
-  <div class="small-12 column">
-    <%= link_to admin_geozones_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("admin.geozones.edit.back") %>
-    <% end %>
-
-    <h1><%= t("admin.geozones.edit.editing") %></h1>
-
-    <%= render "form" %>
-  </div>
+<div class="small-12 column">
+  <h2><%= t("admin.geozones.edit.editing") %></h2>
 </div>
+
+<%= render "form" %>

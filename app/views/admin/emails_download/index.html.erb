@@ -1,0 +1,17 @@
+<h2 class="inline-block"><%= t("admin.emails_download.index.title") %></h2>
+
+<div class="small-6">
+  <%= form_tag generate_csv_admin_emails_download_index_path,
+               method: :get,
+               id: "admin_download_emails" do %>
+
+    <label><%= t("admin.emails_download.index.download_segment") %></label>
+    <p class="help-text" id="emails-help-text">
+      <%= t("admin.emails_download.index.download_segment_help_text") %>
+    </p>
+
+    <%= select_tag :users_segment, options_for_select(user_segments_options) %>
+
+    <%= submit_tag t("admin.emails_download.index.download_emails_button"), class: "button" %>
+  <% end %>
+</div>

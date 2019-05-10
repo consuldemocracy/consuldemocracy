@@ -1,0 +1,66 @@
+sl:
+  officing:
+    header:
+      title: Glasovanje
+    dashboard:
+      index:
+        title: Nadzor glasovanj
+        info: Tukaj lahko verificiraš uporabniške dokumente in shranjuješ rezultate glasovanj
+    menu:
+      voters: Potrdi dokument
+      total_recounts: Skupna štetja in rezultati
+    polls:
+      final:
+        title: Glasovanja, pripravljena za končno štetje
+        no_polls: Ne nadzoruješ nobenih končnih štetij v nobenem od aktivnih glasovanj
+        select_poll: Izberi glasovanje
+        add_results: Dodaj rezultate
+    results:
+      flash:
+        create: "Rezultati shranjeni"
+        error_create: "Rezultati NISO bili shranjeni. Napaka v podatkih."
+        error_wrong_booth: "Napačno volišče. Rezultati NISO bili shranjeni."
+      new:
+        title: "%{poll} - Dodaj rezultate"
+        not_allowed: "Imaš dovoljenje za dodajanje rezultatov tega glasovanja"
+        booth: "Volišče"
+        date: "Datum"
+        select_booth: "Izberi volišče"
+        ballots_white: "Popolnoma prazne glasovnice"
+        ballots_null: "Neveljavne glasovnice"
+        ballots_total: "Skupaj glasovnic"
+        submit: "Shrani"
+        results_list: "Tvoji rezultati"
+        see_results: "Shrani rezultate"
+      index:
+        no_results: "Ni rezultatov"
+        results: Rezultati
+        table_answer: Odgovor
+        table_votes: Glasovi
+        table_whites: "Popolnoma prazne glasovnice"
+        table_nulls: "Neveljavne glasovnice"
+        table_total: "Skupaj glasovnic"
+    residence:
+      flash:
+        create: "Dokument verificiran v popisu"
+        not_allowed: "Danes tukaj nimaš opravkov"
+      new:
+        title: Preveri dokument
+        document_number: "Številka dokumenta (vključno s črkami)"
+        submit: Preveri dokument
+        error_verifying_census: "Popis ni mogel verificirati tega dokumenta."
+        form_errors: preprečuje verifikacijo tega dokumenta
+        no_assignments: "Danes tukaj nimaš opravkov"
+    voters:
+      new:
+        title: Glasovanja
+        table_poll: Glasovanje
+        table_status: Status glasovanj
+        table_actions: Dejanja
+      show:
+        can_vote: Lahko glasuje
+        error_already_voted: Je že sodeloval/-a v tem glasovanju
+        submit: Potrdi glas
+        success: "Glas vnešen!"
+      can_vote:
+        submit_disable_with: "Čakaj, potrjujem glas ..."

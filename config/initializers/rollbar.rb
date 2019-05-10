@@ -1,11 +1,11 @@
-require 'rollbar/rails'
+require "rollbar/rails"
 Rollbar.configure do |config|
   # Without configuration, Rollbar is enabled in all environments.
   # To disable in specific environments, set config.enabled=false.
 
   config.access_token = Rails.application.secrets.rollbar_server_token
 
-  # Here we'll disable all environments except 'production':
+  # Here we'll disable all environments except 'staging', 'preproduction' and 'production':
   if Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
     config.enabled = true
   else

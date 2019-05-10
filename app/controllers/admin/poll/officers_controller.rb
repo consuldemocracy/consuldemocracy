@@ -1,4 +1,4 @@
-class Admin::Poll::OfficersController < Admin::BaseController
+class Admin::Poll::OfficersController < Admin::Poll::BaseController
   load_and_authorize_resource :officer, class: "Poll::Officer", except: [:edit, :show]
 
   def index
@@ -28,12 +28,6 @@ class Admin::Poll::OfficersController < Admin::BaseController
   def destroy
     @officer.destroy
     redirect_to admin_officers_path
-  end
-
-  def show
-  end
-
-  def edit
   end
 
 end

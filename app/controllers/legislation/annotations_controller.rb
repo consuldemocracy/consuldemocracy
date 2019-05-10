@@ -1,4 +1,4 @@
-class Legislation::AnnotationsController < ApplicationController
+class Legislation::AnnotationsController < Legislation::BaseController
   skip_before_action :verify_authenticity_token
 
   before_action :authenticate_user!, only: [:create, :new_comment]
@@ -18,7 +18,7 @@ class Legislation::AnnotationsController < ApplicationController
     @commentable = @annotation
 
     if params[:sub_annotation_ids].present?
-      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(','))
+      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(","))
       annotations = [@commentable, @sub_annotations]
     else
       annotations = [@commentable]
@@ -30,7 +30,7 @@ class Legislation::AnnotationsController < ApplicationController
 
   def create
     if !@process.allegations_phase.open? || @draft_version.final_version?
-      render(json: {}, status: :not_found) && (return)
+      render(json: {}, status: :not_found) && return
     end
 
     existing_annotation = @draft_version.annotations.where(
@@ -102,8 +102,9 @@ class Legislation::AnnotationsController < ApplicationController
     end
 
     def convert_ranges_parameters
-      if params[:legislation_annotation] && params[:legislation_annotation][:ranges] && params[:legislation_annotation][:ranges].is_a?(String)
-        params[:legislation_annotation][:ranges] = JSON.parse(params[:legislation_annotation][:ranges])
+      annotation = params[:legislation_annotation]
+      if annotation && annotation[:ranges] && annotation[:ranges].is_a?(String)
+        params[:legislation_annotation][:ranges] = JSON.parse(annotation[:ranges])
       end
     rescue JSON::ParserError
     end

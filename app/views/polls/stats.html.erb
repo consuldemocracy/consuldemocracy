@@ -1,0 +1,96 @@
+<% provide :title do %><%= @poll.name %><% end %>
+
+<div class="polls-results-stats">
+  <%= render "poll_header" %>
+
+  <%= render "poll_subnav" %>
+
+  <div class="row margin" data-equalizer data-equalize-on="medium">
+    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.stats.title") %></strong></p>
+
+      <ul class="menu vertical margin-top">
+        <li><a href="#total"><%= t("polls.show.stats.total_participation") %></a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-9 column" data-equalizer-watch>
+      <h3 id="total"><%= t("polls.show.stats.total_participation") %></h3>
+
+      <p class="margin-top uppercase">
+        <%= t("polls.show.stats.total_votes") %><br>
+        <span class="number"><%= @stats[:total_participants] %></span>
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><%= t("polls.show.stats.votes") %></th>
+            <th scope="col"><%= t("polls.show.stats.web") %></th>
+            <th scope="col"><%= t("polls.show.stats.booth") %></th>
+            <th scope="col"><%= t("polls.show.stats.total") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= t("polls.show.stats.valid") %></th>
+            <td>
+              <%= @stats[:total_web_valid] %>
+              <small><em>(<%= @stats[:valid_percentage_web].round(2) %>%)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_booth_valid] %>
+              <small><em>(<%= @stats[:valid_percentage_booth].round(2) %>%)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_valid_votes] %>
+              <small><em>(<%= @stats[:total_valid_percentage].round(2) %>%)</em></small>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= t("polls.show.stats.white") %></th>
+            <td>
+              <%= @stats[:total_web_white] %>
+              <small><em>(<%= @stats[:white_percentage_web].round(2) %>%)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_booth_white] %>
+              <small><em>(<%= @stats[:white_percentage_booth].round(2) %>%)</em></small>
+            </td>
+            <td><%= @stats[:total_white_votes] %>
+              <small><em>(<%= @stats[:total_white_percentage].round(2) %>%)</em></small>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= t("polls.show.stats.null_votes") %></th>
+            <td>
+              <%= @stats[:total_web_null] %>
+              <small><em>(<%= @stats[:null_percentage_web].round(2) %>%)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_booth_null] %>
+              <small><em>(<%= @stats[:null_percentage_booth].round(2) %>%)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_null_votes] %>
+              <small><em>(<%= @stats[:total_null_percentage].round(2) %>%)</em></small>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= t("polls.show.stats.total") %></th>
+            <td>
+              <%= @stats[:total_participants_web] %>
+              <small><em>(<%= @stats[:total_participants_web_percentage].round(2) %>%)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_participants_booth] %>
+              <small><em>(<%= @stats[:total_participants_booth_percentage].round(2) %>%)</em></small>
+            </td>
+            <td><%= @stats[:total_participants_web] + @stats[:total_participants_booth] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

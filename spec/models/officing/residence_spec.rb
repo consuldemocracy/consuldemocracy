@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Officing::Residence do
 
@@ -7,34 +7,34 @@ describe Officing::Residence do
 
   describe "validations" do
 
-    it "should be valid" do
+    it "is valid" do
       expect(residence).to be_valid
     end
 
-    it "should not be valid without a document number" do
+    it "is not valid without a document number" do
       residence.document_number = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
-    it "should not be valid without a document type" do
+    it "is not valid without a document type" do
       residence.document_type = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
-    it "should not be valid without a year of birth" do
+    it "is not valid without a year of birth" do
       residence.year_of_birth = nil
-      expect(residence).to_not be_valid
+      expect(residence).not_to be_valid
     end
 
     describe "allowed age" do
-      it "should not be valid if user is under allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:date_of_birth).and_return(15.years.ago)
-        expect(residence).to_not be_valid
+      it "is not valid if user is under allowed age" do
+        allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(15.years.ago)
+        expect(residence).not_to be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
-      it "should be valid if user is above allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:date_of_birth).and_return(16.years.ago)
+      it "is valid if user is above allowed age" do
+        allow_any_instance_of(described_class).to receive(:date_of_birth).and_return(16.years.ago)
         expect(residence).to be_valid
         expect(residence.errors[:year_of_birth]).to be_empty
       end
@@ -43,38 +43,38 @@ describe Officing::Residence do
   end
 
   describe "new" do
-    it "should upcase document number" do
-      residence = Officing::Residence.new(document_number: "x1234567z")
+    it "upcases document number" do
+      residence = described_class.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
-    it "should remove all characters except numbers and letters" do
-      residence = Officing::Residence.new(document_number: " 12.345.678 - B")
+    it "removes all characters except numbers and letters" do
+      residence = described_class.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end
 
   describe "save" do
 
-    it "should store document number, document type, geozone, date of birth and gender" do
+    it "stores document number, document type, geozone, date of birth and gender" do
       residence.save
       user = residence.user
 
-      expect(user.document_number).to eq('12345678Z')
+      expect(user.document_number).to eq("12345678Z")
       expect(user.document_type).to eq("1")
       expect(user.date_of_birth.year).to eq(1980)
       expect(user.date_of_birth.month).to eq(12)
       expect(user.date_of_birth.day).to eq(31)
-      expect(user.gender).to eq('male')
+      expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
     end
 
-    it "should find existing user and use demographic information" do
+    it "finds existing user and use demographic information" do
       geozone = create(:geozone)
       create(:user, document_number: "12345678Z",
                     document_type: "1",
                     date_of_birth: Date.new(1981, 11, 30),
-                    gender: 'female',
+                    gender: "female",
                     geozone: geozone)
 
       residence = build(:officing_residence,
@@ -84,12 +84,12 @@ describe Officing::Residence do
       residence.save
       user = residence.user
 
-      expect(user.document_number).to eq('12345678Z')
+      expect(user.document_number).to eq("12345678Z")
       expect(user.document_type).to eq("1")
       expect(user.date_of_birth.year).to eq(1981)
       expect(user.date_of_birth.month).to eq(11)
       expect(user.date_of_birth.day).to eq(30)
-      expect(user.gender).to eq('female')
+      expect(user.gender).to eq("female")
       expect(user.geozone).to eq(geozone)
     end
 

@@ -1,0 +1,15 @@
+namespace :maintenance do
+  desc "Start maintenance mode (edit config/maintenance.yml to provide parameters)"
+  task :start do
+    on roles(:app) do
+      upload! "config/maintenance.yml", "#{current_path}/tmp/maintenance.yml"
+    end
+  end
+
+  desc "Stop maintenance mode"
+  task :stop do
+    on roles(:app) do
+      execute "rm #{current_path}/tmp/maintenance.yml"
+    end
+  end
+end

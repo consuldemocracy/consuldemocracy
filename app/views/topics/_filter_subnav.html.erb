@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="small-12 column">
+
+    <ul class="tabs" data-tabs id="topics-tabs">
+
+      <li class="tabs-title is-active">
+        <%= link_to "#tab-comments" do %>
+          <h3>
+            <%= t("community.topic.show.tab.comments_tab") %>
+            <span class="js-comments-count">(<%= @topic.comments_count %>)</span>
+          </h3>
+        <% end %>
+      </li>
+      
+    </ul>
+
+  </div>
+</div>

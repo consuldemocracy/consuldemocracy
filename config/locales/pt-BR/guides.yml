@@ -1,0 +1,18 @@
+pt-BR:
+  guides:
+    title: "Você tem alguma ideia para %{org}?"
+    subtitle: "Escolha o que você deseja criar"
+    budget_investment:
+      title: "Projeto de investimento"
+      feature_1_html: "Ideias de como gastar parte do </strong>do orçamento municipal<strong>"
+      feature_2_html: "Projectos de investimento são aceitos <strong>entre Janeiro e Março</strong>"
+      feature_3_html: "Se receber suporte, é competência viável e municipal, vai para a fase de votação"
+      feature_4_html: "Se os cidadãos aprovarem os projectos, eles se tornam uma realidade"
+      new_button: Eu quero criar um investimento orçamentário
+    proposal:
+      title: "Proposta de cidadão"
+      feature_1_html: "Ideias sobre qualquer ação que a prefeitura pode tomar"
+      feature_2_html: "Precisa de <strong>%{votes} suporte</strong> em %{org} para ir a votação"
+      feature_3_html: "Ativar a qualquer momento, você tem <strong>um ano</strong> para obter o suporte"
+      feature_4_html: "Se for aprovado em uma votação, a Prefeitura aceita a proposta"
+      new_button: Eu quero criar uma proposta

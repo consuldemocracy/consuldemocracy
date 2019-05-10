@@ -15,7 +15,6 @@ class Budget
         set_winner if inside_budget?
       end
     end
-    handle_asynchronously :calculate_winners
 
     def investments
       heading.investments.selected.sort_by_ballots

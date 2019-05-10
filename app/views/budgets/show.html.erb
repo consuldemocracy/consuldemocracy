@@ -9,11 +9,11 @@
 
       <h1><%= @budget.name %></h1>
 
-      <%= safe_html_with_links @budget.description %>
+      <%= safe_html_with_links(@budget.description) %>
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
-        <strong><%= t('budgets.show.phase') %></strong>
+        <strong><%= t("budgets.show.phase") %></strong>
       </p>
       <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
@@ -54,13 +54,13 @@
     <% end %>
     <table class="table-fixed">
       <thead>
-        <th><%= t('budgets.show.group') %></th>
+        <th><%= t("budgets.show.group") %></th>
       </thead>
       <tbody>
         <% @budget.groups.each do |group| %>
           <tr>
             <td>
-              <% if group.headings.count == 1 %>
+              <% if group.single_heading_group? %>
                 <%= link_to group.name,
                             budget_investments_path(@budget,
                               heading_id: group.headings.first.id,

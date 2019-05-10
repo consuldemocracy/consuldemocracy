@@ -1,0 +1,35 @@
+ar:
+  community:
+    sidebar:
+      title: المجتمع
+    show:
+      create_first_community_topic:
+        sign_in: "تسجيل الدخول"
+        sign_up: "انشاء حساب"
+      tab:
+        participants: المشاركون
+      sidebar:
+        participate: المشاركة
+      topic:
+        edit: تحرير الموضوع
+        comments:
+          zero: لا توجد تعليقات
+          zero: "%{count} تعليق"
+          one: تعليق واحد
+          two: "%{count} تعليق"
+          few: "%{count} تعليق"
+          many: "%{count} تعليق"
+          other: "%{count} تعليق"
+      author: كاتب
+    topic:
+      edit: تحرير الموضوع
+      form:
+        topic_title: عنوان
+        edit:
+          submit_button: تحرير الموضوع
+      show:
+        tab:
+          comments_tab: تعليقات
+  topics:
+    show:
+      login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.

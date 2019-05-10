@@ -1,0 +1,22 @@
+sl:
+  activemodel:
+    models:
+      verification:
+        residence: "Prebivališče"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Vrsta dokumenta"
+          document_number: "Številka dokumenta (vključno s črkami)"
+          date_of_birth: "Datum rojstva"
+          postal_code: "Poštna številka"
+        sms:
+          phone: "Telefonska številka"
+          confirmation_code: "Potrditvena koda"
+        email:
+          recipient: "E-naslov"
+      officing/residence:
+        document_type: "Vrsta dokumenta"
+        document_number: "Številka dokumenta (vključno s črkami)"
+        year_of_birth: "Leto rojstva"

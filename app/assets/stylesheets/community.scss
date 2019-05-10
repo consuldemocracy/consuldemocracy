@@ -1,0 +1,45 @@
+.communities-show {
+  .button.disabled,
+  .button[disabled] {
+    pointer-events: none;
+  }
+
+  .wide-order-selector {
+    margin-top: 0;
+  }
+
+  .panel {
+    min-height: auto;
+    margin: 0.375rem 0;
+
+    .button {
+      margin-top: $line-height;
+    }
+  }
+}
+
+.communities-participant {
+
+  .comment-body {
+    display: inline-block;
+    float: left;
+    margin-right: $line-height;
+    margin-bottom: $line-height;
+  }
+}
+
+.topic-show {
+
+  p,
+  ul li {
+    margin-bottom: 0;
+  }
+
+  .comments {
+
+    .first-comment {
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+  }
+}

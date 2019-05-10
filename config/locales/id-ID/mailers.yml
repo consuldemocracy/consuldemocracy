@@ -1,0 +1,77 @@
+id:
+  mailers:
+    no_reply: "Pesan ini dikirim dari alamat email yang tidak menerima balasan."
+    comment:
+      hi: Hai
+      new_comment_by_html: Ada komentar baru dari <b>%{commenter}</b>
+      subject: Seseorang telah berkomentar tentang anda %{commentable}
+      title: Komentar baru
+    config:
+      manage_email_subscriptions: Untuk berhenti menerima email ini, ubah setelan anda
+    email_verification:
+      click_here_to_verify: tautan ini
+      instructions_2_html: Email ini akan memverifikasi akun anda dengan <b>%{document_type} %{document_number}</b>. Jika ini bukan milik anda, mohon jangan klik tauntan sebelumnya dan abaikan email ini.
+      subject: Konfirmasikan email anda
+      thanks: Terima kasih banyak.
+      title: Konfirmasikan akun anda menggunakan tautan berikut
+    reply:
+      hi: Hai
+      new_reply_by_html: Ada respon baru dari <b>%{commenter}</b> untuk komentar anda
+      subject: Seseorang telah menanggapi komentar anda
+      title: Tanggapan baru atas komentar anda
+    unfeasible_spending_proposal:
+      hi: "Pengguna yang terhormat,"
+      new_html: "Untuk semua ini, kami mengundang Anda untuk menguraikan sebuah <strong>proposal baru</strong> yang menyesuaikan dengan kondisi dari proses ini. Anda dapat melakukannya di tautan berikut ini: %{url}."
+      new_href: "proyek investasi baru"
+      sincerely: "Hormat kami"
+      sorry: "Maaf atas ketidaknyamanan ini dan kami berterima kasih atas partisipasi anda yang tak ternilai harganya."
+      subject: "Proyek investasi anda '%{code}' telah ditandai sebagai tidak layak"
+    proposal_notification_digest:
+      info: "Berikut adalah pemberitahuan baru yang telah dipublikasikan oleh penulis proposal yang telah anda dukung di %{org_name}."
+      title: "Notifikasi proposal di %{org_name}"
+      share: Bagikan proposal
+      comment: Proposal komentar
+      unsubscribe: "Jika anda tidak ingin menerima pemberitahuan proposal, kunjungi %{account} dan hapus centang 'Terima ringkasan notifikasi proposal'."
+      unsubscribe_account: Akun saya
+    direct_message_for_receiver:
+      subject: "Anda telah menerima pesan pribadi baru"
+      reply: Membalas ke %{sender}
+      unsubscribe: "Jika anda tidak ingin menerima pesan langsung, kunjungi %{account} dan hapus centang 'Terima email tentang pesan langsung'."
+      unsubscribe_account: Akun saya
+    direct_message_for_sender:
+      subject: "Anda telah mengirim pesan pribadi baru"
+      title_html: "Anda telah mengirim pesan pribadi baru ke <strong>%{receiver}</strong> dengan konten:"
+    user_invite:
+      ignore: "Jika anda belum meminta undangan ini jangan khawatir, anda bisa mengabaikan email ini."
+      thanks: "Terima kasih banyak."
+      title: "Selamat Datang di %{org}"
+      button: Pendaftaran lengkap
+      subject: "Undangan ke %{org_name}"
+    budget_investment_created:
+      subject: "Terima kasih telah menciptakan investasi!"
+      title: "Terima kasih telah menciptakan investasi!"
+      intro_html: "Hai <strong>%{author}</strong>,"
+      text_html: "Terima kasih telah membuat investasi <strong>%{investment}</strong> untuk Anggaran Partisipatif <strong>%{budget}</strong>."
+      follow_html: "Kami akan menginformasikan tentang bagaimana prosesnya berjalan, yang juga dapat anda ikuti <strong>%{link}</strong>."
+      follow_link: "Anggaran Partisipatif"
+      sincerely: "Hormat kami,"
+      share: "Bagikan proyek anda"
+    budget_investment_unfeasible:
+      hi: "Pengguna yang terhormat,"
+      new_html: "Untuk semua ini, kami mengundang anda untuk menguraikan<strong>investasi baru </strong> yang menyesuaikan dengan kondisi proses ini. Anda dapat melakukannya mengikuti tautan ini: %{url}."
+      new_href: "proyek investasi baru"
+      sincerely: "Hormat kami"
+      sorry: "Maaf atas ketidaknyamanan ini dan kami berterima kasih atas partisipasi anda yang tak ternilai harganya."
+      subject: "Proyek investasi anda '%{code}' telah ditandai sebagai tidak layak"
+    budget_investment_selected:
+      subject: "Proyek investasi anda '%{code}' telah dipilih"
+      hi: "Pengguna yang terhormat,"
+      share: "Mulailah mendapatkan suara, bagikan proyek investasi anda di jejaring sosial. Berbagi sangat penting untuk mewujudkannya."
+      share_button: "Bagikan proyek investasi anda"
+      thanks: "Terima kasih lagi untuk partisipasinya."
+      sincerely: "Hormat kami"
+    budget_investment_unselected:
+      subject: "Proyek investasi anda '%{code}' belum dipilih"
+      hi: "Pengguna yang terhormat,"
+      thanks: "Terima kasih lagi untuk partisipasinya."
+      sincerely: "Hormat kami"

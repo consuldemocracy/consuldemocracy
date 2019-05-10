@@ -28,11 +28,6 @@ module PollsHelper
     options_for_select(options, params[:d])
   end
 
-  def poll_final_recount_option(poll)
-    final_date = poll.ends_at.to_date + 1.day
-    options_for_select([[I18n.t("polls.final_date"), l(final_date)]])
-  end
-
   def poll_booths_select_options(poll)
     options = []
     poll.booths.each do |booth|
@@ -46,4 +41,31 @@ module PollsHelper
     booth.name + location
   end
 
+  def poll_voter_token(poll, user)
+    Poll::Voter.where(poll: poll, user: user, origin: "web").first&.token || ""
+  end
+
+  def voted_before_sign_in(question)
+    question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at > vote.updated_at }
+  end
+
+  def show_stats_or_results?
+    @poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)
+  end
+
+  def results_menu?
+    controller_name == "polls" && action_name == "results"
+  end
+
+  def stats_menu?
+    controller_name == "polls" && action_name == "stats"
+  end
+
+  def info_menu?
+    controller_name == "polls" && action_name == "show"
+  end
+
+  def show_polls_description?
+    @active_poll.present? && @current_filter == "current"
+  end
 end

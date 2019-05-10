@@ -1,0 +1,41 @@
+{
+  "arrow_spacing": {
+    "level": "error"
+  },
+  "braces_spacing": {
+    "level": "error",
+    "spaces": 1
+  },
+  "colon_assignment_spacing": {
+    "level": "error",
+    "spacing": {
+      "left": 0,
+      "right": 1
+    }
+  },
+  "eol_last": {
+    "level": "error"
+  },
+  "indentation": {
+    "value": 2
+  },
+  "line_endings": {
+    "level": "error"
+  },
+  "max_line_length": {
+    "value": 100,
+    "level": "error",
+    "limitComments": true
+  },
+  "no_trailing_whitespace": {
+    "level": "error",
+    "allowed_in_comments": false,
+    "allowed_in_empty_lines": false
+  },
+  "space_operators": {
+    "level": "error"
+  },
+  "spacing_after_comma": {
+    "level": "error"
+  }
+}
