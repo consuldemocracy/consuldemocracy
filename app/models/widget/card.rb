@@ -18,10 +18,4 @@ class Widget::Card < ApplicationRecord
   def self.body
     where(header: false, site_customization_page_id: nil).order(:created_at)
   end
-
-  #add widget cards to custom pages
-  def self.page(page_id)
-    where(site_customization_page_id: page_id)
-  end
-
 end
