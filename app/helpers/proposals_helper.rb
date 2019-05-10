@@ -83,8 +83,8 @@ module ProposalsHelper
     link_to button_text, path, remote: true, method: :patch, class: html_class
   end
 
-  def css_for_proposal_info_row
-    if feature?(:allow_images)
+  def css_for_proposal_info_row(proposal)
+    if proposal.image.present?
       if params[:selected].present?
         "small-12 medium-9 column"
       else

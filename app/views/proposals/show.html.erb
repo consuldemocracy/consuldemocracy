@@ -80,9 +80,9 @@
                       <p class=text-center><strong><%= t('.draft') %></strong></p>
                     </div>
                   <% elsif @proposal.successful? %>
-                    <p>
-                      <%= t("proposals.proposal.successful") %>
-                    </p>
+                    <div class="supports text-center">
+                      <%= render "supports", proposal: @proposal %>
+                    </div>
                   <% elsif @proposal.archived? %>
                     <div class="padding text-center">
                       <p>
