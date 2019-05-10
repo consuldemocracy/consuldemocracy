@@ -98,6 +98,39 @@ bs:
         actions: Radnje
         edit_phase: Edituj fazu
         active: Aktivno
+        blank_dates: Datumi nisu upisani
+      destroy:
+        success_notice: Budžet uspješno obrisan
+        unable_notice: Ne možete ukinuti budžet koji ima vezane investicije
+      new:
+        title: Novi participativni budžet
+      winners:
+        calculate: Izračunaj investicije u pobjednike
+        calculated: Obračunavaju se pobjedničke investicije, može potrajati.
+        recalculate: Ponovo izračunaj pobjedničke invesiticije
+    budget_groups:
+      name: "Ime"
+      headings_name: "Zaglavlja"
+      headings_edit: "Edituj zaglavlja"
+      headings_manage: "Sredi zaglavlja"
+      max_votable_headings: "Maksimalni broj zaglavlja u kojim korisnik može glasati"
+      no_groups: "Nema grupa."
+      create:
+        notice: "Grupa uspješno napravljena!"
+      update:
+        notice: "Grupa uspješno ažurirana"
+      destroy:
+        success_notice: "Grupa uspješno obrisana"
+        unable_notice: "Ne možete ukinuti grupu koja ima vezana zaglavlja"
+      form:
+        create: "Napravi novu grupu"
+        edit: "Edituj grupu"
+        name: "Ime grupe"
+        submit: "Spasi grupu"
+      index:
+        back: "Vrati se na budžete"
+    budget_headings:
+      name: "Ime"
     budget_phases:
       edit:
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
