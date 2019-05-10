@@ -33,3 +33,14 @@ bs:
         target_url: Link
         post_started_at: 'Objava započeta u:'
         post_ended_at: 'Objava završena u:'
+        sections_label: Odjeljci u kojim će se pojaviti
+        sections:
+          homepage: Početna stranica
+          debates: Debate
+          proposals: Prijedlozi
+          budgets: Participativno budžetiranje
+          help_page: Stranica za pomoć
+      edit:
+        editing: Baner za editovanje
+        form:
+          submit_button: Spasi izmjene
