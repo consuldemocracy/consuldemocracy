@@ -164,3 +164,7 @@ hr:
       code: Šifra koju ste zaprimili u pismu
       email: Email
       info: "Kako biste potvrdili svoju adresu koristite svoje podatke za pristup:"
+      info_code: "Sada koristite šifru koju ste zaprimili u pismu:"
+      password: Zaporka
+      submit: Potvrdi moj račun
+      title: Potvrditi tvoj račun
