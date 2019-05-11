@@ -158,6 +158,9 @@ bs:
       edit:
         start_date: Početni datum
         end_date: Krajnji datum
+        summary: Sažetak
+        summary_help_text: Ovim tekstom se korisnik obavještava o statusu faze. Označite kockicu kako bi se tekst pokazao čak i ako faza nije aktivna
+        description: Opis
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
         enabled: Faza pokrenuta
         enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna u bilo koju drugu svrhu
@@ -214,6 +217,27 @@ bs:
           visible_to_valuators: Pokaži ocjeniteljima
           author_username: Korisničko ime autora
           incompatible: Nije kompatibilno
+          price: Cijena
+        cannot_calculate_winners: Kako bi se obračunali pobjednici, budžet mora ostati u fazi "Projekti vezani za glasačke listiće", ili u fazi "Pregledanje glasačkih listića", ili u fazi "Budžet završen"
+        see_results: "Vidi rezultate"
+      show:
+        assigned_admin: Dodijeljeni administrator
+        assigned_valuators: Dodijeljeni ocjenitelji
+        classification: Klasifikacija
+        info: "%{budget_name} - Grupa: %{group_name} - Investicioni projekat %{id}"
+        edit: Edituj
+        edit_classification: Edituj klasifikaciju
+        by: Od
+        sent: Poslano
+        group: Grupa
+        heading: Kategorija
+        dossier: Dosije
+        edit_dossier: Edituj dosije
+        tags: Tagovi
+        user_tags: Korisnički tagovi
+        undefined: Nedefinisano
+        compatibility:
+          title: Usklađenost
     milestones:
       index:
         table_description: "Opis"
