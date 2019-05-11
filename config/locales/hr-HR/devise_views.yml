@@ -98,3 +98,32 @@ hr:
           current_password_label: Trenutna zaporka
           edit: Uredi
           email_label: Email
+          leave_blank: Ostavite prazno ako ne želite uređivati
+          need_current: Potrebna nam je Vaša trenutna zaporka kako bismo potvrdili promjene
+          password_confirmation_label: Potvrdi novu zaporku
+          password_label: Nova zaporka
+          update_submit: Ažuriranje
+          waiting_for: "Čeka se potvrda:"
+        new:
+          cancel: Odustani od prijave
+          email_label: Email
+          organization_signup: Predstavljate li organizaciju ili kolektiv? %{signup_link}
+          organization_signup_link: Prijavite se ovdje
+          password_confirmation_label: Potvrdi zaporku
+          password_label: Zaporka
+          redeemable_code: Verifikacijski kod ćete primiti putem emaila (neobavezno)
+          submit: Registriraj se
+          terms: Registracijom prihvačate %{terms}
+          terms_link: uvjeti korištenja
+          terms_title: Registracijom prihvaćate uvjete korištenja
+          title: Registriraj se
+          username_is_available: Korisničko ime dostupno
+          username_is_not_available: Korisničko ime nije dostupno
+          username_label: Korisničko ime
+          username_note: Ime koje se pojavljuje pored Vaše objave
+        success:
+          back_to_index: Razumijem; idi nazad na glavnu stranicu
+          instructions_1_html: Molimo <b>provjerite vaš emial</b> - mi smo vam poslali <b> link potvrde za vaš račun</b>.
+          instructions_2_html: Nakon potvrde, možete započeti sa sudjelovanjem.
+          thank_you_html: Hvala na registraciji na stranicu. Vi morate sada <b>potvrditi vašu email adresu</b>.
+          title: Potvrdite vašu email adresu
