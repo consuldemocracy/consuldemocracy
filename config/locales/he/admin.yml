@@ -280,7 +280,7 @@ he:
         mark_as_selected: סמן כנבחר
         assigned_valuators: מעריכים
         select_heading: בחר כותרת
-        submit_button: עודכן
+        submit_button: עדכן
         user_tags: המשתמש הקצה תגיות
         tags: תגיות
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
@@ -1269,7 +1269,7 @@ he:
         updated: הערך מעודכן
       index:
         title: הגדרות תצורה
-        update_setting: עודכן
+        update_setting: עדכן
         participation_processes: "השתתפות בתהליכים"
         feature_flags: מאפיינים
         features:
@@ -1283,7 +1283,7 @@ he:
           flash:
             update: תצורת המפה עודכנה בהצלחה.
           form:
-            submit: עודכן
+            submit: עדכן
           how_to_enable: 'כדי להציג את המפה למשתמשים עליך לאפשר "הצעות, תקציב השקעות איזורים גאוגרפיים" בכרטיסיה "תכונות".'
         dashboard:
           title: לוח מחוונים להצעות
@@ -1371,7 +1371,7 @@ he:
       edit:
         classification: סיווג
         assigned_valuators: מעריכים
-        submit_button: עודכן
+        submit_button: עדכן
         tags: תגיות
         tags_placeholder: "הכנס תגים מופרדים בפסיק (,)"
         undefined: לא מוגדר
@@ -1557,7 +1557,7 @@ he:
       images:
         index:
           title: תמונות מותאמות אישית
-          update: עודכן
+          update: עדכן
           delete: מחיקה
           image: תמונה
         update:
