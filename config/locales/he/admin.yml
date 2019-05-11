@@ -444,6 +444,23 @@ he:
           without_confirmed_hide: ממתין לאישור
         title: דיונים מוסתרים
         no_hidden_debates: לא נמצאו דיונים מוסתרים.
+    documents:
+      new:
+        title: "העלה מסמך"
+        label_attachment: "בחר מסמך"
+        submit_button: "העלה"
+      index:
+        new_link: "הוסף מסמך חדש"
+        no_documents: "לא נמצאו מסמכים."
+        title: "מסמכים"
+        format: "תצורה"
+        size: "גודל"
+        url: "קישור"
+      create:
+        success_notice: "המסמך הועלה בהצלחה"
+        unable_notice: "מסמך לא תקין"
+      destroy:
+        success_notice: "המסמך נמחק בהצלחה"
     hidden_users:
       index:
         filter: סינון
@@ -683,6 +700,7 @@ he:
       stats: סטטיסטיקה
       signature_sheets: דפי חתימות
       site_customization:
+        documents: מסמכים מותאמים אישית
         homepage: דף הבית
         pages: דפים מותאמים אישית
         images: תמונות מותאמות אישית
