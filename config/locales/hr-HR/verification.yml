@@ -14,5 +14,47 @@ hr:
           failure: Kod potvrde netočan
         flash:
           success: Vi ste potvrđeni korisnik
+    letter:
+      alert:
+        unconfirmed_code: Niste još unijeli potvrdni kod
+      create:
+        flash:
+          success_html: Hvala što ste zatražili <b> maksimalni sigurnosni kôd (potreban samo za konačna glasovanja)</b>. Za nekoliko dana poslat ćemo je na adresu koja se nalazi u podacima koje imamo u datoteci. Imajte na umu da, ako želite, možete prikupiti svoj kod iz bilo kojeg ureda za podršku građanima.
+      edit:
+        see_all: Pogledajte prijedlog
+        title: Zatraženo pismo
+      errors:
+        incorrect_code: Kod potvrđivanaj netočan
+      new:
+        explanation: "Za sudjelovanje u finalnom glasanju možete:"
+        go_to_index: Vidi prijedloge
+        office: Potvrdi u bilo kojem Uredu za Građansku Podršku
+        send_letter: Pošalji mi pismo s kodom
+        title: Čestitamo!
+        user_permission_info: Sa svojim računom možete...
+      update:
+        flash:
+          success: Kod točan. Vaš račun je sad potvrđen
+    redirect_notices:
+      already_verified: Vaš račun je već potvrđen
+      email_already_sent: Već smo poslali poruku emaila s vezom za potvrdu. Ako ne možete pronaći email, ovdje možete zatražiti ponovno slanje
+    residence:
+      alert:
+        unconfirmed_residency: Niste još potvrdili svoje prebivalište
+      create:
+        flash:
+          success: Prebivalište potvrđeno
+      new:
+        accept_terms_text: Potvrđujem %{terms_url} Cenzusa
+        accept_terms_text_title: Prihvaćam uvjete korištenja pristupanju Cenzusu
+        date_of_birth: Datum rođenja
+        document_number: Broj dokumenta
+        document_number_help_title: Pomoć
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
+        document_type:
+          passport: Putovnica
+          residence_card: Dokument prebivališta
+          spanish_id: DNI
+        document_type_label: Tip dokumenta
     user_permission_support_proposal: Podupri prijedlog*
     user_permission_votes: Sudjelujte u finalnom glasanju*
