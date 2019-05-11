@@ -97,3 +97,6 @@ hr:
       text_1: "Do sada ste dobili %{votes_count} glasova podrške Čestitamo!"
       text_2: "Imate na raspolaganju novi resurs koji će vam pomoći da nastavite napredovati."
       text_3: "Nedostaje vam %{days_count} dana prije nego što prijedlozi doboju %{max_votes_count} glasova potpore te će ići na referendum. Nastavite širiti svoje ideje. Nedostaje li vam ideja?"
+      text_4: "NOVA PREPORUČENA AKCIJA ŠIRENJA"
+      text_5: "Sada ih postoji još više, pogledajte sljedeću radnju:"
+      footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
