@@ -144,8 +144,20 @@ bs:
         amount: "Iznos"
         population: "Stanovništvo (po izboru)"
         population_info: "Rubrika za stanovništvo u sklopu budžetske kategorije se koristi u statističke svrhe na kraju budžetskog perioda, kako bi se pokazalo u svakoj kategoriji koji je procenat stanovništva glasao i u kojem području. Rubrika se ispunjava po izboru, tako da može ostati prazna ako nije primjenjivo."
+        latitude: "Geografska širina (po izboru)"
+        longitude: "Geografska dužina (po izboru)"
+        coordinates_info: "Ako su navedene geografska širina i dužina, stranice na kojim su navedene investicije za ovu kategoriju sadrže i mapu. Mapa će biti centrirana uz upotrebu ovih koordinata."
+        allow_content_block: "Dozvoli blokiranje sadržaja"
+        content_blocks_info: "Ako omogućite blokadu sadržaja, moći ćete napraviti prilagođene sadržaje u vezi ove kategorije, u odjeljku \"blokiranje sadržaja\" u Postavkama > Prilagodi. Ovaj sadržaj se pojavljuje na stranici koja pokazuje investicije za ovu kategoriju."
+        create: "Napravi novu kategoriju"
+        edit: "Edituj kategoriju"
+        submit: "Spasi kategoriju"
+      index:
+        back: "Idi nazad na grupe"
     budget_phases:
       edit:
+        start_date: Početni datum
+        end_date: Krajnji datum
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
         enabled: Faza pokrenuta
         enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna u bilo koju drugu svrhu
