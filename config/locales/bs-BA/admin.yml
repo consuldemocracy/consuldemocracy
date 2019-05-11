@@ -617,11 +617,82 @@ bs:
         pages: Prilagođene stranice
         images: Prilagođene slike
         content_blocks: Prilagođeno blokiranje sadržaja
+        information_texts: Prilagođeni informacijski tekstovi
+        information_texts_menu:
+          debates: "Debate"
+          community: "Zajednica"
+          proposals: "Prijedlozi"
+          polls: "Ankete"
+          layouts: "Rasporedi"
+          mailers: "Emailovi"
+          management: "Menadžment"
+          welcome: "Dobrodošli"
+        buttons:
+          save: "Spasi"
+          content_block:
+            update: "Ažuriraj blok"
+      title_moderated_content: Moderirani sadržaj
+      title_budgets: Budžeti
+      title_profiles: Profili
+      title_settings: Postavke
+      title_site_customization: Materijali za mjesto
+      title_booths: Kabine za glasanje
+      legislation: Legislativna saradnja
+      users: Korisnici
+      dashboard: Kontrolna ploča za prijedloge
+      administrator_tasks: Zatraženi resursi
+      dashboard_actions: Resursi i radnje
+    administrators:
+      index:
+        title: Administratori
+        name: Ime
+        email: Email
+        id: Administratorov ID
+        no_administrators: Nema administratora.
+      administrator:
+        add: Dodaj
+        delete: Obriši
+        restricted_removal: "Žao nam je, ne možete se skinuti sa spiska administratora"
+      search:
+        title: "Administratori: korisničke pretrage"
     moderators:
       index:
+        title: Moderatori
         name: Ime
         email: 'Email:'
         no_moderators: Nema moderatora.
       moderator:
         add: Dodaj
         delete: Obriši
+    admin_notifications:
+      index:
+        edit: Edituj
+        delete: Obriši
+        preview: Pregled
+        view: Pogledaj
+        empty_notifications: Nema obavijesti za pokazati
+      new:
+        section_title: Nova obavijest
+        submit_button: Napravi obavijest
+      edit:
+        section_title: Edituj obavijest
+        submit_button: Ažuriraj obavijest
+      show:
+        section_title: Pregled obavijesti
+        send: Pošalji obavijest
+        will_get_notified: (%{n} korisnika će biti obavješteno)
+        got_notified: (%{n} korisnika je dobilo obavijest)
+        sent_at: 'Poslano:'
+        title: Naslov
+        body: Tekst
+        link: Link
+        segment_recipient: Primatelji
+        preview_guide: "Kako će korisnici vidjeti obavijest:"
+        sent_guide: "Kako korisnici vide obavijest:"
+        send_alert: Sigurni ste da želite poslati obavijest ovom broju %{n} korisnika?
+    system_emails:
+      preview_pending:
+        action: Pregled u toku
+        preview_of: Pregled %{name}
+        pending_to_be_sent: Sadržaj koji čeka na slanje
+        moderate_pending: Moderatorska obavijest poslana
