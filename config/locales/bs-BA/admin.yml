@@ -352,8 +352,10 @@ bs:
             pending: U toku
             done: Riješeno
         edit:
-          back: Nazad na spisak nezavršenih zadataka
+          back: Nazad na spisak nedovršenih zadataka
+          solving: Riješi nedovršeni zadatak
         form:
+          solve: Označi kao riješeno
           proposal: Prijedlog
           request: Zatraženi resurs
         update:
@@ -367,6 +369,23 @@ bs:
           without_confirmed_hide: U toku
         title: Skrivene debate
         no_hidden_debates: Nema skrivenih debata.
+    documents:
+      new:
+        title: "Učitaj dokument"
+        label_attachment: "Odaberi dokument"
+        submit_button: "Učitaj"
+      index:
+        new_link: "Dodaj novi dokument"
+        no_documents: "Nema dokumenata."
+        title: "Dokumenti"
+        format: "Format"
+        size: "Veličina"
+        url: "URL"
+      create:
+        success_notice: "Dokument uspješno učitan"
+        unable_notice: "Neispravan dokument"
+      destroy:
+        success_notice: "Dokument uspješno obrisan"
     hidden_users:
       index:
         filter: Filter
@@ -424,3 +443,24 @@ bs:
           homepage_description: Ovdje možete objasniti sadržaj procesa
           homepage_enabled: Pokrenuta početna stranica
           banner_title: Boje za zaglavlje
+        index:
+          create: Novi proces
+          delete: Obriši
+          title: Legislativna saradnja
+          filters:
+            active: Aktivno
+            all: Sve
+        new:
+          back: Nazad
+          title: Napravi novi proces legislativne saradnje
+          submit_button: Napravi proces
+        proposals:
+          select_order: Poredaj po
+          orders:
+            id: Imenu
+            title: Nazivu
+            supports: Ukupnoj podršci
+        process:
+          title: Procesima
+          comments: Komentarima
+          status: Statusu
