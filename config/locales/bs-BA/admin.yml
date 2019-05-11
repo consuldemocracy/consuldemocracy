@@ -238,6 +238,25 @@ bs:
         undefined: Nedefinisano
         compatibility:
           title: Usklađenost
+          "true": Neusklađeno
+          "false": Usklađeno
+        selection:
+          title: Odabir
+          "true": Odabrano
+          "false": Nije odabrano
+        winner:
+          title: Pobjednik
+          "true": "Da"
+          "false": "Ne"
+        image: "Slika"
+        see_image: "Pokaži sliku"
+        no_image: "Bez slike"
+        documents: "Dokumenti"
+        see_documents: "Vidi dokumente (%{count})"
+        no_documents: "Bez dokumenata"
+        valuator_groups: "Grupe za ocjenjivanje"
+      edit:
+        classification: Klasifikacija
     milestones:
       index:
         table_description: "Opis"
@@ -315,7 +334,25 @@ bs:
         filters:
           all: Sve
     dashboard:
+      actions:
+        form:
+          help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
+          published_proposal: Za objavljene prijedloge?
+          published_proposal_help_text: Označite kockicu kako bi napravili radnju samo za objavljene prijedloge
       administrator_tasks:
+        index:
+          description: "Resursi objavljeni na kontrolnoj ploči za prijedloge mogu imati i dugme za podnošenje zahtjeva administratorima. Korisnički zahtjevi su pokazani dole."
+          title: Zahtjev za resurse
+          solve: Riješi
+          no_records: Nisu zatraženi resursi
+          source: Izvor
+          resource: Resurs koji se traži
+          filter: Filter
+          filters:
+            pending: U toku
+            done: Riješeno
+        edit:
+          back: Nazad na spisak nezavršenih zadataka
         form:
           proposal: Prijedlog
           request: Zatraženi resurs
