@@ -701,3 +701,30 @@ bs:
       proposal_notification_digest:
         title: "Kratki opis obavijesti o prijedlogu"
         description: "Stavlja sve obavijesti o prijedlozima za korisnika u jednu poruku, kako ne bi bilo previše emailova."
+        preview_detail: "Korisnici će dobijati obavijesti samo o prijedlozima koje prate"
+      budget_investment_created:
+        title: "Napravljena budžetska investicija"
+        description: "Poslano kada korisnik napravi budžetsku investiciju."
+      budget_investment_selected:
+        title: "Odabrana budžetska investicija"
+        description: "Poslano autoru kad je odabrana njegova budžetska investicija."
+      budget_investment_unfeasible:
+        title: "Budžetska investicija nije izvodiva"
+        description: "Poslano autoru kada je njegova budžetska investicija označena kao nezvodiva."
+      budget_investment_unselected:
+        title: "Budžetska investicija više nije odabrana"
+        description: "Poslano autoru kada njegova budžetska investicija nije odabrana za fazu glasanja."
+      comment:
+        title: "Komentar"
+        description: "Poslano autoru kada dobije komentar."
+      reply:
+        title: "Odgovori"
+        description: "Poslano autoru komentara kada dobije odgovor."
+      direct_message_for_receiver:
+        title: "Primatelj privatne poruke"
+        description: "Poslano primatelju privatne poruke."
+      direct_message_for_sender:
+        title: "Pošiljatelj privatne poruke"
+        description: "Poslano pošiljatelju privatne poruke."
+      email_verification:
+        title: "Verifikacija emaila"
