@@ -257,8 +257,23 @@ bs:
         valuator_groups: "Grupe za ocjenjivanje"
       edit:
         classification: Klasifikacija
+        compatibility: Usklađenost
+        mark_as_incompatible: Označi kao neusklađeno
+        selection: Odabir
+        mark_as_selected: Označi kao odabrano
+        assigned_valuators: Ocjenitelji
+        select_heading: Odaberi kategoriju
+        submit_button: Ažurirano
+        user_tags: Tagovi dodijeljeni korisnicima
+        tags: Tagovi
+        tags_placeholder: "Napiši tagove koje želiš odvojiti zarezima (,)"
+        undefined: Nije definisano
+        user_groups: "Grupe"
+      search_unfeasible: Traži među neizvodivim
     milestones:
       index:
+        table_id: "Ime"
+        table_title: "Naziv"
         table_description: "Opis"
         table_publication_date: "Datum objave"
         table_status: Status
@@ -333,8 +348,21 @@ bs:
         filter: Filter
         filters:
           all: Sve
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U toku
+        hidden_debate: Skrivena debata
+        hidden_proposal: Skriveni prijedlog
+        title: Skriveni komentari
+        no_hidden_comments: Nema skrivenih komentara.
     dashboard:
+      index:
+        back: Vrati se na %{org}
+        title: Administracija
+        description: Dobrodošli na %{org} admin panel.
       actions:
+        action_type:
+          proposed_action: Predložena radnja
+          resource: Resurs
         form:
           help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
           published_proposal: Za objavljene prijedloge?
@@ -526,3 +554,25 @@ bs:
       proposals: Prijedlozi
       proposals_topics: Teme u prijedlozima
       budgets: Participativni budžeti
+      geozones: Uredi geozone
+      hidden_comments: Skriveni komentari
+      hidden_debates: Skrivene debate
+      hidden_proposals: Skriveni prijedlozi
+      hidden_budget_investments: Sakrivene budžetske investicije
+      hidden_proposal_notifications: Sakrivene obavijesti o prijedlozima
+      hidden_users: Skriveni korisnici
+      administrators: Administratori
+      managers: Menadžeri
+      moderators: Moderatori
+      messaging_users: Poruke korisnicima
+      newsletters: Bilteni
+      admin_notifications: Obavijesti
+      system_emails: Sistemski emailovi
+    moderators:
+      index:
+        name: Ime
+        email: 'Email:'
+        no_moderators: Nema moderatora.
+      moderator:
+        add: Dodaj
+        delete: Obriši
