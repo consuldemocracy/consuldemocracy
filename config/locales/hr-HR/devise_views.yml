@@ -79,3 +79,22 @@ hr:
         new_password: Jeste li zaboravili vašu zaporku?
         new_unlock: Jeste li primili upute za otključavanje?
         signin_with_provider: Prijavi se s %{provider}
+        signup: Nemate račun? %{signup_link}
+        signup_link: Prijavite se
+    unlocks:
+      new:
+        email_label: Email
+        submit: Ponovno pošaljite upute za otključavanje
+        title: Ponovno pošaljite upute za otključavanje
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Razlog
+          info: Ova radnja se ne može poništiti. Provjerite je li to ono što želite.
+          info_reason: Ako želite, navedite razlog (neobavezno)
+          submit: Izbrišite moj račun
+          title: Izbriši račun
+        edit:
+          current_password_label: Trenutna zaporka
+          edit: Uredi
+          email_label: Email
