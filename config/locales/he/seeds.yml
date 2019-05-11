@@ -32,7 +32,7 @@ he:
       environment: סביבה
     budgets:
       budget: תקציבים שיתופיים
-      currency: יורו
+      currency: שקלים
       groups:
         all_city: כל העיר
         districts: רובעים
