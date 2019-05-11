@@ -1,1 +1,12 @@
 hr:
+  mailers:
+    no_reply: "Ova poruka se šalje s email adrese koja ne prima odgovore."
+    comment:
+      hi: Pozdrav
+      new_comment_by_html: Došao je novi komentar od <b>%{commenter}</b>
+      subject: Netko je komentirao vašu%{commentable}
+      title: Novi komentar
+    config:
+      manage_email_subscriptions: Ako ne želite više primati ove email-ove promijenite svoje postavke
+    email_verification:
+      click_here_to_verify: ova poveznica
