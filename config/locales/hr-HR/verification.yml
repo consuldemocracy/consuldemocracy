@@ -1,4 +1,18 @@
 hr:
   verification:
+    alert:
+      lock: Iskoristili ste maksimalan broj pokušaja. Molimo vas probajte kasnije.
+    back: Vrati se na moj račun
+    email:
+      create:
+        alert:
+          failure: Došlo je do problema sa slanjem emaila na vaš račun
+        flash:
+          success: "Poslali smo vam potvrdu vašeg računa na email: %{email}"
+      show:
+        alert:
+          failure: Kod potvrde netočan
+        flash:
+          success: Vi ste potvrđeni korisnik
     user_permission_support_proposal: Podupri prijedlog*
     user_permission_votes: Sudjelujte u finalnom glasanju*
