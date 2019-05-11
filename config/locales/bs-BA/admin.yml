@@ -363,7 +363,37 @@ bs:
         action_type:
           proposed_action: Predložena radnja
           resource: Resurs
+        index:
+          description: "Kada korisnici prave prijedloge, mogu pristupiti kontrolnoj ploči za svoj prijedlog, gdje se mogu predlagati resursi i preporuke kako bi se dobila podrška za njihovu ideju."
+          create: Napravi resurs ili radnju
+          edit: Edituj
+          delete: Obriši
+          active: 'Da'
+          inactive: 'Ne'
+          title: Resursi i radnje
+          action_title: Naziv
+          action_type: Vrsta
+          required_supports: Neophodna podrška
+          day_offset: Potrebni dani
+          action_active: Aktivno
+          order: Naruči
+          published_proposal: Objavljeni prijedlog
+          default:
+            email: Email
+            polls: Ankete
+            poster: Poster
+        new:
+          creating: Nova radnja za kontrolnu ploču za prijedloge
+          back: Nazad na listu
+        create:
+          notice: Radnja uspješno napravljena
+        edit:
+          editing: Edituj radnju za kontrolnu ploču za prijedloge
+          back: Nazad na listu
+        delete:
+          success: Radnja usješno obrisana
         form:
+          submit_button: Spasi
           help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
           published_proposal: Za objavljene prijedloge?
           published_proposal_help_text: Označite kockicu kako bi napravili radnju samo za objavljene prijedloge
@@ -568,6 +598,25 @@ bs:
       newsletters: Bilteni
       admin_notifications: Obavijesti
       system_emails: Sistemski emailovi
+      emails_download: Učitaj emailove
+      valuators: Ocjenitelji
+      poll_officers: Anketari
+      polls: Ankete
+      poll_booths: Lokacija kabina
+      poll_booth_assignments: Dodjela kabina
+      poll_shifts: Vodi smjene
+      officials: Službena lica
+      organizations: Organizacije
+      settings: Opšte postavke
+      spending_proposals: Prijedlozi troškova
+      stats: Statistika
+      signature_sheets: Potpisni listovi
+      site_customization:
+        documents: Prilagođeni dokumenti
+        homepage: Početna stranica
+        pages: Prilagođene stranice
+        images: Prilagođene slike
+        content_blocks: Prilagođeno blokiranje sadržaja
     moderators:
       index:
         name: Ime
