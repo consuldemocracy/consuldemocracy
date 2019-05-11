@@ -143,6 +143,7 @@ bs:
         name: "Ime stavke"
         amount: "Iznos"
         population: "Stanovništvo (po izboru)"
+        population_info: "Rubrika za stanovništvo u sklopu budžetske kategorije se koristi u statističke svrhe na kraju budžetskog perioda, kako bi se pokazalo u svakoj kategoriji koji je procenat stanovništva glasao i u kojem području. Rubrika se ispunjava po izboru, tako da može ostati prazna ako nije primjenjivo."
     budget_phases:
       edit:
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
