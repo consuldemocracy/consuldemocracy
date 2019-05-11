@@ -531,6 +531,43 @@ bs:
           info: Informacija
           homepage: Početna stranica
           draft_versions: Izrada nacrta
+          questions: Debata
+          proposals: Prijedlozi
+          milestones: Praćenje
+      homepage:
+        edit:
+          title: Konfiguracija vaše procesne početne stranice
+      proposals:
+        index:
+          title: Naziv
+          back: Nazad
+          id: Identifikacija
+          supports: Ukupno podrške
+          select: Odaberi
+          selected: Odabrano
+        form:
+          custom_categories: Kategorije
+          custom_categories_description: Kategorije koje korisnici mogu odabrati za pravljenje prijedloga. Maksimalno 160 karaktera.
+          custom_categories_placeholder: Unesite tagove koje želite koristiti, razdvojene zarezima (,) i u navodnicima ("")
+      draft_versions:
+        create:
+          notice: 'Nacrt uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
+          error: Nacrt se ne može napraviti
+        update:
+          notice: 'Nacrt uspješno ažuriran. <a href="%{link}">Klikni za posjetu</a>'
+          error: Nacrt se ne može ažurirati
+        destroy:
+          notice: Nacrt uspješno obrisan
+        edit:
+          back: Nazad
+          submit_button: Spasi izmjene
+          warning: Editovali ste tekst, ne zaboravite da pritisnete "Spasi" kako bi trajno spasili izmjene.
+        errors:
+          form:
+            error: Greška
+        form:
+          title_html: 'Editovanje <span class="strong">%{draft_version_title}</span> iz procesa <span class="strong">%{process_title}</span>'
+          launch_text_editor: Pokreni editora teksta
       questions:
         destroy:
           notice: Pitanje uspješno obrisano
@@ -728,3 +765,7 @@ bs:
         description: "Poslano pošiljatelju privatne poruke."
       email_verification:
         title: "Verifikacija emaila"
+        description: "Poslano novom korisniku za verifikaciju njegovog računa."
+      user_invite:
+        title: "Pozivnica korisniku"
+        description: "Poslano osobi koja je pozvana da registruje račun."
