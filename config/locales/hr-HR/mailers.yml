@@ -100,3 +100,17 @@ hr:
       text_4: "NOVA PREPORUČENA AKCIJA ŠIRENJA"
       text_5: "Sada ih postoji još više, pogledajte sljedeću radnju:"
       footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
+      dashboard_button: "Samo naprijed, otkrijte ih!"
+    new_actions_notification_on_create:
+      subject: "Vaš draft građanskog prijedloga je stvoren"
+      hi: "Pozdrav %{name}!"
+      introduction: "Vaš %{title} prijedlog je uspješno stvoren."
+      text_1: "Iskoristite mogućnost dok vaš prijedlog još nije javan i pripremite se za kontakt s ostalim građanima."
+      text_2: "Kada budete spremni, objavite svoj prijedlog za građanina na ovoj <a href='%{link}'>link</a>."
+      text_3: "Znamo da se stvaranje primamljivog prijedlgoa i dobivanje potrebne podrške može činiti komplicirano. Ali ne brinite jer ćemo vam pomoći!"
+      text_4: "Imate alat koji će vam biti novi najbolji saveznik: Panel za Građanske Prijedloge."
+      list_1: "Unesi svaki dan u panel svoj prijedlog kako biste iskoristili savjete i resurse koje ćemo podijeliti s vama."
+      list_2: "Ove savjete, djelovanje i resurse će podjeliti ideje i praktična rješenja kako biste dobili više potpore i širu zajednicu. Nemojte zaboraviti na njih!"
+      dashboard_button: "Samo naprijed, otkrijte ih!"
+    new_actions_notification_on_published:
+      dashboard_button: "Samo naprijed, otkrijte ih!"
