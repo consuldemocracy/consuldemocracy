@@ -568,7 +568,41 @@ bs:
         form:
           title_html: 'Editovanje <span class="strong">%{draft_version_title}</span> iz procesa <span class="strong">%{process_title}</span>'
           launch_text_editor: Pokreni editora teksta
+          close_text_editor: Zatvori editora teksta
+          use_markdown: Koristi obilježavanje za formatiranje teksta
+          hints:
+            final_version: Ova verzija će biti objavljena kao konačni rezultat za ovaj proces. Komentari neće biti dozvoljeni u ovoj verziji.
+            status:
+              draft: Omogućen vam je pregled kao administratoru, niko drugi ne može vidjeti
+              published: Vidljivo svima
+          title_placeholder: Napiši naziv nacrtne verzije
+          changelog_placeholder: Dodaj glavne izmjene iz prethodne verzije
+          body_placeholder: Napiši narct teksta
+        index:
+          title: Nacrtne verzije
+          create: Napravi verziju
+          delete: Obriši
+          preview: Pregled
+        new:
+          back: Nazad
+          title: Napravi novu verziju
+          submit_button: Napravi verziju
+        statuses:
+          draft: Nacrt
+          published: Objavljeno
+        table:
+          title: Naziv
+          created_at: Napravljeno
+          comments: Komentari
+          final_version: Finalna verzija
+          status: Status
       questions:
+        create:
+          notice: 'Pitanje uspješno napravljeno. <a href="%{link}">Klikni za posjetu</a>'
+          error: Pitanje se ne može napraviti
+        update:
+          notice: 'Pitanje uspješno ažurirano. <a href="%{link}">Klikni za posjetu</a>'
+          error: Pitanje se ne može ažurirati
         destroy:
           notice: Pitanje uspješno obrisano
         edit:
@@ -701,6 +735,12 @@ bs:
       moderator:
         add: Dodaj
         delete: Obriši
+      search:
+        title: "Moderatori: korisnička pretraga"
+    segment_recipient:
+      all_users: Svi korisnici
+      administrators: Administratori
+      proposal_authors: Autori prijedloga
     admin_notifications:
       index:
         edit: Edituj
