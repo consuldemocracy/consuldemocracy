@@ -50,7 +50,7 @@ he:
         edit_dossier: ערוך תיק
         price: מחיר
         price_first_year: עלות במהלך השנה הראשונה
-        currency: "יורו"
+        currency: "שקלים"
         feasibility: סבירות לביצוע
         feasible: בר ביצוע
         unfeasible: אינו בר-ביצוע
@@ -100,7 +100,7 @@ he:
         edit_dossier: ערוך תיק
         price: מחיר
         price_first_year: עלות במהלך השנה הראשונה
-        currency: "יורו"
+        currency: "שקלים"
         feasibility: סבירות לביצוע
         feasible: בר ביצוע
         not_feasible: אינו בר ביצוע
@@ -115,7 +115,7 @@ he:
         dossier: תיק
         price_html: "מחיר (%{currency})"
         price_first_year_html: "עלות במהלך השנה הראשונה (%{currency})"
-        currency: "יורו"
+        currency: "שקלים"
         price_explanation_html: פירוט למחיר
         feasibility: סבירות לביצוע
         feasible: בר ביצוע
