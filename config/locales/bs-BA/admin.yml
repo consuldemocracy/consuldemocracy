@@ -779,8 +779,20 @@ bs:
         from: Email-adresa koja se pokazuje kao pošiljatelj biltena
         body: Sadržaj emaila
         body_help_text: Ovako će korisnici vidjeti email
+        send_alert: Sigurni ste da želite poslati bilten ovom broju korisnika %{n}?
     admin_notifications:
+      create_success: Obavijest uspješno napravljena
+      update_success: Obavijest uspješno ažurirana
+      send_success: Obavijest uspješno poslana
+      delete_success: Obavijest uspješno obrisana
       index:
+        section_title: Obavijesti
+        new_notification: Nova obavijest
+        title: Naslov
+        segment_recipient: Primatelji
+        sent: Poslano
+        actions: Radnje
+        draft: Nacrt
         edit: Edituj
         delete: Obriši
         preview: Pregled
