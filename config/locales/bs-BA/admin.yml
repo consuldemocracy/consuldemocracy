@@ -741,6 +741,44 @@ bs:
       all_users: Svi korisnici
       administrators: Administratori
       proposal_authors: Autori prijedloga
+      investment_authors: Autori investicija u tekućem budžetu
+      feasible_and_undecided_investment_authors: "Autori investicija u tekućem budžetu koje nisu usklađene sa: [ocjena neizvodivo]"
+      selected_investment_authors: Autori odabranih investicija u tekućem budžetu
+      winner_investment_authors: Autori pobjedničkih investicija u tekućem budžetu
+      not_supported_on_current_budget: Korisnici koji nisu podržali investicije u tekućem budžetu
+      invalid_recipients_segment: "Segment korisnika primatelja nije ispravan"
+    newsletters:
+      create_success: Bilten uspješno napravljen
+      update_success: Bilten uspješno ažuriran
+      send_success: Bilten uspješno poslan
+      delete_success: Bilten uspješno obrisan
+      index:
+        title: Bilteni
+        new_newsletter: Novi bilten
+        subject: Predmet
+        segment_recipient: Primatelji
+        sent: Poslano
+        actions: Radnje
+        draft: Nacrt
+        edit: Edituj
+        delete: Obriši
+        preview: Pregled
+        empty_newsletters: Nema biltena za pokazati
+      new:
+        title: Novi bilten
+        from: Email-adresa koja se pokazuje kao pošiljatelj biltena
+      edit:
+        title: Edituj bilten
+      show:
+        title: Pregled biltena
+        send: Pošalji
+        affected_users: (%{n} broj korisnika)
+        sent_at: Poslano
+        subject: Predmet
+        segment_recipient: Primatelji
+        from: Email-adresa koja se pokazuje kao pošiljatelj biltena
+        body: Sadržaj emaila
+        body_help_text: Ovako će korisnici vidjeti email
     admin_notifications:
       index:
         edit: Edituj
