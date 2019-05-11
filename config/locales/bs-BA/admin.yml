@@ -696,3 +696,8 @@ bs:
         preview_of: Pregled %{name}
         pending_to_be_sent: Sadržaj koji čeka na slanje
         moderate_pending: Moderatorska obavijest poslana
+        send_pending: Pošalji ono što je na čekanju
+        send_pending_notification: Obavijest na čekanju uspješno poslana
+      proposal_notification_digest:
+        title: "Kratki opis obavijesti o prijedlogu"
+        description: "Stavlja sve obavijesti o prijedlozima za korisnika u jednu poruku, kako ne bi bilo previše emailova."
