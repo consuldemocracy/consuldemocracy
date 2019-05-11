@@ -63,3 +63,21 @@ hr:
       new_html: "Za sve ovo, pozivamo vas da razradite <strong>novu investiciju</strong> koja se prilagođava uvjetima ovog procesa. Ovaj proces možete pronaći na sljedećem linku: %{url}."
       new_href: "novi investicijski projekt"
       sincerely: "Iskreno"
+      sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na sudjelovanju."
+      subject: "Vaš investicijski projekt '%{code}' je označen kao neizvediv"
+    budget_investment_selected:
+      subject: "Vaš investicijski projekt '%{code}' je odabran"
+      hi: "Dragi korisniče,"
+      share: "Kako biste dobili glasove, podjelite svoje investicijske projekte za društvene mreže. Dijeljenje je važno kako bi se projekti mogli ostvariti."
+      share_button: "Podjelite svoj investicijski projekt"
+      thanks: "Hvala vam na sudjelovanju."
+      sincerely: "Iskreno"
+    budget_investment_unselected:
+      subject: "Vaš investicijski projekt '%{code}' nije odabran"
+      hi: "Dragi korisniče,"
+      thanks: "Hvala vam na sudjelovanju."
+      sincerely: "Iskreno"
+    new_actions_notification_rake_created:
+      subject: "Više vijesti o vašem građanskom prijeldogu"
+      hi: "Pozdrav %{name},"
+      new_resource: "NOVI OTKLJUČANI RESURS"
