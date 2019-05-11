@@ -459,8 +459,70 @@ bs:
           orders:
             id: Imenu
             title: Nazivu
-            supports: Ukupnoj podršci
+            supports: Ukupna podrška
         process:
-          title: Procesima
-          comments: Komentarima
-          status: Statusu
+          title: Proces
+          comments: Komentari
+          status: Status
+          start_date: Početni datum
+          end_date: Krajnji datum
+          status_open: Otvoreno
+          status_closed: Zatvoreno
+          status_planned: Planirano
+        subnav:
+          info: Informacija
+          homepage: Početna stranica
+          draft_versions: Izrada nacrta
+      questions:
+        destroy:
+          notice: Pitanje uspješno obrisano
+        edit:
+          back: Nazad
+          title: "Edituj “%{question_title}”"
+          submit_button: Spasi izmjene
+        errors:
+          form:
+            error: Greška
+        form:
+          add_option: Dodaj opciju
+          title: Pitanje
+          title_placeholder: Dodaj pitanje
+          value_placeholder: Dodaj zatvoreni odgovor
+          question_options: "Mogući odgovori (po izboru, odgovori su po pravilu otvoreni)"
+        index:
+          back: Nazad
+          title: Pitanja vezana za ovaj proces
+          create: Napiši pitanje
+          delete: Obriši
+        new:
+          back: Nazad
+          title: Napiši novo pitanje
+          submit_button: Napiši pitanje
+        table:
+          title: Naziv
+          question_options: Opcije za pitanje
+          answers_count: Broj odgovora
+          comments_count: Broj komentara
+        question_option_fields:
+          remove_option: Ukloni opciju
+      milestones:
+        index:
+          title: Prati
+    managers:
+      index:
+        title: Menadžeri
+        name: Ime
+        email: Email
+        no_managers: Nema menadžera.
+      manager:
+        add: Dodaj
+        delete: Obriši
+      search:
+        title: "Menadžeri: traženje korisnika"
+    menu:
+      activity: Moderatorove radnje
+      admin: Administrativni meni
+      banner: Uredi banere
+      proposals: Prijedlozi
+      proposals_topics: Teme u prijedlozima
+      budgets: Participativni budžeti
