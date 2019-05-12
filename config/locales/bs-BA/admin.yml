@@ -859,3 +859,5 @@ bs:
       user_invite:
         title: "Pozivnica korisniku"
         description: "Poslano osobi koja je pozvana da registruje račun."
+      edit_info: "Možete editovati ovaj mail u"
+      message_title: "Naslov poruke"
