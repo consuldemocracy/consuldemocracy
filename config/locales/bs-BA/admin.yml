@@ -171,7 +171,7 @@ bs:
         save_changes: Spasi izmjene
     budget_investments:
       index:
-        heading_filter_all: Sva zaglavlja
+        heading_filter_all: Sve kategorije
         administrator_filter_all: Svi administratori
         valuator_filter_all: Svi ocjenitelji
         tags_filter_all: Svi tagovi
@@ -181,7 +181,7 @@ bs:
           all: Sve
           without_admin: Bez dodijeljenog administratora
           without_valuator: Bez dodijeljenog ocjenitelja
-          under_valuation: Ocjenjuje se
+          under_valuation: Ocjena u toku
           valuation_finished: Ocjena završena
           feasible: Izvodivo
           selected: Odabrano
@@ -189,11 +189,11 @@ bs:
           unfeasible: Nije izvodivo
           min_total_supports: Minimalna podrška
           max_total_supports: Maksimalna podrška
-          winners: Pobjednici
+          winners: Odabrane investicije
           one_filter_html: "Trenutno primjenjeni filteri: <b><em>%{filter}</em></b>"
           two_filters_html: "Trenutno primjenjeni filteri: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: Filter
+          filter: Filter (suzi pretragu)
         download_current_selection: "Preuzmi odabranu selekciju"
         no_budget_investments: "Nema investicionih projekata."
         title: Investicioni projekti
@@ -208,13 +208,13 @@ bs:
         selected: "Odabrano"
         select: "Odaberi"
         list:
-          id: Identitet
+          id: Broj investicije
           title: Naziv
-          supports: Podržava
+          supports: Podrška
           admin: Administrator
           valuator: Ocjenitelj
           valuation_group: Grupa za ocjenjivanje
-          geozone: Mandat
+          geozone: Područje
           feasibility: Izvodivost
           valuation_finished: Fin. vrijednost
           selected: Odabrano
