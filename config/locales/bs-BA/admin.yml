@@ -1123,3 +1123,53 @@ bs:
           without_admin: Bez dodijeljenog administratora
           managed: Radi se
           valuating: Ocjenjuje se
+          valuation_finished: Ocjena završena
+          all: Sve
+    geozones:
+      edit:
+        form:
+          submit_button: Spasi izmjene
+        editing: Editovanje geozone
+        back: Idi nazad
+      new:
+        back: Idi nazad
+        creating: Napravi oblast
+      delete:
+        success: Geozona uspješno obrisana
+        error: Geozona se ne može obrisati zbog vezanih elemenata
+    signature_sheets:
+      author: Autor
+      created_at: Datum pravljenja
+      name: Naziv
+      no_signature_sheets: "Nema potpisnih listova"
+      index:
+        title: Potpisni listovi
+        new: Novi potpisni listovi
+      new:
+        title: Novi potpisni listovi
+        document_numbers_note: "Napiši brojeve, razdvojene zarezima (,)"
+        submit: Napravi potpisni list
+      show:
+        created_at: Napravljeno
+        author: Autor
+        documents: Dokumenti
+        document_count: "Broj dokumenata:"
+        unverified_error: (Nije potvrđeno popisom)
+        loading: "Neki potpisi se trenutno potvrđuju u popisu. Osvježite stranicu za nekoliko sekundi"
+    stats:
+      show:
+        stats_title: Statistika
+        summary:
+          comment_votes: Glasovi s komentarima
+          comments: Komentari
+          debate_votes: Glasovi u debati
+          debates: Debate
+          proposal_votes: Glasovi za prijedloge
+          proposals: Prijedlozi
+          budgets: Otvoreni budžeti
+          budget_investments: Investicioni projekti
+          spending_proposals: Prijedlozi troškova
+          unverified_users: Nepotvrđeni korisnici
+          user_level_three: Korisnici na trećem stupnju
+          user_level_two: Korisnici na drugom stupnju
+          users: Ukupno korisnika
