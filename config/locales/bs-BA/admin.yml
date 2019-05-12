@@ -929,7 +929,7 @@ bs:
     poll_booth_assignments:
       flash:
         error_destroy: "Došlo je do greške u brisanju dodjele kabina"
-        error_create: "Došlo je do greške u dodjeli kabina"
+        error_create: "Došlo je do greške u određivanju kabine za izbore"
       show:
         location: "Lokacija"
         officers: "Službena lica"
@@ -940,3 +940,34 @@ bs:
         results: "Rezultati"
         date: "Datum"
         count_final: "Konačno ponovno prebrojavanje (od strane službenog lica)"
+        count_by_system: "Glasovi (automatsko brojanje)"
+        total_system: Ukupno glasova (automatsko brojanje)
+      index:
+        booths_title: "Spisak kabina"
+        no_booths: "Nema kabina za ove izbore."
+        table_name: "Ime"
+        table_location: "Lokacija"
+    active_polls:
+      edit:
+        title: "Opis izbora"
+      form:
+        description:
+          text: "Opis"
+          help_text: "Ovaj tekst će se pojaviti u zaglavlju stranice za izbore. Može se iskoristiti za pružanje dodatnog konteksta za otvorene izbore."
+    polls:
+      index:
+        title: "Spisak izbora"
+        no_polls: "Nema skorih izbora."
+        create: "Napravi izbore"
+        name: "Naziv"
+        dates: "Datumi"
+        start_date: "Početni datum"
+        closing_date: "Krajnji datum"
+        geozone_restricted: "Ograničeno na sljedeća područja"
+      new:
+        title: "Novi izbori"
+        show_results_and_stats: "Pokaži rezultate i statistiku"
+        show_results: "Pokaži rezultate"
+        show_stats: "Pokaži statistiku"
+        results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ovih izbora će biti dostupni javnosti i vidljivi svakom korisniku."
+        submit_button: "Napravi izbore"
