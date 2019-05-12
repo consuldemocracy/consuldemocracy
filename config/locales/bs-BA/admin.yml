@@ -1054,6 +1054,7 @@ bs:
       index:
         title: "Pitanja"
         create: "Napravi pitanje"
+        no_questions: "Nema pitanja."
     recounts:
       index:
         total_system: "Glasovi (automatsko brojanje)"
