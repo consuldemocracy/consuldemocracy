@@ -899,3 +899,44 @@ bs:
         cost: Troškovi
       form:
         edit_title: "Ocjenitelji: Editovanje podataka za ocjenitelja"
+        update: "Ažuriraj podatke za ocjenitelja"
+        updated: "Podaci za ocjenitelja uspješno ažurirani"
+      show:
+        description: "Opis"
+        email: "Email"
+        group: "Grupa"
+        no_description: "Bez opisa"
+        no_group: "Bez grupe"
+    valuator_groups:
+      index:
+        title: "Grupe za ocjenjivanje"
+        new: "Napravi grupu za ocjenjivanje"
+        name: "Ime"
+        members: "Članovi"
+        no_groups: "Nema grupa za ocjenjivanje"
+      show:
+        title: "Grupa za ocjenjivanje: %{group}"
+        no_valuators: "Nema ocjenitelja dodijeljenih ovoj grupi"
+      form:
+        name: "Ime grupe"
+        new: "Napravi grupu za ocjenjivanje"
+        edit: "Spasi podatke za grupu za ocjenjivanje"
+    poll_officers:
+      index:
+        title: Anketari
+      officer:
+        add: Dodaj
+    poll_booth_assignments:
+      flash:
+        error_destroy: "Došlo je do greške u brisanju dodjele kabina"
+        error_create: "Došlo je do greške u dodjeli kabina"
+      show:
+        location: "Lokacija"
+        officers: "Službena lica"
+        officers_list: "Spisak službenih lica za ovu kabinu"
+        no_officers: "Nema službenih lica za ovu kabinu"
+        recounts: "Ponovna brojanja"
+        recounts_list: "Spisak ponovnih brojanja za ovu kabinu"
+        results: "Rezultati"
+        date: "Datum"
+        count_final: "Konačno ponovno prebrojavanje (od strane službenog lica)"
