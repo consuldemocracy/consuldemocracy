@@ -1377,8 +1377,73 @@ bs:
       direct_messages:
         title: Direktne poruke
         total: Ukupno
+        users_who_have_sent_message: Korisnici koji su poslali privatne poruke
+      proposal_notifications:
+        title: Obavijesti o prijedlogu
+        total: Ukupno
+        proposals_with_notifications: Prijedlozi sa obavijestima
+        not_available: "Prijedlozi nisu dostupni"
+      polls:
+        title: Statistika za glasačku anketu
+        all: Glasačke ankete
+        web_participants: Online učesnici
+        total_participants: Ukupno učesnika
+        poll_questions: "Pitanja iz glasačke ankete: %{poll}"
+        table:
+          poll_name: Glasačka anketa
+          question_name: Pitanje
+          origin_web: Online učesnici
+          origin_total: Ukupno učesnika
+    tags:
+      create: Formuliši temu
+      destroy: Ukloni temu
+      index:
+        add_tag: Dodaj novu temu za prijedlog
+        title: Teme za prijedlog
+        topic: Tema
+        help: "Kada korisnik formuliše prijedlog, sljedeće teme se automatski predlažu kao tagovi."
+      name:
+        placeholder: Upiši naziv teme
+    users:
+      columns:
+        name: Ime
+        email: Email adresa
+        document_number: Broj dokumenta
+        roles: Dužnosti
+        verification_level: Stupanj verifikacije
+      index:
+        title: Korisnik
+        no_users: Nema korisnika.
+      search:
+        placeholder: Traži korisnika po email adresi, imenu ili broju dokumenta
+        search: Traži
+    verifications:
+      index:
+        phone_not_given: Telefonski broj nije naveden
+        sms_code_not_confirmed: Nije potvrđena Sms-šifra
+        title: Nedovršene verifikacije
     site_customization:
       content_blocks:
+        information: Podaci o blokovima sadržaja
+        about: "Možete napraviti HTML blokove sadržaja, koji se mogu ubaciti na različita mjesta na vašoj web-stranici."
+        html_format: "Blok sadržaja je grupa linkova, koja mora biti u sljedećem formatu:"
+        no_blocks: "Nema blokova sadržaja."
+        create:
+          notice: Blok sadržaja uspješno napravljen
+          error: Blok sadržaja se ne može napraviti
+        update:
+          notice: Blok sadržaja uspješno ažuriran
+          error: Blok sadržaja se ne može ažurirati
+        destroy:
+          notice: Blok sadržaja uspješno obrisan
+        edit:
+          title: Editovanje bloka sadržaja u toku
+        errors:
+          form:
+            error: Greška
+        index:
+          create: Napravi novi blok sadržaja
+          delete: Obriši blok
         content_block:
           name: Naziv
           names:
