@@ -956,6 +956,34 @@ bs:
         new_shift: "Nova smjena"
         no_shifts: "Nema rada u smjenama za ovu kabinu"
         officer: "Službeno lice"
+        remove_shift: "Ukloni"
+        search_officer_button: Pretraga
+        search_officer_placeholder: Pretraga službenih lica
+        search_officer_text: Traži službeno lice za novu smjenu
+        select_date: "Odaberi dan"
+        no_voting_days: "Period za glasanje završen"
+        select_task: "Odaberi zadatak"
+        table_shift: "Smjena"
+        table_email: "Email"
+        table_name: "Ime"
+      flash:
+        create: "Dodana smjena"
+        destroy: "Smjena obrisana"
+        unable_to_destroy: "Ne mogu se obrisati smjene zbog vezanih rezultata ili ponovnog brojanja"
+        date_missing: "Mora se odabrati datum"
+      vote_collection: Prikupi glasove
+      recount_scrutiny: Ponovno brojanje i provjera
+    booth_assignments:
+      manage_assignments: Raspodjela dužnosti
+      manage:
+        assignments_list: "Dužnosti za izbore '%{poll}'"
+        status:
+          assign_status: Dužnost
+          assigned: Dodijeljeno
+          unassigned: Nije dodijeljeno
+        actions:
+          assign: Dodijeli kabinu
+          unassign: Obriši dodjelu kabine
     poll_booth_assignments:
       flash:
         error_destroy: "Došlo je do greške u brisanju dodjele kabina"
