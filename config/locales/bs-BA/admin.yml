@@ -132,6 +132,10 @@ bs:
     budget_headings:
       name: "Ime"
       no_headings: "Nema stavki."
+      amount:
+        one: "Postoji jedna kategorija"
+        few: "Postoji više kategorija (broj) %{count}"
+        other: "Postoji više kategorija (broj) %{count}"
       create:
         notice: "Stavka uspješno napravljena!"
       update:
@@ -1330,7 +1334,47 @@ bs:
         assigned_valuators: Dodijeljeni ocjenitelji
         back: Nazad
         classification: Klasifikacija
+        heading: "Investicioni projekat (broj) %{id}"
+        edit: Edituj
+        edit_classification: Edituj klasifikaciju
+        association_name: Udruženje
+        by: Od
+        sent: Poslano
+        geozone: Područje
+        dossier: Dosije
+        edit_dossier: Edituj dosije
+        tags: Tagovi
+        undefined: Nije definisano
+      edit:
+        classification: Klasifikacija
+        assigned_valuators: Ocjenitelji
+        submit_button: Ažuriraj
+        tags: Tagovi
+        tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
+        undefined: Nije definisano
+      summary:
+        title: Sažetak za investicione projekte
+        title_proposals_with_supports: Sažetak za investicione projekte, sa podrškom
+        geozone_name: Područje
+        finished_and_feasible_count: Završeno i izvodivo
+        finished_and_unfeasible_count: Završeno i neizvodivo
+        finished_count: Završeno
+        in_evaluation_count: Ocjena u toku
+        total_count: Ukupno
+        cost_for_geozone: Troškovi
     geozones:
+      index:
+        title: Geozona
+        create: Definiši geozonu
+        edit: Edituj
+        delete: Obriši
+      geozone:
+        name: Ime
+        external_code: Eksterna šifra
+        census_code: Šifra popisa
+        code_help: Šifra odgovora za ovu geozonu na API od od popisa
+        coordinates: Koordinate
+        coordinates_help: Koordinate koje će napraviti područje na HTML slikovnoj mapi na koje će se moći klikati
       edit:
         form:
           submit_button: Spasi izmjene
@@ -1535,3 +1579,29 @@ bs:
       description: Aktivni moduli se vide na početnoj stranici u istom redoslijedu kao ovdje.
       header_title: Zaglavlje
       no_header: Nema zaglavlja.
+      create_header: Napravi zaglavlje
+      cards_title: Kartice
+      create_card: Napravi karticu
+      no_cards: Nema kartica.
+      cards:
+        title: Naziv
+        description: Opis
+        link_text: Link za tekst
+        link_url: Link za URL
+      feeds:
+        proposals: Prijedlozi
+        debates: Debate
+        processes: Procesi
+      new:
+        header_title: Novo zaglavlje
+        submit_header: Napravi zaglavlje
+        card_title: Nova kartica
+        submit_card: Napravi karticu
+      edit:
+        header_title: Edituj zaglavlje
+        submit_header: Spasi zaglavlje
+        card_title: Edituj karticu
+        submit_card: Spasi karticu
+    translations:
+      remove_language: Ukloni tekst
+      add_language: Dodaj tekst
