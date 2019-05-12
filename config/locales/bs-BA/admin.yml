@@ -1093,8 +1093,33 @@ bs:
           documents_list: Lista dokumenata
           document_title: Naziv
           document_actions: Radnje
+    answers:
+      new:
+        title: Novi odgovor
+      show:
+        title: Naslov
+        description: Opis
+        images: Slike
+        images_list: Lista slika
+        edit: Edituj odgovor
+      edit:
+        title: Edituj odgovor
+      videos:
+        index:
+          title: Video zapisi
+          add_video: Dodaj video
+          video_title: Naziv
+          video_url: Eksterni video
+        new:
+          title: Novi video
+        edit:
+          title: Edituj video
     recounts:
       index:
+        title: "Ponovna brojanja"
+        no_recounts: "Nema ništa za ponovno brojanje"
+        all_booths_total: "Ukupni broj glasova, kumulativno iz svih kabina:"
+        total_final: "Ponovna brojanja, konačni rezultat"
         total_system: "Glasovi (automatsko brojanje)"
         table_booth_name: "Kabina"
         table_total_recount: "Konačno ponovno prebrojavanje (od strane službenog lica)"
@@ -1351,6 +1376,7 @@ bs:
         polls: Izbori
       direct_messages:
         title: Direktne poruke
+        total: Ukupno
     site_customization:
       content_blocks:
         content_block:
