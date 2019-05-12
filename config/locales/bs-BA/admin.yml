@@ -1315,6 +1315,21 @@ bs:
           valuating: Ocjenjuje se
           valuation_finished: Ocjena završena
           all: Sve
+        title: Investicioni projekti za participativno budžetiranje
+        assigned_admin: Dodijeljeni administrator
+        no_admin_assigned: Nema dodijeljenih administratora
+        no_valuators_assigned: Nema dodijeljenih ocjenitelja
+        summary_link: "Sažetak investicionog projekta"
+        valuator_summary_link: "Sažetak ocjenitelja"
+        feasibility:
+          feasible: "Izvodivo (cijena) (%{price})"
+          not_feasible: "Nije izvodivo"
+          undefined: "Nije definisano"
+      show:
+        assigned_admin: Dodijeljeni administrator
+        assigned_valuators: Dodijeljeni ocjenitelji
+        back: Nazad
+        classification: Klasifikacija
     geozones:
       edit:
         form:
@@ -1444,7 +1459,11 @@ bs:
         index:
           create: Napravi novi blok sadržaja
           delete: Obriši blok
+          title: Blokovi sadržaja
+        new:
+          title: Napravi novi blok sadržaja
         content_block:
+          body: Osnovni tekst
           name: Naziv
           names:
             top_links: Glavni linkovi
