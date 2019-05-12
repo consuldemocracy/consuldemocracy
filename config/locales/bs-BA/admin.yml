@@ -1055,6 +1055,8 @@ bs:
         title: "Pitanja"
         create: "Napravi pitanje"
         no_questions: "Nema pitanja."
+        filter_poll: Pretrage po glasačkim anketama
+        select_poll: Odaberi glasačku anketu
     recounts:
       index:
         total_system: "Glasovi (automatsko brojanje)"
