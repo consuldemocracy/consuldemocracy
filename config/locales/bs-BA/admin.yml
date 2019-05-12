@@ -861,3 +861,41 @@ bs:
         description: "Poslano osobi koja je pozvana da registruje račun."
       edit_info: "Možete editovati ovaj mail u"
       message_title: "Naslov poruke"
+      message_body: "Ovo je primjer sadržaja poruke."
+      alert:
+        no_investments: "Nije napravljena nijedna budžetska investicija. Neophodni su ogledni podaci kako bi se dobio pregled emaila."
+        no_comments: "Nije napravljen nijedan komentar. Neophodni su ogledni podaci kako bi se dobio pregled emaila."
+        no_replies: "Nije napravljen nijedan odgovor. Neophodni su ogledni podaci kako bi se dobio pregled emaila."
+    emails_download:
+      index:
+        title: Učitaj emailove
+        download_segment: Učitaj email adrese
+        download_segment_help_text: Učitaj u CSV formatu
+        download_emails_button: Učitaj listu emailova
+    valuators:
+      index:
+        title: Ocjenitelji
+        name: Ime
+        email: Email
+        description: Opis
+        no_description: Nema opisa
+        no_valuators: Nema ocjenitelja.
+        valuator_groups: "Grupe za ocjenjivanje"
+        group: "Grupa"
+        no_group: "Nema grupe"
+      valuator:
+        add: Dodaj ocjeniteljima
+        delete: Obriši
+      search:
+        title: "Ocjenitelji: traženje korisnika"
+      summary:
+        title: Ocjeniteljev sažetak za investicione projekte
+        valuator_name: Ocjenitelj
+        finished_and_feasible_count: Završeno i izvodivo
+        finished_and_unfeasible_count: Završeno i neizvodivo
+        finished_count: Završeno
+        in_evaluation_count: Ocjena u toku
+        total_count: Ukupno
+        cost: Troškovi
+      form:
+        edit_title: "Ocjenitelji: Editovanje podataka za ocjenitelja"
