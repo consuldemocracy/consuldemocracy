@@ -1057,6 +1057,42 @@ bs:
         no_questions: "Nema pitanja."
         filter_poll: Pretrage po glasačkim anketama
         select_poll: Odaberi glasačku anketu
+        questions_tab: "Pitanja"
+        successful_proposals_tab: "Uspješni prijedlozi"
+        create_question: "Formuliši pitanje"
+        table_proposal: "Prijedlog"
+        table_question: "Pitanje"
+        table_poll: "Glasačka anketa"
+        poll_not_assigned: "Glasačka anketa nije definisana"
+      edit:
+        title: "Edituj pitanje"
+      new:
+        title: "Formuliši pitanje za glasačku anketu %{poll}"
+        title_proposal: "Formuliši pitanje"
+        poll_label: "Glasačka anketa"
+      answers:
+        images:
+          add_image: "Dodaj sliku"
+          save_image: "Spasi sliku"
+      show:
+        proposal: Izvorni prijedlog
+        author: Autor
+        question: Pitanje
+        edit_question: Edituj pitanje
+        valid_answers: Relevantni odgovori
+        add_answer: Dodaj odgovor
+        video_url: Eksterni video
+        answers:
+          title: Odgovor
+          description: Opis
+          videos: Video zapisi
+          video_list: Lista video zapisa
+          images: Slike
+          images_list: Lista slika
+          documents: Dokumenti
+          documents_list: Lista dokumenata
+          document_title: Naziv
+          document_actions: Radnje
     recounts:
       index:
         total_system: "Glasovi (automatsko brojanje)"
