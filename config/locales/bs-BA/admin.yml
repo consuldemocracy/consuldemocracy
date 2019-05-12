@@ -1180,7 +1180,14 @@ bs:
         title: Postavke za konfiguraciju
         update_setting: Ažuriraj
         participation_processes: "Participativni procesi"
+        feature_flags: Značajke
+        features:
+          enabled: "Značajke uključene"
+          disabled: "Značajke isključene"
+          enable: "Uključi"
+          disable: "Isključi"
         map:
+          title: Konfiguracija mape
           help: Ovdje možete prilagoditi način na koji se mapa prikazuje korisnicima. Vucite marker ili kliknite bilo gdje iznad mape, podesite zumiranje i pritisnite dugme za ažuriranje podataka.
           flash:
             update: Konfiguracija mape uspješno ažurirana.
