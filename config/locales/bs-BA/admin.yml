@@ -1192,3 +1192,59 @@ bs:
           name: Naziv
           names:
             top_links: Glavni linkovi
+            footer: Tekst na dnu stranice
+            subnavigation_left: Idi lijevo u tekstu
+            subnavigation_right: Idi desno u tekstu
+      images:
+        index:
+          title: Prilagođene slike
+          update: Ažuriraj
+          delete: Obriši
+          image: Slika
+        update:
+          notice: Slika uspješno ažurirana
+          error: Slika se ne može ažurirati
+        destroy:
+          notice: Slika uspješno obrisana
+          error: Slika se ne može obrisati
+      pages:
+        create:
+          notice: Stranica uspješno napravljena
+          error: Stranica se ne može napraviti
+        update:
+          notice: Stranica uspješno ažurirana
+          error: Stranica se ne može ažurirati
+        destroy:
+          notice: Stranica uspješno obrisana
+        edit:
+          title: Editovanje naziva stranice %{page_title}
+        errors:
+          form:
+            error: Greška
+        form:
+          options: Opcije
+        index:
+          create: Napravi novu stranicu
+          delete: Obriši stranicu
+          title: Prilagođene stranice
+          see_page: Vidi stranicu
+        new:
+          title: Napravi novu prilagođenu stranicu
+        page:
+          created_at: Napravljeno
+          status: Status
+          updated_at: Ažurirano
+          status_draft: Nacrt
+          status_published: Objavljeno
+          title: Naslov
+          slug: Slug
+          cards_title: Kartice
+          see_cards: Vidi kartice
+        cards:
+          cards_title: kartice
+          create_card: Napravi karticu
+          no_cards: Nema kartica.
+          title: Naziv
+          description: Opis
+          link_text: Link za tekst
+          link_url: Link za URL
