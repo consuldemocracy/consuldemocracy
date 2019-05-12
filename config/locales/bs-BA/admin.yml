@@ -926,6 +926,36 @@ bs:
         title: Anketari
       officer:
         add: Dodaj
+        delete: Obriši funkciju
+        name: Ime
+        email: Email
+        entry_name: službeno lice
+      search:
+        email_placeholder: Pretraga korisnika po email-adresi
+        search: Pretraga
+        user_not_found: Korisnik nije pronađen
+    poll_officer_assignments:
+      index:
+        officers_title: "Spisak službenih lica"
+        no_officers: "Nema službenih lica za ove izbore."
+        table_name: "Ime"
+        table_email: "Email"
+      by_officer:
+        date: "Datum"
+        booth: "Kabina"
+        assignments: "Smjene službenih lica za izbore"
+        no_assignments: "Ovaj korisnik nema utvrđenih smjena u ovim izborima."
+    poll_shifts:
+      new:
+        add_shift: "Dodaj smjenu"
+        shift: "Dužnosti"
+        shifts: "Rad u smjenama u ovoj kabini"
+        date: "Datum"
+        task: "Zadatak"
+        edit_shifts: Edituj rad u smjenama
+        new_shift: "Nova smjena"
+        no_shifts: "Nema rada u smjenama za ovu kabinu"
+        officer: "Službeno lice"
     poll_booth_assignments:
       flash:
         error_destroy: "Došlo je do greške u brisanju dodjele kabina"
@@ -1248,3 +1278,15 @@ bs:
           description: Opis
           link_text: Link za tekst
           link_url: Link za URL
+          columns_help: "Širina kartice po broju stupaca. Na ekranu mobilnog telefona, širina je uvijek 100%."
+          create:
+            notice: "Kartica uspješno napravljena!"
+          update:
+            notice: "Kartica uspješno ažurirana"
+          destroy:
+            notice: "Kartica uspješno uklonjena"
+    homepage:
+      title: Početna stranica
+      description: Aktivni moduli se vide na početnoj stranici u istom redoslijedu kao ovdje.
+      header_title: Zaglavlje
+      no_header: Nema zaglavlja.
