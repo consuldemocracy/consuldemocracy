@@ -105,7 +105,7 @@ he:
         feasible: בר ביצוע
         not_feasible: אינו בר ביצוע
         undefined: אינו מוגדר
-        valuation_finished: הערכה הסתיימה
+        valuation_finished: ההערכה הסתיימה
         time_scope: טווח זמן
         internal_comments: הערה פנימית
         responsibles: אחראים
@@ -122,7 +122,7 @@ he:
         not_feasible: אינו בר ביצוע
         undefined_feasible: ממתין לאישור
         feasible_explanation_html: הסבר להיתכנות
-        valuation_finished: Valuation finished
+        valuation_finished: ההערכה הסתיימה
         time_scope_html: טווח זמן
         internal_comments_html: הערה פנימית
         save: שמירת שינויים
