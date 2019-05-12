@@ -1037,3 +1037,9 @@ bs:
     officials:
       edit:
         destroy: Obriši status službenog lica
+        title: "Službena lica: editovanje podataka o korisnicima"
+      flash:
+        official_destroyed: "Detalji spašeni: korisnik više nije službeno lice"
+        official_updated: Spašeni detalji za službeno lice
+      index:
+        title: Službena lica
