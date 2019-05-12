@@ -1067,3 +1067,59 @@ bs:
             update: Konfiguracija mape uspješno ažurirana.
           form:
             submit: Ažuriraj
+          how_to_enable: 'Kako bi se pokazala mapa korisnicima, u tabu "Značajke" morate uključiti "Geolociranje prijedloga i budžetskih investicija".'
+        dashboard:
+          title: Kontrolna ploča za prijedloge
+      setting: Značajka
+      setting_actions: Radnje
+      setting_name: Postavke
+      setting_status: Status
+      setting_value: Vrijednost
+      no_description: "Nema opisa"
+    shared:
+      true_value: "Da"
+      false_value: "Ne"
+      booths_search:
+        button: Pretraga
+        placeholder: Traži kabinu po nazivu
+      poll_officers_search:
+        button: Traži
+        placeholder: Pretraga službenih lica
+      poll_questions_search:
+        button: Traži
+        placeholder: Pretraga pitanja
+      proposal_search:
+        button: Traži
+        placeholder: Pretraga prijedloga po nazivu, šifri, opisu ili pitanju
+      spending_proposal_search:
+        button: Traži
+        placeholder: Pretraga prijedloga troškova po nazivu ili opisu
+      user_search:
+        button: Traži
+        placeholder: Pretraga korisnika po imenu ili email-adresi
+      search_results: "Rezultati pretrage"
+      no_search_results: "Nema rezultata."
+      actions: Radnje
+      title: Naziv
+      description: Opis
+      image: Slika
+      show_image: Pokaži sliku
+      moderated_content: "Provjeri sadržaje koje su postavili moderatori, potvrdi da li je moderiranje bilo korektno."
+      view: Pogledaj
+      proposal: Prijedlog
+      author: Autor
+      content: Sadržaj
+      created_at: Napravljeno
+      delete: Obriši
+      color_help: Heksadecimalni format
+    spending_proposals:
+      index:
+        geozone_filter_all: Sve zone
+        administrator_filter_all: Svi administratori
+        valuator_filter_all: Svi ocjenitelji
+        tags_filter_all: Svi tagovi
+        filters:
+          valuation_open: Otvori
+          without_admin: Bez dodijeljenog administratora
+          managed: Radi se
+          valuating: Ocjenjuje se
