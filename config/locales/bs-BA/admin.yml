@@ -216,13 +216,13 @@ bs:
           valuation_group: Grupa za ocjenjivanje
           geozone: Područje
           feasibility: Izvodivost
-          valuation_finished: Fin. vrijednost
+          valuation_finished: Ocjena završena.
           selected: Odabrano
           visible_to_valuators: Pokaži ocjeniteljima
           author_username: Korisničko ime autora
           incompatible: Nije kompatibilno
           price: Cijena
-        cannot_calculate_winners: Kako bi se obračunali pobjednici, budžet mora ostati u fazi "Projekti vezani za glasačke listiće", ili u fazi "Pregledanje glasačkih listića", ili u fazi "Budžet završen"
+        cannot_calculate_winners: Kako bi se obračunale odabrane investicije, budžet mora biti u fazi "Glasanje za projekte", ili u fazi "Provjera glasačkih listića", ili u fazi "Budžet završen"
         see_results: "Vidi rezultate"
       show:
         assigned_admin: Dodijeljeni administrator
@@ -239,44 +239,44 @@ bs:
         edit_dossier: Edituj dosije
         tags: Tagovi
         user_tags: Korisnički tagovi
-        undefined: Nedefinisano
+        undefined: Nije definisano
         compatibility:
           title: Usklađenost
-          "true": Neusklađeno
-          "false": Usklađeno
+          "true": Nije kompatibilno
+          "false": Kompatibilno
         selection:
           title: Odabir
           "true": Odabrano
           "false": Nije odabrano
         winner:
-          title: Pobjednik
+          title: Odabrana investicija
           "true": "Da"
           "false": "Ne"
         image: "Slika"
         see_image: "Pokaži sliku"
         no_image: "Bez slike"
         documents: "Dokumenti"
-        see_documents: "Vidi dokumente (%{count})"
+        see_documents: "Vidi dokumente (broj) (%{count})"
         no_documents: "Bez dokumenata"
-        valuator_groups: "Grupe za ocjenjivanje"
+        valuator_groups: "Grupe ocjenitelja"
       edit:
         classification: Klasifikacija
-        compatibility: Usklađenost
-        mark_as_incompatible: Označi kao neusklađeno
+        compatibility: Kompatibilnost
+        mark_as_incompatible: Označi kao nekompatibilno
         selection: Odabir
         mark_as_selected: Označi kao odabrano
         assigned_valuators: Ocjenitelji
         select_heading: Odaberi kategoriju
         submit_button: Ažurirano
-        user_tags: Tagovi dodijeljeni korisnicima
+        user_tags: Tagovi koje su definisali korisnici
         tags: Tagovi
-        tags_placeholder: "Napiši tagove koje želiš odvojiti zarezima (,)"
+        tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
         undefined: Nije definisano
         user_groups: "Grupe"
       search_unfeasible: Traži među neizvodivim
     milestones:
       index:
-        table_id: "Ime"
+        table_id: "Broj"
         table_title: "Naziv"
         table_description: "Opis"
         table_publication_date: "Datum objave"
@@ -290,7 +290,7 @@ bs:
         milestone: Rok
         new_milestone: Odredi novi rok
       form:
-        admin_statuses: Vodi statuse
+        admin_statuses: Uredi statuse
         no_statuses_defined: Još uvijek nema utvrđenih statusa
       new:
         creating: Odredi rok
