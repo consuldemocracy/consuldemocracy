@@ -51,3 +51,15 @@ bs:
         success:
           back_to_index: Shvatam; idi nazad na početnu stranicu
           instructions_1_html: "<strong> Kontaktiraćemo vas uskoro </strong> kako bi potvrdili da vi zaista predstavljate ovaj kolektiv."
+          instructions_2_html: Dok se vaš <strong> email provjerava </strong>, poslali smo vam <strong> link za potvrdu vašeg profila </strong>.
+          instructions_3_html: Kad budete potvrđeni, moći ćete da krenete s učestvovanjem kao neverifikovani kolektiv.
+          thank_you_html: Hvala što ste registrovali svoj kolektiv na web-stranici. Sad je u toku <strong> verifikacija </strong>.
+          title: Registracija organizacije ili kolektiva
+    passwords:
+      edit:
+        change_submit: Promjeni moju lozinku
+        password_confirmation_label: Potvrdi novu lozinku
+        password_label: Nova lozinka
+        title: Promjeni svoju lozinku
+      new:
+        email_label: Email
