@@ -266,6 +266,94 @@ hr:
         title: "Pitanje"
       poll/ballot_sheet:
         data: CSV podaci
+        poll_id: Anketa
+        officer_assignment_id: Pripisani činovnik
+      signature_sheet:
+        signable_type: "Tip potpisa"
+        signable_id: "Potpis ID"
+        document_numbers: "Broj dukumenata"
+      site_customization/page:
+        content: Sadržaj
+        created_at: Stvoreno kod
+        subtitle: Podnaslov
+        slug: Žeton
+        status: Status
+        title: Naziv
+        updated_at: Ažurirano u
+        more_info_flag: Prikaži na stranici pomoći
+        print_content_flag: Gumb za printanje sadržaja
+        locale: Jezik
+      site_customization/page/translation:
+        title: Naziv
+        subtitle: Podnaslov
+        content: Sadržaj
+      site_customization/image:
+        name: Ime
+        image: Slika
+      site_customization/content_block:
+        name: Ime
+        locale: lokal
+        body: Tijelo
+      banner:
+        background_color: Boja pozadine
+        font_color: Boja fonta
+      legislation/process:
+        title: Naslov procesa
+        summary: Sažetak
+        description: Opis
+        additional_info: Dodatne informacije
+        start_date: Početak
+        end_date: Kraj
+        debate_start_date: Početak
+        debate_end_date: Kraj
+        draft_start_date: Početak
+        draft_end_date: Kraj
+        draft_publication_date: Datum objave publikacije
+        allegations_start_date: Početak
+        allegations_end_date: Kraj
+        proposals_phase_start_date: Početak
+        proposals_phase_end_date: Kraj
+        result_publication_date: Finalni rezultat datuma objave
+        background_color: Pozadinska boja
+        font_color: Boja fonta
+      legislation/process/translation:
+        title: Naslov Procesa
+        summary: Sažetak
+        description: Opis
+        additional_info: Dodatne informacije
+        milestones_summary: Sažetak
+      legislation/draft_version:
+        title: Naziv Verzije
+        body: Tekst
+        changelog: Izmjene
+        status: Status
+        final_version: Finalna verzija
+      legislation/draft_version/translation:
+        title: Naziv verzije
+        body: Tekst
+        changelog: Izmjene
+      legislation/question:
+        title: Naziv
+        question_options: Opcije
+      legislation/question_option:
+        value: Vrijednost
+      legislation/annotation:
+        text: Komentar
+      document:
+        title: Naziv
+        attachment: Prilog
+      image:
+        title: Naziv
+        attachment: Prilog
+      poll/question/answer:
+        title: Odgovor
+        description: Opis
+      poll/question/answer/translation:
+        title: Odgovor
+        description: Opis
+      poll/question/answer/video:
+        title: Naziv
+        url: Eksterni video
     errors:
       models:
         poll/voter:
