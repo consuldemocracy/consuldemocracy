@@ -1035,31 +1035,31 @@ bs:
         show_results_and_stats: "Pokaži rezultate i statistiku"
         show_results: "Pokaži rezultate"
         show_stats: "Pokaži statistiku"
-        results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ovih izbora će biti dostupni javnosti i vidljivi svakom korisniku."
-        submit_button: "Napravi izbore"
+        results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ove glasačke ankete će biti dostupni javnosti i vidljivi svakom korisniku."
+        submit_button: "Formuliši glasačku anketu"
       edit:
-        title: "Edituj podatke za izbore"
-        submit_button: "Ažuriraj podatke za izbore"
+        title: "Edituj glasačku anketu"
+        submit_button: "Ažuriraj podatke za glasačku anketu"
       show:
         questions_tab: Pitanja
         booths_tab: Kabine
-        officers_tab: Službenici
+        officers_tab: Anketari
         recounts_tab: Ponovno brojanje
         results_tab: Rezultati
-        no_questions: "Nema pitanja utvrđenih za ove izbore."
+        no_questions: "Nema pitanja utvrđenih za ovu glasačku anketu."
         questions_title: "Spisak pitanja"
         table_title: "Naziv"
         edit_answers: Edituj odgovore
         see_proposal: "(Vidi prijedlog)"
       flash:
-        question_added: "Pitanje dodato u ovim izborima"
-        error_on_question_added: "Pitanje se ne može staviti u ove izbore"
+        question_added: "Pitanje dodato u ovoj glasačkoj anketi"
+        error_on_question_added: "Pitanje se ne može uvrstiti u ovu glasačku anketu"
     questions:
       index:
         title: "Pitanja"
-        create: "Napravi pitanje"
+        create: "Formuliši pitanje"
         no_questions: "Nema pitanja."
-        filter_poll: Pretrage po glasačkim anketama
+        filter_poll: Suzi pretragu na glasačke ankete
         select_poll: Odaberi glasačku anketu
         questions_tab: "Pitanja"
         successful_proposals_tab: "Uspješni prijedlozi"
@@ -1126,7 +1126,7 @@ bs:
         total_final: "Ponovna brojanja, konačni rezultat"
         total_system: "Glasovi (automatsko brojanje)"
         table_booth_name: "Kabina"
-        table_total_recount: "Konačno ponovno prebrojavanje (od strane službenog lica)"
+        table_total_recount: "Konačno ponovno prebrojavanje (od strane anketara)"
         table_system_count: "Glasovi (automatsko brojanje)"
     results:
       index:
@@ -1145,7 +1145,7 @@ bs:
         title: "Rezultati po kabinama"
     booths:
       index:
-        title: "Spisak aktivnih kabina"
+        title: "Lista aktivnih kabina"
         no_booths: "Nema aktivnih kabina za nijedne skore izbore."
         add_booth: "Dodaj kabinu"
         name: "Naziv"
