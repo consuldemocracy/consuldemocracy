@@ -677,10 +677,10 @@ bs:
       valuators: Ocjenitelji
       poll_officers: Anketari
       polls: Glasačke ankete
-      poll_booths: Lokacija kabina
+      poll_booths: Lokacije kabina
       poll_booth_assignments: Dodjela kabina
       poll_shifts: Vodi smjene
-      officials: Službena lica
+      officials: Službenici
       organizations: Organizacije
       settings: Opšte postavke
       spending_proposals: Prijedlozi troškova
@@ -691,13 +691,13 @@ bs:
         homepage: Početna stranica
         pages: Prilagođene stranice
         images: Prilagođene slike
-        content_blocks: Prilagođeno blokiranje sadržaja
+        content_blocks: Prilagođeni blokovi sadržaja
         information_texts: Prilagođeni informacijski tekstovi
         information_texts_menu:
           debates: "Debate"
           community: "Zajednica"
           proposals: "Prijedlozi"
-          polls: "Ankete"
+          polls: "Glasačke ankete"
           layouts: "Rasporedi"
           mailers: "Emailovi"
           management: "Menadžment"
@@ -710,7 +710,7 @@ bs:
       title_budgets: Budžeti
       title_profiles: Profili
       title_settings: Postavke
-      title_site_customization: Materijali za mjesto
+      title_site_customization: Materijali na glasačkom mjestu
       title_booths: Kabine za glasanje
       legislation: Legislativna saradnja
       users: Korisnici
