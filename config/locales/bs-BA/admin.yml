@@ -276,7 +276,7 @@ bs:
       search_unfeasible: Traži među neizvodivim
     milestones:
       index:
-        table_id: "Broj"
+        table_id: "Identifikacioni broj"
         table_title: "Naziv"
         table_description: "Opis"
         table_publication_date: "Datum objave"
@@ -315,23 +315,23 @@ bs:
         delete: Obriši
         edit: Edituj
       edit:
-        title: Edituj status za utvrđeni rok
+        title: Edituj status utvrđenog roka
       update:
-        notice: Status za utvrđeni rok uspješno ažuriran
+        notice: Status utvrđenog roka uspješno ažuriran
       new:
         title: Napravi status za utvrđeni rok
       create:
-        notice: Status za utvrđeni rok uspješno napravljen
+        notice: Status utvrđenog roka uspješno napravljen
       delete:
-        notice: Status za utvrđeni rok uspješno obrisan
+        notice: Status utvrđenog roka uspješno obrisan
     progress_bars:
-      manage: "Vodi trake za praćenje napretka"
+      manage: "Uredi trake za praćenje napretka"
       index:
         title: "Trake za praćenje napretka"
         no_progress_bars: "Nema traka za praćenje napretka"
         new_progress_bar: "Napravi novu traku za praćenje napretka"
         primary: "Primarna traka za praćenje napretka"
-        table_id: "Identitet"
+        table_id: "Identifikacioni broj"
         table_kind: "Vrsta"
         table_title: "Naziv"
         table_percentage: "Trenutni napredak"
@@ -340,7 +340,7 @@ bs:
       edit:
         title:
           primary: "Edituj primarnu traku za praćenje napretka"
-          secondary: "Edituj traku za praćenje napretka %{title}"
+          secondary: "Edituj traku za praćenje napretka (naziv) %{title}"
       create:
         notice: "Traka za praćenje napretka uspješno napravljena!"
       update:
@@ -349,7 +349,7 @@ bs:
         notice: "Traka za praćenje napretka uspješno obrisana"
     comments:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           with_confirmed_hide: Potvrđeno
@@ -362,14 +362,14 @@ bs:
       index:
         back: Vrati se na %{org}
         title: Administracija
-        description: Dobrodošli na %{org} admin panel.
+        description: Dobrodošli na %{org} kontrolnu ploču za administraciju.
       actions:
         action_type:
           proposed_action: Predložena radnja
           resource: Resurs
         index:
           description: "Kada korisnici prave prijedloge, mogu pristupiti kontrolnoj ploči za svoj prijedlog, gdje se mogu predlagati resursi i preporuke kako bi se dobila podrška za njihovu ideju."
-          create: Napravi resurs ili radnju
+          create: Definiši resurs ili radnju
           edit: Edituj
           delete: Obriši
           active: 'Da'
@@ -377,14 +377,14 @@ bs:
           title: Resursi i radnje
           action_title: Naziv
           action_type: Vrsta
-          required_supports: Neophodna podrška
+          required_supports: Potrebna podrška
           day_offset: Potrebni dani
           action_active: Aktivno
           order: Naruči
           published_proposal: Objavljeni prijedlog
           default:
             email: Email
-            polls: Ankete
+            polls: Glasačke ankete
             poster: Poster
         new:
           creating: Nova radnja za kontrolnu ploču za prijedloge
@@ -400,21 +400,21 @@ bs:
           submit_button: Spasi
           help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
           published_proposal: Za objavljene prijedloge?
-          published_proposal_help_text: Označite kockicu kako bi napravili radnju samo za objavljene prijedloge
+          published_proposal_help_text: Označite kockicu kako bi definisali radnju samo za objavljene prijedloge
       administrator_tasks:
         index:
-          description: "Resursi objavljeni na kontrolnoj ploči za prijedloge mogu imati i dugme za podnošenje zahtjeva administratorima. Korisnički zahtjevi su pokazani dole."
-          title: Zahtjev za resurse
+          description: "Resursi objavljeni na kontrolnoj ploči za prijedloge mogu imati i dugme za koje se podnosi zahtjev administratorima. Korisnički zahtjevi su pokazani dole."
+          title: Zatraženi resursi
           solve: Riješi
           no_records: Nisu zatraženi resursi
           source: Izvor
-          resource: Resurs koji se traži
-          filter: Filter
+          resource: Zatraženi resurs
+          filter: Filter (suzi pretragu)
           filters:
             pending: U toku
             done: Riješeno
         edit:
-          back: Nazad na spisak nedovršenih zadataka
+          back: Nazad na listu nedovršenih zadataka
           solving: Riješi nedovršeni zadatak
         form:
           solve: Označi kao riješeno
@@ -424,7 +424,7 @@ bs:
           success: Zadatak označen kao riješen.
     debates:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           with_confirmed_hide: Potvrđeno
@@ -450,7 +450,7 @@ bs:
         success_notice: "Dokument uspješno obrisan"
     hidden_users:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           with_confirmed_hide: Potvrđeno
@@ -462,10 +462,10 @@ bs:
         email: "Email:"
         hidden_at: "Sakriveno:"
         registered_at: "Registrovano:"
-        title: Korisnička radnja (%{user})
+        title: Korisnička radnja (korisnik) (%{user})
     hidden_budget_investments:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           with_confirmed_hide: Potvrđeno
