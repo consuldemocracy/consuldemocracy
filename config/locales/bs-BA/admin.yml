@@ -1413,7 +1413,7 @@ bs:
           comments: Komentari
           debate_votes: Glasovi u debati
           debates: Debate
-          proposal_votes: Glasovi za prijedloge
+          proposal_votes: Glasovi za prijedlog
           proposals: Prijedlozi
           budgets: Otvoreni budžeti
           budget_investments: Investicioni projekti
@@ -1432,7 +1432,7 @@ bs:
         direct_messages: Direktne poruke
         proposal_notifications: Obavijesti o prijedlogu
         incomplete_verifications: Nedovršene verifikacije
-        polls: Izbori
+        polls: Glasačke ankete
       direct_messages:
         title: Direktne poruke
         total: Ukupno
@@ -1479,7 +1479,7 @@ bs:
     verifications:
       index:
         phone_not_given: Telefonski broj nije naveden
-        sms_code_not_confirmed: Nije potvrđena Sms-šifra
+        sms_code_not_confirmed: Nije potvrđena SMS-šifra
         title: Nedovršene verifikacije
     site_customization:
       content_blocks:
