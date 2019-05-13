@@ -552,7 +552,7 @@ bs:
         form:
           custom_categories: Kategorije
           custom_categories_description: Kategorije koje korisnici mogu odabrati za pravljenje prijedloga. Maksimalno 160 karaktera.
-          custom_categories_placeholder: Unesite tagove koje želite koristiti, razdvojene zarezima (,) i u navodnicima ("")
+          custom_categories_placeholder: Unesite tagove koje želite koristiti, razdvojene zarezima (,) i pod navodnicima ("")
       draft_versions:
         create:
           notice: 'Nacrt uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
@@ -621,7 +621,7 @@ bs:
           title: Pitanje
           title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvoreni odgovor
-          question_options: "Mogući odgovori (po izboru, odgovori su po pravilu otvoreni)"
+          question_options: "Mogući odgovori (nije obavezno, odgovori su po pravilu otvoreni)"
         index:
           back: Nazad
           title: Pitanja vezana za ovaj proces
@@ -640,7 +640,7 @@ bs:
           remove_option: Ukloni opciju
       milestones:
         index:
-          title: Prati
+          title: Praćenje
     managers:
       index:
         title: Menadžeri
@@ -663,8 +663,8 @@ bs:
       hidden_comments: Skriveni komentari
       hidden_debates: Skrivene debate
       hidden_proposals: Skriveni prijedlozi
-      hidden_budget_investments: Sakrivene budžetske investicije
-      hidden_proposal_notifications: Sakrivene obavijesti o prijedlozima
+      hidden_budget_investments: Skrivene budžetske investicije
+      hidden_proposal_notifications: Skrivene obavijesti o prijedlozima
       hidden_users: Skriveni korisnici
       administrators: Administratori
       managers: Menadžeri
@@ -676,7 +676,7 @@ bs:
       emails_download: Učitaj emailove
       valuators: Ocjenitelji
       poll_officers: Anketari
-      polls: Ankete
+      polls: Glasačke ankete
       poll_booths: Lokacija kabina
       poll_booth_assignments: Dodjela kabina
       poll_shifts: Vodi smjene
