@@ -59,3 +59,4 @@ bs:
       expired: "isteklo; ponovi zahtjev."
       not_found: "nije pronađen."
       not_locked: "nije bio zaključan."
+      equal_to_current_password: "ne može biti ista kao i sadašnja lozinka."
