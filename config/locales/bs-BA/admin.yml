@@ -980,7 +980,7 @@ bs:
     booth_assignments:
       manage_assignments: Raspodjela dužnosti
       manage:
-        assignments_list: "Dužnosti za izbore '%{poll}'"
+        assignments_list: "Dužnosti za glasačku anketu '%{poll}'"
         status:
           assign_status: Dužnost
           assigned: Dodijeljeno
@@ -990,48 +990,48 @@ bs:
           unassign: Obriši dodjelu kabine
     poll_booth_assignments:
       alert:
-        shifts: "Za ovu kabinu je određen rad u smjenama. Ako obrišete raspodjelu dužnosti za kabinu, obrisaće se i smjene. Nastavite?"
+        shifts: "Za ovu kabinu je određen rad u smjenama. Ako obrišete raspored za kabinu, obrisaće se i smjene. Nastavite?"
       flash:
         destroy: "Kabina više nije dodjeljena"
         create: "Kabina dodjeljena"
         error_destroy: "Došlo je do greške u brisanju dodjele kabina"
-        error_create: "Došlo je do greške u određivanju kabine za izbore"
+        error_create: "Došlo je do greške u određivanju kabine za glasačku anketu"
       show:
         location: "Lokacija"
-        officers: "Službena lica"
-        officers_list: "Spisak službenih lica za ovu kabinu"
-        no_officers: "Nema službenih lica za ovu kabinu"
+        officers: "Anketari"
+        officers_list: "Spisak anketara za ovu kabinu"
+        no_officers: "Nema anketara za ovu kabinu"
         recounts: "Ponovna brojanja"
         recounts_list: "Spisak ponovnih brojanja za ovu kabinu"
         results: "Rezultati"
         date: "Datum"
-        count_final: "Konačno ponovno prebrojavanje (od strane službenog lica)"
+        count_final: "Konačno ponovno prebrojavanje (od strane anketara)"
         count_by_system: "Glasovi (automatsko brojanje)"
         total_system: Ukupno glasova (automatsko brojanje)
       index:
         booths_title: "Spisak kabina"
-        no_booths: "Nema kabina za ove izbore."
-        table_name: "Ime"
+        no_booths: "Nema kabina za ovu glasačku anketu."
+        table_name: "Naziv"
         table_location: "Lokacija"
     active_polls:
       edit:
-        title: "Opis izbora"
+        title: "Opis glasačke ankete"
       form:
         description:
           text: "Opis"
-          help_text: "Ovaj tekst će se pojaviti u zaglavlju stranice za izbore. Može se iskoristiti za pružanje dodatnog konteksta za otvorene izbore."
+          help_text: "Ovaj tekst će se pojaviti u zaglavlju stranice za glasačku anketu. Može se iskoristiti za pružanje dodatnog konteksta za otvorenu glasačku anketu."
     polls:
       index:
-        title: "Spisak izbora"
-        no_polls: "Nema skorih izbora."
-        create: "Napravi izbore"
+        title: "Spisak glasačkih anketa"
+        no_polls: "Nema skorih glasačkih anketa."
+        create: "Formuliši glasačku anketu"
         name: "Naziv"
         dates: "Datumi"
         start_date: "Početni datum"
         closing_date: "Krajnji datum"
-        geozone_restricted: "Ograničeno na sljedeća područja"
+        geozone_restricted: "Ograničena na sljedeća područja"
       new:
-        title: "Novi izbori"
+        title: "Nova glasačka anketa"
         show_results_and_stats: "Pokaži rezultate i statistiku"
         show_results: "Pokaži rezultate"
         show_stats: "Pokaži statistiku"
