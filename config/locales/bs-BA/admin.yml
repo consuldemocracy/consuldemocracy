@@ -1146,7 +1146,7 @@ bs:
     booths:
       index:
         title: "Lista aktivnih kabina"
-        no_booths: "Nema aktivnih kabina za nijedne skore izbore."
+        no_booths: "Nema aktivnih kabina za nove glasačke ankete."
         add_booth: "Dodaj kabinu"
         name: "Naziv"
         location: "Lokacija"
@@ -1162,42 +1162,42 @@ bs:
       show:
         location: "Lokacija"
       booth:
-        shifts: "Vodi smjene"
+        shifts: "Napravi raspored smjena"
         edit: "Edituj podatke za kabinu"
     officials:
       edit:
-        destroy: Obriši status službenog lica
-        title: "Službena lica: editovanje podataka o korisnicima"
+        destroy: Obriši status službenika
+        title: "Službenici: editovanje podataka o korisniku"
       flash:
-        official_destroyed: "Detalji spašeni: korisnik više nije službeno lice"
-        official_updated: Spašeni detalji za službeno lice
+        official_destroyed: "Detalji spašeni: korisnik više nije službenik"
+        official_updated: Spašeni detalji za službenika
       index:
-        title: Službena lica
+        title: Službenici
         help: Na platformi će biti istaknute intervencije korisnika koji su označeni kao službena lica. Možete definisati oznaku kod imena ovih korisnika od najvišeg po važnosti (1. stupanj) do najnižeg (5. stupanj).
-        no_officials: Nema službenih lica.
+        no_officials: Nema službenika.
         name: Ime
-        official_position: Funkcija službenog lica
+        official_position: Funkcija službenika
         official_level: Stupanj
-      level_0: Nije službeno lice
+      level_0: Nije službenik
       level_1: 1. stupanj
       level_2: 2. stupanj
       level_3: 3. stupanj
       level_4: 4. stupanj
       level_5: 5. stupanj
       search:
-        edit_official: Edituj podatke za službeno lice
-        make_official: Postavi za službeno lice
-        title: "Funkcije službenih lica: traženje korisnika"
-        no_results: Nisu pronađene funkcije službenih lica.
+        edit_official: Edituj podatke za službenika
+        make_official: Postavi za službenika
+        title: "Službenici: traženje korisnika"
+        no_results: Službenici nisu pronađeni.
     organizations:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           pending: U toku
           rejected: Odbijeno
           verified: Potvrđeno
-        name: Ime
+        name: Naziv
         email: Email
         phone_number: Telefon
         responsible_name: Nadležan za
