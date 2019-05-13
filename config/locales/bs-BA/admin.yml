@@ -722,14 +722,14 @@ bs:
         title: Administratori
         name: Ime
         email: Email
-        id: Administratorov ID
+        id: Identifikacioni broj administratora
         no_administrators: Nema administratora.
       administrator:
         add: Dodaj
         delete: Obriši
-        restricted_removal: "Žao nam je, ne možete se skinuti sa spiska administratora"
+        restricted_removal: "Ne možete se skinuti sa spiska administratora"
       search:
-        title: "Administratori: korisničke pretrage"
+        title: "Administratori: traženje korisnika"
     moderators:
       index:
         title: Moderatori
@@ -740,17 +740,17 @@ bs:
         add: Dodaj
         delete: Obriši
       search:
-        title: "Moderatori: korisnička pretraga"
+        title: "Moderatori: traženje korisnika"
     segment_recipient:
       all_users: Svi korisnici
       administrators: Administratori
       proposal_authors: Autori prijedloga
       investment_authors: Autori investicija u tekućem budžetu
-      feasible_and_undecided_investment_authors: "Autori investicija u tekućem budžetu koje nisu usklađene sa: [ocjena neizvodivo]"
-      selected_investment_authors: Autori odabranih investicija u tekućem budžetu
-      winner_investment_authors: Autori pobjedničkih investicija u tekućem budžetu
+      feasible_and_undecided_investment_authors: "Autori investicija u tekućem budžetu koje nisu usklađene sa: [konačna ocjena neizvodivo]"
+      selected_investment_authors: Autori označenih investicija u tekućem budžetu
+      winner_investment_authors: Autori odabranih investicija u tekućem budžetu
       not_supported_on_current_budget: Korisnici koji nisu podržali investicije u tekućem budžetu
-      invalid_recipients_segment: "Segment korisnika primatelja nije ispravan"
+      invalid_recipients_segment: "Korisnički segment primatelja nije ispravan"
     newsletters:
       create_success: Bilten uspješno napravljen
       update_success: Bilten uspješno ažuriran
@@ -818,14 +818,14 @@ bs:
         body: Tekst
         link: Link
         segment_recipient: Primatelji
-        preview_guide: "Kako će korisnici vidjeti obavijest:"
-        sent_guide: "Kako korisnici vide obavijest:"
+        preview_guide: "Ovako će korisnici vidjeti obavijest:"
+        sent_guide: "Ovako korisnici vide obavijest:"
         send_alert: Sigurni ste da želite poslati obavijest ovom broju %{n} korisnika?
     system_emails:
       preview_pending:
         action: Pregled u toku
         preview_of: Pregled %{name}
-        pending_to_be_sent: Sadržaj koji čeka na slanje
+        pending_to_be_sent: Ovo je sadržaj koji čeka na slanje
         moderate_pending: Moderatorska obavijest poslana
         send_pending: Pošalji ono što je na čekanju
         send_pending_notification: Obavijest na čekanju uspješno poslana
