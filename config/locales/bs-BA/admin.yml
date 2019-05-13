@@ -831,7 +831,7 @@ bs:
         send_pending_notification: Obavijest na čekanju uspješno poslana
       proposal_notification_digest:
         title: "Kratki opis obavijesti o prijedlogu"
-        description: "Stavlja sve obavijesti o prijedlozima za korisnika u jednu poruku, kako ne bi bilo previše emailova."
+        description: "Stavi sve obavijesti o prijedlozima za korisnika u jednu poruku, kako ne bi bilo previše emailova."
         preview_detail: "Korisnici će dobijati obavijesti samo o prijedlozima koje prate"
       budget_investment_created:
         title: "Napravljena budžetska investicija"
@@ -859,17 +859,17 @@ bs:
         description: "Poslano pošiljatelju privatne poruke."
       email_verification:
         title: "Verifikacija emaila"
-        description: "Poslano novom korisniku za verifikaciju njegovog računa."
+        description: "Poslano novom korisniku za verifikaciju njegove adrese."
       user_invite:
         title: "Pozivnica korisniku"
-        description: "Poslano osobi koja je pozvana da registruje račun."
+        description: "Poslano osobi koja je pozvana da registruje adresu."
       edit_info: "Možete editovati ovaj mail u"
       message_title: "Naslov poruke"
       message_body: "Ovo je primjer sadržaja poruke."
       alert:
-        no_investments: "Nije napravljena nijedna budžetska investicija. Neophodni su ogledni podaci kako bi se dobio pregled emaila."
-        no_comments: "Nije napravljen nijedan komentar. Neophodni su ogledni podaci kako bi se dobio pregled emaila."
-        no_replies: "Nije napravljen nijedan odgovor. Neophodni su ogledni podaci kako bi se dobio pregled emaila."
+        no_investments: "Nije napravljena nijedna budžetska investicija. Neophodni su ogledni podaci kako bi došlo do pregleda emaila."
+        no_comments: "Nije napravljen nijedan komentar. Neophodni su ogledni podaci kako bi došlo do pregleda emaila."
+        no_replies: "Nije napravljen nijedan odgovor. Neophodni su ogledni podaci kako bi kako bi došlo do pregleda emaila."
     emails_download:
       index:
         title: Učitaj emailove
@@ -884,7 +884,7 @@ bs:
         description: Opis
         no_description: Nema opisa
         no_valuators: Nema ocjenitelja.
-        valuator_groups: "Grupe za ocjenjivanje"
+        valuator_groups: "Grupe ocjenitelja"
         group: "Grupa"
         no_group: "Nema grupe"
       valuator:
@@ -913,17 +913,17 @@ bs:
         no_group: "Bez grupe"
     valuator_groups:
       index:
-        title: "Grupe za ocjenjivanje"
-        new: "Napravi grupu za ocjenjivanje"
+        title: "Grupe ocjenitelja"
+        new: "Napravi ocjeniteljsku grupu"
         name: "Ime"
         members: "Članovi"
-        no_groups: "Nema grupa za ocjenjivanje"
+        no_groups: "Nema ocjeniteljskih grupa"
       show:
-        title: "Grupa za ocjenjivanje: %{group}"
+        title: "Ocjeniteljska grupa: %{group}"
         no_valuators: "Nema ocjenitelja dodijeljenih ovoj grupi"
       form:
         name: "Ime grupe"
-        new: "Napravi grupu za ocjenjivanje"
+        new: "Napravi ocjeniteljsku grupu"
         edit: "Spasi podatke za grupu za ocjenjivanje"
     poll_officers:
       index:
