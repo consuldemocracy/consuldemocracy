@@ -52,3 +52,7 @@ bs:
         recommendations_title: Preporuke za pokretanje teme
         recommendation_one: Ne piši naziv teme ili cijele rečenice velikim slovima. Na internetu se to smatra za deranje. Niko ne voli da se neko dere na njega/nju.
         recommendation_two: Ukloniće se svaka tema ili komentar koji implicira kršenje zakona. Isto važi za sabotažu prostora za raspravu o temi. Sve ostalo je dozvoljeno.
+        recommendation_three: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
+  topics:
+    show:
+      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
