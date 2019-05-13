@@ -63,3 +63,51 @@ bs:
         title: Promjeni svoju lozinku
       new:
         email_label: Email
+        send_submit: Pošalji uputstvo
+        title: Zaboravili ste lozinku?
+    sessions:
+      new:
+        login_label: Email ili korisničko ime
+        password_label: Lozinka
+        remember_me: Zapamti me
+        submit: Uđi
+        title: Prijavi se
+    shared:
+      links:
+        login: Uđi
+        new_confirmation: Niste dobili uputstvo kako da aktivirate svoj profil?
+        new_password: Zaboravili ste lozinku?
+        new_unlock: Niste dobili uputstvo za otključavanje?
+        signin_with_provider: Prijava sa %{provider}
+        signup: Nemate profil? (link za otvaranje profila) %{signup_link}
+        signup_link: Otvori profil
+    unlocks:
+      new:
+        email_label: Email
+        submit: Ponovo pošalji uputstvo za otključavanje
+        title: Upustvo za otključavanje ponovo poslano
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Razlog
+          info: Ova radnja se ne može poništiti. Budite sigurni da to želite uraditi.
+          info_reason: Ako želite, navedite nam razlog (nije obavezno)
+          submit: Obriši moj profil
+          title: Obriši profil
+        edit:
+          current_password_label: Sadašnja lozinka
+          edit: Edituj
+          email_label: Email
+          leave_blank: Ostavi prazno ako ne želiš da mijenjaš
+          need_current: Treba nam vaša sadašnja lozinka da potvrdimo izmjene
+          password_confirmation_label: Potvrdi novu lozinku
+          password_label: Nova lozinka
+          update_submit: Ažuriraj
+          waiting_for: "Čekamo potvrdu za:"
+        new:
+          cancel: Ukini prijavu
+          email_label: Email
+          organization_signup: Da li predstavljate organizaciju ili kolektiv? %{signup_link}
+          organization_signup_link: Otvorite profil ovdje
+          password_confirmation_label: Potvrdi lozinku
+          password_label: Lozinka
