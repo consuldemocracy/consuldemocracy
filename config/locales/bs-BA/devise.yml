@@ -28,4 +28,15 @@ bs:
       unlock_instructions:
         subject: "Uputstvo se otvara"
     omniauth_callbacks:
-      failure: "Nije moguće dati ti autorizaciju u svojstvu %{kind} zbog (razlog) \"%{reason}\"."
+      failure: "Nije moguće dati ti autorizaciju kao (ime) %{kind} zbog (razlog) \"%{reason}\"."
+      success: "Uspješno prepoznat/a kao (ime) %{kind}."
+    passwords:
+      no_token: "Možeš pristupiti ovoj strani samo putem linka za promjenu lozinke. Ako je pristup ostvaren putem linka za promjenu lozinke, provjeri je li URL kompletan."
+      send_instructions: "Za nekoliko minuta ćeš dobiti email sa instrukcijama kako da promijeniš svoju lozinku."
+      send_paranoid_instructions: "Ako je tvoja email adresa u našoj bazi podataka, za nekoliko minuta ćeš dobiti link da promijeniš svoju lozinku."
+      updated: "Tvoja lozinka je uspješno promijenjena. Potvrda uspješna."
+      updated_not_active: "Tvoja lozinka je uspješno promijenjena."
+    registrations:
+      destroyed: "Pozdrav! Tvoj profil je ukinut. Nadamo se skorom ponovnom susretu."
+      signed_up: "Dobrodošao/la! Tvoj profil je potvrđen."
+      signed_up_but_inactive: "Registracija uspješna, ali ne možeš se prijaviti dok ti se ne aktivira profil."
