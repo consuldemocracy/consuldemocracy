@@ -40,3 +40,22 @@ bs:
       destroyed: "Pozdrav! Tvoj profil je ukinut. Nadamo se skorom ponovnom susretu."
       signed_up: "Dobrodošao/la! Tvoj profil je potvrđen."
       signed_up_but_inactive: "Registracija uspješna, ali ne možeš se prijaviti dok ti se ne aktivira profil."
+      signed_up_but_locked: "Registracija uspješna, ali ne možeš se prijaviti jer ti je profil zaključan."
+      signed_up_but_unconfirmed: "Poslana ti je poruka sa linkom za verifikaciju. Klikni na link kako bi se aktivirao profil."
+      update_needs_confirmation: "Tvoj profil je uspješno ažuriran. Međutim, moramo potvrditi tvoju novu email adresu. Provjeri email, te klikni na link kako bi se završilo potvrđivanje tvoje nove email adrese."
+      updated: "Tvoj profil je uspješno ažuriran."
+    sessions:
+      signed_in: "Prijava uspješna."
+      signed_out: "Odjava uspješna."
+      already_signed_out: "Odjava uspješna."
+    unlocks:
+      send_instructions: "Za nekoliko minuta ćeš dobiti email sa instrukcijama kako da otključaš svoj profil."
+      send_paranoid_instructions: "Ako imaš profil, za nekoliko minuta ćeš dobiti email sa instrukcijama kako da otključaš svoj profil."
+      unlocked: "Tvoj profil je otključan. Prijavi se da nastaviš."
+  errors:
+    messages:
+      already_confirmed: "Već je izvršena potvrda. Pokušaj da se prijaviš."
+      confirmation_period_expired: "Moraš dobiti potvrdu u roku od %{period}. Ponovi zahtjev."
+      expired: "isteklo; ponovi zahtjev."
+      not_found: "nije pronađen."
+      not_locked: "nije bio zaključan."
