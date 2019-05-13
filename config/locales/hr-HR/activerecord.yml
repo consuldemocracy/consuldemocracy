@@ -354,6 +354,46 @@ hr:
       poll/question/answer/video:
         title: Naziv
         url: Eksterni video
+      newsletter:
+        segment_recipient: Primatelji
+        subject: Predmet
+        from: Formular
+        body: Sadržaj emaila
+      admin_notification:
+        segment_recipient: Primatelji
+        title: Naziv
+        link: Poveznica
+        body: Tekst
+      admin_notification/translation:
+        title: Naslov
+        body: Tekst
+      widget/card:
+        label: Oznaka (neobavezno)
+        title: Naziv
+        description: Opis
+        link_text: Poveznica teksta
+        link_url: Poveznica URL
+        columns: Broj stupaca
+      widget/card/translation:
+        label: Oznaka (neobavezno)
+        title: Naziv
+        description: Opis
+        link_text: Link teksta
+      widget/feed:
+        limit: Broj stavaka
+      dashboard/action:
+        title: Naziv
+        short_description: Kratki opis
+        description: Opis
+        link: Ekstrena poveznica
+        request_to_administrators: Uključi u resurse gumb za zahtjev resursa od administratora
+        day_offset: Koliko dana do stvaranja prijedloga koje želite aktivirati?
+        required_supports: Koliko potpore prijedlog mora dobiti kako bi se aktivirao?
+        order: Možete unijeti položaj na kojem će se ova radnja prikazati korisniku popis radnji
+        active: Aktivirati
+        action_type: Tip
+      dashboard/administrator_task:
+        source: Izvor
     errors:
       models:
         poll/voter:
