@@ -9,8 +9,8 @@ bs:
       hide: Sakrij
       hide_author: Sakrij ime autora
       restore: Vrati
-      mark_featured: Značajka
-      unmark_featured: Ukloni oznaku sa značajke
+      mark_featured: Označi
+      unmark_featured: Ukloni oznaku
       edit: Edituj
       configure: Izvrši konfiguraciju
       delete: Obriši
@@ -33,7 +33,7 @@ bs:
         target_url: Link
         post_started_at: 'Objava započeta u:'
         post_ended_at: 'Objava završena u:'
-        sections_label: Odjeljci u kojim će se pojaviti
+        sections_label: Dijelovi u kojim će se pojaviti
         sections:
           homepage: Početna stranica
           debates: Debate
@@ -41,7 +41,7 @@ bs:
           budgets: Participativno budžetiranje
           help_page: Stranica za pomoć
       edit:
-        editing: Baner za editovanje
+        editing: Edituj baner
         form:
           submit_button: Spasi izmjene
       new:
@@ -228,7 +228,7 @@ bs:
         assigned_admin: Dodijeljeni administrator
         assigned_valuators: Dodijeljeni ocjenitelji
         classification: Klasifikacija
-        info: "%{budget_name} - Grupa: %{group_name} - Investicioni projekat %{id}"
+        info: "%{budget_name} (naziv budžeta) - Grupa (naziv grupe): %{group_name} - Investicioni projekat (identifikacioni broj projekta) %{id}"
         edit: Edituj
         edit_classification: Edituj klasifikaciju
         by: Od
