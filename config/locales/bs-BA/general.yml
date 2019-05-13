@@ -1,1 +1,21 @@
 bs:
+  account:
+    show:
+      change_credentials_link: Promijeni moje reference
+      email_on_comment_label: Obavijesti me emailom kada neko da komentar na moje prijedloge ili debate
+      email_on_comment_reply_label: Obavijesti me emailom kada neko odgovori na moje komentare
+      erase_account_link: Obriši moj profil
+      finish_verification: Završi verifikaciju
+      notifications: Obavijesti
+      organization_name_label: Naziv organizacije
+      organization_responsible_name_placeholder: Predstavnik organizacije/kolektiva
+      personal: Lični podaci
+      phone_number_label: Broj telefona
+      public_activity_label: Moja lista aktivnosti je javna
+      public_interests_label: Oznake da nešto pratim su javne
+      public_interests_my_title_list: Tagovi za ono što pratim
+      public_interests_user_title_list: Tagovi onoga što ovaj korisnik prati
+      save_changes_submit: Spasi izmjene
+      subscription_to_website_newsletter_label: Primaću relevantne informacije putem emaila od web-stranice
+      email_on_direct_message_label: Dobijaću emailove u vezi direktnih poruka
+      email_digest_label: Dobijaću sažetak obavijesti o prijedlozima
