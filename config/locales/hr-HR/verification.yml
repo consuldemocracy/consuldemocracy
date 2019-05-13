@@ -56,5 +56,26 @@ hr:
           residence_card: Dokument prebivališta
           spanish_id: DNI
         document_type_label: Tip dokumenta
+        error_not_allowed_age: Nemate dovoljno godina da bi sudjelovali
+        error_not_allowed_postal_code: Kako bi vas potvrdili, morate se registrirati.
+        error_verifying_census: Popis nije mogao potvrditi vaše podatke. Molimo potvrdite da su vaši popisni podaci točni pozivom Javoj vlasti ili posjetite jedan Ured za podršku građanima.
+        form_errors: prječila se potvrda vašeg prebivališta
+        postal_code: Poštanski Broj
+        postal_code_note: Ukoliko želite potvrditi svoj račun morate biti registrirani
+        terms: uvjeti pristupa
+        title: Potvrdi stanovanje
+        verify_residence: Potvrdi stanovanje
+    sms:
+      create:
+        flash:
+          success: Unesi potvrdni kod koji smo vam poslali porukom
+      edit:
+        confirmation_code: Unesi kod koji ste dobili na svoj mobilni uređaj
+        resend_sms_link: Klinknite ovdje da pošaljete ponovno
+        resend_sms_text: Niste dobili poruku s potvrdnim kodom?
+        submit_button: Šalji
+        title: Osiguraj potvrdni kod
+      new:
+        phone: Unesi svoj broj mobilnog uređaja kako bi primili kod
     user_permission_support_proposal: Podupri prijedlog*
     user_permission_votes: Sudjelujte u finalnom glasanju*
