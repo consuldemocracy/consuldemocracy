@@ -111,3 +111,12 @@ bs:
           organization_signup_link: Otvorite profil ovdje
           password_confirmation_label: Potvrdi lozinku
           password_label: Lozinka
+          redeemable_code: Verifikacioni kod primljen emailom (nije obavezno)
+          submit: Registruj se
+          terms: Registracijom prihvatate (uvjete) %{terms}
+          terms_link: uvjeti korištenja
+          terms_title: Registracijom prihvatate uvjete korištenja
+          title: Registruj se
+          username_is_available: Korisničko ime se može uzeti
+          username_is_not_available: Neko drugi već koristi ovo korisničko ime
+          username_label: Korisničko ime
