@@ -320,7 +320,83 @@ feature "Users" do
     end
   end
 
-  scenario "Sign out" do
+  context "Multitenant authentication" do
+    context "Sign up into subdomain" do
+
+      scenario "Success" do
+        Apartment::Tenant.switch! "subdomain"
+        message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
+        visit "/"
+        click_link "Register"
+
+        fill_in "user_username",              with: "Manuela Carmena"
+        fill_in "user_email",                 with: "manuela@consul.dev"
+        fill_in "user_password",              with: "judgementday"
+        fill_in "user_password_confirmation", with: "judgementday"
+        check "user_terms_of_service"
+
+        click_button "Register"
+
+        expect(page).to have_content message
+
+        confirm_email
+
+        expect(page).to have_content "Your account has been confirmed."
+        Apartment::Tenant.reset
+      end
+
+      scenario "Errors on sign up" do
+        Apartment::Tenant.switch! "subdomain"
+        visit "/"
+        click_link "Register"
+        click_button "Register"
+
+        expect(page).to have_content error_message
+        Apartment::Tenant.reset
+      end
+    end
+
+    context "Sign in into subdomain" do
+
+      scenario "sign in with email" do
+        Apartment::Tenant.switch! "subdomain"
+        create(:user, email: "manuela@consul.dev", password: "judgementday")
+
+        visit "/"
+        click_link "Sign in"
+        fill_in "user_login",    with: "manuela@consul.dev"
+        fill_in "user_password", with: "judgementday"
+        click_button "Enter"
+
+        expect(page).to have_content "You have been signed in successfully."
+        Apartment::Tenant.switch! "public"
+      end
+
+      scenario "not allowed access with user of another tenant" do
+        create(:user, email: "manuela@consul.dev", password: "judgementday")
+        Apartment::Tenant.switch! "subdomain"
+
+        visit "/"
+        click_link "Sign in"
+        fill_in "user_login",    with: "manuela@consul.dev"
+        fill_in "user_password", with: "judgementday"
+        click_button "Enter"
+
+        expect(page).to have_content "Invalid login or password."
+        Apartment::Tenant.switch! "public"
+
+        visit "/"
+        click_link "Sign in"
+        fill_in "user_login",    with: "manuela@consul.dev"
+        fill_in "user_password", with: "judgementday"
+        click_button "Enter"
+
+        expect(page).to have_content "You have been signed in successfully."
+      end
+    end
+  end
+
+  scenario 'Sign out' do
     user = create(:user)
     login_as(user)
 

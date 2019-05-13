@@ -1474,6 +1474,7 @@ es:
       title: "Entidad:"
       available_tenants: Entidades disponibles
       ws_census: Servicio Web Padrón
+      sn_login: Acceso con Redes Sociales
       index:
         title: Multientidad
         create: Crear entidad
@@ -1490,6 +1491,10 @@ es:
         portal_name_census: Código Portal
         user_code_census: Código Usuario
         server_name: Nombre servidor
+        twitter_key: Twitter Key
+        twitter_secret: Twitter Secret
+        facebook_key: Facebook Key
+        facebook_secret: Facebook Secret
       create:
         success: Entidad creada correctamente
       update:

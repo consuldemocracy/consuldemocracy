@@ -38,6 +38,15 @@ RSpec.configure do |config|
       MSG
     end
     DatabaseCleaner.clean_with(:truncation)
+    # Use transactions for tests
+    DatabaseCleaner.strategy = :transaction
+    # Truncating doesn't drop schemas, ensure we're clean here
+    Apartment::Tenant.drop("subdomain") rescue nil
+    # Create de default tenant
+    Tenant.create!(name: "Consul", title: "Consul",  subdomain: "public", postal_code: "280", server_name: "lvh.me")
+    # Create the subdomain tenant for our tests
+    Tenant.create!(name: "Tenant", subdomain: "subdomain", server_name: "lvh.me")
+    Apartment::Tenant.create("subdomain")
   end
 
   config.before do |example|
@@ -46,6 +55,11 @@ RSpec.configure do |config|
     Globalize.locale = I18n.locale
     load Rails.root.join("db", "seeds.rb").to_s
     Setting["feature.user.skip_verification"] = nil
+    if Tenant.count.zero?
+      Tenant.create!(name: "Consul", title: "Consul",  subdomain: "public", postal_code: "280", server_name: "lvh.me")
+      Tenant.create!(name: "Tenant", subdomain: "subdomain", server_name: "lvh.me")
+    end
+    Apartment::Tenant.switch! 'public'
   end
 
   config.before(:each, type: :feature) do
@@ -58,6 +72,11 @@ RSpec.configure do |config|
       # under test that does *not* share a database connection with the
       # specs, so use truncation strategy.
       DatabaseCleaner.strategy = :truncation
+    end
+    
+    if Tenant.count.zero?
+      Tenant.create!(name: "Consul", title: "Consul",  subdomain: "public", postal_code: "280", server_name: "lvh.me")
+      Tenant.create!(name: "Tenant", subdomain: "subdomain", server_name: "lvh.me")
     end
   end
 

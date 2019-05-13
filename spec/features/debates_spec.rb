@@ -1193,4 +1193,93 @@ feature "Debates" do
     end
   end
 
+  context "With Multitenant" do
+
+    scenario "Disabled with a feature flag in subdomain" do
+      Setting["feature.debates"] = true
+
+      Apartment::Tenant.switch("subdomain") do
+        Setting["feature.debates"] = nil
+        expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+      end
+
+      visit debates_path
+      expect(page).to have_selector("#debates .debate", count: 0)
+    end
+
+    scenario "Index for differents tenants" do
+      debates_public = [create(:debate, title: "Debate 1"), create(:debate, title: "Debate 2"),
+        create(:debate, title: "Debate 3")]
+
+      visit debates_path
+
+      expect(page).to have_selector("#debates .debate", count: 3)
+      debates_public.each do |debate|
+        within("#debates") do
+          expect(page).to have_content debate.title
+          expect(page).to have_content debate.description
+          expect(page).to have_css("a[href='#{debate_path(debate)}']", text: debate.title)
+        end
+      end
+
+      Apartment::Tenant.switch("subdomain") do
+        debates_subdomain = [create(:debate, title: "Debate 4"), create(:debate, title: "Debate 5")]
+
+        visit debates_path
+
+        debates_subdomain.each do |debate|
+          within("#debates") do
+            expect(page).to have_content debate.title
+            expect(page).not_to have_content "Debate 1"
+            expect(page).not_to have_content "Debate 2"
+            expect(page).not_to have_content "Debate 3"
+          end
+        end
+      end
+    end
+
+    scenario "Create into Subdomain" do
+      Apartment::Tenant.switch("subdomain") do
+        author = create(:user)
+        login_as(author)
+
+        visit new_debate_path
+        fill_in "debate_title", with: "A title for a debate"
+        fill_in "debate_description", with: "This is very important because..."
+        check "debate_terms_of_service"
+
+        click_button "Start a debate"
+
+        expect(page).to have_content "A title for a debate"
+        expect(page).to have_content "Debate created successfully."
+        expect(page).to have_content "This is very important because..."
+        expect(page).to have_content author.name
+        expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
+      end
+
+      visit debates_path
+
+      expect(page).to have_selector("#debates .debate", count: 0)
+    end
+
+    scenario "User can not create debates if not belong to that tenant" do
+      author_public = create(:user)
+      login_as(author_public)
+
+      Apartment::Tenant.switch("subdomain") do
+        author_subdomain = create(:user)
+
+        visit new_debate_path
+        fill_in "debate_title", with: "A title for a debate"
+        fill_in "debate_description", with: "This is very important because..."
+        check "debate_terms_of_service"
+
+        click_button "Start a debate"
+
+        expect(page).not_to have_content "Debate created successfully."
+        expect(page).to have_content "You must sign in or register to continue."
+      end
+    end
+  end
+
 end

@@ -1,7 +1,7 @@
 module AdminHelper
 
   def side_menu
-    if namespace == 'moderation/budgets'
+    if namespace == "moderation/budgets"
       render "/moderation/menu"
     else
       render "/#{namespace}/menu"
@@ -13,7 +13,7 @@ module AdminHelper
   end
 
   def namespaced_header_title
-    if namespace == 'moderation/budgets'
+    if namespace == "moderation/budgets"
       t("moderation.header.title")
     else
       t("#{namespace}.header.title")
@@ -104,6 +104,11 @@ module AdminHelper
 
   def admin_main_tenant?
     Apartment::Tenant.current == "public"
+  end
+
+  def current_name_tenant
+    (!session.nil? && !session[:current_tenant].nil?) ? session[:current_tenant]["name"]
+      : setting["org_name"]
   end
 
   private

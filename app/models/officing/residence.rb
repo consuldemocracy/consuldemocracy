@@ -11,7 +11,7 @@ class Officing::Residence
   validates :year_of_birth, presence: true
 
   validate :allowed_age
-  validate :residence_in_madrid
+  validate :residence_tenant
 
   def initialize(attrs = {})
     super
@@ -35,7 +35,7 @@ class Officing::Residence
         verified_at:           Time.current,
         erased_at:             Time.current,
         password:              random_password,
-        terms_of_service:      '1',
+        terms_of_service:      "1",
         email:                 nil
       }
       self.user = User.create!(user_params)
@@ -61,12 +61,12 @@ class Officing::Residence
                document_type:   document_type).first
   end
 
-  def residence_in_madrid
+  def residence_tenant
     return if errors.any?
 
     unless residency_valid?
       store_failed_census_call
-      errors.add(:residence_in_madrid, false)
+      errors.add(:residence_tenant, false)
     end
   end
 
@@ -75,7 +75,7 @@ class Officing::Residence
     return unless @census_api_response.valid?
 
     unless allowed_age?
-      errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
+      errors.add(:year_of_birth, I18n.t("verification.residence.new.error_not_allowed_age"))
     end
   end
 
@@ -119,7 +119,7 @@ class Officing::Residence
     end
 
     def random_password
-      (0...20).map { ('a'..'z').to_a[rand(26)] }.join
+      (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
 
 end

@@ -475,4 +475,39 @@ feature "Polls" do
       expect(page).not_to have_content("Participation statistics")
     end
   end
+
+  context "Index in Multitenant" do
+
+    scenario "Polls listed in each tenant are differents" do
+      visit polls_path
+      expect(page).to have_content("There are no open votings")
+
+      polls_public = create_list(:poll, 3)
+
+      visit polls_path
+
+      polls_public.each do |poll|
+        expect(page).to have_content(poll.name)
+      end
+
+      Apartment::Tenant.switch! "subdomain"
+
+      visit polls_path
+
+      expect(page).to have_content("There are no open votings")
+
+      polls_subdomain = create_list(:poll, 2)
+
+      visit polls_path
+
+      polls_subdomain.each do |poll|
+        expect(page).to have_content(poll.name)
+        expect(page).not_to have_content(polls_public[0].name)
+        expect(page).not_to have_content(polls_public[1].name)
+        expect(page).not_to have_content(polls_public[2].name)
+      end
+
+      Apartment::Tenant.switch! "public"
+    end
+  end
 end

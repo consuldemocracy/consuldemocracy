@@ -472,3 +472,153 @@ feature "Votes" do
   end
 
 end
+
+feature "Votes in Multitenant" do
+
+  feature "Debates" do
+
+    scenario "Show in different tenants" do
+      debate_public = create(:debate)
+      create(:vote, voter: create(:user), votable: debate_public, vote_flag: true)
+      create(:vote, voter: create(:user), votable: debate_public, vote_flag: false)
+
+      visit debate_path(debate_public)
+
+      within(".in-favor") do
+        expect(page).to have_content "50%"
+      end
+      
+      within(".against") do
+        expect(page).to have_content "50%"
+      end
+
+      Apartment::Tenant.switch! "subdomain"
+      debate_subdomain = create(:debate)
+
+      visit debate_path(debate_subdomain)
+
+      expect(page).to have_content "No votes"
+
+      create(:vote, voter: create(:user), votable: debate_subdomain, vote_flag: true)
+      visit debate_path(debate_subdomain)
+
+      expect(page).to have_content "1 vote"
+
+      Apartment::Tenant.switch! "public"
+    end
+
+    scenario "Not logged user in a tenant trying to vote debates", :js do
+      Apartment::Tenant.switch! "subdomain"
+      debate = create(:debate)
+
+      visit_path debates_path, subdomain: "subdomain"
+
+      within("#debate_#{debate.id}") do
+        find("div.votes").hover
+        expect_message_you_need_to_sign_in
+      end
+
+      Apartment::Tenant.switch! "public"
+      reset_capybara_host
+    end
+
+    scenario "User from other tenant trying to vote debates", :js do
+      user_public = create(:user, email: "manuela@consul.dev", password: "judgementday")
+
+      visit "/"
+      click_link "Sign in"
+      fill_in "user_login",    with: "manuela@consul.dev"
+      fill_in "user_password", with: "judgementday"
+      click_button "Enter"
+
+      expect(page).to have_content "You have been signed in successfully."
+
+      Apartment::Tenant.switch! "subdomain"
+      debate = create(:debate)
+
+      visit_path debates_path, subdomain: "subdomain"
+
+      within("#debate_#{debate.id}") do
+        find("div.votes").hover
+        expect_message_you_need_to_sign_in
+      end
+
+      Apartment::Tenant.switch! "public"
+      reset_capybara_host
+    end
+  end
+
+  feature "Proposals" do
+
+    scenario "Show in different tenants" do
+      proposal_public = create(:proposal)
+      create(:vote, voter: create(:user), votable: proposal_public, vote_flag: true)
+      create(:vote, voter: create(:user), votable: proposal_public, vote_flag: true)
+
+      visit proposal_path(proposal_public)
+
+      expect(page).to have_content "2 supports"
+
+      Apartment::Tenant.switch! "subdomain"
+      proposal_subdomain = create(:proposal)
+
+      visit proposal_path(proposal_subdomain)
+
+      expect(page).to have_content "No supports"
+
+      create(:vote, voter: create(:user), votable: proposal_subdomain, vote_flag: true)
+      visit proposal_path(proposal_subdomain)
+
+      expect(page).to have_content "1 support"
+
+      Apartment::Tenant.switch! "public"
+    end
+
+    scenario "Not logged user in a tenant trying to vote proposals", :js do
+      Apartment::Tenant.switch! "subdomain"
+      proposal = create(:proposal)
+
+      visit_path proposals_path, subdomain: "subdomain"
+
+      within("#proposal_#{proposal.id}") do
+        find("div.supports").hover
+        expect_message_you_need_to_sign_in
+      end
+
+      visit proposal_path(proposal)
+      within("#proposal_#{proposal.id}") do
+        find("div.supports").hover
+        expect_message_you_need_to_sign_in
+      end
+
+      Apartment::Tenant.switch! "public"
+      reset_capybara_host
+    end
+
+    scenario "User from other tenant trying to vote proposals", :js do
+      user_public = create(:user, email: "manuela@consul.dev", password: "judgementday")
+
+      visit "/"
+      click_link "Sign in"
+      fill_in "user_login",    with: "manuela@consul.dev"
+      fill_in "user_password", with: "judgementday"
+      click_button "Enter"
+
+      expect(page).to have_content "You have been signed in successfully."
+
+      Apartment::Tenant.switch! "subdomain"
+      proposal = create(:proposal)
+
+      visit_path proposals_path, subdomain: "subdomain"
+
+      within("#proposal_#{proposal.id}") do
+        find("div.supports").hover
+        expect_message_you_need_to_sign_in
+      end
+
+      Apartment::Tenant.switch! "public"
+      reset_capybara_host
+    end
+  end
+
+end

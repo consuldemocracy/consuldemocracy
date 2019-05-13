@@ -53,6 +53,29 @@
     </div>
   </div>
 
+  <h2><%= t("admin.tenants.sn_login") %></h2>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.label :twitter_key, t("admin.tenants.tenant.twitter_key") %>
+      <%= f.text_field :twitter_key, label: false %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.label :twitter_secret, t("admin.tenants.tenant.twitter_secret") %>
+      <%= f.text_field :twitter_secret, label: false %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.label :facebook_key, t("admin.tenants.tenant.facebook_key") %>
+      <%= f.text_field :facebook_key, label: false %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.label :facebook_secret, t("admin.tenants.tenant.facebook_secret") %>
+      <%= f.text_field :facebook_secret, label: false %>
+    </div>
+  </div>
+
   <div class="row">
     <div class="actions small-12 large-3 medium-3 column">
       <%= f.submit(class: "button success expanded", value: t("admin.tenants.edit.form.submit_button")) %>

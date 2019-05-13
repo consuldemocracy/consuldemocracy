@@ -1,7 +1,7 @@
 include DocumentParser
 class CensusApi
 
-  def initialize(tenant)
+  def initialize(tenant = Tenant.current)
     @tenant = tenant
   end
 
@@ -84,7 +84,11 @@ class CensusApi
     end
 
     def end_point_available?
-      @tenant["endpoint_census"].present?
+      if Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
+        @tenant["endpoint_census"].present?
+      else
+        false
+      end
     end
 
     def stubbed_response(document_type, document_number)

@@ -1475,6 +1475,7 @@ en:
       title: "Tenant:"
       available_tenants: Available tenants
       ws_census: Census Web Service
+      sn_login: Login with Social Networks
       index:
         title: Multitenancy
         create: Create tenant
@@ -1491,6 +1492,10 @@ en:
         portal_name_census: Portal code
         user_code_census: User code
         server_name: Server name
+        twitter_key: Twitter Key
+        twitter_secret: Twitter Secret
+        facebook_key: Facebook Key
+        facebook_secret: Facebook Secret
       create:
         success: Tenant created successfully
       update:

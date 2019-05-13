@@ -4,7 +4,7 @@
       <%= render "shared/locale_switcher" %>
 
       <%= link_to root_path, class: "float-right" do %>
-        <%= t("admin.dashboard.index.back", org: setting['org_name']) %>
+        <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
       <% end %>
     </div>
   </div>
@@ -21,7 +21,7 @@
           <li class="menu-text">
             <h1>
               <%= link_to namespaced_root_path do %>
-                <%= session[:current_tenant]["name"] %>
+                <%= current_name_tenant %>
                 <br><small><%= namespaced_header_title %></small>
               <% end %>
             </h1>

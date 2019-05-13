@@ -1,5 +1,5 @@
 
-require_dependency Rails.root.join('app', 'models', 'verification', 'residence').to_s
+require_dependency Rails.root.join("app", "models", "verification", "residence").to_s
 
 class Verification::Residence
 
@@ -7,6 +7,9 @@ class Verification::Residence
   validate :residence_tenant
 
   def postal_code_tenant
+    if @tenant.nil?
+      @tenant = Tenant.current
+    end
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
   end
 

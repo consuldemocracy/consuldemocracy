@@ -1855,3 +1855,121 @@ feature "Successful proposals" do
     end
   end
 end
+
+feature "Proposals with Multitenant" do
+
+  scenario "Disabled with a feature flag in subdomain" do
+    Setting["feature.proposals"] = true
+
+    Apartment::Tenant.switch("subdomain") do
+      Setting["feature.proposals"] = nil
+      expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+
+    visit proposals_path
+    expect(page).to have_selector("#proposals .proposal", count: 0)
+  end
+
+  context "Index in Subdomain" do
+
+    before do
+      Setting["feature.allow_images"] = true
+      Setting["feature.featured_proposals"] = true
+      Setting["featured_proposals_number"] = 3
+    end
+
+    after do
+      Setting["feature.allow_images"] = nil
+    end
+
+    scenario "Lists featured and regular proposals" do
+      featured_proposals = create_featured_proposals
+      proposals = [create(:proposal), create(:proposal), create(:proposal)]
+
+      visit proposals_path
+
+      expect(page).to have_selector("#proposals .proposal-featured", count: 3)
+      expect(page).to have_selector("#proposals .proposal", count: 3)
+
+      Apartment::Tenant.switch("subdomain") do
+        visit proposals_path
+
+        expect(page).to have_selector("#proposals .proposal-featured", count: 0)
+        expect(page).to have_selector("#proposals .proposal", count: 0)
+
+        featured_proposals_subdomain = create_featured_proposals
+        proposals_subdomain = [create(:proposal), create(:proposal)]
+
+        visit proposals_path
+
+        expect(page).to have_selector("#proposals .proposal-featured", count: 3)
+        expect(page).to have_selector("#proposals .proposal", count: 2)
+      end
+    end
+  end
+
+  scenario "Create into Subdomain" do
+    Apartment::Tenant.switch("subdomain") do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+      fill_in "proposal_title", with: "Help refugees"
+      fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
+      fill_in "proposal_summary", with: "In summary, what we want is..."
+      fill_in "proposal_description", with: "This is very important because..."
+      fill_in "proposal_external_url", with: "http://rescue.org/refugees"
+      fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
+      fill_in "proposal_tag_list", with: "Refugees, Solidarity"
+      check "proposal_terms_of_service"
+
+      click_button "Create proposal"
+
+      expect(page).to have_content "Proposal created successfully."
+      expect(page).to have_content "Help refugees"
+      expect(page).not_to have_content "You can also see more information about improving your campaign"
+
+      click_link "Not now, go to my proposal"
+
+      expect(page).to have_content "Help refugees"
+      expect(page).to have_content "¿Would you like to give assistance to war refugees?"
+      expect(page).to have_content "In summary, what we want is..."
+      expect(page).to have_content "This is very important because..."
+      expect(page).to have_content "http://rescue.org/refugees"
+      expect(page).to have_content "https://www.youtube.com/watch?v=yPQfcG-eimk"
+      expect(page).to have_content author.name
+      expect(page).to have_content "Refugees"
+      expect(page).to have_content "Solidarity"
+      expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
+    end
+
+    visit proposals_path
+
+    expect(page).to have_selector("#proposals .proposal-featured", count: 0)
+    expect(page).to have_selector("#proposals .proposal", count: 0)
+  end
+
+  scenario "User can not create proposals if not belong to that tenant" do
+    author_public = create(:user)
+    login_as(author_public)
+
+    Apartment::Tenant.switch("subdomain") do
+      author_subdomain = create(:user)
+
+      visit new_proposal_path
+      fill_in "proposal_title", with: "Help refugees"
+      fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
+      fill_in "proposal_summary", with: "In summary, what we want is..."
+      fill_in "proposal_description", with: "This is very important because..."
+      fill_in "proposal_external_url", with: "http://rescue.org/refugees"
+      fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
+      fill_in "proposal_tag_list", with: "Refugees, Solidarity"
+      check "proposal_terms_of_service"
+
+      click_button "Create proposal"
+
+      expect(page).not_to have_content "Proposal created successfully."
+      expect(page).to have_content "You must sign in or register to continue."
+    end
+  end
+end

@@ -1,5 +1,6 @@
 class Tenant < ActiveRecord::Base
-  validates :subdomain, uniqueness: true
+  validates :subdomain, presence: true, uniqueness: true
+  validates :server_name, presence: true
 
   after_create :create_tenant
   after_destroy :destroy_tenant
@@ -11,7 +12,9 @@ class Tenant < ActiveRecord::Base
   private
     def create_tenant
       unless subdomain == "public"
-        Apartment::Tenant.create(subdomain)
+        unless Rails.env.test?
+          Apartment::Tenant.create(subdomain)
+        end
       end
     end
 
