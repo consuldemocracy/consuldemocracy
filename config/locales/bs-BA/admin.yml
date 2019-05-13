@@ -1200,7 +1200,7 @@ bs:
         name: Naziv
         email: Email
         phone_number: Telefon
-        responsible_name: Nadležan za
+        responsible_name: Nadležno lice
         status: Status
         no_organizations: Nema organizacija.
         reject: Odbij
@@ -1217,15 +1217,15 @@ bs:
     proposals:
       index:
         title: Prijedlozi
-        id: Identitet
+        id: Identifikacioni broj
         author: Autor
         milestones: Rokovi
         no_proposals: Nema prijedloga.
       show:
-        create_question: Dodaj ovaj prijedlog za glasanje
+        create_question: Dodaj ovaj prijedlog za glasanje u anketi
     hidden_proposals:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           with_confirmed_hide: Potvrđeno
@@ -1234,7 +1234,7 @@ bs:
         no_hidden_proposals: Nema skrivenih prijedloga.
     proposal_notifications:
       index:
-        filter: Filter
+        filter: Filter (suzi pretragu)
         filters:
           all: Sve
           with_confirmed_hide: Potvrđeno
@@ -1243,7 +1243,7 @@ bs:
         no_hidden_proposals: Nema skrivenih obavijesti.
     settings:
       flash:
-        updated: Vreijednost ažurirana
+        updated: Vrijednost ažurirana
       index:
         title: Postavke za konfiguraciju
         update_setting: Ažuriraj
@@ -1278,10 +1278,10 @@ bs:
         placeholder: Traži kabinu po nazivu
       poll_officers_search:
         button: Traži
-        placeholder: Pretraga službenih lica
+        placeholder: Pretraga po anketarima
       poll_questions_search:
         button: Traži
-        placeholder: Pretraga pitanja
+        placeholder: Pretraga po pitanjima u glasačkoj anketi
       proposal_search:
         button: Traži
         placeholder: Pretraga prijedloga po nazivu, šifri, opisu ili pitanju
