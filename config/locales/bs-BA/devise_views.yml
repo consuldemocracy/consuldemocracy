@@ -41,3 +41,13 @@ bs:
         new:
           email_label: Email
           organization_name_label: Naziv organizacije
+          password_confirmation_label: Potvrdi lozinku
+          password_label: Lozinka
+          phone_number_label: Broj telefona
+          responsible_name_label: Puno ime i prezime osobe zadužene za kolektiv
+          responsible_name_note: Ovo će biti osoba koja predstavlja udruženje/kolektiv u čije ime se podnose prijedlozi
+          submit: Registruj se
+          title: Registruj se kao organizacija ili kolektiv
+        success:
+          back_to_index: Shvatam; idi nazad na početnu stranicu
+          instructions_1_html: "<strong> Kontaktiraćemo vas uskoro </strong> kako bi potvrdili da vi zaista predstavljate ovaj kolektiv."
