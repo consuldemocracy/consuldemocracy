@@ -1,6 +1,26 @@
 hr:
   activerecord:
     models:
+      activity:
+        one: "aktivnost"
+        few: "aktivnosti"
+        other: "aktivnosti"
+      budget:
+        one: "Budžet"
+        few: "Budžeti"
+        other: "Budžeti"
+      budget/investment:
+        one: "Investicija"
+        few: "Investicije"
+        other: "Investicije"
+      milestone:
+        one: "ključni cilj"
+        few: "ključni ciljevi"
+        other: "ključni ciljevi"
+      milestone/status:
+        one: "Status ključnog cilja"
+        few: "Status ključnih ciljeva"
+        other: "Status ključnih ciljeva"
       valuator_group:
         one: "Grupa procjenitelja"
         few: "Grupa procjenitelja"
