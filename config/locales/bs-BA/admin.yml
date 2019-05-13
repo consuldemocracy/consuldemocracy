@@ -1274,7 +1274,7 @@ bs:
       true_value: "Da"
       false_value: "Ne"
       booths_search:
-        button: Pretraga
+        button: Traži
         placeholder: Traži kabinu po nazivu
       poll_officers_search:
         button: Traži
@@ -1334,7 +1334,7 @@ bs:
         assigned_valuators: Dodijeljeni ocjenitelji
         back: Nazad
         classification: Klasifikacija
-        heading: "Investicioni projekat (broj) %{id}"
+        heading: "Investicioni projekat (identifikacioni broj) %{id}"
         edit: Edituj
         edit_classification: Edituj klasifikaciju
         association_name: Udruženje
@@ -1372,9 +1372,9 @@ bs:
         name: Ime
         external_code: Eksterna šifra
         census_code: Šifra popisa
-        code_help: Šifra odgovora za ovu geozonu na API od od popisa
+        code_help: Šifra odgovora za ovu geozonu na API od popisa
         coordinates: Koordinate
-        coordinates_help: Koordinate koje će napraviti područje na HTML slikovnoj mapi na koje će se moći klikati
+        coordinates_help: Koordinate koje će na HTML slikovnoj mapi napraviti područje na koje će se moći klikati
       edit:
         form:
           submit_button: Spasi izmjene
