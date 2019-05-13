@@ -1,1 +1,9 @@
 bs:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Ponovo pošalji uputstvo
+        title: Ponovo pošalji uputstvo za potvrđivanje
+      show:
+        instructions_html: Potvrđivanje profila sa emailom %{email}
