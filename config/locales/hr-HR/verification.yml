@@ -77,5 +77,32 @@ hr:
         title: Osiguraj potvrdni kod
       new:
         phone: Unesi svoj broj mobilnog uređaja kako bi primili kod
+        phone_format_html: "<strong><em>(Primjer: 612345678 or +34612345678)</em></strong>"
+        phone_note: Mi koristimo vaš mobilni uređaj kako bismo vam poslali kod, ali nikad za razmjenu komunikacije.
+        phone_placeholder: "Primjer: 612345678 or +34612345678"
+        submit_button: Šalji
+        title: Pošalji potvrdni kod
+      update:
+        error: Netočan potvrdni kod
+        flash:
+          level_three:
+            success: Kod je točan. Vaš račun je sada potvrđen
+          level_two:
+            success: Kod točan
+    step_1: Stanovanje
+    step_2: Kod potvrđen
+    step_3: Finalna verifikacija
+    user_permission_debates: Sudjeluj u raspravi
+    user_permission_info: Potvrđivanjem osobnih informacija moći ćete...
+    user_permission_proposal: Stvori novi prijedlog
     user_permission_support_proposal: Podupri prijedlog*
     user_permission_votes: Sudjelujte u finalnom glasanju*
+    verified_user:
+      form:
+        submit_button: Pošalji kod
+      show:
+        email_title: Email-ovi
+        explanation: Trenutno imamo sljedeće podatke u Registru; molimo vas da odaberite način slanja potvrdnog koda.
+        phone_title: Broj telefona
+        title: Dostupne informacije
+        use_another_phone: Korištenje drugog telefona
