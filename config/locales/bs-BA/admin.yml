@@ -519,7 +519,7 @@ bs:
         proposals:
           select_order: Poredaj po
           orders:
-            id: Imenu
+            id: Identifikacioni broj
             title: Nazivu
             supports: Ukupna podrška
         process:
@@ -532,7 +532,7 @@ bs:
           status_closed: Zatvoreno
           status_planned: Planirano
         subnav:
-          info: Informacija
+          info: Informacije
           homepage: Početna stranica
           draft_versions: Izrada nacrta
           questions: Debata
@@ -545,8 +545,8 @@ bs:
         index:
           title: Naziv
           back: Nazad
-          id: Identifikacija
-          supports: Ukupno podrške
+          id: Identifikacioni broj
+          supports: Ukupna podrška
           select: Odaberi
           selected: Odabrano
         form:
