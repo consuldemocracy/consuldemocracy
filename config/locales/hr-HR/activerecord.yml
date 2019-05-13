@@ -129,11 +129,143 @@ hr:
         one: "Opcija pitanja"
         few: "Opcije pitanja"
         other: "Opcije pitanja"
+      legislation/answers:
+        one: "Odgovor"
+        few: "Odgovori"
+        other: "Odgovori"
+      documents:
+        one: "Dokument"
+        few: "Dokumenti"
+        other: "Dokumenti"
+      images:
+        one: "Slika"
+        few: "Slike"
+        other: "Slike"
+      topic:
+        one: "Tema"
+        few: "Teme"
+        other: "Teme"
+      poll:
+        one: "Anketa"
+        few: "Ankete"
+        other: "Ankete"
+      proposal_notification:
+        one: "Obavijest o prijedlogu"
+        few: "Obavijesti o prijedlogu"
+        other: "Obavijesti o prijedlogu"
+      dashboard/action:
+        one: Djelovanje na upravljačkoj ploči za prijedloge
+        few: Djelovanja na upravljačkoj ploči za prijedloge
+        other: Djelovanja na upravljačkoj ploči za prijedloge
+      dashboard/administrator_task:
+        one: Zadatak
+        few: Zadaci
+        other: Zadaci
+      link:
+        one: Poveznica
+        few: Poveznice
+        other: Poveznice
     attributes:
+      budget:
+        name: "Ime"
+        description_accepting: "Opis tokom faze Prihvačanja"
+        description_reviewing: "Opis tokom faze Pregleda"
+        description_selecting: "Opis tokom Selekcijske faze"
+        description_valuating: "Opis tokom faze Evaluacije"
+        description_balloting: "Opis tokom faze Izglasavanja"
+        description_reviewing_ballots: "Opis tokom faze Pregleda Glasanja"
+        description_finished: "Opis kada se finalizira budžet"
+        phase: "Faza"
+        currency_symbol: "Valuta"
+      budget/investment:
+        heading_id: "Naslov"
+        title: "Naziv"
+        description: "Opis"
+        external_url: "Poveznica za dodatnu dokumentaciju"
+        administrator_id: "Administrator"
+        location: "Lokacija (neobavezno)"
+        organization_name: "Ukoliko predlažete ime kolektiva/organizacija onda u ime više ljudi napišite ime kolektiva/organizacije"
+        image: "Opsina slika prijedloga"
+        image_title: "Naziv slike"
+      geozone:
+        name: Ime
+        external_code: "Vanjski kod (neobavezno)"
+        census_code: "Kod cenzusa (neobavezno)"
+        html_map_coordinates: "HTML <map> Koordinate (neobavezno)"
+      milestone:
+        status_id: "Trenutni status (neobavezno)"
+        title: "Naziv"
+        description: "Opis (neobavezno ukoliko je pripisan status)"
+        publication_date: "Datum objave"
+      milestone/status:
+        name: "Ime"
+        description: "Opis (neobavezno)"
+      progress_bar:
+        kind: "Tip"
+        title: "Naziv"
+        percentage: "Trenutni progres"
+      progress_bar/kind:
+        primary: "Primarno"
+        secondary: "Sekundarno"
+      budget/heading:
+        name: "Ime naslova"
+        price: "Cijena"
+        population: "Populacija"
+      comment:
+        body: "Komentar"
+        user: "Korisnik"
       debate:
         author: "Autor"
+        description: "Mišljenje"
+        terms_of_service: "Uvjeti usluge"
+        title: "Naziv"
       proposal:
         author: "Autor"
+        title: "Naziv"
+        question: "Pitanje"
+        description: "Opis"
+        terms_of_service: "Uvjeti usluge"
+      user:
+        login: "Email ili korisničko ime"
+        email: "Email"
+        username: "Korisničko ime"
+        password_confirmation: "Potvrđena zaporka"
+        password: "Zaporka"
+        current_password: "Trenutna zaporka"
+        phone_number: "Broj telefona"
+        official_position: "Službena pozicija"
+        official_level: "Službena razina"
+        redeemable_code: "Verifikacijski kod primljen preko emaila"
+      organization:
+        name: "Ime organizacije"
+        responsible_name: "Osoba odgovorna za grupu"
+      spending_proposal:
+        administrator_id: "Administrator"
+        association_name: "Ime udruženja"
+        description: "Opis"
+        external_url: "Poveznica na dodatnu dokumentaciju"
+        geozone_id: "Opseg djelovanja"
+        title: "Naziv"
+      poll:
+        name: "Ime"
+        starts_at: "Datum početka"
+        ends_at: "Datum zatvaranja"
+        geozone_restricted: "Ograničeno geozonom"
+        summary: "Sažetak"
+        description: "Opis"
+      poll/translation:
+        name: "Ime"
+        summary: "Sažetak"
+        description: "Opis"
+      poll/question:
+        title: "Pitanje"
+        summary: "Sažetak"
+        description: "Opis"
+        external_url: "Poveznica na dodatnu dokumentaciju"
+      poll/question/translation:
+        title: "Pitanje"
+      poll/ballot_sheet:
+        data: CSV podaci
     errors:
       models:
         poll/voter:
