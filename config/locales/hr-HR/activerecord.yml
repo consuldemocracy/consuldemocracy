@@ -37,14 +37,98 @@ hr:
         one: "Oznaka"
         few: "Oznake"
         other: "Oznake"
+      user:
+        one: "Korisnik"
+        few: "Korisnici"
+        other: "Korisnici"
+      moderator:
+        one: "Moderator"
+        few: "Moderatori"
+        other: "Moderatori"
+      administrator:
+        one: "Administrator"
+        few: "Administratori"
+        other: "Administratori"
+      valuator:
+        one: "Procjenitelj"
+        few: "Procjenitelji"
+        other: "Procjenitelji"
       valuator_group:
         one: "Grupa procjenitelja"
         few: "Grupa procjenitelja"
         other: "Grupa procjenitelja"
+      manager:
+        one: "Menadžer"
+        few: "Menadžeri"
+        other: "Menadžeri"
+      newsletter:
+        one: "Newsletter"
+        few: "Newsletteri"
+        other: "Newsletteri"
       vote:
         one: "Glas"
         few: "Glasovi"
         other: "Glasovi"
+      organization:
+        one: "Organizacija"
+        few: "Organizacije"
+        other: "Organizacije"
+      poll/booth:
+        one: "kabina"
+        few: "kabine"
+        other: "kabine"
+      poll/officer:
+        one: "činovnik"
+        few: "činovnikci"
+        other: "činovnikci"
+      poll/ballot_sheet:
+        one: Glasački listić
+        few: Glasački listići
+        other: Glasački listići
+      proposal:
+        one: "Prijedlog građana"
+        few: "Prijedlozi građana"
+        other: "Prijedlozi građana"
+      spending_proposal:
+        one: "Investicijski projekt"
+        few: "Investicijski projekti"
+        other: "Investicijski projekti"
+      site_customization/page:
+        one: Prilagođena stranica
+        few: Prilagođene stranice
+        other: Prilagođene stranice
+      site_customization/image:
+        one: Prilagođena slika
+        few: Prilagođene slike
+        other: Prilagođene slike
+      site_customization/content_block:
+        one: Prilagođeni blok sadržaja
+        few: Prilagođeni blokovi sadržaja
+        other: Prilagođeni blokovi sadržaja
+      document:
+        one: Dokument
+        few: Dokumenti
+        other: Dokumenti
+      legislation/process:
+        one: "Proces"
+        few: "Procesi"
+        other: "Procesi"
+      legislation/proposal:
+        one: "Prijedlog"
+        few: "Prijedlozi"
+        other: "Prijedlozi"
+      legislation/draft_versions:
+        one: "Draft verzija"
+        few: "Draft verzije"
+        other: "Draft verzije"
+      legislation/questions:
+        one: "Pitanje"
+        few: "Pitanja"
+        other: "Pitanja"
+      legislation/question_options:
+        one: "Opcija pitanja"
+        few: "Opcije pitanja"
+        other: "Opcije pitanja"
     attributes:
       debate:
         author: "Autor"
