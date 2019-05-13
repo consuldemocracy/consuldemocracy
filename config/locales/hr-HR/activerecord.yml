@@ -21,6 +21,22 @@ hr:
         one: "Status ključnog cilja"
         few: "Status ključnih ciljeva"
         other: "Status ključnih ciljeva"
+      progress_bar:
+        one: "Traka napretka"
+        few: "Trake napretka"
+        other: "Trake napretka"
+      comment:
+        one: "Komentar"
+        few: "Komentari"
+        other: "Komentari"
+      debate:
+        one: "Rasprava"
+        few: "Rasprave"
+        other: "Rasprave"
+      tag:
+        one: "Oznaka"
+        few: "Oznake"
+        other: "Oznake"
       valuator_group:
         one: "Grupa procjenitelja"
         few: "Grupa procjenitelja"
