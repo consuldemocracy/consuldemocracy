@@ -924,52 +924,52 @@ bs:
       form:
         name: "Ime grupe"
         new: "Napravi ocjeniteljsku grupu"
-        edit: "Spasi podatke za grupu za ocjenjivanje"
+        edit: "Spasi podatke za ocjeniteljsku grupu"
     poll_officers:
       index:
         title: Anketari
       officer:
         add: Dodaj
-        delete: Obriši funkciju
+        delete: Obriši poziciju
         name: Ime
         email: Email
-        entry_name: službeno lice
+        entry_name: anketar
       search:
         email_placeholder: Pretraga korisnika po email-adresi
-        search: Pretraga
+        search: Traži
         user_not_found: Korisnik nije pronađen
     poll_officer_assignments:
       index:
-        officers_title: "Spisak službenih lica"
-        no_officers: "Nema službenih lica za ove izbore."
+        officers_title: "Spisak anketara"
+        no_officers: "Nema anketara za ovu glasačku anketu."
         table_name: "Ime"
         table_email: "Email"
       by_officer:
         date: "Datum"
         booth: "Kabina"
-        assignments: "Smjene službenih lica za izbore"
-        no_assignments: "Ovaj korisnik nema utvrđenih smjena u ovim izborima."
+        assignments: "Anketarske smjene u ovoj glasačkoj anketi"
+        no_assignments: "Ovaj korisnik nema anketarskih smjena u ovoj glasačkoj anketi."
     poll_shifts:
       new:
         add_shift: "Dodaj smjenu"
-        shift: "Dužnosti"
+        shift: "Anketar u smjeni"
         shifts: "Rad u smjenama u ovoj kabini"
         date: "Datum"
         task: "Zadatak"
-        edit_shifts: Edituj rad u smjenama
+        edit_shifts: Uredi rad u smjenama
         new_shift: "Nova smjena"
-        no_shifts: "Nema rada u smjenama za ovu kabinu"
-        officer: "Službeno lice"
+        no_shifts: "Nema rada u smjenama u ovoj kabini"
+        officer: "Anketar"
         remove_shift: "Ukloni"
-        search_officer_button: Pretraga
-        search_officer_placeholder: Pretraga službenih lica
-        search_officer_text: Traži službeno lice za novu smjenu
+        search_officer_button: Traži
+        search_officer_placeholder: Pretraga po anketarima
+        search_officer_text: Traži anketara za novu smjenu
         select_date: "Odaberi dan"
         no_voting_days: "Period za glasanje završen"
         select_task: "Odaberi zadatak"
         table_shift: "Smjena"
         table_email: "Email"
-        table_name: "Ime"
+        table_name: "Naziv"
       flash:
         create: "Dodana smjena"
         destroy: "Smjena obrisana"
