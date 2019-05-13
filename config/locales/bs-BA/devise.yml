@@ -1,1 +1,31 @@
 bs:
+  devise:
+    password_expired:
+      expire_password: "Istekla lozinka"
+      change_required: "Tvoja lozinka je istekla"
+      change_password: "Promjeni svoju lozinku"
+      new_password: "Nova lozinka"
+      updated: "Lozinka uspješno ažurirana"
+    confirmations:
+      confirmed: "Tvoj profil je potvrđen."
+      send_instructions: "Za nekoliko minuta ćeš dobiti email sa instrukcijama kako da promijeniš svoju lozinku."
+      send_paranoid_instructions: "Ako je tvoja email adresa u našoj bazi podataka, za nekoliko minuta ćeš dobiti email sa instrukcijama kako da promijeniš svoju lozinku."
+    failure:
+      already_authenticated: "Već si prijavljen/a."
+      inactive: "Tvoj profil još uvijek nije aktiviran."
+      invalid: "Neispravne %{authentication_keys} ili neispravna lozinka."
+      locked: "Tvoj profil je zaključan."
+      last_attempt: "Imaš još jedan pokušaj prije nego ti se blokira profil."
+      not_found_in_database: "Neispravne %{authentication_keys} ili neispravna lozinka."
+      timeout: "Tvoja sesija je istekla. Prijavi se ponovo kako bi nastavio/la."
+      unauthenticated: "Moraš se prijaviti ili registrovati kako bi nastavio/la."
+      unconfirmed: "Da nastaviš, klikni na link za potvrdu koji smo ti poslali mailom"
+    mailer:
+      confirmation_instructions:
+        subject: "Uputstvo za potvrđivanje"
+      reset_password_instructions:
+        subject: "Uputstvo za mijenjanje lozinke"
+      unlock_instructions:
+        subject: "Uputstvo se otvara"
+    omniauth_callbacks:
+      failure: "Nije moguće dati ti autorizaciju u svojstvu %{kind} zbog (razlog) \"%{reason}\"."
