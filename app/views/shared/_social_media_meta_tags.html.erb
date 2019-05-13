@@ -17,4 +17,4 @@
 <meta id="ogimage" property="og:image" content="<%= root_url + (local_assigns[:og_image_url] || "social_media_icon.png") %>" />
 <meta property="og:site_name" content="<%= setting["org_name"] %>" />
 <meta id="ogdescription" property="og:description" content="<%= description %>" />
-<meta property="fb:app_id" content="<%= Rails.application.secrets.facebook_key %>" />
+<meta property="fb:app_id" content="<%= Tenant.current_secrets.facebook_key %>" />
