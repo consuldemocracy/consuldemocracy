@@ -18,8 +18,8 @@ feature "Banner" do
 
     within(".banner") do
       expect(page).to have_content("Banner description")
-      expect(find("h2")[:style]).to eq("color:#{banner.font_color}")
-      expect(find("h3")[:style]).to eq("color:#{banner.font_color}")
+      expect(find("h2")[:style]).to eq("color:#{banner.font_color};")
+      expect(find("h3")[:style]).to eq("color:#{banner.font_color};")
     end
 
     visit debates_path

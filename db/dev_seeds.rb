@@ -1,4 +1,4 @@
-require 'database_cleaner'
+require "database_cleaner"
 DatabaseCleaner.clean_with :truncation
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
@@ -8,7 +8,7 @@ DatabaseCleaner.clean_with :truncation
 def section(section_title)
   @logger.info section_title
   yield
-  log(' ✅')
+  log(" ✅")
 end
 
 def log(msg)

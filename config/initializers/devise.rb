@@ -12,20 +12,20 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  if Rails.env.test? || !ActiveRecord::Base.connection.table_exists?('settings')
+  if Rails.env.test? || !ActiveRecord::Base.connection.data_source_exists?("settings")
     config.mailer_sender = "noreply@consul.dev"
   else
-    config.mailer_sender = "'#{Setting['mailer_from_name']}' <#{Setting['mailer_from_address']}>"
+    config.mailer_sender = "'#{Setting["mailer_from_name"]}' <#{Setting["mailer_from_address"]}>"
   end
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'DeviseMailer'
+  config.mailer = "DeviseMailer"
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

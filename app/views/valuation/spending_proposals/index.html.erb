@@ -5,7 +5,7 @@
     <div class="small-12 medium-4 column select-geozone">
       <% slice.each do |filter| %>
         <%= link_to valuation_spending_proposals_path(geozone_id: filter[:id]),
-                    class: "#{'is-active' if params[:geozone_id].to_s == filter[:id].to_s}" do %>
+                    class: "#{"is-active" if params[:geozone_id].to_s == filter[:id].to_s}" do %>
           <%= filter[:name] %>&nbsp;(<%= filter[:pending_count] %>)
         <% end %>
       <% end %>
@@ -13,7 +13,7 @@
   <% end %>
 </div>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "valuation.spending_proposals.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "valuation.spending_proposals.index" %>
 
 <h3><%= page_entries_info @spending_proposals %></h3>
 

@@ -47,13 +47,13 @@ class Admin::BannersController < Admin::BaseController
 
     def banner_styles
       @banner_styles = Setting.all.banner_style.map do |banner_style|
-                         [banner_style.value, banner_style.key.split('.')[1]]
+                         [banner_style.value, banner_style.key.split(".")[1]]
                        end
     end
 
     def banner_imgs
       @banner_imgs = Setting.all.banner_img.map do |banner_img|
-                       [banner_img.value, banner_img.key.split('.')[1]]
+                       [banner_img.value, banner_img.key.split(".")[1]]
                      end
     end
 

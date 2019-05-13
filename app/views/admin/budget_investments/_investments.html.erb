@@ -2,7 +2,7 @@
             admin_budget_budget_investments_path(csv_params),
             class: "float-right small clear" %>
 
-<% if params[:filter] == 'winners' %>
+<% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>
     <%= link_to calculate_winner_button_text(@budget),
                 calculate_winners_admin_budget_path(@budget),
@@ -36,6 +36,7 @@
         </th>
         <th><%= t("admin.budget_investments.index.list.geozone") %></th>
         <th><%= t("admin.budget_investments.index.list.feasibility") %></th>
+        <th><%= t("admin.budget_investments.index.list.price") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.list.valuation_finished") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.list.visible_to_valuators") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.list.selected") %></th>
@@ -48,7 +49,7 @@
     <tbody>
       <% @investments.each do |investment| %>
         <tr id="<%= dom_id(investment) %>" class="budget_investment">
-          <%= render '/admin/budget_investments/select_investment', investment: investment %>
+          <%= render "/admin/budget_investments/select_investment", investment: investment %>
         </tr>
       <% end %>
     </tbody>

@@ -8,9 +8,8 @@ feature "Proposals" do
                   "proposal_path"
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.proposals"] = nil
+    Setting["process.proposals"] = nil
     expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    Setting["feature.proposals"] = true
   end
 
   context "Concerns" do
@@ -213,11 +212,12 @@ feature "Proposals" do
     expect(page).to have_css "meta[property='og:title'][content=\'#{proposal.title}\']", visible: false
   end
 
-  scenario "Create" do
+  scenario "Create and publish" do
     author = create(:user)
     login_as(author)
 
     visit new_proposal_path
+
     fill_in "proposal_title", with: "Help refugees"
     fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
     fill_in "proposal_summary", with: "In summary, what we want is..."
@@ -234,6 +234,9 @@ feature "Proposals" do
     expect(page).to have_content "Help refugees"
     expect(page).not_to have_content "You can also see more information about improving your campaign"
 
+    click_link "No, I want to publish the proposal"
+
+    expect(page).to have_content "Improve your campaign and get more support"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_content "Help refugees"
@@ -246,34 +249,6 @@ feature "Proposals" do
     expect(page).to have_content "Refugees"
     expect(page).to have_content "Solidarity"
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
-  end
-
-  scenario "Create with proposal improvement info link" do
-    Setting["proposal_improvement_path"] = "/more-information/proposal-improvement"
-    author = create(:user)
-    login_as(author)
-
-    visit new_proposal_path
-    fill_in "proposal_title", with: "Help refugees"
-    fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
-    fill_in "proposal_summary", with: "In summary, what we want is..."
-    fill_in "proposal_description", with: "This is very important because..."
-    fill_in "proposal_external_url", with: "http://rescue.org/refugees"
-    fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    fill_in "proposal_tag_list", with: "Refugees, Solidarity"
-    check "proposal_terms_of_service"
-
-    click_button "Create proposal"
-
-    expect(page).to have_content "Proposal created successfully."
-    expect(page).to have_content "Improve your campaign and get more supports"
-
-    click_link "Not now, go to my proposal"
-
-    expect(page).to have_content "Help refugees"
-
-    Setting["proposal_improvement_path"] = nil
   end
 
   scenario "Create with invisible_captcha honeypot field" do
@@ -336,7 +311,7 @@ feature "Proposals" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-
+    click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(Proposal.last.responsible_name).to eq("Isabel Garcia")
@@ -358,7 +333,7 @@ feature "Proposals" do
 
     click_button "Create proposal"
     expect(page).to have_content "Proposal created successfully."
-
+    click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(Proposal.last.responsible_name).to eq(author.document_number)
@@ -390,7 +365,7 @@ feature "Proposals" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-
+    click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_content "Testing an attack"
@@ -414,7 +389,7 @@ feature "Proposals" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-
+    click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_content "Testing auto link"
@@ -437,7 +412,7 @@ feature "Proposals" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-
+    click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_content "Testing auto link"
@@ -445,7 +420,13 @@ feature "Proposals" do
     expect(page).not_to have_link("click me")
     expect(page.html).not_to include "<script>alert('hey')</script>"
 
-    click_link "Edit"
+    click_link "Dashboard"
+
+    within "#side_menu" do
+      click_link "Edit my proposal"
+    end
+
+    click_link "Edit proposal"
 
     expect(page).to have_current_path(edit_proposal_path(Proposal.last))
     expect(page).not_to have_link("click me")
@@ -472,7 +453,7 @@ feature "Proposals" do
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully."
-
+      click_link "No, I want to publish the proposal"
       click_link "Not now, go to my proposal"
 
       within "#geozone" do
@@ -501,7 +482,7 @@ feature "Proposals" do
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully."
-
+      click_link "No, I want to publish the proposal"
       click_link "Not now, go to my proposal"
 
       within "#geozone" do
@@ -518,8 +499,15 @@ feature "Proposals" do
 
       visit user_path(proposal.author)
       within("#proposal_#{proposal.id}") do
-        click_link "Retire"
+        click_link "Dashboard"
       end
+
+      within "#side_menu" do
+        click_link "Edit my proposal"
+      end
+
+      click_link "Retire proposal"
+
       expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
       select "Duplicated", from: "proposal_retired_reason"
@@ -549,6 +537,7 @@ feature "Proposals" do
     end
 
     scenario "Index do not list retired proposals by default" do
+      Setting["feature.featured_proposals"] = true
       create_featured_proposals
       not_retired = create(:proposal)
       retired = create(:proposal, retired_at: Time.current)
@@ -909,8 +898,10 @@ feature "Proposals" do
     end
 
     scenario "do not show in featured proposals section" do
+      Setting["feature.featured_proposals"] = true
       featured_proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
-      archived_proposal = create(:proposal, :archived, :with_confidence_score, cached_votes_up: 10000)
+      archived_proposal = create(:proposal, :archived, :with_confidence_score,
+                                                        cached_votes_up: 10000)
 
       visit proposals_path
 

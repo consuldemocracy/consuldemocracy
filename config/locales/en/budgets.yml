@@ -10,7 +10,8 @@ en:
         voted_html:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
-        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+        voted_info_html: "Your ballot is confirmed!"
+        voted_info_2: "But you can change your vote at any time until this phase is closed."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
         not_logged_in: You must %{signin} or %{signup} to continue.
@@ -21,6 +22,7 @@ en:
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned_html: "You have already voted a different heading: %{heading_link}"
         change_ballot: change your votes
+        casted_offline: You have already participated offline
     groups:
       show:
         title: Select an option
@@ -72,7 +74,7 @@ en:
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
-        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         by_heading: "Investment projects with scope: %{heading}"
         search_form:
           button: Search
@@ -90,7 +92,7 @@ en:
           voted_info_link: change your vote
           different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-          check_ballot_link: "check my ballot"
+          check_ballot_link: "check and confirm my ballot"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
@@ -111,9 +113,9 @@ en:
         author_deleted: User deleted
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
-        code_html: 'Investment project code: <strong>%{code}</strong>'
-        location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
+        code_html: "Investment project code: <strong>%{code}</strong>"
+        location_html: "Location: <strong>%{location}</strong>"
+        organization_name_html: "Proposed on behalf of: <strong>%{name}</strong>"
         share: Share
         title: Investment project
         supports: Supports
@@ -122,10 +124,10 @@ en:
         comments_tab: Comments
         milestones_tab: Milestones
         author: Author
-        project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
-        project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
-        project_winner: 'Winning investment project'
-        project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
+        project_unfeasible_html: "This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase."
+        project_selected_html: "This investment project <strong>has been selected</strong> for balloting phase."
+        project_winner: "Winning investment project"
+        project_not_selected_html: "This investment project <strong>has not been selected</strong> for balloting phase."
         see_price_explanation: See price explanation
       wrong_price_format: Only integer numbers
       investment:
@@ -142,10 +144,10 @@ en:
           zero: No supports
         give_support: Support
       header:
-        check_ballot: Check my ballot
+        check_ballot: Check and confirm my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-        check_ballot_link: "check my ballot"
+        check_ballot_link: "check and confirm my ballot"
         price: "This heading has a budget of"
     progress_bar:
       assigned: "You have assigned: "

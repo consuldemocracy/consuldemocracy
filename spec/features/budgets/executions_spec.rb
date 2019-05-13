@@ -53,7 +53,7 @@ feature "Executions" do
     click_link "See results"
     click_link "Milestones"
 
-    expect(page).not_to have_content("No winner investments in this state")
+    expect(page).to have_content("No winner investments in this state")
 
     select "Executed (0)", from: "status"
 

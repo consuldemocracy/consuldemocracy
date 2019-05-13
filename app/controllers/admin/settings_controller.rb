@@ -1,11 +1,19 @@
 class Admin::SettingsController < Admin::BaseController
+  include Admin::ManagesProposalSettings
+
+  helper_method :successful_proposal_setting, :successful_proposals,
+                :poll_feature_short_title_setting, :poll_feature_description_setting,
+                :poll_feature_link_setting, :email_feature_short_title_setting,
+                :email_feature_description_setting,
+                :poster_feature_short_title_setting, :poster_feature_description_setting
 
   def index
-    all_settings = Setting.all.group_by { |s| s.type }
-    @settings = all_settings['common']
-    @feature_flags = all_settings['feature']
-    @banner_styles = all_settings['banner-style']
-    @banner_imgs = all_settings['banner-img']
+    all_settings = Setting.all.group_by { |setting| setting.type }
+    @configuration_settings = all_settings["configuration"]
+    @feature_settings = all_settings["feature"]
+    @participation_processes_settings = all_settings["process"]
+    @map_configuration_settings = all_settings["map"]
+    @proposals_settings = all_settings["proposals"]
   end
 
   def update
@@ -15,9 +23,9 @@ class Admin::SettingsController < Admin::BaseController
   end
 
   def update_map
-    Setting["map_latitude"] = params[:latitude].to_f
-    Setting["map_longitude"] = params[:longitude].to_f
-    Setting["map_zoom"] = params[:zoom].to_i
+    Setting["map.latitude"] = params[:latitude].to_f
+    Setting["map.longitude"] = params[:longitude].to_f
+    Setting["map.zoom"] = params[:zoom].to_i
     redirect_to admin_settings_path, notice: t("admin.settings.index.map.flash.update")
   end
 

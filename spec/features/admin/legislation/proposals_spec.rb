@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin legislation processes" do
+feature "Admin collaborative legislation" do
 
   background do
     admin = create(:administrator)

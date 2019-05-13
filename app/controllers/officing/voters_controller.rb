@@ -1,6 +1,10 @@
 class Officing::VotersController < Officing::BaseController
   respond_to :html, :js
 
+  before_action :load_officer_assignment
+  before_action :verify_officer_assignment
+  before_action :verify_booth
+
   def new
     @user = User.find(params[:id])
     booths = current_user.poll_officer.shifts.current.vote_collection.pluck(:booth_id).uniq
@@ -15,7 +19,9 @@ class Officing::VotersController < Officing::BaseController
                              user: @user,
                              poll: @poll,
                              origin: "booth",
-                             officer: current_user.poll_officer)
+                             officer: current_user.poll_officer,
+                             booth_assignment: Poll::BoothAssignment.where(poll: @poll, booth: current_booth).first,
+                             officer_assignment: officer_assignment(@poll))
     @voter.save!
   end
 
@@ -23,6 +29,15 @@ class Officing::VotersController < Officing::BaseController
 
     def voter_params
       params.require(:voter).permit(:poll_id, :user_id)
+    end
+
+    def officer_assignment(poll)
+      Poll::OfficerAssignment.by_officer(current_user.poll_officer)
+                             .by_poll(poll)
+                             .by_booth(current_booth)
+                             .by_date(Date.current)
+                             .where(final: false)
+                             .first
     end
 
 end

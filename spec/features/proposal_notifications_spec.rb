@@ -10,13 +10,13 @@ feature "Proposal Notifications" do
     visit root_path
 
     click_link "My activity"
-
-    within("#proposal_#{proposal.id}") do
-      click_link "Send notification"
-    end
+    click_link proposal.title
+    click_link "Access the community"
+    click_link "Send message to the community"
 
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-    fill_in "proposal_notification_body", with: "Please share it with others so we can make it happen!"
+    fill_in "proposal_notification_body", with: "Please share it with "\
+                                                "others so we can make it happen!"
     click_button "Send message"
 
     expect(page).to have_content "Your message has been sent correctly."
@@ -91,9 +91,12 @@ feature "Proposal Notifications" do
 
   scenario "Show notifications" do
     proposal = create(:proposal)
-    notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
-    notification2 = create(:proposal_notification, proposal: proposal, title: "Another update",
-                                                   body: "We are almost there please share with your peoples!")
+    _notification1 = create(:proposal_notification,
+                             proposal: proposal, title: "Hey guys",
+                             body: "Just wanted to let you know that...")
+    _notification2 = create(:proposal_notification,
+                             proposal: proposal, title: "Another update",
+                             body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
 
@@ -170,23 +173,14 @@ feature "Proposal Notifications" do
   context "Permissions" do
 
     scenario "Link to send the message" do
-      user = create(:user)
+      _user = create(:user)
       author = create(:user)
       proposal = create(:proposal, author: author)
 
       login_as(author)
-      visit user_path(author)
+      visit community_path(proposal.community)
 
-      within("#proposal_#{proposal.id}") do
-        expect(page).to have_link "Send notification"
-      end
-
-      login_as(user)
-      visit user_path(author)
-
-      within("#proposal_#{proposal.id}") do
-        expect(page).not_to have_link "Send message"
-      end
+      expect(page).to have_link "Send message to the community"
     end
 
     scenario "Accessing form directly" do
@@ -223,7 +217,8 @@ feature "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with others so we can make it happen!"
+      fill_in "proposal_notification_body", with: "Please share it with "\
+                                                  "others so we can make it happen!"
       click_button "Send message"
 
       expect(page).to have_content "Your message has been sent correctly."
@@ -280,7 +275,8 @@ feature "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with others so we can make it happen!"
+      fill_in "proposal_notification_body", with: "Please share it with "\
+                                                  "others so we can make it happen!"
       click_button "Send message"
 
       expect(page).to have_content "Your message has been sent correctly."
@@ -330,7 +326,8 @@ feature "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with others so we can make it happen!"
+      fill_in "proposal_notification_body", with: "Please share it with "\
+                                                  "others so we can make it happen!"
       click_button "Send message"
 
       expect(page).to have_content "Your message has been sent correctly."
@@ -398,7 +395,9 @@ feature "Proposal Notifications" do
         login_as user.reload
         visit root_path
 
-        within("#notifications") { expect(page).to have_content :all, "You have 3 new notifications" }
+        within("#notifications") {
+          expect(page).to have_content :all, "You have 3 new notifications"
+        }
         find(".icon-notification").click
 
         expect(page).to have_css ".notification", count: 3

@@ -2,7 +2,7 @@
 
 <%= translatable_form_for [:admin, @budget] do |f| %>
 
-  <%= render 'shared/errors', resource: @budget %>
+  <%= render "shared/errors", resource: @budget %>
 
   <div class="small-12 medium-9 column">
     <%= f.translatable_fields do |translations_form| %>
@@ -52,7 +52,7 @@
               <% end %>
             </td>
             <td class="text-center">
-              <span class="budget-phase-enabled <%= phase.enabled? ? 'enabled' : 'disabled' %>"></span>
+              <span class="budget-phase-enabled <%= phase.enabled? ? "enabled" : "disabled" %>"></span>
             </td>
             <td>
               <%= link_to t("admin.budgets.edit.edit_phase"),

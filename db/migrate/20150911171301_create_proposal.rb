@@ -1,4 +1,4 @@
-class CreateProposal < ActiveRecord::Migration
+class CreateProposal < ActiveRecord::Migration[4.2]
   def change
     create_table :proposals do |t|
       t.string   "title", limit: 80

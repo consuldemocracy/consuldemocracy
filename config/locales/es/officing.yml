@@ -16,6 +16,28 @@ es:
         no_polls: No tienes permiso para recuento final en ninguna votación reciente
         select_poll: Selecciona votación
         add_results: Añadir resultados
+    poll_budgets:
+      see_ballot_sheets: Ver lista de papeletas de votación
+      index:
+        title: "%{poll_budget} - Listado de papeletas de votación"
+        ballot_sheet: "Papeleta de votación %{id}"
+        ballot_sheet_name: Nombre
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Fecha de creación
+        empty_results: Aún no se han subido papeletas de votación
+      new:
+        title: "%{poll_budget} - Nueva papeleta de votación"
+        booth: Urna
+        select_booth: Elegir urna
+        csv_data: Datos de CSV
+        submit: Guardar
+      show:
+        created_at: Fecha de creación
+        author: Autor
+        data: Datos de CSV
+    booth:
+      new:
+        title: "Escoge tu urna"
     results:
       flash:
         create: "Datos guardados"
@@ -51,7 +73,6 @@ es:
         submit: Validar documento
         error_verifying_census: "El Padrón no pudo verificar este documento."
         form_errors: evitaron verificar este documento
-        no_assignments: "Hoy no tienes turno de presidente de mesa"
     voters:
       new:
         title: Votaciones

@@ -13,7 +13,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
       unless values.empty?
         values.each do |key, value|
-          locale = key.split('_').last
+          locale = key.split("_").last
 
           if value == t(content[:id], locale: locale) || value.match(/translation missing/)
             next
@@ -28,7 +28,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     end
 
     redirect_to admin_site_customization_information_texts_path,
-                notice: t('flash.actions.update.translation')
+                notice: t("flash.actions.update.translation")
   end
 
   private
@@ -42,11 +42,11 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     end
 
     def delete_translations
-      languages_to_delete = params[:enabled_translations].select { |_, v| v == '0' }
+      languages_to_delete = params[:enabled_translations].select { |_, v| v == "0" }
                                                          .keys
 
       languages_to_delete.each do |locale|
-        I18nContentTranslation.destroy_all(locale: locale)
+        I18nContentTranslation.where(locale: locale).destroy_all
       end
     end
 
@@ -81,7 +81,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
     def enabled_translations
       params.fetch(:enabled_translations, {})
-            .select { |_, v| v == '1' }
+            .select { |_, v| v == "1" }
             .keys
     end
 end

@@ -9,7 +9,7 @@
 
     <h2><%= @process.title %></h2>
 
-    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
+    <%= render "admin/legislation/processes/subnav", process: @process, active: "draft_versions" %>
 
     <div class="small-12 column">
       <div class="callout warning" style="display: none;">
@@ -24,10 +24,10 @@
         <%= link_to t("admin.legislation.draft_versions.index.delete"),
                     admin_legislation_process_draft_version_path(@process, @draft_version),
                     method: :delete,
-                    class: 'button hollow alert' %>
+                    class: "button hollow alert" %>
       </div>
     </div>
 
-    <%= render 'form', url: admin_legislation_process_draft_version_path(@process, @draft_version) %>
+    <%= render "form", url: admin_legislation_process_draft_version_path(@process, @draft_version) %>
   </div>
 </div>

@@ -32,7 +32,7 @@
 
   <div id="nested_question_options">
     <%= f.fields_for :question_options do |ff| %>
-      <%= render 'question_option_fields', f: ff %>
+      <%= render "question_option_fields", f: ff %>
     <% end %>
 
     <div class="js-add-fields-container">

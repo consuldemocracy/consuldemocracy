@@ -9,11 +9,10 @@
         <%= t("budgets.ballots.show.voted_html",
             count: @ballot.investments.count) %>
       </h2>
+      <p class="confirmed">
+        <%= t("budgets.ballots.show.voted_info_html") %>
       <p>
-        <small>
-          <%= t("budgets.ballots.show.voted_info_html") %>
-        </small>
-      </p>
+      <p><%= t("budgets.ballots.show.voted_info_2") %></p>
     </div>
   </div>
 </div>
@@ -45,7 +44,7 @@
         <% end %>
 
         <ul class="ballot-list">
-          <%= render partial: 'budgets/ballot/investment',
+          <%= render partial: "budgets/ballot/investment",
                      collection: @ballot.investments.by_group(group.id) %>
         </ul>
       </div>

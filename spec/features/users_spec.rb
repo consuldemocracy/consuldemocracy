@@ -409,16 +409,13 @@ feature "Users" do
       visit user_path(user)
       expect(page).to have_content("7 Comments")
 
-      Setting["feature.debates"] = nil
+      Setting["process.debates"] = nil
       visit user_path(user)
       expect(page).to have_content("6 Comments")
 
-      Setting["feature.budgets"] = nil
+      Setting["process.budgets"] = nil
       visit user_path(user)
       expect(page).to have_content("4 Comments")
-
-      Setting["feature.debates"] = true
-      Setting["feature.budgets"] = true
     end
   end
 
@@ -492,6 +489,27 @@ feature "Users" do
 
         expect(page).to have_content proposal.title
       end
+
+      scenario "Retired proposals do not have a link to the dashboard", js: true do
+        proposal = create(:proposal, :retired, author: @user)
+        login_as @user
+
+        visit user_path(@user)
+
+        expect(page).to have_content proposal.title
+        expect(page).not_to have_link "Dashboard"
+        expect(page).to have_content("Dashboard not available for retired proposals")
+      end
+
+      scenario "Published proposals have a link to the dashboard" do
+        proposal = create(:proposal, :published, author: @user)
+        login_as @user
+
+        visit user_path(@user)
+
+        expect(page).to have_content proposal.title
+        expect(page).to have_link "Dashboard"
+      end
     end
 
     describe "Budget Investments" do
@@ -533,5 +551,4 @@ feature "Users" do
     end
 
   end
-
 end

@@ -1,3 +1,9 @@
+<!--
+  Title: CONSUL
+  Description: Aplicación de Participación Ciudadana y Gobierno Abierto
+  Keywords: democracia, participación ciudadana, participación electrónica, debates, propuestas, votaciones, consultas, legislación colaborativa, presupuestos participativos
+-->
+
 ![Logotipo de CONSUL](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
 # CONSUL
@@ -18,13 +24,17 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL, creada originariamente por el Ayuntamiento de Madrid.
 
-## Estado del proyecto
+## Documentación
 
-El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en la [la página del projecto](http://consulproject.org/es) y las futuras funcionalidades en el [Roadmap](https://github.com/consul/consul/projects/6) y [el listado de issues](https://github.com/consul/consul/issues).
+Por favor visita la documentación que está siendo completada en [https://docs.consulproject.org](https://docs.consulproject.org) para conocer más sobre este proyecto, cómo comenzar tu propio fork, instalarlo, personalizarlo y usarlo como administrador/mantenedor.
+
+## Web CONSUL Project
+
+Puedes acceder a la página principal del proyecto en [http://consulproject.org](http://consulproject.org) donde puedes encontrar documentación sobre el uso de la plataforma, videos y enlaces al espacio de la comunidad.
 
 ## Configuración para desarrollo y tests
 
-**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/docs/tree/master/es/getting_started/prerequisites)
+**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consulproject.org)
 
 Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
 
@@ -64,9 +74,9 @@ Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el 
  **user:** verified@consul.dev
  **pass:** 12345678
 
-## Documentación
+## Estado del proyecto
 
-Por favor visita la documentación que está siendo completada en [https://consul_docs.gitbooks.io/docs/content/](https://consul_docs.gitbooks.io/docs/content/) para conocer más sobre este proyecto, como comenzar tu propio fork, instalarlo, customizarlo y usarlo como administrador/mantenedor. Puedes colaborar en ella en [https://github.com/consul/docs](https://github.com/consul/docs)
+El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en la [la página del projecto](http://consulproject.org/es) y las futuras funcionalidades en el [Roadmap](https://github.com/consul/consul/projects/6) y [el listado de issues](https://github.com/consul/consul/issues).
 
 ## Licencia
 

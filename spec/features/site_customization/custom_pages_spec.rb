@@ -1,39 +1,6 @@
 require "rails_helper"
 
 feature "Custom Pages" do
-  context "Override existing page" do
-    scenario "See default content when custom page is not published" do
-      custom_page = create(:site_customization_page,
-        slug: "conditions",
-        title_en: "Custom conditions",
-        content_en: "New text for conditions page",
-        print_content_flag: true
-      )
-
-      visit custom_page.url
-
-      expect(page).to have_title("Terms of use")
-      expect(page).to have_selector("h1", text: "Terms and conditions of use")
-      expect(page).to have_content("Information page on the conditions of use, privacy and protection of personal data.")
-      expect(page).to have_content("Print this info")
-    end
-
-    scenario "See custom content when custom page is published" do
-      custom_page = create(:site_customization_page, :published,
-        slug: "conditions",
-        title_en: "Custom conditions",
-        content_en: "New text for conditions page",
-        print_content_flag: true
-      )
-
-      visit custom_page.url
-
-      expect(page).to have_title("Custom conditions")
-      expect(page).to have_selector("h1", text: "Custom conditions")
-      expect(page).to have_content("New text for conditions page")
-      expect(page).to have_content("Print this info")
-    end
-  end
 
   context "New custom page" do
     context "Draft" do

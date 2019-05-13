@@ -18,7 +18,7 @@ feature "Admin booths assignments" do
 
       visit booth_assignments_admin_polls_path
 
-      expect(page).to have_content(poll.name)
+      expect(page).to have_link(poll.name, href: manage_admin_poll_booth_assignments_path(poll))
       expect(page).to have_content(second_poll.name)
 
       within("#poll_#{second_poll.id}") do

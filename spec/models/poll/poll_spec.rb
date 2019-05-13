@@ -33,6 +33,58 @@ describe Poll do
       poll.ends_at = 2.months.ago
       expect(poll).not_to be_valid
     end
+
+    it "no overlapping polls for proposal polls are allowed" do
+    end
+  end
+
+  describe "proposal polls specific validations" do
+    let(:proposal) { create(:proposal) }
+    let(:poll) { build(:poll, related: proposal) }
+
+    it "is valid when overlapping but different proposals" do
+      other_proposal = create(:proposal)
+      _other_poll = create(:poll, related: other_proposal, starts_at: poll.starts_at,
+                                                           ends_at: poll.ends_at)
+
+      expect(poll).to be_valid
+    end
+
+    it "is valid when same proposal but not overlapping" do
+      _other_poll = create(:poll, related: proposal, starts_at: poll.ends_at + 1.day,
+                                                     ends_at: poll.ends_at + 8.days)
+      expect(poll).to be_valid
+    end
+
+    it "is not valid when overlaps from the beginning" do
+      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at - 8.days,
+                                                     ends_at: poll.starts_at)
+      expect(poll).not_to be_valid
+    end
+
+    it "is not valid when overlaps from the end" do
+      _other_poll = create(:poll, related: proposal, starts_at: poll.ends_at,
+                                                     ends_at: poll.ends_at + 8.days)
+      expect(poll).not_to be_valid
+    end
+
+    it "is not valid when overlaps with same interval" do
+      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at,
+                                                     ends_at: poll.ends_at)
+      expect(poll).not_to be_valid
+    end
+
+    it "is not valid when overlaps with interval contained" do
+      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at + 1.day,
+                                                     ends_at: poll.ends_at - 1.day)
+      expect(poll).not_to be_valid
+    end
+
+    it "is not valid when overlaps with interval containing" do
+      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at - 8.days,
+                                                     ends_at: poll.ends_at + 8.days)
+      expect(poll).not_to be_valid
+    end
   end
 
   describe "#opened?" do
@@ -91,7 +143,8 @@ describe Poll do
     let!(:expired_poll) { create(:poll, :expired) }
 
     let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-    let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
+    let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted: true,
+                                                             geozones: [geozone]) }
 
     let!(:all_polls) { [current_poll, expired_poll, current_poll, expired_restricted_poll] }
     let(:non_current_polls) { [expired_poll, expired_restricted_poll] }
@@ -147,6 +200,70 @@ describe Poll do
     end
   end
 
+  describe "votable_by" do
+    it "returns polls that have not been voted by a user" do
+      user = create(:user, :level_two)
+
+      poll1 = create(:poll)
+      poll2 = create(:poll)
+      poll3 = create(:poll)
+
+      create(:poll_voter, user: user, poll: poll1)
+
+      expect(Poll.votable_by(user)).to include(poll2)
+      expect(Poll.votable_by(user)).to include(poll3)
+      expect(Poll.votable_by(user)).not_to include(poll1)
+    end
+
+    it "returns polls that are answerable by a user" do
+      user = create(:user, :level_two, geozone: nil)
+      poll1 = create(:poll)
+      poll2 = create(:poll)
+
+      allow(Poll).to receive(:answerable_by).and_return(Poll.where(id: poll1))
+
+      expect(Poll.votable_by(user)).to include(poll1)
+      expect(Poll.votable_by(user)).not_to include(poll2)
+    end
+
+    it "returns polls even if there are no voters yet" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      expect(Poll.votable_by(user)).to include(poll)
+    end
+
+  end
+
+  describe "#votable_by" do
+    it "returns false if the user has already voted the poll" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      create(:poll_voter, user: user, poll: poll)
+
+      expect(poll.votable_by?(user)).to eq(false)
+    end
+
+    it "returns false if the poll is not answerable by the user" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(false)
+
+      expect(poll.votable_by?(user)).to eq(false)
+    end
+
+    it "return true if a poll is answerable and has not been voted by the user" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(true)
+
+      expect(poll.votable_by?(user)).to eq(true)
+    end
+  end
+
   describe "#voted_by?" do
     it "return false if the user has not voted for this poll" do
       user = create(:user, :level_two)
@@ -159,19 +276,18 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      voter = create(:poll_voter, user: user, poll: poll)
+      create(:poll_voter, user: user, poll: poll)
 
       expect(poll.voted_by?(user)).to eq(true)
     end
   end
 
   describe "#voted_in_booth?" do
-
     it "returns true if the user has already voted in booth" do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      create(:poll_voter, poll: poll, user: user, origin: "booth")
+      create(:poll_voter, :from_booth, poll: poll, user: user)
 
       expect(poll.voted_in_booth?(user)).to be
     end
@@ -187,9 +303,57 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      create(:poll_voter, poll: poll, user: user, origin: "web")
+      create(:poll_voter, :from_web, poll: poll, user: user)
 
       expect(poll.voted_in_booth?(user)).not_to be
+    end
+  end
+
+  describe ".overlaping_with" do
+    let(:proposal) { create :proposal }
+    let(:other_proposal) { create :proposal }
+    let(:poll) { create(:poll, related: proposal) }
+    let(:overlaping_poll) { build(:poll, related: proposal, starts_at: poll.starts_at + 1.day,
+                                                            ends_at: poll.ends_at - 1.day) }
+    let(:non_overlaping_poll) { create(:poll, related: proposal, starts_at: poll.ends_at + 1.day,
+                                                                 ends_at: poll.ends_at + 31.days) }
+    let(:overlaping_poll_2) { create(:poll, related: other_proposal,
+                                            starts_at: poll.starts_at + 1.day,
+                                            ends_at: poll.ends_at - 1.day) }
+
+    it "a poll can not overlap itself" do
+      expect(Poll.overlaping_with(poll)).not_to include(poll)
+    end
+
+    it "returns overlaping polls for the same proposal" do
+      expect(Poll.overlaping_with(overlaping_poll)).to include(poll)
+    end
+
+    it "do not returs non overlaping polls for the same proposal" do
+      expect(Poll.overlaping_with(poll)).not_to include(non_overlaping_poll)
+    end
+
+    it "do not returns overlaping polls for other proposal" do
+      expect(Poll.overlaping_with(poll)).not_to include(overlaping_poll_2)
+    end
+  end
+
+  context "scopes" do
+
+    describe "#not_budget" do
+
+      it "returns polls not associated to a budget" do
+        budget = create(:budget)
+
+        poll1 = create(:poll)
+        poll2 = create(:poll)
+        poll3 = create(:poll, budget: budget)
+
+        expect(Poll.not_budget).to include(poll1)
+        expect(Poll.not_budget).to include(poll2)
+        expect(Poll.not_budget).not_to include(poll3)
+      end
+
     end
 
   end

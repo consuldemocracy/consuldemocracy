@@ -42,6 +42,7 @@ FactoryBot.define do
     association :question, factory: :poll_question
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
+    sequence(:given_order) { |n| n }
   end
 
   factory :poll_answer_video, class: "Poll::Question::Answer::Video" do
@@ -87,11 +88,25 @@ FactoryBot.define do
   factory :poll_voter, class: "Poll::Voter" do
     poll
     association :user, :level_two
-    association :officer, factory: :poll_officer
-    origin "web"
+    from_web
+
+    trait :from_web do
+      origin "web"
+      token SecureRandom.hex(32)
+    end
 
     trait :from_booth do
-      association :booth_assignment, factory: :poll_booth_assignment
+      origin "booth"
+
+      booth_assignment do
+        association :poll_booth_assignment, poll: poll
+      end
+
+      officer_assignment do
+        association :poll_officer_assignment,
+          booth_assignment: booth_assignment,
+          officer: officer || association(:poll_officer)
+      end
     end
 
     trait :valid_document do
@@ -121,6 +136,27 @@ FactoryBot.define do
   factory :poll_recount, class: "Poll::Recount" do
     association :author, factory: :user
     origin "web"
+
+    trait :from_booth do
+      origin "booth"
+
+      transient { poll nil }
+
+      booth_assignment do
+        association :poll_booth_assignment, poll: poll
+      end
+    end
+  end
+
+  factory :poll_ballot_sheet, class: "Poll::BallotSheet" do
+    association :poll
+    association :officer_assignment, factory: :poll_officer_assignment
+    data "1234;9876;5678\n1000;2000;3000;9999"
+  end
+
+  factory :poll_ballot, class: "Poll::Ballot" do
+    association :ballot_sheet, factory: :poll_ballot_sheet
+    data "1,2,3"
   end
 
   factory :officing_residence, class: "Officing::Residence" do

@@ -67,7 +67,7 @@ namespace :admin do
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
-      resources :milestones, controller: 'budget_investment_milestones'
+      resources :milestones, controller: "budget_investment_milestones"
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
       member { patch :toggle_selection }
     end
@@ -152,12 +152,12 @@ namespace :admin do
     end
 
     resources :questions, shallow: true do
-      resources :answers, except: [:index, :destroy], controller: 'questions/answers' do
-        resources :images, controller: 'questions/answers/images'
-        resources :videos, controller: 'questions/answers/videos'
-        get :documents, to: 'questions/answers#documents'
+      resources :answers, except: [:index, :destroy], controller: "questions/answers" do
+        resources :images, controller: "questions/answers/images"
+        resources :videos, controller: "questions/answers/videos"
+        get :documents, to: "questions/answers#documents"
       end
-      post '/answers/order_answers', to: 'questions/answers#order_answers'
+      post "/answers/order_answers", to: "questions/answers#order_answers"
     end
 
     resource :active_polls, only: [:create, :edit, :update]
@@ -224,12 +224,13 @@ namespace :admin do
     end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
-    delete '/heading_content_blocks/:id', to: 'content_blocks#delete_heading_content_block', as: 'delete_heading_content_block'
-    get '/edit_heading_content_blocks/:id', to: 'content_blocks#edit_heading_content_block', as: 'edit_heading_content_block'
-    put '/update_heading_content_blocks/:id', to: 'content_blocks#update_heading_content_block', as: 'update_heading_content_block'
+    delete "/heading_content_blocks/:id", to: "content_blocks#delete_heading_content_block", as: "delete_heading_content_block"
+    get "/edit_heading_content_blocks/:id", to: "content_blocks#edit_heading_content_block", as: "edit_heading_content_block"
+    put "/update_heading_content_blocks/:id", to: "content_blocks#update_heading_content_block", as: "update_heading_content_block"
     resources :information_texts, only: [:index] do
       post :update, on: :collection
     end
+    resources :documents, only: [:index, :new, :create, :destroy]
   end
 
   resources :tenants, only: [:index, :new, :create, :edit, :update, :destroy]
@@ -239,5 +240,10 @@ namespace :admin do
   namespace :widget do
     resources :cards
     resources :feeds, only: [:update]
+  end
+
+  namespace :dashboard do
+    resources :actions, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :administrator_tasks, only: [:index, :edit, :update]
   end
 end

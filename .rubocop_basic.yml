@@ -4,12 +4,11 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   Include:
-    - '**/Rakefile'
-    - '**/config.ru'
+    - "**/Rakefile"
+    - "**/config.ru"
   Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
+    - "db/migrate/**/*"
+    - "db/schema.rb"
   TargetRubyVersion: 2.3
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.

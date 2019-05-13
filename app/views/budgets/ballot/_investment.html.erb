@@ -4,7 +4,7 @@
 
   <% if @budget.balloting? %>
     <%= link_to budget_ballot_line_path(@budget, id: investment.id),
-                title: t('budgets.ballots.show.remove'),
+                title: t("budgets.ballots.show.remove"),
                 class: "remove-investment-project",
                 method: :delete,
                 remote: true do %>

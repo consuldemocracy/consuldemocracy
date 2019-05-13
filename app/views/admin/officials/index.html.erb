@@ -1,6 +1,7 @@
 <h2><%= t("admin.officials.index.title") %></h2>
+<p><%= t("admin.officials.index.help") %></p>
 
-<%= render 'admin/shared/user_search', url: search_admin_officials_path %>
+<%= render "admin/shared/user_search", url: search_admin_officials_path %>
 
 <% if @officials.any? %>
   <h3 class="margin"><%= page_entries_info @officials %></h3>

@@ -1,4 +1,4 @@
-class I18nContent < ActiveRecord::Base
+class I18nContent < ApplicationRecord
 
   scope :by_key,          ->(key) { where(key: key) }
   scope :begins_with_key, ->(key) { where("key ILIKE ?", "#{key}%") }
@@ -42,7 +42,7 @@ class I18nContent < ActiveRecord::Base
 
   def self.flat_hash(input, path = nil, output = {})
     return output.update({ path => input }) unless input.is_a? Hash
-    input.map { |key, value| flat_hash(value, [path, key].compact.join('.'), output) }
+    input.map { |key, value| flat_hash(value, [path, key].compact.join("."), output) }
     return output
   end
 

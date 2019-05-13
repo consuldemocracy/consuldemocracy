@@ -13,7 +13,7 @@
       </div>
 
       <div class="show-for-medium medium-9 column text-center">
-        <%= image_tag("map.jpg", usemap: "#map") %>
+        <%= image_tag(image_path_for("map.jpg"), usemap: "#map") %>
       </div>
 
       <map name="map" id="html_map">
@@ -45,8 +45,8 @@
   <div class="small-12 medium-3 column">
     <aside class="sidebar">
       <%= link_to t("map.start_proposal"),
-                  new_proposal_path, class: 'button radius expand' %>
-      <%= render "shared/tag_cloud", taggable: 'proposal' %>
+                  new_proposal_path, class: "button radius expand" %>
+      <%= render "shared/tag_cloud", taggable: "proposal" %>
     </aside>
   </div>
 </div>

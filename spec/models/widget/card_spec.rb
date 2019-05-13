@@ -36,18 +36,4 @@ describe Widget::Card do
       expect(Widget::Card.body).not_to include(page_card)
     end
   end
-
-  describe "#custom page" do
-
-    it "return cards for the custom pages" do
-      header = create(:widget_card, header: true)
-      card = create(:widget_card, header: false)
-      card1 = create(:widget_card, header: false, title: "Card 1", site_customization_page_id: 1)
-      card2 = create(:widget_card, header: false, title: "Card 2", site_customization_page_id: 1)
-      card3 = create(:widget_card, header: false, title: "Card 3", site_customization_page_id: 1)
-
-      expect(Widget::Card.page(1)).to eq([card1, card2, card3])
-    end
-  end
-
 end

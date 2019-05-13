@@ -25,7 +25,7 @@ feature "Residence", :with_frozen_time do
 
     background do
       create(:poll_officer_assignment, officer: officer)
-      login_as(officer.user)
+      login_through_form_as_officer(officer.user)
       visit officing_root_path
     end
 
@@ -91,6 +91,29 @@ feature "Residence", :with_frozen_time do
       expect(page).to have_content "The Census was unable to verify this document"
     end
 
+  end
+
+  scenario "Verify booth", :js do
+    booth = create(:poll_booth)
+    poll = create(:poll)
+
+    ba = create(:poll_booth_assignment, poll: poll, booth: booth)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+    create(:poll_shift, officer: officer, booth: booth, date: Date.current)
+
+    login_as(officer.user)
+
+    visit new_officing_residence_path
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    end
+
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+    click_button "Confirm vote"
+
+    expect(page).to have_content "Vote introduced!"
   end
 
 end

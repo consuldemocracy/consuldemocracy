@@ -52,7 +52,7 @@ feature "Admin proposals" do
       successful_proposals.each do |proposal|
         visit admin_proposal_path(proposal)
         expect(page).to have_content "This proposal has reached the required supports"
-        expect(page).to have_link "Create question"
+        expect(page).to have_link "Add this proposal to a poll to be voted"
       end
     end
   end

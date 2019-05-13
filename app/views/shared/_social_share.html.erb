@@ -1,17 +1,20 @@
-<% description = local_assigns.fetch(:description, '') %>
+<% description = local_assigns.fetch(:description, "") %>
 <% description = truncate(ActionView::Base.full_sanitizer.sanitize(description), length: 140) %>
+<% mobile = local_assigns[:mobile] %>
+<% mobile_url = mobile.present? ? "#{mobile.gsub(/\s+/, "%20")}%20" : "" %>
+
 <% if local_assigns[:share_title].present? %>
   <div id="social-share" class="sidebar-divider"></div>
   <p class="sidebar-title"><%= share_title %></p>
 <% end %>
 <div class="social-share-full">
-  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']} #{setting['twitter_handle']}",
+  <%= social_share_button_tag("#{title} #{setting["twitter_hashtag"]} #{setting["twitter_handle"]}",
                               url: local_assigns[:url],
-                              image: local_assigns.fetch(:image_url, ''),
+                              image: local_assigns.fetch(:image_url, ""),
                               desc: description,
-                              'data-twitter-title': local_assigns[:mobile],
-                              'data-telegram-title': local_assigns[:mobile])%>
-  <a href="whatsapp://send?text=<%= local_assigns[:mobile]%>&nbsp;<%= url %>"
+                              "data-twitter-title": local_assigns[:mobile],
+                              "data-telegram-title": local_assigns[:mobile])%>
+  <a href="whatsapp://send?text=<%= mobile_url %><%= url %>"
      class="show-for-small-only" data-action="share/whatsapp/share">
     <span class="icon-whatsapp whatsapp"></span>
     <span class="show-for-sr"><%= t("social.whatsapp") %></span>

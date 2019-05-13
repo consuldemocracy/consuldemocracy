@@ -33,7 +33,7 @@
   <% end %>
 
   <div class="small-12 column">
-    <%= render 'images/admin_image', imageable: @poll, f: f %>
+    <%= render "images/admin_image", imageable: @poll, f: f %>
   </div>
 
   <div class="clear">
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div id="geozones" style="<%= @poll.geozone_restricted? ? '' : 'display:none' %>">
+  <div id="geozones" style="<%= @poll.geozone_restricted? ? "" : "display:none" %>">
     <div class="row">
       <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
         <div class="small-6 medium-3 column">

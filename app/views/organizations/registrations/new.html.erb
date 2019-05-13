@@ -2,7 +2,7 @@
 <h2><%= t("devise_views.organizations.registrations.new.title") %></h2>
 
  <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
-   <%= render 'shared/errors', resource: resource %>
+   <%= render "shared/errors", resource: resource %>
    <div class="row">
      <div class="small-12 column">
 
@@ -29,10 +29,10 @@
                            placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
 
       <%= f.label :terms_of_service do %>
-        <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
+        <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: false %>
         <span class="checkbox">
           <%= t("devise_views.users.registrations.new.terms",
-              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title: t('shared.target_blank_html'), target: "_blank")).html_safe %></span>
+              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title: t("shared.target_blank_html"), target: "_blank")).html_safe %></span>
       <% end %>
 
       <div class="small-12 medium-6 small-centered">

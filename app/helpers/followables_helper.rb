@@ -6,8 +6,8 @@ module FollowablesHelper
 
   def followable_icon(followable)
     {
-      proposals: 'Proposal',
-      budget: 'Budget::Investment'
+      proposals: "Proposal",
+      budget: "Budget::Investment"
     }.invert[followable]
   end
 
@@ -22,7 +22,7 @@ module FollowablesHelper
   end
 
   def followable_class_name(followable)
-    followable.class.to_s.parameterize('_')
+    followable.class.to_s.parameterize(separator: "_")
   end
 
   def find_or_build_follow(user, followable)

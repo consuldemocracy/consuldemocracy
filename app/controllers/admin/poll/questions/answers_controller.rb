@@ -39,7 +39,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   def documents
     @documents = @answer.documents
 
-    render 'admin/poll/questions/answers/documents'
+    render "admin/poll/questions/answers/documents"
   end
 
   def order_answers
@@ -51,7 +51,8 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
     def answer_params
       documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-      attributes = [:question_id, documents_attributes: documents_attributes]
+      attributes = [:title, :description, :given_order, :question_id,
+        documents_attributes: documents_attributes]
 
       params.require(:poll_question_answer).permit(
         *attributes, translation_params(Poll::Question::Answer)

@@ -42,7 +42,7 @@ module PollsHelper
   end
 
   def poll_voter_token(poll, user)
-    Poll::Voter.where(poll: poll, user: user, origin: "web").first&.token || ''
+    Poll::Voter.where(poll: poll, user: user, origin: "web").first&.token || ""
   end
 
   def voted_before_sign_in(question)

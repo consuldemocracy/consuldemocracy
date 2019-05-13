@@ -1,8 +1,8 @@
 devise_for :users, controllers: {
-                     registrations: 'users/registrations',
-                     sessions: 'users/sessions',
-                     confirmations: 'users/confirmations',
-                     omniauth_callbacks: 'users/omniauth_callbacks'
+                     registrations: "users/registrations",
+                     sessions: "users/sessions",
+                     confirmations: "users/confirmations",
+                     omniauth_callbacks: "users/omniauth_callbacks"
                    }
 
 devise_scope :user do
@@ -17,13 +17,13 @@ devise_scope :user do
   patch :do_finish_signup, to: 'users/registrations#do_finish_signup'
 end
 
-devise_for :organizations, class_name: 'User',
+devise_for :organizations, class_name: "User",
            controllers: {
-             registrations: 'organizations/registrations',
-             sessions: 'devise/sessions',
+             registrations: "organizations/registrations",
+             sessions: "devise/sessions",
            },
            skip: [:omniauth_callbacks]
 
 devise_scope :organization do
-  get 'organizations/sign_up/success', to: 'organizations/registrations#success'
+  get "organizations/sign_up/success", to: "organizations/registrations#success"
 end

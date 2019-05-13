@@ -29,7 +29,7 @@
           <%= link_to t("management.menu.support_proposals"), management_proposals_path %>
         </li>
 
-        <% if Setting['feature.budgets'] %>
+        <% if Setting["process.budgets"] %>
           <li <%= "class=is-active" if menu_create_investments? %>>
             <%= link_to t("management.menu.create_budget_investment"), create_investments_management_budgets_path %>
           </li>
@@ -42,7 +42,7 @@
       </ul>
     </li>
 
-    <% if Setting['feature.budgets'] %>
+    <% if Setting["process.budgets"] %>
       <li <%= "class=is-active" if menu_print_investments? %>>
         <%= link_to print_investments_management_budgets_path do %>
             <span class="icon-print"></span>

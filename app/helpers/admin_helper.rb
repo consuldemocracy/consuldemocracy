@@ -37,12 +37,9 @@ module AdminHelper
     ["spending_proposals"].include?(controller_name)
   end
 
-  def menu_poll?
-    %w[polls active_polls recounts results].include?(controller_name)
-  end
-
   def menu_polls?
-    menu_poll? || %w[questions answers].include?(controller_name)
+    %w[polls active_polls recounts results questions answers].include?(controller_name) ||
+    controller.class.parent == Admin::Poll::Questions::Answers
   end
 
   def menu_booths?
@@ -54,11 +51,12 @@ module AdminHelper
   end
 
   def menu_settings?
-    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name)
+    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name) &&
+    controller.class.parent != Admin::Poll::Questions::Answers
   end
 
   def menu_customization?
-    ["pages", "banners", "information_texts"].include?(controller_name) ||
+    ["pages", "banners", "information_texts", "documents"].include?(controller_name) ||
     menu_homepage? || menu_pages?
   end
 
@@ -70,16 +68,20 @@ module AdminHelper
     ["pages", "cards"].include?(controller_name) && params[:page_id].present?
   end
 
+  def menu_dashboard?
+    ["actions", "administrator_tasks"].include?(controller_name)
+  end
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|
-      options << [[t("admin.officials.level_#{i}"), setting["official_level_#{i}_name"]].compact.join(': '), i]
+      options << [[t("admin.officials.level_#{i}"), setting["official_level_#{i}_name"]].compact.join(": "), i]
     end
     options
   end
 
   def admin_select_options
-    Administrator.all.order('users.username asc').includes(:user).collect { |v| [ v.name, v.id ] }
+    Administrator.all.order("users.username asc").includes(:user).collect { |v| [ v.name, v.id ] }
   end
 
   def admin_submit_action(resource)

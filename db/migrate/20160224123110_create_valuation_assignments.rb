@@ -1,4 +1,4 @@
-class CreateValuationAssignments < ActiveRecord::Migration
+class CreateValuationAssignments < ActiveRecord::Migration[4.2]
   def change
     create_table :valuation_assignments do |t|
       t.belongs_to :valuator

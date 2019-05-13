@@ -2,7 +2,7 @@
 class SitemapGenerator::FileAdapter
   def gzip(stream, data); stream.write(data); stream.close end
 end
-SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: '.xml')
+SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: ".xml")
 
 # default host
 SitemapGenerator::Sitemap.verbose = false if Rails.env.test?

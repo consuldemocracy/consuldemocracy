@@ -1,10 +1,10 @@
 <% provide :title, t("budgets.results.page_title", budget: @budget.name) %>
-<% content_for :meta_description do %><%= @budget.description_for_phase('finished') %><% end %>
+<% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
             social_url: budget_results_url(@budget),
             social_title: @budget.name,
-            social_description: @budget.description_for_phase('finished') %>
+            social_description: @budget.description_for_phase("finished") %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_results_url(@budget) %>
@@ -46,11 +46,11 @@
     <ul class="menu vertical no-margin-top no-padding-top">
 
 
-      <% @budget.headings.order('id ASC').each do |heading| %>
+      <% @budget.headings.order("id ASC").each do |heading| %>
         <li>
           <%= link_to heading.name,
                       budget_results_path(@budget, heading_id: heading.to_param),
-                      class: heading.to_param == @heading.to_param ? 'is-active' : '' %>
+                      class: heading.to_param == @heading.to_param ? "is-active" : "" %>
         </li>
       <% end %>
     </ul>
@@ -59,16 +59,16 @@
   <div class="small-12 medium-9 large-10 column">
     <%= link_to t("budgets.results.show_all_link"), "#",
                 class: "js-toggle-link button hollow margin-bottom float-right-medium",
-                data: {'toggle-selector' => '.js-discarded',
-                       'toggle-text' => t("budgets.results.hide_discarded_link")} %>
+                data: {"toggle-selector" => ".js-discarded",
+                       "toggle-text" => t("budgets.results.hide_discarded_link")} %>
 
-    <%= render 'results_table', results_type: :compatible,
+    <%= render "results_table", results_type: :compatible,
                                 title: @heading.name,
                                 heading_price: @heading.price,
                                 investments: @investments.compatible %>
 
     <% if @investments.incompatible.present? %>
-      <%= render 'results_table', results_type: :incompatible,
+      <%= render "results_table", results_type: :incompatible,
                                   title: t("budgets.results.incompatibles"),
                                   heading_price: @heading.price,
                                   investments: @investments.incompatible %>
@@ -78,10 +78,10 @@
       <%= link_to budget_url(@budget) do %>
         <small><%= t("budgets.results.investment_proyects") %></small>
       <% end %><br>
-      <%= link_to budget_url(@budget, filter: 'unfeasible') do %>
+      <%= link_to budget_url(@budget, filter: "unfeasible") do %>
         <small><%= t("budgets.results.unfeasible_investment_proyects") %></small>
       <% end %><br>
-      <%= link_to budget_url(@budget, filter: 'unselected') do %>
+      <%= link_to budget_url(@budget, filter: "unselected") do %>
         <small><%= t("budgets.results.not_selected_investment_proyects") %></small>
       <% end %>
     </p>

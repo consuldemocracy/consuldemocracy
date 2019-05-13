@@ -6,7 +6,7 @@
     <%= content_for :head %>
   </head>
 
-  <body class="admin" data-watch-form-message="<%= I18n.t('layouts.admin.watch_form_message') %>">
+  <body class="admin" data-watch-form-message="<%= I18n.t("layouts.admin.watch_form_message") %>">
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
         <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
-          <%= render 'layouts/admin_header' %>
+          <%= render "layouts/admin_header" %>
 
           <div class="no-margin-top row expanded collapse" data-equalizer>
             <div class="small-12 medium-3 column" data-equalizer-watch>
@@ -32,7 +32,8 @@
             </div>
 
             <div class="admin-content small-12 medium-9 column" data-equalizer-watch>
-              <%= render 'layouts/flash' %>
+              <%= render "layouts/flash" %>
+              <%= render "layouts/officing_booth" %>
               <%= yield %>
             </div>
           </div>

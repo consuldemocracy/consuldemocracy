@@ -4,10 +4,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   feature_flag :budgets
 
-  has_orders %w{oldest}, only: [:show, :edit]
-  has_filters(%w{all without_admin without_valuator under_valuation
-                 valuation_finished winners},
-                 only: [:index, :toggle_selection])
+  has_orders %w[oldest], only: [:show, :edit]
+  has_filters %w[all], only: [:index, :toggle_selection]
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
@@ -21,7 +19,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.js
       format.csv do
         send_data Budget::Investment::Exporter.new(@investments).to_csv,
-                  filename: 'budget_investments.csv'
+                  filename: "budget_investments.csv"
       end
     end
   end
@@ -38,11 +36,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def update
-    set_valuation_tags
     if @investment.update(budget_investment_params)
       redirect_to admin_budget_budget_investment_path(@budget,
                                                       @investment,
-                                                      Budget::Investment.filter_params(params)),
+                                                      Budget::Investment.filter_params(params).to_h),
                   notice: t("flash.actions.update.budget_investment")
     else
       load_admins
@@ -72,7 +69,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def resource_name
-      resource_model.parameterize('_')
+      resource_model.parameterize(separator: "_")
     end
 
     def load_investments
@@ -110,17 +107,12 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_tags
-      @tags = Budget::Investment.tags_on(:valuation).order(:name).uniq
+      @tags = Budget::Investment.tags_on(:valuation).order(:name).distinct
     end
 
     def load_ballot
       query = Budget::Ballot.where(user: current_user, budget: @budget)
       @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
-    end
-
-    def set_valuation_tags
-      @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
-      params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
     end
 
     def parse_valuation_filters

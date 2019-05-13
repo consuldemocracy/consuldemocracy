@@ -4,6 +4,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include RandomSeed
     include ImageAttributes
 
     PER_PAGE = 10
@@ -66,7 +67,7 @@ module Budgets
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
         redirect_to budget_investment_path(@budget, @investment),
-                    notice: t('flash.actions.create.budget_investment')
+                    notice: t("flash.actions.create.budget_investment")
       else
         render :new
       end
@@ -74,7 +75,7 @@ module Budgets
 
     def destroy
       @investment.destroy
-      redirect_to user_path(current_user, filter: 'budget_investments'), notice: t('flash.actions.destroy.budget_investment')
+      redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
     def vote
@@ -119,16 +120,6 @@ module Budgets
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
-      def set_random_seed
-        if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand
-          params[:random_seed] = seed
-          session[:random_seed] = params[:random_seed]
-        else
-          params[:random_seed] = nil
-        end
-      end
-
       def investment_params
         params.require(:budget_investment)
               .permit(:title, :description, :heading_id, :tag_list,
@@ -168,9 +159,9 @@ module Budgets
       end
 
       def investments
-        if @current_order == 'random'
+        if @current_order == "random"
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .send("sort_by_#{@current_order}", params[:random_seed])
+                             .sort_by_random(session[:random_seed])
         else
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .send("sort_by_#{@current_order}")

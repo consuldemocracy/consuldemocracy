@@ -1,10 +1,10 @@
 <% provide :title do %><%= @process.title %><% end %>
 
-<%= render 'legislation/processes/header', process: @process, header: :full %>
+<%= render "legislation/processes/header", process: @process, header: :full %>
 
-<%= render 'documents/additional_documents', documents: @process.documents %>
+<%= render "documents/additional_documents", documents: @process.documents %>
 
-<%= render 'key_dates', process: @process, phase: :debate_phase %>
+<%= render "key_dates", process: @process, phase: :debate_phase %>
 
 <div class="row">
   <div class="debate-chooser">

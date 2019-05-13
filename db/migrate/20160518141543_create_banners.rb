@@ -1,4 +1,4 @@
-class CreateBanners < ActiveRecord::Migration
+class CreateBanners < ActiveRecord::Migration[4.2]
   def change
     create_table :banners do |t|
         t.string   :title,  limit: 80

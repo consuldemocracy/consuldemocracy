@@ -1,4 +1,4 @@
-class AddRangesFieldsToLegislationAnnotations < ActiveRecord::Migration
+class AddRangesFieldsToLegislationAnnotations < ActiveRecord::Migration[4.2]
   def change
     add_column :legislation_annotations, :range_start, :string
     add_column :legislation_annotations, :range_start_offset, :integer

@@ -2,7 +2,7 @@ App.Votes =
 
   hoverize: (votes) ->
     $(document).on {
-      'mouseenter focus': ->
+      "mouseenter focus": ->
         $("div.participation-not-allowed", this).show()
         $("div.participation-allowed", this).hide()
       mouseleave: ->
