@@ -591,8 +591,6 @@ he:
       show:
         created_at: נוצר ב
         author: מחבר/ת
-        documents: מסמכים
-        document_count: "מספר המסמכים:"
         unverified_error: (לא מאומת על ידי מפקד האוכלוסין)
         loading: "עדיין נערך אימות חתימות על ידי מפקד האוכלוסין, בבקשה לרענן את הדף בעוד כמה רגעים"
     stats:

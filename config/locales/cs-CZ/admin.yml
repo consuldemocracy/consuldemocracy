@@ -665,8 +665,6 @@ cs:
       name: Název
       show:
         author: Autor
-        documents: Dokumenty
-        document_count: "Počet dokumentů:"
     stats:
       show:
         stats_title: Statistiky
