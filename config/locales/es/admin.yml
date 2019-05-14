@@ -1599,6 +1599,7 @@ es:
           see_page: Ver página
         new:
           title: Página nueva
+          slug_help_html: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado

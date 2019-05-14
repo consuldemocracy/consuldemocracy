@@ -1600,6 +1600,7 @@ en:
           see_page: See page
         new:
           title: Create new custom page
+          slug_help_html: "Text to identify this page on URL, for example <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Created at
           status: Status
