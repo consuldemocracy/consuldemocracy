@@ -124,6 +124,16 @@ bs:
       section_footer:
         title: Pomoć u vezi debata
         description: Pokrenite debatu kako bi razmijenili mišljenja sa drugima u vezi tema koje vas interesuju.
+        help_text_1: "Prostor za debate građana je usmjeren na svakoga ko želi predočiti pitanja za koja je zainteresovan i razmijeniti mišljenja sa drugima."
+        help_text_2: 'Kako bi pokrenuli debatu, morate se prijaviti na %{org}. Korisnici takođe mogu davati komentare u otvorenim debatama i davati im ocjene pritiskom na dugme "Slažem se" ili na dugme "Ne slažem se".'
+    new:
+      form:
+        submit_button: Pokreni debatu
+      info: Na pogrešnom ste mjestu ako želite da date prijedlog. Idite na %{info_link}.
+      info_link: formuliši novi prijedlog
+      more_info: Više informacija
+      recommendation_four: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
+      recommendation_one: Ne koristite velika slova za naziv debate, ne pišite cijele rečenice velikim slovima. Na internetu se to smatra vikanjem, a niko ne voli kad se na njega viče.
     show:
       login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
       share: Podijeli
