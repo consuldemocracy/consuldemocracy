@@ -394,8 +394,29 @@ hr:
         action_type: Tip
       dashboard/administrator_task:
         source: Izvor
+        user: Izvršeno od
+      link:
+        label: Naziv
+        url: Poveznica
     errors:
       models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Ovaj korisnik već ima zaporku"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "oznake moraju biti manje ili jednako kao %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Vi ste već dostigli maksimalni broj privatnih poruka dnevno"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Širina Slike mora biti na zadnje %{required_min_width}px"
+              min_image_height: "Visina Slike mora biti najmanje %{required_min_height}px"
         poll/voter:
           attributes:
             document_number:
