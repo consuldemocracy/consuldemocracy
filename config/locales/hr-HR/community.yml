@@ -1,4 +1,13 @@
 hr:
   community:
+    sidebar:
+      title: Zajednicom
+      description:
+        proposal: Sudjelujte u zajednici korisnika za ovaj prijedlog.
+        investment: Sudjelujte u zajednici korisnika za ovu investiciju.
+      button_to_access: Pristupi zajednici
     show:
+      title:
+        proposal: Prijedlog zajednice
+        investment: Investicijski Budžet zajednice
       author: Autor
