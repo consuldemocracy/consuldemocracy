@@ -54,3 +54,8 @@ hr:
       sidebar:
         recommendations_title: Prijedlozi za stvaranje teme
         recommendation_one: Izbjegavajte pisanje naslova teme ili cijele rečenice velikim slovima. Na internetu se to smatra vikanjem. Nitko ne voli kada se na njega viče.
+        recommendation_two: Bilo koja tema ili komentar koji implicira ilegalno djelovanje bit će eliminiran, kao i oni koji namjeravaju sabotirati mjesto subjekta, sve ostalo je dopušteno.
+        recommendation_three: Uživajte na ovom mjestu vaš glas će se također popuniti.
+  topics:
+    show:
+      login_to_comment: Morate biti %{signin} ili %{signup} kako biste ostavili komentar.
