@@ -148,7 +148,7 @@ feature "Admin budgets" do
       click_link "Edit budget"
       click_link "Delete budget"
 
-      expect(page).to have_content("You cannot destroy a budget that has associated investments")
+      expect(page).to have_content("You cannot delete a budget that has associated investments")
       expect(page).to have_content("There is 1 budget")
     end
 
@@ -158,7 +158,7 @@ feature "Admin budgets" do
       visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
-      expect(page).to have_content("You cannot destroy a budget that has an associated poll")
+      expect(page).to have_content("You cannot delete a budget that has an associated poll")
       expect(page).to have_content("There is 1 budget")
     end
   end

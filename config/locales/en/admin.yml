@@ -106,8 +106,8 @@ en:
         blank_dates: Dates are blank
       destroy:
         success_notice: Budget deleted successfully
-        unable_notice: You cannot destroy a budget that has associated investments
-        unable_notice_polls: You cannot destroy a budget that has an associated poll
+        unable_notice: You cannot delete a budget that has associated investments
+        unable_notice_polls: You cannot delete a budget that has an associated poll
       new:
         title: New participatory budget
       winners:
@@ -130,7 +130,7 @@ en:
         notice: "Group updated successfully"
       destroy:
         success_notice: "Group deleted successfully"
-        unable_notice: "You cannot destroy a Group that has associated headings"
+        unable_notice: "You cannot delete a Group that has associated headings"
       form:
         create: "Create new group"
         edit: "Edit group"
@@ -150,7 +150,7 @@ en:
         notice: "Heading updated successfully"
       destroy:
         success_notice: "Heading deleted successfully"
-        unable_notice: "You cannot destroy a Heading that has associated investments"
+        unable_notice: "You cannot delete a Heading that has associated investments"
       form:
         name: "Heading name"
         amount: "Amount"
@@ -1507,7 +1507,7 @@ en:
           origin_total: Total participants
     tags:
       create: Create topic
-      destroy: Destroy topic
+      destroy: Delete topic
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics

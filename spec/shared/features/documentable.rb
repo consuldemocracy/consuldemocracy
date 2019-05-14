@@ -42,28 +42,28 @@ shared_examples "documentable" do |documentable_factory_name,
       scenario "Should not be able when no user logged in" do
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Destroy document")
+        expect(page).not_to have_link("Delete document")
       end
 
       scenario "Should be able when documentable author is logged in" do
         login_as documentable.author
         visit send(documentable_path, arguments)
 
-        expect(page).to have_link("Destroy document")
+        expect(page).to have_link("Delete document")
       end
 
       scenario "Administrators cannot destroy documentables they have not authored" do
         login_as(administrator)
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Destroy document")
+        expect(page).not_to have_link("Delete document")
       end
 
       scenario "Users cannot destroy documentables they have not authored" do
         login_as(create(:user))
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Destroy document")
+        expect(page).not_to have_link("Delete document")
       end
 
     end
@@ -122,7 +122,7 @@ shared_examples "documentable" do |documentable_factory_name,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Destroy document"
+        click_on "Delete document"
       end
 
       expect(page).to have_content "Document was deleted successfully."
@@ -134,7 +134,7 @@ shared_examples "documentable" do |documentable_factory_name,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Destroy document"
+        click_on "Delete document"
       end
 
       expect(page).not_to have_content "Documents (0)"
@@ -146,7 +146,7 @@ shared_examples "documentable" do |documentable_factory_name,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Destroy document"
+        click_on "Delete document"
       end
 
       within "##{dom_id(documentable)}" do
