@@ -17,6 +17,16 @@ describe Setting do
     expect(described_class.where(key: "official_level_1_name", value: "Stormtrooper")).to exist
   end
 
+  describe "#prefix" do
+    it "returns the prefix of its key" do
+      expect(Setting.create(key: "prefix.key_name").prefix).to eq "prefix"
+    end
+
+    it "returns the whole key for a non prefixed key" do
+      expect(Setting.create(key: "key_name").prefix).to eq "key_name"
+    end
+  end
+
   describe "#type" do
     it "returns the key prefix for 'process' settings" do
       process_setting = Setting.create(key: "process.whatever")

@@ -3,8 +3,11 @@ class Setting < ApplicationRecord
 
   default_scope { order(id: :asc) }
 
+  def prefix
+    key.split(".").first
+  end
+
   def type
-    prefix = key.split(".").first
     if %w[feature process proposals map html homepage].include? prefix
       prefix
     else
