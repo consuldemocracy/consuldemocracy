@@ -116,3 +116,14 @@ hr:
         price_first_year_html: "Troškovi u toku prve godine (%{currency})"
         currency: "€"
         price_explanation_html: Objašnjenje cijene
+        feasibility: Izvodljivost
+        feasible: Izvodljivo
+        not_feasible: Nije izvedivo
+        undefined_feasible: U tijeku
+        feasible_explanation_html: Objašnjenje izvodljivosti
+        valuation_finished: Procjena dovršena
+        time_scope_html: Vremenski opseg
+        internal_comments_html: Unutarnji komentari
+        save: Spremi promjene
+      notice:
+        valuate: "Dosje ažuriran"
