@@ -413,3 +413,29 @@ bs:
         title: Pregled postera
         poster_title: "Nemoj samo gledati,"
         poster_subtitle: "podrži me! ;)"
+        intro_text_html: "<strong>Učestvujem u %{org}</strong>sa vlastitim građanskim prijedlogom, i samo ako se i vi uključite mogu dobiti neophodnu podršku da dobijemo grad kakvog svi želimo."
+        proposal_code: "Šifra prijedloga: %{code}"
+        support: Podrži moj prijedlog
+        footer_html: "<strong>Posjeti %{link} i podrži ovaj prijedlog.</strong>Treba nas dosta. Odlučujte i vi. Hvala!"
+      new:
+        title: Poster za vaš prijedlog
+      options:
+        preview: Pregled
+        download: Učitaj
+    mailing:
+      index:
+        title: Pregled emaila
+      new:
+        title: Format emaila za podijeliti
+      mailing_options:
+        send: Pošalji na %{address}
+        preview: Pregled
+      create:
+        sent: Email je poslan
+    mailer:
+      forward:
+        subtitle_html: "Ako me podržite, <br>uradićemo to."
+        support_button: Podrži ovaj prijedlog
+        share_in: Uključi se
+        hi: "Pozdrav!"
+        introduction: Želim vas obavijestiti da učestvujem u %{org}, platformi na kojoj možemo odlučiti kakav grad želimo. Kako bi to postigli, izradio sam vlastiti prijedlog kao građanin i sad mi treba vaša podrška! Ne brinite, nije ništa teško.
