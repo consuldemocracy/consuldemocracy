@@ -144,3 +144,36 @@ bs:
       consul: Aplikacija CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: Posjeti za tehničku podršku
+  omniauth:
+    finish_signup:
+      username_warning: "Zbog promjene načina naše interakcije sa društvenim mrežama, moguće je da za tvoje korisničko ime sad piše da je 'već u upotrebi'. Ako je tako, odaberi drugo korisničko ime."
+    google_oauth2:
+      sign_in: Prijavi se sa Google-om
+      sign_up: Otvori profil sa Google-om
+      name: Google
+    twitter:
+      sign_in: Prijavi se sa Twitter-om
+      sign_up: Otvori profil sa Twitter-om
+      name: Twitter
+    info_sign_in: "Prijavi se sa:"
+    info_sign_up: "Otvori profil sa:"
+    or_fill: "Ili ispuni ovaj formular:"
+  proposals:
+    create:
+      form:
+        submit_button: Formuliši prijedlog
+    created:
+      title: Čestitke! Napravili ste prvi korak.
+      motivation: "Važno je pripremiti promotivnu kampanju kako bi vaš prijedlog bio uspješan. Prvih nekoliko dana je ključno."
+      motivation_2_html: "<strong> Ako želite preporuke da biste se pripremili za objavu, ostavite svoj prijedlog u formi nacrta i mi ćemo vam dati smjernice.</strong>"
+      publish: Ne, želim da objavim prijedlog
+      dashboard: Da, tražim pomoć, objaviću kasnije
+      preview_title: Evo kako će vaš prijedlog izgledati kad ga objavite
+    share:
+      improve_it: Poboljšajte svoju kampanju kako bi dobili veću podršku.
+      dashboard: Vidi više informacija
+      message: "Podržao sam prijedlog %{title} u %{handle}. Daj podršku ako i tebe zanima!"
+    edit:
+      editing: Edituj prijedlog
+      form:
+        submit_button: Spasi izmjene
