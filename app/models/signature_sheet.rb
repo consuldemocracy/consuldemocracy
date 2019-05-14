@@ -8,7 +8,7 @@ class SignatureSheet < ActiveRecord::Base
 
   validates :author, presence: true
   validates :signable_type, inclusion: {in: VALID_SIGNABLES}
-  validates :document_numbers, presence: true
+  validates :required_fields_to_verify, presence: true
   validates :signable, presence: true
   validate  :signable_found
 
@@ -21,15 +21,15 @@ class SignatureSheet < ActiveRecord::Base
   end
 
   def verify_signatures
-    parsed_document_numbers.each do |document_number|
+    parsed_required_fields_to_verify_groups.each do |document_number|
       signature = signatures.where(document_number: document_number).first_or_create
       signature.verify
     end
     update(processed: true)
   end
 
-  def parsed_document_numbers
-    document_numbers.split(/\r\n|\n|[,]/).collect {|d| d.gsub(/\s+/, "") }
+  def parsed_required_fields_to_verify_groups
+    required_fields_to_verify.split(/\r\n|\n|[,]/).collect {|d| d.gsub(/\s+/, "") }
   end
 
   def signable_found
