@@ -1191,8 +1191,6 @@ zh-CN:
       show:
         created_at: 已创建
         author: 作者
-        documents: 文档
-        document_count: "文档编号："
         verified:
           other: "有%{count} 个有效签名"
         unverified:
