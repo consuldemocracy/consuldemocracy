@@ -209,6 +209,14 @@ bs:
       contact_us: Posjeti za tehničku podršku
       copyright: CONSUL, (godina) %{year}
       description: Ovaj portal koristi %{consul}, koji je %{open_source} aplikacija.
+      open_source: softver otvorenog koda
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Ti odluči kako da oblikuješ grad u kojem živiš.
+      participation_title: Učešće
+      privacy: Politika privatnosti
+    header:
+      administration_menu: Admin
+      administration: Administracija
   omniauth:
     finish_signup:
       username_warning: "Zbog promjene načina naše interakcije sa društvenim mrežama, moguće je da za tvoje korisničko ime sad piše da je 'već u upotrebi'. Ako je tako, odaberi drugo korisničko ime."
