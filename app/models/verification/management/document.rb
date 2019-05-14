@@ -42,4 +42,14 @@ class Verification::Management::Document
     user.update(verified_at: Time.current) if user?
   end
 
+  def force_presence_date_of_birth?
+    Setting["feature.remote_census"].present? &&
+      Setting["remote_census_request.alias_date_of_birth"].present?
+  end
+
+  def force_presence_postal_code?
+    Setting["feature.remote_census"].present? &&
+      Setting["remote_census_request.alias_postal_code"].present?
+  end
+
 end

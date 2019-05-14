@@ -33,24 +33,72 @@ feature "DocumentVerifications" do
     expect(user.reload).to be_level_three_verified
   end
 
-  scenario "Verifying a user which does not exist and is not in the census shows an error" do
+  describe "Verifying througth Census" do
 
-    expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).and_return(false)
+    context "Census API" do
 
-    visit management_document_verifications_path
-    fill_in "document_verification_document_number", with: "inexisting"
-    click_button "Check document"
+      scenario "Verifying a user which does not exist and is not in the census shows an error" do
 
-    expect(page).to have_content "This document is not registered"
-  end
+        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).and_return(false)
 
-  scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "inexisting"
+        click_button "Check document"
 
-    visit management_document_verifications_path
-    fill_in "document_verification_document_number", with: "12345678Z"
-    click_button "Check document"
+        expect(page).to have_content "This document is not registered"
+      end
 
-    expect(page).to have_content "Please introduce the email used on the account"
+      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "12345678Z"
+        click_button "Check document"
+
+        expect(page).to have_content "Please introduce the email used on the account"
+      end
+
+    end
+
+    context "Custom Census API" do
+
+      before do
+        Setting["feature.remote_census"] = true
+        Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+        Setting["remote_census_request.alias_postal_code"] = "some.value"
+      end
+
+      after do
+        Setting["feature.remote_census"] = nil
+        Setting["remote_census_request.alias_date_of_birth"] = nil
+        Setting["remote_census_request.alias_postal_code"] = nil
+      end
+
+      scenario "Verifying a user which does not exist and is not in the census shows an error" do
+
+        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).and_return(false)
+
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "12345678Z"
+        select_date "31-December-1980", from: "document_verification_date_of_birth"
+        fill_in "document_verification_postal_code", with: "inexisting"
+        click_button "Check document"
+
+        expect(page).to have_content "This document is not registered"
+      end
+
+      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "12345678Z"
+        select_date "31-December-1980", from: "document_verification_date_of_birth"
+        fill_in "document_verification_postal_code", with: "28013"
+        click_button "Check document"
+
+        expect(page).to have_content "Please introduce the email used on the account"
+      end
+
+    end
+
   end
 
   scenario "Document number is format-standarized" do
