@@ -8,6 +8,12 @@ class Verification::Management::Document
 
   delegate :username, :email, to: :user, allow_nil: true
 
+  def initialize(attrs = {})
+    self.date_of_birth = parse_date("date_of_birth", attrs)
+    attrs = remove_date("date_of_birth", attrs)
+    super
+  end
+
   def user
     @user = User.active.by_document(document_type, document_number).first
   end
