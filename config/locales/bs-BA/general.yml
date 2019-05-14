@@ -81,6 +81,34 @@ bs:
         zero: Nema glasova
     edit:
       editing: Edituj debatu
+      form:
+        submit_button: Spasi izmjene
+      show_link: Pogledaj debatu
+    form:
+      debate_text: Započni debatu
+      debate_title: Naziv debate
+      tags_instructions: Taguj ovu debatu.
+      tags_label: Teme
+      tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
+    index:
+      featured_debates: Glavne debate
+      filter_topic:
+        one: " sa temom %{topic}"
+        few: " sa temom %{topic}"
+        other: " sa temom %{topic}"
+      orders:
+        confidence_score: sa najvišim ocjenama
+        created_at: najnovije
+        hot_score: najaktivnije
+        most_commented: sa najviše komentara
+        relevance: relevantnost
+        recommendations: preporuke
+      recommendations:
+        without_results: Nema debata vezanih za vaše interese
+        without_interests: Pratite prijedloge kako bi vam dali preporuke
+        disable: "Preporuke za debate se neće pojavljivati ako ih isključite. Možete ih ponovo uključiti na stranici \"Moj profil\""
+        actions:
+          success: "Preporuke za debate su sad isključene za ovaj profil"
     show:
       login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
       share: Podijeli
