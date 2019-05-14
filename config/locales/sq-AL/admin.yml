@@ -1186,7 +1186,7 @@ sq:
         new: Fletë të reja nënshkrimi
       new:
         title: Fletë të reja nënshkrimi
-        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me presje (,)"
+        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me pikëpresje (;)"
         submit: Krijo Fletë nënshkrimi
       show:
         created_at: Krijuar
