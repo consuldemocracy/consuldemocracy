@@ -177,3 +177,36 @@ bs:
       editing: Edituj prijedlog
       form:
         submit_button: Spasi izmjene
+      show_link: Vidi prijedlog
+    retire_form:
+      title: Povuci prijedlog
+      warning: "Ako povučete prijedlog, i dalje će moći dobijati podršku, ali će biti uklonjen sa glavne liste, te će se pokazivati poruka svim korisnicima da autor smatra da prijedlog više ne treba podržavati"
+      retired_reason_label: Razlog što povlačite prijedlog
+      retired_reason_blank: Odaberite opciju
+      retired_explanation_label: Objašnjenje
+      retired_explanation_placeholder: Objasnite ukratko zašto mislite da ovaj prijedlog ne treba više podržavati
+      submit_button: Povucite prijedlog
+    retire_options:
+      duplicated: Duplicirano
+      started: Već u toku
+      unfeasible: Nije izvodivo
+      done: Gotovo
+      other: Drugo
+    form:
+      geozone: Područje
+      proposal_external_url: Link za dodatnu dokumentaciju
+      proposal_question: Pitanje u prijedlogu
+      proposal_question_example_html: "Mora se sumirati jednim odgovorom, \"Da\" ili \"Ne\""
+      proposal_responsible_name: Puno ime i prezime osobe koja podnosi prijedlog
+      proposal_responsible_name_note: "(pojedinačno ili kao predstavnik/ca kolektiva; ne vidi se javno)"
+      proposal_summary: Sažetak prijedloga
+      proposal_summary_note: "(maksimalno 200 karaktera)"
+      proposal_text: Tekst prijedloga
+      proposal_title: Naziv prijedloga
+      proposal_video_url: Link za eksterni video zapis
+      proposal_video_url_note: Možete dodati link za YouTube ili Vimeo
+      tag_category_label: "Kategorije"
+      tags_instructions: "Taguj prijedlog. Možeš birati iz predloženih kategorija ili dodati vlastiti tag"
+      tags_label: Tagovi
+    notice:
+      published: Prijedlog je objavljen
