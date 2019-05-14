@@ -1179,7 +1179,7 @@ it:
         new: Nuovo foglio di firma
       new:
         title: Nuovi fogli firma
-        document_numbers_note: "Con i numeri separati da virgole (,)"
+        document_numbers_note: "Con i numeri separati da punto e virgola (;)"
         submit: Creare foglio di firma
       show:
         created_at: Creato

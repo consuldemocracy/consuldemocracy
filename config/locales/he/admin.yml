@@ -1427,7 +1427,7 @@ he:
         new: דף חדש לחתימות
       new:
         title: דף חדש לחתימות
-        document_numbers_note: "נא לכתוב את המספרים מופרדים באמצעות פסיקים (,)"
+        document_numbers_note: "רשום את המספרים המופרדים בנקודות פסיק (;)"
         submit: יצירת דף לחתימות
       show:
         created_at: נוצר ב

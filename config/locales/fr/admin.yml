@@ -1337,7 +1337,7 @@ fr:
         new: Nouvelle feuilles de signature
       new:
         title: Nouvelle feuilles de signature
-        document_numbers_note: "Saisir les numéros séparés par des virgules (,)"
+        document_numbers_note: "Saisir les numéros séparés par des points-virgules (;)"
         submit: Créer la feuille de signature
       show:
         created_at: Créé le
