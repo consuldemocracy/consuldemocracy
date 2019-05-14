@@ -19,3 +19,24 @@ bs:
       subscription_to_website_newsletter_label: Primaću relevantne informacije putem emaila od web-stranice
       email_on_direct_message_label: Dobijaću emailove u vezi direktnih poruka
       email_digest_label: Dobijaću sažetak obavijesti o prijedlozima
+      official_position_badge_label: Pokaži bedž sa navedenom službenom funkcijom
+      recommendations: Preporuke
+      show_debates_recommendations: Pokaži preporuke iz debata
+      show_proposals_recommendations: Pokaži preporuke iz prijedloga
+      title: Moj profil
+      user_permission_debates: Učestvuj u debatama
+      user_permission_info: Sa svojim profilom, možeš...
+      user_permission_proposal: Formulisati nove prijedloge
+      user_permission_support_proposal: Iskazati podršku za prijedloge
+      user_permission_title: Učešće
+      user_permission_verify: Potvrdi svoj profil za obavljanje svih radnji.
+      user_permission_verify_info: "* Samo za korisnike Census-a."
+      user_permission_votes: Učestvuj u finalnom glasanju
+      username_label: Korisničko ime
+      verified_account: Profil potvrđen
+      verify_my_account: Potvrdi moj profil
+  application:
+    close: Zatvori
+    menu: Meni
+  comments:
+    comments_closed: Komentari su zatvoreni
