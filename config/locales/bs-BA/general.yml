@@ -207,6 +207,8 @@ bs:
       consul: Aplikacija CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: Posjeti za tehničku podršku
+      copyright: CONSUL, (godina) %{year}
+      description: Ovaj portal koristi %{consul}, koji je %{open_source} aplikacija.
   omniauth:
     finish_signup:
       username_warning: "Zbog promjene načina naše interakcije sa društvenim mrežama, moguće je da za tvoje korisničko ime sad piše da je 'već u upotrebi'. Ako je tako, odaberi drugo korisničko ime."
