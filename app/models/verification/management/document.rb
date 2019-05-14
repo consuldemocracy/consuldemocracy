@@ -2,8 +2,7 @@ class Verification::Management::Document
   include ActiveModel::Model
   include ActiveModel::Dates
 
-  attr_accessor :document_type
-  attr_accessor :document_number
+  attr_accessor :document_type, :document_number, :date_of_birth, :postal_code
 
   validates :document_type, :document_number, presence: true
 
@@ -18,7 +17,7 @@ class Verification::Management::Document
   end
 
   def in_census?
-    response = CensusCaller.new.call(document_type, document_number, nil, nil)
+    response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
     response.valid? && valid_age?(response)
   end
 
