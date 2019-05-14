@@ -29,7 +29,7 @@ describe SignatureSheet do
     end
 
     it "is not valid without document numbers" do
-      signature_sheet.document_numbers = nil
+      signature_sheet.required_fields_to_verify = nil
       expect(signature_sheet).not_to be_valid
     end
 
@@ -57,7 +57,7 @@ describe SignatureSheet do
 
   describe "#verify_signatures" do
     it "creates signatures for each document number" do
-      signature_sheet = create(:signature_sheet, document_numbers: "123A, 456B")
+      signature_sheet = create(:signature_sheet, required_fields_to_verify: "123A, 456B")
       signature_sheet.verify_signatures
 
       expect(Signature.count).to eq(2)

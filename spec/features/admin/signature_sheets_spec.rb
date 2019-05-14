@@ -39,7 +39,7 @@ describe "Signature sheets" do
 
       select "Citizen proposal", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: proposal.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 1234567L, 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
@@ -61,7 +61,7 @@ describe "Signature sheets" do
 
       select "Investment", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 1234567L, 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
@@ -89,7 +89,7 @@ describe "Signature sheets" do
     user = Administrator.first.user
     signature_sheet = create(:signature_sheet,
                              signable: proposal,
-                             document_numbers: "12345678Z, 123A, 123B",
+                             required_fields_to_verify: "12345678Z, 123A, 123B",
                              author: user)
     signature_sheet.verify_signatures
 
