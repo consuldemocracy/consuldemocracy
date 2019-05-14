@@ -30,6 +30,65 @@ describe Verification::Management::Document do
       expect(verification_document).to be_valid
     end
 
+    describe "custom validations" do
+
+      before do
+        Setting["feature.remote_census"] = true
+        Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+        Setting["remote_census_request.alias_postal_code"] = "some.value"
+      end
+
+      after do
+        Setting["feature.remote_census"] = nil
+        Setting["remote_census_request.alias_date_of_birth"] = nil
+        Setting["remote_census_request.alias_postal_code"] = nil
+      end
+
+      it "is valid" do
+        expect(verification_document).to be_valid
+      end
+
+      it "is not valid without a document number" do
+        verification_document.document_number = nil
+        expect(verification_document).not_to be_valid
+      end
+
+      it "is not valid without a document type" do
+        verification_document.document_type = nil
+        expect(verification_document).not_to be_valid
+      end
+
+      it "is not valid without a date of birth" do
+        verification_document.date_of_birth = nil
+
+        expect(verification_document).not_to be_valid
+      end
+
+      it "is not valid without a postal_code" do
+        verification_document.postal_code = nil
+
+        expect(verification_document).not_to be_valid
+      end
+
+      describe "dates" do
+        it "is valid with a valid date of birth" do
+          verification_document = described_class.new("date_of_birth(3i)" => "1",
+                                                      "date_of_birth(2i)" => "1",
+                                                      "date_of_birth(1i)" => "1980")
+          expect(verification_document.errors[:date_of_birth].size).to eq(0)
+        end
+
+        it "is not valid without a date of birth" do
+          verification_document = described_class.new("date_of_birth(3i)" => "",
+                                                      "date_of_birth(2i)" => "",
+                                                      "date_of_birth(1i)" => "")
+          expect(verification_document).not_to be_valid
+          expect(verification_document.errors[:date_of_birth]).to include("can't be blank")
+        end
+      end
+
+    end
+
     describe "Allowed Age" do
       let(:min_age)                         { User.minimum_required_age }
       let(:over_minium_age_date_of_birth)   { Date.new((min_age + 10).years.ago.year, 12, 31) }
@@ -71,33 +130,51 @@ describe Verification::Management::Document do
       end
     end
   end
+
+  describe "#force_presence_date_of_birth? return expected value" do
+
+    it "when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(verification_document.force_presence_date_of_birth?).to eq false
     end
 
-    it "returns true when the user has the user's minimum required age" do
-      census_response = instance_double("CensusApi::Response", date_of_birth: just_minium_age_date_of_birth)
-      expect(described_class.new.valid_age?(census_response)).to be true
+    it "when feature remote_census is active and alias_date_of_birth is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = nil
+
+      expect(verification_document.force_presence_date_of_birth?).to eq false
     end
 
-    it "returns true when the user is older than the user's minimum required age" do
-      census_response = instance_double("CensusApi::Response", date_of_birth: over_minium_age_date_of_birth)
-      expect(described_class.new.valid_age?(census_response)).to be true
+    it "when feature remote_census is active and alias_date_of_birth is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+
+      expect(verification_document.force_presence_date_of_birth?).to eq true
     end
   end
 
-  describe "#under_age?" do
-    it "returns true when the user is younger than the user's minimum required age" do
-      census_response = instance_double("CensusApi::Response", date_of_birth: under_minium_age_date_of_birth)
-      expect(described_class.new.under_age?(census_response)).to be true
+  describe "#force_presence_postal_code? return expected value" do
+
+    it "when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(verification_document.force_presence_postal_code?).to eq false
     end
 
-    it "returns false when the user is user's minimum required age" do
-      census_response = instance_double("CensusApi::Response", date_of_birth: just_minium_age_date_of_birth)
-      expect(described_class.new.under_age?(census_response)).to be false
+    it "when feature remote_census is active and alias_postal_code is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_postal_code"] = nil
+
+      expect(verification_document.force_presence_postal_code?).to eq false
     end
 
-    it "returns false when the user is older than user's minimum required age" do
-      census_response = instance_double("CensusApi::Response", date_of_birth: over_minium_age_date_of_birth)
-      expect(described_class.new.under_age?(census_response)).to be false
+    it "when feature remote_census is active and alias_postal_code is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_postal_code"] = "some.value"
+
+      expect(verification_document.force_presence_postal_code?).to eq true
     end
   end
+
 end
