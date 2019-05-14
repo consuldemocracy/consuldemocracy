@@ -1235,8 +1235,6 @@ sv:
       show:
         created_at: Skapad
         author: Skribent
-        documents: Dokument
-        document_count: "Antal dokument:"
         verified:
           one: "Det finns %{count} giltig underskrift"
           other: "Det finns %{count} giltiga underskrifter"

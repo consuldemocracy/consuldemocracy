@@ -1191,8 +1191,6 @@ sq:
       show:
         created_at: Krijuar
         author: Autor
-        documents: Dokumentet
-        document_count: "Numri i dokumenteve:"
         verified:
           one: "Ky është %{count} nënshkrim i vlefshëm"
           other: "Këto janë %{count} nënshkrime të vlefshme"

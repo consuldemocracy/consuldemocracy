@@ -1185,8 +1185,6 @@ pt-BR:
       show:
         created_at: Criado em
         author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
         verified:
           one: "Há %{count} assinatura válida"
           other: "Há %{count} assinaturas válidas"

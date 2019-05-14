@@ -1180,8 +1180,6 @@ zh-TW:
       show:
         created_at: 已創建
         author: 作者
-        documents: 文檔
-        document_count: "文檔數目："
         verified:
           other: "有 %{count} 個有效簽名"
         unverified:

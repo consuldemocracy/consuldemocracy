@@ -1320,8 +1320,6 @@ pl:
       show:
         created_at: Stworzony
         author: Autor
-        documents: Dokumenty
-        document_count: "Liczba dokumentów:"
         unverified_error: (Nie zweryfikowany przez Census)
         loading: "Nadal istnieją podpisy, które są weryfikowane przez Census, proszę odświeżyć stronę za kilka chwil"
     stats:

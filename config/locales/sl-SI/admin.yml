@@ -952,8 +952,6 @@ sl:
       show:
         created_at: Ustvarjen
         author: Avtor
-        documents: Dokumenti
-        document_count: "Število dokumentov:"
         unverified_error: (Ni verificirano s strani popisa)
         loading: "Obstajajo še podpisi, ki so v postopku verifikacije s strani popisa, prosimo osveži stran čez nekaj trenutkov"
     stats:

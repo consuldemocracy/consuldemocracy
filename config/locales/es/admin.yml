@@ -1409,8 +1409,8 @@ es:
       show:
         created_at: Creado
         author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
+        users: Usuarios
+        signature_count: "Número de firmas:"
         verified:
           one: "Hay %{count} firma válida"
           other: "Hay %{count} firmas válidas"
