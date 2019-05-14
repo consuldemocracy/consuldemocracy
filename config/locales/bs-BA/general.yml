@@ -134,7 +134,17 @@ bs:
       more_info: Više informacija
       recommendation_four: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
       recommendation_one: Ne koristite velika slova za naziv debate, ne pišite cijele rečenice velikim slovima. Na internetu se to smatra vikanjem, a niko ne voli kad se na njega viče.
+      recommendation_three: Nemilosrdna kritika je apsolutno dobrodošla. Ovo je prostor za razmišljanje. Mi, međutim, preporučujemo da budete elegantni i inteligentni. Svijet je ljepši s tim vrlinama u njemu.
+      recommendation_two: Svaka debata ili komentar koji implicira nezakonite radnje se briše. Isto važi i za one koji žele da sabotiraju debatni prostor. Sve ostalo je dozvoljeno.
+      recommendations_title: Preporuke za pokretanje debate
+      start_new: Pokreni debatu
     show:
+      author_deleted: Korisnik obrisan
+      comments:
+        zero: Nema komentara
+      comments_title: Komentari
+      edit_debate_link: Edituj
+      flag: Nekoliko korisnika je označilo debatu neprikladnom.
       login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
       share: Podijeli
       author: Autor
@@ -261,6 +271,10 @@ bs:
       tag_category_label: "Kategorije"
       tags_instructions: "Taguj prijedlog. Možeš birati iz predloženih kategorija ili dodati vlastiti tag"
       tags_label: Tagovi
+      tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
+      map_location: "Lokacija mape"
+      map_location_instructions: "Idite mapom do lokacije i stavite marker."
+      map_remove_marker: "Uklonite marker na mapi"
     notice:
       published: Prijedlog je objavljen
     proposal:
