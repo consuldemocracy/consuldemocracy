@@ -210,3 +210,55 @@ bs:
       tags_label: Tagovi
     notice:
       published: Prijedlog je objavljen
+    proposal:
+      created: "Podnijeli ste prijedlog!"
+      share:
+        guide: "Sad ga možete podijeliti s drugima kako bi počeli dobijati podršku."
+        edit: "Prije nego ga podijelite, možete izmjeniti tekst kako želite."
+        view_proposal: Ne sada, idi na moj prijedlog
+      already_supported: Već ste podržali ovaj prijedlog. Podijelite ga!
+      comments:
+        zero: Nema komentara
+      support: Podrška
+      support_title: Podrži prijedlog
+      supports:
+        zero: Nema podrške
+      votes:
+        zero: Nema glasova
+      supports_necessary: "Potrebno %{number} glasova podrške"
+      total_percent: 100%
+      archived: "Prijedlog je arhiviran, nije moguće dati podršku."
+      successful: "Prijedlog je dobio potrebnu podršku."
+    show:
+      author_deleted: Korisnik obrisan
+      code: "Šifra prijedloga:"
+      comments:
+        zero: Nema komentara
+      comments_tab: Komentari
+      dashboard_proposal_link: Kontrolna ploča
+      flag: Nekoliko korisnika je označilo prijedlog neprikladnim.
+      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
+      notifications_tab: Obavijesti
+      milestones_tab: Rokovi
+      retired_warning: "Autor smatra da prijedlog više ne treba podržavati."
+      retired_warning_link_to_explanation: Pročitaj objašnjenje prije nego glasaš.
+      retired: Prijedlog povučen od strane autora
+      share: Podijeli
+      no_notifications: "Nema obavijesti za ovaj prijedlog."
+      embed_video_title: "Video zapis za (prijedlog) %{proposal}"
+      title_external_url: "Dodatna dokumentacija"
+      title_video_url: "Eksterni video"
+      author: Autor
+      draft: Prijedlog u fazi nacrta. Još uvijek ne može dobiti podršku, niti se pojavljuje na listi prijedloga.
+    update:
+      form:
+        submit_button: Spasi izmjene
+  dashboard:
+    menu:
+      my_proposal: Edituj prijedlog
+      progress: Dosad urađeno
+      resources: Resursi
+      community: Grupa
+      polls: Glasačke ankete
+      mailing: Email
+      poster: Poster
