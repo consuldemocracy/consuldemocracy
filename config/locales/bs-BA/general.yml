@@ -275,6 +275,49 @@ bs:
       map_location: "Lokacija mape"
       map_location_instructions: "Idite mapom do lokacije i stavite marker."
       map_remove_marker: "Uklonite marker na mapi"
+      map_skip_checkbox: "Prijedlog nema konkretnu lokaciju, ili je ja ne vidim."
+    index:
+      featured_proposals: Glavni prijedlozi
+      filter_topic:
+        one: " sa temom %{topic}"
+        few: " sa temom %{topic}"
+        other: " sa temom %{topic}"
+      orders:
+        confidence_score: sa najvišim ocjenama
+        created_at: najnovije
+        hot_score: najaktivnije
+        most_commented: sa najviše komentara
+        relevance: relevantnost
+        archival_date: arhivirano
+        recommendations: preporuke
+      recommendations:
+        without_results: Nema prijedloga vezanih za vaše interese
+        without_interests: Pratite prijedloge kako bi vam dali preporuke
+        disable: "Preporuke za prijedloge se neće pojavljivati ako ih isključite. Možete ih ponovo uključiti na stranici \"Moj profil\""
+        actions:
+          success: "Preporuke za prijedloge su sad isključene za ovaj profil"
+          error: "Došlo je do greške. Idite na stranicu \"Moj profil\" kako bi ručno isključili preporuke za prijedloge"
+      retired_proposals: Povučeni prijedlozi
+      retired_proposals_link: "Prijedlozi povučeni od strane autora"
+      retired_links:
+        all: Sve
+        duplicated: Duplicirano
+        started: U toku
+        unfeasible: Nije izvodivo
+        done: Gotovo
+        other: Drugo
+      search_form:
+        button: Traži
+        placeholder: Pretraga po prijedlozima...
+        title: Traži
+      select_order: Poredaj po
+      select_order_long: "Gledate prijedloge poredane po:"
+      start_proposal: Formuliši prijedlog
+      title: Prijedlozi
+      top: Najpopularnije na kraju sedmice
+      top_link_proposals: Prijedlozi s najvećom podrškom, poredani po kategorijama
+      section_header:
+        icon_alt: Ikonica za prijedloge
     notice:
       published: Prijedlog je objavljen
     proposal:
