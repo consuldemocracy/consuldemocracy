@@ -949,6 +949,7 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+        help: "Para añadir o eliminar Presidentes de mesa utiliza el buscador a continuación."
     poll_officer_assignments:
       index:
         officers_title: "Listado de presidentes de mesa asignados"

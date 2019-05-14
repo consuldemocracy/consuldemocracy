@@ -1,3 +1,5 @@
+<p><%= t("admin.poll_officers.search.help") %></p>
+
 <%= form_tag search_admin_officers_path, method: :get, remote: true  do %>
   <div class="input-group">
     <%= text_field_tag :email, "",

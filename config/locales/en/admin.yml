@@ -950,6 +950,7 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+        help: "To add or remove Poll officers use the search form below."
     poll_officer_assignments:
       index:
         officers_title: "List of officers"
