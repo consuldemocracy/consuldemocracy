@@ -262,3 +262,9 @@ bs:
       polls: Glasačke ankete
       mailing: Email
       poster: Poster
+      recommended_actions: Preporučene radnje
+    form:
+      request: Zahtjev
+    create_request:
+      success: Zahtjev je uspješno poslan. Kontaktiraćemo vas što prije kako bi vas obavjestili o tome.
+      archived: Prijedlog je arhiviran i za njega se ne mogu tražiti resursi.
