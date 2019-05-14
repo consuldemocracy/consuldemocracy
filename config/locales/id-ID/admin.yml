@@ -1066,7 +1066,7 @@ id:
         new: Baru tanda tangan lembar
       new:
         title: Baru tanda tangan lembar
-        document_numbers_note: "Menulis angka-angka yang dipisahkan oleh tanda koma (,)"
+        document_numbers_note: "Menulis angka-angka yang dipisahkan oleh titik koma (;)"
         submit: Membuat tanda tangan lembar
       show:
         created_at: Dibuat

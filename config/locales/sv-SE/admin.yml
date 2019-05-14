@@ -1230,7 +1230,7 @@ sv:
         new: Ny namninsamling
       new:
         title: Ny namninsamling
-        document_numbers_note: "Fyll i siffrorna separerade med kommatecken (,)"
+        document_numbers_note: "Fyll i siffrorna separerade av semikolon (;)"
         submit: Skapa namninsamling
       show:
         created_at: Skapad

@@ -947,7 +947,7 @@ sl:
         new: Novi podpisni listi
       new:
         title: Novi podpisni listi
-        document_numbers_note: "Napiši številke in jih loči z vejico (,)"
+        document_numbers_note: "Napiši številke in jih loči s podpičjem (;)"
         submit: Ustvair podpisni list
       show:
         created_at: Ustvarjen

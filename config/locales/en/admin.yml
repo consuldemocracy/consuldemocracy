@@ -1400,7 +1400,7 @@ en:
         new: New signature sheets
       new:
         title: New signature sheets
-        document_numbers_note: "Write the numbers separated by commas (,)"
+        document_numbers_note: "Write the numbers separated by semicolons (;)"
         submit: Create signature sheet
       show:
         created_at: Created

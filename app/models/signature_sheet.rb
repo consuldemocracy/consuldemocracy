@@ -21,15 +21,21 @@ class SignatureSheet < ApplicationRecord
   end
 
   def verify_signatures
-    parsed_required_fields_to_verify_groups.each do |document_number|
-      signature = signatures.where(document_number: document_number).first_or_create
+    parsed_required_fields_to_verify_groups.each do |required_fields_to_verify|
+      document_number = required_fields_to_verify[0]
+      date_of_birth = required_fields_to_verify[1]
+      postal_code = required_fields_to_verify[2]
+
+      signature = signatures.where(document_number: document_number,
+                                   date_of_birth: date_of_birth,
+                                   postal_code: postal_code).first_or_create
       signature.verify
     end
     update(processed: true)
   end
 
   def parsed_required_fields_to_verify_groups
-    required_fields_to_verify.split(/\r\n|\n|[,]/).collect {|d| d.gsub(/\s+/, "") }
+    required_fields_to_verify.split(/[;]/).collect {|d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/)}
   end
 
   def signable_found

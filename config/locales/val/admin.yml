@@ -1235,7 +1235,7 @@ val:
         new: Nou full de signatures
       new:
         title: Nou full de signatures
-        document_numbers_note: "Escriu els números separats per comes (,)"
+        document_numbers_note: "Escriu els números separats per punt i coma (;)"
         submit: Crear full de signatures
       show:
         created_at: Creat
