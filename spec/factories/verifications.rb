@@ -56,4 +56,11 @@ FactoryBot.define do
     document_number
     document_type "dni"
   end
+
+  factory :verification_document, class: Verification::Management::Document do
+    document_number
+    document_type "1"
+    date_of_birth Date.new(1980, 12, 31)
+    postal_code "28013"
+  end
 end
