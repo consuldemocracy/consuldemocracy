@@ -417,11 +417,66 @@ hr:
             attachment:
               min_image_width: "Širina Slike mora biti na zadnje %{required_min_width}px"
               min_image_height: "Visina Slike mora biti najmanje %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Segment korisničkih primatelja nije valjan"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Segment korisničkih primatelja nije valjan"
+        map_location:
+          attributes:
+            map:
+              invalid: Lokacija karte ne može biti prazna. Postavite oznaku ili potvrdite okvir ako nije potrebna geolokalizacija
         poll/voter:
           attributes:
             document_number:
+              not_in_census: "Dokument nije u cenzusu"
               has_voted: "Korisnik je već glasao"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: mora biti na ili prije početnog datuma
+            debate_end_date:
+              invalid_date_range: mora biti na datum debate ili nakon početnog datuma
+            draft_end_date:
+              invalid_date_range: mora biti na datum drafta ili nakon početnog datuma
+            allegations_end_date:
+              invalid_date_range: mora biti na datum komentara ili nakon početnog datuma
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "oznake moraju biti manje ili jednake prema %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "oznake moraju biti manje ili jednake prema %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Morate čekat minimalno %{interval} dana između obavijesti"
         signature:
           attributes:
             document_number:
+              not_in_census: "Nije potvrđeno Cenzusom"
               already_voted: "Već je glasano za ovaj prijedlog"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "moraju biti slova, brojevi, _ i -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Širina mora biti %{required_width}px"
+              image_height: "Visina mora biti %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Ne možete komentirati procjenu"
+      messages:
+        record_invalid: "Valicaija nije uspjela: %{errors}"
+        another_poll_active: Postoji još jedna aktivna anketa za dat period
+        restrict_dependent_destroy:
+          has_one: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
+          has_many: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
