@@ -557,3 +557,10 @@ bs:
         null_votes: "Nevažeći"
       results:
         title: "Pitanja"
+        most_voted_answer: "Odgovor sa najviše glasova: "
+    poll_header:
+      back_to_proposal: Nazad na prijedlog
+  poll_questions:
+    show:
+      vote_answer: "Glasaj za (odgovor) %{answer}"
+      voted: "Glasali ste za (odgovor) %{answer}"
