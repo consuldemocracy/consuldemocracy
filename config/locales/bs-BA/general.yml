@@ -318,7 +318,22 @@ bs:
       top_link_proposals: Prijedlozi s najvećom podrškom, poredani po kategorijama
       section_header:
         icon_alt: Ikonica za prijedloge
+        title: Prijedlozi
+        help: Pomoć u vezi prijedloga
+      section_footer:
+        title: Pomoć u vezi prijedloga
+        description: Prijedlozi građana predstavljaju priliku za susjede i zajednice da neposredno odlučuju kakav grad žele da imaju, nakon što dobiju dovoljnu podršku i podnesu prijedlog građanima na glasanje.
+    new:
+      form:
+        submit_button: Formuliši prijedlog
+      more_info: Kako funkcioniše podnošenje prijedloga od strane građana?
+      recommendation_one: Ne koristite velika slova za naziv prijedloga, ne pišite cijele rečenice velikim slovima. Na internetu se to smatra vikanjem, a niko ne voli kad se na njega viče.
+      recommendation_three: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
+      recommendation_two: Svaka prijedlog ili komentar koji implicira nezakonite radnje se briše. Isto važi i za one koji žele da sabotiraju debatni prostor. Sve ostalo je dozvoljeno.
+      recommendations_title: Preporuke za pokretanje prijedloga
+      start_new: Formuliši novi prijedlog
     notice:
+      retired: Prijedlog je povučen
       published: Prijedlog je objavljen
     proposal:
       created: "Podnijeli ste prijedlog!"
@@ -378,3 +393,23 @@ bs:
     create_request:
       success: Zahtjev je uspješno poslan. Kontaktiraćemo vas što prije kako bi vas obavjestili o tome.
       archived: Prijedlog je arhiviran i za njega se ne mogu tražiti resursi.
+    polls:
+      edit:
+        submit: Ažuriraj podatke za glasačku anketu
+      poll:
+        view_results: Pokaži rezultate
+        edit_poll: Edituj anketu
+        show_results: Pokaži rezultate
+        show_results_help: Ako označite ovu kockicu, rezultati će biti javni i vidljivi svim korisnicima
+      form:
+        add_question: Dodaj pitanje
+      question_fields:
+        remove_question: Ukloni pitanje
+        add_answer: Dodaj odgovor
+      question_answer_fields:
+        remove_answer: Ukloni odgovor
+    poster:
+      index:
+        title: Pregled postera
+        poster_title: "Nemoj samo gledati,"
+        poster_subtitle: "podrži me! ;)"
