@@ -564,3 +564,43 @@ bs:
     show:
       vote_answer: "Glasaj za (odgovor) %{answer}"
       voted: "Glasali ste za (odgovor) %{answer}"
+      voted_token: "Zapišite identifikacioni broj glasa kako bi mogli izvršiti provjeri u konačnim rezultatima:"
+  proposal_notifications:
+    new:
+      title: "Pošalji poruku"
+      title_label: "Naziv"
+      body_label: "Poruka"
+      submit_button: "Pošalji poruku"
+      info_about_receivers_html: "Poruka će se poslati na adresu/adrese <strong>%{count} čovjeka/ljudi</strong> i vidjeće se na %{proposal_page}. <br> Poruke se ne šalju odmah, korisnici periodično dobijaju emailove sa obavijestima o prijedlozima."
+      proposal_page: "stranica od projedloga"
+    show:
+      back: "Vrati se na moje aktivnosti"
+  shared:
+    edit: "Edituj"
+    save: "Spasi"
+    tags_cloud:
+      categories: "Kategorije"
+    target_blank_html: " (link se otvara u novom prozoru)"
+    you_are_in: "Vi ste u"
+    unflag: Ukloni oznaku
+    unfollow_entity: "Ne prati više %{entity}"
+    outline:
+      budget: Participativni budžet
+      searcher: Tražitelj
+    go_to_page: "Idite na stranu od "
+    share: Podijeli
+    orbit:
+      previous_slide: Prethodni slajd
+      next_slide: Naredni slajd
+    documentation: Dodatna dokumentacija
+    view_mode:
+      title: Opcija gledanja
+      cards: Kartice
+      list: Lista
+    recommended_index:
+      title: Preporuke
+      see_more: Vidi više preporuka
+      hide: Sakrij preporuke
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
