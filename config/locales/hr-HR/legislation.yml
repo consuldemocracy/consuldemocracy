@@ -1,1 +1,16 @@
 hr:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vidi sve
+        see_complete: Pogledajte sve
+        comments_count:
+          one: "%{count} komentar"
+          few: "%{count} komentare"
+          other: "%{count} komentare"
+        replies_count:
+          one: "%{count} odgovor"
+          few: "%{count} odgovore"
+          other: "%{count} odgovore"
+        cancel: Otkazati
+        publish_comment: Objavi Komentar
