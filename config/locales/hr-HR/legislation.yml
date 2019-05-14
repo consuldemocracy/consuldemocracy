@@ -66,3 +66,27 @@ hr:
         filters:
           open: Otvoreni proces
           past: Prošle
+        no_open_processes: Nema otvorenih procesa
+        no_past_processes: Nema prošlih procesa
+        section_header:
+          icon_alt: Ikona kolaborativne legislative
+          title: Kolaborativna legislativa
+          help: Pomoć oko kolaborativne legislative
+        section_footer:
+          title: Pomoć oko kolaborativne legislative
+          description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše mišljenje će se razmotriti.
+      phase_not_open:
+        not_open: Ova faza još uvijek nije otvorena
+      phase_empty:
+        empty: Ništa nije još objavljeno
+      process:
+        see_latest_comments: Vidi zadnje komentare
+        see_latest_comments_title: Komentari ovog procesa
+      shared:
+        key_dates: Faze sudjelovanja
+        homepage: Glavna stranica
+        debate_dates: Rasprave
+        draft_publication_date: Objavljivanje drafta
+        allegations_dates: Komentari
+        result_publication_date: Konačni rezultati objave
+        milestones_date: Sljedeći
