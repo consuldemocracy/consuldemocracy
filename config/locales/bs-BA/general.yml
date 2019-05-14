@@ -40,3 +40,40 @@ bs:
     menu: Meni
   comments:
     comments_closed: Komentari su zatvoreni
+    verified_only: Za učešće, (potvrdi profil) %{verify_account}
+    verify_account: potvrdi svoj profil
+    comment:
+      admin: Administrator
+      author: Autor
+      deleted: Ovaj komentar je obrisan
+      moderator: Moderator
+      responses:
+        zero: Nema odgovora
+      user_deleted: Korisnik obrisan
+      votes:
+        zero: Nema glasova
+    form:
+      comment_as_admin: Komentariši kao administrator
+      comment_as_moderator: Komentariši kao moderator
+      leave_comment: Ostavi svoj komentar
+    orders:
+      most_voted: Najviše glasova
+      newest: Prvo najnovije
+      oldest: Prvo najstarije
+      most_commented: Najviše komentara
+    select_order: Poredaj po
+    show:
+      return_to_commentable: "Vrati se na "
+  comments_helper:
+    comment_button: Objavi komentar
+    comment_link: Komentariši
+    comments_title: Komentari
+    reply_button: Objavi odgovor
+    reply_link: Odgovori
+  debates:
+    create:
+      form:
+        submit_button: Pokreni debatu
+    debate:
+      comments:
+        zero: Nema komentara
