@@ -10,4 +10,46 @@ hr:
       title:
         proposal: Prijedlog zajednice
         investment: Investicijski Budžet zajednice
+      description:
+        proposal: Sudjelujte u zajednici ovog prijedloga. Aktivna zajednica može pomoći u poboljšanju sadržaja prijedloga i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
+        investment: Sudjelujte u zajednici ove investicije iz budžeta. Aktivna zajednica može pomoći u poboljšanju sadržaja budžetne investicije i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nema dostupnog izdanja, sudjelujte u stvaranju prvog izdanja.
+        first_theme: Stvorite prvu temu u vašoj zajednici
+        sub_first_theme: "Kako biste stvorili temu morate %{sign_in} ili %{sign_up}."
+        sign_in: "ulogirajte se"
+        sign_up: "prijavite se"
+      tab:
+        participants: Sudionici
+      sidebar:
+        participate: Sudjelovati
+        new_topic: Stvori temu
+      topic:
+        edit: Uredi temu
+        destroy: Izbriši temu
+        comments:
+          zero: Bez komentara
+          one: 1 komentar
+          few: "%{count} komentare"
+          other: "%{count} komentare"
       author: Autor
+      back: Nazad na %{community}%{proposal}
+    topic:
+      create: Stvori temu
+      edit: Uredi temu
+      form:
+        topic_title: Naziv
+        topic_text: Početni tekst
+        new:
+          submit_button: Stvori temu
+        edit:
+          submit_button: Uredit temu
+        create:
+          submit_button: Stvori temu
+        update:
+          submit_button: Ažuriraj temu
+      show:
+        tab:
+          comments_tab: Komentari
+      sidebar:
+        recommendations_title: Prijedlozi za stvaranje teme
