@@ -39,6 +39,42 @@ feature "Signature sheets" do
 
       select "Citizen proposal", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: proposal.id
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z; 99999999Z"
+      click_button "Create signature sheet"
+
+      expect(page).to have_content "Signature sheet created successfully"
+
+      visit proposal_path(proposal)
+
+      expect(page).to have_content "1 support"
+    end
+
+    scenario "Budget Investment" do
+      investment = create(:budget_investment)
+      budget = investment.budget
+      budget.update(phase: "selecting")
+
+      visit new_admin_signature_sheet_path
+
+      select "Investment", from: "signature_sheet_signable_type"
+      fill_in "signature_sheet_signable_id", with: investment.id
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z; 99999999Z"
+      click_button "Create signature sheet"
+
+      expect(page).to have_content "Signature sheet created successfully"
+
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_content "1 support"
+    end
+
+  end
+    scenario "Proposal" do
+      proposal = create(:proposal)
+      visit new_admin_signature_sheet_path
+
+      select "Citizen proposal", from: "signature_sheet_signable_type"
+      fill_in "signature_sheet_signable_id", with: proposal.id
       fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 99999999Z"
       click_button "Create signature sheet"
 
