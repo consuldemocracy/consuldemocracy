@@ -1402,6 +1402,12 @@ en:
         title: New signature sheets
         document_numbers_note: "Write the numbers separated by semicolons (;)"
         submit: Create signature sheet
+        text_help:
+          required_fields_note: "To verify a user, your application needs: Document number"
+          date_of_birth_note: ", Day of birth (dd/mm/yyyy)"
+          postal_code_note: " and Postal Code"
+          required_fields_structure_note: "Required fields for each user must be separated by commas and each user must be separated by semicolons."
+          example_text: "Example: "
       show:
         created_at: Created
         author: Author

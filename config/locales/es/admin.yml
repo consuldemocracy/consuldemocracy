@@ -1400,6 +1400,12 @@ es:
         title: Nueva hoja de firmas
         document_numbers_note: "Introduce los números separados por punto y coma (;)"
         submit: Crear hoja de firmas
+        text_help:
+          required_fields_note: "Para verificar un usuario, su aplicación necesita: Número de documento"
+          date_of_birth_note: ", Día de nacimiento (dd/mm/yyyy)"
+          postal_code_note: " y Código Postal"
+          required_fields_structure_note: "Los campos requeridos para cada usuario deben ir separados por comas y cada usuario debe ir separado por punto y coma."
+          example_text: "Ejemplo: "
       show:
         created_at: Creado
         author: Autor
