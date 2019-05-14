@@ -891,8 +891,6 @@ ast:
       show:
         created_at: Creado
         author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
         verified:
           one: "Hay %{count} firma válida"
           other: "Hay %{count} firmas válidas"

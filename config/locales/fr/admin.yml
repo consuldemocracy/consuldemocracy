@@ -1342,8 +1342,6 @@ fr:
       show:
         created_at: Créé le
         author: Auteur
-        documents: Documents
-        document_count: "Nombre de documents :"
         verified:
           one: "Il y a %{count} signature valide"
           other: "Il y a %{count} signatures valides"

@@ -1189,8 +1189,6 @@ so:
       show:
         created_at: Abuuray
         author: Qoraa
-        documents: Dukumentiyo
-        document_count: "Lamabarka Dukumeentiyada:"
         verified:
           one: "Waxa jira %{count} saxiixya ah oo saxa"
           other: "Waxa jira %{count} tiro saxiixya ah oo saxa"

@@ -1282,8 +1282,6 @@ gl:
       show:
         created_at: Creado
         author: Autoría
-        documents: Docuemntos
-        document_count: "Número de documentos:"
         verified:
           one: "Hai %{count} sinatura válida"
           other: "Hai %{count} sinaturas válidas"

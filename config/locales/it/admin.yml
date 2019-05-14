@@ -1184,8 +1184,6 @@ it:
       show:
         created_at: Creato
         author: Autore
-        documents: Documenti
-        document_count: "Numero di documenti:"
         verified:
           one: "C'è %{count} firme valide"
           other: "Ci sono %{count} firme valide"

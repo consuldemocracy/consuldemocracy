@@ -1071,8 +1071,6 @@ id:
       show:
         created_at: Dibuat
         author: Penulis
-        documents: Dokumen
-        document_count: "Jumlah dokumen:"
         verified:
           other: "Ada %{count} berlaku tanda tangan"
         unverified:

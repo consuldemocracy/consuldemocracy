@@ -156,7 +156,7 @@ describe "Signature sheets" do
     expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 
-    within("#document_count") do
+    within("#signature_count") do
       expect(page).to have_content 3
     end
 

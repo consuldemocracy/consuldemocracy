@@ -1094,8 +1094,6 @@ fa:
       show:
         created_at: ایجاد شده
         author: نویسنده
-        documents: اسناد
-        document_count: "تعداد اسناد:"
         verified:
           one: "%{count} امضا معتبر است"
           other: "%{count} امضا معتبر است"
