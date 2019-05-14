@@ -123,6 +123,7 @@ bs:
         help: Pomoć u vezi debata
       section_footer:
         title: Pomoć u vezi debata
+        description: Pokrenite debatu kako bi razmijenili mišljenja sa drugima u vezi tema koje vas interesuju.
     show:
       login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
       share: Podijeli
