@@ -242,6 +242,37 @@ describe Signature do
 
     end
 
+    describe "document in census throught CustomCensusApi" do
+
+      before do
+        Setting["feature.remote_census"] = true
+        Setting["remote_census.request.date_of_birth"] = "some.value"
+        Setting["remote_census.request.postal_code"] = "some.value"
+        access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
+        access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
+        Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
+        Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
+        Setting["remote_census.response.valid"] = access_user_data
+      end
+
+      after do
+        Setting["feature.remote_census"] = nil
+        Setting["remote_census.request.date_of_birth"] = nil
+        Setting["remote_census.request.postal_code"] = nil
+      end
+
+      it "calls assign_vote_to_user" do
+        signature = create(:signature, document_number: "12345678Z",
+                                       date_of_birth: "31/12/1980",
+                                       postal_code: "28013")
+
+        expect_any_instance_of(Signature).to receive(:assign_vote_to_user).exactly(1).times
+
+        signature.verify
+      end
+
+    end
+
     describe "document not in census" do
 
       it "does not call assign_vote_to_user" do
