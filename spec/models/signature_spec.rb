@@ -28,6 +28,48 @@ describe Signature do
 
   end
 
+  describe "custom validations" do
+
+    let(:signature) { build(:signature,
+                            document_number: "12345678Z",
+                            date_of_birth: "31/12/1980",
+                            postal_code: "28013") }
+
+    before do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+      Setting["remote_census_request.alias_postal_code"] = "some.value"
+    end
+
+    after do
+      Setting["feature.remote_census"] = nil
+      Setting["remote_census_request.alias_date_of_birth"] = nil
+      Setting["remote_census_request.alias_postal_code"] = nil
+    end
+
+    it "is valid" do
+      expect(signature).to be_valid
+    end
+
+    it "is not valid without a document number" do
+      signature.document_number = nil
+      expect(signature).not_to be_valid
+    end
+
+    it "is not valid without a date of birth" do
+      signature.date_of_birth = nil
+
+      expect(signature).not_to be_valid
+    end
+
+    it "is not valid without a postal_code" do
+      signature.postal_code = nil
+
+      expect(signature).not_to be_valid
+    end
+
+   end
+
   describe "#clean_document_number" do
     it "removes non alphanumeric characters" do
       signature = create(:signature, document_number: "123-[;,9]")
@@ -217,6 +259,52 @@ describe Signature do
       end
     end
 
+  end
+
+  describe "#force_presence_date_of_birth? return expected value" do
+
+    it "when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(signature.force_presence_date_of_birth?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_date_of_birth is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = nil
+
+      expect(signature.force_presence_date_of_birth?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_date_of_birth is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+
+      expect(signature.force_presence_date_of_birth?).to eq true
+    end
+  end
+
+  describe "#force_presence_postal_code? return expected value" do
+
+    it "when feature remote_census is not active" do
+      Setting["feature.remote_census"] = false
+
+      expect(signature.force_presence_postal_code?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_postal_code is nil" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_postal_code"] = nil
+
+      expect(signature.force_presence_postal_code?).to eq false
+    end
+
+    it "when feature remote_census is active and alias_postal_code is empty" do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_postal_code"] = "some.value"
+
+      expect(signature.force_presence_postal_code?).to eq true
+    end
   end
 
 end

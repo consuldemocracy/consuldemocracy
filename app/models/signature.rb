@@ -3,6 +3,8 @@ class Signature < ActiveRecord::Base
   belongs_to :user
 
   validates :document_number, presence: true
+  validates :date_of_birth, presence: true, if: :force_presence_date_of_birth?
+  validates :postal_code, presence: true, if: :force_presence_postal_code?
   validates :signature_sheet, presence: true
 
   scope :verified,   -> { where(verified: true) }
@@ -92,6 +94,16 @@ class Signature < ActiveRecord::Base
 
   def document_types
     %w(1 2 3 4)
+  end
+
+  def force_presence_date_of_birth?
+    Setting["feature.remote_census"].present? &&
+      Setting["remote_census_request.alias_date_of_birth"].present?
+  end
+
+   def force_presence_postal_code?
+    Setting["feature.remote_census"].present? &&
+      Setting["remote_census_request.alias_postal_code"].present?
   end
 
 end

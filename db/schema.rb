@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190205131722) do
+ActiveRecord::Schema.define(version: 20190430003908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1261,6 +1261,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.boolean  "verified",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date_of_birth"
+    t.string   "postal_code"
   end
 
   create_table "site_customization_content_blocks", force: :cascade do |t|
