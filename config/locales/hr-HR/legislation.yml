@@ -90,3 +90,39 @@ hr:
         allegations_dates: Komentari
         result_publication_date: Konačni rezultati objave
         milestones_date: Sljedeći
+        proposals_dates: Prijedlozi
+    questions:
+      comments:
+        comment_button: Objavi odgovor
+        comments_title: Otvoreni odgovori
+        comments_closed: Zatvorena faza
+        form:
+          leave_comment: Ostavi svoj odgovor
+      question:
+        comments:
+          zero: Nema komentara
+          one: "%{count} komentar"
+          few: "%{count} komentare"
+          other: "%{count} komentare"
+        debate: Rasprava
+      show:
+        answer_question: Pošalji odgovor
+        next_question: Sljedeće pitanje
+        first_question: Prvo pitanje
+        share: Dijeli
+        title: Proces kolaborativne legislative
+      participation:
+        phase_not_open: Ova faza još nije otvorena
+        organizations: Organizacijama nije dozvoljeno sudjelovanje u raspravama
+        signin: Prijavi se
+        signup: Registriraj se
+        unauthenticated: Vi morate %{signin} ili %{signup} kako biste sudjelovali.
+        verified_only: Samo potvrđeni korisnici mogu sudjelovati, %{verify_account}.
+        verify_account: potvrdi svoj račun
+        debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
+    shared:
+      share: Dijeli
+      share_comment: Komentiraj %{version_name} iz drafta procesa %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorije"
