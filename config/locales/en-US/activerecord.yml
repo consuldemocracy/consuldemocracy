@@ -1,77 +1,13 @@
 en-US:
   activerecord:
     models:
-      budget:
-        one: "Budžet"
-        other: "Budžeti"
       milestone:
         one: "Meilenstein"
         other: "Meilensteine"
-      milestone/status:
-        one: "Investitionsstatus, Anlagenstatus"
-        other: "Investitionsstatus, Anlagenstatus"
-      progress_bar:
-        one: "Grafički indikator"
-        other: "Grafički indikatori"
-      comment:
-        one: "Kommentar"
-        other: "Kommentare"
-      debate:
-        one: "Debatte"
-        other: "Debatten"
-      user:
-        one: "Benutzer"
-        other: "Benutzer"
-      moderator:
-        one: "Moderator,Gesprächsleiter"
-        other: "Moderatoren,Gesprächsleiter"
-      administrator:
-        one: "Administrator(in),Verwaltungsleiter(in)"
-        other: "Administrator(in),Verwaltungsleiter(in)"
     attributes:
-      budget:
-        name: "Ime"
-        description_accepting: "Opis u toku prihvatne faze"
-        description_reviewing: "Opis tokom faze pregleda"
-        description_selecting: "Opis tokom faze selekcije"
-        description_valuating: "Opis tokom faze ocijenjivanja"
-        description_balloting: "Opis tokom faze glasanja"
-        description_reviewing_ballots: "Opis tokom faze pregleda glasova"
-        description_finished: "Opis kad se završi s budžetom"
-        phase: "Faza"
-        currency_symbol: "Moneta"
       budget/investment:
-        heading_id: "Zaglavlje"
-        title: "Naslov"
-        description: "Opis"
-        external_url: "Veza za dodatnu dokumentaciju"
         administrator_id: "Administrator(in),Verwaltungsleiter(in)"
-        location: "Lokacija (po izboru)"
-        organization_name: "Ako podnosite prijedlog u ime kolektiva ili organizacije, ili za više ljudi, navedite njen naziv"
-        image: "Opisna slika prijedloga"
-        image_title: "Naziv slike"
-      geozone:
-        name: Ime
-        external_code: "Eksterni kod (po izboru)"
-        census_code: "Kod za cenzus (po izboru)"
-        html_map_coordinates: "HTML <map> Koordinate (po izboru)"
-      milestone:
-        status_id: "Trenutni status (po izboru)"
-        title: "Naziv"
-        description: "Opis (po izboru, ako se dodijeli status)"
-        publication_date: "Datum objavljivanja"
-      milestone/status:
-        name: "Ime"
-        description: "Opis (po izboru)"
-      progress_bar:
-        kind: "Vrsta"
-        title: "Naziv"
-        percentage: "Dosadašnji napredak"
-      progress_bar/kind:
-        primary: "Primarno"
-        secondary: "Sekundarno"
       budget/heading:
-        name: "Zaglavlje"
         price: "Cijena"
         population: "Stanovništvo"
       comment:
