@@ -123,3 +123,24 @@ bs:
     application:
       chrome: Google Chrome
       firefox: Firefox
+      ie: Pretražujete sa Internet Explorer-om. Zbog kvalitetnijeg korištenja, preporučujemo upotrebu %{firefox} ili %{chrome}.
+      ie_title: Ova web-stranica nije optimizirana za vaš preglednik
+    dashboard:
+      proposal_header:
+        published: Objavljeno
+        draft: Nacrt
+        retired: Povučeno
+      proposal_totals:
+        active_resources: Aktivni resursi
+        community: Učesnici u vašoj grupi
+        show_proposal: Pokaži prijedlog
+        preview_proposal: Pregledaj prijedlog
+        current_goal: Trenutni cilj
+        supports:
+          zero: Nema podrške
+    footer:
+      accessibility: Dostupnost
+      conditions: Uvjeti korištenja
+      consul: Aplikacija CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: Posjeti za tehničku podršku
