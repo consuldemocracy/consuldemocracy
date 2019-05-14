@@ -69,13 +69,28 @@ feature "Signature sheets" do
     end
 
   end
+
+  context "Create throught all required_fields_to_verify of custom census api" do
+
+    before do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census_request.alias_date_of_birth"] = "some.value"
+      Setting["remote_census_request.alias_postal_code"] = "some.value"
+    end
+
+    after do
+      Setting["feature.remote_census"] = nil
+      Setting["remote_census_request.alias_date_of_birth"] = nil
+      Setting["remote_census_request.alias_postal_code"] = nil
+    end
+
     scenario "Proposal" do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path
 
       select "Citizen proposal", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: proposal.id
-      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 99999999Z"
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 31/12/1980, 28013; 99999999Z, 31/12/1980, 28013"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
@@ -94,7 +109,7 @@ feature "Signature sheets" do
 
       select "Investment", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
-      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 99999999Z"
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 31/12/1980, 28013; 99999999Z, 31/12/1980, 28013"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
@@ -119,14 +134,14 @@ feature "Signature sheets" do
     user = Administrator.first.user
     signature_sheet = create(:signature_sheet,
                              signable: proposal,
-                             required_fields_to_verify: "12345678Z, 123A, 123B",
+                             required_fields_to_verify: "12345678Z; 123A; 123B",
                              author: user)
     signature_sheet.verify_signatures
 
     visit admin_signature_sheet_path(signature_sheet)
 
     expect(page).to have_content "Citizen proposal #{proposal.id}"
-    expect(page).to have_content "12345678Z, 123A, 123B"
+    expect(page).to have_content "12345678Z; 123A; 123B"
     expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 

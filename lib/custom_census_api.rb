@@ -74,7 +74,7 @@ class CustomCensusApi
       if end_point_available?
         client.call(Setting["remote_census_request.method_name"].to_sym, message: request(document_type, document_number, date_of_birth, postal_code)).body
       else
-        stubbed_response(document_type, document_number)
+        stubbed_response(document_type, document_number, date_of_birth, postal_code)
       end
     end
 
@@ -117,8 +117,9 @@ class CustomCensusApi
       Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
     end
 
-    def stubbed_response(document_type, document_number)
-      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
+    def stubbed_response(document_type, document_number, date_of_birth, postal_code)
+      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1" &&
+            date_of_birth == Date.parse("31/12/1980") && postal_code == "28013"
         stubbed_valid_response
       else
         stubbed_invalid_response

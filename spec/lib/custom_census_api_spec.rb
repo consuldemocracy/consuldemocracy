@@ -125,8 +125,10 @@ describe CustomCensusApi do
     it "return expected stubbed_response" do
       document_type = "1"
       document_number = "12345678Z"
+      date_of_birth = Date.parse("31/12/1980")
+      postal_code = "28013"
 
-      response = CustomCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
+      response = CustomCensusApi.new.send(:get_response_body, document_type, document_number, date_of_birth, postal_code)
 
       expect(response).to eq ({ get_habita_datos_response: {
                                   get_habita_datos_return: {
@@ -168,8 +170,11 @@ describe CustomCensusApi do
     it "return expected response methods with default values" do
       document_type = "1"
       document_number = "12345678Z"
+      date_of_birth = Date.parse("31/12/1980")
+      postal_code = "28013"
 
-      get_response_body = CustomCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
+      get_response_body = CustomCensusApi.new.send(:get_response_body, document_type, document_number, date_of_birth, postal_code)
+
       response = CustomCensusApi::Response.new(get_response_body)
 
       expect(response.valid?).to eq true
