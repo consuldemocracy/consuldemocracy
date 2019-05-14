@@ -3,6 +3,8 @@ class Signature < ApplicationRecord
   belongs_to :user
 
   validates :document_number, presence: true
+  validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
+  validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   validates :signature_sheet, presence: true
 
   scope :verified,   -> { where(verified: true) }
