@@ -1016,7 +1016,7 @@ en:
     polls:
       index:
         title: "List of polls"
-        no_polls: "There are no polls coming up."
+        no_polls: "There are no polls."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
@@ -1047,6 +1047,10 @@ en:
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
+      destroy:
+        alert: "This action will remove the poll and all its associated questions."
+        success_notice: "Poll deleted successfully"
+        unable_notice: "You cannot delete a poll that has votes"
     questions:
       index:
         title: "Questions"
