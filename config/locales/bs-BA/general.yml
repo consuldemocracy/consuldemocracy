@@ -109,6 +109,20 @@ bs:
         disable: "Preporuke za debate se neće pojavljivati ako ih isključite. Možete ih ponovo uključiti na stranici \"Moj profil\""
         actions:
           success: "Preporuke za debate su sad isključene za ovaj profil"
+          error: "Došlo je do greške. Idite na stranicu \"Moj profil\" kako bi ručno isključili preporuke za debate"
+      search_form:
+        button: Traži
+        placeholder: Pretraga po debatama...
+        title: Traži
+      select_order: Poredaj po
+      start_debate: Pokreni debatu
+      title: Debate
+      section_header:
+        icon_alt: Ikonica za debate
+        title: Debate
+        help: Pomoć u vezi debata
+      section_footer:
+        title: Pomoć u vezi debata
     show:
       login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
       share: Podijeli
