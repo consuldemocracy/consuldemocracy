@@ -118,6 +118,24 @@ describe SignatureSheet do
         Setting["remote_census.request.date_of_birth"] = nil
       end
 
+      it "creates signatures for each group with document_number and postal_code" do
+        Setting["remote_census.request.postal_code"] = "some.value"
+
+        required_fields_to_verify = "123A, 28001; 456B, 28002"
+        signature_sheet = create(:signature_sheet, required_fields_to_verify: required_fields_to_verify)
+        signature_sheet.verify_signatures
+
+        expect(Signature.count).to eq(2)
+        expect(Signature.first.document_number).to eq("123A")
+        expect(Signature.first.date_of_birth).to eq(nil)
+        expect(Signature.first.postal_code).to eq("28001")
+        expect(Signature.last.document_number).to eq("456B")
+        expect(Signature.last.date_of_birth).to eq(nil)
+        expect(Signature.last.postal_code).to eq("28002")
+
+        Setting["remote_census.request.postal_code"] = nil
+      end
+
       it "creates signatures for each group with document_number, postal_code and date_of_birth" do
         Setting["remote_census.request.date_of_birth"] = "some.value"
         Setting["remote_census.request.postal_code"] = "some.value"
