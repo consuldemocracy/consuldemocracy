@@ -702,6 +702,7 @@ es:
         content_blocks: Personalizar bloques
         information_texts: Personalizar textos
         information_texts_menu:
+          basic: "Personalización básica"
           debates: "Debates"
           community: "Comunidad"
           proposals: "Propuestas"

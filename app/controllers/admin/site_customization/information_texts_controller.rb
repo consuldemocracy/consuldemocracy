@@ -2,7 +2,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
   before_action :delete_translations, only: [:update]
 
   def index
-    @tab = params[:tab] || :debates
+    @tab = params[:tab] || :basic
     @content = I18nContent.content_for(@tab)
   end
 
