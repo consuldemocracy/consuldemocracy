@@ -240,8 +240,29 @@ bs:
         no_notifications: "Nemate novih obavijesti"
     admin:
       watch_form_message: "Niste spasili izmjene. Ipak napuštate stranicu?"
+  notifications:
+    index:
+      empty_notifications: Nemate novih obavijesti.
+      mark_all_as_read: Označi sve kao pročitano
+      read: Pročitano
+      title: Obavijesti
+      unread: Nepročitano
+    notification:
+      mark_as_read: Označi kao pročitano
+      mark_as_unread: Označi kao nepročitano
+      notifiable_hidden: Ovaj resurs više nije dostupan.
+  map:
+    title: "Područja"
+    proposal_for_district: "Formulišite prijedlog za vaše područje"
+    select_district: Odaberi područje
+    start_proposal: Formuliši prijedlog
   omniauth:
+    facebook:
+      sign_in: Prijavi se preko Facebook-a
+      sign_up: Otvori profil preko Facebook-a
+      name: Facebook
     finish_signup:
+      title: "Dodatne informacije"
       username_warning: "Zbog promjene načina naše interakcije sa društvenim mrežama, moguće je da za tvoje korisničko ime sad piše da je 'već u upotrebi'. Ako je tako, odaberi drugo korisničko ime."
     google_oauth2:
       sign_in: Prijavi se sa Google-om
@@ -496,3 +517,43 @@ bs:
       section_header:
         icon_alt: Ikonica za glasanje
         title: Glasanje
+        help: Pomoć u vezi glasanja
+      section_footer:
+        title: Pomoć u vezi glasanja
+        description: Glasačke ankete građana predstavljaju participativni mehanizam putem kojeg građani s pravom glasa mogu donositi neposredne odluke
+      no_polls: "Nema glasačkih anketa u toku."
+    show:
+      already_voted_in_booth: "Već ste glasali u fizičkoj kabini. Ne možete ponovo glasati."
+      already_voted_in_web: "Već ste učestvovali u ovoj glasačkoj anketi. Ako budete ponovo glasali, neće se priznati."
+      back: Nazad na glasanje
+      cant_answer_not_logged_in: "Morate se prijaviti %{signin} ili otvoriti profil %{signup} da bi učestvovali."
+      comments_tab: Komentari
+      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
+      signin: Prijavi se
+      signup: Otvori profil
+      cant_answer_verify_html: "Moraš (potvrditi link) %{verify_link} kako bi odgovorio."
+      verify_link: "potvrdi svoj profil"
+      cant_answer_expired: "Ova glasačka anketa je završena."
+      cant_answer_wrong_geozone: "Ovo pitanje nije dostupno na vašem području."
+      more_info_title: "Više informacija"
+      documents: Dokumenti
+      zoom_plus: Uvećaj sliku
+      read_more: "Pročitaj više o %{answer}"
+      read_less: "Pročitaj manje o %{answer}"
+      videos: "Eksterni video"
+      info_menu: "Informacije"
+      stats_menu: "Participativna statistika"
+      results_menu: "Rezultati glasačke ankete"
+      stats:
+        title: "Podaci u učešću"
+        total_participation: "Ukupno učesnika"
+        total_votes: "Ukupno datih glasova"
+        votes: "GLASOVI"
+        web: "WEB"
+        booth: "KABINA"
+        total: "UKUPNO"
+        valid: "Ispravno"
+        white: "Bijele poruke"
+        null_votes: "Nevažeći"
+      results:
+        title: "Pitanja"
