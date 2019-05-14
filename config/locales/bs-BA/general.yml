@@ -439,3 +439,27 @@ bs:
         share_in: Uključi se
         hi: "Pozdrav!"
         introduction: Želim vas obavijestiti da učestvujem u %{org}, platformi na kojoj možemo odlučiti kakav grad želimo. Kako bi to postigli, izradio sam vlastiti prijedlog kao građanin i sad mi treba vaša podrška! Ne brinite, nije ništa teško.
+        support: "Samo trebate kliknuti dugme koje vidite dole, \"Podrži ovaj prijedlog\", i možete se informisati prije nego se odlučite promovisati prijedlog. Gradsko vijeće će realizovati samo prijedloge koji dobiju maksimalnu podršku, tako da sam siguran da ćete mi pomoći da to i postignemo!"
+        share: "Bilo bi super kad bi mi učinili veliku uslugu i podijelili moj prijedlog sa prijateljima, porodicom i poznanicima!"
+  polls:
+    all: "Sve"
+    no_dates: "nije određen datum"
+    dates: "Od %{open_at} do %{closed_at}"
+    final_date: "Konačno ponovno brojanje/Rezultati"
+    index:
+      filters:
+        current: "Otvoreno"
+        expired: "Isteklo"
+      title: "Glasačke ankete"
+      participate_button: "Glasaj u ovoj anketi"
+      participate_button_expired: "Glasačka anketa završena"
+      no_geozone_restricted: "Cijelo mjesto"
+      geozone_restricted: "Područja"
+      geozone_info: "Stanovništvo može učestvovati u popisu za: "
+      already_answer: "Već ste učestvovali u ovoj anketi"
+      not_logged_in: "Morate se prijaviti ili otvoriti profil da bi učestvovali"
+      unverified: "Morate potvrditi profil kako bi učestvovali"
+      cant_answer: "Ova glasačka anketa nije dostupna na vašem području"
+      section_header:
+        icon_alt: Ikonica za glasanje
+        title: Glasanje
