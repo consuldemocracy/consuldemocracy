@@ -77,3 +77,49 @@ bs:
     debate:
       comments:
         zero: Nema komentara
+      votes:
+        zero: Nema glasova
+    edit:
+      editing: Edituj debatu
+    show:
+      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
+      share: Podijeli
+      author: Autor
+    update:
+      form:
+        submit_button: Spasi izmjene
+  errors:
+    messages:
+      user_not_found: Korisnik nije pronađen
+      invalid_date_range: "Neispravan raspon datuma"
+  form:
+    accept_terms: Prihvatam %{policy} i %{conditions}
+    accept_terms_title: Prihvatam politiku privatnosti i uvjete korištenja
+    conditions: Uvjeti korištenja
+    debate: Debata
+    direct_message: privatna poruka
+    error: greška
+    errors: greške
+    not_saved_html: "je onemogućilo da se spasi ovaj %{resource}. <br> Štrihiraj označena polja da vidiš kako ispraviti greške:"
+    policy: Politika privatnosti
+    proposal: Prijedlog
+    proposal_notification: "Obavijest"
+    spending_proposal: Prijedlog troškova
+    budget/investment: Investicija
+    budget/group: Budžetska grupa
+    budget/heading: Budžetska kategorija
+    poll/shift: Smjena
+    poll/question/answer: Odgovor
+    user: Profil
+    verification/sms: telefon
+    signature_sheet: Potpisni list
+    document: Dokument
+    topic: Tema
+    image: Slika
+  geozones:
+    none: Cijelo mjesto
+    all: Sva područja
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
