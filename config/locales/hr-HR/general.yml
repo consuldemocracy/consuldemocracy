@@ -279,8 +279,113 @@ hr:
           one: Netko je komentirao na
           few: Postoje %{count} komentari na
           other: Postoje %{count} komentari na
+        proposal_notification:
+          one: Postoji jedna nova obavijest na
+          few: Postoje %{count} nove obavijesti na
+          other: Postoje %{count} nove obavijesti na
+        replies_to:
+          one: Netko je odgovorio na tvoj komentar na
+          few: Postoje %{count} novi odgovori na tvoj komentar na
+          other: Postoje %{count} novi odgovori na tvoj komentar na
+      mark_as_read: Označi kao pročitano
+      mark_as_unread: Označi kao nepročitano
+      notifiable_hidden: Ovaj resurs više nije dostupan.
+  map:
+    title: "Distrikti"
+    proposal_for_district: "Započni prijedlog za svoj distrikt"
+    select_district: Opseg djelovanja
+    start_proposal: Stvori prijedlog
+  omniauth:
+    facebook:
+      sign_in: Ulogiraj se s Facebookom
+      sign_up: Prijavi se s Facebookom
+      name: Facebook
+    finish_signup:
+      title: "Dodatni detalji"
+      username_warning: "Zbog promjene načina na koji radimo s društvenim mrežama, moguće je da se vaše korisničko ime sada prikazuje kao \"već se koristi\". Ako je to vaš slučaj, odaberite drugo korisničko ime."
+    google_oauth2:
+      sign_in: Ulogiraj se s Googlom
+      sign_up: Prijavi se s Googlom
+      name: Google
+    twitter:
+      sign_in: Ulogiraj se s Twitterom
+      sign_up: Prijavi se s Twitterom
+      name: Twitter
+    info_sign_in: "Ulogiraj se s:"
+    info_sign_up: "Prijavi se s:"
+    or_fill: "Ili ispunite sljedeći obrazac:"
   proposals:
+    create:
+      form:
+        submit_button: Stvorite prijedlog
+    created:
+      title: Čestitamo! Napravili ste prvi korak.
+      motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
+      motivation_2_html: "<strong>Ukoliko želite preporuke kako pripremiti svoju objavu za svoj prijedlog kao draft, onda ćemo vas mi voditi.</strong>"
+      publish: Ne, ja želim objaviti svoj prijedlog
+      dashboard: Da, želim pomoć i objaviti ću kasnije
+      preview_title: Ovako će izgledati vaš prijedlog kada ga objavite
+    share:
+      improve_it: Poboljšajte svoju kampanju i dobijte više potpore.
+      dashboard: Vidite više informacija
+      message: "Ja podupirem ovaj prijedlog %{title} u %{handle}. Ako ste zainteresirani, poduprite ga!"
+    edit:
+      editing: Uredi prijedlog
+      form:
+        submit_button: Spremi promjene
+      show_link: Prikaži prijedlog
+    retire_form:
+      title: Povuci prijedlog
+      warning: "Ako povučete prijedlog, on će i dalje prihvaćati podršku, ali će biti uklonjen s glavnog popisa i poruka će biti vidljiva svim korisnicima navodeći da autor smatra da prijedlog ne bi trebao više biti podržan"
+      retired_reason_label: Razlog za povlačenje prijedloga
+      retired_reason_blank: Odaberi opciju
+      retired_explanation_label: Objašnjenje
+      retired_explanation_placeholder: Ukratko objasni zašto mislite da ovaj prijedlog više ne bi trebao primati potporu
+      submit_button: Povuci prijedlog
+    retire_options:
+      duplicated: Duplicirian
+      started: Već je u tijeku
+      unfeasible: Nevažeč
+      done: Gotovo
+      other: Drugi
+    form:
+      geozone: Opseg djelovanja
+      proposal_external_url: Poveznica na dodatnu dokumentaciju
+      proposal_question: Pitanje za prijedlog
+      proposal_question_example_html: "Mora biti sažeto u jednom pitanju s Da ili Ne odgovorom"
+      proposal_responsible_name: Puno ime osobe koja šalje prijedlog
+      proposal_responsible_name_note: "(pojedinačno ili kao predstavnik kolektiva, neće se javno prikazivati)"
+      proposal_summary: Sažetak prijedloga
+      proposal_summary_note: "(maksimalno 200 slova)"
+      proposal_text: Tekst prijedloga
+      proposal_title: Naslov prijedloga
+      proposal_video_url: Poveznica na video
+      proposal_video_url_note: Možete dodati poveznicu za YouTube ili Vimeo
+      tag_category_label: "Kategorije"
+      tags_instructions: "Označi ovaj prijedlog. Možete odabrati od predloženih kategorija ili dodati svoju"
+      tags_label: Oznake
+      tags_placeholder: "Unesite svoje oznake koje želite koristiti, odvojenu s navodnim znakovima (\",\")"
+      map_location: "Lokacija na mapi"
+      map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
+      map_remove_marker: "Ukloni marker na mapi"
+      map_skip_checkbox: "Ovaj prijedlog ne mora imati konkretnu lokaciju ili ja nisam svijestan toga."
     index:
+      featured_proposals: Istaknuto
+      filter_topic:
+        one: " s temom '%{topic}'"
+        few: " s temama '%{topic}'"
+        other: " s temama '%{topic}'"
+      orders:
+        confidence_score: najviše ocijenjen
+        created_at: najnoviji
+        hot_score: najaktivniji
+        most_commented: najviše komentiran
+        relevance: važnost
+        archival_date: postignut
+        recommendations: preporuke
+      recommendations:
+        without_results: Nema prijedloga povezanih s vašim interesima
+        without_interests: Slijedite prijedloge kako bismo vam dali preporuke
       retired_proposals_link: "Prijedlozi stvoreni od strane autora"
     proposal:
       support: Potpora
