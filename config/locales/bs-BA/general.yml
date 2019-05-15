@@ -709,3 +709,42 @@ bs:
     spending_proposal:
       spending_proposal: Investicioni projekat
       already_supported: Već ste podržali ovaj prijedlog. Podijelite ga!
+      support: Podrška
+      support_title: Podrži prijedlog
+      supports:
+        zero: Nema podrške
+  stats:
+    index:
+      visits: Posjete
+      debates: Debate
+      proposals: Prijedlozi
+      comments: Komentari
+      proposal_votes: Glasovi za prijedloge
+      debate_votes: Glasovi za debate
+      comment_votes: Glasovi za komentare
+      votes: Ukupno glasova
+      verified_users: Potvrđeni korisnici
+      unverified_users: Nepotvrđeni korisnici
+  unauthorized:
+    default: Nemate dozvolu da pristupite ovoj stranici.
+  votes:
+    spending_proposals:
+      not_verified: Samo korisnici sa potvrđenim profilom mogu glasati za prijedloge; %{verify_account}.
+      organization: Organizacije ne mogu glasati
+      unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
+      not_voting_allowed: Faza glasanja je završena
+    budget_investments:
+      not_logged_in: Morate se prijaviti %{signin} ili otvoriti profil %{signup} da bi učestvovali.
+      not_verified: Samo korisnici sa potvrđenim profilom mogu glasati za investicione projekte; %{verify_account}.
+      organization: Organizacije ne mogu glasati
+      unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
+      not_voting_allowed: Faza glasanja je završena
+  welcome:
+    feed:
+      most_active:
+        debates: "Najaktivnije debate"
+        proposals: "Najaktivniji prijedlozi"
+        processes: "Otvoreni procesi"
+      see_all_debates: Vidi sve debate
+      see_all_proposals: Vidi sve prijedloge
+      see_all_processes: Vidi sve procese
