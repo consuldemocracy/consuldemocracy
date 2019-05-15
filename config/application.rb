@@ -18,7 +18,7 @@ module Consul
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :es
     available_locales = [
       "ar",
       "de",
@@ -49,8 +49,7 @@ module Consul
       "pt-BR" => "es"
     }
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
-    # config.i18n.load_path += Dir[Rails.root.join("config", "locales", "custom", "**", "*.{rb,yml}")]
-    i18n.load_path << Dir[File.expand_path("config/locales/custom/**") + "*{.rb,yml}"] # Linea de arreglo de Custom en yml
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "custom", "**", "*.{rb,yml}")]
 
     config.after_initialize { Globalize.set_fallbacks_to_all_available_locales }
 
