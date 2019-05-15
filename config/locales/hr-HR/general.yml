@@ -23,7 +23,12 @@ hr:
       recommendations: Preporuke
       show_debates_recommendations: Prikaži preporuke za rasprave
       show_proposals_recommendations: Prikaži preporuke za prijedloge
+      title: Moj račun
+      user_permission_debates: Sudjeluj u raspravi
+      user_permission_info: S vašim računom možete...
+      user_permission_proposal: Kreiraj novi prijedlog
       user_permission_support_proposal: Podupri prijedlog
+      user_permission_title: Sudjelovanje
   comments:
     comment:
       author: Autor
