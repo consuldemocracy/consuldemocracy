@@ -394,14 +394,70 @@ hr:
       retired_proposals_link: "Prijedlozi su povučeni od strane autora"
       retired_links:
         all: Svi
+        duplicated: Duplicirani
+        started: U tijeku
+        unfeasible: Nevažeč
+        done: Gotovo
+        other: Drugi
+      search_form:
+        button: Pretraga
+        placeholder: Pretraži prijedloge...
+        title: Pretraga
+      search_results_html:
+        one: " sadržava termin <strong>%{search_term}</strong>"
+        few: " sadržava termin <strong>%{search_term}</strong>"
+        other: " sadržava termin <strong>%{search_term}</strong>"
+      select_order: Poredaj po
+      select_order_long: "Vršite pregled prijedloga po:"
+      start_proposal: Stvori prijedlog
+      title: Prijedlozi
+      top: Tjedno najpopularniji
+      top_link_proposals: Prijedlozi koji imaju naviše potpore po kategoriji
+      section_header:
+        icon_alt: Ikona prijedloga
+        title: Prijedlozi
+        help: Pomoć za prijedloge
+      section_footer:
+        title: Pomoć za prijedloge
+        description: Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče kako žele da njihov grad izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana.
+    new:
+      form:
+        submit_button: Stvorite prijedlog
+      more_info: Kako prijedlozi građana funkcioniraju?
+      recommendation_one: Ne koristite velika početna slova za naslove prijedloge ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
+      recommendation_three: Uživajte na ovom mjestu vaš glas će se također popuniti.
+      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za prijedloge. Sve ostalo je dozvoljeno.
+      recommendations_title: Preporuke za stvaranje rasprave
+      start_new: Stvori novi prijedlog
+    notice:
+      retired: Prijedlog je povučen
+      published: Prijedlog je objavljen
     proposal:
+      created: "Vi ste stvorili prijedlog!"
+      share:
+        guide: "Sada možete podjeliti kako bi ljudi mogli početi podržavati."
+        edit: "Prije nego što podjelite možete izmijeniti tekst koji vam se sviđa."
+        view_proposal: Ne sad, idite na moj prijedlog
+      already_supported: Vi ste već poduprli ovaj prijedlog. Podijelite ga!
+      comments:
+        zero: Bez komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
       support: Potpora
       support_title: Podupri ovaj prijedlog
       supports:
         zero: Nema potpore
+        one: 1 potpora
+        few: "%{count} potopre"
+        other: "%{count} potopre"
       votes:
         zero: Nema glasova
+        one: 1 glas
+        few: "%{count} glasove"
+        other: "%{count} glasove"
       supports_necessary: "%{number} potpora je potrebno"
+      total_percent: 100%
     show:
       milestones_tab: Ključni ciljevi
       author: Autor
