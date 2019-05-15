@@ -636,6 +636,47 @@ bs:
   shared:
     edit: "Edituj"
     save: "Spasi"
+    delete: "Obriši"
+    "yes": "Da"
+    "no": "Ne"
+    search_results: "Rezultati pretrage"
+    advanced_search:
+      author_type: "Po kategoriji autora"
+      author_type_blank: "Odaberi kategoriju"
+      date: "Po datumu"
+      date_placeholder: "DD/MM/GGGG"
+      date_range_blank: "Odaberi datum"
+      date_1: "Posljednjih 24 sata"
+      date_2: "Posljednjih sedam dana"
+      date_3: "Posljednjih mjesec dana"
+      date_4: "Posljednjih 12 mjeseci"
+      date_5: "Prilagođeno"
+      from: "Od"
+      general: "Sa tekstom"
+      general_placeholder: "Napiši tekst"
+      search: "Filter (suzi pretragu)"
+      title: "Napredna pretraga"
+      to: "Za"
+    author_info:
+      author_deleted: Korisnik obrisan
+    back: Idi nazad
+    check: Odaberi
+    check_all: Sve
+    check_none: Ništa
+    collective: Zajednica
+    flag: Označi kao neprikladno
+    follow: "Prati"
+    following: "Praćenje"
+    follow_entity: "Prati %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Pratite ovaj investicioni projekat! </br> Odmah ćemo vas obavijestiti o promjenama kako bi bili u toku."
+        destroy:
+          notice_html: "Prestali ste pratiti ovaj investicioni projekat! </br> Više nećete dobijati obavijesti u vezi projekta."
+      proposal:
+        create:
+          notice_html: "Sada pratite ovaj prijedlog! </br> Odmah ćemo vas obavijestiti o promjenama kako bi bili u toku."
     tags_cloud:
       categories: "Kategorije"
     target_blank_html: " (link se otvara u novom prozoru)"
