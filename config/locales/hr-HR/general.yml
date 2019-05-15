@@ -29,17 +29,78 @@ hr:
       user_permission_proposal: Kreiraj novi prijedlog
       user_permission_support_proposal: Podupri prijedlog
       user_permission_title: Sudjelovanje
+      user_permission_verify: Kako biste izveli ove radnje potvrdite svoj račun.
+      user_permission_verify_info: "*Samo za korisnike Cenzusa."
+      user_permission_votes: Sudjelujte u finalnom glasanju
+      username_label: Korisničko ime
+      verified_account: Račun potvrđen
+      verify_my_account: Potvrdi moj račun
+  application:
+    close: Zatvori
+    menu: Meni
   comments:
+    comments_closed: Komentari su zatvoreni
+    verified_only: Kako bi sudjelovali %{verify_account}
+    verify_account: potvrdi svoj račun
     comment:
+      admin: Administrator
       author: Autor
+      deleted: Komentari moraju biti izbrisani
+      moderator: Moderator
+      responses:
+        zero: Bez odgovora
+        one: 1 odgovor
+        few: "%{count} odgovore"
+        other: "%{count} odgovore"
+      user_deleted: Kirisnik obrisan
       votes:
         zero: Nema glasova
+        one: 1 glas
+        few: "%{count} glasove"
+        other: "%{count} glasove"
+    form:
+      comment_as_admin: Komentiraj kao admin
+      comment_as_moderator: Komentiraj kako moderator
+      leave_comment: Ostavi svoj komentar
     orders:
       most_voted: Najviše izlasano
+      newest: Prvo najnoviji
+      oldest: Najstariji prvo
+      most_commented: Najviše komentirani
+    select_order: Sortiraj po
+    show:
+      return_to_commentable: "Idi nazad na "
+  comments_helper:
+    comment_button: Objavi komentar
+    comment_link: Komentar
+    comments_title: Komentari
+    reply_button: Objavi odgovor
+    reply_link: Odgovor
   debates:
+    create:
+      form:
+        submit_button: Započni raspravu
     debate:
+      comments:
+        zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
       votes:
         zero: Nema glasova
+        one: 1 glas
+        few: "%{count} glasova"
+        other: "%{count} glasova"
+    edit:
+      editing: Uredi raspravu
+      form:
+        submit_button: Spremi promjene
+      show_link: Pogledaj raspravu
+    form:
+      debate_text: Početni tekst rasprave
+      debate_title: Naslov rasprave
+      tags_instructions: Označi ovu raspravu.
+      tags_label: Teme
     show:
       author: Autor
   form:
