@@ -1,1 +1,24 @@
 bs:
+  mailers:
+    no_reply: "Ova poruka je poslana s email adrese koja ne prihvata odgovore."
+    comment:
+      hi: Pozdrav
+      new_comment_by_html: Novi komentar od <b>%{commenter}</b>
+      subject: Neko je dao komentar na vaš %{commentable}
+      title: Novi komentar
+    config:
+      manage_email_subscriptions: Kako bi prestali dobijati ove emailove, promijenite svoje postavke u
+    email_verification:
+      click_here_to_verify: ovaj link
+      instructions_2_html: Ovaj email će potvrditi vaš profil sa <b>%{document_type}%{document_number}</b>. Ako to nije vaše, nemojte kliknuti na prethodni link i zanemarite ovaj email.
+      instructions_html: Kako bi završili sa potvrdom vašeg korisničkog profila, morate kliknuti na %{verification_link}.
+      subject: Potvrdite vaš email
+      thanks: Hvala puno.
+      title: Potvrdite vaš profil ovim linkom
+    reply:
+      hi: Pozdrav
+      new_reply_by_html: Novi odgovor od <b>%{commenter}</b> na vaš komentar na
+      subject: Neko je odgovorio na vaš komentar
+      title: Novi odgovor na vaš komentar
+    unfeasible_spending_proposal:
+      hi: "Poštovani korisniče,"
