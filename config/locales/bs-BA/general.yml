@@ -447,6 +447,41 @@ bs:
     create_request:
       success: Zahtjev je uspješno poslan. Kontaktiraćemo vas što prije kako bi vas obavjestili o tome.
       archived: Prijedlog je arhiviran i za njega se ne mogu tražiti resursi.
+    progress:
+      title: Grafika
+      group_by_month: Mjesečno
+      group_by_week: Sedmično
+      group_by_date: Dnevno
+      progress: Kumulativni napredak
+      supports: Glasova podrške
+      success: Idealna situacija
+      new_action: Novo
+    index:
+      title: Izdanje
+      edit_proposal_link: Edituj prijedlog
+      publish: Objavi prijedlog
+      retire: Povuci prijedlog
+    new_request:
+      links: Linkovi
+    resources:
+      available_resources: Dostupni resursi
+    resource:
+      required_days: "Broj potrebnih dana: %{days}"
+      required_supports: "Broj potrebnih glasova podrške: %{supports}"
+      and: i
+      view_resource: Vidi resurs
+      resource_requested: Resurs već zatražen
+      request_resource: Traži resurs
+      resource_locked: Resurs zaključan
+    recommended_actions:
+      title: Preporučene radnje
+      goto_proposed_actions: Idi na preporučene radnje
+      see_proposed_actions: Vidi preporučene radnje
+      hide_proposed_actions: Sakrij preporučene radnje
+      pending_title: U toku
+      show_description: Pokaži opis
+      without_pending_actions: Nema preporučenih radnji u toku
+      done_title: Gotovo
     polls:
       edit:
         submit: Ažuriraj podatke za glasačku anketu
