@@ -101,6 +101,45 @@ hr:
       debate_title: Naslov rasprave
       tags_instructions: Označi ovu raspravu.
       tags_label: Teme
+      tags_placeholder: "Unesi oznake koje želite koristite, odvojene zarezima (',')"
+    index:
+      featured_debates: Istaknuto
+      filter_topic:
+        one: " s temom '%{topic}'"
+        few: " s temama '%{topic}'"
+        other: " s temama '%{topic}'"
+      orders:
+        confidence_score: najviše ocijenjen
+        created_at: najnoviji
+        hot_score: najaktivniji
+        most_commented: najviše komentiran
+        relevance: važnost
+        recommendations: preporuke
+      recommendations:
+        without_results: Ne postoje rasprave povezane s vašim interesima
+        without_interests: Slijedite prijedloge kako bismo vam dali preporuke
+        disable: "Preporuke rasprave će zaustaviti prikazivanje istih ako ih odbacite. Vi ih možete ponovno omogućiti na dijelu stranice 'Moj račun'"
+        actions:
+          success: "Preporuke za rapsrave su sada uklonjene za ovaj račun"
+          error: "Greška se pojavila. Molimo vas idite na stranicu 'Moj račun' kako biste uklonili preporuke za rasprave"
+      search_form:
+        button: Pretraga
+        placeholder: Pretraži rasprave...
+        title: Pretraga
+      search_results_html:
+        one: " sadrži termin <strong>'%{search_term}'</strong>"
+        few: " sadrži termine <strong>'%{search_term}'</strong>"
+        other: " sadrži termine <strong>'%{search_term}'</strong>"
+      select_order: Naruči po
+      start_debate: Započni raspravu
+      title: Rasprave
+      section_header:
+        icon_alt: Ikona rasprave
+        title: Rasprave
+        help: Pomoć oko rasprava
+      section_footer:
+        title: Pomoć oko rasprava
+        description: Započnite raspravu kako biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
     show:
       author: Autor
   form:
