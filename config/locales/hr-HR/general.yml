@@ -11,7 +11,18 @@ hr:
       organization_responsible_name_placeholder: Predstavnik organizacije/kolektiva
       personal: Osobni detalji
       phone_number_label: Broj telefona
-      public_activity_label: Drži popis mojih aktivnosti javnim
+      public_activity_label: Zadrži popis mojih aktivnosti javnim
+      public_interests_label: Zadrži oznake elemenata koje pratim javnim
+      public_interests_my_title_list: Oznake elemenate koje pratite
+      public_interests_user_title_list: Oznake elemenata koje ovaj korisnik prati
+      save_changes_submit: Spremi promjene
+      subscription_to_website_newsletter_label: Primi email s poveznicom stranice s važnim informacijama
+      email_on_direct_message_label: Primi email o direktnim porukama
+      email_digest_label: Primi sažetak obavijesti o prijedlogu
+      official_position_badge_label: Prikaži službenu značku položaja
+      recommendations: Preporuke
+      show_debates_recommendations: Prikaži preporuke za rasprave
+      show_proposals_recommendations: Prikaži preporuke za prijedloge
       user_permission_support_proposal: Podupri prijedlog
   comments:
     comment:
