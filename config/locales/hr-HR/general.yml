@@ -458,10 +458,50 @@ hr:
         other: "%{count} glasove"
       supports_necessary: "%{number} potpora je potrebno"
       total_percent: 100%
+      archived: "Ovaj je prijedlog arhiviran i ne može više prikupljati podršku."
+      successful: "Prijedlog je dobio dovoljno potpore."
     show:
+      author_deleted: Kirisnik obrisan
+      code: "Kod prijedloga:"
+      comments:
+        zero: Bez komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
+      comments_tab: Komentari
+      dashboard_proposal_link: Kontrolna ploča
+      flag: Prijedlog je označen kao neprimjerena od strane više korisnika.
+      login_to_comment: Vi morate %{signin} ili %{signup} kako biste ostavili komentar.
+      notifications_tab: Obavijesti
       milestones_tab: Ključni ciljevi
+      retired_warning: "Autor smatra da ovaj prijedlog ne bi trebao dobiti više podrške."
+      retired_warning_link_to_explanation: Pročitaj objašnjenje prije glasanja.
+      retired: Prijedlog je povučen od strane autora
+      share: Podjeli
+      no_notifications: "Ovaj prijedlog nema obavijesti."
+      embed_video_title: "Video je na %{proposal}"
+      title_external_url: "Dodatna dokumentacija"
+      title_video_url: "Vanjski video"
       author: Autor
+      draft: Prijedlog je u draft verziji. Nemožete više dobiti potporu, niti se pojavljuje u listi prijedloga.
+    update:
+      form:
+        submit_button: Spremi promjene
   dashboard:
+    menu:
+      my_proposal: Uredi moj prijedlog
+      progress: Napredak
+      resources: Resursi
+      community: Zajednica
+      polls: Ankete
+      mailing: Email
+      poster: Poster
+      recommended_actions: Preporučeno djelovanje
+    form:
+      request: Zahtjev
+    create_request:
+      success: Zahtjev je uspješno poslan. Mi ćemo vas kontatirati čim imamo više informacija.
+      archived: Ovaj prijedlog je arhiviran i više ne može tražiti resurse.
     progress:
       supports: Potpora
     resource:
