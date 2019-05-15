@@ -748,3 +748,46 @@ bs:
       see_all_debates: Vidi sve debate
       see_all_proposals: Vidi sve prijedloge
       see_all_processes: Vidi sve procese
+      process_label: Proces
+      see_process: Vidi proces
+    cards:
+      title: Glavno
+    recommended:
+      title: Preporuke koje bi vas mogle zanimati
+      help: "Ove preporuke su nastale na osnovu tagova za debate i prijedloge koje pratite."
+      debates:
+        title: Preporučene debate
+        btn_text_link: Sve preporučene debate
+      proposals:
+        title: Preporučeni prijedlozi
+        btn_text_link: Svi preporučeni prijedlozi
+      budget_investments:
+        title: Preporučene investicije
+      slide: "Vidi %{title}"
+    verification:
+      i_dont_have_an_account: Nemam profil
+      i_have_an_account: Imam profil
+      question: Imate profil u %{org_name}?
+      title: Potvrda profila
+    welcome:
+      go_to_index: Ne sada, idi na indeksnu stranicu
+      start_using_consul: Idi na indeksnu stranicu
+      title: Učestvuj
+      user_permission_debates: Učestvuj u debatama
+      user_permission_info: Sa svojim profilom, možeš...
+      user_permission_proposal: Formulisati nove prijedloge
+      user_permission_support_proposal: Iskazati podršku za prijedloge*
+      user_permission_verify: "Potvrdi svoj profil za obavljanje sljedećih radnji."
+      user_permission_verify_info: "* Samo za korisnike Census-a."
+      user_permission_verify_my_account: Potvrdi moj profil
+      user_permission_votes: Učestvuj u finalnom glasanju
+  invisible_captcha:
+    sentence_for_humans: "Ako ste ljudsko biće, zanemarite ovo polje"
+    timestamp_error_message: "To je bilo prebrzo! Podnesi ponovo."
+  related_content:
+    title: "Vezani sadržaj"
+    add: "Dodaj vezani sadržaj"
+    label: "Link za vezani sadržaj"
+    placeholder: "%{url}"
+    help: "Možete dodati linkove za %{models} u %{org}."
+    submit: "Dodaj"
