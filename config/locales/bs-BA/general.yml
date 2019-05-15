@@ -482,7 +482,30 @@ bs:
       show_description: Pokaži opis
       without_pending_actions: Nema preporučenih radnji u toku
       done_title: Gotovo
+      without_done_actions: Nema urađenih preporučenih aktivnosti
+    next_goal:
+      title: Cilj
+      see_complete_course: Pogledaj cijelokupni tok
+      hide_course: Sakrij tok
+    goal:
+      locked_resource: Resurs zaključan
+      ideal_time: Idealni rok
+    community:
+      access_community: Pristupi grupi
+      latest_activity: "Najnovija aktivnost grupe: %{at}"
+      participants: Učesnici
+      debates: Debate
+      comments: Komentari
+      latest_comments: Najnovije poruke
     polls:
+      index:
+        title: Glasačke ankete
+        create: Formuliši glasačku anketu
+        links: Linkovi
+        additiontal_information: Dodatne informacije
+      new:
+        title: Nova glasačka anketa
+        submit: Formuliši glasačku anketu
       edit:
         submit: Ažuriraj podatke za glasačku anketu
       poll:
@@ -639,3 +662,10 @@ bs:
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  spending_proposals:
+    form:
+      association_name_label: "Ako podnosite prijedlog u ime udruženja ili zajednice, navedite naziv ili ime ovdje"
