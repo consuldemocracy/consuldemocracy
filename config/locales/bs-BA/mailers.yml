@@ -64,3 +64,23 @@ bs:
       new_href: "novi investicioni projekat"
       sincerely: "S poštovanjem"
       sorry: "Žao nam je zbog neugodnosti i hvala još jednom na vašem dragocjenom učešću."
+      subject: "Vaš investicioni projekat %{code} je označen kao neizvodiv"
+    budget_investment_selected:
+      subject: "Vaš investicioni projekat %{code} je odabran"
+      hi: "Poštovani korisniče,"
+      share: "Krenite sa prikupljanjem glasova, podijelite svoj investicioni projekat na društvenim mrežama, što je od suštinske važnosti kako bi projekat postao stvarnost."
+      share_button: "Podijeli svoj investicioni projekat"
+      thanks: "Hvala još jednom na učešću."
+      sincerely: "S poštovanjem"
+    budget_investment_unselected:
+      subject: "Vaš investicioni projekat %{code} nije odabran"
+      hi: "Poštovani korisniče,"
+      thanks: "Hvala još jednom na učešću."
+      sincerely: "S poštovanjem"
+    new_actions_notification_rake_created:
+      subject: "Nove vijesti o vašem građanskom prijedlogu"
+      hi: "Pozdrav %{name},"
+      new_resource: "NOVI OTKLJUČANI RESURS"
+      introduction: "Kao što znate, na dan %{created_at_day}%{created_at_month} izradili ste nacrt prijedloga pod nazivom %{title}."
+      text_1: "Kad god želite, možete objaviti na ovom linku: %{link_to_published}. Ako još uvijek niste sigurni..."
+      text_2: "Iskoristite trenutak! Učite, dodajte ljude s istim interesima i pripremite teren za trenutak kada ćete definitivno objaviti svoj prijedlog."
