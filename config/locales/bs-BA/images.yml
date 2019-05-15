@@ -1,1 +1,8 @@
 bs:
+  images:
+    remove_image: Ukloni sliku
+    form:
+      title: Opisna slika
+      title_placeholder: Dodaj opisni naziv za sliku
+      attachment_label: Odaberi sliku
+      delete_button: Ukloni sliku
