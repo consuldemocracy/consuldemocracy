@@ -596,10 +596,32 @@ hr:
         title: Pregled postera
         poster_title: "Nemojte prestati tražiti,"
         poster_subtitle: "poduprite me! ;)"
+        intro_text_html: "<strong> Ja sudjelujem u %{org}</strong> s mojim građanskim prijedlogom i tražim vas ako možete dodati svoju potpuru kojom ću dobiti potrebnu potporu kako bi dobili grad kakav svi želimo."
+        proposal_code: "Šifra prijedloga: %{code}"
         support: Podupri moj prijedlog
+        footer_html: "<strong>Posjeti %{link} i potporu ovog projedloga. </strong> Treba nas puno. Odlučite se za svoj prijedlog. Hvala vam!"
+      new:
+        title: Poster tvog prijedloga
+      options:
+        preview: Pregled
+        download: Preuzimanje
+    mailing:
+      index:
+        title: Pregled emaila
+      new:
+        title: Email model dijeljenja
+      mailing_options:
+        send: Pošalji prema %{address}
+        preview: Pregled
+      create:
+        sent: Email je poslan
     mailer:
       forward:
+        subtitle_html: "Ukoliko me podupirete, <br> mi ćemo uspjeti."
         support_button: Podupri ovaj prijedlog
+        share_in: Podjeli u
+        hi: "Pozdrav!"
+        introduction: Pišem vam kako biste znali da sudjelujem u %{org}, platforma pomoću koje možete odlučiti kako će vaš grad izgledati. Za to sam stvorio svoj građanski prijedlog i sada ću trebati vašu potporu! Ali nemojte se brinuti jer je to veoma jednostavno.
   polls:
     show:
       stats:
