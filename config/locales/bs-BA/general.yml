@@ -677,6 +677,17 @@ bs:
       proposal:
         create:
           notice_html: "Sada pratite ovaj prijedlog! </br> Odmah ćemo vas obavijestiti o promjenama kako bi bili u toku."
+        destroy:
+          notice_html: "Prestali ste pratiti ovaj prijedlog! </br> Više nećete dobijati obavijesti u vezi projekta."
+    hide: Sakrij
+    print:
+      print_button: Printaj
+    search: Traži
+    show: Pokaži
+    suggest:
+      debate:
+        message: "Vidite (ograničeni) %{limit} (broj) %{count} debata koje sadrže pojam %{query}"
+        see_all: "Vidi sve"
     tags_cloud:
       categories: "Kategorije"
     target_blank_html: " (link se otvara u novom prozoru)"
