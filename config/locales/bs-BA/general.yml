@@ -688,7 +688,20 @@ bs:
       debate:
         message: "Vidite (ograničeni) %{limit} (broj) %{count} debata koje sadrže pojam %{query}"
         see_all: "Vidi sve"
+      budget_investment:
+        found:
+          one: "Već postoji investicija koja sadrži pojam %{query}, možete učestvovati u njoj umjesto pokretanja nove debate."
+          few: "Već postoji investicije koje sadrže pojam %{query}, možete učestvovati u njima umjesto pokretanja nove."
+          other: "Već postoji investicije koje sadrže pojam %{query}, možete učestvovati u njima umjesto pokretanja nove."
+        message: "Vidite (ograničeni) %{limit} (broj) %{count} investicija koje sadrže pojam %{query}"
+        see_all: "Vidi sve"
+      proposal:
+        message: "Vidite (ograničeni) %{limit} (broj) %{count} prijedloga koji sadrže pojam %{query}"
+        see_all: "Vidi sve"
     tags_cloud:
+      tags: Popularno
+      districts: "Područja"
+      districts_list: "Lista područja"
       categories: "Kategorije"
     target_blank_html: " (link se otvara u novom prozoru)"
     you_are_in: "Vi ste u"
@@ -843,3 +856,30 @@ bs:
     placeholder: "%{url}"
     help: "Možete dodati linkove za %{models} u %{org}."
     submit: "Dodaj"
+    error: "Link nije ispravan. Krenite sa %{url}."
+    error_itself: "Link nije ispravan. Ne možete povezati sadržaj sa samim sobom."
+    success: "Dodali ste novi vezani sadržaj"
+    is_related: "Da li se radi o vezanom sadržaju?"
+    score_positive: "Da"
+    score_negative: "Ne"
+    content_title:
+      proposal: "Prijedlog"
+      debate: "Debata"
+      budget_investment: "Budžetska investicija"
+  admin/widget:
+    header:
+      title: Administracija
+  annotator:
+    help:
+      alt: Odaberite tekst na koji želite dati komentar i pritisnite dugme olovkom.
+      text: Kako bi dali komentar na ovaj dokument, morate se prijaviti %{sign_in} ili otvoriti profil %{sign_up}. Nakon toga, odaberite tekst na koji želite dati komentar i pritisnite dugme olovkom.
+      text_sign_in: login
+      text_sign_up: sign up
+      title: Kako mogu dati komentar na ovaj dokument?
+  links:
+    form:
+      delete_button: Obriši
+      cancel_button: Poništi
+    nested_links:
+      title: Linkovi
+      note: Dodaj relevantne linkove
