@@ -163,10 +163,47 @@ hr:
         other: "%{count} komentare"
       comments_title: Kometari
       edit_debate_link: Uredi
+      flag: Rasprava je označena kao neprimjerena od strane više korisnika.
+      login_to_comment: Vi morate %{signin} ili %{signup} kako biste ostavili komentar.
+      share: Dijeli
       author: Autor
+    update:
+      form:
+        submit_button: Spremi promjene
+  errors:
+    messages:
+      user_not_found: Korisnik nije pronađen
+      invalid_date_range: "Nevažeč raspon podataka"
   form:
+    accept_terms: Slažem se s %{policy} i %{conditions}
+    accept_terms_title: Slažem se s Politikom Privatnosti i Uvjetima korištenja
+    conditions: Odredbe i uvjeti korištenja
+    debate: Rasprave
+    direct_message: privatna poruka
+    error: pogreška
+    errors: pogreške
+    not_saved_html: "spriječio ovaj %{resource} od spremanja. <br>Molimo provjerite označena polja kako biste znali kako ih ispraviti:"
+    policy: Politika Privatnosti
+    proposal: Prijedlog
+    proposal_notification: "Obavijest"
+    spending_proposal: Prijedlog za trošenje
+    budget/investment: Investicija
     budget/group: Grupa za budžet
+    budget/heading: Naslov Budžeta
+    poll/shift: Izmjeni
+    poll/question/answer: Odgovor
+    user: Račun
+    verification/sms: telefon
+    signature_sheet: List za potpis
+    document: Dokument
+    topic: Tema
+    image: Slika
+  geozones:
+    none: Svi gradovi
+    all: Svi ciljevi
   layouts:
+    application:
+      chrome: Google Chrome
     dashboard:
       proposal_totals:
         supports:
