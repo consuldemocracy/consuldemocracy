@@ -61,3 +61,6 @@ bs:
     budget_investment_unfeasible:
       hi: "Poštovani korisniče,"
       new_html: "Za sve ovo, pozivamo vas da razradite <strong> novu investiciju </strong>, prilagođenu uvjetima u ovom procesu. To možete uraditi preko ovog linka: %{url}."
+      new_href: "novi investicioni projekat"
+      sincerely: "S poštovanjem"
+      sorry: "Žao nam je zbog neugodnosti i hvala još jednom na vašem dragocjenom učešću."
