@@ -792,6 +792,39 @@ bs:
       unverified_users: Nepotvrđeni korisnici
   unauthorized:
     default: Nemate dozvolu da pristupite ovoj stranici.
+    manage:
+      all: "Nemate dozvolu da poduzmete radnju %{action} na %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Poruka
+        direct_messages_bloqued: "Korisnik je odabrao da ne prima direktne poruke"
+        submit_button: Pošalji poruku
+        title: Pošalji privatnu poruku %{receiver}
+        title_label: Naziv
+        verified_only: (Potvrdi profil) %{verify_account} kako bi poslao/la privatnu poruku
+        verify_account: potvrdi svoj profil
+        authenticate: Morate se prijaviti %{signin} ili otvoriti profil %{signup} kako bi nastavili.
+        signin: sign in
+        signup: sign up
+      show:
+        receiver: Poruka poslana %{receiver}
+    show:
+      deleted: Obrisano
+      deleted_debate: Ova debata je obrisana
+      deleted_proposal: Ovaj prijedlog je obrisan
+      deleted_budget_investment: Investicioni projekat je obrisan
+      proposals: Prijedlozi
+      proposals_status: Status
+      debates: Debate
+      budget_investments: Budžetske investicije
+      comments: Komentari
+      actions: Radnje
+      filters:
+        comments:
+          one: 1 komentar
+          few: "%{count} komentara"
+          other: "%{count} komentara"
   votes:
     spending_proposals:
       not_verified: Samo korisnici sa potvrđenim profilom mogu glasati za prijedloge; %{verify_account}.
@@ -883,3 +916,17 @@ bs:
     nested_links:
       title: Linkovi
       note: Dodaj relevantne linkove
+      add_new_link: Dodaj novi link
+    link_fields:
+      label_placeholder: Link za naziv
+      url_placeholder: Link za adresu
+  communities:
+    show:
+      send_notification: Pošalji poruku grupi
+      author: Autor
+      surveys: Ankete
+      complete_survey: Učestvuj u anketi
+    subnav:
+      surveys: Ankete
+    poll:
+      take_part: Učestvuj od %{from} do %{to}
