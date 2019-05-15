@@ -30,3 +30,10 @@ bs:
     proposal_notification_digest:
       info: "Ovo su nove obavijesti autora prijedloga koje ste podržali u %{org_name}."
       title: "Obavijesti o prijedlozima u %{org_name}"
+      share: Podijeli prijedlog
+      comment: Prijedlog komentara
+      unsubscribe: "Ako ne želite obavijesti o prijedlogu, idite na %{account} i odznačite \"Šaljite mi sažetke obavijesti o prijedlozima\"."
+      unsubscribe_account: Moj profil
+    direct_message_for_receiver:
+      subject: "Dobili ste novu privatnu poruku"
+      reply: Odgovori %{sender}
