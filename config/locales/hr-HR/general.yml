@@ -503,11 +503,99 @@ hr:
       success: Zahtjev je uspješno poslan. Mi ćemo vas kontatirati čim imamo više informacija.
       archived: Ovaj prijedlog je arhiviran i više ne može tražiti resurse.
     progress:
+      title: Grafički
+      group_by_month: Mjesečno
+      group_by_week: Tjedno
+      group_by_date: Dnevno
+      progress: Akumulirani napredak
       supports: Potpora
+      success: Idealni napredak
+      new_action: Novi
+    index:
+      title: Izdanje
+      edit_proposal_link: Uredi prijedlog
+      publish: Objavi prijedlog
+      retire: Povuci prijedlog
+    new_request:
+      links: Poveznice
+    resources:
+      available_resources: Dostupni resursi
     resource:
+      required_days: "%{days} dana potrebnih"
       required_supports: "%{supports} potpora je potrebno"
+      and: i
+      view_resource: Vidi resurs
+      resource_requested: Resurs je već netko zahtjevao
+      request_resource: Zatraži resurs
+      resource_locked: Resurs je zaključan
+    recommended_actions:
+      title: Preporučeno djelovanje
+      goto_proposed_actions: Idi na preporučeno djelovanje
+      see_proposed_actions: Pogledaj preporučeno djelovanje
+      hide_proposed_actions: Sakrij preporučeno djelovanje
+      pending_title: U tijeku
+      show_description: Prikaži opis
+      without_pending_actions: Nema predloženih djelovanja na čekanju
+      done_title: Gotovo
+      without_done_actions: Nema preporučenih gotovih djelovanja
+    next_goal:
+      title: Cilj
+      see_complete_course: Pogldaj kompletni kurs
+      hide_course: Sakrij kurseve
+    goal:
+      target_supports:
+        one: Dobij %{count} potporu za svoj prijedlog
+        few: Dobij %{count} potpore za svoj prijedlog
+        other: Dobij %{count} potpore za svoj prijedlog
+      days:
+        one: "%{count} dan"
+        few: "%{count} dana"
+        other: "%{count} dana"
+      locked_resource: Resurs je zaključan
+      ideal_time: Idealno vrijeme
+    community:
+      access_community: Pristupi zajednici
+      latest_activity: "Zadnje aktivnosti u zajednici: %{at}"
+      participants: Sudionici
+      debates: Rasprave
+      comments: Komentari
+      latest_comments: Posljednje poruke
+    polls:
+      index:
+        title: Ankete
+        create: Stvori anketu
+        count:
+          one: Stvorili ste %{count} aketu.
+          few: Stvorili ste %{count} akete.
+          other: Stvorili ste %{count} akete.
+        links: Poveznice
+        additiontal_information: Dodatne informacije
+      new:
+        title: Nova anketa
+        submit: Stvori anketu
+      edit:
+        submit: Ažuriraj anketu
+      poll:
+        responses:
+          one: "%{count} odgovor"
+          few: "%{count} odgovore"
+          other: "%{count} odgovore"
+        view_results: Pregledaj rezultate
+        edit_poll: Uredi pregled
+        show_results: Prikaži rezultate
+        show_results_help: Ako označite taj okvir, rezultati će biti javni i svi će ih korisnici moći vidjeti
+      form:
+        add_question: Dodaj pitanje
+      question_fields:
+        remove_question: Ukloni pitanje
+        add_answer: Dodaj odgovor
+      question_answer_fields:
+        remove_answer: Ukloni odgovor
     poster:
       index:
+        title: Pregled postera
+        poster_title: "Nemojte prestati tražiti,"
+        poster_subtitle: "poduprite me! ;)"
         support: Podupri moj prijedlog
     mailer:
       forward:
