@@ -697,3 +697,15 @@ bs:
     new:
       more_info: Kako funkcioniše participativno budžetiranje?
       recommendation_one: Prijedlog se obavezno odnosi na mjeru koju je moguće budžetirati.
+      recommendation_three: Budite što detaljniji u opisu svog prijedloga troškova, kako bi tim za selekciju shvatio svrhu vašeg prijedloga.
+      recommendation_two: Svaki prijedlog ili komentar koji implicira nezakonite radnje se briše.
+      recommendations_title: Kako napraviti prijedlog troškova
+      start_new: Napravi prijedlog troškova
+    show:
+      author_deleted: Korisnik obrisan
+      code: "Šifra prijedloga:"
+      share: Podijeli
+    wrong_price_format: Samo cijeli brojevi
+    spending_proposal:
+      spending_proposal: Investicioni projekat
+      already_supported: Već ste podržali ovaj prijedlog. Podijelite ga!
