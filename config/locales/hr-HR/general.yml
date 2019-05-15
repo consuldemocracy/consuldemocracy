@@ -386,7 +386,14 @@ hr:
       recommendations:
         without_results: Nema prijedloga povezanih s vašim interesima
         without_interests: Slijedite prijedloge kako bismo vam dali preporuke
-      retired_proposals_link: "Prijedlozi stvoreni od strane autora"
+        disable: "Preporuke za prijedloge će zaustaviti prikazivanje istih ako ih odbacite. Vi ih možete ponovno omogućiti na dijelu stranice 'Moj račun'"
+        actions:
+          success: "Preporuke za prijedloge su sada uklonjene za ovaj račun"
+          error: "Greška se pojavila. Molimo vas idite na stranicu 'Moj račun' kako biste uklonili preporuke za prijedloge"
+      retired_proposals: Prijedlozi koji su povučeni
+      retired_proposals_link: "Prijedlozi su povučeni od strane autora"
+      retired_links:
+        all: Svi
     proposal:
       support: Potpora
       support_title: Podupri ovaj prijedlog
