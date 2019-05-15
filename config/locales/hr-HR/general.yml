@@ -1,6 +1,17 @@
 hr:
   account:
     show:
+      change_credentials_link: Izmjeni moje kreditacije
+      email_on_comment_label: Obavijesti me putem emaila kada netko komentira moj prijedlog ili raspravu
+      email_on_comment_reply_label: Obavijesti me putem emaila kada netko odgovori na moj komentar
+      erase_account_link: Obriši moj račun
+      finish_verification: Završena potvrda
+      notifications: Obavijesti
+      organization_name_label: Ime organizacije
+      organization_responsible_name_placeholder: Predstavnik organizacije/kolektiva
+      personal: Osobni detalji
+      phone_number_label: Broj telefona
+      public_activity_label: Drži popis mojih aktivnosti javnim
       user_permission_support_proposal: Podupri prijedlog
   comments:
     comment:
