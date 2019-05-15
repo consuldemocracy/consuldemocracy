@@ -669,3 +669,31 @@ bs:
   spending_proposals:
     form:
       association_name_label: "Ako podnosite prijedlog u ime udruženja ili zajednice, navedite naziv ili ime ovdje"
+      association_name: "Naziv udruženja"
+      description: Opis
+      external_url: Link za dodatnu dokumentaciju
+      geozone: Područje
+      submit_buttons:
+        create: Kreiraj
+        new: Kreiraj
+      title: Naziv prijedloga troškova
+    index:
+      title: Participativno budžetiranje
+      unfeasible: Neizvodivi investicioni projekti
+      by_geozone: "Investicioni projekti u područjima: %{geozone}"
+      search_form:
+        button: Traži
+        placeholder: Investicioni projekti...
+        title: Traži
+      search_results:
+        one: " sadrži pojam %{search_term}"
+        few: " sadrži pojam %{search_term}"
+        other: " sadrži pojam %{search_term}"
+      sidebar:
+        geozones: Područje
+        feasibility: Izvodivost
+        unfeasible: Nije izvodivo
+      start_spending_proposal: Kreiraj investicioni projekat
+    new:
+      more_info: Kako funkcioniše participativno budžetiranje?
+      recommendation_one: Prijedlog se obavezno odnosi na mjeru koju je moguće budžetirati.
