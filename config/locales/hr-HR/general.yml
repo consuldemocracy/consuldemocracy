@@ -140,7 +140,29 @@ hr:
       section_footer:
         title: Pomoć oko rasprava
         description: Započnite raspravu kako biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
+        help_text_1: "Prostor za građanske rasprave usmjeren je na svakoga tko može otkriti pitanja koja ih zanimaju i one koji žele podijeliti mišljenja s drugim ljudima."
+        help_text_2: 'Kako bi otvorili raspravu morate se pijraviti na %{org}. Korisnici također komentiraju otvorene rasprave i ocijenjuju ih s "Slažem se" ili "Ne slažem se" gumbima koji se nalaze na svakoj od njih.'
+    new:
+      form:
+        submit_button: Započni raspravu
+      info: Ako želite napraviti prijedlog, onda je ova kriva sekcija, unesite %{info_link}.
+      info_link: stvorite novi prijedlog
+      more_info: Više informacija
+      recommendation_four: Uživajte na ovom mjestu vaš glas će se također popuniti.
+      recommendation_one: Ne koristite velika početna slova za naslove rasprave ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
+      recommendation_three: Iskreni kriticizam je dobrodošao. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
+      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za rasprave. Sve ostalo je dozvoljeno.
+      recommendations_title: Preporuke za stvaranje rasprave
+      start_new: Započni raspravu
     show:
+      author_deleted: Korisnik obrisan
+      comments:
+        zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentare"
+        other: "%{count} komentare"
+      comments_title: Kometari
+      edit_debate_link: Uredi
       author: Autor
   form:
     budget/group: Grupa za budžet
