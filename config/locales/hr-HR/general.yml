@@ -204,10 +204,81 @@ hr:
   layouts:
     application:
       chrome: Google Chrome
+      firefox: Firefox
+      ie: Primjetili smo da koristite preglednik Internet Explorer. Za poboljšano iskustvo preporučujemo korištenje %{firefox} ili %{chrome}.
+      ie_title: Webstranica nije optimizirana za vaš preglednik
     dashboard:
+      proposal_header:
+        published: Objavljeno
+        draft: Draft
+        retired: Povućeno
       proposal_totals:
+        active_resources: Aktivni resursi
+        community: Sudionici u vašoj zajednici
+        show_proposal: Prikaži prijedlog
+        preview_proposal: Pregledaj prijedlog
+        current_goal: Trenutni cilj
         supports:
           zero: Nema potpore
+          one: 1 Potpora
+          few: "Potpore"
+          other: "Potpore"
+    footer:
+      accessibility: Pristupačnost
+      conditions: Odredbe i uvjeti korištenja
+      consul: CONSUL aplikacija
+      consul_url: https://github.com/consul/consul
+      contact_us: Za tehničku podršku posjetite
+      copyright: CONSUL, %{year}
+      description: Ovaj portal koristi %{consul} koji je %{open_source}.
+      open_source: open-source softver
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Odlučite kako ćete oblikovati grad u kojem živite.
+      participation_title: Sudjelovanje
+      privacy: Politika Privatnosti
+    header:
+      administration_menu: Administrator
+      administration: Administracija
+      available_locales: Dostupni jezici
+      collaborative_legislation: Kolaborativna legislativa
+      debates: Rasprave
+      locale: "Jezik:"
+      logo: CONSUL logo
+      management: Menadžment
+      moderation: Uređivanje
+      valuation: Procjena
+      officing: Službenici za bilježenje glasova
+      help: Pomoć
+      my_account_link: Moj račun
+      my_activity_link: Moje aktivnosti
+      open: otvoren
+      open_gov: Otvorena vlada
+      proposals: Prijedlozi
+      poll_questions: Glasanje
+      budgets: Participativno budžetiranje
+      spending_proposals: Prijedlozi Potrošnje
+      notification_item:
+        new_notifications:
+          one: Imate novu obavijest
+          few: Vi imate %{count} nove obavijesti
+          other: Vi imate %{count} nove obavijesti
+        notifications: Obavijesti
+        no_notifications: "Nemate novu obavijest"
+    admin:
+      watch_form_message: "Imate promjene koje niste spremili. Želite li izaći iz stranice?"
+  notifications:
+    index:
+      empty_notifications: Nemate nove obavijesti.
+      mark_all_as_read: Označi sve kao pročitano
+      read: Čitati
+      title: Obavijesti
+      unread: Nije još pročitano
+    notification:
+      action:
+        comments_on:
+          one: Netko je komentirao na
+          few: Postoje %{count} komentari na
+          other: Postoje %{count} komentari na
   proposals:
     index:
       retired_proposals_link: "Prijedlozi stvoreni od strane autora"
