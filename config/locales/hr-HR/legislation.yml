@@ -126,3 +126,4 @@ hr:
     proposals:
       form:
         tags_label: "Kategorije"
+      not_verified: "Za izglasavanje prijedloga %{verify_account}."
