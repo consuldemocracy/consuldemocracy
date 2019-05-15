@@ -825,8 +825,48 @@ bs:
           one: 1 komentar
           few: "%{count} komentara"
           other: "%{count} komentara"
+        debates:
+          one: 1 debata
+          few: "%{count} debata"
+          other: "%{count} debata"
+        proposals:
+          one: 1 prijedlog
+          few: "%{count} prijedloga"
+          other: "%{count} prijedloga"
+        budget_investments:
+          one: 1 investicija
+          few: "%{count} investicija"
+          other: "%{count} investicija"
+        follows:
+          one: 'Prati: 1'
+          few: "Prati: %{count}"
+          other: "Prati: %{count}"
+      no_activity: Korisnik nema javnih aktivnosti
+      no_private_messages: "Korisnik ne prihvata privatne poruke."
+      private_activity: Korisnik je odlučio da drži listu aktivnosti zatvorenom.
+      send_private_message: "Pošalji privatnu poruku"
+      delete_alert: "Sigurni ste da želite obrisati svoj investicioni projekat? Ova radnja se ne može poništiti"
+    proposals:
+      retired: "Povučeni prijedlog"
+      draft: Nacrt
+      published: Objavljeno
+      see: "Vidi prijedlog"
+      actions: Radnje
+      retired_help_text: Kontrolna ploča nije dostupna za povučene prijedloge
   votes:
+    agree: Slažem se
+    anonymous: Previše anonimnih glasova da bi se priznalo glasanje (potvrdi profil) %{verify_account}.
+    comment_unauthenticated: Morate se prijaviti %{signin} ili otvoriti profil %{signup} da bi glasali.
+    disagree: Ne slažem se
+    organizations: Organizacije ne mogu glasati
+    signin: Prijavi se
+    signup: Otvori profil
+    supports: Glasova podrške
+    unauthenticated: Morate se prijaviti %{signin} ili otvoriti profil %{signup} kako bi nastavili.
+    verified_only: Samo korisnici sa potvrđenim profilom mogu glasati za prijedloge; %{verify_account}.
+    verify_account: potvrdi svoj profil
     spending_proposals:
+      not_logged_in: Morate se prijaviti %{signin} ili otvoriti profil %{signup} kako bi nastavili.
       not_verified: Samo korisnici sa potvrđenim profilom mogu glasati za prijedloge; %{verify_account}.
       organization: Organizacije ne mogu glasati
       unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
