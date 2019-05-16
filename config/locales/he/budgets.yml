@@ -201,3 +201,10 @@ he:
         dates_range_invalid: "תאריך ההתחלה לא יכול להיות שווה או מאוחר מתאריך סיום"
         prev_phase_dates_invalid: "תאריך ההתחלה צריך להיות מאוחר יותר מתאריך ההתחלה של השלב הקודם זמין (%{phase_name})"
         next_phase_dates_invalid: "תאריך סיום חייב להיות מוקדם יותר מתאריך הסיום של השלב הבא הפעיל (%{phase_name})"
+    stats:
+      title: נתוני השתתפות
+      link: סטטיסטיקה
+      page_title: "%{budget} - נתוני השתתפות"
+      total_participants: סה"כ משתתפים
+      total_budget_investments: סה"כ תקציבי השתתפות
+      total_selected_investments: הצעות בשלב הסופי
