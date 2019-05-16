@@ -652,6 +652,7 @@ hr:
         description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke
       no_polls: "Ne postoji otvoreno izglasavanje."
     show:
+      already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       stats:
         votes: "GLASOVI"
       results:
