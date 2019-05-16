@@ -1235,9 +1235,7 @@ sq:
           verified_users_who_didnt_vote_proposals: Përdoruesit e verifikuar që nuk votuan propozime
           visits: Vizitat
           votes: Totali i votimeve
-        spending_proposals_title: Propozimet e shpenzimeve
         budgets_title: Buxhetet  pjesëmarrës
-        visits_title: Vizitat
         direct_messages: Mesazhe direkte
         proposal_notifications: Notifikimi i propozimeve
         incomplete_verifications: Verifikime jo të plota
