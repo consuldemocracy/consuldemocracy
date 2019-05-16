@@ -32,6 +32,9 @@
         <%= link_to t("budgets.results.link"), budget_results_path(@budget), class: "is-active" %>
       </li>
       <li class="tabs-title">
+        <%= link_to t("budgets.stats.link"), budget_stats_path(@budget) %>
+      </li>
+      <li class="tabs-title">
         <%= link_to t("budgets.executions.link"), budget_executions_path(@budget) %>
       </li>
     </ul>
@@ -43,10 +46,8 @@
     <h3 class="margin-bottom">
       <%= t("budgets.results.heading_selection_title") %>
     </h3>
-    <ul class="menu vertical no-margin-top no-padding-top">
-
-
-      <% @budget.headings.order("id ASC").each do |heading| %>
+    <ul id="headings" class="menu vertical no-margin-top no-padding-top">
+      <% @headings.each do |heading| %>
         <li>
           <%= link_to heading.name,
                       budget_results_path(@budget, heading_id: heading.to_param),
