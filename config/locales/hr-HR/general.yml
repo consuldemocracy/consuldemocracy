@@ -653,8 +653,34 @@ hr:
       no_polls: "Ne postoji otvoreno izglasavanje."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
+      already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan preko."
+      back: Nazad na glasanje
+      cant_answer_not_logged_in: "Vi morate %{signin} ili %{signup} kako biste sudjelovali."
+      comments_tab: Komentari
+      login_to_comment: Vi morate %{signin} ili %{signup} kako biste ostavili komentar.
+      signin: Ulogirajte se
+      signup: Prijavite se
+      cant_answer_verify_html: "Vi morate %{verify_link} kako biste odgovorili."
+      verify_link: "potvrdi svoj račun"
+      cant_answer_expired: "Ova anketa je završila."
+      cant_answer_wrong_geozone: "Ovo pitanje nije dostupno za vašu geozonu."
+      more_info_title: "Više informacija"
+      documents: Dokumenti
+      zoom_plus: Proširi sliku
+      read_more: "Pročitaj više o %{answer}"
+      read_less: "Pročitaj manje o %{answer}"
+      videos: "Vanjski video"
+      info_menu: "Informacija"
+      stats_menu: "Statistike sudjelovanja"
+      results_menu: "Rezultati aknete"
       stats:
+        title: "Podaci o sudjelovanju"
+        total_participation: "Ukupno sudjelovanja"
+        total_votes: "Ukupna količina datih glasova"
         votes: "GLASOVI"
+        web: "WEB"
+        booth: "GLASAČKA KABINA"
+        total: "UKUPNO"
       results:
         most_voted_answer: "Najviše izglasan odgovor: "
   poll_questions:
