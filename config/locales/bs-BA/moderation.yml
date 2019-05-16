@@ -65,3 +65,53 @@ bs:
         hide_proposals: Sakrij prijedloge
         ignore_flags: Označi kao pogledano
         order: Poredaj po
+        orders:
+          created_at: Najnovije
+          flags: Najviše puta označeni
+        title: Prijedlozi
+    budget_investments:
+      index:
+        block_authors: Blokiraj autore
+        confirm: Jeste sigurni?
+        filter: Filter (suzi pretragu)
+        filters:
+          all: Sve
+          pending_flag_review: U toku
+          with_ignored_flag: Označeno kao pogledano
+        headers:
+          moderate: Moderiraj
+          budget_investment: Budžetska investicija
+        hide_budget_investments: Sakrij budžetske investicije
+        ignore_flags: Označi kao pogledano
+        order: Poredaj po
+        orders:
+          created_at: Najnovije
+          flags: Najviše puta označene
+        title: Budžetske investicije
+    proposal_notifications:
+      index:
+        block_authors: Blokiraj autore
+        confirm: Jeste sigurni?
+        filter: Filter (suzi pretragu)
+        filters:
+          all: Sve
+          pending_review: Pregled u toku
+          ignored: Označi kao pogledano
+        headers:
+          moderate: Moderiraj
+          proposal_notification: Obavijesti o prijedlogu
+        hide_proposal_notifications: Sakrij prijedloge
+        ignore_flags: Označi kao pogledano
+        order: Poredaj po
+        orders:
+          created_at: Najnovije
+          moderated: Moderirane
+        title: Obavijesti o prijedlogu
+    users:
+      index:
+        hidden: Blokirani
+        hide: Blokiraj
+        search: Traži
+        search_placeholder: email ili ime korisnika
+        title: Blokiraj korisnike
+      notice_hide: Korisnik blokiran. Sve njegove debate i komentari su sakriveni.
