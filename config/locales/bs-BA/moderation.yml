@@ -1,1 +1,67 @@
 bs:
+  moderation:
+    comments:
+      index:
+        block_authors: Blokiraj autore
+        confirm: Jeste sigurni?
+        filter: Filter (suzi pretragu)
+        filters:
+          all: Sve
+          pending_flag_review: U toku
+          with_ignored_flag: Označeno kao pogledano
+        headers:
+          comment: Komentariši
+          moderate: Moderiraj
+        hide_comments: Sakrij komentare
+        ignore_flags: Označi kao pogledano
+        order: Redoslijed
+        orders:
+          flags: Najviše puta označeni
+          newest: Najnoviji
+        title: Komentari
+    dashboard:
+      index:
+        title: Moderiranje
+    debates:
+      index:
+        block_authors: Blokiraj autore
+        confirm: Jeste sigurni?
+        filter: Filter (suzi pretragu)
+        filters:
+          all: Sve
+          pending_flag_review: U toku
+          with_ignored_flag: Označeno kao pogledano
+        headers:
+          debate: Debata
+          moderate: Moderiraj
+        hide_debates: Sakrij debate
+        ignore_flags: Označi kao pogledano
+        order: Redoslijed
+        orders:
+          created_at: Najnovije
+          flags: Najviše puta označene
+        title: Debate
+    header:
+      title: Moderiranje
+    menu:
+      flagged_comments: Komentari
+      flagged_debates: Debate
+      flagged_investments: Budžetske investicije
+      proposals: Prijedlozi
+      proposal_notifications: Obavijesti o prijedlozima
+      users: Blokiraj korisnike
+    proposals:
+      index:
+        block_authors: Blokiraj autore
+        confirm: Jeste sigurni?
+        filter: Filter (suzi pretragu)
+        filters:
+          all: Sve
+          pending_flag_review: Pregled u toku
+          with_ignored_flag: Označi kao pogledano
+        headers:
+          moderate: Moderiraj
+          proposal: Prijedlog
+        hide_proposals: Sakrij prijedloge
+        ignore_flags: Označi kao pogledano
+        order: Poredaj po
