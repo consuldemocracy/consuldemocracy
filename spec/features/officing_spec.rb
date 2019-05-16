@@ -118,6 +118,7 @@ feature "Poll Officing" do
 
     expect(page).to have_current_path(officing_root_path)
     expect(page).to have_css("#officing_menu")
+    expect(page).not_to have_link("Polling officers")
     expect(page).not_to have_css("#valuation_menu")
     expect(page).not_to have_css("#admin_menu")
     expect(page).not_to have_css("#moderation_menu")
