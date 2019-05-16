@@ -107,6 +107,7 @@ es:
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
+        unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
         title: Nuevo presupuesto ciudadano
       winners:

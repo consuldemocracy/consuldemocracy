@@ -106,7 +106,8 @@ en:
         blank_dates: Dates are blank
       destroy:
         success_notice: Budget deleted successfully
-        unable_notice: You cannot destroy a Budget that has associated investments
+        unable_notice: You cannot destroy a budget that has associated investments
+        unable_notice_polls: You cannot destroy a budget that has an associated poll
       new:
         title: New participatory budget
       winners:
