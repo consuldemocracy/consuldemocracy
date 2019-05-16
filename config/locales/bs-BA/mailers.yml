@@ -116,3 +116,6 @@ bs:
       text_5: "A kako bi počeli sa svom neophodnom motivacijom,"
       text_6: "ovdje ćete pronaći nekoliko resursa i cijeli niz savjeta koje ćete dobijati svakodnevno kako biste se pripremili za promociju!"
       dashboard_button: "Samo naprijed, otkrijte o čemu se radi!"
+    new_actions_notification_on_published:
+      subject: "Vaš građanski prijedlog je objavljen. Nema nazad!"
+      hi: "Čestitamo, %{name}! Vaš prijedlog pod nazivom %{title} je uspješno objavljen."
