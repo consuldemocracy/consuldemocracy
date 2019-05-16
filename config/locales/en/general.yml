@@ -198,6 +198,7 @@ en:
     topic: Topic
     image: Image
     local_census_record: Local Census Record
+    local_census_records/import: Local Census Records Import
   geozones:
     none: All city
   layouts:

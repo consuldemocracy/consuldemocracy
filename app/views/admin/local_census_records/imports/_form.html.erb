@@ -1,0 +1,9 @@
+<%= form_for [:admin, @import] do |f| %>
+  <%= render "shared/errors", resource: @import %>
+
+  <%= f.file_field :file %>
+
+  <div class="small-12 medium-4 large-2 margin-top">
+    <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
+  </div>
+<% end %>

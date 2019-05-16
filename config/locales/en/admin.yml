@@ -1688,3 +1688,17 @@ en:
         notice: Local census record updated successfully!
       destroy:
         notice: Local census record removed successfully!
+      imports:
+        new:
+          title: Local census records
+          subtitle: Import CSV file
+        create:
+          notice: Local census records import process executed successfully!
+        show:
+          title: Manage local census
+          subtitle: Import process results
+          import: Import again
+          errored: Errored rows
+          created: Created records
+        local_census_records:
+          no_records_found: No records found.
