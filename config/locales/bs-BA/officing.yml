@@ -63,3 +63,27 @@ bs:
         table_whites: "Potpuno prazni glasački listići"
         table_nulls: "Nevažeći glasački listići"
         table_total: "Ukupno glasačkih listića"
+    residence:
+      flash:
+        create: "Dokumenti potvrđeni popisom"
+        not_allowed: "Danas nemate anketarskih smjena u rasporedu"
+      new:
+        title: Potvrdi dokument
+        document_number: "Broj dokumenta (uključujući i slova)"
+        submit: Potvrdi dokument
+        error_verifying_census: "Popis nije mogao potvrditi ovaj dokument."
+        form_errors: je razlog zašto je spriječena verifikacija ovog dokumenta
+    voters:
+      new:
+        title: Glasačke ankete
+        table_poll: Glasačka anketa
+        table_status: Status ankete
+        table_actions: Poduzete radnje
+        not_to_vote: Osoba je odlučila da ne glasa sada
+      show:
+        can_vote: Može glasati
+        error_already_voted: Već je učestvovao/la u ovoj anketi
+        submit: Potvrdi glas
+        success: "Glas unesen!"
+      can_vote:
+        submit_disable_with: "Sačekajte, glas se potvrđuje..."
