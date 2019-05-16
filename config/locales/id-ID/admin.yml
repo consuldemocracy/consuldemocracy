@@ -104,6 +104,8 @@ id:
     budget_groups:
       name: "Nama"
       form:
+        create: "Buat grup baru"
+        edit: "Edit grup"
         name: "Nama grup"
     budget_headings:
       name: "Nama"
@@ -170,6 +172,7 @@ id:
           valuation_finished: Val. Fin.
           selected: Dipilih
           incompatible: Tidak cocok
+          price: Harga
         see_results: "Lihat hasil"
       show:
         assigned_admin: Pengurus yang ditugaskan
@@ -200,6 +203,8 @@ id:
           "true": "Ya"
           "false": "Tidak"
         image: "Gambar"
+        see_image: "Lihat gambar"
+        no_image: "Tanpa gambar"
         documents: "Dokumen"
       edit:
         classification: Klasifikasi
