@@ -1468,10 +1468,33 @@ he:
           visits: ביקורים
           votes: סך הכל הצבעות
         budgets_title: מימון השתתפותי
+        participatory_budgets: תקציבים שיתופיים
         direct_messages: הודעות ישירות
         proposal_notifications: התראות להצעות
         incomplete_verifications: אימותים מלאים
         polls: סקרים
+      graph:
+        debate_created: דיונים
+        spending_proposals: פרויקטי השקעה
+        visit: ביקורים
+        level_2_user: משתמשים ברמה 2
+        proposal_created: הצעות תושבים
+      budgets:
+        title: "תקציבים שיתופיים - מצב השתתפות"
+        supporting_phase: שלב בתמיכה
+        balloting_phase: הצבעה מסכמת
+      budget_balloting:
+        title: "שלב הצבעה מסכמת"
+        vote_count: הצבעות
+        participant_count: משתתפים
+        votes_per_heading: הצבעות לפי כותר
+        participants_per_district: משתתפים לפי רובע
+      budget_supporting:
+        title: "סטאטוס שלב התמיכה"
+        headings: כותרים
+        users: משתמשים
+        vote_count: הצבעות
+        participant_count: משתתפים
       direct_messages:
         title: הודעות ישירות
         total: סך הכל
