@@ -109,6 +109,7 @@ he:
       destroy:
         success_notice: התקציב נמחק בהצלחה
         unable_notice: אינך יכול להסיר תקציב הקשור להשקעות קיימות
+        unable_notice_polls: אינך יכול להסיר תקציב הקשור להצבעות קיימות
       new:
         title: תקציב השתתפותי חדש
       winners:
