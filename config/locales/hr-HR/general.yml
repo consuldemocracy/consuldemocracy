@@ -626,6 +626,31 @@ hr:
         share: "Bilo bi super da mi učinite uslugu dijeljenja mojeg prijedloga sa svojim prijateljima, obitelji i kontaktima, bilo bi savršeno!"
   polls:
     all: "Svi"
+    no_dates: "nije određen datum"
+    dates: "Od %{open_at} do %{closed_at}"
+    final_date: "Konačno prebrojavanje/Rezultati"
+    index:
+      filters:
+        current: "Otvoreno"
+        expired: "Isteklo"
+      title: "Ankete"
+      participate_button: "Sudjelujte u ovoj anketi"
+      participate_button_expired: "Aneketa završila"
+      no_geozone_restricted: "Svi gradovi"
+      geozone_restricted: "Distrikti"
+      geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
+      already_answer: "Vo ste već sudjelovali u ovoj anketi"
+      not_logged_in: "Morate biti ulogirani ili prijavljeni kako bi sudjelovali"
+      unverified: "Morate potvrditi svoj račun da sudjelujete"
+      cant_answer: "Ova anketa nije dostupna za vašu geozonu"
+      section_header:
+        icon_alt: Ikona glasanja
+        title: Glasanje
+        help: Pomoć oko glasanja
+      section_footer:
+        title: Pomoć oko glasanja
+        description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke
+      no_polls: "Ne postoji otvoreno izglasavanje."
     show:
       stats:
         votes: "GLASOVI"
