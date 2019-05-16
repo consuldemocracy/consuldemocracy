@@ -105,6 +105,7 @@ module Abilities
       can [:edit, :update], DownloadSetting
 
       can :manage, LocalCensusRecord
+      can [:create, :read], LocalCensusRecords::Import
     end
   end
 end
