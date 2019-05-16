@@ -36,3 +36,10 @@ bs:
     document_type_label: Vrsta dokumenta
     document_verifications:
       already_verified: Korisnički profil je već potvrđen.
+      has_no_account_html: Za otvaranje profila, idite na %{link} i kliknite na <b> "Registracija" </b> u gornjem lijevom dijelu ekrana.
+      link: CONSUL
+      in_census_has_following_permissions: "Korisnik može učestvovati na web-stranici pod ovim uvjetima:"
+      not_in_census: Dokument nije registrovan.
+      not_in_census_info: "Građani koji nisu na popisu mogu učestvovati na web-stranici pod sljedećim uvjetima:"
+      please_check_account_data: Provjeri da li su podaci o profilu gore ispravni.
+      title: Praćenje korisnika
