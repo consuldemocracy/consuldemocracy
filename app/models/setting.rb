@@ -52,6 +52,11 @@ class Setting < ApplicationRecord
       setting.destroy if setting.present?
     end
 
+    def accepted_content_types_for(group)
+      mime_content_types = Setting["uploads.#{group}.content_types"]&.split(" ") || []
+      Setting.mime_types[group].select { |_, content_type| mime_content_types.include?(content_type) }.keys
+    end
+
     def mime_types
       {
         "images" => {

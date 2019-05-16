@@ -115,6 +115,8 @@ ignore_missing:
   - "activerecord.errors.models.direct_message.*"
   - "errors.messages.blank"
   - "errors.messages.taken"
+  - "errors.messages.too_short"
+  - "errors.messages.too_long"
   - "devise.failure.invalid"
   - "devise.registrations.destroyed"
   - "devise.password_expired.*"

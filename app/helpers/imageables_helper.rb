@@ -9,7 +9,7 @@ module ImageablesHelper
   end
 
   def imageable_max_file_size
-    bytes_to_megabytes(Image::MAX_IMAGE_SIZE)
+    bytes_to_megabytes(Setting["uploads.images.max_size"].to_i.megabytes)
   end
 
   def bytes_to_megabytes(bytes)
@@ -17,19 +17,21 @@ module ImageablesHelper
   end
 
   def imageable_accepted_content_types
-    Image::ACCEPTED_CONTENT_TYPE
+    Setting["uploads.images.content_types"]&.split(" ") || [ "image/jpeg" ]
   end
 
   def imageable_accepted_content_types_extensions
-    Image::ACCEPTED_CONTENT_TYPE
-      .collect{ |content_type| ".#{content_type.split("/").last}" }
-      .join(",")
+    Setting.accepted_content_types_for("images").map do |content_type|
+      if content_type == "jpg"
+        ".jpg,.jpeg"
+      else
+        ".#{content_type}"
+      end
+    end.join(",")
   end
 
   def imageable_humanized_accepted_content_types
-    Image::ACCEPTED_CONTENT_TYPE
-      .collect{ |content_type| content_type.split("/").last }
-      .join(", ")
+    Setting.accepted_content_types_for("images").join(", ")
   end
 
   def imageables_note(_imageable)

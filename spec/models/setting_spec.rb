@@ -148,6 +148,24 @@ describe Setting do
     end
   end
 
+  describe ".accepted_content_types_for" do
+    it "returns the formats accepted according to the setting value" do
+      Setting["uploads.images.content_types"] =    "image/jpeg image/gif"
+      Setting["uploads.documents.content_types"] = "application/pdf application/msword"
+
+      expect(Setting.accepted_content_types_for("images")).to    eq ["jpg", "gif"]
+      expect(Setting.accepted_content_types_for("documents")).to eq ["pdf", "doc"]
+    end
+
+    it "returns empty array if setting does't exist" do
+      Setting.remove("uploads.images.content_types")
+      Setting.remove("uploads.documents.content_types")
+
+      expect(Setting.accepted_content_types_for("images")).to    be_empty
+      expect(Setting.accepted_content_types_for("documents")).to be_empty
+    end
+  end
+
   describe ".add_new_settings" do
     context "default settings with strings" do
       before do
