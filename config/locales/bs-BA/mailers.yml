@@ -119,3 +119,5 @@ bs:
     new_actions_notification_on_published:
       subject: "Vaš građanski prijedlog je objavljen. Nema nazad!"
       hi: "Čestitamo, %{name}! Vaš prijedlog pod nazivom %{title} je uspješno objavljen."
+      text_1: "Sad idemo po prvih 100 glasova podrške!"
+      text_2: "Što 100?"
