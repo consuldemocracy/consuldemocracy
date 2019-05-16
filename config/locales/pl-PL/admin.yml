@@ -1358,9 +1358,7 @@ pl:
           verified_users_who_didnt_vote_proposals: Zweryfikowani użytkownicy, którzy nie głosowali na wnioski
           visits: Odwiedziny
           votes: Liczba głosów
-        spending_proposals_title: Wnioski wydatkowe
         budgets_title: Budżetowanie partycypacyjne
-        visits_title: Odwiedziny
         direct_messages: Bezpośrednie wiadomości
         proposal_notifications: Powiadomienie o wnioskach
         incomplete_verifications: Niekompletne weryfikacje
