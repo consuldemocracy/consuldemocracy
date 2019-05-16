@@ -197,6 +197,19 @@ feature "Polls" do
     end
   end
 
+  scenario "Enable and disable results", :js do
+    create(:poll, related: proposal)
+
+    visit proposal_dashboard_polls_path(proposal)
+    check "Show results"
+
+    expect(find_field("Show results")).to be_checked
+
+    uncheck "Show results"
+
+    expect(find_field("Show results")).not_to be_checked
+  end
+
   scenario "Poll card" do
     poll = create(:poll, :expired, related: proposal)
 

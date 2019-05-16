@@ -79,6 +79,9 @@ es:
       site_customization/content_block:
         one: Bloque
         other: Bloques
+      document:
+        one: Documento
+        other: Documentos
       legislation/process:
         one: "Proceso"
         other: "Procesos"
