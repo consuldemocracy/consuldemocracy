@@ -1368,9 +1368,7 @@ ru:
           verified_users_who_didnt_vote_proposals: Верифицированные пользователи, не голосовавшие за предложения
           visits: Посещения
           votes: Всего голосов
-        spending_proposals_title: Предложения трат
         budgets_title: Партисипаторное бюджетирование
-        visits_title: Посещения
         direct_messages: Прямые сообщения
         proposal_notifications: Уведомления о предложениях
         incomplete_verifications: Незавершенные верификации
