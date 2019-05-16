@@ -1,0 +1,25 @@
+<h4><%= title %> (<%= local_census_records.any? ? local_census_records.size : 0 %>)</h4>
+<table id="<%= id %>" class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t("activerecord.attributes.local_census_record.document_type") %></th>
+      <th><%= t("activerecord.attributes.local_census_record.document_number") %></th>
+      <th><%= t("activerecord.attributes.local_census_record.date_of_birth") %></th>
+      <th><%= t("activerecord.attributes.local_census_record.postal_code") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if local_census_records.any? %>
+      <% local_census_records.each do |local_census_record| %>
+        <%= render "local_census_record", local_census_record: local_census_record %>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="4" style="width: 100% !important;">
+          <%= t("admin.local_census_records.imports.local_census_records.no_records_found") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
