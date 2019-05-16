@@ -5,6 +5,12 @@ FactoryBot.define do
     date_of_birth Date.new(1970, 1, 31)
     postal_code "28002"
   end
+  factory :local_census_records_import, class: "LocalCensusRecords::Import" do
+    file {
+      path = %w[spec fixtures files local_census_records import valid.csv]
+      Rack::Test::UploadedFile.new(Rails.root.join(*path))
+    }
+  end
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, "0")}X" }
 
