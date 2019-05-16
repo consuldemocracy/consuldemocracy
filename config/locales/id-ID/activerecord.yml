@@ -45,6 +45,8 @@ id:
         other: Gambar Khusus
       site_customization/content_block:
         other: Blok konten khusus
+      document:
+        other: Dokumen
       legislation/process:
         other: "Proses"
       legislation/proposal:
@@ -67,6 +69,10 @@ id:
         other: "Jajak pendapat"
       proposal_notification:
         other: "Pemberitahuan proposal"
+      dashboard/administrator_task:
+        other: Tugas
+      link:
+        other: Tautan
     attributes:
       budget:
         name: "Nama"
@@ -89,6 +95,8 @@ id:
         organization_name: "Jika Anda usulkan dalam nama kolektif/organisasi, atau atas nama orang lain, menulis namanya"
         image: "Gambar deskriptif proposal"
         image_title: "Judul gambar"
+      geozone:
+        name: Nama
       milestone:
         title: "Judul"
         publication_date: "Tanggal publikasi"
@@ -233,6 +241,7 @@ id:
         title: Judul
         url: Video eksternal
       newsletter:
+        subject: Subyek
         from: Dari
       admin_notification:
         title: Judul
@@ -247,6 +256,9 @@ id:
       widget/card/translation:
         title: Judul
         description: Deskripsi
+      dashboard/action:
+        active: Aktif
+        action_type: Tipe
     errors:
       models:
         user:
