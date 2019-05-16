@@ -32,9 +32,11 @@ id:
         post_started_at: Postingan yang dimulai pada
         post_ended_at: Postingan yang berakhir pada
         sections:
+          homepage: Halaman depan
           debates: Perdebatan
           proposals: Proposal
           budgets: Penganggaran partisipatif
+          help_page: Halaman bantuan
       edit:
         editing: Mengedit spanduk
         form:
