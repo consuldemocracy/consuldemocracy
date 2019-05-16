@@ -1,5 +1,5 @@
 class Admin::LocalCensusRecordsController < Admin::BaseController
-  load_and_authorize_resource
+  load_and_authorize_resource class: "LocalCensusRecord"
 
   def index
     @local_census_records = @local_census_records.search(params[:search])
