@@ -4,6 +4,10 @@
             new_admin_local_census_record_path,
             class: "button float-right" %>
 
+<%= link_to t("admin.local_census_records.index.import"),
+            new_admin_local_census_records_import_path,
+            class: "button float-right hollow" %>
+
 <div class="small-12 medium-6">
   <%= form_tag admin_local_census_records_path, method: :get, remote: true  do %>
     <div class="input-group">
