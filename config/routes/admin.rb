@@ -257,4 +257,7 @@ namespace :admin do
   get "/change_log/:id", to: "budget_investments#show_investment_log", as: "change_log"
 
   resources :local_census_records
+  namespace :local_census_records do
+    resources :imports, only: [:new, :create, :show]
+  end
 end
