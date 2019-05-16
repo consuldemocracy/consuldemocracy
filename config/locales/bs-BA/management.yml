@@ -1,1 +1,38 @@
 bs:
+  management:
+    account:
+      menu:
+        reset_password_email: Promijenite lozinku emailom
+        reset_password_manually: Promijenite lozinku ručno
+      alert:
+        unverified_user: Verifikovani korisnik se još uvijek nije prijavio
+      show:
+        title: Korisnički profil
+      edit:
+        title: "Edituj korisnički profil: promijeni lozinku"
+        back: Nazad
+        password:
+          password: Lozinka
+          send_email: Pošalji mail za promjenu lozinke
+          reset_email_send: Email ispravno poslan.
+          reseted: Lozinka uspješno promijenjena
+          random: Automatski napravi lozinku
+          save: Spasi lozinku
+          print: Printaj lozinku
+          print_help: Možeš printati lozinku nakon što se spasi.
+    account_info:
+      change_user: Promijeni korisnika
+      document_number_label: "Broj dokumenta:"
+      document_type_label: "Vrsta dokumenta:"
+      email_label: "Email:"
+      identified_label: "Identifikovana kao:"
+      username_label: "Korisničko ime:"
+    check: Provjeri dokument
+    dashboard:
+      index:
+        title: Menadžment
+        info: Ovdje možete pratiti korisnike putem svih radnji pobrojanih na meniju slijeva.
+    document_number: Broj dokumenta
+    document_type_label: Vrsta dokumenta
+    document_verifications:
+      already_verified: Korisnički profil je već potvrđen.
