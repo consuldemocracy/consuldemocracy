@@ -8,4 +8,8 @@ class Ahoy::Store < Ahoy::Stores::ActiveRecordStore
       event.ip = request.ip
     end
   end
+
+  def exclude?
+    false
+  end
 end
