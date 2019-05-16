@@ -989,9 +989,7 @@ sl:
           verified_users_who_didnt_vote_proposals: Preverjeni uporabniki, ki niso glasovali o predlogih
           visits: Obiski
           votes: Skupaj glasov
-        spending_proposals_title: Predlogi porabe
         budgets_title: Participatorni proračun
-        visits_title: Obiski
         direct_messages: Direktna sporočila
         proposal_notifications: Obvestila predlogov
         incomplete_verifications: Nedokončane verifikacije
