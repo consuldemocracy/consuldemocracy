@@ -1290,9 +1290,7 @@ cs:
           verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
           visits: Návštěvy
           votes: Hlasů celkem
-        spending_proposals_title: Náklady návrhů
         budgets_title: Participativní rozpočtování
-        visits_title: Návštěvy
         direct_messages: Soukromé zprávy
         proposal_notifications: Upozornění k návrhům
         incomplete_verifications: Neúplné ověření
