@@ -3,3 +3,16 @@ bs:
     conditions:
       title: Uvjeti korištenja
       subtitle: PRAVNA OBAVIJEST O UVJETIMA KORIŠTENJA, PRIVATNOSTI I ZAŠTITI LIČNIH PODATAKA NA PORTALU OTVORENE VLADE
+      description: Informacije o uvjetima korištenja, privatnosti i zaštiti ličnih podataka.
+    help:
+      title: "%{org} je platforma za učešće građana"
+      guide: "U ovom vodiču je objašnjena svrha svakog odjeljka u %{org} i način na koji funkcionišu."
+      menu:
+        debates: "Debate"
+        proposals: "Prijedlozi"
+        budgets: "Participativni budžeti"
+        polls: "Glasačke ankete"
+        other: "Ostale informacije"
+        processes: "Procesi"
+      debates:
+        title: "Debate"
