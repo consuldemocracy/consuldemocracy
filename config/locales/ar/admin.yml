@@ -1365,9 +1365,7 @@ ar:
           verified_users: مستخدمين تم التحقق منهم
           visits: الزيارات
           votes: مجموع الأصوات
-        spending_proposals_title: مقترحات الانفاق
         budgets_title: الميزانية التشاركية
-        visits_title: الزيارات
         direct_messages: الرسائل المباشرة
         proposal_notifications: إشعارات المقترح
         incomplete_verifications: عملية التحقق غير مكتملة
