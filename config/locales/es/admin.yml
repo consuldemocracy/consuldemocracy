@@ -1677,6 +1677,7 @@ es:
         search:
           placeholder: Búsqueda por número de documento
           search: Buscar
+        import: Importar CSV
       form:
         date_of_birth: Fecha de nacimiento
       new:
