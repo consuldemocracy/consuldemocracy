@@ -107,3 +107,29 @@ bs:
         unfeasible: Neizvodiva investicija
       print:
         print_button: Odštampaj
+      search_results:
+        one: " sadrži pojam %{search_term}"
+        few: " sadrži pojam %{search_term}"
+        other: " sadrži pojam %{search_term}"
+    spending_proposals:
+      alert:
+        unverified_user: Korisnik nije potvrđen
+      create: Napravi prijedlog troškova
+      filters:
+        unfeasible: Neizvodivi investicioni projekti
+        by_geozone: "Investicioni projekti u područjima: %{geozone}"
+      print:
+        print_button: Odštampaj
+      search_results:
+        one: " sadrži pojam %{search_term}"
+        few: " sadrži pojam %{search_term}"
+        other: " sadrži pojam %{search_term}"
+    sessions:
+      signed_out: Odjava uspješna.
+      signed_out_managed_user: Korisnička sesija uspješno odjavljena.
+    username_label: Korisničko ime
+    users:
+      create_user: Otvori novi profil
+      create_user_info: Otvorićemo profil sa sljedećim podacima
+      create_user_submit: Postani korisnik
+      create_user_success_html: 'Poslali smo email na sljedeću adresu: <b>%{email}</b>, kako bi potvrdili da se adresa zaista vodi na korisnika. Email sadrži link koji se mora kliknuti. Nakon toga, korisnik mora namjestiti lozinku prije nego mu se omogući da se prijavi na web-stranici'
