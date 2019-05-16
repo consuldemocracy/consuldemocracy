@@ -6,7 +6,7 @@ bs:
       description: Informacije o uvjetima korištenja, privatnosti i zaštiti ličnih podataka.
     help:
       title: "%{org} je platforma za učešće građana"
-      guide: "U ovom vodiču je objašnjena svrha svakog odjeljka u %{org} i način na koji funkcionišu."
+      guide: "U ovom vodiču je objašnjena svrha svakog dijela %{org} i način na koji funkcioniše."
       menu:
         debates: "Debate"
         proposals: "Prijedlozi"
@@ -16,3 +16,7 @@ bs:
         processes: "Procesi"
       debates:
         title: "Debate"
+        description: "U dijelu %{link} možete predočiti i podijeliti svoje stavove s drugima, u vezi pitanja koja se tiču vas i vašeg grada. To je i prostor za osmišljavanje ideja koje putem drugih dijelova %{org} dovode do konkretnog djelovanja od strane gradskog vijeća."
+        link: "građanske debate"
+        feature_html: "Možete pokrenuti debate, davati komentare i ocijenjivati ih sa <strong>\"Slažem se\"</strong> ili <strong> \"Ne slažem se\" </strong>. Kako bi to uradili, morate ići na %{link}."
+        feature_link: "registrujte se u %{org}"
