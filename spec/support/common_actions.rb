@@ -9,6 +9,7 @@ module CommonActions
   include Polls
   include Proposals
   include Tags
+  include Translations
   include Users
   include Verifications
   include Votes
