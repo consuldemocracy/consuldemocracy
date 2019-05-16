@@ -80,6 +80,26 @@ describe Setting do
     end
   end
 
+  describe "#content_type?" do
+    it "returns true if the last part of the key is content_types" do
+      expect(Setting.create(key: "key_name.content_types").content_type?).to be true
+    end
+
+    it "returns false if the last part of the key is not content_types" do
+      expect(Setting.create(key: "key_name.whatever").content_type?).to be false
+    end
+  end
+
+  describe "#content_type_group" do
+    it "returns the group for content_types settings" do
+      images =    Setting.create(key: "update.images.content_types")
+      documents = Setting.create(key: "update.documents.content_types")
+
+      expect(images.content_type_group).to    eq "images"
+      expect(documents.content_type_group).to eq "documents"
+    end
+  end
+
   describe ".rename_key" do
     it "renames the setting keeping the original value and deletes the old setting" do
       Setting["old_key"] = "old_value"

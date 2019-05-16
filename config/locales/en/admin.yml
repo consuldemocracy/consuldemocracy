@@ -1261,6 +1261,7 @@ en:
         title: Configuration settings
         update_setting: Update
         participation_processes: "Participation processes"
+        images_and_documents: "Images and documents"
         feature_flags: Features
         features:
           enabled: "Feature enabled"

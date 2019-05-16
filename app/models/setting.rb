@@ -8,7 +8,7 @@ class Setting < ApplicationRecord
   end
 
   def type
-    if %w[feature process proposals map html homepage].include? prefix
+    if %w[feature process proposals map html homepage uploads].include? prefix
       prefix
     else
       "configuration"
@@ -17,6 +17,14 @@ class Setting < ApplicationRecord
 
   def enabled?
     value.present?
+  end
+
+  def content_type?
+    key.split(".").last == "content_types"
+  end
+
+  def content_type_group
+    key.split(".").second
   end
 
   class << self
@@ -42,6 +50,25 @@ class Setting < ApplicationRecord
     def remove(key)
       setting = where(key: key).first
       setting.destroy if setting.present?
+    end
+
+    def mime_types
+      {
+        "images" => {
+          "jpg"  => "image/jpeg",
+          "png"  => "image/png",
+          "gif"  => "image/gif"
+        },
+        "documents" => {
+          "pdf"  => "application/pdf",
+          "doc"  => "application/msword",
+          "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "xls"  => "application/x-ole-storage",
+          "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "csv"  => "text/plain",
+          "zip"  => "application/zip"
+        }
+      }
     end
 
     def defaults

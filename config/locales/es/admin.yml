@@ -1260,6 +1260,7 @@ es:
         title: Configuración global
         update_setting: Actualizar
         participation_processes: "Procesos de participación"
+        images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
