@@ -1432,9 +1432,7 @@ el:
           verified_users_who_didnt_vote_proposals: Επαληθευμένοι χρήστες που δεν ψήφισαν προτάσεις
           visits: Επισκέψεις
           votes: Συνολικοί ψήφοι
-        spending_proposals_title: Προτάσεις δαπανών
         budgets_title: Συμμετοχικός προϋπολογισμός
-        visits_title: Επισκέψεις
         direct_messages: Άμεσα μηνύματα
         proposal_notifications: Ειδοποιήσεις προτάσεων
         incomplete_verifications: Ελλιπής επαληθεύσεις
