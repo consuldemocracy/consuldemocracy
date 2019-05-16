@@ -1233,9 +1233,7 @@ zh-CN:
           verified_users_who_didnt_vote_proposals: 没有投票提议的已验证用户
           visits: 访问
           votes: 总投票数
-        spending_proposals_title: 支出提议
         budgets_title: 参与性预算
-        visits_title: 访问
         direct_messages: 直接信息
         proposal_notifications: 提议通知
         incomplete_verifications: 不完全验证
