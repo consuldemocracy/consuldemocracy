@@ -1256,9 +1256,7 @@ fr:
           verified_users_who_didnt_vote_proposals: Utilisateurs vérifiés n'ayant pas voté des propositions
           visits: Visites
           votes: Total des votes
-        spending_proposals_title: Propositions de dépense
         budgets_title: Budget participatif
-        visits_title: Visites
         direct_messages: Messages privés
         proposal_notifications: Notifications des propositions
         incomplete_verifications: Vérifications incomplètes
