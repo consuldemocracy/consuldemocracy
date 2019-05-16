@@ -622,7 +622,10 @@ hr:
         share_in: Podjeli u
         hi: "Pozdrav!"
         introduction: Pišem vam kako biste znali da sudjelujem u %{org}, platforma pomoću koje možete odlučiti kako će vaš grad izgledati. Za to sam stvorio svoj građanski prijedlog i sada ću trebati vašu potporu! Ali nemojte se brinuti jer je to veoma jednostavno.
+        support: "Vi samo trebate kliknuti na gumb koji ćete vidjeti u nastavku 'Podržite ovaj prijedlog' i dobiti povratne informacije prije nego ga promovirate. Samo će prijedlozi za postizanje maksimalne potpore biti izvršeni od strane javnog tijela, a uz vašu pomoć možemo ostvariti prijedlog!"
+        share: "Bilo bi super da mi učinite uslugu dijeljenja mojeg prijedloga sa svojim prijateljima, obitelji i kontaktima, bilo bi savršeno!"
   polls:
+    all: "Svi"
     show:
       stats:
         votes: "GLASOVI"
