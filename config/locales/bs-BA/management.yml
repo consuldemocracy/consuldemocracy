@@ -43,3 +43,14 @@ bs:
       not_in_census_info: "Građani koji nisu na popisu mogu učestvovati na web-stranici pod sljedećim uvjetima:"
       please_check_account_data: Provjeri da li su podaci o profilu gore ispravni.
       title: Praćenje korisnika
+      under_age: "Vaš profil se ne može potvrditi zbog nedovoljne starosne dobi."
+      verify: Potvrdi
+    email_label: Email
+    date_of_birth: Datum rođenja
+    email_verifications:
+      already_verified: Korisnički profil je već potvrđen.
+      choose_options: "Odaberite jednu od opcija:"
+      document_found_in_census: Dokument pronađen u popisu, ali nema vezanog korisničkog profila.
+      document_mismatch: "Ovaj email pripada korisnku koji je već unio broj lične isprave: %{document_number}%{document_type}"
+      email_placeholder: Navedite email adresu koju je ova osoba koristila za otvaranje svog profila
+      email_sent_instructions: Kako bi finalizirali verifikaciju ovog korisnika, morate kliknuti na link koji smo poslali na gorenavedenu email adresu. Ovo je neophodno kako bi se potvrdilo da je adresa zaista njegova.
