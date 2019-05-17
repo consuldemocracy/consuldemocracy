@@ -2,20 +2,20 @@ el:
   activerecord:
     models:
       activity:
-        one: "δραστηριότητα"
-        other: "δραστηριότητες"
+        one: "Δραστηριότητα"
+        other: "Δραστηριότητα"
       budget:
         one: "Προϋπολογισμός"
-        other: "Προϋπολογισμοί"
+        other: "Προϋπολογισμός"
       budget/investment:
         one: "Επένδυση"
-        other: "Επενδύσεις"
+        other: "Επένδυση"
       milestone:
-        one: "ορόσημο"
-        other: "ορόσημα"
+        one: "Ορόσημο"
+        other: "Ορόσημο"
       milestone/status:
-        one: "Κατάσταση ορόσημου"
-        other: "Κατάσταση ορόσημων"
+        one: "Κατάσταση Ορόσημου"
+        other: "Κατάσταση Ορόσημου"
       progress_bar:
         one: "Γραμμή προόδου"
         other: "Γραμμές προόδου"
@@ -79,6 +79,9 @@ el:
       site_customization/content_block:
         one: Προσαρμοσμένο περιεχόμενο μπλοκ
         other: Προσαρμοσμένο περιεχόμενο μπλοκς
+      document:
+        one: Έγγραφο
+        other: Έγγραφο
       legislation/process:
         one: "Διαδικασία"
         other: "Διαδικασίες"
