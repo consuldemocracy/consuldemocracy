@@ -259,6 +259,19 @@ es:
       open_city_title: Construimos desde abajo
     admin:
       watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
+    welcome:
+      debates:
+        description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
+        title: Debates
+      decide:
+        description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
+        title: Decides
+      do:
+        description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+        title: Se hace
+      proposal:
+        description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
+        title: Propones
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
