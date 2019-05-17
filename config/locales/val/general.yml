@@ -313,9 +313,6 @@ val:
       other: Altres
     form:
       geozone: Ámbit d'actuació
-      proposal_external_url: Enllaç a documentació addicional
-      proposal_question: Pregunta de la proposta
-      proposal_question_example_html: "Ha de ser resumida en una pregunta amb respostes Sí o No"
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
@@ -435,7 +432,6 @@ val:
       share: Compartir
       no_notifications: "Aquesta proposta no te notificacions."
       embed_video_title: "Vídeo en %{proposal}"
-      title_external_url: "Documentació adicional"
       title_video_url: "Video extern"
       author: Autor
     update:
