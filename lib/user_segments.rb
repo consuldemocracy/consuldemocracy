@@ -1,12 +1,13 @@
 class UserSegments
-  SEGMENTS = %w(all_users
+  SEGMENTS = %w[all_users
                 administrators
+                all_proposal_authors
                 proposal_authors
                 investment_authors
                 feasible_and_undecided_investment_authors
                 selected_investment_authors
                 winner_investment_authors
-                not_supported_on_current_budget)
+                not_supported_on_current_budget]
 
   def self.all_users
     User.active
@@ -14,6 +15,10 @@ class UserSegments
 
   def self.administrators
     all_users.administrators
+  end
+
+  def self.all_proposal_authors
+    author_ids(Proposal.pluck(:author_id).uniq)
   end
 
   def self.proposal_authors
