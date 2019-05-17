@@ -311,9 +311,6 @@ de:
       other: Andere
     form:
       geozone: Rahmenbedingungen
-      proposal_external_url: Link zu zusätzlicher Dokumentation
-      proposal_question: Antrags Frage
-      proposal_question_example_html: "Bitte in einer geschlossenen Frage zusammenfassen, die mit Ja oder Nein beantwortet werden kann"
       proposal_responsible_name: Vollständiger Name der Person, die den Vorschlag einreicht
       proposal_responsible_name_note: "(Einzelperson oder Vertreter/in eines Kollektivs; wird nicht öffentlich angezeigt)"
       proposal_summary: Zusammenfassung Vorschlag
@@ -432,7 +429,6 @@ de:
       share: Teilen
       no_notifications: "Dieser Vorschlag enthält keine Benachrichtigungen."
       embed_video_title: "Video über %{proposal}"
-      title_external_url: "Zusätzliche Dokumentation"
       title_video_url: "Externes Video"
       author: Autor
     update:
