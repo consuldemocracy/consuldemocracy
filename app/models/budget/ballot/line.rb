@@ -1,7 +1,7 @@
 class Budget
   class Ballot
     class Line < ApplicationRecord
-      belongs_to :ballot
+      belongs_to :ballot, counter_cache: :ballot_lines_count
       belongs_to :investment, counter_cache: :ballot_lines_count
       belongs_to :heading
       belongs_to :group

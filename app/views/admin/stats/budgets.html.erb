@@ -1,0 +1,17 @@
+<%= back_link_to admin_stats_path %>
+
+<h2><%= t("admin.stats.budgets.title") %></h2>
+
+<% @budgets.each do |budget| %>
+  <table>
+    <tr id="<%= dom_id(budget) %>">
+      <td>
+        <strong><%= budget.name %></strong>
+      </td>
+      <td>
+        <%= link_to t("admin.stats.budgets.supporting_phase"), budget_supporting_admin_stats_path(budget_id: budget.id), class: "button hollow" %>
+        <%= link_to t("admin.stats.budgets.balloting_phase"), budget_balloting_admin_stats_path(budget_id: budget.id), class: "button hollow" %>
+      </td>
+    </tr>
+  </table>
+<% end %>

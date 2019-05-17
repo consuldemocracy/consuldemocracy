@@ -1,0 +1,5 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "stat_graphs", 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= render 'graph', name: @name, event: @event, count: @count %>

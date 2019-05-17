@@ -15,6 +15,7 @@ resources :budgets, only: [:show, :index] do
   end
 
   resource :results, only: :show, controller: "budgets/results"
+  resource :stats, only: :show, controller: "budgets/stats"
   resource :executions, only: :show, controller: "budgets/executions"
 end
 

@@ -54,23 +54,6 @@ describe Proposal do
     end
   end
 
-  describe "#question" do
-    it "is not valid without a question" do
-      proposal.question = nil
-      expect(proposal).not_to be_valid
-    end
-
-    it "is not valid when very short" do
-      proposal.question = "abc"
-      expect(proposal).not_to be_valid
-    end
-
-    it "is not valid when very long" do
-      proposal.question = "a" * 141
-      expect(proposal).not_to be_valid
-    end
-  end
-
   describe "#video_url" do
     it "is not valid when URL is not from Youtube or Vimeo" do
       proposal.video_url = "https://twitter.com"
@@ -491,12 +474,6 @@ describe Proposal do
         expect(results).to eq([proposal])
       end
 
-      it "searches by question" do
-        proposal = create(:proposal, question: "to be or not to be")
-        results = described_class.search("to be or not to be")
-        expect(results).to eq([proposal])
-      end
-
       it "searches by author name" do
         author = create(:user, username: "Danny Trejo")
         proposal = create(:proposal, author: author)
@@ -575,7 +552,6 @@ describe Proposal do
     context "order" do
 
       it "orders by weight" do
-        proposal_question    = create(:proposal,  question:    "stop corruption")
         proposal_title       = create(:proposal,  title:       "stop corruption")
         proposal_description = create(:proposal,  description: "stop corruption")
         proposal_summary     = create(:proposal,  summary:     "stop corruption")
@@ -583,9 +559,8 @@ describe Proposal do
         results = described_class.search("stop corruption")
 
         expect(results.first).to eq(proposal_title)
-        expect(results.second).to eq(proposal_question)
-        expect(results.third).to eq(proposal_summary)
-        expect(results.fourth).to eq(proposal_description)
+        expect(results.second).to eq(proposal_summary)
+        expect(results.third).to eq(proposal_description)
       end
 
       it "orders by weight and then by votes" do

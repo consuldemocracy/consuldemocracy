@@ -11,17 +11,6 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.label :question, t("proposals.form.proposal_question") %>
-      <p class="help-text" id="question-help-text">
-        <%= t("proposals.form.proposal_question_example_html") %>
-      </p>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length,
-                                  placeholder: t("proposals.form.proposal_question"),
-                                  label: false,
-                                  aria: {describedby: "question-help-text"} %>
-    </div>
-
-    <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
       <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
@@ -39,11 +28,6 @@
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
       <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
                                    aria: {describedby: "video-url-help-text"} %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
-      <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
     <% if feature?(:allow_images) %>
