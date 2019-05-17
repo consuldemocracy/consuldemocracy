@@ -311,9 +311,6 @@ sv:
       other: Annat
     form:
       geozone: Område
-      proposal_external_url: Länk till ytterligare dokumentation
-      proposal_question: Frågeställning
-      proposal_question_example_html: "Måste skrivas som en ja- eller nej-fråga"
       proposal_responsible_name: Förslagslämnarens fullständiga namn
       proposal_responsible_name_note: "(individuellt eller som representant för en grupp; kommer inte att visas offentligt)"
       proposal_summary: Sammanfattning av förslaget
@@ -433,7 +430,6 @@ sv:
       share: Dela
       no_notifications: "Förslaget har inte några aviseringar."
       embed_video_title: "Video om %{proposal}"
-      title_external_url: "Ytterligare dokumentation"
       title_video_url: "Extern video"
       author: Skribent
     update:
