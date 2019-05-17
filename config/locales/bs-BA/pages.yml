@@ -24,3 +24,15 @@ bs:
         figcaption: 'Tasteri "Slažem se" i "Ne slažem se" za ocjenjivanje debata.'
       proposals:
         title: "Prijedlozi"
+        description: "U dijelu %{link}, možete podnositi prijedloge gradskom vijeću. Za prijedloge je potrebna podrška. Ako dobiju dovoljno podrške, biće stavljeni na javno glasanje. Prijedlozi koji prođu glasanje građana se prihvataju i realizuju od strane gradskog vijeća."
+        link: "građanski prijedlozi"
+        image_alt: "Dugme za podršku prijedlogu"
+        figcaption_html: 'Dugme za "podršku" prijedlogu.'
+      budgets:
+        title: "Participativno budžetiranje"
+        description: "Dio %{link} pomaže ljudima u neposrednom odlučivanju kako će se trošiti određeni dio opštinskog budžeta."
+        link: "participativni budžeti"
+        image_alt: "Različite faze participativnog budžeta"
+        figcaption_html: 'Faze "podrške" i "glasanja" u participativnom budžetu.'
+      polls:
+        title: "Glasačke ankete"
