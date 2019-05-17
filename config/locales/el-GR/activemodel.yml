@@ -2,7 +2,7 @@ el:
   activemodel:
     models:
       verification:
-        residence: "Κατοικία"
+        residence: "Τόπος Κατοικίας"
         sms: "SMS"
     attributes:
       verification:
@@ -19,4 +19,4 @@ el:
       officing/residence:
         document_type: "Τύπος εγγράφου"
         document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων των γραμμάτων)"
-        year_of_birth: "Έτος γέννησης"
+        year_of_birth: "Χρονολογία γέννησης"
