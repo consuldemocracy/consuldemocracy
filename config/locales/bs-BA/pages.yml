@@ -36,3 +36,21 @@ bs:
         figcaption_html: 'Faze "podrške" i "glasanja" u participativnom budžetu.'
       polls:
         title: "Glasačke ankete"
+        description: "%{link} se aktivira svaki put kada prijedlog dobije podršku od 1% i ide na glasanje, ili kada gradsko vijeće predloži neko pitanje da odluče građani."
+        link: "ankete"
+        feature_1: "Kako bi glasali, morate otići na %{link} i potvrditi svoj profil."
+        feature_1_link: "registrujte se u %{org_name}"
+      processes:
+        title: "Procesi"
+        description: "U %{link}, građani učestvuju u izradi i mijenjanju gradskih propisa, te mogu izraziti mišljenje o opštinskim politikama iz prethodnih debata."
+        link: "procesi"
+      faq:
+        title: "Tehnički problemi?"
+        description: "Pogledajte šta su najčešće postavljena pitanja i riješite svoje pitanje."
+        button: "Pogledajte najčešće postavljena pitanja"
+        page:
+          title: "Najčešće postavljena pitanja"
+          description: "Na ovoj stranici možete dati odgovore na najčešće postavljena pitanja od strane korisnika ovog sajta."
+      other:
+        title: "Ostale informacije"
+        how_to_use: "Koristite %{org_name} u vašem gradu"
