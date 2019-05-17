@@ -158,3 +158,13 @@ bs:
       compatibility:
         title: Usklađenost sa standardima i vizuelni dizajn
         description_html: 'Sve strane na ovoj Web-stranici su u skladu sa <strong>Smjernicama za pristupačnost </strong> i Opštim principima pristupačnog dizajna, utvrđenim od strane Radne grupe <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
+    titles:
+      help: "Šta je %{org}? - Učešće građana"
+    verify:
+      code: Kod koji ste dobili u pismu
+      email: Email
+      info: "Kako bi potvrdili svoj profil, navedite svoje podatke za pristup:"
+      info_code: "Sada unesite kod koji ste dobili u pismu:"
+      password: Lozinka
+      submit: Potvrdi moj profil
+      title: Potvrdi svoj profil
