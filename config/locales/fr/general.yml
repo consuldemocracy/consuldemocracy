@@ -311,9 +311,6 @@ fr:
       other: Autre
     form:
       geozone: Portée de l'opération
-      proposal_external_url: Lien vers de la documentation supplémentaire
-      proposal_question: Question proposée
-      proposal_question_example_html: "Doivent être résumés en une question nécessitant une réponse en oui ou non"
       proposal_responsible_name: Nom complet de la personne qui soumet la proposition
       proposal_responsible_name_note: "(individuellement ou comme représentant d'un\ncollectif; ne sera pas public)"
       proposal_summary: Résumé de la proposition
@@ -433,7 +430,6 @@ fr:
       share: Partager
       no_notifications: "Cette proposition n'a pas de notification."
       embed_video_title: "Vidéo de %{proposal}"
-      title_external_url: "Documentation supplémentaire"
       title_video_url: "Vidéo externe"
       author: Auteur
     update:
