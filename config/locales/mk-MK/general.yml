@@ -25,7 +25,6 @@ mk:
       retired_explanation_placeholder: Опиши на кратко зошто мислиш дека овој предлог не треба повеќе да добива поддршка
       submit_button: Затвори предлог
     form:
-      proposal_question: Прашање за предлог
       proposal_responsible_name: Целосно име на личноста што го поднесува предлогот
       proposal_summary: Краток опис на предлогот
       proposal_text: Целосен опис на предлогот
