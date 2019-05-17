@@ -338,9 +338,6 @@ da:
       other: Andre
     form:
       geozone: Område
-      proposal_external_url: Link til yderligere dokumentation
-      proposal_question: Spørgsmål
-      proposal_question_example_html: "Skal sammenfattes til ét spørgsmål, hvortil der kun kan svares \"Ja\" eller \"Nej\""
       proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
       proposal_responsible_name_note: "(individuelt eller som repræsentant for en gruppe; vises ikke offentligt)"
       proposal_summary: Resumé
@@ -462,7 +459,6 @@ da:
       share: Del
       no_notifications: "Dette forslag har ingen notifikationer."
       embed_video_title: "Video på %{proposal}"
-      title_external_url: "Yderligere dokumentation"
       title_video_url: "Ekstern video"
       author: Oprettet af
       draft: Forslaget er stadig i udkastversionen. Det kan derfor ikke modtage støtte eller blive vist i listen over borgerforslag endnu.
