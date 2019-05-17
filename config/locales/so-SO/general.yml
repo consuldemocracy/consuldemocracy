@@ -313,9 +313,6 @@ so:
       other: Midkale
     form:
       geozone: Baxada Hawlgalka
-      proposal_external_url: Isku xirka dukumentiyada dheeraadka ah
-      proposal_question: Suasha so jedinta
-      proposal_question_example_html: "Waa in lagu soo koobaa hal su'aal oo jawaabta Haa ama Maya"
       proposal_responsible_name: Magaca buuxa ee qofka soo gudbinaya soo jeedinta
       proposal_responsible_name_note: "(shakhsi ahaan ama matalaad wadajir ah; lama soo bandhigi doono si cad)"
       proposal_summary: Sokoobida sojedinta
@@ -435,7 +432,6 @@ so:
       share: Lawadag
       no_notifications: "Soo jeedintaasi ma leh ogeysiisyo."
       embed_video_title: "Fidyowga%{proposal}"
-      title_external_url: "Dukumentiyo dheeraad ah"
       title_video_url: "Fidyoowga dibada"
       author: Qoraa
     update:
