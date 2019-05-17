@@ -300,9 +300,6 @@ zh-TW:
       other: 其他
     form:
       geozone: 經營範圍
-      proposal_external_url: 鏈接到其他文檔
-      proposal_question: 建議問題
-      proposal_question_example_html: "必須總結為一個可以用\"是\"或\"否\"回答的問題"
       proposal_responsible_name: 提交建議的人的全名
       proposal_responsible_name_note: "(個人或作為集體的代表；不會公開顯示)"
       proposal_summary: 建議摘要
@@ -416,7 +413,6 @@ zh-TW:
       share: 共用
       no_notifications: "此建議沒有任何通知。"
       embed_video_title: "%{proposal} 上的視頻"
-      title_external_url: "額外文檔"
       title_video_url: "外部視頻"
       author: 作者
     update:
