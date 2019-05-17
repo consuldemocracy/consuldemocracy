@@ -365,7 +365,6 @@ end
 def documentable_fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title #{rand(9999)}"
   fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
 end
 

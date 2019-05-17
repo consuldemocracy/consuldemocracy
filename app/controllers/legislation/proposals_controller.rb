@@ -53,7 +53,7 @@ class Legislation::ProposalsController < Legislation::BaseController
 
     def proposal_params
       params.require(:legislation_proposal).permit(:legislation_process_id, :title,
-                    :question, :summary, :description, :video_url, :tag_list,
+                    :summary, :description, :video_url, :tag_list,
                     :terms_of_service, :geozone_id,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])

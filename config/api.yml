@@ -27,7 +27,6 @@ Proposal:
     id:                   integer
     title:                string
     description:          string
-    external_url:         string
     cached_votes_up:      integer
     comments_count:       integer
     hot_score:            integer
