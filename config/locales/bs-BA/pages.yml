@@ -76,4 +76,51 @@ bs:
         - Obezbjeđujući alternativne tekstove za slike, slijepa ili slabovidna lica mogu koristiti specijalne čitače za pristup informacijama.
         - Kada video zapisi sadrže titlove, korisnici sa slušnim poteškoćama ih mogu u potpunosti razumjeti.
         - Ako su sadržaji napisani jednostavnim i ilustrovanim jezikom, korisnici sa poteškoćama u učenju ih mogu bolje razumjeti.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - Ako korisnik ima problema s kretanjem i poteškoće sa upotrebom miša, alternativne opcije na tastaturi mu pomažu u navigaciji.
+      keyboard_shortcuts:
+        title: Prečice na tastaturi
+        navigation_table:
+          description: Kako bi mogli da se krećete po ovoj web-stranici na pristupačan način, isprogramirali smo grupu tipki za brzi pristup glavnim organizacionim dijelovima stranice.
+          caption: Prečice za navigacioni meni
+          key_header: Tipka
+          page_header: Strana
+          rows:
+            - 
+              key_column: 0
+              page_column: Početna strana
+            - 
+              key_column: 1
+              page_column: Debate
+            - 
+              key_column: 2
+              page_column: Prijedlozi
+            - 
+              key_column: 3
+              page_column: Glasanja
+            - 
+              key_column: 4
+              page_column: Participativni budžeti
+            - 
+              key_column: 5
+              page_column: Izrada zakona
+        browser_table:
+          description: "Ovisno o operativnom sistemu i pregledniku koji se koristi, kombinacija tipki je kako slijedi:"
+          caption: Kombinacija tipki, ovisno o operativnom sistemu i pregledniku
+          browser_header: Preglednik
+          key_header: Kombinacija tipki
+          rows:
+            - 
+              browser_column: Pretraživač
+              key_column: ALT + prečica, onda ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS (velika slova) + prečica
+            - 
+              browser_column: Chrome
+              key_column: ALT + prečica (CTRL + ALT + prečice za MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + prečica (CMD + prečica za MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS (velika slova) + ESC + prečica
