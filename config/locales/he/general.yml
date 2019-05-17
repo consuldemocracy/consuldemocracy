@@ -362,9 +362,6 @@ he:
       other: אחר
     form:
       geozone: היקף הפעילות
-      proposal_external_url: קישור למידע נוסף
-      proposal_question: השאלה המוצעת
-      proposal_question_example_html: "חייב להיות מסוכם בשאלה אחת לפחות עם תשובה של כן או לא"
       proposal_responsible_name: שם ושם משפחה מלא של מציע/ת ההצעה
       proposal_responsible_name_note: "“(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם יישמר חסוי מפני שאר המשתמשים)\""
       proposal_summary: תקציר ההצעה
@@ -498,7 +495,6 @@ he:
       share: שיתוף
       no_notifications: "להצעה זו אין התראות."
       embed_video_title: "וידאו על %{proposal}"
-      title_external_url: "תיעוד נוסף"
       title_video_url: "מקור וידאו חיצוני"
       author: מחבר/ת
       draft: הצעה כטיוטה. אינה יכולה לקבל תמיכה עדיין, וגם אינה מופיעה ברשימת ההצעות.
