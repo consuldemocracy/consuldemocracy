@@ -314,9 +314,6 @@ nl:
       other: Anders
     form:
       geozone: Betreffende regio
-      proposal_external_url: Link naar extra documentatie
-      proposal_question: Vraag
-      proposal_question_example_html: "Moeten worden samengevat in één vraag met een Ja of nee als antwoord"
       proposal_responsible_name: Volledige naam van persoon die het voorstel doet
       proposal_responsible_name_note: "(individueel of als vertegenwoordiger van een collectief; niet publiek zichtbaar)"
       proposal_summary: Samenvatting voorstel
@@ -436,7 +433,6 @@ nl:
       share: Deel
       no_notifications: "Dit voorstel heeft geen meldingen."
       embed_video_title: "Video voor %{proposal}"
-      title_external_url: "Aanvullende documentatie"
       title_video_url: "Externe video"
       author: Author
     update:
