@@ -260,8 +260,6 @@ ca:
       other: Una altra
     form:
       geozone: Àmbits d'actuació
-      proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta de la proposta
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
