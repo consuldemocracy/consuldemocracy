@@ -47,7 +47,7 @@
                       id: "budget_investment_visible_to_valuators" %>
   <% end %>
 </td>
-<td class="small text-center">
+<td id="selection" class="small text-center">
   <% if investment.selected? %>
       <%= link_to_unless investment.budget.finished?,
                          t("admin.budget_investments.index.selected"),
@@ -63,19 +63,20 @@
                          remote: true,
                          class: "button small expanded" %>
   <% elsif investment.feasible? && investment.valuation_finished? %>
-      <%= link_to_unless investment.budget.finished?,
-                         t("admin.budget_investments.index.select"),
-                         toggle_selection_admin_budget_budget_investment_path(@budget,
-                                                                              investment,
-                                                                              filter: params[:filter],
-                                                                              sort_by: params[:sort_by],
-                                                                              min_total_supports: params[:min_total_supports],
-                                                                              max_total_supports: params[:max_total_supports],
-                                                                              advanced_filters: params[:advanced_filters],
-                                                                              page: params[:page]),
-                         method: :patch,
-                         remote: true,
-                         class: "button small hollow expanded" %>
+    <% unless investment.budget.finished? %>
+      <%= link_to t("admin.budget_investments.index.select"),
+                  toggle_selection_admin_budget_budget_investment_path(@budget,
+                                                                       investment,
+                                                                       filter: params[:filter],
+                                                                       sort_by: params[:sort_by],
+                                                                       min_total_supports: params[:min_total_supports],
+                                                                       max_total_supports: params[:max_total_supports],
+                                                                       advanced_filters: params[:advanced_filters],
+                                                                       page: params[:page]),
+                  method: :patch,
+                  remote: true,
+                  class: "button small hollow expanded" %>
+    <% end %>
   <% end %>
 </td>
 <% if params[:filter] == "selected" %>
