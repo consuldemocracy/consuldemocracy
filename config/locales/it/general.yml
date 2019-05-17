@@ -311,9 +311,6 @@ it:
       other: Altri
     form:
       geozone: Ambito operativo
-      proposal_external_url: Link alla documentazione addizionale
-      proposal_question: Quesito della proposta
-      proposal_question_example_html: "Dev’essere riassunto in un’unico quesito con risposta Sì o No"
       proposal_responsible_name: Nome e cognome della persona che presenta la proposta
       proposal_responsible_name_note: "(individualmente o come rappresentante di un’associazione; non sarà reso pubblico)"
       proposal_summary: Riepilogo della proposta
@@ -433,7 +430,6 @@ it:
       share: Condividere
       no_notifications: "Questa proposta non ha notifiche."
       embed_video_title: "Video su %{proposal}"
-      title_external_url: "Documentazione aggiuntiva"
       title_video_url: "Video esterno"
       author: Autore
     update:
