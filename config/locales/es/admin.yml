@@ -1034,7 +1034,7 @@ es:
     polls:
       index:
         title: "Listado de votaciones"
-        no_polls: "No hay ninguna votación próximamente."
+        no_polls: "No hay votaciones."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
@@ -1065,6 +1065,10 @@ es:
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
+      destroy:
+        alert: "Esta acción eliminará la votación y todas sus preguntas asociadas."
+        success_notice: "Votación eliminada correctamente"
+        unable_notice: "No se pueden eliminar votaciones con votos"
     questions:
       index:
         title: "Preguntas de votaciones"
