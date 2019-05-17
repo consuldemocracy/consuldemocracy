@@ -314,9 +314,6 @@ gl:
       other: Outras
     form:
       geozone: Ámbitos de actuación
-      proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta da proposta
-      proposal_question_example_html: "Debe resumirse nunha pregunta cunha resposta tipo «Si ou Non»"
       proposal_responsible_name: Nome e apelidos da persoa que fai esta proposta
       proposal_responsible_name_note: "(individualmente ou como representante dun colectivo; non se mostrará publicamente)"
       proposal_summary: Resumo da proposta
@@ -436,7 +433,6 @@ gl:
       share: Compartir
       no_notifications: "A proposta non ten notificacións."
       embed_video_title: "Vídeo en %{proposal}"
-      title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
       author: Autoría
     update:
