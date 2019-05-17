@@ -327,9 +327,6 @@ ru:
       other: Другое
     form:
       geozone: Сфера деятельности
-      proposal_external_url: Ссылка на дополнительную документацию
-      proposal_question: Вопрос по предложению
-      proposal_question_example_html: "Должен быть сведен к одному вопросу с вариантами ответа Да или Нет"
       proposal_responsible_name: Полное имя лица, отправляющего предложение
       proposal_responsible_name_note: "(индивидуально или в качестве представителя коллектива; не будет отображаться публично)"
       proposal_summary: Краткое изложение предложения
@@ -456,7 +453,6 @@ ru:
       share: Доля
       no_notifications: "По этому предложению нет уведомлений."
       embed_video_title: "Видео по %{proposal}"
-      title_external_url: "Дополнительная документация"
       title_video_url: "Внешнее видео"
       author: Автор
     update:
