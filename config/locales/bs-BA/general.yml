@@ -49,9 +49,15 @@ bs:
       moderator: Moderator
       responses:
         zero: Nema odgovora
+        one: 1 odgovor
+        few: "%{count} odgovora"
+        other: "%{count} odgovora"
       user_deleted: Korisnik obrisan
       votes:
         zero: Nema glasova
+        one: 1 glas
+        few: "%{count} glasa/glasova"
+        other: "%{count} glasa/glasova"
     form:
       comment_as_admin: Komentariši kao administrator
       comment_as_moderator: Komentariši kao moderator
@@ -77,8 +83,14 @@ bs:
     debate:
       comments:
         zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       votes:
         zero: Nema glasova
+        one: 1 glas
+        few: "%{count} glasa/glasova"
+        other: "%{count} glasa/glasova"
     edit:
       editing: Edituj debatu
       form:
@@ -114,6 +126,10 @@ bs:
         button: Traži
         placeholder: Pretraga po debatama...
         title: Traži
+      search_results_html:
+        one: " sadrži pojam <strong>'%{search_term}'</strong>"
+        few: " sadrži pojam <strong>'%{search_term}'</strong>"
+        other: " sadrži pojam <strong>'%{search_term}'</strong>"
       select_order: Poredaj po
       start_debate: Pokreni debatu
       title: Debate
@@ -142,6 +158,9 @@ bs:
       author_deleted: Korisnik obrisan
       comments:
         zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       comments_title: Komentari
       edit_debate_link: Edituj
       flag: Nekoliko korisnika je označilo debatu neprikladnom.
