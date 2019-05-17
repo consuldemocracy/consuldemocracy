@@ -191,7 +191,6 @@ fa:
       unfeasible: غیر قابل پیش بینی
     form:
       geozone: حوزه عملیات
-      proposal_external_url: لینک به مدارک اضافی
       proposal_title: عنوان پیشنهاد
       tag_category_label: "دسته بندی ها\n"
       tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
