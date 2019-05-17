@@ -49,4 +49,11 @@ Rails.application.routes.draw do
 
   # Static pages
   resources :pages, path: "/", only: [:show]
+
+  # Custom More info
+  get 'more-information/debates',             to: 'pages#show', id: 'more_info/_debates',             as: 'more_info/debates'
+  get 'more-information/budgets',             to: 'pages#show', id: 'more_info/_budgets',             as: 'more_info/_budgets'
+  get 'more-information/proposals',           to: 'pages#show', id: 'more_info/_proposals',           as: 'more_info/_proposals'
+  get 'more-information/polls',               to: 'pages#show', id: 'more_info/_polls',               as: 'more_info/_polls'
+  get 'more-information/others',              to: 'pages#show', id: 'more_info/_other',               as: 'more_info/_other'
 end

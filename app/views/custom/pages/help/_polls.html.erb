@@ -1,0 +1,58 @@
+<div class="row section-content">
+  <div class="small-12 medium-3 column">
+    <%= back_link_to %>
+    <ul class="menu vertical margin-top">
+      <li>
+        <a href="#proposals"><strong>I. Votaciones</strong></a>
+        <ul class="nested vertical menu" style="margin-left:1rem; margin-top: 0;">
+          <li>
+            <a href="#section1">
+              <strong>I.1 <%= t("pages.more_info.polls.title") %></strong>
+            </a>
+          </li>
+          <li>
+            <a href="#section2">
+              <strong>I.2 Proceso de Priorizacion</strong>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="small-12 medium-9 column">
+    <h3 id="section1" data-magellan-target="polls"><%= t("pages.more_info.polls.title") %></h3>
+    <!--<p><%= t("pages.more_info.polls.description") %></p>-->
+    <ul class="features">
+      <li>
+        <%= t("pages.more_info.polls.feature_1",
+              link: link_to(t("pages.more_info.polls.feature_1_link", org_name: setting['org_name']),
+                            new_user_registration_path)).html_safe %>
+      </li>
+      <li><%= t("pages.more_info.polls.feature_2") %></li>
+      <!--<li><%= t("pages.more_info.polls.feature_3") %></li>-->
+    </ul>
+
+    <h3 id="section2" data-magellan-target="proposals">
+      Proceso de Priorizacion
+    </h3>
+    <p><%= t("pages.more_info.proposals.description") %></p>
+    <ul class="features">
+      <p>
+        -	Se presentarán todas las propuestas, con imágenes y una valoración económica de las mismas. Procediéndose a realizar  una breve explicación del sentido de cada una de ellas.<br>
+        -	Se facilitará la posibilidad a miembros de una asamblea de zona distinta a defender alguna de ellas.<br></p>
+
+      <p> El método para la priorización de las propuestas será:<br>
+
+        1.	Los asistentes numerarán  las propuestas según su orden de preferencia (con un mínimo de 10)<br>
+        2.	Cada persona podrá entregar sólo una hoja de votación en el total de asambleas, para ello se registrarán los votantes, previamente acreditados mediante DNI.<br>
+        3.	El voto será personal e intransferible.<br> </p>
+
+      <p> Recuento:<br>
+        1.	Cada número tiene asignada una puntuación, así el 1 tendrá la puntuación más alta, y un punto menos el 2 y así consecutivamente.<br>
+        2.	Procediéndose a la suma de las puntuaciones obtenidas por cada propuesta.<br>
+        3.	El recuento lo hará un trabajador o trabajadora  del ayuntamiento junto con uno de los  miembros de la Comisión Permanente de Participación de la zona correspondiente o en su defecto con un ciudadano o ciudadana voluntaria de la propia asamblea.<br>
+        4.	El resultado se anunciará al final de la asamblea.</p>
+      </li>
+    </ul>
+  </div>
+</div>
