@@ -959,6 +959,10 @@ bs:
       organization: Organizacije ne mogu glasati
       unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je završena
+      different_heading_assigned:
+        one: "Samo možete podržati investicione projekte u %{count} području. Već ste podržali investicije u%{supported_headings}."
+        few: "Samo možete podržati investicione projekte u %{count} područja/područjima. Već ste podržali investicije u%{supported_headings}."
+        other: "Samo možete podržati investicione projekte u %{count} područja/područjima. Već ste podržali investicije u%{supported_headings}."
   welcome:
     feed:
       most_active:
