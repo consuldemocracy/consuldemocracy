@@ -312,9 +312,6 @@ ar:
       other: أخرى
     form:
       geozone: نطاق العملية
-      proposal_external_url: رابط لوثائق إضافية
-      proposal_question: سؤال المقترح
-      proposal_question_example_html: "يجب تلخيصها في سؤال واحد بإجابة نعم أو لا"
       proposal_responsible_name: الاسم الكامل للشخص الذي قدم الاقتراح
       proposal_summary: ملخص المقترح
       proposal_summary_note: "(200 حرف كحد أقصى)"
@@ -447,7 +444,6 @@ ar:
       share: مشاركة
       no_notifications: "هذا المقترح لا يحوي إشعارات."
       embed_video_title: "فيديو حول %{proposal}"
-      title_external_url: "وثائق إضافية"
       title_video_url: "فيديو خارجي"
       author: كاتب
     update:
