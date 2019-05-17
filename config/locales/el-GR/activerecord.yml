@@ -77,7 +77,7 @@ el:
         one: Προσαρμοσμένη εικόνα
         other: Προσαρμοσμένες εικόνες
       site_customization/content_block:
-        one: Προσαρμοσμένο περιεχόμενο μπλοκ
+        one: Προσαρμοσμένο μπλοκ περιεχομένου
         other: Προσαρμοσμένο περιεχόμενο μπλοκς
       document:
         one: Έγγραφο
@@ -89,13 +89,13 @@ el:
         one: "Πρόταση"
         other: "Προτάσεις"
       legislation/draft_versions:
-        one: "Εκδοχή του σχεδίου"
+        one: "Προσχέδιο"
         other: "Εκδοχές του σχεδίου"
       legislation/questions:
         one: "Ερώτηση"
         other: "Ερωτήσεις"
       legislation/question_options:
-        one: "Ερώτημα επιλογής"
+        one: "Επιλογή ερώτησης"
         other: "Ερώτημα επιλογών"
       legislation/answers:
         one: "Απάντηση"
