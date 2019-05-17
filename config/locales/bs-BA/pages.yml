@@ -67,4 +67,13 @@ bs:
       title: Politika privatnosti
       subtitle: "Zaštita privatnosti"
     accessibility:
-      title: Dostupnost
+      title: Pristupačnost
+      description: |-
+        Web-pristupačnost se odnosi na mogućnost pristupa Web-u i svim njegovim sadržajima od strane svih ljudi, bez obzira na njihova ograničenja (fizička, intelektualna, ili tehnička) do kojih može doći, ili na ograničenja koja proizilaze iz konteksta upotrebe (tehnološka ili okolišna).
+
+        Kada se web-stranice dizajniraju imajući na umu njihovu pristupačnost, svi korisnici imaju pristup sadržajima pod jednakim uslovima. Naprimjer:
+      examples:
+        - Obezbjeđujući alternativne tekstove za slike, slijepa ili slabovidna lica mogu koristiti specijalne čitače za pristup informacijama.
+        - Kada video zapisi sadrže titlove, korisnici sa slušnim poteškoćama ih mogu u potpunosti razumjeti.
+        - Ako su sadržaji napisani jednostavnim i ilustrovanim jezikom, korisnici sa poteškoćama u učenju ih mogu bolje razumjeti.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
