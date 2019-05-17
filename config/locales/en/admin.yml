@@ -780,6 +780,8 @@ en:
       new:
         title: New newsletter
         from: E-mail address that will appear as sending the newsletter
+        header_footer_help_text_html: "The heading and footer are the same for all emails, you can modify them on <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br>You can replace header image on %{link}."
+        image_link: "custom images"
       edit:
         title: Edit newsletter
       show:
@@ -794,7 +796,7 @@ en:
         segment_recipient: Recipients
         from: E-mail address that will appear as sending the newsletter
         body: Email content
-        body_help_text: This is how the users will see the email
+        body_help_text: This is how the users will see the email.
         send_alert: Are you sure you want to send this newsletter to %{n} users?
     admin_notifications:
       create_success: Notification created successfully
