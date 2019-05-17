@@ -336,9 +336,6 @@ pl:
       other: Inne
     form:
       geozone: Część dzielnicy, której dotyczy pomysł
-      proposal_external_url: Link do dodatkowej dokumentacji
-      proposal_question: Pytanie dotyczące wniosku
-      proposal_question_example_html: "Musi zostać podsumowany w jednym pytaniu z odpowiedzią Tak lub Nie"
       proposal_responsible_name: Pełne nazwisko osoby składającej wniosek
       proposal_responsible_name_note: "(indywidualnie lub jako przedstawiciel zbiorowości; nie będzie wyświetlone publicznie)"
       proposal_summary: Podsumowanie wniosku
@@ -470,7 +467,6 @@ pl:
       share: Udostępnij
       no_notifications: "Niniejszy wniosek ma żadnych powiadomień."
       embed_video_title: "Wideo na %{proposal}"
-      title_external_url: "Dodatkowa dokumentacja"
       title_video_url: "Zewnętrzne video"
       author: Autor
     update:
