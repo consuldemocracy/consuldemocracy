@@ -1073,6 +1073,10 @@ he:
       flash:
         question_added: "שאלות שנוספו לסקר זה"
         error_on_question_added: "לא ניתן לשייך שאלות לסקר זה"
+      destroy:
+        alert: "פעולה זו תסיר את הסקר ואת כל השאלות הקשורות אליו."
+        success_notice: "הסקר נמחק בהצלחה"
+        unable_notice: "לא ניתן למחוק סקר שיש לו הצבעות"
     questions:
       index:
         title: "שאלות"
