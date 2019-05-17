@@ -20,3 +20,7 @@ bs:
         link: "građanske debate"
         feature_html: "Možete pokrenuti debate, davati komentare i ocijenjivati ih sa <strong>\"Slažem se\"</strong> ili <strong> \"Ne slažem se\" </strong>. Kako bi to uradili, morate ići na %{link}."
         feature_link: "registrujte se u %{org}"
+        image_alt: "Dugmad za ocjenjivanje debata"
+        figcaption: 'Tasteri "Slažem se" i "Ne slažem se" za ocjenjivanje debata.'
+      proposals:
+        title: "Prijedlozi"
