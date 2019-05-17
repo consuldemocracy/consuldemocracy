@@ -350,9 +350,6 @@ bs:
       other: Drugo
     form:
       geozone: Područje
-      proposal_external_url: Link za dodatnu dokumentaciju
-      proposal_question: Pitanje u prijedlogu
-      proposal_question_example_html: "Mora se sumirati jednim odgovorom, \"Da\" ili \"Ne\""
       proposal_responsible_name: Puno ime i prezime osobe koja podnosi prijedlog
       proposal_responsible_name_note: "(pojedinačno ili kao predstavnik/ca kolektiva; ne vidi se javno)"
       proposal_summary: Sažetak prijedloga
@@ -480,7 +477,6 @@ bs:
       share: Podijeli
       no_notifications: "Nema obavijesti za ovaj prijedlog."
       embed_video_title: "Video zapis za (prijedlog) %{proposal}"
-      title_external_url: "Dodatna dokumentacija"
       title_video_url: "Eksterni video"
       author: Autor
       draft: Prijedlog u fazi nacrta. Još uvijek ne može dobiti podršku, niti se pojavljuje na listi prijedloga.
