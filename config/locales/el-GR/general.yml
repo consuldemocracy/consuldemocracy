@@ -338,9 +338,6 @@ el:
       other: Άλλα
     form:
       geozone: Εμβέλεια λειτουργίας
-      proposal_external_url: Σύνδεσμος σε πρόσθετη τεκμηρίωση
-      proposal_question: Ερώτηση πρότασης
-      proposal_question_example_html: "Πρέπει να συνοψιστούν σε μία ερώτηση με ένα Ναι ή Όχι ως απάντηση"
       proposal_responsible_name: Πλήρες όνομα του ατόμου που υποβάλλει την πρόταση
       proposal_responsible_name_note: "(ατομικά ή ως εκπρόσωπος ενός συλλόγου, δεν θα εμφανίζεται δημοσίως)"
       proposal_summary: Περίληψη πρότασης
@@ -462,7 +459,6 @@ el:
       share: Μοιραστείτε
       no_notifications: "Η παρούσα πρόταση δεν έχει ειδοποιήσεις."
       embed_video_title: "Βίντεο στην %{proposal}"
-      title_external_url: "Πρόσθετη τεκμηρίωση"
       title_video_url: "Εξωτερικό βίντεο"
       author: Συγγραφέας
       draft: Προσχέδιο πρότασης. Δεν είναι ακόμα δυνατή η υποστήριξη, ούτε εμφανίζεται στη λίστα των προτάσεων.
