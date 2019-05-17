@@ -285,9 +285,6 @@ cs:
       other: Jiné
     form:
       geozone: Scope of operation
-      proposal_external_url: Link to additional documentation
-      proposal_question: Otázka k návrhu
-      proposal_question_example_html: "Musí být shrnuty v jedné otázce s odpovědí Ano nebo Ne"
       proposal_responsible_name: Úplné jméno osoby, která podala návrh
       proposal_responsible_name_note: "(jednotlivě nebo jako zástupce kolektivu, nebudou zobrazovány veřejně)"
       proposal_summary: Shrnutí návrhu
@@ -393,7 +390,6 @@ cs:
       share: Sdílet
       no_notifications: "Tento návrh nemá žádné oznámení."
       embed_video_title: "Video v návrhu %{proposal}"
-      title_external_url: "Dodatečná dokumentace"
       title_video_url: "External video"
       author: Autor
     update:
