@@ -52,7 +52,7 @@ hr:
         one: 1 odgovor
         few: "%{count} odgovore"
         other: "%{count} odgovore"
-      user_deleted: Kirisnik obrisan
+      user_deleted: Korisnik obrisan
       votes:
         zero: Nema glasova
         one: 1 glas
@@ -461,7 +461,7 @@ hr:
       archived: "Ovaj je prijedlog arhiviran i ne može više prikupljati podršku."
       successful: "Prijedlog je dobio dovoljno potpore."
     show:
-      author_deleted: Kirisnik obrisan
+      author_deleted: Korisnik obrisan
       code: "Kod prijedloga:"
       comments:
         zero: Bez komentara
@@ -681,16 +681,62 @@ hr:
         web: "WEB"
         booth: "GLASAČKA KABINA"
         total: "UKUPNO"
+        valid: "Vrijedi"
+        white: "Bijeli glasovi"
+        null_votes: "Nevažeč"
       results:
+        title: "Pitanja"
         most_voted_answer: "Najviše izglasan odgovor: "
+    poll_header:
+      back_to_proposal: Nazad na prijedlog
   poll_questions:
     show:
       vote_answer: "Glas %{answer}"
       voted: "Vi ste glasali %{answer}"
+      voted_token: "Možete naisati identifikator glasova kako biste provjerili svoje završne rezultate glasovanja:"
+  proposal_notifications:
+    new:
+      title: "Pošalji poruku"
+      title_label: "Naziv"
+      body_label: "Poruka"
+      submit_button: "Pošalji poruku"
+      info_about_receivers_html: "Ova poruka će biti poslana <strong>%{count} ljudima </strong> i biti će vidljiva u %{proposal_page}. <br>Porue nisu poslane odma, korisnici će dobiti periodički email s obavijestima o prijedlozima."
+      proposal_page: "na stranicu prijeldoga"
+    show:
+      back: "Nzad na moju aktivnost"
   shared:
+    edit: "Uredi"
+    save: "Spremi"
+    delete: "Izbriši"
+    "yes": "Da"
+    "no": "Ne"
+    search_results: "Pretraži rezultate"
     advanced_search:
       author_type: "Po kategoriji autora"
+      author_type_blank: "Odaberi kategoriju"
+      date: "Po datumu"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "Odaberi datum"
+      date_1: "Zadnjih 24 sata"
+      date_2: "Zadnji tjedan"
+      date_3: "Zadnji mjesec"
+      date_4: "Zadnja godina"
+      date_5: "Prilagođeno"
+      from: "Od"
+      general: "S tekstom"
+      general_placeholder: "Napiši tekst"
+      search: "Filter"
+      title: "Napredna pretraga"
+      to: "Do"
+    author_info:
+      author_deleted: Korisnik obrisan
+    back: Idi nazad
+    check: Odaberi
+    check_all: Svi
+    check_none: Niti jedan
   spending_proposals:
+    show:
+      author_deleted: Korisnik obrisan
     spending_proposal:
       support: Potpora
       support_title: Podupri ovaj projekt
@@ -702,6 +748,12 @@ hr:
       debate_votes: Glasovi za debate
       comment_votes: Glasovi za komentare
       votes: Totalno glasova
+  users:
+    show:
+      deleted: Obrisan
+      deleted_debate: Ova rasprava je obrisana
+      deleted_proposal: Ovaj prijedlog je obrisan
+      deleted_budget_investment: Ovaj investicijski projekt je obrisan
   votes:
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
     organizations: Organizacijama nije dopušteno glasanje
