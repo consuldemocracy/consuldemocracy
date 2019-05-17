@@ -350,9 +350,6 @@ hr:
       other: Drugi
     form:
       geozone: Opseg djelovanja
-      proposal_external_url: Poveznica na dodatnu dokumentaciju
-      proposal_question: Pitanje za prijedlog
-      proposal_question_example_html: "Mora biti sažeto u jednom pitanju s Da ili Ne odgovorom"
       proposal_responsible_name: Puno ime osobe koja šalje prijedlog
       proposal_responsible_name_note: "(pojedinačno ili kao predstavnik kolektiva, neće se javno prikazivati)"
       proposal_summary: Sažetak prijedloga
@@ -480,7 +477,6 @@ hr:
       share: Podjeli
       no_notifications: "Ovaj prijedlog nema obavijesti."
       embed_video_title: "Video je na %{proposal}"
-      title_external_url: "Dodatna dokumentacija"
       title_video_url: "Vanjski video"
       author: Autor
       draft: Prijedlog je u draft verziji. Nemožete više dobiti potporu, niti se pojavljuje u listi prijedloga.
