@@ -648,6 +648,17 @@ es:
       section_footer:
         title: Ayuda sobre las votaciones
         description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
+        help_text_1: "-  Se presentarán todas las propuestas, con imágenes y una valoración económica de las mismas. Procediéndose a realizar  una breve explicación del sentido de cada una de ellas."
+        help_text_2: "- Se facilitará la posibilidad a miembros de una asamblea de zona distinta a defender alguna de ellas."
+        help_text_3: "Los método para la priorización de las propuestas será:"
+        help_text_4:  "1.  Los asistentes numerarán  las propuestas según su orden de preferencia (con un mínimo de 10)"
+        help_text_5:  "2.  Cada persona podrá entregar sólo una hoja de votación en el total de asambleas, para ello se registrarán los votantes, previamente acreditados mediante DNI."
+        help_text_6:  "3.  El voto será personal e intransferible."
+        help_text_7:  "Recuento:"
+        help_text_8:  "1.  Cada número tiene asignada una puntuación, así el 1 tendrá la puntuación más alta, y un punto menos el 2 y así consecutivamente."
+        help_text_9:  "2.  Procediéndose a la suma de las puntuaciones obtenidas por cada propuesta."
+        help_text_10:  "3. El recuento lo hará un trabajador o trabajadora  del ayuntamiento junto con uno de los  miembros de la Comisión Permanente de Participación de la zona correspondiente o en su defecto con un ciudadano o ciudadana voluntaria de la propia asamblea."
+        help_text_11:  "4. El resultado se anunciará al final de la asamblea."
       no_polls: "No hay votaciones abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
