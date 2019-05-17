@@ -543,6 +543,14 @@ bs:
       see_complete_course: Pogledaj cijelokupni tok
       hide_course: Sakrij tok
     goal:
+      target_supports:
+        one: Dobijte %{count} glasa/glasova podrške za vaš prijedlog
+        few: Dobijte %{count} glasa/glasova podrške za vaš prijedlog
+        other: Dobijte %{count} glasa/glasova podrške za vaš prijedlog
+      days:
+        one: "%{count} dan"
+        few: "%{count} dana"
+        other: "%{count} dana"
       locked_resource: Resurs zaključan
       ideal_time: Idealni rok
     community:
@@ -556,6 +564,10 @@ bs:
       index:
         title: Glasačke ankete
         create: Formuliši glasačku anketu
+        count:
+          one: Pokrenuli ste %{count} glasačku anketu.
+          few: Pokrenuli ste %{count} glasačke/glasačkih ankete/anketa.
+          other: Pokrenuli ste %{count} glasačke/glasačkih ankete/anketa.
         links: Linkovi
         additiontal_information: Dodatne informacije
       new:
@@ -564,6 +576,10 @@ bs:
       edit:
         submit: Ažuriraj podatke za glasačku anketu
       poll:
+        responses:
+          one: "%{count} odgovora"
+          few: "%{count} odgovora"
+          other: "%{count} odgovora"
         view_results: Pokaži rezultate
         edit_poll: Edituj anketu
         show_results: Pokaži rezultate
@@ -741,6 +757,10 @@ bs:
     show: Pokaži
     suggest:
       debate:
+        found:
+          one: "Već postoji debata koja sadrži pojam %{query}, možete učestvovati u njoj umjesto pokretanja nove debate."
+          few: "Već postoje debate koje sadrže pojam %{query}, možete učestvovati u njima umjesto pokretanja nove debate."
+          other: "Već postoje debate koje sadrže pojam %{query}, možete učestvovati u njima umjesto pokretanja nove debate."
         message: "Vidite (ograničeni) %{limit} (broj) %{count} debata koje sadrže pojam %{query}"
         see_all: "Vidi sve"
       budget_investment:
@@ -751,6 +771,10 @@ bs:
         message: "Vidite (ograničeni) %{limit} (broj) %{count} investicija koje sadrže pojam %{query}"
         see_all: "Vidi sve"
       proposal:
+        found:
+          one: "Već postoji prijedlog koji sadrži pojam %{query}, možete učestvovati u njemu umjesto pokretanja novog prijedloga"
+          few: "Već postoje prijedlozi koji sadrže pojam %{query}, možete učestvovati u njima umjesto pokretanja novog prijedloga"
+          other: "Već postoje prijedlozi koji sadrže pojam %{query}, možete učestvovati u njima umjesto pokretanja novog prijedloga"
         message: "Vidite (ograničeni) %{limit} (broj) %{count} prijedloga koji sadrže pojam %{query}"
         see_all: "Vidi sve"
     tags_cloud:
@@ -833,6 +857,9 @@ bs:
       support_title: Podrži prijedlog
       supports:
         zero: Nema podrške
+        one: 1 glas podrške
+        few: "%{count} glasa/glasova podrške"
+        other: "%{count} glasa/glasova podrške"
   stats:
     index:
       visits: Posjete
