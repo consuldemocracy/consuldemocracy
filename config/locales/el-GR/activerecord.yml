@@ -113,7 +113,7 @@ el:
         one: "Δημοσκόπηση"
         other: "Δημοσκοπήσεις"
       proposal_notification:
-        one: "Κοινοποίηση της πρότασης"
+        one: "Ειδοποίηση πρότασης"
         other: "Κοινοποιήσεις της πρότασης"
       dashboard/action:
         one: Πίνακας εργαλείων προτάσεων
@@ -128,10 +128,10 @@ el:
       budget:
         name: "Όνομα"
         description_accepting: "Περιγραφή κατά τη φάση αποδοχής"
-        description_reviewing: "Περιγραφή κατά τη φάση αναθεώρησης"
-        description_selecting: "Περιγραφή κατά τη φάση επιλογής"
-        description_valuating: "Περιγραφή κατά τη φάση αξιολόγησης"
-        description_balloting: "Περιγραφή κατά τη φάση που διεξάγεται η ψηφοφορία"
+        description_reviewing: "Περιγραφή κατά τη φάση Αναθεώρησης"
+        description_selecting: "Περιγραφή κατά τη φάση Επιλογής"
+        description_valuating: "Περιγραφή κατά τη φάση Αξιολόγησης"
+        description_balloting: "Περιγραφή κατά τη φάση Ψηφοφορίας"
         description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης αναθεώρησης ψηφοδελτίων"
         description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
         phase: "Φάση"
