@@ -59,4 +59,8 @@ bs:
       expired: "isteklo; ponovi zahtjev."
       not_found: "nije pronađen."
       not_locked: "nije bio zaključan."
+      not_saved:
+        one: "1 greška je onemogućila da se spasi ovaj %{resource}. Štrihiraj označena polja da vidiš kako ispraviti grešku:"
+        few: "%{count} greške/grešaka je onemogućilo da se spasi ovaj %{resource}. Štrihiraj označena polja da vidiš kako ispraviti greške:"
+        other: "%{count} greške/grešaka je onemogućilo da se spasi ovaj %{resource}. Štrihiraj označena polja da vidiš kako ispraviti greške:"
       equal_to_current_password: "ne može biti ista kao i sadašnja lozinka."
