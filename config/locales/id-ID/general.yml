@@ -289,8 +289,6 @@ id:
       other: Lainnya
     form:
       geozone: Lingkup operasi
-      proposal_external_url: Tautkan ke dokumentasi tambahan
-      proposal_question: Proposal pertanyaan
       proposal_responsible_name: Nama lengkap orang yang mengajukan proposal
       proposal_responsible_name_note: "(secara individu atau sebagai wakil dari kolektif; tidak akan ditampilkan dipublikasikan)"
       proposal_summary: Proposal ringkasan
@@ -398,7 +396,6 @@ id:
       share: Berbagi
       no_notifications: "Proposal ini memiliki pemberitahuan."
       embed_video_title: "Video pada %{proposal}"
-      title_external_url: "Dokumentasi tambahan"
       title_video_url: "Video eksternal"
       author: Penulis
     update:
