@@ -313,9 +313,6 @@ sq:
       other: Tjetër
     form:
       geozone: Fusha e veprimit
-      proposal_external_url: Lidhje me dokumentacionin shtesë
-      proposal_question: Pyetje për propozim
-      proposal_question_example_html: "Duhet të përmblidhet në një pyetje me një përgjigje Po ose Jo"
       proposal_responsible_name: Emri i plotë i personit që dorëzon propozimin
       proposal_responsible_name_note: "(individualisht ose si përfaqësues i një kolektivi, nuk do të shfaqet publikisht)"
       proposal_summary: Përmbledhje e propozimit
@@ -435,7 +432,6 @@ sq:
       share: Shpërndaj
       no_notifications: "Ky propozim ka  njoftime."
       embed_video_title: "Video në %{proposal}"
-      title_external_url: "Dokumentacion shtesë"
       title_video_url: "Video e jashtme"
       author: Autor
     update:
