@@ -18,55 +18,55 @@ el:
         other: "Κατάσταση Ορόσημου"
       progress_bar:
         one: "Γραμμή προόδου"
-        other: "Γραμμές προόδου"
+        other: "Γραμμή προόδου"
       comment:
         one: "Σχόλιο"
-        other: "Σχόλια"
+        other: "Σχόλιο"
       debate:
         one: "Συζήτηση"
-        other: "Συζητήσεις"
+        other: "Συζήτηση"
       tag:
         one: "Ετικέτα"
-        other: "Ετικέτες"
+        other: "Ετικέτα"
       user:
         one: "Χρήστης"
-        other: "Χρήστες"
+        other: "Χρήστης"
       moderator:
         one: "Συντονιστής"
-        other: "Συντονιστές"
+        other: "Συντονιστής"
       administrator:
         one: "Διαχειριστής"
-        other: "Διαχειριστές"
+        other: "Διαχειριστής"
       valuator:
         one: "Αξιολογητής"
-        other: "Αξιολογητές"
+        other: "Αξιολογητής"
       valuator_group:
-        one: "Ομάδα αξιολογητών"
-        other: "Ομάδες αξιολογητών"
+        one: "Ομάδα αξιολόγησης"
+        other: "Ομάδα αξιολόγησης"
       manager:
-        one: "Διευθυντής"
-        other: "Διευθυντές"
+        one: "Υπεύθυνος"
+        other: "Υπεύθυνος"
       newsletter:
         one: "Ενημερωτικό δελτίο"
-        other: "Ενημερωτικά δελτία"
+        other: "Ενημερωτικό δελτίο"
       vote:
-        one: "Ψηφος"
-        other: "Ψήφοι"
+        one: "Ψήφος"
+        other: "Ψήφος"
       organization:
         one: "Οργανισμός"
-        other: "Οργανισμοί"
+        other: "Οργανισμός"
       poll/booth:
-        one: "περίπτερο"
-        other: "περίπτερα"
+        one: "Περίπτερο"
+        other: "Περίπτερο"
       poll/officer:
-        one: "λειτουργός"
-        other: "λειτουργοί"
+        one: "Λειτουργός"
+        other: "Λειτουργός"
       poll/ballot_sheet:
         one: Φύλλο ψηφοφορίας
-        other: Φύλλα ψηφοφορίας
+        other: Φύλλο ψηφοφορίας
       proposal:
         one: "Πρόταση πολίτη"
-        other: "Προτάσεις πολίτη"
+        other: "Πρόταση πολίτη"
       spending_proposal:
         one: "Επενδυτικό έργο"
         other: "Επενδυτικά έργα"
