@@ -220,6 +220,9 @@ bs:
         current_goal: Trenutni cilj
         supports:
           zero: Nema podrške
+          one: 1 glas podrške
+          few: "Glasova podrške"
+          other: "Glasova podrške"
     footer:
       accessibility: Dostupnost
       conditions: Uvjeti korištenja
@@ -255,6 +258,10 @@ bs:
       budgets: Participativno budžetiranje
       spending_proposals: Prijedlozi troškova
       notification_item:
+        new_notifications:
+          one: Imate jednu novu obavijest
+          few: Imate %{count} nove/novih obavijesti
+          other: Imate %{count} nove/novih obavijesti
         notifications: Obavijesti
         no_notifications: "Nemate novih obavijesti"
     admin:
@@ -267,6 +274,19 @@ bs:
       title: Obavijesti
       unread: Nepročitano
     notification:
+      action:
+        comments_on:
+          one: Neko je ostavio komentar na
+          few: Ima/imaju %{count} komentara na
+          other: Ima/imaju %{count} komentara na
+        proposal_notification:
+          one: Ima jedna nova obavijest na
+          few: Ima/imaju %{count} novih/nove obavijesti na
+          other: Ima/imaju %{count} novih/nove obavijesti na
+        replies_to:
+          one: Neko je odgovorio na vaš komentar na
+          few: Imaju/ima %{count} nova/novih odgovora na vaš komentar na
+          other: Imaju/ima %{count} nova/novih odgovora na vaš komentar na
       mark_as_read: Označi kao pročitano
       mark_as_unread: Označi kao nepročitano
       notifiable_hidden: Ovaj resurs više nije dostupan.
@@ -383,6 +403,10 @@ bs:
         button: Traži
         placeholder: Pretraga po prijedlozima...
         title: Traži
+      search_results_html:
+        one: " sadrži pojam <strong>'%{search_term}'</strong>"
+        few: " sadrži pojam <strong>'%{search_term}'</strong>"
+        other: " sadrži pojam <strong>'%{search_term}'</strong>"
       select_order: Poredaj po
       select_order_long: "Gledate prijedloge poredane po:"
       start_proposal: Formuliši prijedlog
@@ -417,12 +441,21 @@ bs:
       already_supported: Već ste podržali ovaj prijedlog. Podijelite ga!
       comments:
         zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       support: Podrška
       support_title: Podrži prijedlog
       supports:
         zero: Nema podrške
+        one: 1 glas podrške
+        few: "%{count} glasa/glasova podrške"
+        other: "%{count} glasa/glasova podrške"
       votes:
         zero: Nema glasova
+        one: 1 glas
+        few: "%{count} glasa/glasova"
+        other: "%{count} glasa/glasova"
       supports_necessary: "Potrebno %{number} glasova podrške"
       total_percent: 100%
       archived: "Prijedlog je arhiviran, nije moguće dati podršku."
@@ -432,6 +465,9 @@ bs:
       code: "Šifra prijedloga:"
       comments:
         zero: Nema komentara
+        one: 1 komentar
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
       flag: Nekoliko korisnika je označilo prijedlog neprikladnim.
