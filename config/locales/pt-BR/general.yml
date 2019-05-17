@@ -311,9 +311,6 @@ pt-BR:
       other: Outro
     form:
       geozone: Escopo da operação
-      proposal_external_url: Link para documentação adicional
-      proposal_question: Questão proposta
-      proposal_question_example_html: "Deve ser resumido em uma pergunta com uma resposta de Sim ou não"
       proposal_responsible_name: Nome completo da pessoa que está submetendo a proposta
       proposal_responsible_name_note: "(indivudualmente ou como representante de um\ncoletivo; não será mostrado publicamente)"
       proposal_summary: Sumário da proposta
@@ -433,7 +430,6 @@ pt-BR:
       share: Compartilhar
       no_notifications: "Esta proposta não tem notificações."
       embed_video_title: "Vídeo em %{proposal}"
-      title_external_url: "Documentação adicional"
       title_video_url: "Vídeo externo"
       author: Autor
     update:
