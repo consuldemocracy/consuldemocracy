@@ -314,9 +314,6 @@ tr:
       other: Diğer
     form:
       geozone: İşlem kapsamı
-      proposal_external_url: Ek belgelere bağlantı
-      proposal_question: Öneri sorusu
-      proposal_question_example_html: "Bir soruda bir Evet veya Hayır cevabı ile özetlenmelidir"
       proposal_responsible_name: Öneriyi sunan kişinin tam adı
       proposal_responsible_name_note: "(bireysel olarak veya bir topluluğun temsilcisi olarak; genel olarak gösterilmeyecek)"
       proposal_summary: Öneri özeti
@@ -436,7 +433,6 @@ tr:
       share: Paylaş
       no_notifications: "Bu öneride bildirim yok."
       embed_video_title: "%{proposal} ile ilgili video"
-      title_external_url: "Ek belge"
       title_video_url: "Harici video"
       author: Yazar
     update:
