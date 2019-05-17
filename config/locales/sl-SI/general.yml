@@ -262,9 +262,6 @@ sl:
       other: Drugo
     form:
       geozone: Področje uporabe
-      proposal_external_url: Povezava do dodatne dokumentacije
-      proposal_question: Predlagano vprašanje
-      proposal_question_example_html: "Treba ga je povzeti v eno vprašanje z jasnim 'da' ali 'ne' odgovorom. <br>Npr. 'Ali se strinjate, da Prešernova cesta postane peš cona?'"
       proposal_responsible_name: Polno ime predlagatelja
       proposal_responsible_name_note: "(posamično ali kot predstavnik kolektiva; ne bo javno prikazano)"
       proposal_summary: Povzetek predloga
@@ -365,7 +362,6 @@ sl:
       share: Deli
       no_notifications: "Ta predlog nima obvestil."
       embed_video_title: "Video o %{proposal}"
-      title_external_url: "Dodatna dokumentacija"
       title_video_url: "Zunanji video"
       author: Avtor
     update:
