@@ -113,3 +113,13 @@ fr:
       list_2: "Ces astuces, actions et ressources vous donnerons des idées et des solutions pratiques pour obtenir plus de soutien et une plus grande communauté. Ne les oubliez pas!"
       list_3: "Au fur et à mesure que vous gagnez plus de soutien, vous débloquerez de meilleures et de nouvelles ressources. Actuellement, vous avez un modèle d'e-mail que vous pouvez envoyer massivement à tous vos contacts, une affiche à imprimer, d'autres fonctionnalités et récompenses que vous allez découvrir. N'arrêtez pas de gagner du soutien et nous n'arrêterons pas de vous aider!"
       text_5: "Et pour que vous commenciez bien motivés,"
+      dashboard_button: "Allez-y, découvrez les!"
+    new_actions_notification_on_published:
+      subject: "Votre proposition citoyenne est déjà publiée N'arrêtez pas de faire passer le mot!"
+      hi: "Félicitations %{name}! Votre proposition %{title} a bien été créée."
+      text_1: "Et maintenant, allez chercher vos 100 premiers soutiens!"
+      text_2: "Pourquoi 100?"
+      text_3: "Notre expérience nous dit que le premier jour est fondammental. Parce qu'en plus d'avoir l'énergie de démarrer quelque chose de nouveau et d'être une proposition nouvellement publiée, vous aurez l'avantage d'être visible parmi les nouvelles propositions sélectionées."
+      text_4: "Obtenez 100 soutiens le premier jour et vous aurez une première communauté pour vous soutenir."
+      text_5: "C'est pourquoi nous vous mettons au défi de les obtenir, mais pas sans beaucoup d'aide!"
+      text_6: "N'oubliez pas que dans votre Panel de Propositions, vous avez accès aux nouvelles ressources disponibles et aux recommandations pour les actions de diffusion."
