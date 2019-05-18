@@ -74,7 +74,24 @@ bs:
       email_description: Opis emaila
       email_description_description: Detaljni opis email funkcije
       poster_short_title: Poster
+      poster_short_title_description: Kratki opis postera. Omogućava korisnicima da preuzmu poster u PDF-formatu kako bi promovisali svoje prijedloge
+      poster_description: Opis postera
+      poster_description_description: Detaljni opis postera
+    analytics_url: "URL za analitiku"
+    proposal_notification_minimum_interval_in_days: "Minimalni interval (mjeren u danima) za autore prijedloga da pošalju nove obavijesti o prijedlozima"
+    proposal_notification_minimum_interval_in_days_description: "Broj dana tokom kojih korisnik može poslati obavijest svima koji su podržali njegov prijedlog"
+    direct_message_max_per_day: "Direktna poruka, maksimalni broj po danu"
+    direct_message_max_per_day_description: "Maksimalni broj direktnih poruka koje korisnik može poslati u jednom danu"
     feature:
+      twitter_login: "Prijava preko Twittera"
+      twitter_login_description: "Omogući korisnicima da se prijave preko Twitter profila"
+      facebook_login: "Prijava preko Facebooka"
+      facebook_login_description: "Omogući korisnicima da se prijave preko Facebook profila"
+      google_login: "Prijava preko Googlea"
+      google_login_description: "Omogući korisnicima da se prijave preko Google profila"
+      featured_proposals: "Istaknuti prijedlozi"
+      featured_proposals_description: "Pokazuje istaknute prijedloge na strani sa indeksom prijedloga"
+      signature_sheets: "Potpisni listovi"
       user:
         recommendations_on_debates_description: "Pokazuje preporuke korisnicima u debatama, na osnovu tagova za teme koje se prate"
         recommendations_on_proposals: "Preporuke za prijedloge"
