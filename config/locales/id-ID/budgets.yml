@@ -174,10 +174,37 @@ id:
       not_selected_investment_proyects: Daftar semua proyek-proyek investasi tidak dipilih untuk pemungutan suara
     executions:
       link: "Tonggak"
-      page_title: "%{budget} -Tonggak sejarah"
+      page_title: "%{budget} - Hasil anggaran"
+      heading: "Hasil anggaran partisipatif"
       heading_selection_title: "Oleh kecamatan"
+      no_winner_investments: "Tidak ada pemenang investasi di negara ini"
+      filters:
+        label: "Proyek anggaran negara"
+        all: "Semua%{count}"
     phases:
       errors:
         dates_range_invalid: "Tanggal mulai tidak dapat sama atau lebih lambat dari tanggal Akhir"
         prev_phase_dates_invalid: "Tanggal mulai harus lambat tanggal mulai dari yang sebelumnya diaktifkan fase (%{phase_name})"
         next_phase_dates_invalid: "Tanggal akhir harus lebih awal dari tanggal berakhirnya berikutnya diaktifkan fase (%{phase_name})"
+    stats:
+      title: Statistik partisipasi
+      link: Statistik
+      page_title: "%{budget} - statistik partisipasi"
+      total_participants: Total peserta
+      total_budget_investments: Jumlah proposal proyek
+      total_selected_investments: Proposal dalam tahap akhir
+      total_unfeasible_investments: Proposal tidak layak
+      total_participants_support_phase: Tahap pendukung
+      total_participants_web: Tahap pemilihan partisipasi web
+      total_participants_booths: Tahap pemilihan partisipasi lanjutan
+      participants: Peserta
+      supports: Mendukung
+      by_gender: "Peserta berdasarkan kelamin"
+      total_male_participants: Pria
+      total_female_participants: Wanita
+      by_age: "Peserta berdasarkan grup usia"
+      age: Umur
+      total: Total
+      more_than: Lebih dari
+      years: tahun
+      by_heading: "Peserta berdasarkan tajuk"
