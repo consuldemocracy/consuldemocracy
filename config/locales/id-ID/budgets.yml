@@ -207,4 +207,14 @@ id:
       total: Total
       more_than: Lebih dari
       years: tahun
-      by_heading: "Peserta berdasarkan tajuk"
+      by_heading: "Peserta berdasarkan judul"
+      heading: Judul
+      investments_sent_html: "Proposal proyek dikirim"
+      participants_support_phase: Tahap peserta pendukung
+      participants_voting_phase: Tahap peserta pemilih
+      participants_total: Total peserta
+      percent_total_participants_html: "<br>total<br>peserta"
+      percent_heading_census_html: "<br>judul<br>sensus"
+      no_demographic_data: "Tidak ada data penduduk%{total} peserta."
+      participatory_disclaimer: "Jumlah semua peserta dilihat sesuai berapa orang yang membuat, mendukung atau memilih proposal proyek."
+      heading_disclaimer: "Data judul dilihat dari judul yang sudah dipilih, diutamakan satu dari orang yang sudah terdaftar."
