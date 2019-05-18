@@ -23,3 +23,8 @@ bs:
         headings_filter_all: Sve kategorije
         filters:
           valuation_open: Otvori
+          valuating: Ocjena u toku
+          valuation_finished: Procjena završena
+        assigned_to: "Dodijeljeno %{valuator}"
+        title: Investicioni projekti
+        edit: Edituj dosije
