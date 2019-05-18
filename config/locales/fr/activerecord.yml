@@ -131,6 +131,10 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+      geozone:
+        name: Nom
+        external_code: "Code externe (optionnel)"
+        html_map_coordinates: "Coordonées HTML <map> (optionnel)"
       milestone:
         status_id: "Statut actuel de l'investissement (facultatif)"
         title: "Titre"
@@ -142,6 +146,9 @@ fr:
       progress_bar:
         kind: "Type"
         title: "Titre"
+      progress_bar/kind:
+        primary: "Primaire"
+        secondary: "Secondaire"
       budget/heading:
         name: "Nom du titre"
         price: "Coût"
@@ -229,6 +236,9 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
+      banner:
+        background_color: Couleur de l'arrière-plan
+        font_color: Couleur de la police
       legislation/process:
         title: Titre du processus
         summary: Résumé
@@ -238,12 +248,16 @@ fr:
         end_date: Date de fin
         debate_start_date: Date de début du débat
         debate_end_date: Date de fin du débat
+        draft_start_date: Début
+        draft_end_date: Fin
         draft_publication_date: Date de publication de l'ébauche
         allegations_start_date: Date de début des allégations
         allegations_end_date: Date de fin des allégations
         proposals_phase_start_date: Début
         proposals_phase_end_date: Fin
         result_publication_date: Date de publication du résultat final
+        background_color: Couleur de l'arrière-plan
+        font_color: Couleur de la police
       legislation/process/translation:
         title: Titre du processus
         summary: Résumé
@@ -301,6 +315,7 @@ fr:
         description: Description
         link_text: Texte du lien
         link_url: Url du lien
+        columns: Nombre de colonnes
       widget/card/translation:
         label: Label (facultatif)
         title: Titre
@@ -308,6 +323,12 @@ fr:
         link_text: Texte du lien
       widget/feed:
         limit: Nombre d’éléments
+      dashboard/action:
+        title: Titre
+        short_description: Courte description
+        description: Description
+        link: Lien externe
+        day_offset: Combien de jours après la création de la proposition voulez vous qu'elle soit activée?
     errors:
       models:
         user:
