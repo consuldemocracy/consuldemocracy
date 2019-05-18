@@ -9,6 +9,10 @@ id:
         other: "Investasi"
       milestone:
         other: "batu peringatan"
+      milestone/status:
+        other: "Status anggaran akhir"
+      progress_bar:
+        other: "Bilah kemajuan"
       comment:
         other: "Komentar"
       debate:
@@ -23,6 +27,8 @@ id:
         other: "Administrasi"
       valuator:
         other: "Penilai"
+      valuator_group:
+        other: "Grup penilai"
       manager:
         other: "Pengelola"
       newsletter:
@@ -35,6 +41,8 @@ id:
         other: "stan"
       poll/officer:
         other: "petugas"
+      poll/ballot_sheet:
+        other: Lembar suara
       proposal:
         other: "Usulan warga"
       spending_proposal:
@@ -69,6 +77,8 @@ id:
         other: "Jajak pendapat"
       proposal_notification:
         other: "Pemberitahuan proposal"
+      dashboard/action:
+        other: Proposal tindak-lanjut
       dashboard/administrator_task:
         other: Tugas
       link:
@@ -97,7 +107,11 @@ id:
         image_title: "Judul gambar"
       geozone:
         name: Nama
+        external_code: "Kode eksternal (pilihan)"
+        census_code: "Kode sensus(pilihan)"
+        html_map_coordinates: "HTML<map>koordinasi (pilihan)"
       milestone:
+        status_id: "Status terkini (pilihan)"
         title: "Judul"
         publication_date: "Tanggal publikasi"
       milestone/status:
