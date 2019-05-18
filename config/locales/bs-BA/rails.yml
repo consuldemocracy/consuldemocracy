@@ -1,12 +1,20 @@
 bs:
   date:
+    abbr_day_names:
+      - Ned
+      - Pon
+      - Uto
+      - Sri
+      - Čet
+      - Pet
+      - Sub
     abbr_month_names:
       - 
       - Jan
       - Feb
       - Mar
       - Apr
-      - May
+      - Maj
       - Jun
       - Jul
       - Aug
