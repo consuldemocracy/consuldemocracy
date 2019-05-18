@@ -1,1 +1,7 @@
 bs:
+  settings:
+    comments_body_max_length: "Maksimalna dužina komentara"
+    comments_body_max_length_description: "Broj karaktera"
+    official_level_1_name: "Anketar, 1. stupanj"
+    official_level_1_name_description: "Tag na korisnicima označenim kao anketari 1. stupnja"
+    official_level_2_name: "Anketar, 2. stupanj"
