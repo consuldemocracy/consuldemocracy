@@ -84,3 +84,25 @@ bs:
         title: Pošalji verifikacioni kod
       update:
         error: Verifikacioni kod nije ispravan
+        flash:
+          level_three:
+            success: Kod ispravan. Vaš profil je potvrđen
+          level_two:
+            success: Kod je ispravan
+    step_1: Prebivalište
+    step_2: Verifikacioni kod
+    step_3: Finalna verifikacija
+    user_permission_debates: Učestvuj u debatama
+    user_permission_info: Nakon što potvrdite podatke, moći ćete...
+    user_permission_proposal: Kreirati nove prijedloge
+    user_permission_support_proposal: Dati podršku prijedlozima*
+    user_permission_votes: Učestvujte u finalnom glasanju*
+    verified_user:
+      form:
+        submit_button: Pošalji kod
+      show:
+        email_title: Emailovi
+        explanation: Trenutno imamo sljedeće podatke u registru; odaberite način na koji će vam se poslati verifikacioni kod.
+        phone_title: Brojevi telefona
+        title: Raspoloživi podaci
+        use_another_phone: Koristi drugi telefon
