@@ -394,6 +394,7 @@ id:
               cannot_comment_valuation: "Anda tidak bisa komentar sebuah penilaian"
       messages:
         record_invalid: "Pengesahan gagal: %{errors}"
+        another_poll_active: Ada diskusi aktif lainnya untuk periode yang diberikan
         restrict_dependent_destroy:
           has_one: "Tidak dapat menghapus catatan karena tergantung %{record} ada"
           has_many: "Tidak dapat menghapus record karena tergantung %{record} ada"
