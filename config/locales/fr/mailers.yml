@@ -78,6 +78,7 @@ fr:
       thanks: "Merci de nouveau pour votre participation."
       sincerely: "Cordialement,"
     new_actions_notification_rake_created:
+      subject: "Plus de nouveautés à propos de votre propositions citoyenne"
       hi: "Bonjour %{name},\n"
       new_resource: "NOUVELLE RESSOURCE DEBLOQUÉE"
       introduction: "Comme vous le savez, le %{created_at_day} %{created_at_month} vous avez crée une proposition en mode brouillon %{title}."
@@ -106,6 +107,9 @@ fr:
       introduction: "Votre proposition %{title} a bien été créée."
       text_1: "Profitez que votre proposition ne soit pas encore publique, soyez prêts à contacter beaucoup de personnes."
       text_2: "Lorsque vous serez prêts à publier votre proposition citoyenne depuis ce <a href='%{link}'>lien</a>."
-      text_3: "Nous savons que créer une proposition accrocheuse et le soutient nécéssaire peut paraître compliqué. Mais ne vous inquiétez pas car nous allons vous aider!"
+      text_3: "Nous savons que créer une proposition accrocheuse et le soutien nécéssaire peut paraître compliqué. Mais ne vous inquiétez pas car nous allons vous aider!"
       text_4: "Nous avons un outil qui sera votre nouveau meilleur allié: Le panel de Propositions Citoyennes."
       list_1: "Entrez tous les jours dans le panel de votre proposition pour utiliser les astuces et ressources que vous partagerons avec vous."
+      list_2: "Ces astuces, actions et ressources vous donnerons des idées et des solutions pratiques pour obtenir plus de soutien et une plus grande communauté. Ne les oubliez pas!"
+      list_3: "Au fur et à mesure que vous gagnez plus de soutien, vous débloquerez de meilleures et de nouvelles ressources. Actuellement, vous avez un modèle d'e-mail que vous pouvez envoyer massivement à tous vos contacts, une affiche à imprimer, d'autres fonctionnalités et récompenses que vous allez découvrir. N'arrêtez pas de gagner du soutien et nous n'arrêterons pas de vous aider!"
+      text_5: "Et pour que vous commenciez bien motivés,"
