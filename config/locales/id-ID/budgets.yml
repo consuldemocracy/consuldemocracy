@@ -8,6 +8,7 @@ id:
         no_balloted_group_yet: "Anda belum memilih pada kelompok ini belum, buka suara!"
         remove: Menghapus suara
         voted_info_html: "Anda dapat mengubah suara anda pada setiap waktu sampai penutupan tahap ini.<br> Tidak perlu menghabiskan semua uang yang tersedia."
+        voted_info_2: "Tapi kamu dapat mengubah pilihanmu setiap waktu sampai poling di tutup."
         zero: Anda belum memilih suara di setiap proyek investasi.
       reasons_for_not_balloting:
         not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
@@ -16,7 +17,9 @@ id:
         not_selected: Tidak dipilih proyek-proyek investasi tidak dapat didukung
         not_enough_money_html: "Anda telah ditugaskan anggaran yang tersedia.<br><small>Ingat anda dapat %{change_ballot} di setiap waktu</small>"
         no_ballots_allowed: Fase pemilihan telah ditutup
+        different_heading_assigned_html: "Anda telah memilih judul yang berbeda%{heading_link}"
         change_ballot: ubah pemberian suara anda
+        casted_offline: Anda sudah berpartisipasi secara offline
     groups:
       show:
         title: Pilih sebuah pilihan
@@ -32,9 +35,12 @@ id:
       selecting: Memilih proyek
       valuating: Menilai proyek
       publishing_prices: Menerbitkan harga proyek
+      balloting: Proyek pemilihan
+      reviewing_ballots: Meninjau pemilihan
       finished: Anggaran yang habis
     index:
       title: Anggaran partisipatif
+      empty_budgets: Tidak ada anggaran.
       section_header:
         icon_alt: Ikon anggaran partisipatif
         title: Anggaran partisipasif
