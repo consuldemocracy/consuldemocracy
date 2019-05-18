@@ -173,3 +173,36 @@ bs:
         description_selecting: "Opis tokom faze odabira"
         description_valuating: "Opis tokom faze procjenjivanja"
         description_balloting: "Opis tokom faze glasanja"
+        description_reviewing_ballots: "Opis tokom faze provjere glasačkih listića"
+        description_finished: "Opis kad se finalizira budžet"
+        phase: "Faza"
+      organization:
+        responsible_name: "Osoba nadležna za grupu"
+      spending_proposal:
+        administrator_id: "Administrator"
+        association_name: "Naziv udruženja"
+        description: "Opis"
+        external_url: "Link za dodatnu dokumentaciju"
+        geozone_id: "Ciljano područje"
+        title: "Naziv"
+      poll:
+        name: "Naziv"
+        starts_at: "Početni datum"
+        ends_at: "Krajnji datum"
+        geozone_restricted: "Ograničeno na određeno područje"
+        summary: "Sažetak"
+        description: "Opis"
+      poll/translation:
+        name: "Naziv"
+        summary: "Sažetak"
+        description: "Opis"
+      poll/question:
+        title: "Pitanje"
+        summary: "Sažetak"
+        description: "Opis"
+        external_url: "Link za dodatnu dokumentaciju"
+      poll/question/translation:
+        title: "Pitanje"
+      poll/ballot_sheet:
+        data: CSV podaci
+        poll_id: Glasačka anketa
