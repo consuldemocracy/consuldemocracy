@@ -224,3 +224,59 @@ bs:
         locale: Jezik
       site_customization/page/translation:
         title: Naziv
+        subtitle: Podnaslov
+        content: Sadržaj
+      site_customization/image:
+        name: Naziv
+        image: Slika
+      site_customization/content_block:
+        name: Naziv
+        locale: mjesto
+        body: Osnovni tekst
+      banner:
+        background_color: Boja pozadine
+        font_color: Boja fonta
+      legislation/process:
+        title: Naziv procesa
+        summary: Sažetak
+        description: Opis
+      admin_notification/translation:
+        title: Naziv
+        body: Tekst
+      widget/card:
+        label: Etiketa (po izboru)
+        title: Naziv
+        description: Opis
+        link_text: Link za tekst
+        link_url: Link za URL
+        columns: Broj stupaca
+      widget/card/translation:
+        label: Etiketa (po izboru)
+        title: Naziv
+        description: Opis
+        link_text: Link za tekst
+      widget/feed:
+        limit: Broj artikala
+      dashboard/action:
+        title: Naziv
+        short_description: Kratki opis
+        description: Opis
+        link: Eksterni link
+        request_to_administrators: Uvrstiti u resurs dugme za traženje resursa od administratora
+        day_offset: Nakon koliko dana po izradi prijedloga želite da se prijedlog aktivira?
+        required_supports: Koliko prijedlog treba da dobije glasova podrške kako bi se aktivirao?
+        order: Možete navesti mjesto gdje će se radnja pokazati korisniku na listi radnji
+        active: Aktivno
+        action_type: Vrsta
+      dashboard/administrator_task:
+        source: Izvor
+        user: Izvršio
+      link:
+        label: Naziv
+        url: Link
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Korisnik već ima lozinku"
