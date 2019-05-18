@@ -113,6 +113,7 @@ id:
       milestone:
         status_id: "Status terkini (pilihan)"
         title: "Judul"
+        description: "Penjelasan ( pilihan bila status ditugaskan)"
         publication_date: "Tanggal publikasi"
       milestone/status:
         name: "Nama"
@@ -120,6 +121,10 @@ id:
       progress_bar:
         kind: "Tipe"
         title: "Judul"
+        percentage: "Kemajuan saat ini"
+      progress_bar/kind:
+        primary: "Utama"
+        secondary: "Kedua"
       budget/heading:
         name: "Nama judul"
         price: "Harga"
@@ -177,6 +182,10 @@ id:
         external_url: "Tautkan ke dokumentasi tambahan"
       poll/question/translation:
         title: "Pertanyaan"
+      poll/ballot_sheet:
+        data: Data CSV
+        poll_id: Jajak pendapat
+        officer_assignment_id: Petugas penerimaan
       signature_sheet:
         signable_type: "Tipe yang dapat dipertanggungjawabkan"
         signable_id: "ID yang dapat dicantumkan"
@@ -203,6 +212,9 @@ id:
         name: Nama
         locale: lokal
         body: Tubuh
+      banner:
+        background_color: Warna latarbelakang
+        font_color: Warna huruf
       legislation/process:
         title: Proses Judul
         summary: Ringkasan
@@ -212,10 +224,16 @@ id:
         end_date: Tanggal akhir
         debate_start_date: Perdebatan mulai tanggal
         debate_end_date: Debat tanggal akhir
+        draft_start_date: Mulai
+        draft_end_date: Berakhir
         draft_publication_date: Draft tanggal publikasi
         allegations_start_date: Tuduhan tanggal mulai
         allegations_end_date: Tuduhan tanggal akhir
+        proposals_phase_start_date: Mulai
+        proposals_phase_end_date: Berakhir
         result_publication_date: Hasil akhir tanggal publikasi
+        background_color: Warna latarbelakang
+        font_color: Warna huruf
       legislation/process/translation:
         title: Proses Judul
         summary: Ringkasan
@@ -255,9 +273,12 @@ id:
         title: Judul
         url: Video eksternal
       newsletter:
+        segment_recipient: Penerima
         subject: Subyek
         from: Dari
+        body: Konten email
       admin_notification:
+        segment_recipient: Penerima
         title: Judul
         link: Tautan
         body: Teks
@@ -265,12 +286,24 @@ id:
         title: Judul
         body: Teks
       widget/card:
+        label: Label(pilihan)
         title: Judul
         description: Deskripsi
+        link_text: Tautkan teks
+        link_url: Tautan url
+        columns: Jumlah kolom
       widget/card/translation:
+        label: Label(pilihan)
         title: Judul
         description: Deskripsi
+        link_text: Tautkan teks
+      widget/feed:
+        limit: Jumlah item
       dashboard/action:
+        title: Judul
+        short_description: Deskripsi Singkat
+        description: Deskripsi
+        link: Tautan eksternal
         active: Aktif
         action_type: Tipe
     errors:
