@@ -3,3 +3,19 @@ bs:
     models:
       verification:
         residence: "Residence"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Vrsta dokumenta"
+          document_number: "Broj dokumenta (uključujući i slova)"
+          date_of_birth: "Datum rođenja"
+          postal_code: "Poštanski broj"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Verifikacioni kod"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Vrsta dokumenta"
+        document_number: "Broj dokumenta (uključujući i slova)"
