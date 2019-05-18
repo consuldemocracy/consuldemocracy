@@ -77,3 +77,10 @@ fr:
       hi: "Cher(e) utilisateur(trice),"
       thanks: "Merci de nouveau pour votre participation."
       sincerely: "Cordialement,"
+    new_actions_notification_rake_created:
+      hi: "Bonjour %{name},\n"
+      new_resource: "NOUVELLE RESSOURCE DEBLOQUÉE"
+      introduction: "Comme vous le savez, le %{created_at_day} %{created_at_month} vous avez crée une proposition en mode brouillon %{title}."
+      text_1: "Vous pouvez publier n'importe quand avec ce lien %{link_to_published}. Si vous n'êtes toujours pas sûrs..."
+      text_2: "Capturez ce moment! Apprenez, ajouter d'autres personnes avec les mêmes intêrets et préparez la diffusion dont vous aurez besoin avant de publier votre proposition définitivement."
+      text_3: "Et pour vous accompagner dans ce défi, voici les informations..."
