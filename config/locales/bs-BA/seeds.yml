@@ -13,3 +13,28 @@ bs:
       central_district: Središnji okrug
     organizations:
       human_rights: Ljudska prava
+      neighborhood_association: Lokalno udruženje
+    categories:
+      associations: Udruženja
+      culture: Kultura
+      sports: Sport
+      social_rights: Socijalna prava
+      economy: Ekonomija
+      employment: Zapošljavanje
+      equity: Pravičnost
+      sustainability: Održivost
+      participation: Učešće
+      mobility: Mobilnost
+      media: Mediji
+      health: Zdravlje
+      transparency: Transparentnost
+      security_emergencies: Bezbjednost i vanredna stanja
+      environment: Okoliš
+    budgets:
+      budget: Participativni budžet
+      currency: '€'
+      groups:
+        all_city: Cijelo mjesto
+        districts: Okruzi
+      valuator_groups:
+        culture_and_sports: Kultura i sport
