@@ -55,3 +55,28 @@ bs:
         unfeasible: Nije izvodivo
         undefined: Nije definisano
         valuation_finished: Procjena završena
+        duration: Vremenski okvir
+        responsibles: Nadležni
+        assigned_admin: Dodijeljeni administrator
+        assigned_valuators: Dodijeljeni procjenitelji
+      edit:
+        dossier: Spis
+        price_html: "Cijena (moneta) %{currency}"
+        price_first_year_html: "Troškovi tokom prve godine (moneta) %{currency} <small> (nije obavezno navesti, nije javni podatak) </small>"
+        price_explanation_html: Objašnjenje za cijenu
+        feasibility: Izvodivost
+        feasible: Izvodivo
+        unfeasible: Nije izvodivo
+        undefined_feasible: U toku
+        feasible_explanation_html: Objašnjenje za izvodivost
+        valuation_finished: Procjena završena
+    spending_proposals:
+      edit:
+        undefined_feasible: U toku
+        feasible_explanation_html: Objašnjenje za izvodivost
+        valuation_finished: Procjena završena
+        time_scope_html: Vremenski okvir
+        internal_comments_html: Interne obaveze
+        save: Spasi izmjene
+      notice:
+        valuate: "Spis ažuriran"
