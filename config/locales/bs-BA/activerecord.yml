@@ -1,1 +1,91 @@
 bs:
+  activerecord:
+    models:
+      activity:
+        one: "aktivnost"
+        few: "aktivnosti"
+        other: "aktivnosti"
+      budget:
+        one: "Budžet"
+        few: "Budžeti"
+        other: "Budžeti"
+      budget/investment:
+        one: "Investicija"
+        few: "Investicije"
+        other: "Investicije"
+      milestone:
+        one: "rok"
+        few: "rokovi"
+        other: "rokovi"
+      milestone/status:
+        one: "Status utvrđenog roka"
+        few: "Statusi utvrđenog roka"
+        other: "Statusi utvrđenog roka"
+      progress_bar:
+        one: "Traka za praćenje napretka"
+        few: "Trake za praćenje napretka"
+        other: "Trake za praćenje napretka"
+      comment:
+        one: "Komentar"
+        few: "Komentari"
+        other: "Komentari"
+      debate:
+        one: "Debata"
+        few: "Debate"
+        other: "Debate"
+      tag:
+        one: "Tag"
+        few: "Tagovi"
+        other: "Tagovi"
+      user:
+        one: "Korisnik"
+        few: "Korisnici"
+        other: "Korisnici"
+      moderator:
+        one: "Moderator"
+        few: "Moderatori"
+        other: "Moderatori"
+      administrator:
+        one: "Administrator"
+        few: "Administratori"
+        other: "Administratori"
+      valuator:
+        one: "Procjenitelj"
+        few: "Procjenitelji"
+        other: "Procjenitelji"
+      valuator_group:
+        one: "Grupa procjenitelja"
+        few: "Grupe procjenitelja"
+        other: "Grupe procjenitelja"
+      manager:
+        one: "Menadžer"
+        few: "Menadžeri"
+        other: "Menadžeri"
+      newsletter:
+        one: "Bilten"
+        few: "Bilteni"
+        other: "Bilteni"
+      vote:
+        one: "Glas"
+        few: "Glasovi"
+        other: "Glasovi"
+      organization:
+        one: "Organizacija"
+        few: "Organizacije"
+        other: "Organizacije"
+      poll/booth:
+        one: "kabina"
+        few: "kabine"
+        other: "kabine"
+      poll/officer:
+        one: "anketar"
+        few: "anketari"
+        other: "anketari"
+      poll/ballot_sheet:
+        one: Glasački listić
+        few: Glasački listići
+        other: Glasački listići
+      proposal:
+        one: "Građanski prijedlog"
+        few: "Građanski prijedlozi"
+        other: "Građanski prijedlozi"
