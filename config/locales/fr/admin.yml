@@ -105,6 +105,7 @@ fr:
       destroy:
         success_notice: Le budget a été supprimé avec succès
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
+        unable_notice_polls: Vous ne pouvez pas détruire un budget qui est associé à un sondage
       new:
         title: Nouveau budget citoyen
       winners:
@@ -151,7 +152,11 @@ fr:
         longitude: "Longitude (option)"
         coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
         allow_content_block: "Autoriser un bloc de contenu"
+        create: "Créer un nouveau titre"
+        edit: "Editer le titre"
         submit: "Sauvegarder la rubrique"
+      index:
+        back: "Retourner aux groupes"
     budget_phases:
       edit:
         start_date: Date de début
