@@ -119,6 +119,9 @@ fr:
       headings_manage: "Gérer les rubriques"
       max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
       no_groups: "Il n'y a pas de groupes."
+      amount:
+        one: "Il y a 1 groupe"
+        other: "Il y a %{count} groupes"
       create:
         notice: "Groupe créé avec succès !"
       update:
@@ -136,6 +139,9 @@ fr:
     budget_headings:
       name: "Nom"
       no_headings: "Il n'y a pas de titre."
+      amount:
+        one: "Il y a 1 titre"
+        other: "Il y a %{count} titres"
       create:
         notice: "Rubrique créée avec succès !"
       update:
@@ -834,6 +840,8 @@ fr:
       budget_investment_selected:
         title: "Investissement budgétaire selectionné"
         description: "Envoyé à l'auteur lorque son investissement budgétaire a été selectionné."
+      budget_investment_unfeasible:
+        title: "Investissement budgétaire irréalisable"
     emails_download:
       index:
         title: Téléchargement des courriels
@@ -1383,6 +1391,24 @@ fr:
         proposal_notifications: Notifications des propositions
         incomplete_verifications: Vérifications incomplètes
         polls: Votes
+      graph:
+        spending_proposals: Projets d'investissement
+        visit: Visites
+        level_2_user: Utilisateurs de niveau 2
+        proposal_created: Propositions citoyennes
+      budgets:
+        title: "Budget participatifs - Stats de participation"
+        supporting_phase: Phase de soutien
+        balloting_phase: Vote final
+      budget_balloting:
+        title: "Stats de vote final"
+        vote_count: Votes
+        participant_count: Participants
+      budget_supporting:
+        title: "Stats de la phase de soutien"
+        users: Utilisateurs
+        vote_count: Votes
+        participant_count: Participants
       direct_messages:
         title: Messages privés
         total: Total
@@ -1391,6 +1417,7 @@ fr:
         title: Notifications des propositions
         total: Total
         proposals_with_notifications: Propositions avec notifications
+        not_available: "Proposition non disponible"
       polls:
         title: Statistiques des votes
         all: Votes
@@ -1434,6 +1461,7 @@ fr:
       content_blocks:
         information: Information à propos des blocs de contenu
         about: "Vous pouvez créer des blocs de contenu en HTML pour les insérer dans l'en-tête ou le pied de page de votre Consul."
+        html_format: "Un bloc de contenu est un ensemble de liens, et doit avoir le format suivant:"
         no_blocks: "Il n'y a pas de bloc de contenu."
         create:
           notice: Bloc de contenu créé avec succès
