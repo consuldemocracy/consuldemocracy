@@ -206,3 +206,21 @@ bs:
       poll/ballot_sheet:
         data: CSV podaci
         poll_id: Glasačka anketa
+        officer_assignment_id: Raspodjela anketara
+      signature_sheet:
+        signable_type: "List s potpisom"
+        signable_id: "Lični dokument s potpisom"
+        document_numbers: "Brojevi dokumenata"
+      site_customization/page:
+        content: Sadržaj
+        created_at: Napravljeno na
+        subtitle: Podnaslov
+        slug: Slug
+        status: Status
+        title: Naziv
+        updated_at: Ažurirano na
+        more_info_flag: Pokaži na stranici za pomoć
+        print_content_flag: Dugme za štampanje sadržaja
+        locale: Jezik
+      site_customization/page/translation:
+        title: Naziv
