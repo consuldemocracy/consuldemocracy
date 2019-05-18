@@ -106,6 +106,9 @@ fr:
       proposal_notification:
         one: "Notification de proposition"
         other: "Notifications des propositions"
+      dashboard/action:
+        one: Tableau de bord des Propositons d'action
+        other: Tableau de bord des Propositons d'actions
       link:
         one: Lien
         other: Liens
@@ -134,6 +137,7 @@ fr:
       geozone:
         name: Nom
         external_code: "Code externe (optionnel)"
+        census_code: "Code de recensement (optionnel)"
         html_map_coordinates: "Coordonées HTML <map> (optionnel)"
       milestone:
         status_id: "Statut actuel de l'investissement (facultatif)"
@@ -146,6 +150,7 @@ fr:
       progress_bar:
         kind: "Type"
         title: "Titre"
+        percentage: "Progrès actuel"
       progress_bar/kind:
         primary: "Primaire"
         secondary: "Secondaire"
@@ -328,7 +333,18 @@ fr:
         short_description: Courte description
         description: Description
         link: Lien externe
+        request_to_administrators: Inclure dans la ressource un bouton pour demander la resource aux administrateurs
         day_offset: Combien de jours après la création de la proposition voulez vous qu'elle soit activée?
+        required_supports: De combien de soutiens la proposition a-t-elle besoin avant d'être activée?
+        order: Vous pouvez entrer la position où cette action sera affichée pour l'utilisateur dans la liste d'actions
+        active: Actif
+        action_type: Type
+      dashboard/administrator_task:
+        source: Source
+        user: Exectué par
+      link:
+        label: Titre
+        url: Lien
     errors:
       models:
         user:
@@ -371,6 +387,8 @@ fr:
               invalid_date_range: doit être la date de début ou postérieur
             debate_end_date:
               invalid_date_range: doit être la date de début du débat ou postérieur
+            draft_end_date:
+              invalid_date_range: doit être à la même date ou plus tard que celle de la création du brouillon
             allegations_end_date:
               invalid_date_range: doit être égal ou postérieur à la date de début des allégations
         proposal:
@@ -405,6 +423,7 @@ fr:
               cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
       messages:
         record_invalid: "La validation omise : %{errors}"
+        another_poll_active: Il y a un autre sondage actif sur la période donnée
         restrict_dependent_destroy:
           has_one: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
           has_many: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
