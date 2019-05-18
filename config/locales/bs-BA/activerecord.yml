@@ -176,6 +176,60 @@ bs:
         description_reviewing_ballots: "Opis tokom faze provjere glasačkih listića"
         description_finished: "Opis kad se finalizira budžet"
         phase: "Faza"
+        currency_symbol: "Moneta"
+      budget/investment:
+        heading_id: "Stavka"
+        title: "Naziv"
+        description: "Opis"
+        external_url: "Link za dodatnu dokumentaciju"
+        administrator_id: "Administrator"
+        location: "Lokacija (po izboru)"
+        organization_name: "Ako podnosite prijedlog u ime zajednice/organizacije, ili u ime više ljudi, navedite naziv"
+        image: "Opisna slika prijedloga"
+        image_title: "Naziv slike"
+      geozone:
+        name: Ime
+        external_code: "Eksterni kod (po izboru)"
+        census_code: "Kod popisa (po izboru)"
+        html_map_coordinates: "HTML <map> Koordinate (po izboru)"
+      milestone:
+        status_id: "Trenutni status (po izboru)"
+        title: "Naziv"
+        description: "Opis (po izboru ako je dodijeljen status)"
+        publication_date: "Datum objave"
+      milestone/status:
+        name: "Naziv"
+        description: "Opis (po izboru)"
+      progress_bar:
+        kind: "Vrsta"
+        title: "Naziv"
+        percentage: "Trenutni napredak"
+      progress_bar/kind:
+        primary: "Primarna traka"
+        secondary: "Sekundarna traka"
+      budget/heading:
+        name: "Naziv stavke"
+        price: "Cijena"
+        population: "Populacija"
+      comment:
+        body: "Komentar"
+        user: "Korisnik"
+      debate:
+        author: "Autor"
+        description: "Mišljenje"
+        terms_of_service: "Uvjeti korištenja"
+        title: "Naziv"
+      proposal:
+        author: "Autor"
+        title: "Naziv"
+        question: "Pitanje"
+        description: "Opis"
+        terms_of_service: "Uvjeti korištenja"
+      user:
+        login: "Email ili korisničko ime"
+        email: "Email"
+        username: "Korisničko ime"
+        password_confirmation: "Potvrda lozinke"
       organization:
         responsible_name: "Osoba nadležna za grupu"
       spending_proposal:
@@ -337,3 +391,16 @@ bs:
             document_number:
               not_in_census: "Nije potvrđeno u popisu"
               already_voted: "Već glasao/la za ovaj prijedlog"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "moraju biti slova, brojke, _ i -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Širina mora biti %{required_width} px"
+              image_height: "Visina mora biti %{required_height} px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Ne možete komentarisati procjenu"
