@@ -71,6 +71,7 @@ id:
       index:
         title: Penganggaran partisipatif
         unfeasible: Proyek-proyek investasi tidak layak
+        unfeasible_text: "Proposal harus memenuhi sejumlah kriteria (legalitas, dapat dipertanggung jawabkan, tidak melebihi batas anggaran) untuk dinyatakan layak dan mencapai tahap akhir pemungutan suara. semua proposal yang tidak masuk kriteria di tandai sebagai tidak layak dan diterbitkan dalam daftar berikut, bersama dengan laporan kelayakan."
         by_heading: "Proyek investasi dengan cakupan: %{heading}"
         search_form:
           button: Cari
@@ -101,6 +102,8 @@ id:
           random: acak
           confidence_score: nilai tertinggi
           price: dengan harga
+      share:
+        message: "Saya telah membuat proposal proyek.%{title}%{handle}. Buat proyek proposal juga!"
       show:
         author_deleted: Pengguna dihapus
         price_explanation: Harga penjelasan
@@ -116,6 +119,7 @@ id:
         comments_tab: Komentar
         milestones_tab: Tonggak
         author: Penulis
+        project_unfeasible_html: "Proposal proyek telah di tandai sebagai tidak layak dan tidak akan menuju fase memungutan."
       wrong_price_format: Hanya angka bilangan bulat
       investment:
         add: Suara
