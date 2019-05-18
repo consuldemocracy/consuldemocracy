@@ -89,3 +89,87 @@ bs:
         one: "Građanski prijedlog"
         few: "Građanski prijedlozi"
         other: "Građanski prijedlozi"
+      spending_proposal:
+        one: "Investicioni projekat"
+        few: "Investicioni projekti"
+        other: "Investicioni projekti"
+      site_customization/page:
+        one: Prilagođena stranica
+        few: Prilagođene stranice
+        other: Prilagođene stranice
+      site_customization/image:
+        one: Prilagođena slika
+        few: Prilagođene slike
+        other: Prilagođene slike
+      site_customization/content_block:
+        one: Prilagođeni blok sadržaja
+        few: Prilagođeni blokovi sadržaja
+        other: Prilagođeni blokovi sadržaja
+      document:
+        one: Dokument
+        few: Dokumenti
+        other: Dokumenti
+      legislation/process:
+        one: "Proces"
+        few: "Procesi"
+        other: "Procesi"
+      legislation/proposal:
+        one: "Prijedlog"
+        few: "Prijedlozi"
+        other: "Prijedlozi"
+      legislation/draft_versions:
+        one: "Nacrtna verzija"
+        few: "Nacrtne verzije"
+        other: "Nacrtne verzije"
+      legislation/questions:
+        one: "Pitanje"
+        few: "Pitanja"
+        other: "Pitanja"
+      legislation/question_options:
+        one: "Opcija za pitanje"
+        few: "Opcije za pitanje"
+        other: "Opcije za pitanje"
+      legislation/answers:
+        one: "Odgovor"
+        few: "Odgovori"
+        other: "Odgovori"
+      documents:
+        one: "Dokument"
+        few: "Dokumenti"
+        other: "Dokumenti"
+      images:
+        one: "Slika"
+        few: "Slike"
+        other: "Slike"
+      topic:
+        one: "Tema"
+        few: "Teme"
+        other: "Teme"
+      poll:
+        one: "Glasačka anketa"
+        few: "Glasačke ankete"
+        other: "Glasačke ankete"
+      proposal_notification:
+        one: "Obavijest o prijedlogu"
+        few: "Obavijesti o prijedlogu"
+        other: "Obavijesti o prijedlogu"
+      dashboard/action:
+        one: Kontrolna ploča za prijedloge
+        few: Kontrolne ploče za prijedloge
+        other: Kontrolne ploče za prijedloge
+      dashboard/administrator_task:
+        one: Zadatak
+        few: Zadaci
+        other: Zadaci
+      link:
+        one: Link
+        few: Linkovi
+        other: Linkovi
+    attributes:
+      budget:
+        name: "Naziv"
+        description_accepting: "Opis tokom faze prihvatanja"
+        description_reviewing: "Opis tokom faze pregleda"
+        description_selecting: "Opis tokom faze odabira"
+        description_valuating: "Opis tokom faze procjenjivanja"
+        description_balloting: "Opis tokom faze glasanja"
