@@ -106,6 +106,9 @@ fr:
       proposal_notification:
         one: "Notification de proposition"
         other: "Notifications des propositions"
+      link:
+        one: Lien
+        other: Liens
     attributes:
       budget:
         name: "Nom"
