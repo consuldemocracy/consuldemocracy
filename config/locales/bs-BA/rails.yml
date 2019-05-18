@@ -83,6 +83,42 @@ bs:
         one: 1 dan
         few: "%{count} dana"
         other: "%{count} dana"
+      x_minutes:
+        one: 1 minuta
+        few: "%{count} minute/minuta"
+        other: "%{count} minute/minuta"
+      x_months:
+        one: 1 mjesec
+        few: "%{count} mjeseca/mjeseci"
+        other: "%{count} mjeseca/mjeseci"
+      x_years:
+        one: 1 godina
+        few: "%{count} godine/godina"
+        other: "%{count} godine/godina"
+      x_seconds:
+        one: 1 sekunda
+        few: "%{count} sekunde/sekunda"
+        other: "%{count} sekunde/sekunda"
+    prompts:
+      day: Dan
+      hour: Sat
+      minute: Minuta
+      month: Mjesec
+      second: Sekunde
+      year: Godina
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: mora se prihvatiti
+      blank: ne može biti prazno
+      present: mora biti prazno
+      confirmation: ne odgovara %{attribute}
+      empty: ne može biti prazno
+      equal_to: mora biti jednako %{count}
+      even: mora biti parni broj
+      exclusion: rezervisano
+      greater_than: mora biti veće od %{count}
+      greater_than_or_equal_to: mora biti veće od ili jednako %{count}
   number:
     human:
       decimal_units:
@@ -122,3 +158,5 @@ bs:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: poslijepodne/naveče
