@@ -230,7 +230,14 @@ bs:
         email: "Email"
         username: "Korisničko ime"
         password_confirmation: "Potvrda lozinke"
+        password: "Lozinka"
+        current_password: "Sadašnja lozinka"
+        phone_number: "Broj telefona"
+        official_position: "Anketar"
+        official_level: "Stupanj anketara"
+        redeemable_code: "Verifikacioni kod primljen emailom"
       organization:
+        name: "Naziv organizacije"
         responsible_name: "Osoba nadležna za grupu"
       spending_proposal:
         administrator_id: "Administrator"
@@ -294,6 +301,69 @@ bs:
         title: Naziv procesa
         summary: Sažetak
         description: Opis
+        additional_info: Dodatne informacije
+        start_date: Početak
+        end_date: Kraj
+        debate_start_date: Početak
+        debate_end_date: Kraj
+        draft_start_date: Početak
+        draft_end_date: Kraj
+        draft_publication_date: Datum objave nacrta
+        allegations_start_date: Početak
+        allegations_end_date: Kraj
+        proposals_phase_start_date: Početak
+        proposals_phase_end_date: Kraj
+        result_publication_date: Datum objave konačnog rezultata
+        background_color: Boja pozadine
+        font_color: Boja fonta
+      legislation/process/translation:
+        title: Naziv procesa
+        summary: Sažetak
+        description: Opis
+        additional_info: Dodatne informacije
+        milestones_summary: Sažetak
+      legislation/draft_version:
+        title: Naziv verzije
+        body: Tekst
+        changelog: Izmjene
+        status: Status
+        final_version: Finalna verzija
+      legislation/draft_version/translation:
+        title: Naziv verzije
+        body: Tekst
+        changelog: Izmjene
+      legislation/question:
+        title: Naziv
+        question_options: Opcije
+      legislation/question_option:
+        value: Vrijednost
+      legislation/annotation:
+        text: Komentar
+      document:
+        title: Naziv
+        attachment: Prilog
+      image:
+        title: Naziv
+        attachment: Prilog
+      poll/question/answer:
+        title: Odgovor
+        description: Opis
+      poll/question/answer/translation:
+        title: Odgovor
+        description: Opis
+      poll/question/answer/video:
+        title: Naziv
+        url: Eksterni video
+      newsletter:
+        segment_recipient: Primatelji
+        subject: Predmet
+        from: Od
+        body: Sadržaj emaila
+      admin_notification:
+        segment_recipient: Primatelji
+        title: Naziv
+        link: Link
+        body: Tekst
       admin_notification/translation:
         title: Naziv
         body: Tekst
@@ -404,3 +474,9 @@ bs:
           attributes:
             valuation:
               cannot_comment_valuation: "Ne možete komentarisati procjenu"
+      messages:
+        record_invalid: "Potvrda nije uspjela: %{errors}"
+        another_poll_active: Postoji druga glasačka anketa koja je aktivna u navedenom periodu
+        restrict_dependent_destroy:
+          has_one: "Zapis se ne može obrisati zato što postoji vezani %{record}"
+          has_many: "Zapis se ne može obrisati zato što postoji vezani %{record}"
