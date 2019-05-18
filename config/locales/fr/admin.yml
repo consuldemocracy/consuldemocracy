@@ -367,6 +367,7 @@ fr:
           proposed_action: Action proposée
           resource: Ressource
         index:
+          description: "Lorsque les utilisateurs créent des propositions il peuvent accéder au tableau de bord de leur proposition, où vous pouvez proposer des ressources et recommandations pour soutenir leur idée."
           create: Créer une ressource ou une action
           edit: Editer
           delete: Supprimer
@@ -399,6 +400,27 @@ fr:
           help_text: Ecrire 0 pour que cette valeur ne soit pas prise en compte
           published_proposal: Pour les propositions publiées?
           published_proposal_help_text: Cochez la case pour créer l'action pour les propositions publiées uniquement
+      administrator_tasks:
+        index:
+          description: "Les ressources publiées dans le tableau de bord des propositions peuvent inclure un bouton à demander aux administrateurs. Les demandes des utilisateurs sont indiquées ci-dessous."
+          title: Ressources demandées
+          solve: Résoudre
+          no_records: Il n'y a pas de ressources demandées
+          source: Source
+          resource: Source demandées
+          filter: Filtre
+          filters:
+            pending: En attente
+            done: Résolu
+        edit:
+          back: Retour à la liste des tâches en attente
+          solving: Résoudre la tâche en attente
+        form:
+          solve: Marquer comme résolu
+          proposal: Proposition
+          request: Ressource demandées
+        update:
+          success: La tâche a été marquée comme résolue.
     debates:
       index:
         filter: Filtre
@@ -408,6 +430,21 @@ fr:
           without_confirmed_hide: Indécis
         title: Débats masqués
         no_hidden_debates: Il n’y a aucun commentaire caché.
+    documents:
+      new:
+        title: "Mettre en ligne un document"
+        label_attachment: "Choisir le document"
+        submit_button: "Mettre en ligne"
+      index:
+        new_link: "Ajouter un nouveau document"
+        no_documents: "Il n'y a pas de documents."
+        title: "Documents"
+        format: "Format"
+        size: "Taille"
+        url: "URL"
+      create:
+        success_notice: "Document téléchargé avec succès"
+        unable_notice: "Document invalide"
     hidden_users:
       index:
         filter: Filtre
