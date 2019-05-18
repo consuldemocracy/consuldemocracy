@@ -445,6 +445,8 @@ fr:
       create:
         success_notice: "Document téléchargé avec succès"
         unable_notice: "Document invalide"
+      destroy:
+        success_notice: "Document supprimé avec succès"
     hidden_users:
       index:
         filter: Filtre
@@ -489,6 +491,9 @@ fr:
           enabled: Activé
           process: Processus
           debate_phase: Phase de débat
+          draft_phase: Etape du brouillon
+          draft_phase_description: Si cette étape est active, le processus ne sera pas listé dans l'index des procès. Authorisez l'aperçu du processus et créez du contenu avant son commencement.
+          allegations_phase: Phase de commentaires
           proposals_phase: Phase de propositions
           use_markdown: Utilisez Markdown pour formater le text
           title_placeholder: Le titre du processus
@@ -496,11 +501,15 @@ fr:
           description_placeholder: Ajouter une description du processus
           additional_info_placeholder: Ajouter n'importe quelle information supplémentaire que vous estimez utile
           homepage: Description
+          homepage_description: Ici vous pouvez expliquer le contenu du processus
+          homepage_enabled: Page d'accueil activée
+          banner_title: Couleurs de l'en-tête
         index:
           create: Nouveau processus
           delete: Supprimer
           title: Processus législatifs
           filters:
+            active: Actif
             all: Toutes
         new:
           back: Retour
@@ -516,6 +525,8 @@ fr:
           title: Processus
           comments: Commentaires
           status: Statut
+          start_date: Date de début
+          end_date: Date de fin
           status_open: Ouvert
           status_closed: Fermé
           status_planned: Planifié
@@ -688,6 +699,8 @@ fr:
           welcome: "Bienvenue"
         buttons:
           save: "Sauvegarder"
+          content_block:
+            update: "Mettre à jour le bloc"
       title_moderated_content: Contenu modéré
       title_budgets: Budgets participatifs
       title_profiles: Profils
@@ -696,11 +709,15 @@ fr:
       title_booths: Salle de vote
       legislation: Processus législatif collaboratif
       users: Utilisateurs
+      dashboard: Tableau de bord des propositions
+      administrator_tasks: Ressources demandées
+      dashboard_actions: Ressources et actions
     administrators:
       index:
         title: Administrateurs
         name: Nom
         email: Email
+        id: ID Administrateur
         no_administrators: Il n'y a pas d'administrateurs.
       administrator:
         add: Ajouter en tant que président
@@ -811,6 +828,12 @@ fr:
         title: "Résumé des notifications des propositions"
         description: "Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails."
         preview_detail: "Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent"
+      budget_investment_created:
+        title: "Investissement budgétaire crée"
+        description: "Envoyé lorsqu'un utilisateur crée un investissement budgétaire."
+      budget_investment_selected:
+        title: "Investissement budgétaire selectionné"
+        description: "Envoyé à l'auteur lorque son investissement budgétaire a été selectionné."
     emails_download:
       index:
         title: Téléchargement des courriels
