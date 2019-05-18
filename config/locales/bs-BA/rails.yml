@@ -19,23 +19,49 @@ bs:
       - Jul
       - Avg
       - Sep
-      - Oct
+      - Okt
       - Nov
       - Dec
+    day_names:
+      - Nedjelja
+      - Ponedjeljak
+      - Utorak
+      - Srijeda
+      - Četvrtak
+      - Petak
+      - Subota
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B%d%Y"
+      short: "%b%d"
     month_names:
       - 
-      - January
-      - February
-      - March
+      - Januar
+      - Februar
+      - Mart
       - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Maj
+      - Juni
+      - Juli
+      - Avgust
+      - Septembar
+      - Oktobar
+      - Novembar
+      - Decembar
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: cca 1 sat
+        few: cca %{count} sata/sati
+        other: cca %{count} sata/sati
+      about_x_months:
+        one: cca 1 mjesec
+        few: cca %{count} mjeseca/mjeseci
+        other: cca %{count} mjeseca/mjeseci
+      about_x_years:
+        one: cca %{count} godine/godina
+        few: cca %{count} godine/godina
+        other: cca %{count} godine/godina
   number:
     human:
       format:
