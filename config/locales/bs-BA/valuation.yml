@@ -28,3 +28,30 @@ bs:
         assigned_to: "Dodijeljeno %{valuator}"
         title: Investicioni projekti
         edit: Edituj dosije
+        valuators_assigned:
+          one: Dodijeljeni procjenitelj
+          few: "Dodijeljenih procjenitelja: %{count}"
+          other: "Dodijeljenih procjenitelja: %{count}"
+        no_valuators_assigned: Nema dodijeljenih procjenitelja
+        table_id: Identifikacioni broj
+        table_title: Naziv
+        table_heading_name: Naziv kategorije
+        table_actions: Radnje
+        no_investments: "Nema investicionih projekata."
+      show:
+        back: Nazad
+        title: Investicioni projekat
+        info: Podaci o autoru
+        by: Poslao
+        sent: Poslano
+        heading: Stavka
+        dossier: Spis
+        edit_dossier: Izmjeni spis
+        price: Cijena
+        price_first_year: Troškovi u prvoj godini
+        currency: "€"
+        feasibility: Izvodivost
+        feasible: Izvodivo
+        unfeasible: Nije izvodivo
+        undefined: Nije definisano
+        valuation_finished: Procjena završena
