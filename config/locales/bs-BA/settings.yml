@@ -50,6 +50,30 @@ bs:
     hot_score_period_in_days_description: "Filter \"najaktivnije\", koji se koristi u više odjeljaka, je zasnovan na broju glasova u posljednjih X dana"
     mailer_from_name: "Ime pošiljatelja emaila"
     mailer_from_name_description: "Ovo ime će biti navedeno kao ime pošiljatelja u emailima koji se šalju iz aplikacije"
+    mailer_from_address: "Email adresa pošiljatelja"
+    mailer_from_address_description: "Ova email adresa je navedena u emailovima poslanim iz aplikacije"
+    meta_title: "Naziv sajta (SEO)"
+    meta_title_description: "Naziv za sajt <title>, koristi se za poboljšanje SEO"
+    meta_description: "Opis sajta (SEO)"
+    meta_description_description: 'Opis sajta <meta name="description">, koristi se za poboljšanje SEO'
+    meta_keywords: "Ključne riječi (SEO)"
+    meta_keywords_description: 'Ključne riječi <meta name="keywords">, koriste se za poboljšanje SEO'
+    min_age_to_participate: Najmanja starosna dob za učešće
+    min_age_to_participate_description: "Korisnici koji su napunili toliko godina mogu učestvovati u svim procesima za koje je potreban verifikovani korisnički profil"
+    proposals:
+      successful_proposal_id: Uspješan prijedlog
+      successful_proposal_id_description: Ovaj prijedlog se koristi kao referentni uspješni prijedlog po broju glasova podrške, i kao takav će biti izložen na grafikonu kontrolne ploče.
+      poll_short_title: Glasačke ankete
+      poll_short_title_description: Kratki opis anketne funkcije. Omogućava korisnicima da naprave anketu u vezi prijedloga
+      poll_description: Opis glasačkih anketa
+      poll_description_description: Detaljni opis anketne funkcije
+      poll_link: Link za dodatne informacije
+      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
+      email_short_title: Email
+      email_short_title_description: Kratki opis email funkcije. Omogućava korisnicima da šalju emailove kako bi promovisali svoje prijedloge
+      email_description: Opis emaila
+      email_description_description: Detaljni opis email funkcije
+      poster_short_title: Poster
     feature:
       user:
         recommendations_on_debates_description: "Pokazuje preporuke korisnicima u debatama, na osnovu tagova za teme koje se prate"
@@ -91,3 +115,4 @@ bs:
       per_page_code_head: "Kod na svakoj strani (<head>)"
       per_page_code_head_description: "Kod se pojavljuje u etiketi <head>. Korisno za unošenje prilagođenih skripti, analitike..."
       per_page_code_body: "Kod na svakoj strani (<body>)"
+      per_page_code_body_description: "Kod se pojavljuje u etiketi <body>. Korisno za unošenje prilagođenih skripti, analitike..."
