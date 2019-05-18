@@ -1,1 +1,29 @@
 bs:
+  verification:
+    alert:
+      lock: Imate maksimalni broj pokušaja. Pokušajte ponovo kasnije.
+    back: Nazad na moj profil
+    email:
+      create:
+        alert:
+          failure: Problem sa slanjem emaila na vaš profil
+        flash:
+          success: "Poslali smo email za potvrđivanje na vaš profil: (email adresa) %{email}"
+      show:
+        alert:
+          failure: Verifikacioni kod nije ispravan
+        flash:
+          success: Vi ste potvrđeni korisnik
+    letter:
+      alert:
+        unconfirmed_code: Niste unijeli verifikacioni kod
+      create:
+        flash:
+          success_html: Hvala što se tražili svoj <b> (maksimalno zaštićeni kod) (koji je samo potreban za finalno glasanje </b>. Za nekoliko dana poslaćemo vam kod na adresu koju imamo u našim podacima. Ako želite, alternativa je da uzmete kod u bilo kojoj kancelariji za pružanje podrške građanima.
+      edit:
+        see_all: Vidi prijedloge
+        title: Zatražena poruka
+      errors:
+        incorrect_code: Verifikacioni kod nije ispravan
+      new:
+        explanation: "Za učešće u finalnom glasanju, možete:"
