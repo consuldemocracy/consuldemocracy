@@ -304,6 +304,9 @@ id:
         short_description: Deskripsi Singkat
         description: Deskripsi
         link: Tautan eksternal
+        request_to_administrators: Sertakan dalam sumber daya tombol untuk meminta sumber daya dari administrator
+        day_offset: Berapa hari setelah pembuatan proposal anda ingin diaktifkan?
+        required_supports: Berapa banyak dukungan yang diperlukan agar proposal masuk kriteria menjadi aktif?
         active: Aktif
         action_type: Tipe
     errors:
