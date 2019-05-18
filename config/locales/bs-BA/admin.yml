@@ -1069,6 +1069,10 @@ bs:
       flash:
         question_added: "Pitanje dodato u ovoj glasačkoj anketi"
         error_on_question_added: "Pitanje se ne može uvrstiti u ovu glasačku anketu"
+      destroy:
+        alert: "Ovom radnjom će se ukloniti glasačka anketa i sva povezana pitanja."
+        success_notice: "Glasačka anketa uspješno obrisana"
+        unable_notice: "Ne možete obrisati anketu koja je dobila glasove"
     questions:
       index:
         title: "Pitanja"
