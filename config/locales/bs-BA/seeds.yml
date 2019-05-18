@@ -51,3 +51,4 @@ bs:
       current_poll_geozone_restricted: "Aktuelna glasačka anketa ograničena na određeno područje"
       recounting_poll: "Ponovno brojanje glasačke ankete"
       expired_poll_without_stats: "Glasačka anketa istekla, bez statističkih podataka i rezultata"
+      expired_poll_with_stats: "Statistički podaci i rezultati za isteklu glasačku anketu"
