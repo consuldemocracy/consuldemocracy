@@ -21,3 +21,20 @@ bs:
         notice: Izmjene spašene
       update:
         notice: "%{resource_name} uspješno ažuriran."
+        debate: "Debata uspješno ažurirana."
+        poll: "Anketa uspješno ažurirana."
+        poll_booth: "Kabina uspješno ažurirana."
+        active_poll: "Opis glasačke ankete uspješno ažuriran."
+        proposal: "Prijedlog uspješno ažuriran."
+        spending_proposal: "Investicioni projekat uspješno ažuriran."
+        budget_investment: "Investicioni projekat uspješno ažuriran."
+        topic: "Tema uspješno ažurirana."
+        valuator_group: "Ocjeniteljska grupa uspješno ažurirana"
+        translation: "Prevod uspješno ažuriran"
+      destroy:
+        spending_proposal: "Prijedlog troškova uspješno obrisan."
+        budget_investment: "Investicioni projekat uspješno obrisan."
+        error: "Ne može se obrisati"
+        topic: "Tema uspješno obrisana."
+        poll_question_answer_video: "Video odgovor uspješno obrisan."
+        valuator_group: "Ocjeniteljska grupa uspješno obrisana"
