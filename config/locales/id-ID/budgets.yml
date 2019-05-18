@@ -55,6 +55,7 @@ id:
       see_results: Lihat hasil
       section_footer:
         title: Membantu dengan anggaran partisipatif
+        description: Dengan anggaran partisipatif, warga negara dapat memutuskan proyek yang di anggarkan.
       milestones: Tonggak
     investments:
       form:
@@ -66,6 +67,7 @@ id:
         map_location_instructions: "Menavigasi peta lokasi dan tempat penanda."
         map_remove_marker: "Menghapus penanda peta"
         location: "Info tambahan lokasi"
+        map_skip_checkbox: "Investasi ini tidak memiliki lokasi yang konkret atau aku tidak menyadari itu."
       index:
         title: Penganggaran partisipatif
         unfeasible: Proyek-proyek investasi tidak layak
