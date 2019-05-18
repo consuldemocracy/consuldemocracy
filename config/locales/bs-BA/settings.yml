@@ -68,3 +68,19 @@ bs:
       public_stats: "Javna statistika"
       public_stats_description: "Pokaži javnu statistiku u admin panelu"
       help_page: "Strana za pomoć"
+      help_page_description: 'Pokazuje meni za pomoć, koji sadrži stranu sa osnovnim informacijama o svakom uključenom elementu. Prilagođene stranice i meniji se mogu napraviti u "Prilagođenim stranama" i "Prilagođenim blokovima sadržaja"'
+    map:
+      latitude: "Širina"
+      latitude_description: "Širina za pokazivanje pozicije na mapi"
+      longitude: "Dužina"
+      longitude_description: "Dužina za pokazivanje pozicije na mapi"
+      zoom: "Uvećaj"
+      zoom_description: "Uvećaj za pokazivanje pozicije na mapi"
+    process:
+      debates: "Debate"
+      debates_description: "Prostor za građanske debate je obezbjeđen za svakoga ko želi predstaviti svoja pitanja i probleme i razmijeniti mišljenja s drugima"
+      proposals: "Prijedlozi"
+      proposals_description: "Prijedlozi građana predstavljaju priliku za susjedstva i zajednice da neposredno odlučuju kakvo društvo žele imati, nakon što dobiju neophodnu podršku i podnesu prijedlog građanima na glasanje"
+      polls: "Glasačke ankete"
+      polls_description: "Glasačke ankete građana predstavljaju participativni mehanizam putem kojeg građani s pravom glasa mogu donositi neposredne odluke"
+      budgets: "Participativno budžetiranje"
