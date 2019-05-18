@@ -1,1 +1,25 @@
 bs:
+  valuation:
+    header:
+      title: Ocjena
+    menu:
+      title: Ocjena
+      budgets: Participativni budžeti
+      spending_proposals: Prijedlozi troškova
+    budgets:
+      index:
+        title: Participativni budžeti
+        filters:
+          current: Otvori
+          finished: Završeno
+        table_name: Naziv
+        table_phase: Faza
+        table_assigned_investments_valuation_open: Dodijeljeni investicioni projekti, sa nedovršenom ocjenom
+        table_actions: Radnje
+        evaluate: Ocjeni
+        no_budgets: "Nema budžeta"
+    budget_investments:
+      index:
+        headings_filter_all: Sve kategorije
+        filters:
+          valuation_open: Otvori
