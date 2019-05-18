@@ -62,8 +62,63 @@ bs:
         one: cca %{count} godine/godina
         few: cca %{count} godine/godina
         other: cca %{count} godine/godina
+      almost_x_years:
+        one: skoro 1 godina
+        few: skoro %{count} godine/godina
+        other: skoro %{count} godine/godina
+      half_a_minute: pola minute
+      less_than_x_minutes:
+        one: manje od jedne minute
+        few: manje od %{count} minute/minuta
+        other: manje od %{count} minute/minuta
+      less_than_x_seconds:
+        one: manje od 1 sekunde
+        few: manje od %{count} sekunde/sekundi
+        other: manje od %{count} sekunde/sekundi
+      over_x_years:
+        one: više od 1 godine
+        few: više od %{count} godine/godina
+        other: više od %{count} godine/godina
+      x_days:
+        one: 1 dan
+        few: "%{count} dana"
+        other: "%{count} dana"
   number:
     human:
+      decimal_units:
+        units:
+          billion: Milijarda
+          million: Milion
+          quadrillion: Kvadrilion
+          thousand: Hiljada
+          trillion: Trilion
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte:
+            one: Bajt
+            few: Bajtovi
+            other: Bajtovi
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: "i "
+      two_words_connector: " i "
+      words_connector: ", "
+  time:
+    am: prijepodne
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
