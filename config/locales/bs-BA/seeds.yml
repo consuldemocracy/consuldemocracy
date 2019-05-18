@@ -1,1 +1,15 @@
 bs:
+  seeds:
+    settings:
+      official_level_1_name: Službenik, 1. stupanj
+      official_level_2_name: Službenik, 2. stupanj
+      official_level_3_name: Službenik, 3. stupanj
+      official_level_4_name: Službenik, 4. stupanj
+      official_level_5_name: Službenik, 5. stupanj
+    geozones:
+      north_district: Sjeverni okrug
+      west_district: Zapadni okrug
+      east_district: Istočni okrug
+      central_district: Središnji okrug
+    organizations:
+      human_rights: Ljudska prava
