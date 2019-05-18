@@ -119,6 +119,42 @@ bs:
       exclusion: rezervisano
       greater_than: mora biti veće od %{count}
       greater_than_or_equal_to: mora biti veće od ili jednako %{count}
+      inclusion: nema na listi
+      invalid: nije ispravno
+      less_than: mora biti manje od %{count}
+      less_than_or_equal_to: mora biti manje od ili jednako %{count}
+      model_invalid: "Potvrda nije uspjela: %{errors}"
+      not_a_number: nije brojka
+      not_an_integer: nije cijeli broj
+      odd: mora biti neparni broj
+      required: mora postojati
+      taken: već uzeto
+      too_long:
+        one: predugo (maksimalno 1 karakter)
+        few: predugo (maksimalno %{count} karaktera)
+        other: predugo (maksimalno %{count} karaktera)
+      too_short:
+        one: prekratko (minimalno 1 karakter)
+        few: prekratko (minimalno %{count} karaktera)
+        other: prekratko (minimalno %{count} karaktera)
+      wrong_length:
+        one: pogrešna dužina (treba biti 1 karakter)
+        few: pogrešna dužina (treba biti %{count} karaktera)
+        other: pogrešna dužina (treba biti %{count} karaktera)
+      other_than: mora biti veće od %{count}
+    template:
+      body: "Problemi s unosom u sljedeća polja:"
+      header:
+        one: '%{model} se nije mogao spasiti zbog greške'
+        few: "%{model} se nije mogao spasiti zbog %{count} greške/grešaka"
+        other: "%{model} se nije mogao spasiti zbog %{count} greške/grešaka"
+  helpers:
+    select:
+      prompt: Odaberi
+    submit:
+      create: Kreiraj %{model}
+      submit: Spasi %{model}
+      update: Ažuriraj %{model}
   number:
     human:
       decimal_units:
