@@ -51,13 +51,13 @@ bs:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: cca 1 sat
-        few: cca %{count} sata/sati
-        other: cca %{count} sata/sati
+        one: oko 1 sat
+        few: oko %{count} sata/sati
+        other: oko %{count} sata/sati
       about_x_months:
         one: cca 1 mjesec
-        few: cca %{count} mjeseca/mjeseci
-        other: cca %{count} mjeseca/mjeseci
+        few: oko %{count} mjeseca/mjeseci
+        other: oko %{count} mjeseca/mjeseci
       about_x_years:
         one: cca 1 godina
         few: cca %{count} godine/godina
