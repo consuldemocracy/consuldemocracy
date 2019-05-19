@@ -1,33 +1,33 @@
 bs:
   valuation:
     header:
-      title: Ocjena
+      title: Procjena
     menu:
-      title: Ocjena
+      title: Procjena
       budgets: Participativni budžeti
       spending_proposals: Prijedlozi troškova
     budgets:
       index:
         title: Participativni budžeti
         filters:
-          current: Otvori
+          current: Otvoreno
           finished: Završeno
         table_name: Naziv
         table_phase: Faza
-        table_assigned_investments_valuation_open: Dodijeljeni investicioni projekti, sa nedovršenom ocjenom
+        table_assigned_investments_valuation_open: Dodijeljeni investicioni projekti, sa nedovršenom procjenom
         table_actions: Radnje
-        evaluate: Ocjeni
+        evaluate: Napravi procjenu
         no_budgets: "Nema budžeta"
     budget_investments:
       index:
-        headings_filter_all: Sve kategorije
+        headings_filter_all: Sva poglavlja
         filters:
           valuation_open: Otvori
-          valuating: Ocjena u toku
+          valuating: Procjena u toku
           valuation_finished: Procjena završena
         assigned_to: "Dodijeljeno %{valuator}"
         title: Investicioni projekti
-        edit: Edituj dosije
+        edit: Izmjeni spis
         valuators_assigned:
           one: Dodijeljeni procjenitelj
           few: "Dodijeljenih procjenitelja: %{count}"
@@ -42,9 +42,9 @@ bs:
         back: Nazad
         title: Investicioni projekat
         info: Podaci o autoru
-        by: Poslao
-        sent: Poslano
-        heading: Stavka
+        by: Poslao/la
+        sent: 'Poslano:'
+        heading: Poglavlje
         dossier: Spis
         edit_dossier: Izmjeni spis
         price: Cijena
