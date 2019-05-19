@@ -45,11 +45,11 @@ bs:
     org_name: "Ime stranice"
     org_name_description: "Ovo ime će biti navedeno u nazivu maila, stranama za pomoć..."
     related_content_score_threshold: "Prag za broj vezanih sadržaja"
-    related_content_score_threshold_description: "U skladu sa ocjenom glasova u vezanom sadržaju, sakriva sadržaj koji korisnik označi kao nevezan"
+    related_content_score_threshold_description: "U skladu s ocjenom glasova u vezanom sadržaju, sakriva sadržaj koji korisnik označi kao nevezan"
     hot_score_period_in_days: "Period (dani) koji koristi filter \"najaktivnije\""
-    hot_score_period_in_days_description: "Filter \"najaktivnije\", koji se koristi u više odjeljaka, je zasnovan na broju glasova u posljednjih X dana"
+    hot_score_period_in_days_description: "Filter \"najaktivnije\", koji se koristi u više odjeljaka, je zasnovan na broju glasova u proteklih X dana"
     mailer_from_name: "Ime pošiljatelja emaila"
-    mailer_from_name_description: "Ovo ime će biti navedeno kao ime pošiljatelja u emailima koji se šalju iz aplikacije"
+    mailer_from_name_description: "Ovo ime će biti navedeno kao ime pošiljatelja u emailovima koji se šalju iz aplikacije"
     mailer_from_address: "Email adresa pošiljatelja"
     mailer_from_address_description: "Ova email adresa je navedena u emailovima poslanim iz aplikacije"
     meta_title: "Naziv sajta (SEO)"
@@ -59,7 +59,7 @@ bs:
     meta_keywords: "Ključne riječi (SEO)"
     meta_keywords_description: 'Ključne riječi <meta name="keywords">, koriste se za poboljšanje SEO'
     min_age_to_participate: Najmanja starosna dob za učešće
-    min_age_to_participate_description: "Korisnici koji su napunili toliko godina mogu učestvovati u svim procesima za koje je potreban verifikovani korisnički profil"
+    min_age_to_participate_description: "Korisnici koji su napunili toliko godina mogu učestvovati u svim procesima za koje je potreban verifikovan korisnički nalog"
     proposals:
       successful_proposal_id: Uspješan prijedlog
       successful_proposal_id_description: Ovaj prijedlog se koristi kao referentni uspješni prijedlog po broju glasova podrške, i kao takav će biti izložen na grafikonu kontrolne ploče.
@@ -80,7 +80,7 @@ bs:
     analytics_url: "URL za analitiku"
     proposal_notification_minimum_interval_in_days: "Minimalni interval (mjeren u danima) za autore prijedloga da pošalju nove obavijesti o prijedlozima"
     proposal_notification_minimum_interval_in_days_description: "Broj dana tokom kojih korisnik može poslati obavijest svima koji su podržali njegov prijedlog"
-    direct_message_max_per_day: "Direktna poruka, maksimalni broj po danu"
+    direct_message_max_per_day: "Maksimalni broj direktnih poruka po danu"
     direct_message_max_per_day_description: "Maksimalni broj direktnih poruka koje korisnik može poslati u jednom danu"
     feature:
       twitter_login: "Prijava preko Twittera"
@@ -110,7 +110,7 @@ bs:
       community: "Grupa za prijedloge i investicije"
       community_description: "Omogućuje funkcionisanje grupnog odjeljka u prijedlozima i investicionim projektima za participativne budžete"
       map: "Područje na koje se odnose prijedlozi i budžetske investicije"
-      map_description: "Omogućava lociranje prijedloga i investicionih projekata"
+      map_description: "Omogućava geolociranje prijedloga i investicionih projekata"
       allow_images: "Omogući učitanje i pokaži slike"
       allow_images_description: "Omogućava korisnicima da učitaju slike kada kreiraju prijedloge i investicione projekte za participativne budžete"
       allow_attached_documents: "Omogući učitanje i pokaži dokumente u prilogu"
