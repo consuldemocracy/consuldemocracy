@@ -678,7 +678,7 @@ bs:
         booth: "KABINA"
         total: "UKUPNO"
         valid: "Ispravno"
-        white: "Bijele poruke"
+        white: "Prazni glasački listići"
         null_votes: "Nevažeći"
       results:
         title: "Pitanja"
@@ -689,7 +689,7 @@ bs:
     show:
       vote_answer: "Glasaj za (odgovor) %{answer}"
       voted: "Glasali ste za (odgovor) %{answer}"
-      voted_token: "Zapišite identifikacioni broj glasa kako bi mogli izvršiti provjeri u konačnim rezultatima:"
+      voted_token: "Zapišite identifikacioni broj glasa kako bi mogli izvršiti provjeru u konačnim rezultatima:"
   proposal_notifications:
     new:
       title: "Pošalji poruku"
@@ -775,8 +775,8 @@ bs:
         see_all: "Vidi sve"
     tags_cloud:
       tags: Popularno
-      districts: "Područja"
-      districts_list: "Lista područja"
+      districts: "Okruzi"
+      districts_list: "Lista okruga"
       categories: "Kategorije"
     target_blank_html: " (link se otvara u novom prozoru)"
     you_are_in: "Vi ste u"
@@ -840,7 +840,7 @@ bs:
       recommendation_three: Budite što detaljniji u opisu svog prijedloga troškova, kako bi tim za selekciju shvatio svrhu vašeg prijedloga.
       recommendation_two: Svaki prijedlog ili komentar koji implicira nezakonite radnje se briše.
       recommendations_title: Kako napraviti prijedlog troškova
-      start_new: Napravi prijedlog troškova
+      start_new: Napravite prijedlog troškova
     show:
       author_deleted: Korisnik obrisan
       code: "Šifra prijedloga:"
@@ -880,11 +880,11 @@ bs:
         submit_button: Pošalji poruku
         title: Pošalji privatnu poruku %{receiver}
         title_label: Naziv
-        verified_only: (Potvrdi profil) %{verify_account} kako bi poslao/la privatnu poruku
-        verify_account: potvrdi svoj profil
-        authenticate: Morate se prijaviti %{signin} ili otvoriti profil %{signup} kako bi nastavili.
-        signin: sign in
-        signup: sign up
+        verified_only: (Potvrdite nalog) %{verify_account} kako bi poslali privatnu poruku
+        verify_account: potvrdi nalog
+        authenticate: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
+        signin: prijava
+        signup: otvaranje naloga
       show:
         receiver: Poruka poslana %{receiver}
     show:
@@ -933,19 +933,19 @@ bs:
       retired_help_text: Kontrolna ploča nije dostupna za povučene prijedloge
   votes:
     agree: Slažem se
-    anonymous: Previše anonimnih glasova da bi se priznalo glasanje (potvrdi profil) %{verify_account}.
-    comment_unauthenticated: Morate se prijaviti %{signin} ili otvoriti profil %{signup} da bi glasali.
+    anonymous: Previše anonimnih glasova da bi se priznalo glasanje (potvrdi nalog) %{verify_account}.
+    comment_unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi glasali.
     disagree: Ne slažem se
     organizations: Organizacije ne mogu glasati
     signin: Prijavi se
-    signup: Otvori profil
-    supports: Glasova podrške
-    unauthenticated: Morate se prijaviti %{signin} ili otvoriti profil %{signup} kako bi nastavili.
-    verified_only: Samo korisnici sa potvrđenim profilom mogu glasati za prijedloge; %{verify_account}.
-    verify_account: potvrdi svoj profil
+    signup: Otvori nalog
+    supports: Glasovi podrške
+    unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
+    verified_only: Samo korisnici sa potvrđenim nalogom mogu glasati za prijedloge; %{verify_account}.
+    verify_account: potvrdi nalog
     spending_proposals:
-      not_logged_in: Morate se prijaviti %{signin} ili otvoriti profil %{signup} kako bi nastavili.
-      not_verified: Samo korisnici sa potvrđenim profilom mogu glasati za prijedloge; %{verify_account}.
+      not_logged_in: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
+      not_verified: Samo korisnici sa potvrđenim nalogom mogu glasati za prijedloge; %{verify_account}.
       organization: Organizacije ne mogu glasati
       unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je završena
