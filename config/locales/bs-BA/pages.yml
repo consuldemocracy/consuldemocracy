@@ -81,7 +81,7 @@ bs:
         title: Prečice na tastaturi
         navigation_table:
           description: Kako bi mogli da se krećete po ovoj web-stranici na pristupačan način, isprogramirali smo grupu tipki za brzi pristup glavnim organizacionim dijelovima stranice.
-          caption: Prečice za navigacioni meni
+          caption: Tipkovne prečice za navigacioni meni
           key_header: Tipka
           page_header: Strana
           rows:
@@ -166,5 +166,5 @@ bs:
       info: "Za potvrdu svog naloga, unesite podatke za pristup:"
       info_code: "Sada unesite kod koji ste dobili u pismu:"
       password: Lozinka
-      submit: Potvrdi moj profil
+      submit: Potvrdi moj nalog
       title: Potvrdi svoj nalog
