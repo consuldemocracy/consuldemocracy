@@ -420,7 +420,7 @@ bs:
     new:
       form:
         submit_button: Formuliši prijedlog
-      more_info: Kako funkcioniše podnošenje prijedloga od strane građana?
+      more_info: Kako funkcioniše podnošenje građanskih prijedloga?
       recommendation_one: Ne koristite velika slova za naziv prijedloga, ne pišite cijele rečenice velikim slovima. Na internetu se to smatra vikanjem, a niko ne voli kad se na njega viče.
       recommendation_three: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
       recommendation_two: Svaka prijedlog ili komentar koji implicira nezakonite radnje se briše. Isto važi i za one koji žele da sabotiraju debatni prostor. Sve ostalo je dozvoljeno.
@@ -430,7 +430,7 @@ bs:
       retired: Prijedlog je povučen
       published: Prijedlog je objavljen
     proposal:
-      created: "Podnijeli ste prijedlog!"
+      created: "Kreirali ste prijedlog!"
       share:
         guide: "Sad ga možete podijeliti s drugima kako bi počeli dobijati podršku."
         edit: "Prije nego ga podijelite, možete izmjeniti tekst kako želite."
@@ -472,7 +472,7 @@ bs:
       notifications_tab: Obavijesti
       milestones_tab: Rokovi
       retired_warning: "Autor smatra da prijedlog više ne treba podržavati."
-      retired_warning_link_to_explanation: Pročitaj objašnjenje prije nego glasaš.
+      retired_warning_link_to_explanation: Pročitajte objašnjenje prije nego glasate.
       retired: Prijedlog povučen od strane autora
       share: Podijeli
       no_notifications: "Nema obavijesti za ovaj prijedlog."
@@ -499,12 +499,12 @@ bs:
       success: Zahtjev je uspješno poslan. Kontaktiraćemo vas što prije kako bi vas obavjestili o tome.
       archived: Prijedlog je arhiviran i za njega se ne mogu tražiti resursi.
     progress:
-      title: Grafika
+      title: Grafikon
       group_by_month: Mjesečno
       group_by_week: Sedmično
       group_by_date: Dnevno
       progress: Kumulativni napredak
-      supports: Glasova podrške
+      supports: Glasovi podrške
       success: Idealna situacija
       new_action: Novo
     index:
@@ -617,7 +617,7 @@ bs:
         support_button: Podrži ovaj prijedlog
         share_in: Uključi se
         hi: "Pozdrav!"
-        introduction: Želim vas obavijestiti da učestvujem u %{org}, platformi na kojoj možemo odlučiti kakav grad želimo. Kako bi to postigli, izradio sam vlastiti prijedlog kao građanin i sad mi treba vaša podrška! Ne brinite, nije ništa teško.
+        introduction: Želim vas obavijestiti da učestvujem u %{org}, platformi na kojoj možemo odlučiti kakav grad želimo. Kako bi to postigli, izradio sam vlastiti građanski prijedlog i sad mi treba vaša podrška! Ne brinite, nije ništa teško.
         support: "Samo trebate kliknuti dugme koje vidite dole, \"Podrži ovaj prijedlog\", i možete se informisati prije nego se odlučite promovisati prijedlog. Gradsko vijeće će realizovati samo prijedloge koji dobiju maksimalnu podršku, tako da sam siguran da ćete mi pomoći da to i postignemo!"
         share: "Bilo bi super kad bi mi učinili veliku uslugu i podijelili moj prijedlog sa prijateljima, porodicom i poznanicima!"
   polls:
@@ -636,8 +636,8 @@ bs:
       geozone_restricted: "Područja"
       geozone_info: "Stanovništvo može učestvovati u popisu za: "
       already_answer: "Već ste učestvovali u ovoj anketi"
-      not_logged_in: "Morate se prijaviti ili otvoriti profil da bi učestvovali"
-      unverified: "Morate potvrditi profil kako bi učestvovali"
+      not_logged_in: "Morate se prijaviti ili otvoriti nalog da bi učestvovali"
+      unverified: "Morate potvrditi nalog kako bi učestvovali"
       cant_answer: "Ova glasačka anketa nije dostupna na vašem području"
       section_header:
         icon_alt: Ikonica za glasanje
@@ -651,13 +651,13 @@ bs:
       already_voted_in_booth: "Već ste glasali u fizičkoj kabini. Ne možete ponovo glasati."
       already_voted_in_web: "Već ste učestvovali u ovoj glasačkoj anketi. Ako budete ponovo glasali, neće se priznati."
       back: Nazad na glasanje
-      cant_answer_not_logged_in: "Morate se prijaviti %{signin} ili otvoriti profil %{signup} da bi učestvovali."
+      cant_answer_not_logged_in: "Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi učestvovali."
       comments_tab: Komentari
-      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
+      login_to_comment: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi napisali komentar.
       signin: Prijavi se
-      signup: Otvori profil
+      signup: Otvori nalog
       cant_answer_verify_html: "Moraš (potvrditi link) %{verify_link} kako bi odgovorio."
-      verify_link: "potvrdi svoj profil"
+      verify_link: "potvrdite svoj nalog"
       cant_answer_expired: "Ova glasačka anketa je završena."
       cant_answer_wrong_geozone: "Ovo pitanje nije dostupno na vašem području."
       more_info_title: "Više informacija"
