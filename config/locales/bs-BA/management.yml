@@ -7,9 +7,9 @@ bs:
       alert:
         unverified_user: Verifikovani korisnik se još uvijek nije prijavio
       show:
-        title: Korisnički profil
+        title: Korisnički nalog
       edit:
-        title: "Edituj korisnički profil: promijeni lozinku"
+        title: "Edituj korisnički nalog: promijeni lozinku"
         back: Nazad
         password:
           password: Lozinka
@@ -35,8 +35,8 @@ bs:
     document_number: Broj dokumenta
     document_type_label: Vrsta dokumenta
     document_verifications:
-      already_verified: Korisnički profil je već potvrđen.
-      has_no_account_html: Za otvaranje profila, idite na %{link} i kliknite na <b> "Registracija" </b> u gornjem lijevom dijelu ekrana.
+      already_verified: Korisnički nalog je već potvrđen.
+      has_no_account_html: Za otvaranje naloga, idite na %{link} i kliknite na <b> "Registracija" </b> u gornjem lijevom dijelu ekrana.
       link: CONSUL
       in_census_has_following_permissions: "Korisnik može učestvovati na web-stranici pod ovim uvjetima:"
       not_in_census: Dokument nije registrovan.
