@@ -59,8 +59,8 @@ bs:
         few: oko %{count} mjeseca/mjeseci
         other: oko %{count} mjeseca/mjeseci
       about_x_years:
-        one: cca 1 godina
-        few: cca %{count} godine/godina
+        one: oko 1 godine
+        few: oko %{count} godine/godina
         other: cca %{count} godine/godina
       almost_x_years:
         one: skoro 1 godina
@@ -125,7 +125,7 @@ bs:
       less_than_or_equal_to: mora biti manje od ili jednako %{count}
       model_invalid: "Potvrda nije uspjela: %{errors}"
       not_a_number: nije brojka
-      not_an_integer: nije cijeli broj
+      not_an_integer: mora biti cijeli broj
       odd: mora biti neparni broj
       required: mora postojati
       taken: već uzeto
