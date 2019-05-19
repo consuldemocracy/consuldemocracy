@@ -10,11 +10,11 @@ bs:
       manage_email_subscriptions: Kako bi prestali dobijati ove emailove, promijenite svoje postavke u
     email_verification:
       click_here_to_verify: ovaj link
-      instructions_2_html: Ovaj email će potvrditi vaš profil sa <b>%{document_type}%{document_number}</b>. Ako to nije vaše, nemojte kliknuti na prethodni link i zanemarite ovaj email.
-      instructions_html: Kako bi završili sa potvrdom vašeg korisničkog profila, morate kliknuti na %{verification_link}.
+      instructions_2_html: Ovaj email će potvrditi vaš nalog sa <b>%{document_type}%{document_number}</b>. Ako to nije vaše, nemojte kliknuti na prethodni link i zanemarite ovaj email.
+      instructions_html: Kako bi završili sa potvrdom vašeg korisničkog naloga, morate kliknuti na %{verification_link}.
       subject: Potvrdite vaš email
       thanks: Hvala puno.
-      title: Potvrdite vaš profil ovim linkom
+      title: Potvrdite nalog ovim linkom
     reply:
       hi: Pozdrav
       new_reply_by_html: Novi odgovor od <b>%{commenter}</b> na vaš komentar na
@@ -33,18 +33,18 @@ bs:
       share: Podijeli prijedlog
       comment: Prijedlog komentara
       unsubscribe: "Ako ne želite obavijesti o prijedlogu, idite na %{account} i odznačite \"Šaljite mi sažetke obavijesti o prijedlozima\"."
-      unsubscribe_account: Moj profil
+      unsubscribe_account: Moj nalog
     direct_message_for_receiver:
       subject: "Dobili ste novu privatnu poruku"
       reply: Odgovori %{sender}
       unsubscribe: "Ako ne želite direktne poruke, idite na %{account} i odznačite \"Šaljite mi emailove u vezi direktnih poruka\"."
-      unsubscribe_account: Moj profil
+      unsubscribe_account: Moj nalog
     direct_message_for_sender:
       subject: "Poslali ste novu privatnu poruku"
       title_html: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
     user_invite:
       ignore: "Ako niste tražili ovaj poziv, ne brinite, možete zanemariti ovaj email."
-      text: "Hvala što ste se prijavili da se pridružite %{org}! Začas ćete početi učestvovati, samo ispunije formular dole:"
+      text: "Hvala što ste se prijavili da se pridružite %{org}! Začas ćete početi učestvovati, samo ispunite formular dole:"
       thanks: "Hvala puno."
       title: "Dobrodošli u %{org}"
       button: Završite registraciju
@@ -60,7 +60,7 @@ bs:
       share: "Podijeli svoj projekat s drugima"
     budget_investment_unfeasible:
       hi: "Poštovani korisniče,"
-      new_html: "Za sve ovo, pozivamo vas da razradite <strong> novu investiciju </strong>, prilagođenu uvjetima u ovom procesu. To možete uraditi preko ovog linka: %{url}."
+      new_html: "Za sve ovo, pozivamo vas da razradite <strong> novu investiciju </strong>, prilagođenu uvjetima u ovom procesu. To možete uraditi putem ovog linka: %{url}."
       new_href: "novi investicioni projekat"
       sincerely: "S poštovanjem"
       sorry: "Žao nam je zbog neugodnosti i hvala još jednom na vašem dragocjenom učešću."
