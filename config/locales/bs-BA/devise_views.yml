@@ -3,28 +3,28 @@ bs:
     confirmations:
       new:
         email_label: Email
-        submit: Ponovo pošalji uputstvo
-        title: Ponovo pošalji uputstvo za potvrđivanje
+        submit: Ponovo pošaljite uputstvo
+        title: Ponovo pošaljite uputstvo za potvrđivanje
       show:
-        instructions_html: Potvrđivanje profila sa emailom %{email}
-        new_password_confirmation_label: Ponovi pristupnu lozinku
+        instructions_html: Potvrđivanje naloga emailom %{email}
+        new_password_confirmation_label: Ponovite pristupnu lozinku
         new_password_label: Nova lozinka za pristup
-        please_set_password: Odaberi novu lozinku (s kojom se možeš prijaviti putem emaila gore)
+        please_set_password: Odaberite novu lozinku (s kojom se možete prijaviti putem emaila gore)
         submit: Potvrdi
-        title: Potvrdi moj profil
+        title: Potvrdi moj nalog
     mailer:
       confirmation_instructions:
-        confirm_link: Potvrdi moj profil
-        text: "Možeš potvrditi svoju email adresu na ovom linku:"
-        title: Dobrodošao/la
-        welcome: Dobrodošao/la
+        confirm_link: Potvrdi moj nalog
+        text: "Možete potvrditi svoju email adresu na ovom linku:"
+        title: Dobrodošli
+        welcome: Dobrodošli
       reset_password_instructions:
         change_link: Promjeni moju lozinku
         hello: Pozdrav
-        ignore_text: Ako nisi tražio/la promjenu lozinke, ne obraćaj pažnju na ovaj email.
-        info_text: Lozinka se neće promjeniti ako ne uđeš preko linka i promjeniš je.
-        text: "Dobili smo zahtjev da promijenimo tvoju lozinku. To se može uraditi na sljedećem linku:"
-        title: Promjeni svoju lozinku
+        ignore_text: Ako niste tražili promjenu lozinke, ne obraćajte pažnju na ovaj email.
+        info_text: Lozinka se neće promijeniti ako ne odete na link i promijenite je.
+        text: "Dobili smo zahtjev da promijenimo vašu lozinku. To se može uraditi na sljedećem linku:"
+        title: Promijenite svoju lozinku
       unlock_instructions:
         hello: Pozdrav
         info_text: Tvoj profil je blokiran zbog prevelikog broja neuspješnih pokušaja prijave.
