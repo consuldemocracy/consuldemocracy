@@ -178,7 +178,7 @@ bs:
         phase: "Faza"
         currency_symbol: "Moneta"
       budget/investment:
-        heading_id: "Stavka"
+        heading_id: "Poglavlje"
         title: "Naziv"
         description: "Opis"
         external_url: "Link za dodatnu dokumentaciju"
@@ -208,7 +208,7 @@ bs:
         primary: "Primarna traka"
         secondary: "Sekundarna traka"
       budget/heading:
-        name: "Naziv stavke"
+        name: "Naziv poglavlja"
         price: "Cijena"
         population: "Populacija"
       comment:
@@ -267,14 +267,14 @@ bs:
       poll/ballot_sheet:
         data: CSV podaci
         poll_id: Glasačka anketa
-        officer_assignment_id: Raspodjela anketara
+        officer_assignment_id: Raspored anketara
       signature_sheet:
         signable_type: "List s potpisom"
         signable_id: "Lični dokument s potpisom"
-        document_numbers: "Brojevi dokumenata"
+        document_numbers: "Brojevi isprava"
       site_customization/page:
         content: Sadržaj
-        created_at: Napravljeno na
+        created_at: Napravljena na
         subtitle: Podnaslov
         slug: Slug
         status: Status
