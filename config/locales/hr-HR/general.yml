@@ -945,9 +945,79 @@ hr:
     verify_account: potvrdi svoj račun
     spending_proposals:
       not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
+      not_verified: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
+      organization: Organizacijama nije dopušteno glasanje
+      unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
+      not_voting_allowed: Faza glasanja je zatvorena
+    budget_investments:
+      not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
+      not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
+      organization: Organizacijama nije dopušteno glasanje
+      unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
+      not_voting_allowed: Faza glasanja je zatvorena
+      different_heading_assigned:
+        one: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        few: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        other: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
   welcome:
+    feed:
+      most_active:
+        debates: "Najaktivnije rasprave"
+        proposals: "Najaktivniji prijedlozi"
+        processes: "Otvoreni procesi"
+      see_all_debates: Vidi sve rasprave
+      see_all_proposals: Vidi sve prijedloge
+      see_all_processes: Vidi sve procese
+      process_label: Procesi
+      see_process: Vidi procese
+    cards:
+      title: Istaknuto
+    recommended:
+      title: Preporuke koje bi vas mogle zanimati
+      help: "Ove preporuke su napravljene od ozaka rasprava i prijedloga koje pratite."
+      debates:
+        title: Preporučene rasprave
+        btn_text_link: Sve preporučene rasprave
+      proposals:
+        title: Preporučeni prijedlozi
+        btn_text_link: Svi preporučeni prijedlozi
+      budget_investments:
+        title: Preporučene investicije
+    verification:
+      i_dont_have_an_account: Nemam račun
+      i_have_an_account: Već imam račun
+      question: Imate li račun u %{org_name}?
+      title: Potvrđivanje računa
     welcome:
+      go_to_index: Ne sada, idite na indeksnu stranicu
+      start_using_consul: Idi na indeksnu stranicu
+      title: Sudjelovati
+      user_permission_debates: Sudjeluj u raspravi
+      user_permission_info: S vašim računom možete...
+      user_permission_proposal: Kreiraj novi prijedlog
       user_permission_support_proposal: Potpora prijedloga*
+      user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
+      user_permission_verify_info: "*Samo za korisnike Cenzusa."
+      user_permission_verify_my_account: Potvrdi moj račun
+      user_permission_votes: Sudjelujte u finalnom glasanju
+  invisible_captcha:
+    sentence_for_humans: "Ako ste fizička osoba, ignorirajte ovo polje"
+    timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovno podnesite."
+  related_content:
+    title: "Povezani sadržaj"
+    add: "Dodaj povezani sadržaj"
+    label: "Poveznica na povezani sadržaj"
+    placeholder: "%{url}"
+    help: "Možete dodati poveznice na %{models} unutar %{org}."
+    submit: "Dodaj"
+    error: "Poveznica nije dostupna. Zapamtite da započnete s %{url}."
+    error_itself: "Poveznica nije dostupna. Ne možete povezati sadržaj na sebe."
+    success: "Već ste dodali novi povezani sadržaj"
+    is_related: "Je li povezani sadržaj?"
+    score_positive: "Da"
+    score_negative: "Ne"
+    content_title:
+      proposal: "Prijedlog"
   communities:
     show:
       author: Autor
