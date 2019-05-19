@@ -16,9 +16,9 @@ bs:
       create_first_community_topic:
         first_theme_not_logged_in: Nema tema, učestvuj tako što ćeš pokrenuti prvu temu.
         first_theme: Pokreni prvu temu za grupnu podršku
-        sub_first_theme: "Kako bi pokrenuo/la temu, moraš se prijaviti %{sign_in} ili otvoriti profil %{sign_up}."
+        sub_first_theme: "Kako bi pokrenuo/la temu, moraš se prijaviti %{sign_in} ili otvoriti nalog %{sign_up}."
         sign_in: "prijavi se"
-        sign_up: "otvori profil"
+        sign_up: "otvori nalog"
       tab:
         participants: Učesnici
       sidebar:
@@ -58,4 +58,4 @@ bs:
         recommendation_three: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
   topics:
     show:
-      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
+      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi napisao/la komentar.
