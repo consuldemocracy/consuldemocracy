@@ -92,8 +92,8 @@ bs:
         heading: Investicioni projekat
         info: Podaci o autoru
         association_name: Udruženje
-        by: Poslao
-        sent: Poslano
+        by: Poslao/la
+        sent: 'Poslano:'
         geozone: Područje
         dossier: Spis
         edit_dossier: Izmjeni spis
@@ -123,7 +123,7 @@ bs:
         feasible_explanation_html: Objašnjenje za izvodivost
         valuation_finished: Procjena završena
         time_scope_html: Vremenski okvir
-        internal_comments_html: Interne obaveze
+        internal_comments_html: Interni komentari
         save: Spasi izmjene
       notice:
         valuate: "Spis ažuriran"
