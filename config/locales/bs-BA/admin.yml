@@ -1333,28 +1333,28 @@ bs:
       index:
         geozone_filter_all: Sve zone
         administrator_filter_all: Svi administratori
-        valuator_filter_all: Svi ocjenitelji
+        valuator_filter_all: Svi procjenitelji
         tags_filter_all: Svi tagovi
         filters:
           valuation_open: Otvori
           without_admin: Bez dodijeljenog administratora
           managed: Radi se
-          valuating: Ocjenjuje se
-          valuation_finished: Ocjena završena
+          valuating: Procjena u toku
+          valuation_finished: Procjena završena
           all: Sve
         title: Investicioni projekti za participativno budžetiranje
         assigned_admin: Dodijeljeni administrator
         no_admin_assigned: Nema dodijeljenih administratora
         no_valuators_assigned: Nema dodijeljenih ocjenitelja
         summary_link: "Sažetak investicionog projekta"
-        valuator_summary_link: "Sažetak ocjenitelja"
+        valuator_summary_link: "Sažetak procjenitelja"
         feasibility:
           feasible: "Izvodivo (cijena) (%{price})"
           not_feasible: "Nije izvodivo"
           undefined: "Nije definisano"
       show:
         assigned_admin: Dodijeljeni administrator
-        assigned_valuators: Dodijeljeni ocjenitelji
+        assigned_valuators: Dodijeljeni procjenitelji
         back: Nazad
         classification: Klasifikacija
         heading: "Investicioni projekat (identifikacioni broj) %{id}"
@@ -1364,13 +1364,13 @@ bs:
         by: Od
         sent: Poslano
         geozone: Područje
-        dossier: Dosije
-        edit_dossier: Edituj dosije
+        dossier: Spis
+        edit_dossier: Izmjeni spis
         tags: Tagovi
         undefined: Nije definisano
       edit:
         classification: Klasifikacija
-        assigned_valuators: Ocjenitelji
+        assigned_valuators: Procjenitelji
         submit_button: Ažuriraj
         tags: Tagovi
         tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
@@ -1395,7 +1395,7 @@ bs:
         name: Ime
         external_code: Eksterna šifra
         census_code: Šifra popisa
-        code_help: Šifra odgovora za ovu geozonu na API od popisa
+        code_help: Šifra za ovu geozonu na API od popisa
         coordinates: Koordinate
         coordinates_help: Koordinate koje će na HTML slikovnoj mapi napraviti područje na koje će se moći klikati
       errors:
@@ -1411,7 +1411,7 @@ bs:
         back: Idi nazad
       new:
         back: Idi nazad
-        creating: Napravi oblast
+        creating: Kreiraj oblast
       delete:
         success: Geozona uspješno obrisana
         error: Geozona se ne može obrisati zbog vezanih elemenata
@@ -1434,12 +1434,12 @@ bs:
         document_count: "Broj dokumenata:"
         verified:
           one: "%{count} neispravni potpis"
-          few: "%{count} neispravnih potpisa"
-          other: "%{count} neispravnih potpisa"
+          few: "%{count} neispravna/neispravnih potpisa"
+          other: "%{count} neispravna/neispravnih potpisa"
         unverified:
           one: "%{count} neispravni potpis"
-          few: "%{count} neispravnih potpisa"
-          other: "%{count} neispravnih potpisa"
+          few: "%{count} neispravna/neispravnih potpisa"
+          other: "%{count} neispravna/neispravnih potpisa"
         unverified_error: (Nije potvrđeno popisom)
         loading: "Neki potpisi se trenutno potvrđuju u popisu. Osvježite stranicu za nekoliko sekundi"
     stats:
