@@ -8,33 +8,33 @@ bs:
       finish_verification: Završi verifikaciju
       notifications: Obavijesti
       organization_name_label: Naziv organizacije
-      organization_responsible_name_placeholder: Predstavnik organizacije/kolektiva
+      organization_responsible_name_placeholder: Predstavnik organizacije/zajednice
       personal: Lični podaci
       phone_number_label: Broj telefona
       public_activity_label: Moja lista aktivnosti je javna
       public_interests_label: Oznake da nešto pratim su javne
       public_interests_my_title_list: Tagovi za ono što pratim
-      public_interests_user_title_list: Tagovi onoga što ovaj korisnik prati
+      public_interests_user_title_list: Tagovi za ono što korisnik prati
       save_changes_submit: Spasi izmjene
-      subscription_to_website_newsletter_label: Primaću relevantne informacije putem emaila od web-stranice
+      subscription_to_website_newsletter_label: Primaću emailom relevantne informacije o web-stranici
       email_on_direct_message_label: Dobijaću emailove u vezi direktnih poruka
       email_digest_label: Dobijaću sažetak obavijesti o prijedlozima
       official_position_badge_label: Pokaži bedž sa navedenom službenom funkcijom
       recommendations: Preporuke
       show_debates_recommendations: Pokaži preporuke iz debata
       show_proposals_recommendations: Pokaži preporuke iz prijedloga
-      title: Moj profil
+      title: Moj nalog
       user_permission_debates: Učestvuj u debatama
-      user_permission_info: Sa svojim profilom, možeš...
+      user_permission_info: Sa svojim nalogom, možeš...
       user_permission_proposal: Formulisati nove prijedloge
       user_permission_support_proposal: Iskazati podršku za prijedloge
       user_permission_title: Učešće
-      user_permission_verify: Potvrdi svoj profil za obavljanje svih radnji.
-      user_permission_verify_info: "* Samo za korisnike Census-a."
-      user_permission_votes: Učestvuj u finalnom glasanju
+      user_permission_verify: Potvrdi nalog za obavljanje svih radnji.
+      user_permission_verify_info: "* Samo za korisnike popisa."
+      user_permission_votes: Učestvujte u finalnom glasanju
       username_label: Korisničko ime
-      verified_account: Profil potvrđen
-      verify_my_account: Potvrdi moj profil
+      verified_account: Nalog potvrđen
+      verify_my_account: Potvrdi moj nalog
   application:
     close: Zatvori
     menu: Meni
