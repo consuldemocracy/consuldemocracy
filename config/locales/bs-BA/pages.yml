@@ -73,7 +73,7 @@ bs:
 
         Kada se web-stranice dizajniraju imajući na umu njihovu pristupačnost, svi korisnici imaju pristup sadržajima pod jednakim uslovima. Naprimjer:
       examples:
-        - Obezbjeđujući alternativne tekstove za slike, slijepa ili slabovidna lica mogu koristiti specijalne čitače za pristup informacijama.
+        - Uz upotrebu alternativnih tekstova za slike, slijepa ili slabovidna lica mogu koristiti specijalne čitače za pristup informacijama.
         - Kada video zapisi sadrže titlove, korisnici sa slušnim poteškoćama ih mogu u potpunosti razumjeti.
         - Ako su sadržaji napisani jednostavnim i ilustrovanim jezikom, korisnici sa poteškoćama u učenju ih mogu bolje razumjeti.
         - Ako korisnik ima problema s kretanjem i poteškoće sa upotrebom miša, alternativne opcije na tastaturi mu pomažu u navigaciji.
@@ -163,8 +163,8 @@ bs:
     verify:
       code: Kod koji ste dobili u pismu
       email: Email
-      info: "Kako bi potvrdili svoj profil, navedite svoje podatke za pristup:"
+      info: "Za potvrdu svog naloga, unesite podatke za pristup:"
       info_code: "Sada unesite kod koji ste dobili u pismu:"
       password: Lozinka
       submit: Potvrdi moj profil
-      title: Potvrdi svoj profil
+      title: Potvrdi svoj nalog
