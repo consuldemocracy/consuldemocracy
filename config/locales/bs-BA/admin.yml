@@ -1483,11 +1483,11 @@ bs:
         title: "Statistika ze konačno glasanje"
         vote_count: Glasovi
         participant_count: Učesnici
-        votes_per_heading: Glasovi po kategorijama
-        participants_per_district: Učesnici po područjima
+        votes_per_heading: Glasovi po poglavljima
+        participants_per_district: Učesnici po okruzima
       budget_supporting:
         title: "Statistika za fazu podrške"
-        headings: Kategorije
+        headings: Poglavlja
         users: Korisnici
         vote_count: Glasovi
         participant_count: Učesnici
@@ -1499,17 +1499,17 @@ bs:
         title: Obavijesti o prijedlogu
         total: Ukupno
         proposals_with_notifications: Prijedlozi sa obavijestima
-        not_available: "Prijedlozi nisu dostupni"
+        not_available: "Prijedlog nije dostupan"
       polls:
         title: Statistika za glasačku anketu
         all: Glasačke ankete
-        web_participants: Online učesnici
+        web_participants: Učesnici na web-stranici
         total_participants: Ukupno učesnika
         poll_questions: "Pitanja iz glasačke ankete: %{poll}"
         table:
           poll_name: Glasačka anketa
           question_name: Pitanje
-          origin_web: Online učesnici
+          origin_web: Učesnici na web-stranici
           origin_total: Ukupno učesnika
     tags:
       create: Formuliši temu
