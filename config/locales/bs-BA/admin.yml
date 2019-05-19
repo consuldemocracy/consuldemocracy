@@ -917,9 +917,9 @@ bs:
         total_count: Ukupno
         cost: Troškovi
       form:
-        edit_title: "Ocjenitelji: Editovanje podataka za ocjenitelja"
-        update: "Ažuriraj podatke za ocjenitelja"
-        updated: "Podaci za ocjenitelja uspješno ažurirani"
+        edit_title: "Procjenitelji: Editovanje podataka za procjenitelja"
+        update: "Ažuriraj podatke za procjenitelja"
+        updated: "Podaci za procjenitelja uspješno ažurirani"
       show:
         description: "Opis"
         email: "Email"
@@ -928,18 +928,18 @@ bs:
         no_group: "Bez grupe"
     valuator_groups:
       index:
-        title: "Grupe ocjenitelja"
-        new: "Napravi ocjeniteljsku grupu"
-        name: "Ime"
+        title: "Grupe za procjenu"
+        new: "Kreiraj grupu za procjenu"
+        name: "Naziv"
         members: "Članovi"
-        no_groups: "Nema ocjeniteljskih grupa"
+        no_groups: "Nema grupa za procjenu"
       show:
-        title: "Ocjeniteljska grupa: %{group}"
-        no_valuators: "Nema ocjenitelja dodijeljenih ovoj grupi"
+        title: "Grupa za procjenu: %{group}"
+        no_valuators: "Nema procjenitelja dodijeljenih ovoj grupi"
       form:
-        name: "Ime grupe"
-        new: "Napravi ocjeniteljsku grupu"
-        edit: "Spasi podatke za ocjeniteljsku grupu"
+        name: "Naziv grupe"
+        new: "Kreiraj grupu za procjenu"
+        edit: "Spasi podatke za grupu za procjenu"
     poll_officers:
       index:
         title: Anketari
@@ -1078,7 +1078,7 @@ bs:
         title: "Pitanja"
         create: "Formuliši pitanje"
         no_questions: "Nema pitanja."
-        filter_poll: Suzi pretragu na glasačke ankete
+        filter_poll: Suzi pretragu po glasačkim anketama
         select_poll: Odaberi glasačku anketu
         questions_tab: "Pitanja"
         successful_proposals_tab: "Uspješni prijedlozi"
