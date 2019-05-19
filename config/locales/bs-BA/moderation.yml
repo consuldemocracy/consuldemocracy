@@ -32,7 +32,7 @@ bs:
           pending_flag_review: U toku
           with_ignored_flag: Označeno kao pogledano
         headers:
-          debate: Debata
+          debate: Učestvuj u debati
           moderate: Moderiraj
         hide_debates: Sakrij debate
         ignore_flags: Označi kao pogledano
@@ -114,4 +114,4 @@ bs:
         search: Traži
         search_placeholder: email ili ime korisnika
         title: Blokiraj korisnike
-      notice_hide: Korisnik blokiran. Sve njegove debate i komentari su sakriveni.
+      notice_hide: Korisnik blokiran. Sve debate i komentari korisnika su sakriveni.
