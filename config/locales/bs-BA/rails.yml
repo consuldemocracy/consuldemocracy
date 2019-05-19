@@ -59,7 +59,7 @@ bs:
         few: cca %{count} mjeseca/mjeseci
         other: cca %{count} mjeseca/mjeseci
       about_x_years:
-        one: cca %{count} godine/godina
+        one: cca 1 godina
         few: cca %{count} godine/godina
         other: cca %{count} godine/godina
       almost_x_years:
