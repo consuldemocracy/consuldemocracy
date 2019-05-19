@@ -246,10 +246,10 @@ bs:
       logo: CONSUL logotip
       management: Menadžment
       moderation: Moderiranje
-      valuation: Ocjena
+      valuation: Procjena
       officing: Anketari
       help: Pomoć
-      my_account_link: Moj profil
+      my_account_link: Moj nalog
       my_activity_link: Moje aktivnosti
       open: otvoreno
       open_gov: Otvorena vlada
@@ -291,28 +291,28 @@ bs:
       mark_as_unread: Označi kao nepročitano
       notifiable_hidden: Ovaj resurs više nije dostupan.
   map:
-    title: "Područja"
-    proposal_for_district: "Formulišite prijedlog za vaše područje"
-    select_district: Odaberi područje
+    title: "Okruzi"
+    proposal_for_district: "Formulišite prijedlog za vaš okrug"
+    select_district: Odaberi okrug
     start_proposal: Formuliši prijedlog
   omniauth:
     facebook:
-      sign_in: Prijavi se preko Facebook-a
-      sign_up: Otvori profil preko Facebook-a
+      sign_in: Prijava preko Facebooka
+      sign_up: Otvori nalog preko Facebook-a
       name: Facebook
     finish_signup:
       title: "Dodatne informacije"
-      username_warning: "Zbog promjene načina naše interakcije sa društvenim mrežama, moguće je da za tvoje korisničko ime sad piše da je 'već u upotrebi'. Ako je tako, odaberi drugo korisničko ime."
+      username_warning: "Zbog promjene načina naše interakcije sa društvenim mrežama, moguće je da za vaše korisničko ime sad piše da je 'već u upotrebi'. Ako je tako, odaberite drugo korisničko ime."
     google_oauth2:
-      sign_in: Prijavi se sa Google-om
-      sign_up: Otvori profil sa Google-om
+      sign_in: Prijava preko Googlea
+      sign_up: Otvori nalog preko Googlea
       name: Google
     twitter:
-      sign_in: Prijavi se sa Twitter-om
-      sign_up: Otvori profil sa Twitter-om
+      sign_in: Prijava preko Twittera
+      sign_up: Otvori nalog preko Twittera
       name: Twitter
-    info_sign_in: "Prijavi se sa:"
-    info_sign_up: "Otvori profil sa:"
+    info_sign_in: "Prijavi se preko:"
+    info_sign_up: "Otvori nalog preko:"
     or_fill: "Ili ispuni ovaj formular:"
   proposals:
     create:
@@ -324,7 +324,7 @@ bs:
       motivation_2_html: "<strong> Ako želite preporuke da biste se pripremili za objavu, ostavite svoj prijedlog u formi nacrta i mi ćemo vam dati smjernice.</strong>"
       publish: Ne, želim da objavim prijedlog
       dashboard: Da, tražim pomoć, objaviću kasnije
-      preview_title: Evo kako će vaš prijedlog izgledati kad ga objavite
+      preview_title: Evo kako će izgledati vaš prijedlog kad ga objavite
     share:
       improve_it: Poboljšajte svoju kampanju kako bi dobili veću podršku.
       dashboard: Vidi više informacija
@@ -340,7 +340,7 @@ bs:
       retired_reason_label: Razlog što povlačite prijedlog
       retired_reason_blank: Odaberite opciju
       retired_explanation_label: Objašnjenje
-      retired_explanation_placeholder: Objasnite ukratko zašto mislite da ovaj prijedlog ne treba više podržavati
+      retired_explanation_placeholder: Objasnite ukratko zašto mislite da ovaj prijedlog više ne treba podržavati
       submit_button: Povucite prijedlog
     retire_options:
       duplicated: Duplicirano
@@ -351,12 +351,12 @@ bs:
     form:
       geozone: Područje
       proposal_responsible_name: Puno ime i prezime osobe koja podnosi prijedlog
-      proposal_responsible_name_note: "(pojedinačno ili kao predstavnik/ca kolektiva; ne vidi se javno)"
+      proposal_responsible_name_note: "(pojedinačno ili kao predstavnik zajednice; ovaj podatak se ne vidi javno)"
       proposal_summary: Sažetak prijedloga
       proposal_summary_note: "(maksimalno 200 karaktera)"
       proposal_text: Tekst prijedloga
       proposal_title: Naziv prijedloga
-      proposal_video_url: Link za eksterni video zapis
+      proposal_video_url: Link za eksterni video
       proposal_video_url_note: Možete dodati link za YouTube ili Vimeo
       tag_category_label: "Kategorije"
       tags_instructions: "Taguj prijedlog. Možeš birati iz predloženih kategorija ili dodati vlastiti tag"
@@ -383,10 +383,10 @@ bs:
       recommendations:
         without_results: Nema prijedloga vezanih za vaše interese
         without_interests: Pratite prijedloge kako bi vam dali preporuke
-        disable: "Preporuke za prijedloge se neće pojavljivati ako ih isključite. Možete ih ponovo uključiti na stranici \"Moj profil\""
+        disable: "Preporuke za prijedloge se neće pojavljivati ako ih isključite. Možete ih ponovo uključiti na stranici \"Moj nalog\""
         actions:
-          success: "Preporuke za prijedloge su sad isključene za ovaj profil"
-          error: "Došlo je do greške. Idite na stranicu \"Moj profil\" kako bi ručno isključili preporuke za prijedloge"
+          success: "Preporuke za prijedloge su sad isključene za ovaj nalog"
+          error: "Došlo je do greške. Idite na stranicu \"Moj nalog\" kako bi ručno isključili preporuke za prijedloge"
       retired_proposals: Povučeni prijedlozi
       retired_proposals_link: "Prijedlozi povučeni od strane autora"
       retired_links:
