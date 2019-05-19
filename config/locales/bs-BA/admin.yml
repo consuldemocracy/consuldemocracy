@@ -486,8 +486,8 @@ bs:
     legislation:
       processes:
         create:
-          notice: 'Process uspješno napravljen. <a href="%{link}">Klikni za posjetu</a>'
-          error: Proces se ne može napraviti
+          notice: 'Process uspješno kreiran. <a href="%{link}">Klikni za posjetu</a>'
+          error: Proces se ne može kreirati
         update:
           notice: 'Process uspješno ažuriran. <a href="%{link}">Klikni za posjetu</a>'
           error: Proces se ne može ažurirati
@@ -504,7 +504,7 @@ bs:
           process: Proces
           debate_phase: Debatna faza
           draft_phase: Nacrtna faza
-          draft_phase_description: Ako je ova faza aktivna, proces neće biti naveden na procesnom indeksu. Omogućite pregled procesa i napravite sadržaj prije početka.
+          draft_phase_description: Ako je ova faza aktivna, proces neće biti naveden na procesnom indeksu. Omogućite pregled procesa i kreirajte sadržaj prije početka.
           allegations_phase: Faza za podnošenje komentara
           proposals_phase: Faza za podnošenje prijedloga
           use_markdown: Koristi obilježavanje za formatiranje teksta
@@ -531,7 +531,7 @@ bs:
           select_order: Poredaj po
           orders:
             id: Identifikacioni broj
-            title: Nazivu
+            title: Naziv
             supports: Ukupna podrška
         process:
           title: Proces
@@ -595,19 +595,19 @@ bs:
           body_placeholder: Napiši narct teksta
         index:
           title: Nacrtne verzije
-          create: Napravi verziju
+          create: Kreiraj verziju
           delete: Obriši
           preview: Pregled
         new:
           back: Nazad
-          title: Napravi novu verziju
-          submit_button: Napravi verziju
+          title: Kreiraj novu verziju
+          submit_button: Kreiraj verziju
         statuses:
           draft: Nacrt
           published: Objavljeno
         table:
           title: Naziv
-          created_at: Napravljeno
+          created_at: 'Napravljeno:'
           comments: Komentari
           final_version: Finalna verzija
           status: Status
@@ -664,13 +664,13 @@ bs:
       search:
         title: "Menadžeri: traženje korisnika"
     menu:
-      activity: Moderatorove radnje
+      activity: Moderatorove aktivnosti
       admin: Administrativni meni
       banner: Uredi banere
       proposals: Prijedlozi
       proposals_topics: Teme u prijedlozima
       budgets: Participativni budžeti
-      geozones: Uredi geozone
+      geozones: Sredi područja
       hidden_comments: Skriveni komentari
       hidden_debates: Skrivene debate
       hidden_proposals: Skriveni prijedlozi
@@ -685,7 +685,7 @@ bs:
       admin_notifications: Obavijesti
       system_emails: Sistemski emailovi
       emails_download: Učitaj emailove
-      valuators: Ocjenitelji
+      valuators: Procjenitelji
       poll_officers: Anketari
       polls: Glasačke ankete
       poll_booths: Lokacije kabina
@@ -706,7 +706,7 @@ bs:
         information_texts: Prilagođeni informacijski tekstovi
         information_texts_menu:
           debates: "Debate"
-          community: "Zajednica"
+          community: "Grupa"
           proposals: "Prijedlozi"
           polls: "Glasačke ankete"
           layouts: "Rasporedi"
