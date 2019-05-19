@@ -1,6 +1,6 @@
 bs:
   social_share_button:
-    share_to: "Podijeli sa %{name}"
+    share_to: "Podijeli na %{name}"
     weibo: "Sina Weibo"
     twitter: "Twitter"
     facebook: "Facebook"
