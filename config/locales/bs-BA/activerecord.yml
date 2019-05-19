@@ -22,9 +22,9 @@ bs:
         few: "Statusi utvrđenog roka"
         other: "Statusi utvrđenog roka"
       progress_bar:
-        one: "Traka za praćenje napretka"
-        few: "Trake za praćenje napretka"
-        other: "Trake za praćenje napretka"
+        one: "Traka za praćenje aktivnosti"
+        few: "Trake za praćenje aktivnosti"
+        other: "Trake za praćenje aktivnosti"
       comment:
         one: "Komentar"
         few: "Komentari"
