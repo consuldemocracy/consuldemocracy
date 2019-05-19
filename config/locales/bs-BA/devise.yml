@@ -7,14 +7,14 @@ bs:
       new_password: "Nova lozinka"
       updated: "Lozinka uspješno ažurirana"
     confirmations:
-      confirmed: "Tvoj profil je potvrđen."
+      confirmed: "Tvoj nalog je potvrđen."
       send_instructions: "Za nekoliko minuta ćeš dobiti email sa instrukcijama kako da promijeniš svoju lozinku."
       send_paranoid_instructions: "Ako je tvoja email adresa u našoj bazi podataka, za nekoliko minuta ćeš dobiti email sa instrukcijama kako da promijeniš svoju lozinku."
     failure:
       already_authenticated: "Već si prijavljen/a."
-      inactive: "Tvoj profil još uvijek nije aktiviran."
-      invalid: "Neispravne %{authentication_keys} ili neispravna lozinka."
-      locked: "Tvoj profil je zaključan."
+      inactive: "Tvoj nalog još uvijek nije aktiviran."
+      invalid: "Neispravno unesene %{authentication_keys} ili neispravna lozinka."
+      locked: "Tvoj nalog je zaključan."
       last_attempt: "Imaš još jedan pokušaj prije nego ti se blokira profil."
       not_found_in_database: "Neispravne %{authentication_keys} ili neispravna lozinka."
       timeout: "Tvoja sesija je istekla. Prijavi se ponovo kako bi nastavio/la."
