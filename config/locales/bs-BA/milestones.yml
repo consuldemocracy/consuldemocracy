@@ -5,4 +5,4 @@ bs:
       progress: Dosad urađeno
     show:
       publication_date: "Objavljeno %{publication_date}"
-      status_changed: Status promijenjen na
+      status_changed: 'Status promijenjen:'
