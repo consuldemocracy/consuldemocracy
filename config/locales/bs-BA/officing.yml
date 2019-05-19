@@ -17,7 +17,7 @@ bs:
         select_poll: Odaberi glasačku anketu
         add_results: Dodaj rezultate
     poll_budgets:
-      see_ballot_sheets: Vidi spiskove glasačkih listića
+      see_ballot_sheets: Vidi spisak glasačkih listića
       index:
         title: "%{poll_budget} - Spiskovi glasačkih listića"
         ballot_sheet: "Glasački listić %{id}"
@@ -32,7 +32,7 @@ bs:
         csv_data: CSV podaci
         submit: Spasi
       show:
-        created_at: Datum pravljenja
+        created_at: Datum izrade
         author: Autor
         data: CSV podaci
     booth:
@@ -69,15 +69,15 @@ bs:
         not_allowed: "Danas nemate anketarskih smjena u rasporedu"
       new:
         title: Potvrdi dokument
-        document_number: "Broj dokumenta (uključujući i slova)"
+        document_number: "Broj isprave"
         submit: Potvrdi dokument
-        error_verifying_census: "Popis nije mogao potvrditi ovaj dokument."
+        error_verifying_census: "Dokument se ne može potvrditi u popisu."
         form_errors: je razlog zašto je spriječena verifikacija ovog dokumenta
     voters:
       new:
         title: Glasačke ankete
         table_poll: Glasačka anketa
-        table_status: Status ankete
+        table_status: Status anketa
         table_actions: Poduzete radnje
         not_to_vote: Osoba je odlučila da ne glasa sada
       show:
