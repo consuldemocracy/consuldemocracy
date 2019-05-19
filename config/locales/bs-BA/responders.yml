@@ -16,7 +16,7 @@ bs:
         budget_investment: "Budžetska investicija uspješno kreirana."
         signature_sheet: "Potpisni list uspješno kreiran"
         topic: "Tema uspješno kreirana."
-        valuator_group: "Ocjeniteljska grupa uspješno kreirana"
+        valuator_group: "Grupa procjenitelja uspješno kreirana"
       save_changes:
         notice: Izmjene spašene
       update:
@@ -29,7 +29,7 @@ bs:
         spending_proposal: "Investicioni projekat uspješno ažuriran."
         budget_investment: "Investicioni projekat uspješno ažuriran."
         topic: "Tema uspješno ažurirana."
-        valuator_group: "Ocjeniteljska grupa uspješno ažurirana"
+        valuator_group: "Grupa procjenitelja uspješno ažurirana"
         translation: "Prevod uspješno ažuriran"
       destroy:
         spending_proposal: "Prijedlog troškova uspješno obrisan."
@@ -37,4 +37,4 @@ bs:
         error: "Ne može se obrisati"
         topic: "Tema uspješno obrisana."
         poll_question_answer_video: "Video odgovor uspješno obrisan."
-        valuator_group: "Ocjeniteljska grupa uspješno obrisana"
+        valuator_group: "Grupa procjenitelja uspješno obrisana"
