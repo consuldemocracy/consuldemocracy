@@ -790,9 +790,9 @@ bs:
         affected_users: (%{n} broj korisnika)
         sent_emails:
           one: Poslan 1 email
-          few: "Poslano %{count} emailova"
-          other: "Poslano %{count} emailova"
-        sent_at: Poslano
+          few: "Poslano emailova: %{count}"
+          other: "Poslano emailova: %{count}"
+        sent_at: 'Poslano:'
         subject: Predmet
         segment_recipient: Primatelji
         from: Email-adresa koja se pokazuje kao pošiljatelj biltena
@@ -800,7 +800,7 @@ bs:
         body_help_text: Ovako će korisnici vidjeti email
         send_alert: Sigurni ste da želite poslati bilten ovom broju korisnika %{n}?
     admin_notifications:
-      create_success: Obavijest uspješno napravljena
+      create_success: Obavijest uspješno kreirana
       update_success: Obavijest uspješno ažurirana
       send_success: Obavijest uspješno poslana
       delete_success: Obavijest uspješno obrisana
@@ -814,8 +814,8 @@ bs:
         draft: Nacrt
         edit: Edituj
         delete: Obriši
-        preview: Pregled
-        view: Pogledaj
+        preview: Pregledaj
+        view: Vidi
         empty_notifications: Nema obavijesti za pokazati
       new:
         section_title: Nova obavijest
@@ -849,8 +849,8 @@ bs:
         description: "Stavi sve obavijesti o prijedlozima za korisnika u jednu poruku, kako ne bi bilo previše emailova."
         preview_detail: "Korisnici će dobijati obavijesti samo o prijedlozima koje prate"
       budget_investment_created:
-        title: "Napravljena budžetska investicija"
-        description: "Poslano kada korisnik napravi budžetsku investiciju."
+        title: "Kreirana budžetska investicija"
+        description: "Poslano kada korisnik kreira budžetsku investiciju."
       budget_investment_selected:
         title: "Odabrana budžetska investicija"
         description: "Poslano autoru kad je odabrana njegova budžetska investicija."
@@ -877,14 +877,14 @@ bs:
         description: "Poslano novom korisniku za verifikaciju njegove adrese."
       user_invite:
         title: "Pozivnica korisniku"
-        description: "Poslano osobi koja je pozvana da registruje adresu."
+        description: "Poslano osobi koja je pozvana da registruje nalog."
       edit_info: "Možete editovati ovaj mail u"
       message_title: "Naslov poruke"
       message_body: "Ovo je primjer sadržaja poruke."
       alert:
         no_investments: "Nije napravljena nijedna budžetska investicija. Neophodni su ogledni podaci kako bi došlo do pregleda emaila."
         no_comments: "Nije napravljen nijedan komentar. Neophodni su ogledni podaci kako bi došlo do pregleda emaila."
-        no_replies: "Nije napravljen nijedan odgovor. Neophodni su ogledni podaci kako bi kako bi došlo do pregleda emaila."
+        no_replies: "Nije kreiran nijedan odgovor. Neophodni su ogledni podaci kako bi kako bi došlo do pregleda emaila."
     emails_download:
       index:
         title: Učitaj emailove
@@ -893,23 +893,23 @@ bs:
         download_emails_button: Učitaj listu emailova
     valuators:
       index:
-        title: Ocjenitelji
+        title: Procjenitelji
         name: Ime
         email: Email
         description: Opis
         no_description: Nema opisa
-        no_valuators: Nema ocjenitelja.
-        valuator_groups: "Grupe ocjenitelja"
+        no_valuators: Nema procjenitelja.
+        valuator_groups: "Grupe za procjenu"
         group: "Grupa"
         no_group: "Nema grupe"
       valuator:
         add: Dodaj ocjeniteljima
         delete: Obriši
       search:
-        title: "Ocjenitelji: traženje korisnika"
+        title: "Procjenitelji: traženje korisnika"
       summary:
-        title: Ocjeniteljev sažetak za investicione projekte
-        valuator_name: Ocjenitelj
+        title: Procjeniteljev sažetak za investicione projekte
+        valuator_name: Procjenitelj
         finished_and_feasible_count: Završeno i izvodivo
         finished_and_unfeasible_count: Završeno i neizvodivo
         finished_count: Završeno
