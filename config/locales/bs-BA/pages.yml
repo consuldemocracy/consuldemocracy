@@ -74,8 +74,8 @@ bs:
         Kada se web-stranice dizajniraju imajući na umu njihovu pristupačnost, svi korisnici imaju pristup sadržajima pod jednakim uslovima. Naprimjer:
       examples:
         - Uz upotrebu alternativnih tekstova za slike, slijepa ili slabovidna lica mogu koristiti specijalne čitače za pristup informacijama.
-        - Kada video zapisi sadrže titlove, korisnici sa slušnim poteškoćama ih mogu u potpunosti razumjeti.
-        - Ako su sadržaji napisani jednostavnim i ilustrovanim jezikom, korisnici sa poteškoćama u učenju ih mogu bolje razumjeti.
+        - Kada video zapisi sadrže titlove, korisnici sa slušnim poteškoćama mogu ih u potpunosti razumjeti.
+        - Ako su sadržaji napisani jednostavnim i ilustrovanim jezikom, korisnici sa poteškoćama u učenju mogu ih bolje razumjeti.
         - Ako korisnik ima problema s kretanjem i poteškoće sa upotrebom miša, alternativne opcije na tastaturi mu pomažu u navigaciji.
       keyboard_shortcuts:
         title: Prečice na tastaturi
