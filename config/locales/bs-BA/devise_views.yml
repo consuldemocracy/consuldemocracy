@@ -27,40 +27,40 @@ bs:
         title: Promijenite svoju lozinku
       unlock_instructions:
         hello: Pozdrav
-        info_text: Tvoj profil je blokiran zbog prevelikog broja neuspješnih pokušaja prijave.
-        instructions_text: "Klikni na ovaj link kako bi se otključao profil:"
-        title: Tvoj profil je zaključan
-        unlock_link: Otključaj moj profil
+        info_text: Vaš nalog je blokiran zbog prevelikog broja neuspješnih pokušaja prijave.
+        instructions_text: "Kliknite na ovaj link kako bi se otključao nalog:"
+        title: Vaš nalog je zaključan
+        unlock_link: Otključaj moj nalog
     menu:
       login_items:
-        login: Prijavi se
-        logout: Odjavi se
-        signup: Registruj se
+        login: Prijavite se
+        logout: Odjavite se
+        signup: Registrujte se
     organizations:
       registrations:
         new:
           email_label: Email
           organization_name_label: Naziv organizacije
-          password_confirmation_label: Potvrdi lozinku
+          password_confirmation_label: Potvrdite lozinku
           password_label: Lozinka
           phone_number_label: Broj telefona
-          responsible_name_label: Puno ime i prezime osobe zadužene za kolektiv
-          responsible_name_note: Ovo će biti osoba koja predstavlja udruženje/kolektiv u čije ime se podnose prijedlozi
-          submit: Registruj se
-          title: Registruj se kao organizacija ili kolektiv
+          responsible_name_label: Puno ime i prezime osobe koja predstavlja zajednicu
+          responsible_name_note: Ovo je osoba koja predstavlja udruženje/zajednicu u čije se ime podnose prijedlozi
+          submit: Registrujte se
+          title: Registrujte se kao organizacija ili zajednica
         success:
           back_to_index: Shvatam; idi nazad na početnu stranicu
-          instructions_1_html: "<strong> Kontaktiraćemo vas uskoro </strong> kako bi potvrdili da vi zaista predstavljate ovaj kolektiv."
-          instructions_2_html: Dok se vaš <strong> email provjerava </strong>, poslali smo vam <strong> link za potvrdu vašeg profila </strong>.
-          instructions_3_html: Kad budete potvrđeni, moći ćete da krenete s učestvovanjem kao neverifikovani kolektiv.
-          thank_you_html: Hvala što ste registrovali svoj kolektiv na web-stranici. Sad je u toku <strong> verifikacija </strong>.
-          title: Registracija organizacije ili kolektiva
+          instructions_1_html: "<strong> Kontaktiraćemo vas uskoro </strong> kako bi potvrdili da zaista predstavljate ovu zajednicu."
+          instructions_2_html: Dok se vaš <strong> email provjerava </strong>, poslali smo vam <strong> link za potvrdu vašeg naloga </strong>.
+          instructions_3_html: Nakon što dobijete potvrdu, moći ćete krenuti s učestvovanjem kao neverifikovana zajednica.
+          thank_you_html: Hvala što ste registrovali svoju zajednicu na web-stranici. Sad je u toku <strong> verifikacija </strong>.
+          title: Registracija organizacije ili zajednice
     passwords:
       edit:
         change_submit: Promjeni moju lozinku
         password_confirmation_label: Potvrdi novu lozinku
         password_label: Nova lozinka
-        title: Promjeni svoju lozinku
+        title: Promjenite svoju lozinku
       new:
         email_label: Email
         send_submit: Pošalji uputstvo
@@ -70,17 +70,17 @@ bs:
         login_label: Email ili korisničko ime
         password_label: Lozinka
         remember_me: Zapamti me
-        submit: Uđi
-        title: Prijavi se
+        submit: Uđite
+        title: Prijavite se
     shared:
       links:
-        login: Uđi
-        new_confirmation: Niste dobili uputstvo kako da aktivirate svoj profil?
+        login: Uđite
+        new_confirmation: Niste dobili uputstvo kako da aktivirate svoj nalog?
         new_password: Zaboravili ste lozinku?
         new_unlock: Niste dobili uputstvo za otključavanje?
         signin_with_provider: Prijava sa %{provider}
-        signup: Nemate profil? (link za otvaranje profila) %{signup_link}
-        signup_link: Otvori profil
+        signup: Nemate nalog? (link za otvaranje naloga) %{signup_link}
+        signup_link: Otvorite nalog
     unlocks:
       new:
         email_label: Email
@@ -92,13 +92,13 @@ bs:
           erase_reason_label: Razlog
           info: Ova radnja se ne može poništiti. Budite sigurni da to želite uraditi.
           info_reason: Ako želite, navedite nam razlog (nije obavezno)
-          submit: Obriši moj profil
-          title: Obriši profil
+          submit: Obriši moj nalog
+          title: Obriši nalog
         edit:
           current_password_label: Sadašnja lozinka
           edit: Edituj
           email_label: Email
-          leave_blank: Ostavi prazno ako ne želiš da mijenjaš
+          leave_blank: Ostavite prazno ako ne želite mijenjati
           need_current: Treba nam vaša sadašnja lozinka da potvrdimo izmjene
           password_confirmation_label: Potvrdi novu lozinku
           password_label: Nova lozinka
@@ -107,7 +107,7 @@ bs:
         new:
           cancel: Ukini prijavu
           email_label: Email
-          organization_signup: Da li predstavljate organizaciju ili kolektiv? %{signup_link}
+          organization_signup: Da li predstavljate organizaciju ili zajednicu? %{signup_link}
           organization_signup_link: Otvorite profil ovdje
           password_confirmation_label: Potvrdi lozinku
           password_label: Lozinka
