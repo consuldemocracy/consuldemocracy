@@ -730,6 +730,33 @@ hr:
     check: Odaberi
     check_all: Svi
     check_none: Niti jedan
+    collective: Kolektiv
+    flag: Označi kao neprimjereno
+    follow: "Prati"
+    following: "Pratiti"
+    follow_entity: "Prati %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Sada pratite ovaj investicijski projekt! </br> Obavijestit ćemo vas o promjenama koje se događaju kako biste bili u tijeku događanja."
+        destroy:
+          notice_html: "Prestali ste pratiti ovaj investicijski projekt! </br> Više nećete primati obavijesti vezane uz ovaj projekt."
+      proposal:
+        create:
+          notice_html: "Sada pratite ovaj investicijski prijedlog! </br> Obavijestit ćemo vas o promjenama koje se događaju kako biste bili u tijeku događanja."
+        destroy:
+          notice_html: "Prestali ste pratiti ovaj investicijski prijedlog! </br> Više nećete primati obavijesti vezane uz ovaj prijedlog."
+    hide: Sakrij
+    print:
+      print_button: Printaj ove informacije
+    search: Pretraga
+    show: Prikaži
+    suggest:
+      debate:
+        found:
+          one: "Postoji rasprava s izrazom '%{query}', možete sudjelovati u njoj umjesto da otvarate novi."
+          few: "Postoje rasprave s izrazom '%{query}', možete sudjelovati u njima umjesto da otvarate nove."
+          other: "Postoje rasprave s izrazom '%{query}', možete sudjelovati u njima umjesto da otvarate nove."
   spending_proposals:
     show:
       author_deleted: Korisnik obrisan
