@@ -950,8 +950,8 @@ bs:
       unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je završena
     budget_investments:
-      not_logged_in: Morate se prijaviti %{signin} ili otvoriti profil %{signup} da bi učestvovali.
-      not_verified: Samo korisnici sa potvrđenim profilom mogu glasati za investicione projekte; %{verify_account}.
+      not_logged_in: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
+      not_verified: Samo korisnici sa potvrđenim nalogom mogu glasati za investicione projekte; %{verify_account}.
       organization: Organizacije ne mogu glasati
       unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je završena
@@ -985,21 +985,21 @@ bs:
         title: Preporučene investicije
       slide: "Vidi %{title}"
     verification:
-      i_dont_have_an_account: Nemam profil
-      i_have_an_account: Imam profil
-      question: Imate profil u %{org_name}?
-      title: Potvrda profila
+      i_dont_have_an_account: Nemam nalog
+      i_have_an_account: Imam nalog
+      question: Imate nalog u %{org_name}?
+      title: Potvrda naloga
     welcome:
       go_to_index: Ne sada, idi na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
       title: Učestvuj
       user_permission_debates: Učestvuj u debatama
-      user_permission_info: Sa svojim profilom, možeš...
+      user_permission_info: Sa svojim nalogom, možeš...
       user_permission_proposal: Formulisati nove prijedloge
-      user_permission_support_proposal: Iskazati podršku za prijedloge*
-      user_permission_verify: "Potvrdi svoj profil za obavljanje sljedećih radnji."
-      user_permission_verify_info: "* Samo za korisnike Census-a."
-      user_permission_verify_my_account: Potvrdi moj profil
+      user_permission_support_proposal: Dati podršku prijedlozima*
+      user_permission_verify: "Potvrdi nalog za obavljanje sljedećih radnji."
+      user_permission_verify_info: "* Samo za korisnike popisa."
+      user_permission_verify_my_account: Potvrdi moj nalog
       user_permission_votes: Učestvuj u finalnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste ljudsko biće, zanemarite ovo polje"
@@ -1028,8 +1028,8 @@ bs:
     help:
       alt: Odaberite tekst na koji želite dati komentar i pritisnite dugme olovkom.
       text: Kako bi dali komentar na ovaj dokument, morate se prijaviti %{sign_in} ili otvoriti profil %{sign_up}. Nakon toga, odaberite tekst na koji želite dati komentar i pritisnite dugme olovkom.
-      text_sign_in: login
-      text_sign_up: sign up
+      text_sign_in: logiranje
+      text_sign_up: registracija
       title: Kako mogu dati komentar na ovaj dokument?
   links:
     form:
