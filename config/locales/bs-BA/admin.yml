@@ -276,9 +276,9 @@ bs:
         mark_as_incompatible: Označi kao neusklađeno
         selection: Odabir
         mark_as_selected: Označi kao odabrano
-        assigned_valuators: Ocjenitelji
-        select_heading: Odaberi kategoriju
-        submit_button: Ažurirano
+        assigned_valuators: Procjenitelji
+        select_heading: Odaberi poglavlje
+        submit_button: Ažuriraj
         user_tags: Tagovi koje su definisali korisnici
         tags: Tagovi
         tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
@@ -320,7 +320,7 @@ bs:
         title: Statusi za utvrđeni rok
         empty_statuses: Nisu napravljeni statusi za utvrđeni rok
         new_status: Napravi novi status za utvrđeni rok
-        table_name: Ime
+        table_name: Naziv
         table_description: Opis
         table_actions: Radnje
         delete: Obriši
@@ -330,9 +330,9 @@ bs:
       update:
         notice: Status utvrđenog roka uspješno ažuriran
       new:
-        title: Napravi status za utvrđeni rok
+        title: Kreiraj status za utvrđeni rok
       create:
-        notice: Status utvrđenog roka uspješno napravljen
+        notice: Status utvrđenog roka uspješno kreiran
       delete:
         notice: Status utvrđenog roka uspješno obrisan
     progress_bars:
@@ -351,7 +351,7 @@ bs:
       edit:
         title:
           primary: "Edituj primarnu traku za praćenje napretka"
-          secondary: "Edituj traku za praćenje napretka (naziv) %{title}"
+          secondary: "Edituj traku za praćenje napretka %{title}"
       create:
         notice: "Traka za praćenje napretka uspješno napravljena!"
       update:
@@ -373,13 +373,13 @@ bs:
       index:
         back: Vrati se na %{org}
         title: Administracija
-        description: Dobrodošli na %{org} kontrolnu ploču za administraciju.
+        description: Dobrodošli na admin panel od %{org}.
       actions:
         action_type:
           proposed_action: Predložena radnja
           resource: Resurs
         index:
-          description: "Kada korisnici prave prijedloge, mogu pristupiti kontrolnoj ploči za svoj prijedlog, gdje se mogu predlagati resursi i preporuke kako bi se dobila podrška za njihovu ideju."
+          description: "Kada korisnici prave prijedloge, imaju pristup kontrolnoj ploči za svoj prijedlog, gdje se mogu predlagati resursi i preporuke kako bi se dobila podrška za njihovu ideju."
           create: Definiši resurs ili radnju
           edit: Edituj
           delete: Obriši
@@ -391,7 +391,7 @@ bs:
           required_supports: Potrebna podrška
           day_offset: Potrebni dani
           action_active: Aktivno
-          order: Naruči
+          order: Poredaj po
           published_proposal: Objavljeni prijedlog
           default:
             email: Email
@@ -401,12 +401,12 @@ bs:
           creating: Nova radnja za kontrolnu ploču za prijedloge
           back: Nazad na listu
         create:
-          notice: Radnja uspješno napravljena
+          notice: Radnja uspješno kreirana
         edit:
           editing: Edituj radnju za kontrolnu ploču za prijedloge
           back: Nazad na listu
         delete:
-          success: Radnja usješno obrisana
+          success: Radnja uspješno obrisana
         form:
           submit_button: Spasi
           help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
@@ -473,7 +473,7 @@ bs:
         email: "Email:"
         hidden_at: "Sakriveno:"
         registered_at: "Registrovano:"
-        title: Korisnička radnja (korisnik) (%{user})
+        title: Aktivnost korisnika (%{user})
     hidden_budget_investments:
       index:
         filter: Filter (suzi pretragu)
