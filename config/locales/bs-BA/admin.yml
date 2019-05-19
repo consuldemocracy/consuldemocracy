@@ -165,8 +165,8 @@ bs:
         allow_content_block: "Omogući blok sadržaja"
         content_blocks_info: "Ako omogućite blok sadržaja, moći ćete napraviti prilagođene sadržaje u vezi ovog poglavlja, u odjeljku \"blok sadržaja\" u Postavkama > Prilagodi. Ovaj sadržaj se pojavljuje na stranici koja pokazuje investicije za ovo poglavlje."
         create: "Kreiraj novo poglavlje"
-        edit: "Edituj kategoriju"
-        submit: "Spasi kategoriju"
+        edit: "Edituj poglavlje"
+        submit: "Spasi poglavlje"
       index:
         back: "Idi nazad na grupe"
     budget_phases:
