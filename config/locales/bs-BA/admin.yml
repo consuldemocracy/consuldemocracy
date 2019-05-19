@@ -182,18 +182,18 @@ bs:
         save_changes: Spasi izmjene
     budget_investments:
       index:
-        heading_filter_all: Sve kategorije
+        heading_filter_all: Sva poglavlja
         administrator_filter_all: Svi administratori
-        valuator_filter_all: Svi ocjenitelji
+        valuator_filter_all: Svi procjenitelji
         tags_filter_all: Svi tagovi
         advanced_filters: Napredni filteri
         placeholder: Nađi projekte
         filters:
           all: Sve
           without_admin: Bez dodijeljenog administratora
-          without_valuator: Bez dodijeljenog ocjenitelja
-          under_valuation: Ocjena u toku
-          valuation_finished: Ocjena završena
+          without_valuator: Bez dodijeljenog procjenitelja
+          under_valuation: Procjena u toku
+          valuation_finished: Procjena završena
           feasible: Izvodivo
           selected: Odabrano
           undecided: Nije odlučeno
@@ -210,8 +210,8 @@ bs:
         title: Investicioni projekti
         assigned_admin: Dodijeljeni administrator
         no_admin_assigned: Nema dodijeljenih administratora
-        no_valuators_assigned: Nema dodijeljenih ocjenitelja
-        no_valuation_groups: Nema dodijeljenih grupa za ocjenjivanje
+        no_valuators_assigned: Nema dodijeljenih procjenitelja
+        no_valuation_groups: Nema dodijeljenih grupa za procjenu
         feasibility:
           feasible: "Izvodivo"
           unfeasible: "Nije izvodivo"
@@ -219,42 +219,42 @@ bs:
         selected: "Odabrano"
         select: "Odaberi"
         list:
-          id: Broj investicije
+          id: Identifikacioni broj
           title: Naziv
           supports: Podrška
           admin: Administrator
-          valuator: Ocjenitelj
-          valuation_group: Grupa za ocjenjivanje
+          valuator: Procjenitelj
+          valuation_group: Grupa za procjenu
           geozone: Područje
           feasibility: Izvodivost
-          valuation_finished: Ocjena završena.
+          valuation_finished: Procjena završena.
           selected: Odabrano
-          visible_to_valuators: Pokaži ocjeniteljima
+          visible_to_valuators: Pokaži procjeniteljima
           author_username: Korisničko ime autora
           incompatible: Nije kompatibilno
           price: Cijena
-        cannot_calculate_winners: Kako bi se obračunale odabrane investicije, budžet mora biti u fazi "Glasanje za projekte", ili u fazi "Provjera glasačkih listića", ili u fazi "Budžet završen"
+        cannot_calculate_winners: Kako bi se obračunale odabrane investicije, budžet mora biti u fazi "Glasanja za projekte", ili u fazi "Provjera glasačkih listića", ili u fazi "Budžet završen"
         see_results: "Vidi rezultate"
       show:
         assigned_admin: Dodijeljeni administrator
-        assigned_valuators: Dodijeljeni ocjenitelji
+        assigned_valuators: Dodijeljeni procjenitelji
         classification: Klasifikacija
-        info: "%{budget_name} (naziv budžeta) - Grupa (naziv grupe): %{group_name} - Investicioni projekat (identifikacioni broj projekta) %{id}"
+        info: "%{budget_name} - Grupa: %{group_name} - Investicioni projekat %{id}"
         edit: Edituj
         edit_classification: Edituj klasifikaciju
         by: Od
         sent: Poslano
         group: Grupa
-        heading: Kategorija
-        dossier: Dosije
-        edit_dossier: Edituj dosije
+        heading: Poglavlje
+        dossier: Spis
+        edit_dossier: Izmjeni spis
         tags: Tagovi
         user_tags: Korisnički tagovi
         undefined: Nije definisano
         compatibility:
           title: Usklađenost
-          "true": Nije kompatibilno
-          "false": Kompatibilno
+          "true": Nije usklađeno
+          "false": Usklađeno
         selection:
           title: Odabir
           "true": Odabrano
@@ -264,16 +264,16 @@ bs:
           "true": "Da"
           "false": "Ne"
         image: "Slika"
-        see_image: "Pokaži sliku"
+        see_image: "Vidi sliku"
         no_image: "Bez slike"
         documents: "Dokumenti"
-        see_documents: "Vidi dokumente (broj) (%{count})"
+        see_documents: "Vidi dokumente (%{count})"
         no_documents: "Bez dokumenata"
-        valuator_groups: "Grupe ocjenitelja"
+        valuator_groups: "Grupe za procjenu"
       edit:
         classification: Klasifikacija
-        compatibility: Kompatibilnost
-        mark_as_incompatible: Označi kao nekompatibilno
+        compatibility: Usklađenost
+        mark_as_incompatible: Označi kao neusklađeno
         selection: Odabir
         mark_as_selected: Označi kao odabrano
         assigned_valuators: Ocjenitelji
