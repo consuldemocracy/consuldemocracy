@@ -226,9 +226,9 @@ el:
       poll/ballot_sheet:
         data: Στοιχεία CSV
         poll_id: Δημοσκόπηση
-        officer_assignment_id: Λειτουργός ανάθεσης
+        officer_assignment_id: Ανάθεση Εργασίας Λειτουργού
       signature_sheet:
-        signable_type: "Τύπου με δυνατότητα υπογραφής"
+        signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "Με δυνατότητα υπογραφής ID"
         document_numbers: "Αριθμούς εγγράφων"
       site_customization/page:
