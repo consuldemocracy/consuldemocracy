@@ -36,16 +36,16 @@ sr:
       short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
+      - Januar
+      - Februar
+      - Mart
       - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
+      - Maj
+      - Jun
+      - Jul
+      - Avgust
+      - Septembar
+      - Oktobar
       - November
       - December
   number:
