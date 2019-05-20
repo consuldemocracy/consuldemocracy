@@ -189,3 +189,6 @@ gl:
         dates_range_invalid: "A data de comezo non pode ser igual ou superior á de remate"
         prev_phase_dates_invalid: "A data de inicio debe ser posterior á data de inicio da anterior fase habilitada (%{phase_name})"
         next_phase_dates_invalid: "A data de fin debe ser anterior á data de fin da seguinte fase habilitada (%{phase_name})"
+    stats:
+      link: Estatísticas
+      total_participants: Participantes totais
