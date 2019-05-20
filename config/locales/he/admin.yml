@@ -758,6 +758,7 @@ he:
     segment_recipient:
       all_users: כל המשתמשים
       administrators: מנהלי מערכת
+      all_proposal_authors: מחברי ההצעה (כולל בארכיון וגם לא פעילים)
       proposal_authors: מחברי ההצעות
       investment_authors: מחברי ההשקעות בתקציב הנוכחי
       feasible_and_undecided_investment_authors: "מחברי השקעות בתקציב הנוכחית שאינם מקיימים: [הערכת אי ישימות]"
