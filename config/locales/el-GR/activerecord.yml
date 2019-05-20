@@ -400,9 +400,9 @@ el:
             debate_end_date:
               invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης της συζήτησης
             draft_end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την αρχική ημερομηνία έναρξης του προσχέδιου
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
             allegations_end_date:
-              invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης των σχολίων
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης των σχολίων
         proposal:
           attributes:
             tag_list:
@@ -414,7 +414,7 @@ el:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "Πρέπει να περιμένετε το λιγότερο %{interval} ημέρες μεταξύ των ειδοποιήσεων"
+              invalid: "Πρέπει να περιμένετε τουλάχιστον %{interval} ημέρες μεταξύ των ειδοποιήσεων"
         signature:
           attributes:
             document_number:
@@ -435,7 +435,7 @@ el:
               cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
       messages:
         record_invalid: "Η επικύρωση απέτυχε: %{errors}"
-        another_poll_active: Υπάρχει μια άλλη δημοσκόπηση ενεργή για την δεδομένη περίοδο
+        another_poll_active: Υπάρχει άλλη ενεργή δημοσκόπηση για την δεδομένη περίοδο
         restrict_dependent_destroy:
           has_one: "Δεν μπορείτε να σβήσετε την εγγραφή επειδή μία εξαρτημένη %{record} υπάρχει"
           has_many: "Δεν μπορείτε να σβήσετε την εγγραφή επειδή μία εξαρτημένη %{record} υπάρχει"
