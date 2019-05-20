@@ -192,3 +192,7 @@ gl:
     stats:
       link: Estatísticas
       total_participants: Participantes totais
+      age: Idade
+      total: Total
+      more_than: Máis que
+      years: anos
