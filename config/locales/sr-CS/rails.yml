@@ -24,12 +24,16 @@ sr:
       - Dec
     day_names:
       - Nedelja
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
+      - Ponedeljak
+      - Utorak
+      - Sreda
+      - Četvrtak
+      - Petak
+      - Subota
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
       - January
