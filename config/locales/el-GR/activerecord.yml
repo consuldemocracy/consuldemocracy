@@ -203,7 +203,7 @@ el:
         association_name: "Όνομα οργανισμού"
         description: "Περιγραφή"
         external_url: "Σύνδεσμος πρόσθετης τεκμηρίωσης"
-        geozone_id: "Πεδίο Δράσεων"
+        geozone_id: "Πεδίο Δράσεως"
         title: "Τίτλος"
       poll:
         name: "Όνομα"
