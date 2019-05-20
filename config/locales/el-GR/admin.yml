@@ -107,6 +107,7 @@ el:
       destroy:
         success_notice: Ο προϋπολογισμός διαγράφηκε επιτυχώς
         unable_notice: Δεν μπορείτε να καταστρέψετε έναν προϋπολογισμό που έχει συσχετισμένες επενδύσεις
+        unable_notice_polls: Δεν μπορείτε να καταστρέψετε έναν προϋπολογισμό ο οποίος έχει σχετική δημοσκόπηση
       new:
         title: Νέα συμμετοχικός προϋπολογισμός
       winners:
@@ -438,6 +439,23 @@ el:
           without_confirmed_hide: Σε εκκρεμότητα
         title: Κρυφές συζητήσεις
         no_hidden_debates: Δεν υπάρχουν κρυφές συζητήσεις.
+    documents:
+      new:
+        title: "Ανεβάστε ένα έγγραφο"
+        label_attachment: "Επιλέξτε έγγραφο"
+        submit_button: "Ανεβάστε"
+      index:
+        new_link: "Προσθέστε νέο έγγραφο"
+        no_documents: "Δεν υπάρχουν έγγραφα."
+        title: "Έγγραφα"
+        format: "Μορφή"
+        size: "Μέγεθος"
+        url: "URL"
+      create:
+        success_notice: "Το έγγραφο φορτώθηκε με επιτυχία"
+        unable_notice: "Μη έγκυρο έγγραφο"
+      destroy:
+        success_notice: "Το έγγραφο διαγράφηκε επιτυχώς."
     hidden_users:
       index:
         filter: Φίλτρο
@@ -677,6 +695,7 @@ el:
       stats: Στατιστικά στοιχεία
       signature_sheets: Φύλλα υπογραφών
       site_customization:
+        documents: Προσαρμοσμένα έγγραφα
         homepage: Αρχική σελίδα
         pages: Προσαρμοσμένες σελίδες
         images: Προσαρμοσμένες εικόνες
@@ -1046,6 +1065,8 @@ el:
       flash:
         question_added: "Ερώτηση που έχει προστεθεί σε αυτήν τη δημοσκόπηση"
         error_on_question_added: "Η ερώτηση δεν μπόρεσε να ανατεθεί σε αυτή την ψηφοφορία"
+      destroy:
+        alert: "Αυτή η ενέργεια θα καταργήσει την ψηφοφορία και όλες τις σχετικές ερωτήσεις."
     questions:
       index:
         title: "Ερωτήσεις"
