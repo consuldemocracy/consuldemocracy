@@ -230,7 +230,7 @@ el:
       signature_sheet:
         signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "Με δυνατότητα υπογραφής ID"
-        document_numbers: "Αριθμούς εγγράφων"
+        document_numbers: "Αριθμοί εγγράφων"
       site_customization/page:
         content: Περιεχόμενο
         created_at: Δημιουργήθηκε στις
@@ -251,8 +251,8 @@ el:
         image: Εικόνα
       site_customization/content_block:
         name: Όνομα
-        locale: τοπικές ρυθμίσεις
-        body: Σώμα
+        locale: Τοπικές ρυθμίσεις
+        body: Περιεχόμενο
       banner:
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
@@ -267,12 +267,12 @@ el:
         debate_end_date: Τέλος
         draft_start_date: Έναρξη
         draft_end_date: Τέλος
-        draft_publication_date: Ημερομηνία δημοσίευσης σχεδίου
+        draft_publication_date: Ημερομηνία δημοσίευσης προσχέδιου
         allegations_start_date: Έναρξη
         allegations_end_date: Τέλος
         proposals_phase_start_date: Έναρξη
         proposals_phase_end_date: Τέλος
-        result_publication_date: Ημερομηνία δημοσίευσης του τελικού αποτελέσματος
+        result_publication_date: Ημερομηνία δημοσίευσης τελικών αποτελέσματων
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
       legislation/process/translation:
@@ -286,7 +286,7 @@ el:
         body: Κείμενο
         changelog: Αλλαγές
         status: Κατάσταση
-        final_version: Τελική έκδοση
+        final_version: Τελική μορφή
       legislation/draft_version/translation:
         title: Τίτλος έκδοσης
         body: Κείμενο
