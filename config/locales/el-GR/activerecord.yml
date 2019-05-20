@@ -300,10 +300,10 @@ el:
         text: Σχόλιο
       document:
         title: Τίτλος
-        attachment: Συνημμένο
+        attachment: Επισύναψη
       image:
         title: Τίτλος
-        attachment: Συνημμένο
+        attachment: Επισύναψη
       poll/question/answer:
         title: Απάντηση
         description: Περιγραφή
@@ -317,7 +317,7 @@ el:
         segment_recipient: Παραλήπτες
         subject: Θέμα
         from: Από
-        body: Περιεχόμενο μηνύματος ηλεκτρονικού ταχυδρομείου
+        body: Περιεχόμενο email
       admin_notification:
         segment_recipient: Παραλήπτες
         title: Τίτλος
@@ -327,14 +327,14 @@ el:
         title: Τίτλος
         body: Κείμενο
       widget/card:
-        label: Ετικέτα (προαιρετικά)
+        label: Ετικέτα (προαιρετικό)
         title: Τίτλος
         description: Περιγραφή
         link_text: Σύνδεσμος κειμένου
         link_url: Σύνδεσμος URL
         columns: Αριθμός στηλών
       widget/card/translation:
-        label: Ετικέτα (προαιρετικά)
+        label: Ετικέτα (προαιρετικό)
         title: Τίτλος
         description: Περιγραφή
         link_text: Σύνδεσμος κειμένου
@@ -345,9 +345,9 @@ el:
         short_description: Σύντομη περιγραφή
         description: Περιγραφή
         link: Εξωτερικός σύνδεσμος
-        request_to_administrators: Συμπεριλάβετε στον πόρο ένα κουμπί για να ζητήσετε τον πόρο από τους διαχειριστές
-        day_offset: Πόσες ημέρες μετά τη δημιουργία της πρότασης θέλετε να ενεργοποιηθεί;
-        required_supports: Πόση υποστήριξη πρέπει να λάβει η πρόταση προκειμένου να ενεργοποιηθεί;
+        request_to_administrators: Συμπεριλάβετε ένα κουμπί στην πηγή  για να ζητήσετε αυτή την πηγή από τους διαχειριστές
+        day_offset: Σε πόσες ημέρες θέλετε να ενεργοποιηθεί η πρόταση μετά τη δημιουργία της;
+        required_supports: Πόση στήριξη πρέπει να λάβει η πρόταση προκειμένου να ενεργοποιηθεί;
         order: Μπορείτε να εισαγάγετε τη θέση όπου η δράση αυτή θα εμφανιστεί στο χρήστη στη λίστα των δράσεων
         active: Ενεργό
         action_type: Τύπος
