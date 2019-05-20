@@ -983,6 +983,7 @@ hr:
         btn_text_link: Svi preporučeni prijedlozi
       budget_investments:
         title: Preporučene investicije
+      slide: "Vidi %{title}"
     verification:
       i_dont_have_an_account: Nemam račun
       i_have_an_account: Već imam račun
@@ -1018,6 +1019,14 @@ hr:
     score_negative: "Ne"
     content_title:
       proposal: "Prijedlog"
+      debate: "Rasprava"
+      budget_investment: "Budžet investicija"
+  admin/widget:
+    header:
+      title: Administracija
+  annotator:
+    help:
+      alt: Odaberi tekst koji želiš komentirati i pritisni gumb s olovkom.
   communities:
     show:
       author: Autor
