@@ -205,30 +205,30 @@ el:
         download_current_selection: "Κατεβάστε την τρέχουσα επιλογή"
         no_budget_investments: "Δεν υπάρχουν επενδυτικά έργα."
         title: Επενδυτικά έργα
-        assigned_admin: Διαχειριστής που έχει ανατεθεί
+        assigned_admin: Ανατεθημένος διαχειριστής
         no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
         no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
         no_valuation_groups: Δεν έχουν ανατεθεί ομάδες αξιολόγησης
         feasibility:
           feasible: "Εφικτό"
           unfeasible: "Ανέφικτο"
-          undecided: "Αναποφάσιστο"
+          undecided: "Δεν έχει συμφωνηθεί"
         selected: "Επιλεγμένο"
         select: "Επιλέξτε"
         list:
-          id: ID
+          id: Ταυτότητα
           title: Τίτλος
           supports: Υποστηρίξεις
           admin: Διαχειριστής
           valuator: Αξιολογητής
           valuation_group: Ομάδα αξιολογητών
-          geozone: Εμβέλεια λειτουργίας
-          feasibility: Σκοπιμότητα
+          geozone: Στόχος Δράσεως
+          feasibility: Κατά πόσο έιναι εφικτό
           valuation_finished: Val. Fin.
           selected: Επιλεγμένο
           visible_to_valuators: Δείξε στους εκτιμητές
-          author_username: Όνομα χρήστη του συγγραφέα
-          incompatible: Ασυμβίβαστα
+          author_username: Όνομα χρήστη του συντάκτη
+          incompatible: Δεν είναι συμβατά
           price: Τιμή
         cannot_calculate_winners: Ο προϋπολογισμός πρέπει να μείνει σε φάση «Έργα ψηφοφορίας», «Επανεξέταση των ψηφοδελτίων» ή «Τελικού προϋπολογισμού» προκειμένου να υπολογιστούν τα νικητήρια έργα
         see_results: "Εμφάνιση αποτελεσμάτων"
