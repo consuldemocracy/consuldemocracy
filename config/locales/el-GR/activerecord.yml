@@ -220,11 +220,11 @@ el:
         title: "Ερώτηση"
         summary: "Περίληψη"
         description: "Περιγραφή"
-        external_url: "Σύνδεση με πρόσθετη τεκμηρίωση"
+        external_url: "Σύνδεσμος σε πρόσθετη τεκμηρίωση"
       poll/question/translation:
         title: "Ερώτηση"
       poll/ballot_sheet:
-        data: CSV στοιχεία
+        data: Στοιχεία CSV
         poll_id: Δημοσκόπηση
         officer_assignment_id: Λειτουργός ανάθεσης
       signature_sheet:
