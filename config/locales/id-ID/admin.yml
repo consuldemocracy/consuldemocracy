@@ -541,6 +541,7 @@ id:
         title: "Moderator: pencarian Pengguna"
     segment_recipient:
       administrators: Administrasi
+      all_proposal_authors: Penulis proposal (termasuk pembukuan dan Pensiunan)
     newsletters:
       index:
         title: Laporan berkala
