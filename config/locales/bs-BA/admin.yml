@@ -755,6 +755,7 @@ bs:
     segment_recipient:
       all_users: Svi korisnici
       administrators: Administratori
+      all_proposal_authors: Autori prijedloga (uključujući i arhivirane i povučene prijedloge)
       proposal_authors: Autori prijedloga
       investment_authors: Autori investicija u tekućem budžetu
       feasible_and_undecided_investment_authors: "Autori investicija u tekućem budžetu koje nisu usklađene sa: [konačna ocjena neizvodivo]"
