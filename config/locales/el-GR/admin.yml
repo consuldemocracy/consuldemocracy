@@ -7,7 +7,7 @@ el:
       confirm: Είστε βέβαιοι;
       confirm_hide: Επιβεβαιώστε τη μέτρηση
       hide: Απόκρυψη
-      hide_author: Απόκρυψη συγγραφέα
+      hide_author: Απόκρυψη συντάκτη
       restore: Επαναφορά
       mark_featured: Προτεινόμενα
       unmark_featured: Ξεμαρκάρετε τα επιλεγμένα
@@ -15,7 +15,7 @@ el:
       configure: Ρύθμιση παραμέτρων
       delete: Διαγραφή
     officing_booth:
-      title: "Στεγάζετε το περίπτερο που βρίσκεται στο %{booth}. Εάν αυτό δεν είναι σωστό, μην συνεχίσετε και καλέστε τον αριθμό τηλεφώνου βοήθειας. Ευχαριστώ."
+      title: "Διαχειρίζεστε το περίπτερο που βρίσκεται στο %{booth}. Εάν αυτό δεν ισχύει, μην συνεχίσετε και καλέστε τον αριθμό τηλεφώνου βοήθειας. Ευχαριστώ."
     banners:
       index:
         title: Banners
@@ -1067,6 +1067,8 @@ el:
         error_on_question_added: "Η ερώτηση δεν μπόρεσε να ανατεθεί σε αυτή την ψηφοφορία"
       destroy:
         alert: "Αυτή η ενέργεια θα καταργήσει την ψηφοφορία και όλες τις σχετικές ερωτήσεις."
+        success_notice: "Η δημοσκόπηση διαγράφηκε επιτυχώς"
+        unable_notice: "Δεν μπορείτε να διαγράψετε μια ψηφοφορία η οπόια περιέχει ψηφοφορίες"
     questions:
       index:
         title: "Ερωτήσεις"
@@ -1454,10 +1456,33 @@ el:
           visits: Επισκέψεις
           votes: Συνολικοί ψήφοι
         budgets_title: Συμμετοχικός προϋπολογισμός
+        participatory_budgets: Συμμετοχικοί προϋπολογισμοί
         direct_messages: Άμεσα μηνύματα
         proposal_notifications: Ειδοποιήσεις προτάσεων
         incomplete_verifications: Ελλιπής επαληθεύσεις
         polls: Δημοσκοπήσεις
+      graph:
+        debate_created: Συζητήσεις
+        spending_proposals: Επενδυτικά έργα
+        visit: Επισκέψεις
+        level_2_user: Χρήστες δεύτερου επιπέδου
+        proposal_created: Προτάσεις πολιτών
+      budgets:
+        title: "Συμμετοχικοί Προϋπολογισμοί - Στατιστικά Συμμετοχής"
+        supporting_phase: Υποστηρικτική φάση
+        balloting_phase: Τελική ψηφοφορία
+      budget_balloting:
+        title: "Στατιστικά τελικής ψηφοφορίας"
+        vote_count: Ψήφοι
+        participant_count: Συμμετέχοντες
+        votes_per_heading: Ψηφοφορίες ανά επικεφαλίδα
+        participants_per_district: Συμμετέχοντες ανά περιοχή
+      budget_supporting:
+        title: "Στατιστικά υποστηρικτικής φάσης"
+        headings: Επικεφαλίδες
+        users: Χρήστες
+        vote_count: Ψήφοι
+        participant_count: Συμμετέχοντες
       direct_messages:
         title: Άμεσα μηνύματα
         total: Όλα
