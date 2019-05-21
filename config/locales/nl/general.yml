@@ -488,8 +488,6 @@ nl:
       stats_menu: "Statistieken over deelname"
       results_menu: "Stemresultaten"
       stats:
-        title: "Data over deelname"
-        total_participation: "Totale deelname"
         total_votes: "Totaal aantal stemmen"
         votes: "stemmen"
         web: "web"
