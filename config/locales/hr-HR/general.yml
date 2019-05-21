@@ -670,8 +670,6 @@ hr:
       stats_menu: "Statistike sudjelovanja"
       results_menu: "Rezultati aknete"
       stats:
-        title: "Podaci o sudjelovanju"
-        total_participation: "Ukupno sudjelovanja"
         total_votes: "Ukupna količina datih glasova"
         votes: "GLASOVI"
         web: "WEB"
