@@ -703,6 +703,7 @@ en:
         content_blocks: Custom content blocks
         information_texts: Custom information texts
         information_texts_menu:
+          basic: "Basic customization"
           debates: "Debates"
           community: "Community"
           proposals: "Proposals"
