@@ -492,5 +492,20 @@ feature "Polls" do
       expect(page).not_to have_content("Poll results")
       expect(page).not_to have_content("Participation statistics")
     end
+
+    scenario "Generates navigation links for polls without a slug" do
+      poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
+      poll.update_column(:slug, nil)
+
+      visit poll_path(poll)
+
+      expect(page).to have_link "Participation statistics"
+      expect(page).to have_link "Poll results"
+
+      click_link "Poll results"
+
+      expect(page).to have_link "Information"
+    end
+
   end
 end
