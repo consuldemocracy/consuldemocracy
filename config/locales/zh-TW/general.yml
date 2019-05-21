@@ -468,8 +468,6 @@ zh-TW:
       stats_menu: "參與量的統計"
       results_menu: "投票結果"
       stats:
-        title: "參與量的數據"
-        total_participation: "總參與量"
         total_votes: "投票總數"
         votes: "投票"
         web: "網絡"
