@@ -648,8 +648,6 @@ da:
       stats_menu: "Deltagelsesstatistik"
       results_menu: "Afstemningsresultater"
       stats:
-        title: "Data over deltagelse"
-        total_participation: "Samlet deltagelse"
         total_votes: "Samlet antal stemmer"
         votes: "STEMMER"
         web: "WEB"
