@@ -5,6 +5,7 @@ class Poll < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   include Notifiable
+  include Sluggable
 
   translates :name,        touch: true
   translates :summary,     touch: true
@@ -127,6 +128,10 @@ class Poll < ApplicationRecord
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
     end
+  end
+
+  def generate_slug?
+    slug.nil?
   end
 
   def only_one_active
