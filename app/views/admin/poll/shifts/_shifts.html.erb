@@ -4,6 +4,7 @@
     <tr>
       <th><%= t("admin.poll_shifts.new.date") %></th>
       <th><%= t("admin.poll_shifts.new.officer") %></th>
+      <th><%= t("admin.poll_shifts.new.table_email") %></th>
       <th><%= t("admin.poll_shifts.new.task") %></th>
       <th class="small-3"><%= t("admin.poll_shifts.new.shift") %></th>
     </tr>
@@ -13,6 +14,7 @@
       <tr id="shift_<%= shift.id %>" class="shift">
         <td><%= l(shift.date.to_date, format: :long) %></td>
         <td><%= shift.officer_name %></td>
+        <td><%= shift.officer_email %></td>
         <td><%= t("admin.poll_shifts.#{shift.task}") %></td>
         <td>
           <%= link_to t("admin.poll_shifts.new.remove_shift"),

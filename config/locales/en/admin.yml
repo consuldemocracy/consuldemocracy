@@ -106,8 +106,8 @@ en:
         blank_dates: Dates are blank
       destroy:
         success_notice: Budget deleted successfully
-        unable_notice: You cannot destroy a budget that has associated investments
-        unable_notice_polls: You cannot destroy a budget that has an associated poll
+        unable_notice: You cannot delete a budget that has associated investments
+        unable_notice_polls: You cannot delete a budget that has an associated poll
       new:
         title: New participatory budget
       winners:
@@ -130,7 +130,7 @@ en:
         notice: "Group updated successfully"
       destroy:
         success_notice: "Group deleted successfully"
-        unable_notice: "You cannot destroy a Group that has associated headings"
+        unable_notice: "You cannot delete a Group that has associated headings"
       form:
         create: "Create new group"
         edit: "Edit group"
@@ -150,7 +150,7 @@ en:
         notice: "Heading updated successfully"
       destroy:
         success_notice: "Heading deleted successfully"
-        unable_notice: "You cannot destroy a Heading that has associated investments"
+        unable_notice: "You cannot delete a Heading that has associated investments"
       form:
         name: "Heading name"
         amount: "Amount"
@@ -781,6 +781,8 @@ en:
       new:
         title: New newsletter
         from: E-mail address that will appear as sending the newsletter
+        header_footer_help_text_html: "The heading and footer are the same for all emails, you can modify them on <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br>You can replace header image on %{link}."
+        image_link: "custom images"
       edit:
         title: Edit newsletter
       show:
@@ -795,7 +797,7 @@ en:
         segment_recipient: Recipients
         from: E-mail address that will appear as sending the newsletter
         body: Email content
-        body_help_text: This is how the users will see the email
+        body_help_text: This is how the users will see the email.
         send_alert: Are you sure you want to send this newsletter to %{n} users?
     admin_notifications:
       create_success: Notification created successfully
@@ -951,6 +953,7 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+        help: "To add or remove Poll officers use the search form below."
     poll_officer_assignments:
       index:
         officers_title: "List of officers"
@@ -1507,7 +1510,7 @@ en:
           origin_total: Total participants
     tags:
       create: Create topic
-      destroy: Destroy topic
+      destroy: Delete topic
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
@@ -1601,6 +1604,7 @@ en:
           see_page: See page
         new:
           title: Create new custom page
+          slug_help_html: "Text to identify this page on URL, for example <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Created at
           status: Status

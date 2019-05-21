@@ -72,6 +72,23 @@ feature "Admin custom images" do
     end
   end
 
+  scenario "Image is replaced on admin newsletters" do
+    newsletter = create(:newsletter, segment_recipient: "all_users")
+
+    visit admin_site_customization_images_path
+
+    within("tr#image_logo_email") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/logo_email_custom.png"
+      click_button "Update"
+    end
+
+    visit admin_newsletter_path(newsletter)
+
+    within(".newsletter-body-content") do
+      expect(page).to have_css("img[src*='logo_email_custom.png']")
+    end
+  end
+
   scenario "Upload invalid image" do
     visit admin_root_path
 

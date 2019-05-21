@@ -14,7 +14,7 @@ en:
     actions:
       destroy:
         notice: Image was deleted successfully.
-        alert: Cannot destroy image.
+        alert: Cannot delete image.
     errors:
       messages:
         in_between: must be in between %{min} and %{max}

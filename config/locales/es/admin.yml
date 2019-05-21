@@ -780,6 +780,8 @@ es:
       new:
         title: Nueva newsletter
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
+        header_footer_help_text_html: "El encabezado y pie son los mismos en todos los emails, puedes modificarlos en <code>app/views/layouts/mailer_header</code> y <code>app/views/layouts/mailer_footer</code>.<br>Puedes reemplazar la imagen del encabezado en %{link}."
+        image_link: "personalizar imágenes"
       edit:
         title: Editar newsletter
       show:
@@ -794,7 +796,7 @@ es:
         segment_recipient: Destinatarios
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
-        body_help_text: Así es como verán el email los usuarios
+        body_help_text: Así es como verán el email los usuarios.
         send_alert: "¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?"
     admin_notifications:
       create_success: Notificación creada correctamente
@@ -950,6 +952,7 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+        help: "Para añadir o eliminar Presidentes de mesa utiliza el buscador a continuación."
     poll_officer_assignments:
       index:
         officers_title: "Listado de presidentes de mesa asignados"
@@ -999,7 +1002,7 @@ es:
           unassigned: No asignada
         actions:
           assign: Asignar urna
-          unassign: Asignar urna
+          unassign: Desasignar urna
     poll_booth_assignments:
       alert:
         shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
@@ -1600,6 +1603,7 @@ es:
           see_page: Ver página
         new:
           title: Página nueva
+          slug_help_html: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado
