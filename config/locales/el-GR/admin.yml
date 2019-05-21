@@ -230,13 +230,13 @@ el:
           author_username: Όνομα χρήστη του συντάκτη
           incompatible: Δεν είναι συμβατά
           price: Τιμή
-        cannot_calculate_winners: Ο προϋπολογισμός πρέπει να μείνει σε φάση «Έργα ψηφοφορίας», «Επανεξέταση των ψηφοδελτίων» ή «Τελικού προϋπολογισμού» προκειμένου να υπολογιστούν τα νικητήρια έργα
+        cannot_calculate_winners: Ο προϋπολογισμός πρέπει να παραμείνει στη φάση «Ψηφοφορία προγραμμάτων», «Εξέταση ψηφοδελτίων» ή «Τελικός προϋπολογισμός» προκειμένου να επιλεχθούν τα νικητήρια προγράμματα. 
         see_results: "Εμφάνιση αποτελεσμάτων"
       show:
-        assigned_admin: Διαχειριστής που έχει ανατεθεί
-        assigned_valuators: Εκχωρημένοι αξιολογητές
+        assigned_admin: Ανατεθημένος διαχειριστής
+        assigned_valuators: Ανατεθημένοι αξιολογητές
         classification: Ταξινόμηση
-        info: "%{budget_name} - ομάδα: %{group_name} - επενδυτικό project %{id}"
+        info: "%{budget_name} - Ομάδα: %{group_name} - Επενδυτικό πρόγραμμα %{id}"
         edit: Επεξεργασία
         edit_classification: Επεξεργασία ταξινόμησης
         by: Από
@@ -247,10 +247,10 @@ el:
         edit_dossier: Επεξεργασία φακέλου
         tags: Ετικέτες
         user_tags: Ετικέτες χρήστη
-        undefined: Απροσδιόριστο
+        undefined: Δεν έχει προσδιοριστεί
         compatibility:
           title: Συμβατότητα
-          "true": Ασυμβίβαστα
+          "true": Δεν είναι συμβατό
           "false": Συμβατό
         selection:
           title: Επιλογή
@@ -261,45 +261,45 @@ el:
           "true": "Ναι"
           "false": "Όχι"
         image: "Εικόνα"
-        see_image: "Δες την εικόνα"
+        see_image: "Προβολή εικόνας"
         no_image: "Χωρίς εικόνα"
         documents: "Έγγραφα"
-        see_documents: "Δες τα έγγραφα (%{count})"
+        see_documents: "Προβολή εγγράφων (%{count})"
         no_documents: "Χωρίς έγγραφα"
-        valuator_groups: "Ομάδα αξιολογητών"
+        valuator_groups: "Ομάδες αξιολογητών"
       edit:
         classification: Ταξινόμηση
         compatibility: Συμβατότητα
-        mark_as_incompatible: Σημειώστε ως ασυμβίβαστο
+        mark_as_incompatible: Σημειώστε ως μη συμβατό
         selection: Επιλογή
         mark_as_selected: Σημείωσε ως επιλεγμένο
         assigned_valuators: Αξιολογητές
-        select_heading: Επέλεξε την επικεφαλίδα
+        select_heading: Επέλεξε επικεφαλίδα
         submit_button: Ενημέρωση
-        user_tags: Ετικέτες που έχουν εκχωρηθεί στο χρήστη
+        user_tags: Ετικέτες που έχουν ανατεθεί από τον χρήστη
         tags: Ετικέτες
-        tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρισμένες με κόμματα (,)"
-        undefined: Απροσδιόριστο
+        tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρίζοντας τις με κόμματα (,)"
+        undefined: Δεν έχει προσδιοριστεί
         user_groups: "Ομάδες"
-      search_unfeasible: Αναζήτηση ανέφικτη
+      search_unfeasible: Η αναζήτηση αυτή δεν είανι εφικτή
     milestones:
       index:
-        table_id: "ID"
+        table_id: "Ταυτότητα"
         table_title: "Τίτλος"
         table_description: "Περιγραφή"
         table_publication_date: "Ημερομηνία δημοσίευσης"
         table_status: Κατάσταση
         table_actions: "Ενέργειες"
         delete: "Σβήσε το ορόσημο"
-        no_milestones: "Δεν έχουν καθορισμένα ορόσημα"
+        no_milestones: "Δεν υπάρχουν καθορισμένα ορόσημα"
         image: "Εικόνα"
-        show_image: "Δείξε την εικόνα"
+        show_image: "Προβολή εικόνας"
         documents: "Έγγραφα"
         milestone: Ορόσημο
         new_milestone: Δημιουργία νέου ορόσημου
       form:
         admin_statuses: Διαχείριση καταστάσεων
-        no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις ακόμη
+        no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις 
       new:
         creating: Δημιουργία ορόσημου
         date: Ημερομηνία
@@ -309,12 +309,12 @@ el:
       create:
         notice: Το νέο ορόσημο δημιουργήθηκε με επιτυχία!
       update:
-        notice: Το ορόσημο ανανεώθηκε με επιτυχία
+        notice: Το ορόσημο ενημερώθηκε με επιτυχία
       delete:
         notice: Το ορόσημο διαγράφηκε με επιτυχία
     statuses:
       index:
-        title: Καταστάσεις ορόσημου
+        title: Καταστάσεις οροσήμων
         empty_statuses: Δεν υπάρχουν καταστάσεις ορόσημου δημιουργημένες
         new_status: Δημιουργία νέας κατάστασης οροσήμου
         table_name: Όνομα
