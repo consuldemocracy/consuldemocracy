@@ -201,35 +201,3 @@ he:
         dates_range_invalid: "תאריך ההתחלה לא יכול להיות שווה או מאוחר מתאריך סיום"
         prev_phase_dates_invalid: "תאריך ההתחלה צריך להיות מאוחר יותר מתאריך ההתחלה של השלב הקודם זמין (%{phase_name})"
         next_phase_dates_invalid: "תאריך סיום חייב להיות מוקדם יותר מתאריך הסיום של השלב הבא הפעיל (%{phase_name})"
-    stats:
-      title: נתוני השתתפות
-      link: סטטיסטיקה
-      page_title: "%{budget} - נתוני השתתפות"
-      total_participants: סה"כ משתתפים
-      total_budget_investments: סה"כ תקציבי השתתפות
-      total_selected_investments: הצעות בשלב הסופי
-      total_unfeasible_investments: הצעות לא ישימות
-      total_participants_support_phase: שלב בתמיכה
-      total_participants_web: שלב בהצבעה משתתפים מהאינטרנט
-      total_participants_booths: שלב בהצבעה משתתפים בדוכנים
-      participants: משתתפים
-      supports: תמיכות
-      by_gender: "משתתפים לפי מגדר"
-      total_male_participants: גברים
-      total_female_participants: נשים
-      by_age: "משתתפים לפי קבוצת גיל"
-      age: גיל
-      total: סה"כ
-      more_than: יותר מ
-      years: שנים
-      by_heading: "משתתפים לפי כותר"
-      heading: כותר
-      investments_sent_html: "תקציבי השקעה נשלחו"
-      participants_support_phase: שלב בהצבעת משתתפים
-      participants_voting_phase: שלב בהצבעות משתתפים
-      participants_total: סה"כ משתתפים
-      percent_total_participants_html: "% <br>סה\"כ<br>משתתפים"
-      percent_heading_census_html: "% <br>כותרים<br>במרשם"
-      no_demographic_data: "* אין מידע גאוגרפי ל %{total} משתתפים."
-      participatory_disclaimer: "** מספר המשתתפים הכולל מתייחס לאנשים שיצרו, תמכו או הצביעו להצעות השקעה."
-      heading_disclaimer: "*** הנתונים על הכותרים מתייחסים לכותר שבו כל משתמש הצביע, ולאו דווקא אם הוא רשום לכותר."
