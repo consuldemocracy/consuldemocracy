@@ -79,6 +79,9 @@ nl:
       site_customization/content_block:
         one: Aangepaste inhoud
         other: Aangepaste inhoud
+      document:
+        one: Document
+        other: Documenten
       legislation/process:
         one: "Proces"
         other: "Processen"
@@ -112,6 +115,12 @@ nl:
       proposal_notification:
         one: "Notificatie"
         other: "Voorstelnotificaties"
+      dashboard/administrator_task:
+        one: Taak
+        other: Taken
+      link:
+        one: Link
+        other: Links
     attributes:
       budget:
         name: "Naam"
@@ -328,6 +337,15 @@ nl:
         link_text: Link tekst
       widget/feed:
         limit: Aantal items
+      dashboard/action:
+        title: Titel
+        active: Actief
+        action_type: Type
+      dashboard/administrator_task:
+        source: Bron
+      link:
+        label: Titel
+        url: Link
     errors:
       models:
         user:
