@@ -107,6 +107,7 @@ es:
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
+        unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
         title: Nuevo presupuesto ciudadano
       winners:
@@ -370,6 +371,64 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+      actions:
+        action_type:
+          proposed_action: Acción propuesta
+          resource: Recurso
+        index:
+          description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
+          create: Crear recurso o acción
+          edit: Editar
+          delete: Borrar
+          active: 'Si'
+          title: Recursos y acciones
+          action_title: Título
+          action_type: Tipo
+          required_supports: Apoyos necesarios
+          day_offset: Días necesarios
+          action_active: Activo
+          order: Orden
+          published_proposal: Propuesta publicada
+          default:
+            email: Correo electrónico
+            polls: Encuestas
+            poster: Póster
+        new:
+          creating: Nueva acción para el dashboard de propuestas
+          back: Volver a la lista
+        create:
+          notice: Acción creada con éxito
+        edit:
+          editing: Editar acción para el dashboard de propuestas
+          back: Volver a la lista
+        delete:
+          success: Acción borrada con éxito
+        form:
+          submit_button: Guardar
+          help_text: Introduce 0 para que este valor no se tenga en cuenta
+          published_proposal: '¿Para propuestas publicadas?'
+          published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
+      administrator_tasks:
+        index:
+          description: "Los recursos publicados en el panel de progreso de las propuestas pueden incluir un botón para ser solicitados a los administradores. A continuación se muestran las solicitudes de los usuarios."
+          title: Recursos solicitados
+          solve: Resolver
+          no_records: No hay recursos solicitados
+          source: Propuesta
+          resource: Recurso solicitado
+          filter: Filtro
+          filters:
+            pending: Pendientes
+            done: Resueltos
+        edit:
+          back: Volver a la lista de tareas pendientes
+          solving: Resolver tarea pendiente
+        form:
+          solve: Marcar como resuelta
+          proposal: Propuesta
+          request: Recurso solicitado
+        update:
+          success: La tarea ha sido marcada como resuelta
     debates:
       index:
         filter: Filtro
@@ -379,6 +438,22 @@ es:
           without_confirmed_hide: Pendientes
         title: Debates ocultos
         no_hidden_debates: No hay debates ocultos.
+    documents:
+      new:
+        title: "Subir un documento"
+        label_attachment: "Selecciona un documento"
+        submit_button: "Subir documento"
+      index:
+        new_link: "Subir un documento"
+        no_documents: "No hay documentos."
+        title: "Documentos"
+        format: "Formato"
+        size: "Tamaño"
+      create:
+        success_notice: "Documento creado correctamente"
+        unable_notice: "Documento inválido"
+      destroy:
+        success_notice: "Documento borrado correctamente"
     hidden_users:
       index:
         filter: Filtro
@@ -618,6 +693,7 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
+        documents: Documentos
         homepage: Homepage
         pages: Personalizar páginas
         images: Personalizar imágenes
@@ -644,6 +720,9 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
+      dashboard: Panel de progreso de propuestas
+      administrator_tasks: Recursos solicitados
+      dashboard_actions: Recursos y acciones
     administrators:
       index:
         title: Administradores
@@ -671,6 +750,7 @@ es:
     segment_recipient:
       all_users: Todos los usuarios
       administrators: Administradores
+      all_proposal_authors: Usuarios autores de propuestas (incluyendo archivadas y retiradas)
       proposal_authors: Usuarios autores de propuestas
       investment_authors: Usuarios autores de proyectos de gasto en los actuales presupuestos
       feasible_and_undecided_investment_authors: "Usuarios autores de algún proyecto de gasto en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
@@ -698,6 +778,8 @@ es:
       new:
         title: Nueva newsletter
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
+        header_footer_help_text_html: "El encabezado y pie son los mismos en todos los emails, puedes modificarlos en <code>app/views/layouts/mailer_header</code> y <code>app/views/layouts/mailer_footer</code>.<br>Puedes reemplazar la imagen del encabezado en %{link}."
+        image_link: "personalizar imágenes"
       edit:
         title: Editar newsletter
       show:
@@ -868,6 +950,7 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+        help: "Para añadir o eliminar Presidentes de mesa utiliza el buscador a continuación."
     poll_officer_assignments:
       index:
         officers_title: "Listado de presidentes de mesa asignados"
@@ -984,6 +1067,10 @@ es:
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
+      destroy:
+        alert: "Esta acción eliminará la votación y todas sus preguntas asociadas."
+        success_notice: "Votación eliminada correctamente"
+        unable_notice: "No se pueden eliminar votaciones con votos"
     questions:
       index:
         title: "Preguntas de votaciones"
@@ -1195,6 +1282,8 @@ es:
           form:
             submit: Actualizar
           how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
+        dashboard:
+          title: Panel de progreso de propuestas
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración
@@ -1369,10 +1458,32 @@ es:
           visits: Visitas
           votes: Votos
         budgets_title: Presupuestos participativos
+        participatory_budgets: Presupuestos Participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+      graph:
+        spending_proposals: Propuestas de inversión
+        visit: Visitas
+        level_2_user: Usuarios nivel 2
+        proposal_created: Propuestas Ciudadanas
+      budgets:
+        title: "Presupuestos participativos - Estadisticas de participación"
+        supporting_phase: Fase de apoyos
+        balloting_phase: Votación final
+      budget_balloting:
+        title: "Estadísticas votación final"
+        vote_count: Votos
+        participant_count: Participantes
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por distrito
+      budget_supporting:
+        title: "Estadísticas fase de apoyos"
+        headings: Partidas
+        users: Usuarios
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -1489,6 +1600,7 @@ es:
           see_page: Ver página
         new:
           title: Página nueva
+          slug_help_html: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado
