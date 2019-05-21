@@ -445,8 +445,6 @@ cs:
       stats_menu: "Statistika účasti"
       results_menu: "Výsledky průzkumu"
       stats:
-        title: "Údaje o respondentech"
-        total_participation: "Počet respondentů"
         total_votes: "Celkový počet odevzdaných hlasů"
         votes: "HLASŮ"
         web: "WEB"
