@@ -670,8 +670,6 @@ bs:
       stats_menu: "Participativna statistika"
       results_menu: "Rezultati glasačke ankete"
       stats:
-        title: "Podaci u učešću"
-        total_participation: "Ukupno učesnika"
         total_votes: "Ukupno datih glasova"
         votes: "GLASOVI"
         web: "WEB"
